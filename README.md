@@ -46,7 +46,7 @@ All of the code is located in the final_project_Ranjani_Yanqing.ipynb file. It d
 
 The data could be found in the "raw_data" folder. The folder contains:
 - The Github_clean2 copy.csv
-- The "menry copy" folder, it contains multiple csv files corresponding the information available in   Github_clean2 copy.csv
+- The "menry copy" folder, it contains multiple csv files corresponding to the information available in   Github_clean2 copy.csv
 
 The tables could be found in the "table" folder.
 
