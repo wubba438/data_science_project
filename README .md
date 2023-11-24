@@ -6,6 +6,25 @@ This is  Ranjani Amrapali Vishwanath and Yanqing Zhou 's final project for Data 
 Python 3.10^
 
 ## Preparation
+Clone the repository :
+
+```bash
+git clone git@github.com:wubba438/data_science_project.git
+cd data_science_project
+```
+
+Create and activate a virtual envirnment :
+
+```bash
+python3 -m venv .my_venv
+source .my_venv/bin/activate
+```
+or
+
+```bash
+python -m venv .my_venv
+source .my_venv/bin/activate
+```
 
 Install dependencies :
 make sure you install everything documented in the requirements.txt file
