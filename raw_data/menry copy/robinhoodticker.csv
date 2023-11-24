@@ -1,0 +1,172 @@
+ticker,An Android text view with scrolling text change animation
+username,timestamp,url,sha,message
+jinatonic,2019-08-01 16:48:18,https://api.github.com/repos/robinhood/ticker/git/commits/0da667c9b5f9a91c2a9b600cc3640d5879c63dd2,0da667c9b5f9a91c2a9b600cc3640d5879c63dd2,Add mission CHANGELOG doc for 2.0.1
+jinatonic,2019-08-01 16:42:08,https://api.github.com/repos/robinhood/ticker/git/commits/5ef2e563a00ce9fb0a431c560a92bd7facc2dcad,5ef2e563a00ce9fb0a431c560a92bd7facc2dcad,Prepare for 2.0.2 release & update dependencies
+mattsilber,2019-05-29 21:52:51,https://api.github.com/repos/robinhood/ticker/git/commits/c5f719fb722a45176781833cd228ceb9f2ba3822,c5f719fb722a45176781833cd228ceb9f2ba3822,"Preferred TickerColumn Scrolling Direction (#100)
+
+Add support for setPreferredScrollingDirection"
+jinatonic,2018-12-06 06:00:26,https://api.github.com/repos/robinhood/ticker/git/commits/c5aca40134e3af5b6998ea6a7fca245840b93354,c5aca40134e3af5b6998ea6a7fca245840b93354,Prepare for 2.0.1 release
+jinatonic,2018-12-06 05:58:17,https://api.github.com/repos/robinhood/ticker/git/commits/522439be0f694e0c2bba1bdd522f9b6d479e51a1,522439be0f694e0c2bba1bdd522f9b6d479e51a1,Support wraparound animation for going forwards as well as backwards
+jinatonic,2018-09-04 17:36:24,https://api.github.com/repos/robinhood/ticker/git/commits/d956074d76fd861d0e2bb9d0c211aa7e0ecdf110,d956074d76fd861d0e2bb9d0c211aa7e0ecdf110,"Support android:text even when character list is not set in XML (#96)
+
+* Support android:text even when character list is not set in XML
+
+* Disable animation"
+jinatonic,2018-09-02 21:24:59,https://api.github.com/repos/robinhood/ticker/git/commits/2467f267210ce2ad6ccb7e0ad730a3f317b8ae78,2467f267210ce2ad6ccb7e0ad730a3f317b8ae78,Update dependencies and migrate sample app to androidx
+hegazy,2018-08-21 19:03:37,https://api.github.com/repos/robinhood/ticker/git/commits/3e1de49f5020fb647629a1468dbd26de603e8ff2,3e1de49f5020fb647629a1468dbd26de603e8ff2,"Update documentation for setTextSize (#94)
+
+text size is in pixel units"
+jinatonic,2018-04-20 17:58:05,https://api.github.com/repos/robinhood/ticker/git/commits/5469e293b95546ecefc93acf67ea24e66ada48f1,5469e293b95546ecefc93acf67ea24e66ada48f1,Add documentation for 2.0 migration
+jinatonic,2018-04-19 22:51:19,https://api.github.com/repos/robinhood/ticker/git/commits/ee3ed9edfee729eb33f346f75252272007c3d501,ee3ed9edfee729eb33f346f75252272007c3d501,Prepare for 2.0.0 release
+jinatonic,2018-04-19 22:49:35,https://api.github.com/repos/robinhood/ticker/git/commits/4c6b6cbc4580cd4a958f650ec3c82bbbfa2e816d,4c6b6cbc4580cd4a958f650ec3c82bbbfa2e816d,Update dependencies and fix bad rebase
+jinatonic,2018-04-19 22:45:44,https://api.github.com/repos/robinhood/ticker/git/commits/65fcb603193be59a02b12d63f0c130e6257cb7f9,65fcb603193be59a02b12d63f0c130e6257cb7f9,"[api] Add support for wraparound animation (#88)
+
+* [api] Add support for wraparound animation
+
+* Extracted out TickerCharacterList class
+
+* copyright
+
+* feedback"
+donyu,2018-03-14 21:53:53,https://api.github.com/repos/robinhood/ticker/git/commits/d6971c006682d1c7454ea007c6b3f8874dd98357,d6971c006682d1c7454ea007c6b3f8874dd98357,Add another property animationDelayInMillis to delay animator (#90)
+jinatonic,2018-02-18 06:48:48,https://api.github.com/repos/robinhood/ticker/git/commits/a9dd5d35801463d176a1c103522bb37925c7a128,a9dd5d35801463d176a1c103522bb37925c7a128,[api] Add API for `isCharacterListsSet` (#87)
+jinatonic,2018-01-16 18:15:18,https://api.github.com/repos/robinhood/ticker/git/commits/e4fcb42adc85cd99359938524b3674f224ce2586,e4fcb42adc85cd99359938524b3674f224ce2586,"[refactor] Refactor ticker to allow for variable number of character lists (#83)
+
+* [refactor] Refactor ticker to allow for variable number of character lists
+
+This is a backward incompatible change in preparation for major release 2.
+
+Supporting variable number of character lists have several advantages.
+1. We don't have to specify the animation behavior from all possible characters.
+2. Characters that do not exist in any character list can be treated differently by the animator.
+   e.g. always prioritize preserving them via ACTION_SAME so they do not get animated.
+3. Can support more custom animation behavior since each character list gets priority over the previous.
+   e.g. [0, 1, 2] dictates animation behavior from 0 to 2, but what if I want a different behavior
+   from 1 to 2? I can provide another character list that's something like [1, 3, 2].
+4. Can support wrapping around behavior where 9 -> 0 properly wraps around the list rather than
+   going all the way down. This is currently not possible because wrap-around in the current
+   scenario would mean it would animate through all of the non-number characters (e.g. `$`).
+
+* feedback
+
+- Changed computation in `LevenshteinUtils` to append to single list
+rather than doing array copy.
+- Changed public API for character list to be a `String` rather than
+`char[]`.
+
+* convert to int based loops
+
+* change comment on setText, will do another diff to update all of the
+docs once I do release"
+naturalwarren,2018-01-03 19:12:07,https://api.github.com/repos/robinhood/ticker/git/commits/bfd3257ed68cca1a2157ea59baac2dd803964735,bfd3257ed68cca1a2157ea59baac2dd803964735,Modernize build dependencies. (#81)
+naturalwarren,2018-01-03 19:11:28,https://api.github.com/repos/robinhood/ticker/git/commits/a8c05cd163190d1fadaf191b29f99e51fd847a4f,a8c05cd163190d1fadaf191b29f99e51fd847a4f,Use View.resolveSize() in onMeasure(). (#82)
+naturalwarren,2017-12-18 22:25:53,https://api.github.com/repos/robinhood/ticker/git/commits/44d4d5aa10c7bc35650987132b43bbe22e79d268,44d4d5aa10c7bc35650987132b43bbe22e79d268,"Remove unnecessary synchronized. (#80)
+
+Ah, good point, it has to be called from the main thread so the `synchronized` is unnecessary."
+naturalwarren,2017-12-18 22:25:04,https://api.github.com/repos/robinhood/ticker/git/commits/c14ffac5300cd580de2d822863dbd8b186b8f4c8,c14ffac5300cd580de2d822863dbd8b186b8f4c8,Remove unused deps from sample app. (#79)
+naturalwarren,2017-12-18 20:33:47,https://api.github.com/repos/robinhood/ticker/git/commits/1a32be6b8536f89a485c76f0677a4a44c10b2c46,1a32be6b8536f89a485c76f0677a4a44c10b2c46,Rename styable tag to TickerView. (#78)
+naturalwarren,2017-12-18 18:48:45,https://api.github.com/repos/robinhood/ticker/git/commits/6212cc26fadbc915b97a90415c40b271dd41fc56,6212cc26fadbc915b97a90415c40b271dd41fc56,Use TextUtils to perform null check. (#76)
+naturalwarren,2017-12-18 18:48:34,https://api.github.com/repos/robinhood/ticker/git/commits/b9f88ead000069a6b8a9108f1f5f72e7443b4b5d,b9f88ead000069a6b8a9108f1f5f72e7443b4b5d,Style sample in Robinhood colors. (#77)
+jinatonic,2017-12-11 21:37:09,https://api.github.com/repos/robinhood/ticker/git/commits/a02c4910367afecab75a52660480f250bc623c1a,a02c4910367afecab75a52660480f250bc623c1a,Prepare for 1.2.2 release
+jinatonic,2017-12-01 19:21:32,https://api.github.com/repos/robinhood/ticker/git/commits/005fd99a0af1c711e04998be7b4068915e507fa3,005fd99a0af1c711e04998be7b4068915e507fa3,Properly support invalidating TickerDrawMetrics and resizing the columns (#70)
+jinatonic,2017-12-01 19:20:42,https://api.github.com/repos/robinhood/ticker/git/commits/8db4420da1dc384896c1ca6cc1afc266088529fa,8db4420da1dc384896c1ca6cc1afc266088529fa,Support tools:text in view preview (#71)
+jinatonic,2017-12-01 00:41:24,https://api.github.com/repos/robinhood/ticker/git/commits/44f3606f7bc8b9d140d61a4cbe0187a77bb387c5,44f3606f7bc8b9d140d61a4cbe0187a77bb387c5,Update to AS 3.0
+jinatonic,2017-09-28 18:08:19,https://api.github.com/repos/robinhood/ticker/git/commits/15f1021c863de2e9a3d6ba14b355bc4c3dd57aa1,15f1021c863de2e9a3d6ba14b355bc4c3dd57aa1,"Fix debounce when setting the same text on ticker (#64)
+
+* Fix debounce when setting the same text on ticker
+
+* check null"
+jinatonic,2017-09-21 01:03:55,https://api.github.com/repos/robinhood/ticker/git/commits/3c7e5fecebc9ec7066411c0845b6cd76609cb40f,3c7e5fecebc9ec7066411c0845b6cd76609cb40f,[release] Prepare for 1.2.1 release
+jinatonic,2017-09-21 00:59:26,https://api.github.com/repos/robinhood/ticker/git/commits/4127488e7d1f640110a0ea4922dbc7c3656fc8e9,4127488e7d1f640110a0ea4922dbc7c3656fc8e9,Allow setting default text and character list via XML (#62)
+jinatonic,2017-09-21 00:58:31,https://api.github.com/repos/robinhood/ticker/git/commits/70e4cb2a42951b31d1c404741a93f311959d13bd,70e4cb2a42951b31d1c404741a93f311959d13bd,"Add support for getText() and use it to dictate the default animating behavior (#61)
+
+* [getter] Add getter to the last set text on the view
+
+* update default animate to use the last set text"
+jinatonic,2017-09-21 00:36:20,https://api.github.com/repos/robinhood/ticker/git/commits/3c20c04dd832825be18cbbab8c71293d7f4fc521,3c20c04dd832825be18cbbab8c71293d7f4fc521,[misc] Update build tools to 26.0.1
+jinatonic,2017-09-21 00:08:23,https://api.github.com/repos/robinhood/ticker/git/commits/9573d1bd43b1e442d1eca4545f02010281582b50,9573d1bd43b1e442d1eca4545f02010281582b50,[misc] Update dependencies to latest
+jinatonic,2017-04-28 18:29:30,https://api.github.com/repos/robinhood/ticker/git/commits/f2da542951c9cbfbd72fee3f30ac3fe2fcd76746,f2da542951c9cbfbd72fee3f30ac3fe2fcd76746,Prepare for 1.2.0 release
+jinatonic,2017-04-28 18:19:44,https://api.github.com/repos/robinhood/ticker/git/commits/976e77628ea8a7610e2555574812a1de2b2752df,976e77628ea8a7610e2555574812a1de2b2752df,"Support textStyle (#50)
+
+* Support textStyle
+
+* reset longestcharwidth in invalidate
+
+* Use typeface approach to getting bold / italic instead
+
+* Use default typeface on paint"
+jinatonic,2017-04-27 23:19:47,https://api.github.com/repos/robinhood/ticker/git/commits/1e399cd9a5c8aa25db5263b945d4ee87533540c5,1e399cd9a5c8aa25db5263b945d4ee87533540c5,"Support text shadow (#49)
+
+* Support text shadow
+
+* Reorder attributes"
+jinatonic,2017-04-26 21:06:19,https://api.github.com/repos/robinhood/ticker/git/commits/1946d6b6818d0027b5d110b3394ec576697ac7d4,1946d6b6818d0027b5d110b3394ec576697ac7d4,Update gradle to 2.3.1
+jinatonic,2017-04-16 20:51:19,https://api.github.com/repos/robinhood/ticker/git/commits/7323115103f58e73df27d939f3bb662443a93d85,7323115103f58e73df27d939f3bb662443a93d85,[levenshtein][bug] Fix bug when # of changes exceeds max length of text (#47)
+jinatonic,2016-11-08 18:15:42,https://api.github.com/repos/robinhood/ticker/git/commits/93def31053e18d84d8a9cc414fd19f8f7a79d848,93def31053e18d84d8a9cc414fd19f8f7a79d848,[Prepare for 1.1.1 release (#37)
+jinatonic,2016-09-23 01:14:51,https://api.github.com/repos/robinhood/ticker/git/commits/dc550db6bd2e17ef9f115bb2a95047f386cc30c1,dc550db6bd2e17ef9f115bb2a95047f386cc30c1,"Add minimal support for arbitrary characters (#34)
+
+This change adds minimum support for displaying arbitrary characters that are not defined
+in the character list. For any character that we try to animate to/from that we don't have
+an index for, it will simply assume that the index is at the beginning of the list and
+animate accordingly."
+jinatonic,2016-08-24 21:45:54,https://api.github.com/repos/robinhood/ticker/git/commits/b675feee5929b7cfcecf6bb20858b764afcee4a4,b675feee5929b7cfcecf6bb20858b764afcee4a4,Update to new build tools and support libs
+jinatonic,2016-08-11 18:33:23,https://api.github.com/repos/robinhood/ticker/git/commits/ce3138e16e8e98fcc800b1e920405bd4b6aa19f7,ce3138e16e8e98fcc800b1e920405bd4b6aa19f7,Prepare for 1.1.1-SNAPSHOT (#29)
+jinatonic,2016-08-11 18:30:32,https://api.github.com/repos/robinhood/ticker/git/commits/e31fd474fb1e16263b18dff9b5f03d74f82a98b9,e31fd474fb1e16263b18dff9b5f03d74f82a98b9,"Prepare for 1.1.0 release (#28)
+
+Released"
+jinatonic,2016-08-11 16:46:18,https://api.github.com/repos/robinhood/ticker/git/commits/7e1ef07e53453534267b1b9f1ee9e3d86f356446,7e1ef07e53453534267b1b9f1ee9e3d86f356446,Fix checkForRelayout to not depend on measurespec (#27)
+jinatonic,2016-08-11 00:32:44,https://api.github.com/repos/robinhood/ticker/git/commits/c0e4883972410408ccae99f157ad1106d459fe89,c0e4883972410408ccae99f157ad1106d459fe89,Properly fix lint warnings (#26)
+jinatonic,2016-08-10 22:05:59,https://api.github.com/repos/robinhood/ticker/git/commits/1eedbde5cdac2b02de48d1143f7b705accb05977,1eedbde5cdac2b02de48d1143f7b705accb05977,"Add support for adding/removing custom animator listeners (#25)
+
+* Add support for adding/removing custom animator listeners
+
+* Make animator final"
+jinatonic,2016-08-10 19:47:57,https://api.github.com/repos/robinhood/ticker/git/commits/1f66448775e28e1c75c8f930dd4e23449153d8d1,1f66448775e28e1c75c8f930dd4e23449153d8d1,Fix setText when we are not animating the text (#24)
+jinatonic,2016-08-01 18:11:40,https://api.github.com/repos/robinhood/ticker/git/commits/f061d1b4327ed887a66587ce29f2a74dcbf65426,f061d1b4327ed887a66587ce29f2a74dcbf65426,Fix lint errors in documentation and grammar (#21)
+jinatonic,2016-07-30 22:50:08,https://api.github.com/repos/robinhood/ticker/git/commits/0e32f7756a03c111251b2ccf8fd89cee6bb3ed03,0e32f7756a03c111251b2ccf8fd89cee6bb3ed03,"Implement Levenshtein distance algorithm to compute min edit distance (#20)
+
+* Implement Levenshtein distance algorithm to compute min edit distance for replacing text
+
+* Update TickerColumnManager test
+
+* Remove animate parameter from `TickerColumnManager#setText`
+
+* Make ACTIONs package private"
+jinatonic,2016-07-29 23:00:02,https://api.github.com/repos/robinhood/ticker/git/commits/15241a076a6ed69ffdf4f6d6f5f4c0d03fbe96ef,15241a076a6ed69ffdf4f6d6f5f4c0d03fbe96ef,"Measurement optimizations and remeasure after animation completes (#19)
+
+* Re-measure view's width after animation completes
+
+* Add custom attribute for animateMeasurementChange
+
+* Add warning to javadoc"
+jinatonic,2016-07-29 17:58:53,https://api.github.com/repos/robinhood/ticker/git/commits/a622019b72d4baed8d7ea606bc509695b4197f56,a622019b72d4baed8d7ea606bc509695b4197f56,Update to 1.0.2-SNAPSHOT (#18)
+jinatonic,2016-07-25 21:15:39,https://api.github.com/repos/robinhood/ticker/git/commits/865531fd726499e9333d1c83b1be5fcf932dd841,865531fd726499e9333d1c83b1be5fcf932dd841,"Prepare for 1.0.1 release (#14)
+
+* Prepare for 1.0.1 release
+
+* Update README.md to use 1.0.1"
+jinatonic,2016-07-25 21:04:34,https://api.github.com/repos/robinhood/ticker/git/commits/228f477086877965094b68fd6ee0b4a751631405,228f477086877965094b68fd6ee0b4a751631405,Add support to `android:textAppearance` and migrate `textColor` and `textSize` to use `android:` namespace (#13)
+jinatonic,2016-07-21 00:20:17,https://api.github.com/repos/robinhood/ticker/git/commits/45023af61cc85f2d3cb992135be77dde876142b4,45023af61cc85f2d3cb992135be77dde876142b4,"Update README.md to take the new APIs into account (gravity, typeface) (#9)"
+jinatonic,2016-07-20 20:15:08,https://api.github.com/repos/robinhood/ticker/git/commits/272ea09915d6af146909135912c29c43ba611627,272ea09915d6af146909135912c29c43ba611627,"Add support for `android:gravity` (#8)
+
+* Add support android:gravity
+
+* Update `canvasFrame` to `viewBounds` and renamed `onTextPaintChanged` to `onTextPaintMeasurementChanged`"
+mandrizzle,2016-07-20 17:21:38,https://api.github.com/repos/robinhood/ticker/git/commits/bb4fb925dcb3c559b1d9025032d2e3c49b12b537,bb4fb925dcb3c559b1d9025032d2e3c49b12b537,"Stop extending ArrayList in TickerColumnManager (#5)
+
+This is a textbook example for using composition over inheritance. By extending ArrayList, we are adding a bunch of unnecessary methods to this classes contract that is not needed. On top of that, it would be strange, and confusing, if someone was to do `List<TickerColumn> columns = new TickerColumnManager()`."
+Jawnnypoo,2016-07-20 02:11:32,https://api.github.com/repos/robinhood/ticker/git/commits/7d9b2dbe0b0b698c44724aee3c1f116257f699ac,7d9b2dbe0b0b698c44724aee3c1f116257f699ac,"Allowing setting animation duration in XML (#2)
+
+* Allowing setting animation duration in XML
+
+* Duration as int instead of long
+
+* Keep variable as a long, just wanted to change the default to an int"
+Jawnnypoo,2016-07-20 02:03:09,https://api.github.com/repos/robinhood/ticker/git/commits/8a3321810f015cfe9135e29a21c6617d3c905628,8a3321810f015cfe9135e29a21c6617d3c905628,Add getter and setter for typeface (#3)
+Jawnnypoo,2016-07-20 01:44:57,https://api.github.com/repos/robinhood/ticker/git/commits/34f9289a2b61902fccf8449ae0f00887b03b3088,34f9289a2b61902fccf8449ae0f00887b03b3088,Remove app_name string (#1)
+jinatonic,2016-07-18 22:32:07,https://api.github.com/repos/robinhood/ticker/git/commits/0c7863c89f7a755f3a82ad4befb3c13cee2dfa92,0c7863c89f7a755f3a82ad4befb3c13cee2dfa92,Fix lint errors for 1.0.0 release
+jinatonic,2016-07-15 22:36:06,https://api.github.com/repos/robinhood/ticker/git/commits/ed58b8bb2006ddd1816c636866b3b019ddc7c281,ed58b8bb2006ddd1816c636866b3b019ddc7c281,Add missing gradle.properties into ticker library module
+jinatonic,2016-07-15 22:36:06,https://api.github.com/repos/robinhood/ticker/git/commits/2658f6d2b4581d11f3060561207c4efd52373668,2658f6d2b4581d11f3060561207c4efd52373668,Prepare for 1.0.0 release
+jinatonic,2016-07-15 22:23:56,https://api.github.com/repos/robinhood/ticker/git/commits/96a8c808846a6c44621f45557c8c81b076bbea62,96a8c808846a6c44621f45557c8c81b076bbea62,Update README again for perf test
+jinatonic,2016-07-15 21:46:19,https://api.github.com/repos/robinhood/ticker/git/commits/f4c8edecdd7c7d1acf4ef75651b9030506c831bb,f4c8edecdd7c7d1acf4ef75651b9030506c831bb,Update README to use hard links to assets
+jinatonic,2016-07-15 21:42:35,https://api.github.com/repos/robinhood/ticker/git/commits/cf2fdc85bfe24aae3e2e838425c969be665fa736,cf2fdc85bfe24aae3e2e838425c969be665fa736,[ticker] Initial commit

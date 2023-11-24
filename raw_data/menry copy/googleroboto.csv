@@ -1,0 +1,563 @@
+roboto,The Roboto family of fonts
+username,timestamp,url,sha,message
+m4rc1e,2018-02-06 15:12:10,https://api.github.com/repos/google/roboto/git/commits/1fa5f4bbab2cc9e2b77a409d50bedc7e37478228,1fa5f4bbab2cc9e2b77a409d50bedc7e37478228,Update Webfont info
+davelab6,2017-08-02 15:35:30,https://api.github.com/repos/google/roboto/git/commits/5700de83856781fa0c097a349e46dbaae5792cb0,5700de83856781fa0c097a349e46dbaae5792cb0,"Merge pull request #257 from SimonBiggs/master
+
+Requires Python 2, not 3."
+SimonBiggs,2017-06-05 03:53:24,https://api.github.com/repos/google/roboto/git/commits/c09bac0884c2c4f17cc921f48392b72c4c024805,c09bac0884c2c4f17cc921f48392b72c4c024805,"Requires Python 2, not 3.
+
+It appears that roboto dependencies currently require Python 2. In particular https://github.com/robofab-developers/robofab.git@62229c4ea33c324e698766d3700ca9a47efcdeb6 .
+
+
+```
+Collecting git+https://github.com/robofab-developers/robofab.git@62229c4ea33c324e698766d3700ca9a47efcdeb6 (from -r requirements.txt (line 11))
+  Cloning https://github.com/robofab-developers/robofab.git (to 62229c4ea33c324e698766d3700ca9a47efcdeb6) to /tmp/pip-xnipby8r-build
+  Could not find a tag or branch '62229c4ea33c324e698766d3700ca9a47efcdeb6', assuming commit.
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File ""<string>"", line 1, in <module>
+      File ""/tmp/pip-xnipby8r-build/setup.py"", line 15
+        print ""*** Warning: FontTools needs the numpy library for some operations, see:""
+                                                                                       ^
+    SyntaxError: Missing parentheses in call to 'print'
+    
+    ----------------------------------------
+Command ""python setup.py egg_info"" failed with error code 1 in /tmp/pip-xnipby8r-build/
+```"
+davelab6,2017-05-25 19:40:37,https://api.github.com/repos/google/roboto/git/commits/ab4876f650a4aeb9b661c83fee47f908c739bb70,ab4876f650a4aeb9b661c83fee47f908c739bb70,V2.138 Update (Merged pull request #254 from m4rc1e/v2.138)
+m4rc1e,2017-05-25 10:17:12,https://api.github.com/repos/google/roboto/git/commits/a3614186382526dd50e1e458a58d7683a697a544,a3614186382526dd50e1e458a58d7683a697a544,Bump version
+m4rc1e,2017-05-24 18:11:19,https://api.github.com/repos/google/roboto/git/commits/bc7f0fc5ec3d84e3e5808442ccde83af5118df41,bc7f0fc5ec3d84e3e5808442ccde83af5118df41,"updated requirements
+
+Needed to update cu2qu dependency and its sub dependencies.
+
+Previous version didn't reverse every glyph contour correctly,
+https://github.com/googlei18n/cu2qu/blob/master/Lib/cu2qu/ufo.py#L169
+
+Newer version will always reverse every contour."
+m4rc1e,2017-05-24 18:10:46,https://api.github.com/repos/google/roboto/git/commits/e2c5a2f14fcdf5f9464ee59d0dddad683ea057a1,e2c5a2f14fcdf5f9464ee59d0dddad683ea057a1,"Fix composite glyph flags, #251.
+
+The dependency ufo2ft had a bug, https://github.com/googlei18n/ufo2ft/issues/136
+which set the flags of composite glyphs incorrectly.
+
+Solving the issue is rather complex. The previous implementation attempted to
+convert cubic splines to quadratic twice, once in fonts_to_quadratic and again
+in compileTTF. The conversion in compileTTF also reversed the contour
+direction. The composite flags were getting set incorrectly in compileTTF's
+conversion. To solve it, we disable conversion in compileTTF and enable the
+reverse_direction parameter in fonts_to_quadratic.
+
+Upgrading the ufo2ft dependency was not a viable option. The interfaces for
+some of its sub dependencies has changed."
+m4rc1e,2017-05-24 18:09:38,https://api.github.com/repos/google/roboto/git/commits/78764ede86ddcdedb42eb9d63c3b24bd8035bb3e,78764ede86ddcdedb42eb9d63c3b24bd8035bb3e,Bump version
+m4rc1e,2017-03-30 10:35:36,https://api.github.com/repos/google/roboto/git/commits/7f99bafaf8ad19ff484958e2a6a3b66f8f72316c,7f99bafaf8ad19ff484958e2a6a3b66f8f72316c,"Update tests.
+
+Since the Condensed now has Medium weights, the font total has increased
+from 18 to 20. The web fonts still have 18 because the Medium Condensed has
+not been hinted. The Black weight webfonts also have their fsSelection and
+fsType bits set back to Regular."
+m4rc1e,2017-03-27 13:28:53,https://api.github.com/repos/google/roboto/git/commits/ac99468625797f3077e612d5d6a8fe9462430d11,ac99468625797f3077e612d5d6a8fe9462430d11,"Do not set fsSelection bit or macStyle bit to Bold on Black styles.
+
+@davelab6 has requested the webfonts have these bits set the Regular,
+https://github.com/google/fonts/pull/710#issuecomment-288907945
+
+This issue has been discussed in the past, #142, #188. There was no clear
+answer. I'm implementing this change so the webfonts better conform to our
+GF spec. This change will only affect the webfonts."
+m4rc1e,2017-03-27 11:41:50,https://api.github.com/repos/google/roboto/git/commits/8ed0c45c33b73c25456c77d87ef9b7395528d3c4,8ed0c45c33b73c25456c77d87ef9b7395528d3c4,refactored chi swap
+davelab6,2017-03-20 19:56:38,https://api.github.com/repos/google/roboto/git/commits/4a1d026a82829d8bca5b5581540bc86982e9d57d,4a1d026a82829d8bca5b5581540bc86982e9d57d,subset webfonts when running make (PR #238 from m4rc1e/web)
+m4rc1e,2017-03-16 12:33:20,https://api.github.com/repos/google/roboto/git/commits/b61ba8c62a9a954e1d172e0e9fca6c20fdc1c617,b61ba8c62a9a954e1d172e0e9fca6c20fdc1c617,"Update web tests
+
+Removed TestFeatures.
+
+This class tested whether c2sc, smcp and unic OT features worked. Since the
+fonts have been subset, the post table has been set to version 3. This has
+an effect on the glyph names.
+https://www.microsoft.com/typography/otspec/post.htm
+
+By changing the table to v3, the test failed because they relied on glyph
+names stored in txt files, res/c2sc_requirements.txt...
+
+The webfonts are derived from the out/RobotoCondensedTTF binaries. These
+binaries have already had these OT features tested in
+scripts/run_general_tests.py."
+m4rc1e,2017-03-15 14:26:37,https://api.github.com/repos/google/roboto/git/commits/ea0e962a5a6dae1a5a0e5d4a27f47542cd2f5e85,ea0e962a5a6dae1a5a0e5d4a27f47542cd2f5e85,subset webfonts when running make
+jamesgk,2016-12-15 23:10:26,https://api.github.com/repos/google/roboto/git/commits/ed2e44b67351f5d3230800c71cc4de3eb22de071,ed2e44b67351f5d3230800c71cc4de3eb22de071,"Merge pull request #217 from google/old-kerning
+
+Don't interpolate kerning"
+jamesgk,2016-10-25 01:29:53,https://api.github.com/repos/google/roboto/git/commits/df9200f250bfe0f0d57aaf0db23cf38ba318807f,df9200f250bfe0f0d57aaf0db23cf38ba318807f,"Merge pull request #209 from google/source-fixup
+
+Source fixup"
+jamesgk,2016-10-12 17:39:17,https://api.github.com/repos/google/roboto/git/commits/99f5f3e7de5798b411cea0c1d05880451cedd114,99f5f3e7de5798b411cea0c1d05880451cedd114,"Merge pull request #207 from google/tonos
+
+Monotonic and polytonic glyph fix"
+jamesgk,2016-07-18 23:03:29,https://api.github.com/repos/google/roboto/git/commits/bc5156c3114752480ebc8231f31de34a284b3924,bc5156c3114752480ebc8231f31de34a284b3924,"Merge pull request #199 from google/src-rename
+
+Rename source UFOs"
+jamesgk,2016-07-14 18:33:08,https://api.github.com/repos/google/roboto/git/commits/f966fa6d2437100f4944ca29a0d59a3cd5d5d1d5,f966fa6d2437100f4944ca29a0d59a3cd5d5d1d5,"Merge pull request #198 from google/generate-glyph
+
+generateGlyph improvement"
+jamesgk,2016-06-23 21:27:59,https://api.github.com/repos/google/roboto/git/commits/f61b7a2a5d09584e6a5923eb819c30e6c89bd0a7,f61b7a2a5d09584e6a5923eb819c30e6c89bd0a7,"Merge pull request #193 from google/fea-fix
+
+Ligature fix"
+jamesgk,2016-06-16 17:57:19,https://api.github.com/repos/google/roboto/git/commits/f5b8b717309e390f8deb0d4abed39cb535b741a8,f5b8b717309e390f8deb0d4abed39cb535b741a8,"Merge pull request #192 from google/test-liga
+
+Update ligature test"
+jamesgk,2016-06-13 23:38:07,https://api.github.com/repos/google/roboto/git/commits/e80ed4b606f8148a21ecf4bec0ad48dfa8c8db88,e80ed4b606f8148a21ecf4bec0ad48dfa8c8db88,"Merge pull request #187 from jungshik/crosbld2
+
+Overhaul CrOS post-processing"
+jamesgk,2016-06-13 23:05:10,https://api.github.com/repos/google/roboto/git/commits/97de1aac97774ccae09eb605c6b31356416d628b,97de1aac97774ccae09eb605c6b31356416d628b,"Merge pull request #191 from google/liga-fix
+
+ffi, ffl ligatures active & prioritized by default"
+jungshik,2016-06-01 08:25:56,https://api.github.com/repos/google/roboto/git/commits/4da89a7bbebec2c2e7a1a907b2870725769ed127,4da89a7bbebec2c2e7a1a907b2870725769ed127,"Overhaul CrOS post-processing
+
+* Add touchup_for_cros.py
+  - Update version (name table) and revision (OS/2)
+  - Drop name table records other than for {pid=3,eid=1,langId=0x409}
+
+* touch_up_web.py
+  - apply_web_specific_fixes is split into 2 parts:
+    apply_web_cros_common_fixes() and
+    apply_web_specific_fixes()
+  - Update version (name table) and revision (OS/2)
+
+* temporary_touchups.py
+  - Add an optional 'is_for_cros' to apply_tempoary_fixes.
+    When is_for_cros is True, usWeightClass is set to 100 for Thin.
+    Tthe latest release version of fontconfig on CrOS does not
+    distinguish between Thin and Light when it's 250 for Thin.
+
+* Makefile
+  - Fix chromeos target"
+jamesgk,2016-06-02 01:10:18,https://api.github.com/repos/google/roboto/git/commits/30af69edd660a84e891aa063bcf70fef95ee70af,30af69edd660a84e891aa063bcf70fef95ee70af,"Merge pull request #185 from google/gdef
+
+Fix GDEF"
+jamesgk,2016-05-10 23:06:04,https://api.github.com/repos/google/roboto/git/commits/530bf3466ab6bfd0b09939f555d9af7df30c268f,530bf3466ab6bfd0b09939f555d9af7df30c268f,"Merge pull request #177 from google/source-cleanup
+
+More source cleanup"
+jamesgk,2016-05-09 20:35:10,https://api.github.com/repos/google/roboto/git/commits/8166899435eab46f0175180cfa71b9954790a236,8166899435eab46f0175180cfa71b9954790a236,"Merge pull request #176 from google/source-cleanup
+
+Source cleanup"
+jamesgk,2016-03-30 23:38:24,https://api.github.com/repos/google/roboto/git/commits/c9a224fcb3f750f932c5d7ee43d3304e8f6115ad,c9a224fcb3f750f932c5d7ee43d3304e8f6115ad,"Merge pull request #173 from google/kerning
+
+Kerning interpolation"
+jamesgk,2016-03-30 23:37:51,https://api.github.com/repos/google/roboto/git/commits/28dc533858be442b35c70d43e20427e1b556bd44,28dc533858be442b35c70d43e20427e1b556bd44,"Merge pull request #171 from google/tests
+
+New tests"
+jamesgk,2016-03-29 20:17:12,https://api.github.com/repos/google/roboto/git/commits/84381a83822e0ef9706e2dc0d9f99f8043c3716d,84381a83822e0ef9706e2dc0d9f99f8043c3716d,"Merge pull request #170 from google/web
+
+Web target fixes"
+jamesgk,2016-03-24 23:16:18,https://api.github.com/repos/google/roboto/git/commits/cd42385fdae097d08f57e0659157af05ff3a31c9,cd42385fdae097d08f57e0659157af05ff3a31c9,"Merge pull request #168 from google/anchor-pos
+
+Don't align anchors after offsetting"
+jamesgk,2016-03-24 18:07:59,https://api.github.com/repos/google/roboto/git/commits/76c9a5dbeba0a805c8f4f3e8838fb418661f63f2,76c9a5dbeba0a805c8f4f3e8838fb418661f63f2,"Merge pull request #167 from google/chi-fix
+
+Use chi.alt instead of x for lowercase chi"
+jamesgk,2016-03-22 23:44:44,https://api.github.com/repos/google/roboto/git/commits/3bf66b3ea35d49b283f1707a61f757eeb136c0b9,3bf66b3ea35d49b283f1707a61f757eeb136c0b9,"Merge pull request #166 from google/sub-tests
+
+Substitution tests"
+jamesgk,2016-03-21 19:11:03,https://api.github.com/repos/google/roboto/git/commits/05357b882003aa0b5d39de8ab2336d74330ee124,05357b882003aa0b5d39de8ab2336d74330ee124,"Merge pull request #141 from KrishMunot/master
+
+Chrome OS"
+jamesgk,2016-03-17 20:12:57,https://api.github.com/repos/google/roboto/git/commits/3275ade84c04c2d6e3c831d8911597504b1883d5,3275ade84c04c2d6e3c831d8911597504b1883d5,"Merge pull request #165 from google/glyph-rename
+
+Clean up features / hotfix for feaLib bug"
+jamesgk,2016-03-16 00:37:00,https://api.github.com/repos/google/roboto/git/commits/9b0846c7e0e85568e8b1ebcaf85e4a3ff8a4997d,9b0846c7e0e85568e8b1ebcaf85e4a3ff8a4997d,"Merge pull request #163 from google/fea-match
+
+Rename glyph classes for kern generation"
+jamesgk,2016-03-11 02:22:26,https://api.github.com/repos/google/roboto/git/commits/413b375cdb5c13264213e60dc4f8866e5fe9d7d9,413b375cdb5c13264213e60dc4f8866e5fe9d7d9,"Merge pull request #162 from google/touchups
+
+Touchup fixes"
+jamesgk,2016-03-02 22:03:27,https://api.github.com/repos/google/roboto/git/commits/62f7b4e10501cce46891e855303aea997b9f95a3,62f7b4e10501cce46891e855303aea997b9f95a3,"Merge pull request #159 from google/android-hotfix
+
+Remove refs to buildnumber in touchup scripts"
+jamesgk,2016-03-02 19:46:59,https://api.github.com/repos/google/roboto/git/commits/a7caae60d45c5a3a3c68e4479edb40c9d042973e,a7caae60d45c5a3a3c68e4479edb40c9d042973e,"Merge pull request #157 from google/no-out
+
+Remove out/ from version control"
+jamesgk,2016-03-02 18:22:13,https://api.github.com/repos/google/roboto/git/commits/61ad6b56f6cbcac6ac2f00cfeedb93fb828692b1,61ad6b56f6cbcac6ac2f00cfeedb93fb828692b1,"Merge pull request #158 from google/android-hotfix
+
+Android hotfix"
+jamesgk,2016-02-29 19:59:07,https://api.github.com/repos/google/roboto/git/commits/b1f9829c355515699d442c99ddecf2374158a4e1,b1f9829c355515699d442c99ddecf2374158a4e1,"Merge pull request #155 from jamesgk/master
+
+Fix up *num features again"
+jamesgk,2016-02-03 00:42:40,https://api.github.com/repos/google/roboto/git/commits/978fcd5a7d3dae153c3534729e6f0ac514e54d69,978fcd5a7d3dae153c3534729e6f0ac514e54d69,"Merge pull request #149 from jamesgk/android
+
+Fix various regressions from current Android binaries"
+jamesgk,2016-01-06 19:14:58,https://api.github.com/repos/google/roboto/git/commits/6831ae5695b88e456589476a6d5de3aaf065685c,6831ae5695b88e456589476a6d5de3aaf065685c,"Merge pull request #145 from jamesgk/android
+
+Update post-production and testing"
+behdad,2015-12-07 10:14:47,https://api.github.com/repos/google/roboto/git/commits/2c343c852a0ae8feb2b376c006f9a5fe1bd8688b,2c343c852a0ae8feb2b376c006f9a5fe1bd8688b,"Merge pull request #137 from jamesgk/ttf-generation
+
+TTF generation"
+KrishMunot,2015-12-02 06:29:05,https://api.github.com/repos/google/roboto/git/commits/82f82e051eb380bb565f8a3d34785a19fdb7b3ce,82f82e051eb380bb565f8a3d34785a19fdb7b3ce,Chrome OS
+behdad,2015-11-26 18:59:27,https://api.github.com/repos/google/roboto/git/commits/82822afb538df428777101a081f254a46fe4a0c7,82822afb538df428777101a081f254a46fe4a0c7,"Merge pull request #138 from jamesgk/fontcrunch-update
+
+Fontcrunch update"
+jamesgk,2015-11-21 02:16:39,https://api.github.com/repos/google/roboto/git/commits/ce48c49f0f4f96e6aca46d59838cbd5964b77d83,ce48c49f0f4f96e6aca46d59838cbd5964b77d83,"Merge pull request #135 from jamesgk/italics
+
+Italics stuff"
+jamesgk,2015-10-23 20:49:36,https://api.github.com/repos/google/roboto/git/commits/0c90349dc0d7069a2893dcad3fc551218ca5be71,0c90349dc0d7069a2893dcad3fc551218ca5be71,"Merge pull request #129 from anthrotype/readme-bool-ops
+
+[README.md] modify instructions for installing booleanOperations"
+jamesgk,2015-10-12 16:53:03,https://api.github.com/repos/google/roboto/git/commits/7d59cab15875fed7c366e2f0521368e63a590f9d,7d59cab15875fed7c366e2f0521368e63a590f9d,"Merge pull request #119 from jamesgk/testing
+
+Use common tests from nototools"
+jamesgk,2015-10-06 19:39:51,https://api.github.com/repos/google/roboto/git/commits/503d1942cb2d087fddc148e178425ef1dc77535e,503d1942cb2d087fddc148e178425ef1dc77535e,"Merge pull request #118 from jamesgk/testing
+
+Further generalize common_tests.py"
+jamesgk,2015-10-06 16:48:10,https://api.github.com/repos/google/roboto/git/commits/c47aca74e901b0ab7cd6bb27908ea9c8617215f6,c47aca74e901b0ab7cd6bb27908ea9c8617215f6,"Merge pull request #116 from jamesgk/testing
+
+Test consolidation"
+jamesgk,2015-10-06 16:47:56,https://api.github.com/repos/google/roboto/git/commits/92bd6f2335936dfdc09aa13bf26591cce066472b,92bd6f2335936dfdc09aa13bf26591cce066472b,"Merge pull request #114 from jamesgk/meta-fix
+
+Provide a hotfix for webfont names"
+jamesgk,2015-09-29 20:46:02,https://api.github.com/repos/google/roboto/git/commits/74bdf5953a7c20cdca0442e1b70a2d3b24072d01,74bdf5953a7c20cdca0442e1b70a2d3b24072d01,"Merge pull request #113 from jamesgk/add-tests
+
+Temporarily disable superscript digit test for web"
+jamesgk,2015-09-29 20:29:05,https://api.github.com/repos/google/roboto/git/commits/08202e2581802067d111b1e0ac3b66e1e8dad03b,08202e2581802067d111b1e0ac3b66e1e8dad03b,"Merge pull request #111 from jamesgk/add-tests
+
+Add family name tests"
+jamesgk,2015-09-21 18:28:04,https://api.github.com/repos/google/roboto/git/commits/3ed96d26a9ce30200c3b8c2bece4101104c6b44e,3ed96d26a9ce30200c3b8c2bece4101104c6b44e,"Merge pull request #110 from jamesgk/shape-fix
+
+Decompose nested components."
+jamesgk,2015-09-09 20:37:35,https://api.github.com/repos/google/roboto/git/commits/558379729452a4409bc632bddd60e5b7f1fdba41,558379729452a4409bc632bddd60e5b7f1fdba41,"Merge pull request #107 from jamesgk/shape-fix
+
+Fix up *num features"
+jamesgk,2015-09-02 18:27:08,https://api.github.com/repos/google/roboto/git/commits/c5d7c05a8aa30834d5b3514c506d0a574cfb7084,c5d7c05a8aa30834d5b3514c506d0a574cfb7084,"Merge pull request #105 from jamesgk/shape-fix
+
+Don't use RGlyph.getParent."
+jamesgk,2015-09-02 00:01:07,https://api.github.com/repos/google/roboto/git/commits/da5a7c35c3bc024415ac521caf36d61e6e7d36cf,da5a7c35c3bc024415ac521caf36d61e6e7d36cf,"Merge pull request #103 from jamesgk/add-tests
+
+Add test to compare glyph areas between weights"
+jamesgk,2015-08-31 23:50:46,https://api.github.com/repos/google/roboto/git/commits/6e08f23f346f60cd861c2115e6f780603bbc7ac3,6e08f23f346f60cd861c2115e6f780603bbc7ac3,"Merge pull request #100 from jamesgk/shape-fix
+
+Always deal with floats when mixing font masters."
+dougfelt,2015-08-21 01:12:12,https://api.github.com/repos/google/roboto/git/commits/545be2d7b8074953666c24e4a45beb68e3599219,545be2d7b8074953666c24e4a45beb68e3599219,"Merge pull request #97 from google/delivery-updates
+
+Delivery updates"
+jamesgk,2015-06-29 19:08:51,https://api.github.com/repos/google/roboto/git/commits/63121378f3205be133a08804d5fdce23c3f6198d,63121378f3205be133a08804d5fdce23c3f6198d,"Merge pull request #65 from google/delivery-updates
+
+Delivery updates"
+jamesgk,2015-06-22 22:22:55,https://api.github.com/repos/google/roboto/git/commits/f8d800450adef5fc506fb2dd11aa6201fce71a5b,f8d800450adef5fc506fb2dd11aa6201fce71a5b,"Merge pull request #51 from google/name-table-fix
+
+Correct metadata related to font names and weights."
+behdad,2015-06-21 00:39:18,https://api.github.com/repos/google/roboto/git/commits/0efa603cda97c9920ebb377ac8883dbef671e1aa,0efa603cda97c9920ebb377ac8883dbef671e1aa,"Merge pull request #63 from google/contour-fix
+
+Contour fix"
+jamesgk,2015-06-19 20:49:46,https://api.github.com/repos/google/roboto/git/commits/12671eac9ed0f6be5fff8202d115d56efca864ae,12671eac9ed0f6be5fff8202d115d56efca864ae,"Merge pull request #61 from google/delivery-updates
+
+Delivery updates"
+behdad,2015-06-12 18:22:38,https://api.github.com/repos/google/roboto/git/commits/6b9049136f8784b1dd0303cee246e8fa2273f40c,6b9049136f8784b1dd0303cee246e8fa2273f40c,"Merge pull request #54 from moyogo/readme-nototools
+
+Nototools moved to https://github.com/googlei18n/nototools"
+moyogo,2015-06-12 09:43:35,https://api.github.com/repos/google/roboto/git/commits/55406141361c900ead51f51f57f2657070314670,55406141361c900ead51f51f57f2657070314670,Nototools moved to https://github.com/googlei18n/nototools
+jamesgk,2015-06-12 00:39:31,https://api.github.com/repos/google/roboto/git/commits/84ec6e99fe55ac40f4ca7824aceea3d4105a84bc,84ec6e99fe55ac40f4ca7824aceea3d4105a84bc,"Merge pull request #52 from google/mix-glyph-fix
+
+Don't convert mixed glyph values to ints."
+jamesgk,2015-05-31 18:21:37,https://api.github.com/repos/google/roboto/git/commits/01399c7f2f5ca881e2ed6df9c83e44145d9ea6ff,01399c7f2f5ca881e2ed6df9c83e44145d9ea6ff,"List eog with post-production dependencies.
+
+Part of #41"
+roozbehp,2015-05-28 18:13:04,https://api.github.com/repos/google/roboto/git/commits/19006a1dec1b7b0bf6859bf078ee2da46d15f152,19006a1dec1b7b0bf6859bf078ee2da46d15f152,Add link to Google Fonts page to README.md
+roozbehp,2015-05-27 16:19:29,https://api.github.com/repos/google/roboto/git/commits/c1fbee1a4bfe25aec8c0c4c4bceaa382825da95a,c1fbee1a4bfe25aec8c0c4c4bceaa382825da95a,Remove old Windows build file.
+roozbehp,2015-05-23 01:38:16,https://api.github.com/repos/google/roboto/git/commits/f37439d6a7d7fae260f5367dee678f6ec69e4743,f37439d6a7d7fae260f5367dee678f6ec69e4743,"[minor] Move ""Setup"" in README.md one level down."
+roozbehp,2015-05-23 01:37:12,https://api.github.com/repos/google/roboto/git/commits/c52d46477bd97132c84ebb19ed1b53135a8c9f0d,c52d46477bd97132c84ebb19ed1b53135a8c9f0d,Add general project description to README.md.
+roozbehp,2015-05-21 19:53:35,https://api.github.com/repos/google/roboto/git/commits/cf030aba45524c3381a239fae6fdfe5510b7d2f9,cf030aba45524c3381a239fae6fdfe5510b7d2f9,Bump up build number to 01289 to take a cut for Android.
+roozbehp,2015-05-21 19:50:12,https://api.github.com/repos/google/roboto/git/commits/1ae5114b1905454e735e41aea6022a73e49bd492,1ae5114b1905454e735e41aea6022a73e49bd492,"Remove various hot fixes from touchup_for_android.py.
+
+These are now fixed in the fonts themselves."
+roozbehp,2015-05-20 01:25:51,https://api.github.com/repos/google/roboto/git/commits/7f4a0fe2d3148c2b778aea2b0b22336b6ad40b3a,7f4a0fe2d3148c2b778aea2b0b22336b6ad40b3a,"Merge pull request #36 from google/android
+
+Add make target to build Android fonts from hinted fonts."
+roozbehp,2015-05-17 01:45:31,https://api.github.com/repos/google/roboto/git/commits/204daa733fab8f7cc22cc7b707dcbfe70bbfd3bc,204daa733fab8f7cc22cc7b707dcbfe70bbfd3bc,Remove extra zero from version number.
+roozbehp,2015-05-16 21:09:10,https://api.github.com/repos/google/roboto/git/commits/82f503569e1f08a91b7b0c4d0a68235ebe6ca8ce,82f503569e1f08a91b7b0c4d0a68235ebe6ca8ce,Bump up build number to 01288 to take a cut for Android.
+roozbehp,2015-05-16 20:45:08,https://api.github.com/repos/google/roboto/git/commits/1d2bd3316c3dbc66632057c7052925228f4a983c,1d2bd3316c3dbc66632057c7052925228f4a983c,"Add make target to build Android fonts from hinted fonts.
+
+The change is temporary, while we confirm the quality of our new
+build toolchain. The target should go away once we switch completely
+to the new toolchain.
+
+This also removes the code that removed tab and unassigned characters
+from the Android target, since the tab now has the same width as
+space and the unassigned characters are no longer in the fonts."
+roozbehp,2015-04-30 01:41:19,https://api.github.com/repos/google/roboto/git/commits/d5d89e40dbd2d2162bf82851770f5b63a790cc09,d5d89e40dbd2d2162bf82851770f5b63a790cc09,"Merge pull request #32 from google/vertical-metrics
+
+Add tests for vertical metrics of individual glyphs."
+roozbehp,2015-04-29 21:32:39,https://api.github.com/repos/google/roboto/git/commits/a4ef18e29638cd1a0c814adb762177a342898eeb,a4ef18e29638cd1a0c814adb762177a342898eeb,"Add tests for vertical metrics of individual glyphs.
+
+The new tests check that every glyph fits in the [yMin, yMax] range.
+
+Also switch run_general_tests.py to test the hinted fonts instead of
+the unhinted fonts."
+roozbehp,2015-04-29 21:29:23,https://api.github.com/repos/google/roboto/git/commits/0dfb011d31e906a53cffa1c3176628410086318d,0dfb011d31e906a53cffa1c3176628410086318d,"Remove Glass target.
+
+No longer intended to be used."
+roozbehp,2015-04-29 21:26:51,https://api.github.com/repos/google/roboto/git/commits/1de16826dae2b41e4a588c75c1e8eaefdf81f068,1de16826dae2b41e4a588c75c1e8eaefdf81f068,Make the output of render.sh a little smaller.
+roozbehp,2015-04-29 20:59:57,https://api.github.com/repos/google/roboto/git/commits/88b72de2b239c05de4ba324b5b89683da41f4650,88b72de2b239c05de4ba324b5b89683da41f4650,Stop creating script-specific subsets for Google Fonts.
+roozbehp,2015-04-29 20:38:19,https://api.github.com/repos/google/roboto/git/commits/ddbda1e38054655ad33fcfb3162f6eda473735c9,ddbda1e38054655ad33fcfb3162f6eda473735c9,Add IPA samples from the Noto repostory.
+roozbehp,2015-04-28 00:08:55,https://api.github.com/repos/google/roboto/git/commits/3153a554bf3686d51043b5c2631b1d1a8bcdc540,3153a554bf3686d51043b5c2631b1d1a8bcdc540,"Manually merge pull request #28 from google/smcp.
+
+Add tests and requirements for the 'smcp' feature."
+roozbehp,2015-04-27 23:58:38,https://api.github.com/repos/google/roboto/git/commits/c0fd8ad77c8203d0e3baaf71b77ae1da6ed3f80e,c0fd8ad77c8203d0e3baaf71b77ae1da6ed3f80e,"Merge pull request #27 from google/st-ligatures
+
+Add tests for s-t and longs-t discretionary ligatures."
+roozbehp,2015-04-27 23:39:53,https://api.github.com/repos/google/roboto/git/commits/1e26bfe5302f43f8690040143af65c9d5809f2fd,1e26bfe5302f43f8690040143af65c9d5809f2fd,"Merge pull request #19 from google/soft-dotted
+
+Add test for soft-dotted characters."
+roozbehp,2015-04-27 22:07:44,https://api.github.com/repos/google/roboto/git/commits/635a03a9cf5e7f61012732b1d93d01e0caa9f719,635a03a9cf5e7f61012732b1d93d01e0caa9f719,Fix typo in variable name.
+roozbehp,2015-04-27 21:56:09,https://api.github.com/repos/google/roboto/git/commits/dbf05262b14e4eb956cb65dfa2566fbf5703f1f6,dbf05262b14e4eb956cb65dfa2566fbf5703f1f6,Add tests and requirements for the 'smcp' feature.
+roozbehp,2015-04-27 06:29:27,https://api.github.com/repos/google/roboto/git/commits/8faeb294ae6ae7cc3f4a90915d3660830c76ecef,8faeb294ae6ae7cc3f4a90915d3660830c76ecef,Add tests for s-t and longs-t discretionary ligatures.
+roozbehp,2015-04-26 01:29:41,https://api.github.com/repos/google/roboto/git/commits/bde0bbc0c82b56ede1ebc7e7c67091a2276548ea,bde0bbc0c82b56ede1ebc7e7c67091a2276548ea,Test 'numr' and superscript digits to have the same width.
+roozbehp,2015-04-26 01:06:20,https://api.github.com/repos/google/roboto/git/commits/537c5d34214626d6300c5b7ea6df9b0be89f0188,537c5d34214626d6300c5b7ea6df9b0be89f0188,Add parameters to layout.py to pass down to HarfBuzz.
+roozbehp,2015-04-25 18:03:44,https://api.github.com/repos/google/roboto/git/commits/1d2b292537018d524fbf31a03148c6d24bb6c051,1d2b292537018d524fbf31a03148c6d24bb6c051,"Merge pull request #21 from google/readme-instructions
+
+Updated readme instructions"
+roozbehp,2015-04-25 01:30:04,https://api.github.com/repos/google/roboto/git/commits/a72e363911890d861842aae75f9e9efb1ada1fc1,a72e363911890d861842aae75f9e9efb1ada1fc1,"Refactor some common code in layout.py.
+
+No functionality change."
+roozbehp,2015-04-25 00:28:35,https://api.github.com/repos/google/roboto/git/commits/bd23b673562f8a6c8a10fe5945fe89d9fe0b48ed,bd23b673562f8a6c8a10fe5945fe89d9fe0b48ed,"Merge pull request #20 from google/samples
+
+Make render.sh runnable from any directory."
+roozbehp,2015-04-25 00:23:00,https://api.github.com/repos/google/roboto/git/commits/8eac96d0ae96f709256daf227ed5d3d2e334690f,8eac96d0ae96f709256daf227ed5d3d2e334690f,Minor: Change ${BASH_SOURCE[0]} to $0 in render.sh.
+roozbehp,2015-04-24 17:09:15,https://api.github.com/repos/google/roboto/git/commits/90dc3a50745ed0b398ee01319853f6d9c3d01c8a,90dc3a50745ed0b398ee01319853f6d9c3d01c8a,Make render.sh runnable from any directory.
+roozbehp,2015-04-24 16:50:11,https://api.github.com/repos/google/roboto/git/commits/c79cb0093a44b0f21d0c71319c028e3a308e1d35,c79cb0093a44b0f21d0c71319c028e3a308e1d35,Rename get_shapes to get_glyphs in layout.py.
+roozbehp,2015-04-24 16:47:26,https://api.github.com/repos/google/roboto/git/commits/ee1366b5f3c83348f13535a063216bf6854c49d9,ee1366b5f3c83348f13535a063216bf6854c49d9,"Look at actual shapes instead of advances.
+
+The previous code was mistakenly looking at advances of glyphs,
+instead of the glyphs themselves."
+roozbehp,2015-04-24 08:11:10,https://api.github.com/repos/google/roboto/git/commits/16032d5e0f1170a493e317f3c7fe6ff2c7f2e0d5,16032d5e0f1170a493e317f3c7fe6ff2c7f2e0d5,"Add test for soft-dotted characters.
+
+The test is added to run_exhaustive_tests.py, and checks all
+combinations of soft-dotted characters with combining marks above.
+
+It's disabled for now, since the fonts fail it."
+roozbehp,2015-04-24 08:05:27,https://api.github.com/repos/google/roboto/git/commits/426d835d159819f1d40d3c8e88ac6cdd6a937a3c,426d835d159819f1d40d3c8e88ac6cdd6a937a3c,Add sample texts for soft-dotted characters.
+roozbehp,2015-04-24 06:36:00,https://api.github.com/repos/google/roboto/git/commits/fbb632c66af6ed4f68696c664923d7921c474ed6,fbb632c66af6ed4f68696c664923d7921c474ed6,Add several more sample texts based on internal bugs.
+roozbehp,2015-04-23 17:49:01,https://api.github.com/repos/google/roboto/git/commits/3bf2e72a20942bed91a62b58f8329502cee69f78,3bf2e72a20942bed91a62b58f8329502cee69f78,"Merge pull request #12 from google/samples
+
+Adding various samples texts and updating the render script to be able to take them."
+roozbehp,2015-04-23 17:48:00,https://api.github.com/repos/google/roboto/git/commits/fb5341f8b2a67d51bbaa1b19277ccfbb88bb0d39,fb5341f8b2a67d51bbaa1b19277ccfbb88bb0d39,Add samples for Latin small caps used in phonetics.
+roozbehp,2015-04-23 07:19:30,https://api.github.com/repos/google/roboto/git/commits/7db8acbb71c76b2dc17484fc66403430b4598ef4,7db8acbb71c76b2dc17484fc66403430b4598ef4,"Add more sample texts for testing.
+
+IPA contour tones, Latin and Cyrillic doubled-O cases, and latin
+small capitals are added."
+roozbehp,2015-04-23 05:47:02,https://api.github.com/repos/google/roboto/git/commits/48c6bb5ed65359453d6ed467f86c853f334f3b09,48c6bb5ed65359453d6ed467f86c853f334f3b09,Whitespace cleanup in samples.
+roozbehp,2015-04-23 02:25:40,https://api.github.com/repos/google/roboto/git/commits/200ef3e043d32c728247b11180d8ea540e7af347,200ef3e043d32c728247b11180d8ea540e7af347,Add various sample text files.
+roozbehp,2015-04-23 02:24:42,https://api.github.com/repos/google/roboto/git/commits/1479164b3de1b58f4eec0e71b943562aaeb60ca5,1479164b3de1b58f4eec0e71b943562aaeb60ca5,"Modify render.sh to display text in all font instances.
+
+The input is also now read from a text file."
+roozbehp,2015-04-22 17:24:47,https://api.github.com/repos/google/roboto/git/commits/141f74faae07cc9c4b015a70a68a30d17b8bb7cf,141f74faae07cc9c4b015a70a68a30d17b8bb7cf,"Merge pull request #8 from google/readme-instructions
+
+Merge build updates to readme file from James."
+roozbehp,2015-04-18 00:26:10,https://api.github.com/repos/google/roboto/git/commits/b6dd3c12ecf5db071af8b94ef701a52cb91e88a8,b6dd3c12ecf5db071af8b94ef701a52cb91e88a8,Clean up Makefile and build-v2.py path references.
+roozbehp,2015-04-18 00:12:14,https://api.github.com/repos/google/roboto/git/commits/aa64beca82fb32b3b3e32d1a8a8640330df83876,aa64beca82fb32b3b3e32d1a8a8640330df83876,"More style fixes for build-v2.py.
+
+Based on https://google-styleguide.googlecode.com/svn/trunk/pyguide.html."
+roozbehp,2015-04-17 23:57:10,https://api.github.com/repos/google/roboto/git/commits/6510203ca14d48c65465b50db6492123024fa702,6510203ca14d48c65465b50db6492123024fa702,Convert DOS line ending to Unix line endings.
+roozbehp,2015-04-17 23:55:08,https://api.github.com/repos/google/roboto/git/commits/5c6f75ac74a0184e25632c841d9a14c282f810ff,5c6f75ac74a0184e25632c841d9a14c282f810ff,Minor style fixes to build-v2.py.
+roozbehp,2015-04-17 23:34:04,https://api.github.com/repos/google/roboto/git/commits/9d475513ce030ad113099f092368745d5fc4cd19,9d475513ce030ad113099f092368745d5fc4cd19,Remove no-longer-relevant touchup_for_glass.py.
+roozbehp,2015-04-17 23:31:59,https://api.github.com/repos/google/roboto/git/commits/47da0b11baf095d71ddf59ebff3a4ea65702592b,47da0b11baf095d71ddf59ebff3a4ea65702592b,Fix module description of roboto_data.py.
+roozbehp,2015-04-17 23:31:33,https://api.github.com/repos/google/roboto/git/commits/4c5862f0a92c6877f2c67ace38252cbd1cd41929,4c5862f0a92c6877f2c67ace38252cbd1cd41929,Remove unused import from common_tests.py.
+roozbehp,2015-04-17 21:56:45,https://api.github.com/repos/google/roboto/git/commits/b68243fc4037ac2de0a591f00dcea510b9ed5320,b68243fc4037ac2de0a591f00dcea510b9ed5320,Update the unhinted TTF fonts to the March 31 delivery.
+roozbehp,2015-04-17 17:09:51,https://api.github.com/repos/google/roboto/git/commits/502d6bd17afead6c44cbea9358725531c4375527,502d6bd17afead6c44cbea9358725531c4375527,Minor style modification in fontbuild/Build.py.
+roozbehp,2015-04-17 17:08:18,https://api.github.com/repos/google/roboto/git/commits/5164de2eae3c23b68004585db989088cd28d84db,5164de2eae3c23b68004585db989088cd28d84db,Add license headers to Makefile.
+roozbehp,2015-04-17 03:23:56,https://api.github.com/repos/google/roboto/git/commits/99700cf7a4d93bcd9f359f51b5a9538ea5865cf9,99700cf7a4d93bcd9f359f51b5a9538ea5865cf9,Fix converage tests to ignore Unicode 8.0 characters.
+roozbehp,2015-04-17 00:51:37,https://api.github.com/repos/google/roboto/git/commits/364b2c168d7dfe46cf394bdfe98b37b34f9133fc,364b2c168d7dfe46cf394bdfe98b37b34f9133fc,Add a README to the hinted directory.
+roozbehp,2015-04-16 23:01:46,https://api.github.com/repos/google/roboto/git/commits/68568378b88d520c3fb5252922f9e95af540eff0,68568378b88d520c3fb5252922f9e95af540eff0,"Rename CONTRIBUTING to CONTRIBUTING.md.
+
+To see if github shows it as marked up text."
+roozbehp,2015-04-16 22:53:44,https://api.github.com/repos/google/roboto/git/commits/ed3ae9c17dc2748c689e90c7262f4162c91c3071,ed3ae9c17dc2748c689e90c7262f4162c91c3071,Add CONTRIBUTING file for contributor guidance.
+roozbehp,2015-04-16 22:47:28,https://api.github.com/repos/google/roboto/git/commits/d6b138de00af0df9771ce30f834d099edf214d0b,d6b138de00af0df9771ce30f834d099edf214d0b,[minor] Make README.md fit in 80 columns.
+roozbehp,2015-04-10 21:14:05,https://api.github.com/repos/google/roboto/git/commits/68a71223632aa384d09b2cb27e61830faeec46e6,68a71223632aa384d09b2cb27e61830faeec46e6,Add completely hinted font deliveries from March 30.
+roozbehp,2015-03-07 01:46:39,https://api.github.com/repos/google/roboto/git/commits/0ef58f69d6a134d5a29ff112c684bbbd63590262,0ef58f69d6a134d5a29ff112c684bbbd63590262,"No longer drop hints for ChromeOS.
+
+Patch by Jungshik Shin. Fixes issue 128."
+roozbehp,2015-02-28 19:44:01,https://api.github.com/repos/google/roboto/git/commits/57df5130ea6aa88c13d430db4788c990dc8e0262,57df5130ea6aa88c13d430db4788c990dc8e0262,"Add hinted font deliveries from February 27.
+
+Roboto Light and Medium are added, with a redelivery of Regular and
+Bold which has a fix for issue 119."
+roozbehp,2015-02-16 03:28:55,https://api.github.com/repos/google/roboto/git/commits/ad50f4fdfe8c8efcb2f1a8f1d848a67cf7a1af0e,ad50f4fdfe8c8efcb2f1a8f1d848a67cf7a1af0e,"Update fonts from Paratype's Feb 10 delivery.
+
+Regular, Bold, Italic, and Bold Italic fonts are updated."
+roozbehp,2015-01-15 17:49:02,https://api.github.com/repos/google/roboto/git/commits/b760f7ca363bf528f98997d063fd0f5428e46663,b760f7ca363bf528f98997d063fd0f5428e46663,"Update hinted Black and Black Italic from Jan 15 delivery.
+
+Nothing interesting to see here really, except for a usWeight hotfix
+from 400 to 900 (issue 102) which is already hotpatched.  Updating to
+just keep in sync with ParaType deliveries."
+roozbehp,2015-01-13 18:00:04,https://api.github.com/repos/google/roboto/git/commits/d5d62b219ca099784b732927035e37a2470c5c04,d5d62b219ca099784b732927035e37a2470c5c04,"Fix name table overrides for condensed fonts.
+
+Fixes issue 104 and issue 105."
+roozbehp,2015-01-13 17:28:45,https://api.github.com/repos/google/roboto/git/commits/29257870e8eb50be42c0e36f70c88817c0a9ce50,29257870e8eb50be42c0e36f70c88817c0a9ce50,Add tests for the bad hinting of lowercase 'o'.
+roozbehp,2015-01-13 16:50:27,https://api.github.com/repos/google/roboto/git/commits/36623f13d922461c897fe0ae1ff550a073385329,36623f13d922461c897fe0ae1ff550a073385329,Add FreeType python bindings to third_party.
+roozbehp,2015-01-13 16:36:35,https://api.github.com/repos/google/roboto/git/commits/9fc4898c2338e4b9bb028171f5f8492f01879fbe,9fc4898c2338e4b9bb028171f5f8492f01879fbe,"Fix lowercase o in hinted Thin and Thin Italic fonts.
+
+This is ParaType's delivery of January 13 and should fix issue 106."
+roozbehp,2015-01-10 04:18:38,https://api.github.com/repos/google/roboto/git/commits/26e6777dbb67789854ed20da93681d2d5063424b,26e6777dbb67789854ed20da93681d2d5063424b,"Rename 'RobotoDraft' to 'Roboto' in the web target.
+
+This is to finally create a replacement for the public Google Fonts
+version of Roboto."
+roozbehp,2015-01-10 04:05:20,https://api.github.com/repos/google/roboto/git/commits/7b0eff6b32c6aec1c2e59ffae8bf02dc47bcd942,7b0eff6b32c6aec1c2e59ffae8bf02dc47bcd942,Update subsets for web.
+roozbehp,2015-01-08 20:48:18,https://api.github.com/repos/google/roboto/git/commits/8c98e08586f15efbabca2a9fc8e501677a4d8e89,8c98e08586f15efbabca2a9fc8e501677a4d8e89,Add more of common tests to run_web_tests.py.
+roozbehp,2015-01-08 19:46:11,https://api.github.com/repos/google/roboto/git/commits/9db32d0cea4b76c4a75e4a186416540fb60b4843,9db32d0cea4b76c4a75e4a186416540fb60b4843,Update build number for a new cut for Android.
+roozbehp,2015-01-08 19:39:29,https://api.github.com/repos/google/roboto/git/commits/14eecc2ca439557e4183722e07dab0308f3f18fe,14eecc2ca439557e4183722e07dab0308f3f18fe,"Don't update font version in web target.
+
+This is because web targets are from different cuts, and we want to
+keep the information."
+roozbehp,2015-01-08 19:25:51,https://api.github.com/repos/google/roboto/git/commits/cfa5c8e378eb1913c447236aab739febe2c6cc5d,cfa5c8e378eb1913c447236aab739febe2c6cc5d,More moving web-specific tests and touchups to common.
+roozbehp,2015-01-08 18:21:29,https://api.github.com/repos/google/roboto/git/commits/3f22b6f3b65aac67988e3be214792aa56daa3794,3f22b6f3b65aac67988e3be214792aa56daa3794,"Cleanup executable flags and #! headers.
+
+Some files that were supposed to be executable didn't have the flag,
+while others that were not supposed to be had #! headers."
+roozbehp,2015-01-08 16:49:47,https://api.github.com/repos/google/roboto/git/commits/7e174fb4226f504b110044cc56c12fb7457c2203,7e174fb4226f504b110044cc56c12fb7457c2203,"Change copyright line of the fonts to 2011.
+
+This is the year of the original release of Roboto."
+roozbehp,2015-01-08 08:33:56,https://api.github.com/repos/google/roboto/git/commits/eaece2cb0d1aa84b7e3316cd2dcd9597c3ff07e8,eaece2cb0d1aa84b7e3316cd2dcd9597c3ff07e8,More refactoring of touchup and test scripts.
+roozbehp,2015-01-08 06:17:21,https://api.github.com/repos/google/roboto/git/commits/07f342a2690558b8f4ce3d1bbb545c6ef3c320d1,07f342a2690558b8f4ce3d1bbb545c6ef3c320d1,"Change the expected number of fonts for the web target.
+
+The old value, 12, was for when we didn't have condensed yet."
+roozbehp,2015-01-08 06:13:51,https://api.github.com/repos/google/roboto/git/commits/1f5e1d448f49e5cfd2abecdb0fb57e75ad174741,1f5e1d448f49e5cfd2abecdb0fb57e75ad174741,"Refactor tests to a reusable structure.
+
+Tests that are common to some targets are not moved to
+common_tests.py, with target-specific tests basically inheriting its
+classes and modifying them.
+
+The web tests are not refactored yet."
+roozbehp,2015-01-08 05:31:17,https://api.github.com/repos/google/roboto/git/commits/fe99ea44799ee2243c8bafd56d9a835884b3ed5b,fe99ea44799ee2243c8bafd56d9a835884b3ed5b,Remove TODO item from run_general_tests.py.
+roozbehp,2015-01-08 05:30:22,https://api.github.com/repos/google/roboto/git/commits/8fc812a720c5a6f1619a786f87ece6bebf2421bb,8fc812a720c5a6f1619a786f87ece6bebf2421bb,Move common and repeated tests to run_general_tests.py.
+roozbehp,2015-01-08 03:00:54,https://api.github.com/repos/google/roboto/git/commits/a86c86786a6980296408bf22a625747ba9607c7d,a86c86786a6980296408bf22a625747ba9607c7d,"Add tests for version and revision numbers.
+
+Also add a touchup to fix the revision number."
+roozbehp,2015-01-07 21:31:02,https://api.github.com/repos/google/roboto/git/commits/403041dcfae9f364038c3dcc034238d2ea1ddafc,403041dcfae9f364038c3dcc034238d2ea1ddafc,"Move updating version numbers to temporar_touchups.
+
+This is so that both Adroid and Web targets could reuse it."
+roozbehp,2015-01-07 19:54:35,https://api.github.com/repos/google/roboto/git/commits/f78193176ea782adab14ca4bda517eeb699e571b,f78193176ea782adab14ca4bda517eeb699e571b,"Add test for non-formation of 'ff' ligature.
+
+Also remove unused and tested touchups from the Android
+touchup script."
+roozbehp,2015-01-07 19:45:20,https://api.github.com/repos/google/roboto/git/commits/0fd852f5cb306362f44a89686356bbad47da93d9,0fd852f5cb306362f44a89686356bbad47da93d9,Move get_advances to a new layout module.
+roozbehp,2015-01-07 08:21:02,https://api.github.com/repos/google/roboto/git/commits/94a70f1b9f0407dfe335f70dbfd3a73bbb26afc0,94a70f1b9f0407dfe335f70dbfd3a73bbb26afc0,"Move the exhaustive tests to a different make targe.
+
+Plus some cleanup in imports."
+roozbehp,2015-01-07 07:51:39,https://api.github.com/repos/google/roboto/git/commits/869aa8e9958ba11e3e627672908ac81b616dbe7b,869aa8e9958ba11e3e627672908ac81b616dbe7b,"Move tests for spacing marks to general tests.
+
+Also add test for font vendor ID in the OS/2 table and remove
+no-longer-necessary touchups from touchup_for_android.py."
+roozbehp,2015-01-07 07:05:29,https://api.github.com/repos/google/roboto/git/commits/3c963abcf66d44c1587376e7d245b889ae62401a,3c963abcf66d44c1587376e7d245b889ae62401a,"Update Android touchup and test tools for latest delivery.
+
+Touchup:
+- Shared touchups between Android and web are moved to a new module
+- OS/2.usWeightClass is fixed to match the font name
+- Unassigned characters are no longer explicitly dropped
+
+Testing:
+- Rhotic hook is skipped when checking that spacing marks don't form
+  ligatures
+- OS/2.usWeightClass is tested to be set correctly"
+roozbehp,2015-01-07 01:25:38,https://api.github.com/repos/google/roboto/git/commits/26c0c6588b8bae5df35c9c968d0e088b5cc37ef6,26c0c6588b8bae5df35c9c968d0e088b5cc37ef6,"Test for fsType being 0.
+
+Also remove the code that touched it to be zero, since the value is
+fixed in the fonts now.
+
+Fixes issue 29."
+roozbehp,2015-01-06 23:16:41,https://api.github.com/repos/google/roboto/git/commits/fbed471ea76435347704bd576f9678671777fdfc,fbed471ea76435347704bd576f9678671777fdfc,"Remove fix for macStyle from touchup_for_android.py.
+
+And since the bug (issue 8) is fixed in the generated fonts now, add
+test for macStyle to run_general_test.py."
+roozbehp,2014-12-30 20:58:29,https://api.github.com/repos/google/roboto/git/commits/ca2779be9e95b7abe2e7fea7815f035c6f567bcc,ca2779be9e95b7abe2e7fea7815f035c6f567bcc,Add hinted Roboto Condensed
+roozbehp,2014-12-09 00:38:22,https://api.github.com/repos/google/roboto/git/commits/406785de282f966e876f143666462129fd12ec20,406785de282f966e876f143666462129fd12ec20,Update to December 8 deliveries from ParaType.
+roozbehp,2014-12-08 17:42:19,https://api.github.com/repos/google/roboto/git/commits/edad6d29f9dbf1a026eba94156e0b869e46d1e49,edad6d29f9dbf1a026eba94156e0b869e46d1e49,Drop hints from the ChromeOS target (for now).
+roozbehp,2014-12-08 17:21:48,https://api.github.com/repos/google/roboto/git/commits/62764abc5eed32c1e319f19fd9737bbe7f81ed2e,62764abc5eed32c1e319f19fd9737bbe7f81ed2e,Add target for ChromeOS fonts.
+roozbehp,2014-12-08 17:08:35,https://api.github.com/repos/google/roboto/git/commits/da5be226f7a8a4704c7967acba311c6857f0cee3,da5be226f7a8a4704c7967acba311c6857f0cee3,Added out/web to .gitignore.
+roozbehp,2014-12-02 17:39:25,https://api.github.com/repos/google/roboto/git/commits/471c67c873339e12f98b0cdd4b7ba3446f3a1da6,471c67c873339e12f98b0cdd4b7ba3446f3a1da6,"Add missing hints to the Light Italic font.
+
+Four glyphs were missing hints. Fixes issue 100."
+roozbehp,2014-12-02 06:19:51,https://api.github.com/repos/google/roboto/git/commits/8f8bee0bdc89cac5f4c28fba36f3495854921110,8f8bee0bdc89cac5f4c28fba36f3495854921110,Comment out greek-ext subset.
+roozbehp,2014-12-02 06:02:51,https://api.github.com/repos/google/roboto/git/commits/5ed29bb54cd0153d2a927c4fb12ac5d9095acd38,5ed29bb54cd0153d2a927c4fb12ac5d9095acd38,Expand scripts for webfont generation.
+roozbehp,2014-12-01 21:36:03,https://api.github.com/repos/google/roboto/git/commits/6ca0d935997f3a1f1bd53169a6b2f10ab4ae75d3,6ca0d935997f3a1f1bd53169a6b2f10ab4ae75d3,Add targets and scripts for web fonts.
+roozbehp,2014-12-01 20:09:34,https://api.github.com/repos/google/roboto/git/commits/6f8d5ea14c2d9fe8916bfd85c67fbf254b5b78da,6f8d5ea14c2d9fe8916bfd85c67fbf254b5b78da,Add a character set for web fonts (from issue 69).
+roozbehp,2014-12-01 18:19:19,https://api.github.com/repos/google/roboto/git/commits/474c7002f016aa33355c176b2cad5ee8fdf00da4,474c7002f016aa33355c176b2cad5ee8fdf00da4,"Added/updated hinted versions of Thin, Light, Medium, and Black."
+roozbehp,2014-11-17 01:35:32,https://api.github.com/repos/google/roboto/git/commits/d68c033384fe6540a22c4fc1362cfd388c3cea89,d68c033384fe6540a22c4fc1362cfd388c3cea89,Add hinted fonts received from ParaType in November.
+roozbehp,2014-10-24 03:40:34,https://api.github.com/repos/google/roboto/git/commits/b8f40a25fba147784ae07ed605ed98cc34049345,b8f40a25fba147784ae07ed605ed98cc34049345,Move test for lack of unassigned characters from Android to general tests.
+roozbehp,2014-10-24 03:18:18,https://api.github.com/repos/google/roboto/git/commits/31334e64527cca3a827c47b0e9be7fde4dfa7ea0,31334e64527cca3a827c47b0e9be7fde4dfa7ea0,Move TestDigitWidths from android tests to general tests.
+roozbehp,2014-10-23 18:33:58,https://api.github.com/repos/google/roboto/git/commits/a445d33ef3a80707c741d1d6e51152ef6df67de1,a445d33ef3a80707c741d1d6e51152ef6df67de1,Move test for sound copyright from Android-specific to general.
+roozbehp,2014-10-23 17:38:52,https://api.github.com/repos/google/roboto/git/commits/890560275ea274b567f9755887c6441f94a9cf08,890560275ea274b567f9755887c6441f94a9cf08,Add test for italic angle.
+roozbehp,2014-10-11 16:33:34,https://api.github.com/repos/google/roboto/git/commits/99922cd0d0e773f263a1b78643460efbcc704aa7,99922cd0d0e773f263a1b78643460efbcc704aa7,"Update to ParaType deliveries of Oct 9, 2014."
+roozbehp,2014-09-14 03:01:09,https://api.github.com/repos/google/roboto/git/commits/00d4b9c3fcc0317792803aebbeaa0207292a38d8,00d4b9c3fcc0317792803aebbeaa0207292a38d8,"Check for PUA characters in Android tests.
+
+Fixes issue 5."
+roozbehp,2014-09-12 03:26:45,https://api.github.com/repos/google/roboto/git/commits/578f2cffab733cbbe232c702c9053037256bb6fd,578f2cffab733cbbe232c702c9053037256bb6fd,Make force_ymin_ymax script use internal font name in its reporting.
+roozbehp,2014-09-12 03:23:32,https://api.github.com/repos/google/roboto/git/commits/f9196c726aafb915fcd3cfdb7f0fd0fb6a62026a,f9196c726aafb915fcd3cfdb7f0fd0fb6a62026a,Add pointers to bugs discussing the hotfixes in touch_for_android.
+roozbehp,2014-09-12 00:46:42,https://api.github.com/repos/google/roboto/git/commits/8ab3850706c54cd1ad369eb2ca2e1e8355a98b1e,8ab3850706c54cd1ad369eb2ca2e1e8355a98b1e,Remove LICENSE for now.
+roozbehp,2014-08-15 23:51:31,https://api.github.com/repos/google/roboto/git/commits/19abad362e541fc1ee063f4442c9fb588b9ff1f3,19abad362e541fc1ee063f4442c9fb588b9ff1f3,Remove unassigned characters from the fonts' cmap.
+roozbehp,2014-08-01 19:44:04,https://api.github.com/repos/google/roboto/git/commits/7237600eb825bafbd37b7b751540ad8ac3110a4a,7237600eb825bafbd37b7b751540ad8ac3110a4a,"Fix ccmp rules that used spacing marks instead of non-spacing ones.
+
+Fixes https://b.corp.google.com/issue?id=16727859."
+roozbehp,2014-08-01 06:30:52,https://api.github.com/repos/google/roboto/git/commits/308edc3450450342faf1d196d9e29c694e7b3e67,308edc3450450342faf1d196d9e29c694e7b3e67,"Make sure Unicode 8.0 characters are not asked for.
+
+coverage_test.py didn't check that the characters is not post-Unicode 7.0."
+roozbehp,2014-08-01 05:22:46,https://api.github.com/repos/google/roboto/git/commits/844b53257db046c56b2b46e6dee4214f3f73ad0f,844b53257db046c56b2b46e6dee4214f3f73ad0f,Fix a dictionary mistakenly specificed as a set.
+roozbehp,2014-08-01 04:52:51,https://api.github.com/repos/google/roboto/git/commits/3e47204bfaf1693cdefc9c3599445a367c5d7d2e,3e47204bfaf1693cdefc9c3599445a367c5d7d2e,"Add missing cmap entry for U+2117 SOUND RECORDING COPYRIGHT.
+
+The cmap was missing in Thin and Thin Italic fonts, although the glyph
+existed in the fonts."
+roozbehp,2014-08-01 03:09:19,https://api.github.com/repos/google/roboto/git/commits/985c16569167e1cc7d6d1dcf15df77135e67913f,985c16569167e1cc7d6d1dcf15df77135e67913f,Add scripts for testing minimal character coverage.
+roozbehp,2014-08-01 01:04:58,https://api.github.com/repos/google/roboto/git/commits/8f7caa4ca489caca851ec0d8426d7857b6d7a051,8f7caa4ca489caca851ec0d8426d7857b6d7a051,Updated build scripts based on July 28 deliveries from ParaType.
+roozbehp,2014-07-31 04:17:33,https://api.github.com/repos/google/roboto/git/commits/eea9030fef36f1ff05e0d7dc7b28c9cc26dcd53f,eea9030fef36f1ff05e0d7dc7b28c9cc26dcd53f,Add the Unicode coverage information for Roboto version 1.
+roozbehp,2014-07-27 19:46:34,https://api.github.com/repos/google/roboto/git/commits/58032c74125a1c75c7de62dc0cc12306c09101d7,58032c74125a1c75c7de62dc0cc12306c09101d7,Explain all third party modifications to fontcrunch.
+roozbehp,2014-07-27 16:18:53,https://api.github.com/repos/google/roboto/git/commits/2d6c4f7fe8948229ba6a3f015464722c478c2630,2d6c4f7fe8948229ba6a3f015464722c478c2630,Update .gitignore with more rules for fontcrunch and push up buildnumber.
+roozbehp,2014-07-27 16:17:29,https://api.github.com/repos/google/roboto/git/commits/b41e071382902bad7da9ab74243b6cb1cd59ac33,b41e071382902bad7da9ab74243b6cb1cd59ac33,Update android build rules to use crunched fonts as sources.
+roozbehp,2014-07-27 16:16:56,https://api.github.com/repos/google/roboto/git/commits/8d2ee13858f267274bff5d9cf0559dd53914ffc1,8d2ee13858f267274bff5d9cf0559dd53914ffc1,Make fontcrunch compilation work on older gcc.
+roozbehp,2014-07-27 16:05:31,https://api.github.com/repos/google/roboto/git/commits/8ea6b70956b802b401e3896b841da152bf4db76e,8ea6b70956b802b401e3896b841da152bf4db76e,Fix output path for 'make crunch'.
+roozbehp,2014-07-27 15:53:45,https://api.github.com/repos/google/roboto/git/commits/1178d3463a527ff1d37de312ea9d040ea726a359,1178d3463a527ff1d37de312ea9d040ea726a359,Add Makefile and .gitignore rules for fontcrunch.
+roozbehp,2014-07-27 01:22:18,https://api.github.com/repos/google/roboto/git/commits/54bfaf54e7eb1fd074a68127c11f4248748a09c8,54bfaf54e7eb1fd074a68127c11f4248748a09c8,"Rename bezier curve pieces to .bez to avoid conflict with bzip files.
+
+Also made Makefile clean temporary directories."
+roozbehp,2014-07-26 18:21:37,https://api.github.com/repos/google/roboto/git/commits/68da4c8664d2a242a39723b90651f22812cb73e7,68da4c8664d2a242a39723b90651f22812cb73e7,Get fontcrunch to run in the Roboto setup.
+roozbehp,2014-07-26 18:20:29,https://api.github.com/repos/google/roboto/git/commits/0f1bd27678fb542f8601bbaf493baa1c22732fe2,0f1bd27678fb542f8601bbaf493baa1c22732fe2,Add Spiro version 0.01.
+roozbehp,2014-07-26 17:19:05,https://api.github.com/repos/google/roboto/git/commits/5a480b939b43dec473550292501a88518fe1208c,5a480b939b43dec473550292501a88518fe1208c,Add fontcrunch to third_party.
+roozbehp,2014-07-25 02:10:48,https://api.github.com/repos/google/roboto/git/commits/1fbdd27fd4832645b44c726778817118d891d66f,1fbdd27fd4832645b44c726778817118d891d66f,Use the recommended way to access glyf table in force_ymin_ymax.
+roozbehp,2014-07-25 01:41:33,https://api.github.com/repos/google/roboto/git/commits/a8df15d7b96363a6652c5fd4d6dd95db99647326,a8df15d7b96363a6652c5fd4d6dd95db99647326,"Add the beginning of a test infrastructure.
+
+We now test for expected values of yMin and yMax, and equal widths for
+digits."
+roozbehp,2014-07-25 01:33:26,https://api.github.com/repos/google/roboto/git/commits/3a8f38ed8e34c6021444f2ef43527a8f3ded09df,3a8f38ed8e34c6021444f2ef43527a8f3ded09df,"Change the width of decimal digits to the same value.
+
+Fixes issue 33, and the following external bugs:
+https://code.google.com/p/android-developer-preview/issues/detail?id=330
+https://b.corp.google.com/issue?id=16299966"
+roozbehp,2014-07-25 01:27:35,https://api.github.com/repos/google/roboto/git/commits/4ce7b6f9beeb1fe6e3f227e943a8d05585adce4f,4ce7b6f9beeb1fe6e3f227e943a8d05585adce4f,Add out/android and out/glass to .gitignore
+roozbehp,2014-07-23 06:39:27,https://api.github.com/repos/google/roboto/git/commits/a0558fcf2d33140da6bb46518877d45af0d0d1eb,a0558fcf2d33140da6bb46518877d45af0d0d1eb,Refix the generating of lnum digits.
+roozbehp,2014-07-23 02:38:56,https://api.github.com/repos/google/roboto/git/commits/08dbd66483ae4207e8ca69a907883b854e4f4fe0,08dbd66483ae4207e8ca69a907883b854e4f4fe0,Merge branch 'master' of https://code.google.com/a/google.com/p/roboto
+roozbehp,2014-07-23 02:02:28,https://api.github.com/repos/google/roboto/git/commits/7f083ac31241cc86d019ea6227fa508b9fcf39a6,7f083ac31241cc86d019ea6227fa508b9fcf39a6,Update toolchain to latest ParaType delivery.
+roozbehp,2014-07-22 19:56:24,https://api.github.com/repos/google/roboto/git/commits/e4b52200a1bc23508712df300df45fa34ef271c9,e4b52200a1bc23508712df300df45fa34ef271c9,Minor fixes in wording and documentation for Glass touchup script.
+roozbehp,2014-07-22 19:50:26,https://api.github.com/repos/google/roboto/git/commits/97bb2636965b92cce7deb79eb96bb79af97bd73c,97bb2636965b92cce7deb79eb96bb79af97bd73c,Added a hack to add cmap mapping for proportional digit one.
+roozbehp,2014-07-04 06:36:52,https://api.github.com/repos/google/roboto/git/commits/2b5dca5d77e7394df66fa8f2e8a827b1c6fec441,2b5dca5d77e7394df66fa8f2e8a827b1c6fec441,"Rework the font processing for Android.
+
+yMin and yMax values needed for Android are now set after the subsetting in
+a separate script.  The touchup script is also divided into Android-specific
+changes and general ones."
+roozbehp,2014-07-03 00:29:09,https://api.github.com/repos/google/roboto/git/commits/f61afcb339de59c70645c662fb4b72482b02920d,f61afcb339de59c70645c662fb4b72482b02920d,"Cleanup Android build mechanism and pass Android target through subsetter.
+
+The touchup tool is now Android-specific and reads the data from the build
+number file directly.  It also lists all glyph going outside the Android
+boundaries.  Makefile also has a new 'android' target."
+roozbehp,2014-07-02 23:21:05,https://api.github.com/repos/google/roboto/git/commits/dca621880ec171d831bf1ed2ce928470ecee849e,dca621880ec171d831bf1ed2ce928470ecee849e,"Revert TTFs to pre-touchup version.
+
+Touch script to be modified for keeping its output separate."
+roozbehp,2014-07-01 23:59:12,https://api.github.com/repos/google/roboto/git/commits/6446152b1ed041147525d0e73d3ec2b0338a4a4f,6446152b1ed041147525d0e73d3ec2b0338a4a4f,Add LICENSE file.
+roozbehp,2014-07-01 22:35:01,https://api.github.com/repos/google/roboto/git/commits/357a0468c78700842988dedbfda0824b9332fb73,357a0468c78700842988dedbfda0824b9332fb73,Various cleanups needed for Android.
+roozbehp,2014-07-01 19:24:13,https://api.github.com/repos/google/roboto/git/commits/af88e25dbd38ad930ea1b46670c0ce147a02a3d4,af88e25dbd38ad930ea1b46670c0ce147a02a3d4,"Update with extended character coverage for Unicode 7.0 LGC.
+
+The scripts that generate the fonts are not updated yet."
+roozbehp,2014-06-11 16:16:42,https://api.github.com/repos/google/roboto/git/commits/24a9472fe5d23be9cf35e2084ef22b36e3817400,24a9472fe5d23be9cf35e2084ef22b36e3817400,"Add script for post-production touch up of fonts
+
+Also update to touched up Roboto and Roboto Condensed fonts."
+roozbehp,2014-06-11 15:35:15,https://api.github.com/repos/google/roboto/git/commits/3d56ba1d903737d6975b83ea5a417e83d17f0d06,3d56ba1d903737d6975b83ea5a417e83d17f0d06,Add hinted files from ParaType.
+roozbehp,2014-06-09 19:48:47,https://api.github.com/repos/google/roboto/git/commits/451a162624bfbe52c7c91a8e8803b34e8bb8de39,451a162624bfbe52c7c91a8e8803b34e8bb8de39,Make the build run on Windows.
+roozbehp,2014-06-07 05:04:35,https://api.github.com/repos/google/roboto/git/commits/914c78559c32917847700adfeb4b11ceed9995ab,914c78559c32917847700adfeb4b11ceed9995ab,Add ttx files and backup files to .gitignore
+roozbehp,2014-06-07 04:36:02,https://api.github.com/repos/google/roboto/git/commits/e91f686bbb420fb08ed42a707bd34a530306ac92,e91f686bbb420fb08ed42a707bd34a530306ac92,Fix linear numbers and small cap T with cedilla
+roozbehp,2014-06-07 03:39:41,https://api.github.com/repos/google/roboto/git/commits/308ff94a625c82bdc5b9d79b971e497a6fa2b87a,308ff94a625c82bdc5b9d79b971e497a6fa2b87a,Remove executable flags
+roozbehp,2014-06-07 02:11:36,https://api.github.com/repos/google/roboto/git/commits/e8de0ad213274255962a6a4424378a92cba6dffc,e8de0ad213274255962a6a4424378a92cba6dffc,Add .gitignore file
+christianrobertson,2014-05-30 01:14:33,https://api.github.com/repos/google/roboto/git/commits/4ba4a65a9797b9c8e6287593ec335a414d36e562,4ba4a65a9797b9c8e6287593ec335a414d36e562,Removed vestigial code from v2 build script
+christianrobertson,2014-05-30 01:07:55,https://api.github.com/repos/google/roboto/git/commits/59bcef0939347a58d331dd1abde75f765b8d0ea3,59bcef0939347a58d331dd1abde75f765b8d0ea3,Added a bold weight for Mono
+christianrobertson,2014-05-23 02:02:36,https://api.github.com/repos/google/roboto/git/commits/89eea596b60ba75c2b51595b1c5ff7012ce94e77,89eea596b60ba75c2b51595b1c5ff7012ce94e77,"Fixed inconsistent ymin and ymax values (for reals this time), removed old versions from 'out' directory."
+christianrobertson,2014-05-21 23:09:02,https://api.github.com/repos/google/roboto/git/commits/d8bb7b4efc18c8bf413ec4bc5ffc914dda00fbed,d8bb7b4efc18c8bf413ec4bc5ffc914dda00fbed,Changed the ymax vertical metrics to match current version of Roboto
+christianrobertson,2014-05-19 23:09:20,https://api.github.com/repos/google/roboto/git/commits/7051939fa74b5f8f453be605f5dc3b4c23e1d1d9,7051939fa74b5f8f453be605f5dc3b4c23e1d1d9,Importing Roboto 2.0

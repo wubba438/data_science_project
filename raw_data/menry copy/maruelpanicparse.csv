@@ -1,0 +1,720 @@
+panicparse,Crash your app in style (Golang)
+username,timestamp,url,sha,message
+maruel,2019-09-01 20:33:15,https://api.github.com/repos/maruel/panicparse/git/commits/8ddb616c39825f450659dc00f97a600cbe303b68,8ddb616c39825f450659dc00f97a600cbe303b68,Update go.mod
+maruel,2019-07-19 22:49:14,https://api.github.com/repos/maruel/panicparse/git/commits/e9f3b5d636df199614cbf4f38703130e44b94f31,e9f3b5d636df199614cbf4f38703130e44b94f31,"stack: add support for Go 1.13beta1
+
+It now prints 'pc' in addition to 'fp' and 'sp'.
+
+Include unit test."
+maruel,2019-06-18 17:04:24,https://api.github.com/repos/maruel/panicparse/git/commits/c1498aed6322e18a0a9ae1e5798540c0135fca81,c1498aed6322e18a0a9ae1e5798540c0135fca81,"stack: add race detection code but keep it disabled
+
+This is because Context cannot yet return the data properly.
+
+Improves #27"
+maruel,2019-06-05 18:36:13,https://api.github.com/repos/maruel/panicparse/git/commits/89bde6284d1031b4ffc0269c48d20f30f5d4f2a6,89bde6284d1031b4ffc0269c48d20f30f5d4f2a6,"stack: improve indented parsing
+
+It was not handling empty lines properly."
+maruel,2019-06-05 13:14:19,https://api.github.com/repos/maruel/panicparse/git/commits/91b9e1a6e6706b7f74555364d12a341ab867050a,91b9e1a6e6706b7f74555364d12a341ab867050a,"panic: increase unit test coverage a tiny bit
+
+Disable output unless go test -v is used."
+maruel,2019-06-05 14:23:43,https://api.github.com/repos/maruel/panicparse/git/commits/8b33a54bf437afee900ce04fd6ff953b846acd79,8b33a54bf437afee900ce04fd6ff953b846acd79,"panic: add unit test
+
+Covers at 97%. Refactor code to reduce the amount of code conditionally
+compiled.
+
+Reduce caching, which seems to cause very weird travis errors. In
+particular, make sure github.com/maruel is not cached."
+maruel,2019-06-04 15:01:20,https://api.github.com/repos/maruel/panicparse/git/commits/fd18069ab27757d2ae35ca47043154197b68e359,fd18069ab27757d2ae35ca47043154197b68e359,"stack: tolerate indented stack traces
+
+This happens with goconvey. This changes the semantics significantly but
+it should do a good job making it work better for users."
+maruel,2019-06-03 00:36:11,https://api.github.com/repos/maruel/panicparse/git/commits/fd89a7463ac4184aaae0299d2e3d1b3245ca8dc5,fd89a7463ac4184aaae0299d2e3d1b3245ca8dc5,"panic: add stack_cut_off_named
+
+It calls 2000 named functions deep, enabling what looks like inlining."
+maruel,2019-06-02 01:06:44,https://api.github.com/repos/maruel/panicparse/git/commits/5c1041f880794dca189c646026c13ce90c1e5799,5c1041f880794dca189c646026c13ce90c1e5799,"panic: make it work on go1.7.6
+
+Replace sort.Slice() with strings.FieldsFunc().
+
+sort.Slice() was introduced in go1.8.
+
+I need panic to work on go1.7 to diagnose an issue with
+'additional frames elided' not being printed anymore."
+maruel,2019-06-02 00:05:03,https://api.github.com/repos/maruel/panicparse/git/commits/09530911efad14baa0a8721ed6ca8e3f410afa32,09530911efad14baa0a8721ed6ca8e3f410afa32,"panic: update asleep reference about hanging with -race
+
+Tested on go1.12.5.
+
+This is a known issue. https://github.com/golang/go/issues/20588"
+maruel,2019-06-01 22:55:45,https://api.github.com/repos/maruel/panicparse/git/commits/e18316aa7f1bb6bc2a760e73187afa3e76b9a840,e18316aa7f1bb6bc2a760e73187afa3e76b9a840,"panic: add asleep
+
+When locking a mutex recursively, it panics with
+    fatal error: all goroutines are asleep - deadlock!"
+maruel,2019-06-01 22:30:03,https://api.github.com/repos/maruel/panicparse/git/commits/b57110409c39154ed0df3405cc0f31f169ff4c0a,b57110409c39154ed0df3405cc0f31f169ff4c0a,"stack: improve parsing by trimming CRLF explicitly
+
+Does the LF/CRLF trimming upfront instead of having each regexp do it.
+This will scale better as more regexp will be written to handle the race
+detector output."
+maruel,2019-05-30 21:35:39,https://api.github.com/repos/maruel/panicparse/git/commits/c1d37a1b3837ae2ac118f9308cf4fe5334cd6833,c1d37a1b3837ae2ac118f9308cf4fe5334cd6833,README.md: Add Authors section
+maruel,2019-05-20 21:33:59,https://api.github.com/repos/maruel/panicparse/git/commits/032f4d3c206ae5aafc0ccbd11dc4c7a603fc873a,032f4d3c206ae5aafc0ccbd11dc4c7a603fc873a,"stack: add unit test that confirms that race conditions are not parsed yet
+
+Now that the state machine is created, we could reuse similar logic for
+the race condition trace. I think it can be done without a breaking
+change, by adding new members to Context.
+
+Improves #27"
+maruel,2019-05-19 00:20:04,https://api.github.com/repos/maruel/panicparse/git/commits/6723201b8d94b048f2b20b5691c60b70dcc29b15,6723201b8d94b048f2b20b5691c60b70dcc29b15,"stack: convert to a brand new explicit state machine
+
+This makes the parser much more reliable. That should have been done
+from the start. Oh well.
+
+Improve unit testing and cover the whole state machine.
+
+This will unblock #27 as this can be added as a set of new states.
+
+Fixes #2"
+maruel,2019-05-19 12:42:30,https://api.github.com/repos/maruel/panicparse/git/commits/b6e091779adb06ef5341de5271ff42a0cf8e99a7,b6e091779adb06ef5341de5271ff42a0cf8e99a7,"travis: rewrite the travis configuration; update README.md badges
+
+- Stop using pcg. While it has been useful, most of its features are now
+  upstream. go test now caches binaries, now runs in parallel, merging
+  coverage isn't that hard and we can call gofmt, go vet and golint
+  directly.
+- Enable GO111MODULE=on now that pcg is not used anymore.
+- Bump from trusty to xenial.
+- Run ineffassign, shadow.
+- Switch from goveralls to codecov.io, I prefer its web UI.
+- Update badges in README.md."
+maruel,2019-05-19 00:44:22,https://api.github.com/repos/maruel/panicparse/git/commits/8f1c058124346166fa834f53f996d23d66b017d0,8f1c058124346166fa834f53f996d23d66b017d0,"panic: add reference to _TracebackMaxFrames
+
+This name of the variable may change in the future in runtime but it
+still gives an idea where to search for."
+maruel,2019-05-13 15:27:30,https://api.github.com/repos/maruel/panicparse/git/commits/76e91df873b479aae0ba5a9a92280161a6b3a8bb,76e91df873b479aae0ba5a9a92280161a6b3a8bb,README.md: add hint about inlining
+maruel,2019-05-13 14:50:25,https://api.github.com/repos/maruel/panicparse/git/commits/8ca5dd20e04dc4b4875b256f027c5245388a47aa,8ca5dd20e04dc4b4875b256f027c5245388a47aa,"Switch to go.mod
+
+Keeps the vendored files, but that the occasion to update them.
+
+Did approximatively:
+
+- git rm -rf vendor Gopkg.*
+- git commit -a -m .
+- Move the directory out of GOPATH
+- export GO111MODULE=on
+- go mod init
+- go test ./...
+- go vendor
+- Edited go.mod to specify ""go 1.11"" instead of ""go 1.12"".
+- git add .
+- git commit -a --amend <this content>
+
+Then I add to add GO111MODULE=off before calling pcg in .travis.yml
+because it confuses it. I will have to fix pcg or stop using it eventually."
+maruel,2019-05-12 23:53:32,https://api.github.com/repos/maruel/panicparse/git/commits/84d2f38be31b916caedcb0edc1b34862c712b845,84d2f38be31b916caedcb0edc1b34862c712b845,"stack: move parsing constants
+
+There was in stack.go, but used in context.go, so move them there.
+
+No functional change."
+maruel,2019-05-13 13:39:34,https://api.github.com/repos/maruel/panicparse/git/commits/5477587b6431f8874d90108de4acd5bbb76afeb8,5477587b6431f8874d90108de4acd5bbb76afeb8,"stack: Fix unit test TestAugment on go1.11 and later
+
+Zap out arguments expectation on go1.11 and later
+
+Where arguments used to be listed explicitly, they are now listed as
+""(...)"". This broke the unit tests.
+
+For example with ""panic slice_str"", go1.10.8 prints:
+  GOTRACEBACK=all
+  panic: ([]string) (0x499cc0,0xc42000a0e0)
+
+  goroutine 1 [running]:
+  main.panicslicestr(0xc42000a0c0, 0x1, 0x2)
+  (...)
+
+whereas on go1.11beta1 the last line is:
+  main.panicslicestr(...)
+
+So I bisected Go. In this example, Go is checked out as ~/src/golang,
+~/src/golang/bin is in PATH and there's a Go installation at ~/go1.4 for
+bootstrapping.
+
+  # Testing script:
+  $ cat > ~/test_golang.sh <<EOF
+  #!/bin/bash
+  set -eu
+  cd ~/src/golang/src
+  ./make.bash
+  go install github.com/maruel/panicparse/cmd/panic
+  panic slice_str |& egrep 'main.panicslicestr\(0x'
+  EOF
+  $ chmod +x ~/test_golang.sh
+
+  # Bad commit
+  $ cd ~/src/golang
+  $ git merge-base go1.11beta1 origin/master
+  a12c1f26e4cc602dae62ec065a237172a5b8f926
+  $ git checkout a12c1f26e4cc602dae62ec065a237172a5b8f926
+  # Confirm this exit 1
+  $ ~/test_golang.sh
+
+  # Good commit
+  $ git merge-base go1.10 origin/master
+  4c4ce3dc79fcf535045e69068b15142d8b7259cd
+  $ git checkout 4c4ce3dc79fcf535045e69068b15142d8b7259cd
+  # Confirm this exit 1
+  $ ~/test_golang.sh
+
+  # Bisection
+  $ git bisect start a12c1f26e4cc602dae62ec065a237172a5b8f926 $ 4c4ce3dc79fcf535045e69068b15142d8b7259cd
+  $ git bisect run ~/test_golang.sh
+  $ git bisect reset
+
+Also fix travis on go1.8.x, lock it to go1.8.7. This is because pcg
+tries to install goimports, which cannot be built on go1.8.7 anymore.
+
+Fixes #42"
+maruel,2018-08-06 20:29:21,https://api.github.com/repos/maruel/panicparse/git/commits/f20d4c4d746f810c9110e21928d4135e1f2a3efa,f20d4c4d746f810c9110e21928d4135e1f2a3efa,"Remove github.com/maruel/ut from Gopkg.toml
+
+Prune tests, non go files, unused packages.
+
+Ran dep ensure -update"
+maruel,2018-03-18 23:01:39,https://api.github.com/repos/maruel/panicparse/git/commits/4417700b5a8d33fbb4416bb04359d20329f60008,4417700b5a8d33fbb4416bb04359d20329f60008,"stack: move Example to separate test package
+
+This makes the code copy-pastable, which is much more useful for users."
+maruel,2018-03-18 14:44:24,https://api.github.com/repos/maruel/panicparse/git/commits/f98a12d4e7f74fc8c3a3092de469f08968c1d218,f98a12d4e7f74fc8c3a3092de469f08968c1d218,"stack: change []Goroutine to []*Goroutine
+
+Using a slice of objects was an error in hindsight. This is much more
+efficient when constructing the slice, as each Goroutine instance is
+fairly large."
+maruel,2018-03-18 15:03:19,https://api.github.com/repos/maruel/panicparse/git/commits/679138e3406aa5f332dc646f817743ad684b8f40,679138e3406aa5f332dc646f817743ad684b8f40,"Fix html regression in 8fe0a69c9dd8b4
+
+Add simple unit test to stop regressing."
+maruel,2018-03-18 13:56:32,https://api.github.com/repos/maruel/panicparse/git/commits/8fe0a69c9dd8b4c82306843cc90ab9925f2dac6b,8fe0a69c9dd8b4c82306843cc90ab9925f2dac6b,"stack: Rename Bucketize to Aggregate, simplify Bucket
+
+Change the returned slice to be a slice of pointers, which makes sorting
+more efficient.
+
+Simplify tests in bucket_test.go to be more focused."
+maruel,2018-03-18 14:09:31,https://api.github.com/repos/maruel/panicparse/git/commits/f6d6c6c03a5bb5f5261642e76cdfdf8e7b681d07,f6d6c6c03a5bb5f5261642e76cdfdf8e7b681d07,"stack: Move Bucketize tests into bucket_test.go
+
+No functional change."
+maruel,2018-03-18 13:11:01,https://api.github.com/repos/maruel/panicparse/git/commits/7900a867bd50cc72be397750298e5be16e0febd3,7900a867bd50cc72be397750298e5be16e0febd3,"stack: unexport Less
+
+This further reduce the API surface, making it more user friendly.
+
+Eventually Signature.Less() will be user-provided in Bucketize() so
+users can decide what ordering they want. See issue #23."
+maruel,2018-03-18 02:00:13,https://api.github.com/repos/maruel/panicparse/git/commits/9cea7c3994f415e21f174cbccc5d0da84391a554,9cea7c3994f415e21f174cbccc5d0da84391a554,"stack: unexport SortBuckets and Buckets
+
+This significantly reduce the API surface. The only drawback is that it
+is now not possible to not get the unsorted buckets, but I don't see a
+use case for this."
+maruel,2018-03-18 01:48:01,https://api.github.com/repos/maruel/panicparse/git/commits/078e567cc2799640fe9f96734eb55537bae8d716,078e567cc2799640fe9f96734eb55537bae8d716,"stack: unexport Equal, Similar and Merge
+
+This greatly simplify the API surface and users can reimplement these if
+they want their own bucketing algorithm.
+
+May reexport if there is a good use case."
+maruel,2018-03-18 01:34:35,https://api.github.com/repos/maruel/panicparse/git/commits/3f58ecb398c3fbce232bf10f0876f8b62141bd80,3f58ecb398c3fbce232bf10f0876f8b62141bd80,"Switch code to use keyed member in initialization
+
+May make future refactoring simpler.
+
+No functional change."
+maruel,2018-03-17 21:45:02,https://api.github.com/repos/maruel/panicparse/git/commits/6620ff469d42d47d1eaec7fbb46d86c63c1a5d0b,6620ff469d42d47d1eaec7fbb46d86c63c1a5d0b,"stack: shorten names
+
+In Go, characters are costly (tm) so rename Function to Func and Source to Src.
+
+Change methods on Func, Arg and Args be all using pointer instead of struct
+copying, which is inefficient. Update call sites.
+
+This is another breaking change."
+maruel,2018-03-17 20:55:21,https://api.github.com/repos/maruel/panicparse/git/commits/83d0a09a691175034fcf2e55ca55b811ae914579,83d0a09a691175034fcf2e55ca55b811ae914579,"internal: fix unit test regression
+
+Also remove logs in tests for packages stack and internal, unless the flag -v is provided."
+maruel,2018-03-16 21:05:34,https://api.github.com/repos/maruel/panicparse/git/commits/822a960846af9ee106aaff0da10f587cbb317e35,822a960846af9ee106aaff0da10f587cbb317e35,"Move Palette from stack to internal
+
+It's getting in the way for HTML generation, and it doesn't make sense
+to live in the stack parsing package.
+
+This is yet another breaking change."
+maruel,2018-03-17 20:23:02,https://api.github.com/repos/maruel/panicparse/git/commits/b0dbb93f1795b51f85a8bfab1e06c548ac34ce4d,b0dbb93f1795b51f85a8bfab1e06c548ac34ce4d,"Fix regression in last commit
+
+pp would crash if there was no stack trace found. Oops."
+maruel,2018-03-16 18:14:58,https://api.github.com/repos/maruel/panicparse/git/commits/3e6cf4f6c18e65c0eb9edcb6d10eb0d7353ae9d6,3e6cf4f6c18e65c0eb9edcb6d10eb0d7353ae9d6,"stack: Create Context and make guessing local source location optional
+
+ParseDump now returns a *Context instance, which optionally contains the deduced
+GOROOT and GOPATH.
+
+This removes the global variables goroot and gopaths, which removes the
+need for stack.NoRebase(). This was the last global context in this
+package."
+maruel,2018-03-16 21:33:15,https://api.github.com/repos/maruel/panicparse/git/commits/7cd20950e22cdf3e7374da0b18e9a7be1cfde4c0,7cd20950e22cdf3e7374da0b18e9a7be1cfde4c0,"stack: remove goroot/gopaths references in parsed items (Call)
+
+This is a breaking change.
+
+- Rename LocalSourcePath as LocalSrcPath.
+- LocalSrcPath and IsStdlib are now member instead of methods."
+maruel,2018-03-16 19:38:00,https://api.github.com/repos/maruel/panicparse/git/commits/4f1da6b1929fef1c0faf3f757ba3366db08d98f8,4f1da6b1929fef1c0faf3f757ba3366db08d98f8,"stack: move context parsing into context.go
+
+stack.go was fairly large. Splitting makes it more manageable. This will
+help fixing the unit tests later."
+maruel,2018-03-16 19:21:04,https://api.github.com/repos/maruel/panicparse/git/commits/161d40424952090ea10f34357e080a77f158c89f,161d40424952090ea10f34357e080a77f158c89f,"stack: small error tweak to ParseDump
+
+Trim the line whitespace and use %q, which results in nicer quoting."
+maruel,2018-03-16 19:17:20,https://api.github.com/repos/maruel/panicparse/git/commits/3441ea3c4b41042ef91a985d51196f67084279d8,3441ea3c4b41042ef91a985d51196f67084279d8,"stack: migrate line parsing code into a function
+
+This makes the line parsing a bit easier to read. Still work to do.
+
+No functional change.
+
+Addresses issue #2"
+maruel,2018-03-16 19:08:23,https://api.github.com/repos/maruel/panicparse/git/commits/e8e77c61818a79d24ca80216c399468b1b759e7c,e8e77c61818a79d24ca80216c399468b1b759e7c,"stack: move local variables into a struct
+
+Create a struct to hold parsing states. It's very far from a state machine but
+that's a step in the right direction.
+
+Addresses issue #2"
+maruel,2018-03-16 18:57:22,https://api.github.com/repos/maruel/panicparse/git/commits/5f50be9d6318d09669530548e82339d193f0e112,5f50be9d6318d09669530548e82339d193f0e112,"stack: move scanLines lower
+
+No functional change; reduces the delta in a follow up change."
+maruel,2018-03-16 17:23:35,https://api.github.com/repos/maruel/panicparse/git/commits/020b7f8743d2ab9560e7b1e7ff9d6448d25455e2,020b7f8743d2ab9560e7b1e7ff9d6448d25455e2,stack: extract string creation from Palette into Signature
+maruel,2018-03-12 16:52:04,https://api.github.com/repos/maruel/panicparse/git/commits/7cd76cb9a49d4941075e16c7985e3be85359a01d,7cd76cb9a49d4941075e16c7985e3be85359a01d,"Fix PR to work and minor stylistic fixes
+
+This still needs work:
+- filtering is only when used at the console, not with HTML output.
+- I'm unsure if filter should be on the header or on the whole stack."
+OneOfOne,2018-03-12 16:11:00,https://api.github.com/repos/maruel/panicparse/git/commits/074a286df42dcb99948cc4059cd7da559089b551,074a286df42dcb99948cc4059cd7da559089b551,"allow matching and filtering traces
+
+Fix #31"
+maruel,2018-03-10 21:21:47,https://api.github.com/repos/maruel/panicparse/git/commits/785840568bdc7faa0dfb1cd6c643207f03271f64,785840568bdc7faa0dfb1cd6c643207f03271f64,"Update vendors
+
+Now that ut dependency is removed, this removes a few additional dependencies."
+maruel,2018-03-10 21:16:36,https://api.github.com/repos/maruel/panicparse/git/commits/c01e86fbbe92ae0cb45a3ecc586ce6c7bc4ae36d,c01e86fbbe92ae0cb45a3ecc586ce6c7bc4ae36d,"Remove all dependencies on github.com/maruel/ut
+
+Makes tests slightly longer but one less dependency"
+themartorana,2018-03-01 21:18:41,https://api.github.com/repos/maruel/panicparse/git/commits/af628dde075afb76fa300a6b53fb8beb27d7618a,af628dde075afb76fa300a6b53fb8beb27d7618a,"Fix ""Current not implemented on freebsd/amd64"" error (#39)"
+maruel,2018-01-15 00:35:34,https://api.github.com/repos/maruel/panicparse/git/commits/eaf28446c8710ad602cc31f1b05d2ef17fc601f3,eaf28446c8710ad602cc31f1b05d2ef17fc601f3,"Enable guessing GOROOT and GOPATH
+
+Add -rebase=false as an option to disable this functionality.
+
+Fixes #35."
+maruel,2017-12-09 02:50:17,https://api.github.com/repos/maruel/panicparse/git/commits/c0182c169410cfa80c7e8f046dad208eaef91338,c0182c169410cfa80c7e8f046dad208eaef91338,"Add go report card tag, it's cute"
+maruel,2017-12-09 02:49:12,https://api.github.com/repos/maruel/panicparse/git/commits/14414ea50f64deb68440599f5dc66498af2d910a,14414ea50f64deb68440599f5dc66498af2d910a,Fix more typo and remove unreachable code
+maruel,2017-12-09 02:47:36,https://api.github.com/repos/maruel/panicparse/git/commits/ec4675118f1bc52867e438275841e22d863240d4,ec4675118f1bc52867e438275841e22d863240d4,Fix copy pasted typo
+maruel,2017-12-04 02:28:53,https://api.github.com/repos/maruel/panicparse/git/commits/aa885a44dc9a8267e0d0e44f808b7b063f8fb662,aa885a44dc9a8267e0d0e44f808b7b063f8fb662,stack: minor micro optimization
+maruel,2017-12-04 02:04:03,https://api.github.com/repos/maruel/panicparse/git/commits/6a8ffb1d0c59283bb019220669250b1ad60404f4,6a8ffb1d0c59283bb019220669250b1ad60404f4,"stack: move bucketizing code into bucket.go
+
+This is to shorten stack.go, as some refactoring is planned."
+maruel,2017-12-04 00:04:07,https://api.github.com/repos/maruel/panicparse/git/commits/6ffb6e32b5440e76fdd38fc98f2f4fed12fea2aa,6ffb6e32b5440e76fdd38fc98f2f4fed12fea2aa,README.md: clarify vendoring and API breakage vs major version
+maruel,2017-12-03 16:50:49,https://api.github.com/repos/maruel/panicparse/git/commits/18dd5f446f720582e9d93e28bf43f89300cf2f3f,18dd5f446f720582e9d93e28bf43f89300cf2f3f,"pp: add -html
+
+-html permits generating a web page as a self-contained file instead of output
+at console.
+
+For now it just recreates a similar output to what is printed in the console.
+The end goal is to be able to present way more information, like inline source
+code.
+
+Fixes #36"
+maruel,2017-12-03 16:42:00,https://api.github.com/repos/maruel/panicparse/git/commits/ae16c297e0a53ffdbfdb097cb5717d9305f558cd,ae16c297e0a53ffdbfdb097cb5717d9305f558cd,panic: add args_elided and stack_cut_off
+maruel,2017-12-03 16:29:32,https://api.github.com/repos/maruel/panicparse/git/commits/b7aa3cba963d6e43d07300ed5f3440954e473d48,b7aa3cba963d6e43d07300ed5f3440954e473d48,panic: remove a testing left over from ae340c405388339c
+maruel,2017-12-03 16:14:25,https://api.github.com/repos/maruel/panicparse/git/commits/b5bc6dfc838115ca896dd18c9cb591ceb4ac1633,b5bc6dfc838115ca896dd18c9cb591ceb4ac1633,"pp: only silence SIGQUIT when input stream is piped in
+
+When a file path is provided as an argument, do not silence SIGQUIT."
+maruel,2017-12-03 16:11:30,https://api.github.com/repos/maruel/panicparse/git/commits/ae340c405388339c72bc5b1bcd5b6fd5cc9f658f,ae340c405388339c72bc5b1bcd5b6fd5cc9f658f,"cmd/panic: promote as tool from internal/crash
+
+Will be useful for smoke testing."
+maruel,2017-12-02 02:02:15,https://api.github.com/repos/maruel/panicparse/git/commits/3dbff48a1817367a9f2caa611cbdaac0c0482b34,3dbff48a1817367a9f2caa611cbdaac0c0482b34,"Add 'panic race'.
+
+Will be used to help implement the race detector parsing, see #27."
+maruel,2017-11-29 15:16:18,https://api.github.com/repos/maruel/panicparse/git/commits/766956aceb8ff49664065ae50bef0ae8a0a83ec4,766956aceb8ff49664065ae50bef0ae8a0a83ec4,"internal/panic: add tool to generate panics
+
+The source code is designed to scale to a large number of panic styles.
+Eventually testing should be transformed to smoke tests that run this tool, this
+way this will test the whole toolchain behavior."
+maruel,2017-11-22 02:16:22,https://api.github.com/repos/maruel/panicparse/git/commits/7492cd3414eee33a84f49bd1057421defccea5e0,7492cd3414eee33a84f49bd1057421defccea5e0,"stack: don't try to read past the end of a file.
+
+If the sources on disk do not match the sources used to build a binary, a line
+number in the call stack may not exist anymore, as the source file may have been
+shortened.
+
+This should really need a unit test. ¯\_(ツ)_/¯
+
+Fix #38"
+kashav,2017-10-16 22:37:38,https://api.github.com/repos/maruel/panicparse/git/commits/f6ee1e454807f72b84277a84fc06437081340a1b,f6ee1e454807f72b84277a84fc06437081340a1b,"Add map and channel type (#34)
+
+* Add map and channel type
+
+* Add tests for map/channel type
+
+Closes #30
+
+* Better handle complex types
+
+* Update name to use switch statement
+
+* Skip processing of last Stack.Calls element instead of first
+
+The leaf function wasn't being processed before, so the following snippet:
+
+  package main
+
+  func g([]string) {
+    panic(""g"")
+  }
+
+  func f(map[int]int) {
+    g(make([]string, 5))
+    panic(""f"")
+  }
+
+  func main() {
+    f(map[int]int{})
+  }
+
+resulted in:
+
+  panic: g
+
+  exit status 2
+
+  To see all goroutines, visit https://github.com/maruel/panicparse#GOTRACEBACK
+
+  18:25:04.051198 load(/path/to/main.go)
+  1: running
+      main main.go:4  g(0xc420045ee8, 0x5, 0x5)
+      main main.go:8  f(map[int]int(0xc420078000))
+      main main.go:13 main()
+
+and now results in:
+
+  panic: g
+
+  exit status 2
+
+  To see all goroutines, visit https://github.com/maruel/panicparse#GOTRACEBACK
+
+  18:25:42.981470 load(/path/to/main.go)
+  1: running
+      main main.go:4  g([]string(0xc420045ee8 len=5 cap=5))
+      main main.go:8  f(map[int]int(0xc420066000))
+      main main.go:13 main()"
+gwik,2017-08-23 14:16:33,https://api.github.com/repos/maruel/panicparse/git/commits/e097e77a230345db8ac8961861c81fb509c845c9,e097e77a230345db8ac8961861c81fb509c845c9,"fix parsing in presence of carriage return (#33)
+
+When parsing output of debug/pprof/goroutine?debug=2 the lines
+have CRLF terminator."
+maruel,2017-08-11 16:24:50,https://api.github.com/repos/maruel/panicparse/git/commits/c139306d9b850f842c12be39998d2fcecfdf2e34,c139306d9b850f842c12be39998d2fcecfdf2e34,Fix >50% in README.md
+maruel,2017-02-27 22:23:42,https://api.github.com/repos/maruel/panicparse/git/commits/fea9fd0fc48fd35e87e70ff6f0ee3c7ad2335b31,fea9fd0fc48fd35e87e70ff6f0ee3c7ad2335b31,"Switch vendoring to github.com/golang/dep
+
+Update vendor/ at the same time.
+
+DROP TESTING ON 1.5. Not worth the trouble. Seriously, update now."
+maruel,2017-07-16 23:31:26,https://api.github.com/repos/maruel/panicparse/git/commits/868abbf1ebac0fb2760cd9a410a5bd2f5afb2f76,868abbf1ebac0fb2760cd9a410a5bd2f5afb2f76,"Update .travis.yml and improve test output; drop 1.4, 1.6, 1.7
+
+- drop Go 1.4, 1.6, 1.7; the stack trace cannot be parse correctly w.r.t
+  the unit test. 1.6 and 1.7 should probably fixed but 1.4 is kinda old.
+- add 1.8; it passes just fine
+- use latest of each Go version
+- include test name in failure"
+maruel,2017-07-16 23:24:45,https://api.github.com/repos/maruel/panicparse/git/commits/2fd7e6e5c98bc975c6b6bbeb43f700d09b22b7b5,2fd7e6e5c98bc975c6b6bbeb43f700d09b22b7b5,"Update .travis.yml to explicitly test multiple Go versions
+
+Include 1.4, 1.5, 1.6 and latest 1.x"
+maruel,2017-07-16 23:04:20,https://api.github.com/repos/maruel/panicparse/git/commits/bb2e7e2e3297fbc7675cabc2ea10e7c44914ef9c,bb2e7e2e3297fbc7675cabc2ea10e7c44914ef9c,"source: fix brittle unit test
+
+- Rewrite source_test.go to be more maintainable
+- Fix brittle test case that was breaking on recent Go version
+- Fix bug in environment variable override"
+maruel,2017-03-28 20:03:51,https://api.github.com/repos/maruel/panicparse/git/commits/ae43f192cef2add653fe1481a3070ed00a4a6981,ae43f192cef2add653fe1481a3070ed00a4a6981,"Improve README.md comment about /usr/bin/pp on OSX
+
+Fixes #28"
+maruel,2017-02-27 22:23:42,https://api.github.com/repos/maruel/panicparse/git/commits/25bcac0d793cf4109483505a0d66e066a3a90a80,25bcac0d793cf4109483505a0d66e066a3a90a80,"Update vendor/
+
+Keep golang.org/x/sys stripped out because it is large."
+maruel,2017-02-27 22:25:21,https://api.github.com/repos/maruel/panicparse/git/commits/410fa3b6678b92c36412651d71616da82bf3439b,410fa3b6678b92c36412651d71616da82bf3439b,"Update stack/source_test.go expectation with new float encoding on go 1.8
+
+The floating point value encoding is non-deterministic in Go and the value on
+the stack varies across versions. Add a new encoding."
+maruel,2016-07-20 14:16:34,https://api.github.com/repos/maruel/panicparse/git/commits/ad661195ed0e88491e0f14be6613304e3b1141d6,ad661195ed0e88491e0f14be6613304e3b1141d6,"Change the floating point value in expectation.
+
+2.0 can be expressed as 0x40000000 or 0xc440000000."
+maruel,2016-07-20 13:54:38,https://api.github.com/repos/maruel/panicparse/git/commits/316f756841862a9a63bef1b06d05648edde71394,316f756841862a9a63bef1b06d05648edde71394,"Give up on older Go version on travis.
+
+goveralls require recent Go version."
+maruel,2016-07-19 23:01:51,https://api.github.com/repos/maruel/panicparse/git/commits/28cafc4310bea87e32a2fd04ab1e88d536d7239e,28cafc4310bea87e32a2fd04ab1e88d536d7239e,"Migrate vendoring from Godeps to govend; using native go1.6 vendoring.
+
+Ran:
+  govend -v -t -u -l --prune
+  rm -rf vendor/golang.org
+
+Removed golang.org/... since it's pretty large."
+maruel,2016-05-25 13:29:44,https://api.github.com/repos/maruel/panicparse/git/commits/8dc9456d2035bf06f83bb22867104e2486cc7ed4,8dc9456d2035bf06f83bb22867104e2486cc7ed4,"Get rid of gitter link and older screencasts.
+
+I updated the first screencast for b04458315c7b1b022b47fa5366788b8d0b7d0cc3
+which changed -parse to be the default but haven't updated the other ones.
+Remove them from here for now until I take the time to update them; it would be
+useful to update the goroutine categorization one since it's a nice non-obvious
+feature. These screencasts also make the README very busy so it's not bad to
+clean up the README a bit.
+
+I never used the gitter chat room."
+maruel,2016-05-25 13:10:35,https://api.github.com/repos/maruel/panicparse/git/commits/b04458315c7b1b022b47fa5366788b8d0b7d0cc3,b04458315c7b1b022b47fa5366788b8d0b7d0cc3,"Make -parse to be the default. No crash has been reported for a while.
+
+Use `pp -parse=false` to disable source parsing in case a problem is faced."
+maruel,2016-03-17 12:55:16,https://api.github.com/repos/maruel/panicparse/git/commits/fad3904e072035be3feaceecd7c26fc3139b1d29,fad3904e072035be3feaceecd7c26fc3139b1d29,"Handle the case where the source file is ""??"".
+
+Add more comments about how the parsing is done, since the regexp by itself is
+obscure.
+
+Add regression test case.
+
+Fix #21."
+maruel,2016-02-29 23:13:05,https://api.github.com/repos/maruel/panicparse/git/commits/20a5e7bfc5bd70d9fd751c70eced038c61a0d01e,20a5e7bfc5bd70d9fd751c70eced038c61a0d01e,"Implement sources reading!
+
+This gives panicparse superpowers. It is able to deduce the types and be much
+smarter in the way it present the information.
+
+The code is still brittle and expected to fail in exotic cases. Please report
+failures upstream. This is why it is not enabled by default, one has to use the
+-parse flag to use this functionality. Eventually the flag will be enabled by
+default and a -no-parse may(?) be added."
+maruel,2016-02-29 23:22:06,https://api.github.com/repos/maruel/panicparse/git/commits/cc54a28490ac18b64d820d3f63623b78a431342e,cc54a28490ac18b64d820d3f63623b78a431342e,Add an example how to use the library.
+maruel,2016-02-22 02:15:51,https://api.github.com/repos/maruel/panicparse/git/commits/abacf81b7886385cfb4419b00131f3a66f1fb2fb,abacf81b7886385cfb4419b00131f3a66f1fb2fb,"Externalize stack.Palette to present Buckets.
+
+This effectively export the code to pretty print analyzed stack traces. By
+default an empty Palette{} will not add colors. It's up to the user to either
+copy-paste internal.defaultPalette or create one.
+
+ui.go has 100% test coverage.
+
+Fixes #8."
+maruel,2016-01-11 00:49:12,https://api.github.com/repos/maruel/panicparse/git/commits/f798c3e07c1e0764cc2e61b18ba1350a64a3138b,f798c3e07c1e0764cc2e61b18ba1350a64a3138b,"Fix build on go <=1.5. (bis)
+
+Totally shamecube worth."
+maruel,2016-01-11 00:46:35,https://api.github.com/repos/maruel/panicparse/git/commits/86275e9bc5a559c9325a9616957180712de89a2b,86275e9bc5a559c9325a9616957180712de89a2b,Fix build on go <=1.5.
+maruel,2016-01-11 00:29:22,https://api.github.com/repos/maruel/panicparse/git/commits/5bca01b1ebc951143dc9f97db9fedb346f9e63fa,5bca01b1ebc951143dc9f97db9fedb346f9e63fa,"Add a banner on Go 1.6 when GOTRACEBACK is not set.
+
+Change the README.md header so it can be referenced by the code. The is shown
+when Go 1.6+ is used, GOTRACEBACK is not set or set to single and there's only
+one trace shown."
+maruel,2016-01-10 23:59:52,https://api.github.com/repos/maruel/panicparse/git/commits/b237cade4ce54eedf7c9691364592513e3fba896,b237cade4ce54eedf7c9691364592513e3fba896,Add note about using GOTRACEBACK=all in 1.6.
+maruel,2016-01-05 21:59:22,https://api.github.com/repos/maruel/panicparse/git/commits/57b03f49c00cf730bef3e1f2b8abe9bb1d20758c,57b03f49c00cf730bef3e1f2b8abe9bb1d20758c,"Add experimental chat.
+
+I'll see how it goes."
+maruel,2016-01-04 21:17:34,https://api.github.com/repos/maruel/panicparse/git/commits/2f2774141ccd6316019db0baeaa4e8c13da8b4c8,2f2774141ccd6316019db0baeaa4e8c13da8b4c8,"Abstract the Palette into its own struct.
+
+The goal is to eventually export internal.Process() as part of issue #8.
+
+This removes the need for NewANSIStripper().
+Reduce the number of exported symbols."
+maruel,2016-01-04 02:53:17,https://api.github.com/repos/maruel/panicparse/git/commits/72b50f9fb5822d9375225ecf215ccc85b7a961fd,72b50f9fb5822d9375225ecf215ccc85b7a961fd,"Refactor Signature, split in Stack. Add sleep range in bucket.
+
+Split Signature in two, Signature and Stack. This makes the separation more
+logical. Add SleepMin and SleepMax, so that a range of sleep can be properly
+presented to the user. Update main to present this range.
+
+This is a big refactor so there's a risk I messed up. Please contact me if you
+see anything suspicious.
+
+Fixes #9"
+maruel,2015-11-30 15:14:09,https://api.github.com/repos/maruel/panicparse/git/commits/1ea28e7d288cde3a0a7e22b94573504daf1a208f,1ea28e7d288cde3a0a7e22b94573504daf1a208f,"Implement -aggressive.
+
+Warning: THIS IS A BREAKING CHANGE. You need to update calls to Similar() and
+Bucketize() to use stack.AnyPointer.
+
+It's for issue #9"
+maruel,2016-01-04 00:57:27,https://api.github.com/repos/maruel/panicparse/git/commits/abac916448dcce2c70bad1a71fbb3525cea658f7,abac916448dcce2c70bad1a71fbb3525cea658f7,"More test coverage, fix one crash."
+maruel,2016-01-01 16:12:58,https://api.github.com/repos/maruel/panicparse/git/commits/229136247b49fd086ec51f2625e5c136c878fefd,229136247b49fd086ec51f2625e5c136c878fefd,"Convert high intensity (90) to bold (1).
+
+Remove the use of white and black in most cases. This is to ease users
+using a terminal with a white background, which is the default on OSX.
+
+Fix #11"
+maruel,2015-12-28 02:47:27,https://api.github.com/repos/maruel/panicparse/git/commits/27e7430acbec1bd00c6ae28c89bfd0bd23d67df7,27e7430acbec1bd00c6ae28c89bfd0bd23d67df7,"Remove accidental tabs.
+
+No code change."
+maruel,2015-12-28 02:41:15,https://api.github.com/repos/maruel/panicparse/git/commits/8852acbeea6f89f6336471d1973e963dee42a4b0,8852acbeea6f89f6336471d1973e963dee42a4b0,"Handle when stdout has lines longer than 64kb.
+
+bufio.ScanLines() would fail by default in that case, returning
+bufio.ErrTooLong. Instead of increasing the buffer without bound, change the
+scanning function to return these partial lines and change the stdout handling
+loop to properly process these incomplete lines.
+
+Be more stringent about trailing LF on the last line.
+
+Includes regression test.
+
+Fixes #17"
+maruel,2015-12-21 19:27:01,https://api.github.com/repos/maruel/panicparse/git/commits/4b030ea5b4738e1a60f75ba45a1249608105372e,4b030ea5b4738e1a60f75ba45a1249608105372e,Add warning about future breaking changes.
+maruel,2015-12-01 14:57:07,https://api.github.com/repos/maruel/panicparse/git/commits/7c6ede345de0bebeb8a1283a2ba37fcf8ebc89e4,7c6ede345de0bebeb8a1283a2ba37fcf8ebc89e4,"Refactor in preparation for issue #8.
+
+Split the serialization into independent functions and make them return a
+string.
+
+Add TODOs about future breaking changes. Will likely do around the same time
+issue #9 is implemented since it is also a breaking change."
+maruel,2015-11-30 15:15:16,https://api.github.com/repos/maruel/panicparse/git/commits/7c096877edddd263c10f1fb17bc54050e7616d32,7c096877edddd263c10f1fb17bc54050e7616d32,"Fix lint regressions.
+
+- Remove stale comment about go-colorable. It was confirmed to work.
+- Reorder arguments so -full-path is up front.
+- Fix an error in Signature.Equal() that didn't compare Locked state. This was
+  incorrect."
+maruel,2015-11-29 20:08:05,https://api.github.com/repos/maruel/panicparse/git/commits/c9d0ff315febce11c4ec31c0be1949d9d0ab9333,c9d0ff315febce11c4ec31c0be1949d9d0ab9333,"Add -full-path option.
+
+This is expected to make the path clickable in some IDE.
+
+Add more known GOROOTs: c:/go, /usr/lib/go and /usr/local/go.
+Add TODO to guess GOROOT instead, e.g. assume runtime.GOROOT() but switch
+dynamically based on what is given.
+
+Fix #12"
+maruel,2015-11-30 00:16:20,https://api.github.com/repos/maruel/panicparse/git/commits/c261690032c2f83f427d2e6fc172b2728d060a6e,c261690032c2f83f427d2e6fc172b2728d060a6e,"Merge pull request #13 from mattn/isatty
+
+Use go-colorable on Windows to bring back coloring.
+
+Switch internal IsTerminal implementation to the one provided by go-isatty.
+
+Fix #4"
+mattn,2015-11-29 06:36:58,https://api.github.com/repos/maruel/panicparse/git/commits/47d2e7f5c5b2f2ff3677d79795dc597eb3e551cb,47d2e7f5c5b2f2ff3677d79795dc597eb3e551cb,colorable on windows
+maruel,2015-11-29 19:07:07,https://api.github.com/repos/maruel/panicparse/git/commits/ec87eb47b2a92ab041cd12d94c4ada8f92c83a4c,ec87eb47b2a92ab041cd12d94c4ada8f92c83a4c,"Improve README.md section.
+
+Add notes in README.md about PowerShell, fish shell and zsh.
+
+Move installing bash v4 on OSX and /usr/bin/pp in a ""Tips"" section at the
+bottom.
+
+Fix #15."
+mattn,2015-11-27 00:42:53,https://api.github.com/repos/maruel/panicparse/git/commits/1fe2cf947324fcc0ff2461b4c7c33d9709b5bf7a,1fe2cf947324fcc0ff2461b4c7c33d9709b5bf7a,"Use mattn/go-isatty instead of ssh/terminal
+
+ssh/terminal is too bigger to do it."
+maruel,2015-11-25 14:35:09,https://api.github.com/repos/maruel/panicparse/git/commits/16fff43e72b0c29df5bc24ef9a72ee5a7cbd680e,16fff43e72b0c29df5bc24ef9a72ee5a7cbd680e,Update README to clarify bash v3 vs v4
+maruel,2015-11-24 18:18:52,https://api.github.com/repos/maruel/panicparse/git/commits/8f3b4da72b8ee48382438aedc2ebbea3215eec72,8f3b4da72b8ee48382438aedc2ebbea3215eec72,"Add 'thread locked' parsing.
+
+This state also needs to be parsed manually, handle it in a similar way to
+Sleep."
+maruel,2015-11-24 18:01:10,https://api.github.com/repos/maruel/panicparse/git/commits/7571ec55b0c415524f36d38102b6658904c081da,7571ec55b0c415524f36d38102b6658904c081da,"Fix bucketing on goroutine hung for several minutes.
+
+In this case, the runtime appends '[NN minutes]' which breaks bucketing, as each
+goroutine will have slept for a different amount of time.
+
+Partially fix #9."
+maruel,2015-08-31 19:50:45,https://api.github.com/repos/maruel/panicparse/git/commits/35b70c396b3b7ff615b29678b2385d8adb91c9c2,35b70c396b3b7ff615b29678b2385d8adb91c9c2,Add deadlock screencast.
+maruel,2015-08-31 19:28:51,https://api.github.com/repos/maruel/panicparse/git/commits/a89d3547b5efe26cb4565c5414a67d1943283062,a89d3547b5efe26cb4565c5414a67d1943283062,Replace screenshot with screencast
+maruel,2015-07-20 20:56:33,https://api.github.com/repos/maruel/panicparse/git/commits/b9b8c0f51342cccc7a67b680f1ec7124adff58e5,b9b8c0f51342cccc7a67b680f1ec7124adff58e5,"Add -v, add stack.Args.Processed.
+
+stack.Args.Processed will eventually be filed with data from the source files.
+
+Refactor logic to nameArguments() to increase readability."
+maruel,2015-07-08 15:29:07,https://api.github.com/repos/maruel/panicparse/git/commits/0eddb9878173007f3fb2b225af6d7c087fb80271,0eddb9878173007f3fb2b225af6d7c087fb80271,Add note about conflict with /usr/bin/pp
+maruel,2015-06-22 19:28:43,https://api.github.com/repos/maruel/panicparse/git/commits/618bb801e1bcb121c5d032c58ed0b9b36aa0cfd4,618bb801e1bcb121c5d032c58ed0b9b36aa0cfd4,"Remove coveralls badge, it's broken."
+maruel,2015-06-18 18:37:28,https://api.github.com/repos/maruel/panicparse/git/commits/2203d7f24e7dc7b0b3a188b2f5ddd2b8b141381b,2203d7f24e7dc7b0b3a188b2f5ddd2b8b141381b,Update pre-commit-go to pcg.
+maruel,2015-06-04 18:03:36,https://api.github.com/repos/maruel/panicparse/git/commits/5cbf5848597f45f65cf867246436a6b080ef02cb,5cbf5848597f45f65cf867246436a6b080ef02cb,"Add c:/go/src as a predefined GOROOT.
+
+This is a sane assumption and it helps when pasting in a trace that occured on
+Windows."
+maruel,2015-05-20 16:01:55,https://api.github.com/repos/maruel/panicparse/git/commits/6a3721aa927f55e14b4b6400bbcf22bc14c97104,6a3721aa927f55e14b4b6400bbcf22bc14c97104,Fix import path to use the internal one.
+maruel,2015-05-20 15:46:23,https://api.github.com/repos/maruel/panicparse/git/commits/f09dbb1b034968d01228469f537f987c5409c065,f09dbb1b034968d01228469f537f987c5409c065,"Improve color management.
+
+- Disable colors when no terminal is found.
+- Disable coloring on Windows for now until a working solution is found.
+- Use godep save -r plus trim unnecessary files to make the project self
+  contained."
+maruel,2015-05-12 21:57:08,https://api.github.com/repos/maruel/panicparse/git/commits/f799cf3dcf85462593b9a253dfb2383e141b6501,f799cf3dcf85462593b9a253dfb2383e141b6501,Create cmd/pp because 10 chars is too much.
+maruel,2015-05-10 15:18:01,https://api.github.com/repos/maruel/panicparse/git/commits/6a75b048f9253314640238edea161980d480ad6f,6a75b048f9253314640238edea161980d480ad6f,"Fix a test regression where it was hardcoded to my workstation.
+
+Reduce the number of references to maruel's github account."
+maruel,2015-05-10 15:03:36,https://api.github.com/repos/maruel/panicparse/git/commits/b0285ac859e67148a9587ced05921ade88981601,b0285ac859e67148a9587ced05921ade88981601,Surface Signature.StackElided to UI
+maruel,2015-05-10 14:59:03,https://api.github.com/repos/maruel/panicparse/git/commits/e35da05406490c0a0f7bc8207292565b94f8cd18,e35da05406490c0a0f7bc8207292565b94f8cd18,"Fix two parsing bugs.
+
+- Add support for elided stack when the stack is >100 depth long
+- Add support for package-less function, would previously crash"
+maruel,2015-05-10 14:47:27,https://api.github.com/repos/maruel/panicparse/git/commits/162aa102455882bb89008f9cb247101593b8e390,162aa102455882bb89008f9cb247101593b8e390,Fix parsing when there's no offset but a fp & sp dump.
+maruel,2015-05-09 21:01:46,https://api.github.com/repos/maruel/panicparse/git/commits/d5404223b99f8673b4d90afcf8fdb2cd3cddc3b2,d5404223b99f8673b4d90afcf8fdb2cd3cddc3b2,"Fix a crash, improve ordering, improve parsing.
+
+- Improve ordering to be more consistent; the more private functions in stack,
+  the higher they are in the output. Inversely, the more stdlib functions in
+  stack, the lower they are in the output.
+- Parse call stack entries with fp=0x123 sp=0x123
+- Parse call stack entries with
+  ""goroutine running on other thread; stack unavailable"""
+maruel,2015-05-08 21:23:34,https://api.github.com/repos/maruel/panicparse/git/commits/7a7bf20c8888326f535ebdb7191d2a29eb2fc14b,7a7bf20c8888326f535ebdb7191d2a29eb2fc14b,"Add aggressive goroutine stack grouping based on ptr difference in arguments.
+
+This changes the API a bit so this is a breaking change for package stack.
+
+This should help on servers when there's a lot of goroutines but each processing
+a different object."
+maruel,2015-05-08 14:55:09,https://api.github.com/repos/maruel/panicparse/git/commits/0d8372d5a5bf847d15b761f2bfbff5d7950a79cb,0d8372d5a5bf847d15b761f2bfbff5d7950a79cb,"Merge pull request #6 from xyproto/documentation
+
+Fixed the headlines"
+xyproto,2015-05-08 11:27:29,https://api.github.com/repos/maruel/panicparse/git/commits/a68230eb40ed21dea46b1fabfb4cd123d97f4506,a68230eb40ed21dea46b1fabfb4cd123d97f4506,Fixed the headlines
+maruel,2015-05-04 18:04:17,https://api.github.com/repos/maruel/panicparse/git/commits/08d10849e3b6b539cf79568cdfee66c128007acf,08d10849e3b6b539cf79568cdfee66c128007acf,"Oops, output isn't deterministic, will fix later"
+maruel,2015-05-04 17:52:43,https://api.github.com/repos/maruel/panicparse/git/commits/cf68668a085bba93cb8183fda5887405b17a085e,cf68668a085bba93cb8183fda5887405b17a085e,"Replace arguments 0x0 with 0, much more readable"
+maruel,2015-05-04 17:44:32,https://api.github.com/repos/maruel/panicparse/git/commits/2f7d84ea72e7aecf3c4c06dff1ec65ca0a9f1e7c,2f7d84ea72e7aecf3c4c06dff1ec65ca0a9f1e7c,"Improve README.md, adding Features section."
+maruel,2015-05-04 17:28:54,https://api.github.com/repos/maruel/panicparse/git/commits/79fc6102454aeb66dc3623c0ecf6e1a27d6e846a,79fc6102454aeb66dc3623c0ecf6e1a27d6e846a,Make the output deterministic. Improve test.
+maruel,2015-05-04 17:18:20,https://api.github.com/repos/maruel/panicparse/git/commits/d6a804da174a88ee4ecd0703885d1086f7605a16,d6a804da174a88ee4ecd0703885d1086f7605a16,"Fix regression in output; only symbolize pointers in primary goroutine
+
+- Args.String() must not be with pointer receiver otherwise it's not used by
+  fmt.Printf().
+- Add a test to catch this regression by testing main.go directly.
+- Prioritize pointer IDs to the primary goroutine."
+maruel,2015-05-04 16:59:33,https://api.github.com/repos/maruel/panicparse/git/commits/129b7e692fbaedfbf3e80ea8efb9ff7d7b61259b,129b7e692fbaedfbf3e80ea8efb9ff7d7b61259b,"Fix Windows, second try."
+maruel,2015-05-04 16:57:59,https://api.github.com/repos/maruel/panicparse/git/commits/6b73c419e171f3740d929f63a1d71ddb853562b5,6b73c419e171f3740d929f63a1d71ddb853562b5,"Add .travis.yml, fix tests on Windows."
+maruel,2015-05-04 16:51:58,https://api.github.com/repos/maruel/panicparse/git/commits/435e1abc844150f7ee94ff96b9e89f53bad71404,435e1abc844150f7ee94ff96b9e89f53bad71404,"Remove the need to download github.com/shiena/ansicolor on non-Windows.
+
+Update README.md to include build status and code coverage."
+maruel,2015-05-04 16:47:22,https://api.github.com/repos/maruel/panicparse/git/commits/cb36aac158a09e10c20df9d714f81a900fb7027f,cb36aac158a09e10c20df9d714f81a900fb7027f,"Add back support for elided arguments list.
+
+Fix regression in main.go's source code formatting, oops."
+maruel,2015-05-04 15:56:17,https://api.github.com/repos/maruel/panicparse/git/commits/c319c6c5c0614811a56350c798c0d14c9a25eaab,c319c6c5c0614811a56350c798c0d14c9a25eaab,"Use named pointers for pointer recurring multiple times in the trace.
+
+This permits easier eye scanning by replacing long pointers with short IDs."
+maruel,2015-05-02 01:14:38,https://api.github.com/repos/maruel/panicparse/git/commits/aa7e0f56270bebaf7d399145e14c2dda3bdfd07a,aa7e0f56270bebaf7d399145e14c2dda3bdfd07a,"Add preliminary support for Windows.
+
+For odd reasons only the rest gets colored, will look into it later.
+At least output is readable."
+maruel,2015-05-01 01:12:23,https://api.github.com/repos/maruel/panicparse/git/commits/41e4d719340dc6a763eff3d02b4fd818a88921cd,41e4d719340dc6a763eff3d02b4fd818a88921cd,"Improve parsing and grouping.
+
+- Now properly parses stacks with .c and .s sources
+- Correctly print function without a package, e.g. findrunnable() and schedule()
+  in proc.c.
+- Group stdlib-only stacks at the bottom; it makes the dump much easier to scan
+  for user code.
+- Consider _test/_testmain.go as stdlib, since it is generated by ""go test"".
+  This simplifies looking at go test stack dump.
+
+Added tests."
+maruel,2015-04-29 16:42:33,https://api.github.com/repos/maruel/panicparse/git/commits/dab1b5b36657d9cb6b3bafcddedb0fa258e55b51,dab1b5b36657d9cb6b3bafcddedb0fa258e55b51,Add note about deadlock and Ctrl-\ on POSIX
+maruel,2015-04-29 01:28:50,https://api.github.com/repos/maruel/panicparse/git/commits/02d474c4e9f87fad54dbb83618ce21779722dd59,02d474c4e9f87fad54dbb83618ce21779722dd59,"Silence SIGQUIT in addition to SIGINT.
+
+This permits using Ctrl-\ with albeit slightly more noise in the output.
+
+SIGQUIT doesn't exist on Windows but a dummy value is defined, so conditional
+compilation is not required."
+maruel,2015-04-28 19:41:34,https://api.github.com/repos/maruel/panicparse/git/commits/fbfe81d6e44e7d9e1b194cc3f598b1311ca16b66,fbfe81d6e44e7d9e1b194cc3f598b1311ca16b66,"Streams stdin to stdout on the fly.
+
+This removes the need for -all and makes the tool usable in long lived processes."
+maruel,2015-04-28 19:30:54,https://api.github.com/repos/maruel/panicparse/git/commits/542c732c8b888ce78bc980b5aae4ec1434531497,542c732c8b888ce78bc980b5aae4ec1434531497,Use new screenshot3.png in README.md
+maruel,2015-04-28 19:22:24,https://api.github.com/repos/maruel/panicparse/git/commits/1e7e2494e5c94a7965f20e2fa264a32507e8a9ff,1e7e2494e5c94a7965f20e2fa264a32507e8a9ff,"Improve parsing to parse createdby source.
+
+Improve output readability.
+Improve test readability."
+maruel,2015-04-28 18:56:50,https://api.github.com/repos/maruel/panicparse/git/commits/569a8db932d6df41d868fe6e4a49c3c95dec687d,569a8db932d6df41d868fe6e4a49c3c95dec687d,"Fix parsing of 'created by', add test case, add comments"
+maruel,2015-04-27 20:11:15,https://api.github.com/repos/maruel/panicparse/git/commits/6d44a8db980181c71e064f41f6ae0d022116ecea,6d44a8db980181c71e064f41f6ae0d022116ecea,Add titles to screenshots
+maruel,2015-04-27 20:09:51,https://api.github.com/repos/maruel/panicparse/git/commits/8058340255c07db69a5babcb76f9d0c54fcaedc3,8058340255c07db69a5babcb76f9d0c54fcaedc3,Add second screenshot to README.md
+maruel,2015-04-21 21:40:53,https://api.github.com/repos/maruel/panicparse/git/commits/41aa430323b57279a499dd8dd811e5689d10028e,41aa430323b57279a499dd8dd811e5689d10028e,Add reference to screenshot
+maruel,2015-04-19 23:35:16,https://api.github.com/repos/maruel/panicparse/git/commits/b5d32895601f1e696262fd68117fe9a388f2ebf1,b5d32895601f1e696262fd68117fe9a388f2ebf1,"Split parsing code into package 'stack' and add unit test.
+
+The package 'stack' is reusable.
+
+Improve parsing, alignment and coloring. Use different color for package name
+and for the function.
+
+Update README.md as the example is not good anymore."
+maruel,2015-04-19 23:29:36,https://api.github.com/repos/maruel/panicparse/git/commits/7dd2739e3178f5428976512c4ec60155fbbf33e8,7dd2739e3178f5428976512c4ec60155fbbf33e8,"Add args, parse quoting.
+
+Fixes #1"
+maruel,2015-04-15 18:11:44,https://api.github.com/repos/maruel/panicparse/git/commits/1dbfb78a3e76ccb44cec97bd0d661d4ede1b3295,1dbfb78a3e76ccb44cec97bd0d661d4ede1b3295,"Multiple improvements.
+
+- Fix parsing of stack traces when it contains ""<autogenerated>"".
+- Add color; green for stdlib, red for other code.
+- Add more comments."
+maruel,2015-04-15 17:35:05,https://api.github.com/repos/maruel/panicparse/git/commits/a0eb0cee87d7cad0b22421baf899a09380d36fce,a0eb0cee87d7cad0b22421baf899a09380d36fce,"Make panicparse ignore Ctrl-C.
+
+This makes possible to pipe a process that is Ctrl-C'ed out into panicparse,
+while panicparse ignores the signal and outputs the result."
+maruel,2015-02-02 03:46:32,https://api.github.com/repos/maruel/panicparse/git/commits/7fdbd7bab40dea2767a0761f644edca69f44709e,7fdbd7bab40dea2767a0761f644edca69f44709e,Made sorting more deterministic
+maruel,2015-02-01 23:51:36,https://api.github.com/repos/maruel/panicparse/git/commits/326562bb13450c69c05ad31f955fe24c8f3112b0,326562bb13450c69c05ad31f955fe24c8f3112b0,Initial commit of panicparse.

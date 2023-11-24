@@ -1,0 +1,568 @@
+novm,"Experimental KVM-based VMM for containers, written in Go."
+username,timestamp,url,sha,message
+amscanne,2015-02-03 17:10:03,https://api.github.com/repos/google/novm/git/commits/278237d9ebcaea19695a08151e64555e634442f3,278237d9ebcaea19695a08151e64555e634442f3,"Merge pull request #31 from hamo/pickle-compliant
+
+Force pickle.dump uses protocol 2"
+hamo,2015-02-03 08:51:14,https://api.github.com/repos/google/novm/git/commits/d9dc21e36493d454756f94966a45bae71a3b9346,d9dc21e36493d454756f94966a45bae71a3b9346,Force pickle.dump uses protocol 2
+amscanne,2015-02-03 05:42:30,https://api.github.com/repos/google/novm/git/commits/098a68cfc3d5159343b365ea151bdd9a1ac8379b,098a68cfc3d5159343b365ea151bdd9a1ac8379b,Plumb env and cwd through create as well.
+amscanne,2015-02-03 05:32:18,https://api.github.com/repos/google/novm/git/commits/106ea2808a2144293a7f51dcf67d88c6ea5fcbbc,106ea2808a2144293a7f51dcf67d88c6ea5fcbbc,Don't create empty files.
+amscanne,2015-02-03 02:54:38,https://api.github.com/repos/google/novm/git/commits/41142a1aaa8d11cc22afe51189ff390dd477db62,41142a1aaa8d11cc22afe51189ff390dd477db62,Fix small documentation mistake.
+amscanne,2015-02-03 02:53:46,https://api.github.com/repos/google/novm/git/commits/e7733c7989ccbdc98b44ec7e1776320afb301fb4,e7733c7989ccbdc98b44ec7e1776320afb301fb4,Adding missing import for dup.
+amscanne,2015-02-03 02:47:04,https://api.github.com/repos/google/novm/git/commits/a9bb55fd47421849102bd9ab773e5f335e44b969,a9bb55fd47421849102bd9ab773e5f335e44b969,"Merge pull request #22 from amscanne/fix_python3
+
+Make python scripts python3 compatible."
+amscanne,2015-01-14 08:27:43,https://api.github.com/repos/google/novm/git/commits/52be905d0d40b0a802856637d1ae420733961385,52be905d0d40b0a802856637d1ae420733961385,"Make python scripts python3 compatible.
+
+With the assistance of the python module six (seems to be mostly standard), the
+python module is now python2 and python3 compatible. No magic __future__."
+amscanne,2015-02-03 02:00:21,https://api.github.com/repos/google/novm/git/commits/296500740ed28bc2d3654bce2495151070aa1b67,296500740ed28bc2d3654bce2495151070aa1b67,"Fix go1.3 and go1.4 compatibility issue.
+
+The garbage collector was cleaning up the console file. We lift it out
+of the if scope, and noguest works again.
+
+This should fix #7, #10 and #23."
+amscanne,2015-01-14 22:19:27,https://api.github.com/repos/google/novm/git/commits/62366c62f9db3d1515ae1b3a41bc1dfc51d57589,62366c62f9db3d1515ae1b3a41bc1dfc51d57589,"Merge pull request #21 from davidkuridza/fix-pkg-info-url
+
+Fix pkg-info's project URL"
+amscanne,2015-01-14 22:18:56,https://api.github.com/repos/google/novm/git/commits/dc4746c8cce2cc916c4faf19cbb82e26d9d0025b,dc4746c8cce2cc916c4faf19cbb82e26d9d0025b,"Merge pull request #18 from hamo/mkinit_fix
+
+Make modules dir before copy modules into it"
+amscanne,2015-01-14 22:18:26,https://api.github.com/repos/google/novm/git/commits/220a79513032b1d39de73244b471750e9fcc2090,220a79513032b1d39de73244b471750e9fcc2090,"Merge pull request #4 from attilaolah/master
+
+Fix a typo in the README"
+amscanne,2015-01-14 08:51:13,https://api.github.com/repos/google/novm/git/commits/cc5ea53b64735b71496788d07b1fa140cec224e2,cc5ea53b64735b71496788d07b1fa140cec224e2,"Fix nic documentation, and debug parameter.
+
+This addresses #9."
+amscanne,2015-01-14 08:43:19,https://api.github.com/repos/google/novm/git/commits/bb10cddf229361394fea4c0b7c895ba15663b925,bb10cddf229361394fea4c0b7c895ba15663b925,"Revert a54fb35.
+
+This was causing a problem and leading to #19. I need to properly test and
+debug this prior to remerging this change."
+davidkuridza,2015-01-14 07:20:28,https://api.github.com/repos/google/novm/git/commits/7eaf4e0b6c305a7f388c318fd5ad2ce1c25a657a,7eaf4e0b6c305a7f388c318fd5ad2ce1c25a657a,"Fix pkg-info's project URL
+
+When trying to access http://code.google.com/p/novm/, 404 is returned.
+It seems the project at code.google.com is abandonded in favour of
+hosting it at GitHub."
+amscanne,2015-01-14 06:09:58,https://api.github.com/repos/google/novm/git/commits/621626481e180cace9b149b059c11f2d29c204ad,621626481e180cace9b149b059c11f2d29c204ad,"Merge pull request #20 from rmahmood/master
+
+Make sure DEBIAN directory has correct permissions during build."
+mrahatm,2015-01-13 22:39:04,https://api.github.com/repos/google/novm/git/commits/0d5dd46698afe2f460875188c2f16573a592d47f,0d5dd46698afe2f460875188c2f16573a592d47f,"Make sure DEBIAN directory has correct permissions during build.
+
+Git appears to check out directories with permission 750. Dpkg
+requires the DEBIAN directory to be accessible by everyone."
+hamo,2015-01-13 10:34:39,https://api.github.com/repos/google/novm/git/commits/eac7188fdd02ff3d75fc7700e1a1748d0854e69e,eac7188fdd02ff3d75fc7700e1a1748d0854e69e,Make modules dir before copy modules into it
+amscanne,2015-01-13 02:40:06,https://api.github.com/repos/google/novm/git/commits/a54fb35c11387b49bca76fc79ef6330dce0caeed,a54fb35c11387b49bca76fc79ef6330dce0caeed,"Switch from MMIO PCI bars to PIO PCI bars.
+
+This results in a substantial performance improvement.
+
+Emulation of MMIO accesses is much slower, as the actual instruction
+must be emulated. PIO accesses can be emulated much faster, since the
+data is well-defined and inline."
+amscanne,2015-01-13 02:28:14,https://api.github.com/repos/google/novm/git/commits/302881d0ff0b3e13385a96b564731c768208b73b,302881d0ff0b3e13385a96b564731c768208b73b,Lock VCPU thread.
+amscanne,2015-01-13 02:19:47,https://api.github.com/repos/google/novm/git/commits/a029369f1b228a3e3e1e8efe1b9b714344bc090a,a029369f1b228a3e3e1e8efe1b9b714344bc090a,"Merge pull request #17 from amscanne/fix_rpm_spec_2
+
+Drop confusing novm-docker script, cleanup RPM build."
+amscanne,2015-01-13 02:15:01,https://api.github.com/repos/google/novm/git/commits/9d3c0c1916682447c56e605737ff49c797aa1638,9d3c0c1916682447c56e605737ff49c797aa1638,"Make rpm files explicit.
+
+I'm not sure why it fails on Fedora (given it builds fine on systems
+that I tested), but apparently it does.
+
+This drops the filelist part for explicit file parts."
+amscanne,2015-01-13 02:11:09,https://api.github.com/repos/google/novm/git/commits/90a34faa8c2addf9b60ae2a0a5dd6cce5c04000b,90a34faa8c2addf9b60ae2a0a5dd6cce5c04000b,"Remove confusing docker script.
+
+This mechanism for running docker images was explored, but ultimately a
+different approach was taken. This script is confusing and shouldn't
+really be here anymore."
+amscanne,2015-01-12 21:08:18,https://api.github.com/repos/google/novm/git/commits/19098d12045423e902985e35320458b511be86d4,19098d12045423e902985e35320458b511be86d4,"Merge pull request #13 from amscanne/clarify_reqs
+
+Add note re: older kernels."
+amscanne,2015-01-12 21:08:06,https://api.github.com/repos/google/novm/git/commits/5677e039866f799d21cbff4c6c1e4327e577805f,5677e039866f799d21cbff4c6c1e4327e577805f,"Merge pull request #6 from tdubrownik/master
+
+Switching from arch to go env GOARCH"
+amscanne,2015-01-12 21:07:02,https://api.github.com/repos/google/novm/git/commits/a0f1f96166dd495dc07d1ca3ec7eea9a56d02433,a0f1f96166dd495dc07d1ca3ec7eea9a56d02433,"Merge pull request #14 from amscanne/fix_rpmspec
+
+This is a fix for #12."
+amscanne,2015-01-11 00:30:17,https://api.github.com/repos/google/novm/git/commits/af788029e5a645a39d797efbee1d504b51602872,af788029e5a645a39d797efbee1d504b51602872,"Merge pull request #15 from amscanne/contributors
+
+Clarify contribution process."
+amscanne,2015-01-11 00:13:59,https://api.github.com/repos/google/novm/git/commits/958d4b29347d33447c17a4aa4bcad26b5236c0a5,958d4b29347d33447c17a4aa4bcad26b5236c0a5,Add note re: older kernels.
+amscanne,2015-01-11 00:10:12,https://api.github.com/repos/google/novm/git/commits/e7001ea86b10c8d9381cb7d1a7e63a5dcf790131,e7001ea86b10c8d9381cb7d1a7e63a5dcf790131,Include only files in rpm spec.
+amscanne,2015-01-10 23:48:40,https://api.github.com/repos/google/novm/git/commits/eeaecbb597f2ab6cbb899da95bc6383a10660bca,eeaecbb597f2ab6cbb899da95bc6383a10660bca,Clarify contribution process.
+tdubrownik,2015-01-10 02:06:26,https://api.github.com/repos/google/novm/git/commits/472a1533fe1d7295add244a16b3660210cbbd773,472a1533fe1d7295add244a16b3660210cbbd773,"Switching from arch to go env GOARCH
+
+This is a very tiny change that should make building more portable.
+Since go is an implicit dependency, we may as well use its idea of host
+architecture instead of an OSX command."
+attilaolah,2015-01-08 11:01:11,https://api.github.com/repos/google/novm/git/commits/5e888c995f1565bec808207affc292108954395e,5e888c995f1565bec808207affc292108954395e,fix a typo
+amscanne,2015-01-08 05:19:27,https://api.github.com/repos/google/novm/git/commits/b7c9c78f5f611c6e7a9c635879918c150778ab64,b7c9c78f5f611c6e7a9c635879918c150778ab64,Add some build instructions.
+amscanne,2015-01-08 04:11:43,https://api.github.com/repos/google/novm/git/commits/c5a5feaf05af72a488192c5209a86c241d828a7d,c5a5feaf05af72a488192c5209a86c241d828a7d,Use proper include path for bootparam.h.
+amscanne,2015-01-08 04:09:38,https://api.github.com/repos/google/novm/git/commits/89f7b444ad82364ee1e094dd959b32094797c26d,89f7b444ad82364ee1e094dd959b32094797c26d,"Change spaces to tabs.
+
+It seems gofmt no longer supports -tabs=false. So it's time to do it the
+right way. More idiomatic with tabs anyways."
+amscanne,2014-08-22 13:49:46,https://api.github.com/repos/google/novm/git/commits/ff6321dfd82070fd538f137c82c7f3a98eb9c957,ff6321dfd82070fd538f137c82c7f3a98eb9c957,Clarify advantages.
+amscanne,2014-08-22 13:45:20,https://api.github.com/repos/google/novm/git/commits/978c24651e36e2273380ac3e19e480357316dd83,978c24651e36e2273380ac3e19e480357316dd83,Add disclaimer to README.
+amscanne,2014-07-18 18:24:07,https://api.github.com/repos/google/novm/git/commits/67f66a649627f83432b68ac78c48342b8f96018a,67f66a649627f83432b68ac78c48342b8f96018a,Add appropriate per-file license headers.
+amscanne,2014-04-25 20:17:09,https://api.github.com/repos/google/novm/git/commits/be5b1ee197cd763ad01c293667a8c3104264b973,be5b1ee197cd763ad01c293667a8c3104264b973,"Pass through terminal setting for NOVM RUN.
+
+This simplifies starting up processes from noguest when we
+don't care about having a terminal. Unfortunately, we still
+have a problem with noguest execve() always failing after
+some unknown terminal manipulation. Children are still not
+being isolated properly in the terminal case.
+
+Change-Id: Ica253edc3e709b3ef06a7dd4e9dbe836814f788e"
+amscanne,2014-04-23 23:42:54,https://api.github.com/repos/google/novm/git/commits/8ded2a69fa9daac5a23a583bbcdbf68b96e1a611,8ded2a69fa9daac5a23a583bbcdbf68b96e1a611,"Support proper reading of symlinks.
+
+This adds support for reading and stating symlinks as expected by
+9pfs. This doesn't add support for creating symlinks, that will come
+in a later commit.
+
+Change-Id: I7c84086fdb60126c6da0cd81078c88d73473235c"
+amscanne,2014-04-23 22:52:51,https://api.github.com/repos/google/novm/git/commits/c775d613f637c8e4ab783f433b1c81d5606d9c8a,c775d613f637c8e4ab783f433b1c81d5606d9c8a,"Handle renames appropriately.
+
+If we're renaming onto a deleted file, we need to clear out the
+underlying file. Similarly, we need to mark the moved file as deleted.
+
+Change-Id: Ia13bec00e95ea0aab857a4f8c98e9022f5835778"
+amscanne,2014-04-16 20:57:37,https://api.github.com/repos/google/novm/git/commits/df0f8ecaf52ea0db88fa443e88719158ed2a6d5d,df0f8ecaf52ea0db88fa443e88719158ed2a6d5d,"Initial wstat() implementation.
+
+This at least allows touch (and rename, almost) to work.
+
+All of these operations have become quite complex in commit,rollback
+logic. At some point in the future, it would make sense to create an
+interface for all the Operations to implement, along the lines of:
+
+   Prepare(), Commit() | Rollback()
+
+Then the parse methods would simply return an interface object which
+would be called appropriately. Anyways, this is work for a future
+commit.
+
+Change-Id: I153e9378f2e16ca02bef1d7e183f2c8efba7e41d"
+amscanne,2014-04-03 23:47:16,https://api.github.com/repos/google/novm/git/commits/44a9db9572dfee328f4cf23dd694d7482fa55382,44a9db9572dfee328f4cf23dd694d7482fa55382,"Working eventfd implementation.
+
+Since this works, I've also removed the flag that allows you
+to enable or disable eventfds. This prevents a bounce out of the
+kernel to handle device emulation (i.e. notifying the virtio
+backend that a new buffer has been added), so should improve
+latency decently. There's no solid reason to disable it.
+
+Change-Id: I4656b30c2ee18fe3e287dd99d4afc38ae4f1e9da"
+rmahmood,2014-04-04 00:25:38,https://api.github.com/repos/google/novm/git/commits/b2f03fea8ce650984aab24b7b71e79ef43e93380,b2f03fea8ce650984aab24b7b71e79ef43e93380,"Fixing device initialization in management code (trivial).
+
+Change-Id: Ic66d9f5e4dcc683ae6dac4c6110fbcff8b1e4869"
+amscanne,2014-04-03 20:06:37,https://api.github.com/repos/google/novm/git/commits/48ce15d9f3d54891b152dd98db44d2ba65e3bcf6,48ce15d9f3d54891b152dd98db44d2ba65e3bcf6,"Catch only relevant signals.
+
+Unintended consequence: previously, we were catching all signals.
+
+This means that we were catching SIGINT when trying to Ctrl-C
+from the command line, which could be quite frustrating.
+
+Change-Id: Iaee52e699e6cbbac9c4010b8da3941f199f00916"
+amscanne,2014-04-03 20:05:09,https://api.github.com/repos/google/novm/git/commits/ed2aedb8ac5101940da87c7c3d44472dbdf648ab,ed2aedb8ac5101940da87c7c3d44472dbdf648ab,"Refactor python commannd line management wrapper.
+
+This splits the command line logic and management logic
+into two separate components. Although this is intended as
+a lightweight management stack (and not really for use cases
+beyond development or simple ones), this should allow tools
+to hook into the NovmManager() more cleanly.
+
+Change-Id: Iacd7ae29ae3e6b15e7681d583ee4056a164abdf1"
+amscanne,2014-03-31 02:38:13,https://api.github.com/repos/google/novm/git/commits/8e7642de20fccd547ff6617f9343dfbc768d3bd9,8e7642de20fccd547ff6617f9343dfbc768d3bd9,"Fix signal handler for parent death.
+
+There was a race condition on STOP/CONT of parent (or spurious
+signals delivered to child processes). This refactors the loop
+in order to handle the case where we get a TERM but the parent
+hasn't exited just yet. Hopefully without any other races.
+
+Change-Id: I22aa0bf6d069688e1d92122e01418b9fc25798f1"
+amscanne,2014-03-30 16:42:16,https://api.github.com/repos/google/novm/git/commits/9f5ade4a91a65ec850beb5460720eedbd7f75e6f,9f5ade4a91a65ec850beb5460720eedbd7f75e6f,"Implement a special restart mode.
+
+This allows us to effectively keep VMs running and upgrade KVM.
+While this probably isn't super useful without a larger management
+framework, this at least gives us a compelling use case for the
+SIGHUP restart functionality (which was largely introduced for
+simple testing and verification of all the state serialization).
+
+This also moves signal catching as close as possible to the start
+of the program, in order to reduce the chance of missing them.
+(This sort of sucks, but I don't really want to go plubming into
+the depths of the runtime in order to fix this problem).
+
+Change-Id: Id1c7d778107cd51d2aa6d65c8db81b3bd4de7b5a"
+amscanne,2014-04-01 00:33:19,https://api.github.com/repos/google/novm/git/commits/602a64d5cdb8582259c56d6444bae223d5700981,602a64d5cdb8582259c56d6444bae223d5700981,"Omnibus commit for state synchronization.
+
+Unfortunately, this got a big out of control while attempting
+to get suspend / resume working properly. This commits contains
+several (high-related) items that are difficult to split up:
+
+* Fix the interface used for synchronized device state to
+  the underlying VM. This means instead of a Sync() call, we
+  now have formal Load() and Save() methods which will Load()
+  the device state into the VM, and pull out the state from
+  within the VM respectively.
+
+* Add a device Pause() functionality. Because we need to ensure
+  that devices are not actively changing state when we serialize
+  state, we need to add a Pause() and Unpause() hook to the model
+  similar to the Vcpu state. This also requires that goroutines
+  that are using the underlying device call appropriate Acquire()
+  and Release() methods when they are mutating the state. (These
+  should not block, and should only be held when the device is
+  actively changing).
+
+  You don't need to worry about this for standard Read(), Write()
+  methods, only for additional goroutines that you may launch.
+
+  These pause methods are exposed via the control plane, and a
+  paused flag is added to the command line for development.
+
+  (It's useful to start a VM in a paused state).
+
+* Add new KVM state & devices (like the FPU state) that were not
+  properly being accounted for before.
+
+* Fixes for small serialization errors encountered during development.
+
+  Including:
+
+  * Invalid refs serialized for plan9 state.
+  * Cpuid saved all register state to eax, stupdly.
+  * MSRs weren't look at nr_msrs correctly, so no MSRs
+    were being loaded correctly.
+  * When the console device was opened, the load was held
+    waiting for Opened = true, but that had already happened.
+
+* Refactor and reorganize related bits of code to be cleaner.
+
+Change-Id: Ic4acfab2a6557891a8d7771e91c3d63f27de7249"
+amscanne,2014-03-30 16:39:43,https://api.github.com/repos/google/novm/git/commits/fb9b36e84c82977b2d594c7d87c8f5e959f906da,fb9b36e84c82977b2d594c7d87c8f5e959f906da,"Need buffered channel for restore.
+
+Because we inject a nil error on restore, we need this
+channel to be buffered. (There were other ways of doing
+this, but this is just a trivial fix).
+
+Change-Id: I89b30a130411abc4727799f434cde28d5745c0b6"
+amscanne,2014-04-03 18:53:17,https://api.github.com/repos/google/novm/git/commits/04c881f0d0b21d8d5eba9438dbd83c0be42a7d57,04c881f0d0b21d8d5eba9438dbd83c0be42a7d57,"Create utils package.
+
+This package contains helpers for encoding & decoding, as well
+as a simple Die() method to wrap around log.Fatal (or maybe panic).
+
+Undoubtedly this package will grow in the future.
+
+Change-Id: I1c833e3ef7636e6dbd6dc4c1c32b54cba5c7f93d"
+amscanne,2014-03-30 14:48:39,https://api.github.com/repos/google/novm/git/commits/1303723a9e68e33b341fafcb17fbdd7a7f1c8e45,1303723a9e68e33b341fafcb17fbdd7a7f1c8e45,"Control refactor: split types into Rpc and Control.
+
+It was getting a bit frustrating having to ensure that
+all public methods of the Control matched the rpc spec.
+
+This commit splits the control types into the server and
+an RPC object, which the actual control calls hang from.
+This makes the separate very clear (and ensures that we
+won't actually expose methods that shouldn't be exposed).
+
+Change-Id: I10a826a3ae21df9d8d3115555f27633e07b5b0e3"
+amscanne,2014-03-27 23:27:35,https://api.github.com/repos/google/novm/git/commits/3aa8949f97f95a678c436b4b7a461f6cef2fdfd4,3aa8949f97f95a678c436b4b7a461f6cef2fdfd4,"Wide changes to support saving full CPU state.
+
+In order for suspend & resume to work properly, we need to correctly
+serialize all the state contained with the Linux kernel in addition to
+the userspace state. This adds the appropriate hooks to all that to happen
+as with other devices (but actually triggered from the BIOS).
+
+Change-Id: I18125e91651c9fffeff9343f07125de4dbea48ee"
+amscanne,2014-03-27 20:20:47,https://api.github.com/repos/google/novm/git/commits/fabbbd2fba57480b782768e4c741edad9af39881,fabbbd2fba57480b782768e4c741edad9af39881,"Implement zero-downtime upgrades.
+
+As a mechanism for providing zero-downtime upgrades, as well as exercising
+built-in suspend/resume mechanisms we support hitting novmm with a SIGHUP
+and causing a re-exec() of the process with the current state.
+
+Note that this required that we change the way state is passed in to the
+novmm process. In order to ensure that we can use arbitrarily-sized state,
+we now accept an FD instead of a bloating the command line.
+
+Change-Id: Ie526e7bb96eb3037a3e9e190d5b4d299e3ffb68e"
+amscanne,2014-03-27 20:16:05,https://api.github.com/repos/google/novm/git/commits/690ead9b7117880f0b1168620af3fcc7117a0903,690ead9b7117880f0b1168620af3fcc7117a0903,"Fix close-on-exec semantics for all file descriptors.
+
+For all file descriptors which we open internally, we ensure
+that these are marked CLOEXEC. This is being done as part of
+efforts to perform live restarts (and exercise suspend/resume).
+
+Change-Id: I64759cb51e43fe454c99a11b52955a4f80875896"
+amscanne,2014-03-27 20:17:40,https://api.github.com/repos/google/novm/git/commits/7291a0a93f75d9f420fab3da34064757e7133638,7291a0a93f75d9f420fab3da34064757e7133638,"Refactor state and fix serialization issues.
+
+Many of the device objects had issues with serialization.
+
+This commit addresses most of those issues (implementing a custom
+marshal or unmarshal method where necessary) and refactors the internal
+state. Instead of using a separate devices and vcpus object, we now use
+just a single state object which contains both devices and vcpus.
+
+Change-Id: I9ee1f1852f85365863e1dae22aa7269c0f1967f3"
+amscanne,2014-03-27 02:05:23,https://api.github.com/repos/google/novm/git/commits/8d7d24528670ae6047cee0189598f6bd182befc7,8d7d24528670ae6047cee0189598f6bd182befc7,"Refactor control files into separate package.
+
+These were becoming more numerous than I had originally intended.
+It makes sense to split all the control functions into a separate
+package. This commit contains only one functional change:
+
+* A basic control was added that allows for pausing/unpausing.
+
+Change-Id: I86ba6f7e25d9cabeba0d6392a5c89a257538a51b"
+amscanne,2014-03-28 15:04:07,https://api.github.com/repos/google/novm/git/commits/d6d60309f2a8d3a62e6cf19d1eed095f6c8e2780,d6d60309f2a8d3a62e6cf19d1eed095f6c8e2780,"Fix build on older system.
+
+If you pass KERNEL=y, we will now build against kernel headers
+(either guessed or as passed by the user). This is optional because
+it some cases it may lead to problems (if your system headers are
+much older than the kernel headers assume).
+
+Change-Id: I4604ae8df45ceddcbda25f103239b394b6e8413c"
+amscanne,2014-03-27 20:11:10,https://api.github.com/repos/google/novm/git/commits/ca5cebc340576ef6be11afbb2bd6f3774a984ced,ca5cebc340576ef6be11afbb2bd6f3774a984ced,"Sync registers after interrupting KVM_RUN.
+
+If we pause a VCPU (i.e. deliver a signal and cause EINTR to return),
+we need to synchronize the register state and mark the current cache
+as invalid. Otherwise, calls to GetRegisters() will return stale data.
+
+Change-Id: I14ea66e79929ef974ae972fc31fa6e19cc61be07"
+amscanne,2014-03-27 20:12:28,https://api.github.com/repos/google/novm/git/commits/056696245a832b5cef2655d6d5681c7cf343621f,056696245a832b5cef2655d6d5681c7cf343621f,"Remove unused files.
+
+These were necessary at some point, but are no longer needed.
+At some point we may invest effort in using AIO in order to do
+block I/O, but frankly the level of asynchrony provided by Go
+itself renders most of that unnecessary.
+
+Change-Id: If30a4805455028068b38bb8daf3ab3650810b704"
+amscanne,2014-03-27 20:09:50,https://api.github.com/repos/google/novm/git/commits/dec920716461b7fa9781ba4ccc61ee877b792499,dec920716461b7fa9781ba4ccc61ee877b792499,"Add @alwaysjson decorator for commands.
+
+For commands that don't really have a sensible prettyprint
+output (like control), we can simply have them default to use
+JSON output. This is a simple decorator which changes behaviour.
+
+Change-Id: If1bc23b0088d505c57e8e6315840200409bd9e89"
+amscanne,2014-03-26 22:21:11,https://api.github.com/repos/google/novm/git/commits/7d9a1ce078a9012d625d9f457b5afc7804ce6bcf,7d9a1ce078a9012d625d9f457b5afc7804ce6bcf,"Probe rlimit on attach(), not on init().
+
+The structure will be deserialization post-init(), so we may
+end up with a fdlimit of 0. This doens't make sense -- the intended
+behaviour was to treat this as an ""auto"" mode. So we need to probe
+the rlimit on attach(), not on init().
+
+Change-Id: Ic05bacd122ef3746f941abdc36179771e6f5d496"
+amscanne,2014-03-27 02:09:08,https://api.github.com/repos/google/novm/git/commits/91c319e9e0aeef7d7b07f9309dc5d9c5a312000e,91c319e9e0aeef7d7b07f9309dc5d9c5a312000e,"Clear LRU index on removal.
+
+Whoops. If something gets flushed from the LRU, we don't clear
+the index. This can result in a potential SEGV (among many other
+potential problems) when the file is removed a second time at close.
+
+Change-Id: I37e94e40c1ac805395c8b9f996e8c74d4e701b09"
+amscanne,2014-03-26 21:15:00,https://api.github.com/repos/google/novm/git/commits/e85c490814039a300d4380e66864df4fc6808e22,e85c490814039a300d4380e66864df4fc6808e22,"Add GetRegisters(), SetRegisters() functions.
+
+This makes it easier to take an atomic snapshot of all
+available registers for a given VCPU. This relies on the
+new Pause()/Unpause() functionality.
+
+Change-Id: I7ea31533e7f9beb7929b780599025eef9b1c9ca8"
+amscanne,2014-03-26 20:51:59,https://api.github.com/repos/google/novm/git/commits/1cc3b2ebf5a16e64e5b19b4c6f68044ae59bfc79,1cc3b2ebf5a16e64e5b19b4c6f68044ae59bfc79,"Fix pause semantics.
+
+Turns out, we couldn't reliably interrupt KVM in the kernel
+simply by setting stepping on or off. It's somewhat difficult
+to get around the Go scheduler in this case, so we need to isolate
+some critical pieces inside C extensions to avoid thread switching.
+
+This leads to some fairly complex-seeming pause-related code, but
+in the end I believe that this is necessary.
+
+Change-Id: I1709df4ec7fea6827f38f6f984c48e5ab8dbe241"
+amscanne,2014-03-24 19:23:29,https://api.github.com/repos/google/novm/git/commits/9c6613b48038bd8ba8f2fe2a7da063bc5ea9a005,9c6613b48038bd8ba8f2fe2a7da063bc5ea9a005,"Squash SIGINT and cleanup only on parent death.
+
+We were getting both a SIGINT and SIGTERM when the user ctrl-C's
+a running novm at a terminal. This was resulting in the cleanup
+handler dying some part of the time.
+
+Change-Id: Iff006fb754f642d672d0b0f45c7aa1b6ec8180cf"
+amscanne,2014-03-14 16:16:28,https://api.github.com/repos/google/novm/git/commits/069a4f36c05fbe3e55e5fe8003d30e22d8b65a8a,069a4f36c05fbe3e55e5fe8003d30e22d8b65a8a,"Implement file desriptor limits.
+
+There are undoubtedly still bugs in the filesystem backend,
+but this sketches out a simple implementation of an LRU cache
+for actual fds. When we go over the limit, we will close unlocked
+file fds (which can be subsequently reopened if the kernel reads
+again).
+
+Change-Id: I23094c49b0ad8334d6e66bdbba826956a2c6d6fe"
+rmahmood,2014-03-13 17:40:33,https://api.github.com/repos/google/novm/git/commits/c9a978ad31b95d55957e07819ee7e0c1f9f4a3de,c9a978ad31b95d55957e07819ee7e0c1f9f4a3de,"Forward guest nic hardware offload features.
+
+Configuring the tap device to allow the guest nic to make use of
+hardware offload features (such as hardware checksumming and
+segmentation offloading) on the host's physical nic.
+
+Change-Id: Ic16ba65bf3b415af556ae001ec39589da898a0f2"
+rmahmood,2014-03-18 19:45:35,https://api.github.com/repos/google/novm/git/commits/6ea67be6e1bc562fa76f3e7ad9ceaafc90a46720,6ea67be6e1bc562fa76f3e7ad9ceaafc90a46720,"Removing trailing whitespace.
+
+Change-Id: I1870700a7179fcc75229361c52cfd0ea394fd44a"
+amscanne,2014-03-13 22:12:12,https://api.github.com/repos/google/novm/git/commits/09d1d1e59cb5c73a44bbb7c4c7ff0867ee6fb241,09d1d1e59cb5c73a44bbb7c4c7ff0867ee6fb241,"Adding default .gitreview for Gerrit.
+
+Change-Id: If364770ab121ae7800b6128c1e02655b4315663b"
+amscanne,2014-03-13 17:49:48,https://api.github.com/repos/google/novm/git/commits/77dbdf27ae2c4985934961d624c918a8c830cb75,77dbdf27ae2c4985934961d624c918a8c830cb75,Catching keyboard interrupts.
+amscanne,2014-03-13 15:25:29,https://api.github.com/repos/google/novm/git/commits/eca6bf1ba0ec695f94734ebd408ddfaeeb28821e,eca6bf1ba0ec695f94734ebd408ddfaeeb28821e,Make using the terminal optional.
+amscanne,2014-03-13 02:00:22,https://api.github.com/repos/google/novm/git/commits/c893c2d46ad37f246bf782f24cb4bf7cab4f2d57,c893c2d46ad37f246bf782f24cb4bf7cab4f2d57,"Add experimental docker backend.
+
+This allows novm to function as an ""execdriver"" for Docker.
+
+For more information, see the docker blog post available here:
+   http://blog.docker.io/2014/03/docker-0-9-introducing-execution-drivers-and-libcontainer/
+
+This functionality requires a ""shell"" execdriver.
+
+This is currently a pull request, available here:
+   https://github.com/dotcloud/docker/pull/4626"
+amscanne,2014-03-13 01:59:21,https://api.github.com/repos/google/novm/git/commits/3c6aeb96f0f38a27043c05aea3065ef48ff766e5,3c6aeb96f0f38a27043c05aea3065ef48ff766e5,Use absolute values (PATH may not be defined).
+amscanne,2014-03-13 01:59:10,https://api.github.com/repos/google/novm/git/commits/5198d44b3df6520ac93e83afc5abd7dc171cc9fb,5198d44b3df6520ac93e83afc5abd7dc171cc9fb,Never assume HOME is defined.
+amscanne,2014-03-13 01:58:54,https://api.github.com/repos/google/novm/git/commits/da0656367e38cce9e64954044c4a34fe6a2f0b58,da0656367e38cce9e64954044c4a34fe6a2f0b58,Give more information in run() exceptions.
+amscanne,2014-03-13 01:22:24,https://api.github.com/repos/google/novm/git/commits/28a369cb406e33d4fb8d0601433d2665a40b85f8,28a369cb406e33d4fb8d0601433d2665a40b85f8,Cleanup subprocess calls.
+amscanne,2014-03-13 01:20:59,https://api.github.com/repos/google/novm/git/commits/503baabf4007c2ca20737ffb175a4e1f388a1ab8,503baabf4007c2ca20737ffb175a4e1f388a1ab8,Add MTU to supported NIC parameters.
+amscanne,2014-03-13 01:20:29,https://api.github.com/repos/google/novm/git/commits/e68faf08825e07e183e253df95ad2234d011dc9a,e68faf08825e07e183e253df95ad2234d011dc9a,"Show full exception, even with fork()."
+amscanne,2014-03-12 23:19:36,https://api.github.com/repos/google/novm/git/commits/5463fd35512742210aaa087426259150259ed2c4,5463fd35512742210aaa087426259150259ed2c4,Enable zipfile > 2gb.
+amscanne,2014-03-12 23:18:42,https://api.github.com/repos/google/novm/git/commits/ba5192979dc870a5c16f995fa8aee103f887ce10,ba5192979dc870a5c16f995fa8aee103f887ce10,"Drop sync.Once use where it's really not needed.
+
+This is only called a very limited number of times,
+so just call the same function multiple times. It makes
+the logic clearer and drops the extra globals."
+amscanne,2014-03-12 18:50:09,https://api.github.com/repos/google/novm/git/commits/bb09dadb6e02fbd6da4713ed548e6478775c61b4,bb09dadb6e02fbd6da4713ed548e6478775c61b4,Don't copy full source on import.
+amscanne,2014-03-12 18:49:56,https://api.github.com/repos/google/novm/git/commits/4ab246bc656239680886d152b33cbadf6b32f5ab,4ab246bc656239680886d152b33cbadf6b32f5ab,Always set a generic hostname.
+amscanne,2014-03-10 16:02:57,https://api.github.com/repos/google/novm/git/commits/226bbf6e19c0763a51505ac400505a023844ac78,226bbf6e19c0763a51505ac400505a023844ac78,"Enable passing a command to create().
+
+This will also ensure that the VMM exits when the command is finished,
+and the shell exit code should match the process exit code."
+amscanne,2014-03-10 16:02:49,https://api.github.com/repos/google/novm/git/commits/c1ddff537eed0219d2eff566abc30049ac6fdac4,c1ddff537eed0219d2eff566abc30049ac6fdac4,Avoid unnecessary exec() in startup.
+amscanne,2014-03-10 16:01:56,https://api.github.com/repos/google/novm/git/commits/09a4005736a47e119cc5bf8576307ce56af45b2e,09a4005736a47e119cc5bf8576307ce56af45b2e,Cleanup default parsing in Manager.
+amscanne,2014-03-10 16:00:03,https://api.github.com/repos/google/novm/git/commits/612107f9af35b99449935ba8f0dad15ced854bcb,612107f9af35b99449935ba8f0dad15ced854bcb,"Fixing parsing for extra arguments.
+
+Now you don't need to pass -- in order to stop processing."
+amscanne,2014-03-10 15:59:32,https://api.github.com/repos/google/novm/git/commits/ced3dae32a0ceba845e6a607194de66c152e3a30,ced3dae32a0ceba845e6a607194de66c152e3a30,Fixing run() for non-terminals.
+amscanne,2014-03-10 15:59:07,https://api.github.com/repos/google/novm/git/commits/64a4711a9b311daf10dd80988dfe7ee772b506eb,64a4711a9b311daf10dd80988dfe7ee772b506eb,Adding sensible defaults for CliOpts.
+amscanne,2014-03-05 23:49:03,https://api.github.com/repos/google/novm/git/commits/548d37a80223057b91dd035395dee9bf275df01c,548d37a80223057b91dd035395dee9bf275df01c,"Restructure control flow.
+
+Unfortunately, there's still a problem. It seems that
+the first client connected prior to NOGUEST coming up,
+will simply hang. Blerg."
+amscanne,2014-03-05 23:48:57,https://api.github.com/repos/google/novm/git/commits/a297e2642b68f1de76966ff908c58667ab474792,a297e2642b68f1de76966ff908c58667ab474792,Fix Twstat unpack (and buffer overrun).
+amscanne,2014-03-05 23:02:15,https://api.github.com/repos/google/novm/git/commits/f3f693cd8f0e7694ed9c9ca3ae1632f001f31371,f3f693cd8f0e7694ed9c9ca3ae1632f001f31371,Short-circuit empty reads.
+amscanne,2014-03-05 23:01:00,https://api.github.com/repos/google/novm/git/commits/8761f566c9685568e153ada10609df8c434100bf,8761f566c9685568e153ada10609df8c434100bf,Implement SSH-style controls.
+amscanne,2014-03-05 23:00:42,https://api.github.com/repos/google/novm/git/commits/21f7e6ba1c766478aad6aaa89f06eacd1a361d3e,21f7e6ba1c766478aad6aaa89f06eacd1a361d3e,Fix docker downloads (flush file output).
+amscanne,2014-03-04 23:52:02,https://api.github.com/repos/google/novm/git/commits/316a0e991497c3a3e8b553610e83a5d4982d6d4a,316a0e991497c3a3e8b553610e83a5d4982d6d4a,Tiny debug fixes.
+amscanne,2014-03-04 23:51:27,https://api.github.com/repos/google/novm/git/commits/686ca4f508d1320eb0092cce81b540848879e70c,686ca4f508d1320eb0092cce81b540848879e70c,"Change init semantics.
+
+We now allow either real_init, or not. No isolation in PID
+namespaces and mount namespaces, seems that's needlessly complex."
+amscanne,2014-03-04 23:47:29,https://api.github.com/repos/google/novm/git/commits/355c1a9dc8ec03dafc8c6c840402c5ae820ace8c,355c1a9dc8ec03dafc8c6c840402c5ae820ace8c,Disable frequency scaling.
+amscanne,2014-03-04 23:47:18,https://api.github.com/repos/google/novm/git/commits/91284783edeb78732d021fba7704487218acc1f9,91284783edeb78732d021fba7704487218acc1f9,Add fscache for root filesystem.
+amscanne,2014-03-03 23:06:34,https://api.github.com/repos/google/novm/git/commits/01b3c7e1029cff6fca637e0af2b1c21cb075ea2c,01b3c7e1029cff6fca637e0af2b1c21cb075ea2c,Add support for namespaces (new init).
+amscanne,2014-03-03 23:06:24,https://api.github.com/repos/google/novm/git/commits/701c7a45d0cfbeafffcca12266838c9b7d2efe75,701c7a45d0cfbeafffcca12266838c9b7d2efe75,Require fakeroot (for novm-import-kernel).
+amscanne,2014-03-03 20:14:04,https://api.github.com/repos/google/novm/git/commits/b1c9987b278cab920110eaa1ca19e6478a4e071b,b1c9987b278cab920110eaa1ca19e6478a4e071b,Removing inaccurate information.
+amscanne,2014-03-03 20:01:30,https://api.github.com/repos/google/novm/git/commits/ff4c7c6b663cf2354adcef28349c64d8f2cb0dcf,ff4c7c6b663cf2354adcef28349c64d8f2cb0dcf,"Remove unnecessary interrupt.
+
+Where did it come from?"
+amscanne,2014-03-03 20:01:17,https://api.github.com/repos/google/novm/git/commits/5c7a62832e03033ea18b8d027f1f772fc6faf327,5c7a62832e03033ea18b8d027f1f772fc6faf327,Fix buffering problems.
+amscanne,2014-03-03 19:49:21,https://api.github.com/repos/google/novm/git/commits/a2d8ea4bf7bd1bf87b64ab4c3c9bcc5751798ace,a2d8ea4bf7bd1bf87b64ab4c3c9bcc5751798ace,Tiny CLI improvements.
+amscanne,2014-03-03 19:49:44,https://api.github.com/repos/google/novm/git/commits/adb957c581f094dbb26097944a92e5070ea4b228,adb957c581f094dbb26097944a92e5070ea4b228,Add basic pause control.
+amscanne,2014-03-03 18:17:58,https://api.github.com/repos/google/novm/git/commits/12a4592e417ae07ebd84e02ec6de1cef74c5c9c0,12a4592e417ae07ebd84e02ec6de1cef74c5c9c0,Support arbitrary JSON for control objects.
+amscanne,2014-03-03 18:11:57,https://api.github.com/repos/google/novm/git/commits/8c31c6d3781410d6ea3e2820eb6f945867eba2b0,8c31c6d3781410d6ea3e2820eb6f945867eba2b0,"Split control into multiple files.
+
+This is in antipication of more control command, a
+more complex interface, etc."
+amscanne,2014-03-03 03:58:43,https://api.github.com/repos/google/novm/git/commits/1fe48ab4c3754d48e0b3debb83a27c9468209cdd,1fe48ab4c3754d48e0b3debb83a27c9468209cdd,Complete EventFd plumbing.
+amscanne,2014-03-01 00:49:17,https://api.github.com/repos/google/novm/git/commits/4dd652ce2e0269940c3009fe29b26deb5b15a386,4dd652ce2e0269940c3009fe29b26deb5b15a386,Working MSI-X implementation.
+amscanne,2014-02-28 19:24:31,https://api.github.com/repos/google/novm/git/commits/fc590a6f149e222a1b1c8ac4ec3c4d4545590b7e,fc590a6f149e222a1b1c8ac4ec3c4d4545590b7e,Moving offsets to constants.
+amscanne,2014-02-28 16:00:54,https://api.github.com/repos/google/novm/git/commits/59cd965ed8c49b66c9c770c977758308ad90a302,59cd965ed8c49b66c9c770c977758308ad90a302,Fix PCI offsets.
+amscanne,2014-02-28 15:58:14,https://api.github.com/repos/google/novm/git/commits/0a7547baec029426d2f9eaf40f5c09c05a74a2fd,0a7547baec029426d2f9eaf40f5c09c05a74a2fd,Parameter is no longer --kernel_id.
+amscanne,2014-02-28 15:58:00,https://api.github.com/repos/google/novm/git/commits/51d63536554d76b071ee32dacf6f8a16b31f11c0,51d63536554d76b071ee32dacf6f8a16b31f11c0,Don't catch all exceptions.
+amscanne,2014-02-28 15:57:46,https://api.github.com/repos/google/novm/git/commits/a7464848afe68f8b4662e62c433f7faa9667b1f0,a7464848afe68f8b4662e62c433f7faa9667b1f0,Include release in kernel table.
+amscanne,2014-02-27 18:54:37,https://api.github.com/repos/google/novm/git/commits/b9d8272334a3e3654aa5784e2f53067e47999225,b9d8272334a3e3654aa5784e2f53067e47999225,Pass through the model.
+amscanne,2014-02-27 18:53:12,https://api.github.com/repos/google/novm/git/commits/4517f68fb24272e244fb76bbd0ee1439824fef30,4517f68fb24272e244fb76bbd0ee1439824fef30,Implement RPC control plumbing.
+amscanne,2014-02-26 19:42:44,https://api.github.com/repos/google/novm/git/commits/275a8a7143131867186c4d1e2fc6e580a3fdfe84,275a8a7143131867186c4d1e2fc6e580a3fdfe84,Print 'False'.
+amscanne,2014-02-25 21:40:25,https://api.github.com/repos/google/novm/git/commits/e9ab03d5beaf2344ff9006c29d9fd02969f69f69,e9ab03d5beaf2344ff9006c29d9fd02969f69f69,Removing PCI-to-PCI bridge by default.
+amscanne,2014-02-25 18:49:05,https://api.github.com/repos/google/novm/git/commits/ec817c3f38814433bea724fa3a4d7b7346e3b0ab,ec817c3f38814433bea724fa3a4d7b7346e3b0ab,Add --alive filter for list.
+amscanne,2014-02-25 18:48:51,https://api.github.com/repos/google/novm/git/commits/9b923e104f33d29e6b6daea1ce117705d34667f8,9b923e104f33d29e6b6daea1ce117705d34667f8,Don't print 'None'.
+amscanne,2014-02-25 04:14:01,https://api.github.com/repos/google/novm/git/commits/f258d537423bd77ca6e6db54042cf8f754ad1e8e,f258d537423bd77ca6e6db54042cf8f754ad1e8e,Attempt to cleanup RPC interface.
+amscanne,2014-02-25 04:13:46,https://api.github.com/repos/google/novm/git/commits/32d4a0577f4dc79b37b0dcf5013360e851e99db8,32d4a0577f4dc79b37b0dcf5013360e851e99db8,Enable path searching.
+amscanne,2014-02-25 04:13:21,https://api.github.com/repos/google/novm/git/commits/2c96e56bd2ff3a692fd720354001a6b5eb13ad91,2c96e56bd2ff3a692fd720354001a6b5eb13ad91,Allow defaults via environment.
+amscanne,2014-02-25 03:02:14,https://api.github.com/repos/google/novm/git/commits/389aac161ee97c0faf3e6ced1d91afa835488010,389aac161ee97c0faf3e6ced1d91afa835488010,Fixing environment plumbing.
+amscanne,2014-02-25 02:54:51,https://api.github.com/repos/google/novm/git/commits/1f8d6e70b5c4bbe9b1437e431833241f88ef44d2,1f8d6e70b5c4bbe9b1437e431833241f88ef44d2,Add handy cleanall command.
+amscanne,2014-02-25 02:54:29,https://api.github.com/repos/google/novm/git/commits/64998b2659a4dc48cb1621c797e3a4458d987108,64998b2659a4dc48cb1621c797e3a4458d987108,Ensure sorted keys.
+amscanne,2014-02-25 02:54:08,https://api.github.com/repos/google/novm/git/commits/490fdc151911d92636c35d5d741bc62d22a20bf6,490fdc151911d92636c35d5d741bc62d22a20bf6,Catch explicit SIGINT.
+amscanne,2014-02-25 02:53:55,https://api.github.com/repos/google/novm/git/commits/5103fb1257b2f250e8263d50b8a12526df00d853,5103fb1257b2f250e8263d50b8a12526df00d853,Ensure clean capabilities pointer.
+amscanne,2014-02-24 23:42:59,https://api.github.com/repos/google/novm/git/commits/4e81b7e026c69d5fb127f3aed6cee8e499f0e511,4e81b7e026c69d5fb127f3aed6cee8e499f0e511,Correctly implement Write() contract.
+amscanne,2014-02-07 02:48:25,https://api.github.com/repos/google/novm/git/commits/bcb207e4284fd5caa668362ec544f41fb9fac6d9,bcb207e4284fd5caa668362ec544f41fb9fac6d9,Cleanup docker specifications.
+amscanne,2014-02-07 02:28:23,https://api.github.com/repos/google/novm/git/commits/83809cdb7d1ad0c6f0c870fdb12fa4ae409c0451,83809cdb7d1ad0c6f0c870fdb12fa4ae409c0451,Clean up list().
+amscanne,2014-02-07 02:19:51,https://api.github.com/repos/google/novm/git/commits/a0359f06db1b0aeebcb5e278e1aea48bf214c972,a0359f06db1b0aeebcb5e278e1aea48bf214c972,Adding alive attribute.
+amscanne,2014-02-07 21:48:10,https://api.github.com/repos/google/novm/git/commits/8cb9c63d9f6d2ee2b0c491c9ea808bb39cd43e6c,8cb9c63d9f6d2ee2b0c491c9ea808bb39cd43e6c,Add barrier for guest RPCs.
+amscanne,2014-02-07 00:45:18,https://api.github.com/repos/google/novm/git/commits/93f25c4075209d42c4a7af3544937b6558a38153,93f25c4075209d42c4a7af3544937b6558a38153,Add basic support for sucking down Docker containers.
+amscanne,2014-02-07 00:44:40,https://api.github.com/repos/google/novm/git/commits/ac13abb9ab6ef7d4779349b0357af03cfc7a4ee8,ac13abb9ab6ef7d4779349b0357af03cfc7a4ee8,"Implement PCI 2 MSI-X specification.
+
+Which begs the question, what the hell was I implementing before?"
+amscanne,2014-02-07 00:44:09,https://api.github.com/repos/google/novm/git/commits/c6607e5e28bf3a7a33e5a3b00c7a28d3bd732b96,c6607e5e28bf3a7a33e5a3b00c7a28d3bd732b96,"Whoops, return Exception? Really?"
+amscanne,2014-02-06 01:29:01,https://api.github.com/repos/google/novm/git/commits/4dd09fbc04fd48ceb45a7a3f91d09551ce99e243,4dd09fbc04fd48ceb45a7a3f91d09551ce99e243,"Add MSI-X support for PCI devices.
+
+This isn't working properly with Linux, but it seems to be the
+case that the guest-side is not even probing PCI capabilities.
+
+I suspect that our broken ACPI data is causing Linux to be pretty
+conservation about hardware-related decisions."
+amscanne,2014-02-05 04:52:56,https://api.github.com/repos/google/novm/git/commits/c2fec58b3449d5ad7fb33a27fc46e433790241a2,c2fec58b3449d5ad7fb33a27fc46e433790241a2,Allowing specification of env & cwd.
+amscanne,2014-02-05 04:42:29,https://api.github.com/repos/google/novm/git/commits/679ede310c5e140cfecbbe834573cc86a2ca1924,679ede310c5e140cfecbbe834573cc86a2ca1924,"Small fixes for non-root execution.
+
+* Include set -e in scripts.
+* No need to open r+ when reading."
+amscanne,2014-02-05 00:59:56,https://api.github.com/repos/google/novm/git/commits/b056710001fedcfc178a8a96ea8eaa992d203edf,b056710001fedcfc178a8a96ea8eaa992d203edf,Terminal implementation.
+amscanne,2014-02-04 23:50:42,https://api.github.com/repos/google/novm/git/commits/9c4aa1b5348513d460064889301dfca96334f119,9c4aa1b5348513d460064889301dfca96334f119,Implement interrupt coalescing.
+amscanne,2014-02-04 23:50:21,https://api.github.com/repos/google/novm/git/commits/10552d441f0e4415e7f295810a052479ed23ec55,10552d441f0e4415e7f295810a052479ed23ec55,Enhance control client.
+amscanne,2014-02-04 17:11:47,https://api.github.com/repos/google/novm/git/commits/2a35b9897e43f334cd8b6aacfb2051a23fd3a7f1,2a35b9897e43f334cd8b6aacfb2051a23fd3a7f1,Cleaning up management module.
+amscanne,2014-02-03 22:04:21,https://api.github.com/repos/google/novm/git/commits/35139173bdcbf8913704f57b5de9948994bf54a2,35139173bdcbf8913704f57b5de9948994bf54a2,Fixing read/write confusion.
+amscanne,2014-02-03 21:22:57,https://api.github.com/repos/google/novm/git/commits/dc82d88fa730951ffca52e48fb565cdb94954732,dc82d88fa730951ffca52e48fb565cdb94954732,Fix python packaging.
+amscanne,2014-02-03 17:42:02,https://api.github.com/repos/google/novm/git/commits/aa8ea80ee4887de63a3f7cb0da6f0009018c76eb,aa8ea80ee4887de63a3f7cb0da6f0009018c76eb,Cleaning up exceptions.
+amscanne,2014-02-03 17:37:02,https://api.github.com/repos/google/novm/git/commits/5d6d91281613098c3d0b92d9f64f0710f1a684f6,5d6d91281613098c3d0b92d9f64f0710f1a684f6,Large cleanup of management bits.
+amscanne,2014-02-03 17:36:42,https://api.github.com/repos/google/novm/git/commits/158c733528d9736036e400c4e47102ca36d099ff,158c733528d9736036e400c4e47102ca36d099ff,Add safety around initial console calls.
+amscanne,2014-02-03 14:30:04,https://api.github.com/repos/google/novm/git/commits/c9f7ff4e02b6073e77c94923e08825d0d03ff95d,c9f7ff4e02b6073e77c94923e08825d0d03ff95d,Add nofork flag.
+amscanne,2014-02-01 18:31:39,https://api.github.com/repos/google/novm/git/commits/7d36361b1fac396986f59a6e857fb96eb6c525aa,7d36361b1fac396986f59a6e857fb96eb6c525aa,Clean up all processes properly.
+amscanne,2014-02-01 18:31:11,https://api.github.com/repos/google/novm/git/commits/46e2540b957ea8b5b634365603988d99698e2e4f,46e2540b957ea8b5b634365603988d99698e2e4f,Handle closed streams.
+amscanne,2014-01-30 03:44:15,https://api.github.com/repos/google/novm/git/commits/9edc571a4a115c346e841e0e11e8302a519949b1,9edc571a4a115c346e841e0e11e8302a519949b1,Working guest RPC implementation.
+amscanne,2014-02-01 03:48:59,https://api.github.com/repos/google/novm/git/commits/b5ed2e8c7f68e87ba85b28f1408de900a7cba8b2,b5ed2e8c7f68e87ba85b28f1408de900a7cba8b2,Fixing varargs parsing.
+amscanne,2014-01-29 20:26:31,https://api.github.com/repos/google/novm/git/commits/3eb8db0377c0cd1ce342dda472701c913fb73bfe,3eb8db0377c0cd1ce342dda472701c913fb73bfe,Fixing broken device filter.
+amscanne,2014-01-29 20:16:51,https://api.github.com/repos/google/novm/git/commits/51b312a19e240bc2eb28dfde4b7f684bc9ceeca5,51b312a19e240bc2eb28dfde4b7f684bc9ceeca5,Refactor file code.
+amscanne,2014-01-29 19:53:23,https://api.github.com/repos/google/novm/git/commits/ee2f1490a099688d54caf5982492bae819b1d04f,ee2f1490a099688d54caf5982492bae819b1d04f,Fixing delete operations.
+amscanne,2014-01-29 19:47:54,https://api.github.com/repos/google/novm/git/commits/915b852eae37eb53cc285520566f78531cb0971b,915b852eae37eb53cc285520566f78531cb0971b,Move socket to /var/run/novm.
+amscanne,2014-01-28 19:45:36,https://api.github.com/repos/google/novm/git/commits/a5f30aba80f7e9b717ba7638480cd3a171fb30a4,a5f30aba80f7e9b717ba7638480cd3a171fb30a4,Catch keyboard interrupt for Ctrl-C.
+amscanne,2014-01-28 01:54:59,https://api.github.com/repos/google/novm/git/commits/e1abd58457faad4d9869bf4f19a19ffb26d9db84,e1abd58457faad4d9869bf4f19a19ffb26d9db84,Handle deleted files for listdir.
+amscanne,2014-01-23 07:22:44,https://api.github.com/repos/google/novm/git/commits/ccee1f77a8ab1819bc8b2abef8d0b246079327e8,ccee1f77a8ab1819bc8b2abef8d0b246079327e8,Working implementation of Plan9FS with Virtio backend.
+amscanne,2014-01-23 07:22:04,https://api.github.com/repos/google/novm/git/commits/41d9ee56fe2001c15964a4bb2611e9a81a825c40,41d9ee56fe2001c15964a4bb2611e9a81a825c40,Include more detailed README.
+amscanne,2014-01-23 06:51:11,https://api.github.com/repos/google/novm/git/commits/1365d7b9130e87658eed00f30fa5f4b1b7bedee4,1365d7b9130e87658eed00f30fa5f4b1b7bedee4,Include modules in all VMs.
+amscanne,2014-01-20 23:35:23,https://api.github.com/repos/google/novm/git/commits/7ea22b98ab9c2714108da1ab5b9edeae56255d74,7ea22b98ab9c2714108da1ab5b9edeae56255d74,Add go version requirement.
+amscanne,2014-01-16 02:25:54,https://api.github.com/repos/google/novm/git/commits/9c427012a1b67daee6512f40a7d6e4886f1e8a06,9c427012a1b67daee6512f40a7d6e4886f1e8a06,Initial working virtio console.
+amscanne,2014-01-15 08:54:55,https://api.github.com/repos/google/novm/git/commits/b198ad09a9b0e2cba5cb8333d14b212ed46501f9,b198ad09a9b0e2cba5cb8333d14b212ed46501f9,Use correct index.
+amscanne,2014-01-15 08:50:35,https://api.github.com/repos/google/novm/git/commits/a1d008e337cfec90f7069a4ac3ffdf0264b70cd6,a1d008e337cfec90f7069a4ac3ffdf0264b70cd6,Using readv/writev for tap devices.
+amscanne,2014-01-15 05:07:54,https://api.github.com/repos/google/novm/git/commits/b7649023fbbdcb0999c9872b3dd1255036da5b42,b7649023fbbdcb0999c9872b3dd1255036da5b42,Adding stub AIO file.
+amscanne,2014-01-15 05:07:46,https://api.github.com/repos/google/novm/git/commits/22a33611aace719250917aa6722cf4612f434f10,22a33611aace719250917aa6722cf4612f434f10,Basic net implementation (broken).
+amscanne,2014-01-14 23:30:34,https://api.github.com/repos/google/novm/git/commits/7b6624d316df876b064a3eb9d090830a50a745a0,7b6624d316df876b064a3eb9d090830a50a745a0,Cleaning up debug logging.
+amscanne,2014-01-14 23:14:39,https://api.github.com/repos/google/novm/git/commits/72cac5475fc3bb1e70ba0fc8c1f0d6d44de488d8,72cac5475fc3bb1e70ba0fc8c1f0d6d44de488d8,Restructure VirtIO queues.
+amscanne,2014-01-14 21:30:01,https://api.github.com/repos/google/novm/git/commits/f2cec17f3ef5bb1f070f9c133c9f1f87c3877f71,f2cec17f3ef5bb1f070f9c133c9f1f87c3877f71,Putting core bios functions together.
+amscanne,2014-01-14 06:36:42,https://api.github.com/repos/google/novm/git/commits/ddce1a1f120acd684fda5807ae0dd7650215b8ab,ddce1a1f120acd684fda5807ae0dd7650215b8ab,Working virtqueues (guest=>host). That wasn't so bad.
+amscanne,2014-01-14 06:35:02,https://api.github.com/repos/google/novm/git/commits/c5de4559686075349d5c67d403540e054aa0c7c4,c5de4559686075349d5c67d403540e054aa0c7c4,Fix world's dumbest register.
+amscanne,2014-01-14 01:44:44,https://api.github.com/repos/google/novm/git/commits/a2b3b1143beb0aaf38ad6958b6be69207809184a,a2b3b1143beb0aaf38ad6958b6be69207809184a,Reasonable queue size.
+amscanne,2014-01-14 01:27:27,https://api.github.com/repos/google/novm/git/commits/2905b3495b09f64533290d7bcdd9f4bf5d4ae501,2905b3495b09f64533290d7bcdd9f4bf5d4ae501,First pass at Virtio.
+amscanne,2014-01-13 18:11:52,https://api.github.com/repos/google/novm/git/commits/beb07d353ed09b3bb2c38e39407d3653331f7945,beb07d353ed09b3bb2c38e39407d3653331f7945,Fixing library finding.
+amscanne,2014-01-13 18:00:56,https://api.github.com/repos/google/novm/git/commits/0c8682ffa90f895dad201d82d00234df3f6fa8f0,0c8682ffa90f895dad201d82d00234df3f6fa8f0,Serialization error with Go1.
+amscanne,2014-01-13 17:58:50,https://api.github.com/repos/google/novm/git/commits/cbf729eb7a3bc287075802389ec869421ed7e554,cbf729eb7a3bc287075802389ec869421ed7e554,Fix compilation on Go1.
+amscanne,2014-01-13 22:02:02,https://api.github.com/repos/google/novm/git/commits/f88b331e64b86fe8d7dde0944a1b761569989eaf,f88b331e64b86fe8d7dde0944a1b761569989eaf,Support basic PCI operations.
+amscanne,2014-01-13 22:01:25,https://api.github.com/repos/google/novm/git/commits/b0c4bfafec731c88fb2525f05b26dd50cb068a0c,b0c4bfafec731c88fb2525f05b26dd50cb068a0c,Use full address for debugging.
+amscanne,2014-01-13 22:00:58,https://api.github.com/repos/google/novm/git/commits/050e2c7dad97e450106e042da7a5b596c6ccc9dc,050e2c7dad97e450106e042da7a5b596c6ccc9dc,Force PCI mode.
+amscanne,2014-01-13 22:00:52,https://api.github.com/repos/google/novm/git/commits/64097688d96ccb6c3994db29776cb920c141ad5d,64097688d96ccb6c3994db29776cb920c141ad5d,Support additional cmdline options.
+amscanne,2014-01-13 16:06:46,https://api.github.com/repos/google/novm/git/commits/336811483cad4adbb2c52ff2cecfc7cbea435f66,336811483cad4adbb2c52ff2cecfc7cbea435f66,Fixing module include in initrd.
+amscanne,2014-01-13 16:06:24,https://api.github.com/repos/google/novm/git/commits/1b5b27b109d8b43677d8f1c28c7d2792a1fbfec0,1b5b27b109d8b43677d8f1c28c7d2792a1fbfec0,Adding PCI hostbridge.
+amscanne,2014-01-13 15:30:38,https://api.github.com/repos/google/novm/git/commits/8b748acc5cc05d7a70f1ae78f477b7cb816cdcaf,8b748acc5cc05d7a70f1ae78f477b7cb816cdcaf,Adding --plain argument for scripting.
+amscanne,2014-01-13 15:30:19,https://api.github.com/repos/google/novm/git/commits/e2d2dae57a3414d37e6f170fbdca86096d68ce0b,e2d2dae57a3414d37e6f170fbdca86096d68ce0b,Adding helper kernel scripts.
+amscanne,2014-01-13 15:30:03,https://api.github.com/repos/google/novm/git/commits/9c076ca64868db14d1851ad53b16e1255fb2de32,9c076ca64868db14d1851ad53b16e1255fb2de32,"DSDT should not be in root, only via FADT."
+amscanne,2014-01-11 02:29:11,https://api.github.com/repos/google/novm/git/commits/e07052650d517a85f44d037ccc3e1d74358f2933,e07052650d517a85f44d037ccc3e1d74358f2933,"Improve ACPI support, still not there yet."
+amscanne,2014-01-11 02:28:50,https://api.github.com/repos/google/novm/git/commits/808da2d34017ad98e24de4536b806bae41dc6878,808da2d34017ad98e24de4536b806bae41dc6878,Fix cleanup scripts hanging on terminal.
+amscanne,2014-01-11 02:28:32,https://api.github.com/repos/google/novm/git/commits/0440fc17ebee4473d5aa5ade1cbaa188a79cf501,0440fc17ebee4473d5aa5ade1cbaa188a79cf501,Closure problem when running multiple vcpus.
+amscanne,2014-01-11 00:27:25,https://api.github.com/repos/google/novm/git/commits/ff65915a52a2141b54b8682a433f8c29f09a7288,ff65915a52a2141b54b8682a433f8c29f09a7288,Large refactor of devices.
+amscanne,2014-01-09 20:52:24,https://api.github.com/repos/google/novm/git/commits/e98634053cf23bcad1fa4a67a5138b4e75e52e91,e98634053cf23bcad1fa4a67a5138b4e75e52e91,Add why novm?
+amscanne,2014-01-09 16:25:09,https://api.github.com/repos/google/novm/git/commits/1c4a6ef149d1cc4b90a803d48bea6f6bca5e3c29,1c4a6ef149d1cc4b90a803d48bea6f6bca5e3c29,"Fix formatting. Also, what's an L2 hypervisor?"
+amscanne,2013-11-28 18:39:47,https://api.github.com/repos/google/novm/git/commits/987a5f210d91d5355bebc2e56bd1444e7306eb03,987a5f210d91d5355bebc2e56bd1444e7306eb03,Initial skeleton.
+amscanne,2013-11-28 18:39:28,https://api.github.com/repos/google/novm/git/commits/c692ac9e15017f619eda124883c9bc405d0688f3,c692ac9e15017f619eda124883c9bc405d0688f3,Initial commit.

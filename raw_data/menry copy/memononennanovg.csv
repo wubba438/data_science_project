@@ -1,0 +1,835 @@
+nanovg,Antialiased 2D vector drawing library on top of OpenGL for UI and visualizations.
+username,timestamp,url,sha,message
+memononen,2019-04-22 19:03:20,https://api.github.com/repos/memononen/nanovg/git/commits/1f9c8864fc556a1be4d4bf1d6bfe20cde25734b4,1f9c8864fc556a1be4d4bf1d6bfe20cde25734b4,"Update README.md
+
+Fix fox #542, indicate font licenses"
+memononen,2019-04-22 18:56:50,https://api.github.com/repos/memononen/nanovg/git/commits/b6ac7c440fa56de7ae20ccef3cba3f89cbdb069b,b6ac7c440fa56de7ae20ccef3cba3f89cbdb069b,Updated readme
+memononen,2018-09-27 19:19:51,https://api.github.com/repos/memononen/nanovg/git/commits/f4069e6a1ad5da430fb0a9c57476d5ddc2ff89b2,f4069e6a1ad5da430fb0a9c57476d5ddc2ff89b2,"Merge pull request #508 from kennysharma/master
+
+Fix compile issue for missing { in fontstash.h"
+memononen,2018-09-27 17:34:23,https://api.github.com/repos/memononen/nanovg/git/commits/53599bb4a6cc936f30bf8df093685b4c0fc33409,53599bb4a6cc936f30bf8df093685b4c0fc33409,"Merge pull request #507 from olliwang/freetype
+
+Fixes memory leaks of freetype."
+olliwang,2018-09-27 09:51:38,https://api.github.com/repos/memononen/nanovg/git/commits/9b27dc38947a69d2b93c9a3b6b5a707f159e9b2e,9b27dc38947a69d2b93c9a3b6b5a707f159e9b2e,"Fixes memory leaks of freetype.
+
+This commit fixes the issue that freetype library isn’t released in `fonsDeleteInternal()` and causes memory leaks."
+memononen,2018-09-09 16:46:41,https://api.github.com/repos/memononen/nanovg/git/commits/fe4ba5f3ba14e53d6516e7d2cbec6f7c7c3df4ef,fe4ba5f3ba14e53d6516e7d2cbec6f7c7c3df4ef,"Merge pull request #506 from olliwang/gl
+
+Fixes the bug that gl may fail to draw fringes."
+olliwang,2018-09-09 14:27:03,https://api.github.com/repos/memononen/nanovg/git/commits/e7154e104eb7fb9d2a68eddc134f794e8e2ba4e1,e7154e104eb7fb9d2a68eddc134f794e8e2ba4e1,"Fixes the bug that gl may fail to draw fringes.
+
+This commit fixes the bug that `glnvg__convexFill()` tried to draw fringes depending on whether `NVG_ANTIALIAS` is set. However, #386 adds `nvgShapeAntiAlias()` for chaning anti-alias state explicitly, and `glnvg__convexFill()` would cause error If the anti-alias state is disabled."
+memononen,2018-09-02 08:36:06,https://api.github.com/repos/memononen/nanovg/git/commits/cfa175a0b990a36fbdf210d76429a75fda03b4a7,cfa175a0b990a36fbdf210d76429a75fda03b4a7,"Merge pull request #392 from satoren/crash_on_32bit_platform
+
+Fix example crash on 32bit platform"
+memononen,2018-08-11 03:50:20,https://api.github.com/repos/memononen/nanovg/git/commits/be1a08273f0b6fe0046b602bd4b3fe4975570e4a,be1a08273f0b6fe0046b602bd4b3fe4975570e4a,"Merge pull request #503 from sbarisic/patch-1
+
+Update README.md with another project link"
+sbarisic,2018-08-11 01:25:38,https://api.github.com/repos/memononen/nanovg/git/commits/51181a6a082b85a44dd67a960f752a4ca9ced42e,51181a6a082b85a44dd67a960f752a4ca9ced42e,Update README.md with another project link
+memononen,2018-08-08 07:52:39,https://api.github.com/repos/memononen/nanovg/git/commits/05ca0dbf81e619e8ad1df981c288f75f052a859e,05ca0dbf81e619e8ad1df981c288f75f052a859e,"Merge pull request #498 from olliwang/font
+
+Forces autohint when loading glyph using FreeType."
+olliwang,2018-07-27 10:07:45,https://api.github.com/repos/memononen/nanovg/git/commits/83da90e1c87c1fbc489a629be94e1e6fc9cd307a,83da90e1c87c1fbc489a629be94e1e6fc9cd307a,"Forces autohint when loading glyph using FreeType.
+
+This commit adds the `FT_LOAD_FORCE_AUTOHINT` parameter to `FT_Load_Glyph()` to fix wonky characters."
+memononen,2018-07-16 19:21:26,https://api.github.com/repos/memononen/nanovg/git/commits/4b91cf00068a25722afcd2476b171ccc5142a918,4b91cf00068a25722afcd2476b171ccc5142a918,"Merge pull request #495 from olliwang/atlas
+
+Fixes text corruption on atlas rebuild."
+olliwang,2018-07-16 05:44:48,https://api.github.com/repos/memononen/nanovg/git/commits/8d1b1e7d150d39ace459e2bf6cca8d32c6511ba2,8d1b1e7d150d39ace459e2bf6cca8d32c6511ba2,"Fixes text corruption on atlas rebuild.
+
+This commit fixes #494."
+memononen,2018-04-30 07:45:42,https://api.github.com/repos/memononen/nanovg/git/commits/6fa3b3d51981ef696a2deb63fe50e1d9d62ff6a9,6fa3b3d51981ef696a2deb63fe50e1d9d62ff6a9,"Merge pull request #477 from olliwang/size
+
+Fixes the type of view size."
+olliwang,2018-04-26 23:27:31,https://api.github.com/repos/memononen/nanovg/git/commits/6b6e3a52461f744c8779b4c71ba4a868c9492f06,6b6e3a52461f744c8779b4c71ba4a868c9492f06,"Fixes the type of view size.
+
+This commit changes the type of the view size accepted by `nvgRenderFrame()` from `int` to `float` so it matches the type defined in `GLNVGcontext`. This would prevent a framebuffer missing a pixel in final rendering result."
+memononen,2018-04-17 21:02:34,https://api.github.com/repos/memononen/nanovg/git/commits/30a943cb9c5c4575e43b12a6457a19597bd0a1e7,30a943cb9c5c4575e43b12a6457a19597bd0a1e7,Merge remote-tracking branch 'origin/master'
+memononen,2018-04-17 21:02:16,https://api.github.com/repos/memononen/nanovg/git/commits/dfa31dfba29dc4b30028046dd0c260e96dae9066,dfa31dfba29dc4b30028046dd0c260e96dae9066,"Fix for #471
+
+- disable stroke AA gradient when not using AA"
+memononen,2018-03-30 11:57:30,https://api.github.com/repos/memononen/nanovg/git/commits/8626a8da5d9df55c3b01508acf359ef482df477b,8626a8da5d9df55c3b01508acf359ef482df477b,"Merge pull request #469 from strfry/master
+
+Use GLES2 glTex[Sub]Image2D code paths also for GL2"
+strfry,2018-03-29 20:07:56,https://api.github.com/repos/memononen/nanovg/git/commits/6ce863cc5725935563e3deba97fdf810e00b45a3,6ce863cc5725935563e3deba97fdf810e00b45a3,Use GLES2 glTex[Sub]Image2D code paths also for GL2
+memononen,2017-12-19 05:42:19,https://api.github.com/repos/memononen/nanovg/git/commits/e70a78e42e781bc73393afe47a62e6c049197a0b,e70a78e42e781bc73393afe47a62e6c049197a0b,"Merge pull request #442 from gavinhoward/master
+
+Mark devicePixelRatio unused in glnvg_renderViewport"
+gavinhoward,2017-12-18 23:13:16,https://api.github.com/repos/memononen/nanovg/git/commits/5022b370e4b137178f72c0f34740f3ad50d540c0,5022b370e4b137178f72c0f34740f3ad50d540c0,Mark devicePixelRatio unused in glnvg_renderViewport
+memononen,2017-11-06 20:49:32,https://api.github.com/repos/memononen/nanovg/git/commits/364911b596bb691e4b2f59f15df7763772ebe2bb,364911b596bb691e4b2f59f15df7763772ebe2bb,"Merge pull request #431 from olliwang/font
+
+Resets font atlas when it is full."
+olliwang,2017-11-05 09:11:27,https://api.github.com/repos/memononen/nanovg/git/commits/645861c8047ef69602340c9248d7596048e34c50,645861c8047ef69602340c9248d7596048e34c50,"Renders glyph’s bitmap data on demand.
+
+This commit updates font stash to render glyph's bitmap data on demand. This change is intended to fix the issue that `nvgTextBounds()` may return an unreliable result when font atlas is full. This situation usually happens when auto scaling a large font text to fit a small rectangle.
+
+The `fons__getGlyph()` function now accepts a new parameter indicating whether bitmap data is optional, and only `nvgText()` requires it. All of `nvgTextGlyphPositions()`, `nvgTextBreakLines()`, `nvgTextBounds()` and `nvgTextBoxBounds()` functions are changed to work without glyph’s bitmap data."
+memononen,2017-09-24 09:48:07,https://api.github.com/repos/memononen/nanovg/git/commits/98e551351d020087b01ae0b1d3d2d1593e3ad01f,98e551351d020087b01ae0b1d3d2d1593e3ad01f,"Merge pull request #412 from AndrewBelt/master
+
+Only apply fallback if GL_DEPTH24_STENCIL8 is defined"
+AndrewBelt,2017-09-23 14:32:52,https://api.github.com/repos/memononen/nanovg/git/commits/f494937f2722b983b63df070c8a87cb3ead6d087,f494937f2722b983b63df070c8a87cb3ead6d087,Merge branch 'master' of https://github.com/memononen/nanovg
+AndrewBelt,2017-09-23 14:32:17,https://api.github.com/repos/memononen/nanovg/git/commits/448af072d6e7a16ef86c1968ee6b3c05b16017de,448af072d6e7a16ef86c1968ee6b3c05b16017de,Only apply fallback if GL_DEPTH24_STENCIL8 is defined
+memononen,2017-09-22 18:30:32,https://api.github.com/repos/memononen/nanovg/git/commits/52f2d6bf7673656290d881ed6aba32105c860844,52f2d6bf7673656290d881ed6aba32105c860844,"Merge pull request #411 from AndrewBelt/master
+
+Support ~2010 Mac graphics cards (and possibly others) with nvgluCreateFramebuffer patch"
+AndrewBelt,2017-09-22 18:24:25,https://api.github.com/repos/memononen/nanovg/git/commits/bfd5d11f270ccbbf0adb4b7bbc6055cd8e8bf5a7,bfd5d11f270ccbbf0adb4b7bbc6055cd8e8bf5a7,Merge branch 'master' of https://github.com/memononen/nanovg
+AndrewBelt,2017-09-22 18:22:48,https://api.github.com/repos/memononen/nanovg/git/commits/ee6b7346ccb20c304ae6aef3c9c839dba8eb36cb,ee6b7346ccb20c304ae6aef3c9c839dba8eb36cb,"Add GL_DEPTH24_STENCIL8 as a fallback when creating render buffer object
+for nvgluCreateFramebuffer"
+memononen,2017-09-05 14:10:43,https://api.github.com/repos/memononen/nanovg/git/commits/e3033362e5ec53e30340e8410fea3dca2b00a90f,e3033362e5ec53e30340e8410fea3dca2b00a90f,"Merge pull request #405 from Joshua-Ashton/master
+
+Fix MSVC 2017 compiler warning"
+memononen,2017-09-03 04:43:47,https://api.github.com/repos/memononen/nanovg/git/commits/67e2ecf7360d41d3849b615dc4951e0096597b4c,67e2ecf7360d41d3849b615dc4951e0096597b4c,"Merge pull request #404 from DagAgren/patch-1
+
+Fix clang compiler warnings"
+DagAgren,2017-09-02 22:32:00,https://api.github.com/repos/memononen/nanovg/git/commits/b124bbbaf5e2b96c33cbcef12de558c1f22de5b8,b124bbbaf5e2b96c33cbcef12de558c1f22de5b8,Fix implicit conversion warning.
+DagAgren,2017-09-02 22:22:50,https://api.github.com/repos/memononen/nanovg/git/commits/3b54182b02d5b0a42907f59f4645b0de41724b33,3b54182b02d5b0a42907f59f4645b0de41724b33,Remove unused variable.
+memononen,2017-08-01 03:50:00,https://api.github.com/repos/memononen/nanovg/git/commits/a2784bad3a077ced36ee9b57cda64860edfc38e3,a2784bad3a077ced36ee9b57cda64860edfc38e3,"Merge pull request #395 from olliwang/metal
+
+Adds link of the Metal port."
+olliwang,2017-07-31 15:46:24,https://api.github.com/repos/memononen/nanovg/git/commits/43aeba25a416d50b28f200ecac6adee10c593946,43aeba25a416d50b28f200ecac6adee10c593946,"Adds link of the Metal port.
+
+I just implmeneted the native Metal port of NanoVG. ;)"
+satoren,2017-07-27 10:18:58,https://api.github.com/repos/memononen/nanovg/git/commits/c7f70787c96feb28121bfadc8125a5183bc283f5,c7f70787c96feb28121bfadc8125a5183bc283f5,Fix crash on 32bit platform
+memononen,2017-07-26 18:11:45,https://api.github.com/repos/memononen/nanovg/git/commits/4f1c6d302a4d4693d99f3ae1e27e2e412815851d,4f1c6d302a4d4693d99f3ae1e27e2e412815851d,"Fix for #391
+
+Fixed return value of nvgText to be the position after the rendered
+string, also fixed scaling of the value."
+memononen,2017-07-12 04:44:28,https://api.github.com/repos/memononen/nanovg/git/commits/30e1c98175b30bcfd8f979f0813a97333329dfe2,30e1c98175b30bcfd8f979f0813a97333329dfe2,"Merge pull request #386 from olliwang/flags
+
+Allows to turn on/off antialias for shapes."
+olliwang,2017-07-11 10:36:40,https://api.github.com/repos/memononen/nanovg/git/commits/17321202daa320af9df2c5485f92802a15d3577f,17321202daa320af9df2c5485f92802a15d3577f,"Allows to turn on/off antialias for shapes.
+
+This commit adds a new `nvgShapeAntiAlias()` function for turning on/off antialias for specific shapes."
+memononen,2017-07-12 04:35:53,https://api.github.com/repos/memononen/nanovg/git/commits/70fb4b03443542544a1648695b3bcb9fb939b784,70fb4b03443542544a1648695b3bcb9fb939b784,"Merge pull request #387 from olliwang/quad
+
+Prevents uploading unused vertices to GPU."
+olliwang,2017-07-11 11:18:27,https://api.github.com/repos/memononen/nanovg/git/commits/f87cdf104161034146d7e93d964d1710173c0eae,f87cdf104161034146d7e93d964d1710173c0eae,"Prevents uploading unused vertices to GPU.
+
+This commit fixes the bug that `glnvg__renderFill()` allocates unused quad vertices for `GLNVG_CONVEXFILL`, which causes unused vertices uploaded to the GPU.
+
+Besides, the quad for the `GLNVG_FILL` type is changed to drawn by `GL_TRIANGLE_STRIP` instead of `GL_TRIANGLES` so two more vertices can be reduced per quad.
+
+In one of my test case, I need to paste an image to a framebuffer about 5,000 times, and this change would reduce the total number of uploaded vertices from `52,106` to `22,476`. It is good for FPS and battery consumption."
+memononen,2017-07-01 19:32:18,https://api.github.com/repos/memononen/nanovg/git/commits/7e42ac609993ce538eb114f3dbf560641055fe02,7e42ac609993ce538eb114f3dbf560641055fe02,"Merge pull request #385 from olliwang/discard
+
+Discards fragments as early as possible."
+olliwang,2017-07-01 17:10:38,https://api.github.com/repos/memononen/nanovg/git/commits/7e11b11177f7af98a167e1087b593eea422b9aae,7e11b11177f7af98a167e1087b593eea422b9aae,"Discards fragments as early as possible.
+
+This commit moves the `discard` instruction in the fragment shader to an earlier position to avoid performing calculations whose results are unused."
+memononen,2017-06-29 10:18:20,https://api.github.com/repos/memononen/nanovg/git/commits/72bac5d98bf35139c740702e0e540d5f4f887a42,72bac5d98bf35139c740702e0e540d5f4f887a42,"Update README.md
+
+Highlighted the need for render target stencil buffer."
+memononen,2017-03-06 19:51:55,https://api.github.com/repos/memononen/nanovg/git/commits/c75fc0bfcf3a72fb61dcd46df0522a60b59c6cc2,c75fc0bfcf3a72fb61dcd46df0522a60b59c6cc2,"Merge pull request #359 from olliwang/glext
+
+Fixes how glext header is included."
+olliwang,2017-03-06 14:08:08,https://api.github.com/repos/memononen/nanovg/git/commits/4ac2b44ea719cb1142954bc6ca8a6608556cc813,4ac2b44ea719cb1142954bc6ca8a6608556cc813,"Fixes how glext header is included.
+
+This commit fixes the issue caused by #357 that nanovg failed to compile on iOS due to the wrong way of including glext header."
+memononen,2017-02-23 17:47:47,https://api.github.com/repos/memononen/nanovg/git/commits/51284049e29ba965790bd9a753c8d9183eeca255,51284049e29ba965790bd9a753c8d9183eeca255,"Merge pull request #357 from ckaran/master
+
+Bug fixes to compile under OS X 12.3"
+ckaran,2017-02-23 14:56:21,https://api.github.com/repos/memononen/nanovg/git/commits/2098a5424244cc5196a312aea939a82bb41c8971,2098a5424244cc5196a312aea939a82bb41c8971,"Added a missing include file to nanovg_gl.h.
+
+To make the examples link correctly under OS X 12.3, you need to include
+<OpenGL/glext.h> in the file.  This commit limits what happens by protecting
+the include as follows:
+
+    #ifdef __APPLE__
+    #   include <OpenGL/glext.h>
+    #endif
+
+Thus, this should have no effect on non-Apple systems."
+ckaran,2017-02-23 14:52:02,https://api.github.com/repos/memononen/nanovg/git/commits/112567c97576c57e586539dfa1f3f5760be95059,112567c97576c57e586539dfa1f3f5760be95059,"Added ""-framework Carbon"" as a link option to premake4.lua.
+
+To get nanovg to link correctly under OS X 12.3, it needs to be linked against
+the Carbon libraries.  This was missing in the premake4.lua files.  Now fixed."
+memononen,2017-02-23 09:42:38,https://api.github.com/repos/memononen/nanovg/git/commits/47ffd9d0b96a752bbf039a3ecab84bbf1f3f2f68,47ffd9d0b96a752bbf039a3ecab84bbf1f3f2f68,"Merge pull request #312 from satoren/master
+
+Improve nvgGlobalCompositeOperation with state"
+memononen,2017-01-12 11:46:41,https://api.github.com/repos/memononen/nanovg/git/commits/8feae63a46fdf8ed83613b6a46da25d44adde07f,8feae63a46fdf8ed83613b6a46da25d44adde07f,"Merge pull request #343 from damiles/master
+
+Add image flag to support GL_NEAREST rendering"
+damiles,2016-12-07 11:34:29,https://api.github.com/repos/memononen/nanovg/git/commits/ee031a432cffaf87b86650fcfca15148497dcf99,ee031a432cffaf87b86650fcfca15148497dcf99,Use NVG_IMAGE_NEAREST to no interpolate in image
+damiles,2016-12-07 10:15:39,https://api.github.com/repos/memononen/nanovg/git/commits/61fb55ac1936950f37805c41fd46cb3a5121869d,61fb55ac1936950f37805c41fd46cb3a5121869d,Merge branch 'master' of https://github.com/damiles/nanovg
+damiles,2016-12-07 10:01:57,https://api.github.com/repos/memononen/nanovg/git/commits/dd1eff4f9eeeef212a1819c080f5ae62e1320e92,dd1eff4f9eeeef212a1819c080f5ae62e1320e92,Solve bug inverted but not good solution
+damiles,2016-12-07 09:57:45,https://api.github.com/repos/memononen/nanovg/git/commits/e955b3829de515a519683acd481fbf3b0ca255f0,e955b3829de515a519683acd481fbf3b0ca255f0,"Nearest Support for images, but there are strange bug to solve. It's Inverted"
+memononen,2016-11-06 06:00:39,https://api.github.com/repos/memononen/nanovg/git/commits/cacb00b852079db23c180f2e6cbff41eef673783,cacb00b852079db23c180f2e6cbff41eef673783,"Merge pull request #340 from andrewcorrigan/master
+
+suppresses all warnings reported by latest Xcode/AppleClang"
+andrewcorrigan,2016-11-05 16:19:31,https://api.github.com/repos/memononen/nanovg/git/commits/1ae01af452006765c278878c80c614b50607014e,1ae01af452006765c278878c80c614b50607014e,suppresses all warnings reported by Apple LLVM version 8.0.0 (clang-800.0.42.1)
+memononen,2016-11-01 18:04:34,https://api.github.com/repos/memononen/nanovg/git/commits/e12379653edd3d9c0cf7d77d1f1fbefb4e11c67f,e12379653edd3d9c0cf7d77d1f1fbefb4e11c67f,"Merge pull request #338 from olliwang/CJK
+
+Better support for CJK characters."
+olliwang,2016-11-01 15:57:41,https://api.github.com/repos/memononen/nanovg/git/commits/7cd8decef4781f81800abfddd6ca43e079b7997b,7cd8decef4781f81800abfddd6ca43e079b7997b,"Better support for CJK characters.
+
+Previously, the Unicode range of the CJK chractaters only includes Chinese charactaters, Japanese Kanji, and CJK Symbols and Punctuation. The range are used by traditioanl Korean as well. This commit further includes Hiragana and Katakana in Japanese, and Hangul Syllables and Hangul Jamo in Korean to make CJK support more complete."
+memononen,2016-10-25 13:08:15,https://api.github.com/repos/memononen/nanovg/git/commits/d9e8daf46fc6b05efc5fa53ed59b6f05a627470d,d9e8daf46fc6b05efc5fa53ed59b6f05a627470d,"Merge pull request #333 from olliwang/font
+
+Fixes the bug that text may not render correctly."
+olliwang,2016-10-22 13:35:41,https://api.github.com/repos/memononen/nanovg/git/commits/c6cddc85c1c732a20907156f6953660ec6595e1a,c6cddc85c1c732a20907156f6953660ec6595e1a,"Fixes the bug that text may not render correctly.
+
+This commit fixes the bug that text may not render correctly when glyph is not found in fallback fonts."
+memononen,2016-10-20 17:37:23,https://api.github.com/repos/memononen/nanovg/git/commits/a367dcf1633b66e833c9159e52920f88fb1b8c32,a367dcf1633b66e833c9159e52920f88fb1b8c32,"Merge pull request #331 from olliwang/CJK
+
+Improves to display CJK characters with English words."
+olliwang,2016-10-20 09:05:54,https://api.github.com/repos/memononen/nanovg/git/commits/ade71934239c01d3affc2e6a1ef623e403e94311,ade71934239c01d3affc2e6a1ef623e403e94311,"Improves to display CJK characters with English words.
+
+This commit improves to display CJK characters mixed with English words so there is less spaces at line breaks."
+memononen,2016-10-19 12:23:20,https://api.github.com/repos/memononen/nanovg/git/commits/84e848d1e9e6489b8d9a63394a78b1fb0cdeb28a,84e848d1e9e6489b8d9a63394a78b1fb0cdeb28a,"Merge pull request #330 from olliwang/CJK
+
+Fixes line breaks for CJK characters."
+memononen,2016-10-19 12:21:52,https://api.github.com/repos/memononen/nanovg/git/commits/2ed5c0e0104161c61eb8fcd1be6e9cf637b1f6b7,2ed5c0e0104161c61eb8fcd1be6e9cf637b1f6b7,"Merge pull request #329 from lieff/master
+
+handle file IO error"
+olliwang,2016-10-19 05:12:21,https://api.github.com/repos/memononen/nanovg/git/commits/c64c95c72784b9bcf5884685a36a78a2658ff43f,c64c95c72784b9bcf5884685a36a78a2658ff43f,"Fixes line breaks for CJK characters.
+
+This commit fixes weird line breaks when rendering CJK (Chinese, Japanese, Korean) characters. Each CJK character is more like a word instead of a letter. This commit fixes the logic of line breaks by introducing a new `NVG_CJK_CHAR` code point type and takes special care for formatting text including CJK characters."
+lieff,2016-10-19 11:04:44,https://api.github.com/repos/memononen/nanovg/git/commits/ecb5899bcf9606698b3534edb435dcb2240be4c5,ecb5899bcf9606698b3534edb435dcb2240be4c5,handle file IO error
+memononen,2016-09-18 16:29:05,https://api.github.com/repos/memononen/nanovg/git/commits/3110d5fba1eba193fd218f85850f500b5ad5c324,3110d5fba1eba193fd218f85850f500b5ad5c324,"Merge pull request #316 from xeekworx/master
+
+nvgRoundedRectEx for varying corner radii"
+xeekworx,2016-09-18 16:23:25,https://api.github.com/repos/memononen/nanovg/git/commits/2331f1ff11a153ff7e26e3900864f431d232ad19,2331f1ff11a153ff7e26e3900864f431d232ad19,Merge branch 'master' of https://github.com/memononen/nanovg
+xeekworx,2016-09-18 16:02:54,https://api.github.com/repos/memononen/nanovg/git/commits/d68da7729992ab3613084bc9f94f563d3e2889db,d68da7729992ab3613084bc9f94f563d3e2889db,"Merge branch 'master' of https://github.com/xeekworx/nanovg
+
+Conflicts:
+	src/nanovg.h"
+xeekworx,2016-09-18 15:47:58,https://api.github.com/repos/memononen/nanovg/git/commits/bb385e6b8fd837bec70998b1a608a3e6f1ddd591,bb385e6b8fd837bec70998b1a608a3e6f1ddd591,"Renamed nvgRoundedRectEx to nvgRoundedRectVarying, using variables for duplicated calls to nvg__absf, renamed the radius parameters & variables to be more descriptive, changed the order of radius parameters to follow CSS order, and finally corrected the if/else style suggested by @memononen."
+xeekworx,2016-09-18 15:47:58,https://api.github.com/repos/memononen/nanovg/git/commits/34621d4ad23a9930486157373892578c39684f89,34621d4ad23a9930486157373892578c39684f89,"Renamed nvgRoundedRectEx to nvgRoundedRectVarying, using variables for duplicated calls to nvg__absf, renamed the radius parameters & variables to be more descriptive, changed the order of radius parameters to follow CSS order, and finally corrected the if/else style suggested by @memononen."
+satoren,2016-09-18 14:47:56,https://api.github.com/repos/memononen/nanovg/git/commits/a457efa3c4fdc916eb4618249ffea4aa82808eeb,a457efa3c4fdc916eb4618249ffea4aa82808eeb,Remove demo code for nvgGlobalCompositeOperation
+memononen,2016-09-18 08:12:47,https://api.github.com/repos/memononen/nanovg/git/commits/7859321aa8a4d36f56cb1e61e3204da079c67d28,7859321aa8a4d36f56cb1e61e3204da079c67d28,"Merge pull request #317 from olliwang/coordinate
+
+Fixes a bug when applying `NVG_IMAGE_FLIPY`."
+olliwang,2016-09-18 08:08:49,https://api.github.com/repos/memononen/nanovg/git/commits/85ac3787922552ad08ce40f4a435a49e36d929ff,85ac3787922552ad08ce40f4a435a49e36d929ff,"Fixes a bug when applying `NVG_IMAGE_FLIPY`.
+
+This commit fixes issue #167 that `nvgImagePattern()` does not handle coordinate well if the specified image applies the `NVG_IMAGE_FLIPY` parameter."
+xeekworx,2016-09-18 01:00:17,https://api.github.com/repos/memononen/nanovg/git/commits/b2d9eb251b405b55573450b37de7b4f9486ac24a,b2d9eb251b405b55573450b37de7b4f9486ac24a,Added nvgRoundedRectEx so that the rectangle's corners can have varying radii. nvgRoundRect changed to utilize nvgRoundedRectEx.
+satoren,2016-09-14 19:41:01,https://api.github.com/repos/memononen/nanovg/git/commits/9dbd79dbc7bd95c2d24d1397206021dabbb2be7f,9dbd79dbc7bd95c2d24d1397206021dabbb2be7f,Code format
+satoren,2016-09-14 17:11:06,https://api.github.com/repos/memononen/nanovg/git/commits/339c5e507b804f9d5f0f7f57e745867253b6e568,339c5e507b804f9d5f0f7f57e745867253b6e568,Improve nvgGlobalCompositeOperation with state
+memononen,2016-09-11 15:35:12,https://api.github.com/repos/memononen/nanovg/git/commits/af0c475cf998d3fb687feace72ab7260ec9446ad,af0c475cf998d3fb687feace72ab7260ec9446ad,"Merge pull request #311 from dimsuz/gl2_image_handle_fix
+
+Rename nvglImageFromHandleGL2 -> nvglImageHandleGL2"
+memononen,2016-09-04 07:15:36,https://api.github.com/repos/memononen/nanovg/git/commits/4f255e0dafe9f5336a8b30fa27806496e65c490e,4f255e0dafe9f5336a8b30fa27806496e65c490e,"Merge pull request #307 from olliwang/blend
+
+Fallbacks to default composite operation when invalid one is specified."
+olliwang,2016-09-04 03:22:20,https://api.github.com/repos/memononen/nanovg/git/commits/c03226cd2e7a5e6ad1b0b8b746d36d623169b2ca,c03226cd2e7a5e6ad1b0b8b746d36d623169b2ca,"Fallbacks to default composite operation when invalid one is specified.
+
+This commit fixes #300 and #306 that “control may reach end of non-void function” error occurs in `glnvg_convertBlendFuncFactor()`. The function now returns `GL_INVALID_ENUM` for invalid blend factor and if that happens, `glnvg__blendCompositeOperation()` uses default source-over composite operation."
+memononen,2016-08-23 13:39:11,https://api.github.com/repos/memononen/nanovg/git/commits/189e051527e1a974621c11cd54e49cc100917bd3,189e051527e1a974621c11cd54e49cc100917bd3,"Merge pull request #303 from olliwang/freetype
+
+Fixes the kerning value for freetype."
+olliwang,2016-08-23 02:24:32,https://api.github.com/repos/memononen/nanovg/git/commits/39f7a369c701565b6418cc9d0a32c1ad489b887d,39f7a369c701565b6418cc9d0a32c1ad489b887d,"Fixes the kerning value for freetype.
+
+This commit fixes issue #302 that the kerning value returned by freetype is not converted to integer properly."
+memononen,2016-08-21 17:52:23,https://api.github.com/repos/memononen/nanovg/git/commits/c02bc9d5eddaf94a98cacea021b3ceeeb4a4c1d4,c02bc9d5eddaf94a98cacea021b3ceeeb4a4c1d4,"Merge pull request #301 from olliwang/font
+
+Support fallback fonts (code refactoring for #299)"
+olliwang,2016-08-20 18:31:57,https://api.github.com/repos/memononen/nanovg/git/commits/c97444c96fe0a9c19d808be09f5288a48528902d,c97444c96fe0a9c19d808be09f5288a48528902d,"Code refactoring for #299.
+
+This commit fixes the formats as suggested in #299 and fixes stack overflow when using `freetype` backend."
+satoren,2016-08-16 15:33:48,https://api.github.com/repos/memononen/nanovg/git/commits/40e999af3c791939aa3e27089217e4841421f075,40e999af3c791939aa3e27089217e4841421f075,Support fallback fonts
+memononen,2016-08-11 02:42:20,https://api.github.com/repos/memononen/nanovg/git/commits/71774e0afec1bd904e9de7de52221e9ff9c97421,71774e0afec1bd904e9de7de52221e9ff9c97421,"Merge pull request #298 from olliwang/blend
+
+Implements composite operation for blending renderings."
+olliwang,2016-08-10 18:39:31,https://api.github.com/repos/memononen/nanovg/git/commits/09dc767e3f25ec97e7398c18eca6a4c6bb3763f5,09dc767e3f25ec97e7398c18eca6a4c6bb3763f5,Updates comment for composite operation.
+olliwang,2016-08-10 18:10:57,https://api.github.com/repos/memononen/nanovg/git/commits/9490a8c18856485a9e07d7fd944023e806c6b3c7,9490a8c18856485a9e07d7fd944023e806c6b3c7,Updates comment again.
+olliwang,2016-08-10 18:06:53,https://api.github.com/repos/memononen/nanovg/git/commits/ba8272c5b54775786c0aebebab031b956796e071,ba8272c5b54775786c0aebebab031b956796e071,Updates comments.
+olliwang,2016-08-10 18:00:23,https://api.github.com/repos/memononen/nanovg/git/commits/1d856c1b0016a82c93516b7430e0e7167a2d14ee,1d856c1b0016a82c93516b7430e0e7167a2d14ee,Changes the order of declaration.
+olliwang,2016-08-10 15:01:25,https://api.github.com/repos/memononen/nanovg/git/commits/1bf25e6f674f8b161a44ab5137b03566a2b7bdc9,1bf25e6f674f8b161a44ab5137b03566a2b7bdc9,"Improves the implementation of global composite operation.
+
+This commit updates the implmentation of global composite operation to follow the advices described at https://github.com/memononen/nanovg/pull/298/files/c4b865796db4b09390ee426ce014b32802f398fc#r74248556"
+olliwang,2016-08-09 08:12:08,https://api.github.com/repos/memononen/nanovg/git/commits/c4b865796db4b09390ee426ce014b32802f398fc,c4b865796db4b09390ee426ce014b32802f398fc,"Implements composite operation for blending rendering between frames.
+
+This commit implements the `nvgGlobalCompositeOperation()` function to support blending between frames. All operations defined in HTML5 canvas API are supported. Also, it is possible to create custom composite operation by calling `nvgBlendFunc()` or `nvgBlendFuncSeparate()` functions."
+memononen,2016-08-05 13:39:12,https://api.github.com/repos/memononen/nanovg/git/commits/25f39a60a83738ed47f81cb40a95ab105f376033,25f39a60a83738ed47f81cb40a95ab105f376033,"Merge pull request #297 from olliwang/bgfx
+
+Add support for bgfx"
+olliwang,2016-08-05 08:56:36,https://api.github.com/repos/memononen/nanovg/git/commits/1664a524a77af1b6d501a6f54892599bb232249e,1664a524a77af1b6d501a6f54892599bb232249e,"Passes the device pixel ratio parameter to `renderViewport` function.
+
+This commit updates the `nvgBeginFrame()` function to forward the received `devicePixelRatio` parameter to the `renderViewport()` function so it is possible to configure the environemnt correctly when using `bgfx` backend."
+memononen,2016-08-02 18:24:26,https://api.github.com/repos/memononen/nanovg/git/commits/cc3897359a6d01dc5e085ed3babdba36d5816042,cc3897359a6d01dc5e085ed3babdba36d5816042,"Merge pull request #295 from nhojb/master
+
+Fixing clang compiler warnings."
+nhojb,2016-08-02 14:05:58,https://api.github.com/repos/memononen/nanovg/git/commits/1efdf2a1de1a9c96f8f4f82ef2cf89afa1f5f38d,1efdf2a1de1a9c96f8f4f82ef2cf89afa1f5f38d,Fixing clang compiler warnings.
+memononen,2016-05-17 07:14:08,https://api.github.com/repos/memononen/nanovg/git/commits/c80af94c078230dd635c643660b5f709128d40e4,c80af94c078230dd635c643660b5f709128d40e4,"Merge pull request #283 from JinShil/patch-1
+
+Fix typo in nvgCreateFontMem() description"
+JinShil,2016-05-17 02:30:50,https://api.github.com/repos/memononen/nanovg/git/commits/df658f97a25a7ba350cd52fede50be29f6775531,df658f97a25a7ba350cd52fede50be29f6775531,Fix typo in nvgCreateFontMem description
+memononen,2016-02-01 19:41:24,https://api.github.com/repos/memononen/nanovg/git/commits/b83cf926525e7cea8d2483da2a75852b8c7b6d28,b83cf926525e7cea8d2483da2a75852b8c7b6d28,"Fixed use of nvglImageHandlexx in GL utils from earlier PR
+
+- nvglImageHandle was changes to contain GL postfix, changed GL utils
+to use that too
+- fixed silly failure check bug in FBO demo"
+memononen,2016-01-29 09:38:03,https://api.github.com/repos/memononen/nanovg/git/commits/2504509fb23eb0bb9839f0ae823603466f372484,2504509fb23eb0bb9839f0ae823603466f372484,"Merge pull request #261 from reFX-Mike/master
+
+Fixed fontstash.h crashing"
+memononen,2016-01-28 06:21:42,https://api.github.com/repos/memononen/nanovg/git/commits/3321379e496f9b3bbad673523cea2882e53ab9d9,3321379e496f9b3bbad673523cea2882e53ab9d9,"Merge pull request #201 from andrewcorrigan/master
+
+Fix for issue #172"
+reFX-Mike,2016-01-27 19:56:38,https://api.github.com/repos/memononen/nanovg/git/commits/f43a7a77905cf09f048de62f6c19cf512fde271e,f43a7a77905cf09f048de62f6c19cf512fde271e,Replace malloc.h with stdlib.h
+memononen,2015-10-25 08:10:01,https://api.github.com/repos/memononen/nanovg/git/commits/cb6fd9100d1f316fc14a5b49df40d3defefd799d,cb6fd9100d1f316fc14a5b49df40d3defefd799d,Added glUniformBlockBinding to touched state
+memononen,2015-08-08 14:39:11,https://api.github.com/repos/memononen/nanovg/git/commits/504060e52a47d96cf18530deff221312773c4175,504060e52a47d96cf18530deff221312773c4175,"Merge pull request #238 from plasmacel/master
+
+fixed type usage"
+plasmacel,2015-08-07 19:24:45,https://api.github.com/repos/memononen/nanovg/git/commits/b7a4792291c70d28f7da234befab8b84dc7a2372,b7a4792291c70d28f7da234befab8b84dc7a2372,"fixed type usage
+
+in some situations int and GLsizei is not the same type which leads to conversion warnings"
+memononen,2015-06-13 08:10:04,https://api.github.com/repos/memononen/nanovg/git/commits/6ae087333d2f8d96b54d3d6b0ac6435aedd3d4ef,6ae087333d2f8d96b54d3d6b0ac6435aedd3d4ef,"Merge pull request #226 from olliwang/framebuffer
+
+Improve the use of NVGLUframebuffer."
+olliwang,2015-06-11 12:28:38,https://api.github.com/repos/memononen/nanovg/git/commits/32db574853479cf66fc18abfc39a3bcac1c1484c,32db574853479cf66fc18abfc39a3bcac1c1484c,"Improve the use of NVGLUframebuffer.
+
+The `NVGLUframebuffer` structure contains a `ctx` member but was actually never used. This commit takes advantage of the `ctx` property so there is no need to keep the reference of the context elsewhere after calling `nvgluCreateFramebuffer()`, or it would add difficulty for maintenance. As a result, the `nvgluDeleteFramebuffer()` function only needs to take one `NVGLUframebuffer` instance as the parameter."
+memononen,2015-03-13 07:49:02,https://api.github.com/repos/memononen/nanovg/git/commits/1de6fa5cdd3a7451b5636ce8fd342275be6a23db,1de6fa5cdd3a7451b5636ce8fd342275be6a23db,"Merge pull request #207 from alexbrazier/patch-1
+
+Fix spelling mistake in readme"
+alexbrazier,2015-03-12 22:40:15,https://api.github.com/repos/memononen/nanovg/git/commits/01141b2e8816d91851c7e4989fb4491051f93e29,01141b2e8816d91851c7e4989fb4491051f93e29,Fix spelling mistake in readme
+andrewcorrigan,2015-02-21 15:15:13,https://api.github.com/repos/memononen/nanovg/git/commits/3eeafc1a14d5031e92a24227e5ea6a6be747e894,3eeafc1a14d5031e92a24227e5ea6a6be747e894,Fix for issue #172
+memononen,2015-01-09 15:07:38,https://api.github.com/repos/memononen/nanovg/git/commits/3a5e25cc67eee7ca08c4f88f9e621c3cf6da0290,3a5e25cc67eee7ca08c4f88f9e621c3cf6da0290,"Merge pull request #196 from waywardmonkeys/fix-typos
+
+Fix typos."
+waywardmonkeys,2015-01-09 11:54:04,https://api.github.com/repos/memononen/nanovg/git/commits/98b116165d9557b9e36282d8c2f3b2a295557909,98b116165d9557b9e36282d8c2f3b2a295557909,Fix typos.
+memononen,2014-12-31 18:02:56,https://api.github.com/repos/memononen/nanovg/git/commits/31f9feb401f6dba7a1e115258a759b814c8c5c1b,31f9feb401f6dba7a1e115258a759b814c8c5c1b,"Fix for #191
+
+- fixed stroke to use lino join style to calculate required vertex
+count"
+memononen,2014-11-11 21:30:10,https://api.github.com/repos/memononen/nanovg/git/commits/90862ce25c3f11399906e8adf42d89fea561ea88,90862ce25c3f11399906e8adf42d89fea561ea88,"Fix for issue #175
+
+Line break would duplicate a word if the first character of a word
+would cause a line break"
+memononen,2014-11-11 19:22:49,https://api.github.com/repos/memononen/nanovg/git/commits/1a0550ebc7bfa0b4820f48cd06cc045e73a90086,1a0550ebc7bfa0b4820f48cd06cc045e73a90086,"Merge pull request #185 from SmilyOrg/patch-2
+
+Added check in addPoint to avoid duplicated moveTos breaking"
+memononen,2014-11-11 19:15:47,https://api.github.com/repos/memononen/nanovg/git/commits/8b849004d4d7036d5a7b60a0eb0903a1e8cbbf3d,8b849004d4d7036d5a7b60a0eb0903a1e8cbbf3d,"Merge pull request #165 from floooh/pr_redundant_state_filter
+
+Redundant GL state filter"
+SmilyOrg,2014-11-11 15:45:51,https://api.github.com/repos/memononen/nanovg/git/commits/f8086a2006a917cdc50b854fd36f8733a5b1496a,f8086a2006a917cdc50b854fd36f8733a5b1496a,"Added check in addPoint to avoid duplicated moveTos breaking
+
+It guards addPoint from ""stealing"" the point from the previous path if they're the same, which makes it break when you do something like this:
+```
+moveTo(50, 50)
+moveTo(50, 50)
+lineTo(100, 100)
+```
+
+Before the fix there's no line shown. With the second moveTo, there's a second path added, but without the 50,50 point, because it was already added with the first moveTo. This makes the second path only contain the point 100,100 so it doesn't draw at all.
+
+After the fix, the point equality check is ignored for the first point in the path, so the second path gets the 50,50 point too and that makes it behave as expected.
+
+This is only one solution to the duplicated moveTo problem and it's likely not the best one, but it's one that's easy to add and it seems to work just fine."
+memononen,2014-11-07 07:46:24,https://api.github.com/repos/memononen/nanovg/git/commits/315914acfd2591db56e2a6df2292188309f317bc,315914acfd2591db56e2a6df2292188309f317bc,"Merge pull request #184 from olliwang/fbo
+
+Fixes nvgluCreateFramebuffer()."
+olliwang,2014-11-07 05:45:27,https://api.github.com/repos/memononen/nanovg/git/commits/71a2bdf8af55432a8e697ca30189835eac639c8a,71a2bdf8af55432a8e697ca30189835eac639c8a,"Fixes nvgluCreateFramebuffer().
+
+The framebuffer and renderbuffer did restore in `nvgluCreateFramebuffer()` on succeed. However, they are not restored if error occurs. This commit fixes it."
+memononen,2014-11-01 13:06:57,https://api.github.com/repos/memononen/nanovg/git/commits/f75078f5940bc9c9176824d8b55777d129ca642b,f75078f5940bc9c9176824d8b55777d129ca642b,"Merge pull request #183 from csaken/master
+
+Fixed compile error occuring if FONS_USE_FREETYPE is defined."
+memononen,2014-10-31 15:09:53,https://api.github.com/repos/memononen/nanovg/git/commits/b048742da4758f134715d543c70af6d074821ef9,b048742da4758f134715d543c70af6d074821ef9,Updated out dated docs in read me
+memononen,2014-09-25 09:21:45,https://api.github.com/repos/memononen/nanovg/git/commits/fc3b7a013ee90ab69b6c4b299a9cf4bb2b17ccce,fc3b7a013ee90ab69b6c4b299a9cf4bb2b17ccce,"Merge pull request #174 from SmilyOrg/patch-1
+
+Consistent code syntax and typo fix"
+SmilyOrg,2014-09-25 09:19:02,https://api.github.com/repos/memononen/nanovg/git/commits/13e877ed37bd627e33d9524a9f4ed4d23ca96dcd,13e877ed37bd627e33d9524a9f4ed4d23ca96dcd,Consistent code syntax and typo fix
+memononen,2014-09-16 13:24:05,https://api.github.com/repos/memononen/nanovg/git/commits/cab10c7c0f9013ed1b556927566d4e5223e5d933,cab10c7c0f9013ed1b556927566d4e5223e5d933,"Merge pull request #170 from olliwang/static
+
+Fixed syntax error of checking defined identifier"
+olliwang,2014-09-16 13:09:50,https://api.github.com/repos/memononen/nanovg/git/commits/2300bf359432291801a36f6b05491e6648e2eac9,2300bf359432291801a36f6b05491e6648e2eac9,"Fixed syntax error of checking defined identifier
+
+The syntax is wrong when checking defined identifier."
+memononen,2014-09-16 09:00:45,https://api.github.com/repos/memononen/nanovg/git/commits/bf29db7d603d323e264eeaaff4d4cfef5d012890,bf29db7d603d323e264eeaaff4d4cfef5d012890,"Merge pull request #169 from olliwang/cancel
+
+Added nvgCancelFrame()"
+olliwang,2014-09-16 05:02:13,https://api.github.com/repos/memononen/nanovg/git/commits/c12007942556ff24526f6e55260f61a0052da06b,c12007942556ff24526f6e55260f61a0052da06b,"Added nvgCancelFrame()
+
+This commit implements a new nvgCancelFrame() function for the purpose described in #168.
+
+Currently, if calling nvgBeginFrame(), the nvgEndFrame() function must be called to finish the drawing. However, if knowing the drawing would take too much time and want to give up the drawing. There is no way to cancel it. nvgCancelFrame() gives another choice to end the frame without actually drawing."
+memononen,2014-09-05 07:09:58,https://api.github.com/repos/memononen/nanovg/git/commits/388ea6b8c6bd3ad170ad6d49b0a1955bf6c73fb8,388ea6b8c6bd3ad170ad6d49b0a1955bf6c73fb8,"Merge pull request #164 from floooh/pr_uniform_array_2
+
+Merge uniforms into a single uniform array"
+memononen,2014-09-04 20:17:51,https://api.github.com/repos/memononen/nanovg/git/commits/4ce074f9b6d353fa90d73b6092e12778677ea0a9,4ce074f9b6d353fa90d73b6092e12778677ea0a9,"Merge pull request #163 from olliwang/gles_fbo
+
+Add FBO support for GLES"
+memononen,2014-09-04 20:16:19,https://api.github.com/repos/memononen/nanovg/git/commits/24ae5f0fb959f21d66f4020d9fe69bdfd0578eff,24ae5f0fb959f21d66f4020d9fe69bdfd0578eff,"Merge pull request #166 from olliwang/pow2check
+
+Fix for issue #162"
+olliwang,2014-09-04 16:10:03,https://api.github.com/repos/memononen/nanovg/git/commits/2cee1c0f93afe7e237d6df507c07c07b68bd7ab3,2cee1c0f93afe7e237d6df507c07c07b68bd7ab3,"Add FBO support for GLES
+
+To support FBO for iOS, the current framebuffer and renderbuffer must be restored after calling nvgluCreateFramebuffer(). The framebuffer should also be restored when calling nvgluBindFramebuffer(NULL) as well."
+olliwang,2014-09-04 19:35:40,https://api.github.com/repos/memononen/nanovg/git/commits/8e401a5f42d482c54ad1796d186f952b0b64591d,8e401a5f42d482c54ad1796d186f952b0b64591d,Fix for issue #162
+floooh,2014-09-04 19:12:27,https://api.github.com/repos/memononen/nanovg/git/commits/4aadf46465d066f916ef9a0bc17139d58eb55ff1,4aadf46465d066f916ef9a0bc17139d58eb55ff1,"Don't set redundant GL state (glBindTexture, glStencilFunc, glStencilMask)"
+floooh,2014-09-02 20:59:44,https://api.github.com/repos/memononen/nanovg/git/commits/aa6751ee4a906474367187e4b5cfaf2b8706b0b6,aa6751ee4a906474367187e4b5cfaf2b8706b0b6,"Merge uniforms into a single uniform array, reducing number of glUniform calls.
+
+Conflicts:
+	src/nanovg_gl.h"
+memononen,2014-09-02 18:57:59,https://api.github.com/repos/memononen/nanovg/git/commits/994b60b83f359232ea4a0ec4739ddf8d4d8c80d6,994b60b83f359232ea4a0ec4739ddf8d4d8c80d6,"Moved image repeat (tiling) from pattern to image creation
+
+- API changed!
+- moved image repeat from nvgImagePattern() into image creation
+nvgCreateImage*()
+- made flip-y and premultiplied common image flags (not just GL)
+- removed nvglImageFlags(), flags passed in via
+nvglCreateImageFromHandle() flags
+- nvgluCreateFramebuffer takes image flags as param"
+memononen,2014-09-02 17:58:12,https://api.github.com/repos/memononen/nanovg/git/commits/96f08f4ca44405cd121bbbd0cdf7184543a33f65,96f08f4ca44405cd121bbbd0cdf7184543a33f65,"Fix for issue #155
+
+- added NVG_DEBUG which can be used to omit calls to glGetError()
+- removed return value for glnvg__checkError
+- create flag defines to enum"
+memononen,2014-09-02 16:54:49,https://api.github.com/repos/memononen/nanovg/git/commits/64960cf82d8e0714044c9307db82abff5acb71ed,64960cf82d8e0714044c9307db82abff5acb71ed,"Merge pull request #148 from pupil-labs/master
+
+added new graph style"
+memononen,2014-09-02 16:54:12,https://api.github.com/repos/memononen/nanovg/git/commits/dc70bbc3f35cd6d6108621c574b3deaaeebc8ca7,dc70bbc3f35cd6d6108621c574b3deaaeebc8ca7,"Merge pull request #156 from floooh/pr_clamp_to_edge
+
+Fix texture completeness for non-POT textures on GLES2/WebGL"
+floooh,2014-08-30 11:53:27,https://api.github.com/repos/memononen/nanovg/git/commits/e9add938499695ec3954ddd4a676758b63077a66,e9add938499695ec3954ddd4a676758b63077a66,Fix texture completeness for non-POT textures on GLES2/WebGL
+memononen,2014-08-27 03:59:49,https://api.github.com/repos/memononen/nanovg/git/commits/9bb72f02bd61ac8ff4d9158cdbd93d77199e1037,9bb72f02bd61ac8ff4d9158cdbd93d77199e1037,"Merge pull request #149 from rockolo/master
+
+Restore openGL state / unbind buffer"
+rockolo,2014-08-26 21:06:12,https://api.github.com/repos/memononen/nanovg/git/commits/697bfd824d956b94b3fcbfb9c83151f309be8899,697bfd824d956b94b3fcbfb9c83151f309be8899,"Restore openGL state / unbind buffer
+
+These changes make it possible to integrate nanoVG into other openGL libraries like Cinder and openFrameworks and be able to draw afterwards."
+mkassner,2014-08-26 07:00:25,https://api.github.com/repos/memononen/nanovg/git/commits/b112ce00b7314bc62d40c25d56ca1c463f399467,b112ce00b7314bc62d40c25d56ca1c463f399467,added new graph style
+memononen,2014-07-30 14:57:09,https://api.github.com/repos/memononen/nanovg/git/commits/6b69e7bce0c99054ebfdf6cfe417178575706ef8,6b69e7bce0c99054ebfdf6cfe417178575706ef8,"Fix for issue #143
+
+- removed duplicate call to nvgTextMetrics()"
+memononen,2014-07-30 14:54:25,https://api.github.com/repos/memononen/nanovg/git/commits/bd762f81a62305a4968884c13c1db5eca26a50ff,bd762f81a62305a4968884c13c1db5eca26a50ff,"Fix for issue #142
+
+- set default lineHeight to 1.0"
+memononen,2014-07-17 09:49:46,https://api.github.com/repos/memononen/nanovg/git/commits/646b0a56cc59c71ffb94132f556694429da98994,646b0a56cc59c71ffb94132f556694429da98994,"Merge pull request #138 from notlion/fix-double-transform
+
+Set commandx/y before the transform"
+notlion,2014-07-17 09:09:12,https://api.github.com/repos/memononen/nanovg/git/commits/312052816ec0dba3fd2c3321f1fe675ebbabb8fa,312052816ec0dba3fd2c3321f1fe675ebbabb8fa,"Set commandx/y before the transform
+This prevents commands like `nvgQuadTo` and `nvgArcTo` from double-transforming the previous point when they pass it back to `nvg__appendCommands`."
+memononen,2014-07-13 10:30:54,https://api.github.com/repos/memononen/nanovg/git/commits/14df146ea136b1529a646a57ba4c17b5ae609588,14df146ea136b1529a646a57ba4c17b5ae609588,"Added nvgIntersectScissor()
+
+- added function to allow to combine scissor rects using intersection"
+memononen,2014-07-11 16:23:30,https://api.github.com/repos/memononen/nanovg/git/commits/f56b9e6c42869c54ffd370fdf2109f8c0e898fbc,f56b9e6c42869c54ffd370fdf2109f8c0e898fbc,"Started projects section
+
+- added projects section to read me
+- added processing API link (issue #135)"
+memononen,2014-07-11 16:21:19,https://api.github.com/repos/memononen/nanovg/git/commits/8519f09569880581c775103e2c2cb40439d41e27,8519f09569880581c775103e2c2cb40439d41e27,Changed demos to use types not structs
+memononen,2014-07-11 16:16:03,https://api.github.com/repos/memononen/nanovg/git/commits/19f19847fe65b83419a984049d41ba5ffc53bdeb,19f19847fe65b83419a984049d41ba5ffc53bdeb,"Typedef'd structs.
+
+- added typedefs for all structs
+- fixed some compiler warnings"
+memononen,2014-07-11 15:45:26,https://api.github.com/repos/memononen/nanovg/git/commits/14fe41af890f0763d1c063cfe65e26c50f7d514d,14fe41af890f0763d1c063cfe65e26c50f7d514d,"Merge pull request #129 from andrewcorrigan/master
+
+only specify precision for fragment shader"
+memononen,2014-07-11 15:39:26,https://api.github.com/repos/memononen/nanovg/git/commits/d26ddd6c1fde8ed00536253ebd08d81e24962bcb,d26ddd6c1fde8ed00536253ebd08d81e24962bcb,Merge branch 'cmaughan-nanovg_master'
+memononen,2014-07-11 15:39:10,https://api.github.com/repos/memononen/nanovg/git/commits/a52c9a12414d7a4274a80d299a4ef5c21c778405,a52c9a12414d7a4274a80d299a4ef5c21c778405,Merged font texture creationg conflict.
+andrewcorrigan,2014-06-27 13:21:42,https://api.github.com/repos/memononen/nanovg/git/commits/cb5f9cdd50f4e647a1d8e93189bb14feb854028d,cb5f9cdd50f4e647a1d8e93189bb14feb854028d,spaces --> tabs
+andrewcorrigan,2014-06-27 13:20:45,https://api.github.com/repos/memononen/nanovg/git/commits/ad1f260b919a0bc23fa3060ab774bdd9558b39bc,ad1f260b919a0bc23fa3060ab774bdd9558b39bc,spaces --> tabs
+andrewcorrigan,2014-06-27 00:16:26,https://api.github.com/repos/memononen/nanovg/git/commits/ad59d66bf0d7cfe098f5e0390d22ade3ad2d52ab,ad59d66bf0d7cfe098f5e0390d22ade3ad2d52ab,"only specifies precision for fragment shader, vertex shader defaults to highp as per gles2/gles3 spec"
+memononen,2014-06-27 07:44:42,https://api.github.com/repos/memononen/nanovg/git/commits/84595438f3000d3b2f3082bec7ac4496d91043f5,84595438f3000d3b2f3082bec7ac4496d91043f5,"Fix for issue #127
+
+- set stb_image flags so that it loads correct data in iPhone"
+memononen,2014-06-22 09:02:52,https://api.github.com/repos/memononen/nanovg/git/commits/68f9e4b4c475310b10dd1f85b10c79218612df2c,68f9e4b4c475310b10dd1f85b10c79218612df2c,"Merge pull request #125 from starwing/master
+
+update upstream stb things."
+starwing,2014-06-22 08:52:05,https://api.github.com/repos/memononen/nanovg/git/commits/5dd2c49fe6e11d15dae0525f7c7147548a881aae,5dd2c49fe6e11d15dae0525f7c7147548a881aae,update upstream stb things.
+memononen,2014-06-22 08:49:13,https://api.github.com/repos/memononen/nanovg/git/commits/7d1ec4ddd8ede8f1f4d288461ed8ac1fd84b91ff,7d1ec4ddd8ede8f1f4d288461ed8ac1fd84b91ff,"Merge pull request #123 from starwing/master
+
+Auto detect and resize text altas texture."
+starwing,2014-06-16 09:57:18,https://api.github.com/repos/memononen/nanovg/git/commits/4712e5b615b339bd527d7f46d41e1c501f6d8f79,4712e5b615b339bd527d7f46d41e1c501f6d8f79,Auto detect and resize text atlas texture.
+memononen,2014-06-22 08:10:56,https://api.github.com/repos/memononen/nanovg/git/commits/05f8449978d7d712b2c094f1709a2913e3690f0a,05f8449978d7d712b2c094f1709a2913e3690f0a,"Merge pull request #124 from andrewcorrigan/master
+
+allows for nanovg_gl prototypes to be declared simultaneously"
+andrewcorrigan,2014-06-21 23:53:47,https://api.github.com/repos/memononen/nanovg/git/commits/0ffc9d5d4e30ade258b3de5490d07beabd16d677,0ffc9d5d4e30ade258b3de5490d07beabd16d677,allows for nanovg_gl prototypes to be declared simultaneously for multiple backends
+cmaughan,2014-06-21 10:20:20,https://api.github.com/repos/memononen/nanovg/git/commits/62fccfbaaddd165f2a53d2fcdc93dafe846e72b6,62fccfbaaddd165f2a53d2fcdc93dafe846e72b6,Removed accidental d3d11 project.
+cmaughan,2014-06-21 10:13:28,https://api.github.com/repos/memononen/nanovg/git/commits/101b1a9c3a56ba1f402a43438afa7db35894fa78,101b1a9c3a56ba1f402a43438afa7db35894fa78,Fixed curlies
+cmaughan,2014-06-21 10:07:05,https://api.github.com/repos/memononen/nanovg/git/commits/a23e6c481821e8de904585026d7cacdb602881c0,a23e6c481821e8de904585026d7cacdb602881c0,Also set the mipmap flag for GL ;)
+cmaughan,2014-06-21 09:22:49,https://api.github.com/repos/memononen/nanovg/git/commits/b79ab71a71bef3a0c67cdfe3ca2312373c287168,b79ab71a71bef3a0c67cdfe3ca2312373c287168,"Added mipmap generation option - useful for clients that need images with mipmaps for better quality scaling.
+Tweaked premake to remove some windows warnings."
+memononen,2014-06-21 09:06:40,https://api.github.com/repos/memononen/nanovg/git/commits/f0b503d9cc8a00f96cac9e26baab01fb13b234c2,f0b503d9cc8a00f96cac9e26baab01fb13b234c2,Font stash: store pref glyph as index instead of pointer
+memononen,2014-06-20 17:13:20,https://api.github.com/repos/memononen/nanovg/git/commits/05c8fa29d124e213675fc4fb9bc63de1e8fbb4b1,05c8fa29d124e213675fc4fb9bc63de1e8fbb4b1,"Merge pull request #120 from sgraham/warnings-attempt-2
+
+second attempt at avoiding warnings at /W4 on vs2013"
+memononen,2014-06-20 17:10:21,https://api.github.com/repos/memononen/nanovg/git/commits/b8e981bc3f16a6f89af01a600e44e759e4b69bdd,b8e981bc3f16a6f89af01a600e44e759e4b69bdd,"Merge pull request #121 from sgraham/zero-w-scissor
+
+use -1 as the 'no scissor' value, rather than 0, so that 0 width still scissors"
+sgraham,2014-06-20 15:54:13,https://api.github.com/repos/memononen/nanovg/git/commits/bc136b26c878f622feae50fbdf1162ae43b03250,bc136b26c878f622feae50fbdf1162ae43b03250,"clamp on scissor, fix nvgReset"
+sgraham,2014-06-20 00:40:53,https://api.github.com/repos/memononen/nanovg/git/commits/aefc9a6104341c1c9d8f033f37ce649312d2e269,aefc9a6104341c1c9d8f033f37ce649312d2e269,"use -1 as the 'no scissor' value, rather than 0, so that 0 width still scissors"
+sgraham,2014-06-20 00:34:10,https://api.github.com/repos/memononen/nanovg/git/commits/c20125c941d6d8c8c2b5016a0de4ec486512e157,c20125c941d6d8c8c2b5016a0de4ec486512e157,second attempt at avoiding warnings at /W4 on vs2013
+memononen,2014-06-17 08:27:11,https://api.github.com/repos/memononen/nanovg/git/commits/ed86765026d02e7b5a15c76ffa2c20cfd1d08d5d,ed86765026d02e7b5a15c76ffa2c20cfd1d08d5d,"Removed unused mx,my,len"
+memononen,2014-06-17 07:50:37,https://api.github.com/repos/memononen/nanovg/git/commits/197af889db5a95658bf020301f6aaef90688ec0e,197af889db5a95658bf020301f6aaef90688ec0e,"Merge pull request #115 from cforfang/small_fixes
+
+Memory leak + small fixes"
+cforfang,2014-06-15 17:41:57,https://api.github.com/repos/memononen/nanovg/git/commits/565fa16265d72c64b9f9ead4436fce12cbe7b0c8,565fa16265d72c64b9f9ead4436fce12cbe7b0c8,Fixed missing void in function with no parameters
+cforfang,2014-06-15 17:33:38,https://api.github.com/repos/memononen/nanovg/git/commits/893f31c31854ee2eff2518bdca88427c379d7ccb,893f31c31854ee2eff2518bdca88427c379d7ccb,Fixed potentially uninitialized local variable warning
+cforfang,2014-06-15 17:29:27,https://api.github.com/repos/memononen/nanovg/git/commits/119f315a75f3ca127810531f5167cdcd7f814abc,119f315a75f3ca127810531f5167cdcd7f814abc,Fixed memory leak
+memononen,2014-06-15 08:32:27,https://api.github.com/repos/memononen/nanovg/git/commits/0c7feda6653265eabd032aa83f8a8154ad2425d3,0c7feda6653265eabd032aa83f8a8154ad2425d3,"Changed not used macro from do {} while(0), to for(;;) { ... break; }"
+memononen,2014-06-15 08:29:27,https://api.github.com/repos/memononen/nanovg/git/commits/ec2dfba0f1da25935c7d8f388dca60ab0f53e4c7,ec2dfba0f1da25935c7d8f388dca60ab0f53e4c7,Removed unused mu variable
+memononen,2014-06-15 08:28:57,https://api.github.com/repos/memononen/nanovg/git/commits/ff96ef95653cf7a516e45929064d80c493d6b704,ff96ef95653cf7a516e45929064d80c493d6b704,"Merge pull request #104 from starwing/master
+
+fix nvgCreateImageFromHandle for GLES2/3."
+memononen,2014-06-15 08:23:09,https://api.github.com/repos/memononen/nanovg/git/commits/c648e0dcf1f3fec265a5dc649c43c095e3554144,c648e0dcf1f3fec265a5dc649c43c095e3554144,"Fix for issue #108
+
+- fixed stroke cap tessellation amount calculation"
+memononen,2014-06-15 08:19:22,https://api.github.com/repos/memononen/nanovg/git/commits/a98d17cf24ebe1e059929d4e545f64bb82916334,a98d17cf24ebe1e059929d4e545f64bb82916334,"Fix for issue #111
+
+- added nvgQuadTo, draws quadratic bezier curve segment"
+memononen,2014-06-15 08:08:12,https://api.github.com/repos/memononen/nanovg/git/commits/709475c5135af653c18648de2ef8fe832101f1fe,709475c5135af653c18648de2ef8fe832101f1fe,"API changed! Fixed slowdown, Shader uses premultiplied colors
+
+- all colors in the shader is handled as premultiplied
+- removed alphaBlend param from nvgBeginFrame(), it became obsolete
+- added NVGL_TEXTURE_PREMULTIPLIED flag
+- separated FBO example
+- FBOs are treated as premultipied for correct alpha
+- changed FBO storage from depth/stencil 24/8 to stencil 8
+- moved discard to end of shader which restores the render speed again"
+starwing,2014-06-09 16:49:35,https://api.github.com/repos/memononen/nanovg/git/commits/9b8de47d799a778ae44eff12a7e015cd346c1c77,9b8de47d799a778ae44eff12a7e015cd346c1c77,fix nvgCreateImageFromHandle for GLES2/3.
+memononen,2014-06-09 17:10:37,https://api.github.com/repos/memononen/nanovg/git/commits/0dbf53ebadd2206b27370daba6bb7ee0cf65aadd,0dbf53ebadd2206b27370daba6bb7ee0cf65aadd,Updated screenshot
+memononen,2014-06-09 16:47:39,https://api.github.com/repos/memononen/nanovg/git/commits/0ae3a54bcee686282fdb5f02992b9b10a823e741,0ae3a54bcee686282fdb5f02992b9b10a823e741,Added links to nanovg ports
+memononen,2014-06-09 12:53:26,https://api.github.com/repos/memononen/nanovg/git/commits/003561e72136b3b0a4fe6122c76017015633c3a4,003561e72136b3b0a4fe6122c76017015633c3a4,"Fix for issue #92
+
+- added (optional) 3-pass stencil trick to stroke rendering, reduces
+overdraw artifacts, a little slower
+- fixed some text bounds issues"
+memononen,2014-06-08 17:27:14,https://api.github.com/repos/memononen/nanovg/git/commits/83c876b9a8558d5be00524d960850fdd0d5fd3f7,83c876b9a8558d5be00524d960850fdd0d5fd3f7,Made FBO helper to work on OSX when using GL2
+memononen,2014-06-08 12:10:40,https://api.github.com/repos/memononen/nanovg/git/commits/84bec2962ea7552c24e468607b75758bb00f8ab1,84bec2962ea7552c24e468607b75758bb00f8ab1,"Fix for issue #95
+
+- Added alpha for images
+- Added global alpha"
+memononen,2014-06-08 11:19:17,https://api.github.com/repos/memononen/nanovg/git/commits/f0994aee92d51a0f63b541e41eaf64d0f1fdb316,f0994aee92d51a0f63b541e41eaf64d0f1fdb316,"Fix for issue #100
+
+- fixed glyph position bounds for whitespace"
+memononen,2014-06-08 10:56:58,https://api.github.com/repos/memononen/nanovg/git/commits/7a06c56edb0f6acd5da90081033b0fb1b95ee226,7a06c56edb0f6acd5da90081033b0fb1b95ee226,"Fixes and tweaks for frame buffer handling
+
+- fixed flags setup in nvglCreateImageFromHandle
+- changed frame buffer to only compile on GL3
+- changed nvgluCreateFramebuffer() to return FBO struct instead of
+filling existing one (for consistency)"
+memononen,2014-06-08 10:13:55,https://api.github.com/repos/memononen/nanovg/git/commits/43a8dcc981c9df8e87dbf34c7a0affcfb4f81ed8,43a8dcc981c9df8e87dbf34c7a0affcfb4f81ed8,"Merge pull request #101 from starwing/master
+
+add external APIs to GL backend to get native Texture Id."
+memononen,2014-06-08 10:10:14,https://api.github.com/repos/memononen/nanovg/git/commits/adb7528ed3abeb680af89f6e6bc3f23737956e82,adb7528ed3abeb680af89f6e6bc3f23737956e82,"Merge pull request #93 from jacereda/master
+
+Relax stroke width limit"
+memononen,2014-06-08 10:07:00,https://api.github.com/repos/memononen/nanovg/git/commits/59030bf7227e99ee133c77a7c1d62ba14b33146a,59030bf7227e99ee133c77a7c1d62ba14b33146a,Separated fill and store expansion code
+memononen,2014-06-08 08:12:15,https://api.github.com/repos/memononen/nanovg/git/commits/7a576015e4a5bd0d86b485c7de375064c590af58,7a576015e4a5bd0d86b485c7de375064c590af58,"Merge pull request #102 from notlion/gles-highp
+
+Use highp precision when available for GLES"
+notlion,2014-06-08 03:30:55,https://api.github.com/repos/memononen/nanovg/git/commits/fa12dd899b2a783d8f7a237d5c5295e923e0fe2d,fa12dd899b2a783d8f7a237d5c5295e923e0fe2d,Use highp precision when available for GLES
+starwing,2014-06-06 11:24:12,https://api.github.com/repos/memononen/nanovg/git/commits/bea097165bff81bf15360d4d11e440f2cd8107bb,bea097165bff81bf15360d4d11e440f2cd8107bb,add external APIs to GL backend to get native Texture Id.
+jacereda,2014-06-05 21:48:52,https://api.github.com/repos/memononen/nanovg/git/commits/0957a7763f540309877049dd47df740585aa8183,0957a7763f540309877049dd47df740585aa8183,Merge upstream/master
+memononen,2014-06-05 15:57:59,https://api.github.com/repos/memononen/nanovg/git/commits/bf2037a426d8df43213e609fd3a868f06452e6b8,bf2037a426d8df43213e609fd3a868f06452e6b8,"Fix for issue #94
+
+- bezier tessellation was using second control point instead of last
+point in error calculation"
+jacereda,2014-06-03 21:44:04,https://api.github.com/repos/memononen/nanovg/git/commits/6a96f91abf914885f20e00be6b5cc3c4aeccb0d2,6a96f91abf914885f20e00be6b5cc3c4aeccb0d2,Relax stroke width limit
+memononen,2014-05-28 17:43:33,https://api.github.com/repos/memononen/nanovg/git/commits/ec53dd417df106f74f68c4f40e8e295ae37b3c86,ec53dd417df106f74f68c4f40e8e295ae37b3c86,"Merge pull request #89 from cforfang/alignment_fix_2
+
+Explicit cast to make C++ compilers happy"
+cforfang,2014-05-28 17:18:22,https://api.github.com/repos/memononen/nanovg/git/commits/7b567dacc54148b6e099cfa6d6fc782d42f36a40,7b567dacc54148b6e099cfa6d6fc782d42f36a40,Explicit cast to make C++ compilers happy
+memononen,2014-05-24 17:05:44,https://api.github.com/repos/memononen/nanovg/git/commits/1da366c239ce21de7d972f4ca1eabd2db7a98c1c,1da366c239ce21de7d972f4ca1eabd2db7a98c1c,"Fix for issue #82
+
+- fixed basic shape windings
+- clamp radius of rounded rect so that it behaves nicely when squashed"
+memononen,2014-05-23 06:55:38,https://api.github.com/repos/memononen/nanovg/git/commits/effe1a5fce765552874cf5486d6f078f37a9bae1,effe1a5fce765552874cf5486d6f078f37a9bae1,"Fix for issue #81
+
+- use regular uniforms for once-per-frame values
+- set tex sampler when using NANOVG_GL_USE_UNIFORMBUFFER"
+memononen,2014-05-23 06:42:42,https://api.github.com/repos/memononen/nanovg/git/commits/44c168b84e18d2b85214902d8dcb69e993004bfd,44c168b84e18d2b85214902d8dcb69e993004bfd,"Fix for issue #75
+
+- fixed copy/paste bug in bevel calculations"
+memononen,2014-05-23 06:37:36,https://api.github.com/repos/memononen/nanovg/git/commits/611b043fff03e996e8c99f4afd5819f1dbf02d4f,611b043fff03e996e8c99f4afd5819f1dbf02d4f,"Fix for issue #77
+
+- line caps did not consider AA width"
+memononen,2014-05-22 13:59:45,https://api.github.com/repos/memononen/nanovg/git/commits/4ee8aa9cde8ba45fac6b93b9b69fb24fcf4b5a0f,4ee8aa9cde8ba45fac6b93b9b69fb24fcf4b5a0f,"Merge pull request #87 from Nairou/master
+
+Made FreeType support a bit clearer"
+memononen,2014-05-22 05:20:17,https://api.github.com/repos/memononen/nanovg/git/commits/42afd62df22eb4be293b87c06c0f31f853d2e43e,42afd62df22eb4be293b87c06c0f31f853d2e43e,"Merge pull request #86 from Ziflin/master
+
+Removed GL_BLEND disable and enable inside glnvg__fill() to prevent performance warning."
+memononen,2014-05-21 20:13:47,https://api.github.com/repos/memononen/nanovg/git/commits/2b35f5f3069feb23ca24bf71209bbf7fa23ff1bb,2b35f5f3069feb23ca24bf71209bbf7fa23ff1bb,"Merge pull request #85 from cforfang/alignment_fix_2
+
+Make sure fons__tmpalloc returns a 16-byte aligned pointer"
+cforfang,2014-05-21 20:00:24,https://api.github.com/repos/memononen/nanovg/git/commits/15c963f8b586d0d9f6b3604b8368ea58f0b181b2,15c963f8b586d0d9f6b3604b8368ea58f0b181b2,Make sure fons__tmpalloc returns a 16-byte aligned pointer
+memononen,2014-05-03 09:17:27,https://api.github.com/repos/memononen/nanovg/git/commits/02ca24ad75c402661018ebe641cfd3d3948af7f8,02ca24ad75c402661018ebe641cfd3d3948af7f8,Fix to update alloc count after successful alloc
+memononen,2014-05-03 09:05:58,https://api.github.com/repos/memononen/nanovg/git/commits/3f37dccb29658bf218fd63c66d7b94980b0c0ac3,3f37dccb29658bf218fd63c66d7b94980b0c0ac3,"Fix for issue #78
+
+- use one not used macro for all"
+memononen,2014-05-03 08:56:26,https://api.github.com/repos/memononen/nanovg/git/commits/7f55decf8f136f4f0682ecbbfd5e559710daa407,7f55decf8f136f4f0682ecbbfd5e559710daa407,"More error checking on allocations
+
+- changed remainder of allocations to follow same 1.5x patters
+- do not leak memory when realloc() fails
+- added error handling in case allocations fail"
+memononen,2014-05-03 07:39:44,https://api.github.com/repos/memononen/nanovg/git/commits/b2d93429e5725351f78dba714cde71e18655eabc,b2d93429e5725351f78dba714cde71e18655eabc,"Fixed issue #80
+
+- increased initial buffer sizes
+- change all allocator patterns to over allocate by 1.5x
+- fixes bug where nvgl back-end was not allocating +n as requested"
+memononen,2014-05-01 15:34:03,https://api.github.com/repos/memononen/nanovg/git/commits/0426fe9f4ceb21974372f5a8109fe522c0c0751b,0426fe9f4ceb21974372f5a8109fe522c0c0751b,"Merge pull request #79 from cforfang/master
+
+Set glFrontFace in glnvg__renderFlush"
+cforfang,2014-05-01 10:42:59,https://api.github.com/repos/memononen/nanovg/git/commits/46bc75823447edbad573d89ba8ba0f24e54d1cd8,46bc75823447edbad573d89ba8ba0f24e54d1cd8,Added mention of glFrontFace to README.md
+cforfang,2014-05-01 10:27:39,https://api.github.com/repos/memononen/nanovg/git/commits/d7344e06997d02b426a6167ed243505619c6f408,d7344e06997d02b426a6167ed243505619c6f408,Added glFrontFace(GL_CCW) to glnvg__renderFlush
+memononen,2014-04-25 16:19:19,https://api.github.com/repos/memononen/nanovg/git/commits/7aa5a74ec53a8fc023a2d2351ffca1b5fdc6e757,7aa5a74ec53a8fc023a2d2351ffca1b5fdc6e757,"Merge pull request #76 from elmindreda/master
+
+Removed GLFW 2 option macro"
+elmindreda,2014-04-25 10:01:48,https://api.github.com/repos/memononen/nanovg/git/commits/57308993cbe33b889034403da989a06bf3f8dad0,57308993cbe33b889034403da989a06bf3f8dad0,"Removed GLFW 2 option macro.
+
+GLFW_NO_GLU is a GLFW 2 feature.  GLFW 3 does not include the GLU header
+by default."
+memononen,2014-04-24 19:24:59,https://api.github.com/repos/memononen/nanovg/git/commits/4cc5fd68d1df21a3cb9ef3d38927c2b1021d089d,4cc5fd68d1df21a3cb9ef3d38927c2b1021d089d,"Improved nvgTextGlyphPositions()
+
+- added glyph min/max x
+- fixed first glyph position"
+memononen,2014-04-24 18:31:40,https://api.github.com/repos/memononen/nanovg/git/commits/df537491f2623775365f93dd9cde17f26abfd6ab,df537491f2623775365f93dd9cde17f26abfd6ab,Include GLFW_INCLUDE_GLCOREARB only on Macs
+memononen,2014-04-24 18:27:38,https://api.github.com/repos/memononen/nanovg/git/commits/847f0f591d6838eb45e488e6626fcafef4ebdf6c,847f0f591d6838eb45e488e6626fcafef4ebdf6c,"Merge pull request #74 from elmindreda/master
+
+Replaced hardcoded GLFW link flags with pkgconfig"
+elmindreda,2014-04-24 15:15:06,https://api.github.com/repos/memononen/nanovg/git/commits/3b6515bd633ba8af285739a5aa6dc78fc7426258,3b6515bd633ba8af285739a5aa6dc78fc7426258,"Replaced hardcoded GLFW link flags with pkgconfig.
+
+The GLFW library path and link flags may differ between Linux
+distributions.  This makes the build system use the GLFW pkgconfig file,
+which hides such differences."
+memononen,2014-04-23 19:52:36,https://api.github.com/repos/memononen/nanovg/git/commits/2beba289c45263bb5fbc1b30d6702a7121052ac3,2beba289c45263bb5fbc1b30d6702a7121052ac3,"Fix for issue #72
+
+- scale and letterspacing were mixed in call to getQuad"
+memononen,2014-04-23 19:31:01,https://api.github.com/repos/memononen/nanovg/git/commits/143f5daf5d228f4c79cee818355ffdb4672930ce,143f5daf5d228f4c79cee818355ffdb4672930ce,"Merge pull request #71 from starwing/master
+
+add support for MinGW."
+starwing,2014-04-22 06:58:44,https://api.github.com/repos/memononen/nanovg/git/commits/a07cb827807d94aecb2fa5ef13476b1ce64e89ca,a07cb827807d94aecb2fa5ef13476b1ce64e89ca,add support for MinGW.
+memononen,2014-04-22 05:27:19,https://api.github.com/repos/memononen/nanovg/git/commits/b085ce3ace902af48908d86fc482cee334ce01bd,b085ce3ace902af48908d86fc482cee334ce01bd,"Merge pull request #70 from andrewcorrigan/master
+
+fixes texture formats for GLES2/GLES3"
+memononen,2014-04-22 05:24:07,https://api.github.com/repos/memononen/nanovg/git/commits/9d62d28bdf02cd0553821c6e12d21cc0795c5953,9d62d28bdf02cd0553821c6e12d21cc0795c5953,"Fix for issue #69
+
+- make default uniform struct align 4"
+andrewcorrigan,2014-04-22 01:35:51,https://api.github.com/repos/memononen/nanovg/git/commits/ee1e66e7218c15efe0e508b88096c411a810c8b9,ee1e66e7218c15efe0e508b88096c411a810c8b9,fixes texture formats for GLES2/GLES3
+memononen,2014-04-21 10:13:59,https://api.github.com/repos/memononen/nanovg/git/commits/5a4e5a3d7c4c03f952406e9b9c6e3e12983c5d50,5a4e5a3d7c4c03f952406e9b9c6e3e12983c5d50,"Added nvgCurrentTransform() and exposed matrix functions
+
+- added nvgCurrentTransform() which allows to get the current
+transformation matrix
+- added skew x/y transforms
+- exposed functions 2x3 matrix functions
+- exposed point transform
+- added deg/rad conversion functions"
+memononen,2014-04-21 08:16:44,https://api.github.com/repos/memononen/nanovg/git/commits/7fc116418c0dd7eed2ac53bb84d2ce72092b52a1,7fc116418c0dd7eed2ac53bb84d2ce72092b52a1,Fix for issue #14
+memononen,2014-04-20 09:27:03,https://api.github.com/repos/memononen/nanovg/git/commits/64de0f6321105734b8be7ecacd19b2f07dfdbe38,64de0f6321105734b8be7ecacd19b2f07dfdbe38,Update README.md
+memononen,2014-04-20 09:26:05,https://api.github.com/repos/memononen/nanovg/git/commits/be16b4dff3c795aeb4bc21528ea04824703a7214,be16b4dff3c795aeb4bc21528ea04824703a7214,"Made old GL backends obsolete, added docs
+
+- added documentation about changed GL state
+- made old GL2 and GL3 backends obsolete"
+memononen,2014-04-19 17:03:46,https://api.github.com/repos/memononen/nanovg/git/commits/6edc46e5b0bd501e2aa60460b35b7eb88c776fb8,6edc46e5b0bd501e2aa60460b35b7eb88c776fb8,"Allow small strokes, fixed textBoxBounds()
+
+- added test for multiple stroke widths
+- allow stroke width down to 1px size, then scale with alpha
+- fixed textBoxBounds() in hi-dpi"
+memononen,2014-04-19 16:39:52,https://api.github.com/repos/memononen/nanovg/git/commits/b54faeff308150d3efba1a889426dbc57ac56611,b54faeff308150d3efba1a889426dbc57ac56611,Added TODO about GLES2 pixel shader precision
+memononen,2014-04-19 16:31:28,https://api.github.com/repos/memononen/nanovg/git/commits/b416f76b1c1dd74d7e3936631755bd1de48e6d87,b416f76b1c1dd74d7e3936631755bd1de48e6d87,"Added nvgTextBoxBounds, fixed nvgTextBounds
+
+- nvgTextBounds() API changed, assumes x,y as input too
+- fixed nvgTextBounds() return values
+- added nvgTextBoxBounds()
+- text line width is handle more consistently
+- added note about return values of text measure funds
+- changed demo to show text(box)bounds usage"
+memononen,2014-04-17 16:09:26,https://api.github.com/repos/memononen/nanovg/git/commits/407cd75a98ded08399a9c3934805e128e6f978c9,407cd75a98ded08399a9c3934805e128e6f978c9,"Fixed rendering artefacts when not using uniform buffers
+
+- made uniform buffer support behind separate define for easier toggling
+- calculate scissor and stroke alpha outside type selection to simplify
+the shader (or else it produces rendering artefacts)
+- restore default pixel store settings instead of restoring old state
+- set active texture to 0 when starting to render a frame"
+memononen,2014-04-15 20:23:21,https://api.github.com/repos/memononen/nanovg/git/commits/8f16ad0e0732c8479e1718fbf24c45b4447f0b23,8f16ad0e0732c8479e1718fbf24c45b4447f0b23,Clear frag uniforms before filling
+memononen,2014-04-15 18:10:55,https://api.github.com/repos/memononen/nanovg/git/commits/9d367dcb81f097126967ec5b4da67fc4440cf5e0,9d367dcb81f097126967ec5b4da67fc4440cf5e0,"GL3buf backend supports GL2 too (not yet enabled)
+
+- added support for GL(ES)2 for nanovg_gl3buf (something is still not
+quite there)
+- nanovg now sets all required GL state
+- removed compiler warnings about unused vars"
+memononen,2014-04-13 18:57:57,https://api.github.com/repos/memononen/nanovg/git/commits/7a282bd934ba4fe219cc807f7fef73ecc7224a71,7a282bd934ba4fe219cc807f7fef73ecc7224a71,"Added some TODOs, no return value for textbox"
+memononen,2014-04-13 18:55:43,https://api.github.com/repos/memononen/nanovg/git/commits/635f4a4afb4e691f02c4261c73dac0f9ab821a77,635f4a4afb4e691f02c4261c73dac0f9ab821a77,"Added multi-line text drawing
+
+- fixed some warnings
+- changed nvgLetterSpacing() to nvgTextLetterSpacing()
+- added nvgTextBox()
+- added nvgTextLineHeight()
+- added some documentation"
+memononen,2014-04-13 16:01:25,https://api.github.com/repos/memononen/nanovg/git/commits/ff8b5215063c7c6f0ad54b4009c83cf3c72aa75b,ff8b5215063c7c6f0ad54b4009c83cf3c72aa75b,"Added text break line and glyph position functions
+
+- added debug configs for the lib
+- added more data for font stash text iterator (ptr to current and next
+position in string, code point)
+- renamed nvgVertMetrics() to nvgTextMetrics()
+- added nvgTextGlyphPositions() which returns glyph x position for the
+text
+- added nvgTextBreakLines breaks a text into multiple rows based on
+newlines and max row width
+- tweaked tessellation tolerance"
+memononen,2014-04-11 13:27:24,https://api.github.com/repos/memononen/nanovg/git/commits/2d5c1845ac26287955666b6805cfa2acb628d801,2d5c1845ac26287955666b6805cfa2acb628d801,Removed unused function
+memononen,2014-04-11 13:25:57,https://api.github.com/repos/memononen/nanovg/git/commits/888103db3973f40110781f0d4603885a8461c5ad,888103db3973f40110781f0d4603885a8461c5ad,"Adjusted tessellation
+
+- changed tessellation flatness test which produces less vertices
+(especially when using straight lines)
+- added nvgDebugDumpPathCache which allows to dump path cache state to
+stout"
+memononen,2014-04-11 08:00:29,https://api.github.com/repos/memononen/nanovg/git/commits/8d88a9b38ea87ba2272d748db4f380c835810a7c,8d88a9b38ea87ba2272d748db4f380c835810a7c,Fixed bug in fonsTextIterNext()
+memononen,2014-04-10 10:54:48,https://api.github.com/repos/memononen/nanovg/git/commits/1db6eec59aa266c9e67e9d1d2f3569bb84a64b9e,1db6eec59aa266c9e67e9d1d2f3569bb84a64b9e,"Merge pull request #56 from dougbinks/NVGcolor
+
+Merged NVGcolor, which implements the color as floats, colors can be > 1.0, allowing HDR rendering when needed."
+dougbinks,2014-04-10 10:41:25,https://api.github.com/repos/memononen/nanovg/git/commits/f398f260188101a00111f8aa65c5154ac054c42d,f398f260188101a00111f8aa65c5154ac054c42d,Bugfix to nvgRGBf
+dougbinks,2014-04-10 10:19:03,https://api.github.com/repos/memononen/nanovg/git/commits/c3f50b9c01daeebcbf9f58050d81ff661ea22dc3,c3f50b9c01daeebcbf9f58050d81ff661ea22dc3,"Removed nvgIsBlack, and added isBlack to demo.c"
+dougbinks,2014-04-10 10:16:28,https://api.github.com/repos/memononen/nanovg/git/commits/253dc627e7c8cc9fe682c3d204744ff28084cf58,253dc627e7c8cc9fe682c3d204744ff28084cf58,Added nvgTransRGBAf
+dougbinks,2014-04-10 10:13:36,https://api.github.com/repos/memononen/nanovg/git/commits/a83913bc876c0cd65b29ba3d400781291b0d7b73,a83913bc876c0cd65b29ba3d400781291b0d7b73,Added nvgRGBf and nvgRGBAf constructor functions.
+dougbinks,2014-04-10 10:08:29,https://api.github.com/repos/memononen/nanovg/git/commits/466ab4b19aa322461c596e1c2fb62890f083dd2e,466ab4b19aa322461c596e1c2fb62890f083dd2e,Converted spaces to tabs.
+dougbinks,2014-04-07 12:22:12,https://api.github.com/repos/memononen/nanovg/git/commits/d16b4df7fd244c3ab3920104762f5426480ee7de,d16b4df7fd244c3ab3920104762f5426480ee7de,Warning/Error fix: added int return type to nvgIsBlack
+dougbinks,2014-04-06 19:22:10,https://api.github.com/repos/memononen/nanovg/git/commits/730b8c2edde8b083a35e29372fc12e9e67a6ec0c,730b8c2edde8b083a35e29372fc12e9e67a6ec0c,Converted gl3 unbuffered version.
+dougbinks,2014-04-06 19:14:43,https://api.github.com/repos/memononen/nanovg/git/commits/5ed1b218554bf8c4a43661c1148719ca863a306f,5ed1b218554bf8c4a43661c1148719ca863a306f,Converted gl2 path.
+dougbinks,2014-04-06 16:15:40,https://api.github.com/repos/memononen/nanovg/git/commits/3d3582cd9a3d1ac243eb0b121e5d64fe6a3540bd,3d3582cd9a3d1ac243eb0b121e5d64fe6a3540bd,"Moved to floating point color via NVGcolor structure.
+Currently working with gl3buf backend."
+memononen,2014-04-01 13:35:29,https://api.github.com/repos/memononen/nanovg/git/commits/857d2efe45eb64e7361a10b09e0d3ea066ccf8df,857d2efe45eb64e7361a10b09e0d3ea066ccf8df,Small addition to debug hints
+memononen,2014-04-01 13:33:49,https://api.github.com/repos/memononen/nanovg/git/commits/885844a845c1cf836f3ac4e695d708692cdf8d1a,885844a845c1cf836f3ac4e695d708692cdf8d1a,Added quick hints on how to debug rendering issues
+memononen,2014-03-23 18:40:29,https://api.github.com/repos/memononen/nanovg/git/commits/b47f25660774e427336b00fcbf4121614f8396f7,b47f25660774e427336b00fcbf4121614f8396f7,Updated fontstash
+memononen,2014-03-16 16:27:14,https://api.github.com/repos/memononen/nanovg/git/commits/8695be32164a437e51b3a338f9f6f55741f443c9,8695be32164a437e51b3a338f9f6f55741f443c9,Update README.md
+memononen,2014-03-09 19:00:46,https://api.github.com/repos/memononen/nanovg/git/commits/6a4cb80891bd0289c8102fab613ac71eb30bc1cf,6a4cb80891bd0289c8102fab613ac71eb30bc1cf,"Merge pull request #50 from devnought/dev
+
+Variable initialization, unused var removal, and casts."
+memononen,2014-03-09 18:55:23,https://api.github.com/repos/memononen/nanovg/git/commits/0262883c55260105f4d645d09cbebf04a1fb9c23,0262883c55260105f4d645d09cbebf04a1fb9c23,"Fixes for AA on retina, a bit finer tessellation
+
+- changed tessellation threshold from 0.3 to 0.25
+- fixed scissor AA on retina
+- fixed stroke AA on retina"
+devnought,2014-03-09 18:22:39,https://api.github.com/repos/memononen/nanovg/git/commits/db5c78fb00474d30f63d083fef8ae736d5067b35,db5c78fb00474d30f63d083fef8ae736d5067b35,"Variable initialization, unused var removal, and casts.
+
+Removed some unused variables to silence compiler warnings, initialized
+variables to 0, added varialbe casts to silence additional compiler
+warnings."
+memononen,2014-03-09 17:46:59,https://api.github.com/repos/memononen/nanovg/git/commits/8b55ae414e50890dbc009810ee898cb3c3a8cae4,8b55ae414e50890dbc009810ee898cb3c3a8cae4,Improved miter and bevel line joins
+memononen,2014-02-26 10:28:29,https://api.github.com/repos/memononen/nanovg/git/commits/22e58d6d832c4954bfb1e9f0e523e8bcf60860e8,22e58d6d832c4954bfb1e9f0e523e8bcf60860e8,"Merged latest changes from fontstash
+
+- merged font stash optional FreeType support"
+memononen,2014-02-25 20:53:46,https://api.github.com/repos/memononen/nanovg/git/commits/ba3c0cbce1485bab9e6fc6d4f2a63b15043a52eb,ba3c0cbce1485bab9e6fc6d4f2a63b15043a52eb,"Fix for issue #40: Added support to render using premultiplied alpha
+
+- added support to take screen shots
+- added support to render to frame buffer using premultiplied alpha
+- fixed spelling NVGaling -> NVGalign"
+memononen,2014-02-23 11:04:12,https://api.github.com/repos/memononen/nanovg/git/commits/51c7d9fc6b0ebb3a07012c23eb1b5e1c5fcb9fec,51c7d9fc6b0ebb3a07012c23eb1b5e1c5fcb9fec,"Merge pull request #39 from SirSlaxalot/master
+
+fixed error return value"
+swapsen,2014-02-22 20:07:06,https://api.github.com/repos/memononen/nanovg/git/commits/701338602672f387df81f5c48cdf602743b7c804,701338602672f387df81f5c48cdf602743b7c804,fixed error return value
+memononen,2014-02-20 21:00:31,https://api.github.com/repos/memononen/nanovg/git/commits/5de5c1d2a09b8b1670aea39a356225dd8e258261,5de5c1d2a09b8b1670aea39a356225dd8e258261,"Improve stroke rendering
+
+- added better logic for inner bevels
+- tweaks to reduce overdraw at edges
+- fixed convex shape logic"
+memononen,2014-02-20 18:17:11,https://api.github.com/repos/memononen/nanovg/git/commits/53ae1d0804d101b7cac47b52529b67bab03d1633,53ae1d0804d101b7cac47b52529b67bab03d1633,"Merge pull request #38 from andrewcorrigan/master
+
+reduces warnings"
+andrewcorrigan,2014-02-20 16:44:01,https://api.github.com/repos/memononen/nanovg/git/commits/38bb65617eaf316f2302df242e525aa9ac4ae5cd,38bb65617eaf316f2302df242e525aa9ac4ae5cd,reduces warnings
+memononen,2014-02-19 21:04:32,https://api.github.com/repos/memononen/nanovg/git/commits/2d11c2ee8adc2fdd1ce5fd725debe124ebe305f9,2d11c2ee8adc2fdd1ce5fd725debe124ebe305f9,"Merge pull request #36 from dougbinks/master
+
+Reset pixel storage settings after load texture."
+dougbinks,2014-02-19 21:01:46,https://api.github.com/repos/memononen/nanovg/git/commits/5d8e63c81ca78926749c34edcc5ff08b49ca7c1c,5d8e63c81ca78926749c34edcc5ff08b49ca7c1c,Another reset pixel storage settings after load texture.
+dougbinks,2014-02-19 20:53:22,https://api.github.com/repos/memononen/nanovg/git/commits/a5965635a69fc4a0f58aaeae8c2430c3925bb574,a5965635a69fc4a0f58aaeae8c2430c3925bb574,Reset pixel storage settings after load texture.
+memononen,2014-02-19 19:26:28,https://api.github.com/repos/memononen/nanovg/git/commits/9d51cb68180008c299ce98ba2ea4e0a47762f750,9d51cb68180008c299ce98ba2ea4e0a47762f750,Update windows build settings as discussed in issue #24
+memononen,2014-02-19 06:30:33,https://api.github.com/repos/memononen/nanovg/git/commits/677c85668eddf6f93b23445693757284e1b51281,677c85668eddf6f93b23445693757284e1b51281,"Merge pull request #35 from Nairou/master
+
+Improve VC support"
+memononen,2014-02-18 20:53:02,https://api.github.com/repos/memononen/nanovg/git/commits/7f07b7953c37acc2c2cdf6a363eda4eb6b274a99,7f07b7953c37acc2c2cdf6a363eda4eb6b274a99,"Merge pull request #34 from Nairou/patch-1
+
+Remaining change for VC support"
+Nairou,2014-02-18 20:41:10,https://api.github.com/repos/memononen/nanovg/git/commits/731cb55221771432472bce28b6c651cb54b896c2,731cb55221771432472bce28b6c651cb54b896c2,Update nanovg.c
+memononen,2014-02-18 20:17:30,https://api.github.com/repos/memononen/nanovg/git/commits/99bd7b358e65fdbd5997c24f5d65d0ee8609c24f,99bd7b358e65fdbd5997c24f5d65d0ee8609c24f,Moving variables at top of blocks for better VC support
+memononen,2014-02-18 19:51:28,https://api.github.com/repos/memononen/nanovg/git/commits/aaafbd32c6314b83b112e492b90f28ee173f5c92,aaafbd32c6314b83b112e492b90f28ee173f5c92,"Renamed FPScounter to PerfGraph
+
+- Renamed FPScounter to PerfGraph
+- dump avg times at exit"
+memononen,2014-02-18 19:40:52,https://api.github.com/repos/memononen/nanovg/git/commits/151784102356533c6ded0f853250bb606ea4578e,151784102356533c6ded0f853250bb606ea4578e,"Performance timer tweaks
+
+- moved performance counter and drawing to separate file
+- tweaks to performance drawing"
+memononen,2014-02-18 17:39:38,https://api.github.com/repos/memononen/nanovg/git/commits/0c6d5d3702177bbf47e43c037f0b0ab52f03e7da,0c6d5d3702177bbf47e43c037f0b0ab52f03e7da,"Added NVG_ANTIALIAS into read me, commented line cap/join"
+memononen,2014-02-18 17:38:54,https://api.github.com/repos/memononen/nanovg/git/commits/31f8f6075c6d105b414adca47d85db31400cd1b0,31f8f6075c6d105b414adca47d85db31400cd1b0,"Merge pull request #33 from dougbinks/timing
+
+Support for cases where the gl header does not include GL_ARB_TIMER_QUERY"
+memononen,2014-02-18 17:37:39,https://api.github.com/repos/memononen/nanovg/git/commits/9ad2fa14ae9b4e62e868f98dbb8b37e4846fa653,9ad2fa14ae9b4e62e868f98dbb8b37e4846fa653,"Merge pull request #32 from jtilander/master
+
+Quick guard against NULL ptr dereference of texture type on CPU side"
+dougbinks,2014-02-18 17:17:09,https://api.github.com/repos/memononen/nanovg/git/commits/fe22b8c07d5bae3d8720ab70e29067db762c8443,fe22b8c07d5bae3d8720ab70e29067db762c8443,Support for cases where the gl header does not include GL_ARB_TIMER_QUERY
+jtilander,2014-02-18 16:17:56,https://api.github.com/repos/memononen/nanovg/git/commits/683785dbfa88f76924f06156fa6ee48864772de8,683785dbfa88f76924f06156fa6ee48864772de8,Quick guard against NULL ptr dereference of texture type on CPU side
+memononen,2014-02-18 15:10:46,https://api.github.com/repos/memononen/nanovg/git/commits/cdca70aea5856ace58138bf263819071b0ec3f8d,cdca70aea5856ace58138bf263819071b0ec3f8d,"Merge pull request #31 from dougbinks/timing
+
+Timing for CPU inner frame and GPU inner frame added"
+dougbinks,2014-02-18 14:45:41,https://api.github.com/repos/memononen/nanovg/git/commits/7d6058c57267c681afec2b4216e325d9ee2d3239,7d6058c57267c681afec2b4216e325d9ee2d3239,Changed name of new functionality to keep other examples compiling.
+dougbinks,2014-02-18 14:32:04,https://api.github.com/repos/memononen/nanovg/git/commits/e21683f14e84eb9a382bc2e8c2f7634fc27f97c6,e21683f14e84eb9a382bc2e8c2f7634fc27f97c6,Added name to timer render.
+dougbinks,2014-02-18 12:32:55,https://api.github.com/repos/memononen/nanovg/git/commits/a1e99ea940198b63dd360e8fce8bd5adb44b7f6c,a1e99ea940198b63dd360e8fce8bd5adb44b7f6c,Bug fix for index into queries.
+dougbinks,2014-02-18 11:26:41,https://api.github.com/repos/memononen/nanovg/git/commits/bb6b19c4100067d369a7bd984a78ec08fdb35db2,bb6b19c4100067d369a7bd984a78ec08fdb35db2,Added GPU timer and fixed up formatting.
+dougbinks,2014-02-18 10:38:55,https://api.github.com/repos/memononen/nanovg/git/commits/a63854859e30c9e4d24a6bad468d8a1397e42cc3,a63854859e30c9e4d24a6bad468d8a1397e42cc3,"Added an inner frame CPU timer.
+Needs names for the UI components to distinguish them, and probably stacking vertically for easier comparison."
+memononen,2014-02-17 20:11:28,https://api.github.com/repos/memononen/nanovg/git/commits/b043187a5134be8a8868f59b98f95cf85c393a87,b043187a5134be8a8868f59b98f95cf85c393a87,"gl3buf refactoring
+
+- implemented missing scissor from draw triangles
+- buffer a whole frame of uniforms
+- moved paint to uniform conversion earlier
+- simplified render loops and data structures
+- renamed bunch of things
+- combined shaders, use define to disable AA"
+memononen,2014-02-17 08:39:24,https://api.github.com/repos/memononen/nanovg/git/commits/3bc6c53ebd9d30c971a5db0f63985a3ae48a7f9a,3bc6c53ebd9d30c971a5db0f63985a3ae48a7f9a,"Merge pull request #29 from devnought/dev
+
+Added glMapBuffer cast"
+devnought,2014-02-17 08:15:08,https://api.github.com/repos/memononen/nanovg/git/commits/fa8d2a9d03c4eb4a59511d80f1acde1173a97986,fa8d2a9d03c4eb4a59511d80f1acde1173a97986,"Added glMapBuffer cast
+
+Cast void* to char* to remove compiler warning in C++ project in VS2013"
+memononen,2014-02-17 07:30:01,https://api.github.com/repos/memononen/nanovg/git/commits/79c0746285559e1a8be0779a6cf8701986cf8877,79c0746285559e1a8be0779a6cf8701986cf8877,"Merge pull request #28 from jtilander/master
+
+Fixed some warnings with MS compiler"
+memononen,2014-02-17 06:31:31,https://api.github.com/repos/memononen/nanovg/git/commits/24b51f1d6365bbccb7bf54eb93ea0710fe9a2b37,24b51f1d6365bbccb7bf54eb93ea0710fe9a2b37,"Merge pull request #27 from dougbinks/develop2
+
+Moved nanovg_gl3buf.h to uniform buffers"
+memononen,2014-02-17 06:30:51,https://api.github.com/repos/memononen/nanovg/git/commits/4a1e66a5154051cc95307fdbaae03dc8e00bfee8,4a1e66a5154051cc95307fdbaae03dc8e00bfee8,Do bevels only at control points
+memononen,2014-02-16 22:25:26,https://api.github.com/repos/memononen/nanovg/git/commits/0ec2be7a6c2c1cf079538158bfeff64254f54f9e,0ec2be7a6c2c1cf079538158bfeff64254f54f9e,Added support for line caps and joins
+jtilander,2014-02-16 22:17:13,https://api.github.com/repos/memononen/nanovg/git/commits/8e434b0467930fd44102c62695163d9d4e89e750,8e434b0467930fd44102c62695163d9d4e89e750,Fixed some warnings with MS compiler
+dougbinks,2014-02-16 21:19:06,https://api.github.com/repos/memononen/nanovg/git/commits/16ff847c0f50f69bcbdd062cbf134cd823354e89,16ff847c0f50f69bcbdd062cbf134cd823354e89,"Move to using uniform buffer objects for fragment shader, which is set once per frame."
+dougbinks,2014-02-16 16:59:02,https://api.github.com/repos/memononen/nanovg/git/commits/4a51b780696822b65a15227088cb676006766c64,4a51b780696822b65a15227088cb676006766c64,Merge branch 'master' of https://github.com/memononen/nanovg into develop2
+dougbinks,2014-02-16 16:56:34,https://api.github.com/repos/memononen/nanovg/git/commits/ddf95cef5f5f904769ad65c7b80d5ecb6169f288,ddf95cef5f5f904769ad65c7b80d5ecb6169f288,Corrected some spaces to tabs.
+dougbinks,2014-02-16 16:50:04,https://api.github.com/repos/memononen/nanovg/git/commits/c86e247433c8ae8fb368b9ba3bb5d4e9c67b6eaf,c86e247433c8ae8fb368b9ba3bb5d4e9c67b6eaf,Moved per call view uniform update to once per frame UBO update.
+memononen,2014-02-16 16:41:56,https://api.github.com/repos/memononen/nanovg/git/commits/9576341b7e6253ca75f8cb6885b7aacb0e9ce71f,9576341b7e6253ca75f8cb6885b7aacb0e9ce71f,Reversed path winding to make it actually ccw
+memononen,2014-02-16 16:45:26,https://api.github.com/repos/memononen/nanovg/git/commits/aa3925e94500b2fc41ba4340ac061019a4b83321,aa3925e94500b2fc41ba4340ac061019a4b83321,"Merge pull request #26 from dougbinks/develop2
+
+Win32 modification to get code to run, and performance increase for buffered gl3"
+dougbinks,2014-02-16 16:31:35,https://api.github.com/repos/memononen/nanovg/git/commits/e6841cb62805acab3f514840b26217027133b142,e6841cb62805acab3f514840b26217027133b142,Simplified attrib binding and removed color vertex attribute for a reasonable perf bonus.
+dougbinks,2014-02-09 20:29:46,https://api.github.com/repos/memononen/nanovg/git/commits/37c03fa881a67ab96bcc37d00fd4fd8eb27f6535,37c03fa881a67ab96bcc37d00fd4fd8eb27f6535,win32 changes.
+memononen,2014-02-16 15:38:25,https://api.github.com/repos/memononen/nanovg/git/commits/3aa2d9e19f8d36aabbb433509494f0d1b05521c3,3aa2d9e19f8d36aabbb433509494f0d1b05521c3,"Merge pull request #23 from andrewcorrigan/master
+
+STBI_NOTUSED"
+memononen,2014-02-16 12:09:37,https://api.github.com/repos/memononen/nanovg/git/commits/277d5ebb3bcee5983091f8f7c346129754621094,277d5ebb3bcee5983091f8f7c346129754621094,Added experimental GL3 back end which buffers whole frame
+memononen,2014-02-16 11:05:24,https://api.github.com/repos/memononen/nanovg/git/commits/6840bf8478e0f744c26dd1ddc8833455a6110ef6,6840bf8478e0f744c26dd1ddc8833455a6110ef6,"Simplified back-end API a little
+
+- removed assize from the back-end api
+- moved image to paint in renderTriangles call"
+memononen,2014-02-16 10:43:55,https://api.github.com/repos/memononen/nanovg/git/commits/1378269815bab2bdf5a057b190f19550978dc02a,1378269815bab2bdf5a057b190f19550978dc02a,"Fixed unused variables and scissor under zoom
+
+- added NVG_NOTUSED to suppress unused param warnings
+- fixed scissor anti-aliased border width when zoomed"
+memononen,2014-02-15 22:10:31,https://api.github.com/repos/memononen/nanovg/git/commits/fa402cbeaa89579059aa8bb0740c6c837be2b600,fa402cbeaa89579059aa8bb0740c6c837be2b600,"Merge pull request #22 from devnought/cwarn
+
+Added float cast to viewport size"
+andrewcorrigan,2014-02-15 16:45:37,https://api.github.com/repos/memononen/nanovg/git/commits/a1001539aedbf5117f4f30e08af863845b0f2641,a1001539aedbf5117f4f30e08af863845b0f2641,STBI_NOTUSED
+devnought,2014-02-15 16:32:32,https://api.github.com/repos/memononen/nanovg/git/commits/28e40aeb307ee13a2a928619c7fc48b6f8f81c00,28e40aeb307ee13a2a928619c7fc48b6f8f81c00,gl2 size cast
+memononen,2014-02-15 16:25:11,https://api.github.com/repos/memononen/nanovg/git/commits/e39b6cb9ee17ed9f9cf2024bf77a1304a77810b9,e39b6cb9ee17ed9f9cf2024bf77a1304a77810b9,"Merge pull request #20 from andrewcorrigan/master
+
+stdio.h"
+devnought,2014-02-15 16:18:37,https://api.github.com/repos/memononen/nanovg/git/commits/4aefd8945030f9a587a23d74fa93fb9efba6c711,4aefd8945030f9a587a23d74fa93fb9efba6c711,"Added float cast to viewport size
+
+Added float cast to remove compiler warnings."
+andrewcorrigan,2014-02-15 15:59:05,https://api.github.com/repos/memononen/nanovg/git/commits/74dddb693eda0d07a0f1fff726d360835e44e492,74dddb693eda0d07a0f1fff726d360835e44e492,"suppresses ""explicitly assigning a variable to itself warning"" and potential unused parameter warnings"
+andrewcorrigan,2014-02-14 20:38:18,https://api.github.com/repos/memononen/nanovg/git/commits/79e2d7cad82df2c1f7526de026a971f7386ccbe5,79e2d7cad82df2c1f7526de026a971f7386ccbe5,stdio.h
+memononen,2014-02-14 20:11:35,https://api.github.com/repos/memononen/nanovg/git/commits/2c5f10f33f2494021e8acb7f8a3b6cf96aa2fbf1,2c5f10f33f2494021e8acb7f8a3b6cf96aa2fbf1,"Merge pull request #19 from andrewcorrigan/master
+
+NANOVG_GLES2_IMPLEMENTATION implies NANOVG_GLES2"
+andrewcorrigan,2014-02-14 19:59:34,https://api.github.com/repos/memononen/nanovg/git/commits/1fe6cb36dc2f8f54e03dd1ba27887ff7c7674dee,1fe6cb36dc2f8f54e03dd1ba27887ff7c7674dee,NANOVG_GLES2_IMPLEMENTATION implies NANOVG_GLES2
+memononen,2014-02-14 15:46:43,https://api.github.com/repos/memononen/nanovg/git/commits/6446ee236a0fb7cd8acedc862fde98b9db52e441,6446ee236a0fb7cd8acedc862fde98b9db52e441,"Merge pull request #17 from andrewcorrigan/master
+
+GLES3"
+andrewcorrigan,2014-02-14 13:54:04,https://api.github.com/repos/memononen/nanovg/git/commits/c0883e3e6a73cd613c0d5a661a7ba9a859beabc7,c0883e3e6a73cd613c0d5a661a7ba9a859beabc7,GLES3
+memononen,2014-02-08 19:31:59,https://api.github.com/repos/memononen/nanovg/git/commits/714d18a4c6be104f16d4b26489bf4869b9a89fce,714d18a4c6be104f16d4b26489bf4869b9a89fce,"Merge pull request #9 from r-lyeh/master
+
+MSVC compile fix (example); win32 screenshot added"
+memononen,2014-02-02 12:43:22,https://api.github.com/repos/memononen/nanovg/git/commits/aeefcd1c2fbeae3591e7243effd5925023a86c1a,aeefcd1c2fbeae3591e7243effd5925023a86c1a,"Merge pull request #4 from andrewcorrigan/master
+
+fix for https://github.com/memononen/nanovg/issues/3"
+andrewcorrigan,2014-02-02 12:23:55,https://api.github.com/repos/memononen/nanovg/git/commits/1dd4cf01049dcb0218a2072ac20ead193a1dbb1c,1dd4cf01049dcb0218a2072ac20ead193a1dbb1c,"uses GLEW with Linux to avoid issues with glUniform1f, explicitly links glfw3 and C math library"

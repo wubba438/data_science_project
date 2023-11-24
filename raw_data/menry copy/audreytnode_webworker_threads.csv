@@ -1,0 +1,453 @@
+node-webworker-threads,Lightweight Web Worker API implementation with native threads
+username,timestamp,url,sha,message
+audreyt,2019-02-15 09:20:07,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5cdd2e09910f946d177d3707d32901eb7c9e0c06,5cdd2e09910f946d177d3707d32901eb7c9e0c06,* regen (but still crashes)
+audreyt,2019-02-15 08:42:12,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/dfbbe267b83224e0d7eb82957fe07dcdc2122464,dfbbe267b83224e0d7eb82957fe07dcdc2122464,* Compatibility with Node 11
+audreyt,2019-01-28 16:40:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3b8e748710f4252ba3f81bfd95e289d557d5a59a,3b8e748710f4252ba3f81bfd95e289d557d5a59a,* 0.8.0
+audreyt,2019-01-28 16:37:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/350dbfd3013683510571d0ea980a4160057c4e00,350dbfd3013683510571d0ea980a4160057c4e00,"Merge pull request #194 from mmig/feature_importScripts-path-resolving
+
+#192 importScripts: resolve relative path against WebWorker location"
+russaa,2019-01-25 20:04:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/6a1ba4b25387a73d58cee4e8aa124443b676b712,6a1ba4b25387a73d58cee4e8aa124443b676b712,removed debug output
+russaa,2019-01-25 12:28:11,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ad85faae398a99b4a1103b19812890425cdc069f,ad85faae398a99b4a1103b19812890425cdc069f,"importScripts: resolve relative path against WebWorker location instead of Current Working Directory
+
+ * store location of WebWorker script as __filename
+ * on importScripts: if imported path is no absolute URL, resolve against path of WebWorker's __filename
+
+ * special treatment of non-URL paths (i.e. system file paths): ""guess"" (heuristic) if system file path is absolute
+   * store Current Working Directory in WebWorker instance as __cwd
+   * if system path is sub path to __cwd, treat as absolute (i.e. if __cwd is prefix of the path)
+   * introduce escape character '!': if path starts with '!', treat the path as absolute path (i.e. do not resolve against WebWorker script location)"
+audreyt,2018-08-31 12:02:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/bd33962707a44d0596d07709144f00b425c05725,bd33962707a44d0596d07709144f00b425c05725,* 0.7.17
+audreyt,2018-06-29 06:39:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8a4ae887224cfa45daa7707eae18a998474b4387,8a4ae887224cfa45daa7707eae18a998474b4387,* 0.7.16.
+audreyt,2018-06-29 06:27:48,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f2c4ac8e5fc7b853a281e23fdd8e1fc672cc8d36,f2c4ac8e5fc7b853a281e23fdd8e1fc672cc8d36,"Merge pull request #187 from garymathews/ISSUE_179
+
+Fix Windows load delay validation for Node v10.x"
+garymathews,2018-06-29 05:13:51,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/75b6246573e452adb16822c1c67cbc432acec6a5,75b6246573e452adb16822c1c67cbc432acec6a5,Fix Windows load delay validation for Node v10.x
+audreyt,2018-06-15 09:50:38,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/099f23f731a69aa2f6bb82cebb48baf61f070362,099f23f731a69aa2f6bb82cebb48baf61f070362,"Merge pull request #185 from taoqf/master
+
+add typescript definition"
+taoqf,2018-06-13 11:20:06,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a4532ad97718082a1878991a7c9abc16abf67c5e,a4532ad97718082a1878991a7c9abc16abf67c5e,fix: ts
+taoqf,2018-06-13 09:05:51,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/205d7426968df72a8424f7a1febb300f3e522e30,205d7426968df72a8424f7a1febb300f3e522e30,ts: change return types
+taoqf,2018-06-13 08:32:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b24c19c92f71cfc1354347b2c27b5e6739d51fac,b24c19c92f71cfc1354347b2c27b5e6739d51fac,add type `this` at callback functions
+taoqf,2018-06-13 08:01:08,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7a72864337e8c7fb36925f735dca4b34a2da29a7,7a72864337e8c7fb36925f735dca4b34a2da29a7,add typescript definition
+audreyt,2018-06-12 05:39:35,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ca10de6004ab264864f6b499349d06974597c007,ca10de6004ab264864f6b499349d06974597c007,* 0.7.15
+audreyt,2018-06-12 05:33:06,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/91c68f9cf408ff83e7bba50a5aa8dadaf9d410df,91c68f9cf408ff83e7bba50a5aa8dadaf9d410df,* Casting
+audreyt,2018-06-12 05:26:28,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/836514d37546ab3a31934c4235c983313bd3cfee,836514d37546ab3a31934c4235c983313bd3cfee,* Try fixing it the other way
+audreyt,2018-06-12 04:54:21,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f50462618caf95142952d90dbef62186134b757b,f50462618caf95142952d90dbef62186134b757b,* Try to fix compilation on earlie nodes
+audreyt,2018-06-12 01:31:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/03cfd0e947a3adcf9a542a893a295206d7f910d9,03cfd0e947a3adcf9a542a893a295206d7f910d9,* 0.7.14
+audreyt,2018-06-12 01:27:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/11bac8ec0bdc31b04055d6c8d3527ab0a3fcf665,11bac8ec0bdc31b04055d6c8d3527ab0a3fcf665,"Merge pull request #184 from nicholasc/fix-arraybufferallocator
+
+Fixed ambiguous reference to ArrayBufferAllocator"
+nicholasc,2018-06-11 20:17:14,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f626c22c9a1e30cf7059b2a62954fd0d5f352017,f626c22c9a1e30cf7059b2a62954fd0d5f352017,Fixed ambiguous reference to ArrayBufferAllocator
+audreyt,2018-03-17 02:25:15,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a4e3ff2155ab3adcfafabf9cce04dbb17446aae7,a4e3ff2155ab3adcfafabf9cce04dbb17446aae7,"Merge pull request #178 from swashcap/fix/nan-deprecations
+
+Remove deprecated `Nan::ForceSet`"
+audreyt,2018-03-17 02:25:07,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/20bd3ca9eb6db968c4bd57e5cc3a469e4483aa26,20bd3ca9eb6db968c4bd57e5cc3a469e4483aa26,"Merge pull request #145 from davisjam/Test22-End
+
+Test22 - don't run forever"
+swashcap,2018-03-17 00:24:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4911e03a5e415e9e97ad7edde725ed4a4331030a,4911e03a5e415e9e97ad7edde725ed4a4331030a,fix(pkg): refactor deprecated Nan::ForceSet calls
+audreyt,2018-02-07 14:55:38,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/6b474d3c7cf031898966a6e311d0ada50d7c7a72,6b474d3c7cf031898966a6e311d0ada50d7c7a72,"Merge pull request #175 from mnahkies/issue-144-make-npm-test-run-all
+
+issue #144: npm test builds and runs all suites"
+mnahkies,2018-02-07 10:06:09,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ea3b8e8683ff4b8af01bb6e068207d1dbc8458d0,ea3b8e8683ff4b8af01bb6e068207d1dbc8458d0,exit with code 1 if any suite fails
+mnahkies,2018-02-07 10:00:57,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b4d833fa55e677af7b679fb3442e2df996b255ec,b4d833fa55e677af7b679fb3442e2df996b255ec,"improve script to allow sigterm, timeout suites after 5s, and node-gyp rebuild"
+mnahkies,2018-02-07 08:50:31,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9709c5bb843006d24ac11415c7aa5395466cd4bb,9709c5bb843006d24ac11415c7aa5395466cd4bb,issue #144: add simple bash script to run all test files in the tests directory until first error
+audreyt,2017-08-22 16:29:08,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7defd41d620c3b568a4dbefc93457daac975cc9c,7defd41d620c3b568a4dbefc93457daac975cc9c,* 0.7.13.
+audreyt,2017-08-22 16:24:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/63cf8d44be4dde42494141749908fe4740dd8928,63cf8d44be4dde42494141749908fe4740dd8928,"* Allow overriding of console.log
+
+  Fixes #166.
+
+  Also allows overrding console.error and fs.readFileSync"
+audreyt,2017-07-24 12:41:16,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a8e94918361e652b5cf983ebeab4b0499502aff4,a8e94918361e652b5cf983ebeab4b0499502aff4,* Add BSON destructor; closes #164.
+audreyt,2017-07-19 11:56:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/098cf8a4a9e2755632144e8fe792ef1aeae6342d,098cf8a4a9e2755632144e8fe792ef1aeae6342d,* Add importScripts test for #163
+audreyt,2017-07-15 02:40:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/552eb667b20d1588ec8810c4ed66c5a79080c2bb,552eb667b20d1588ec8810c4ed66c5a79080c2bb,* 0.7.12
+audreyt,2017-07-15 02:30:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/bcd49290d856cf48da1fa1f10dce2b3f4bd63034,bcd49290d856cf48da1fa1f10dce2b3f4bd63034,* Add spacing; fixes #161
+audreyt,2017-03-06 22:13:24,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/bb8b06c00d97a5e17ff7b58b92d6c5fb5f06b2be,bb8b06c00d97a5e17ff7b58b92d6c5fb5f06b2be,Remove this paragraph until we do #66
+davisjam,2017-01-16 18:26:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/756c9fd75b58a154fb66dab0d03e150f50ebf60f,756c9fd75b58a154fb66dab0d03e150f50ebf60f,"Test22 - don't run forever
+
+1. Don't run forever.
+
+Problem: It was creating an infinite number of threads.
+Solution: Create 1000 threads, enough to prove the point.
+
+2. Actually print ongoing updates.
+
+Problem: It was using process.nextTick to queue the next set of threads.
+         On recent versions of Node this means display() will never get to run.
+
+Solution: Switch to setTimeout(again, 0)."
+audreyt,2017-01-16 16:20:11,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9ff5a247aa3e9b554fe1e52c1a9affb440698171,9ff5a247aa3e9b554fe1e52c1a9affb440698171,* Fix #142
+audreyt,2017-01-16 16:18:50,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/00eee6eb4d2e8d5ae79dfe5a5bd8ccedf2814733,00eee6eb4d2e8d5ae79dfe5a5bd8ccedf2814733,"Merge pull request #138 from davisjam/NeedlessCode
+
+Needless code"
+audreyt,2017-01-16 16:18:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a6e1c8d559868c7d8d35579843daa19cecca226b,a6e1c8d559868c7d8d35579843daa19cecca226b,Merge branch 'master' into NeedlessCode
+audreyt,2017-01-16 16:17:16,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b09170f045e70d32271f109c3dc76f3d0d0770f4,b09170f045e70d32271f109c3dc76f3d0d0770f4,"Merge pull request #137 from davisjam/LinkToDevGuide
+
+README: Add link to developer guide"
+audreyt,2017-01-16 16:16:13,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1a3fbed24afb4f53b1ed0fdea63d732dc6e26391,1a3fbed24afb4f53b1ed0fdea63d732dc6e26391,* Re-apply the fix for #118 (continuation from #141)
+audreyt,2017-01-16 16:13:11,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e137d01baf3cad8fb889774307cc7b2eeeabbb2d,e137d01baf3cad8fb889774307cc7b2eeeabbb2d,"Merge pull request #141 from davisjam/RemoveLocker
+
+Eliminate unneeded Locker code"
+audreyt,2016-12-28 14:35:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8ac39f0b3e6b5edd4534e24166dcbe6326ed7c30,8ac39f0b3e6b5edd4534e24166dcbe6326ed7c30,* 0.7.11
+audreyt,2017-01-16 16:06:51,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/178e1905d02a03939015c7897a4fa8b12a18aad6,178e1905d02a03939015c7897a4fa8b12a18aad6,"Merge pull request #139 from davisjam/NAN-ify2
+
+Resolve compiler warnings on Node v7"
+davisjam,2017-01-16 16:04:47,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8b79da58051f8238505769826cc1b785fb6768a7,8b79da58051f8238505769826cc1b785fb6768a7,"Eliminate unneeded Locker code
+
+Problem: We were running the same code in both branches of an ifdef.
+Solution: Eliminate the ifdef.
+
+Problem: We were instantiating a Locker as the only operation in a scope.
+         Since Locker uses the RAII pattern, this was essentially a potentially-expensive no-op.
+Solution: Don't do that."
+davisjam,2017-01-16 16:03:10,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a310dc7828814a2b5f7a04c9974b7e1bcb8c7e26,a310dc7828814a2b5f7a04c9974b7e1bcb8c7e26,"Revert unwanted change
+
+Accidentally removed (redundant) Locker code, saving that for
+a separate PR."
+davisjam,2017-01-16 15:51:48,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8d31662da1028356a894438670afd1e628a45f46,8d31662da1028356a894438670afd1e628a45f46,"Merge branch 'NAN-ify2' of github.com:davisjam/node-webworker-threads into NAN-ify2
+
+Conflicts:
+	src/WebWorkerThreads.cc"
+davisjam,2017-01-16 15:46:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3e198826e7ac81cc1887f3900c593c69c3ba4974,3e198826e7ac81cc1887f3900c593c69c3ba4974,"Resolve compiler warnings on Node v7
+
+More deprecated V8 methods, so switch to Nan where needed."
+davisjam,2017-01-13 20:21:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c48bd8fb37ac4837fb70f185c13524efa4e02d0d,c48bd8fb37ac4837fb70f185c13524efa4e02d0d,Remove empty line
+davisjam,2017-01-13 20:11:14,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/14b38c513d1d511344dd82e403546b81d5ae8747,14b38c513d1d511344dd82e403546b81d5ae8747,"Resolve compiler warnings on Node v7
+
+More deprecated V8 methods, so switch to Nan where needed."
+davisjam,2017-01-13 19:14:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4d54b303809d907be6728ec441db6585ead7ef9e,4d54b303809d907be6728ec441db6585ead7ef9e,"Remove the id_symbol
+
+We were saving ""id"" in a Persistent Handle so that we could avoid instantiating
+Local<String> handles when setting a new thread's id.
+
+This made the code needlessly complex without adding any significant optimization."
+davisjam,2017-01-13 18:43:29,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/33a38619066c46581690869af00a179d06fda332,33a38619066c46581690869af00a179d06fda332,README: Add link to developer guide
+audreyt,2016-12-28 14:31:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0d9a167e11c59e54c3a6f28a4d90d43df384ff7f,0d9a167e11c59e54c3a6f28a4d90d43df384ff7f,* Lock before throwing FatalException; fixes #118
+audreyt,2016-12-28 14:26:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/464c690853d967ebfb3953b364eaf586eda79c1e,464c690853d967ebfb3953b364eaf586eda79c1e,* Add err handling propagation as part of #118
+audreyt,2016-12-20 00:19:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2b6f41d9b676734c8fb2ef4d1c51d898ad78d679,2b6f41d9b676734c8fb2ef4d1c51d898ad78d679,* Fix misuse of ifdef
+audreyt,2016-12-20 00:19:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/484861dbeccbfd2e51b58e506e9fd6758b55df9d,484861dbeccbfd2e51b58e506e9fd6758b55df9d,* 0.7.9
+audreyt,2016-11-16 14:15:44,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ff4ba4caabf511b0fdb2c2f60385902721b2dde9,ff4ba4caabf511b0fdb2c2f60385902721b2dde9,"Merge pull request #130 from yufeih/master
+
+Fix npm install failure on windows due to missing 'alloca'"
+yufeih,2016-11-16 07:31:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f887630e72ff1ba6eabc19aceb512ee6c3790118,f887630e72ff1ba6eabc19aceb512ee6c3790118,Fix missing 'alloca' on windows caused by
+audreyt,2016-11-04 00:44:57,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ca08413aa1e69577beca1685f11dd85bd1508a05,ca08413aa1e69577beca1685f11dd85bd1508a05,"Merge pull request #129 from brodybits/update-nan-travis
+
+Update Nan & Travis CI"
+brodybits,2016-11-04 00:16:14,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/d07431dd160614fb124e126899c0ee6c11953764,d07431dd160614fb124e126899c0ee6c11953764,".travis.yml node 6.9/7.0; remove unsupported node versions
+
+ref:
+- https://github.com/nodejs/LTS
+- https://nodejs.org/en/blog/"
+brodybits,2016-11-03 22:12:38,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5f2272a7c0475dc5ae521779934834be007c2da1,5f2272a7c0475dc5ae521779934834be007c2da1,nan 2.4.0
+brodybits,2016-11-04 00:14:54,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/33138d39ec7f402856d914b09ff405204d28408c,33138d39ec7f402856d914b09ff405204d28408c,LiveScript 1.5.0
+brodybits,2016-11-04 00:13:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7ec8ba8df223a06ca5e5e699222eb83c9ca24d23,7ec8ba8df223a06ca5e5e699222eb83c9ca24d23,Remove old minify binary; keep placeholder
+audreyt,2016-11-03 14:36:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/d76aca021589bb3a9a0ac5f0aeeae3555b9619ba,d76aca021589bb3a9a0ac5f0aeeae3555b9619ba,"Merge pull request #127 from davisjam/TweakREADME
+
+DOCS Tweak description of threadPool.on"
+davisjam,2016-11-03 14:33:02,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f38466f732dcc6001f2ebff8fb079127093f7590,f38466f732dcc6001f2ebff8fb079127093f7590,"DOCS Tweak description of threadPool.on
+
+Previous description:
+""...is like `thread.on()`, registers listeners for events from any of the threads in the pool.""
+
+Problem:
+This makes it sound like the threads will emit events and that the
+threadPool will listen for them.
+
+The actual behavior is to call thread.on() for each thread in the pool.
+
+Solution:
+Update the README to reflect this."
+audreyt,2016-07-25 08:42:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4d1634fce0932dc5c597e8d29d88a83b4f4f7fc6,4d1634fce0932dc5c597e8d29d88a83b4f4f7fc6,* Alternate casting to get Node 0.1x to work
+audreyt,2016-07-25 08:20:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/fa20b729409114565cefca7e255229df0a8e59ae,fa20b729409114565cefca7e255229df0a8e59ae,* 0.7.8 with nan.h fix
+audreyt,2016-07-25 08:10:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/72c1a62cd26f5b12dbf9f04b4de0a782e03ea8eb,72c1a62cd26f5b12dbf9f04b4de0a782e03ea8eb,* 0.7.7: Portability with Node 0.10
+audreyt,2016-07-25 07:55:59,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2d5437533ab78733d53d461a47710956004c2f0c,2d5437533ab78733d53d461a47710956004c2f0c,* 0.7.6
+audreyt,2016-07-25 07:55:32,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/929b26c83c3281471b9c18a8f5517703e4c8de4e,929b26c83c3281471b9c18a8f5517703e4c8de4e,"* Add isolate to bson.cc and `win_delay_load_hook`
+
+  Contributed by: @Demiguise"
+audreyt,2016-06-14 04:56:00,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/19355a6dc044171e72909ee5098d7f87c84876a2,19355a6dc044171e72909ee5098d7f87c84876a2,Update README.md
+audreyt,2016-06-06 03:17:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f817d9dd43de175ca13645c322b86e12a526b16c,f817d9dd43de175ca13645c322b86e12a526b16c,* Add a note to refer people to tiny-worker.
+audreyt,2016-05-22 08:00:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/17623d159194d071a78ec6761dbda1627e227bc6,17623d159194d071a78ec6761dbda1627e227bc6,* 0.7.5 on npm.
+audreyt,2016-05-22 07:59:41,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/334ea943339262dba02958242c56c1fcd4479aa6,334ea943339262dba02958242c56c1fcd4479aa6,* s/process.nextTick/setImmediate/g
+audreyt,2016-05-22 07:57:15,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e290f129814d7fb889f413851d5f6a4f8353bd5f,e290f129814d7fb889f413851d5f6a4f8353bd5f,"* process.nextTick => setImmediate
+
+  Closes #106. Thanks @Cyber1000!"
+audreyt,2016-05-05 15:11:29,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/17cac3c024b3408b4aa66527a3134bd9e35d1477,17cac3c024b3408b4aa66527a3134bd9e35d1477,* 0.7.4 with memory leak bugfix from mnahkies
+audreyt,2016-05-04 18:33:16,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0b0ed11ea29c4ea01cb6fef4344b4a922b597819,0b0ed11ea29c4ea01cb6fef4344b4a922b597819,"Merge pull request #108 from mnahkies/issue-105-memory-leak
+
+Issue 105 memory leak"
+mnahkies,2016-05-04 10:07:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/29c820c6d07b599d917206c178c211d543bb1b98,29c820c6d07b599d917206c178c211d543bb1b98,restore HandleScope to event loop
+mnahkies,2016-05-03 09:22:31,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9eb654c39ffdaed90cec5323dce9f65c8b69fe96,9eb654c39ffdaed90cec5323dce9f65c8b69fe96,delete bson objects after finished with
+audreyt,2016-05-03 02:48:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/d7f27ceef9db954c6c5a5866a1ee1c57afc541e2,d7f27ceef9db954c6c5a5866a1ee1c57afc541e2,"Merge pull request #107 from brodybits/travis-node-6.0
+
+Travis CI add Node.js 5.11 & 6.0(LTS)"
+brodybits,2016-05-02 15:46:19,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a18543fe1807143cf887a11067239082d096be0c,a18543fe1807143cf887a11067239082d096be0c,.travis.yml add Node.js 5.11 & 6.0(LTS)
+audreyt,2016-04-27 00:59:16,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/20896f98387e4816e2731d8d8f5aab7144962f54,20896f98387e4816e2731d8d8f5aab7144962f54,* Bump version to 0.7.3
+audreyt,2016-04-27 00:58:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/18294ac67998bbe2aef4ae03053a5b3bf68f4767,18294ac67998bbe2aef4ae03053a5b3bf68f4767,* Regen package.json
+audreyt,2016-04-27 00:57:38,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/20cd17517bbca972cdef9aa489fc9d7be2489998,20cd17517bbca972cdef9aa489fc9d7be2489998,"* 0.7.2, with compatibility for Node v6."
+audreyt,2016-03-27 09:34:33,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5c9b169007e7179985aedfe12f1f17baa5d947b1,5c9b169007e7179985aedfe12f1f17baa5d947b1,"* Now re-upload as 0.7.2.
+
+  The previous 0.6.4 release was for @guypaskar and anyone
+  who had a dependency on ""0.6.x"""
+audreyt,2016-03-27 09:31:09,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7b2ac7aef755a44b6ee5c355af5863367a87cce9,7b2ac7aef755a44b6ee5c355af5863367a87cce9,* 0.6.4
+audreyt,2016-02-25 01:51:14,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1234200d39915e24e7c88605383586947e4491de,1234200d39915e24e7c88605383586947e4491de,* 0.7.1; do not reuse threads in the queue
+audreyt,2016-02-25 01:28:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1117f81748d20125bf7e2b1b88b4be6bca1fae2e,1117f81748d20125bf7e2b1b88b4be6bca1fae2e,* 0.7.0.
+audreyt,2016-02-24 19:04:22,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e772aae6e54ec033d11a07ac295298c97b8fb38b,e772aae6e54ec033d11a07ac295298c97b8fb38b,* 0.6.3.
+audreyt,2016-02-24 18:57:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4785ed3c6d7ffaa1ec79f4a5bdd483ad32f501f5,4785ed3c6d7ffaa1ec79f4a5bdd483ad32f501f5,"* Destroy destroys thread immediately
+
+  (from @yufeih)"
+audreyt,2016-02-22 15:52:00,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/cd2de86f1d8eb487606df15fd00c819bd9bf3af4,cd2de86f1d8eb487606df15fd00c819bd9bf3af4,"Merge pull request #95 from brodybits/cb-travis-nodejs-4.3-5.6
+
+Add Node.js versions 4.3 (LTS)/5.0/5.6 to Travis-CI"
+brodybits,2016-02-22 15:36:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e89766cd9a10413723cd21fa5d0a031c635b513b,e89766cd9a10413723cd21fa5d0a031c635b513b,.travis.yml include Node.js 4.3 (LTS)/5.0/5.6
+audreyt,2015-10-14 00:29:22,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4b9b8708b68c16ccd15f14693ccee2df7f5283fd,4b9b8708b68c16ccd15f14693ccee2df7f5283fd,We now require Node.js 0.10.0+
+brodybits,2015-10-13 16:03:17,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7fc8d8475c48b0cf53846fe2d77aaee7c2912b17,7fc8d8475c48b0cf53846fe2d77aaee7c2912b17,README.md: Fix Travis CI link
+audreyt,2015-10-13 15:46:16,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c55896e0491e39d069cd5a95849bc2f0ba1d021f,c55896e0491e39d069cd5a95849bc2f0ba1d021f,Add Travis build image
+audreyt,2015-10-13 15:34:32,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/db3fe9136533414b63e0bd37b4b5da8dc5915627,db3fe9136533414b63e0bd37b4b5da8dc5915627,"Merge pull request #82 from literunner/cb-travis-ci
+
+Travis CI"
+brodybits,2015-10-13 09:45:58,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1c13fad7d7ba8f9781ba58039562f3698fdc1ff3,1c13fad7d7ba8f9781ba58039562f3698fdc1ff3,.travis.yml added for Travis CI
+audreyt,2015-10-12 22:40:59,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/701ff7942eb9b8d05a61d754b0f1d239c3caa0b4,701ff7942eb9b8d05a61d754b0f1d239c3caa0b4,"Merge pull request #80 from brodybits/cb-add-npm-test
+
+Introduce automatic testing"
+brodybits,2015-10-12 17:31:51,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4acc5fc55b22169bee184115bcd38e5fba675b6d,4acc5fc55b22169bee184115bcd38e5fba675b6d,"test: introduce simple npm test suite using tap (ref: #75)
+
+Update nan dependency"
+audreyt,2015-10-06 10:04:06,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/26ab8661be8a6b95632e6e5142c36f96bd9e9074,26ab8661be8a6b95632e6e5142c36f96bd9e9074,* 0.6.2.
+audreyt,2015-10-05 16:45:19,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9402ff8fb403c0e80f20461a26685dc54be2f476,9402ff8fb403c0e80f20461a26685dc54be2f476,"Merge pull request #77 from smith-kyle/master
+
+Fixed error: no template named 'MaybeLocal'"
+smith-kyle,2015-10-05 16:38:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/bf01c65f8c3d4d681486127126afa888c9f59c98,bf01c65f8c3d4d681486127126afa888c9f59c98,Fixed error: no template named 'MaybeLocal'
+audreyt,2015-10-02 13:28:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/dd120ec9ad71fc62890c06a31aea23d71aa4a29c,dd120ec9ad71fc62890c06a31aea23d71aa4a29c,* 0.6.1.
+audreyt,2015-10-02 13:14:21,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/42e7073f7c38849f6441f7426dc0c5dce85fe5f8,42e7073f7c38849f6441f7426dc0c5dce85fe5f8,"Merge pull request #74 from brodybits/cb-fixes-2015.01.02
+
+Fixes 2015.01.02 for review"
+brodybits,2015-10-02 13:09:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/12b4df8fb9ddffe4a92aa03f006736ce0e3ac52c,12b4df8fb9ddffe4a92aa03f006736ce0e3ac52c,"Add .editorconfig
+
+as suggested by @heavyk in #70"
+brodybits,2015-10-02 12:36:20,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4c603d1ee52da8a98b11f3a235f4d8bde1862d95,4c603d1ee52da8a98b11f3a235f4d8bde1862d95,Mark 0.6.1-dev
+brodybits,2015-10-02 12:35:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/85188ac1ba42fb915114f03f8334d6df9b405c40,85188ac1ba42fb915114f03f8334d6df9b405c40,Fix package main due to npm bindings (ref: PR #70)
+brodybits,2015-10-02 12:27:55,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c378d32e4117979f5b2619df9aebc6e1f74f6ecd,c378d32e4117979f5b2619df9aebc6e1f74f6ecd,"Fix crash pool.any.eval('invalid code') or pool.any.eval('undefined_function()') on Node 4.x
+
+ref: #73"
+audreyt,2015-09-28 06:52:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/07244f63def7fdde4c3fd90701dbebd1d1fb8341,07244f63def7fdde4c3fd90701dbebd1d1fb8341,* 0.6.0
+brodybits,2015-09-28 00:51:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7e543847f37d08326921c63f2c753f4cba5fef44,7e543847f37d08326921c63f2c753f4cba5fef44,Drop support for Node 0.8.x
+brodybits,2015-09-27 22:59:07,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8940990bd93bb44ed4f7d864fb6bbf48f0acc11e,8940990bd93bb44ed4f7d864fb6bbf48f0acc11e,Mark support for io.js 1.0.x (ref: #45) & mark Compatibility section for Node 4.x
+brodybits,2015-09-27 21:50:55,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0247ed0551c1af2874fb2098dc09e8232915b3ab,0247ed0551c1af2874fb2098dc09e8232915b3ab,Mark 0.5.8-dev
+brodybits,2015-09-27 16:55:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/090e054324e31a3f1fb3c8b9c4a11e39c4885ea6,090e054324e31a3f1fb3c8b9c4a11e39c4885ea6,Fixes to support Node 0.10/0.11/0.12
+brodybits,2015-09-27 16:25:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/404a25298c94a5212cbffe5101c03af6440d8740,404a25298c94a5212cbffe5101c03af6440d8740,Use thread->isolate in node::FatalException() call to fix deprecation warning
+brodybits,2015-09-27 16:03:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2add737a9cb5eadd37f864b31739669d55aca429,2add737a9cb5eadd37f864b31739669d55aca429,Completely remove old pthread mechansim
+brodybits,2015-09-27 15:28:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ecabd829e2891fa119fdd8d4fc5743216084785c,ecabd829e2891fa119fdd8d4fc5743216084785c,Use npm bindings
+audreyt,2015-09-27 13:36:50,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e50cbaaea64d859303d9eff3c6186e3c7932a3d3,e50cbaaea64d859303d9eff3c6186e3c7932a3d3,"Merge pull request #69 from brodybits/cb-node-4.x-fix
+
+Use ArrayBufferAllocator to support node 4.0/4.1"
+brodybits,2015-09-27 13:15:12,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/29d33c652e245d098cefb2bcb939b0e01223deb1,29d33c652e245d098cefb2bcb939b0e01223deb1,Use ArrayBufferAllocator to support node 4.0/4.1
+audreyt,2015-05-06 14:58:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ba1c803be75b0a7218cf582758e5bd72d0fcc0ba,ba1c803be75b0a7218cf582758e5bd72d0fcc0ba,* 0.5.7.
+audreyt,2015-09-23 05:18:34,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a306094804efa38a9645655b822b48784de30ac3,a306094804efa38a9645655b822b48784de30ac3,"Merge pull request #68 from marcominetti/master
+
+Upgrade to nan to 2.0.9"
+marcominetti,2015-09-22 21:32:22,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e2731fee39a2f5c1184a38fa3eae1a1506321f2f,e2731fee39a2f5c1184a38fa3eae1a1506321f2f,Upgrade to nan to 2.0.9
+audreyt,2015-08-26 15:10:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/dd3bb3b907eff3a977d2220c34a4a0d9cf9d8add,dd3bb3b907eff3a977d2220c34a4a0d9cf9d8add,"Merge pull request #65 from Vandalko/patch-1
+
+Add proper link to `node-gyp` configuration"
+Vandalko,2015-08-26 15:06:44,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/17f6fa212dea8659e925c3f404bb9008df5c5e32,17f6fa212dea8659e925c3f404bb9008df5c5e32,"Update README.md
+
+Add proper link to `node-gyp` configuration"
+audreyt,2015-05-06 03:16:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0c6ca164de49f8a9d9931ba118bd7f7ce990bdc0,0c6ca164de49f8a9d9931ba118bd7f7ce990bdc0,"Merge pull request #57 from heavyk/iojs-2.0.0
+
+io.js-2.0.0 compatibity"
+heavyk,2015-05-06 00:38:57,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7ed77366b4a8adddec3778f8d4f1b92804e91b0a,7ed77366b4a8adddec3778f8d4f1b92804e91b0a,update nan & add necessary NanNew()
+audreyt,2015-04-17 07:10:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/dc704a9170f9d65217d4cde30e27eb5a2907794a,dc704a9170f9d65217d4cde30e27eb5a2907794a,* Add test.js (compiled from LS)
+audreyt,2015-02-03 20:06:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/cdadd12ae3816effafa297b4493663a8b81cd707,cdadd12ae3816effafa297b4493663a8b81cd707,"* Actually, caasi and senditu did the bulk of the work..."
+audreyt,2015-02-03 19:32:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/cbf9e4a35062b20ca4610c5383ecb474a4d60cb0,cbf9e4a35062b20ca4610c5383ecb474a4d60cb0,"* 0.5.5.
+
+  Undo the whitespace-only changes and fix deprecation warnings."
+audreyt,2015-02-03 17:28:50,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7f3e7c125532a4219a366704407f376263a40925,7f3e7c125532a4219a366704407f376263a40925,"Merge pull request #46 from gitawego/master
+
+fixed compatibility issue with new version of v8"
+gitawego,2015-02-03 16:02:33,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/016387264dae90bd7220037fdaa56973c1a7d4bd,016387264dae90bd7220037fdaa56973c1a7d4bd,fixed compatibility issue with new version of v8
+audreyt,2015-02-03 09:12:44,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9cd47f0f6e116e4f170b1400d407ded104489b61,9cd47f0f6e116e4f170b1400d407ded104489b61,"* Upgrade to nan 1.6.x for #45
+
+Conflicts:
+	package.json"
+audreyt,2015-01-25 17:48:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/add17f09563a5fa963cce86cab8438bd7c600d77,add17f09563a5fa963cce86cab8438bd7c600d77,"Merge pull request #44 from jorrit/patch-1
+
+Change YouTube link to point to site instead of swf"
+jorrit,2015-01-25 17:40:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/9d6e01f24feba29989895796ca02c82e9214771a,9d6e01f24feba29989895796ca02c82e9214771a,Change YouTube link to point to site instead of swf
+audreyt,2014-11-26 19:45:07,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1b4e6450fb2200fc38785cee2141be9c0ce58854,1b4e6450fb2200fc38785cee2141be9c0ce58854,* Bump nan dep to 1.4.x
+audreyt,2014-10-08 00:12:08,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/76db1c1b63ec279077a128e2606be8e21b3312a2,76db1c1b63ec279077a128e2606be8e21b3312a2,* 0.5.3.
+audreyt,2014-10-08 00:11:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4e836703a0aaf0c81a34172ac842dc3d409dd7fd,4e836703a0aaf0c81a34172ac842dc3d409dd7fd,"Merge pull request #39 from ChrisKitching/dodgymacros
+
+Prevent duplicated function declaration."
+ChrisKitching,2014-10-07 22:22:00,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b70479dc06f8e129039732a4e6d2ff0bc139c545,b70479dc06f8e129039732a4e6d2ff0bc139c545,Prevent duplicated function declaration.
+audreyt,2014-10-06 09:36:18,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ec03c666ea1b18203b11afb397e9119ea9f8a66f,ec03c666ea1b18203b11afb397e9119ea9f8a66f,* Release 0.5.2 for Node.js 0.11.14. Closes #35.
+audreyt,2014-06-22 18:31:17,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/69054d89b93998a16dbe9456b6574bf2da0e8e9c,69054d89b93998a16dbe9456b6574bf2da0e8e9c,* Require nan 1.2.x. Closes #16. Thanks @senditu and @caasi!
+audreyt,2014-06-22 18:28:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3793dc5a8a43287307bdfbb2e906a51fe8fb487a,3793dc5a8a43287307bdfbb2e906a51fe8fb487a,"Merge remote-tracking branch 'caasi/master'
+
+Conflicts:
+	package.json"
+caasi,2014-06-22 17:53:48,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5561dcb26e2404ed3ebe6f0d7162bc90d04a93ca,5561dcb26e2404ed3ebe6f0d7162bc90d04a93ca,gdb saves the day!
+caasi,2014-06-21 18:14:08,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/41a1357c553732e9e55042676008278783a25af4,41a1357c553732e9e55042676008278783a25af4,"fix sources for Node.js 0.11.13,
+can't deal with the new Isolate::GetData/SetData w/o patching nan"
+caasi,2014-06-21 13:21:20,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c97df24cc7a139f70c965627c6a3147d6bb415e2,c97df24cc7a139f70c965627c6a3147d6bb415e2,WIP: migrate jslib.cc to nan 1.1.0 and Node 0.11.13
+caasi,2014-06-21 09:58:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2e92e85350154a5dd54c412a4234c5ad6aa8ccd3,2e92e85350154a5dd54c412a4234c5ad6aa8ccd3,WIP: fix bson.cc for nan 1.1.0 and Node.js 0.11.13
+caasi,2014-06-19 21:56:50,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8b9aa66980d3a97cc20fac93664d27a17b953346,8b9aa66980d3a97cc20fac93664d27a17b953346,try to fix tests
+caasi,2014-06-19 21:21:40,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f0af9744660c86fc3f51b41f26133b3b79473a58,f0af9744660c86fc3f51b41f26133b3b79473a58,migrate to nan 1.1.0
+audreyt,2014-06-18 05:17:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b7296e60cb3b01a0ac3baf30bb6fdaf0c405bd97,b7296e60cb3b01a0ac3baf30bb6fdaf0c405bd97,"Merge pull request #28 from slang800/patch-1
+
+switch from onmessage to this.onmessage"
+notslang,2014-06-17 22:51:11,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/894d805d78664e6e4965806c71ca32367980f089,894d805d78664e6e4965806c71ca32367980f089,"switch from onmessage to this.onmessage
+
+fixes the JS examples"
+audreyt,2014-05-05 09:55:24,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/d369ada4a4eeacff739c1d243f743fd259f5dc44,d369ada4a4eeacff739c1d243f743fd259f5dc44,"* 0.4.13; revert to nan 0.8.0.
+
+  This is because nan 1.0 introducing a new API.
+
+  /cc @senditu ; Closes #26."
+senditu,2014-05-03 06:25:12,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/449d82c72e413fb37e895105db8c22b15ce5b027,449d82c72e413fb37e895105db8c22b15ce5b027,Updating package to use nan
+audreyt,2014-05-02 09:49:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/83e506ed233e921166a1aaa83ee6368206ad3887,83e506ed233e921166a1aaa83ee6368206ad3887,"Merge pull request #25 from senditu/master
+
+Updated to latest version of js-bson"
+senditu,2014-05-02 09:36:32,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/704cf8fa27a02d35ed50219f90490f4c6d939cc8,704cf8fa27a02d35ed50219f90490f4c6d939cc8,"Version Bump (bson w/ nan)
+
+Updated package.ls/.json"
+senditu,2014-05-02 09:28:41,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/d3c26c968e7e5c8019427520de6679b37ecd1c2d,d3c26c968e7e5c8019427520de6679b37ecd1c2d,Version Bump (bson w/ nan)
+audreyt,2014-03-04 21:20:56,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/6a420236a61f12d51c996898b314e8600004e7ce,6a420236a61f12d51c996898b314e8600004e7ce,* Bump version again
+audreyt,2014-03-04 21:18:38,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0df54337f8e921e3e6906a3bb61010bf631cbeaf,0df54337f8e921e3e6906a3bb61010bf631cbeaf,* 0.4.10: Fix #10 (threadpool.any.emit error).
+audreyt,2014-03-03 05:05:15,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/91a1218646ce2cffc59b5b1bb0f974817710121d,91a1218646ce2cffc59b5b1bb0f974817710121d,"Merge pull request #24 from naderchehab/master
+
+Fixed typo in example 5"
+naderchehab,2014-03-03 03:54:29,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5263f132e37bfebbb9bd0e04ee94670fb2d0973c,5263f132e37bfebbb9bd0e04ee94670fb2d0973c,Fixed typo in example 5
+audreyt,2013-12-03 14:03:15,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5cae4908a2feb7c95b49d301ec32ffb3fac8bcd6,5cae4908a2feb7c95b49d301ec32ffb3fac8bcd6,"* 0.4.9, fixing compilation errors. Closes #21."
+audreyt,2013-12-02 20:19:39,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1e307b034fad7d1bca5e6e36ff60ff5027d03599,1e307b034fad7d1bca5e6e36ff60ff5027d03599,* Changes for 0.4.8.
+audreyt,2013-12-02 20:04:25,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ac2af89f17528811c63bcaa82817364b24828c26,ac2af89f17528811c63bcaa82817364b24828c26,* 0.4.8 with reference to the now-published aosabook.org
+audreyt,2013-10-04 21:02:33,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e76be9d93e42da79fd774851980d016a47bda9e9,e76be9d93e42da79fd774851980d016a47bda9e9,* Compile with -DV8_USE_UNSAFE_HANDLES for newer V8
+audreyt,2013-10-04 21:02:24,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/dee3ba33e0ea82c1cbabfc439bdb42b44eb51f67,dee3ba33e0ea82c1cbabfc439bdb42b44eb51f67,* Move the a working image host
+audreyt,2013-08-25 21:11:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b704305abdd0b2ac8b4986b9874d07ba5bb38473,b704305abdd0b2ac8b4986b9874d07ba5bb38473,* Add a reference to MockTimer
+audreyt,2013-08-25 21:11:23,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3f881cd97516510efb7aab494f9c26eba26ba432,3f881cd97516510efb7aab494f9c26eba26ba432,* Compatibility with Node.js 0.11.x
+audreyt,2013-04-25 17:00:40,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5a11cce1afaac716c1d8123c7aa99d13a2f7d4e4,5a11cce1afaac716c1d8123c7aa99d13a2f7d4e4,"* onerror takes `message` not `data now.
+
+* Also use `setImmediate` if available."
+audreyt,2013-03-24 01:33:20,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ba5e764494bc51b23861b0533853b209cbff5e01,ba5e764494bc51b23861b0533853b209cbff5e01,* Include picture
+audreyt,2013-03-24 01:21:59,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/87ab4852ac86f90a6357f422e2a195cdfa567395,87ab4852ac86f90a6357f422e2a195cdfa567395,* Add link to illustrated writeup
+audreyt,2013-03-24 01:03:55,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/03e3a9a678af1ef4fc85fd992ee8c2257dcfd3c0,03e3a9a678af1ef4fc85fd992ee8c2257dcfd3c0,* 0.4.7.
+audreyt,2013-03-24 01:02:29,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3bc1e7b30e9d3327b66ce00c25edbd5595d0c086,3bc1e7b30e9d3327b66ce00c25edbd5595d0c086,"* Instead of .data, use .message for onerror, with filename and lineno set to empty values for now. Closes #6."
+audreyt,2013-03-21 03:06:12,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a2eb660ef2c6449a45c6c54b35bde39fc7885491,a2eb660ef2c6449a45c6c54b35bde39fc7885491,* Catch errors during @postMessage and raise onerror handler for #6
+audreyt,2013-03-12 02:35:32,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b7b96871196fd7efa4aa92497d473402d676e9bf,b7b96871196fd7efa4aa92497d473402d676e9bf,* Update package.json
+audreyt,2013-03-12 02:33:19,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/04cfc61bad932432ae918258a1548ab5c0607313,04cfc61bad932432ae918258a1548ab5c0607313,* 0.4.6.
+audreyt,2013-03-12 02:28:49,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/157a52d7fba59afc711fd164c91bd7185c5741c8,157a52d7fba59afc711fd164c91bd7185c5741c8,* Compatibility with Node.js 0.10.
+audreyt,2013-02-24 19:10:44,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2501d5749edeec7b4927f859117a6f4a008240fc,2501d5749edeec7b4927f859117a6f4a008240fc,* Add a note re where to find node Timer
+audreyt,2012-12-01 20:06:02,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4f8b6556fb4560e694797f6796bcf32f1fc93869,4f8b6556fb4560e694797f6796bcf32f1fc93869,"Merge pull request #5 from davidbkemp/master
+
+Fix for issue 4 (Installation instructions need a couple more hints)"
+davidbkemp,2012-12-01 08:10:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/896a57572c6af47fb25dbf720ba4b00d57c808fe,896a57572c6af47fb25dbf720ba4b00d57c808fe,Added more install instructions useful for Linux & OS X
+audreyt,2012-11-21 20:41:55,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2977888582d6116b754b851e1e0a5843cd42e050,2977888582d6116b754b851e1e0a5843cd42e050,"* Fix fread() usage in WebWorkerThreads.cc to match jslib.cc's.
+
+  Also restore the fread() size check."
+audreyt,2012-11-21 19:18:18,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/6f17f9a5f249c771064923eac71ef48d1fdc92e8,6f17f9a5f249c771064923eac71ef48d1fdc92e8,* 0.4.4; relax the fread check.
+audreyt,2012-11-17 05:39:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/656679e83b3e664db04dc24de396b246e04c3d18,656679e83b3e664db04dc24de396b246e04c3d18,"* 0.4.3 for real.
+
+* `importScripts` now checks if the files have been read entirely,
+  instead of (potentially) evaluating part of the file in case
+  of filesystem failure."
+audreyt,2012-11-17 05:30:59,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f65ca4cca9f0214486166073a87a833d0339007f,f65ca4cca9f0214486166073a87a833d0339007f,"* 0.4.3.
+
+  Also make the .ls files lsc-executable."
+audreyt,2012-11-17 05:28:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b443c243523f3b702984efb6449608ba2ba94e7a,b443c243523f3b702984efb6449608ba2ba94e7a,"Merge pull request #2 from uber/master
+
+Fix Linux compilation issue"
+audreyt,2012-11-12 01:35:02,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/740606b83583aa6ebc0544a11dbb560ddd153514,740606b83583aa6ebc0544a11dbb560ddd153514,* Punctuation fixup
+audreyt,2012-11-11 15:05:57,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f04ec55b810b3fb360150b2698ddb6e4cdd69f1b,f04ec55b810b3fb360150b2698ddb6e4cdd69f1b,* Clarify we use @message because LiveScript autodeclares the variable.
+audreyt,2012-11-11 01:05:21,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4595f860c885317198c55e051acd4122efc19bcb,4595f860c885317198c55e051acd4122efc19bcb,* More README cleanup.
+audreyt,2012-11-10 20:48:43,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7fbcf3ab2abc49546e93ef71fe3f0f5be7bcc42f,7fbcf3ab2abc49546e93ef71fe3f0f5be7bcc42f,* 0.4.2.
+audreyt,2012-11-10 20:47:18,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/93838958e07b0eee499e7f759446962cb53074a9,93838958e07b0eee499e7f759446962cb53074a9,* Remove self.* prefix from docs and examples.
+audreyt,2012-11-10 20:46:54,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/cf38766bc4d5a31a42615768dfa6f1c0e8c81cec,cf38766bc4d5a31a42615768dfa6f1c0e8c81cec,"* Allow setting ""onmessage = "" directly in the worker."
+audreyt,2012-11-10 20:29:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/438a6d6296d382a18028b22b875c3ded47aee0f1,438a6d6296d382a18028b22b875c3ded47aee0f1,* Windows portability; open in binary mode
+audreyt,2012-11-10 20:18:02,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/49daf2c7822fefa854712d28e55aefab43b2cad0,49daf2c7822fefa854712d28e55aefab43b2cad0,"* 0.4.1: Add `importScripts`, `console.log` and `console.error`."
+audreyt,2012-11-10 17:53:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2273043ddf72c6616ab5dc3ed229616fcc377fc8,2273043ddf72c6616ab5dc3ed229616fcc377fc8,* s/POSIX threads/native threads/
+audreyt,2012-11-10 17:49:06,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/84cb75d894df31a22ff111fbac80484636904073,84cb75d894df31a22ff111fbac80484636904073,* Minimal http example.
+audreyt,2012-11-10 12:13:15,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/6b048e9902239ccd38ed1e4563e832183cc9599c,6b048e9902239ccd38ed1e4563e832183cc9599c,* 0.4.0 with Windows support.
+audreyt,2012-11-10 11:59:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8ad1f63b91337ee096df0a4001ccbb2dc275c710,8ad1f63b91337ee096df0a4001ccbb2dc275c710,* Windows support added; tested on Node.js 0.9.3+.
+audreyt,2012-11-10 11:34:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/569ddd126560f9e4e11a580241d1757434cd238f,569ddd126560f9e4e11a580241d1757434cd238f,"* Finish pthread_* => uv_* porting.
+
+  Now compiles on Win32, although doesn't yet work properly."
+audreyt,2012-11-10 10:54:36,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/95285edc3ebb5cc344a7163f1606ac8c4a50a2de,95285edc3ebb5cc344a7163f1606ac8c4a50a2de,"* Node 0.9.x support is currently broken, so fix node on 0.8.x."
+audreyt,2012-11-10 10:54:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7a69a3707d7a38afdabddeb8190770f7eb9442da,7a69a3707d7a38afdabddeb8190770f7eb9442da,* Port more pthread_* to uv_*.
+audreyt,2012-11-09 20:55:34,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/aafb6f3be750041ecb39f3de4f807ef79949a0a1,aafb6f3be750041ecb39f3de4f807ef79949a0a1,* README: Use the 5-threads web worker example
+audreyt,2012-11-09 19:48:19,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c4f120cc7f0a49dbacc57548746137e262915a07,c4f120cc7f0a49dbacc57548746137e262915a07,"* Change typedefs to uv_*.
+
+  Note that uv_cond_* is only supported by node 0.9.3+, so
+  Windows support is not yet possible with node 0.8.x --
+  but possibly in node 0.10.x."
+audreyt,2012-11-09 13:08:17,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1655a1f4c5322f0cd8142ff0ea96fa58e1503154,1655a1f4c5322f0cd8142ff0ea96fa58e1503154,* Style agreement between and fiveThreads.ls and multiThreadEvented.ls
+audreyt,2012-11-09 12:40:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/204376cc72e48b873c22ee239d0eb432a55a9333,204376cc72e48b873c22ee239d0eb432a55a9333,* Port the fiveThreads example to Worker + LiveScript
+audreyt,2012-11-05 13:56:32,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/4672b03c7dfa61e28b182bf00e685c371f19d25a,4672b03c7dfa61e28b182bf00e685c371f19d25a,* 0.3.2: Fix BSON building on SunOS.
+audreyt,2012-11-04 21:27:24,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c6a93bbb75a2aa751ffdc6c0fc311f71d8ba977b,c6a93bbb75a2aa751ffdc6c0fc311f71d8ba977b,* Remove unused require symbol
+audreyt,2012-11-04 21:20:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3803e0241b6570ad5d979def12dd08a6a470c43a,3803e0241b6570ad5d979def12dd08a6a470c43a,* 0.3.1.
+audreyt,2012-11-04 21:05:19,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0c36267e4363973325cbe3c2962284ccef8c1d73,0c36267e4363973325cbe3c2962284ccef8c1d73,* 0.2.4: Switch to BSON instead of JSON for message serialization.
+audreyt,2012-11-04 20:58:09,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ce86f8a72315b9988d56b684667ca3292fd34957,ce86f8a72315b9988d56b684667ca3292fd34957,* Whitespace cleanup.
+audreyt,2012-11-04 06:44:03,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b5a3ef1b822dc4711003bd2ec6692dff89cbe7cb,b5a3ef1b822dc4711003bd2ec6692dff89cbe7cb,* We now require Node.js 0.8.0 with gypfile
+audreyt,2012-11-04 06:43:02,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e084963651fb993d739dcbc3fa9fbc8df92b210d,e084963651fb993d739dcbc3fa9fbc8df92b210d,* Typo
+audreyt,2012-11-04 06:32:08,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/59fba61b2cc1be7d1496b8a8d4220b7170bb0767,59fba61b2cc1be7d1496b8a8d4220b7170bb0767,* Remove broken picture link
+audreyt,2012-11-04 06:11:54,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1686093112eb011c1403183a7ce1e95fb60d967b,1686093112eb011c1403183a7ce1e95fb60d967b,"* Call ""lsc"" from LiveScript 1.1.0."
+audreyt,2012-11-04 05:50:56,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/22ac7d89e6f2c46268b2665907d62b679fa1822d,22ac7d89e6f2c46268b2665907d62b679fa1822d,* 0.3.0 for real.
+audreyt,2012-11-04 05:46:22,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/fabdedaea85e27f4fa6290e20b3435aa6fd9a55e,fabdedaea85e27f4fa6290e20b3435aa6fd9a55e,* Require Node 0.8.0.
+audreyt,2012-11-04 05:35:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ba7df1a97a6d1c7ef7ee285756b4ea10dae43841,ba7df1a97a6d1c7ef7ee285756b4ea10dae43841,* 0.2.3: Add SunOS to supported OSs; tested on Linux.
+audreyt,2012-11-03 17:03:39,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/30635894d3daad9b1a115c11e0d08085c8a36e46,30635894d3daad9b1a115c11e0d08085c8a36e46,* Release 0.2.2.
+audreyt,2012-11-03 16:15:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0a9e9a1009952be597c31234e08ce0ecc981cc1c,0a9e9a1009952be597c31234e08ce0ecc981cc1c,* Allow new Worker without body.
+audreyt,2012-11-03 15:48:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/27259ba6074174b40371d54adc8e9644efbc1d14,27259ba6074174b40371d54adc8e9644efbc1d14,* They actually work as advertised...
+audreyt,2012-11-03 15:47:34,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8cf9a86b10ab2f64c282875d4c596f66c8c25e5c,8cf9a86b10ab2f64c282875d4c596f66c8c25e5c,* Cleanup README
+audreyt,2012-11-03 14:49:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/62e7c3088aa266fdcc679743b7f0a6fa2287b9d7,62e7c3088aa266fdcc679743b7f0a6fa2287b9d7,* Add some TODOs.
+audreyt,2012-11-03 14:32:27,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a5cda7824decf5b5c43e8a1928e3a9051b5fb850,a5cda7824decf5b5c43e8a1928e3a9051b5fb850,"* Release 0.2.1.
+
+  Allow JSON-encodable data structures in postMessage/onmessage."
+audreyt,2012-11-03 10:24:28,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/506ff343f01f2f1aef390b5b5d6858ba3258618f,506ff343f01f2f1aef390b5b5d6858ba3258618f,* Start version at 0.2.0
+audreyt,2012-11-03 10:18:18,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/47822198de7ba49e88f190f0286e1b6a2ffa89ca,47822198de7ba49e88f190f0286e1b6a2ffa89ca,* Add npmjs link
+audreyt,2012-11-03 10:16:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ad402a9ae19675d131d28bc785531051e5a4f575,ad402a9ae19675d131d28bc785531051e5a4f575,* Remove wscript; add package.ls.
+audreyt,2012-11-03 10:10:50,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e2ddfcbe5f5a51d1eed7940e83baea32df21f03d,e2ddfcbe5f5a51d1eed7940e83baea32df21f03d,* Add another exmaple in LiveScript
+audreyt,2012-11-03 09:36:04,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/c8bd8f8d2100bfc5296eca5fc9e081c22a30c66f,c8bd8f8d2100bfc5296eca5fc9e081c22a30c66f,"* Implement self.close().
+
+* Include MDN example in README."
+audreyt,2012-11-03 09:22:47,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/972409a782cabca25ab7adb2ed920ffe0ac75bf6,972409a782cabca25ab7adb2ed920ffe0ac75bf6,"* Basic implementation of W3C Web Worker API.
+
+  See test.ls for an example; note that this is an extension:
+
+    new Worker(function(){
+        ... // Evaluates the function body into the worker
+    })
+
+  The standard file-based API still works, of course:
+
+    new Worker(""worker.js"")"
+audreyt,2012-11-03 07:32:06,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b6d52017a081627b49b60f6b9ccb1a1023175a2b,b6d52017a081627b49b60f6b9ccb1a1023175a2b,* Convert everything to LiveScript.
+audreyt,2012-11-03 06:02:11,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/f3a3e552144865b058af35a689f80bb5042c68be,f3a3e552144865b058af35a689f80bb5042c68be,"* Note MIT license for threads_a_gogo.
+
+* Also waive my copyright under CC0."
+audreyt,2012-11-02 20:12:30,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a032de79adaba23f9469abe5f7da8e04fb859d9c,a032de79adaba23f9469abe5f7da8e04fb859d9c,* Fixup examples
+audreyt,2012-11-02 19:58:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/8c84a0d6e43331c79ce8152a39c46d091ae3793d,8c84a0d6e43331c79ce8152a39c46d091ae3793d,* Massive renaming from threads_a_gogo to WebWorkerThreads.
+audreyt,2012-11-02 08:11:42,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a3ec46c5298c7cad828142392657580eec3da6b5,a3ec46c5298c7cad828142392657580eec3da6b5,* Add binding.gyp for node-gyp building.
+SamJBarney,2012-08-25 17:50:51,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/58ec09bd286dbb70175ff7fdea3dd3af28ea6372,58ec09bd286dbb70175ff7fdea3dd3af28ea6372,Implemented uv instead of ev
+xk,2012-04-13 17:08:25,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5676584e130bf6650f1f64ecb3bf6f246529e64b,5676584e130bf6650f1f64ecb3bf6f246529e64b,"Merge pull request #8 from fmgdias/patch-1
+
+Added Includes <sys/time.h>, <sys/signal.h>, <sys/wait.h>"
+fmgdias,2012-04-12 12:17:39,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/e9411e5adb60f088c1a8bad837e270f553363af1,e9411e5adb60f088c1a8bad837e270f553363af1,"Added Includes <sys/time.h>, <sys/signal.h>, <sys/wait.h>"
+xk,2012-04-09 18:42:10,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/efd4f97f5415edce606ebf596a42a44ea5ead13f,efd4f97f5415edce606ebf596a42a44ea5ead13f,"Revert ""limpieza""
+
+This reverts commit 7d9348b14fb44264e86d0917710d4a782ecd762a."
+xk,2012-04-09 18:41:56,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/024d9018580a9a49b852647b444fd0571fecc6a9,024d9018580a9a49b852647b444fd0571fecc6a9,"Revert ""use inline""
+
+This reverts commit 167d15d9a013e415749e7755660ebe89176317e6."
+xk,2012-04-09 18:30:31,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/2665efb9d1d3cc0934ac2f5b6265b37a684d2e07,2665efb9d1d3cc0934ac2f5b6265b37a684d2e07,bump version
+xk,2012-04-09 18:30:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/0cb8b6f40cb85422e9f775c877d2b399b4b77728,0cb8b6f40cb85422e9f775c877d2b399b4b77728,macos is darwin
+xk,2012-03-25 01:26:37,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/167d15d9a013e415749e7755660ebe89176317e6,167d15d9a013e415749e7755660ebe89176317e6,use inline
+xk,2012-03-25 01:20:41,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/7d9348b14fb44264e86d0917710d4a782ecd762a,7d9348b14fb44264e86d0917710d4a782ecd762a,limpieza
+xk,2012-03-23 19:07:52,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/1d50aae91663c2bafaceb2c41f51932d58206fbf,1d50aae91663c2bafaceb2c41f51932d58206fbf,bump version to 0.1.3
+xk,2012-03-23 19:04:56,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ad46d95d9f19676631fc843f4810c4448b910564,ad46d95d9f19676631fc843f4810c4448b910564,kick a GC every 2e3 turns
+xk,2012-03-23 19:00:35,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/92c85263c6fec5e4325c7a8b3a1195016dbe8fdd,92c85263c6fec5e4325c7a8b3a1195016dbe8fdd,++puts() tests
+xk,2012-03-23 18:59:28,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/b525538e208fe133a03ad1529520aed47661c8ec,b525538e208fe133a03ad1529520aed47661c8ec,fix typo
+xk,2012-03-21 12:03:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/490763a0fbaf7c68dba575b053aa476957e1f854,490763a0fbaf7c68dba575b053aa476957e1f854,more puts() tests
+xk,2012-03-21 09:59:05,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/3efe97dd3175d8d8640a1fa418ee7ed36aaed99a,3efe97dd3175d8d8640a1fa418ee7ed36aaed99a,bump version to 0.1.2
+xk,2012-03-21 09:55:56,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/a241ad079ce2fedae18287bf3f698065b0676e07,a241ad079ce2fedae18287bf3f698065b0676e07,"fix for test15 leaks, GH issue #4"
+xk,2012-03-13 11:53:46,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/86738d2d351667e55d28f7fce9295c3dce194f44,86738d2d351667e55d28f7fce9295c3dce194f44,bump version
+xk,2012-03-13 11:48:45,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/29a1935200cec78d18744a9eeeaf5030deb02735,29a1935200cec78d18744a9eeeaf5030deb02735,fix for test27 leaks
+xk,2012-03-13 11:47:20,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/28088ed2b7949ebf39f3cb6df095b59aba2d777c,28088ed2b7949ebf39f3cb6df095b59aba2d777c,this test leaks
+xk,2011-11-22 09:07:01,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/ab01f72463849f01d16c68c2f11a26d447f55fc3,ab01f72463849f01d16c68c2f11a26d447f55fc3,"2nd commit, D day"
+xk,2011-11-22 09:02:53,https://api.github.com/repos/audreyt/node-webworker-threads/git/commits/5699739e63151a2f2cc05ff19ec2a9698cc8f775,5699739e63151a2f2cc05ff19ec2a9698cc8f775,first commit

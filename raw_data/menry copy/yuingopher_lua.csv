@@ -1,0 +1,455 @@
+gopher-lua,GopherLua: VM and compiler for Lua in Go
+username,timestamp,url,sha,message
+yuin,2019-05-14 11:33:01,https://api.github.com/repos/yuin/gopher-lua/git/commits/1cd887cd7036fd4be7a0cb180dd508cb8e2e689a,1cd887cd7036fd4be7a0cb180dd508cb8e2e689a,Update README.rst
+yuin,2019-05-14 05:34:00,https://api.github.com/repos/yuin/gopher-lua/git/commits/f1c21a7d67ff2fd7b7cf4c116144a735828ea740,f1c21a7d67ff2fd7b7cf4c116144a735828ea740,Update README.rst
+yuin,2019-05-13 06:50:21,https://api.github.com/repos/yuin/gopher-lua/git/commits/1a8ee404b9af53cb3e1d461f50a589d776e95375,1a8ee404b9af53cb3e1d461f50a589d776e95375,"Merge pull request #236 from tul/auto_growing_stack_and_registry
+
+Auto growing stack and registry"
+tul,2019-05-10 13:14:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/871bec715eef01a6c79b644a44192a7dc375d37e,871bec715eef01a6c79b644a44192a7dc375d37e,added callstack and registry auto growth notes to the README
+tul,2019-04-23 17:08:37,https://api.github.com/repos/yuin/gopher-lua/git/commits/7dd84ecab91585dc0859faf3d31d23077a1b2373,7dd84ecab91585dc0859faf3d31d23077a1b2373,regen vm.go after last set of inline changes
+tul,2019-04-20 18:26:10,https://api.github.com/repos/yuin/gopher-lua/git/commits/6c11630f46de5e5732b582fdb948ae8f6d461243,6c11630f46de5e5732b582fdb948ae8f6d461243,bench for auto grow callstack when no auto grow is needed
+tul,2019-04-20 18:19:19,https://api.github.com/repos/yuin/gopher-lua/git/commits/557471037e740174555e3c8d18e3851f3ae69cd3,557471037e740174555e3c8d18e3851f3ae69cd3,"inline registry.checkSize()
+
+most of the time it is a cheap if statement"
+tul,2019-04-20 18:01:02,https://api.github.com/repos/yuin/gopher-lua/git/commits/c53cb7aae32b000e32a01f4aea11e72e0de78cac,c53cb7aae32b000e32a01f4aea11e72e0de78cac,added MinimizeStackMemory option
+tul,2019-04-20 17:42:38,https://api.github.com/repos/yuin/gopher-lua/git/commits/396bd955621987a686b136dee1f7a9907741530b,396bd955621987a686b136dee1f7a9907741530b,"unit test for registry
+
+should not auto grow by default (for backwards compat)
+when auto grow is enabled, should in fact auto grow"
+tul,2019-04-20 17:42:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/af3a1c2820f79db7113ffba166a27d411e5d50cd,af3a1c2820f79db7113ffba166a27d411e5d50cd,fix default options vs max registry size
+tul,2019-04-20 17:00:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/2006f4f3c4e9c9aef96a6a6b74d149dd29b5f6c0,2006f4f3c4e9c9aef96a6a6b74d149dd29b5f6c0,benchmarking for different stack implementations
+tul,2019-04-20 14:56:46,https://api.github.com/repos/yuin/gopher-lua/git/commits/0f42f40830a69693806f91a9ec3fcac943024cca,0f42f40830a69693806f91a9ec3fcac943024cca,fixed callstack implementation via interface
+tul,2019-04-20 14:36:22,https://api.github.com/repos/yuin/gopher-lua/git/commits/673cacfb7e3c13da49fb644fb6924f988ab346b8,673cacfb7e3c13da49fb644fb6924f988ab346b8,auto growing callstack implementation via interface
+tul,2019-04-16 20:17:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/c6479fd2843e5a4fcce3ac4bc84b11129270f0b7,c6479fd2843e5a4fcce3ac4bc84b11129270f0b7,"OPTO move the stack sp into the main callstack struct
+
+gets rid of some cache misses when reading and manipulating stack pos"
+tul,2019-04-16 19:32:41,https://api.github.com/repos/yuin/gopher-lua/git/commits/cd80dcfa36db4e5520cf58adfa12a2f4c75d4fc1,cd80dcfa36db4e5520cf58adfa12a2f4c75d4fc1,new resizing callstack and registry
+tul,2019-04-13 14:45:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/86426e4f30dea6d5820d1df7fb7cdcc6582f7879,86426e4f30dea6d5820d1df7fb7cdcc6582f7879,registry SetTop() and callstack SetSp() benchmarks
+tul,2019-04-13 14:26:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/ead4ee34f69685912fd8f36cacf421a7065a42f5,ead4ee34f69685912fd8f36cacf421a7065a42f5,bench for reg push pop
+tul,2019-04-13 14:18:24,https://api.github.com/repos/yuin/gopher-lua/git/commits/e88e07cf287ebd42fcd53bbac506d3e21e07a43b,e88e07cf287ebd42fcd53bbac506d3e21e07a43b,benchmarking for callstack push / pop
+yuin,2019-02-06 04:34:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/8bfc7677f583b35a5663a9dd934c08f3b5774bbb,8bfc7677f583b35a5663a9dd934c08f3b5774bbb,fix go list command
+yuin,2019-02-06 04:27:45,https://api.github.com/repos/yuin/gopher-lua/git/commits/db8431ab720a7223297de94652ea43cb4ad0c44e,db8431ab720a7223297de94652ea43cb4ad0c44e,disable GO111MODULE
+yuin,2019-02-06 04:10:37,https://api.github.com/repos/yuin/gopher-lua/git/commits/c65cf424f6d83cf491fbd5a16e731723071e1ae0,c65cf424f6d83cf491fbd5a16e731723071e1ae0,Issue #225: wrong compile time constant folding
+yuin,2019-01-25 05:14:37,https://api.github.com/repos/yuin/gopher-lua/git/commits/7b9317363aa9f3058beecc193c6e66febb6b3953,7b9317363aa9f3058beecc193c6e66febb6b3953,"Merge pull request #224 from kohkimakimoto/fix-default-escape-logic
+
+Modify the default escape logic to be same lua5.1 behavior."
+kohkimakimoto,2019-01-25 03:13:37,https://api.github.com/repos/yuin/gopher-lua/git/commits/b81150df25609b86793efcd1572a49e578fdc50c,b81150df25609b86793efcd1572a49e578fdc50c,Modify the default escape logic to be same lua5.1 behavior.
+yuin,2019-01-15 14:09:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/732aa6820ec4fb93d60c4057dd574c33db8ad4e7,732aa6820ec4fb93d60c4057dd574c33db8ad4e7,Merge branch 'master' of github.com:yuin/gopher-lua
+yuin,2019-01-15 14:07:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/276ea720da508e9bffab0cb5309ab54980e32b17,276ea720da508e9bffab0cb5309ab54980e32b17,Issue #222: fix invalid return value copying
+yuin,2019-01-15 14:07:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/0aa49ba4fca410da73b03f62564813d102965a00,0aa49ba4fca410da73b03f62564813d102965a00,Issue #220: fix invalid return value copying
+yuin,2019-01-11 06:57:35,https://api.github.com/repos/yuin/gopher-lua/git/commits/507fb6e5b04d4f7ed8dfc04dca4e1a1a34a28136,507fb6e5b04d4f7ed8dfc04dca4e1a1a34a28136,Issue #220: multiple local assignment with function calls produces invalid byte codes
+yuin,2018-12-31 13:34:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/1e6e6e1918e02ddf02e667e88e8aa756942448c5,1e6e6e1918e02ddf02e667e88e8aa756942448c5,Issue #216: aggresive register saving produces invalid bytecodes
+yuin,2018-12-14 04:58:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/db9ae37725ec65ae634769088627d2d118faf06a,db9ae37725ec65ae634769088627d2d118faf06a,"Merge pull request #211 from vadv/patch-1
+
+Update README.rst"
+vadv,2018-12-13 10:36:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/7bd26fd67a80fdecc20cd5d6c8015e4156acfd3f,7bd26fd67a80fdecc20cd5d6c8015e4156acfd3f,"Update README.rst
+
+Hello yuin.
+I like gopher-lua. I made some libraries for gopher-lua. I wish my project could be more people useful.
+
+Thanks yuin."
+yuin,2018-12-12 08:46:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/d1ab6d058001094c8439baf8949205801b1404b6,d1ab6d058001094c8439baf8949205801b1404b6,"Merge pull request #210 from alaingilbert/fix_blocked_on_recv
+
+Cancelling context should unblock any channel blocked on Recv"
+alaingilbert,2018-12-12 04:44:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/dfa6e844b440389b5c45cefca52b59915dc25b27,dfa6e844b440389b5c45cefca52b59915dc25b27,Issue https://github.com/yuin/gopher-lua/issues/209 : Cancelling context should unblock any channel blocked on Recv
+yuin,2018-11-09 04:29:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/a0dfe84f6227cda1c5f975bf3e35d55ae0d3df61,a0dfe84f6227cda1c5f975bf3e35d55ae0d3df61,add go.mod and go.sum
+yuin,2018-10-31 02:36:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/12c4817b42c5e5b1f9e2690e42bfeaac8727924f,12c4817b42c5e5b1f9e2690e42bfeaac8727924f,Issue #204: fix incompatibility with pcall
+yuin,2018-10-30 02:05:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/afd0ecd19d39ec7934808cec084e17011691ae5f,afd0ecd19d39ec7934808cec084e17011691ae5f,"Merge pull request #203 from HaraldNordgren/go_versions
+
+Bump Go versions and use 1.n.x to get latest minor versions"
+HaraldNordgren,2018-10-27 22:18:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/c357b17569a8807cb702cf45a2e19b8b2f35b150,c357b17569a8807cb702cf45a2e19b8b2f35b150,Bump Go versions and use 1.n.x to get latest minor versions
+yuin,2018-10-24 10:00:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/f7ea7b13e9a5caa6749ccfa3ba1522a2c0bd126b,f7ea7b13e9a5caa6749ccfa3ba1522a2c0bd126b,Issue #202 : fixed a bug when try to remove elements from a table with 0 length
+yuin,2018-10-24 09:58:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/9e01a89ebe87f06b070b4c8cbfe23c8b5e4b4a53,9e01a89ebe87f06b070b4c8cbfe23c8b5e4b4a53,Issue #202 : fixed a bug when try to remove elements from a table with 0 length
+yuin,2018-10-08 13:17:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/f6fcaab0c612d877d4140cbdf6966aed51e6eebd,f6fcaab0c612d877d4140cbdf6966aed51e6eebd,"Merge pull request #200 from leyafo/patch-1
+
+Update README.rst"
+leyafo,2018-10-08 08:39:16,https://api.github.com/repos/yuin/gopher-lua/git/commits/e82826d46a2c7a172945cdf01fd142205246fd70,e82826d46a2c7a172945cdf01fd142205246fd70,"Update README.rst
+
+Update a new project base on gopher-lua."
+yuin,2018-09-18 06:16:12,https://api.github.com/repos/yuin/gopher-lua/git/commits/799fa34954fbf844a6c25ea3b061bfd56f73bd10,799fa34954fbf844a6c25ea3b061bfd56f73bd10,"Merge pull request #199 from tengattack/doc
+
+Add gluacrypto and gluasql"
+tengattack,2018-09-15 07:15:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/24de575a320d915bc2e861fda72be837ec6758ed,24de575a320d915bc2e861fda72be837ec6758ed,Add gluacrypto and gluasql
+yuin,2018-09-12 02:11:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/ed65620d4bd7093055e0e305bf0fdadcc0026acb,ed65620d4bd7093055e0e305bf0fdadcc0026acb,Issue #196 : Fixes #196
+yuin,2018-08-27 08:36:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/b942cacc89fe49895d145e8b360612a9a51d0423,b942cacc89fe49895d145e8b360612a9a51d0423,fix vet errors
+yuin,2018-08-27 03:52:30,https://api.github.com/repos/yuin/gopher-lua/git/commits/f5e2397a31bd4511e40fc07371bcc746ead515bd,f5e2397a31bd4511e40fc07371bcc746ead515bd,drop go1.8 and add go1.11
+yuin,2018-08-27 03:42:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/dab6e1e7e8fa23ff6b92a13eaf2622cea50967b8,dab6e1e7e8fa23ff6b92a13eaf2622cea50967b8,drop go1.8 and add go1.11
+yuin,2018-08-21 02:18:17,https://api.github.com/repos/yuin/gopher-lua/git/commits/e1787a11979853335568be2967295c00e72b88ed,e1787a11979853335568be2967295c00e72b88ed,"Merge pull request #191 from tul/allocator_opto
+
+Allocator opto"
+yuin,2018-08-16 02:30:40,https://api.github.com/repos/yuin/gopher-lua/git/commits/b562f9e65c056d7b19a1ba22a1c1f1c52c2b2675,b562f9e65c056d7b19a1ba22a1c1f1c52c2b2675,"Merge pull request #193 from tul/shared_byte_code_readme
+
+Issue #192 : added NewFunctionFromProto"
+yuin,2018-08-16 01:51:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/ae3ed24657a62dff2bdc106d63dfe37c1f31a869,ae3ed24657a62dff2bdc106d63dfe37c1f31a869,"Merge pull request #194 from bontibon/bontibon-patch-1
+
+update gopher-luar description"
+bontibon,2018-08-01 16:14:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/36f5d3ea4c0d274dc6d1bdf9978bd2d035f6fa79,36f5d3ea4c0d274dc6d1bdf9978bd2d035f6fa79,update gopher-luar description
+tul,2018-07-17 09:06:47,https://api.github.com/repos/yuin/gopher-lua/git/commits/7a6135d85e95b76c9f304a56804402c829273f0f,7a6135d85e95b76c9f304a56804402c829273f0f,"Issue #192 : added NewFunctionFromProto
+
+added example to README of how to use this to share byte code
+between LStates."
+tul,2018-07-16 22:37:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/123714d1e889160e7354734381421fa9d51b8dc6,123714d1e889160e7354734381421fa9d51b8dc6,"removed ""top"" var from allocator
+
+not needed as slice tracks this already"
+tul,2018-07-16 22:31:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/10450a1e8e5cfbcd9e1ff63c6ed086e4bedc0a65,10450a1e8e5cfbcd9e1ff63c6ed086e4bedc0a65,"LNumber2I optimisations
+
+remove unused slice from each allocator page
+  (saves ~512 bytes per page)
+stop temp value escaping to heap and creating garbage"
+tul,2018-07-16 22:30:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/fbb04a0c067595dd289e43008363ad2d71cb66d7,fbb04a0c067595dd289e43008363ad2d71cb66d7,"share lua integer preload in the allocators
+
+saves about 2048 bytes per allocator"
+yuin,2018-06-30 13:58:45,https://api.github.com/repos/yuin/gopher-lua/git/commits/46796da1b0b4794e1e341883a399f12cc7574b55,46796da1b0b4794e1e341883a399f12cc7574b55,"Merge pull request #186 from lonnng/patch-1
+
+constant fold optimization"
+lonng,2018-06-27 05:07:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/daf07cc24a60ee92e03bfccd1c07022a1a0fb127,daf07cc24a60ee92e03bfccd1c07022a1a0fb127,constant fold optimization
+yuin,2018-06-11 02:25:20,https://api.github.com/repos/yuin/gopher-lua/git/commits/ca850f594eaafa5468da2bd53b865e4ee55be18b,ca850f594eaafa5468da2bd53b865e4ee55be18b,Issue #181 : fix possible hang-up on os.Cmd#Wait
+yuin,2018-04-16 13:52:41,https://api.github.com/repos/yuin/gopher-lua/git/commits/b0fa786cf4ea360285924c4a7fd42325be57aec8,b0fa786cf4ea360285924c4a7fd42325be57aec8,"Merge pull request #169 from gudvinr/feature/168_random
+
+Issue #168 : math.random(upper) now works fine when upper=1"
+yuin,2018-04-15 14:17:40,https://api.github.com/repos/yuin/gopher-lua/git/commits/6ea863f2f64396d8c115415a72ec68f08db0a2ac,6ea863f2f64396d8c115415a72ec68f08db0a2ac,add loguago to the README
+yuin,2018-03-16 05:43:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/84ea3a3c79b3c4b3b39606cc96f255cd63635ce0,84ea3a3c79b3c4b3b39606cc96f255cd63635ce0,drop go1.7 support
+yuin,2018-03-16 05:41:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/0a0e67a5d7ddd138ead4798159792b0c4e81bb0c,0a0e67a5d7ddd138ead4798159792b0c4e81bb0c,fix travis.yaml
+yuin,2018-03-16 05:38:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/bf6aa131a6caf07df1137f8275bd2f6431e61d2e,bf6aa131a6caf07df1137f8275bd2f6431e61d2e,trigger travis test
+yuin,2018-03-16 05:34:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/ea05e0e8742d517ff5a6e4e94d82255803f2657b,ea05e0e8742d517ff5a6e4e94d82255803f2657b,turn vet off in go test(1.10)
+yuin,2018-03-16 04:35:18,https://api.github.com/repos/yuin/gopher-lua/git/commits/315ee680a7751a177a01f14daa9ae0373f617f95,315ee680a7751a177a01f14daa9ae0373f617f95,fix bad version numbers
+yuin,2018-03-16 02:29:53,https://api.github.com/repos/yuin/gopher-lua/git/commits/50f065ee6070098b9ff64d4d89faddc7a915c0b3,50f065ee6070098b9ff64d4d89faddc7a915c0b3,Bump up to 1.10 and add gmoonscript to the README
+yuin,2018-01-22 00:52:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/7d7bc8747e3f614c5c587729a341fe7d8903cdb8,7d7bc8747e3f614c5c587729a341fe7d8903cdb8,Improve REPL(GNU Readline like)
+yuin,2017-12-29 01:25:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/478861c8ce6e8c2f16d5984d5ed30c4327c70437,478861c8ce6e8c2f16d5984d5ed30c4327c70437,Issue #159 : more mysterious brackets in the lua pattern matching
+yuin,2017-12-25 04:56:12,https://api.github.com/repos/yuin/gopher-lua/git/commits/d819443c5178271c8db41a300b07b843cd632488,d819443c5178271c8db41a300b07b843cd632488,use an empty string cache
+yuin,2017-12-25 04:38:05,https://api.github.com/repos/yuin/gopher-lua/git/commits/1dc5a40912de907f1c2b901a9c60d1964a255a23,1dc5a40912de907f1c2b901a9c60d1964a255a23,revert files.lua
+yuin,2017-12-25 04:31:36,https://api.github.com/repos/yuin/gopher-lua/git/commits/e37e1695a7de72e7d4c5559206a7fb3a6d5a5e88,e37e1695a7de72e7d4c5559206a7fb3a6d5a5e88,"Issue #154, #156, #157 : make moonscript compiler work"
+yuin,2017-12-18 03:52:45,https://api.github.com/repos/yuin/gopher-lua/git/commits/3d9c8196b0034e3c36481248e02dc39953bcc849,3d9c8196b0034e3c36481248e02dc39953bcc849,Issue #150: clear PNewLine flag
+yuin,2017-12-14 05:53:10,https://api.github.com/repos/yuin/gopher-lua/git/commits/b641d31de2ca5bf2f50bc04ef7c54149a4aa8b1f,b641d31de2ca5bf2f50bc04ef7c54149a4aa8b1f,add gluabit32
+yuin,2017-10-31 05:19:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/609c9cd2697344dec90fe0543c6493e3b8da3435,609c9cd2697344dec90fe0543c6493e3b8da3435,"Merge pull request #146 from aiquestion/master
+
+fix issue os.date(*t) sunday's wday==0"
+aiquestion,2017-10-30 09:00:17,https://api.github.com/repos/yuin/gopher-lua/git/commits/e0ee16d4a7a87a6bdd74b7ba1a210f6100c6c8f5,e0ee16d4a7a87a6bdd74b7ba1a210f6100c6c8f5,fix issue os.date(*t) sunday's wday==0
+yuin,2017-09-15 03:51:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/eb1c7299435cc746b72514f37f74a5154dfe460f,eb1c7299435cc746b72514f37f74a5154dfe460f,Add gluasocket
+yuin,2017-09-14 07:13:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/c71d6facfc2c05372bb3253c9d6a879cc4fcc000,c71d6facfc2c05372bb3253c9d6a879cc4fcc000,Issue #137 : Fix a bug in the parser
+yuin,2017-09-14 05:23:01,https://api.github.com/repos/yuin/gopher-lua/git/commits/6699856b395f033fef5eb10b7f3d87dad1987a86,6699856b395f033fef5eb10b7f3d87dad1987a86,"Add Go1.9 support, fixed #140"
+yuin,2017-09-01 02:39:28,https://api.github.com/repos/yuin/gopher-lua/git/commits/8c2befcd3908152acadb961802fecd7636321747,8c2befcd3908152acadb961802fecd7636321747,"Merge pull request #134 from pwaller/tonumber-support-hex
+
+Add support for 0x prefix in tonumber(v)"
+yuin,2017-09-01 02:35:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/7a769a00bd03fe0c1366384c3fe43f9aa7bc8226,7a769a00bd03fe0c1366384c3fe43f9aa7bc8226,"Merge pull request #133 from yu321chang/PairBugFix
+
+Fix a Bug in Pair"
+pwaller,2017-07-08 22:23:26,https://api.github.com/repos/yuin/gopher-lua/git/commits/2a952f2bb3dd946fcda2053d502370b2998c0147,2a952f2bb3dd946fcda2053d502370b2998c0147,"Add support for 0x prefix in tonumber(v)
+
+If base is not specified as a parameter, and the string has the prefix
+0x (case insensitive), treat the number as base 16 in the lua baselib tonumber
+function."
+yu321chang,2017-06-30 07:28:00,https://api.github.com/repos/yuin/gopher-lua/git/commits/cb81656d2a8167df07886e57eedee15d852645e8,cb81656d2a8167df07886e57eedee15d852645e8,"Fix a Bug in Pair
+when define a big index(> MaxArrayIndex) in lua table,and use pair to foreach this lua talbe ,it will be a dead-loop."
+yuin,2017-06-26 02:19:18,https://api.github.com/repos/yuin/gopher-lua/git/commits/2243d714d6c94951d8ccca8c851836ff47d401c9,2243d714d6c94951d8ccca8c851836ff47d401c9,"Merge pull request #129 from mattdee123/pcall-fix
+
+Fix A Bug With PCall"
+mattdee123,2017-06-23 23:08:19,https://api.github.com/repos/yuin/gopher-lua/git/commits/24e11e0850a1ca39ea99b80b04adcbd141b4cc42,24e11e0850a1ca39ea99b80b04adcbd141b4cc42,"Fix A Bug With PCall
+
+PCall failed to reset the callstack after a failure, which lead to
+errors if someone tried to do certain operations (another function call,
+return an error, call Get()) within the same function.
+
+This Fixes That"
+yuin,2017-04-03 16:00:31,https://api.github.com/repos/yuin/gopher-lua/git/commits/b402f3114ec730d8bddb074a6c137309f561aa78,b402f3114ec730d8bddb074a6c137309f561aa78,"Merge pull request #115 from bontibon/new-table-const
+
+use existing default size constants in LState.NewTable"
+bontibon,2017-04-03 10:35:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/f13a5aac821aa529e6c63af5bbd570c2c1d6e876,f13a5aac821aa529e6c63af5bbd570c2c1d6e876,use existing default size constants in LState.NewTable
+yuin,2017-03-02 05:16:22,https://api.github.com/repos/yuin/gopher-lua/git/commits/65fb8eeb2aa6d29a7b654d61afd1a07ce3897cc9,65fb8eeb2aa6d29a7b654d61afd1a07ce3897cc9,Issue #108 : unsafe 'string to bytes trick' become really unsafe
+yuin,2017-02-17 02:32:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/eed1c7917d2f4a7bbed5e9bf6a0ce64cbd2918c5,eed1c7917d2f4a7bbed5e9bf6a0ce64cbd2918c5,drop go1.5  and add go1.8
+yuin,2017-02-06 04:25:21,https://api.github.com/repos/yuin/gopher-lua/git/commits/99a8c34ef9c866b59dc56f3f7b627e457c7690e2,99a8c34ef9c866b59dc56f3f7b627e457c7690e2,"Merge pull request #99 from LionNatsu/patch-type-compile-error
+
+type CompileError: unexport context - funcContext is unexported"
+LionNatsu,2017-02-03 07:42:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/0a4e29a7b569b4fd414635b778e561346008bda4,0a4e29a7b569b4fd414635b778e561346008bda4,misc: fix cherry-pick error
+LionNatsu,2017-02-02 10:13:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/6c67eee80c50c72d40e88ee918c8106625a9fe16,6c67eee80c50c72d40e88ee918c8106625a9fe16,type CompileError: unexport context - funcContext is unexported
+yuin,2017-02-02 23:14:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/41c68f87e803d2725f8071e5cbd76a3c34552cd9,41c68f87e803d2725f8071e5cbd76a3c34552cd9,"Merge pull request #96 from LionNatsu/patch-misspell
+
+compile.go: fix typo"
+LionNatsu,2017-02-02 02:58:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/0d66873a9eed4868438c4a1e86a8197ac20f84c8,0d66873a9eed4868438c4a1e86a8197ac20f84c8,compile.go: fix typo
+yuin,2017-01-19 02:36:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/66c871e454fcf10251c61bf8eff02d0978cae75a,66c871e454fcf10251c61bf8eff02d0978cae75a,Issue #91 : repeat operators should only be effective just after a single character class
+yuin,2017-01-18 11:44:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/489f114f5f1ec78310f7548e18e0dbc8e272dd13,489f114f5f1ec78310f7548e18e0dbc8e272dd13,Update docs
+yuin,2017-01-18 10:05:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/30d82ef02d4b6549c0dfdc4c7402b115fb53823d,30d82ef02d4b6549c0dfdc4c7402b115fb53823d,Update travis settings
+yuin,2017-01-18 10:02:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/73929e20e97e783f83cb73f0d66115809c3ed74d,73929e20e97e783f83cb73f0d66115809c3ed74d,Update travis settings
+yuin,2017-01-18 09:38:35,https://api.github.com/repos/yuin/gopher-lua/git/commits/0bbb393ec3550cb5a6255cfff70070acf2ecc8d0,0bbb393ec3550cb5a6255cfff70070acf2ecc8d0,"Add context support
+
+This commit contains an API breaking change.
+LState.NewThread now also returns a child context.Context."
+yuin,2017-01-06 04:34:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/33ebc07735566cd0c3c4b69e2839d522cc389852,33ebc07735566cd0c3c4b69e2839d522cc389852,Issue #93 : crashes when calling a function with a tailcall
+yuin,2016-12-31 07:49:35,https://api.github.com/repos/yuin/gopher-lua/git/commits/03a30652ecd1a96ad7a4d15e064f8f152ece4ec7,03a30652ecd1a96ad7a4d15e064f8f152ece4ec7,"Issue #91 , Issue #92 : magic chars in sets are not magic chars"
+yuin,2016-12-16 15:46:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/4435d222dbc11484759b8155589e95440f8658a6,4435d222dbc11484759b8155589e95440f8658a6,fix travis fail
+yuin,2016-11-24 09:06:17,https://api.github.com/repos/yuin/gopher-lua/git/commits/7692488a1ad6bd06dc48890f4a149b65a86a767d,7692488a1ad6bd06dc48890f4a149b65a86a767d,Add gluaxmlpath
+yuin,2016-10-13 02:33:00,https://api.github.com/repos/yuin/gopher-lua/git/commits/d0d5dd3565a9f3c86ff5bc42a0b1cc9e5bfcf55e,d0d5dd3565a9f3c86ff5bc42a0b1cc9e5bfcf55e,update docs
+yuin,2016-09-19 07:03:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/dd0fd531098d425ac1576765d9cca3274f8dd8d6,dd0fd531098d425ac1576765d9cca3274f8dd8d6,Issue #82 : Fixed a bug when using tforloops with a tail call
+yuin,2016-09-18 08:16:45,https://api.github.com/repos/yuin/gopher-lua/git/commits/be46d3177260d2a4042c3dc86528816713b37ffb,be46d3177260d2a4042c3dc86528816713b37ffb,Issue #81 : Fix an infinite loop when tables contain numeric Zero as an index
+yuin,2016-08-25 01:50:16,https://api.github.com/repos/yuin/gopher-lua/git/commits/6a1397dfb6f8e7af08496129dd96f5f62c148f47,6a1397dfb6f8e7af08496129dd96f5f62c148f47,"Merge pull request #80 from Alienero/master
+
+util: support os.date %x and %X fmt"
+Alienero,2016-08-23 14:55:16,https://api.github.com/repos/yuin/gopher-lua/git/commits/51664e4b5c4697993348c11fa71240d0999a5a13,51664e4b5c4697993348c11fa71240d0999a5a13,util: support os.date %x and %X fmt
+yuin,2016-08-19 11:36:56,https://api.github.com/repos/yuin/gopher-lua/git/commits/775a9e6b1e7a2d4cae01649a97e8cdc5deadd4c7,775a9e6b1e7a2d4cae01649a97e8cdc5deadd4c7,update docs
+yuin,2016-08-19 11:20:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/8202e6f7f7b44c5db47ccce35e6c4667b7482668,8202e6f7f7b44c5db47ccce35e6c4667b7482668,drop Go1.4 support
+yuin,2016-07-15 01:26:41,https://api.github.com/repos/yuin/gopher-lua/git/commits/e57b64049898d04ad03d3cc75ffa770eb29aeae0,e57b64049898d04ad03d3cc75ffa770eb29aeae0,"Merge pull request #78 from bontibon/etcet
+
+fix collectgarbage comment in README"
+bontibon,2016-07-14 23:03:52,https://api.github.com/repos/yuin/gopher-lua/git/commits/6b737c4df27d6d77acbe9483ebe2e652b6811bf8,6b737c4df27d6d77acbe9483ebe2e652b6811bf8,fix collectgarbage comment in README
+yuin,2016-06-30 01:48:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/bf3808abd44b1e55143a2d7f08571aaa80db1808,bf3808abd44b1e55143a2d7f08571aaa80db1808,"Merge pull request #76 from felipejfc/master
+
+add gluahttpscrape to modules list"
+felipejfc,2016-06-29 20:57:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/697993e9ad24e9810a880c57e055e2b6fcb354a9,697993e9ad24e9810a880c57e055e2b6fcb354a9,add gluahttpscrape to modules list
+yuin,2016-05-27 05:08:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/47f0f792b296190027f38d577f0860e2dad7a777,47f0f792b296190027f38d577f0860e2dad7a777,"Merge pull request #75 from kohkimakimoto/fix-bug-loading-emptyfile
+
+Fix bug loading emptyfile"
+kohkimakimoto,2016-05-27 04:36:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/3cc745e07eec08ccec71852fb0a6daa50d3e7841,3cc745e07eec08ccec71852fb0a6daa50d3e7841,Issue #74 : fix the bug to load empty file
+kohkimakimoto,2016-05-27 04:06:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/9e9a27cc40449695a0c0e97cd364b05ead53ffc4,9e9a27cc40449695a0c0e97cd364b05ead53ffc4,add failed test to find a bug to load empty file.
+yuin,2016-05-26 07:44:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/3dc7ccc74bc43ce52908a0c1cc408eb9e10478ef,3dc7ccc74bc43ce52908a0c1cc408eb9e10478ef,"Merge pull request #73 from kohkimakimoto/support-shebang
+
+Support shebang"
+kohkimakimoto,2016-05-26 07:26:05,https://api.github.com/repos/yuin/gopher-lua/git/commits/2e0b9b70f7c29c8681d49bd2c520f5678c2e5fc1,2e0b9b70f7c29c8681d49bd2c520f5678c2e5fc1,"Update code to use acculate read-line function, and add code to check the error."
+kohkimakimoto,2016-05-26 05:29:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/d28bcc01974d4ad0cab94bb36658b4401a8ca156,d28bcc01974d4ad0cab94bb36658b4401a8ca156,Issue #72 : support shebang
+yuin,2016-05-12 06:13:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/6797c89ed3707b039dc60363eed077ade8204efa,6797c89ed3707b039dc60363eed077ade8204efa,"Merge pull request #71 from erikdubbelboer/fmt
+
+go fmt"
+erikdubbelboer,2016-05-12 04:40:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/e68f0dc85040a2778aac7f1c06f0c4f54eab2f2a,e68f0dc85040a2778aac7f1c06f0c4f54eab2f2a,go fmt
+yuin,2016-05-05 06:07:31,https://api.github.com/repos/yuin/gopher-lua/git/commits/72475d689b10889c8cad3e931751b5172cf00616,72475d689b10889c8cad3e931751b5172cf00616,Update the issue template
+yuin,2016-04-25 10:36:19,https://api.github.com/repos/yuin/gopher-lua/git/commits/cfea889ae9364dcec3ba7b6ab38a07d2c792faed,cfea889ae9364dcec3ba7b6ab38a07d2c792faed,Issue #67 : fix the issue dofile report a wrong error
+yuin,2016-04-15 05:16:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/b5ca24ae61f4266ee8572f6f5c8e3637e6e5c4a1,b5ca24ae61f4266ee8572f6f5c8e3637e6e5c4a1,Add more tests
+yuin,2016-04-15 02:09:23,https://api.github.com/repos/yuin/gopher-lua/git/commits/e9c882345d67fa366f0245da585c8c99ad42ce9f,e9c882345d67fa366f0245da585c8c99ad42ce9f,"Merge pull request #66 from brunoqc/patch-1
+
+Fix typo in .github/ISSUE_TEMPLATE.md"
+bbigras,2016-04-14 20:18:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/9b2924dc8a9f580830e2e8f4dbcdfd141611e360,9b2924dc8a9f580830e2e8f4dbcdfd141611e360,Fix typo in .github/ISSUE_TEMPLATE.md
+yuin,2016-03-04 06:54:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/e5faab4db06a81efb60d8e16c1d205e1d93736a9,e5faab4db06a81efb60d8e16c1d205e1d93736a9,Refactoring
+yuin,2016-03-04 06:25:47,https://api.github.com/repos/yuin/gopher-lua/git/commits/eef602821377a82e8242a6a4dc7ac24e64c4fbd7,eef602821377a82e8242a6a4dc7ac24e64c4fbd7,"Merge pull request #63 from yuin/support-level-arg
+
+Issue #62 : debug.traceback now can take the 'level' arg"
+yuin,2016-03-04 06:17:46,https://api.github.com/repos/yuin/gopher-lua/git/commits/784e500ada5800c05bbebee0851e93e2ad415f8d,784e500ada5800c05bbebee0851e93e2ad415f8d,Issue #62 : debug.traceback now can take the 'level' arg
+yuin,2016-02-22 07:40:56,https://api.github.com/repos/yuin/gopher-lua/git/commits/e9d90108c2b9c5d4d2f6ced33cfb54300380012d,e9d90108c2b9c5d4d2f6ced33cfb54300380012d,Add 1.6
+yuin,2016-02-22 06:46:04,https://api.github.com/repos/yuin/gopher-lua/git/commits/34589e772656e6f82f17d5bda5c1a26ad3f50cb3,34589e772656e6f82f17d5bda5c1a26ad3f50cb3,Preformance improvements
+yuin,2016-02-18 13:51:38,https://api.github.com/repos/yuin/gopher-lua/git/commits/ba4af8f3ede6d6d7fb4f44efef8f30c2dbbad4ab,ba4af8f3ede6d6d7fb4f44efef8f30c2dbbad4ab,Fix typo
+yuin,2016-02-18 08:14:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/0d5b8c843c8e65d3df12de476e141cfac2dd5ce2,0d5b8c843c8e65d3df12de476e141cfac2dd5ce2,Add guidlines for contributors
+yuin,2016-02-18 08:13:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/ef7ecdee16e2b3b0eeb337623bbdb8f89faf11fe,ef7ecdee16e2b3b0eeb337623bbdb8f89faf11fe,Add guidlines for contributors
+yuin,2016-02-18 07:35:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/fcf0a92d8e2e5fc6830fbe89b48525e0bf6217c7,fcf0a92d8e2e5fc6830fbe89b48525e0bf6217c7,Fix invalid examples
+yuin,2016-01-20 15:39:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/cbab8d20d579272a56e78ab4395236bb21dcbbbf,cbab8d20d579272a56e78ab4395236bb21dcbbbf,"Merge pull request #60 from cathalgarvey/master
+
+Implemented OpenXXX LGFunctions for each built-in module, refactored LState.OpenLibs. Close #55"
+cathalgarvey,2016-01-20 14:48:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/d37748000dc5eb271785297a758ede22bc131350,d37748000dc5eb271785297a758ede22bc131350,Using constants for module names. Fixed bad typecast in stringlib.go.
+cathalgarvey,2016-01-20 13:40:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/353622b6e28c3e833453d464aad131e36a36dbb7,353622b6e28c3e833453d464aad131e36a36dbb7,"More fixes towards #55, #60.
+
+New private type, luaLib, to contain name and load function, same
+idea as Lua5.1's luaL_Reg: http://pgl.yoyo.org/luai/i/luaL_Reg
+
+luaLibs is now private, is now a slice of luaLibs.
+
+Each module register function now returns the module table.
+
+luaLibs are now executed by pushing onto the stack, pushing
+the module name, and calling with args 1 and returns 0.
+
+Some comments removed by request."
+cathalgarvey,2016-01-19 14:07:41,https://api.github.com/repos/yuin/gopher-lua/git/commits/92ce51682a55cff33fe3bd8d9b336b0329360a0d,92ce51682a55cff33fe3bd8d9b336b0329360a0d,Example in Readme omitted pass-by-ref
+cathalgarvey,2016-01-19 14:05:05,https://api.github.com/repos/yuin/gopher-lua/git/commits/857a12513de09dbba862aa6b6324c2eb725e8f80,857a12513de09dbba862aa6b6324c2eb725e8f80,Updating readme with example. Should be ready to PR for issue #55.
+cathalgarvey,2016-01-19 11:24:49,https://api.github.com/repos/yuin/gopher-lua/git/commits/79f827ad85c1807f5b3e46aaec5794462ab717bb,79f827ad85c1807f5b3e46aaec5794462ab717bb,"All openers are now LGFunction, all tests pass."
+cathalgarvey,2016-01-19 11:10:01,https://api.github.com/repos/yuin/gopher-lua/git/commits/2ffa14ff0631724a4dd6679c81148ac700b52113,2ffa14ff0631724a4dd6679c81148ac700b52113,Coroutine library seems to work as LGFunction returning 0
+cathalgarvey,2016-01-19 11:07:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/585c0edca6881eccdbc4c2e3700c3f6c7a521cfc,585c0edca6881eccdbc4c2e3700c3f6c7a521cfc,"Channel, String and Os seem to work as LGFunctions returning 0"
+cathalgarvey,2016-01-19 11:03:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/100a40ec0a11a9aad1cf143fc87fe7806f5a668e,100a40ec0a11a9aad1cf143fc87fe7806f5a668e,Table appears to work as LGFunction returning 0.
+cathalgarvey,2016-01-19 11:02:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/671b7ff7772555e63304e901493cf9c2d886bb24,671b7ff7772555e63304e901493cf9c2d886bb24,Debug appears to work as LGFunction returning 0.
+cathalgarvey,2016-01-19 11:00:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/b00ef992e7f835d0568a58b393db6833f88bdbc1,b00ef992e7f835d0568a58b393db6833f88bdbc1,Math appears to work as LGFunction returning 0.
+cathalgarvey,2016-01-19 10:57:33,https://api.github.com/repos/yuin/gopher-lua/git/commits/9706b987b327e2e33248247f17fb956c24216e28,9706b987b327e2e33248247f17fb956c24216e28,Removed old ioOpen function.
+cathalgarvey,2016-01-19 10:57:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/ff89f45b64c58161ea66cfd4104402e5a315abcb,ff89f45b64c58161ea66cfd4104402e5a315abcb,IO appears to load OK as LGFunction returning 0.
+cathalgarvey,2016-01-19 10:47:23,https://api.github.com/repos/yuin/gopher-lua/git/commits/fb42ab168782e4d0c95f9fefd4500d8bc14269f4,fb42ab168782e4d0c95f9fefd4500d8bc14269f4,Stage set for handling lib-opening refactor for #55
+yuin,2015-12-30 04:08:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/0dd1a863ede8c4543814ca0658cc5c22061d48bc,0dd1a863ede8c4543814ca0658cc5c22061d48bc,"Merge pull request #58 from AlekSi/patch-1
+
+Fix typo"
+AlekSi,2015-12-29 20:27:05,https://api.github.com/repos/yuin/gopher-lua/git/commits/514cc8e488aa5901d8d41f97e153e0cf87f38823,514cc8e488aa5901d8d41f97e153e0cf87f38823,Fix typo
+yuin,2015-12-28 07:54:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/159f96c9c15cad62019d484f417818d824e657e9,159f96c9c15cad62019d484f417818d824e657e9,Update docs
+yuin,2015-12-27 16:54:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/fe89fc901eb7da9b545891af9a53058abd3e0a46,fe89fc901eb7da9b545891af9a53058abd3e0a46,Update docs
+yuin,2015-11-09 06:32:34,https://api.github.com/repos/yuin/gopher-lua/git/commits/f918613776713b6f81c708f3a2126b542c3efdd4,f918613776713b6f81c708f3a2126b542c3efdd4,"Merge pull request #54 from xtaci/master
+
+add multiline support to glua"
+xtaci,2015-11-09 06:26:22,https://api.github.com/repos/yuin/gopher-lua/git/commits/dff3bbc7f2acb4b973ca9ebf47e0da9c59c1607a,dff3bbc7f2acb4b973ca9ebf47e0da9c59c1607a,optimize multiline for glua
+xtaci,2015-11-07 10:32:11,https://api.github.com/repos/yuin/gopher-lua/git/commits/0b7f8a88f6474994a4c3992e4b86fcf72a921745,0b7f8a88f6474994a4c3992e4b86fcf72a921745,add multiline support to glua
+yuin,2015-10-09 14:36:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/3e406aee054bae285797f8c21785da542c2391c8,3e406aee054bae285797f8c21785da542c2391c8,Improve performance
+yuin,2015-10-09 03:08:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/5d0c94f257a2cfed8c67c1444949cadcb4015b6b,5d0c94f257a2cfed8c67c1444949cadcb4015b6b,Change inlinning comment position
+yuin,2015-10-09 02:58:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/b688a86436b610dd5a083f7c5b12c821747e8b7f,b688a86436b610dd5a083f7c5b12c821747e8b7f,Improve docs
+yuin,2015-10-09 02:15:47,https://api.github.com/repos/yuin/gopher-lua/git/commits/69f5a28c50dc426d1b07aa178074865844f95033,69f5a28c50dc426d1b07aa178074865844f95033,Remove duplicated code
+yuin,2015-10-07 02:55:12,https://api.github.com/repos/yuin/gopher-lua/git/commits/a479de30784e8de77f2cb5c26284df52706ba8b0,a479de30784e8de77f2cb5c26284df52706ba8b0,Update docs
+yuin,2015-10-04 08:44:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/21b70b48ba3b0da2122b79555094763ea97e3e98,21b70b48ba3b0da2122b79555094763ea97e3e98,Refactoring
+yuin,2015-10-02 05:48:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/e69a9b435438b1f81910cc67175e88c6fdf0e00f,e69a9b435438b1f81910cc67175e88c6fdf0e00f,Add an 'IncludeGoStackTrace' option
+yuin,2015-10-01 11:08:36,https://api.github.com/repos/yuin/gopher-lua/git/commits/3d4297ffd83cf81d20069080d2a64a53a5990754,3d4297ffd83cf81d20069080d2a64a53a5990754,Add Makefile
+yuin,2015-10-01 11:07:25,https://api.github.com/repos/yuin/gopher-lua/git/commits/87c0420d0351b081bb80e430f47b4519d624c140,87c0420d0351b081bb80e430f47b4519d624c140,[Experimental] Introduce an indolent tool for inlining simple function calls
+yuin,2015-10-01 11:02:38,https://api.github.com/repos/yuin/gopher-lua/git/commits/5c1160bf7526f7179f279b5ab182c3550a70c080,5c1160bf7526f7179f279b5ab182c3550a70c080,Implement pattern match without the regexp package
+yuin,2015-09-27 18:47:30,https://api.github.com/repos/yuin/gopher-lua/git/commits/55496c9622daf4c0d796f3d97a020368e22a1f36,55496c9622daf4c0d796f3d97a020368e22a1f36,"Merge pull request #53 from jtolds/master
+
+Allow for optional disabling of library opening"
+jtolds,2015-09-27 07:15:02,https://api.github.com/repos/yuin/gopher-lua/git/commits/2531239978ca419375d244957339d3ded7f8a83a,2531239978ca419375d244957339d3ded7f8a83a,Allow skipping of opening all libraries by default
+yuin,2015-09-13 10:22:02,https://api.github.com/repos/yuin/gopher-lua/git/commits/abbdcf090159c9ef292a99e8049fb2567bc24c31,abbdcf090159c9ef292a99e8049fb2567bc24c31,Drop Go1.3 support
+yuin,2015-09-13 10:07:31,https://api.github.com/repos/yuin/gopher-lua/git/commits/670e2545e46eb57df5e27e491a829f2dd5d1b697,670e2545e46eb57df5e27e491a829f2dd5d1b697,"[Experimental] Add an original bulk mem allocator
+
+`runtime.convT2I` is called to convert builtin types(e.g.
+float64) into interface types(e.g. LValue).
+`runtime.convT2I` calls `newobject` to allocate heap for
+'isDirectIface(v) == false' types(e.g. float64).
+To reduce frequent `newobject` call, I have added a original memory
+allocator experimentally.
+This allocator has some operations that are regarded as 'danger'
+operations including pointer calculations.
+It seems that this allocator does not cause memory leaks."
+yuin,2015-09-11 13:18:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/771db5d9667a18a7b358ef1f90bfca3dc0cb841a,771db5d9667a18a7b358ef1f90bfca3dc0cb841a,Add a -p flag to generate cpu profiles
+yuin,2015-09-09 10:57:36,https://api.github.com/repos/yuin/gopher-lua/git/commits/334822d14ead4a7b83d62390f3638ffab30ce8cf,334822d14ead4a7b83d62390f3638ffab30ce8cf,Fix bugs in cb99526b6cc63e4141054e884b9d5db8da07efe7
+yuin,2015-09-09 10:51:55,https://api.github.com/repos/yuin/gopher-lua/git/commits/2d9c657c04963a632e4985be26835463ac5dd790,2d9c657c04963a632e4985be26835463ac5dd790,Add Go1.5
+yuin,2015-09-09 10:45:49,https://api.github.com/repos/yuin/gopher-lua/git/commits/cb99526b6cc63e4141054e884b9d5db8da07efe7,cb99526b6cc63e4141054e884b9d5db8da07efe7,"Improve the VM performance(Go1.5)
+
+To reduce `runtime.assertI2T2` costs, implement `LValue#assertFloat64`
+and `LValue#assertString` and use these functions in the VM."
+yuin,2015-09-05 19:12:11,https://api.github.com/repos/yuin/gopher-lua/git/commits/fe1b50631946cbffad9a68baa82b2cc1983a9621,fe1b50631946cbffad9a68baa82b2cc1983a9621,fix travis fail
+yuin,2015-09-05 16:22:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/0bff088990b5ea3d262d8881f643145da80c0702,0bff088990b5ea3d262d8881f643145da80c0702,Merge branch 'master' of https://github.com/yuin/gopher-lua
+yuin,2015-09-05 16:20:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/cb6f2f1e1473740a15de52ae8827c8fe4f2c4bb2,cb6f2f1e1473740a15de52ae8827c8fe4f2c4bb2,Issue #46: now 'cause' is set if the Type is ApiErrorFile or ApiErrorSyntax
+yuin,2015-09-05 16:20:50,https://api.github.com/repos/yuin/gopher-lua/git/commits/45ed99f1e728e3be1f5d9b1bf064ab582501bf33,45ed99f1e728e3be1f5d9b1bf064ab582501bf33,Issue #46: now  is set if the Type is ApiErrorFile or ApiErrorSyntax
+yuin,2015-09-05 10:19:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/d08b46c09b70d3be4ed2413f35c1b5e856e86adb,d08b46c09b70d3be4ed2413f35c1b5e856e86adb,"Merge pull request #48 from ferbivore/fix-regex-newline-matching
+
+Issue #47: fix regex not having Lua behaviour wrt newlines"
+ferbivore,2015-09-05 10:10:20,https://api.github.com/repos/yuin/gopher-lua/git/commits/48b99ddcb5a68b2c984171418ac1850bfe3cfb5c,48b99ddcb5a68b2c984171418ac1850bfe3cfb5c,Issue #47/pull request #48: add unit test
+ferbivore,2015-09-05 09:28:00,https://api.github.com/repos/yuin/gopher-lua/git/commits/b987ae47886ba4a6ec9377238bcd20921cec3656,b987ae47886ba4a6ec9377238bcd20921cec3656,Issue #47: fix regex not having Lua behaviour wrt newlines
+yuin,2015-08-20 09:18:02,https://api.github.com/repos/yuin/gopher-lua/git/commits/32001060c5d09a47ee8b919b97434e25b1635335,32001060c5d09a47ee8b919b97434e25b1635335,"Merge pull request #44 from kohkimakimoto/doesnot-work-closing
+
+Issue #43 : fix the issue."
+kohkimakimoto,2015-08-20 09:06:11,https://api.github.com/repos/yuin/gopher-lua/git/commits/471a7b03436592ad3076f7472f84a85af2e4c481,471a7b03436592ad3076f7472f84a85af2e4c481,Alter the function name.
+kohkimakimoto,2015-08-20 00:48:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/b8e204e10acbc7f3e3f8b70613172dcc8744d63b,b8e204e10acbc7f3e3f8b70613172dcc8744d63b,"Issue #43 : fix the issue.
+
+Fixed the issue: a temporary file that is created by `io.tmpfile()` is not deleted automatically in some cases."
+yuin,2015-07-11 05:00:55,https://api.github.com/repos/yuin/gopher-lua/git/commits/ae75ff57e4677bbd787adc57f47635e6bcefcfca,ae75ff57e4677bbd787adc57f47635e6bcefcfca,"Merge pull request #40 from yuin/fix-issue-39
+
+Issue #39 : Pattern match functions now support non-latin characters"
+yuin,2015-07-11 04:52:46,https://api.github.com/repos/yuin/gopher-lua/git/commits/a67621662cbe5cc13958bce5dffca347fa392089,a67621662cbe5cc13958bce5dffca347fa392089,Issue #39 : Pattern match functions now support non-latin characters
+yuin,2015-07-04 18:59:01,https://api.github.com/repos/yuin/gopher-lua/git/commits/785a5df26018b55373c2dc4269d440780dce43a9,785a5df26018b55373c2dc4269d440780dce43a9,"Merge pull request #38 from yuin/fix-issue-37
+
+Issue #37 : fixed compiler bugs in the function call expression"
+yuin,2015-07-04 18:57:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/265055172a2a0dee4e3124d4f64b9191b09e0cc9,265055172a2a0dee4e3124d4f64b9191b09e0cc9,Issue #37 : fixed compiler bugs in the function call expression
+yuin,2015-06-01 08:43:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/54750d6aec1c2706990e9ec17438bd88d30231ab,54750d6aec1c2706990e9ec17438bd88d30231ab,LState now have an indipendent callstack & registry size
+yuin,2015-05-27 07:31:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/58649089d0681e292b152d16d3542fd5c9ba2ecd,58649089d0681e292b152d16d3542fd5c9ba2ecd,"Merge pull request #34 from yuin/fix-issue-33
+
+closes issue #33"
+yuin,2015-05-27 07:28:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/46165f7d01f11918975a8d506500450348e06074,46165f7d01f11918975a8d506500450348e06074,Issue 33 : fixed
+yuin,2015-05-21 10:11:52,https://api.github.com/repos/yuin/gopher-lua/git/commits/39cba729e428b92885bb0cdc7a3b1eb1f4812ea9,39cba729e428b92885bb0cdc7a3b1eb1f4812ea9,tiny performance optimization
+yuin,2015-05-19 13:25:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/dc429fd019612fdc22eb2327321deece7cfd892a,dc429fd019612fdc22eb2327321deece7cfd892a,"Merge pull request #32 from bontibon/patch-1
+
+add gopher-json to libraries"
+bontibon,2015-05-19 13:01:20,https://api.github.com/repos/yuin/gopher-lua/git/commits/b9b4269143f38c7196543794a4f3d0ad445cecb9,b9b4269143f38c7196543794a4f3d0ad445cecb9,Update README.rst
+bontibon,2015-05-19 13:00:46,https://api.github.com/repos/yuin/gopher-lua/git/commits/1e8728b3efb2d9aacc46987f831fc79935ab4b31,1e8728b3efb2d9aacc46987f831fc79935ab4b31,Update README.rst
+bontibon,2015-05-19 13:00:22,https://api.github.com/repos/yuin/gopher-lua/git/commits/6fef61c62f3548c5290c628bc35aff77d0b742c2,6fef61c62f3548c5290c628bc35aff77d0b742c2,add gopher-json to libraries
+yuin,2015-05-19 00:33:04,https://api.github.com/repos/yuin/gopher-lua/git/commits/25c6563b5053dcb8900c12c239ce6c3857c319fd,25c6563b5053dcb8900c12c239ce6c3857c319fd,"Merge pull request #31 from cjoudrey/patch-1
+
+Add gluahttp to README.rst"
+cjoudrey,2015-05-19 00:24:00,https://api.github.com/repos/yuin/gopher-lua/git/commits/183b7d07c2d6ac8f257a987ab1417a410719580e,183b7d07c2d6ac8f257a987ab1417a410719580e,Add gluahttp to README.rst
+yuin,2015-05-18 04:59:36,https://api.github.com/repos/yuin/gopher-lua/git/commits/16c7e22e7531e247793925b957c480f9515ff53b,16c7e22e7531e247793925b957c480f9515ff53b,reduce table allocations
+yuin,2015-05-17 06:54:11,https://api.github.com/repos/yuin/gopher-lua/git/commits/e2095560cdaa768995b3791e0b4bd70ebf561742,e2095560cdaa768995b3791e0b4bd70ebf561742,OP_SELF optimization
+yuin,2015-05-17 05:57:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/2e5bfcb9c565e43007c9cc3c299582c65bef258d,2e5bfcb9c565e43007c9cc3c299582c65bef258d,optimize bulk OP_MOVE(introduce OP_MOVEN)
+yuin,2015-05-15 09:14:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/8e24eb17669f6201738d026ed066932e194ced28,8e24eb17669f6201738d026ed066932e194ced28,optimize table access
+yuin,2015-05-15 08:20:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/30dde4915b5f6f4b58bb714324666a35476c3b7f,30dde4915b5f6f4b58bb714324666a35476c3b7f,suuport SETTABLEKS in case of like 'a.key = v' (a is a global variable)
+yuin,2015-05-15 07:21:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/b3cc50f263d1e920a8880813d4cf3e72b0cdfb9f,b3cc50f263d1e920a8880813d4cf3e72b0cdfb9f,"add GETTABLEKS, SETTABLEKS opecodes"
+yuin,2015-05-15 06:43:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/55dbb60e25b3dff322f2a7981430c40e73e98c88,55dbb60e25b3dff322f2a7981430c40e73e98c88,optimize table in of a key is a string
+yuin,2015-05-13 04:38:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/a34f30a4c3f96f6ad01dedc8ee656fdaa3b1d3e0,a34f30a4c3f96f6ad01dedc8ee656fdaa3b1d3e0,remove dead code
+yuin,2015-05-13 04:23:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/2b1ff88ec7260731bc07a01e75043258d58fb6ce,2b1ff88ec7260731bc07a01e75043258d58fb6ce,Merge branch 'master' of github.com:yuin/gopher-lua
+yuin,2015-05-13 04:23:23,https://api.github.com/repos/yuin/gopher-lua/git/commits/384d54d3c3ddcab06976a32101c3ac93a6843125,384d54d3c3ddcab06976a32101c3ac93a6843125,"Merge pull request #30 from syohex/misspelling
+
+Correct misspellings"
+yuin,2015-05-13 03:52:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/2e0f4fb7873ac508a05fb2ac276bc6a45870477f,2e0f4fb7873ac508a05fb2ac276bc6a45870477f,optimize function call
+syohex,2015-05-13 03:27:55,https://api.github.com/repos/yuin/gopher-lua/git/commits/78bade1a7da5b1d8cb488894a68e65e55f940140,78bade1a7da5b1d8cb488894a68e65e55f940140,Correct misspellings
+yuin,2015-05-12 23:49:45,https://api.github.com/repos/yuin/gopher-lua/git/commits/2a4dab5a0e916013c7e4997100ee4434362f8e4e,2a4dab5a0e916013c7e4997100ee4434362f8e4e,"Merge pull request #29 from kohkimakimoto/fix-bug-os.execute
+
+close #28"
+kohkimakimoto,2015-05-12 23:10:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/b809d9576e7ad1c2590867939e0f952d6d4515b1,b809d9576e7ad1c2590867939e0f952d6d4515b1,Issue #28 : Fix a bug about `os.execute`
+yuin,2015-05-11 10:30:20,https://api.github.com/repos/yuin/gopher-lua/git/commits/3bd65eb387943a75f7a0be0e87ddc56264e68735,3bd65eb387943a75f7a0be0e87ddc56264e68735,go fmt
+yuin,2015-05-11 10:21:40,https://api.github.com/repos/yuin/gopher-lua/git/commits/a6dcc25e407da4458d4d11f83fa07522606ffdec,a6dcc25e407da4458d4d11f83fa07522606ffdec,add tests
+yuin,2015-05-09 10:47:38,https://api.github.com/repos/yuin/gopher-lua/git/commits/d7724e0e97994ceb32954921b34476eeb5a4dd2c,d7724e0e97994ceb32954921b34476eeb5a4dd2c,add LUserData section ( refs #27 )
+yuin,2015-05-08 11:16:46,https://api.github.com/repos/yuin/gopher-lua/git/commits/0a4bd42ab79170974540ba96f8311bdaf9fa9971,0a4bd42ab79170974540ba96f8311bdaf9fa9971,improve error message comptibilities
+yuin,2015-05-08 11:16:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/56bfa9944154e9fa46cc951e15629a0b0369e3d0,56bfa9944154e9fa46cc951e15629a0b0369e3d0,cleanup code
+yuin,2015-05-07 11:24:23,https://api.github.com/repos/yuin/gopher-lua/git/commits/bd6e94ca8e337e5a3396c187d93413609280623f,bd6e94ca8e337e5a3396c187d93413609280623f,add tests
+yuin,2015-05-07 11:20:41,https://api.github.com/repos/yuin/gopher-lua/git/commits/875476cfd4c541d50ef3818d1d42b5d3a3617245,875476cfd4c541d50ef3818d1d42b5d3a3617245,add tests
+yuin,2015-05-05 04:25:10,https://api.github.com/repos/yuin/gopher-lua/git/commits/00482cbc9145121a5c1a9a010d8eb38fa2d70a47,00482cbc9145121a5c1a9a010d8eb38fa2d70a47,fix test cases
+yuin,2015-05-05 04:17:20,https://api.github.com/repos/yuin/gopher-lua/git/commits/d64b134198afb7ab8f8a953cc978578338a441a1,d64b134198afb7ab8f8a953cc978578338a441a1,add tests
+yuin,2015-05-05 04:14:58,https://api.github.com/repos/yuin/gopher-lua/git/commits/a3ee7abff910665296f0aeded6fd29bfd71f09f4,a3ee7abff910665296f0aeded6fd29bfd71f09f4,add tests
+yuin,2015-05-04 06:37:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/831b2d9da835238c4ce1609f8c608c37f3db3359,831b2d9da835238c4ce1609f8c608c37f3db3359,add a test case for issue #24
+yuin,2015-05-04 06:34:06,https://api.github.com/repos/yuin/gopher-lua/git/commits/f24e1dbf47b3bea2d5cc3ceca428a7f4d52d2316,f24e1dbf47b3bea2d5cc3ceca428a7f4d52d2316,change travis settings
+yuin,2015-05-04 06:31:54,https://api.github.com/repos/yuin/gopher-lua/git/commits/b5b9c7b37f0a60bcd6f473f67c189e9fa10bd476,b5b9c7b37f0a60bcd6f473f67c189e9fa10bd476,"Merge pull request #25 from name5566/master
+
+Issue #24: string.find, string.sub with 0 index"
+name5566,2015-05-04 06:24:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/1e59ed71cb1c2c3f6ad3beeacc69a72070e6171c,1e59ed71cb1c2c3f6ad3beeacc69a72070e6171c,"Issue #24: string.find, string.sub with 0 index"
+yuin,2015-05-01 11:42:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/1e11b1af85fa1e3487760da982e65f1a5de40d94,1e11b1af85fa1e3487760da982e65f1a5de40d94,add state tests
+yuin,2015-05-01 02:31:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/02fdd72a8d962c5a6df90ab09b3c67c266e4a379,02fdd72a8d962c5a6df90ab09b3c67c266e4a379,add table tests
+yuin,2015-04-30 11:58:34,https://api.github.com/repos/yuin/gopher-lua/git/commits/8c839cc168e2e0314de8348e755e3f3dd2c728a8,8c839cc168e2e0314de8348e755e3f3dd2c728a8,add auxlib tests
+yuin,2015-04-30 11:08:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/fcafa6fb88bbab0039b9930ba83a7214f3705822,fcafa6fb88bbab0039b9930ba83a7214f3705822,improve script tests
+yuin,2015-04-30 10:51:19,https://api.github.com/repos/yuin/gopher-lua/git/commits/396df59a7dd82b5f584a4394c3bc6752b3be6565,396df59a7dd82b5f584a4394c3bc6752b3be6565,add Coveralls badge
+yuin,2015-04-30 10:46:55,https://api.github.com/repos/yuin/gopher-lua/git/commits/1bd867bcd2f8951589b39560889b20dc4352a80c,1bd867bcd2f8951589b39560889b20dc4352a80c,add Coveralls settings
+yuin,2015-04-28 10:41:38,https://api.github.com/repos/yuin/gopher-lua/git/commits/c48b3527400fad38752f5f0e35c3a35ac34f10c1,c48b3527400fad38752f5f0e35c3a35ac34f10c1,add debug lib tests
+yuin,2015-04-28 02:48:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/271b1e8a08fdbe24b5da3211ea670d1501c69a2c,271b1e8a08fdbe24b5da3211ea670d1501c69a2c,add coroutine api tests
+yuin,2015-04-28 02:10:01,https://api.github.com/repos/yuin/gopher-lua/git/commits/ea06f22848285e3af68131b64fa45eedc78ccb53,ea06f22848285e3af68131b64fa45eedc78ccb53,add more channellib tests
+yuin,2015-04-27 12:14:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/9d7cf7726fc8fa63f5df0b928967c03acf0b9576,9d7cf7726fc8fa63f5df0b928967c03acf0b9576,clear current frame pointer
+yuin,2015-04-27 12:10:49,https://api.github.com/repos/yuin/gopher-lua/git/commits/8302774a444ff0b7105fb21e26d2e3afd99dd7bf,8302774a444ff0b7105fb21e26d2e3afd99dd7bf,add channellib tests
+yuin,2015-04-24 02:50:44,https://api.github.com/repos/yuin/gopher-lua/git/commits/a973e18b86e1038a6063c0bd0866ff2c120b3728,a973e18b86e1038a6063c0bd0866ff2c120b3728,update docs
+yuin,2015-04-24 02:48:54,https://api.github.com/repos/yuin/gopher-lua/git/commits/be9f1e4867b543435213077b71d2b88492668930,be9f1e4867b543435213077b71d2b88492668930,update docs
+yuin,2015-04-24 02:15:47,https://api.github.com/repos/yuin/gopher-lua/git/commits/5184a6200639186a85a44b55118f404f0695d5a9,5184a6200639186a85a44b55118f404f0695d5a9,update docs
+yuin,2015-04-23 04:33:36,https://api.github.com/repos/yuin/gopher-lua/git/commits/2af1f2e4a3c7143516e9e76005cb0e3fc300dedf,2af1f2e4a3c7143516e9e76005cb0e3fc300dedf,update docs ( close #17 )
+yuin,2015-04-23 02:21:54,https://api.github.com/repos/yuin/gopher-lua/git/commits/07d37ee7609f1defe39fb01f0dbbe49046dbca68,07d37ee7609f1defe39fb01f0dbbe49046dbca68,"Merge pull request #22 from yuin/fix_table_remove
+
+Issue #19 : table.remove now returns a deleted element"
+yuin,2015-04-23 02:18:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/05ba6c8847c0f5b915604c393ec9f31d6a24080e,05ba6c8847c0f5b915604c393ec9f31d6a24080e,Issue #19 : table.remove now returns a deleted element
+yuin,2015-04-23 01:55:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/e58df6185024efc020e1d9d74a5b08c8660da705,e58df6185024efc020e1d9d74a5b08c8660da705,"Merge pull request #21 from yuin/disallow_nil_table_index
+
+Issue #16: disallow nil table index"
+yuin,2015-04-23 01:53:14,https://api.github.com/repos/yuin/gopher-lua/git/commits/941c279f0a42b981cc3e690be7c4a41c787f1f42,941c279f0a42b981cc3e690be7c4a41c787f1f42,Issue #16: disallow nil table index
+yuin,2015-04-13 08:21:08,https://api.github.com/repos/yuin/gopher-lua/git/commits/c085e92a3f7e3dd0bc71560373a84bba94808364,c085e92a3f7e3dd0bc71560373a84bba94808364,"Merge pull request #15 from bontibon/gofmt
+
+go fmt"
+yuin,2015-04-13 08:20:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/9456064da26eeba40680060f79c61c1fb5f817ff,9456064da26eeba40680060f79c61c1fb5f817ff,"Merge pull request #14 from bontibon/table-delete-fix
+
+fix table not deleting dict values"
+bontibon,2015-04-11 12:28:39,https://api.github.com/repos/yuin/gopher-lua/git/commits/b77dee19edf153a1ca09f8840ecd930a8f5a597b,b77dee19edf153a1ca09f8840ecd930a8f5a597b,go fmt
+bontibon,2015-04-11 12:20:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/9b34e64cae61721a28d32c772fda07b1bd960e9c,9b34e64cae61721a28d32c772fda07b1bd960e9c,"fix table not deleting dict values
+
+When LNil is used as the value in a table assignment, it should delete
+the key, rather than storing it in the table. Doing the latter can cause
+huge amounts of memory to be wasted."
+yuin,2015-04-04 02:31:11,https://api.github.com/repos/yuin/gopher-lua/git/commits/d1cafc4d4b79d9e1603e079bb238fcd9ee58722c,d1cafc4d4b79d9e1603e079bb238fcd9ee58722c,io.popen should invoke the shell ( refs #13 )
+yuin,2015-04-01 11:48:19,https://api.github.com/repos/yuin/gopher-lua/git/commits/27d363a3341ff2a9670776deaafdec48ef9d9084,27d363a3341ff2a9670776deaafdec48ef9d9084,fixed: io.open with 'a' failed on linux
+yuin,2015-04-01 10:27:53,https://api.github.com/repos/yuin/gopher-lua/git/commits/c4ff22e80a20c4342bca8f2ed4322c042bb9dda3,c4ff22e80a20c4342bca8f2ed4322c042bb9dda3,use travis ci
+yuin,2015-04-01 10:25:31,https://api.github.com/repos/yuin/gopher-lua/git/commits/d448c3fed154c6a63e20130dda11f3d35048c196,d448c3fed154c6a63e20130dda11f3d35048c196,performance improvements
+yuin,2015-03-23 12:25:17,https://api.github.com/repos/yuin/gopher-lua/git/commits/cb1b72720ad144392cbf293c8b04f913bb713020,cb1b72720ad144392cbf293c8b04f913bb713020,add a link
+yuin,2015-03-16 16:31:07,https://api.github.com/repos/yuin/gopher-lua/git/commits/d6d4dfba82cfcd913bb2eab35b3155ba98d0e2c5,d6d4dfba82cfcd913bb2eab35b3155ba98d0e2c5,update docs
+yuin,2015-03-16 16:12:31,https://api.github.com/repos/yuin/gopher-lua/git/commits/fecd9d036714f731131736de23e634ebe1e9f75b,fecd9d036714f731131736de23e634ebe1e9f75b,improve error handling on channel operations
+yuin,2015-03-16 15:05:09,https://api.github.com/repos/yuin/gopher-lua/git/commits/77a42271cc4849575efd535d5353a83cceaf550d,77a42271cc4849575efd535d5353a83cceaf550d,improve error handling on channel operations
+yuin,2015-03-11 09:00:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/bf31bf247abebaa98158078c521b8c4e2f39c2db,bf31bf247abebaa98158078c521b8c4e2f39c2db,fixed MaxN bug
+yuin,2015-03-06 07:56:28,https://api.github.com/repos/yuin/gopher-lua/git/commits/e0a9fcdc1b6180984b444016e0a1b1528adc216b,e0a9fcdc1b6180984b444016e0a1b1528adc216b,update docs
+yuin,2015-02-28 08:35:24,https://api.github.com/repos/yuin/gopher-lua/git/commits/67b4bef33ee0e4fc01320b00a372101c908c552c,67b4bef33ee0e4fc01320b00a372101c908c552c,fixed: backslash causes error in the pattern match
+yuin,2015-02-28 08:18:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/fd7274ce01679887249cfd78047832230ba98052,fd7274ce01679887249cfd78047832230ba98052,compiler bug for a function call expression ( refs #10 )
+yuin,2015-02-28 06:57:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/ca03869a34d49d421da32815aec6920b9ee30b7f,ca03869a34d49d421da32815aec6920b9ee30b7f,compiler bug for a table expression ( refs #10 )
+yuin,2015-02-27 07:57:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/b479a62c8e3585b33330f1a7d441c29b4445d6ad,b479a62c8e3585b33330f1a7d441c29b4445d6ad,update doc
+yuin,2015-02-25 11:12:10,https://api.github.com/repos/yuin/gopher-lua/git/commits/7a43a95fe5a028fb1b501bbe880dea7dab9ccf7d,7a43a95fe5a028fb1b501bbe880dea7dab9ccf7d,'print' should call the __tostring metamethod
+yuin,2015-02-25 01:41:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/61cb38d39955f0203a1a061eec95c36f441fea78,61cb38d39955f0203a1a061eec95c36f441fea78,fix typo ( closes #8 )
+yuin,2015-02-24 10:43:21,https://api.github.com/repos/yuin/gopher-lua/git/commits/6f53937e0bad443cd803eadb56d76ad75a29767c,6f53937e0bad443cd803eadb56d76ad75a29767c,update docs
+yuin,2015-02-24 10:39:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/caf3a10fceafd9db9892eba35f42742318a7233e,caf3a10fceafd9db9892eba35f42742318a7233e,add channel operations
+yuin,2015-02-24 10:37:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/71306047bcc55516ef384fa960952d3e7eff7c50,71306047bcc55516ef384fa960952d3e7eff7c50,add a channel type
+yuin,2015-02-23 13:38:51,https://api.github.com/repos/yuin/gopher-lua/git/commits/3f90308fa2752fde9ea6cf6ae9d3fb5e52a9afd1,3f90308fa2752fde9ea6cf6ae9d3fb5e52a9afd1,closed #6
+yuin,2015-02-23 11:34:15,https://api.github.com/repos/yuin/gopher-lua/git/commits/197708c0f7af3bfed5fa0df666240d79c9a7280b,197708c0f7af3bfed5fa0df666240d79c9a7280b,Improved error handling
+yuin,2015-02-22 02:28:35,https://api.github.com/repos/yuin/gopher-lua/git/commits/6327022d5824a61eccd70f1a3c04b8632621ca6b,6327022d5824a61eccd70f1a3c04b8632621ca6b,"Merge pull request #3 from chobie/patch-1
+
+it should be pass LState pointer"
+chobie,2015-02-22 00:15:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/02509918eb63cbbeb734c2a7b49c6e6fdd69a3c9,02509918eb63cbbeb734c2a7b49c6e6fdd69a3c9,it should be pass LState pointer
+yuin,2015-02-20 10:23:27,https://api.github.com/repos/yuin/gopher-lua/git/commits/51ca3775bba664798c700f19c7983e96dc651a56,51ca3775bba664798c700f19c7983e96dc651a56,RegisterModuleToTable -> SetFuncs
+yuin,2015-02-19 04:10:03,https://api.github.com/repos/yuin/gopher-lua/git/commits/64f9801507fc7d024b04060fb084b3c66f654b51,64f9801507fc7d024b04060fb084b3c66f654b51,remove needless imports
+yuin,2015-02-19 04:06:59,https://api.github.com/repos/yuin/gopher-lua/git/commits/4593221b0f759d2585db2042cb75498a508ec25a,4593221b0f759d2585db2042cb75498a508ec25a,add a standard method to create and load lua modules by Go
+yuin,2015-02-17 02:20:24,https://api.github.com/repos/yuin/gopher-lua/git/commits/ee3f1eb326024a842768126079c000042dd2189e,ee3f1eb326024a842768126079c000042dd2189e,add test dirs
+yuin,2015-02-17 02:18:53,https://api.github.com/repos/yuin/gopher-lua/git/commits/a4d287fea5ae607b75eb077eab1bf085d2d292d2,a4d287fea5ae607b75eb077eab1bf085d2d292d2,Merge branch 'master' of github.com:yuin/gopher-lua
+yuin,2015-02-17 02:18:28,https://api.github.com/repos/yuin/gopher-lua/git/commits/d9ae866949d5abf31e5c263b2b71ad70f807dcc7,d9ae866949d5abf31e5c263b2b71ad70f807dcc7,change argument types
+yuin,2015-02-16 14:35:42,https://api.github.com/repos/yuin/gopher-lua/git/commits/3a93e67c8ce71dee864055a727e1e0a4770cfe68,3a93e67c8ce71dee864055a727e1e0a4770cfe68,"Merge pull request #2 from hajimehoshi/break-on-eof
+
+glua: Terminate on EOF"
+hajimehoshi,2015-02-16 14:24:28,https://api.github.com/repos/yuin/gopher-lua/git/commits/2c1c30473ee38bd1f27db7840d6443efdd5bbfe4,2c1c30473ee38bd1f27db7840d6443efdd5bbfe4,glua: Terminate on EOF
+yuin,2015-02-16 06:08:57,https://api.github.com/repos/yuin/gopher-lua/git/commits/7250ec39cfe5289138eab72a2f0df4f0d44b9dcb,7250ec39cfe5289138eab72a2f0df4f0d44b9dcb,add a license file
+yuin,2015-02-16 04:30:23,https://api.github.com/repos/yuin/gopher-lua/git/commits/978ebce6ddc3bed6d60bf1aeab0d9917af961957,978ebce6ddc3bed6d60bf1aeab0d9917af961957,update docs
+yuin,2015-02-16 03:03:43,https://api.github.com/repos/yuin/gopher-lua/git/commits/80ac6837682cbd47516dd7138b4b05fb7b3980f3,80ac6837682cbd47516dd7138b4b05fb7b3980f3,"Merge pull request #1 from mattn/fix-overflow
+
+'whitespace' become possibly overflow on 32bit architecture."
+yuin,2015-02-16 03:01:16,https://api.github.com/repos/yuin/gopher-lua/git/commits/0f94cdae7cd5a689db9fa7271479e6755da3f7bf,0f94cdae7cd5a689db9fa7271479e6755da3f7bf,add benchmark results
+mattn,2015-02-16 02:06:32,https://api.github.com/repos/yuin/gopher-lua/git/commits/dd16d2026bf81b548788400c7df3d5d67a31904e,dd16d2026bf81b548788400c7df3d5d67a31904e,'whitespace' become possibly overflow on 32bit architecture.
+yuin,2015-02-15 18:26:17,https://api.github.com/repos/yuin/gopher-lua/git/commits/81f73ce2301ebe93e3313c30c2958f852d183c18,81f73ce2301ebe93e3313c30c2958f852d183c18,fix
+yuin,2015-02-15 13:36:13,https://api.github.com/repos/yuin/gopher-lua/git/commits/2876e2e668b43d4c295533152eff1c51f0f8edbd,2876e2e668b43d4c295533152eff1c51f0f8edbd,update docs
+yuin,2015-02-15 13:25:29,https://api.github.com/repos/yuin/gopher-lua/git/commits/5f9016a290fe1059badf1242b96de45e59f496e6,5f9016a290fe1059badf1242b96de45e59f496e6,first commit

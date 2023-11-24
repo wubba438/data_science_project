@@ -1,0 +1,225 @@
+http-api-design,HTTP API design guide extracted from work on the Heroku Platform API
+username,timestamp,url,sha,message
+geemus,2019-03-18 17:49:15,https://api.github.com/repos/interagent/http-api-design/git/commits/e1c44aac4d436974dca599b4e8bc7140a0e8a5d8,e1c44aac4d436974dca599b4e8bc7140a0e8a5d8,"Merge pull request #96 from jessieay/master
+
+Add guidance on providing standard response types"
+jessieay,2019-03-15 23:52:20,https://api.github.com/repos/interagent/http-api-design/git/commits/f5b0d2f3585a7fc522cf19f06089e79cc4c66c2e,f5b0d2f3585a7fc522cf19f06089e79cc4c66c2e,Add object type def
+jessieay,2019-03-15 23:32:02,https://api.github.com/repos/interagent/http-api-design/git/commits/809b0ba2764be7fd70ebdbc7808cf53cbf5f2156,809b0ba2764be7fd70ebdbc7808cf53cbf5f2156,Describe return values for each basic data type
+jessieay,2019-03-15 22:45:32,https://api.github.com/repos/interagent/http-api-design/git/commits/4398c205f41c77aa3f3cde0e8260d586dfeb8564,4398c205f41c77aa3f3cde0e8260d586dfeb8564,Add to summary
+jessieay,2019-03-15 22:43:02,https://api.github.com/repos/interagent/http-api-design/git/commits/9ee9b3ee39a9a9de739f133462ab9d2b2743d05b,9ee9b3ee39a9a9de739f133462ab9d2b2743d05b,"Add guidance on providing standard response types
+
+* Returning an empty array rather than `NULL` helps consumers avoid
+conditionals.
+* Duck types FTW
+* Except for `NULL`, I guess
+* This came up when I learned that Oj parses BigDecimals as Strings.
+Seemed like bad API design to sometimes return a Number and sometimes
+return a String but this idea had not been articulated in the HTTP
+Design Guide."
+geemus,2018-04-16 15:15:26,https://api.github.com/repos/interagent/http-api-design/git/commits/1d822a9fe91c9b5621fae7181d4a38d82cc48931,1d822a9fe91c9b5621fae7181d4a38d82cc48931,fix fragment references for gitbook build error
+geemus,2018-04-13 15:05:14,https://api.github.com/repos/interagent/http-api-design/git/commits/d1480a6be25eb601e963f5a6bf8a98cafc0a6ec8,d1480a6be25eb601e963f5a6bf8a98cafc0a6ec8,"Merge pull request #92 from caseywatts/partial-records
+
+Avoid partial records in relationships"
+geemus,2018-04-13 14:55:09,https://api.github.com/repos/interagent/http-api-design/git/commits/ce104c12f8667633fbc9b7255555ae9f6bab3ef3,ce104c12f8667633fbc9b7255555ae9f6bab3ef3,Tweak wording
+caseywatts,2018-04-13 14:44:20,https://api.github.com/repos/interagent/http-api-design/git/commits/b69e758d0d5b7332b1e28e3d176eabe78158de2a,b69e758d0d5b7332b1e28e3d176eabe78158de2a,describe that we should avoid partial records
+geemus,2016-10-20 13:46:50,https://api.github.com/repos/interagent/http-api-design/git/commits/928eb3b255a5c54f94753b2195ba2bc282e82754,928eb3b255a5c54f94753b2195ba2bc282e82754,outline the actions-for-collections pattern
+geemus,2016-07-05 16:59:12,https://api.github.com/repos/interagent/http-api-design/git/commits/b1cea73ba46e47b9fa6520e5bbedf771b066cf62,b1cea73ba46e47b9fa6520e5bbedf771b066cf62,tweak language around 200/201 and location header
+geemus,2016-07-05 16:45:13,https://api.github.com/repos/interagent/http-api-design/git/commits/6c6e12d9c10524964072b81d2ec70c0c90ca7cef,6c6e12d9c10524964072b81d2ec70c0c90ca7cef,"Merge pull request #90 from joe-mojo/master
+
+200 and 201 and location headers"
+joe-mojo,2016-07-05 15:41:35,https://api.github.com/repos/interagent/http-api-design/git/commits/eece01b453c99a8cccf0da3201b20680ed29f2f3,eece01b453c99a8cccf0da3201b20680ed29f2f3,Use Locationheader
+joe-mojo,2016-07-05 15:34:51,https://api.github.com/repos/interagent/http-api-design/git/commits/04e014de94fcc6dbfab957d7e2ed2cb30f825765,04e014de94fcc6dbfab957d7e2ed2cb30f825765,"POST must return 200 when no used for creation, PUT must return 201 when creating a resource"
+geemus,2016-07-05 15:01:17,https://api.github.com/repos/interagent/http-api-design/git/commits/5d93613fcada0648e6027c994495e8f7cf1262d5,5d93613fcada0648e6027c994495e8f7cf1262d5,link to gitbook details page instead
+geemus,2016-07-05 14:46:46,https://api.github.com/repos/interagent/http-api-design/git/commits/387d8ead55422e8eb2585704e8bbce6f14acce5f,387d8ead55422e8eb2585704e8bbce6f14acce5f,"cleanup translations section
+
+* explicitly call out gitbook vs git translations
+* alpha-sort language lists"
+geemus,2016-07-05 14:40:40,https://api.github.com/repos/interagent/http-api-design/git/commits/80e94c1343da8a6eae982fe239d463d1f6fd6a50,80e94c1343da8a6eae982fe239d463d1f6fd6a50,more prominent linking to gitbook in README
+geemus,2016-04-27 14:34:06,https://api.github.com/repos/interagent/http-api-design/git/commits/1339ede3568e8707b8413497bf28aa1aa532947f,1339ede3568e8707b8413497bf28aa1aa532947f,"Merge pull request #86 from benoittgt/master
+
+Fix Summary and Contributing links"
+benoittgt,2016-04-27 13:26:52,https://api.github.com/repos/interagent/http-api-design/git/commits/a86ba2de9e86a6f9d1762ea763d6ad8f27f91483,a86ba2de9e86a6f9d1762ea763d6ad8f27f91483,Fix Summary and Contributing links
+geemus,2016-04-25 14:09:14,https://api.github.com/repos/interagent/http-api-design/git/commits/bbb5b28779de32ece4df425e37c155cb6e1c08c5,bbb5b28779de32ece4df425e37c155cb6e1c08c5,add italian to langs
+geemus,2016-04-25 14:08:18,https://api.github.com/repos/interagent/http-api-design/git/commits/a68f44fb1b3ca3a18dcd4d09bd6a4cbceeb57584,a68f44fb1b3ca3a18dcd4d09bd6a4cbceeb57584,"Merge pull request #85 from diegomariani/master
+
+updated italian translation"
+geemus,2016-03-17 14:12:55,https://api.github.com/repos/interagent/http-api-design/git/commits/e2447a4c3c110e73a7968e432764e2ae5c69c1e4,e2447a4c3c110e73a7968e432764e2ae5c69c1e4,more explicit contributing link
+geemus,2016-02-17 22:30:47,https://api.github.com/repos/interagent/http-api-design/git/commits/c13928e8a09eb9c100962bd154112d64e303ac7e,c13928e8a09eb9c100962bd154112d64e303ac7e,duplicate README to en
+geemus,2016-02-17 22:27:02,https://api.github.com/repos/interagent/http-api-design/git/commits/503b92f9db25f23f66bc512be86aac6f562c2427,503b92f9db25f23f66bc512be86aac6f562c2427,setting up for multi-language
+geemus,2016-01-25 19:48:59,https://api.github.com/repos/interagent/http-api-design/git/commits/34ae0c6ccc6823ea3a385e173b6183e3e2feb2be,34ae0c6ccc6823ea3a385e173b6183e3e2feb2be,"use status as singleton example
+
+closes #39"
+geemus,2015-12-16 23:36:20,https://api.github.com/repos/interagent/http-api-design/git/commits/a42f434c9f211885a77ceb3565a49308e8487b27,a42f434c9f211885a77ceb3565a49308e8487b27,add a link to githbook in README
+geemus,2015-11-22 00:02:20,https://api.github.com/repos/interagent/http-api-design/git/commits/9f6acb6fe0609bb5c1a8983c741f831b473f99d5,9f6acb6fe0609bb5c1a8983c741f831b473f99d5,add descriptions to section READMEs
+brandur,2015-11-19 18:33:01,https://api.github.com/repos/interagent/http-api-design/git/commits/8ba6c494d5d464fd2bcc1a1b50e4742369002b74,8ba6c494d5d464fd2bcc1a1b50e4742369002b74,"Merge pull request #82 from OscarScholten/patch-1
+
+broken link to section on ranges"
+OscarScholten,2015-11-19 12:36:03,https://api.github.com/repos/interagent/http-api-design/git/commits/1f256ff1b6d4a3558505177e9103ed969ec3e809,1f256ff1b6d4a3558505177e9103ed969ec3e809,"broken link to section on ranges
+
+Hi - not sure how links in this new format should be done, but this link was pointing to the old anchor."
+geemus,2015-11-09 16:02:52,https://api.github.com/repos/interagent/http-api-design/git/commits/3e33d485185a97c800a46a73332ccd9640c0ff57,3e33d485185a97c800a46a73332ccd9640c0ff57,cleanup and convert to gitbook format
+brandur,2015-11-05 06:17:39,https://api.github.com/repos/interagent/http-api-design/git/commits/bb1441f708c0c606ee644ed2e2f75ef9f0ab8f1e,bb1441f708c0c606ee644ed2e2f75ef9f0ab8f1e,Remove improper pluralization of `Accept`
+geemus,2015-07-14 18:19:43,https://api.github.com/repos/interagent/http-api-design/git/commits/50bda693252a4f52653d638fd5503b39b88b8470,50bda693252a4f52653d638fd5503b39b88b8470,"Merge pull request #78 from Gutem/Portuguese
+
+Add Portuguese version link"
+Gutem,2015-07-14 17:57:38,https://api.github.com/repos/interagent/http-api-design/git/commits/61ea848a60f131bbe32199dd84cb95bce6cd4c18,61ea848a60f131bbe32199dd84cb95bce6cd4c18,Add Portuguese version link
+geemus,2015-05-13 23:56:47,https://api.github.com/repos/interagent/http-api-design/git/commits/fba98f08b50acbb08b7b30c012a6d0ca795e29ee,fba98f08b50acbb08b7b30c012a6d0ca795e29ee,"Merge pull request #76 from ms-ati/patch-2
+
+Move bullets from Requests to Responses"
+ms-ati,2015-05-13 22:33:04,https://api.github.com/repos/interagent/http-api-design/git/commits/53c54253e4bf90fd2854633461f4af25f1ec7ff2,53c54253e4bf90fd2854633461f4af25f1ec7ff2,"Move bullets from Requests to Responses
+
+Perhaps I'm not understanding, but aren't *status code* and *provide full resources* concerns related to Responses, rather than Requests?"
+geemus,2015-05-01 18:23:05,https://api.github.com/repos/interagent/http-api-design/git/commits/4391418e6644872f496fa0d67275b95e7cfa4cde,4391418e6644872f496fa0d67275b95e7cfa4cde,"Merge pull request #74 from hkulekci/translation
+
+added turkish translation link"
+hkulekci,2015-05-01 17:18:10,https://api.github.com/repos/interagent/http-api-design/git/commits/f97df644ebad9d82997f729eaee18719b3a5eab0,f97df644ebad9d82997f729eaee18719b3a5eab0,link changed to directly /tr folder
+hkulekci,2015-04-29 19:45:41,https://api.github.com/repos/interagent/http-api-design/git/commits/8e92bd6e5cc448008b16091b03858b3c1d0c4bc5,8e92bd6e5cc448008b16091b03858b3c1d0c4bc5,turkish version
+geemus,2015-04-28 14:07:43,https://api.github.com/repos/interagent/http-api-design/git/commits/6e74aee5bcdc36985a70528c836d006f00ad48db,6e74aee5bcdc36985a70528c836d006f00ad48db,"Merge pull request #73 from jmnavarro/add-translation
+
+Add Spanish translation"
+jmnavarro,2015-04-27 20:18:09,https://api.github.com/repos/interagent/http-api-design/git/commits/bfa67f6da0947c8c220d8727554ed062ce18e50d,bfa67f6da0947c8c220d8727554ed062ce18e50d,Added Spanish (from Spain) translation
+jmnavarro,2015-04-27 20:17:44,https://api.github.com/repos/interagent/http-api-design/git/commits/2e9a70daaa68a4da6d8001d2d77ce38bedaf8116,2e9a70daaa68a4da6d8001d2d77ce38bedaf8116,Fix typo
+geemus,2015-04-24 17:26:42,https://api.github.com/repos/interagent/http-api-design/git/commits/a037c7921096e0cfafe04c5037afc15ff434ec5d,a037c7921096e0cfafe04c5037afc15ff434ec5d,update contributors
+geemus,2015-03-21 16:02:30,https://api.github.com/repos/interagent/http-api-design/git/commits/2a74f45b9afaf6c951352f36c3a4e1b0418ed10b,2a74f45b9afaf6c951352f36c3a4e1b0418ed10b,"Merge pull request #71 from DyegoCosta/fix-typo
+
+Fix typo"
+DyegoCosta,2015-03-21 15:40:41,https://api.github.com/repos/interagent/http-api-design/git/commits/5fc2d7b6d6b2a7b3b1403aeee0cab37acffe8a04,5fc2d7b6d6b2a7b3b1403aeee0cab37acffe8a04,Fix typo
+geemus,2015-03-05 14:50:48,https://api.github.com/repos/interagent/http-api-design/git/commits/c03842fda80261e82860f6dc7e5ccb2b5d394d51,c03842fda80261e82860f6dc7e5ccb2b5d394d51,"Merge pull request #67 from kcyeu/original
+
+add ""Translations"""
+geemus,2015-03-01 14:24:32,https://api.github.com/repos/interagent/http-api-design/git/commits/c763452a68b387b12bc1bb3543cdbb079eac5ddf,c763452a68b387b12bc1bb3543cdbb079eac5ddf,"Merge pull request #65 from mo-group/chentsulin-patch-1
+
+Add a missing dot"
+chentsulin,2015-03-01 06:37:36,https://api.github.com/repos/interagent/http-api-design/git/commits/93a84f392651598845f4376f06c5dc12104c240f,93a84f392651598845f4376f06c5dc12104c240f,"a missing dot, e.g -> e.g."
+chentsulin,2015-02-27 18:50:04,https://api.github.com/repos/interagent/http-api-design/git/commits/cbfbce6cb4ccdad4f6d057f40fec48f43c975240,cbfbce6cb4ccdad4f6d057f40fec48f43c975240,fix link #divide-large-responses-across-requests-with-ranges
+geemus,2015-02-03 18:13:42,https://api.github.com/repos/interagent/http-api-design/git/commits/232f8dc6a941d0b25136bf64998242dae5575f66,232f8dc6a941d0b25136bf64998242dae5575f66,"Merge pull request #63 from dpassage/patch-1
+
+fix Accept header typo"
+dpassage,2015-02-03 18:12:20,https://api.github.com/repos/interagent/http-api-design/git/commits/337c4a05ad08f25c5e232a72638f063925f3228a,337c4a05ad08f25c5e232a72638f063925f3228a,fix Accept header typo
+geemus,2015-01-23 23:58:18,https://api.github.com/repos/interagent/http-api-design/git/commits/df84b1b72e4bf8462433e77f116c97e726eba61e,df84b1b72e4bf8462433e77f116c97e726eba61e,update TOC nesting to reflect structure
+geemus,2015-01-23 23:55:10,https://api.github.com/repos/interagent/http-api-design/git/commits/f2c61f94bbfb5a9225db9541ddc2e7037c270126,f2c61f94bbfb5a9225db9541ddc2e7037c270126,add separate concerns section
+geemus,2015-01-23 21:32:42,https://api.github.com/repos/interagent/http-api-design/git/commits/a95c0fddab10fb59c594ce04d2baee2ea3d5f4e7,a95c0fddab10fb59c594ce04d2baee2ea3d5f4e7,cleanup ranges info
+geemus,2015-01-23 21:29:33,https://api.github.com/repos/interagent/http-api-design/git/commits/9b09a41962606a180e407a8725c2b94196faa117,9b09a41962606a180e407a8725c2b94196faa117,cleanup/tweaks around versioning
+geemus,2015-01-23 21:19:41,https://api.github.com/repos/interagent/http-api-design/git/commits/537d2ab5389ee0a562d316de002bf189eff44ff4,537d2ab5389ee0a562d316de002bf189eff44ff4,cleanup request-id section
+geemus,2015-01-23 21:15:39,https://api.github.com/repos/interagent/http-api-design/git/commits/69c15d739e81835cb1e2960d8f9ac01262de9815,69c15d739e81835cb1e2960d8f9ac01262de9815,cleanup wording around TLS
+geemus,2015-01-23 21:14:18,https://api.github.com/repos/interagent/http-api-design/git/commits/a2d03fff9d9b08bd081061e7be214a7035c4de67,a2d03fff9d9b08bd081061e7be214a7035c4de67,cleanup/edits around etags
+geemus,2014-12-02 15:46:13,https://api.github.com/repos/interagent/http-api-design/git/commits/c3a69b530274e2f776b2030f9ed790af0f6cbf3d,c3a69b530274e2f776b2030f9ed790af0f6cbf3d,"Merge pull request #54 from krallin/patch-1
+
+Mention PUT in suggested response status codes"
+krallin,2014-12-02 11:18:12,https://api.github.com/repos/interagent/http-api-design/git/commits/a6c15c9fb196171fa535c50821361eeea2d55e44,a6c15c9fb196171fa535c50821361eeea2d55e44,"Suggest appropriate response codes for PUT
+
+The response code to a PUT call should depend on the action that was
+actually taken by the server."
+geemus,2014-12-01 14:28:22,https://api.github.com/repos/interagent/http-api-design/git/commits/fe0ed367d1746c63f30db83c33e4ea031366ac47,fe0ed367d1746c63f30db83c33e4ea031366ac47,"Merge pull request #51 from eerwitt/master
+
+Code block color changes and removed extra space in minification example."
+geemus,2014-11-26 19:46:20,https://api.github.com/repos/interagent/http-api-design/git/commits/5505d03fe37542c28f76df664aecee74b2b3a5f5,5505d03fe37542c28f76df664aecee74b2b3a5f5,"Merge pull request #50 from triplepoint/patch-1
+
+Replace HTTP/1.1 RFC 2616 reference with RFC 7231."
+triplepoint,2014-11-26 19:28:39,https://api.github.com/repos/interagent/http-api-design/git/commits/bb8f49c138698754fcb052136ad68dbb1a9249f2,bb8f49c138698754fcb052136ad68dbb1a9249f2,"Replace HTTP/1.1 RFC 2616 reference with RFC 7231.
+
+The previous HTTP/1.1 RFC 2616 has been replaced by RFC 7231.  The new RFC offers greater clarity around status codes."
+geemus,2014-09-16 14:16:03,https://api.github.com/repos/interagent/http-api-design/git/commits/efed061a966d83302c39c2f6c963e7a80d431cad,efed061a966d83302c39c2f6c963e7a80d431cad,tweak wording for tls recommendations
+geemus,2014-09-16 14:12:07,https://api.github.com/repos/interagent/http-api-design/git/commits/25e711565115f2bcc5a04b1f38213c1e08aebcd8,25e711565115f2bcc5a04b1f38213c1e08aebcd8,"Merge pull request #48 from elmariofredo/master
+
+Fixes #45 Changing ""Require TLS"" section"
+elmariofredo,2014-09-16 11:23:21,https://api.github.com/repos/interagent/http-api-design/git/commits/a50a9a8abb589d57b67fee5f344d83f5c06d5af9,a50a9a8abb589d57b67fee5f344d83f5c06d5af9,"#45 Changing ""Require TLS"" section
+
+to suggest prevent running unsecured API at all to avoid exchange of sensitive data"
+geemus,2014-08-07 15:00:13,https://api.github.com/repos/interagent/http-api-design/git/commits/1784b8bc838ee7dac9a0e281dcd785e1441b45c7,1784b8bc838ee7dac9a0e281dcd785e1441b45c7,"Merge pull request #44 from tomchristie/patch-1
+
+Link properly to 'Keep JSON minified' in contents."
+tomchristie,2014-08-07 14:14:17,https://api.github.com/repos/interagent/http-api-design/git/commits/2c6739cc6ddb04a07d6a73ca8353bae886961c29,2c6739cc6ddb04a07d6a73ca8353bae886961c29,"Link properly to 'Keep JSON minified' in contents.
+
+The headers were out of sync with the current sections as 'Pretty pretty JSON' advice has now changed to 'Keep JSON minified'."
+geemus,2014-08-04 14:24:40,https://api.github.com/repos/interagent/http-api-design/git/commits/dc2ac5157a48f626c69635a8e17ce00e79b950ca,dc2ac5157a48f626c69635a8e17ce00e79b950ca,"Merge pull request #42 from keithamus/patch-1
+
+Recommend JSON to be minified"
+keithamus,2014-08-02 22:59:48,https://api.github.com/repos/interagent/http-api-design/git/commits/2d7f19cbf8007c676e842ebfc9c19502a5bf9cf0,2d7f19cbf8007c676e842ebfc9c19502a5bf9cf0,"Recommend JSON to be minified
+
+As per #40, the guide recommends that all JSON responses should be minified."
+geemus,2014-07-23 13:39:42,https://api.github.com/repos/interagent/http-api-design/git/commits/462fbbbc58a84812fba701bd681b763b6cf0de7c,462fbbbc58a84812fba701bd681b763b6cf0de7c,"Merge pull request #37 from rhoberman/issue-37
+
+Responding for non-TLS requests"
+rhoberman,2014-07-21 17:03:33,https://api.github.com/repos/interagent/http-api-design/git/commits/6a5b1bddec784fb17a814a8ab3fbe35a8af95aa7,6a5b1bddec784fb17a814a8ab3fbe35a8af95aa7,Responding to non-TLS requests.
+geemus,2014-07-07 20:13:19,https://api.github.com/repos/interagent/http-api-design/git/commits/9b3367325048a29f3be90842b72360921249784e,9b3367325048a29f3be90842b72360921249784e,"group topics, closes #29"
+geemus,2014-07-07 15:24:12,https://api.github.com/repos/interagent/http-api-design/git/commits/62b3c5d14038fb4df124a1d5feb68e5545c2e4d9,62b3c5d14038fb4df124a1d5feb68e5545c2e4d9,fix status code value for rate limiting
+geemus,2014-07-07 15:21:06,https://api.github.com/repos/interagent/http-api-design/git/commits/d09a07c9d1009a987eb146c675ca02c571ee1b09,d09a07c9d1009a987eb146c675ca02c571ee1b09,"flesh out status codes for error cases
+
+closes #34"
+geemus,2014-07-02 14:43:09,https://api.github.com/repos/interagent/http-api-design/git/commits/64218f454d7325f7bc81b3c6c47618922be9871e,64218f454d7325f7bc81b3c6c47618922be9871e,"Revert ""adding github pages""
+
+This reverts commit e5bc60212cf9b29cf4acb331cd497dda40c42981."
+geemus,2014-07-02 14:41:30,https://api.github.com/repos/interagent/http-api-design/git/commits/f814720dedd714cf92bad142c21a72ae6cc7417b,f814720dedd714cf92bad142c21a72ae6cc7417b,"Merge pull request #31 from karlcoelho/gh-pages
+
+adding github pages"
+karlcoelho,2014-07-02 14:05:55,https://api.github.com/repos/interagent/http-api-design/git/commits/e5bc60212cf9b29cf4acb331cd497dda40c42981,e5bc60212cf9b29cf4acb331cd497dda40c42981,adding github pages
+geemus,2014-07-02 13:49:28,https://api.github.com/repos/interagent/http-api-design/git/commits/35aedc92b00d9b9068ac3be0210f853a3088637e,35aedc92b00d9b9068ac3be0210f853a3088637e,"Merge pull request #30 from steookk/error-status-codes
+
+Should authorization and authentication error codes be pointed out?"
+geemus,2014-06-30 16:39:50,https://api.github.com/repos/interagent/http-api-design/git/commits/569d9d1b943702541e9db240c5052f593167c5eb,569d9d1b943702541e9db240c5052f593167c5eb,"Merge pull request #28 from steookk/patch-1
+
+added 'minimize path nesting' in Contents"
+steookk,2014-06-29 14:24:57,https://api.github.com/repos/interagent/http-api-design/git/commits/61392f64803f569d4f8f110b3bf41945b1a09b2f,61392f64803f569d4f8f110b3bf41945b1a09b2f,authorization and authentication error codes
+steookk,2014-06-29 11:04:00,https://api.github.com/repos/interagent/http-api-design/git/commits/24bb1307e4f4df62f449cf4039228fe51aec870f,24bb1307e4f4df62f449cf4039228fe51aec870f,added 'minimize path nesting' in contents
+geemus,2014-06-10 15:32:27,https://api.github.com/repos/interagent/http-api-design/git/commits/f38dba6fd8e2b229ab3f09cd84a8828987188863,f38dba6fd8e2b229ab3f09cd84a8828987188863,"Merge pull request #23 from iffy/patch-1
+
+s/SSL/TLS/"
+iffy,2014-06-10 15:15:07,https://api.github.com/repos/interagent/http-api-design/git/commits/17a92305cc670a9956eb41db021c6257b02c5f0e,17a92305cc670a9956eb41db021c6257b02c5f0e,Update README.md
+geemus,2014-06-09 21:30:28,https://api.github.com/repos/interagent/http-api-design/git/commits/0e4a6859487e0bb01b5775a6ad4c2c25c5d4d3ba,0e4a6859487e0bb01b5775a6ad4c2c25c5d4d3ba,"Merge pull request #22 from TravisPaul/patch-1
+
+Should ""SSL"" be replaced with ""TLS""?"
+travispaul,2014-06-09 21:00:24,https://api.github.com/repos/interagent/http-api-design/git/commits/00fe5d38e3e6c702ecf025cb0048acbb981ac168,00fe5d38e3e6c702ecf025cb0048acbb981ac168,"Should ""SSL"" be replaced with ""TLS""?
+
+It seems that it's pretty rare to actually use SSL these days. It may even be better to just to say ""https""."
+geemus,2014-06-06 19:59:54,https://api.github.com/repos/interagent/http-api-design/git/commits/ff1332101ca5994e06dc568ca9cf867075276d71,ff1332101ca5994e06dc568ca9cf867075276d71,"Merge pull request #20 from jamesmanning/patch-1
+
+remove quotes from ""service_class"""
+jamesmanning,2014-06-05 22:51:04,https://api.github.com/repos/interagent/http-api-design/git/commits/2358bfa0732fcccf1cfa9408fdbb307e37ae4d12,2358bfa0732fcccf1cfa9408fdbb307e37ae4d12,"remove quotes from ""service_class""
+
+Since the guidance for attribute names is to downcase and use underscores so that the attribute names can be used without quotes, this just changes the example given to show that behavior.
+
+The quotes being present are still valid JSON / JavaScript, but since the guidance leads to attribute names that can be used without them, having the example not include the quotes shows the benefit."
+brandur,2014-05-31 09:37:31,https://api.github.com/repos/interagent/http-api-design/git/commits/d4f3fa7d145d5d8e18ee6175aba656354df1f779,d4f3fa7d145d5d8e18ee6175aba656354df1f779,Markdown-codify timestamp field names for consistency
+geemus,2014-05-29 20:29:18,https://api.github.com/repos/interagent/http-api-design/git/commits/7e66885279edff840171512ed3909be173ccb1c6,7e66885279edff840171512ed3909be173ccb1c6,"Merge pull request #11 from neonstalwart/patch-1
+
+Update README.md"
+geemus,2014-05-29 20:13:05,https://api.github.com/repos/interagent/http-api-design/git/commits/af515e53f446ea84d50a79dca992c2761b5280ea,af515e53f446ea84d50a79dca992c2761b5280ea,remove unclear reference to 204 returns
+neonstalwart,2014-05-29 17:08:52,https://api.github.com/repos/interagent/http-api-design/git/commits/22978af259e76fc7ad52938352bc995ffc1fc7f3,22978af259e76fc7ad52938352bc995ffc1fc7f3,"Update README.md
+
+suggest using pluralized resource names unless a resource is a singleton"
+mmcgrana,2014-05-28 17:06:49,https://api.github.com/repos/interagent/http-api-design/git/commits/fb6801c6ff8a434f90b0c59d78988468dac4ffc1,fb6801c6ff8a434f90b0c59d78988468dac4ffc1,Merge remote-tracking branch 'snkashis/patch-1'
+snkashis,2014-05-28 17:04:50,https://api.github.com/repos/interagent/http-api-design/git/commits/af7f393a5043e79ef9beffa122b26025cf651232,af7f393a5043e79ef9beffa122b26025cf651232,fix UTC time named anchor
+geemus,2014-05-21 13:35:54,https://api.github.com/repos/interagent/http-api-design/git/commits/1a52e845376502902a47ec451fc1ab579b063c9b,1a52e845376502902a47ec451fc1ab579b063c9b,fix/clarify 202 meaning
+geemus,2014-05-21 13:34:32,https://api.github.com/repos/interagent/http-api-design/git/commits/71694649ac5e9f08c702ea23728610255a0a633c,71694649ac5e9f08c702ea23728610255a0a633c,"Merge pull request #6 from couchand/patch-1
+
+Remove erroneous reference to JSON property names."
+geemus,2014-05-21 13:32:44,https://api.github.com/repos/interagent/http-api-design/git/commits/c1a043b805f16e0ed2087ca3c4ade46bfdd7a694,c1a043b805f16e0ed2087ca3c4ade46bfdd7a694,"Merge pull request #4 from jroes/patch-1
+
+Typo"
+mmcgrana,2014-05-21 13:31:38,https://api.github.com/repos/interagent/http-api-design/git/commits/be82f5fa3ee7467d136f1490e45e6324c99fbee1,be82f5fa3ee7467d136f1490e45e6324c99fbee1,"Merge pull request #7 from stevenbeeckman/patch-1
+
+Human spell check"
+stevenbeeckman,2014-05-21 10:01:21,https://api.github.com/repos/interagent/http-api-design/git/commits/f76805a5de5f11c681070b8410714b4a801c75e5,f76805a5de5f11c681070b8410714b4a801c75e5,Human spell check.
+couchand,2014-05-21 05:56:19,https://api.github.com/repos/interagent/http-api-design/git/commits/f18327a9ff2e438dcc718bcca8dd9fdce626feae,f18327a9ff2e438dcc718bcca8dd9fdce626feae,"Remove erroneous reference to JSON property names.
+
+JSON attributes names can legally contain a dash, they're just harder to type.  Let's call a spade a spade here and admit that's why underscore separators are the standard."
+jroes,2014-05-20 22:59:43,https://api.github.com/repos/interagent/http-api-design/git/commits/ed89dc3e217f43cdcb3511bdbf9854a63d8eaeaa,ed89dc3e217f43cdcb3511bdbf9854a63d8eaeaa,Typo
+mmcgrana,2014-05-07 21:09:43,https://api.github.com/repos/interagent/http-api-design/git/commits/b532b8e7a43e9aa528f82a23fbcaf599c3bb6915,b532b8e7a43e9aa528f82a23fbcaf599c3bb6915,"Merge pull request #2 from interagent/add-oss-stuff
+
+Add oss stuff"
+mmcgrana,2014-05-07 18:56:23,https://api.github.com/repos/interagent/http-api-design/git/commits/b3c5a486a32ce5fa6db4fccef9887c03733c16de,b3c5a486a32ce5fa6db4fccef9887c03733c16de,Whitespace
+mmcgrana,2014-05-07 18:56:06,https://api.github.com/repos/interagent/http-api-design/git/commits/1c5765d72778d2fb8d45a8431ef06fc82c2d3c85,1c5765d72778d2fb8d45a8431ef06fc82c2d3c85,Extra comma
+mmcgrana,2014-05-07 18:54:36,https://api.github.com/repos/interagent/http-api-design/git/commits/f3a9e5719497b86ebbb6033bbbae3a3229bcbfd2,f3a9e5719497b86ebbb6033bbbae3a3229bcbfd2,Add contributing file
+mmcgrana,2014-05-07 18:53:21,https://api.github.com/repos/interagent/http-api-design/git/commits/5e53a5871e799d39dc54903e1a2c64392b089213,5e53a5871e799d39dc54903e1a2c64392b089213,Normalize contributors header
+mmcgrana,2014-05-07 18:53:14,https://api.github.com/repos/interagent/http-api-design/git/commits/5be3a118dd83d22b1b168fb24417b165716c61ac,5be3a118dd83d22b1b168fb24417b165716c61ac,Add license file
+mmcgrana,2014-05-07 18:46:47,https://api.github.com/repos/interagent/http-api-design/git/commits/365785518efcfd34e6f6b5d5a09ea5085efe1186,365785518efcfd34e6f6b5d5a09ea5085efe1186,Add contributors file
+mmcgrana,2014-05-07 17:39:48,https://api.github.com/repos/interagent/http-api-design/git/commits/a516d32a656c908e9dd0df8ae66d89380e3919f3,a516d32a656c908e9dd0df8ae66d89380e3919f3,"Merge pull request #1 from interagent/remove-rest-references
+
+Remove REST references"
+mmcgrana,2014-05-07 17:37:06,https://api.github.com/repos/interagent/http-api-design/git/commits/527aac88461ac59f8392df432454afcfd44a7676,527aac88461ac59f8392df432454afcfd44a7676,"Remove REST references
+
+We are probably not REST compliant and that's not necessarily what
+we're going for."
+mmcgrana,2014-05-07 17:02:48,https://api.github.com/repos/interagent/http-api-design/git/commits/51ae8126b88878a2980b166ac6f0b3007c3332d2,51ae8126b88878a2980b166ac6f0b3007c3332d2,Update prmd links
+mmcgrana,2014-05-07 17:01:38,https://api.github.com/repos/interagent/http-api-design/git/commits/b78b798056980c7b21a3e47353800c7d7c89dc20,b78b798056980c7b21a3e47353800c7d7c89dc20,Import from engineering-docs

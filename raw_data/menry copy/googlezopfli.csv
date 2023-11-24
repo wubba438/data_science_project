@@ -1,0 +1,274 @@
+zopfli,"Zopfli Compression Algorithm is a compression library programmed in C to perform very good, but slow, deflate or zlib compression."
+username,timestamp,url,sha,message
+lvandeve,2019-07-25 18:05:35,https://api.github.com/repos/google/zopfli/git/commits/4a35d304787ffc02551b9bda7213a6a3d50ff87e,4a35d304787ffc02551b9bda7213a6a3d50ff87e,"Makefile improvements
+
+Add static library targets, support parallel build, overridable flags"
+lvandeve,2019-01-18 17:30:51,https://api.github.com/repos/google/zopfli/git/commits/ef109ddf164911cf1e5612e90b4a619839a1e3ca,ef109ddf164911cf1e5612e90b4a619839a1e3ca,"Merge pull request #158 from davidsansome/cgo
+
+Add a CGO wrapper"
+davidsansome,2019-01-17 15:17:38,https://api.github.com/repos/google/zopfli/git/commits/e56f4dc8f7f7dfb47f06819749dc75f91c4bfdce,e56f4dc8f7f7dfb47f06819749dc75f91c4bfdce,Add a CGO wrapper
+lvandeve,2018-09-07 16:07:31,https://api.github.com/repos/google/zopfli/git/commits/1ca477efaa485aac848ab6a3de801f01b255f179,1ca477efaa485aac848ab6a3de801f01b255f179,"Merge pull request #151 from jibsen/update-cmake
+
+Update CMake script"
+jibsen,2018-09-02 21:43:48,https://api.github.com/repos/google/zopfli/git/commits/e99ba0ffa09a5133466b5708fd8e766f2de27567,e99ba0ffa09a5133466b5708fd8e766f2de27567,"Add config file package to install
+
+Install config files that allow other CMake based projects to use
+Zopfli with find_package(Zopfli). Also add aliases, so targets are
+available with the same names when built as a subproject.
+
+This allows the ""Modern CMake"" usage pattern:
+
+find_package(Zopfli REQUIRED) # or add_subdirectory(Zopfli)
+...
+target_link_libraries(my_target PRIVATE Zopfli::libzopfli)
+
+These are only enabled for CMake 3.0+. While strictly speaking much
+of the functionality is available in earlier versions, the namespace
+support is not."
+jibsen,2018-08-31 06:24:47,https://api.github.com/repos/google/zopfli/git/commits/f01b29e3c57a2f541fcda85428c9f59aeffa7a31,f01b29e3c57a2f541fcda85428c9f59aeffa7a31,"Set CMAKE_BUILD_TYPE to Release if empty
+
+Make based single-configuration generators default to an empty build
+type, if that is the case set it to Release instead. Also add an
+option to disable this behavior in case someone needs the default
+empty build type."
+jibsen,2018-08-31 05:48:22,https://api.github.com/repos/google/zopfli/git/commits/f4261f201c55d7e69204fdc8d732f7a5098c8d25,f4261f201c55d7e69204fdc8d732f7a5098c8d25,Fix paths to include files in install
+jibsen,2018-08-31 05:47:22,https://api.github.com/repos/google/zopfli/git/commits/b61f099e015427268290f119c4add6e857820caf,b61f099e015427268290f119c4add6e857820caf,"Remove PRIVATE from target_link_libraries
+
+Not supported in CMake 2.8.11."
+jibsen,2018-08-31 05:43:53,https://api.github.com/repos/google/zopfli/git/commits/8856e5dfcbf647ef048934cc86a6cb2591270a13,8856e5dfcbf647ef048934cc86a6cb2591270a13,"Link libzopflipng with libzopfli
+
+Avoids duplicating the zopfli code and simplifies the build a bit.
+Also move source file listings to the respective add_library and
+add_executable calls so we don't have extra variables."
+jibsen,2018-08-31 05:39:08,https://api.github.com/repos/google/zopfli/git/commits/b97dd0e95c92c416352fd7c2bf5b849fe2f75900,b97dd0e95c92c416352fd7c2bf5b849fe2f75900,Make comments more informative
+jibsen,2018-08-26 13:28:54,https://api.github.com/repos/google/zopfli/git/commits/b0b3b7a8b9847b46ed289c1d8c4e6941a26b83d6,b0b3b7a8b9847b46ed289c1d8c4e6941a26b83d6,Do not link with libm on BeOS and Haiku
+jibsen,2018-08-26 13:21:24,https://api.github.com/repos/google/zopfli/git/commits/f651da870a71d0f43bdc7ff3f3aebcf4b1b220c1,f651da870a71d0f43bdc7ff3f3aebcf4b1b220c1,Avoid (unlikely) double expansion
+jibsen,2018-08-23 19:09:48,https://api.github.com/repos/google/zopfli/git/commits/c75b874dc203f4837653cc374cbbb54e58768a86,c75b874dc203f4837653cc374cbbb54e58768a86,"Add workaround for MSVC building DLL
+
+Recent versions of CMake support exporting all symbols when building a
+DLL. Enable this feature as a workaround for not explicitly exporting
+the public symbols, and warn on older version of CMake."
+jibsen,2018-08-23 09:23:40,https://api.github.com/repos/google/zopfli/git/commits/ff021b2b63ec45ba64a6c4164dcb11c06ae742e5,ff021b2b63ec45ba64a6c4164dcb11c06ae742e5,"Add ZOPFLI_BUILD_SHARED option
+
+This replaces BUILD_SHARED_LIBS, which should not be inadvertently set
+by Zopfli if built as a subproject. Instead we use BUILD_SHARED_LIBS
+as the default value, if set.
+
+Also do not add install target for Zopfli by default when built as a
+static library subproject."
+jibsen,2018-08-23 08:08:10,https://api.github.com/repos/google/zopfli/git/commits/c77fff5566ea0762e27620323fbd34958584d6b4,c77fff5566ea0762e27620323fbd34958584d6b4,Move MSVC specific define to targets
+jibsen,2018-08-23 06:50:16,https://api.github.com/repos/google/zopfli/git/commits/3f183571553151a4f5b326f84cfc0980743b33a9,3f183571553151a4f5b326f84cfc0980743b33a9,"Do not force Release build
+
+For Makefile generators, the default build type (CMAKE_BUILD_TYPE
+empty) uses CMAKE_C_FLAGS and by extension CFLAGS. Instead of forcing
+the build type in this case, print a status message letting the user
+know."
+jibsen,2018-08-20 08:50:42,https://api.github.com/repos/google/zopfli/git/commits/349646891a48c85e4bd5a97d18e55a0a8b91c2b4,349646891a48c85e4bd5a97d18e55a0a8b91c2b4,"Add include directory to library targets
+
+When using zopfli as a subproject, users can do:
+
+add_subdirectory(zopfli)
+
+target_link_libraries(my_target libzopfli)"
+jibsen,2018-08-20 07:55:18,https://api.github.com/repos/google/zopfli/git/commits/d4181abfcf2ad782950d6395ec21875fc19ca6dc,d4181abfcf2ad782950d6395ec21875fc19ca6dc,"Add variables for library version
+
+Define the library version in one place. If the minimum CMake version
+is ever updated to 3.0, this could be added to the project command."
+jibsen,2018-08-20 07:38:33,https://api.github.com/repos/google/zopfli/git/commits/763fd0ed69129a86b1f28031de8d37a9573a8b03,763fd0ed69129a86b1f28031de8d37a9573a8b03,Add install target
+jibsen,2018-08-20 06:49:35,https://api.github.com/repos/google/zopfli/git/commits/211d3aa017bbb275b1df939726d5b513c6cfe725,211d3aa017bbb275b1df939726d5b513c6cfe725,"Set minimum CMake version to 2.8.11
+
+This is a compromise between getting useful features and supporting
+operating systems still in use.
+
+https://gitlab.kitware.com/cmake/community/wikis/doc/cmake/Life-Cycle-Considerations"
+lvandeve,2018-08-21 15:52:22,https://api.github.com/repos/google/zopfli/git/commits/56c07b9399b3df1a5b430429be8debed55132029,56c07b9399b3df1a5b430429be8debed55132029,fix warning due to signed integer in malloc size
+lvandeve,2018-08-10 11:43:48,https://api.github.com/repos/google/zopfli/git/commits/f0010d0c13a71ee44f48bb9d2eb3160aee5ed458,f0010d0c13a71ee44f48bb9d2eb3160aee5ed458,Set cmake library versions to the current 1.0.2
+lvandeve,2018-08-10 11:42:32,https://api.github.com/repos/google/zopfli/git/commits/9f3a635f3bdb6bc4a7545e82443c8c2bb48f788c,9f3a635f3bdb6bc4a7545e82443c8c2bb48f788c,"Merge pull request #58 from jibsen/cmake-build
+
+Add CMake script"
+lvandeve,2018-05-18 10:16:14,https://api.github.com/repos/google/zopfli/git/commits/ae43a8b73827577c4b19b005b6eed81f5cf9bbac,ae43a8b73827577c4b19b005b6eed81f5cf9bbac,Update Makefile to 1.0.2
+lvandeve,2017-07-07 11:57:52,https://api.github.com/repos/google/zopfli/git/commits/64c6f362fefd56dccbf31906fdb3e31f6a6faf80,64c6f362fefd56dccbf31906fdb3e31f6a6faf80,"Merge pull request #81 from pornel/fwrite
+
+Faster stdout writing"
+lvandeve,2016-05-27 09:37:37,https://api.github.com/repos/google/zopfli/git/commits/6818a0859063b946094fb6f94732836404a0d89a,6818a0859063b946094fb6f94732836404a0d89a,"Merge pull request #107 from JayXon/min
+
+Avoid min name conflict"
+lvandeve,2016-05-11 19:08:10,https://api.github.com/repos/google/zopfli/git/commits/e0e937e0c0cce8b1299e3302a1d89f6c30b25260,e0e937e0c0cce8b1299e3302a1d89f6c30b25260,"try both with and without OptimizeHuffmanForRle, for better compression on small files"
+lvandeve,2016-05-11 18:15:59,https://api.github.com/repos/google/zopfli/git/commits/66ac6417b9dd860a4e77feb975291078e542f09f,66ac6417b9dd860a4e77feb975291078e542f09f,standardize code style
+lvandeve,2016-05-11 18:13:00,https://api.github.com/repos/google/zopfli/git/commits/d546860456531fe82b58bf123bf2b89020b1d286,d546860456531fe82b58bf123bf2b89020b1d286,"Merge pull request #111 from fhanau/master
+
+Update katajainen.c"
+fhanau,2016-05-06 22:09:24,https://api.github.com/repos/google/zopfli/git/commits/9c9bc4742b8cd69f13df17f2966bb875bac75ddf,9c9bc4742b8cd69f13df17f2966bb875bac75ddf,Update katajainen.c
+lvandeve,2016-05-02 10:59:20,https://api.github.com/repos/google/zopfli/git/commits/5f48aa9f0e218aecf47e562b7bcfcd0ed3c59529,5f48aa9f0e218aecf47e562b7bcfcd0ed3c59529,Update README.zopflipng
+lvandeve,2016-04-25 11:27:46,https://api.github.com/repos/google/zopfli/git/commits/975ac806fa914f8fd1861711bf48e2088acfa75b,975ac806fa914f8fd1861711bf48e2088acfa75b,Update README
+lvandeve,2016-04-25 11:27:31,https://api.github.com/repos/google/zopfli/git/commits/0037bab7e42313ddba07bcc3440ebb237f1dcbe1,0037bab7e42313ddba07bcc3440ebb237f1dcbe1,Update README.zopflipng
+JayXon,2016-04-24 07:14:58,https://api.github.com/repos/google/zopfli/git/commits/56d968c47a983a37b8b99298c9a17456f9653245,56d968c47a983a37b8b99298c9a17456f9653245,"Avoid min name conflict
+
+In some weird C implementations (MSVC), min is defined as (((a) < (b)) ?
+(a) : (b))"
+lvandeve,2016-04-22 12:38:09,https://api.github.com/repos/google/zopfli/git/commits/0dfa6ebfec7141cfc37f2bf071ad65b288a5f51a,0dfa6ebfec7141cfc37f2bf071ad65b288a5f51a,Merge branch 'patch-2' of https://github.com/MrKrzYch00/zopfli into MrKrzYch00-patch-2
+lvandeve,2016-04-22 11:58:20,https://api.github.com/repos/google/zopfli/git/commits/37f6da6ec1f8353a438b5543709207d54476630f,37f6da6ec1f8353a438b5543709207d54476630f,"make the sort stable, and move some function definitions to header for speedup"
+lvandeve,2016-04-20 15:16:24,https://api.github.com/repos/google/zopfli/git/commits/efae472220e04c74c3ef45e8b3015e17fbba608d,efae472220e04c74c3ef45e8b3015e17fbba608d,Update squeeze.c
+lvandeve,2016-04-20 15:15:03,https://api.github.com/repos/google/zopfli/git/commits/ce833706116156cdef9f6b0ea47a870f12421553,ce833706116156cdef9f6b0ea47a870f12421553,Convert a tab to spaces
+lvandeve,2016-04-20 15:13:46,https://api.github.com/repos/google/zopfli/git/commits/4fb0933e6a85c7b97f49c88287342bf4eb548335,4fb0933e6a85c7b97f49c88287342bf4eb548335,Update CONTRIBUTORS
+lvandeve,2016-04-20 15:09:38,https://api.github.com/repos/google/zopfli/git/commits/70f70a325f4f680d58b74211e373c1641cbe7999,70f70a325f4f680d58b74211e373c1641cbe7999,"Merge pull request #105 from jthlim/master
+
+Implemented a number of small optimizations."
+jthlim,2016-04-20 06:40:14,https://api.github.com/repos/google/zopfli/git/commits/51e477998c573e8eb0ce3abd14b9ca8c1fae6208,51e477998c573e8eb0ce3abd14b9ca8c1fae6208,Implemented a number of small optimizations. Details on http://roartindon.blogspot.sg/2016/04/boosting-zopfli-performance.html
+lvandeve,2016-04-11 16:35:59,https://api.github.com/repos/google/zopfli/git/commits/b46f26fd88944685b8e736934d0cdecf562db5da,b46f26fd88944685b8e736934d0cdecf562db5da,"verify pixels after encoding, and fix colorkey issue"
+MrKrzYch00,2016-04-06 21:49:44,https://api.github.com/repos/google/zopfli/git/commits/365bda197df2c50675a2d0bae9333caa3558e9c0,365bda197df2c50675a2d0bae9333caa3558e9c0,"Fix excessive usage of malloc/free
+
+Split ZopfliInitHash to:
+- ZopfliAllocHash - allocate hash memory,
+- ZopfliResetHash - reset hash values.
+
+Allocate Hash outside of ZopfliLZ77Greedy and ZopfliLZ77OptimalRun that
+pass it further to functions previously allocating them. Do the same for
+costs malloc'd array.
+
+Reason for this change:
+- the size of malloc doesn't change,
+- speed up Zopfli*,
+- fix crash on certain devices**.
+
+* speeds up Zopfli (especially on smaller blocks) by reducing amount of
+sys time from ~7s to 0.1s on x64 Linux for ~5m compression time and from
+~1m to 0.1s on ARMv7 Linux for 13m compression time.
+** fixes a large amount of iterations crash on some ARM devices that due
+to architecture or older kernel (not sure which) don't handle too
+aggressive heap allocation and freeing."
+lvandeve,2016-03-30 17:19:33,https://api.github.com/repos/google/zopfli/git/commits/16e07418ad1bdb00211c2356bf62c7421098aefa,16e07418ad1bdb00211c2356bf62c7421098aefa,Update lodepng_util.cpp to the latest version
+lvandeve,2016-03-30 10:37:21,https://api.github.com/repos/google/zopfli/git/commits/decff78057e18fd02f404fc3e4525c61b7466f33,decff78057e18fd02f404fc3e4525c61b7466f33,Fix unfinished sentence.
+lvandeve,2016-03-29 17:35:09,https://api.github.com/repos/google/zopfli/git/commits/f7ab2e0b04977d087d4c8768289102088f0dc2ea,f7ab2e0b04977d087d4c8768289102088f0dc2ea,don't iterate chunks for keeping colortype if no --keepchunks
+lvandeve,2016-03-23 12:45:30,https://api.github.com/repos/google/zopfli/git/commits/9152da47c04f3c567e1e971ba029885152aab502,9152da47c04f3c567e1e971ba029885152aab502,fix bug when keeping bKGD chunks from different color type
+lvandeve,2016-03-18 12:23:04,https://api.github.com/repos/google/zopfli/git/commits/1dd5eba6ade4ca6e35060725de7c6e6a8f540273,1dd5eba6ade4ca6e35060725de7c6e6a8f540273,Improved zopflipng file handling and user messages
+lvandeve,2016-02-26 14:17:34,https://api.github.com/repos/google/zopfli/git/commits/fdb3745fa0d2c37e73a9654a31f1fd47a32fd276,fdb3745fa0d2c37e73a9654a31f1fd47a32fd276,Decrease master block size to use less memory
+lvandeve,2016-02-22 10:19:17,https://api.github.com/repos/google/zopfli/git/commits/05e3efc356d7997135c202a4d97d988a0e48af53,05e3efc356d7997135c202a4d97d988a0e48af53,Set zlib level bits to 3 to indicate slowest compression.
+lvandeve,2016-02-08 16:54:34,https://api.github.com/repos/google/zopfli/git/commits/9d864cffff06b149b6c4289a6a860545442ece38,9d864cffff06b149b6c4289a6a860545442ece38,Update build instructions
+lvandeve,2016-02-08 16:51:18,https://api.github.com/repos/google/zopfli/git/commits/9bc747b1558b7902bed0386ad2d0e37b3287b92b,9bc747b1558b7902bed0386ad2d0e37b3287b92b,Update build instructions
+lvandeve,2016-02-08 16:50:09,https://api.github.com/repos/google/zopfli/git/commits/a8a723dc50cbd065f60d6f27c53eb64b23843db0,a8a723dc50cbd065f60d6f27c53eb64b23843db0,Update build instructions
+lvandeve,2016-01-25 13:54:55,https://api.github.com/repos/google/zopfli/git/commits/0aa547494212ae4d3911c9a4fc4be038fc966f05,0aa547494212ae4d3911c9a4fc4be038fc966f05,update zopflipng to use latest lodepng and fix png related bugs
+lvandeve,2016-01-19 12:19:13,https://api.github.com/repos/google/zopfli/git/commits/0e58e4e0adc5302a41cf2ee1c833aa2c20c67fd0,0e58e4e0adc5302a41cf2ee1c833aa2c20c67fd0,make the CRC code threading compatible with a lookup table
+kornelski,2015-12-16 15:19:29,https://api.github.com/repos/google/zopfli/git/commits/033a562b9621308dee409ee533579dae1417fe76,033a562b9621308dee409ee533579dae1417fe76,Faster stdout writing
+lvandeve,2015-11-15 13:12:19,https://api.github.com/repos/google/zopfli/git/commits/720b20e8db19ea90b38edce82aca52815edf8c1a,720b20e8db19ea90b38edce82aca52815edf8c1a,"Merge pull request #78 from MegaByte/master
+
+Refine __builtin_clz compatibility check"
+MegaByte,2015-11-15 08:41:54,https://api.github.com/repos/google/zopfli/git/commits/2270ffe3c107345d983b66b1f26a80b7ab528ac4,2270ffe3c107345d983b66b1f26a80b7ab528ac4,Refine __builtin_clz compatibility check
+lvandeve,2015-11-03 18:28:47,https://api.github.com/repos/google/zopfli/git/commits/9c24ac11d17f6a046b98287be81397c3cf9adb32,9c24ac11d17f6a046b98287be81397c3cf9adb32,"Merge pull request #77 from khernyo/fix-invalid-read
+
+Fix invalid read outsize allocated memory"
+khernyo,2015-10-25 21:43:25,https://api.github.com/repos/google/zopfli/git/commits/9429e20de3885c0e0d9beac23f703fce58461021,9429e20de3885c0e0d9beac23f703fce58461021,"Fix invalid read outsize allocated memory
+
+The invalid read happens when compressing a 1 byte file."
+lvandeve,2015-10-30 21:12:25,https://api.github.com/repos/google/zopfli/git/commits/c1b62ed2eed3ff389875d5d6e4acf4e01e4d8992,c1b62ed2eed3ff389875d5d6e4acf4e01e4d8992,fix compiler warning
+lvandeve,2015-10-30 21:03:40,https://api.github.com/repos/google/zopfli/git/commits/70721a34f420f4747434503fe60bfa619527c563,70721a34f420f4747434503fe60bfa619527c563,block splitting no more distinction between splitting first and last
+lvandeve,2015-10-30 15:06:15,https://api.github.com/repos/google/zopfli/git/commits/7190e08ecac2446c7c9157cfbdb7157b18912a92,7190e08ecac2446c7c9157cfbdb7157b18912a92,zopfli bug and typo fixes
+lvandeve,2015-08-22 14:36:46,https://api.github.com/repos/google/zopfli/git/commits/89cf773beef75d7f4d6d378debdf299378c3314e,89cf773beef75d7f4d6d378debdf299378c3314e,"Merge pull request #67 from rossy/setmode-fix
+
+Fix for _setmode usage"
+rossy,2015-08-22 01:32:54,https://api.github.com/repos/google/zopfli/git/commits/6bae6bcad828cd3ed7a56bc3d3e98de6d0eba5ac,6bae6bcad828cd3ed7a56bc3d3e98de6d0eba5ac,"Fix _setmode usage for stdout new-line conversion
+
+The previous fix didn't work in all situations. I suspect it's because
+it was changing the state of the fd back to _O_TEXT mode without
+synchronising with fflush(). Changing the mode back to _O_TEXT isn't
+actually needed (see discussion in #56,) so just remove the call."
+lvandeve,2015-08-21 22:52:59,https://api.github.com/repos/google/zopfli/git/commits/d20ea3ccbb5f7f999182e9ffb507f5cda27c92b6,d20ea3ccbb5f7f999182e9ffb507f5cda27c92b6,"Merge pull request #56 from MrKrzYch00/original
+
+Various fixes"
+lvandeve,2015-06-17 15:56:54,https://api.github.com/repos/google/zopfli/git/commits/6ff3ba2e83c16ac76322da3f365218e928a318d4,6ff3ba2e83c16ac76322da3f365218e928a318d4,"Merge pull request #60 from scop/master
+
+Adjust usage message to note multiple input file arguments are ok"
+lvandeve,2015-06-17 15:56:27,https://api.github.com/repos/google/zopfli/git/commits/733bd52a549397628e37b4a1b3a6360856e18ef0,733bd52a549397628e37b4a1b3a6360856e18ef0,"Merge pull request #59 from scop/spelling
+
+Spelling fixes"
+scop,2015-06-16 18:19:52,https://api.github.com/repos/google/zopfli/git/commits/f3d039a63610570f3f35b0fc27f466c14251edbf,f3d039a63610570f3f35b0fc27f466c14251edbf,Adjust usage message to note multiple input file arguments are ok
+scop,2015-06-16 18:19:18,https://api.github.com/repos/google/zopfli/git/commits/bb420e676861a536fc897119a65c50d015467ef5,bb420e676861a536fc897119a65c50d015467ef5,Spelling fixes
+MrKrzYch00,2015-06-03 21:36:59,https://api.github.com/repos/google/zopfli/git/commits/2c34d0d9af173412acc2d64a4f6e3e06e1573737,2c34d0d9af173412acc2d64a4f6e3e06e1573737,">2GB file size crash fix
+
+Fix SIGSEGV on files larger than 2GB. If file is larger than that display an error and exit with EXIT_FAILURE.
+
+It's worth noting that fseek64 and ftell64 could be used but due to large memory usage when reading big files, the code should be changed to read files in ZOPFLI_MASTER_BLOCK_SIZE chunks first."
+jibsen,2015-05-30 13:21:51,https://api.github.com/repos/google/zopfli/git/commits/7554e4d34e7000b0595aa606e7d72357cf46ba86,7554e4d34e7000b0595aa606e7d72357cf46ba86,Add CMake script
+MrKrzYch00,2015-05-16 07:32:01,https://api.github.com/repos/google/zopfli/git/commits/14217b97cb38202145480be3306b1b961354b3da,14217b97cb38202145480be3306b1b961354b3da,"Fix SIGSEGV when out of memory for cache
+
+This fixes SIGSEGV (Segmentation Fault) when malloc for cache fails due to out of memory condition. This can happen on low memory systems or when Zopfli is compiled with higher ZOPFLI_CACHE_LENGTH preprocessor value than default one."
+MrKrzYch00,2015-05-14 16:56:15,https://api.github.com/repos/google/zopfli/git/commits/810f71768fdde1e1b0f7d7bb7e8fbb90aced2cac,810f71768fdde1e1b0f7d7bb7e8fbb90aced2cac,"New line separator in iterations error
+
+Add new line separator at the end of iterations error. This fixes command prompt displaying on same line as this error message when zopfli exists - linux terminal."
+MrKrzYch00,2015-05-14 16:44:44,https://api.github.com/repos/google/zopfli/git/commits/db3b6fa14aa99e870b231d81c3eb77a4d9fc0ca7,db3b6fa14aa99e870b231d81c3eb77a4d9fc0ca7,"Fix stdout new lines on Windows
+
+This fixes output to stdout on windows to use binary. Tested on Windows 10 Technical Preview."
+MrKrzYch00,2015-05-14 16:25:07,https://api.github.com/repos/google/zopfli/git/commits/0f393c8778fc6cac68efd5d8f3055fd950ec41e3,0f393c8778fc6cac68efd5d8f3055fd950ec41e3,"Fix SIGSEGV when can't writer output
+
+This fixes SIGSEGV (Segmentation Fault) when output file can't be opened for writting binary (wb). Instead display error message on what's wrong and exit with failure status (aka. errorlevel). This will make it more clear to user who forgot to ""sudo"" etc."
+MrKrzYch00,2015-05-14 15:51:04,https://api.github.com/repos/google/zopfli/git/commits/bea95267d6c0368dceb6ae172dc5f229a1441975,bea95267d6c0368dceb6ae172dc5f229a1441975,"Fix deflate stream size reporting
+
+Use offset recording of current outsize when calling ZopfliDeflate. Fixes incorrect Deflate stream reporting when zlib or gz container is used."
+lvandeve,2015-05-13 12:36:51,https://api.github.com/repos/google/zopfli/git/commits/e17d185389625563ce070d090f4e11fc3818047f,e17d185389625563ce070d090f4e11fc3818047f,"Merge pull request #55 from JayXon/FirstEncounteredTransparentPixel
+
+Fix RGB value of first encountered transparent pixel"
+JayXon,2015-05-12 22:00:13,https://api.github.com/repos/google/zopfli/git/commits/aabe8c3ac02eba827631f007cd5ec12364e10243,aabe8c3ac02eba827631f007cd5ec12364e10243,"fix RGB value of first encountered transparent pixel
+
+The comment suggest to use first encountered transparent pixel, which I
+think is the right way, but the code is using last encountered
+transparent pixel."
+lvandeve,2015-05-12 15:38:02,https://api.github.com/repos/google/zopfli/git/commits/f221cb14e5f16f87688f8506971b2c24cdd9d550,f221cb14e5f16f87688f8506971b2c24cdd9d550,"Merge pull request #54 from pornel/warnings
+
+Warnings--"
+lvandeve,2015-05-12 15:34:09,https://api.github.com/repos/google/zopfli/git/commits/5cebcf36d58d5389b9f342330497147fd943d1bd,5cebcf36d58d5389b9f342330497147fd943d1bd,"Merge pull request #51 from JayXon/ColorIndex
+
+Fix ColorIndex"
+lvandeve,2015-05-12 15:32:55,https://api.github.com/repos/google/zopfli/git/commits/f04ea26624f9bf1f95a3256ad5e43bf7e91284ef,f04ea26624f9bf1f95a3256ad5e43bf7e91284ef,"Merge pull request #53 from pornel/verbose
+
+Verbose flag"
+Hello71,2013-11-18 04:33:00,https://api.github.com/repos/google/zopfli/git/commits/9f4b11082d9efb2570f8aa9e99398d9b21b3621c,9f4b11082d9efb2570f8aa9e99398d9b21b3621c,Fix misc cppcheck warnings.
+kornelski,2013-08-14 23:56:54,https://api.github.com/repos/google/zopfli/git/commits/8d61540251157f9da448f2d6060461aa47b2a229,8d61540251157f9da448f2d6060461aa47b2a229,Dead store
+kornelski,2013-08-14 23:38:29,https://api.github.com/repos/google/zopfli/git/commits/c875a52f5cca5577f1dbd1efdda13260c2bf2d70,c875a52f5cca5577f1dbd1efdda13260c2bf2d70,verbose flag
+JayXon,2015-04-27 01:10:12,https://api.github.com/repos/google/zopfli/git/commits/b466013448fcc6ddf58fb94353f16847b0e99fad,b466013448fcc6ddf58fb94353f16847b0e99fad,Fix ColorIndex
+lvandeve,2015-03-18 14:18:12,https://api.github.com/repos/google/zopfli/git/commits/a29e46ba9f268ab273903558dcb7ac13b9fe8e29,a29e46ba9f268ab273903558dcb7ac13b9fe8e29,Merge branch 'dwbuiten-fileperms'
+lvandeve,2015-03-18 14:17:59,https://api.github.com/repos/google/zopfli/git/commits/7f19f99dfe4d6305b028be73bd299340dc8ee9b9,7f19f99dfe4d6305b028be73bd299340dc8ee9b9,Merge branch 'fileperms' of https://github.com/dwbuiten/zopfli into dwbuiten-fileperms
+lvandeve,2015-03-13 16:30:14,https://api.github.com/repos/google/zopfli/git/commits/82a2047b03d30b5b6752829673a85e2fde06cdb4,82a2047b03d30b5b6752829673a85e2fde06cdb4,"Merge pull request #49 from dwbuiten/sharedlib
+
+build: Allow building ZopfliPNG as a shared library"
+lvandeve,2015-03-13 16:29:21,https://api.github.com/repos/google/zopfli/git/commits/0aefa50614b397cf300b5e307a47c2a319596684,0aefa50614b397cf300b5e307a47c2a319596684,"Merge pull request #50 from dwbuiten/c_api
+
+ZopfliPNG: Add a C API"
+dwbuiten,2014-11-07 15:30:33,https://api.github.com/repos/google/zopfli/git/commits/bce73e2c23dc57a252802e4a6df97aa675fcea81,bce73e2c23dc57a252802e4a6df97aa675fcea81,"ZopfliPNG: Add a C API
+
+This allows the library to be used from many more languages,
+and also provides a defined and stable ABI, unlike C++.
+
+Signed-off-by: Derek Buitenhuis <derek.buitenhuis@gmail.com>"
+dwbuiten,2014-11-07 14:13:31,https://api.github.com/repos/google/zopfli/git/commits/422e58690b4673c1b44d0a50ba287965006a5b7f,422e58690b4673c1b44d0a50ba287965006a5b7f,"build: Allow building ZopfliPNG as a shared library
+
+Signed-off-by: Derek Buitenhuis <derek.buitenhuis@gmail.com>"
+dwbuiten,2014-11-07 14:27:28,https://api.github.com/repos/google/zopfli/git/commits/79f2b8d0fed05d2bd26a554d78c64729655db4c4,79f2b8d0fed05d2bd26a554d78c64729655db4c4,"Don't set the executable flag on C++ source files
+
+Signed-off-by: Derek Buitenhuis <derek.buitenhuis@gmail.com>"
+lvandeve,2015-03-13 14:41:15,https://api.github.com/repos/google/zopfli/git/commits/2936ed62e7707f005ed879ef7b7b6b7593b44ebe,2936ed62e7707f005ed879ef7b7b6b7593b44ebe,Rename CONTRIBUTING to CONTRIBUTING.md
+lvandeve,2015-03-13 14:40:56,https://api.github.com/repos/google/zopfli/git/commits/5a977c12920dcf5707b5e64f5fb189d490a48e59,5a977c12920dcf5707b5e64f5fb189d490a48e59,Create CONTRIBUTING
+lvandeve,2014-07-10 14:22:30,https://api.github.com/repos/google/zopfli/git/commits/b87006baae7ddb2142660621e20916d07928cbe2,b87006baae7ddb2142660621e20916d07928cbe2,denser huffman tree encoding
+lvandeve,2014-07-02 14:13:51,https://api.github.com/repos/google/zopfli/git/commits/b831d9813d44d85b4f1497be9cb877e4d5c4bbd7,b831d9813d44d85b4f1497be9cb877e4d5c4bbd7,rename makefile to Makefile
+lvandeve,2014-06-30 15:38:31,https://api.github.com/repos/google/zopfli/git/commits/08b97947ac58e1c824ce401d9cc08721bedd1808,08b97947ac58e1c824ce401d9cc08721bedd1808,"fixes issue 32, could stop with error when using lossy_transparent with palette"
+lvandeve,2014-06-23 11:13:38,https://api.github.com/repos/google/zopfli/git/commits/ae16c9e727664ec78d8ceb8916dbc9c9ec7c71c0,ae16c9e727664ec78d8ceb8916dbc9c9ec7c71c0,"more efficient huffman tree encoding, and fixed memory leak"
+lvandeve,2014-05-23 14:16:15,https://api.github.com/repos/google/zopfli/git/commits/9ec1023fe7b16c10be9a96b1cd90cf298f7f3d90,9ec1023fe7b16c10be9a96b1cd90cf298f7f3d90,Fix the bug with the disappeared pointer
+lvandeve,2013-05-08 13:22:06,https://api.github.com/repos/google/zopfli/git/commits/c54dc204ef4278f949a965dc90e693799b6aae41,c54dc204ef4278f949a965dc90e693799b6aae41,remove usage of nonstandard getline
+lvandeve,2013-05-07 13:17:00,https://api.github.com/repos/google/zopfli/git/commits/337d27f25ef15a6cf34fef2acd0613fddc411cb1,337d27f25ef15a6cf34fef2acd0613fddc411cb1,ZopfliPNG
+lvandeve,2013-05-03 12:08:30,https://api.github.com/repos/google/zopfli/git/commits/79e6e0cb2ae12c9215662bd203190f8a8aa081df,79e6e0cb2ae12c9215662bd203190f8a8aa081df,Fix tree encoding to save more bits
+lvandeve,2013-05-03 11:58:01,https://api.github.com/repos/google/zopfli/git/commits/150827fe74ad974c743acb8d3cbe3519dd22b090,150827fe74ad974c743acb8d3cbe3519dd22b090,Fix tree encoding to save more bits
+lvandeve,2013-04-25 14:00:01,https://api.github.com/repos/google/zopfli/git/commits/4975aa5e50761cdeb335b3bf029332df469aa472,4975aa5e50761cdeb335b3bf029332df469aa472,Improved directory structure with the source code under src
+lvandeve,2013-03-13 09:50:23,https://api.github.com/repos/google/zopfli/git/commits/2180febafb111fb25afb857a6034e0c526b4df01,2180febafb111fb25afb857a6034e0c526b4df01,Small cleanup
+lvandeve,2013-03-12 23:26:58,https://api.github.com/repos/google/zopfli/git/commits/806be49c750347eb78f4d94bb21ad37aa9121f93,806be49c750347eb78f4d94bb21ad37aa9121f93,More options for Zopfli binary
+lvandeve,2013-03-11 12:09:56,https://api.github.com/repos/google/zopfli/git/commits/25aeeecb0c8449ba6e87066373eaed5664b7b5ec,25aeeecb0c8449ba6e87066373eaed5664b7b5ec,Move ZopfliInitOptions to util.c to allow excluding gzip and zlib linkage
+lvandeve,2013-03-10 19:23:35,https://api.github.com/repos/google/zopfli/git/commits/0b717c1b5410aa623b8b3971462bee857cb98dc3,0b717c1b5410aa623b8b3971462bee857cb98dc3,Remove comment
+lvandeve,2013-03-06 13:09:53,https://api.github.com/repos/google/zopfli/git/commits/6276dcd1677e74ea1c0284fffebc3c763b424351,6276dcd1677e74ea1c0284fffebc3c763b424351,Make a better distinction between zopfli binary and library
+lvandeve,2013-03-06 13:03:24,https://api.github.com/repos/google/zopfli/git/commits/8c218eff39749e738c92bf34155099ad280c16f7,8c218eff39749e738c92bf34155099ad280c16f7,Make a better distinction between zopfli binary and library
+lvandeve,2013-03-05 17:01:47,https://api.github.com/repos/google/zopfli/git/commits/981df0fe897c94382b9b963eb72bc36cbc2e729c,981df0fe897c94382b9b963eb72bc36cbc2e729c,Add Zopfli prefix to symbols
+lvandeve,2013-03-04 18:58:27,https://api.github.com/repos/google/zopfli/git/commits/42afd06de11fca2625b1d2b43a21f252b1b35627,42afd06de11fca2625b1d2b43a21f252b1b35627,Expose DeflatePart function
+lvandeve,2013-02-14 16:42:56,https://api.github.com/repos/google/zopfli/git/commits/acc035299f8dfe1ddcbc93c99f8600269790f88c,acc035299f8dfe1ddcbc93c99f8600269790f88c,Fix floating point issue on some compilers
+lvandeve,2013-02-14 13:54:41,https://api.github.com/repos/google/zopfli/git/commits/3c3a3bdeb667cfcdd622ff7fefd2c4934c16a09b,3c3a3bdeb667cfcdd622ff7fefd2c4934c16a09b,Zlib and Gzip support
+lvandeve,2013-02-14 13:41:44,https://api.github.com/repos/google/zopfli/git/commits/d5eb5f507386e9933f2d8248d311ceca41fe1df1,d5eb5f507386e9933f2d8248d311ceca41fe1df1,Zlib and Gzip support
+lvandeve,2013-01-29 16:56:16,https://api.github.com/repos/google/zopfli/git/commits/04526f14125602622173ccfce017ad503c21bff5,04526f14125602622173ccfce017ad503c21bff5,Add num iterations options to gzip example
+lvandeve,2013-01-29 15:21:18,https://api.github.com/repos/google/zopfli/git/commits/143f730cde02e78a0e8185d18b02ddb47ac2fed0,143f730cde02e78a0e8185d18b02ddb47ac2fed0,Fix bug with large blocks
+lvandeve,2013-01-22 22:33:42,https://api.github.com/repos/google/zopfli/git/commits/340a133d08c3c1ec9a0e03669ff692185c520e8c,340a133d08c3c1ec9a0e03669ff692185c520e8c,Added makefile
+lvandeve,2013-01-16 09:30:56,https://api.github.com/repos/google/zopfli/git/commits/b50b7ef8f8150616d3e9a227ce2d722a8355b1da,b50b7ef8f8150616d3e9a227ce2d722a8355b1da,Initial commit

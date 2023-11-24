@@ -1,0 +1,498 @@
+phoenix-trello,"Trello tribute done in Elixir, Phoenix Framework, React and Redux."
+username,timestamp,url,sha,message
+bigardone,2016-09-24 10:40:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/60c874de63126b5659a42ef8e05846ca16e3e30a,60c874de63126b5659a42ef8e05846ca16e3e30a,Update README.md
+bigardone,2016-09-24 10:38:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bd4e1a7b03e6ff876a995084fc156272bc98e980,bd4e1a7b03e6ff876a995084fc156272bc98e980,Merge branch 'feature/dependencies-update'
+bigardone,2016-09-24 10:38:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/06201a5b9417a37fb0e22ce48c9dcb823a443da0,06201a5b9417a37fb0e22ce48c9dcb823a443da0,Fixed error helper
+bigardone,2016-09-24 10:33:16,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1860bf85aab4e97cc6e0f915556cd62c37859530,1860bf85aab4e97cc6e0f915556cd62c37859530,Fixed tests
+bigardone,2016-09-24 10:26:08,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5f305c2e7f5e004c3805047da8e517a5174a976b,5f305c2e7f5e004c3805047da8e517a5174a976b,Added missing helper
+bigardone,2016-09-24 10:25:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/057a048af0666e7be77e16ca21a35b440ac60388,057a048af0666e7be77e16ca21a35b440ac60388,Fixed models
+bigardone,2016-09-24 10:25:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/894c6f065f964abdfeec7138417a4513a67b9433,894c6f065f964abdfeec7138417a4513a67b9433,Fixed routes
+bigardone,2016-09-24 10:25:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b3870d6b266793254d3a27c1552593ec18329540,b3870d6b266793254d3a27c1552593ec18329540,Fixed tests
+bigardone,2016-09-24 10:24:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/56f2870f2b4b90325f3c94e9177cb38720983f1f,56f2870f2b4b90325f3c94e9177cb38720983f1f,Updated test helpers
+bigardone,2016-09-24 10:23:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0cca208b60dd96ed478d0fad831e7825c7e1587f,0cca208b60dd96ed478d0fad831e7825c7e1587f,Updated config
+bigardone,2016-09-24 10:21:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c0b15bbe42170b66eef6afe3664840f2ae8b2534,c0b15bbe42170b66eef6afe3664840f2ae8b2534,Updated deps and packages
+bigardone,2016-06-24 09:41:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b8874c8ba092f1402bf269a048f41f2d22e2ecd8,b8874c8ba092f1402bf269a048f41f2d22e2ecd8,Removed tracking scripts
+bigardone,2016-05-31 14:26:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8c1118a72d8fc8312458abb48aa0f0e7abe7920b,8c1118a72d8fc8312458abb48aa0f0e7abe7920b,"Merge pull request #31 from chrislaskey/keep-card-position
+
+Only change card order if it has changed"
+bigardone,2016-05-31 14:24:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8fc407ce2eb7aa8ef2d5ce06ba53bb62b5305359,8fc407ce2eb7aa8ef2d5ce06ba53bb62b5305359,"Merge pull request #32 from chrislaskey/insert-index
+
+Fix index position when dragging cards down"
+chrislaskey,2016-05-26 01:03:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7cfd5ec2bb888869016f5ddc556cca0fd8687612,7cfd5ec2bb888869016f5ddc556cca0fd8687612,"Fix index position when dragging cards down
+
+While working on the other PRs, I kept noticing something was slightly off when I would drag cards around in the same list.
+
+When I looked closer, I noticed moving a card towards the top of the list always worked as expected. But when I moved a card towards the bottom of the list it would end up one position lower than the intended target.
+
+The fix was to calculate the insert position based on its current position in the list. If the card is currently below the target, the target index will work. If the card is currently above the target, we need to subtract one from the target index.
+
+This is because when the card moves from above to its new location, it leaves a hole in the list where it used to be. If we don't account for the ""missing"" card, then the card will end up one position lower than its supposed to be.
+
+I had fun trying to reason this out. Let me know if this is still unclear, it's easier to see in code than to explain in words!
+
+This fixes the last issue I could find with the drag behavior. Thanks for being receptive to fixes, it's nice to be able to give back to great projects :smiley:"
+chrislaskey,2016-05-26 00:05:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c7c1d4cd5cee744a0ba65cb7a52d4a8bcc28e724,c7c1d4cd5cee744a0ba65cb7a52d4a8bcc28e724,"Only change card order if it has changed
+
+Fixes an issue when then a card is dragged and dropped back in its original location.
+
+Previously this would cause the card to swap positions with the card below it.
+
+Now the card stays in its current position and does not dispatch an update event to the phoenix backend.
+
+The behavior when dragging to a different location within the same list, or dragging to another list remains the same."
+bigardone,2016-05-25 13:27:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ecc9986ec5057fd092c8679cc70058c01788e54a,ecc9986ec5057fd092c8679cc70058c01788e54a,"Merge pull request #30 from chrislaskey/drop-preview
+
+Show target when dragging cards"
+chrislaskey,2016-05-25 11:31:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2906787bc92a8c17bad5d3978740131935fdc133,2906787bc92a8c17bad5d3978740131935fdc133,s/isOver/is-over/
+bigardone,2016-05-25 05:49:51,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a98431e7eab33081dd397bb4dd640236853c9d79,a98431e7eab33081dd397bb4dd640236853c9d79,"Merge pull request #29 from sebbean/task/enable-webpack-sourcemap
+
+enable source maps"
+chrislaskey,2016-05-25 00:15:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/63b0d3f8932da264c167a2051648b7ffe1d36965,63b0d3f8932da264c167a2051648b7ffe1d36965,"Show target when dragging cards
+
+Adds a target area when dragging cards between lists.
+
+Implemented using CSS styles to display the card's target location while dragging."
+sebbean,2016-05-21 00:57:48,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0759fa7ae06295fad6511ca8301bb6b94657e62f,0759fa7ae06295fad6511ca8301bb6b94657e62f,enable source maps!
+bigardone,2016-05-04 14:03:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c698ef9bdd29553aff941cc1f31778ee09c974d6,c698ef9bdd29553aff941cc1f31778ee09c974d6,"Merge pull request #27 from gusaiani/clean-http-delete-const
+
+Remove unused const authToken declaration"
+gusaiani,2016-05-04 13:05:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f92adf1d3a01dfdd73016276267f2b0604b57a79,f92adf1d3a01dfdd73016276267f2b0604b57a79,Remove unneeded const authToken
+bigardone,2016-04-28 07:14:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5c1eeda1077bf0f343216c6076bd1719ae4182b9,5c1eeda1077bf0f343216c6076bd1719ae4182b9,Minor function renaming
+bigardone,2016-04-28 06:33:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6a35c5703b0c9e806e7c77c23d92a61685e692f9,6a35c5703b0c9e806e7c77c23d92a61685e692f9,"Merge pull request #26 from boriscy/master
+
+Find card and not reload from the server"
+boriscy,2016-04-27 01:56:00,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fa545705b174f42bb7f37a71c25383feef9cd64e,fa545705b174f42bb7f37a71c25383feef9cd64e,Fixed changes for better conventions
+boriscy,2016-04-21 12:23:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5de0cb000e82e2b24222c8ffe89096c6d69bc171,5de0cb000e82e2b24222c8ffe89096c6d69bc171,Using cards collection instead of calling to the server
+bigardone,2016-04-07 14:02:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8b9755c031170c939fea4723d70dbe84146b5e1e,8b9755c031170c939fea4723d70dbe84146b5e1e,"Merge pull request #24 from ashleyconnor/master
+
+Fix constant typo"
+ashleyconnor,2016-04-03 00:04:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1ac2f86886458e8461b1564c452cf8de3e7eeaa1,1ac2f86886458e8461b1564c452cf8de3e7eeaa1,Fix constant typo
+bigardone,2016-03-23 08:15:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/867cf7c583598d23c66bb6b6e09693298ef39eec,867cf7c583598d23c66bb6b6e09693298ef39eec,Removed unnecessary function
+bigardone,2016-03-21 06:46:42,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bfda0cf0d0742f718df49e720e1589b18a9c43d4,bfda0cf0d0742f718df49e720e1589b18a9c43d4,"Merge pull request #21 from andreogle/master
+
+Update to react-router-redux 4.0.0"
+andreogle,2016-03-17 15:06:58,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/93f8c59c07b2027470a594dd51a4ee1826295154,93f8c59c07b2027470a594dd51a4ee1826295154,Update deps
+andreogle,2016-03-17 14:12:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/878168315ba44b25c466cd98f002627710c49d5c,878168315ba44b25c466cd98f002627710c49d5c,Fix indentation
+andreogle,2016-03-17 14:08:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0307c087741435385f6f616753d14ef1b7c973f9,0307c087741435385f6f616753d14ef1b7c973f9,Update for react-router-redux 4.0.0
+andreogle,2016-03-17 13:32:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/39f36484834051a2273d94464a98ac15822a0817,39f36484834051a2273d94464a98ac15822a0817,Sync history with store
+andreogle,2016-03-17 13:32:09,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8ef1f3935c6621132ac17590a80cffba16e74cda,8ef1f3935c6621132ac17590a80cffba16e74cda,Update deps
+andreogle,2016-03-17 13:28:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/daa5ba382c053552f71d6f53cf04fcd509ac8a77,daa5ba382c053552f71d6f53cf04fcd509ac8a77,Update redux
+andreogle,2016-03-17 13:18:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c9673bdd7eb10a60d550c38c500d7feac9df0e4f,c9673bdd7eb10a60d550c38c500d7feac9df0e4f,Ignore logfiles
+andreogle,2016-03-17 13:18:03,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b476eb7b0bfeb1df369343ce9c1c796e07732dd1,b476eb7b0bfeb1df369343ce9c1c796e07732dd1,Updated react-router-redux and react-router
+bigardone,2016-03-07 08:11:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5c6659dfe98c7f631f802d7b84e71f741afde0cc,5c6659dfe98c7f631f802d7b84e71f741afde0cc,Added part 11 and 12 of tutorial
+bigardone,2016-03-06 09:42:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7b125a22d382453461fe4eaddc8a19da87492edf,7b125a22d382453461fe4eaddc8a19da87492edf,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-03-06 09:42:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6d43bd5ede034f71befbd5ca09c54bf183a51aa1,6d43bd5ede034f71befbd5ca09c54bf183a51aa1,Authentication refactoring
+bigardone,2016-02-29 08:25:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/617630658fb04e98e98de26d0a03dcf4bc036611,617630658fb04e98e98de26d0a03dcf4bc036611,"Merge pull request #19 from gonglexin/patch-1
+
+Fix typo"
+gonglexin,2016-02-29 08:21:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/84e7d213d9ccd2da87627eed34a823ce13e34907,84e7d213d9ccd2da87627eed34a823ce13e34907,Fix typo
+bigardone,2016-02-25 15:41:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1f0c7dc0772e0045b4ccb9ec2c65bf23f40f1f1b,1f0c7dc0772e0045b4ccb9ec2c65bf23f40f1f1b,Minor refactoring
+bigardone,2016-02-25 10:05:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5275126abba5e9dea4ea7c0506a7faf1ccfd31fa,5275126abba5e9dea4ea7c0506a7faf1ccfd31fa,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-02-25 10:04:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0355caeb611d35d8ae6ddc8195a95c57d80e1fa0,0355caeb611d35d8ae6ddc8195a95c57d80e1fa0,Refactoring
+bigardone,2016-02-16 18:03:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/92313a42d27109d30c17a33da686d00777487496,92313a42d27109d30c17a33da686d00777487496,Update README.md
+bigardone,2016-02-14 08:35:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7c49975834dc850197f3995216a75ac71a294600,7c49975834dc850197f3995216a75ac71a294600,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-02-14 08:35:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ac7811a5bd4442b863c2a5ddbe3bff258d1f11b7,ac7811a5bd4442b863c2a5ddbe3bff258d1f11b7,Upgraded react trouter and cleanup
+bigardone,2016-02-09 19:34:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fbbdac0058e1148c03ca7bcdcb8df5f18951263a,fbbdac0058e1148c03ca7bcdcb8df5f18951263a,Update README.md
+bigardone,2016-02-09 06:42:48,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5cafe13fb6fe7aa2b61906f539996995e25d8fc4,5cafe13fb6fe7aa2b61906f539996995e25d8fc4,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-02-09 06:42:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1446337da4042aaad2d046963d164227f4170843,1446337da4042aaad2d046963d164227f4170843,Minor refactoring
+bigardone,2016-02-09 06:42:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6c4bac0718c3f66cebba5f6aeb434c444e18deb3,6c4bac0718c3f66cebba5f6aeb434c444e18deb3,Renamed message
+bigardone,2016-02-08 20:35:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c374aad30b302ad89ab0bc546da9422ff5d51375,c374aad30b302ad89ab0bc546da9422ff5d51375,"Merge pull request #18 from neu5/patch-1
+
+fix README typo"
+bigardone,2016-02-08 08:12:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fc3fbbc10b50495d493d5440783cc87068f376ca,fc3fbbc10b50495d493d5440783cc87068f376ca,Board members refactoring
+bigardone,2016-02-08 07:32:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a8b1a209632f2d4f8b28e208178da1bf4eb216f8,a8b1a209632f2d4f8b28e208178da1bf4eb216f8,Added missing unique constraint
+bigardone,2016-02-08 07:01:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/29f769d18f0c56a03b9a638c19ebf744a89f1c45,29f769d18f0c56a03b9a638c19ebf744a89f1c45,Use new helper method
+bigardone,2016-02-08 07:00:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/27c7bbd4ec312bcd0b7565c567dcb4d29d887ad5,27c7bbd4ec312bcd0b7565c567dcb4d29d887ad5,Added create_board helper method
+bigardone,2016-02-08 07:00:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ec0fac18e972882d0fd5ca58421e2bc486d8a8e6,ec0fac18e972882d0fd5ca58421e2bc486d8a8e6,Create a new user board after inserting the board
+bigardone,2016-02-08 07:00:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/498684f469c7d0cf92dc87151af3aa566f0d2368,498684f469c7d0cf92dc87151af3aa566f0d2368,Removed callback for creating user board after inserting a new board
+neu5,2016-02-06 22:29:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4b7f8be44b6ec222fd1724037077d81d3c868467,4b7f8be44b6ec222fd1724037077d81d3c868467,fix README typo
+bigardone,2016-02-05 14:40:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/53f5e2693d7d33067a71fb1cc60bc63259332e64,53f5e2693d7d33067a71fb1cc60bc63259332e64,Merge branch 'feature/board-monitor-refactor'
+bigardone,2016-02-05 14:39:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2c0f10a94874d68e17b0c572ce717ff73d39813d,2c0f10a94874d68e17b0c572ce717ff73d39813d,Fixed mentor tests
+bigardone,2016-02-05 14:28:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8e781d5c4bfddaf26c8c6e6177b884b7a6c3a779,8e781d5c4bfddaf26c8c6e6177b884b7a6c3a779,Check for user connected
+bigardone,2016-02-05 14:28:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ccddf85660687d0dc6e274ef01fda7fbaa08c818,ccddf85660687d0dc6e274ef01fda7fbaa08c818,Create new monitor when user joins channel
+bigardone,2016-02-05 14:27:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ffb5b0c61f64c3437fae4a0d22d4800a24d9c256,ffb5b0c61f64c3437fae4a0d22d4800a24d9c256,Refactored monitor so there can be multiple running supervised
+bigardone,2016-02-05 14:25:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5cd0e664fd7b860f1c382fac448accc925f452a4,5cd0e664fd7b860f1c382fac448accc925f452a4,Added supervisor to children
+bigardone,2016-02-05 12:00:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f549c0ce354f7b30941843c204481611672cdc66,f549c0ce354f7b30941843c204481611672cdc66,Monitor supervisor
+bigardone,2016-02-05 11:59:59,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2578ce697ab346773dfedd30ab969110fd8feb81,2578ce697ab346773dfedd30ab969110fd8feb81,Rolled back to good old syntax
+bigardone,2016-02-05 11:50:28,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8f787c39746898b6f8a9f459403850a3f8cc92de,8f787c39746898b6f8a9f459403850a3f8cc92de,Updated deps
+bigardone,2016-02-04 16:52:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c4e030c9e8d9c86a98fa050ee7e6c27ccaa785db,c4e030c9e8d9c86a98fa050ee7e6c27ccaa785db,Collection name refactoring
+bigardone,2016-02-04 16:45:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e43ec09c59ebcd4c45bffdcc280ec041221e4b75,e43ec09c59ebcd4c45bffdcc280ec041221e4b75,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-02-04 16:45:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/dee3feda153e1eea26eedba0a791fbf1668db72f,dee3feda153e1eea26eedba0a791fbf1668db72f,Minor changes
+bigardone,2016-02-04 14:20:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a1d89d66f730dfb78c6b4db7a9c9bb7ef5416411,a1d89d66f730dfb78c6b4db7a9c9bb7ef5416411,Update README.md
+bigardone,2016-02-04 14:19:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/19d822d7f090ca97c47c963a43c549852b064b43,19d822d7f090ca97c47c963a43c549852b064b43,Update README.md
+bigardone,2016-02-02 06:13:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/118b638d2987cff6face94d9aa2f73ba156e0756,118b638d2987cff6face94d9aa2f73ba156e0756,Update README.md
+bigardone,2016-02-01 09:33:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0d95f4033b064cd316d1f8e4d180f516aee29cfe,0d95f4033b064cd316d1f8e4d180f516aee29cfe,Form minor refactoring
+bigardone,2016-02-01 09:11:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c65b0f09811b33d644abb6820886156d273e8989,c65b0f09811b33d644abb6820886156d273e8989,Minor change
+bigardone,2016-02-01 09:11:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a9c5c1ecb4efaee65649cb8e39edcd43bbb0a689,a9c5c1ecb4efaee65649cb8e39edcd43bbb0a689,Removed unnecessary function
+bigardone,2016-02-01 07:08:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1cb4ca71e277c598878900879b0b0acb2d2ff920,1cb4ca71e277c598878900879b0b0acb2d2ff920,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-02-01 07:07:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a4f40cd36969cd4f617120eb5ce2c17b1b1b1107,a4f40cd36969cd4f617120eb5ce2c17b1b1b1107,Updated view to prevent complex query
+bigardone,2016-01-31 06:20:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/485dc0678d903bfb77cfeb5b324f0435d0a4cb3f,485dc0678d903bfb77cfeb5b324f0435d0a4cb3f,"Merge pull request #16 from alexgaribay/auth-enhance
+
+Add dummy_checkpw() when user isn't found during auth"
+bigardone,2016-01-30 12:28:41,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f7bc53c22e1c7b2e2415a997aca528c43ca02b71,f7bc53c22e1c7b2e2415a997aca528c43ca02b71,Security enhancement
+bigardone,2016-01-30 09:36:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8be3eb61a5a0a59f88e4568bb02e15c6985f1e13,8be3eb61a5a0a59f88e4568bb02e15c6985f1e13,Added common create_user helper method
+bigardone,2016-01-30 08:26:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fd60d5b6f9a0ac5a7176ce8a9a82097d90a91cb5,fd60d5b6f9a0ac5a7176ce8a9a82097d90a91cb5,Added description meta tag
+bigardone,2016-01-30 08:25:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/966e321537bd1ed497ee7b0b49c96a2f1d434cd8,966e321537bd1ed497ee7b0b49c96a2f1d434cd8,Removed tryer module
+alexgaribay,2016-01-29 21:54:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9747c0bda176ece57a4e4332d7599dd3f87be2fd,9747c0bda176ece57a4e4332d7599dd3f87be2fd,Add dummy_checkpw() when user isn't found during auth
+bigardone,2016-01-29 06:56:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b9b2b89a24801e31e81293a7c08d4297dfeb13fa,b9b2b89a24801e31e81293a7c08d4297dfeb13fa,Changed build pack
+bigardone,2016-01-29 06:06:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9ab07f813ccd776f8c0b52ba7cc848e93cdfb149,9ab07f813ccd776f8c0b52ba7cc848e93cdfb149,Minor changes
+bigardone,2016-01-29 06:05:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/23f331c65ccb41207ecaede006abe1e22ff90db1,23f331c65ccb41207ecaede006abe1e22ff90db1,Updated to Phoenix 1.1.2
+bigardone,2016-01-29 05:34:00,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4f136b19310b69879fe95bd853613d4709a707fe,4f136b19310b69879fe95bd853613d4709a707fe,Minor changes
+bigardone,2016-01-28 16:06:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6f48de5cb6c26f53a34a4e9b1074cb450afedf83,6f48de5cb6c26f53a34a4e9b1074cb450afedf83,Moved authentication assertion to integration case
+bigardone,2016-01-28 16:01:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fc21e8b0bb4e9a2b64cf7fa4b09293b90505c366,fc21e8b0bb4e9a2b64cf7fa4b09293b90505c366,Minor refactoring
+bigardone,2016-01-28 16:00:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/20287b9666832eb6716a90e100e8f43e7757b227,20287b9666832eb6716a90e100e8f43e7757b227,Add cards integration test
+bigardone,2016-01-28 16:00:28,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f40ab8dc47f3220877718ed61f233b383fff612a,f40ab8dc47f3220877718ed61f233b383fff612a,Minor refactoring
+bigardone,2016-01-28 09:25:58,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/218740014aae18b70a4341964e0b059456acc732,218740014aae18b70a4341964e0b059456acc732,Minor refactoring
+bigardone,2016-01-28 09:24:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f05d36b65b25e42e22efcf0f16a55fadbac28428,f05d36b65b25e42e22efcf0f16a55fadbac28428,Updated dependencies
+bigardone,2016-01-27 18:59:51,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7c3c08022484e00863f04aa1a6d683b6f4c0fa0f,7c3c08022484e00863f04aa1a6d683b6f4c0fa0f,Merge branch 'feature/card-tags'
+bigardone,2016-01-27 18:58:42,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/28e28c000271d9a1566c23fe801e66c0868be006,28e28c000271d9a1566c23fe801e66c0868be006,Added card tags front-end functionality
+bigardone,2016-01-27 18:58:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4db7f50bf01b775b2f832ed3469c4ce0309bacb8,4db7f50bf01b775b2f832ed3469c4ce0309bacb8,Style changes
+bigardone,2016-01-27 18:57:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/26244cef2daa445d4eda3824731aa81bb07ff3ae,26244cef2daa445d4eda3824731aa81bb07ff3ae,Card tags migration and schema changes
+bigardone,2016-01-27 16:43:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ee705f0e97bc5b42da3277b763b4eb55709e8e4b,ee705f0e97bc5b42da3277b763b4eb55709e8e4b,Merge branch 'master' into feature/card-tags
+bigardone,2016-01-27 16:35:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4e037ded4c6f4a8cce5b06fb0104c3f34fa36f2e,4e037ded4c6f4a8cce5b06fb0104c3f34fa36f2e,Added default value to query function
+bigardone,2016-01-27 16:16:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a95566ff9ac5f6d2a16a188c0e3570677ef23961,a95566ff9ac5f6d2a16a188c0e3570677ef23961,"Merge pull request #15 from bjfish/card_controller_query
+
+Refactor card controller query to make less SQL queries"
+bjfish,2016-01-26 15:51:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/58c790bd078561548ff291157bef412ec504a324,58c790bd078561548ff291157bef412ec504a324,Refactor card controller query to make less SQL queries
+bigardone,2016-01-27 15:22:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/38d29010fe2acb35d589b832d53cabf1b10e89aa,38d29010fe2acb35d589b832d53cabf1b10e89aa,Merge branch 'master' into heroku
+bigardone,2016-01-27 15:21:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1b373969915e98ff14502bae71b6576264179025,1b373969915e98ff14502bae71b6576264179025,Updated dependencies
+bigardone,2016-01-27 15:09:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/05a88fb9b0f9524858e78f1816a6055595b80f9d,05a88fb9b0f9524858e78f1816a6055595b80f9d,Added additional assertions
+bigardone,2016-01-27 15:00:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f0cada3017d79c9eebf701043b0f16e743ad01f6,f0cada3017d79c9eebf701043b0f16e743ad01f6,Add list integration test
+bigardone,2016-01-27 11:54:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3b8ca2dce78536a752bf43ce24723b83949cef7a,3b8ca2dce78536a752bf43ce24723b83949cef7a,Moved sign in functionality to the IntegrationCase module
+bigardone,2016-01-26 16:46:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ddb08d198076518c64feadc45ea63a1eae2bccbf,ddb08d198076518c64feadc45ea63a1eae2bccbf,Show board integration test
+bigardone,2016-01-26 15:34:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/426225bf532f0ec1390f8cc886ae1afd68d89790,426225bf532f0ec1390f8cc886ae1afd68d89790,Merge branch 'master' into heroku
+bigardone,2016-01-26 15:33:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/882ffc12aab27a62d8fee799432e15d8b604be09,882ffc12aab27a62d8fee799432e15d8b604be09,Socket and channel refactoring
+bigardone,2016-01-26 15:32:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/19f651f0340fa03d5b8508b53391721cb6a94174,19f651f0340fa03d5b8508b53391721cb6a94174,Renamed redux-simple-router to react-router-redux
+bigardone,2016-01-25 16:58:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/29b03d881a40bcc1d7913771ea7310652459ab4e,29b03d881a40bcc1d7913771ea7310652459ab4e,Fixed typo
+bigardone,2016-01-25 16:57:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4d175a689ce51782a8ae5a73e6ff4810791ca12a,4d175a689ce51782a8ae5a73e6ff4810791ca12a,Added testing instructions
+bigardone,2016-01-25 16:45:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/057790fea0f217bcf6fb69c5c59f3a54bb9b6aaa,057790fea0f217bcf6fb69c5c59f3a54bb9b6aaa,Merge branch 'feature/hound-integration'
+bigardone,2016-01-25 16:44:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/49407f9eb659a8646bf3759936c87bef1ff2f123,49407f9eb659a8646bf3759936c87bef1ff2f123,Minor refactoring
+bigardone,2016-01-25 16:40:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9e6b3de4684134f7e5ade313ba67daab2c23a044,9e6b3de4684134f7e5ade313ba67daab2c23a044,New board integration test
+bigardone,2016-01-25 16:01:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d8d577701a5e5d3885a16d0141c660d3f9aee0ea,d8d577701a5e5d3885a16d0141c660d3f9aee0ea,Exclude integration tests on Travis for now.
+bigardone,2016-01-25 15:43:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/cc259a7ca1d772c510d0042ce7c66a3879a66224,cc259a7ca1d772c510d0042ce7c66a3879a66224,ChromeDriver travis test
+bigardone,2016-01-25 15:08:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5a2129d0439c7beb8c8996fb99fcd42f204d2d04,5a2129d0439c7beb8c8996fb99fcd42f204d2d04,Sign in and sign up integration tests
+bigardone,2016-01-25 15:07:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/597b369f251eb5e6a72ef1eaf56d37d3fdd86f90,597b369f251eb5e6a72ef1eaf56d37d3fdd86f90,Added ids
+bigardone,2016-01-25 15:07:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c89c4a06ffb286a67ae37896f3c8411b42bb8224,c89c4a06ffb286a67ae37896f3c8411b42bb8224,Retryer module for testing React components
+bigardone,2016-01-25 15:07:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c3612af3e9babe0638f6eb0866c363eee05972f1,c3612af3e9babe0638f6eb0866c363eee05972f1,Added additional imports
+bigardone,2016-01-25 15:00:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/521ecb8add78484da7918e4b06595be4f52728f1,521ecb8add78484da7918e4b06595be4f52728f1,Added Guardian missing config
+bigardone,2016-01-25 15:00:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c11ae63b6c718e483e145e26e231d84e58af58b7,c11ae63b6c718e483e145e26e231d84e58af58b7,Switched to ChromeDriver
+bigardone,2016-01-25 14:55:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a7dfeda944e148b08d9c69a34fdb805e397112d4,a7dfeda944e148b08d9c69a34fdb805e397112d4,Added mix test watch dependency
+bigardone,2016-01-25 11:15:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/545896b8ccf1d26180e526c9d4f4d12ff76e0947,545896b8ccf1d26180e526c9d4f4d12ff76e0947,Update README.md
+bigardone,2016-01-25 11:14:48,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3119f1742b84121612d359b371c53c457922ae30,3119f1742b84121612d359b371c53c457922ae30,Updated README file
+bigardone,2016-01-25 11:12:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d150542dfca0ec3433fb9003e4817687ea09d009,d150542dfca0ec3433fb9003e4817687ea09d009,Added LICENSE file
+bigardone,2016-01-25 08:24:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a4ff1a993fa02fc40c53c8a5c0b273b817d7095a,a4ff1a993fa02fc40c53c8a5c0b273b817d7095a,Merge branch 'master' into feature/hound-integration
+bigardone,2016-01-25 07:47:58,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/20801a15b20d059f5885bc0bf94ccfe56c09adac,20801a15b20d059f5885bc0bf94ccfe56c09adac,Merge branch 'master' into heroku
+bigardone,2016-01-25 07:47:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0323e7259d3850e1c67a6077ba2f54d2b8e355c2,0323e7259d3850e1c67a6077ba2f54d2b8e355c2,Removed unnecessary socket callback
+bigardone,2016-01-24 09:50:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/47b8bd445da6342bd827b784e4327b2f8c442d82,47b8bd445da6342bd827b784e4327b2f8c442d82,Merge branch 'master' into heroku
+bigardone,2016-01-24 09:50:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c29d58b74f00b1aed6742831185760dc587d0e7a,c29d58b74f00b1aed6742831185760dc587d0e7a,Only join user channel if not already joined
+bigardone,2016-01-24 09:24:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4af60c2c98f1d66aeee3912d6bf316e4a4bb0768,4af60c2c98f1d66aeee3912d6bf316e4a4bb0768,Sign in feature test
+bigardone,2016-01-24 09:23:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0605570d5f7b5ef92022b5e81266bd890cf1a27a,0605570d5f7b5ef92022b5e81266bd890cf1a27a,Added hound and hound configuration
+bigardone,2016-01-24 07:05:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9117af7eaf5f0dc50617ec6f734c2e56dc8c88de,9117af7eaf5f0dc50617ec6f734c2e56dc8c88de,Merge branch 'master' into heroku
+bigardone,2016-01-24 07:05:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e5a99a8010260960f366157a31423c922a932b1a,e5a99a8010260960f366157a31423c922a932b1a,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-01-24 07:05:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/96144453370f2202ba44b013cdd97c1d6fbd54b9,96144453370f2202ba44b013cdd97c1d6fbd54b9,Added full boards reset on sign out
+bigardone,2016-01-24 07:04:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2c3b0f407f6523f224cbf203c994a2453cbb389c,2c3b0f407f6523f224cbf203c994a2453cbb389c,"Merge pull request #12 from dleen/master
+
+Fix typo in webpack config"
+bigardone,2016-01-24 06:50:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d1d5b751e94a87da6623c8a6bc38ad1de5bf538e,d1d5b751e94a87da6623c8a6bc38ad1de5bf538e,Merge branch 'master' into heroku
+bigardone,2016-01-24 06:49:58,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0ee96dae51d69d6ab5e6af7334b2cc49e5270c33,0ee96dae51d69d6ab5e6af7334b2cc49e5270c33,Fixed connect to channel bug
+bigardone,2016-01-24 06:36:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/74e61cfd57b7d967766aa98db01a29f526176a30,74e61cfd57b7d967766aa98db01a29f526176a30,Fixed header boards lists height
+bigardone,2016-01-24 06:36:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0e3536ae68445872fba0d9b47d36957d8bb15012,0e3536ae68445872fba0d9b47d36957d8bb15012,Fixed header boards lists height
+bigardone,2016-01-24 06:32:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/774e9dbcd7c64956a24b8b1ff4519b721df66bb9,774e9dbcd7c64956a24b8b1ff4519b721df66bb9,Build pack config
+bigardone,2016-01-24 06:11:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b334f5eb6eaee84c7ad17204f59381266c2568af,b334f5eb6eaee84c7ad17204f59381266c2568af,Merge branch 'master' into heroku
+bigardone,2016-01-24 06:10:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/932d448107ea05ad6dffff95dc6d8f5e07161b93,932d448107ea05ad6dffff95dc6d8f5e07161b93,Merge branch 'feature/boards-dropdown'
+bigardone,2016-01-24 06:09:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4cd7f8cbccfd4292c9605c5d8bb6c4dbdfad3558,4cd7f8cbccfd4292c9605c5d8bb6c4dbdfad3558,Fixed styles and added link to home url
+bigardone,2016-01-23 10:38:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d7372835742c629fa2b6c11dc49ec33f1d4bd72b,d7372835742c629fa2b6c11dc49ec33f1d4bd72b,Navigation through boards from the navigation bar
+bigardone,2016-01-23 10:37:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8f1fe82799b941ce304e4d273bdfc4bdc28b9c9d,8f1fe82799b941ce304e4d273bdfc4bdc28b9c9d,Header boards styles
+bigardone,2016-01-23 10:18:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/52cef6f201b69d4f2d43f8561ef5aefd89c83db4,52cef6f201b69d4f2d43f8561ef5aefd89c83db4,"Merge pull request #10 from farhanpatel/master
+
+Update README to include links to the frameworks"
+farhanpatel,2016-01-23 04:18:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/71f873396fb8a03158cf0055416d56317a9b9f1b,71f873396fb8a03158cf0055416d56317a9b9f1b,"Update README.md
+
+Update readme to include links to the respective frameworks."
+bigardone,2016-01-22 18:22:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/21be900cb5f0e3000a7865e3ec8307efda241fd3,21be900cb5f0e3000a7865e3ec8307efda241fd3,Boards dropdown
+bigardone,2016-01-22 18:22:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e25ea83f8c75daefab50e6411cf6ae1fbbbdb8c3,e25ea83f8c75daefab50e6411cf6ae1fbbbdb8c3,Updated dependencies
+bigardone,2016-01-22 11:51:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b7df7a6f95549bd1f77cdb27a5fc44a4f3eac0be,b7df7a6f95549bd1f77cdb27a5fc44a4f3eac0be,Merge branch 'master' into heroku
+bigardone,2016-01-22 11:50:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/be555aaeb6034de4262088f7fa8521ed669a8ee9,be555aaeb6034de4262088f7fa8521ed669a8ee9,Fixed gravatars
+bigardone,2016-01-22 11:37:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/926dbbd21cb92f4487e087e30b0c7218dcdda6c1,926dbbd21cb92f4487e087e30b0c7218dcdda6c1,Updated phoenix library
+bigardone,2016-01-22 11:05:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/73af44874752d6e3ade0d1649321aaf891c5f06f,73af44874752d6e3ade0d1649321aaf891c5f06f,Merge branch 'master' into heroku
+bigardone,2016-01-22 10:42:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/68aff7245842505be7244b27e6e8d4b5b0243737,68aff7245842505be7244b27e6e8d4b5b0243737,Connect set current user and connect to socket after registration
+bigardone,2016-01-22 06:32:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d24ce25b46acd4cbba29bad90ba7dd2547b889df,d24ce25b46acd4cbba29bad90ba7dd2547b889df,Merge branch 'master' into heroku
+bigardone,2016-01-22 06:31:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/399dbd56cd0184748fe7a2ec448162f41b466a96,399dbd56cd0184748fe7a2ec448162f41b466a96,Refactored board monitor to ExActor
+bigardone,2016-01-21 16:55:45,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4c8ecb32ba779f24744980a4ebb425859b115a8a,4c8ecb32ba779f24744980a4ebb425859b115a8a,Merge branch 'master' into heroku
+bigardone,2016-01-21 16:55:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/16160600b3a38d4a6808ec4b75e347f5873e15bc,16160600b3a38d4a6808ec4b75e347f5873e15bc,Style changes
+bigardone,2016-01-21 16:27:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/022c22a1d346862b899eef017db25d0d5b3b08f9,022c22a1d346862b899eef017db25d0d5b3b08f9,Merge branch 'master' into heroku
+bigardone,2016-01-21 15:32:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3c5b1940306ff41d757da229ba440af5cfa8adad,3c5b1940306ff41d757da229ba440af5cfa8adad,Minor change
+bigardone,2016-01-21 15:17:00,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0e157a1f53de1bbffbf9629517a16f6d2ec2cc3e,0e157a1f53de1bbffbf9629517a16f6d2ec2cc3e,Minor changes
+bigardone,2016-01-21 15:16:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0025ad1af39f6cf1debd777b353cd2eade57a921,0025ad1af39f6cf1debd777b353cd2eade57a921,Add new invited board to state
+bigardone,2016-01-21 15:16:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7e1f987165b5c8132b5db20b068c23c76a0aee97,7e1f987165b5c8132b5db20b068c23c76a0aee97,Set user channel in state
+bigardone,2016-01-21 15:14:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5fe29f4f17cb70726cc29e55c38edfc8ec7208ae,5fe29f4f17cb70726cc29e55c38edfc8ec7208ae,Connect to user channel when socket opened
+bigardone,2016-01-21 15:13:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/746554ebaafc450bf0ca6fac811f0a1696067d46,746554ebaafc450bf0ca6fac811f0a1696067d46,Broadcast board to user channel when successfully added
+bigardone,2016-01-21 15:13:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a0ab815ba87b27f2176f6e36cccd055dd4324ce7,a0ab815ba87b27f2176f6e36cccd055dd4324ce7,New user channel
+bigardone,2016-01-20 17:54:41,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/454749da7022ca10573f752ca7eac0000aaede84,454749da7022ca10573f752ca7eac0000aaede84,Merge branch 'master' into heroku
+bigardone,2016-01-20 17:54:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fd23ed760b565d899bba8a6934a3bec1ddffbf02,fd23ed760b565d899bba8a6934a3bec1ddffbf02,Fixed registration bug
+bigardone,2016-01-20 17:22:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ff1d8aab2710281adb9048c1865437e370738bf3,ff1d8aab2710281adb9048c1865437e370738bf3,Merge branch 'master' into heroku
+bigardone,2016-01-20 17:21:51,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fd3a19a30882756ff7d18674da51c9e5041aa469,fd3a19a30882756ff7d18674da51c9e5041aa469,User boards refactoring
+bigardone,2016-01-20 17:02:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0bcb4a8fce6dd3ac68742efd9cff5467a05b5bb1,0bcb4a8fce6dd3ac68742efd9cff5467a05b5bb1,Removed unnecessary migration
+bigardone,2016-01-20 17:01:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/34f883154527cf79b847c6ea3af48ef1d396e18a,34f883154527cf79b847c6ea3af48ef1d396e18a,Fixed migration error
+bigardone,2016-01-20 16:58:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/41fb0af7c771d246b8d1ceac65d9b5c205acfda6,41fb0af7c771d246b8d1ceac65d9b5c205acfda6,Fixed migration error
+bigardone,2016-01-20 16:52:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/34f49dbaf29820267ba358446aa0d942fcaaf0b8,34f49dbaf29820267ba358446aa0d942fcaaf0b8,Merge branch 'master' into heroku
+bigardone,2016-01-20 16:52:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3720632eeec09574c482a4f78b320e5b5b733df8,3720632eeec09574c482a4f78b320e5b5b733df8,Merge branch 'feature/card-members'
+bigardone,2016-01-20 16:38:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8ea4794949808e4ac76de3763fc3d245ad51181b,8ea4794949808e4ac76de3763fc3d245ad51181b,Preload associations for card
+bigardone,2016-01-20 16:33:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/926b85aa4b2b0516e50d49427dcc3b8c7d2fea6d,926b85aa4b2b0516e50d49427dcc3b8c7d2fea6d,Styles tweaks
+bigardone,2016-01-20 16:19:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e735b4d9708d7bffaacbd393e35e844bf14aa109,e735b4d9708d7bffaacbd393e35e844bf14aa109,Add card members functionality
+bigardone,2016-01-20 16:18:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c4622413bbf55262f380a5fe08666ff0baa5a647,c4622413bbf55262f380a5fe08666ff0baa5a647,Broadcast card updated
+bigardone,2016-01-20 16:13:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6da0a72b4f7c0365640959c7370f31ff48f966c5,6da0a72b4f7c0365640959c7370f31ff48f966c5,Styles changes
+bigardone,2016-01-20 16:13:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0daed26c771009e121394b023127636f6acb9db2,0daed26c771009e121394b023127636f6acb9db2,Added query function
+bigardone,2016-01-20 16:13:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/11dc7a68ecab845c79bc45b6ec38aa0824d3a423,11dc7a68ecab845c79bc45b6ec38aa0824d3a423,Added constraint and query function
+bigardone,2016-01-20 16:12:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/46c985b0dbf23cf2ec3204578e6c838cf709016d,46c985b0dbf23cf2ec3204578e6c838cf709016d,When a user is created add its owner as user board
+bigardone,2016-01-20 16:12:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6bb147368364fc9af34ba1efa3b7b78c8135bd96,6bb147368364fc9af34ba1efa3b7b78c8135bd96,Add and remove members to cards
+bigardone,2016-01-20 16:11:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/04c5a827b1757a667b0880ecb967f7f817345717,04c5a827b1757a667b0880ecb967f7f817345717,Test fix
+bigardone,2016-01-20 08:55:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ecb2ea7e939285ac522c2781330eb0ea3fe4f6a9,ecb2ea7e939285ac522c2781330eb0ea3fe4f6a9,Added card members preloads
+bigardone,2016-01-20 08:54:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d4cf854960a9aa380376b0a8789e62d021d68661,d4cf854960a9aa380376b0a8789e62d021d68661,Card members migration
+bigardone,2016-01-19 17:44:28,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9b4e3e54f07db3506e938ef89919aa1f766e0e37,9b4e3e54f07db3506e938ef89919aa1f766e0e37,"Merge branch 'master' into heroku
+
+# Conflicts:
+#	.travis.yml"
+bigardone,2016-01-19 17:43:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/472acca38772c3d74b9cb54e8363c08372984856,472acca38772c3d74b9cb54e8363c08372984856,Fixed bug
+bigardone,2016-01-19 17:24:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c6f14512ee7ebaec676fe7a3ea7bf966c484aff5,c6f14512ee7ebaec676fe7a3ea7bf966c484aff5,Added travis build status badge
+bigardone,2016-01-19 17:18:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/eae6ad66ca1d32993279ad824b33ae97641b0d28,eae6ad66ca1d32993279ad824b33ae97641b0d28,Fixed postgres configuration for Travis
+bigardone,2016-01-19 17:04:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/104a22998d9070576d56ed8fd04b4f6bbdcefb59,104a22998d9070576d56ed8fd04b4f6bbdcefb59,Added elixir version to travis
+bigardone,2016-01-19 16:55:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8e6575ef1c2c2b11c3d27906e9fd6e893e21ddbe,8e6575ef1c2c2b11c3d27906e9fd6e893e21ddbe,Moved Guardian configuration de dev environment file and removed secret file
+bigardone,2016-01-19 16:48:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/003e70fb3d42c74241459f10a3f3e3bc6e69c4e3,003e70fb3d42c74241459f10a3f3e3bc6e69c4e3,Travis fix
+bigardone,2016-01-19 16:47:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/325c9d05fdfcf5592bb3a77c4757adc2785e7af7,325c9d05fdfcf5592bb3a77c4757adc2785e7af7,Travis fix
+bigardone,2016-01-19 16:44:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ccbddd29a464503f258d92805261993beaffc9f4,ccbddd29a464503f258d92805261993beaffc9f4,Added Travis configuration files
+bigardone,2016-01-19 16:44:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3d8c99dacac31cdea5a0e32233907ccf2bc1ec9b,3d8c99dacac31cdea5a0e32233907ccf2bc1ec9b,Added Travis configuration files
+bigardone,2016-01-19 16:12:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a2eea6411e6cddbe80dc6cbaf8eed9e0803ba4a1,a2eea6411e6cddbe80dc6cbaf8eed9e0803ba4a1,Merge branch 'master' into heroku
+bigardone,2016-01-19 16:11:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c1d13032d47f7ebfb8e3a807dfd5de0b682d8e0c,c1d13032d47f7ebfb8e3a807dfd5de0b682d8e0c,Added missing header classes
+bigardone,2016-01-19 16:10:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ee5a3f1f8be80850b57bc5b67f8df09d172676bb,ee5a3f1f8be80850b57bc5b67f8df09d172676bb,Refactored function name
+bigardone,2016-01-19 16:10:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f4cc57998e48e4b46aeba6bf23904a04f34aea86,f4cc57998e48e4b46aeba6bf23904a04f34aea86,Styles tweaks
+bigardone,2016-01-19 14:48:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bcf928f08cf93be1f54dc322528948b56d61ee7b,bcf928f08cf93be1f54dc322528948b56d61ee7b,Merge branch 'master' into heroku
+bigardone,2016-01-19 14:45:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/18bbda8200dd45afceb71577b8c588c52e2d803a,18bbda8200dd45afceb71577b8c588c52e2d803a,Return forbidden status and error if not authenticated
+bigardone,2016-01-19 11:24:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/be6530f4c2934dd33c8d1e014e9d1d6ca5293c28,be6530f4c2934dd33c8d1e014e9d1d6ca5293c28,Merge branch 'master' into heroku
+bigardone,2016-01-19 11:24:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/51530f0e14a44fa20bd125c7786094cc6102a7a6,51530f0e14a44fa20bd125c7786094cc6102a7a6,Refactored sessions functionality
+bigardone,2016-01-19 09:28:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0ee8dcedebc3d8f57a218e671c47c83f502f4ad2,0ee8dcedebc3d8f57a218e671c47c83f502f4ad2,Session refactor
+bigardone,2016-01-19 08:01:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/51f78c0b855f9663c0440edce1a851efc788ec3e,51f78c0b855f9663c0440edce1a851efc788ec3e,Merge branch 'feature/refactor-show-cards'
+bigardone,2016-01-19 07:56:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/86724e5c5fd82c0f7fa4ebcb7a5da83488d930b0,86724e5c5fd82c0f7fa4ebcb7a5da83488d930b0,"Merge branch 'feature/refactor-show-cards' into heroku
+
+Conflicts:
+	web/static/js/utils/index.js"
+bigardone,2016-01-19 07:53:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/44ade0e2df4bd7f8dbf90cd63643a87d587b2de0,44ade0e2df4bd7f8dbf90cd63643a87d587b2de0,Big refactor for adding new React route for viewing cards
+bigardone,2016-01-19 07:51:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/61761668d60b5c6950f99c0695233eb621270046,61761668d60b5c6950f99c0695233eb621270046,Minor refactoring
+bigardone,2016-01-19 07:51:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5f05c0077f00e1bc0b0f11aa71d6cf09ebe8a758,5f05c0077f00e1bc0b0f11aa71d6cf09ebe8a758,"Added with_everything function to Card, to preload comments and users"
+bigardone,2016-01-18 09:40:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/43f701c4174d3d027f88ff99a54c151517dc9e67,43f701c4174d3d027f88ff99a54c151517dc9e67,Function cleanup
+bigardone,2016-01-18 09:40:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7d75cb2366a7862e1fc15a1aa8aad47b2c6a474c,7d75cb2366a7862e1fc15a1aa8aad47b2c6a474c,Function cleanup
+bigardone,2016-01-18 09:27:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1c5d00a646d91567e075e2e774f99c0a6217eae7,1c5d00a646d91567e075e2e774f99c0a6217eae7,Minor change
+bigardone,2016-01-18 08:55:56,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fe7b0269bd99ad0b7b0ff2b05e164608b81c119c,fe7b0269bd99ad0b7b0ff2b05e164608b81c119c,"Merge pull request #7 from gogogarrett/feature/doc-fix
+
+mention webpack as a step to getting started"
+gogogarrett,2016-01-18 08:54:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9f94007d72486465a4692bea295cb1ea4f4dcf68,9f94007d72486465a4692bea295cb1ea4f4dcf68,Merging in master: conflict in readme for setup steps.
+gogogarrett,2016-01-18 08:29:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/156566c7b06a6ad15c80022fa68e735e2a683a18,156566c7b06a6ad15c80022fa68e735e2a683a18,mention webpack as a step to getting started
+bigardone,2016-01-18 07:43:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5f97b5bfc294b87ed4f2cb5e937e52b786bb3c6c,5f97b5bfc294b87ed4f2cb5e937e52b786bb3c6c,Merge branch 'master' into heroku
+bigardone,2016-01-18 07:41:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0ec070220682cdd3ead19813900f4211351b77a6,0ec070220682cdd3ead19813900f4211351b77a6,"Merge pull request #6 from ionull/patch-1
+
+Update session_controller.ex"
+bigardone,2016-01-18 07:31:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e54d9b9d72c890e15576f19476eefff4992d6763,e54d9b9d72c890e15576f19476eefff4992d6763,Added missing configuration file instructions
+bigardone,2016-01-18 06:38:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/720dafc1d3fbc45bbe606da3f61d266bf237db9e,720dafc1d3fbc45bbe606da3f61d266bf237db9e,Merge branch 'master' into heroku
+bigardone,2016-01-18 06:37:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7a44f9fc5f27ca4393fe1cbd51d6ac9bbd235036,7a44f9fc5f27ca4393fe1cbd51d6ac9bbd235036,Added bitHound badges
+bigardone,2016-01-18 06:36:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bbfc0ca0fee374ecf09f704bd8a10c2f862a88d3,bbfc0ca0fee374ecf09f704bd8a10c2f862a88d3,Added bitHound badges
+bigardone,2016-01-18 06:32:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7d8cf2cde041cb62752d64e2c9810364ef946f71,7d8cf2cde041cb62752d64e2c9810364ef946f71,Updated outdated npm packages and redux router refactoring
+bigardone,2016-01-17 19:22:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/129847a6643e7d4ee72cc9ffe4bfca6408c7fe0b,129847a6643e7d4ee72cc9ffe4bfca6408c7fe0b,Minor changes
+bigardone,2016-01-17 18:39:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/56a948e9e60768cad2bdfb8969246b3bd78cf795,56a948e9e60768cad2bdfb8969246b3bd78cf795,Minor changes
+bigardone,2016-01-17 18:10:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8140a79bc18a5691e946832973323231b2edec65,8140a79bc18a5691e946832973323231b2edec65,Minor changes
+ionull,2016-01-17 13:53:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/721a5d900c7cfd0960957d39a2e760f70864616c,721a5d900c7cfd0960957d39a2e760f70864616c,"Update session_controller.ex
+
+fix claims bug"
+bigardone,2016-01-17 09:56:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7fe3e5af8db9e1df8bf8b160f82ea2a427a71303,7fe3e5af8db9e1df8bf8b160f82ea2a427a71303,Merge branch 'master' into heroku
+bigardone,2016-01-17 09:56:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9176f9f56109a4d9db545127e3fd4aeb87bb76bc,9176f9f56109a4d9db545127e3fd4aeb87bb76bc,Minor monitor optimization
+bigardone,2016-01-16 19:08:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5d593f82806251a8d0dbec14b61b42a99db32725,5d593f82806251a8d0dbec14b61b42a99db32725,Merge branch 'master' into heroku
+bigardone,2016-01-16 19:08:28,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a8238a9a455e674f7ca797c3739f28314b558389,a8238a9a455e674f7ca797c3739f28314b558389,Show spinners while fetching boards
+bigardone,2016-01-16 17:59:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/90f24b59368e8a98054cd95cb1fb8a6dd5a295ee,90f24b59368e8a98054cd95cb1fb8a6dd5a295ee,Merge branch 'master' into heroku
+bigardone,2016-01-16 17:58:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bb538322d0b8e62f8a7f823c52d837df7f5bd3f3,bb538322d0b8e62f8a7f823c52d837df7f5bd3f3,Fixed all tests
+bigardone,2016-01-16 10:59:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/18aa775cda6c99865bb6afa5f26c0bf2ac5f2ef4,18aa775cda6c99865bb6afa5f26c0bf2ac5f2ef4,Added new factories
+bigardone,2016-01-16 10:59:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d70522ccead58ce307ab8e59ead5e1b452e71773,d70522ccead58ce307ab8e59ead5e1b452e71773,List tests
+bigardone,2016-01-16 10:59:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/121a48b8f15e153301eb6e4a34a0ed1a2c40b454,121a48b8f15e153301eb6e4a34a0ed1a2c40b454,Added missing required field
+bigardone,2016-01-16 10:58:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e0edfa9cd43b48d2f1a6789225fd64ade83a3285,e0edfa9cd43b48d2f1a6789225fd64ade83a3285,Import build_assoc
+bigardone,2016-01-16 10:58:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/504be2a0942ff8aa89787453c90b9f9c835a4039,504be2a0942ff8aa89787453c90b9f9c835a4039,Slug test
+bigardone,2016-01-16 08:47:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e61d69f5edf654a70428e975a649bf4bf0dfba6a,e61d69f5edf654a70428e975a649bf4bf0dfba6a,Use factory on test
+bigardone,2016-01-16 08:47:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4a36819e42cab0f626d8ef7aaf26f94e4e4bfe4a,4a36819e42cab0f626d8ef7aaf26f94e4e4bfe4a,Ne factory module and needs changes in configuration files
+bigardone,2016-01-16 08:36:53,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4bbe43e81ff1709b2420b0a908e1e3c646d73187,4bbe43e81ff1709b2420b0a908e1e3c646d73187,Added exmachina dep
+bigardone,2016-01-15 17:44:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/78904b3cad1c8f1dd841ad1c27e230be35b6b395,78904b3cad1c8f1dd841ad1c27e230be35b6b395,Merge branch 'master' into heroku
+bigardone,2016-01-15 17:44:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/cdbbca06f6f700d0eb817648b751de52d540fd23,cdbbca06f6f700d0eb817648b751de52d540fd23,Monitor enchancements and tests.
+bigardone,2016-01-15 15:01:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0b77e9e60516303c2c83f242201c42ef7fb2a509,0b77e9e60516303c2c83f242201c42ef7fb2a509,Merge branch 'master' into heroku
+bigardone,2016-01-15 15:01:16,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1a0b313a7658ca7102f11929153b9a57adcd5491,1a0b313a7658ca7102f11929153b9a57adcd5491,Refactoring
+bigardone,2016-01-15 15:01:03,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fc073c83700b8fd38be8e1f1ab41e31d2623de26,fc073c83700b8fd38be8e1f1ab41e31d2623de26,Added slug id method to Board to use it as key in monitor map
+bigardone,2016-01-15 08:22:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/690d71f66ba1cf325065b1a56709b26d26763dac,690d71f66ba1cf325065b1a56709b26d26763dac,Merge branch 'master' into heroku
+bigardone,2016-01-15 08:22:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/26f79152002a5883329ce649ec2374a1c08fbb46,26f79152002a5883329ce649ec2374a1c08fbb46,Board slug implementation
+bigardone,2016-01-15 07:06:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d40cbde39b1cbbec802c8361e7ed632af58168b0,d40cbde39b1cbbec802c8361e7ed632af58168b0,Merge branch 'master' into heroku
+bigardone,2016-01-15 07:05:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ccfb26265990998cbc1ebad2843e24c3741ea170,ccfb26265990998cbc1ebad2843e24c3741ea170,Bug fix
+bigardone,2016-01-15 06:56:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3311a8888e6880ea1b3c6b123fcb5484376756fa,3311a8888e6880ea1b3c6b123fcb5484376756fa,Bug fix
+bigardone,2016-01-15 06:56:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a47cfcc4923b01630090e0e895279647a3d4461c,a47cfcc4923b01630090e0e895279647a3d4461c,Bug fix
+bigardone,2016-01-15 06:46:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/009e63aff35f8cc6fd6cb152aaebe69dd83f2f75,009e63aff35f8cc6fd6cb152aaebe69dd83f2f75,Merge branch 'master' into heroku
+bigardone,2016-01-15 06:46:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/27266bcd0ed039f196568daa2598da84f736230c,27266bcd0ed039f196568daa2598da84f736230c,Added new helper function to change the document's title on every view
+bigardone,2016-01-15 06:28:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ed81e151f56a538fea50c44debb702486713f3fb,ed81e151f56a538fea50c44debb702486713f3fb,Fixed boards index overflow
+bigardone,2016-01-15 06:28:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/447142b779ee8667644b5863a35b02920f3fa059,447142b779ee8667644b5863a35b02920f3fa059,Fixed boards index overflow
+bigardone,2016-01-15 06:23:16,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/41a24e5faa2ede171dba9e765c23637d8048a084,41a24e5faa2ede171dba9e765c23637d8048a084,Merge branch 'master' into heroku
+bigardone,2016-01-15 06:23:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/dd249d3c4d4bc5b0d28c2f82d251ec8897caf4f6,dd249d3c4d4bc5b0d28c2f82d251ec8897caf4f6,Minor changes
+bigardone,2016-01-14 10:37:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1673579bc4559652cec7682a0e55ac04e07b1f1b,1673579bc4559652cec7682a0e55ac04e07b1f1b,Merge branch 'master' into heroku
+bigardone,2016-01-14 10:37:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/62ceca7766863f6ad4cc9cc55faddc9756dfb4c7,62ceca7766863f6ad4cc9cc55faddc9756dfb4c7,Added close button to card modal
+bigardone,2016-01-14 10:36:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/fde38a9839ee09856076b0902da6edfdc37d39a9,fde38a9839ee09856076b0902da6edfdc37d39a9,Minor changes
+bigardone,2016-01-14 10:36:28,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/63bc6ef7f9ed2128bcb9ec26c5d25e59f72a6b1d,63bc6ef7f9ed2128bcb9ec26c5d25e59f72a6b1d,Updated guardian version
+bigardone,2016-01-14 06:36:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c46a42aab1a616d0731db5993c498a25c83005e1,c46a42aab1a616d0731db5993c498a25c83005e1,Merge branch 'master' into heroku
+bigardone,2016-01-14 06:36:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6d4336500962179e8dbff76d7ddc5b65805df88e,6d4336500962179e8dbff76d7ddc5b65805df88e,Fixed typo :/
+bigardone,2016-01-13 18:41:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3d6f199694562b20350bb5c6d9f3848a1f3496d6,3d6f199694562b20350bb5c6d9f3848a1f3496d6,Added query method to load everything in Board model
+bigardone,2016-01-13 18:12:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5eb636d91d6947bde720cff5c3ad1468dc42dc44,5eb636d91d6947bde720cff5c3ad1468dc42dc44,Merge branch 'master' into heroku
+bigardone,2016-01-13 18:09:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/39519d8641035ec13510f1e301a97aa48ef1effc,39519d8641035ec13510f1e301a97aa48ef1effc,New multiple alias syntax
+bigardone,2016-01-13 18:02:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e4c20c76db8485eed6fe7b5afe471e73e608c850,e4c20c76db8485eed6fe7b5afe471e73e608c850,Code refactoring for Phoenix v1.1 and credo suggestions.
+bigardone,2016-01-13 14:48:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e74afbbb90b3d0646c0f6d1d21769a947da6213d,e74afbbb90b3d0646c0f6d1d21769a947da6213d,Merge branch 'master' into heroku
+bigardone,2016-01-13 14:47:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7c08b565b3214c77bf00c080d349923f78d37b7e,7c08b565b3214c77bf00c080d349923f78d37b7e,Focus name input when editing card.
+bigardone,2016-01-13 14:42:54,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7c38409d0406000567c60eb87ebd48069a7a61ed,7c38409d0406000567c60eb87ebd48069a7a61ed,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-01-13 14:42:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2d38d3af8b4ea20b6750029e6ac1d3a7e923f451,2d38d3af8b4ea20b6750029e6ac1d3a7e923f451,Minor refactoring
+bigardone,2016-01-13 14:42:03,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b2379a818ae514da6845dc02c656653fb804e9f8,b2379a818ae514da6845dc02c656653fb804e9f8,Updated comeonin dependency
+bigardone,2016-01-13 14:41:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/34439d94d4236ab71be3f685d3aad7ecf03b8d04,34439d94d4236ab71be3f685d3aad7ecf03b8d04,"Merge pull request #3 from ruby2elixir/focus-input-for-new-card
+
+focus input for ""add card"" form / ""add board"" form"
+bigardone,2016-01-13 14:39:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9fba25c0d6e26c0b3a6b0224bab6adcfab5bb4cb,9fba25c0d6e26c0b3a6b0224bab6adcfab5bb4cb,Update README.md
+mindreframer,2016-01-13 14:27:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/774ececdf00b2a5f9fe50527291c44f76a59c106,774ececdf00b2a5f9fe50527291c44f76a59c106,"get access to dom elem by directly using ref + 
+also include on lists/form.js"
+mindreframer,2016-01-13 11:03:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/190c80a5c2aeaef2ff000dcea8770fe71869bca4,190c80a5c2aeaef2ff000dcea8770fe71869bca4,"focus input for ""add card"" form / ""add board"" form
+
+problem: 
+- after clicking add card you still have to select the input manually to give it a name, that's a bit inconvenient
+
+solution: 
+- focus the input in componentDidMount callback"
+bigardone,2016-01-13 08:13:08,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0d3e0211fdd0d2b2dc688d09730f6f216cc1a423,0d3e0211fdd0d2b2dc688d09730f6f216cc1a423,Added sumo me script
+bigardone,2016-01-13 08:12:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4e2ac27e0ee8c721118a06d26f9d69481da9202b,4e2ac27e0ee8c721118a06d26f9d69481da9202b,Lists cursor styles
+bigardone,2016-01-13 08:11:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8fbe71829e77a3c053245dec5b312f6400d5e57d,8fbe71829e77a3c053245dec5b312f6400d5e57d,Use click instead of double click to edit list
+bigardone,2016-01-13 07:32:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e5eebbfbc60d3072e6cf68443cec67ad09d2c84e,e5eebbfbc60d3072e6cf68443cec67ad09d2c84e,Renamed field to fix typo.
+bigardone,2016-01-13 07:13:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/008a95ed2376d2e3bb32d71a58036c38206870ed,008a95ed2376d2e3bb32d71a58036c38206870ed,Added demo user and its default email and password in sign in form
+bigardone,2016-01-12 16:03:43,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3e25e52d9ab729b53637b734252323b2cbba9455,3e25e52d9ab729b53637b734252323b2cbba9455,Merge branch 'feature/edit-card'
+bigardone,2016-01-12 16:03:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b5318ebeeb8fdf3a9dffb8f688d897f402dd1136,b5318ebeeb8fdf3a9dffb8f688d897f402dd1136,Edit card name and description
+bigardone,2016-01-12 16:03:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/41ebe17bb0d792996fbf659a81a687ee00d47915,41ebe17bb0d792996fbf659a81a687ee00d47915,Style changes
+bigardone,2016-01-12 14:37:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/56ffbd863c2f296472f284e76f7cd20d844ee147,56ffbd863c2f296472f284e76f7cd20d844ee147,Show error while adding inexistent user to board
+bigardone,2016-01-12 11:49:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e8a696d3a20df769dce559743dee50b651033e4a,e8a696d3a20df769dce559743dee50b651033e4a,Added favicon
+bigardone,2016-01-12 11:23:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/166289308c590b80175cf235b05cb0e82651bc2f,166289308c590b80175cf235b05cb0e82651bc2f,Merge branch 'feature/card-details'
+bigardone,2016-01-12 11:23:00,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6478ef572cd7b85cfd8fc154de512dca0512e1b8,6478ef572cd7b85cfd8fc154de512dca0512e1b8,Minor refactoring
+bigardone,2016-01-12 11:13:42,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/60bbeb1d8b60404a9f6e372a029e0c24157cfdac,60bbeb1d8b60404a9f6e372a029e0c24157cfdac,Added animations to modal
+bigardone,2016-01-12 11:10:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a961e26f3665ae15d3e1b24b330bab6ce9be43d4,a961e26f3665ae15d3e1b24b330bab6ce9be43d4,Update selected card when setting current board so it refreshes comments
+bigardone,2016-01-12 11:07:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f5013273b94a93d55c47bb9f1d27989d6bfa14b0,f5013273b94a93d55c47bb9f1d27989d6bfa14b0,Preload comment user
+bigardone,2016-01-12 11:07:13,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6a658db23c89f6ab0474a75810c62a23a760f959,6a658db23c89f6ab0474a75810c62a23a760f959,Code refactoring
+bigardone,2016-01-12 08:52:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2b671aaca2f0314c05b970a639aca8c7cdeb6db8,2b671aaca2f0314c05b970a639aca8c7cdeb6db8,Open card modal and create comments functionality
+bigardone,2016-01-12 08:51:45,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2ca8a756a7bb285c82add7bc19f0c08abe944c20,2ca8a756a7bb285c82add7bc19f0c08abe944c20,Card modal
+bigardone,2016-01-12 08:51:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6aacd1b25c734c91897cd4920a81a2015feef56c,6aacd1b25c734c91897cd4920a81a2015feef56c,Card view
+bigardone,2016-01-12 08:51:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f8dfae0c7c161c295fc7e353bfdc41ad6170378b,f8dfae0c7c161c295fc7e353bfdc41ad6170378b,Style changes
+bigardone,2016-01-12 08:50:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/75a8365ed5e3e247c2a3bd74208dbf0eb08f34dc,75a8365ed5e3e247c2a3bd74208dbf0eb08f34dc,Serialize also board_id
+bigardone,2016-01-12 08:50:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2e4d6453b798d9fbb329a3b22706f6a28126074a,2e4d6453b798d9fbb329a3b22706f6a28126074a,Card controller
+bigardone,2016-01-12 08:50:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8775fe61074b0b9b0aca258da2fe2edfa8c30aac,8775fe61074b0b9b0aca258da2fe2edfa8c30aac,Preload comments
+bigardone,2016-01-12 08:49:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ed5d2e0e9214ea1576317691eaf17e03b92d068c,ed5d2e0e9214ea1576317691eaf17e03b92d068c,Added show card route
+bigardone,2016-01-12 08:49:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f5d3c5cb31b6decaac9f9bef376f5d4b09eb6716,f5d3c5cb31b6decaac9f9bef376f5d4b09eb6716,Add comment to card in channel
+bigardone,2016-01-12 08:49:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4a188b3ed8dacbd93841db88e7447af8ab9e8340,4a188b3ed8dacbd93841db88e7447af8ab9e8340,"Comment migration, model and tests"
+bigardone,2016-01-12 08:48:12,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/29a2876d58bc9ff7bcf8f9d7ac7c751c1f7cdc50,29a2876d58bc9ff7bcf8f9d7ac7c751c1f7cdc50,Added moment.js
+bigardone,2016-01-11 10:53:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3613924267b66457e8ef8386cf5c4fe7360512e7,3613924267b66457e8ef8386cf5c4fe7360512e7,Code style fix
+bigardone,2016-01-11 10:53:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1e732e879e328439b972ed6e71f9c31fd24e5644,1e732e879e328439b972ed6e71f9c31fd24e5644,Added description to cards
+bigardone,2016-01-10 11:58:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/02190576b9431cb9a0ef6daf4b66621abd149c42,02190576b9431cb9a0ef6daf4b66621abd149c42,Merge branch 'master' into heroku
+bigardone,2016-01-10 11:58:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a0272de532b2802e53a7e2b856fdf6c1d20df7cf,a0272de532b2802e53a7e2b856fdf6c1d20df7cf,Fixed edit form styles
+bigardone,2016-01-10 11:58:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6e9d7b81a73ef13125cd51c9328b796c00634b09,6e9d7b81a73ef13125cd51c9328b796c00634b09,Edit list functionality
+bigardone,2016-01-10 11:57:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2b816823056d8fc6e50187d1a13030f5ba198309,2b816823056d8fc6e50187d1a13030f5ba198309,Renamed channel topic
+bigardone,2016-01-09 06:56:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2d24dfdc10ada38b4bb7b15cd3280d73bdc2ffa3,2d24dfdc10ada38b4bb7b15cd3280d73bdc2ffa3,Merge branch 'master' into heroku
+bigardone,2016-01-09 06:56:10,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e3710bdc675f94afaa84801dc01697effa2f5127,e3710bdc675f94afaa84801dc01697effa2f5127,Call API sign out
+bigardone,2016-01-09 06:55:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5e394393e36c3ea6850926c125c8c7d278f6bc87,5e394393e36c3ea6850926c125c8c7d278f6bc87,Implemented back-end sign out
+bigardone,2016-01-08 10:34:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/60f531e838f7025e00024df727c18763407d379c,60f531e838f7025e00024df727c18763407d379c,Added missing import
+bigardone,2016-01-08 10:34:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e99684d7572b6558e2160ff67a9d59eb599dc401,e99684d7572b6558e2160ff67a9d59eb599dc401,Added missing import
+bigardone,2016-01-08 10:27:27,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/af0afb66a912416568b29c53522425d063ffc0d9,af0afb66a912416568b29c53522425d063ffc0d9,Merge branch 'master' into heroku
+bigardone,2016-01-08 10:26:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ef099f315723a2fae98ef06f98482308da30beca,ef099f315723a2fae98ef06f98482308da30beca,Code refactoring
+bigardone,2016-01-07 11:33:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/073559aaa1d3f29e2be1d8dfed43684c4217ab17,073559aaa1d3f29e2be1d8dfed43684c4217ab17,Minor refactorings
+bigardone,2016-01-07 11:33:31,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d4aa3357061af0ae94631771d2abdbce33ea4672,d4aa3357061af0ae94631771d2abdbce33ea4672,Removed unnecessary packages
+bigardone,2016-01-05 16:15:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1db3600390d89738dea4719f807c66decb824414,1db3600390d89738dea4719f807c66decb824414,Added required attribute to inputs
+bigardone,2016-01-05 16:15:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a0cf147feed5adb84d6191bf059952cfd24dbcd7,a0cf147feed5adb84d6191bf059952cfd24dbcd7,Added required attribute to inputs
+bigardone,2016-01-05 16:10:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a301d979302f98f6ee6b849c4b5170aee2605589,a301d979302f98f6ee6b849c4b5170aee2605589,Added Google Analytics
+bigardone,2016-01-05 16:06:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1ea129b970c9fa84ea63f8be1ef846368ebefc9c,1ea129b970c9fa84ea63f8be1ef846368ebefc9c,Merge branch 'master' into heroku
+bigardone,2016-01-05 16:03:08,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4590412d7fa8bfa88597d29f3c3ebe9103bf2bf2,4590412d7fa8bfa88597d29f3c3ebe9103bf2bf2,Merge branch 'master' of github.com:bigardone/phoenix-trello
+bigardone,2016-01-05 16:02:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/687a02518d916b457fac5cd7d8970131f4c804fe,687a02518d916b457fac5cd7d8970131f4c804fe,Merge branch 'feature/users-sign-up'
+bigardone,2016-01-05 16:01:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d5017af0773e59479d8d29a9c753ec012733bb2a,d5017af0773e59479d8d29a9c753ec012733bb2a,Sign up functionality
+bigardone,2016-01-05 16:01:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/60684ff4a34afc33634e131e1d49e10e1c6bd35e,60684ff4a34afc33634e131e1d49e10e1c6bd35e,Added validations
+bigardone,2016-01-05 16:00:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/dd708ec05c9e2405019a352d13d5d579c8f4ee7a,dd708ec05c9e2405019a352d13d5d579c8f4ee7a,"Registration route, controller and view"
+bigardone,2016-01-04 16:18:42,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/542bbedd70274db3c2162dd3e0926599de1cd9d0,542bbedd70274db3c2162dd3e0926599de1cd9d0,Update README.md
+bigardone,2016-01-04 16:06:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2a0f34a87131c16aaec56b851155d08724928f0e,2a0f34a87131c16aaec56b851155d08724928f0e,Merge branch 'master' into heroku
+bigardone,2016-01-04 16:06:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b623f19ea35f7c66cac6cfd46fb9c00dc718bbd7,b623f19ea35f7c66cac6cfd46fb9c00dc718bbd7,Added footer
+bigardone,2016-01-04 12:07:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7a4338473c59ed3eb75a5dbdb3e6373c62c44c81,7a4338473c59ed3eb75a5dbdb3e6373c62c44c81,Merge branch 'master' into heroku
+bigardone,2016-01-04 12:07:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/992a1ad4701a44045ad8d59bf89419511af2af4d,992a1ad4701a44045ad8d59bf89419511af2af4d,Fixed white space
+bigardone,2016-01-04 11:45:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/60adaa75bedbfcfa98d95851cd913f949b57f8bd,60adaa75bedbfcfa98d95851cd913f949b57f8bd,https gravatars
+bigardone,2016-01-04 11:45:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/33792a4a38fb054982c5c6470d96933160c7034b,33792a4a38fb054982c5c6470d96933160c7034b,https gravatars
+bigardone,2016-01-04 11:38:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ffb16ad55ea03aabbfbdafc737efeece43ef4319,ffb16ad55ea03aabbfbdafc737efeece43ef4319,Typo fix
+bigardone,2016-01-04 11:35:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a1a5398270f6fb1a0d9d356c24c8ae98e5def572,a1a5398270f6fb1a0d9d356c24c8ae98e5def572,Added Guardian secret key
+bigardone,2016-01-04 11:26:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/47066e8cf05108a494cf400c9d74c52de21866a3,47066e8cf05108a494cf400c9d74c52de21866a3,Fix test
+bigardone,2016-01-04 11:18:51,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3c04a31391babe293235915f6e1542002f7efab2,3c04a31391babe293235915f6e1542002f7efab2,Fix test
+bigardone,2016-01-04 11:15:59,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/aecabff00a3fad2dc6b924797dc729229b57668f,aecabff00a3fad2dc6b924797dc729229b57668f,Added missing digest command
+bigardone,2016-01-04 11:09:50,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f1d4ac6b1f4d344abde020b4b8fb4fb7c7c6e9b0,f1d4ac6b1f4d344abde020b4b8fb4fb7c7c6e9b0,Fix test
+bigardone,2016-01-04 11:03:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0a8b6d74e02b47e8553c1f38364c141ebb7c8fbb,0a8b6d74e02b47e8553c1f38364c141ebb7c8fbb,Fix test
+bigardone,2016-01-04 10:45:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/cad239cc0afafc471f0da7bc15a672772c0a4c16,cad239cc0afafc471f0da7bc15a672772c0a4c16,Added missing plugin
+bigardone,2016-01-04 10:22:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8cc9780ef7463d62dcc00fcc1cac4895a992cdc8,8cc9780ef7463d62dcc00fcc1cac4895a992cdc8,Multi build packs and node and npm versions
+bigardone,2016-01-04 09:49:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5e5fa4649486e05a085677793f49189abee2b30d,5e5fa4649486e05a085677793f49189abee2b30d,Deploy test
+bigardone,2016-01-04 09:38:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/2729e29591aaac37e17268bc342bc43e2f011be0,2729e29591aaac37e17268bc342bc43e2f011be0,Test
+bigardone,2016-01-04 09:34:58,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5759fdf3f966173fb33418ad8688e169a425d406,5759fdf3f966173fb33418ad8688e169a425d406,Added npm version
+bigardone,2016-01-04 09:27:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6ad37567c1119042b05f80c804ca451a86d41f4b,6ad37567c1119042b05f80c804ca451a86d41f4b,Added compile file to fix build
+bigardone,2016-01-04 09:08:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4b70ae778c0b911403e217d0a39688daf50ffe96,4b70ae778c0b911403e217d0a39688daf50ffe96,Router changes reverted
+bigardone,2016-01-04 09:04:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ead340bd4eefda293c9025c4176d952ab447fb41,ead340bd4eefda293c9025c4176d952ab447fb41,Fix test
+bigardone,2016-01-04 08:51:40,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3867e93302a66e4ceaf2c892271d80ce91804cff,3867e93302a66e4ceaf2c892271d80ce91804cff,Fixed typo
+bigardone,2016-01-04 08:47:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6b5e92de44d6809c4cc25508e51297ea8382d8f8,6b5e92de44d6809c4cc25508e51297ea8382d8f8,Configured production environment
+bigardone,2016-01-04 08:14:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/69e08eea8bddf7f1abddf73b4dd8c4ac2ed255fc,69e08eea8bddf7f1abddf73b4dd8c4ac2ed255fc,Added custom logo
+bigardone,2016-01-04 07:38:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8ed2f921acb0623d3a78fbe47c0a7ef091ce3ee3,8ed2f921acb0623d3a78fbe47c0a7ef091ce3ee3,Minor refactoring
+bigardone,2016-01-03 09:41:44,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9fd2c1bff8bfdf6cd2a72edad50f6549b2437e7e,9fd2c1bff8bfdf6cd2a72edad50f6549b2437e7e,Added animations to cards
+bigardone,2016-01-03 09:28:52,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/381aade663fd2d9a597c3a6d8ddc51860f2eef93,381aade663fd2d9a597c3a6d8ddc51860f2eef93,Manage users form state through redux
+bigardone,2016-01-03 09:11:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/131d617eb94d31278e3087d0bd9cfdbda05e65ff,131d617eb94d31278e3087d0bd9cfdbda05e65ff,Fixed layout
+bigardone,2016-01-03 07:55:33,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c24db20d8916828a8c0ca3567931a2d5a4a305ed,c24db20d8916828a8c0ca3567931a2d5a4a305ed,Lists drag & drop functionality
+bigardone,2016-01-03 07:55:01,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c42abfd2d635ad0fcac7da97b7c22d2032a48622,c42abfd2d635ad0fcac7da97b7c22d2032a48622,Added update changeset
+bigardone,2016-01-03 07:54:43,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a16aca837f7eb136cd0cf23e1caebfa18dda8bf1,a16aca837f7eb136cd0cf23e1caebfa18dda8bf1,Handle list update in channel
+bigardone,2016-01-01 11:06:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ef42a6d7f5e2289e2b0086b81144d8558480997a,ef42a6d7f5e2289e2b0086b81144d8558480997a,Added missing socket in response
+bigardone,2016-01-01 10:58:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7eda93990ade46d74ea52a88432785256e6f1b37,7eda93990ade46d74ea52a88432785256e6f1b37,Fixed cards move functionality
+bigardone,2016-01-01 10:57:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bf5fc6cc3a796066035a149b7fd742b4565c4e4c,bf5fc6cc3a796066035a149b7fd742b4565c4e4c,Preload assocs
+bigardone,2016-01-01 10:57:42,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ccb0fa88cd437be58a8e141aae84126be7b0b055,ccb0fa88cd437be58a8e141aae84126be7b0b055,New changeset just for updates
+bigardone,2016-01-01 10:57:19,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/5705e27f6215e6b25bcda7010b35fd4f03c3c227,5705e27f6215e6b25bcda7010b35fd4f03c3c227,Added credo dep
+bigardone,2015-12-31 16:27:59,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3ea0a325a29315a875eb1f1508e00a866fc3246f,3ea0a325a29315a875eb1f1508e00a866fc3246f,Better display of form for preventing event issues
+bigardone,2015-12-31 16:27:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/bf3d580eab8f7892e02b6defbc521e6de0526d04,bf3d580eab8f7892e02b6defbc521e6de0526d04,Drag and drop cards functionality
+bigardone,2015-12-31 16:26:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/380241e2dcef7d00799feef474113da55675e809,380241e2dcef7d00799feef474113da55675e809,Added missing fields
+bigardone,2015-12-31 16:25:57,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d743972bffb505c8f7143a5ef8190302c91a91ba,d743972bffb505c8f7143a5ef8190302c91a91ba,Added cards collection to board
+bigardone,2015-12-31 16:25:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/69793229bf340e760e03afe8082d18e58dc4109f,69793229bf340e760e03afe8082d18e58dc4109f,Handle card update and small refactor
+bigardone,2015-12-31 16:25:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4dd61f3b84dcfd3a2ccbbd62c4cca0f77120483f,4dd61f3b84dcfd3a2ccbbd62c4cca0f77120483f,Added drag and drop packages
+bigardone,2015-12-31 16:23:14,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c940b27b9024f89b5b0945fd1b647752a1e5a94d,c940b27b9024f89b5b0945fd1b647752a1e5a94d,Added js decorators support
+bigardone,2015-12-31 08:19:41,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6d132756f6fc20451ac037e8567d13220a21484c,6d132756f6fc20451ac037e8567d13220a21484c,Added new component for hiding forms when clicking outside of them
+bigardone,2015-12-30 16:27:37,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/f1234b020a45f57aa3cc733624e755506d03522e,f1234b020a45f57aa3cc733624e755506d03522e,Add new member functionality
+bigardone,2015-12-30 16:27:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4866c5179ac7624449fe696114ba295cfdde1693,4866c5179ac7624449fe696114ba295cfdde1693,Handle add new member in board channel
+bigardone,2015-12-30 16:26:43,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3769d71550830159d4bb27cc5a9541fe0e6a12d5,3769d71550830159d4bb27cc5a9541fe0e6a12d5,By email user query
+bigardone,2015-12-30 16:26:18,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d86a5a6ef3b90be11409c0576e0d1ceecdb74a5f,d86a5a6ef3b90be11409c0576e0d1ceecdb74a5f,Added limit to query
+bigardone,2015-12-30 10:55:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/4d468c6739e553bb6c7288788d78da5fa72d88e8,4d468c6739e553bb6c7288788d78da5fa72d88e8,Fixed join
+bigardone,2015-12-30 10:52:26,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/6f48698f2ee29ca19805179cf18cee48c98bd85a,6f48698f2ee29ca19805179cf18cee48c98bd85a,Moved users to external component and display with different styles connected ones
+bigardone,2015-12-30 10:51:51,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/208d7a1a2f6d8b569ae5bc0a64e915c92b0826d7,208d7a1a2f6d8b569ae5bc0a64e915c92b0826d7,Preload more assocs
+bigardone,2015-12-30 10:51:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/ee8cae86753702bb452a50feb8c90ba9a8bf825c,ee8cae86753702bb452a50feb8c90ba9a8bf825c,missing required fields
+bigardone,2015-12-30 10:50:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a4873329e0c0bf074a6b6cd55e761b1c2c9bd24d,a4873329e0c0bf074a6b6cd55e761b1c2c9bd24d,Find the board within the user's boards
+bigardone,2015-12-30 10:50:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/034c635dc4424f1f5bbbd532806f221e7fe36086,034c635dc4424f1f5bbbd532806f221e7fe36086,Added compassable query for finding boards for a certain user
+bigardone,2015-12-30 08:58:47,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/450aa04ba2069c350a3747d098cd71e68b10850c,450aa04ba2069c350a3747d098cd71e68b10850c,List owned and invited boards as separate collections
+bigardone,2015-12-30 08:58:17,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/43143606f88317e80ab829344d00c892591b861e,43143606f88317e80ab829344d00c892591b861e,"UserBoard migration, model and tests"
+bigardone,2015-12-30 08:57:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a475346041ae760c314b0d62a62945805a57972a,a475346041ae760c314b0d62a62945805a57972a,Updated react js
+bigardone,2015-12-29 16:50:30,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/e834242236d839cdb32936d54802e8b713729077,e834242236d839cdb32936d54802e8b713729077,Updated to Phoenix 1.1
+bigardone,2015-12-27 10:53:08,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/22c8ba2c0fd056c55c6502f38a77aed74d73744a,22c8ba2c0fd056c55c6502f38a77aed74d73744a,Card component and hide form after it's submission
+bigardone,2015-12-27 10:30:11,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d78866882c1d382114ca7b8bec0d7164c183817f,d78866882c1d382114ca7b8bec0d7164c183817f,Card creation
+bigardone,2015-12-27 10:29:55,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/56d2ab85784844154741311885dcfbb9ae3925d5,56d2ab85784844154741311885dcfbb9ae3925d5,Fixed missing things
+bigardone,2015-12-27 10:29:29,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/62364438c4cf63636670d1cd229242a8a2890efa,62364438c4cf63636670d1cd229242a8a2890efa,Handle card creation
+bigardone,2015-12-27 10:29:15,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/32f7aae626cf365f6d9a2ea3448b2ec535d95c2f,32f7aae626cf365f6d9a2ea3448b2ec535d95c2f,Preload cards
+bigardone,2015-12-27 09:35:05,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/b27c84acef0d209479de748d71ff6b3df3c839d2,b27c84acef0d209479de748d71ff6b3df3c839d2,Added cards collection
+bigardone,2015-12-27 09:34:46,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/62aa7168897a271179c1d30b238d56c8c4f8c174,62aa7168897a271179c1d30b238d56c8c4f8c174,Preload cards
+bigardone,2015-12-27 09:34:36,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/d27269b7404abaf3f83d42e5375187239b11c73c,d27269b7404abaf3f83d42e5375187239b11c73c,"Card migration, model and tests"
+bigardone,2015-12-27 09:34:23,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c43083ddb938f80f16cef7a1f9dc2d447feecf13,c43083ddb938f80f16cef7a1f9dc2d447feecf13,Refactored migrations
+bigardone,2015-12-27 08:40:02,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7829e5b47d03f757c519cfb1e9f24d2454719a1f,7829e5b47d03f757c519cfb1e9f24d2454719a1f,Added form to create cards inside lists
+bigardone,2015-12-26 18:32:49,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1e8ee8d5980f3285415d2e67f14151b0c0759026,1e8ee8d5980f3285415d2e67f14151b0c0759026,Header changes
+bigardone,2015-12-26 17:58:25,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7f2189c0031c3ea3c0b95c3d646d30355c037bf6,7f2189c0031c3ea3c0b95c3d646d30355c037bf6,Show and hide boards and lists forms
+bigardone,2015-12-26 17:00:07,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/c9e93c806aeedf49e7e6c4b0b458043997b3d51f,c9e93c806aeedf49e7e6c4b0b458043997b3d51f,Added again index template removed accidentally
+bigardone,2015-12-26 16:59:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9895a2039dd0e2c2c83213412a1058ceeeeb1358,9895a2039dd0e2c2c83213412a1058ceeeeb1358,Fixed collection preload
+bigardone,2015-12-26 16:52:39,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/a8952036af36779ec6b3f055432d0a30dddf215a,a8952036af36779ec6b3f055432d0a30dddf215a,JS base functionality
+bigardone,2015-12-26 16:52:06,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/7a53cc761a91873b4669780617c61cbfa151c6e2,7a53cc761a91873b4669780617c61cbfa151c6e2,Views
+bigardone,2015-12-26 16:51:38,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/1e78fcb35ec500d770ee1c13961d465b65e5e20c,1e78fcb35ec500d770ee1c13961d465b65e5e20c,Base styles
+bigardone,2015-12-26 16:51:21,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/da91c5c66179d307f09693c3fdbbf282231cbc20,da91c5c66179d307f09693c3fdbbf282231cbc20,Session helper
+bigardone,2015-12-26 16:51:09,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/9ceed2803d7494bed8c90cf985727c0b774b437c,9ceed2803d7494bed8c90cf985727c0b774b437c,API controllers
+bigardone,2015-12-26 16:50:35,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/3a1cb64b07b5c0d2c40f1c03f8018d33a52dca31,3a1cb64b07b5c0d2c40f1c03f8018d33a52dca31,Board channel monitor genserver
+bigardone,2015-12-26 16:50:20,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/0f608939265a0e936c109dea7501c4fe35b3c4e3,0f608939265a0e936c109dea7501c4fe35b3c4e3,User socket and board channel
+bigardone,2015-12-26 16:49:24,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/86c6e6d2f45acadf63d9664f2a505e7d10d50f11,86c6e6d2f45acadf63d9664f2a505e7d10d50f11,"List migration, model and tests"
+bigardone,2015-12-26 16:49:04,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/298c45f66b4cc99bfffb99817533998ead4d1fbb,298c45f66b4cc99bfffb99817533998ead4d1fbb,"Board migration, model and tests"
+bigardone,2015-12-26 16:48:22,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/8aa8289da6941764678feeb9e6935a61b284e69d,8aa8289da6941764678feeb9e6935a61b284e69d,"User migration, model and tests"
+bigardone,2015-12-26 16:47:32,https://api.github.com/repos/bigardone/phoenix-trello/git/commits/177b6c8ed0a5f7a46f05c5454949e30eff048cfb,177b6c8ed0a5f7a46f05c5454949e30eff048cfb,Initial commit

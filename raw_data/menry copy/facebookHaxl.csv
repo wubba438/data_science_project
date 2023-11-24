@@ -1,0 +1,1354 @@
+Haxl,"A Haskell library that simplifies access to remote data, such as databases or web-based services. "
+username,timestamp,url,sha,message
+zpao,2019-08-30 06:19:10,https://api.github.com/repos/facebook/Haxl/git/commits/456d5d2a1b973e2463191b0c4da851ee3725a882,456d5d2a1b973e2463191b0c4da851ee3725a882,"Adopt Contributor Covenant
+
+Summary:
+In order to foster healthy open source communities, we're adopting the
+[Contributor Covenant](https://www.contributor-covenant.org/). It has been
+built by open source community members and represents a shared understanding of
+what is expected from a healthy community.
+
+Reviewed By: josephsavona, danobi, rdzhabarov
+
+Differential Revision: D17104640
+
+fbshipit-source-id: d210000de686c5f0d97d602b50472d5869bc6a49"
+anubhav94N,2019-07-29 14:01:56,https://api.github.com/repos/facebook/Haxl/git/commits/1119155782233ed4e99bbf0c2a0fac9c8ee9a933,1119155782233ed4e99bbf0c2a0fac9c8ee9a933,"Move trace_ function to Core.Util (#102)
+
+Summary:
+Pull Request resolved: https://github.com/facebook/Haxl/pull/102
+
+I want to use the trace_ functionality in rest of Haxl code as well.
+Instead of defining it in each module, let's move this to Haxl.Core.Util. It's
+better also because this module is not exported from haxl.
+
+Reviewed By: watashi
+
+Differential Revision: D16523067
+
+fbshipit-source-id: f7e75cdd6920247a778100c22730bd113009e9aa"
+watashi,2019-07-26 20:52:23,https://api.github.com/repos/facebook/Haxl/git/commits/680c222e12eca998b5d666717e8418149de67e3c,680c222e12eca998b5d666717e8418149de67e3c,"Improve outgoneFetchesTest
+
+Summary:
+This test is flaky and failed in recent travis ci run:
+
+https://travis-ci.org/facebook/Haxl/jobs/560169278
+
+2ms is too small and a context switch or gc can affect the order of events.
+Let's enlarge this to 100ms, which is similar to what we have in
+FullyAsyncTest.
+
+Reviewed By: anubhav94N
+
+Differential Revision: D16522892
+
+fbshipit-source-id: d27dd0b185115fd2ab0df9496b0811066e731305"
+watashi,2019-07-26 20:52:23,https://api.github.com/repos/facebook/Haxl/git/commits/c8a04950cba91ea237c25b99213b2ff7aef8678a,c8a04950cba91ea237c25b99213b2ff7aef8678a,"Expose andThen to perform computations sequentially
+
+Summary:
+We have define this in tests and other libraries. Let's simply expose this
+functionality from `Haxl.Prelude` as it can be useful in a few cases.
+
+Reviewed By: anubhav94N
+
+Differential Revision: D16522569
+
+fbshipit-source-id: b35726e9ad172a36d76b755498fbb53d9a9db188"
+anubhav94N,2019-07-17 20:20:08,https://api.github.com/repos/facebook/Haxl/git/commits/3329d57961fbe07e0a9aa6398ad047fc2a49a902,3329d57961fbe07e0a9aa6398ad047fc2a49a902,"Add dupableCacheRequest function
+
+Summary:
+Right now, Haxl throws a `DataSource` error if we try to cache a
+request that already exists in the `Haxl` cache. For unit tests, it seems
+useful to allow the cache to be overwritten. Adding a new function to do this.
+
+Reviewed By: simonmar
+
+Differential Revision: D16280746
+
+fbshipit-source-id: febafb4f3a2c0087aff204ab442911b022712362"
+anubhav94N,2019-05-17 15:00:27,https://api.github.com/repos/facebook/Haxl/git/commits/56bf9e97224f3fd31bd9877bb4b05b7ffec7ef14,56bf9e97224f3fd31bd9877bb4b05b7ffec7ef14,"Fix type of withCallGraph (#100)
+
+Summary:
+Pull Request resolved: https://github.com/facebook/Haxl/pull/100
+
+The type of this function should be `GenHaxl u w a`
+
+Reviewed By: josefs
+
+Differential Revision: D15392634
+
+fbshipit-source-id: e98818d0558616f38edaaa86fea8a44ed062c878"
+karen,2019-05-14 21:19:14,https://api.github.com/repos/facebook/Haxl/git/commits/67638ce8bd5e2667b98d119a6011c93a071eeb89,67638ce8bd5e2667b98d119a6011c93a071eeb89,"Move CallGraphRef to Haxl Env
+
+Summary:
+Adds the ability for one to record the function callstack within the `Haxl` monad.
+The main function is `withCallGraph`, and supporting types are in `Haxl.Core.CallGraph`.
+
+Reviewed By: watashi
+
+Differential Revision: D14857851
+
+fbshipit-source-id: daab97e8144ff63104ad9e79a3a792a4471e5588"
+anubhav94N,2019-05-09 13:43:56,https://api.github.com/repos/facebook/Haxl/git/commits/5f2ebd2580584f82b5b4d0564b6b5c44c4deff00,5f2ebd2580584f82b5b4d0564b6b5c44c4deff00,"Add correctness tests for outgone-fetches logging (#99)
+
+Summary:
+Pull Request resolved: https://github.com/facebook/Haxl/pull/99
+
+This adds unit tests to haxl, to make sure we are tracking the outgone
+fetches correctly..
+
+Reviewed By: simonmar
+
+Differential Revision: D14683672
+
+fbshipit-source-id: 49a318f0b8aa38c2af154fcbe0946122e70b9565"
+anubhav94N,2019-05-09 13:43:56,https://api.github.com/repos/facebook/Haxl/git/commits/c365886e796f11c3c9fb0cf8b25c65ca039514ce,c365886e796f11c3c9fb0cf8b25c65ca039514ce,"Log outgone fetches to Env
+
+Reviewed By: simonmar
+
+Differential Revision: D14467207
+
+fbshipit-source-id: 4c3f551034c2f253a0c8bfff47e0dbc170131255"
+anubhav94N,2019-04-10 20:29:08,https://api.github.com/repos/facebook/Haxl/git/commits/da963ddc34883dea3c02813841e9f5cbbffc2a95,da963ddc34883dea3c02813841e9f5cbbffc2a95,"Fix build for ghc-7.8.x
+
+Summary:
+Travis build is failing on ghc-7.8, as `<$>` is not available for that version
+https://travis-ci.org/facebook/Haxl/builds/518421734
+
+(Note: this ignores all push blocking failures!)
+
+Reviewed By: lolotp
+
+Differential Revision: D14877878
+
+fbshipit-source-id: bfd13f910142ede2f5a54906c508aba9105509d6"
+watashi,2019-04-10 18:01:02,https://api.github.com/repos/facebook/Haxl/git/commits/697a47a7c36bc17fa2c8abb9292342482a5c506f,697a47a7c36bc17fa2c8abb9292342482a5c506f,"Correct the allocation values logged from backgroup fetch
+
+Summary:
+The allocatin counter is keep decreasing, so the number returned by
+`getAllocationCounter` is negative. We want to absolute value to be consistent
+with other fetches.
+
+Reviewed By: simonmar
+
+Differential Revision: D14839122
+
+fbshipit-source-id: d6e475b209c4a14823fcaff8c0ea17cbbd5bdbb1"
+anubhav94N,2019-04-10 17:48:32,https://api.github.com/repos/facebook/Haxl/git/commits/f99afd135452ca3f8cf92a947d439c049d7df77f,f99afd135452ca3f8cf92a947d439c049d7df77f,"Add WriteTests to haxl.cabal
+
+Summary: Whoops forgot to do when I added the test file.
+
+Reviewed By: zilberstein
+
+Differential Revision: D14874686
+
+fbshipit-source-id: 5bb4b83368f03e9867516b3876acb83ea8aa6852"
+anubhav94N,2019-04-10 16:45:58,https://api.github.com/repos/facebook/Haxl/git/commits/50748be3afab105f03b5af8f414b1879bb801afa,50748be3afab105f03b5af8f414b1879bb801afa,"Add benchmark tests for writes
+
+Summary:
+Add benchmarks for sequential and parallel writes.
+
+Ran the benchmark for 10^6 writes
+parallel - 0.19s
+seq - 0.07s
+
+Running in parallel probably has more contention for the IORef
+
+Reviewed By: simonmar
+
+Differential Revision: D14386951
+
+fbshipit-source-id: 164972e714eac14406fc106df073474d141e9ca0"
+anubhav94N,2019-04-10 16:45:58,https://api.github.com/repos/facebook/Haxl/git/commits/b03f2e5102f7ec05933b32217065591121cde12c,b03f2e5102f7ec05933b32217065591121cde12c,"Add correctness tests
+
+Summary:
+Most important thing I want to test is that when a memoized
+computation happens again - the writes are indeed duplicated in the
+environment. This diff adds tests for different ways memoized computation can
+happen in conjunction with non-memoized computation..
+
+Reviewed By: simonmar
+
+Differential Revision: D14386667
+
+fbshipit-source-id: a03a9a41697def968bf6e11ad66b9dd9f3a9a7f1"
+anubhav94N,2019-04-10 16:45:58,https://api.github.com/repos/facebook/Haxl/git/commits/dc6eeb46efbae865c6a02199e422c3df2b35769f,dc6eeb46efbae865c6a02199e422c3df2b35769f,"Fix haxl core tests
+
+Summary:
+Expose a conveniece wrapper `runHaxlWithWrites` which returns the writes along with
+the result of the `Haxl` computation.
+
+Reviewed By: simonmar
+
+Differential Revision: D14386668
+
+fbshipit-source-id: 95757916691f7b9b1291c7dceae7eafe8738cfca"
+anubhav94N,2019-04-10 16:45:58,https://api.github.com/repos/facebook/Haxl/git/commits/70f5bad4364e00cd8ea595972b24c384fd095f4d,70f5bad4364e00cd8ea595972b24c384fd095f4d,"Add writes to IORef in Env
+
+Summary:
+Here I try to populate the writes done as part of a Haxl computation
+in an IORef inside the Environment.
+
+`IVar` which is the synchornisation point,
+also acts as the point where we store intermediate writes for Haxl
+computations, so they can be memoized and reused whenever a memoized
+computation is done again. This is done inside `getIVarWithWrites` function.
+
+This works, because we create new IVars when running a memo computation
+or a data fetch, and it is only at these places where we need to create a new
+environment with empty writes to run the computation in. So I run every memoized
+computation in a new environment (with empty writes) and populate the writes in this new
+environment. At the end of the memoized computation, I look up these writes from the `IVar`
+and also add them to the original environment. This way ultimately all writes are correctly
+propagated upwards to the top level environment user passes to `runHaxl`.
+This logic lives inside `execMemoNow`.
+
+Reviewed By: simonmar
+
+Differential Revision: D14342181
+
+fbshipit-source-id: a410dae1a477f27b480804b67b2212e7500997ab"
+watashi,2019-04-08 19:57:56,https://api.github.com/repos/facebook/Haxl/git/commits/ca0c71441d8047accfcae0fdfb04cf703b2bacb7,ca0c71441d8047accfcae0fdfb04cf703b2bacb7,"Fix travis CI for cabal new-sdist and build against ghc-8.6.4
+
+Summary:
+CI failed because of recent change in cabal-head that sdist is now new-sdist
+instead of v1-sdist and the ouput path is different.
+
+We also build against ghc-8.6.4 instead of ghc-8.6.2 now as this is the latest
+stable version of ghc-8.6.
+
+Reviewed By: alexanderGugel
+
+Differential Revision: D14815535
+
+fbshipit-source-id: 80514188fc4c2d00a10cf7dd1d710eb28ec02e50"
+watashi,2019-04-05 22:01:00,https://api.github.com/repos/facebook/Haxl/git/commits/532445ba5ea99a6461e721f4bff92ac4f8aa4fa0,532445ba5ea99a6461e721f4bff92ac4f8aa4fa0,"Collect allocation stats for background fetch
+
+Summary:
+Right now, we get no alloication infroamtion for background fetch at all.
+This is because the allocation usually happen in a thread and we only get
+back the control in a callback. As a improvement, we can just use the total
+allocation in the child thread as the allocation.
+
+While individual allocation won't be correct if `putResult` is called more than
+once. The total sum and amortized allocation will still be helpful stats.
+
+Reviewed By: simonmar
+
+Differential Revision: D14734588
+
+fbshipit-source-id: 6beed3741a496d308bdcec75eb0f0e0bbfbbae38"
+watashi,2018-12-07 00:16:48,https://api.github.com/repos/facebook/Haxl/git/commits/3dde86f794fe15f5ea9192024d7ec9319f0f2c29,3dde86f794fe15f5ea9192024d7ec9319f0f2c29,"Also run travis CI against ghc-8.4.4 and ghc-8.6.2
+
+Summary: Change ghc-8.4.3 to ghc-8.4.4 and add ghc-8.6.2.
+
+Reviewed By: karen
+
+Differential Revision: D13363035
+
+fbshipit-source-id: 988f13f0a0022d2deec6d03c30cc8ee17a85d252"
+watashi,2018-11-21 04:58:35,https://api.github.com/repos/facebook/Haxl/git/commits/df3d53c79be12a39d3e0d3f635c9ffb903c7dd3c,df3d53c79be12a39d3e0d3f635c9ffb903c7dd3c,"Fix compile warnings for ghc-8.4
+
+Summary: `(<>)` is exposed by `Prelude` now, add guard to suppress those warnings.
+
+Reviewed By: karen
+
+Differential Revision: D13144913
+
+fbshipit-source-id: 856de3b1d4e206c50d12ac79bdf48194ecc7cc78"
+malmerey,2018-09-24 17:29:24,https://api.github.com/repos/facebook/Haxl/git/commits/a6d9563cede340858e7df9a333052df2a4e784c4,a6d9563cede340858e7df9a333052df2a4e784c4,"- Use SourceCode Location to Calculate Memoization Labels
+
+Summary:
+Use the source location of the `memo` statement to calculate the memoization label as opposed to the memoization key. This is to make sure that multiple `memo` calls in the same declaration will get different labels.
+
+This enables to remove `memoUniqueText` and the related pragma as `memoUnique` will now have a Text label by default.
+
+Reviewed By: simonmar
+
+Differential Revision: D9779196
+
+fbshipit-source-id: 89d2ce6d5a6ebc4a6b8246a5ef561ecf8e18c522"
+knekritz,2018-08-07 16:28:14,https://api.github.com/repos/facebook/Haxl/git/commits/9f4574d8a4cd35a3eb310ea7ae55cbc4733ad79f,9f4574d8a4cd35a3eb310ea7ae55cbc4733ad79f,"Fix code of conduct link.
+
+Summary: Thanks cmarkle for noticing in https://github.com/facebookincubator/fizz/pull/5
+
+Reviewed By: dark
+
+Differential Revision: D9195501
+
+fbshipit-source-id: bdbe1588cdcd353d60fcaab14a4fac8bd2256355"
+ryandm,2018-07-25 16:13:18,https://api.github.com/repos/facebook/Haxl/git/commits/4400409acb2c72815b5f41c0385d33d85a109daf,4400409acb2c72815b5f41c0385d33d85a109daf,"get rid of num_rounds
+
+Summary:
+This diff removes the scuba field as described in the task, as well as removing numRounds from Stats. This involved removing the numRounds assertion from expectRounds* functions, which I chose to rename to expectResult* (lmk if you prefer something different there).
+
+Within Stats, I merely deleted the numRounds function. I didn't go looking for anything deeper to clean up because it looked like `rs` was used in other functions.
+
+Reviewed By: zilberstein
+
+Differential Revision: D8963298
+
+fbshipit-source-id: d367b53007be03bd290222c676539680acd9f929"
+xich,2018-07-24 01:22:50,https://api.github.com/repos/facebook/Haxl/git/commits/2f8204cc2a77119947daf7715bf9a368ca747465,2f8204cc2a77119947daf7715bf9a368ca747465,"Add Monoid instance for StateStore
+
+Summary: Add a monoid instance for merging two StateStores.
+
+Reviewed By: watashi
+
+Differential Revision: D8961041
+
+fbshipit-source-id: f6539ec0f0915b572a42ab34c098a9be6c8664f1"
+Juzley,2018-07-02 15:59:12,https://api.github.com/repos/facebook/Haxl/git/commits/04208454e8f69d81fdae1083a35d0bd2bd60c497,04208454e8f69d81fdae1083a35d0bd2bd60c497,"Handle dumping an empty cache
+
+Summary: dumpCacheAsHaskellFn generates an empty `do` block if the cache is empty.
+
+Reviewed By: codemiller
+
+Differential Revision: D8712898
+
+fbshipit-source-id: fcaf4a0cc6c5416155aebda8fe68f3f026d8d025"
+simonmar,2018-06-22 13:47:31,https://api.github.com/repos/facebook/Haxl/git/commits/b3e7a632afcc772116f58125015aa076e1bbd77a,b3e7a632afcc772116f58125015aa076e1bbd77a,"Empty commit to re-sync internal repo
+
+fbshipit-source-id: b3a5238e4f6f9fbf57260b4191c86cb291481c16"
+alexbiehl,2018-06-20 13:51:10,https://api.github.com/repos/facebook/Haxl/git/commits/1bc9bdedc23e0d0d4efbc6235bc6c05077608303,1bc9bdedc23e0d0d4efbc6235bc6c05077608303,"Expose MemoVar type (#94)
+
+Summary:
+Unfortunately we can't refer to `MemoVar` in type signatures otherwise.
+Closes https://github.com/facebook/Haxl/pull/94
+
+Reviewed By: codemiller, malmerey
+
+Differential Revision: D8531175
+
+Pulled By: simonmar
+
+fbshipit-source-id: 03a2b27da9b71d6b7a4a9fdbd4dfbdfe744eabc8"
+phadej,2018-06-12 18:49:13,https://api.github.com/repos/facebook/Haxl/git/commits/a8e6d16310f9376478374e78c0982ab49ad3e345,a8e6d16310f9376478374e78c0982ab49ad3e345,"Allow aeson-1.4
+
+Summary: Closes https://github.com/facebook/Haxl/pull/93
+
+Reviewed By: watashi
+
+Differential Revision: D8379516
+
+Pulled By: malmerey
+
+fbshipit-source-id: 5f77333490636714c8b951a5bba6f26329a8e4fd"
+karen,2018-05-29 20:52:12,https://api.github.com/repos/facebook/Haxl/git/commits/e356bf98bb492410c6e425d4df91015aeca222a5,e356bf98bb492410c6e425d4df91015aeca222a5,"Ensure that calls to `memo` have globally unique keys
+
+Summary: Rewrites calls of `memo` to `memoUnique` to ensure that the keys are globally unique
+
+Reviewed By: xich
+
+Differential Revision: D8085641
+
+fbshipit-source-id: 6de214ed0e2195d59a46752edb28fc4ad591110f"
+phadej,2018-05-21 11:12:46,https://api.github.com/repos/facebook/Haxl/git/commits/6582f45c2138e44c618069cee6d63e2db59028be,6582f45c2138e44c618069cee6d63e2db59028be,"Remove aeson bound from test-suite
+
+Summary:
+It's inherited from the library anyway.
+Closes https://github.com/facebook/Haxl/pull/91
+
+Reviewed By: simonmar
+
+Differential Revision: D8074585
+
+Pulled By: malmerey
+
+fbshipit-source-id: 35955c2426df0725835a4351ee140012ac102c82"
+phadej,2018-03-22 19:39:59,https://api.github.com/repos/facebook/Haxl/git/commits/adb6d5c28f1d56bdcddd87174aee7e0a413c283b,adb6d5c28f1d56bdcddd87174aee7e0a413c283b,"Support GHC-8.4.1 (SMP), lax bounds
+
+Summary: Closes https://github.com/facebook/Haxl/pull/88
+
+Reviewed By: simonmar
+
+Differential Revision: D7365219
+
+Pulled By: niteria
+
+fbshipit-source-id: 28ff85b065000e367ef919b970bc59a76faa15fb"
+jda,2018-01-09 20:43:25,https://api.github.com/repos/facebook/Haxl/git/commits/550d1a5e1d5ebfc74c66b4cc5c7eb0490fcea385,550d1a5e1d5ebfc74c66b4cc5c7eb0490fcea385,"Add FB contrib info & code of conduct
+
+Summary:
+Add FB standard code of conduct and rough contributing file (based on Duckling's).
+ref: https://fburl.com/aedakn3u
+Closes https://github.com/facebook/Haxl/pull/83
+
+Reviewed By: mic47
+
+Differential Revision: D6668802
+
+Pulled By: simonmar
+
+fbshipit-source-id: 72c7c98ea3a7d2ed54021741914b7d2cbb2b9878"
+zilberstein,2018-01-09 17:11:33,https://api.github.com/repos/facebook/Haxl/git/commits/d7cefbca1c6cb302e8a96d665254cf69b76b5ed5,d7cefbca1c6cb302e8a96d665254cf69b76b5ed5,"log to sigma_datasources scuba table
+
+Summary:
+It is useful to have a separate scuba table to record datasource stats where the datasource name is a row instead of a column. This allows us to do more complex aggregations over time/allocations/etc of ALL datasources not per each individual one.
+
+The way it's set up now I rate limit on the datasource name. I'm not sure if this is the right move, maybe I should rate limit on both the datasource and the context? I also log each fetch as a separate row. This might end up being expensive, but it allows us to get more detailed information about batch sizes (ie p95, avg, sum). If we combined all fetches for each datasource then we'd get less detailed information, but it may be more practical.
+
+Reviewed By: sameenjalal, simonmar
+
+Differential Revision: D6492647
+
+fbshipit-source-id: 28399ece277f93616786bdfb18264a0250aa238b"
+simonmar,2017-10-27 10:31:57,https://api.github.com/repos/facebook/Haxl/git/commits/3dbb11f6fef2fef998e8447906777ea5b3fe737f,3dbb11f6fef2fef998e8447906777ea5b3fe737f,"Cleanup and fix builds with other GHC versions
+
+Summary:
+Now that the Haxl 2 diff has landed, I wanted to take the opportunity to reorganise the codebase.
+
+I split parts of `Haxl.Core.Types` out into
+
+* `Haxl.Core.Flags`, the `Flags` type and functions
+* `Haxl.Core.DataSource`: the `DataSource` class and related stuff
+
+and I split the massive `Haxl.Core.Monad` module into smaller modules:
+
+* the base `Haxl.Core.Monad` with the types and instances
+* `Haxl.Core.Fetch`: data-fetching functionality
+* `Haxl.Core.Run`: the scheduler, and `runHaxl`
+* `Haxl.Core.Profile`: profiling
+* `Haxl.Core.Parallel`: `pAnd` and `pOr`
+* I've also moved all the memoization support into `Haxl.Core.Memo`.
+
+This commit also fixes the build on GHC 7.8.x, 7.10.x, and 8.2.x, all the Travis builds are green again.
+
+Closes https://github.com/facebook/Haxl/pull/79
+
+Reviewed By: zilberstein
+
+Differential Revision: D6030246
+
+Pulled By: simonmar
+
+fbshipit-source-id: 5a0dc708cf72f8ed0906f1e99000976dbfbc89e2"
+crdrost,2017-10-11 07:41:41,https://api.github.com/repos/facebook/Haxl/git/commits/cc4033ec0ae7cef0c30d20d360fba541121c8bb7,cc4033ec0ae7cef0c30d20d360fba541121c8bb7,"Fix docs for memoize1 where an example on Hackage was getting flattened
+
+Summary:
+The docs in question can be viewed e.g. here:
+
+> https://hackage.haskell.org/package/haxl-0.5.1.0/docs/Haxl-Core.html#v:memoize1
+
+I *believe* the bird syntax is enough to make Hackage format this thing properly but I do not have very much experience with Hackage so I may well be wrong.
+Closes https://github.com/facebook/Haxl/pull/78
+
+Reviewed By: niteria
+
+Differential Revision: D6019195
+
+Pulled By: simonmar
+
+fbshipit-source-id: 2cf70672333a0446a16df5928a4ad49ecc623d34"
+zilberstein,2017-10-06 00:27:13,https://api.github.com/repos/facebook/Haxl/git/commits/130d83658d04cf11fd4e454465155a796a4a38cd,130d83658d04cf11fd4e454465155a796a4a38cd,"Add optional customization for StateKeys
+
+Summary:
+In order to allow multiple Haxl datasources to share the same state key, I am adding a method to the typeclass that defines how to derive the TypeRep for a given State. The default implementation is identical to the current behavior, so all current datasources will continue to work as they did before, however it's now possible to share state between datasources:
+
+```lang=haskell
+data family MyRequest r a
+
+data instance MyRequest X a where ...
+
+data instance MyRequest Y a where ...
+
+instance StateKey (MyRequest r) where
+  data State (MyRequest r) = MyState
+
+  getStateType _ = typeOf2 (undefined :: MyRequest r a)
+```
+
+Reviewed By: xich
+
+Differential Revision: D5965165
+
+fbshipit-source-id: 92f9e393c80bf4ae453d1ba20e3f35dd51c57933"
+Richard-zhang,2017-07-26 16:29:05,https://api.github.com/repos/facebook/Haxl/git/commits/d2ee0dd9c2ebbf105be343814af02612245ebcda,d2ee0dd9c2ebbf105be343814af02612245ebcda,"fix typos in Haxl/Core/Monad.hs
+
+Summary: Closes https://github.com/facebook/Haxl/pull/72
+
+Differential Revision: D5498033
+
+Pulled By: mic47
+
+fbshipit-source-id: b3ed98467859698709859cac412f5b6b53e8bbdc"
+Richard-zhang,2017-07-26 00:47:40,https://api.github.com/repos/facebook/Haxl/git/commits/f5bf102f404792c9f43f86362ce0441b1fb503b6,f5bf102f404792c9f43f86362ce0441b1fb503b6,"fix typos in tests/BatchTests.hs
+
+Summary: Closes https://github.com/facebook/Haxl/pull/71
+
+Differential Revision: D5494735
+
+Pulled By: watashi
+
+fbshipit-source-id: d7da88a66bd3f344db9daa6c6814382ef2584568"
+watashi,2017-07-12 22:43:10,https://api.github.com/repos/facebook/Haxl/git/commits/2da8d5354b78f592433b718edbe002e128c7d701,2da8d5354b78f592433b718edbe002e128c7d701,"Fix build when eventlog is enabled
+
+Summary:
+Build with eventlog is enabled was broken by refactoring, this should fix
+it.
+
+Reviewed By: xich
+
+Differential Revision: D5410539
+
+fbshipit-source-id: fd2dc97d9d853bcd6bc4b322c3995eec765227eb"
+JonCoens,2017-06-15 18:32:00,https://api.github.com/repos/facebook/Haxl/git/commits/f8901953007c3afa906041edda9a7336dad1fff8,f8901953007c3afa906041edda9a7336dad1fff8,"Bump stackage-lts version in stack.yaml
+
+Summary: Bump to a more recent stackage-lts
+
+Reviewed By: niteria
+
+Differential Revision: D5257292
+
+fbshipit-source-id: 8f3aa86c699e6b91d55998d03dab0d0440993317"
+JonCoens,2017-06-12 17:28:22,https://api.github.com/repos/facebook/Haxl/git/commits/e97eb57514d1ab94c1a43c12570d3717736efecc,e97eb57514d1ab94c1a43c12570d3717736efecc,"Update TestExampleDataSource to find location of LoadCache.txt via envvar if it exists
+
+Summary: This provides a way to override test file locations for other build systems.
+
+Reviewed By: yfeldblum
+
+Differential Revision: D5218507
+
+fbshipit-source-id: 7087ca13afb105b727ecf3f7dfdaecd26d27ea81"
+JonCoens,2017-06-07 20:04:50,https://api.github.com/repos/facebook/Haxl/git/commits/2fa7cc30f50c386f3155975f3fa12c812cea3a64,2fa7cc30f50c386f3155975f3fa12c812cea3a64,"Change HAVE_APPLICATIVEDO check to GHC version check
+
+Reviewed By: simonmar
+
+Differential Revision: D5201670
+
+fbshipit-source-id: 113ef66073e1836fa572ef3fceeb82adc87f253b"
+phadej,2017-04-17 01:45:09,https://api.github.com/repos/facebook/Haxl/git/commits/6a218f91108384b139514e0ddeb2b078dc26f2fa,6a218f91108384b139514e0ddeb2b078dc26f2fa,"Allow aeson-1.2
+
+Summary: Closes https://github.com/facebook/Haxl/pull/69
+
+Differential Revision: D4897787
+
+Pulled By: watashi
+
+fbshipit-source-id: aa8cbcb52822b0a1a3d31112313f495fc11efe1c"
+JonCoens,2017-04-07 21:02:34,https://api.github.com/repos/facebook/Haxl/git/commits/2bc00c77b1f4e8a4ab4d5754202a922b060d64a2,2bc00c77b1f4e8a4ab4d5754202a922b060d64a2,"Add vanilla stack.yaml file
+
+Summary: Adds a simple `stack` file using the latest version of stackage.
+
+Reviewed By: watashi
+
+Differential Revision: D4843970
+
+fbshipit-source-id: 938a16de769210661064157084f5eac42c7c0494"
+phadej,2017-04-06 17:13:11,https://api.github.com/repos/facebook/Haxl/git/commits/f3d340924cd6b42217cf92ed851ff36e2cae8560,f3d340924cd6b42217cf92ed851ff36e2cae8560,"Bump more bounds
+
+Summary:
+- `binary-0.9` is accidental major jump and is now deprecated, I'm not sure what's best to do, cabal solver should pick `-0.8.x.y.` version
+- `HUnit` and `time` changes do not affect use in haxl.
+Closes https://github.com/facebook/Haxl/pull/68
+
+Differential Revision: D4843906
+
+Pulled By: JonCoens
+
+fbshipit-source-id: b97c78e644a170745d7a29aab5c137e86f7018be"
+phadej,2017-01-12 17:51:53,https://api.github.com/repos/facebook/Haxl/git/commits/990b80cbc687c0009b009fea1f9040770f28e6c9,990b80cbc687c0009b009fea1f9040770f28e6c9,"Test with GHC 8.0.2
+
+Summary:
+If this goes ok, can we have a release?
+Closes https://github.com/facebook/Haxl/pull/66
+
+Reviewed By: simonmar
+
+Differential Revision: D4409114
+
+Pulled By: niteria
+
+fbshipit-source-id: 6d6e88f1cf7b9ae2d851eaa86966f2eb417b4d7e"
+phadej,2017-01-08 20:25:41,https://api.github.com/repos/facebook/Haxl/git/commits/d8f2eeed13dc4494b7df71bb86415d93ae0f07ca,d8f2eeed13dc4494b7df71bb86415d93ae0f07ca,"Allow vector-0.12, time-1.7; Drop unused directory
+
+Summary: Closes https://github.com/facebook/Haxl/pull/65
+
+Reviewed By: xich
+
+Differential Revision: D4391469
+
+Pulled By: niteria
+
+fbshipit-source-id: d9a54fe6c4a255c0e82b26aca2849265fd7e8b53"
+phadej,2017-01-06 00:48:17,https://api.github.com/repos/facebook/Haxl/git/commits/d77b818a82552552ed81aae9a193fb41fefc5b55,d77b818a82552552ed81aae9a193fb41fefc5b55,"Allow aeson-1.1
+
+Summary:
+Alternatively we could change dependency to `aeson-compat`, which has less major version bumps (because it has smaller public API surface, yet one have to be careful .e.g. not to rely on instance implementations).
+Closes https://github.com/facebook/Haxl/pull/64
+
+Differential Revision: D4385525
+
+Pulled By: xich
+
+fbshipit-source-id: 72246e0f9144728e618de7bfcf983531bd3d281a"
+watashi,2016-12-19 18:06:28,https://api.github.com/repos/facebook/Haxl/git/commits/03d434fbd661d49941a4d332825cea88900faef9,03d434fbd661d49941a4d332825cea88900faef9,"Include request in the uninitialized data source error
+
+Summary:
+Include request in the uninitialized data source error so we will
+know which request is not in cache or triggering this problem.
+This will increase the size of error message, but in production
+this should not happen as we should sanitize data source is
+initizlied correctly.
+
+Reviewed By: codemiller
+
+Differential Revision: D4342674
+
+fbshipit-source-id: ec3506285806e749dccade5ba5eb8cfdb25a5671"
+phadej,2016-12-09 22:18:58,https://api.github.com/repos/facebook/Haxl/git/commits/b0a5f7b8a881d5ca5712b31f5efce0e4ef8b5666,b0a5f7b8a881d5ca5712b31f5efce0e4ef8b5666,"Rename Show1 to ShowP
+
+Summary:
+Resolve #62
+Closes https://github.com/facebook/Haxl/pull/63
+
+Reviewed By: JonCoens
+
+Differential Revision: D4299180
+
+Pulled By: niteria
+
+fbshipit-source-id: 0bcbefd26184d1e7ad5de99a806ce0cf4b57d1a6"
+niteria,2016-11-22 22:04:09,https://api.github.com/repos/facebook/Haxl/git/commits/b8cb1d850f4b2b826ed5ef0726fb77d92e49e741,b8cb1d850f4b2b826ed5ef0726fb77d92e49e741,"Bump version before release
+
+Summary: Closes https://github.com/facebook/Haxl/pull/61
+
+Reviewed By: darshankapashi
+
+Differential Revision: D4222554
+
+Pulled By: niteria
+
+fbshipit-source-id: d634be076eef94c00277952e6c8bc1920b052f89"
+niteria,2016-11-22 20:54:39,https://api.github.com/repos/facebook/Haxl/git/commits/c3d650e173b82f949b95a0cab013370cfee910c9,c3d650e173b82f949b95a0cab013370cfee910c9,"Allow HUnit 1.5
+
+Summary:
+According to #1965:
+
+> Stackage nightly builds will soon move to HUnit-1.5.
+Closes https://github.com/facebook/Haxl/pull/60
+
+Reviewed By: xich
+
+Differential Revision: D4221036
+
+Pulled By: niteria
+
+fbshipit-source-id: d3b011c7510ab9eceed9a1afdce0e55ed0983cf0"
+phadej,2016-10-07 12:42:01,https://api.github.com/repos/facebook/Haxl/git/commits/bc791fd73429e61cc8e6d52dd725a975641bcb4c,bc791fd73429e61cc8e6d52dd725a975641bcb4c,"Allow HUnit-1.4
+
+Summary: Closes https://github.com/facebook/Haxl/pull/59
+
+Reviewed By: niteria
+
+Differential Revision: D3987227
+
+Pulled By: algoriddle
+
+fbshipit-source-id: 3be85a3eef2f40fd0a0efe0aee09714646632b4f"
+phadej,2016-10-05 12:36:22,https://api.github.com/repos/facebook/Haxl/git/commits/f80fe801a2d93b57aba340c9ca03e6fb31c1e7b0,f80fe801a2d93b57aba340c9ca03e6fb31c1e7b0,"Make haxl compile cleanly with stack build --pedantic
+
+Summary: Closes https://github.com/facebook/Haxl/pull/56
+
+Reviewed By: JonCoens
+
+Differential Revision: D3973977
+
+Pulled By: simonmar
+
+fbshipit-source-id: 527e17407dbeb3376955733949b0edb8b581122a"
+JonCoens,2016-10-04 12:11:18,https://api.github.com/repos/facebook/Haxl/git/commits/f5ecbea752ecc10da5ddebe6bd532bb56a4b9c70,f5ecbea752ecc10da5ddebe6bd532bb56a4b9c70,"Drop NFData from Haxl Monad
+
+Summary: `GenHaxl` having an `NFData` instance is apparently a lie. Remove this functionality
+
+Reviewed By: simonmar
+
+Differential Revision: D3967290
+
+fbshipit-source-id: 1da91dcd6470de0f911e8a29b86c4aa5d6c7301f"
+algoriddle,2016-09-30 16:47:42,https://api.github.com/repos/facebook/Haxl/git/commits/98b403f0a46fdba790a6315667f14975d8b7b1d7,98b403f0a46fdba790a6315667f14975d8b7b1d7,"fix package
+
+Summary: Some of the test files were not listed in haxl.cabal
+
+Reviewed By: kuk0
+
+Differential Revision: D3951346
+
+fbshipit-source-id: 8e6677a728acde3713c618a6383b2de510b1ac86"
+algoriddle,2016-09-30 10:08:45,https://api.github.com/repos/facebook/Haxl/git/commits/187bd49f54fad46b63114bdd3339d53bc63f3b5b,187bd49f54fad46b63114bdd3339d53bc63f3b5b,"increasing version in haxl.cabal
+
+Summary: Increasing package version before uploading on hackage.
+
+Reviewed By: JonCoens
+
+Differential Revision: D3944387
+
+fbshipit-source-id: 146ed68970b7d3d6486b0e10f7d183e60e37257b"
+JonCoens,2016-09-22 18:03:58,https://api.github.com/repos/facebook/Haxl/git/commits/78052b96256f745221b053faef75f1d226797cc1,78052b96256f745221b053faef75f1d226797cc1,"Derive NFData instance for GenHaxl
+
+Summary: Having an NFData instance allows forcing calls that return a Haxl computation to run.
+
+Reviewed By: xich
+
+Differential Revision: D3906781
+
+fbshipit-source-id: e49448152695383031af6d315a20dbcd1c10720c"
+xich,2016-08-22 15:21:36,https://api.github.com/repos/facebook/Haxl/git/commits/528bba55657c5bd379397da5da2efc42c610d3c8,528bba55657c5bd379397da5da2efc42c610d3c8,"Add unit test to demonstrate withLabel with pure/haxl exceptions
+
+Summary:
+Labels which throw Haxl exceptions are recorded, but pure exceptions bubble up
+and labels are lost. This test demonstrates this.
+
+Reviewed By: simonmar
+
+Differential Revision: D3672479
+
+fbshipit-source-id: fab10878e7eb067e0c65bcf401d75604c333007f"
+phadej,2016-08-10 15:12:59,https://api.github.com/repos/facebook/Haxl/git/commits/bc4a25c61e56b3e1373545e662b875b4a4a46295,bc4a25c61e56b3e1373545e662b875b4a4a46295,"Support aeson-1
+
+Summary: Closes https://github.com/facebook/Haxl/pull/54
+
+Reviewed By: kuk0
+
+Differential Revision: D3696720
+
+Pulled By: niteria
+
+fbshipit-source-id: f04ba17a24a74dcc0de8b1c4336c59e28d5a427d"
+xich,2016-08-03 03:10:37,https://api.github.com/repos/facebook/Haxl/git/commits/8a69ddcc0dd47982d5b193ba966dd7f5746b9668,8a69ddcc0dd47982d5b193ba966dd7f5746b9668,"Import Control.Applicative in MemoizationTests for GHC < 7.10
+
+Summary: GHC prior to 7.10 didn't export <$> in the prelude.
+
+Reviewed By: watashi
+
+Differential Revision: D3659220
+
+fbshipit-source-id: af95574bc33f593fe0deb9217a963a7d9d9b0a16"
+xich,2016-08-02 18:06:09,https://api.github.com/repos/facebook/Haxl/git/commits/69ede7d79d623c643288961957204eba95cd98ba,69ede7d79d623c643288961957204eba95cd98ba,"Import Control.Applicative in Haxl.Core.Memo for GHC 7.8 support
+
+Summary: Prior to GHC 7.10, <$> was not in the prelude, so requires an explicit import.
+
+Reviewed By: watashi
+
+Differential Revision: D3656379
+
+fbshipit-source-id: 43925bc9c483ee712b04976d6fa6cb6b9d9b998e"
+xich,2016-08-02 17:41:18,https://api.github.com/repos/facebook/Haxl/git/commits/1ca0643c10ee51b0a9c104126da7968c75e4a864,1ca0643c10ee51b0a9c104126da7968c75e4a864,"Add travis build status badge to readme
+
+Summary:
+The 7.8 build keeps breaking, but no one notices until someone opens an issue.
+With the travis badge, breakage will at least be visible from the github
+landing page for Haxl repo.
+
+Reviewed By: zilberstein
+
+Differential Revision: D3656468
+
+fbshipit-source-id: 5537ab78b9dd44a5a3f07e7e3db7f73ec959f096"
+xich,2016-07-28 16:25:01,https://api.github.com/repos/facebook/Haxl/git/commits/c34ea3a3fd81c9a3d31a578c00e4325dc047e995,c34ea3a3fd81c9a3d31a578c00e4325dc047e995,"Expose MiddleException for access to `eName` function.
+
+Summary: Expose MiddleException because the `eName` function is useful.
+
+Reviewed By: watashi
+
+Differential Revision: D3635507
+
+fbshipit-source-id: bec3fac0b4f7c009c57d14857d46576ffc5ab826"
+kuk0,2016-07-25 22:39:39,https://api.github.com/repos/facebook/Haxl/git/commits/10623dc6ee283ea949b365f53bf19bbc0c2133ea,10623dc6ee283ea949b365f53bf19bbc0c2133ea,"add show instances for core types
+
+Summary: add show instances for core types
+
+Reviewed By: JonCoens
+
+Differential Revision: D3613250
+
+fbshipit-source-id: aa3bacdbb938666352859078ccf93fc24f3e8652"
+kuk0,2016-07-22 14:11:38,https://api.github.com/repos/facebook/Haxl/git/commits/d7483ccf6b3d81e317216289b9534c6a0de493f6,d7483ccf6b3d81e317216289b9534c6a0de493f6,"fix haddock
+
+Summary: fix code examples in haddock
+
+Reviewed By: sykora
+
+Differential Revision: D3605259
+
+fbshipit-source-id: ff7bfa1cb6a1d592967c9b69ac5e37de95d1b502"
+JonCoens,2016-06-28 10:00:42,https://api.github.com/repos/facebook/Haxl/git/commits/3d14694b225bdaf5b5a9afc847f571a120cd1f6d,3d14694b225bdaf5b5a9afc847f571a120cd1f6d,"Add allocation statistics per data source per round
+
+Summary: Track and report allocation usage for data sources and rounds
+
+Reviewed By: simonmar
+
+Differential Revision: D3488169
+
+fbshipit-source-id: 39c853ec89881e9f7d8d32b1a8d0a878c847a33e"
+katiejots,2016-06-21 12:17:44,https://api.github.com/repos/facebook/Haxl/git/commits/f1256b6ae7be58c08c16dd5e68f350884aa39f84,f1256b6ae7be58c08c16dd5e68f350884aa39f84,"Improve clarity in Haxl documentation
+
+Summary: Improve clarity in Haxl documentation
+
+Reviewed By: niteria
+
+Differential Revision: D3462720
+
+fbshipit-source-id: e73f149b05b87ea10ef43f051f88a269ca91ca66"
+JonCoens,2016-06-21 08:13:19,https://api.github.com/repos/facebook/Haxl/git/commits/3a88f2a08815fc20461363ef76b4199dfcb1553c,3a88f2a08815fc20461363ef76b4199dfcb1553c,"Merge pull request #50 from adarqui/typo
+
+Just a typo fix"
+adarqui,2016-06-21 06:48:30,https://api.github.com/repos/facebook/Haxl/git/commits/a90363a03c63279901b01d7bb83cd7121e46e5a6,a90363a03c63279901b01d7bb83cd7121e46e5a6,typo fix
+xich,2016-06-14 16:12:06,https://api.github.com/repos/facebook/Haxl/git/commits/922717e73672dc60eb6150a60f225612d1b94ebf,922717e73672dc60eb6150a60f225612d1b94ebf,"Add :profile command
+
+Summary:
+Add a :profile command to haxlsh to view lightweight profiling data.
+Has optional flags to sort output on a given column, or filter rows by name
+with a regex.
+
+Useful for iterating while trying to squash allocation issues.
+
+Differential Revision: D3429989
+
+fbshipit-source-id: 3631afbac6f7a8580b1c46fae8039bacaa996ab3"
+algoriddle,2016-06-07 22:15:30,https://api.github.com/repos/facebook/Haxl/git/commits/251ad5c3e5f47ec4f060adf4e913db172c110650,251ad5c3e5f47ec4f060adf4e913db172c110650,"Version bounds on binary package
+
+Summary:
+Putting version bounds on binary package in haxl.cabal
+Closes https://github.com/facebook/Haxl/pull/48
+
+Reviewed By: watashi
+
+Differential Revision: D3371245
+
+Pulled By: algoriddle
+
+fbshipit-source-id: 574cbbe3ee081bd4e8af7c91fa89cf6ab6a03029"
+algoriddle,2016-06-05 09:04:25,https://api.github.com/repos/facebook/Haxl/git/commits/4c5a07b98f3d5534adefe6e9383dbeb8a793caba,4c5a07b98f3d5534adefe6e9383dbeb8a793caba,"Fix compilation error on 7.8.4 due to missing import
+
+Summary: Adding missing import
+
+Reviewed By: xich
+
+Differential Revision: D3390552
+
+fbshipit-source-id: 0a083bb9612f2923207880b813f10bf471af1497"
+algoriddle,2016-06-04 21:23:09,https://api.github.com/repos/facebook/Haxl/git/commits/18935515643e4d989be8e35bd0c3149de138a5a5,18935515643e4d989be8e35bd0c3149de138a5a5,"Unbreak cabal test
+
+Summary: Some tests were failing, but we ignored the test failures by not checking the return value from the test runner. This patch fixes both the test runner and the tests.
+
+Reviewed By: watashi
+
+Differential Revision: D3379609
+
+fbshipit-source-id: 0a1278879faa5beb0f9779ddfaa622cdbf05a73f"
+xich,2016-06-03 23:35:00,https://api.github.com/repos/facebook/Haxl/git/commits/9d5db2ae63af8d7b342d7f6472fb5e42bf68ac11,9d5db2ae63af8d7b342d7f6472fb5e42bf68ac11,"Optimize Haxl Monad
+
+Summary:
+This diff does two things:
+
+1. Claws back performance lost to lightweight profiling, and then some.
+Haxl monad with lightweight profiling is now faster than it was before
+lightweight profiling was added.
+
+par1 and tree are ~20% faster.
+seqr is ~10% faster.
+par2 and seql are unchanged.
+
+2. Eliminate redundant constraints on some exported functions.
+Wherever types on exported functions changed, they became less
+constrained with no loss of functionality. Notably, the *WithShow
+functions no longer require pointless Show constraints.
+
+Now the gory details:
+
+Monadbench on master (before lightweight profiling):
+
+  par1
+  10000 reqs: 0.01s
+  100000 reqs: 0.11s
+  1000000 reqs: 1.10s
+  par2
+  10000 reqs: 0.02s
+  100000 reqs: 0.41s
+  500000 reqs: 2.02s
+  seql
+  10000 reqs: 0.04s
+  100000 reqs: 0.50s
+  500000 reqs: 2.65s
+  seqr
+  200000 reqs: 0.02s
+  2000000 reqs: 0.19s
+  20000000 reqs: 1.92s
+  tree
+  17 reqs: 0.48s
+  18 reqs: 0.99s
+  19 reqs: 2.04s
+
+After D3316018, par1 and tree got faster (surprise win), but par2 got worse, and seql got much worse:
+
+  par1
+  10000 reqs: 0.01s
+  100000 reqs: 0.08s
+  1000000 reqs: 0.91s
+  par2
+  10000 reqs: 0.03s
+  100000 reqs: 0.42s
+  500000 reqs: 2.29s
+  seql
+  10000 reqs: 0.04s
+  100000 reqs: 0.61s
+  500000 reqs: 3.89s
+  seqr
+  200000 reqs: 0.02s
+  2000000 reqs: 0.19s
+  20000000 reqs: 1.83s
+  tree
+  17 reqs: 0.39s
+  18 reqs: 0.77s
+  19 reqs: 1.58s
+
+Looked at the core (-ddump-prep) for Monad module.
+Main observation is that GHC is really bad at optimizing the 'Request r a' constraint because it is a tuple.
+
+To see why:
+
+  f :: Request r a => ...
+  f = ... g ... h ...
+
+  g :: Show (r a) => ...
+  h :: Request r a => ...
+
+GHC will end up with something like:
+
+  f $dRequest =
+    let $dShow = case $dRequest of ... in
+    let $dEq = case $dRequest of ... in
+    ... etc for Typeable, Hashable, and the other Show ...
+    let g' = g $dShow ... in
+    let req_tup = ($dShow, $dEq, ... etc ...) in
+    h req_tup ...
+
+That is, it unboxes each of the underlying dictionaries lazily, even though it only needs the single Show dictionary.
+It then reboxes them all in order to call 'h', meaning none of the unboxed ones are dead code.
+I couldn't figure out how to get it to do the sane thing (unbox the one it needs and pass the original dictionary onwards).
+We should investigate improving the optimizer.
+
+To avoid the problem, I tightened up the constraints in several places to be only what is necessary (instead of all of Request).
+
+Notably:
+
+Removed Request constraint from ShowReq, as it was completely unnecessary.
+All the *WithShow variants do not take Show constraints at all. Doing so seemed to violate their purpose.
+The crucial *WithInsert functions only take the bare constraints they need, avoiding the reboxing.
+Since *WithInsert are used by *WithShow, I had to explicitly pass a show function in places.
+See Note [showFn] for an explanation.
+
+This gave us back quite a bit on seql, and a bit on seqr:
+
+  par1
+  10000 reqs: 0.01s
+  100000 reqs: 0.08s
+  1000000 reqs: 0.90s
+  par2
+  10000 reqs: 0.02s
+  100000 reqs: 0.36s
+  500000 reqs: 2.18s
+  seql
+  10000 reqs: 0.04s
+  100000 reqs: 0.55s
+  500000 reqs: 3.00s
+  seqr
+  200000 reqs: 0.02s
+  2000000 reqs: 0.18s
+  20000000 reqs: 1.73s
+  tree
+  17 reqs: 0.39s
+  18 reqs: 0.79s
+  19 reqs: 1.54s
+
+Finally, addProfileFetch was getting inlined into dataFetchWithInsert.
+This caused some let-bound stuff to float out and get allocated before the flag test.
+Adding a NOINLINE prevented this, getting about 10% speedup on par2 and seql.
+Doing the constraint work above enabled this, because otherwise the call to
+addProfileFetches was creating the reboxing issue where it didn't exist before.
+
+  par1
+  10000 reqs: 0.01s
+  100000 reqs: 0.08s
+  1000000 reqs: 0.89s
+  par2
+  10000 reqs: 0.02s
+  100000 reqs: 0.35s
+  500000 reqs: 1.98s
+  seql
+  10000 reqs: 0.04s
+  100000 reqs: 0.53s
+  500000 reqs: 2.72s
+  seqr
+  200000 reqs: 0.02s
+  2000000 reqs: 0.17s
+  20000000 reqs: 1.67s
+  tree
+  17 reqs: 0.39s
+  18 reqs: 0.82s
+  19 reqs: 1.65s
+
+Reviewed By: simonmar
+
+Differential Revision: D3378141
+
+fbshipit-source-id: 4b9dbe0c347f924805a7ed4c526c4e7c9aeef077"
+xich,2016-06-03 22:23:22,https://api.github.com/repos/facebook/Haxl/git/commits/b5a305b5c1a18b9646726619d6ca0e7830d8113d,b5a305b5c1a18b9646726619d6ca0e7830d8113d,"Count rounds/fetches for profiling labels.
+
+Summary:
+This collects the highest round in which a label adds a fetch, as well as
+number of fetches per label per datasource. It reports these, along with
+aggregated values with scuba sample of profiling data.
+
+Aggregation for number of rounds is the maximum round of label or any of
+label's children. Aggregation for number of fetches is sum.
+
+Reviewed By: simonmar
+
+Differential Revision: D3316018
+
+fbshipit-source-id: 152690c7b8811d22f566437675c943f755029528"
+algoriddle,2016-06-02 12:31:22,https://api.github.com/repos/facebook/Haxl/git/commits/19b024634b02368c6a3268064c1961811712497b,19b024634b02368c6a3268064c1961811712497b,"resolve test runner conflict
+
+Summary: We use a FB-specific test runner in fbcode. As a result currently tests/Main.hs is different on github to allow 'cabal test' to pass. This diff resolves the difference by creating a common list of tests and two separate entry points for running the tests: tests/Main.hs for internal use, and tests/TestMain.hs for github. tests/Main.hs will (eventually) be excluded from the public sources.
+
+Reviewed By: simonmar
+
+Differential Revision: D3371609
+
+fbshipit-source-id: 46a7382df814687230db43136acd496d0c5ebca9"
+algoriddle,2016-06-01 16:05:21,https://api.github.com/repos/facebook/Haxl/git/commits/d7acb3421ccbfb2c9bc2373f7a1cf255488a6ff7,d7acb3421ccbfb2c9bc2373f7a1cf255488a6ff7,"Dummy get/setAllocationCounter for ghc < 7.10
+
+Summary: Fix compilation errors since get/setAllocationCounter is not supported on ghc 7.8.4.
+
+Reviewed By: xich
+
+Differential Revision: D3371487
+
+fbshipit-source-id: 33c41c12503b54eb7e4d82f1d987e089792b6a0f"
+algoriddle,2016-05-31 15:43:00,https://api.github.com/repos/facebook/Haxl/git/commits/c1638504d18b7b33710e1db6fa12c70237769b94,c1638504d18b7b33710e1db6fa12c70237769b94,"Add missing dependency in haxl.cabal
+
+Summary: We use Data.Binary so the binary package is required for Haxl to build.
+
+Reviewed By: niteria, kuk0
+
+Differential Revision: D3365843
+
+fbshipit-source-id: 4e1198a1d27dac91e6525fc163aaeb10f7a65972"
+algoriddle,2016-05-31 15:08:55,https://api.github.com/repos/facebook/Haxl/git/commits/56612b9eba466d35d711fd9a87c073a11f93f7aa,56612b9eba466d35d711fd9a87c073a11f93f7aa,typo fix to eliminate fb and github diff
+watashi,2015-10-16 19:10:27,https://api.github.com/repos/facebook/Haxl/git/commits/cf56b25aa56ac7b1797cbbf36723818ad6738532,cf56b25aa56ac7b1797cbbf36723818ad6738532,"Populate the number of failed data source requests to scuba
+
+Summary:
+This will be very helpful when investigating some bad requests or
+infrastructure issues, especially when the exception is caught
+by withDefault later so we cannot see them in sigma_feature_errors.
+
+The cost is negligible, so
+
+whynot
+
+Reviewed By: simonmar
+
+Differential Revision: D2548503
+
+fbshipit-source-id: 8167ef536d201923f80793aca298cc6c5dff92d1"
+zilberstein,2016-05-20 14:19:01,https://api.github.com/repos/facebook/Haxl/git/commits/bab7a57f5c0ed1e6bce2cefdec3fdd56d94f87a1,bab7a57f5c0ed1e6bce2cefdec3fdd56d94f87a1,"remove extra comment
+
+Summary: someone added this useless comment. I'm going to delete it
+
+Reviewed By: niteria, simonmar
+
+Differential Revision: D3327964
+
+fbshipit-source-id: 15c52b9497d70b360aeddf56fa4a402496949e43"
+zilberstein,2016-05-20 12:13:14,https://api.github.com/repos/facebook/Haxl/git/commits/2ec5ba1e21f412fcd85eeadd1d96d6bd7d81e73b,2ec5ba1e21f412fcd85eeadd1d96d6bd7d81e73b,"kick sandcastle build
+
+Summary: ignore this diff. just trying to kick a sandcastle build
+
+Reviewed By: niteria
+
+Differential Revision: D3327658
+
+fbshipit-source-id: a774f53e54db5e7a29a3a6152dcf7fb2d62db4b0"
+xich,2016-05-10 00:11:12,https://api.github.com/repos/facebook/Haxl/git/commits/83f9fff80f61847697b289ed1078ef24d9ea4161,83f9fff80f61847697b289ed1078ef24d9ea4161,"Name MemoFingerprintKeys
+
+Summary: Associate names with MemoFingerprintKeys. This adds two unboxed string fields to MemoFingerprintKey. (One for module name, one for feature name.) Each is a pointer to a statically allocated CString, which we can then turn into a Text for withLabel.
+
+Reviewed By: simonmar
+
+Differential Revision: D3257819
+
+fbshipit-source-id: 6279103c0879"
+xich,2016-05-07 01:14:27,https://api.github.com/repos/facebook/Haxl/git/commits/9737719b7fdf6950642b4f820dc50720aaabfd33,9737719b7fdf6950642b4f820dc50720aaabfd33,"Subtract nested allocations from lightweight profiling
+
+Summary:
+Does three things:
+
+1. Fix order of arguments to `updEntry` to update the existing entry, instead of replacing it with 2*new.
+2. Subtract nested allocations from parent.
+3. Call setAllocationCounter after recording profiling data, so profiling overhead doesn't count towards the parent or the allocation limit.
+
+Reviewed By: simonmar
+
+Differential Revision: D3235413
+
+fbshipit-source-id: a9f287399516fc90600b15a1524592f9c3b0674b"
+katiejots,2016-04-28 09:17:24,https://api.github.com/repos/facebook/Haxl/git/commits/78de4f77d62bfae8baf639c55414cc092c5d5f26,78de4f77d62bfae8baf639c55414cc092c5d5f26,"Enabling custom show functions for datasource requests and responses
+
+Summary:
+Make it possible to supply the show function used for a datasource request
+and/or response in the cache. Previously, this was hardcoded to be `show`.
+
+Reviewed By: simonmar
+
+Differential Revision: D3226122
+
+fbshipit-source-id: 90888db59a3f2f4b4c44e107cbc2391c958e470c"
+katiejots,2016-02-29 18:03:01,https://api.github.com/repos/facebook/Haxl/git/commits/b261f567c4dab16e8f5c10ee0402f999e5fd9230,b261f567c4dab16e8f5c10ee0402f999e5fd9230,"Parameterise dumpCacheAsHaskell with function name/type
+
+Summary:
+Parameterise dumpCacheAsHaskell with function name/type, and offer a more
+appropriate type for si_sigma users so the output of `:cache dump` in haxlsh
+will have a more fitting function signature.
+
+Reviewed By: niteria
+
+Differential Revision: D2982820
+
+fbshipit-source-id: 0f5dc0049de4"
+watashi,2015-12-29 22:40:34,https://api.github.com/repos/facebook/Haxl/git/commits/d9b084b86c99749a801ca4cbb16cf201fa027ed1,d9b084b86c99749a801ca4cbb16cf201fa027ed1,"Do not require Show for memoFingerprintKey
+
+Summary:
+We don't need memoized value to be showable. By removing this constrait,
+we no longer require deriving `Show` for many user-defined data types
+and we support values like `Haxl a` which doesn't have a proper `Show`
+instance.
+
+Differential Revision: D2793617
+
+fbshipit-source-id: f4958ca83eda97d4a27f4e1544a1078039ce6875"
+algoriddle,2016-05-27 15:22:40,https://api.github.com/repos/facebook/Haxl/git/commits/3e787560344961563c36cb676cb24412d57f61d1,3e787560344961563c36cb676cb24412d57f61d1,Remove TARGETS files
+simonmar,2016-05-23 09:36:40,https://api.github.com/repos/facebook/Haxl/git/commits/f09fc218c32e9bc2a57bb25baeaa1a76a3d192d1,f09fc218c32e9bc2a57bb25baeaa1a76a3d192d1,"Merge branch 'master' of https://github.com/facebook/Haxl
+
+* 'master' of https://github.com/facebook/Haxl:
+  Try to compile with GHC 8.0.1
+  Use hvr travis setup
+  Update aeson and time"
+simonmar,2016-05-23 09:36:23,https://api.github.com/repos/facebook/Haxl/git/commits/3c299cc1fd16901c5713e56271b2ad6b7e96f328,3c299cc1fd16901c5713e56271b2ad6b7e96f328,bump to 0.3.1.0
+watashi,2016-03-17 21:10:11,https://api.github.com/repos/facebook/Haxl/git/commits/f577a3b6455fa9d2107979914e9b38cc4587e017,f577a3b6455fa9d2107979914e9b38cc4587e017,"Merge pull request #42 from phadej/aeson-0.11
+
+Update aeson and improve travis setup"
+phadej,2016-02-09 17:52:25,https://api.github.com/repos/facebook/Haxl/git/commits/e5583aa23ddee103eda81a9c976e35433c5a8e82,e5583aa23ddee103eda81a9c976e35433c5a8e82,Try to compile with GHC 8.0.1
+phadej,2016-02-09 13:52:47,https://api.github.com/repos/facebook/Haxl/git/commits/4e7e04140d4cd05172cadeeb6a07741b33cb9e5a,4e7e04140d4cd05172cadeeb6a07741b33cb9e5a,Use hvr travis setup
+phadej,2016-02-09 13:51:34,https://api.github.com/repos/facebook/Haxl/git/commits/63a57a2c435c98ed2b461838f519d255b7b08341,63a57a2c435c98ed2b461838f519d255b7b08341,Update aeson and time
+simonmar,2015-10-29 17:40:35,https://api.github.com/repos/facebook/Haxl/git/commits/be4f0a1d7c093dd4efa6584ac2d231a4502e0da7,be4f0a1d7c093dd4efa6584ac2d231a4502e0da7,"Merge pull request #39 from phadej/monad-throw
+
+Resolve #38: Add MonadThrow and MonadCatch instances"
+phadej,2015-10-29 16:18:59,https://api.github.com/repos/facebook/Haxl/git/commits/419f602551d478d1f62e697ec5159c12e89ffb4d,419f602551d478d1f62e697ec5159c12e89ffb4d,Add MonadThrow and MonadCatch instances
+simonmar,2015-10-29 15:08:03,https://api.github.com/repos/facebook/Haxl/git/commits/77f6f710d4ba9aab0e13a2fe5825944732f94f9b,77f6f710d4ba9aab0e13a2fe5825944732f94f9b,"Merge pull request #37 from phadej/dep-bump
+
+Lax upper bounds"
+phadej,2015-10-20 13:27:38,https://api.github.com/repos/facebook/Haxl/git/commits/2a400204fb8db6d3727b7dce24652a1627c29951,2a400204fb8db6d3727b7dce24652a1627c29951,Lax upper bounds
+xich,2015-09-18 17:20:02,https://api.github.com/repos/facebook/Haxl/git/commits/20110531830923014582aebb0d93bc2bc1d7f100,20110531830923014582aebb0d93bc2bc1d7f100,"Use smart view in Blocked continuation to avoid quadratic bind behavior.
+
+Summary:
+Use the smart view technique from [1] to avoid quadratic behavior of
+left-nested binds in the continuation of Blocked results. This makes the seql
+benchmark linear (and quite fast).
+
+(See before-and-after benchmark results in P20020178)
+
+[1] http://dl.acm.org/citation.cfm?id=2784743
+
+Test Plan:
+Ran the Haxl core tests with `fbmake runtests`. Also compared the
+microbenchmarks in MonadBench. (see P20020178)
+
+End-to-end test results for top 25 contexts:
+
+https://www.facebook.com/pxlcld/mPXZ
+https://www.facebook.com/pxlcld/mPZ2
+https://www.facebook.com/pxlcld/mPZ0
+https://www.facebook.com/pxlcld/mPZ1
+
+Based on those, not sure what to do. It does seem like a very slight improvement, but not strictly improving. Thoughts?
+
+Reviewed By: smarlow@fb.com
+
+Subscribers: ldbrandy, kjm, jlengyel, memo, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D2438616
+
+Tasks: 8432911
+
+Signature: t1:2438616:1442568800:bf2d1a18819c0ceeb6ea097379ec4bbc6364c0c2"
+simonmar,2015-07-17 15:25:11,https://api.github.com/repos/facebook/Haxl/git/commits/1d996291a44461c9dd4962e60dc136cc8b3ecebf,1d996291a44461c9dd4962e60dc136cc8b3ecebf,"Merge pull request #34 from kantp/thunkleak
+
+Close thunk leak in roundstats."
+simonmar,2015-04-15 15:04:25,https://api.github.com/repos/facebook/Haxl/git/commits/6b1f7a69e9acd5181fca155babcb9de165eb73db,6b1f7a69e9acd5181fca155babcb9de165eb73db,0.2.0.0 (we've made backwards-incompatible changes)
+simonmar,2015-04-15 15:00:54,https://api.github.com/repos/facebook/Haxl/git/commits/19b3f63a4e1f4ee4f577f86042a7d443f7087f0c,19b3f63a4e1f4ee4f577f86042a7d443f7087f0c,0.1.0.1
+simonmar,2015-04-15 14:54:41,https://api.github.com/repos/facebook/Haxl/git/commits/462beed8eb8d14efb3159acd9384a9839571842e,462beed8eb8d14efb3159acd9384a9839571842e,Fix GHC version-related build issues
+watashi,2015-04-10 06:01:26,https://api.github.com/repos/facebook/Haxl/git/commits/580aadb74705423f515bc95c08f9bfdc7ecf3a98,580aadb74705423f515bc95c08f9bfdc7ecf3a98,"Unbreak haxl on ghc 7.10
+
+Some ghc internal packages bumped their versions.
+Thanks @FranklinChen for reporting this issue.
+Closes #28"
+watashi,2015-03-11 17:06:07,https://api.github.com/repos/facebook/Haxl/git/commits/9f873ed35a3d78653b0231761e320e909938352e,9f873ed35a3d78653b0231761e320e909938352e,"Update haxl copyright headers
+
+Summary:
+Update haxl copyright headers: s/2014/2014-present/g
+Thank @siddharthasharma for pointing this out
+Closes #26, #27
+
+Test Plan: meh
+
+Reviewed By: jon.coens@fb.com
+
+Subscribers: ldbrandy, memo, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1903841
+
+Signature: t1:1903841:1426073797:b95462075265fa8ec9c1252e45ef5cac7a37e7e2"
+watashi,2015-02-09 17:14:11,https://api.github.com/repos/facebook/Haxl/git/commits/96f5513f560a0f0e2a538b014463f5982570b31c,96f5513f560a0f0e2a538b014463f5982570b31c,Remove TARGETS
+watashi,2015-02-09 16:09:17,https://api.github.com/repos/facebook/Haxl/git/commits/6fb255fffcfaac776afdd421f05626ba15d7a124,6fb255fffcfaac776afdd421f05626ba15d7a124,"Make haxl/core self-contained and updated
+
+Summary: Make haxl/core self-contained and sync github
+
+Test Plan:
+fbmake opt && fbmake runtests_opt
+cabal build && cabal test
+
+Reviewed By: jon.coens@fb.com
+
+Subscribers: ldbrandy, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1832398
+
+Signature: t1:1832398:1423478473:5f81b865b86b7864c08af222d90990a1de3b3073"
+xich,2014-11-20 10:56:10,https://api.github.com/repos/facebook/Haxl/git/commits/4cce451bb57a8ffd3f5cd8cd2f65b85e2d968332,4cce451bb57a8ffd3f5cd8cd2f65b85e2d968332,"Instrument runHaxl with traceEventIO
+
+Summary:
+Adds traceEventIO in right places to get pretty fetching visualizations.
+These should be a no-op when compiled with eventlog disabled, but
+I haven't measured to see if there is any actual overhead yet.
+
+Test Plan:
+compiled, ran replay and endtoend with no problems
+waiting on full perf results to check for overhead
+
+Reviewed By: smarlow@fb.com
+
+Subscribers: trunkagent, ldbrandy, watashi, smarlow, akr, bnitka, jcoens, anfarmer
+
+FB internal diff: D1666727
+
+Tasks: 5564760, 5289531, 5289404
+
+Signature: t1:1666727:1415714188:1e4b2322c8ae15c8d3552ec2bc290df94a683184"
+xich,2014-09-29 15:32:13,https://api.github.com/repos/facebook/Haxl/git/commits/cb33a2fb1eba19a6e5a7721f1543e8bb3d7ffcf5,cb33a2fb1eba19a6e5a7721f1543e8bb3d7ffcf5,"Add pretty-printing functions for Haxl's stats types.
+
+Summary: Add functions to make the stats types human-readable.
+
+Test Plan: compileandship
+
+Reviewed By: smarlow@fb.com
+
+Subscribers: ldbrandy, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1583342"
+watashi,2014-09-08 19:02:25,https://api.github.com/repos/facebook/Haxl/git/commits/668a8adc2e39fa6480f68007d93fa5a0e72ac412,668a8adc2e39fa6480f68007d93fa5a0e72ac412,"Collect time in each data sources in each round
+
+Summary: Collect time in each data sources in each round
+
+Test Plan:
+test in haxlsh
+test the overhead in replay
+
+Reviewed By: smarlow@fb.com
+
+Subscribers: anfarmer, ldbrandy, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1521346
+
+Tasks: 4589842"
+watashi,2014-08-22 20:06:49,https://api.github.com/repos/facebook/Haxl/git/commits/23e7d06d7d1e0b06b0a491aeac105883d72178bc,23e7d06d7d1e0b06b0a491aeac105883d72178bc,"Add flags to control the report level in Haxl
+
+Summary: Add flags to control the report level (how much stats we will collect) in Haxl
+
+Test Plan: runtests
+
+Reviewed By: jon.coens@fb.com
+
+Subscribers: ldbrandy, watashi, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1509184
+
+Tasks: 4589842"
+simonmar,2014-11-22 16:42:32,https://api.github.com/repos/facebook/Haxl/git/commits/a8b49026da4e9354615cbc51a573da756ab87127,a8b49026da4e9354615cbc51a573da756ab87127,"Merge pull request #15 from k-bx/master
+
+Update aeson and text deps"
+k-bx,2014-11-22 11:50:44,https://api.github.com/repos/facebook/Haxl/git/commits/dde76c9b3d82cf757f081f6e04da0db38453705d,dde76c9b3d82cf757f081f6e04da0db38453705d,Update aeson and text deps
+simonmar,2014-07-23 13:12:49,https://api.github.com/repos/facebook/Haxl/git/commits/79d1f1eea9ebe9ac9e82f3198f4cb2dcf9d4e51e,79d1f1eea9ebe9ac9e82f3198f4cb2dcf9d4e51e,"Merge pull request #12 from zudov/patch-1
+
+Added a note about the Prelude"
+zudov,2014-07-22 10:30:38,https://api.github.com/repos/facebook/Haxl/git/commits/423709177b1a99bcae4cf0a34e311a97833e2eb4,423709177b1a99bcae4cf0a34e311a97833e2eb4,"Added a note about the Prelude
+
+It took me some time to figure out that I forgot about the Prelude. Hope that this will help someone."
+watashi,2014-07-17 19:53:18,https://api.github.com/repos/facebook/Haxl/git/commits/741128423938f6df1a34aecbe73e9077b55073ba,741128423938f6df1a34aecbe73e9077b55073ba,"Update exposed-modules in haxl.cabal
+
+Summary:
+Haxl.Core.Env and Haxl.Core.Fetch were collapsed into Haxl.Core.Monad in
+D1427283. Update haxl.cabal to reflect this and use PatternGuards to
+suppress warnings.
+
+Test Plan: ~/local/haxl-github $ cabal test
+
+Reviewed By: jon.coens@fb.com
+
+Subscribers: ldbrandy, smarlow, akr, bnitka, jcoens
+
+FB internal diff: D1441939"
+JonCoens,2014-06-26 02:14:00,https://api.github.com/repos/facebook/Haxl/git/commits/c90f8b0c8d9f427dbb4b39e1e2fd8658102c7c18,c90f8b0c8d9f427dbb4b39e1e2fd8658102c7c18,"Merge pull request #10 from facebook/change_link
+
+Update link to example data sources"
+JonCoens,2014-06-26 01:59:17,https://api.github.com/repos/facebook/Haxl/git/commits/13606a4fc749aabdbac653a91494ebe31b55d8ba,13606a4fc749aabdbac653a91494ebe31b55d8ba,Update link to example data sources
+niteria,2014-06-23 22:21:15,https://api.github.com/repos/facebook/Haxl/git/commits/3bb91ac357623eac29112af5dda6665416f58605,3bb91ac357623eac29112af5dda6665416f58605,"Merge pull request #9 from juhp/patch-1
+
+replace getAllUsers by getAllUserIds"
+juhp,2014-06-23 05:00:53,https://api.github.com/repos/facebook/Haxl/git/commits/53cf6095fa54d47630902ec7feffb5bbd67b53eb,53cf6095fa54d47630902ec7feffb5bbd67b53eb,replace getAllUsers by getAllUserIds
+simonmar,2014-06-16 10:59:02,https://api.github.com/repos/facebook/Haxl/git/commits/610e7d2a1037e55bf0926bb642fd518e9f96023d,610e7d2a1037e55bf0926bb642fd518e9f96023d,"Merge pull request #8 from ChristopherBiscardi/sql-example-fix
+
+Small SQL example .cabal fixes"
+simonmar,2014-06-15 15:31:02,https://api.github.com/repos/facebook/Haxl/git/commits/4a9540d7fbbb5b736160ede6311332cedc5b1b85,4a9540d7fbbb5b736160ede6311332cedc5b1b85,"Merge pull request #6 from 23Skidoo/patch-1
+
+Missing annotation for a code snippet."
+simonmar,2014-06-15 15:30:05,https://api.github.com/repos/facebook/Haxl/git/commits/58b64a69310e2a0e89468017484a9b8686a70ef0,58b64a69310e2a0e89468017484a9b8686a70ef0,"Merge pull request #7 from ravenjohn/patch-1
+
+Update readme.md"
+ChristopherBiscardi,2014-06-14 05:16:59,https://api.github.com/repos/facebook/Haxl/git/commits/45a25e4b3b8dd6615260af5cb1f08bd89a491008,45a25e4b3b8dd6615260af5cb1f08bd89a491008,"Small SQL example .cabal fixes
+
+When building from a fresh sandbox in /example/sql, cabal complained
+about the name and version fields missing, as well as the base
+dependency missing in build-depends."
+ravenjohn,2014-06-13 22:46:49,https://api.github.com/repos/facebook/Haxl/git/commits/c6b8410a8cb75377c81fb458b2533a9983481dd5,c6b8410a8cb75377c81fb458b2533a9983481dd5,Update readme.md
+simonmar,2014-06-10 10:36:18,https://api.github.com/repos/facebook/Haxl/git/commits/f4c0b0d951f13b83cfa84bd06e762b8e99961abc,f4c0b0d951f13b83cfa84bd06e762b8e99961abc,"Comment about AsyncFetch
+
+Reviewed By: akr@fb.com
+
+Internal FB diff: D1374045"
+23Skidoo,2014-06-11 13:02:15,https://api.github.com/repos/facebook/Haxl/git/commits/1ad000e8d75578bcfa5de45025d51ab9a60baeae,1ad000e8d75578bcfa5de45025d51ab9a60baeae,Missing annotation for a code snippet.
+simonmar,2014-06-11 09:50:36,https://api.github.com/repos/facebook/Haxl/git/commits/b1595941fad80cc2a814f4a7d49fc3b34352bfe2,b1595941fad80cc2a814f4a7d49fc3b34352bfe2,"Merge pull request #3 from aledista/patch-1
+
+Update readme.md"
+aledista,2014-06-11 01:52:00,https://api.github.com/repos/facebook/Haxl/git/commits/c562df2c46dfa6c14abf0e5db111ba5fba25e952,c562df2c46dfa6c14abf0e5db111ba5fba25e952,Update readme.md
+simonmar,2014-06-10 21:21:00,https://api.github.com/repos/facebook/Haxl/git/commits/4d84be93682dabb0a87715fe7d7f3843b6d0ce8f,4d84be93682dabb0a87715fe7d7f3843b6d0ce8f,"Merge pull request #2 from jfischoff/patch-1
+
+Expose the Caches type"
+jfischoff,2014-06-10 20:53:28,https://api.github.com/repos/facebook/Haxl/git/commits/7ca8ef1e6d194fcbbd7fe0197897ef1060926461,7ca8ef1e6d194fcbbd7fe0197897ef1060926461,"Expose the Caches type
+
+This makes the doc look better."
+simonmar,2014-06-10 20:08:29,https://api.github.com/repos/facebook/Haxl/git/commits/41ca963e990e115a2a020f1259cd8f09d60e30e7,41ca963e990e115a2a020f1259cd8f09d60e30e7,"Merge pull request #1 from oreoshake/mixed_content_in_readme
+
+Change logo src to https to avoid mixed-content"
+simonmar,2014-06-10 19:59:23,https://api.github.com/repos/facebook/Haxl/git/commits/040caa411da303db0f6158646120047772da33b5,040caa411da303db0f6158646120047772da33b5,Add links to the blog post and the ICFP paper.

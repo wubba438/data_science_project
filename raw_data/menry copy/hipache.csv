@@ -1,0 +1,599 @@
+hipache,Hipache: a distributed HTTP and websocket proxy 
+username,timestamp,url,sha,message
+dmp42,2016-11-01 16:20:47,https://api.github.com/repos/hipache/hipache/git/commits/395cedc49e04844bf93fc3a820e0c22c465eac15,395cedc49e04844bf93fc3a820e0c22c465eac15,"Merge pull request #240 from samalba/master
+
+Added deprecation warning to the README"
+dmp42,2015-02-07 22:04:59,https://api.github.com/repos/hipache/hipache/git/commits/2d3676638f8b4b1758d70a8dffde1bef88eacf32,2d3676638f8b4b1758d70a8dffde1bef88eacf32,"Merge pull request #197 from msabramo/patch-4
+
+README.md: Add contributing/running tests section"
+dmp42,2015-02-04 21:24:50,https://api.github.com/repos/hipache/hipache/git/commits/34113e27e456ed2ede04335930a9ff99473f7f4c,34113e27e456ed2ede04335930a9ff99473f7f4c,"Merge pull request #215 from Starefossen/patch-1
+
+Add link to 0.3 branch from README"
+dmp42,2015-02-04 21:22:24,https://api.github.com/repos/hipache/hipache/git/commits/c74ae48c3e55e7ecb34451919c8ea414c84c75a7,c74ae48c3e55e7ecb34451919c8ea414c84c75a7,"Merge pull request #216 from max107/patch-1
+
+Missing , :)"
+max107,2015-02-04 09:16:48,https://api.github.com/repos/hipache/hipache/git/commits/a391531f78e16f14d65e6ea7e8904a9bd74d52c1,a391531f78e16f14d65e6ea7e8904a9bd74d52c1,","
+Starefossen,2015-02-03 21:42:55,https://api.github.com/repos/hipache/hipache/git/commits/bac1eb93e3e6cfbdd51fd29b1e0d832985055dc0,bac1eb93e3e6cfbdd51fd29b1e0d832985055dc0,Add link to 0.3 branch from README
+dmp42,2015-01-09 00:38:11,https://api.github.com/repos/hipache/hipache/git/commits/e758cc19c9216e9d25b3568efd24f426dd51b0ad,e758cc19c9216e9d25b3568efd24f426dd51b0ad,"Merge pull request #210 from hipache/fix-tests
+
+Fix zookeeper"
+msabramo,2015-01-04 19:25:17,https://api.github.com/repos/hipache/hipache/git/commits/d8fe134c7998f2ad08218b2e4119b3a06ce24d61,d8fe134c7998f2ad08218b2e4119b3a06ce24d61,"Add CONTRIBUTING.md
+
+with links to:
+
+- [test/README.md](test/README.md)
+- [test/functional/README.md](test/functional/README.md)
+
+because I was looking for info on how to run tests in the main
+`README.md` and didn't find it and I only found about these other docs
+when @willdurand kindly pointed them out to me in
+https://github.com/hipache/hipache/issues/194#issuecomment-68644456"
+dmp42,2015-01-06 22:20:07,https://api.github.com/repos/hipache/hipache/git/commits/ed07d908dc87cfc8ab6c5254f33f18bcb0ca0a6a,ed07d908dc87cfc8ab6c5254f33f18bcb0ca0a6a,"Merge pull request #203 from hipache/fix-tests
+
+Fix repeated etcd tests"
+dmp42,2015-01-06 21:07:24,https://api.github.com/repos/hipache/hipache/git/commits/ff0d10a9dd8eea449ad1943eb08b196d043b6695,ff0d10a9dd8eea449ad1943eb08b196d043b6695,"Merge pull request #205 from msabramo/test_functional_http_js_skip_if_no_redis
+
+test/functional/http.js: Skip if NO_REDIS set"
+msabramo,2015-01-06 18:55:53,https://api.github.com/repos/hipache/hipache/git/commits/cfc6535ced0173eeb4075c6550f41a00a718477d,cfc6535ced0173eeb4075c6550f41a00a718477d,test/functional/http.js: Skip if NO_REDIS set
+dmp42,2015-01-06 18:02:13,https://api.github.com/repos/hipache/hipache/git/commits/1d256e2818da8a44ecbc74d3970c83fffdc2d885,1d256e2818da8a44ecbc74d3970c83fffdc2d885,"Merge pull request #204 from msabramo/better_error_when_zookeeper_fails_to_spawn
+
+Better error when zookeeper fails to spawn during tests"
+msabramo,2015-01-06 16:13:01,https://api.github.com/repos/hipache/hipache/git/commits/493b2c576e430e50d046b04596e9cdf2003a1578,493b2c576e430e50d046b04596e9cdf2003a1578,"Better error when zookeeper fails to spawn
+
+Before:
+
+    [marca@marca-mac2 hipache]$ NO_ETCD=true NO_REDIS=true NO_MEMCACHED=true gulp test:drivers
+    ...
+      1)  ""before all"" hook:
+         Uncaught Error: spawn ENOENT
+          at errnoException (child_process.js:1011:11)
+          at Process.ChildProcess._handle.onexit (child_process.js:802:34)
+
+After:
+
+    [marca@marca-mac2 hipache]$ NO_ETCD=true NO_REDIS=true NO_MEMCACHED=true gulp test:drivers
+    ...
+      1)  ""before all"" hook:
+         Uncaught Error: Failed to spawn ""zkServer.sh start-foreground,/Users/marca/zookeeper/zoo.cfg"" (Error: spawn ENOENT)
+          at null.<anonymous> (/Users/marca/dev/git-repos/hipache/test/fixtures/servers/generic.js:51:34)
+          at ChildProcess.emit (events.js:95:17)
+          at Process.ChildProcess._handle.onexit (child_process.js:818:12)
+
+Refs: #200"
+dmp42,2015-01-05 08:14:30,https://api.github.com/repos/hipache/hipache/git/commits/7b75b465f1eb22a5e5a83b3080f8e742777a8f20,7b75b465f1eb22a5e5a83b3080f8e742777a8f20,"Merge pull request #191 from msabramo/patch-1
+
+README.md: Mention server.staticDir"
+dmp42,2015-01-05 08:13:54,https://api.github.com/repos/hipache/hipache/git/commits/d01c549d2b69d21e6a873a7176d508c39b77b682,d01c549d2b69d21e6a873a7176d508c39b77b682,"Merge pull request #196 from msabramo/patch-3
+
+test/README.md: Add syntax highlighting"
+msabramo,2015-01-04 19:12:10,https://api.github.com/repos/hipache/hipache/git/commits/f44df7d8ceaa408922cbd499715e3435890bb1d0,f44df7d8ceaa408922cbd499715e3435890bb1d0,test/README.md: Add syntax highlighting
+msabramo,2014-12-31 07:01:30,https://api.github.com/repos/hipache/hipache/git/commits/e924bca33090d1373239b8590c6068da3fbcb44d,e924bca33090d1373239b8590c6068da3fbcb44d,"README.md: Mention server.staticDir
+
+In ""Custom HTML Error Pages"" section, because it took me a while to figure out what the config setting was."
+dmp42,2014-12-31 05:02:12,https://api.github.com/repos/hipache/hipache/git/commits/20cf624dd0ce43214484bc759364b1fd8c00cedb,20cf624dd0ce43214484bc759364b1fd8c00cedb,"Merge pull request #190 from msabramo/patch-1
+
+README.md: Add link to tsuru"
+msabramo,2014-12-31 04:06:44,https://api.github.com/repos/hipache/hipache/git/commits/42a439f307b681a795d21a6d91024dcfb6e2af20,42a439f307b681a795d21a6d91024dcfb6e2af20,"README.md: Add link to tsuru
+
+Tsuru is a PaaS which uses hipache for routing."
+dmp42,2014-12-27 00:14:03,https://api.github.com/repos/hipache/hipache/git/commits/a19e478e0ba748a50c485d8df57b21471dc10697,a19e478e0ba748a50c485d8df57b21471dc10697,"Merge pull request #189 from willdurand/cleanup
+
+Cleanup + doc"
+willdurand,2014-12-26 22:37:30,https://api.github.com/repos/hipache/hipache/git/commits/b045fd059f153b4873f3f27a59f572fd9e2c8038,b045fd059f153b4873f3f27a59f572fd9e2c8038,Fix doc about the test suite
+willdurand,2014-12-25 01:46:14,https://api.github.com/repos/hipache/hipache/git/commits/945d6476fb0f0248e8efed59752ad7867f3b7bf6,945d6476fb0f0248e8efed59752ad7867f3b7bf6,Fix config and give some love to the doc
+willdurand,2014-12-25 00:55:48,https://api.github.com/repos/hipache/hipache/git/commits/9533bb1a225c23f5d506f8604a6a4bbf1c37c036,9533bb1a225c23f5d506f8604a6a4bbf1c37c036,remove useless config_dev.json file
+dmp42,2014-12-24 20:02:49,https://api.github.com/repos/hipache/hipache/git/commits/04ee3658e5470e7d849796e2b782c7b8acf52721,04ee3658e5470e7d849796e2b782c7b8acf52721,"Merge pull request #188 from willdurand/etcd-on-travis
+
+Enable ETCD tests"
+willdurand,2014-12-24 02:36:53,https://api.github.com/repos/hipache/hipache/git/commits/d7db278a495ffcf9d8068ce395eb3decb1c116fd,d7db278a495ffcf9d8068ce395eb3decb1c116fd,Enable ETCD tests
+dmp42,2014-12-24 05:33:12,https://api.github.com/repos/hipache/hipache/git/commits/c54560ef7b31b024a6dd52e8541b4906f6e1c43d,c54560ef7b31b024a6dd52e8541b4906f6e1c43d,"Merge pull request #186 from willdurand/fanatic-zookeeper-driver
+
+Zookeeper driver support (replaces #132)"
+dmp42,2014-12-24 05:31:54,https://api.github.com/repos/hipache/hipache/git/commits/9fd268a665ee464ab627f0646123222b0730a078,9fd268a665ee464ab627f0646123222b0730a078,"Merge pull request #187 from willdurand/travis-ci-5
+
+Enable redis tests again"
+dmp42,2014-12-24 05:26:58,https://api.github.com/repos/hipache/hipache/git/commits/de83851a8b4ffe6e3de9203ff08b095587457b76,de83851a8b4ffe6e3de9203ff08b095587457b76,"Merge pull request #185 from willdurand/travis-ci-4
+
+Fix checkstyle, enable `gulp hint` again"
+willdurand,2014-12-24 02:17:59,https://api.github.com/repos/hipache/hipache/git/commits/010a6d87474324ac729196e7eefee9123f18c5b0,010a6d87474324ac729196e7eefee9123f18c5b0,Enable redis tests again
+willdurand,2014-12-24 01:30:32,https://api.github.com/repos/hipache/hipache/git/commits/755bb859415261d688503bb8c835ea670f12c9e3,755bb859415261d688503bb8c835ea670f12c9e3,use env in bin/hipache
+willdurand,2014-12-24 01:17:41,https://api.github.com/repos/hipache/hipache/git/commits/6a3c3e7215ca90c09443a1807828091a4d1c0e7d,6a3c3e7215ca90c09443a1807828091a4d1c0e7d,Fix checkstyle
+willdurand,2014-12-24 01:01:06,https://api.github.com/repos/hipache/hipache/git/commits/957e4e8f5a5c6e6036c15beb8ac652deb47358f6,957e4e8f5a5c6e6036c15beb8ac652deb47358f6,gulp hint should fail the build
+dmp42,2014-12-24 01:13:52,https://api.github.com/repos/hipache/hipache/git/commits/dabf5b04de19a1b487c5f83078a5dcb76d511769,dabf5b04de19a1b487c5f83078a5dcb76d511769,"Merge pull request #176 from willdurand/remove-redis-server
+
+remove redis service from the image"
+dmp42,2014-12-24 01:07:54,https://api.github.com/repos/hipache/hipache/git/commits/4b430acc95601d0daffd68ae8249d26c22577934,4b430acc95601d0daffd68ae8249d26c22577934,"Merge pull request #184 from willdurand/travis-ci-3
+
+Python tests should determine the status of the travis-ci build"
+willdurand,2014-12-24 00:32:30,https://api.github.com/repos/hipache/hipache/git/commits/012265030cdced0a5047ff290d6f61828a1375f1,012265030cdced0a5047ff290d6f61828a1375f1,Python tests should determine the status of the travis-ci build
+dmp42,2014-12-24 00:26:09,https://api.github.com/repos/hipache/hipache/git/commits/6afb402cfe872393d6008d1c323fe6d79493d1f0,6afb402cfe872393d6008d1c323fe6d79493d1f0,"Merge pull request #183 from willdurand/travis-ci-2
+
+[WIP] Run Python tests on travis-ci"
+willdurand,2014-12-24 00:19:40,https://api.github.com/repos/hipache/hipache/git/commits/fc5e755bc5baad578485a69ab79bfc528816e146,fc5e755bc5baad578485a69ab79bfc528816e146,Run Python tests on travis-ci
+dmp42,2014-12-24 00:11:08,https://api.github.com/repos/hipache/hipache/git/commits/36cb13a466f1a242599bea560f7ee6ff321264ce,36cb13a466f1a242599bea560f7ee6ff321264ce,"Merge pull request #182 from willdurand/functional-tests
+
+Allow to configure Redis addr/port in functional tests"
+willdurand,2014-12-24 00:00:23,https://api.github.com/repos/hipache/hipache/git/commits/5ba23a1a1df7cb025630fe1a0f805abc330c2bd0,5ba23a1a1df7cb025630fe1a0f805abc330c2bd0,Allow to configure Redis addr/port in functional tests
+dmp42,2014-12-23 23:34:13,https://api.github.com/repos/hipache/hipache/git/commits/e6a5d3c2bc719917d1cbe406ae00f547321c7ef7,e6a5d3c2bc719917d1cbe406ae00f547321c7ef7,"Merge pull request #173 from willdurand/static-config
+
+Allow to configure the path to the custom error pages"
+willdurand,2014-12-12 09:26:33,https://api.github.com/repos/hipache/hipache/git/commits/c3fef07457c9d03a944f5c3ddbe031618e59b41e,c3fef07457c9d03a944f5c3ddbe031618e59b41e,Allow to configure the path to the custom error pages
+willdurand,2014-12-18 21:56:24,https://api.github.com/repos/hipache/hipache/git/commits/18390ce88d0eba8ebf9bfa878dde1e5b357e72fb,18390ce88d0eba8ebf9bfa878dde1e5b357e72fb,"remove redis service from the image
+
+Fix #149"
+dmp42,2014-12-23 22:27:53,https://api.github.com/repos/hipache/hipache/git/commits/b1de0da76ae38a4cb4c3d003e49c29804ad2da11,b1de0da76ae38a4cb4c3d003e49c29804ad2da11,"Merge pull request #178 from willdurand/secure-options
+
+Add secureOptions in `https` config"
+dmp42,2014-12-23 22:24:19,https://api.github.com/repos/hipache/hipache/git/commits/94a6cb4c1940eadbecaf1a04eed19630ff893ed1,94a6cb4c1940eadbecaf1a04eed19630ff893ed1,"Merge pull request #180 from willdurand/patch-1
+
+Make things clear in the README"
+willdurand,2014-12-23 22:22:20,https://api.github.com/repos/hipache/hipache/git/commits/35fca56990af01e4dbf52161e21b8c46bc12449e,35fca56990af01e4dbf52161e21b8c46bc12449e,"Make things clear in the README
+
+Refs #162"
+willdurand,2014-12-22 21:20:51,https://api.github.com/repos/hipache/hipache/git/commits/9166109a74c670acef81c95e2743a1e843c61e29,9166109a74c670acef81c95e2743a1e843c61e29,"Add secureOptions in `https` config
+
+Defaults is: constants.SSL_OP_NO_SSLv3 | constants.SSL_OP_NO_SSLv2
+
+See: https://gist.github.com/3rd-Eden/715522f6950044da45d8"
+dmp42,2014-12-23 18:16:32,https://api.github.com/repos/hipache/hipache/git/commits/f2c53f0971c6d71cc619dddd3dea5ec4f4574f9e,f2c53f0971c6d71cc619dddd3dea5ec4f4574f9e,"Merge pull request #177 from willdurand/honor-cipher-order
+
+Allow to pass honorCipherOrder HTTPS option"
+willdurand,2014-12-22 18:06:15,https://api.github.com/repos/hipache/hipache/git/commits/5f89e7133ceb132d7fe61250d15df8f389e07ddb,5f89e7133ceb132d7fe61250d15df8f389e07ddb,Allow to pass honorCipherOrder HTTPS option
+dmp42,2014-12-18 17:06:10,https://api.github.com/repos/hipache/hipache/git/commits/c32e3d2138590cbdb70a67e696c5f8252f7143dc,c32e3d2138590cbdb70a67e696c5f8252f7143dc,"Merge pull request #174 from willdurand/fix-testsuite
+
+Fix travis-ci builds \o/"
+willdurand,2014-12-12 11:32:03,https://api.github.com/repos/hipache/hipache/git/commits/e4d6e3c8b70333eaddbe5594bb9fc56cd5ded4af,e4d6e3c8b70333eaddbe5594bb9fc56cd5ded4af,Remove useless commands in before/after install travis hooks
+willdurand,2014-12-12 10:49:20,https://api.github.com/repos/hipache/hipache/git/commits/4b89f1f225e047588d19d9575dfae4ff4e9854a6,4b89f1f225e047588d19d9575dfae4ff4e9854a6,"Start redis server, even with NO_REDIS=true"
+willdurand,2014-12-12 10:39:26,https://api.github.com/repos/hipache/hipache/git/commits/e69dd2e186f0de7a29000139ef3f136e15ce5a92,e69dd2e186f0de7a29000139ef3f136e15ce5a92,Disable memcached/redis (unit?) tests
+willdurand,2014-12-12 10:18:29,https://api.github.com/repos/hipache/hipache/git/commits/b2b9f76f59be9f07f00591c93716c15c03cadab8,b2b9f76f59be9f07f00591c93716c15c03cadab8,Let's continue the build after `npm run-script hint` fails
+dmp42,2014-11-27 19:46:14,https://api.github.com/repos/hipache/hipache/git/commits/74d3734b4fc441321292c9be94617d3779db5d47,74d3734b4fc441321292c9be94617d3779db5d47,"Merge pull request #171 from pborreli/typos
+
+Fixed typos"
+pborreli,2014-11-27 14:34:39,https://api.github.com/repos/hipache/hipache/git/commits/70d84a8e8ff1fd2f6a8fd62797ffacc36c746bef,70d84a8e8ff1fd2f6a8fd62797ffacc36c746bef,Fixed typos
+dmp42,2014-10-22 17:53:10,https://api.github.com/repos/hipache/hipache/git/commits/b55a16f52c3b1c690c12c039b29174988c1ec68d,b55a16f52c3b1c690c12c039b29174988c1ec68d,"Merge pull request #163 from azukiapp/memcache_unix_socket
+
+Adding support to use unix socket in memcached driver"
+dmp42,2014-10-22 17:52:17,https://api.github.com/repos/hipache/hipache/git/commits/b3ab01c88913577ff0524b51caeb3cfc341c0fad,b3ab01c88913577ff0524b51caeb3cfc341c0fad,"Merge pull request #164 from josegonzalez/patch-1
+
+Fix badges in readme"
+josegonzalez,2014-10-20 14:56:51,https://api.github.com/repos/hipache/hipache/git/commits/291e097124e2bea8c5dbf51f74c0baa7206bcc1a,291e097124e2bea8c5dbf51f74c0baa7206bcc1a,Fix badges in readme
+nuxlli,2014-05-30 20:40:44,https://api.github.com/repos/hipache/hipache/git/commits/e4ff3731e8c62b96e40576e5bf643dc23c4917bb,e4ff3731e8c62b96e40576e5bf643dc23c4917bb,Adding support unix socket in memcached driver
+dmp42,2014-09-04 18:33:46,https://api.github.com/repos/hipache/hipache/git/commits/3416fd1040e768aa25b73a37435a66829941eb8f,3416fd1040e768aa25b73a37435a66829941eb8f,"Merge pull request #146 from rcmorano/patch-1
+
+fix syntax"
+dmp42,2014-09-04 18:33:23,https://api.github.com/repos/hipache/hipache/git/commits/9dc24e0b0a90abf00a5264ed6a38faddefacde42,9dc24e0b0a90abf00a5264ed6a38faddefacde42,"Merge pull request #154 from CatTail/master
+
+Fix missing comma"
+CatTail,2014-08-29 07:29:48,https://api.github.com/repos/hipache/hipache/git/commits/0cfc813e97e760bbaf5dcb62b9cdfa1620609587,0cfc813e97e760bbaf5dcb62b9cdfa1620609587,Fix missing comma
+dmp42,2014-07-31 08:23:40,https://api.github.com/repos/hipache/hipache/git/commits/117db200a1c9dccbcd5261b1ee1f4da4b2a3a4ff,117db200a1c9dccbcd5261b1ee1f4da4b2a3a4ff,"Merge pull request #144 from jmandel/patch-1
+
+Fixed copy/paste error (`http` --> `https`)"
+dmp42,2014-07-20 09:24:12,https://api.github.com/repos/hipache/hipache/git/commits/a3ab4a8f149c7a0b418c1dabf64149632454eba2,a3ab4a8f149c7a0b418c1dabf64149632454eba2,"Merge pull request #148 from gusnips/patch-1
+
+fix markdown"
+gusnips,2014-07-20 04:37:35,https://api.github.com/repos/hipache/hipache/git/commits/10bde11a08373236f1c4e8f19d7b76157f0243dc,10bde11a08373236f1c4e8f19d7b76157f0243dc,"fix markdown
+
+simple markdown fix"
+dmp42,2014-07-19 14:33:44,https://api.github.com/repos/hipache/hipache/git/commits/3c0e0a831c4adc4320562992de210abf5e7d4463,3c0e0a831c4adc4320562992de210abf5e7d4463,"Merge pull request #147 from rcmorano/patch-2
+
+fix config.json syntax"
+rcmorano,2014-07-19 03:44:13,https://api.github.com/repos/hipache/hipache/git/commits/4e2a9e754fb59c6b68a06569a211d1f01dff02d9,4e2a9e754fb59c6b68a06569a211d1f01dff02d9,fix config.json syntax
+rcmorano,2014-07-19 03:42:54,https://api.github.com/repos/hipache/hipache/git/commits/b065412c934f682da32192f3c6c5886145e29860,b065412c934f682da32192f3c6c5886145e29860,fix syntax
+jmandel,2014-06-10 05:51:34,https://api.github.com/repos/hipache/hipache/git/commits/0168e0318a502376d13d979c18edca37c61fefc5,0168e0318a502376d13d979c18edca37c61fefc5,Fixed copy/paste error (`http` --> `https`)
+dmp42,2014-04-29 14:59:23,https://api.github.com/repos/hipache/hipache/git/commits/781299c853179556ac4aaee0afe372e9361dd846,781299c853179556ac4aaee0afe372e9361dd846,"Merge pull request #143 from dotcloud/0.4.rebase
+
+0.4.rebase"
+dmp42,2014-04-21 22:12:01,https://api.github.com/repos/hipache/hipache/git/commits/adba4ea1cf32235c3f14b3b14b6436854b98a9c4,adba4ea1cf32235c3f14b3b14b6436854b98a9c4,"Updated configuration documentation. Also fixes #116.
+
+Conflicts:
+	README.md"
+dmp42,2014-04-21 22:11:26,https://api.github.com/repos/hipache/hipache/git/commits/5a53aff3651913e8b556c0b9b174223552ec585a,5a53aff3651913e8b556c0b9b174223552ec585a,Remove default www-data group (will fallback from user value anyhow).
+dmp42,2014-04-21 21:35:04,https://api.github.com/repos/hipache/hipache/git/commits/3db1d9e36c30ff929b06dafc2a49c0b15c886237,3db1d9e36c30ff929b06dafc2a49c0b15c886237,Linter
+dmp42,2014-04-18 10:38:14,https://api.github.com/repos/hipache/hipache/git/commits/7463fb4de3cef57a8adddda46f04ad922d1a3e18,7463fb4de3cef57a8adddda46f04ad922d1a3e18,"Slight README cleanup. Also feature Airfield (fixes #14)
+
+Conflicts:
+	README.md"
+dmp42,2014-04-18 10:37:03,https://api.github.com/repos/hipache/hipache/git/commits/bc97bede37bf8d70cc1c52686d0103b3e29dce13,bc97bede37bf8d70cc1c52686d0103b3e29dce13,Migrate TODO file to bug tracker before it bitrots (see #122 #123)
+dmp42,2014-04-21 14:26:49,https://api.github.com/repos/hipache/hipache/git/commits/6a21931e52bfbfe913c70e2df1150bd9a698b912,6a21931e52bfbfe913c70e2df1150bd9a698b912,Fix typos and default user to www-data
+dmp42,2014-04-21 14:20:31,https://api.github.com/repos/hipache/hipache/git/commits/2d2bbf9412d5e9b27cce5f7e1acadbbd5a08ac91,2d2bbf9412d5e9b27cce5f7e1acadbbd5a08ac91,Fix syntax...
+dmp42,2014-04-21 14:17:51,https://api.github.com/repos/hipache/hipache/git/commits/4daaaf1e06203c17ae4d9477efabb3c9ce7241fd,4daaaf1e06203c17ae4d9477efabb3c9ce7241fd,Make linter happy
+dmp42,2014-04-21 14:07:16,https://api.github.com/repos/hipache/hipache/git/commits/d61bd940dcc2b344180891f04c06613f2640427c,d61bd940dcc2b344180891f04c06613f2640427c,Updated config to follow new syntax
+dmp42,2014-04-21 14:03:51,https://api.github.com/repos/hipache/hipache/git/commits/116b0e8bca07cababe028bf03d1c7b8d049eeb1b,116b0e8bca07cababe028bf03d1c7b8d049eeb1b,Fix test config back to sane values
+dmp42,2014-04-21 14:03:39,https://api.github.com/repos/hipache/hipache/git/commits/d226de0ceae96633225fb5c30aae509ab1fa52df,d226de0ceae96633225fb5c30aae509ab1fa52df,Stop overriding 0 values.
+dmp42,2014-04-21 13:11:25,https://api.github.com/repos/hipache/hipache/git/commits/6cc592dcee3f054a3aba990f900f9964aa79e01c,6cc592dcee3f054a3aba990f900f9964aa79e01c,Priv dropping
+dmp42,2014-04-21 13:11:05,https://api.github.com/repos/hipache/hipache/git/commits/7ab4862c0ff7e823f1961162c2785005e46e9d2a,7ab4862c0ff7e823f1961162c2785005e46e9d2a,Better config + unit tests
+dmp42,2014-04-21 13:10:41,https://api.github.com/repos/hipache/hipache/git/commits/adfa62a5f82811d0a5d23d9da869674a9a5aa7f7,adfa62a5f82811d0a5d23d9da869674a9a5aa7f7,Fix factory tests now that array is the only supported argument
+dmp42,2014-04-19 16:22:31,https://api.github.com/repos/hipache/hipache/git/commits/57d2e3c5e346bd187f9baa5ccfd97e012c1c5d48,57d2e3c5e346bd187f9baa5ccfd97e012c1c5d48,"Config && dry-run work
+
+- now sports a config class that can do all sort of magic / preparation / legacy handling
+- new command line flag -d (--dry) that just tries to load the config and exit (will catch a number of config errors, although not all) - need extra work
+- new http / https configuration syntax that allows binding individually on any number of ips / port, with specific certificates
+- fixes #4 (but not SNI yet)
+- fixes #10
+- on the road to fix #122"
+dmp42,2014-04-29 14:38:41,https://api.github.com/repos/hipache/hipache/git/commits/fb8e5352485e974ad183ce600b2a8c53634d001c,fb8e5352485e974ad183ce600b2a8c53634d001c,This is now 0.4 time.
+dmp42,2014-04-28 22:55:39,https://api.github.com/repos/hipache/hipache/git/commits/c2d4864a663d976ff2560493fe8e0dd424b792b3,c2d4864a663d976ff2560493fe8e0dd424b792b3,Bump version
+dmp42,2014-04-28 22:53:24,https://api.github.com/repos/hipache/hipache/git/commits/4c7a40a29da121c25389ec0dd764ba20438d4571,4c7a40a29da121c25389ec0dd764ba20438d4571,Fix #140
+dmp42,2014-04-25 18:40:00,https://api.github.com/repos/hipache/hipache/git/commits/7c472cd5438f18a05be243988e4301e345d464e6,7c472cd5438f18a05be243988e4301e345d464e6,"Update README.md
+
+Fix link"
+dmp42,2014-04-25 18:04:53,https://api.github.com/repos/hipache/hipache/git/commits/35347aae7d7e831e20a0649f011ddfe1fb3ba28a,35347aae7d7e831e20a0649f011ddfe1fb3ba28a,"Merge pull request #135 from dotcloud/0.3-dockerfile-fix
+
+Dockerfile fix"
+dmp42,2014-04-25 12:29:42,https://api.github.com/repos/hipache/hipache/git/commits/5e5671f6a2063984765c839c91e5e42d146822e8,5e5671f6a2063984765c839c91e5e42d146822e8,"Cleaned-up dockerfile
+
+- switch to Ubuntu 14.04 LTS
+- cleanup dependencies installation
+- actually install current directory Hipache instead of npm registry version, and install it --production
+- stop monkeying around with config files
+- add NODE_ENV"
+dmp42,2014-04-25 12:27:39,https://api.github.com/repos/hipache/hipache/git/commits/c0491851e5cf5ee18b3236d07a2572514d34539d,c0491851e5cf5ee18b3236d07a2572514d34539d,Redis don't need to run as root
+dmp42,2014-04-25 12:01:06,https://api.github.com/repos/hipache/hipache/git/commits/c039b228dcc85d1f63a6fa0a46e3cc9f8755ccec,c039b228dcc85d1f63a6fa0a46e3cc9f8755ccec,"Portability fix
+
+Ubuntu 14.04 official node package installs a binary named `nodejs` instead of `node`. :/"
+dmp42,2014-04-25 10:29:51,https://api.github.com/repos/hipache/hipache/git/commits/8b5857e2c1c7d03f790757a56ddd5619b85dcb00,8b5857e2c1c7d03f790757a56ddd5619b85dcb00,"Merge pull request #121 from dotcloud/coverage
+
+Coverage"
+dmp42,2014-04-21 22:18:23,https://api.github.com/repos/hipache/hipache/git/commits/74b0d4b1d5c940df9c4f5760f553c27770555456,74b0d4b1d5c940df9c4f5760f553c27770555456,"Add waffle.io badge
+
+Badges are delicious."
+dmp42,2014-04-21 15:46:27,https://api.github.com/repos/hipache/hipache/git/commits/42758e3e8f0eb49c87e2b40d747cd167c8dd1598,42758e3e8f0eb49c87e2b40d747cd167c8dd1598,"Merge pull request #124 from dotcloud/doc
+
+Doc"
+dmp42,2014-04-18 10:38:14,https://api.github.com/repos/hipache/hipache/git/commits/165defe223d025a19277c535bb421fe50ec4df38,165defe223d025a19277c535bb421fe50ec4df38,Slight README cleanup. Also feature Airfield (fixes #14)
+dmp42,2014-04-18 10:37:03,https://api.github.com/repos/hipache/hipache/git/commits/ac9d8ffb98e4fc14868dea9992fe6a3452775dee,ac9d8ffb98e4fc14868dea9992fe6a3452775dee,Migrate TODO file to bug tracker before it bitrots (see #122 #123)
+dmp42,2014-04-18 08:40:24,https://api.github.com/repos/hipache/hipache/git/commits/0f37c3340660585fbd55c94f80050fa17f8f8239,0f37c3340660585fbd55c94f80050fa17f8f8239,Disable 0.11 (segfaulting) and comments
+dmp42,2014-04-17 22:20:41,https://api.github.com/repos/hipache/hipache/git/commits/9c5948b68d19df8b40a2028a02c125a31ac6c2ef,9c5948b68d19df8b40a2028a02c125a31ac6c2ef,Overhaul and pushing travis
+dmp42,2014-04-17 21:55:11,https://api.github.com/repos/hipache/hipache/git/commits/7b5b3f829f3b21a4953265cc9e249f4a72730dc7,7b5b3f829f3b21a4953265cc9e249f4a72730dc7,Activate coverage report on travis
+dmp42,2014-04-15 07:37:57,https://api.github.com/repos/hipache/hipache/git/commits/f126f9a1aefd37539fd7e9ec3633fa7b26f0e07f,f126f9a1aefd37539fd7e9ec3633fa7b26f0e07f,"Merge pull request #119 from dotcloud/drivers-enhance
+
+Drivers enhance"
+dmp42,2014-04-15 07:37:36,https://api.github.com/repos/hipache/hipache/git/commits/f72b1dd7199db329d06924a4c8493d13ec386b45,f72b1dd7199db329d06924a4c8493d13ec386b45,"Merge pull request #118 from dotcloud/#117-optimist-2-minimist
+
+Move to minimist and fixes #117"
+dmp42,2014-04-14 09:01:54,https://api.github.com/repos/hipache/hipache/git/commits/8565f345370bbb6212a8127f02819f49d3f3565d,8565f345370bbb6212a8127f02819f49d3f3565d,typo fix
+dmp42,2014-04-14 08:52:58,https://api.github.com/repos/hipache/hipache/git/commits/e249e8134ddadf4f3af5d2ecd07d66987396eb05,e249e8134ddadf4f3af5d2ecd07d66987396eb05,"Use hipache script instead of invoking node
+
+... hence honor gc settings"
+dmp42,2014-04-14 08:49:13,https://api.github.com/repos/hipache/hipache/git/commits/04bf3ff0e1766414c09c6fea423fcef76c1116e8,04bf3ff0e1766414c09c6fea423fcef76c1116e8,Fix redis tests
+dmp42,2014-04-14 08:35:20,https://api.github.com/repos/hipache/hipache/git/commits/a0ba0ac66be938e49f1f2272fc08a2826d07e2a4,a0ba0ac66be938e49f1f2272fc08a2826d07e2a4,Be consistent with `error` vs. `IDriver.ERROR`
+dmp42,2014-04-14 08:31:50,https://api.github.com/repos/hipache/hipache/git/commits/63cb21478ee451e50d1d8c751eb1f219ade32ea1,63cb21478ee451e50d1d8c751eb1f219ade32ea1,"Enhanced, cleaner driver gateway
+
+New Error type, and better error management.
+Cleaner interface, moved to utils (pave the way for hipache-core / hipache-utils)
+Enhanced readme
+Better factory tests"
+dmp42,2014-04-14 07:34:29,https://api.github.com/repos/hipache/hipache/git/commits/e29c78fe2a5acc228fcb08689c3bd32f51421616,e29c78fe2a5acc228fcb08689c3bd32f51421616,Move to minimist and fixes #117
+dmp42,2014-04-13 18:10:04,https://api.github.com/repos/hipache/hipache/git/commits/d57042ecaff939f7b03d9678d5b221e0581acac8,d57042ecaff939f7b03d9678d5b221e0581acac8,"Merge pull request #114 from dotcloud/backport-memorymon-tweaks
+
+Backport of PR #109 from 0.2 branch"
+samalba,2014-04-13 18:04:59,https://api.github.com/repos/hipache/hipache/git/commits/ed468285124bc87ca8613da4b7c3b139bd936502,ed468285124bc87ca8613da4b7c3b139bd936502,Backport of PR #109 from 0.2 branch
+dmp42,2014-04-11 20:44:07,https://api.github.com/repos/hipache/hipache/git/commits/1d088bd9f1baf2c05d55552619442af92407af31,1d088bd9f1baf2c05d55552619442af92407af31,"Merge pull request #112 from dotcloud/leaks-redux-proper
+
+#103 rebased"
+dmp42,2014-04-11 18:12:00,https://api.github.com/repos/hipache/hipache/git/commits/2c7b69498159c918b8b8f96a6b93ad308702f4f4,2c7b69498159c918b8b8f96a6b93ad308702f4f4,"Merge pull request #111 from tjmehta/patch-1
+
+Readme.md - added hipcheck"
+dmp42,2014-04-06 10:52:08,https://api.github.com/repos/hipache/hipache/git/commits/de1773aa1e8f1bef404474c2bc30d214d1834101,de1773aa1e8f1bef404474c2bc30d214d1834101,"Tweaking payload size vs. timeout
+
+Trying to find the correct balance here so that travis doesn't pork the test."
+dmp42,2014-04-04 18:12:30,https://api.github.com/repos/hipache/hipache/git/commits/431916784dd4d10656315dfa1a8dc4d324ae3c44,431916784dd4d10656315dfa1a8dc4d324ae3c44,Stop logging again
+dmp42,2014-04-04 18:03:42,https://api.github.com/repos/hipache/hipache/git/commits/8725c5444b93ac39f34dd23764c8118bb5da1e34,8725c5444b93ac39f34dd23764c8118bb5da1e34,"Damn you travis, you should FAIL on the upload!"
+dmp42,2014-04-04 17:55:29,https://api.github.com/repos/hipache/hipache/git/commits/079947c704e1a003c52c12b43d7e57837d69cf0f,079947c704e1a003c52c12b43d7e57837d69cf0f,And stop logging like crazes
+dmp42,2014-04-04 17:54:32,https://api.github.com/repos/hipache/hipache/git/commits/069d6225b7562907774d4f0f8d6de9bdde942b8e,069d6225b7562907774d4f0f8d6de9bdde942b8e,Fix redis client uncaught exception on disconnect to crash the build
+dmp42,2014-04-04 17:19:19,https://api.github.com/repos/hipache/hipache/git/commits/ee628b8fde2956da69375999d46f14ae44185352,ee628b8fde2956da69375999d46f14ae44185352,Cleaned-up functional tests + now testing memory limit
+dmp42,2014-04-04 17:17:16,https://api.github.com/repos/hipache/hipache/git/commits/e2b2963a401491b164b527d67d9a335ca98aca18,e2b2963a401491b164b527d67d9a335ca98aca18,"1.0.3 is broken (broken websockets, broken python tests) - see #102 #24"
+dmp42,2014-04-04 16:55:23,https://api.github.com/repos/hipache/hipache/git/commits/ff7b552ae8b72c6be34f468f89736f631725b332,ff7b552ae8b72c6be34f468f89736f631725b332,Make jslint fail the build
+samalba,2014-04-10 23:55:40,https://api.github.com/repos/hipache/hipache/git/commits/1875677f8f04e95656401becc64b2ab5fda0eea8,1875677f8f04e95656401becc64b2ab5fda0eea8,"Merge pull request #106 from dotcloud/bug-fixes
+
+Remove read-installed - see #98 and memory footprint for background"
+tjmehta,2014-04-10 09:18:56,https://api.github.com/repos/hipache/hipache/git/commits/7cc301dd924526073f78b9b98800e57fe0502549,7cc301dd924526073f78b9b98800e57fe0502549,Readme correction - hchecker golang
+tjmehta,2014-04-10 07:06:45,https://api.github.com/repos/hipache/hipache/git/commits/b53fccb51095fc6e037f0a35a6023cb611effb7e,b53fccb51095fc6e037f0a35a6023cb611effb7e,"Readme.md - added hipcheck
+
+Added additional active health check solution (runnable/hipcheck) to Readme.md"
+dmp42,2014-04-05 11:14:13,https://api.github.com/repos/hipache/hipache/git/commits/8f57a7f4270383fd6bc031d4b56e50be264bacca,8f57a7f4270383fd6bc031d4b56e50be264bacca,Remove read-installed - see #98 and memory footprint for background
+dmp42,2014-04-04 21:00:31,https://api.github.com/repos/hipache/hipache/git/commits/eb5ef5f01de1d9aca3b38f783b5baa7b973eec40,eb5ef5f01de1d9aca3b38f783b5baa7b973eec40,"Merge pull request #101 from dotcloud/fix-memorymonitor
+
+Improve memory monitor to allow graceful exit (without breaking existing requests)."
+samalba,2014-04-04 20:58:03,https://api.github.com/repos/hipache/hipache/git/commits/650b039297f071161db3d25c6eca45083efe761f,650b039297f071161db3d25c6eca45083efe761f,Fixed jshint complains
+dmp42,2014-04-04 16:19:56,https://api.github.com/repos/hipache/hipache/git/commits/861cfd0ce6c0e42841f47debc47cbd495e3db913,861cfd0ce6c0e42841f47debc47cbd495e3db913,"Merge pull request #100 from ruudud/master
+
+Merge IPv4 and IPv6 createServer setup"
+samalba,2014-04-04 04:58:34,https://api.github.com/repos/hipache/hipache/git/commits/35f7e2830c72532313bfe593f16e29308890bd9c,35f7e2830c72532313bfe593f16e29308890bd9c,Improve memory monitor to allow graceful exit (without breaking existing requests).
+ruudud,2014-04-02 18:33:17,https://api.github.com/repos/hipache/hipache/git/commits/67f91032a6c09919664b7b679a50329fdc43be92,67f91032a6c09919664b7b679a50329fdc43be92,"Merge IPv4 and IPv6 createServer setup
+
+Bind to all interfaces on both IPv4 and IPv6.
+Before this commit, the default behaviour was to bind to all IPv4 interfaces,
+though only the local ::1 interface on IPv6."
+samalba,2014-04-02 15:57:57,https://api.github.com/repos/hipache/hipache/git/commits/0a0273b0f1785ca8775548e330ba15e923686d0a,0a0273b0f1785ca8775548e330ba15e923686d0a,"Merge pull request #89 from dotcloud/la-jolla
+
+Alternate drivers"
+samalba,2014-03-29 00:17:38,https://api.github.com/repos/hipache/hipache/git/commits/b8e4666687e4166a1291a66fa34693d8c3750309,b8e4666687e4166a1291a66fa34693d8c3750309,Updated AUTHORS file
+samalba,2014-03-23 16:58:07,https://api.github.com/repos/hipache/hipache/git/commits/3ec22a71dbc56593eb2a1cf2aa313a88d764e66d,3ec22a71dbc56593eb2a1cf2aa313a88d764e66d,"Merge pull request #96 from dotcloud/bug-fixes
+
+Fix #18"
+dmp42,2014-03-22 21:47:37,https://api.github.com/repos/hipache/hipache/git/commits/b6b612ef5383753d8dea5753ce1580e38781bc6a,b6b612ef5383753d8dea5753ce1580e38781bc6a,Fix #18 - see https://github.com/dotcloud/hipache/commit/4e246b147ee1597c405c4e5d06efa24ffc499fd3#commitcomment-5760411 for context
+dmp42,2014-03-21 17:34:00,https://api.github.com/repos/hipache/hipache/git/commits/4aaf3091522e2d4a7f4ca59d46cfaa0b2a368b96,4aaf3091522e2d4a7f4ca59d46cfaa0b2a368b96,"Tests, tests, tests"
+dmp42,2014-03-21 10:46:45,https://api.github.com/repos/hipache/hipache/git/commits/3729ad2f69d06bb3de9215f090f006faaf8d1ad2,3729ad2f69d06bb3de9215f090f006faaf8d1ad2,Tests cleanup
+dmp42,2014-03-21 10:41:05,https://api.github.com/repos/hipache/hipache/git/commits/b3b9f7208820510e4d66fb73b84ceac4db349511,b3b9f7208820510e4d66fb73b84ceac4db349511,Radix fix
+dmp42,2014-03-21 10:08:21,https://api.github.com/repos/hipache/hipache/git/commits/9297bd2a3c1d91a989885de8111993ee4cf8f309,9297bd2a3c1d91a989885de8111993ee4cf8f309,Innocuous cleanup
+dmp42,2014-03-20 22:26:56,https://api.github.com/repos/hipache/hipache/git/commits/70f0304e62bf0ac4ffff5df158541a9048b1d238,70f0304e62bf0ac4ffff5df158541a9048b1d238,Code climate ready :-)
+dmp42,2014-03-20 22:05:30,https://api.github.com/repos/hipache/hipache/git/commits/94ebef97c2f23bb54f25911f289fbcaccfe3e180,94ebef97c2f23bb54f25911f289fbcaccfe3e180,Timing sensitive - this is no good :(
+dmp42,2014-03-20 21:54:45,https://api.github.com/repos/hipache/hipache/git/commits/916f87df57523bb37125daf280f46ecb6de02204,916f87df57523bb37125daf280f46ecb6de02204,Travis: happy?
+dmp42,2014-03-20 21:54:02,https://api.github.com/repos/hipache/hipache/git/commits/dac9dfd740663965cfa0eb8658a6283c066132cf,dac9dfd740663965cfa0eb8658a6283c066132cf,Cleaner start/stop of Redis
+dmp42,2014-03-20 20:06:53,https://api.github.com/repos/hipache/hipache/git/commits/1d735dd0a2822d19f7fbef2406d5f93dacb66d1f,1d735dd0a2822d19f7fbef2406d5f93dacb66d1f,Re-enable python tests on travis
+dmp42,2014-03-20 19:59:21,https://api.github.com/repos/hipache/hipache/git/commits/2df01512a0b112217f214fb485be5507150a6517,2df01512a0b112217f214fb485be5507150a6517,"That's it travis - now, you behave!"
+dmp42,2014-03-20 19:43:50,https://api.github.com/repos/hipache/hipache/git/commits/b11d86d09c0c8050c3ea2620a24760f170c557b6,b11d86d09c0c8050c3ea2620a24760f170c557b6,Fixing build...
+dmp42,2014-03-20 19:36:12,https://api.github.com/repos/hipache/hipache/git/commits/5aad65ca18b7f0588f9a7ac0ce879cc04c7e82ae,5aad65ca18b7f0588f9a7ac0ce879cc04c7e82ae,"+ env variables to inhibit etcd/memcached tests
++ reactivate tests
+
+Until I find a way to build / push etcd to travis."
+dmp42,2014-03-20 19:10:57,https://api.github.com/repos/hipache/hipache/git/commits/92edb292d8c4147dfa416845058a8588a3ebd2a9,92edb292d8c4147dfa416845058a8588a3ebd2a9,"Ok travis, I'm coming for you. Let's start slow."
+dmp42,2014-03-20 18:57:14,https://api.github.com/repos/hipache/hipache/git/commits/2943f10d258f955b6badd76f9521eb3659aced62,2943f10d258f955b6badd76f9521eb3659aced62,Fixing the build + tweaks
+dmp42,2014-03-20 18:55:45,https://api.github.com/repos/hipache/hipache/git/commits/11f62aa6dfeab8b7b212fe425ebfb7bd8fe98611,11f62aa6dfeab8b7b212fe425ebfb7bd8fe98611,Updated readme
+dmp42,2014-03-20 18:19:04,https://api.github.com/repos/hipache/hipache/git/commits/5d75d532946ac9a6af197d701d43603d4b083115,5d75d532946ac9a6af197d701d43603d4b083115,All tests pass!
+dmp42,2014-03-20 17:53:25,https://api.github.com/repos/hipache/hipache/git/commits/e0eaf7122f980715592cc819a68f4aaa07210e06,e0eaf7122f980715592cc819a68f4aaa07210e06,"Merging with cache, work in progress"
+dmp42,2014-03-20 17:16:16,https://api.github.com/repos/hipache/hipache/git/commits/683aacadccce415af68dac605269a7e8daa0b336,683aacadccce415af68dac605269a7e8daa0b336,Updated drivers README and moved redis old driver
+dmp42,2014-03-20 17:15:52,https://api.github.com/repos/hipache/hipache/git/commits/3ccfc00508eb43cedd9d7d758230215575f974da,3ccfc00508eb43cedd9d7d758230215575f974da,Updated gulpfile and test readme
+dmp42,2014-03-20 17:14:18,https://api.github.com/repos/hipache/hipache/git/commits/f3c13f4b742b83775350427f821767037b651694,f3c13f4b742b83775350427f821767037b651694,Fix tests failing because of etcd slow start
+dmp42,2014-03-20 17:14:05,https://api.github.com/repos/hipache/hipache/git/commits/0c076fe620204fdba7956242311439f2646bdaf1,0c076fe620204fdba7956242311439f2646bdaf1,Moved factory test
+dmp42,2014-03-20 16:59:05,https://api.github.com/repos/hipache/hipache/git/commits/623804d4a78298b00b9dcdba7dac408642c4c569,623804d4a78298b00b9dcdba7dac408642c4c569,Fix etcd swapped master/slave (does it even make any sense to have master/slave etcd?)
+dmp42,2014-03-20 16:58:36,https://api.github.com/repos/hipache/hipache/git/commits/75d718665c6297c4c83babfd9b44100569c91f9a,75d718665c6297c4c83babfd9b44100569c91f9a,Memcached pass the tests
+dmp42,2014-03-20 16:09:26,https://api.github.com/repos/hipache/hipache/git/commits/1888f03909ed3a2ab0bf01f9ee39d0cad8226764,1888f03909ed3a2ab0bf01f9ee39d0cad8226764,Etcd driver pass the tests
+dmp42,2014-03-20 16:07:52,https://api.github.com/repos/hipache/hipache/git/commits/2e0d673890a79fa6b6204c63432b241e70cc1f25,2e0d673890a79fa6b6204c63432b241e70cc1f25,etcd is punny on timeouts
+dmp42,2014-03-20 16:00:47,https://api.github.com/repos/hipache/hipache/git/commits/3877194c556e4e9303bf10bbd2747007fc71dd45,3877194c556e4e9303bf10bbd2747007fc71dd45,"Make linter happy
++ common driver test file"
+dmp42,2014-03-20 15:56:09,https://api.github.com/repos/hipache/hipache/git/commits/5889c2112783cfcf45a134b2bb33a2bbbe6249ac,5889c2112783cfcf45a134b2bb33a2bbbe6249ac,"Redis update
++ IHipDriver update
++ drivertpl"
+dmp42,2014-03-20 15:51:11,https://api.github.com/repos/hipache/hipache/git/commits/8d85414026bfb56ef5861affdc9c365233f000bf,8d85414026bfb56ef5861affdc9c365233f000bf,Factory is tested
+dmp42,2014-03-19 21:15:31,https://api.github.com/repos/hipache/hipache/git/commits/2193b1a4380acf3beddbf45442f1f5f7990fe081,2193b1a4380acf3beddbf45442f1f5f7990fe081,Trivial fix
+dmp42,2014-03-19 21:11:47,https://api.github.com/repos/hipache/hipache/git/commits/1d5d258283e087a27b94ff9161a6f154b19584ae,1d5d258283e087a27b94ff9161a6f154b19584ae,Word of warning
+dmp42,2014-03-19 21:05:18,https://api.github.com/repos/hipache/hipache/git/commits/23299f29c1d66f5709f8acff0887308a4de0a5dc,23299f29c1d66f5709f8acff0887308a4de0a5dc,Updated gulp
+dmp42,2014-03-19 21:04:53,https://api.github.com/repos/hipache/hipache/git/commits/7d895fab3b9fc3ec34d2e01be4e1063e3b449aff,7d895fab3b9fc3ec34d2e01be4e1063e3b449aff,Introducing drivers (work in progress)
+dmp42,2014-03-19 21:04:01,https://api.github.com/repos/hipache/hipache/git/commits/9824ee588967ba77062a047874a89dfba0023713,9824ee588967ba77062a047874a89dfba0023713,Updated tests organization and fixtures
+dmp42,2014-03-19 09:30:14,https://api.github.com/repos/hipache/hipache/git/commits/a94bf4d3465762e8f58e629adebceae62ab5ae33,a94bf4d3465762e8f58e629adebceae62ab5ae33,Trivial cleanup redisserver
+dmp42,2014-03-19 18:40:29,https://api.github.com/repos/hipache/hipache/git/commits/d73ad847d11e463ed2f61866fba34f7d9648981d,d73ad847d11e463ed2f61866fba34f7d9648981d,"Fix #56
+
+Apache is: ə'pætʃɪ (stress on ""pa"")
+so Hipache should be: hɪ'pætʃɪ"
+dmp42,2014-03-19 16:01:03,https://api.github.com/repos/hipache/hipache/git/commits/a221d65b85740bb7cd8f9ac4a3c4b32874bae3ea,a221d65b85740bb7cd8f9ac4a3c4b32874bae3ea,"Merge pull request #86 from bjyoungblood/feature/wildcard-matching
+
+Configurable wildcard matching"
+samalba,2014-03-19 15:46:53,https://api.github.com/repos/hipache/hipache/git/commits/4c0fdd810503f8998fd675c98c7b8e6781ce1063,4c0fdd810503f8998fd675c98c7b8e6781ce1063,Added MAINTAINERS file
+samalba,2014-03-17 17:18:18,https://api.github.com/repos/hipache/hipache/git/commits/3645960bafdc02ea5a02e3c84ab7e68594d7c887,3645960bafdc02ea5a02e3c84ab7e68594d7c887,"Merge pull request #85 from dmp42/refactor
+
+Refactor, take 3"
+dmp42,2014-03-17 15:37:30,https://api.github.com/repos/hipache/hipache/git/commits/9e8a8301c6d1df4672da8de7620ef3eaf0e77d11,9e8a8301c6d1df4672da8de7620ef3eaf0e77d11,"Update redis tests
+Update cache to use the new standalone redis class
+Update travis.yml so that we have a launchable redis-server before running mocha tests"
+dmp42,2014-03-17 15:23:57,https://api.github.com/repos/hipache/hipache/git/commits/476d2b5ac489e03bb71885c30300d8083f47abc3,476d2b5ac489e03bb71885c30300d8083f47abc3,First shot at Redis standalone + instrumented servers + tests
+samalba,2014-03-16 01:19:39,https://api.github.com/repos/hipache/hipache/git/commits/e209d7f161b6dc9f2d029512d142a30ef7b365d4,e209d7f161b6dc9f2d029512d142a30ef7b365d4,"Merge pull request #84 from gdi2290/patch-1
+
+update copyright year to range"
+PatrickJS,2014-03-16 01:19:03,https://api.github.com/repos/hipache/hipache/git/commits/50b11606d25c04b53064575a2253a71458a850f5,50b11606d25c04b53064575a2253a71458a850f5,update copyright year to range
+samalba,2014-03-16 01:12:57,https://api.github.com/repos/hipache/hipache/git/commits/6041dfc64616cc43975180d9b7c26ef2124365cf,6041dfc64616cc43975180d9b7c26ef2124365cf,"Merge pull request #83 from dmp42/refactor
+
+Refactor, take 2"
+dmp42,2014-03-15 11:36:25,https://api.github.com/repos/hipache/hipache/git/commits/8d6250a16f98205b5f51b40bef9024823bb065e8,8d6250a16f98205b5f51b40bef9024823bb065e8,"- cache now uses standalone LRU
+- slightly change lru syntax
+- fix ""Size"" vs. ""size"" not being honored in Cache/LRU"
+dmp42,2014-03-15 11:24:13,https://api.github.com/repos/hipache/hipache/git/commits/22639494cd75328234d501cecf517a1cef35c2e0,22639494cd75328234d501cecf517a1cef35c2e0,Have a standalone lru + tests
+dmp42,2014-03-15 11:23:04,https://api.github.com/repos/hipache/hipache/git/commits/2ddcf4559cdc4bf7fd4fd01d658892cf85c0919b,2ddcf4559cdc4bf7fd4fd01d658892cf85c0919b,"- move jshint.json to the default .jshintrc (should fix #82)
+- remove eslint reporter dep (since stylish is the default now)
+- silence out mocha / switch reporter"
+samalba,2014-03-11 15:52:32,https://api.github.com/repos/hipache/hipache/git/commits/8191a0999d6ac39fa92735d87cae5b3d084c822c,8191a0999d6ac39fa92735d87cae5b3d084c822c,"Merge pull request #80 from dmp42/refactor
+
+Add gulp + mocha, start refactoring accessLog / master + tests"
+dmp42,2014-03-10 15:34:02,https://api.github.com/repos/hipache/hipache/git/commits/14eda12c19bd05dc27fb32f4fd9d8615776b9cac,14eda12c19bd05dc27fb32f4fd9d8615776b9cac,Fix build bustage (adding istanbul as devDep for future coverage testing)
+samalba,2014-03-10 15:29:16,https://api.github.com/repos/hipache/hipache/git/commits/7e1302b613db7ce7a062869b30cd103aef3c6ec9,7e1302b613db7ce7a062869b30cd103aef3c6ec9,"Merge pull request #79 from dmp42/cleanup+fix#77
+
+Cleanup + fix #77"
+dmp42,2014-03-10 14:57:10,https://api.github.com/repos/hipache/hipache/git/commits/1f37d31de1250ce85717a29a388e0e5adb614636,1f37d31de1250ce85717a29a388e0e5adb614636,Add hipache bin to gulp watched scripts
+dmp42,2014-03-10 14:54:52,https://api.github.com/repos/hipache/hipache/git/commits/807515c6388286ab56c2a588bccd4a3dd58f237b,807515c6388286ab56c2a588bccd4a3dd58f237b,Make lint happy
+dmp42,2014-03-10 14:48:50,https://api.github.com/repos/hipache/hipache/git/commits/4112b02a7d591b75cdffcecc8278bdefd99d8c3b,4112b02a7d591b75cdffcecc8278bdefd99d8c3b,"Use gulp, have some mocha + cha, and watch."
+dmp42,2014-03-10 14:47:55,https://api.github.com/repos/hipache/hipache/git/commits/f4c24b19f778639b08d4beb0e5f8246f1ceffcd9,f4c24b19f778639b08d4beb0e5f8246f1ceffcd9,"Have more logger tests, and split from master (now empty)."
+dmp42,2014-03-10 14:47:27,https://api.github.com/repos/hipache/hipache/git/commits/e6033c4b5d5c26d34b97673359aa875cddad7366,e6033c4b5d5c26d34b97673359aa875cddad7366,Split out logger from master
+dmp42,2014-03-10 14:46:44,https://api.github.com/repos/hipache/hipache/git/commits/87fd4b5d0b3823e37ef6b7fbe3f5fa3c3a93e708,87fd4b5d0b3823e37ef6b7fbe3f5fa3c3a93e708,Add editorconfig
+dmp42,2014-03-10 12:10:19,https://api.github.com/repos/hipache/hipache/git/commits/2f93072e8326203b67293161cb1692625573fe2a,2f93072e8326203b67293161cb1692625573fe2a,Fix #77
+dmp42,2014-03-10 10:39:07,https://api.github.com/repos/hipache/hipache/git/commits/64b093341b103842351ed977a891bbf9263886f1,64b093341b103842351ed977a891bbf9263886f1,Add globals so that jshint doesn't complain
+dmp42,2014-03-10 10:37:47,https://api.github.com/repos/hipache/hipache/git/commits/4892ffd419700c5706c9b7ea6a805e8625b5e8a3,4892ffd419700c5706c9b7ea6a805e8625b5e8a3,Break long lines
+dmp42,2014-03-10 10:37:34,https://api.github.com/repos/hipache/hipache/git/commits/a53b62f629385da37744a04f3cb53d83d1c94db3,a53b62f629385da37744a04f3cb53d83d1c94db3,Remove dead code
+dmp42,2014-03-10 10:36:23,https://api.github.com/repos/hipache/hipache/git/commits/6bac9e3fa049ef9c085d73627996f87b8dbc9525,6bac9e3fa049ef9c085d73627996f87b8dbc9525,Have more explicit coding conventions (jshint)
+dmp42,2014-03-10 10:01:39,https://api.github.com/repos/hipache/hipache/git/commits/4021e6da43b1abe088d55966ca8a100489833334,4021e6da43b1abe088d55966ca8a100489833334,More infos in package.json
+dmp42,2014-03-10 09:59:35,https://api.github.com/repos/hipache/hipache/git/commits/b850cf8fa1f8f81e691cdfcfc9473603cf2f63ca,b850cf8fa1f8f81e691cdfcfc9473603cf2f63ca,Minor language fixes
+dmp42,2014-03-10 09:58:14,https://api.github.com/repos/hipache/hipache/git/commits/eafd349c9a6c25bd5206dfca7999dd6e29a810ab,eafd349c9a6c25bd5206dfca7999dd6e29a810ab,"Add nice badges (depstats, link to npm, and coverall for the future)"
+samalba,2014-02-16 16:46:59,https://api.github.com/repos/hipache/hipache/git/commits/8d8d45a3e7fa80f782605c8122bdc3f13518d6d0,8d8d45a3e7fa80f782605c8122bdc3f13518d6d0,Improved test_one_failing functional test
+samalba,2014-02-16 16:30:45,https://api.github.com/repos/hipache/hipache/git/commits/64a7538e2db6ca753ecf7feccaf561807b0ed58b,64a7538e2db6ca753ecf7feccaf561807b0ed58b,Trace deprecation warnings in node. Force node 0.10 deps.
+samalba,2014-02-16 05:23:32,https://api.github.com/repos/hipache/hipache/git/commits/9f79a5d6daa52ad173658f18cc98b849b1674159,9f79a5d6daa52ad173658f18cc98b849b1674159,Fixing travis
+samalba,2014-02-16 04:34:57,https://api.github.com/repos/hipache/hipache/git/commits/ad8697347d3803bed61c78a51ba84635b9f42337,ad8697347d3803bed61c78a51ba84635b9f42337,Fixed jshint
+samalba,2014-02-16 02:39:53,https://api.github.com/repos/hipache/hipache/git/commits/75b7ebc89fd879dbe98b9a840f635df1da6ad62b,75b7ebc89fd879dbe98b9a840f635df1da6ad62b,Fixes for travisCI
+samalba,2014-02-16 02:14:39,https://api.github.com/repos/hipache/hipache/git/commits/820b17d321a316140580473e21d220bfc2d5afd6,820b17d321a316140580473e21d220bfc2d5afd6,Update README.md
+samalba,2014-02-16 02:10:48,https://api.github.com/repos/hipache/hipache/git/commits/9531a93da8d02145875c1cbfd7e0c63f7da4b84b,9531a93da8d02145875c1cbfd7e0c63f7da4b84b,Merge branch 'master' of github.com:dotcloud/hipache
+samalba,2014-02-16 02:10:15,https://api.github.com/repos/hipache/hipache/git/commits/2a7632c1eee9d2e4510ac32276c9e2fa7bbc637b,2a7632c1eee9d2e4510ac32276c9e2fa7bbc637b,Added first simple unit test script
+samalba,2014-02-16 02:09:46,https://api.github.com/repos/hipache/hipache/git/commits/a19f7093103dcebee66f8907c75e273d6c96f286,a19f7093103dcebee66f8907c75e273d6c96f286,Added travisCI
+samalba,2014-02-16 02:09:28,https://api.github.com/repos/hipache/hipache/git/commits/3edbc2a6e8b972dbd396874ede63c2398fe681cf,3edbc2a6e8b972dbd396874ede63c2398fe681cf,Reorganized master+worker for testing
+samalba,2014-02-15 23:40:38,https://api.github.com/repos/hipache/hipache/git/commits/98397c86be93fd7e2ca4ee83c2f1f411c406bc05,98397c86be93fd7e2ca4ee83c2f1f411c406bc05,Code cleaning (jshint + fixed var leaks in global context)
+samalba,2014-02-13 22:05:35,https://api.github.com/repos/hipache/hipache/git/commits/8404fb5e4236b30531fb18aae692af9c600735f1,8404fb5e4236b30531fb18aae692af9c600735f1,"Merge pull request #74 from dotcloud/http-proxy-10
+
+Switched to http-proxy 1.0"
+samalba,2014-02-12 02:13:55,https://api.github.com/repos/hipache/hipache/git/commits/c827fe2625a43188027788b86fbd9bcf731ca0f7,c827fe2625a43188027788b86fbd9bcf731ca0f7,"Merge pull request #62 from morpheu/redis-slave
+
+Implementing redis master/slave conf"
+samalba,2014-02-12 02:02:50,https://api.github.com/repos/hipache/hipache/git/commits/4090d04ebfc0db6db6a8936cabf633e97ea49107,4090d04ebfc0db6db6a8936cabf633e97ea49107,Switched to http-proxy 1.0
+samalba,2014-02-11 20:39:22,https://api.github.com/repos/hipache/hipache/git/commits/4ece94a585e17cdc45fc7e0b35cf09fed37f31dc,4ece94a585e17cdc45fc7e0b35cf09fed37f31dc,Removing whitespaces in worker.js
+samalba,2014-02-11 20:38:58,https://api.github.com/repos/hipache/hipache/git/commits/1a988b177c7b8f136d93ec6456ce5d262c2af80e,1a988b177c7b8f136d93ec6456ce5d262c2af80e,Refreshed libraries version + switching to node 0.10
+samalba,2014-02-11 19:06:33,https://api.github.com/repos/hipache/hipache/git/commits/ed68c4ddec1a16ab223aa89e0a7b496608eb4ba6,ed68c4ddec1a16ab223aa89e0a7b496608eb4ba6,"Merge pull request #67 from inthecloud247/master
+
+http-proxy version correction"
+inthecloud247,2014-01-15 21:14:34,https://api.github.com/repos/hipache/hipache/git/commits/6280f0d1c331098ca8018b10bd796840061def6a,6280f0d1c331098ca8018b10bd796840061def6a,install from the hipache github repo...
+inthecloud247,2014-01-15 19:47:41,https://api.github.com/repos/hipache/hipache/git/commits/dde3aadab7649a14eadb750e379eb97636bb1c18,dde3aadab7649a14eadb750e379eb97636bb1c18,http-proxy version correction
+samalba,2013-11-28 23:24:58,https://api.github.com/repos/hipache/hipache/git/commits/c9c720436a53144f73acf2f059246fe86243c795,c9c720436a53144f73acf2f059246fe86243c795,"Merge pull request #61 from baruch/patch-1
+
+Fix spelling mistake in TODO.md"
+morpheu,2013-11-28 19:47:36,https://api.github.com/repos/hipache/hipache/git/commits/d22bf6e9bc22bb3fa8af17d12fdf811bf45bf9b6,d22bf6e9bc22bb3fa8af17d12fdf811bf45bf9b6,Implementing redis master/slave conf
+baruch,2013-11-28 16:22:54,https://api.github.com/repos/hipache/hipache/git/commits/a9f031537394528c860d6269a9a3e323ff3e9033,a9f031537394528c860d6269a9a3e323ff3e9033,Fix spelling mistake in TODO.md
+samalba,2013-11-14 19:25:57,https://api.github.com/repos/hipache/hipache/git/commits/6f441f03b52e46e05110d73ae6ad7c522bb91dae,6f441f03b52e46e05110d73ae6ad7c522bb91dae,Bumped version
+samalba,2013-11-14 18:52:51,https://api.github.com/repos/hipache/hipache/git/commits/acb93a098eb9c4c733aca3eea7dea183a0a3290c,acb93a098eb9c4c733aca3eea7dea183a0a3290c,"Merge pull request #53 from sstelfox/master
+
+Converted dependency to use a public access method"
+sstelfox,2013-10-28 19:59:58,https://api.github.com/repos/hipache/hipache/git/commits/d728f277a7b1b773e0da895c843c929d9a047231,d728f277a7b1b773e0da895c843c929d9a047231,Converted dependency to use a public access method
+samalba,2013-10-24 15:28:04,https://api.github.com/repos/hipache/hipache/git/commits/efb549f6f59860e3ef354b1a36c29e93fcf3b647,efb549f6f59860e3ef354b1a36c29e93fcf3b647,"Merge pull request #52 from patrickod/patch-1
+
+Update the Dockerfile node version from 0.8.23 to 0.8.26"
+patrickod,2013-10-24 05:33:10,https://api.github.com/repos/hipache/hipache/git/commits/ea864441a6d7e52cc8d0f45d1d02e22f4593eeba,ea864441a6d7e52cc8d0f45d1d02e22f4593eeba,"Update the node version from 0.8.23 to 0.8.26
+
+Given the recent security advisory about versions < 0.8.26 regarding HTTP server memory exhaustion and the likelihood that people will have public facing Hipache instances we should bump the version. Safety first!"
+samalba,2013-10-10 15:24:17,https://api.github.com/repos/hipache/hipache/git/commits/92d0181df949ca1993934f81fd45d4a3fabb28a4,92d0181df949ca1993934f81fd45d4a3fabb28a4,"Merge pull request #47 from sosedoff/simple-pages
+
+Simplify error pages styles"
+samalba,2013-10-09 00:42:39,https://api.github.com/repos/hipache/hipache/git/commits/cba4d4a4fe364473e60cce315cc351ef0346ca69,cba4d4a4fe364473e60cce315cc351ef0346ca69,"Merge pull request #46 from sosedoff/upstart
+
+Upstart config"
+sosedoff,2013-10-09 00:14:32,https://api.github.com/repos/hipache/hipache/git/commits/d8a088b040b926751150e7a5f0f57a9ae381845b,d8a088b040b926751150e7a5f0f57a9ae381845b,Tweak readme
+sosedoff,2013-10-09 00:12:41,https://api.github.com/repos/hipache/hipache/git/commits/92ea0699d32e01f1833402ea7724e83d83b5fb15,92ea0699d32e01f1833402ea7724e83d83b5fb15,Add upstart config file and readme docs
+sosedoff,2013-10-09 00:01:14,https://api.github.com/repos/hipache/hipache/git/commits/94eb1928863fc4f27353ecb74ee05775242af7d1,94eb1928863fc4f27353ecb74ee05775242af7d1,"Simplify error pages styles, no more image assets"
+samalba,2013-08-14 21:06:04,https://api.github.com/repos/hipache/hipache/git/commits/ddc66db11dd22b5616dd2c26124df5bce9d83c18,ddc66db11dd22b5616dd2c26124df5bce9d83c18,"Merge pull request #39 from dotcloud/38-dockerfiles-best-practices
+
+38 - Update Dockerfile to Best Practices"
+keeb,2013-08-14 20:58:57,https://api.github.com/repos/hipache/hipache/git/commits/ce9d0a027efe0b9c3b773646395d7944801fe3d0,ce9d0a027efe0b9c3b773646395d7944801fe3d0,updated based on feedback
+keeb,2013-08-14 17:32:54,https://api.github.com/repos/hipache/hipache/git/commits/ecfc9d34b98d113a4e243520c6b02fa99d563728,ecfc9d34b98d113a4e243520c6b02fa99d563728,"Remove hardcoded ports, add config_dev.json to the appropriate location in the image so config changes can be made."
+kencochrane,2013-08-05 17:50:52,https://api.github.com/repos/hipache/hipache/git/commits/49685803a46ccc6fea60b3998ac5bf3b7a09b1f7,49685803a46ccc6fea60b3998ac5bf3b7a09b1f7,"Merge pull request #37 from yuvipanda/master
+
+Minor typo correction in README"
+yuvipanda,2013-08-01 21:10:56,https://api.github.com/repos/hipache/hipache/git/commits/ce77f3c129202cc584c7d90f712dd8f96c9ac186,ce77f3c129202cc584c7d90f712dd8f96c9ac186,Minor typo correction in README
+samalba,2013-07-11 15:51:56,https://api.github.com/repos/hipache/hipache/git/commits/c5c089a5d418caf5eb896078ae07cfbf2cecb1e1,c5c089a5d418caf5eb896078ae07cfbf2cecb1e1,"Merge pull request #32 from alfss/master
+
+Adds support for listen on custom network address.
+Adds support for using a different Redis database."
+alfssobsd,2013-07-10 09:26:00,https://api.github.com/repos/hipache/hipache/git/commits/749964de9b3e6b5ac211eb98a28ed332e2204ea2,749964de9b3e6b5ac211eb98a28ed332e2204ea2,"[+] redis select database, enable auth"
+alfssobsd,2013-07-09 11:45:34,https://api.github.com/repos/hipache/hipache/git/commits/dc1e02441d2ba5f7d40dbc93cb1303c9b83e7284,dc1e02441d2ba5f7d40dbc93cb1303c9b83e7284,[~] add parameters address and address6 to README.md
+alfssobsd,2013-07-09 11:28:22,https://api.github.com/repos/hipache/hipache/git/commits/cd74d9a0428f7c8bf1eec402c17d1485d8812bc8,cd74d9a0428f7c8bf1eec402c17d1485d8812bc8,[~] fix missing method
+alfssobsd,2013-07-09 11:25:37,https://api.github.com/repos/hipache/hipache/git/commits/e2170bc276fa59e32f470bf95c013c3f539a8b64,e2170bc276fa59e32f470bf95c013c3f539a8b64,"[+] enable set listen address, parameters address and address6"
+samalba,2013-06-26 00:24:41,https://api.github.com/repos/hipache/hipache/git/commits/7362ff5b812f93eceafbdbf5e5959f676f731f80,7362ff5b812f93eceafbdbf5e5959f676f731f80,"Merge pull request #31 from jpetazzo/master
+
+Add hipache version in the debug headers"
+jpetazzo,2013-06-26 00:20:42,https://api.github.com/repos/hipache/hipache/git/commits/fdb93f2f93830325b48633bb3f70b2fcc3987b1e,fdb93f2f93830325b48633bb3f70b2fcc3987b1e,add hipache version in the debug headers
+samalba,2013-06-13 16:53:19,https://api.github.com/repos/hipache/hipache/git/commits/11cbf7d91624db814a58051c41ca9ae46e045253,11cbf7d91624db814a58051c41ca9ae46e045253,"Merge pull request #28 from vieux/master
+
+Update Dockerfile"
+vieux,2013-06-13 14:12:11,https://api.github.com/repos/hipache/hipache/git/commits/fb10ea53f40a4c00206d2ee4f874fa9fa62b3c1b,fb10ea53f40a4c00206d2ee4f874fa9fa62b3c1b,update docker file
+samalba,2013-05-01 04:48:15,https://api.github.com/repos/hipache/hipache/git/commits/097dd7d6be5d38cb358aafff53a255be6e2e8ec2,097dd7d6be5d38cb358aafff53a255be6e2e8ec2,Added Dockerfile to run with Docker
+samalba,2013-03-24 18:42:53,https://api.github.com/repos/hipache/hipache/git/commits/0c9917111a72b010b9107e9d82acc704fbe9515d,0c9917111a72b010b9107e9d82acc704fbe9515d,Bumped version to 0.2.3. Switched to http-proxy fork.
+samalba,2013-03-24 18:21:55,https://api.github.com/repos/hipache/hipache/git/commits/a300711d335448b77578f34768a81e1cb2e05310,a300711d335448b77578f34768a81e1cb2e05310,Changed node engine dependency
+samalba,2013-03-21 23:58:48,https://api.github.com/repos/hipache/hipache/git/commits/e367301fc357e72664441dbc68539855efb641c0,e367301fc357e72664441dbc68539855efb641c0,Merge branch 'master' of github.com:dotcloud/hipache
+samalba,2013-03-21 23:57:49,https://api.github.com/repos/hipache/hipache/git/commits/ac8b0c624282c6e35f3e63b70313cdfd31ebe280,ac8b0c624282c6e35f3e63b70313cdfd31ebe280,Added test for malformed request
+samalba,2013-03-21 23:57:30,https://api.github.com/repos/hipache/hipache/git/commits/84250502fe799e7a6c155e0bbf2a23772f9db486,84250502fe799e7a6c155e0bbf2a23772f9db486,Bumped http-proxy dependency to 0.10.x
+jpetazzo,2013-03-21 22:26:58,https://api.github.com/repos/hipache/hipache/git/commits/749fc5b68973da581b791f2f1070c9843935be0e,749fc5b68973da581b791f2f1070c9843935be0e,Merge branch 'master' of github.com:dotcloud/hipache
+jpetazzo,2013-03-21 22:26:34,https://api.github.com/repos/hipache/hipache/git/commits/5b47a9e679d476e0f9dde05d3105ab8a86ec24f1,5b47a9e679d476e0f9dde05d3105ab8a86ec24f1,add docs for the tests; add *~ to ignored files
+jpetazzo,2013-03-21 19:31:45,https://api.github.com/repos/hipache/hipache/git/commits/5275937ebe11131751356f346a299099005cccc2,5275937ebe11131751356f346a299099005cccc2,fix redis configuration variables
+samalba,2013-03-21 05:24:52,https://api.github.com/repos/hipache/hipache/git/commits/2eef572c8475929ae309904182f71721322c7177,2eef572c8475929ae309904182f71721322c7177,Bumped version to 0.2.2
+samalba,2013-03-21 05:21:44,https://api.github.com/repos/hipache/hipache/git/commits/16ef4e2a549eee20b6ebca7dfcb119a8dcd0ef51,16ef4e2a549eee20b6ebca7dfcb119a8dcd0ef51,Fixed bytesWritten error
+samalba,2013-03-21 05:21:05,https://api.github.com/repos/hipache/hipache/git/commits/400df25355ba3c39e469d3552084dc7b161e3645,400df25355ba3c39e469d3552084dc7b161e3645,Fixed run-script jshint
+samalba,2013-03-21 04:38:48,https://api.github.com/repos/hipache/hipache/git/commits/61a32dd2138bb7b58392e0d81f804eae12d8f745,61a32dd2138bb7b58392e0d81f804eae12d8f745,Fixed parse error bug
+samalba,2013-03-21 04:38:27,https://api.github.com/repos/hipache/hipache/git/commits/61f9b94f83a7a7c248fef13c7da4145b608d01fc,61f9b94f83a7a7c248fef13c7da4145b608d01fc,"Added test for the ""HTTP Parse Error"" bug"
+samalba,2013-03-17 01:20:35,https://api.github.com/repos/hipache/hipache/git/commits/674967ccb32ac7b257639365ece3da7e245113fd,674967ccb32ac7b257639365ece3da7e245113fd,Bumped dependencies + Bumped version to 0.2.1
+samalba,2013-03-17 01:20:19,https://api.github.com/repos/hipache/hipache/git/commits/6bae3fccd5ea2775c26fcf1576727d30b0017eb4,6bae3fccd5ea2775c26fcf1576727d30b0017eb4,Added a test for HTTP parse errors
+samalba,2013-03-15 01:35:35,https://api.github.com/repos/hipache/hipache/git/commits/c4db00fb524d864d858bbe50c17b47f1f5adb9df,c4db00fb524d864d858bbe50c17b47f1f5adb9df,Replaced old unit tests by new ones in python
+samalba,2013-02-08 21:31:35,https://api.github.com/repos/hipache/hipache/git/commits/0a0203d939251eeef43e9e163797fc3a86e5b2a2,0a0203d939251eeef43e9e163797fc3a86e5b2a2,Bumped version to 0.1.21
+samalba,2013-02-08 21:24:05,https://api.github.com/repos/hipache/hipache/git/commits/3fd7641c24893572fa22b2f5f01dd1396e2c2680,3fd7641c24893572fa22b2f5f01dd1396e2c2680,Updated default configuration files
+samalba,2013-02-08 00:12:01,https://api.github.com/repos/hipache/hipache/git/commits/dee0a92b2406c1c7c2c315c84d8587679ca3d19e,dee0a92b2406c1c7c2c315c84d8587679ca3d19e,Only mark dead backend when there are several
+samalba,2013-02-07 23:17:05,https://api.github.com/repos/hipache/hipache/git/commits/43c4d1664a4cffdaa3d248bab69519bd1e2f5947,43c4d1664a4cffdaa3d248bab69519bd1e2f5947,"If the active check is not running, we never consider 500 return code as critical errors"
+samalba,2013-02-01 23:39:52,https://api.github.com/repos/hipache/hipache/git/commits/f4ee21f51ef0e09108096ffaea5bc95c1d791757,f4ee21f51ef0e09108096ffaea5bc95c1d791757,Bumped version to 0.1.20
+samalba,2013-02-01 23:39:22,https://api.github.com/repos/hipache/hipache/git/commits/440e33b2a31f56102d252909d7c92ad1a937a41a,440e33b2a31f56102d252909d7c92ad1a937a41a,Implemented auto-detection of a running hchecker
+samalba,2013-02-01 23:39:00,https://api.github.com/repos/hipache/hipache/git/commits/eab5e1eb0f6d7bb3d2371573cb497c87acada0fc,eab5e1eb0f6d7bb3d2371573cb497c87acada0fc,Switched to Date.now()
+samalba,2013-01-30 01:20:29,https://api.github.com/repos/hipache/hipache/git/commits/48b0a74c8b1d5dfbc1ae79c9eef9fa139a1b741c,48b0a74c8b1d5dfbc1ae79c9eef9fa139a1b741c,Bumped version to 0.1.19
+samalba,2013-01-29 23:56:48,https://api.github.com/repos/hipache/hipache/git/commits/0b08ca8fa8a8ade7b1e0307f6ada12129cd862f9,0b08ca8fa8a8ade7b1e0307f6ada12129cd862f9,Fixed linter warning
+samalba,2013-01-29 23:20:10,https://api.github.com/repos/hipache/hipache/git/commits/66a3ae0d1c2cc87c3f1610e5d5184ed0eae7e000,66a3ae0d1c2cc87c3f1610e5d5184ed0eae7e000,Bumped dependencies version
+samalba,2013-01-29 23:15:19,https://api.github.com/repos/hipache/hipache/git/commits/de5ff389aeb707aefc83e698cfbcf3e6142a1ae4,de5ff389aeb707aefc83e698cfbcf3e6142a1ae4,Implemented config-conditional 500 error code check
+samalba,2013-01-29 23:13:46,https://api.github.com/repos/hipache/hipache/git/commits/733ddd19319a385934d5b67391ce79b6af458101,733ddd19319a385934d5b67391ce79b6af458101,Reverted X-Forwarded-* headers overwrite
+samalba,2013-01-07 20:50:22,https://api.github.com/repos/hipache/hipache/git/commits/cb818f1ccdf8df6c445da5975fd13a70538281e2,cb818f1ccdf8df6c445da5975fd13a70538281e2,"Merge pull request #15 from mattparlane/master
+
+Allow falling back on a single wildcard entry if no other frontends exist."
+mattparlane,2013-01-07 20:47:12,https://api.github.com/repos/hipache/hipache/git/commits/f446c87603e5aff77a92307c0985734261bce09f,f446c87603e5aff77a92307c0985734261bce09f,Allow falling back on a single wildcard entry if no other frontends exist.
+samalba,2012-11-22 02:19:28,https://api.github.com/repos/hipache/hipache/git/commits/a9aff61eae07d50c6bb3cc68c059b3a6c4495fbf,a9aff61eae07d50c6bb3cc68c059b3a6c4495fbf,Merge branch 'master' of github.com:dotcloud/hipache
+samalba,2012-11-22 02:18:43,https://api.github.com/repos/hipache/hipache/git/commits/020f02217d1993566bb820fa7f157da9f84ebf64,020f02217d1993566bb820fa7f157da9f84ebf64,Bumped version to 0.1.18
+samalba,2012-11-22 02:17:57,https://api.github.com/repos/hipache/hipache/git/commits/9d13c9069958bc891bfb76ba79aadc427c019f7e,9d13c9069958bc891bfb76ba79aadc427c019f7e,Fixed critical bug in dead backends handling
+samalba,2012-11-19 02:48:04,https://api.github.com/repos/hipache/hipache/git/commits/4068599ed00a7eff1610888cc9f6b32389d49ca0,4068599ed00a7eff1610888cc9f6b32389d49ca0,Update TODO.md
+samalba,2012-11-19 02:47:30,https://api.github.com/repos/hipache/hipache/git/commits/49fb08c3539db21f99b642ab85a1fa7650aa1aef,49fb08c3539db21f99b642ab85a1fa7650aa1aef,Update README.md
+samalba,2012-11-15 18:54:40,https://api.github.com/repos/hipache/hipache/git/commits/4b7e5ed76a7b2201bf127bc9f978f140f4a097d3,4b7e5ed76a7b2201bf127bc9f978f140f4a097d3,Bumped version to 0.1.17
+samalba,2012-11-12 03:43:02,https://api.github.com/repos/hipache/hipache/git/commits/0b3d783641c33de35d1c8580cc4ea64f87357a95,0b3d783641c33de35d1c8580cc4ea64f87357a95,typo
+samalba,2012-11-12 03:42:33,https://api.github.com/repos/hipache/hipache/git/commits/6bc672f66a3e9822162a2fac6cc5c7d29194d61e,6bc672f66a3e9822162a2fac6cc5c7d29194d61e,Implemented announcement (redis publish) when a backend dies
+samalba,2012-11-07 02:32:16,https://api.github.com/repos/hipache/hipache/git/commits/b4cd2bfe9caf0bf5439d6b911145b4adc659dbe7,b4cd2bfe9caf0bf5439d6b911145b4adc659dbe7,Bumped version to 0.1.16
+samalba,2012-11-07 02:30:59,https://api.github.com/repos/hipache/hipache/git/commits/f29e9de278f4c999d1639a08a3707a21cf95deaa,f29e9de278f4c999d1639a08a3707a21cf95deaa,Switch to jpetazzo's fork for node-http-proxy dependency to workaround the chunking issue (FB6361) while waiting for the merge of the pull request
+samalba,2012-11-07 02:16:19,https://api.github.com/repos/hipache/hipache/git/commits/0d1e0251d015d9f935b0e00ff1547a39ba9ce6b6,0d1e0251d015d9f935b0e00ff1547a39ba9ce6b6,"HTTP passive health check: If a backend returns a 503 with a Retry-After header, do not mark it as dead"
+samalba,2012-10-31 17:55:20,https://api.github.com/repos/hipache/hipache/git/commits/c4576bee2bfcad523c5c13e5c38a0dfe3a1ae021,c4576bee2bfcad523c5c13e5c38a0dfe3a1ae021,Bumped version to 0.1.15
+samalba,2012-10-31 17:54:49,https://api.github.com/repos/hipache/hipache/git/commits/0eada0cd5f0111910ee8dace3c74a5b1c2717f68,0eada0cd5f0111910ee8dace3c74a5b1c2717f68,Implemented a config option to disable the HTTP keep-alive between the proxy and the backends
+samalba,2012-10-31 17:31:41,https://api.github.com/repos/hipache/hipache/git/commits/1904c04ab2fefea8de1587e481e45d0ab51079be,1904c04ab2fefea8de1587e481e45d0ab51079be,hipache: Implemented a ping feature so we can ping Hipache without reaching a backend
+jpetazzo,2012-10-29 18:01:40,https://api.github.com/repos/hipache/hipache/git/commits/2a2dcd38fde0418ec6ff08778b394fc6acdd816d,2a2dcd38fde0418ec6ff08778b394fc6acdd816d,Bumped version to 0.1.14
+jpetazzo,2012-10-29 18:01:29,https://api.github.com/repos/hipache/hipache/git/commits/b5608f42192b6a3cb98949a8e3b5161cd1949236,b5608f42192b6a3cb98949a8e3b5161cd1949236,Do not mark backend as dead on error 500
+samalba,2012-10-23 06:06:45,https://api.github.com/repos/hipache/hipache/git/commits/cd6a48059cd28465da21545409246e19f10ab7fd,cd6a48059cd28465da21545409246e19f10ab7fd,Bumped version to 0.1.13
+samalba,2012-10-23 06:05:40,https://api.github.com/repos/hipache/hipache/git/commits/e9aeda57445ce24b346043d32e54b463623cf1f3,e9aeda57445ce24b346043d32e54b463623cf1f3,Implemented passive health-checking on HTTP error 5xx
+samalba,2012-10-19 22:49:17,https://api.github.com/repos/hipache/hipache/git/commits/d2a0f6997c929a7f69c3a74e8f9badfaed9b5326,d2a0f6997c929a7f69c3a74e8f9badfaed9b5326,Bumped version to 0.1.12
+samalba,2012-10-19 22:45:26,https://api.github.com/repos/hipache/hipache/git/commits/ddcfafc5eec45c6e5c73c6a7baa53b6ddad0901f,ddcfafc5eec45c6e5c73c6a7baa53b6ddad0901f,Implemented a TCP connection handler to manage client timeouts and errors
+samalba,2012-10-19 01:48:46,https://api.github.com/repos/hipache/hipache/git/commits/8333a3e193bd1dc1b897998681800c7095ed4ef9,8333a3e193bd1dc1b897998681800c7095ed4ef9,Bugfix: res.connection can be equal to null
+samalba,2012-10-12 00:20:51,https://api.github.com/repos/hipache/hipache/git/commits/e1d508bb02e173666abc6a6b56d3ea8107ee4707,e1d508bb02e173666abc6a6b56d3ea8107ee4707,Fixed syntax warning by jshint
+samalba,2012-10-11 23:58:50,https://api.github.com/repos/hipache/hipache/git/commits/826981668c98442cf372e9ea4546f1e0a2a209c2,826981668c98442cf372e9ea4546f1e0a2a209c2,Bumped version to 0.1.11
+samalba,2012-10-11 23:57:18,https://api.github.com/repos/hipache/hipache/git/commits/8abc83600e192140e58ae9441167957c4439a177,8abc83600e192140e58ae9441167957c4439a177,Fixed tests
+samalba,2012-10-11 23:56:39,https://api.github.com/repos/hipache/hipache/git/commits/5a17faa068f9df7c9fb9266963117aafc9a65bcd,5a17faa068f9df7c9fb9266963117aafc9a65bcd,Force res.end when cannot retry on error
+samalba,2012-10-11 22:31:32,https://api.github.com/repos/hipache/hipache/git/commits/0c5b6942b66484d80480409f9eec29b3d96363b3,0c5b6942b66484d80480409f9eec29b3d96363b3,Fixed missing require
+samalba,2012-10-11 18:17:33,https://api.github.com/repos/hipache/hipache/git/commits/46e02f00f077d625736f7a39393a63694c08be3d,46e02f00f077d625736f7a39393a63694c08be3d,Log the worker termination reason when it did not commit a suicide
+samalba,2012-10-11 01:21:00,https://api.github.com/repos/hipache/hipache/git/commits/f7057d29523964e06aea9de9959ea3efdbe03433,f7057d29523964e06aea9de9959ea3efdbe03433,Retry mechanism on error is now optional
+samalba,2012-10-10 19:10:51,https://api.github.com/repos/hipache/hipache/git/commits/fc1fcd89951cd2cdc7ce26b28d83e67e83b82511,fc1fcd89951cd2cdc7ce26b28d83e67e83b82511,Increased the tcp timeout and deadbackendttl in the dev conf
+samalba,2012-10-10 18:26:59,https://api.github.com/repos/hipache/hipache/git/commits/e62d99816061205079a39716a62a9b30baecb98f,e62d99816061205079a39716a62a9b30baecb98f,"If the worker already closed the pipe, last logs are written directly on stdout"
+samalba,2012-10-05 21:43:58,https://api.github.com/repos/hipache/hipache/git/commits/da827373a75fc161159ce601e2af72d40a55e5ff,da827373a75fc161159ce601e2af72d40a55e5ff,Cleaned code to shut the mouth of jslint
+samalba,2012-10-05 21:39:42,https://api.github.com/repos/hipache/hipache/git/commits/532dd5224b577e99acdc2b8358c8b4efb0d92618,532dd5224b577e99acdc2b8358c8b4efb0d92618,Bumped version to 0.1.10
+samalba,2012-10-05 21:38:03,https://api.github.com/repos/hipache/hipache/git/commits/5cec88da84d321c82a7ae9f4a01ac1d0e8992c3d,5cec88da84d321c82a7ae9f4a01ac1d0e8992c3d,Force engine check to node 0.8.x
+samalba,2012-10-05 21:34:48,https://api.github.com/repos/hipache/hipache/git/commits/a99c84ef52cca7ab00538cfc3695f55b648807fe,a99c84ef52cca7ab00538cfc3695f55b648807fe,Fixed the compliance with the new nodejs 0.8 cluster api
+samalba,2012-10-02 21:43:39,https://api.github.com/repos/hipache/hipache/git/commits/96c5b726321731cb2305a665845d64275799b44f,96c5b726321731cb2305a665845d64275799b44f,Bumped version to 0.1.9
+samalba,2012-10-02 21:42:49,https://api.github.com/repos/hipache/hipache/git/commits/4e246b147ee1597c405c4e5d06efa24ffc499fd3,4e246b147ee1597c405c4e5d06efa24ffc499fd3,Fixed the logging of bytes number written on the response socket
+samalba,2012-09-26 22:25:51,https://api.github.com/repos/hipache/hipache/git/commits/2e27ce0143996ca27758108d737f12eba672d604,2e27ce0143996ca27758108d737f12eba672d604,Bumped version to 0.1.8. Fixed forwarded headers. Now depends on http-proxy 0.8.3 and node 0.8.x
+samalba,2012-09-25 21:28:45,https://api.github.com/repos/hipache/hipache/git/commits/247fee366e51508e0e724cfc6a25e71ef02f5312,247fee366e51508e0e724cfc6a25e71ef02f5312,bumped the version
+samalba,2012-09-25 21:22:52,https://api.github.com/repos/hipache/hipache/git/commits/94a2e245bfc7b9ef206e5cf64df644d2b4a428fb,94a2e245bfc7b9ef206e5cf64df644d2b4a428fb,typo + code cleaning
+samalba,2012-09-25 21:18:02,https://api.github.com/repos/hipache/hipache/git/commits/707528b3982cc7d8b7bbef156423a58ed13a8d78,707528b3982cc7d8b7bbef156423a58ed13a8d78,Changed the if statements to follow the same code practice
+samalba,2012-09-25 20:52:38,https://api.github.com/repos/hipache/hipache/git/commits/0e56ca265808299bcfb2f2cb6126ac289ebeef5d,0e56ca265808299bcfb2f2cb6126ac289ebeef5d,"Merge pull request #8 from mattparlane/master
+
+Play nicely when behind other proxies"
+mattparlane,2012-09-14 01:52:29,https://api.github.com/repos/hipache/hipache/git/commits/251678545083d2214e7b6526837f479189f6ace8,251678545083d2214e7b6526837f479189f6ace8,Play nicely when behind other proxies
+samalba,2012-09-04 17:16:22,https://api.github.com/repos/hipache/hipache/git/commits/b0cbfe2cead2e2c31f7a6054309b374db5768d22,b0cbfe2cead2e2c31f7a6054309b374db5768d22,Update TODO.md
+samalba,2012-08-31 21:29:22,https://api.github.com/repos/hipache/hipache/git/commits/99c64cd9ce93cd5769f820c202cc32bcdce6a195,99c64cd9ce93cd5769f820c202cc32bcdce6a195,Implemented optional LRU cache lookups on top of Redis
+samalba,2012-08-31 05:50:37,https://api.github.com/repos/hipache/hipache/git/commits/4b20e5ebd7c859427d860513a06a0b13017615ab,4b20e5ebd7c859427d860513a06a0b13017615ab,Update README.md
+samalba,2012-08-31 05:35:32,https://api.github.com/repos/hipache/hipache/git/commits/9706cfc683be805794f845ebefe48a03d4a7bc3e,9706cfc683be805794f845ebefe48a03d4a7bc3e,Update TODO.md
+samalba,2012-08-29 01:19:00,https://api.github.com/repos/hipache/hipache/git/commits/11485a1ba91e6036921e0848fba3ebdbaedc6d87,11485a1ba91e6036921e0848fba3ebdbaedc6d87,Bumped version
+samalba,2012-08-29 01:18:27,https://api.github.com/repos/hipache/hipache/git/commits/50d3b46cd3bb085cd8c844dd6fb45ae868cd15ea,50d3b46cd3bb085cd8c844dd6fb45ae868cd15ea,Fixed deadBackendTTL set
+samalba,2012-08-28 07:07:48,https://api.github.com/repos/hipache/hipache/git/commits/a5e31314319583c161cc009ead5ed56ea5d25dac,a5e31314319583c161cc009ead5ed56ea5d25dac,Bumped version to 0.1.4
+samalba,2012-08-28 07:07:09,https://api.github.com/repos/hipache/hipache/git/commits/5a43de0d138119f6121cd2ed5e4c4c3bfe859bc3,5a43de0d138119f6121cd2ed5e4c4c3bfe859bc3,Fixed hipache arguments + fix markDeadBackend call
+samalba,2012-08-24 18:34:49,https://api.github.com/repos/hipache/hipache/git/commits/1f9a34aa801242d518c1f265fd78c4a3186b064e,1f9a34aa801242d518c1f265fd78c4a3186b064e,Bumped version to 0.1.3
+samalba,2012-08-24 18:34:08,https://api.github.com/repos/hipache/hipache/git/commits/c4be1ae67fb312345f9d683b2708239d55566f0d,c4be1ae67fb312345f9d683b2708239d55566f0d,Fixed typo and function context mapping
+samalba,2012-08-18 22:31:15,https://api.github.com/repos/hipache/hipache/git/commits/22b33a4cb1ff4b3c6d77c79871e6410508b1bdc6,22b33a4cb1ff4b3c6d77c79871e6410508b1bdc6,Better packaging for the next version. THe proxy can be started from a bin-script
+samalba,2012-08-13 04:02:30,https://api.github.com/repos/hipache/hipache/git/commits/e5ab40dc9c75635fa5ea686b086d9caf55e4d8b5,e5ab40dc9c75635fa5ea686b086d9caf55e4d8b5,Split the Redis accesses into cache.js
+samalba,2012-08-13 02:45:11,https://api.github.com/repos/hipache/hipache/git/commits/fa5402b1b66318df6c8e2a3b7bfe410a5edacac5,fa5402b1b66318df6c8e2a3b7bfe410a5edacac5,Code cleaning to follow jshint requirements + got rid of only-one-var-per-function rule for better readability
+samalba,2012-08-13 02:29:42,https://api.github.com/repos/hipache/hipache/git/commits/f9cd056a72d3fdeb41a37dba5ceddf35e111219a,f9cd056a72d3fdeb41a37dba5ceddf35e111219a,Switched to jshint
+samalba,2012-08-09 23:25:42,https://api.github.com/repos/hipache/hipache/git/commits/6f90484eb03ee2127f0afd6f9080f60260864360,6f90484eb03ee2127f0afd6f9080f60260864360,Fixed jslint link
+samalba,2012-08-09 23:23:07,https://api.github.com/repos/hipache/hipache/git/commits/1617e7cc420e7912de8da1804987569d3e57a43a,1617e7cc420e7912de8da1804987569d3e57a43a,Fixed the TODO link
+samalba,2012-08-09 23:20:59,https://api.github.com/repos/hipache/hipache/git/commits/e81d82eed83d1e032005e3e3fd6326493bbacd19,e81d82eed83d1e032005e3e3fd6326493bbacd19,Added the TODO doc to give more details about planned features
+3on,2012-08-06 19:30:39,https://api.github.com/repos/hipache/hipache/git/commits/02d5e564e19a68cca64d7e72f32707ff7daf2b14,02d5e564e19a68cca64d7e72f32707ff7daf2b14,rollback on config.json
+3on,2012-08-06 19:26:28,https://api.github.com/repos/hipache/hipache/git/commits/8fd1767ed52f0cb6623a4c66b1cb09ffe952238f,8fd1767ed52f0cb6623a4c66b1cb09ffe952238f,"gitignore + npm start script + typo in the readme
+
+npm start script is a the standard way to define the entry point of an
+app, let's be compliant with that standard."
+samalba,2012-08-06 16:32:10,https://api.github.com/repos/hipache/hipache/git/commits/65ef2911ed467add85da60869169ca252cc16775,65ef2911ed467add85da60869169ca252cc16775,"Merge pull request #1 from jpetazzo/master
+
+Documentation improvements"
+jpetazzo,2012-08-06 10:08:25,https://api.github.com/repos/hipache/hipache/git/commits/3fef979f4d6700def0016c2f7d489463653647ee,3fef979f4d6700def0016c2f7d489463653647ee,"Update README.md
+
+Expand the description of the other features"
+jpetazzo,2012-08-06 09:53:31,https://api.github.com/repos/hipache/hipache/git/commits/75e97f5d81b089b503af18509595e51d79ad3ced,75e97f5d81b089b503af18509595e51d79ad3ced,"Update README.md
+
+Improve feature descriptions"
+samalba,2012-08-02 21:41:48,https://api.github.com/repos/hipache/hipache/git/commits/247c24833937e7b311e19e52d35537c7ca8ca296,247c24833937e7b311e19e52d35537c7ca8ca296,Backported changes from the master repos (added timeouts support)
+samalba,2012-08-02 21:19:41,https://api.github.com/repos/hipache/hipache/git/commits/817c59ea5511fdf12af2935b9886c35b002b528e,817c59ea5511fdf12af2935b9886c35b002b528e,Merge branch 'master' of github.com:dotcloud/hipache
+gabrielgrant,2012-08-02 18:21:17,https://api.github.com/repos/hipache/hipache/git/commits/dde4d0da38fe031e8e69cf2c438122f88c870d7e,dde4d0da38fe031e8e69cf2c438122f88c870d7e,Fix inline code formatting of README
+samalba,2012-06-25 17:13:35,https://api.github.com/repos/hipache/hipache/git/commits/4da36e521916367eb562b9a4bacdaad5e6674ea5,4da36e521916367eb562b9a4bacdaad5e6674ea5,Update master
+samalba,2012-06-23 00:53:38,https://api.github.com/repos/hipache/hipache/git/commits/f356fb7dd6fca0a2b01d501b8dd6b61f98e6f13a,f356fb7dd6fca0a2b01d501b8dd6b61f98e6f13a,removed unused test file
+samalba,2012-06-23 00:39:46,https://api.github.com/repos/hipache/hipache/git/commits/dfc929d8e39f0cb210278acd38fd1c1abbda783b,dfc929d8e39f0cb210278acd38fd1c1abbda783b,Fixing doc formatting
+samalba,2012-06-23 00:38:45,https://api.github.com/repos/hipache/hipache/git/commits/548576c5d41dd3dcb94a58a0848169d4851f2e4f,548576c5d41dd3dcb94a58a0848169d4851f2e4f,Added details about multiple configuration files
+samalba,2012-06-23 00:34:14,https://api.github.com/repos/hipache/hipache/git/commits/5faae2f879bfbe459629af26ebdf013834bf3613,5faae2f879bfbe459629af26ebdf013834bf3613,Fix doc formatting
+samalba,2012-06-23 00:29:14,https://api.github.com/repos/hipache/hipache/git/commits/7b4eaba5d104577fd5fad1cb574945cf19942990,7b4eaba5d104577fd5fad1cb574945cf19942990,Doc rehaul
+samalba,2012-06-22 21:41:22,https://api.github.com/repos/hipache/hipache/git/commits/525da878a0de2ac94f51e3c0d61d420c3f25d145,525da878a0de2ac94f51e3c0d61d420c3f25d145,Added authors and license files
+samalba,2012-06-22 21:39:35,https://api.github.com/repos/hipache/hipache/git/commits/e600ec17a366efade3fff8001fb3d7b314321cbc,e600ec17a366efade3fff8001fb3d7b314321cbc,First commit

@@ -1,0 +1,145 @@
+react-game-kit,Component library for making games with React  & React Native
+username,timestamp,url,sha,message
+boygirl,2019-04-15 00:13:37,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/56144dfc6e8e342728de91d3bab13836c0d6beca,56144dfc6e8e342728de91d3bab13836c0d6beca,Update README.md
+boygirl,2019-04-14 22:09:25,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/8a657294d2d1622e020f1bc671f4606b82eb1e0b,8a657294d2d1622e020f1bc671f4606b82eb1e0b,Update README.md
+ryan-roemer,2018-03-15 19:57:39,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e9797f473913a67efe17fae2ed1b991d2508d53e,e9797f473913a67efe17fae2ed1b991d2508d53e,"`webpack@4` / `webpack@next` will support `package.json:sideEffects: false` wherein libraries can indicate their ESM re-exports are side effect free and can be much more efficiently removed for smaller, faster final bundles. (#59)
+
+Lodash has already rolled out this change in
+https://unpkg.com/lodash-es@4.17.5/package.json
+
+## Issues
+
+This was originally uncovered / discussed at length in:
+
+* https://github.com/webpack/webpack/issues/1750
+
+This PR should resolve the issues discussed in:
+
+* https://github.com/FormidableLabs/victory/issues/549
+* https://github.com/FormidableLabs/redux-little-router/issues/262
+
+## Changes
+
+* Add `sideEffects: false` to `package.json` to allow webpack4 tree-shaking to actually remove all unused code.
+
+> This PR has been automatically opened by your friendly [`multibot`](https://github.com/FormidableLabs/multibot/). The transform code and documentation is available at: https://github.com/FormidableLabs/multibot-examples/tree/master/transforms/webpack-side-effects"
+jfdnc,2018-03-08 06:03:37,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e44163a32a52a138ff2118f6b6b886e1b3f49feb,e44163a32a52a138ff2118f6b6b886e1b3f49feb,"semicolon removal (#62)
+
+Removed semicolon from example, it causes causes compilation error. Minor spacing fix also."
+ryan-roemer,2017-12-19 14:28:26,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/4e156ce3b93495e6e9cf02a6532d14e2ef104184,4e156ce3b93495e6e9cf02a6532d14e2ef104184,1.0.6
+stefvhuynh,2017-12-13 21:31:51,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/c1088c86f290357e3f4247192f11255c0b723284,c1088c86f290357e3f4247192f11255c0b723284,1.0.5
+stefvhuynh,2017-12-13 20:32:01,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/f20775f73dd03f5451d2b2da1978b4dc933df064,f20775f73dd03f5451d2b2da1978b4dc933df064,"Merge pull request #55 from FormidableLabs/upgrade-matter
+
+Upgrade matter dependency"
+stefvhuynh,2017-12-12 20:51:49,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/7785fc8ab304d0764ea90a2ee88d67b28843c796,7785fc8ab304d0764ea90a2ee88d67b28843c796,Upgrade matter dependency
+ryan-roemer,2017-11-30 16:44:09,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/10a51181970c086f8aa1cbf91e154ee6a93b7942,10a51181970c086f8aa1cbf91e154ee6a93b7942,1.0.4
+ryan-roemer,2017-11-30 16:43:15,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/50bc4855934b6654a9008f134858d5e437aa270e,50bc4855934b6654a9008f134858d5e437aa270e,"Bug: Fix issues with react-hot-loader (#50)
+
+There are a couple of things going on with #48 --
+
+- We have all this weird `_REACT_HOT_LOADER__` in our `umd` and `lib` builds. I'm guessing that _shouldn't_ be there as we only would want that in `demo` land.
+- We get some infinite recursion error with `Uncaught RangeError: Maximum call stack size exceeded at Stage.__setDimensions__REACT_HOT_LOADER__` in the actual demo as reported in #48 This looks like an upstream issue with arrow member functions in gaearon/react-hot-loader#698
+
+This PR fixes this and does a little bit of infrastructure housecleaning.
+
+- Fixes #48
+- Updates the webpack configs to be a little more modern.
+- Lints root JS files in the repository.
+- Only babel builds `react-hot-loader` in the _demo_ and not for our produced `lib` or `umd` files.
+- Converts all arrow member functions to real member functions to get around the hot loading issues.
+    - _Note_: I didn't change the arrow member functions in the `*.example` files.
+- Harmonizes `umd` and `build` tasks in `package.json:scripts` to be symmetrical.
+- Updates `react-hot-loader` dep and drops `node@4` in Travis due to engines restriction on new RHL."
+stefvhuynh,2017-11-28 19:50:05,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/f1e176f4be26db63440dcfa102347fa6c21226c4,f1e176f4be26db63440dcfa102347fa6c21226c4,1.0.3
+stefvhuynh,2017-11-28 19:49:12,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/b409e6fc274e4cbcaccce013eed8800aac54da17,b409e6fc274e4cbcaccce013eed8800aac54da17,"Merge pull request #47 from FormidableLabs/add-contribution-guide-scripts
+
+Add contribution guide scripts"
+stefvhuynh,2017-11-28 19:13:24,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/055209f519a34e5c6de85f2f2f75e1cdeaea4845,055209f519a34e5c6de85f2f2f75e1cdeaea4845,Add object spread arguments back and disable eslint for those lines
+stefvhuynh,2017-11-28 19:09:46,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/3c8647d40f0999ddd67fb16b3e661f9b75bb880d,3c8647d40f0999ddd67fb16b3e661f9b75bb880d,Add node 8 to .travis.yml
+stefvhuynh,2017-11-28 19:08:43,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/4b7c440b0d9225685b2c18521856d226befb37c4,4b7c440b0d9225685b2c18521856d226befb37c4,"Set dev dependencies react-native, react, and react-dom to compatible
+versions"
+stefvhuynh,2017-11-28 18:37:06,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/1ea5709126854fde22977f6be83fc91500a55952,1ea5709126854fde22977f6be83fc91500a55952,Remove prune from .travis.yml
+stefvhuynh,2017-11-28 18:34:13,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/c5bcc59068e40a82842e02d4cf3fc911b0690456,c5bcc59068e40a82842e02d4cf3fc911b0690456,Add .travis.yml
+stefvhuynh,2017-11-28 18:27:06,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/51a08dfa4b5d24cad3da0d4fff241f5cc66b0390,51a08dfa4b5d24cad3da0d4fff241f5cc66b0390,Fix remaining lint errors
+stefvhuynh,2017-11-28 15:50:23,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/cfd48bdc58633066d488667e47d7f226557e7e1b,cfd48bdc58633066d488667e47d7f226557e7e1b,Run lint-fix
+stefvhuynh,2017-11-28 15:49:44,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/d6b3217c782ab3c7c305d12af855fd71f325c626,d6b3217c782ab3c7c305d12af855fd71f325c626,Add react-native to dev dependencies
+stefvhuynh,2017-11-28 00:12:32,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/b0fe0434cfe15f366f2bd9d0a18e28e091d8db8a,b0fe0434cfe15f366f2bd9d0a18e28e091d8db8a,Add CONTRIBUTING.md
+stefvhuynh,2017-11-27 23:58:22,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/2b55759879806346288138674270696ed2c8e1ff,2b55759879806346288138674270696ed2c8e1ff,Add scripts for publishing
+stefvhuynh,2017-11-27 23:39:58,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/65a76bce9d26838d9b95b7311e79f64512346f99,65a76bce9d26838d9b95b7311e79f64512346f99,1.0.2
+stefvhuynh,2017-11-27 23:22:09,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/9e1a951567e7b600c5a07d15060850475e4d03d2,9e1a951567e7b600c5a07d15060850475e4d03d2,1.0.1
+stefvhuynh,2017-11-27 23:19:40,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/527f29f87d6164f5e4598e053398b4ca1100f251,527f29f87d6164f5e4598e053398b4ca1100f251,"Merge pull request #42 from languagedrops/master
+
+Fix: removed last performance.now() from the codebase"
+itchingpixels,2017-10-13 07:46:05,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/04f8bd266cfe4929f4c99ecfc188a41907fb972a,04f8bd266cfe4929f4c99ecfc188a41907fb972a,Fix: removed last performance.now() from the codebase
+kenwheeler,2017-10-03 20:17:12,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/219575648ff5d5d0892ae60bd89a3f89952a20fc,219575648ff5d5d0892ae60bd89a3f89952a20fc,1.0.0
+kenwheeler,2017-10-03 20:17:01,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a45f7ce22a360f884c96d041104e3c3820a4972b,a45f7ce22a360f884c96d041104e3c3820a4972b,console
+kenwheeler,2017-10-03 20:16:36,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/c98103fbed4157f1102b75aa85e8a8e08c3ce424,c98103fbed4157f1102b75aa85e8a8e08c3ce424,react 16 compat
+kenwheeler,2017-10-03 19:56:02,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a0cfef6c5975696570f7d8c488c9be9f1a67507e,a0cfef6c5975696570f7d8c488c9be9f1a67507e,revert
+kenwheeler,2017-10-03 19:55:00,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/1b22f00be0ea4d035123c1366dcbc0610eeb3d71,1b22f00be0ea4d035123c1366dcbc0610eeb3d71,updating for 16
+kenwheeler,2017-10-03 19:54:48,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/876566b4e7d389304c40430f7b8664676d23e67a,876566b4e7d389304c40430f7b8664676d23e67a,"Merge pull request #40 from FormidableLabs/revert-23-debug-render
+
+Revert ""Debug render"""
+kenwheeler,2017-10-03 19:54:39,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/b74ebbe33e2e2e7ae2134e4f0a903083036f8f8a,b74ebbe33e2e2e7ae2134e4f0a903083036f8f8a,"Revert ""Debug render"""
+kenwheeler,2017-10-03 19:29:27,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a4434c5e946a073869751737d05c07f06f7e8040,a4434c5e946a073869751737d05c07f06f7e8040,"Merge pull request #23 from jesstelford/debug-render
+
+Debug render"
+kenwheeler,2017-10-03 19:29:07,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e205b84d526248f2ff2abb8f9039359624ee2d7b,e205b84d526248f2ff2abb8f9039359624ee2d7b,Merge branch 'master' into debug-render
+kenwheeler,2017-10-03 19:27:01,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e0c58934a92ec89dad86a45639293a1492fd8ead,e0c58934a92ec89dad86a45639293a1492fd8ead,"Merge pull request #24 from TomiS/patch-1
+
+Change sprite.js src prop type to string in native"
+kenwheeler,2017-10-03 19:26:00,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/ae40ee76557fe6377a2b799deefaef9e198ebfd7,ae40ee76557fe6377a2b799deefaef9e198ebfd7,"Merge pull request #27 from kwelch/remove-date-now
+
+Replace date.now with performance.now"
+kenwheeler,2017-10-03 19:25:50,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/8f24e83cfee14b3fc1ab87c109c9faec6e162f9e,8f24e83cfee14b3fc1ab87c109c9faec6e162f9e,Merge branch 'master' into remove-date-now
+kenwheeler,2017-10-03 19:24:48,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a50338f6f2c86b43c8de4e7f450ec632c8a50855,a50338f6f2c86b43c8de4e7f450ec632c8a50855,"Merge pull request #31 from brkyldz/master
+
+fixed GameLoop stop function"
+kenwheeler,2017-10-03 19:24:23,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/544a0c775b7c0d13193fffb92a7a9ef77b286862,544a0c775b7c0d13193fffb92a7a9ef77b286862,"Merge pull request #35 from ssg-luke/tilemap-grid
+
+Tilemap grid support"
+kenwheeler,2017-10-03 19:23:16,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/7886e58bd306f6509329039231667ad5f22d3763,7886e58bd306f6509329039231667ad5f22d3763,"Merge pull request #38 from webpty/propTypes
+
+Fix React warning for PropTypes"
+webpty,2017-09-11 23:36:23,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/4a9f60ac13ae6971ca6ad7518c6bf5ac7bd63d18,4a9f60ac13ae6971ca6ad7518c6bf5ac7bd63d18,"Implemented external package for PropTypes
+
+Deprecated warning
+
+Ref https://github.com/FormidableLabs/react-game-kit/issues/37"
+brkyldz,2017-06-15 08:24:37,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/d847fce9579d7374a445d2a1e7daf0b519826427,d847fce9579d7374a445d2a1e7daf0b519826427,back to splice
+brkyldz,2017-06-07 10:03:53,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/fcdd2b3965581377794d429a7a8954ba90aa01da,fcdd2b3965581377794d429a7a8954ba90aa01da,"fixed GameLoop stop function: in native, cancelAnimationFrame takes request id and after stoping, loopId should be assigned to null in case of need to restart"
+ssg-luke,2017-05-20 17:05:38,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/cffd8f06c3a842d1d4299b5a2e22e2eb05936cb4,cffd8f06c3a842d1d4299b5a2e22e2eb05936cb4,Tilemap grid support
+ssg-luke,2017-05-20 15:22:47,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/9dbaba1018b3150290dec19b5d20bfdbdf6a7751,9dbaba1018b3150290dec19b5d20bfdbdf6a7751,Removed height 100% on tilemap
+kwelch,2017-04-04 04:15:37,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e8b01e28d0d0351231081d1136a8d19bfe7edf47,e8b01e28d0d0351231081d1136a8d19bfe7edf47,"swapped date.now for performance.now
+
+this was listed as a nice to have in lighthouse for PWA, since it decouples from system clock and is more consistent"
+TomiS,2017-03-12 23:29:22,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/d4ffca347f39cb6192bdb6a3f6b4f09296c3c10c,d4ffca347f39cb6192bdb6a3f6b4f09296c3c10c,Change sprite.js src prop type to string in native
+jesstelford,2017-02-25 09:59:56,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/55f2e529ba71fae05f225420eb1e46d499dffa36,55f2e529ba71fae05f225420eb1e46d499dffa36,Debug renderer for World component
+jesstelford,2017-02-23 06:24:08,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/4ab0e0ec0e56f8bca8ef3df5809f5c94b52734a6,4ab0e0ec0e56f8bca8ef3df5809f5c94b52734a6,Surface display width and height in stage context
+kenwheeler,2017-01-25 16:40:16,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/25cf0b72936db0173b5008c6fe69d681696c4ec1,25cf0b72936db0173b5008c6fe69d681696c4ec1,"Merge pull request #19 from eschaefer/feature/no-gamepad
+
+Remove gamepad support since it broke in Chrome 55"
+eschaefer,2017-01-09 20:15:59,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/fc97aa02d0d6c65bb4eea8583a9cdc81f082130f,fc97aa02d0d6c65bb4eea8583a9cdc81f082130f,Remove gamepad support since it broke in Chrome 55
+kenwheeler,2016-09-29 16:54:57,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/18b57bfe51b4c85b0b0721e2866fccc8216fa0f2,18b57bfe51b4c85b0b0721e2866fccc8216fa0f2,"Merge pull request #9 from JeffreyATW/master
+
+Splice using index of subscriber ID, not ID itself"
+JeffreyATW,2016-09-23 16:49:57,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/059960bd854e58f1c6464e8ab798d01d9b907b96,059960bd854e58f1c6464e8ab798d01d9b907b96,Delete instead of splice
+JeffreyATW,2016-09-23 03:52:42,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a9e4fd9eea5f4f1edcf8dedf38b10f80d877fa92,a9e4fd9eea5f4f1edcf8dedf38b10f80d877fa92,Fix native splicing as well
+JeffreyATW,2016-09-23 03:48:36,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/08dd750598bcebc5c27ad8f4f4437596099d2c87,08dd750598bcebc5c27ad8f4f4437596099d2c87,"Unsubscribe index of ID, not ID itself"
+kenwheeler,2016-09-20 11:48:05,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/7550ec713883420753cec6a32785053776a28f1f,7550ec713883420753cec6a32785053776a28f1f,"Merge pull request #1 from dijonkitchen/patch-1
+
+Fix spelling"
+dijonkitchen,2016-09-16 14:40:26,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/1d8c6c3a32f041a1d2088aa56ca3c3128f74d49c,1d8c6c3a32f041a1d2088aa56ca3c3128f74d49c,Fix spelling per comments
+dijonkitchen,2016-09-16 00:28:06,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/474142ace0401a456744a3d03756b357c2b7bd05,474142ace0401a456744a3d03756b357c2b7bd05,Fix spelling
+kenwheeler,2016-09-15 08:04:20,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/547ea7ae8aca9b01a5003ee0b5accb1066ba7f4b,547ea7ae8aca9b01a5003ee0b5accb1066ba7f4b,finishing touches for release
+kenwheeler,2016-09-11 17:38:27,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/79678a16194396f0d0309153bb59ef6598dc0bfc,79678a16194396f0d0309153bb59ef6598dc0bfc,Native
+kenwheeler,2016-09-10 14:51:02,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/437655681f744324cc3fd9052b8c2466ccfbf6c9,437655681f744324cc3fd9052b8c2466ccfbf6c9,cleanup
+kenwheeler,2016-09-09 16:16:33,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/94cabfb869ed965afe025d3a25e9b8572f202ad7,94cabfb869ed965afe025d3a25e9b8572f202ad7,slides
+kenwheeler,2016-09-08 14:16:08,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e310641942838c3c5a10637b0a619e226890981a,e310641942838c3c5a10637b0a619e226890981a,Initial slides
+kenwheeler,2016-09-08 03:56:20,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/093d77e283b82a05abf46ab721bdadcac0fa8869,093d77e283b82a05abf46ab721bdadcac0fa8869,basic slides
+kenwheeler,2016-09-07 19:56:41,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/1a442035c076f115bd8a911a334c69ca96e6ec9e,1a442035c076f115bd8a911a334c69ca96e6ec9e,slide start
+kenwheeler,2016-09-06 20:29:07,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/d3ae11bc46ad76d59e10f964c5eb27fac3ed023b,d3ae11bc46ad76d59e10f964c5eb27fac3ed023b,buncha stuff
+kenwheeler,2016-09-06 16:05:20,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/68b186001aa3bbb48c2ffe9fcd7a7f7a944429a6,68b186001aa3bbb48c2ffe9fcd7a7f7a944429a6,preso
+kenwheeler,2016-09-05 15:37:59,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/151cdfe4360b44baddec0ebf7b63d7d1fc455f83,151cdfe4360b44baddec0ebf7b63d7d1fc455f83,phew
+kenwheeler,2016-09-05 13:43:07,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/a030c3c7d251b5edc6a9ec4ff4ed58207f041cba,a030c3c7d251b5edc6a9ec4ff4ed58207f041cba,stage scrolling
+kenwheeler,2016-09-04 01:02:45,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/95e6c126f1a5e2079d641364959bc2e93c0762fd,95e6c126f1a5e2079d641364959bc2e93c0762fd,physics
+kenwheeler,2016-09-01 15:50:33,https://api.github.com/repos/FormidableLabs/react-game-kit/git/commits/e38809e0dbde7a213be6ba857df35f6ced65a03a,e38809e0dbde7a213be6ba857df35f6ced65a03a,its a start

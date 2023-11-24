@@ -1,0 +1,1415 @@
+ruby-style-guide,A community-driven Ruby coding style guide
+username,timestamp,url,sha,message
+tejasbubane,2019-07-08 11:49:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/727f7728dc544ee89d056284b23cd619cc70760d,727f7728dc544ee89d056284b23cd619cc70760d,"Prefer `case` over `if-elsif`s (#766)
+
+Closes #764."
+bbatsov,2019-07-08 06:44:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/88d20e4380373ba071eceacc2fa34ffa57317ebc,88d20e4380373ba071eceacc2fa34ffa57317ebc,"Fix a link
+
+Damn you, Markdown! :-)"
+bbatsov,2019-07-08 06:42:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bb82f83521a55aba0fbd0b17ed30c217bff14025,bb82f83521a55aba0fbd0b17ed30c217bff14025,Tweak the RuboCop section a bit
+tejasbubane,2019-06-13 12:35:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/da1930898654c5e847e69f0edeb9eca15c638d59,da1930898654c5e847e69f0edeb9eca15c638d59,"Add rule to prefer using heredocs for long strings
+
+Closes #664."
+gbp,2019-06-20 09:51:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c3bdeef45d19d1a5566ff32ce27a4c92c890d40d,c3bdeef45d19d1a5566ff32ce27a4c92c890d40d,Fix incorrect file encoding
+koic,2019-06-22 10:34:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/978f56fe46f9a04111626c2f63f6e67f5f983660,978f56fe46f9a04111626c2f63f6e67f5f983660,"Update a style guide for ""Float Division""
+
+This PR updates a style guide for ""Float Division"".
+
+The original issue for which this style was proposed.
+https://github.com/rubocop-hq/ruby-style-guide/issues/628
+
+It is an update based on the following argument.
+https://github.com/rubocop-hq/rubocop/pull/7153#discussion_r295080040
+
+The following is a quote from the argument about the reason for this change.
+
+> I wanted to show the following option to make a bad case only when both have `to_f`.
+>
+> ```ruby
+> # bad
+> a.to_f / b.to_f
+>
+> # good
+> a.to_f / b
+> a / b.to_f
+> a.fdiv(b)
+> ```
+>
+> Whether `to_f` is used on the left or right depends on the nature of `a`
+> or `b` parameter. On the other hand, it is redundant that `to_f` is used
+> in both. At that time, I think it is better to let users choose whether
+> to remove the left side `to_f` or the right side `to_f`. This is the
+> reason I recommend this option to default."
+bbatsov,2019-06-21 06:49:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7f1c46ce3ace18a457bd35b95afa9adfe0446f23,7f1c46ce3ace18a457bd35b95afa9adfe0446f23,Move the translations to a dedicated section
+bbatsov,2019-06-21 06:39:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c9afaf0cd4edec643b5c75bc316b54dddfbfc4aa,c9afaf0cd4edec643b5c75bc316b54dddfbfc4aa,"Show the conversion instructions conditionally
+
+They make sense only when viewing the guide on GitHub."
+bbatsov,2019-06-18 04:29:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0ec84378694a0ba39b38b431f12f6729bb4af6cb,0ec84378694a0ba39b38b431f12f6729bb4af6cb,Fix a quote's markup
+bbatsov,2019-06-18 04:02:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/08e5fb4e781888d00dca0a7561c45f4bc5e8b032,08e5fb4e781888d00dca0a7561c45f4bc5e8b032,Fix the quotes markup
+koic,2019-06-16 12:41:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/44f4c584c4d9205cb319f67b6afada9d1c11c609,44f4c584c4d9205cb319f67b6afada9d1c11c609,"Merge pull request #762 from garettarrowood/fix_SOLID_design_wiki_link
+
+Fix SOLID wiki link"
+garettarrowood,2019-06-16 10:37:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bc6c484f66fb208b93a620edff0bed31796e9086,bc6c484f66fb208b93a620edff0bed31796e9086,Fix SOLID wiki link
+abraham,2019-06-14 16:25:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e6f7583c3e62a9c3567575c43abd70148fa0d189,e6f7583c3e62a9c3567575c43abd70148fa0d189,Link to project in contributing section
+bbatsov,2019-06-14 06:24:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/36b4d2c56fd047eca6eb81d0ef068aa043396fad,36b4d2c56fd047eca6eb81d0ef068aa043396fad,[Fix #708] Address some inconsistent examples in the guide
+bbatsov,2019-06-14 06:10:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5c2bc7f100b9d0360f27a35e278f362f52030bf4,5c2bc7f100b9d0360f27a35e278f362f52030bf4,"Prefer the use of prefer over favor :-)
+
+Another small win for consistency!"
+bbatsov,2019-06-14 06:03:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b6be27f4ae584dcf6674f317ecdc7cebd2f724f7,b6be27f4ae584dcf6674f317ecdc7cebd2f724f7,Fix a guideline title
+bbatsov,2019-06-13 15:22:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/38b4cea32c31f7139d02b2d04ff439e25929cd19,38b4cea32c31f7139d02b2d04ff439e25929cd19,Move a couple of guidelines where they belong
+bbatsov,2019-06-13 15:16:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/232097831caae508093ac1c5853ff58dcc81697c,232097831caae508093ac1c5853ff58dcc81697c,Fix some wording
+bbatsov,2019-06-13 13:28:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/13cf30bf049cac870f66ba9339bdd530624b8ca7,13cf30bf049cac870f66ba9339bdd530624b8ca7,Prefer the term guidelines over rules
+bbatsov,2019-06-13 13:03:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/01cfcdb9afc42501bce6cc687566e1c3d286edb1,01cfcdb9afc42501bce6cc687566e1c3d286edb1,Move a few rules where they belong
+tejasbubane,2019-06-13 11:24:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1c8ee2c15ea04516fc087f8ede9dff0ce59b6f79,1c8ee2c15ea04516fc087f8ede9dff0ce59b6f79,"Fix misleading example usage of English library
+
+Split examples into two parts - with and without English.
+
+Closes #714."
+bbatsov,2019-06-13 12:34:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/afa814fb075ef6f85e5fdfbe7cbaa56bb20c1b8b,afa814fb075ef6f85e5fdfbe7cbaa56bb20c1b8b,Expand on the Existential section in the style of PEP-8
+koic,2019-06-13 09:00:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ba34e6d9c47df95c15f21d21455f945a7d1af923,ba34e6d9c47df95c15f21d21455f945a7d1af923,"Merge pull request #757 from tejasbubane/fix-syntax-highlighting
+
+Fix syntax highlighting for some snippets"
+tejasbubane,2019-06-13 08:47:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/019cd9b93b23b77d5f5defc0be14020e888272ed,019cd9b93b23b77d5f5defc0be14020e888272ed,"Fix syntax highlighting for some snippets
+
+Using `Ruby` does not highlight the snippet - need to use smallcase `ruby`."
+bbatsov,2019-06-13 07:50:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8c7764ee173eefd8f624c08c3217a96bb03e6798,8c7764ee173eefd8f624c08c3217a96bb03e6798,Add an Introduction heading
+bbatsov,2019-06-13 07:49:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3f5fcfa21622a45f187cb3338ff51db2e524390,d3f5fcfa21622a45f187cb3338ff51db2e524390,Tweak the float division rule
+bbatsov,2019-06-12 19:33:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/72c56b711d61881a10939e760e98c5d8c7a61f4c,72c56b711d61881a10939e760e98c5d8c7a61f4c,Tweak some wording
+tejasbubane,2019-06-12 19:31:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/71c88217b5ce02afaba458cb7edf239ccd4c982f,71c88217b5ce02afaba458cb7edf239ccd4c982f,"Add a rule for super keyword with arguments (#755)
+
+Closes #703."
+tejasbubane,2019-06-12 18:41:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6b0a66a851c7edb2a8aaa820b8b1870efb8d3d15,6b0a66a851c7edb2a8aaa820b8b1870efb8d3d15,"Recommend style for float division coercion
+
+Closes #628."
+tejasbubane,2019-06-12 11:31:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/edb37f3321ab6b76cc62823a658854615736bbbc,edb37f3321ab6b76cc62823a658854615736bbbc,"Use https for creativecommons image
+
+Fix SSL error on https://rubystyle.guide/"
+bbatsov,2019-06-12 10:24:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e4537f46fceea2c3fe9067016bc20e663312c5d9,e4537f46fceea2c3fe9067016bc20e663312c5d9,"Fix the CI build
+
+Rouge 3.4.0 has a nasty bug that breaks the html generation.
+See https://github.com/asciidoctor/asciidoctor/issues/3336 for details."
+bbatsov,2019-06-12 08:47:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8fcf0874ea05fb3c43229e6adf3a943280a5aaeb,8fcf0874ea05fb3c43229e6adf3a943280a5aaeb,Fix quote markup
+bbatsov,2019-06-12 08:39:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/863b5ee1f5a12c3cdf2aef35dac11c9043d731b9,863b5ee1f5a12c3cdf2aef35dac11c9043d731b9,Mention the proper version of the guide
+okuramasafumi,2019-06-11 04:18:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bc7e6041220066800829518f119c5e4afa3db2fc,bc7e6041220066800829518f119c5e4afa3db2fc,"Add `when` description/example to `no-then` rule
+
+There's a PR to add a cop named `MultilineWhenThen`,
+which detects `then` in multiline `when`.
+https://github.com/rubocop-hq/rubocop/pull/7114
+It refers to `MultilineIfThen` cop, which is based on `no-then` rule here.
+So this commit adds `when` description and example to `no-then` rule,
+making newly added `MultilineWhenThen` cop based on the style guide.
+FYI, the discussion about this feature is here: https://github.com/rubocop-hq/rubocop/issues/7064"
+bbatsov,2019-06-11 16:42:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c4fd580a8608be2464d3bc466e24b6afe2af6736,c4fd580a8608be2464d3bc466e24b6afe2af6736,"Establish an ""Existential"" section"
+bbatsov,2019-06-11 12:12:37,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bf0b36de98437b49988d826627a9407746142c11,bf0b36de98437b49988d826627a9407746142c11,Place the Exceptions section after Flow of Control
+bbatsov,2019-06-11 12:10:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0b2c3c3808d8ae482daf72a1296d31641fbf9103,0b2c3c3808d8ae482daf72a1296d31641fbf9103,Place the Methods and Classes sections next to each other
+bbatsov,2019-06-11 11:47:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9d473b2ed9dfa96a73b65a6d7849bbe93e586b59,9d473b2ed9dfa96a73b65a6d7849bbe93e586b59,"Break down the Syntax section into several more focused sections
+
+The ""Syntax"" section was pretty much a grab bag for everything you can
+imagine. I broke it down into:
+
+* Methods
+* Flow of Control
+* Assignment & Comparison
+* Blocks, Procs and Lambdas
+
+The items that were there, but didn't fit in ended up in some of the existing
+categories."
+bbatsov,2019-06-11 11:15:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/28f9476a3329140d092539d5d41f606795234adc,28f9476a3329140d092539d5d41f606795234adc,Move the Naming section higher up in the guide
+bbatsov,2019-06-11 11:12:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6db7da83bc11add063676a7e241198344641afb3,6db7da83bc11add063676a7e241198344641afb3,Add a deprecation notice for flip-flops
+bbatsov,2019-06-11 11:09:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/812245d9f2da7fbe63b725d44de99a5f2ff7d667,812245d9f2da7fbe63b725d44de99a5f2ff7d667,"Remove an obsolete rule
+
+This commit also establishes a dedicated section for heredocs."
+bbatsov,2019-06-11 11:09:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3b6e904cac5a650bc9e193eb8a9a6531985b509b,3b6e904cac5a650bc9e193eb8a9a6531985b509b,Move a couple of rules where they belong
+bbatsov,2019-06-11 10:20:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9a046c74dcd7265fc91adb666fdcde1fd0f07836,9a046c74dcd7265fc91adb666fdcde1fd0f07836,Move the API docs stuff there they belong
+bbatsov,2019-06-11 10:09:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2315d52fe35fd5bc52914ab75fbeff12f43a10b9,2315d52fe35fd5bc52914ab75fbeff12f43a10b9,Tweak the single-line class definition rule
+bbatsov,2019-06-11 10:06:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5ae0be131661ebbacbe56f991adf5e311947d872,5ae0be131661ebbacbe56f991adf5e311947d872,Split a rule in two
+bbatsov,2019-06-11 10:01:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/904af74e5f8766340adf0755648643e9eb6136b2,904af74e5f8766340adf0755648643e9eb6136b2,Reorder a couple of rules
+bbatsov,2019-06-11 09:25:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a425c286d048f5e59ecc5a9f66a008a97ec57457,a425c286d048f5e59ecc5a9f66a008a97ec57457,Split the indentation rule into two
+bbatsov,2019-06-10 19:12:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0e9d4dd25313a2f75a5a681f4cfb6637578411e7,0e9d4dd25313a2f75a5a681f4cfb6637578411e7,Add a tip to install rouge
+bbatsov,2019-06-10 11:11:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9bd1b85026f657db8316645f78975870b2534d54,9bd1b85026f657db8316645f78975870b2534d54,Add a footnote on RD
+bbatsov,2019-06-10 09:59:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/db4ed2b24ce820e17d7becde3edccc0d5a7d76b6,db4ed2b24ce820e17d7becde3edccc0d5a7d76b6,Fix the placement of a quote
+bbatsov,2019-06-10 09:45:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/64754601bf3c25adddd786dd36fa9faac982deeb,64754601bf3c25adddd786dd36fa9faac982deeb,"Fix some markup
+
+Reference - https://github.com/asciidoctor/atom-asciidoc-preview/issues/207"
+bbatsov,2019-06-10 09:04:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5a86612e55e61c9b3747294778df9a1e0dca9899,5a86612e55e61c9b3747294778df9a1e0dca9899,Add a sidebar dedicated to RD
+bbatsov,2019-06-09 20:40:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b180a7411db2eca1a42b3f90253af32b21d4c15c,b180a7411db2eca1a42b3f90253af32b21d4c15c,Fix broken formatting
+bbatsov,2019-06-09 19:41:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cf5f399ca370ed04b2394b4920749d807740f4cb,cf5f399ca370ed04b2394b4920749d807740f4cb,Improve a couple of titles
+bbatsov,2019-06-09 19:37:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6939a0bc813aba277ffbd1864ed48bf47ef2d020,6939a0bc813aba277ffbd1864ed48bf47ef2d020,Add back missing rule and tweak some formatting
+bbatsov,2019-06-09 19:18:39,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3055df262cdc28e5d77a0cf82026483377e698c,d3055df262cdc28e5d77a0cf82026483377e698c,Improve a few titles and some formatting
+bbatsov,2019-06-09 19:02:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/99ae4b65a995b563c53e78d4b2844e44c3711066,99ae4b65a995b563c53e78d4b2844e44c3711066,Improve some formatting
+pirj,2019-06-09 12:44:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9fcadc436e3263aab67fc8ad38da1d94fb36fcf6,9fcadc436e3263aab67fc8ad38da1d94fb36fcf6,"Use proper Title Case in section titles
+
+Section titles were mostly auto-generated during AsciiDoc conversion,
+and some of them were off, e.g. ""Single line"" vs ""Single-line"". But the
+main culprit that they were not using proper Title Case."
+bbatsov,2019-06-08 13:29:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2788dd8ee7184997a97cf7391c370721f2f2e9a7,2788dd8ee7184997a97cf7391c370721f2f2e9a7,Don't delete the CNAME on deploy
+bbatsov,2019-06-08 13:16:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/03fb0aa860a135f1bb5cc9bc3a6f5ce14272c956,03fb0aa860a135f1bb5cc9bc3a6f5ce14272c956,"Add a couple of examples to the ""Comment Annotations"" section"
+bbatsov,2019-06-08 11:11:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5efbaf78df91e3bad003bdd89388e57dc50cce4e,5efbaf78df91e3bad003bdd89388e57dc50cce4e,Fix the CI setup
+bbatsov,2019-06-08 11:03:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/882446cb90a2db9469dfd290f5662cba5b822166,882446cb90a2db9469dfd290f5662cba5b822166,Publish to GitHub pages automatically
+pirj,2019-06-07 21:56:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/181d81c96c7abbb0635a35914fa3dafa4999afce,181d81c96c7abbb0635a35914fa3dafa4999afce,"Fix section anchor
+
+It seems that a leading number is not accepted as a section anchor."
+pirj,2019-06-04 19:57:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2b22a993c69630f0e0963bdc10fb326e71b149b0,2b22a993c69630f0e0963bdc10fb326e71b149b0,"Quote code in section titles
+
+During recent AsciiDoc conversion, section titles were introduced, and
+some of those titles are suboptimal in terms of readability, e.g.
+
+    Use if case returns [[use-if-case-returns]]"
+pirj,2019-06-02 11:34:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ba8bca84574c30272d69a2185ecf7b1bcfc94585,ba8bca84574c30272d69a2185ecf7b1bcfc94585,"Convert to AsciiDoc
+
+AsciiDoc allows us to have native admonitions, footnotes, sane nesting
+of list items, etc and to easily export the guide in various formats.
+That would also make it trivial to publish a simple site from the guide
+down the road if we want to.
+
+A longer term plan is to convert all guides to AsciiDoc and maybe even
+RuboCop's own documentation. RSpec and Rails style guides have been recently
+converted:
+  - https://github.com/rubocop-hq/rspec-style-guide/pull/97
+  - https://github.com/rubocop-hq/rails-style-guide/pull/250"
+bbatsov,2019-05-03 10:18:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fc7b7e006f99a3d1025f08efd3e80c1be9c2b62d,fc7b7e006f99a3d1025f08efd3e80c1be9c2b62d,"Change the first-person narrative to third-person
+
+This was replaces references to myself with references to the broader
+editor team."
+bbatsov,2019-05-03 09:57:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/13d68a939e68fb9fc52e73a3231255954a2789a3,13d68a939e68fb9fc52e73a3231255954a2789a3,"Tweak the structure a bit
+
+- Pushed the history near the end of the guide
+- Made sure we've got a single top-level heading"
+maxh,2019-04-30 14:53:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3bf50dc2e19edcf981807acfadbf5065dba7def7,3bf50dc2e19edcf981807acfadbf5065dba7def7,Add heredoc argument closing parenthesis note
+maxh,2019-04-29 14:01:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2a7e66657f9060a32881a535d56f1f9ea694ffe0,2a7e66657f9060a32881a535d56f1f9ea694ffe0,Add note about heredoc method call positioning
+AlexWayfer,2019-04-10 12:07:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/61d79ce175dc622c62fe0703a8c4a32304bb713b,61d79ce175dc622c62fe0703a8c4a32304bb713b,"Update name of rescued exception variable
+
+Adopt to [`Naming/RescuedExceptionsVariableName` cop](https://docs.rubocop.org/en/latest/cops_naming/#namingrescuedexceptionsvariablename)."
+koic,2019-02-13 08:10:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/da535e0e8a6c901e29e43fd7decb20710c60f585,da535e0e8a6c901e29e43fd7decb20710c60f585,"Merge pull request #738 from SilasSpet/patch-1
+
+Fixed a small styling problem at the ""Syntax"" chapter"
+SilasSpet,2019-01-16 21:26:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6fe7c1ca93f15e3d0059df56234e43818a6c3bbc,6fe7c1ca93f15e3d0059df56234e43818a6c3bbc,"Update README.md
+
+The indentation of the code snippet before ""Can omit parentheses for"" was wrong which made that whole part look like a code snippet. This fixes the styling again."
+wrs,2019-01-09 20:01:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/da89d54ce811148e502ae27a2a72788e3e6d5259,da89d54ce811148e502ae27a2a72788e3e6d5259,"Fix array literal indentation
+
+This must be a typo, right?"
+wrs,2019-01-09 20:38:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c2ab104c299e97b3cdeeda4b801256d6d9d5deec,c2ab104c299e97b3cdeeda4b801256d6d9d5deec,Add rationale-comments
+jaredbeck,2018-12-27 19:30:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2a50dfa24863cee0289ab750d8a94de9d2edad31,2a50dfa24863cee0289ab750d8a94de9d2edad31,"Disjunctive assignment in constructor
+
+See discussion in:
+
+- https://github.com/rubocop-hq/rubocop/pull/6608
+- https://github.com/rubocop-hq/rubocop/issues/6586"
+bbatsov,2018-11-01 08:22:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d721dd275ce5e63ab563891f69439d97c9437ff1,d721dd275ce5e63ab563891f69439d97c9437ff1,Fix some wording
+bbatsov,2018-11-01 08:20:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/812c369e647249e082c479b09b959fbcf7c0e605,812c369e647249e082c479b09b959fbcf7c0e605,Update RuboCop's description
+3limin4t0r,2018-09-20 13:46:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/18134bd543bf7ab06aafc066077f7b086c7f3b3d,18134bd543bf7ab06aafc066077f7b086c7f3b3d,"[Fix #727] Update markdown indention (#729)
+
+Seems everything has to be indented by 4 spaces (or a single tab) to be certain the markup will be properly processed by all markdown tools. 
+
+See http://brettterpstra.com/2015/08/24/write-better-markdown/#indentation for details."
+bbatsov,2018-09-16 04:45:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/508e5062905831c318148b9002eb96f5a98b5524,508e5062905831c318148b9002eb96f5a98b5524,Prefer keyword arguments over optional arguments
+bbatsov,2018-09-16 04:44:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a48c9cb74daa2cedc65b571e7e290a36fc354d14,a48c9cb74daa2cedc65b571e7e290a36fc354d14,Fix a couple of links
+bbatsov,2018-09-15 15:45:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/341fc3053e36968cafff10e11c37ee359f59d451,341fc3053e36968cafff10e11c37ee359f59d451,Refine a rule
+bbatsov,2018-09-15 15:42:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1a3d83316ae8a82e64c6c2f5fa796cd9e2ee249e,1a3d83316ae8a82e64c6c2f5fa796cd9e2ee249e,Fix the name of an anchor
+ruba-ruba,2018-09-15 15:41:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d2859eb01ef7ffeae148634fb88de71a92e6fcb9,d2859eb01ef7ffeae148634fb88de71a92e6fcb9,Suggest using keyword arguments for boolean arguments (#509)
+zverok,2018-09-15 15:39:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/517bc5a3687a8eb64d0e72587ba1f9e6bb734e70,517bc5a3687a8eb64d0e72587ba1f9e6bb734e70,"Update operand name rule for binary operators (#728)
+
+Mention more real-world considerations."
+bbatsov,2018-09-15 15:33:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f718529eeae59fed35eb09ad22f23179c2ffd276,f718529eeae59fed35eb09ad22f23179c2ffd276,"Kill a redundant paragraph
+
+Stating something so basic and obvious doesn't make much sense."
+bbatsov,2018-09-15 15:32:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9f5bdd3fc06fe8b25e898b442881c6cba35c8a29,9f5bdd3fc06fe8b25e898b442881c6cba35c8a29,Refine the RuboCop mention a bit
+pirj,2018-08-17 21:05:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8fde35a41dfe5ee1add75bf14088f41ae8a3eb6d,8fde35a41dfe5ee1add75bf14088f41ae8a3eb6d,"Merge pull request #726 from Deseao/typo
+
+litterally -> literally"
+Deseao,2018-08-17 21:01:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/39ee3473c9aa2682dcfd1046324d2c16620b68a1,39ee3473c9aa2682dcfd1046324d2c16620b68a1,litterally -> literally
+hachi8833,2018-08-16 06:06:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e110259112644933d568368a214adb173ae49983,e110259112644933d568368a214adb173ae49983,"Move a couple of examples to the right section (#633)
+
+On #snake-case-symbols-methods-vars-with-numbers, the bad sample `var_10  = 10` and good sample `var10    = 10` should be in the next #snake-case-symbols-methods-vars-with-numbers."
+eliotsykes,2018-08-16 06:04:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1c6691064fcd3fd7c2e37a51cd4277312bdb7f28,1c6691064fcd3fd7c2e37a51cd4277312bdb7f28,"Suggest `String#match?` as a replacement for `Regexp#===`  (#640)
+
+For consistent return values, favor `String#match?` (returns boolean)
+over `String#=~` (returns integer or nil) when replacing `Regexp#===`
+(also returns boolean)."
+hughevans,2017-03-02 17:58:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b22c6d3a6601245d1fd39c11aba4dfa23cb966d2,b22c6d3a6601245d1fd39c11aba4dfa23cb966d2,Consistent use of accessor in examples
+kaplanoah,2018-07-28 12:25:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0e5ce530ecb341bccb5ff4a3e419d4c96e726544,0e5ce530ecb341bccb5ff4a3e419d4c96e726544,Fix typos (#724)
+kmayer,2018-02-08 17:53:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/992f904ee692ed59776af128e3c6261c071e9411,992f904ee692ed59776af128e3c6261c071e9411,"Add historical reference to indent-when-to-case
+
+Justifying `indent-when-to-case` by referencing early literature feels a little weak. The history goes way back to at least the C language.
+
+There's an excellent discussion on https://stackoverflow.com/questions/4509039/why-the-strange-indentation-on-switch-statements"
+ned,2018-06-15 03:06:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cd2a2081fa3a7b6bbd74c21aeaaf08195dd1bc1a,cd2a2081fa3a7b6bbd74c21aeaaf08195dd1bc1a,Add example for coding in a functional way
+bbatsov,2018-06-01 02:52:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ab228d70ea4cea30e79ae7b2d6cab501ab3d9c0b,ab228d70ea4cea30e79ae7b2d6cab501ab3d9c0b,Update a few links
+leungleoqin,2018-04-24 10:02:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2c0b4713794ea07a70ca4e1dee81405350fa7544,2c0b4713794ea07a70ca4e1dee81405350fa7544,Fix grammar and styling issues (#713)
+epistrephein,2018-02-08 19:51:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d7de8a85ee0640b6978e6a015767b516f55d31af,d7de8a85ee0640b6978e6a015767b516f55d31af,Show bad examples before good ones
+Supernats,2018-01-30 22:40:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c79b245ce3f3d57454cf2a54288c41ebeac1f964,c79b245ce3f3d57454cf2a54288c41ebeac1f964,"Add missing newline for consistency
+
+While parsing this document, I discovered this is the one spot that does
+not have a blank line before the next rule."
+HassanTC,2018-01-27 12:38:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/aaf0de6dbf875e0e657fc617a20bbe8f75d5fdd7,aaf0de6dbf875e0e657fc617a20bbe8f75d5fdd7,Add Egyptian Arabic translation (#662)
+theroberts,2017-07-31 19:52:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d65e6193cb304774cbb3416b51f5cec9abc41568,d65e6193cb304774cbb3416b51f5cec9abc41568,"Cleanup magic comments section
+
+ #A"
+tommyku,2018-01-27 12:36:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b8b5cd4b6b0b8b7a6887c6c4abd5dc2292249ac2,b8b5cd4b6b0b8b7a6887c6c4abd5dc2292249ac2,Wrap CamelCase and snake_case in code inline code block (#671)
+semenyukdmitry,2017-09-27 15:57:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/97550a827fd2a45c50d1a58b9d01ca6d9421dd4b,97550a827fd2a45c50d1a58b9d01ca6d9421dd4b,Tidy up a little
+bgeuken,2017-10-29 21:11:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/92533902790794170abc75f3c2ef7b3c72175ebb,92533902790794170abc75f3c2ef7b3c72175ebb,"Update example for multi-line array alignment
+
+The ruby style guide now recommends using percent literals for arrays
+of strings. This updates the examples accordingly."
+asherkach,2017-12-08 13:49:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e2bf83945e66fdf87122334a46ad9f3a2dc2d5b2,e2bf83945e66fdf87122334a46ad9f3a2dc2d5b2,Fix horizontal spacing in comment showing interpolation.
+cben,2018-01-25 19:10:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7fe22c534038129673daad5c8a43e563dd6ce90c,7fe22c534038129673daad5c8a43e563dd6ce90c,"Use `raise` consistently with guide in no-and-or-or examples
+
+Aligns with current style prefer-raise-over-fail and
+no-explicit-runtimeerror."
+rrosenblum,2017-11-24 15:24:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8848182272337f76e589a01b75043851eb460cda,8848182272337f76e589a01b75043851eb460cda,Cleanup double colons
+rrosenblum,2017-11-24 15:24:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9c018b8008ec1493a7d67cc29197b8967dd1952d,9c018b8008ec1493a7d67cc29197b8967dd1952d,Add a section for defining class methods using double colons
+maslenkov,2017-10-19 09:49:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4eb7d1b091a6c1ea674da7c2a5c3afb203fc942b,4eb7d1b091a6c1ea674da7c2a5c3afb203fc942b,Add a note about safe navigation operator (#553)
+TeTiRoss,2017-08-18 09:39:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2aae57ed197e2b3d9a475c665a831a30b7b6d072,2aae57ed197e2b3d9a475c665a831a30b7b6d072,Update string literals quoting style with more descriptive examples (#673)
+diogotrentini,2017-07-16 05:14:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/53aa1ce1d038f6c7655b8b955c7e6b382fe81e5d,53aa1ce1d038f6c7655b8b955c7e6b382fe81e5d,Fix `method_missing` method definition example
+gareth,2017-06-03 08:56:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d579e37620f856c671aec9b07c2c2bada94eda24,d579e37620f856c671aec9b07c2c2bada94eda24,"[Fix #637] Document consequences of module nesting (#657)
+
+Tries to use more relatable, real world examples, and adds an external link to a
+blog post with more information."
+happycoloredbanana,2017-06-03 08:55:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e3da28aebcfd666070f5b99d49e05bded2a8e80e,e3da28aebcfd666070f5b99d49e05bded2a8e80e,Add a note about rational literals (#661)
+arbox,2017-05-30 05:08:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b2486b346eb493fcd0dad1ddf1795a1a6cb1ee41,b2486b346eb493fcd0dad1ddf1795a1a6cb1ee41,"Remove the unfinished German translation (#660)
+
+I've removed the unfinished German translation since I have no time for this project in the near future. Probably other folks will catch up."
+Drenmi,2017-05-22 04:10:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7e0b243c9ac01e86e9a17667a8fbbe8ec4087772,7e0b243c9ac01e86e9a17667a8fbbe8ec4087772,"Use descriptive heredoc delimiters
+
+Using good delimiter names adds important information about the content
+of heredoc strings, makes it easier to match opening and closing tags,
+and as an added bonus, many editors will highlight code enclosed with
+the correct delimiters."
+pocke,2017-05-21 09:41:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/09df026459c5401c098031b44038508b666304dc,09df026459c5401c098031b44038508b666304dc,Fix a broken link in named-format-tokens
+pocke,2017-05-21 05:06:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/857a6cf789f97dbefbaa13220a7fdc1250288faa,857a6cf789f97dbefbaa13220a7fdc1250288faa,Clarify a intention of a description for method-invocation-parens style (#636)
+a3ammar,2017-04-27 15:47:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/46a663984e65a678055313dce30cf7fe2763014a,46a663984e65a678055313dce30cf7fe2763014a,"Lowercase code blocks language identifier
+
+Rouge seems to only highlight code blocks when it's identified by a
+lowercase name."
+WizardOfOgz,2017-04-26 17:22:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e6ad9cd1472108f120299d3fef696f856579ebc0,e6ad9cd1472108f120299d3fef696f856579ebc0,"Show good examples of passing arguments to Array and Hash constructors (#651)
+
+It seems reasonable and consistent with the rest of the style guide to be explicit with examples as they pertain to the described use cases."
+backus,2017-04-13 04:57:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/70dbe9365ebd1ba626b388fb61a5fab3a90bfd5a,70dbe9365ebd1ba626b388fb61a5fab3a90bfd5a,Add section for named format tokens
+lucascaton,2017-03-15 05:31:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2d0ab5bbf75497e191d7fd08d66ba4e0cee9ff0c,2d0ab5bbf75497e191d7fd08d66ba4e0cee9ff0c,Rename 'OS X' to 'macOS'
+pocke,2017-02-07 08:17:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8b6944d0179da48c5e71515dcf5baab4bd26ad34,8b6944d0179da48c5e71515dcf5baab4bd26ad34,Add magic comments section into TOC
+pocke,2017-02-07 08:14:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e21adada851b6015670aded2efd6c8db0eb5e285,e21adada851b6015670aded2efd6c8db0eb5e285,Fix typos
+pocke,2017-02-07 07:16:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/07435ceece81a9b6024a66539913fcf7eaeda7f9,07435ceece81a9b6024a66539913fcf7eaeda7f9,Add guidelines for usage of empty lines (#627)
+hayfever,2017-02-07 03:15:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/32d69d4b6ab30497d1ca7c0f16fd602329af7bdc,32d69d4b6ab30497d1ca7c0f16fd602329af7bdc,Fix a typo (#626)
+Drenmi,2017-01-29 07:11:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c07bf9198642bc13c93bb576d0df6e3907208789,c07bf9198642bc13c93bb576d0df6e3907208789,"Add a section on mixin grouping
+
+This change adds a suggested rule on mixin grouping. Some rationales for
+this could be:
+
+ - Easier to see the number of dependencies for a `class` or `module`.
+ - Easier and less error prone to change or remove a mixin.
+
+Mostly, however, it is for consistency."
+riseshia,2017-01-18 02:43:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1d1c0c0bf70220649568179ab63fa7bf77319991,1d1c0c0bf70220649568179ab63fa7bf77319991,Remove some trailing whitespace (#620)
+backus,2017-01-08 05:43:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8d88659450aeda27007d7959c1259be43bc5f231,8d88659450aeda27007d7959c1259be43bc5f231,Add guidelines for how to use magic comments
+dpisarewski,2017-01-09 17:29:37,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ac903faa81663d1037a3968f805ee8219e7f8c38,ac903faa81663d1037a3968f805ee8219e7f8c38,Prefer square brackets over round brackets for array literals (#563)
+strand,2017-01-04 18:22:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/37960a0200e49a609eae8e29b6f728c32b0963ac,37960a0200e49a609eae8e29b6f728c32b0963ac,"Clarify when to use percent literals
+
+Connects #284"
+cqql,2017-01-02 14:40:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f981287d709e03b3cd2f7ff856d1a67412735954,f981287d709e03b3cd2f7ff856d1a67412735954,"Remove an unnecessary non-nil check (#482)
+
+They are discouraged in another part of the style guide [1].
+
+[1] https://github.com/bbatsov/ruby-style-guide#no-non-nil-checks"
+davearonson,2017-01-02 13:46:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/dedd33a68e86335b1dd7c1e3766d5bf7d5aa47d3,dedd33a68e86335b1dd7c1e3766d5bf7d5aa47d3,Clarify why 'and' and 'or' are evil (#489)
+adrianomitre,2017-01-02 13:05:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/141a70623fb89c4af0e32986da8871fa3484d116,141a70623fb89c4af0e32986da8871fa3484d116,[Fix #511] Clarify when the usage of self is necessary (#530)
+hedgesky,2016-08-03 13:55:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1c2928bbe4cf6513f41ac27e08c05d5a138cee56,1c2928bbe4cf6513f41ac27e08c05d5a138cee56,Use new example in parentheses omitting section
+abraaomiranda,2016-12-31 12:53:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/65a4529844536a91b0a31be073edffcefb8c91ca,65a4529844536a91b0a31be073edffcefb8c91ca,Mention the locale of the Portuguese translation (#604)
+mentero,2016-12-31 10:26:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/03f26278666c145590638727587a24261f015da6,03f26278666c145590638727587a24261f015da6,Remove link to a e-mail regarding has_key? deprecation (#595)
+bbatsov,2016-12-12 16:25:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e12cf586a51c6a10b657476905a126db40e7b123,e12cf586a51c6a10b657476905a126db40e7b123,[Fix #574] Improve the name of a class used in an example
+jdickey,2016-09-23 15:56:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/596d7b60fa610d871bd63d27f27f581afa780558,596d7b60fa610d871bd63d27f27f581afa780558,"Proposing rule for referencing class methods in other class methods.
+
+Using the example of a ""service object"" and its standard `.call` class
+method that instantiates the class it's a member of, this proposer
+suggests that class methods simply call other class methods, rather than
+regurgitating the class name or even the `self` keyword. Many people,
+including this proposer, tend to forget that `new` will (generally) Do
+The Right Thing in such situations without decoration *because* the
+method in `BasicObject` is overridden appropriately in `Class` and
+elsewhere."
+bbatsov,2016-10-18 17:37:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b2a8afd834737e92b4120316b407e7e6f99bf0d4,b2a8afd834737e92b4120316b407e7e6f99bf0d4,"Kill the rule suggesting the use of specific reduce block argument names
+
+It's really debatable whether using names like `a` and `e` is a good
+practice."
+bbatsov,2016-10-04 17:12:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f9852f6c4debb828f975d66f03f719d9c936e24e,f9852f6c4debb828f975d66f03f719d9c936e24e,"Merge pull request #580 from esdoppio/no-parens-around-condition
+
+Rectify no-parens-if"
+DamirSvrtan,2016-07-26 20:56:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/44758db39574d6fd964fd773612302b02a824a30,44758db39574d6fd964fd773612302b02a824a30,Add randon numbers style guide
+gnapse,2016-09-13 14:16:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6da08f1bfe3948ace3b6a5d073155192a4b6b07a,6da08f1bfe3948ace3b6a5d073155192a4b6b07a,"Improve indentation
+
+This particular code sample is not about indentation, but about the use of trailing commas in method arguments. So the standard indentation should be used, and it still conveys the same message without the added ugliness of the non-standard indentation previously used."
+hediyi,2016-07-29 12:01:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/09eb304929dda8e31a31ae21cc3ddbc2d2b24fc8,09eb304929dda8e31a31ae21cc3ddbc2d2b24fc8,Rectify no-parens-around-condition
+hediyi,2016-07-29 11:59:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8a483345e55789125947accef2e6932e536c5739,8a483345e55789125947accef2e6932e536c5739,no-parens-if -> no-parens-around-condition
+CQBinh,2016-07-10 09:53:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a082855580b023fbbe018a07cf2153e3726e5f20,a082855580b023fbbe018a07cf2153e3726e5f20,[Add] Vietnamese version (#577)
+Drenmi,2016-07-10 08:23:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4c43ea243779da5e15ffd2b07126627ef4ce6327,4c43ea243779da5e15ffd2b07126627ef4ce6327,"Add information about Time versus DateTime (#587)
+
+As per the [documentation](http://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html),
+`DateTime` should only be used in cases where historical calendar
+reform needs to be taken into consideration. In all other cases,
+using `Time` or `Date` is advisible."
+DarkSideF,2016-07-10 08:22:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/350b0271e4ced8f97a585986784d9044d2fae183,350b0271e4ced8f97a585986784d9044d2fae183,Fix code example (#588)
+bbatsov,2016-07-10 08:21:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/064916c966fa39083445f08d17c46d66276975b6,064916c966fa39083445f08d17c46d66276975b6,"Merge pull request #589 from ChallahuAkbar/minor-fixes
+
+Improve a number of punctuation/minor grammatical issues"
+PanisSupraOmnia,2016-07-10 02:57:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6c204fe90c4c0c02798da36a94078f9cb0f379ef,6c204fe90c4c0c02798da36a94078f9cb0f379ef,Change style of Yoda quote
+PanisSupraOmnia,2016-07-10 02:20:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7fd8d5d4311047f52db34d676eed0ab421c33e34,7fd8d5d4311047f52db34d676eed0ab421c33e34,Fix formatting and attribution of quote
+PanisSupraOmnia,2016-07-10 01:38:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3344546f98e532475ab7b02f1749cc09554e7361,3344546f98e532475ab7b02f1749cc09554e7361,"Use ""&mdash"" instead of space-surrounded hyphen
+
+Just looks a little better with proper punctuation"
+PanisSupraOmnia,2016-07-10 00:25:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4020c0bcd30190d521073fa2e2260b94eaee94c8,4020c0bcd30190d521073fa2e2260b94eaee94c8,Improve minor grammar and clarity issues
+tejasbubane,2016-06-15 05:53:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3dedf5fe6cd8023a23b8cfe647d4d1a593117ddd,3dedf5fe6cd8023a23b8cfe647d4d1a593117ddd,"Add accessor and mutator method names conventions (#582)
+
+Add a section to avoid using accessor and mutator method names starting
+with `get_` and `set_`."
+tejasbubane,2016-06-15 05:51:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/496afebd650d9277917dbfa7ebb85d12a7c5e084,496afebd650d9277917dbfa7ebb85d12a7c5e084,"Add rules for hexadecimal, binary and decimal literals (#579)
+
+Related to #578
+
+@bbatsov suggested to add rule for hex numbers. I went ahead and added
+one for binary as well."
+tejasbubane,2016-06-02 11:50:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3baf587eacf2401301385d982e6dfdfbfc748a9,d3baf587eacf2401301385d982e6dfdfbfc748a9,"Add section for octal literals (#578)
+
+Prefer `0o` over `0` and `0O` for octal literals."
+WizardOfOgz,2016-04-30 16:29:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/39d176b05a692b83a247a5f41b8ff3003010f82b,39d176b05a692b83a247a5f41b8ff3003010f82b,"Change Array check splat(*) example from ""good"" to ""bad"": (#541)
+
+Using the splat technique `[*object]` will _always_ instantiate a new Array object, whereas
+`Array(object)` will return the same object it is given as an argument if that argument is already an Array."
+dpisarewski,2016-04-28 05:43:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bd6f8a2af1b3513e7e3053136fcb1a9fddea78ed,bd6f8a2af1b3513e7e3053136fcb1a9fddea78ed,Add a type-checking rule for integer numbers (#564)
+accessd,2016-04-28 01:30:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c0e3a698d98fc3eeaa58776e1d91a64df5a4089d,c0e3a698d98fc3eeaa58776e1d91a64df5a4089d,Show results of using the splat operator (#534)
+landongrindheim,2016-04-27 21:52:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c8e5ac8b5489a26cec403c4b570568f8d40e25fd,c8e5ac8b5489a26cec403c4b570568f8d40e25fd,Hyphenate 'multi-line' consistently (#565)
+jessieay,2016-04-27 21:51:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3fdf34d26767709c3725d3fffc87dbc4c829aad,d3fdf34d26767709c3725d3fffc87dbc4c829aad,"Avoid prefixing predicate methods with auxiliary verbs (#566)
+
+* Redundant and inconsistent with Ruby core lib bool methods
+* Description of auxiliary verbs: https://en.wikipedia.org/wiki/Auxiliary_verb
+* Also works nicely with RSpec predicate matchers
+* https://www.relishapp.com/rspec/rspec-expectations/v/2-4/docs/built-in-matchers/predicate-matchers"
+bbatsov,2016-04-01 07:58:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ef0852f0c2f949950a520aec8bd83a90de4b79e9,ef0852f0c2f949950a520aec8bd83a90de4b79e9,Replace the mention of Transmuter with Pandoc
+bbatsov,2016-03-30 16:01:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1c8e89d02ab3766186ebbe7d01c87e78642318ca,1c8e89d02ab3766186ebbe7d01c87e78642318ca,"Merge pull request #552 from akowalz/indentation_and_typo_fixes
+
+Fix indentation in naming section and typo in error subclass section"
+akowalz,2016-03-27 21:49:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cc9ae741fa5de8f894fb15e18d0022ecee9b9a53,cc9ae741fa5de8f894fb15e18d0022ecee9b9a53,Fix indentation in naming section and typo in error subclass section
+bbatsov,2016-03-26 11:39:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e10cd1054ca7abeadca0a33a190f76e1552c7cae,e10cd1054ca7abeadca0a33a190f76e1552c7cae,"Merge pull request #551 from Neodelf/additions_and_formatting
+
+Some small additions and corrections of formatting"
+Neodelf,2016-03-25 21:46:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/88bfea59859c3d7a1fd0d47624e1ba96fc00d168,88bfea59859c3d7a1fd0d47624e1ba96fc00d168,Improve some examples and apply some formatting corrections
+bbatsov,2016-01-22 06:01:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/18be9b3f55bf8b32db1188ebad3601d25f1c4f4c,18be9b3f55bf8b32db1188ebad3601d25f1c4f4c,"Merge pull request #533 from cassioscabral/patch-1
+
+Fix typo"
+cassioscabral,2016-01-22 01:16:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/63a7c999e92124ee3a8b3e11d5807faae9cf3238,63a7c999e92124ee3a8b3e11d5807faae9cf3238,Fix typo
+bbatsov,2016-01-21 07:18:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/122f8178978cf0c45dd2d6cef80f07e36526afa7,122f8178978cf0c45dd2d6cef80f07e36526afa7,"Merge pull request #531 from araslanov-e/patch-1
+
+Update README.md"
+araslanov-e,2016-01-19 07:55:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/31b229bacb9e1bc510412ca7628e0b79eba2449e,31b229bacb9e1bc510412ca7628e0b79eba2449e,"Update README.md
+
+Fix result some_method"
+bbatsov,2016-01-09 07:11:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/815a0b9208cfaf4d206750a4cd0ebd28c7f1d636,815a0b9208cfaf4d206750a4cd0ebd28c7f1d636,"Merge pull request #529 from etdev/fix-typo-hash-key-value
+
+Fix minor typo in hash-each"
+etdev,2016-01-09 01:15:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9def2716125595812f8666c62a6b1384812caae6,9def2716125595812f8666c62a6b1384812caae6,Fix minor typo in hash-each
+bbatsov,2016-01-04 19:51:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2dcf5f9f5d13b212782cfa7bdac1b6d05ee56d0e,2dcf5f9f5d13b212782cfa7bdac1b6d05ee56d0e,"Merge pull request #525 from jongaegler/patch-1
+
+Missing '-'"
+bbatsov,2016-01-04 19:51:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/91217d4e1b45c33d2e20759194ace3f359cf11e1,91217d4e1b45c33d2e20759194ace3f359cf11e1,"Merge pull request #524 from ojab/master
+
+Add a rule about Hash#each_key & Hash#each_value"
+ojab,2015-12-31 11:25:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/22b05ceea273ff1978712f0f6a7377be0f0a3f27,22b05ceea273ff1978712f0f6a7377be0f0a3f27,Add a rule about Hash#each_key & Hash#each_value
+bbatsov,2016-01-01 12:31:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/12b597f40b42ff88821269c3aed2ceda6e2de604,12b597f40b42ff88821269c3aed2ceda6e2de604,"Merge pull request #523 from syndbg/squiggly-heredocs
+
+Add Ruby 2.3 squiggly heredocs usage tip"
+syndbg,2015-12-31 22:59:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b48a939a53e31694886692cb9688c087fb15086b,b48a939a53e31694886692cb9688c087fb15086b,Add Ruby 2.3 squiggly heredocs usage tip
+bbatsov,2015-12-20 12:04:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/70bcc01abd98591ecb92b79eb957caa51a9d2ac3,70bcc01abd98591ecb92b79eb957caa51a9d2ac3,Fix anchor name
+bbatsov,2015-12-20 08:40:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/33a249c6683054dca4eafe2439832b388ff79fad,33a249c6683054dca4eafe2439832b388ff79fad,"Merge pull request #517 from lee-jon/remove-fail-raise-distinction
+
+Prefer raise over fail"
+lee-jon,2015-12-16 18:25:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3121628dd001b7d18a8985002144e76f99ef71d1,3121628dd001b7d18a8985002144e76f99ef71d1,"Prefer raise over fail for exceptions
+
+Raise is more community supported, and the previous distinction between
+fail and raise has not been adopted. This adds a new rule for the
+preference and removed reference to fail.
+
+Discussion: https://github.com/bbatsov/ruby-style-guide/issues/512"
+bbatsov,2015-12-16 19:59:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/91a60a36ef18702366f7c63a0b241ecf8d8935fa,91a60a36ef18702366f7c63a0b241ecf8d8935fa,"Merge pull request #506 from rrosenblum/trailing_underscore_variables
+
+Make the example for trailing underscore variables clearer"
+bbatsov,2015-12-16 19:57:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/652d73f0e68f9a87984db3fdb854f56d499a6843,652d73f0e68f9a87984db3fdb854f56d499a6843,"Merge pull request #515 from lee-jon/remove-extra-backticks
+
+Markdown fix - change four-backticks to three for consistency"
+lee-jon,2015-12-16 18:34:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ff064edf83e3df6d7f086c180f7a39103a925442,ff064edf83e3df6d7f086c180f7a39103a925442,Markdown fix - change four-backticks to three for consistency
+bbatsov,2015-12-02 05:42:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f607e02b2587abe5c53100edb05f2840960352b7,f607e02b2587abe5c53100edb05f2840960352b7,"Merge pull request #510 from 0x01f7/minor-formatting-improvements
+
+Minor formatting improvements"
+rrosenblum,2015-11-19 13:47:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/49439ca3041d8ed2c6d68ca3eb8b0a9c4e561554,49439ca3041d8ed2c6d68ca3eb8b0a9c4e561554,Make the example for trailing underscore variables clearer
+bbatsov,2015-11-18 06:45:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4ad66f73085a4ab61c3ac48265f30e624cdb7456,4ad66f73085a4ab61c3ac48265f30e624cdb7456,"Merge pull request #503 from etdev/fix/parentheses-not-braces
+
+Fix wording in #bang-not-not"
+etdev,2015-11-18 06:03:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4f2bb6663f4fa8bf638e365261ca6e0c1dfa844c,4f2bb6663f4fa8bf638e365261ca6e0c1dfa844c,Fix wording in #bang-not-not
+bbatsov,2015-11-12 15:01:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3936ff28176e550db4c0ffbb4851f12326e67186,3936ff28176e550db4c0ffbb4851f12326e67186,"Merge pull request #501 from maurogeorge/patch-02
+
+Keep consistency on the Classes & Modules link"
+maurogeorge,2015-11-11 21:50:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/eaa684cb74ef7cc0f5d786df93399c1e82d4c419,eaa684cb74ef7cc0f5d786df93399c1e82d4c419,"Keep consistency on the Classes & Modules link
+
+The section name is ""Classes & Modules"" but the link is ""Classes"".
+
+This fixes the link to follow the same name of the section."
+bbatsov,2015-11-06 16:19:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e6cf285fbdf6e285d63cfc4c23583c4550da92d3,e6cf285fbdf6e285d63cfc4c23583c4550da92d3,"Merge pull request #498 from ivan-kolmychek/fix/solid-link
+
+Fix link to Wikipedia article on SOLID"
+ivan-kolmychek,2015-11-06 15:34:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4c9d5b79714c76395bd5190ee7e74552b554960d,4c9d5b79714c76395bd5190ee7e74552b554960d,Fix link to Wikipedia article on SOLID
+bbatsov,2015-11-02 06:55:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f6cf9a51c1b4ced8186d4d6cb24df6f4312ac904,f6cf9a51c1b4ced8186d4d6cb24df6f4312ac904,"Merge pull request #496 from frankenbot/patch-1
+
+Update redirects"
+ReadmeCritic,2015-11-02 06:19:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5ffde4bb376a92d47316484888b898fd93269ffc,5ffde4bb376a92d47316484888b898fd93269ffc,Update redirects
+bbatsov,2015-10-13 07:35:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3ea65f1c55bca9ba6acae7998109751c2cb2031,d3ea65f1c55bca9ba6acae7998109751c2cb2031,"Merge pull request #491 from etdev/remove-first-person
+
+Clean up wording slightly"
+etdev,2015-10-13 06:59:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c565a424d8bee85325769b6d7580034e772813bc,c565a424d8bee85325769b6d7580034e772813bc,Clean up wording slightly
+bbatsov,2015-10-09 20:45:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fd1c9432971a8deee30762a2993b0bde4966942a,fd1c9432971a8deee30762a2993b0bde4966942a,"Merge pull request #461 from syndbg/patch-1
+
+Add a rule about `send` metaprogramming"
+bbatsov,2015-10-07 05:18:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cd9111bfa95e6f9c268c26aefe97efdb12816a9c,cd9111bfa95e6f9c268c26aefe97efdb12816a9c,"Merge pull request #486 from lumeet/nested_modifier
+
+Add a section about nested modifiers"
+lumeet,2015-10-06 15:46:39,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/26760f864cf0b3ee4d0438c2f8380477ad42e0a4,26760f864cf0b3ee4d0438c2f8380477ad42e0a4,Add a section about nested modifiers
+bbatsov,2015-09-30 20:50:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/02140d0e0acbc05b1d8c3e7cae9b9c5548ddea48,02140d0e0acbc05b1d8c3e7cae9b9c5548ddea48,"Merge pull request #483 from rrosenblum/trailing_underscore_variables
+
+Add a section about trailing underscore variables"
+rrosenblum,2015-09-22 20:01:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4487332b0d62b8d96a722601d9cf2d771a5c15cb,4487332b0d62b8d96a722601d9cf2d771a5c15cb,Add a section about trailing underscore variables
+bbatsov,2015-08-13 07:10:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a27d5e09d1733f8d6e4deb4d00d6a41cd863c4a7,a27d5e09d1733f8d6e4deb4d00d6a41cd863c4a7,"Merge pull request #473 from yous/issue-472
+
+Remove mentioning parallel assignment is slow"
+yous,2015-08-13 06:20:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/887ef0a22601138bbc8ca895c07ce08d72b095cb,887ef0a22601138bbc8ca895c07ce08d72b095cb,"Remove mentioning parallel assignment is slow
+
+Fix #472.
+
+See
+https://github.com/JuanitoFatas/fast-ruby#parallel-assignment-vs-sequential-assignment-code."
+bbatsov,2015-08-12 19:58:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/51490bb9970efbbf79b1c9a68da1ab8a10a0fb3d,51490bb9970efbbf79b1c9a68da1ab8a10a0fb3d,"Merge pull request #469 from etdev/add-gsub-hash-ex
+
+Add example code for gsub-blocks"
+etdev,2015-08-12 07:09:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2c38fbf6b2f905aa2f2e9de68e08b38d8bab8ad6,2c38fbf6b2f905aa2f2e9de68e08b38d8bab8ad6,Add example code for gsub-blocks
+bbatsov,2015-08-12 09:14:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/90d73d233db357b169704dc316f952e46282407c,90d73d233db357b169704dc316f952e46282407c,"Merge pull request #470 from etdev/update-regex-example
+
+Re-word non-capturing-regexp rule"
+bbatsov,2015-08-12 09:13:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c26f6351ec345cc1be42df5b06265cf33611ef85,c26f6351ec345cc1be42df5b06265cf33611ef85,"Merge pull request #468 from etdev/add-percent-q-ex
+
+Add correct usage ex. for percent-q rule"
+bbatsov,2015-08-12 09:13:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/22a148152786696969de47065f5b79a2d7839040,22a148152786696969de47065f5b79a2d7839040,"Merge pull request #471 from etdev/add-string-ex
+
+Add #bad example for string-concat"
+etdev,2015-08-12 07:16:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/49067a693586bc6d04ce15a68c22b8ab1e224458,49067a693586bc6d04ce15a68c22b8ab1e224458,Add correct usage ex. for percent-q rule
+etdev,2015-08-12 06:44:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/21d44d32c024fbb1a2e7537b735ec6a2d4580bfe,21d44d32c024fbb1a2e7537b735ec6a2d4580bfe,Re-word non-capturing-regexp rule
+etdev,2015-08-12 06:02:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/554afa704a7365a92bc8ed14f7000b82099d6591,554afa704a7365a92bc8ed14f7000b82099d6591,Add #bad example for string-concat
+bbatsov,2015-08-12 04:49:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ee6dbc6ef12de689c4adc7eace1864e99f776c14,ee6dbc6ef12de689c4adc7eace1864e99f776c14,"Merge pull request #467 from etdev/update-error-type
+
+Don't rescue Exception in exception-ordering rule"
+etdev,2015-08-12 04:29:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c005cc2562a42b8790d924d66b72b4c2006e0a2e,c005cc2562a42b8790d924d66b72b4c2006e0a2e,Don't rescue Exception in exception-ordering rule
+syndbg,2015-07-29 17:35:37,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7d4e590bd7c3188d519d1345c2f088c88c6f43b1,7d4e590bd7c3188d519d1345c2f088c88c6f43b1,"Add a rule about `send` metaprogramming
+
+Submitted as requested in https://github.com/bbatsov/rubocop/pull/2081"
+bbatsov,2015-08-04 06:10:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fb5681d91d25902eadf0986bdbd350b2bae7d6cf,fb5681d91d25902eadf0986bdbd350b2bae7d6cf,"Merge pull request #464 from etdev/add-parens-spacing-ex
+
+Add negative example for spaces around parens/brackets rule"
+etdev,2015-08-04 05:04:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b1777d3fdf478d2d2f5348c0fee518c2dc63e474,b1777d3fdf478d2d2f5348c0fee518c2dc63e474,Clarify spaces around parens/brackets rule
+bbatsov,2015-07-31 16:07:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/45691f3111be72b69e6fccd1c03608f667340ac0,45691f3111be72b69e6fccd1c03608f667340ac0,"Merge pull request #463 from haroldcampbell/master
+
+ fix(typo): Fix typo in tools section"
+haroldcampbell,2015-07-31 11:17:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4fb0e7396dda3c86d62f87e8cf91395570fe2dc6,4fb0e7396dda3c86d62f87e8cf91395570fe2dc6," fix(typo): Fix typo in tools section
+
+Fix subject-noun agreement in the tools section.
+
+""Here's some tools..."" was corrected to ""Here are some tools..."""
+bbatsov,2015-07-26 04:40:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3d81f6e7aca0f590f562316a7d53b0b3f3b06c43,3d81f6e7aca0f590f562316a7d53b0b3f3b06c43,"Merge pull request #460 from rrosenblum/optional_arguments
+
+Add rule about defining optional arguments at the end of the argument list"
+rrosenblum,2015-07-26 03:39:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c0d1f3226cbce1c90ec879588b6fd5e773a6d875,c0d1f3226cbce1c90ec879588b6fd5e773a6d875,Add rule about defining optional arguments at the end of the argument list
+bbatsov,2015-07-09 10:06:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a304bd67c7a3b106f9687e050737548779fc5665,a304bd67c7a3b106f9687e050737548779fc5665,Add a rule about stabby lambdas with params
+bbatsov,2015-06-17 09:50:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/09fc57f945676df67a35831ee8ffe0cbe1f306aa,09fc57f945676df67a35831ee8ffe0cbe1f306aa,"Merge pull request #452 from jeznet/patch-1
+
+Add class/module naming example with a word after an acronym"
+szymon-jez,2015-06-17 08:00:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ab9e26dee8bb18fc5962b6f0a1065335179dabf7,ab9e26dee8bb18fc5962b6f0a1065335179dabf7,Add a more difficult class/module naming  example with a word after an acronym
+bbatsov,2015-05-28 13:44:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a466596ef9556fed31a0e66323bd3321adbac97a,a466596ef9556fed31a0e66323bd3321adbac97a,Better wording
+bbatsov,2015-05-24 16:42:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a416fbd27bdd934bbbaa980e3165ace037a36620,a416fbd27bdd934bbbaa980e3165ace037a36620,Add a new rule regarding stabby lambdas without params
+bbatsov,2015-05-23 09:28:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7b1b8d50c325c6bcb59b5fb1386143b1dabeb6cd,7b1b8d50c325c6bcb59b5fb1386143b1dabeb6cd,"Merge pull request #446 from maicher/master
+
+singleton -> class change in code example"
+maicher,2015-05-23 09:20:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fc27eaad4abee5e5ea32eab42517a0f956d5e5f9,fc27eaad4abee5e5ea32eab42517a0f956d5e5f9,singleton -> class change in code example
+bbatsov,2015-05-22 06:41:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/59863a1d7f9ccd37b1bcb3f3c823d455b90cc1ee,59863a1d7f9ccd37b1bcb3f3c823d455b90cc1ee,[Fix #407] Singleton method -> class method
+bbatsov,2015-05-13 21:37:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ac2cf8db3b29e367b3a3ea9808bd8ee82436fe11,ac2cf8db3b29e367b3a3ea9808bd8ee82436fe11,"Merge pull request #440 from rrosenblum/parallel_assignment
+
+Adding a section on parallel assignment"
+rrosenblum,2015-05-12 04:01:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/33069927b9247cdf17165d8e804da8ac254c8be2,33069927b9247cdf17165d8e804da8ac254c8be2,Add a section on parallel assignment
+bbatsov,2015-05-13 11:06:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7005060fca54865c19682a0bb079a68538b78648,7005060fca54865c19682a0bb079a68538b78648,"Merge pull request #444 from arbox/fb_correct_de_link
+
+Changed the link to the German version."
+arbox,2015-05-13 11:02:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/453dbb1993ae3cfed5c7a555c9426a21258c41cb,453dbb1993ae3cfed5c7a555c9426a21258c41cb,Changed the link to the German version due to replacement of this version.
+bbatsov,2015-05-12 11:17:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1a76b9999d577bbe793a70ca204098e26005612a,1a76b9999d577bbe793a70ca204098e26005612a,"Merge pull request #442 from arbox/fb_fix_line_length
+
+Corrected the exceeding line length."
+bbatsov,2015-05-12 11:17:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/63b1b9e5359c60a4bae7b516854ee7b9b2f6b4f3,63b1b9e5359c60a4bae7b516854ee7b9b2f6b4f3,"Merge pull request #443 from arbox/fb_fix_broken_links
+
+Corrected broken links."
+arbox,2015-05-12 09:32:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5c251dc76005e9b6a21d4f2de73f5a51ab501111,5c251dc76005e9b6a21d4f2de73f5a51ab501111,Corrected broken links.
+arbox,2015-05-12 09:29:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/77e3cc09d78c1512d48b7d85c0cdc1b3bf90ff29,77e3cc09d78c1512d48b7d85c0cdc1b3bf90ff29,Corrected the exceeding line length.
+bbatsov,2015-05-12 04:39:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/953b9034e2044863ac42a2cbefe1052e140f4725,953b9034e2044863ac42a2cbefe1052e140f4725,"Merge pull request #441 from rrosenblum/remove_trailing_whitespace
+
+Remove trailing whitespace"
+rrosenblum,2015-05-12 04:12:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e85b19436c49a8da86084656d7ef86f055136736,e85b19436c49a8da86084656d7ef86f055136736,Remove trailing whitespace
+bbatsov,2015-05-10 18:38:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f6402b9e4bc560b9934f1450b554ffc104b0d02a,f6402b9e4bc560b9934f1450b554ffc104b0d02a,"Merge pull request #429 from onebree/expr-in-strings
+
+include 2 methods of spacing string interpolation"
+onebree,2015-04-16 13:00:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/79081527c7c87a963dcce74fe753633f2164fb3e,79081527c7c87a963dcce74fe753633f2164fb3e,include 1 method of padded-spacing string interpolation
+bbatsov,2015-05-08 09:18:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f748bb936a9525a2d9b0cc1472e59943c39afb55,f748bb936a9525a2d9b0cc1472e59943c39afb55,"Merge pull request #353 from abotalov/patch-4
+
+Hash#fetch with default value also has sometimes right to life"
+bbatsov,2015-05-08 05:17:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0c5973a477386788694dbd0a4d80b0bb9e682d44,0c5973a477386788694dbd0a4d80b0bb9e682d44,"Merge pull request #439 from ojab/master
+
+Add a note about nested method declarations"
+abotalov,2014-08-20 20:45:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5cf577bdb85f0b41791f8250df220813ccd686e0,5cf577bdb85f0b41791f8250df220813ccd686e0,Hash#fetch with default value also has sometimes right to life
+ojab,2015-05-07 09:10:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fe5209f8b3e8d089326fe7cf7cf20777e9efcfef,fe5209f8b3e8d089326fe7cf7cf20777e9efcfef,"Add a note about nested method declarations
+
+Fixes #437"
+bbatsov,2015-05-03 19:39:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f7c76695b1decc9a66ecdd52776869e6ae8ac3bf,f7c76695b1decc9a66ecdd52776869e6ae8ac3bf,"Merge pull request #434 from strand/initialize-placement
+
+Add initialize to consistent class structure."
+strand,2015-05-03 17:33:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9ab68739e5b8685f50f507be9a21e8d2a1070d18,9ab68739e5b8685f50f507be9a21e8d2a1070d18,"Add initialize to consistent class structure.
+
+In #272 @josephjaber noted the consistent class structure
+lacks specification where the `initialize` definition should
+be placed. @nilbus found that it is commonly the first
+instance method definition.
+
+This change addends the consistent class structure so
+`initialize` is defined before other instance method
+definitions."
+bbatsov,2015-05-03 05:58:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0059591fd8b3b6d38166c8e3c44e9e9d50ce8849,0059591fd8b3b6d38166c8e3c44e9e9d50ce8849,"Merge pull request #421 from mdsol/proc_passing_style
+
+Add style for proc calling with simple blocks"
+bbatsov,2015-04-30 19:26:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/35d2bd5c580623bdf4bf5514ee7ac541241751dc,35d2bd5c580623bdf4bf5514ee7ac541241751dc,"Merge pull request #369 from IronSavior/reverse_each
+
+Clarify reverse_each advice."
+IronSavior,2014-09-22 20:12:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2bdc491814304c8824128ac4b08818c4efee4cd5,2bdc491814304c8824128ac4b08818c4efee4cd5,More concise Enumerable#reverse_each advice
+bbatsov,2015-04-27 19:12:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4c13515d223fa1809891514b659b4cfbc9661d12,4c13515d223fa1809891514b659b4cfbc9661d12,"Merge pull request #431 from d-unseductable/bugfix/names_array
+
+Fix inconsistency for an array of strings"
+d-unseductable,2015-04-27 18:09:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3a56cc44e9e3fd10e6c0fdd4c69913daeb4908b2,3a56cc44e9e3fd10e6c0fdd4c69913daeb4908b2,"Fix inconsistency for an array of strings
+
+Fix an example of single-line blocks rule. Replace array
+of strings with literal syntax `%w()`"
+bbatsov,2015-04-22 05:16:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0594248554e684497602d16698c8287918c8e816,0594248554e684497602d16698c8287918c8e816,"Merge pull request #426 from lpil/regex-delim
+
+Change the regex percent Literals to conform to style"
+bbatsov,2015-04-21 15:22:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fdf9a49e73691d37222e8e7e1d9e5e80ade2e674,fdf9a49e73691d37222e8e7e1d9e5e80ade2e674,"Merge pull request #425 from JuanitoFatas/patch-1
+
+Don't include a trailing slash in self-closing elements."
+lpil,2015-04-10 11:05:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0fa584349eb3b485eeb9d9b8e08aa1759dfe65ee,0fa584349eb3b485eeb9d9b8e08aa1759dfe65ee,"Change the regex percent Literals to conform to style
+
+The ""good"" example explaining when to use the percent literals syntax
+for regex uses () delimiters, while a few lines later the guide states
+that we should use {} delimiters instead.
+
+I have changed this example to conform to the style guide.
+
+Thanks,
+Louis"
+JuanitoFatas,2015-04-06 14:36:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8282322de2de56e9d2fc815eb0aa186be515da94,8282322de2de56e9d2fc815eb0aa186be515da94,"Don't include a trailing slash in self-closing elements.
+
+HTML5 spec says they're optional.
+
+http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag"
+bbatsov,2015-04-02 16:21:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/856cd40aaa7db268c6327ff6685e9cdce2613d79,856cd40aaa7db268c6327ff6685e9cdce2613d79,"Merge pull request #424 from andreynering/quotes
+
+Removing statement saying that double quotes are more popular."
+andreynering,2015-04-02 13:27:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4ada068fe7dad872931b713d15720d603c9c209a,4ada068fe7dad872931b713d15720d603c9c209a,Removing statement saying that double quotes are more popular.
+bbatsov,2015-03-12 09:55:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bdde52a668da9fec99ba4e33f893bce91d18494f,bdde52a668da9fec99ba4e33f893bce91d18494f,Simplify %r rule
+bbatsov,2015-03-08 15:58:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b77446cd5ff5218a9c291cdadffe7da7dfcbd36b,b77446cd5ff5218a9c291cdadffe7da7dfcbd36b,Add a rule about auto resource releasing methods
+bbatsov,2015-03-08 15:54:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2d7e03dff6730432b255767dd8e72994b5f97f32,2d7e03dff6730432b255767dd8e72994b5f97f32,Rename a rule
+bbatsov,2015-02-05 22:10:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f90cc6e032fb5cb4ce0798e2393e6b55f30e4343,f90cc6e032fb5cb4ce0798e2393e6b55f30e4343,"Merge pull request #414 from cshaffer/fix_links
+
+Fix yet another broken link in collections rules"
+bbatsov,2015-02-05 21:53:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2a5104ef0b4fb5ca715eb339c23c076a7d24d3ce,2a5104ef0b4fb5ca715eb339c23c076a7d24d3ce,"Merge pull request #413 from cshaffer/fix_links
+
+Fix broken links in collection rules"
+bbatsov,2015-02-05 21:40:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7de6c9ab5ba215f819f61390cc292ae7ad89f4c9,7de6c9ab5ba215f819f61390cc292ae7ad89f4c9,"Merge pull request #412 from cshaffer/regexp_last_match
+
+Use Regexp.last_match(n) instead of Regexp.last_match[n]"
+bbatsov,2015-02-03 15:15:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4240e2442cd21965ad72e3423589fc86ba7b37d2,4240e2442cd21965ad72e3423589fc86ba7b37d2,"Merge pull request #410 from Ch4s3/change_metaprogramming_link
+
+change no-metaprogramming-masturbation to no-needless-metaprogramming"
+Ch4s3,2015-02-03 14:57:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8fc58dde8e80927692961fe617e22d67e1c09a31,8fc58dde8e80927692961fe617e22d67e1c09a31,change no-metaprogramming-masturbation to no-needless-metaprogramming
+bbatsov,2015-01-27 17:31:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/590e455978c8c92c7fc12a67f949c00a2ee47b70,590e455978c8c92c7fc12a67f949c00a2ee47b70,"Merge pull request #406 from etdev/master
+
+Fix typo (method indentation)"
+etdev,2015-01-27 07:27:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/82758f66edd0d2e41404554772c568a608ce5750,82758f66edd0d2e41404554772c568a608ce5750,Fix typo (method indentation)
+bbatsov,2015-01-24 08:36:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c50370a3d0d8ae1305f933b86e774030f96449cb,c50370a3d0d8ae1305f933b86e774030f96449cb,"Merge pull request #346 from ShPakvel/fix_comment_annotation_indentation
+
+correct and match annotation indentation description with example"
+bbatsov,2015-01-18 20:50:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1f212d456c792335d8797d53612922bb4031134a,1f212d456c792335d8797d53612922bb4031134a,"Merge pull request #404 from mmozuras/improve_no_extend_struct_new_wording
+
+Slightly improve no-extend-struct-new wording and add code example"
+mmozuras,2015-01-18 20:16:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1d3c77a4ec12981bf7e668682beebdd698390964,1d3c77a4ec12981bf7e668682beebdd698390964,Slightly improve no-extend-struct-new wording and add code example
+bbatsov,2015-01-05 19:36:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e19d1d6d3cb08930f441edb60aca58aa56d0c126,e19d1d6d3cb08930f441edb60aca58aa56d0c126,"Merge pull request #401 from mockdeep/patch-1
+
+typo fix in readme"
+mockdeep,2015-01-05 18:46:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/40a81d1edfa5b4ec0ebafed93afe4d7703f99153,40a81d1edfa5b4ec0ebafed93afe4d7703f99153,typo fix in readme
+bbatsov,2014-12-08 12:39:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3622d12df6ca032ae6896fa85eccb0f43b8c2ca7,3622d12df6ca032ae6896fa85eccb0f43b8c2ca7,"Merge pull request #399 from dalzony/korean
+
+Change the url of korean with iso guide."
+dalzony,2014-12-08 12:35:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1d21dcd961000cd9623a0dbbb323e61e0d7320cd,1d21dcd961000cd9623a0dbbb323e61e0d7320cd,Change the url of korean with iso guide.
+bbatsov,2014-12-05 18:49:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bcad2e7587e0255519f740d6b8e8119e6f074b9f,bcad2e7587e0255519f740d6b8e8119e6f074b9f,"Merge pull request #383 from marxarelli/master
+
+Expound on `alias` vs `alias_method` appropriateness"
+marxarelli,2014-11-10 20:08:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/07225a3b682b806d84de668cf7d2d945f3f6ea20,07225a3b682b806d84de668cf7d2d945f3f6ea20,"Expound on `alias` vs `alias_method` appropriateness
+
+Added examples of when one is more appropriate over the other, and notes
+about aliasing and inheritance."
+bbatsov,2014-12-04 08:12:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9b2576b82bbbfe1cfd99a949d4acd5c127902f56,9b2576b82bbbfe1cfd99a949d4acd5c127902f56,"Merge pull request #394 from marocchino/code-equivalent
+
+Fix variable name"
+marocchino,2014-12-03 15:13:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5574e8c31e814be2d4b328bdaba927a2b7af5517,5574e8c31e814be2d4b328bdaba927a2b7af5517,Fix variable name
+bbatsov,2014-12-03 14:16:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a80af61e2862d23a3ab7faeca73ad8730832e78c,a80af61e2862d23a3ab7faeca73ad8730832e78c,"Merge pull request #392 from marocchino/fix-arg
+
+Change inside of method (related #378)"
+marocchino,2014-12-03 09:52:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/943479d6450f2fd2c916300e90ff26a4a0de95c6,943479d6450f2fd2c916300e90ff26a4a0de95c6,Change inside of method (related #378)
+bbatsov,2014-11-26 03:46:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e81f9d8b6e3db499be4937468ed21b29ea84543a,e81f9d8b6e3db499be4937468ed21b29ea84543a,"Merge pull request #386 from erran/fix-param-anchor
+
+Update the param mutation anchor"
+bbatsov,2014-11-20 15:19:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/23537ae809c808269eb9014c7a4f47377698698d,23537ae809c808269eb9014c7a4f47377698698d,"Merge pull request #387 from philipgiuliani/patch-1
+
+Change to implicit begin block"
+philipgiuliani,2014-11-20 07:41:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cfe117c98f5c1ae74dd45c9bd61cd50c30c7fb28,cfe117c98f5c1ae74dd45c9bd61cd50c30c7fb28,"Change to implicit begin block
+
+One chapter after the `Do not return from an ensure block`, is written that i should use `implicit begin blocks`.
+So why this isn't one?"
+erran,2014-11-19 23:43:37,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/de55eb4db2a36bebb87f3e7b8e276da52ffc5fcb,de55eb4db2a36bebb87f3e7b8e276da52ffc5fcb,"Use ""parameters"" in the no-param-mutations rule"
+erran,2014-11-19 22:36:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3eb6195dfada543162c3f29c5af3da362b6e9749,3eb6195dfada543162c3f29c5af3da362b6e9749,Update the param mutation anchor
+bbatsov,2014-11-19 01:38:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/30b407421a90a2fa4f9ba2a350d6f0b939bc3a29,30b407421a90a2fa4f9ba2a350d6f0b939bc3a29,"Merge pull request #385 from arbox/fb_german_translation
+
+Added a link to the upcoming German translation."
+arbox,2014-11-18 22:34:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/daaacc391501f380414f19d097de2bf2c06b4fb0,daaacc391501f380414f19d097de2bf2c06b4fb0,Added a link to the upcoming German translation.
+bbatsov,2014-11-11 15:16:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2e86ea3ecadfccb4fdc46d9e9aec2c2e97adab82,2e86ea3ecadfccb4fdc46d9e9aec2c2e97adab82,"Merge pull request #378 from sethkrasnianski/sjk/method-verbiage
+
+Changed incorrect instances of 'arguments' to 'parameters'"
+sethkrasnianski,2014-10-26 14:02:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cf0d2bec9af65c6e75b1577ab8fb97fc30de718c,cf0d2bec9af65c6e75b1577ab8fb97fc30de718c,Changed incorrect instances of 'arguments' to 'parameters'
+bbatsov,2014-09-28 04:54:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/043a5802b4319accc7a2fe706d26d0ee714c0194,043a5802b4319accc7a2fe706d26d0ee714c0194,"Merge pull request #372 from fortissimo1997/fix_sample_of_eql
+
+Fix bug of sample code of `eql?`."
+fortissimo1997,2014-09-27 14:18:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/31d7b6a8f32ac57d8248ad8fdbd6d7357367dac7,31d7b6a8f32ac57d8248ad8fdbd6d7357367dac7,"Fix bug of sample code of `eql?`.
+
+- remove `==`"
+bbatsov,2014-09-20 09:40:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/88f7802475e2a6512ac96d2a18d04e0337be2876,88f7802475e2a6512ac96d2a18d04e0337be2876,"Merge pull request #360 from andyw8/master
+
+Prefer `public_send` over `send`"
+bbatsov,2014-09-13 11:58:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/af465be6db7736ffa83a2a26531da1df2eb8e193,af465be6db7736ffa83a2a26531da1df2eb8e193,"Merge pull request #361 from andyw8/fix-module-nameing
+
+Fix module name in module vs class example"
+andyw8,2014-09-05 14:19:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7b8b4a7cb772dd564d2c9b160d231b8ca8447d92,7b8b4a7cb772dd564d2c9b160d231b8ca8447d92,Prefer `public_send` over `send`
+andyw8,2014-09-13 11:55:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7f8ec6d14415b5395c9d5f1e7a67a2a10f40dbae,7f8ec6d14415b5395c9d5f1e7a67a2a10f40dbae,Fix module name in module vs class example
+bbatsov,2014-09-12 15:32:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8443a4503ccd407768944648cb7c32d57e0ea191,8443a4503ccd407768944648cb7c32d57e0ea191,"Merge pull request #344 from binaryphile/master
+
+note safe assignment exception to no parens around condition"
+ShPakvel,2014-08-07 09:39:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/89db86e2e5228a0041ce0e9960df80f91e3755c0,89db86e2e5228a0041ce0e9960df80f91e3755c0,correct and match annotation indentation description with example
+bbatsov,2014-08-05 05:04:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/15df4e6341a9df05dadc59819ae86fca4d6121d6,15df4e6341a9df05dadc59819ae86fca4d6121d6,"Merge pull request #345 from ShPakvel/fix_double_amper_process_bad_example
+
+fix 'bad' example for '&&='"
+ShPakvel,2014-08-04 22:52:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/56ea0be51c8831df7092cb5c6b5aa4887deb40e5,56ea0be51c8831df7092cb5c6b5aa4887deb40e5,fix 'bad' example for '&&='
+bbatsov,2014-08-02 07:29:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9f476f3210dd500e1634f1f9b809d5cf09870408,9f476f3210dd500e1634f1f9b809d5cf09870408,"Merge pull request #342 from dalzony/korean
+
+Add Korean ver"
+bbatsov,2014-08-02 05:25:39,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0f2e795d0807d02983855d4274789b3652fa6871,0f2e795d0807d02983855d4274789b3652fa6871,"Merge pull request #343 from bk2204/parentheses-typo
+
+Fix reference to ""braces"" where ""parentheses"" was meant."
+bk2204,2014-08-01 20:30:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8c27fba90fdb4a918e2684000b7912d9e888b2fa,8c27fba90fdb4a918e2684000b7912d9e888b2fa,"Fix reference to ""braces"" where ""parentheses"" was meant."
+dalzony,2014-07-30 08:33:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fcf9987b881fafa02dd22e3c9f4fb4c1ca0ccfdc,fcf9987b881fafa02dd22e3c9f4fb4c1ca0ccfdc,Change Link for renamed file
+dalzony,2014-07-29 06:28:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/588f6d136049cdb81a693f7f87b2dcb74825b4b0,588f6d136049cdb81a693f7f87b2dcb74825b4b0,Add Korean ver
+bbatsov,2014-07-24 22:26:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e9ccd485987e5b6d2c4f0857c30adafc52d92fbb,e9ccd485987e5b6d2c4f0857c30adafc52d92fbb,"Merge pull request #341 from yous/patch-avoid-non-nil-checks
+
+Avoid non nil checks in examples"
+yous,2014-07-24 21:48:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d89aa5ac795fa2603a058a53247f58ae24ee764e,d89aa5ac795fa2603a058a53247f58ae24ee764e,Avoid non-`nil` checks in examples
+yous,2014-07-24 21:48:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/89dc612e12a02bf67a7688babbf9b70e88e9327d,89dc612e12a02bf67a7688babbf9b70e88e9327d,Keep line length to 80
+bbatsov,2014-07-18 16:46:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b7479c4dbf6a8577b150aede6182ec8b6306086b,b7479c4dbf6a8577b150aede6182ec8b6306086b,"Merge pull request #339 from rapid7/justify-to-80-columns
+
+Rejustify README.md to 80 columns"
+todb,2014-07-18 16:39:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e7ba4d362229bef59c6581ff46f883240bf5a01e,e7ba4d362229bef59c6581ff46f883240bf5a01e,Rejustify README.md to 80 columns
+bbatsov,2014-07-18 16:21:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8eb7baa6ea1599c6fb99733ceb85d5f90f960b72,8eb7baa6ea1599c6fb99733ceb85d5f90f960b72,"Merge pull request #338 from rapid7/add-anchors
+
+Add anchors to bullets"
+todb,2014-07-18 16:18:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6ca9a1eaa05938b789de004e216b2be463736a22,6ca9a1eaa05938b789de004e216b2be463736a22,"[Fix #319] Add anchors to rule bullets
+
+This adds subtle and nonugly link markup to every bulleted rule for ease
+of deeplinking."
+bbatsov,2014-07-15 18:02:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4f878b1662a6775f31593dd0829a98872a6065ad,4f878b1662a6775f31593dd0829a98872a6065ad,"Merge pull request #337 from bruno-/fix_commented_output
+
+Update a couple inconsistent commented outputs"
+bbatsov,2014-07-11 12:41:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/13e2646dca36eda447b59bf03e8f61005acdc04f,13e2646dca36eda447b59bf03e8f61005acdc04f,"Merge pull request #326 from LuqiPan/master
+
+Added a few words to make the example more clear"
+bbatsov,2014-06-30 04:32:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4f229ce16080a69371658988f8eef748238257bf,4f229ce16080a69371658988f8eef748238257bf,"Merge pull request #327 from arbox/fb_translations_list
+
+Added a Russian translations into the tranlsations list."
+arbox,2014-06-29 16:15:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b0d624f3fd3d707736ad53bbacd1feb69d07180a,b0d624f3fd3d707736ad53bbacd1feb69d07180a,Added a Russian translations into the tranlsations list.
+LuqiPan,2014-06-27 23:48:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bbb7dff6a847d0572179415df83d88449a7ebf5a,bbb7dff6a847d0572179415df83d88449a7ebf5a,Added a few words to make the example more clear
+bbatsov,2014-05-14 19:29:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/88fc53e116e1d6ccfb09ad87b0f4d0b39b5b29e5,88fc53e116e1d6ccfb09ad87b0f4d0b39b5b29e5,"Merge pull request #317 from geniou/next
+
+Perfer next over conditional blocks"
+bbatsov,2014-05-14 19:28:39,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6886e903ada0ca7bdccdd8c4216c83528a175b92,6886e903ada0ca7bdccdd8c4216c83528a175b92,"Merge pull request #318 from wendelscardua/fix-typo
+
+Fix while/until typo"
+geniou,2014-05-12 12:37:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b484901d3cbebc141885f958d143228256677ac0,b484901d3cbebc141885f958d143228256677ac0,Perfer next over conditional blocks
+bbatsov,2014-05-09 19:51:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1e55ad8a6a30a2943734a07c14e1a6507216da81,1e55ad8a6a30a2943734a07c14e1a6507216da81,"Merge pull request #316 from kimisaraz/fix-typo
+
+Fix typo"
+kimisaraz,2014-05-09 17:46:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/02d805426e4ca97e0dcd4ff696c545e897338f7d,02d805426e4ca97e0dcd4ff696c545e897338f7d,Fix typo
+bbatsov,2014-04-25 13:09:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/81ece5f83ef17b3ccc7e91ac15e9b33de798bd52,81ece5f83ef17b3ccc7e91ac15e9b33de798bd52,"Merge pull request #303 from ShockwaveNN/patch-1
+
+Added rule about naming folders/directories"
+bbatsov,2014-04-17 12:13:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/50f1b4a60898e0039bd8cd061b152aaec9fc7521,50f1b4a60898e0039bd8cd061b152aaec9fc7521,"Merge pull request #312 from aspiers/patch-1
+
+Avoid if/unless at the end of a non-trivial block"
+ShockwaveNN,2014-04-14 15:55:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/77913d38351541e7364805df43b650c85da57aff,77913d38351541e7364805df43b650c85da57aff,Remove redundant use of synonymus folder-directory
+aspiers,2014-04-14 13:47:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/45d41b294fef8ad377a57c6549ca856e9b5051b5,45d41b294fef8ad377a57c6549ca856e9b5051b5,"Avoid if/unless at the end of a non-trivial block
+
+Using an `if` or `unless` modifier at the end of a non-trivial
+multi-line block requires reading all the way to the end of the block
+before the reader becomes aware that the block is guarded by a
+condition.
+
+Additionally, in the case where the code is being viewed as part of a
+patch, the condition at the end of the block may not even be visible
+in the diff context; this can make code reviews harder."
+bbatsov,2014-04-05 07:04:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/05cb74a2d39b635b73f7581f63c8541490cdbc33,05cb74a2d39b635b73f7581f63c8541490cdbc33,"Merge pull request #309 from rubensmabueno/feature/AddPortugueseSupport
+
+Added the link to the Portuguese translation"
+bbatsov,2014-03-31 18:58:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/aa6e91405aacf41847c49ad2fd6dac8a62ac207e,aa6e91405aacf41847c49ad2fd6dac8a62ac207e,"Merge pull request #308 from ruan-brandao/fix-comment-error
+
+Update README.md"
+ruan-brandao,2014-03-31 18:34:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7e1f61d1ba1eee51d58a86bd310f837e48201ea5,7e1f61d1ba1eee51d58a86bd310f837e48201ea5,"Update README.md
+
+Corrected a syntax error in block comments."
+bbatsov,2014-03-24 08:43:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/801d034ba00e674427e5b09ff194e1d7995ba50b,801d034ba00e674427e5b09ff194e1d7995ba50b,"Merge pull request #306 from Florent2/patch-1
+
+Misc typo fixes"
+ShockwaveNN,2014-03-17 14:25:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b7ea014b19f4047b8001ff4de5f69527bc82aa53,b7ea014b19f4047b8001ff4de5f69527bc82aa53,"Added rule about naming folders/directories
+
+To close this issue"
+bbatsov,2014-03-06 07:39:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bd708fe51c2e517839042c0d09d67421425eca24,bd708fe51c2e517839042c0d09d67421425eca24,"Merge pull request #298 from julio73/patch-2
+
+Style refactoring on indentation and spacing"
+julio73,2014-03-05 22:34:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/191384b953229d0846bb6393f8a7692e7b67025a,191384b953229d0846bb6393f8a7692e7b67025a,Style refactoring on indentation
+bbatsov,2014-03-05 19:16:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4aa5017fa5aa61546ef9f18fa1d22d190623fbb0,4aa5017fa5aa61546ef9f18fa1d22d190623fbb0,"Merge pull request #296 from julio73/patch-1
+
+grammar and indentation fix for readability"
+julio73,2014-03-04 14:58:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e8b498f7827067ca332edaee0aee755fc13b847b,e8b498f7827067ca332edaee0aee755fc13b847b,grammar and indentation fix for readability
+bbatsov,2014-02-25 18:12:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/02f7ffee7a7e682affd66dafdb4c96012dc3c256,02f7ffee7a7e682affd66dafdb4c96012dc3c256,"Merge pull request #278 from equivalent/inner_classes
+
+deffinition of small inner classes should be at the bottom of class"
+equivalent,2014-02-03 13:03:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0347b3de1029c567260cea243b3b72b6628bdda2,0347b3de1029c567260cea243b3b72b6628bdda2,"Keep one line nested classes at the top, move multi-line nested classes to own file."
+bbatsov,2014-02-22 05:46:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/022a7aa677096af20401c25c497001f0c020f37d,022a7aa677096af20401c25c497001f0c020f37d,"Merge pull request #291 from autermann/fix/invalid-link
+
+Fix link for Wikipedia SOLID article"
+autermann,2014-02-22 02:34:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c3b3149f2483b966c882b390e96770c2d96348ee,c3b3149f2483b966c882b390e96770c2d96348ee,fix link for wikipedia SOLID article
+bbatsov,2014-02-17 12:30:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7736f37a852c0b22d039cf8d1538d9f8954e04c0,7736f37a852c0b22d039cf8d1538d9f8954e04c0,"Merge pull request #287 from SaM-Solutions/newline-at-eof
+
+Add a rule about a newline at eof"
+phts,2014-02-16 11:43:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/adb17c5d7e44a88fa73c17b838a9de7a48e00f9f,adb17c5d7e44a88fa73c17b838a9de7a48e00f9f,Add a rule about a newline at eof
+bbatsov,2014-02-15 09:38:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e5964f798c1225a818a0fdb390ab5a943d35a538,e5964f798c1225a818a0fdb390ab5a943d35a538,Add a rule about mixing Ruby 1.9 hash syntax with hash rockets syntax
+bbatsov,2014-02-15 09:34:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5d8ac174525faac5ef16f62e76b24957471c0eef,5d8ac174525faac5ef16f62e76b24957471c0eef,Clarify a statement
+bbatsov,2014-02-14 10:33:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7c76db17f67aa0fc18b2213bc1445214456e734c,7c76db17f67aa0fc18b2213bc1445214456e734c,"Merge pull request #285 from 5704k3/addlinkja
+
+Add a link to the Japanese version."
+5470x3,2014-02-14 06:29:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/77045e9944824c2616057b79590a5869dfe60eb2,77045e9944824c2616057b79590a5869dfe60eb2,Add a link to the Japanese version.
+bbatsov,2014-02-13 08:03:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/16c81c123d23bcdc25f5f72c6feb9dfdcf7a8687,16c81c123d23bcdc25f5f72c6feb9dfdcf7a8687,[Fix #237] Add guideline for unused variables naming
+bbatsov,2014-02-13 07:49:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7e07d51a41c68869816f98109513a3500173486b,7e07d51a41c68869816f98109513a3500173486b,Don't use Object#to_s on interpolated objects
+bbatsov,2014-02-13 07:45:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/285167cfcb3ef469d70e6def08a4e143722e96e1,285167cfcb3ef469d70e6def08a4e143722e96e1,Mention string formatting as an alternative to string interpolation
+bbatsov,2014-02-12 15:28:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/88c92cf320dc22192bfd75f4ae4acf2c5bd4da89,88c92cf320dc22192bfd75f4ae4acf2c5bd4da89,"Merge pull request #282 from gsamokovarov/patch-1
+
+Fix a typo in Percent Literals"
+gsamokovarov,2014-02-12 15:26:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b55279f6a24f0c8de187467f52dcd733764c8c8d,b55279f6a24f0c8de187467f52dcd733764c8c8d,"Fix a typo in Percent Literals
+
+Found it while reading the section."
+bbatsov,2014-01-29 13:42:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/641e860c7e9ffa64bb8457f0756d4cc9dc8339d8,641e860c7e9ffa64bb8457f0756d4cc9dc8339d8,"Merge pull request #277 from deric/master
+
+naming files"
+deric,2014-01-29 12:53:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e37ac2f34d1fac037b5dc0de39278a5dfea914dd,e37ac2f34d1fac037b5dc0de39278a5dfea914dd,recommendation to have single class/module per file
+deric,2014-01-29 08:40:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ad8662664f5982e61a36f9136e6f3210dd5f2d74,ad8662664f5982e61a36f9136e6f3210dd5f2d74,naming files
+bbatsov,2014-01-28 18:10:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a72625b2b5b1366af0f06fbe8a3d7274904a2d33,a72625b2b5b1366af0f06fbe8a3d7274904a2d33,"Merge pull request #276 from thiagogabriel/fix/single-quote-example
+
+Add single-quotes to indent example"
+thiagogabriel,2014-01-28 01:35:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5011da14408eefe5a6dae22794aaec3896c9ed63,5011da14408eefe5a6dae22794aaec3896c9ed63,Add single-quotes to indent example
+bbatsov,2014-01-26 20:09:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/34f576f793135c8f34cc0386935fd848c168bfa1,34f576f793135c8f34cc0386935fd848c168bfa1,"Merge pull request #274 from hasghari/conditional
+
+favor unless with positive condition over if with negative condition"
+hasghari,2014-01-26 19:49:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/24be9598ce60f4d440e90bf4526c3120df3403af,24be9598ce60f4d440e90bf4526c3120df3403af,favor unless over if with a single negative condition
+bbatsov,2014-01-16 19:23:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9e3c2fe91a7335bf94a7282f1a48716f0e4d5889,9e3c2fe91a7335bf94a7282f1a48716f0e4d5889,"Merge pull request #266 from jvirtanen/fixes/introduction
+
+Fix typo in introduction"
+jvirtanen,2014-01-16 18:07:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/63a4b6ec556ffb0eeacb0dcd02a99658ebc44836,63a4b6ec556ffb0eeacb0dcd02a99658ebc44836,Fix typo in introduction
+bbatsov,2014-01-14 07:23:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e8b03249b36dcc0cf717c7cf0a5b3b659228ccb0,e8b03249b36dcc0cf717c7cf0a5b3b659228ccb0,"Merge pull request #260 from tkareine/use-named-block-to-avoid-writing-additional-block
+
+Use named block argument to avoid writing additional block in method implementation"
+tkareine,2014-01-12 18:16:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5b872c660f09232ddbc6ad80dd5e032faedae949,5b872c660f09232ddbc6ad80dd5e032faedae949,Add guideline for using explicit block argument
+bbatsov,2014-01-13 07:11:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/accde1d2797b276d6e3d89a780b9719b30b6a8d7,accde1d2797b276d6e3d89a780b9719b30b6a8d7,"Merge pull request #253 from Chakaitos/master
+
+Add section on How to Contribute"
+bbatsov,2014-01-13 07:11:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cdf86dc263e0bb717ca3be4a38e9494bfed1e656,cdf86dc263e0bb717ca3be4a38e9494bfed1e656,"Merge pull request #261 from scrum2b/for_pull_master
+
+Add Vietnamese version link"
+haibt,2014-01-13 03:48:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6c97a93bdc1772d706e4276030e420e188bb4cc9,6c97a93bdc1772d706e4276030e420e188bb4cc9,Add Vietnamese version link
+Chakaitos,2013-12-26 23:30:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8f6f76116c49ec27bec2b5872cd25c8f3c3f2f7a,8f6f76116c49ec27bec2b5872cd25c8f3c3f2f7a,Add contribution guidelines
+bbatsov,2014-01-11 21:42:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b893e6d04bdfa6ff499b9fc50d935feed3514ba3,b893e6d04bdfa6ff499b9fc50d935feed3514ba3,"Merge pull request #259 from jonas054/trailing_comma
+
+Remove trailing comma rule for method definitions."
+jonas054,2014-01-11 18:11:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/41c56d6e6593a62e8cf914ada3abb52298604835,41c56d6e6593a62e8cf914ada3abb52298604835,"Remove trailing comma rule for method definitions.
+
+Trailing comma in a method definition is a syntax error.
+In method calls it is allowed starting with Ruby 1.9."
+bbatsov,2014-01-11 16:25:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/902d292581b542a6756b1808323fd334bddb5ea5,902d292581b542a6756b1808323fd334bddb5ea5,"Merge pull request #258 from jonas054/trailing_comma
+
+Add rules about trailing commas."
+jonas054,2014-01-11 15:08:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/426e8908c8719ee55c961ce167ef326e2a40083d,426e8908c8719ee55c961ce167ef326e2a40083d,"Add rules about trailing commas.
+
+Can occur in literals and method definitions/calls. These rules were discussed in https://github.com/bbatsov/rubocop/issues/713"
+bbatsov,2014-01-09 10:29:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f3c8aecd67925950141c692600f4e366af55d421,f3c8aecd67925950141c692600f4e366af55d421,"Merge pull request #255 from TalkativeTree/preprocess-value-shortcut
+
+add shortcut '&&=' for preprocessing values only when they exist."
+TalkativeTree,2014-01-09 08:56:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bdf4d61678af6c38645194f4a746086ff5c09176,bdf4d61678af6c38645194f4a746086ff5c09176,add shortcut '&&=' for preprocessing values only when they exist.
+bbatsov,2014-01-09 08:33:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/637996987f157f11a74b34c09c43f66532b12d3d,637996987f157f11a74b34c09c43f66532b12d3d,"Merge pull request #256 from jvirtanen/fixes/struct-example
+
+Clarify Struct example"
+jvirtanen,2014-01-09 08:25:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4e73689a1f91c16d7ffc313c82dc2edce199aa33,4e73689a1f91c16d7ffc313c82dc2edce199aa33,"Clarify Struct example
+
+As mentioned in the text, Struct defines attribute accessors. However,
+in the example, readers are used. Use accessors also in the example so
+that both alternatives are mutable."
+bbatsov,2014-01-06 06:31:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b23266b8af7ef0c1279bf6659ce032d4f966490a,b23266b8af7ef0c1279bf6659ce032d4f966490a,"Merge pull request #254 from skofo/patch-1
+
+removed needless reference to author"
+aostrega,2014-01-06 01:39:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/86dc0042275a66ba4d90e20c46959a26a0f2b1bc,86dc0042275a66ba4d90e20c46959a26a0f2b1bc,removed needless reference to author
+bbatsov,2013-12-19 15:19:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/98e91bd0c189c24bd171e0d8b132c6bc0c596e2f,98e91bd0c189c24bd171e0d8b132c6bc0c596e2f,"Merge pull request #252 from fuadsaud/patch-1
+
+Use `size` over `length` in example code."
+fuadsaud,2013-12-19 15:18:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/74faf9a926f76297696c52a9d469b36842eee638,74faf9a926f76297696c52a9d469b36842eee638,"Use `size` over `length` in example code.
+
+The guide suggests preferring the use of `size` over `length`, but one of the code snippets doesn't follow this rule."
+bbatsov,2013-12-19 07:07:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e8d9f3bd8f6ef50b8f13fc8106738a87eabc351b,e8d9f3bd8f6ef50b8f13fc8106738a87eabc351b,"Merge pull request #251 from velobuff/master
+
+Clarify Rails 3 and 4 Link"
+velobuff,2013-12-19 02:23:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5797c5061a2946e31cff8f713a5b17cf53080abc,5797c5061a2946e31cff8f713a5b17cf53080abc,fix rails link
+bbatsov,2013-12-17 07:25:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e87f883f24fc78feece1cd4ab3ef2a93a5e684c6,e87f883f24fc78feece1cd4ab3ef2a93a5e684c6,"Merge pull request #249 from AJAlabs/master
+
+Soft tab clarification and use 'OS X' not 'OSX'"
+AJ-Acevedo,2013-12-05 21:46:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/225c17c30d0760a1b230e985d6ed0c07e68b5cdf,225c17c30d0760a1b230e985d6ed0c07e68b5cdf,Soft tab clarification and use 'OS X' not 'OSX'
+bbatsov,2013-11-15 20:15:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/762dac52eff59fb78b6ca9a3d201e458f007400f,762dac52eff59fb78b6ca9a3d201e458f007400f,"Merge pull request #240 from joshuapinter/patch-1
+
+Minor grammar updates to Readme.rd."
+joshuapinter,2013-11-15 20:12:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cfe710401f9718b47f2f13a6e17129f56c3caadb,cfe710401f9718b47f2f13a6e17129f56c3caadb,Lowercased `user` in both examples.
+bbatsov,2013-11-15 13:29:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e2176287f02e6e219e9607b97a897c8358d4e447,e2176287f02e6e219e9607b97a897c8358d4e447,"Merge pull request #230 from markijbema/patch-1
+
+Made naming directions of predicate methods a bit more specific"
+bbatsov,2013-11-15 13:26:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/596303b4788323079daec016ea5995877ec54ed3,596303b4788323079daec016ea5995877ec54ed3,"Merge pull request #239 from Konnigun/patch-1
+
+Fix a typo in readme"
+joshuapinter,2013-11-15 09:44:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2a5333b0d9a27e5a2d94a1e3d26d47baadecf03c,2a5333b0d9a27e5a2d94a1e3d26d47baadecf03c,Minor grammar updates to Readme.rd.
+novikserg,2013-11-12 01:18:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2dc4ac303ba86da08179444099faad2e35139c34,2dc4ac303ba86da08179444099faad2e35139c34,Fix a typo in readme
+bbatsov,2013-10-29 21:49:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7a7413f317a766f0fa5402dc5404bb2fce03445f,7a7413f317a766f0fa5402dc5404bb2fce03445f,"Merge pull request #236 from fernandoalmeida/patch-1
+
+Fix example of heredoc result"
+fernandoalmeida,2013-10-29 01:03:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5f8f4e10b378bb5ccc6f8f06c8c73aad6f98918d,5f8f4e10b378bb5ccc6f8f06c8c73aad6f98918d,Fix example of heredoc result
+bbatsov,2013-10-11 12:45:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2117406c2b8d3c999ec197187a7e47e3ff488047,2117406c2b8d3c999ec197187a7e47e3ff488047,"Merge pull request #229 from trlinkin/fix_and
+
+Remove misplaced ""and"""
+markijbema,2013-09-26 18:20:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b567dca477e68b0e7058ed7cb3f32e1c5c9f419e,b567dca477e68b0e7058ed7cb3f32e1c5c9f419e,Made naming directions of predicate methods a bit more specific
+trlinkin,2013-09-25 01:47:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2d59265e4cb9d97fdc91b04a6a29b7d5de42ad76,2d59265e4cb9d97fdc91b04a6a29b7d5de42ad76,"Reword usage of empty lines explanation
+
+The original wording surrounding using empty lines to create visual
+separations for readability was itself hard to read.
+
+This commit rewords the explanation to clarify the original point."
+bbatsov,2013-09-16 15:03:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a21b049ce94e72f874cd530b07558cce778ceb46,a21b049ce94e72f874cd530b07558cce778ceb46,"Merge pull request #228 from shamanime/patch-1
+
+Fix missing Ruby statement for code highlight"
+bbatsov,2013-09-11 16:38:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c6d773d52ef417a11aa44eb022e46673a895e8ce,c6d773d52ef417a11aa44eb022e46673a895e8ce,"Merge pull request #226 from meagar/master
+
+[Fix #223] Cover use of {} in argument hash"
+meagar,2013-09-11 13:55:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bb48cf366d69ae5c1b511e910f1a5934e33554c6,bb48cf366d69ae5c1b511e910f1a5934e33554c6,"[Fix #223] Cover use of {} in argument hash
+
+Explicitly cover whether {} should be used around options hashes being
+passed to methods"
+bbatsov,2013-09-01 17:19:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f75f80aaa71655a9dc7d59ba8a39b0d9b4fd703a,f75f80aaa71655a9dc7d59ba8a39b0d9b4fd703a,"Merge pull request #215 from girijabrahme/short_circuited_return
+
+Use short-circuited return statement instead of next blocks"
+bbatsov,2013-08-27 13:30:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2b3126e5d574c01137b3d55a9883e2b36ccb899b,2b3126e5d574c01137b3d55a9883e2b36ccb899b,"Merge pull request #216 from dirkbolte/prefer_proc_call
+
+added rule to prefer pull.call() over its variants"
+dirkbolte,2013-08-19 18:23:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c8313e8a64e82841cf53820bb667097b33078b71,c8313e8a64e82841cf53820bb667097b33078b71,added rule to prefer pull.call() over its variants
+bbatsov,2013-08-16 14:56:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a85ef9063695381938b27749febb6d8874f20f48,a85ef9063695381938b27749febb6d8874f20f48,"Merge pull request #214 from markijbema/add-sprint-hash-syntax
+
+added examples of sprint hash syntax"
+markijbema,2013-08-16 14:45:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/77c75c48cccbf290e65c736a8c4048f119fef74a,77c75c48cccbf290e65c736a8c4048f119fef74a,added examples of sprint hash syntax
+bbatsov,2013-08-10 14:12:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d4df6f9a16e57ef9511d5e8edf57bfce2a3c60d5,d4df6f9a16e57ef9511d5e8edf57bfce2a3c60d5,"Merge pull request #210 from markijbema/add-constructor-exception
+
+updated style guide with instructions for calling constructors"
+markijbema,2013-08-10 13:42:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6f18c4185b58de14a90552277663c7ef68045d7d,6f18c4185b58de14a90552277663c7ef68045d7d,updated style guide with instructions for calling constructors
+bbatsov,2013-08-10 05:27:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/eee9788b3c84ac61617fb458161cd82a2bf24ce7,eee9788b3c84ac61617fb458161cd82a2bf24ce7,"Merge pull request #209 from lee-dohm/master
+
+Put fenced code block around shell command"
+lee-dohm,2013-08-10 04:05:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1a27fa5ea998cfc49feb9495cbb06365e6914c4f,1a27fa5ea998cfc49feb9495cbb06365e6914c4f,Put fenced code block around shell command
+bbatsov,2013-08-01 07:35:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e533bc74a7be712280968704229f78ee1121d809,e533bc74a7be712280968704229f78ee1121d809,"Merge pull request #206 from mark-rushakoff/time-new-now
+
+Prefer Time.now over Time.new"
+mark-rushakoff,2013-08-01 07:11:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c31a2b135c74ddbb8681a7d8107fef3acc66cb2a,c31a2b135c74ddbb8681a7d8107fef3acc66cb2a,"Prefer Time.now over Time.new
+
+The documentation says now is an alias for new. I believe Time.now more
+clearly conveys that it uses the current time, whereas Time.new does not
+convey the current time vs. an arbitrary, empty time object.
+
+GitHub search indicates that Time.now is far more popular:
+
+* Time.now has [376,997 code results](https://github.com/search?l=ruby&q=time.now&source=c&type=Code)
+* Time.new has [18,858 code results](https://github.com/search?l=ruby&q=time.new&source=c&type=Code)
+
+The ratio of now:new is approximately 20:1."
+bbatsov,2013-07-28 14:26:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f5131760e7515d7c579b4cfbcc2ddf809a09402c,f5131760e7515d7c579b4cfbcc2ddf809a09402c,"Merge pull request #188 from drewda/patch-1
+
+less gender-specific reference in the opening paragraph"
+bbatsov,2013-07-28 14:26:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e91c2eb3afa682f5681effed3e99af1ee59b32b9,e91c2eb3afa682f5681effed3e99af1ee59b32b9,"Merge pull request #203 from dragosmiron/patch-1
+
+style fix"
+bbatsov,2013-07-24 12:53:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3510f8439e4aabc2a4e3db5e6acdeb31f8099cc,d3510f8439e4aabc2a4e3db5e6acdeb31f8099cc,"Merge pull request #198 from dragosmiron/fetch-with-blocks
+
+added fetch with blocks condition"
+drewda,2013-07-18 17:31:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c45652746d9981f5c70777729bbfd10556297296,c45652746d9981f5c70777729bbfd10556297296,further refinement of opening paragraph
+bbatsov,2013-07-17 05:57:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7e70b169465a2bd660e7c73ca2227a9aa010fe95,7e70b169465a2bd660e7c73ca2227a9aa010fe95,"Merge pull request #199 from trliner/master
+
+just a quick typo fix"
+trliner,2013-07-16 22:51:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b914609aee5d2ee44c32e1f27a65f98a11cbc546,b914609aee5d2ee44c32e1f27a65f98a11cbc546,just a quick typo fix
+bbatsov,2013-07-14 05:24:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ca9f4e79aca38f831e54383198e991c4c3806bec,ca9f4e79aca38f831e54383198e991c4c3806bec,"Merge pull request #197 from RunsFor/master
+
+Typo in Percent Literals"
+RunsFor,2013-07-14 02:11:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d3713a94e894e4d86085c997235069c6199053e6,d3713a94e894e4d86085c997235069c6199053e6,"Update README.md
+
+Fix typo in Percent Literals"
+bbatsov,2013-07-03 06:52:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ad58ec027f85e472d2091359ec69d14561487082,ad58ec027f85e472d2091359ec69d14561487082,"Merge pull request #191 from ma2gedev/master
+
+Fixed typo"
+ma2gedev,2013-07-03 03:53:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9bde344f19e1de402dc9e86e1a093dc0976ff260,9bde344f19e1de402dc9e86e1a093dc0976ff260,fixed typo
+drewda,2013-06-27 23:08:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c21f0dcedd69cc5ab28679394eb44eacfbfd9bdb,c21f0dcedd69cc5ab28679394eb44eacfbfd9bdb,"less gender-specific reference in the opening paragraph
+
+Rather than ""fine fellows,"" which implies a boys' club, how about a slightly more inclusive alliteration? ""Crafty coders"" perhaps?"
+bbatsov,2013-06-24 14:41:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d6ed58e899739ecbaeda51210b24930c2ac08e01,d6ed58e899739ecbaeda51210b24930c2ac08e01,"Merge pull request #185 from shime/patch-1
+
+better example for rescue in its modifier form"
+shime,2013-06-24 14:23:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9ffbd4bf1377c01bb97d38d53baa5fb0f074cbb7,9ffbd4bf1377c01bb97d38d53baa5fb0f074cbb7,better example for rescue in its modifier form
+bbatsov,2013-06-06 05:15:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0d75b9e4739587db47482b70e77a7c33e8b47fef,0d75b9e4739587db47482b70e77a7c33e8b47fef,"Merge pull request #183 from sectioneight/patch-1
+
+Fix typo in ""Percent Literals"" section"
+ascandella,2013-06-05 23:22:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/61e6cdec8a71c25c460ad252a630d93a2622b818,61e6cdec8a71c25c460ad252a630d93a2622b818,"Fix typo in ""Percent Literals"" section
+
+s/expect/except"
+bbatsov,2013-06-05 06:47:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/071b91d0079ff506fba61754ff0064a93ed27279,071b91d0079ff506fba61754ff0064a93ed27279,"Merge pull request #182 from mark-rushakoff/if-condition-line
+
+Put condition on same line as if/unless"
+mark-rushakoff,2013-06-05 04:58:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4483f805bd285659fc1f450172525cb9820aa68f,4483f805bd285659fc1f450172525cb9820aa68f,Put condition on same line as if/unless
+bbatsov,2013-06-03 15:40:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a874b059a2de3f0e9c4b41cbfffe6c58287e1f61,a874b059a2de3f0e9c4b41cbfffe6c58287e1f61,"Merge pull request #180 from lee-dohm/master
+
+Clean up grammar in method missing recommendations"
+lee-dohm,2013-06-03 15:37:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4e89ba54b76a0f5a2559478ab8d5c6774d5ad143,4e89ba54b76a0f5a2559478ab8d5c6774d5ad143,Clean up grammar in method missing recommendations
+bbatsov,2013-05-29 14:41:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/222982174bbfcb94ff3628346734adf81b27dda8,222982174bbfcb94ff3628346734adf81b27dda8,"Merge pull request #177 from mark-rushakoff/def-parens
+
+Expand examples for parens and defining methods"
+mark-rushakoff,2013-05-29 14:39:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8ad4604bb4d40466458303425826c78cd8a0d882,8ad4604bb4d40466458303425826c78cd8a0d882,Expand examples for parens and defining methods
+bbatsov,2013-05-28 14:19:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3470503277f16c80c67dcfc978d2cac13fe1d1bc,3470503277f16c80c67dcfc978d2cac13fe1d1bc,"Merge pull request #171 from lucianosousa/patch-1
+
+Add more examples for use unless case"
+lucianosousa,2013-05-28 13:44:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/dcd22ff5fbe83d701735a2405e518d8c44a581bf,dcd22ff5fbe83d701735a2405e518d8c44a581bf,"Update README.md
+
+add only 'if not' example"
+bbatsov,2013-05-28 12:04:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6bd9db5c35d54c671c76a1b1054cbfdf133ae488,6bd9db5c35d54c671c76a1b1054cbfdf133ae488,"Merge pull request #173 from jdalbert/array_access
+
+Prefer first and last over [0] and [-1]"
+bbatsov,2013-05-27 09:20:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2529667fa155f1e541ed33c13abbb5febc71a6c7,2529667fa155f1e541ed33c13abbb5febc71a6c7,"Merge pull request #174 from adkron/single_line_class
+
+Single line class definition utilize Class.new"
+adkron,2013-05-27 02:15:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ae8f1f541fc65386e9fcafbf9c8de06eff7b10f9,ae8f1f541fc65386e9fcafbf9c8de06eff7b10f9,"Single line class definition utilize Class.new
+
+The Class.new version is a cleaner syntax and removes the unwanted `;` that is included in the default class syntax."
+jeromedalbert,2013-05-21 22:48:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d9a17c6e7a309ec9c6bb8ff1f1cbe1b189ea435a,d9a17c6e7a309ec9c6bb8ff1f1cbe1b189ea435a,Prefer first and last over [0] and [-1]
+bbatsov,2013-05-20 16:12:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/62507e7cbdce76e20c6706e1aa7528a8026b9cd8,62507e7cbdce76e20c6706e1aa7528a8026b9cd8,"Merge pull request #170 from dwbutler/master
+
+Clarified usage of `fetch` with two arguments"
+bbatsov,2013-05-20 16:11:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f85bed1320a36763437c2674669a92e8cc4ef2cd,f85bed1320a36763437c2674669a92e8cc4ef2cd,"Merge pull request #172 from lee-dohm/code_backslash
+
+Use backticks for backslash to make more consistent"
+lee-dohm,2013-05-20 16:05:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/94608195357c9397e95364ef83ae11dcce51cd99,94608195357c9397e95364ef83ae11dcce51cd99,Use backticks for backslash to make more consistent
+lucianosousa,2013-05-17 17:16:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c00d424186ae7ca1c81e76176f3de8198a34c016,c00d424186ae7ca1c81e76176f3de8198a34c016,"Update README.md
+
+add another case for use unless case. I saw in many places something like: 'if not current_user'. I think it's a bad way to do that."
+dwbutler,2013-05-17 05:49:37,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cbb3a3ef631dfe4ff23f068efae1e06b715344f8,cbb3a3ef631dfe4ff23f068efae1e06b715344f8,Improved description of fetch with two arguments
+bbatsov,2013-05-05 09:50:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/321df924989dbd5862f85c2429dd7367590dd382,321df924989dbd5862f85c2429dd7367590dd382,"Merge pull request #167 from mark-rushakoff/comment
+
+Use a space after # in a comment"
+mark-rushakoff,2013-05-05 00:33:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/84c23a670b191268d8a6437fa6d4167a133dfb3d,84c23a670b191268d8a6437fa6d4167a133dfb3d,Be less ambiguous about leading space in comment
+mark-rushakoff,2013-05-04 22:10:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0f614d4c203d416478e76812f226948320a552b6,0f614d4c203d416478e76812f226948320a552b6,Use a space after # in a comment
+bbatsov,2013-04-29 15:04:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/aa74c05f12569cca2ab58427c68b5bfd07a18612,aa74c05f12569cca2ab58427c68b5bfd07a18612,"Merge pull request #166 from lee-dohm/underscore_consistency
+
+Add underscores to other large numbers"
+lee-dohm,2013-04-29 14:52:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/53540128540897e7b6893046365622923fe69a7f,53540128540897e7b6893046365622923fe69a7f,Add underscores to other large numbers
+bbatsov,2013-04-29 09:11:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d2203ef3fbe4eb2ff2d252e292784c65b33ace1e,d2203ef3fbe4eb2ff2d252e292784c65b33ace1e,"Merge pull request #159 from jmentz/master
+
+avoid global variables by using module instance variables instead of class instance variables"
+jmentz,2013-04-06 13:10:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/24ec24e0c206b1ddf0f5f6a66aeefebdb58f40bb,24ec24e0c206b1ddf0f5f6a66aeefebdb58f40bb,avoid global variables by using modules instead of classes
+bbatsov,2013-04-28 18:21:45,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e057a1c0e5295d67c4eedb059d7efec9d15681ff,e057a1c0e5295d67c4eedb059d7efec9d15681ff,"Merge pull request #165 from lee-dohm/one_liner_semicolons
+
+Add acceptable uses for ; in one-line classes"
+lee-dohm,2013-04-28 17:26:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9b1d4471d3f64c59724b35d4fd03481876565bf1,9b1d4471d3f64c59724b35d4fd03481876565bf1,"Make wording around single-line class definitions more clear
+
+Remove section on single-line method definitions."
+lee-dohm,2013-04-28 17:04:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/15ea2b1716cbf9494641946624c44323e09634e4,15ea2b1716cbf9494641946624c44323e09634e4,Add acceptable uses for ; in one-line classes and methods
+bbatsov,2013-04-28 17:18:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c00afbdbc2bc66558b528f4d2c76dd2a5c1dd6a7,c00afbdbc2bc66558b528f4d2c76dd2a5c1dd6a7,"Merge pull request #163 from sinajahan/master
+
+Avoid hashes as optional parameters exception"
+sinajahan,2013-04-22 20:29:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ed6a624b196686e67c821d1e4f55199e85d13dcd,ed6a624b196686e67c821d1e4f55199e85d13dcd,"Avoid hashes as optional parameters exception
+
+except for object initializers."
+bbatsov,2013-04-06 18:09:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ae6a4e50ce459f961a7dff1139b9d78a4c2ca60c,ae6a4e50ce459f961a7dff1139b9d78a4c2ca60c,"Merge pull request #160 from cveneziani/more_consistency
+
+More consistency"
+bbatsov,2013-04-01 12:30:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/760219fad129b1841a6f91f13b0eb6ee04a0ea84,760219fad129b1841a6f91f13b0eb6ee04a0ea84,"Merge pull request #157 from ericridgeway/addRspecExample
+
+Issue #156 - Add a small RSpec ""no parenthesis"" example"
+ericridgeway,2013-03-29 07:12:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/629a437bee146c4f42e9589495a0a1e3c7254c9c,629a437bee146c4f42e9589495a0a1e3c7254c9c,"Issue #156 - Add a small RSpec ""no parenthesis"" example
+
+The paragraph lists Situations. They're about when you should omit-parenthesis
+
+It goes on to some Examples for each:
+-attr_reader
+-puts
+-methods with no parameters
+
+(There are more Examples I haven't listed; the ones for *include*-parenthesis Situations)
+
+...This commit just adds one more Example. It's for a Situation that was mentioned in the paragraph but didn't have any Example: RSpec"
+bbatsov,2013-03-28 13:42:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c5ddb5fea8883d8151b7011bf75dd022c8d19b13,c5ddb5fea8883d8151b7011bf75dd022c8d19b13,"Merge pull request #155 from abotalov/patch-1
+
+Fix broken link"
+abotalov,2013-03-28 13:41:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f9e0836b6e4d21d900bb08d71dec428d4fd30b13,f9e0836b6e4d21d900bb08d71dec428d4fd30b13,Fix broken link
+bbatsov,2013-03-27 17:30:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b3034cba2898fc7aeec634207f21ced3df27a316,b3034cba2898fc7aeec634207f21ced3df27a316,"Merge pull request #154 from markevich/patch-1
+
+add hash#fetch example for setting default value"
+markevich,2013-03-25 20:42:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3acea6d5f9236d62105bcb7ac1640ce2fb46c695,3acea6d5f9236d62105bcb7ac1640ce2fb46c695,add hash#fetch example for setting default value
+bbatsov,2013-03-19 16:49:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3ddff9232f04e719daeb9ec6832fc78437f77a7c,3ddff9232f04e719daeb9ec6832fc78437f77a7c,"Merge pull request #152 from tgaff/tmg/loop_not_if_unless_while
+
+For post-loop tests use Kernel#loop over begin/end/while"
+bbatsov,2013-03-06 07:09:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/63fe490459b5c2a582a2fbc732972f1954f071a7,63fe490459b5c2a582a2fbc732972f1954f071a7,"Merge pull request #149 from AJAlabs/master
+
+Consider a Creative Commons License"
+bbatsov,2013-03-05 08:28:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/58d420e48a6f883fee9736522aa140d3296992c4,58d420e48a6f883fee9736522aa140d3296992c4,"Merge pull request #148 from AJ-Acevedo/master
+
+Some minor languages changes for Ruby 2.0"
+AJ-Acevedo,2013-03-05 08:23:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/dd5863c2dddf2ec112f3774eb2bf540125d64b3b,dd5863c2dddf2ec112f3774eb2bf540125d64b3b,Updates for Ruby 2.0
+bbatsov,2013-02-26 11:43:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/20be525333f013c21efd7a8fcf05a7a6f54ce90c,20be525333f013c21efd7a8fcf05a7a6f54ce90c,"Merge pull request #147 from activebilling/a-few-changes
+
+A few additions to the style guide"
+brushbox,2013-02-26 11:30:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8805a719c23c4c6111fc5a29f5098a9ef302ba67,8805a719c23c4c6111fc5a29f5098a9ef302ba67,review feedback
+brushbox,2013-02-26 05:11:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b8420524740b817e380202d36b56f2eda4e73bdd,b8420524740b817e380202d36b56f2eda4e73bdd,A few additions to the style guide
+bbatsov,2013-02-18 18:51:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/07d789b565ef3e21726315847a3ba9cac86452d9,07d789b565ef3e21726315847a3ba9cac86452d9,"Merge pull request #146 from janrubio/master
+
+Fix to_s example to be consistent on interpolation"
+janrubio,2013-02-18 17:44:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a5bf19263392f01001c43a815e832eb045317fa9,a5bf19263392f01001c43a815e832eb045317fa9,Fix example to be consistent with advice on instance variable interpolation
+bbatsov,2013-02-18 08:54:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/234b80407de182c557994332a3bc2af222dc4eb1,234b80407de182c557994332a3bc2af222dc4eb1,"Merge pull request #144 from wteuber/patch-1
+
+Update ""Use flat_map instead of map + flatten"""
+bbatsov,2013-01-30 19:53:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b68eded6b868766ccfc4fa2473a801c561d271bb,b68eded6b868766ccfc4fa2473a801c561d271bb,"Merge pull request #140 from Droogans/patch-1
+
+Extra tick in 'Perl-style special variables' line."
+Droogans,2013-01-30 19:41:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/75f30ddf81b5240df14056d80cf4953d9809bf45,75f30ddf81b5240df14056d80cf4953d9809bf45,Extra tick in 'Perl-style special variables' line.
+bbatsov,2012-12-20 11:01:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/df49df150e61cd2f1e1658fa41c321295f892256,df49df150e61cd2f1e1658fa41c321295f892256,"Merge pull request #131 from ruafozy/improve-1
+
+Improve English idiom. Also fix a few errors."
+bbatsov,2012-12-08 18:05:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2cde0f9879eae71157eef6e0453ef8431ebf8197,2cde0f9879eae71157eef6e0453ef8431ebf8197,"Merge pull request #130 from SirLenz0rlot/master
+
+minor: up to 80 characters"
+bbatsov,2012-11-20 18:52:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0448cb95efcbb8cf13db8ed58dfe786fdf42514d,0448cb95efcbb8cf13db8ed58dfe786fdf42514d,"Merge pull request #129 from SirLenz0rlot/master
+
+Issue #128 white line after public/protected/private"
+bbatsov,2012-10-18 07:00:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/33dd05613a2afbfeb945d4fe229b3f0d4bcc2c7d,33dd05613a2afbfeb945d4fe229b3f0d4bcc2c7d,"Merge pull request #123 from gregology/patch-1
+
+quick typo fix"
+gregology,2012-10-18 06:53:22,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bb46c562f3d73a0ae9f0aa79f810e1d196e35c37,bb46c562f3d73a0ae9f0aa79f810e1d196e35c37,"quick typo fix
+
+line 465 ""...themselves - it this code really readable...""
+Changed ""it"" to ""is""."
+bbatsov,2012-10-13 15:31:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a18927614d9a436a2db94a7bedf774d6156a7fff,a18927614d9a436a2db94a7bedf774d6156a7fff,fixed a couple of fenced blocks
+bbatsov,2012-09-24 05:40:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b85b062cd54765930897098b9bfce66c04f59a79,b85b062cd54765930897098b9bfce66c04f59a79,"Merge pull request #118 from RingRevenue/mainline_suggestions
+
+Wording updates and self.status = correction"
+ColinDKelley,2012-09-24 00:25:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0c5396e636baca7079b5ca224b4f20978966e7b7,0c5396e636baca7079b5ca224b4f20978966e7b7,Corrected inverted logic
+ColinDKelley,2012-09-23 23:11:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c515b071a4ed7f2102fa676d2c2f831e7e2e3086,c515b071a4ed7f2102fa676d2c2f831e7e2e3086,Wording updates and self.status = correction
+bbatsov,2012-09-11 06:01:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bf6e943def533ba1da71391db43c347ee7e7a7f3,bf6e943def533ba1da71391db43c347ee7e7a7f3,"Merge pull request #116 from koriroys/patch-3
+
+``` visual error fixed."
+koriroys,2012-09-10 22:57:50,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/486cda181a88c5da473fbbc810e6c0fc807301de,486cda181a88c5da473fbbc810e6c0fc807301de,"``` visual error fixed.
+
+The three backticks (```) were showing. Weirdness
+with the indentation I suspect."
+bbatsov,2012-08-24 05:34:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cd1aa5c6184ddcd54c274d800de1814f9cdf9c0f,cd1aa5c6184ddcd54c274d800de1814f9cdf9c0f,"Merge pull request #113 from shime/master
+
+missed exception class in rescue block"
+bbatsov,2012-07-26 11:15:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3dc9cc12409689a07ee64dc4053ec2fa1f1fe1b2,3dc9cc12409689a07ee64dc4053ec2fa1f1fe1b2,"Merge pull request #114 from ebouchut/typo-syntax
+
+Fix typo in Syntax / Avoid self where not required"
+ebouchut,2012-07-26 11:00:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e17802c46a229e67bc443746ff22c8150c9bd020,e17802c46a229e67bc443746ff22c8150c9bd020,"Fix typo in section Syntax / Avoid self where not required
+
+Remove superfluous self"
+shime,2012-07-14 12:21:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a2f9bb2fd23eddf99bdac1f75c1bd0b86a4470de,a2f9bb2fd23eddf99bdac1f75c1bd0b86a4470de,rescue from IOError if handling IOError
+bbatsov,2012-06-12 08:59:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f1980da6a4a33586a30c64f369eb8c53c192f967,f1980da6a4a33586a30c64f369eb8c53c192f967,"Merge pull request #109 from mkenyon/master
+
+Fix typo in README.md"
+bbatsov,2012-06-12 08:59:17,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d232f281599e51e907468bc6f4c4914c26f968d8,d232f281599e51e907468bc6f4c4914c26f968d8,"Merge pull request #110 from cpatuzzo/master
+
+I'm guessing this was a typo"
+michaelabon,2012-06-05 21:01:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/be1373adb4f8e24f6d0c7d3f47cd750422a7c60a,be1373adb4f8e24f6d0c7d3f47cd750422a7c60a,"Fix typo in README.md: ""form"" -> ""from"""
+bbatsov,2012-05-20 22:59:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f3d7668bba70e7566eab1a95943eb43546feeb06,f3d7668bba70e7566eab1a95943eb43546feeb06,"Merge pull request #107 from artfuldodger/master
+
+Fixes a minor typo"
+bbatsov,2012-05-05 06:04:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8f2856577cc86aacea740b309a999dc7fc83df4c,8f2856577cc86aacea740b309a999dc7fc83df4c,"Merge pull request #104 from marcandre/avoid_self
+
+Avoid self"
+bbatsov,2012-05-05 06:04:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/72aa158bf27ee1a84dff530a9844b5f928036b34,72aa158bf27ee1a84dff530a9844b5f928036b34,"Merge pull request #106 from marcandre/method_missing
+
+It's best to define respond_to_missing instead of respond_to?"
+marcandre,2012-05-05 01:28:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/06fdafc65aedfd496505906732acc7df79efdaee,06fdafc65aedfd496505906732acc7df79efdaee,It's best to define respond_to_missing instead of respond_to?
+marcandre,2012-05-05 01:21:39,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1389452dcfe15339ecd549be4f72c7d0f5161c13,1389452dcfe15339ecd549be4f72c7d0f5161c13,Avoid self
+bbatsov,2012-05-01 15:54:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/39eea48161b0d7714cff5e2912ec33da71c4409c,39eea48161b0d7714cff5e2912ec33da71c4409c,added table of contents
+bbatsov,2012-04-28 08:14:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0f09458bfbe2a5ef0520ef135079d58048239ee8,0f09458bfbe2a5ef0520ef135079d58048239ee8,"Merge pull request #101 from gazay/spaces_and_quotes
+
+Change quotes and remove trailing spaces in accordance with this style guide"
+gazay,2012-04-26 21:31:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9ff96e61320d89baa1f72170dc6342ae569b9ee7,9ff96e61320d89baa1f72170dc6342ae569b9ee7,Remove trailing spaces and change quotes in accordance with this styleguide
+bbatsov,2012-04-27 16:38:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0caa1c8ba12f54774ed484a61c652a91aef18550,0caa1c8ba12f54774ed484a61c652a91aef18550,"Merge pull request #102 from outright/master
+
+Fix typos, and give credit where credit is due :)"
+julio,2012-04-27 16:35:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/28f6993d26a0ee8f9fa5c8eddf2a5840b747186b,28f6993d26a0ee8f9fa5c8eddf2a5840b747186b,"Fix typos, and give credit where credit is due :)"
+bbatsov,2012-04-27 15:21:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/00edf0a28d39cefc72bf673ecee3abdf5fa61bc1,00edf0a28d39cefc72bf673ecee3abdf5fa61bc1,added a few more exception handling rules
+bbatsov,2012-04-21 09:33:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/86ceddaddeb78df0cd6e8aa9efb858e025af43de,86ceddaddeb78df0cd6e8aa9efb858e025af43de,fixed #66 - string interpolation suggestion
+bbatsov,2012-04-21 09:31:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4240682b0a80f0ec4a26e47c5d60cec6af51ade5,4240682b0a80f0ec4a26e47c5d60cec6af51ade5,added a few more exception related rules
+bbatsov,2012-04-20 09:48:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d6e592e5a7f0f069be985c0ba449b0bfae87573f,d6e592e5a7f0f069be985c0ba449b0bfae87573f,fixed #89 - favor the use of array and hash literals for their creation
+bbatsov,2012-04-20 09:41:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/919473f092cd5d6dd7f212fff433b5f80415d56c,919473f092cd5d6dd7f212fff433b5f80415d56c,added a nice quote by Russ Olsen on comments
+bbatsov,2012-04-09 09:16:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a4a39ac5241314709a59f1a0dd1ea872f7e25cb4,a4a39ac5241314709a59f1a0dd1ea872f7e25cb4,"Merge pull request #95 from marcandre/master
+
+Sorry for the typo"
+marcandre,2012-04-09 02:49:32,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ddcc807c4848ffc519da88401957eca079dca9a5,ddcc807c4848ffc519da88401957eca079dca9a5,Add missing `end`
+marcandre,2012-04-09 02:45:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/36868fe7bc68447883107b13a1ac6e7e2f06cfc3,36868fe7bc68447883107b13a1ac6e7e2f06cfc3,"Fix typo, sorry"
+bbatsov,2012-04-08 13:23:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/04b60d85d6744b0b53e29636f7f7e2e1329c9e24,04b60d85d6744b0b53e29636f7f7e2e1329c9e24,"Merge pull request #93 from marcandre/struct
+
+Struct.new"
+marcandre,2012-04-07 19:48:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3efca0f431015c2596dc22c0867dae3c59125613,3efca0f431015c2596dc22c0867dae3c59125613,Supplement guide by mentioning Struct.new
+marcandre,2012-04-07 19:42:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ce73aaaeacd5e96c4bde368986d5b59d1dc6b0fb,ce73aaaeacd5e96c4bde368986d5b59d1dc6b0fb,"Fix ambiguous language.
+Previously could read as the best comment is an outdated comment!"
+bbatsov,2012-04-06 17:45:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f9e8dd62a403def574480dda827e08bcd1c4c402,f9e8dd62a403def574480dda827e08bcd1c4c402,"Merge pull request #91 from samg/master
+
+Correct some erreoneous information about ruby execption handling."
+bbatsov,2012-03-27 09:11:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9016f23c08c70cf73b4776976349addce6b3b3d0,9016f23c08c70cf73b4776976349addce6b3b3d0,"Merge pull request #90 from knugie/patch-1
+
+fixed a typo"
+knugie,2012-03-26 16:12:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/20511623f741ef3712e6d135aef760c144345998,20511623f741ef3712e6d135aef760c144345998,Cannot divide by 0!
+bbatsov,2012-03-01 10:59:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/232e98d8afd5ffe4b6f860ae3510b5def7307232,232e98d8afd5ffe4b6f860ae3510b5def7307232,"Merge pull request #81 from vsakarov/master
+
+added regular expression section"
+bbatsov,2012-02-22 15:32:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b92db842d680e0d1721acdb6d1f268aac5c23b4a,b92db842d680e0d1721acdb6d1f268aac5c23b4a,"Merge pull request #77 from xpeppers/master
+
+fixed SOLID link to wikipedia"
+orione-team,2012-02-22 09:42:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d7fcf8b618b05cccc7c9eb1188d906c8ee9b2871,d7fcf8b618b05cccc7c9eb1188d906c8ee9b2871,fixed SOLID link
+bbatsov,2012-02-07 16:09:00,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d31f3126004068560219cef68ee444329607a8db,d31f3126004068560219cef68ee444329607a8db,a bit of cleanup
+bbatsov,2012-01-10 10:31:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/acdf848d0b737ef9a30e6cb42ee502bb14883da7,acdf848d0b737ef9a30e6cb42ee502bb14883da7,"Merge pull request #65 from amiel/master
+
+Add requirement of parens when using assignment in a conditional."
+bbatsov,2012-01-10 10:30:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e359ed53cd9890e1a353b54af05361a68f8a6bf0,e359ed53cd9890e1a353b54af05361a68f8a6bf0,"Merge pull request #67 from asifkalam/master
+
+Syntax fix in 'omit parantheses' example."
+asifkalam,2012-01-09 13:31:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/20893df63929bf75364126f9a0cb63e490491a2c,20893df63929bf75364126f9a0cb63e490491a2c,Syntax fix.
+bbatsov,2011-11-23 21:52:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/299d93745d7026fa5c9d397e3a5c2b19aa13e885,299d93745d7026fa5c9d397e3a5c2b19aa13e885,fixed a typo
+bbatsov,2011-11-23 21:46:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6b1470ceecffcb3a2faa1a3a4eb2c4b64175659b,6b1470ceecffcb3a2faa1a3a4eb2c4b64175659b,a few updates
+bbatsov,2011-10-29 07:46:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/59a8349513275f734083d4e919f773da6f3efaff,59a8349513275f734083d4e919f773da6f3efaff,removed the HTML/PDF generation code
+bbatsov,2011-10-24 09:35:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/64ce870d73d12609b42c1a123586803098d041ca,64ce870d73d12609b42c1a123586803098d041ca,"Merge pull request #61 from eremite/master
+
+Empty lines before return values?"
+bbatsov,2011-10-23 05:35:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f9e1e4653f37d0a38248729f409944a587861bbb,f9e1e4653f37d0a38248729f409944a587861bbb,fixed a typo
+bbatsov,2011-10-21 21:03:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0b313cd61ed096b0df73c3b11f25b20143fe2996,0b313cd61ed096b0df73c3b11f25b20143fe2996,fixed a typo
+bbatsov,2011-10-11 08:46:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b27eff1b2ca6ee7502bb0c53afec4f25ae154a19,b27eff1b2ca6ee7502bb0c53afec4f25ae154a19,started work on a collections section
+bbatsov,2011-10-11 06:46:31,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c30722eca3b97b5694bdb7e82a909a850307bd04,c30722eca3b97b5694bdb7e82a909a850307bd04,added a new rule and a bit of rationale for the `for` rule
+bbatsov,2011-10-11 05:53:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2f54da00284a75267257ccf117fdbc6b6e32d61f,2f54da00284a75267257ccf117fdbc6b6e32d61f,added a new rule about using parentheses around an if condition
+bbatsov,2011-10-09 10:21:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3cf3389fa7a7e93c1eafae0ca8139b6d2b02f2f1,3cf3389fa7a7e93c1eafae0ca8139b6d2b02f2f1,"Merge pull request #60 from tmaier/patch-1
+
+Avoid page break in code blocks"
+tmaier,2011-10-09 10:03:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/394cf5dee38b6ee97ba6f1ac615cfb5d0c426846,394cf5dee38b6ee97ba6f1ac615cfb5d0c426846,Avoid page break in code blocks
+bbatsov,2011-10-09 09:28:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0e5e574787b32864c1ce4c345927426360108c7e,0e5e574787b32864c1ce4c345927426360108c7e,"Merge pull request #59 from originell/patch-1
+
+Replace vim's auto-linebreak with highlighting of the 80th column."
+bbatsov,2011-10-09 09:27:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e61e9d47b00237b97ce632190d1e7e9853f506d8,e61e9d47b00237b97ce632190d1e7e9853f506d8,fixes #52
+bbatsov,2011-10-09 09:16:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/931cf16b9ad217d754c46046478595e793e6b37c,931cf16b9ad217d754c46046478595e793e6b37c,added an example
+originell,2011-10-09 08:52:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/68428b46bcf60cc24fd71b4be51e136f2c0a64eb,68428b46bcf60cc24fd71b4be51e136f2c0a64eb,"Replace vim's auto-linebreak with highlighting of the 80th column.
+
+This might be more preferable since it does not automatically break code or enforces you to line-break there. Sometimes it might be preferable to have lines longer than 80 characters, for example when quickly sketching out an idea. I guess this is more in the spirit of PEP8, where having a line length of 79 characters is just a recommendation and no enforcement.
+
+Add Syntax Highlighting to the vim/emacs code snippets."
+bbatsov,2011-10-07 21:05:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bf5a8a8d09708b9e676f92fb356421f5723c23a7,bf5a8a8d09708b9e676f92fb356421f5723c23a7,"Merge pull request #58 from philtr/quotes
+
+Convert quotes to Markdown blockquote syntax"
+bbatsov,2011-10-05 19:30:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/10695cb052cc3f8e7cc4e81f3dc499684abbeeba,10695cb052cc3f8e7cc4e81f3dc499684abbeeba,"Merge pull request #57 from mitio/fix-indentation
+
+Fix broken code block indentation"
+mitio,2011-10-05 17:20:47,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/70570a21cb5bb5dfef4790e53d50702bd39d3fdd,70570a21cb5bb5dfef4790e53d50702bd39d3fdd,Fix broken code block indentation
+bbatsov,2011-10-05 17:08:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3809e75e350b3eaa7cb75d50a33aaa3e7e080078,3809e75e350b3eaa7cb75d50a33aaa3e7e080078,"Merge pull request #55 from philtr/realworld
+
+Add preface about real-world usage vs. ideal usage"
+bbatsov,2011-10-05 17:07:38,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/bfb6acf3680503f5cdc7101715fa6de7ba16d36e,bfb6acf3680503f5cdc7101715fa6de7ba16d36e,"Merge pull request #56 from philips/master
+
+fixup whitespace issues"
+bbatsov,2011-10-03 12:17:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/be7f3c4796ce4e0735438388a73a0b50c05032d9,be7f3c4796ce4e0735438388a73a0b50c05032d9,"Merge pull request #51 from Heliosmaster/master
+
+Quotes"
+Heliosmaster,2011-10-03 11:51:54,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0356bddf1528db99c63b8b78b27dd99f8853f6d6,0356bddf1528db99c63b8b78b27dd99f8853f6d6,fixed instruction about single quotes + typo
+bbatsov,2011-10-02 08:50:16,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/64cc624d523e2674a617f667fee1c3ecd48ec19e,64cc624d523e2674a617f667fee1c3ecd48ec19e,fixed indentation
+bbatsov,2011-10-02 07:25:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1a4ebd4a534416c101763e9e716616cbbb369ef4,1a4ebd4a534416c101763e9e716616cbbb369ef4,added an instance variable interpolation rule
+bbatsov,2011-10-02 07:18:30,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3c42fef6b3f2e2718a5bc70dcfa1bfad72b47b52,3c42fef6b3f2e2718a5bc70dcfa1bfad72b47b52,enforced the single quoted strings rule across all examples in the guide
+bbatsov,2011-10-01 14:33:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/37cc4c777a1a557e2f60edc2687a851d144bb3b2,37cc4c777a1a557e2f60edc2687a851d144bb3b2,typo
+bbatsov,2011-10-01 12:56:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2da5592e53bf8c947e3679333b6d0983d37bfed6,2da5592e53bf8c947e3679333b6d0983d37bfed6,fixed indentation level
+bbatsov,2011-10-01 12:39:09,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/114152bf5f79372660350e36f9ec724e3c39f559,114152bf5f79372660350e36f9ec724e3c39f559,"Merge pull request #50 from eMxyzptlk/generation
+
+Add some rake tasks to easily generate a PDF or an HTML file of the guide"
+kalbasit,2011-10-01 11:51:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2f55c15446294c521e469370bdd1922e8ac70524,2f55c15446294c521e469370bdd1922e8ac70524,Put the command on a new line.
+kalbasit,2011-10-01 11:49:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/626ce3115acfd9d954d02ee96c086efda46d8309,626ce3115acfd9d954d02ee96c086efda46d8309,Add a note about requirements in the README.
+kalbasit,2011-10-01 01:37:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e7d7f272ab911f3308b5119c3bf3d78856687955,e7d7f272ab911f3308b5119c3bf3d78856687955,Hard wrap makes the document too long.
+kalbasit,2011-10-01 01:34:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ec1e662a70849743a4ef3ac6f05f149e1c718e8c,ec1e662a70849743a4ef3ac6f05f149e1c718e8c,Add a little note on how to generate HTML/PDF version in the README.
+kalbasit,2011-10-01 01:29:58,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4183df09e44005deaf6d8da4dbb60dbf297249eb,4183df09e44005deaf6d8da4dbb60dbf297249eb,Update bundles.
+kalbasit,2011-10-01 01:27:07,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a92eafab2ea0ab451eb71ca4a888f9915408e927,a92eafab2ea0ab451eb71ca4a888f9915408e927,Remove false assertion.
+kalbasit,2011-10-01 01:13:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1c1c00ac2614f42166057d145df49855f64f48c8,1c1c00ac2614f42166057d145df49855f64f48c8,Use ruby 1.8 lambda style.
+kalbasit,2011-10-01 01:20:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9259d76e771be8e870a81a979aac7ec065c6259c,9259d76e771be8e870a81a979aac7ec065c6259c,"HtmlGenerator is more descriptive than MarkdownGenerator, it generates HTML after all."
+kalbasit,2011-10-01 01:15:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/13f5ea45d6cb5eb12ec261122f7a2271ab8c5a69,13f5ea45d6cb5eb12ec261122f7a2271ab8c5a69,"Remove Gemlock.lock file as it has some gems only for mac, besides we have locked most versions in the Gemfile itself."
+kalbasit,2011-10-01 01:13:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/cdeaa0652b7781b35f1ecc8379d08c8ee4204e04,cdeaa0652b7781b35f1ecc8379d08c8ee4204e04,Use ruby 1.8 lambda style.
+kalbasit,2011-10-01 01:03:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b6fffe712527ca1886e73381c94c834df52a2fb6,b6fffe712527ca1886e73381c94c834df52a2fb6,"Add some rake tasks to easily generate a PDF or an HTML file of the guide.
+
+The rake tasks uses Redcarpet, Albino and PDFkit to generate a beautiful
+colorized HTML and PDF files, from the README, the logic is the same used by
+Github to parse markdown."
+bbatsov,2011-09-27 22:05:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/ec4dcd2b600b36f09560a86b3a5055e4985f92d9,ec4dcd2b600b36f09560a86b3a5055e4985f92d9,fixed a typo
+bbatsov,2011-09-27 22:04:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/b7bc05a0065462b8b74b21b23a29b3a5171752a1,b7bc05a0065462b8b74b21b23a29b3a5171752a1,"Merge pull request #45 from philtr/master
+
+'Amount' should be 'number'"
+bbatsov,2011-09-27 11:01:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/585fe17ad4591c29e436828ba56a16148df9c603,585fe17ad4591c29e436828ba56a16148df9c603,"Merge pull request #43 from meh/patch-1
+
+Better non modifying way to see if there are trailing spaces."
+meh,2011-09-27 10:19:13,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4691fd181380b3fd1a5a7cf8c3cf72a219d8488e,4691fd181380b3fd1a5a7cf8c3cf72a219d8488e,Better non modifying way to see if there are trailing spaces.
+bbatsov,2011-09-27 09:45:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/55e123ee4552c98c041d6607986f2141dcaac99d,55e123ee4552c98c041d6607986f2141dcaac99d,"Merge pull request #42 from mrtazz/patch-1
+
+add vim config option for 80 chars line length"
+mrtazz,2011-09-27 09:37:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f2dc9876b80ac549f64ce5e18cac1956e16f0cc9,f2dc9876b80ac549f64ce5e18cac1956e16f0cc9,add vim config option for 80 chars line length
+bbatsov,2011-09-26 21:48:42,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/84a7af0c9a70007669178c49fecf8ca037f71dbe,84a7af0c9a70007669178c49fecf8ca037f71dbe,"Merge pull request #41 from jmettraux/master
+
+it's --> its"
+jmettraux,2011-09-26 21:31:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/840faa50ec0b18cd6916544bae2e6d273292043c,840faa50ec0b18cd6916544bae2e6d273292043c,typo
+bbatsov,2011-09-26 20:07:33,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9b3db7c90e9e043683e00143587533695b5684d3,9b3db7c90e9e043683e00143587533695b5684d3,fixed a typo
+bbatsov,2011-09-26 19:59:28,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3ff4a43aead6288c77831db9214c1638250440f1,3ff4a43aead6288c77831db9214c1638250440f1,minor update
+bbatsov,2011-09-23 04:56:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1060e65a74335fa8301aa567daa0b787b4dc08e7,1060e65a74335fa8301aa567daa0b787b4dc08e7,various updates
+bbatsov,2011-09-23 04:47:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/6c1baad64adada87f9f37147c4ae775f70d99e97,6c1baad64adada87f9f37147c4ae775f70d99e97,added some more editor hints
+bbatsov,2011-09-22 21:23:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/eb137df63989b20d7fad2be5f07ff125050746a0,eb137df63989b20d7fad2be5f07ff125050746a0,fixed a typo
+bbatsov,2011-09-22 21:14:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/45fdf401ab286f50d27b9cdae4b38aeed741f583,45fdf401ab286f50d27b9cdae4b38aeed741f583,this indentation is driving me crazy...
+bbatsov,2011-09-22 21:11:12,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/04e436f66f91b90875738445c284c93cdf18faea,04e436f66f91b90875738445c284c93cdf18faea,minor fix
+bbatsov,2011-09-22 21:07:49,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/019af68fa0b8d5bffed1ad37ee8b4b2856339799,019af68fa0b8d5bffed1ad37ee8b4b2856339799,added a few small emacs tips
+bbatsov,2011-09-22 20:58:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/47c97ea86f249527d81d103c484811b4a363cc03,47c97ea86f249527d81d103c484811b4a363cc03,better wording
+bbatsov,2011-09-22 20:57:41,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1182c91bff9b9a0a90df4bd50e3ee84526ea87e9,1182c91bff9b9a0a90df4bd50e3ee84526ea87e9,corrected indentation level
+bbatsov,2011-09-22 20:53:26,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a08f5cc86b1d53905560f87b0576a915cc55ebec,a08f5cc86b1d53905560f87b0576a915cc55ebec,fixed a few errors
+bbatsov,2011-09-20 04:07:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3e919489e53787d67e922163bca4a31f87d04f59,3e919489e53787d67e922163bca4a31f87d04f59,"Merge pull request #38 from burke/unlesselse
+
+Added unless/else guideline"
+bbatsov,2011-09-19 19:28:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d13cd9dcf331e3f30d8a7aa16f553ae849b1d72c,d13cd9dcf331e3f30d8a7aa16f553ae849b1d72c,"Merge pull request #36 from mitio/wording-consistency
+
+Use consistently ""multi-line"", not ""multiline""."
+bbatsov,2011-09-19 19:28:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/324df32f324a4402cc2b335d332b6d79620ef5c4,324df32f324a4402cc2b335d332b6d79620ef5c4,"Merge pull request #35 from mitio/percent-literals
+
+%w etc are syntax literals, not functions."
+mitio,2011-09-19 19:14:55,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c3ba754844f8ae07544254294c463c9928e28599,c3ba754844f8ae07544254294c463c9928e28599,"Use consistently ""multi-line"", not ""multiline""."
+mitio,2011-09-19 19:12:19,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/49f38fd8fcac91a459346e669357149715d1f993,49f38fd8fcac91a459346e669357149715d1f993,"%w etc are syntax literals, not functions."
+bbatsov,2011-09-19 18:57:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a29b8428da2264a2dd0b9a9fbbe5b33f8d17e885,a29b8428da2264a2dd0b9a9fbbe5b33f8d17e885,"Merge pull request #34 from burke/percents
+
+Added section on percent functions"
+bbatsov,2011-09-19 18:12:18,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/04bcdcc24130d181555f1bccdddbd67a2bbf650d,04bcdcc24130d181555f1bccdddbd67a2bbf650d,"Merge pull request #32 from burke/master
+
+Annotations"
+bbatsov,2011-09-19 18:11:24,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/2c1dd345835ba65bbc0e05bd302609ded505ab9b,2c1dd345835ba65bbc0e05bd302609ded505ab9b,"Merge pull request #33 from burke/access-modifiers
+
+Added an opinion on indentation of access modifiers"
+bbatsov,2011-09-18 20:56:20,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/875fbe260ad33ee65d65bdfd47ffdf0e5ca0bf25,875fbe260ad33ee65d65bdfd47ffdf0e5ca0bf25,"the Perl-style variables are of course special, not global"
+bbatsov,2011-09-18 20:47:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c7f661268621541a2615a4a2be6f49d7ace49bc4,c7f661268621541a2615a4a2be6f49d7ace49bc4,fixed a typo
+bbatsov,2011-09-18 20:45:27,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/51b5d465b80734870a455524aac208c568f4f858,51b5d465b80734870a455524aac208c568f4f858,"Merge pull request #25 from mitio/master
+
+Minor fixes and an additional way for defining singleton methods"
+bbatsov,2011-09-18 20:44:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0fb63873979432f0695db036c9062dcdc2c92c2b,0fb63873979432f0695db036c9062dcdc2c92c2b,"Merge pull request #26 from mkorfmann/master
+
+Favor ternary operators"
+mitio,2011-09-18 20:08:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a95ffa3a19d2f938909ad47eff45f890a81beaad,a95ffa3a19d2f938909ad47eff45f890a81beaad,Merge branch 'master' of git://github.com/bbatsov/ruby-style-guide
+bbatsov,2011-09-18 19:33:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/a0a2be7bb3c379eb8a01af65fbd1868aac291b2c,a0a2be7bb3c379eb8a01af65fbd1868aac291b2c,"Merge pull request #27 from mitio/strings
+
+Strings section"
+mitio,2011-09-18 19:13:36,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/35079281130636ad43f1154bc871bfb5632f3d1b,35079281130636ad43f1154bc871bfb5632f3d1b,Prefer String#<< instead of String#+
+mitio,2011-09-18 19:09:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8a4ab51399142a09be72cdeb1027efbd9c78ae08,8a4ab51399142a09be72cdeb1027efbd9c78ae08,Add string section with interpolation hints.
+ezii123,2011-09-18 15:52:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d78137c67e2a01e74e8c9e4eed42aa194501be58,d78137c67e2a01e74e8c9e4eed42aa194501be58,typos
+ezii123,2011-09-18 15:33:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/240560803a14af04e955933445b788e3fe6b4e76,240560803a14af04e955933445b788e3fe6b4e76,add example to ternary operator rule
+ezii123,2011-09-18 15:30:03,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5830b65b6d953ad5cabf161f7246237373928268,5830b65b6d953ad5cabf161f7246237373928268,favor ternary operator over if/then/else/end
+mitio,2011-09-17 21:12:06,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/eb80893a17f374f5965be494d92b893d26df10f1,eb80893a17f374f5965be494d92b893d26df10f1,Add a third option for defining class methods.
+mitio,2011-09-17 21:07:01,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/8a50545ecf8975ee294f86a2976d5c523205233e,8a50545ecf8975ee294f86a2976d5c523205233e,"Remove trailing whitespace, fix punctuation and minor mistakes."
+bbatsov,2011-09-16 21:21:04,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/be08fb13d2838db33362966d7ee9ee8a3c7859fa,be08fb13d2838db33362966d7ee9ee8a3c7859fa,fixed a bunch of typos
+bbatsov,2011-09-16 21:13:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0f01b152e35575fc8bd9c1c181792e5933f89db3,0f01b152e35575fc8bd9c1c181792e5933f89db3,added a few more rules from TRPL book
+bbatsov,2011-09-16 19:46:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/25be93e8b047e0b90335c6c189d05b8a4cd99c76,25be93e8b047e0b90335c6c189d05b8a4cd99c76,fixed issue #15
+bbatsov,2011-09-16 18:58:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/409bdbd3de9bde450679ec33123ae776ca4dc37d,409bdbd3de9bde450679ec33123ae776ca4dc37d,clearer wording of the newly added advice
+bbatsov,2011-09-16 18:56:21,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/db7bdec5218876e8e4be7146e6039b59ce5e3fc9,db7bdec5218876e8e4be7146e6039b59ce5e3fc9,"Merge pull request #24 from geoffyoungs/patch-1
+
+Added use class/module singleton methods in preference to global variable"
+geoffyoungs,2011-09-16 15:36:14,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1d48b95776c259aec37bb90051e764fdca6e1453,1d48b95776c259aec37bb90051e764fdca6e1453,Added use class/module singleton methods in preference to global variables.
+bbatsov,2011-09-16 13:57:52,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fec94523a2c4eb9f949664e21ef4fef9bb9166c9,fec94523a2c4eb9f949664e21ef4fef9bb9166c9,"Merge pull request #22 from stevenharman/patch-1
+
+In the digital age, we use one space after periods."
+stevenharman,2011-09-16 13:09:40,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f659b2110e686dbe8bbe40d2aff19accfb642999,f659b2110e686dbe8bbe40d2aff19accfb642999,"In the digital age, we use one space after periods. Period."
+bbatsov,2011-09-16 08:02:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/f994799ff52c14e193da8140214427cceb0e2a73,f994799ff52c14e193da8140214427cceb0e2a73,"Merge pull request #20 from restorer/master
+
+Fix examples for ""case"""
+restorer,2011-09-16 07:49:44,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/00032bf4714c833bc36dad465c008263b741699d,00032bf4714c833bc36dad465c008263b741699d,"Fix examples for ""case"""
+bbatsov,2011-09-16 05:34:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/527224ca5fd7adc91c5a5e0279bcad8abcae10f0,527224ca5fd7adc91c5a5e0279bcad8abcae10f0,"Merge pull request #13 from eregon/patch-1
+
+Adapt enumerable methods preference between find_all and select"
+bbatsov,2011-09-16 05:24:05,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1e60da923e24837de0f25ac58755b2acaa7abe34,1e60da923e24837de0f25ac58755b2acaa7abe34,"Merge pull request #18 from excepttheweasel/patch-1
+
+Recommend against rescuing Exception"
+bbatsov,2011-09-16 05:23:02,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3e09547fcaac113cd6ed94b6c0b10646e5e4978f,3e09547fcaac113cd6ed94b6c0b10646e5e4978f,"Merge pull request #19 from lyleunderwood/patch-1
+
+fixed a grammar issue"
+lyleunderwood,2011-09-16 05:12:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d8519e59abafd56d313c43afdc2660d7ff5be217,d8519e59abafd56d313c43afdc2660d7ff5be217,fixed a grammar issue
+bbatsov,2011-09-15 23:18:08,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/e3ddc202296d9613f18eee460d6c337bf20e0f4f,e3ddc202296d9613f18eee460d6c337bf20e0f4f,"Merge pull request #14 from Gonzih/master
+
+fixed a typo"
+Gonzih,2011-09-15 19:41:46,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/1f379fc7be81ef5a910488392f7d5cfc8f511b58,1f379fc7be81ef5a910488392f7d5cfc8f511b58,fix typo
+eregon,2011-09-15 17:22:59,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/981f67e2aec200c3068191365932fe8ec42c1502,981f67e2aec200c3068191365932fe8ec42c1502,Adapt enumerable methods preference between find_all and select
+bbatsov,2011-09-14 19:05:34,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c7d87682e0c53132d62edab18d66bbed25b1df00,c7d87682e0c53132d62edab18d66bbed25b1df00,started sections on classes and exceptions
+bbatsov,2011-09-14 14:44:48,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/7a2203e46f0ee00d7eb5d4dd837c5ff6b8dff8dd,7a2203e46f0ee00d7eb5d4dd837c5ff6b8dff8dd,"Merge pull request #6 from echoback/master
+
+Edited formatting and grammar for consistency."
+wersimmon,2011-09-14 14:33:35,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/5de71f67458ce734bfdf05214dea59c29ff8ded8,5de71f67458ce734bfdf05214dea59c29ff8ded8,Combined Steve McConell quote with its parent bullet
+wersimmon,2011-09-14 14:30:57,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/3e6b3262997a6102514ac4047def137888d7dc61,3e6b3262997a6102514ac4047def137888d7dc61,Merge branch 'master' of github.com:echoback/ruby-style-guide
+wersimmon,2011-09-14 14:28:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/861cf3b9d48b5a9bcd55de9ee3aad4d1a6478e4d,861cf3b9d48b5a9bcd55de9ee3aad4d1a6478e4d,Made argument naming convention consistent.
+wersimmon,2011-09-14 14:28:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/dbc387b2df2e6a42b8f5dd1c5e9bde15e5fc3446,dbc387b2df2e6a42b8f5dd1c5e9bde15e5fc3446,Made argument naming convention consistent.
+wersimmon,2011-09-14 14:20:53,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9872e4e3c8fb47b807a4c596676e595b09ddbc5d,9872e4e3c8fb47b807a4c596676e595b09ddbc5d,Moved Emacs stuff to parentheses.
+wersimmon,2011-09-14 14:14:29,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/03cbfba6c2e6072848052aa1581b2bad2e12fe24,03cbfba6c2e6072848052aa1581b2bad2e12fe24,Edited for grammar and formatting.
+wersimmon,2011-09-14 13:52:56,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/9f8ab7b894f1de6ff573250287f4d58a4467aae1,9f8ab7b894f1de6ff573250287f4d58a4467aae1,Reset lines to 80 characters
+bbatsov,2011-09-14 05:11:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/86a4f2df9fee6d006e0fdf582764397ca3cd1720,86a4f2df9fee6d006e0fdf582764397ca3cd1720,"Merge pull request #5 from echoback/master
+
+Quick tense fix"
+wersimmon,2011-09-14 04:02:43,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/4999e13ea67fd98847c75efd6c73c12b7e8bba49,4999e13ea67fd98847c75efd6c73c12b7e8bba49,Grammatical fix on line 28.
+bbatsov,2011-09-13 14:53:25,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/fd3ffee2041fcf24d086b4f8f7f142e40a9a15df,fd3ffee2041fcf24d086b4f8f7f142e40a9a15df,"Merge pull request #4 from dquimper/master
+
+Just a quick fix for a link"
+dquimper,2011-09-13 14:22:11,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/d6aace18be975e59523fbd50674204637d0cd551,d6aace18be975e59523fbd50674204637d0cd551,Fixing link
+bbatsov,2011-09-12 21:48:51,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/343699ee3c6b6198b13ea418d082a9ed189087e4,343699ee3c6b6198b13ea418d082a9ed189087e4,Edited README.md via GitHub
+bbatsov,2011-09-12 21:46:23,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/c19d47017aacd04c0d89082140c7157767e797c2,c19d47017aacd04c0d89082140c7157767e797c2,"Merge pull request #1 from abernardes/master
+
+Minor styling issues"
+abernardes,2011-09-12 15:51:10,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/0eae632d300942cba5fe845e8e5cb8930664182d,0eae632d300942cba5fe845e8e5cb8930664182d,Minor styling issues
+abernardes,2011-09-12 15:47:15,https://api.github.com/repos/rubocop-hq/ruby-style-guide/git/commits/da7a844613418d0171a8576178f36d4bc04e5f47,da7a844613418d0171a8576178f36d4bc04e5f47,Minor formatting issue

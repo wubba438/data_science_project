@@ -1,0 +1,158 @@
+seesaw,Seesaw v2 is a Linux Virtual Server (LVS) based load balancing platform.
+username,timestamp,url,sha,message
+liuyuan10,2019-09-06 17:28:26,https://api.github.com/repos/google/seesaw/git/commits/25e3f0c09b3c2da986429be1e6fc19ea0283d607,25e3f0c09b3c2da986429be1e6fc19ea0283d607,"Merge pull request #54 from liuyuan10/arp
+
+Set arp_announce and arp_ignore"
+liuyuan10,2019-07-25 17:54:33,https://api.github.com/repos/google/seesaw/git/commits/c096baa75a0ab7c66171fb37e85f9459ed8111fb,c096baa75a0ab7c66171fb37e85f9459ed8111fb,"Merge pull request #52 from liuyuan10/gomod
+
+Add Go Modules support"
+liuyuan10,2019-07-25 00:22:52,https://api.github.com/repos/google/seesaw/git/commits/4ef843cb016044a16ee75ab9f202404015e64952,4ef843cb016044a16ee75ab9f202404015e64952,"Merge pull request #51 from liuyuan10/fixtest
+
+Fix go test in go 1.12"
+liuyuan10,2019-07-25 00:14:29,https://api.github.com/repos/google/seesaw/git/commits/65012be3dee9f88b74a0f1fddc5e8bb7e2ee022f,65012be3dee9f88b74a0f1fddc5e8bb7e2ee022f,"Merge pull request #44 from thanks173/master
+
+Make `make test` pass with Go 1.11"
+DrJosh9000,2019-07-10 02:22:34,https://api.github.com/repos/google/seesaw/git/commits/219b1a55dd6b7edae296947d50ad1d5008620456,219b1a55dd6b7edae296947d50ad1d5008620456,"Merge pull request #50 from liuyuan10/arpflux
+
+Fix Arpflux issue with source-based routing as needed."
+thanks173,2018-11-30 08:30:06,https://api.github.com/repos/google/seesaw/git/commits/bcc8041edcf9c6c3406b1936921f2dace726e932,bcc8041edcf9c6c3406b1936921f2dace726e932,healthcheck: fix HTTPChecker request url
+thanks173,2018-11-30 08:16:24,https://api.github.com/repos/google/seesaw/git/commits/6c08a068fd197679a11cfc7106754a9520e90f47,6c08a068fd197679a11cfc7106754a9520e90f47,engine: fix Errorf verbs in test
+thanks173,2018-11-30 08:13:36,https://api.github.com/repos/google/seesaw/git/commits/92b96ebc0ba62055de464ae99e6f53a6d0ffb4c8,92b96ebc0ba62055de464ae99e6f53a6d0ffb4c8,healthcheck: fix Sprintf fmt verbs in dns
+unicell,2017-11-08 02:55:00,https://api.github.com/repos/google/seesaw/git/commits/34716af0775ecb1fad239a726390d63d6b0742dd,34716af0775ecb1fad239a726390d63d6b0742dd,"Actually retry when RPC send failure happens (#37) (#38)
+
+This change is to fix the bug that health state update through RPC only
+called once in ""for"" loop init statement, which renders retry logic
+usedless."
+dmolik,2017-03-07 00:30:40,https://api.github.com/repos/google/seesaw/git/commits/940deba5320bb499540de83cf036002ab75ae7fe,940deba5320bb499540de83cf036002ab75ae7fe,use wrapper function in netlink messages (#31)
+baptr,2017-03-01 02:34:56,https://api.github.com/repos/google/seesaw/git/commits/c44bc0fb98c592f39104a3e39e4b622cf545291b,c44bc0fb98c592f39104a3e39e4b622cf545291b,"Make the ARP messages reflect the Ethernet type. (#30)
+
+As defined at http://www.iana.org/assignments/arp-parameters/arp-parameters.xhtml#arp-parameters-2"
+baptr,2017-03-01 02:33:39,https://api.github.com/repos/google/seesaw/git/commits/d5e4fc2ba6851b9965bf26bff083385f4819a4a8,d5e4fc2ba6851b9965bf26bff083385f4819a4a8,"Avoiding offending the cgo runtime pointer check. (#29)
+
+We need to let libnl hold our callback identifier (just a numeric map key),
+passed as a C void*. cgo expects C void* params's to get Go unsafe.Pointer
+args, but does a runtime check to see if the value points at another Go
+pointer.
+
+By adding a C-side wrapper with a pure numeric signature, we no longer have to
+use unsafe.Pointer Go side, so we avoid the runtime check."
+4a6f656c,2016-06-02 05:38:19,https://api.github.com/repos/google/seesaw/git/commits/f11734aa58f0f45d1715844228955a05cdc06f67,f11734aa58f0f45d1715844228955a05cdc06f67,"seesaw/pb: check in the generated protobuf code. (#21)
+
+This lowers the barrier to entry by removing the need for the
+protobuf compiler and Go protobuf generator to be available for
+basic compilation. The proto changes infrequently and can be
+the protobuf code can be regenerated and checked in when it does."
+kunitake,2016-05-24 05:20:20,https://api.github.com/repos/google/seesaw/git/commits/f86b37bd400f2398d89e9f6bd42ea313e1021699,f86b37bd400f2398d89e9f6bd42ea313e1021699,fixed: take 1-255 as valid VRID. (#20)
+kunitake,2016-05-12 05:36:07,https://api.github.com/repos/google/seesaw/git/commits/5f27a7e5f9fb021d8acc4f24726dc02f77d490c1,5f27a7e5f9fb021d8acc4f24726dc02f77d490c1,"Fix config_servers in sample configuration (#17)
+
+They're parsed as hostnames, not URLs."
+kunitake,2016-05-12 05:34:26,https://api.github.com/repos/google/seesaw/git/commits/c66df03de16229b177a121f1e635543ce859298f,c66df03de16229b177a121f1e635543ce859298f,Added systemd service file. (#18)
+michaelharo,2016-05-11 03:07:46,https://api.github.com/repos/google/seesaw/git/commits/304db7ddf75fb042bddbf618a39925ac006e88eb,304db7ddf75fb042bddbf618a39925ac006e88eb,"Make the ARP messages reflect the Ethernet type. (#14)
+
+As defined at http://www.iana.org/assignments/arp-parameters/arp-parameters.xhtml#arp-parameters-2"
+4a6f656c,2016-05-11 03:06:46,https://api.github.com/repos/google/seesaw/git/commits/fb3bbe96c7d489bd8714db35826cae8b534797fe,fb3bbe96c7d489bd8714db35826cae8b534797fe,seesaw/engine/config: remove google.com domain restriction for configuration servers (#16)
+baptr,2016-05-10 01:47:49,https://api.github.com/repos/google/seesaw/git/commits/f636416cc857c0ea155c1e4dde1551ce19799786,f636416cc857c0ea155c1e4dde1551ce19799786,"Merge pull request #15 from baptr/stats
+
+Preserve service and destination stats when re-initializing a vserver."
+baptr,2016-05-10 01:24:47,https://api.github.com/repos/google/seesaw/git/commits/69c6cde40e9b33a941833a8bdf79847f9a44df86,69c6cde40e9b33a941833a8bdf79847f9a44df86,"Merge pull request #13 from brandt/fix_arp_target_ip
+
+Fix target IP address in serialized ARP message"
+brandt,2016-05-07 01:33:58,https://api.github.com/repos/google/seesaw/git/commits/f4f589a2af2a9668621d6ee049613956c31e3a67,f4f589a2af2a9668621d6ee049613956c31e3a67,"Fix target IP address in serialized ARP message
+
+When an ARP message is serialized to bytes the target MAC address (`FF:FF:FF:FF:FF`) is used in place of the target IP address.
+
+This fixes it so that the correct struct member is used for the target IP address."
+baptr,2016-05-06 08:28:42,https://api.github.com/repos/google/seesaw/git/commits/e7fb0e7808ba371555b44c691a956cc3c6d0ef94,e7fb0e7808ba371555b44c691a956cc3c6d0ef94,"Preserve service and destination stats when re-initializing a vserver.
+
+This happens during vserver drains/undrains, causing the state
+transitions to be lost."
+baptr,2016-05-06 08:04:11,https://api.github.com/repos/google/seesaw/git/commits/43a9463d59d76edfd1f1bac2f9f39a5e4c5fe9d6,43a9463d59d76edfd1f1bac2f9f39a5e4c5fe9d6,"Merge pull request #12 from baptr/tracking
+
+Improve engine tracking of configured VIP addresses."
+baptr,2016-05-06 07:51:39,https://api.github.com/repos/google/seesaw/git/commits/de11b289563a899e41998dd1b98dba14e7a82917,de11b289563a899e41998dd1b98dba14e7a82917,"Improve engine tracking of configured VIP addresses.
+
+Otherwise the engine can leave configured (and try to act upon) no
+longer used VIP addresses.
+
+- When receiving a vserver config update, check that the previously
+  configured unicast VIP addresses are still needed, and remove them if
+  not.
+- Better document relevant vserver fields.
+- Ensure vips and lbVservers maps are in-sync with the interface by
+  pruning as necessary.
+- Implement a stub lb interface for testing that allows introspection of
+  live configuration.
+- Use it to validate state during a re-ip transition.
+- Other minor test style cleanup."
+baptr,2016-04-14 21:04:25,https://api.github.com/repos/google/seesaw/git/commits/7c1493aca203cb75764d150b53a23592bab836d5,7c1493aca203cb75764d150b53a23592bab836d5,"Merge pull request #9 from brianredbeard/getting-started
+
+doc: Adding stub getting started guide"
+brianredbeard,2016-04-14 06:37:01,https://api.github.com/repos/google/seesaw/git/commits/78844a7efb0ea4b239d992dc630eb26fd4074460,78844a7efb0ea4b239d992dc630eb26fd4074460,"doc: More detail on kernel modules
+
+@baptr rightfully pointed out that the docs weren't in line with
+the traditionally used init mechanisms as specified by the project.
+
+More generic instructions were added for the use of modprobe and
+its configuration files in addition to those of systemd."
+brianredbeard,2016-04-12 06:38:55,https://api.github.com/repos/google/seesaw/git/commits/75179b7d1bf306eff2782a75b21e0c7d7e74a177,75179b7d1bf306eff2782a75b21e0c7d7e74a177,"doc: Adding stub getting started guide
+
+The docs mention little about how to get started with Seesaw. This
+begins the process of documenting what it takes to get the software
+running as well as the problems it solves and (some) of the ones it
+doesn't."
+baptr,2016-02-10 07:30:59,https://api.github.com/repos/google/seesaw/git/commits/7c96eb57a9be07eaa9933aee1e312437a8193f1d,7c96eb57a9be07eaa9933aee1e312437a8193f1d,"Merge pull request #8 from baptr/readme_version
+
+Mention necessary go version in README."
+baptr,2016-02-10 07:24:08,https://api.github.com/repos/google/seesaw/git/commits/8045d39c3deb6a1f8988e8c4bf6052d434afce39,8045d39c3deb6a1f8988e8c4bf6052d434afce39,"Mention necessary go version in README.
+
+Based on https://github.com/google/seesaw/pull/7"
+baptr,2016-02-10 06:34:12,https://api.github.com/repos/google/seesaw/git/commits/57f1ee5d090ed80c8cbbafe2c11eb54a266fc349,57f1ee5d090ed80c8cbbafe2c11eb54a266fc349,"Merge pull request #4 from mmattioli/readme-improvements
+
+README improvements"
+mmattioli,2016-01-31 01:37:35,https://api.github.com/repos/google/seesaw/git/commits/854d08f3dd258a5dcd7da010a7d874e2ac5d473c,854d08f3dd258a5dcd7da010a7d874e2ac5d473c,"README improvements
+
+Added Godoc badge/link for easy access to the documentation
+
+Minor grammatical improvement
+
+Fixed broken markdown link to libnl"
+4a6f656c,2016-01-11 04:48:05,https://api.github.com/repos/google/seesaw/git/commits/62186f63b49f7e8b832665b29414284891642476,62186f63b49f7e8b832665b29414284891642476,"Merge pull request #1 from baptr/readme
+
+Fixup README so it renders as markdown."
+4a6f656c,2016-01-11 04:45:39,https://api.github.com/repos/google/seesaw/git/commits/540b1c40732feabe04eb563d03b1c8d51815a9de,540b1c40732feabe04eb563d03b1c8d51815a9de,"Merge pull request #3 from baptr/vserver_snapshot
+
+Protect against removed vserver snapshots still appearing."
+4a6f656c,2016-01-11 04:45:08,https://api.github.com/repos/google/seesaw/git/commits/eef7ddb9fb0a056ab35c5d5ce0163bb78462a9dd,eef7ddb9fb0a056ab35c5d5ce0163bb78462a9dd,"Merge pull request #2 from baptr/vty_test_flake
+
+Fix vty_test race that made it flaky."
+baptr,2015-12-30 06:42:16,https://api.github.com/repos/google/seesaw/git/commits/7cea7d23915f681db1f42ae45577a294a1c9b1d1,7cea7d23915f681db1f42ae45577a294a1c9b1d1,"Protect against removed vserver snapshots still appearing.
+
+A pending snapshot in the engine's vserverChan could race against
+removing the vserver after stop(), and end up re-adding the obsolete
+snapsot. Check for this case, log it, and throw away the snapshot.
+
+Add some additional logging to note why a vserver is being shutdown."
+baptr,2015-12-30 06:29:42,https://api.github.com/repos/google/seesaw/git/commits/008dce7f8c3b4a737d7935569ca455b447693c45,008dce7f8c3b4a737d7935569ca455b447693c45,"Fix vty_test race that made it flaky.
+
+By making the server socket blocking and improving the read loop, this
+avoids a race where read() would get an EAGAIN and abort before any data
+was sent.
+
+Add some more error handling and minor style tweaks while I'm here.
+
+Previously:
+$ go test ./quagga -run=TestVTYWrite -count=10 -parallel=1
+--- FAIL: TestVTYWrite (0.00s)
+        vty_test.go:186: Server received []byte{}, want []byte{0x74,
+0x68, 0x69, 0x73, 0x20, 0x69, 0x73, 0x20, 0x61, 0x20, 0x74, 0x65, 0x73,
+0x74, 0x0}
+FAIL
+FAIL    github.com/google/seesaw/quagga 0.011s"
+baptr,2015-12-30 05:39:46,https://api.github.com/repos/google/seesaw/git/commits/582bc0e0f98c6e96d2a737910ed97dd30c848f79,582bc0e0f98c6e96d2a737910ed97dd30c848f79,"Fixup README so it renders as markdown.
+
+- Rename to README.md.
+- Use #-style headers.
+- Fix lists and codeblocks.
+- Backtick paths and commands.
+- Link to examples files.
+- Link to godoc for package dependencies."

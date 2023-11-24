@@ -1,0 +1,231 @@
+Heartbleed,A checker (site and tool) for CVE-2014-0160
+username,timestamp,url,sha,message
+FiloSottile,2015-04-08 03:06:56,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/4a3332ca1dc07aedf24b8540857792f72624cdf7,4a3332ca1dc07aedf24b8540857792f72624cdf7,server: fix leak by adding http.Server.ReadTimeout
+FiloSottile,2015-04-08 01:57:11,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6bcb43ca78f208d0f9ed55f715816002cfafe12b,6bcb43ca78f208d0f9ed55f715816002cfafe12b,deploy: turn the server in a decent box
+FiloSottile,2015-04-08 01:37:53,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/07938726342efe6b7b7775522589352a821a064e,07938726342efe6b7b7775522589352a821a064e,server: fix TLS options mixup
+FiloSottile,2015-04-07 22:50:33,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/51f0332c966c12e52287771f7784530084546d14,51f0332c966c12e52287771f7784530084546d14,"do a general refresh, now that I actually know some Go"
+FiloSottile,2015-04-07 22:47:16,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6f983b09c5d3381348400a845e62f289b85fc5b6,6f983b09c5d3381348400a845e62f289b85fc5b6,added the crypto/tls patch file
+FiloSottile,2015-04-07 21:15:30,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e5e1df14fd9039a5a335a7cd1f3f9682f0f69013,e5e1df14fd9039a5a335a7cd1f3f9682f0f69013,reorder the server folder
+FiloSottile,2015-03-10 05:20:19,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/8867610645b8362e658f92fc4d9712b33fa3d9fa,8867610645b8362e658f92fc4d9712b33fa3d9fa,vendor the server binary libraries
+FiloSottile,2014-11-22 12:23:26,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/5e3ada96f0526af3b5ef29d57a233af9b3025533,5e3ada96f0526af3b5ef29d57a233af9b3025533,Add TLS support to server
+FiloSottile,2014-11-19 23:33:38,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d61960adcde26099cb52cd915d9d23f5fb594ab5,d61960adcde26099cb52cd915d9d23f5fb594ab5,Change directory structure
+FiloSottile,2014-10-31 13:49:00,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/80e5760d42215ecd55a74103ea2823e821fe7b10,80e5760d42215ecd55a74103ea2823e821fe7b10,Make the cache last 6h
+FiloSottile,2014-10-31 13:43:31,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/47072318dc323e079aaa6b100ffbb41bfcddac6f,47072318dc323e079aaa6b100ffbb41bfcddac6f,Randomize expiration time
+FiloSottile,2014-04-30 11:21:50,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/3b8f8a8e4e45523d53bafc3c9c91717b9e50fad7,3b8f8a8e4e45523d53bafc3c9c91717b9e50fad7,"Merge pull request #81 from rtshanks/fix-compilation-error
+
+Fix compilation error on OSX 10.9.2 running basic cmdline tools (closes #82)"
+rtshanks,2014-04-28 18:21:14,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/9a3b432148b86cb63ea2163cfb38fe2de5cdc4fa,9a3b432148b86cb63ea2163cfb38fe2de5cdc4fa,"Fix compilation error on OSX 10.9.2 running basic cmdline tools
+
+go version go1.2.1 darwin/amd64
+
+Robs-MacBook-Air:~ rtshanks$ go get github.com/FiloSottile/Heartbleed
+src/go/src/github.com/FiloSottile/Heartbleed/bleed.go:59: syntax error:
+unexpected semicolon or newline before else
+src/go/src/github.com/FiloSottile/Heartbleed/bleed.go:63: syntax error:
+unexpected else, expecting semicolon or newline
+src/go/src/github.com/FiloSottile/Heartbleed/bleed.go:65:
+non-declaration statement outside function body
+src/go/src/github.com/FiloSottile/Heartbleed/bleed.go:66:
+non-declaration statement outside function body
+src/go/src/github.com/FiloSottile/Heartbleed/bleed.go:67: syntax error:
+unexpected }"
+FiloSottile,2014-04-28 16:30:30,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/038b2450b37f3751dd1e71b409ba4d21da6e4bcc,038b2450b37f3751dd1e71b409ba4d21da6e4bcc,"Merge pull request #80 from richierichrawr/master
+
+Nested conditionals"
+FiloSottile,2014-04-28 15:17:14,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/7de339f47f8dd99c806147d4ed18e5096b2c89b5,7de339f47f8dd99c806147d4ed18e5096b2c89b5,"Invalidate cache after ""expiry"", not every ""expiry""
+
+This took me quite some time to figure out. It was implemented by the
+Mozilla guys, so I had no idea it worked this way.
+
+I was seeing Latency spikes every hour, and they seemed right, a lot of
+popular sites that need recaching, I was thinking.
+
+Then I discovered a bug, I was writing to the cache every time. Fixed.
+But wait, then why were there spikes at all?
+
+Eventually I noticed that they are not merely every hour, but at the
+beginning of every hour!
+
+Here is the gotcha: they were using Truncate, invalidating all the
+entries at the start of the period, so a entry from 11:59 will be
+invalid at 12:00.
+
+Changed."
+FiloSottile,2014-04-28 14:49:32,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/abdd8d2d7c3f6e153f5f094eebd1728b9018f939,abdd8d2d7c3f6e153f5f094eebd1728b9018f939,"Correct cache setting behavior, man was I sleep-deprivated"
+FiloSottile,2014-04-27 20:25:44,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/3ef52945e2f10ffcc285e17e96ef4d8a9a86f413,3ef52945e2f10ffcc285e17e96ef4d8a9a86f413,Add cert skipping to the cache key and raise caching to 1h
+FiloSottile,2014-04-27 16:59:13,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/eb4b2646e63a89259a0465a9f608737fe820a26e,eb4b2646e63a89259a0465a9f608737fe820a26e,Update Ansible Playbooks
+FiloSottile,2014-04-27 16:58:35,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/18abff58e296286178091b1d4a4ca3d5ff44faf0,18abff58e296286178091b1d4a4ca3d5ff44faf0,Include the service in cache keys; ignore empty requests
+FiloSottile,2014-04-27 13:52:36,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e70fc79708c0afeb0f399ce9059befa286e9ab69,e70fc79708c0afeb0f399ce9059befa286e9ab69,Add support for caching error messages and memory dumps
+FiloSottile,2014-04-27 13:52:20,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/bb373fac87140052a519169de87443df75e360b2,bb373fac87140052a519169de87443df75e360b2,Correct the Ansible script
+FiloSottile,2014-04-27 12:42:11,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/fa8892f19f489c3d7c45a3de886b607ded8d0057,fa8892f19f489c3d7c45a3de886b607ded8d0057,Update deploy scripts
+FiloSottile,2014-04-27 12:25:57,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e5291d755d9bc9febee2f88d85f3d8f11a288fae,e5291d755d9bc9febee2f88d85f3d8f11a288fae,remove goxc config file
+FiloSottile,2014-04-27 12:07:31,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/9d25020364a60b8557dc65c89bec9263fe14d38d,9d25020364a60b8557dc65c89bec9263fe14d38d,Merge bleed_serve_moz.go and bleed_serve.go
+FiloSottile,2014-04-27 11:27:42,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/1a17686bb6498316c023e52c08375e8bb4425f1c,1a17686bb6498316c023e52c08375e8bb4425f1c,"Fix, refactor and adapt bleed_serve_moz. Switch config to docopt."
+FiloSottile,2014-04-27 10:47:37,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/3d0e1394b196dfda499805901b37ba0dfee58eaa,3d0e1394b196dfda499805901b37ba0dfee58eaa,Refactor the cache module
+FiloSottile,2014-04-27 09:55:37,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/c8ec2a11fe9c22b487c6df78078687599e1ea248,c8ec2a11fe9c22b487c6df78078687599e1ea248,Rewrite the README a bit
+FiloSottile,2014-04-27 09:50:18,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/094c51100e7f07360e125730c5ec682315ea09ab,094c51100e7f07360e125730c5ec682315ea09ab,changed the repository layout
+FiloSottile,2014-04-27 09:29:41,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/105634c36081d69ffbcd295780349d3887182d9c,105634c36081d69ffbcd295780349d3887182d9c,goimports
+FiloSottile,2014-04-27 09:28:18,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/ebe59c69b8414951f57f8f6428ccb1f535e37ad6,ebe59c69b8414951f57f8f6428ccb1f535e37ad6,revert repo change
+FiloSottile,2014-04-27 09:25:23,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/0fb72f65a0d27eeb4e717ebacb3a148f2082f5ee,0fb72f65a0d27eeb4e717ebacb3a148f2082f5ee,Merge branch 'moz' of github.com:jrconlin/Heartbleed into dynamodb
+FiloSottile,2014-04-27 09:20:05,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d3b8d806d5a62d26e82df1977519f61947ff6246,d3b8d806d5a62d26e82df1977519f61947ff6246,Commit my Ansible server decommission playbook
+FiloSottile,2014-04-27 09:19:23,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/2019b5a35bf2a11cdf0e32f7f5719063a0cf38b5,2019b5a35bf2a11cdf0e32f7f5719063a0cf38b5,Add some errors statistics
+FiloSottile,2014-04-17 23:32:56,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6a7471311b1baa41e30f0e8307b4885d6c142a19,6a7471311b1baa41e30f0e8307b4885d6c142a19,"Merge pull request #73 from d1str0/master
+
+Break into separate tests for verbosity."
+jrconlin,2014-04-16 18:39:20,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6115310dc3340f480a2cf5c6f1c434c67c3fb1db,6115310dc3340f480a2cf5c6f1c434c67c3fb1db,Move cache code to own module
+jrconlin,2014-04-16 17:08:11,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/30f7b7646d870ef9e481db066df2114dea5e2c75,30f7b7646d870ef9e481db066df2114dea5e2c75,"Merge branch 'moz' of github.com:jrconlin/Heartbleed into moz
+
+Conflicts:
+	bleed_serve.go
+	godeps.txt"
+jrconlin,2014-04-16 17:05:59,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/f08baed6462ba54cd4d38cf8df2f31aee2f61b33,f08baed6462ba54cd4d38cf8df2f31aee2f61b33,"Merge branch 'master' of https://github.com/FiloSottile/Heartbleed into moz
+
+Conflicts:
+	bleed/heartbleed.go"
+jrconlin,2014-04-16 16:59:17,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/45c063f4909d9c07023fcde16f70876618b0abce,45c063f4909d9c07023fcde16f70876618b0abce,"Merge remote-tracking branch 'mozsvc/master' into moz
+
+Conflicts:
+	bleed_serve.go"
+jrconlin,2014-04-16 16:57:05,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/f7f600f8864fe525ad2e0a8405c8419621a898ce,f7f600f8864fe525ad2e0a8405c8419621a898ce,"Split off server to own file
+
+* merged latest origin changes"
+jrconlin,2014-04-16 04:20:38,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/3ad8fe8939cbecc5ee65154514bf995a07ab116c,3ad8fe8939cbecc5ee65154514bf995a07ab116c,formatting
+jrconlin,2014-04-16 04:18:39,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/f255536faa1b5c2390d700b21af998b1508c2479,f255536faa1b5c2390d700b21af998b1508c2479,"Merge branch 'master' of https://github.com/FiloSottile/Heartbleed
+
+Conflicts:
+	bleed/heartbleed.go
+	bleed_serve.go"
+oremj,2014-04-15 23:04:53,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/78ebbff428254414b0b5a632ddf30f69a93c1148,78ebbff428254414b0b5a632ddf30f69a93c1148,fix(bleed_serve): flag label values must be quoted
+oremj,2014-04-15 22:55:40,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/9ab08af738cbc30066e08a4ddb6f77866b9b9b16,9ab08af738cbc30066e08a4ddb6f77866b9b9b16,Adjust imports and mv mzutil out of src
+FiloSottile,2014-04-15 01:20:11,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/eecd0197fa930553a9b3720fec27acf3da64878a,eecd0197fa930553a9b3720fec27acf3da64878a,make the downtime smaller
+FiloSottile,2014-04-15 00:47:53,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/1b08bbfd2c80b0e91623aa4e14ad5f720b3bf79d,1b08bbfd2c80b0e91623aa4e14ad5f720b3bf79d,bump version to 0.2
+FiloSottile,2014-04-15 00:46:09,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/dd0643404ec100eae5da743b54ba6ff01344196a,dd0643404ec100eae5da743b54ba6ff01344196a,bleed_serve: log errors
+FiloSottile,2014-04-15 00:41:34,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/25aecf2677da8fd29e1ed32205ec8c38eccf5f16,25aecf2677da8fd29e1ed32205ec8c38eccf5f16,Merge remote-tracking branch 'origin/master'
+FiloSottile,2014-04-15 00:41:09,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/2f4206a3d66fae48b710d76f851c551b29e1a4c4,2f4206a3d66fae48b710d76f851c551b29e1a4c4,add .gitignore
+FiloSottile,2014-04-15 00:40:39,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/18b2ea00147a6ea61b7039639a582f25061abeee,18b2ea00147a6ea61b7039639a582f25061abeee,commit the small rolling stats tool I'm using
+FiloSottile,2014-04-15 00:40:07,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/fd9a18d484262c5496c2b341e1fb39bcf3054089,fd9a18d484262c5496c2b341e1fb39bcf3054089,add some basic tests
+FiloSottile,2014-04-15 00:38:53,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/fa87af7f8b07185ba50782a115c563ab532ac790,fa87af7f8b07185ba50782a115c563ab532ac790,Long overdue: make the system smarter about safe system detection
+FiloSottile,2014-04-14 20:47:10,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6807e841fdfd912e88dc2172b6d82c15ae6afefa,6807e841fdfd912e88dc2172b6d82c15ae6afefa,Raise timeouts across the board
+FiloSottile,2014-04-14 20:45:55,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e5f968b9f3ff3275bc53d91230e70ad8ae515b0b,e5f968b9f3ff3275bc53d91230e70ad8ae515b0b,Import hash modules to support new certificates
+FiloSottile,2014-04-14 20:39:35,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/ac80d904edd14ca6f0f8240add0df2e0a93600c2,ac80d904edd14ca6f0f8240add0df2e0a93600c2,"Fix the tls patch not to use a package-level callback
+
+The patch was written with a single-connection CLI tool in mind, and
+I forgot to change it while writing bleed_serve.go.
+
+This is the cause of the false-positives issue of the site.
+
+Thanks to @agl for reviewing my code and spotting this!"
+FiloSottile,2014-04-14 13:18:01,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/cce62b72d67b3ebc30bfb721497d3cbca6811004,cce62b72d67b3ebc30bfb721497d3cbca6811004,"Merge pull request #68 from yakatz/patch-1
+
+Add link to FAQ"
+yakatz,2014-04-13 14:16:43,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/90f4335647982b3cfe8eb8145d1dcb70419eb7e4,90f4335647982b3cfe8eb8145d1dcb70419eb7e4,Add link to FAQ
+jrconlin,2014-04-11 23:48:35,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/2d174ac8aef7dab85728a3fb660b9f6561515899,2d174ac8aef7dab85728a3fb660b9f6561515899,Added some config candy for ops
+FiloSottile,2014-04-11 13:17:33,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/c79a1106aa365a92cdbc735bb5d61d8490372fa8,c79a1106aa365a92cdbc735bb5d61d8490372fa8,-check-cert option
+FiloSottile,2014-04-11 13:17:25,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/406dc71608eb2b2041817385635b2c84dec41a6c,406dc71608eb2b2041817385635b2c84dec41a6c,Write down the host name in the payload
+FiloSottile,2014-04-11 12:46:22,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/12ad9509be9e7527abafb62d2c12e514ade803df,12ad9509be9e7527abafb62d2c12e514ade803df,cert checking
+FiloSottile,2014-04-11 08:15:34,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/68b2dbe2006f5713e921cc84272200412645c08b,68b2dbe2006f5713e921cc84272200412645c08b,New serve endpoint with URL support
+jrconlin,2014-04-11 03:18:55,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/f123f00be9e9c49f413bc2232e0813f6f7faae40,f123f00be9e9c49f413bc2232e0813f6f7faae40,"Modified to use AWS DynamoDB as 10 min caching layer.
+
+TODO:
+    * move config stuff to config file.
+    * backport changes to cli version
+    * Send Filippo a pizza and a few high quality beverages"
+FiloSottile,2014-04-09 13:59:43,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/5c318a36062aadef3dcff62ce3f6770fb4267f50,5c318a36062aadef3dcff62ce3f6770fb4267f50,the referrer logger server
+FiloSottile,2014-04-09 12:19:50,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/1c0f307c590a94441d8eec45317e07cce51b4163,1c0f307c590a94441d8eec45317e07cce51b4163,"Merge pull request #38 from yakatz/master
+
+Fixed documentation to explain service command"
+FiloSottile,2014-04-09 11:53:16,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/5b1d4ea9d979eba8be59df0c14a8d7a36b27549f,5b1d4ea9d979eba8be59df0c14a8d7a36b27549f,"Merge pull request #46 from kasimon/patch-1
+
+Update README.md"
+kasimon,2014-04-09 11:04:29,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/bc4175a683ec2f2078410782bfb3836c7db700d8,bc4175a683ec2f2078410782bfb3836c7db700d8,"Update README.md
+
+I've written a small Dockerfile to create a virtual machine with go 1.2 and docker preinstalled. Maybe this can be useful to those having problems getting heartbleed installed on their system."
+yakatz,2014-04-09 01:06:44,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/aa5322c9e7e1809204828e4a6cbc80f32b54d790,aa5322c9e7e1809204828e4a6cbc80f32b54d790,"More scheme parsing and other options
+Fixed README also"
+yakatz,2014-04-08 23:56:55,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d4fcf815f950ea83ab3252cd389a0160279820dc,d4fcf815f950ea83ab3252cd389a0160279820dc,"Fixed documentation to explain service command
+In this context, it makes more sense to change the command name"
+FiloSottile,2014-04-08 22:53:38,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/5bb1c5289a4ac9a4941b164f79c3c7ec195938db,5bb1c5289a4ac9a4941b164f79c3c7ec195938db,"Merge branch 'master' of github.com:edelkind/Heartbleed into edelkind-master
+
+Conflicts:
+	bleed.go
+	bleed/heartbleed.go"
+FiloSottile,2014-04-08 21:51:41,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/7730ae751ba2ac8816b375252cdf9a0be17780ed,7730ae751ba2ac8816b375252cdf9a0be17780ed,"Merge pull request #36 from yakatz/patch-1
+
+Add usage message"
+yakatz,2014-04-08 21:46:56,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/781aff5b7aa039c3c7715b8cc89cdb31a336d4f6,781aff5b7aa039c3c7715b8cc89cdb31a336d4f6,"Add usage message
+
+Fixes #20"
+FiloSottile,2014-04-08 21:31:17,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e5a525efadec1a1eff23ae1e9f731b8f387ddc5f,e5a525efadec1a1eff23ae1e9f731b8f387ddc5f,"Merge pull request #27 from asfaltboy/patch-1
+
+webserver: somewhat parse passed host before using"
+FiloSottile,2014-04-08 21:29:40,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/beaf77d43438224eba048063d5d9ff1758a3d9d8,beaf77d43438224eba048063d5d9ff1758a3d9d8,fix url parsing
+FiloSottile,2014-04-08 21:30:06,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/54627772e2ec47863eb4253ce083542f633b236f,54627772e2ec47863eb4253ce083542f633b236f,"Merge pull request #34 from dybskiy/patch-1
+
+Typo fix in the comment"
+FiloSottile,2014-04-08 21:22:58,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/52232d82cd1e3530ddec607d576055c0918fa035,52232d82cd1e3530ddec607d576055c0918fa035,"Merge pull request #30 from asfaltboy/patch-2
+
+parse passed host before using"
+FiloSottile,2014-04-08 21:21:27,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/4d4113744bf1461343d573f9a6aed0be720a25d7,4d4113744bf1461343d573f9a6aed0be720a25d7,"Merge pull request #32 from yakatz/patch-1
+
+Add default port"
+html5cat,2014-04-08 21:07:30,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/9aed0736f7fc48141e8ae86b9edb33b719d0e928,9aed0736f7fc48141e8ae86b9edb33b719d0e928,Typo fix in the comment
+yakatz,2014-04-08 20:36:58,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e19ece4389f3a837366096523a298224fc4139f7,e19ece4389f3a837366096523a298224fc4139f7,"Add default port
+
+Fixes #21"
+asfaltboy,2014-04-08 19:36:29,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/acd03bae28ca76048a459b8d02e4910e6fef581b,acd03bae28ca76048a459b8d02e4910e6fef581b,Update bleed_serve.go
+asfaltboy,2014-04-08 19:31:56,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d99b60834fe04e622453dc9f0f210b4373f65505,d99b60834fe04e622453dc9f0f210b4373f65505,"parse passed host before using
+
+Same as pull request #27 only for the go webserver
+
+Close issue #15 again
+
+(please bear with me, I never did write go in my life)"
+asfaltboy,2014-04-08 18:37:07,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d74eae00f404e922a36d669064d922a88e91af8f,d74eae00f404e922a36d669064d922a88e91af8f,"webserver: somewhat parse passed host before using
+
+This uses standard urlparse package to attempt to parse a url scheme before falling back to the raw string passed.
+
+Close Issue #16"
+FiloSottile,2014-04-08 15:19:42,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/fe75b57831a64f196488006552688476574a89c5,fe75b57831a64f196488006552688476574a89c5,bump version
+FiloSottile,2014-04-08 15:13:50,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e68913a8371008c9957b788777c2b7a6a0cfb63b,e68913a8371008c9957b788777c2b7a6a0cfb63b,Better timeouting
+FiloSottile,2014-04-08 15:02:20,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/d4c400e0fc4ab8c73d36eefdaf788ec48c493a5f,d4c400e0fc4ab8c73d36eefdaf788ec48c493a5f,report errors in json
+FiloSottile,2014-04-08 14:47:38,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/7fe12308cf839aa3a2e9b05b773d7d1e11dd309d,7fe12308cf839aa3a2e9b05b773d7d1e11dd309d,make greens hopefully certain
+FiloSottile,2014-04-08 13:48:40,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/dbff0fc0eaefdfaaa31328ce844e535475a0591f,dbff0fc0eaefdfaaa31328ce844e535475a0591f,Document exit codes
+FiloSottile,2014-04-08 13:47:36,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/5b16cd7322dc25422675d284f632875facd7f001,5b16cd7322dc25422675d284f632875facd7f001,"Merge pull request #11 from inkel/patch-1
+
+Use standard *nix status errors"
+inkel,2014-04-08 13:46:25,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/205cdabcfb9632ea2f8482e13fba3e1e2c8fd60f,205cdabcfb9632ea2f8482e13fba3e1e2c8fd60f,"Use standard *nix status errors
+
+In *nix standards, `0` means the process exited successfully,
+which makes more sense when a site is SAFE."
+FiloSottile,2014-04-08 13:46:19,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/33cb7915c9bdd56ee5d9866740abfd4760729ba5,33cb7915c9bdd56ee5d9866740abfd4760729ba5,Update README.md
+FiloSottile,2014-04-08 13:45:24,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/e7328ca24bc040ad47df1003dcb5ad6f91f4b249,e7328ca24bc040ad47df1003dcb5ad6f91f4b249,"Merge pull request #9 from fmpwizard/master
+
+Added requires Go 1.2.x"
+fmpwizard,2014-04-08 13:42:43,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/67b5564ce499be42b18696d94bf5e6ce08200091,67b5564ce499be42b18696d94bf5e6ce08200091,Added requires Go 1.2.x
+FiloSottile,2014-04-08 13:02:08,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/8304aee837760da927a6400cae388cfa71afdddf,8304aee837760da927a6400cae388cfa71afdddf,"better deploy, with daemontools"
+FiloSottile,2014-04-08 06:24:30,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/8ad0bd9e838d44fd170b7b623076c1102e0dc874,8ad0bd9e838d44fd170b7b623076c1102e0dc874,fix shell error that made me lose my logs :(
+FiloSottile,2014-04-08 06:07:20,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/8f08c1320360ec9bc95f607b462b44a8f028b096,8f08c1320360ec9bc95f607b462b44a8f028b096,fix a bug switching payload and padding
+FiloSottile,2014-04-08 05:53:36,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/bea1d17381f864707fa5b3890d1ff3d48508f429,bea1d17381f864707fa5b3890d1ff3d48508f429,deploy version
+FiloSottile,2014-04-08 05:30:34,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/3732931b462e7488c4d20b1062be04a1d1fc8118,3732931b462e7488c4d20b1062be04a1d1fc8118,Update README.md
+FiloSottile,2014-04-08 05:15:05,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/ddc5297e8ae6f8e53f6e13ebe10a3e1293ad2d80,ddc5297e8ae6f8e53f6e13ebe10a3e1293ad2d80,Create LICENSE
+FiloSottile,2014-04-08 05:14:31,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/cb0945750d85ba6655e0fdfb8b27c56cb5d3d829,cb0945750d85ba6655e0fdfb8b27c56cb5d3d829,Create README.md
+FiloSottile,2014-04-08 05:12:38,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/fe4fe636ee08ede9c35c591aafccdaf8c989f2fe,fe4fe636ee08ede9c35c591aafccdaf8c989f2fe,return connection errors
+FiloSottile,2014-04-08 05:12:20,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/580a8e16e7ab66d2791602bfb784fe815e67da0d,580a8e16e7ab66d2791602bfb784fe815e67da0d,change compiled binary
+FiloSottile,2014-04-08 05:04:57,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/82cb675c15b71b65d67d2b79e166a4f256dd6782,82cb675c15b71b65d67d2b79e166a4f256dd6782,"Merge pull request #2 from kisom/master
+
+improvements to bleed.go"
+kisom,2014-04-08 05:02:37,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/7be9ad63168eab20ca60e2ce467bfd550526a72d,7be9ad63168eab20ca60e2ce467bfd550526a72d,improvements to bleed.go
+FiloSottile,2014-04-08 05:01:16,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/eb378fe5d8db39f7c78c18277312f4d6ba26052c,eb378fe5d8db39f7c78c18277312f4d6ba26052c,correct eror handling
+FiloSottile,2014-04-08 05:00:23,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/95962692b6b3e0e84c30dc0aa83aa158b8b4d6d2,95962692b6b3e0e84c30dc0aa83aa158b8b4d6d2,fix data Marshal
+FiloSottile,2014-04-08 04:55:15,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/6d5cfbca697f7885bebdf49ed3634e4b0a2f1654,6d5cfbca697f7885bebdf49ed3634e4b0a2f1654,add web server
+FiloSottile,2014-04-08 04:47:18,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/ee0d66ea902d02e3d6edf77202bf97d1f85c07cc,ee0d66ea902d02e3d6edf77202bf97d1f85c07cc,"Merge pull request #1 from kisom/master
+
+Add reusable package for bleed check."
+kisom,2014-04-08 04:45:11,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/a64a1ce0d779be92369676a44084fcfc83dda45a,a64a1ce0d779be92369676a44084fcfc83dda45a,Return output of spew
+kisom,2014-04-08 04:40:58,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/0b21eec14d281df68ae3b49814ab20b7b35ccf90,0b21eec14d281df68ae3b49814ab20b7b35ccf90,Add original output logging.
+kisom,2014-04-08 04:31:59,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/7e9c9d1b2e205316bfabf26120259e39c8e32cd3,7e9c9d1b2e205316bfabf26120259e39c8e32cd3,Add reusable package for bleed check.
+FiloSottile,2014-04-08 03:19:51,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/80b40ce2194820d5d92245269bd835b2f91e99ab,80b40ce2194820d5d92245269bd835b2f91e99ab,horrible Ansible script
+FiloSottile,2014-04-08 03:19:23,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/2fc1b652e7a6264b440aca7ba634848d4f777c0a,2fc1b652e7a6264b440aca7ba634848d4f777c0a,optimize a bit and logging
+FiloSottile,2014-04-08 01:24:18,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/8e2abf470862abcb941b5f18d2adc88aff063dad,8e2abf470862abcb941b5f18d2adc88aff063dad,CORS
+FiloSottile,2014-04-07 23:56:56,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/071bce89e5f57c1c238f1bdfdac87f25c4fd5fb0,071bce89e5f57c1c238f1bdfdac87f25c4fd5fb0,Server deploy
+FiloSottile,2014-04-07 23:02:35,https://api.github.com/repos/FiloSottile/Heartbleed/git/commits/420362e90295e8e3bb9794dc4602e1f3ff88e6d1,420362e90295e8e3bb9794dc4602e1f3ff88e6d1,0.0.1

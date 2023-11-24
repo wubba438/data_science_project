@@ -1,0 +1,577 @@
+cane,Code quality threshold checking as part of your build
+username,timestamp,url,sha,message
+xaviershay,2018-01-10 04:36:59,https://api.github.com/repos/square/cane/git/commits/c8d6ce4e0092e5f677d3a2f409db7566e5d82136,c8d6ce4e0092e5f677d3a2f409db7566e5d82136,Add note to README about using Rubocop instead
+xaviershay,2016-03-14 16:57:14,https://api.github.com/repos/square/cane/git/commits/cf214b3599935deb2d8942deb9b2bf5584171244,cf214b3599935deb2d8942deb9b2bf5584171244,"Merge pull request #94 from jsoref/spelling
+
+spelling fixes"
+jsoref,2016-03-13 18:20:08,https://api.github.com/repos/square/cane/git/commits/5a9360f8ba53290cb4f7b4905fd54b16ed7b8ece,5a9360f8ba53290cb4f7b4905fd54b16ed7b8ece,spelling: explanatory
+jsoref,2016-03-13 18:19:48,https://api.github.com/repos/square/cane/git/commits/860390e2182c8598082e2632bcbc6124dd650bad,860390e2182c8598082e2632bcbc6124dd650bad,spelling: efficiently
+xaviershay,2016-03-10 16:40:37,https://api.github.com/repos/square/cane/git/commits/8eb03ff3b136070c3d093eef3db89ae26096259a,8eb03ff3b136070c3d093eef3db89ae26096259a,3.0.0
+xaviershay,2016-03-10 16:35:40,https://api.github.com/repos/square/cane/git/commits/f602b9d7f4440aef4a97bbacb5acb963e58deec2,f602b9d7f4440aef4a97bbacb5acb963e58deec2,"Merge pull request #93 from orien/rake_11
+
+Compatibility with Rake 11"
+orien,2016-03-10 02:51:15,https://api.github.com/repos/square/cane/git/commits/011f1fcf0857a4e705c545dae78df8d2f7f688a3,011f1fcf0857a4e705c545dae78df8d2f7f688a3,"Compatibility with Rake 11
+
+TaskManager#last_comment has been removed in Rake 11. We are to migrate
+to #last_description. This has been available for many years so
+backwards compatibility is not a problem."
+xaviershay,2016-01-04 19:58:36,https://api.github.com/repos/square/cane/git/commits/700087a498d77aa182dc4fe40079aa26aff184ef,700087a498d77aa182dc4fe40079aa26aff184ef,Drop 1.9 support
+xaviershay,2016-01-04 19:58:45,https://api.github.com/repos/square/cane/git/commits/b958eb571da970577139bffd1a02a4df34bdf2ea,b958eb571da970577139bffd1a02a4df34bdf2ea,"Merge pull request #92 from jaredbeck/support_array_glob
+
+Use Dir.glob instead of Dir.[]"
+jaredbeck,2015-12-28 20:20:31,https://api.github.com/repos/square/cane/git/commits/029631b13e201eb25d04dea380c4cbac64dabb00,029631b13e201eb25d04dea380c4cbac64dabb00,"Use Dir.glob instead of Dir.[]
+
+Adds support for passing an array of glob strings to the
+following options:
+
+- abc_glob
+- style_exclude
+- style_glob
+
+Example:
+
+```
+cane.style_glob = [
+  'app/**/*.{rb,haml,prawn}',
+  'config/**/*.rb'
+]
+```
+
+Using `Dir.[]`, this configuration is not possible."
+xaviershay,2014-05-17 02:15:50,https://api.github.com/repos/square/cane/git/commits/6ca99588e875af07e01c8eba6d8838c99fc7ce20,6ca99588e875af07e01c8eba6d8838c99fc7ce20,"Merge pull request #87 from loganhasson/master
+
+Update specs to RSpec 2.14.7 syntax (Updated)"
+loganhasson,2014-05-16 02:50:11,https://api.github.com/repos/square/cane/git/commits/b6fd976ce9ed73dce336ee4dae1224fadf2d63a0,b6fd976ce9ed73dce336ee4dae1224fadf2d63a0,"Update specs to RSpec 2.14.7 syntax
+
+This conversion is done by Transpec 1.13.1 with the following command:
+    transpec
+
+* 112 conversions
+    from: obj.should
+      to: expect(obj).to
+
+* 66 conversions
+    from: == expected
+      to: eq(expected)
+
+* 12 conversions
+    from: obj.should_receive(:message)
+      to: expect(obj).to receive(:message)
+
+* 6 conversions
+    from: obj.should_not
+      to: expect(obj).not_to
+
+* 1 conversion
+    from: -> { }.should
+      to: expect { }.to
+
+* 1 conversion
+    from: =~ [1, 2]
+      to: match_array([1, 2])
+
+Fix style violations"
+xaviershay,2014-04-21 00:24:15,https://api.github.com/repos/square/cane/git/commits/b12a186a73544466f1b5aa1b596243eb8de311ce,b12a186a73544466f1b5aa1b596243eb8de311ce,2.6.2
+xaviershay,2014-04-21 00:20:33,https://api.github.com/repos/square/cane/git/commits/8f54b4e774292bafad08bf7182e6488f29ad2500,8f54b4e774292bafad08bf7182e6488f29ad2500,"Merge pull request #85 from square/doc-violation-fix
+
+Commented methods should not trigger doc requirement for modules"
+xaviershay,2014-04-20 18:57:00,https://api.github.com/repos/square/cane/git/commits/d34123533f744238086e41b18684d201a2322c42,d34123533f744238086e41b18684d201a2322c42,Update to latest RSpec::Fire API.
+xaviershay,2014-04-20 18:54:24,https://api.github.com/repos/square/cane/git/commits/a72f85d09a7b5d233c6c26d386dd575cfa399929,a72f85d09a7b5d233c6c26d386dd575cfa399929,Commented methods should not trigger doc violation for modules.
+xaviershay,2014-01-02 22:28:00,https://api.github.com/repos/square/cane/git/commits/ac5834d357f87ecfce12ee6dfa9277ff5192d560,ac5834d357f87ecfce12ee6dfa9277ff5192d560,"Merge pull request #84 from salimane/pr_ruby_2_1_0
+
+Add Ruby 2.1.0 to .travis.yml"
+salimane,2014-01-02 10:16:49,https://api.github.com/repos/square/cane/git/commits/199dacec40cfb0f06a367897183756ef0fcaeca9,199dacec40cfb0f06a367897183756ef0fcaeca9,Add Ruby 2.1.0 to .travis.yml
+xaviershay,2013-10-31 01:10:59,https://api.github.com/repos/square/cane/git/commits/d4227473779781cbefc30e11eab879773b6af54a,d4227473779781cbefc30e11eab879773b6af54a,Update Gemfile.lock to latest gems.
+xaviershay,2013-10-31 01:05:12,https://api.github.com/repos/square/cane/git/commits/1435d666edaf7777c27ecf5708573248528299e9,1435d666edaf7777c27ecf5708573248528299e9,2.6.1
+xaviershay,2013-10-08 14:52:15,https://api.github.com/repos/square/cane/git/commits/2ea008a2ffb9ebaafc90cbd4840dacea9b5392b5,2ea008a2ffb9ebaafc90cbd4840dacea9b5392b5,"Merge pull request #80 from parndt/patch-1
+
+Added Ruby syntax highlighting to the README."
+parndt,2013-10-08 03:51:16,https://api.github.com/repos/square/cane/git/commits/a1b165d9a4804027bf3477c844ce0b50c392b563,a1b165d9a4804027bf3477c844ce0b50c392b563,Added Ruby syntax highlighting to the README.
+xaviershay,2013-10-05 04:08:34,https://api.github.com/repos/square/cane/git/commits/60cbaba406da63feb10f354c195b457da2fa24ab,60cbaba406da63feb10f354c195b457da2fa24ab,Ignore bundler directories in git and coverage.
+xaviershay,2013-10-05 03:54:57,https://api.github.com/repos/square/cane/git/commits/779a7c2279d48f130d7cb74ed6ab3538d2195dbe,779a7c2279d48f130d7cb74ed6ab3538d2195dbe,"Add license definition to gemspec.
+
+Fixes #79."
+xaviershay,2013-07-20 03:33:19,https://api.github.com/repos/square/cane/git/commits/cbfb0173a03f0c10b525a164c52af1d9860b4e25,cbfb0173a03f0c10b525a164c52af1d9860b4e25,"Merge pull request #75 from svoynow-lz/master
+
+JsonFormatter initializer needs to take an options hash, because that's ..."
+svoynow,2013-07-19 20:02:02,https://api.github.com/repos/square/cane/git/commits/2d3f86186c677d09f2a43eee057bd550952067e7,2d3f86186c677d09f2a43eee057bd550952067e7,"JsonFormatter initializer needs to take an options hash, because that's how the runner call it now."
+xaviershay,2013-06-14 02:58:22,https://api.github.com/repos/square/cane/git/commits/4408e803b0972eaa0b00d9520e882aad3cadb698,4408e803b0972eaa0b00d9520e882aad3cadb698,"Merge pull request #72 from chrishunt/no-docs-for-one-line-class
+
+Correctly handle one-line classes in doc check"
+chrishunt,2013-06-13 22:35:33,https://api.github.com/repos/square/cane/git/commits/7979746cb0ffb069a9db4e3edf5d345c3f31eb3d,7979746cb0ffb069a9db4e3edf5d345c3f31eb3d,Don't require doc for one-line class w/out method
+chrishunt,2013-06-13 16:37:30,https://api.github.com/repos/square/cane/git/commits/af319114d5f8f0345f108a34d372c6f68a0982d9,af319114d5f8f0345f108a34d372c6f68a0982d9,Remove unnecessary comment from spec
+xaviershay,2013-06-08 02:57:49,https://api.github.com/repos/square/cane/git/commits/f70319f998b896cbf0546cde8aab224577080e73,f70319f998b896cbf0546cde8aab224577080e73,2.6.0
+xaviershay,2013-06-01 18:42:56,https://api.github.com/repos/square/cane/git/commits/616bb8a50c8b39b72d3ff8c63080ff9117356553,616bb8a50c8b39b72d3ff8c63080ff9117356553,"Merge pull request #70 from chrishunt/chrishunt/check-modules-with-methods
+
+Create DocViolation for modules and classes with methods"
+chrishunt,2013-06-01 17:46:15,https://api.github.com/repos/square/cane/git/commits/6f1777338fc05edfaf62cc066921747e605e2588,6f1777338fc05edfaf62cc066921747e605e2588,Fix spelling of parallelism in comment
+chrishunt,2013-06-01 17:45:50,https://api.github.com/repos/square/cane/git/commits/b2b5af5186323905b8fb6a6732e813234e6f4aa1,b2b5af5186323905b8fb6a6732e813234e6f4aa1,Add documentation to un-documented modules
+chrishunt,2013-06-01 17:19:58,https://api.github.com/repos/square/cane/git/commits/cdade7a50b0d7442bd07ca915dc747684151ab24,cdade7a50b0d7442bd07ca915dc747684151ab24,"Create DocViolation for module/class with methods
+
+If a Class or Module does not contain methods, it does not create a
+DocViolation"
+xaviershay,2013-04-21 16:57:40,https://api.github.com/repos/square/cane/git/commits/d374f19f29092ec8466dd8782afc6c9bb76ed0b4,d374f19f29092ec8466dd8782afc6c9bb76ed0b4,"Use =~ matcher to ignore array order, h/t @dkubb."
+xaviershay,2013-04-21 16:33:39,https://api.github.com/repos/square/cane/git/commits/3d74bce135d886da5d96d20f569591df89fb1166,3d74bce135d886da5d96d20f569591df89fb1166,Make glob test deterministic to fix build.
+xaviershay,2013-04-21 16:30:21,https://api.github.com/repos/square/cane/git/commits/e8565d1bd8879cff79ba56e3f218b308eeee236c,e8565d1bd8879cff79ba56e3f218b308eeee236c,Merge branch 'celeduc-master'
+xaviershay,2013-04-21 16:29:41,https://api.github.com/repos/square/cane/git/commits/7e3c2888fb9a9a96c4ddd38e1a2cdc2bf046647c,7e3c2888fb9a9a96c4ddd38e1a2cdc2bf046647c,"Better handling of missing READMEs.
+
+cc @celeduc"
+xaviershay,2013-04-21 16:16:29,https://api.github.com/repos/square/cane/git/commits/dc0bc7c1e61a06861d87f1d976ff3e92f4a50e95,dc0bc7c1e61a06861d87f1d976ff3e92f4a50e95,"Vertical format and sort the extensions list.
+
+cc @celeduc"
+xaviershay,2013-04-21 16:12:34,https://api.github.com/repos/square/cane/git/commits/7948846a6c33878a41609fdc0353138c4d05cd54,7948846a6c33878a41609fdc0353138c4d05cd54,Update Gemfile.lock with latest versions.
+xaviershay,2013-04-21 16:10:09,https://api.github.com/repos/square/cane/git/commits/ea0e83314178f388169b687cea3feb7a34294479,ea0e83314178f388169b687cea3feb7a34294479,Stricter checking for classes in doc check. Fixes #67.
+xaviershay,2013-04-12 04:33:29,https://api.github.com/repos/square/cane/git/commits/f8912ba76cce84d92f280d1aac11c5c6f4c94d59,f8912ba76cce84d92f280d1aac11c5c6f4c94d59,"Merge pull request #68 from packetmonkey/master
+
+Add .markdown as a valid README extension"
+packetmonkey,2013-04-11 21:06:54,https://api.github.com/repos/square/cane/git/commits/14d6d347a1fa1fdd71aa9d9f099513d2d9994bdf,14d6d347a1fa1fdd71aa9d9f099513d2d9994bdf,Add .markdown as a valid README extension
+xaviershay,2013-02-28 06:01:56,https://api.github.com/repos/square/cane/git/commits/22da5a346cb8d9a7aeef7dbe48efe748903e6ad4,22da5a346cb8d9a7aeef7dbe48efe748903e6ad4,"Merge pull request #61 from justincampbell/color-readme
+
+Add --color option documentation"
+xaviershay,2013-02-28 06:01:28,https://api.github.com/repos/square/cane/git/commits/8afa1bfca644251b7c9593b2fc1c2cdfa6e4a57a,8afa1bfca644251b7c9593b2fc1c2cdfa6e4a57a,"Merge pull request #64 from coffeejunk/ruby2
+
+updates for ruby 2.0"
+coffeejunk,2013-02-26 13:08:03,https://api.github.com/repos/square/cane/git/commits/7f97418c52788fdfee1f9796c19aac1816264ad9,7f97418c52788fdfee1f9796c19aac1816264ad9,"Convert invalid strings from binary to utf-8
+
+Since changing the encoding from UTF8 to UTF8 doesn't do anything (see
+http://bugs.ruby-lang.org/issues/7967#note-1), change the source encoding
+to binary (ie. ascii-8bit) and replace all undefined characters."
+coffeejunk,2013-02-26 11:56:14,https://api.github.com/repos/square/cane/git/commits/abfc7982319a5a41dbc178f299109a941370c148,abfc7982319a5a41dbc178f299109a941370c148,test against ruby 2.0 on travis ci
+coffeejunk,2013-02-26 11:08:32,https://api.github.com/repos/square/cane/git/commits/a2075a0d7bd60dbbc199c890904dc5f14f855ca0,a2075a0d7bd60dbbc199c890904dc5f14f855ca0,Enumerator.new is deprecated in ruby 2.0
+justincampbell,2013-02-07 14:31:08,https://api.github.com/repos/square/cane/git/commits/9dfcc5f248452dca182615414e3378e739274f56,9dfcc5f248452dca182615414e3378e739274f56,Add --color option documentation
+xaviershay,2013-02-06 16:10:14,https://api.github.com/repos/square/cane/git/commits/97f1b30a5ff449eb8a1232d01f32ee07f5bf1fef,97f1b30a5ff449eb8a1232d01f32ee07f5bf1fef,Merge branch 'justincampbell-color'
+xaviershay,2013-02-06 16:09:52,https://api.github.com/repos/square/cane/git/commits/10f6a681a25db7e2a0800724bc66f67a914bb438,10f6a681a25db7e2a0800724bc66f67a914bb438,Merge branch 'color' of https://github.com/justincampbell/cane into justincampbell-color
+justincampbell,2013-02-06 16:03:31,https://api.github.com/repos/square/cane/git/commits/968eaa10b12235bfb7111a0bb827a593a328c409,968eaa10b12235bfb7111a0bb827a593a328c409,Only colorize if max violations is met
+xaviershay,2013-02-06 15:28:08,https://api.github.com/repos/square/cane/git/commits/13b546d6e54755e76f4cc15f12a422155ec1d4df,13b546d6e54755e76f4cc15f12a422155ec1d4df,Merge branch 'color' of https://github.com/justincampbell/cane into justincampbell-color
+justincampbell,2013-02-05 15:49:43,https://api.github.com/repos/square/cane/git/commits/652c2f887f551a7ddf280399491312526291089a,652c2f887f551a7ddf280399491312526291089a,"Colorize output with --color
+
+Displays all violation in red"
+xaviershay,2013-02-05 15:33:57,https://api.github.com/repos/square/cane/git/commits/b718a0fa183fc1cf42df222bdda458a649697354,b718a0fa183fc1cf42df222bdda458a649697354,Merge branch 'justincampbell-use-canefile-from-rake'
+xaviershay,2013-02-05 15:33:30,https://api.github.com/repos/square/cane/git/commits/4178d5c525aba9e70edc11b6245a6c20de3d5107,4178d5c525aba9e70edc11b6245a6c20de3d5107,Remove stubbing from integration test.
+justincampbell,2013-02-05 14:45:59,https://api.github.com/repos/square/cane/git/commits/9d15848c358aa693b2352facb9caf0556787589f,9d15848c358aa693b2352facb9caf0556787589f,Add spec for previous commit
+justincampbell,2013-02-05 14:30:57,https://api.github.com/repos/square/cane/git/commits/1d8c11ca1082985d84aa2513be852134a5c0d197,1d8c11ca1082985d84aa2513be852134a5c0d197,"Default to .cane from rake task
+
+Allows Cane::RakeTask.new to use the settings in .cane, without needing
+it explicitly in a block"
+xaviershay,2013-01-26 20:21:51,https://api.github.com/repos/square/cane/git/commits/9afd1be293544b5239eaad4b5fac9f33e75c0b6c,9afd1be293544b5239eaad4b5fac9f33e75c0b6c,2.5.2
+xaviershay,2013-01-19 19:10:41,https://api.github.com/repos/square/cane/git/commits/a0cf38ba322221eb890a2280a53ac6a914d485c8,a0cf38ba322221eb890a2280a53ac6a914d485c8,"Merge pull request #53 from square/issue-52
+
+Add more threshold operators."
+xaviershay,2013-01-19 19:10:16,https://api.github.com/repos/square/cane/git/commits/93819f19a31a52ffbda9e23cd492ccbb28610f7b,93819f19a31a52ffbda9e23cd492ccbb28610f7b,Merge branch 'pitr-allow_simplecov_last_run_as_coverage_measure'
+xaviershay,2013-01-19 19:09:51,https://api.github.com/repos/square/cane/git/commits/00dbfede658e5af8e9dd0d2acd4ca24ad141eb58,00dbfede658e5af8e9dd0d2acd4ca24ad141eb58,Update README for newer SimpleCov integration.
+pitr,2013-01-17 16:29:57,https://api.github.com/repos/square/cane/git/commits/cc69b26567928de62d11cdbd73c8e289aba69c08,cc69b26567928de62d11cdbd73c8e289aba69c08,allow simplecov's coverage/.last_run.json as coverage measure
+xaviershay,2013-01-18 05:14:55,https://api.github.com/repos/square/cane/git/commits/6340712f64fcb3bcab878a26f997df3a80be9538,6340712f64fcb3bcab878a26f997df3a80be9538,"Merge pull request #55 from krainboltgreene/patch-1
+
+Two common extensions for README documents"
+xaviershay,2013-01-16 16:16:41,https://api.github.com/repos/square/cane/git/commits/dbbef90956d89c21cb489258f0c69a0413a90bb5,dbbef90956d89c21cb489258f0c69a0413a90bb5,"Merge pull request #54 from donpinkster/deprecation-warning-ruby-2
+
+Suppress warning about IO#lines in Ruby 2.0"
+xaviershay,2013-01-14 02:17:21,https://api.github.com/repos/square/cane/git/commits/38cb79b8a821fb0bbf3aa953ed374080a0521c65,38cb79b8a821fb0bbf3aa953ed374080a0521c65,Clean up some cruft I accidentally left in threshold spec.
+xaviershay,2013-01-14 02:13:41,https://api.github.com/repos/square/cane/git/commits/40f5083731957b3264e4df2e1a2b9c130f7f96c4,40f5083731957b3264e4df2e1a2b9c130f7f96c4,Update documentation with new thresholds.
+xaviershay,2013-01-14 02:12:11,https://api.github.com/repos/square/cane/git/commits/ea950c84c12467b250a660334f98a93e58f0f06d,ea950c84c12467b250a660334f98a93e58f0f06d,Support all the operators for threshold checks.
+xaviershay,2013-01-14 01:59:16,https://api.github.com/repos/square/cane/git/commits/57bc11aa1a9c2bb4d328204b63e286411ec74d5e,57bc11aa1a9c2bb4d328204b63e286411ec74d5e,Support == in threshold checks.
+xaviershay,2013-01-14 01:47:58,https://api.github.com/repos/square/cane/git/commits/0e14ab73073410f1b337a746cf68f5ffafacec03,0e14ab73073410f1b337a746cf68f5ffafacec03,Extra spec coverage around thresholds.
+xaviershay,2012-11-24 02:30:04,https://api.github.com/repos/square/cane/git/commits/a25f8673bdd13b700fb48aa8b941782945eb5c2a,a25f8673bdd13b700fb48aa8b941782945eb5c2a,"Merge pull request #50 from girasquid/patch-1
+
+Added (missed?) 'link' in README explanation"
+girasquid,2012-11-23 22:21:03,https://api.github.com/repos/square/cane/git/commits/4006a845db735cad664e4fcf27f87fc3711b2d6a,4006a845db735cad664e4fcf27f87fc3711b2d6a,"Update README.md
+
+Added a (missed?) word"
+xaviershay,2012-11-17 23:18:43,https://api.github.com/repos/square/cane/git/commits/3c3fd27d59d64a6f6bae7c26fc6be5bdef376f96,3c3fd27d59d64a6f6bae7c26fc6be5bdef376f96,2.5.0
+xaviershay,2012-11-17 23:16:21,https://api.github.com/repos/square/cane/git/commits/742cd4ce2fa8460340c5df4ea2580881bea36edc,742cd4ce2fa8460340c5df4ea2580881bea36edc,Update documentation.
+xaviershay,2012-11-17 23:16:06,https://api.github.com/repos/square/cane/git/commits/8d3356ca34d074ed9192f6709d0d75e296a0b805,8d3356ca34d074ed9192f6709d0d75e296a0b805,--doc-exclude supports globs same as style exclusion.
+xaviershay,2012-11-16 05:01:03,https://api.github.com/repos/square/cane/git/commits/628cc1e9591d4190089e5303aa9d278ce8c9d964,628cc1e9591d4190089e5303aa9d278ce8c9d964,"Merge pull request #49 from marten/master
+
+Add support for a glob pattern in the style-exclude parameter"
+marten,2012-11-15 16:04:17,https://api.github.com/repos/square/cane/git/commits/310642a326f602e41f05d355ec00f9a8c505f083,310642a326f602e41f05d355ec00f9a8c505f083,Add spec to check style exclusion globbing
+marten,2012-11-15 15:44:59,https://api.github.com/repos/square/cane/git/commits/90f4a636a156d4d9d418c2dc621ec8c249e3a7eb,90f4a636a156d4d9d418c2dc621ec8c249e3a7eb,Update documentation for glob exclude
+marten,2012-11-15 15:43:22,https://api.github.com/repos/square/cane/git/commits/0a008c45609e8571fe7ecc8a9f00fab146a26e36,0a008c45609e8571fe7ecc8a9f00fab146a26e36,Add support for glob patterns in style exclusions
+xaviershay,2012-11-10 19:19:15,https://api.github.com/repos/square/cane/git/commits/c03edbb2d9926d06374374bdb756ffe42625fe0b,c03edbb2d9926d06374374bdb756ffe42625fe0b,Forcing travis hook.
+xaviershay,2012-11-10 19:14:32,https://api.github.com/repos/square/cane/git/commits/73165dafb29c9fe6b4a17696cecc88a3fd345e0b,73165dafb29c9fe6b4a17696cecc88a3fd345e0b,Add configuration for travis CI.
+xaviershay,2012-11-10 19:14:22,https://api.github.com/repos/square/cane/git/commits/66ffe46c655f6c49b671c83dc6df3b3a2436d87e,66ffe46c655f6c49b671c83dc6df3b3a2436d87e,Update Gemfile.lock for latest release.
+xaviershay,2012-11-07 05:37:22,https://api.github.com/repos/square/cane/git/commits/175de10349e31c453d444990705c01bd4fc4edbd,175de10349e31c453d444990705c01bd4fc4edbd,"Merge pull request #48 from justincampbell/doc-exclude
+
+Allow documentation exclusions with --doc-exclude"
+justincampbell,2012-11-05 15:19:10,https://api.github.com/repos/square/cane/git/commits/f02b19c41652d5f9008be9f575f981aa32399e28,f02b19c41652d5f9008be9f575f981aa32399e28,Allow documentation exclusions with --doc-exclude
+xaviershay,2012-11-01 03:01:04,https://api.github.com/repos/square/cane/git/commits/72af7860d85e113506d2f26192a303fe7be5e9e5,72af7860d85e113506d2f26192a303fe7be5e9e5,"Merge pull request #47 from celeduc/master
+
+Require Ruby 1.9 in the gemspec"
+xaviershay,2012-10-21 19:22:34,https://api.github.com/repos/square/cane/git/commits/08165cfe29ce7d992da89c8624d1ceb8f4323372,08165cfe29ce7d992da89c8624d1ceb8f4323372,2.4.0
+xaviershay,2012-10-21 19:20:06,https://api.github.com/repos/square/cane/git/commits/46949e77628ef7bc71935b1ecdd040cb93971c47,46949e77628ef7bc71935b1ecdd040cb93971c47,doc: Update doc for recent features.
+xaviershay,2012-10-21 19:12:25,https://api.github.com/repos/square/cane/git/commits/02adcd30bd240be16662ec729c3abb1507ca77a3,02adcd30bd240be16662ec729c3abb1507ca77a3,"feature: Rake task can load configuration from a .cane file.
+
+Merge branch 'load_dotcane_options_in_rake_tasks'"
+xaviershay,2012-10-21 19:09:41,https://api.github.com/repos/square/cane/git/commits/b0c71dc2e3c57219e99d911765931e997f4fe31a,b0c71dc2e3c57219e99d911765931e997f4fe31a,Remove extraneous file creation in spec.
+xaviershay,2012-10-21 18:41:13,https://api.github.com/repos/square/cane/git/commits/cf33ae181fb46f2ed794b8f8615cdafcb8395c8b,cf33ae181fb46f2ed794b8f8615cdafcb8395c8b,Whitespace.
+DanielHeath,2012-09-17 01:50:05,https://api.github.com/repos/square/cane/git/commits/0307a86dd92f5b5a918e2a07a6e52bdc65ea4d6b,0307a86dd92f5b5a918e2a07a6e52bdc65ea4d6b,Add specs for loading cane options from a canefile
+DanielHeath,2012-09-14 01:42:47,https://api.github.com/repos/square/cane/git/commits/ac8dbdb54a5dd98f9df14793798c24a7c6972d9f,ac8dbdb54a5dd98f9df14793798c24a7c6972d9f,Allow options specified in ./.cane to be added to a rake task
+xaviershay,2012-10-21 19:06:47,https://api.github.com/repos/square/cane/git/commits/373795ef741a106e9f06d6f2f532486578e1029d,373795ef741a106e9f06d6f2f532486578e1029d,"feature: Coverage threshold can be specifed in a file.
+
+Merge branch 'store_coverage_threshold_in_file'"
+xaviershay,2012-10-21 18:37:54,https://api.github.com/repos/square/cane/git/commits/7bc67aab0a344d55b67b6a26a3713da1bc93df0b,7bc67aab0a344d55b67b6a26a3713da1bc93df0b,Push type check down into a method.
+xaviershay,2012-10-21 19:05:53,https://api.github.com/repos/square/cane/git/commits/cfe4d5e17aae202eba207084d4d0e6a456c47a07,cfe4d5e17aae202eba207084d4d0e6a456c47a07,Correctly handle string input.
+DanielHeath,2012-09-17 00:52:04,https://api.github.com/repos/square/cane/git/commits/38dc52a16934214af05862ae4473dd23ceea30d7,38dc52a16934214af05862ae4473dd23ceea30d7,Add specs for loading coverage thresholds from a file
+DanielHeath,2012-09-14 01:42:15,https://api.github.com/repos/square/cane/git/commits/6cb95194c828f356c0334aaf4a9ef0bf5a620b13,6cb95194c828f356c0334aaf4a9ef0bf5a620b13,Support providing a filename containing a coverage threshold
+xaviershay,2012-10-21 18:19:36,https://api.github.com/repos/square/cane/git/commits/d610ea3b7e35554b37001f697cc05e691687b1f0,d610ea3b7e35554b37001f697cc05e691687b1f0,"feature: Provide --all option for working with single files.
+
+Merge branch 'FND-shortcut'"
+xaviershay,2012-10-21 18:18:28,https://api.github.com/repos/square/cane/git/commits/1afc85c2208b8304aaa3203f40c295d570fd0041,1afc85c2208b8304aaa3203f40c295d570fd0041,Update comment.
+xaviershay,2012-10-21 17:34:55,https://api.github.com/repos/square/cane/git/commits/dab8c58a54f0baf1cf736a73e31651118f386943,dab8c58a54f0baf1cf736a73e31651118f386943,"Merge pull request #45 from benmoss/preceding
+
+Fix spelling of 'preceding'"
+benmoss,2012-10-21 17:05:32,https://api.github.com/repos/square/cane/git/commits/b4b02a7526798d36a72e38b10649eaffbe261e0a,b4b02a7526798d36a72e38b10649eaffbe261e0a,preceeding > preceding (redux)
+xaviershay,2012-10-21 16:46:18,https://api.github.com/repos/square/cane/git/commits/223aeab180b0702287ff81c6a81c9564338ee09a,223aeab180b0702287ff81c6a81c9564338ee09a,"Merge pull request #44 from benmoss/preceding
+
+Fix spelling of 'preceding'"
+xaviershay,2012-10-21 16:46:05,https://api.github.com/repos/square/cane/git/commits/c25bc8c2656ccc7203efca9e3cab7d079ae39e2d,c25bc8c2656ccc7203efca9e3cab7d079ae39e2d,"Merge pull request #43 from benmoss/case_insensitive_readme
+
+Allow README file to be lowercase"
+benmoss,2012-10-21 16:42:35,https://api.github.com/repos/square/cane/git/commits/580ae1bcd3f48a23fa27002b03f16425905fd32a,580ae1bcd3f48a23fa27002b03f16425905fd32a,preceeding > preceding
+benmoss,2012-10-21 16:29:10,https://api.github.com/repos/square/cane/git/commits/15430f03c544a8a82e05ed4569aa35947b0d4584,15430f03c544a8a82e05ed4569aa35947b0d4584,"Allow README file to be lowercase
+
+Fixes #42"
+FND,2012-10-20 07:43:11,https://api.github.com/repos/square/cane/git/commits/7620c56990d72a6e916d27619e5927e4ede2f4a6,7620c56990d72a6e916d27619e5927e4ede2f4a6,updated README to include `--all`
+FND,2012-10-18 05:23:21,https://api.github.com/repos/square/cane/git/commits/212cff7830d72b0501119bde033a43459006f548,212cff7830d72b0501119bde033a43459006f548,"added `--all` as shortcut to perform all checks on an individual file
+
+not perfect (cf. inline comment) - suggestions for improvement welcome"
+xaviershay,2012-09-16 19:35:46,https://api.github.com/repos/square/cane/git/commits/4735ab15c029192dc40826d53b3d2b2d718fd772,4735ab15c029192dc40826d53b3d2b2d718fd772,v2.3.0
+xaviershay,2012-09-16 19:34:51,https://api.github.com/repos/square/cane/git/commits/229252ff71a3e3442350eb803f207e66f0a96dc7,229252ff71a3e3442350eb803f207e66f0a96dc7,"doc: How to write a README, in the README."
+xaviershay,2012-09-16 19:30:34,https://api.github.com/repos/square/cane/git/commits/82f90eed858100185ba25f0b5b960239bbc0c658,82f90eed858100185ba25f0b5b960239bbc0c658,Merge branch 'json'
+xaviershay,2012-09-16 19:18:05,https://api.github.com/repos/square/cane/git/commits/1812cb31259b83e49a5b8f519dbce61e71ffbd31,1812cb31259b83e49a5b8f519dbce61e71ffbd31,Merge branch 'readme-check'
+xaviershay,2012-09-16 19:30:26,https://api.github.com/repos/square/cane/git/commits/645d3ece09f0506e0764496efe40e071eddbe2e1,645d3ece09f0506e0764496efe40e071eddbe2e1,Support --json option for machine-readable output.
+xaviershay,2012-09-16 19:13:43,https://api.github.com/repos/square/cane/git/commits/dac4ded5d9877be7c9fd11f6091c1b2141f0f17c,dac4ded5d9877be7c9fd11f6091c1b2141f0f17c,"Extract runner to own file, requiring cane loads up all classes."
+xaviershay,2012-09-16 19:20:12,https://api.github.com/repos/square/cane/git/commits/f6f496a0318f428e9ed05b0d1215892d8329d6ca,f6f496a0318f428e9ed05b0d1215892d8329d6ca,Extract formatter into method.
+xaviershay,2012-09-16 19:12:04,https://api.github.com/repos/square/cane/git/commits/10568b928c8ad6d35abc2dc71f98c57c5b017113,10568b928c8ad6d35abc2dc71f98c57c5b017113,Extract task_runner code into its own file.
+xaviershay,2012-09-16 19:10:24,https://api.github.com/repos/square/cane/git/commits/796ec5499b1a01b09bef778bbc605194701538ae,796ec5499b1a01b09bef778bbc605194701538ae,Fail if no README is present.
+xaviershay,2012-09-07 02:50:20,https://api.github.com/repos/square/cane/git/commits/d23e3e67f0f43471a2f1eb94faa1713677460a61,d23e3e67f0f43471a2f1eb94faa1713677460a61,"Merge pull request #36 from fredwu/readme_fix
+
+Fixed the abc_exclude example in the README"
+fredwu,2012-09-07 00:09:10,https://api.github.com/repos/square/cane/git/commits/49feb4df88a86cc8f05c955c6b94086d45934fd6,49feb4df88a86cc8f05c955c6b94086d45934fd6,Fixed the abc_exclude example in the README
+xaviershay,2012-09-03 09:08:19,https://api.github.com/repos/square/cane/git/commits/c3a1463cb29c11ca78a293c1116721bff14082aa,c3a1463cb29c11ca78a293c1116721bff14082aa,"Merge pull request #35 from mipearson/master
+
+Fix issue where --no-style does not actually skip style checks."
+mipearson,2012-09-03 08:56:28,https://api.github.com/repos/square/cane/git/commits/39c80bebf7495fd281dc0e60cf8f20681714c16c,39c80bebf7495fd281dc0e60cf8f20681714c16c,Fix issue where --no-style does not actually skip style checks.
+xaviershay,2012-09-03 02:45:48,https://api.github.com/repos/square/cane/git/commits/9d0637d50293a1295ae82fae9d218bf1ca5f71f0,9d0637d50293a1295ae82fae9d218bf1ca5f71f0,2.2.3
+xaviershay,2012-09-01 03:04:41,https://api.github.com/repos/square/cane/git/commits/e4fe90eef1b7eecf9a16df80abbbf7b8535eec13,e4fe90eef1b7eecf9a16df80abbbf7b8535eec13,doc: More fixes for new doc check description.
+xaviershay,2012-09-01 03:02:05,https://api.github.com/repos/square/cane/git/commits/17def43bd39a7fe616a7bc670b9d9af6bad9e1c8,17def43bd39a7fe616a7bc670b9d9af6bad9e1c8,"doc: Add Github issues to Support section of README.
+
+I don't do a very good job of watching StackOverflow, and this describes
+what is mostly happening anyway."
+xaviershay,2012-09-01 01:21:47,https://api.github.com/repos/square/cane/git/commits/49bc805bd3cd76f4583571bf38eb30b3f16a2b17,49bc805bd3cd76f4583571bf38eb30b3f16a2b17,"doc: Better guidance on class level comments.
+
+Fixes #34."
+xaviershay,2012-09-01 01:10:37,https://api.github.com/repos/square/cane/git/commits/5859a310365ca9af7f5c35be64dd34f7375fab20,5859a310365ca9af7f5c35be64dd34f7375fab20,"bugfix: Remove wacky broken conditional in AbcCheck.
+
+Fixes #33."
+xaviershay,2012-09-01 00:58:37,https://api.github.com/repos/square/cane/git/commits/1c7376c7c2d167d9adf736fd680ccc49864654b3,1c7376c7c2d167d9adf736fd680ccc49864654b3,"bugfix: Allow multiple spaces before class name.
+
+Fixes #32."
+xaviershay,2012-08-30 01:35:22,https://api.github.com/repos/square/cane/git/commits/f403a311aaa826f97fd335a104e366ee5dfdf2cf,f403a311aaa826f97fd335a104e366ee5dfdf2cf,2.2.2
+xaviershay,2012-08-30 01:31:31,https://api.github.com/repos/square/cane/git/commits/3a9be4549e95867219a75d04ce287e1eefb3d7c4,3a9be4549e95867219a75d04ce287e1eefb3d7c4,"bugfix: Stricter magic comment regex to avoid false positives.
+
+Fixes #31."
+xaviershay,2012-08-27 04:15:13,https://api.github.com/repos/square/cane/git/commits/c5fdf483b353550994fc6b67227db48c4971578f,c5fdf483b353550994fc6b67227db48c4971578f,2.2.1
+xaviershay,2012-08-27 04:13:09,https://api.github.com/repos/square/cane/git/commits/b5e5a36264e2d33aba67dffd9cfa2c62a967d159,b5e5a36264e2d33aba67dffd9cfa2c62a967d159,bugfix: can set parallel option in rake tasks.
+xaviershay,2012-08-27 04:12:52,https://api.github.com/repos/square/cane/git/commits/3ca050cbdbacbb2a811417e6bb240e01ab0903cd,3ca050cbdbacbb2a811417e6bb240e01ab0903cd,Missed Gemfile.lock upgrade after 2.2.0 release.
+xaviershay,2012-08-27 00:18:54,https://api.github.com/repos/square/cane/git/commits/1bfe39a433ac6f725c0e6a859b9a269bef562dbe,1bfe39a433ac6f725c0e6a859b9a269bef562dbe,2.2.0
+xaviershay,2012-08-27 00:15:42,https://api.github.com/repos/square/cane/git/commits/f4198619ca7c316389a2b9ba0962cfbf5514ae82,f4198619ca7c316389a2b9ba0962cfbf5514ae82,"Gracefully handle ambiguous options.
+
+Fixes #27."
+xaviershay,2012-08-27 00:08:01,https://api.github.com/repos/square/cane/git/commits/70a540c058b360e50b646aab054456d8716e9118,70a540c058b360e50b646aab054456d8716e9118,"Provide an option to use all processors.
+
+This is useful for larger projects. Fixes #28."
+xaviershay,2012-08-26 20:40:27,https://api.github.com/repos/square/cane/git/commits/c0f2e45d9fbf4bbbc6fd8da58723382992316823,c0f2e45d9fbf4bbbc6fd8da58723382992316823,2.1.0
+xaviershay,2012-08-26 20:38:35,https://api.github.com/repos/square/cane/git/commits/2962d8fb2856bdec72b09713c596d6059e11de9f,2962d8fb2856bdec72b09713c596d6059e11de9f,Merge branch 'user-defined-checks'
+xaviershay,2012-08-26 20:36:23,https://api.github.com/repos/square/cane/git/commits/d756233828fa8c9f35ca83a29eee4fad8d016349,d756233828fa8c9f35ca83a29eee4fad8d016349,README and wording updates.
+xaviershay,2012-08-26 20:18:11,https://api.github.com/repos/square/cane/git/commits/66fde72665aebfa78a254aaccbd55c3380701e7f,66fde72665aebfa78a254aaccbd55c3380701e7f,"Remove TODO to validate checks.
+
+I spiked on this but it was pretty hacky and not in the Ruby spirit.
+Bubbling up exceptions is an easier way to enable developers to find and
+fix problems."
+xaviershay,2012-08-26 19:56:36,https://api.github.com/repos/square/cane/git/commits/4b03d7a36cc1aecfe8c9e9f3a86b21cc761eea95,4b03d7a36cc1aecfe8c9e9f3a86b21cc761eea95,Move expensive requires into spec_helper so they aren't misreported in profiling.
+xaviershay,2012-08-26 19:53:38,https://api.github.com/repos/square/cane/git/commits/fa92a3a747de0da1094492849de85e61ebc80963,fa92a3a747de0da1094492849de85e61ebc80963,Remove dead code in spec helper.
+xaviershay,2012-08-26 19:52:44,https://api.github.com/repos/square/cane/git/commits/c640a938e5f33bd1897423473eec9ec15f4f0f80,c640a938e5f33bd1897423473eec9ec15f4f0f80,"Further simplify acceptance tests, break out rake tests."
+xaviershay,2012-08-26 19:47:57,https://api.github.com/repos/square/cane/git/commits/cd89ec6825bae6d61e3d561cde11ad7273fe6ec8,cd89ec6825bae6d61e3d561cde11ad7273fe6ec8,Collapse two rake tests into one.
+xaviershay,2012-08-26 19:45:56,https://api.github.com/repos/square/cane/git/commits/71d6741c4d79ee2112f0b274684f5254a129df20,71d6741c4d79ee2112f0b274684f5254a129df20,Use rspec/fire whereever constants are mocked.
+xaviershay,2012-08-26 19:45:25,https://api.github.com/repos/square/cane/git/commits/28acf330a4f1d57abf245992b41b78b10c020748,28acf330a4f1d57abf245992b41b78b10c020748,Unit spec for Cane::CLI
+xaviershay,2012-08-26 19:44:47,https://api.github.com/repos/square/cane/git/commits/a218168844ff89a80ec85ff709137759b39ec62f,a218168844ff89a80ec85ff709137759b39ec62f,Add rspec-fire to development dependencies.
+xaviershay,2012-08-26 19:36:21,https://api.github.com/repos/square/cane/git/commits/124cfcab0aac658a85420ecc380257f09e14132d,124cfcab0aac658a85420ecc380257f09e14132d,By default ensure everything is off in acceptance test.
+xaviershay,2012-08-26 19:36:10,https://api.github.com/repos/square/cane/git/commits/eaf7f4655d8ccbfe09a8ae82a9d7b4b27a8b90e9,eaf7f4655d8ccbfe09a8ae82a9d7b4b27a8b90e9,Simpler implementation for loading .cane file.
+xaviershay,2012-08-26 19:35:56,https://api.github.com/repos/square/cane/git/commits/066a2f64bca4ae06cf4e3427e5c7be7b36dab593,066a2f64bca4ae06cf4e3427e5c7be7b36dab593,Push down acceptance tests to lower levels.
+xaviershay,2012-08-26 19:34:48,https://api.github.com/repos/square/cane/git/commits/cf35313e9d1110cd1edaa49332ebfc07c6c8f243,cf35313e9d1110cd1edaa49332ebfc07c6c8f243,Enable profiler in default spec output.
+xaviershay,2012-08-26 19:13:18,https://api.github.com/repos/square/cane/git/commits/1e6ce5a9d9e4772e4ae0ed77f7520c1cfdd6d8e0,1e6ce5a9d9e4772e4ae0ed77f7520c1cfdd6d8e0,Update rspec to latest.
+xaviershay,2012-08-26 19:10:45,https://api.github.com/repos/square/cane/git/commits/e9d399f3a7dff438762c7083905af378ecda4377,e9d399f3a7dff438762c7083905af378ecda4377,"Make EncodingAwareIterator a proper Enumerable.
+
+This allows for easier mocking in tests, and is also less surprising.
+The Struct superclass was removed because it already implements
+Enumerable (with different semantics) which is too confusing."
+xaviershay,2012-08-25 22:41:03,https://api.github.com/repos/square/cane/git/commits/14dde5b7619de0a1188b63eeaef0e202dbfe885b,14dde5b7619de0a1188b63eeaef0e202dbfe885b,Push acceptance tests into more-unit like tests.
+xaviershay,2012-08-25 22:36:36,https://api.github.com/repos/square/cane/git/commits/c1785772d93169cc8c4b773c72b33f58d83c6b50,c1785772d93169cc8c4b773c72b33f58d83c6b50,Use Cane::File for loading .cane
+xaviershay,2012-08-25 22:20:56,https://api.github.com/repos/square/cane/git/commits/1d2ffa6d6cb754d3df810e98f6b129bf041f9965,1d2ffa6d6cb754d3df810e98f6b129bf041f9965,Introduce parser spec to push down acceptance tests into.
+xaviershay,2012-08-25 22:12:44,https://api.github.com/repos/square/cane/git/commits/b9ec58a70388cafa8c73b881b5e7ca684567a7f1,b9ec58a70388cafa8c73b881b5e7ca684567a7f1,Make DEFAULT_CHECKS a method to avoid requiring dup everywhere.
+xaviershay,2012-08-25 22:04:31,https://api.github.com/repos/square/cane/git/commits/f3a3eb3fbdcdfdbb8b170b86407b4146d2508c95,f3a3eb3fbdcdfdbb8b170b86407b4146d2508c95,Simplify RakeTask code.
+xaviershay,2012-08-25 21:49:59,https://api.github.com/repos/square/cane/git/commits/78288b496083ce11dce00e7290485b9ff9976815,78288b496083ce11dce00e7290485b9ff9976815,Rename CLI::Spec to Parser to better match what it does.
+xaviershay,2012-08-25 21:48:06,https://api.github.com/repos/square/cane/git/commits/59bd8abf92c23342512be913fb9e2ae1a1380d72,59bd8abf92c23342512be913fb9e2ae1a1380d72,Move CLI options to CLI namespace.
+xaviershay,2012-08-25 21:44:56,https://api.github.com/repos/square/cane/git/commits/8e4c8f2389b68770cfb3cea646a97f7ff341409d,8e4c8f2389b68770cfb3cea646a97f7ff341409d,Move default checks to top level Cane constant.
+xaviershay,2012-08-25 21:40:17,https://api.github.com/repos/square/cane/git/commits/f0cd09f22ec38edccb77dfa4fb8cd0d05c4aec31,f0cd09f22ec38edccb77dfa4fb8cd0d05c4aec31,Ratchet coverage threshold back up to 100%
+xaviershay,2012-08-25 21:39:00,https://api.github.com/repos/square/cane/git/commits/ab5be8ab7fbbb16a16bf40feaa2f5af795a85ced,ab5be8ab7fbbb16a16bf40feaa2f5af795a85ced,Split a large spec into two smaller ones.
+xaviershay,2012-08-25 21:36:36,https://api.github.com/repos/square/cane/git/commits/a8975f5453479ea52c88a1794242d784c7974c1f,a8975f5453479ea52c88a1794242d784c7974c1f,Inline unhappy check.
+xaviershay,2012-08-25 21:31:18,https://api.github.com/repos/square/cane/git/commits/83e691bc0fca9c4d2d46773fc75efa4dc62c6605,83e691bc0fca9c4d2d46773fc75efa4dc62c6605,Don't require reloading UnhappyCheck in specs.
+xaviershay,2012-08-25 21:24:43,https://api.github.com/repos/square/cane/git/commits/6ba0aff35025689f084ba8f10e598b2676eebfc0,6ba0aff35025689f084ba8f10e598b2676eebfc0,Freeze constant to avoid accidentally modifying it.
+xaviershay,2012-08-25 21:24:28,https://api.github.com/repos/square/cane/git/commits/705975e4df449651948fd63cd0f86aa52116667e,705975e4df449651948fd63cd0f86aa52116667e,Inline rake tests to avoid shelling out.
+xaviershay,2012-08-25 21:02:17,https://api.github.com/repos/square/cane/git/commits/cbd59d1fe9ed124e6483c29523f620a6ff39afde,cbd59d1fe9ed124e6483c29523f620a6ff39afde,Include rake integration tests in coverage report.
+xaviershay,2012-08-25 20:58:08,https://api.github.com/repos/square/cane/git/commits/d3c64d8206ef11c606044a80166bf78d92ab5c41,d3c64d8206ef11c606044a80166bf78d92ab5c41,Support user-defined checks in rake tasks.
+xaviershay,2012-08-25 20:52:27,https://api.github.com/repos/square/cane/git/commits/9c5e2f54e67a47e112a26f06845d487ad8949f1c,9c5e2f54e67a47e112a26f06845d487ad8949f1c,Smoke test for rake task.
+xaviershay,2012-08-25 04:56:33,https://api.github.com/repos/square/cane/git/commits/640076c553c538920a88308c92be083e17130202,640076c553c538920a88308c92be083e17130202,MVP for supporting custom checks.
+xaviershay,2012-08-25 04:29:20,https://api.github.com/repos/square/cane/git/commits/b60afa7dea53434b04bad1482f3e1b7d22cae500,b60afa7dea53434b04bad1482f3e1b7d22cae500,Pass checks as a dynamic option rather than a constant.
+xaviershay,2012-08-20 00:38:37,https://api.github.com/repos/square/cane/git/commits/374a821827c58f815f0773e1b9adb9a8bee3e064,374a821827c58f815f0773e1b9adb9a8bee3e064,Provide migration snippet in HISTORY.
+xaviershay,2012-08-20 00:32:42,https://api.github.com/repos/square/cane/git/commits/792eba768ae8ed4a70e5a2008bf6d50ddfb23aa8,792eba768ae8ed4a70e5a2008bf6d50ddfb23aa8,Typography in HISTORY.
+xaviershay,2012-08-20 00:30:57,https://api.github.com/repos/square/cane/git/commits/2a579d8a4efac6f9e40dcf5e42b16b408666b5c3,2a579d8a4efac6f9e40dcf5e42b16b408666b5c3,2.0.0
+xaviershay,2012-08-20 00:20:44,https://api.github.com/repos/square/cane/git/commits/35cae08692633c0dae0db0bcbfcfd63e925224da,35cae08692633c0dae0db0bcbfcfd63e925224da,Gracefully handle unknown options.
+xaviershay,2012-08-20 00:15:15,https://api.github.com/repos/square/cane/git/commits/eb3881027b3f8f67bbe20860441f4b90b4efb4b8,eb3881027b3f8f67bbe20860441f4b90b4efb4b8,Label globs correctly in help output.
+xaviershay,2012-08-20 00:12:18,https://api.github.com/repos/square/cane/git/commits/49a01e35f7d0ba041cfe2f288267cbd4caafc3ed,49a01e35f7d0ba041cfe2f288267cbd4caafc3ed,Add exclusion example to rake task in README.
+xaviershay,2012-08-20 00:08:14,https://api.github.com/repos/square/cane/git/commits/896f7667cd16ed8f4dd1c8e992614ccffbbad9a0,896f7667cd16ed8f4dd1c8e992614ccffbbad9a0,Fix regression in threshold check failure message.
+xaviershay,2012-08-20 00:06:15,https://api.github.com/repos/square/cane/git/commits/22946a4ed40bf75545381cfeb0154286c2445a29,22946a4ed40bf75545381cfeb0154286c2445a29,Namespace ThresholdCheck.
+xaviershay,2012-08-20 00:04:55,https://api.github.com/repos/square/cane/git/commits/46320175aa3fd598eda63a6aba753edc5c155652,46320175aa3fd598eda63a6aba753edc5c155652,ABC check output matches exclusion format.
+xaviershay,2012-08-19 23:59:39,https://api.github.com/repos/square/cane/git/commits/836ea4fb4b74d07e7d85782d6ee58cdfb32fac52,836ea4fb4b74d07e7d85782d6ee58cdfb32fac52,"Support exclusion through CLI, remove YAML support."
+xaviershay,2012-08-19 03:46:53,https://api.github.com/repos/square/cane/git/commits/e703ad094470cb17b10486575a29601a42aadf5d,e703ad094470cb17b10486575a29601a42aadf5d,"Remove special casing for ThresholdCheck.
+
+It's almost more complicated, but it bundles it all into one spot (the
+CLI options generator)."
+xaviershay,2012-08-19 03:28:01,https://api.github.com/repos/square/cane/git/commits/715ea9736bc519a1dbd7da004efc9d97233ecfc5,715ea9736bc519a1dbd7da004efc9d97233ecfc5,"Remove indirection between CLI and check args.
+
+It is not quite as ""nice"", but is much simpler."
+xaviershay,2012-08-19 02:31:48,https://api.github.com/repos/square/cane/git/commits/fdcfbaa2287098259bfe6c1de806423a968702ec,fdcfbaa2287098259bfe6c1de806423a968702ec,Merge remote branch 'origin/check-simplify'
+xaviershay,2012-08-19 01:50:48,https://api.github.com/repos/square/cane/git/commits/c5db6b64903d2de31605028cf938ea082f84d4f4,c5db6b64903d2de31605028cf938ea082f84d4f4,Generate translator code from check metadata.
+xaviershay,2012-08-19 01:34:17,https://api.github.com/repos/square/cane/git/commits/25813b6eb699aee90e3a07103a366844c8b2f546,25813b6eb699aee90e3a07103a366844c8b2f546,Rename files option to glob to match public interface.
+xaviershay,2012-08-19 01:27:23,https://api.github.com/repos/square/cane/git/commits/5a3efec6126c90bd57aff34379fc38676961dd61,5a3efec6126c90bd57aff34379fc38676961dd61,Rename DEFAULTS to OPTIONS.
+xaviershay,2012-08-19 01:26:04,https://api.github.com/repos/square/cane/git/commits/e0270a6502af4ac34265d2109485374b8c4262c9,e0270a6502af4ac34265d2109485374b8c4262c9,Generate rake task from check metadata.
+xaviershay,2012-08-19 01:14:03,https://api.github.com/repos/square/cane/git/commits/7e8a5b267f84ddd429543ece9a699efc9f69de1d,7e8a5b267f84ddd429543ece9a699efc9f69de1d,Push some configuration down into check classes.
+xaviershay,2012-08-19 00:42:30,https://api.github.com/repos/square/cane/git/commits/d2bc3e109b399029696efe6a161d356c45b32d29,d2bc3e109b399029696efe6a161d356c45b32d29,"Use hashes for violations, simplify everything."
+xaviershay,2012-08-19 00:44:11,https://api.github.com/repos/square/cane/git/commits/970a07e11fc9144021ae1559f9360982ca7f34a2,970a07e11fc9144021ae1559f9360982ca7f34a2,"Merge pull request #24 from square/smarter-abc
+
+Handle anonymous class definitions correctly in ABC output."
+xaviershay,2012-08-19 00:44:01,https://api.github.com/repos/square/cane/git/commits/39795befde40766da68df3445d280756a48969b0,39795befde40766da68df3445d280756a48969b0,"Merge pull request #23 from square/encoding
+
+Encoding fixes."
+xaviershay,2012-08-18 21:04:39,https://api.github.com/repos/square/cane/git/commits/1c3c2e67429d3052a3c4da460e60bb144872346f,1c3c2e67429d3052a3c4da460e60bb144872346f,"Handle anonymous class definitions correctly in ABC output.
+
+Fixes #20."
+xaviershay,2012-08-18 20:36:31,https://api.github.com/repos/square/cane/git/commits/354e509086d07aae3b01726c22510c9c9c9a695f,354e509086d07aae3b01726c22510c9c9c9a695f,Extract class Cane::File to handle encoding in one place.
+xaviershay,2012-08-18 20:26:49,https://api.github.com/repos/square/cane/git/commits/d1a73399c56026d4f29d5cd23edebf1868a74c3f,d1a73399c56026d4f29d5cd23edebf1868a74c3f,Revert a spacing convention I never liked anyway.
+xaviershay,2012-08-18 20:24:55,https://api.github.com/repos/square/cane/git/commits/71ec2c406f67634fdf9b4bf2acda2803502c7a4f,71ec2c406f67634fdf9b4bf2acda2803502c7a4f,Consistent opening of files as UTF-8.
+xaviershay,2012-08-18 20:21:31,https://api.github.com/repos/square/cane/git/commits/cf888f1499ec19ef413736b07b931326476d52f4,cf888f1499ec19ef413736b07b931326476d52f4,"Ignore invalid UTF-8 input when parsing lines.
+
+This continues the hack that cane assumes UTF-8 input, which may not
+actually be the case but still seems like a decent option since I don't
+have good examples of this not being the case.
+
+This should not add any performance overhead, since input is only
+re-encoded if any comparison fails on it. I have not benchmarked whether
+this actually a big deal or not, but should.
+
+Fixes #22."
+xaviershay,2012-08-18 19:38:00,https://api.github.com/repos/square/cane/git/commits/79d213166fe81619eb9161d040efcd134a6011f3,79d213166fe81619eb9161d040efcd134a6011f3,"Don't recognize magic encoding comment as class documentation.
+
+The exact spec for this comment is unclear from the Ruby source. There
+is exactly one test for a valid comment, and `parse.y` is ... obtuse.
+The regex used here was found in `lib/erb.rb` and copied verbatim, with
+the exception of a redundant regex to exclude -*- markers, which AFAICT
+is entirely unnecessary.
+
+Fixes #21."
+xaviershay,2012-07-04 04:13:15,https://api.github.com/repos/square/cane/git/commits/f6bab2c5e36ce02078baece4be9a807c19673a31,f6bab2c5e36ce02078baece4be9a807c19673a31,"Merge pull request #18 from seomoz/cosmetic_fixes
+
+Cosmetic fixes"
+myronmarston,2012-07-03 05:00:51,https://api.github.com/repos/square/cane/git/commits/d9cac732441b0eb10b09f68a6da9c3182f2dc184,d9cac732441b0eb10b09f68a6da9c3182f2dc184,Remove unnecessary begin/end.
+myronmarston,2012-07-03 04:59:19,https://api.github.com/repos/square/cane/git/commits/e2e9da5a9bb90cdfe4f8312cfa12ec705b689d0b,e2e9da5a9bb90cdfe4f8312cfa12ec705b689d0b,Fix YAML in README to actually be valid.
+xaviershay,2012-07-03 03:17:36,https://api.github.com/repos/square/cane/git/commits/aa469408ab8a87903c3ca60c5882f7a036e086f5,aa469408ab8a87903c3ca60c5882f7a036e086f5,"Merge pull request #17 from mattonrails/master
+
+Mention short version flag in --help output and README"
+mattreduce,2012-07-03 02:54:03,https://api.github.com/repos/square/cane/git/commits/986c116511607c12a874cb59727aa6144cf01bb8,986c116511607c12a874cb59727aa6144cf01bb8,Update README to match --help output
+mattreduce,2012-07-03 02:39:59,https://api.github.com/repos/square/cane/git/commits/1265a4ae56222d105b91602ce0f5a3fb656db75a,1265a4ae56222d105b91602ce0f5a3fb656db75a,Mention short version flag in --help output
+xaviershay,2012-07-02 20:34:57,https://api.github.com/repos/square/cane/git/commits/ecbcd035858c3c6080baeb9862db130a41ab9a9d,ecbcd035858c3c6080baeb9862db130a41ab9a9d,1.4.0
+xaviershay,2012-07-01 00:53:07,https://api.github.com/repos/square/cane/git/commits/1afc999d1c821f6e5b5add5eee12983c293f28a1,1afc999d1c821f6e5b5add5eee12983c293f28a1,"Merge pull request #16 from seomoz/exclusions
+
+Provide a whitelist mechanism"
+myronmarston,2012-06-29 04:26:34,https://api.github.com/repos/square/cane/git/commits/c465ba96186f4e831a05906ec56812694b08b27d,c465ba96186f4e831a05906ec56812694b08b27d,Update README with info about exclusions.
+myronmarston,2012-06-29 01:16:17,https://api.github.com/repos/square/cane/git/commits/c914574812ff4ed1ec662abaf88fa1d6e0197955,c914574812ff4ed1ec662abaf88fa1d6e0197955,Add exclusions_file to rake task.
+myronmarston,2012-06-29 00:06:10,https://api.github.com/repos/square/cane/git/commits/c6794d47eb56b44ef73ea6ccea1784e934c39527,c6794d47eb56b44ef73ea6ccea1784e934c39527,Add CLI support for exclusions.
+myronmarston,2012-06-28 23:59:37,https://api.github.com/repos/square/cane/git/commits/727051a988192edde915df522aae20c53c8d0c89,727051a988192edde915df522aae20c53c8d0c89,Add support for excluding some files from the style check.
+myronmarston,2012-06-28 05:49:58,https://api.github.com/repos/square/cane/git/commits/b6e3e3cd29497532626a9032c8b698b889eda126,b6e3e3cd29497532626a9032c8b698b889eda126,Add support for excluding some methods from the ABC check.
+myronmarston,2012-06-28 15:43:01,https://api.github.com/repos/square/cane/git/commits/f97e8db4a71541c438fcced245ce040bb7a4dba5,f97e8db4a71541c438fcced245ce040bb7a4dba5,"Don't include trailing semicolon in class name for doc check.
+
+Previously, the doc check would extract a class name like ""Foo;"" from ""class Foo; end"""
+myronmarston,2012-06-28 15:38:59,https://api.github.com/repos/square/cane/git/commits/981b9df7d781955b8cef76bd729c4527e02ac6d6,981b9df7d781955b8cef76bd729c4527e02ac6d6,"Fix typo: ""studid"" => ""stupid""."
+xaviershay,2012-06-16 01:43:24,https://api.github.com/repos/square/cane/git/commits/0cfb1d6ce1e7f0de785f2295a23a9e48a03c0c2f,0cfb1d6ce1e7f0de785f2295a23a9e48a03c0c2f,"Merge pull request #14 from conversation/total_violations
+
+include total violation count in ViolationFormatter output"
+yob,2012-06-15 12:06:03,https://api.github.com/repos/square/cane/git/commits/ced755f93921cf95c2023100293b1be26efbe425,ced755f93921cf95c2023100293b1be26efbe425,"include total violation count in ViolationFormatter output
+
+* When adding cane to a legacy project and ratching down the
+  max_violations setting it's handy to know what value to set
+* At the moment I need to manually sum the violation count for each
+  grouping"
+xaviershay,2012-05-16 16:56:16,https://api.github.com/repos/square/cane/git/commits/2e684a9cd820548516e82f8713bbaeafd83a6734,2e684a9cd820548516e82f8713bbaeafd83a6734,"Remove tagging green build from script/ci.
+
+Jenkins isn't happy about this and it's not particularly useful for this
+codebase since it doesn't get deployed anywhere."
+xaviershay,2012-05-16 16:56:10,https://api.github.com/repos/square/cane/git/commits/f551e531a4dc35885c2abd1c3fd5f8dbc54e13f9,f551e531a4dc35885c2abd1c3fd5f8dbc54e13f9,Remove Square mirror from script/ci.
+xaviershay,2012-04-21 04:19:32,https://api.github.com/repos/square/cane/git/commits/7ddaad757bc8e7ca80b43fac9526eba7b22d7c36,7ddaad757bc8e7ca80b43fac9526eba7b22d7c36,1.3.0
+xaviershay,2012-04-21 04:16:52,https://api.github.com/repos/square/cane/git/commits/c166dfa001ef77f7e3d95c86d922a9c2d7fbe82c,c166dfa001ef77f7e3d95c86d922a9c2d7fbe82c,Update development dependencies.
+xaviershay,2012-04-21 04:15:25,https://api.github.com/repos/square/cane/git/commits/1ae713859341ef8635eb933977115766b304538e,1ae713859341ef8635eb933977115766b304538e,"Remove dependency on tailor.
+
+New version is way too slow, and we only need very simple checks
+anyways."
+xaviershay,2012-04-17 01:11:11,https://api.github.com/repos/square/cane/git/commits/2ce6007ac26e3ae4378a2f5f4fd28643e0130ffa,2ce6007ac26e3ae4378a2f5f4fd28643e0130ffa,"Merge pull request #11 from turboladen/patch-1
+
+I'm getting ready to release tailor 1.0.0, which will probably break the..."
+turboladen,2012-04-16 00:14:25,https://api.github.com/repos/square/cane/git/commits/6a1b65226dc8a8318c8f7644ac00452844b89a1e,6a1b65226dc8a8318c8f7644ac00452844b89a1e,"I'm getting ready to release tailor 1.0.0, which will probably break the parts of cane that use the existing tailor.  Thought I'd try to preempt that here."
+xaviershay,2012-03-31 19:49:16,https://api.github.com/repos/square/cane/git/commits/f9a7147582d3b0b106972feec06a982eb3f5bf41,f9a7147582d3b0b106972feec06a982eb3f5bf41,1.2.0 release
+xaviershay,2012-03-31 19:45:39,https://api.github.com/repos/square/cane/git/commits/adce51b9073960151a090259a640673e1fbd8686,adce51b9073960151a090259a640673e1fbd8686,ONE HUNDRED PERCENT
+xaviershay,2012-03-31 19:45:04,https://api.github.com/repos/square/cane/git/commits/e10db7972b236c9b5e3eddc13e879f120cc4a82f,e10db7972b236c9b5e3eddc13e879f120cc4a82f,"Merge branch 'abc-check-for-class-methods'
+
+Fixes #8."
+xaviershay,2012-03-31 19:42:03,https://api.github.com/repos/square/cane/git/commits/02d1fd610f0d32937bf64c67fc38309f92c8d7d5,02d1fd610f0d32937bf64c67fc38309f92c8d7d5,"Remove dead code.
+
+I can't find any syntax that causes this branch to be executed."
+xaviershay,2012-03-31 19:41:26,https://api.github.com/repos/square/cane/git/commits/23753d01ebebb591b8b941f98eb741169543ad47,23753d01ebebb591b8b941f98eb741169543ad47,DRY up ABC check spec.
+xaviershay,2012-03-31 19:35:12,https://api.github.com/repos/square/cane/git/commits/ef4e094bb725f550ea7bdb571791fac562eb0e65,ef4e094bb725f550ea7bdb571791fac562eb0e65,Fix regression detecting label for 'odd' methods.
+xaviershay,2012-03-31 19:25:40,https://api.github.com/repos/square/cane/git/commits/c019e7cc5b803610e2f21b84ca50030ea2c30f5d,c019e7cc5b803610e2f21b84ca50030ea2c30f5d,Include class methods in ABC check.
+xaviershay,2012-03-31 19:02:10,https://api.github.com/repos/square/cane/git/commits/51688241a1f3ad00c13c97f543886272e53a882b,51688241a1f3ad00c13c97f543886272e53a882b,Forgot to update Gemfile.lock last gem release.
+xaviershay,2012-03-31 19:01:40,https://api.github.com/repos/square/cane/git/commits/d7f347a40371c9bb8c75a50f1ab88e8ac8a5e64f,d7f347a40371c9bb8c75a50f1ab88e8ac8a5e64f,"Merge branch 'handle-syntax-errors'.
+
+Fixes #1."
+xaviershay,2012-03-31 19:01:17,https://api.github.com/repos/square/cane/git/commits/6987773cedc851972bcf45daaef0b766958ba1c1,6987773cedc851972bcf45daaef0b766958ba1c1,Consistent spec for AbcCheck.
+xaviershay,2012-03-31 18:59:13,https://api.github.com/repos/square/cane/git/commits/0371d9566626a61fdf76cba8f3a65cb38689c0b5,0371d9566626a61fdf76cba8f3a65cb38689c0b5,Better coverage of SyntaxViolation class.
+xaviershay,2012-03-31 18:57:31,https://api.github.com/repos/square/cane/git/commits/252217466b39abffea837103150a3f4e2c305da6,252217466b39abffea837103150a3f4e2c305da6,Introduce null object to represent an invalid ast.
+xaviershay,2012-03-31 18:50:13,https://api.github.com/repos/square/cane/git/commits/75acdc6bf54b0ffd6896f53f6eb9ca601167277f,75acdc6bf54b0ffd6896f53f6eb9ca601167277f,Handle syntax errors in ABC check.
+xaviershay,2012-03-29 15:05:54,https://api.github.com/repos/square/cane/git/commits/105dbb57125b1f48ea47efdf9ca8644ec61f6ac1,105dbb57125b1f48ea47efdf9ca8644ec61f6ac1,"Merge pull request #9 from dlindahl/master
+
+Provide ability to disable style and documentation checks from within the RakeTask"
+xaviershay,2012-03-25 03:55:11,https://api.github.com/repos/square/cane/git/commits/ba10a2a0b1d23ed35fea7d9211d36299914990db,ba10a2a0b1d23ed35fea7d9211d36299914990db,1.1.0 release.
+xaviershay,2012-03-25 03:52:30,https://api.github.com/repos/square/cane/git/commits/ba8a74fc20edb22b0753f68f1f9fd54c81d5e238,ba8a74fc20edb22b0753f68f1f9fd54c81d5e238,Update README with new defaults.
+xaviershay,2012-03-25 03:50:50,https://api.github.com/repos/square/cane/git/commits/011d8aaa9a4413e235f59e76572db991ebb3c4e0,011d8aaa9a4413e235f59e76572db991ebb3c4e0,Include app in defaults to support Rails out of the box.
+xaviershay,2012-03-11 00:49:16,https://api.github.com/repos/square/cane/git/commits/350777252265dc5345bb9b63727f13660a1127c2,350777252265dc5345bb9b63727f13660a1127c2,Merge branch 'mislav-rake-task'
+xaviershay,2012-03-11 00:48:38,https://api.github.com/repos/square/cane/git/commits/ccba29d96ff39ceb338c38b1bd6c624af9c25e23,ccba29d96ff39ceb338c38b1bd6c624af9c25e23,Consistent use of warn in Rakefile.
+xaviershay,2012-03-11 00:47:58,https://api.github.com/repos/square/cane/git/commits/ccfb61b6dbd0012df1147e6ba2548011f171cf50,ccfb61b6dbd0012df1147e6ba2548011f171cf50,Add rake example to README.
+xaviershay,2012-03-11 00:44:45,https://api.github.com/repos/square/cane/git/commits/5a70ed7999a54d0faf37e99f25e7fcdb3f4272f0,5a70ed7999a54d0faf37e99f25e7fcdb3f4272f0,Style.
+mislav,2012-03-08 23:05:14,https://api.github.com/repos/square/cane/git/commits/e695b34b68a92e4a99cdcb2dbc2ce1daea4cb944,e695b34b68a92e4a99cdcb2dbc2ce1daea4cb944,"add ""cane/rake_task""
+
+For easy creation of rake tasks that run cane."
+mislav,2012-03-08 23:02:06,https://api.github.com/repos/square/cane/git/commits/b8571e9cbc2c064f6da6755cb3423602ceafcb10,b8571e9cbc2c064f6da6755cb3423602ceafcb10,"no need to munge LOAD_PATH
+
+In Rubygems environment, the LOAD_PATH will already be set and there's
+no need to add a duplicate to it.
+
+In development or other setups, simply prepare the LOAD_PATH yourself:
+
+  $ RUBYLIB=lib bin/cane
+
+  # or:
+
+  $ ruby -Ilib bin/cane"
+mislav,2012-03-08 23:00:58,https://api.github.com/repos/square/cane/git/commits/f8e8dd7a5b494a6a1446050d7cf7bb46a5eb2178,f8e8dd7a5b494a6a1446050d7cf7bb46a5eb2178,require optparse only where it's used
+xaviershay,2012-03-08 05:06:16,https://api.github.com/repos/square/cane/git/commits/5aa4b8f74b11e5482ff4f90f24f5e2dbfca77048,5aa4b8f74b11e5482ff4f90f24f5e2dbfca77048,"Merge pull request #6 from mislav/singleton-class
+
+ignore `class << obj` syntax in doc check"
+mislav,2012-03-07 22:47:54,https://api.github.com/repos/square/cane/git/commits/30fa1e7a8e5e07ef651f3c4ed9200071f2f22ca3,30fa1e7a8e5e07ef651f3c4ed9200071f2f22ca3,ignore `class << obj` syntax in doc check
+xaviershay,2012-03-06 16:25:45,https://api.github.com/repos/square/cane/git/commits/7402e3131400f0abc57164d6c51b79b0153db5a8,7402e3131400f0abc57164d6c51b79b0153db5a8,"Merge pull request #5 from ToadJamb/bugs/line-length-includes-new-lines
+
+Line length checks no longer include trailing new lines in the count."
+xaviershay,2012-02-21 03:06:57,https://api.github.com/repos/square/cane/git/commits/d51811611d17bbaf9eafdf3bc481621c4746e894,d51811611d17bbaf9eafdf3bc481621c4746e894,Merge branch 'bh/dot_cane_support' of https://github.com/benhamill/cane into benhamill-bh/dot_cane_support
+benhamill,2012-02-20 02:42:38,https://api.github.com/repos/square/cane/git/commits/2b2b9b2d771feea02748866f90099579106881df,2b2b9b2d771feea02748866f90099579106881df,Use before() and after() like they're meant to be.
+xaviershay,2012-02-19 17:23:32,https://api.github.com/repos/square/cane/git/commits/446708c6f89585a16aa67a2a3639637e96732265,446708c6f89585a16aa67a2a3639637e96732265,Line length.
+xaviershay,2012-02-19 17:13:32,https://api.github.com/repos/square/cane/git/commits/22105efd10bdf10e3f40a92abac525d293272fd1,22105efd10bdf10e3f40a92abac525d293272fd1,"Merge pull request #3 from benhamill/last_argument_wins
+
+Last Command Line Argument Wins"
+benhamill,2012-02-19 06:52:08,https://api.github.com/repos/square/cane/git/commits/ebd4805b88796fc2928683e27a5d69e374d4df81,ebd4805b88796fc2928683e27a5d69e374d4df81,rm default options mucking up the ordering spec.
+benhamill,2012-02-19 06:51:52,https://api.github.com/repos/square/cane/git/commits/206bad96725abc09a94b7f4a58951e82f74be801,206bad96725abc09a94b7f4a58951e82f74be801,Only turn off a feature if the off flag came after other flags.
+benhamill,2012-02-19 05:30:04,https://api.github.com/repos/square/cane/git/commits/717774bbb1a521ca5c6fa5b8e8f6732051719913,717774bbb1a521ca5c6fa5b8e8f6732051719913,Mention new feature in HISTORY.
+benhamill,2012-02-19 05:21:19,https://api.github.com/repos/square/cane/git/commits/78bfa55f12d34a5b7816f6f16a06cdd4f388b305,78bfa55f12d34a5b7816f6f16a06cdd4f388b305,Consistent punctuation with the rest of the README.
+benhamill,2012-02-19 05:19:45,https://api.github.com/repos/square/cane/git/commits/c187fcf1464b07117d57cd0d23740aa389a5e2df,c187fcf1464b07117d57cd0d23740aa389a5e2df,Menion .cane file in README.
+benhamill,2012-02-19 04:38:45,https://api.github.com/repos/square/cane/git/commits/7f773cf16b30d9ee6052158fe726183064581657,7f773cf16b30d9ee6052158fe726183064581657,Mention .cane file in --help output.
+benhamill,2012-02-19 04:17:33,https://api.github.com/repos/square/cane/git/commits/681ebc5e8f60fc845d29ee788140245a4af5c949,681ebc5e8f60fc845d29ee788140245a4af5c949,Test about a .cane file.
+benhamill,2012-02-18 02:22:39,https://api.github.com/repos/square/cane/git/commits/5bedef09729a9ebdb50e8c33c9d015692370d313,5bedef09729a9ebdb50e8c33c9d015692370d313,Failing test about commandline behavior that makes sense to me.
+benhamill,2012-02-16 23:11:24,https://api.github.com/repos/square/cane/git/commits/499b5150ecc995cad80f46a91748a501191de1a7,499b5150ecc995cad80f46a91748a501191de1a7,Read from and merge options from .cane file.
+xaviershay,2012-02-13 19:26:23,https://api.github.com/repos/square/cane/git/commits/b252b34ba340f99d51fbdbecb9eb325b8e6d7a31,b252b34ba340f99d51fbdbecb9eb325b8e6d7a31,Add Support and Contributing sections to README.
+xaviershay,2012-02-13 19:11:12,https://api.github.com/repos/square/cane/git/commits/1a23622b76414506c0d6f217881204974569b057,1a23622b76414506c0d6f217881204974569b057,Apache Licensed.
+xaviershay,2012-01-14 22:55:09,https://api.github.com/repos/square/cane/git/commits/9884787accf8eb579a51afaebbff889e4cd34f0f,9884787accf8eb579a51afaebbff889e4cd34f0f,Pushed 1.0.0
+xaviershay,2012-01-14 18:56:04,https://api.github.com/repos/square/cane/git/commits/4e400534220032317d5f787ee5e99d259c664fa6,4e400534220032317d5f787ee5e99d259c664fa6,Add 1.9 notes to README.
+xaviershay,2012-01-14 18:44:17,https://api.github.com/repos/square/cane/git/commits/c8dbbfdb2c4a63fa707be31a36d3b1851ec9ffd0,c8dbbfdb2c4a63fa707be31a36d3b1851ec9ffd0,"Two more UTF-8 fixes, see last commit."
+xaviershay,2012-01-14 18:39:35,https://api.github.com/repos/square/cane/git/commits/db0c70db0998592139e9804072c1fe68a7f8fd3a,db0c70db0998592139e9804072c1fe68a7f8fd3a,"Assume UTF-8 encoding for files.
+
+I can't get a failing test case, though it is failing on one of our
+projects and is the same bug and fix as that in simplecov:
+https://github.com/colszowka/simplecov/pull/103"
+xaviershay,2012-01-02 19:58:24,https://api.github.com/repos/square/cane/git/commits/e684e7135ffe8db36efb7f958f02488a46d73d35,e684e7135ffe8db36efb7f958f02488a46d73d35,Prevent tempfiles from being GC'ed while they are still in use.
+xaviershay,2012-01-02 19:24:45,https://api.github.com/repos/square/cane/git/commits/519a9abbb41ed760b141d345792da3fe185dcd4a,519a9abbb41ed760b141d345792da3fe185dcd4a,Remove dead code.
+xaviershay,2012-01-02 19:23:46,https://api.github.com/repos/square/cane/git/commits/5e5c387b0f71c3b5b00da7de2803e88fe4329a29,5e5c387b0f71c3b5b00da7de2803e88fe4329a29,Ratchet up coverage requirement.
+xaviershay,2012-01-02 19:23:31,https://api.github.com/repos/square/cane/git/commits/df005eb636957bf7b765f3a4095b74ff68916704,df005eb636957bf7b765f3a4095b74ff68916704,Remove explicit exits from Cane::CLI::Spec and get --help and --version under test.
+xaviershay,2012-01-02 19:16:44,https://api.github.com/repos/square/cane/git/commits/12dbf9a992d7e874bcf7401f9fc00c804e5e9096,12dbf9a992d7e874bcf7401f9fc00c804e5e9096,Remove noise from #add_option calls.
+xaviershay,2012-01-02 19:15:40,https://api.github.com/repos/square/cane/git/commits/ab452dada5f023c51c00802f27da4f9f14ca9e46,ab452dada5f023c51c00802f27da4f9f14ca9e46,Divide and conquer CLI.
+xaviershay,2012-01-02 19:01:50,https://api.github.com/repos/square/cane/git/commits/680716509c49bbf3c90c97229ee70a60208a7b0f,680716509c49bbf3c90c97229ee70a60208a7b0f,Merge branch 'doc'
+xaviershay,2012-01-02 19:01:43,https://api.github.com/repos/square/cane/git/commits/958fc3010ff102b2e84c8393eae932ac835a22f7,958fc3010ff102b2e84c8393eae932ac835a22f7,Re-enable documentation checking for build.
+xaviershay,2012-01-02 19:01:27,https://api.github.com/repos/square/cane/git/commits/1e52ad7472b2443926a7c86b700319965dc94950,1e52ad7472b2443926a7c86b700319965dc94950,Document Cane and Cane::CLI.
+xaviershay,2012-01-02 18:56:21,https://api.github.com/repos/square/cane/git/commits/ba35d0e511d42417b96f224f6b8369e632e42feb,ba35d0e511d42417b96f224f6b8369e632e42feb,Documentation for threshold classes.
+xaviershay,2012-01-02 18:54:17,https://api.github.com/repos/square/cane/git/commits/337d3257808b4e631331abe40a833971cb4b6925,337d3257808b4e631331abe40a833971cb4b6925,Doc for style and doc checks.
+xaviershay,2012-01-02 18:48:27,https://api.github.com/repos/square/cane/git/commits/2b1f0b131c0a5a8b2b7b9ce545834ac805963017,2b1f0b131c0a5a8b2b7b9ce545834ac805963017,"Nest ABC classes inside Cane module, add documentation."
+xaviershay,2012-01-02 18:43:21,https://api.github.com/repos/square/cane/git/commits/6b98e7c9dc5fb43c9b2a5034379b764dbb1ce7e0,6b98e7c9dc5fb43c9b2a5034379b764dbb1ce7e0,Update README.
+xaviershay,2012-01-02 18:39:06,https://api.github.com/repos/square/cane/git/commits/9739ef1acc1244a98976b64f8b40365f6553351c,9739ef1acc1244a98976b64f8b40365f6553351c,Provide a check of undocumented classes.
+xaviershay,2012-01-02 18:09:57,https://api.github.com/repos/square/cane/git/commits/44e2d5f30f71d847708fc5e8844d3921360cd4d2,44e2d5f30f71d847708fc5e8844d3921360cd4d2,Configurable measure for style checks.
+xaviershay,2012-01-02 18:03:42,https://api.github.com/repos/square/cane/git/commits/2a41e4ed9a1f49c6ac405fd0701b37d6f4017d8c,2a41e4ed9a1f49c6ac405fd0701b37d6f4017d8c,"Only report a trailing whitespace and hard tabs in spacing style checks.
+
+The others are too hit-and-miss."
+xaviershay,2012-01-02 17:55:28,https://api.github.com/repos/square/cane/git/commits/cd219a287be2f87772c87e3dcf774c39cfdeff2d,cd219a287be2f87772c87e3dcf774c39cfdeff2d,Allow a global limit for violations to be set.
+xaviershay,2012-01-02 17:44:59,https://api.github.com/repos/square/cane/git/commits/0bf09a4f5110331dbd14b49d7de77a45e25a0f89,0bf09a4f5110331dbd14b49d7de77a45e25a0f89,Include number of failed checks per group in output.
+xaviershay,2011-12-24 04:58:16,https://api.github.com/repos/square/cane/git/commits/2f080f4283b107aa504e5751387fa2f401fac67c,2f080f4283b107aa504e5751387fa2f401fac67c,"Remove --no-* spec, it wasn't checking what you would think and is kind of covered by other specs."
+xaviershay,2011-12-24 04:50:17,https://api.github.com/repos/square/cane/git/commits/08dd602edd8767843050ccbb119700c87c9463a5,08dd602edd8767843050ccbb119700c87c9463a5,Merge branch 'cli'
+xaviershay,2011-12-24 04:49:30,https://api.github.com/repos/square/cane/git/commits/6ccf2d731249232ff112249b10f08da4c6d54320,6ccf2d731249232ff112249b10f08da4c6d54320,Extract method CLI#check_disabled.
+xaviershay,2011-12-24 04:47:07,https://api.github.com/repos/square/cane/git/commits/40023b357843d6e9dcaaa2c348ebf8e032249a76,40023b357843d6e9dcaaa2c348ebf8e032249a76,Inline a Tailor patch to avoid some obvious false style fails.
+xaviershay,2011-12-24 04:38:08,https://api.github.com/repos/square/cane/git/commits/f1000bc46b087abc11ef9b699ca0bf1b32224069,f1000bc46b087abc11ef9b699ca0bf1b32224069,Refactor Cane::CLI.
+xaviershay,2011-12-24 04:37:43,https://api.github.com/repos/square/cane/git/commits/7f8200b6977b0a81ec60553b680d72a40d4410af,7f8200b6977b0a81ec60553b680d72a40d4410af,"--no-style coz it's picking up commas inside strings, need to disable that."
+xaviershay,2011-12-24 03:47:54,https://api.github.com/repos/square/cane/git/commits/58de3d353c81d8f4fa38852ca3063561a2c0edd0,58de3d353c81d8f4fa38852ca3063561a2c0edd0,Don't depend directly on exit codes in spec.
+xaviershay,2011-12-24 03:40:52,https://api.github.com/repos/square/cane/git/commits/5600b45b16c41aab4bbb9c207c3a5c2dc0e49c0f,5600b45b16c41aab4bbb9c207c3a5c2dc0e49c0f,"Acceptance spec uses CLI.
+
+This is slightly less ""acceptance"" than running the bin directly, but
+provides two benefits:
+1) Will be much faster (once specs are changed to not directly check
+   exit code and require shelling).
+2) We can gather code coverage statistics."
+xaviershay,2011-12-24 03:35:11,https://api.github.com/repos/square/cane/git/commits/b03ef080917cbf81b3e1e10855c061d287373647,b03ef080917cbf81b3e1e10855c061d287373647,Move CLI code to own class.
+xaviershay,2011-12-24 04:50:03,https://api.github.com/repos/square/cane/git/commits/4700f051178bb8ff4489a707545f1657a7ad77a9,4700f051178bb8ff4489a707545f1657a7ad77a9,Merge branch 'refactor'
+xaviershay,2011-12-24 03:31:56,https://api.github.com/repos/square/cane/git/commits/f8d08e7a8c243517d8df9c822f02988c2a048a99,f8d08e7a8c243517d8df9c822f02988c2a048a99,Add code coverage to build.
+xaviershay,2011-12-24 03:27:44,https://api.github.com/repos/square/cane/git/commits/df8a00207c3f160d861d6a340904b0d1830d5345,df8a00207c3f160d861d6a340904b0d1830d5345,Ratchet down maximum allowed complexity.
+xaviershay,2011-12-24 03:27:14,https://api.github.com/repos/square/cane/git/commits/176b48d00f7b0b718dc4f3534836c15ba5689ae4,176b48d00f7b0b718dc4f3534836c15ba5689ae4,Refactor ViolationFormatter.
+xaviershay,2011-12-24 03:17:38,https://api.github.com/repos/square/cane/git/commits/edb0db94d916df8d748aa5a9d51ca646e3210b14,edb0db94d916df8d748aa5a9d51ca646e3210b14,Move important methods to top of AbcCheck.
+xaviershay,2011-12-24 03:15:03,https://api.github.com/repos/square/cane/git/commits/5c2abe7aa23dba7bcf27b0b140f2d087f5b2af5e,5c2abe7aa23dba7bcf27b0b140f2d087f5b2af5e,Clean up AbcCheck.
+xaviershay,2011-12-24 02:49:54,https://api.github.com/repos/square/cane/git/commits/9936f6babf3fe98b22d8f4132721d61ab8c8e762,9936f6babf3fe98b22d8f4132721d61ab8c8e762,Remove need for class method in violations.
+xaviershay,2011-12-24 02:47:03,https://api.github.com/repos/square/cane/git/commits/c2ed6953611389178b3eaac51621304079db09e6,c2ed6953611389178b3eaac51621304079db09e6,Introduce a null object in ThresholdCheck to simplify code.
+xaviershay,2011-12-24 02:40:46,https://api.github.com/repos/square/cane/git/commits/bcc297f1db67df35450c9e90920870f0fa1f2a68,bcc297f1db67df35450c9e90920870f0fa1f2a68,Extract some methods from ViolationFormatter.
+xaviershay,2011-12-24 02:37:45,https://api.github.com/repos/square/cane/git/commits/1672511119d7b3544f5aa049bcb8c1bd121027eb,1672511119d7b3544f5aa049bcb8c1bd121027eb,Better implementation of StyleCheck.
+xaviershay,2011-12-24 02:22:44,https://api.github.com/repos/square/cane/git/commits/add4f460ccaf1f85381d3d2e554cdcdf73c5b101,add4f460ccaf1f85381d3d2e554cdcdf73c5b101,Move finding problems into FileLine.
+xaviershay,2011-12-24 02:19:52,https://api.github.com/repos/square/cane/git/commits/25d03f8530936864e567bc84b306b28110d094db,25d03f8530936864e567bc84b306b28110d094db,Clean up lib/cane.rb
+xaviershay,2011-12-24 01:32:27,https://api.github.com/repos/square/cane/git/commits/d3b663ad89cab899d4b980dbdb63862097f6c696,d3b663ad89cab899d4b980dbdb63862097f6c696,script/ci for Jenkins.
+xaviershay,2011-12-24 01:30:08,https://api.github.com/repos/square/cane/git/commits/337ab90e25b7537514e5badccbd1290fd0ac32fa,337ab90e25b7537514e5badccbd1290fd0ac32fa,Add help output to README.
+xaviershay,2011-12-24 01:27:01,https://api.github.com/repos/square/cane/git/commits/f7c91412fc55577167c4f4202616049517003626,f7c91412fc55577167c4f4202616049517003626,"Self-caning, fix obvious complexity fails.
+
+Still a lot to do..."
+xaviershay,2011-12-24 01:20:17,https://api.github.com/repos/square/cane/git/commits/62f9b2da66ac91d9ee886389f73c98898445bb0e,62f9b2da66ac91d9ee886389f73c98898445bb0e,"Self-caning, fix style issues."
+xaviershay,2011-12-24 01:16:22,https://api.github.com/repos/square/cane/git/commits/f33a20d6a7a43a675e7086712a65362e4c994c25,f33a20d6a7a43a675e7086712a65362e4c994c25,Don't explode if a threshold file does not exist.
+xaviershay,2011-12-24 01:16:05,https://api.github.com/repos/square/cane/git/commits/c25db3e7cfe7818a78a99078fb6b974f644af2b8,c25db3e7cfe7818a78a99078fb6b974f644af2b8,Remove unused spec file.
+xaviershay,2011-12-24 01:08:53,https://api.github.com/repos/square/cane/git/commits/e19d7a677aebddcfedda712409737f1c272e522d,e19d7a677aebddcfedda712409737f1c272e522d,Merge branch 'gemify'
+xaviershay,2011-12-24 01:08:48,https://api.github.com/repos/square/cane/git/commits/dd6f0a77de26b1de299cf673e39a59176f1e5d2e,dd6f0a77de26b1de299cf673e39a59176f1e5d2e,"Gemfile, Rakefile, gemspec, HISTORY."
+xaviershay,2011-12-24 00:53:59,https://api.github.com/repos/square/cane/git/commits/7ded968edebff43b4eb1d6ec04b74e85612816ac,7ded968edebff43b4eb1d6ec04b74e85612816ac,Support --gte threshold check.
+xaviershay,2011-12-24 00:22:16,https://api.github.com/repos/square/cane/git/commits/2ae896203f3c13c59158cd224eb5d2d384e0dbb2,2ae896203f3c13c59158cd224eb5d2d384e0dbb2,Better --help output.
+xaviershay,2011-12-24 00:20:13,https://api.github.com/repos/square/cane/git/commits/54ed791c6ab4fb2750ba06289603a3f66b8963bb,54ed791c6ab4fb2750ba06289603a3f66b8963bb,Sensible default for ABC.
+xaviershay,2011-12-24 00:17:36,https://api.github.com/repos/square/cane/git/commits/d044893535e618fe8337a678146fa600ae03253d,d044893535e618fe8337a678146fa600ae03253d,Sort ABC violations by descending complexity.
+xaviershay,2011-12-24 00:12:42,https://api.github.com/repos/square/cane/git/commits/8a660a35eff8b4cfc5cb48981e1ddd8717c9cffe,8a660a35eff8b4cfc5cb48981e1ddd8717c9cffe,"Provide --no-[style,abc] options, fix incorrect acceptance spec exposed by it."
+xaviershay,2011-12-23 23:59:32,https://api.github.com/repos/square/cane/git/commits/048ee383de06314ae581e7b91cc21fd388548aed,048ee383de06314ae581e7b91cc21fd388548aed,Add help and version flags.
+xaviershay,2011-12-23 23:57:56,https://api.github.com/repos/square/cane/git/commits/500573eb8a5bef5f2420005ac0971834cdb00bd2,500573eb8a5bef5f2420005ac0971834cdb00bd2,Add default values to help output.
+xaviershay,2011-12-23 23:51:31,https://api.github.com/repos/square/cane/git/commits/b5b14697d079a1103011aae8ade38035250e54e3,b5b14697d079a1103011aae8ade38035250e54e3,Add style checking.
+xaviershay,2011-12-23 21:55:29,https://api.github.com/repos/square/cane/git/commits/be6b7971e31266892d8561d53044cbca6ce41d7d,be6b7971e31266892d8561d53044cbca6ce41d7d,Merge branch 'abc'
+xaviershay,2011-12-23 21:54:35,https://api.github.com/repos/square/cane/git/commits/d18f1a10c8da9c95256d0f55565e422171d3b6aa,d18f1a10c8da9c95256d0f55565e422171d3b6aa,Switch to providing a bin script rather than a rake task.
+xaviershay,2011-12-23 21:24:11,https://api.github.com/repos/square/cane/git/commits/d07a5bc856a211fd09aeb7bcb81b10a60fcc0476,d07a5bc856a211fd09aeb7bcb81b10a60fcc0476,Move ABC checks into cane subdirectory.
+xaviershay,2011-12-23 21:22:47,https://api.github.com/repos/square/cane/git/commits/1566f55ab4422918d784e0b8efcd27115398d71e,1566f55ab4422918d784e0b8efcd27115398d71e,Basic formatting.
+xaviershay,2011-12-23 21:07:57,https://api.github.com/repos/square/cane/git/commits/a44178467b8f5871101975675272e27abb6426cd,a44178467b8f5871101975675272e27abb6426cd,Basic PoC for ABC.
+xaviershay,2011-12-23 20:23:21,https://api.github.com/repos/square/cane/git/commits/b29b23988023556476815653dc143f5746596d23,b29b23988023556476815653dc143f5746596d23,Initial commit.

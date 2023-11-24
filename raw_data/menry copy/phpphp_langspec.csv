@@ -1,0 +1,1105 @@
+php-langspec,PHP Language Specification
+username,timestamp,url,sha,message
+nikic,2019-04-08 07:24:02,https://api.github.com/repos/php/php-langspec/git/commits/ab19cb01fd935c7d40a7250b551156cf273b61d5,ab19cb01fd935c7d40a7250b551156cf273b61d5,"Adjust serialization tests
+
+I believe this is due to the support for unserializing with changed
+visibility, which will assign to the private x/y properties now."
+nikic,2019-04-08 07:21:58,https://api.github.com/repos/php/php-langspec/git/commits/51566692791bfab5250488f319831925ca0c1c3b,51566692791bfab5250488f319831925ca0c1c3b,Adjust for PHP 8 negative array key change
+nikic,2019-04-08 07:12:32,https://api.github.com/repos/php/php-langspec/git/commits/2f0881e79809cb0e910b38208f60a46106a60cf3,2f0881e79809cb0e910b38208f60a46106a60cf3,Avoid static call to non-static method
+nikic,2019-04-08 07:10:24,https://api.github.com/repos/php/php-langspec/git/commits/231e64995d5e6446101aa3da0d5ef62e2b5f204f,231e64995d5e6446101aa3da0d5ef62e2b5f204f,Case-insensitive constants are no longer supported
+nikic,2019-04-08 07:05:15,https://api.github.com/repos/php/php-langspec/git/commits/64dd279d2829244050bb099f65a987c50324b8f5,64dd279d2829244050bb099f65a987c50324b8f5,Fix more undefined constant uses
+nikic,2019-04-08 07:02:56,https://api.github.com/repos/php/php-langspec/git/commits/5fc96c5dfd962ef25a362fc6108acae39cf9f1fd,5fc96c5dfd962ef25a362fc6108acae39cf9f1fd,(unset) casts are no longer supported since PHP 8
+nikic,2019-04-08 06:59:24,https://api.github.com/repos/php/php-langspec/git/commits/dc2e8d9593bd6b5826d10afcfbb86140733d4b13,dc2e8d9593bd6b5826d10afcfbb86140733d4b13,"Fix constant uses in basic.phpt
+
+These are no longer legal in PHP 8. This is supposed to be testing
+dynamic function calls, for which we should be using the string and
+not rely on the bareword fallback."
+Agares,2019-03-23 11:57:53,https://api.github.com/repos/php/php-langspec/git/commits/fe55bee01293a925120cfe330b62a94fc5140e35,fe55bee01293a925120cfe330b62a94fc5140e35,Define encoding of PHP scripts
+nikic,2019-04-08 06:50:22,https://api.github.com/repos/php/php-langspec/git/commits/fd81c6b8f6a4d512d88f216497f272a7bcf7953b,fd81c6b8f6a4d512d88f216497f272a7bcf7953b,"Fix print-expression/yield-expression mixup
+
+Fixes #236."
+bp1222,2016-12-31 03:20:48,https://api.github.com/repos/php/php-langspec/git/commits/ee9565cf6affd003280097f76cfa82f756e2305c,ee9565cf6affd003280097f76cfa82f756e2305c,Update spec for by-ref list RFC
+nikic,2019-03-15 09:30:07,https://api.github.com/repos/php/php-langspec/git/commits/9d99cf029b84f40b99bdab0224c79dd89c09e41a,9d99cf029b84f40b99bdab0224c79dd89c09e41a,"Revert ""Define encoding of PHP scripts""
+
+This reverts commit f35bd70531c012544e9061731415be8dcfe77f32."
+Agares,2019-02-21 18:29:59,https://api.github.com/repos/php/php-langspec/git/commits/f35bd70531c012544e9061731415be8dcfe77f32,f35bd70531c012544e9061731415be8dcfe77f32,"Define encoding of PHP scripts
+
+1. Remove references to unicode codepoints (as those were ambigouous
+without a defined encoding) and replace them with byte values
+2. Define the encoding of PHP scripts as ASCII, where bytes greater than
+0x7F are allowed"
+nikic,2019-03-15 08:54:22,https://api.github.com/repos/php/php-langspec/git/commits/15aa45273f4e5533ed252a612a5e6e7349a4d3ec,15aa45273f4e5533ed252a612a5e6e7349a4d3ec,"Mark instanceof as left-associative
+
+May not have been originally intended this way, but it's how the
+language works right now, so specify it as such (#226)."
+nikic,2019-03-15 08:52:05,https://api.github.com/repos/php/php-langspec/git/commits/63d72a6df5d2c7b1b7a8aedde1410c780cfd92af,63d72a6df5d2c7b1b7a8aedde1410c780cfd92af,Fix print precedence
+nikic,2019-03-15 08:47:54,https://api.github.com/repos/php/php-langspec/git/commits/b0dadd509b0fa94667f96ef32af4481ff2a23e1e,b0dadd509b0fa94667f96ef32af4481ff2a23e1e,Fix yield / yield from precedence
+nikic,2019-03-14 12:33:24,https://api.github.com/repos/php/php-langspec/git/commits/1058a5042032e0ad00aed869ce80b839f3927d2c,1058a5042032e0ad00aed869ce80b839f3927d2c,"Fix precedence of by-ref assignment
+
+Because it has variables on both sides, this is a primary expression."
+nikic,2018-12-22 12:39:27,https://api.github.com/repos/php/php-langspec/git/commits/2c380e4cc0a62485fd0a77af86a5b847949ab742,2c380e4cc0a62485fd0a77af86a5b847949ab742,"Use PHP 7.3 on Travis
+
+Apparently the master/nightly builds haven't updated since
+September..."
+nikic,2018-12-22 12:29:45,https://api.github.com/repos/php/php-langspec/git/commits/313688242e8cefdd99349f592a81a67a157c0fb6,313688242e8cefdd99349f592a81a67a157c0fb6,"Adjust constant warning message for PHP 7.3
+
+The spec already correctly mentions that resources are allowed.
+The warning was clarified in PHP 7.3."
+zhujinxuan,2018-12-20 22:03:48,https://api.github.com/repos/php/php-langspec/git/commits/197a397cf84bdcd3f896aebf15a73b5fd45a174d,197a397cf84bdcd3f896aebf15a73b5fd45a174d,"Add trialing comma description for constructs and functions
+
+* Add trailing comma for
+  - isset and unset
+  - static and dynamic methods
+  - functions and closure as functions
+  - new statement
+* Add or change the related tests to support the trialing comma"
+zhujinxuan,2018-12-21 23:49:04,https://api.github.com/repos/php/php-langspec/git/commits/322c5c037eb3fcc9fc87ba9c20c2a002a1562704,322c5c037eb3fcc9fc87ba9c20c2a002a1562704,Fix relative path of pre-commit
+petk,2018-10-01 18:21:21,https://api.github.com/repos/php/php-langspec/git/commits/be010b4435e7b0801737bb66b5bbdd8f9fb51dde,be010b4435e7b0801737bb66b5bbdd8f9fb51dde,"Sync final newlines
+
+- Redundant final newlines trimmed into one
+- Missing final newlines added where can be added
+
+According to POSIX, a line is a sequence of zero or more non-' <newline>'
+characters plus a terminating '<newline>' character. [1] Files should
+normally have at least one final newline character although not
+mandatory.
+
+[1] http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206"
+petk,2018-09-19 03:03:09,https://api.github.com/repos/php/php-langspec/git/commits/97bef5c03282bb7f7402f0ccf5414f24b1022a7e,97bef5c03282bb7f7402f0ccf5414f24b1022a7e,Trim trailing whitespace
+TysonAndre,2018-09-12 01:02:37,https://api.github.com/repos/php/php-langspec/git/commits/b5b19c34aaf3fef078243134a2659577c40cd767,b5b19c34aaf3fef078243134a2659577c40cd767,"Fix typo in spec/
+
+And remove trailing whitespace"
+TysonAndre,2018-09-12 01:00:13,https://api.github.com/repos/php/php-langspec/git/commits/4094fe38acbd0d6d0ba6e4d3dddff44d8eaad9a0,4094fe38acbd0d6d0ba6e4d3dddff44d8eaad9a0,Fix other typos in tests/
+nikic,2018-09-10 12:01:41,https://api.github.com/repos/php/php-langspec/git/commits/15b92edd483df7f476e93fc7213cbba17bff10c6,15b92edd483df7f476e93fc7213cbba17bff10c6,"Support multiple catch
+
+Fixes #216."
+nikic,2018-09-10 11:54:16,https://api.github.com/repos/php/php-langspec/git/commits/b5ca441040e2c6f8c38d3b7373f7c720af4b8f8c,b5ca441040e2c6f8c38d3b7373f7c720af4b8f8c,Continue on switch emits warning
+nikic,2018-09-10 11:47:58,https://api.github.com/repos/php/php-langspec/git/commits/ea03278e7e3d48061ef6744570b8f36b7a20d02c,ea03278e7e3d48061ef6744570b8f36b7a20d02c,Case-insensitive constants are deprecated
+TysonAndre,2018-05-12 21:52:26,https://api.github.com/repos/php/php-langspec/git/commits/bbbcec63be0487cad32b42b823d3da3f6057226d,bbbcec63be0487cad32b42b823d3da3f6057226d,"Fixes #217: Incorrect rule for `trait-select-insteadof-clause`
+
+An example of the insteadof clause (satisfies the fixed rule):
+
+`use T1,T2,T3{T1::foo insteadof T2,T3;}`"
+TysonAndre,2018-09-09 20:32:01,https://api.github.com/repos/php/php-langspec/git/commits/8f78136eaae6a3fa7eef4789c8729bc38726b19d,8f78136eaae6a3fa7eef4789c8729bc38726b19d,"Fix typos in the unit tests (comments/messages)
+
+Detected by https://github.com/client9/misspell"
+TysonAndre,2018-09-09 20:31:15,https://api.github.com/repos/php/php-langspec/git/commits/8953d961e3fde95fe2bd6f7201be62ed288dd23a,8953d961e3fde95fe2bd6f7201be62ed288dd23a,"Fix typos in the specification markdown
+
+Detected by https://github.com/client9/misspell"
+cmb69,2018-08-29 17:18:00,https://api.github.com/repos/php/php-langspec/git/commits/7d350634b44d0688d8dda9f3599b086ad48ada6f,7d350634b44d0688d8dda9f3599b086ad48ada6f,"Fix description on how to run the tests
+
+As of commit 8af91fd41cf74b67324b04455d904f095c6a3280 all tests are
+PHPTs, and make_phpt has been removed.  We adjust the docs accordingly."
+alexanderholman,2018-01-02 15:59:24,https://api.github.com/repos/php/php-langspec/git/commits/63375439ff7e8a1be93d0ef7d3c3b4833d5e35a0,63375439ff7e8a1be93d0ef7d3c3b4833d5e35a0,"Add missing core constants
+
+Closes #214."
+neclimdul,2017-09-25 17:15:12,https://api.github.com/repos/php/php-langspec/git/commits/1dc4793ede53b12a2b193698d9ef44709bcf9b10,1dc4793ede53b12a2b193698d9ef44709bcf9b10,"Fix statement capitalization
+
+just making it consistent with the other items in the list."
+nikic,2017-09-28 16:00:50,https://api.github.com/repos/php/php-langspec/git/commits/dc3290165ea3fd5b0422ddca63f464c6bd6855c7,dc3290165ea3fd5b0422ddca63f464c6bd6855c7,Note that LHS of :: can also be an object
+nikic,2017-09-26 09:01:46,https://api.github.com/repos/php/php-langspec/git/commits/325f4aed5a26735ee2b02270ea9a88a30fdc0163,325f4aed5a26735ee2b02270ea9a88a30fdc0163,Point to GH issues in README
+nikic,2017-09-26 08:59:40,https://api.github.com/repos/php/php-langspec/git/commits/b0e2ca93602b649d936295a0fceaec5381b64101,b0e2ca93602b649d936295a0fceaec5381b64101,Mention generated files + pre-commit hook in CONTRIBUTING
+nikic,2017-09-26 08:53:52,https://api.github.com/repos/php/php-langspec/git/commits/7741beb3af80779a223bc61ef0d4d7a31bf12f50,7741beb3af80779a223bc61ef0d4d7a31bf12f50,Add sample git pre-commit hook
+sunverwerth,2017-09-25 19:37:18,https://api.github.com/repos/php/php-langspec/git/commits/15f74073f96e5225fc2cb4120799b25972bc2ac7,15f74073f96e5225fc2cb4120799b25972bc2ac7,"Fix grammar for breakout-level
+
+The optional breakout-level constant for `break` and `continue`
+statements can also be enclosed in parentheses."
+nikic,2017-09-19 09:44:28,https://api.github.com/repos/php/php-langspec/git/commits/1baff2105284c1e964de18fc7d40d7b1dc6900a0,1baff2105284c1e964de18fc7d40d7b1dc6900a0,"Fix some references
+
+These got left behind after shuffling things around too much."
+nikic,2017-09-19 09:35:44,https://api.github.com/repos/php/php-langspec/git/commits/cbb78dacad82dfc11e12399ab076d023f8efea69,cbb78dacad82dfc11e12399ab076d023f8efea69,Move echo and unset from intrinsics to statements
+nikic,2017-09-19 09:29:33,https://api.github.com/repos/php/php-langspec/git/commits/57e9922e041babddc29de6fde7a45f6f7bf20573,57e9922e041babddc29de6fde7a45f6f7bf20573,"Move list() out of intrinsic section
+
+This is not a general-purpose expression, it is only valid in
+specific syntactic contexts."
+nikic,2017-09-19 09:17:00,https://api.github.com/repos/php/php-langspec/git/commits/08033b51583acc60a6dadd45053c7c883e6eb933,08033b51583acc60a6dadd45053c7c883e6eb933,Function arguments are arbitrary expressions
+nikic,2017-09-19 08:22:41,https://api.github.com/repos/php/php-langspec/git/commits/140cc0b4ff9b79da138e0ae547556d600cf49b13,140cc0b4ff9b79da138e0ae547556d600cf49b13,yield has higher precedence than AND
+nikic,2017-09-19 08:11:58,https://api.github.com/repos/php/php-langspec/git/commits/c17f3a1eb766d1b09c4fd0d9a032312b1f8ee250,c17f3a1eb766d1b09c4fd0d9a032312b1f8ee250,Fix precedence in instanceof-subject
+nikic,2017-09-19 08:05:45,https://api.github.com/repos/php/php-langspec/git/commits/1aed868c28bcbbb0f1d011169163aab1e66413c9,1aed868c28bcbbb0f1d011169163aab1e66413c9,"Move pre-inc/dec and shell-exec into primary expression
+
+Otherwise the precedence would be wrong..."
+nikic,2017-09-19 08:01:20,https://api.github.com/repos/php/php-langspec/git/commits/def41da2f80e8e66c136334ea6b7fc86db89e1f0,def41da2f80e8e66c136334ea6b7fc86db89e1f0,"Merge postfix-expression into postfix-expression
+
+The distinction is not meaningful, these are also primary
+expressions."
+nikic,2017-09-19 07:56:14,https://api.github.com/repos/php/php-langspec/git/commits/4581ccd4a9d4909b9983675a41613dd388a01733,4581ccd4a9d4909b9983675a41613dd388a01733,Fix clone precedence
+nikic,2017-09-19 07:47:59,https://api.github.com/repos/php/php-langspec/git/commits/733810097e09bc718c8ad7a8dcd6de3a47659f72,733810097e09bc718c8ad7a8dcd6de3a47659f72,Fix ** operator precedence
+nikic,2017-09-19 07:35:19,https://api.github.com/repos/php/php-langspec/git/commits/b7f82175abd71600c3a825e642d57ddef6b5b826,b7f82175abd71600c3a825e642d57ddef6b5b826,Fix cast/suppression precedence
+nikic,2017-09-19 07:31:35,https://api.github.com/repos/php/php-langspec/git/commits/714f68927038ece7e8f5f0a2bbce04a8c600eb25,714f68927038ece7e8f5f0a2bbce04a8c600eb25,"Fix precedence of instanceof/logical not
+
+Fixes #189."
+nikic,2017-09-19 07:21:02,https://api.github.com/repos/php/php-langspec/git/commits/7d6ae475928a67c706aeaec8c131bed9567aafed,7d6ae475928a67c706aeaec8c131bed9567aafed,Remove cast-expression/unary-expression recursion
+nikic,2017-09-19 06:51:25,https://api.github.com/repos/php/php-langspec/git/commits/e3eb18b757b24b0b1f97dc9bb9a24cf12697eb99,e3eb18b757b24b0b1f97dc9bb9a24cf12697eb99,"Don't require statement after label
+
+Fixes #190."
+nikic,2017-09-19 06:47:48,https://api.github.com/repos/php/php-langspec/git/commits/687ecf0dbc2397b79a9b5a39be05105b9f42ac8a,687ecf0dbc2397b79a9b5a39be05105b9f42ac8a,"Introduce new-variable for new/instanceof
+
+Fixes #202."
+nikic,2017-09-19 06:34:50,https://api.github.com/repos/php/php-langspec/git/commits/287030c352f0019a2f9dee2077ad146d0d3e3e8c,287030c352f0019a2f9dee2077ad146d0d3e3e8c,"Add nullable types
+
+Fixed #196."
+xfix,2017-09-19 06:20:39,https://api.github.com/repos/php/php-langspec/git/commits/9cf8b200e55968b9e542c6cb70563d35ec347bf8,9cf8b200e55968b9e542c6cb70563d35ec347bf8,Fix definition list rendering on GitHub in Terms and Definitions
+nikic,2017-09-19 03:49:31,https://api.github.com/repos/php/php-langspec/git/commits/4b8e976b52c339a0436ca6c0120c6cdf07c52106,4b8e976b52c339a0436ca6c0120c6cdf07c52106,Use variable in RHS of byref-assignment
+nikic,2017-09-19 03:46:21,https://api.github.com/repos/php/php-langspec/git/commits/8082f0911ad18da427d2920599d06a1a0632edbc,8082f0911ad18da427d2920599d06a1a0632edbc,"Fix precedence of coalesce operator
+
+Fix #201."
+nikic,2017-09-19 03:38:28,https://api.github.com/repos/php/php-langspec/git/commits/3c6875b738786cea3ac87e90d7f781e13d66aa8f,3c6875b738786cea3ac87e90d7f781e13d66aa8f,Use variable in instanceof-type-designator
+nikic,2017-09-19 03:36:34,https://api.github.com/repos/php/php-langspec/git/commits/32fe82511d7ea4c6d73ae6279edd3e24fada5aff,32fe82511d7ea4c6d73ae6279edd3e24fada5aff,Use variable in list-or-variable
+nikic,2017-09-19 03:31:30,https://api.github.com/repos/php/php-langspec/git/commits/11b13919b0f7d8b4f7b4ba40d48d497f480b6a64,11b13919b0f7d8b4f7b4ba40d48d497f480b6a64,"Add missing comma in const-elements production
+
+Fixes #205."
+ekinhbayar,2017-05-06 15:32:56,https://api.github.com/repos/php/php-langspec/git/commits/993ab3eb81f3529ae0ad5b534a2396405306fe00,993ab3eb81f3529ae0ad5b534a2396405306fe00,Fix markdown and grammar tool
+nikic,2017-05-05 16:25:25,https://api.github.com/repos/php/php-langspec/git/commits/befef5a037689d587b159933c21f334c39151170,befef5a037689d587b159933c21f334c39151170,Account for deprecation notice in (unset) test
+lex111,2017-05-03 20:09:39,https://api.github.com/repos/php/php-langspec/git/commits/3b9976878b29a98e21deeee9dc45fef1f8e6704e,3b9976878b29a98e21deeee9dc45fef1f8e6704e,Fix markdown headings
+IMSoP,2017-03-05 19:46:34,https://api.github.com/repos/php/php-langspec/git/commits/40ac5c13bc2fd35a09b76aed564f70cd062ac5c3,40ac5c13bc2fd35a09b76aed564f70cd062ac5c3,"Reflect changes for RFC: Deprecate and Remove Bareword (Unquoted) Strings
+
+https://wiki.php.net/rfc/deprecate-bareword-strings"
+ehmicky,2016-12-22 17:54:08,https://api.github.com/repos/php/php-langspec/git/commits/22020fb79ec8f9a0cf33d947d5e0f76c38a86fb1,22020fb79ec8f9a0cf33d947d5e0f76c38a86fb1,Fix typo
+ehmicky,2016-12-22 16:36:07,https://api.github.com/repos/php/php-langspec/git/commits/2614bab90325039c9ed9c667a4766264d63eb145,2614bab90325039c9ed9c667a4766264d63eb145,Fix typo
+mousetraps,2016-12-14 21:02:36,https://api.github.com/repos/php/php-langspec/git/commits/6d8c122dd86793eacf42c7bf507a48de1588a494,6d8c122dd86793eacf42c7bf507a48de1588a494,fix anonymous-function-creation-expression definition - reverse ordering of return-type and anonymous-function-use-clause
+mathroc,2016-12-13 08:43:01,https://api.github.com/repos/php/php-langspec/git/commits/304844ce5f6f4084a83f4e3b066a5ae4085fad7f,304844ce5f6f4084a83f4e3b066a5ae4085fad7f,add travis CI badge in README
+sergeyklay,2016-12-13 08:47:46,https://api.github.com/repos/php/php-langspec/git/commits/4826bf652e62071d292f9c34d6503670eb2b4a40,4826bf652e62071d292f9c34d6503670eb2b4a40,Fixed anonymous function creation example
+pmmaga,2016-12-11 22:40:16,https://api.github.com/repos/php/php-langspec/git/commits/c7a8224f76da35e7cbec7c59995f00859e40cda1,c7a8224f76da35e7cbec7c59995f00859e40cda1,Add Travis CI support
+pmmaga,2016-12-12 20:01:33,https://api.github.com/repos/php/php-langspec/git/commits/ebf06e157a26b6b215334c43911067ae1863465f,ebf06e157a26b6b215334c43911067ae1863465f,Update tests to be compatible with master
+eonj,2016-12-04 16:36:01,https://api.github.com/repos/php/php-langspec/git/commits/0ac3b233e6fe5beba1d49dbfeb881b1ce9d4bd4c,0ac3b233e6fe5beba1d49dbfeb881b1ce9d4bd4c,Fix markup typo in spec/05-types.md:190
+nikic,2016-12-02 16:32:45,https://api.github.com/repos/php/php-langspec/git/commits/44e1b9afa049975e898667b3819555041e383406,44e1b9afa049975e898667b3819555041e383406,Fix typo in anon func grammar
+Hywan,2016-12-02 08:13:57,https://api.github.com/repos/php/php-langspec/git/commits/248ec2865a64827570a6894c732f5e6b481e0d95,248ec2865a64827570a6894c732f5e6b481e0d95,"Add the `iterable` pseudo-type.
+
+See https://wiki.php.net/rfc/iterable."
+nikic,2016-11-26 13:54:36,https://api.github.com/repos/php/php-langspec/git/commits/ae3a7639a05fae1cd1690ef28213bfebcb7d3af0,ae3a7639a05fae1cd1690ef28213bfebcb7d3af0,"Fix grammar markup
+
+Instead of <a name=""""> use id attribute on <i> tag of the
+definition."
+nikic,2016-11-25 21:47:55,https://api.github.com/repos/php/php-langspec/git/commits/512a016a7472f3d170111844699ab89b6578bbd7,512a016a7472f3d170111844699ab89b6578bbd7,Implement grammar rendering + render grammar
+nikic,2016-11-25 22:00:13,https://api.github.com/repos/php/php-langspec/git/commits/eec8da6b03f99e6987057f7aa4d7d33e0297a965,eec8da6b03f99e6987057f7aa4d7d33e0297a965,"Remove ""Defined elsewhere"" blocks"
+nikic,2016-11-25 18:05:32,https://api.github.com/repos/php/php-langspec/git/commits/eacc8b33e1ef150b08f29f87d63e206b664cc8c1,eacc8b33e1ef150b08f29f87d63e206b664cc8c1,"Extract grammar
+
+Grammar is now defined in <!-- GRAMMAR --> blocks. The actually
+displayed grammar will be auto-generated."
+nikic,2016-11-25 17:49:47,https://api.github.com/repos/php/php-langspec/git/commits/a1bfc76bee5dbebecadb2b5f0dd90caec55cefe0,a1bfc76bee5dbebecadb2b5f0dd90caec55cefe0,Fix typo
+nikic,2016-11-25 17:36:40,https://api.github.com/repos/php/php-langspec/git/commits/f550b7423df0afa4583a77d7c1ef130ce8277ecd,f550b7423df0afa4583a77d7c1ef130ce8277ecd,Add $skipFiles to spec_files()
+nikic,2016-11-20 22:15:46,https://api.github.com/repos/php/php-langspec/git/commits/bb8f2d45961447e4deb4e730c8a2c0fb3d525bcd,bb8f2d45961447e4deb4e730c8a2c0fb3d525bcd,Grammar syntax/typo fixes
+Hywan,2016-11-16 06:16:30,https://api.github.com/repos/php/php-langspec/git/commits/3447bf5d4df23527c623c58da67b43df665c7ba0,3447bf5d4df23527c623c58da67b43df665c7ba0,A `list` cannot be empty.
+nikic,2016-11-15 22:15:45,https://api.github.com/repos/php/php-langspec/git/commits/256534b60943c0610ccb0f8cde160323bcbd4f7c,256534b60943c0610ccb0f8cde160323bcbd4f7c,"Cleanup echo/isset/unset grammar
+
+isset and unset accept only variables.
+For echo, merge the single and multiple expression cases."
+nikic,2016-11-15 21:38:27,https://api.github.com/repos/php/php-langspec/git/commits/0fd1786650afcdd580d02a8cca535fdf4d33a27e,0fd1786650afcdd580d02a8cca535fdf4d33a27e,"Improve check_refs
+
+Handle manual anchor. Return exit code."
+nikic,2016-11-15 21:33:56,https://api.github.com/repos/php/php-langspec/git/commits/883396eb050375ad973b25c1142bf015b5e3adb2,883396eb050375ad973b25c1142bf015b5e3adb2,Remove references to #array
+nikic,2016-11-15 21:29:10,https://api.github.com/repos/php/php-langspec/git/commits/9c1e9d1aa1de4f1f82498ab210095d3a76e2521d,9c1e9d1aa1de4f1f82498ab210095d3a76e2521d,Restrict LHS of assignments to variable
+nikic,2016-11-12 16:35:30,https://api.github.com/repos/php/php-langspec/git/commits/4bc7c825be72d52b3b4ecace46828d16c69ce7b1,4bc7c825be72d52b3b4ecace46828d16c69ce7b1,"Remove array-intrinsic
+
+This is already covered by array-creation-operator."
+Hywan,2016-11-12 13:18:04,https://api.github.com/repos/php/php-langspec/git/commits/3db4044d36ae4267abf90f7c086e063225c2772d,3db4044d36ae4267abf90f7c086e063225c2772d,Regenerate grammar
+Hywan,2016-11-12 13:13:51,https://api.github.com/repos/php/php-langspec/git/commits/ec2d46f8ae91c0006c8969baf320eaf4d5518d6a,ec2d46f8ae91c0006c8969baf320eaf4d5518d6a,Fix “double quoted strings” link.
+Hywan,2016-11-12 13:18:04,https://api.github.com/repos/php/php-langspec/git/commits/e85e5508ca29872b60a59c7f37684f13d07e4533,e85e5508ca29872b60a59c7f37684f13d07e4533,"Simplify `print` rule.
+
+`print 42` is the same than `print(42)`, which is the same than
+`print (42)`. Just like `echo`, it is possible to consider that
+parenthesis belong to the expression instead of to the `print`
+intrinsic."
+nikic,2016-11-12 12:36:30,https://api.github.com/repos/php/php-langspec/git/commits/a6ae806a1f4f6ade361d4ffc80b8a4bc1b5d61b7,a6ae806a1f4f6ade361d4ffc80b8a4bc1b5d61b7,"Remove php-spec-draft file
+
+GitHub doesn't redirect symlinks, so this isn't really useful to
+keep around."
+nikic,2016-11-12 12:34:52,https://api.github.com/repos/php/php-langspec/git/commits/7c85acc7b051a340814d0da590e4ca266bbb0c96,7c85acc7b051a340814d0da590e4ca266bbb0c96,Update README
+nikic,2016-11-12 12:29:06,https://api.github.com/repos/php/php-langspec/git/commits/6539c1979c7924f9418381c57eb14fe33f7073ae,6539c1979c7924f9418381c57eb14fe33f7073ae,Regenerate TOC
+nikic,2016-11-12 12:24:23,https://api.github.com/repos/php/php-langspec/git/commits/8a5e4a5238b32c890ddf887baea3614fa4168d3d,8a5e4a5238b32c890ddf887baea3614fa4168d3d,Regenerate grammar
+nikic,2016-11-12 11:48:53,https://api.github.com/repos/php/php-langspec/git/commits/c9f5fd0cdd19a1ebc1c0571662e85e0e2385b1c0,c9f5fd0cdd19a1ebc1c0571662e85e0e2385b1c0,Add grammar regeneration tool
+nikic,2016-11-12 12:15:27,https://api.github.com/repos/php/php-langspec/git/commits/7cd2faa0f81851a7f8891834bb4dc069a1e4f277,7cd2faa0f81851a7f8891834bb4dc069a1e4f277,Fix formatting errors in grammar blocks
+nikic,2016-11-12 11:47:36,https://api.github.com/repos/php/php-langspec/git/commits/0ff2c672deb3b0f73478e56c490a195943e98bbe,0ff2c672deb3b0f73478e56c490a195943e98bbe,"Remove sub-headings from grammar
+
+These don't provide a lot of value for an overview grammar listing,
+but make automatic regeneration of the grammar hard (because they
+do not correspond to the headings in the actual spec -- some headings
+are left out, others aren't and none of this follows any obvious
+rule)."
+nikic,2016-11-12 11:40:13,https://api.github.com/repos/php/php-langspec/git/commits/7a778c1db355c2e8f3d4c54ce0be2e2fa8646978,7a778c1db355c2e8f3d4c54ce0be2e2fa8646978,"Add redundant include/require productions
+
+The parenthesized forms are part of expression."
+nikic,2016-11-12 11:37:34,https://api.github.com/repos/php/php-langspec/git/commits/d049fb8af5187cf7039fceca8b3d2866344948e1,d049fb8af5187cf7039fceca8b3d2866344948e1,Fix markup
+nikic,2016-11-11 21:33:43,https://api.github.com/repos/php/php-langspec/git/commits/547f723ae305479ddc6f642223868b3aaf07e518,547f723ae305479ddc6f642223868b3aaf07e518,Fix invalid references
+nikic,2016-11-11 21:10:47,https://api.github.com/repos/php/php-langspec/git/commits/61641e09508d3588e02aa85f542e8702318597f3,61641e09508d3588e02aa85f542e8702318597f3,Add check_refs tool
+nikic,2016-11-11 21:00:47,https://api.github.com/repos/php/php-langspec/git/commits/e07c954abd8f04847eed6884defdf8bd2219e8cc,e07c954abd8f04847eed6884defdf8bd2219e8cc,Refactor toc.php for reusability
+nikic,2016-11-11 20:49:28,https://api.github.com/repos/php/php-langspec/git/commits/598034c9f9e6d9f36689e5f8fcd17d5abc3b9e2b,598034c9f9e6d9f36689e5f8fcd17d5abc3b9e2b,Regenerate TOC
+nikic,2016-11-11 20:42:03,https://api.github.com/repos/php/php-langspec/git/commits/84221d7a313f709c732d307f82932397f9a61f5d,84221d7a313f709c732d307f82932397f9a61f5d,Property specify constant expressions
+nikic,2016-11-11 18:02:01,https://api.github.com/repos/php/php-langspec/git/commits/d6e4f5116578f267d7bb79c2bc73a27987289140,d6e4f5116578f267d7bb79c2bc73a27987289140,Add explicit constant-access-expression
+nikic,2016-08-31 17:05:45,https://api.github.com/repos/php/php-langspec/git/commits/65ef21d1bc30cffd9bcd137a8509d39178e5c0c8,65ef21d1bc30cffd9bcd137a8509d39178e5c0c8,Make description of variable syntax more correct
+Hywan,2016-11-11 09:17:20,https://api.github.com/repos/php/php-langspec/git/commits/13ef090cd9eed4c3f9ca2b139aceff977fac4dad,13ef090cd9eed4c3f9ca2b139aceff977fac4dad,"`exit` with no parenthesis does have an opt. expr.
+
+`exit` is valid, `exit(42)` is valid, but `exit 42` is invalid. The
+optional expression must be surrounded by parenthesis."
+nikic,2016-11-09 20:45:11,https://api.github.com/repos/php/php-langspec/git/commits/04a14128a28b1e8a4c4b56ebf84f8caebfd67bf0,04a14128a28b1e8a4c4b56ebf84f8caebfd67bf0,Fix case-statements definition
+mousetraps,2016-11-08 02:01:56,https://api.github.com/repos/php/php-langspec/git/commits/a050aef11c681bbf53c0f8d708e10dc12a107e4a,a050aef11c681bbf53c0f8d708e10dc12a107e4a,"Make switch-statement definition more precise
+
+`case-statement` and `default-statement` usages must occur inside a `switch-statement`. Update the spec to represent this behavior more precisely in the grammar, rather than as an additional constraint."
+mousetraps,2016-11-07 23:04:40,https://api.github.com/repos/php/php-langspec/git/commits/676257512edc3bd92a78300105d9f2fef569b864,676257512edc3bd92a78300105d9f2fef569b864,"fix orphaned try-statement in `19-grammar.md`
+
+`statement` should point to `try-statement`. This now matches the
+definition in `11-statements.md`"
+Hywan,2016-11-09 14:36:27,https://api.github.com/repos/php/php-langspec/git/commits/9c176451d86ce4bc3f10ecba510df769e41c9932,9c176451d86ce4bc3f10ecba510df769e41c9932,Fix markup (`s/ii/i/`).
+Hywan,2016-11-02 06:58:23,https://api.github.com/repos/php/php-langspec/git/commits/fc4db11f8c3351d167b11e08ae189e7863367b5a,fc4db11f8c3351d167b11e08ae189e7863367b5a,Add missing backticks that break the markup.
+Hywan,2016-11-02 06:59:24,https://api.github.com/repos/php/php-langspec/git/commits/50857c9737aa38332bef4dc69684c20958412253,50857c9737aa38332bef4dc69684c20958412253,Fix “intrisic” typo (renamed to “intrinsic”).
+nikic,2016-08-31 17:13:05,https://api.github.com/repos/php/php-langspec/git/commits/b2b8ac599733be8ca8d1a99d4e01876049b5f861,b2b8ac599733be8ca8d1a99d4e01876049b5f861,"Move literal production to syntactic grammar
+
+Not all literals are supported everywhere. Move to syntactic
+grammar to allow the distinction."
+Hywan,2016-08-24 14:55:13,https://api.github.com/repos/php/php-langspec/git/commits/a1cc12b6a7fa3e6e779d09de8101ece489b7d911,a1cc12b6a7fa3e6e779d09de8101ece489b7d911,Fix markup of the `hd-body` rule.
+Hywan,2016-08-24 14:41:50,https://api.github.com/repos/php/php-langspec/git/commits/73662663cadc68f0b334fb174de0d1964f5c7b01,73662663cadc68f0b334fb174de0d1964f5c7b01,"Fix the whitespace definition.
+
+The vertical tab and the form-feed character are not part of the
+whitespaces."
+Hywan,2016-08-24 14:32:33,https://api.github.com/repos/php/php-langspec/git/commits/dbb78b15a468c7138c8b0fda1adb1c31cc6f86d2,dbb78b15a468c7138c8b0fda1adb1c31cc6f86d2,Fix markup for comment delimiters
+nikic,2016-08-09 21:39:02,https://api.github.com/repos/php/php-langspec/git/commits/8e8df911b732cc08ca0ae45f788c918147b9d007,8e8df911b732cc08ca0ae45f788c918147b9d007,<<<A\nA\n is valid
+nikic,2016-08-09 21:15:53,https://api.github.com/repos/php/php-langspec/git/commits/39cb8bede53e51929700fd2fae66ae3790306d7b,39cb8bede53e51929700fd2fae66ae3790306d7b,b-prefix is case-insensitive and applies to doc strings
+Hywan,2016-07-26 08:26:31,https://api.github.com/repos/php/php-langspec/git/commits/599963eccd8d5f940195800302844f2e9a8e6e76,599963eccd8d5f940195800302844f2e9a8e6e76,Fix spaces between keywords
+nikic,2016-07-13 19:25:41,https://api.github.com/repos/php/php-langspec/git/commits/f3b5af920462d440aa29b9080366fec3cb655ffd,f3b5af920462d440aa29b9080366fec3cb655ffd,Move undefined var description to locals
+nikic,2016-07-13 11:54:16,https://api.github.com/repos/php/php-langspec/git/commits/ba380138b88e51321352fdfa43ff47ca0f7d8109,ba380138b88e51321352fdfa43ff47ca0f7d8109,Specify that qualified constant uses throw Error
+robstoll,2016-07-13 11:46:09,https://api.github.com/repos/php/php-langspec/git/commits/48bf751fd190b83cb44d9033b4f56eb8ecf4474b,48bf751fd190b83cb44d9033b4f56eb8ecf4474b,"Specify handling of undefined variables, constants, etc."
+Hywan,2016-07-12 06:37:43,https://api.github.com/repos/php/php-langspec/git/commits/4a0bcfb3c75f08320a05596d3658f6976890c5b9,4a0bcfb3c75f08320a05596d3658f6976890c5b9,"Punctuators: Fix spacing, add namespace separator"
+nikic,2016-07-11 18:47:45,https://api.github.com/repos/php/php-langspec/git/commits/854b2d1d01e5c3d3feec16eebf94f5481611a875,854b2d1d01e5c3d3feec16eebf94f5481611a875,"Remove =& from list of operators
+
+=& is actually = followed by &."
+nikic,2016-07-11 18:37:40,https://api.github.com/repos/php/php-langspec/git/commits/f57050faed1a0ce39fb0c662e9e9fc40a277e3f1,f57050faed1a0ce39fb0c662e9e9fc40a277e3f1,Can also defined multiple properties at once
+nikic,2016-07-11 18:32:38,https://api.github.com/repos/php/php-langspec/git/commits/2ab435e7445d212aeee66f3d7e0d9708980e8faf,2ab435e7445d212aeee66f3d7e0d9708980e8faf,Multiple constants can be defined at once
+robstoll,2016-07-11 17:16:09,https://api.github.com/repos/php/php-langspec/git/commits/19e44137fe0bb8cde8f52a9780524e6eec916164,19e44137fe0bb8cde8f52a9780524e6eec916164,Describe static/global variable shadowing
+nikic,2016-07-11 16:51:45,https://api.github.com/repos/php/php-langspec/git/commits/98924ab5608a2b31ecdcf26c22be45424f951fe5,98924ab5608a2b31ecdcf26c22be45424f951fe5,Merge branch 'PHP-7.0'
+nikic,2016-07-11 16:49:30,https://api.github.com/repos/php/php-langspec/git/commits/8f029a6d992ad0f04449493a0743525950824f4b,8f029a6d992ad0f04449493a0743525950824f4b,"Test fixes
+
+* New __METHOD__ value for closures
+* Missing pass-by-ref notice for object"
+reeze,2016-02-27 10:41:13,https://api.github.com/repos/php/php-langspec/git/commits/2d5cc6f08c3cd3abfcc718f42c9341939d8c91f5,2d5cc6f08c3cd3abfcc718f42c9341939d8c91f5,"Add the accepted RFC: class constant visibility to spec
+
+RFC: https://wiki.php.net/rfc/class_const_visibility"
+hikari-no-yume,2016-03-25 14:09:51,https://api.github.com/repos/php/php-langspec/git/commits/f75930f6f08b1ec21cf3a16872f8c17b961f1062,f75930f6f08b1ec21cf3a16872f8c17b961f1062,Fix bug #71897
+nikic,2016-07-11 16:06:03,https://api.github.com/repos/php/php-langspec/git/commits/6e4b1683f597f7c887a1284573b4e6eb7fffe4c9,6e4b1683f597f7c887a1284573b4e6eb7fffe4c9,Merge branch 'PHP-7.0'
+Hywan,2016-07-11 12:40:32,https://api.github.com/repos/php/php-langspec/git/commits/afd005b29c0a7adeeae1882bd69621f8f4dde543,afd005b29c0a7adeeae1882bd69621f8f4dde543,"Punctuators: Fix spacing, add ellipsis"
+flaupretre,2016-03-07 11:46:06,https://api.github.com/repos/php/php-langspec/git/commits/1bec75b6abf752c2a7888b6f0589a59c7eaabfd4,1bec75b6abf752c2a7888b6f0589a59c7eaabfd4,"Add support of negative string offsets
+
+Additional fix: string are extended padding with spaces, not '\0'.
+bugfix #71572: Assignment from empty string does not insert null byte anymore."
+nikic,2016-04-24 13:56:02,https://api.github.com/repos/php/php-langspec/git/commits/46a218a09ef6156e419194122a440e5400967fe2,46a218a09ef6156e419194122a440e5400967fe2,Merge branch 'PHP-7.0'
+nikic,2016-04-24 13:42:48,https://api.github.com/repos/php/php-langspec/git/commits/bcdfd0ee75f64cb31200a3b75eefe1f597061aa3,bcdfd0ee75f64cb31200a3b75eefe1f597061aa3,"Sync grammar file
+
+Was hoping to automate this, but the heading structure is too
+different :/"
+nikic,2016-04-24 13:16:26,https://api.github.com/repos/php/php-langspec/git/commits/afa1383dc9e148b21f14f05c055053b6b1230528,afa1383dc9e148b21f14f05c055053b6b1230528,"Merge branch 'PHP-7.0'
+
+Conflicts:
+	spec/10-expressions.md"
+nikic,2016-04-24 13:15:14,https://api.github.com/repos/php/php-langspec/git/commits/875d1be2800b81c53aa411cc7770e8b7a80dd1e2,875d1be2800b81c53aa411cc7770e8b7a80dd1e2,Remove trailing whitespace
+nikic,2016-04-24 12:59:47,https://api.github.com/repos/php/php-langspec/git/commits/04a04985dfcca2a1901144e1927c1f148e428d96,04a04985dfcca2a1901144e1927c1f148e428d96,Merge branch 'PHP-7.0'
+nikic,2016-04-24 12:56:42,https://api.github.com/repos/php/php-langspec/git/commits/22141d2124c7ee9315b39cedd965c0f7165a6f50,22141d2124c7ee9315b39cedd965c0f7165a6f50,"Use ``` instead of <pre> for VSlot graphics
+
+So <pre> is only used for the grammar and easy to seach for."
+nikic,2016-04-24 12:25:03,https://api.github.com/repos/php/php-langspec/git/commits/bec4df87f9e0e27a753ffcb3959222dc234616a7,bec4df87f9e0e27a753ffcb3959222dc234616a7,Merge branch 'PHP-7.0'
+nikic,2016-04-24 12:24:50,https://api.github.com/repos/php/php-langspec/git/commits/6ccd1f18cede3a943c2283784b3d952fda77eb5c,6ccd1f18cede3a943c2283784b3d952fda77eb5c,Regenerate TOC
+nikic,2016-04-24 12:22:31,https://api.github.com/repos/php/php-langspec/git/commits/6d8d1d30f9448a82106f4ade524b5bba08e53cca,6d8d1d30f9448a82106f4ade524b5bba08e53cca,Merge branch 'PHP-7.0'
+Fleshgrinder,2016-04-20 18:59:26,https://api.github.com/repos/php/php-langspec/git/commits/8b72d55c0b874f41e012425200fb7bdc90e34e1e,8b72d55c0b874f41e012425200fb7bdc90e34e1e,Fix Throwable interface method modifiers
+nikic,2016-04-24 12:19:52,https://api.github.com/repos/php/php-langspec/git/commits/91c3dda164cb0218e7df5368da3aac882ea0f21d,91c3dda164cb0218e7df5368da3aac882ea0f21d,Merge branch 'PHP-7.0'
+nikic,2016-04-24 12:19:38,https://api.github.com/repos/php/php-langspec/git/commits/5773cdfc180a99316a6da2624f65d01473d99448,5773cdfc180a99316a6da2624f65d01473d99448,Merge branch 'PHP-5.6' into PHP-7.0
+Hywan,2016-04-24 11:47:37,https://api.github.com/repos/php/php-langspec/git/commits/6bc96e485601f84620b1565cc1b026790f69f141,6bc96e485601f84620b1565cc1b026790f69f141,Fix a typo in the float-literal rule
+hikari-no-yume,2016-03-30 00:46:51,https://api.github.com/repos/php/php-langspec/git/commits/a3ea4e992f43ea9083c3fe3738a5ded03412f6e1,a3ea4e992f43ea9083c3fe3738a5ded03412f6e1,"Warn about invalid strings in arithmetic
+
+Squashed commit of the following:
+
+commit 4bc40d91788a983a99aac8ff337509f53ec1000a
+Author: Andrea Faulds <ajf@ajf.me>
+Date:   Sun Mar 20 02:20:28 2016 +0000
+
+    Update spec for invalid numeric strings
+
+commit 2461e4f7387741b176a9aa9a5d32b92a2903ed85
+Author: Andrea Faulds <ajf@ajf.me>
+Date:   Wed Feb 24 16:53:26 2016 +0000
+
+    Updated tests for invalid numeric strings"
+hikari-no-yume,2016-03-25 17:27:45,https://api.github.com/repos/php/php-langspec/git/commits/0b1a497a6c847f6566f32057f55259f68bb9ce38,0b1a497a6c847f6566f32057f55259f68bb9ce38,"Allow specifying keys on list() elements
+
+Squashed commit of the following:
+
+commit c56f6e3a7be00f330225e34d15fc0a2aee507e67
+Author: Andrea Faulds <ajf@ajf.me>
+Date:   Wed Feb 24 13:49:17 2016 +0000
+
+    Import Zend Engine tests for list()
+
+commit 3afd58a6c65c48940583fc49841fa2087434fc82
+Author: Andrea Faulds <ajf@ajf.me>
+Date:   Wed Feb 24 13:49:05 2016 +0000
+
+    Update specification for list() keys"
+smalyshev,2016-02-18 18:16:58,https://api.github.com/repos/php/php-langspec/git/commits/2888f580bd887e6a37e0821beca714843fc095e1,2888f580bd887e6a37e0821beca714843fc095e1,Use descriptive mode
+hikari-no-yume,2016-02-18 13:02:22,https://api.github.com/repos/php/php-langspec/git/commits/1935a4b3db0ae797b549870592c60fac6fb74e29,1935a4b3db0ae797b549870592c60fac6fb74e29,Restore Oxford comma
+hikari-no-yume,2016-02-05 12:30:11,https://api.github.com/repos/php/php-langspec/git/commits/ad1a8bdba48ed23f118fe743f6930d1d57cd8042,ad1a8bdba48ed23f118fe743f6930d1d57cd8042,Void return type
+smalyshev,2016-01-02 03:11:49,https://api.github.com/repos/php/php-langspec/git/commits/115ff30f4010768c46d45e777bcc55f082b7d245,115ff30f4010768c46d45e777bcc55f082b7d245,Add magic constants note
+smalyshev,2016-01-02 03:10:10,https://api.github.com/repos/php/php-langspec/git/commits/85412b2bd5d75e3b4ea69770c62da42a4c9f7767,85412b2bd5d75e3b4ea69770c62da42a4c9f7767,"Merge branch 'pull-request/147'
+
+Conflicts:
+	spec/09-lexical-structure.md"
+smalyshev,2016-01-02 02:50:56,https://api.github.com/repos/php/php-langspec/git/commits/bb30b5cf3bc32838b2e2dcb92e6435afef21010a,bb30b5cf3bc32838b2e2dcb92e6435afef21010a,Fix globals description
+smalyshev,2016-01-02 02:33:46,https://api.github.com/repos/php/php-langspec/git/commits/cfdcbd2025d2a225dd9ce9cd838dc515d60ebb47,cfdcbd2025d2a225dd9ce9cd838dc515d60ebb47,Merge branch 'pull-request/149'
+smalyshev,2016-01-02 02:29:50,https://api.github.com/repos/php/php-langspec/git/commits/f7fb58d2cebdee290a5d6a4b64828e40d70edf7d,f7fb58d2cebdee290a5d6a4b64828e40d70edf7d,update TOC
+smalyshev,2016-01-02 02:17:34,https://api.github.com/repos/php/php-langspec/git/commits/8608f11da671bf614dc3db934f535e51908b88e5,8608f11da671bf614dc3db934f535e51908b88e5,Merge branch 'pull-request/141'
+smalyshev,2016-01-02 01:50:22,https://api.github.com/repos/php/php-langspec/git/commits/79d439a0ee598761a246cf9bb9ff1521089a7c64,79d439a0ee598761a246cf9bb9ff1521089a7c64,Merge branch 'pull-request/137'
+smalyshev,2016-01-01 23:49:35,https://api.github.com/repos/php/php-langspec/git/commits/5154ca3ed053047ab2a6679a31dbda79a985b4d4,5154ca3ed053047ab2a6679a31dbda79a985b4d4,Clarify the division point
+smalyshev,2016-01-01 22:54:16,https://api.github.com/repos/php/php-langspec/git/commits/e7a6118b500f7615ee6a49b1ff891694ffc5e9a7,e7a6118b500f7615ee6a49b1ff891694ffc5e9a7,Fix semantics of variable parsing
+smalyshev,2016-01-01 22:45:06,https://api.github.com/repos/php/php-langspec/git/commits/634b09d988c2f3716e50b2738fa5f202b724ba79,634b09d988c2f3716e50b2738fa5f202b724ba79,Clarify DivisionByZeroError applicability
+smalyshev,2016-01-01 22:40:42,https://api.github.com/repos/php/php-langspec/git/commits/ba565e9ccedd9612c9cdd2b3e414ab9502b83c01,ba565e9ccedd9612c9cdd2b3e414ab9502b83c01,fix link
+smalyshev,2016-01-01 22:36:10,https://api.github.com/repos/php/php-langspec/git/commits/15133d08c1cf7c5ecdd3ee5b4d02c93407702f00,15133d08c1cf7c5ecdd3ee5b4d02c93407702f00,add properties to Error
+smalyshev,2016-01-01 22:19:56,https://api.github.com/repos/php/php-langspec/git/commits/0c77bc82fa41384f99110a18f4b6be1c9aa8e2df,0c77bc82fa41384f99110a18f4b6be1c9aa8e2df,Merge branch 'pull-request/135'
+smalyshev,2016-01-01 22:11:22,https://api.github.com/repos/php/php-langspec/git/commits/2b64e7aa0d0907413f6abd0b23d450b8d1725e66,2b64e7aa0d0907413f6abd0b23d450b8d1725e66,Merge branch 'pull-request/132'
+nikic,2015-12-29 17:44:58,https://api.github.com/repos/php/php-langspec/git/commits/5a4f3305ec3725b6e8e523d35edb631de1792326,5a4f3305ec3725b6e8e523d35edb631de1792326,"Allow trait uses between other class/trait members
+
+I've separated out trait-use-clauses into a separate heading to
+make this somewhat clean."
+RexJaeschke,2015-12-11 21:31:10,https://api.github.com/repos/php/php-langspec/git/commits/25b46b2a272273d73963a81d14dc7ab72891555a,25b46b2a272273d73963a81d14dc7ab72891555a,V7 Add lists of prohibited or reserved names to name tokens
+RexJaeschke,2015-12-10 18:09:49,https://api.github.com/repos/php/php-langspec/git/commits/858c811f79cc2871de0704c6ce343eed7ed74608,858c811f79cc2871de0704c6ce343eed7ed74608,"V7 Misc. class tweaks
+
+- Briefly mention anonymous classes
+- Cover filtered unserialize calls
+- Mention the prohibition of serializing an instance of an anonymous class
+- Add new method, getReturn, to Generator"
+RexJaeschke,2015-12-10 15:23:20,https://api.github.com/repos/php/php-langspec/git/commits/8ee64d495557fd9208bc7edaaba1dc1f83a080ff,8ee64d495557fd9208bc7edaaba1dc1f83a080ff,V7 Add support for namespace use group import
+RexJaeschke,2015-12-23 21:56:49,https://api.github.com/repos/php/php-langspec/git/commits/da8869e9feaf692c6e8c0c6b9496030857d4f6c7,da8869e9feaf692c6e8c0c6b9496030857d4f6c7,"V7-names-and-keywords
+
+- Make it clear that most keywords can be used as names
+- Update the list of keywords to include all intrinsics + yield from"
+RexJaeschke,2015-12-11 20:33:12,https://api.github.com/repos/php/php-langspec/git/commits/2faf48f771f8657f5e22f96c789b4b1fe1161136,2faf48f771f8657f5e22f96c789b4b1fe1161136,V7 Add anonymous class support to the new operator
+nikic,2015-12-18 18:39:31,https://api.github.com/repos/php/php-langspec/git/commits/6ce5c67499663251236b518339d8589768e925fb,6ce5c67499663251236b518339d8589768e925fb,Remove other reference to Throwable constructor
+RexJaeschke,2015-12-09 22:59:09,https://api.github.com/repos/php/php-langspec/git/commits/aeda4495736b75d0005c87a9336a83132863afab,aeda4495736b75d0005c87a9336a83132863afab,V7 Add the predefined interface type Throwable
+nikic,2015-12-18 15:00:37,https://api.github.com/repos/php/php-langspec/git/commits/930b6d2b82977c86b5dd1514fa72d21cfd664de0,930b6d2b82977c86b5dd1514fa72d21cfd664de0,Update bit shift examples and tests
+RexJaeschke,2015-12-09 16:45:51,https://api.github.com/repos/php/php-langspec/git/commits/2a07c12fcd27a17e0e07f1881497eb24b83b6331,2a07c12fcd27a17e0e07f1881497eb24b83b6331,V7 Clarify Unicode escape sequence/variable substitution interaction
+RexJaeschke,2015-12-11 20:48:26,https://api.github.com/repos/php/php-langspec/git/commits/2d2b4c4153a9f59dda19c24f462ff3f9d1dc15e1,2d2b4c4153a9f59dda19c24f462ff3f9d1dc15e1,V7 Revise behavior for a negative bit-shift count
+RexJaeschke,2015-12-11 20:56:37,https://api.github.com/repos/php/php-langspec/git/commits/4ea9a2ec254a9e4abcdfa7d770bf5e72904f021a,4ea9a2ec254a9e4abcdfa7d770bf5e72904f021a,V7 Revise division-by-zero in / and % operators
+RexJaeschke,2015-12-11 21:11:52,https://api.github.com/repos/php/php-langspec/git/commits/399ddde46a27a6a1c7b06fadd6c05d14be193314,399ddde46a27a6a1c7b06fadd6c05d14be193314,V7 Add the possibility of ParseError from eval
+RexJaeschke,2015-12-11 19:45:54,https://api.github.com/repos/php/php-langspec/git/commits/b39c86d022c2b7bf6010f2350fdca8ef4a1097c1,b39c86d022c2b7bf6010f2350fdca8ef4a1097c1,V7 Prohibit byRef assign of new expression
+RexJaeschke,2015-12-10 15:55:57,https://api.github.com/repos/php/php-langspec/git/commits/d4bf20ab64d192b6b26d0a0b2128ed0af2234621,d4bf20ab64d192b6b26d0a0b2128ed0af2234621,"V7 Minor tweaks to function-definition
+
+- Moved return-type from before the parameter list to after
+- Added a constraint
+- Defined behavior in strict mode re throwing a TypeError"
+RexJaeschke,2015-12-09 22:15:49,https://api.github.com/repos/php/php-langspec/git/commits/3854903777e44a77a53c87d7cbd41a4615713dc9,3854903777e44a77a53c87d7cbd41a4615713dc9,V7 Allow return expression from a generator function
+RexJaeschke,2015-12-09 17:15:08,https://api.github.com/repos/php/php-langspec/git/commits/bc47b9f1648b5e5268f43406ffae1dd699eb10ca,bc47b9f1648b5e5268f43406ffae1dd699eb10ca,V7 Handling of numeric strings starting with zero
+RexJaeschke,2015-12-08 22:56:03,https://api.github.com/repos/php/php-langspec/git/commits/7cdccd1c8de8352e35c0f0e85ced7faaaf50eec3,7cdccd1c8de8352e35c0f0e85ced7faaaf50eec3,Add new V7 operator tokens ?? and <=>
+RexJaeschke,2015-12-10 17:33:50,https://api.github.com/repos/php/php-langspec/git/commits/a9241b28db549639df01097e9fad69ad80cc3d78,a9241b28db549639df01097e9fad69ad80cc3d78,V7 Add the new predefined class types
+smalyshev,2015-12-11 21:24:01,https://api.github.com/repos/php/php-langspec/git/commits/beef41c36aaedec093d4f404b889eaaaef9dbdba,beef41c36aaedec093d4f404b889eaaaef9dbdba,Merge branch 'pull-request/124'
+smalyshev,2015-12-11 21:22:40,https://api.github.com/repos/php/php-langspec/git/commits/baf68042a9c58520cae4b350c1ae7bfaee9142b8,baf68042a9c58520cae4b350c1ae7bfaee9142b8,Merge branch 'pull-request/126'
+smalyshev,2015-12-11 21:22:34,https://api.github.com/repos/php/php-langspec/git/commits/704fc0263932edaccddcbac22b0308dbec34587c,704fc0263932edaccddcbac22b0308dbec34587c,Merge branch 'PHP-5.6'
+m-alow,2015-12-01 23:24:49,https://api.github.com/repos/php/php-langspec/git/commits/23b8abc8a3a30de8c1f81173cb9d6be267f2df84,23b8abc8a3a30de8c1f81173cb9d6be267f2df84,try-statement is unreachable
+smalyshev,2015-12-11 21:21:19,https://api.github.com/repos/php/php-langspec/git/commits/21f0003fd2a718e3e549af6eb2985a0dcff52501,21f0003fd2a718e3e549af6eb2985a0dcff52501,Merge branch 'pull-request/125'
+smalyshev,2015-12-11 21:21:10,https://api.github.com/repos/php/php-langspec/git/commits/2d3f47e359979c8eb665500d6c725173b0ddc335,2d3f47e359979c8eb665500d6c725173b0ddc335,Merge branch 'PHP-5.6'
+artspb,2015-10-21 08:58:11,https://api.github.com/repos/php/php-langspec/git/commits/d279c79cca5f5bd217a523ee489c619f1556ee87,d279c79cca5f5bd217a523ee489c619f1556ee87,"Typo fixed
+
+Added missed ""*"".
+Conflicts:
+	spec/11-statements.md"
+RexJaeschke,2015-12-11 18:59:30,https://api.github.com/repos/php/php-langspec/git/commits/5d3978abe315b73ba5cafdf10bad8ab1d93e2c57,5d3978abe315b73ba5cafdf10bad8ab1d93e2c57,"V7 Add ""yield from"" to yield operator"
+RexJaeschke,2015-12-09 23:23:33,https://api.github.com/repos/php/php-langspec/git/commits/a907a1a600f98d1549ca6053c8333f44d1792454,a907a1a600f98d1549ca6053c8333f44d1792454,V7 Update Exception to implement Throwable
+m-alow,2015-12-01 23:24:49,https://api.github.com/repos/php/php-langspec/git/commits/4037f3f16b5d01e2322f93d59723696b0e03768b,4037f3f16b5d01e2322f93d59723696b0e03768b,try-statement is unreachable
+artspb,2015-10-21 08:58:11,https://api.github.com/repos/php/php-langspec/git/commits/dc11f7a37e94603021ac2fc2d9b7a4ee3af96a45,dc11f7a37e94603021ac2fc2d9b7a4ee3af96a45,"Typo fixed
+
+Added missed ""*""."
+artspb,2015-10-21 08:52:39,https://api.github.com/repos/php/php-langspec/git/commits/cc6977044fe48299067e754e699378129ddc3bce,cc6977044fe48299067e754e699378129ddc3bce,"Typo fixed
+
+Extra ']' is removed."
+bjori,2015-08-24 01:30:31,https://api.github.com/repos/php/php-langspec/git/commits/ee3934dc2757e3dc62c0e2b865fddbd6512673d0,ee3934dc2757e3dc62c0e2b865fddbd6512673d0,"""is is"" is one ""is"" to many"
+nkovacs,2015-07-23 07:25:13,https://api.github.com/repos/php/php-langspec/git/commits/1e55f3db81233e43c7c93ce1909bf9800ba0e328,1e55f3db81233e43c7c93ce1909bf9800ba0e328,Fix typo
+smalyshev,2015-06-28 23:34:29,https://api.github.com/repos/php/php-langspec/git/commits/f1b8a72bc37b006758ba0a2b337996e954998f5e,f1b8a72bc37b006758ba0a2b337996e954998f5e,Merge branch 'PHP-5.6'
+smalyshev,2015-06-28 23:33:37,https://api.github.com/repos/php/php-langspec/git/commits/07cda297dcfa335cb54cfd536bbdf3e92213581d,07cda297dcfa335cb54cfd536bbdf3e92213581d,fix external manual references
+smalyshev,2015-06-28 23:19:46,https://api.github.com/repos/php/php-langspec/git/commits/7f8ec74a1a93ea9a41e8a5178abf80a13adac426,7f8ec74a1a93ea9a41e8a5178abf80a13adac426,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/10-expressions.md"
+smalyshev,2015-06-28 23:12:08,https://api.github.com/repos/php/php-langspec/git/commits/58dc71af39253900fc37051fc0d20279ed3a7e6b,58dc71af39253900fc37051fc0d20279ed3a7e6b,Fix bug #67836
+smalyshev,2015-06-28 22:46:57,https://api.github.com/repos/php/php-langspec/git/commits/976a43c717d81cba08b81d5cfa2ed569979d0e2b,976a43c717d81cba08b81d5cfa2ed569979d0e2b,Fixed bug #68542
+smalyshev,2015-06-28 22:39:01,https://api.github.com/repos/php/php-langspec/git/commits/706af9c450b334fd6219a7dcb5d6233c5cf69ea5,706af9c450b334fd6219a7dcb5d6233c5cf69ea5,Fix bug #67859
+smalyshev,2015-06-28 22:09:43,https://api.github.com/repos/php/php-langspec/git/commits/fa014cfeab16d9810bc0dcede77f8e5ed824ca7d,fa014cfeab16d9810bc0dcede77f8e5ed824ca7d,fix STDOUT link
+smalyshev,2015-06-28 22:05:37,https://api.github.com/repos/php/php-langspec/git/commits/0ce864aaccb4fe19f0181e08c55e02ef3433279b,0ce864aaccb4fe19f0181e08c55e02ef3433279b,Refine language
+smalyshev,2015-06-28 21:51:14,https://api.github.com/repos/php/php-langspec/git/commits/31ed6ad07d3668e9fac6016d73f282392f0dc5ae,31ed6ad07d3668e9fac6016d73f282392f0dc5ae,Change a language a bit to clarify what override means
+smalyshev,2015-06-28 21:47:46,https://api.github.com/repos/php/php-langspec/git/commits/a763e15f705de443d1529e50e479bf86c5f0d7be,a763e15f705de443d1529e50e479bf86c5f0d7be,Fix bug #67777
+smalyshev,2015-06-28 21:35:27,https://api.github.com/repos/php/php-langspec/git/commits/4b730f29f74c0b1f8929349efb087aba38e86074,4b730f29f74c0b1f8929349efb087aba38e86074,Fix for bug #67773
+smalyshev,2015-06-28 20:56:00,https://api.github.com/repos/php/php-langspec/git/commits/43914c041e5dfe7a5b53d8350c5c2b287b1ade55,43914c041e5dfe7a5b53d8350c5c2b287b1ade55,Fix bug #67750
+smalyshev,2015-06-28 20:21:35,https://api.github.com/repos/php/php-langspec/git/commits/05ee44f11684769a85007dd86bdff4717a30f5c9,05ee44f11684769a85007dd86bdff4717a30f5c9,Alternative tags are not in 7
+smalyshev,2015-06-28 07:28:53,https://api.github.com/repos/php/php-langspec/git/commits/4529f762ecec3c949b6acff1820c36b9cba24930,4529f762ecec3c949b6acff1820c36b9cba24930,Merge branch 'PHP-5.6'
+smalyshev,2015-06-28 07:28:39,https://api.github.com/repos/php/php-langspec/git/commits/c83ffa42bbb8cd33cd78ed1738bfddeb9d54326e,c83ffa42bbb8cd33cd78ed1738bfddeb9d54326e,Update TOC
+smalyshev,2015-06-28 07:28:18,https://api.github.com/repos/php/php-langspec/git/commits/9296bf9ba3eb5f28b80c45a0978a76c443566eb4,9296bf9ba3eb5f28b80c45a0978a76c443566eb4,update TOC
+smalyshev,2015-06-28 07:27:31,https://api.github.com/repos/php/php-langspec/git/commits/9ac7cfb05abd512ff3628c38f64a65863542a482,9ac7cfb05abd512ff3628c38f64a65863542a482,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/10-expressions.md"
+smalyshev,2015-06-28 06:44:21,https://api.github.com/repos/php/php-langspec/git/commits/23ce5a04c8d7bf05690e33daca5646965690002d,23ce5a04c8d7bf05690e33daca5646965690002d,"New syntax in 5.6:
+
+- add __debugInfo
+- add use function/const
+- add variadic unpacking"
+smalyshev,2015-06-28 06:34:42,https://api.github.com/repos/php/php-langspec/git/commits/6f5d705aaf7c8fdbf2db6a7e69bcb83937e76ad9,6f5d705aaf7c8fdbf2db6a7e69bcb83937e76ad9,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/13-functions.md"
+smalyshev,2015-06-28 06:32:28,https://api.github.com/repos/php/php-langspec/git/commits/a00e134dbe5bd8a660346da880c20253cda99425,a00e134dbe5bd8a660346da880c20253cda99425,add variadics
+smalyshev,2015-06-28 06:16:45,https://api.github.com/repos/php/php-langspec/git/commits/4cb9c8b614ef1f941254d2dc5a99d630a1211648,4cb9c8b614ef1f941254d2dc5a99d630a1211648,add ?? and scalar types
+smalyshev,2015-06-28 06:08:24,https://api.github.com/repos/php/php-langspec/git/commits/6d8ba7965122b6770e09018f2211246de587f39d,6d8ba7965122b6770e09018f2211246de587f39d,Add to grammar
+smalyshev,2015-06-28 05:59:31,https://api.github.com/repos/php/php-langspec/git/commits/969dcc7e1078b3ae0540510b0e0d2393fcd0f85b,969dcc7e1078b3ae0540510b0e0d2393fcd0f85b,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/10-expressions.md"
+smalyshev,2015-06-28 05:58:56,https://api.github.com/repos/php/php-langspec/git/commits/af2557ecd9042eee6d3d5d56a9a241f16c975319,af2557ecd9042eee6d3d5d56a9a241f16c975319,"Merge commit '3d00d96383787468c668ab4cca11168ecf363312'
+
+Conflicts:
+	tests/arrays/arrays.phpt
+	tests/classes/sleep_and_wakeup.phpt
+	tests/expressions/assignment_operators/assignment.phpt
+	tests/expressions/multiplicative_operators/multiplication_division_modulus.phpt
+	tests/expressions/unary_operators/cast.phpt"
+smalyshev,2015-06-28 04:37:58,https://api.github.com/repos/php/php-langspec/git/commits/c1ac5314798f6740fec78599307b08028e797e29,c1ac5314798f6740fec78599307b08028e797e29,update grammar
+smalyshev,2015-06-28 02:38:20,https://api.github.com/repos/php/php-langspec/git/commits/3d00d96383787468c668ab4cca11168ecf363312,3d00d96383787468c668ab4cca11168ecf363312,Fix tests not to depend on unspecified results
+smalyshev,2015-06-06 20:16:43,https://api.github.com/repos/php/php-langspec/git/commits/ef493dacbf5e31728191de54fb21e42ebf5c69c6,ef493dacbf5e31728191de54fb21e42ebf5c69c6,Merge branch 'pull-request/121'
+smalyshev,2015-06-06 20:16:31,https://api.github.com/repos/php/php-langspec/git/commits/00f84a23d6f8aa5829543f7e8b5b13ffba85c222,00f84a23d6f8aa5829543f7e8b5b13ffba85c222,Merge branch 'PHP-5.6'
+PrettyHotProgrammer,2015-05-23 03:51:05,https://api.github.com/repos/php/php-langspec/git/commits/0fb11840cb0c4becdc4a424c8c92fafac6185ff2,0fb11840cb0c4becdc4a424c8c92fafac6185ff2,"Update 10-expressions.md
+
+Type-o"
+smalyshev,2015-06-06 20:15:18,https://api.github.com/repos/php/php-langspec/git/commits/a4dddbaecbfd1ce189317d9462836401db950b96,a4dddbaecbfd1ce189317d9462836401db950b96,Merge branch 'pull-request/122'
+smalyshev,2015-06-06 20:15:06,https://api.github.com/repos/php/php-langspec/git/commits/3a79d3408987c94be8141f4add52b4b6c40cb0fd,3a79d3408987c94be8141f4add52b4b6c40cb0fd,Merge branch 'PHP-5.6'
+haskellcamargo,2015-05-27 20:55:28,https://api.github.com/repos/php/php-langspec/git/commits/75d45bdf1132a5a89f9124b6055202cdc87cf244,75d45bdf1132a5a89f9124b6055202cdc87cf244,Fixed typo
+smalyshev,2015-06-06 20:14:10,https://api.github.com/repos/php/php-langspec/git/commits/8649b1a30960cef75f748d336491ca13f24dbe05,8649b1a30960cef75f748d336491ca13f24dbe05,Merge branch 'pull-request/123'
+hikari-no-yume,2015-06-06 14:33:18,https://api.github.com/repos/php/php-langspec/git/commits/8ea1362b6f5ce3c56043e998b20de13e4d3f26d5,8ea1362b6f5ce3c56043e998b20de13e4d3f26d5,Fix typo in Unicode escape test
+smalyshev,2015-06-03 08:37:38,https://api.github.com/repos/php/php-langspec/git/commits/bffa99f5e70268934fff7601584113887074d805,bffa99f5e70268934fff7601584113887074d805,Merge branch 'PHP-5.6'
+smalyshev,2015-06-03 08:36:18,https://api.github.com/repos/php/php-langspec/git/commits/a6520fb35b746a6e6c27531f25909c353bc068ed,a6520fb35b746a6e6c27531f25909c353bc068ed,namespace fixes
+smalyshev,2015-06-03 07:46:35,https://api.github.com/repos/php/php-langspec/git/commits/b0329e7d4cf344583a52db5eec1b771230ed21d1,b0329e7d4cf344583a52db5eec1b771230ed21d1,Merge branch 'PHP-5.6'
+smalyshev,2015-06-03 07:46:16,https://api.github.com/repos/php/php-langspec/git/commits/fac39a410337f02b08f5ce047eee674d4feb3655,fac39a410337f02b08f5ce047eee674d4feb3655,exception fixes
+smalyshev,2015-06-03 07:28:03,https://api.github.com/repos/php/php-langspec/git/commits/82e6de0cbed53cdb3adcd05bd26e03aa57a89a29,82e6de0cbed53cdb3adcd05bd26e03aa57a89a29,Merge branch 'PHP-5.6'
+smalyshev,2015-06-03 07:27:50,https://api.github.com/repos/php/php-langspec/git/commits/dc098dddb74d167065bf3c8a8f24102dd93f3670,dc098dddb74d167065bf3c8a8f24102dd93f3670,typo fix
+smalyshev,2015-06-03 07:24:53,https://api.github.com/repos/php/php-langspec/git/commits/7158ff031afdb4a759893d2fa0bb22445e3bdefa,7158ff031afdb4a759893d2fa0bb22445e3bdefa,Merge branch 'PHP-5.6'
+smalyshev,2015-06-03 07:24:37,https://api.github.com/repos/php/php-langspec/git/commits/1890e97e5381ba600844eebcb59f5f4cc0930e62,1890e97e5381ba600844eebcb59f5f4cc0930e62,fix link
+smalyshev,2015-06-03 07:22:16,https://api.github.com/repos/php/php-langspec/git/commits/66f3ed081d39ba1a383443b437c9bbef393f325c,66f3ed081d39ba1a383443b437c9bbef393f325c,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/14-classes.md"
+smalyshev,2015-06-03 07:20:05,https://api.github.com/repos/php/php-langspec/git/commits/fbe931c340770efc4e68b7c6bc42282b5eed2526,fbe931c340770efc4e68b7c6bc42282b5eed2526,trait fixes
+smalyshev,2015-06-02 14:19:54,https://api.github.com/repos/php/php-langspec/git/commits/e17fb29c11741da793eb54bf0697910b8693a691,e17fb29c11741da793eb54bf0697910b8693a691,interface fixes
+smalyshev,2015-05-28 07:17:07,https://api.github.com/repos/php/php-langspec/git/commits/0a0c8f0edf7473b36b3f23a515bdafd5ffd0e3d3,0a0c8f0edf7473b36b3f23a515bdafd5ffd0e3d3,Merge branch 'PHP-5.6'
+smalyshev,2015-05-28 07:16:52,https://api.github.com/repos/php/php-langspec/git/commits/66e723b914fd9c010e8566cc08996a92389732be,66e723b914fd9c010e8566cc08996a92389732be,fix formatting
+smalyshev,2015-05-28 07:13:59,https://api.github.com/repos/php/php-langspec/git/commits/cebcc25c9239e3875b168e84cd24842af786caf9,cebcc25c9239e3875b168e84cd24842af786caf9,update TOC
+smalyshev,2015-05-28 07:13:44,https://api.github.com/repos/php/php-langspec/git/commits/12400b21867e25651c88af1584e45dc111cdd596,12400b21867e25651c88af1584e45dc111cdd596,Merge branch 'PHP-5.6'
+smalyshev,2015-05-28 07:13:30,https://api.github.com/repos/php/php-langspec/git/commits/ee5823acb5e6d07d6338908d4b16ffc624ea1f85,ee5823acb5e6d07d6338908d4b16ffc624ea1f85,update TOC
+smalyshev,2015-05-28 07:04:43,https://api.github.com/repos/php/php-langspec/git/commits/785e563eb7781b6960c1e80c4cdb0dcb2a2942a4,785e563eb7781b6960c1e80c4cdb0dcb2a2942a4,Merge branch 'PHP-5.6'
+smalyshev,2015-05-28 07:04:00,https://api.github.com/repos/php/php-langspec/git/commits/edc1049ee71c4d7981a8d5b5f4129f883859e67d,edc1049ee71c4d7981a8d5b5f4129f883859e67d,more fixes
+haskellcamargo,2015-05-27 20:55:28,https://api.github.com/repos/php/php-langspec/git/commits/9108861725cc228fb9b0f3b1f0528bec6c04c96b,9108861725cc228fb9b0f3b1f0528bec6c04c96b,Fixed typo
+PrettyHotProgrammer,2015-05-23 03:51:05,https://api.github.com/repos/php/php-langspec/git/commits/4b56e9d39dba9e4f370eb125108d83119880624b,4b56e9d39dba9e4f370eb125108d83119880624b,"Update 10-expressions.md
+
+Type-o"
+smalyshev,2015-05-22 08:40:47,https://api.github.com/repos/php/php-langspec/git/commits/3433de787d471949207fa1d42713521b371b2bdf,3433de787d471949207fa1d42713521b371b2bdf,add return types
+smalyshev,2015-05-22 08:29:21,https://api.github.com/repos/php/php-langspec/git/commits/49d40f1ee6bb582375cec6f26120bf4047223629,49d40f1ee6bb582375cec6f26120bf4047223629,Add PHP 7 updates
+smalyshev,2015-05-22 08:15:53,https://api.github.com/repos/php/php-langspec/git/commits/64a9517608c4dae6c38db270450b842f5bbc7597,64a9517608c4dae6c38db270450b842f5bbc7597,Merge branch 'PHP-5.6'
+smalyshev,2015-05-22 05:49:22,https://api.github.com/repos/php/php-langspec/git/commits/05f30ed4fa82aba6da7cec248ad9d074da326bd1,05f30ed4fa82aba6da7cec248ad9d074da326bd1,Classes fixes
+smalyshev,2015-05-22 04:29:59,https://api.github.com/repos/php/php-langspec/git/commits/e08f52fd5e1f9474c99053e9f73bf78326e41478,e08f52fd5e1f9474c99053e9f73bf78326e41478,Merge branch 'PHP-5.6'
+smalyshev,2015-05-22 04:29:46,https://api.github.com/repos/php/php-langspec/git/commits/5c1ad13887c2c8090e74d862e3c538ad6f477359,5c1ad13887c2c8090e74d862e3c538ad6f477359,fix links
+smalyshev,2015-05-22 04:26:33,https://api.github.com/repos/php/php-langspec/git/commits/c9384cb9b9b8d3c94eb41b7b564ddc34404e2bf2,c9384cb9b9b8d3c94eb41b7b564ddc34404e2bf2,Merge branch 'PHP-5.6'
+smalyshev,2015-05-22 04:26:15,https://api.github.com/repos/php/php-langspec/git/commits/186b0ea8131c1a951fec967ab337f955c1000c94,186b0ea8131c1a951fec967ab337f955c1000c94,fix links
+smalyshev,2015-05-18 08:28:03,https://api.github.com/repos/php/php-langspec/git/commits/02fbd6d9617002d7918fd229ae9d8aaa4c999bd8,02fbd6d9617002d7918fd229ae9d8aaa4c999bd8,Merge branch 'PHP-5.6'
+smalyshev,2015-05-18 08:27:46,https://api.github.com/repos/php/php-langspec/git/commits/c47be08e977eb5a96a0760db19620c8a53578097,c47be08e977eb5a96a0760db19620c8a53578097,fix typo
+smalyshev,2015-05-18 08:26:33,https://api.github.com/repos/php/php-langspec/git/commits/65cf67e46843a3f3ff0bfe604841295ba4e552eb,65cf67e46843a3f3ff0bfe604841295ba4e552eb,fix links
+smalyshev,2015-05-18 08:24:57,https://api.github.com/repos/php/php-langspec/git/commits/16fa8765a8c084a52edb724d4a375a787cd8c830,16fa8765a8c084a52edb724d4a375a787cd8c830,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/10-expressions.md"
+smalyshev,2015-05-18 08:18:08,https://api.github.com/repos/php/php-langspec/git/commits/3cf3cf9c294bca4a13e5b20b7e9b82dbd5542e8c,3cf3cf9c294bca4a13e5b20b7e9b82dbd5542e8c,fix links
+smalyshev,2015-05-18 05:58:38,https://api.github.com/repos/php/php-langspec/git/commits/9b9ea9e89f2a752e752da0edd7ef7d88b00ffed9,9b9ea9e89f2a752e752da0edd7ef7d88b00ffed9,Merge branch 'PHP-5.6'
+smalyshev,2015-05-18 05:52:56,https://api.github.com/repos/php/php-langspec/git/commits/1f6d60ef34d075c2015192a8519a8abdbcfe0d62,1f6d60ef34d075c2015192a8519a8abdbcfe0d62,link fixes
+smalyshev,2015-05-18 05:24:32,https://api.github.com/repos/php/php-langspec/git/commits/3cfa1aad28232fdf7d3b1f363cc3aef4b67667ed,3cfa1aad28232fdf7d3b1f363cc3aef4b67667ed,Merge branch 'PHP-5.6'
+smalyshev,2015-05-18 04:58:42,https://api.github.com/repos/php/php-langspec/git/commits/c1a7dda78c516c2a4bb39c64cff9f45933ab3e84,c1a7dda78c516c2a4bb39c64cff9f45933ab3e84,more links fixes
+smalyshev,2015-05-18 01:09:49,https://api.github.com/repos/php/php-langspec/git/commits/205dfaec361fbe714aece3a69d4c04e8af9ccaec,205dfaec361fbe714aece3a69d4c04e8af9ccaec,fix merge
+smalyshev,2015-05-18 01:06:02,https://api.github.com/repos/php/php-langspec/git/commits/f2629dd9e70f3d540a40d05ad91e011bccde5c54,f2629dd9e70f3d540a40d05ad91e011bccde5c54,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/05-types.md"
+smalyshev,2015-05-18 00:52:01,https://api.github.com/repos/php/php-langspec/git/commits/f9755956c3abd259c3f5717e569ecef6ac7f560f,f9755956c3abd259c3f5717e569ecef6ac7f560f,Cleanup §§ links
+smalyshev,2015-05-18 00:21:46,https://api.github.com/repos/php/php-langspec/git/commits/2eb85a9678e6310a4585bed5a30e4d416580d1cf,2eb85a9678e6310a4585bed5a30e4d416580d1cf,Add return types
+smalyshev,2015-05-17 23:56:54,https://api.github.com/repos/php/php-langspec/git/commits/357c54cfedeeb7cb5a46cd64e1676f5bed78cf41,357c54cfedeeb7cb5a46cd64e1676f5bed78cf41,Add scalar typing
+smalyshev,2015-05-17 22:37:52,https://api.github.com/repos/php/php-langspec/git/commits/8de84f213d91449a289fb63c825e92521fc1cf3a,8de84f213d91449a289fb63c825e92521fc1cf3a,Merge branch 'PHP-5.6'
+smalyshev,2015-05-17 22:23:54,https://api.github.com/repos/php/php-langspec/git/commits/44ec669aae21cd2a60d8bd1cc7c0e17873400df0,44ec669aae21cd2a60d8bd1cc7c0e17873400df0,functions fixes
+smalyshev,2015-05-17 08:30:51,https://api.github.com/repos/php/php-langspec/git/commits/9c56436e220bbfe5e05b5efc6571570030732cae,9c56436e220bbfe5e05b5efc6571570030732cae,Merge branch 'PHP-5.6'
+smalyshev,2015-05-17 08:30:17,https://api.github.com/repos/php/php-langspec/git/commits/509220e2720014d69968042ffb279764bfa09cd9,509220e2720014d69968042ffb279764bfa09cd9,"Add notice description, don't use E_*"
+smalyshev,2015-05-17 04:38:43,https://api.github.com/repos/php/php-langspec/git/commits/bdb9b5cc6224556eefdc96a40739200ee17846c1,bdb9b5cc6224556eefdc96a40739200ee17846c1,Fixes for arrays
+smalyshev,2015-05-17 04:38:43,https://api.github.com/repos/php/php-langspec/git/commits/38b48bfbfdfb6454cf881f5db75872c0e9d7d8e8,38b48bfbfdfb6454cf881f5db75872c0e9d7d8e8,Fixes for arrays
+smalyshev,2015-05-17 04:26:08,https://api.github.com/repos/php/php-langspec/git/commits/46443c394ffe8a7e25b2ec85b4985528758e7245,46443c394ffe8a7e25b2ec85b4985528758e7245,Merge branch 'PHP-5.6'
+smalyshev,2015-05-17 01:20:50,https://api.github.com/repos/php/php-langspec/git/commits/9fdd15870054e9d47e2db4b0a762624acc1e228d,9fdd15870054e9d47e2db4b0a762624acc1e228d,Fixes for statements
+smalyshev,2015-05-17 00:38:29,https://api.github.com/repos/php/php-langspec/git/commits/1f53a8a94202e0d911ebdb840c0ef0c7e4f90e7f,1f53a8a94202e0d911ebdb840c0ef0c7e4f90e7f,add note for coalesce
+smalyshev,2015-05-16 22:28:24,https://api.github.com/repos/php/php-langspec/git/commits/cf66603a3e510da300efecaf9d73c5d82806dc11,cf66603a3e510da300efecaf9d73c5d82806dc11,Add <=> operator
+smalyshev,2015-05-16 22:02:52,https://api.github.com/repos/php/php-langspec/git/commits/e596ea05762a224f6aadbe4c524834a9581430b0,e596ea05762a224f6aadbe4c524834a9581430b0,Merge branch 'PHP-5.6'
+smalyshev,2015-05-16 22:02:34,https://api.github.com/repos/php/php-langspec/git/commits/51e270dd2f6294874ceb6cd5ed69986ba4d25b50,51e270dd2f6294874ceb6cd5ed69986ba4d25b50,Merge branch 'pull-request/89' into PHP-5.6
+nikic,2015-05-07 13:48:22,https://api.github.com/repos/php/php-langspec/git/commits/e3bba7dee498b6a27dacbf8e7efb93bdc2708a6f,e3bba7dee498b6a27dacbf8e7efb93bdc2708a6f,"Fix str-numeric production
+
+Must be all on one line..."
+nikic,2015-05-07 13:45:50,https://api.github.com/repos/php/php-langspec/git/commits/e3c3af71bd1fbaae181ce948c6fafe2996f58635,e3c3af71bd1fbaae181ce948c6fafe2996f58635,Merge branch 'PHP-5.6'
+eilgin,2015-04-12 15:45:59,https://api.github.com/repos/php/php-langspec/git/commits/b94d51b07ff9eb36944ef2d9ad2e65b30f207210,b94d51b07ff9eb36944ef2d9ad2e65b30f207210,"Update 16-traits.md
+
+Fix a typo in a trait name in the first example."
+eilgin,2015-04-12 13:24:43,https://api.github.com/repos/php/php-langspec/git/commits/aa331e19ef06c578c117e8ec0f5d516aacabee61,aa331e19ef06c578c117e8ec0f5d516aacabee61,"Update 08-conversions.md
+
+Correct a typo."
+nikic,2015-03-30 09:27:00,https://api.github.com/repos/php/php-langspec/git/commits/b473880d24ab53c064e6e371f530605a80d98874,b473880d24ab53c064e6e371f530605a80d98874,Merge branch 'PHP-5.6'
+wapmorgan,2015-03-30 09:26:49,https://api.github.com/repos/php/php-langspec/git/commits/5845a0fefc2f7d5d7bbd8f660e1253c6e9ffe3ac,5845a0fefc2f7d5d7bbd8f660e1253c6e9ffe3ac,Fix typos
+nikic,2015-02-27 22:03:15,https://api.github.com/repos/php/php-langspec/git/commits/33063d96e4c42f79c2e21c0b1eddfdf1bd9cfb46,33063d96e4c42f79c2e21c0b1eddfdf1bd9cfb46,"Update numeric string spec for PHP 7
+
+ * Clarify what whitespace is supported - this is not the same as
+   the white-space production.
+ * Clarify that a sign is supported (which is not the case for
+   the normal int/float productions)
+ * Clarify that we only support decimal digits or float literals"
+nikic,2015-02-25 19:48:32,https://api.github.com/repos/php/php-langspec/git/commits/bdf57758ce3db17c84b0d3a6fa6d4b877858562b,bdf57758ce3db17c84b0d3a6fa6d4b877858562b,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	tests/expressions/primary_expressions/primary.phpt"
+nikic,2015-02-25 19:47:11,https://api.github.com/repos/php/php-langspec/git/commits/bb56152868e66b309b8b28849fada95d236132ec,bb56152868e66b309b8b28849fada95d236132ec,Fix variable syntax test for PHP 5.6
+nikic,2015-02-25 18:07:00,https://api.github.com/repos/php/php-langspec/git/commits/41aa160ab2d4301c595c975de75a3581e4300ec9,41aa160ab2d4301c595c975de75a3581e4300ec9,Merge branch 'PHP-5.6'
+robstoll,2015-02-19 17:30:57,https://api.github.com/repos/php/php-langspec/git/commits/b9a81cbd7ceabc93b7628af066c83c62c0ff1524,b9a81cbd7ceabc93b7628af066c83c62c0ff1524,case-sensitivity of constants
+nikic,2015-02-25 18:00:37,https://api.github.com/repos/php/php-langspec/git/commits/938683d62c2808440d4e8725e06cc84c2ee5b85d,938683d62c2808440d4e8725e06cc84c2ee5b85d,Merge branch 'PHP-5.6'
+marcioAlmada,2015-02-03 01:53:15,https://api.github.com/repos/php/php-langspec/git/commits/9f2ccb0eba7fe2d792e1726bac47cb7f749a2f8a,9f2ccb0eba7fe2d792e1726bac47cb7f749a2f8a,"add forgotten ""list"" keyword"
+nikic,2015-02-25 17:54:01,https://api.github.com/repos/php/php-langspec/git/commits/d458087ab0b52e1ca8a1ac20a7287319b5c11e35,d458087ab0b52e1ca8a1ac20a7287319b5c11e35,Merge branch 'PHP-5.6'
+robstoll,2015-02-24 21:47:51,https://api.github.com/repos/php/php-langspec/git/commits/aa787b26aace88ec22856d1c876b679f9ffa925c,aa787b26aace88ec22856d1c876b679f9ffa925c,"small typo
+
+just a small typo"
+nikic,2015-01-09 18:04:28,https://api.github.com/repos/php/php-langspec/git/commits/799d60bec8acf227cbecc0f2b0c5ebea5bcf9280,799d60bec8acf227cbecc0f2b0c5ebea5bcf9280,Update list() spec for PHP 7
+robstoll,2014-11-13 19:00:06,https://api.github.com/repos/php/php-langspec/git/commits/ed53b0a45f4678de17c178630d757d9fe66256a7,ed53b0a45f4678de17c178630d757d9fe66256a7,spotted an unclosed i tag
+robstoll,2014-11-13 18:58:51,https://api.github.com/repos/php/php-langspec/git/commits/e56af581653fdf3e79c2c97b45dcce6efa0344dd,e56af581653fdf3e79c2c97b45dcce6efa0344dd,improved formatting
+robstoll,2014-11-13 18:54:52,https://api.github.com/repos/php/php-langspec/git/commits/86cf6d545f23ca460b07731ff880e11b6c8481c2,86cf6d545f23ca460b07731ff880e11b6c8481c2,Further explanations about script inclusion
+nikic,2015-01-07 22:03:36,https://api.github.com/repos/php/php-langspec/git/commits/223caa3ecd38ef4742937542ccfbe7e215b4e677,223caa3ecd38ef4742937542ccfbe7e215b4e677,Delete leftover file
+nikic,2015-01-07 22:02:14,https://api.github.com/repos/php/php-langspec/git/commits/3c27b250656fb94d1d0e850834ff5793d8fd2c80,3c27b250656fb94d1d0e850834ff5793d8fd2c80,Merge remote-tracking branch 'ajf/split_assignment_operator_test'
+hikari-no-yume,2015-01-04 19:32:40,https://api.github.com/repos/php/php-langspec/git/commits/1ab80679543335ca2a1249bc4957c06b96016837,1ab80679543335ca2a1249bc4957c06b96016837,"Split assignment operator megatest into smaller tests, update for PHP7"
+nikic,2015-01-07 21:49:46,https://api.github.com/repos/php/php-langspec/git/commits/3261ea2f3b775cbc4144ec31d515726e791cf098,3261ea2f3b775cbc4144ec31d515726e791cf098,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	tests/arrays/arrays.php
+	tests/arrays/arrays.php.expectf
+	tests/basic_concepts/memory_model_and_array_types.php
+	tests/basic_concepts/memory_model_and_array_types.php.expect
+	tests/basic_concepts/memory_model_and_handle_types.php
+	tests/basic_concepts/memory_model_and_resources.php.expect
+	tests/basic_concepts/storage_duration.php
+	tests/classes/__gets_return_type.php.expect
+	tests/classes/__php_incomplete_class.php
+	tests/classes/__php_incomplete_class.php.expect
+	tests/classes/classes.php.expect
+	tests/classes/cloning.php.expectf
+	tests/classes/constructors.php.expect
+	tests/classes/dynamic_methods.php.expectf
+	tests/classes/dynamic_properties.php
+	tests/classes/dynamic_properties.php.expect
+	tests/classes/dynamic_properties2.php.expectf
+	tests/classes/dynamic_properties3.php
+	tests/classes/dynamic_properties3.php.expectf
+	tests/classes/invoke.php.expect
+	tests/classes/invoking.php.expect
+	tests/classes/overloading.php
+	tests/classes/overloading.php.expect
+	tests/classes/overloading_2.php.expectf
+	tests/classes/overloading_methods.php.expectf
+	tests/classes/overloading_properties.php
+	tests/classes/overloading_properties.php.expect
+	tests/classes/overloading_properties2.php.expectf
+	tests/classes/point2_test1.php.expect
+	tests/classes/property_initializer.php
+	tests/classes/property_initializer.php.expect
+	tests/classes/serializable.php
+	tests/classes/serializable.php.expect
+	tests/classes/setting_state.php
+	tests/classes/sleep_and_wakeup.php
+	tests/classes/vehicle_test1.php.expect
+	tests/constants/classes.php
+	tests/constants/classes.php.expect
+	tests/constants/constants.php
+	tests/constants/constants.php.expectf
+	tests/exception_handling/exception_class_experiment_1.php
+	tests/exception_handling/hierarchy_of_exception_classes.php.expect
+	tests/exception_handling/jump_from_catch_or_finally_clause.php
+	tests/exception_handling/jump_from_catch_or_finally_clause.php.expect
+	tests/exception_handling/odds_and_ends.php.expect
+	tests/expressions/additive_operators/addition_subtraction_concatenation.php.expect
+	tests/expressions/additive_operators/array_concatenation.php
+	tests/expressions/additive_operators/array_concatenation.php.expectf
+	tests/expressions/assignment_operators/assignment.php.expect
+	tests/expressions/binary_logical_operators/binary_logical_operators.php.expect
+	tests/expressions/bitwise_and,_or,_xor_operators/bitwise_and_or_xor.php.expect
+	tests/expressions/bitwise_shift_operators/bitwise_shift.php
+	tests/expressions/bitwise_shift_operators/bitwise_shift.php.expect
+	tests/expressions/equality_operators/comparisons.php.expectf
+	tests/expressions/error_control_operator/error_control.php.expectf
+	tests/expressions/general/associativity.php.expect
+	tests/expressions/general/order_of_evaluation.php.expect
+	tests/expressions/general/precedence.php.expect
+	tests/expressions/general/sequence_points.php.expect
+	tests/expressions/instanceof_operator/instanceof.php
+	tests/expressions/instanceof_operator/instanceof.php.expect
+	tests/expressions/multiplicative_operators/multiplication_division_modulus.php.expectf
+	tests/expressions/postfix_operators/exponentiation.php.expect
+	tests/expressions/postfix_operators/member_selection_operator.php
+	tests/expressions/postfix_operators/post-increment_and_decrement_integer_edge_cases.php.expect
+	tests/expressions/postfix_operators/scope_resolution_operator.php.expect
+	tests/expressions/postfix_operators/subscripting.php
+	tests/expressions/primary_expressions/intrinsics_echo.php.expect
+	tests/expressions/primary_expressions/intrinsics_eval.php.expect
+	tests/expressions/primary_expressions/intrinsics_exit.php.expect
+	tests/expressions/primary_expressions/intrinsics_print.php.expect
+	tests/expressions/primary_expressions/primary.php.expect
+	tests/expressions/relational_operators/comparisons1.php.expectf
+	tests/expressions/relational_operators/comparisons2.php.expectf
+	tests/expressions/relational_operators/comparisons3.php.expectf
+	tests/expressions/relational_operators/comparisons4.php.expectf
+	tests/expressions/relational_operators/comparisons5.php.expectf
+	tests/expressions/source_file_inclusion/include.php
+	tests/expressions/source_file_inclusion/require.php
+	tests/expressions/unary_operators/cast.php
+	tests/expressions/unary_operators/cast.php.expectf
+	tests/expressions/unary_operators/pre-increment_and_decrement_integer_edge_cases.php.expect
+	tests/expressions/unary_operators/unary_arithmetic_operators.php.expect
+	tests/functions/anonymous_functions.php
+	tests/functions/basics.php
+	tests/functions/byrefs.php.expectf
+	tests/functions/byrefs_in_array_elements.php.expect
+	tests/functions/conditionally_defined_function.php
+	tests/functions/conditionally_defined_function.php.expect
+	tests/functions/order_of_evaluation.php
+	tests/functions/order_of_evaluation.php.expectf
+	tests/functions/passing_arguments.php
+	tests/functions/recursion.php.expect
+	tests/functions/type_hints.php.expect
+	tests/functions/variable_functions.php.expect
+	tests/interfaces/interfaces.php.expect
+	tests/interfaces/vector.php.expect
+	tests/lexical_structure/comments.php.expect
+	tests/lexical_structure/keywords.php.expect
+	tests/lexical_structure/tokens/array_literals.php
+	tests/lexical_structure/tokens/array_literals.php.expect
+	tests/lexical_structure/tokens/integer_literals_edge_cases.php.expect
+	tests/lexical_structure/tokens/point.php
+	tests/lexical_structure/tokens/point2.php
+	tests/namespaces/name_lookup.php.expect
+	tests/namespaces/namespaces1.php
+	tests/namespaces/namespaces1.php.expect
+	tests/namespaces/namespaces2.php.expect
+	tests/namespaces/using_namespaces_2.php
+	tests/namespaces/using_namespaces_3.php.expect
+	tests/phpt/expressions/source_file_inclusion/limits.inc
+	tests/phpt/expressions/source_file_inclusion/mycolors.inc
+	tests/scope/scope.php.expect
+	tests/statements/expression_statement.php.expect
+	tests/statements/iteration/do.php.expect
+	tests/statements/iteration/for.php.expect
+	tests/statements/jump/break.php.expect
+	tests/statements/jump/continue.php.expect
+	tests/statements/jump/goto.php.expect
+	tests/statements/selection/if.php.expectf
+	tests/statements/selection/switch.php
+	tests/statements/selection/switch.php.expect
+	tests/traits/traits.php
+	tests/types/resource/resources.php.expect
+	tests/variables/unsetting_variables.php.expectf
+	tests/variables/variable_kinds.php
+	tests/variables/variable_kinds.php.expect
+	tests/variables/variable_variables.php
+	tests/variables/variable_variables.php.expectf"
+nikic,2015-01-07 21:41:00,https://api.github.com/repos/php/php-langspec/git/commits/8af91fd41cf74b67324b04455d904f095c6a3280,8af91fd41cf74b67324b04455d904f095c6a3280,Make phpt tests canonical
+nikic,2015-01-04 20:57:52,https://api.github.com/repos/php/php-langspec/git/commits/015dd0ad44d178ec27f4e71b5772330a9e26a451,015dd0ad44d178ec27f4e71b5772330a9e26a451,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	tests/phpt/phpt/expressions/source_file_inclusion/limits.inc
+	tests/phpt/phpt/expressions/source_file_inclusion/mycolors.inc"
+nikic,2015-01-04 20:54:33,https://api.github.com/repos/php/php-langspec/git/commits/a02d1f2613711f909c9dab96fb74227ec3b0f73d,a02d1f2613711f909c9dab96fb74227ec3b0f73d,Fix make_phpt script to not create phpt/phpt/ dir
+nikic,2015-01-04 19:59:35,https://api.github.com/repos/php/php-langspec/git/commits/121c3cdfe74422a714c2295bd2098cb4dabcf506,121c3cdfe74422a714c2295bd2098cb4dabcf506,Merge branch 'PHP-5.6'
+nikic,2015-01-04 19:59:04,https://api.github.com/repos/php/php-langspec/git/commits/483cf113417a3a2c05fe323a1d70a52cb2403446,483cf113417a3a2c05fe323a1d70a52cb2403446,Update PHPT tests
+nikic,2015-01-04 18:07:21,https://api.github.com/repos/php/php-langspec/git/commits/865dd83685d1ddddce1ba35765230ee3c786d24c,865dd83685d1ddddce1ba35765230ee3c786d24c,Merge branch 'PHP-5.6'
+nikic,2015-01-04 18:06:59,https://api.github.com/repos/php/php-langspec/git/commits/3ececa7870a5b5252e7035843628157b30003a8b,3ececa7870a5b5252e7035843628157b30003a8b,Don't depend on particular object handles
+nikic,2015-01-04 17:57:25,https://api.github.com/repos/php/php-langspec/git/commits/8154363f5b2cf683edd77a5fbc1cc6adc0df2b23,8154363f5b2cf683edd77a5fbc1cc6adc0df2b23,Merge branch 'PHP-5.6'
+nikic,2015-01-04 17:56:31,https://api.github.com/repos/php/php-langspec/git/commits/5a89ab311ccc6bb58c78059bef6169934f031b40,5a89ab311ccc6bb58c78059bef6169934f031b40,"Fix exception_class_experiment_1
+
+Output was not adjusted after the file was renamed."
+nikic,2015-01-04 17:51:26,https://api.github.com/repos/php/php-langspec/git/commits/5711871a9e2e7b7d6ad398be09ad269ce3950edf,5711871a9e2e7b7d6ad398be09ad269ce3950edf,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	tests/expressions/source_file_inclusion/limits.php.expectf
+	tests/expressions/source_file_inclusion/mycolors.php.expectf
+	tests/expressions/source_file_inclusion/require.php.expectf
+	tests/expressions/source_file_inclusion/test.php.expectf"
+nikic,2015-01-04 17:40:21,https://api.github.com/repos/php/php-langspec/git/commits/1f63ca4accce60c945c25fcae5bdff887da7a58b,1f63ca4accce60c945c25fcae5bdff887da7a58b,"Convert some .php files to .inc files
+
+These are just helpers for the include/require tests, not tests by
+themselves.
+
+Using the .inc name they'll be copied when ./make_phpt is called."
+nikic,2015-01-04 17:13:19,https://api.github.com/repos/php/php-langspec/git/commits/0f2b44f438a4fad606d75ca9560848f4f27bd285,0f2b44f438a4fad606d75ca9560848f4f27bd285,Fix another INF/NAN->int related test
+hikari-no-yume,2015-01-04 16:45:26,https://api.github.com/repos/php/php-langspec/git/commits/4fb61443daa11efd68d15dae4dafea501e517c17,4fb61443daa11efd68d15dae4dafea501e517c17,Updated tests for integer semantics
+hikari-no-yume,2015-01-04 16:02:38,https://api.github.com/repos/php/php-langspec/git/commits/d5c0dbf56cd20b0e058caa1ec0fd659597c8b08e,d5c0dbf56cd20b0e058caa1ec0fd659597c8b08e,Update constants test for PHP 7
+hikari-no-yume,2014-12-17 20:23:03,https://api.github.com/repos/php/php-langspec/git/commits/aba051e2f7a8380a21aaa69ef7ca8ab78f88bd18,aba051e2f7a8380a21aaa69ef7ca8ab78f88bd18,Add test for surrogate half encoding
+hikari-no-yume,2014-12-17 20:16:24,https://api.github.com/repos/php/php-langspec/git/commits/ff0a8acec67ad7b5dc7b6045ed718e25faf2d6f3,ff0a8acec67ad7b5dc7b6045ed718e25faf2d6f3,Add tests to ensure + and - are invalid
+hikari-no-yume,2014-12-16 12:13:38,https://api.github.com/repos/php/php-langspec/git/commits/ba3e0d8591605453ec687186242178cdbe945e8c,ba3e0d8591605453ec687186242178cdbe945e8c,Allow high and low surrogates
+hikari-no-yume,2014-12-10 19:50:39,https://api.github.com/repos/php/php-langspec/git/commits/9d2db15a8a17b25e688ac0778c8abe679c56df34,9d2db15a8a17b25e688ac0778c8abe679c56df34,Don't error unless there's an opening { for Unicode escapes (JSON compat)
+hikari-no-yume,2014-11-28 16:39:28,https://api.github.com/repos/php/php-langspec/git/commits/0491c2a716e484929b446f1e5e30247648ac2f58,0491c2a716e484929b446f1e5e30247648ac2f58,Test leading zeroes
+hikari-no-yume,2014-11-24 22:03:05,https://api.github.com/repos/php/php-langspec/git/commits/1cd9ea6cefe0404f992573733868e23dcc512505,1cd9ea6cefe0404f992573733868e23dcc512505,corrected syntax
+hikari-no-yume,2014-11-24 21:04:33,https://api.github.com/repos/php/php-langspec/git/commits/f14d5ad30c803c94658fbbb17decf901e4e8c24c,f14d5ad30c803c94658fbbb17decf901e4e8c24c,Add tests
+hikari-no-yume,2014-11-24 20:58:13,https://api.github.com/repos/php/php-langspec/git/commits/5ff52134110a1ea3866a5128102da7715385151b,5ff52134110a1ea3866a5128102da7715385151b,Specify Unicode escape sequence
+hikari-no-yume,2014-12-17 21:03:10,https://api.github.com/repos/php/php-langspec/git/commits/b81ec0fc6c3cb49d0e3cc22197d97302625854d4,b81ec0fc6c3cb49d0e3cc22197d97302625854d4,Added tests for special values casting to integer
+hikari-no-yume,2014-12-17 20:57:54,https://api.github.com/repos/php/php-langspec/git/commits/5939c1012fa1d43360a999e56cc01dde186bd29a,5939c1012fa1d43360a999e56cc01dde186bd29a,Updated tests for bitwise shifts
+hikari-no-yume,2014-09-21 13:55:10,https://api.github.com/repos/php/php-langspec/git/commits/047eaac125612e576b5ad5063d1b8c6c004d9253,047eaac125612e576b5ad5063d1b8c6c004d9253,Integer Semantics RFC changes
+nikic,2015-01-04 13:50:31,https://api.github.com/repos/php/php-langspec/git/commits/7c10dedefc7188ac097c56ac9cd1d758c16a8b85,7c10dedefc7188ac097c56ac9cd1d758c16a8b85,Merge branch 'PHP-5.6'
+nikic,2015-01-04 13:10:02,https://api.github.com/repos/php/php-langspec/git/commits/135141fd47dc6a234298a11bbf8261d17b11e132,135141fd47dc6a234298a11bbf8261d17b11e132,"Update table of contents
+
+Add script to generate it. The ""doctoc"" tool used previously seems
+to be only for single file documents.
+
+This commit also fixed the headling level in some places."
+nikic,2015-01-04 11:35:48,https://api.github.com/repos/php/php-langspec/git/commits/889374be8be6369bd44ef15378c66b74d3031923,889374be8be6369bd44ef15378c66b74d3031923,Merge branch 'PHP-5.6'
+nikic,2015-01-04 11:30:12,https://api.github.com/repos/php/php-langspec/git/commits/862683b9792e2753cb4c64bab2481b65e8f1f251,862683b9792e2753cb4c64bab2481b65e8f1f251,"Drop incorrectly named file
+
+The .php.expect file exists and is identical"
+nikic,2015-01-04 11:18:43,https://api.github.com/repos/php/php-langspec/git/commits/190e86c750487c4770d589422e0384d00b357c51,190e86c750487c4770d589422e0384d00b357c51,Copy *.inc and *.txt files for phpt tests
+smalyshev,2015-01-04 09:20:07,https://api.github.com/repos/php/php-langspec/git/commits/20251d56f433314986a46974fb150069d902606e,20251d56f433314986a46974fb150069d902606e,Merge branch 'pull-request/107'
+smalyshev,2015-01-04 09:18:19,https://api.github.com/repos/php/php-langspec/git/commits/b50cfb1e0db8507f87b36922d11aff5cd3da23c7,b50cfb1e0db8507f87b36922d11aff5cd3da23c7,"Merge branch 'pull-request/98'
+
+Conflicts:
+	tests/basic_concepts/storage_duration.php.expectf"
+smalyshev,2015-01-04 09:15:03,https://api.github.com/repos/php/php-langspec/git/commits/510a7b508ebdc95b34d268bd9b7e34754b743414,510a7b508ebdc95b34d268bd9b7e34754b743414,"Merge branch 'pull-request/96'
+
+Conflicts:
+	tests/basic_concepts/storage_duration.php"
+smalyshev,2015-01-04 09:14:35,https://api.github.com/repos/php/php-langspec/git/commits/a4f9b8f3146416bcf63733704d7f476a3dd1119f,a4f9b8f3146416bcf63733704d7f476a3dd1119f,Merge branch 'pull-request/95'
+smalyshev,2015-01-04 09:14:14,https://api.github.com/repos/php/php-langspec/git/commits/075f3f6ec581f9570c807571e106cc5defa06bbe,075f3f6ec581f9570c807571e106cc5defa06bbe,Merge branch 'PHP-5.6'
+JoelMarcey,2014-12-19 01:44:51,https://api.github.com/repos/php/php-langspec/git/commits/b806dc9a5da948f3b9e937f3f3f14471707ccae0,b806dc9a5da948f3b9e937f3f3f14471707ccae0,"Make .gitignore only for the one specific file so far
+
+Conflicts:
+	.gitignore"
+smalyshev,2015-01-04 08:50:43,https://api.github.com/repos/php/php-langspec/git/commits/6e07c2d871336c3ea0278577c8ea6641b45b6720,6e07c2d871336c3ea0278577c8ea6641b45b6720,Merge branch 'pull-request/101'
+smalyshev,2015-01-04 08:50:11,https://api.github.com/repos/php/php-langspec/git/commits/74d632095a58f2147c97e779f817dd8ecdb3bbb7,74d632095a58f2147c97e779f817dd8ecdb3bbb7,Merge branch 'pull-request/104'
+smalyshev,2015-01-04 08:50:05,https://api.github.com/repos/php/php-langspec/git/commits/7124ebb668ad93dfd4d35e0f48f7941742772c39,7124ebb668ad93dfd4d35e0f48f7941742772c39,Merge branch 'pull-request/103'
+smalyshev,2015-01-04 08:50:00,https://api.github.com/repos/php/php-langspec/git/commits/d1fc713e042cbadf8c703b8ae0f70bc148c2253e,d1fc713e042cbadf8c703b8ae0f70bc148c2253e,Merge branch 'pull-request/102'
+smalyshev,2015-01-04 08:49:53,https://api.github.com/repos/php/php-langspec/git/commits/831962d1f404e760c8616a68f5e820a1b88d8052,831962d1f404e760c8616a68f5e820a1b88d8052,Merge branch 'pull-request/99'
+smalyshev,2015-01-04 08:49:33,https://api.github.com/repos/php/php-langspec/git/commits/e9d6fd30ab74c7a951e314e7bab83f265f049a77,e9d6fd30ab74c7a951e314e7bab83f265f049a77,Merge branch 'PHP-5.6'
+JoelMarcey,2014-12-10 22:46:10,https://api.github.com/repos/php/php-langspec/git/commits/1e0c14efd8c8f2c2f703f7fbb8f41c6b78570f44,1e0c14efd8c8f2c2f703f7fbb8f41c6b78570f44,Order of destruction is not guaranteed. Test shouldn't expect it
+JoelMarcey,2014-12-10 22:56:32,https://api.github.com/repos/php/php-langspec/git/commits/75d2286a0909a9f8e5cb14b3c659fedec1181d23,75d2286a0909a9f8e5cb14b3c659fedec1181d23,"setLocale(LC_ALL, 0) can vary depending on system"
+JoelMarcey,2014-12-10 23:09:09,https://api.github.com/repos/php/php-langspec/git/commits/12951057348ccfcefbeeedea5dbffb2411eed2c3,12951057348ccfcefbeeedea5dbffb2411eed2c3,"Closure object metadata a bit different, but that's ok"
+JoelMarcey,2014-12-10 23:24:44,https://api.github.com/repos/php/php-langspec/git/commits/a2bda6affb8c18b7333295dff41708f67c964948,a2bda6affb8c18b7333295dff41708f67c964948,Can be Continuation or Generator. HHVM calls them Continuation
+JoelMarcey,2014-12-16 01:15:17,https://api.github.com/repos/php/php-langspec/git/commits/9b137ae084dbf83fa052a746052de671974ae146,9b137ae084dbf83fa052a746052de671974ae146,We don't want parens in test names
+smalyshev,2015-01-04 08:44:33,https://api.github.com/repos/php/php-langspec/git/commits/b1e7a65fb9c985a8114322330468b77fb955cfae,b1e7a65fb9c985a8114322330468b77fb955cfae,"Merge branch 'pull-request/105'
+
+Conflicts:
+	spec/13-functions.md"
+smalyshev,2015-01-04 08:44:00,https://api.github.com/repos/php/php-langspec/git/commits/b39908d680b0e2feadfb099cf3c96e4592df6b38,b39908d680b0e2feadfb099cf3c96e4592df6b38,Merge branch 'PHP-5.6'
+hikari-no-yume,2014-12-20 02:10:06,https://api.github.com/repos/php/php-langspec/git/commits/6df4e36f13c3f00ec6b0f2c8caf5f5667e051917,6df4e36f13c3f00ec6b0f2c8caf5f5667e051917,NULL
+smalyshev,2015-01-04 08:42:38,https://api.github.com/repos/php/php-langspec/git/commits/073af676c8a34fff383215d8851104e733ccae1a,073af676c8a34fff383215d8851104e733ccae1a,introduce proper terminology
+smalyshev,2015-01-04 08:33:55,https://api.github.com/repos/php/php-langspec/git/commits/837d04db262a052b7ee7fa20306ec559117b8bc2,837d04db262a052b7ee7fa20306ec559117b8bc2,Merge branch 'pull-request/106' into PHP-5.6
+smalyshev,2015-01-04 08:28:30,https://api.github.com/repos/php/php-langspec/git/commits/e0007ee0771f973e49c41cc019f8e47855174d08,e0007ee0771f973e49c41cc019f8e47855174d08,"Merge branch 'pull-request/108'
+
+Conflicts:
+	spec/14-classes.md"
+smalyshev,2015-01-04 08:27:52,https://api.github.com/repos/php/php-langspec/git/commits/09bd8374a59611281cd0bcb5870b2dcbbee6a1c7,09bd8374a59611281cd0bcb5870b2dcbbee6a1c7,Merge branch 'PHP-5.6'
+smalyshev,2015-01-04 08:27:27,https://api.github.com/repos/php/php-langspec/git/commits/6c1c120b4b80d8c6371419d17cbd0636384611c8,6c1c120b4b80d8c6371419d17cbd0636384611c8,fix spelling
+smalyshev,2015-01-04 08:23:05,https://api.github.com/repos/php/php-langspec/git/commits/82a640fc585227c602f5e42805e52db2ad2e6772,82a640fc585227c602f5e42805e52db2ad2e6772,fix some links
+flaupretre,2014-12-29 10:57:53,https://api.github.com/repos/php/php-langspec/git/commits/ce2df74d038c28b9b8326a6ae55933667f5d0549,ce2df74d038c28b9b8326a6ae55933667f5d0549,Cannot use qualified name for class name
+flaupretre,2014-12-28 17:16:33,https://api.github.com/repos/php/php-langspec/git/commits/6daef2fed0dfe66c592935255765c9b325f458dd,6daef2fed0dfe66c592935255765c9b325f458dd,Clarify constraints on class names.
+flaupretre,2014-12-26 14:35:43,https://api.github.com/repos/php/php-langspec/git/commits/3ee3250b5af3b3172b8eae20b4eb2e80f9e12bb2,3ee3250b5af3b3172b8eae20b4eb2e80f9e12bb2,List unsupported class names
+flaupretre,2014-12-26 14:34:37,https://api.github.com/repos/php/php-langspec/git/commits/0d146ea85c9bc53b66fe6b1167970cf2a6346edb,0d146ea85c9bc53b66fe6b1167970cf2a6346edb,Fix typo in class declaration syntax
+flaupretre,2014-12-29 10:57:53,https://api.github.com/repos/php/php-langspec/git/commits/891b7abe695f4beb3ae82364dda43e8011582d77,891b7abe695f4beb3ae82364dda43e8011582d77,Cannot use qualified name for class name
+flaupretre,2014-12-28 17:16:33,https://api.github.com/repos/php/php-langspec/git/commits/8e73191f0d411ac60f9c719ca04430360fdaf662,8e73191f0d411ac60f9c719ca04430360fdaf662,Clarify constraints on class names.
+flaupretre,2014-12-26 14:35:43,https://api.github.com/repos/php/php-langspec/git/commits/949b92b3bda6e1fe25abee949ef126f319651216,949b92b3bda6e1fe25abee949ef126f319651216,List unsupported class names
+flaupretre,2014-12-26 14:34:37,https://api.github.com/repos/php/php-langspec/git/commits/6834856fbea4004c550bd6152aec6d67fc202a0f,6834856fbea4004c550bd6152aec6d67fc202a0f,Fix typo in class declaration syntax
+hikari-no-yume,2014-12-21 14:18:05,https://api.github.com/repos/php/php-langspec/git/commits/6322d7bb7e0dc7d7275d50b5e407b0c0168c011b,6322d7bb7e0dc7d7275d50b5e407b0c0168c011b,php-src master allows array constants in define()
+hikari-no-yume,2014-12-21 14:17:18,https://api.github.com/repos/php/php-langspec/git/commits/fc16f23e1244fd0bf406663eed71ed42dc646d3b,fc16f23e1244fd0bf406663eed71ed42dc646d3b,Merge branch 'constant_arrays' into constant_arrays_master
+hikari-no-yume,2014-11-18 18:24:22,https://api.github.com/repos/php/php-langspec/git/commits/ea45601bc05485261bae9b8b7ca7eccdde0c9db6,ea45601bc05485261bae9b8b7ca7eccdde0c9db6,"Unify const-expression/constant-expression, arrays are allowed in constants"
+hikari-no-yume,2014-12-20 02:10:06,https://api.github.com/repos/php/php-langspec/git/commits/76b8c021ea8e3da775f3331cf50103f225cdc0d7,76b8c021ea8e3da775f3331cf50103f225cdc0d7,NULL
+JoelMarcey,2014-12-19 01:44:51,https://api.github.com/repos/php/php-langspec/git/commits/8d0216dabe06c7fe4cc4e2d50e73de5ab07355c2,8d0216dabe06c7fe4cc4e2d50e73de5ab07355c2,Make .gitignore only for the one specific file so far
+JoelMarcey,2014-12-10 23:24:44,https://api.github.com/repos/php/php-langspec/git/commits/428b1848e468d6fc947fee3d2dc6b540831687f1,428b1848e468d6fc947fee3d2dc6b540831687f1,Can be Continuation or Generator. HHVM calls them Continuation
+JoelMarcey,2014-12-16 01:15:17,https://api.github.com/repos/php/php-langspec/git/commits/90131e6f0b58a985d059c2fee24ab20edc1740b7,90131e6f0b58a985d059c2fee24ab20edc1740b7,We don't want parens in test names
+JoelMarcey,2014-12-10 23:09:09,https://api.github.com/repos/php/php-langspec/git/commits/eee30379a1deb0cd31d2aedf1e6ec58968a22afa,eee30379a1deb0cd31d2aedf1e6ec58968a22afa,"Closure object metadata a bit different, but that's ok"
+JoelMarcey,2014-12-10 22:56:32,https://api.github.com/repos/php/php-langspec/git/commits/e6ea21550b26b1b07c058d2aafa1f44bb8558ed7,e6ea21550b26b1b07c058d2aafa1f44bb8558ed7,"setLocale(LC_ALL, 0) can vary depending on system"
+JoelMarcey,2014-12-10 22:46:10,https://api.github.com/repos/php/php-langspec/git/commits/fc9add25b4686c2615750d796d21f7c5620dabed,fc9add25b4686c2615750d796d21f7c5620dabed,Order of destruction is not guaranteed. Test shouldn't expect it
+JoelMarcey,2014-12-10 22:45:16,https://api.github.com/repos/php/php-langspec/git/commits/73d1ed7193c2d5fb2ac12474b884e5dc81e81f33,73d1ed7193c2d5fb2ac12474b884e5dc81e81f33,Add end of file newlines to those .php and .php.expect[f] that were missing one
+JoelMarcey,2014-12-10 22:43:16,https://api.github.com/repos/php/php-langspec/git/commits/da016145609f7a5405b8177c32dcc4203413e0dd,da016145609f7a5405b8177c32dcc4203413e0dd,Remove trailing whitespce from .php files
+JoelMarcey,2014-12-10 22:42:12,https://api.github.com/repos/php/php-langspec/git/commits/d236f16e014d485a280d3601b1def54e21ad6fa3,d236f16e014d485a280d3601b1def54e21ad6fa3,Add top-level .gitignore
+smalyshev,2014-12-07 20:42:35,https://api.github.com/repos/php/php-langspec/git/commits/0f49e4513d0f008bc32a9e53773182619f9f9548,0f49e4513d0f008bc32a9e53773182619f9f9548,"Merge branch 'PHP-5.6'
+
+Conflicts:
+	spec/10-expressions.md"
+smalyshev,2014-12-07 20:41:58,https://api.github.com/repos/php/php-langspec/git/commits/a0a32f7c6b5f97566f8d9ccf4ff76e3ae26e91a2,a0a32f7c6b5f97566f8d9ccf4ff76e3ae26e91a2,typoes
+smalyshev,2014-12-07 20:36:35,https://api.github.com/repos/php/php-langspec/git/commits/2c48b17b4e975e039f68b22a31b6220584bfd754,2c48b17b4e975e039f68b22a31b6220584bfd754,fix string bitwise ops
+smalyshev,2014-12-07 20:36:35,https://api.github.com/repos/php/php-langspec/git/commits/a4fd96e7ceadd72c16633261ad21018cd4d85504,a4fd96e7ceadd72c16633261ad21018cd4d85504,fix string bitwise ops
+smalyshev,2014-11-05 07:24:39,https://api.github.com/repos/php/php-langspec/git/commits/462f41ec4790a2247d7dfe8e0223bdfde579a47a,462f41ec4790a2247d7dfe8e0223bdfde579a47a,Merge branch 'pull-request/81'
+smalyshev,2014-11-05 07:22:06,https://api.github.com/repos/php/php-langspec/git/commits/82df1bcb5260f3251b3cc943cc1228a234533fe6,82df1bcb5260f3251b3cc943cc1228a234533fe6,Merge branch 'pull-request/75'
+smalyshev,2014-11-05 07:20:18,https://api.github.com/repos/php/php-langspec/git/commits/0f9985ba76ab7890a9a8440f8a4344c58f0a6761,0f9985ba76ab7890a9a8440f8a4344c58f0a6761,Merge branch 'pull-request/74'
+smalyshev,2014-11-05 07:19:05,https://api.github.com/repos/php/php-langspec/git/commits/9df8360494830e47a4ee59e2ba82dcb330f45773,9df8360494830e47a4ee59e2ba82dcb330f45773,Merge branch 'expressions-fixes' into PHP-5.6
+smalyshev,2014-11-05 07:17:53,https://api.github.com/repos/php/php-langspec/git/commits/ac6f1ded0d178e127e1fc35249a1e1dc7990f9a9,ac6f1ded0d178e127e1fc35249a1e1dc7990f9a9,pr #73
+smalyshev,2014-11-05 07:15:55,https://api.github.com/repos/php/php-langspec/git/commits/e4e2b310f9863ef8333ee8a9456647b8f5ffc495,e4e2b310f9863ef8333ee8a9456647b8f5ffc495,add pr #67
+smalyshev,2014-11-05 07:12:51,https://api.github.com/repos/php/php-langspec/git/commits/78597f5ea544911f1b6368cb7ae1fbbe1553e807,78597f5ea544911f1b6368cb7ae1fbbe1553e807,Merge branch 'pull-request/78' into PHP-5.6
+smalyshev,2014-11-05 07:04:01,https://api.github.com/repos/php/php-langspec/git/commits/1e65962e819e8583b43b3103e7845dd933a65875,1e65962e819e8583b43b3103e7845dd933a65875,improve compatibility description
+smalyshev,2014-11-05 06:30:42,https://api.github.com/repos/php/php-langspec/git/commits/6be6a4983dfbe71dba163397a5c2d363770af08c,6be6a4983dfbe71dba163397a5c2d363770af08c,Merge branch 'pull-request/83' into PHP-5.6
+smalyshev,2014-09-29 04:14:00,https://api.github.com/repos/php/php-langspec/git/commits/6ce97d85e3614492a9217622bdf57c06bb347949,6ce97d85e3614492a9217622bdf57c06bb347949,Expression fixes
+smalyshev,2014-11-03 09:20:12,https://api.github.com/repos/php/php-langspec/git/commits/afd5b5ffa53708f4fd60e4a44cd913fa278a6eb3,afd5b5ffa53708f4fd60e4a44cd913fa278a6eb3,Merge branch 'pull-request/80' into PHP-5.6
+smalyshev,2014-10-08 00:11:41,https://api.github.com/repos/php/php-langspec/git/commits/7c1be4d5ab380fb6341266c60497f8efb1f9c054,7c1be4d5ab380fb6341266c60497f8efb1f9c054,add phpt test
+mrclay,2014-10-06 16:15:35,https://api.github.com/repos/php/php-langspec/git/commits/609e9dd7ae9399b8a75d35f122ec21cbc687f425,609e9dd7ae9399b8a75d35f122ec21cbc687f425,Clarify how interface/abstract method signatures may differ
+hikari-no-yume,2014-10-04 11:02:15,https://api.github.com/repos/php/php-langspec/git/commits/c95567d82b0c0ce0a1b53185d67b2c106d71a650,c95567d82b0c0ce0a1b53185d67b2c106d71a650,Fixes
+hikari-no-yume,2014-10-03 19:51:20,https://api.github.com/repos/php/php-langspec/git/commits/a9a4ac7405e09a02ba349aacddd40496b0739e18,a9a4ac7405e09a02ba349aacddd40496b0739e18,Added coalesce operator test
+hikari-no-yume,2014-10-03 19:43:02,https://api.github.com/repos/php/php-langspec/git/commits/d970ea1cde9ccc00069155da7b03dae2f8951262,d970ea1cde9ccc00069155da7b03dae2f8951262,Defined Coalesce operator
+robstoll,2014-10-02 13:34:08,https://api.github.com/repos/php/php-langspec/git/commits/f1a39d05a88dfbbeef55281b883ed87758917706,f1a39d05a88dfbbeef55281b883ed87758917706,added notice about diagnostic
+robstoll,2014-10-02 08:51:44,https://api.github.com/repos/php/php-langspec/git/commits/2de420073696e297ee27eb3c3ab4eaaa8f05c388,2de420073696e297ee27eb3c3ab4eaaa8f05c388,Added examples for division by zero
+smalyshev,2014-09-29 02:56:48,https://api.github.com/repos/php/php-langspec/git/commits/fc1c804e8162c9f08a40eac31f4b5ac194745308,fc1c804e8162c9f08a40eac31f4b5ac194745308,Merge branch 'pull-request/77' into PHP-5.6
+hikari-no-yume,2014-09-17 14:56:16,https://api.github.com/repos/php/php-langspec/git/commits/638a0dd37688b2084df1594eeba6024063ae7831,638a0dd37688b2084df1594eeba6024063ae7831,Update 14-classes.md
+kkoch986,2014-09-17 13:52:48,https://api.github.com/repos/php/php-langspec/git/commits/20fcfca99b591113b4ae63c105bc6cdc6ff51955,20fcfca99b591113b4ae63c105bc6cdc6ff51955,merged grammar fix
+kkoch986,2014-09-17 13:51:34,https://api.github.com/repos/php/php-langspec/git/commits/59b010791f6258e2b1b305a5134820fc64425438,59b010791f6258e2b1b305a5134820fc64425438,formatting fixes on grammar
+hikari-no-yume,2014-09-14 20:33:24,https://api.github.com/repos/php/php-langspec/git/commits/f5cf82d7b43dfe80ed95b4f927e9e0c5840b2c5d,f5cf82d7b43dfe80ed95b4f927e9e0c5840b2c5d,Added Closure::call()
+hikari-no-yume,2014-09-14 19:56:42,https://api.github.com/repos/php/php-langspec/git/commits/57216832d3cc0de25b50e0701cd35963fd7d35c6,57216832d3cc0de25b50e0701cd35963fd7d35c6,Added PHP_INT_MIN
+smalyshev,2014-09-06 00:58:58,https://api.github.com/repos/php/php-langspec/git/commits/9a83191649ada96fb70811260b09a10dc55fecdd,9a83191649ada96fb70811260b09a10dc55fecdd,Merge branch 'pull-request/72'
+smalyshev,2014-09-01 07:34:26,https://api.github.com/repos/php/php-langspec/git/commits/92adf6f242883a3e7090866da84838ad1c8ae145,92adf6f242883a3e7090866da84838ad1c8ae145,Changes and additions for memory model
+hikari-no-yume,2014-09-03 14:01:02,https://api.github.com/repos/php/php-langspec/git/commits/0e848170cf5c2e1991c8e3b57494ed1c8f0a1df0,0e848170cf5c2e1991c8e3b57494ed1c8f0a1df0,Split float-int conversion algorithm up for clarity
+smalyshev,2014-09-03 06:52:57,https://api.github.com/repos/php/php-langspec/git/commits/3fa9bace06b838e2defcb769cc01917a1125fb1f,3fa9bace06b838e2defcb769cc01917a1125fb1f,convert php-spec-draft.md to a link
+smalyshev,2014-09-03 06:49:46,https://api.github.com/repos/php/php-langspec/git/commits/8ab07e24be66efac1c077c7b422783d1bdea810d,8ab07e24be66efac1c077c7b422783d1bdea810d,Merge branch 'pull-request/71'
+smalyshev,2014-09-03 06:19:03,https://api.github.com/repos/php/php-langspec/git/commits/f060a6bf34564df9073a8ca967c614a7efae07c1,f060a6bf34564df9073a8ca967c614a7efae07c1,Merge branch 'pull-request/36'
+TravisCarden,2014-09-02 02:01:17,https://api.github.com/repos/php/php-langspec/git/commits/570aa7abac5789939f6685999118539b2692c67d,570aa7abac5789939f6685999118539b2692c67d,"Update 00-specification-for-php.md
+
+Fix indentation mistake."
+smalyshev,2014-08-27 08:23:17,https://api.github.com/repos/php/php-langspec/git/commits/0d477f4b71b226670f32cab04e0e14676a64f910,0d477f4b71b226670f32cab04e0e14676a64f910,lexical structure fixes
+smalyshev,2014-08-27 00:31:03,https://api.github.com/repos/php/php-langspec/git/commits/762b976b6677f471b4665d0b5df06048718631fc,762b976b6677f471b4665d0b5df06048718631fc,fixes for conversions
+smalyshev,2014-08-27 00:30:36,https://api.github.com/repos/php/php-langspec/git/commits/024054c283766453d377ca4b801a513c9336a974,024054c283766453d377ca4b801a513c9336a974,"some fixes for types - resource is not really composite, and array is not really handle type"
+kkoch986,2014-08-26 15:21:15,https://api.github.com/repos/php/php-langspec/git/commits/0330817ac6daf21d77c28db43380118fbfd3646d,0330817ac6daf21d77c28db43380118fbfd3646d,"Markdown formatting fixes
+
+Markdown formatting fixes for less than and greater than signs."
+smalyshev,2014-08-18 08:19:10,https://api.github.com/repos/php/php-langspec/git/commits/ade9c1eed8ceb4dfda209bf0a79e0721a0a0da8c,ade9c1eed8ceb4dfda209bf0a79e0721a0a0da8c,Fix bug #67780
+smalyshev,2014-08-18 08:07:45,https://api.github.com/repos/php/php-langspec/git/commits/6fa6d9ad001955d1e08fc1a46f2aeb801c8b540f,6fa6d9ad001955d1e08fc1a46f2aeb801c8b540f,Variable fixes
+smalyshev,2014-08-18 07:22:18,https://api.github.com/repos/php/php-langspec/git/commits/cdecd00ce75536c5fdf79c6156cfd7abb46adfc1,cdecd00ce75536c5fdf79c6156cfd7abb46adfc1,no need for \ there
+smalyshev,2014-08-18 07:20:14,https://api.github.com/repos/php/php-langspec/git/commits/2ee99af77ff4450e8b589a930e45ff639830742f,2ee99af77ff4450e8b589a930e45ff639830742f,add PHP to recent example too
+smalyshev,2014-08-18 07:17:41,https://api.github.com/repos/php/php-langspec/git/commits/66c3a6c9d2e9dd40f6132b1370218e0e7157cefd,66c3a6c9d2e9dd40f6132b1370218e0e7157cefd,Merge branch 'pull-request/63'
+smalyshev,2014-08-18 07:13:17,https://api.github.com/repos/php/php-langspec/git/commits/55b19edaf623589eaa5df7669300d77d0133381a,55b19edaf623589eaa5df7669300d77d0133381a,Merge branch 'pull-request/57'
+smalyshev,2014-08-18 06:55:14,https://api.github.com/repos/php/php-langspec/git/commits/29c0e334d58647eccb34039ed49872b025999c29,29c0e334d58647eccb34039ed49872b025999c29,Merge branch 'pull-request/54'
+smalyshev,2014-08-18 06:47:03,https://api.github.com/repos/php/php-langspec/git/commits/e217633199542f0b94cb0f42b6b5b727140dbd3a,e217633199542f0b94cb0f42b6b5b727140dbd3a,Merge branch 'pull-request/52'
+hikari-no-yume,2014-08-11 23:11:03,https://api.github.com/repos/php/php-langspec/git/commits/4981650ee28f1432ed1414cfe7f9333cfaa7b792,4981650ee28f1432ed1414cfe7f9333cfaa7b792,Closure immutability
+robstoll,2014-08-08 12:45:21,https://api.github.com/repos/php/php-langspec/git/commits/ec0d3bf949692c0312fb58c92b359d9fcc90c7c7,ec0d3bf949692c0312fb58c92b359d9fcc90c7c7,"updated use-declaration
+- changed ""pseudo main level"" to ""top level""
+- fixed spelling mistake"
+eddiejaoude,2014-08-07 05:30:19,https://api.github.com/repos/php/php-langspec/git/commits/62aa25897e01e3f4d550c3a9948eb6b75f4ec854,62aa25897e01e3f4d550c3a9948eb6b75f4ec854,Markdown added to Namespace
+eddiejaoude,2014-08-07 05:29:32,https://api.github.com/repos/php/php-langspec/git/commits/8cba0a122849fe6cb4c5e94a5df46e61645c314a,8cba0a122849fe6cb4c5e94a5df46e61645c314a,Markdown added to Exception Handling
+eddiejaoude,2014-08-07 05:29:05,https://api.github.com/repos/php/php-langspec/git/commits/8bba9861e0f91f11b8b7cfdcf77253c1f3c6cd1e,8bba9861e0f91f11b8b7cfdcf77253c1f3c6cd1e,Markdown added to Traits
+eddiejaoude,2014-08-07 05:28:31,https://api.github.com/repos/php/php-langspec/git/commits/8e06ccf757fd93bb843e0a84d7e0ced0b98ef3e3,8e06ccf757fd93bb843e0a84d7e0ced0b98ef3e3,Markdown added to Interfaces
+eddiejaoude,2014-08-07 05:27:46,https://api.github.com/repos/php/php-langspec/git/commits/57731e9692495c599978d15876c9a99a82f20169,57731e9692495c599978d15876c9a99a82f20169,Markdown added to Classes
+eddiejaoude,2014-08-07 05:24:46,https://api.github.com/repos/php/php-langspec/git/commits/68fea7231d331db7b43ebbcc88e68506d059849e,68fea7231d331db7b43ebbcc88e68506d059849e,Markdown added to Functions
+eddiejaoude,2014-08-07 05:24:10,https://api.github.com/repos/php/php-langspec/git/commits/49042525ce731ab8e21117b0eff0b79dad2ab572,49042525ce731ab8e21117b0eff0b79dad2ab572,Markdown added to Statements
+eddiejaoude,2014-08-07 05:22:07,https://api.github.com/repos/php/php-langspec/git/commits/18ba052dad78f413119b70e875321b7d72764d8f,18ba052dad78f413119b70e875321b7d72764d8f,Markdown added to Expressions
+eddiejaoude,2014-08-07 05:17:22,https://api.github.com/repos/php/php-langspec/git/commits/64e00481c51f58975fddd6b2093a36c53e1e67b0,64e00481c51f58975fddd6b2093a36c53e1e67b0,Marked down added Lexical Structure
+eddiejaoude,2014-08-07 05:15:55,https://api.github.com/repos/php/php-langspec/git/commits/e67da073f1b854d860e57c08530e8e95ca5b61ce,e67da073f1b854d860e57c08530e8e95ca5b61ce,Markdown added to Variables
+eddiejaoude,2014-08-07 05:14:54,https://api.github.com/repos/php/php-langspec/git/commits/40da139e771eb6b2ed4685d4b09b70595b631610,40da139e771eb6b2ed4685d4b09b70595b631610,Markdown added to Constants
+eddiejaoude,2014-08-07 05:13:40,https://api.github.com/repos/php/php-langspec/git/commits/8d90bd85d454997915c1ed69b02e63c64835ab30,8d90bd85d454997915c1ed69b02e63c64835ab30,Markdown added to Basic Concepts
+smalyshev,2014-08-06 04:58:00,https://api.github.com/repos/php/php-langspec/git/commits/0c97b0bea5a098ccf59e0f2e5424808d3c082622,0c97b0bea5a098ccf59e0f2e5424808d3c082622,Merge branch 'pull-request/58'
+smalyshev,2014-08-06 04:56:05,https://api.github.com/repos/php/php-langspec/git/commits/47e5d7de3edc1b588278bfc10ff8de7b32d93ce7,47e5d7de3edc1b588278bfc10ff8de7b32d93ce7,Merge branch 'constants'
+robstoll,2014-08-05 10:59:16,https://api.github.com/repos/php/php-langspec/git/commits/9cb9129b9d43882cafdd963dbbe601eed9ba5d5d,9cb9129b9d43882cafdd963dbbe601eed9ba5d5d,changed indentation to blockquote
+x64architecture,2014-08-05 06:26:36,https://api.github.com/repos/php/php-langspec/git/commits/64b08a6201ed6f82fbaec265e5a66e1306d3ec03,64b08a6201ed6f82fbaec265e5a66e1306d3ec03,Fix some typos.
+robstoll,2014-08-04 14:01:00,https://api.github.com/repos/php/php-langspec/git/commits/5a98a62318513baec9728e5d6ff2e5f0b56f619b,5a98a62318513baec9728e5d6ff2e5f0b56f619b,Changed indentation from 4 to 2
+klausi,2014-08-04 13:51:31,https://api.github.com/repos/php/php-langspec/git/commits/a717adfd50b07144ed41dcc530ba899c6eca1e0d,a717adfd50b07144ed41dcc530ba899c6eca1e0d,Remove duplicated sentence about auto memory management.
+robstoll,2014-08-04 12:21:03,https://api.github.com/repos/php/php-langspec/git/commits/4da4c6014caaab29d7f239101104437790d90369,4da4c6014caaab29d7f239101104437790d90369,"Update README.md - made it more user friendly
+It is nicer to have actual links then copy and paste the urls"
+robstoll,2014-08-04 12:02:55,https://api.github.com/repos/php/php-langspec/git/commits/5bc4ffa89eeea55a6377dd5a180f84c24a709875,5bc4ffa89eeea55a6377dd5a180f84c24a709875,"Updated statements.md
+- replaced opt with <sub>opt</sub>
+- some typos"
+robstoll,2014-08-04 11:54:33,https://api.github.com/repos/php/php-langspec/git/commits/93e8a69e8b9c30b84d084817acbf36d85636d421,93e8a69e8b9c30b84d084817acbf36d85636d421,"Updated Namespace Use Declarations
+- Included an example for absolute qualified names vs. relative names
+- small typo"
+smalyshev,2014-08-04 08:11:23,https://api.github.com/repos/php/php-langspec/git/commits/c2099256d9cf4d171d852f58cc9ec295a019dd71,c2099256d9cf4d171d852f58cc9ec295a019dd71,Better explanation of scopes
+smalyshev,2014-08-04 05:59:03,https://api.github.com/repos/php/php-langspec/git/commits/b053081aaac4e70a98376e92ef12f9423f248ddb,b053081aaac4e70a98376e92ef12f9423f248ddb,Constants fixes
+smalyshev,2014-08-04 06:22:45,https://api.github.com/repos/php/php-langspec/git/commits/8080a9dda7f4e2b435f4565f55372496b7af8ea2,8080a9dda7f4e2b435f4565f55372496b7af8ea2,__halt_compiler description
+smalyshev,2014-08-04 05:28:10,https://api.github.com/repos/php/php-langspec/git/commits/779c2e479227a235ce8feacb4c51101969f48ea5,779c2e479227a235ce8feacb4c51101969f48ea5,Merge branch 'pull-request/50'
+smalyshev,2014-08-04 05:24:54,https://api.github.com/repos/php/php-langspec/git/commits/5ca885045c5ad5e63d9f6fc5e9e787d25d9ae692,5ca885045c5ad5e63d9f6fc5e9e787d25d9ae692,Port pull #46 - Further closure clarity
+smalyshev,2014-08-04 05:18:56,https://api.github.com/repos/php/php-langspec/git/commits/4cac9cb91c475193a8550f333552bec8fd04a11c,4cac9cb91c475193a8550f333552bec8fd04a11c,Rewrite star/end tags for clarity
+smalyshev,2014-08-03 20:59:19,https://api.github.com/repos/php/php-langspec/git/commits/24594c4459835b7a7e62938c5148a64f9bb40d1e,24594c4459835b7a7e62938c5148a64f9bb40d1e,Merge branch 'types'
+smalyshev,2014-08-01 23:42:41,https://api.github.com/repos/php/php-langspec/git/commits/d0b67548ac5667ac75cf60db80340c0f61394e44,d0b67548ac5667ac75cf60db80340c0f61394e44,"Types section cleanup:
+
+- Some rewording
+- Modern PHP style prefers lowercase null/true/false
+- Move contstants to constant section"
+hikari-no-yume,2014-08-03 19:30:02,https://api.github.com/repos/php/php-langspec/git/commits/cfc35de9bc0620bd70e4d0c7d47b98f2efca92dd,cfc35de9bc0620bd70e4d0c7d47b98f2efca92dd,finite range
+hikari-no-yume,2014-08-03 19:26:45,https://api.github.com/repos/php/php-langspec/git/commits/e3a618b6f2b04a662a538c1d5f6a1e2a89185408,e3a618b6f2b04a662a538c1d5f6a1e2a89185408,"Merge branch 'master' into int_overflow
+
+Conflicts:
+	spec/php-spec-draft.md"
+scoates,2014-08-03 13:36:15,https://api.github.com/repos/php/php-langspec/git/commits/0bd2c192b9d08d46e11e674a4bfe4cfbf16e5444,0bd2c192b9d08d46e11e674a4bfe4cfbf16e5444,use a definition list instead of ad-hoc markup for definitions
+chx,2014-08-01 21:10:24,https://api.github.com/repos/php/php-langspec/git/commits/211703ae6a6e658bb0e911902f42923ac025b88b,211703ae6a6e658bb0e911902f42923ac025b88b,Link to the PHP manual for array functions
+smalyshev,2014-08-01 21:06:39,https://api.github.com/repos/php/php-langspec/git/commits/9dcf73c216119f941839f1a272733a7c2abb90b0,9dcf73c216119f941839f1a272733a7c2abb90b0,fix markup for traits
+smalyshev,2014-07-31 09:23:03,https://api.github.com/repos/php/php-langspec/git/commits/3da4568dc5f3d72a8474ae0df0a7d390d8df12d3,3da4568dc5f3d72a8474ae0df0a7d390d8df12d3,Split the spec into chapters
+smalyshev,2014-08-01 20:51:12,https://api.github.com/repos/php/php-langspec/git/commits/a13e586ea1db4d8476a6bd6dc7ef501b2b06ea62,a13e586ea1db4d8476a6bd6dc7ef501b2b06ea62,Merge branch 'pull-request/28'
+smalyshev,2014-08-01 20:49:08,https://api.github.com/repos/php/php-langspec/git/commits/5553fb81ad7a5672c308bf91d84a6773aa41a60e,5553fb81ad7a5672c308bf91d84a6773aa41a60e,Merge branch 'pull-request/38'
+smalyshev,2014-08-01 20:47:19,https://api.github.com/repos/php/php-langspec/git/commits/6d330992059cc284914892f9b5f55a2ad480a5c6,6d330992059cc284914892f9b5f55a2ad480a5c6,Merge branch 'pull-request/44'
+smalyshev,2014-08-01 20:44:47,https://api.github.com/repos/php/php-langspec/git/commits/9f35a63e37f8d73e2c8af7569427ce9c7d2b0577,9f35a63e37f8d73e2c8af7569427ce9c7d2b0577,Merge branch 'pull-request/42'
+smalyshev,2014-08-01 20:42:18,https://api.github.com/repos/php/php-langspec/git/commits/d3be4734f2dd6fc1033d3346abb105c38a867133,d3be4734f2dd6fc1033d3346abb105c38a867133,Merge branch 'pull-request/41'
+smalyshev,2014-08-01 20:41:41,https://api.github.com/repos/php/php-langspec/git/commits/f2298c885ecd707340079cb855fc600e236a76e8,f2298c885ecd707340079cb855fc600e236a76e8,Merge branch 'pull-request/40'
+smalyshev,2014-08-01 20:41:18,https://api.github.com/repos/php/php-langspec/git/commits/35eea7e9b08a270178b36f8b1585b345640d39a3,35eea7e9b08a270178b36f8b1585b345640d39a3,Merge branch 'pull-request/39'
+smalyshev,2014-08-01 20:40:47,https://api.github.com/repos/php/php-langspec/git/commits/2857da4bd401d2fde9b4dbfbcfc4c9465e16bdc8,2857da4bd401d2fde9b4dbfbcfc4c9465e16bdc8,Merge branch 'pull-request/37'
+smalyshev,2014-08-01 20:40:01,https://api.github.com/repos/php/php-langspec/git/commits/7b96ede58ba6dba687f8205447288a5687d6ada0,7b96ede58ba6dba687f8205447288a5687d6ada0,Merge branch 'pull-request/35'
+smalyshev,2014-08-01 20:39:16,https://api.github.com/repos/php/php-langspec/git/commits/978d0c64d3ff7370e192a475f38c9e655f83dfe1,978d0c64d3ff7370e192a475f38c9e655f83dfe1,Merge branch 'pull-request/34'
+hikari-no-yume,2014-08-01 20:01:20,https://api.github.com/repos/php/php-langspec/git/commits/d0db537074d35e9a8e0120a1eb055ccbd0f4601e,d0db537074d35e9a8e0120a1eb055ccbd0f4601e,Missing backticks
+hikari-no-yume,2014-08-01 16:55:33,https://api.github.com/repos/php/php-langspec/git/commits/124838ce883f0264f3e2b8cc9efd6745a3f68e6a,124838ce883f0264f3e2b8cc9efd6745a3f68e6a,Corrected to cover closure binding and scoping properly
+gebn,2014-08-01 14:36:39,https://api.github.com/repos/php/php-langspec/git/commits/6a16862895b3a1e67f290712809265f59e7adeb9,6a16862895b3a1e67f290712809265f59e7adeb9,"Fixed incorrectly placed back-tick, causing the sigil to fall outside the formatted code."
+gebn,2014-08-01 14:19:28,https://api.github.com/repos/php/php-langspec/git/commits/a7c05045014c929a549cdc5a8badf24a47c54731,a7c05045014c929a549cdc5a8badf24a47c54731,Fixed occurrence of NULL that was outside of back-ticks.
+gboudreau,2014-08-01 14:03:25,https://api.github.com/repos/php/php-langspec/git/commits/84bb15bb63d1fe80a799f798e0eada2549d2c978,84bb15bb63d1fe80a799f798e0eada2549d2c978,Fixing simple typo
+gboudreau,2014-08-01 13:57:51,https://api.github.com/repos/php/php-langspec/git/commits/0175fe485dbd31fc29cfe6eafeccfb8e53064e23,0175fe485dbd31fc29cfe6eafeccfb8e53064e23,"Fixing byRef assignment example consistancy
+
+All other examples of byRef assignments use `$b =& $c`, while this one here used `$b = &$c`. Using the same syntax everywhere is just clearer."
+hikari-no-yume,2014-08-01 13:33:58,https://api.github.com/repos/php/php-langspec/git/commits/24bb34a3a01da0e6f27c931642852e3e65060bde,24bb34a3a01da0e6f27c931642852e3e65060bde,"Removed C code, clarified ""result"" same"
+hikari-no-yume,2014-08-01 13:25:57,https://api.github.com/repos/php/php-langspec/git/commits/8c31d69099f2ae719fd65a29aa680304016441fb,8c31d69099f2ae719fd65a29aa680304016441fb,Tabs to spaces
+hikari-no-yume,2014-08-01 13:23:49,https://api.github.com/repos/php/php-langspec/git/commits/d7db957bb16f7545a1eaa37dce5220b9847e39c5,d7db957bb16f7545a1eaa37dce5220b9847e39c5,Fixed typo
+hikari-no-yume,2014-08-01 13:09:31,https://api.github.com/repos/php/php-langspec/git/commits/69c51fe863e69ee1fb3befc8ef6dd75ebcece97a,69c51fe863e69ee1fb3befc8ef6dd75ebcece97a,Explicitly define float-to-int conversion algorithm
+marlenunez,2014-08-01 13:08:10,https://api.github.com/repos/php/php-langspec/git/commits/1ff4a02e771978b6122588c6e8d2ababede280ee,1ff4a02e771978b6122588c6e8d2ababede280ee,Small grammar fix
+hikari-no-yume,2014-08-01 11:04:35,https://api.github.com/repos/php/php-langspec/git/commits/8e2940be90f61d02f4f96d5df338e5b3f83aa1d1,8e2940be90f61d02f4f96d5df338e5b3f83aa1d1,Require ints to be fixed-size and overflow to be float
+maug,2014-08-01 09:44:32,https://api.github.com/repos/php/php-langspec/git/commits/90068929c050bb183c2208b8492deb1840d88029,90068929c050bb183c2208b8492deb1840d88029,Wrong variable name in the description
+Nyholm,2014-08-01 09:34:33,https://api.github.com/repos/php/php-langspec/git/commits/69a3f7187a1a67a53de8aeb66bac9ded5c26864d,69a3f7187a1a67a53de8aeb66bac9ded5c26864d,Fixed broken link
+smalyshev,2014-08-01 03:25:31,https://api.github.com/repos/php/php-langspec/git/commits/3f5cbdc2735bf97d903633f65f3e500c70161791,3f5cbdc2735bf97d903633f65f3e500c70161791,update some execution details for PHP engine
+smalyshev,2014-08-01 02:50:01,https://api.github.com/repos/php/php-langspec/git/commits/a610388d637b67294925d3b1dbbc0a54b7d94428,a610388d637b67294925d3b1dbbc0a54b7d94428,added behavior to the list to avoid confusion about what constitutes output
+smalyshev,2014-08-01 02:44:56,https://api.github.com/repos/php/php-langspec/git/commits/b3c66ff3d7cf61ae5963b7351f803a070845f7a7,b3c66ff3d7cf61ae5963b7351f803a070845f7a7,Merge branch 'pull-request/24'
+smalyshev,2014-07-31 19:19:17,https://api.github.com/repos/php/php-langspec/git/commits/1f1ae2d90341dbdc25e022a8de356e13ff5aaa13,1f1ae2d90341dbdc25e022a8de356e13ff5aaa13,Merge branch 'pull-request/30'
+smalyshev,2014-07-31 19:18:40,https://api.github.com/repos/php/php-langspec/git/commits/4c2643d185831825812563f70eb8d91be6c62a6e,4c2643d185831825812563f70eb8d91be6c62a6e,Merge branch 'pull-request/29'
+bjori,2014-07-31 18:51:39,https://api.github.com/repos/php/php-langspec/git/commits/d4765193e109a7d8c9c1e1d7da94794e4424df9a,d4765193e109a7d8c9c1e1d7da94794e4424df9a,Add direct links to submit and browse tickets
+mauro-moreno,2014-07-31 12:55:08,https://api.github.com/repos/php/php-langspec/git/commits/7d8936ed495a7465f880a923a81cbd6e9bac8e29,7d8936ed495a7465f880a923a81cbd6e9bac8e29,"Corrected punctuation, full stops and deleted whitespaces"
+mauro-moreno,2014-07-31 12:41:57,https://api.github.com/repos/php/php-langspec/git/commits/62b4104a22d1bc17c8cccdf25ee305a5a6bc556b,62b4104a22d1bc17c8cccdf25ee305a5a6bc556b,"Merge remote-tracking branch 'upstream/master' into patch-3
+
+Conflicts:
+	spec/php-spec-draft.md"
+eddiejaoude,2014-07-31 12:03:07,https://api.github.com/repos/php/php-langspec/git/commits/798b1d8de73cb47982f64cbc20f525bf00eae54f,798b1d8de73cb47982f64cbc20f525bf00eae54f,Interface declaration missing on Traversable def
+smalyshev,2014-07-31 09:10:41,https://api.github.com/repos/php/php-langspec/git/commits/e2159646d39055c271d454623504ffe1bed94124,e2159646d39055c271d454623504ffe1bed94124,proposed changes for Terms and Definitions
+smalyshev,2014-07-31 08:29:22,https://api.github.com/repos/php/php-langspec/git/commits/75284f763515f73e0dbd8eb6bed5f804f86dab1d,75284f763515f73e0dbd8eb6bed5f804f86dab1d,typo fixes from pull #23
+smalyshev,2014-07-31 08:22:34,https://api.github.com/repos/php/php-langspec/git/commits/508fd73e180933a85250deb0f6e6bd74840940f6,508fd73e180933a85250deb0f6e6bd74840940f6,"Merge branch 'pull-request/9'
+
+Conflicts:
+	spec/php-spec-draft.md"
+smalyshev,2014-07-31 08:02:43,https://api.github.com/repos/php/php-langspec/git/commits/ad1d40eec406d9abbe152ac387e7d0843d5dd910,ad1d40eec406d9abbe152ac387e7d0843d5dd910,Merge branch 'pull-request/25'
+mleko,2014-07-31 07:31:20,https://api.github.com/repos/php/php-langspec/git/commits/9a7858b74242029957331c088c8ef81fdc3e4037,9a7858b74242029957331c088c8ef81fdc3e4037,Minor formating fix
+mleko,2014-07-31 07:10:35,https://api.github.com/repos/php/php-langspec/git/commits/c9163525159cdbb86d740454dbb7be834e9439f9,c9163525159cdbb86d740454dbb7be834e9439f9,Add missing code markdown
+mleko,2014-07-31 06:58:36,https://api.github.com/repos/php/php-langspec/git/commits/12129ff7d85304c926067abc97a01b5acb274c80,12129ff7d85304c926067abc97a01b5acb274c80,Replaced `php.net` links with non localized ones
+mleko,2014-07-31 06:43:39,https://api.github.com/repos/php/php-langspec/git/commits/b17504fcef4dcfcbf7e7b1909cdb7fba93b0046c,b17504fcef4dcfcbf7e7b1909cdb7fba93b0046c,Close multiline comment
+mauro-moreno,2014-07-31 04:05:10,https://api.github.com/repos/php/php-langspec/git/commits/15ed81003562c31307d8b867da540d7e28b88b55,15ed81003562c31307d8b867da540d7e28b88b55,Merge remote-tracking branch 'upstream/master' into patch-3
+mauro-moreno,2014-07-31 04:04:03,https://api.github.com/repos/php/php-langspec/git/commits/4987e6e36e504d8f5295e9d0607010a7c6dc9cb6,4987e6e36e504d8f5295e9d0607010a7c6dc9cb6,"Corrected punctuation, full stops and deleted whitespaces"
+bjori,2014-07-31 03:24:44,https://api.github.com/repos/php/php-langspec/git/commits/47225805890fb39d42c4f3cf6cd6f2d5c67d661a,47225805890fb39d42c4f3cf6cd6f2d5c67d661a,"Merge pull request #22 from camspiers/patch-1
+
+Add `` to __clone in ""Methods with Special Semantics"" section
+
+Conflicts:
+	spec/php-spec-draft.md"
+bjori,2014-07-31 03:17:58,https://api.github.com/repos/php/php-langspec/git/commits/476d277395dfafff8039d18661b8721171e05ce4,476d277395dfafff8039d18661b8721171e05ce4,"Merge pull request #6
+
+* pull-request/6:
+  Replaced regular apostrophes by ""typewriter apostrophes""
+
+Conflicts:
+	spec/php-spec-draft.md"
+bjori,2014-07-31 03:14:19,https://api.github.com/repos/php/php-langspec/git/commits/5255634babaa11d1bcb37e605059378357f20bc6,5255634babaa11d1bcb37e605059378357f20bc6,"Merge pull request #21
+
+* pull-request/21:
+  Add missing `"
+bjori,2014-07-31 03:13:58,https://api.github.com/repos/php/php-langspec/git/commits/b1161ac7d5a7a52a6f2853afb6a95ecad6abc4d5,b1161ac7d5a7a52a6f2853afb6a95ecad6abc4d5,"Merge pull request #20
+
+* pull-request/20:
+  Consistency in how to format types"
+bjori,2014-07-31 03:13:18,https://api.github.com/repos/php/php-langspec/git/commits/8e7b2beaa03a0cc1988b28651ce989c24f91ce84,8e7b2beaa03a0cc1988b28651ce989c24f91ce84,"Merge pull request #19
+
+* pull-request/19:
+  Typos"
+bjori,2014-07-31 03:11:55,https://api.github.com/repos/php/php-langspec/git/commits/d117282b7ed8dce310180ca4831bdc0212ad6b91,d117282b7ed8dce310180ca4831bdc0212ad6b91,"Merge pull request #16
+
+* pull-request/16:
+  Update php-spec-draft.md"
+smalyshev,2014-07-31 00:46:36,https://api.github.com/repos/php/php-langspec/git/commits/c2a09c983a5e7880c6b0b4962eae8a657e0d5149,c2a09c983a5e7880c6b0b4962eae8a657e0d5149,Merge branch 'pull-request/1'
+winks,2014-07-30 21:58:41,https://api.github.com/repos/php/php-langspec/git/commits/e1bb1aaae125cda68314b3f74666371ddbca6e4a,e1bb1aaae125cda68314b3f74666371ddbca6e4a,Rephrase to be more normative.
+winks,2014-07-30 19:01:12,https://api.github.com/repos/php/php-langspec/git/commits/b151e1f9c7ea9af87b44f61e7d9718d6c22dc5db,b151e1f9c7ea9af87b44f61e7d9718d6c22dc5db,Change wording to be more subjective.
+winks,2014-07-30 18:08:22,https://api.github.com/repos/php/php-langspec/git/commits/9433805e7094d35787c541006ef8105f08f6e1f5,9433805e7094d35787c541006ef8105f08f6e1f5,Add FORMATTING.md
+bjori,2014-07-31 00:06:25,https://api.github.com/repos/php/php-langspec/git/commits/df6f5ca7c63d591127539ea2a7bc352ee0a8fd91,df6f5ca7c63d591127539ea2a7bc352ee0a8fd91,"Merge pull request #17
+
+* pull-request/17:
+  consistency in byRef assignments"
+bjori,2014-07-31 00:05:48,https://api.github.com/repos/php/php-langspec/git/commits/6e30711e4ede1a436ebb4cc582138387567d7ef4,6e30711e4ede1a436ebb4cc582138387567d7ef4,"Merge pull request #14
+
+* pull-request/14:
+  Fixed repo url"
+bjori,2014-07-31 00:05:20,https://api.github.com/repos/php/php-langspec/git/commits/c2efad869ef3d7d995a4319fc46d04b187e38ecb,c2efad869ef3d7d995a4319fc46d04b187e38ecb,"Merge pull request #12
+
+* pull-request/12:
+  Changed `intva`l to `intval`"
+bjori,2014-07-31 00:04:49,https://api.github.com/repos/php/php-langspec/git/commits/71dd5c388d5b7dc75262ac2ca6bae587076c6c19,71dd5c388d5b7dc75262ac2ca6bae587076c6c19,"Merge pull request #11
+
+* pull-request/11:
+  Added a missing backtick"
+bjori,2014-07-31 00:04:09,https://api.github.com/repos/php/php-langspec/git/commits/146eceb86c76dfb7244b8f486c3ce74acda45a0d,146eceb86c76dfb7244b8f486c3ce74acda45a0d,"Merge pull request #10
+
+* pull-request/10:
+  Replaced tabs by whitespaces (as stated in the FORMATTING guide)"
+bjori,2014-07-31 00:02:18,https://api.github.com/repos/php/php-langspec/git/commits/f338b172f16f813a9a32154dd177eab967062221,f338b172f16f813a9a32154dd177eab967062221,"Merge pull request #8
+
+* pull-request/8:
+  Fixed typo, change ""one time"" for ""once"".
+  Fixed punctuation"
+camspiers,2014-07-30 22:30:33,https://api.github.com/repos/php/php-langspec/git/commits/22af963f4eb0fb84e49b2750b2f94e6409a4cd75,22af963f4eb0fb84e49b2750b2f94e6409a4cd75,"Add `` to __clone in ""Methods with Special Semantics"" section"
+sdornan,2014-07-30 22:25:56,https://api.github.com/repos/php/php-langspec/git/commits/be4f0569fdbe5ea66b0f6c1a673aa5fe3f7d5eef,be4f0569fdbe5ea66b0f6c1a673aa5fe3f7d5eef,Add missing `
+jnyrup,2014-07-30 22:25:22,https://api.github.com/repos/php/php-langspec/git/commits/f2130a9d8c8bdaff8b7e25831dd4493a33ccd216,f2130a9d8c8bdaff8b7e25831dd4493a33ccd216,"Consistency in how to format types
+
+There seems to be missing a specification on when to write e.g. bool and when to write `bool`.
+The PR only contains two obvious corrections. 
+There are more in there to consider."
+jnyrup,2014-07-30 22:16:01,https://api.github.com/repos/php/php-langspec/git/commits/d96c0dd66c4910fe368e4fcb281687e6862f78a6,d96c0dd66c4910fe368e4fcb281687e6862f78a6,Typos
+jnyrup,2014-07-30 22:06:34,https://api.github.com/repos/php/php-langspec/git/commits/75abe71a0912475f079d42c36ce1f38ba0f877d2,75abe71a0912475f079d42c36ce1f38ba0f877d2,"consistency in byRef assignments
+
+some places `=&` is used, while other places `= &` is used."
+enesunal,2014-07-30 22:04:42,https://api.github.com/repos/php/php-langspec/git/commits/03c5d76a8e26eff339d0ad1f03a09bd4435df4f7,03c5d76a8e26eff339d0ad1f03a09bd4435df4f7,Update php-spec-draft.md
+staabm,2014-07-30 22:00:51,https://api.github.com/repos/php/php-langspec/git/commits/a47c990a3caf548e6759568df074d6b2a76611ad,a47c990a3caf548e6759568df074d6b2a76611ad,Fixed repo url
+winks,2014-07-30 21:58:41,https://api.github.com/repos/php/php-langspec/git/commits/0dbcce95894d4e632829940852da86363e37adc8,0dbcce95894d4e632829940852da86363e37adc8,Rephrase to be more normative.
+javiereguiluz,2014-07-30 21:37:14,https://api.github.com/repos/php/php-langspec/git/commits/b9bc81edb5104e51fdfdc15c0d01a214b18f61fc,b9bc81edb5104e51fdfdc15c0d01a214b18f61fc,Replaced tabs by whitespaces (as stated in the FORMATTING guide)
+mauro-moreno,2014-07-30 21:25:33,https://api.github.com/repos/php/php-langspec/git/commits/8ebdbcba4923faef4c4186c26756734d643fa495,8ebdbcba4923faef4c4186c26756734d643fa495,"Fixed typo, change ""one time"" for ""once""."
+sgolemon,2014-07-30 21:23:27,https://api.github.com/repos/php/php-langspec/git/commits/10a77a79579a09ec8da82a4d67455f3b4ba96f69,10a77a79579a09ec8da82a4d67455f3b4ba96f69,Update repo URLs per rename
+javiereguiluz,2014-07-30 21:12:43,https://api.github.com/repos/php/php-langspec/git/commits/3148020906363d43bc0e275ad5a7c734bd2baaf4,3148020906363d43bc0e275ad5a7c734bd2baaf4,"Fixed wrong whitespaces
+
+Microsoft Word randomly included weird whitespaces. The hexcode
+for the regular whitespace is '20'. These wrong whitespaces are
+in fact two characters with codes 'C2 A0'. Depending on your
+editor, you'll see an error or a regular whitespace."
+mauro-moreno,2014-07-30 21:04:24,https://api.github.com/repos/php/php-langspec/git/commits/53ca560cb81e6714c33d7eac3036a9689471492a,53ca560cb81e6714c33d7eac3036a9689471492a,Fixed punctuation
+bjori,2014-07-30 20:55:38,https://api.github.com/repos/php/php-langspec/git/commits/11647a61f640dd9721c542d45ac0c5a8852515a2,11647a61f640dd9721c542d45ac0c5a8852515a2,"Merge pull request #5 from javiereguiluz/fix_word_ligatures
+
+* javiereguiluz/fix_word_ligatures:
+  Replaced word ligatures by correct characters"
+javiereguiluz,2014-07-30 20:41:48,https://api.github.com/repos/php/php-langspec/git/commits/550a4fa9a924739781a7829284daa83cdc62f11a,550a4fa9a924739781a7829284daa83cdc62f11a,"Replaced word ligatures by correct characters
+
+The original document was created using Microsoft Word.
+Taht's why some words contained ligatures joining two
+characters. Example: ""deﬁnition"" instead of ""definition"""
+javiereguiluz,2014-07-30 20:50:46,https://api.github.com/repos/php/php-langspec/git/commits/ad8504a382d16199a0424a173d63ba23f5224644,ad8504a382d16199a0424a173d63ba23f5224644,"Replaced regular apostrophes by ""typewriter apostrophes""
+
+This is again a problem caused by writing the original document
+using Microsoft Word. The ortographic apostrophes (‘ and ’) aren't
+used in technical documents, because you cannot easily write them
+with the IDEs and text editors used by developers.
+
+The solution is to use the ""typewriter apostrophe"" (') in both cases."
+bjori,2014-07-30 20:35:43,https://api.github.com/repos/php/php-langspec/git/commits/a5498220957ca8ba42a347b22f3667f8e251b0c6,a5498220957ca8ba42a347b22f3667f8e251b0c6,"Merge pull request #4 from marcjansen/patch-1
+
+Fix typo.
+
+* marcjansen/patch-1:
+  Fix typo."
+marcjansen,2014-07-30 20:22:28,https://api.github.com/repos/php/php-langspec/git/commits/74cce7914fc67bac89bee9a6dbe72fe0ec03438e,74cce7914fc67bac89bee9a6dbe72fe0ec03438e,Fix typo.
+bjori,2014-07-30 19:56:05,https://api.github.com/repos/php/php-langspec/git/commits/5f8125d3b62785110838befc3561b542ba69dc9b,5f8125d3b62785110838befc3561b542ba69dc9b,"Merge pull request #3 from vjeux/patch-1
+
+Replacing ''' by ```
+
+* vjeux/patch-1:
+  Replacing ''' by ```"
+vjeux,2014-07-30 19:52:39,https://api.github.com/repos/php/php-langspec/git/commits/70c1777fa3e69484f3cb34c3959ae6934ea74f66,70c1777fa3e69484f3cb34c3959ae6934ea74f66,"Replacing ''' by ```
+
+Otherwise the code is all mangled in one line"
+bjori,2014-07-30 19:50:04,https://api.github.com/repos/php/php-langspec/git/commits/da8e26b69a0845b78d27a88b43c2400fc7c6ff60,da8e26b69a0845b78d27a88b43c2400fc7c6ff60,"Merge pull request #2 from tnorthcutt/patch-1
+
+Fix typo in readme
+
+* tnorthcutt/patch-1:
+  Fix typo in readme"
+winks,2014-07-30 19:01:12,https://api.github.com/repos/php/php-langspec/git/commits/7fa7f220a42f8a9aa5d3da1eaf280076f937d81a,7fa7f220a42f8a9aa5d3da1eaf280076f937d81a,Change wording to be more subjective.
+winks,2014-07-30 18:08:22,https://api.github.com/repos/php/php-langspec/git/commits/52dc892678443fc8b2c6f3158989a8ebcd73f5b6,52dc892678443fc8b2c6f3158989a8ebcd73f5b6,Add FORMATTING.md
+JoelMarcey,2014-07-30 15:38:06,https://api.github.com/repos/php/php-langspec/git/commits/02d8a11d9a8813522f4ed4309b811c0ffb07d243,02d8a11d9a8813522f4ed4309b811c0ffb07d243,"Initial draft specification commit
+
+Summary:
+
+""A journey of a thousand miles begins with a single step"" - Lao-tzu"
+bjori,2014-07-28 21:43:27,https://api.github.com/repos/php/php-langspec/git/commits/ff80ce0b327437732ac4c3a1fe7a36480a11e4ff,ff80ce0b327437732ac4c3a1fe7a36480a11e4ff,Initial commit

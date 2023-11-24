@@ -1,0 +1,424 @@
+flatiron,framework components for node.js and the browser
+username,timestamp,url,sha,message
+3rd-Eden,2015-05-19 16:14:51,https://api.github.com/repos/flatiron/flatiron/git/commits/2c34fe7ec160831945977c6cbe3dde11d7a32da5,2c34fe7ec160831945977c6cbe3dde11d7a32da5,"Merge pull request #116 from pgilad/patch-1
+
+Add license attribute"
+pgilad,2015-05-19 11:11:49,https://api.github.com/repos/flatiron/flatiron/git/commits/b2bd00a26564dabfac238b6e7ef2bf4a81363970,b2bd00a26564dabfac238b6e7ef2bf4a81363970,"Add license attribute
+
+https://docs.npmjs.com/files/package.json#license
+http://npm1k.org/"
+jcrugzz,2014-09-16 20:00:03,https://api.github.com/repos/flatiron/flatiron/git/commits/a1440e1d6cdd62e0d6537baefc849aad0e30fe0f,a1440e1d6cdd62e0d6537baefc849aad0e30fe0f,[dist] Version bump. 0.4.2
+jcrugzz,2014-09-16 19:59:51,https://api.github.com/repos/flatiron/flatiron/git/commits/3d67bdf418ad4c4572f69436b4d95640210cb917,3d67bdf418ad4c4572f69436b4d95640210cb917,[dist] less strict
+jcrugzz,2014-09-15 21:15:09,https://api.github.com/repos/flatiron/flatiron/git/commits/5be60b186b30ab256ad4b5c108e59137595d9b29,5be60b186b30ab256ad4b5c108e59137595d9b29,[dist] Version bump. 0.4.1
+jcrugzz,2014-09-15 21:15:02,https://api.github.com/repos/flatiron/flatiron/git/commits/f0c661222578b41fa65f5802bae4d0cc2e94b462,f0c661222578b41fa65f5802bae4d0cc2e94b462,[dist] bump prompt and broadway
+jcrugzz,2014-09-15 20:18:52,https://api.github.com/repos/flatiron/flatiron/git/commits/9c0a3dc9a09c905ef82d8abc9e471101699c3728,9c0a3dc9a09c905ef82d8abc9e471101699c3728,[dist] Version bump. 0.4.0
+jcrugzz,2014-09-15 20:07:11,https://api.github.com/repos/flatiron/flatiron/git/commits/310197cf41f273030d3a9cf9d807cca910cbde2f,310197cf41f273030d3a9cf9d807cca910cbde2f,[dist] update broadway dep
+jcrugzz,2013-12-11 13:32:04,https://api.github.com/repos/flatiron/flatiron/git/commits/8033377776bca52ccae4c44f2011c95cbc7e0312,8033377776bca52ccae4c44f2011c95cbc7e0312,[dist] Version bump. 0.3.11
+jcrugzz,2013-12-11 13:29:55,https://api.github.com/repos/flatiron/flatiron/git/commits/dac2b53b6a2a375c4fb76c9a1c2aa5ec1c7dda6f,dac2b53b6a2a375c4fb76c9a1c2aa5ec1c7dda6f,"Merge pull request #109 from mmalecki/fix-different-one
+
+[fix] Fix crash when command is empty and app has no usage"
+mmalecki,2013-12-11 12:43:18,https://api.github.com/repos/flatiron/flatiron/git/commits/e56ca16786e22ebc7985a5e6e43b621ca26af529,e56ca16786e22ebc7985a5e6e43b621ca26af529,"[fix] Fix crash when command is empty and app has no usage
+
+    $ bin/bender-cli
+    /Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:230
+                  'Cannot find commands for ' + name.magenta
+                                                    ^
+    TypeError: Cannot read property 'magenta' of undefined
+        at loadCommand (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:230:49)
+        at executeCommand (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:280:26)
+        at Object.app.router.notfound (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:359:5)
+        at Router.dispatch (/Users/maciej/dev/js/flatiron/node_modules/director/lib/director/cli.js:50:21)
+        at /Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:87:18
+        at onComplete (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/app.js:85:5)
+        at Object.exports.ensure (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/features/index.js:10:10)
+        at ensureFeatures (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/app.js:91:18)
+        at /Users/maciej/dev/js/flatiron/node_modules/broadway/node_modules/utile/node_modules/async/lib/async.js:116:25
+        at /Users/maciej/dev/js/flatiron/node_modules/broadway/node_modules/utile/node_modules/async/lib/async.js:24:16"
+edef1c,2013-12-11 10:25:56,https://api.github.com/repos/flatiron/flatiron/git/commits/07f2cf6e2cec74e0621b7a0f459322f83882ba22,07f2cf6e2cec74e0621b7a0f459322f83882ba22,[dist] Version bump. 0.3.10
+mmalecki,2013-12-11 10:15:09,https://api.github.com/repos/flatiron/flatiron/git/commits/e87cbd4158363a4c7311cf083af3ba73371a5e8e,e87cbd4158363a4c7311cf083af3ba73371a5e8e,"[fix] Fix a crash when command directory isn't found
+
+Trying to run an empty command with `flatiron.plugins.cli` when the
+commands directory wasn't there resulted in the following crash:
+
+    $ bin/bender-cli
+
+    /Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:201
+                  'Cannot find commands for ' + name.magenta
+                                                    ^
+    TypeError: Cannot read property 'magenta' of undefined
+        at loadCommand (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:201:49)
+        at executeCommand (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:278:26)
+        at Object.app.router.notfound (/Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:357:5)
+        at Router.dispatch (/Users/maciej/dev/js/flatiron/node_modules/director/lib/director/cli.js:50:21)
+        at /Users/maciej/dev/js/flatiron/lib/flatiron/plugins/cli.js:87:18
+        at onComplete (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/app.js:85:5)
+        at Object.exports.ensure (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/features/index.js:10:10)
+        at ensureFeatures (/Users/maciej/dev/js/flatiron/node_modules/broadway/lib/broadway/app.js:91:18)
+        at /Users/maciej/dev/js/flatiron/node_modules/broadway/node_modules/utile/node_modules/async/lib/async.js:116:25
+        at /Users/maciej/dev/js/flatiron/node_modules/broadway/node_modules/utile/node_modules/async/lib/async.js:24:16"
+julianduque,2013-12-05 01:43:24,https://api.github.com/repos/flatiron/flatiron/git/commits/4f747068b3aedbb6d5d0b96a6292eef1c202dc79,4f747068b3aedbb6d5d0b96a6292eef1c202dc79,[fix] Do not crash when using flatiron binary
+jcrugzz,2013-12-02 06:44:55,https://api.github.com/repos/flatiron/flatiron/git/commits/29e83f91b83d908f5b1dd4b6f4c196b3c65fc52d,29e83f91b83d908f5b1dd4b6f4c196b3c65fc52d,[dist] Version bump. 0.3.9
+jcrugzz,2013-12-02 06:38:31,https://api.github.com/repos/flatiron/flatiron/git/commits/0c49566f79e108cdbaf494c1aefd01238f7e84b2,0c49566f79e108cdbaf494c1aefd01238f7e84b2,[dist] bump broadway 0.2.9
+jcrugzz,2013-12-02 06:38:07,https://api.github.com/repos/flatiron/flatiron/git/commits/b9b0513a2a6e7110c351938ac7ee42d25f545e9b,b9b0513a2a6e7110c351938ac7ee42d25f545e9b,[dist] bump optimist
+jcrugzz,2013-12-02 06:12:30,https://api.github.com/repos/flatiron/flatiron/git/commits/10ed6f350a6e42fc95efae6f8539d5925957f292,10ed6f350a6e42fc95efae6f8539d5925957f292,[rm] kill pkginfo
+jcrugzz,2013-12-02 06:11:17,https://api.github.com/repos/flatiron/flatiron/git/commits/2e47ff22f06c76457ba8ee3bd7b300cdce9796f4,2e47ff22f06c76457ba8ee3bd7b300cdce9796f4,[dist] bump broadway version
+jcrugzz,2013-11-24 05:35:04,https://api.github.com/repos/flatiron/flatiron/git/commits/27aa7fdfb4b0baf30fb3b7ce17b68af373ca5c55,27aa7fdfb4b0baf30fb3b7ce17b68af373ca5c55,"Merge pull request #93 from Southern/remove-unused
+
+Remove unused code."
+mmalecki,2013-07-09 04:09:34,https://api.github.com/repos/flatiron/flatiron/git/commits/6813c84159ed741fa222b16b287b7a09dbca5331,6813c84159ed741fa222b16b287b7a09dbca5331,[dist] Bump version to 0.3.8
+mmalecki,2013-07-09 04:09:16,https://api.github.com/repos/flatiron/flatiron/git/commits/c9c42cb821c0ee7361875139b2a482cc1fa55cd6,c9c42cb821c0ee7361875139b2a482cc1fa55cd6,"Revert ""Only require files that end in .js (avoid errors from requiring source map files, for example)""
+
+This reverts commit 7e0b95d935c3b07698bc75f956daac53143a6e40.
+
+This breaks requiring directories."
+jcrugzz,2013-07-02 23:57:01,https://api.github.com/repos/flatiron/flatiron/git/commits/2776291a562cd568a3f260ec14d875a86c4ba058,2776291a562cd568a3f260ec14d875a86c4ba058,[dist] Version bump. 0.3.7
+jcrugzz,2013-07-02 23:56:17,https://api.github.com/repos/flatiron/flatiron/git/commits/501a3ec3ca296403cfab6a23f4a8e5eeecca51d7,501a3ec3ca296403cfab6a23f4a8e5eeecca51d7,[dist] bump prompt version (again)
+jcrugzz,2013-07-02 23:39:50,https://api.github.com/repos/flatiron/flatiron/git/commits/073013245fe0f3c88586cdc23d282b9818a2bd5a,073013245fe0f3c88586cdc23d282b9818a2bd5a,[dist] Version bump. 0.3.6
+jcrugzz,2013-07-02 23:33:59,https://api.github.com/repos/flatiron/flatiron/git/commits/0460e003fc6fe362a812575b08a3842805a3de16,0460e003fc6fe362a812575b08a3842805a3de16,[dist] bump prompt version
+indexzero,2013-06-22 06:31:37,https://api.github.com/repos/flatiron/flatiron/git/commits/7a8e15b1987d612ce7e5adb9cd919f8b035331c4,7a8e15b1987d612ce7e5adb9cd919f8b035331c4,"Merge pull request #87 from julianduque/master
+
+[fix] check for app.config.get('database') in resourceful plugin"
+indexzero,2013-06-22 06:31:15,https://api.github.com/repos/flatiron/flatiron/git/commits/82797f98bb750dc80a290eb642848f4779105dda,82797f98bb750dc80a290eb642848f4779105dda,"Merge pull request #89 from vanthome/patch-1
+
+Update lib/flatiron/plugins/http.js"
+indexzero,2013-05-28 21:44:36,https://api.github.com/repos/flatiron/flatiron/git/commits/3a9dc97a1f0281e5cfb37aa0430a1e0435add9a6,3a9dc97a1f0281e5cfb37aa0430a1e0435add9a6,"Merge pull request #103 from ssevertson/only-include-js-files
+
+Only require files that end in .js (avoid errors from requiring source map files, for example)"
+ssevertson,2013-05-24 15:07:24,https://api.github.com/repos/flatiron/flatiron/git/commits/7e0b95d935c3b07698bc75f956daac53143a6e40,7e0b95d935c3b07698bc75f956daac53143a6e40,"Only require files that end in .js (avoid errors from requiring source map files, for example)"
+mmalecki,2013-05-06 18:05:19,https://api.github.com/repos/flatiron/flatiron/git/commits/994ed6c825126d6d8786914ab7ab6a052e81fbf1,994ed6c825126d6d8786914ab7ab6a052e81fbf1,[minor] Defining `App#init` is not necessary
+yawnt,2013-03-19 16:41:28,https://api.github.com/repos/flatiron/flatiron/git/commits/1c7fb3f8e39d8767ac1b4e26cdf8f8acbbdc90d2,1c7fb3f8e39d8767ac1b4e26cdf8f8acbbdc90d2,"Merge pull request #101 from gsf/patch-1
+
+Confusing typo there"
+mmalecki,2013-03-17 16:32:21,https://api.github.com/repos/flatiron/flatiron/git/commits/05971102df7ac13082c19242a0b3bcae2c40c294,05971102df7ac13082c19242a0b3bcae2c40c294,[dist] Bump version to 0.3.5
+mmalecki,2013-03-17 16:31:51,https://api.github.com/repos/flatiron/flatiron/git/commits/e0bfc538f9aa454bca5036d670e4343223b2dfe4,e0bfc538f9aa454bca5036d670e4343223b2dfe4,"Merge pull request #98 from flatiron/gh-97
+
+[fix] flatiron cli breaks without command in node 0.10.0"
+julianduque,2013-03-14 06:49:45,https://api.github.com/repos/flatiron/flatiron/git/commits/d15eb42e501f8bd49104693d299e1df6b0987a35,d15eb42e501f8bd49104693d299e1df6b0987a35,[fix] flatiron cli breaks without command in node 0.10.0
+Southern,2013-02-27 01:53:51,https://api.github.com/repos/flatiron/flatiron/git/commits/1b7e160ca486ec0946787dcdf6c34d6db489907d,1b7e160ca486ec0946787dcdf6c34d6db489907d,"[fix] Handle the user cancelling creation of a scaffold.
+
+This will keep error messages from appearing when `^C` is hit during async prompting."
+Southern,2013-02-27 01:05:37,https://api.github.com/repos/flatiron/flatiron/git/commits/04b5895bedafe977e742a0af609022e99fe7c861,04b5895bedafe977e742a0af609022e99fe7c861,[fix] Remove unused code.
+mmalecki,2013-02-23 23:31:53,https://api.github.com/repos/flatiron/flatiron/git/commits/02342d27c16a66e632fdb36dc54f67864040c437,02342d27c16a66e632fdb36dc54f67864040c437,[dist] Bump version to 0.3.4
+mmalecki,2013-02-23 23:05:02,https://api.github.com/repos/flatiron/flatiron/git/commits/70070879f9f6ffa8e609fb6084a33c61da9938d2,70070879f9f6ffa8e609fb6084a33c61da9938d2,[dist] Bump `pkginfo` to 0.3.0
+mmalecki,2013-02-23 23:00:00,https://api.github.com/repos/flatiron/flatiron/git/commits/e3b8a970f46a136f0b1237534c571043db9edfa1,e3b8a970f46a136f0b1237534c571043db9edfa1,[dist] Bump `broadway` to 0.2.7
+julianduque,2013-01-25 10:22:39,https://api.github.com/repos/flatiron/flatiron/git/commits/420c17bf13953198e004f3eb67b48bf2fa9063d5,420c17bf13953198e004f3eb67b48bf2fa9063d5,[minor fix] minor fix in database port :p
+julianduque,2013-01-25 10:19:55,https://api.github.com/repos/flatiron/flatiron/git/commits/e8e082986d85e0be90ef8845f1851ba4cbb765f8,e8e082986d85e0be90ef8845f1851ba4cbb765f8,[fix] add support for database option in resourceful plugin fixes #72
+indexzero,2013-01-10 07:00:18,https://api.github.com/repos/flatiron/flatiron/git/commits/54d4f1e995b75dcc1b62c8453b6a7a607d2a8c29,54d4f1e995b75dcc1b62c8453b6a7a607d2a8c29,[dist] Version bump. 0.3.3
+indexzero,2013-01-10 07:00:10,https://api.github.com/repos/flatiron/flatiron/git/commits/e67f40f5fc56cc41f91caa009043b00852e66b9b,e67f40f5fc56cc41f91caa009043b00852e66b9b,[dist] Bump `optimist` and `director` versions
+indexzero,2012-12-23 23:13:43,https://api.github.com/repos/flatiron/flatiron/git/commits/caac5d3f8339939987f497dd8ee17a7bb34ff222,caac5d3f8339939987f497dd8ee17a7bb34ff222,[dist] Version bump. 0.3.2
+indexzero,2012-12-23 23:13:08,https://api.github.com/repos/flatiron/flatiron/git/commits/abf93a903a0eaef4d951aa414f3608263275c192,abf93a903a0eaef4d951aa414f3608263275c192,[dist] Bump `broadway` to `0.2.6`
+indexzero,2012-12-23 21:18:54,https://api.github.com/repos/flatiron/flatiron/git/commits/6eb68be21081290dc41be9b27dd059876883067f,6eb68be21081290dc41be9b27dd059876883067f,[dist] Bump prompt version
+Southern,2012-12-20 21:18:18,https://api.github.com/repos/flatiron/flatiron/git/commits/63e9cb80eacc5f1b5d95aef61b9ec4402729e20c,63e9cb80eacc5f1b5d95aef61b9ec4402729e20c,[dist] Bump version: 0.3.1
+Southern,2012-12-20 21:10:40,https://api.github.com/repos/flatiron/flatiron/git/commits/a51ef85050ccf737819669a1c7ab56cc66b78321,a51ef85050ccf737819669a1c7ab56cc66b78321,[dist] Bump director version.
+Southern,2012-12-19 06:25:25,https://api.github.com/repos/flatiron/flatiron/git/commits/ddbb24544063c6c736ee0161a0894cd4e2168fd8,ddbb24544063c6c736ee0161a0894cd4e2168fd8,[dist] Bump vows version.
+pksunkara,2012-11-12 18:06:28,https://api.github.com/repos/flatiron/flatiron/git/commits/4f42b434c3647b167848e6e89c04c66c699ce22c,4f42b434c3647b167848e6e89c04c66c699ce22c,[minor] Now scaffold inits with union v0.3.5
+pksunkara,2012-11-12 18:05:49,https://api.github.com/repos/flatiron/flatiron/git/commits/1805c37ff3e5493b43337a6aa4c999913cbf5717,1805c37ff3e5493b43337a6aa4c999913cbf5717,[dist] Upgraded director to v1.1.8
+pksunkara,2012-11-09 12:26:25,https://api.github.com/repos/flatiron/flatiron/git/commits/573b5cc07f691f741b8ac70f4774cfc6ee776ab3,573b5cc07f691f741b8ac70f4774cfc6ee776ab3,[fix] Cleaned up examples deps and devDeps
+coderarity,2012-11-02 20:13:39,https://api.github.com/repos/flatiron/flatiron/git/commits/fc5f07977ff0d0e54bb27421e5b09c8d29013c03,fc5f07977ff0d0e54bb27421e5b09c8d29013c03,[fix] update st
+AvianFlu,2012-10-31 13:55:34,https://api.github.com/repos/flatiron/flatiron/git/commits/e7aea440f460b655a4ef650e65bde586d97890aa,e7aea440f460b655a4ef650e65bde586d97890aa,"[dist] Version bump, v0.3.0, for API breakage."
+AvianFlu,2012-10-25 18:52:28,https://api.github.com/repos/flatiron/flatiron/git/commits/6aece861c3a0dec7c1befcd73b8b46eb12daee0f,6aece861c3a0dec7c1befcd73b8b46eb12daee0f,"[dist] Version bump, v0.2.9"
+pksunkara,2012-10-23 02:59:01,https://api.github.com/repos/flatiron/flatiron/git/commits/3d07c616fb88fa787d3d9b767b16fd70cb2d266e,3d07c616fb88fa787d3d9b767b16fd70cb2d266e,[minor] Made options.index and options.dot configurable in static plugin
+pksunkara,2012-10-22 19:00:29,https://api.github.com/repos/flatiron/flatiron/git/commits/e44450a4e3c0321a02881864017950ce2fb2b358,e44450a4e3c0321a02881864017950ce2fb2b358,"Merge pull request #77 from odbol/master
+
+Added ability to pass in 'buffer' option to Union when creating via http plugin"
+pksunkara,2012-10-22 18:59:21,https://api.github.com/repos/flatiron/flatiron/git/commits/1b0f636b299cd477645d1465f242398953ab0d86,1b0f636b299cd477645d1465f242398953ab0d86,[dist] Updated prompt to v0.2.8
+pksunkara,2012-10-22 18:59:00,https://api.github.com/repos/flatiron/flatiron/git/commits/50c791d400d3b5fd7f4a96e57266e2c3c5d588a8,50c791d400d3b5fd7f4a96e57266e2c3c5d588a8,[fix] Update 'st' with using passthrough option
+pksunkara,2012-10-22 08:11:59,https://api.github.com/repos/flatiron/flatiron/git/commits/fa2a13a41db6cc30ba965b15c852b834b55e0e49,fa2a13a41db6cc30ba965b15c852b834b55e0e49,"Merge pull request #82 from mikl/patch-3
+
+README: Correct order of parameters to app.start()."
+mikl,2012-10-21 10:22:24,https://api.github.com/repos/flatiron/flatiron/git/commits/1d8b6265d2df32fd2971e65eef1e9fe49f98cd06,1d8b6265d2df32fd2971e65eef1e9fe49f98cd06,"Correct order of parameters to app.start().
+
+Uses (port, host), not (host, port).
+
+Function signature here: https://github.com/flatiron/flatiron/blob/03d77f3508e2aebf97a5d2334f88246fb352e703/lib/flatiron/plugins/http.js#L39"
+pksunkara,2012-10-03 18:23:29,https://api.github.com/repos/flatiron/flatiron/git/commits/4825548fe0a54dc68f05b8348d3fabdbd7ea19f4,4825548fe0a54dc68f05b8348d3fabdbd7ea19f4,[fix] Fix undefined 'url' for static plugin
+pksunkara,2012-09-21 05:55:19,https://api.github.com/repos/flatiron/flatiron/git/commits/4b18fdab832ac8d7ef8fb105bbd02d232ce129ae,4b18fdab832ac8d7ef8fb105bbd02d232ce129ae,Upgrade director to v1.1.6
+pksunkara,2012-09-18 11:22:31,https://api.github.com/repos/flatiron/flatiron/git/commits/2c35413ff0644d527ffbf88008684dff76cd81de,2c35413ff0644d527ffbf88008684dff76cd81de,[minor] Rename 'ecstatic' plugin as 'static'
+pksunkara,2012-09-18 11:08:23,https://api.github.com/repos/flatiron/flatiron/git/commits/f7e51846e6e8718a5ba5d87770d4d7be7901d3f7,f7e51846e6e8718a5ba5d87770d4d7be7901d3f7,[minor] Use isaac's st instead of ecstatic
+pksunkara,2012-09-18 09:49:00,https://api.github.com/repos/flatiron/flatiron/git/commits/50682a7eb1650b8c2ab682b8e31e99605be7b276,50682a7eb1650b8c2ab682b8e31e99605be7b276,[dist] Upgrade prompt to v0.2.7
+mmalecki,2012-09-09 13:06:28,https://api.github.com/repos/flatiron/flatiron/git/commits/2e74ee443535df017375b5178b79999cc9da5dcf,2e74ee443535df017375b5178b79999cc9da5dcf,"Merge pull request #78 from Southern/flatiron_app_define_property
+
+lib/flatiron.js: Replace deprecated __defineGetter/__defineSetter__"
+Southern,2012-09-07 04:53:38,https://api.github.com/repos/flatiron/flatiron/git/commits/5c0dc5322ee7566c93d0c0205ed50bdd06c1abde,5c0dc5322ee7566c93d0c0205ed50bdd06c1abde,lib/flatiron.js: Replace deprecated __defineGetter/__defineSetter__
+odbol,2012-08-31 02:18:11,https://api.github.com/repos/flatiron/flatiron/git/commits/36ed08d4641cc96051e7c82d2faf7d5ce3bd039c,36ed08d4641cc96051e7c82d2faf7d5ce3bd039c,added ability to pass in 'buffer' option to Union when creating via http plugin
+Marak,2012-08-20 12:36:40,https://api.github.com/repos/flatiron/flatiron/git/commits/3a65e39665b9a58dce69b4d43cad2a2bf050f731,3a65e39665b9a58dce69b4d43cad2a2bf050f731,[docs] Updating README
+Marak,2012-08-20 04:08:03,https://api.github.com/repos/flatiron/flatiron/git/commits/4026d795a3aa68259d393396197117a394698366,4026d795a3aa68259d393396197117a394698366,[plugins] Removed socket.io plugin for now. It seems easier to just manually setup socket.io
+Marak,2012-08-19 13:51:18,https://api.github.com/repos/flatiron/flatiron/git/commits/47b825b7f58e2f42ac8a2d59ece442e4cd5ef7aa,47b825b7f58e2f42ac8a2d59ece442e4cd5ef7aa,[plugins] [socket.io] Removed errant line.
+Marak,2012-08-19 07:42:22,https://api.github.com/repos/flatiron/flatiron/git/commits/f2bf34807b43cd3a0eabeec7b971629b1aa1ac05,f2bf34807b43cd3a0eabeec7b971629b1aa1ac05,[plugins] First pass at socket.io plugin. Working locally.
+pksunkara,2012-08-18 16:09:54,https://api.github.com/repos/flatiron/flatiron/git/commits/c314e4b9cba96e285497ec91e3f64ca20d2a84c5,c314e4b9cba96e285497ec91e3f64ca20d2a84c5,"Merge pull request #75 from 3rd-Eden/master
+
+[minor] Create the HTTP server before calling app.init"
+3rd-Eden,2012-08-17 19:45:51,https://api.github.com/repos/flatiron/flatiron/git/commits/c41fef9afcf813d0650c1389122a425352e962b5,c41fef9afcf813d0650c1389122a425352e962b5,"[minor] Create the HTTP server before calling app.init so that broadway plugins can
+leverage the `app.server` during the `init` call."
+indexzero,2012-08-17 04:41:09,https://api.github.com/repos/flatiron/flatiron/git/commits/2dfecca73102e59a924f78974d8aba28f4af5766,2dfecca73102e59a924f78974d8aba28f4af5766,[dist] Version bump. 0.2.8
+indexzero,2012-08-17 04:40:59,https://api.github.com/repos/flatiron/flatiron/git/commits/e2f308c37111be16c1855a44ea5265641f751835,e2f308c37111be16c1855a44ea5265641f751835,[dist] Bump prompt version
+indexzero,2012-08-12 00:49:10,https://api.github.com/repos/flatiron/flatiron/git/commits/56cd44c4b20d388a18357e8eb6bd9bdcdf418c0d,56cd44c4b20d388a18357e8eb6bd9bdcdf418c0d,[dist] Version bump. 0.2.7
+indexzero,2012-08-12 00:48:55,https://api.github.com/repos/flatiron/flatiron/git/commits/b6df8a3616e33c2b75352655d8d976787ff6eac5,b6df8a3616e33c2b75352655d8d976787ff6eac5,[dist] Bump prompt version to work around https://github.com/joyent/node/issues/3860
+pksunkara,2012-08-09 11:57:14,https://api.github.com/repos/flatiron/flatiron/git/commits/c899f165e23adf0340734bc21f45236617c2f631,c899f165e23adf0340734bc21f45236617c2f631,[minor] Allow options for director to be set
+AvianFlu,2012-08-03 02:19:27,https://api.github.com/repos/flatiron/flatiron/git/commits/f4f720f7463bb255b59213de125ba19a7bdfd0c8,f4f720f7463bb255b59213de125ba19a7bdfd0c8,"[dist] Version bump, v0.2.6"
+mmalecki,2012-08-02 21:16:19,https://api.github.com/repos/flatiron/flatiron/git/commits/abeed48f5ccfc97000b6e7d7143f69fe4a5bc057,abeed48f5ccfc97000b6e7d7143f69fe4a5bc057,"[test] Stop testing on node v0.6, start testing on node v0.8"
+mmalecki,2012-08-02 21:12:31,https://api.github.com/repos/flatiron/flatiron/git/commits/23028f97f0afe02edd6b58dbbd02c9a32d317429,23028f97f0afe02edd6b58dbbd02c9a32d317429,[dist] Upgrade `prompt` to `0.2.4`
+pksunkara,2012-07-31 12:51:07,https://api.github.com/repos/flatiron/flatiron/git/commits/91db630a2df4953a21c457c0b619eb64342a9579,91db630a2df4953a21c457c0b619eb64342a9579,"Merge pull request #73 from 3rd-Eden/master
+
+[doc] Added more documentation about the `app.config`"
+3rd-Eden,2012-07-31 09:55:25,https://api.github.com/repos/flatiron/flatiron/git/commits/f726f518bc82896abb644c12b86eb7ec50c7a15a,f726f518bc82896abb644c12b86eb7ec50c7a15a,"[doc] Added more documentation about the `app.config`
+
+As you cannot override configuration using: `app.use(flatiron.plugin.config)` you
+need to manually add stores to the configuration instance."
+Marak,2012-07-28 00:23:04,https://api.github.com/repos/flatiron/flatiron/git/commits/bb4c25c18079084dfc02d63c91b431098dd74213,bb4c25c18079084dfc02d63c91b431098dd74213,[plugins] [resourceful] Improved error handling for invalid resource paths.
+pksunkara,2012-07-24 16:08:10,https://api.github.com/repos/flatiron/flatiron/git/commits/0f2b2d9d7c956b02329e370e52bb36c5218d9c80,0f2b2d9d7c956b02329e370e52bb36c5218d9c80,[minor] Convert all arguments to string
+pksunkara,2012-07-24 09:21:05,https://api.github.com/repos/flatiron/flatiron/git/commits/93230b0c73628f8cc56b8976e473a451d44fb537,93230b0c73628f8cc56b8976e473a451d44fb537,[fix] Fix some whitespaces
+pksunkara,2012-07-24 09:20:19,https://api.github.com/repos/flatiron/flatiron/git/commits/8a4c2930b5136dce6529f78f22aa27d042ce7a4d,8a4c2930b5136dce6529f78f22aa27d042ce7a4d,[fix] Fix a small bug in lazy-loading resources
+indexzero,2012-07-10 07:57:22,https://api.github.com/repos/flatiron/flatiron/git/commits/84e02877aaa7db604cac714327b371bc3410e7dc,84e02877aaa7db604cac714327b371bc3410e7dc,[dist] Version bump for dependencies. 0.2.5
+indexzero,2012-07-10 07:34:23,https://api.github.com/repos/flatiron/flatiron/git/commits/cb49a96650160e41b3a68a1ca14aa92a497a42dd,cb49a96650160e41b3a68a1ca14aa92a497a42dd,[dist] Update broadway version
+indexzero,2012-07-10 05:54:18,https://api.github.com/repos/flatiron/flatiron/git/commits/0db440c9a8804379580d8f2f26124da0171b3d5f,0db440c9a8804379580d8f2f26124da0171b3d5f,[dist] Version bump for dependencies. 0.2.4
+indexzero,2012-07-08 09:26:52,https://api.github.com/repos/flatiron/flatiron/git/commits/d4c9448ba920bd2f35cfeeba804a43e2efc60102,d4c9448ba920bd2f35cfeeba804a43e2efc60102,[dist] Version bump. 0.2.3
+indexzero,2012-07-08 09:25:47,https://api.github.com/repos/flatiron/flatiron/git/commits/354ee77d9cd08800c29f946fa76e3251a790f4bf,354ee77d9cd08800c29f946fa76e3251a790f4bf,"[dist] Bump `prompt`, `union` dependencies. Add `request`"
+indexzero,2012-07-08 09:24:48,https://api.github.com/repos/flatiron/flatiron/git/commits/acd874cd1f71c91a234533265082add4ee152bc4,acd874cd1f71c91a234533265082add4ee152bc4,[test] Added more tests for `ecstatic-app` example
+indexzero,2012-07-08 07:10:25,https://api.github.com/repos/flatiron/flatiron/git/commits/da27c67f59ecdf79cc81195c2b5622e5c5a60881,da27c67f59ecdf79cc81195c2b5622e5c5a60881,[dist] Bump `broadway` and `director` versions
+pksunkara,2012-07-07 18:05:31,https://api.github.com/repos/flatiron/flatiron/git/commits/27b23d88abb5b7092a4949cb82d6c2d4f87cd594,27b23d88abb5b7092a4949cb82d6c2d4f87cd594,"[fix] fs.existsSync is added for 0.8 compatibility, Fixes #71"
+pksunkara,2012-06-22 11:44:52,https://api.github.com/repos/flatiron/flatiron/git/commits/2210e26760773819853e9ab4ec9bacd56dbe51ed,2210e26760773819853e9ab4ec9bacd56dbe51ed,[docs] Added more documentation on cli commands usage
+indexzero,2012-06-20 17:05:21,https://api.github.com/repos/flatiron/flatiron/git/commits/61628c9f943a634d203a68dde08547f48bdb760c,61628c9f943a634d203a68dde08547f48bdb760c,[dist] Version bump. 0.2.2
+pksunkara,2012-06-16 11:48:29,https://api.github.com/repos/flatiron/flatiron/git/commits/b946907ad5a6c5f315898259a04fb400fcc446d0,b946907ad5a6c5f315898259a04fb400fcc446d0,[dist] Update prompt to v0.2.1
+Marak,2012-06-13 11:44:57,https://api.github.com/repos/flatiron/flatiron/git/commits/b0b2f3073dbf27f59b3ffc3c87a5e29c2ab77a4c,b0b2f3073dbf27f59b3ffc3c87a5e29c2ab77a4c,"Merge pull request #69 from flatiron/ecstatic
+
+[api] Added ecstatic plugin to server static assets"
+pksunkara,2012-06-10 14:10:22,https://api.github.com/repos/flatiron/flatiron/git/commits/6d99e48d35a28c2b24cb35e550ea5e51208d417c,6d99e48d35a28c2b24cb35e550ea5e51208d417c,[api] Expose app.static which can be used to serve static files
+pksunkara,2012-06-10 12:09:36,https://api.github.com/repos/flatiron/flatiron/git/commits/3fcba8cb47e3c755c619dc0ead30c2ff1f5036e7,3fcba8cb47e3c755c619dc0ead30c2ff1f5036e7,[api] Added ecstatic plugin to server static assets
+pksunkara,2012-06-10 11:07:20,https://api.github.com/repos/flatiron/flatiron/git/commits/6a80cc7e927a654fc2419c92c6b067bd88502c08,6a80cc7e927a654fc2419c92c6b067bd88502c08,"Merge pull request #68 from egildo/master
+
+Flatiron.js HTTPS server"
+pksunkara,2012-06-09 19:55:37,https://api.github.com/repos/flatiron/flatiron/git/commits/d5e2cc990d21f9c28eb5867df39f5ca3d9129126,d5e2cc990d21f9c28eb5867df39f5ca3d9129126,"[minor] Ouput error message when scaffold does not exists, Fixes #55"
+pksunkara,2012-06-08 21:16:33,https://api.github.com/repos/flatiron/flatiron/git/commits/d608757cf0074bdb1cdb8bb03afcdf35f4ab1baf,d608757cf0074bdb1cdb8bb03afcdf35f4ab1baf,"[minor] Bump union version in http scaffold, Fixes #60"
+indexzero,2012-06-08 07:53:18,https://api.github.com/repos/flatiron/flatiron/git/commits/2e12ad0db5efe1d2e0096d7f50ef6609e2f395cb,2e12ad0db5efe1d2e0096d7f50ef6609e2f395cb,[dist] Version bump. 0.2.1
+indexzero,2012-06-08 07:52:50,https://api.github.com/repos/flatiron/flatiron/git/commits/fd93bee33938222ced392c96b2345d4624d2d796,fd93bee33938222ced392c96b2345d4624d2d796,[dist] Bump broadway version
+pksunkara,2012-06-08 06:16:59,https://api.github.com/repos/flatiron/flatiron/git/commits/b697ba73730ce6f841ff89febdc28b405d9137ea,b697ba73730ce6f841ff89febdc28b405d9137ea,"Merge pull request #59 from russfrank/cli-improvements
+
+Prompting for `package.json` fields."
+pksunkara,2012-05-18 15:34:44,https://api.github.com/repos/flatiron/flatiron/git/commits/9516ef92430a14fdc7a149c5a0b5e25cc6520852,9516ef92430a14fdc7a149c5a0b5e25cc6520852,Set cli.notFoundUsage to false to not show `Cannot find module ...`
+indexzero,2012-05-28 03:16:09,https://api.github.com/repos/flatiron/flatiron/git/commits/059a7f8c196cd0fbb17498bc02ce750c3295e205,059a7f8c196cd0fbb17498bc02ce750c3295e205,[dist] Version bump. 0.2.0
+Marak,2012-05-24 23:09:40,https://api.github.com/repos/flatiron/flatiron/git/commits/9eafa251076fc20f3ac2a3c45f4c2a11fa7421e3,9eafa251076fc20f3ac2a3c45f4c2a11fa7421e3,[dist] Remove node 0.4.x from travis test
+Marak,2012-05-24 23:04:49,https://api.github.com/repos/flatiron/flatiron/git/commits/f7195c61e7ca952372eb3dfa853dbe59efc110ef,f7195c61e7ca952372eb3dfa853dbe59efc110ef,"Merge pull request #62 from flatiron/feature-resource-plugin
+
+[plugins] Added resourceful plugin"
+indexzero,2012-05-23 17:55:04,https://api.github.com/repos/flatiron/flatiron/git/commits/3c1392eba75f0f6cb8dbfd3059abbda85654ac1a,3c1392eba75f0f6cb8dbfd3059abbda85654ac1a,[dist] Bump broadway version
+indexzero,2012-05-23 17:52:35,https://api.github.com/repos/flatiron/flatiron/git/commits/026ca2db87b4927d65a3ee0c52a1d0de5f6b207b,026ca2db87b4927d65a3ee0c52a1d0de5f6b207b,[fix] Set the `resourceful` config value in the app from provided options
+indexzero,2012-05-23 15:49:31,https://api.github.com/repos/flatiron/flatiron/git/commits/c77f82b1aeb7293b4f4a1cd948135252ddc70476,c77f82b1aeb7293b4f4a1cd948135252ddc70476,[test] Added tests for the resourceful plugin
+indexzero,2012-05-23 13:01:52,https://api.github.com/repos/flatiron/flatiron/git/commits/5b33080e457beba7f1ab48571afd7151ba3c5648,5b33080e457beba7f1ab48571afd7151ba3c5648,[fix api] Only expose `.define` on the app. Dont require overly deep options to `app.use(flatiron.plugins.resourceful)`
+indexzero,2012-05-23 12:48:17,https://api.github.com/repos/flatiron/flatiron/git/commits/2659dd4f4f103ebb466d9801de1646193b4ff1bd,2659dd4f4f103ebb466d9801de1646193b4ff1bd,[api] Added resourceful plugin based on feedback from #43.
+indexzero,2012-05-23 12:41:26,https://api.github.com/repos/flatiron/flatiron/git/commits/920306641cb157f91f9b67dc620373b9a0bbbfa8,920306641cb157f91f9b67dc620373b9a0bbbfa8,[refactor] Remove unused config loading code-paths. Added common.tryReaddirSync
+rf,2012-05-09 19:47:14,https://api.github.com/repos/flatiron/flatiron/git/commits/357c66e7be3612d41b24a622f9a1bba1a63ab85c,357c66e7be3612d41b24a622f9a1bba1a63ab85c,Prompting for `package.json` fields.
+indexzero,2012-05-11 02:43:08,https://api.github.com/repos/flatiron/flatiron/git/commits/8e8a73421a9476db586fd50882cd426a2fc405e8,8e8a73421a9476db586fd50882cd426a2fc405e8,"Merge pull request #56 from trodrigues/master
+
+Splitting create server logic from inside listen method"
+coderarity,2012-05-07 03:37:52,https://api.github.com/repos/flatiron/flatiron/git/commits/52f93fab8ddca897cee20bfe49986175e187491f,52f93fab8ddca897cee20bfe49986175e187491f,[dist] Fix maintainers field
+AvianFlu,2012-05-06 01:46:55,https://api.github.com/repos/flatiron/flatiron/git/commits/87da967fb940ab2e03791d7ab6f394e0b3f0b1a7,87da967fb940ab2e03791d7ab6f394e0b3f0b1a7,[dist] Bump broadway version; version bump v0.1.17
+AvianFlu,2012-05-06 01:21:57,https://api.github.com/repos/flatiron/flatiron/git/commits/b05967cd9ac45c934f3db24a3174e4f6303c4627,b05967cd9ac45c934f3db24a3174e4f6303c4627,[dist] Bump optimist dependency for boolean options fix.
+jfhbrook,2012-05-02 17:22:30,https://api.github.com/repos/flatiron/flatiron/git/commits/d32e0350dad6b6e453092cedf898edbcd2c938f0,d32e0350dad6b6e453092cedf898edbcd2c938f0,[fix] options.agrv -> options.argv
+trodrigues,2012-04-26 15:46:39,https://api.github.com/repos/flatiron/flatiron/git/commits/04b4ee1af2f30169a65d90d2ba062bf114338505,04b4ee1af2f30169a65d90d2ba062bf114338505,Removing unnecessary parameters on createServer method.
+trodrigues,2012-04-26 15:42:49,https://api.github.com/repos/flatiron/flatiron/git/commits/fd01c7d383c51d3e33b502df7f4ac4a73f6a8e21,fd01c7d383c51d3e33b502df7f4ac4a73f6a8e21,Split createServer logic from inside listen.
+pksunkara,2012-04-25 06:19:43,https://api.github.com/repos/flatiron/flatiron/git/commits/11d2c60f9cbee06f3b6ae23dd51cf5a9fc7dcee3,11d2c60f9cbee06f3b6ae23dd51cf5a9fc7dcee3,"[minor] Update director to 0.1.10  and remove parseBody
+
+This reverts commit 3b3bfb89e71c5c0b240f3d096ee596f952b7d15f."
+pksunkara,2012-04-14 19:26:05,https://api.github.com/repos/flatiron/flatiron/git/commits/c69c29fe439d4428a4a22a705bcf6e67beafc4bc,c69c29fe439d4428a4a22a705bcf6e67beafc4bc,[minor] Fix whitespaces
+pksunkara,2012-04-04 17:06:54,https://api.github.com/repos/flatiron/flatiron/git/commits/85d274dccce0fd81bbcd4ff1234f299ed8167f2b,85d274dccce0fd81bbcd4ff1234f299ed8167f2b,[api] Implemented cli/create.js using new normalizing method
+pksunkara,2012-04-04 02:00:24,https://api.github.com/repos/flatiron/flatiron/git/commits/ba197a9f78f1a5d815f00dc30285fa02b1c24032,ba197a9f78f1a5d815f00dc30285fa02b1c24032,[fix] Define 'http' namespace on app before mixing it with options
+twilson63,2012-04-03 02:51:33,https://api.github.com/repos/flatiron/flatiron/git/commits/3b3bfb89e71c5c0b240f3d096ee596f952b7d15f,3b3bfb89e71c5c0b240f3d096ee596f952b7d15f,[minor] Set director not to parseBody in http plugin. Only union does it
+pksunkara,2012-04-01 14:34:12,https://api.github.com/repos/flatiron/flatiron/git/commits/29e29377ef842abb458d8262b02024f3474c89b2,29e29377ef842abb458d8262b02024f3474c89b2,"[minor] Made the options of cli plugin work the same way as http plugin
+
+Before this commit, there was no way for a flatiron plugin to set
+the argv or prompt of a cli plugins. Now with the commit, we define
+app.cli so that other plugins can set app.cli.argv and app.cli.prompt."
+pksunkara,2012-04-01 14:13:47,https://api.github.com/repos/flatiron/flatiron/git/commits/80c2611104ecf7f6fff4af52d48952ab987cf845,80c2611104ecf7f6fff4af52d48952ab987cf845,"[minor] Start using app.http mixed with options in http plugin
+
+In http plugin, before this commit, if app.http is defined before
+the attach is called, then the options passed to attach are
+ignored. This commit fixes it by mixing them both by giving
+preference to passed options"
+pksunkara,2012-03-29 05:12:52,https://api.github.com/repos/flatiron/flatiron/git/commits/380a0d14217deb4162bd25babfeccf132975bc8e,380a0d14217deb4162bd25babfeccf132975bc8e,[fix] Fix whitespace errors
+pksunkara,2012-03-28 13:03:34,https://api.github.com/repos/flatiron/flatiron/git/commits/93c986eb0cc4c5e73ed76708d3849e3e9a50e1cd,93c986eb0cc4c5e73ed76708d3849e3e9a50e1cd,[minor] Added scaffold for config/config.json
+pksunkara,2012-03-28 13:01:28,https://api.github.com/repos/flatiron/flatiron/git/commits/edc7744d40a641a297fb1ff7a4ca35d3f0688817,edc7744d40a641a297fb1ff7a4ca35d3f0688817,[minor] Create command can now handle files
+pksunkara,2012-03-28 18:24:07,https://api.github.com/repos/flatiron/flatiron/git/commits/3f67f33d8b85338216a94c71c56029f456e3536e,3f67f33d8b85338216a94c71c56029f456e3536e,[fix] Fix version command in flatiron
+dscape,2012-03-27 15:51:11,https://api.github.com/repos/flatiron/flatiron/git/commits/ab22e82fd50f34d82105678e618ce170a9cc59a8,ab22e82fd50f34d82105678e618ce170a9cc59a8,[minor travis] only test master
+jfhbrook,2012-03-23 20:17:20,https://api.github.com/repos/flatiron/flatiron/git/commits/d946c584dddd38d1ffb109fabbf860789d59eca6,d946c584dddd38d1ffb109fabbf860789d59eca6,"[doc] Expanded documentation on app.config, documentation on app.log"
+Marak,2012-03-22 05:00:06,https://api.github.com/repos/flatiron/flatiron/git/commits/ca89768c213fd17054dbbdc96b81af2463cf0771,ca89768c213fd17054dbbdc96b81af2463cf0771,[dist] Bump to v0.1.16
+Marak,2012-03-22 04:22:09,https://api.github.com/repos/flatiron/flatiron/git/commits/b655bac5ceac4ad9f1397f28b1a7aded7780ef12,b655bac5ceac4ad9f1397f28b1a7aded7780ef12,[api] Improved argument handling for executeCommand. Exposed executeCommand as cli.executeCommand.
+AvianFlu,2012-03-21 00:29:39,https://api.github.com/repos/flatiron/flatiron/git/commits/5887adf13b761b30ad291b7f8bc41f920497eec3,5887adf13b761b30ad291b7f8bc41f920497eec3,[dist] Version bump v0.1.15
+nhunzaker,2012-02-13 13:28:37,https://api.github.com/repos/flatiron/flatiron/git/commits/cce40ab6222444303812d8d7f30c19c9209e3abb,cce40ab6222444303812d8d7f30c19c9209e3abb,Minor Updates
+nhunzaker,2012-02-10 01:05:29,https://api.github.com/repos/flatiron/flatiron/git/commits/d535d914c8b97556a2a5b3c4789c79623db2c195,d535d914c8b97556a2a5b3c4789c79623db2c195,Adds socket.io example
+pksunkara,2012-02-12 19:03:23,https://api.github.com/repos/flatiron/flatiron/git/commits/ca7b7b1d983dd1e819262947dd31e786abc9c26a,ca7b7b1d983dd1e819262947dd31e786abc9c26a,[fix] Remove whitespace errors
+jfhbrook,2012-03-07 03:50:52,https://api.github.com/repos/flatiron/flatiron/git/commits/d3db95f62ca57d1db2437a4d1dbd1252c46c2d12,d3db95f62ca57d1db2437a4d1dbd1252c46c2d12,[minor] do not attempt to syntax hilight text output.
+jfhbrook,2012-03-06 22:51:47,https://api.github.com/repos/flatiron/flatiron/git/commits/d8ccd034d2105e0d6dec2e684f1604b7acd1285f,d8ccd034d2105e0d6dec2e684f1604b7acd1285f,"[doc] Fix headers for consistency, add an article"
+jfhbrook,2012-03-06 22:29:38,https://api.github.com/repos/flatiron/flatiron/git/commits/e550f79bbf4a1e7b082674aa6760aed558eca74b,e550f79bbf4a1e7b082674aa6760aed558eca74b,[minor fix] ClI -> CLI
+jfhbrook,2012-03-06 22:28:31,https://api.github.com/repos/flatiron/flatiron/git/commits/a47842dc06991339be8b479e2c8c77123b0df991,a47842dc06991339be8b479e2c8c77123b0df991,[doc fix] Re-document app.http
+jfhbrook,2012-03-06 22:26:48,https://api.github.com/repos/flatiron/flatiron/git/commits/a21ebf507541b6e2c6a13b2cd9c3bfe2843057cd,a21ebf507541b6e2c6a13b2cd9c3bfe2843057cd,[minor doc] Change header to match style of others
+jfhbrook,2012-03-06 22:20:18,https://api.github.com/repos/flatiron/flatiron/git/commits/102e0739c8b905a3c8a9bab3d56e31b965e7d81c,102e0739c8b905a3c8a9bab3d56e31b965e7d81c,[doc] Fleshed out CLI plugin docs
+jfhbrook,2012-02-29 00:55:29,https://api.github.com/repos/flatiron/flatiron/git/commits/b71f3df14a017952286b4fb48252ee8e9110651d,b71f3df14a017952286b4fb48252ee8e9110651d,[doc] Describe the app container and the http plugin.
+Raynos,2012-03-05 15:57:43,https://api.github.com/repos/flatiron/flatiron/git/commits/fc6a3c2f7767005212f95c72049b88225957f6f7,fc6a3c2f7767005212f95c72049b88225957f6f7,Document the types
+jfhbrook,2012-03-03 01:01:53,https://api.github.com/repos/flatiron/flatiron/git/commits/ca0923b3ff4dc7bb0d8fb9d2988061a63c6de3fe,ca0923b3ff4dc7bb0d8fb9d2988061a63c6de3fe,[dist] v0.1.14
+mmalecki,2012-03-02 22:11:44,https://api.github.com/repos/flatiron/flatiron/git/commits/605edd772500b412703d3b47c1c442e8b18d272f,605edd772500b412703d3b47c1c442e8b18d272f,[dist] Upgrade `broadway` to `0.1.13`
+pksunkara,2012-02-26 07:36:14,https://api.github.com/repos/flatiron/flatiron/git/commits/61e6f0abed94f73424e52db98e6a27f2691dea7f,61e6f0abed94f73424e52db98e6a27f2691dea7f,[fix] Try to load non-existing subcommand even if command exists
+mmalecki,2012-02-25 12:17:02,https://api.github.com/repos/flatiron/flatiron/git/commits/857e7325bb6d6aed700b54cd8b6f4d2e59dcdac0,857e7325bb6d6aed700b54cd8b6f4d2e59dcdac0,[dist] Update `vows`
+indexzero,2012-02-23 02:15:22,https://api.github.com/repos/flatiron/flatiron/git/commits/16ff7cd6d74e9e0f6edd46d049a8a224697586f7,16ff7cd6d74e9e0f6edd46d049a8a224697586f7,[dist] Version bump. 0.1.13
+indexzero,2012-02-23 02:13:40,https://api.github.com/repos/flatiron/flatiron/git/commits/7dbd6fcfadc72e00d4e35fc271cf0295f5049781,7dbd6fcfadc72e00d4e35fc271cf0295f5049781,[dist] Bump broadway version
+indexzero,2012-02-23 02:13:29,https://api.github.com/repos/flatiron/flatiron/git/commits/44356ee04efd7ae4d109129db724b9a01684faaf,44356ee04efd7ae4d109129db724b9a01684faaf,[fix] Remove bad references to `callback`
+indexzero,2012-02-23 02:10:02,https://api.github.com/repos/flatiron/flatiron/git/commits/60a1977b62b8a3eef88ea056b6a308866622c19f,60a1977b62b8a3eef88ea056b6a308866622c19f,[minor dist refactor] Use `broadway.common` instead of `utile`. Remove unnecessary `utile` dependency
+indexzero,2012-02-23 02:00:51,https://api.github.com/repos/flatiron/flatiron/git/commits/3818f142984fbc27a50e9f08be324e11caf047e4,3818f142984fbc27a50e9f08be324e11caf047e4,[fix] Handle deep aliases better
+jfhbrook,2012-02-23 01:47:09,https://api.github.com/repos/flatiron/flatiron/git/commits/b3ae06743cdefa91e745fd6c77768c7037a21fab,b3ae06743cdefa91e745fd6c77768c7037a21fab,[fix] Hit the callback after showing usage (if appropriate)
+indexzero,2012-02-16 20:37:39,https://api.github.com/repos/flatiron/flatiron/git/commits/bb94deed00a561882d444238477131a213596df9,bb94deed00a561882d444238477131a213596df9,[dist] Version bump. 0.1.12-1
+indexzero,2012-02-16 20:37:21,https://api.github.com/repos/flatiron/flatiron/git/commits/f16437f67981f2ef62af3b6260f0b05dc8fd5782,f16437f67981f2ef62af3b6260f0b05dc8fd5782,[fix] Fix command loading with resource and command parameters
+indexzero,2012-02-16 09:24:42,https://api.github.com/repos/flatiron/flatiron/git/commits/ccc4db2bbfbd5ccb1d217482f2b486e64d06f543,ccc4db2bbfbd5ccb1d217482f2b486e64d06f543,[dist] Version bump. 0.1.12
+indexzero,2012-02-16 08:35:41,https://api.github.com/repos/flatiron/flatiron/git/commits/a7c2bebab078fa2a92757f0926c22d5b6ef0b999,a7c2bebab078fa2a92757f0926c22d5b6ef0b999,[fix] Update bad variable reference
+indexzero,2012-02-16 08:25:19,https://api.github.com/repos/flatiron/flatiron/git/commits/79fe9b78e0cfe0f1089d007bb6700899eccc1234,79fe9b78e0cfe0f1089d007bb6700899eccc1234,[fix] Improve lazy loading of commands to lazy load if either the resource or command are missing
+indexzero,2012-02-16 07:47:50,https://api.github.com/repos/flatiron/flatiron/git/commits/345f51b07cd191db5589f38111fab94a859d3974,345f51b07cd191db5589f38111fab94a859d3974,[api] Prompt when `command.destructive` is true
+indexzero,2012-02-13 07:00:04,https://api.github.com/repos/flatiron/flatiron/git/commits/c2d645a7a79e520ff9cf8ada39a67a1553449fc9,c2d645a7a79e520ff9cf8ada39a67a1553449fc9,[api bin] Allow for more liberal usage of `app.alias`. Alias `flatiron create` to `flatiron new`. Fixes #24.
+indexzero,2012-02-13 04:07:17,https://api.github.com/repos/flatiron/flatiron/git/commits/d435aef7d509268462c7066f6e6afb5019c91fbb,d435aef7d509268462c7066f6e6afb5019c91fbb,[api] Expose `flatiron.common.templateUsage`
+indexzero,2012-02-13 04:01:38,https://api.github.com/repos/flatiron/flatiron/git/commits/d2746874b1fa883f13340d9ab200fce39aaa7f02,d2746874b1fa883f13340d9ab200fce39aaa7f02,[dist] Remove unused `lib/flatiron/common.js`.
+indexzero,2012-02-10 05:27:29,https://api.github.com/repos/flatiron/flatiron/git/commits/2280147dc32c4e113692916f463d743b261fbb2f,2280147dc32c4e113692916f463d743b261fbb2f,[dist fix] Update api-easy version in http scaffold. Fixes #23
+indexzero,2012-02-09 02:08:18,https://api.github.com/repos/flatiron/flatiron/git/commits/a931736a20f21085b0e7bc475196877441ec7a1b,a931736a20f21085b0e7bc475196877441ec7a1b,[dist] Roll dependencies and bump version. 0.1.11
+indexzero,2012-02-09 00:31:08,https://api.github.com/repos/flatiron/flatiron/git/commits/a06bd7029c6478aa5c7051e420b44fec55d2d031,a06bd7029c6478aa5c7051e420b44fec55d2d031,[dist] Roll dependency versions and bump `flatiron` version. 0.1.10.
+indexzero,2012-02-09 00:18:18,https://api.github.com/repos/flatiron/flatiron/git/commits/4bbcbc317c2561217a46b17c500cdc46860f1403,4bbcbc317c2561217a46b17c500cdc46860f1403,[doc] Update file headers
+indexzero,2012-02-09 00:16:07,https://api.github.com/repos/flatiron/flatiron/git/commits/f5fe497d41ab440a1bc98eeaaaf37100ad8e9b70,f5fe497d41ab440a1bc98eeaaaf37100ad8e9b70,[doc] Update method documentation
+mikl,2012-01-20 02:03:24,https://api.github.com/repos/flatiron/flatiron/git/commits/2fa2225890acea8b55f52396bf7abdf71e336a92,2fa2225890acea8b55f52396bf7abdf71e336a92,"Pass the app object to commands as context.
+
+This makes it possible for commands residing in their own file to access app.argv amongst other things."
+indexzero,2012-02-09 00:06:11,https://api.github.com/repos/flatiron/flatiron/git/commits/34b47254b69bf5010b208bf86c837ee9eb0e8711,34b47254b69bf5010b208bf86c837ee9eb0e8711,[minor] Update scaffolds to setup app config
+indexzero,2012-02-09 00:02:17,https://api.github.com/repos/flatiron/flatiron/git/commits/db6619f6f89ceb2084f9720b22c813db89cc2773,db6619f6f89ceb2084f9720b22c813db89cc2773,[api] Change `flatiron create` syntax to `flatiron create <app-name> <type>`
+indexzero,2012-02-08 23:51:00,https://api.github.com/repos/flatiron/flatiron/git/commits/2343cf12dc50feb1cc3d4459c6493a4d36f15463,2343cf12dc50feb1cc3d4459c6493a4d36f15463,[fix] Update bad variable reference
+indexzero,2012-02-08 23:48:56,https://api.github.com/repos/flatiron/flatiron/git/commits/d85a9daa69cee3b4eaab39ec3bf561d96930b3a3,d85a9daa69cee3b4eaab39ec3bf561d96930b3a3,[dist api refactor] Improve `flatiron create` command to support both HTTP and CLI apps. Fixes #15
+mmalecki,2012-02-08 22:48:02,https://api.github.com/repos/flatiron/flatiron/git/commits/a9eb28c392342f5ac736b2a4ec6a3130696a0104,a9eb28c392342f5ac736b2a4ec6a3130696a0104,"Merge pull request #20 from flatiron/cli-help
+
+Added `help` commands to flatiron.plugins.cli (and some small bugfixes)"
+indexzero,2012-02-08 08:04:14,https://api.github.com/repos/flatiron/flatiron/git/commits/754d71ed529b6c6986c9c67c79f11f2db5364867,754d71ed529b6c6986c9c67c79f11f2db5364867,[api] Automatically use `flatiron.plugins.inspect` in `flatiron.plugins.cli`
+indexzero,2012-02-08 07:38:19,https://api.github.com/repos/flatiron/flatiron/git/commits/e693a1b8f00ee2a77f8f0c77f94e7329498b59c6,e693a1b8f00ee2a77f8f0c77f94e7329498b59c6,[dist] Update Author to Nodejitsu Inc.
+indexzero,2012-02-08 07:36:50,https://api.github.com/repos/flatiron/flatiron/git/commits/8edbb365c5f283991be408e3726bd16517d49e11,8edbb365c5f283991be408e3726bd16517d49e11,[doc] Update README.md
+indexzero,2012-02-08 06:50:42,https://api.github.com/repos/flatiron/flatiron/git/commits/6da2b6949ab280d8664dd3ccc9e710e6720c8cea,6da2b6949ab280d8664dd3ccc9e710e6720c8cea,[fix] Update commands implementation to return properties of `app.commands` even if `app.source` is not set
+indexzero,2012-02-08 03:37:07,https://api.github.com/repos/flatiron/flatiron/git/commits/43588c37a28018fabef2ae68a54d6a7b2b07aeb8,43588c37a28018fabef2ae68a54d6a7b2b07aeb8,[dist] Remove unused `LazyScaffold`
+indexzero,2012-02-08 03:28:18,https://api.github.com/repos/flatiron/flatiron/git/commits/642b38833e667010d8ca07cd630e63b064e13cc8,642b38833e667010d8ca07cd630e63b064e13cc8,"[api] Expose `app.showOptions`, `app.showHelp` and default `help .*` commands in `flatiron.plugins.cli`"
+pksunkara,2012-01-22 16:32:13,https://api.github.com/repos/flatiron/flatiron/git/commits/bdc4d992a4b88a15ff32517f99e02694bf8d2cdd,bdc4d992a4b88a15ff32517f99e02694bf8d2cdd,"Merge pull request #18 from CodeRarity/master
+
+flatiron.plugins.http: Don't `res.emit('next')` if `app.http.onError` is defined"
+indexzero,2012-01-21 00:28:08,https://api.github.com/repos/flatiron/flatiron/git/commits/0cb4b8af5df615f73648397b4830e121a5b79916,0cb4b8af5df615f73648397b4830e121a5b79916,[dist] Version bump. 0.1.9
+mmalecki,2012-01-19 20:40:50,https://api.github.com/repos/flatiron/flatiron/git/commits/40dec62dda36e068f1a0b94b58f3ce4c369ae098,40dec62dda36e068f1a0b94b58f3ce4c369ae098,[minor fix] Fix global leak in app template
+mmalecki,2012-01-19 20:40:08,https://api.github.com/repos/flatiron/flatiron/git/commits/2ed0f0e665858b10c0fbc2463130a6ed164c015f,2ed0f0e665858b10c0fbc2463130a6ed164c015f,[minor] Bump up `vows` version in app template
+mmalecki,2012-01-19 20:23:19,https://api.github.com/repos/flatiron/flatiron/git/commits/f332d225051e77db1290ee37d00a0c02b6f033b8,f332d225051e77db1290ee37d00a0c02b6f033b8,"[fix] Fix CLI plugin behavior
+
+`require.resolve` isn't needed here. It's relative to current file
+(`lib/flatiron/plugins/cli.js`)."
+indexzero,2012-01-18 04:29:01,https://api.github.com/repos/flatiron/flatiron/git/commits/458b9befeb9da9eb0d010912a9532dcc7466dc93,458b9befeb9da9eb0d010912a9532dcc7466dc93,[dist] Version bump. 0.1.8
+indexzero,2012-01-18 04:28:28,https://api.github.com/repos/flatiron/flatiron/git/commits/78a07cf293b050bf517937cce0d03c962e6b5752,78a07cf293b050bf517937cce0d03c962e6b5752,[api] Alias `options.dir` to `options.source` for flatiron.plugins.cli. Allow `options.source` to be a file.
+indexzero,2012-01-18 04:26:05,https://api.github.com/repos/flatiron/flatiron/git/commits/7ca536370d2d4cb2f0169e5b3c5262e739c4122e,7ca536370d2d4cb2f0169e5b3c5262e739c4122e,[api] Hoist `broadway.formats` from `broadway.formats`
+indexzero,2012-01-17 18:45:29,https://api.github.com/repos/flatiron/flatiron/git/commits/3925a950aba124dd526c3592b3f01fcaec5c34c8,3925a950aba124dd526c3592b3f01fcaec5c34c8,[dist] Version bump. 0.1.7-1
+indexzero,2012-01-17 18:45:13,https://api.github.com/repos/flatiron/flatiron/git/commits/a72d940bdd99e454886e0c666bb262b9c76a0ea5,a72d940bdd99e454886e0c666bb262b9c76a0ea5,[fix] Only check indexOf name in error on lazy-loaded commands if name exists
+mmalecki,2012-01-17 18:26:38,https://api.github.com/repos/flatiron/flatiron/git/commits/3f28a9f20c3d7f0c0b6a969d24f10842577bf7af,3f28a9f20c3d7f0c0b6a969d24f10842577bf7af,[test] Test on `node@0.7`
+mmalecki,2012-01-15 19:15:08,https://api.github.com/repos/flatiron/flatiron/git/commits/e9a630ea3d4b4f8d0eee376c0b8ee50320b55488,e9a630ea3d4b4f8d0eee376c0b8ee50320b55488,[doc] Add Travis build status image
+mmalecki,2012-01-15 19:14:15,https://api.github.com/repos/flatiron/flatiron/git/commits/6c53b3ec96a204f0ee5ccdc2d0f39699b30f06e7,6c53b3ec96a204f0ee5ccdc2d0f39699b30f06e7,[test] Add `.travis.yml` for testing on Travis CI
+indexzero,2012-01-15 09:09:11,https://api.github.com/repos/flatiron/flatiron/git/commits/4cdd1567d84118b5eaabf0dbb5884c0cec87b866,4cdd1567d84118b5eaabf0dbb5884c0cec87b866,[dist] Version bump for dependency bump. 0.1.7
+indexzero,2012-01-15 09:08:50,https://api.github.com/repos/flatiron/flatiron/git/commits/3cad61701e780f888c98c251826a7793d8076598,3cad61701e780f888c98c251826a7793d8076598,[dist] Bump `broadway` and `optimist`
+indexzero,2012-01-15 09:02:44,https://api.github.com/repos/flatiron/flatiron/git/commits/9e9e014626a94612df0d84ceb3d362503085c1a6,9e9e014626a94612df0d84ceb3d362503085c1a6,[api bin] Expose `flatiron version` in CLI
+indexzero,2012-01-15 09:02:25,https://api.github.com/repos/flatiron/flatiron/git/commits/dd5dc8c901c8d6e37986a63a44295713e90ded73,dd5dc8c901c8d6e37986a63a44295713e90ded73,[api] Use argv and env stores in app.config by default in CLI plugin. Expose `app.help()` from optimist
+mmalecki,2011-12-27 03:11:30,https://api.github.com/repos/flatiron/flatiron/git/commits/ec77acbf802196f97afa8c4654c814eb5562cdd8,ec77acbf802196f97afa8c4654c814eb5562cdd8,[test dist] Add `scripts:test` to `package.json`
+mmalecki,2011-12-27 03:08:39,https://api.github.com/repos/flatiron/flatiron/git/commits/f22d78c29db44250496870a971343657ab4ea180,f22d78c29db44250496870a971343657ab4ea180,[refactor dist] Use `utile` to `require` plugins
+mmalecki,2011-12-27 03:07:27,https://api.github.com/repos/flatiron/flatiron/git/commits/ee9e6a67323fea0733c32e6ab120df88105c65d2,ee9e6a67323fea0733c32e6ab120df88105c65d2,"[test dist] Test if all plugins are there, depend on `vows`"
+pksunkara,2011-12-24 18:16:01,https://api.github.com/repos/flatiron/flatiron/git/commits/b47ac0566e5261e1b9ed6af9d8745eebef870529,b47ac0566e5261e1b9ed6af9d8745eebef870529,"Merge pull request #13 from mikl/patch-1
+
+Check that error message includes the filename we required()."
+mikl,2011-12-24 16:59:15,https://api.github.com/repos/flatiron/flatiron/git/commits/c8d5d5766726f903f0409061a19db5aa632171de,c8d5d5766726f903f0409061a19db5aa632171de,"Check that error message includes the filename we required().
+
+This to avoid squelching require() errors in the code we loaded."
+mmalecki,2011-12-24 01:13:35,https://api.github.com/repos/flatiron/flatiron/git/commits/a72758cd836169b548406666a0ca90b4e7e0c4f5,a72758cd836169b548406666a0ca90b4e7e0c4f5,[doc] Use `version` CLI option in `cli-sample`
+mmalecki,2011-12-24 01:08:23,https://api.github.com/repos/flatiron/flatiron/git/commits/a9822989ebb350dcf36006ec45c2b63c7cb62dea,a9822989ebb350dcf36006ec45c2b63c7cb62dea,"[api] Add version printing to `flatiron.plugins.cli`
+
+When `app.version` is specified, CLI plugin is attached with
+`version: true` and `-v` or `--version` was passed to the app, print out
+`app.version` and exit.
+
+Fixes #12."
+indexzero,2011-12-23 03:37:53,https://api.github.com/repos/flatiron/flatiron/git/commits/3e8608016810f2d681c81a1c7856b7292034ccae,3e8608016810f2d681c81a1c7856b7292034ccae,[dist] Version 0.1.6
+mmalecki,2011-12-12 16:25:33,https://api.github.com/repos/flatiron/flatiron/git/commits/04e3134cf607f16852ec88ede70e25acedca40df,04e3134cf607f16852ec88ede70e25acedca40df,[fix minor doc] Fix `flatiron` `require` in the http example
+mmalecki,2011-12-12 15:48:20,https://api.github.com/repos/flatiron/flatiron/git/commits/d34cdb28309b95f87700edcef62f8cff07cac345,d34cdb28309b95f87700edcef62f8cff07cac345,[doc] Add basic http sample
+indexzero,2011-12-09 11:12:42,https://api.github.com/repos/flatiron/flatiron/git/commits/f838939a94b6ad023d385d1ea3cdb56e21338e66,f838939a94b6ad023d385d1ea3cdb56e21338e66,[dist] Version bump. 0.1.5-1
+indexzero,2011-12-09 10:54:29,https://api.github.com/repos/flatiron/flatiron/git/commits/77bf0f7ff60fe4d4a79311825c428bc046468b40,77bf0f7ff60fe4d4a79311825c428bc046468b40,[minor api] Pass default `x-powered-by` header to union@0.1.6 in flatiron.plugins.http
+indexzero,2011-12-09 08:08:10,https://api.github.com/repos/flatiron/flatiron/git/commits/d414a42ae37b98fb77ddbd1930f969113ef8c87f,d414a42ae37b98fb77ddbd1930f969113ef8c87f,[dist] Version bump. 0.1.5
+indexzero,2011-12-09 08:07:53,https://api.github.com/repos/flatiron/flatiron/git/commits/082dd9e1491dfd3760009ece5e90e6c4896b2e08,082dd9e1491dfd3760009ece5e90e6c4896b2e08,[api] Improve `flatiron create <app-name>` to give more feedback and take the proper arguments
+indexzero,2011-12-09 08:07:16,https://api.github.com/repos/flatiron/flatiron/git/commits/e6e6508b7df296045eb706c44698feef0721a1e7,e6e6508b7df296045eb706c44698feef0721a1e7,[api fix] Properly pass options to `optimist` for app.argv. Break apart `loadCommand` into two separate operations for proper aliasing in `app.alias`
+jfhbrook,2011-12-09 01:06:32,https://api.github.com/repos/flatiron/flatiron/git/commits/447738c0d39d2ee1f6c8f9d317bc833efa553aaf,447738c0d39d2ee1f6c8f9d317bc833efa553aaf,[fix] Bugfixes to cli plugin that make it work with the included flatiron app (and others)
+indexzero,2011-12-06 09:50:07,https://api.github.com/repos/flatiron/flatiron/git/commits/2864842f5677f6e38036ec0d5c2a7ed9fcddc169,2864842f5677f6e38036ec0d5c2a7ed9fcddc169,[dist] Version bump. 0.1.4
+indexzero,2011-12-06 09:44:34,https://api.github.com/repos/flatiron/flatiron/git/commits/2a03a67aa9e42abb9fc161be7db27be57847dcab,2a03a67aa9e42abb9fc161be7db27be57847dcab,[api] Expose app.http.onError to the router associated with http apps
+indexzero,2011-12-04 08:41:30,https://api.github.com/repos/flatiron/flatiron/git/commits/a75a0b7dce2fa5db941d593f21dfc7942c8ac75c,a75a0b7dce2fa5db941d593f21dfc7942c8ac75c,[api] Expose `app.alias` in cli plugin
+indexzero,2011-12-04 07:58:15,https://api.github.com/repos/flatiron/flatiron/git/commits/081d09762db04cf2c844a3369c817f0fc04d7ed0,081d09762db04cf2c844a3369c817f0fc04d7ed0,[api] Initialize CLI app on `.start()`
+indexzero,2011-12-02 21:23:00,https://api.github.com/repos/flatiron/flatiron/git/commits/a61b3dd0d5a8c059b269629e977990a55c310a2a,a61b3dd0d5a8c059b269629e977990a55c310a2a,[api] Use `app.argv._` instead of `process.argv.slice(2)`
+indexzero,2011-12-02 15:49:41,https://api.github.com/repos/flatiron/flatiron/git/commits/35aff3a362ce274f3981c427a3e0318236785d7b,35aff3a362ce274f3981c427a3e0318236785d7b,[api minor] A couple of minor updates to the core http + cli plugin(s)
+indexzero,2011-12-02 09:49:38,https://api.github.com/repos/flatiron/flatiron/git/commits/e270f0de78e88778be52e52e25a97342de7d6d90,e270f0de78e88778be52e52e25a97342de7d6d90,[dist] Version bump. 0.1.3
+indexzero,2011-12-02 09:49:28,https://api.github.com/repos/flatiron/flatiron/git/commits/357b2be752fcb1a9b698ef85586ce0327228c82d,357b2be752fcb1a9b698ef85586ce0327228c82d,[dist] Lock-in to latest versions of all dependencies
+indexzero,2011-12-02 09:13:07,https://api.github.com/repos/flatiron/flatiron/git/commits/9df676299c4bba67db579c0baccd04e59c762a47,9df676299c4bba67db579c0baccd04e59c762a47,[minor] Pass-thru `flatiron.App.init` to `broadway.App.int` correctly
+indexzero,2011-11-30 00:02:51,https://api.github.com/repos/flatiron/flatiron/git/commits/90a49eb7da7c53353363aa0bcfbf54d4e6e6ebe6,90a49eb7da7c53353363aa0bcfbf54d4e6e6ebe6,[fix] `.mixin` on top of `broadway.common` to ensure getters are copied
+jfhbrook,2011-11-22 21:44:25,https://api.github.com/repos/flatiron/flatiron/git/commits/c176020427fdde39b03e1dabcc39b488a51cef58,c176020427fdde39b03e1dabcc39b488a51cef58,[fix] Use JSON.parse to read the right package.json for flatiron version info
+tricknotes,2011-11-18 17:15:48,https://api.github.com/repos/flatiron/flatiron/git/commits/8df81c1a7c64792503ea3ce053a30e12d2ee166e,8df81c1a7c64792503ea3ce053a30e12d2ee166e,[fix] path to commands directory
+jfhbrook,2011-11-22 21:09:59,https://api.github.com/repos/flatiron/flatiron/git/commits/b208ec1de3b2e51e935769b152758d3a4d96e2bd,b208ec1de3b2e51e935769b152758d3a4d96e2bd,[fix] App.prototype.init no longer expects options in any form and delegates directly to broadway.App.prototype.init
+indexzero,2011-11-22 01:04:31,https://api.github.com/repos/flatiron/flatiron/git/commits/047d87a79244014a872644ad9c5638d6cc9ee07c,047d87a79244014a872644ad9c5638d6cc9ee07c,[api] Allow for additional options to mixin on calls to App.init()
+indexzero,2011-11-20 19:54:08,https://api.github.com/repos/flatiron/flatiron/git/commits/58f5da627d16f99788e65a17989f6d552a478a6a,58f5da627d16f99788e65a17989f6d552a478a6a,[dist] Version bump. 0.1.2
+indexzero,2011-11-19 08:50:28,https://api.github.com/repos/flatiron/flatiron/git/commits/04756388c3e1c41b5c30735b00655b5ebb215300,04756388c3e1c41b5c30735b00655b5ebb215300,[minor] Update App.init() to be consistent with broadway
+mmalecki,2011-11-18 20:16:43,https://api.github.com/repos/flatiron/flatiron/git/commits/fa6ff6029051b97c9a47ce937b7a8a6cd15024a8,fa6ff6029051b97c9a47ce937b7a8a6cd15024a8,"[fix] Print out usage when no `options.dir` is set
+
+Fixes #9."
+indexzero,2011-11-18 09:34:48,https://api.github.com/repos/flatiron/flatiron/git/commits/d755c059f3d3ac99cf9e5f26783ed319484dc278,d755c059f3d3ac99cf9e5f26783ed319484dc278,[dist] Update `sugarskull` references to `director`
+indexzero,2011-11-18 09:34:11,https://api.github.com/repos/flatiron/flatiron/git/commits/ae8628ecac6dd3bebd2a6e7d614b63b284dbff6c,ae8628ecac6dd3bebd2a6e7d614b63b284dbff6c,[bin dist] Remove unnecessary mkdirp dependency in-favor of `broadway.common.*`
+mmalecki,2011-11-17 21:05:05,https://api.github.com/repos/flatiron/flatiron/git/commits/3715f441eacb6577e80471224cb1d591688d3da7,3715f441eacb6577e80471224cb1d591688d3da7,"Merge pull request #7 from ecto/master
+
+Hanging sugarskull reference"
+ecto,2011-11-17 20:58:44,https://api.github.com/repos/flatiron/flatiron/git/commits/1ef72bbaec6942913b09e371cf958f54ed516544,1ef72bbaec6942913b09e371cf958f54ed516544,[doc] Replace sugarskull reference with director
+mmalecki,2011-11-15 20:31:07,https://api.github.com/repos/flatiron/flatiron/git/commits/13ffccc9718069f72a063fc3310622bbcaa14a6f,13ffccc9718069f72a063fc3310622bbcaa14a6f,[example] Make `cli-sample.print` work
+bmeck,2011-11-12 20:37:43,https://api.github.com/repos/flatiron/flatiron/git/commits/1adea9456c94740782b4b57330efe5be061c4e8b,1adea9456c94740782b4b57330efe5be061c4e8b,[dist] version bump to 0.1.1
+bmeck,2011-11-11 15:58:41,https://api.github.com/repos/flatiron/flatiron/git/commits/0433aa76dab36a888b1b56256ede9cc04e97c348,0433aa76dab36a888b1b56256ede9cc04e97c348,"Merge pull request #3 from flatiron/gh-2
+
+[fix] cli plugin throws errors for broken command modules"
+mmalecki,2011-11-11 14:15:40,https://api.github.com/repos/flatiron/flatiron/git/commits/4165ae62eb25afc95cf97ec8a161b98d4c043212,4165ae62eb25afc95cf97ec8a161b98d4c043212,"[dist] Add `winston` dependency
+
+Fixes #4."
+jfhbrook,2011-11-10 23:22:34,https://api.github.com/repos/flatiron/flatiron/git/commits/f1e7ac80d45c09ce4a1b66caabddd35bba5f3185,f1e7ac80d45c09ce4a1b66caabddd35bba5f3185,[fix] cli plugin throws errors for broken command modules
+jfhbrook,2011-11-10 19:54:37,https://api.github.com/repos/flatiron/flatiron/git/commits/9216763737bd96d5e370e64b11d7948753386d8d,9216763737bd96d5e370e64b11d7948753386d8d,[fix] Egregious spelling error
+jfhbrook,2011-11-10 19:53:24,https://api.github.com/repos/flatiron/flatiron/git/commits/2937aef2ad80788dfc9bafba0c5bf40a3be0874d,2937aef2ad80788dfc9bafba0c5bf40a3be0874d,[doc] Flatiron image header and links to 'the big pieces'
+jfhbrook,2011-11-10 18:56:28,https://api.github.com/repos/flatiron/flatiron/git/commits/2cb492994c27f0e09803eda204e2794779512ce3,2cb492994c27f0e09803eda204e2794779512ce3,[tmpfix] Links to already-written resources about Flatiron in Flatiron's sparse README
+Marak,2011-11-10 03:38:14,https://api.github.com/repos/flatiron/flatiron/git/commits/7aedcbd7bf41a53039f04911ad7204ceefcf7573,7aedcbd7bf41a53039f04911ad7204ceefcf7573,"Merge pull request #1 from MartinodF/patch-1
+
+[fix] Missing semicolon in variable definitions in the default template"
+MartinodF,2011-11-10 03:32:01,https://api.github.com/repos/flatiron/flatiron/git/commits/a3543f7c62e7ebdf5c8d2eff35ec6107f90b3c23,a3543f7c62e7ebdf5c8d2eff35ec6107f90b3c23,Missing semicolon in variable definitions in the default template
+indexzero,2011-11-09 15:44:19,https://api.github.com/repos/flatiron/flatiron/git/commits/14f72dd4744e2a3b5eba27082440988bef2a31ea,14f72dd4744e2a3b5eba27082440988bef2a31ea,[dist] Version bump. 0.1.0
+indexzero,2011-11-09 15:43:34,https://api.github.com/repos/flatiron/flatiron/git/commits/3fc91a3617f8f97ccc43bff5f9fcd348dc511786,3fc91a3617f8f97ccc43bff5f9fcd348dc511786,[api minor] Expect the whole options object to be the settings for `union`
+bmeck,2011-11-09 08:51:29,https://api.github.com/repos/flatiron/flatiron/git/commits/a522859bd9bb97c6b14a90b6632d19886c2afc8d,a522859bd9bb97c6b14a90b6632d19886c2afc8d,[feature] scaffold cli tool in `bin/flatiron create`
+bmeck,2011-11-09 07:58:49,https://api.github.com/repos/flatiron/flatiron/git/commits/1cd9d4f25e9952ba0918d51150f6408cabb45899,1cd9d4f25e9952ba0918d51150f6408cabb45899,[fix] default options in cli plugin to {}
+bmeck,2011-11-09 07:57:53,https://api.github.com/repos/flatiron/flatiron/git/commits/cdeef4e04665a54e3dac440326ef86a7161b506e,cdeef4e04665a54e3dac440326ef86a7161b506e,[fix] use this.tty when printing usage
+bmeck,2011-11-09 07:53:53,https://api.github.com/repos/flatiron/flatiron/git/commits/a2ddaf56790ea97c8d90abe21af0fa73a1ec7ce8,a2ddaf56790ea97c8d90abe21af0fa73a1ec7ce8,[fix] cli args with delimiter
+indexzero,2011-11-09 07:46:49,https://api.github.com/repos/flatiron/flatiron/git/commits/db13e2eb05a8ed4c4cb43f52e7135d3efafe6faa,db13e2eb05a8ed4c4cb43f52e7135d3efafe6faa,[api] Pass `app.log` to router.dispatch in plugins/cli.js
+bmeck,2011-11-09 07:37:03,https://api.github.com/repos/flatiron/flatiron/git/commits/e2f3822c20c04e0662ba8c7b32c323965b82077d,e2f3822c20c04e0662ba8c7b32c323965b82077d,[route] cli routing via dir
+indexzero,2011-11-09 05:05:51,https://api.github.com/repos/flatiron/flatiron/git/commits/03d77f3508e2aebf97a5d2334f88246fb352e703,03d77f3508e2aebf97a5d2334f88246fb352e703,[api refactor] Minor refactors to use `union`
+indexzero,2011-11-09 05:05:34,https://api.github.com/repos/flatiron/flatiron/git/commits/6d185069c01b750112d73aff878681a2d54d70e6,6d185069c01b750112d73aff878681a2d54d70e6,[dist] Added LICENSE
+indexzero,2011-11-08 20:33:28,https://api.github.com/repos/flatiron/flatiron/git/commits/cf6d3a9a60a4399ec8bee7f73be64896fc6e4439,cf6d3a9a60a4399ec8bee7f73be64896fc6e4439,[api] First pass at integrating `flatiron-http`
+indexzero,2011-11-08 20:33:14,https://api.github.com/repos/flatiron/flatiron/git/commits/2060b7437111812a42dffe770f198054d4a48fd9,2060b7437111812a42dffe770f198054d4a48fd9,[dist] Remove unused dependencies
+bmeck,2011-11-01 20:40:32,https://api.github.com/repos/flatiron/flatiron/git/commits/ed732440fee85dfac0515a64f4570f16c3a48178,ed732440fee85dfac0515a64f4570f16c3a48178,[api] initial start of lazy scaffold
+indexzero,2011-10-31 00:35:27,https://api.github.com/repos/flatiron/flatiron/git/commits/c8a47d7029a564f3e8544072876f666384198066,c8a47d7029a564f3e8544072876f666384198066,[refactor] Dont include http plugin since it is not used by flatiron itself. Only plugins that are used by flatiron itself should be included in flatiron core.
+indexzero,2011-10-26 14:58:27,https://api.github.com/repos/flatiron/flatiron/git/commits/d3b09f7302cd0a63ee3457ee7375f0f08fb487b9,d3b09f7302cd0a63ee3457ee7375f0f08fb487b9,[api] First pass at pure HTTP-streaming in Flatiron
+indexzero,2011-10-26 14:58:06,https://api.github.com/repos/flatiron/flatiron/git/commits/caa5451c83b204cbc94d2a255caeb62c1b06cfaf,caa5451c83b204cbc94d2a255caeb62c1b06cfaf,[doc] Update README.md
+indexzero,2011-10-03 12:53:14,https://api.github.com/repos/flatiron/flatiron/git/commits/c0c3c1f3b79c2086ff24a0333e748ce12b3382c4,c0c3c1f3b79c2086ff24a0333e748ce12b3382c4,"[api refactor] Update and optimize the `cli` plugin for load time and synchronous feature injection.
+[dist refactor] Move config/broadway.json into constants.js
+[doc] Update examples/cli-sample
+[dist] Add sugarskull as a dependency
+[dist] Added a couple of utilities from express"
+indexzero,2011-09-26 04:57:36,https://api.github.com/repos/flatiron/flatiron/git/commits/995ad9950e29a8d4fa2e53f1b6a3a3a55e23dea7,995ad9950e29a8d4fa2e53f1b6a3a3a55e23dea7,[dist] Added `node-static` to package.json
+indexzero,2011-09-26 03:23:56,https://api.github.com/repos/flatiron/flatiron/git/commits/5f1653d3d10233183a2f97aaddb421d799df943c,5f1653d3d10233183a2f97aaddb421d799df943c,[fix] Update two small syntax errors
+indexzero,2011-09-26 03:23:33,https://api.github.com/repos/flatiron/flatiron/git/commits/93653f9d445bde3c4f70c377983fcb0b210b283d,93653f9d445bde3c4f70c377983fcb0b210b283d,[api] Expose plugin names on `cli` plugins
+indexzero,2011-09-26 03:22:51,https://api.github.com/repos/flatiron/flatiron/git/commits/89b59ba056fe89c356d335da1da142aac4f86618,89b59ba056fe89c356d335da1da142aac4f86618,[doc] Added simple flatiron `cli` example
+indexzero,2011-09-26 03:09:06,https://api.github.com/repos/flatiron/flatiron/git/commits/ab6cc61602e293699b43fc6c3539271fb7872c2f,ab6cc61602e293699b43fc6c3539271fb7872c2f,[api] Expose flatiron plugins and hoist up those from broadway
+indexzero,2011-09-26 03:08:05,https://api.github.com/repos/flatiron/flatiron/git/commits/367b9b3b4d3b52f20d7d2045cf99d5db33186a96,367b9b3b4d3b52f20d7d2045cf99d5db33186a96,[refactor] Update `cli` plugins to use new `this` context in broadway
+indexzero,2011-09-26 02:23:43,https://api.github.com/repos/flatiron/flatiron/git/commits/c366ccbb1cff7e28f6fa8f5170d71534c368a7ca,c366ccbb1cff7e28f6fa8f5170d71534c368a7ca,[api] First pass at stubbing out `cli` plugin
+indexzero,2011-09-26 02:23:26,https://api.github.com/repos/flatiron/flatiron/git/commits/845924f371c2be35ab9150f7b6e0940ed5f9c22f,845924f371c2be35ab9150f7b6e0940ed5f9c22f,[dist] Added `node-prompt` to package.json
+indexzero,2011-09-25 21:24:27,https://api.github.com/repos/flatiron/flatiron/git/commits/5de3430ef99ed2f1709629b51ca3d0b8eb85c95b,5de3430ef99ed2f1709629b51ca3d0b8eb85c95b,[api] Added base flatiron functionality
+indexzero,2011-09-25 20:23:07,https://api.github.com/repos/flatiron/flatiron/git/commits/261914b3827f78d85badcf441a274b360467a3d5,261914b3827f78d85badcf441a274b360467a3d5,[test] Stub out `sample-app` test fixture
+indexzero,2011-09-25 20:22:41,https://api.github.com/repos/flatiron/flatiron/git/commits/a8c187f9126b223348963d24a2b2a40e4c22e21a,a8c187f9126b223348963d24a2b2a40e4c22e21a,[bin] Begin to stub out bin/flatiron
+indexzero,2011-09-25 20:15:21,https://api.github.com/repos/flatiron/flatiron/git/commits/d886f70e97af4364c6ca28a4c44ec1494846d947,d886f70e97af4364c6ca28a4c44ec1494846d947,[dist] Added broadway configuration
+indexzero,2011-09-25 20:14:57,https://api.github.com/repos/flatiron/flatiron/git/commits/383a274b20bafe8dd038bcb0aef64f017ac88d9f,383a274b20bafe8dd038bcb0aef64f017ac88d9f,[doc] Updated README.md
+indexzero,2011-09-25 20:13:25,https://api.github.com/repos/flatiron/flatiron/git/commits/e709db0218cb308f6a8991f344e6c47fc253a483,e709db0218cb308f6a8991f344e6c47fc253a483,[dist] Updated package.json
+indexzero,2011-09-25 20:12:26,https://api.github.com/repos/flatiron/flatiron/git/commits/f81c0a95ed395905899e51f68708ad5e0fcf6ab5,f81c0a95ed395905899e51f68708ad5e0fcf6ab5,[dist] Added .gitignore
+indexzero,2011-08-27 07:00:49,https://api.github.com/repos/flatiron/flatiron/git/commits/d4440dba071906beb4fe882e4e2550134e84612a,d4440dba071906beb4fe882e4e2550134e84612a,[dist] Added package.json
+indexzero,2011-08-27 06:47:18,https://api.github.com/repos/flatiron/flatiron/git/commits/1902464d87a768074ecde27954c0f7e1fb796b10,1902464d87a768074ecde27954c0f7e1fb796b10,[doc] Added README.md

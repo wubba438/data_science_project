@@ -1,0 +1,661 @@
+EpicEditor,"EpicEditor is an embeddable JavaScript Markdown editor with split fullscreen editing, live previewing, automatic draft saving, offline support, and more. For developers, it offers a robust API, can be easily themed, and allows you to swap out the bundled Markdown parser with anything you throw at it."
+username,timestamp,url,sha,message
+massar,2016-09-26 01:19:42,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/66a00cc4b6e5322c3fefb550c538781b97f511bd,66a00cc4b6e5322c3fefb550c538781b97f511bd,"Merge pull request #394 from madpew/patch-1
+
+fixes #378, broken twitter-avatars"
+madpew,2016-03-12 19:32:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b3c1cd886476b2e9f96ec7549f8015d7b291f6b4,b3c1cd886476b2e9f96ec7549f8015d7b291f6b4,updated twitter links to use https as requested
+massar,2016-03-12 18:20:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9e08fa8b9bf79f32f585d86c73bd487a461519c6,9e08fa8b9bf79f32f585d86c73bd487a461519c6,"Merge pull request #369 from kkirsche/patch-1
+
+Remove moot `version` property from bower.json"
+massar,2016-03-12 18:19:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0b9edbbc47c4732c312b2ebe704a29d1660b956b,0b9edbbc47c4732c312b2ebe704a29d1660b956b,"Merge pull request #388 from samkelleher/patch-1
+
+Added 'main' to point to build JS."
+madpew,2016-03-12 12:15:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b96541eb297517fd60d0903a9ada5c6c603f112c,b96541eb297517fd60d0903a9ada5c6c603f112c,"fixes #378, broken twitter-avatars
+
+the old public-api doesn't exist anymore, new api needs auth.
+Links in the form of twitter.com/[username]/profile_picture do work."
+samkelleher,2016-02-21 14:36:31,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d4180194db3561ffb2e9df7f7c264af12e2fcf17,d4180194db3561ffb2e9df7f7c264af12e2fcf17,"Added 'main' to point to build JS.
+
+Resolves #387
+--
+
+When using NPM as the method to install EpicEditor, and then building the application (using WebPack for example), the main entry point JS file is not resolved.
+
+Ie. These don't work.
+```
+var EpicEditor = require('epiceditor');
+import EpicEditor from 'epiceditor';
+```
+
+The `package.json` is missing the `main` declaration that tells the builder which is the entrypoint file."
+kousu,2015-12-21 22:45:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2b69a2f2174de157caed0ed15e2bae8a4a9b72c1,2b69a2f2174de157caed0ed15e2bae8a4a9b72c1,"Merge pull request #384 from kousu/develop
+
+Add explicit installation instructions."
+kousu,2015-12-21 19:46:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e45e3a8dfc958a95b6693d03b7ac65d82798d051,e45e3a8dfc958a95b6693d03b7ac65d82798d051,Tighten installation instruction wording
+kousu,2015-12-21 10:03:30,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/edcabe447c703a22824ec099e88e4addf1981f84,edcabe447c703a22824ec099e88e4addf1981f84,"Add explicit installation instructions.
+
+Usage instructions were not enough. I had to guess my way through it."
+kousu,2015-12-21 09:29:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6b39715bfa3f4c98e53380b158a5ebece9588821,6b39715bfa3f4c98e53380b158a5ebece9588821,Update docs for my CSS tweak in 15802f057222d12ce4a0185594092b932a7127b2
+kousu,2015-12-21 09:27:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c3ff91d556bba05aa16b5272d134e3bb7f7a4c3c,c3ff91d556bba05aa16b5272d134e3bb7f7a4c3c,"Merge pull request #383 from kousu/develop
+
+Make epiceditor-previewer a CSS class"
+kousu,2015-12-21 09:08:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/657fdbb26047de4a641e1bf452b5739b039a98fd,657fdbb26047de4a641e1bf452b5739b039a98fd,"path.exists() -> fs.exists()
+
+I just installed all dependencies fresh, so this must have been renamed recently?
+The tests won't run without this change, anyway."
+kousu,2015-12-21 09:07:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/51c4586eb85e5e7c00056535cf69bee013ff99e6,51c4586eb85e5e7c00056535cf69bee013ff99e6,Running build.
+kousu,2015-12-20 13:03:50,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/15802f057222d12ce4a0185594092b932a7127b2,15802f057222d12ce4a0185594092b932a7127b2,"Make epiceditor-previewer a CSS class instead of tying all styles to a particular <div>.
+
+This is with the goal of using the preview styles as the real site-wide styles in mind."
+massar,2015-11-25 10:40:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/feb85c55a6b0737ab6e736e9bbd8df47685a31b9,feb85c55a6b0737ab6e736e9bbd8df47685a31b9,"Merge pull request #379 from tridentli/develop
+
+Add very simple Debian packaging"
+OscarGodson,2015-11-25 09:40:47,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/74c6d5586394fb2c7e899671681841d063390a5b,74c6d5586394fb2c7e899671681841d063390a5b,"Merge pull request #382 from FabianKoestring/fix-epicdark-padding
+
+Epic-Dark padding fix"
+OscarGodson,2015-11-25 09:40:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/62411eee6fac700b8893651125debd6413f0b17d,62411eee6fac700b8893651125debd6413f0b17d,"Merge pull request #381 from FabianKoestring/fix-epiclight-padding
+
+Epic-Light padding fix"
+FabianKoestring,2015-11-25 09:14:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f0001e77ff7e8715a4e9f6e12188df9623158109,f0001e77ff7e8715a4e9f6e12188df9623158109,"Padding fix
+
+Property padding overwrites property padding"
+FabianKoestring,2015-11-25 09:12:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a900c989067ad082e8b7eddbfa6ac7579d23b00a,a900c989067ad082e8b7eddbfa6ac7579d23b00a,"Padding fix
+
+Property padding overwrites property padding"
+massar,2015-11-18 16:25:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e6e1d35b14a2fb176ae9f7650f4415e5cc065fa6,e6e1d35b14a2fb176ae9f7650f4415e5cc065fa6,Add very simple Debian packaging so that one can easily install this using Debian package management and also have other tools using EpicEditor depend on this
+OscarGodson,2015-11-13 19:52:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/495569aa7a7a4cb064da396bf9e226371068d79c,495569aa7a7a4cb064da396bf9e226371068d79c,"Merge pull request #377 from waseem18/develop
+
+GitHub ribbon was broken. Repaired!"
+kkirsche,2015-06-10 23:33:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/830eb4621b4a1945967faa1759645c793951f867,830eb4621b4a1945967faa1759645c793951f867,"Remove moot `version` property from bower.json
+
+Per bower/bower.json-spec@a325da3"
+zethussuen,2015-04-15 06:25:09,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e51735d8f512158f6c8907bb498a022d18ada1fc,e51735d8f512158f6c8907bb498a022d18ada1fc,"Merge pull request #364 from OscarGodson/updated-marked
+
+Ticket #355 - Update marked"
+zethussuen,2015-04-15 05:38:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5bc267039cd20197b5f781e120696f8945636400,5bc267039cd20197b5f781e120696f8945636400,"Merge pull request #328 from koorgoo/amd
+
+AMD compatibility"
+zethussuen,2014-07-01 22:53:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fe056e98aace50da0c87d68fcef0887b20f1b004,fe056e98aace50da0c87d68fcef0887b20f1b004,"Merge pull request #330 from OscarGodson/feature/ticket-321
+
+fixes typo it's -> its"
+zethussuen,2014-05-29 19:48:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9b32987318d81929cbf38cbe423521125a6a5d1c,9b32987318d81929cbf38cbe423521125a6a5d1c,fixes typo it's -> its
+koorgoo,2014-05-14 20:18:47,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b951f8347f51bebc1a5097f040212e4c7ba6ce88,b951f8347f51bebc1a5097f040212e4c7ba6ce88,AMD compatibility
+OscarGodson,2014-05-09 06:30:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9572c5053d5e911ac12b6b855b0aacaf9cdd8efe,9572c5053d5e911ac12b6b855b0aacaf9cdd8efe,"Merge pull request #325 from yoloseem/patch-githubribbon
+
+Fix broken GitHub ribbon image src."
+yoloseem,2014-05-09 06:23:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/88739647ebbb3041097ce8edea8d52022e2d4009,88739647ebbb3041097ce8edea8d52022e2d4009,Fix broken GitHub ribbon image src.
+OscarGodson,2014-04-26 15:12:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9d7bc072781b69dd2338a9b9e5ca992b613dd43d,9d7bc072781b69dd2338a9b9e5ca992b613dd43d,"Merge pull request #322 from tiziano88/patch-1
+
+Remove `text-align:left` from github.css"
+tiziano88,2014-04-25 18:16:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7c04dd316f6df37fc68b321540426e0e7d7b5bc3,7c04dd316f6df37fc68b321540426e0e7d7b5bc3,"Remove `text-align:left` from github.css
+
+GFM has support for specifying alignment in tables by using colons in the header row (see https://help.github.com/articles/github-flavored-markdown#tables). Currently github.css overrides this by forcing left alignment for no good reason."
+OscarGodson,2014-03-10 18:24:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/628020033d28f0d64fe8a3cf1e6e5ca441cbb3fc,628020033d28f0d64fe8a3cf1e6e5ca441cbb3fc,Typo
+sagarjunnarkar,2014-03-10 07:35:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3490d2322818d31d4df86a2a35187cb4019a4cf8,3490d2322818d31d4df86a2a35187cb4019a4cf8,"This is document fix. Try-it unload button css style height fix.
+
+When we unload after Try-it, the textarea disappears but the height
+is not removed. So Text below textarea should come up after unloading."
+OscarGodson,2014-02-04 20:48:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/bb211cddd492adf25a313b90145bad62366772c6,bb211cddd492adf25a313b90145bad62366772c6,"Merge pull request #303 from phillipalexander/fix-copyright-year
+
+Fix outdated copyright year (update to 2014)"
+phillipalexander,2014-02-04 18:07:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/80bba02e708940c1c510dd965f3995b55ef8b51b,80bba02e708940c1c510dd965f3995b55ef8b51b,"Fix outdated copyright year (update to 2014)
+
+The copyright year was out of date. Copyright notices must reflect the current year. This commit updates the listed year to 2014.
+
+see: http://www.copyright.gov/circs/circ01.pdf for more info"
+OscarGodson,2013-10-15 03:01:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/39b8b5a26c2035532b3eb8dfc69fc1b3af45079b,39b8b5a26c2035532b3eb8dfc69fc1b3af45079b,Ticket #294 - Fix ´s character not displaying on Polish keyboards
+OscarGodson,2013-09-21 01:50:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/98bc26913cef98d200d32ab7ba6130efec4b036c,98bc26913cef98d200d32ab7ba6130efec4b036c,Ticket #292 - Check if callback is defined and assign to function
+OscarGodson,2013-09-19 15:03:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8963e3018e1f25d00f3a57f6ff5d35678b6ca6ba,8963e3018e1f25d00f3a57f6ff5d35678b6ca6ba,Ticket #291 - Add docs for custom parser
+OscarGodson,2013-09-14 17:35:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c01d5ac49debf045e2be72447ef0e83b56db4dde,c01d5ac49debf045e2be72447ef0e83b56db4dde,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-09-14 17:34:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8d9d8eddc7488cc5bd4c364a7cb509b70ad6c465,8d9d8eddc7488cc5bd4c364a7cb509b70ad6c465,"Ticket #289 - No reason to empty the textarea on unload
+
+On unload we should disconnect and stop syncing to the textarea, but we
+don't need to empty it."
+OscarGodson,2013-09-14 17:24:50,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/230ee2899c9bb9f2cceab277e3d1c1e28bfe43f5,230ee2899c9bb9f2cceab277e3d1c1e28bfe43f5,Fix tests to pass lints
+OscarGodson,2013-09-12 18:18:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/65110eeae2323646c3fa2db1ba5584fae216e3bf,65110eeae2323646c3fa2db1ba5584fae216e3bf,"Merge pull request #287 from archSeer/patch-1
+
+Use _applyStyles instead of _applyAttrs when modifying the textarea"
+OscarGodson,2013-09-06 15:37:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/93c1360e785a5009314096ce32b52f547be21fb6,93c1360e785a5009314096ce32b52f547be21fb6,"Merge branch 'master' into develop
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+OscarGodson,2013-09-06 15:30:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cfb4f3ef34b865a6a7ab27b97555bdcf5101f4fe,cfb4f3ef34b865a6a7ab27b97555bdcf5101f4fe,"Ticket #286 - Watch for __save events to sync textarea
+
+This fixes issues with syncing with clientSideStorage enabled and the
+editor's first load on the page showing the textarea as blank."
+OscarGodson,2013-09-06 11:34:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f0b7c0c1eb18c088f201b77c83fdde5b36b3d12e,f0b7c0c1eb18c088f201b77c83fdde5b36b3d12e,"Ticket #286 - Add tests to check for file in create event
+
+Make sure that the file actually exists when the create event is fired."
+OscarGodson,2013-09-06 11:26:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b7ca05b2cbb6809a7d2e8f02a0f8f057b4e20dbf,b7ca05b2cbb6809a7d2e8f02a0f8f057b4e20dbf,"Ticket #286 - textarea now syncs when file is changed
+
+This also changes the behavior of the create event. Before create would
+fire _before_ the file was created meaning if you asked for the file
+inside of create it would give you undefined. I've moved the create
+event into save, rather than importFile, and it fires after the file is
+created."
+OscarGodson,2013-09-06 11:09:31,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ff9f43d554f5ec726f16ad90475e1150cb1dbcd2,ff9f43d554f5ec726f16ad90475e1150cb1dbcd2,"Ticket #216 - Fix broken tests and add callbacks to enter/exitFullscreen
+
+Docs have been updated to reflect this as well."
+OscarGodson,2013-09-01 11:23:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5131d906b69cf4d0ab85bad70dfd52fa6d68ad24,5131d906b69cf4d0ab85bad70dfd52fa6d68ad24,Ticket #216 - Put some hacky code since Chromium wont fix their shit
+OscarGodson,2013-09-01 10:34:28,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dbdc5c31ed5c8f24a8e25275778c566ff6a8c030,dbdc5c31ed5c8f24a8e25275778c566ff6a8c030,Ticket #232 - Added a test and fixed other to not use private vars
+OscarGodson,2013-09-01 09:55:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/612b92f3872ae3787e16338c1824435986036fd0,612b92f3872ae3787e16338c1824435986036fd0,"Merge branch 'add-container-textarea' of github.com:bytespider/EpicEditor into ticket/232
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+OscarGodson,2013-08-18 06:56:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0e26a8fe7ab914270efbd4edbad7fcda2026276b,0e26a8fe7ab914270efbd4edbad7fcda2026276b,"Merge pull request #281 from AJ-Acevedo/develop
+
+Added #epiceditor IRC channel to README"
+AJ-Acevedo,2013-08-17 05:05:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9654c0505022353db64244b439eb4f42ab2deeb3,9654c0505022353db64244b439eb4f42ab2deeb3,Added #epiceditor IRC channel to README
+bytespider,2013-08-14 11:13:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/75031c9c6af6a778b906854b33cbc0096ab996ca,75031c9c6af6a778b906854b33cbc0096ab996ca,use _appyAttrs
+bytespider,2013-08-14 11:12:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/34dd422cb8821f2935439e1e1a04c843f3684456,34dd422cb8821f2935439e1e1a04c843f3684456,Use safer setAttribute method as context[attr] = attrs[attr] wasn't setting frameborder=0
+bytespider,2013-08-14 10:13:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f572b21328f1f30bc2ce30c8cadf00d0e93a39e5,f572b21328f1f30bc2ce30c8cadf00d0e93a39e5,updated to use _applyStyles
+OscarGodson,2013-08-14 09:57:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0f6ecb6dfa2bea0178ce30d440cd188028c574aa,0f6ecb6dfa2bea0178ce30d440cd188028c574aa,"Merge branch 'develop'
+
+Conflicts:
+	VERSION
+	epiceditor/js/epiceditor.js
+	epiceditor/js/epiceditor.min.js"
+OscarGodson,2013-08-14 09:51:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/74760f4e6de7ea9c9b3749b9511cd1f8ba94109c,74760f4e6de7ea9c9b3749b9511cd1f8ba94109c,Package and release EpicEditor 0.2.2
+OscarGodson,2013-08-14 08:02:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9b69781fdbfba65848bf8b7e9457c4bc98c36776,9b69781fdbfba65848bf8b7e9457c4bc98c36776,Ticket #276 - Make it clear in the docs we do not touch sys files
+OscarGodson,2013-08-14 07:59:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9d64f108c37a945f30f0da2c21f0f4429c36533c,9d64f108c37a945f30f0da2c21f0f4429c36533c,"Remove linting on docs/main.js.
+
+Just not important and not worth the time."
+OscarGodson,2013-07-22 20:26:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1d6df564e22aac158a4c2a37f5c28643ae870128,1d6df564e22aac158a4c2a37f5c28643ae870128,Merge branch 'develop' into whitespave
+OscarGodson,2013-07-22 20:25:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3dabd263269bc4e6cf9d1b8289e83338127b95cc,3dabd263269bc4e6cf9d1b8289e83338127b95cc,Make the default height of the editor a little larger
+OscarGodson,2013-07-22 20:20:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/93eab63b02bac021371fc76bb9378c391164396b,93eab63b02bac021371fc76bb9378c391164396b,"Merge branch 'whitespave' of github.com:Gankro/EpicEditor into whitespave
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+bytespider,2013-07-16 12:14:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b77831ed94f5af2d5d2541753c4f7d8e4199c2b3,b77831ed94f5af2d5d2541753c4f7d8e4199c2b3,user _applyAttrs
+bytespider,2013-07-16 12:13:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8aa437883880bc9770397522e3714365f1fa8aa9,8aa437883880bc9770397522e3714365f1fa8aa9,updated docs
+bytespider,2013-07-16 12:13:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6ce194d4e6d34e4714ee5275d8b9e5ae20fd0ed3,6ce194d4e6d34e4714ee5275d8b9e5ae20fd0ed3,added extra info about wrapping textareas
+OscarGodson,2013-07-16 06:28:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0f8b19718d9f29bfb71ef17b1a37c68fa4829dda,0f8b19718d9f29bfb71ef17b1a37c68fa4829dda,"Merge branch 'buttons' of github.com:Gankro/EpicEditor into buttons
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+Gankra,2013-07-14 21:18:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7ce11a3ed0aa93f8a4b7fdb15ded6a88a18c01cb,7ce11a3ed0aa93f8a4b7fdb15ded6a88a18c01cb,Ticket #27 - fixing jerk-ass unit test for jerks
+OscarGodson,2013-07-12 16:03:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/20cea0e3f62027573379ec12f1de3da74a174ada,20cea0e3f62027573379ec12f1de3da74a174ada,"Merge pull request #267 from jpdevries/develop
+
+Retina-fy Icons"
+jpdevries,2013-07-11 19:17:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0e1c7dea30cdc7860938fdfdbc1296be100c55cf,0e1c7dea30cdc7860938fdfdbc1296be100c55cf,Correcting embeded Retina image
+jpdevries,2013-07-11 17:47:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/088c7a132f1805db3827a6e2d8aeb7b5a960e820,088c7a132f1805db3827a6e2d8aeb7b5a960e820,"Retina-fy Icons
+
+Thanks to Sebastian Nitu for the source art file"
+Gankra,2013-07-11 04:17:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e8e8e21b04421a0832a7591b1f2ba82a8d72dcc0,e8e8e21b04421a0832a7591b1f2ba82a8d72dcc0,Ticket #27 - replacing showButtons with button.bar
+Gankra,2013-07-11 03:51:42,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a640e875ddf723203e1eaf800cc1042725323b88,a640e875ddf723203e1eaf800cc1042725323b88,Ticket #132 - simplifying repeated code
+OscarGodson,2013-07-07 03:20:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8e56ac8f4eb179a64d9d7a20e757e1fcb6c7c0ad,8e56ac8f4eb179a64d9d7a20e757e1fcb6c7c0ad,Ticket #260 - Minor docs wording change
+pbougie,2013-06-29 13:21:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a29595ba619daa7e3ea652e7864d4755e546547b,a29595ba619daa7e3ea652e7864d4755e546547b,Change span to button tag.
+pbougie,2013-06-29 13:13:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/97b0219e214223ab3ca8f146ee14e3e6332590e5,97b0219e214223ab3ca8f146ee14e3e6332590e5,Leave whitespace.
+pbougie,2013-06-28 20:26:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b45987540480acacf8e2df5714f30671e91d3886,b45987540480acacf8e2df5714f30671e91d3886,Issue #259 - Embed images in CSS so asset fingerprinting works.
+OscarGodson,2013-06-20 07:07:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8824873c1d94d69f5f770e4bab045b9b991559de,8824873c1d94d69f5f770e4bab045b9b991559de,"Merge branch 'paste-fix' of github.com:Gankro/EpicEditor into paste-fix
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+OscarGodson,2013-06-20 06:30:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4a8e0d34e908ad4a41c4f267a0165bd74aa8e6ca,4a8e0d34e908ad4a41c4f267a0165bd74aa8e6ca,"Merge branch 'json-export' of github.com:Gankro/EpicEditor into json-export
+
+Conflicts:
+	epiceditor/js/epiceditor.min.js"
+Gankra,2013-06-19 19:05:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9bd2d88df8e4c0a1d28198526891f177a63c8ab5,9bd2d88df8e4c0a1d28198526891f177a63c8ab5,"Merge pull request #249 from OscarGodson/hotfix/248
+
+Ticket #248 - Hotfix for weird characters in minified code."
+OscarGodson,2013-06-19 18:36:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/efbd1bb5b0c90c5969739a3a9ecc613d8d96c68a,efbd1bb5b0c90c5969739a3a9ecc613d8d96c68a,"Ticket #248 - Hotfix for weird characters in minified code.
+
+I had to manually edit the version numbers, and I did NOT build with
+jake build. Instead I manually edited the .min file."
+OscarGodson,2013-06-14 16:06:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8d282827a1cc3fe19636336f26793ea2a64e0d8a,8d282827a1cc3fe19636336f26793ea2a64e0d8a,Package 0.2.1
+OscarGodson,2013-06-14 15:59:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c93fbfeaeb1ad13fd87c19268d13fe9a4b1dd53f,c93fbfeaeb1ad13fd87c19268d13fe9a4b1dd53f,"EPICEDITOR 0.2.1, DOGG!"
+OscarGodson,2013-06-14 07:57:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/eaed12a82eeae3a9977fa3040890c5e8e2a9e380,eaed12a82eeae3a9977fa3040890c5e8e2a9e380,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-06-14 07:56:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c861cafb7f3b01946529c3c13f316b9b8cf36d70,c861cafb7f3b01946529c3c13f316b9b8cf36d70,"Ticket #245 - Patch for #245 to release 0.2.1, but needs real fix and tests."
+OscarGodson,2013-06-11 19:05:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e115934683661193f657b7bb49036cd2547f2a1b,e115934683661193f657b7bb49036cd2547f2a1b,"Merge pull request #241 from Gankro/responsive-docs
+
+Ticket #130 - docs are now minimally responsive"
+OscarGodson,2013-06-07 07:17:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5e16903c236cd255426e93155cb0f818cae3b6de,5e16903c236cd255426e93155cb0f818cae3b6de,"Ticket #238 - Added spaces so that it'll fail in Firefox if nbsp; aren't
+removed"
+OscarGodson,2013-06-07 07:09:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2a5a9f13921268f64c2c240fb9cda33433369ec0,2a5a9f13921268f64c2c240fb9cda33433369ec0,"Ticket #238 - Some minor code cleanup to follow code conventions a
+little more"
+OscarGodson,2013-06-07 06:56:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2c30eced61751d739d08e6f6cdfa4ead7cf2766d,2c30eced61751d739d08e6f6cdfa4ead7cf2766d,Ticket #238 - Removed console.warn because this will break IEs
+OscarGodson,2013-06-07 06:53:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/11314aeed08b53472c83f36e78b69720bcf5a706,11314aeed08b53472c83f36e78b69720bcf5a706,Ticket #238 - Added more detailed docs to getFiles()
+OscarGodson,2013-06-07 06:52:56,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/326539a00224cdb0c3ef0fb5005f017abe29fe82,326539a00224cdb0c3ef0fb5005f017abe29fe82,"Add a ""watch"" Jake task so you don't have to manually rebuild each time."
+OscarGodson,2013-06-07 06:16:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/56d62815ae2df0cfd4922aceed155e8c4aa8856e,56d62815ae2df0cfd4922aceed155e8c4aa8856e,Merged PR and fixed conflicts
+OscarGodson,2013-06-06 07:43:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9ed9ce834005598cf055b9bc4ecaa4519b733f9a,9ed9ce834005598cf055b9bc4ecaa4519b733f9a,Fixed merge conflict
+OscarGodson,2013-06-06 07:34:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f636ec2cc137dd06de6259b11d79d049ca57b837,f636ec2cc137dd06de6259b11d79d049ca57b837,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-06-04 19:37:48,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fa27bd6497250f5d10c95bd05b21e89de8ba0fe1,fa27bd6497250f5d10c95bd05b21e89de8ba0fe1,"Merge pull request #234 from Gankro/develop
+
+Fixing config option typo in docs"
+Gankra,2013-06-04 19:19:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2b05b9631e8926eb833a23bfedd8aaf39db497e8,2b05b9631e8926eb833a23bfedd8aaf39db497e8,Fixing config option typo in docs
+OscarGodson,2013-06-04 09:21:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/11e55decb591e32a9c90a15c51ab537a38ae7f74,11e55decb591e32a9c90a15c51ab537a38ae7f74,"Fix stack trace errors in IE due to Mocha issue:
+https://github.com/visionmedia/mocha/issues/502"
+OscarGodson,2013-06-04 09:05:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2956e403c4b1d13d898da18967bfb5fc6c4d2006,2956e403c4b1d13d898da18967bfb5fc6c4d2006,Ticket #165 - Added passing tests.
+bytespider,2013-06-03 06:24:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/109d0a1fb0ae6d81c1aca6632110bec0d641bd80,109d0a1fb0ae6d81c1aca6632110bec0d641bd80,build
+bytespider,2013-06-03 06:24:28,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/75d73fcfc66600533a490617871e56d58cd61b19,75d73fcfc66600533a490617871e56d58cd61b19,removed ie 6&7 code use iframeElement directly
+bytespider,2013-06-02 19:59:57,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cd9ca7d4b12784b74732e573da46ad40fc4f7972,cd9ca7d4b12784b74732e573da46ad40fc4f7972,append editor iFrame rather than overriding the containers innerHTML
+OscarGodson,2013-06-01 06:01:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5f8e43c56a4841cf1dbb00cfb3add30e5ffa0f71,5f8e43c56a4841cf1dbb00cfb3add30e5ffa0f71,"Ticket #165 - Prevent scrolling when clicking hash links in IE.
+
+Also moved out the target=_self code from preview() into this method to clean
+up preview() and also prevents it from having to modify every single <a> on
+preview. Events are now delegated and are only setup once."
+bytespider,2013-05-30 12:04:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/82814414fad5565a64637864d59dbb73eb05a008,82814414fad5565a64637864d59dbb73eb05a008,removed check for getElementsByTagName
+bytespider,2013-05-29 21:13:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fd65f03e7b1fc75e107a38858ccc492d39f288dd,fd65f03e7b1fc75e107a38858ccc492d39f288dd,added the ability to wrap a textarea with the container and use that as the sync textarea
+OscarGodson,2013-05-22 07:56:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d2d14cf8a376a6221c475aa114adf50af3861344,d2d14cf8a376a6221c475aa114adf50af3861344,Merge branch 'master' into develop
+OscarGodson,2013-05-22 07:51:50,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6f8f4f1ca45e9e1199a5b540f45a3e5cb14012e0,6f8f4f1ca45e9e1199a5b540f45a3e5cb14012e0,Make CodersClan button a little smaller
+OscarGodson,2013-05-22 07:48:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/34668ff27bdd11018e038d963638b8f5f35fa946,34668ff27bdd11018e038d963638b8f5f35fa946,Added CodersClan button and did some minor CSS tweaks
+OscarGodson,2013-05-20 09:31:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/445de458983bff9cb324be4aa4416d1861f10a14,445de458983bff9cb324be4aa4416d1861f10a14,"Merge branch 'develop' into feature/ticket-139-2
+
+Conflicts:
+	epiceditor/js/epiceditor.js
+	epiceditor/js/epiceditor.min.js
+	src/editor.js"
+OscarGodson,2013-05-20 09:27:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/921ef7b1448067266e8dd5bc8be3cb25a7f67872,921ef7b1448067266e8dd5bc8be3cb25a7f67872,"Ticket #139 - Needed to remove 1 int from -9999999px to -999999px for, you know
+who (Firefox). At -9999999px, Firefox converts the pixel value to -1e+7px
+meaning it wouldn't be testable."
+OscarGodson,2013-05-20 09:12:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8c713489efdcc51aea53c073215bfb23ff94b8ed,8c713489efdcc51aea53c073215bfb23ff94b8ed,"Ticket #139 - Updated edit, preview, and load tests to check for -9999999px and
+'' left property values instead of none/block display property values when
+checking if an element is displayed or not."
+OscarGodson,2013-05-17 09:12:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/344ee7893caef2bafbc39338207e7bd65635fa5c,344ee7893caef2bafbc39338207e7bd65635fa5c,"Force word wrap in the editor so when you write there isn't horizontall
+scrollbars"
+OscarGodson,2013-05-17 08:14:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9199b6d65d645e49bb1f77d1e7cf0ae1473f4014,9199b6d65d645e49bb1f77d1e7cf0ae1473f4014,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-05-17 08:08:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/82051ae2ee5c7dfd7f35bd71ae82c690ea660804,82051ae2ee5c7dfd7f35bd71ae82c690ea660804,"Ticket #134 #223 - Now the focus() method is working across browsers. Removed
+is() support since it was turning out to be too much work. It's now it's own
+ticket (#229).
+
+This fixes the IE9/10 issue where the editor was not focused so you could
+keep typing after switching over to the preview() (through clicking the icons
+or doing a key command)."
+OscarGodson,2013-04-30 16:01:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/21766af1495820618c270c580d903a643f17166d,21766af1495820618c270c580d903a643f17166d,"Ticket #134 #223 - Removed focus and blur events from the docs. Adding that as
+another ticket for 0.3.0"
+OscarGodson,2013-04-21 08:04:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/41e61f045c974d8f18009a3e2adfdca868820397,41e61f045c974d8f18009a3e2adfdca868820397,Ticket #134 #223 - Added docs for focus() method.
+OscarGodson,2013-04-20 09:29:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/531a978e7a3326fd09df7b21a044c31d25090a3f,531a978e7a3326fd09df7b21a044c31d25090a3f,"Ticket #134 #223 - Added focus() method which does the dirty work of getting
+focus to work across browsers. This also fixes the problem with IE9/10 where
+the shortcuts only worked the first time and you had to click into the editor
+to get them to work again.
+
+To do: docs and tests"
+OscarGodson,2013-04-10 15:45:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dd4dc1b360de6825e6583fac6ccd1b3f69c26336,dd4dc1b360de6825e6583fac6ccd1b3f69c26336,"Ticket #139 - Instead of using display:none, hide the editor/previewer by
+setting the left position by -999999px."
+OscarGodson,2013-04-08 09:14:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/696b92b44b559f051dffef4ab8a1673146af8fd9,696b92b44b559f051dffef4ab8a1673146af8fd9,"Merge pull request #220 from hongymagic/feature/editorconfig
+
+Add .editorconfig to make it easy for developers to follow code style"
+hongymagic,2013-04-08 09:00:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ce0a0975c38bc76c769f9ceb6bb2aad3b5ff0e17,ce0a0975c38bc76c769f9ceb6bb2aad3b5ff0e17,Add .editorconfig to make it easy for developers to follow code style
+OscarGodson,2013-04-07 11:45:57,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e667e942cb665cee4353ec8ff405c24c7465c3db,e667e942cb665cee4353ec8ff405c24c7465c3db,"Ticket #212 - Finalize changes for bug where the editor should use the content
+in the textarea as the content in EpicEditor's editor if content exists in the
+textarea on page load. Commit adds tests on this as well as notes in the docs.
+It also pulls out the textarea option into a private (on the prototype) method
+to clean up the load method."
+OscarGodson,2013-04-05 06:16:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/49d21bf6770a7d179d7f5d79de8e18c129f172ec,49d21bf6770a7d179d7f5d79de8e18c129f172ec,"Ticket #212 - Make sure if content is in the textarea on page or JS load to use
+that as the initial content for the editor. Still needs tests for this use case!"
+OscarGodson,2013-03-08 07:40:47,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/84aac99a1e61e8306372b6f18ecce9a764abee7d,84aac99a1e61e8306372b6f18ecce9a764abee7d,Ticket #215 - Added docs
+OscarGodson,2013-03-08 07:34:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/416447af1f0b0a9ee665b19653d0700b7ae84762,416447af1f0b0a9ee665b19653d0700b7ae84762,"Merge pull request #214 from dobozysaurus/develop
+
+Enabled fullscreenEnabled configuration setting, which allows you to disable the full screen button if desired."
+dobozysaurus,2013-03-06 18:16:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8de12b6f7f1bdb15e7df4c33a9ffbfb17000be2c,8de12b6f7f1bdb15e7df4c33a9ffbfb17000be2c,Fixed option.button test suite name
+dobozysaurus,2013-03-06 18:15:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/17b3e8cd7fcd4562c99d8af28cb1fd2329840830,17b3e8cd7fcd4562c99d8af28cb1fd2329840830,"per request from author, singularized button option and removed checks for private vars in tests"
+dobozysaurus,2013-03-05 23:42:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/60894e98fd79e94ccbfc980246cf8ffa1134c247,60894e98fd79e94ccbfc980246cf8ffa1134c247,modified button configuration syntax per feedback from author; added tests
+dobozysaurus,2013-03-05 17:42:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/46544a7e6b581d7f3dbc00015f605c83c86c9d3a,46544a7e6b581d7f3dbc00015f605c83c86c9d3a,"Enable fullscreenEnabled setting, which can disable the full screen button"
+OscarGodson,2013-02-16 08:06:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a904a50d7932162250af4730567c6163e5a75b08,a904a50d7932162250af4730567c6163e5a75b08,Upgraded prettify to fix line breaks in IE in pre tags
+OscarGodson,2013-02-16 08:00:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/70ebcf419b296a075f0673819b5bba621df6011d,70ebcf419b296a075f0673819b5bba621df6011d,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-02-16 07:57:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6ee2a353240d3d02fc1e78b555403ed3862233d7,6ee2a353240d3d02fc1e78b555403ed3862233d7,"Ticket #210 - Added reflow event for whenever reflow is called. Also added a callback
+to reflow(). This commit includes the tests and docs for it."
+OscarGodson,2013-02-09 17:37:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/40b5771a57a610528b130e906797e276cbb26279,40b5771a57a610528b130e906797e276cbb26279,"Merge pull request #208 from hermanjunge/patch-1
+
+OCD Comment Fix"
+lamplightdev,2013-02-07 16:47:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a184306cde788386a49bcca5ff6bdea19f620d6d,a184306cde788386a49bcca5ff6bdea19f620d6d,Ticket #204 - sync textarea with exported text rather than raw text
+OscarGodson,2013-01-29 02:22:43,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3cf87ddb858653a559502509b89df93c476a17bb,3cf87ddb858653a559502509b89df93c476a17bb,Ticket #107 - Fix broken tests and fix bug with importFile when localStorage is removed while the editor is loaded.
+OscarGodson,2013-01-27 10:00:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f8895a6e564a3164c1e58736fc306458ef6d5b6b,f8895a6e564a3164c1e58736fc306458ef6d5b6b,Ticket #107 - Added tests for textarea option
+OscarGodson,2013-01-27 06:23:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ca083b570d9c7d06711c521062681c95863e6295,ca083b570d9c7d06711c521062681c95863e6295,Merge in develop
+OscarGodson,2013-01-22 16:32:30,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/27022ed247c74b3cf24c6e180f51ee19b4d63bff,27022ed247c74b3cf24c6e180f51ee19b4d63bff,Ticket #22 - Pull request cleanup
+nkovacs2,2013-01-18 15:55:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b78120db02ee2e664c157a878cfb79ee5a674794,b78120db02ee2e664c157a878cfb79ee5a674794,Ticket #22 - native fullscreen support for firefox and w3c standard
+OscarGodson,2013-01-18 09:36:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d92fe033ff449d3724412d61b3605db2a16ee2af,d92fe033ff449d3724412d61b3605db2a16ee2af,Ticket #107 - Textareas are now always in sync even if autoSave is turned off.
+OscarGodson,2013-01-17 16:43:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2c6f0a6bd875e532b673fd8c2b5bbb22885ff04b,2c6f0a6bd875e532b673fd8c2b5bbb22885ff04b,Ticket #107 - Empty <code> tag was creating a blank gray box in the GitHub README
+OscarGodson,2013-01-16 07:01:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a4aeacbd27d59c93457941b98090937c179015b6,a4aeacbd27d59c93457941b98090937c179015b6,"Ticket #198 - Changed option name from strings to string because all other options
+are singular."
+OscarGodson,2013-01-16 06:55:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e69d02e9c0c0509d3d0d4ed1392f6f1ad39916dc,e69d02e9c0c0509d3d0d4ed1392f6f1ad39916dc,Ticket #198 - Added docs for string option
+OscarGodson,2013-01-16 06:44:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b30a914e0cd563d0e2eb04a183b21591195a6444,b30a914e0cd563d0e2eb04a183b21591195a6444,Ticket #107 - Added docs for textarea option
+OscarGodson,2013-01-15 07:42:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/baea637d1bec1ce389dd292853711e6c7c5d4713,baea637d1bec1ce389dd292853711e6c7c5d4713,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2013-01-15 07:41:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a826e08da0d39e2ea39292f02d5c35d2958e1a2e,a826e08da0d39e2ea39292f02d5c35d2958e1a2e,Ticket #196 - Fixed linting error in test
+OscarGodson,2013-01-15 07:32:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/96594858b77db33f19b5be29022daab0df51677d,96594858b77db33f19b5be29022daab0df51677d,"Ticket #107 - Initial support for adding textarea support. This means if you include
+the ""textarea"" option and select an element (or pass an ID as a string) it will sync
+the textarea with what you see in the editor. This is useful for people who don't
+want or need to use AJAX to submit a form. Instead, the textarea will have the exact
+contents of the editor.
+
+Only thing left to do is make it work with autosave false. Luckily, the code is
+there to make that fairly easy from #195."
+OscarGodson,2013-01-13 19:02:30,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1e074e8bf3957b388ee5e69d95a7df016efe0908,1e074e8bf3957b388ee5e69d95a7df016efe0908,bumped version number in package.json
+OscarGodson,2013-01-13 08:10:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9efdfe72c5890151dab545e4d07db33a2acbd737,9efdfe72c5890151dab545e4d07db33a2acbd737,Ticket #196 - Added tests
+OscarGodson,2013-01-13 07:34:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2d9601ade5f8acca1919a3793f7c38a2699bf3de,2d9601ade5f8acca1919a3793f7c38a2699bf3de,"Ticket #196 - check if any of the theme paths have absolute links and if NOT add the
+basePath, if YES, then leave them as is."
+OscarGodson,2013-01-12 01:35:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7301ca36368866f53831b43585101a854498af49,7301ca36368866f53831b43585101a854498af49,"Ticket #196 - preview() will now load a theme with an absolute link without the
+basePath. Need to add this in the other places we load stylesheets still and
+add tests."
+OscarGodson,2013-01-10 09:23:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/19cd8032133e4a2157a0e9fdb9e6a46d0dbdea4d,19cd8032133e4a2157a0e9fdb9e6a46d0dbdea4d,Ticket #195 - Fixed test case a bit
+OscarGodson,2013-01-10 09:18:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2156b9301e6385c9c3e1c1287bd31691b951797a,2156b9301e6385c9c3e1c1287bd31691b951797a,Ticket #195 - Added test case for previewing unsaved files
+OscarGodson,2013-01-09 09:33:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/014ccd1af13f5692e735529566b2daa5176fe866,014ccd1af13f5692e735529566b2daa5176fe866,"Ticket #195 - Added private save, export, and getFile param to grab a draft for previews. Fixes bug where if autosave is off, the previews only show what is saved. This patch saves a draft every time a user clicks preview and shows a preview of the file instead of the saved file."
+OscarGodson,2013-01-08 17:10:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8c2cef580ca5b44c80261a26be50e283880ace0c,8c2cef580ca5b44c80261a26be50e283880ace0c,ticket #198 - thanks to @cmtt UI strings are now configurable through a strings option.
+OscarGodson,2013-01-08 09:16:28,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e2ebd2afa978deefb2de58c09ef8b5b5196b87e4,e2ebd2afa978deefb2de58c09ef8b5b5196b87e4,Ticket #197 - Updated Marked to 0.2.7 to support tables and strikethroughs.
+OscarGodson,2013-01-07 07:57:42,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f2e832f7121b17ab85a2fb41e642090ac929fc83,f2e832f7121b17ab85a2fb41e642090ac929fc83,Merged in 0.2.0
+OscarGodson,2013-01-07 05:16:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/905af8843e199e21dbf7c9a46f5b98f2a4901bfd,905af8843e199e21dbf7c9a46f5b98f2a4901bfd,Packaged 0.2.0 and updated license year.
+OscarGodson,2013-01-06 08:33:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cb01653dc16129b5364b100471bf2c0d43e8d6ac,cb01653dc16129b5364b100471bf2c0d43e8d6ac,Fixed typo
+OscarGodson,2013-01-06 08:23:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a965467ddab0c11ea17f5c296690268dcae2b4aa,a965467ddab0c11ea17f5c296690268dcae2b4aa,Ticket #161 - Added test to make sure preview state is retained.
+OscarGodson,2012-11-12 15:37:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e2b9cd3649252e76b3dc94419ef378c53281f0e8,e2b9cd3649252e76b3dc94419ef378c53281f0e8,Ticket #160 - Fix the height from auto-growing when no height is set in the CSS
+OscarGodson,2012-11-12 09:23:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2b3ced69d0ee0883f58f6dcc7debd9511a01aca5,2b3ced69d0ee0883f58f6dcc7debd9511a01aca5,Ticket #160 - Typo for reflow docs
+OscarGodson,2012-11-12 09:21:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9d6eca22f45dce23a9549555857e23f3e2d14e4b,9d6eca22f45dce23a9549555857e23f3e2d14e4b,Ticket #160 - Added docs for reflow() method
+OscarGodson,2012-11-12 08:31:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a13df36383d73879fdb10b7cafb5f41c8ead2c8e,a13df36383d73879fdb10b7cafb5f41c8ead2c8e,"Ticket #178 - We don't want to replace all spaces with &nbsp;
+because the text will not wrap then (Non-Breaking SPace)"
+OscarGodson,2012-11-12 07:58:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ffc98aa61db54ea48ef12dc75b0006eb27c51497,ffc98aa61db54ea48ef12dc75b0006eb27c51497,"Fix for browsers that support innerText when the body of the
+document doesn't have any content. This was causing problems where
+the editor was acting totally different in some places (like JSBin)
+and different on others (like epiceditor.com). The problem was that
+we were checking for if(document.body.innerText) which would be
+false if the body didn't have any text therefore it'd try to run
+the else which is meant mainly for Firefox since it's the only
+browser that doesn't support innerText. Now we check for typeof
+innerText. If it returns any string, including """" then it'll
+return true."
+OscarGodson,2012-11-11 16:07:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5a834fe9ed6061e78a3ea5f394fac85419f7eb34,5a834fe9ed6061e78a3ea5f394fac85419f7eb34,Merge branch 'feature/ticket-160' into develop
+OscarGodson,2012-11-11 16:07:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/265e0c293512f7d4f3ca2bd2435b1f1a3bf498b3,265e0c293512f7d4f3ca2bd2435b1f1a3bf498b3,Ticket #160 - Added tests for reflow()
+OscarGodson,2012-11-11 15:13:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/57f068f179f33a85a61986d3310eb40eaa73f3f6,57f068f179f33a85a61986d3310eb40eaa73f3f6,"Ticket #160 - Handle fluid width containers better. Remember,
+fluid width containers will no longer be fluid after using reflow()
+or reflow('width') because on reflow we change the style=""width"" so
+the width becomes hardcoded."
+OscarGodson,2012-10-14 05:55:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5e261e47f3b819905433cc87be9b6d45bf4dca14,5e261e47f3b819905433cc87be9b6d45bf4dca14,"Ticket #6 - Yes. Safari 6's Fullscreen API still doesn't work like everyone elses, so update the comment to recheck when Safari 7 comes out."
+OscarGodson,2012-10-04 07:19:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8ed8e3221ff29ae0e39e8930d75926aac8909d8f,8ed8e3221ff29ae0e39e8930d75926aac8909d8f,"Ticket #160 - forgot a console log, dammit"
+OscarGodson,2012-10-04 07:09:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f11ce605479438fb46f4d522e1c15e72ba170c9c,f11ce605479438fb46f4d522e1c15e72ba170c9c,Ticket #160 - Replaced manual editor resizing with new public reflow method
+OscarGodson,2012-10-04 06:54:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/93e606cb91227759824d8a459dd877ec74152507,93e606cb91227759824d8a459dd877ec74152507,Ticket #160 - Added reflow method to re-fit the editor into the container without having to reload the entire editor
+OscarGodson,2012-09-30 22:48:56,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c680e28069d6768d4b89a428aa22a25092ff3304,c680e28069d6768d4b89a428aa22a25092ff3304,Ticket #184 - Fixed importing content where it wasn't readding the no-break space in chrome which is a unicode character \u00a0. Firefox was fine because we already were replacing spaces with &nbsp;s
+OscarGodson,2012-09-24 15:45:48,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/aae6cdc3b82d48b6ec8abccf41975ca478cf5d66,aae6cdc3b82d48b6ec8abccf41975ca478cf5d66,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2012-09-24 15:45:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5a239ddcaa5418c2d0729013baea131bab611fbd,5a239ddcaa5418c2d0729013baea131bab611fbd,Ticket #184 - Fixed character encoding bug where weird characters would appear in some cases on some platforms because they didnt understand no-break spaces (such as ascii)
+johnmdonahue,2012-09-13 04:48:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a06c852b923158f9c410a14777c6baedb59dfa3d,a06c852b923158f9c410a14777c6baedb59dfa3d,fix Jake package hack
+OscarGodson,2012-09-13 02:19:19,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0620fcad0e7a284d13de156ce3383adce5828117,0620fcad0e7a284d13de156ce3383adce5828117,Cherry-picked hotfix and fixed conflicts
+OscarGodson,2012-09-13 02:39:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4e98bc9cb524c251cafdb0ce67b8e9efc3c7e75a,4e98bc9cb524c251cafdb0ce67b8e9efc3c7e75a,Packaged hotfix 0.1.1.1
+OscarGodson,2012-09-13 02:19:19,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/78a80c884f7f5b2174864cc67f7f5990dea726b9,78a80c884f7f5b2174864cc67f7f5990dea726b9,Ticket #183 - Fix for Firefox not encoding < and > as HTML entities in the editor and instead rendering literal HTML
+johnmdonahue,2012-09-12 21:51:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1e624f523bf6178eb4088fb12ec39bb6b2d1e92f,1e624f523bf6178eb4088fb12ec39bb6b2d1e92f,hack for Jake traversal handling in pkg task
+johnmdonahue,2012-09-12 21:51:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/088a0d9560a0ce5d833442c81114858da25b5cac,088a0d9560a0ce5d833442c81114858da25b5cac,hack for Jake traversal handling in pkg task
+OscarGodson,2012-08-20 09:17:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ae4d39ffef9b739e6f262c05c879af62b287ca98,ae4d39ffef9b739e6f262c05c879af62b287ca98,"Ticket #178 - Fixed whitespace issue in Firefox because it doesn't convert spaces to nbsps automatically. Also, updated the tests to reflect either case (nbsps, or normal spaces)"
+OscarGodson,2012-08-17 15:14:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fec7604bb037ed4ebea1b9c0c0467789084332a3,fec7604bb037ed4ebea1b9c0c0467789084332a3,Ticket #175 - Changed background-color: white to shorthand
+loominade,2012-08-17 11:59:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3ed2a53c1add27616364f06cf52110ed91e5a304,3ed2a53c1add27616364f06cf52110ed91e5a304,code shouldn't have background when wrapped in pre
+loominade,2012-08-16 16:12:30,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6506f2e415ad77a3180ceb00eb9d3b335356df44,6506f2e415ad77a3180ceb00eb9d3b335356df44,added background-color
+loominade,2012-08-16 12:44:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e30844b57d9a21d390a37be4b9f1db4fd1d00dbb,e30844b57d9a21d390a37be4b9f1db4fd1d00dbb,Added Bartik theme.
+OscarGodson,2012-08-14 22:06:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ecadd554657f8a653643ff04cc3bafc751ee9d74,ecadd554657f8a653643ff04cc3bafc751ee9d74,Fixed fixme email
+OscarGodson,2012-08-14 22:06:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d72833b3b76855f44516b279163d109312e1ba66,d72833b3b76855f44516b279163d109312e1ba66,Fixed fixme email
+johnmdonahue,2012-08-14 21:54:14,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2324ab364c72dae6877d839bcb4b51a504a293d9,2324ab364c72dae6877d839bcb4b51a504a293d9,remove .jshintignore
+johnmdonahue,2012-08-14 21:38:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/354209b3ee3cfa870715fa84555a275f884356cc,354209b3ee3cfa870715fa84555a275f884356cc,"Merge pull request #169 from OscarGodson/mocha-port
+
+Mocha Port"
+johnmdonahue,2012-08-14 21:26:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ab96d2fcf7ef853d2e54923f257b960bf6f80d22,ab96d2fcf7ef853d2e54923f257b960bf6f80d22,bump mocha version and ignoreLeaks
+johnmdonahue,2012-08-14 20:22:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/033147b52622666f177be7d0f02164ee78272e74,033147b52622666f177be7d0f02164ee78272e74,fix jakefile for windows
+johnmdonahue,2012-08-14 18:46:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d237e497c820e352375ebe446bca857e64feeaad,d237e497c820e352375ebe446bca857e64feeaad,point tests.html to node_modules for mocha/expect js/css
+johnmdonahue,2012-08-14 18:45:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/62f71f87ad9546d8622266305d0bcc47622209f5,62f71f87ad9546d8622266305d0bcc47622209f5,add mime module to prevent mime type errors on tests
+johnmdonahue,2012-08-14 18:43:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9e74c4b6c24ba0d4e0d1063b9e57a1497190f4c5,9e74c4b6c24ba0d4e0d1063b9e57a1497190f4c5,replace global cli calls for local pacakges
+johnmdonahue,2012-08-14 18:42:48,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/34de862ad631f40d757febc241e4998956870e2e,34de862ad631f40d757febc241e4998956870e2e,replace previously committed dev dependencies and global prereqs with npm modules
+johnmdonahue,2012-08-11 06:43:28,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/58b17530b894d5b4a25e2887f0ac9462184e2377,58b17530b894d5b4a25e2887f0ac9462184e2377,stop Jake from lying
+johnmdonahue,2012-08-11 06:12:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c2df54ce5a02a8d61f9e590df88154ae7c844d71,c2df54ce5a02a8d61f9e590df88154ae7c844d71,remove foounit
+johnmdonahue,2012-08-11 06:10:29,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/20fd5990ce27e4f06514fd2866862c4a03de4f10,20fd5990ce27e4f06514fd2866862c4a03de4f10,update and tidy Jakefile to use mocha
+johnmdonahue,2012-08-11 06:10:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/65f0091da418a27913b9649acfa5f215ed131460,65f0091da418a27913b9649acfa5f215ed131460,add simple node server for test suite
+johnmdonahue,2012-08-11 02:15:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/844fb985570d951199effbdc80f37057fac6051d,844fb985570d951199effbdc80f37057fac6051d,make tests pass jshint
+johnmdonahue,2012-08-11 01:17:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/858425d10a8e23eb3303d4847b0781f09f7dce67,858425d10a8e23eb3303d4847b0781f09f7dce67,fix failing test
+johnmdonahue,2012-08-11 00:05:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/086f81f85e2a5d9d5b1c08b4e3d72a3ba993e005,086f81f85e2a5d9d5b1c08b4e3d72a3ba993e005,finish first pass of mocha port
+johnmdonahue,2012-08-02 00:55:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/05b91e6e92de703e61a93564733a3e25dc88af6b,05b91e6e92de703e61a93564733a3e25dc88af6b,use local jquery
+johnmdonahue,2012-08-02 00:55:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e4f9ab9fb0b70da01af9faaa04dca8a763fe5269,e4f9ab9fb0b70da01af9faaa04dca8a763fe5269,first commit for mocha port
+johnmdonahue,2012-07-28 18:40:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a68a999206f61d8f4c3c202aeaff1e3845413d76,a68a999206f61d8f4c3c202aeaff1e3845413d76,update path.existsSync to use fs
+OscarGodson,2012-07-24 15:26:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/355d2e05a8536e07c28b8943b627194300db471e,355d2e05a8536e07c28b8943b627194300db471e,"Ticket #96 - Make hash links scroll the iframe, not open a new browser window"
+OscarGodson,2012-07-24 02:06:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a0b2eabb8bb2694ff8e98c9bde52807bcc9955ed,a0b2eabb8bb2694ff8e98c9bde52807bcc9955ed,Ticket #6 - Shitty patch for Safari fullscreen. Using faux fullscreen until Safari gets fixed
+OscarGodson,2012-07-22 17:19:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/66b6ba02d4b742e6b25271c446153eb485f6c013,66b6ba02d4b742e6b25271c446153eb485f6c013,Merge branch 'develop' of github.com:OscarGodson/EpicEditor into develop
+OscarGodson,2012-07-22 17:18:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/43c275002e11b66f0fd46a709e0815685f2e9964,43c275002e11b66f0fd46a709e0815685f2e9964,Prevent loading the editor when it's already loaded
+OscarGodson,2012-07-22 05:14:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/89dc38f22ade0b288dc500cffc21489916243f14,89dc38f22ade0b288dc500cffc21489916243f14,Typo in comment
+OscarGodson,2012-07-21 01:27:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/63814354e08c3abcd801bc534863ca6b16aeb738,63814354e08c3abcd801bc534863ca6b16aeb738,Ticket #161 - Remember the edit or preview state on unloading so when you load again its where you left it. Also added a guard for calling load when its already loaded to save on memory and changed all _eeState checks internally to use is() instead
+OscarGodson,2012-07-20 17:53:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0fa7d4bc8b7ca68b303578cb3fb34f3bb9371179,0fa7d4bc8b7ca68b303578cb3fb34f3bb9371179,Ticket #88 - Added public is() method to check the state of EE. Added docs and tests and changed eeState to _eeState
+OscarGodson,2012-07-20 05:53:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8fde87d745a761429f022d8e273f8a77b240f1b9,8fde87d745a761429f022d8e273f8a77b240f1b9,Ticket #156 #146 - Added option to example options object in docs
+OscarGodson,2012-07-20 05:50:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e1d4057a26112e86066d5a6936a3e5454314c1f4,e1d4057a26112e86066d5a6936a3e5454314c1f4,Ticket #156 #146 - Added enterFullscreen and exitFullscreen as well as the useNativeFullscreen option. Added docs and tests.
+OscarGodson,2012-07-18 05:23:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7872c3187ff0b961a85f9f6dbfc5dcff0a1e45ff,7872c3187ff0b961a85f9f6dbfc5dcff0a1e45ff,Ticket #144 - Rebuilt docs
+jeffhill,2012-07-18 04:02:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fb0db5fbba1f8b5e5b5c556534e0d8055fa4e7ad,fb0db5fbba1f8b5e5b5c556534e0d8055fa4e7ad,Removed Alt+O shortcut from code and options.
+jeffhill,2012-07-17 07:01:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/17b3a48416053c4b5962f9eb24b115baaff3b92d,17b3a48416053c4b5962f9eb24b115baaff3b92d,Ticket #144 - Alt+P now toggles between preview and edit.
+OscarGodson,2012-07-15 16:21:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/95c541671e05c9abf2cf26663ed10e13a4dd8a9d,95c541671e05c9abf2cf26663ed10e13a4dd8a9d,Bumped version to 0.1.1
+OscarGodson,2012-07-15 07:07:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/58e84b916af557d91ef2ca9e2743fc2cff1405fd,58e84b916af557d91ef2ca9e2743fc2cff1405fd,Fixed flaky getFiles test by giving it its own localStorage namespace
+OscarGodson,2012-07-15 06:57:31,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/00bbbc08ff49de4bb1f69fc347f108a107c9acd1,00bbbc08ff49de4bb1f69fc347f108a107c9acd1,Fixed remaining linting error
+dadambickford,2012-07-11 11:10:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ffa2c34b61f6a3b93f9d0fc63e16610cf2f421e3,ffa2c34b61f6a3b93f9d0fc63e16610cf2f421e3,minor linting fixes
+OscarGodson,2012-07-04 21:38:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f5c256cec30ece32f5a16ddcd904f046669f4caa,f5c256cec30ece32f5a16ddcd904f046669f4caa,Ticket #141 - Added tests for clientSideStorage
+OscarGodson,2012-07-04 20:58:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/990f3085287c8964e7975c45551dc7c9a734b404,990f3085287c8964e7975c45551dc7c9a734b404,Ticket #141 - Added docs for the clientSideStorage option
+OscarGodson,2012-07-04 20:38:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/68997cba2bbaaf4c8b4ac44bfe03966ecee33d97,68997cba2bbaaf4c8b4ac44bfe03966ecee33d97,Ticket #141 #137 - Added support for a clientSideStorage option which also makes it so EE wont crash when localStorage is undefined (IE7 and also when IE9 is using the file protocol)
+OscarGodson,2012-07-01 18:28:36,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/14226619ba8e1e03d5723aa46da2daeb69eec189,14226619ba8e1e03d5723aa46da2daeb69eec189,Ticket #133 #127 - A new fix for the sticky alt key state on windows to handle allkey combos including ones that arent shortcuts
+OscarGodson,2012-06-28 15:01:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ce59ea097b55260c2c961cec236c35c184f35fd6,ce59ea097b55260c2c961cec236c35c184f35fd6,Ticket #136 - Fix for &nbsp; showing up in raw text export
+OscarGodson,2012-06-28 14:48:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/725659da6f1a8105173b3fafcfb435d196463350,725659da6f1a8105173b3fafcfb435d196463350,"ticket #135 - update event emit below where the file content is changed so update fires when theres new content, not emit the old version of the file before it was updated"
+OscarGodson,2012-06-27 20:30:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5e99106d011e51d445e799e0784f8d1f872e5556,5e99106d011e51d445e799e0784f8d1f872e5556,Ticket #127 - Fix for ctrl+s shortcut
+OscarGodson,2012-06-27 14:54:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/af397d49f04bab9ae42987848a2cffba298a3dfc,af397d49f04bab9ae42987848a2cffba298a3dfc,Ticket #133 #127 - Fix for those fuckin' sticky keys by setting the modifier key to false after each successful key shortcut executed.
+OscarGodson,2012-06-22 14:58:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/157e74c990b77249affeab801cb3dab7840a180a,157e74c990b77249affeab801cb3dab7840a180a,Merged in feature/ticket-85 to add support for getFiles
+OscarGodson,2012-06-22 14:54:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b414c42ae0032ef0bd03fb340922b92d9c32207d,b414c42ae0032ef0bd03fb340922b92d9c32207d,Ticket #85 - Added tests for getFile
+OscarGodson,2012-06-22 14:33:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cde266a6b7e53db8779b0883805dd21a79bf6acb,cde266a6b7e53db8779b0883805dd21a79bf6acb,Ticket #85 - Renamed fileList to getFiles to match other API methods
+OscarGodson,2012-06-22 06:24:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/77925d9e09473132ef3d52d65af1d23403b1d8c8,77925d9e09473132ef3d52d65af1d23403b1d8c8,Ticket #85 - Added docs for fileList
+OscarGodson,2012-06-18 05:45:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4d87f985f863ff97051108e4367e6d4867151a03,4d87f985f863ff97051108e4367e6d4867151a03,Ticket #125 - Fix for losing ability to use key shortcuts when clicking on the preview/edit icons
+OscarGodson,2012-06-18 05:35:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5b6ac73cf59f78ad5b167b48058cd424f972fe55,5b6ac73cf59f78ad5b167b48058cd424f972fe55,Ticket #85 - First steps to getting fileList working
+OscarGodson,2012-06-17 23:24:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cc280c47a863c093685a1a0ec0e93046a9b31974,cc280c47a863c093685a1a0ec0e93046a9b31974,Ticket #78 - Removed the 2nd <link> tag being inserted into the preview and added 'theme' ids to all theme <link>s.
+OscarGodson,2012-06-17 05:29:40,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0aa0b7a3125c93abf40d039eb5d87d6d10ee0474,0aa0b7a3125c93abf40d039eb5d87d6d10ee0474,"Ticket #102 - Fixed bug where filename would be [object HTMLDivElement] if the element didnt have an ID and no file name was given.
+
+Also added unloads where applicable in the spec which sped up the tests."
+OscarGodson,2012-06-09 23:46:23,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4e90fd4ee6d164e423ec490920742a8e50587fb5,4e90fd4ee6d164e423ec490920742a8e50587fb5,Ticket #129 - Adds support for fluid containers
+OscarGodson,2012-06-09 05:36:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5b228590e43d1ccc5274867099003026d703c723,5b228590e43d1ccc5274867099003026d703c723,Added meta description and rebuilt docs
+johnmdonahue,2012-06-09 04:37:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/bacad27ddcf2abcdbb94642c5c975a16452a91b0,bacad27ddcf2abcdbb94642c5c975a16452a91b0,replace ALL the README backticks nested in html
+johnmdonahue,2012-06-09 04:28:43,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/19163d3aa7209c3d42991d43d59566d241df5e2e,19163d3aa7209c3d42991d43d59566d241df5e2e,replace README backticks for <code> in opts table to satisfy GH markdown
+johnmdonahue,2012-06-09 04:20:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2e9b95b498aed05536f736ad699c58ffd6aac48f,2e9b95b498aed05536f736ad699c58ffd6aac48f,rebuild zip
+johnmdonahue,2012-06-09 04:11:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/32b2859cdd8ab006db3a906fcfe4fc79c8c19a88,32b2859cdd8ab006db3a906fcfe4fc79c8c19a88,update logo path and rebuild docs
+johnmdonahue,2012-06-09 04:07:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1cbaf671f3f1a1200d8662cb3fb035d592616aee,1cbaf671f3f1a1200d8662cb3fb035d592616aee,merge 0.1.0-build-refactor
+OscarGodson,2012-06-08 20:13:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7afb89262245a03ff3c1fbc1fda16673ce90051d,7afb89262245a03ff3c1fbc1fda16673ce90051d,A couple text changes to the docs
+johnmdonahue,2012-06-03 17:04:36,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/03e43839e7acfdecd60e121815b199cedfcb6ee6,03e43839e7acfdecd60e121815b199cedfcb6ee6,add custom parser info to docs
+OscarGodson,2012-05-29 08:46:19,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/15c70a54a9bdf50de64c954ebe8832eeefe2f186,15c70a54a9bdf50de64c954ebe8832eeefe2f186,Ticket #126 - This should fix the dropped characters issue by not overloading the parsing with every single keypress while in fullscreen.
+johnmdonahue,2012-05-29 03:25:29,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2685a86d05ecdd22fa5229a1a1a1bd5aa748f52f,2685a86d05ecdd22fa5229a1a1a1bd5aa748f52f,add pointer to save interval and clear on unload
+OscarGodson,2012-05-29 02:56:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f10b5a7490f732840ddea151182b7bdc9c0209c9,f10b5a7490f732840ddea151182b7bdc9c0209c9,Merge branch '0.1.0-build-refactor' of github.com:OscarGodson/EpicEditor into 0.1.0-build-refactor
+OscarGodson,2012-05-29 02:55:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8c5922366eedfc3a0174b092be2e68aae41d3b0a,8c5922366eedfc3a0174b092be2e68aae41d3b0a,Ticket #64 - Display block on <a>s?\!
+johnmdonahue,2012-05-28 18:32:14,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cb35924b3506b0b4ef095d6bbf8ac43de377b9ef,cb35924b3506b0b4ef095d6bbf8ac43de377b9ef,remove avatars
+OscarGodson,2012-05-28 03:51:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5550aa273fcddaf8650ff058938cd4992085674e,5550aa273fcddaf8650ff058938cd4992085674e,Added GA tracking
+OscarGodson,2012-05-27 23:35:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/469d492b52e55cccd3ad163cdf26d1cc5f809b99,469d492b52e55cccd3ad163cdf26d1cc5f809b99,Fix test suite for IE9. Fixed one failing test because IE9 uses returns not newlines for returns. Added DOCTYPE because IE9 was failing a bunch of tests because it was in Quirks mode. Added a timer as a hacky cross browser ondomready so IE9 wont fail with appendChild.
+OscarGodson,2012-05-25 07:41:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c8e4697d54c65c256ae9b2ecba7a165728d020aa,c8e4697d54c65c256ae9b2ecba7a165728d020aa,"Ticket #103 - finally fixed and figured out why the editor wasn't focusing in WebKit and it was because all three iframes were not finished loading yet. FF and IE allow you to focus when the children are finished loading, but WebKit waits for the parent."
+OscarGodson,2012-05-25 05:58:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5a66a0294b810090be63090e163f58d607bb61a6,5a66a0294b810090be63090e163f58d607bb61a6,Ticket #120 - Fixed closing fullscreen with the fullscreen key shortcut
+dadambickford,2012-05-25 01:46:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f5de391afbd90c196eb514b82e417c57bd8978dc,f5de391afbd90c196eb514b82e417c57bd8978dc,fixed bug when accidentally using fullscreen shortcut to try and close fullscreen mode
+sebnitu,2012-05-23 16:53:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cdf4fcfe51f370895f8718db141308389a278eeb,cdf4fcfe51f370895f8718db141308389a278eeb,Ticket #117 - Fixes state of the editor when exiting fullscreen view
+OscarGodson,2012-05-23 05:54:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/618ece8391b3a6b3296cc8ba8a33848d11caade4,618ece8391b3a6b3296cc8ba8a33848d11caade4,Ticket #115 - Fixed merge conflict with min build
+OscarGodson,2012-05-23 05:53:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b79d08b436582586e4df690ea72ecc67e0ba4132,b79d08b436582586e4df690ea72ecc67e0ba4132,Ticket #115 - Fixed merge conflicts and accept pull request
+johnmdonahue,2012-05-23 05:29:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/bec368944ebfa17ed3f6e6d7c8cc3dfe8a73f9d1,bec368944ebfa17ed3f6e6d7c8cc3dfe8a73f9d1,remove parser error message from preview
+sebnitu,2012-05-23 02:06:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dd4c592afd508d678888545469b408262da164c1,dd4c592afd508d678888545469b408262da164c1,Ticket #115 - Added some event delegation goodness to the utility buttons
+OscarGodson,2012-05-23 01:08:57,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2ca46614ab6e8c95732bf7c08e6cfa6238589d4c,2ca46614ab6e8c95732bf7c08e6cfa6238589d4c,Merge branch '0.1.0-build-refactor' of github.com:OscarGodson/EpicEditor into 0.1.0-build-refactor
+OscarGodson,2012-05-23 01:08:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ab79afc99c3bd627acacc875c5e986aa850419f0,ab79afc99c3bd627acacc875c5e986aa850419f0,Ticket #37 - Removed unused CSS
+sebnitu,2012-05-22 19:24:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/71dbd652f66ef4641af574dc39dac6daeff63503,71dbd652f66ef4641af574dc39dac6daeff63503,Ticket #115 - Added new icons for the EE utilities buttons
+johnmdonahue,2012-05-22 19:00:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/07164fd091b7fd8e6dddaaafbc47e0e693808654,07164fd091b7fd8e6dddaaafbc47e0e693808654,ensure submodule init before parser check
+OscarGodson,2012-05-21 20:25:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ddca823dc1e701c6ad33292f56d779245add9661,ddca823dc1e701c6ad33292f56d779245add9661,"Merge pull request #114 from OscarGodson/parser-as-option
+
+Parser as option"
+johnmdonahue,2012-05-21 20:23:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6fa0a66f4909eb1b31c5a3e265ff8df112d5a72e,6fa0a66f4909eb1b31c5a3e265ff8df112d5a72e,remove showdown from jshint global declaration
+johnmdonahue,2012-05-21 02:38:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/34583955936d6915194de9b76b091fcf6514b853,34583955936d6915194de9b76b091fcf6514b853,clean jake task descriptions
+johnmdonahue,2012-05-21 02:25:52,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/71b7bce3b4211e95bd5b38a53bc5ce8dd7ef5edf,71b7bce3b4211e95bd5b38a53bc5ce8dd7ef5edf,update readme and docs to reflect api changes
+johnmdonahue,2012-05-21 02:25:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/49cf22bf8de3e67a559d978d6175f65f52e8841c,49cf22bf8de3e67a559d978d6175f65f52e8841c,pass lint
+johnmdonahue,2012-05-21 02:24:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e0eb87f8a1daaff46303581fa0e65630de1f8bcb,e0eb87f8a1daaff46303581fa0e65630de1f8bcb,rebuild with parser setting
+johnmdonahue,2012-05-21 02:23:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c7f5733edd797b324bbb60c9b71fe4d4e790bd84,c7f5733edd797b324bbb60c9b71fe4d4e790bd84,add parser setting and lint all the things
+johnmdonahue,2012-05-20 20:11:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ad7e06a9c502f0318d7ccac48ac83cc154631667,ad7e06a9c502f0318d7ccac48ac83cc154631667,update package with marked 0.2.5
+johnmdonahue,2012-05-20 20:10:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/216261fa4667115183c9dea877787abb1970e8d3,216261fa4667115183c9dea877787abb1970e8d3,move favicon and update sans font
+johnmdonahue,2012-05-20 19:25:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0a134a6d2e0039698a6773a2986fdcd59ddbff6b,0a134a6d2e0039698a6773a2986fdcd59ddbff6b,rebuild using marked 0.2.5 RE: #75
+johnmdonahue,2012-05-20 19:23:31,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fcf6244a095df4273bdc3e59f759c515c36014fe,fcf6244a095df4273bdc3e59f759c515c36014fe,update marked version to 0.2.5
+OscarGodson,2012-05-20 17:35:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/356230fff09c84ebdd2b7c62e3291ed846d39a78,356230fff09c84ebdd2b7c62e3291ed846d39a78,Ticket #75 - Firefox uses &nbsp; so converted those as well.
+OscarGodson,2012-05-20 17:28:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/477233679e68068957bdcd7942df3610bfc2e3f2,477233679e68068957bdcd7942df3610bfc2e3f2,Ticket #75 - Finally fixed 2 space line breaking issue thanks to @chjj
+OscarGodson,2012-05-19 15:38:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/155f6183919b73e4b26a31b3d9809f7e66be9511,155f6183919b73e4b26a31b3d9809f7e66be9511,Ticket #112 - Fixed stupid fucking Firefox issues with making our innerText shim work more consistent with every other browser.
+dadambickford,2012-05-19 05:04:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/91e3be06ef5c95ec53764d8200d90933ef3f81ba,91e3be06ef5c95ec53764d8200d90933ef3f81ba,Merge branch '0.1.0-build-refactor' of github.com:OscarGodson/EpicEditor into 0.1.0-build-refactor
+dadambickford,2012-05-19 02:15:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1fdb341d4b40329b67ac195edf095530f27e918e,1fdb341d4b40329b67ac195edf095530f27e918e,Ticket #101 - Fixes github theme table styles - unable to test in FF right now
+OscarGodson,2012-05-18 15:40:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/28bff33b7b0ed39bf12567c0657cd185ae5cb837,28bff33b7b0ed39bf12567c0657cd185ae5cb837,"Ticket #37 - FINALLY, got around to fixing the utilbar for real. No more \!important hacks in the CSS. Done with JS by simply removing the hide timer on utilbar hover."
+OscarGodson,2012-05-17 15:12:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9a06206857a3273b9193beb0b895cd8a28e9a22a,9a06206857a3273b9193beb0b895cd8a28e9a22a,Removed bold text from buttons. Looked absolutely terrible in Firefox unfortunately.
+OscarGodson,2012-05-17 15:09:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cdeb6e809f7ca5828fea5656a43f7bf7c3235abf,cdeb6e809f7ca5828fea5656a43f7bf7c3235abf,Ticket #63 - Moved _isInEdit from outside _goFullscreen to inside it before setting eeState so that when closing fullscreen while you were in preview mode allows the edit button to work.
+OscarGodson,2012-05-17 14:55:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/74ff6747a21bedf885d00273e660d6fa0de334b7,74ff6747a21bedf885d00273e660d6fa0de334b7,Ticket #68 - Added event listener on scroll so utilBar wouldn't display while scrolling or hitting the bottom of the editor.
+OscarGodson,2012-05-17 14:45:57,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2c99e8728d15362ab353fad64c5a5d1f63b28435,2c99e8728d15362ab353fad64c5a5d1f63b28435,Make a pointer cursor appear on buttons
+OscarGodson,2012-05-17 14:38:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5224f82a9ece134652933ef2146211120fe86770,5224f82a9ece134652933ef2146211120fe86770,"Merge pull request #108 from OscarGodson/feature/download-btn
+
+Nicer buttons, added download section, removed tabs, and reorganized some main.js code."
+johnmdonahue,2012-05-17 07:11:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a175b48c5670254ad3d6d6e37c66b7feac065871,a175b48c5670254ad3d6d6e37c66b7feac065871,remove text-shadow on pre
+johnmdonahue,2012-05-17 06:12:47,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c56be6985ac402658c395685629f33973394da73,c56be6985ac402658c395685629f33973394da73,add a couple minor edits
+johnmdonahue,2012-05-17 06:02:14,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3ea6f98346d0460ad5ab1c12bee3eb168583c419,3ea6f98346d0460ad5ab1c12bee3eb168583c419,add some tweaks to download button updates
+OscarGodson,2012-05-16 15:50:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/57d622b8bc52ed502bb38f34a27e56747115e839,57d622b8bc52ed502bb38f34a27e56747115e839,Changed keypress to keyup so that your changes in fullscreen werent 1 character off
+OscarGodson,2012-05-16 15:07:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4bc5387b2f17f6d30193b45ca6042b591fab5700,4bc5387b2f17f6d30193b45ca6042b591fab5700,"Added a nicer download button and moved it to a new 'Download' section which in the future could contain multiple versions like stable, beta, and alphas."
+johnmdonahue,2012-05-14 06:49:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f75089859088c6e0af8c514413c678940ad91c4e,f75089859088c6e0af8c514413c678940ad91c4e,"add zip, download links, and rebuild"
+johnmdonahue,2012-05-14 06:34:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/131dcc62da0ae6b02c90a90da528d3ef7b312819,131dcc62da0ae6b02c90a90da528d3ef7b312819,ignore non-zipped packages in downloads
+johnmdonahue,2012-05-14 06:34:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/51c29cfa4af88d09e756400d41674ccc1ef37341,51c29cfa4af88d09e756400d41674ccc1ef37341,add package task to Jakefile
+johnmdonahue,2012-05-14 04:49:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0d04d468c9b94109a728e9e82a9e41da070f5e38,0d04d468c9b94109a728e9e82a9e41da070f5e38,improve VERSION path
+johnmdonahue,2012-05-14 04:43:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/43dbe8f4a6cafec45ed7075410cd706f54a826f7,43dbe8f4a6cafec45ed7075410cd706f54a826f7,"update readme/docs with dynamic avatars, header linking, and credit to Marked"
+johnmdonahue,2012-05-14 04:05:33,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3d06dc0141128f6870525619d47e18ec98e70ab7,3d06dc0141128f6870525619d47e18ec98e70ab7,remove unecessary whitespace
+johnmdonahue,2012-05-14 04:01:22,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c6942f7d1f1bb927c413cf545ed8289194808502,c6942f7d1f1bb927c413cf545ed8289194808502,add dynamic version number in build
+johnmdonahue,2012-05-14 03:39:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5c8b115101e5a8fe358213d50bdf66518abe6fd7,5c8b115101e5a8fe358213d50bdf66518abe6fd7,rebuild index whoops
+johnmdonahue,2012-05-14 03:26:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/db10e5f6f2d0abaebca23a393b2a258451745994,db10e5f6f2d0abaebca23a393b2a258451745994,rebuild with updates
+johnmdonahue,2012-05-14 03:26:40,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c82648a13c5371664632670e582e2d8c80aa97c2,c82648a13c5371664632670e582e2d8c80aa97c2,cleanup Jakefile and add submodule initialization
+johnmdonahue,2012-05-13 22:15:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a956d777c7c05f8f037f0b820579d06e5bec36f0,a956d777c7c05f8f037f0b820579d06e5bec36f0,update readme with beta notice
+OscarGodson,2012-05-13 04:59:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1db08529481d5203b34bb3a95ca6991f3114b5c2,1db08529481d5203b34bb3a95ca6991f3114b5c2,Added EpicEditor.version and made the docs use it for appending the version number to the docs.
+OscarGodson,2012-05-13 04:37:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/07761b76d7166815831554a56734eceedbb452c2,07761b76d7166815831554a56734eceedbb452c2,Added a favicon with the other version of the logo @sebnitu made
+OscarGodson,2012-05-12 06:39:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8c332608a987be5af40d12b626122daaf4023f40,8c332608a987be5af40d12b626122daaf4023f40,Added titles to the icons as helper text
+OscarGodson,2012-05-12 06:22:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/97154046a7765b608c80d7030b5d613c1d3daf20,97154046a7765b608c80d7030b5d613c1d3daf20,Ticket #61 - Added focus to the editor frame when you open fullscreen so the esc key works to close the fullscreen in Firefox and IE
+OscarGodson,2012-05-11 15:30:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/19a8b183104e606d051ef6cf9820154c05123ddc,19a8b183104e606d051ef6cf9820154c05123ddc,"Ticket #103 - focusOnLoad works in Firefox now (and should work in IE), but I can't figure out Chrome at the moment."
+OscarGodson,2012-05-11 15:02:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/55091472e8e76943b44a449e1c6d818fee11c599,55091472e8e76943b44a449e1c6d818fee11c599,Ticket #60 - Make preview and edit key shortcuts work back to back
+OscarGodson,2012-05-11 07:49:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6d0ed0c61869f334d837e374b44fc98591f5b0c2,6d0ed0c61869f334d837e374b44fc98591f5b0c2,Ticket #77 - Cleaned up option list as well as the event list. Fixed other misc. issues with the docs.
+OscarGodson,2012-05-10 15:33:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e808e17cf2dc707c3785d8f928aab178b7b08ec1,e808e17cf2dc707c3785d8f928aab178b7b08ec1,Ticket #79 - You can now put a string for an ID of an element for the container option OR select an element yourself i.e. document.getElementByClassName('foo')[0]
+OscarGodson,2012-05-10 06:55:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/25d99ea9c874dead1e274bb570653d5ca22774aa,25d99ea9c874dead1e274bb570653d5ca22774aa,Ticket #98 - Added margin:0 to the saveStyleState object for the container element to fix issue with faux fullscreen where there was margins set the the container element.
+OscarGodson,2012-05-10 06:45:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b016ffa030878cd7d66ade237ae5820157da7f70,b016ffa030878cd7d66ade237ae5820157da7f70,Ticket #97 - Fixed issue when you opened fullscreen and closed fullscreen every keypress would trigger preview mode and you couldnt get out of it. Fixed by moving the keypress event out of the fullscreen init code and into the parent EE load code and checking if youre in fullscreen or not.
+OscarGodson,2012-05-09 15:42:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f4030e8a9f5b96a35ebde102f89a92ba0fb2e144,f4030e8a9f5b96a35ebde102f89a92ba0fb2e144,Ticket #46 - Fixed cmd+s opening the save dialogue. Also made it so cmd+s and ctrl+s actually fire save() so that with (or without) autoSave turned off you can save via a key shortcut.
+OscarGodson,2012-05-09 15:02:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d923b08400fc19de69c80dde9971e89bfff3cd61,d923b08400fc19de69c80dde9971e89bfff3cd61,"Merge pull request #95 from sebnitu/stylesUpdate
+
+Styles updates from @sebnitu!"
+sebnitu,2012-05-09 06:49:48,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6b18a99ea93ec94f3e637107d07ad434adf837b1,6b18a99ea93ec94f3e637107d07ad434adf837b1,Updated them styles! Added some textures and tweaks to the table of contents
+sebnitu,2012-05-09 02:26:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3d4a1e0bd67755b38f7adff55bd0cc87d0a24a09,3d4a1e0bd67755b38f7adff55bd0cc87d0a24a09,Merge branch '0.1.0-build-refactor' of https://github.com/OscarGodson/EpicEditor into HEAD
+sebnitu,2012-05-09 02:23:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ea0d3a182da6122f971752aaf51289b64870833a,ea0d3a182da6122f971752aaf51289b64870833a,Merge remote-tracking branch 'upstream/master' into HEAD
+OscarGodson,2012-05-09 00:12:36,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e97128e2c0be692cc8942ff70c134de98756d812,e97128e2c0be692cc8942ff70c134de98756d812,Custom domain stuff
+johnmdonahue,2012-05-08 19:49:09,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dfc2cb43486512b0ec5a96d49c3e4d992c49b846,dfc2cb43486512b0ec5a96d49c3e4d992c49b846,extract css/js and make toc GH readme friendly
+johnmdonahue,2012-05-08 18:34:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b790ad78d6c61158df00398cd240fb470056439a,b790ad78d6c61158df00398cd240fb470056439a,rebuilt ee.min test
+OscarGodson,2012-05-08 15:52:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e670d019628a51b9c515f0ebb00a58042a0bdd78,e670d019628a51b9c515f0ebb00a58042a0bdd78,Ticket #94 - Fixed issue where both create and update would fire when a new file was created.
+OscarGodson,2012-05-08 05:30:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/18b2792181a4bf4f309392d72f9cdc17b2dcfb69,18b2792181a4bf4f309392d72f9cdc17b2dcfb69,Ticket #30 & #86 - Merged feature/crud in which means CRUD events are supported and the new file schema exists. Cleaned up some doc stuff. Added new events to the events section.
+OscarGodson,2012-05-08 01:51:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f85b3a18770ef866bb5672e76cb15e51411d182e,f85b3a18770ef866bb5672e76cb15e51411d182e,Merge branch 'feature/crud' into 0.1.0-build-refactor
+johnmdonahue,2012-05-07 22:54:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/082a514fd0eacfb683eb4953cd3d2a611796cae8,082a514fd0eacfb683eb4953cd3d2a611796cae8,rebuild index
+johnmdonahue,2012-05-07 22:53:38,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ed54e88ea514eecaa53100bc4b663b95b9b14c20,ed54e88ea514eecaa53100bc4b663b95b9b14c20,grab style changes from doc-style-tweak
+johnmdonahue,2012-05-07 21:50:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/eecc31e9f88e4283e868aea7ae02a00e311cdea3,eecc31e9f88e4283e868aea7ae02a00e311cdea3,"Merge pull request #91 from OscarGodson/jakefile-cleanup
+
+Jakefile Cleanup"
+johnmdonahue,2012-05-07 05:12:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2d770f386fd689d7e5e02ede5d21179de06bf0f7,2d770f386fd689d7e5e02ede5d21179de06bf0f7,rebuild all from new jakefile
+johnmdonahue,2012-05-07 05:11:28,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c5f0ea9c2e8a72391fc080c6793f03e84fb9c7f4,c5f0ea9c2e8a72391fc080c6793f03e84fb9c7f4,refactor jakefile and allow cross platform execution
+OscarGodson,2012-05-06 17:33:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0e4917f20c22cd74e152c4985556cecb5a57c849,0e4917f20c22cd74e152c4985556cecb5a57c849,Ticket #86 & #30 - Added tests for checking the update events as well as checking the modified dates being updated when a file is modified
+OscarGodson,2012-05-06 07:37:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/498b3cad9434046467523d28577e90f9d78da39a,498b3cad9434046467523d28577e90f9d78da39a,Ticket #86 & #30 - Modified date now updates upon file changes and update event fires when a file is updated. Still needs tests and some more testing. Also fixed bug where importFile would trigger the previewer to open. Now checks if its fullscreen before firing preview to update the live preview in fullscreen.
+OscarGodson,2012-05-06 02:55:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dffc79962ef2a65830fbec2f07da3d2ca0615de2,dffc79962ef2a65830fbec2f07da3d2ca0615de2,Ticket #86 - Updated code and one test to work with new localStorage schema. Also removed unused and undocumented save() params and cleaned up the save() method. Only thing left it to update the 'modified' date whenever a file is saved and is different.
+OscarGodson,2012-05-05 05:34:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4a4e9295eb490ab1c7442fc5ec4971cc49ae2654,4a4e9295eb490ab1c7442fc5ec4971cc49ae2654,"Ticket #30 - The create, remove, and read events are now working. Still need update, but that requires an update to the storage schema. Wrote tests for these three events. Also removed the ugly 'live' param from preview. Preview now just knows from eeState if the editor is in fullscreen and therefore constantly update."
+johnmdonahue,2012-05-02 18:28:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7e950eac5b93b1dacb4a4b139590d9d51161a964,7e950eac5b93b1dacb4a4b139590d9d51161a964,hotfix to debug build error
+johnmdonahue,2012-05-02 16:30:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2559099dd0fc7db538445e61cfbaf8891d7b5ae6,2559099dd0fc7db538445e61cfbaf8891d7b5ae6,rebuild doc from readme update
+OscarGodson,2012-05-02 15:50:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/58889e0045ac7c8cd8aef8e03cf310b4d84dc1bf,58889e0045ac7c8cd8aef8e03cf310b4d84dc1bf,Ticket #30 - WIP of CRUD stuff. Remove event works and blocks saving if removing a file you currently have open until you resave. Create event works with open() but is buggy with importFile still. Also added window.editor = editor to the index file so you can play with the editor in your console
+johnmdonahue,2012-05-02 04:59:13,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cb954fc180b56b0881a4b0510db3a0b015c24d8b,cb954fc180b56b0881a4b0510db3a0b015c24d8b,fix readme typos
+OscarGodson,2012-04-30 16:26:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/99f0eacdd2f03556a26004e0b4b1953c791c0017,99f0eacdd2f03556a26004e0b4b1953c791c0017,Took the random id generated for the id of the editor off the options object
+OscarGodson,2012-04-28 19:19:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/756f0ba74643f69f9433f8feb353ca1a7306e70b,756f0ba74643f69f9433f8feb353ca1a7306e70b,Added tests to check for all the supported editor events
+OscarGodson,2012-04-28 18:59:29,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7228143e1896f22eb39760539e79957fdf7f2dfc,7228143e1896f22eb39760539e79957fdf7f2dfc,Somehow missed the comment I made for myself to update a test
+OscarGodson,2012-04-28 05:42:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/52b0e49dd1f2e746692ce67a55eb8ea049e04fbc,52b0e49dd1f2e746692ce67a55eb8ea049e04fbc,Forgot prettify
+OscarGodson,2012-04-28 05:39:40,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/229a73f98cb05713edfaa4fa28277856a8c55885,229a73f98cb05713edfaa4fa28277856a8c55885,"Small doc updates, changed classes to ids on a couple elements and reflected those changes in the tests and themes. Also re-wrote the theme docs."
+OscarGodson,2012-04-27 16:04:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/50fa638cae0306494132e2e758f6d5fcd5bc6a74,50fa638cae0306494132e2e758f6d5fcd5bc6a74,Cleaned up some CSS and made the sidebar a little nicer
+OscarGodson,2012-04-27 06:14:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/48b77a2829bf5cbeb9db6ac2ea2354a126fc1a95,48b77a2829bf5cbeb9db6ac2ea2354a126fc1a95,Lots of little doc updates such as updated save to reflect the change of auto saving and added the autoSave option and description of it. Added footer credits with avatars. Made small fix to the auto save code by removing the broken params (HOW THE HELL DID THIS WORK?)
+johnmdonahue,2012-04-27 04:51:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/051c6ba32eea831c4367b411ad6f07a31f2f551e,051c6ba32eea831c4367b411ad6f07a31f2f551e,update README and rebuild
+johnmdonahue,2012-04-27 04:49:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/61eb0c8ffdbd805fedbe961745e728a4579125e9,61eb0c8ffdbd805fedbe961745e728a4579125e9,rebuild ee
+johnmdonahue,2012-04-27 04:48:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/fc58e8f9a139d9c928888bbf68154bd19f5160a0,fc58e8f9a139d9c928888bbf68154bd19f5160a0,remove tmp README.html after docs build
+johnmdonahue,2012-04-27 04:47:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/14c4f3771d2aac6c113aad36d73ba98f43450520,14c4f3771d2aac6c113aad36d73ba98f43450520,move doc assets to docs folder
+johnmdonahue,2012-04-27 03:53:57,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/116fd7fee46abe653835919c5c6cadbff3f85f6c,116fd7fee46abe653835919c5c6cadbff3f85f6c,rebuild ee
+johnmdonahue,2012-04-27 03:52:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/da055d72e3be1d49edf8e7f86721de6e982f670d,da055d72e3be1d49edf8e7f86721de6e982f670d,pulling in 0.1.0-build refactor
+OscarGodson,2012-04-25 05:47:36,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9ca5a26aef0c9023fa27640fe02ca1797c7e863e,9ca5a26aef0c9023fa27640fe02ca1797c7e863e,Finished tests for removeListener. Was failing previously due to a bug in the removeListener code (THIS IS WHY WE WRITE TESTS). Also converted all tests except load() to use foounit before()s. This makes tests more resilient. Also added a test for importFile and a null value for file name and that it imports into the currently open file
+johnmdonahue,2012-04-24 17:39:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e70f1fdfebf3812d3c6bc6e575bb62151441b02e,e70f1fdfebf3812d3c6bc6e575bb62151441b02e,move jquery to footer
+OscarGodson,2012-04-24 15:42:42,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/49845feb2680eb7eac3a5cd75442a72bb7c6077b,49845feb2680eb7eac3a5cd75442a72bb7c6077b,"Added tests for on, emit, and removeListener. removeListener still has a failing test for some reason"
+johnmdonahue,2012-04-24 06:18:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/759425e504f0e64596ec6f071445216f8a123ff5,759425e504f0e64596ec6f071445216f8a123ff5,rebuild again ಠ_ಠ
+johnmdonahue,2012-04-24 06:16:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5ec28dfa88067634d06f2329aae1d501a2cd5456,5ec28dfa88067634d06f2329aae1d501a2cd5456,rebuild docs
+johnmdonahue,2012-04-24 06:10:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/513768d6c92656180458518796abb042597fd55c,513768d6c92656180458518796abb042597fd55c,update logo path
+johnmdonahue,2012-04-24 06:08:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/62347477325698a4cb1ab5a9ef89fa1f7072ab1a,62347477325698a4cb1ab5a9ef89fa1f7072ab1a,rebase hates me
+johnmdonahue,2012-04-24 06:04:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c31c611213965f37022f094570b5ab3c983f9c20,c31c611213965f37022f094570b5ab3c983f9c20,rebuild docs from readme changes
+johnmdonahue,2012-04-24 05:44:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/45b06c464b78649c9fa4cc0cc65f5694ba6d3b8c,45b06c464b78649c9fa4cc0cc65f5694ba6d3b8c,update readme and add build process for docs
+OscarGodson,2012-04-23 06:53:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5437bf4b47969916f8add4efe8bbc93cb7582574,5437bf4b47969916f8add4efe8bbc93cb7582574,"Added tests for preview/edit and save. Added support for null as a filename for import. If null, importFile will simply use the currently opened file"
+OscarGodson,2012-04-22 08:03:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/44e325963efb4a9b6c8c1dd6f901cc7ca8b39d51,44e325963efb4a9b6c8c1dd6f901cc7ca8b39d51,Added tests for unload(). Added loaded and unloaded to eeState to keep track of loaded and unloaded states for things such as making sure you cant getElement of an unloaded editor or running unload multiple times.
+OscarGodson,2012-04-21 03:14:51,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/989ffa11fffbec166a7258aa389a35673d087cd5,989ffa11fffbec166a7258aa389a35673d087cd5,Ticket #76 - Fixes issue where links were opening in the iframe
+OscarGodson,2012-04-21 02:54:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/40a9ff26823f00fb1233460a390a31d2ae503496,40a9ff26823f00fb1233460a390a31d2ae503496,Doc updates
+OscarGodson,2012-04-18 15:07:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/625ccdbb5f5c859da0c98cb7b9e892c075f38abc,625ccdbb5f5c859da0c98cb7b9e892c075f38abc,More tests. Tests added for .remove() and .open(). Created stubs all tests left.
+OscarGodson,2012-04-17 15:05:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c74d15d5fe2491046aa1d291c11420c2300a6ddc,c74d15d5fe2491046aa1d291c11420c2300a6ddc,Added another test for exportFile and added a new set of tests to check EpicEditor.rename. All are passing.
+OscarGodson,2012-04-16 05:55:32,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/68c17efd1747f8b3aef98e08059c02094d200213,68c17efd1747f8b3aef98e08059c02094d200213,Added some tests for exportFile
+OscarGodson,2012-04-16 04:58:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/328c87139ce518a5c12c45c280df39e8efb432a6,328c87139ce518a5c12c45c280df39e8efb432a6,"A lot of changes. importFile changes, removed exportHTML and created exportFile, added JSDoc comments for import/exportFile, added a space after the slashes in single line comments, added some more tests"
+OscarGodson,2012-04-12 14:55:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8db81060fb1c9e48eff90701fe5f7f8e9f4b931c,8db81060fb1c9e48eff90701fe5f7f8e9f4b931c,Fixed failing tests for EpicEditor.get
+OscarGodson,2012-04-11 04:37:18,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d6b3c925a3a47e9c7de3925b6ebc5e3748e80852,d6b3c925a3a47e9c7de3925b6ebc5e3748e80852,WIP - MOAR TESTS and Jakefile updates.
+johnmdonahue,2012-03-27 07:55:08,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/be003ef3912941856503897bd09f01b2fc7a4011,be003ef3912941856503897bd09f01b2fc7a4011,add basic tests and remove example
+johnmdonahue,2012-03-27 07:53:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/bd702a9a13579afaab3db04f062f139873d6ebc0,bd702a9a13579afaab3db04f062f139873d6ebc0,hotfix for foounit module param
+johnmdonahue,2012-03-27 07:44:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/35d6ade6f6b0425fe813760dad86dd6f82416016,35d6ade6f6b0425fe813760dad86dd6f82416016,wrap marked to protect from foounit scope
+OscarGodson,2012-03-27 03:14:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/87570f00a9d52d33515b9c2505311b6fd89923be,87570f00a9d52d33515b9c2505311b6fd89923be,"Added foounit stuff, got JSHint to pass and rebuilt"
+OscarGodson,2012-03-26 15:52:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3879dbb2067cd74e839631e5aabbe55a90fa2c39,3879dbb2067cd74e839631e5aabbe55a90fa2c39,Fixed a shit load of new JSHint errors after setting white back to true. At the same place it was when it was at false.
+OscarGodson,2012-03-25 07:03:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d92ad51675eb241a8abd96aab663e5dae8e76200,d92ad51675eb241a8abd96aab663e5dae8e76200,Lots of shit
+johnmdonahue,2012-03-19 17:34:26,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9d2dcb70a193d4f561a48e12052dd5feb54c79a8,9d2dcb70a193d4f561a48e12052dd5feb54c79a8,update path to epiceditor in index
+johnmdonahue,2012-03-18 03:13:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/421354550238719d66ea06952885d3d5f3b78da2,421354550238719d66ea06952885d3d5f3b78da2,"add onevar back to jshint, lint now fails"
+johnmdonahue,2012-03-18 03:13:19,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1e4f396cea6e622ea84be7d6f25b377a19ed4f51,1e4f396cea6e622ea84be7d6f25b377a19ed4f51,remove radix fix and rebuild
+johnmdonahue,2012-03-18 00:21:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/7e182941d305444678e76e00f91aef8284fd3b4c,7e182941d305444678e76e00f91aef8284fd3b4c,update api for importMarkdown change and script src location
+johnmdonahue,2012-03-18 00:19:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cc0da79f0b916719122eb65493e1e791f32ad36c,cc0da79f0b916719122eb65493e1e791f32ad36c,add intro.js with license
+johnmdonahue,2012-03-18 00:18:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/25aeba88bdd33389fd9436c7dcf364415f7c4021,25aeba88bdd33389fd9436c7dcf364415f7c4021,add built and minified files
+johnmdonahue,2012-03-18 00:17:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/de35292d17f2221f5e1085a62f419284f011ee9a,de35292d17f2221f5e1085a62f419284f011ee9a,add Jakefile
+johnmdonahue,2012-03-18 00:17:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0514299941fe68b2d02b676cdfaed8f254779a88,0514299941fe68b2d02b676cdfaed8f254779a88,extract license
+johnmdonahue,2012-03-18 00:16:47,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0dc1d79578b60daeec96edc7f2d1511e05ff88e6,0dc1d79578b60daeec96edc7f2d1511e05ff88e6,fix leading semicolon
+johnmdonahue,2012-03-18 00:14:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c2d3d6b977fcb1ce24cb934af84f6cd42e9977a2,c2d3d6b977fcb1ce24cb934af84f6cd42e9977a2,move epiceditor core to src dir
+johnmdonahue,2012-03-18 00:14:11,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9574e3165ac54472b6bae734257634214304d134,9574e3165ac54472b6bae734257634214304d134,make core epiceditor lib pass jshint
+johnmdonahue,2012-03-18 00:13:36,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/d45ca2c74989f0db91352444c24f7813736eb5d7,d45ca2c74989f0db91352444c24f7813736eb5d7,add jshintrc and extract marked to submodule
+dadambickford,2012-03-17 03:41:35,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/50d388437922eef7a0e2c535fa47559f5a639c40,50d388437922eef7a0e2c535fa47559f5a639c40,added a catch for ctrl/cmd + s so it doesn't do anything when accidentally pressed
+dadambickford,2012-03-17 03:06:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cd87437ad36f1d9d8e103e8e8b5dce45d4ff90d3,cd87437ad36f1d9d8e103e8e8b5dce45d4ff90d3,fixed the github theme util bar css omission
+OscarGodson,2012-03-17 02:07:17,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/485e21c702c83f7f75760d6043ae8d3cd5a55535,485e21c702c83f7f75760d6043ae8d3cd5a55535,Merge branch '0.1.0' of github.com:OscarGodson/EpicEditor into 0.1.0
+OscarGodson,2012-03-17 02:07:04,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9025eb452d575f2d2a23272dd50997b81c5a7af5,9025eb452d575f2d2a23272dd50997b81c5a7af5,Replaced Showdown with Marked (WORKS SO MUCH BETTER)
+dadambickford,2012-03-17 02:06:24,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c8a6d746542900c07c1d962552608b9e8bb8e90f,c8a6d746542900c07c1d962552608b9e8bb8e90f,added github markdown css port
+OscarGodson,2012-03-14 18:47:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4883c594457d75f11141924f9ff09d245b29e83d,4883c594457d75f11141924f9ff09d245b29e83d,"WIP fullscreen stuff. Now you can exit fullscreen, but the revert process is still kinda broken for some reason. Also cleaned up a bunch of FS code."
+OscarGodson,2012-03-13 01:36:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/666ce38ad1a22b1998b750eab94e8fd189485d1f,666ce38ad1a22b1998b750eab94e8fd189485d1f,Merged in master
+dadambickford,2012-03-12 20:01:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e250b28f0f8c6cbac399e1ce88713c44f857405e,e250b28f0f8c6cbac399e1ce88713c44f857405e,"Merge pull request #53 from jwmcpeak/master
+
+tested and confirmed golden in ie/ff/chrome/safari. merging."
+OscarGodson,2012-03-12 18:15:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c506cbbf77393d895e9111b5997722af0fb7b988,c506cbbf77393d895e9111b5997722af0fb7b988,"WIP fullscreen stuff. Fullscreen working in Firefox (faux) AND Chrome and Safari (native), but you can't close fullscreen yet."
+jwmcpeak,2012-03-12 03:56:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/c1de1bfd65e714a3cecca071b077a86b85eea984,c1de1bfd65e714a3cecca071b077a86b85eea984,Added radix to some parseInt() and parseFloat() calls; modified _insertCSSLink() to not set media property twice; moved isFunction() out of _mergeObjs() and renamed to _isFunction();
+OscarGodson,2012-03-09 16:33:27,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/caea398b697ee8450fb9846e55ef9a3b14514033,caea398b697ee8450fb9846e55ef9a3b14514033,"Fixed a lot of the GitHub styles, made GitHub the default preview theme, removed the keypress to save and added it as a timer and with that a autoSave in file:{} settings"
+OscarGodson,2012-03-09 05:29:14,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b4330df590d2aced85b077e9c891f2ee4696c555,b4330df590d2aced85b077e9c891f2ee4696c555,bumped the version number on the index.html and removed it and the alpha warning from the README
+OscarGodson,2012-03-09 05:26:01,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/169fa61b52453db78a58a85b03d4bbb630d30eb4,169fa61b52453db78a58a85b03d4bbb630d30eb4,fixed comma placement from pull request
+johnmdonahue,2012-03-09 02:30:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f390969c645615032029e645faa20e7387c3cf8a,f390969c645615032029e645faa20e7387c3cf8a,add try-it loader link to index
+johnmdonahue,2012-03-09 02:29:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/3531be8531b933f6dd565f55c07dcdf88eef1316,3531be8531b933f6dd565f55c07dcdf88eef1316,fix unload callback error
+johnmdonahue,2012-03-09 02:25:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1ff82423d93cbaa5885095d19b992c481a845686,1ff82423d93cbaa5885095d19b992c481a845686,clean up constructor and protect instance id
+johnmdonahue,2012-03-08 22:28:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/14a3bec2c57cf805bc3817eb398b1091c9147b78,14a3bec2c57cf805bc3817eb398b1091c9147b78,update docs with API tweak
+johnmdonahue,2012-03-08 22:27:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/bd023425d0e9677f5aa6f0fbe1cb4881b2f36288,bd023425d0e9677f5aa6f0fbe1cb4881b2f36288,update api to use singular for themes and shorcuts
+johnmdonahue,2012-03-08 22:23:00,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5cb15ca4e89225668ac8f38e378694b7ae12f178,5cb15ca4e89225668ac8f38e378694b7ae12f178,update docs with API change
+johnmdonahue,2012-03-08 22:22:12,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/17705a8bfa7d2861eb55697430eae04045ebbc7c,17705a8bfa7d2861eb55697430eae04045ebbc7c,update constructor to use options param
+dadambickford,2012-03-07 02:53:39,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0934733e0c34d957c83c70106fc2173ca8497db8,0934733e0c34d957c83c70106fc2173ca8497db8,"Merge pull request #42 from jwmcpeak/master
+
+Minor Change"
+OscarGodson,2012-03-04 01:21:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2a194a05902b834308d0276b12ce680bcae110a9,2a194a05902b834308d0276b12ce680bcae110a9,Shortcuts FTW and also bumping to 0.0.3 and added a GH Fork Me ribbon
+OscarGodson,2012-03-04 01:08:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4bfc884053c74275c65672bc7f5cb47bda72ab3a,4bfc884053c74275c65672bc7f5cb47bda72ab3a,Fixed indent
+OscarGodson,2012-03-04 01:02:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cb453aca03b5fc3dc00ab1d0070abc0820534ca6,cb453aca03b5fc3dc00ab1d0070abc0820534ca6,Added docs for key shortcuts on the index page and added check for webkit for the fullscreen shortcut so other browsers don't get errors when the key command is pressed when they dont support fullscreen
+dadambickford,2012-03-03 23:52:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/48cfe8231e9087e8d885acf1dd8e383c166281a5,48cfe8231e9087e8d885acf1dd8e383c166281a5,added dev control over key shortcuts in the options object
+dadambickford,2012-03-03 22:30:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/1cf6aad770158ad370dbe41ba9aa3f600646d67d,1cf6aad770158ad370dbe41ba9aa3f600646d67d,"changed preview/edit shortcuts to alt+p & alt+o, discarded use of e.altkey for future .options() changes"
+OscarGodson,2012-03-03 17:33:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6aa615fba49ac42fccac9b5623b2ba5c60195f2e,6aa615fba49ac42fccac9b5623b2ba5c60195f2e,"Added IE9 support which fixed #5,
+Note: added a _isIE() function but it should not be used if possible. Where I used it to fix the height issue in preview mode is because I couldn't find where the 2px was coming from. All values of height, padding, offsetHeight, etc were exactly the same as Chrome and Firefox."
+OscarGodson,2012-03-01 09:48:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/031df823dae4bf4c1cba61dbe1f691b296d81e3f,031df823dae4bf4c1cba61dbe1f691b296d81e3f,"Cleaned up shortcut code,
+moved it down by other key events,
+added checks to make sure key events dont fire while in fullscreen (breaking fullscreen),
+fixed ternary checks on preventDefault which *should* fix IE,
+added 'wrapper' to get() and documented it,
+added a preload to the default preview stylesheet to stop the flicker from ticket #34
+and a few other enhancements"
+dadambickford,2012-03-01 02:56:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ca924085cc7d9dcba2ee1ce218063fc53a3c2d02,ca924085cc7d9dcba2ee1ce218063fc53a3c2d02,added alt+f shortcut for fullscreen
+dadambickford,2012-03-01 02:19:07,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f19b6a7b496df22b0232a7d595e4d0bbafd9832b,f19b6a7b496df22b0232a7d595e4d0bbafd9832b,"added keyboard shortcuts, not working fluidly in ie yet"
+OscarGodson,2012-02-28 10:19:09,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/56fc1d7dee623bc8c25e5a3c460bbc1c29345161,56fc1d7dee623bc8c25e5a3c460bbc1c29345161,Forgot to add the remove() method to the ToC in the README
+OscarGodson,2012-02-28 10:15:56,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/984beddcd36ab0f1b8e8b0f38d8807d2ff09c467,984beddcd36ab0f1b8e8b0f38d8807d2ff09c467,Added docs for the remove() method
+OscarGodson,2012-02-28 10:08:45,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/85835bb36675a858791022ace21bcfbae46e7f55,85835bb36675a858791022ace21bcfbae46e7f55,Merge branch 'master' into gh-pages
+OscarGodson,2012-02-28 10:08:31,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/9ccc648caa38a24deedb72d9d43a1fddcc136fed,9ccc648caa38a24deedb72d9d43a1fddcc136fed,Removed support for native fullscreen in Firefox (see issue #22).
+OscarGodson,2012-02-26 07:44:15,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/960ba5b6a1607589682ecd360d9a879a771ec6e0,960ba5b6a1607589682ecd360d9a879a771ec6e0,Merge branch 'master' into gh-pages
+OscarGodson,2012-02-26 07:43:46,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5cf1e6c77ad37bdf2afaabea2f447f657e766c01,5cf1e6c77ad37bdf2afaabea2f447f657e766c01,Added .rename() and .import() and fixed some missing commas in the docs - Fixed #29 Fixed #28
+OscarGodson,2012-02-26 04:31:20,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/35afdeb9a0694c0daef40053dcb8ba0dc9d4ea8a,35afdeb9a0694c0daef40053dcb8ba0dc9d4ea8a,Added a gitignore
+OscarGodson,2012-02-24 08:11:49,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/b9fef72bfa839e3fe6eca7777cbd2e434b01d232,b9fef72bfa839e3fe6eca7777cbd2e434b01d232,Merge branch 'master' into gh-pages
+OscarGodson,2012-02-24 08:11:37,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/e70356764812b92501a8feaf4611e2750c2e79c4,e70356764812b92501a8feaf4611e2750c2e79c4,Added JSDoc comment for .open()
+OscarGodson,2012-02-24 08:09:02,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/8d5630f571ef1bcf8725ad7b3afd832bc93db9c3,8d5630f571ef1bcf8725ad7b3afd832bc93db9c3,added a .remove(name) so you can remove a file
+OscarGodson,2012-02-24 06:31:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/6b50397a94ce3fd96203f7ed7be43ebf2b274912,6b50397a94ce3fd96203f7ed7be43ebf2b274912,Fix overwriting of content when using .open()
+OscarGodson,2012-02-24 06:31:44,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/ab66f5fe8b169d6f4fdd96535866b8bdd19ba8b1,ab66f5fe8b169d6f4fdd96535866b8bdd19ba8b1,Fix overwriting of content when using .open()
+OscarGodson,2012-02-24 06:20:06,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/84695d1e0370d2e12590d5408dab770da8f5a92d,84695d1e0370d2e12590d5408dab770da8f5a92d,Fix .open() not displaying new file contents in preview mode
+OscarGodson,2012-02-21 19:11:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/58b3e29887305ceff9aeece61a5fc1df35a5e20c,58b3e29887305ceff9aeece61a5fc1df35a5e20c,Fixed minor formatting issues with README
+OscarGodson,2012-02-21 19:08:34,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/0f82b61b3fc3c19328ac112074bb04330e7d269b,0f82b61b3fc3c19328ac112074bb04330e7d269b,Rewrote README fixed #9
+OscarGodson,2012-02-21 08:22:59,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/75e5f6b1ac5dee5aa8394c43d741a60769c0e760,75e5f6b1ac5dee5aa8394c43d741a60769c0e760,Added @dadambickford to the README
+OscarGodson,2012-02-21 08:21:25,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/a5048f9ef1dbd567dabb90dc36a49faf80ec20e7,a5048f9ef1dbd567dabb90dc36a49faf80ec20e7,Merge branch 'master' of github.com:OscarGodson/EpicEditor
+OscarGodson,2012-02-21 08:21:10,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/59c64aa7a70d51386ef1285b9e03bcf215dd51ca,59c64aa7a70d51386ef1285b9e03bcf215dd51ca,Finished the gh-page demo/readme and added a basePath option and updated file paths to use basePath instead of hardcoding /epiceditor/
+dadambickford,2012-02-21 02:01:21,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/dfbe92510ed26716774fce17c30c4d666863025c,dfbe92510ed26716774fce17c30c4d666863025c,Merge branch 'master' of github.com:OscarGodson/EpicEditor
+dadambickford,2012-02-21 02:00:53,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/04109d7cea61a510cb43a69f7f092c56a2a572c0,04109d7cea61a510cb43a69f7f092c56a2a572c0,"fixed #11, emitted save and open events"
+OscarGodson,2012-02-21 01:44:43,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/f1246d2c05d0d78ff8f701ead301b42b58ba8052,f1246d2c05d0d78ff8f701ead301b42b58ba8052,Merge branch 'master' of github.com:OscarGodson/EpicEditor
+OscarGodson,2012-02-21 01:44:16,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/cad145cc41fb0a7a0b08c5eb2820f42da6e47b8c,cad145cc41fb0a7a0b08c5eb2820f42da6e47b8c,Added @dadambickford as a contributer in the docs
+dadambickford,2012-02-21 01:40:09,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/af6e27cbe6eb427602e7a2584b6f2ff0bde7140b,af6e27cbe6eb427602e7a2584b6f2ff0bde7140b,Merge branch 'master' of github.com:OscarGodson/EpicEditor
+dadambickford,2012-02-21 01:39:58,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/be7677adf4ab769efa85ce3512165c057e3b4f8a,be7677adf4ab769efa85ce3512165c057e3b4f8a,"firefox bug, fixed #17"
+OscarGodson,2012-02-21 01:26:41,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/5458391b85ecd004b65c490579134a0e5f536346,5458391b85ecd004b65c490579134a0e5f536346,Crappy temp fix for #13 after spending a few hours on it and some minor github theme updates
+dadambickford,2012-02-18 19:35:05,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/2027773173deea1c2e466491c5e3debfd76f948e,2027773173deea1c2e466491c5e3debfd76f948e,"fixed #2, fixed typo"
+OscarGodson,2012-01-26 20:20:54,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4da9d6ccd06676f647f69142567e55d7064638af,4da9d6ccd06676f647f69142567e55d7064638af,Changed H4s to H3s in the API because GitHub's new styles make h4-h5s all caps
+OscarGodson,2012-01-26 20:15:55,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/66172240822f2b55e63e4d675f737cf7062ed488,66172240822f2b55e63e4d675f737cf7062ed488,Fixed formatting issues in README
+OscarGodson,2012-01-25 06:07:03,https://api.github.com/repos/OscarGodson/EpicEditor/git/commits/4809083fa8359d8276a8b5b29fa8fe169c793652,4809083fa8359d8276a8b5b29fa8fe169c793652,First commit. Almost completely working in Chrome. Needs some minor work in Firefox. Not tested in IE. Most of the docs done

@@ -1,0 +1,550 @@
+jsonform,Build forms from JSON Schema. Easily template-able. Compatible with Bootstrap 3 out of the box.
+username,timestamp,url,sha,message
+tchapi,2019-09-04 13:44:48,https://api.github.com/repos/jsonform/jsonform/git/commits/b9d2d1aa0a32ec4326fffe57235c3f7fde43601e,b9d2d1aa0a32ec4326fffe57235c3f7fde43601e,Readjust indentation
+tchapi,2019-09-04 13:42:47,https://api.github.com/repos/jsonform/jsonform/git/commits/53bafc0c794bbe744d92168c9226918cd940a13f,53bafc0c794bbe744d92168c9226918cd940a13f,"Merge pull request #246 from coreyfournier/patch-1
+
+Legend to show enum values"
+coreyfournier,2019-08-23 19:25:36,https://api.github.com/repos/jsonform/jsonform/git/commits/33bca2cf48caeb8d8a6278ece155b237d938de59,33bca2cf48caeb8d8a6278ece155b237d938de59,"Legend to show enum values
+
+Updated the binding of changes when using a legend. Changes were not reflected when the text field was using an enum unless you used they keyboard to scroll through the different options. Below is a sample form that has a legend with an array and text enum. Verified this works with an existing legend that is tied to a standard text box.
+
+{
+	""schema"": {
+	    ""coverages"":
+	    {
+	        ""type"":""array"",
+	        ""items"":{
+				""type"": ""object"",
+				""title"":""Max Coverage"",
+				""properties"": {
+					""name"":{
+						""type"":""string"",
+						""title"":""Coverage Name"",
+						""required"":true,
+						""enum"":["""",""NPPA"",""MDDO"",""Scribe""]
+					},
+					""hours"": {
+						""type"": ""number"",
+						""title"": ""Coverage (Hours)"",
+						""required"":true,
+						""step"":1
+					}
+				}				
+	        }
+		}		
+	},
+	""form"": [
+		{
+		  ""type"": ""tabarray"",
+		  ""items"": {
+			""type"": ""section"",
+			""legend"":""{{value}}"",
+			""items"": [
+				{
+				  ""key"": ""coverages[].name"",
+				  ""title"": ""Coverage Name"",
+				  ""valueInLegend"": true
+				},
+				""coverages[].hours"",
+				{
+      ""type"": ""submit"",
+      ""title"": ""Submit""
+    } 
+			]
+		  }
+		}
+	]
+}"
+tchapi,2019-06-19 07:41:37,https://api.github.com/repos/jsonform/jsonform/git/commits/67c468b2146cb0434fb30f6e0534c2daeee82f9b,67c468b2146cb0434fb30f6e0534c2daeee82f9b,Bump to 2.1.5 for release
+tchapi,2019-06-19 07:39:46,https://api.github.com/repos/jsonform/jsonform/git/commits/e09d333bd7d841d4c8bf36f2aa998102790f27a6,e09d333bd7d841d4c8bf36f2aa998102790f27a6,"Merge pull request #239 from thanhngch/feature/drag_drop_template_value
+
+Drag drop will update template {{values}} data"
+thanhngch,2019-06-11 12:19:15,https://api.github.com/repos/jsonform/jsonform/git/commits/e125a7528d933e7eb9e94b7dcc11952500a029cd,e125a7528d933e7eb9e94b7dcc11952500a029cd,Drag drop will update template {{values}} data
+tchapi,2019-05-21 14:06:20,https://api.github.com/repos/jsonform/jsonform/git/commits/1042794c976c94f28cc39e6128edb4ddd00955b8,1042794c976c94f28cc39e6128edb4ddd00955b8,"Merge pull request #234 from elibus/fix-issue-232
+
+Fix issue #232 - multiselect checkboxes do not work with tabarray"
+tchapi,2019-05-21 13:01:08,https://api.github.com/repos/jsonform/jsonform/git/commits/90423cfb8846ded14448e12cdae8ed5dca7284c9,90423cfb8846ded14448e12cdae8ed5dca7284c9,"Merge pull request #235 from elibus/fix-issue-233
+
+Fix issue #233 - remove expanded class on insert"
+elibus,2019-05-19 08:47:53,https://api.github.com/repos/jsonform/jsonform/git/commits/16401a337b7f17b2c5c25e5e98bd62f584894fb1,16401a337b7f17b2c5c25e5e98bd62f584894fb1,Update jsonform.js
+elibus,2019-05-18 21:55:31,https://api.github.com/repos/jsonform/jsonform/git/commits/b9c832238334836fc2ad2bba537b68877f9c7b79,b9c832238334836fc2ad2bba537b68877f9c7b79,Fix issue #232
+tchapi,2019-05-16 08:00:19,https://api.github.com/repos/jsonform/jsonform/git/commits/80befb7fed944f8d0e5cdc030587e3bbedfabee4,80befb7fed944f8d0e5cdc030587e3bbedfabee4,"Merge pull request #230 from michaelmairegger/hotfix/number-step-any
+
+Allow numeric step any"
+michaelmairegger,2019-05-16 06:46:36,https://api.github.com/repos/jsonform/jsonform/git/commits/762a244037b8052ce07215e95a1c9a1b3f99e916,762a244037b8052ce07215e95a1c9a1b3f99e916,Add on single line
+tchapi,2019-05-14 14:23:09,https://api.github.com/repos/jsonform/jsonform/git/commits/e9f78678078fdbe1fa3eaf20b5bdb798084ad965,e9f78678078fdbe1fa3eaf20b5bdb798084ad965,"Slugify schema key when using it in id or classname
+
+Fix #231"
+michaelmairegger,2019-05-09 12:57:22,https://api.github.com/repos/jsonform/jsonform/git/commits/c006a58827914c22ab19db40691a00d65bd0933a,c006a58827914c22ab19db40691a00d65bd0933a,Allow numeric step any
+tchapi,2019-05-02 10:31:16,https://api.github.com/repos/jsonform/jsonform/git/commits/18cb4a9c5131e10993e7b60ec2714dfb09e6580e,18cb4a9c5131e10993e7b60ec2714dfb09e6580e,Bump to version 2.1.4
+tchapi,2019-04-30 16:21:20,https://api.github.com/repos/jsonform/jsonform/git/commits/1728776be19009eb4ac6d5fafb6cf756eb97014b,1728776be19009eb4ac6d5fafb6cf756eb97014b,Fix #226 : Add legend/title for authfieldset and advancedfieldset
+tchapi,2019-03-21 13:17:02,https://api.github.com/repos/jsonform/jsonform/git/commits/18e50b40aaf34589840e182abf9756a581735825,18e50b40aaf34589840e182abf9756a581735825,"Merge pull request #221 from jsonform/bugfix/radiobuttons
+
+Fix CSS for radio buttons, add submit in example"
+tchapi,2019-03-21 10:54:03,https://api.github.com/repos/jsonform/jsonform/git/commits/0c8528805759d7ecf26e46b1f016b6f2b08abf80,0c8528805759d7ecf26e46b1f016b6f2b08abf80,"Fix CSS for radio buttons, add submit in example"
+tchapi,2019-03-13 12:39:57,https://api.github.com/repos/jsonform/jsonform/git/commits/c0551f3dc1c3191eb4b79393f256a3295e92c368,c0551f3dc1c3191eb4b79393f256a3295e92c368,Make code style consistent after PR #215
+tchapi,2019-03-13 12:39:06,https://api.github.com/repos/jsonform/jsonform/git/commits/97802c709807363d4ce77272f02c76a838b0d4ac,97802c709807363d4ce77272f02c76a838b0d4ac,"Merge pull request #215 from coreyfournier/patch-1
+
+Update jsonform.js to allow numbers with decimals by setting the step"
+coreyfournier,2019-02-27 15:23:50,https://api.github.com/repos/jsonform/jsonform/git/commits/4ae0b181373db2faf7579e87b8160f47ab7c5742,4ae0b181373db2faf7579e87b8160f47ab7c5742,"Update jsonform.js
+
+Added the ability to allow numbers with decimals by setting the step field in the schema."
+tchapi,2019-02-15 12:58:59,https://api.github.com/repos/jsonform/jsonform/git/commits/7a21dcbf27b95a7a7afa5365ae44f1fd95e0f6d8,7a21dcbf27b95a7a7afa5365ae44f1fd95e0f6d8,"Merge pull request #212 from jsonform/fix-multidimensionnal-arrays
+
+Fix #210 by resetting prop for multi-dim arrays"
+tchapi,2019-02-15 09:26:26,https://api.github.com/repos/jsonform/jsonform/git/commits/ed4033fbcc680279c49e1849959c427a4d138efe,ed4033fbcc680279c49e1849959c427a4d138efe,Fix #210 by resetting prop for multi-dim arrays
+tchapi,2019-02-07 16:56:51,https://api.github.com/repos/jsonform/jsonform/git/commits/8d64f0b2e6c068b8443d20c88fcf7dba228b9310,8d64f0b2e6c068b8443d20c88fcf7dba228b9310,Fix #138 : specialise selector for tab content
+tchapi,2019-01-08 12:22:57,https://api.github.com/repos/jsonform/jsonform/git/commits/7cf600f003fd0ae3cd75e062c89da51eb1344dd3,7cf600f003fd0ae3cd75e062c89da51eb1344dd3,Fix exclusiveMaximum condition as per jsonform#86
+tchapi,2019-01-08 12:17:14,https://api.github.com/repos/jsonform/jsonform/git/commits/0b11bd93f170ab2b93980c49cce09930abfd116f,0b11bd93f170ab2b93980c49cce09930abfd116f,Bump version to 2.1.3
+tchapi,2019-01-08 12:09:27,https://api.github.com/repos/jsonform/jsonform/git/commits/cff42c204fe5832801243595a4e2bfe7c399e129,cff42c204fe5832801243595a4e2bfe7c399e129,"Style fixup re: b36320f
+
+Add example for htmlMetaData"
+tchapi,2019-01-08 12:06:11,https://api.github.com/repos/jsonform/jsonform/git/commits/b36320ffad82d052937710702514b036c2e81167,b36320ffad82d052937710702514b036c2e81167,"Merge pull request #199 from duffar12/master
+
+Added support for a htmlMetaData form property. 
+
+This property can be used to add additional html metadata"
+tchapi,2019-01-07 08:32:03,https://api.github.com/repos/jsonform/jsonform/git/commits/94975496ca924e68f7936d91209be85fc707c9af,94975496ca924e68f7936d91209be85fc707c9af,"Merge pull request #206 from aarhus/master
+
+Fix issue with ""disabled"" attribute not being correctly handled for select items"
+tchapi,2018-11-27 10:28:58,https://api.github.com/repos/jsonform/jsonform/git/commits/64de43f03587f205f0bea8943b7f6281d2666975,64de43f03587f205f0bea8943b7f6281d2666975,Update jQuery UI (for sortable behavior)
+tchapi,2018-10-29 10:12:51,https://api.github.com/repos/jsonform/jsonform/git/commits/4592e82381657a26bfdb290324ab74e8c5fbcd0c,4592e82381657a26bfdb290324ab74e8c5fbcd0c,Merge branch 'master' of github.com:jsonform/jsonform
+leoMehlig,2018-10-29 10:11:50,https://api.github.com/repos/jsonform/jsonform/git/commits/882a34c0b3110a637d357c1f4f4193c7684d7c3a,882a34c0b3110a637d357c1f4f4193c7684d7c3a,"Workaround for selectfieldset in array (#191)
+
+* Workaround for selectfieldset in array"
+tchapi,2018-09-17 07:16:02,https://api.github.com/repos/jsonform/jsonform/git/commits/4d55788e8c814a74fd1ac2951ec2cc5b099bba5f,4d55788e8c814a74fd1ac2951ec2cc5b099bba5f,2.1.2
+snarlynarwhal,2018-09-14 17:02:24,https://api.github.com/repos/jsonform/jsonform/git/commits/b43b465da030f0ba1607924b77ddc44496c24242,b43b465da030f0ba1607924b77ddc44496c24242,Fixed number fields rendering text inputs.
+tchapi,2018-09-05 14:48:37,https://api.github.com/repos/jsonform/jsonform/git/commits/ba211ad2ec0f866714d0c1085b371c3011a5e668,ba211ad2ec0f866714d0c1085b371c3011a5e668,"Limit legend updating to direct children
+
+Fix #183"
+tchapi,2018-08-01 10:18:22,https://api.github.com/repos/jsonform/jsonform/git/commits/ab6ebbba02a70b79a44bf2cc30c8cc0e0aa688a9,ab6ebbba02a70b79a44bf2cc30c8cc0e0aa688a9,Fix #180 — update the legend along with the title
+tchapi,2018-07-27 15:26:05,https://api.github.com/repos/jsonform/jsonform/git/commits/eebf800528488b51558a2c2c18bb90cdfc7a04fc,eebf800528488b51558a2c2c18bb90cdfc7a04fc,Fix package.json for publishing
+tchapi,2018-07-27 15:12:45,https://api.github.com/repos/jsonform/jsonform/git/commits/d73197b0495d8a31a2d63364cca57ea4c98e1080,d73197b0495d8a31a2d63364cca57ea4c98e1080,Bump to 2.1.0 and improve package.json
+tchapi,2018-07-09 15:57:22,https://api.github.com/repos/jsonform/jsonform/git/commits/2ba23812dce581a0a86030c18feddcc4996e87da,2ba23812dce581a0a86030c18feddcc4996e87da,"Update license, package.json, example"
+tchapi,2018-07-09 15:43:36,https://api.github.com/repos/jsonform/jsonform/git/commits/98d898cb438329f143dd25b7ceea05c21e6aba21,98d898cb438329f143dd25b7ceea05c21e6aba21,Merge branch 'master' of github.com:jsonform/jsonform
+tchapi,2018-07-09 15:43:09,https://api.github.com/repos/jsonform/jsonform/git/commits/b8f041ac6cf3b46bfc18df27eecd5dca0518f8d6,b8f041ac6cf3b46bfc18df27eecd5dca0518f8d6,Small style correction
+tchapi,2018-07-09 15:42:55,https://api.github.com/repos/jsonform/jsonform/git/commits/67f815aa068d6ac01264eddb05673813fabe1fe3,67f815aa068d6ac01264eddb05673813fabe1fe3,Fix #45 thanks to @ulion
+tchapi,2018-07-03 09:49:41,https://api.github.com/repos/jsonform/jsonform/git/commits/cfa2ab3be9ccd8c66168741e5a1af4cda3c85181,cfa2ab3be9ccd8c66168741e5a1af4cda3c85181,Update badges
+tchapi,2018-07-03 09:31:32,https://api.github.com/repos/jsonform/jsonform/git/commits/a14971dd23ca974d6c1d59ff6ef1ce2d52e5523c,a14971dd23ca974d6c1d59ff6ef1ce2d52e5523c,Add badges
+tchapi,2018-06-28 16:30:16,https://api.github.com/repos/jsonform/jsonform/git/commits/0e1ba2fd7995851c987d6683d559b9404c3f207f,0e1ba2fd7995851c987d6683d559b9404c3f207f,Check for underscore nullity
+tchapi,2018-06-28 16:29:44,https://api.github.com/repos/jsonform/jsonform/git/commits/1ffd685f6d1a0d0c26d97f20e129ec4403f03629,1ffd685f6d1a0d0c26d97f20e129ec4403f03629,Add default type for button to avoid wrong parsing
+tchapi,2018-06-28 16:11:06,https://api.github.com/repos/jsonform/jsonform/git/commits/ba06bb1b351ff70d847e2bb719346ff1adc58f5b,ba06bb1b351ff70d847e2bb719346ff1adc58f5b,A pass on whitespaces
+tchapi,2018-06-28 16:05:18,https://api.github.com/repos/jsonform/jsonform/git/commits/cfcac23c6a6bcd6c2ab799a498b7eb88e0f6c544,cfcac23c6a6bcd6c2ab799a498b7eb88e0f6c544,Improve .gitignore
+tchapi,2018-06-28 16:04:33,https://api.github.com/repos/jsonform/jsonform/git/commits/6bc0e75fe453bf0a288ea9a40ab92a819f6aad01,6bc0e75fe453bf0a288ea9a40ab92a819f6aad01,"Add fieldHtmlClass to select, radios(buttons)"
+tchapi,2018-06-28 14:14:04,https://api.github.com/repos/jsonform/jsonform/git/commits/846ca8e30c2b58d94ec5966247088b9cde3604e0,846ca8e30c2b58d94ec5966247088b9cde3604e0,Make title optional (Fix #95)
+tchapi,2018-06-28 14:01:45,https://api.github.com/repos/jsonform/jsonform/git/commits/929c073952c0fb7139410c39a7b1887ad4b4ecce,929c073952c0fb7139410c39a7b1887ad4b4ecce,"Update dependencies : jQuery, Spectrum, Bootstrap WISY"
+tchapi,2018-06-28 12:20:20,https://api.github.com/repos/jsonform/jsonform/git/commits/377f9f135068a810f8e0b54ed91c40fde539b692,377f9f135068a810f8e0b54ed91c40fde539b692,Improve README
+tchapi,2018-06-28 12:19:53,https://api.github.com/repos/jsonform/jsonform/git/commits/b4280e467461b4acc50064c7ccce1acbe1ea6948,b4280e467461b4acc50064c7ccce1acbe1ea6948,Fix hasOwnProperty method
+ulion,2014-11-10 04:24:37,https://api.github.com/repos/jsonform/jsonform/git/commits/4d8984273d5a3586e4e9fb3568930d4652c6b7ac,4d8984273d5a3586e4e9fb3568930d4652c6b7ac,Fix special property 'constructor' caused problem joshfire/jsonform#128
+santiagogil,2013-05-27 15:43:04,https://api.github.com/repos/jsonform/jsonform/git/commits/c73f6359b6f7ba76435f4db3b79d12375216f614,c73f6359b6f7ba76435f4db3b79d12375216f614,Add an icon select field.
+agounaris,2016-04-14 12:33:50,https://api.github.com/repos/jsonform/jsonform/git/commits/5eda51d7dee025cb0f70f6092f8427ec38b8d61b,5eda51d7dee025cb0f70f6092f8427ec38b8d61b,textarea miss fieldHtmlClass option
+tchapi,2018-06-28 10:47:35,https://api.github.com/repos/jsonform/jsonform/git/commits/784761874f4bf11d19e0b8f24042c9e49c0452d3,784761874f4bf11d19e0b8f24042c9e49c0452d3,Fix radio and checkbox templates
+tchapi,2018-06-28 10:42:49,https://api.github.com/repos/jsonform/jsonform/git/commits/818c05c9e84bf51b1760a589a07874d54a1f404a,818c05c9e84bf51b1760a589a07874d54a1f404a,"Improve Bootstrap 3 support, drop Bootstrap 2"
+kimsey0,2014-02-06 09:23:12,https://api.github.com/repos/jsonform/jsonform/git/commits/5dca2a9fdd5e1e7673f71fd2e3de8c65a82f4baf,5dca2a9fdd5e1e7673f71fd2e3de8c65a82f4baf,"Handle more than one type.
+
+If jsonform encounters a form element with more than one type, first
+tries to remove null and set as not required, then throws an error if
+there's still more than one type. Compatible with Json.NET Schema
+Generator."
+kimsey0,2014-02-03 13:12:40,https://api.github.com/repos/jsonform/jsonform/git/commits/63246491054f0eb450b39c3329fad3106656e71c,63246491054f0eb450b39c3329fad3106656e71c,"Upgrade to Bootstrap 3
+
+Upgraded to support Bootstrap 3. Might not be comprehensive, and drops
+support for Bootstrap 2."
+abhinav-upadhyay,2014-01-29 11:19:15,https://api.github.com/repos/jsonform/jsonform/git/commits/ab2322df51d8704ee365b589c23d6a6c3ad66e4d,ab2322df51d8704ee365b589c23d6a6c3ad66e4d,"Fix a minor bug in the playground app, resulting in 404's in some cases.
+
+For some reason, the browser keeps appending a trailing '/' at the end
+of the URLs. Since the loadExample function in playground.js parses the
+request parameter itself and uses it to load the JSON, a trailing '/' at
+the end of the URL causes the function to generate a request for a JSON
+named '.json'.
+
+The PR adds a check for a trailing '/' and taking appropriate action if
+there is a trailing slash."
+tchapi,2018-06-28 09:24:53,https://api.github.com/repos/jsonform/jsonform/git/commits/95fb6d7b7158630c3e8cd8e352db4f66805500ee,95fb6d7b7158630c3e8cd8e352db4f66805500ee,"Fix property typo in ""fieldtemplate"""
+tchapi,2018-06-28 08:53:08,https://api.github.com/repos/jsonform/jsonform/git/commits/5ed3abf64e3dee7bceb83f6ad9d788d2cffe47f0,5ed3abf64e3dee7bceb83f6ad9d788d2cffe47f0,Fix playground files
+tchapi,2018-06-05 15:36:23,https://api.github.com/repos/jsonform/jsonform/git/commits/cf241fd783d1d1e90e1780e0c54f4ec3fac0e0bd,cf241fd783d1d1e90e1780e0c54f4ec3fac0e0bd,"Merge pull request #157 from jmediajar/master
+
+Add space character to placeholder string"
+tchapi,2018-06-05 15:34:42,https://api.github.com/repos/jsonform/jsonform/git/commits/5f5f83a16e23d07b263d4aa387b8fbb772dcfa64,5f5f83a16e23d07b263d4aa387b8fbb772dcfa64,"Merge pull request #173 from frustr8dlec/LinkFix
+
+Update README.md"
+frustr8dlec,2018-04-08 11:37:37,https://api.github.com/repos/jsonform/jsonform/git/commits/a0c90caa1fad8fca8ee51a58f3e3302e1037e2ac,a0c90caa1fad8fca8ee51a58f3e3302e1037e2ac,"Update README.md
+
+The link to underscore js documentation was broken."
+jmediajar,2016-05-02 23:39:49,https://api.github.com/repos/jsonform/jsonform/git/commits/4df1c03311240393e4ff9fc97ffaa6cb41cfd4a3,4df1c03311240393e4ff9fc97ffaa6cb41cfd4a3,"Add space character to placeholder string
+
+For each use of thestring `""placeholder=""`, added a space character at the beginning, i.e.`"" placeholder=""`.  Without the space, a compounded string is created if you use the 'placeholder' property.
+```""form"": [
+    {
+      key: ""firstName"",
+      disabled: true,
+      placehoder: ""my place""
+    }
+  ]```
+
+Generates: ```<input type=""text"" disabledplaceholder=""my place"">``` when it should be, ```<input type=""text"" disabled placeholder=""my place"">```"
+tidoust,2014-01-03 09:50:34,https://api.github.com/repos/jsonform/jsonform/git/commits/3aa545b8994aa85f91490ec8289765732520193c,3aa545b8994aa85f91490ec8289765732520193c,"Merge pull request #103 from flisky/example
+
+add a missing example"
+flisky,2013-12-31 08:14:36,https://api.github.com/repos/jsonform/jsonform/git/commits/7d10d2beb4939a71cb29d2adcfba6285dbc5744f,7d10d2beb4939a71cb29d2adcfba6285dbc5744f,add a missing example
+flisky,2013-12-31 07:51:36,https://api.github.com/repos/jsonform/jsonform/git/commits/4004f14a4c4bd75caffa080c64a43d906085eded,4004f14a4c4bd75caffa080c64a43d906085eded,fix errormarkerclass for nested array
+tidoust,2013-12-06 09:03:32,https://api.github.com/repos/jsonform/jsonform/git/commits/05da861bbb943d750ed8db890b07b66229c99153,05da861bbb943d750ed8db890b07b66229c99153,"Merge pull request #100 from James-Snow/patch-1
+
+Fix Bootstrap links in README.md"
+tidoust,2013-10-28 10:24:17,https://api.github.com/repos/jsonform/jsonform/git/commits/b4f805094226a68133caca7968f3cf72c565eb67,b4f805094226a68133caca7968f3cf72c565eb67,"Merge pull request #90 from Coridyn/fix-array-ie8
+
+Fix IE8 array value retrieval"
+Coridyn,2013-10-27 13:33:15,https://api.github.com/repos/jsonform/jsonform/git/commits/57b8f25981323ad6970db07478879e94b6f179e9,57b8f25981323ad6970db07478879e94b6f179e9,- Reset  to zero to fix IE8 array value retrieval.
+tidoust,2013-08-16 16:08:14,https://api.github.com/repos/jsonform/jsonform/git/commits/eb911b5a4d976d3a2e3074abba421b80734fd5c3,eb911b5a4d976d3a2e3074abba421b80734fd5c3,"Merge pull request #73 from aflag/master
+
+Added all available ACE modes to playground"
+aflag,2013-08-15 18:46:21,https://api.github.com/repos/jsonform/jsonform/git/commits/16ec1efb6b37549d3f9fa8629928d2228cddf5da,16ec1efb6b37549d3f9fa8629928d2228cddf5da,Added all available modes to playground
+tidoust,2013-06-26 16:07:35,https://api.github.com/repos/jsonform/jsonform/git/commits/ed9591a79cd6de807c31c2b4cbe08e96d0e76ebf,ed9591a79cd6de807c31c2b4cbe08e96d0e76ebf,"Merge pull request #58 from butters16/master
+
+Added Space to jQuery Escape Selector"
+tidoust,2013-06-06 07:43:47,https://api.github.com/repos/jsonform/jsonform/git/commits/f82de86ba984d78eca5f040a476e61dbb22061fa,f82de86ba984d78eca5f040a476e61dbb22061fa,"Merge pull request #56 from RobShemeley/master
+
+Fix for Issue #52: A zero in the value can't be rendered."
+RobShemeley,2013-06-06 02:11:15,https://api.github.com/repos/jsonform/jsonform/git/commits/e16ed73b178a28171a1aa1abf07a7df007f79e7b,e16ed73b178a28171a1aa1abf07a7df007f79e7b,computeInitialValues no longer ignores zero values on forms already submitted.
+scien,2013-05-06 05:11:47,https://api.github.com/repos/jsonform/jsonform/git/commits/8d3bb011ac3b02594104fe8b822aac018a8c9a8d,8d3bb011ac3b02594104fe8b822aac018a8c9a8d,Set values to false for unset checkboxes and radio buttons
+tidoust,2013-05-07 13:48:51,https://api.github.com/repos/jsonform/jsonform/git/commits/892e406abee46921aa5add40d5f6099b4e657247,892e406abee46921aa5add40d5f6099b4e657247,"Merge pull request #40 from lrowe/master
+
+Make event binding optional with submitEvent: false."
+lrowe,2013-03-12 22:53:06,https://api.github.com/repos/jsonform/jsonform/git/commits/ac6be83be6dea2ab32121428b0dc9b63bb93b463,ac6be83be6dea2ab32121428b0dc9b63bb93b463,"Make event binding optional with submitEvent: false.
+This allows event binding to be left to a framework like Backbone or rendering of the form into a descendant of the form element."
+tidoust,2012-11-16 16:08:19,https://api.github.com/repos/jsonform/jsonform/git/commits/582b97bb62a89e1ecfe1e3300630ce20efdc22ff,582b97bb62a89e1ecfe1e3300630ce20efdc22ff,"Merge pull request #25 from dfliess/master
+
+minItems and maxItems on arrays and tabarrays"
+dfs123d,2012-11-16 11:52:22,https://api.github.com/repos/jsonform/jsonform/git/commits/3ac09eedc48897c4183a5233068da39c8bb35163,3ac09eedc48897c4183a5233068da39c8bb35163,use children.nodes.length instead of idx and fix updateTab when minItems enforced (#22)
+dfs123d,2012-11-14 20:01:28,https://api.github.com/repos/jsonform/jsonform/git/commits/706f7c7b4def244a63d600790523e7a5b8d4b522,706f7c7b4def244a63d600790523e7a5b8d4b522,Fix new introduced bug on tabarray delete (#22)
+dfs123d,2012-11-14 19:18:57,https://api.github.com/repos/jsonform/jsonform/git/commits/d07ae0b6f893634f8e9c01f49c043706551d7b11,d07ae0b6f893634f8e9c01f49c043706551d7b11,Fix deleting item on tabarray and set initial minItems (#22)
+tidoust,2012-11-12 19:56:47,https://api.github.com/repos/jsonform/jsonform/git/commits/938d7b38f4b0438f01c928cc20d4605e375ee2fe,938d7b38f4b0438f01c928cc20d4605e375ee2fe,"Merge pull request #23 from dfliess/master
+
+minItems not working on arrays"
+dfs123d,2012-11-12 16:34:31,https://api.github.com/repos/jsonform/jsonform/git/commits/c4d48e68ef24d05136b81a6e18d14ead4c215e53,c4d48e68ef24d05136b81a6e18d14ead4c215e53,Fix minItems not working on array (#22)
+tidoust,2012-09-24 20:40:18,https://api.github.com/repos/jsonform/jsonform/git/commits/fce31679b28a1cbf78bb0b698dbfa38ae8f2be25,fce31679b28a1cbf78bb0b698dbfa38ae8f2be25,"Fixed truncate function to include path up to next depth level (#9)
+
+The ""getPreviousNumberOfItems"" function uses ""truncateToArrayDepth""
+to shorten the path to a key to the right depth level and then
+compute the number of items at the level in previously submitted
+values.
+
+That second function did not return all the properties up to the
+next array level, meaning the value checked in previously submitted
+values could well be an object and not an array. For instance,
+given a path:
+ ""foo.bar[].baz.stuff.blah[].thing""
+the function used to return ""foo.bar[]"" for a depth of 1. It now
+returns:
+ ""foo.bar[].baz.stuff.blah""
+
+This should fix issue #9"
+sylvinus,2012-09-05 11:27:23,https://api.github.com/repos/jsonform/jsonform/git/commits/60039ab00e176597efb8acab93df57ae2a533376,60039ab00e176597efb8acab93df57ae2a533376,remove debug
+sylvinus,2012-09-05 11:26:11,https://api.github.com/repos/jsonform/jsonform/git/commits/d41da09089ba6a3e9ccb8173fd80c1f8fa6031fb,d41da09089ba6a3e9ccb8173fd80c1f8fa6031fb,"Add factory-sleek example, fix tabarray.maxLength"
+sylvinus,2012-09-05 10:35:41,https://api.github.com/repos/jsonform/jsonform/git/commits/dc590f0a4f7d727ab6780f1fff81fe31ff5123a8,dc590f0a4f7d727ab6780f1fff81fe31ff5123a8,HTML5 history in playground + maxLength support for tabarrays
+steren,2012-08-24 14:40:51,https://api.github.com/repos/jsonform/jsonform/git/commits/06424946991ee8d42a4f3de55fcef1c4f5c498d7,06424946991ee8d42a4f3de55fcef1c4f5c498d7,added a class to img preview
+sylvinus,2012-08-01 09:29:09,https://api.github.com/repos/jsonform/jsonform/git/commits/ddb412ff7401f4b8f685f9a4dc25222adf9a7e4a,ddb412ff7401f4b8f685f9a4dc25222adf9a7e4a,"form.validate(), return form tree from jquery function"
+sylvinus,2012-07-20 09:28:42,https://api.github.com/repos/jsonform/jsonform/git/commits/432c92c1e3ce8a5876f1156256f0d4c8a5e8c87f,432c92c1e3ce8a5876f1156256f0d4c8a5e8c87f,Fix file styles
+sylvinus,2012-07-16 17:33:39,https://api.github.com/repos/jsonform/jsonform/git/commits/c97198fa36b314a968654612fa088767adf6265c,c97198fa36b314a968654612fa088767adf6265c,"onSubmit cleanup, transloadit improvements"
+tidoust,2012-07-02 21:18:28,https://api.github.com/repos/jsonform/jsonform/git/commits/50cbf10d5fd980626edc955e3c7a1e4e5e05e49f,50cbf10d5fd980626edc955e3c7a1e4e5e05e49f,First version of JSON Form playground page implemented.
+sylvinus,2012-06-26 14:22:35,https://api.github.com/repos/jsonform/jsonform/git/commits/474703f26061f645b8489980d6ccca17b0e88bee,474703f26061f645b8489980d6ccca17b0e88bee,wysihtml5
+semanticdreamer,2012-06-24 19:58:24,https://api.github.com/repos/jsonform/jsonform/git/commits/34c48f82eb374d5bbac79c60e8136a997d3815e3,34c48f82eb374d5bbac79c60e8136a997d3815e3,fixed some more UTF-8 encoding issues
+semanticdreamer,2012-06-24 19:42:15,https://api.github.com/repos/jsonform/jsonform/git/commits/fdb77a186d7a80bd9a713be8290c4cd8d593e8e5,fdb77a186d7a80bd9a713be8290c4cd8d593e8e5,fixed encoding bug
+tidoust,2012-06-19 20:18:10,https://api.github.com/repos/jsonform/jsonform/git/commits/0d70808347e164ca995cc6d2bfe5be152f4585c0,0d70808347e164ca995cc6d2bfe5be152f4585c0,"Color input field displayed when schame has format=""color"" property"
+tidoust,2012-06-19 20:06:11,https://api.github.com/repos/jsonform/jsonform/git/commits/31ee2deef75dc8fd03cd22cfc05018fe726c0509,31ee2deef75dc8fd03cd22cfc05018fe726c0509,"Merge branch 'master' of github.com:/joshfire/jsonform
+
+Conflicts:
+	tests/index.html"
+tidoust,2012-06-19 20:02:56,https://api.github.com/repos/jsonform/jsonform/git/commits/4f37b231e7200143650903ec84d06d48dd165dd7,4f37b231e7200143650903ec84d06d48dd165dd7,Couple of unit tests added for checkboxes and expandable fieldsets
+tbassetto,2012-06-19 15:23:00,https://api.github.com/repos/jsonform/jsonform/git/commits/a8c2a9b3abda11505bfb900a9e074133f81f25d2,a8c2a9b3abda11505bfb900a9e074133f81f25d2,Added support for input type color
+steren,2012-06-11 12:59:40,https://api.github.com/repos/jsonform/jsonform/git/commits/6a2119d544365c302aa2c0dbe053a00d98227061,6a2119d544365c302aa2c0dbe053a00d98227061,do not apply the buttonclass if no icon selected
+steren,2012-06-05 09:30:13,https://api.github.com/repos/jsonform/jsonform/git/commits/c941c5de15c419812dd9192cbcf48b2696c42d20,c941c5de15c419812dd9192cbcf48b2696c42d20,bad icon
+steren,2012-06-04 17:10:27,https://api.github.com/repos/jsonform/jsonform/git/commits/f59821fb17f222fca55478e6559db448191f89ae,f59821fb17f222fca55478e6559db448191f89ae,forgot a class
+steren,2012-06-04 15:46:15,https://api.github.com/repos/jsonform/jsonform/git/commits/f44793c439bae6481ebc281fd8d7f598b9a57d4c,f44793c439bae6481ebc281fd8d7f598b9a57d4c,merge
+steren,2012-06-04 14:13:24,https://api.github.com/repos/jsonform/jsonform/git/commits/c4ce2d62f5b5d9f152983665925e9b92a457bf62,c4ce2d62f5b5d9f152983665925e9b92a457bf62,Merge branch 'icons'
+steren,2012-06-04 14:10:53,https://api.github.com/repos/jsonform/jsonform/git/commits/e9102b785641eb0473b70ce381a8ed3d4c27b1a4,e9102b785641eb0473b70ce381a8ed3d4c27b1a4,new icons for draggables
+sylvinus,2012-06-01 14:57:46,https://api.github.com/repos/jsonform/jsonform/git/commits/eadc6370ead9e30ed672ec1d5194bf5f4f8dd0e7,eadc6370ead9e30ed672ec1d5194bf5f4f8dd0e7,Merge branch 'master' of github.com:joshfire/jsonform
+sylvinus,2012-06-01 14:57:21,https://api.github.com/repos/jsonform/jsonform/git/commits/83332f7993d0288b291adc47a6cce0f3194a84d7,83332f7993d0288b291adc47a6cce0f3194a84d7,Don't count hidden fields for nonDefaultValues
+steren,2012-06-01 12:54:23,https://api.github.com/repos/jsonform/jsonform/git/commits/08d28680d90275b907bf680a82896ca94ef53374,08d28680d90275b907bf680a82896ca94ef53374,fixed bug where null was displayed
+steren,2012-06-01 10:58:34,https://api.github.com/repos/jsonform/jsonform/git/commits/be4157c1302323ebabc2c1eae3d53b3d314253e2,be4157c1302323ebabc2c1eae3d53b3d314253e2,fix bug where other tabs from the page where updated instead of only the current node
+steren,2012-06-01 10:57:56,https://api.github.com/repos/jsonform/jsonform/git/commits/8ed50f345cb8476bb4a63d7f2f1a1660177e7174,8ed50f345cb8476bb4a63d7f2f1a1660177e7174,update tabs on keyup
+tidoust,2012-05-09 19:30:01,https://api.github.com/repos/jsonform/jsonform/git/commits/ee3a930b8bb8ffbb761a45475dadeedff4a8b586,ee3a930b8bb8ffbb761a45475dadeedff4a8b586,Lower case used for package name.
+tidoust,2012-05-09 19:29:25,https://api.github.com/repos/jsonform/jsonform/git/commits/f0e69ea251fefd642608d39484c4c29f7e85d7b6,f0e69ea251fefd642608d39484c4c29f7e85d7b6,Fixed package name
+tidoust,2012-05-09 19:25:26,https://api.github.com/repos/jsonform/jsonform/git/commits/4f0165baf0acbdce8bf0575f00b13876012dd970,4f0165baf0acbdce8bf0575f00b13876012dd970,"Filled in README, LICENSE and package.json files"
+sylvinus,2012-05-03 18:12:10,https://api.github.com/repos/jsonform/jsonform/git/commits/13f35e58bd2df74d8938d40dbf78a6272b00e105,13f35e58bd2df74d8938d40dbf78a6272b00e105,smaller textarea
+sylvinus,2012-05-03 18:10:41,https://api.github.com/repos/jsonform/jsonform/git/commits/e059e5baeff6cae843ef6f7b72b73ee51fe73dcb,e059e5baeff6cae843ef6f7b72b73ee51fe73dcb,textarea widths
+sylvinus,2012-05-02 21:56:04,https://api.github.com/repos/jsonform/jsonform/git/commits/af28d2094b5f702b2582862a9d7cadb8ae9fa6f9,af28d2094b5f702b2582862a9d7cadb8ae9fa6f9,better clone
+sylvinus,2012-05-02 20:54:34,https://api.github.com/repos/jsonform/jsonform/git/commits/f160df674a82c6aff3b4907a9082d41674b85bed,f160df674a82c6aff3b4907a9082d41674b85bed,add htmlClass option
+sylvinus,2012-05-02 18:39:08,https://api.github.com/repos/jsonform/jsonform/git/commits/74e3f3c0a1669b34b094a42c52f38d6351677bdc,74e3f3c0a1669b34b094a42c52f38d6351677bdc,Merge branch 'master' of github.com:joshfire/jsonform
+sylvinus,2012-05-02 18:38:58,https://api.github.com/repos/jsonform/jsonform/git/commits/b146d456dcfd8d3ebe15e369c7ef64f0ee24329d,b146d456dcfd8d3ebe15e369c7ef64f0ee24329d,Fix duplication issues
+steren,2012-04-30 13:50:01,https://api.github.com/repos/jsonform/jsonform/git/commits/491a3c679d0c13963a8f62936de01a528bb5e927,491a3c679d0c13963a8f62936de01a528bb5e927,"can display warnings, not only errors"
+sylvinus,2012-04-28 15:40:37,https://api.github.com/repos/jsonform/jsonform/git/commits/e4ead0065f134848f1df5aa74d579fe8582baa55,e4ead0065f134848f1df5aa74d579fe8582baa55,Fix datasrouce first selector
+sylvinus,2012-04-28 15:16:32,https://api.github.com/repos/jsonform/jsonform/git/commits/e4fa02c8dc75cf9fae9e9c82d3eaf14ffb278bf0,e4fa02c8dc75cf9fae9e9c82d3eaf14ffb278bf0,Fix file display when {}
+sylvinus,2012-04-26 10:40:27,https://api.github.com/repos/jsonform/jsonform/git/commits/8157b471c61cbf647a08a69a462bdf1ea64ae7ec,8157b471c61cbf647a08a69a462bdf1ea64ae7ec,wysihtml5
+steren,2012-04-23 13:11:30,https://api.github.com/repos/jsonform/jsonform/git/commits/32ad0a71a0800f28d2c1666d9931bcd6e1ecc14a,32ad0a71a0800f28d2c1666d9931bcd6e1ecc14a,default values for ACE in JSONform
+sylvinus,2012-04-20 14:50:49,https://api.github.com/repos/jsonform/jsonform/git/commits/3a54f51ea357724cb7fd670fa137846d8ac81500,3a54f51ea357724cb7fd670fa137846d8ac81500,Merge branch 'master' of github.com:joshfire/jsonform
+sylvinus,2012-04-20 14:50:37,https://api.github.com/repos/jsonform/jsonform/git/commits/8209ee190c569917cd18e309e0235323f395bed5,8209ee190c569917cd18e309e0235323f395bed5,ACE
+tidoust,2012-04-19 14:45:31,https://api.github.com/repos/jsonform/jsonform/git/commits/2eb87dfcf84921b81248e1c41558fa65c2b1bf4e,2eb87dfcf84921b81248e1c41558fa65c2b1bf4e,Merge branch 'master' of github.com:/joshfire/jsonform
+tidoust,2012-04-19 14:36:04,https://api.github.com/repos/jsonform/jsonform/git/commits/5baaaa0928a9cd93e77a262f88800b5cdcf2ab3b,5baaaa0928a9cd93e77a262f88800b5cdcf2ab3b,"Default values only proposed when form's ""value"" property not set.
+
+The library used default values whenever it did not find the key
+in the ""value"" object that may be attached to the JSON Form object
+to symbolize the results of a previously submitted form.
+
+The problem with that approach is that fields left empty are often
+not included in the result (typically the case with checkboxes).
+If their default value is not empty, the default value is always
+used when the form is rendered. In short, a boolean flag whose
+default value is ""true"" always appears as a checked checkbox, no
+matter its previous value.
+
+The change simply takes for granted that default values should only
+be used when the form has never been submitted before, in other
+words when the ""value"" property is not set.
+
+Note an empty object counts as an actual form submission result
+(it means all fields were left empty on purpose)."
+sylvinus,2012-04-13 16:04:18,https://api.github.com/repos/jsonform/jsonform/git/commits/17ffd6f6867c73fe0a20894c1ccdcc43e39eeb32,17ffd6f6867c73fe0a20894c1ccdcc43e39eeb32,add control-group class to fieldsets
+tidoust,2012-04-11 12:49:38,https://api.github.com/repos/jsonform/jsonform/git/commits/a2eb3c8e8be57b5efda614f0cafc996084603a06,a2eb3c8e8be57b5efda614f0cafc996084603a06,"Re-expose jsonform.fieldTemplate to the external world.
+
+This template is used by the Factory to create the datasources
+selection field (in data.js)."
+tidoust,2012-04-10 12:03:29,https://api.github.com/repos/jsonform/jsonform/git/commits/4de2c6269026315f219eae51735d4c1fc1565e93,4de2c6269026315f219eae51735d4c1fc1565e93,"New types added: ""advancedfieldset"" and ""authfieldset"".
+
+The ""advancedfieldset"" type generates an expandable section with
+an ""Advanced options"" legend.
+
+The ""authfieldset"" type generates an expandable section with an
+""Authentication settings"" legend.
+
+Both are more specific types of ""fieldset"" fields, and could be
+created with a regular ""fieldset"" field (with the right legend
+and flag). They are useful for the Factory in particular since it
+treats such sections specifically."
+tidoust,2012-04-06 21:14:14,https://api.github.com/repos/jsonform/jsonform/git/commits/26a14f7fa59ed2c0b539cf9284afd8656e0b8b4c,26a14f7fa59ed2c0b539cf9284afd8656e0b8b4c,"Fully updated jsonform to generate Bootstrap 2.0 compatible forms
+
+Updates include:
+- class names adjusted to fit Bootstrap 2.0 (e.g. 'form-actions'
+instead of 'actions', 'btn-primary' instead of 'primary')
+- radio buttons and checkboxes do not use lists anymore
+- 'selectfieldset' sections wrapped in a 'tabbable' div
+- JS code that handles 'selectfieldset' sections updated
+
+Update is not backward compatible with Bootstrap 1.4, simply because
+Bootstrap 2.0 is not backward compatible with Bootstrap 1.4.
+
+Overall, the code generated is cleaner than the previous version."
+steren,2012-04-06 16:28:22,https://api.github.com/repos/jsonform/jsonform/git/commits/9cda8ecc6944a5de7b5b9a9d3f3797e26df07785,9cda8ecc6944a5de7b5b9a9d3f3797e26df07785,stay backward compatible with bootstrap v1.4
+steren,2012-04-06 16:15:14,https://api.github.com/repos/jsonform/jsonform/git/commits/389fd86c948b954f65a2baa319a6b55bdbd353bc,389fd86c948b954f65a2baa319a6b55bdbd353bc,update to new bootstrap classes
+steren,2012-04-06 16:10:52,https://api.github.com/repos/jsonform/jsonform/git/commits/a7fd34ef8cea7a458d3a5fbbca5ba1121b789d91,a7fd34ef8cea7a458d3a5fbbca5ba1121b789d91,"update to bootstrap 2, converted classes to bootstrap 2 classes"
+tidoust,2012-04-05 19:21:09,https://api.github.com/repos/jsonform/jsonform/git/commits/af72ea0fa20c346f98e459b294036178fb97da65,af72ea0fa20c346f98e459b294036178fb97da65,"Desc warns about symbolic links in data-joshfire, platform-joshfire.
+
+The use of symbolic links makes it easy to ""require"" the lib the
+same way as any other lib but may be confusing when one wants to
+update the lib."
+tidoust,2012-04-05 16:27:59,https://api.github.com/repos/jsonform/jsonform/git/commits/8e44a7a8776f54fe2c898ac49c3485084ad5b1a1,8e44a7a8776f54fe2c898ac49c3485084ad5b1a1,Defaults lib: export methods updated (name conflicts in previous commit)
+tidoust,2012-04-05 13:09:28,https://api.github.com/repos/jsonform/jsonform/git/commits/67bf09bd91c721b45021a70f0d56a9f82cb6989e,67bf09bd91c721b45021a70f0d56a9f82cb6989e,"Defaults lib exported as a module.
+
+The default library exports itself as an AMD module, a node.js
+module or as a global JSONForm.setDefaultValues method, in that
+order.
+
+The setDefaultValues now takes an additional 'includeOptionalValues'
+parameter. When set, default values for keys that are not defined as
+""required"" are also set.
+
+Empty values are used for required keys that do not define any
+default value:
+ [] for an array
+ {} for an object
+ 0 for a number or an integer
+ '' for a string
+ false for a boolean
+ {} for everything else"
+tidoust,2012-04-05 10:15:56,https://api.github.com/repos/jsonform/jsonform/git/commits/77ee2270474ec4246260d2168284430a2b59c721,77ee2270474ec4246260d2168284430a2b59c721,"Moved jsonform-defaults from datajslib to jsonform. Test page added.
+
+The setDefaultValues method is exported as JSONForm.setDefaultValues.
+The method is useless for settings that went through the JSON Schema
+Validator since it will raise errors for missing required values."
+tidoust,2012-03-29 16:04:03,https://api.github.com/repos/jsonform/jsonform/git/commits/e7a789bb5080060575dcba1fcc938d45a68463e8,e7a789bb5080060575dcba1fcc938d45a68463e8,"titleMap extended to select fields.
+
+This property, to be defined in the form part of the JSON Form object allows
+to define option titles that are different from option values."
+tidoust,2012-03-26 16:52:29,https://api.github.com/repos/jsonform/jsonform/git/commits/4ad27d395c5bf0eed0a1c7197ecb6f6c5ea9077c,4ad27d395c5bf0eed0a1c7197ecb6f6c5ea9077c,Fixed double escaping for field selection while setting form values
+tidoust,2012-03-26 15:48:54,https://api.github.com/repos/jsonform/jsonform/git/commits/8ce0b4047523f48d3ec0b3f784746d4b1555ac19,8ce0b4047523f48d3ec0b3f784746d4b1555ac19,"Event handlers of array items correctly set. Infinite loop possibility fixed.
+
+The event handlers were only set for new items (in other words, those
+added with a click on ""Add more""). They are now correctly set for all
+fields displayed when the form is rendered.
+
+The script entered an infinite loop when the form contained an array
+whose layout directly referenced a key in the schema and when there
+existed values for some field, e.g.:
+ {
+  ""schema"": {
+   ""myarray"": {
+    ""type"": ""array"",
+    ""items"": [ { ""type"": ""string"" } ]
+   }
+  },
+  ""form"": [ ""myarray"" ],
+  ""value"": { ""somekey"": ""somevalue"" }
+ }"
+tidoust,2012-03-26 10:42:31,https://api.github.com/repos/jsonform/jsonform/git/commits/b25b623a6c1e75f93587e4cc33c4b9b9d7f64418,b25b623a6c1e75f93587e4cc33c4b9b9d7f64418,First tab was not correctly selected in the absence of form values.
+tidoust,2012-03-23 18:39:40,https://api.github.com/repos/jsonform/jsonform/git/commits/163ffd0a938a95bb19473f7507711c4fa77ab3ac,163ffd0a938a95bb19473f7507711c4fa77ab3ac,"Right tab displayed when form is rendered based on form values.
+
+The tab displayed is the first one for which we have values (there
+should be only one, normally)"
+tidoust,2012-03-23 16:49:03,https://api.github.com/repos/jsonform/jsonform/git/commits/7378661036a3fe1882e69032d2561a1abf4da0d6,7378661036a3fe1882e69032d2561a1abf4da0d6,"Merge branch 'master' of github.com:/joshfire/jsonform
+
+Conflicts:
+	lib/jsonform.js"
+tidoust,2012-03-23 16:43:35,https://api.github.com/repos/jsonform/jsonform/git/commits/20c8487f05d0cf0e6695568f094c66e215056b90,20c8487f05d0cf0e6695568f094c66e215056b90,"Form values from options.value used for complex arrays as well.
+
+Values were not properly used to initialize the form whenever the
+array was more complex than a list of string items. Thanks to this
+update, this should work relatively well (""relatively"" because
+arrays remain a kind of hack in JSON form for the time being, a
+little bit of reformatting would be needed to do it well)."
+stephan83,2012-03-23 15:24:38,https://api.github.com/repos/jsonform/jsonform/git/commits/e0dfb2de8cf1e873c84fa5007d84f783bb29f8f3,e0dfb2de8cf1e873c84fa5007d84f783bb29f8f3,added option for key/values in select fields
+tidoust,2012-03-19 10:23:28,https://api.github.com/repos/jsonform/jsonform/git/commits/949b3e79b3e6253021765e256187ec81f97ffa48,949b3e79b3e6253021765e256187ec81f97ffa48,Template markup for 'selectfieldset' slightly improved for easier layout.
+tidoust,2012-03-19 10:17:05,https://api.github.com/repos/jsonform/jsonform/git/commits/573eb0997f4b59c2ce1e94a98d9f86da3873e732,573eb0997f4b59c2ce1e94a98d9f86da3873e732,Switched to a <select> menu for the tabs menu. 'selectfieldset' alternatives.
+tidoust,2012-03-15 15:46:22,https://api.github.com/repos/jsonform/jsonform/git/commits/4528ee0db80705fe44c9b8651848e6fb8c9b7de8,4528ee0db80705fe44c9b8651848e6fb8c9b7de8,Dropped inclusion of bootstrap-tabs.js from expandable test. Now useless.
+tidoust,2012-03-15 15:45:48,https://api.github.com/repos/jsonform/jsonform/git/commits/1db1e75f8d8582e97dc5b5f29941c718079adb86,1db1e75f8d8582e97dc5b5f29941c718079adb86,Merge branch 'master' of github.com:/joshfire/jsonform
+tidoust,2012-03-15 15:45:08,https://api.github.com/repos/jsonform/jsonform/git/commits/769455bd1f1fcd4314a98b1ad565363a1e497696,769455bd1f1fcd4314a98b1ad565363a1e497696,Typo fix (invalid comma character introduced in latest push. Not sure why or how)
+sylvinus,2012-03-15 15:42:39,https://api.github.com/repos/jsonform/jsonform/git/commits/31da20a385ed042127f738e59ec4fbe543687f65,31da20a385ed042127f738e59ec4fbe543687f65,added DS_Store
+tidoust,2012-03-15 13:27:16,https://api.github.com/repos/jsonform/jsonform/git/commits/88bb4b670a5472cd167fb12b1049e8bb6a87c162,88bb4b670a5472cd167fb12b1049e8bb6a87c162,Small update to make the library more resilient to invalid JSON Form objects.
+tidoust,2012-03-13 13:18:13,https://api.github.com/repos/jsonform/jsonform/git/commits/471034fbef79b954e435b4a7432766d2073e00b2,471034fbef79b954e435b4a7432766d2073e00b2,"Added support for arrays with ""complex"" structures.
+
+JSON Form now supports arrays whose items can follow an arbitrarily
+complex structure (as opposed to being restricted to simple types
+such as ""string"").
+
+The important point to get is that references to array elements
+from the form layout section must include [], e.g.:
+ ""foo.bar[].baz""
+
+See test/complexlists.html for examples.
+
+Restrictions:
+
+1/ Items in an array must all be of the same type. In other words,
+the ""items property in the data schema for the array element must
+either be an object or an array with one element. For instance:
+ {
+   ""type"": ""array"",
+   ""items"": {
+     ""type"": ""object"",
+     ""properties"": {
+       ""key1"": {
+         ""title"": ""Key 1"",
+         ""type"": ""string""
+       },
+       ""key2"": {
+         ""title"": ""Key 2"",
+         ""type"": ""string""
+       }
+     }
+   }
+ }
+
+2/ Arrays cannot be nested for the time being.
+
+3/ Similarly, a checkboxes section cannot be nested with an array."
+tidoust,2012-03-12 12:42:58,https://api.github.com/repos/jsonform/jsonform/git/commits/109374cf99d06a8db0ae96ddb5ef291b8865bcda,109374cf99d06a8db0ae96ddb5ef291b8865bcda,"Added support for ""expandable"" fieldsets and ""selectfieldset"" tabs.
+
+When a fieldset is defined as ""expandable"" (boolean property), the
+section is collapsed by default and may be expanded with a click.
+The code includes the JavaScript code to collapse/expand the section.
+It also adds an ""expandable"" class to the generated section for
+styling purpose (e.g. to add an arrow next to the fieldset legend
+to provide a visual clue that the section can be expanded). See
+example in test/expandable.html
+
+""selectfieldset"" is a new type of form sections that should be used
+for alternatives that are more complex than ""pick up an element in
+the list"". It's typically useful for forms that provide multiple
+entry points such as ""search by user name"", ""search by playlist"",
+""search by text"", etc. The ""selectfieldset"" type is similar to a
+""fieldset"" in that the same properties are used (""legend"" if needed
+and ""items""). It is similar to a ""select"" field in that it provides
+an alternative between different choices. Visually, the type is
+represented as ""tabs"". Input fields from hidden tabs are disabled
+so that they do not appear in the submitted form. Items of a
+""selectfieldset"" form section must be ""optionfieldset"" items. See
+example in test/tabs.html"
+sylvinus,2012-01-24 10:22:54,https://api.github.com/repos/jsonform/jsonform/git/commits/a4b74177e02d3dac91f51f7b28b49db58197dceb,a4b74177e02d3dac91f51f7b28b49db58197dceb,test
+sylvinus,2012-01-23 15:30:53,https://api.github.com/repos/jsonform/jsonform/git/commits/50bc513827c88ffa16f3ea4416209557ae6b6b1f,50bc513827c88ffa16f3ea4416209557ae6b6b1f,local template func
+sylvinus,2012-01-23 14:57:20,https://api.github.com/repos/jsonform/jsonform/git/commits/0430d7d416fc127b8cbe661b6882b1a4e011e829,0430d7d416fc127b8cbe661b6882b1a4e011e829,checkboxes as item
+sylvinus,2012-01-23 13:30:23,https://api.github.com/repos/jsonform/jsonform/git/commits/3efde62da57c63ef18afc1c9df2a9aa09959200d,3efde62da57c63ef18afc1c9df2a9aa09959200d,allowEmpty
+sylvinus,2012-01-23 12:41:43,https://api.github.com/repos/jsonform/jsonform/git/commits/1d838dc572999d8e8b991b6fc5855954a09134ef,1d838dc572999d8e8b991b6fc5855954a09134ef,empty values
+sylvinus,2012-01-23 12:20:49,https://api.github.com/repos/jsonform/jsonform/git/commits/d4a67cd5dcc5ef21a062bc2b2e0611380b5d629d,d4a67cd5dcc5ef21a062bc2b2e0611380b5d629d,Fix null values
+sylvinus,2012-01-23 12:15:53,https://api.github.com/repos/jsonform/jsonform/git/commits/2c24b1a75574c6d3f1334d27da1ee9709bf89395,2c24b1a75574c6d3f1334d27da1ee9709bf89395,null values not in output
+sylvinus,2012-01-23 12:08:18,https://api.github.com/repos/jsonform/jsonform/git/commits/202a3fabaffc8beca6e106bb82e13b7ec4a64192,202a3fabaffc8beca6e106bb82e13b7ec4a64192,fix when onSubmitValid
+sylvinus,2012-01-23 11:56:16,https://api.github.com/repos/jsonform/jsonform/git/commits/127fdf4fdd3d41f2a5929e8aec6f0ae63dbcf890,127fdf4fdd3d41f2a5929e8aec6f0ae63dbcf890,Add validation with JSV
+sylvinus,2011-12-30 18:37:39,https://api.github.com/repos/jsonform/jsonform/git/commits/3c409ba1b8e4e7d441108d29948883cb48d991af,3c409ba1b8e4e7d441108d29948883cb48d991af,remove debug
+sylvinus,2011-12-30 18:37:12,https://api.github.com/repos/jsonform/jsonform/git/commits/75cefa042fda1912673a734deaf18ca5829ba7d5,75cefa042fda1912673a734deaf18ca5829ba7d5,Fix schemas
+sylvinus,2011-12-21 20:40:54,https://api.github.com/repos/jsonform/jsonform/git/commits/d6ffe72160b1ea5e163d0698971904b74d37ede3,d6ffe72160b1ea5e163d0698971904b74d37ede3,add checkboxes
+sylvinus,2011-12-16 17:18:48,https://api.github.com/repos/jsonform/jsonform/git/commits/a3f975e52a9c17abd5531e6285664a96830b1aaa,a3f975e52a9c17abd5531e6285664a96830b1aaa,add options/radios
+sylvinus,2011-12-16 10:59:15,https://api.github.com/repos/jsonform/jsonform/git/commits/963b2f8946e9ef7a50a9b1e70373f7bc3ad2e113,963b2f8946e9ef7a50a9b1e70373f7bc3ad2e113,fix
+sylvinus,2011-12-13 01:33:00,https://api.github.com/repos/jsonform/jsonform/git/commits/efc2fb544228e208946c5450acc496442f86abf6,efc2fb544228e208946c5450acc496442f86abf6,add hidden element
+sylvinus,2011-12-10 20:42:58,https://api.github.com/repos/jsonform/jsonform/git/commits/cee1b04d56db42b88fced3c4a7bc50a75ba46d37,cee1b04d56db42b88fced3c4a7bc50a75ba46d37,refactor to prepare for default event handlers
+sylvinus,2011-11-29 00:34:51,https://api.github.com/repos/jsonform/jsonform/git/commits/d551b4aaf80737c158a0195c558e165f88e12cf8,d551b4aaf80737c158a0195c558e165f88e12cf8,clone elt
+sylvinus,2011-11-21 17:12:06,https://api.github.com/repos/jsonform/jsonform/git/commits/a22bc50e693572d0f86973b7380e45070f936c51,a22bc50e693572d0f86973b7380e45070f936c51,Fix event handlers on array elements
+sylvinus,2011-11-18 21:47:23,https://api.github.com/repos/jsonform/jsonform/git/commits/ab5a58b764f4b619987e2d37d085291b02936bea,ab5a58b764f4b619987e2d37d085291b02936bea,Finish type=array support
+sylvinus,2011-11-18 16:55:07,https://api.github.com/repos/jsonform/jsonform/git/commits/c969db9d206e8a63e291267ac7440b793ee2db1f,c969db9d206e8a63e291267ac7440b793ee2db1f,Begin support for type=array
+sylvinus,2011-11-15 10:47:06,https://api.github.com/repos/jsonform/jsonform/git/commits/6c56f57e6502cf8f438d8325692ab2a0a8830128,6c56f57e6502cf8f438d8325692ab2a0a8830128,Fix transloadit multiple fields
+sylvinus,2011-11-15 10:34:57,https://api.github.com/repos/jsonform/jsonform/git/commits/d7271ffa5a28881c18a72d22f328e55d8b97ed19,d7271ffa5a28881c18a72d22f328e55d8b97ed19,transloadit field persistance
+sylvinus,2011-11-14 11:24:21,https://api.github.com/repos/jsonform/jsonform/git/commits/62906b0739fbadd7900ef9f203a10f362c834362,62906b0739fbadd7900ef9f203a10f362c834362,Full transloadit integration
+sylvinus,2011-11-09 14:59:21,https://api.github.com/repos/jsonform/jsonform/git/commits/251118320a31ae9876c73538e1ce22f2e50cb545,251118320a31ae9876c73538e1ce22f2e50cb545,Add transloadit support
+sylvinus,2011-11-09 12:59:58,https://api.github.com/repos/jsonform/jsonform/git/commits/50883e5287a3320fe31347d1e51a4f70f7bf1417,50883e5287a3320fe31347d1e51a4f70f7bf1417,Refactor with formFragment
+sylvinus,2011-11-07 17:01:23,https://api.github.com/repos/jsonform/jsonform/git/commits/e60df0ce008969d39d623bccbdd6ad723f509272,e60df0ce008969d39d623bccbdd6ad723f509272,fix transloadit
+sylvinus,2011-11-06 01:14:37,https://api.github.com/repos/jsonform/jsonform/git/commits/7ce04c40e0f5311d6a6a929be539a020b72bfc97,7ce04c40e0f5311d6a6a929be539a020b72bfc97,transload it uploads
+sylvinus,2011-10-28 11:28:27,https://api.github.com/repos/jsonform/jsonform/git/commits/7bdec87b744a1ea28473f2abcc36be8b16fcca6e,7bdec87b744a1ea28473f2abcc36be8b16fcca6e,Checkbox support
+sylvinus,2011-10-24 22:45:58,https://api.github.com/repos/jsonform/jsonform/git/commits/4b933b682c44dbff62f475f9c3fc89ebedf3fd78,4b933b682c44dbff62f475f9c3fc89ebedf3fd78,onClick handlers & button element
+sylvinus,2011-10-23 20:22:51,https://api.github.com/repos/jsonform/jsonform/git/commits/f909319e3ad3c7038f2c8f70cce93cea0b2a3156,f909319e3ad3c7038f2c8f70cce93cea0b2a3156,onSubmit fixes: error passing & unbinding
+sylvinus,2011-10-22 00:25:27,https://api.github.com/repos/jsonform/jsonform/git/commits/d17b128c7e223950fed6f84699a20562215edc81,d17b128c7e223950fed6f84699a20562215edc81,fix getvalue
+sylvinus,2011-10-22 00:12:46,https://api.github.com/repos/jsonform/jsonform/git/commits/431624733516aaf867582fd46f524ace2cc0f0b6,431624733516aaf867582fd46f524ace2cc0f0b6,"JSONForm global variable, event handler simple support"
+tbassetto,2011-10-21 10:12:42,https://api.github.com/repos/jsonform/jsonform/git/commits/9192bba300eeb1a5021fdd469be7474773d090c7,9192bba300eeb1a5021fdd469be7474773d090c7,Added getValues() to forms
+sylvinus,2011-10-20 15:41:19,https://api.github.com/repos/jsonform/jsonform/git/commits/8a009bfaa63403d287780ff2a4facce6ad9aa38d,8a009bfaa63403d287780ff2a4facce6ad9aa38d,setObjKey
+sylvinus,2011-10-18 09:42:31,https://api.github.com/repos/jsonform/jsonform/git/commits/56f1ef20d3310c0d38182522eb41d4078fe65c0a,56f1ef20d3310c0d38182522eb41d4078fe65c0a,recursive *
+sylvinus,2011-10-17 18:10:39,https://api.github.com/repos/jsonform/jsonform/git/commits/54ec4ffb925d80e554966ffd26465cd16f336a7c,54ec4ffb925d80e554966ffd26465cd16f336a7c,Prepend support + onElementSchema
+sylvinus,2011-10-14 16:25:28,https://api.github.com/repos/jsonform/jsonform/git/commits/ad4312881862229b698bf960456856fe23c892a3,ad4312881862229b698bf960456856fe23c892a3,Allow access in sub-properties with dot notation
+sylvinus,2011-10-11 16:46:10,https://api.github.com/repos/jsonform/jsonform/git/commits/592aeb3b9517c986a4a84c2fec9154defcdc2584,592aeb3b9517c986a4a84c2fec9154defcdc2584,"Fix elt=""*"" bug"
+tbassetto,2011-10-07 13:27:49,https://api.github.com/repos/jsonform/jsonform/git/commits/51b89e978e7924636f365db1697e3f30ec2662a4,51b89e978e7924636f365db1697e3f30ec2662a4,Removed a console.log
+tbassetto,2011-10-06 15:09:58,https://api.github.com/repos/jsonform/jsonform/git/commits/9ae0d5137efae96e1509aeb4c554bc45108e8c2c,9ae0d5137efae96e1509aeb4c554bc45108e8c2c,Handle wildcard to display each elements easily
+tbassetto,2011-10-05 09:57:31,https://api.github.com/repos/jsonform/jsonform/git/commits/81d01ffd24e8f2e7bc90f4066d2c2ef795894975,81d01ffd24e8f2e7bc90f4066d2c2ef795894975,Accept an id as option
+tbassetto,2011-10-05 09:14:28,https://api.github.com/repos/jsonform/jsonform/git/commits/ee38d9cc2437e8e43f9cd78048cffee873fca9c8,ee38d9cc2437e8e43f9cd78048cffee873fca9c8,"Use the correct value for input type=""submit"""
+sylvinus,2011-10-04 16:08:45,https://api.github.com/repos/jsonform/jsonform/git/commits/e68163515dcb565e0158c99494e71ac279c62c65,e68163515dcb565e0158c99494e71ac279c62c65,"Merge branch 'master' of github.com:joshfire/jsonform
+
+Conflicts:
+	lib/jsonform.js"
+sylvinus,2011-10-04 16:07:54,https://api.github.com/repos/jsonform/jsonform/git/commits/71650e1530fca68cf0e8e5b53d5cce8e8c8cfe90,71650e1530fca68cf0e8e5b53d5cce8e8c8cfe90,submit
+tbassetto,2011-10-04 16:07:45,https://api.github.com/repos/jsonform/jsonform/git/commits/67219b0ffc9105f60e83ab7b3788aaf584ac883b,67219b0ffc9105f60e83ab7b3788aaf584ac883b,Added id and default title (using the key)
+sylvinus,2011-10-04 15:19:27,https://api.github.com/repos/jsonform/jsonform/git/commits/3ab51c7ef7453d61b99375e9c08ae2fa98944968,3ab51c7ef7453d61b99375e9c08ae2fa98944968,"Merge branch 'master' of github.com:joshfire/jsonform
+
+Conflicts:
+	lib/jsonform.js"
+sylvinus,2011-10-04 15:18:48,https://api.github.com/repos/jsonform/jsonform/git/commits/77899dea7677d92a67660c7ebae90d02a48d0471,77899dea7677d92a67660c7ebae90d02a48d0471,onsubmit handler
+tbassetto,2011-10-04 14:40:09,https://api.github.com/repos/jsonform/jsonform/git/commits/0f98069d2cbc5b5e54b219322ae2b7c9f362907f,0f98069d2cbc5b5e54b219322ae2b7c9f362907f,Preselect the good value if select input has one
+sylvinus,2011-10-04 14:03:44,https://api.github.com/repos/jsonform/jsonform/git/commits/b38ce838ca017a668acf354a761313f607a44b0f,b38ce838ca017a668acf354a761313f607a44b0f,Default values
+sylvinus,2011-10-04 13:50:59,https://api.github.com/repos/jsonform/jsonform/git/commits/90996e9cd77421354134ca1a443902e69f25a201,90996e9cd77421354134ca1a443902e69f25a201,Merge branch 'master' of github.com:joshfire/jsonform
+sylvinus,2011-10-04 13:50:40,https://api.github.com/repos/jsonform/jsonform/git/commits/2e6a7f82a78b4de5d947521cf7e4f6043810d1e8,2e6a7f82a78b4de5d947521cf7e4f6043810d1e8,rework templates
+tbassetto,2011-10-04 13:46:31,https://api.github.com/repos/jsonform/jsonform/git/commits/a273f41482b1a4b1f1d99f81373904aefc068426,a273f41482b1a4b1f1d99f81373904aefc068426,Changed call to enum to please JSLint
+sylvinus,2011-10-04 13:42:04,https://api.github.com/repos/jsonform/jsonform/git/commits/dde3515982aea3d232f8021dbbcfdcb2224e6f9d,dde3515982aea3d232f8021dbbcfdcb2224e6f9d,Merge branch 'master' of github.com:joshfire/jsonform
+sylvinus,2011-10-04 13:41:53,https://api.github.com/repos/jsonform/jsonform/git/commits/8a61f0c196b7e4b590102125d5bbb622a48a1f4c,8a61f0c196b7e4b590102125d5bbb622a48a1f4c,field template:
+tbassetto,2011-10-04 13:41:26,https://api.github.com/repos/jsonform/jsonform/git/commits/e00877a83e763fb05ef1b579479f84c0849e91ee,e00877a83e763fb05ef1b579479f84c0849e91ee,Select options ok
+sylvinus,2011-10-04 13:35:48,https://api.github.com/repos/jsonform/jsonform/git/commits/c1ad840eece2b326a7b7f23be800eefccfe3bcc0,c1ad840eece2b326a7b7f23be800eefccfe3bcc0,fix
+tbassetto,2011-10-04 13:33:01,https://api.github.com/repos/jsonform/jsonform/git/commits/e5230177620299ef07d772605b6baa67c0e4d054,e5230177620299ef07d772605b6baa67c0e4d054,Fixed conflict on basic.js
+tbassetto,2011-10-04 13:31:21,https://api.github.com/repos/jsonform/jsonform/git/commits/9b609fe173bcd57a381358408bf0feba5546becf,9b609fe173bcd57a381358408bf0feba5546becf,"Merge branch 'master' of github.com:joshfire/jsonform
+
+Conflicts:
+	lib/jsonform.js
+	test/forms/basic.js"
+tbassetto,2011-10-04 13:28:40,https://api.github.com/repos/jsonform/jsonform/git/commits/64d3b0e8f35865470700cc26a813f222e6776979,64d3b0e8f35865470700cc26a813f222e6776979,Added support for select
+sylvinus,2011-10-04 13:27:56,https://api.github.com/repos/jsonform/jsonform/git/commits/92dcedf4b23bf7c5ae06f634daba547ac6c41d14,92dcedf4b23bf7c5ae06f634daba547ac6c41d14,Added more elements
+sylvinus,2011-10-04 13:21:09,https://api.github.com/repos/jsonform/jsonform/git/commits/5fed5a1010601b193cbe8394b1f5c2545eb2b9b3,5fed5a1010601b193cbe8394b1f5c2545eb2b9b3,Match twitter bootstrap schemas
+sylvinus,2011-10-04 12:44:40,https://api.github.com/repos/jsonform/jsonform/git/commits/e12e6bd0b3fd0879834c004845454dae961e21a0,e12e6bd0b3fd0879834c004845454dae961e21a0,added twitter bootstrap for test
+sylvinus,2011-10-04 12:41:39,https://api.github.com/repos/jsonform/jsonform/git/commits/359eea1085136d806cc5d217b9c7da69200f235a,359eea1085136d806cc5d217b9c7da69200f235a,First working test
+sylvinus,2011-10-04 12:24:26,https://api.github.com/repos/jsonform/jsonform/git/commits/3c83c07729796e746688105fdb7f2d8a5dc5266f,3c83c07729796e746688105fdb7f2d8a5dc5266f,Added files
+sylvinus,2011-10-04 12:06:00,https://api.github.com/repos/jsonform/jsonform/git/commits/bf44dd4f764e80229643997089f9184fba48dc6c,bf44dd4f764e80229643997089f9184fba48dc6c,first commit

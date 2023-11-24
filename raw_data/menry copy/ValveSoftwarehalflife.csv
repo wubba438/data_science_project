@@ -1,0 +1,118 @@
+halflife,Half-Life 1 engine based games
+username,timestamp,url,sha,message
+mikela-valve,2019-06-06 18:29:32,https://api.github.com/repos/ValveSoftware/halflife/git/commits/c7240b965743a53a29491dd49320c88eecf6257b,c7240b965743a53a29491dd49320c88eecf6257b,Add FGD files for DMC and Ricochet
+mikela-valve,2019-06-06 18:29:21,https://api.github.com/repos/ValveSoftware/halflife/git/commits/e8c4d541164ed56e78de2bb2bffdb6e8089cdb97,e8c4d541164ed56e78de2bb2bffdb6e8089cdb97,Update and fix SDK license
+alfred-valve,2014-12-31 03:38:09,https://api.github.com/repos/ValveSoftware/halflife/git/commits/5d761709a31ce1e71488f2668321de05f791b405,5d761709a31ce1e71488f2668321de05f791b405,"Merge pull request #1580 from DanielOaks/zombie-pitch
+
+Make zombie pitches more uniform, fix unused variable"
+alfred-valve,2014-12-31 03:34:56,https://api.github.com/repos/ValveSoftware/halflife/git/commits/9fd581518130c29dbc7aafacccaee0da8837d372,9fd581518130c29dbc7aafacccaee0da8837d372,"Merge pull request #1582 from JoelTroch/master
+
+Minor fix for CBasePlayerWeapon::ExtractAmmo"
+JoelTroch,2014-12-30 13:47:33,https://api.github.com/repos/ValveSoftware/halflife/git/commits/f5ba47e6a89689f20ea883baff2c7170f3ca8a8d,f5ba47e6a89689f20ea883baff2c7170f3ca8a8d,Same fix applied to Deathmatch Classic
+JoelTroch,2014-12-30 13:46:38,https://api.github.com/repos/ValveSoftware/halflife/git/commits/fe047f69337547be743971521e94e5d7ec51b959,fe047f69337547be743971521e94e5d7ec51b959,Same fix applied to Ricochet
+JoelTroch,2014-12-30 13:41:04,https://api.github.com/repos/ValveSoftware/halflife/git/commits/743a0c3f35f0ffb7173e8c4cf60e37b97667dae5,743a0c3f35f0ffb7173e8c4cf60e37b97667dae5,"Minor fix for CBasePlayerWeapon::ExtractAmmo
+
+This get rid of the warning with ""iReturn not being initialized"" with debug binaries for weapons which doesn't use ammo (crowbar for example)."
+DanielOaks,2014-12-15 13:21:37,https://api.github.com/repos/ValveSoftware/halflife/git/commits/f919b945c4d415a29629ada9160b2278cb2ad0b5,f919b945c4d415a29629ada9160b2278cb2ad0b5,"Make zombie pitches more uniform, fix unused variable"
+alfred-valve,2014-08-25 18:37:16,https://api.github.com/repos/ValveSoftware/halflife/git/commits/0a1528cfda0ef376e3e33c483191c6fac8599b7a,0a1528cfda0ef376e3e33c483191c6fac8599b7a,"Merge pull request #1539 from ripieces/master
+
+Fixes ValveSoftware/halflife#1536"
+dtugend,2014-08-24 14:43:13,https://api.github.com/repos/ValveSoftware/halflife/git/commits/062078aedd2d8d8a7ac4e2a27055125280bb3e8e,062078aedd2d8d8a7ac4e2a27055125280bb3e8e,"Fixes ValveSoftware/halflife#1536
+This is merely to keep the VC++ Debug builds happy and addresses cases
+where variables where being used without being initalized. There should be
+no visible changes apart from non-functional side effects to the users of
+Release builds.
+Thanks to @fabiosarts for finding and reporting these problems.
+Thanks to @LevShisterov for suggeting how to fix geiger.cpp files, which I
+followed closely except using <= 800 instead of < 800."
+alfred-valve,2014-07-21 15:50:50,https://api.github.com/repos/ValveSoftware/halflife/git/commits/5c1e1d63eb5a9cb97b3b19f992d4e62aaae02cf0,5c1e1d63eb5a9cb97b3b19f992d4e62aaae02cf0,"Merge pull request #1531 from thefoofighter/master
+
+Update to smdlexp.vcxproj"
+thefoofighter,2014-07-21 09:53:15,https://api.github.com/repos/ValveSoftware/halflife/git/commits/6094dbdf999cd58f9735eb2de5ff390f9422f4cd,6094dbdf999cd58f9735eb2de5ff390f9422f4cd,"Update to smdlexp.vcxproj
+
+Added Module definition File to linker input for all configurations,
+previously only added to debug as spotted by @ripieces Also changed the
+relative pathing to $(ProjectDir)..\..\utils\smdlexp\smdlexp.def ->
+Cleaner and makes more sense :)"
+thefoofighter,2014-07-20 23:19:11,https://api.github.com/repos/ValveSoftware/halflife/git/commits/3708653ef9f3464ec51d1b72c4b1838ff789c79b,3708653ef9f3464ec51d1b72c4b1838ff789c79b,"Update smdlexp.vcxproj
+
+Added a relative path to the required Module definition File smdlexp.def
+found in halflife\utils\smdlexp
+
+Although the project will compile fine without this step, 3DSMAX will
+fail to load the plug-in giving errors such as ""smdlexp.dle doesn't
+implement LibVersion""
+
+It seems that smdlexp.def needs to be explicitly defined in the vcxproj
+in order to work."
+alfred-valve,2014-07-19 15:26:50,https://api.github.com/repos/ValveSoftware/halflife/git/commits/26d0175cbb4920373deff6da911fcfa6b3213ff7,26d0175cbb4920373deff6da911fcfa6b3213ff7,"Merge pull request #1530 from ripieces/master
+
+fixes ValveSoftware/halflife#1529"
+dtugend,2014-07-19 14:41:43,https://api.github.com/repos/ValveSoftware/halflife/git/commits/e82f7afafc2c70817662efb261a7c87fe6b9309f,e82f7afafc2c70817662efb261a7c87fe6b9309f,fixes ValveSoftware/halflife#1529
+alfred-valve,2013-10-29 17:53:04,https://api.github.com/repos/ValveSoftware/halflife/git/commits/5cb69240468dc5c9f5d001f9b766ac11088841df,5cb69240468dc5c9f5d001f9b766ac11088841df,"Merge pull request #1401 from ripieces/master
+
+Fixed VC++ 6.0 .dsp files"
+dtugend,2013-10-29 17:15:14,https://api.github.com/repos/ValveSoftware/halflife/git/commits/989fa5c42e72fa0345e19b79632b79f394cd7f36,989fa5c42e72fa0345e19b79632b79f394cd7f36,CRLF for .bat too
+dtugend,2013-10-29 17:08:07,https://api.github.com/repos/ValveSoftware/halflife/git/commits/d576166c99d936a9339f5db68dd8a5574e1f9098,d576166c99d936a9339f5db68dd8a5574e1f9098,"Fixed VC++ 6.0 .dsp files
+
+Minor fixes to make sure the code compiles without errors."
+alfred-valve,2013-10-23 16:43:02,https://api.github.com/repos/ValveSoftware/halflife/git/commits/32589105da62c7be62fdb45ad449e2f3ec06b9a7,32589105da62c7be62fdb45ad449e2f3ec06b9a7,"Merge pull request #1395 from ripieces/master
+
+Normalized line endings (no changes)"
+dtugend,2013-10-23 07:09:13,https://api.github.com/repos/ValveSoftware/halflife/git/commits/14321827503e429120f78fccba205f9cd75a2a0a,14321827503e429120f78fccba205f9cd75a2a0a,"Normalized line endings (no changes)
+
+Normalized line endings by touching (touch) the dsp files, no changes to
+the files were made.
+This is in order we can see actual modified lines in case s.o. modifies
+the files.
+The files will have CRLF as EOL on checkout due to the .gitattributes
+setting."
+alfred-valve,2013-10-22 20:13:25,https://api.github.com/repos/ValveSoftware/halflife/git/commits/ca6be1473cc00896e8e22ac813e8da7b25cc6061,ca6be1473cc00896e8e22ac813e8da7b25cc6061,"Merge pull request #1394 from ripieces/master
+
+Visual C++ 2010 Express support for utils"
+dtugend,2013-10-22 18:52:06,https://api.github.com/repos/ValveSoftware/halflife/git/commits/a96f882f9d395eaba47d0809cc188e18c53df537,a96f882f9d395eaba47d0809cc188e18c53df537,"Visual C++ 2010 Express support for utils
+
+Among other problems also fixes ValveSoftware/halflife#1391"
+alfred-valve,2013-10-14 02:54:58,https://api.github.com/repos/ValveSoftware/halflife/git/commits/dd78039839f1ff887dbabdb240687a5a6f6d4813,dd78039839f1ff887dbabdb240687a5a6f6d4813,"Merge pull request #1384 from Jengerer/master
+
+Added missing class prefix to function pointers."
+Jengerer,2013-10-14 00:34:25,https://api.github.com/repos/ValveSoftware/halflife/git/commits/8fc24de0950b30e6fb6271d5f9999f77f7b254bd,8fc24de0950b30e6fb6271d5f9999f77f7b254bd,Changed to CTripBeam to allow future overloading.
+Jengerer,2013-10-13 05:45:27,https://api.github.com/repos/ValveSoftware/halflife/git/commits/1ae42463e31858468cf9aa9037c750e89c95d7ab,1ae42463e31858468cf9aa9037c750e89c95d7ab,Added missing class prefix to function pointers.
+alfred-valve,2013-10-08 17:17:26,https://api.github.com/repos/ValveSoftware/halflife/git/commits/a06e5a1f53bd1b8e2096f1dd33b6adfa44561a00,a06e5a1f53bd1b8e2096f1dd33b6adfa44561a00,"Merge pull request #1375 from ripieces/master
+
+Visual C++ 2010 Express support"
+dtugend,2013-10-07 11:34:55,https://api.github.com/repos/ValveSoftware/halflife/git/commits/0c00c21dc6db2f70dc9b76a4a27ef23836ecc306,0c00c21dc6db2f70dc9b76a4a27ef23836ecc306,"CRLF issues with git
+
+Seems as if git wants to normalize the line endings to LF
+However they will be converted to CRLF on checkout due to the
+.gitattributes file"
+dtugend,2013-10-07 08:26:47,https://api.github.com/repos/ValveSoftware/halflife/git/commits/b92704dd197a8ab82c7c1fe027ca27b36d381b47,b92704dd197a8ab82c7c1fe027ca27b36d381b47,"No RTTI on dmc and ricochet
+
+Just as in the original .dsp files."
+dtugend,2013-10-07 08:21:53,https://api.github.com/repos/ValveSoftware/halflife/git/commits/9ff405e47372c85b9380a4b36c04755960973140,9ff405e47372c85b9380a4b36c04755960973140,"Enabled RTTI on hldll and hl_cdll
+
+Enabled RTTI on those projects as it is in the original DSPs (ricochet and
+dmc don't have RTTI enabled)."
+dtugend,2013-10-06 19:22:29,https://api.github.com/repos/ValveSoftware/halflife/git/commits/a800ff8246039a6f154cddbe1fb534f60a69729f,a800ff8246039a6f154cddbe1fb534f60a69729f,"Visual C++ 2010 Express support
+
+fixes ValveSoftware/halflife#1338
+
+Changes:
+- added project files for Visual C++ 2010 Express
+- resolved function calls that would otherwise be ambiguous now
+- solved ARRAYSIZE macro and HSPRITE type collisions with Windows.h and
+  winsock.h includes by guarding the includes
+
+TODO:
+We should think about if we actually should instead link to a .h that
+defines / redirects the required macros, so that platform differences
+would be limited to a few .cpp files (meaning not including windows.h in a
+huge number of files as it is now), see the issue above for details."
+alfred-valve,2013-09-02 16:44:29,https://api.github.com/repos/ValveSoftware/halflife/git/commits/e87c4afe502ebd5f24c107d2ae30ed3ce0bc1bf8,e87c4afe502ebd5f24c107d2ae30ed3ce0bc1bf8,Update README.md
+alfred-valve,2013-08-30 23:15:00,https://api.github.com/repos/ValveSoftware/halflife/git/commits/b41bfd757af94022aa567afcc41701a742760727,b41bfd757af94022aa567afcc41701a742760727,Update README.md
+alfred-valve,2013-02-21 17:11:08,https://api.github.com/repos/ValveSoftware/halflife/git/commits/384f8774129fca72f070f9bea873df2c8740b894,384f8774129fca72f070f9bea873df2c8740b894,"Merge pull request #463 from johndrinkwater/master
+
+Ask users for their version output"
+johndrinkwater,2013-02-21 13:08:18,https://api.github.com/repos/ValveSoftware/halflife/git/commits/573423d71cd604063366174209e322d0aa3443a0,573423d71cd604063366174209e322d0aa3443a0,Update the info request with client version
+alfred-valve,2013-02-14 20:49:05,https://api.github.com/repos/ValveSoftware/halflife/git/commits/f1271537c123980d0f8a1aba0f47741a6bd4d500,f1271537c123980d0f8a1aba0f47741a6bd4d500,Update README.md
+alfred-valve,2013-02-14 20:41:16,https://api.github.com/repos/ValveSoftware/halflife/git/commits/fd2d7ba0de7afb4de8f9e51fd227281615073cdb,fd2d7ba0de7afb4de8f9e51fd227281615073cdb,Create README.md

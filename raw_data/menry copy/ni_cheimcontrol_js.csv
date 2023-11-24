@@ -1,0 +1,244 @@
+heimcontrol.js,Home-Automation with node.js and Raspberry PI
+username,timestamp,url,sha,message
+ni-c,2015-06-26 08:22:52,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/09931841d7ea948f796820cbad4416d316829a80,09931841d7ea948f796820cbad4416d316829a80,"Merge pull request #120 from laurynas/feature/ds18x20_plugin
+
+Add ds18x20 temperature sensor plugin"
+laurynas,2015-06-24 22:16:39,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ba060fd36771398405baecae60c2f77b33a18e9f,ba060fd36771398405baecae60c2f77b33a18e9f,Add ds18x20 temperature sensor plugin
+ni-c,2014-11-16 22:44:18,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ac8085773d3c2629e7da795febdab948cabfcd2d,ac8085773d3c2629e7da795febdab948cabfcd2d,"Merge pull request #109 from lichtteil/arduino-single-digit-pin
+
+Allow single-digit pin numbers for Arduino plugin"
+ni-c,2014-11-16 22:44:04,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/79f9987a543e6af2bb48668e7480ffadd65d0d9b,79f9987a543e6af2bb48668e7480ffadd65d0d9b,"Merge pull request #108 from tjanson/gpio-more-pins
+
+Added more GPIO pins (incl. B+) and explanation"
+lichtteil,2014-11-16 14:16:16,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ceacc9a121dcff7a6bbf6547a09f56828e0b9ab2,ceacc9a121dcff7a6bbf6547a09f56828e0b9ab2,"Allow single-digit pin numbers for Arduino plugin
+
+Settings of Arduino pins only allowed numbers with 2 digits. Chenged regex to accept 1 or two digits for pin numbers."
+tjanson,2014-10-29 18:16:12,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/6c665d940c766a4fd443391ca2e9e592a0b9af1e,6c665d940c766a4fd443391ca2e9e592a0b9af1e,"Added more GPIO pins (incl. B+) and explanation
+
+Untested. Wiring Pi numbers taken from source [1].
+
+[1] https://git.drogon.net/?p=wiringPi;a=blob;f=wiringPi/wiringPi.c;h=e7ae3863c7ca0fe6f5b66e08a833293965d9325b;hb=df45388f6431f7baba31ac1e8e242d89828637a0"
+ni-c,2014-10-13 13:43:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c261d0aaa85ec27f612fbbe41167856dc8cc05a2,c261d0aaa85ec27f612fbbe41167856dc8cc05a2,Changed package.json back to original duino repository
+ni-c,2014-10-13 13:06:40,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bd401d6131f6c1b764f120c663e7d89ad4e3516a,bd401d6131f6c1b764f120c663e7d89ad4e3516a,"Merge pull request #100 from tjanson/fix-76
+
+Don't crash on request without cookies (redirect to login instead) (fixes #76)"
+ni-c,2014-10-13 13:05:15,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b3c6767a2746932e8f55ffae3634fa8014f99368,b3c6767a2746932e8f55ffae3634fa8014f99368,"Merge pull request #99 from tjanson/fix-52
+
+require requirejs (fixes #52)"
+ni-c,2014-10-13 13:03:02,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/64b6ee757e135155cc2c7f0899b51c38b7058de0,64b6ee757e135155cc2c7f0899b51c38b7058de0,"Merge pull request #97 from tjanson/arduino-connect-optional
+
+Warn & continue if Arduino serial connection open fails"
+tjanson,2014-10-10 14:21:24,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ca39315adcb2fc5a54dd467b2530a12ea9db3811,ca39315adcb2fc5a54dd467b2530a12ea9db3811,"Don't crash on req w/o cookies (redir to login)
+
+When handling a request without cookies, i.e., with
+`typeof req.headers.cookie === 'undefined', detect the problem and redirect to
+login rather than crashing.
+Fixes #76."
+tjanson,2014-10-09 23:48:25,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/8b12779df553015d926f1312b066de79f6606822,8b12779df553015d926f1312b066de79f6606822,"require requirejs (fixes #52)
+
+Note that I have no idea what I'm doing; I know nothing about requirejs.
+I saw this post:
+https://stackoverflow.com/questions/14548369/requirejs-relative-paths#comment20294321_14548369
+and I saw that `requirejs` is undefined. So let's define it.
+
+Fixes #52."
+tjanson,2014-10-09 18:40:47,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/cc3354801cb08adae2aef413800ab66a021907dd,cc3354801cb08adae2aef413800ab66a021907dd,"warn & continue if Arduino serial conn open fails
+
+Many users have run into the ""cannot open /dev/"" error message that so far
+occurs when the `duino` serial connection cannot be established.
+That message isn't quite self-explanatory, and it's not obvious why an
+Arduino should be strictly required in the first place.
+
+Now:
+* a meaningful warning is displayed
+* Heimcontrol does not quit immediately (though it's possible that it'll
+  crash down the road if something expects the Arduino Board to be present;
+  this could be improved further)
+
+In other words, you can finally run Heimcontrol without an Arduino."
+ni-c,2014-09-11 14:24:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/eb4875d02876838eb03a9a6e566fc7ffb373d652,eb4875d02876838eb03a9a6e566fc7ffb373d652,"Merge pull request #91 from tjanson/piswitch
+
+Piswitch api & settings page fixes"
+tjanson,2014-09-09 22:42:45,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/83d468920496185c304806fa42ca49ebaec544e1,83d468920496185c304806fa42ca49ebaec544e1,Piswitch API change
+tjanson,2014-09-09 21:23:26,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bff34a727fcea19874495b27cd773be7fdc379d3,bff34a727fcea19874495b27cd773be7fdc379d3,Piswitch settings page hidden input fields fixed
+ni-c,2014-09-08 11:59:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/8b424b74ff260d6c722f44bb637bfc0595cc404a,8b424b74ff260d6c722f44bb637bfc0595cc404a,"Merge pull request #89 from tjanson/piswitch
+
+PiSwitch: RC-Switch for RPi (no Arduino needed)"
+tjanson,2014-08-25 18:01:10,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/31e16327e6f44f24259066be51a0798e5f078a48,31e16327e6f44f24259066be51a0798e5f078a48,piswitch plugin
+tjanson,2014-08-25 16:11:59,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3b103aa4d3df09fc62fbc89a088d906ea6b1d70a,3b103aa4d3df09fc62fbc89a088d906ea6b1d70a,"plugin menu order reversed, now A-Z"
+tjanson,2014-08-07 21:26:53,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c89642c06307fc5841e31b70857cbe70f4ec8ced,c89642c06307fc5841e31b70857cbe70f4ec8ced,"Merge pull request #2 from ni-c/master
+
+merge from upstream"
+ni-c,2014-08-01 13:38:56,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2d096d45fcabd6790e30b74f7ffea17d498b5160,2d096d45fcabd6790e30b74f7ffea17d498b5160,"Merge pull request #87 from tjanson/patch-1
+
+repo field added to npm pkg"
+tjanson,2014-08-01 13:07:00,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/5ca5443db531f6f271c4d2c9fc16cc2e36f5e862,5ca5443db531f6f271c4d2c9fc16cc2e36f5e862,"repo field added to npm pkg
+
+fixes the warning during `npm install` (doesn't actually make any difference)"
+ni-c,2014-07-28 08:59:37,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9fe6c75b987f6f6e682703318e208f63a206925f,9fe6c75b987f6f6e682703318e208f63a206925f,Removed console.log()
+ni-c,2014-07-28 08:54:26,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/10d2d40ae7aae2cf8fbeb262341c1440912f0169,10d2d40ae7aae2cf8fbeb262341c1440912f0169,Merge branch 'tjanson-login-dbupd-callback'
+tjanson,2014-07-25 00:03:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/7e8ed596e882af45cea55db0c6f61a7c896d4b10,7e8ed596e882af45cea55db0c6f61a7c896d4b10,callback fct added to mongodb update call
+ni-c,2014-07-24 08:49:28,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c78a7b1ae3bf99a98cf22dbf8eb2020971578fd7,c78a7b1ae3bf99a98cf22dbf8eb2020971578fd7,"Merge pull request #81 from tjanson/rc-binary-codes
+
+RC binary code (rather than tri-state) support"
+tjanson,2014-07-21 19:44:36,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ae943aac9129d99c4b05d1078fc078937910f878,ae943aac9129d99c4b05d1078fc078937910f878,typo
+tjanson,2014-07-21 16:17:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/fa25de63a85b9bb830c38b9d7e6f6d416a1c3824,fa25de63a85b9bb830c38b9d7e6f6d416a1c3824,"Merge branch 'rc-binary-codes' of github.com:tjanson/heimcontrol.js into rc-binary-codes
+
+Conflicts:
+	plugins/arduino/index.js
+	plugins/arduino/views/settings.jade"
+tjanson,2014-07-21 14:41:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/346697edc7dc17cb9896d8cd029dea04aeb3e450,346697edc7dc17cb9896d8cd029dea04aeb3e450,RC settings UI cleaned up
+tjanson,2014-07-21 14:41:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b29d0cb89d131b0ea899795b6207bb46477ab88a,b29d0cb89d131b0ea899795b6207bb46477ab88a,RC settings UI cleaned up
+tjanson,2014-07-20 23:43:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ba48bb4771fffe1009f7cff545a74c9294218e6c,ba48bb4771fffe1009f7cff545a74c9294218e6c,fix bin2dec base conv
+tjanson,2014-07-20 23:24:30,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3a9fa8439b98cd9cdc5b84cfbe34191c56092c76,3a9fa8439b98cd9cdc5b84cfbe34191c56092c76,fix var name
+tjanson,2014-07-20 22:51:26,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ccc36e2845416e4ba955e35a40cccd19d81d0cd8,ccc36e2845416e4ba955e35a40cccd19d81d0cd8,rc dec support preliminary interface
+tjanson,2014-07-20 22:34:39,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b939cd42bd36ad37d796a50bf55bcb26f0831809,b939cd42bd36ad37d796a50bf55bcb26f0831809,"Merge pull request #1 from ni-c/master
+
+merge from upstream"
+ni-c,2014-07-10 19:10:36,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/7d87f57b34fd76050bac5a2d4bbe754ecf9068da,7d87f57b34fd76050bac5a2d4bbe754ecf9068da,Getting rid of the MongoDB
+ni-c,2014-06-24 07:42:18,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/523877769f8f697d46b01943d769816e05e31da5,523877769f8f697d46b01943d769816e05e31da5,"Merge pull request #77 from tjanson/elro-tricodes
+
+tri-state code max length fixed"
+tjanson,2014-06-21 11:06:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/d37cb0af4132647f138ba8b5f330d41808a4834c,d37cb0af4132647f138ba8b5f330d41808a4834c,tri-state code max length fixed
+ni-c,2014-06-10 06:03:08,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/404777a2b0c089770f70ba476f45928a6257753c,404777a2b0c089770f70ba476f45928a6257753c,"Merge pull request #71 from tjanson/elro-tricodes
+
+Allow 10-digit tricodes and custom on/off-suffixes"
+tjanson,2014-06-09 13:50:44,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a6bebac4837a4d1e2b5eacda4d0e69177ed32113,a6bebac4837a4d1e2b5eacda4d0e69177ed32113,"Allow 10-digit tricodes and custom on/off-suffixes
+Some systems such as ""Elro AB440S"" make use of ten digit tricodes and use different suffixes for on/off.
+These fields are added to the `rc-switch` preferences (i.e., separate for every single switch), which allows parallel usage of different systems.
+
+Tested with ""Elro AB440S"". Previous setups should still work."
+ni-c,2014-02-16 00:51:47,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a2688863ed95141c15b6dd0cd9a44963b03dc377,a2688863ed95141c15b6dd0cd9a44963b03dc377,"Merge pull request #55 from JorisM/feature/rcswitch_api
+
+Feature/rcswitch api"
+JorisM,2014-02-15 20:07:37,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bb104ce17f10b7d2bda0024f9b14ae952940fb57,bb104ce17f10b7d2bda0024f9b14ae952940fb57,"Revert ""format plugins/arduino/index.js properly""
+
+This reverts commit ccab950ef3b0fb5f733b6791040ef79d0df88433."
+JorisM,2014-02-15 20:06:26,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ccab950ef3b0fb5f733b6791040ef79d0df88433,ccab950ef3b0fb5f733b6791040ef79d0df88433,format plugins/arduino/index.js properly
+JorisM,2014-02-15 19:17:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c0d21af65afeaa8d68b126b42295b2540148e1c6,c0d21af65afeaa8d68b126b42295b2540148e1c6,return rc switches with api
+ni-c,2014-01-03 08:36:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/4c431dbf9177b640631b3f0efae97fad471417e9,4c431dbf9177b640631b3f0efae97fad471417e9,"Merge pull request #41 from JorisM/fix/gpio_original_state
+
+fix the initial state for gpio toggles when accessing through api"
+JorisM,2014-01-02 14:43:03,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/0f9149456b3042e5b47a54b188ff79f3c7b3aad2,0f9149456b3042e5b47a54b188ff79f3c7b3aad2,fix the initial state for gpio toggles when accessing through api
+ni-c,2013-12-28 14:43:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/f213830294ced1b759706fccdab962f1ebd220f0,f213830294ced1b759706fccdab962f1ebd220f0,Merge pull request #40 from ni-c/JorisM-feature/api
+JorisM,2013-12-28 12:17:37,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/4d293ac1c453e356495968d61ee82fe9b1791868,4d293ac1c453e356495968d61ee82fe9b1791868,"Merge branch 'master' into feature/api
+
+Conflicts:
+	heimcontrol.js"
+JorisM,2013-12-28 12:12:45,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b1f2575ec565e2ef5d716a8ab20198a3800d469b,b1f2575ec565e2ef5d716a8ab20198a3800d469b,Merge remote-tracking branch 'upstream/master'
+JorisM,2013-12-28 12:10:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/930bdc7d8790efb06b375ce12f1c4e572dd7dd85,930bdc7d8790efb06b375ce12f1c4e572dd7dd85,cleanup
+JorisM,2013-12-28 11:56:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ac4b1213861bec75779aa52c0fe6f90042b0103e,ac4b1213861bec75779aa52c0fe6f90042b0103e,"Merge branch 'master' into feature/api
+
+Conflicts:
+	routes/index.js"
+JorisM,2013-12-26 15:05:13,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/d9392cb48238ae2ddd10f6b37faa5d2a7799c8df,d9392cb48238ae2ddd10f6b37faa5d2a7799c8df,cleanup debugging
+JorisM,2013-12-26 15:03:17,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/844d462d84341d292b4eccc88135843511c857a6,844d462d84341d292b4eccc88135843511c857a6,added list of gpio toggles to api
+JorisM,2013-12-24 11:04:24,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c7ead32bd08ef972cef6cdeaf93c31dd328c97d4,c7ead32bd08ef972cef6cdeaf93c31dd328c97d4,"Merge pull request #1 from ni-c/master
+
+Update Local Repo"
+JorisM,2013-12-24 09:23:46,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e9dcf17a7436cd77bb4549fc74f03eec54c019c6,e9dcf17a7436cd77bb4549fc74f03eec54c019c6,progress with socketio authentication when using auth token
+JorisM,2013-12-19 10:05:52,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9edf819f7c295072fde5ffd2a130f045df99bd8e,9edf819f7c295072fde5ffd2a130f045df99bd8e,experiment with api and socketio
+JorisM,2013-12-19 10:05:02,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ad0bdea1635aeb143c351a6a4d8ebd926721fbd5,ad0bdea1635aeb143c351a6a4d8ebd926721fbd5,added vimrc to gitignore
+JorisM,2013-12-19 10:04:29,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3314b3dacfd2c89ec375de3a1ba21b73869a29f8,3314b3dacfd2c89ec375de3a1ba21b73869a29f8,added vim file to gitignore
+ConnorRoberts,2013-10-12 22:52:45,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9cb0ca05888044fa285ba40d03131b1585e1190b,9cb0ca05888044fa285ba40d03131b1585e1190b,Corrected socket name
+ConnorRoberts,2013-10-12 19:10:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a902eb7c00ef56f6eb5b1d724e32a5201af990b2,a902eb7c00ef56f6eb5b1d724e32a5201af990b2,Added LED
+ni-c,2013-10-07 08:20:40,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2fba4e92cf18c002a14850f10e23558df454fdf5,2fba4e92cf18c002a14850f10e23558df454fdf5,"Merge pull request #15 from imbrianj/master
+
+Fix Typo"
+imbrianj,2013-10-06 02:47:12,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/6ebdce9d53264a620e24c4d5db1cc7ac7ced70e6,6ebdce9d53264a620e24c4d5db1cc7ac7ced70e6,Fix Typo
+ni-c,2013-09-13 21:22:38,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/4694ac46c5cec1bbce9fb644f417cae9edc5178f,4694ac46c5cec1bbce9fb644f417cae9edc5178f,"Merge pull request #9 from JorisM/master
+
+Ability to add and remove multiple users"
+JorisM,2013-09-13 14:01:48,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b0b8c91f3e094c626ae648eeb43e1a7b2c1c2e7f,b0b8c91f3e094c626ae648eeb43e1a7b2c1c2e7f,fix url when adding user
+JorisM,2013-09-13 13:51:31,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2211e026fc9c116cd7c79a82ce8cdd8b37739fe2,2211e026fc9c116cd7c79a82ce8cdd8b37739fe2,fix url when removing user
+JorisM,2013-09-13 13:42:54,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/36e64fb91de3368061831c04a35b690083569a7b,36e64fb91de3368061831c04a35b690083569a7b,"Revert ""added vimrc and current routes index to switch to other computer for development""
+
+This reverts commit 88ad80be71e3afd7a839a15e4cdc8e53531f39bd."
+JorisM,2013-09-13 13:37:22,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e9e35e82484da943803beb548c62fa119bb09142,e9e35e82484da943803beb548c62fa119bb09142,Add and Remove users
+JorisM,2013-09-13 09:23:50,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/88ad80be71e3afd7a839a15e4cdc8e53531f39bd,88ad80be71e3afd7a839a15e4cdc8e53531f39bd,added vimrc and current routes index to switch to other computer for development
+ni-c,2013-09-11 21:58:06,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/aa012f28d6e95877cc1ca957f34b9c0430ad30cd,aa012f28d6e95877cc1ca957f34b9c0430ad30cd,"Merge pull request #8 from ni-c/feature/rgb-led-strips
+
+RGBLights Plugin"
+ni-c,2013-09-11 21:52:44,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b63b28d589dee860e2dc324eb36026a78c122871,b63b28d589dee860e2dc324eb36026a78c122871,Added documentation
+ni-c,2013-09-11 21:47:20,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c410a0f01a8269ff82e5c8ac22db092fafe681ee,c410a0f01a8269ff82e5c8ac22db092fafe681ee,Added documentation
+ni-c,2013-09-11 21:44:46,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e15af2b1d403717a40a6abe4835c07824ddd3ee6,e15af2b1d403717a40a6abe4835c07824ddd3ee6,RGBLights cleanup
+ConnorRoberts,2013-09-11 19:22:24,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/8719b84d90689a2c34fb8b264213e110c5cfbbc0,8719b84d90689a2c34fb8b264213e110c5cfbbc0,Added plugin to control RGB LED strips
+ConnorRoberts,2013-09-11 19:20:47,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/46942d6185f29b400d0efeb75a7eb1b71ad0cc19,46942d6185f29b400d0efeb75a7eb1b71ad0cc19,Added plugin to control RGB LED strips
+ni-c,2013-09-07 17:09:01,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b3bfd76f067b88e350c1003602676915b4b2ddde,b3bfd76f067b88e350c1003602676915b4b2ddde,"Merge pull request #6 from ni-c/bugfix/issue-4/gpio-input-not-working
+
+Issue 4 Bugfix"
+ni-c,2013-09-07 17:06:00,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c753894ed0c3bbabf84ade3a1041f119736f2898,c753894ed0c3bbabf84ade3a1041f119736f2898,Issue 4 Bugfix
+ni-c,2013-04-03 22:42:28,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/6c5e1875cb781e491a04213d6f6a33f31ee9677e,6c5e1875cb781e491a04213d6f6a33f31ee9677e,Bugfix bootstrap.css
+ni-c,2013-04-03 22:19:48,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b9ed6638698c14252a140e4423caffaa41c43cde,b9ed6638698c14252a140e4423caffaa41c43cde,Added theme support and some themes.
+ni-c,2013-03-06 18:35:05,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/09a7387199af0eac8a067b9745db9257faba94ad,09a7387199af0eac8a067b9745db9257faba94ad,Config file
+ni-c,2013-03-04 20:08:15,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/84bb7dd6b8e634d02155e671ea93f34b0c51d358,84bb7dd6b8e634d02155e671ea93f34b0c51d358,Update LICENSE
+ni-c,2013-03-03 21:41:03,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/22cb59eb6d028606cd076c734da775dbe9e95500,22cb59eb6d028606cd076c734da775dbe9e95500,Webcam motion support
+ni-c,2013-03-03 16:00:48,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a0c071d2b8f3c90c697ed8158291b30e154c9232,a0c071d2b8f3c90c697ed8158291b30e154c9232,Added webcam plugin
+ni-c,2013-03-03 02:28:40,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/03c15331e3a482281f5734634900904f802b7fb0,03c15331e3a482281f5734634900904f802b7fb0,git push origin masterMerge branch 'master' of github.com:ni-c/heimcontrol.js
+ni-c,2013-03-03 01:25:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bf24aafca22e533af35c03c196ce2faa5df40f70,bf24aafca22e533af35c03c196ce2faa5df40f70,Bugfixing
+ni-c,2013-03-03 00:01:12,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9b072c65171c30c69a4a381a0eb1e3915d171d4a,9b072c65171c30c69a4a381a0eb1e3915d171d4a,Added IR Remote support
+ni-c,2013-03-02 19:28:22,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bab8102388de9640b024e56f1ac25f1d68df89ed,bab8102388de9640b024e56f1ac25f1d68df89ed,Bugfix
+ni-c,2013-03-02 00:26:02,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3a6ed258b25987f446ed421981414a75136cc117,3a6ed258b25987f446ed421981414a75136cc117,Update README.md
+ni-c,2013-02-28 19:02:16,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/286b13ce3d8e34ab41418499ac605b5a2d007573,286b13ce3d8e34ab41418499ac605b5a2d007573,Removed stuff
+ni-c,2013-02-27 22:39:17,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2cc19746d0d32edad062413e2c0f47f0651a1885,2cc19746d0d32edad062413e2c0f47f0651a1885,Refactoring
+ni-c,2013-02-27 17:55:40,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/de2587898106d798fbf9fc0a18b8c2480afe05a6,de2587898106d798fbf9fc0a18b8c2480afe05a6,Bugfix
+ni-c,2013-02-25 22:26:13,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2f18c63dc31f9444b8a5c294b0a8d57dad1ee346,2f18c63dc31f9444b8a5c294b0a8d57dad1ee346,git push origin masterMerge branch 'master' of github.com:ni-c/heimcontrol.js
+ni-c,2013-02-25 20:35:14,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e2ed864296f55645da26440aa5ca0b93e7596c6a,e2ed864296f55645da26440aa5ca0b93e7596c6a,Refactoring
+ni-c,2013-02-25 17:43:11,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a35a881fdb8429274d7060b7e6cffb128fa33d6e,a35a881fdb8429274d7060b7e6cffb128fa33d6e,Update README.md
+ni-c,2013-02-24 21:41:32,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/bda23d3daf4f48d1341ecdd4de8316cd21721fa0,bda23d3daf4f48d1341ecdd4de8316cd21721fa0,Layout fix
+ni-c,2013-02-24 15:29:32,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e041144145811b5465f10f82662bb1ca9507d983,e041144145811b5465f10f82662bb1ca9507d983,Form Bugfix
+ni-c,2013-02-24 14:28:50,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/77db7493a7c3227667620e64a6d4ea5580718803,77db7493a7c3227667620e64a6d4ea5580718803,Reduced file i/o (long live the SD card)
+ni-c,2013-02-24 13:50:02,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e360f90313ce87aea751e26b6c09a9799fe27f4a,e360f90313ce87aea751e26b6c09a9799fe27f4a,Form Bugfix
+ni-c,2013-02-24 02:01:20,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/357a684359995a80978f6b42214f0b51d2bde2bc,357a684359995a80978f6b42214f0b51d2bde2bc,Merge branch 'master' of github.com:ni-c/heimcontrol.js
+ni-c,2013-02-24 02:01:05,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/db903eb9b2eaa179c598d3da0ab4fc2b5d6e2a60,db903eb9b2eaa179c598d3da0ab4fc2b5d6e2a60,Bugfix
+ni-c,2013-02-23 21:49:45,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/5e9ec5b9449502d0488bbac888a3c7f12fadda34,5e9ec5b9449502d0488bbac888a3c7f12fadda34,Update README.md
+ni-c,2013-02-23 21:48:04,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3feada73af5ec760b69ec81bf40ebf2838cba407,3feada73af5ec760b69ec81bf40ebf2838cba407,Arduino sensor support
+ni-c,2013-02-23 14:59:23,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/af3eb464e0bdaa1988843b2f16508e2e666d40b6,af3eb464e0bdaa1988843b2f16508e2e666d40b6,"Merge pull request #1 from heimcontroljs/refactoring
+
+Refactoring"
+ni-c,2013-02-23 14:57:49,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a759bb96a366751aff4bb17673105b354e0c28b5,a759bb96a366751aff4bb17673105b354e0c28b5,Finished refactoring
+ni-c,2013-02-23 13:17:51,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/80638f40f64396bd0d1750f7b30321ee00a74d99,80638f40f64396bd0d1750f7b30321ee00a74d99,More refactoring
+ni-c,2013-02-23 00:17:52,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b9547466ee9cb6110ccff4cbee8fd7b4675459b1,b9547466ee9cb6110ccff4cbee8fd7b4675459b1,Refactored wakeonlan
+ni-c,2013-02-22 23:51:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/7cc509580718f58c7e86d56c92ced3a1776d311d,7cc509580718f58c7e86d56c92ced3a1776d311d,The great refucktoring
+ni-c,2013-02-22 17:33:56,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/c1e3acf5bba534435f2a7b618dfd78660179b14c,c1e3acf5bba534435f2a7b618dfd78660179b14c,Cleanup
+ni-c,2013-02-22 17:23:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9b223e103ff307c18060118befb21df7c1a0e3f0,9b223e103ff307c18060118befb21df7c1a0e3f0,Merge branch 'master' of github.com:heimcontroljs/heimcontrol.js
+ni-c,2013-02-22 17:23:09,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/36133bbd9ad4525561dc0b353833ac7865f883d6,36133bbd9ad4525561dc0b353833ac7865f883d6,Formatter
+ni-c,2013-02-21 23:24:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/4be827fc8a84460d485e466230062d1804102579,4be827fc8a84460d485e466230062d1804102579,Update README.md
+ni-c,2013-02-21 23:15:27,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/68c2330f0bcb3baea70c45add13f197c3cfcf06e,68c2330f0bcb3baea70c45add13f197c3cfcf06e,Added script
+ni-c,2013-02-21 22:22:45,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/e6a71163c45958742b9ce9dd1daa285995b00da7,e6a71163c45958742b9ce9dd1daa285995b00da7,Added hint.css
+ni-c,2013-02-21 16:57:24,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/2f9649cce7b080d44eaf678f16b7aff2f4a9d62f,2f9649cce7b080d44eaf678f16b7aff2f4a9d62f,Update README.md
+ni-c,2013-02-21 12:15:40,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/d206bea7d7001e05ad2c40244486b2b9b1ffd792,d206bea7d7001e05ad2c40244486b2b9b1ffd792,Update README.md
+ni-c,2013-02-20 23:15:26,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/dff72bdc4fa0ec7633c8f55387f9f569ab0c275d,dff72bdc4fa0ec7633c8f55387f9f569ab0c275d,Update README.md
+ni-c,2013-02-20 20:11:01,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b6aa83a485be88767528772082bacd5f7a85139f,b6aa83a485be88767528772082bacd5f7a85139f,Refactoring
+ni-c,2013-02-20 17:03:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/10a1056bc08954ebc907f38bc70d722f54d67d0c,10a1056bc08954ebc907f38bc70d722f54d67d0c,Cosmetics
+ni-c,2013-02-20 14:08:04,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/b29fcb6664dbc15fd3dfdf2e846ca3f69f6cd908,b29fcb6664dbc15fd3dfdf2e846ca3f69f6cd908,Footer
+ni-c,2013-02-20 13:58:38,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/70ac683da07b47818fab27c767c96d2eaf14a901,70ac683da07b47818fab27c767c96d2eaf14a901,Authentication
+ni-c,2013-02-20 13:58:29,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/d995b511afba29ac54eaf68f62bf3830729215d5,d995b511afba29ac54eaf68f62bf3830729215d5,Added to some icons
+ni-c,2013-02-19 23:43:04,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3d789c1784b0230e9c6038922a0970035abb12fa,3d789c1784b0230e9c6038922a0970035abb12fa,Package.json
+ni-c,2013-02-19 23:41:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/23923346d93b7f228b2a183fdb14f01fe0e62307,23923346d93b7f228b2a183fdb14f01fe0e62307,Added touch icon
+ni-c,2013-02-18 17:55:49,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3393d9a0342151f7478fecebc80f49eae8d42814,3393d9a0342151f7478fecebc80f49eae8d42814,Updated README.md
+ni-c,2013-02-18 00:32:23,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/54f0c6c2c70fb5b3acce137e65dc07e267c11207,54f0c6c2c70fb5b3acce137e65dc07e267c11207,Implemented register account page
+ni-c,2013-02-17 23:02:29,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/14da0d813cae17b99d69ccd8068386bdf8aab40c,14da0d813cae17b99d69ccd8068386bdf8aab40c,Cookie authentication
+ni-c,2013-02-17 22:13:39,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/61ebfecc8abb502838e5387c336af40ee521c960,61ebfecc8abb502838e5387c336af40ee521c960,Implemented login
+ni-c,2013-02-17 20:14:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/ecb896f4db083bfd90084c8e4081207b4afdbfdb,ecb896f4db083bfd90084c8e4081207b4afdbfdb,Update README.md
+ni-c,2013-02-17 20:07:19,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/7a94e27c049b6648696662aa22f7cdb8e535c621,7a94e27c049b6648696662aa22f7cdb8e535c621,Update README.md
+ni-c,2013-02-17 20:05:58,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/11a6cad13650a7c7ea285c777c9e48eff1e85d2d,11a6cad13650a7c7ea285c777c9e48eff1e85d2d,Update README.md
+ni-c,2013-02-17 19:01:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a5154347d15365b3df9a5ba24e8a42b46931172c,a5154347d15365b3df9a5ba24e8a42b46931172c,Update README.md
+ni-c,2013-02-17 18:56:46,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/eced9efa4848fcc93cb801b440f3a1a25aed37a6,eced9efa4848fcc93cb801b440f3a1a25aed37a6,Update README.md
+ni-c,2013-02-17 18:28:12,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/20ea6e8706d094f99698230e9b21639ee946e784,20ea6e8706d094f99698230e9b21639ee946e784,Update README.md
+ni-c,2013-02-17 15:35:56,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/480503a5d0b6587561979b189ddffc697f3e4760,480503a5d0b6587561979b189ddffc697f3e4760,Cosmetics
+ni-c,2013-02-17 00:08:36,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/562fdc40c14886903c4ecff28f0b34bfe0987286,562fdc40c14886903c4ecff28f0b34bfe0987286,Merge branch 'master' of github.com:heimcontroljs/heimcontrol.js
+ni-c,2013-02-17 00:08:17,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/86756169c3a08a4f9e1094b378ff975918d0d451,86756169c3a08a4f9e1094b378ff975918d0d451,Cosmetics
+ni-c,2013-02-16 22:57:22,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/002f07d2f864895a6b8d9c17b7380698e43d9875,002f07d2f864895a6b8d9c17b7380698e43d9875,Update README.md
+ni-c,2013-02-16 21:44:48,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/5783fd14608dbeaeec53e1145e2f9b94fc64bf32,5783fd14608dbeaeec53e1145e2f9b94fc64bf32,Plugin refactoring
+ni-c,2013-02-16 14:30:19,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/14597925730fdf0d630544adf50b117e56d3782d,14597925730fdf0d630544adf50b117e56d3782d,node_module scanning for plugins
+ni-c,2013-02-15 23:00:57,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a6add2f2c314b47006ff07e9114049e326cd1787,a6add2f2c314b47006ff07e9114049e326cd1787,CSS
+ni-c,2013-02-15 22:58:33,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/a7b5c2b9c7c582ece13d50b6cd23720ccb96958c,a7b5c2b9c7c582ece13d50b6cd23720ccb96958c,Finished WOL plugin
+ni-c,2013-02-15 20:15:14,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/f41eeb5b98e590491d5860894404b082de729454,f41eeb5b98e590491d5860894404b082de729454,Added Footer
+ni-c,2013-02-15 19:47:19,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/0c665bf7248c9c0b23e4968d1bda134f664ad40d,0c665bf7248c9c0b23e4968d1bda134f664ad40d,Changed port to 8080 and added prerouting script
+ni-c,2013-02-15 00:05:22,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/122302d7690373051333eaaa09af375848fc3288,122302d7690373051333eaaa09af375848fc3288,Plugin to  module refactoring
+ni-c,2013-02-14 18:53:10,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/3bc3d917648687b28c9e7d988627058a6524003a,3bc3d917648687b28c9e7d988627058a6524003a,Bugfix
+ni-c,2013-02-14 18:50:28,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/1812cd7c517206a923ac3efe4ce3d8ed9154ac06,1812cd7c517206a923ac3efe4ce3d8ed9154ac06,Updated repository URL
+ni-c,2013-02-14 18:47:56,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/9e79f73e09f5fc4f4fbb2876bc0981261cbd63ee,9e79f73e09f5fc4f4fbb2876bc0981261cbd63ee,Wake-on-LAN plugin working
+ni-c,2013-02-14 18:17:06,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/1a55f032d08e66de63b1fa83d5982dcf26ceb6d8,1a55f032d08e66de63b1fa83d5982dcf26ceb6d8,Refactored plugins to node_modules
+ni-c,2013-02-14 17:46:36,https://api.github.com/repos/ni-c/heimcontrol.js/git/commits/f8e714b5d676e3d1051d96a0d12ccab9770c6705,f8e714b5d676e3d1051d96a0d12ccab9770c6705,first commit

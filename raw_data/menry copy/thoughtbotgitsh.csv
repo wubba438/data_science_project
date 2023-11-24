@@ -1,0 +1,2255 @@
+gitsh,An interactive shell for git
+username,timestamp,url,sha,message
+eebs,2019-05-03 13:56:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/813937485324f5169032ce3268fc532fb719b4b9,813937485324f5169032ce3268fc532fb719b4b9,"Add note about `man gitsh` to Readme.
+
+I wasn't entirely sure where to view all the documentation for `gitsh`
+when I first started using it. I soon found the man page, but wanted to
+make it more obvious for anyone just starting out."
+sharplet,2019-04-23 17:25:50,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b0046c80d25665e3d23db5533d5708239792a106,b0046c80d25665e3d23db5533d5708239792a106,"Revision argument to git-reset is optional
+
+`git reset` without specifying a revision defaults to using `HEAD`.
+
+I guessed at the syntax based on the examples nearby."
+georgebrock,2019-03-16 13:08:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a9bb2adf7341734d82c543ed20c4511d7933a253,a9bb2adf7341734d82c543ed20c4511d7933a253,"Rubocop: consistent array indentation.
+
+This commit updates the Rubocop configuration to match the code style for
+arrays that's used in this project. The Rubocop default must have changed at
+some point."
+georgebrock,2019-03-15 04:06:35,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2630852d6dbaba5d8380c715ad9f12ff15174056,2630852d6dbaba5d8380c715ad9f12ff15174056,"Argument zero ain't nothin' special.
+
+This commit updates the Parser and LazyCommand to treat the name of any
+command like any other argument.
+
+Prior to this commit argument zero had to be a constant string. After this
+commit it's possible to use a variable, subshell, or any other dynamic value
+we might introduce as argument zero.
+
+To give a concrete example, we can now do this:
+
+    :set command :set
+    $command greeting Hello
+    :echo ""$greeting, world""
+
+This is more in line with how general purpose Unix shells operate. It also
+helps pave the way for supporting more types of dynamic arguments, like glob
+patterns."
+georgebrock,2019-03-15 04:03:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ebe6a165c731bc46b68d0033f3dd0fc36b748a60,ebe6a165c731bc46b68d0033f3dd0fc36b748a60,"Make Parser spec a true unit spec.
+
+This commit updates a few examples in the `Gitsh::Parser` unit spec so that
+all of the examples in that spec consistently use a stubbed
+`Gitsh::Commands::LazyCommand` instead of interacting with the real thing.
+
+Prior to this commit, internal changes in the `LazyCommand` class could
+cause `Parser` unit specs to fail, which isn't what we want."
+georgebrock,2019-03-15 03:44:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1bf6430f4b98196ed484efd7f65a3cd1e70f5a46,1bf6430f4b98196ed484efd7f65a3cd1e70f5a46,"Refactor: Fetch argument values in LazyCommand.
+
+This commit moves the call to `ArgumentList#values` from the various
+executable command classes (`Gitsh::Commands::GitCommand`,
+`Gitsh::Commands::InternalCommand::*` and `Gitsh::Commands::ShellCommand`)
+to `Gitsh::Commands::LazyCommand`.
+
+The intention of this refactor is to pave the way for commands where the
+name of the command itself is defined at runtime, e.g. by a variable. Now
+that we are expanding the arguments to their final values before
+instantiating the final command class, this change will be much easier.
+
+There's an added benefit of simplifying the various executable command
+classes and their tests, because they can now all assume that they're just
+working with an array of argument values."
+georgebrock,2019-03-15 03:37:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e7ba71a874735ebd23cb72a4106fc9ec28da535f,e7ba71a874735ebd23cb72a4106fc9ec28da535f,"Refactor: fold ErrorHandler into LazyCommand
+
+This commit moves the behaviour previously defined in
+`Gitsh::Commands::ErrorHandler` into `Gitsh::Commands::LazyCommand`
+
+The intention of this refactor is to prepare the way for the `LazyCommand`
+instance to call `ArgumentList#values` before instantiating the final
+command class (`Gitsh::Commands::GitCommand`, etc.) so that we can support
+command names in variables, i.e. situations where we don't know what command
+class to use until after the call to `ArgumentList#values`.
+
+A significant category of errors that `ErrorHandler` catches are caused by
+calling `ArgumentList#values` and encountering bad arguments like unset
+variables, therefore the error handling will need to wrap all of the
+`LazyCommand#execute` method."
+georgebrock,2019-03-15 03:04:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8124cf8659f8c502825e09d0b1e24ddc9d350bfa,8124cf8659f8c502825e09d0b1e24ddc9d350bfa,"Refactor: Decide command class at execution time.
+
+This commit replaces the `Gitsh::Commands::Factory` class with a
+`Gitsh::Commands::LazyCommand` class. The logic to construct a command is
+exactly the same, the difference is that the `LazyCommand` instance runs
+that logic immediately before the command is executed, whereas the `Factory`
+instance ran it at parse time.
+
+The intention behind this refactor is to pave the way for commands that are
+dynamically built at execution time. Future commits will build on this to
+add the ability to specify the name of a command in a variable, and
+eventually these changes will make it easier to implement support for
+globbing patterns."
+georgebrock,2019-03-15 02:50:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6400d159e2d5fd9f96e267ff85d2068ef1db6f65,6400d159e2d5fd9f96e267ff85d2068ef1db6f65,"Refactor: Select command class in factory.
+
+This commit moves the responsibility of selecting which
+`Gitsh::Commands::*Command` class should be used for a command from the
+`Gitsh::Parser` to the `Gitsh::Commands::Factory`.
+
+This is intended to be the first step towards lazily deciding which command
+class to use at execution time, which would allow us to store the names of
+commands in variables, and also pave the way towards custom globbing
+support."
+georgebrock,2019-04-09 02:33:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5d9484dac3511fcf1f8b1b8bcfba6f129de7ce02,5d9484dac3511fcf1f8b1b8bcfba6f129de7ce02,"Remove explicit PROGRAM_NAME.
+
+Since 182111e7b2 changed the way gitsh is built to embed Ruby in our binary,
+instead of launching Ruby via fork-exec, we no longer need to tell Ruby the
+PROGRAM_NAME."
+georgebrock,2019-04-06 14:48:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/04d8b9607710c7175089fc0fdb3c50fe1d5cc765,04d8b9607710c7175089fc0fdb3c50fe1d5cc765,"Fix tab completing paths with no prefix.
+
+When tab completing a path argument without entering the beginning of the
+path we expect the completion options to be the files in the current
+directory.
+
+Prior to this commit the only option would be `/`, until the user entered at
+least the first letter of the path to be completed."
+georgebrock,2019-04-03 04:13:01,https://api.github.com/repos/thoughtbot/gitsh/git/commits/92b06f143dc2668208ad7d4dd1db4b8dad628a04,92b06f143dc2668208ad7d4dd1db4b8dad628a04,"Run the compiled binary on CI
+
+Now that we embed Ruby in the gitsh binary, it's worth running the built
+binary on CI so that we can catch any regressions that occur if the C API
+changes in future versions.
+
+Setting the LD_LIBRARY_PATH is needed because rvm rubies are installed to a
+non-standard location, and either Travis or rvm itself doesn't handle
+setting this for us.
+
+Co-authored-by: Mike Burns <mburns@thoughtbot.com>"
+sharplet,2019-01-22 13:37:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/182111e7b29d8e4ecdac3656607beaef34ea0084,182111e7b29d8e4ecdac3656607beaef34ea0084,"Change process name by embedding Ruby in C
+
+Fixes #41.
+
+This resolves the process name issue by running a Ruby interpreter
+in-process instead of via `ruby(1)`. The implementation is inspired by the
+article [Running Ruby in C][1] and [Ruby's own `main` function][2].  Instead
+of invoking `ruby(1)` as a subprocess, we use `ruby.h` and `libruby` to
+perform the same function directly.
+
+[1]: https://silverhammermba.github.io/emberb/embed/
+[2]: https://github.com/ruby/ruby/blob/bdbc8a8f1214b601ca409f66f2fe00ac06f2e99a/main.c
+
+In order to link against the correct version of Ruby, this commit also
+introduces a `configure.rb` script which extracts information from
+`RbConfig::MAKEFILE_CONFIG` so that it can be used in `configure.ac`.
+
+Co-authored-by: Mike Burns <mburns@thoughtbot.com>
+Co-authored-by: George Brocklehurst <george@georgebrock.com>"
+georgebrock,2019-04-03 04:04:02,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f75fa633d4eaddec28bd4f4168d334017e47cc67,f75fa633d4eaddec28bd4f4168d334017e47cc67,"git-show(1) takes one or more revisions.
+
+This commit updates the default tab completion configuration to handle
+things like `git show mas<tab>`"
+georgebrock,2019-03-03 20:38:53,https://api.github.com/repos/thoughtbot/gitsh/git/commits/da091cfb51140b5a88540dd8cd4e8518f51343bb,da091cfb51140b5a88540dd8cd4e8518f51343bb,"Fix missing space after subshells.
+
+A subshell in an argument list would previously consume its trailing
+whitespace and end up concatenated to the next argument, for example:
+
+    :echo 1 $(:echo 2) 3
+
+This should output ""1 2 3"", but prior to this commit it would output ""1 23"".
+
+This fix is a change to the lexer: the regular expression representing the
+RIGHT_PAREN and SUBSHELL_END tokens has been changed to not include any
+trailing space. This allows the space to be captured as a separate SPACE
+token, which the parser will then correctly interpret as separating a
+subshell from the next argument in the list.
+
+The downside of this approach is that the parser now has to handle an
+optional SPACE token after any SUBSHELL_END or RIGHT_PAREN token. Previously
+there was a cleaner separation of space being mostly handled in the lexer."
+georgebrock,2019-03-03 17:07:36,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8600786437e9b1806966dd9e85bfad2e39bc0bb7,8600786437e9b1806966dd9e85bfad2e39bc0bb7,"Fix subshell internal command output.
+
+When using the `:echo` command in a subshell, e.g. `:echo foo $(:echo bar)`,
+the expected output is `foo bar`, but prior to this commit the actual output
+was `bar\nfoo`.
+
+This commit resolves this issue by adding `#puts` and `#print` methods to
+the `Gitsh::CapturingEnvironment` class to make sure the output goes to the
+right place."
+georgebrock,2019-03-22 18:23:29,https://api.github.com/repos/thoughtbot/gitsh/git/commits/536b066d467a767172f7af6d74c3f7ba5df5f319,536b066d467a767172f7af6d74c3f7ba5df5f319,Arch package for version 0.14
+georgebrock,2019-03-22 18:01:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a1bd2004de411e74bfced7fc261ab487df5e9944,a1bd2004de411e74bfced7fc261ab487df5e9944,Bump version: 0.14
+georgebrock,2019-03-03 00:07:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1055384a56f630849c06df9fec7277f7a96e9e49,1055384a56f630849c06df9fec7277f7a96e9e49,"Useful error messages for bad completion vars.
+
+The tab completion configuration language supports variables which represent
+matchers for particular types of arguments, e.g. `$branch` or `$path`.
+
+This commit introduces error handling when a tab completion configuration
+file contains a variable that isn't supported by gitsh. The error message
+will include the name of the variable, the path to the file where the error
+occurred, and the exact position in the file."
+georgebrock,2019-03-03 00:37:02,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6d1318dcf028f2ce73638aa215c014d36ec49591,6d1318dcf028f2ce73638aa215c014d36ec49591,"Useful error messages for completion config errors.
+
+This commit introduces useful error reporting when a tab completion
+configuration file fails to parse.
+
+The error will report which token was unexpected, which file it was in, and
+exactly where in the file."
+georgebrock,2019-03-03 00:34:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7a21a00c9a4416630b7311adc12ced90ddc1adad,7a21a00c9a4416630b7311adc12ced90ddc1adad,"Load tab completion config on start up.
+
+Loading the tab completion configuration files at start up, instead of
+lazily loading them on first use, allows us to report errors immediately
+instead of crashing when the user first tries to use tab completion."
+georgebrock,2019-03-03 16:33:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7a7b23210f1e89481f33c4827567058a57c148e0,7a7b23210f1e89481f33c4827567058a57c148e0,"Prevent invalid option definitions.
+
+Before this commit, the following tab completion rule was considered valid,
+but would cause an infinite loop when used:
+
+    add $opt
+      --example $opt
+
+This was also considered valid, but doesn't really make sense:
+
+    add $opt
+      --example --nested
+
+This commit resolved the situation by modifying the parser to not accept the
+`$opt` token or another option token (e.g. `--nested`) in the definition of
+an option.
+
+Unfortunately this complicates the parser somewhat, because the tokens
+permitted in a rule and in an option definition have diverged."
+georgebrock,2019-03-03 15:58:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/57121529d99a08c8205ae5e5ed285459490c1fdb,57121529d99a08c8205ae5e5ed285459490c1fdb,"Support empty tab completion config files.
+
+If the file is empty, or contains only comments, it should be interpreted as
+""no rules"". Previously it caused a parse error and would crash."
+georgebrock,2019-03-03 15:57:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/bb08936e7dd1a71540c4212bf91ca42ffc90b4cb,bb08936e7dd1a71540c4212bf91ca42ffc90b4cb,Simplify tab completion rule parsing.
+georgebrock,2019-03-02 18:49:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/88b5f8fc12e8a9c3ad6564977c808a6cab8e829a,88b5f8fc12e8a9c3ad6564977c808a6cab8e829a,"Introduce $tag matcher for tab completion.
+
+The $tag matchers produces tag names, and can be used in places where
+the $revision matcher is too permissive, e.g. `tag -d` only accepts a
+tag name, not a branch name etc."
+georgebrock,2019-03-04 20:09:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/08398ed39ee3bf98425ea292d8fe95e080ebe075,08398ed39ee3bf98425ea292d8fe95e080ebe075,"Fix flaky test.
+
+Setting `ENV['INPUTRC']` to `""/dev/null""` and back to `nil` in the
+`Gitsh::LineEditor` spec was causing the `.inputrc` integration spec to fail
+if it happened to run afterwards.
+
+This commit avoids the problem by leaving the `INPUTRC` variable untouched.
+The code to change it was inherited from the Ruby `Readline` tests, and it
+seems unlikely we'll end up with a contributor with a custom `INPUTRC` path
+that we need to work around."
+georgebrock,2019-03-04 20:07:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/137c18b7fab0f9a75a2696a2a54f499e1979ec03,137c18b7fab0f9a75a2696a2a54f499e1979ec03,"Fix nested #with_a_temporary_home_directory calls.
+
+When nesting `#with_a_temporary_home_directory` blocks, the inner call(s)
+would erroneously pass `""TRUE""` to the block instead of the path to the home
+directory.
+
+This doesn't appear to have had any effect, since all current nested calls
+only use the path in the outer block, but fixing the code will avoid nasty
+surprises if we ever do need the path in an inner block."
+georgebrock,2019-03-04 20:05:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/80048109deeb338fb1a5af92a74b31fb5c86adb2,80048109deeb338fb1a5af92a74b31fb5c86adb2,"Escape control character .inputrc in test.
+
+Putting the control key sequence into the file appears to work the same as
+the escape sequence, but the escape sequence seems to be a more realistic
+test since that's what a user is more likely to use in their .inputrc."
+georgebrock,2019-02-17 16:12:14,https://api.github.com/repos/thoughtbot/gitsh/git/commits/66667f7a7b6c66fe2160ed3b01d522411cc57d45,66667f7a7b6c66fe2160ed3b01d522411cc57d45,"Tab completion fallback rules.
+
+This commit adds fallback rules to the default tab completion configuration,
+which will only be used when no other rule applies. These provide sensible
+defaults for things that aren't covered by a specific rule, e.g. non-Git
+commands like `!rm`, or custom Git commands that have not been configured.
+
+THE PROBLEM
+===========
+
+Providing generic fallbacks wasn't possible without adding some new features
+to the tab completion DSL.
+
+To illustrate why the existing DSL was insufficient, consider the following
+rules:
+
+    add $path+
+
+    $command ($path|$revision|$remote)+
+
+A user trying to tab complete arguments to git-add(1) will match both rules:
+the input will match the `add` rule, and the user will correctly be offered
+paths to complete, but it will also match the `$command` rule, and so they
+will also be offered revisions and remotes.
+
+The generic rule provides us with sensible tab completion defaults in
+situations where we don't have a specific rule, but by matching widely it
+also undermines the usefulness of a context-aware system.
+
+THE SOLUTION
+============
+
+This commit solves the problem by introducing a `fallback::` modifier which
+indicates a variable should only be used when there's no other applicable
+rule. In terms of the finite state automaton that's built from the DSL, a
+variable with a `fallback::` modifier represents a state transition that
+will be followed if and only if there's no other appropriate transition from
+the current state.
+
+We can use this modifier to fix the problems with the example above:
+
+    add $path+
+
+    fallback::$command ($path|$revision|$remote)+
+
+Now we get the best of both worlds: tab completing arguments for git-add(1)
+will match the specific rule and only be offered paths, but any other
+command will use the fallback rule and be given a generic set of completions
+including paths, revisions, and remotes."
+georgebrock,2019-01-27 14:47:36,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0e118a04bc9980346e9bb7a1ff315580ce6b31f6,0e118a04bc9980346e9bb7a1ff315580ce6b31f6,"Introduce $branch matcher for tab completion.
+
+The $branch matchers produces branch names, and can be used in places where
+the $revision matcher is too permissive, e.g. `branch -d` only accepts a
+branch name, not a tag name etc."
+georgebrock,2019-01-27 14:45:53,https://api.github.com/repos/thoughtbot/gitsh/git/commits/41240d368e81cf7fdd7036efba5e93c19f5d8f48,41240d368e81cf7fdd7036efba5e93c19f5d8f48,"Refactor: Make RevisionMatcher more conventional.
+
+The Gitsh::TabCompletion::RevisionMatcher class was ignoring some patterns
+that are followed by other matcher classes. This commit makes it more
+consistent with the others."
+georgebrock,2019-01-27 14:44:07,https://api.github.com/repos/thoughtbot/gitsh/git/commits/818f21cf0cc45cb5eee220c324a05500476a9539,818f21cf0cc45cb5eee220c324a05500476a9539,"Improve completion for `branch --points-at`
+
+A $revision is more appropriate here than $anything."
+georgebrock,2019-01-27 14:43:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/23ab62e29bda269a91ef1c8840dbd2f27b663613,23ab62e29bda269a91ef1c8840dbd2f27b663613,Remove duplicate tab completion rule.
+georgebrock,2019-02-17 13:38:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ccb91f26de38147de0d70ab31303f26fe7a6da49,ccb91f26de38147de0d70ab31303f26fe7a6da49,"Update Rubocop config.
+
+When using ivars for memoisation, this codebase uses a leading underscore."
+georgebrock,2019-02-09 19:27:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/037405b3639946c70ba651ce81b1c2c7ab69177b,037405b3639946c70ba651ce81b1c2c7ab69177b,"Expand aliases during tab completion.
+
+When a user attempts to tab complete the arguments of an alias, they would
+previously need a custom tab completion rule. This commit expands the alias
+behind the scenes, so that the tab completion system is using all available
+context, e.g. with `alias.a = add` the tab completion system will treat `a
+foo<TAB>` as if it were `add foo<TAB>`, allowing the standard tab completion
+rules for `add` to be used without any additional configuration.
+
+The downside to this approach is that it makes it impossible to specify a
+custom tab-completion rule for an alias. The upside is that that shouldn't
+be necessary."
+georgebrock,2019-02-09 19:00:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3e5803de9458581c4369bd0f5eda39d6baed2969,3e5803de9458581c4369bd0f5eda39d6baed2969,"Refactor: extract TokensToWords class.
+
+The Gitsh::TabCompletion::Context class had a lot of responsibilities. This
+commit extracts one of those -- converting an array of tokens from the Lexer
+into an array of strings for use in tab completion -- into a new
+Gitsh::TabCompletion::TokensToWords class."
+georgebrock,2019-01-27 15:26:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b281f460cf4e6f38c3e4f4d6c0c65b5c881f1745,b281f460cf4e6f38c3e4f4d6c0c65b5c881f1745,"Set rl_readline_name to ""gitsh""
+
+This change allows users to set conditional rules in their `.inputrc` that
+only apply to gitsh.
+
+Testing this relies on explicitly reloading the `.inputrc` via the `\cx\cr`
+keyboard command. This is somewhat subtle, because running a test that does
+not do this in isolation will load the `.inputrc` as defined in the test,
+but running it as part of a larger test suite will inherit the pre-existing
+`.inputrc`. It also depends on the system where the tests are run not having
+any `.inputrc` rules that would disable the `\cx\cr` reload behaviour.
+
+See: http://web.mit.edu/gnu/doc/html/rlman_1.html#SEC10"
+georgebrock,2019-02-10 17:00:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e0584c825b2e3c87b14db8aafb4db4f74af7d961,e0584c825b2e3c87b14db8aafb4db4f74af7d961,"Tab completion: rebase takes multiple revisions.
+
+This commit fixes issue 349: when tab completing arguments to git-rebase(1),
+we sometimes want to complete multiple revisions."
+tysongach,2019-01-29 21:52:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/247f58073c57dfeefcd3e1848b37e3459a1b7980,247f58073c57dfeefcd3e1848b37e3459a1b7980,Use updated logo on readme
+tysongach,2019-01-29 21:23:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/37d43cf0dd3af67aefec9fed188a7c40a05cd36d,37d43cf0dd3af67aefec9fed188a7c40a05cd36d,"Update logo files
+
+A few refinements to the logo files:
+
+- Pixel-fitted the shapes within the logo, so that they are more crisp
+  when rasterized.
+    - See: https://dcurt.is/pixel-fitting
+- Outlined fonts into shapes, so that we don't need the fonts to
+  properly render the logo.
+- Updated the orange and brown colors to match the values from the
+  Git website.
+    - See: https://github.com/git/git-scm.com/blob/master/app/assets/stylesheets/variables.scss
+    - Orange was `#ee533a`, is now `#f14e32`
+    - Brown was `#403b33`, is now `#4e443c`
+- Improved the accessibility of the SVG version by adding `role=""img""`
+  and a `<title>`.
+- Optimized the SVG through svgo.
+    - See: https://github.com/svg/svgo
+    - File size went from 30kb to 4kb
+- Re-exported the PNG version at a larger size"
+georgebrock,2019-01-27 16:06:25,https://api.github.com/repos/thoughtbot/gitsh/git/commits/384f78859b5645351131f96a029115901f55a529,384f78859b5645351131f96a029115901f55a529,Add regular maintenance tasks to contributor docs.
+georgebrock,2019-01-27 05:33:55,https://api.github.com/repos/thoughtbot/gitsh/git/commits/23552a14c3769a25d18235f8f1a44b8f1a9aabe9,23552a14c3769a25d18235f8f1a44b8f1a9aabe9,"Update supported Ruby binary names.
+
+This matches the versions of Ruby we test against on CI, and removes
+versions we no longer support."
+georgebrock,2019-01-26 17:32:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7c62b57174ebec419600a62af7381cea12505e6b,7c62b57174ebec419600a62af7381cea12505e6b,Update Gem dependencies.
+georgebrock,2019-01-20 22:39:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/14ede02b67adedfe8f91ee73b0fa65cab0e50b89,14ede02b67adedfe8f91ee73b0fa65cab0e50b89,Documentation: developers require autotools.
+georgebrock,2019-01-20 22:38:39,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2b2683053be0a71d46842525b28aba3d4c90f8be,2b2683053be0a71d46842525b28aba3d4c90f8be,Documentation: OS X -> macOS
+georgebrock,2019-01-26 06:13:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/85589adb7bdfde1e776331c351bcf4cde69d3585,85589adb7bdfde1e776331c351bcf4cde69d3585,"Reset $SAFE after line editor specs.
+
+In Ruby 2.6, $SAFE changes from being a thread-local variable to a
+process-local variable. This was causing the Gitsh::LineEditor specs to fail
+under Ruby 2.6, because they set $SAFE to 1 in a thread, and never reset it
+to 0, so the spec would fail at the next unsafe operation.
+
+For more information, see: https://bugs.ruby-lang.org/issues/14250"
+georgebrock,2019-01-24 15:14:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/64dd8930075cd7b31eb9739170ce9990b2fdfca3,64dd8930075cd7b31eb9739170ce9990b2fdfca3,"Update supported Ruby versions.
+
+This commit drops support for Ruby 2.0, 2.1, and 2.2, by changing the
+build system to look for 2.3+, and also updates the relevant documentation.
+
+CI is also updated to drop older Rubies, and test against the current latest
+releases of 2.3 to 2.6."
+houseme,2019-01-14 14:37:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/9a903e128b83bbbf35ad6a9588ad6953360c0ecd,9a903e128b83bbbf35ad6a9588ad6953360c0ecd,Use HTTPS instead of HTTP in Homebrew formula.
+georgebrock,2019-01-11 16:54:52,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2f0d1e9f6af29c57c6a09c915ccb2e353bfda19a,2f0d1e9f6af29c57c6a09c915ccb2e353bfda19a,"Fix checksum for Arch Linux release.
+
+During the 0.13 release, I accidentally rebuilt the tarball after the SHA
+had been calculated."
+georgebrock,2019-01-11 16:46:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a5fa158774b0bbe250f7108d37899db2cbc0ea0b,a5fa158774b0bbe250f7108d37899db2cbc0ea0b,Arch package for version 0.13
+georgebrock,2019-01-10 21:14:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c4c70015f3eaaab8a3c337852ca035762a65edbf,c4c70015f3eaaab8a3c337852ca035762a65edbf,"Fix tab completion with no input.
+
+When there is no input, hitting tab twice should complete a list of all
+available commands.
+
+There was a bug in the Gitsh::TabCompletion::Context#completing_variable?
+method which caused a crash in this case, because it would try to read the
+type of the last token, which was `nil`."
+georgebrock,2019-01-10 21:04:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/622b31b96315f0cbf957a2d7bc24dabed1f37e4d,622b31b96315f0cbf957a2d7bc24dabed1f37e4d,"Distribute manual templates instead of pages.
+
+Commit 69ae4f2 changed the gitsh manual pages from static files to templates
+that are used at built time, so that they could correctly reference
+system-specific paths.
+
+This commit updates the automake configuration to distribute the manual page
+templates instead of the finished manual pages."
+georgebrock,2019-01-10 20:36:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cb7bb3e82aa5d46ebebfcd331f6311f88de81c41,cb7bb3e82aa5d46ebebfcd331f6311f88de81c41,Bump version: 0.13
+georgebrock,2018-12-14 20:13:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d6962d7af7653ccf5545e770dfc217b777ee78b7,d6962d7af7653ccf5545e770dfc217b777ee78b7,"Modernise Git command list for tab completion.
+
+This list was originally built by parsing the output of `git help -a`, which
+was based on the approach taken by the tab completion scripts distributed
+with Git for various general-purpose shells.
+
+In Git version 2.20, the output of `git help -a` changed in ways that
+weren't compatible with our existing parsing code. Passing `--no-verbose`
+continues to provide the old output format. Meanwhile, a new `--list-cmds`
+argument was added, which outputs commands as a simple list, but is also
+described in the git(1) manual page as being experimental and subject to
+change.
+
+To make sure we continue supporting a range of Git versions, and we won't
+have major problems if the `--list-cmds` argument is removed, this commit
+introduces the following strategy for getting a full list of Git commands:
+
+1) Try `git --list-cmds`
+2) Try `git help -a --no-verbose`
+3) Try `git help -a`
+4) Fail with an empty array"
+georgebrock,2018-12-14 16:23:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/faad7f24e0b98bfeb793026942ec9c1545d268a2,faad7f24e0b98bfeb793026942ec9c1545d268a2,Extract GitCommandList from GitRepository
+georgebrock,2018-11-12 22:18:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b068a918eefc3a57b6cf894dc98a2ee130286ea7,b068a918eefc3a57b6cf894dc98a2ee130286ea7,Document user-specific completions file.
+georgebrock,2018-05-13 23:52:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/358cbcd92810be0d1f29b27f9a7917afd860ea1c,358cbcd92810be0d1f29b27f9a7917afd860ea1c,Load completions from the user's home directory.
+salbertson,2018-11-16 07:03:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ff460330dbef71be16a8e5b5d2bb1b59b6b85ba7,ff460330dbef71be16a8e5b5d2bb1b59b6b85ba7,"Add a ""Reviewed by Hound"" badge"
+salbertson,2018-11-16 06:58:59,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b789c6116e2f5c909432891fd89458cc926ce84b,b789c6116e2f5c909432891fd89458cc926ce84b,"Update .rubocop.yml
+
+This should help avoid [recent errors](https://github.com/thoughtbot/gitsh/pull/331#pullrequestreview-174121932)."
+tysongach,2018-03-06 01:42:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6ac46beddeee7c43aaa7a54ad95c2bb67e9c075f,6ac46beddeee7c43aaa7a54ad95c2bb67e9c075f,Remove extra spaces in Markdown-rendered code
+benknoble,2017-12-19 20:37:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/635359020efb1ac2a10a2de1973a371f8bb21af6,635359020efb1ac2a10a2de1973a371f8bb21af6,"Implement %g and %g git command prompt strings
+
+- Add tests for %g and %G prompt placeholders
+    They should expand to the absolute (basename) of the git binary in
+    use, like `env git` or `hub`. This is provided via the environment
+    mock.  The expected values are provided directly in the tests for
+    readability.
+
+- Support %g and %G placeholder strings
+    %g expands to the full git_command
+    %G expands to the basename of git_command
+
+- Update man page to reflect these new features
+
+Close #323"
+georgebrock,2017-07-12 21:02:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3e836be4db452f7eb54754c9c647ece3dff94368,3e836be4db452f7eb54754c9c647ece3dff94368,"Configure completions for common commands.
+
+This tab completion configuration file includes:
+
+- All Git commands without arguments.
+- Popular Git commands, with their options and arguments.
+- Internal gitsh commands, with their options and arguments.
+
+There are some argument types that we can't currently complete, and others
+that are unlikely to ever be practical to complete. To represent those this
+commit also introduces a `$anything` variable to the tab completion DSL. The
+variable's corresponding `AnythingMatcher` class will match any input, but
+produce no completions.
+
+The options and arguments supported in the file are based on the manual
+pages from Git 2.13.3. Other versions of Git support slightly different
+options and arguments, which means we might complete things that don't work."
+georgebrock,2017-07-14 15:11:59,https://api.github.com/repos/thoughtbot/gitsh/git/commits/373c68f5c4faf7776a520e223799a6f13ecc0079,373c68f5c4faf7776a520e223799a6f13ecc0079,"Completion DSL: Support multiple option arguments.
+
+For example, git-config(1) has a few options that take two arguments:
+
+    config $opt*
+      --get-color $anything $anything?
+      --get-colorbool $anything (true|false)?"
+georgebrock,2017-07-13 12:10:22,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3130f35fe54e38b8039c3a1638ff2c6af9dfdd7e,3130f35fe54e38b8039c3a1638ff2c6af9dfdd7e,"Completion DSL: Allow leading/trailing blank lines.
+
+This commit adds support for leading and trailing blank lines to the tab
+completion DSL."
+georgebrock,2017-07-03 21:24:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/17f40c4c1fc7b38623613a57a88d830f4e2a34a9,17f40c4c1fc7b38623613a57a88d830f4e2a34a9,"Add option support to the tab completion DSL.
+
+This commit expands the tab completion DSL with the ability to define
+options like `-f` or `--force`.
+
+Rules can contain an `$opt` variable, which indicates where options may
+appear. This will match on anything beginning with `-` or `--`, and
+complete to any known options.
+
+The known options are listed as indented lines after the first line of the
+rule, with any arguments the options take specified in the same way as
+the command's arguments would be.
+
+For example:
+
+```
+commit $opt* --? $path+
+  --all
+  --fixup $revision
+  --file $path
+  --untracked-files (no|normal|all)?
+```"
+georgebrock,2017-07-03 17:51:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/34b0f60bcfe405f57d02c6b07767841fc3e4f85b,34b0f60bcfe405f57d02c6b07767841fc3e4f85b,"Add * and ? operators to git_completions(5)
+
+This commit adds support for the * operator (zero or more times), and the ?
+operator (zero or one times) to the gitsh tab completion DSL."
+georgebrock,2017-07-03 17:45:55,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ad9bd9bddeda3d2da9e3486d5fae35a32a50fcd1,ad9bd9bddeda3d2da9e3486d5fae35a32a50fcd1,"Filter out duplicate completions.
+
+Our ability to detect incomplete paths is based on there being a single
+result (e.g. if you complete ""s"" to ""src/"" we don't want to append a space
+as we normally would when there's a single completion).
+
+Now that the completion system uses an NFA, it's possible to get duplicate
+values (e.g. a command like `add $path* --? $path+` would invoke the `$path`
+matcher twice in some situations).
+
+This commit makes sure we filter out the duplicates so that the incomplete
+path detection continues to work.
+
+(While we're modifying the only line in this method, also move it to get
+dependency order between #matches and #completions)"
+georgebrock,2017-06-29 23:16:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/69ae4f2df3e5747997d30d701da384b9de9cd78f,69ae4f2df3e5747997d30d701da384b9de9cd78f,"DSL to define tab completion automaton state graph
+
+This commit introduces a domain specific language (DSL) to define the state
+graph for the tab completion automaton. It also replaces the hard-coded
+state graph with an equivalent graph loaded from a configuration file.
+
+The details of the DSL are given in the gitsh_completions(5) manual page
+which is added in this commit.
+
+The DSL will need to be expanded somewhat to do everything we want the tab
+completion system to be able to do, but this is a good step in that
+direction."
+georgebrock,2017-06-30 18:19:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8cf52c053d277b7411dcfef84eabf8ceeb4cb033,8cf52c053d277b7411dcfef84eabf8ceeb4cb033,"Update hound config.
+
+This commit makes the Rubocop config used by Hound more consistent with the
+existing project style."
+teoljungberg,2017-06-28 20:20:02,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c8f8de8346f3d7c609dedd0490832534bca7f531,c8f8de8346f3d7c609dedd0490832534bca7f531,"Quell ruby warnings for unused variables
+
+This commit quells warnings along the likes of:
+
+```
+warning: assigned but unused variable - X
+```
+
+Where X is the variable in question."
+teoljungberg,2017-06-28 20:16:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/176ea67a09d09ea42610543a997b44fe8f15b970,176ea67a09d09ea42610543a997b44fe8f15b970,"Enable hound
+
+Configure Rubocop to enforce single quotes, if there is no need for
+interpolation and therefore double quotes."
+georgebrock,2017-06-23 17:44:54,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d67e983b3ce66e858e40141df77d8bf8511bfb72,d67e983b3ce66e858e40141df77d8bf8511bfb72,"Tab completion NFA state graph visualization tool.
+
+The tab completion system that was introduced in 1b673e5 uses a
+Non-deterministic Finite Automaton (NFA) to understand the user's input and
+select relevant completions. The NFA has a directed graph of states.
+
+While the current NFA's state graph is small, the intention is to replace it
+with a much larger and more complex graph.
+
+This commit introduces a visualization tool, which outputs a representation
+of the NFA's state graph in Graphviz's dot language."
+georgebrock,2017-04-30 19:06:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/33014f700390362fee824656cbba77384c5da74e,33014f700390362fee824656cbba77384c5da74e,"Support tab completion for variables.
+
+This commit introduces a `Gitsh::TabCompletion::VariableCompleter` object.
+This is completely separate from the NFA-based completion we use for most
+things, because:
+
+- we immediately know we need to use variable completion based on lexical
+  analysis of the input without having to walk through the NFA's states,
+  and
+
+- the context in which the variable appears doesn't inform the completions
+  we present the user with.
+
+The `Gitsh::TabCompletion::Facade` object gains the responsibility of
+deciding which type of completion to invoke, based on information from the
+`Gitsh::TabCompletion::Context` object.
+
+To load the config variables, we try to use the `git status --list
+--name-only` command. However, this command was only introduced in Git 2.6,
+and versions back to 2.4 are still officially supported by the Git team. If
+running the command with `--name-only` fails we fall back to parsing the
+output of `git status --list`.
+
+We don't use the backward compatible version everywhere, because the parsing
+won't be perfect for multi-line config values (`--name-only` was introduced
+to address this problem)."
+georgebrock,2017-06-16 17:49:55,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5cb52d762ac046b64abfe513395885f3d5d9c12c,5cb52d762ac046b64abfe513395885f3d5d9c12c,"Improve variable lexing.
+
+Prior to this commit, an incomplete variable reference (a line ending with
+an unescaped `$` character, or unclosed `${`) would produce a lexing error.
+After this commit it produces a parse error instead.
+
+We want to start using the lexer for understanding tab completion context,
+which means we need to lex incomplete input. Having all legal-but-incomplete
+input cause parse errors instead of lexing errors will make this much
+easier.
+
+Note that it's still possible to produce lexing errors with invalid input,
+but it's more reasonable for the tab completion system to just ignore that
+and not provide any completions.
+
+Previously the token `MISSING` was used to indicate that a line was
+incomplete, but could potentially be made valid with another line of input.
+This commit renames that token to `INCOMPLETE`, and re-purposes `MISSING` to
+mean that something was missing from the end of the line that cannot be
+supplied by an additional line of input."
+georgebrock,2017-06-15 14:45:52,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c8f2f28718a8840c941df38e4fab236fa3d054c1,c8f2f28718a8840c941df38e4fab236fa3d054c1,"Add CODE_OF_CONDUCT.md
+
+GitHub has a new feature that indicates if a project has a code of conduct.
+We already had one, linked from `CONTRIBUTING.md`. This commit just
+duplicates that link in a place where GitHub can find it."
+xduugu,2017-05-15 20:43:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1ed14c7696b43448dcc520b85872b7b5da857713,1ed14c7696b43448dcc520b85872b7b5da857713,"Expand historyFile path
+
+Expand the configured history file path, so it is possible to use a ""~""
+for the user's home directory instead of an absolute path.
+
+Before, a path like ""~/.local/share/gitsh_history"" led to the following
+error:
+
+gitsh: Error: No such file or directory @ rb_sysopen - ~/.local/share/gitsh_history
+
+(Test added by George Brocklehurst)"
+teoljungberg,2017-05-28 16:08:58,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5e72305054696a296018bf88ed1e714d33b5605f,5e72305054696a296018bf88ed1e714d33b5605f,"Do not duplicate character ranges
+
+To quell the following warning:
+
+```
+character class has duplicated range: /X/
+```
+
+Where `/X/` is the regex.
+
+`\s+` matches the output `[\n\r\s]+` does."
+teoljungberg,2017-05-28 16:08:14,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b6e9f21c0bdfcfbd5a92230dd6741bd2b0797fdd,b6e9f21c0bdfcfbd5a92230dd6741bd2b0797fdd,"Initialize instance variables
+
+To quell the following warning:
+
+```
+instance variable @X not initialized
+```
+
+Where `@X` is the instance variable."
+teoljungberg,2017-05-28 16:07:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7e959568dc8c839153306a9bcbd7889d0862f413,7e959568dc8c839153306a9bcbd7889d0862f413,"Remove unused variables
+
+To quell the following warning:
+
+```
+assigned but unused variable - X
+```
+
+Where `X` is the unused variable."
+teoljungberg,2017-05-28 16:06:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d2975f6d5812c796471f46f794d0d06674afd289,d2975f6d5812c796471f46f794d0d06674afd289,"Add parenthesis around regexps
+
+To quell the following warning:
+
+```
+ambiguous first argument; put parentheses or a space even after `/'
+operator
+```"
+georgebrock,2017-05-25 18:51:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8a7b301a8b3e049cb4712db23725938a7adc5e10,8a7b301a8b3e049cb4712db23725938a7adc5e10,Arch package for version 0.12
+georgebrock,2017-05-25 18:50:25,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e4c9820ed8b7f2c2f12d150b8ccba62424bbe1ca,e4c9820ed8b7f2c2f12d150b8ccba62424bbe1ca,Bump version: 0.12
+georgebrock,2017-01-08 15:14:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/22362e9192049e7cf245e44f196337144a120824,22362e9192049e7cf245e44f196337144a120824,"Support for multi-line commands.
+
+Line breaks are supported in similar places to sh(1). Line breaks can be
+escaped anywhere by ending a line with a `\` character. Unescaped line
+breaks are also supported:
+
+- after logical operators (`&&` and `||`),
+- within strings,
+- between commands wrapped in parentheses, and
+- between commands in subshells.
+
+The Lexer has been expanded to insert a `MISSING` token in all situations
+where the input is known to be incomplete (i.e. when the input ends with an
+escape character, or the input ends in any of the places where an unescaped
+line break can be used).
+
+After invoking the `Lexer`, the `Interpreter` checks the token stream for
+`MISSING` tokens. If it finds any it requests another line of input from the
+current input strategy, appends it to the current input, and tries again.
+
+A new `EOL` token has been introduced to represent line breaks between
+commands. In the `Parser` it's treated exactly like the `SEMICOLON` token.
+
+Lexical analysis of comments needed to be improved to allow for comments at
+the end of lines in a multi-line command. For example, the following input
+is valid:
+
+    (:echo 1 # comment
+    :echo 2)
+
+It is semantically equivalent to:
+
+    (:echo 1; :echo 2)
+
+To support this, the Lexer will now:
+
+- ignore whitespace before a comment's initial `#` character. This prevents
+  extraneous `SPACE` tokens from being produced. A trailing `SPACE` token
+  in a single line command is fine, but it can cause problems in a
+  multi-line command.
+
+- pop the `:comment` state without consuming the newline character at the
+  end of a comment, allowing the default parsing rules to handle the
+  newline, and produce an `EOL` token."
+georgebrock,2017-04-08 17:12:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/603231f9170f7320a3df75e65b9f828dcac3a0b0,603231f9170f7320a3df75e65b9f828dcac3a0b0,"Change to the root path with :cd
+
+`:cd` without an argument will change to the repository's root path
+(`$_root`), much like a general purpose shell's `cd` without an argument
+will change to the user's home directory (`$HOME`)."
+georgebrock,2017-04-08 17:00:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5c2392123db317ed524e3144057ba8935bd28596,5c2392123db317ed524e3144057ba8935bd28596,"Introduce a $_root magic variable.
+
+$_root evaluates to the root directory of the current Git repository."
+georgebrock,2017-01-29 03:51:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/24a2287089f288bd07c193cfe9c8ce796fe4c7da,24a2287089f288bd07c193cfe9c8ce796fe4c7da,"Non-zero exit status for bad scripts.
+
+When gitsh is invoked in a non-interactive manner, a parse error should
+result in a non-zero exit status.
+
+To make sure this happens, parse error handling has been delegated to the
+input strategies by the interpreter. In an interactive session, we output an
+error message and continue the session. In a non-interactive session, we
+raise a Gitsh::ParseError, which will bubble up to the gitsh binary and
+terminate the session with an exit status of 1.
+
+Since the input strategy for files is used in a few internal places (in the
+interactive input strategy, for loading .gitshrc, and in the :source
+command), those call sites have been modified to handle the possibility of a
+Gitsh::ParseError."
+georgebrock,2017-04-25 02:08:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/34f6a0d9676ba009e1c03b66cc7887d206ad4dcb,34f6a0d9676ba009e1c03b66cc7887d206ad4dcb,Remove duplicate fake_git_path definition.
+georgebrock,2017-04-22 19:17:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c23ff00a0d3e83c84fec5b230e98ec49811df8ff,c23ff00a0d3e83c84fec5b230e98ec49811df8ff,"Remove unused InputStrategies::String class.
+
+This has been unused since 570c6f9, and should have been removed then."
+georgebrock,2017-03-04 21:10:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/570c6f9cb1794d99625b5dbd8633155e399546ff,570c6f9cb1794d99625b5dbd8633155e399546ff,"Subshells wrap commands, not strings.
+
+Instead of storing the command contained by a subshell as a string and
+parsing it separately at execution time, we now parse subshells in the same
+parsing pass that handles the command that contains them, and store a
+Gitsh::Commands::* object.
+
+This has a few advantages:
+
+- A parse error in a subshell is discovered at parse time, not execution
+  time.
+- A subshell containing closing parens that do no end the subshell (e.g.
+  `:echo $(:echo "")))"")` no longer confuses the lexer.
+- We can drop the Gitsh::StringRunner class."
+georgebrock,2017-03-04 20:23:43,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fd5294dd8ef1f0d811dd2943c40280cfa9297fc9,fd5294dd8ef1f0d811dd2943c40280cfa9297fc9,"Pass environment to commands at execution time.
+
+This means we don't have to know what environment a command will be executed
+in when we construct it.
+
+The motivation was simplifying subshell parsing: we'll be able to parse a
+command fully, including the contents of any subshells, in a single pass.
+Previously we couldn't do this because the subshell's environment can't be
+created until the command containing the subshell is executed. Look out for
+this change in a subsequent commit.
+
+A nice side effect of the change was simplifying the Gitsh::Parser: it no
+longer needs a reference to a Gitsh::Environment."
+georgebrock,2017-01-29 04:08:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ea17f11225d388fe212591081093648209861a31,ea17f11225d388fe212591081093648209861a31,"Support parentheses for grouping commands.
+
+This allows a user to override the default operator precedence, e.g. with
+`(foo || bar) && baz`.
+
+This has the side effect that literal parentheses in unquoted arguments must
+be escaped."
+georgebrock,2016-12-26 12:40:48,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8a061ebb1d89d1a20257034e71eb620da9a64fc9,8a061ebb1d89d1a20257034e71eb620da9a64fc9,"Replace Parslet PEG with RLTK CFG.
+
+This is a really major change, and therefore a big diff.
+
+Replaces the Parslet-based parsing expression grammar (PEG) with an
+RLTK-based context-free grammar (CFG).
+
+The `Gitsh::Parser` (which converted text into a AST) and
+`Gitsh::Transformer` (which converted the AST into useful domain objects)
+have been replaced with a `Gitsh::Lexer` (which converts text into tokens)
+and `Gitsh::Parser` (which converts tokens into useful domain objects).
+
+Why?
+====
+
+Distinguishing between _invalid input_ and _valid but incomplete input_ is
+really hard with a PEG. There are various papers on improving PEG error
+reporting, and some support in Parslet for various strategies, but I
+couldn't find a satisfactory way to accurately work out why parsing failed
+without making the grammar significantly more complex.
+
+We want to add support for various multi-line constructs, which means we
+need to know if a line is invalid or just waiting for more input. The
+specific issues I have in mind are:
+
+- Support multi-line strings
+  (https://github.com/thoughtbot/gitsh/issues/31)
+
+- Add a `:function` command for defining functions
+  (https://github.com/thoughtbot/gitsh/issues/35)
+
+We also want to improve tab-completion in various ways, which also involves
+working with very similar types of incomplete input. Most of the
+enhancements we have in mind will only be possible if we know more exactly
+what we're completing, and re-using some of the parsing code to understand
+the input seemed like the most logical approach. Specific issues are:
+
+- Support the same tab completion options as zsh
+  (https://github.com/thoughtbot/gitsh/issues/25)
+
+- Add tab completion for options
+  (https://github.com/thoughtbot/gitsh/issues/80)
+
+- Auto complete stash commands
+  (https://github.com/thoughtbot/gitsh/issues/220)
+
+- Tab completion only works for the first command on the line
+  (https://github.com/thoughtbot/gitsh/issues/261)
+
+Note that this commit doesn't implement any of these enhancements, it just
+makes them more likely to happen in the future.
+
+Implementation details
+======================
+
+- Introduces equality methods on argument objects, used to testing parser
+  output.
+
+- git-prefix correction (i.e. interpreting `git foo` as `foo` when
+  `help.autocorrect` is set) has moved from the Parser to the GitCommand
+  class.
+
+- The subshell implementation in this commit is not very good. It will be
+  significantly improved in the next couple of commits, but it seemed too
+  big of a change to roll into this one."
+georgebrock,2017-04-19 22:54:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e2629209ce7b8a2af0438b7b27908e367bdaee4d,e2629209ce7b8a2af0438b7b27908e367bdaee4d,Fix incorrect package SHA.
+georgebrock,2017-04-19 22:42:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b6201db97f301dc11f248aecf7f315fe2ff34b7e,b6201db97f301dc11f248aecf7f315fe2ff34b7e,Arch package for version 0.11.2
+georgebrock,2017-04-19 22:39:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4f2492641b916aaeaaa614424d9b08ead40b53a9,4f2492641b916aaeaaa614424d9b08ead40b53a9,Bump version: 0.11.2
+georgebrock,2017-04-03 03:17:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4136481b710b4d52af131fda2aa45fcacf60c90b,4136481b710b4d52af131fda2aa45fcacf60c90b,"Improve configure script's source file discovery.
+
+- Uses Autoconf's `$srcdir` instead of `basename $0` as the root of the
+  source tree.
+
+- Removes a redundant `cut`. This was intended to strip `./` from the
+  beginnings of the resulting paths, but it wasn't portable (`./` wasn't
+  prepended to the paths on some systems), and the way this list is
+  generated and used has changed so much that it no longer appears to matter
+  if the `./` is there at all.
+
+Partly based on Mike Burns' patch to `configure` in the OpenBSD ports tree:
+  https://marc.info/?l=openbsd-ports&m=148340820830595&w=2"
+georgebrock,2017-04-08 23:12:58,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ef545f523f643a33cf8439c783d6d9997dcda10c,ef545f523f643a33cf8439c783d6d9997dcda10c,"Support explicit architectures for Readline.
+
+On macOS systems, universal binaries contain multiple architectures, e.g.
+the system Ruby is built for both i386 and x86_64. The Ruby `mkmf.rb` build
+system will default to building universal C extensions when used with a
+universal Ruby.
+
+When installing gitsh via Homebrew, we build against the Homebrew version of
+Readline. Until recently, this was a universal library (x86_64 & i386) but
+is now x86_64 only [1].
+
+It is possible to build against a universal Ruby and a non-universal
+Readline, but only if the right flags are passed to the C extension's
+`extconf.rb` script.
+
+This commit:
+
+- Adds support for a `$READLINE_ARCH` environment variable. When it is set,
+  the `configure` script will pass the right `--with-arch-flags` argument to
+  `extconf.rb`.
+
+- Updates the Homebrew formula to set `$READLINE_ARCH` based on the host
+  OS's preferred architecture.
+
+[1]: https://github.com/Homebrew/homebrew-core/pull/10907"
+georgebrock,2017-04-08 20:12:25,https://api.github.com/repos/thoughtbot/gitsh/git/commits/428ddb68a07b09ae85edb4f4d9f9ad19e67ce839,428ddb68a07b09ae85edb4f4d9f9ad19e67ce839,"Support ruby22, ruby23, ruby24 binaries.
+
+Some systems, e.g. OpenBSD, include the version number in the name of the
+Ruby binary. We support all of these versions, so we should support all of
+these names."
+georgebrock,2017-04-03 02:34:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/968ad2028906846a673cb8c3d567b50f5d0cfc4b,968ad2028906846a673cb8c3d567b50f5d0cfc4b,"Support alternative names for Readline.
+
+The OpenBSD port for Readline calls the library `ereadline`, which means
+that the gitsh configure script needed to be patched to be used on
+OpenBSD systems.
+
+This commit introduces a `READLINE_LIB` environment variable, which can be
+used to specify an alternative name to be passed to the Ruby C-extension's
+configuration script.
+
+Based on Mike Burns' patch to `configure` in the OpenBSD ports tree:
+  https://marc.info/?l=openbsd-ports&m=148340820830595&w=2"
+sidraval,2017-04-05 17:15:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f93cde46578c42bb36b62d09699b0f433a50d6e3,f93cde46578c42bb36b62d09699b0f433a50d6e3,"Fix code block rendering in README.md
+
+Formatting was a bit off in the code block."
+pablobm,2017-04-05 15:11:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/805511833343edee4adf29402218758bac8830dc,805511833343edee4adf29402218758bac8830dc,Fix dead link
+georgebrock,2017-04-03 04:05:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3869651b2c9ad3defb39ca3b0c442d970cce1a7f,3869651b2c9ad3defb39ca3b0c442d970cce1a7f,"Upgrade test dependencies.
+
+Gets rid of a bunch of deprecation warnings when running the test suite
+under Ruby 2.4."
+georgebrock,2017-04-03 04:03:30,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f28ccaca5b0ca9753f1cef25759f5d4f471ce334,f28ccaca5b0ca9753f1cef25759f5d4f471ce334,"Update CI Ruby versions.
+
+- Add 2.4.
+- Update older versions to their newest patch level."
+whmii,2017-03-24 16:59:54,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3f2be1e4764af7c0735860591f3b47035c8b9440,3f2be1e4764af7c0735860591f3b47035c8b9440,Update logo with new design
+tysongach,2017-03-10 14:45:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/26a1e3eb7da79b9b53acead44de26f30b17b020a,26a1e3eb7da79b9b53acead44de26f30b17b020a,Update thoughtbot logo
+mike-burns,2017-03-03 19:53:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8394084d7e9fb346c11772fe6cd3dd8a80d46aa0,8394084d7e9fb346c11772fe6cd3dd8a80d46aa0,"Typo: charater -> character
+
+Found by Debian lintian.
+
+https://github.com/thoughtbot/apt/pull/1"
+georgebrock,2017-01-06 02:05:14,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6fd2488a7ff613820d32ca64ad229ff45844249a,6fd2488a7ff613820d32ca64ad229ff45844249a,"Refactor from runners to input strategies.
+
+This commit replaces the `Gitsh::InteractiveRunner` and
+`Gitsh::ScriptRunner` classes with input strategies
+(`Gitsh::InputStrategies::Interactive` and `Gitsh::InputStrategies::File`).
+Previously each runner class's `#run` method would loop over available input
+and pass each command to the interpreter. Now the interpreter controls the
+loop and asks the strategy for commands.
+
+The main motivation is to support multi-line constructs. We would've needed
+to add very similar code for handling incomplete input to both the runner
+classes. Now that the interpreter is responsible for controlling to overall
+flow of the session, we'll be able to handle incomplete input in one place.
+
+A nice side-effect is that the `Gitsh::CLI` code is cleaner, and now uses
+conditionals to create different strategies instead of using conditionals to
+fork the control flow.
+
+This commit also introduces some new `Gitsh::*Runner` classes, which take
+over responsibility for the places where we still need to execute some gitsh
+code outside of the main run loop:
+
+* The old `Gitsh::ScriptRunner` class was used to load the `.gitshrc` file
+  at the start of an interactive session, and by the internal `:source`
+  command.  This has been replaced with a `Gitsh::FileRunner` that handles
+  setting up a `Gitsh::InputStrategies::File` and a `Gitsh::Interpreter` for
+  a given file.
+
+* Similarly, the old `Gitsh::Interpreter#execute` method was used by
+  `Gitsh::Arguments::Subshell` to run the contents of a subshell. This has
+  been replaced with a `Gitsh::StringRunner` and associated
+  `Gitsh::InputStrategies::String`."
+georgebrock,2016-12-23 22:42:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a45d3a452841aef84bd2bdee587ccbecc055d0f4,a45d3a452841aef84bd2bdee587ccbecc055d0f4,"Homebrew: use env=std by default.
+
+This causes Homebrew to set the appropriate LDFLAGS for Readline, which
+is a keg only formula.
+
+Without this, gitsh can't build against system Ruby (although it still
+worked on systems where Homebrew's ruby formula was installed).
+
+I couldn't find good documentation for the difference between `env=std`
+and `env=superenv`, but this is where the necessary LDFLAGS value is set:
+
+  https://github.com/Homebrew/brew/blob/89fd34b/Library/Homebrew/build.rb#L100"
+georgebrock,2017-01-06 16:53:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d2fffa0464055081c8600dd260b41c09c935bc4e,d2fffa0464055081c8600dd260b41c09c935bc4e,"Update release instructions.
+
+Adding a few things that weren't explicit, so I don't have to remember them."
+georgebrock,2016-12-26 21:43:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/902c27f13204e3fe2fa9aa2bd18300fd7315e0f2,902c27f13204e3fe2fa9aa2bd18300fd7315e0f2,"Fix .gitignore rule for binary
+
+We want to ignore the built gitsh binary, but the existing rules was
+ignoring any file with `gitsh` in the path, e.g. `lib/gitsh/foo.rb`."
+georgebrock,2016-12-30 23:37:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d36040e0d04cf097d7941fb1808a0fb37457fc49,d36040e0d04cf097d7941fb1808a0fb37457fc49,Bump version: 0.11.1
+georgebrock,2016-12-30 23:37:54,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2589bf40acd2d362cfd6d0ab8f418f2f52b06ecb,2589bf40acd2d362cfd6d0ab8f418f2f52b06ecb,Arch package for version 0.11.1
+cippaciong,2016-12-22 19:49:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5246eec2d3e7b1959b5348307d9bbfaa40a3e46d,5246eec2d3e7b1959b5348307d9bbfaa40a3e46d,"Honor DESTDIR during make install
+
+Between version 0.10 and 0.11 `make` stopped honoring DESTDIR during the
+install phase. This might not be relevant when installing from source
+with the customary `sudo make install`, but becomes relevant when the
+command is issued in package creation for distros. In such
+circumstances, we don't want to install files directly in /usr/share but in
+a custom directory that will be used to create the final package."
+georgebrock,2016-12-22 17:20:42,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6ac17a26e485725284dd06c0bb3e021615800e94,6ac17a26e485725284dd06c0bb3e021615800e94,"Use SHA256 for Homebrew and Arch package digests.
+
+The package managers use the digest to verify the integrity of the tarball
+they've downloaded. Homebrew has deprecated SHA1, and we were using the same
+digest in both places, so upgrade both for simplicity."
+georgebrock,2016-12-22 17:33:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a2632a48c178b55917ea80014c1b4baf318e32f0,a2632a48c178b55917ea80014c1b4baf318e32f0,Arch package for version 0.11
+georgebrock,2016-12-22 16:57:43,https://api.github.com/repos/thoughtbot/gitsh/git/commits/eeaaba05ed997011926d7aa301eed41c08bcd4bc,eeaaba05ed997011926d7aa301eed41c08bcd4bc,"Remove line editor version from --version output.
+
+We no longer support any line editor except for GNU Readline, which means we
+no longer need to tell people which one they're using."
+georgebrock,2016-12-22 16:46:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/79f998e067a840cdd90081d4dac78eb48f8cd0a8,79f998e067a840cdd90081d4dac78eb48f8cd0a8,Add Readline dependency to Arch Linux package.
+georgebrock,2016-12-22 16:46:25,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e3cb80896fc678e1f7731aebee89894a0d022be9,e3cb80896fc678e1f7731aebee89894a0d022be9,Bump version: 0.11
+georgebrock,2016-12-22 15:01:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e85c70514601766ec011a632acd99dcb2bd1b8e8,e85c70514601766ec011a632acd99dcb2bd1b8e8,Install Gitsh::LineEditor native extension.
+georgebrock,2016-12-22 11:35:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b8944f4cac14d9057232cbaa6166d82f1290e7e4,b8944f4cac14d9057232cbaa6166d82f1290e7e4,"Use dist instead of distcheck for releases.
+
+Now that we're building a custom Ruby extension for Readline integration,
+we're dependent on a non-autotools Makefile generated by Ruby's mkmf. Ruby
+Makefiles don't support VPATH builds, which means that gitsh no longer
+supports VPATH builds, which means distcheck will fail.
+
+More information in the automake documentation:
+https://www.gnu.org/software/automake/manual/html_node/VPATH-Builds.html#VPATH-Builds
+https://www.gnu.org/software/automake/manual/html_node/Third_002dParty-Makefiles.html"
+mike-burns,2016-09-02 15:29:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f5be3e3b915b777674cb01b0260ef496789597eb,f5be3e3b915b777674cb01b0260ef496789597eb,"Use a non-recursive Makefile.
+
+Recursive Makefiles are less ideal [1] than iterative ones, for quite a few
+reasons. But the main driver for this move is as a simplification so that we
+can concentrate on the ext directory separately from autotools.
+
+This commit does not fix the distcheck target, but dist and check each work.
+Switching to a non-recursive Makefile has changed the location where some
+files are installed. Rather than fighting with Automake to change their
+install locations, this commit also updates the program to look for them in
+their new homes.
+
+$prefix/share/gitsh/gems -> $prefix/share/gitsh/vendor/gems
+$prefix/share/gitsh/ruby/gitsh -> $prefix/share/gitsh/ruby/lib/gitsh
+
+[1]: http://aegis.sourceforge.net/auug97.pdf"
+charlietran,2016-11-23 05:12:46,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2a9940545a084d646b02bd1a8e58641a51afa255,2a9940545a084d646b02bd1a8e58641a51afa255,Fix small typo in README.md
+calleerlandsson,2016-07-31 12:10:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1e411d939e3b99017412fa45708f171057dc7fa2,1e411d939e3b99017412fa45708f171057dc7fa2,"Improve prompt generation speed
+
+This is done by:
+
+- Only computing prompt placeholder substitutions when necessary.
+
+  Previously, since `gsub` was invoked with a hash, all substitutions
+  would be computed regardless of whether the relevant placeholder was
+  found in the prompt format string.
+
+  This commit changes the invocation to use the block form of `gsub`.
+  The passed block will be executed once for every placeholder found in
+  the format string. On each execution it will only calculate the
+  relevant substitution.
+
+- Caching repo info during prompt generation.
+
+  When generating the prompt, the `Prompter` and `PromptColor` would
+  repeatedly ask the `Environment` for information about the repo. This
+  resulted in many calls to external git commands, slowing down the
+  prompt generation.
+
+  This commit reduces the number of calls to external git commands to
+  the minimum possible to retain the previous behavior by caching
+  information within a `Prompt` object during calls to `#prompt` and
+  within a `Status` object used both in `Prompter` and `PromptColor`."
+georgebrock,2016-08-21 18:47:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/31c8d6fe7bf9081a8c0f0c18200b5cdddb16bdb3,31c8d6fe7bf9081a8c0f0c18200b5cdddb16bdb3,"Don't always close quotes when tab completing.
+
+When the thing we've managed to complete isn't a full argument (i.e. it's a
+directory name, and the user may want to add more components to the path),
+don't append a quote if it's a quoted argument."
+georgebrock,2016-08-21 15:29:46,https://api.github.com/repos/thoughtbot/gitsh/git/commits/64f4fb052b4391a770b18d44e7ed59d586124854,64f4fb052b4391a770b18d44e7ed59d586124854,Extract a CharacterClass object from Parser.
+georgebrock,2016-07-30 19:39:35,https://api.github.com/repos/thoughtbot/gitsh/git/commits/685cf84b26bba3529e066ed065e7474df3de5b50,685cf84b26bba3529e066ed065e7474df3de5b50,"Use completion_append_character
+
+Before: we'd set completion_append_character to nil, and then append a space
+to any completion option that wasn't a directory path (e.g., completions
+might include ""file.txt "" and ""dir/""). This meant we needed to manually
+remove the space from the end of the options if we were completing a quoted
+argument, and we needed to avoid escaping spaces at the end of a completion
+when completing an unquoted argument.
+
+After: we set completion_append_character dynamically based on the
+completion options. If we have a single option that's a directory path, we
+set it to nil. If we have multiple options, or a single option that's not a
+directly path, we set it to space."
+georgebrock,2016-07-22 15:32:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6b343146977816cd0787a17900cac5a812a434cf,6b343146977816cd0787a17900cac5a812a434cf,"Support for quoted characters and tab completion.
+
+There are three parts to this:
+
+1. Add Gitsh::LineEditor.quoting_detection_proc
+
+    This exposes GNU Readline's `rl_char_is_quoted_p` setting to Ruby,
+    allowing us to tell Readline's tab completion code that a character
+    that would normally mark a word boundary is escaped, and should
+    therefore be considered part of the argument we're completing and
+    not as a boundary.
+
+    Using `rl_char_is_quoted_p` is a little complex:
+
+    * It is only invoked when `rl_completer_quote_characters` is set,
+      and one of those characters or a `\` character is present in the
+      input.  This biases the GNU Readline implementation towards using
+      `\` as the escape character.
+
+    * If `\` appears in `rl_completer_word_break_characters` -- which
+      it does by default -- it will be passed to `rl_char_is_quoted_p`.
+      That can cause surprising behaviour, e.g. given a string like
+      ""foo\ bar"", we might detect that the space is escaped, but then
+      treat the `\` as a boundary anyway and only pass "" bar"" to the
+      completion function. GNU Bash appears to get around this by not
+      including `\` in `rl_completer_word_break_characters`.
+
+    The Gitsh::QuoteDetector class implements the quoting scheme.
+
+2. Update the parser to understand more types of quoted characters.
+
+    Each type of argument -- unquoted, single quoted, and double quoted --
+    supports a different set of escape characters.
+
+    * Unquoted: Anything that could terminate the argument (space, ;, ...)
+    * Double quoted: "", \, and $
+    * Single quoted: ' and \ (we don't need $, because variables and
+      subshells can't appear in single-quoted strings)
+
+3. Decorate the completer with an object that handles escapes.
+
+    This un-escapes escaped characters in the user's input, and then
+    escapes escapable characters in the completion options.
+
+    Constants from the parser are used to ensure we only consume or produce
+    valid escape sequences.
+
+    We expose `rl_completion_quote_character` as
+    `Gitsh::LineEditor.completion_quote_character` so we know what kind of
+    string we're dealing with."
+georgebrock,2016-07-22 01:48:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/14467c27d5af6e3d485e6ebefbb60d30c85e8f86,14467c27d5af6e3d485e6ebefbb60d30c85e8f86,"Style improvements.
+
+Silence syntastic warnings."
+srstevenson,2016-08-06 17:13:40,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d1e59e2d65ae660c992b35aa0a1f36811d6b1322,d1e59e2d65ae660c992b35aa0a1f36811d6b1322,"Show home directory as a tilde in the prompt
+
+When gitsh is launched from the user's home directory, the basename of
+the current working directory shown by the `%D` format string is
+typically the same as the user's username, which is a potential source
+of confusion as to what this prompt section shows. With this commit, the
+home directory name is replaced by a tilde in the `%d` and `%D` format
+strings, as is conventional for Unix shells.
+
+Without this commit:
+
+    $ cd ~
+    $ pwd
+    /home/srs
+    $ gitsh
+    gitsh 0.10
+    Type :exit to exit
+    srs uninitialized!!
+
+With this commit:
+
+    $ cd ~
+    $ pwd
+    /home/srs
+    $ gitsh
+    gitsh 0.10
+    Type :exit to exit
+    ~ uninitialized!!"
+srstevenson,2016-08-06 17:06:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d2ed25825e134057ad044f2edf8e1bf3feee48be,d2ed25825e134057ad044f2edf8e1bf3feee48be,"Ignore shared objects
+
+This causes Git to ignore ext/gitsh/line_editor_native.so, which was
+created when building gitsh on Linux."
+calleerlandsson,2016-05-27 12:07:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/53be5c788bb486de7fc554e60ceb884b68fdcfce,53be5c788bb486de7fc554e60ceb884b68fdcfce,"Provide a helpful message if git is not executable
+
+Display a helpful message and exit early when gitsh is installed on a
+system without git or when a non-existent git is specified using the
+`--git` option.
+
+This fixes #193."
+georgebrock,2016-07-21 16:01:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ea9bb5c9b703bcb2dd1f351a2ce8a0be10a65de8,ea9bb5c9b703bcb2dd1f351a2ce8a0be10a65de8,"Move LineEditorHistoryFilter into Gitsh.
+
+This class was defined in the gith directory, but not nested under the Gitsh
+module."
+georgebrock,2016-07-21 23:21:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/16d1419b3020f90b33949f76f73d2cb107406d3b,16d1419b3020f90b33949f76f73d2cb107406d3b,Merge branch 'gb-custom-readline-extension'
+georgebrock,2016-07-17 16:11:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2bbfc862fba40619f1ae2750a1bf6d07070694df,2bbfc862fba40619f1ae2750a1bf6d07070694df,"Remove support for unused Readline functionality.
+
+Remove support for Readline features that aren't used by gitsh and aren't
+covered by the tests ported from the Ruby codebase:
+
+* rl_basic_word_break_characters
+* rl_basic_quote_characters
+* rl_filename_quote_characters
+
+I can't find any decent documentation on the difference between
+rl_basic_* variables and their rl_completer_* counterparts; they
+appear to do exactly the same thing.
+
+Also, they are hard to test:
+
+* rl_basic_word_break_characters only works if
+  rl_completer_word_break_characters has never been set, and
+* I can't get rl_basic_quote_characters to do anything at all in
+  either Ruby's `Readline` module or gitsh's `LineEditor` module.
+
+If I'm reading the docs right, rl_filename_quote_characters is used to
+determine if rl_filename_quoting_function should be called. We didn't have
+access to rl_filename_quoting_function though, so this setting was somewhat
+redundant."
+georgebrock,2016-07-15 19:23:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fc641afcd3819a55b729c6e3c034ca59de41dde1,fc641afcd3819a55b729c6e3c034ca59de41dde1,"Update documentation with readline info.
+
+* INSTALL
+* CONTRIBUTING"
+georgebrock,2016-07-15 19:14:46,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a1a1816406d969dd20dea17ea68d40d9fa9b00e2,a1a1816406d969dd20dea17ea68d40d9fa9b00e2,Add Readline as a Homebrew dependency.
+georgebrock,2016-07-15 18:25:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6ceaa90c92bc1b7a223a17d7d2d2271716b9398d,6ceaa90c92bc1b7a223a17d7d2d2271716b9398d,"Don't compile against libedit.
+
+libedit just doesn't cut it. We don't strictly _need_ the rl_edit_mode
+function, but it's a reliable way of detecting if we're building against GNU
+readline or libedit."
+georgebrock,2016-07-15 18:24:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ba7f346d3d6ecc71f9dbce1ad539660653eccebc,ba7f346d3d6ecc71f9dbce1ad539660653eccebc,"Fail to build without some readline functions.
+
+If the readline functions and variables we actually need to run gitsh are
+missing, that should trigger a compile-time error, not a runtime error."
+georgebrock,2016-07-21 21:00:14,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e8c8bc28a10232e4d642d3c0b34aaf3b7813fdae,e8c8bc28a10232e4d642d3c0b34aaf3b7813fdae,"Use Gitsh::LineEditor instead of Readline
+
+Includes LOAD_PATH changes, so we can load Gitsh::LineEditor from ext."
+georgebrock,2014-07-04 22:16:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d17216d78d212cce2c3a5c09aa83ace319af4767,d17216d78d212cce2c3a5c09aa83ace319af4767,Rename readline references to line_editor.
+georgebrock,2016-06-08 18:52:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/68b4dcada424623088f6795cc35e987e5ce98a67,68b4dcada424623088f6795cc35e987e5ce98a67,"Customise Readline C extension.
+
+Starting from a direct copy of Ruby's Readline module, modify it to:
+
+* Create a module called `Gitsh::LineEditor` instead of `Readline`.
+
+* Work across all versions of Ruby from 2.0 to 2.3. Since the native
+  `Readline` module only has to work with the version it ships with, it
+  doesn't have these constraints.
+
+  Specifically, Ruby 2.1 and up used `rb_obj_hide` and `rb_obj_reveal`,
+  but Ruby 2.0 doesn't have these methods. If they're not found, we define
+  macros to replace them with a Ruby 2.0 compatible implementation based
+  on what Ruby 2.0's `Readline` module used.
+
+* Implement the `.delete_text` method in Ruby, with a simpler
+  `.delete_bytes` method implemented in C.
+
+  The implementation of `.delete_text` in Ruby's Readline module depends
+  on internal functions that aren't available to third party extensions.
+  Adding the constraint of writing something that worked across Ruby
+  versions, and a pure C implementation became very difficult.
+
+* Update and simplify LineEditor documentation, to reflect the changes
+  listed above, to remove lengthy examples, and to improve some phrasing."
+georgebrock,2016-07-21 21:23:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/77539f6eb4545a9e3d0aa5c2d51f8c88b40464a4,77539f6eb4545a9e3d0aa5c2d51f8c88b40464a4,"Port Ruby Readline tests to RSpec.
+
+This commit introduces Gitsh::LineEditor specs, based on the Readline tests
+from the Ruby codebase. They've been significantly tidied up and refactored,
+mostly to make them more consistent with each other, and to arrange them by
+the method they're testing."
+georgebrock,2016-06-08 17:15:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d09bff2750ee017b1d708551ffdce0778bb3958e,d09bff2750ee017b1d708551ffdce0778bb3958e,"Straight copy of Ruby's Readline module.
+
+The following commits will customise this code for use in gitsh. This commit
+is kept separate to make it clear where this code came from, that the
+original author's deserve credit, and how gitsh's implementation differs
+from the upstream Ruby version.
+
+While some changes will be specific to gitsh, others might make useful
+upstream contributions. Having this baseline will be helpful for
+constructing this type of patch."
+georgebrock,2014-07-04 15:24:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fa711051ee3d1e0f61df2f06d302d6160c11d0d7,fa711051ee3d1e0f61df2f06d302d6160c11d0d7,"Add a C extension to the build system.
+
+* Set up the conventional Ruby ext directory structure.
+* Run extconf.rb from the autotools configure script.
+* Run the Ruby C extension Makefile from the automake Makefile.
+* Ignore extension build artefacts.
+
+The one unusual thing here is that we pass LDFLAGS & CPPFLAGS through to
+extconf.rb
+
+Ruby's mkmf will, by default, use the build configuration options that were
+used for Ruby itself. For our purposes that's not very useful: using Ruby's
+build configuration might have resulted in Ruby being built against libedit,
+and we want to ignore that and build against Readline.
+
+This commit passes through the LDFLAGS and CPPFLAGS values determined by the
+configure script, which means it's at least possible to modify them by
+setting environment variables when running `./configure`"
+georgebrock,2016-06-17 17:35:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/858511e305fb25881b05dde567fbcc84003555cd,858511e305fb25881b05dde567fbcc84003555cd,"Drop Ruby 1.9.3
+
+It was EOL'd more than year ago, and getting the LineEditor extension to
+build on it is proving very difficult.
+
+Since we depend on system ruby versions, we want to stay a little behind the
+curve, but everyone should have caught up with this by now!"
+georgebrock,2016-07-15 17:46:07,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f869d136b1cb50b7cd4c0aef9d4efe140d2218b6,f869d136b1cb50b7cd4c0aef9d4efe140d2218b6,Add RSpec methods to CommandStubber.
+georgebrock,2016-07-15 17:45:54,https://api.github.com/repos/thoughtbot/gitsh/git/commits/da5458163b6eca1aa721607009b4d615a25c0e20,da5458163b6eca1aa721607009b4d615a25c0e20,Add missing require.
+georgebrock,2016-06-17 17:19:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a1ba3935519434327e412d2fa72886b859511fa2,a1ba3935519434327e412d2fa72886b859511fa2,Test on even more Rubies!
+croaky,2016-06-07 06:53:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/da7d8560e257fc671a365119439c9df2c7c7ed23,da7d8560e257fc671a365119439c9df2c7c7ed23,"Give credit where credit it due
+
+Thanks, Stockholm!"
+georgebrock,2016-05-19 12:39:04,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3b61a6ea40f562f772108cdf1195900e11520fe9,3b61a6ea40f562f772108cdf1195900e11520fe9,Accept trailing semicolons.
+georgebrock,2015-03-11 00:08:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a1037c504975236396401e461eaeb7be734f1d88,a1037c504975236396401e461eaeb7be734f1d88,"Execute shell commands through /bin/sh
+
+e.g. the gitsh command `!ls` now executes `/bin/sh -c ""ls""`
+
+Since the shell command and its arguments are now passed to /bin/sh as a
+single argument, we need to escape the original command's arguments to make
+sure they're interpreted properly.
+
+This commit introduces custom shell argument escaping which is built on the
+Shellwords approach, but expands the whitelist of unescaped characters to
+include characters found in the globbing patterns described in BSD's glob(7)
+manual page.
+
+If we just used Shellwords directly, globbing patterns would be escaped
+(e.g. `!ls *` would become `/bin/sh -c ""ls \*""`)."
+christoomey,2016-02-18 03:27:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ccba254c5d7d60a3c6d5d50e195f6c3f8d129e55,ccba254c5d7d60a3c6d5d50e195f6c3f8d129e55,Add link to Weekly Iteration video on Upcase
+georgebrock,2015-09-03 15:07:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/adcb2a04409631633645a6fd7d45da863885c75b,adcb2a04409631633645a6fd7d45da863885c75b,"More correct vendorize script.
+
+The vendorize script assumed that the correct require path for any given gem
+was ""lib"", and only ""lib"". While this assumption holds true for all of the
+gems we currently depend on, removing it will make it easier to add future
+dependencies without potentially obscure bugs.
+
+Fixes #203"
+jjb,2015-10-11 00:09:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4c8a7b8bcadb45b9bb04b71437080285f15b69dd,4c8a7b8bcadb45b9bb04b71437080285f15b69dd,Update installation instructions for newest release
+philoserf,2016-01-14 19:29:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4fa9f0cf7366e03a1e36f62cba42ff1820eb9289,4fa9f0cf7366e03a1e36f62cba42ff1820eb9289,Fix broken URL in homebrew formula.
+georgebrock,2015-09-11 15:35:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6ca20a030032a35f86dbbec17921324cae680b5c,6ca20a030032a35f86dbbec17921324cae680b5c,Arch package for version 0.10
+georgebrock,2015-09-11 15:33:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4a336f87f48a244433eceb48179c5590626ca4bb,4a336f87f48a244433eceb48179c5590626ca4bb,Bump version: 0.10
+georgebrock,2015-08-12 16:24:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8cbcf1a2cb654be874058788462711246085bc68,8cbcf1a2cb654be874058788462711246085bc68,"Raise UnsetVariableError for magic variables.
+
+The magic variables that gitsh provides all depend on certain state, e.g.
+the `$_merge_base` variable is only applicable during a merge.
+
+This commit brings magic variables into line with regular user-defined
+variables, but raising an UnsetVariableError if they aren't currently set,
+i.e. if the state from which the variable derives its value doesn't exist."
+georgebrock,2015-08-07 20:41:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f3149f33a9b10520222c93faa9d1e5d41f3a31cb,f3149f33a9b10520222c93faa9d1e5d41f3a31cb,"Use non-zero exit status on fatal errors.
+
+Fixes #233"
+willium,2015-08-21 06:21:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/34f73b8986909f53715512045a51eedd78317a8f,34f73b8986909f53715512045a51eedd78317a8f,"Double line, fragment"
+georgebrock,2015-08-12 11:21:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/861bf95acbf5b9ea0cba6f815e770f298b6742a4,861bf95acbf5b9ea0cba6f815e770f298b6742a4,The inevitable Bundler update.
+georgebrock,2015-08-07 20:33:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/14c31fcbb16e065b422d45449f1c379823ec7b0a,14c31fcbb16e065b422d45449f1c379823ec7b0a,"Support ~ in paths given to `:source`
+
+The `:cd` command already supported `~` in paths, but `:source` did not.
+This commit fixes that inconsistency."
+jakirkham,2015-06-16 15:19:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/676207d6436c0110525f2630e74718a05479bbe6,676207d6436c0110525f2630e74718a05479bbe6,"README: Note about changing the default command.
+
+[ci skip]"
+andybalaam,2015-08-05 01:17:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4fc0ed633b38e924fefe3d1648a709163fc4f22f,4fc0ed633b38e924fefe3d1648a709163fc4f22f,Fix two typos in README.md
+mike-burns,2015-04-08 08:38:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0f69768470335c1750801e097855866b711dbea3,0f69768470335c1750801e097855866b711dbea3,Link to thoughtbot's contributor code of conduct
+jferris,2015-03-09 15:37:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2af9961e1a4cab527e33685367ab191ffd9e7ab7,2af9961e1a4cab527e33685367ab191ffd9e7ab7,"Add ""About thoughtbot"" to README"
+georgebrock,2015-01-20 23:05:29,https://api.github.com/repos/thoughtbot/gitsh/git/commits/648b1272328d13a6fd9694b411acb8c20e116cf7,648b1272328d13a6fd9694b411acb8c20e116cf7,"Reliably update terminal size with stty(1).
+
+When gitsh receives a `SIGWINCH`, it informs Readline of the new terminal
+size.
+
+Previously, the new terminal size was determined using the `tput cols` and
+`tput lines` commands. However, when Readline is sent the terminal size it
+sets `COLUMNS` and `LINES` environment variables, and if these environment
+variables are set `tput` will read them instead of actually checking the
+terminal size. This means that we were never actually passing the new
+terminal size to Readline, we were just passing whatever size we had when
+the environment variables were set, over and over again.
+
+Determining the terminal size by trying each of the following in turn seems
+to work better:
+
+1. `stty size` – this might fail, because some implementations of `stty`
+   don't support `size`, e.g. on Solaris.
+2. `env COLUMNS='' tput cols` and `env LINES='' tput lines` – this might
+   fail, because some implementations of `tput` don't support `cols` or
+   `lines` unless the environment variables are present.
+3. `tput cols` and `tput lines` – this is what we have now.
+4. Ignore the `SIGWINCH` entirely.
+
+This also involved switching from using `Open3.capture3` to `IO.popen`,
+because the `stty` command only works if its input stream is a TTY, and
+`Open3.capture3` passes a pipe instead of `$stdin`. Unfortunately, this
+makes the testing more complex.
+
+Fixes #144. Probably. I can no longer produce the reproducible resize
+error [1] after this commit, so it's promising.
+
+[1]: https://github.com/thoughtbot/gitsh/issues/144#issuecomment-69459773"
+georgebrock,2015-01-20 22:59:47,https://api.github.com/repos/thoughtbot/gitsh/git/commits/93fdc6841c59e54a198617caed5a0cd893991398,93fdc6841c59e54a198617caed5a0cd893991398,"Rename TermInfo to Terminal.
+
+This is going to need to get information from places other than terminfo(5)
+via tput(1) in future, so TermInfo would be a misnomer.
+
+The future is stty(1)!"
+teoljungberg,2015-01-23 13:22:02,https://api.github.com/repos/thoughtbot/gitsh/git/commits/716f2b90d1ec8905bbc5f1884b6cb0a414b7a5e7,716f2b90d1ec8905bbc5f1884b6cb0a414b7a5e7,"Replace Mocha with RSpec Mocks
+
+- Replace Mocha's `stub` with `double` from Rspec.
+  - Use spy instead where applicable.
+- Add `StubbedMethodResult` helper to allow arbitrary mock
+  implementations to be called after each other.
+
+Closes #215"
+teoljungberg,2015-01-19 15:23:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/134974c90e5ada29f7c2b6972fb09c63e93a754d,134974c90e5ada29f7c2b6972fb09c63e93a754d,"Upgrade `rspec`
+
+- Replace deprecated `be_{true,false}`
+  - `be_true` is replaced by `be_truthy`
+  - `be_false` is replaced by `be_falsey`
+- Rename deprecated `failure_message_for_should`
+- Update `parslet` to quell `rspec` deprecations"
+georgebrock,2015-01-20 15:47:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2db058a69f34fc469d33964d0432fbe72eb04a01,2db058a69f34fc469d33964d0432fbe72eb04a01,"Don't create objects we don't need.
+
+`hash.fetch(:foo, default)` will always evaluate `default`, so it makes more
+sense to use `hash.fetch(:foo) { default }` when injecting dependencies."
+georgebrock,2015-01-20 03:48:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1032dd29667416cb2d291dcebcb22ece4cbbedf8,1032dd29667416cb2d291dcebcb22ece4cbbedf8,"Support for ~/.gitshrc
+
+The interactive runner will attempt to source a ~/.gitshrc file when it
+starts.
+
+This happens after the welcome message, so that any output from commands in
+the .gitshrc file will come after the welcome message."
+georgebrock,2015-01-19 19:07:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cc59d66270190f9029edafd60afbfd852eb07b59,cc59d66270190f9029edafd60afbfd852eb07b59,"Support nested subshells.
+
+Expands the subshell parsing rules, so that they can contain balanced
+parentheses, instead of just ending with the first ')' character."
+georgebrock,2014-10-31 19:19:35,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3a5a684c1419172bc3111a943be741f4488c23a4,3a5a684c1419172bc3111a943be741f4488c23a4,"Basic subshell support
+
+Introduces parsing for subshells, a Gitsh::Arguments::Subshell object to
+handle running the subshell, and a Gitsh::CapturingEnvironment to capture
+and return the output of commands executed in the subshell.
+
+Whitespace is collapsed in subshell output, to match the behaviour of sh(1)
+et al.
+
+Nested subshells are currently not supported, and trying to use them can
+result in quite surprising results."
+georgebrock,2015-01-15 20:27:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/27c88d4a58ca8854844c7432065ab7da5a9e0408,27c88d4a58ca8854844c7432065ab7da5a9e0408,Arch package for version 0.9
+georgebrock,2015-01-15 16:42:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0ee88bf467f83dcbebe9fee5f82823791f9400db,0ee88bf467f83dcbebe9fee5f82823791f9400db,"Update INSTALL in the configure script.
+
+The way we were building the INSTALL instructions was causing `make
+distcheck` to fail: `make clean` wasn't cleaning up the INSTALL file, which
+was what we wanted for building in the source directory, but not when
+building from another directory.
+
+Letting autoconf handle the INSTALL file fixes this problem, and simplifies
+the Makefile in the process."
+georgebrock,2015-01-14 22:48:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/42df5446c9c3a38409f1369eb627e204d53752eb,42df5446c9c3a38409f1369eb627e204d53752eb,Bump version: 0.9
+georgebrock,2015-01-09 22:41:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cce22bdbfa907f816a94ad9fd0a88766172e9053,cce22bdbfa907f816a94ad9fd0a88766172e9053,"Lazily evaluate variables in arguments.
+
+Instead of replacing variables with strings in the Gitsh::Transformer, only
+evaluate their final value when they are needed by one of the
+Gitsh::Commands::* objects.
+
+This makes it possible to run commands like:
+
+    :set foo 1 && :echo $foo
+
+Introduces a Gitsh::ArgumentList to represent the arguments passed to a
+command, various Gitsh::Arguments::* classes to represent the individual
+arguments, and a Gitsh::ArgumentBuilder to construct arguments which can
+have a complex structure consisting of literal parts and variable parts."
+georgebrock,2015-01-09 18:56:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ce6ac1b3865272477595c1c791e75d019ed7a9cf,ce6ac1b3865272477595c1c791e75d019ed7a9cf,"Consider unset variables to be an error.
+
+If a command uses a variable that has not previously been set, the command
+will not be executed, and an error message will be printed identifying the
+unset variable.
+
+Introduces a Gitsh::Error class and Gitsh::UnsetVariableError subclass to
+represent errors that are fatal to the current command but not to the whole
+gitsh session."
+georgebrock,2015-01-09 15:30:04,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f741a06caa5d9dc97b4d847f49f62fa56a3e8e19,f741a06caa5d9dc97b4d847f49f62fa56a3e8e19,"Remove Environment#[] in favor of #fetch
+
+Refactor access to variables to prepare the ground for raising errors when a
+command tries to use an unset variable.
+
+* Modify `Gitsh::Environment#fetch` and `Gitsh::GitRepository#config` to
+  raise if no default value is given.
+* Move default values from arguments to blocks to easily distinguish between
+  “there is no default” and “the default is set to `nil`”.
+* Remove `Gitsh::Environment#[]` and `Gitsh::MagicVariables#[]` entirely, in
+  favour of `#fetch` methods.
+* Update `Gitsh::Environment#fetch` to read from magic variables, which were
+  previously only accessible via `#[]`."
+lf-,2014-12-26 17:04:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/bbb53ad031c95d78a364c090fc8620c645aeac62,bbb53ad031c95d78a364c090fc8620c645aeac62,"Fix install instructions.
+
+The URL in the INSTALL instructions redirects. `curl` won't follow the
+redirect without the `-L` flag."
+mike-burns,2014-11-19 14:37:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/32bc5b13db12d6004849847ba01a4ac03070b045,32bc5b13db12d6004849847ba01a4ac03070b045,"Commit the generated INSTALL documentation
+
+The `INSTALL` file is generated from `INSTALL.in`; however, since it is
+the installation guide, it is often read before the program is even
+downloaded. For example, on GitHub we link to `INSTALL.in` from the
+`README.md`. Rather than recommend that people read a template of a
+documentation, we can instead simply add the generated documentation to
+the repo."
+georgebrock,2014-11-10 03:11:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/26eac4009fe16bccbf48f06bbff27edafc0610a8,26eac4009fe16bccbf48f06bbff27edafc0610a8,"Git doesn't support ""orange""; use ""yellow"".
+
+6e6508408b7ee7e595d657bba0fc30de076fae4c set the default colour for modified
+files to:
+
+    git config --get-color ""gitsh.color.modified"" ""orange""
+
+Unfortunately, there is no ""orange"". The colour has always been called
+""yellow"", it just looks orange in preferred terminal emulator colour scheme.
+
+Oops."
+georgebrock,2014-11-16 15:20:07,https://api.github.com/repos/thoughtbot/gitsh/git/commits/9efe0c9f9708f5cf6c84bd51926ffb8974bdd8bb,9efe0c9f9708f5cf6c84bd51926ffb8974bdd8bb,"Add OpenBSD to list of OSes in INSTALL.txt
+
+This should be updated again when OpenBSD 5.7 comes out, around June 2015."
+mike-burns,2014-11-09 22:00:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/82ecab03b6d67b702e8e2c48812b981c786e517c,82ecab03b6d67b702e8e2c48812b981c786e517c,"Add OpenBSD instructions
+
+Removed the `On ` prefix in the instructions to reduce redundancy.
+
+The gitsh port and package are in OpenBSD 5.7+, which is not yet
+released, so the instructions target -current. The package mirrors are
+not even caught up yet but they hopefully will be soon.
+
+http://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/devel/gitsh/"
+mike-burns,2014-11-04 16:25:55,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6af920065f4762665606bc2dc1c25594287f2d73,6af920065f4762665606bc2dc1c25594287f2d73,"Support ruby21
+
+Some systems (e.g. OpenBSD) name their Ruby 2.1.x as `ruby21`. This is a
+supported version, so handle it."
+georgebrock,2014-08-20 18:52:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6e6508408b7ee7e595d657bba0fc30de076fae4c,6e6508408b7ee7e595d657bba0fc30de076fae4c,"Custom colour support.
+
+Allows users to override the colours of the prompt in various states, by
+setting git-config(1) variables. This is very similar to git's built-in
+mechanism for setting colours, e.g. for git-log(1) output."
+georgebrock,2014-08-24 21:54:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1123a164de69e47af0ad1b3a9236acc395456c87,1123a164de69e47af0ad1b3a9236acc395456c87,Drop a git prefix if help.autocomplete is set
+georgebrock,2014-08-24 21:01:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f25c002ee5292188a1bfc1e81b4d0b19cc4bc1e7,f25c002ee5292188a1bfc1e81b4d0b19cc4bc1e7,Refactor: construct Parser with an Environment
+georgebrock,2014-09-26 13:46:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c8acf9f3fc7abe77fb513689391fd2ad48a4443f,c8acf9f3fc7abe77fb513689391fd2ad48a4443f,Arch package for version 0.8
+georgebrock,2014-09-26 13:45:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c60224d52d8dd84a8d7ba52b1719390a80edf855,c60224d52d8dd84a8d7ba52b1719390a80edf855,Version bump: 0.8
+georgebrock,2014-09-26 12:18:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/930a03549d98123341f5cb211927d4086d7a75ba,930a03549d98123341f5cb211927d4086d7a75ba,"Include lib/gitsh/*/*.rb files in installation.
+
+The previous install mechanism would only install files from `lib/gitsh`; it
+excluded files in subdirectories. c1dc545c21a8037f47d71bf8ca01e667433f6d6e
+moved the command classes into a subdirectory under `lib/gitsh`, and
+subsequently these files weren't included by the installer."
+georgebrock,2014-09-26 11:47:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/9c58d893b517d569e5acda0c98454418488d540b,9c58d893b517d569e5acda0c98454418488d540b,"Disable rubygems when running gitsh.
+
+There are currently some load errors related to an installer bug (see issue
+ #178).
+
+When rubygems is enabled it modifies require, which makes these bugs worse
+by failing more slowly and with less helpful output (e.g. on my Mac OS X
+system with Homebrew Ruby, it installs the Nokogiri gem before failing)."
+georgebrock,2014-09-22 18:05:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/022b7484fb92d78267aaf562fe73b895ff48e80b,022b7484fb92d78267aaf562fe73b895ff48e80b,"Support .git/rebase-merge or .git/rebase-apply
+
+The `$_rebase_base` magic variable determines the base commit of a rebase by
+reading the metadata in the `.git` directory.
+
+Rebase metadata is stored in different sub-directories at different times.
+This commit adds support for `.git/rebase-merge` in addition to the existing
+`.git/rebase-apply` support.
+
+See: http://stackoverflow.com/questions/3921409"
+georgebrock,2014-04-18 16:04:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/48902a329cf4df850e3e8664bb196b5572eacbef,48902a329cf4df850e3e8664bb196b5572eacbef,"Handle SIGWINCH, and tell Readline to resize.
+
+When the terminal emulator window in which gitsh is running is resized,
+gitsh will receive a SIGWINCH signal. This commit adds a handler for this
+signal, and updates Readline's window size.
+
+The hope is that this will fix a couple of resize-related bugs (strange
+wrapping, and pagers loading at the wrong size). These bugs are hard to
+reproduce, so it's not 100% clear that this fix works.
+
+Also introduces a TermInfo class to contain `tput` interactions."
+georgebrock,2014-08-24 22:33:22,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a7e51e846db640b096414594947671881f4e059d,a7e51e846db640b096414594947671881f4e059d,"Support commenting of partial lines.
+
+e.g. `add . # Add all files`"
+jeffmueller,2014-05-01 20:03:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e4b435c84cca3fee42866664cd34226be4c366f9,e4b435c84cca3fee42866664cd34226be4c366f9,Added :q alias for :exit command
+georgebrock,2014-06-27 14:43:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6b502e2bc7c56d15e4af7f1db8c74dce78115b41,6b502e2bc7c56d15e4af7f1db8c74dce78115b41,Tweak help: command is not optional.
+georgebrock,2014-06-27 14:35:01,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6bb0fe999badb389c3b1bc3d22c39a4edbf3f2fc,6bb0fe999badb389c3b1bc3d22c39a4edbf3f2fc,"Execute scripts piped to STDIN.
+
+Commands will be read from the standard input when
+
+* the standard input is not a TTY, or
+* '-' is passed instead of a path to a script file."
+georgebrock,2014-06-23 18:20:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/32d23bf4bfee76c3537003d332dea1f3975aaea6,32d23bf4bfee76c3537003d332dea1f3975aaea6,"Add $_prior, $_rebase_base, $_merge_base variables
+
+* `$_prior` is like `@{-1}`, but easier to remember and search for. It also
+  expands to the name of the prior branch, so it can be used for things like
+  `push origin :$_prior`.
+
+* `$_rebase_base` is the base onto which we are currently rebasing, e.g. for
+  `rebase --onto foo bar baz` it would be the SHA1 of the head of the `foo`
+  branch.
+
+* `$_merge_base` is the base commit of the current merge. Equivalent to
+  `merge-base HEAD MERGE_HEAD`."
+georgebrock,2014-06-23 18:37:25,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c1dc545c21a8037f47d71bf8ca01e667433f6d6e,c1dc545c21a8037f47d71bf8ca01e667433f6d6e,"Namespace command classes
+
+Move all command classes under the `Commands` namespace. This helps quick
+scanning of which classes are commands, since not all of them end with the
+word `Command`."
+georgebrock,2014-06-14 07:40:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/15ef2a25e8fff5f9e11e48f8a94e554a86040027,15ef2a25e8fff5f9e11e48f8a94e554a86040027,"Pass a script file as an argument.
+
+* Renames Comment to Noop.
+* The parser will match blank lines. This never happens in interactive mode
+  because of the default command."
+georgebrock,2014-06-13 13:53:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4a32871f4e18829685706e6c2e0bb87475d76a6a,4a32871f4e18829685706e6c2e0bb87475d76a6a,Arch package for version 0.7
+georgebrock,2014-06-13 13:51:54,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e52a97e11d5625d07e49a32b08170ffc909c6d3a,e52a97e11d5625d07e49a32b08170ffc909c6d3a,Version bump: 0.7
+georgebrock,2014-06-13 12:43:47,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f9ecf3cfe26ed1e8ffb77cecd01a40c3548869dd,f9ecf3cfe26ed1e8ffb77cecd01a40c3548869dd,"Flesh out installation instructions.
+
+Adds an INSTALL file to the distribution tarball explaining the subtleties
+of installing gitsh that can sometimes cause problems:
+
+1. Rubies from Ruby version managers are ignored.
+2. GNU Readline and libedit have some differences."
+georgebrock,2014-05-02 19:12:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/883fd663d3eaa23170c5ec19232d491d77ac0298,883fd663d3eaa23170c5ec19232d491d77ac0298,"Mimic sh(1) when handling unset variables.
+
+If an unset variable is used as an argument, it is dropped from the argument
+list.
+
+For example:
+
+    & commit -m $foo
+    error: switch `m' requires a value
+    ...
+    & :set foo ""This is a commit""
+    & commit -m $foo
+    (a commit is created)"
+georgebrock,2014-05-16 14:42:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d7f97b360e6039baecd3a48b337a9c1ae99e269b,d7f97b360e6039baecd3a48b337a9c1ae99e269b,"Wrap the binary in C.
+
+This will allow us to use gitsh as a sh-bang line, and hopefully to set the
+process name correctly. The C code has deliberately been kept as simple as
+possible; the intention is to keep the majority of the functionality in
+Ruby."
+AgentAntelope,2014-05-10 18:25:01,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c664b51156f42ca5f18f3c6b86c28770f7b1a71b,c664b51156f42ca5f18f3c6b86c28770f7b1a71b,"Prevent blank lines from causing a parse error.
+
+This was an issue as most commands currently can be preceded by
+spaces, but there was no rule to support spaces alone.
+
+The behaviour of a blank line is now identical to that of an empty
+line; by default the `git status` command, overridden by
+gitsh.defaultCommand"
+georgebrock,2014-04-04 13:04:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/60a7e8b6f63d71aa336728b19a45c69890dc8ffd,60a7e8b6f63d71aa336728b19a45c69890dc8ffd,"Support commented lines.
+
+Any line beginning with a # will be treated as a comment and ignored. A #
+later in the line doesn't (yet) indicate a comment."
+georgebrock,2014-04-11 09:02:50,https://api.github.com/repos/thoughtbot/gitsh/git/commits/f921331b98f2795caf1c05890532f9ff429b8147,f921331b98f2795caf1c05890532f9ff429b8147,"Parse empty string arguments correctly.
+
+When the parser encountered an empty string (e.g. `""""`) it was matching the
+`soft_string` or `hard_string` rule, but didn't include any named matches
+(i.e. any `literal` characters) so it returned the whole matched string
+instead.
+
+After experimenting with various ways of matching the opening and closing
+quotes, it ended up being a smaller and more understandable change to just
+add a rule to explicitly match empty strings.
+
+Fixes #139"
+georgebrock,2014-03-21 13:47:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/02e407fe2214e94d2f3f90ebf0e289367b32ca41,02e407fe2214e94d2f3f90ebf0e289367b32ca41,"Extract an InteractiveRunner from CLI
+
+This splits the Gitsh::CLI class in two: Gitsh::CLI retains responsibility
+for argument parsing, while Gitsh::InteractiveRunner takes on all
+responsibility for running an interactive session.
+
+This is partly just to keep thing clean and easy to change, and partly to
+pave the way for an eventual non-interactive mode."
+gfontenot,2014-03-06 22:40:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/993e9a13e307652e1e05ce37d1f214e5cab48588,993e9a13e307652e1e05ce37d1f214e5cab48588,"Create vendor/gems if it doesn't exist
+
+I was having an issue when migrating this code over to Liftoff where if
+vendor/gems didn't exist, the entire vendorizing script didn't run. By
+testing that the directory exists and creating it if not, these errors
+stop happening."
+calleerlandsson,2014-04-05 14:01:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/eab8d12e443a063ee806fac2d4ee0ca1a10a161a,eab8d12e443a063ee806fac2d4ee0ca1a10a161a,Run test suite on Travis using ruby 2.1.1
+calleerlandsson,2014-04-04 13:11:14,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fc60e1801ecbddbc91d894c00a5866563d98348a,fc60e1801ecbddbc91d894c00a5866563d98348a,"Open tempfile in write mode
+
+Fixes #148"
+calleerlandsson,2014-04-04 13:58:59,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3fe582c7da62e0fea328bc950979b98374f8c921,3fe582c7da62e0fea328bc950979b98374f8c921,--version prints what readline lib gitsh is using
+calleerlandsson,2014-04-02 07:37:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b6859752bcf42c144e1be510579ac3ad9a3466ef,b6859752bcf42c144e1be510579ac3ad9a3466ef,Test git interaction inside a temporary home dir
+georgebrock,2014-04-04 08:49:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/81db11422bad8a36b3a0e6ac408e6fc48e872b05,81db11422bad8a36b3a0e6ac408e6fc48e872b05,Arch package for version 0.6
+georgebrock,2014-04-04 08:48:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0ed264916667812721e0a89e316d5e2758bee0bc,0ed264916667812721e0a89e316d5e2758bee0bc,Version bump: 0.6
+georgebrock,2014-04-03 06:07:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8fc4d21e86b71a57674c875a3442c05785525301,8fc4d21e86b71a57674c875a3442c05785525301,"Add gitconfig to temporary home directory.
+
+Builds have been failing on Travis CI because of the temporary home
+directory: there was no gitconfig, and therefore no user.name or user.email
+settings, which prevent commits from being created under some Git versions."
+AgentAntelope,2014-03-15 12:53:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e3255903a3db7e15c1902c6cd1a51106d8aecfc6,e3255903a3db7e15c1902c6cd1a51106d8aecfc6,Add completion of remotes.
+georgebrock,2014-03-08 17:22:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4ef6d4efbdc0047a633b9fbef15ea2c8835a0c5e,4ef6d4efbdc0047a633b9fbef15ea2c8835a0c5e,"Forward interrupts to child processes.
+
+When there's a long running child process (any Git command that uses a
+pager, `!vim`, etc.) then any interrupt signal should be forwarded to the
+child process, rather than handled by gitsh. If gitsh handles the signal it
+will request a new line of input from the user, and interfere with the child
+process, leaving the terminal in a confused state.
+
+This interrupt forwarding needs to be recursive, in order to handle multiple
+interrupts while running a child process that doesn't terminate on SIGINT."
+georgebrock,2014-03-08 17:17:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/64caf9fda81d7d21a878fc96494260c9a90803a0,64caf9fda81d7d21a878fc96494260c9a90803a0,Refactor: GitCommand is a ShellCommand
+AgentAntelope,2014-03-15 12:27:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cf90d7808787216f0318928d289923a122cffb23,cf90d7808787216f0318928d289923a122cffb23,"Use sequence for args, as it will always be an array."
+AgentAntelope,2014-03-15 11:50:50,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3a44f72c8de5e9e7c5cd79faf1a11c314edcb3a2,3a44f72c8de5e9e7c5cd79faf1a11c314edcb3a2,Add instructions for running gitsh locally to contributing guide.
+georgebrock,2014-03-14 14:39:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5843ed0732bc9e933a3e056c150873b212f9eefc,5843ed0732bc9e933a3e056c150873b212f9eefc,"Don't distribute version.rb
+
+version.rb is built from version.rb.in by `make`, so it shouldn't be
+distributed, but it should be installed."
+mike-burns,2014-03-07 20:44:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4ee77bfe0530da4ff4aed63cc62da594f95303a2,4ee77bfe0530da4ff4aed63cc62da594f95303a2,"Use the check target to run tests
+
+This provides for tighter integration into the autotools framework. More
+details: https://www.gnu.org/software/automake/manual/html_node/Tests.html#Tests
+
+Instead of using
+
+    rspec
+
+to run the full test suite, instead you use
+
+    make check
+
+Fixes #126."
+AgentAntelope,2014-03-08 20:51:29,https://api.github.com/repos/thoughtbot/gitsh/git/commits/08730fb9e922c9a356cce26bcd10ee089cf8ef2e,08730fb9e922c9a356cce26bcd10ee089cf8ef2e,"Rework specs around completing '~'.
+
+This is because if there were no files in '~', the previous test would fail.
+So instead, check for directories (which are more likely).
+
+Also adds a test ensuring directory completion functions."
+yasuoza,2014-02-25 03:19:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c653779fc15a43c3633a44f93304f695b2aeb505,c653779fc15a43c3633a44f93304f695b2aeb505,"Fix 'Error: undefined method `sub' for nil:NilClass' when newline is included git alias
+
+When there is at least one newline in git aliases like:
+
+    ln = log --pretty=format:'%C(blue bold)%h %C(yellow bold)%cd %C(magenta bold)%cn %C(red bold)%d\n\n%C(white bold)%s\n%Creset%b'
+
+tab completion fails with 'Error: undefined method `sub' for nil:NilClass'.
+
+This commit fixes the issue."
+mike-burns,2014-03-09 00:46:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/edb5fcbc362f926aad0eaff2409af485fcb935e8,edb5fcbc362f926aad0eaff2409af485fcb935e8,The tarball is for version 0.5
+georgebrock,2014-03-08 17:43:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/99f290ed9c30d94c300f775e4ae03efdf585b22b,99f290ed9c30d94c300f775e4ae03efdf585b22b,Arch package for version 0.5
+georgebrock,2014-03-08 17:43:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b89e736cd50d7fb10858dccc0859a863d14b4c01,b89e736cd50d7fb10858dccc0859a863d14b4c01,Version bump: 0.5
+AgentAntelope,2014-03-03 20:54:46,https://api.github.com/repos/thoughtbot/gitsh/git/commits/642b59d2717390855babc8454a95b2bc970b19eb,642b59d2717390855babc8454a95b2bc970b19eb,"Allow the parser to understand upper and lower case letters.
+
+We should pass bad commands onto git to get the standard
+""git: 'X' is not a git command. See 'git --help'."" message."
+AgentAntelope,2014-03-03 21:59:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8e9f79894d7073c92546b2117b1ff0d32572d46d,8e9f79894d7073c92546b2117b1ff0d32572d46d,Set $PROGRAM_NAME so that gitsh shows up as 'gitsh'
+georgebrock,2014-03-07 16:34:42,https://api.github.com/repos/thoughtbot/gitsh/git/commits/066c62a39d567eed863365519e3f1b7a60707fc0,066c62a39d567eed863365519e3f1b7a60707fc0,Handle shell command failures gracefully.
+georgebrock,2014-02-28 15:33:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/972d3f751de686e2952752ce034d1e82d589dbb1,972d3f751de686e2952752ce034d1e82d589dbb1,"Document new features.
+
+* Shell commands.
+* Combining commands (&&, ||, ;)"
+blainesch,2014-02-23 02:18:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5acfeb75f9cb04f9b2af9aab38d262f5a4fe36cc,5acfeb75f9cb04f9b2af9aab38d262f5a4fe36cc,Set test order to random to surface order dependencies.
+blainesch,2014-02-23 02:18:29,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fb2d72bd331df9c011b055148ad36af7b04997ee,fb2d72bd331df9c011b055148ad36af7b04997ee,Add `Pry` for easier test debugging.
+blainesch,2014-02-21 23:08:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6eacd525fa54b8d78814403f2765a45ecf365118,6eacd525fa54b8d78814403f2765a45ecf365118,Add ability to chain multiple methods together.
+georgebrock,2014-02-21 13:45:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7a7813e339c307dcacb000fcc58e685a54346d65,7a7813e339c307dcacb000fcc58e685a54346d65,"Support shell commands.
+
+A shell command can be any command prefixed with a !, e.g. `!ls` or `!pwd`"
+georgebrock,2014-02-27 07:23:58,https://api.github.com/repos/thoughtbot/gitsh/git/commits/774456efd5086064fb0d702d8c2b1f5e5fc10efe,774456efd5086064fb0d702d8c2b1f5e5fc10efe,"Fix ReadlineBlankFilter when readline returns nil
+
+When readline receives an EOF it returns nil. This was causing a crash when
+a user sent an EOF to quit gitsh."
+AgentAntelope,2014-02-23 10:25:48,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c0449fe3c5de92885aa3862f4b14177eb81a1492,c0449fe3c5de92885aa3862f4b14177eb81a1492,Ensure transformer can handle empty string arguments
+aldrik,2014-02-12 20:38:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/43002401669586397b046ff889c828dd60a21804,43002401669586397b046ff889c828dd60a21804,List similar projects in the README
+georgebrock,2014-02-10 12:49:00,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2d77cc4a0bd32fab1d98a2195bb15a4ea880cf0d,2d77cc4a0bd32fab1d98a2195bb15a4ea880cf0d,"Use the same git command everywhere.
+
+The `GitRepository` and `GitCommand` classes were using different git binaries
+when the `--git` option was used. This could cause minor inconsistencies,
+for example `hub` commands worked but could not be tab completed.
+
+Fixing this revealed a potential bug in the `History` class, when a
+non-numeric `gitsh.historySize` setting was used, so that's fixed too."
+georgebrock,2014-02-21 12:19:39,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4634690b5da197f61570c4651fcde230ce3d944c,4634690b5da197f61570c4651fcde230ce3d944c,Add missing require.
+adrianheine,2014-02-20 09:12:08,https://api.github.com/repos/thoughtbot/gitsh/git/commits/60155289002886ba2cc0f124e822e47b2268798a,60155289002886ba2cc0f124e822e47b2268798a,"Don't handle version.rb as SCRIPTS file
+
+SCRIPTS get execution permission on installation; this is not intended here."
+adrianheine,2014-02-20 09:17:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/aca6b169e6750467ee8266abc705cb8e93e501dd,aca6b169e6750467ee8266abc705cb8e93e501dd,Close list in manpage
+sgrif,2014-02-15 19:58:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a443b3973e52ff2e7179ffcf8ae8302c423cb865,a443b3973e52ff2e7179ffcf8ae8302c423cb865,Extract `ModuleDelegator` from classes that wrap `Readline`
+georgebrock,2014-02-13 12:40:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5f69ffbc8356fe9c30ecda48d5cc66955483dbf6,5f69ffbc8356fe9c30ecda48d5cc66955483dbf6,"Support Ruby 1.9.3
+
+This should significantly simplify installation on Linux, since 1.9.3 is
+available as a package for most major distros. Also, it paves the way for us
+building Debian packages (etc.) that only depend on standard packages."
+georgebrock,2014-02-11 10:17:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3bc6027fe3cd9fdd135884ab19a495ea567aae66,3bc6027fe3cd9fdd135884ab19a495ea567aae66,"Bug fix: Don't output greeting on ctrl-c
+
+Catching an `Interrupt` and `retry`ing the method was re-running too many
+things, including the greeting and the history load."
+georgebrock,2014-02-11 10:37:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/bd0be79df8cafcca8f110cb23c2b9de81735d6e5,bd0be79df8cafcca8f110cb23c2b9de81735d6e5,Clarify the setup steps in the contributing guide.
+georgebrock,2014-02-11 10:33:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3fc393479ea4d20e4c4c655e17e9c690b67c70b4,3fc393479ea4d20e4c4c655e17e9c690b67c70b4,Update install instructions for 0.4.
+georgebrock,2014-02-11 10:27:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ecf7644eaeebc3840bb08727ee95cdc3e71a63ba,ecf7644eaeebc3840bb08727ee95cdc3e71a63ba,"Emphasise use of ctrl-d in the README.
+
+Unfortunately the example has to be re-formatted into HTML to mark this up
+properly."
+blainesch,2014-02-12 16:07:16,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4913a67f9109957d322cf3f86c7f15b2135912d5,4913a67f9109957d322cf3f86c7f15b2135912d5,Change `current_branch_name` to use short branch name.
+mike-burns,2014-02-12 13:23:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e1e60663a4dbaa59943c6ed6f4aece0a0ca37a6a,e1e60663a4dbaa59943c6ed6f4aece0a0ca37a6a,"Mention gh, which is faster than hub
+
+Showing `hub` in the example will cause people to try it with `hub`,
+which will lead to an unpleasant first experience due to `hub`'s speed.
+By showing `gh` in the example, we hint at something better and help
+popularize the faster alternative.
+
+We see this in FactoryGirl, where people complain that FG is slow merely
+because they write to the database often."
+georgebrock,2014-02-12 10:44:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c54ee6870e474abdfd59cfea296c5961610ccfd1,c54ee6870e474abdfd59cfea296c5961610ccfd1,Add code climate and travis badges to README.
+georgebrock,2014-02-12 10:21:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/dbc2b733ec5691023572c8ffb7ccdbab35223077,dbc2b733ec5691023572c8ffb7ccdbab35223077,Set up dependencies properly for Travis build.
+georgebrock,2014-02-12 10:17:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/42c38c6fd457986ba93862d466ca3ac672b4ba8c,42c38c6fd457986ba93862d466ca3ac672b4ba8c,Add travis.yml file.
+georgebrock,2014-02-10 22:33:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d2e176e93b3206bc50869774a39298a05ebde716,d2e176e93b3206bc50869774a39298a05ebde716,"Update CONTRIBUTING guide.
+
+A clean checkout won't run the specs without generating the
+`lib/gitsh/version.rb` file first. Update the documentation to match."
+georgebrock,2014-02-08 07:39:02,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6877cc62c721dc6f5b07a0b3aa9631f287ea311a,6877cc62c721dc6f5b07a0b3aa9631f287ea311a,"Improve homebrew Ruby dependencies.
+
+We can depend on Homebrew Ruby if it's already installed, even if system
+Ruby is new enough. Homebrew Ruby is generally better for gitsh, because it
+has readline instead of libedit."
+georgebrock,2014-02-08 07:30:40,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b7bca6c060f57c5c8f9661a26a8220b335ad0288,b7bca6c060f57c5c8f9661a26a8220b335ad0288,Version bump: 0.4
+georgebrock,2014-02-08 07:29:36,https://api.github.com/repos/thoughtbot/gitsh/git/commits/dfe98c3f7a82966c9e166b25f4db66b993c2605e,dfe98c3f7a82966c9e166b25f4db66b993c2605e,Arch package for version 0.4
+georgebrock,2014-02-07 13:50:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5598e51f5e869bb78b449bdbd6beac15aef8970f,5598e51f5e869bb78b449bdbd6beac15aef8970f,Use the logo in the README.
+georgebrock,2014-02-07 09:56:48,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a2408386c5e8cfa760748fc2acaf32e4ba07bbaa,a2408386c5e8cfa760748fc2acaf32e4ba07bbaa,"Improve README, add CONTRIBUTING
+
+* Expands the examples in the README.
+* Adds a CONTRIBUTING guide.
+* Moves the information on releasing new versions to CONTRIBUTING."
+georgebrock,2014-02-07 13:02:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c168da2fbce87039b6dff817836b26eef0e1a27d,c168da2fbce87039b6dff817836b26eef0e1a27d,"Allow the user to override the default command.
+
+Adds the `gitsh.defaultCommand` configuration variable."
+georgebrock,2014-02-07 08:45:22,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4a5b64cbe83488b6a09e333e854e804842bd3e6d,4a5b64cbe83488b6a09e333e854e804842bd3e6d,"Add a greeting when gitsh starts.
+
+This tells the user what version of gitsh they are using, and how to exit.
+
+It can be disabled by setting the `gitsh.noGreeting` config variable to
+`true`."
+georgebrock,2014-02-01 00:22:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4fd3027f3e460e45ab78b017bcd40ad04c3eda8b,4fd3027f3e460e45ab78b017bcd40ad04c3eda8b,"Fix homebrew install for Ruby < 2.0
+
+Homebrew was detecting the system Ruby version correctly and adding a
+dependency on Homebrew Ruby if it was < 2.0, but the configure script was
+still heavily biased towards picking system Ruby.
+
+This explicitly passed the Ruby path from the Homebrew formula to the
+configure script to ensure the Ruby version chosen by Homebrew is used."
+georgebrock,2014-01-31 13:27:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b5808120e3bbccfd081693e37b76ac2c87339698,b5808120e3bbccfd081693e37b76ac2c87339698,Ignore new homebrew formulae repo.
+georgebrock,2014-01-31 13:24:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4d64edb8bf362cb89bb70569dca7c14d26e01865,4d64edb8bf362cb89bb70569dca7c14d26e01865,Arch package for version 0.3
+georgebrock,2014-01-31 13:23:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4e9e99d65fdf58d40be15c55e8c539fbdf049414,4e9e99d65fdf58d40be15c55e8c539fbdf049414,Version bump: 0.3
+georgebrock,2014-01-31 13:18:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/09c46f893db9202fd0a9a761bd0241f5b3245f14,09c46f893db9202fd0a9a761bd0241f5b3245f14,Update copyright year to 2014.
+georgebrock,2014-01-31 12:49:04,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0be6d6b2bd7c5abe41685c959d7eec76b206195d,0be6d6b2bd7c5abe41685c959d7eec76b206195d, Use the new central homebrew repository.
+georgebrock,2014-01-31 08:59:47,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e559fe7d402dcc66fdaf893b604a346193127ab6,e559fe7d402dcc66fdaf893b604a346193127ab6,Improve arch package commit message.
+georgebrock,2014-01-31 08:58:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ae3e69e252d561fdbc37df861305f49cc2b44386,ae3e69e252d561fdbc37df861305f49cc2b44386,"Move homebrew formula template into this repo.
+
+We're going to combine the homebrew repos for various thoughtbot projects,
+so it makes more sense to keep the template for the formula in this repo."
+georgebrock,2014-01-31 08:50:42,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7e4aa3e0a78e6118f5935f8232602666eb092092,7e4aa3e0a78e6118f5935f8232602666eb092092,"Simplify colour addition/removal.
+
+Since I've discovered that user's can't add their own ANSI colour codes to
+their `gitsh.prompt` setting, toggling colours based on terminal
+capabilities can be simplified."
+georgebrock,2014-01-31 08:31:04,https://api.github.com/repos/thoughtbot/gitsh/git/commits/66fd195edb886b464895eb6cba9a23b0c915eaa0,66fd195edb886b464895eb6cba9a23b0c915eaa0,"Remove hard coded colour from the default prompt.
+
+Users can't add their own ANSI escape sequences to their `gitsh.prompt`
+setting because of restrictions on escape sequences in `.gitconfig` files.
+It's not great for the default prompt to include a feature the user can't
+use in their custom prompt, so we'll remove it until we have support for
+custom colours."
+georgebrock,2014-01-24 18:31:43,https://api.github.com/repos/thoughtbot/gitsh/git/commits/67c7de0fec7b6c4d8124f9f05c4aec90ab7607e7,67c7de0fec7b6c4d8124f9f05c4aec90ab7607e7,Update prompt documentation.
+georgebrock,2014-01-24 18:20:34,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ced4abbaa3c0fe92e8a30c804cd5bb281a3c6fdb,ced4abbaa3c0fe92e8a30c804cd5bb281a3c6fdb,"Add colours the default prompt.
+
+The default prompt is now:
+
+    {cyan}{basename of $PWD} {status colour}{HEAD}{sigil}{end colour}"
+georgebrock,2014-01-24 18:17:11,https://api.github.com/repos/thoughtbot/gitsh/git/commits/51c4f553907319a243c12ad6943700b05fa03286,51c4f553907319a243c12ad6943700b05fa03286,"Add color placeholders (%c & %w) to prompt format
+
+* %c begins coloring based on status
+* %w ends coloring
+
+This also inverts the way color support was handled: Previously we added
+colors if the terminal supported them, now we add them by default and remove
+them if the terminal lacks support. This is more flexible, because we can
+add static color codes to the `gitsh.prompt` setting and the default prompt
+without worrying about compatibility issues."
+georgebrock,2014-01-24 18:52:23,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e52039ebd72ecafbe147884a5fc35f1abd48b406,e52039ebd72ecafbe147884a5fc35f1abd48b406,"Improve completion of HEADs containing punctuation
+
+Supports punctuation characters that are not legal in Git refs as completion
+word separators.
+https://github.com/git/git/blob/7794a680e63a2a11b73cb1194653662f2769a792/refs.c#L9
+
+This also introduces the `TextCompleter` template class, used by the
+specific completers."
+georgebrock,2014-01-24 17:54:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/abdf5776fb5fd8c2252e0598c7f9c7e5fac7f6f9,abdf5776fb5fd8c2252e0598c7f9c7e5fac7f6f9,"Support tab completion of temporary aliases.
+
+For example, after running this command:
+
+    :set alias.foo ""!echo foo""
+
+It becomes possible to tab complete the command ""foo"""
+georgebrock,2014-01-24 07:14:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/971f2fab82193888b38a7c48ab61810d3ea9d0cf,971f2fab82193888b38a7c48ab61810d3ea9d0cf,"Refactor: Completer depends on Env not GitRepo
+
+This refactor paves the way for tab completion of temporary aliases (i.e.
+aliases created using the `:set` command)."
+georgebrock,2014-01-24 18:59:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/86aa318a926558a29d16ca59f75f697a86649f7b,86aa318a926558a29d16ca59f75f697a86649f7b,"Hoy-day, what a sweep of vanity comes this way!"
+georgebrock,2014-01-17 08:34:06,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8b1bb47a6056f37834ac018d1eb235fb2d87a09f,8b1bb47a6056f37834ac018d1eb235fb2d87a09f,Document the gitsh.* git-config variables.
+georgebrock,2014-01-17 08:28:43,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cfc511dfabe2cd39e7e1c75f20f7258a82bae02d,cfc511dfabe2cd39e7e1c75f20f7258a82bae02d,Allow the user to change the history size.
+georgebrock,2014-01-17 07:26:39,https://api.github.com/repos/thoughtbot/gitsh/git/commits/15fa9b6d6582d684281b60f0aa55780e542a2b57,15fa9b6d6582d684281b60f0aa55780e542a2b57,"Use a temporary history file in tests.
+
+Running the tests shouldn't fill the user's history file with test commands.
+This involved extending `spec/fixtures/fake_git` to ignore `-c` arguments."
+georgebrock,2014-01-03 14:45:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6b86431259213f1f4fc0f3f6cd446b5fcbde94dd,6b86431259213f1f4fc0f3f6cd446b5fcbde94dd,"Persistent history
+
+Saves up to 500 commands to ~/.gitsh_history or the path given in
+`gitsh.historyFile`"
+georgebrock,2014-01-24 07:24:59,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ffcbaab5b820e54d32f7d47719ce9bdc70c147fe,ffcbaab5b820e54d32f7d47719ce9bdc70c147fe,"Fix ""string is locked"" error when a spec fails.
+
+When an integration spec failed, the GitshRunner thread wasn't correctly
+cleaned up, which meant all subsequent integration specs would also fail."
+georgebrock,2014-01-17 12:53:22,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6952aafe8bcd84ee051fc935e59eef3ded928550,6952aafe8bcd84ee051fc935e59eef3ded928550,Add the `:cd` command to the man page.
+georgebrock,2014-01-17 12:47:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/be3479584be40ada4bcbb02d704a85f200b18f47,be3479584be40ada4bcbb02d704a85f200b18f47,"Support tab completion for complex paths.
+
+Uses `File.expand_path` to support paths containing shorthand, like `~` and
+`..`."
+georgebrock,2014-01-17 09:06:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/06f668f7568760b2d8a49e2183c03399e2aa1855,06f668f7568760b2d8a49e2183c03399e2aa1855,"Add a :cd command to change directory
+
+The tests for this have to be able to change directory, but nested
+`Dir.chdir` blocks in a multi-threaded program emit an error. To get around
+this `spec/support/file_system.rb` has been altered to avoid using a block
+with Dir.chdir."
+georgebrock,2014-01-18 08:14:17,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e2dfc21156f9a1e2e8957195a016d7e5bec4b2ea,e2dfc21156f9a1e2e8957195a016d7e5bec4b2ea,"Extract delegate matcher.
+
+Testing delegated methods was repetitive."
+georgebrock,2014-01-17 16:45:46,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3dab396b600d844d2669fa884d8fe04dc42e6198,3dab396b600d844d2669fa884d8fe04dc42e6198,"Add Environment#fetch to avoid nils.
+
+Allows us to replace code like this:
+
+    env[:key] || DEFAULT_FOR_KEY
+
+With this:
+
+    env.fetch(:key, DEFAULT_FOR_KEY)
+
+Ta-da!"
+georgebrock,2014-01-17 14:16:30,https://api.github.com/repos/thoughtbot/gitsh/git/commits/04e68221ae9d483e8a0ccae40ed52ee08862e985,04e68221ae9d483e8a0ccae40ed52ee08862e985,Don't colour prompt by default.
+georgebrock,2014-01-03 13:11:52,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a08059cffe0fbb4fe01e1e78119299ae9c312823,a08059cffe0fbb4fe01e1e78119299ae9c312823,Add default colours to the prompt.
+georgebrock,2014-01-03 11:52:50,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fb47289866ac090f78c5ee32908ffa5ef5c24785,fb47289866ac090f78c5ee32908ffa5ef5c24785,"Change the default prompt to include the CWD.
+
+New default is: [CWD basename] [HEAD][sigil]"
+georgebrock,2014-01-03 11:26:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5d7fb7ccbcb16fcec40cde9356d34f4899384b02,5d7fb7ccbcb16fcec40cde9356d34f4899384b02,Add prompt customisation to the man page.
+georgebrock,2014-01-03 10:03:42,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6a9be33f0236ff2e8eb460491b5cb43cd7c60c4c,6a9be33f0236ff2e8eb460491b5cb43cd7c60c4c,"Support prompt changes via `:set gitsh.prompt ...`
+
+In order to support this, the Prompter class now depends on an Environment
+instead of a GitRepository."
+georgebrock,2014-01-03 09:20:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/afc0ba4ee1ccbcb3b6e83fa48cacad469fdfe377,afc0ba4ee1ccbcb3b6e83fa48cacad469fdfe377,Support custom prompt formats.
+georgebrock,2013-12-14 07:41:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b6a6ee63f34e679fb0bb4d9ca7a360846a6cc6bf,b6a6ee63f34e679fb0bb4d9ca7a360846a6cc6bf,Document git config variables.
+georgebrock,2013-12-14 00:34:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/72f984f02136a2ae9b926dd71f93b97ba39fd213,72f984f02136a2ae9b926dd71f93b97ba39fd213,Add temporary configuration to README.
+georgebrock,2013-12-14 00:27:59,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4c37e31cae60981cf68c0e7dd78a758baa08d01d,4c37e31cae60981cf68c0e7dd78a758baa08d01d,"Read git config with $variable syntax.
+
+For example:
+
+    commit -m ""Committed by $user.name"""
+georgebrock,2013-12-13 23:55:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ffb986f5901a2940e0aa20c5a5061a5d8fe0865b,ffb986f5901a2940e0aa20c5a5061a5d8fe0865b,"Pass environment variables to git commands.
+
+Setting any variable with a dot in the name will be passed on to git
+commands, for example:
+
+    :set foo.bar 1
+    commit
+
+Would execute:
+
+    git -c foo.bar=1 commit"
+georgebrock,2013-12-13 23:42:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e017bd1514d2a8d1a52803420d05fbe0a0163c77,e017bd1514d2a8d1a52803420d05fbe0a0163c77,Add unit coverage for Gitsh::GitCommand
+tomlea,2013-12-18 22:44:47,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1270abcd48c6899333a28c7333a2ba5d37dd1bf6,1270abcd48c6899333a28c7333a2ba5d37dd1bf6,"Remove redundant check.
+
+The regexp can include the starts_with check."
+georgebrock,2013-12-14 08:02:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/097eab9f569ade19ad685fb3924d28dccbc5160b,097eab9f569ade19ad685fb3924d28dccbc5160b,"Update the release instructions.
+
+It's necessary to run `autogen.sh` and `configure` before each release."
+georgebrock,2013-12-13 07:34:49,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6b325d5d52e7fcdbe772c7dc54ef8b1b4174de2f,6b325d5d52e7fcdbe772c7dc54ef8b1b4174de2f,"Improve code style
+
+* Prefer $() to ``
+* Quote expansions"
+georgebrock,2013-12-11 07:27:32,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6eaa6c467d141dd2f3ae1bf90012349fa4c15313,6eaa6c467d141dd2f3ae1bf90012349fa4c15313,"Re-vendorize if Gemfile.lock has changed.
+
+This is sort of reinventing make's functionality, but we need to vendorize
+at configure time so that we have a full list of the vendorized files to
+pass on to automake."
+georgebrock,2013-12-07 16:02:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/08d50170623580382a25e968df797e254843e1f3,08d50170623580382a25e968df797e254843e1f3,"Fix vendorize process.
+
+The improvements in 6f72fdd introduced a bug: If `vendor/gems` wasn't
+present when `./configure` was run, then `$vendorfile` was empty, and so
+`make dist` would vendorize and distribute the gems, but `make install`
+wouldn't install them.
+
+This change makes sure the vendorized gems are present in the configure
+script, and will vendorize them if needed. The vendorized gems are included
+in the distribution, so when installing from the tarball this is a no-op."
+georgebrock,2013-12-07 15:12:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5cb94c5e7e3dc1488cd42dc383cb5933aab6d300,5cb94c5e7e3dc1488cd42dc383cb5933aab6d300,"Get distcheck passing again.
+
+* The vendorize script needs to work relative to the current working
+  directory in order to support VPATH builds.
+* We need to remove `vendor/gems` as part of `make distclean`, since this is
+  created by `make dist`"
+georgebrock,2013-12-07 15:01:48,https://api.github.com/repos/thoughtbot/gitsh/git/commits/21043495e32fee5e9951146c8ce0777ea6f9720c,21043495e32fee5e9951146c8ce0777ea6f9720c,"Improve vendorized install.
+
+Installing via `nobase_dist_pkgdata_DATA` instead of using custom hooks.
+This has a few advantages:
+
+* `install-sh` takes care of the permissions for us.
+* We don't need to manually uninstall.
+* It's consistent with `lib/gitsh/Makefile.am`
+
+The big discovery here was `nobase_` which preserves subdirectory
+information, so the gems' files don't all end up directly in $pkgdatadir."
+georgebrock,2013-12-07 15:00:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/dc6e21bf616f061566971389040dbf569dfddad2,dc6e21bf616f061566971389040dbf569dfddad2,We don't care if vendor/gems already exists.
+georgebrock,2013-12-07 14:09:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/96070b2bb5f600ab3c75d385cb60af6851c1c785,96070b2bb5f600ab3c75d385cb60af6851c1c785,"Vendorize gems for distribution.
+
+This adds a vendor directory, whose Makefile knows how to vendorize all the
+gems from the `:dist` bundler group, and write a `setup.rb` file to update
+the `$LOAD_PATH` to include each gem.
+
+The `vendor/gems` target is marked `PHONY` to avoid it being included in
+`make all` and therefore happening on an end user's machine, however it is a
+dependency of `make dist` so the vendorized gems will be included in the
+distribution.
+
+Automake doesn't support installing directories, so we use the
+`install-data-hook` target to copy the gems directory to the right place
+(prefix/share/gitsh/gems)."
+georgebrock,2013-12-09 16:43:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fbecc210b477bb2030b8dfffd5e48bdc1c5a53cd,fbecc210b477bb2030b8dfffd5e48bdc1c5a53cd,Ignore leading whitespace on commands.
+georgebrock,2013-12-09 16:41:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8fbd2b5be1c383a991e1afd3136795a8ad75f1de,8fbd2b5be1c383a991e1afd3136795a8ad75f1de,"Re-order parser rules, root first."
+georgebrock,2013-12-06 21:08:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d80176eb80d5d04c6a6feb0e9991ac39baaffc6c,d80176eb80d5d04c6a6feb0e9991ac39baaffc6c,"Handle parse errors.
+
+Some current parse errors (underscores in git commands, unclosed strings)
+should be handled with a more robust parser. For now, we'll just output an
+error."
+georgebrock,2013-12-06 19:51:37,https://api.github.com/repos/thoughtbot/gitsh/git/commits/61c4114a630ce8e11a6f244a4089c839684a57ba,61c4114a630ce8e11a6f244a4089c839684a57ba,Tab completion for internal commands.
+georgebrock,2013-12-06 19:34:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/322c036812f79ffe803a92103b05ae65530ceb58,322c036812f79ffe803a92103b05ae65530ceb58,More internal command documentation.
+georgebrock,2013-12-06 16:12:52,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e7e5acd056619f558349128271b5c94cd63881fe,e7e5acd056619f558349128271b5c94cd63881fe,Document :set and :exit in the man page.
+georgebrock,2013-12-03 13:40:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2dec8dcd51792898b56042d56e80f508bbbfc067,2dec8dcd51792898b56042d56e80f508bbbfc067,Replace `exit` special case with `:exit` command.
+georgebrock,2013-12-03 10:46:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/628e4a2e990ac602a2a5a0ae8657ea55b6653086,628e4a2e990ac602a2a5a0ae8657ea55b6653086,"Tidy up the parser
+
+* Split up long lines
+* Replace simple matches with str or str.absent?"
+georgebrock,2013-12-03 10:39:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1e7701b2e629f70cf9536ac84e3dcc6e1ecdeec6,1e7701b2e629f70cf9536ac84e3dcc6e1ecdeec6,"Add escaping to string arguments.
+
+Also switches some `match` calls to `str` calls in the parser."
+georgebrock,2013-12-01 17:42:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/9614957f5c40f91b4fe3270da1bf9f1d129d41cb,9614957f5c40f91b4fe3270da1bf9f1d129d41cb,Don't raise on unknown internal commands.
+georgebrock,2013-12-01 17:19:03,https://api.github.com/repos/thoughtbot/gitsh/git/commits/12608dc299576bc566e383118a88745b4b98582e,12608dc299576bc566e383118a88745b4b98582e,Don't raise if :set is used incorrectly.
+georgebrock,2013-12-01 17:16:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a8a94e8dab22148dedfa72113131f117999e52ab,a8a94e8dab22148dedfa72113131f117999e52ab,"Small fixes to bin/gitsh
+
+* We need bundler now we have gems
+* Typo: $stderr not $stderror"
+georgebrock,2013-12-01 17:05:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cea69095b088071a95300971627341d64323535e,cea69095b088071a95300971627341d64323535e,"Environment variables and the :set command
+
+* Adds a `:set var value` command for setting variables
+* Adds a `$var` syntax for reading variables
+* Improves argument parsing (so `x"" y ""z` is read as `x y z` as it is in the
+  various Unix shells)"
+georgebrock,2013-12-01 16:23:52,https://api.github.com/repos/thoughtbot/gitsh/git/commits/979fe490fecc7e8be00b5a142577331d0fc67e09,979fe490fecc7e8be00b5a142577331d0fc67e09,"Give the Transformer access to the Environment.
+
+Right now, this lets us tidy up the GitCommand class. In future it will make
+variables much, much easier."
+georgebrock,2013-12-01 15:53:45,https://api.github.com/repos/thoughtbot/gitsh/git/commits/30d18887e87f95b2baa28de7143571214f78ebeb,30d18887e87f95b2baa28de7143571214f78ebeb,"Introduce Gitsh::Parser
+
+Rather than just passing a (shell escaped) string to the Git command, this
+introduces a more sophisticated parser. This sets the stage for advanced
+features like internal commands and variables."
+georgebrock,2013-12-01 14:35:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/34b7592719dd39a7db08b3a504d2abb7f6b6815c,34b7592719dd39a7db08b3a504d2abb7f6b6815c,"Replace GitDriver with GitCommand.
+
+Using a command object here gets us closer to what we need for a proper
+parser: The parser can produce GitCommand objects (and in future
+InternalCommand objects too) which can be executed."
+georgebrock,2013-12-01 14:27:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0a0c54a1f5eb7864517a78af1dd07845c4d8e5ab,0a0c54a1f5eb7864517a78af1dd07845c4d8e5ab,"Introduce a Gitsh::Interpreter
+
+This is currently just a level of indirection between Gitsh::CLI and
+Gitsh::GitDriver, but it gives us a place we can hook in a proper parser and
+internal command processing in future."
+georgebrock,2013-12-01 13:28:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a972167d374afd0b03c4e63defa2da09c528c62e,a972167d374afd0b03c4e63defa2da09c528c62e,"Introduce a Gitsh::Environment for shared state
+
+The output and error streams are required by a growing number of objects,
+along with things like the path to Git. Moving this into an `Environment`
+object will help a lot with introducing variables and internal commands."
+georgebrock,2013-12-10 18:48:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3c33051798074c995270e184c4dd54e84184f5a3,3c33051798074c995270e184c4dd54e84184f5a3,Add benefits to README (closes #39)
+georgebrock,2013-11-29 17:05:56,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2d874514abb2d9ea2e40ced7f240f7bd33a06597,2d874514abb2d9ea2e40ced7f240f7bd33a06597,Add tab completion for aliases.
+georgebrock,2013-11-29 16:24:36,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c473114e7cf3a447eb72a1f8a2a649a389b5f529,c473114e7cf3a447eb72a1f8a2a649a389b5f529,"Remove Signal.trap.
+
+This gets in the way of the custom Interrupt handling in Gitsh::CLI"
+georgebrock,2013-11-29 15:00:09,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ca5aa6779fd4ba15ba2bd39c25560ef04595bda5,ca5aa6779fd4ba15ba2bd39c25560ef04595bda5,Small release/install instruction fixes.
+georgebrock,2013-11-29 14:56:05,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a770bc71fd68b40659b8b5632fbb938529e36183,a770bc71fd68b40659b8b5632fbb938529e36183,Release version 0.2
+georgebrock,2013-11-29 14:55:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/cfc64a5fd3e9de36ca25fe85aeaa94f2107c4ca0,cfc64a5fd3e9de36ca25fe85aeaa94f2107c4ca0,Version bump: 0.2
+georgebrock,2013-11-25 20:36:57,https://api.github.com/repos/thoughtbot/gitsh/git/commits/2d106d91612cac3e8bee3677ee7d44c1839c9205,2d106d91612cac3e8bee3677ee7d44c1839c9205,"Add a make target to release a new version.
+
+`make release` will:
+
+1. Build a new release tarball
+2. Calculate the SHA1
+3. Add the new tarball to the gh-pages branch
+4. Update the Homebrew formula
+5. Update the Arch PKGBUILD
+6. Push all of the changes
+7. Clean up after itself"
+georgebrock,2013-11-29 13:56:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d56988f4a9c7c9980b2fdd932ecce6add267ca22,d56988f4a9c7c9980b2fdd932ecce6add267ca22,"Add the new command line options to the man page.
+
+This may not be the best use of mandoc: `Fl -git` to produce `--git` feels
+like a bit of a hack, but since long options are a GNU addition and not
+POSIX compliant they might not be supported by mandoc at all."
+georgebrock,2013-11-29 13:32:36,https://api.github.com/repos/thoughtbot/gitsh/git/commits/73edea830e8918d5d998c789cdcbe171b22429e4,73edea830e8918d5d998c789cdcbe171b22429e4,"Support `--git` and `--help` options
+
+* Adds a `--git` option which allows the user to specify a custom git
+  command (e.g. to use hub instead of git, which closes #24)
+* Adds a `--help` command, because parsing the `--git` option involved
+  bringing in OptionParser which generates the help message for us."
+georgebrock,2013-11-25 18:55:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/de4390f3f2494b12ba16b35574f2259643be90a0,de4390f3f2494b12ba16b35574f2259643be90a0,"Trap SIGINT
+
+When the user presses ^C the shell should not exit but instead should cancel
+the current command and show an empty prompt below it.
+
+This commit also introduces mocha+bourne, which provides for better syntax
+for yielding different results from the same method."
+georgebrock,2013-11-25 19:03:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/450579eed9fa77a1383d398d02436b758d83eee2,450579eed9fa77a1383d398d02436b758d83eee2,"Compose the GitDriver factory in Gitsh::CLI
+
+The unit specs for `Gitsh::CLI` would function more cleanly if the git
+driver were composed.
+
+Since the arguments list for the initializer is growing too large, pass a
+hash instead of multiple arguments."
+pbrisbin,2013-11-22 15:53:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c3fdee5895fc4ccef9299dfabb7dc492e10d6c29,c3fdee5895fc4ccef9299dfabb7dc492e10d6c29,"Add Arch PKGBUILD
+
+This installs version 0.1 from the tarball, and installs the LICENSE file
+manually.
+
+The LICENSE file is not typically installed by `make install` but is
+required for Arch."
+georgebrock,2013-11-22 16:20:15,https://api.github.com/repos/thoughtbot/gitsh/git/commits/380a8795d0c5cd3e7ef1c94d9e3d050d7cae391b,380a8795d0c5cd3e7ef1c94d9e3d050d7cae391b,"Add support for --version
+
+* When invoked with no arguments, run as before
+* When invoked with --version, output the version and exit
+* When invoked with any other arguments, output a usage message and exit"
+georgebrock,2013-11-23 12:36:20,https://api.github.com/repos/thoughtbot/gitsh/git/commits/aa21756a57c52ef79715f70ca4840161eade7652,aa21756a57c52ef79715f70ca4840161eade7652,"Prefer system ruby, but allow rvm, rbenv, etc.
+
+Prefer system ruby, by searching the POSIX $PATH first (getconf PATH), but
+allow any ruby on the user's $PATH.
+
+Emits a warning if the ruby was under $HOME."
+georgebrock,2013-11-23 22:08:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/966c93fe18ef00a433d9f49f184c81b5f6f7ffb1,966c93fe18ef00a433d9f49f184c81b5f6f7ffb1,"Exit cleanly on SIGINT
+
+Closes #16"
+georgebrock,2013-11-23 21:48:35,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6d98e4dce64ef785a54551e4796120756d4b740e,6d98e4dce64ef785a54551e4796120756d4b740e,"$prefix/share/gitsh/ruby not $prefix/share/ruby
+
+Apparently the convention is to only install things under share/$PACKAGE
+unless there's already an established place for that kind of file (like
+share/man).
+
+Closes #20"
+georgebrock,2013-11-23 12:35:44,https://api.github.com/repos/thoughtbot/gitsh/git/commits/5c1e1e369d709e2002deac1f1c2d19f424192a6b,5c1e1e369d709e2002deac1f1c2d19f424192a6b,Include README and LICENSE in the distribution.
+georgebrock,2013-11-22 12:13:12,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8066f2959c334c82553a55fc8d6125c9259283af,8066f2959c334c82553a55fc8d6125c9259283af,Build version.rb using the version from autoconf
+georgebrock,2013-11-22 09:03:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fd395247c25b2cd69ecddd24936d8b281ba3d8bc,fd395247c25b2cd69ecddd24936d8b281ba3d8bc,"Remove wildcard for portability
+
+The argument against wildcards is that the make the build unpredictable,
+however this isn't a compiled program, so we're probably safe using
+wildcards. Putting them in autoconf.ac does get around the portability
+issue, though."
+georgebrock,2013-11-22 07:14:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e86dacffcc0d8addf883b6c5c452f69044baf79d,e86dacffcc0d8addf883b6c5c452f69044baf79d,"Add top-level error handling.
+
+Having separate development and distribution binaries has nice error
+handling implications: We can let Ruby produce stack traces in the
+development binary, but produce nice error messages in the distribution
+version."
+georgebrock,2013-11-22 07:07:26,https://api.github.com/repos/thoughtbot/gitsh/git/commits/94263b8995c77a2536715a3375cd1f4f4b11024c,94263b8995c77a2536715a3375cd1f4f4b11024c,"Separate development and production bin files.
+
+In development, we can use bin/gitsh to run the development version of the
+app. When we build a distribution we use src/gitsh.in."
+georgebrock,2013-11-22 01:24:35,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3936fed73093a3fed9e7d5120013605d1f3156ab,3936fed73093a3fed9e7d5120013605d1f3156ab,"Fix problems reported by `make distcheck`
+
+* Add `bin/gitsh.in` to the distribution using `EXTRA_DIST`
+* Make sure `bin/gitsh` is removed by `make distclean`
+* Remove current working directory assumption when building `bin/gitsh`
+* Use `$(wildcard ...)` to add files from `lib/gitsh`. Note that this could
+  cause portability issues, because it will only work with GNU Make. See:
+  http://www.gnu.org/software/automake/manual/html_node/Wildcards.html"
+georgebrock,2013-11-22 01:04:40,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0e0c9db665096786dc02a13deb4325febe6b1d1a,0e0c9db665096786dc02a13deb4325febe6b1d1a,"Include relevant files in `make dist` tarball.
+
+Adding the `dist_` prefix to the various automake variables marks those
+files for inclusion in the tarball generated by `make dist`."
+georgebrock,2013-11-22 00:45:29,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d02ea1b9388dd7eead5d49878ad4d04a7bb17a7f,d02ea1b9388dd7eead5d49878ad4d04a7bb17a7f,"Build bin/gitsh with make not configure
+
+This is based on the advice here:
+http://www.gnu.org/software/autoconf/manual/autoconf.html#Installation-Directory-Variables
+
+In order to support a prefix set by either configure or make, the prefix
+should not be hard coded in a file generated by configure (other than a
+Makefile).
+
+Note: This would not be necessary if we went back to installing the Ruby
+scripts in Ruby's `sitelibdir`. See 0be4a3f645dd9bedb94d3fd8d5ef230af02b9b44"
+georgebrock,2013-11-22 00:08:53,https://api.github.com/repos/thoughtbot/gitsh/git/commits/0be4a3f645dd9bedb94d3fd8d5ef230af02b9b44,0be4a3f645dd9bedb94d3fd8d5ef230af02b9b44,"Install Ruby scripts under $prefix/share/ruby
+
+This has a few advantages over putting them in Ruby's `sitelibdir`:
+
+1. When using a custom prefix (e.g. the way Homebrew does), all of the files
+   will end up under that one prefix.
+2. We're no longer overloading the semantics of dist_pkgdata_DATA (although,
+   arguably we could have switched to using pkgruby_SCRIPTS without changing
+   the install target directory)
+3. We can't `require 'gitsh/foo'` from other Ruby programs without modifying
+   the `$LOAD_PATH` first. Since we're distributing an application, not a
+   library, it seemed strange for the internals to be globally available. If
+   we wanted that behaviour we should split out the library code into a gem.
+
+The nested `eval ""eval ...""` calls are to account for the various $*dir
+variables being defined in terms of other variables. The prefix check is
+copied from the generated configure file, but needs to be done earlier for
+these evals to work. Based on this mailing list post:
+http://lists.gnu.org/archive/html/autoconf/2004-09/msg00040.html"
+georgebrock,2013-11-21 20:03:41,https://api.github.com/repos/thoughtbot/gitsh/git/commits/1e7d822a066499d67c74ebc6b84ae924ead6de0b,1e7d822a066499d67c74ebc6b84ae924ead6de0b,Make `bin/gitsh` executable.
+georgebrock,2013-11-21 19:42:33,https://api.github.com/repos/thoughtbot/gitsh/git/commits/dd1084717e64d0f5f2236195372e4ce93df5ebe9,dd1084717e64d0f5f2236195372e4ce93df5ebe9,"Use Ruby's sitelibdir.
+
+This seems to be more appropriate, since it's where things like Rubygems but
+their files."
+georgebrock,2013-11-21 19:39:04,https://api.github.com/repos/thoughtbot/gitsh/git/commits/bb8d0a069dc95147c9803951c6c5d617d44c1379,bb8d0a069dc95147c9803951c6c5d617d44c1379,"Add environment variables to `configure --help`
+
+This is done with AC_ARG_VAR. The documentation implies that I also have to
+call AC_SUBST for these variables, although this doesn't seem to have any
+practical effect that I can see."
+georgebrock,2013-11-21 19:38:07,https://api.github.com/repos/thoughtbot/gitsh/git/commits/76eac772570fe0a6314da685ea8cc6741594a9f6,76eac772570fe0a6314da685ea8cc6741594a9f6,"Allow RUBY_LIB to be overridden.
+
+If there is a RUBY_LIB environment variable, we'll use that instead of
+asking Ruby what to use."
+georgebrock,2013-11-21 19:23:48,https://api.github.com/repos/thoughtbot/gitsh/git/commits/4ce9d1375ff768372cfdd0598e88448895b70ab9,4ce9d1375ff768372cfdd0598e88448895b70ab9,Install Ruby library files.
+georgebrock,2013-11-21 18:48:40,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c26328d70bda4f8c53812c700b6d66ecc1502505,c26328d70bda4f8c53812c700b6d66ecc1502505,"Add autogen.sh
+
+The autotools setup incantation is getting lengthy and complex."
+georgebrock,2013-11-21 16:34:39,https://api.github.com/repos/thoughtbot/gitsh/git/commits/6903c34d5b99004450656c400c87ef44f853d574,6903c34d5b99004450656c400c87ef44f853d574,"Build bin/gitsh using a autoconf template
+
+This is slightly problematic: The generated bin file isn't executable. It
+needs to be chmoded at some point."
+georgebrock,2013-11-21 10:45:51,https://api.github.com/repos/thoughtbot/gitsh/git/commits/d468c25fa57d16dbe8f93f1cb38d23e4d7a0bfba,d468c25fa57d16dbe8f93f1cb38d23e4d7a0bfba,Add autoconf information to the README.
+georgebrock,2013-11-21 10:37:38,https://api.github.com/repos/thoughtbot/gitsh/git/commits/7fec932daa60182ce7585087e8ff7fc89f958a99,7fec932daa60182ce7585087e8ff7fc89f958a99,"Detect Ruby version in configure script
+
+The configure script will try to find ruby on the $PATH, or use the path to
+a ruby binary provided in the $RUBY environment variable.
+
+./configure will fail if the Ruby version is < 2.0"
+georgebrock,2013-11-21 10:36:53,https://api.github.com/repos/thoughtbot/gitsh/git/commits/558a3dddd1fe6b839d01ac13beb43ed786e45e16,558a3dddd1fe6b839d01ac13beb43ed786e45e16,Basic autotools setup.
+georgebrock,2013-11-18 16:09:58,https://api.github.com/repos/thoughtbot/gitsh/git/commits/fbb48053377539a4e272ee0a152251a1dbf894e6,fbb48053377539a4e272ee0a152251a1dbf894e6,Treat an empty command as `status`
+mike-burns,2013-11-19 13:51:43,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ac8cc96389c6e49cd41a78574632a49992794d54,ac8cc96389c6e49cd41a78574632a49992794d54,"Add a manpage for gitsh(1)
+
+A quick manpage using mandoc format explaining gitsh(1) in brief."
+georgebrock,2013-11-18 16:10:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/ad31760d08550f38efc37f22318af08d8f67efea,ad31760d08550f38efc37f22318af08d8f67efea,"Fix test compatibility with my git config.
+
+* When I run `git checkout -b` I get a message on sterr about switching to a
+  new branch.
+* I have a custom `git-browse` command which conflicted with the
+  `git-branch` tab completion test."
+mike-burns,2013-11-18 15:50:18,https://api.github.com/repos/thoughtbot/gitsh/git/commits/134ec152ec96543060eb273c341ca6b5499e3cc7,134ec152ec96543060eb273c341ca6b5499e3cc7,"Run the git command directly sans shell
+
+In which George takes away Mike's freedom.
+
+This prevent things like `diff | gvim -R -`."
+mike-burns,2013-11-18 10:20:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/05bee00824667f55aa88e2d760723597de378acf,05bee00824667f55aa88e2d760723597de378acf,"Add tab completion
+
+Adds tab completion for git commands, heads, and file system paths.
+
+Also significantly improves the integration tests:
+
+* `FakeReadline` now wraps the real `Readline`
+* `expect(gitsh).to output ...` only considers the most recent command's
+  output
+* `expect(gitsh).to prompt_with ...` only considers the most recent
+  prompt
+* There are no longer threading-related `Dir.cwd` errors when an
+  integration test fails
+* When waiting for `GitshRunner#type` to finish, we wait for the next
+  prompt not for output (this way we're blocking on a queue, and we
+  support commands with no output)
+* Improved failure messages for all of the `GitshRunner` RSpec matchers
+* Added a `DEBUG` environment variable which causes the gitsh session in
+  integration tests to be shown"
+mike-burns,2013-11-18 09:30:24,https://api.github.com/repos/thoughtbot/gitsh/git/commits/e33a13188900bc6f63dc9b93d10819a55f772a3c,e33a13188900bc6f63dc9b93d10819a55f772a3c,"Require Ruby 2.0.0
+
+In Ruby versions < 2.0, `Process.spawn` does not work with a `Tempfile`.
+We use a `Tempfile` from the tests.
+
+https://www.ruby-forum.com/topic/4020466"
+georgebrock,2013-11-15 14:45:13,https://api.github.com/repos/thoughtbot/gitsh/git/commits/624f0cbff8ba2bb04f53ab843c01ca50e564fd06,624f0cbff8ba2bb04f53ab843c01ca50e564fd06,"Color support in the prompt
+
+Only show colors in the prompt if the terminal supports it, as reported by
+`tput`.
+
+This introduces a `Color` module."
+georgebrock,2013-11-09 20:06:31,https://api.github.com/repos/thoughtbot/gitsh/git/commits/00388c8a1e1898f4dc381429549bf3004a5aa5d2,00388c8a1e1898f4dc381429549bf3004a5aa5d2,Improve naming
+georgebrock,2013-11-09 19:55:21,https://api.github.com/repos/thoughtbot/gitsh/git/commits/c8d235e8429163769c8ec6e19f98798175e97739,c8d235e8429163769c8ec6e19f98798175e97739,RSpec matchers for more readable integration specs.
+georgebrock,2013-11-09 19:49:28,https://api.github.com/repos/thoughtbot/gitsh/git/commits/a184697dec9ff3065c471df25a944f340f33ef86,a184697dec9ff3065c471df25a944f340f33ef86,"Test for current prompt, not last prompt."
+georgebrock,2013-11-08 14:05:19,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b32d79c96e5055a9ec21fb81b48efaac4d09a240,b32d79c96e5055a9ec21fb81b48efaac4d09a240,"Vary the prompt based on the repo's status.
+
+The branch naming is based on the official Git bash-completion script's
+__git_ps1 function. The status indicator is based on Mike Burns' original
+Python implementation."
+georgebrock,2013-11-08 10:00:10,https://api.github.com/repos/thoughtbot/gitsh/git/commits/3cceb41532d17cd5b3fe108d05fcf714c68e1792,3cceb41532d17cd5b3fe108d05fcf714c68e1792,"Wait based on IO offset, not contents."
+georgebrock,2013-11-08 09:38:50,https://api.github.com/repos/thoughtbot/gitsh/git/commits/32a3bd964368248b55a2d661866d11644a559aa5,32a3bd964368248b55a2d661866d11644a559aa5,"Replace Open3 with Process.spawn
+
+This lets us run interactive things (pagers, editors, ...) when we're
+connected to a TTY, but still redirect to files in the test environment."
+georgebrock,2013-11-02 09:31:27,https://api.github.com/repos/thoughtbot/gitsh/git/commits/b1b4bc2bd6cc603d14b09a2c50000f878bca5b11,b1b4bc2bd6cc603d14b09a2c50000f878bca5b11,Some testing infrastructure & basic functionality
+georgebrock,2013-11-02 09:26:42,https://api.github.com/repos/thoughtbot/gitsh/git/commits/8d38377726f77f1c644f1cbb5490369bbf432ba3,8d38377726f77f1c644f1cbb5490369bbf432ba3,LICENSE and README

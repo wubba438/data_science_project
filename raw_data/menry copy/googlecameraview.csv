@@ -1,0 +1,283 @@
+cameraview,[DEPRECATED] Easily integrate Camera features into your Android app
+username,timestamp,url,sha,message
+yaraki,2019-05-29 07:04:19,https://api.github.com/repos/google/cameraview/git/commits/68947cc1643e7434250e099f38f346eae9c46339,68947cc1643e7434250e099f38f346eae9c46339,"Deprecate
+
+Change-Id: I9f1d25526299da9efef0e7440bff426a416a18d5"
+yaraki,2017-07-28 06:30:38,https://api.github.com/repos/google/cameraview/git/commits/ea0f4e2bb39fb29e510e84cb30bef80696464a28,ea0f4e2bb39fb29e510e84cb30bef80696464a28,"Update dependencies
+
+MinSdkVersion is bumped to 14.
+
+Change-Id: I3b196b6e7c1a2b845dd67bd0dbce9915c2b5a623"
+mkotyk,2017-06-12 10:35:36,https://api.github.com/repos/google/cameraview/git/commits/3eaeac09a7f084463a94850c763d21fdb4c18fce,3eaeac09a7f084463a94850c763d21fdb4c18fce,"Camera1 API: Split display orientation calculation from camera rotation calculation (#115)
+
+- Adjusted camera rotation to flip when landscape
+- Always apply parameters when opening a camera"
+yaraki,2017-04-13 06:21:40,https://api.github.com/repos/google/cameraview/git/commits/9bbe07ba44747e13b5ed85aaafddc52b1111ac00,9bbe07ba44747e13b5ed85aaafddc52b1111ac00,"Fix aspect ratio of taken pictures
+
+Fixes #127
+Fixes #78
+Fixes #46
+Fixes #20
+
+Change-Id: I93f62823f3c1fd8a28ee4b659a9a5b7c81f183fc"
+yaraki,2017-04-13 04:56:57,https://api.github.com/repos/google/cameraview/git/commits/0c87b4eb38e3072326a4c7cf7c19ce0dc09d4b49,0c87b4eb38e3072326a4c7cf7c19ce0dc09d4b49,"Fix demo layout
+
+Change-Id: Ic8a206ada427889e63264659bf6f13c88033d14a"
+yaraki,2017-04-11 08:16:33,https://api.github.com/repos/google/cameraview/git/commits/c3f7e7dbd2afcb86ef9cf31eff6b345da4ea47a0,c3f7e7dbd2afcb86ef9cf31eff6b345da4ea47a0,"Merge ""Fix reversed portrait"""
+yaraki,2017-04-11 07:38:18,https://api.github.com/repos/google/cameraview/git/commits/0af6ef4be164bb325d30a851436aa923529b9d1a,0af6ef4be164bb325d30a851436aa923529b9d1a,"Revert ""The demo app now works in multi-window mode""
+
+This reverts commit e8ae1ec05323b6a3b3fc1ad66b460da7333b7107.
+
+Reason for revert: <INSERT REASONING HERE>
+
+Change-Id: I168629722af041d95cdd65bb603e949f17cea1f7"
+yaraki,2017-04-11 07:18:28,https://api.github.com/repos/google/cameraview/git/commits/c9394ca24b828bfbfccec184e55ec6c41f9535e7,c9394ca24b828bfbfccec184e55ec6c41f9535e7,"Fix reversed portrait
+
+Fix preview in reversed portrait mode on tablets.
+
+Change-Id: I89bff8fc5d4f72026bcb1dbe8ba3e8e0713512bf"
+yaraki,2017-04-11 06:40:05,https://api.github.com/repos/google/cameraview/git/commits/e8ae1ec05323b6a3b3fc1ad66b460da7333b7107,e8ae1ec05323b6a3b3fc1ad66b460da7333b7107,"The demo app now works in multi-window mode
+
+Also change the usage description in README.md.
+
+Change-Id: I2d97e73291bbf8159aabbed419dd47f07a558d81"
+yaraki,2017-03-24 07:48:27,https://api.github.com/repos/google/cameraview/git/commits/cd7405ca6168ad23a41d1a57cb58cd3515efb9f2,cd7405ca6168ad23a41d1a57cb58cd3515efb9f2,"Fix preview aspect ratios
+
+Change-Id: I140883c9b6e22d12670e9c7e8278103f3b21bc68"
+FabinPaul,2017-03-24 07:53:04,https://api.github.com/repos/google/cameraview/git/commits/6ceaf867d34cd4af6761c63c804cf086609544b0,6ceaf867d34cd4af6761c63c804cf086609544b0,"fix: get Supported AspectRatio depends on supported picture size (#124)
+
+getSupportedAspectRatio returns aspect ratios of preview sizes for which
+picture sizes doesn't exist. This results in NullPointerException. So
+getSuportedAspectRatio now depends on suported Picture Sizes
+Resolves: #88"
+yaraki,2017-03-24 05:28:13,https://api.github.com/repos/google/cameraview/git/commits/fae69445dbb25bea73d04f26603586b779a5f438,fae69445dbb25bea73d04f26603586b779a5f438,"Move getDisplay ViewCompat2 with ViewCompat
+
+ViewCompat.getDisplay() is now available.
+
+Change-Id: I7cbe2767bca098abe93a056bdfe3e26afa114709"
+Alec-DeSouza,2017-03-24 03:45:59,https://api.github.com/repos/google/cameraview/git/commits/07e16eab5e12ddf7624681060f8809290eb07a9e,07e16eab5e12ddf7624681060f8809290eb07a9e,"Fixed layout issues with the capture FAB in the demo (#120)
+
+* Fixed layout issues with the capture FAB in the demo
+
+* Reformatted code"
+lytefast,2017-03-13 07:52:50,https://api.github.com/repos/google/cameraview/git/commits/ab3b778b721e81c1d5f8c79e660d8058e7f6f232,ab3b778b721e81c1d5f8c79e660d8058e7f6f232,"Fix: Cannot process multiple parallel `takePicture`. Need to wait for on request to finish first. (#97)
+
+Prev to this change, Samsung Galaxy S4 crashes in demo app due to this error:
+```
+[CAM-BACK]-ERR(virtual android::status_t android::ExynosCameraHWImpl::takePicture()):capture already in progress
+java.lang.RuntimeException: takePicture failed
+  at android.hardware.Camera.native_takePicture(Native Method)
+  at android.hardware.Camera.takePicture(Camera.java:1338)
+  at com.google.android.cameraview.Camera1.takePictureInternal(Unknown Source)
+  at com.google.android.cameraview.Camera1$2.onAutoFocus(Unknown Source)
+```"
+elevenfive,2017-03-13 07:45:44,https://api.github.com/repos/google/cameraview/git/commits/07a9806e0733f599c75e305b08c0881d2bf89e08,07a9806e0733f599c75e305b08c0881d2bf89e08,"Update build (#100)
+
+- Upgrade Gradle to 3.3
+- Update support lib to 25.2.0
+- Update BT to 25.0.2
+- Update Android Gradle Plugin to 2.3.0"
+andreidiaconu,2017-03-13 07:22:16,https://api.github.com/repos/google/cameraview/git/commits/f99835bc5417fa169555c4931b1cbc6de3a8086a,f99835bc5417fa169555c4931b1cbc6de3a8086a,Fix preview size issue. It is now below or equal to the 1080p Camera2 guarantee (#117)
+yaraki,2017-01-23 06:11:23,https://api.github.com/repos/google/cameraview/git/commits/475546b638d5dbfddfcb5ac4c694185a0c7b73ba,475546b638d5dbfddfcb5ac4c694185a0c7b73ba,"Fix auto focus on Camera1
+
+Fix auto focus on some devices that run with Camera1 API.
+
+Resolves #75
+Resolves #80
+
+Change-Id: I83d2b2d2c76f09373fc2efe4a6161a2863c90d5c"
+lexer,2017-01-23 06:03:24,https://api.github.com/repos/google/cameraview/git/commits/07b948b2fffe2d410a71746aa9f4d4b680ca42b6,07b948b2fffe2d410a71746aa9f4d4b680ca42b6,fix preview centering (#82)
+guhongya,2016-12-20 08:05:30,https://api.github.com/repos/google/cameraview/git/commits/70799b7b03bfcd7265ce4856dcc96af7cd49223f,70799b7b03bfcd7265ce4856dcc96af7cd49223f,fix bugs when sdk>=21 and camera fall back toCamera1 (#71)
+yaraki,2016-12-15 05:41:38,https://api.github.com/repos/google/cameraview/git/commits/aa7dcf67e3bd4cb1052c865a344ea40882924017,aa7dcf67e3bd4cb1052c865a344ea40882924017,"Aspect ratio change invokes layout
+
+Calling setAspectRatio now requests layout if necessary (#20).
+
+Change-Id: Ie4f7be899be6f222850d89f2593988aa5d312f89"
+yaraki,2016-12-13 08:29:01,https://api.github.com/repos/google/cameraview/git/commits/061e4a39f0b42ac4b65e0e146d52edc6c6981139,061e4a39f0b42ac4b65e0e146d52edc6c6981139,"Change the aspect ratio in the demo app
+
+This also enhances the corresponding test.
+
+Change-Id: I5265b499823763845c1c0744d5fd04a44ae583b3"
+yaraki,2016-12-09 05:26:08,https://api.github.com/repos/google/cameraview/git/commits/d2ceaa7200ca5340daba7843c6b894632903cd51,d2ceaa7200ca5340daba7843c6b894632903cd51,"Bump up the dependencies
+
+Change-Id: Iacdc420fca07b550b88a96132aeb51229526f59c"
+yaraki,2016-12-07 06:22:47,https://api.github.com/repos/google/cameraview/git/commits/f0eef9ade1969f9dafef7138172468e409c3210c,f0eef9ade1969f9dafef7138172468e409c3210c,"Fall back to Camera1 when Camera2 uses legacy
+
+Resolves #56
+
+Change-Id: I459f989f8c6c2752ee69a47e88c685f0d4f7af26"
+yaraki,2016-12-07 04:28:20,https://api.github.com/repos/google/cameraview/git/commits/5dd1fedf95d928d3846a2bed3d7928d9c13b39f6,5dd1fedf95d928d3846a2bed3d7928d9c13b39f6,"Auto exposure
+
+Move ahead when AE state is converged.
+
+Change-Id: I4de66e559fb7d2c205ec83f1b1a08bed0db2c80f"
+yaraki,2016-10-21 09:59:11,https://api.github.com/repos/google/cameraview/git/commits/9e0e84569ff1544da20f9f62c25a9249a871a566,9e0e84569ff1544da20f9f62c25a9249a871a566,"Add format settings to the project
+
+Change-Id: Id45e05582426ecf29d73a4b4ee60d8858cd30c2c"
+dumazy,2016-10-21 08:31:16,https://api.github.com/repos/google/cameraview/git/commits/f230fd89b518c85bbd24116dd76acb54e6f6808f,f230fd89b518c85bbd24116dd76acb54e6f6808f,Add null check on mImageReader (#37)
+yaraki,2016-10-14 02:55:01,https://api.github.com/repos/google/cameraview/git/commits/cd46df84e94545bebe1939afa09a68be6a7ac8be,cd46df84e94545bebe1939afa09a68be6a7ac8be,"Merge remote-tracking branch 'goog/github/master' into fix-am
+
+Change-Id: Ib500a7a3bb1c1f24a2a6c86c3edb2da8f00b2c91"
+vanniktech,2016-10-14 02:22:38,https://api.github.com/repos/google/cameraview/git/commits/e5eddecb7a51fffa03e3edc86f07a0cc4aa1e850,e5eddecb7a51fffa03e3edc86f07a0cc4aa1e850,Remove creation of synthetic accessor method. (#28)
+yaraki,2016-09-30 02:42:08,https://api.github.com/repos/google/cameraview/git/commits/f0dddd7b6eeb8aa3fa67957896c5f51f12ea6a1f,f0dddd7b6eeb8aa3fa67957896c5f51f12ea6a1f,"Use numbers instead of Build.VERSION_CODES.*
+
+Sort some API Level dependent codes. This also fixes crash on Galaxy
+Nexus running API Level 14.
+
+Change-Id: I09f0c3bb218ec24bc71991a7be9f84811047341e"
+ivacf,2016-10-04 02:19:12,https://api.github.com/repos/google/cameraview/git/commits/ebc177251d5980a7351c7aa8371902cace5c63b3,ebc177251d5980a7351c7aa8371902cace5c63b3,"Fixes crash after accepting permission dialog (#23)
+
+* Fixes google/cameraview#1 - Camera crashes after accepting permission dialog
+
+* Update try catch style"
+yaraki,2016-09-29 02:39:52,https://api.github.com/repos/google/cameraview/git/commits/c4af56fbefbec9d22080e708e75f3034aa1c3d4f,c4af56fbefbec9d22080e708e75f3034aa1c3d4f,"Update README.md
+
+The minimum SDK version is now 9.
+
+Change-Id: Ic70149ddc04cf23fe0b99196a3083a242cfbc7a7"
+yaraki,2016-09-12 16:11:32,https://api.github.com/repos/google/cameraview/git/commits/f40403051a7089c01b7bb47acf2bb9bc5e5012a1,f40403051a7089c01b7bb47acf2bb9bc5e5012a1,"Add support for SurfaceView
+
+Lower the minSdkVersion to 9.
+
+Resolves #14
+
+Change-Id: I0a4c07cef5293fe8adf3a5c31f5e767dc56b4b37"
+yaraki,2016-09-21 01:43:34,https://api.github.com/repos/google/cameraview/git/commits/906c4dad3b70348df3a52575c672f1b7713fafaa,906c4dad3b70348df3a52575c672f1b7713fafaa,"Merge pull request #19 from NashLegend/master
+
+getHighResolutionOutputSizes() cause NPE"
+yaraki,2016-09-21 01:38:22,https://api.github.com/repos/google/cameraview/git/commits/37e6a67e4f27c041de529dfdcbd112363ff91821,37e6a67e4f27c041de529dfdcbd112363ff91821,"Merge ""Bump up the version of support libraries"""
+yaraki,2016-09-21 01:38:11,https://api.github.com/repos/google/cameraview/git/commits/8308a8f58530a643ce9f2da5d0581b8dd4b682cd,8308a8f58530a643ce9f2da5d0581b8dd4b682cd,"Merge ""Hide private resources"""
+NashLegend,2016-09-19 09:24:51,https://api.github.com/repos/google/cameraview/git/commits/4b52bc88788b113f8b21e8c64701ff3802d5cab5,4b52bc88788b113f8b21e8c64701ff3802d5cab5,StreamConfigurationMap.getHighResolutionOutputSizes() may returns null and cause NPE
+yaraki,2016-09-19 02:37:59,https://api.github.com/repos/google/cameraview/git/commits/3e87fe323182c6891d75d0690ad03fd6b1e36e3f,3e87fe323182c6891d75d0690ad03fd6b1e36e3f,"Merge pull request #9 from MarsVard/master
+
+Try to get a high-res photo"
+MarsVard,2016-09-17 08:17:26,https://api.github.com/repos/google/cameraview/git/commits/b9d6ed50553f64da8b4b99af638bccad6c9a6723,b9d6ed50553f64da8b4b99af638bccad6c9a6723,formatted changes
+MarsVard,2016-09-17 08:16:18,https://api.github.com/repos/google/cameraview/git/commits/d14bc0ea94ebb02e69e798a77042f5efdc1a81d4,d14bc0ea94ebb02e69e798a77042f5efdc1a81d4,"Revert ""formatted code""
+
+This reverts commit 016aafb146a3beea461a359e5a89ebd16eddb4a1."
+MarsVard,2016-09-17 08:02:46,https://api.github.com/repos/google/cameraview/git/commits/016aafb146a3beea461a359e5a89ebd16eddb4a1,016aafb146a3beea461a359e5a89ebd16eddb4a1,formatted code
+yaraki,2016-09-16 22:47:46,https://api.github.com/repos/google/cameraview/git/commits/c4715789dc5dc0d75aa0924e44cbf7dcf9c7311a,c4715789dc5dc0d75aa0924e44cbf7dcf9c7311a,"Merge pull request #16 from kevinpelgrims/storage_permission
+
+Storage permission"
+kevinpelgrims,2016-09-16 22:45:08,https://api.github.com/repos/google/cameraview/git/commits/914ecde87df909d699abffac954272c14cf5659c,914ecde87df909d699abffac954272c14cf5659c,"Merge branch 'master' into storage_permission
+
+Conflicts:
+	demo/src/main/AndroidManifest.xml"
+yaraki,2016-09-16 21:47:11,https://api.github.com/repos/google/cameraview/git/commits/4fb7a3350977b3afb5f78dbdaf04655dba63e977,4fb7a3350977b3afb5f78dbdaf04655dba63e977,"Bump up the version of support libraries
+
+Change-Id: I78d48cea7aa6767e3ddb9c3f9a803126b67740e1"
+yaraki,2016-09-16 20:31:32,https://api.github.com/repos/google/cameraview/git/commits/25f51635c8f6d52d528bcc4eac8a99c8b0f9db50,25f51635c8f6d52d528bcc4eac8a99c8b0f9db50,"Hide private resources
+
+Resolves #13
+
+Change-Id: I2f6f30d6b5d59ef5e9463ab06e949896e4dd170a"
+yaraki,2016-09-16 17:35:18,https://api.github.com/repos/google/cameraview/git/commits/3942c49b24e17b77567ac43d175827868f2af6ae,3942c49b24e17b77567ac43d175827868f2af6ae,"Merge pull request #15 from kevinpelgrims/camera_permission
+
+Move camera permission to the library module"
+kevinpelgrims,2016-09-16 07:32:57,https://api.github.com/repos/google/cameraview/git/commits/246bb6bc9d3078d34b62a075a64f317f7e999ff7,246bb6bc9d3078d34b62a075a64f317f7e999ff7,"Remove all code related to requesting the storage permission
+
+We do not need to request this permission on API 19 and up to make
+use of getExternalFilesDir()."
+kevinpelgrims,2016-09-16 07:13:39,https://api.github.com/repos/google/cameraview/git/commits/cc95d3bdf32f8192b81f26c7e29ed751874db6ab,cc95d3bdf32f8192b81f26c7e29ed751874db6ab,"Remove storage permission for API 19 and up
+
+The getExternalFilesDir() directory does not require the WRITE_EXTERNAL_STORAGE permission as of API 19."
+kevinpelgrims,2016-09-16 07:18:32,https://api.github.com/repos/google/cameraview/git/commits/f45ea226012ef6cd2665a4352459fc8f48bc0152,f45ea226012ef6cd2665a4352459fc8f48bc0152,"Move camera permission to the library module
+
+Every user of the library will need to camera permission, so it should be in the library manifest.
+The autofocus feature should be optional, to ensure the library can be used on devices without that feature."
+MarsVard,2016-09-14 07:55:53,https://api.github.com/repos/google/cameraview/git/commits/24dc1c3eac10d6005aaec76edf18cbfca6f80c54,24dc1c3eac10d6005aaec76edf18cbfca6f80c54,"Check if camera has flashModes, disable flash."
+MarsVard,2016-09-13 15:54:46,https://api.github.com/repos/google/cameraview/git/commits/25a78fdf3dd72fdadfd0f71d6dd7afa41b025817,25a78fdf3dd72fdadfd0f71d6dd7afa41b025817,try to get a High-res photo
+yaraki,2016-09-06 00:21:31,https://api.github.com/repos/google/cameraview/git/commits/f2da036f2e7e8c5784be067eaa61ba07a48063b9,f2da036f2e7e8c5784be067eaa61ba07a48063b9,"Update dependencies
+
+Change-Id: I28d9abe5097dae30790b65dce351cd369d96c6da"
+yaraki,2016-08-10 01:40:21,https://api.github.com/repos/google/cameraview/git/commits/88c1eca7c4ef566e74598f3bee7ae3c81f8aacc8,88c1eca7c4ef566e74598f3bee7ae3c81f8aacc8,"Fix for ICS
+
+Change-Id: I6564cf636025862c14f0f64a81b1714c2f33ddf1"
+yaraki,2016-07-27 06:38:06,https://api.github.com/repos/google/cameraview/git/commits/64216db8a6772a19e363b7c313e171eccb0b94f6,64216db8a6772a19e363b7c313e171eccb0b94f6,"Update dependencies
+
+Change-Id: I88c54845613ab3e5df502b92b9e7d132ab25f66e"
+yaraki,2016-06-17 07:39:02,https://api.github.com/repos/google/cameraview/git/commits/4222307b081367a87949be841677bd64443820c3,4222307b081367a87949be841677bd64443820c3,"Write README
+
+Change-Id: I0553674de85b1611715e2232a852dcb0534d83ea"
+yaraki,2016-06-17 06:32:07,https://api.github.com/repos/google/cameraview/git/commits/0c4adb85ea8f91f6d78b8e86d47614cdde6ac7e3,0c4adb85ea8f91f6d78b8e86d47614cdde6ac7e3,"Update dependencies
+
+Change-Id: I626172161961cb464449841f9ec085cf241157a8"
+yaraki,2016-06-08 04:19:34,https://api.github.com/repos/google/cameraview/git/commits/6ad510cdd607fd07614381f6adb43b3a3c3f6963,6ad510cdd607fd07614381f6adb43b3a3c3f6963,"Implementation on Camera2 API
+
+Change-Id: I57e10dca4b6b74460db1e1604c24676825742c24"
+yaraki,2016-06-07 03:39:35,https://api.github.com/repos/google/cameraview/git/commits/272b36f0fdff08332f42c88248c0756435486d1e,272b36f0fdff08332f42c88248c0756435486d1e,"Several small fixes
+
+- Update build tools version
+- Reorder methods
+- Add the missing aspectRatio attribute
+- Save instance state
+
+Change-Id: I9f5cb15f1fa16f11e761905e2abad82c8919fd20"
+yaraki,2016-06-06 07:27:29,https://api.github.com/repos/google/cameraview/git/commits/d4c028da2714ee2c54e8d374ddeef87842834d9f,d4c028da2714ee2c54e8d374ddeef87842834d9f,"Flash
+
+Change-Id: I44a45fc1b74660c48ca3be8507208a0a0e5f47c7"
+yaraki,2016-06-03 09:03:29,https://api.github.com/repos/google/cameraview/git/commits/7faceeb5f648ec571eaae3ff225a2c308786e2a1,7faceeb5f648ec571eaae3ff225a2c308786e2a1,"Better auto-focus
+
+This simplifies the API by removing focusMode and introducing autoFocus.
+Pictures are now taken right after auto-focus.  Also remove external
+camera support as there is no easy way to support it for API Level <21.
+
+The demo app now has a button to switch camera.
+
+Change-Id: If978959d2095632c332d17ab7f99e6ed18d82057"
+yaraki,2016-06-03 06:26:48,https://api.github.com/repos/google/cameraview/git/commits/d682b03f42c2a8a7eec1655d432f1dc55d50647c,d682b03f42c2a8a7eec1655d432f1dc55d50647c,"Better handling for display orientation
+
+Externalize all tasks related to display orientation into
+DisplayOrientationDetector.
+
+Change-Id: I5d7c52f4912e1e5065505d4c9e73cce915c4408d"
+yaraki,2016-06-01 05:14:15,https://api.github.com/repos/google/cameraview/git/commits/a4fe117a76c47b208287bdf6079a903d15776f5f,a4fe117a76c47b208287bdf6079a903d15776f5f,"Add takePicture
+
+Change-Id: I5a185904708305b6affeb148743582063ca76e44"
+yaraki,2016-05-30 10:17:48,https://api.github.com/repos/google/cameraview/git/commits/9609facf52d4e36dd9fea3b312c5de61bb915582,9609facf52d4e36dd9fea3b312c5de61bb915582,"Add app:facing
+
+Change-Id: I6446e9bfe231a9ba5857b996a204263112f1a86e"
+yaraki,2016-05-30 08:16:38,https://api.github.com/repos/google/cameraview/git/commits/052ebe61c75d8054f09bd9022c1db5ca84735875,052ebe61c75d8054f09bd9022c1db5ca84735875,"Add app:focusMode
+
+Change-Id: I91eaa845c6afd80c99fad9ec1979254dec2ef9ab"
+yaraki,2016-05-30 05:13:13,https://api.github.com/repos/google/cameraview/git/commits/7ddd7f986880ffe17429623504b1c3eb69797452,7ddd7f986880ffe17429623504b1c3eb69797452,"Handle runtime permission in the demo app
+
+Also move a test layout resource to where it should have been.
+
+Change-Id: Ifdc7868bd86defb71324f5f6d500eff999856043"
+yaraki,2016-05-30 04:19:05,https://api.github.com/repos/google/cameraview/git/commits/6befea4a51e6fffde75e0a14d1ee1efeaddebc30,6befea4a51e6fffde75e0a14d1ee1efeaddebc30,"Update dependencies
+
+Also fix broken tests.
+
+Change-Id: I9d50202b912fe14a930ff2f4afbda2ffacdd812d"
+yaraki,2016-05-11 07:11:14,https://api.github.com/repos/google/cameraview/git/commits/3e23db8d7666e4bcca6bd92387b0b289544cd306,3e23db8d7666e4bcca6bd92387b0b289544cd306,"Simplify the API for start/stop camera preview
+
+Change-Id: I898a855d2d891111fdf0558d6eb94fb4f9e6e65b"
+yaraki,2016-04-27 06:26:10,https://api.github.com/repos/google/cameraview/git/commits/6c04858efc5c18e7e09e8ac20846edc9e35deef8,6c04858efc5c18e7e09e8ac20846edc9e35deef8,"Update dependencies
+
+This also extracts the support library version to the top build.gradle.
+
+Change-Id: I53029fbbc3b59c5379765248b7a5574e452afcf0"
+yaraki,2016-04-06 06:15:26,https://api.github.com/repos/google/cameraview/git/commits/738d26826e8bf07a37e60f94d5dd6961960fa580,738d26826e8bf07a37e60f94d5dd6961960fa580,"Choose preview size optimally
+
+Change-Id: I8f6f3f24293fa7c66485bca87479808876a8c33b"
+yaraki,2016-04-04 08:11:22,https://api.github.com/repos/google/cameraview/git/commits/129e2d9d6d962d2e141a7819759627e8e38a3270,129e2d9d6d962d2e141a7819759627e8e38a3270,"Adjust TextureView size to the camera aspect ratio
+
+This also introduces caching to AspectRatio.
+
+Change-Id: If2e5b32412e7593ff320d06421d55b2340c823d2"
+yaraki,2016-03-31 08:47:48,https://api.github.com/repos/google/cameraview/git/commits/a4f9936f0e65727cf3cce5670cc17fb6356f8fcf,a4f9936f0e65727cf3cce5670cc17fb6356f8fcf,"Implement adjustViewBounds
+
+Change-Id: I0917adaa3deac4346039c3a4642e4923a6160990"
+yaraki,2016-03-30 05:56:27,https://api.github.com/repos/google/cameraview/git/commits/f97ea8b5453dc5d6990fd53f013eba06fca6649a,f97ea8b5453dc5d6990fd53f013eba06fca6649a,"Supported preview size and open/close callback
+
+Change-Id: Ib00d10edf2b6a448b28ebaad46b44cd5d6e395a6"
+yaraki,2016-03-29 01:49:48,https://api.github.com/repos/google/cameraview/git/commits/e03c25996424674a7015429022f850112d2d5aaf,e03c25996424674a7015429022f850112d2d5aaf,"Basic camera preview on Camera1
+
+Change-Id: Iace32d2a230016229b60084bfe060c4ec7bca8b5"
+yaraki,2016-03-18 05:55:09,https://api.github.com/repos/google/cameraview/git/commits/a6f9e362d83dcb504418b6c6009a8c331fc6d528,a6f9e362d83dcb504418b6c6009a8c331fc6d528,"Create project
+
+This is just a blank project without any implementation.
+
+Change-Id: I8f73723ac5d0e39a74af2a68c24b0d73c64bf207"
+keyboardsurfer,2016-03-17 11:02:29,https://api.github.com/repos/google/cameraview/git/commits/b9dd5c66513098aa326749fcf3a2c439e290762d,b9dd5c66513098aa326749fcf3a2c439e290762d,Initial empty repository

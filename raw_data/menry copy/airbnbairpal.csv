@@ -1,0 +1,786 @@
+airpal,Web UI for PrestoDB.
+username,timestamp,url,sha,message
+gabe-lyons,2016-08-26 00:59:23,https://api.github.com/repos/airbnb/airpal/git/commits/e3e65283d66d866c3321fd921e02428c6aed1747,e3e65283d66d866c3321fd921e02428c6aed1747,"Merge pull request #179 from gwittel/presto-0.145
+
+Support for Presto 0.145 (work in progress)"
+gwittel,2016-08-22 20:36:35,https://api.github.com/repos/airbnb/airpal/git/commits/5c5dda3e62a078c5137ac477b201bb30cc4f7975,5c5dda3e62a078c5137ac477b201bb30cc4f7975,Disable GZIP content encoding on SSE output only (vs globally)
+gwittel,2016-08-17 17:10:52,https://api.github.com/repos/airbnb/airpal/git/commits/ee7de6ebd25a46128da0d2c60198f09e1d93ec31,ee7de6ebd25a46128da0d2c60198f09e1d93ec31,"Disable server side gzip encoding.  SSE events get inappropriately buffered.
+
+Upon later dropwizard upgrade we should consider a more fine tuned
+approach using 'syncFlush=true' fix from dropwizard/dropwizard#1673."
+gwittel,2016-05-19 16:48:01,https://api.github.com/repos/airbnb/airpal/git/commits/656d7e2084a22781b21c77f87813038358604ae4,656d7e2084a22781b21c77f87813038358604ae4,Update README to reference upgrade to Presto 0.145.
+gwittel,2016-05-19 16:47:32,https://api.github.com/repos/airbnb/airpal/git/commits/29bf3f45d96f7a24890fe48ac04d7494fcf4f996,29bf3f45d96f7a24890fe48ac04d7494fcf4f996,Revert accidental change to reference.example.yml
+ljharb,2016-05-12 22:14:09,https://api.github.com/repos/airbnb/airpal/git/commits/550ad14a589a41c95a7a82d14560f3995c419188,550ad14a589a41c95a7a82d14560f3995c419188,"[inthewild] Add Nasdaq
+
+Per https://github.com/airbnb/airpal/pull/164#issuecomment-218848405"
+gwittel,2016-05-02 23:56:10,https://api.github.com/repos/airbnb/airpal/git/commits/755dd1171f50f5f13d297258bb281ffc09a5101f,755dd1171f50f5f13d297258bb281ffc09a5101f,"Update to dropwizard 1.0.0
+
+Required to support Jetty 9.3 series used by presto/airlift
+
+Still broken: Column data type mapping"
+gwittel,2016-05-02 23:11:39,https://api.github.com/repos/airbnb/airpal/git/commits/f18e5a3918a32ebd70bd6dbb3b7e9e10510cdd45,f18e5a3918a32ebd70bd6dbb3b7e9e10510cdd45,"Upgrade to dropwizard 0.90 series
+
+Still Broken -- airlift relies on Jetty 9.3.9, but 0.90 dropwizard uses
+9.2.  Dropwizard 1.0.x uses Jetty 9.3 series which may work"
+bkyryliuk,2016-05-02 21:23:20,https://api.github.com/repos/airbnb/airpal/git/commits/1f8000a3ffbc1b715778d442c6ee820c779ac106,1f8000a3ffbc1b715778d442c6ee820c779ac106,"Merge pull request #176 from pubnative/adding-pubnative-as-a-project-user
+
+Adding PubNative as an airpal user"
+gwittel,2016-04-29 21:35:11,https://api.github.com/repos/airbnb/airpal/git/commits/3d92b6fccff3722dc902add80eaa2db0a0b0ffe3,3d92b6fccff3722dc902add80eaa2db0a0b0ffe3,"Handle changes in Presto Column API
+
+I don't feel particularly sure about these changes as its unclear
+how/where the output from Hive's ""SHOW COLUMNS"" can map to this cleanly"
+gwittel,2016-04-29 21:34:20,https://api.github.com/repos/airbnb/airpal/git/commits/01a96ebb8e79db92f311f42fe09473f2e14be3f3,01a96ebb8e79db92f311f42fe09473f2e14be3f3,Adjust for other Presto API adjustments and changes
+gwittel,2016-04-29 19:53:01,https://api.github.com/repos/airbnb/airpal/git/commits/8661bf9c5b7e604a82eb5f405dc464df2c83ecb7,8661bf9c5b7e604a82eb5f405dc464df2c83ecb7,Remove use of Jetbrains annotation
+gwittel,2016-04-29 19:48:39,https://api.github.com/repos/airbnb/airpal/git/commits/0d8621bf21498ec8a43bb559c811fbef3297a045,0d8621bf21498ec8a43bb559c811fbef3297a045,Replace UseCollection with Use (best guess on how this should be used)
+gwittel,2016-04-29 19:48:05,https://api.github.com/repos/airbnb/airpal/git/commits/50d530c17e275848b60a56b294a5469ff9f72e86,50d530c17e275848b60a56b294a5469ff9f72e86,Replace obsolete internal Guava Precondition usage
+gwittel,2016-04-29 19:47:10,https://api.github.com/repos/airbnb/airpal/git/commits/be287cdb6d2529adfb5b7492175ee6e5b383653d,be287cdb6d2529adfb5b7492175ee6e5b383653d,Upgrade to Presto 0.145 and repair obsolete Airlift AsyncHttpClient dependency
+psychocandy,2016-04-28 11:25:41,https://api.github.com/repos/airbnb/airpal/git/commits/51a4a12f35c54888cd95d177d638866a8dbe562c,51a4a12f35c54888cd95d177d638866a8dbe562c,adding pubnative as an airpal user
+bkyryliuk,2016-04-26 21:22:22,https://api.github.com/repos/airbnb/airpal/git/commits/50c0ec4ce42c3b3ac5055af1ef92ebb62dedf5b9,50c0ec4ce42c3b3ac5055af1ef92ebb62dedf5b9,"Merge pull request #122 from brukh/master
+
+Updated browser-sync in package.json"
+andykram,2016-03-17 20:36:51,https://api.github.com/repos/airbnb/airpal/git/commits/1e167859d7e2ec6565d2bb828efa0e5e5211754d,1e167859d7e2ec6565d2bb828efa0e5e5211754d,"Merge pull request #169 from airbnb/andykram-change-default-username-1
+
+Change default presto user"
+andykram,2016-03-17 18:28:07,https://api.github.com/repos/airbnb/airpal/git/commits/783a89405e3474d3d85093e7b4a53cf0089c5a84,783a89405e3474d3d85093e7b4a53cf0089c5a84,Update AirpalConfiguration.java
+ljharb,2016-02-29 22:36:08,https://api.github.com/repos/airbnb/airpal/git/commits/0219cf934670492d18a2e7b20b77c14e196184a5,0219cf934670492d18a2e7b20b77c14e196184a5,Fix link from #164.
+ljharb,2016-02-29 22:30:37,https://api.github.com/repos/airbnb/airpal/git/commits/9b97d550dedb69efe0fd3743ee81850c604e0b18,9b97d550dedb69efe0fd3743ee81850c604e0b18,"Merge pull request #164 from airbnb/in_the_wild
+
+Add “In the Wild” section."
+ljharb,2016-02-23 05:27:05,https://api.github.com/repos/airbnb/airpal/git/commits/e14feb8bcca58fdb6d0c9f980a0f008a8d0dd4df,e14feb8bcca58fdb6d0c9f980a0f008a8d0dd4df,Add “In the Wild” section.
+andykram,2016-02-04 19:29:42,https://api.github.com/repos/airbnb/airpal/git/commits/4d313d0df30bfb2df8bb8e81b638979f2f08401a,4d313d0df30bfb2df8bb8e81b638979f2f08401a,"Merge pull request #160 from Nasdaq/s3-cse-encryption-and-compression
+
+S3 cse encryption and compression"
+natesammons-nasdaq,2016-02-04 15:05:08,https://api.github.com/repos/airbnb/airpal/git/commits/f1b44950395d4aa7164d1b5af5d15ce4f3ec813a,f1b44950395d4aa7164d1b5af5d15ce4f3ec813a,"Clean up code per comments
+
+Simplified code around switching between compressed and uncompressed
+input/output, added provider method for the encryption materials
+provider"
+andykram,2016-02-04 05:31:09,https://api.github.com/repos/airbnb/airpal/git/commits/a4e662ae8187973c5de873f7b8e6cb9af187b915,a4e662ae8187973c5de873f7b8e6cb9af187b915,"Merge pull request #143 from AdRoll/publicLdapRealmExample
+
+Public ldap realm example"
+andykram,2016-02-04 05:29:11,https://api.github.com/repos/airbnb/airpal/git/commits/13b2a8af0a895621045f2d5f7a23548d48e8aeca,13b2a8af0a895621045f2d5f7a23548d48e8aeca,"Merge pull request #137 from airbnb/andykram-fix-scroll
+
+[chrome] Fix columns scrolling"
+andykram,2016-02-04 05:27:50,https://api.github.com/repos/airbnb/airpal/git/commits/a112c22259c38f6e024dbbc539a661caecd732fa,a112c22259c38f6e024dbbc539a661caecd732fa,"Merge pull request #141 from wing3s/master
+
+replace hardcoded hive catalog for table preview by default catalog"
+andykram,2016-02-04 05:27:16,https://api.github.com/repos/airbnb/airpal/git/commits/a7271362050d26fc5a5b73a60bcb72a8042d63b4,a7271362050d26fc5a5b73a60bcb72a8042d63b4,"Merge pull request #159 from Jimexist/develop
+
+Update some of the build toolchain"
+andykram,2016-02-04 05:17:07,https://api.github.com/repos/airbnb/airpal/git/commits/b4e0548fe9f02f3bb223ec7057fe74f1e4a64d6d,b4e0548fe9f02f3bb223ec7057fe74f1e4a64d6d,"Merge pull request #152 from chuan/support-h2-database
+
+Add support for H2 database"
+natesammons-nasdaq,2016-01-21 20:52:33,https://api.github.com/repos/airbnb/airpal/git/commits/dbc10f3475b00fdfdac282ac1fe73adecb8c1f72,dbc10f3475b00fdfdac282ac1fe73adecb8c1f72,"Add support for S3 encryption materials provider for encryption keys,
+and support gzip compression on data stored in S3"
+natesammons-nasdaq,2016-01-20 18:37:38,https://api.github.com/repos/airbnb/airpal/git/commits/ad6cb9fd870d447b8fcc7422a83e507d35b05952,ad6cb9fd870d447b8fcc7422a83e507d35b05952,Merge remote-tracking branch 'airbnb/master'
+Jimexist,2016-01-18 17:27:24,https://api.github.com/repos/airbnb/airpal/git/commits/4b847687a694b253c9c6e1082fe802ba371cd660,4b847687a694b253c9c6e1082fe802ba371cd660,update some of the build toolchain
+chuan,2015-11-29 09:53:23,https://api.github.com/repos/airbnb/airpal/git/commits/2069425e46774ebdc4283815099857413308757c,2069425e46774ebdc4283815099857413308757c,Add support for H2 database
+ttyao,2015-11-23 18:17:23,https://api.github.com/repos/airbnb/airpal/git/commits/729297b470b7b1396c74816f58a1bc3ae649ea55,729297b470b7b1396c74816f58a1bc3ae649ea55,"Merge pull request #148 from airbnb/henry/airpal
+
+make a separate getShiroBundle function in AirpalApplicationBase"
+ttyao,2015-11-11 00:43:23,https://api.github.com/repos/airbnb/airpal/git/commits/ebf35c7d11925b89703b3be8f6424884c69d91aa,ebf35c7d11925b89703b3be8f6424884c69d91aa,"Merge pull request #146 from airbnb/henry/airpal
+
+Add AirpalApplicationBase class"
+krishnap,2015-10-07 17:22:15,https://api.github.com/repos/airbnb/airpal/git/commits/3522498bd8620c4fc06902c3731aa042bdda9b59,3522498bd8620c4fc06902c3731aa042bdda9b59,"Merge pull request #138 from airbnb/kp_add_iam_role_support
+
+adding support for IAM role in airpal"
+wing3s,2015-09-23 23:08:37,https://api.github.com/repos/airbnb/airpal/git/commits/60626e20be53fe68b30ce921c6976ffd64f37dec,60626e20be53fe68b30ce921c6976ffd64f37dec,replace hard coded hive catalog for table preview by default catalog
+andykram,2015-09-18 20:38:24,https://api.github.com/repos/airbnb/airpal/git/commits/efb61ddcc2c3c596230e8e2a2064f02774ec5a69,efb61ddcc2c3c596230e8e2a2064f02774ec5a69,[chrome] Fix columns scrolling
+andykram,2015-09-16 21:25:19,https://api.github.com/repos/airbnb/airpal/git/commits/777db0cac68b46324a6a279950cb8080ccc3779c,777db0cac68b46324a6a279950cb8080ccc3779c,Update logError.js
+akuhn,2015-08-26 18:25:36,https://api.github.com/repos/airbnb/airpal/git/commits/880c0bed86259ecc3773f229211091e43baef6b4,880c0bed86259ecc3773f229211091e43baef6b4,"Merge pull request #132 from akuhn/airpal_comments
+
+Remove leftover comments."
+akuhn,2015-08-25 20:37:13,https://api.github.com/repos/airbnb/airpal/git/commits/f01ccbfdae51a56ba8e306d1963be9beb55b0fb9,f01ccbfdae51a56ba8e306d1963be9beb55b0fb9,"Merge pull request #133 from akuhn/redirect_download_link
+
+Redirect download link"
+akuhn,2015-08-21 03:40:29,https://api.github.com/repos/airbnb/airpal/git/commits/832fed9a1c9324b378af3b6e53ca4b3997f35605,832fed9a1c9324b378af3b6e53ca4b3997f35605,Support new download link in preview.
+akuhn,2015-08-20 22:50:26,https://api.github.com/repos/airbnb/airpal/git/commits/de249384cab311240e0960b7aa10a3082e6a1698,de249384cab311240e0960b7aa10a3082e6a1698,Avoid escaped slash in URL because.
+akuhn,2015-08-13 22:00:15,https://api.github.com/repos/airbnb/airpal/git/commits/67e39f4f8bcc828e0af2eb8a242378258eb92b90,67e39f4f8bcc828e0af2eb8a242378258eb92b90,[Airpal] Stream S3 result through Airpal app.
+akuhn,2015-08-13 07:24:52,https://api.github.com/repos/airbnb/airpal/git/commits/2ad67a4e21d987fff2514c6e6def5de9638c56a2,2ad67a4e21d987fff2514c6e6def5de9638c56a2,Remove leftover comments.
+goatslacker,2015-08-10 23:19:51,https://api.github.com/repos/airbnb/airpal/git/commits/8f8016c64abd494b2ea9305a427174f50822f28d,8f8016c64abd494b2ea9305a427174f50822f28d,"Merge pull request #129 from GabeLoins/patch-1
+
+Prevented bug where users see other users previews"
+gabe-lyons,2015-08-10 20:57:05,https://api.github.com/repos/airbnb/airpal/git/commits/f4c73e7127a7e5e981ae9b20b64b98ce0abab64f,f4c73e7127a7e5e981ae9b20b64b98ce0abab64f,Prevented bug where users see other users previews
+andykram,2015-08-06 23:19:14,https://api.github.com/repos/airbnb/airpal/git/commits/e00fd07396e54b7e7fb4951fe5a8a4da8279ba0b,e00fd07396e54b7e7fb4951fe5a8a4da8279ba0b,Update build.gradle
+andykram,2015-08-06 22:38:52,https://api.github.com/repos/airbnb/airpal/git/commits/374987af4df120bca38f60bf724b1fa1113789a5,374987af4df120bca38f60bf724b1fa1113789a5,"Merge pull request #127 from GabeLoins/squashed
+
+Added results tab which shows a preview of the output in-browser."
+brukh,2015-07-19 01:23:07,https://api.github.com/repos/airbnb/airpal/git/commits/5b08ba49c3f10515e1a6936b2cb4d3938c1e45fc,5b08ba49c3f10515e1a6936b2cb4d3938c1e45fc,"Updated browser-sync in package.json
+
++ Updated browser-sync from ""~1.3.6""  to ""^2.7.13""
++ Previous package causes a build error within util.js
++ TypeError: Cannot read property 'prototype' of undefined"
+andykram,2015-06-30 22:27:40,https://api.github.com/repos/airbnb/airpal/git/commits/3786f94174d0d2683abd961a000486a2f632e8cd,3786f94174d0d2683abd961a000486a2f632e8cd,"Merge pull request #93 from colinmarc/master
+
+Add a tarball gradle task"
+andykram,2015-06-30 22:27:26,https://api.github.com/repos/airbnb/airpal/git/commits/69cc6ec473d52149835a1067fed86b3863f21be5,69cc6ec473d52149835a1067fed86b3863f21be5,"Merge pull request #115 from rkho/patch-1
+
+Update USER_ACCOUNTS.md"
+rkho,2015-06-04 22:34:17,https://api.github.com/repos/airbnb/airpal/git/commits/02e75ed8df5446183aec58e9bf82e500b7fa4eb3,02e75ed8df5446183aec58e9bf82e500b7fa4eb3,"Update USER_ACCOUNTS.md
+
+Capitalized Shiro on lines 9 and 10 for consistency/readability. 
+
+No other changes have been made."
+hshoff,2015-04-30 16:55:45,https://api.github.com/repos/airbnb/airpal/git/commits/1e5c928f651e9c7783002e579b81d9144b9d5c64,1e5c928f651e9c7783002e579b81d9144b9d5c64,"Merge pull request #107 from mikechau/master
+
+Unlisten to hideModal when QueryEditor unmounts"
+andykram,2015-04-22 01:46:06,https://api.github.com/repos/airbnb/airpal/git/commits/ad90a58a419216e6a815e076e1999c355ee6556c,ad90a58a419216e6a815e076e1999c355ee6556c,"Merge pull request #110 from airbnb/andykram/patch-kill-action
+
+Patch RunActions.js"
+andykram,2015-04-22 01:45:35,https://api.github.com/repos/airbnb/airpal/git/commits/ab7d6e00691c04a2fea1cf48377cb3de991c24bc,ab7d6e00691c04a2fea1cf48377cb3de991c24bc,"Patch RunActions.js
+
+This PR patches a regression from https://github.com/airbnb/airpal/commit/423a42464769e3c7c20475fbf3cfdc1f1e64ce07 that results in the kill action not receiving the correct parameter."
+sjagadish,2015-04-16 23:16:40,https://api.github.com/repos/airbnb/airpal/git/commits/22572ec3af42b76f9fcb1b5f682783ee2ba52300,22572ec3af42b76f9fcb1b5f682783ee2ba52300,"Merge pull request #108 from airbnb/fix_chrome_cookie_bug
+
+Fixed cookie send issue with fetch implementation in latest verison of C..."
+mikechau,2015-04-05 00:40:15,https://api.github.com/repos/airbnb/airpal/git/commits/3f519ddb88459bb235ac4eb129e372ac3d12d86c,3f519ddb88459bb235ac4eb129e372ac3d12d86c,Unlisten to hideModal when QueryEditor unmounts
+goatslacker,2015-03-31 00:45:37,https://api.github.com/repos/airbnb/airpal/git/commits/dca73bb109dbdd204e2933194735a9622cf59604,dca73bb109dbdd204e2933194735a9622cf59604,"Merge pull request #103 from airbnb/move-async-to-actions
+
+Move async to actions"
+goatslacker,2015-03-23 04:12:54,https://api.github.com/repos/airbnb/airpal/git/commits/c6e67fb3c04113b3d55be7f60a2aa19987b3a244,c6e67fb3c04113b3d55be7f60a2aa19987b3a244,Merge fixes
+goatslacker,2015-03-20 23:54:19,https://api.github.com/repos/airbnb/airpal/git/commits/e1afd2d5468a139bdf8005f71f664b5a3288e633,e1afd2d5468a139bdf8005f71f664b5a3288e633,Add one more spec
+goatslacker,2015-03-20 23:50:59,https://api.github.com/repos/airbnb/airpal/git/commits/99be301f4fd037df5e5b80e843e0a0df1ae50639,99be301f4fd037df5e5b80e843e0a0df1ae50639,Passing specs
+goatslacker,2015-03-18 17:41:06,https://api.github.com/repos/airbnb/airpal/git/commits/abf7540cc6c1641fd4d9aa2eb5fb0ef756575318,abf7540cc6c1641fd4d9aa2eb5fb0ef756575318,Moving async to actions for User
+goatslacker,2015-03-18 17:37:19,https://api.github.com/repos/airbnb/airpal/git/commits/9844571c4accbf0308f696ceda2c50eefda2b390,9844571c4accbf0308f696ceda2c50eefda2b390,Spec changes
+goatslacker,2015-03-17 01:09:16,https://api.github.com/repos/airbnb/airpal/git/commits/58306ab91be3729230a74611384407ea28a1c7dd,58306ab91be3729230a74611384407ea28a1c7dd,Moving async to actions for Table
+goatslacker,2015-03-16 23:39:35,https://api.github.com/repos/airbnb/airpal/git/commits/423a42464769e3c7c20475fbf3cfdc1f1e64ce07,423a42464769e3c7c20475fbf3cfdc1f1e64ce07,Moving async to actions for Run
+goatslacker,2015-03-16 23:13:26,https://api.github.com/repos/airbnb/airpal/git/commits/96e2f8cd2d33d041e3f77adc58d3afee2b69b82f,96e2f8cd2d33d041e3f77adc58d3afee2b69b82f,Moving async to actions for Query
+goatslacker,2015-03-10 01:53:45,https://api.github.com/repos/airbnb/airpal/git/commits/8c09d2ae559301d0abd2bce4324f29b80abfc1c8,8c09d2ae559301d0abd2bce4324f29b80abfc1c8,"Merge pull request #95 from airbnb/goatslacker-patch-1
+
+Fixes dependencies"
+andykram,2015-03-10 01:43:42,https://api.github.com/repos/airbnb/airpal/git/commits/194709214141d482a9029ed454f9c83e59ffdabc,194709214141d482a9029ed454f9c83e59ffdabc,"Merge pull request #94 from harshadsabne/patch-1
+
+Fix shiro > iniConfigs link"
+goatslacker,2015-03-08 20:01:25,https://api.github.com/repos/airbnb/airpal/git/commits/3951ef76d996633216f0fea4b18feafdcf95eb56,3951ef76d996633216f0fea4b18feafdcf95eb56,"Fixes dependencies
+
+Flux isn't needed since it is required by alt."
+harshadsabne,2015-03-07 18:03:15,https://api.github.com/repos/airbnb/airpal/git/commits/943400ec7c3b3cbc454c0795fb3c3503a56061b5,943400ec7c3b3cbc454c0795fb3c3503a56061b5,Fix shiro > iniConfigs link
+colinmarc,2015-03-07 14:07:48,https://api.github.com/repos/airbnb/airpal/git/commits/e7f27848ff786e51373c3a1caf6bd31cc610ba40,e7f27848ff786e51373c3a1caf6bd31cc610ba40,Add a tarball gradle task
+andykram,2015-03-06 18:56:40,https://api.github.com/repos/airbnb/airpal/git/commits/c8b59debda91387d18c1a66d733619f0298fc487,c8b59debda91387d18c1a66d733619f0298fc487,"Merge pull request #92 from viirya/specify_presto
+
+Specify presto version by property"
+viirya,2015-03-06 18:22:13,https://api.github.com/repos/airbnb/airpal/git/commits/7f86234f43e2fc92a9a64d303a154e3fd8281620,7f86234f43e2fc92a9a64d303a154e3fd8281620,Specify presto version by property.
+andykram,2015-03-05 23:00:30,https://api.github.com/repos/airbnb/airpal/git/commits/0aafac12fb1ebeaf9154c3eb9223fe1c8fced16f,0aafac12fb1ebeaf9154c3eb9223fe1c8fced16f,"Merge pull request #91 from airbnb/encode-saved-queries
+
+[query-api-utils] Encode saved queries properly"
+andykram,2015-03-05 22:54:21,https://api.github.com/repos/airbnb/airpal/git/commits/924c458f0e32951b1671f93d504cb477e7fe10e9,924c458f0e32951b1671f93d504cb477e7fe10e9,[query-api-utils] Encode saved queries properly
+hshoff,2015-03-05 22:50:30,https://api.github.com/repos/airbnb/airpal/git/commits/ccee22112200d14056b634be6af060b9607874f6,ccee22112200d14056b634be6af060b9607874f6,"Merge pull request #90 from airbnb/harry/more-gif
+
+[readme] add demo gif"
+hshoff,2015-03-05 22:48:11,https://api.github.com/repos/airbnb/airpal/git/commits/6f8f8406b80faad9b4532ec05ec4f4d26104de81,6f8f8406b80faad9b4532ec05ec4f4d26104de81,[readme] add demo gif
+andykram,2015-03-05 21:09:00,https://api.github.com/repos/airbnb/airpal/git/commits/923bcc1d2e1c95d7f8c19d9ca23d637b760f54dc,923bcc1d2e1c95d7f8c19d9ca23d637b760f54dc,Update README.md
+andykram,2015-03-05 21:08:46,https://api.github.com/repos/airbnb/airpal/git/commits/4f45ce395c18697ea4fffc32cb75e9f3662ff2b4,4f45ce395c18697ea4fffc32cb75e9f3662ff2b4,Update README.md
+andykram,2015-03-05 07:06:01,https://api.github.com/repos/airbnb/airpal/git/commits/e31d81304faa541dfce3633fe5bbb6feae9b832e,e31d81304faa541dfce3633fe5bbb6feae9b832e,"Merge pull request #88 from airbnb/goatslacker-patch-1
+
+Fix contributing list"
+goatslacker,2015-03-05 06:50:06,https://api.github.com/repos/airbnb/airpal/git/commits/2d3a3e1f28fb9129df658cc1bee093021f6df09d,2d3a3e1f28fb9129df658cc1bee093021f6df09d,Fix contributing list
+andykram,2015-03-05 06:03:23,https://api.github.com/repos/airbnb/airpal/git/commits/40fc002d96b98ac683879ea9d3d9197acab46f27,40fc002d96b98ac683879ea9d3d9197acab46f27,"Merge pull request #87 from airbnb/andykram/cleanup
+
+[cleanup] Add contributors section and remove flexGrow"
+andykram,2015-03-05 05:58:47,https://api.github.com/repos/airbnb/airpal/git/commits/86b0f9ee84a90dfd17c29d4a520467c49728a4aa,86b0f9ee84a90dfd17c29d4a520467c49728a4aa,[screenshots] Add screenshots
+andykram,2015-03-05 04:24:56,https://api.github.com/repos/airbnb/airpal/git/commits/79819ff596d3fbd08ec8b9c03028b227b3c4ad89,79819ff596d3fbd08ec8b9c03028b227b3c4ad89,[cleanup] Add contributors section and remove flexGrow
+andykram,2015-03-05 03:56:10,https://api.github.com/repos/airbnb/airpal/git/commits/a24bb67019ac961bc6c709ac665bdfdb16ab0758,a24bb67019ac961bc6c709ac665bdfdb16ab0758,"Merge pull request #85 from airbnb/harry/ui-design
+
+[ui] new design"
+hshoff,2015-03-04 10:34:58,https://api.github.com/repos/airbnb/airpal/git/commits/3c626b697dbe452f5b183bbf47a0f6e718a1b44d,3c626b697dbe452f5b183bbf47a0f6e718a1b44d,[ui] browser support polish
+hshoff,2015-03-04 09:14:58,https://api.github.com/repos/airbnb/airpal/git/commits/9ea35096374484ea3eb05d8d398b0f02dd18e5ed,9ea35096374484ea3eb05d8d398b0f02dd18e5ed,[ui] fix uppercase column names
+hshoff,2015-03-04 09:09:26,https://api.github.com/repos/airbnb/airpal/git/commits/698bddea6ade62918a33102ca80209480902439f,698bddea6ade62918a33102ca80209480902439f,[ui] polish
+hshoff,2015-03-04 08:53:30,https://api.github.com/repos/airbnb/airpal/git/commits/7e3353aeb87de682e2768548db231d9b8873564a,7e3353aeb87de682e2768548db231d9b8873564a,[ui] polish
+hshoff,2015-03-04 07:06:11,https://api.github.com/repos/airbnb/airpal/git/commits/775ac8430d305e34a46a01dfc12ba618839f849b,775ac8430d305e34a46a01dfc12ba618839f849b,[ui] update selective active item color
+hshoff,2015-03-04 01:36:12,https://api.github.com/repos/airbnb/airpal/git/commits/8c7c0094a877565fe61f688740e58377cd95a405,8c7c0094a877565fe61f688740e58377cd95a405,[ui] clean up scrolling
+hshoff,2015-03-04 00:40:03,https://api.github.com/repos/airbnb/airpal/git/commits/af82609a1183c5538b8e33a703498364d5a323d9,af82609a1183c5538b8e33a703498364d5a323d9,[ui] missed a webkit prefix
+hshoff,2015-03-04 00:32:58,https://api.github.com/repos/airbnb/airpal/git/commits/a8bbb47a417a5d8a13bf9fa58763603fbf0573b7,a8bbb47a417a5d8a13bf9fa58763603fbf0573b7,[ui] support safari
+hshoff,2015-03-04 00:11:11,https://api.github.com/repos/airbnb/airpal/git/commits/82e7cc4472bb042c7779f46d5f7d189a23391c41,82e7cc4472bb042c7779f46d5f7d189a23391c41,[ui] wider default for user column
+andykram,2015-03-03 21:38:15,https://api.github.com/repos/airbnb/airpal/git/commits/a70602aa6ce818688437e31e81840977970287fe,a70602aa6ce818688437e31e81840977970287fe,"Merge pull request #86 from airbnb/andykram/ui-design
+
+[cleanup] Select proper tab, fix selectize styles and error on invalid custom table name"
+andykram,2015-03-03 21:34:20,https://api.github.com/repos/airbnb/airpal/git/commits/e218035c2cb958f2fb63843c727233a6dfd94fe2,e218035c2cb958f2fb63843c727233a6dfd94fe2,use constants for selecting tabs
+andykram,2015-03-03 21:29:42,https://api.github.com/repos/airbnb/airpal/git/commits/04162f9245a41c9cfa6604fc3a0d975d90ce8f6d,04162f9245a41c9cfa6604fc3a0d975d90ce8f6d,unlisten on correct method
+andykram,2015-03-03 21:28:20,https://api.github.com/repos/airbnb/airpal/git/commits/f957784b11bc4a0bdca289747f640d072f28515e,f957784b11bc4a0bdca289747f640d072f28515e,fix whitespace
+andykram,2015-03-03 21:22:36,https://api.github.com/repos/airbnb/airpal/git/commits/6479a2f3b34eb71e077b98caf8044849401585ff,6479a2f3b34eb71e077b98caf8044849401585ff,[select-tab] Add TabStore and select proper tab on run query
+andykram,2015-03-03 21:22:08,https://api.github.com/repos/airbnb/airpal/git/commits/6c53f9f03637f4dd770a6d1fee699cd9e76dd7dc,6c53f9f03637f4dd770a6d1fee699cd9e76dd7dc,[style] Add padding to selected table/partition
+andykram,2015-03-03 21:21:47,https://api.github.com/repos/airbnb/airpal/git/commits/61f96e4e68c59b63401c23df54a3e781cbc36db8,61f96e4e68c59b63401c23df54a3e781cbc36db8,[invalid-table] Error on invalid custom table name
+hshoff,2015-03-03 10:30:08,https://api.github.com/repos/airbnb/airpal/git/commits/6a4063a9ec882b7740af776a0d298e0b2da9fff1,6a4063a9ec882b7740af776a0d298e0b2da9fff1,[ui] remove extra border
+hshoff,2015-03-03 10:26:26,https://api.github.com/repos/airbnb/airpal/git/commits/3ad580df077eda0ada9e1245e0e59319fe68666f,3ad580df077eda0ada9e1245e0e59319fe68666f,[ui] add table name to data preview pane
+hshoff,2015-03-03 09:52:27,https://api.github.com/repos/airbnb/airpal/git/commits/4ce8455ae9e3181fff7ed5f8159cbf6529c439c6,4ce8455ae9e3181fff7ed5f8159cbf6529c439c6,[ui] fix unselecting table keeps populating data preview pane
+hshoff,2015-03-03 09:04:50,https://api.github.com/repos/airbnb/airpal/git/commits/325f70b83afc7ab7211513e7dd7b999abe9e293c,325f70b83afc7ab7211513e7dd7b999abe9e293c,[ui] rescript column width min size
+hshoff,2015-03-03 08:55:20,https://api.github.com/repos/airbnb/airpal/git/commits/6b566599e3d1e60ea10003533a8a9158d3c52455,6b566599e3d1e60ea10003533a8a9158d3c52455,[ui] style selectize + table explorer
+hshoff,2015-03-02 20:31:41,https://api.github.com/repos/airbnb/airpal/git/commits/d02990e78eedfe5ba25f884c06b45b0e69afab92,d02990e78eedfe5ba25f884c06b45b0e69afab92,[ui] match domain for google fonts
+hshoff,2015-03-02 19:56:55,https://api.github.com/repos/airbnb/airpal/git/commits/d98b858d2ce34849c78c88c4c23cd1194cddf36e,d98b858d2ce34849c78c88c4c23cd1194cddf36e,[ui] use https for google fonts
+hshoff,2015-03-02 10:16:38,https://api.github.com/repos/airbnb/airpal/git/commits/26c0b5c72ec9f1d99f731499a5d680155f02b28b,26c0b5c72ec9f1d99f731499a5d680155f02b28b,[ui] new design
+andykram,2015-02-27 19:39:19,https://api.github.com/repos/airbnb/airpal/git/commits/2795030ff1583937afa88881ff293d55ef2fb6b6,2795030ff1583937afa88881ff293d55ef2fb6b6,"Merge pull request #83 from airbnb/fix-s3-persistence
+
+[s3-persist] Wire up the s3 persister correctly"
+andykram,2015-02-27 19:38:22,https://api.github.com/repos/airbnb/airpal/git/commits/0d41e3846ee04db3dfa31ba1553ceb29b2a2f9c6,0d41e3846ee04db3dfa31ba1553ceb29b2a2f9c6,[s3-persist] Wire up the s3 persister correctly
+goatslacker,2015-02-27 04:27:21,https://api.github.com/repos/airbnb/airpal/git/commits/65f4886218e9e575c189dbc0a5ad6f5cf19601bc,65f4886218e9e575c189dbc0a5ad6f5cf19601bc,"Merge pull request #82 from airbnb/the-modal
+
+Adds a modal"
+goatslacker,2015-02-27 04:27:17,https://api.github.com/repos/airbnb/airpal/git/commits/8b30276c7ea7aa3d42f8a24a0ed9f8d85914b108,8b30276c7ea7aa3d42f8a24a0ed9f8d85914b108,"Merge pull request #81 from airbnb/fix-that-bug
+
+Fixes those js fatals"
+goatslacker,2015-02-27 04:15:56,https://api.github.com/repos/airbnb/airpal/git/commits/48f4f6f989d82fa7ab76acc9a7884f93de4448b5,48f4f6f989d82fa7ab76acc9a7884f93de4448b5,Adds a modal
+goatslacker,2015-02-27 03:58:59,https://api.github.com/repos/airbnb/airpal/git/commits/aaef30a351a382f03a23dd1026620cf301d3b3ae,aaef30a351a382f03a23dd1026620cf301d3b3ae,Fixes those js fatals
+andykram,2015-02-27 01:47:42,https://api.github.com/repos/airbnb/airpal/git/commits/e12f76552ee8926bd952242a2a7ccc5692b20d3c,e12f76552ee8926bd952242a2a7ccc5692b20d3c,"Merge pull request #80 from airbnb/fix-delete-saved-query
+
+[fix-delete-saved-query] Fixes saved query deletion"
+andykram,2015-02-27 01:37:26,https://api.github.com/repos/airbnb/airpal/git/commits/18d301fee7025b1c236969cf0893ff8cb4b4fa92,18d301fee7025b1c236969cf0893ff8cb4b4fa92,[fix-delete-saved-query] Fixes saved query deletion
+andykram,2015-02-27 00:02:53,https://api.github.com/repos/airbnb/airpal/git/commits/6b015428772219a0d8c931970576ed7458e0f2ca,6b015428772219a0d8c931970576ed7458e0f2ca,"Merge pull request #78 from airbnb/fix-create-table
+
+[create-table][fix] Fixes create table functionality"
+andykram,2015-02-26 23:37:18,https://api.github.com/repos/airbnb/airpal/git/commits/c3f3e9504ce77b6f4d77c4290613ce8c8acaf82e,c3f3e9504ce77b6f4d77c4290613ce8c8acaf82e,"Merge pull request #79 from airbnb/preview-partition-feedback
+
+[preview-partition] Addresses feedback for previous PR"
+andykram,2015-02-26 23:36:57,https://api.github.com/repos/airbnb/airpal/git/commits/83573c4d0945bc92145561449e71e29d838a24ca,83573c4d0945bc92145561449e71e29d838a24ca,[preview-partition] Addresses feedback for previous PR
+andykram,2015-02-26 23:31:49,https://api.github.com/repos/airbnb/airpal/git/commits/13cb915a3838565119d29ae1d86d5c8446c04c59,13cb915a3838565119d29ae1d86d5c8446c04c59,[create-table][fix] Fixes create table functionality
+goatslacker,2015-02-26 07:23:00,https://api.github.com/repos/airbnb/airpal/git/commits/0bb8bb186cb37aa87015715d22bc29cc2d51b5b5,0bb8bb186cb37aa87015715d22bc29cc2d51b5b5,"Merge pull request #74 from airbnb/replace-with-fetch
+
+Replace $.ajax with fetch"
+goatslacker,2015-02-26 07:22:17,https://api.github.com/repos/airbnb/airpal/git/commits/03f5cdd17dcad97821a3b745da40b9199d0ec0e1,03f5cdd17dcad97821a3b745da40b9199d0ec0e1,Fix bad rebase
+goatslacker,2015-02-26 05:38:30,https://api.github.com/repos/airbnb/airpal/git/commits/588a61a812f2299245bd651e61ad2079c015cb4d,588a61a812f2299245bd651e61ad2079c015cb4d,Gotta import lodash
+goatslacker,2015-02-26 05:36:18,https://api.github.com/repos/airbnb/airpal/git/commits/6ab63e696f6f8d80ee8adfa2d442f0efb49c03fa,6ab63e696f6f8d80ee8adfa2d442f0efb49c03fa,Log any errors thrown
+goatslacker,2015-02-26 02:38:41,https://api.github.com/repos/airbnb/airpal/git/commits/61cf96ddd38dfcaeba6f1245b9295b4d5b771e9e,61cf96ddd38dfcaeba6f1245b9295b4d5b771e9e,Rebase fixes
+goatslacker,2015-02-26 01:51:31,https://api.github.com/repos/airbnb/airpal/git/commits/3ec91693e1936a670509227aeee74239c95e222f,3ec91693e1936a670509227aeee74239c95e222f,Fix killing of query
+goatslacker,2015-02-25 05:41:05,https://api.github.com/repos/airbnb/airpal/git/commits/b58bb09410db627471ea43765d72231a642803c6,b58bb09410db627471ea43765d72231a642803c6,Use what-wg fetch rather than jQuery
+goatslacker,2015-02-25 05:38:14,https://api.github.com/repos/airbnb/airpal/git/commits/715e2e06497163fcddcdb1e51e799c760326440e,715e2e06497163fcddcdb1e51e799c760326440e,Double quotes to single
+goatslacker,2015-02-25 05:37:30,https://api.github.com/repos/airbnb/airpal/git/commits/f8c5facc26603fbe8be93416a097b26eb26738af,f8c5facc26603fbe8be93416a097b26eb26738af,Use action rather than util
+andykram,2015-02-26 01:25:33,https://api.github.com/repos/airbnb/airpal/git/commits/9f26b3e5bf7ff77b515aadb89391539bae1571b9,9f26b3e5bf7ff77b515aadb89391539bae1571b9,"Merge pull request #73 from airbnb/preview-table-partition
+
+[preview-partition] Add ability to preview data from active partition"
+andykram,2015-02-26 01:24:04,https://api.github.com/repos/airbnb/airpal/git/commits/17ed9bb57c5e0cda46cbb8ac16948cb002e17761,17ed9bb57c5e0cda46cbb8ac16948cb002e17761,[preview-table-partition] Use promises
+andykram,2015-02-25 23:30:19,https://api.github.com/repos/airbnb/airpal/git/commits/96f02212eecb493a1cb582b971b911b0d1a841d7,96f02212eecb493a1cb582b971b911b0d1a841d7,fix tableapiutils
+andykram,2015-02-25 22:46:43,https://api.github.com/repos/airbnb/airpal/git/commits/89ce905a1c1010ae75b238055fed5c3c6b274c7e,89ce905a1c1010ae75b238055fed5c3c6b274c7e,[preview-partition] Select most recent d/ds partition by default
+andykram,2015-02-25 02:41:43,https://api.github.com/repos/airbnb/airpal/git/commits/2b5f39007ff12ab5e5a2b7c670db9cc9d8486e03,2b5f39007ff12ab5e5a2b7c670db9cc9d8486e03,[review] Remove comment
+andykram,2015-02-25 02:37:01,https://api.github.com/repos/airbnb/airpal/git/commits/b2ebbac33eda5829ac16dc493196c7950d96050b,b2ebbac33eda5829ac16dc493196c7950d96050b,[preview-partition] Add ability to preview data from active partition
+andykram,2015-02-26 01:12:13,https://api.github.com/repos/airbnb/airpal/git/commits/dac4f1874c7a5a9d70162d32085229bb50c5c153,dac4f1874c7a5a9d70162d32085229bb50c5c153,"Merge pull request #77 from airbnb/fix-promise-usage
+
+[promises] Fix promise.resolve usage"
+andykram,2015-02-26 01:11:46,https://api.github.com/repos/airbnb/airpal/git/commits/096bf5ef7091906818c71175739359c0f19471ca,096bf5ef7091906818c71175739359c0f19471ca,[promises] Fix promise.resolve usage
+andykram,2015-02-25 23:27:07,https://api.github.com/repos/airbnb/airpal/git/commits/a3a41a3cc99082fea4bb300a5cad5a9723061649,a3a41a3cc99082fea4bb300a5cad5a9723061649,"Merge pull request #76 from airbnb/fix-load-user
+
+[fix-load-user] Fix loading user queries"
+andykram,2015-02-25 23:26:46,https://api.github.com/repos/airbnb/airpal/git/commits/6f26e1c1a667b441b2524e53c8af0fb8f3ce90a0,6f26e1c1a667b441b2524e53c8af0fb8f3ce90a0,[fix-load-user] Fix loading user queries
+jamesmay,2015-02-25 17:50:24,https://api.github.com/repos/airbnb/airpal/git/commits/e3c203ec801084a4cb020c242ea2d92227c55d10,e3c203ec801084a4cb020c242ea2d92227c55d10,"Merge pull request #71 from airbnb/add_apache_license
+
+Adding Apache License"
+goatslacker,2015-02-25 05:08:59,https://api.github.com/repos/airbnb/airpal/git/commits/d1eab77d8a6abaef07e3a5653ee485db75abb895,d1eab77d8a6abaef07e3a5653ee485db75abb895,"Merge pull request #72 from airbnb/make-utils-return-deferred
+
+Make utils return deferred"
+goatslacker,2015-02-25 04:59:37,https://api.github.com/repos/airbnb/airpal/git/commits/7280399746b1d39647291959a36c99301392a65d,7280399746b1d39647291959a36c99301392a65d,Emit change when deleting from store
+jamesmay,2015-02-25 02:20:21,https://api.github.com/repos/airbnb/airpal/git/commits/982aa54cf50b209fbb6c9637832bd05a0129e929,982aa54cf50b209fbb6c9637832bd05a0129e929,updating copyright field
+goatslacker,2015-02-25 02:01:11,https://api.github.com/repos/airbnb/airpal/git/commits/a1be9327c58365407c76b1f289b3e0245660b368,a1be9327c58365407c76b1f289b3e0245660b368,Make the Table Utils return promises
+goatslacker,2015-02-25 01:58:11,https://api.github.com/repos/airbnb/airpal/git/commits/a379fbf09e6c65e6019871d321d41dd3bcf79058,a379fbf09e6c65e6019871d321d41dd3bcf79058,Make the User Utils return promises
+goatslacker,2015-02-25 01:40:31,https://api.github.com/repos/airbnb/airpal/git/commits/d707f508ddb23edc5e3053226e3c69ea4e51a5c5,d707f508ddb23edc5e3053226e3c69ea4e51a5c5,Make the Query Utils return promises
+goatslacker,2015-02-25 01:34:02,https://api.github.com/repos/airbnb/airpal/git/commits/093019ce55440946091721101211b5cb8a4b2d14,093019ce55440946091721101211b5cb8a4b2d14,Make the RunApiUtils return promises
+jamesmay,2015-02-25 01:11:50,https://api.github.com/repos/airbnb/airpal/git/commits/0a90933463c28643b01ab7d64a2182eea8481d31,0a90933463c28643b01ab7d64a2182eea8481d31,Adding Apache License
+andykram,2015-02-24 21:18:24,https://api.github.com/repos/airbnb/airpal/git/commits/1a09e552e58e1ddbb00c45f71b64b4b76ba6e69f,1a09e552e58e1ddbb00c45f71b64b4b76ba6e69f,"Merge pull request #69 from airbnb/gradle-clean-assets
+
+[build.gradle] Clean assets on clean"
+andykram,2015-02-24 21:17:58,https://api.github.com/repos/airbnb/airpal/git/commits/b9ebf5bae9feb787425d72680a5fcc9ffda6eba9,b9ebf5bae9feb787425d72680a5fcc9ffda6eba9,[build.gradle] Clean assets on clean
+goatslacker,2015-02-24 02:11:41,https://api.github.com/repos/airbnb/airpal/git/commits/7df6462b314b59745e779f09d9c73122f1f32dc7,7df6462b314b59745e779f09d9c73122f1f32dc7,"Merge pull request #62 from airbnb/alt
+
+Altifying airpal"
+goatslacker,2015-02-24 01:56:43,https://api.github.com/repos/airbnb/airpal/git/commits/c21c2b01ed03596e0ed978f863efc34a53b039de,c21c2b01ed03596e0ed978f863efc34a53b039de,Add an es6-shim
+goatslacker,2015-02-24 00:32:53,https://api.github.com/repos/airbnb/airpal/git/commits/34fdfc77d078335e7fac63fd38e0788606dbf589,34fdfc77d078335e7fac63fd38e0788606dbf589,Apply bug fixes from altifying
+goatslacker,2015-02-21 09:47:21,https://api.github.com/repos/airbnb/airpal/git/commits/f76fd3fee9e8f1f26babb654a74fb06e22307fb1,f76fd3fee9e8f1f26babb654a74fb06e22307fb1,ES6 all the things
+goatslacker,2015-02-21 09:07:11,https://api.github.com/repos/airbnb/airpal/git/commits/19540e47626e836a53bf9ada1ade33c8122477d0,19540e47626e836a53bf9ada1ade33c8122477d0,Deleting code
+goatslacker,2015-02-21 09:06:18,https://api.github.com/repos/airbnb/airpal/git/commits/9d0277012dc0e0cacad63e3025ee7a81943ff40c,9d0277012dc0e0cacad63e3025ee7a81943ff40c,Altify the Table stuff
+goatslacker,2015-02-21 04:06:54,https://api.github.com/repos/airbnb/airpal/git/commits/95cccd544c1c872621aaf51e428dd215133f21a7,95cccd544c1c872621aaf51e428dd215133f21a7,"Altify Query things
+
+* QueryActions
+* QueryStore
+
+ES6-ify QueryUtils
+
+Fix-up the components to use the new alt-idioms.
+
+Removed QueryStore from QuerySaveModal since it was not being used.
+
+Created a new FluxCollection which is BaseStore but ES6'd and abstracted
+out."
+goatslacker,2015-02-21 01:43:37,https://api.github.com/repos/airbnb/airpal/git/commits/a9fe82f6856cc91119e421d00365944a7c44eb96,a9fe82f6856cc91119e421d00365944a7c44eb96,Converts UserActions and UserStore
+goatslacker,2015-02-21 01:12:57,https://api.github.com/repos/airbnb/airpal/git/commits/5a65bd39fbec5e16ad1ed8a76202f4f7eb862363,5a65bd39fbec5e16ad1ed8a76202f4f7eb862363,Adds alt
+goatslacker,2015-02-24 01:08:33,https://api.github.com/repos/airbnb/airpal/git/commits/5d8ad7506165454680278abdacfc132805cd933e,5d8ad7506165454680278abdacfc132805cd933e,"Merge pull request #67 from airbnb/fix-partition-deselection
+
+[partition-deselection][ellipsis] Two fixes for the UI"
+andykram,2015-02-24 01:04:12,https://api.github.com/repos/airbnb/airpal/git/commits/572bb3457e73879cc4d1593c4ef1b11779d2544b,572bb3457e73879cc4d1593c4ef1b11779d2544b,[jsx-babelify] Make babelify compile correctly
+andykram,2015-02-24 00:49:27,https://api.github.com/repos/airbnb/airpal/git/commits/2c6d8e2e39b424f858ae4bd686891245a652cf63,2c6d8e2e39b424f858ae4bd686891245a652cf63,[partition-deselection] Fix partition deselection
+andykram,2015-02-24 00:49:11,https://api.github.com/repos/airbnb/airpal/git/commits/e3d00ecc5c85d0e84f0a4ac42e319fd3d55c1b53,e3d00ecc5c85d0e84f0a4ac42e319fd3d55c1b53,[ellipsis] Add ellipsis to long data cells
+hshoff,2015-02-23 17:29:22,https://api.github.com/repos/airbnb/airpal/git/commits/bf7a0c9f11efd7c173a885bf314d5d5838986eac,bf7a0c9f11efd7c173a885bf314d5d5838986eac,"Merge pull request #66 from airbnb/harry/ui2
+
+[ui] fix wrapping for long saved queries"
+hshoff,2015-02-21 22:58:17,https://api.github.com/repos/airbnb/airpal/git/commits/39859561acc9477326377e5ee0eae87db217dcef,39859561acc9477326377e5ee0eae87db217dcef,[ui] use divs not trs
+hshoff,2015-02-21 22:01:28,https://api.github.com/repos/airbnb/airpal/git/commits/43f12b80be7d607486efadcec5b4ebff91c509de,43f12b80be7d607486efadcec5b4ebff91c509de,[ui] cleanup
+hshoff,2015-02-21 21:59:07,https://api.github.com/repos/airbnb/airpal/git/commits/0848893d9317314829e0c11c4257752d8dd77c80,0848893d9317314829e0c11c4257752d8dd77c80,[ui] cleanup
+hshoff,2015-02-21 21:49:15,https://api.github.com/repos/airbnb/airpal/git/commits/607ff7f81e6392ad8942bc2886d5a3d959b32002,607ff7f81e6392ad8942bc2886d5a3d959b32002,[ui] fix wrapping for long saved queries
+goatslacker,2015-02-21 02:40:33,https://api.github.com/repos/airbnb/airpal/git/commits/ff8041d5ecd4f7edfcd8b3299ef2f6f4c63c1a86,ff8041d5ecd4f7edfcd8b3299ef2f6f4c63c1a86,"Merge pull request #65 from airbnb/use-babel
+
+Use babel"
+goatslacker,2015-02-21 02:36:08,https://api.github.com/repos/airbnb/airpal/git/commits/26d19741a7691868f8957fa141117607e1829246,26d19741a7691868f8957fa141117607e1829246,Use babel
+spikebrehm,2015-02-21 02:14:11,https://api.github.com/repos/airbnb/airpal/git/commits/b838b9c968dd11b72fdc7f4d55673b8d5dd4b2a9,b838b9c968dd11b72fdc7f4d55673b8d5dd4b2a9,Better height limits for `.query-save-modal pre`
+andykram,2015-02-21 01:59:38,https://api.github.com/repos/airbnb/airpal/git/commits/a20103527eddee0028cb360da26d114cb4fb4305,a20103527eddee0028cb360da26d114cb4fb4305,"Merge pull request #64 from airbnb/fix-partition-deselection
+
+[partition-deselect] Deselect partitions when table changes"
+andykram,2015-02-21 01:55:32,https://api.github.com/repos/airbnb/airpal/git/commits/d8a081714411b732b7de0537d07f86301a0d3a81,d8a081714411b732b7de0537d07f86301a0d3a81,[partition-deselect] Deselect partitions when table changes
+spikebrehm,2015-02-21 01:54:46,https://api.github.com/repos/airbnb/airpal/git/commits/e6dcdcc6ebd9a78cb19b9d0800b3b6c602ab0d74,e6dcdcc6ebd9a78cb19b9d0800b3b6c602ab0d74,"Merge pull request #63 from airbnb/deps-cleanup
+
+Removing unused dependencies; rearrange package.json"
+spikebrehm,2015-02-21 01:40:08,https://api.github.com/repos/airbnb/airpal/git/commits/9597889fcbf04fbde201e30fb34f07d00c7955ef,9597889fcbf04fbde201e30fb34f07d00c7955ef,Fix comma syntax errors in package.json
+spikebrehm,2015-02-21 01:36:08,https://api.github.com/repos/airbnb/airpal/git/commits/addc816f68028983e23febcab38dac417588ac29,addc816f68028983e23febcab38dac417588ac29,"Removing unused dependencies; rearrange package.json
+
+Remove some unused dependencies & their CSS, and rearrange between
+`dependencies` and `devDependencies` fields in `package.json` as
+appropriate."
+hshoff,2015-02-21 01:10:49,https://api.github.com/repos/airbnb/airpal/git/commits/2de5e54a15f49993adc4a636e73fc1690d6c156f,2de5e54a15f49993adc4a636e73fc1690d6c156f,"Merge pull request #60 from airbnb/harry/ui2
+
+[ui] titles, panels, & editor updates"
+andykram,2015-02-21 00:52:45,https://api.github.com/repos/airbnb/airpal/git/commits/eea090c323932815628b328a6442648dd992fe9d,eea090c323932815628b328a6442648dd992fe9d,"Merge pull request #61 from airbnb/1.8-compatibility
+
+[java1.8] Support building with java 8"
+andykram,2015-02-21 00:52:18,https://api.github.com/repos/airbnb/airpal/git/commits/40a2c71820a46ea3b5e3bde3f374f008bedf8925,40a2c71820a46ea3b5e3bde3f374f008bedf8925,[java1.8] Support building with java 8
+hshoff,2015-02-21 00:32:39,https://api.github.com/repos/airbnb/airpal/git/commits/bcfa18ea6c689a0341b2964feb05a9a587b18ca4,bcfa18ea6c689a0341b2964feb05a9a587b18ca4,"[ui] tabs > pills, tighten up"
+hshoff,2015-02-21 00:06:41,https://api.github.com/repos/airbnb/airpal/git/commits/e7c8deed436cd59367c51b4e4c0fc7115f79c715,e7c8deed436cd59367c51b4e4c0fc7115f79c715,[ui] remove empty alert messages
+hshoff,2015-02-21 00:02:09,https://api.github.com/repos/airbnb/airpal/git/commits/bcfe5941519e4c161e18a30e7605f6e4014c6650,bcfe5941519e4c161e18a30e7605f6e4014c6650,[ui] full bleed query editor
+hshoff,2015-02-20 23:49:42,https://api.github.com/repos/airbnb/airpal/git/commits/8980da6f4b4ad450341e97a97da45bb9c540bb98,8980da6f4b4ad450341e97a97da45bb9c540bb98,[ui] add titles and panels
+andykram,2015-02-20 23:20:29,https://api.github.com/repos/airbnb/airpal/git/commits/ad520d898001f5749ea7a18055ed2a125cd9c995,ad520d898001f5749ea7a18055ed2a125cd9c995,"Merge pull request #59 from airbnb/remove-updatedat-partitions
+
+Remove updated at"
+andykram,2015-02-20 22:44:22,https://api.github.com/repos/airbnb/airpal/git/commits/06997d314dca5cd749f47e1ae0fa3d13202adb5a,06997d314dca5cd749f47e1ae0fa3d13202adb5a,[no-updatedat] Remove updated at info
+andykram,2015-02-20 23:00:41,https://api.github.com/repos/airbnb/airpal/git/commits/ccfe1ede6195cd3665482eb876ea0b8719dd40fb,ccfe1ede6195cd3665482eb876ea0b8719dd40fb,"Merge pull request #58 from airbnb/serve-csvs-as-not-html
+
+[csvs-download] Always make CSVs download"
+andykram,2015-02-20 22:59:56,https://api.github.com/repos/airbnb/airpal/git/commits/a6ecf29f095ac4350113e6e9e3d008e5ab161806,a6ecf29f095ac4350113e6e9e3d008e5ab161806,[csvs-download] Always make CSVs download
+andykram,2015-02-20 21:46:05,https://api.github.com/repos/airbnb/airpal/git/commits/8f33112a5ea9523322e3d8d8bf9e010ec184492e,8f33112a5ea9523322e3d8d8bf9e010ec184492e,"Merge pull request #57 from airbnb/fix-partition-selection
+
+[fix-partition-selection] Fix partition selections"
+andykram,2015-02-20 21:45:49,https://api.github.com/repos/airbnb/airpal/git/commits/f78e016b37ec9fa0b70cef8db3a9046ebfc1d3cd,f78e016b37ec9fa0b70cef8db3a9046ebfc1d3cd,[fix-partition-selection] Fix partition selections
+andykram,2015-02-20 21:27:01,https://api.github.com/repos/airbnb/airpal/git/commits/a61f202e5b1fb1ef34ef40e7085c0fd4232609b9,a61f202e5b1fb1ef34ef40e7085c0fd4232609b9,"Merge pull request #56 from airbnb/fix-moment-dep
+
+[fix-moment-dep] Specify moment require in tablesearch"
+andykram,2015-02-20 21:26:45,https://api.github.com/repos/airbnb/airpal/git/commits/f45287ccc68b0da4e1264b8e06a016809b2cf562,f45287ccc68b0da4e1264b8e06a016809b2cf562,[fix-moment-dep] Specify moment require in tablesearch
+andykram,2015-02-20 21:16:23,https://api.github.com/repos/airbnb/airpal/git/commits/8e66aacb991f3692ee2742ccc8631a286207170a,8e66aacb991f3692ee2742ccc8631a286207170a,"Merge pull request #55 from airbnb/fix-columns-info
+
+[fix-columns-info] Add partition tag to partitioned columns"
+andykram,2015-02-20 21:12:07,https://api.github.com/repos/airbnb/airpal/git/commits/20a1368c79de0b97b5a01b83e1e12aa5aa7e2508,20a1368c79de0b97b5a01b83e1e12aa5aa7e2508,[fix-columns-info] Add partition tag to partitioned columns
+andykram,2015-02-20 20:48:17,https://api.github.com/repos/airbnb/airpal/git/commits/0793a387a01010730f69cdfccdc27cfbf1e89ee8,0793a387a01010730f69cdfccdc27cfbf1e89ee8,"Merge pull request #52 from airbnb/fix-preview-table
+
+[fix-preview-table] Fix table component used in previews"
+andykram,2015-02-20 20:42:40,https://api.github.com/repos/airbnb/airpal/git/commits/40f1165d2b1e8249c691a3a9c8ab791d198cca7d,40f1165d2b1e8249c691a3a9c8ab791d198cca7d,address feedback
+andykram,2015-02-20 20:22:58,https://api.github.com/repos/airbnb/airpal/git/commits/3fc07aa2c48659ce3dcf6ee9dec53bb8a1874959,3fc07aa2c48659ce3dcf6ee9dec53bb8a1874959,[fix-preview-table] Ensure the preview table draws correctly and resizable
+spikebrehm,2015-02-20 03:02:17,https://api.github.com/repos/airbnb/airpal/git/commits/6b051e00e9642339ee4832decb8c892231f31e39,6b051e00e9642339ee4832decb8c892231f31e39,Make DataPreview table scroll and resize better
+spikebrehm,2015-02-20 02:17:38,https://api.github.com/repos/airbnb/airpal/git/commits/f4e12577fa0c5b9f48c3c49908185a31101c9ca3,f4e12577fa0c5b9f48c3c49908185a31101c9ca3,Remove `griddle-react` from package.json
+andykram,2015-02-19 03:24:15,https://api.github.com/repos/airbnb/airpal/git/commits/6b6b175285e2cabdb993e9c554aac5383413de0a,6b6b175285e2cabdb993e9c554aac5383413de0a,[fix-preview-table] Fix table component used in previews
+salbito,2015-02-20 20:36:53,https://api.github.com/repos/airbnb/airpal/git/commits/986ba1d1eb060c81bf08437e1f0dfe8535f782be,986ba1d1eb060c81bf08437e1f0dfe8535f782be,"Merge pull request #54 from airbnb/rename_component_extensions_and_shorten_require_paths
+
+[Cleanup] Rename .react.js components as .js.jsx for consistency"
+spikebrehm,2015-02-20 02:14:38,https://api.github.com/repos/airbnb/airpal/git/commits/100ecc5189c095af46b6cf8a516e188f2cd051a9,100ecc5189c095af46b6cf8a516e188f2cd051a9,"Merge pull request #53 from airbnb/typeahead-spinner
+
+Add a spinner to the selectize inputs"
+spikebrehm,2015-02-20 02:10:53,https://api.github.com/repos/airbnb/airpal/git/commits/8190d3abab97b6d1d25f0a4b0f6c61f064cd710c,8190d3abab97b6d1d25f0a4b0f6c61f064cd710c,"Add a spinner to the selectize inputs
+
+http://g.recordit.co/az7mDfxdpS.gif"
+spikebrehm,2015-02-20 01:06:59,https://api.github.com/repos/airbnb/airpal/git/commits/a5412d41fa44839e93d2801691900ef9b60f9930,a5412d41fa44839e93d2801691900ef9b60f9930,"Merge pull request #51 from airbnb/kill-query
+
+Add ability to kill queries"
+spikebrehm,2015-02-20 01:06:36,https://api.github.com/repos/airbnb/airpal/git/commits/2abfaa30c7cb454037c22f1c42b787a75e805074,2abfaa30c7cb454037c22f1c42b787a75e805074,Only show kill query UI if viewing own queries
+spikebrehm,2015-02-20 00:52:24,https://api.github.com/repos/airbnb/airpal/git/commits/202e57b2513349fe69807bf3ed349a8229bcbb57,202e57b2513349fe69807bf3ed349a8229bcbb57,Put query kill button styles in CSS
+spikebrehm,2015-02-20 00:48:02,https://api.github.com/repos/airbnb/airpal/git/commits/43f033825c6e184a45f1e5d25aeb9455b05331d4,43f033825c6e184a45f1e5d25aeb9455b05331d4,Remove link to Airbnb-specific Hackpad
+spikebrehm,2015-02-20 00:41:25,https://api.github.com/repos/airbnb/airpal/git/commits/2a477a95b2fe8addba881ef4a1b1be5b9449051a,2a477a95b2fe8addba881ef4a1b1be5b9449051a,Add ability to kill queries
+spikebrehm,2015-02-20 00:07:02,https://api.github.com/repos/airbnb/airpal/git/commits/d0e4465edc7d291a07fd8fe7286317931ede2879,d0e4465edc7d291a07fd8fe7286317931ede2879,Resize RunsTable to fit width
+spikebrehm,2015-02-19 23:50:36,https://api.github.com/repos/airbnb/airpal/git/commits/dcd0f467e7456825486d46077d26912ad8f14ec8,dcd0f467e7456825486d46077d26912ad8f14ec8,Scrolling improvements in QueryInformation tabs
+spikebrehm,2015-02-19 22:41:03,https://api.github.com/repos/airbnb/airpal/git/commits/5a16d6c6199383934c1a5fbf996d72344cda180e,5a16d6c6199383934c1a5fbf996d72344cda180e,Finish saved queries
+spikebrehm,2015-02-19 03:23:40,https://api.github.com/repos/airbnb/airpal/git/commits/b9170dec07eaf25a71f1b5a4b84ec109de13bc8c,b9170dec07eaf25a71f1b5a4b84ec109de13bc8c,"Merge pull request #50 from airbnb/saved-queries
+
+First pass at rendering saved queries"
+spikebrehm,2015-02-19 03:16:49,https://api.github.com/repos/airbnb/airpal/git/commits/b224b28b8ac210c59f8485450c7b7cc97712bc4c,b224b28b8ac210c59f8485450c7b7cc97712bc4c,First pass at rendering saved queries
+andykram,2015-02-19 02:55:44,https://api.github.com/repos/airbnb/airpal/git/commits/cf607dd0fffbe19431fa8097a520c4e89f8d84dc,cf607dd0fffbe19431fa8097a520c4e89f8d84dc,"Merge pull request #49 from airbnb/andykram/dropdown-fixes2
+
+[dropdown-fixes2] Simple fix to propagate events"
+andykram,2015-02-19 02:54:22,https://api.github.com/repos/airbnb/airpal/git/commits/4bf2a5875d243cd1e95042a19a446c4b99347b4f,4bf2a5875d243cd1e95042a19a446c4b99347b4f,[dropdown-fixes2] Simple fix to propagate events
+andykram,2015-02-19 02:28:20,https://api.github.com/repos/airbnb/airpal/git/commits/da98b02ff1f0658acfc46ba9ffac3aaf93ac1f0f,da98b02ff1f0658acfc46ba9ffac3aaf93ac1f0f,"Merge pull request #48 from airbnb/andykram/dropdown-fixes
+
+[dropdown-fixes] Further improves behavior of dropdowns"
+andykram,2015-02-19 02:26:24,https://api.github.com/repos/airbnb/airpal/git/commits/2ca7f1c7ff1124f7a79b07d7bebc1706133cc57f,2ca7f1c7ff1124f7a79b07d7bebc1706133cc57f,[dropdown-fixes] Address feedback
+spikebrehm,2015-02-19 02:24:59,https://api.github.com/repos/airbnb/airpal/git/commits/95b544f6cea58e17f2920e44fd8e2022efd82d7b,95b544f6cea58e17f2920e44fd8e2022efd82d7b,"Rename to ""My recent queries"""
+andykram,2015-02-19 02:20:20,https://api.github.com/repos/airbnb/airpal/git/commits/adafe0d3e5196f269c0cd0f9455aa74ac6a722c0,adafe0d3e5196f269c0cd0f9455aa74ac6a722c0,[dropdown-fixes] Further improves behavior of dropdowns
+spikebrehm,2015-02-19 02:14:13,https://api.github.com/repos/airbnb/airpal/git/commits/f86e565a1404a45d0441722e11c083cb166d0fa9,f86e565a1404a45d0441722e11c083cb166d0fa9,AirPal -> Airpal
+spikebrehm,2015-02-19 02:11:02,https://api.github.com/repos/airbnb/airpal/git/commits/3d4041cfd47b8bd1d967d91f1a9f6d337d3e77e8,3d4041cfd47b8bd1d967d91f1a9f6d337d3e77e8,"Merge pull request #47 from airbnb/query-history
+
+Fetch data for all queries tab"
+spikebrehm,2015-02-19 02:08:40,https://api.github.com/repos/airbnb/airpal/git/commits/39c59d71983798df119320424f00777e9d59e57e,39c59d71983798df119320424f00777e9d59e57e,Fetch data for all queries tab
+andykram,2015-02-19 01:18:48,https://api.github.com/repos/airbnb/airpal/git/commits/3d1b5808b21d76e975e40852aba0ec39c05e5dd1,3d1b5808b21d76e975e40852aba0ec39c05e5dd1,"Merge pull request #46 from airbnb/andykram/dropdown-improvements
+
+[dropdown-improvements] Fix the table and partition dropdown UX"
+andykram,2015-02-19 01:15:37,https://api.github.com/repos/airbnb/airpal/git/commits/c0ba36799c1492a8d0a0cec2595953320cdc7415,c0ba36799c1492a8d0a0cec2595953320cdc7415,[dropdown-improvements] Address feedback
+andykram,2015-02-18 19:05:07,https://api.github.com/repos/airbnb/airpal/git/commits/7f53a873bcaf5c62e572c5a51eec2b94db1520a7,7f53a873bcaf5c62e572c5a51eec2b94db1520a7,[dropdown-improvements] Fix the table and partition dropdown UX
+spikebrehm,2015-02-19 00:45:47,https://api.github.com/repos/airbnb/airpal/git/commits/2a9f3d62ba619921341e2d23b8abbd67b905554c,2a9f3d62ba619921341e2d23b8abbd67b905554c,QueryEditor: move text input and buttons inside panel
+spikebrehm,2015-02-19 00:35:29,https://api.github.com/repos/airbnb/airpal/git/commits/1a9592b418ec5ab8cf5234e00dbef072a22b0f7f,1a9592b418ec5ab8cf5234e00dbef072a22b0f7f,"Update Bootstrap and add progress bar
+
+Update Bootstrap to get the progress bar stuff, and add a progress bar
+in the table."
+spikebrehm,2015-02-18 23:27:51,https://api.github.com/repos/airbnb/airpal/git/commits/6fd0285f0520a2c44b6bbb1080e6f1a461410343,6fd0285f0520a2c44b6bbb1080e6f1a461410343,"Merge pull request #44 from airbnb/select-query
+
+Select a query by clicking on it"
+spikebrehm,2015-02-18 23:12:00,https://api.github.com/repos/airbnb/airpal/git/commits/e6f11983690aeb27e6cf316979d519d5cf4b800c,e6f11983690aeb27e6cf316979d519d5cf4b800c,"Select a query by clicking on it
+
+Add a feature that was present in the old tool: select a query by
+clicking on it, which populates it in the ACE editor."
+spikebrehm,2015-02-18 21:50:31,https://api.github.com/repos/airbnb/airpal/git/commits/c3b7eb3170f68885444e3e20775ca3572edbad17,c3b7eb3170f68885444e3e20775ca3572edbad17,Fix comparator of RunStore
+spikebrehm,2015-02-18 21:07:56,https://api.github.com/repos/airbnb/airpal/git/commits/71d515d983e44e1483c46f59a85bab3279910558,71d515d983e44e1483c46f59a85bab3279910558,Nilcheck on sparse runs
+spikebrehm,2015-02-18 19:55:38,https://api.github.com/repos/airbnb/airpal/git/commits/6ada40793721a8246fd3eabf304edd0d461cfa74,6ada40793721a8246fd3eabf304edd0d461cfa74,"Merge pull request #43 from airbnb/base-store
+
+Move StoreDefaults to BaseStore class"
+spikebrehm,2015-02-18 19:45:35,https://api.github.com/repos/airbnb/airpal/git/commits/dc3d9f27fc13263a791ecfe279e9d4dbabb6b666,dc3d9f27fc13263a791ecfe279e9d4dbabb6b666,"Move StoreDefaults to BaseStore class
+
+Previously, `StoreDefaults` was a simple object that was mixed into each
+individual store. This caused the issue that the `collection` property,
+an array the holds records for each store, was shared between all
+stores.
+
+My proposed fix is to create a `BaseStore` class and have each store be
+a singleton instance of a class that inherits from it.
+
+I don't think this caused any regressions, but we'll have to smoke test
+to make sure."
+spikebrehm,2015-02-18 18:53:16,https://api.github.com/repos/airbnb/airpal/git/commits/9c59406f608ac31b127a62f21531a9856ecd387d,9c59406f608ac31b127a62f21531a9856ecd387d,"Lazy-render query tabs
+
+To make datafetching more manageable, lazy-render query tabs.
+
+Also use second argument in `removeStoreListener()` to prevent
+exceptions."
+spikebrehm,2015-02-18 18:41:27,https://api.github.com/repos/airbnb/airpal/git/commits/1ea496bf701cd4cbe102b9cecb83d509ffeed3af,1ea496bf701cd4cbe102b9cecb83d509ffeed3af,Update URL for saved queries call
+spikebrehm,2015-02-18 18:24:01,https://api.github.com/repos/airbnb/airpal/git/commits/ce7f3692dbd48e6965100f58f9f9a65d2c560c7e,ce7f3692dbd48e6965100f58f9f9a65d2c560c7e,"Merge pull request #42 from airbnb/nuke-update-query
+
+Remove updateQuery action & related code"
+spikebrehm,2015-02-18 03:46:58,https://api.github.com/repos/airbnb/airpal/git/commits/b3500bfa1a979cfeb0953463b721050fac6be39f,b3500bfa1a979cfeb0953463b721050fac6be39f,"Remove updateQuery action & related code
+
+It turns out we're not implementing a PATCH for the queries resource,
+and we won't be using the `updateQuery` action or related code. Let's
+nuke it to simplify things."
+spikebrehm,2015-02-18 03:05:04,https://api.github.com/repos/airbnb/airpal/git/commits/8bd39280a512255a6fd71386b4ba860e99e9282c,8bd39280a512255a6fd71386b4ba860e99e9282c,"Merge pull request #41 from airbnb/all-running-queries
+
+Add AllRunningQueries component"
+spikebrehm,2015-02-18 02:47:01,https://api.github.com/repos/airbnb/airpal/git/commits/1f4fdc1f429cf9dcde42b7e266418634e6cfc1f0,1f4fdc1f429cf9dcde42b7e266418634e6cfc1f0,"Add AllRunningQueries component
+
+Which is the same as MyOwnRuns, except it displays user"
+spikebrehm,2015-02-18 02:01:11,https://api.github.com/repos/airbnb/airpal/git/commits/411c89d3691f77edd0b141273847254154539b77,411c89d3691f77edd0b141273847254154539b77,"Merge pull request #40 from airbnb/my-own-runs-refactor
+
+Update MyOwnRuns to use FixedDataTable"
+spikebrehm,2015-02-18 02:00:35,https://api.github.com/repos/airbnb/airpal/git/commits/481fbcd54b7f6cf8fc5505d5499e709ddda773da,481fbcd54b7f6cf8fc5505d5499e709ddda773da,Add target=_blank to CSV link
+spikebrehm,2015-02-18 01:54:24,https://api.github.com/repos/airbnb/airpal/git/commits/83fbafa804f2974e744bf9ab7d5d6a6fd9817c9b,83fbafa804f2974e744bf9ab7d5d6a6fd9817c9b,Fix typo in error
+spikebrehm,2015-02-18 01:46:10,https://api.github.com/repos/airbnb/airpal/git/commits/d43941d76c46b28ed11b28c2257860a961eb91d0,d43941d76c46b28ed11b28c2257860a961eb91d0,Remove unused MyOwnRunsRow
+spikebrehm,2015-02-17 23:45:27,https://api.github.com/repos/airbnb/airpal/git/commits/b9afb546ee42005677a9329f944daac5f05c6271,b9afb546ee42005677a9329f944daac5f05c6271,"Update MyOwnRuns to use FixedDataTable
+
+Use Facebook's FixedDataTable component to render the table.
+
+http://facebook.github.io/fixed-data-table/"
+andykram,2015-02-18 00:41:20,https://api.github.com/repos/airbnb/airpal/git/commits/751b0eff63f353c8f1c288b649699a6350a10970,751b0eff63f353c8f1c288b649699a6350a10970,"Merge pull request #39 from airbnb/andykram/column-info
+
+[table-info] Update column info display"
+andykram,2015-02-18 00:36:37,https://api.github.com/repos/airbnb/airpal/git/commits/a4505121a03eb5094a0ddd670056bc94825ace9b,a4505121a03eb5094a0ddd670056bc94825ace9b,[table-info] Update column info display
+spikebrehm,2015-02-17 23:19:35,https://api.github.com/repos/airbnb/airpal/git/commits/5dcc63393ae78eda3c24f5132319ac8f83699fd8,5dcc63393ae78eda3c24f5132319ac8f83699fd8,"Merge pull request #38 from airbnb/bundle-development
+
+Different build settings for NODE_ENV=development"
+andykram,2015-02-17 23:18:34,https://api.github.com/repos/airbnb/airpal/git/commits/08af08128e005ab6a5f2da6828c8b6a663479ccb,08af08128e005ab6a5f2da6828c8b6a663479ccb,"Merge pull request #37 from airbnb/andykram/sort-usages
+
+[tablesearch] Sort results in table finder by usages"
+andykram,2015-02-17 23:16:19,https://api.github.com/repos/airbnb/airpal/git/commits/584c40175b69b7997a7a33e011d1848e6846cabf,584c40175b69b7997a7a33e011d1848e6846cabf,[tablesearch] Sort results in table finder by usages
+spikebrehm,2015-02-17 23:14:41,https://api.github.com/repos/airbnb/airpal/git/commits/ad80e27c1bfa26a8f13957769772b7eb9a6ad7b3,ad80e27c1bfa26a8f13957769772b7eb9a6ad7b3,"Different build settings for NODE_ENV=development
+
+For better development experience, when NODE_ENV=development:
+
+1. Don't minify, because it was messing up sourcemaps.
+2. Change the output destination of asset building to play better with
+   IntelliJ's classmaps, so changes are picked up during local
+   development.
+
+The idea is to run:
+
+    NODE_ENV=development gulp watch
+
+from the
+
+    src/main/resources/assets
+
+directory."
+spikebrehm,2015-02-17 23:00:14,https://api.github.com/repos/airbnb/airpal/git/commits/8e43ff49452e37628100abb3a50dcd9f78abc572,8e43ff49452e37628100abb3a50dcd9f78abc572,Add missing `moment` dependency to package.json
+spikebrehm,2015-02-17 22:56:34,https://api.github.com/repos/airbnb/airpal/git/commits/1b6f2e7782ad4af7dadf48fe27b143494142e3dd,1b6f2e7782ad4af7dadf48fe27b143494142e3dd,Fix bug in running queries due to missing constant
+spikebrehm,2015-02-17 22:39:39,https://api.github.com/repos/airbnb/airpal/git/commits/1f8211422cc3b1707c36c8249015e8f9e28f1973,1f8211422cc3b1707c36c8249015e8f9e28f1973,"Merge pull request #36 from airbnb/remove-build-artifacts
+
+Remove build artifacts"
+spikebrehm,2015-02-17 22:37:14,https://api.github.com/repos/airbnb/airpal/git/commits/6fe6ff785a647bddc6e3f78b1ae272d6271f1f6f,6fe6ff785a647bddc6e3f78b1ae272d6271f1f6f,Remove JS build artifacts that have been gitignore'd
+spikebrehm,2015-02-17 22:36:32,https://api.github.com/repos/airbnb/airpal/git/commits/a8c18df341bfd257dce0fb2a55b4f87a4f1ca0ea,a8c18df341bfd257dce0fb2a55b4f87a4f1ca0ea,Ignore more IntelliJ files
+spikebrehm,2015-02-17 21:36:04,https://api.github.com/repos/airbnb/airpal/git/commits/09f70b732829f43f8bcd72749a55ba8766d376c8,09f70b732829f43f8bcd72749a55ba8766d376c8,"Merge pull request #35 from airbnb/reference-yml-example
+
+Provide reference.example.yml; gitignore reference.yml"
+spikebrehm,2015-02-17 21:30:23,https://api.github.com/repos/airbnb/airpal/git/commits/ee7244fc15b4240db88b1077eb887c69edd442f6,ee7244fc15b4240db88b1077eb887c69edd442f6,Better README content
+spikebrehm,2015-02-17 21:25:21,https://api.github.com/repos/airbnb/airpal/git/commits/566949dcae5ebc66445c0ab15d9d9a5290193a05,566949dcae5ebc66445c0ab15d9d9a5290193a05,"Provide reference.example.yml; gitignore reference.yml
+
+To make it easier to develop with Airpal, move `reference.yml` to
+`reference.example.yml` and add `reference.yml` to gitignore.  This will
+prevent:
+
+1. Developers from accidentally committing sensitive data to the repo.
+2. Annoying git workflow if having edited `reference.yml`."
+andykram,2015-02-17 21:26:38,https://api.github.com/repos/airbnb/airpal/git/commits/0d692db33e0fdf4b1ae98661d0b122deb63027ed,0d692db33e0fdf4b1ae98661d0b122deb63027ed,"Merge pull request #34 from airbnb/tdi-rebase
+
+Table Data Integration rebase"
+andykram,2015-02-17 19:43:06,https://api.github.com/repos/airbnb/airpal/git/commits/f08811d53fc85397d0fec6ffabfa3a83033b4230,f08811d53fc85397d0fec6ffabfa3a83033b4230,[local-file-store] Ensure s3 creds can be null
+andykram,2015-02-17 18:49:58,https://api.github.com/repos/airbnb/airpal/git/commits/1c5228da958bba64f99e34aa4de1318947929b89,1c5228da958bba64f99e34aa4de1318947929b89,[gitignore] Ignore certain JS build artifacts
+stefanvermaas,2015-02-17 16:44:06,https://api.github.com/repos/airbnb/airpal/git/commits/8177eb0fb42c96b93a0f321e213462cecf8df14e,8177eb0fb42c96b93a0f321e213462cecf8df14e,Adds Griddle for data preview
+stefanvermaas,2015-02-17 15:17:42,https://api.github.com/repos/airbnb/airpal/git/commits/6e022a463de75b01df1c7595af2f63d0d656c218,6e022a463de75b01df1c7595af2f63d0d656c218,Update of build files
+stefanvermaas,2015-02-17 15:17:33,https://api.github.com/repos/airbnb/airpal/git/commits/e3421945940a14258a5ff565d56624682b81c7ce,e3421945940a14258a5ff565d56624682b81c7ce,Updates the my saved query tab
+stefanvermaas,2015-02-17 15:17:01,https://api.github.com/repos/airbnb/airpal/git/commits/84a94b21c36c2ceac0644b0410918bf4f93ce568,84a94b21c36c2ceac0644b0410918bf4f93ce568,Adds the new runs tab to the app
+stefanvermaas,2015-01-23 21:00:35,https://api.github.com/repos/airbnb/airpal/git/commits/b7d1623d99c638bf4e46562d390591dd23b35ba0,b7d1623d99c638bf4e46562d390591dd23b35ba0,Renamed query to run
+stefanvermaas,2015-01-23 20:26:10,https://api.github.com/repos/airbnb/airpal/git/commits/710fceae271ff01269d3df2907f23223737cd940,710fceae271ff01269d3df2907f23223737cd940,Small header change
+stefanvermaas,2015-01-23 20:26:03,https://api.github.com/repos/airbnb/airpal/git/commits/6e147f634b7b4553a112150c87ed86a972bea9eb,6e147f634b7b4553a112150c87ed86a972bea9eb,Adds a custom table name to the run
+stefanvermaas,2015-01-23 15:07:57,https://api.github.com/repos/airbnb/airpal/git/commits/2a11ae2a3339faadfef84c72b82b4662ab033aba,2a11ae2a3339faadfef84c72b82b4662ab033aba,Basic setup for creating a new run
+stefanvermaas,2015-01-23 14:36:39,https://api.github.com/repos/airbnb/airpal/git/commits/7930d69b07bf2837e5f681384b0efa2dbc07de26,7930d69b07bf2837e5f681384b0efa2dbc07de26,Removes the unneeded tour button
+stefanvermaas,2015-01-23 14:30:46,https://api.github.com/repos/airbnb/airpal/git/commits/ab89ecc34869693426f969501ee2d1c759b17dd6,ab89ecc34869693426f969501ee2d1c759b17dd6,Adds basic setup for tests
+stefanvermaas,2015-01-23 14:17:57,https://api.github.com/repos/airbnb/airpal/git/commits/df507cedae9ffcc75489f9b14e365544bbb63f7f,df507cedae9ffcc75489f9b14e365544bbb63f7f,"Extends default settings
+
+* Adds a collection array to the store default"
+stefanvermaas,2015-01-23 14:17:33,https://api.github.com/repos/airbnb/airpal/git/commits/f857b877c51825f2f00fec778152246a165df5a1,f857b877c51825f2f00fec778152246a165df5a1,"Adds run interface
+
+* Integrates the SSE into the run store
+* Creates a connection error template"
+stefanvermaas,2015-01-12 17:18:49,https://api.github.com/repos/airbnb/airpal/git/commits/473d8438a44b118cb77cffc2e613b848f6c37c83,473d8438a44b118cb77cffc2e613b848f6c37c83,"Adds a functional MyOwnQueries component
+
+Still uses dummy data, but that’s just because querying new data
+doesn’t work locally yet."
+stefanvermaas,2015-01-12 17:17:53,https://api.github.com/repos/airbnb/airpal/git/commits/80d90c40f16dba696102ec4273009a4bcd4c1876,80d90c40f16dba696102ec4273009a4bcd4c1876,Moved back to one dispatcher
+stefanvermaas,2014-12-16 15:46:22,https://api.github.com/repos/airbnb/airpal/git/commits/11c3b695a80344ab7f146f900829f55962729972,11c3b695a80344ab7f146f900829f55962729972,Basic setup for the query info view
+stefanvermaas,2014-12-16 15:39:17,https://api.github.com/repos/airbnb/airpal/git/commits/845bd78501ff03bf170b7c264cdc4c8eb9ef9c22,845bd78501ff03bf170b7c264cdc4c8eb9ef9c22,"Updates to the store and API
+
+* Updates the store to use the uuid instead of the id
+* Updates the API endpoints for the queries"
+stefanvermaas,2014-12-16 15:38:44,https://api.github.com/repos/airbnb/airpal/git/commits/bea20da75ce23a081e90071ca287940387bd3785,bea20da75ce23a081e90071ca287940387bd3785,"Updates the modal
+
+* Makes sure the submit button (to save a new query) is disabled when
+you’re making the request.
+* Adds CSS for the indicator"
+stefanvermaas,2014-12-16 15:37:40,https://api.github.com/repos/airbnb/airpal/git/commits/e78be74127cca07a805f44a2a5b8a02612bdfd3b,e78be74127cca07a805f44a2a5b8a02612bdfd3b,"Close modal
+
+When an query is saved, we should hide the modal. This code makes it
+possible. It listens to the add event, which is triggered when a query
+is accepted by the server."
+stefanvermaas,2014-12-16 12:53:05,https://api.github.com/repos/airbnb/airpal/git/commits/ba66cdb063997d748d3294c38d4db62c7f5de394,ba66cdb063997d748d3294c38d4db62c7f5de394,Small update to the package.json
+stefanvermaas,2014-12-16 12:52:56,https://api.github.com/repos/airbnb/airpal/git/commits/1271d76bcaf2515cdbcb19895afe4a70f3eaa6f8,1271d76bcaf2515cdbcb19895afe4a70f3eaa6f8,"Adds the ace editor
+
+Removed the brace editor earlier, but this is by far the best online
+editor out there. So it’s back :D!"
+stefanvermaas,2014-12-16 12:52:13,https://api.github.com/repos/airbnb/airpal/git/commits/c2736e30d44be51ab3e597eb1bb682be6675da2a,c2736e30d44be51ab3e597eb1bb682be6675da2a,Removed the component test
+stefanvermaas,2014-12-11 22:37:59,https://api.github.com/repos/airbnb/airpal/git/commits/3043533c1e8355b20aa4f33167191a068d045bd2,3043533c1e8355b20aa4f33167191a068d045bd2,Adds basic tests for the header
+stefanvermaas,2014-12-02 22:20:09,https://api.github.com/repos/airbnb/airpal/git/commits/2fd9e0209a2f0dec9045772ced6500940afb06c7,2fd9e0209a2f0dec9045772ced6500940afb06c7,Creates a custom modal
+stefanvermaas,2014-12-02 20:31:50,https://api.github.com/repos/airbnb/airpal/git/commits/f96d976362866163ec2f2dd678f64dd814d3c856,f96d976362866163ec2f2dd678f64dd814d3c856,Basic setup for QueryEditor
+stefanvermaas,2014-11-23 17:49:17,https://api.github.com/repos/airbnb/airpal/git/commits/3b441655f31f516753f7efa887c1459490d158c9,3b441655f31f516753f7efa887c1459490d158c9,Small CSS changes and performance changes to the DataPreview component
+stefanvermaas,2014-11-23 17:22:08,https://api.github.com/repos/airbnb/airpal/git/commits/4667ed5820b65be6e80818f8eaf61a1c24a2ebad,4667ed5820b65be6e80818f8eaf61a1c24a2ebad,Adds minifyify to the browserify setup for minification
+stefanvermaas,2014-11-22 21:49:27,https://api.github.com/repos/airbnb/airpal/git/commits/4ed50211f912036335f0f4316cc4f0ace0b603fb,4ed50211f912036335f0f4316cc4f0ace0b603fb,"Adds a column preview, data preview and meta data preview"
+stefanvermaas,2014-11-22 21:00:18,https://api.github.com/repos/airbnb/airpal/git/commits/6effbf6be7990dc5ce95bb98fc09564885f2cf03,6effbf6be7990dc5ce95bb98fc09564885f2cf03,Small change 'name' change
+stefanvermaas,2014-11-22 20:53:52,https://api.github.com/repos/airbnb/airpal/git/commits/e7320953a31d2c3510ab4e5579b3ab33a8ad880f,e7320953a31d2c3510ab4e5579b3ab33a8ad880f,Table now fetches his table data when it gets added
+stefanvermaas,2014-11-22 20:34:06,https://api.github.com/repos/airbnb/airpal/git/commits/143d7847ecc9da75a1da703efbb87918918f7e3f,143d7847ecc9da75a1da703efbb87918918f7e3f,Adds storeDefaults
+stefanvermaas,2014-11-22 20:25:49,https://api.github.com/repos/airbnb/airpal/git/commits/3e5de3fff5e904db523c2974b0a3ba822f3cb518,3e5de3fff5e904db523c2974b0a3ba822f3cb518,Working table selector
+stefanvermaas,2014-11-22 16:43:16,https://api.github.com/repos/airbnb/airpal/git/commits/0da2e55d979facd38ba29784931eb1f429ab0773,0da2e55d979facd38ba29784931eb1f429ab0773,Basic setup for the search view
+stefanvermaas,2014-11-22 16:30:27,https://api.github.com/repos/airbnb/airpal/git/commits/144602800661ad63cc64517218f79fbd7e315f44,144602800661ad63cc64517218f79fbd7e315f44,Finishes the table data integration
+stefanvermaas,2014-11-22 16:16:32,https://api.github.com/repos/airbnb/airpal/git/commits/7bdee5e43faafa763a7da865701fbb2ecb2c5da9,7bdee5e43faafa763a7da865701fbb2ecb2c5da9,"Made a mistake by grouping the dispatchers in one single dispatcher, now dispatchers are split by model"
+stefanvermaas,2014-11-22 16:07:44,https://api.github.com/repos/airbnb/airpal/git/commits/827cfc8e9bb1c84291a03373a4f691165f45e1c5,827cfc8e9bb1c84291a03373a4f691165f45e1c5,Small updates to the query actions
+stefanvermaas,2014-11-22 15:46:54,https://api.github.com/repos/airbnb/airpal/git/commits/384300ab2752ba2f263686e5ed600ed59339ec32,384300ab2752ba2f263686e5ed600ed59339ec32,Adds a call for the user queries
+stefanvermaas,2014-11-22 15:40:42,https://api.github.com/repos/airbnb/airpal/git/commits/7ed25bdde4706c1055e1b692ebc202015b972da3,7ed25bdde4706c1055e1b692ebc202015b972da3,Adds the query crud methods
+stefanvermaas,2014-11-22 13:54:10,https://api.github.com/repos/airbnb/airpal/git/commits/058751334b523f5bb8323f6d2c15489d175756d2,058751334b523f5bb8323f6d2c15489d175756d2,Removes old JS files
+stefanvermaas,2014-11-22 13:52:41,https://api.github.com/repos/airbnb/airpal/git/commits/36ee5b8f45705607d250f95d522a605863fee6b3,36ee5b8f45705607d250f95d522a605863fee6b3,Initial Flux setup with the header included
+stefanvermaas,2014-11-22 11:48:24,https://api.github.com/repos/airbnb/airpal/git/commits/3b332450c7bac0b1864b53cd6430bbd4f3a7c329,3b332450c7bac0b1864b53cd6430bbd4f3a7c329,Adds bootstrap and removes all other css files. The needed files will be added later on.
+stefanvermaas,2014-11-22 11:47:57,https://api.github.com/repos/airbnb/airpal/git/commits/4d13d5b418e18ef7ce1d716f99c2bd936bfb40a4,4d13d5b418e18ef7ce1d716f99c2bd936bfb40a4,Adds a basic readme about the frontend application
+stefanvermaas,2014-11-22 11:17:20,https://api.github.com/repos/airbnb/airpal/git/commits/467b2233208aaf986f1fa4a297144398128947d6,467b2233208aaf986f1fa4a297144398128947d6,Updates the gitignore to ignore npm-debug log files
+stefanvermaas,2014-11-22 11:07:12,https://api.github.com/repos/airbnb/airpal/git/commits/c9606d3e58e246f0ca52e8a1cc4fccda18795b80,c9606d3e58e246f0ca52e8a1cc4fccda18795b80,Remove the license for now
+stefanvermaas,2014-11-22 10:56:23,https://api.github.com/repos/airbnb/airpal/git/commits/553cdff1d0f1f469999e1d27e3aabbe83e9b4f19,553cdff1d0f1f469999e1d27e3aabbe83e9b4f19,Changes the pom file to use the right command
+stefanvermaas,2014-11-22 10:41:19,https://api.github.com/repos/airbnb/airpal/git/commits/b63a9ffa0c295eb51bc286b9e18158904ac863e8,b63a9ffa0c295eb51bc286b9e18158904ac863e8,Adds the right config to the gulpfile/package
+stefanvermaas,2014-11-22 10:20:42,https://api.github.com/repos/airbnb/airpal/git/commits/6b73d7120b69869d8f6f3f14b62c995c5c83ea42,6b73d7120b69869d8f6f3f14b62c995c5c83ea42,Finished the new frontend implementation
+stefanvermaas,2014-11-22 10:13:19,https://api.github.com/repos/airbnb/airpal/git/commits/78cd7dead1b9d23f6d7acb7c71a212e7fa169aa5,78cd7dead1b9d23f6d7acb7c71a212e7fa169aa5,Updated the package.json with the new npm packages to use
+stefanvermaas,2014-11-22 10:04:56,https://api.github.com/repos/airbnb/airpal/git/commits/0bae17ff0296fecc8f5770b7cdafd05931c3dd62,0bae17ff0296fecc8f5770b7cdafd05931c3dd62,Adds a new open-source license
+stefanvermaas,2014-11-22 10:03:58,https://api.github.com/repos/airbnb/airpal/git/commits/71489c944c5081adf128128ef4ab7afbd680f1cf,71489c944c5081adf128128ef4ab7afbd680f1cf,Adds a basic package.json
+stefanvermaas,2014-11-22 09:58:31,https://api.github.com/repos/airbnb/airpal/git/commits/9ed2706436cf5140b863fb26910f93d559fb42e9,9ed2706436cf5140b863fb26910f93d559fb42e9,Removed old package file
+stefanvermaas,2014-11-22 09:58:08,https://api.github.com/repos/airbnb/airpal/git/commits/6c8c7c6ca803d4a683ed18eddd938f9b84e57f64,6c8c7c6ca803d4a683ed18eddd938f9b84e57f64,Removed old gulp files
+andykram,2015-02-17 19:34:36,https://api.github.com/repos/airbnb/airpal/git/commits/94807a4ca2a3bd20f09072ce5a25c5cb67fd20c6,94807a4ca2a3bd20f09072ce5a25c5cb67fd20c6,[local-file-store] Do not error when no s3 bucket is provided
+spikebrehm,2015-02-17 19:28:51,https://api.github.com/repos/airbnb/airpal/git/commits/6679f31c596670f6186b7ae07554a3209cfc3f7b,6679f31c596670f6186b7ae07554a3209cfc3f7b,Update README.md
+spikebrehm,2015-02-17 19:26:50,https://api.github.com/repos/airbnb/airpal/git/commits/f6e817010f1b1d459c581ea790407ab148e7773d,f6e817010f1b1d459c581ea790407ab148e7773d,Add example dataSourceFactory properties to reference.yml
+spikebrehm,2015-02-17 19:22:49,https://api.github.com/repos/airbnb/airpal/git/commits/613711966cb3aaea4fb0b7bfde05bf7d2362b3f3,613711966cb3aaea4fb0b7bfde05bf7d2362b3f3,"Merge pull request #32 from airbnb/file-store
+
+Local File Store"
+spikebrehm,2015-02-17 19:04:05,https://api.github.com/repos/airbnb/airpal/git/commits/4047c1b0159fb29cfce075ebb98e6f3e07d6f0f2,4047c1b0159fb29cfce075ebb98e6f3e07d6f0f2,Update README.md
+andykram,2015-02-17 18:52:09,https://api.github.com/repos/airbnb/airpal/git/commits/bf2af9c4a99010730815cb4a0e852ee48b284a82,bf2af9c4a99010730815cb4a0e852ee48b284a82,[gradlew] Add necessary gradle wrapper jar
+spikebrehm,2015-02-17 18:49:20,https://api.github.com/repos/airbnb/airpal/git/commits/8ade6d2e8a12c9ec6ea6d5cf0d05ceb3ca200120,8ade6d2e8a12c9ec6ea6d5cf0d05ceb3ca200120,Update README.md
+spikebrehm,2015-02-17 18:48:44,https://api.github.com/repos/airbnb/airpal/git/commits/ec836554aebbdda3c90ebc7d521482af4c08c42c,ec836554aebbdda3c90ebc7d521482af4c08c42c,"Update README.md
+
+Use em-dash"
+spikebrehm,2015-02-17 18:47:56,https://api.github.com/repos/airbnb/airpal/git/commits/f685d3e756ed0f0a5e9f6ed481c8c8266d31981b,f685d3e756ed0f0a5e9f6ed481c8c8266d31981b,"Update README.md
+
+Mention Gulp"
+spikebrehm,2015-02-17 18:46:06,https://api.github.com/repos/airbnb/airpal/git/commits/3f8b06c4e33560dab6461440e2021751bf117073,3f8b06c4e33560dab6461440e2021751bf117073,Cleaning up the gulpfile
+spikebrehm,2015-02-17 18:40:37,https://api.github.com/repos/airbnb/airpal/git/commits/c357dc0f228c453ffb5d743d934761891711d575,c357dc0f228c453ffb5d743d934761891711d575,Update README.md
+spikebrehm,2015-02-17 18:39:33,https://api.github.com/repos/airbnb/airpal/git/commits/f438a5d6a2901fdf3087bc441884099bb044ccdd,f438a5d6a2901fdf3087bc441884099bb044ccdd,Update package.json
+andykram,2015-02-02 23:46:33,https://api.github.com/repos/airbnb/airpal/git/commits/c9b693cfab44cb83304e39385f90de5366043f96,c9b693cfab44cb83304e39385f90de5366043f96,[file-store] Simplify FileStore
+andykram,2015-01-27 21:12:55,https://api.github.com/repos/airbnb/airpal/git/commits/ad66f1120977d38db36119111dfefe929e9cadd6,ad66f1120977d38db36119111dfefe929e9cadd6,[file-store] WIP checkin
+andykram,2015-02-09 21:16:04,https://api.github.com/repos/airbnb/airpal/git/commits/74f13bae3744f51d1f85dd71bb2e5ea7a3cfc23b,74f13bae3744f51d1f85dd71bb2e5ea7a3cfc23b,"Merge pull request #30 from airbnb/max-output-size
+
+[max-output-size] Adds abililty to set the max output size for a CSV"
+andykram,2015-02-09 21:15:40,https://api.github.com/repos/airbnb/airpal/git/commits/2c6bbddf469caee11b485411e7154ea7102951d5,2c6bbddf469caee11b485411e7154ea7102951d5,[max-output-size] Address review feedback
+andykram,2015-01-27 00:29:28,https://api.github.com/repos/airbnb/airpal/git/commits/2c7713cc3afff8159a31470c5716e5ff7a497d51,2c7713cc3afff8159a31470c5716e5ff7a497d51,[max-output-size] Adds abililty to set the max output size for a CSV
+andykram,2015-01-23 00:30:57,https://api.github.com/repos/airbnb/airpal/git/commits/b739eb5795fb750d7fefe72cd6693010373bea56,b739eb5795fb750d7fefe72cd6693010373bea56,"Merge pull request #26 from airbnb/query-client
+
+[query-client] Add query client with support for timeouts"
+andykram,2015-01-13 21:18:00,https://api.github.com/repos/airbnb/airpal/git/commits/3deec05416c045b59e827ff261aa8acab7055f18,3deec05416c045b59e827ff261aa8acab7055f18,[query-runner] Qualify query execution with active users name
+andykram,2015-01-13 21:17:11,https://api.github.com/repos/airbnb/airpal/git/commits/b04382d2820ebb247c7ee842021993d66305f8a8,b04382d2820ebb247c7ee842021993d66305f8a8,[sql] Fix SQLUsageStore
+andykram,2015-01-12 21:41:12,https://api.github.com/repos/airbnb/airpal/git/commits/194a917409335bb9957ce87078ed68333e0caaf4,194a917409335bb9957ce87078ed68333e0caaf4,[query-client] Add query client with universal timeouts
+andykram,2015-01-22 20:56:30,https://api.github.com/repos/airbnb/airpal/git/commits/307c999a09da3a46e2a3c8e438d97717de516e4b,307c999a09da3a46e2a3c8e438d97717de516e4b,"Merge pull request #29 from airbnb/user-query-store
+
+[active-query-store] Add an active query store"
+andykram,2015-01-21 22:35:45,https://api.github.com/repos/airbnb/airpal/git/commits/846c3523e58b0cd2515716178cb5f444db628f46,846c3523e58b0cd2515716178cb5f444db628f46,[active-query-store] Add an active query store and a way to retrieve for users
+andykram,2015-01-15 19:39:58,https://api.github.com/repos/airbnb/airpal/git/commits/ca0bdb0dd2a0a763b2f84816576975b75cecce70,ca0bdb0dd2a0a763b2f84816576975b75cecce70,"Merge pull request #28 from airbnb/sse-patch
+
+[sse] Be pessimistic about exceptions in SSE"
+andykram,2015-01-14 22:55:01,https://api.github.com/repos/airbnb/airpal/git/commits/0b708be9ce4fb407b2770e746b134b256da39e84,0b708be9ce4fb407b2770e746b134b256da39e84,[sse] Be pessimistic about exceptions in SSE
+andykram,2015-01-14 22:54:00,https://api.github.com/repos/airbnb/airpal/git/commits/11eaf7d84702f30c124a3c1b5d7c921d574909b8,11eaf7d84702f30c124a3c1b5d7c921d574909b8,"Merge pull request #27 from airbnb/docs
+
+Updating Docs"
+andykram,2015-01-08 19:19:55,https://api.github.com/repos/airbnb/airpal/git/commits/2c8ac2cf1fa06ab9db297ba274068f9e7201437c,2c8ac2cf1fa06ab9db297ba274068f9e7201437c,[docs] Update README with edits
+andykram,2015-01-07 22:52:52,https://api.github.com/repos/airbnb/airpal/git/commits/3faf7ec0c2f8f0072a0cd5378a6e9a78427225aa,3faf7ec0c2f8f0072a0cd5378a6e9a78427225aa,[docs] Add description of project to README
+andykram,2015-01-07 21:01:20,https://api.github.com/repos/airbnb/airpal/git/commits/b0545a525d85f69f7d3f21f737982482c630a952,b0545a525d85f69f7d3f21f737982482c630a952,[docs] Update README for using and features
+andykram,2015-01-06 23:58:15,https://api.github.com/repos/airbnb/airpal/git/commits/cf57b01e886beadfcefc1ecc2a28bf5b88e78786,cf57b01e886beadfcefc1ecc2a28bf5b88e78786,[docs] Add docs for user accounts
+andykram,2015-01-06 23:50:00,https://api.github.com/repos/airbnb/airpal/git/commits/abcdf257e338dc0ed7787849f5a3db7aed1dd7ab,abcdf257e338dc0ed7787849f5a3db7aed1dd7ab,[docs] Update README
+andykram,2015-01-06 23:46:15,https://api.github.com/repos/airbnb/airpal/git/commits/e00997f2e5664dc77e8b18f271219f6f0b46467e,e00997f2e5664dc77e8b18f271219f6f0b46467e,[docs] Update readme
+andykram,2015-01-06 23:14:28,https://api.github.com/repos/airbnb/airpal/git/commits/e74860ef1474439f515de445c465d3c926ff665c,e74860ef1474439f515de445c465d3c926ff665c,"Merge pull request #24 from airbnb/guides
+
+[docs] Add necessary docfiles"
+andykram,2014-12-17 23:40:47,https://api.github.com/repos/airbnb/airpal/git/commits/f2ef41012f2d91af395143db2ee62e9fa128f605,f2ef41012f2d91af395143db2ee62e9fa128f605,[docs] Add necessary docfiles
+andykram,2015-01-06 23:10:34,https://api.github.com/repos/airbnb/airpal/git/commits/2c204a69955e331fed16b21d6d7f3f69515c3c96,2c204a69955e331fed16b21d6d7f3f69515c3c96,"Merge pull request #23 from airbnb/to-gradle
+
+Migrate project to gradle"
+andykram,2015-01-05 22:31:34,https://api.github.com/repos/airbnb/airpal/git/commits/aa93a9399338a9d0a1cf790b0813158188b7b807,aa93a9399338a9d0a1cf790b0813158188b7b807,[gradle] Fix build file
+andykram,2014-12-19 22:36:38,https://api.github.com/repos/airbnb/airpal/git/commits/2506ab0b525a580f53ce928137e26a8adbd758bd,2506ab0b525a580f53ce928137e26a8adbd758bd,[gradle] Update README for gradle instructions
+andykram,2014-12-19 22:08:15,https://api.github.com/repos/airbnb/airpal/git/commits/e3a7d8232e4f99fc6c31bf6d55e02546b45e4343,e3a7d8232e4f99fc6c31bf6d55e02546b45e4343,[gradle] Migrate to gradle
+andykram,2014-12-17 23:14:14,https://api.github.com/repos/airbnb/airpal/git/commits/b008b04c6afe47021d29964e996241d2c26afd04,b008b04c6afe47021d29964e996241d2c26afd04,[gradle] Initial commit
+andykram,2014-12-17 23:41:23,https://api.github.com/repos/airbnb/airpal/git/commits/70dde048f236933be9fdb024c5598466955b7248,70dde048f236933be9fdb024c5598466955b7248,[cleanup] Update class file references
+spikebrehm,2014-12-17 23:07:10,https://api.github.com/repos/airbnb/airpal/git/commits/08542f9bddd36f5c758948fc47064fcc3fc4ce5e,08542f9bddd36f5c758948fc47064fcc3fc4ce5e,Update README.md
+spikebrehm,2014-12-17 23:06:32,https://api.github.com/repos/airbnb/airpal/git/commits/62191db03570f0b97f5d0694b05126613889f6d1,62191db03570f0b97f5d0694b05126613889f6d1,Update README.md
+spikebrehm,2014-12-17 23:06:09,https://api.github.com/repos/airbnb/airpal/git/commits/574f985e9be6017154ba03578c468b74162078c1,574f985e9be6017154ba03578c468b74162078c1,"Update README.md
+
+Capitalize Node.js"
+andykram,2014-12-17 23:02:25,https://api.github.com/repos/airbnb/airpal/git/commits/68de5c3ac91569523904347bb0adb37df03f00c3,68de5c3ac91569523904347bb0adb37df03f00c3,Update README.md
+andykram,2014-12-17 21:50:06,https://api.github.com/repos/airbnb/airpal/git/commits/9a4bd5e0cb0c7162396a2db93c5074d562ec13cf,9a4bd5e0cb0c7162396a2db93c5074d562ec13cf,[cleanup] Remove unused class
+andykram,2014-12-02 20:29:05,https://api.github.com/repos/airbnb/airpal/git/commits/496cdef985d0faf765cdfc37b3f1a6221d8da2a9,496cdef985d0faf765cdfc37b3f1a6221d8da2a9,[airpal] Switch usage count query from now() to utc_timestamp()
+andykram,2014-12-02 20:14:43,https://api.github.com/repos/airbnb/airpal/git/commits/df81159aa77c4cfe4146fd316bb72c03dedb06e6,df81159aa77c4cfe4146fd316bb72c03dedb06e6,"Merge pull request #22 from airbnb/andykram/bugfixes-and-patch
+
+[bugfix][cancel-query] Bugfixes and cancel query feature"
+andykram,2014-12-02 20:11:38,https://api.github.com/repos/airbnb/airpal/git/commits/7c6ea5be19e556520ad3a0974e5dc726be60547a,7c6ea5be19e556520ad3a0974e5dc726be60547a,[airpal] Additional bugfixes
+andykram,2014-11-26 19:02:39,https://api.github.com/repos/airbnb/airpal/git/commits/e9c3147cd952f4e3c015fc4c143eccde62a50589,e9c3147cd952f4e3c015fc4c143eccde62a50589,[bugfix][cancel-query] Bugfixes and cancel query feature
+andykram,2014-11-26 01:18:50,https://api.github.com/repos/airbnb/airpal/git/commits/3ae78a813a0c5d387ccb1fcf4130b5239fce748b,3ae78a813a0c5d387ccb1fcf4130b5239fce748b,[sql] TIMESTAMP -> DATETIME and bump mysql connector
+andykram,2014-11-25 21:11:40,https://api.github.com/repos/airbnb/airpal/git/commits/4c36af290e843e7d7fdb2d7648f8c565650e2708,4c36af290e843e7d7fdb2d7648f8c565650e2708,[conf] Remove outdated ES config
+andykram,2014-11-25 20:48:05,https://api.github.com/repos/airbnb/airpal/git/commits/92d3ca2c73d4f0764e62a2eeebe7425f8ac25380,92d3ca2c73d4f0764e62a2eeebe7425f8ac25380,[sql] Update from now() to utc_timestamp()
+andykram,2014-11-25 02:22:46,https://api.github.com/repos/airbnb/airpal/git/commits/9e86e25311f1b4aecbd3c4030273f030d9444fbe,9e86e25311f1b4aecbd3c4030273f030d9444fbe,Merge branch 'master' of github.com:airbnb/airpal
+andykram,2014-11-25 02:20:57,https://api.github.com/repos/airbnb/airpal/git/commits/fa44876e4496d845d552fef104f30ad94b234521,fa44876e4496d845d552fef104f30ad94b234521,[db] Upgrade job.query to be medium text
+andykram,2014-11-24 20:05:41,https://api.github.com/repos/airbnb/airpal/git/commits/2e7d3218d090eb823a7a50eccf892bfea98f12b3,2e7d3218d090eb823a7a50eccf892bfea98f12b3,"Merge pull request #21 from airbnb/execution-bug-fixes
+
+[shiro][execution] Fix a few bugs in execution and auth logic"
+andykram,2014-11-24 20:04:20,https://api.github.com/repos/airbnb/airpal/git/commits/8e82abc5a1a121b549e12ed15a32c343227cc5be,8e82abc5a1a121b549e12ed15a32c343227cc5be,[shiro][execution] Fix a few bugs in execution and auth logic
+andykram,2014-11-24 17:59:12,https://api.github.com/repos/airbnb/airpal/git/commits/d4fd282c780fc252896ca39391ed94255e3052dd,d4fd282c780fc252896ca39391ed94255e3052dd,[shiro] Improvements to ToAirpalUser interface
+andykram,2014-11-20 22:16:20,https://api.github.com/repos/airbnb/airpal/git/commits/72b4366f49855671eb9d4ed9b4758cf38c05e909,72b4366f49855671eb9d4ed9b4758cf38c05e909,"Merge pull request #16 from airbnb/shiro-updates
+
+Shiro updates"
+andykram,2014-11-19 21:54:46,https://api.github.com/repos/airbnb/airpal/git/commits/ce0fd1bda9af7bd7e0b77c3be8a359e312d26520,ce0fd1bda9af7bd7e0b77c3be8a359e312d26520,[shiro] Update use of shiro
+andykram,2014-11-19 21:54:15,https://api.github.com/repos/airbnb/airpal/git/commits/b39ff33d8ad9ef825d4aebfeca374af8be153995,b39ff33d8ad9ef825d4aebfeca374af8be153995,[fix] Patch InputReferenceExtractor to deal with CROSS JOINs
+andykram,2014-11-19 20:29:45,https://api.github.com/repos/airbnb/airpal/git/commits/01d75e6c58c13a5f8c7943d13d4ff4b8016a91ea,01d75e6c58c13a5f8c7943d13d4ff4b8016a91ea,"Merge pull request #14 from airbnb/api-updates
+
+[api] API updates"
+andykram,2014-11-13 20:14:49,https://api.github.com/repos/airbnb/airpal/git/commits/f2241bce50f7c08e665c2d1ff84deca4782be51e,f2241bce50f7c08e665c2d1ff84deca4782be51e,Update README.md
+andykram,2014-11-12 00:10:17,https://api.github.com/repos/airbnb/airpal/git/commits/fb5f811cc1f6c9200d0121d43557b1b3a460b3f1,fb5f811cc1f6c9200d0121d43557b1b3a460b3f1,[shiro] Auth updates
+andykram,2014-11-11 19:52:36,https://api.github.com/repos/airbnb/airpal/git/commits/ef9517d52082e6b48f357bfea40cf1d54a39fb6f,ef9517d52082e6b48f357bfea40cf1d54a39fb6f,[api] API updates
+andykram,2014-11-07 00:08:40,https://api.github.com/repos/airbnb/airpal/git/commits/99f5a3a62531b9551abd73e9b088a0b3cdc1f4ba,99f5a3a62531b9551abd73e9b088a0b3cdc1f4ba,"Merge pull request #6 from airbnb/airpal-sql
+
+Initial transition from ES to SQL"
+andykram,2014-11-05 21:05:01,https://api.github.com/repos/airbnb/airpal/git/commits/f74396b1c766cbf5f15f4eab1d89edc615944378,f74396b1c766cbf5f15f4eab1d89edc615944378,"Merge pull request #12 from airbnb/propagate-parse-exception
+
+[acl] Propagate parsing exception to UI"
+andykram,2014-10-29 22:21:25,https://api.github.com/repos/airbnb/airpal/git/commits/6ff61fe13ba1b7359eafaedc84bd24575bae0a06,6ff61fe13ba1b7359eafaedc84bd24575bae0a06,[acl] Propagate parsing exception to UI
+andykram,2014-10-23 22:31:21,https://api.github.com/repos/airbnb/airpal/git/commits/923b158ef36c15e48bb6914986f0e7a8bbc81bcf,923b158ef36c15e48bb6914986f0e7a8bbc81bcf,[sq] Sort results desc
+andykram,2014-10-23 19:03:27,https://api.github.com/repos/airbnb/airpal/git/commits/1e439cb0178b273ecd61f75e5d29ade2d1096cbc,1e439cb0178b273ecd61f75e5d29ade2d1096cbc,[sql] Update readme and further cleanup JobHistoryStore
+andykram,2014-10-23 17:02:20,https://api.github.com/repos/airbnb/airpal/git/commits/1e40a66ab0c3ebf302081a354ba2e612d2477772,1e40a66ab0c3ebf302081a354ba2e612d2477772,[cleanup] Remove unused classes and clean pom
+andykram,2014-10-23 00:47:54,https://api.github.com/repos/airbnb/airpal/git/commits/07d00eced398d4167baed1f80130d4025a526569,07d00eced398d4167baed1f80130d4025a526569,[sql] Fix long line
+andykram,2014-10-23 00:35:53,https://api.github.com/repos/airbnb/airpal/git/commits/fbe71bcaecbcd0637a65f112adae2f6e21481b82,fbe71bcaecbcd0637a65f112adae2f6e21481b82,[sql] Reformat query
+andykram,2014-10-23 00:34:35,https://api.github.com/repos/airbnb/airpal/git/commits/58a0aadf6cf26feaa5c24fbe63671f48862e1b02,58a0aadf6cf26feaa5c24fbe63671f48862e1b02,[sql] Remove ES deps
+andykram,2014-10-22 23:53:08,https://api.github.com/repos/airbnb/airpal/git/commits/a7ecbf957820d5e986d0f6efb5b4afe16f147560,a7ecbf957820d5e986d0f6efb5b4afe16f147560,[sql] Add a ton of SQL code
+andykram,2014-10-22 23:52:10,https://api.github.com/repos/airbnb/airpal/git/commits/1becceba22380125ef8992fafbc96a71f22f4d2c,1becceba22380125ef8992fafbc96a71f22f4d2c,[sql] Remove old ES code and update migrations
+andykram,2014-10-01 21:16:11,https://api.github.com/repos/airbnb/airpal/git/commits/6edcb5e15dd981be48aa7c9483303b296820fd19,6edcb5e15dd981be48aa7c9483303b296820fd19,[sql] Initial JobHistoryStoreDAO checkin
+andykram,2014-10-01 20:14:17,https://api.github.com/repos/airbnb/airpal/git/commits/8d5e9713e9c13011ef353af4b0b1a30ade341e3b,8d5e9713e9c13011ef353af4b0b1a30ade341e3b,[sql] Initial SQL schema
+andykram,2014-10-20 18:37:29,https://api.github.com/repos/airbnb/airpal/git/commits/eacb71fb42ac85a285c06a91649bf47c26ccd4d0,eacb71fb42ac85a285c06a91649bf47c26ccd4d0,[acl] Fix SessionResource
+andykram,2014-10-16 23:29:17,https://api.github.com/repos/airbnb/airpal/git/commits/5a5fdcd0e23597dc4266340e195eac2d5f481047,5a5fdcd0e23597dc4266340e195eac2d5f481047,Add alternate endpoint
+andykram,2014-10-16 22:44:25,https://api.github.com/repos/airbnb/airpal/git/commits/32581732516bc0f4ae12aec9570224a7cdeb8b24,32581732516bc0f4ae12aec9570224a7cdeb8b24,"Merge pull request #10 from airbnb/acls-views
+
+[acl-views] Update ACL system to work with views"
+andykram,2014-10-16 22:39:40,https://api.github.com/repos/airbnb/airpal/git/commits/720aedd309fc8497ab0cd632aba70ca54fbcd120,720aedd309fc8497ab0cd632aba70ca54fbcd120,[acls] Remove old caching logic
+andykram,2014-10-16 19:58:22,https://api.github.com/repos/airbnb/airpal/git/commits/12c5caa751cbbd282dd79cc8dcbd127278849f97,12c5caa751cbbd282dd79cc8dcbd127278849f97,[acl] Add tests and support for USE statements
+andykram,2014-10-14 21:37:38,https://api.github.com/repos/airbnb/airpal/git/commits/f30bf1b0a9a30b5cfdaac054b64ac3ce287ce2b3,f30bf1b0a9a30b5cfdaac054b64ac3ce287ce2b3,[acl-views] Update ACL system to work with views
+andykram,2014-10-14 23:04:29,https://api.github.com/repos/airbnb/airpal/git/commits/642e21f43135362fde694622ad371f3df2e6ae86,642e21f43135362fde694622ad371f3df2e6ae86,"Merge pull request #9 from airbnb/shiro-basic-user-auth
+
+[basic-auth] Simple example of basic shiro auth"
+andykram,2014-10-14 23:00:35,https://api.github.com/repos/airbnb/airpal/git/commits/771cb94309bc0ba0bcf59d5dd564cee5a0dd4418,771cb94309bc0ba0bcf59d5dd564cee5a0dd4418,[basic-auth] Simple example of basic shiro auth
+andykram,2014-10-14 21:54:49,https://api.github.com/repos/airbnb/airpal/git/commits/e8a8b2f336737fe1c5af32533e5a2782d530d7b1,e8a8b2f336737fe1c5af32533e5a2782d530d7b1,"Merge pull request #8 from airbnb/default-catalog
+
+Use default catalog in TablesResource"
+andykram,2014-10-14 21:52:16,https://api.github.com/repos/airbnb/airpal/git/commits/e3c9e265dbded31e9cdc66615b5770622bc82055,e3c9e265dbded31e9cdc66615b5770622bc82055,Use default catalog in TablesResource
+stefanvermaas,2014-10-11 00:20:27,https://api.github.com/repos/airbnb/airpal/git/commits/d1983c912a06abb874739db61615d024b23f433b,d1983c912a06abb874739db61615d024b23f433b,"Merge pull request #7 from airbnb/adding-gulp
+
+Adding gulp"
+stefanvermaas,2014-10-10 22:58:25,https://api.github.com/repos/airbnb/airpal/git/commits/fedff66f098a28f7283c928e0c903bc51becc01f,fedff66f098a28f7283c928e0c903bc51becc01f,"Updates the usage of watchify
+
+* Removes the need for watchify, because gulp watch and watchify don't
+* play very well together."
+stefanvermaas,2014-10-10 22:43:40,https://api.github.com/repos/airbnb/airpal/git/commits/ff6ea10d300c7a9c24defc1697b57846498e3bbf,ff6ea10d300c7a9c24defc1697b57846498e3bbf,Forgot to send the update on the pom file
+stefanvermaas,2014-10-10 22:38:55,https://api.github.com/repos/airbnb/airpal/git/commits/688a36123f502e3a493224c1574cccdbea083e25,688a36123f502e3a493224c1574cccdbea083e25,"Fixes problem with compiling
+
+When compiling the application with mvn clean package the old
+way of building the main.js file still proceeded. Now the
+compiler uses the gulp command with the right params.
+
+* Adds an check to the gulpfile for using watchify (or not)
+* Updates the pom.xml to use the gulp browserify command"
+stefanvermaas,2014-10-10 18:30:11,https://api.github.com/repos/airbnb/airpal/git/commits/0f66b4f659534fb1136552880cf3d49a9800ee83,0f66b4f659534fb1136552880cf3d49a9800ee83,"Fixed problems with 'mvn clean package'
+
+* Changes the folder location inside the pom file
+* Fixes the problem with compiling"
+andykram,2014-10-10 18:20:52,https://api.github.com/repos/airbnb/airpal/git/commits/94eba1eb628b4d196cccf0359a7704969098a18f,94eba1eb628b4d196cccf0359a7704969098a18f,[airpal] Update deps
+stefanvermaas,2014-10-10 01:11:24,https://api.github.com/repos/airbnb/airpal/git/commits/90f83b669fdf388a0fa025183ba324d8a262055e,90f83b669fdf388a0fa025183ba324d8a262055e,"Automates the building process
+
+* Builds on any change on a JS file
+* Adds gulp and configuration to make automation possible
+* Moves the package.json and the node_modules to the main asset folder"
+andykram,2014-10-01 21:48:29,https://api.github.com/repos/airbnb/airpal/git/commits/ebc2e898c34f86e32fa89d21377d83dfdb68dd10,ebc2e898c34f86e32fa89d21377d83dfdb68dd10,"Merge pull request #5 from airbnb/keyboard-commands
+
+[keyboard] Add keyboard commands"
+andykram,2014-09-30 19:53:31,https://api.github.com/repos/airbnb/airpal/git/commits/887bc5db86c054e66660997f194a7ada34f92003,887bc5db86c054e66660997f194a7ada34f92003,[airpal] Add more logging and remove deprecated config
+andykram,2014-08-28 18:20:19,https://api.github.com/repos/airbnb/airpal/git/commits/095e5f9b8f4d61eac4cbf30062331a8a4df49037,095e5f9b8f4d61eac4cbf30062331a8a4df49037,"Merge pull request #4 from airbnb/improve-autocomplete
+
+Improve autocomplete"
+andykram,2014-08-28 00:41:48,https://api.github.com/repos/airbnb/airpal/git/commits/6025272696faf524d3cab7f0e1e548c1085e4968,6025272696faf524d3cab7f0e1e548c1085e4968,[autocomplete] Speed up autocomplete by caching usage info
+andykram,2014-08-27 22:16:19,https://api.github.com/repos/airbnb/airpal/git/commits/88fc032928ec8ad83939ffce7c1a66ddded502a0,88fc032928ec8ad83939ffce7c1a66ddded502a0,[es][autocomplete] Timeout ES usage query after 8 seconds
+andykram,2014-08-13 23:01:28,https://api.github.com/repos/airbnb/airpal/git/commits/bc4407ecbf592a43940ff2b6f50c1b75a0af5ded,bc4407ecbf592a43940ff2b6f50c1b75a0af5ded,"Merge pull request #3 from airbnb/upgrade-presto
+
+[presto] Bump version"
+andykram,2014-08-13 23:00:43,https://api.github.com/repos/airbnb/airpal/git/commits/9aecd9e1d07d2df3f7c4212e97e8fef18363c69d,9aecd9e1d07d2df3f7c4212e97e8fef18363c69d,[presto] Bump version
+andykram,2014-07-14 22:37:27,https://api.github.com/repos/airbnb/airpal/git/commits/3bfc292b7195f5bee17b44cd5154b420d7a38eee,3bfc292b7195f5bee17b44cd5154b420d7a38eee,[keyboard] Add keyboard commands
+andykram,2014-07-14 20:10:53,https://api.github.com/repos/airbnb/airpal/git/commits/b71536b6bf120c216c7669296e1e4be2948de91b,b71536b6bf120c216c7669296e1e4be2948de91b,"Merge pull request #2 from airbnb/better-healtcheck
+
+[health-check] Better health check to prevent against lag"
+andykram,2014-07-14 19:58:40,https://api.github.com/repos/airbnb/airpal/git/commits/a63980b88c5565620866495de822c383bc01af8d,a63980b88c5565620866495de822c383bc01af8d,[health-check] Better health check to prevent against lag
+andykram,2014-06-25 00:32:02,https://api.github.com/repos/airbnb/airpal/git/commits/ab0b0638ad924f6d32e882ad60a766fb02a3de96,ab0b0638ad924f6d32e882ad60a766fb02a3de96,"Merge pull request #1 from airbnb/finalize-csvs
+
+[fix] Delete temp files when finished"
+andykram,2014-06-25 00:23:36,https://api.github.com/repos/airbnb/airpal/git/commits/19be5075bd52e2b69ae9a6a74a9927f888461771,19be5075bd52e2b69ae9a6a74a9927f888461771,[fix] Delete temp files when finished
+andykram,2014-05-20 18:50:38,https://api.github.com/repos/airbnb/airpal/git/commits/943a8b22c950dffcc84441c360097d77d468bede,943a8b22c950dffcc84441c360097d77d468bede,[auth] Fix path for requesting patition info
+andykram,2014-05-15 20:27:28,https://api.github.com/repos/airbnb/airpal/git/commits/50bb3d20c67f171de42e3662048acf47d15a3b5e,50bb3d20c67f171de42e3662048acf47d15a3b5e,remove authorship comments
+andykram,2014-05-15 20:27:11,https://api.github.com/repos/airbnb/airpal/git/commits/70ecf9f56ecec327d8bd2a91116e8aadb3da284e,70ecf9f56ecec327d8bd2a91116e8aadb3da284e,[es] Move from using Node client to TransportClient
+andykram,2014-05-15 19:03:29,https://api.github.com/repos/airbnb/airpal/git/commits/64fa3bbfaa84a9fd97b6203a47258d3ce9dfbeca,64fa3bbfaa84a9fd97b6203a47258d3ce9dfbeca,[assets] Configurable asset building
+andykram,2014-05-13 21:44:30,https://api.github.com/repos/airbnb/airpal/git/commits/26cb592a9425b5df63a4a3d10343f8cf03c030bc,26cb592a9425b5df63a4a3d10343f8cf03c030bc,Merge branch 'master' of github.com:airbnb/airpal
+andykram,2014-05-13 21:44:13,https://api.github.com/repos/airbnb/airpal/git/commits/5df1bfbdf191a9d8c30132c9742551a1c622e060,5df1bfbdf191a9d8c30132c9742551a1c622e060,[assets] Add npm install build step
+andykram,2014-05-09 00:38:53,https://api.github.com/repos/airbnb/airpal/git/commits/58deb292ccc56e243acbb65d3e23204b4e51c052,58deb292ccc56e243acbb65d3e23204b4e51c052,Update README.md
+andykram,2014-05-08 00:00:40,https://api.github.com/repos/airbnb/airpal/git/commits/cd68a334a80c13344a020e8054b6adfc3b643f18,cd68a334a80c13344a020e8054b6adfc3b643f18,[airpal] Add AllowAll ability
+andykram,2014-05-07 21:50:49,https://api.github.com/repos/airbnb/airpal/git/commits/4960557f3cfa6e94713b3e0bdadd0eac2bf53d42,4960557f3cfa6e94713b3e0bdadd0eac2bf53d42,Create README.md
+andykram,2014-05-07 21:39:36,https://api.github.com/repos/airbnb/airpal/git/commits/2b40d61b0a286a91adc86b2ba53adeec205ecf8a,2b40d61b0a286a91adc86b2ba53adeec205ecf8a,[airpal] Moving stuff into new repo

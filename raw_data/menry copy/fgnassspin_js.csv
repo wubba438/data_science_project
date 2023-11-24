@@ -1,0 +1,494 @@
+spin.js,A spinning activity indicator
+username,timestamp,url,sha,message
+theodorejb,2019-02-27 23:01:36,https://api.github.com/repos/fgnass/spin.js/git/commits/e693e4f933f0a5ade9498ffcbab6c1409be92681,e693e4f933f0a5ade9498ffcbab6c1409be92681,Move changelog to repository
+theodorejb,2019-02-10 18:01:45,https://api.github.com/repos/fgnass/spin.js/git/commits/f411ab9097da19a40a07b617d9a5f27791d82518,f411ab9097da19a40a07b617d9a5f27791d82518,"Link to spin.umd.js as alternative for those who can't use ES6 modules
+
+Closes #367.
+
+The UMD file is not included in the npm package since it's unnecessary for anyone using a module bundler."
+theodorejb,2018-09-02 15:58:48,https://api.github.com/repos/fgnass/spin.js/git/commits/3bcde6c561e3b9523457f409a4b48267d494d888,3bcde6c561e3b9523457f409a4b48267d494d888,"Clarify installation instructions
+
+Closes #362"
+IvanYurchenko,2018-09-02 15:23:29,https://api.github.com/repos/fgnass/spin.js/git/commits/cbb505528e80d9dc61ad751a454b00ece4c1b046,cbb505528e80d9dc61ad751a454b00ece4c1b046,"Add a tip to check that the document has loaded (#339)
+
+Add a tip to check that the document has loaded"
+theodorejb,2018-05-06 15:08:42,https://api.github.com/repos/fgnass/spin.js/git/commits/c0658a33881b95a334fe4a4ab500d9245e40c09f,c0658a33881b95a334fe4a4ab500d9245e40c09f,Release v4.0.0
+theodorejb,2018-05-06 14:46:07,https://api.github.com/repos/fgnass/spin.js/git/commits/570223ba00a1c099a72c6b106e4adacd8ff2517f,570223ba00a1c099a72c6b106e4adacd8ff2517f,Use files whitelist rather than .npmignore blacklist
+theodorejb,2018-05-06 04:32:33,https://api.github.com/repos/fgnass/spin.js/git/commits/410cf771a41886b64abd62dfe623dc968dba456f,410cf771a41886b64abd62dfe623dc968dba456f,"Set transparent shadow by default to prevent aliased lines
+
+Resolves #355."
+theodorejb,2018-05-06 04:44:46,https://api.github.com/repos/fgnass/spin.js/git/commits/4fed6eed24bd4c97c0614e015ee2122b3427d04c,4fed6eed24bd4c97c0614e015ee2122b3427d04c,"Use external CSS file to support keyframe animations with strict content security policy (#347)
+
+Added a new `animation` option to choose a CSS animation name, and removed the `opacity` and `trail` options.
+
+IE 9 is no longer supported, so the legacy `fps` option has also been removed."
+mayatron,2018-04-24 21:54:21,https://api.github.com/repos/fgnass/spin.js/git/commits/11387e73d6fde6db34d8f2936f5a1b405c12181e,11387e73d6fde6db34d8f2936f5a1b405c12181e,Add quotes for shadow option in usage example (#360)
+theodorejb,2018-04-01 17:31:17,https://api.github.com/repos/fgnass/spin.js/git/commits/c291a1fd1d58d4bb451290f7d30c7e02083caeaf,c291a1fd1d58d4bb451290f7d30c7e02083caeaf,Update dependencies
+theodorejb,2017-12-11 04:08:57,https://api.github.com/repos/fgnass/spin.js/git/commits/1a130265964ee15ba1b0ae86df11c5a1ec278423,1a130265964ee15ba1b0ae86df11c5a1ec278423,Improve website styling
+theodorejb,2017-12-03 16:47:18,https://api.github.com/repos/fgnass/spin.js/git/commits/de644c570d68833c6b99e4577f93bb02f68c93c8,de644c570d68833c6b99e4577f93bb02f68c93c8,Add Content-Security-Policy header during development to ensure compatibility
+theodorejb,2017-11-26 20:15:10,https://api.github.com/repos/fgnass/spin.js/git/commits/97189e1047ca1a0f8ffc907163af2a73086acc10,97189e1047ca1a0f8ffc907163af2a73086acc10,Release v3.1.0
+theodorejb,2017-11-26 20:08:17,https://api.github.com/repos/fgnass/spin.js/git/commits/48c4864284693fbe22838c9f5ce1f2b0f4ba26fb,48c4864284693fbe22838c9f5ce1f2b0f4ba26fb,"Add `fadeColor` option for customizing the color that lines fade to
+
+Resolves #30."
+theodorejb,2017-11-26 18:52:05,https://api.github.com/repos/fgnass/spin.js/git/commits/b78e8162e7662cb4b773a7422d3d61523d1a4232,b78e8162e7662cb4b773a7422d3d61523d1a4232,"Add support for custom box-shadow values with corrected positioning (#346)
+
+Directly applying a box-shadow to the spinner lines would cause the shadow to be rotated along with the lines, which doesn't look natural. Previously, this was avoided by generating another element for each line, coloring it black and applying a black box-shadow, and then positioning it down a couple pixels beneath the line. However, this approach didn't allow customization of the shadow position and color, and also blocked use of inset shadows or multiple blended shadows with different positions.
+
+This commit solves these issues by parsing a standard box-shadow value to determine its x and y offsets, and then using trigonometry to correct the shadow coordinates for each line based on its degrees of rotation.
+
+Native CSS scaling is now used so that shadows will be scaled along with the lines as expected.
+
+Resolves #35."
+theodorejb,2017-11-16 00:53:14,https://api.github.com/repos/fgnass/spin.js/git/commits/de989cc468fa1925b71dfc4e69ee74e2339c505f,de989cc468fa1925b71dfc4e69ee74e2339c505f,"Remove invisible box shadow
+
+Fixes #179, closes #180."
+albandaft,2017-11-10 15:32:24,https://api.github.com/repos/fgnass/spin.js/git/commits/01a2f8384e96e8b29612b83f4153b79f7b9015ea,01a2f8384e96e8b29612b83f4153b79f7b9015ea,Update meta description to improve searchability (#334)
+IvanYurchenko,2017-11-10 14:41:05,https://api.github.com/repos/fgnass/spin.js/git/commits/25b12c170e317cb761a1cff0058646da41a9c521,25b12c170e317cb761a1cff0058646da41a9c521,Update readme to explicitly set the target variable (#338)
+theodorejb,2017-11-10 04:40:21,https://api.github.com/repos/fgnass/spin.js/git/commits/a0435862a30c53563dccf4e0dfc682f0b039deac,a0435862a30c53563dccf4e0dfc682f0b039deac,Fix homepage event listeners in Internet Explorer
+theodorejb,2017-11-10 03:50:07,https://api.github.com/repos/fgnass/spin.js/git/commits/64efdb147936eabf3f8debf621fe648edcdd7789,64efdb147936eabf3f8debf621fe648edcdd7789,"Merge pull request #343 from theodorejb/v3
+
+Rewrite in TypeScript as a modern ES6 module"
+theodorejb,2017-11-09 05:34:59,https://api.github.com/repos/fgnass/spin.js/git/commits/be3d10f289b50db10b6a338d89ba88fc1a4cfba1,be3d10f289b50db10b6a338d89ba88fc1a4cfba1,Document release notes on GitHub instead of index.html file
+theodorejb,2017-09-25 04:19:16,https://api.github.com/repos/fgnass/spin.js/git/commits/1f63d33b74e5919e7fe24bf97eca96a346535f6f,1f63d33b74e5919e7fe24bf97eca96a346535f6f,"Rewrite in TypeScript as a modern ES6 module
+
+* Replaced dynamic CSS keyframe animations with `requestAnimationFrame`
+    * This adds support for Content Security Policy ""style-src 'self';"" option (resolves #115, resolves #229)
+    * Fixes janky animation appearance in Microsoft Edge (resolves #342)
+    * Fixes missing line with trail set to 100 in IE (resolves #327)
+    * Animation logic is now unified in all browsers
+* Library is now distributed as an ES6 module (closes #341, fixes #340)
+* Removed useless `hwaccel` option
+* Dropped IE 6-8 support and removed VML fallback since it isn't needed for IE 9+
+* Moved internal functions out of Spinner instance
+* Removed minified files from bundle
+* Removed jQuery plugin (closes #325)
+* Dropped bower/composer/component/spm support. Install from npm instead (recommended), or save spin.js file in your repo.
+* Updated website to use native range inputs rather than polyfill, and remove jQuery usage
+* Added CONTRIBUTING.md file
+
+Version 3.0 does not change the public Spinner API, so if you are already using a module bundler such as Webpack or Rollup, upgrading should be as easy as adding the following ES6 module import:
+
+```javascript
+import {Spinner} from 'spin.js';
+```"
+pnikolov,2016-04-11 12:50:50,https://api.github.com/repos/fgnass/spin.js/git/commits/3b987bccf17de20b5e394b25d6ebc1c17511d8e0,3b987bccf17de20b5e394b25d6ebc1c17511d8e0,Added Composer JSON file. (#320)
+fgnass,2015-10-01 07:53:47,https://api.github.com/repos/fgnass/spin.js/git/commits/acbe8131fecb5fb09899453da2c5108162a88235,acbe8131fecb5fb09899453da2c5108162a88235,Use a more idiomatic code style and eslint to enforce it
+TimothyGu,2015-07-24 13:42:05,https://api.github.com/repos/fgnass/spin.js/git/commits/f0cc4b82358bee8bbb50f0fd90090bfe4d612da1,f0cc4b82358bee8bbb50f0fd90090bfe4d612da1,Release v2.3.2
+fgnass,2015-07-22 12:10:40,https://api.github.com/repos/fgnass/spin.js/git/commits/77851f0590b7884f19da3bdac9bbd1f702ffd916,77851f0590b7884f19da3bdac9bbd1f702ffd916,"Merge pull request #300 from mikesherov/patch-1
+
+Update UMD Shim to be resilient to HTMLElement global pollution"
+mikesherov,2015-07-21 16:00:54,https://api.github.com/repos/fgnass/spin.js/git/commits/ee4333951233fc7ee05ccb731adc9f33940e809b,ee4333951233fc7ee05ccb731adc9f33940e809b,"Update UMD Shim to be resilient to HTMLElement global pollution
+
+Please see https://github.com/umdjs/umd/pull/63/files and https://github.com/umdjs/umd/issues/35 for more information, but
+this change prevents an HTML element with an id of `module` from cuasing the UMD shim to incorrectly detect the enivornment as node."
+TimothyGu,2015-06-16 03:22:20,https://api.github.com/repos/fgnass/spin.js/git/commits/2757a0da6de7e2bf4d10d0e086feae2767f98f44,2757a0da6de7e2bf4d10d0e086feae2767f98f44,Release v2.3.1
+TimothyGu,2015-06-16 03:21:05,https://api.github.com/repos/fgnass/spin.js/git/commits/4698f6c9fa9492587481b99c3b7b8094a724f3ea,4698f6c9fa9492587481b99c3b7b8094a724f3ea,Remove bower.json from Grunt version bump
+TimothyGu,2015-06-16 03:15:30,https://api.github.com/repos/fgnass/spin.js/git/commits/ed6f849ae615ba178b3500a69ff744e8e44efefe,ed6f849ae615ba178b3500a69ff744e8e44efefe,"Merge pull request #295 from kkirsche/patch-1
+
+Remove moot `version` property from bower.json"
+kkirsche,2015-06-10 22:42:17,https://api.github.com/repos/fgnass/spin.js/git/commits/9f6d2bcee8e17f22d94d7c2b35b657d73839dea7,9f6d2bcee8e17f22d94d7c2b35b657d73839dea7,"Remove moot `version` property from bower.json
+
+Per bower/bower.json-spec@a325da3"
+TimothyGu,2015-06-01 15:39:45,https://api.github.com/repos/fgnass/spin.js/git/commits/36861faef2e76cd409ff03ba7f913441cdf6879c,36861faef2e76cd409ff03ba7f913441cdf6879c,"Merge pull request #294 from msheakoski/patch-1
+
+Fix syntax errors in the example at the top of spin.js"
+msheakoski,2015-06-01 15:17:17,https://api.github.com/repos/fgnass/spin.js/git/commits/5abaf12c5a3d16aca120a55501a9aa6e98e98aca,5abaf12c5a3d16aca120a55501a9aa6e98e98aca,Fix syntax errors in the example at the top of spin.js
+TimothyGu,2015-05-29 01:19:28,https://api.github.com/repos/fgnass/spin.js/git/commits/d6cb4b397a74bd8862c30698483bfdbd06580267,d6cb4b397a74bd8862c30698483bfdbd06580267,Release v2.1.3
+TimothyGu,2015-05-29 01:18:30,https://api.github.com/repos/fgnass/spin.js/git/commits/69f352686707645b330079bb8be6efe4e8c587cf,69f352686707645b330079bb8be6efe4e8c587cf,Gruntfile: Fix Uglify banner
+TimothyGu,2015-05-29 01:17:17,https://api.github.com/repos/fgnass/spin.js/git/commits/26bb366dfeeca259ccb5903c913c8842e142cbf6,26bb366dfeeca259ccb5903c913c8842e142cbf6,"Distribute minified file in repo
+
+Fixes #250."
+TimothyGu,2015-05-29 01:04:12,https://api.github.com/repos/fgnass/spin.js/git/commits/511d1ca4ee907f05de1e9248a2d939b51db954d0,511d1ca4ee907f05de1e9248a2d939b51db954d0,"Release 2.1.2
+
+Oops… Forgot to push the bumped versions."
+TimothyGu,2015-05-28 21:40:30,https://api.github.com/repos/fgnass/spin.js/git/commits/b93fa6ced13597166a99e7fabaaec12fe80afa3f,b93fa6ced13597166a99e7fabaaec12fe80afa3f,"IE 10 and 11 tested, and work"
+TimothyGu,2015-05-28 21:33:56,https://api.github.com/repos/fgnass/spin.js/git/commits/56061cac16c6f8b8846fa0b89a4ffa981ce97bf9,56061cac16c6f8b8846fa0b89a4ffa981ce97bf9,Update the website
+fgnass,2015-05-28 07:01:05,https://api.github.com/repos/fgnass/spin.js/git/commits/27d392a3ef97c08cfa06e03bc1ceb799dfd4ba78,27d392a3ef97c08cfa06e03bc1ceb799dfd4ba78,add `git push --tags` to workflow comment
+TimothyGu,2015-05-28 01:49:33,https://api.github.com/repos/fgnass/spin.js/git/commits/0da859feffc0f105c4a6f187855626f9ba0c8c59,0da859feffc0f105c4a6f187855626f9ba0c8c59,"Use no-repeat on the ribbon
+
+Fixes weird line on the bottom when zoomed in in the browser."
+TimothyGu,2015-05-28 01:33:54,https://api.github.com/repos/fgnass/spin.js/git/commits/e7fb3951d39bb239f5edd6ed07162503a3d07472,e7fb3951d39bb239f5edd6ed07162503a3d07472,Update jQuery URLs and stop bundling widely available scripts
+TimothyGu,2015-05-28 01:28:33,https://api.github.com/repos/fgnass/spin.js/git/commits/ae2e8bb4207ab639cdd5085589347fb8e3f7a024,ae2e8bb4207ab639cdd5085589347fb8e3f7a024,Use spin.js.org everywhere
+TimothyGu,2015-05-28 01:25:00,https://api.github.com/repos/fgnass/spin.js/git/commits/7566b10712dbe7a39b2a8abeffcedeb616ad20c4,7566b10712dbe7a39b2a8abeffcedeb616ad20c4,Use Markdown for the LICENSE
+TimothyGu,2015-05-28 01:24:01,https://api.github.com/repos/fgnass/spin.js/git/commits/093c72ed2f63a737d92136f1b9f434ea530d1db9,093c72ed2f63a737d92136f1b9f434ea530d1db9,"Add author, contributors, and license fields in package.json"
+TimothyGu,2015-05-28 01:20:16,https://api.github.com/repos/fgnass/spin.js/git/commits/3db8f1b67264728eccfe753496f8e89eac6fd1d5,3db8f1b67264728eccfe753496f8e89eac6fd1d5,"examples: Use relative positioning for containers
+
+Fell into our own trap eh?"
+TimothyGu,2015-05-28 01:13:48,https://api.github.com/repos/fgnass/spin.js/git/commits/0c5711cac848cb926c2f005f51560eaa7b43bd50,0c5711cac848cb926c2f005f51560eaa7b43bd50,"Convert main.css to UNIX line endings
+
+It is the only file using DOS line endings."
+TimothyGu,2015-05-28 01:11:46,https://api.github.com/repos/fgnass/spin.js/git/commits/d3da21ab8b89fe36054e87e45f495d5fdf095699,d3da21ab8b89fe36054e87e45f495d5fdf095699,site: Add some more options and enlarge the preview
+TimothyGu,2015-05-28 00:45:00,https://api.github.com/repos/fgnass/spin.js/git/commits/05e49a4550efe98514c6f914d6672150a624d851,05e49a4550efe98514c6f914d6672150a624d851,Fix autogeneration of direction option
+TimothyGu,2015-05-28 00:42:26,https://api.github.com/repos/fgnass/spin.js/git/commits/890283b3230a674be56e72dfbad0eb02e4b261be,890283b3230a674be56e72dfbad0eb02e4b261be,Sort all three options object the same way
+TimothyGu,2015-05-27 00:51:29,https://api.github.com/repos/fgnass/spin.js/git/commits/2b3398ded6e679f85cc4df8a0530e4863a422fac,2b3398ded6e679f85cc4df8a0530e4863a422fac,"Revert ""Added isSpinning property""
+
+This reverts commit 7dd01bec4fd685d24448c59ae194b91b403f5fa4.
+
+See https://github.com/fgnass/spin.js/pull/286#issuecomment-105705500
+
+Conflicts:
+	spin.js"
+TimothyGu,2015-05-27 00:49:45,https://api.github.com/repos/fgnass/spin.js/git/commits/1d6ba2495aef8676a727dd27f517879f7e0c5f17,1d6ba2495aef8676a727dd27f517879f7e0c5f17,Use null instead of 0
+TimothyGu,2015-05-27 00:12:36,https://api.github.com/repos/fgnass/spin.js/git/commits/93acfcf3d3ee9072a21796d846c807e55779be33,93acfcf3d3ee9072a21796d846c807e55779be33,Prefer standard CSS style name over vendor ones
+TimothyGu,2015-05-27 00:09:27,https://api.github.com/repos/fgnass/spin.js/git/commits/68144f7394ad9e1c118c66a33d480c32b09de1b2,68144f7394ad9e1c118c66a33d480c32b09de1b2,Deobfuscate some variable declaration
+TimothyGu,2015-05-27 00:05:10,https://api.github.com/repos/fgnass/spin.js/git/commits/678077c9f1f6c7381140cca9a057f8a4c4cefd32,678077c9f1f6c7381140cca9a057f8a4c4cefd32,Remove two pointless string concats
+TimothyGu,2015-05-26 23:57:48,https://api.github.com/repos/fgnass/spin.js/git/commits/9c32d15c093bf1f703e424903b0685e3bd5e2e57,9c32d15c093bf1f703e424903b0685e3bd5e2e57,Update JSHint configuration
+TimothyGu,2015-05-26 23:35:58,https://api.github.com/repos/fgnass/spin.js/git/commits/e3937e5856a080f644b202044f25c3143151ebe8,e3937e5856a080f644b202044f25c3143151ebe8,Be a bit more consistent with coding style
+TimothyGu,2015-05-26 18:23:41,https://api.github.com/repos/fgnass/spin.js/git/commits/34120d55690c56259da2e406f807cdbeec9a7888,34120d55690c56259da2e406f807cdbeec9a7888,"Merge pull request #232 from spmjs/master
+
+Add spm support"
+TimothyGu,2015-05-26 18:10:54,https://api.github.com/repos/fgnass/spin.js/git/commits/7ea6aa9f56db5b6995cc621021fdd00ebb84295f,7ea6aa9f56db5b6995cc621021fdd00ebb84295f,"Add note that the parent element must use relative positioning
+
+Fixes #292."
+TimothyGu,2015-05-26 17:47:20,https://api.github.com/repos/fgnass/spin.js/git/commits/b7e9c1910e675c62093cb55ad225a142cab0871b,b7e9c1910e675c62093cb55ad225a142cab0871b,Use smaller step for the scale option demo
+TimothyGu,2015-05-26 17:43:29,https://api.github.com/repos/fgnass/spin.js/git/commits/b5a8048da883f77772a8590379a4e076bdfce414,b5a8048da883f77772a8590379a4e076bdfce414,Remove unneeded semicolons
+TimothyGu,2015-05-26 17:43:20,https://api.github.com/repos/fgnass/spin.js/git/commits/a7414a2e9bc000823a05c4b52c246ed64270ffc5,a7414a2e9bc000823a05c4b52c246ed64270ffc5,Fix typo
+TimothyGu,2015-05-26 17:32:47,https://api.github.com/repos/fgnass/spin.js/git/commits/3b8b769215289c97931a5e598c8aa22116534df2,3b8b769215289c97931a5e598c8aa22116534df2,Add scale option demo
+TimothyGu,2015-05-26 17:32:34,https://api.github.com/repos/fgnass/spin.js/git/commits/282d92e0926b8d826e3fa613f3c5a7c2d3d97736,282d92e0926b8d826e3fa613f3c5a7c2d3d97736,Use defaults in the example in the license header
+TimothyGu,2015-05-26 17:25:02,https://api.github.com/repos/fgnass/spin.js/git/commits/e80d2a4482c7a9d13eab21c6d37d7739b5391407,e80d2a4482c7a9d13eab21c6d37d7739b5391407,"Add link to GitHub repo in license header
+
+Original patch by: paladox2015 <paladox2015@users.noreply.github.com>
+
+Closes #237."
+TimothyGu,2015-05-26 17:26:03,https://api.github.com/repos/fgnass/spin.js/git/commits/3841db8b655ff96f69d858a5bf783bb4d9e3ac81,3841db8b655ff96f69d858a5bf783bb4d9e3ac81,"Merge pull request #261 from RusAlex/1113_example_in_header
+
+Add example in license header"
+TimothyGu,2015-05-26 17:21:27,https://api.github.com/repos/fgnass/spin.js/git/commits/fe3663d6dcbc077c8119426c10be507cbedebd96,fe3663d6dcbc077c8119426c10be507cbedebd96,"Merge pull request #286 from c0r3yz/master
+
+Added isSpinning property"
+fgnass,2015-04-18 09:43:16,https://api.github.com/repos/fgnass/spin.js/git/commits/a10d565e2828f2d0702078e66d9c923b9807b5ea,a10d565e2828f2d0702078e66d9c923b9807b5ea,"Merge pull request #288 from indus/patch-1
+
+Update README.md"
+indus,2015-04-18 09:38:24,https://api.github.com/repos/fgnass/spin.js/git/commits/6e1d1d2f0c3ee4a46e37bd855fb2b8b69c8e38c1,6e1d1d2f0c3ee4a46e37bd855fb2b8b69c8e38c1,"Update README.md
+
+Would you mind to add this badge?"
+fgnass,2015-04-16 21:20:08,https://api.github.com/repos/fgnass/spin.js/git/commits/5bf755950a14c36c4be9fe16844e4055427e98c8,5bf755950a14c36c4be9fe16844e4055427e98c8,update year and email address
+fgnass,2015-04-16 21:18:45,https://api.github.com/repos/fgnass/spin.js/git/commits/644594d5503755e4951c0b0b18f81baae7548fe9,644594d5503755e4951c0b0b18f81baae7548fe9,convert line endings
+fgnass,2015-04-16 21:17:31,https://api.github.com/repos/fgnass/spin.js/git/commits/6ab941b94b2829990aac3bb28159a86569c31f95,6ab941b94b2829990aac3bb28159a86569c31f95,update homepage URL
+fgnass,2015-04-16 21:00:41,https://api.github.com/repos/fgnass/spin.js/git/commits/45d9a118667e15684447de32017b68418f37f936,45d9a118667e15684447de32017b68418f37f936,update changelog
+fgnass,2015-04-16 20:54:45,https://api.github.com/repos/fgnass/spin.js/git/commits/bb2f15abcc87189ee539e05cf2742b650469885b,bb2f15abcc87189ee539e05cf2742b650469885b,Release v2.1.0
+fgnass,2015-04-16 20:50:59,https://api.github.com/repos/fgnass/spin.js/git/commits/f4fcaa8b7f0690db6a6d7c6d8494c1e797a63808,f4fcaa8b7f0690db6a6d7c6d8494c1e797a63808,add CNAME
+fgnass,2015-04-16 20:50:53,https://api.github.com/repos/fgnass/spin.js/git/commits/20edc8f37b9ce893f7a31b56f2b78ea53932adfb,20edc8f37b9ce893f7a31b56f2b78ea53932adfb,convert line endings
+fgnass,2015-04-16 20:49:12,https://api.github.com/repos/fgnass/spin.js/git/commits/58e9ae03b0fa00b117d3eed4deaf0645abe5c4ae,58e9ae03b0fa00b117d3eed4deaf0645abe5c4ae,"Merge pull request #287 from samlbest/scale-option
+
+Add scale option to enable resizing of spinner"
+samlbest,2015-04-16 19:42:11,https://api.github.com/repos/fgnass/spin.js/git/commits/a051db6a893c068e51731c230321e79f68398a83,a051db6a893c068e51731c230321e79f68398a83,Add scale option to enable resizing of spinner
+coreysherman,2015-04-03 15:12:37,https://api.github.com/repos/fgnass/spin.js/git/commits/7dd01bec4fd685d24448c59ae194b91b403f5fa4,7dd01bec4fd685d24448c59ae194b91b403f5fa4,Added isSpinning property
+fgnass,2015-03-18 23:42:39,https://api.github.com/repos/fgnass/spin.js/git/commits/5fbe9cf1bf09c1c6167b4d591d6a6808ee0cc38b,5fbe9cf1bf09c1c6167b4d591d6a6808ee0cc38b,"Merge pull request #283 from davidmccabe/master
+
+Allow spin to be required on server."
+fgnass,2015-01-02 17:39:39,https://api.github.com/repos/fgnass/spin.js/git/commits/89734a25ac9b1428806a024e079d93ce83977372,89734a25ac9b1428806a024e079d93ce83977372,2.0.2
+fgnass,2014-12-19 18:30:36,https://api.github.com/repos/fgnass/spin.js/git/commits/1d30efb64ffba0e7208abdcdc85c8447d634a0ae,1d30efb64ffba0e7208abdcdc85c8447d634a0ae,"Merge pull request #269 from evanhobbs/master
+
+Require spin.js instead of just spin"
+evanhobbs,2014-12-19 18:13:58,https://api.github.com/repos/fgnass/spin.js/git/commits/0d9041f04887666b70e308ec0f24898bc657c1c8,0d9041f04887666b70e308ec0f24898bc657c1c8,"Require spin.js instead of just spin
+
+Requiring jquery.spin throws an error because it's trying to require('spin') rather than require('spin.js') which is the directory name in npm."
+RusAlex,2014-11-13 11:24:26,https://api.github.com/repos/fgnass/spin.js/git/commits/6ae6e72a53e41e3a9ddb03e2d61d100860d34dbf,6ae6e72a53e41e3a9ddb03e2d61d100860d34dbf,example in header
+fgnass,2014-10-07 08:03:47,https://api.github.com/repos/fgnass/spin.js/git/commits/0e48a6801502db1a9b323d32f6c5f2a702e423aa,0e48a6801502db1a9b323d32f6c5f2a702e423aa,"Merge pull request #235 from altearius/master
+
+Remove stale code"
+fgnass,2014-07-16 07:43:26,https://api.github.com/repos/fgnass/spin.js/git/commits/947a13f00f114cba0bfd652b25ce263fb5de13ec,947a13f00f114cba0bfd652b25ce263fb5de13ec,"Merge pull request #238 from zjx20/patch-1
+
+fixed syntax error"
+zjx20,2014-07-16 07:25:45,https://api.github.com/repos/fgnass/spin.js/git/commits/05f142d75bb5a52c82d715b3bc4e10daa448e8f1,05f142d75bb5a52c82d715b3bc4e10daa448e8f1,fixed syntax error
+altearius,2014-06-10 21:16:08,https://api.github.com/repos/fgnass/spin.js/git/commits/8cc98bc0b5bb519a8916064c0704dbfd61c2fd66,8cc98bc0b5bb519a8916064c0704dbfd61c2fd66,"Remove unused function ""pos"""
+altearius,2014-06-10 21:16:01,https://api.github.com/repos/fgnass/spin.js/git/commits/22d00a06c3964813f3e1f70ebaf708c2e0fe61f6,22d00a06c3964813f3e1f70ebaf708c2e0fe61f6,"Remove unused variable ""mid"""
+afc163,2014-05-22 09:56:50,https://api.github.com/repos/fgnass/spin.js/git/commits/dac4b770ca6f0ea475765b84de2cbd71ea7e053f,dac4b770ca6f0ea475765b84de2cbd71ea7e053f,Add spm support
+fgnass,2014-04-24 08:04:35,https://api.github.com/repos/fgnass/spin.js/git/commits/59f7dcecf56065bebac5ac2cd61cb2b125000b22,59f7dcecf56065bebac5ac2cd61cb2b125000b22,Release v2.0.1
+fgnass,2014-04-24 08:02:59,https://api.github.com/repos/fgnass/spin.js/git/commits/86e6141fdba791ea4ff494d9b363b423d890e8d6,86e6141fdba791ea4ff494d9b363b423d890e8d6,update change log
+fgnass,2014-04-24 07:55:53,https://api.github.com/repos/fgnass/spin.js/git/commits/08289f57277a0ead161464cee3444bf868f16d85,08289f57277a0ead161464cee3444bf868f16d85,"Merge pull request #219 from tablatronix/master
+
+fix for positioning without target"
+tablatronix,2014-04-23 21:38:53,https://api.github.com/repos/fgnass/spin.js/git/commits/43e9ad1afc6bc1cc5351a261583372176d433d0b,43e9ad1afc6bc1cc5351a261583372176d433d0b,fix for positioning without target
+fgnass,2014-04-22 05:55:57,https://api.github.com/repos/fgnass/spin.js/git/commits/1fe39e581aebaa9ab9d2fbe0bb70153cd476a1c5,1fe39e581aebaa9ab9d2fbe0bb70153cd476a1c5,update position in example code to 2.0 defaults
+fgnass,2014-03-18 22:32:52,https://api.github.com/repos/fgnass/spin.js/git/commits/cdf391a8e41b6ad8f902dc9a10cae80486d472ef,cdf391a8e41b6ad8f902dc9a10cae80486d472ef,document release workflow
+fgnass,2014-03-18 22:25:35,https://api.github.com/repos/fgnass/spin.js/git/commits/e30980ed6695fb07fbadd85eb84562c7604575e4,e30980ed6695fb07fbadd85eb84562c7604575e4,update year in copyright notice
+fgnass,2014-03-13 10:48:08,https://api.github.com/repos/fgnass/spin.js/git/commits/0271cbb28ac9a4be3910df937a586380ec25235e,0271cbb28ac9a4be3910df937a586380ec25235e,"center using top/left 50%
+
+and default to absolute positioning"
+fgnass,2014-03-13 10:47:17,https://api.github.com/repos/fgnass/spin.js/git/commits/7ce60d78302e8acba756dea06c0ed1d735d0507c,7ce60d78302e8acba756dea06c0ed1d735d0507c,update jshint settings
+fgnass,2014-03-13 10:47:04,https://api.github.com/repos/fgnass/spin.js/git/commits/689508b05981bac3450146bd53ac1941f31d41a4,689508b05981bac3450146bd53ac1941f31d41a4,Spinner must now always be invoked as constructor
+fgnass,2014-03-13 10:43:02,https://api.github.com/repos/fgnass/spin.js/git/commits/cd8a9110e5290b2208ae76bcf181637a8efb0e6e,cd8a9110e5290b2208ae76bcf181637a8efb0e6e,Release v2.0.0
+steelywing,2014-03-13 09:11:29,https://api.github.com/repos/fgnass/spin.js/git/commits/4bea55412d77902d18f8bfc173ac1f97732a54d0,4bea55412d77902d18f8bfc173ac1f97732a54d0,Update spin.js
+steelywing,2014-03-13 09:00:08,https://api.github.com/repos/fgnass/spin.js/git/commits/6e475972fc3fd00906915c29bf153a0282b7a43f,6e475972fc3fd00906915c29bf153a0282b7a43f,"better way to align center, this way can align even the element is hiding"
+fgnass,2013-12-24 14:02:43,https://api.github.com/repos/fgnass/spin.js/git/commits/7c0fde992df65b66e097e4bab6c2f8474bf3080d,7c0fde992df65b66e097e4bab6c2f8474bf3080d,Added changelog entry
+fgnass,2013-12-24 14:02:16,https://api.github.com/repos/fgnass/spin.js/git/commits/2e35599a96925c88ee3e8dcca1f83e5f143b5a1d,2e35599a96925c88ee3e8dcca1f83e5f143b5a1d,ignore .grunt
+fgnass,2013-12-24 13:53:32,https://api.github.com/repos/fgnass/spin.js/git/commits/f5c7fbd9a3c09845734af64688012f510ded5b85,f5c7fbd9a3c09845734af64688012f510ded5b85,Release v1.3.3
+fgnass,2013-12-24 13:41:00,https://api.github.com/repos/fgnass/spin.js/git/commits/821848e39fd5c6c4c85d51a20d88bde330e9f676,821848e39fd5c6c4c85d51a20d88bde330e9f676,Grunt-based build
+fgnass,2013-09-29 09:32:15,https://api.github.com/repos/fgnass/spin.js/git/commits/d479d2741a4cabe142e8d91636bf3aa98eb164f2,d479d2741a4cabe142e8d91636bf3aa98eb164f2,Add component.json. Closes #176
+fgnass,2013-08-26 07:54:24,https://api.github.com/repos/fgnass/spin.js/git/commits/a15e2c2475ecf8bc803f18de591d08e0118dbd5a,a15e2c2475ecf8bc803f18de591d08e0118dbd5a,bump version
+fgnass,2013-08-26 07:53:43,https://api.github.com/repos/fgnass/spin.js/git/commits/9628286ec3f4d2b2d865b4a970594f1e26933241,9628286ec3f4d2b2d865b4a970594f1e26933241,Work around regression in Chrome Canay. Closes #168
+fgnass,2013-08-19 07:52:38,https://api.github.com/repos/fgnass/spin.js/git/commits/ae4cd05a3d08a0a27b80091d6e67e6d53a4e3d0c,ae4cd05a3d08a0a27b80091d6e67e6d53a4e3d0c,update index.html
+fgnass,2013-08-19 07:45:18,https://api.github.com/repos/fgnass/spin.js/git/commits/b00d9d6962de9b98206a620da6b09fefcc9057de,b00d9d6962de9b98206a620da6b09fefcc9057de,update homepage link
+fgnass,2013-08-19 07:34:14,https://api.github.com/repos/fgnass/spin.js/git/commits/10c315c03d505582e768b821251c5945d52f9a51,10c315c03d505582e768b821251c5945d52f9a51,bump version
+fgnass,2013-08-19 07:33:59,https://api.github.com/repos/fgnass/spin.js/git/commits/8e142aae4588043ca26429735c110ffdd87f5b41,8e142aae4588043ca26429735c110ffdd87f5b41,add multi-color support
+fgnass,2013-08-19 07:16:11,https://api.github.com/repos/fgnass/spin.js/git/commits/b431bbddd8039fc42fedcc8f39d228f5b1c67d30,b431bbddd8039fc42fedcc8f39d228f5b1c67d30,"Merge pull request #167 from ranyefet/gh-pages
+
+Support for multiple line colors"
+ranyefet,2013-08-15 15:36:05,https://api.github.com/repos/fgnass/spin.js/git/commits/b851ac5f96fe8c245aec7631bd536c2720b6399c,b851ac5f96fe8c245aec7631bd536c2720b6399c,added support for multiple line colors
+fgnass,2013-05-21 09:58:28,https://api.github.com/repos/fgnass/spin.js/git/commits/e1e41954d090f8c5964ad9676f9f4d756c31514d,e1e41954d090f8c5964ad9676f9f4d756c31514d,"Merge pull request #150 from theodorejb/gh-pages
+
+Fixed changelog typo"
+theodorejb,2013-05-17 16:41:50,https://api.github.com/repos/fgnass/spin.js/git/commits/fe4e3c2016c2baf0ac89b5ed5e1857d072f25ae5,fe4e3c2016c2baf0ac89b5ed5e1857d072f25ae5,Fixed typo in changelog
+fgnass,2013-04-26 09:49:05,https://api.github.com/repos/fgnass/spin.js/git/commits/b25329bdc9e486ae5cf4b4ead09051f1714169ac,b25329bdc9e486ae5cf4b4ead09051f1714169ac,"Merge pull request #141 from kjbekkelund/bower
+
+Fix Bower package name  + move to bower.json"
+kimjoar,2013-04-26 08:02:40,https://api.github.com/repos/fgnass/spin.js/git/commits/cff25208284d437990641ebd25b7b8fd95f550be,cff25208284d437990641ebd25b7b8fd95f550be,From Bower 0.9 it expects bower.json instead of component.json
+kimjoar,2013-04-26 08:02:14,https://api.github.com/repos/fgnass/spin.js/git/commits/cae7918b8f555b4329123e3d990ff4917c06c429,cae7918b8f555b4329123e3d990ff4917c06c429,Rename Bower package to spin.js
+fgnass,2013-04-02 20:10:06,https://api.github.com/repos/fgnass/spin.js/git/commits/2a109fee4180b8455bd2efd70d01642da53d743c,2a109fee4180b8455bd2efd70d01642da53d743c,bumped version number
+fgnass,2013-04-02 14:34:41,https://api.github.com/repos/fgnass/spin.js/git/commits/7f3272912eec373168627619efaa13cb97518920,7f3272912eec373168627619efaa13cb97518920,Release 1.3.0
+fgnass,2013-04-02 14:34:06,https://api.github.com/repos/fgnass/spin.js/git/commits/9690d5ee1832676fd2eacfeb6819a8c6f8fd2661,9690d5ee1832676fd2eacfeb6819a8c6f8fd2661,Updated the changelog
+fgnass,2013-04-02 14:27:03,https://api.github.com/repos/fgnass/spin.js/git/commits/1b69d7b5c0488594c66d8432d6def22c63c86fbc,1b69d7b5c0488594c66d8432d6def22c63c86fbc,Added a require.js example
+fgnass,2013-04-02 14:26:50,https://api.github.com/repos/fgnass/spin.js/git/commits/a14f13bce0cf3e16c2c7b37e9a96b1a60f929d94,a14f13bce0cf3e16c2c7b37e9a96b1a60f929d94,Use the bundled plugin
+fgnass,2013-04-02 14:26:15,https://api.github.com/repos/fgnass/spin.js/git/commits/aaefd7f3a56213bba9da4acf3b8964f530d4b6d7,aaefd7f3a56213bba9da4acf3b8964f530d4b6d7,Added a jQuery plugin
+fgnass,2013-04-02 14:18:22,https://api.github.com/repos/fgnass/spin.js/git/commits/20d5ad360f25e7a3f42fc71726fb71139adb1b24,20d5ad360f25e7a3f42fc71726fb71139adb1b24,Removed some unused markup and CSS
+fgnass,2013-04-02 12:43:56,https://api.github.com/repos/fgnass/spin.js/git/commits/ae3b614c5d7bc67ad758a6d39596286e0aaff4ba,ae3b614c5d7bc67ad758a6d39596286e0aaff4ba,Use strict mode
+fgnass,2013-04-02 12:42:28,https://api.github.com/repos/fgnass/spin.js/git/commits/5546e7895a9a7ba11f9dfbb28f7ca2340eb8d379,5546e7895a9a7ba11f9dfbb28f7ca2340eb8d379,Added .jshintrc
+fgnass,2013-04-02 12:42:16,https://api.github.com/repos/fgnass/spin.js/git/commits/dbad0b6b0e2dfd369cdb6459ea8f37441cd4851a,dbad0b6b0e2dfd369cdb6459ea8f37441cd4851a,Use the UMD module pattern
+fgnass,2013-04-02 12:41:27,https://api.github.com/repos/fgnass/spin.js/git/commits/950f8cb6d6f20d7817c5194798062754ccd2335a,950f8cb6d6f20d7817c5194798062754ccd2335a,Added direction setting to the live-docs
+fgnass,2013-04-02 11:20:00,https://api.github.com/repos/fgnass/spin.js/git/commits/7d0213952fe1ce6787fba6c6e441538539bf4c9b,7d0213952fe1ce6787fba6c6e441538539bf4c9b,Made the preview bigger
+fgnass,2013-04-02 11:19:46,https://api.github.com/repos/fgnass/spin.js/git/commits/af411bdd95bd666cf667ea2784b2aba242ad53da,af411bdd95bd666cf667ea2784b2aba242ad53da,Added a dropdown to toggle the direction
+gsklee,2013-02-24 10:45:04,https://api.github.com/repos/fgnass/spin.js/git/commits/838ab365983c8126877f60ad3321bbf328c83738,838ab365983c8126877f60ad3321bbf328c83738,Merge remote-tracking branch 'upstream/gh-pages' into gh-pages
+gsklee,2013-02-24 04:36:57,https://api.github.com/repos/fgnass/spin.js/git/commits/8bd31511f18012a28c1adf5ac090d9c8af68c030,8bd31511f18012a28c1adf5ac090d9c8af68c030,Added an option to control the direction of the circular motion
+fgnass,2013-02-07 12:47:14,https://api.github.com/repos/fgnass/spin.js/git/commits/841e6157c7c64f5415bf9b74b420e104470cb359,841e6157c7c64f5415bf9b74b420e104470cb359,bumped version number
+fgnass,2013-01-28 05:54:05,https://api.github.com/repos/fgnass/spin.js/git/commits/a7bbee98fa4416351ca226c032c0090ed1db74ab,a7bbee98fa4416351ca226c032c0090ed1db74ab,Removed an unnecessary var. See #78
+gsklee,2012-12-22 11:41:22,https://api.github.com/repos/fgnass/spin.js/git/commits/51a29bc35bf004556011dd283c0ece386f6564aa,51a29bc35bf004556011dd283c0ece386f6564aa,"Fixed ARIA attribute name.
+
+Reference:
+http://dev.w3.org/html5/markup/aria/aria.html#aria.progressbar
+https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/Web_applications_and_ARIA_FAQ#Can_you_show_me_an_example_of_ARIA_in_action.3F"
+fgnass,2012-10-29 22:41:54,https://api.github.com/repos/fgnass/spin.js/git/commits/63b791dd1e7139694f1caf02726dab1ac33e0177,63b791dd1e7139694f1caf02726dab1ac33e0177,"Merge pull request #105 from loopj/bower-support
+
+Add a component.json file to better support Bower"
+loopj,2012-10-29 22:31:37,https://api.github.com/repos/fgnass/spin.js/git/commits/a9a0a7e10635af3e2d1e84ae5a394fc6605405c5,a9a0a7e10635af3e2d1e84ae5a394fc6605405c5,Add a component.json file to better support Bower (http://twitter.github.com/bower/)
+fgnass,2012-10-02 05:04:33,https://api.github.com/repos/fgnass/spin.js/git/commits/85275f5fe82ba816b80f1155a96f08884cf98fbb,85275f5fe82ba816b80f1155a96f08884cf98fbb,release 1.2.7
+fgnass,2012-10-02 04:59:49,https://api.github.com/repos/fgnass/spin.js/git/commits/8b4cb08d6d8d3378496807c9ae2b8ec586d23656,8b4cb08d6d8d3378496807c9ae2b8ec586d23656,"Merge branch 'gh-pages' of github.com:fgnass/spin.js into gh-pages
+
+* 'gh-pages' of github.com:fgnass/spin.js:
+  Make position an option and give it 'relative' as default value"
+fgnass,2012-10-02 04:58:46,https://api.github.com/repos/fgnass/spin.js/git/commits/ae90f0eebc0ac589d8f0f91b00cc060e2332ec82,ae90f0eebc0ac589d8f0f91b00cc060e2332ec82,"Merge pull request #98 from damselem/gh-pages
+
+The position option doesn't have any effect on the spinner"
+fgnass,2012-10-02 04:49:03,https://api.github.com/repos/fgnass/spin.js/git/commits/45379559f3f5408d1eabd5f28470b29c73a926df,45379559f3f5408d1eabd5f28470b29c73a926df,"Added a trailing semicolon
+to support concatenation tools that don't insert semicolons between files.
+closes #96 and #99"
+damselem,2012-09-24 16:45:35,https://api.github.com/repos/fgnass/spin.js/git/commits/52d436589e3c98c72187aac64590b535a9e79c01,52d436589e3c98c72187aac64590b535a9e79c01,Make position an option and give it 'relative' as default value
+fgnass,2012-08-30 13:25:14,https://api.github.com/repos/fgnass/spin.js/git/commits/2b3738582b6c6b5f48290adfeea065cd5102f507,2b3738582b6c6b5f48290adfeea065cd5102f507,bumped the version number
+fgnass,2012-08-30 13:23:47,https://api.github.com/repos/fgnass/spin.js/git/commits/53819036986fdb138edddec1fff947a60a11b7a6,53819036986fdb138edddec1fff947a60a11b7a6,published version 1.2.6
+fgnass,2012-08-10 11:13:06,https://api.github.com/repos/fgnass/spin.js/git/commits/430f5241b36f470a2255e229e0a711a82e3b8b41,430f5241b36f470a2255e229e0a711a82e3b8b41,Fix for Opera 12. Closes #87
+fgnass,2012-08-10 10:43:38,https://api.github.com/repos/fgnass/spin.js/git/commits/e3d09ff196d529575073890ef7fdff64a9b6d715,e3d09ff196d529575073890ef7fdff64a9b6d715,Set width to zero. Fixes #74
+fgnass,2012-08-10 10:24:17,https://api.github.com/repos/fgnass/spin.js/git/commits/5092f8e0c1439aacef260a845c86969dd8770bff,5092f8e0c1439aacef260a845c86969dd8770bff,"Merge branch 'gh-pages' of github.com:fgnass/spin.js into gh-pages
+
+* 'gh-pages' of github.com:fgnass/spin.js:
+  Internet Explorer throws an Invalid Argument exception if a style element is created without a type attribute.
+
+Conflicts:
+	spin.js"
+fgnass,2012-08-10 10:20:08,https://api.github.com/repos/fgnass/spin.js/git/commits/1eb65a92df28675d52acbeeb33f85f2fc403c0c3,1eb65a92df28675d52acbeeb33f85f2fc403c0c3,"Merge pull request #77 from CydeWeys/ie-error-fix
+
+Fixing Invalid Argument JS error in Internet Explorer"
+fgnass,2012-08-10 10:09:38,https://api.github.com/repos/fgnass/spin.js/git/commits/6c7c60798d03db24c3c0fa3742b7e52c8165aa7e,6c7c60798d03db24c3c0fa3742b7e52c8165aa7e,Added parseInt for top and left. Closes #90 and #81
+fgnass,2012-08-10 10:03:38,https://api.github.com/repos/fgnass/spin.js/git/commits/1a3f92adaeb1b6f9238d9373b4e370bbd19128db,1a3f92adaeb1b6f9238d9373b4e370bbd19128db,switched to npm coding style
+fgnass,2012-08-10 08:14:41,https://api.github.com/repos/fgnass/spin.js/git/commits/65d51214e290cbcbbf0c742d740cbf7604e289f1,65d51214e290cbcbbf0c742d740cbf7604e289f1,"Merge branch 'gh-pages' of github.com:fgnass/spin.js into gh-pages
+
+* 'gh-pages' of github.com:fgnass/spin.js:
+  Add AMD support."
+fgnass,2012-08-10 08:13:59,https://api.github.com/repos/fgnass/spin.js/git/commits/8558101e730fdb357d1d215ecb23a7dd1ccf171e,8558101e730fdb357d1d215ecb23a7dd1ccf171e,Added a `corners` setting. Closes #93
+CydeWeys,2012-06-13 20:12:54,https://api.github.com/repos/fgnass/spin.js/git/commits/3a9b04835decb20273d472e41ddef8af2b27d7be,3a9b04835decb20273d472e41ddef8af2b27d7be,"Internet Explorer throws an Invalid Argument exception if a style element is created without a type attribute.
+
+Signed-off-by: Ben McIlwain <bmcilwain@ngpvan.com>"
+marcelotriworks,2012-04-16 13:36:09,https://api.github.com/repos/fgnass/spin.js/git/commits/6f3dfee1f69aec11a6e8df537f05f6ada734d4d5,6f3dfee1f69aec11a6e8df537f05f6ada734d4d5,Add AMD support.
+fgnass,2012-03-22 12:27:20,https://api.github.com/repos/fgnass/spin.js/git/commits/e0e0355a57c8f6fc53606a87f8243df7be8e1e34,e0e0355a57c8f6fc53606a87f8243df7be8e1e34,Bumped version number to 1.2.5
+fgnass,2012-03-22 12:25:07,https://api.github.com/repos/fgnass/spin.js/git/commits/489a385a49cf200a7986457dc2a954eba103a243,489a385a49cf200a7986457dc2a954eba103a243,Added rotate option to the example
+fgnass,2012-03-22 12:23:00,https://api.github.com/repos/fgnass/spin.js/git/commits/4e4cdf55d2473b63a3767eb0bf3d1b221fb00e93,4e4cdf55d2473b63a3767eb0bf3d1b221fb00e93,Updated the changelog
+fgnass,2012-03-21 17:36:17,https://api.github.com/repos/fgnass/spin.js/git/commits/f5f95d8b323d9cf3274b2fb6375a1908cbc5ed91,f5f95d8b323d9cf3274b2fb6375a1908cbc5ed91,VML elements now use a namespace. Fixes #58
+fgnass,2012-03-21 16:20:30,https://api.github.com/repos/fgnass/spin.js/git/commits/4b105f42d61e1152c63ba0f33bb7a3e822772823,4b105f42d61e1152c63ba0f33bb7a3e822772823,Added a HTML5/modernizer example to test #58
+fgnass,2012-03-21 15:31:03,https://api.github.com/repos/fgnass/spin.js/git/commits/427a7121cd1945f9994cee9839e79b1137bc2299,427a7121cd1945f9994cee9839e79b1137bc2299,Remove spinner upon click
+fgnass,2012-03-21 15:21:39,https://api.github.com/repos/fgnass/spin.js/git/commits/c263f055ce8073c788ce846927c25b0d07216b05,c263f055ce8073c788ce846927c25b0d07216b05,Added a second element w/o any options
+fgnass,2012-03-21 15:06:54,https://api.github.com/repos/fgnass/spin.js/git/commits/7f5748e5a3d294161dfab8bc80c6409427e06a7d,7f5748e5a3d294161dfab8bc80c6409427e06a7d,Incremented the CSS version number
+fgnass,2012-03-21 15:02:36,https://api.github.com/repos/fgnass/spin.js/git/commits/4650bdb0637cf07444fc2a6d524f61b3a2853558,4650bdb0637cf07444fc2a6d524f61b3a2853558,Added a jQuery example
+fgnass,2012-03-21 14:42:37,https://api.github.com/repos/fgnass/spin.js/git/commits/ee7b4d5abbf6fa801eb13b936ad25d8b3dcecdf3,ee7b4d5abbf6fa801eb13b936ad25d8b3dcecdf3,"Don't overwrite the prototype to preserve the constructor property.
+
+Instead of restoring the property (as suggested in the pull request) this patch uses the existing `merge` function in order to reduce the file size. Fixes #61"
+fgnass,2012-03-21 14:26:48,https://api.github.com/repos/fgnass/spin.js/git/commits/682d112f3ddea13caada776dd2e03ab806306648,682d112f3ddea13caada776dd2e03ab806306648,Added a `rotate` option. Fixes #60
+fgnass,2012-02-28 15:58:42,https://api.github.com/repos/fgnass/spin.js/git/commits/b2053981ee34c4c53a77ae94ba24d8a3128b5590,b2053981ee34c4c53a77ae94ba24d8a3128b5590,Updated index.html
+fgnass,2012-02-28 15:55:22,https://api.github.com/repos/fgnass/spin.js/git/commits/a9423f9f95c62b8f404a1f6c1f55375137759761,a9423f9f95c62b8f404a1f6c1f55375137759761,Release 1.2.4
+fgnass,2012-02-28 15:32:46,https://api.github.com/repos/fgnass/spin.js/git/commits/948f3c25cde735675753419c0f19fbc051aa2819,948f3c25cde735675753419c0f19fbc051aa2819,Added a Makefile and a dist folder
+fgnass,2012-02-28 15:31:31,https://api.github.com/repos/fgnass/spin.js/git/commits/e048cf98f76a8efe9c8787d54392273219091292,e048cf98f76a8efe9c8787d54392273219091292,Added an example with various positioning options
+fgnass,2012-02-28 15:30:35,https://api.github.com/repos/fgnass/spin.js/git/commits/b3f3b66a0bd3352497fbaa9a9e88d5134d97f5d9,b3f3b66a0bd3352497fbaa9a9e88d5134d97f5d9,"Added new config options: className, top, left"
+fgnass,2012-02-28 09:46:11,https://api.github.com/repos/fgnass/spin.js/git/commits/5b8291b74fbbd480cfe5411bbda30fa7ed079edd,5b8291b74fbbd480cfe5411bbda30fa7ed079edd,use one var per var
+andyburke,2012-02-27 22:49:39,https://api.github.com/repos/fgnass/spin.js/git/commits/fd02564ce018c788b69a5e763018bfdf34b3585a,fd02564ce018c788b69a5e763018bfdf34b3585a,Minify with uglify.
+andyburke,2012-02-27 20:53:50,https://api.github.com/repos/fgnass/spin.js/git/commits/fc987ac453167c7cc134d60c7084f4768765fd85,fc987ac453167c7cc134d60c7084f4768765fd85,"Add 'topOffset' and 'leftOffset' options.
+Set the spinner's class to 'spinner'."
+fgnass,2012-02-10 07:16:12,https://api.github.com/repos/fgnass/spin.js/git/commits/27e41d6336fb27d8097f53a41151fcf7db6456f3,27e41d6336fb27d8097f53a41151fcf7db6456f3,Possible fix for issue #52
+fgnass,2012-01-30 20:02:02,https://api.github.com/repos/fgnass/spin.js/git/commits/724b6f6b35fd871a84ab1742099de2c3671d7892,724b6f6b35fd871a84ab1742099de2c3671d7892,Added a checkbox for the hwaccel option
+fgnass,2012-01-30 19:45:40,https://api.github.com/repos/fgnass/spin.js/git/commits/16cc1cb3a660cce3a3c907351d7e1720dcaa4d47,16cc1cb3a660cce3a3c907351d7e1720dcaa4d47,"Made 3d transforms optional and disabled by default. Closes #47, #41 and #51"
+fgnass,2011-11-08 09:33:36,https://api.github.com/repos/fgnass/spin.js/git/commits/c9fac661e9fadd634cd784ef7258b725f464a582,c9fac661e9fadd634cd784ef7258b725f464a582,Bumped version to 1.2.2
+fgnass,2011-11-08 09:32:58,https://api.github.com/repos/fgnass/spin.js/git/commits/6b3f2bb212fe58171ab66abc63b70d05b3584090,6b3f2bb212fe58171ab66abc63b70d05b3584090,"Merge branch 'master' into gh-pages
+
+* master:
+  Bumped version number to 1.2.2"
+fgnass,2011-11-08 09:27:15,https://api.github.com/repos/fgnass/spin.js/git/commits/9efa8d53b7522118102a1da3415c40bf48f0731d,9efa8d53b7522118102a1da3415c40bf48f0731d,Bumped version number to 1.2.2
+fgnass,2011-11-08 09:21:54,https://api.github.com/repos/fgnass/spin.js/git/commits/d2122c636df1d1487fd76518959261b50d15a13d,d2122c636df1d1487fd76518959261b50d15a13d,"Merge branch 'master' into gh-pages
+
+* master:
+  Defaults are now exposed as Spinner.defaults
+  Added float:left for #preview
+  Possible fix for issue #36
+  Wrapped the code into a function expression to keep the local scope tidy
+  fix for issue #39"
+fgnass,2011-10-31 09:07:20,https://api.github.com/repos/fgnass/spin.js/git/commits/18aa5d18d019d2c36d3edadc59f57686a72ab876,18aa5d18d019d2c36d3edadc59f57686a72ab876,Defaults are now exposed as Spinner.defaults
+fgnass,2011-10-30 11:53:52,https://api.github.com/repos/fgnass/spin.js/git/commits/9c8f0c63705a8dfd73a0670c097d7b1234ad4468,9c8f0c63705a8dfd73a0670c097d7b1234ad4468,Added float:left for #preview
+fgnass,2011-10-29 14:19:34,https://api.github.com/repos/fgnass/spin.js/git/commits/930bae7ad845f8e0f2aa8395c22bea276c927669,930bae7ad845f8e0f2aa8395c22bea276c927669,Possible fix for issue #36
+fgnass,2011-10-18 14:48:39,https://api.github.com/repos/fgnass/spin.js/git/commits/974cdd33719f2121bbbbfd6dbd16797fd94df98b,974cdd33719f2121bbbbfd6dbd16797fd94df98b,Wrapped the code into a function expression to keep the local scope tidy
+mjphaynes,2011-10-18 14:27:04,https://api.github.com/repos/fgnass/spin.js/git/commits/6921ec1acbcb7ae1a9696b52279147732d36770b,6921ec1acbcb7ae1a9696b52279147732d36770b,fix for issue #39
+fgnass,2011-10-17 08:02:00,https://api.github.com/repos/fgnass/spin.js/git/commits/a9ab52774308be21642681d5bfa38bbf9233593a,a9ab52774308be21642681d5bfa38bbf9233593a,Added a link to @bradramsey's jQuery plugin
+fgnass,2011-10-05 11:23:48,https://api.github.com/repos/fgnass/spin.js/git/commits/f58d2f739b5c0e26398a1198a2c8477e9befe52f,f58d2f739b5c0e26398a1198a2c8477e9befe52f,Added a version number to the script URL
+fgnass,2011-10-05 11:20:37,https://api.github.com/repos/fgnass/spin.js/git/commits/c66b7a0b82d4b422e8fc0d332f43201d00fd086b,c66b7a0b82d4b422e8fc0d332f43201d00fd086b,Added version 1.2.1 to the change log
+fgnass,2011-10-05 11:20:04,https://api.github.com/repos/fgnass/spin.js/git/commits/0621e6c2ac2f56bc55bc89b704e4575e7298a36e,0621e6c2ac2f56bc55bc89b704e4575e7298a36e,Updated the minified version
+fgnass,2011-10-05 11:16:07,https://api.github.com/repos/fgnass/spin.js/git/commits/feccab54ab93df0954bfc1c71b92fa90916400d0,feccab54ab93df0954bfc1c71b92fa90916400d0,"Merge branch 'master' into gh-pages
+
+* master:
+  Added some sanity checks. Should fix #31"
+fgnass,2011-10-05 11:15:50,https://api.github.com/repos/fgnass/spin.js/git/commits/8e509f03bc370b880e8b3f8338c15993f642b357,8e509f03bc370b880e8b3f8338c15993f642b357,Added some sanity checks. Should fix #31
+fgnass,2011-10-05 11:07:11,https://api.github.com/repos/fgnass/spin.js/git/commits/26ea0b78c651661f1648b40f96cddb5077ce2116,26ea0b78c651661f1648b40f96cddb5077ce2116,"Merge branch 'master' into gh-pages
+
+* master:
+  Bumped the version number to 1.2.1"
+fgnass,2011-10-05 11:07:00,https://api.github.com/repos/fgnass/spin.js/git/commits/6d5324e1bad559fa8d62295d1d5f8f40e1a6184d,6d5324e1bad559fa8d62295d1d5f8f40e1a6184d,Bumped the version number to 1.2.1
+fgnass,2011-10-05 11:05:00,https://api.github.com/repos/fgnass/spin.js/git/commits/0737ee3c8f781533dc883f8acd3279ef168f1435,0737ee3c8f781533dc883f8acd3279ef168f1435,"Merge branch 'master' into gh-pages
+
+* master:
+  Added a sanity check. Should fix #31"
+fgnass,2011-10-05 11:04:43,https://api.github.com/repos/fgnass/spin.js/git/commits/8574d16b399df04d3c8166709ac0c0929e66c204,8574d16b399df04d3c8166709ac0c0929e66c204,Added a sanity check. Should fix #31
+fgnass,2011-09-16 13:13:47,https://api.github.com/repos/fgnass/spin.js/git/commits/34a21cbe0cc040061d64dbed1e2fb82fe789f15c,34a21cbe0cc040061d64dbed1e2fb82fe789f15c,Added a version number to the stylesheet
+fgnass,2011-09-16 13:11:56,https://api.github.com/repos/fgnass/spin.js/git/commits/2a9a4a2acffdd43af2001027b07f99d420089c95,2a9a4a2acffdd43af2001027b07f99d420089c95,Settings can now be shared
+fgnass,2011-09-16 09:21:02,https://api.github.com/repos/fgnass/spin.js/git/commits/ede6a5c6006864e1e6c548a3b35b9cb438ac41ba,ede6a5c6006864e1e6c548a3b35b9cb438ac41ba,Updated the minified version
+fgnass,2011-09-16 09:20:31,https://api.github.com/repos/fgnass/spin.js/git/commits/14971a8dc4090ae670bd3ba2313b831f3c7e72c4,14971a8dc4090ae670bd3ba2313b831f3c7e72c4,"Merge branch 'master' into gh-pages
+
+* master:
+  Bumped the version number to 1.2"
+fgnass,2011-09-16 09:20:17,https://api.github.com/repos/fgnass/spin.js/git/commits/ab2af3a18aedec5d396ff59dc98e11ffb7537446,ab2af3a18aedec5d396ff59dc98e11ffb7537446,Bumped the version number to 1.2
+fgnass,2011-09-16 09:19:41,https://api.github.com/repos/fgnass/spin.js/git/commits/e1079a28da8f438868228d165bbd80a8d3263e67,e1079a28da8f438868228d165bbd80a8d3263e67,Updated the changes section
+fgnass,2011-09-16 08:48:43,https://api.github.com/repos/fgnass/spin.js/git/commits/65f9eb81e0035a2271b31b12b807e07421a256bc,65f9eb81e0035a2271b31b12b807e07421a256bc,"Merge branch 'master' into gh-pages
+
+* master:
+  Workaround for negative margin bug in IE. Fixes #27
+  Changed default fps to 20
+  Calling spin() now auto-stops the previous copy. Closes #28
+  The new operator is now optional. Closes #14
+  Fixed a typo
+  Added an example page
+  The frame-rate for the javascript animation fallback is now configurable.
+  Added aria-role=""progressbar""
+  Updated the README"
+fgnass,2011-09-16 08:45:27,https://api.github.com/repos/fgnass/spin.js/git/commits/25a3ca006596fb10de97b549bdd7c121237a3618,25a3ca006596fb10de97b549bdd7c121237a3618,Workaround for negative margin bug in IE. Fixes #27
+fgnass,2011-09-16 08:44:34,https://api.github.com/repos/fgnass/spin.js/git/commits/a598be505f95f23423eaa942904ececeb03b6fde,a598be505f95f23423eaa942904ececeb03b6fde,Changed default fps to 20
+fgnass,2011-09-16 08:19:30,https://api.github.com/repos/fgnass/spin.js/git/commits/34bc5638db049d898efa388e0fba99a5be063300,34bc5638db049d898efa388e0fba99a5be063300,Calling spin() now auto-stops the previous copy. Closes #28
+fgnass,2011-09-16 08:15:52,https://api.github.com/repos/fgnass/spin.js/git/commits/bc0f8b1ef62b9803467633e06417ea702aa97d16,bc0f8b1ef62b9803467633e06417ea702aa97d16,The new operator is now optional. Closes #14
+fgnass,2011-09-16 08:01:55,https://api.github.com/repos/fgnass/spin.js/git/commits/26463bb5f0b19a76f92fba534842246d6ea44e3a,26463bb5f0b19a76f92fba534842246d6ea44e3a,Fixed a typo
+fgnass,2011-09-16 08:00:06,https://api.github.com/repos/fgnass/spin.js/git/commits/be6193d3685a95b56175f08149767e38d53a5cb8,be6193d3685a95b56175f08149767e38d53a5cb8,Fixed a typo
+fgnass,2011-09-14 14:19:45,https://api.github.com/repos/fgnass/spin.js/git/commits/bb59c74ddf8c13685a33d26758d9689a362b8321,bb59c74ddf8c13685a33d26758d9689a362b8321,Adjusting the sliders now modifies the example code
+fgnass,2011-09-09 12:50:56,https://api.github.com/repos/fgnass/spin.js/git/commits/e7e06e1a08fb41bad666a826cecb3a390b95610a,e7e06e1a08fb41bad666a826cecb3a390b95610a,Added an example page
+fgnass,2011-09-09 12:50:12,https://api.github.com/repos/fgnass/spin.js/git/commits/a7a940f46a5a0996de26bc60a2dbf19a3a47566f,a7a940f46a5a0996de26bc60a2dbf19a3a47566f,The frame-rate for the javascript animation fallback is now configurable.
+fgnass,2011-09-09 12:49:25,https://api.github.com/repos/fgnass/spin.js/git/commits/58bf0670cc7acdfedf3cd97c457daa0f808477e5,58bf0670cc7acdfedf3cd97c457daa0f808477e5,"Added aria-role=""progressbar"""
+fgnass,2011-09-06 10:22:58,https://api.github.com/repos/fgnass/spin.js/git/commits/5da149d04ed79ccf7e64e1affbc1ed216d7a1926,5da149d04ed79ccf7e64e1affbc1ed216d7a1926,Updated the README
+fgnass,2011-09-06 10:15:52,https://api.github.com/repos/fgnass/spin.js/git/commits/06c83175fe3fbaa66a0e92da3cb80f5eab15fdd1,06c83175fe3fbaa66a0e92da3cb80f5eab15fdd1,Updated the minified version
+fgnass,2011-09-06 10:15:26,https://api.github.com/repos/fgnass/spin.js/git/commits/4c929becf4d1f58929a11821afd0185230d8400e,4c929becf4d1f58929a11821afd0185230d8400e,Merge branch 'master' into gh-pages
+fgnass,2011-09-06 10:15:16,https://api.github.com/repos/fgnass/spin.js/git/commits/8e83cb5cd85b37ad7cd62c143a17728ba569416a,8e83cb5cd85b37ad7cd62c143a17728ba569416a,Calculate exact border-radius. Fixes a bug with older WebKits that otherwise ignore the setting.
+fgnass,2011-09-06 10:07:01,https://api.github.com/repos/fgnass/spin.js/git/commits/1130a754a036b92e5d230ffc6f94bc7b9220a674,1130a754a036b92e5d230ffc6f94bc7b9220a674,Updated Safari version
+fgnass,2011-09-06 09:57:15,https://api.github.com/repos/fgnass/spin.js/git/commits/affc5f13141f1313f7b648518a022de5b4c5a68d,affc5f13141f1313f7b648518a022de5b4c5a68d,Update the bug description
+fgnass,2011-09-06 09:02:28,https://api.github.com/repos/fgnass/spin.js/git/commits/0f9fd4abf12232e58425b23e9fff6b0d6a53d5a2,0f9fd4abf12232e58425b23e9fff6b0d6a53d5a2,Added a changes section
+fgnass,2011-09-06 09:01:56,https://api.github.com/repos/fgnass/spin.js/git/commits/324068b9fb712750e9e8565719e60e88eddcd1ca,324068b9fb712750e9e8565719e60e88eddcd1ca,Updated the minified version
+fgnass,2011-09-06 08:25:05,https://api.github.com/repos/fgnass/spin.js/git/commits/6e3397215eb135b528ef883ca426f9ffe85450b7,6e3397215eb135b528ef883ca426f9ffe85450b7,Merge branch 'master' into gh-pages
+fgnass,2011-09-06 08:24:55,https://api.github.com/repos/fgnass/spin.js/git/commits/eb172afac54941efb377bcf9f9b1c511c64ad177,eb172afac54941efb377bcf9f9b1c511c64ad177,Added a version number
+fgnass,2011-09-06 08:20:39,https://api.github.com/repos/fgnass/spin.js/git/commits/996b319f1af3feba6bc54ef305aebd7db7ddb701,996b319f1af3feba6bc54ef305aebd7db7ddb701,Merge branch 'master' into gh-pages
+fgnass,2011-09-06 08:20:25,https://api.github.com/repos/fgnass/spin.js/git/commits/a021da6f3928267d1ad4fc5e2151ee97b5d647b0,a021da6f3928267d1ad4fc5e2151ee97b5d647b0,"Instead of trying all prefixes, extract it from `useCssAnimations`"
+fgnass,2011-09-01 10:06:59,https://api.github.com/repos/fgnass/spin.js/git/commits/f8b2bf3d2450d4f7c67fe11d1a2edbc2a5c25526,f8b2bf3d2450d4f7c67fe11d1a2edbc2a5c25526,Updated the compatibility list
+fgnass,2011-09-01 10:06:27,https://api.github.com/repos/fgnass/spin.js/git/commits/c86898dfde5f6837f7ac7c280c87bd412e782d3a,c86898dfde5f6837f7ac7c280c87bd412e782d3a,Updated the minified version
+fgnass,2011-09-01 10:03:25,https://api.github.com/repos/fgnass/spin.js/git/commits/602dc2299b8fc9991b2b08e8b37be11aeea0aa83,602dc2299b8fc9991b2b08e8b37be11aeea0aa83,Merge branch 'master' into gh-pages
+fgnass,2011-09-01 10:03:00,https://api.github.com/repos/fgnass/spin.js/git/commits/7c6c725cb796431c8c3016ad745cd55c92e107bf,7c6c725cb796431c8c3016ad745cd55c92e107bf,"Use a different animation for each line instead of
+animation-delay. Fixes #12."
+fgnass,2011-09-01 10:00:11,https://api.github.com/repos/fgnass/spin.js/git/commits/bdb73e7442803d48212cfc1a9cb7d8c39ec43adc,bdb73e7442803d48212cfc1a9cb7d8c39ec43adc,Code and comment cleanup
+fgnass,2011-09-01 09:58:47,https://api.github.com/repos/fgnass/spin.js/git/commits/6d2e7238f560b42e75b0b221a66f9b60cf6b412c,6d2e7238f560b42e75b0b221a66f9b60cf6b412c,Updated the README
+fgnass,2011-08-31 15:51:10,https://api.github.com/repos/fgnass/spin.js/git/commits/4e1d4d0e17ee81891105fd4e2035c72ce8c4a7cb,4e1d4d0e17ee81891105fd4e2035c72ce8c4a7cb,Updated the minified version
+fgnass,2011-08-31 15:50:58,https://api.github.com/repos/fgnass/spin.js/git/commits/a418a725a7dea8b772071032514738dff94552ea,a418a725a7dea8b772071032514738dff94552ea,"Load fd-slider first and wait until it has 
+converted the input fields (which happens on load)
+before registering the change listeners."
+fgnass,2011-08-31 15:45:19,https://api.github.com/repos/fgnass/spin.js/git/commits/e1873d020a4ca01cc11950a8529291d56f9a387b,e1873d020a4ca01cc11950a8529291d56f9a387b,Merge branch 'master' into gh-pages
+fgnass,2011-08-31 15:45:00,https://api.github.com/repos/fgnass/spin.js/git/commits/d8e78314af935fa1a2eb50cf15edd9916f2ea061,d8e78314af935fa1a2eb50cf15edd9916f2ea061,"Kick off the animation by setting a CSS class.
+This greatly improves the situation mentioned in
+issue #12 and might also help with #20."
+fgnass,2011-08-31 14:19:54,https://api.github.com/repos/fgnass/spin.js/git/commits/abdb944d812a86aab7b4f419b97ca1546cd39ae8,abdb944d812a86aab7b4f419b97ca1546cd39ae8,Updated the minified version
+fgnass,2011-08-31 14:17:54,https://api.github.com/repos/fgnass/spin.js/git/commits/003e471283222637600a0472d4b2d2db576e0754,003e471283222637600a0472d4b2d2db576e0754,Merge branch 'master' into gh-pages
+fgnass,2011-08-31 14:17:23,https://api.github.com/repos/fgnass/spin.js/git/commits/16b004c16a3a24bb1ceb9cd04221baa052d34033,16b004c16a3a24bb1ceb9cd04221baa052d34033,Take padding into account. Fixes #32
+fgnass,2011-08-31 14:11:43,https://api.github.com/repos/fgnass/spin.js/git/commits/7b2b42ad27e68d25c22b995f2a3022a53e1fa1ac,7b2b42ad27e68d25c22b995f2a3022a53e1fa1ac,"Optimized the script for gzip compression. While
+the minified version is now slightly larger, the
+raw code is much more readable and the gzipped
+version is even smaller than before."
+fgnass,2011-08-31 13:59:27,https://api.github.com/repos/fgnass/spin.js/git/commits/484a2ec0f5ad9a468118702c65051288ed3555f9,484a2ec0f5ad9a468118702c65051288ed3555f9,Updated the README
+fgnass,2011-08-31 13:56:09,https://api.github.com/repos/fgnass/spin.js/git/commits/1100df7bc7f68839f82fe677428405fd1db56517,1100df7bc7f68839f82fe677428405fd1db56517,Updated file sizes
+fgnass,2011-08-31 09:23:53,https://api.github.com/repos/fgnass/spin.js/git/commits/290ec875035c11ca324597897193eaa672c2cee0,290ec875035c11ca324597897193eaa672c2cee0,Updated jQuery plugin to remove data. Fixes #24
+fgnass,2011-08-31 09:21:38,https://api.github.com/repos/fgnass/spin.js/git/commits/288a307ea3b92fb345eeeae2d6036903db18c572,288a307ea3b92fb345eeeae2d6036903db18c572,Updated the minified version
+fgnass,2011-08-31 09:10:40,https://api.github.com/repos/fgnass/spin.js/git/commits/95dd88b470a804018364e178f133e37422ed7692,95dd88b470a804018364e178f133e37422ed7692,Merge branch 'master' into gh-pages
+fgnass,2011-08-31 09:09:54,https://api.github.com/repos/fgnass/spin.js/git/commits/4737ae1535e1ff15082f4475829e66011988b379,4737ae1535e1ff15082f4475829e66011988b379,"Don't use negative delays (fixes #20).
+See https://bugs.webkit.org/show_bug.cgi?id=26150"
+fgnass,2011-08-31 09:08:17,https://api.github.com/repos/fgnass/spin.js/git/commits/f016d92f6cea4a54aaeddb85641939532b0f91b7,f016d92f6cea4a54aaeddb85641939532b0f91b7,Save some bytes
+fgnass,2011-08-31 09:07:52,https://api.github.com/repos/fgnass/spin.js/git/commits/bc46ccddf8df635b2409174274b2cc780f926300,bc46ccddf8df635b2409174274b2cc780f926300,No half pixels
+fgnass,2011-08-31 09:06:59,https://api.github.com/repos/fgnass/spin.js/git/commits/50bc5fe6ec359ec2bc0bd6a6aeb533a19f9ec03d,50bc5fe6ec359ec2bc0bd6a6aeb533a19f9ec03d,Updated README
+fgnass,2011-08-25 09:42:51,https://api.github.com/repos/fgnass/spin.js/git/commits/5acd7db13e7aaf41ae4bf048fa287e1b227af70d,5acd7db13e7aaf41ae4bf048fa287e1b227af70d,Added Android 2.3 to the compatibility list
+fgnass,2011-08-25 08:25:51,https://api.github.com/repos/fgnass/spin.js/git/commits/25fc1f12091cdf6045ebe1ed47859ea37643e881,25fc1f12091cdf6045ebe1ed47859ea37643e881,Updated the minified version
+fgnass,2011-08-25 08:24:38,https://api.github.com/repos/fgnass/spin.js/git/commits/9ded7f0325b432851a605d80b28a9a88170192f3,9ded7f0325b432851a605d80b28a9a88170192f3,Merge branch 'master' into gh-pages
+fgnass,2011-08-25 08:24:27,https://api.github.com/repos/fgnass/spin.js/git/commits/53dd33ed9a887c80ed0157cfa249499ca55330d6,53dd33ed9a887c80ed0157cfa249499ca55330d6,Test if Spinner.el is defined. Fixes #22
+fgnass,2011-08-22 13:02:40,https://api.github.com/repos/fgnass/spin.js/git/commits/644f3e3c6c8e15895524fd0c814fc9ce0ef64aef,644f3e3c6c8e15895524fd0c814fc9ce0ef64aef,Updated the minified version
+fgnass,2011-08-22 13:01:55,https://api.github.com/repos/fgnass/spin.js/git/commits/a178f8b62822d5b74f716fbf6ba558f895f4e6e2,a178f8b62822d5b74f716fbf6ba558f895f4e6e2,Merge branch 'master' into gh-pages
+fgnass,2011-08-22 13:01:42,https://api.github.com/repos/fgnass/spin.js/git/commits/730dc5b7aa35b8bef2d6ea117cd2873d1f1b5f25,730dc5b7aa35b8bef2d6ea117cd2873d1f1b5f25,Shortened the comment
+fgnass,2011-08-22 12:03:42,https://api.github.com/repos/fgnass/spin.js/git/commits/85b3614369d4b63fb5dd307608dd11835714b2a4,85b3614369d4b63fb5dd307608dd11835714b2a4,"Moved the example up, right behind the downloads."
+fgnass,2011-08-22 12:02:50,https://api.github.com/repos/fgnass/spin.js/git/commits/1cc10135fa83663b77fd17d761a1caed780b32d4,1cc10135fa83663b77fd17d761a1caed780b32d4,Updated the minified version
+fgnass,2011-08-22 11:58:56,https://api.github.com/repos/fgnass/spin.js/git/commits/8cc0f806d0c0f7d3ef53aa77513ed0df3abfcccb,8cc0f806d0c0f7d3ef53aa77513ed0df3abfcccb,Merge branch 'master' into gh-pages
+fgnass,2011-08-22 11:58:45,https://api.github.com/repos/fgnass/spin.js/git/commits/9e709cacb43fc667b7bcd8186426929ce287c11d,9e709cacb43fc667b7bcd8186426929ce287c11d,Don't re-use DOM elements (fixes #19). Also clear pending timeouts for the case that spin() is called immediately after stop().
+fgnass,2011-08-22 05:40:28,https://api.github.com/repos/fgnass/spin.js/git/commits/1adc5e07c22b295986c2bcc3274c097bf243463b,1adc5e07c22b295986c2bcc3274c097bf243463b,The demo now uses the minified version.
+fgnass,2011-08-19 13:29:31,https://api.github.com/repos/fgnass/spin.js/git/commits/b4bd5c001ecf76d055f99f0f6bb244177265bc90,b4bd5c001ecf76d055f99f0f6bb244177265bc90,Updated the minified version
+fgnass,2011-08-19 13:28:29,https://api.github.com/repos/fgnass/spin.js/git/commits/ad672339607ba583181e28dc630b6185e9b3b238,ad672339607ba583181e28dc630b6185e9b3b238,Merge branch 'master' into gh-pages
+fgnass,2011-08-19 13:28:16,https://api.github.com/repos/fgnass/spin.js/git/commits/7959637302fc20f12b7b8acd74e37f0df96d002e,7959637302fc20f12b7b8acd74e37f0df96d002e,Use getElementsByTagName() to look up head. Fixes #13
+fgnass,2011-08-19 10:43:31,https://api.github.com/repos/fgnass/spin.js/git/commits/729c510b2322df16777318010ba7ce40c46597f1,729c510b2322df16777318010ba7ce40c46597f1,Updated the description
+fgnass,2011-08-19 09:47:20,https://api.github.com/repos/fgnass/spin.js/git/commits/93cc3c9580818d7d81d6504eb9f6337831e254d1,93cc3c9580818d7d81d6504eb9f6337831e254d1,Updated the minified version
+fgnass,2011-08-19 09:47:05,https://api.github.com/repos/fgnass/spin.js/git/commits/26b491599ce94bc636f297ff6afc596790cde9d1,26b491599ce94bc636f297ff6afc596790cde9d1,Updated the jQuery plugin to use the color set via CSS. See #10
+fgnass,2011-08-19 09:45:38,https://api.github.com/repos/fgnass/spin.js/git/commits/bf9e593907001923ec493eb361494bfecab4246d,bf9e593907001923ec493eb361494bfecab4246d,Temporarily switched off one of the spinners and the shadow for performance tests.
+fgnass,2011-08-19 09:19:57,https://api.github.com/repos/fgnass/spin.js/git/commits/f9930d3965d3db35328fd1b086db5ef67922ee3e,f9930d3965d3db35328fd1b086db5ef67922ee3e,Merge branch 'master' into gh-pages
+fgnass,2011-08-19 09:18:50,https://api.github.com/repos/fgnass/spin.js/git/commits/b6aaa1ce7cfece662151944d9e30df55d2170701,b6aaa1ce7cfece662151944d9e30df55d2170701,Some code cleanup
+fgnass,2011-08-19 08:40:52,https://api.github.com/repos/fgnass/spin.js/git/commits/9d22122fb18cd594d5847a21dac7501e39437b71,9d22122fb18cd594d5847a21dac7501e39437b71,Merge branch 'fix-stylesheet-rules' of https://github.com/texel/spin.js into texel-fix-stylesheet-rules
+fgnass,2011-08-19 08:39:00,https://api.github.com/repos/fgnass/spin.js/git/commits/aae689554fda85d11f6acbb8948021e06b4b65a2,aae689554fda85d11f6acbb8948021e06b4b65a2,Merge branch 'master' into gh-pages
+fgnass,2011-08-19 08:38:32,https://api.github.com/repos/fgnass/spin.js/git/commits/3ac9ca00214ead21456c167cfb801f55cd601392,3ac9ca00214ead21456c167cfb801f55cd601392,Merge branch 'master' of github.com:fgnass/spin.js
+fgnass,2011-08-19 08:37:16,https://api.github.com/repos/fgnass/spin.js/git/commits/7bce7cd370064d28324da2bb80a64bbbebc90b86,7bce7cd370064d28324da2bb80a64bbbebc90b86,Updated the minified version
+fgnass,2011-08-19 08:36:55,https://api.github.com/repos/fgnass/spin.js/git/commits/4de04a2c4dc65929ea6c9bbd4807c041dbd6ddbd,4de04a2c4dc65929ea6c9bbd4807c041dbd6ddbd,Merge branch 'master' into gh-pages
+fgnass,2011-08-19 08:36:35,https://api.github.com/repos/fgnass/spin.js/git/commits/ad384ca5b3fea60d2aac0ccd19496f2824413d57,ad384ca5b3fea60d2aac0ccd19496f2824413d57,Tweaked the calculation of the animation delay. Fixes #3
+fgnass,2011-08-19 06:13:01,https://api.github.com/repos/fgnass/spin.js/git/commits/4e1cd9c5143b82258a63756d71c25ccb400a5717,4e1cd9c5143b82258a63756d71c25ccb400a5717,Fixed a typo
+fgnass,2011-08-17 08:58:04,https://api.github.com/repos/fgnass/spin.js/git/commits/e070bb75249f8f494b5b005765d00e93bc7b7ff2,e070bb75249f8f494b5b005765d00e93bc7b7ff2,"Merge branch 'gh-pages' of github.com:fgnass/spin.js into gh-pages
+
+Conflicts:
+	index.html"
+fgnass,2011-08-17 08:41:31,https://api.github.com/repos/fgnass/spin.js/git/commits/a85cb576b6fb08d2879536eb834c43c0a237df5b,a85cb576b6fb08d2879536eb834c43c0a237df5b,Added a version number to the URL
+fgnass,2011-08-17 08:41:31,https://api.github.com/repos/fgnass/spin.js/git/commits/2025670f3e1057bf86eeb2c9f9ff2e3713a69a3b,2025670f3e1057bf86eeb2c9f9ff2e3713a69a3b,Added a version number to the URL
+fgnass,2011-08-17 08:38:43,https://api.github.com/repos/fgnass/spin.js/git/commits/0b9094b6e8bb78beff2cbfcbbc900224feb2019f,0b9094b6e8bb78beff2cbfcbbc900224feb2019f,Yet another preview image
+fgnass,2011-08-17 08:30:58,https://api.github.com/repos/fgnass/spin.js/git/commits/9f8e10b49e27db45eb86321fb2ad0c2e4329b5cb,9f8e10b49e27db45eb86321fb2ad0c2e4329b5cb,Changed the preview image
+fgnass,2011-08-17 08:26:48,https://api.github.com/repos/fgnass/spin.js/git/commits/629d910e8f9a47b5bec371ead4087aa1c0cb8753,629d910e8f9a47b5bec371ead4087aa1c0cb8753,Absolute URL
+fgnass,2011-08-17 08:23:50,https://api.github.com/repos/fgnass/spin.js/git/commits/c74900565c594fe5fabb00dddc2b4d50d38f7564,c74900565c594fe5fabb00dddc2b4d50d38f7564,Added description and og:image meta tags
+fgnass,2011-08-16 18:19:58,https://api.github.com/repos/fgnass/spin.js/git/commits/b3f6f759a83942119374e3c4ce6d885a2b94ddff,b3f6f759a83942119374e3c4ce6d885a2b94ddff,Some tweaks for iOS
+fgnass,2011-08-16 16:44:01,https://api.github.com/repos/fgnass/spin.js/git/commits/88fe569bedbfe3852c95c65b3d10e5bdb04bd173,88fe569bedbfe3852c95c65b3d10e5bdb04bd173,Tested more browser versions
+fgnass,2011-08-16 16:42:48,https://api.github.com/repos/fgnass/spin.js/git/commits/7c309e6452e63486f601f188b861db002261b1bc,7c309e6452e63486f601f188b861db002261b1bc,Fix for IE9
+fgnass,2011-08-16 16:41:53,https://api.github.com/repos/fgnass/spin.js/git/commits/5b08b479178293e56e4fe57c3161a74f49015768,5b08b479178293e56e4fe57c3161a74f49015768,Merge branch 'master' into gh-pages
+fgnass,2011-08-16 16:41:37,https://api.github.com/repos/fgnass/spin.js/git/commits/532f99e5441e86773a384da5fa76e42a9c0320ef,532f99e5441e86773a384da5fa76e42a9c0320ef,"Always use CSS transforms when available, even if VML is supported (IE9+)"
+fgnass,2011-08-16 12:31:57,https://api.github.com/repos/fgnass/spin.js/git/commits/6ac30f313ed4507763b2ab0fc7696c38ecf3bf4f,6ac30f313ed4507763b2ab0fc7696c38ecf3bf4f,CSS fix
+fgnass,2011-08-16 12:25:32,https://api.github.com/repos/fgnass/spin.js/git/commits/f22a94142cadbb612b1bfc07e1b2198ea7a1bb1b,f22a94142cadbb612b1bfc07e1b2198ea7a1bb1b,CSS fixed for IE
+fgnass,2011-08-16 12:06:50,https://api.github.com/repos/fgnass/spin.js/git/commits/3025370863c436117dc19e692ded0a54e11faa72,3025370863c436117dc19e692ded0a54e11faa72,Updated the js files
+fgnass,2011-08-16 12:04:20,https://api.github.com/repos/fgnass/spin.js/git/commits/bc6dda384e634e032d47a22eb9691409ee134449,bc6dda384e634e032d47a22eb9691409ee134449,Merge branch 'master' into gh-pages
+fgnass,2011-08-16 12:04:03,https://api.github.com/repos/fgnass/spin.js/git/commits/75155abc239f82d661b459d7d36d5b80d02f48c8,75155abc239f82d661b459d7d36d5b80d02f48c8,Shortened the header
+fgnass,2011-08-16 11:54:51,https://api.github.com/repos/fgnass/spin.js/git/commits/cc7d3df9313ff2790ef797f62a6d393bd51b058a,cc7d3df9313ff2790ef797f62a6d393bd51b058a,Updated the project page
+fgnass,2011-08-16 11:53:08,https://api.github.com/repos/fgnass/spin.js/git/commits/c12c3d78d56c4eb939f4e910dc059d91c02f9881,c12c3d78d56c4eb939f4e910dc059d91c02f9881,Updated the project page
+fgnass,2011-08-16 11:50:29,https://api.github.com/repos/fgnass/spin.js/git/commits/ee11bffa514437573fdab22a199f93be393d4ec9,ee11bffa514437573fdab22a199f93be393d4ec9,Updated the project page
+fgnass,2011-08-16 10:43:11,https://api.github.com/repos/fgnass/spin.js/git/commits/41c4473e95b45ffaad60f85919ec8f5b5afcc3e5,41c4473e95b45ffaad60f85919ec8f5b5afcc3e5,Added GA snippet
+fgnass,2011-08-16 10:33:17,https://api.github.com/repos/fgnass/spin.js/git/commits/fda8240736e7cc7bee855aaeba508d909b9f2666,fda8240736e7cc7bee855aaeba508d909b9f2666,Updated the README
+fgnass,2011-08-16 10:25:51,https://api.github.com/repos/fgnass/spin.js/git/commits/39af1973d23eff2ec5f64fd41b3e3e48c84a982c,39af1973d23eff2ec5f64fd41b3e3e48c84a982c,Initial import
+fgnass,2011-08-16 10:11:36,https://api.github.com/repos/fgnass/spin.js/git/commits/6efc79a21b04481df3d0501cc3e878c16e78fc00,6efc79a21b04481df3d0501cc3e878c16e78fc00,Initial import

@@ -1,0 +1,1662 @@
+gperftools,Main gperftools repository
+username,timestamp,url,sha,message
+HolyWu,2019-04-09 10:33:26,https://api.github.com/repos/gperftools/gperftools/git/commits/fe62a0baab87ba3abca12f4a621532bf67c9a7d2,fe62a0baab87ba3abca12f4a621532bf67c9a7d2,Update config.h in Windows
+prehistoric-penguin,2019-04-17 02:55:06,https://api.github.com/repos/gperftools/gperftools/git/commits/8272631b5a9f9e840eb1b014f43b3ddea16ff67d,8272631b5a9f9e840eb1b014f43b3ddea16ff67d,"Fix a long time typo
+
+Thought this fix may not effect the behavior or performance, but it seems indeed a bug."
+alk,2019-04-07 22:27:17,https://api.github.com/repos/gperftools/gperftools/git/commits/c1d546d7b22cc503f37e9a6efa1d249be60243a3,c1d546d7b22cc503f37e9a6efa1d249be60243a3,"never test and always default HAVE_MMAP to on
+
+This should alleviate vboxfs problems from issue #1008."
+pkubaj,2019-02-04 16:10:06,https://api.github.com/repos/gperftools/gperftools/git/commits/fba6ce0e7aaa094fec09ef8763e86b19dc815624,fba6ce0e7aaa094fec09ef8763e86b19dc815624,"Fix build on FreeBSD
+
+On FreeBSD the following syntax is used:
+mr REGA,REGB"
+jwilk,2019-04-03 07:50:40,https://api.github.com/repos/gperftools/gperftools/git/commits/98ac4ee9bc6ab285429fc5d97335b4c94fc0b919,98ac4ee9bc6ab285429fc5d97335b4c94fc0b919,Fix typos
+alk,2019-02-10 20:46:18,https://api.github.com/repos/gperftools/gperftools/git/commits/9e5b1628737c67b4587f937164572774592978c4,9e5b1628737c67b4587f937164572774592978c4,"don't try to mark rsp as clobbered in linux syscall support
+
+rsp is not actually clobbered by that code and later gccs actually (correctly) bark
+at it.
+
+Fixed issue #1076."
+Romain-Geissler-1A,2019-01-29 18:31:19,https://api.github.com/repos/gperftools/gperftools/git/commits/1e36ed705548ae2a5170bb00dfee0954b8ef76de,1e36ed705548ae2a5170bb00dfee0954b8ef76de,"Use initial exec TLS model for all thread local variables from thread_cache.cc
+
+This avoids a deadlock when a library which is being dlopen'ed creates
+as part of its static constructors a thread which quickly need to call
+malloc. We are still in the dlopen call (so with some internal glibc
+mutex taken) when the thread executes code and later needs to call
+malloc which in term calls tls_get_addr_tail, which wait for the dlopen
+mutex to be unlocked. If later the dlopen'ing thread also calls malloc
+as part of its constructors, we are in a deadlock.
+
+Fix is similar to
+https://github.com/gperftools/gperftools/commit/7852eeb75b9375cf52a7da01be044da6e915dd08
+
+Stack of the dlopening thread:
+    #0  0x00007fd5406ca93c in __lll_lock_wait () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libpthread.so.0
+    #1  0x00007fd5406c45a5 in pthread_mutex_lock () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libpthread.so.0
+    ... proprietary code in the stack
+    #9  0x00007fd5074f0367 in __static_initialization_and_destruction_0 (__initialize_p=1, __priority=65535) at src/ClientImpl.cpp:15
+    #10 0x00007fd5074f06d7 in _GLOBAL__sub_I_ClientImpl.cpp(void) () at src/ClientImpl.cpp:85
+    #11 0x00007fd50757aa46 in __do_global_ctors_aux ()
+    #12 0x00007fd5073e985f in _init () from ...
+    #13 0x00007fd53bf9dec8 in ?? () from ...
+    #14 0x00007fd54d637a5d in call_init.part () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #15 0x00007fd54d637bab in _dl_init () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #16 0x00007fd54d63c160 in dl_open_worker () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #17 0x00007fd54d637944 in _dl_catch_error () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #18 0x00007fd54d63b7d9 in _dl_open () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #19 0x00007fd54d61f2b9 in dlopen_doit () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libdl.so.2
+    #20 0x00007fd54d637944 in _dl_catch_error () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #21 0x00007fd54d61f889 in _dlerror_run () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libdl.so.2
+    #22 0x00007fd54d61f351 in dlopen@@GLIBC_2.2.5 () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libdl.so.2
+
+Stack of the newly created thread calling tls_get_addr_tail:
+    #0  0x00007fd5406ca93c in __lll_lock_wait () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libpthread.so.0
+    #1  0x00007fd5406c4622 in pthread_mutex_lock () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libpthread.so.0
+    #2  0x00007fd54d63a2ed in tls_get_addr_tail () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/ld-linux-x86-64.so.2
+    #3  0x00007fd53fee877d in tcmalloc::ThreadCache::CreateCacheIfNecessary () at src/thread_cache.cc:344
+    #4  0x00007fd53fecb4ab in tcmalloc::ThreadCache::GetCache () at src/thread_cache.h:437
+    #5  0x00007fd53fefeccb in (anonymous namespace)::do_malloc (size=56) at src/tcmalloc.cc:1354
+    #6  tcmalloc::do_allocate_full<tcmalloc::cpp_throw_oom> (size=56) at src/tcmalloc.cc:1762
+    #7  tcmalloc::allocate_full_cpp_throw_oom (size=56) at src/tcmalloc.cc:1776
+    #8  0x00007fd53ff01b80 in tcmalloc::dispatch_allocate_full<tcmalloc::cpp_throw_oom> (size=56) at src/tcmalloc.cc:1785
+    #9  malloc_fast_path<tcmalloc::cpp_throw_oom> (size=56) at src/tcmalloc.cc:1845
+    #10 tc_new (size=56) at src/tcmalloc.cc:1980
+    ... proprietary code in the stack
+    #26 0x00007fd5406c1ef4 in start_thread () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libpthread.so.0
+    #27 0x00007fd5403ba01d in clone () from /data3/mwrep/rgeissler/core.tls/opt/1A/toolchain/x86_64-2.6.32-v2/lib64/libc.so.6"
+pkubaj,2019-02-04 16:06:32,https://api.github.com/repos/gperftools/gperftools/git/commits/8f9a873fce14337e113a3837603a11ade06da533,8f9a873fce14337e113a3837603a11ade06da533,Fix accessing PC on FreeBSD/powerpc and powerpc64
+tuliom,2019-02-08 12:33:09,https://api.github.com/repos/gperftools/gperftools/git/commits/fc00474ddc21fff618fc3f009b46590e241e425e,fc00474ddc21fff618fc3f009b46590e241e425e,"Include asm/ptrace.h when accessing ucontext_t
+
+In some architectures (e.g. powerpc, powerpc64 and powerpc64le), the
+macro that specifies the position of the program counter is defined in
+header asm/ptrace.h.
+
+When glibc bug 21457 got fixed in version 2.27, header sys/ucontext.h
+stopped including signal.h, which indirectly removed asm/ptrace.h too.
+
+Signed-off-by: Tulio Magno Quites Machado Filho <tuliom@linux.ibm.com>"
+stac47,2018-10-15 14:56:18,https://api.github.com/repos/gperftools/gperftools/git/commits/5574c87e39ee592c909cb48245c1d91e90ddaf4d,5574c87e39ee592c909cb48245c1d91e90ddaf4d,"Compile time aggressive decommit option
+
+[alkondratenko@gmail.com: performed s/agressive/aggressive/g]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+ffontaine,2018-10-07 16:12:03,https://api.github.com/repos/gperftools/gperftools/git/commits/e9ab4c53041ac62feefbbb076d326e9a77dd1567,e9ab4c53041ac62feefbbb076d326e9a77dd1567,"undef mmap64 function
+
+mmap64 can already been defined and as a result the following error is
+raised:
+
+In file included from src/malloc_hook.cc:686:0:
+src/malloc_hook_mmap_linux.h: In function ‘void* mmap(void*, size_t, int, int, int, off_t)’:
+src/malloc_hook_mmap_linux.h:173:18: error: redefinition of ‘void* mmap(void*, size_t, int, int, int, off_t)’
+ extern ""C"" void* mmap(void *start, size_t length, int prot, int flags,
+                  ^~~~
+In file included from src/malloc_hook.cc:41:0:
+src/malloc_hook_mmap_linux.h:159:18: note: ‘void* mmap(void*, size_t, int, int, int, off_t)’ previously defined here
+ extern ""C"" void* mmap64(void *start, size_t length, int prot, int flags,
+                  ^
+Makefile:4874: recipe for target 'src/libtcmalloc_minimal_internal_la-malloc_hook.lo' failed
+
+Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>"
+alk,2018-10-07 15:17:04,https://api.github.com/repos/gperftools/gperftools/git/commits/5eec9d0ae396aa90ebcb5756dfd0f3d101667490,5eec9d0ae396aa90ebcb5756dfd0f3d101667490,Drop not very portable and not very useful unwind benchmark.
+ffontaine,2018-10-06 18:43:19,https://api.github.com/repos/gperftools/gperftools/git/commits/1561f0946fcc96d1384dae2a81f3ed111338a341,1561f0946fcc96d1384dae2a81f3ed111338a341,"check for __sbrk
+
+__sbrk is not defined in musl so add a check for it in configure.ac and
+replace the check on ifndef __UCLIBC__ by a check on ifdef HAVE__SBRK
+in src/malloc_hook_mmap_linux.h
+
+Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>"
+ffontaine,2018-04-29 21:48:41,https://api.github.com/repos/gperftools/gperftools/git/commits/acdcacc28f17d2e8db1d1bb634025f820f912d93,acdcacc28f17d2e8db1d1bb634025f820f912d93,"Use off64_t instead of __off64_t
+
+__off64_t is a kernel internal symbol, which happens to be user-visible
+with glibc, but not necessarily with other C libraries such as musl.
+
+Switching from __off64_t to off64_t allows the code to build properly
+with musl.
+
+Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>"
+alk,2018-09-03 23:44:52,https://api.github.com/repos/gperftools/gperftools/git/commits/49dbe4362b431629111b85929d91fe9a46c42295,49dbe4362b431629111b85929d91fe9a46c42295,Add comment about gperftools 2.8 not deduplicating heapz samples.
+alk,2018-08-28 03:10:09,https://api.github.com/repos/gperftools/gperftools/git/commits/63a12a5ed3c4aca61cc46078b6cdf1d161425a69,63a12a5ed3c4aca61cc46078b6cdf1d161425a69,"Drop de-duplication of heap sample (aka heapz) entries.
+
+pprof can aggregate them, and it can do it way better than we can. With
+proper unsampling etc."
+alk,2018-08-26 18:37:59,https://api.github.com/repos/gperftools/gperftools/git/commits/954f9dc0e37ff46cb0cb24edfb39dc77fd2e7d0b,954f9dc0e37ff46cb0cb24edfb39dc77fd2e7d0b,"Add flag to disable installing unmaintained & deprecated pprof.
+
+Everyone should be using golang pprof from github.com/google/pprof, but
+distros still ship our perl version and not everyone is aware of
+better pprof yet.
+
+This is another step in completely dropping perl pprof. We still
+default to installing it, but hopefully we'll be able to convince
+distros to disable this soon.
+
+We still install pprof under pprof-symbolize name because
+stack traces symbolization depends on it, and because golang pprof
+won't support this feature.
+
+This is related to issue #1038."
+alk,2018-08-26 18:35:44,https://api.github.com/repos/gperftools/gperftools/git/commits/893bff51bcf220b724a812d340d878b5fb8ce911,893bff51bcf220b724a812d340d878b5fb8ce911,"Avoid static initialization of pprof path for symbolization.
+
+This is one of the things that chrome's fork fixes, but with c++11 we
+can do it even nicer. Proposed fix is to use c++11 local static
+variable to ensure that pprof path is initialized once on as-needed
+basis."
+HolyWu,2018-08-10 09:19:29,https://api.github.com/repos/gperftools/gperftools/git/commits/69867c523b334028c90f2acf22b5ae528fdc2356,69867c523b334028c90f2acf22b5ae528fdc2356,"Clean up MSVC projects
+
+1.Remove superfluous per file settings for include directory and runtime library.
+2.Remove unnecessary project tcmalloc_minimal_unittest-static. We can simply build libtcmalloc_minimal as a static library and then link against the single .lib file.
+3.Add separate configurations of patching and overriding facility for release mode."
+brian-peloton,2018-08-09 23:33:39,https://api.github.com/repos/gperftools/gperftools/git/commits/f2bca77aed83107197abadee0652c39e2c4c73d3,f2bca77aed83107197abadee0652c39e2c4c73d3,"Fix page_heap_test flakiness
+
+After 71fa9f87 (use 2-level page map for 48-bit addresses), there is a
+potential for allocs of additional leaves in the middle of the test.
+With ASLR enabled on amd64 (without TCMALLOC_SMALL_BUT_SLOW), this
+results in the test failing sometimes (< 1% of the time). Instead, make
+sure all those leaves are allocated before deciding on the baseline heap
+usage in the test."
+alk,2018-08-06 03:39:07,https://api.github.com/repos/gperftools/gperftools/git/commits/c41688bf20186723367b560ceb539b2330951ddb,c41688bf20186723367b560ceb539b2330951ddb,"Use standard-conforming alignof in debugallocation.cc
+
+Clang was giving warning that alignof(<variable>) is extension. So
+we're now doing alignof of decltype."
+alk,2018-08-06 01:54:01,https://api.github.com/repos/gperftools/gperftools/git/commits/71c8cedacafe700e662c008b65f5064b23426070,71c8cedacafe700e662c008b65f5064b23426070,"Fix incompatible aliasing warnings
+
+We aliased functions with different signatures and gcc now correctly
+gives warning for that. Originally gcc 5 same code merging feature
+caused us to alias more than necessary, but I am not able to reproduce
+this problem anymore. So we're now aliasing only compatible functions."
+alk,2018-08-06 02:52:11,https://api.github.com/repos/gperftools/gperftools/git/commits/8dd304035848e780372a5a4bb1afac2b2d20bc43,8dd304035848e780372a5a4bb1afac2b2d20bc43,"Format and fix out of bound access in CpuProfilerSwitch
+
+GCC was giving warning on snprintf and it hinted at base_profile_name
+and full_profile_name not being long enough.
+
+Fix is to ensure base_profile_name is long enough for PATH_MAX and
+that full_profile_name is enough longer to fit extra chars."
+alk,2018-08-06 00:42:04,https://api.github.com/repos/gperftools/gperftools/git/commits/467502e70acb89f36b475bf29fe12333939fe5c7,467502e70acb89f36b475bf29fe12333939fe5c7,"provide constexpr constructor for Sampler
+
+Constexpr constructor lets us use Sampler in TLS variable in cleaner
+way."
+HolyWu,2018-05-01 10:04:57,https://api.github.com/repos/gperftools/gperftools/git/commits/1fb543cc708f22017cb39ae874a28c0addcf5a63,1fb543cc708f22017cb39ae874a28c0addcf5a63,"Patch _free_dbg to make Debug mode in MSVC works
+
+Like _free_base, _free_dbg is called by CRT internal functions or
+operator delete in Debug mode.
+
+This closes #719 and closes #894.
+
+[alkondratenko@gmail.com: trivial formatting fixes]
+[alkondratenko@gmail.com: build free_dbg even in release builds]"
+bergeret,2017-04-20 19:58:02,https://api.github.com/repos/gperftools/gperftools/git/commits/c7a0cfda880a7310a030c62546f04a2987a11ec2,c7a0cfda880a7310a030c62546f04a2987a11ec2,"Fix potential missing nul character on resolved symbol names
+
+The symbol name returned by SymFromName may not contains a NUL character
+when the symbol name is exactly the size of the buffer. It believe this
+may also happen when the symbol name is too long and truncated.
+
+The original code is based on:
+  https://msdn.microsoft.com/en-us/library/windows/desktop/ms680580(v=vs.85).aspx
+
+A right implementation can be found here:
+  https://cs.chromium.org/chromium/src/base/debug/stack_trace_win.cc?l=145&rcl=f4ecb9e37e9e2d59e32b8b96f23ac4a1e33b9552
+
+As described here:
+  https://msdn.microsoft.com/en-us/library/windows/desktop/ms680686(v=vs.85).aspx
+
+  NameLen
+    The length of the name, in characters, not including the null-terminating character.
+  MaxNameLen
+    The size of the Name buffer, in characters. If this member is 0, the Name member is not used.
+
+This issue was causing the catapult symbolisation script to encode incorrect (random) characters into the symbol names.
+See the example in the bug.
+
+Original BUG=713741
+
+Review-Url: https://codereview.chromium.org/2832643004
+Cr-Commit-Position: refs/heads/master@{#466098}
+
+BUG=724399,b:70905156
+
+Change-Id: Ia6de4ddbd5c66a966b74ecec3fda5e853f36073b"
+obones,2018-07-20 09:07:02,https://api.github.com/repos/gperftools/gperftools/git/commits/62c4eca6e7ec9dc78333dc6b499f90eef9849378,62c4eca6e7ec9dc78333dc6b499f90eef9849378,"Under x64, the PE loader looks for callbacks in constant sections
+
+[alkondratenko@gmail.com: deleted some trailing whitespace]"
+brian-peloton,2018-07-31 22:53:47,https://api.github.com/repos/gperftools/gperftools/git/commits/0b588e7490eac4ef37b59c9265f1f3f05f4bb27c,0b588e7490eac4ef37b59c9265f1f3f05f4bb27c,"Fix uninitialized memory use in sampler_test
+
+Sampler's documentation states the following:
+  C++03 requires that types stored in TLS be POD.  As a result, you must
+  initialize these members to {0, 0, false} before using this class!
+
+However, the test code wasn't doing that. MemorySanitizer and
+UndefinedBehaviorSanitizer both failed because of it."
+alk,2018-08-05 22:28:27,https://api.github.com/repos/gperftools/gperftools/git/commits/51a5613f21a34197ed655c363c54c71cf68271ba,51a5613f21a34197ed655c363c54c71cf68271ba,Upgrade MSVC projects to MSVC2015
+alk,2018-08-05 22:09:20,https://api.github.com/repos/gperftools/gperftools/git/commits/44da4ce5397344342e71ea3cc2c246c2ca4aedb6,44da4ce5397344342e71ea3cc2c246c2ca4aedb6,build with c++11 or later
+HolyWu,2018-04-30 07:41:50,https://api.github.com/repos/gperftools/gperftools/git/commits/f47a52ce85c3d8d559aaae7b7a426c359fbca225,f47a52ce85c3d8d559aaae7b7a426c359fbca225,Make _recalloc adhere to MS's definition
+streaver91,2018-05-20 17:45:32,https://api.github.com/repos/gperftools/gperftools/git/commits/fe87ffb7ea5a7c6ce4dea45222331716907ddbf4,fe87ffb7ea5a7c6ce4dea45222331716907ddbf4,"Disable large allocation report by default
+
+Fixes issue #360.
+
+[alkondratenko@gmail.com: adjusted commit message a bit]
+[alkondratenko@gmail.com: adjusted configure help message]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+alk,2018-04-29 23:55:59,https://api.github.com/repos/gperftools/gperftools/git/commits/9608fa3bcf8020d35f59fbf70cd3cbe4b015b972,9608fa3bcf8020d35f59fbf70cd3cbe4b015b972,bumped version to 2.7
+HolyWu,2018-04-30 04:08:51,https://api.github.com/repos/gperftools/gperftools/git/commits/db890ccfade3cf054ec330dfb4a9ddfab971367e,db890ccfade3cf054ec330dfb4a9ddfab971367e,Clean up src/windows/config.h
+HolyWu,2018-04-15 14:47:17,https://api.github.com/repos/gperftools/gperftools/git/commits/497ea331654f7ea9e4e6405f5beaea8ebcc9d10b,497ea331654f7ea9e4e6405f5beaea8ebcc9d10b,"Fix WIN32_OVERRIDE_ALLOCATORS for VS2017
+
+At first I try to add some functions as what Chrome does at their
+https://chromium.googlesource.com/chromium/src/+/master/base/allocator/allocator_shim_override_ucrt_symbols_win.h,
+but it still fails. So I decide to remove all heap-related objects
+from libucrt.lib to see what happens. At the end I find that a lot of
+functions in the CRT directly invoke _malloc_base instead of
+malloc (and the others alike), hence we need to override them as well.
+
+This should close issue #716.
+
+[alkondratenko@gmail.com: added reference to ticket]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+HolyWu,2018-04-17 03:40:49,https://api.github.com/repos/gperftools/gperftools/git/commits/ebc85cca9083241ae360e0c68e2f1d7538001fa3,ebc85cca9083241ae360e0c68e2f1d7538001fa3,Enable aligned new/delete declarations on Windows when applicable
+alk,2018-04-29 23:34:54,https://api.github.com/repos/gperftools/gperftools/git/commits/a3badd6d2127c161f6fbad853fccd6e8064fcde7,a3badd6d2127c161f6fbad853fccd6e8064fcde7,"Really fix CheckAddressBits compilation warning
+
+It looks like previous fix introduced another warning on gcc for
+i386. Somehow it barked on kAddressBits shift even that shift was dead
+code.
+
+Anyways, we now avoid possibility of undefined shift even
+stronger. And it actually removes compile warning on all compilers I
+tested."
+HolyWu,2018-04-19 05:49:28,https://api.github.com/repos/gperftools/gperftools/git/commits/7c718fe1768273f94acf2bd43cfa1f44a4b9bdcc,7c718fe1768273f94acf2bd43cfa1f44a4b9bdcc,Add tests for sized deallocation
+ffontaine,2018-04-22 17:17:12,https://api.github.com/repos/gperftools/gperftools/git/commits/30e5e614a846d5f046454341f108bc4cb2b70189,30e5e614a846d5f046454341f108bc4cb2b70189,"Fix build without static libraries
+
+Only add -static to malloc_bench_LDFLAGS and binary_trees_LDFLAGS if
+ENABLE_STATC is set otherwise build with some compilers will fail if
+user has decided to build only the shared version of gperftools
+libraries
+
+Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>"
+bdangit,2018-04-13 17:54:05,https://api.github.com/repos/gperftools/gperftools/git/commits/836c4f29a585e4b176738f64cf8d312171be5fe0,836c4f29a585e4b176738f64cf8d312171be5fe0,"Update documentation for heap_checker.html
+
+Make it clear that the static methods used require the ""namespace"", `HeapLeakChecker::`."
+tuliom,2018-04-10 18:56:52,https://api.github.com/repos/gperftools/gperftools/git/commits/e47d0d1c5142a4ad1203e58db31af2f58bafcda9,e47d0d1c5142a4ad1203e58db31af2f58bafcda9,"powerpc: Re-enable VDSO support
+
+Powerpc requires VDSO support in order to produce a stack trace.
+Without this, it isn't possible to complete a build.
+Tested on powerpc, powerpc64 and powerpc64le."
+cmuellner,2018-04-07 07:00:09,https://api.github.com/repos/gperftools/gperftools/git/commits/0a66dd3a6ac60e57d9c01f17309a40e2ebe06837,0a66dd3a6ac60e57d9c01f17309a40e2ebe06837,"linux: add aarch64_ilp32 support.
+
+This patch adds aarch64 (arm64) ILP32 support by using
+the proper syscalls for sys_fcntl(), sys_fstat(), sys_lseek()
+and sys_mmap().
+
+Signed-off-by: Christoph Müllner <christophm30@gmail.com>"
+cmuellner,2018-04-07 06:30:32,https://api.github.com/repos/gperftools/gperftools/git/commits/05dff0966362932631a2120eaeb8eebb50dd9300,05dff0966362932631a2120eaeb8eebb50dd9300,"Fix signature of sbrk.
+
+The manpage of sbrk says that its argument is of type intptr_t.
+This patch fixes a compiler warning on gcc 7.3.0.
+
+Signed-off-by: Christoph Müllner <christophm30@gmail.com>"
+alk,2018-04-10 03:57:29,https://api.github.com/repos/gperftools/gperftools/git/commits/33ae0ed2ae7ce143276658be029c28ec6f2a73c9,33ae0ed2ae7ce143276658be029c28ec6f2a73c9,"unbreak compilation on GNU/Linux i386
+
+Recent commit to fix int overflow for implausibly huge allocation
+added call to std::min. Notably, first arg was old size divided by
+unsigned long 4. And on GNU/Linux i386 size_t is not long. So such
+division was promoting first arg to unsigned long while second arg was
+still size_t, so just unsigned. And that caused compilation to fail.
+
+Fix is droping 'ul'."
+cmuellner,2018-04-07 06:35:42,https://api.github.com/repos/gperftools/gperftools/git/commits/977e0d45003514d088e4bb83474c985094acee47,977e0d45003514d088e4bb83474c985094acee47,"Remove not needed header in vdso_support.cc.
+
+Signed-off-by: Christoph Müllner <christophm30@gmail.com>"
+LittleCVR,2018-03-26 09:22:19,https://api.github.com/repos/gperftools/gperftools/git/commits/36bfa9a4046109efa40ccc0806c72331de9c915b,36bfa9a4046109efa40ccc0806c72331de9c915b,"Enable tcmalloc VDSO support only on x86 to reduce static initializers
+
+Background context
+------------------
+crrev.com/1466173002 switched the GN tcmalloc target from source_set
+-> static_library. There are good reasons for keeping tcmalloc a
+source_set (see ""Note on static libraries"" in [1]).  However, in the
+current state source_set was exposing extra static initializers in the
+GN build which, are not present in the gyp build due to the linker gc
+sections.
+
+Resolution of this CL
+---------------------
+The fact that vdso_support.cc is GC-ed by the linker is the symptom
+that such code is unreachable. A search in the codebase shows that the
+only client is stacktrace_x86-inl.h, which depends on VDSO only when
+defined(__linux__) && defined(__i386__) This CL is therefore matching
+this condition in vdso_support.h and conditioning the #define
+HAVE_VDSO_SUPPORT with the same conditions.
+
+[1] https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/cookbook.md
+
+References:
+https://bugs.chromium.org/p/chromium/issues/detail?id=559766
+https://bugs.chromium.org/p/chromium/issues/detail?id=564618"
+LittleCVR,2018-03-26 09:28:28,https://api.github.com/repos/gperftools/gperftools/git/commits/1cb5de6db9f30daa56a0b54652a7ff6da288c1bd,1cb5de6db9f30daa56a0b54652a7ff6da288c1bd,Explicitly prevent int overflow
+alk,2018-03-25 04:15:01,https://api.github.com/repos/gperftools/gperftools/git/commits/8f63f2bb983e93b57e24a05964104f1d833c575b,8f63f2bb983e93b57e24a05964104f1d833c575b,"Correctly detect presence of various functions in tcmalloc.h
+
+This fixes test miscompilations on some clang 6.0
+installations. Particularly issue #946.
+
+Defines tested by tcmalloc.h where totally wrong defines. configure
+actually puts defines of HAVE_DECL_FOOBAR kind in config.h. Which is
+what we're using now."
+alk,2018-03-24 22:54:48,https://api.github.com/repos/gperftools/gperftools/git/commits/736648887b0b27ec70a50f0954a614dd65c1eb12,736648887b0b27ec70a50f0954a614dd65c1eb12,"Don't test OOM handling of debugallocator
+
+This may fix issue #969.
+
+When testing OOM handling we set up sys allocator that fails memory
+allocation. But debugallocator itself allocates some internal metadata
+memory via malloc and crashes if those allocations fail. So
+occasionally this test failed when debugallocator's internal malloc
+ended up causing sys allocator.
+
+So instead of failing tests from time to time, we drop it for debug
+allocator. It's OOM handling is already crashy anyways."
+alk,2018-03-25 02:09:15,https://api.github.com/repos/gperftools/gperftools/git/commits/c4a8e00da41c43da7e78858e06f3153f09f6967d,c4a8e00da41c43da7e78858e06f3153f09f6967d,Fix warning about one of CheckAddressBits functions unused
+alk,2018-03-25 01:29:06,https://api.github.com/repos/gperftools/gperftools/git/commits/47c99cf492fa340671fa89afec263b8d6e859755,47c99cf492fa340671fa89afec263b8d6e859755,"unbreak printing large span stats
+
+One of recent commits started passing kMaxPages to printf but not used
+it. Thankfully compilers gave us warning. Apparently intention was to
+print real value of kMaxPages, so this is what we're doing now."
+alk,2018-03-18 23:39:06,https://api.github.com/repos/gperftools/gperftools/git/commits/34f78a2dcd8160b483d86474702785337bbeb7ac,34f78a2dcd8160b483d86474702785337bbeb7ac,bumped version to 2.7rc
+toddlipcon,2018-03-17 16:43:34,https://api.github.com/repos/gperftools/gperftools/git/commits/db98aac55a90d45e9abe188c8a928c3561d3f223,db98aac55a90d45e9abe188c8a928c3561d3f223,"Add a central free list for kMaxPages-sized spans
+
+Previously, the central free list with index '0' was always unused,
+since freelist index 'i' tracked spans of length 'i' and there are no
+spans of length 0. This meant that there was no freelist for spans of
+length 'kMaxPages'. In the default configuration, this corresponds to
+1MB, which is a relatively common allocation size in a lot of
+applications.
+
+This changes the free list indexing so that index 'i' tracks spans of
+length 'i + 1', meaning that free list index 0 is now used and
+freelist[kMaxPages - 1] tracks allocations of kMaxPages size (1MB by
+default).
+
+This also fixes the stats output to indicate '>128' for the large spans
+stats rather than the incorrect '>255' which must have referred to a
+historical value of kMaxPages.
+
+No new tests are added since this code is covered by existing tests."
+alk,2018-03-05 07:29:46,https://api.github.com/repos/gperftools/gperftools/git/commits/d7be9385609328a03c5cfe775473a7dc8e014fd3,d7be9385609328a03c5cfe775473a7dc8e014fd3,"implement more robust detection of sized delete support
+
+As reported in issue #954, osx clang compiler is able to optimize our
+previous detection away while not really having runtime support for
+sized delete. So this time we use AC_LINK_IFELSE and more robust code
+to prevent compiler from optimizing away sized delete call. This
+should reliably catch ""bad"" compilers.
+
+Special thanks to Alexey Serbin for reporting the issue, suggesting a
+fix and verifying it.
+
+Fixes issue #954."
+alk,2018-02-25 21:55:53,https://api.github.com/repos/gperftools/gperftools/git/commits/f1d3fe4a21e339a3fd6e4592ee7444484a7b92dc,f1d3fe4a21e339a3fd6e4592ee7444484a7b92dc,"refactored handling of reverse span set iterator for correctness
+
+I.e. no more questionable memcpy and we run iterator's destructor when
+we remove span from SpanSet."
+toddlipcon,2018-02-12 00:21:42,https://api.github.com/repos/gperftools/gperftools/git/commits/59c77be0fad2a49e31d51877985e7c48f73afcea,59c77be0fad2a49e31d51877985e7c48f73afcea,Update docs for central page heap to reflect tree
+alk,2017-06-03 22:31:06,https://api.github.com/repos/gperftools/gperftools/git/commits/06c9414ec423ffe442c047b2560555f9d5847b1d,06c9414ec423ffe442c047b2560555f9d5847b1d,"Implemented O(log n) searching among large spans
+
+This is implemented via std::set with custom STL allocator that
+delegates to PageHeapAllocator. Free large spans are not linked
+together via linked list, but inserted into std::set. Spans also store
+iterators to std::set positions pointing to them. So that removing
+span from set is fast too.
+
+Patch implemented by Aliaksey Kandratsenka and Todd Lipcon based on
+earlier research and experimentation by James Golick.
+
+Addresses issue #535
+
+[alkondratenko@gmail.com: added Todd's fix for building on OSX]
+[alkondratenko@gmail.com: removed unnecessary Span constructor]
+[alkondratenko@gmail.com: added const for SpanSet comparator]
+[alkondratenko@gmail.com: added operator != for STLPageHeapAllocator]"
+ishanarora,2018-01-08 20:03:13,https://api.github.com/repos/gperftools/gperftools/git/commits/a42e44738a330783781541411392ba27df88b8b3,a42e44738a330783781541411392ba27df88b8b3,typo in docs/tcmalloc.html
+alk,2017-12-09 17:58:31,https://api.github.com/repos/gperftools/gperftools/git/commits/71bf09aabe93dbe390ebb54c57d3c5b3d627c142,71bf09aabe93dbe390ebb54c57d3c5b3d627c142,bumped version to 2.6.3
+alk,2017-12-09 16:51:19,https://api.github.com/repos/gperftools/gperftools/git/commits/0bccb5e658762f30e6e3abbc40dc244e8f8911c1,0bccb5e658762f30e6e3abbc40dc244e8f8911c1,"fix malloc fast path for patched windows functions
+
+malloc_fast_path now receives oom function instead of full allocation
+function and windows/patch_function.cc wasn't updated until now. It
+caused assertion failures as reported in issue #944."
+zuercher,2017-12-05 17:49:36,https://api.github.com/repos/gperftools/gperftools/git/commits/8b1d13c631024ce7e80508c284c7bc5b1327e131,8b1d13c631024ce7e80508c284c7bc5b1327e131,configure.ac: use link check for std::align_val_t
+zuercher,2017-12-05 17:31:38,https://api.github.com/repos/gperftools/gperftools/git/commits/36ab068baa3b07c083bd79029622aa382aeff84a,36ab068baa3b07c083bd79029622aa382aeff84a,"configure.ac: better test for -faligned-new
+
+XCode 9 provides only partial support for aligned new/delete when -faligned-new
+is specified. Require successful linking to enable aligned new/delete."
+alk,2017-11-30 18:19:17,https://api.github.com/repos/gperftools/gperftools/git/commits/6a4b0799975576c2722daa75b35f6f65220d22b6,6a4b0799975576c2722daa75b35f6f65220d22b6,bumped version to 2.6.2
+alk,2017-11-30 16:36:33,https://api.github.com/repos/gperftools/gperftools/git/commits/22917145186bc8bbb6d98090d788ed7c87b282b1,22917145186bc8bbb6d98090d788ed7c87b282b1,"implement fast-path for memalign/aligned_alloc/tc_new_aligned
+
+We're taking advantage of ""natural"" alignedness of our size classes
+and instead of previous loop over size classes looking for suitably
+aligned size, we now directly compute right size. See align_size_up
+function. And that gives us ability to use our existing malloc
+fast-path to make memalign neat and fast in most common
+cases. I.e. memalign/aligned_alloc now only tail calls and thus avoids
+expensive prologue/epilogue and is almost as fast as regular malloc."
+alk,2017-11-30 18:12:32,https://api.github.com/repos/gperftools/gperftools/git/commits/8b9728b02325a9bee9afd3957e506c111ed40d40,8b9728b02325a9bee9afd3957e506c111ed40d40,add memalign benchmark to malloc_bench
+alk,2017-11-29 21:15:04,https://api.github.com/repos/gperftools/gperftools/git/commits/79c91a9810c928d7f6d0cb168c10ce470a714aa8,79c91a9810c928d7f6d0cb168c10ce470a714aa8,"always define empty PERFTOOLS_NOTHROW
+
+Because somehow clang still builds ""this function will not throw"" code
+even with noexcept. Which breaks performance of
+tc_malloc/tc_new_nothrow. The difference with throw() seems to be just
+which function is called when unexpected exception happens.
+
+So we work around this sillyness by simply dropping any exception
+specification when compiling tcmalloc."
+alk,2017-11-29 20:19:07,https://api.github.com/repos/gperftools/gperftools/git/commits/03da6afff57c12845260997213b6ad89e420bab3,03da6afff57c12845260997213b6ad89e420bab3,"unbreak throw declarations on operators new/delete
+
+We now clearly separate PERFTOOLS_NOTHROW (used for tc_XXX functions)
+and throw()/noexcept (used for operators we define).
+
+The former is basically ""nothrow() for our callers, nothing for
+us"". It is roughly equivalent of what glibc declares for malloc and
+friends. If some exception-full C++ code calls such function it
+doesn't have to bother setting up exception handling around such
+call. Notably, it is still important for those functions to _not have
+throw() declarations when we're building tcmalloc. Because C++ throw()
+requires setting up handling of unexpected exceptions thrown from
+under such functions which we don't want.
+
+The later is necessary to have operators new/delete definitions have
+""correct"" exception specifications to calm down compiler
+warnings. Particularly older clang versions warn if new/delete aren't
+defined with correct exception specifications. Also this commit fixes
+annoying gcc 7+ warning (and gnu++14 mode) that complains about
+throw() being deprecated."
+alk,2017-11-29 13:37:50,https://api.github.com/repos/gperftools/gperftools/git/commits/89fe59c8318b2f8cec8ce00182dd24c357252c96,89fe59c8318b2f8cec8ce00182dd24c357252c96,"Fix OOM handling in fast-path
+
+Previous fast-path malloc implementation failed to arrange proper oom
+handling for operator new. I.e. operator new is supposed to call new
+handler and throw exception, which was not arranged in fast-path case.
+
+Fixed code now passes pointer for oom function to
+ThreadCache::FetchFromCentralCache which will call it in oom
+condition. Test is added to verify correct behavior.
+
+I've also updated some fast-path-related comments for more accuracy."
+alk,2017-11-28 14:43:11,https://api.github.com/repos/gperftools/gperftools/git/commits/a29a0cf348e131d5b8ec26c39dabeac89cf13fcd,a29a0cf348e131d5b8ec26c39dabeac89cf13fcd,delete-trailing-whitespace on thread_cache.*
+alk,2017-11-29 19:49:18,https://api.github.com/repos/gperftools/gperftools/git/commits/e6cd69bdecde074c3c7a52ccb099eafcecf668dc,e6cd69bdecde074c3c7a52ccb099eafcecf668dc,"reintroduce aliasing for aligned delete
+
+Without aliasing performance is likely to be at least partially
+affected. There is still concern that aliasing between functions of
+different signatures is not 100% safe. We now explicitly list of
+architectures where aliasing is known to be safe."
+alk,2017-11-29 19:10:23,https://api.github.com/repos/gperftools/gperftools/git/commits/fb30c3d435c4712785a50f8a422c76ad490a12b2,fb30c3d435c4712785a50f8a422c76ad490a12b2,fully disable aligned new on windows for now
+Lastique,2017-09-30 14:47:35,https://api.github.com/repos/gperftools/gperftools/git/commits/7efb3ecf37d88edf9cf9a43efb89b425eaf81d5e,7efb3ecf37d88edf9cf9a43efb89b425eaf81d5e,"Add support for C++17 operator new/delete for overaligned types.
+
+- Add auto-detection of std::align_val_t presence to configure scripts. This
+  indicates that the compiler supports C++17 operator new/delete overloads
+  for overaligned types.
+
+- Add auto-detection of -faligned-new compiler option that appeared in gcc 7.
+  The option allows the compiler to generate calls to the new operators. It is
+  needed for tests.
+
+- Added overrides for the new operators. The overrides are enabled if the
+  support for std::align_val_t has been detected. The implementation is mostly
+  based on the infrastructure used by memalign, which had to be extended to
+  support being used by C++ operators in addition to C functions. In particular,
+  the debug version of the library has to distinguish memory allocated by
+  memalign from that by operator new. The current implementation of sized
+  overaligned delete operators do not make use of the supplied size argument
+  except for the debug allocator because it is difficult to calculate the exact
+  allocation size that was used to allocate memory with alignment. This can be
+  done in the future.
+
+- Removed forward declaration of std::nothrow_t. This was not portable as
+  the standard library is not required to provide nothrow_t directly in
+  namespace std (it could use e.g. an inline namespace within std). The <new>
+  header needs to be included for std::align_val_t anyway.
+
+- Fixed operator delete[] implementation in libc_override_redefine.h.
+
+- Moved TC_ALIAS definition to the beginning of the file in tcmalloc.cc so that
+  the macro is defined before its first use in nallocx.
+
+- Added tests to verify the added operators.
+
+[alkondratenko@gmail.com: fixed couple minor warnings, and some
+whitespace change]
+[alkondratenko@gmail.com: removed addition of TC_ALIAS in debug allocator]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+acmorrow,2017-11-07 20:57:17,https://api.github.com/repos/gperftools/gperftools/git/commits/7a6e25f3b143c35ed6fff8bb2c0f8de1ab348a39,7a6e25f3b143c35ed6fff8bb2c0f8de1ab348a39,"Add new statistics for the PageHeap
+
+[alkondratenko@gmail.com: addressed init order mismatch warning]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+cs-lee,2017-08-06 11:57:42,https://api.github.com/repos/gperftools/gperftools/git/commits/235471f96564aa95354839bb135661e561966001,235471f96564aa95354839bb135661e561966001,"fix memory leak in Symbolize function
+
+[alkondratenko@gmail.com: reworded commit message]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+cs-lee,2017-08-06 11:51:52,https://api.github.com/repos/gperftools/gperftools/git/commits/47efdd60f596f7180689337cbba2dab35539ba98,47efdd60f596f7180689337cbba2dab35539ba98,"Added mising va_end() in TracePrintf function
+
+Normally the va_end function does not do anything,
+but it should be called because some platforms need it.
+
+[alkondratenko@gmail.com: reworded commit message]
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+movsw,2017-07-14 12:13:32,https://api.github.com/repos/gperftools/gperftools/git/commits/497b60ef0fa93ed41ccacf6ffd0d536789401d29,497b60ef0fa93ed41ccacf6ffd0d536789401d29,"Implemented GetProgramInvocationName on FreeBSD
+
+Few lines of code was taken from
+/usr/src/contrib/libexecinfo/backtrace.c
+
+[alkondratenko@gmail.com: updated commit message
+Signed-off-by: Aliaksey Kandratsenka <alkondratenko@gmail.com>"
+alk,2017-09-23 21:55:33,https://api.github.com/repos/gperftools/gperftools/git/commits/ac072a3fc768b9699b1e809a379f576aa3e48983,ac072a3fc768b9699b1e809a379f576aa3e48983,"Revert ""Ignore current_instance heap allocation when leak sanitizer is enabled""
+
+This reverts commit 70a35422b5509a456584b132ad8ce4466af323ea."
+alk,2017-09-23 21:55:20,https://api.github.com/repos/gperftools/gperftools/git/commits/fb5987d57913867e3b0f20490461ea55bfabe9ee,fb5987d57913867e3b0f20490461ea55bfabe9ee,"Revert ""Ensure that lsan flags are appended on all necessary targets""
+
+This reverts commit a3bf61ca81b68e7792739c451aceef00cf7d7d03."
+alk,2017-09-17 04:14:23,https://api.github.com/repos/gperftools/gperftools/git/commits/5815f02105acd5d7fd0e6ec038a9e96ccc36911f,5815f02105acd5d7fd0e6ec038a9e96ccc36911f,"Use safe getenv for setting up backtrace capturing method
+
+This code runs very early, so using special ""early"" version of getenv
+is reasonable. It should fix issue #912."
+dorinlazar,2017-09-21 19:11:49,https://api.github.com/repos/gperftools/gperftools/git/commits/aab4277311759b32ae8c442b49edf002230ea165,aab4277311759b32ae8c442b49edf002230ea165,Fixed LTO warning about the mismatch between return values for ProfilingIsEnabledForAllThreads()
+alk,2017-08-06 05:05:10,https://api.github.com/repos/gperftools/gperftools/git/commits/d406f2285390c402e824dd28e6992f7f890dcdf9,d406f2285390c402e824dd28e6992f7f890dcdf9,"implement support for C11 aligned_alloc
+
+Just like glibc does, we simply alias it to memalign."
+PiotrSikora,2017-08-21 22:06:23,https://api.github.com/repos/gperftools/gperftools/git/commits/92a27e41a137704772479277786d035763938921,92a27e41a137704772479277786d035763938921,"Fix build on macOS.
+
+Fixes #910.
+
+Signed-off-by: Piotr Sikora <piotrsikora@google.com>"
+kraj,2017-07-17 02:28:17,https://api.github.com/repos/gperftools/gperftools/git/commits/e033431e5a9e02e4d1882bb6fcd212c4fab56173,e033431e5a9e02e4d1882bb6fcd212c4fab56173,"include fcntl.h for loff_t definition
+
+Fixes
+linux_syscall_support.h:2641:26: error: 'loff_t' has not been declared
+
+Signed-off-by: Khem Raj <raj.khem@gmail.com>"
+kraj,2017-07-01 20:21:21,https://api.github.com/repos/gperftools/gperftools/git/commits/e41bc414048eb4a37743e294bed3f1c63a1fa559,e41bc414048eb4a37743e294bed3f1c63a1fa559,"Use ucontext_t instead of struct ucontext
+
+Newer glibc has dropped the ucontext tag from exposing
+
+Signed-off-by: Khem Raj <raj.khem@gmail.com>"
+alk,2017-07-09 21:55:33,https://api.github.com/repos/gperftools/gperftools/git/commits/bf840dec0495e17f5c8403e68e10b9d6bf05c559,bf840dec0495e17f5c8403e68e10b9d6bf05c559,bumped version to 2.6.1
+Romain-Geissler-1A,2017-06-18 13:21:19,https://api.github.com/repos/gperftools/gperftools/git/commits/2d220c7e26bd279ec87f9d1fc694ca5114b20bee,2d220c7e26bd279ec87f9d1fc694ca5114b20bee,"Replace ""throw()"" by ""PERFTOOLS_NOTHROW""
+
+Automatically done with:
+sed -e 's/\<throw[[:space:]]*([[:space:]]*)/PERFTOOLS_NOTHROW/g' -i
+$(git grep -l 'throw[[:space:]]*([[:space:]]*)')
+
+[alkondratenko@gmail.com: updated to define empty PERFTOOLS_NOTHROW
+only on pre-c++11 standards]"
+Romain-Geissler-1A,2017-06-18 13:16:16,https://api.github.com/repos/gperftools/gperftools/git/commits/c4de73c0e69b9a75b6795fdd4598234baed8496d,c4de73c0e69b9a75b6795fdd4598234baed8496d,Add PERFTOOLS_THROW where necessary (as detected by GCC).
+Romain-Geissler-1A,2017-06-18 13:05:46,https://api.github.com/repos/gperftools/gperftools/git/commits/e5fbd0e24e19bf3c9a8777cfc78e6188c5557025,e5fbd0e24e19bf3c9a8777cfc78e6188c5557025,"Rename PERFTOOLS_THROW into PERFTOOLS_NOTHROW.
+
+Automatically done with:
+sed -e 's/\<PERFTOOLS_THROW\>/PERFTOOLS_NOTHROW/g' -i $(git grep -l PERFTOOLS_THROW)"
+alk,2017-07-08 22:23:37,https://api.github.com/repos/gperftools/gperftools/git/commits/eeb7b84c20146c0e2e039ce72a2ea083a94ba80d,eeb7b84c20146c0e2e039ce72a2ea083a94ba80d,"Register tcmalloc atfork handler as early as possible
+
+This is what other mallocs do (glibc malloc and jemalloc). The idea is
+malloc is usually initialized very eary. So if we register atfork
+handler at that time, we're likely to be first. And that makes our
+atfork handler a bit safer, since there is much less chance of some
+other library installing their ""take all locks"" handler first and
+having fork take malloc lock before library's lock and deadlocking.
+
+This should address issue #904."
+alk,2017-07-05 02:50:04,https://api.github.com/repos/gperftools/gperftools/git/commits/208c26caeff24fd8c1defea80cb723ec1ab4bf06,208c26caeff24fd8c1defea80cb723ec1ab4bf06,"Add initial syscall support for mips64 32-bit ABI
+
+This applies patch by Adhemerval Zanella from
+https://github.com/gperftools/gperftools/issues/845.
+
+Only malloc (i.e. tcmalloc_minimal) was tested to work so far."
+fjricci,2017-07-05 16:39:41,https://api.github.com/repos/gperftools/gperftools/git/commits/a3bf61ca81b68e7792739c451aceef00cf7d7d03,a3bf61ca81b68e7792739c451aceef00cf7d7d03,Ensure that lsan flags are appended on all necessary targets
+alk,2017-07-05 04:02:34,https://api.github.com/repos/gperftools/gperftools/git/commits/97646a193237af0f941e5bd3078eb72edbc2d548,97646a193237af0f941e5bd3078eb72edbc2d548,"Add missing NEWS entry for recent 2.6 release
+
+Somehow I managed to miss this last commit in 2.6 release. So lets add
+it now even if it is too late."
+alk,2017-07-05 03:35:25,https://api.github.com/repos/gperftools/gperftools/git/commits/4be05e43a1adab9ceea9bdaaae546fb938f0a86c,4be05e43a1adab9ceea9bdaaae546fb938f0a86c,bumped version up to 2.6
+fjricci,2017-06-15 15:04:33,https://api.github.com/repos/gperftools/gperftools/git/commits/70a35422b5509a456584b132ad8ce4466af323ea,70a35422b5509a456584b132ad8ce4466af323ea,"Ignore current_instance heap allocation when leak sanitizer is enabled
+
+Without this patch, any user program that enables LeakSanitizer will
+see a leak from tcmalloc. Add a weak hook to __lsan_ignore_object,
+so that if LeakSanitizer is enabled, the allocation can be ignored."
+alk,2017-07-02 01:48:58,https://api.github.com/repos/gperftools/gperftools/git/commits/6eca6c64fabbff55c43a78537e466312524b3acd,6eca6c64fabbff55c43a78537e466312524b3acd,"Revert ""issue-654: [pprof] handle split text segments""
+
+This reverts commit 8c3dc52fcfe02412a529769a22cbc75388a5d368.
+
+People have reported issues with this so lets stay safe and use older
+even if less powerful code."
+KernelMaker,2017-05-24 08:46:49,https://api.github.com/repos/gperftools/gperftools/git/commits/a495969cb6157cc361fc03228ae12ff7c0ecac4b,a495969cb6157cc361fc03228ae12ff7c0ecac4b,"update the prev_class_size in each loop, or the min_object_size of tcmalloc.thread will always be 1 when calling GetFreeListSizes"
+kimgr,2017-05-26 11:09:03,https://api.github.com/repos/gperftools/gperftools/git/commits/163224d8af5abdbbd8208ad6d37f13fb450af46f,163224d8af5abdbbd8208ad6d37f13fb450af46f,Document HEAPPROFILESIGNAL environment variable
+alk,2017-05-29 20:07:39,https://api.github.com/repos/gperftools/gperftools/git/commits/5ac82ec5b96d24219efd4c8aec47a45466eabd00,5ac82ec5b96d24219efd4c8aec47a45466eabd00,added stacktrace capturing benchmark
+alk,2017-05-23 02:04:20,https://api.github.com/repos/gperftools/gperftools/git/commits/c571ae2fc9433e958f29b3c3525d34c22a9cb884,c571ae2fc9433e958f29b3c3525d34c22a9cb884,2.6rc4
+alk,2017-05-23 01:58:15,https://api.github.com/repos/gperftools/gperftools/git/commits/f2bae51e7e609855c26095f14ffbb84082694acb,f2bae51e7e609855c26095f14ffbb84082694acb,"Revert ""Revert ""disable dynamic sized delete support by default""""
+
+This reverts commit b82d89cb7c8781a6028f6f5959cabdc5a273aec3.
+
+Dynamic sized delete support relies on ifunc handler being able to
+look up environment variable. The issue is, when stuff is linked with
+-z now linker flags, all relocations are performed early. And sadly
+ifunc relocations are not treated specially. So when ifunc handler
+runs, it cannot rely on any dynamic relocations at all, otherwise
+crash is real possibility. So we cannot afford doing it until (and if)
+ifunc is fixed.
+
+This was brought to my attention by Fedora people at
+https://bugzilla.redhat.com/show_bug.cgi?id=1452813"
+alk,2017-05-22 05:55:29,https://api.github.com/repos/gperftools/gperftools/git/commits/6426c0cc8049dd50a681dc337ac9962577d5fa14,6426c0cc8049dd50a681dc337ac9962577d5fa14,2.6rc3
+alk,2017-05-22 09:39:29,https://api.github.com/repos/gperftools/gperftools/git/commits/0c0e2fe43b5095d19470abdc3b4d83613fe37c6d,0c0e2fe43b5095d19470abdc3b4d83613fe37c6d,enable 48-bit page map on msvc as well
+alk,2017-05-22 09:38:13,https://api.github.com/repos/gperftools/gperftools/git/commits/83d6818295cb337b6201fe307e15755df9dcd47f,83d6818295cb337b6201fe307e15755df9dcd47f,"speed up 3-level page map access
+
+There is no need to have pointer indirection for root node. This also
+helps the case of early free of garbage pointer because we didn't
+check root_ pointer for NULL."
+alk,2017-05-22 06:28:48,https://api.github.com/repos/gperftools/gperftools/git/commits/f7ff175b92df5577aef9caf3fb02f9ff37b822ca,f7ff175b92df5577aef9caf3fb02f9ff37b822ca,"add configure-time warning on unsupported backtrace capturing
+
+Both libgcc and libc's backtrace() are not really options for stack
+trace capturing from inside profiling signal handler. So lets warn
+people."
+alk,2017-05-22 06:15:59,https://api.github.com/repos/gperftools/gperftools/git/commits/cef582350c952bad761476d01ea64bb4087371ce,cef582350c952bad761476d01ea64bb4087371ce,"align fast-path functions only if compiler supports that
+
+Apparently gcc only supports __attribute__((aligned(N))) on functions
+only since version 4.3. So lets test it in configure script and only
+use when possible. We now use CACHELINE_ALIGNED_FN macro for aligning
+functions."
+alk,2017-05-22 05:24:19,https://api.github.com/repos/gperftools/gperftools/git/commits/bddf862b189c4508d5212f6e0e8ea81c4dd18811,bddf862b189c4508d5212f6e0e8ea81c4dd18811,"actually support very early freeing of NULL
+
+This was caught by unit tests on centos 5. Apparently some early
+thingy is trying to do vprintf which calls free(0). Which used to
+crash since before size class cache is initialized it'll report
+hit (with size class 0) for NULL pointer, so we'd miss the case of
+checking NULL pointer free and crash.
+
+The fix is to check for IsInited in the case when thread cache is
+null, and if so then we escalte to free_null_or_invalid."
+alk,2017-05-22 05:22:21,https://api.github.com/repos/gperftools/gperftools/git/commits/07a124d8c16bc7d52524ceb9f50d7a65b868e129,07a124d8c16bc7d52524ceb9f50d7a65b868e129,"don't use arg-ful constructor attribute for early nallocx test
+
+101 is not very early anyways and arg-ful constructor attribute is
+only supported since gcc 4.3 (and e.g. rhel 5's compiler fails to
+compile it). So there seems to be very little value trying to ask for
+priority of 101."
+alk,2017-05-22 05:18:01,https://api.github.com/repos/gperftools/gperftools/git/commits/5346b8a4def33915e6f877e308fb948f570a6120,5346b8a4def33915e6f877e308fb948f570a6120,"don't depend on SIZE_MAX definition in sampler.cc
+
+It was reported that SIZE_MAX isn't getting defined in C++ mode when
+C++ standard is less than c++11. Because we still want to support
+non-c++11 systems (for now), lets make it simple and not depend on
+SIZE_MAX (original google-internal code used
+std::numeric_limits<ssize_t>::max, but that failed to compile on
+msvc).
+
+Fixes issue #887 and issue #889."
+alk,2017-05-15 07:02:43,https://api.github.com/repos/gperftools/gperftools/git/commits/50125d8f70007fb2aa4d1c87df6a3092a3371edf,50125d8f70007fb2aa4d1c87df6a3092a3371edf,2.6rc2
+alk,2017-05-15 06:45:08,https://api.github.com/repos/gperftools/gperftools/git/commits/a5e8e42a47fc0175c8044d0d77bf192b03347964,a5e8e42a47fc0175c8044d0d77bf192b03347964,"don't link-in libunwind if libunwind.h is missing
+
+I got report that some build environments for
+https://github.com/lyft/envoy are having link-time issue due to
+linking libunwind. It was happening despite libunwind.h being present,
+which is clear bug as without header we won't really use libunwind."
+RajalakshmiS,2017-04-26 09:46:43,https://api.github.com/repos/gperftools/gperftools/git/commits/e92acdf98db229e8dc84993fd8895d55e6c69129,e92acdf98db229e8dc84993fd8895d55e6c69129,"Fix compilation error for powerpc32
+
+Fix the following compilation error for powerpc32 platform when using
+latest glibc.
+error: ‘siginfo_t’ was not declared in this scope"
+alk,2017-04-17 04:45:51,https://api.github.com/repos/gperftools/gperftools/git/commits/b48403a4b065830129e238feffe022abd93af807,b48403a4b065830129e238feffe022abd93af807,2.6rc
+alk,2017-05-15 03:24:27,https://api.github.com/repos/gperftools/gperftools/git/commits/53f15325d93fbe0ba17bb3fac3da86ffd3f0f1ad,53f15325d93fbe0ba17bb3fac3da86ffd3f0f1ad,fix compilation of tcmalloc_unittest.cc on older llvm-gcc
+alk,2017-04-03 02:27:00,https://api.github.com/repos/gperftools/gperftools/git/commits/b1d88662cb4a38ee47aa48076745898033526f9d,b1d88662cb4a38ee47aa48076745898033526f9d,"change size class to be represented by 32 bit int
+
+This moves code closer to Google-internal version and provides for
+slightly tighter code encoding on amd64."
+alk,2017-02-02 23:58:08,https://api.github.com/repos/gperftools/gperftools/git/commits/991f47a159f0e169883f06686f13c31688fa2bf0,991f47a159f0e169883f06686f13c31688fa2bf0,"change default transfer batch back to 32
+
+Some tensorflow benchmarks are seeing large regression with elevated
+values. So lets stick to old safe default until we understand how to make
+larger values work for all workloads."
+alk,2017-02-02 23:38:41,https://api.github.com/repos/gperftools/gperftools/git/commits/7bc34ad1f60be2df6ca38f4bffdba4daa9aa9a7d,7bc34ad1f60be2df6ca38f4bffdba4daa9aa9a7d,"support different number of size classes at runtime
+
+With TCMALLOC_TRANSFER_NUM_OBJ environment variable we can change
+transfer batch size. And with that comes slightly different number of
+size classes depending on value of transfer batch size.
+
+We used to have hardcoded number of size classes, so we couldn't
+really support any batch size setting.
+
+This commit adds support for dynamic number of size classes (runtime
+value returned by Static::num_size_classes())."
+alk,2017-02-21 08:27:39,https://api.github.com/repos/gperftools/gperftools/git/commits/4585b78c8dae9183dbf5f124c0343a9f1244ed67,4585b78c8dae9183dbf5f124c0343a9f1244ed67,"massage allocation and deallocation fast-path for performance
+
+This is significant speedup of fast-path of malloc. Large part comes
+from avoiding expensive function prologue/epilogue. Which is achieved
+by making sure that tc_{malloc,new,free} etc are small functions that
+do only tail-calls. We keep only critical path in those functions and
+tail-call to slower ""full"" versions when we need to deal with less
+common case. This helps compiler generate much tidier code.
+
+Fast-path readyness check is now different too. We used to have ""min
+size for slow path"" variable, which was set to non-zero value when we
+know that thread cache is present and ready. We now have use
+thread-cache pointer not equal to NULL as readyness check.
+
+There is special ThreadCache::threadlocal_data_.fast_path_heap copy of
+that pointer that can be temporarily nulled to disable malloc fast
+path. This is used to enable emergency malloc.
+
+There is also slight change to tracking thread cache size. Instead of
+tracking total size of free list, it now tracks size headroom. This
+allows for slightly faster deallocation fast-path check where we're
+checking headroom to stay above zero. This check is a bit faster than
+comparing with max_size_."
+alk,2017-02-21 08:42:29,https://api.github.com/repos/gperftools/gperftools/git/commits/5964a1d9c98ea3c178435ff01f9b06e03eeda58d,5964a1d9c98ea3c178435ff01f9b06e03eeda58d,always inline a number of hot functions
+alk,2017-02-21 05:11:14,https://api.github.com/repos/gperftools/gperftools/git/commits/e419b7b9a66c39b44115b01520fb25a5100cec83,e419b7b9a66c39b44115b01520fb25a5100cec83,introduce ATTRIBUTE_ALWAYS_INLINE
+alk,2016-12-19 02:36:57,https://api.github.com/repos/gperftools/gperftools/git/commits/7d588da7ec4f315ea2d02824d7e8813b0f95171d,7d588da7ec4f315ea2d02824d7e8813b0f95171d,"synchronized Sampler implementation with Google-internal version
+
+This is mostly dropping FastLog2 which was never necessary for
+performance, and making sampler to be called always, even if sampling
+is disabled (this benefits more for always-sampling case of Google
+fork).
+
+We're also getting TryRecordAllocationFast which is not used yet, but
+will be as part of subsequent fast-path speedup commit."
+alk,2017-02-21 08:41:43,https://api.github.com/repos/gperftools/gperftools/git/commits/27da4ade70d45312bfdf334aa8cf0d63bf78df14,27da4ade70d45312bfdf334aa8cf0d63bf78df14,"reduce size of class_to_size_ array
+
+Since 32-bit int is enough and accessing smaller array will use a bit
+less of cache."
+alk,2017-02-21 07:49:15,https://api.github.com/repos/gperftools/gperftools/git/commits/335f09d4e43a8413642e17e5ac374f925906c4e3,335f09d4e43a8413642e17e5ac374f925906c4e3,"use static location for pageheap
+
+Makes it a bit faster to access, since we're dropping pointer
+indirection."
+alk,2017-02-21 07:37:33,https://api.github.com/repos/gperftools/gperftools/git/commits/6ff332fb517734cf01e86272fe37521b7155c995,6ff332fb517734cf01e86272fe37521b7155c995,"move size classes map earlier in SizeMap
+
+Since we access them more often, having at least one of them at offset
+0 makes pi{c,e} code a bit smaller."
+alk,2017-02-21 06:57:43,https://api.github.com/repos/gperftools/gperftools/git/commits/121b1cb32e7416ecb7b0c739588f1bd916c4913a,121b1cb32e7416ecb7b0c739588f1bd916c4913a,"slightly faster size class cache
+
+Lower bits of page index are still used as index into hash
+table. Those lower bits are zeroed, or-ed with size class and
+placed into hash table. So checking is just loading value from hash
+table, xoring with higher bits of address and checking if resultant
+value is lower than 128. Notably, size class 0 is not considered
+""invalid"" anymore."
+alk,2017-04-17 06:15:16,https://api.github.com/repos/gperftools/gperftools/git/commits/b57c0bad41700238f524b28483a1c6c18c0a621f,b57c0bad41700238f524b28483a1c6c18c0a621f,"init tcmalloc prior to replacing system alloc
+
+Currently on windows, we're depending on uninitialized tcmalloc
+variables to detect freeing foreign malloc's chunks. This works
+somewhat by chance due to 0-initialized size classes cache working as
+cache with no values. But this is about to change, so lets do explicit
+initialization."
+alk,2017-02-21 05:17:48,https://api.github.com/repos/gperftools/gperftools/git/commits/71fa9f873065e3d7c1f4ce0581d26b6498712f00,71fa9f873065e3d7c1f4ce0581d26b6498712f00,"use 2-level page map for 48-bit addresses
+
+48 bits is size of x86-64 and arm64 address spaces. So using 2 levels
+map for them is slightly faster. We keep 3 levels for small-but-slow
+configuration, since 2 levels consume a bit more memory.
+
+This is partial port of Google-internal commit by Sanjay
+Ghemawat (same idea, different implementation)."
+alk,2017-02-21 05:12:58,https://api.github.com/repos/gperftools/gperftools/git/commits/bad70249dd5c829b4981aecdc25953800d6745c3,bad70249dd5c829b4981aecdc25953800d6745c3,use 48-bit addresses on 64-bit arms too
+alk,2017-02-21 05:03:58,https://api.github.com/repos/gperftools/gperftools/git/commits/5f12147c6dbfe2cfbdc7553521fe0110073135f0,5f12147c6dbfe2cfbdc7553521fe0110073135f0,"use hidden visibility for some key global variables
+
+So that our -fPIC code is faster"
+alk,2017-01-23 05:08:51,https://api.github.com/repos/gperftools/gperftools/git/commits/dfd53da578137d5962fe8d588980870bb0ab8aa9,dfd53da578137d5962fe8d588980870bb0ab8aa9,set ENOMEM in handle_oom
+alk,2017-01-08 03:02:04,https://api.github.com/repos/gperftools/gperftools/git/commits/14fd551072426cef317f43d587f91004d4fdae75,14fd551072426cef317f43d587f91004d4fdae75,avoid O(N²) in thread cache creation code
+alk,2016-03-12 22:25:10,https://api.github.com/repos/gperftools/gperftools/git/commits/507a105e849422d5ceff4348d38aaf72371a6161,507a105e849422d5ceff4348d38aaf72371a6161,"pass original size to DoSampledAllocation
+
+It makes heap profiles more accurate. Google's internal malloc is doing
+it as well."
+alk,2016-03-13 02:10:19,https://api.github.com/repos/gperftools/gperftools/git/commits/bb77979dea796ab743e1308af25e9259ec97f2b1,bb77979dea796ab743e1308af25e9259ec97f2b1,"don't declare throw() on malloc funtions since it is faster
+
+Apparently throw() on functions actually asks compiler to generate code
+to detect unexpected exceptions. Which prevents tail calls optimization.
+
+So in order to re-enable this optimization, we simply don't tell
+compiler about throw() at all. C++11 noexcept would be even better, but
+it is not universally available yet.
+
+So we change to no exception specifications. Which at least for gcc &
+clang on Linux (and likely for all ELF platforms, if not just all)
+really eliminates all overhead of exceptions."
+alk,2016-03-13 04:26:40,https://api.github.com/repos/gperftools/gperftools/git/commits/89c74cb79ca41cd75a1f9131af4ea2ab362593ae,89c74cb79ca41cd75a1f9131af4ea2ab362593ae,"handle duplicate google_malloc frames in malloc hook stack trace
+
+Subsequent optimization may cause multiple malloc functions in
+google_malloc section to be in call stack. Particularly when fast-path
+malloc function calls slow-path and compiler chooses to implement such
+call as regular call instead of tail-call.
+
+Because we need stacktrace just until first such function, once we find
+innermost such frame, we're simply checking if next outer frame is also
+google_malloc and consider it instead."
+alk,2016-03-13 05:08:57,https://api.github.com/repos/gperftools/gperftools/git/commits/0feb1109ac957144a50d964b0ff244a6a286174a,0feb1109ac957144a50d964b0ff244a6a286174a,"fix stack trace capturing in debug malloc
+
+Particularly, hardcoded skip count was relying on certain behavior of
+compiler. Namely, that tail calls inside DebugDeallocate path are not
+actually implemented as tail calls.
+
+New implementation is using google_malloc section as a marker of malloc
+boundary. But in order for this to work, we have to prevent tail-call in
+debugallocation's tc_XXX functions. Which is achieved by doing volatile
+read of static variable at the end of such functions."
+alk,2016-12-19 02:36:00,https://api.github.com/repos/gperftools/gperftools/git/commits/0506e965ee5184490fbe7acea470458562128a79,0506e965ee5184490fbe7acea470458562128a79,"replace LIKELY/UNLIKELY with PREDICT_{TRUE,FALSE}
+
+Google-internal code is using PREDICT_TRUE/FALSE, so we should be
+doing it too."
+alk,2016-03-13 23:04:43,https://api.github.com/repos/gperftools/gperftools/git/commits/59a4987054021eaf24143a27cf01252fafb5052d,59a4987054021eaf24143a27cf01252fafb5052d,"prevent inlining ATTRIBUTE_SECTION functions
+
+So that their code is always executing in prescribed section."
+alk,2017-02-02 23:41:13,https://api.github.com/repos/gperftools/gperftools/git/commits/ebb575b8a0153a70f43fd1c3ec33fe30f94c97d0,ebb575b8a0153a70f43fd1c3ec33fe30f94c97d0,"Revert ""enabled aggressive decommit by default""
+
+This reverts commit 7da5bd014d77ddaf694054b1e3ae0a3ef92ab384.
+
+Some tensorflow benchmarks are getting slower with aggressive
+decommit."
+alk,2017-01-22 21:15:39,https://api.github.com/repos/gperftools/gperftools/git/commits/b82d89cb7c8781a6028f6f5959cabdc5a273aec3,b82d89cb7c8781a6028f6f5959cabdc5a273aec3,"Revert ""disable dynamic sized delete support by default""
+
+This reverts commit 06811b3ae4c5365880898148d188ae91d20f52f2."
+alk,2017-01-22 21:11:05,https://api.github.com/repos/gperftools/gperftools/git/commits/fac0bb44d5661946d9839496ddf104942dd00abe,fac0bb44d5661946d9839496ddf104942dd00abe,"Do not depend on memchr in commandlineflags::StringToBool
+
+It lets us use it from inside ifunc handler."
+alk,2017-01-22 21:08:34,https://api.github.com/repos/gperftools/gperftools/git/commits/7d49f015a01e35155517332a2dfd95f16b568939,7d49f015a01e35155517332a2dfd95f16b568939,"Make GetenvBeforeMain work inside ifunc handler
+
+Depending on things such us strlen, which are ifunc-ed themselves is
+not supported from inside ifunc handler.
+
+Thus we implement strlen, memchr and memcmp in slow naive C++ just for
+that place."
+alk,2017-02-27 07:46:18,https://api.github.com/repos/gperftools/gperftools/git/commits/a2550b6309153c250f67255b6271ec988cc7d0fb,a2550b6309153c250f67255b6271ec988cc7d0fb,"turn bench_fastpath_throughput into actual throughput benchmark
+
+Previously we bumped size by 16 between iterations, but for many size
+classess that gave is subsequent iteration into same size
+class. Multiplying by prime number randomizes sizes more so speeds up
+this benchmark on at least modern x86."
+alk,2016-03-12 22:12:02,https://api.github.com/repos/gperftools/gperftools/git/commits/b762b1a4923f769487de818175655c1683d84db5,b762b1a4923f769487de818175655c1683d84db5,added sized free benchmarks to malloc_bench
+alk,2016-03-12 22:11:40,https://api.github.com/repos/gperftools/gperftools/git/commits/71ffc1cd6b3ea99c97ed6d0e16caeb9d1b20eec7,71ffc1cd6b3ea99c97ed6d0e16caeb9d1b20eec7,added free lists randomization step to malloc_bench
+alk,2017-01-22 21:57:31,https://api.github.com/repos/gperftools/gperftools/git/commits/732dfeb83d726de0aea47f0e6aa2abff3e0ad680,732dfeb83d726de0aea47f0e6aa2abff3e0ad680,"Run StartStopNoOptionsEmpty profiledata unittest
+
+Somehow we had this test, but didn't arrange to actually run it. GCC
+gave warning and now we do."
+alk,2016-12-18 19:08:54,https://api.github.com/repos/gperftools/gperftools/git/commits/cbb312fbe8022378c4635b3075a80a7827555170,cbb312fbe8022378c4635b3075a80a7827555170,"aggressive decommit: only free necessary regions and fix O(N²)
+
+We used to decommit (with MADV_FREE or MADV_DONTNEED) whole combined
+span when freeing span in aggressive decommit mode. The issue with
+that is preceding or following span with which we combined span we're
+freeing could be freed already and fairly large. By passing all of
+that memory to decommit, we force kernel to scan all of those pages.
+
+When mass-freeing many objects old behavior led to O(N^2) behavior
+since freeing single span could lead to MADV_{FREE,DONTNEED}-ing of
+most of the heap.
+
+New implementation just does decommit of individual bits as needed.
+
+While there, I'm also adding locking to calls of
+PageHeap::{Get,Set}AggressiveDecommit.
+
+This partially (or mostly) fixes issue #839."
+alk,2017-02-13 01:12:44,https://api.github.com/repos/gperftools/gperftools/git/commits/6d98223a9035ec1c5e9a7eb0196b21021d48a41f,6d98223a9035ec1c5e9a7eb0196b21021d48a41f,"don't build with -fno-exceptions
+
+It looks like, in past it could produce better code. But since
+unwinding is totally different since almost forever now, there is no
+perfomance benefit of it anymore."
+alk,2016-03-12 23:33:10,https://api.github.com/repos/gperftools/gperftools/git/commits/d6a1931cce303ea279b744c9b438686e4f5994e5,d6a1931cce303ea279b744c9b438686e4f5994e5,"fixed warning in casting heap of checker's main_thread_counter
+
+I.e. compiler didn't like int to void * casting and upcasting to
+intptr_t first (which has same size as void *) makes it happier."
+alk,2017-02-13 01:54:59,https://api.github.com/repos/gperftools/gperftools/git/commits/5c778701d98c642ecff97d044cd1c0b8b862aba3,5c778701d98c642ecff97d044cd1c0b8b862aba3,added tcmalloc minimal unittest with ASSERTs checked
+alk,2017-04-30 02:09:47,https://api.github.com/repos/gperftools/gperftools/git/commits/a9167617abbcebe9d472141c53a20ce00c8c8d75,a9167617abbcebe9d472141c53a20ce00c8c8d75,drop unused g_load_map variable in patch_functionc.cc
+alk,2017-04-30 02:06:55,https://api.github.com/repos/gperftools/gperftools/git/commits/d52e56dcb5aad0521ccc67d7e57dfcb8d41ea568,d52e56dcb5aad0521ccc67d7e57dfcb8d41ea568,don't compare integer to NULL
+alk,2017-04-24 03:33:16,https://api.github.com/repos/gperftools/gperftools/git/commits/bae00c0341f49ade473d24c117226552a59d3e75,bae00c0341f49ade473d24c117226552a59d3e75,"add fake_stacktrace_scope to few msvc projects
+
+Otherwise it predictably fails at linking phase due to missing
+symbols."
+alk,2017-04-17 05:17:56,https://api.github.com/repos/gperftools/gperftools/git/commits/79aab4fed40f9aac03dacb32a108861eff689beb,79aab4fed40f9aac03dacb32a108861eff689beb,correctly dllexport nallocx on windows
+alk,2017-05-01 01:32:10,https://api.github.com/repos/gperftools/gperftools/git/commits/b010895a088703f512cb0e225c838306b2904069,b010895a088703f512cb0e225c838306b2904069,"don't undef PERFTOOLS_DLL_DECL
+
+This is not necessary and will help adding more headers with
+dll-exported functions."
+alk,2017-04-29 23:46:21,https://api.github.com/repos/gperftools/gperftools/git/commits/491b1aca7edbbaed9ea6f7baaa547a35cf385130,491b1aca7edbbaed9ea6f7baaa547a35cf385130,don't try to use pthread_atfork on windows
+alk,2016-03-12 22:41:28,https://api.github.com/repos/gperftools/gperftools/git/commits/691045b95761bedb9170d758be82f9b2f15c673a,691045b95761bedb9170d758be82f9b2f15c673a,suppress warnings from legacy headers while building legacy headers test
+alk,2017-04-29 22:25:06,https://api.github.com/repos/gperftools/gperftools/git/commits/22f7ceb97a63bcbc9d824a80916bb7a809fad1f2,22f7ceb97a63bcbc9d824a80916bb7a809fad1f2,"use unsigned for few flags in mini_disassembler_types.h
+
+We're initializing them with value that doesn't fit into signed 32-bit
+int and somehow mingw version that I have not just warns, but actually
+errors on that."
+mostynb,2017-05-11 18:40:18,https://api.github.com/repos/gperftools/gperftools/git/commits/9b17a8a5ba1c8320d12c6e6df0ab54ff218b50e6,9b17a8a5ba1c8320d12c6e6df0ab54ff218b50e6,remove superfluous size_t value >= 0 check
+eugene536,2017-02-04 14:57:34,https://api.github.com/repos/gperftools/gperftools/git/commits/86ce69d77ff5f881c5701901bf7d1ef884f9e33a,86ce69d77ff5f881c5701901bf7d1ef884f9e33a,Update binary_trees.cc
+ola1olsson,2017-03-21 13:07:16,https://api.github.com/repos/gperftools/gperftools/git/commits/cd8586ed6c8bed550ad727ce8af83a1a6bd1ca8e,cd8586ed6c8bed550ad727ce8af83a1a6bd1ca8e,Fix path names in README
+alk,2017-02-21 00:04:14,https://api.github.com/repos/gperftools/gperftools/git/commits/98753aa73772bb0fae8cee668e513d5754ab7737,98753aa73772bb0fae8cee668e513d5754ab7737,"test that sized deallocation really works before enabling it
+
+Weirdly, some OSX compiler does allow -fsized-deallocation, yet barks
+on any attempt to actually use it at compile time (!). So lets detect
+this as well in configure and opt out as necessary.
+
+Should fix issue #870."
+alk,2017-02-20 23:31:41,https://api.github.com/repos/gperftools/gperftools/git/commits/5618ef78505a854bd0d2c145fd9cf7967226a20e,5618ef78505a854bd0d2c145fd9cf7967226a20e,"Don't assume memalign exists in memalign vs nallocx test
+
+OSX and windows have issues with memalign. So test against tc_memalign
+instead.
+
+This should fix _memalign linker-time part of issue #870."
+alk,2017-02-20 22:51:27,https://api.github.com/repos/gperftools/gperftools/git/commits/bf640cd740fe38f6f10faa8683e8361fee971aba,bf640cd740fe38f6f10faa8683e8361fee971aba,"rename sys allocator's sys_alloc symbol to tcmalloc_sys_alloc
+
+Since we're not building with hidden visibility, symbols of other DSOs
+can interpose our symbols. And sys_alloc is just too generic name.
+
+And in fact erlang runtime has sys_alloc function. Which means we're
+trying to write to it's first bytes as part of initializing system
+allocator and crash.
+
+This should fix issue #843."
+alk,2017-02-20 22:25:18,https://api.github.com/repos/gperftools/gperftools/git/commits/069e3b16551186f8da0a41c185550fdfd11af35b,069e3b16551186f8da0a41c185550fdfd11af35b,"build malloc_bench_shared_full only when full tcmalloc is built
+
+I.e. because otherwise, when --enable-minimal is given, we're building
+empty libtcmalloc.la and linking it to malloc_bench_shared_full. Which
+has no effect at all and actually breaks builds on OSX.
+
+Should fix issue #869."
+alk,2016-12-18 17:35:02,https://api.github.com/repos/gperftools/gperftools/git/commits/b8f9d0d44f94177d34b069180618b7d002e85b69,b8f9d0d44f94177d34b069180618b7d002e85b69,"ported nallocx support from Google-internal tcmalloc
+
+nallocx is extension introduced by jemalloc. It returns effective size
+of allocaiton without allocating anything.
+
+We also support MALLOCX_LG_ALIGN flag. But all other jemalloc
+flags (which at the moment do nothing for nallocx anyways) are
+silently ignored, since there is no sensible way to return errors in
+this API.
+
+This was originally contributed by Dmitry Vyukov with input from
+Andrew Hunter. But due to significant divergence of Google-internal
+and free-software forks of tcmalloc, significant massaging was done by
+me. So all bugs are mine."
+acmorrow,2016-12-17 18:57:41,https://api.github.com/repos/gperftools/gperftools/git/commits/b0abefd93834d9d9c7ffaae2d23bd48ed8e96477,b0abefd93834d9d9c7ffaae2d23bd48ed8e96477,Fix a typo in the page fence flag declaration
+krlmlr,2016-11-15 08:58:11,https://api.github.com/repos/gperftools/gperftools/git/commits/855b3800064db49af823b85a54be269923eb6f4d,855b3800064db49af823b85a54be269923eb6f4d,replace docs by doc
+krlmlr,2016-11-15 08:42:12,https://api.github.com/repos/gperftools/gperftools/git/commits/664210ead806d700cdbe5eeaf75d7a066fdac541,664210ead806d700cdbe5eeaf75d7a066fdac541,"doc -> docs, with symlink"
+zmertens,2016-11-18 22:27:32,https://api.github.com/repos/gperftools/gperftools/git/commits/75dc9a6e1470fa82b828f9687edad48f53d740b1,75dc9a6e1470fa82b828f9687edad48f53d740b1,Fix Post(s)cript tyos
+fjricci,2016-10-11 18:14:06,https://api.github.com/repos/gperftools/gperftools/git/commits/dde32f8bbc95312379f9f5a651799815bb6327c5,dde32f8bbc95312379f9f5a651799815bb6327c5,Fix unaligned memory accesses in debug allocator
+rmacnak-google,2016-09-27 21:03:05,https://api.github.com/repos/gperftools/gperftools/git/commits/02eeed29df112728564a5dde6417fa4622b57a06,02eeed29df112728564a5dde6417fa4622b57a06,Fix redefinition of mmap on aarch64.
+alk,2016-09-25 01:56:22,https://api.github.com/repos/gperftools/gperftools/git/commits/c07a15cff4b904ac45e4019f8e36eeffd3e8186c,c07a15cff4b904ac45e4019f8e36eeffd3e8186c,"[windows] patch _free_base as well
+
+Looks like _free_base is used as generic free/delete, which is not
+checked for free/delete mismatch by their debug runtime. Issue #817
+occurs because something that is allocated by regular allocation
+functions (new or malloc) is freed by _free_base. Patch it as well fixes
+the problem.
+
+Closes #817."
+alk,2016-09-24 23:19:27,https://api.github.com/repos/gperftools/gperftools/git/commits/acac6af26b0ef052b39f61a59507b23e9703bdfa,acac6af26b0ef052b39f61a59507b23e9703bdfa,"Fix finding default zone on macOS sierra
+
+This is taken from jemalloc patch at
+https://github.com/jemalloc/jemalloc/pull/427/commits/19c9a3e828ed46f1576521c264640e60bd0cb01f
+by Mike Hommey (aka glandium).
+
+The issue was reported together with advise to take that jemalloc fix by
+Koichi Shiraishi and David Ribeiro Alves at gperftools issue #827.
+
+Closes issue #827."
+tuliom,2016-08-08 16:50:10,https://api.github.com/repos/gperftools/gperftools/git/commits/7822b5b0b9fa7e016e1f6b46ea86f26f4691a457,7822b5b0b9fa7e016e1f6b46ea86f26f4691a457,"Stop using glibc malloc hooks
+
+glibc deprecated malloc hooks in 2011 and will be removing them soon.
+These hooks aren't safe and aren't necessary when the malloc API is
+fully exported."
+tuliom,2016-07-27 20:15:52,https://api.github.com/repos/gperftools/gperftools/git/commits/c92f0ed0891d69888cdc7e904c82048362b2dd8d,c92f0ed0891d69888cdc7e904c82048362b2dd8d,"Remove references to __malloc_initialize_hook
+
+__malloc_initialize_hook has been deprecated in glibc since 2011 and is
+being removed on glibc 2.24."
+alk,2016-08-25 05:33:05,https://api.github.com/repos/gperftools/gperftools/git/commits/9709eef361aa8c46d6b14c08bebead7b8185e731,9709eef361aa8c46d6b14c08bebead7b8185e731,"Merge pull request #821 from jtmcdole/patch-1
+
+Rename TCMALLOC_DEBUG to PERFTOOLS_VERBOSE"
+jtmcdole,2016-08-25 00:47:28,https://api.github.com/repos/gperftools/gperftools/git/commits/44f276e132eef8ba013a04b4af92ce26464e2b54,44f276e132eef8ba013a04b4af92ce26464e2b54,Rename TCMALLOC_DEBUG to PERFTOOLS_VERBOSE
+alk,2016-07-04 01:20:32,https://api.github.com/repos/gperftools/gperftools/git/commits/eb474c995eadef3edb47bc081f09693228832794,eb474c995eadef3edb47bc081f09693228832794,"Summary: support gcc atomic ops on clang too
+
+Clang actually does support __atomic_XXX atomic ops builtins but does
+not advertise itselt as gcc 4.7 or later. So we now detect clang
+separetely.
+
+We're enabling gcc atomic ops on clang >= 3.4 since this is the oldest
+version that I can test.
+
+This should fix issue #797."
+kentonv,2016-07-01 01:32:39,https://api.github.com/repos/gperftools/gperftools/git/commits/7f86eab1f3e0636a79a96fd44e3bb51db0457a86,7f86eab1f3e0636a79a96fd44e3bb51db0457a86,"Recognize .node files as shared libraries
+
+node.js extensions are regular shared libraries named with the `.node` extension. With this small change I was able to get a usable heap profile out of node to debug an extension I'm working on."
+bryanpkc,2016-06-15 04:10:45,https://api.github.com/repos/gperftools/gperftools/git/commits/bf8eacce69df877d1cecdab8c7a6cc3f218ebcc2,bf8eacce69df877d1cecdab8c7a6cc3f218ebcc2,Add support for 31-bit s390; merge linux_syscall_support.h changes from upstream.
+savefromgoogle,2016-05-14 15:50:34,https://api.github.com/repos/gperftools/gperftools/git/commits/c54218069b96e5a64e81186cd14107bf6660b61d,c54218069b96e5a64e81186cd14107bf6660b61d,"Update README
+
+typo corrected and direct link to Google Group mailinglist added"
+vertexodessa,2016-04-15 14:46:25,https://api.github.com/repos/gperftools/gperftools/git/commits/06f4ce65c226e2bed432119bd830a478012ea336,06f4ce65c226e2bed432119bd830a478012ea336,Small performance tweak: avoid calling time() if we don't need it
+alk,2016-06-25 23:24:40,https://api.github.com/repos/gperftools/gperftools/git/commits/db8d4836091b93100b176e8cab4e842974234e4e,db8d4836091b93100b176e8cab4e842974234e4e,"Autogenerate ChangeLog from git on make dist
+
+This fixes build breakage introduced in preceding commit for issue #796."
+alk,2016-06-25 23:12:48,https://api.github.com/repos/gperftools/gperftools/git/commits/4a1359831938b5a71b2faf38c02003053af253d9,4a1359831938b5a71b2faf38c02003053af253d9,"renamed ChangeLog to ChangeLog.old
+
+I.e. to avoid confusion. This should fix issue #796."
+alk,2016-04-09 20:09:18,https://api.github.com/repos/gperftools/gperftools/git/commits/7852eeb75b9375cf52a7da01be044da6e915dd08,7852eeb75b9375cf52a7da01be044da6e915dd08,"Use initial-exec tls for libunwind's recursion flag
+
+If we don't do it, then reading variable calls to __tls_get_addr, which
+uses malloc on first call. initial-exec makes dynamic linker reserve tls
+offset for recusion flag early and thus avoid unsafe calls to malloc.
+
+This fixes issue #786."
+gaffo,2016-03-31 18:27:21,https://api.github.com/repos/gperftools/gperftools/git/commits/a07f9fe75af25ce388af3d4ff4514b42513d766f,a07f9fe75af25ce388af3d4ff4514b42513d766f,gerftools -> gperftools in readme
+alk,2016-03-20 19:29:40,https://api.github.com/repos/gperftools/gperftools/git/commits/9fd6d2687914a1f58a8ce457d6a1bd3d55ea0747,9fd6d2687914a1f58a8ce457d6a1bd3d55ea0747,"added define to enable MADV_FREE usage on Linux
+
+Building with -DTCMALLOC_USE_MADV_FREE will enable usage of MADV_FREE on
+Linux if glibc copy of kernel headers has MADV_FREE defined.
+
+I.e. so that people can test this more easily.
+
+Affects ticket #780."
+RedBeard0531,2016-03-16 22:22:32,https://api.github.com/repos/gperftools/gperftools/git/commits/6f7a14f45e2e2e16fbbd250543f5758078e2f5f0,6f7a14f45e2e2e16fbbd250543f5758078e2f5f0,"Don't use MADV_FREE on Linux
+
+Addresses #780."
+tmm1,2016-03-14 19:20:40,https://api.github.com/repos/gperftools/gperftools/git/commits/55cf6e6281f2f19ed04a6b2a90e2dcaec08e16d0,55cf6e6281f2f19ed04a6b2a90e2dcaec08e16d0,"Fix symbol resolution on OSX
+
+The library mapping ranges on OSX and Linux are sorted in opposite orders
+
+  7f71c3323000-7f71c3339000 r-xp 00000000 09:02 29099128                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+  7f71c3339000-7f71c3538000 ---p 00016000 09:02 29099128                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+  7f71c3538000-7f71c3539000 r--p 00015000 09:02 29099128                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+  7f71c3539000-7f71c353a000 rw-p 00016000 09:02 29099128                   /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+
+vs
+
+  108f8d000-108f95000 r-xp 00025000 00:00 0           /usr/local/opt/libmemcached/lib/libmemcached.11.dylib
+  108f8c000-108f8d000 r-xp 00024000 00:00 0           /usr/local/opt/libmemcached/lib/libmemcached.11.dylib
+  108f68000-108f8c000 r-xp 00000000 00:00 0           /usr/local/opt/libmemcached/lib/libmemcached.11.dylib"
+alk,2016-03-13 22:11:50,https://api.github.com/repos/gperftools/gperftools/git/commits/8e858436223db7729d41304ad29a29946d47382b,8e858436223db7729d41304ad29a29946d47382b,added simple .travis.yml config
+bsilver8192,2016-03-08 20:58:02,https://api.github.com/repos/gperftools/gperftools/git/commits/05e40d29c034c0d68322e589b8d6e234f562be2e,05e40d29c034c0d68322e589b8d6e234f562be2e,"Recognize modern Linux ARM
+
+Commit e580d7888154fa7f95b3cef9e18f1ce69182212b fixed the macros in some
+of the code but not other places.
+
+`make check` still fails in the same places on a Debian Jessie armhf
+system."
+alk,2016-03-12 19:48:20,https://api.github.com/repos/gperftools/gperftools/git/commits/632de2975e63f89613af9ab99bc1603a4a6332aa,632de2975e63f89613af9ab99bc1603a4a6332aa,bumped version up to 2.5
+alk,2016-03-12 18:54:05,https://api.github.com/repos/gperftools/gperftools/git/commits/6682016092c735feb29021acbb8c2067fdf1a209,6682016092c735feb29021acbb8c2067fdf1a209,"Unbreak profiling with CPUPROFILE_FREQUENCY=1
+
+This closes ticket #777.
+
+No test sadly, since it's not trivial to unittest this case. But
+fix with single-shot manual testing is better than nothing."
+alk,2016-03-06 00:17:28,https://api.github.com/repos/gperftools/gperftools/git/commits/6ff86ff6a783a277956e45db68c6a2b729f27000,6ff86ff6a783a277956e45db68c6a2b729f27000,bumped version to 2.4.91 for 2.5rc2
+alk,2016-03-05 23:47:25,https://api.github.com/repos/gperftools/gperftools/git/commits/782165fa7f2c49d6a67c2415626a1f215cc21ac2,782165fa7f2c49d6a67c2415626a1f215cc21ac2,"build sized delete aliases even when sized-delete is disabled
+
+In this case we alias to regular delete. This is helpful because if we
+don't override sized delete, then apps will call version in libstdc++
+which delegates calls to regular delete, which is slower than calling
+regular delete directly."
+alk,2016-03-05 23:08:50,https://api.github.com/repos/gperftools/gperftools/git/commits/06811b3ae4c5365880898148d188ae91d20f52f2,06811b3ae4c5365880898148d188ae91d20f52f2,"disable dynamic sized delete support by default
+
+IFUNC relocations don't support our advanced use case (calling
+application function or looking up environment variable).
+
+Particularly, it doesn't work on PPC and arm when tcmalloc is linked
+with -Wl,-z,now. See RedHat's bugzilla ticket
+https://bugzilla.redhat.com/show_bug.cgi?id=1312462 for more details."
+alk,2016-03-05 22:53:42,https://api.github.com/repos/gperftools/gperftools/git/commits/d4d99eb608f3d778fa301137a85cc4903a1dd33e,d4d99eb608f3d778fa301137a85cc4903a1dd33e,"unbreak compilation with visual studio
+
+Specifically, this commit adds missing fake_stacktrace_scope.cc to msvc
+build and removes undef-ing of PERFTOOLS_DLL_DECL by tcmalloc.h."
+bsilver8192,2016-03-01 22:57:33,https://api.github.com/repos/gperftools/gperftools/git/commits/126d4582c18d053452d22ce12351c5429513aabe,126d4582c18d053452d22ce12351c5429513aabe,"Call function pointers with the right type
+
+I think it's undefined behavior, but it's definitely weird. ubsan
+complains too."
+bsilver8192,2016-03-01 22:56:32,https://api.github.com/repos/gperftools/gperftools/git/commits/e0fa28ef7d50158b271da90f53ab3aee5ba441d8,e0fa28ef7d50158b271da90f53ab3aee5ba441d8,"Don't shift a type by more than its width
+
+It's undefined behavior, so ubsan complains."
+bsilver8192,2016-03-01 22:55:59,https://api.github.com/repos/gperftools/gperftools/git/commits/a1c764d2632cc0090f31d8d56effb94a8d049b54,a1c764d2632cc0090f31d8d56effb94a8d049b54,Initialize counters in test
+bsilver8192,2016-03-01 22:55:53,https://api.github.com/repos/gperftools/gperftools/git/commits/22123a37c236e26535d3f3fff7f31a5b6515d7d6,22123a37c236e26535d3f3fff7f31a5b6515d7d6,"Don't overflow a signed integer
+
+It's undefined behavior and ubsan catches it."
+alk,2016-03-01 04:09:39,https://api.github.com/repos/gperftools/gperftools/git/commits/66e1e94f38467b5c7bbfb05e3c7267f3039a2c69,66e1e94f38467b5c7bbfb05e3c7267f3039a2c69,"added minimal ""header section"" to README"
+alk,2016-02-22 04:27:48,https://api.github.com/repos/gperftools/gperftools/git/commits/2804b7cfee8d49d5ab98340cbf3050c0a5f57b98,2804b7cfee8d49d5ab98340cbf3050c0a5f57b98,bumped version to 2.5rc
+alk,2016-02-22 06:38:23,https://api.github.com/repos/gperftools/gperftools/git/commits/f47fefbfc1083e7efbada3e7e7d2859d31e151e7,f47fefbfc1083e7efbada3e7e7d2859d31e151e7,updated NEWS for 2.5rc
+alk,2016-02-22 07:03:41,https://api.github.com/repos/gperftools/gperftools/git/commits/cef60361741e858041f4bb4d46ce00c6db89b711,cef60361741e858041f4bb4d46ce00c6db89b711,"alias same malloc/free variants to their canonical versions
+
+This is similar to what gcc 5 does anyways, except gcc 5 is placing
+jumps which adds a bit of overhead.
+
+Instead of letting gcc do it, we alias using ELF symbol aliasing. All
+free variants (tc_delete{,array}_{,nothrow}) are aliased to
+tc_free. There are 3 malloc variants that differ by oom
+handling. tc_newarray is aliased to tc_new. And tc_newarray_nothrow is
+aliased to tc_new_nothrow.
+
+This aliasing only happens in non-debug malloc, since debug malloc does
+distinguish between different variants since it needs checking for
+mismatch."
+alk,2016-02-22 04:16:37,https://api.github.com/repos/gperftools/gperftools/git/commits/ea8d242061460309d174d9053a224cf94e65e6fe,ea8d242061460309d174d9053a224cf94e65e6fe,"Re-enable MultipleIdleNonIdlePhases test
+
+Which was accidentally removed as part of MarkThreadTemporarilyIdle
+support."
+alk,2016-02-22 04:07:37,https://api.github.com/repos/gperftools/gperftools/git/commits/c9962f698b0edb37315445b33a06820f9bcf5df9,c9962f698b0edb37315445b33a06820f9bcf5df9,"added maybe_emergency_malloc.h to Makefile.am
+
+Because without this reference it isn't packaged by make dist."
+alk,2016-02-22 03:26:37,https://api.github.com/repos/gperftools/gperftools/git/commits/7dd4af65365d74a5d8d30d5811c26117a9192238,7dd4af65365d74a5d8d30d5811c26117a9192238,"don't round up sizes for large allocation when sampling
+
+This closes #723.
+
+Since rounding up prior to sampling is introducing possibility of
+arithmetic overflow, we're just not doing it.
+
+It introduces some error (up to 4k), but since we're dealing with at
+least 256k allocations, we're fine."
+alk,2016-02-21 21:52:47,https://api.github.com/repos/gperftools/gperftools/git/commits/4f3410e759ec42cb307429222d690a81e3cd37b0,4f3410e759ec42cb307429222d690a81e3cd37b0,"enable emergency malloc by default on arm when using libunwind
+
+Because by default libunwind on arm does fopen which mallocs which will
+deadlock unless we enable emergency malloc."
+alk,2016-02-01 07:17:50,https://api.github.com/repos/gperftools/gperftools/git/commits/7f12051dbe1f402771a747c1192a66e7571d94f9,7f12051dbe1f402771a747c1192a66e7571d94f9,"implemented emergency malloc
+
+Emergency malloc is enabled for cases when backtrace capturing needs to
+call malloc. In this case, we enable emergency malloc just prior to
+calling such code and disable it after it is done."
+alk,2016-02-21 05:49:58,https://api.github.com/repos/gperftools/gperftools/git/commits/3ee2360250c639f02b354820bc50efc6e104b754,3ee2360250c639f02b354820bc50efc6e104b754,"replaced invalid uses of __THROW
+
+We're now using it only when overriding glibc functions (such as malloc
+or mmap). In other cases (most importantly in public tcmalloc.h header)
+we're doing our own throw() to avoid possible breakage on future glibc
+changes."
+alk,2016-02-21 05:19:37,https://api.github.com/repos/gperftools/gperftools/git/commits/013b82abcfeaa158da2490ff86d6bff5a5434d7f,013b82abcfeaa158da2490ff86d6bff5a5434d7f,"unbreak <malloc.h> inclusion in gperftools/tcmalloc.h
+
+We have shipped header which checked HAVE_XXX defines which we only
+defined in project-local config.h. So it could never work correctly.
+
+We're now doing #include <malloc.h> just like tc_mallinfo on constant
+which we detect at configure time and write into header that we install."
+alk,2016-02-21 05:18:18,https://api.github.com/repos/gperftools/gperftools/git/commits/19903e6f156d0ff8063880ddc5051b5dc261c1ff,19903e6f156d0ff8063880ddc5051b5dc261c1ff,"drop detection of sys/malloc.h and malloc/malloc.h
+
+Which we don't really need."
+alk,2016-02-21 04:43:21,https://api.github.com/repos/gperftools/gperftools/git/commits/cdff090ebd7a3cef8de60109bef52251758181d7,cdff090ebd7a3cef8de60109bef52251758181d7,Fix several harmless clang warnings
+alk,2016-02-21 04:33:27,https://api.github.com/repos/gperftools/gperftools/git/commits/9095ed08402620b04591c2d27ca222594f0da6db,9095ed08402620b04591c2d27ca222594f0da6db,"implemented stacktrace capturing via libgcc's C++ ABI function
+
+Particularly _Unwind_Backtrace which seems to be gcc extension.
+
+This is what glibc's backtrace is commonly is using.
+
+Using _Unwind_Backtrace directly is better than glibc's backtrace, since
+it doesn't call into dlopen. While glibc does dlopen when it is built as
+shared library apparently to avoid link-time dependency on libgcc_s.so"
+alk,2016-02-20 21:06:08,https://api.github.com/repos/gperftools/gperftools/git/commits/728cbe102108be8296f2485e384392a4408ce9db,728cbe102108be8296f2485e384392a4408ce9db,"force profiler_unittest to do 'real' work
+
+'XOR loop' in profiler unittest wasn't 100% effective because it allowed
+compiler to avoid loading and storing to memory.
+
+After marking result variable as volatile, we're now forcing compiler to
+read and write memory, slowing this loops down sufficiently. And
+profiler_unittest is now passing more consistently.
+
+Closes #628"
+alk,2016-02-01 07:14:43,https://api.github.com/repos/gperftools/gperftools/git/commits/fff6b4fb8814b5f25d4f97889d5003537f7dcc92,fff6b4fb8814b5f25d4f97889d5003537f7dcc92,Extend low-level allocator to support custom pages allocator
+alk,2016-02-01 06:42:20,https://api.github.com/repos/gperftools/gperftools/git/commits/32d992679589ea83e044d3f8263583ae960b0b16,32d992679589ea83e044d3f8263583ae960b0b16,added malloc_bench_shared_full
+alk,2016-02-07 03:13:07,https://api.github.com/repos/gperftools/gperftools/git/commits/00d8fa1ef8d6650f08e00f59baa22cd31b908432,00d8fa1ef8d6650f08e00f59baa22cd31b908432,"always use real throw() on operators new/delete
+
+Since non-glibc-s have no __THROW and lack of throw() on operators gives
+us warning."
+alk,2016-02-07 00:19:54,https://api.github.com/repos/gperftools/gperftools/git/commits/08e034ad5940f24f99a24630c7b71a0de728d05b,08e034ad5940f24f99a24630c7b71a0de728d05b,"Detect working ifunc before enabling dynamic sized delete support
+
+Particularly, on arm-linux and x86-64-debian-kfreebsd compilation fails
+due to lack of support for ifunc. So it is necessary to test at
+configure time whether ifunc is supported."
+alk,2016-02-07 00:01:25,https://api.github.com/repos/gperftools/gperftools/git/commits/a788f354a0cd6de3d714a58ad3e6ae5baf806c3b,a788f354a0cd6de3d714a58ad3e6ae5baf806c3b,"include unistd.h for getpid in thread_lister.c
+
+This fixes warning produced on arm-linux."
+bryanpkc,2016-01-22 17:26:47,https://api.github.com/repos/gperftools/gperftools/git/commits/644a6bdbdb50b26a25e4428c43556467a6e8b5cc,644a6bdbdb50b26a25e4428c43556467a6e8b5cc,"Add support for Linux s390x
+
+This resolves gperftools/gperftools#761."
+bryanpkc,2016-01-29 07:38:42,https://api.github.com/repos/gperftools/gperftools/git/commits/bab7753aad44b3395a063966f32c23f632fee174,bab7753aad44b3395a063966f32c23f632fee174,Fix typo in heap-checker-death_unittest.sh
+eecsninja,2016-01-30 02:17:16,https://api.github.com/repos/gperftools/gperftools/git/commits/17182e1d3c324e8fe9cc02ce2822caa746d7d17a,17182e1d3c324e8fe9cc02ce2822caa746d7d17a,"Fix include of malloc_hook_c.h in malloc_hook.h
+
+malloc_hook.h includes malloc_hook_c.h as <gperftools/malloc_hook_c.h>.
+This requires the compiler to have designated src/gperftools as a
+standard include directory (-I), which may not always be the case.
+
+Instead, include it as ""malloc_hook_c.h"", which will search in the same
+directory first. This will always work, regardless of whether it was
+designated a standard include directory."
+acmorrow,2015-11-22 20:19:12,https://api.github.com/repos/gperftools/gperftools/git/commits/c69721b2b2ceae426c36de191dd0a6fa443c5c7a,c69721b2b2ceae426c36de191dd0a6fa443c5c7a,Add support for obtaining cache size of the current thread and softer idling
+bsilver8192,2016-01-26 21:53:48,https://api.github.com/repos/gperftools/gperftools/git/commits/5ce42e535d6b3bf6c5e41ceb9cf876a70a7e3318,5ce42e535d6b3bf6c5e41ceb9cf876a70a7e3318,"Don't always arm the profiling timer.
+
+It causes a noticeable performance hit and can sometimes confuse GDB.
+
+Tested with CPUPROFILE_PER_THREAD_TIMERS=1.
+
+Based on an old version by mnissler@google.com."
+CunningBaldrick,2016-01-15 17:12:51,https://api.github.com/repos/gperftools/gperftools/git/commits/7f801ea091e03dae7b13160f76fecce15727c9c0,7f801ea091e03dae7b13160f76fecce15727c9c0,"Make sure the alias is not removed by link-time optimization when it can prove
+that it isn't used by the program, as it might still be needed to override the
+corresponding symbol in shared libraries (or inline assembler for that matter).
+For example, suppose the program uses malloc and free but not calloc and is
+statically linked against tcmalloc (built with -flto) and LTO is done.  Then
+before this patch the calloc alias would be deleted by LTO due to not being
+used, but the malloc/free aliases would be kept because they are used by the
+program.  Suppose the program is dynamically linked with a shared library that
+allocates memory using calloc and later frees it by calling free.  Then calloc
+will use the libc memory allocator, because the calloc alias was deleted, but
+free will call into tcmalloc, resulting in a crash."
+alk,2016-01-25 03:45:16,https://api.github.com/repos/gperftools/gperftools/git/commits/6b3e6ef5e0ab65030d116dd55dac8d64f9c72d33,6b3e6ef5e0ab65030d116dd55dac8d64f9c72d33,"don't retain compatibility with old docdir behavior
+
+Since it is not really needed. And since we don't care about too ancient
+autoconfs."
+cjmayo,2015-12-27 18:55:05,https://api.github.com/repos/gperftools/gperftools/git/commits/ccffcbd9e988a39654fe6ec5edd6d817f266ded9,ccffcbd9e988a39654fe6ec5edd6d817f266ded9,"support use of configure --docdir argument
+
+Value of docdir was being overridden in Makefile.
+
+Retain compatibility with old Autoconf versions that do not provide
+docdir."
+alk,2015-12-13 02:27:40,https://api.github.com/repos/gperftools/gperftools/git/commits/050f2d28be8a63836bd74558b82be7983770a654,050f2d28be8a63836bd74558b82be7983770a654,"use alias attribute only for elf platforms
+
+It was reported that clang on OSX doesn't support alias attribute. Most
+likely because of executable format limitations.
+
+New code limits use of alias to gcc-compatible compilers on elf
+platforms (various gnu and *bsd systems). Elf format is known to support
+aliases."
+cyshi,2015-12-02 06:47:15,https://api.github.com/repos/gperftools/gperftools/git/commits/07b0b21ddd168d977c04b1395677de71bb3e402e,07b0b21ddd168d977c04b1395677de71bb3e402e,fix compilation error in spinlock
+sgajera,2015-11-23 19:34:13,https://api.github.com/repos/gperftools/gperftools/git/commits/e14450366abc51c7a25256615179daf0bae1de34,e14450366abc51c7a25256615179daf0bae1de34,Added better description for GetStats API
+alk,2015-11-22 03:17:36,https://api.github.com/repos/gperftools/gperftools/git/commits/64892ae730b704a7f3f23bd8eaeaf206901df201,64892ae730b704a7f3f23bd8eaeaf206901df201,"lower default transfer batch size down to 512
+
+Some workloads get much slower with too large batch size.
+
+This closes bug #678.
+
+binary_trees benchmark benefits from larger batch size. And I found that
+512 is not much slower than huge value that we had."
+alk,2015-10-25 06:16:45,https://api.github.com/repos/gperftools/gperftools/git/commits/6fdfc5a7f40ebcff3fdaada1a2994ff54be2f9c7,6fdfc5a7f40ebcff3fdaada1a2994ff54be2f9c7,"implemented enabling sized-delete support at runtime
+
+Under gcc 4.5 or greater we're using ifunc function attribute to resolve
+sized delete operator to either plain delete implementation (default) or
+to sized delete (if enabled via environment variable
+TCMALLOC_ENABLE_SIZED_DELETE)."
+alk,2015-10-24 04:44:04,https://api.github.com/repos/gperftools/gperftools/git/commits/c2a79d063c949584170b3e7dd2939a4548c16079,c2a79d063c949584170b3e7dd2939a4548c16079,"use x86 pause in spin loop
+
+This saves power and improves performance, particulary on SMT."
+alk,2015-10-24 05:09:25,https://api.github.com/repos/gperftools/gperftools/git/commits/0fb6dd8aa3c2fe3245c31c138ec4dfb05efd7f6d,0fb6dd8aa3c2fe3245c31c138ec4dfb05efd7f6d,added binary_trees benchmark
+alk,2015-10-18 07:40:15,https://api.github.com/repos/gperftools/gperftools/git/commits/a8852489e54e915d22abbdad1688d1f25ccb7925,a8852489e54e915d22abbdad1688d1f25ccb7925,drop unsupported allocation sampling code in tcmalloc_minimal
+alk,2015-10-05 04:12:28,https://api.github.com/repos/gperftools/gperftools/git/commits/a9db0ae516c225543976280047b22b1e0ca08b93,a9db0ae516c225543976280047b22b1e0ca08b93,"implemented (disabled by default) sized delete support
+
+gcc 5 and clang++-3.7 support sized deallocation from C++14. We are
+taking advantage of that by defining sized versions of operator delete.
+
+This is off by default so that if some existing programs that define own
+global operator delete without sized variant are not broken by
+tcmalloc's sized delete operator.
+
+There is also risk of breaking exiting code that deletes objects using
+wrong class (i.e. base class) without having virtual destructors."
+alk,2015-10-05 04:07:54,https://api.github.com/repos/gperftools/gperftools/git/commits/0a18fab3af2f1b59b851836d319a1eff0db5d44e,0a18fab3af2f1b59b851836d319a1eff0db5d44e,implemented sized free support via tc_free_sized
+alk,2015-10-05 04:27:56,https://api.github.com/repos/gperftools/gperftools/git/commits/464688ab6ddb82db22ea9b934ddea192478e4535,464688ab6ddb82db22ea9b934ddea192478e4535,"speedup free code path by dropping ""fast path allowed check"""
+alk,2015-11-22 00:03:09,https://api.github.com/repos/gperftools/gperftools/git/commits/df34e71b575daa6e4fa7588ae0deb9d529566f08,df34e71b575daa6e4fa7588ae0deb9d529566f08,"use $0 when referring to pprof
+
+This fixed debian bug #805536. Debian ships pprof under google-pprof
+name so it is handy when google-pprof --help refers to itself correctly."
+bsazonov,2015-10-15 14:39:08,https://api.github.com/repos/gperftools/gperftools/git/commits/c46eb1f3d2f7a2bdc54a52ff7cf5e7392f5aa668,c46eb1f3d2f7a2bdc54a52ff7cf5e7392f5aa668,Fixed printf misuse in pprof - printed string was passed as format. Better use print instead
+bsazonov,2015-09-23 16:46:13,https://api.github.com/repos/gperftools/gperftools/git/commits/9bbed8b1a8f1229cf0f1b4185683f309267ee1b9,9bbed8b1a8f1229cf0f1b4185683f309267ee1b9,Fixed assembler argument passing inside _syscall6 on MIPS - it was causing 'Expression too complex' compilation errors in spinlock
+alk,2015-10-11 03:31:50,https://api.github.com/repos/gperftools/gperftools/git/commits/962aa53c55968f62f548f6f6f4849a384b505ca0,962aa53c55968f62f548f6f6f4849a384b505ca0,"added more fastpath microbenchmarks
+
+This also makes them output nicer results. I.e. every benchmark is run 3
+times and iteration duration is printed for every run.
+
+While this is still very synthetic and unrepresentave of malloc performance
+as a whole, it is exercising more situations in tcmalloc fastpath. So it a
+step forward."
+alk,2015-10-10 22:58:11,https://api.github.com/repos/gperftools/gperftools/git/commits/347a830689e4dba2adc1368d00fe4723ba726b4a,347a830689e4dba2adc1368d00fe4723ba726b4a,"Ensure that PPROF_PATH is set for debugallocation_test
+
+Which fixes issue #728."
+alk,2015-10-10 22:35:54,https://api.github.com/repos/gperftools/gperftools/git/commits/a9059b7c30308a4f4ab25f00e55b67c649614ed3,a9059b7c30308a4f4ab25f00e55b67c649614ed3,"prevent clang from inlining Mallocer in heap checker unittest
+
+Looks like existing ""trick"" to avoid inlining doesn't really prevent
+sufficiently smart compiler from inlining Mallocer function. Which
+breaks tests, since test relies Mallocer having it's own separate stack
+frame.
+
+Making mallocer_addr variable volatile is seemingly enough to stop that."
+myrsloik,2015-09-26 23:18:31,https://api.github.com/repos/gperftools/gperftools/git/commits/121038308d8c5b34707614c44de265816a322563,121038308d8c5b34707614c44de265816a322563,Check if _MSC_VER is defined to avoid warnings
+myrsloik,2015-09-26 23:11:14,https://api.github.com/repos/gperftools/gperftools/git/commits/73673229955cf35c5b3046ee3100d94e82d33bc2,73673229955cf35c5b3046ee3100d94e82d33bc2,Make default config.h work with VS2015
+alk,2015-09-26 16:43:50,https://api.github.com/repos/gperftools/gperftools/git/commits/7707582448d5bdf311d88726c5f77fcbb0bedd09,7707582448d5bdf311d88726c5f77fcbb0bedd09,"Merge pull request #717 from myrsloik/master
+
+Use correct mangled new and delete symbols on windows x64"
+myrsloik,2015-09-24 17:57:26,https://api.github.com/repos/gperftools/gperftools/git/commits/9eb63bddfb7a8a7b086bb3daceeeaa2e3b1d8f67,9eb63bddfb7a8a7b086bb3daceeeaa2e3b1d8f67,Use correct mangled new and delete symbols on windows x64
+bsilver8192,2015-06-16 23:56:48,https://api.github.com/repos/gperftools/gperftools/git/commits/c4069d2d37b67296d675c2d1de42a46dc6d43efc,c4069d2d37b67296d675c2d1de42a46dc6d43efc,"Add empty virtual destructor to class with virtual methods.
+
+Clang 3.5 has a warning about deleting objects with virtual methods
+through non-virtual destructors which was triggered. I'm not sure
+whether this actually creates any undefined or otherwise incorrect
+behavior, but it seems like a good thing to fix regardless.
+
+Example compiler warning:
+third_party/gperftools/src/tests/profile-handler_unittest.cc:282:5: error:
+  delete called on '(anonymous namespace)::BusyThread' that has virtual
+  functions but non-virtual destructor [-Wdelete-non-virtual-dtor]
+    delete busy_worker_;
+    ^"
+plopresti,2015-05-25 18:56:51,https://api.github.com/repos/gperftools/gperftools/git/commits/019362fefcdca39a46d1a831ed46266c24b9a273,019362fefcdca39a46d1a831ed46266c24b9a273,"Add support for CPUPROFILE_TIMER_SIGNAL environment variable.
+
+Which both enables per-thread timers and allows the signal number for
+the timer to be selected.
+
+[alk@tut.by: reformatted commit message for subject line length]
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+mtk10669,2015-05-13 13:53:05,https://api.github.com/repos/gperftools/gperftools/git/commits/81d8d2a9e7f941a2051781fd0fe62c683c32f1ef,81d8d2a9e7f941a2051781fd0fe62c683c32f1ef,"Add ""ARMv8-A"" to the supporting list of ARM architecture."
+projectgus,2015-05-03 22:18:43,https://api.github.com/repos/gperftools/gperftools/git/commits/f25f8e0bf2d361f852929848d79d7ba54586c352,f25f8e0bf2d361f852929848d79d7ba54586c352,Clarify that only tcmalloc_minimal is supported on Windows.
+matt-cross,2015-03-26 16:10:23,https://api.github.com/repos/gperftools/gperftools/git/commits/2c1a165fa56a6f8dff8fa2662ceda971ad676ead,2c1a165fa56a6f8dff8fa2662ceda971ad676ead,"Add support for reading debug symbols automatically on systems where shared libraries with debug symbols are installed at ""/usr/lib/debug/<originalpath>.debug"", such as RHEL and CentOS."
+ccorail,2015-02-13 17:52:21,https://api.github.com/repos/gperftools/gperftools/git/commits/2e654956287043a30aeaec20e5c19650358af618,2e654956287043a30aeaec20e5c19650358af618,callgrind : handle inlined functions
+ccorail,2015-02-13 17:51:33,https://api.github.com/repos/gperftools/gperftools/git/commits/90d7408d381cf2ad68ce4974cbccd51ed5222ca3,90d7408d381cf2ad68ce4974cbccd51ed5222ca3,pprof : callgrind : fix unknown files
+rzinsly,2014-12-23 12:55:22,https://api.github.com/repos/gperftools/gperftools/git/commits/b8b027d09a53dd6292d2f7c45aec40198628a808,b8b027d09a53dd6292d2f7c45aec40198628a808,"Make PPC64 use 64K of internal page size for tcmalloc by default
+
+This patch set the default tcmalloc internal page size to 64K when
+built on PPC."
+rzinsly,2014-12-23 12:29:49,https://api.github.com/repos/gperftools/gperftools/git/commits/3f55d874be8812aef9f0f567048188584962b4c1,3f55d874be8812aef9f0f567048188584962b4c1,"New configure flags to set the alignment and page size of tcmalloc
+
+Added two new configure flags, --with-tcmalloc-pagesize and
+--with-tcmalloc-alignment, in order to set the tcmalloc internal page
+size and tcmalloc allocation alignment without the need of a compiler
+directive and to make the choice of the page size independent of the
+allocation alignment."
+rzinsly,2014-11-27 16:11:09,https://api.github.com/repos/gperftools/gperftools/git/commits/8eb4ed785ae883acb6425fd980e9d3e6bdcab89d,8eb4ed785ae883acb6425fd980e9d3e6bdcab89d,"Added option to disable libunwind linking
+
+This patch adds a configure option to enable or disable libunwind linking.
+The patch also disables libunwind on ppc by default."
+wizeman,2014-10-08 02:39:14,https://api.github.com/repos/gperftools/gperftools/git/commits/44c61ce6c4c713b194330641f400bbf64fd2abec,44c61ce6c4c713b194330641f400bbf64fd2abec,"Fix parsing /proc/pid/maps dump in CPU profile data file
+
+When trying to use pprof on my machine, the symbols of my program were
+not being recognized.
+
+It turned out that pprof, when calculating the offset of the text list
+of mapped objects (the last section of the CPU profile data file), was
+assuming that the slot size was always 4 bytes, even on 64-bit machines.
+
+This led to ParseLibraries() reading a lot of garbage data at the
+beginning of the map, and consequently the regex was failing to match on
+the first line of the real (non-garbage) map."
+amcneeney,2014-08-22 09:01:24,https://api.github.com/repos/gperftools/gperftools/git/commits/bbf346a856d4a7c5c2ab0e65d7cccf3dc1f23f13,bbf346a856d4a7c5c2ab0e65d7cccf3dc1f23f13,"Cope with new addr2line outputs for DWARF4
+
+Copes with ? for line number (converts to 0).
+Copes with (discriminator <num>) suffixes to file/linenum (removes).
+
+Change-Id: I96207165e4852c71d3512157864f12d101cdf44a"
+jia-kai,2014-07-28 18:28:03,https://api.github.com/repos/gperftools/gperftools/git/commits/f1ae3c446f34f6e8ac901caba281051ec269e4df,f1ae3c446f34f6e8ac901caba281051ec269e4df,Add an option to allow disabling stripping template argument in pprof
+MightMike,2014-07-14 01:09:35,https://api.github.com/repos/gperftools/gperftools/git/commits/4b788656bb9c480640d917d27d8a94a5eae436f5,4b788656bb9c480640d917d27d8a94a5eae436f5,"added option to display stack traces in output for heap checker
+
+Quoting from email:
+
+I had the same question as William posted to stack overflow back on
+Dec 9,2013: How to display symbols in stack trace of google-perftools
+heap profiler (*).  I dug into the source and realized the
+functionality was not there but could be added. I am hoping that
+someone else will find this useful/helpful.
+
+The patch I created will not attach so I am adding below.
+
+Enjoy!
+
+-- Michael
+
+* http://stackoverflow.com/questions/20476918/how-to-display-symbols-in-stack-trace-of-google-perftools-heap-profiler"
+rzinsly,2014-04-08 20:45:13,https://api.github.com/repos/gperftools/gperftools/git/commits/75b65f96b0bb44d70e0a461a03a3f8c928390283,75b65f96b0bb44d70e0a461a03a3f8c928390283,"PowerPC: stacktrace function refactor and fixes
+
+This patch fixes the stacktrace creating when the function is
+interrupted by a signal. For Linux, the vDSO signal trampoline symbol is
+compared against LR from stack backchain and handled different in that
+case (since the signal trampoline layout a different stack frame).
+
+Because of this extensive change the PowerPC stacktrace code has now
+been refactored to split in Linux and Darwin specific codes."
+rzinsly,2014-04-08 20:44:08,https://api.github.com/repos/gperftools/gperftools/git/commits/8deea9ff2a3e6eef8af64ea0727d6cb840c13769,8deea9ff2a3e6eef8af64ea0727d6cb840c13769,"VDSOsupport cleanup
+
+This patch cleans up unused VDSO getcpu racking from VDSOsupport class,
+since the code is not used anywhere in gperftools and symbol name is not
+architecture independent."
+rzinsly,2014-04-08 20:43:11,https://api.github.com/repos/gperftools/gperftools/git/commits/9d5e1a0aa5a6ad1c7af18b65016fa5c9b7fccb47,9d5e1a0aa5a6ad1c7af18b65016fa5c9b7fccb47,"Fixed issues with heap checker on PPC64 LE.
+
+Fixed the wrapper for the syscall sys_clone and the test for heap
+checker on PPC64 LE. Both use the ODP structure, which is only
+used on BE architectures."
+rzinsly,2014-04-08 20:42:17,https://api.github.com/repos/gperftools/gperftools/git/commits/49237462c8ae7920332c1034c623e57b50a6109c,49237462c8ae7920332c1034c623e57b50a6109c,"Fixed the way that pprof packed profile data in BE.
+
+pprof was writing profile data in a way that only works for little-endian
+files, this patch verifies if the system is big-endian and writes packed
+data correctly."
+rzinsly,2014-04-08 20:37:29,https://api.github.com/repos/gperftools/gperftools/git/commits/a1ae66ef110bd87ff97903e86fd84c745db24646,a1ae66ef110bd87ff97903e86fd84c745db24646,"Fixed the use of addr2line to discover the separator symbol.
+
+In systems where addr2line has a version greater than 2.22 pprof fails
+in discover the separator symbol (_fini). This patch identifies if
+addr2line can find the symbol, otherwise pprof uses objdump to recover
+a address that addr2line's newer versions can recognize as the separator
+function."
+0-wiz-0,2014-02-25 20:41:28,https://api.github.com/repos/gperftools/gperftools/git/commits/91179961490a601f2c611889b3075e995fa5437e,91179961490a601f2c611889b3075e995fa5437e,"Look for backtrace() in libexecinfo as well.
+
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+0-wiz-0,2014-02-25 20:41:07,https://api.github.com/repos/gperftools/gperftools/git/commits/fd3379a213b2a99a72a7544b6208056daf15d0d2,fd3379a213b2a99a72a7544b6208056daf15d0d2,"Fix unportable test(1) construct.
+
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+0-wiz-0,2014-02-25 20:40:11,https://api.github.com/repos/gperftools/gperftools/git/commits/a7223c2a14431ffd783117c55f84a2c84423d313,a7223c2a14431ffd783117c55f84a2c84423d313,"Test for memalign in configure.ac. Disable a test that uses memalign if it is not found.
+
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+suihkulokki,2014-02-03 14:31:32,https://api.github.com/repos/gperftools/gperftools/git/commits/d31f522f0e1b0e87ee3d5941e331ba745a0f5c23,d31f522f0e1b0e87ee3d5941e331ba745a0f5c23,"Add aarch64 defines
+
+With atomic operations and system call support in place, enable
+with __aarch64__ defines Aarch64 support in other files around
+the google-perftools header files. After these, google-perftools
+testsuite (make check) results:
+
+8 of 46 tests failed.
+
+FAIL: sampling_test.sh
+FAIL: heap-profiler_unittest.sh
+FAIL: heap-checker_unittest.sh
+FAIL: heap-checker-death_unittest.sh
+FAIL: sampling_debug_test.sh
+FAIL: heap-profiler_debug_unittest.sh
+FAIL: heap-checker_debug_unittest.sh
+FAIL: profiler_unittest.sh
+
+While it indicates that there is still work to do, This is still
+better than the result I get on ARMv7:
+
+12 of 46 tests failed."
+suihkulokki,2014-02-04 09:09:47,https://api.github.com/repos/gperftools/gperftools/git/commits/15b5e7a35c83ce5d38fa523f2c291a2ac30bb8ed,15b5e7a35c83ce5d38fa523f2c291a2ac30bb8ed,"linux_syscall_support.h: add aarch64 support
+
+Aarch64 support for linux_syscall_support.h. Since Aarch64 is a brand
+new architecture, none of the legacy system calls are neccesarily
+available. Thus some changes were neccesary affect other architectures
+as well:
+
+1) use getdents64 where available and else getdents (for ppc64)
+
+2) other legacy system calls, pipe, waitpid and open replaced by pipe2,
+   wait4 and openat where available.
+
+3) use fstatat if stat is not available.
+
+The aarch64 system call interface follows the Aarch64 calling convention
+(regs x0-x5 for arguments and x8 system call number - return in x0).
+Clone implementation is adapted from glibc.
+
+v2: step back in getdents removal due to ppc64"
+wyqkp,2014-02-11 15:20:31,https://api.github.com/repos/gperftools/gperftools/git/commits/a0ed9ace534372fbeee9bfefd6e26b922f0a1835,a0ed9ace534372fbeee9bfefd6e26b922f0a1835,"debugallocation: fix bus error on mipsel-linux platform when enable use_malloc_page_fence
+
+Fix below ""BUS ERROR"" issue:
+
+a0 hold start address of memory block allocated by DebugAllocate in debugallocation.cc
+
+gdb) info registers
+          zero       at       v0       v1       a0       a1       a2       a3
+ R0   00000000 10008700 772f62a0 00084d40 766dcfef 7fb5f420 00000000 004b4dd8
+            t0       t1       t2       t3       t4       t5       t6       t7
+ R8   7713c1a0 7712dbc0 ffffffff 777bc000 f0000000 00000001 00000000 00403d10
+            s0       s1       s2       s3       s4       s5       s6       s7
+ R16  7fb5ff1c 00401b9c 77050020 7fb5fb18 00000000 004cb008 004ca748 ffffffff
+            t8       t9       k0       k1       gp       sp       s8       ra
+ R24  0000002f 771adcd4 00000000 00000000 771f4140 7fb5f408 7fb5f430 771add6c
+            sr       lo       hi      bad    cause       pc
+      00008713 0000e9fe 00000334 766dcff7 00800010 771adcfc
+           fsr      fir
+      00000004 00000000
+
+(gdb) disassemble
+Dump of assembler code for function _ZNSs4_Rep10_M_disposeERKSaIcE:
+   0x771adcd4 <+0>:     lui     gp,0x4
+   0x771adcd8 <+4>:     addiu   gp,gp,25708
+   0x771adcdc <+8>:     addu    gp,gp,t9
+   0x771adce0 <+12>:    lw      v0,-28696(gp)
+   0x771adce4 <+16>:    beq     a0,v0,0x771add38 <_ZNSs4_Rep10_M_disposeERKSaIcE+100>
+   0x771adce8 <+20>:    nop
+   0x771adcec <+24>:    lw      v0,-30356(gp)
+   0x771adcf0 <+28>:    beqzl   v0,0x771add1c <_ZNSs4_Rep10_M_disposeERKSaIcE+72>
+   0x771adcf4 <+32>:    lw      v0,8(a0)
+   0x771adcf8 <+36>:    sync
+=> 0x771adcfc <+40>:    ll      v0,8(a0)
+   0x771add00 <+44>:    addiu   at,v0,-1
+   0x771add04 <+48>:    sc      at,8(a0)
+   0x771add08 <+52>:    beqz    at,0x771adcfc <_ZNSs4_Rep10_M_disposeERKSaIcE+40>
+   0x771add0c <+56>:    nop
+   0x771add10 <+60>:    sync
+   0x771add14 <+64>:    b       0x771add24 <_ZNSs4_Rep10_M_disposeERKSaIcE+80>
+   0x771add18 <+68>:    nop
+   0x771add1c <+72>:    addiu   v1,v0,-1
+   0x771add20 <+76>:    sw      v1,8(a0)
+   0x771add24 <+80>:    bgtz    v0,0x771add38 <_ZNSs4_Rep10_M_disposeERKSaIcE+100>
+   0x771add28 <+84>:    nop
+   0x771add2c <+88>:    lw      t9,-27072(gp)
+   0x771add30 <+92>:    jr      t9
+   0x771add34 <+96>:    nop
+   0x771add38 <+100>:   jr      ra
+   0x771add3c <+104>:   nop
+End of assembler dump.
+
+ll instruction manual:
+Load Linked:
+Loads the destination register with the contents of the word
+that is at the memory location. This instruction implicity performs
+a SYNC operation; all loads and stores to shared memory fetched prior
+to the ll must access memory before the ll, and loads and stores to
+shared memory fetched subsequent to the ll must access memory after ll.
+Load Linked and Store Conditional can be use to automatically update
+memory locations. *This instruction is not valid in the mips1 architectures.
+The machine signals an address exception when the effective address is not
+divisible by four.
+
+Signed-off-by: Wang YanQing <udknight@gmail.com>
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>
+[alk@tut.by: removed addition of unused #include]"
+suihkulokki,2014-01-29 08:54:29,https://api.github.com/repos/gperftools/gperftools/git/commits/e8fe990fa06e337a07059c55adc6ed2a0888de95,e8fe990fa06e337a07059c55adc6ed2a0888de95,"implement atomics with gcc intrinsics
+
+Gcc after 4.7 provides atomic builtins[1]. Use these instead of adding
+yet-another-assembly port for Aarch64 (64-bit ARM). This patch enables
+succesfully building and running atomicops unittest on Aarch64.
+
+This patch enables using gcc builtins only when no assembly
+implementation is provided. But as a quick check, atomicops_unittest
+and rest of testsuite passes with atomicops-internals-gcc also
+ARMv7 and X86_64 if the ifdef in atomicops is adjusted to prefer
+the generic implementation.
+
+[1] http://gcc.gnu.org/onlinedocs/gcc/_005f_005fatomic-Builtins.html"
+xiaoyur347,2014-01-11 03:39:53,https://api.github.com/repos/gperftools/gperftools/git/commits/60b12171bc73117c0108b847bb310af095cd2778,60b12171bc73117c0108b847bb310af095cd2778,"fix GCC version detect for platforms other than X86/X64
+
+[alk@tut.by: commented why we're disabling __thread not just for x86]
+
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+xiaoyur347,2013-12-20 01:41:08,https://api.github.com/repos/gperftools/gperftools/git/commits/a15115271cc475509b17bf7fecbe1ac4966baf2e,a15115271cc475509b17bf7fecbe1ac4966baf2e,"add ""-finstrument-functions"" support for MIPS uclibc.
+should configure with CXXFLAGS=""-finstrument-functions"""
+xiaoyur347,2013-12-20 01:02:49,https://api.github.com/repos/gperftools/gperftools/git/commits/7c4888515ed93347d4793fc066cd6048e519a197,7c4888515ed93347d4793fc066cd6048e519a197,"add uclibc support
+* some variables defined with ""char *"" should be modified to ""const char*""
+* For uclibc, glibc's ""void malloc_stats(void)"" should be ""void malloc_stats(FILE *)"", is commented now.
+* For uclibc, __sbrk is with attribute ""hidden"", so we use mmap allocator for uclibc."
+JoonsooKim,2013-10-10 05:26:47,https://api.github.com/repos/gperftools/gperftools/git/commits/7be35fb0d844c73f5c5301f62074294df5acbc5c,7be35fb0d844c73f5c5301f62074294df5acbc5c,"central_freelist: change fetch ordering
+
+When we fetch objects from the span for thread cache, we make
+reverse-ordered list against original list on the span and suppy this list
+to thread cache. This algorithm has trouble with newly created span.
+Newly created span has ascending ordered objects list. Since thread cache
+will get reverse-ordered list against it, user gets objects as descending order.
+
+Following example shows what occurs in this algorithm.
+
+new span: object list: 1 -> 2 -> 3 -> 4 -> 5 -> ...
+fetch N items: N -> N-1 -> N-2 -> ... -> 2 -> 1 -> NULL
+thread cache: N -> N-1 -> N-2 -> ... -> 2 -> 1 -> NULL
+
+user's 1st malloc: N
+user's 2nd malloc: N-1
+...
+user's Nth malloc: 1
+
+In general, access memory with ascending order is better than descending
+order in terms of the performance. So this patch fix this situation.
+
+I run below program to measure performance effect.
+
+	#define MALLOC_SIZE (512)
+	#define CACHE_SIZE (64)
+	#define TOUCH_SIZE (512 / CACHE_SIZE)
+
+	array = malloc(sizeof(void *) * count);
+
+	for (i = 0; i < 1; i++) {
+		for (j = 0; j < count; j++) {
+			x = malloc(MALLOC_SIZE);
+			array[j] = x;
+		}
+	}
+
+	repeat = 10;
+	for (i = 0; i < repeat; i++) {
+		for (j = 0; j < count; j++) {
+			x = array[j];
+			for (k = 0; k < TOUCH_SIZE; k++) {
+				*(x + (k * CACHE_SIZE)) = '1';
+			}
+		}
+	}
+
+LD_PRELOAD=libtcmalloc_minimal.so perf stat -r 10 ./a.out 1000000
+
+**** Before ****
+ Performance counter stats for './a.out 1000000' (10 runs):
+
+       2.715161299 seconds time elapsed                                          ( +-  0.07% )
+
+**** After ****
+ Performance counter stats for './a.out 1000000' (10 runs):
+
+       2.259366428 seconds time elapsed                                          ( +-  0.08% )"
+JoonsooKim,2013-10-10 02:46:12,https://api.github.com/repos/gperftools/gperftools/git/commits/7315b45c28564afdc2699beff934a3b45457edc6,7315b45c28564afdc2699beff934a3b45457edc6,"central_freelist: fetch objects as much as possible during each trial
+
+It is better to reduce function call if possible. If we try to fetch
+objects from one span as much as possible during each function call,
+number of function call would be reduced and this would help performance."
+JoonsooKim,2013-10-10 01:06:33,https://api.github.com/repos/gperftools/gperftools/git/commits/cc002ea19363e1ebbd7f3e809d116ab81a6862cd,cc002ea19363e1ebbd7f3e809d116ab81a6862cd,"skip unnecessary check during double-check SizeClass intergrity
+
+On initialization step, tcmalloc double-checks SizeClass integrity with
+all possible size values, 0 to kMaxSize. This causes tremendous overhead
+for short-lived applications.
+
+For example, consider following command.
+'find -exec grep something {} \;'
+
+Actual work of each grep is really small, but double-check requires
+more work. To reduce this overhead, it is best to remove double-check
+entirely. But we cannot be sure the integrity without double-checking,
+so alternative is needed.
+
+This patch doesn't remove double-check, instead, try to skip unnecessary
+check based on ClassIndex() implementation. This reduce much overhead and
+the code has same coverage as previous double-check. Following is
+the result of this patch.
+
+time LD_PRELOAD=libtcmalloc_minimal.so find ./ -exec grep ""SOMETHING"" {} \;
+
+* Before
+real	0m3.675s
+user	0m1.000s
+sys	0m0.640s
+
+* This patch
+real	0m2.833s
+user	0m0.056s
+sys	0m0.220s
+
+* Remove double-check entirely
+real	0m2.675s
+user	0m0.072s
+sys	0m0.184s"
+petrhosek,2013-08-24 06:58:47,https://api.github.com/repos/gperftools/gperftools/git/commits/2a2d6596f8c3d62b7ec444761f4edf0c85d10d92,2a2d6596f8c3d62b7ec444761f4edf0c85d10d92,Adds system-alloc_unittest Visual Studio project
+petrhosek,2013-08-23 20:53:35,https://api.github.com/repos/gperftools/gperftools/git/commits/83aed118e009b92ea88645ef1f7b842a921612c5,83aed118e009b92ea88645ef1f7b842a921612c5,"issue-567: Allows for overriding system allocator on Windows
+
+[alk@tut.by: minor changes to make mingw build work]
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"
+petrhosek,2013-08-24 21:24:47,https://api.github.com/repos/gperftools/gperftools/git/commits/4ad16873a0a2d8861a0bfe8234d45e31cc70ee90,4ad16873a0a2d8861a0bfe8234d45e31cc70ee90,Exports SysAllocator class to avoid .dll build errors
+JoonsungUm,2013-08-27 13:16:18,https://api.github.com/repos/gperftools/gperftools/git/commits/7a178d472737d988583bade3f0345201651cd43f,7a178d472737d988583bade3f0345201651cd43f,"Update document for tcmalloc
+
+Update tcmalloc.html for new parameters.
+
+ * kMaxSize = 256k
+ * kNumClasses = 88
+ * kPageShift = 13
+
+Signed-off-by: Aliaksey Kandratsenka <alk@tut.by>"

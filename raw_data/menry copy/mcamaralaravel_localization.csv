@@ -1,0 +1,926 @@
+laravel-localization,Easy localization for Laravel
+username,timestamp,url,sha,message
+czim,2019-09-08 13:56:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/82d06c66cdf1e3ed17783842886d87cbd5aadd43,82d06c66cdf1e3ed17783842886d87cbd5aadd43,"Fixed issues with translated route caching (#646)
+
+* Fixed loading of translated cached routes in console context
+
+Used to only work for requests, since it depended on the request segment to read the locale. Now, LaravelLocalization's current locale is used.
+
+* Fixed route cache and list command for Laravel 5.8"
+voidgraphics,2019-09-06 07:43:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e43deb6c8450422d5bb2c4ab412c1b46574f918e,e43deb6c8450422d5bb2c4ab412c1b46574f918e,"Added blade type to code block (#643)
+
+This allows proper syntax highlighting for the blade code example"
+mcamara,2019-09-06 07:38:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7d6f2de6e020be33164da93af35e5f9bb52a3d89,7d6f2de6e020be33164da93af35e5f9bb52a3d89,Update README.md
+mcamara,2019-09-06 07:38:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2c8e23a6884aa89b93a77395b12704a4d5c2f979,2c8e23a6884aa89b93a77395b12704a4d5c2f979,Update CHANGELOG.md
+mcamara,2019-09-06 07:37:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7ffe327d8fa0a35306947b4dbc6a1acf8842fe97,7ffe327d8fa0a35306947b4dbc6a1acf8842fe97,Update README.md
+poldixd,2019-09-06 07:34:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/476778f2adce4534165dfa5c42474d8d22c2caf9,476778f2adce4534165dfa5c42474d8d22c2caf9,"Added Laravel 6 Support (#649)
+
+* Added Laravel 6 and orchestra/testbench-browser-kit 4.0
+
+* Updated Lang::trans to Lang::get
+
+* Changed the starts_with helper to Str::startsWith
+
+* Dropped php7.0 Support
+
+* Dropped php7.0 support"
+dmitrybubyakin,2019-06-28 16:04:56,https://api.github.com/repos/mcamara/laravel-localization/git/commits/af8f9f30488a83533dda3870fcc335b55cf964e0,af8f9f30488a83533dda3870fcc335b55cf964e0,"Respect locales mapping (#631)
+
+* Respect locales mapping
+
+* PHPUnit 8 compatibility
+
+* Replace localeCode with corresponding value from the mapping
+
+* Update README.md and CHANGELOG.md"
+mcamara,2019-05-24 10:15:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7b45211f039d7f8232ea2a0a44dc9bca5739531d,7b45211f039d7f8232ea2a0a44dc9bca5739531d,Create FUNDING.yml
+nikazooz,2019-03-05 15:37:01,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cf89d2515d576292e65bfa5893a0efd1cc5a4064,cf89d2515d576292e65bfa5893a0efd1cc5a4064,"Fix route caching on Laravel v5.8 (#626)
+
+Laravel v5.8 has a bit different way of getting environment variables.
+The `ROUTING_LOCALE` variable is probably not set at boot time so it will not be available later on in the app lifecycle since `getenv` function is not used directly.
+This fix is just using `getenv` as a fallback. Another option would be to just use it directly and not as a fallback for `env`."
+rolandstarke,2019-03-05 10:38:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/64ed431f3ae69aa29451de7637084c84f858c819,64ed431f3ae69aa29451de7637084c84f858c819,"Update README.md (#624)
+
+Code change not represented in readme:
+https://github.com/mcamara/laravel-localization/issues/324"
+mcamara,2019-02-28 13:27:56,https://api.github.com/repos/mcamara/laravel-localization/git/commits/73d55caf294654ef133115d47ec2ca6733d33c61,73d55caf294654ef133115d47ec2ca6733d33c61,Updated to laravel 5.8 (#623)
+plamenst,2019-02-20 15:04:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/933df7f51130ef6345cc38ee97e22b134edd1dbe,933df7f51130ef6345cc38ee97e22b134edd1dbe,"Translated routes by url caching (#614)
+
+* findTranslatedRouteByUrl cache
+
+* Minor changes
+
+* Minor changes"
+salbertson,2018-11-26 21:27:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fe68390535bb1feef10e21c4e962e11c674307f0,fe68390535bb1feef10e21c4e962e11c674307f0,"Add a ""Reviewed by Hound"" badge (#605)"
+neochief,2018-10-30 06:33:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e82a6c9d809b82afb7ae226f18ac3cb077a18754,e82a6c9d809b82afb7ae226f18ac3cb077a18754,Fixed getLocalizedURL producing duplicate query string (side effect of #578). (#602)
+addorange,2018-10-16 15:48:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f79896fcbb2f1822ab26fec5922934108e0caa33,f79896fcbb2f1822ab26fec5922934108e0caa33,"locales mapping test (#601)
+
+* added script to composer running tests
+
+* added localesMapping test on language negotiation"
+jonathanpel,2018-10-16 15:47:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9807eabb268cd092b3be92a3980e349f1f473233,9807eabb268cd092b3be92a3980e349f1f473233,"Fix some url translations (#578)
+
+* Add original url query to the result of getLocalizedURL.
+
+* Change findTranslatedRouteByUrl so that it resolves URLs with their path rather than the full URL.
+This will make it possible to match an URL when it has a query string (parameters that are not managed by Laravel).
+
+* Fix extractAttributes so that it doesn't match the wrong route if the number of segment is the same. e.g: ""item/1"" shouldn't match ""project/{project_id}"".
+
+* Fix extractAttributes so that URL that have an optional argument not present will still return the attribute with a null value. e.g: ""item"" matching ""item/{item_id?}"" will still return the ""item_id"" attribute, but null.
+
+* Fix extractAttributes so that the attribute array won't return attributes from non matching routes. Also fix routes that have a smaller number of segment than the URL should be ignored since it's automatically not a match and would cause wrong matches.
+
+* Fix extractAttributes so that empty value like a ""0"" inside a URL will still be treated as part of the URL. e.g: ""page/0"" for route ""page/{page_number}""
+Also fix that routes with only an optional argument would automatically be rejected as a match.
+
+* Remove the possible left-over '/' generated in getURLFromRouteNameTranslated.
+
+* Add more tests to testGetLocalizedURLFormat for some use cases it wouldn't pass before.
+
+* Change getRouteNameFromAPath to use the URL path so that it ignores additional parameters and also remove excess '/' from both the translatedRoutes and the URL for the final check.
+Add a new unit test for getRouteNameFromAPath.
+
+* Fix extractAttributes so that it remove the current locale from the URL path. This way we can match it with the routes. Add tests for this use case.
+
+* Removed overuse of the shortand if for the urlQuery"
+addorange,2018-10-16 14:44:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/95b8c3f10795a213e2df8847bb4200b01e3bd78b,95b8c3f10795a213e2df8847bb4200b01e3bd78b,amend localesMapping documentation (#600)
+iwasherefirst2,2018-10-16 13:50:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6d0865d76667564c14ee2ecf2192e40eecb1ffd9,6d0865d76667564c14ee2ecf2192e40eecb1ffd9,"Fix https://github.com/mcamara/laravel-localization/issues/305 (#599)
+
+* Cleanup code in LaravelLocalizationRedirectFilter
+
+* Fix problem when hideDefaultLocale and AcceptLangaugeHeader are both enabled
+
+* Fixed problem with AcceptHeader & hideDEfault"
+addorange,2018-10-15 14:51:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c5671cf5c9f4b1fff106435bfd5a330d1bb5f4ea,c5671cf5c9f4b1fff106435bfd5a330d1bb5f4ea,"Mapping locales to custom prefixes (#560)
+
+* add locale mapping
+
+* supporting locales mapping in negotiator
+
+* add explanation on config
+
+* uncomment only en locale
+
+* added readme section to reflect localesMapping"
+iwasherefirst2,2018-10-15 14:49:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3a3f844e0863fc97a5134b51ac79e6639e597bff,3a3f844e0863fc97a5134b51ac79e6639e597bff,Cleanup code in LaravelLocalizationRedirectFilter (#598)
+kamil-kielczewski,2018-10-13 16:41:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/154d4deef3bb3274e5e36d333397eab0fd4b9b0a,154d4deef3bb3274e5e36d333397eab0fd4b9b0a,"Fix documentation due to #557 (add info about supportedLocales and move config section below installation) (#597)
+
+* Fix documentation due to #557
+
+* Fix table of contents (move config section below instalation)"
+mcamara,2018-10-13 16:39:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/eef0693d700583383b25c9d67893117bf7ec17df,eef0693d700583383b25c9d67893117bf7ec17df,Update README.md
+mcamara,2018-10-05 07:45:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/515a24cb1db61980384c4da9cf86740573f5b740,515a24cb1db61980384c4da9cf86740573f5b740,Update README.md
+Te7a-Houdini,2018-10-05 07:44:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fa88941c1e20910663bc9fa5d920f421ec1d1bfb,fa88941c1e20910663bc9fa5d920f421ec1d1bfb,"Remove useless required from composer (#596)
+
+* Remove useless required from composer
+
+* Modify required composer versions to support only till 5.7"
+kalessil,2018-10-05 07:43:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3f1785c939443e228065044c14688cf296d258ef,3f1785c939443e228065044c14688cf296d258ef,Load skipped URls from configuration. (#589)
+mcamara,2018-09-04 10:30:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c661954ad9a01a3f47b9f39373de3b523b7fe4a8,c661954ad9a01a3f47b9f39373de3b523b7fe4a8,Update CHANGELOG.md
+czim,2018-09-04 10:29:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4eecaea962196344a86110bd30ecaf3af9b7543b,4eecaea962196344a86110bd30ecaf3af9b7543b,"Merge in logic of czim/laravel-localization-route-cache (#584)
+
+* Merged in localized route caching basics
+
+* Added documentation on caching, and updated changelog
+
+This assumes that the next release version will be 1.3.
+
+* Added phpunit.xml filter to allow code coverage
+
+* Changed out unreleased version to actually unreleased version in changelog"
+PawelDmochowskiDRAST,2018-09-04 10:28:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/54405eeb69b8a7c722ac93727f07e23cb3c6c19f,54405eeb69b8a7c722ac93727f07e23cb3c6c19f,"remove UTF-8 suffix from regional (#573)
+
+* remove UTF-8 suffix from regional
+
+@mcamara, @lotestudio this update is server configuration specific:
+- some linux installations suffix locales with "".UTF-8"", some with "".utf8""
+- on Windows there is no suffix
+
+I'd propose to remove the forced suffix from setLocale and put suggestion in docs that this need's to be set on a development env in config file.
+
+* Update LaravelLocalization.php
+
+* Update LaravelLocalization.php
+
+* Update config.php"
+kalessil,2018-07-26 13:49:01,https://api.github.com/repos/mcamara/laravel-localization/git/commits/568d3197fdef4b50076fe3f9105474591f188e42,568d3197fdef4b50076fe3f9105474591f188e42,Minor code tweaks (#574)
+PoLaKoSz,2018-06-11 16:10:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/79f0ea68d93693e9fd6159ef8ec88b9a7a2e343c,79f0ea68d93693e9fd6159ef8ec88b9a7a2e343c,Fxed typo (#559)
+woodspire,2018-04-30 17:28:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3764780b0ee3ebb4731632b5ff70ca594fd1735f,3764780b0ee3ebb4731632b5ff70ca594fd1735f,"Fix replacing route parameter with correct key with implicit paramet… (#552)
+
+* Fix replacing route parameter with correct key with implicite parameter bindings.
+
+Inspired by Illuminate\Routing\UrlGenerator::formatParameters()
+
+* Update readme"
+bs-thomas,2018-04-25 17:16:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6cd1756bce568248b58d04878e5e1caf6096e673,6cd1756bce568248b58d04878e5e1caf6096e673,Issue #546 - Fix issue with unable to detect routes properly when there are multiple consecutive slashes before locale. (#547)
+mcamara,2018-03-15 17:25:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/677526f4718d97d8a2bb4900b6fe0584046ed62a,677526f4718d97d8a2bb4900b6fe0584046ed62a,Update README.md
+iflamed,2018-03-15 17:23:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/68a06bcb5406083f2dbe8ac6f2344aa85381b655,68a06bcb5406083f2dbe8ac6f2344aa85381b655,"Fix #468 and #429 (#529)
+
+When app is running in the console, we should use the default value of config('app.locale'), don't need to negotiator with the accept-language"
+mcamara,2018-02-19 10:24:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4f163fe1dae478fc20eb883ed3dae67872832de4,4f163fe1dae478fc20eb883ed3dae67872832de4,"Revert ""Update LaravelLocalization.php (#526)""
+
+This reverts commit 52c4049bd0312403ec26b02ebe8fbfb1920f8019."
+dmocho,2018-02-19 09:28:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c01f90e23b96eaae7b917355068de1ec9f9a9d74,c01f90e23b96eaae7b917355068de1ec9f9a9d74,"support Laravel 5.6 (#525)
+
+Unlocking Laravel 5.6 doesn't seem to break anything."
+alifattahi,2018-02-19 09:28:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/52c4049bd0312403ec26b02ebe8fbfb1920f8019,52c4049bd0312403ec26b02ebe8fbfb1920f8019,Update LaravelLocalization.php (#526)
+mcamara,2018-01-29 16:32:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2e4abadafbd7c68bc3fc3659a64c7b5f83020e75,2e4abadafbd7c68bc3fc3659a64c7b5f83020e75,Update README.md
+grrnikos,2017-12-31 03:34:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6d64043fac0d79fbd1ffac183c7bd0cc57a01d3d,6d64043fac0d79fbd1ffac183c7bd0cc57a01d3d,Add package auto-discovery information in README.md (#517)
+arubacao,2017-12-31 03:34:34,https://api.github.com/repos/mcamara/laravel-localization/git/commits/74efe93f345cae9cac8576c08a43188795dd825b,74efe93f345cae9cac8576c08a43188795dd825b,Also test against PHP 7.2 (#515)
+ansata2001,2017-11-11 13:24:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e9842855939ffb4dde9ecbb8839a08fd6d6bc42f,e9842855939ffb4dde9ecbb8839a08fd6d6bc42f,The language negotiator will convert the locale names into canonical string before comparison (#507)
+vpakg,2017-11-11 13:23:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/194435afafa9e11275dd1c339458176695ab0e73,194435afafa9e11275dd1c339458176695ab0e73,"adds syntax highlight to folder path (#503)
+
+adds syntax highlight to `resources/lang/language_abbreviation` for easier read."
+mcamara,2017-10-16 06:00:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bafd681d717d1ad28e0ba7afa745590956c0c53c,bafd681d717d1ad28e0ba7afa745590956c0c53c,Update README.md
+mcamara,2017-09-11 11:49:10,https://api.github.com/repos/mcamara/laravel-localization/git/commits/86d6d9d95faf9c60decb8a3f59bfb894aace4798,86d6d9d95faf9c60decb8a3f59bfb894aace4798,Fix issue when calling getLocalizedURL() on L5.5 (credits to leMaur)
+mcamara,2017-09-11 11:37:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b881e759ed4941f5d5761598372af0629cac5fd6,b881e759ed4941f5d5761598372af0629cac5fd6,Update circle.yml
+mcamara,2017-09-11 11:36:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/055b025e2b80c0c37f288fb81ef50e0129a615bb,055b025e2b80c0c37f288fb81ef50e0129a615bb,Update README.md
+paulkned,2017-09-11 11:35:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9efb09f68a626484bf10f53ef159aea51e7c5d37,9efb09f68a626484bf10f53ef159aea51e7c5d37,"Added Laravel 5.5 support (#489)
+
+* Added Laravel 5.5 support
+
+* Added the correct version of PHP unit
+
+* PHP 5.6 is no longer supported by Laravel 5.5"
+frantzmiccoli,2017-08-08 04:41:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5f7e0e646d5c2374b8adaf1757599e043cd0994d,5f7e0e646d5c2374b8adaf1757599e043cd0994d,"Authorize Laravel 5.3 and 5.4 (#474)
+
+Currently configuration fails with Laravel 5.4.*."
+hedii,2017-07-20 16:37:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3babfca6026df02e6e4ddef01290ceebf8edec77,3babfca6026df02e6e4ddef01290ceebf8edec77,"Add support for auto-discovery (#470)
+
+* Add support for auto-discovery
+
+Same as #464 which is inactive since more than 20 days
+
+* forget a comma..."
+mcamara,2017-06-24 04:44:42,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3caba3ae79d14bd4a2abdc498ebee4c24420350c,3caba3ae79d14bd4a2abdc498ebee4c24420350c,Update .travis.yml
+yaroslawww,2017-05-18 10:22:35,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2177e05d5cf35efea3a43c0f1785a3edd816347f,2177e05d5cf35efea3a43c0f1785a3edd816347f,"Update LaravelLocalizationViewPath.php (#452)
+
+Changed namespace from 'App\Http\Middleware' to 'Mcamara\LaravelLocalization\Middleware'"
+viktorivanov,2017-05-18 10:22:20,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d211bacef4e251c8bdc0df784d1f8f44d843f105,d211bacef4e251c8bdc0df784d1f8f44d843f105,Fix namespace issue (#451)
+vanderb,2017-05-11 06:03:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/91aca44cf993f3ea14d70cc388062775516d57f5,91aca44cf993f3ea14d70cc388062775516d57f5,"Added new middleware to dynamically use current locale as base-view-path (#446)
+
+* Added new middleware to dynamically use current locale as base-view-path
+
+* Updated Readme"
+ashatrov,2017-05-11 06:00:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f1dbc414922461e913130d4a284116c675c834b1,f1dbc414922461e913130d4a284116c675c834b1,"Update README.md (#449)
+
+Updated ""Creating a language selector"" section to march fix from https://github.com/mcamara/laravel-localization/pull/439"
+ashatrov,2017-04-25 15:27:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/29f9ea25bbb97888aa4e0c0e36787b0f80b9920f,29f9ea25bbb97888aa4e0c0e36787b0f80b9920f,"[#293] Cant switch to default language if hiding default locale in URL (#439)
+
+* [#293] Cant switch to default language if hiding default locale in URL. https://github.com/mcamara/laravel-localization/issues/293
+
+* [#293] Cant switch to default language if hiding default locale in URL. https://github.com/mcamara/laravel-localization/issues/293"
+rtucek,2017-04-25 15:25:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/03d0a04288c1ef19945e758d6255ada91a918716,03d0a04288c1ef19945e758d6255ada91a918716,Remove dead link (#437)
+rtucek,2017-04-25 15:25:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3d487d42ce4529ffb188875b5c6b193fb5cc4a7a,3d487d42ce4529ffb188875b5c6b193fb5cc4a7a,Simplify installation process (#436)
+rtucek,2017-04-25 15:24:39,https://api.github.com/repos/mcamara/laravel-localization/git/commits/09d315758653c72881f7482c070ea3eba1e3917c,09d315758653c72881f7482c070ea3eba1e3917c,"Tweak PHP Composer settings (#434)
+
+* Remove version and prefer-stable deps
+
+Remove the version hint as suggested in
+https://getcomposer.org/doc/04-schema.md#version
+Any version or revision should be determined by a tag, branch or commit SHA.
+
+Prefer stable deps for development.
+
+* Apply some rules for TravisCI
+
+Remove --dev flag as it's no longer honored.
+
+Prefer dist over original sources for deps on Travis (performance)."
+rtucek,2017-04-25 15:24:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9f1db386bf0fd24d8d3e1460037a81c3f2b2826b,9f1db386bf0fd24d8d3e1460037a81c3f2b2826b,"Rename PHPUnit's config file (#433)
+
+Usually, we use phpunit.xml.dist config files and allow developers overriding
+them with their own phpunit.xml (if necessary) which is part of the .gitignore
+
+Also sorting entries of .gitignore alphabetically."
+lex111,2017-04-13 08:00:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e64242c57b87e1b76ffc660c3adfb00469fa68d6,e64242c57b87e1b76ffc660c3adfb00469fa68d6,"Removing additional indent code blocks (#430)
+
+For better readability"
+andhovesyan,2017-04-10 14:13:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0c65705870502295c133667c593663b5d786a045,0c65705870502295c133667c593663b5d786a045,Update config.php (#419)
+mcamara,2017-02-18 20:47:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/beb1244a4ce2fe793f37696ec0d89eed015f385e,beb1244a4ce2fe793f37696ec0d89eed015f385e,Upgraded version and fixed tests
+sarotnem,2017-02-18 20:44:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c27cb0d4deaeae90b89d0da69c1659c034bbabc3,c27cb0d4deaeae90b89d0da69c1659c034bbabc3,"Added support for custom order (#406)
+
+* Added support for custom order
+
+* Update Readme for custom order helper function"
+mcamara,2017-02-01 00:50:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8e015750bf8bd60d96610b88d8ab89954a680eb2,8e015750bf8bd60d96610b88d8ab89954a680eb2,Update README.md
+mcamara,2017-02-01 00:46:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fb086cb9573096566e84a68d243ff151a5f7cbcf,fb086cb9573096566e84a68d243ff151a5f7cbcf,"Updating composer to have the plugin to work on laravel 5.2 (#402)
+
+* Updating composer to have the plugin to work on laravel 5.2
+
+* Updated readme
+
+* Bumped version"
+mcamara,2017-01-30 14:08:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b1dbc8489d84c8d6a2d3a059a17bd21e7d86b833,b1dbc8489d84c8d6a2d3a059a17bd21e7d86b833,Update composer.json
+mauricius,2017-01-30 14:08:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5f3e6de5ac76e746f7c2985cfd1d5e4299433029,5f3e6de5ac76e746f7c2985cfd1d5e4299433029,Fix route translation for Laravel 5.4 (#399)
+mcamara,2017-01-27 11:27:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1f90ddeff8c50cd9ea44bf99fb9aee41fd420d53,1f90ddeff8c50cd9ea44bf99fb9aee41fd420d53,Pushed version to be compatible with laravel 5.4
+cretueusebiu,2017-01-27 11:25:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b88ea7d6973a5395e65e80187ca4f5070b8678d7,b88ea7d6973a5395e65e80187ca4f5070b8678d7,Add compatibility with Laravel 5.4 (#396)
+mcamara,2016-12-31 17:44:39,https://api.github.com/repos/mcamara/laravel-localization/git/commits/400a5e577f34acf4b0e4f9cade10a63d91899152,400a5e577f34acf4b0e4f9cade10a63d91899152,Update composer.json
+seltix5,2016-12-31 17:44:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a51fafa97a1e0136669afbf11c6396abd8bd09fc,a51fafa97a1e0136669afbf11c6396abd8bd09fc,"Update on function negotiateLanguage (#389)
+
+* Update on function negotiateLanguage
+
+When testing the negotiateLanguage i found out that the browser never found a match, that was because this function was only checking the supportedLocales array keys.
+for example, my locale key is ""pt"" but my browser was negociating ""pt-PT"".
+
+* Update LanguageNegotiator.php
+
+* Update LanguageNegotiator.php
+
+* Update LanguageNegotiator.php"
+mcamara,2016-12-31 17:25:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b4b9976ef76dd01f76949c9e48d63cb6b4f4039d,b4b9976ef76dd01f76949c9e48d63cb6b4f4039d,Update README.md
+mcamara,2016-12-26 18:54:35,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ef16a0aa1e4e5122b7c7a3f1ef7696cfd525754f,ef16a0aa1e4e5122b7c7a3f1ef7696cfd525754f,Update composer.json
+mcamara,2016-12-26 18:47:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d07e8758005cf37c33f262d0c8a21a19c197d850,d07e8758005cf37c33f262d0c8a21a19c197d850,"Merge pull request #386 from kkomelin/master
+
+Added support for route exceptions"
+mcamara,2016-12-26 18:44:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/041ab816bdcc1c4651c809c44e58eda05f77d926,041ab816bdcc1c4651c809c44e58eda05f77d926,Merge branch 'master' into master
+mcamara,2016-12-26 18:35:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5a4e0153f45d48bdd45683584367d53a9ff4fa05,5a4e0153f45d48bdd45683584367d53a9ff4fa05,"Merge pull request #384 from cretueusebiu/patch-1
+
+Apply fixes from StyleCI"
+kkomelin,2016-12-21 05:22:54,https://api.github.com/repos/mcamara/laravel-localization/git/commits/af705dc0c8528672d0b9700e3efa1941f21922f5,af705dc0c8528672d0b9700e3efa1941f21922f5,Added support for url exceptions.
+cretueusebiu,2016-12-20 09:24:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7c5e9766245cd319997f82abf1380405f288aa3a,7c5e9766245cd319997f82abf1380405f288aa3a,Merge branch 'analysis-Xp0j5Z' into patch-1
+cretueusebiu,2016-12-20 09:06:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2f001551760ae633055a4ab714e331531609ce36,2f001551760ae633055a4ab714e331531609ce36,Apply fixes from StyleCI
+mcamara,2016-12-16 16:08:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a7ebf1783219e3df5db3c699b31282ec615e2de6,a7ebf1783219e3df5db3c699b31282ec615e2de6,Update composer.json
+mcamara,2016-12-16 16:08:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/149d552551c6435cb32373c65fe79c82dce4bc25,149d552551c6435cb32373c65fe79c82dce4bc25,"Merge pull request #376 from allantatter/master
+
+Add support for subdirectories as base url"
+allantatter,2016-11-28 16:01:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c4206c4033c00eb83c81dec296f03a8c021f772b,c4206c4033c00eb83c81dec296f03a8c021f772b,Add support for subdirectories as base url
+mcamara,2016-10-17 06:56:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/82bc38c4d6b0c8cd8a4a774edbc677039b460769,82bc38c4d6b0c8cd8a4a774edbc677039b460769,Update composer.json
+mcamara,2016-10-17 06:55:44,https://api.github.com/repos/mcamara/laravel-localization/git/commits/940029032d4c12235e83786d3e328ee194900f76,940029032d4c12235e83786d3e328ee194900f76,"Merge pull request #365 from bs-thomas/patch-1
+
+Fix Issue #255 when a localization is removed (for CookieRedirect)"
+bs-thomas,2016-10-17 01:32:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/297b0bb4ae0dd3737c6033663d59c2466527c01e,297b0bb4ae0dd3737c6033663d59c2466527c01e,"Fix Issue #255 when a localization is removed (Fixing LocaleCookieRedirect.php)
+
+Referencing commit: #b8b9f4e2dfc96b24dba715f1ea3213021f02ecfb"
+mcamara,2016-09-28 06:12:40,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cbf2c144bfa95f41392721a41beacce13338afb5,cbf2c144bfa95f41392721a41beacce13338afb5,Update composer.json
+mcamara,2016-09-28 06:12:20,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c2436f87dc08a55340721768b1fe81e29764f4c3,c2436f87dc08a55340721768b1fe81e29764f4c3,"Merge pull request #362 from zarapico123/master
+
+event listen add $locale parameter"
+mcamara,2016-08-25 18:28:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ff6d398d8437d0169f1d3b97e4244552a5abcced,ff6d398d8437d0169f1d3b97e4244552a5abcced,Update composer.json
+mcamara,2016-08-25 18:27:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3351186e84d6a080a40a4e34e783b7a3b7b6c5e1,3351186e84d6a080a40a4e34e783b7a3b7b6c5e1,"Merge pull request #351 from SpadXIII/patch-1
+
+Change the way the ServiceProvider registers the class"
+SpadXIII,2016-08-25 14:35:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9d5931ad263afa31259f5f8dd2f4d7c5fa78218b,9d5931ad263afa31259f5f8dd2f4d7c5fa78218b,"Change the way the ServiceProvider registers the class
+
+When using constructor injection with the class name, each time a new instance is created.
+With this change, the service provider registers itself using the full class name. This makes sure the same instance is used each time.
+
+Also added an alias to keep backwards-compatibility."
+mcamara,2016-08-24 13:12:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/024b58de07b895956e641e808596d34c9a3178e3,024b58de07b895956e641e808596d34c9a3178e3,Update composer.json
+mcamara,2016-08-24 13:12:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b40c2f67c9247d7d273550eb04a18d987c549e0c,b40c2f67c9247d7d273550eb04a18d987c549e0c,"Merge pull request #349 from Mozzos/master
+
+Update LaravelLocalizationRedirectFilter.php"
+mcamara,2016-08-24 13:12:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c1e290ea38b4b2e39d1ab0263a291da46a6ffb7d,c1e290ea38b4b2e39d1ab0263a291da46a6ffb7d,"Merge pull request #346 from viqtor/patch-1
+
+use correct code for swedish"
+fzhan,2016-08-11 08:31:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2a394ccb2c20815e76a0559b5a9e35c2db53fb79,2a394ccb2c20815e76a0559b5a9e35c2db53fb79,"Update LaravelLocalizationRedirectFilter.php
+
+Update url() to fullUrl(), otherwise will lost all the request data"
+viqtor,2016-08-07 09:12:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6c1fa1994e58ba5295064a8f935f54b7de4a9068,6c1fa1994e58ba5295064a8f935f54b7de4a9068,"use correct code for swedish
+
+sv_FI is swedish in Finland"
+mcamara,2016-08-05 08:13:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/72d5e8bf48d10e59a0c47a708e28da9b3da734fe,72d5e8bf48d10e59a0c47a708e28da9b3da734fe,Bump version number
+mcamara,2016-08-05 08:12:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fc36917ca88ee54738d2a869dffc5aa2e86b3cbd,fc36917ca88ee54738d2a869dffc5aa2e86b3cbd,"Merge pull request #345 from hipio/patch-1
+
+Fix: Cookies now work"
+mcamara,2016-07-11 12:59:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/239d711d1f861e333e6de73d98dabdf94500512e,239d711d1f861e333e6de73d98dabdf94500512e,Bump version number
+mcamara,2016-07-11 12:58:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d232b4927a12a11555d3bd8b59914da0c1ad4144,d232b4927a12a11555d3bd8b59914da0c1ad4144,"Merge pull request #334 from lotestudio/master
+
+Update LaravelLocalization.php"
+lotestudio,2016-07-10 22:20:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9adbd05a41819a76afa66e2587570c1d8cc1f0ce,9adbd05a41819a76afa66e2587570c1d8cc1f0ce,Wrap if statement.
+lotestudio,2016-07-10 07:35:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2042bb624876df2c856ce0ccc3637261739584d0,2042bb624876df2c856ce0ccc3637261739584d0,Update LaravelLocalization.php
+mcamara,2016-06-23 13:34:39,https://api.github.com/repos/mcamara/laravel-localization/git/commits/89b5d9de51b3ba7c02c5fd9b96a22f84eba2d135,89b5d9de51b3ba7c02c5fd9b96a22f84eba2d135,Bump version number
+mcamara,2016-06-23 13:33:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/db4b33dcad66c95f0d16a4b1a84b056645206307,db4b33dcad66c95f0d16a4b1a84b056645206307,"Merge pull request #328 from tomloveladyepd/master
+
+Fix bug causing redirects to always pick default locale"
+mcamara,2016-06-23 13:33:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4094b8719f646e3dd7692e314fc88ba01fa35113,4094b8719f646e3dd7692e314fc88ba01fa35113,"Merge pull request #325 from Jordy-A/master
+
+Update LaravelLocalizationRedirectFilter.php"
+tomloveladyepd,2016-06-21 10:47:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c0088a970db89c852bcbad3fbcff1f4a190acdbf,c0088a970db89c852bcbad3fbcff1f4a190acdbf,Fix bug causing redirects to always pick default locale
+Jordy-A,2016-06-19 16:00:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/981838108a97360ed2dcb0339d25fd5720e27cac,981838108a97360ed2dcb0339d25fd5720e27cac,"Update LaravelLocalizationRedirectFilter.php
+
+It is better for SEO to redirect users based on their language with a 302 redirect instead of a 301."
+mcamara,2016-06-17 12:49:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/dd6b8916b49d3859d9c36aaefde16aa1d24d2b7f,dd6b8916b49d3859d9c36aaefde16aa1d24d2b7f,"Merge pull request #323 from tienthanh2509/patch-1
+
+Update README.md"
+tienthanh2509,2016-06-16 16:40:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ec895ff2fa8032762b765fd2b6566d21e0540f00,ec895ff2fa8032762b765fd2b6566d21e0540f00,"Update README.md
+
+redundant letters"
+mcamara,2016-02-19 16:00:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3c14c66df8de72b612d9eaffba23438ee52f5e67,3c14c66df8de72b612d9eaffba23438ee52f5e67,"Merge pull request #292 from okaufmann/master
+
+fix if condition to not overwrite $locale"
+okaufmann,2016-02-15 18:14:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/202eef433ef6d5511818292fde5aa2ce664b8426,202eef433ef6d5511818292fde5aa2ce664b8426,fix if condition to not overwrite $locale
+mcamara,2016-01-08 07:14:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e305d2d2b32dc07a24e0699dcb05cf4f2064cdf8,e305d2d2b32dc07a24e0699dcb05cf4f2064cdf8,Updated version number
+mcamara,2016-01-08 07:13:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cbc8473d78b9bd574bb5984ea7f2dde1fdc55447,cbc8473d78b9bd574bb5984ea7f2dde1fdc55447,"Merge pull request #277 from mxmtsk/master
+
+Fix #219 - $locale was undefined"
+mxmtsk,2016-01-07 21:57:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/68a64cbe39eebf42ac2f388564d9be23eb2bc409,68a64cbe39eebf42ac2f388564d9be23eb2bc409,Fix #219 - $locale was undefined
+mcamara,2015-12-23 19:36:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a086769ca5b6f72fd824a4729bfc454deee09752,a086769ca5b6f72fd824a4729bfc454deee09752,Version 1.1
+mcamara,2015-12-23 19:34:44,https://api.github.com/repos/mcamara/laravel-localization/git/commits/62dc69e700856bcea140ffe6a0d54dab1b390acc,62dc69e700856bcea140ffe6a0d54dab1b390acc,"Merge pull request #271 from okaufmann/master
+
+Remove middleware interfaces due to deprecation since Laravel 5.1"
+okaufmann,2015-12-22 08:31:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7dceab75dc41dfe165edfa7cffb7ce55de02730e,7dceab75dc41dfe165edfa7cffb7ce55de02730e,Remove middleware interfaces due to deprecation since Laravel 5.1
+mcamara,2015-12-06 23:41:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/aa4b8628c1737b7917a27a3bc0c0bf27342d48f0,aa4b8628c1737b7917a27a3bc0c0bf27342d48f0,"Merge pull request #266 from Syrok/patch-1
+
+mispell"
+Syrok,2015-12-06 21:45:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/960dacc8aba78da5dd52004a6200ac5e65c3cf49,960dacc8aba78da5dd52004a6200ac5e65c3cf49,mispell
+mcamara,2015-11-28 12:32:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a2dd2805aafd504b9ad09fd9848b33e5a586abbc,a2dd2805aafd504b9ad09fd9848b33e5a586abbc,Version 1.0.12
+mcamara,2015-11-28 12:30:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9ba42945d0a3e75786a736aecb7c43f06bc94124,9ba42945d0a3e75786a736aecb7c43f06bc94124,"Merge pull request #262 from BojanKogoj/master
+
+ Localization for Carbon"
+BojanKogoj,2015-11-26 09:42:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bfc789a93d17665b76af5b8811af6aaa93a641a9,bfc789a93d17665b76af5b8811af6aaa93a641a9,Adding test for getCurrentLocaleRegional
+BojanKogoj,2015-11-26 08:58:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/12dad5d93c8245738a19face8a5d2f4b6b1a8b85,12dad5d93c8245738a19face8a5d2f4b6b1a8b85,Addion regional locale
+mcamara,2015-11-15 18:10:54,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bf2d8f4b179c2a72c6d30076849e286dc230416b,bf2d8f4b179c2a72c6d30076849e286dc230416b,Merge branch 'master' of github.com:mcamara/laravel-localization
+mcamara,2015-11-15 18:04:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3b0da23318401bc571806b378e732ba449ee1730,3b0da23318401bc571806b378e732ba449ee1730,Updated version
+mcamara,2015-11-14 14:11:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/250abff2f3248b4f0720c5884d3604424700859e,250abff2f3248b4f0720c5884d3604424700859e,"Merge pull request #259 from i0/patch-2
+
+Update LanguageNegotiator.php"
+mcamara,2015-11-14 14:10:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/63018c2e135c25eccbc875adf5f871254b7f0170,63018c2e135c25eccbc875adf5f871254b7f0170,"Merge pull request #256 from thomas83/master
+
+Fix Issue #255 when a localization is removed"
+mcamara,2015-11-14 14:04:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/abd771133354c5eab2df2e136682d77877174267,abd771133354c5eab2df2e136682d77877174267,Added circle configuration
+i0,2015-11-13 22:20:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c7f7c790ad2a2aa3c33b95a496dc50bf734c3a60,c7f7c790ad2a2aa3c33b95a496dc50bf734c3a60,"Update LanguageNegotiator.php
+
+There is not any array that named $array"
+bs-thomas,2015-11-11 17:23:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b8b9f4e2dfc96b24dba715f1ea3213021f02ecfb,b8b9f4e2dfc96b24dba715f1ea3213021f02ecfb,"Fix Issue #255 when a localization is removed
+
+When a localization has been removed from the system, leaving end-user in a broken cookie session."
+mcamara,2015-09-17 12:46:01,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bdbac41d6e234edb23c84c7488a0f05e5f9d888f,bdbac41d6e234edb23c84c7488a0f05e5f9d888f,"Merge pull request #247 from fisharebest/master
+
+Travis - test PHP 7.0, use faster containers"
+fisharebest,2015-09-15 07:23:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c28c8c734e22bb1069f3978403eba27169f2ce2a,c28c8c734e22bb1069f3978403eba27169f2ce2a,"Travis - test PHP 7.0, use faster containers"
+mcamara,2015-09-03 05:39:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/34e999ba919513835231381a773ad296049d19d6,34e999ba919513835231381a773ad296049d19d6,"Merge pull request #244 from gitter-badger/gitter-badge
+
+Add a Gitter chat badge to README.md"
+gitter-badger,2015-09-02 15:13:40,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bcfd9622bd74dc4054d68f7c69d9c0a634f174cf,bcfd9622bd74dc4054d68f7c69d9c0a634f174cf,Added Gitter badge
+mcamara,2015-08-28 16:48:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b2bd6e550cc495fb8ec8d47239eddfa0417d45bb,b2bd6e550cc495fb8ec8d47239eddfa0417d45bb,"Merge pull request #243 from grrnikos/master
+
+Update README.md to use the class notation"
+grrnikos,2015-08-28 16:08:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2e11d8542330c5d5747dc86bf523c4f828d88199,2e11d8542330c5d5747dc86bf523c4f828d88199,Update README.md to use the class notation
+mcamara,2015-07-26 09:58:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ba7feeb6222002930e85bf87ba63ad29a9753b86,ba7feeb6222002930e85bf87ba63ad29a9753b86,"Merge pull request #230 from CSWilson/CSWilson-added-getCurrentLocaleNative
+
+Added a new getCurrentLocaleNative function"
+CSWilson,2015-07-07 10:17:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/701d5f6a07b78ba5a01354a123c2ca5e4f44fddb,701d5f6a07b78ba5a01354a123c2ca5e4f44fddb,"Added a new getCurrentLocaleNative function
+
+Added a new ```getCurrentLocaleNative``` function, there are times when you want to display the current locale in the user's native language.  If a user selects Deutsch (German) in a drop down menu to charge their language to german, once the locale has been set and changed the site's language displays everything in German but the ````getCurrentLocaleName``` displays the word German not Deutsch.  So in cases like this use ```getCurrentLocaleNative``` instead of ```getCurrentLocaleName```."
+mcamara,2015-06-28 12:06:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a988746e18aa90fbdbbcfc13c3c17ee74d128e06,a988746e18aa90fbdbbcfc13c3c17ee74d128e06,Fixing redirect headers caused by incorrect constructor parameter
+mcamara,2015-06-28 11:37:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f08ec17ba476c06fd8a485b5b4e4d72c47adca1c,f08ec17ba476c06fd8a485b5b4e4d72c47adca1c,updated travis as Laravel 5.1 does not work with PHP 5.4
+mcamara,2015-06-28 11:33:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e4fea70d03419129153c0503e2a48cc338957f34,e4fea70d03419129153c0503e2a48cc338957f34,updated readme
+mcamara,2015-06-28 11:33:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5fcff93f24ade39189d83ea67275b80f8219eb3d,5fcff93f24ade39189d83ea67275b80f8219eb3d,v1.0.9
+mcamara,2015-06-28 11:32:01,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c59ad218e6817aa2a929be09cca3d8076f4e0036,c59ad218e6817aa2a929be09cca3d8076f4e0036,"Merge pull request #215 from grrnikos/patch-1
+
+Make 301 redirect instead of 307"
+mcamara,2015-06-28 11:31:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/64da9aa7bee2eb06f8bb3dac10a933bb4c9d99f1,64da9aa7bee2eb06f8bb3dac10a933bb4c9d99f1,"Merge pull request #222 from sidneywidmer/master
+
+Fix LanguageNegotiator Bug"
+mcamara,2015-06-28 11:31:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0c05a5770997348380bb5ab1070298f34da764e2,0c05a5770997348380bb5ab1070298f34da764e2,"Merge pull request #227 from MarcGuay/patch-4
+
+Fix broken translated routes"
+MarcGuay,2015-06-17 17:54:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3ed9fccad562a84c7247f632fbdf71f5243895fd,3ed9fccad562a84c7247f632fbdf71f5243895fd,"Fix broken translated routes
+
+Routes are not translated properly if the $url passed to getLocalizedURL is NULL because the if ( empty( $url ) ) check doesn't happen until after findTranslatedRouteByUrl().  This edit simply moves the if ( empty( $url ) ) logic above."
+mcamara,2015-06-09 15:25:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7f19639e1650f786fa7158ca59c3445995902a4c,7f19639e1650f786fa7158ca59c3445995902a4c,"Merge pull request #223 from nWidart/5.1
+
+Allow laravel 5.1"
+nWidart,2015-06-09 15:23:54,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1ea7695cc7cc36914b2b8ff0dbb05929f17f63b8,1ea7695cc7cc36914b2b8ff0dbb05929f17f63b8,"Allow laravel 5.1
+
+http://semver.mwl.be/#?package=laravel%2Flaravel&version=~5.0&minimum-stability=stable"
+sidneywidmer,2015-06-09 12:52:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b6c53c46a7863d79208c5b8f1cafe2c89e8fd46f,b6c53c46a7863d79208c5b8f1cafe2c89e8fd46f,return string an not array if any locale is acceptable
+mcamara,2015-05-11 13:40:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ae7726e675840bc1b67d89f42a2b38dd0c437871,ae7726e675840bc1b67d89f42a2b38dd0c437871,"Merge pull request #217 from grrnikos/readme-update
+
+update README.md"
+grrnikos,2015-05-10 18:01:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/65d037c52e1ed545c903fce16072e3cb65a49861,65d037c52e1ed545c903fce16072e3cb65a49861,update README.md
+grrnikos,2015-05-07 16:15:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e50175811512d3b4d3053823b9f805436e50a7cc,e50175811512d3b4d3053823b9f805436e50a7cc,Make 301 redirect instead of 307
+mcamara,2015-05-06 15:01:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6d907ec7ea02e4f9921fb46038e23f760466ee40,6d907ec7ea02e4f9921fb46038e23f760466ee40,"Merge pull request #210 from AlexVonB/patch-1
+
+Corrected middleware order in Readme.md"
+AlexVonB,2015-04-29 14:24:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/70285a314b1f62c9963715cde5b195b967ab8d79,70285a314b1f62c9963715cde5b195b967ab8d79,Corrected middleware order in Readme.md
+mcamara,2015-04-20 09:59:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ad292df75e9ec9f40589ce734c12405f68f75af8,ad292df75e9ec9f40589ce734c12405f68f75af8,"Merge pull request #204 from bgies/patch-1
+
+Update README.md"
+bgies,2015-04-16 16:34:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/47690a7a67660ba24fe30696ab012a7186d0a49b,47690a7a67660ba24fe30696ab012a7186d0a49b,"Update README.md
+
+Change the Config file publish command to Laravel 5"
+mcamara,2015-03-30 14:05:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e3ac2db0e20fec6d40701357c099eeeeaac51f67,e3ac2db0e20fec6d40701357c099eeeeaac51f67,"Merge pull request #188 from MarcGuay/patch-2
+
+Session middleware as part of main install"
+mcamara,2015-03-18 10:36:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/912e25c6c9d84cfb30fffb8320e5ef5c87766be4,912e25c6c9d84cfb30fffb8320e5ef5c87766be4,"Merge pull request #189 from potsky/master
+
+Fix URL without trailing slash"
+potsky,2015-03-17 16:39:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8fb3e65f1f898d79e6992011641575d0074d0971,8fb3e65f1f898d79e6992011641575d0074d0971,"Fix URL without trailing slash
+
+Warning when performing a parse_url($url) on a url without a trailing slash.
+Eg: http://www.google.fr"
+MarcGuay,2015-03-13 17:12:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/73300039b405eb3e3f919d4ee538ea8d694e8e25,73300039b405eb3e3f919d4ee538ea8d694e8e25,"Session middleware as part of main install
+
+Not sure if this is exactly the way to do it.  I found the ""session"" section kind of a weird add-on.  It seems to me that the new session middleware is required for expected behavior, so maybe it belongs along with the basic install instructions."
+mcamara,2015-03-13 10:27:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/308abcfb3508d23d351300b01550435153cee871,308abcfb3508d23d351300b01550435153cee871,"Merge pull request #187 from MarcGuay/patch-1
+
+Specify where exactly to add the middleware"
+MarcGuay,2015-03-12 21:20:01,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1ef225eb2b1524a086fa88179a86537dcd772b69,1ef225eb2b1524a086fa88179a86537dcd772b69,Specify where exactly to add the middleware
+mcamara,2015-03-11 16:51:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/952d26841ab9f4bc76460514609d38b98311c898,952d26841ab9f4bc76460514609d38b98311c898,Added Session and Cookie Middlewares
+mcamara,2015-02-20 10:18:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2f43106cf740843c20d120ec2ec1107f100f5777,2f43106cf740843c20d120ec2ec1107f100f5777,"Merge pull request #183 from SwissWeb/patch-1
+
+Update README.md"
+SwissWeb,2015-02-20 09:54:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/af4b31db777ffbf7ca372c94048eafd6ed10e5a0,af4b31db777ffbf7ca372c94048eafd6ed10e5a0,"Update README.md
+
+fix typo on route group and added proper artisan command for config:publish"
+mcamara,2015-02-18 11:30:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5cd4e06556f86b90cb9916209cca6d2731fadae4,5cd4e06556f86b90cb9916209cca6d2731fadae4,coding style improved
+mcamara,2015-02-18 11:22:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/977573010f50c1095d2cecd3707288e247c13e81,977573010f50c1095d2cecd3707288e247c13e81,scrutinizer configuration
+mcamara,2015-02-18 11:11:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a8c5e08f72d9b49fdacc978afd9f0c66610f4d6d,a8c5e08f72d9b49fdacc978afd9f0c66610f4d6d,added session array
+mcamara,2015-02-18 11:10:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a24fa7c94d07f81f4d9de6f9fa5408ef541b3747,a24fa7c94d07f81f4d9de6f9fa5408ef541b3747,Merge branch 'development' of https://github.com/mcamara/laravel-localization into development
+mcamara,2015-02-18 09:24:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3dc778b53a605fbc144ea7d0a04d0d335f83436a,3dc778b53a605fbc144ea7d0a04d0d335f83436a,"Merge pull request #181 from armababy/master
+
+fixes #174"
+mcamara,2015-02-18 09:24:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8918b9e4c9c1c5ec8f235f08b42422fa6a6fea40,8918b9e4c9c1c5ec8f235f08b42422fa6a6fea40,"Merge pull request #177 from ntopulos/master
+
+Readme addition: getCurrentLocale()"
+armababy,2015-02-18 05:22:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b4ddc5e152e53d2aee46ea3731c72c0933513eb2,b4ddc5e152e53d2aee46ea3731c72c0933513eb2,fixes #174
+ntopulos,2015-02-16 19:37:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/769e4856b2d6de93804ccae58ae6bd88b49b7e11,769e4856b2d6de93804ccae58ae6bd88b49b7e11,Readme addition: getCurrentLocale()
+mcamara,2015-02-16 19:21:45,https://api.github.com/repos/mcamara/laravel-localization/git/commits/983a27ef2d787ea19dedd0533f425151c0d95980,983a27ef2d787ea19dedd0533f425151c0d95980,"Merge pull request #175 from grrnikos/development
+
+new array syntax"
+grrnikos,2015-02-16 13:30:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/535acd2747f7a2a703806747b41e2b7dd8e5bb71,535acd2747f7a2a703806747b41e2b7dd8e5bb71,fix typo
+grrnikos,2015-02-16 13:19:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/576ecee98aa425f983042002bf4f268c410351a3,576ecee98aa425f983042002bf4f268c410351a3,new array syntax
+mcamara,2015-02-12 15:07:45,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f98484eda4893bdc2803c60ef656beecc422a903,f98484eda4893bdc2803c60ef656beecc422a903,fixed #173
+mcamara,2015-02-11 09:19:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/74ab3b5719a839e92126924317f4f5c80f310650,74ab3b5719a839e92126924317f4f5c80f310650,"Merge pull request #172 from grrnikos/development
+
+update README.md"
+grrnikos,2015-02-11 08:44:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/49f9eff554185ffd7e66525ba89c3fb25b57dfa3,49f9eff554185ffd7e66525ba89c3fb25b57dfa3,update README.md
+mcamara,2015-02-10 12:33:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5af9bc3074d9fe787d8ee68d3467c3a0a1f04de7,5af9bc3074d9fe787d8ee68d3467c3a0a1f04de7,fixed #170 and #171
+mcamara,2015-02-05 18:22:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/88772e70a98e16333195f03413998a1350d6b607,88772e70a98e16333195f03413998a1350d6b607,changed version number
+mcamara,2015-02-05 18:21:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9dc030ccbef48936735c4f5b9491346295ca0c14,9dc030ccbef48936735c4f5b9491346295ca0c14,changed version number
+mcamara,2015-02-05 18:14:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c24406be1201b58a91f6fe36c6e994759b754dc2,c24406be1201b58a91f6fe36c6e994759b754dc2,fixed tests
+mcamara,2015-02-05 18:13:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4ad504205c39fb65421855890b97edea53240d7c,4ad504205c39fb65421855890b97edea53240d7c,README tweaked
+mcamara,2015-02-05 18:08:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/28313744f63912f1f66da506ec1465500cbb6c45,28313744f63912f1f66da506ec1465500cbb6c45,config fixed
+mcamara,2015-02-05 17:53:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/72de0e65b7befb06b0d9d6d4cbbd026b6e09b951,72de0e65b7befb06b0d9d6d4cbbd026b6e09b951,Merged with development
+mcamara,2015-02-05 17:48:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a760fe4742943a1b8ae4d07d1375fd6b5fdfe2db,a760fe4742943a1b8ae4d07d1375fd6b5fdfe2db,publish config
+mcamara,2015-02-05 10:58:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a13de13736d44d45262abbd82c7f3b83705573b1,a13de13736d44d45262abbd82c7f3b83705573b1,events fixed
+mcamara,2015-02-02 19:08:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ca92182feeab4f2f424c77597b8ca9d6b932555c,ca92182feeab4f2f424c77597b8ca9d6b932555c,README updated
+mcamara,2015-02-02 18:49:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9b8fd3bc6673955f3bf84319a21bd25b27c746e7,9b8fd3bc6673955f3bf84319a21bd25b27c746e7,Set up the system for ConfigServiceProviders
+mcamara,2015-02-02 18:15:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/11f15310b695da5faae4c43d2db6a51be7d7b84d,11f15310b695da5faae4c43d2db6a51be7d7b84d,fixed tests
+mcamara,2015-02-02 15:26:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1e08b442e9c79c5cd2541dcc0c39df0f0d120ce9,1e08b442e9c79c5cd2541dcc0c39df0f0d120ce9,changed version
+mcamara,2015-01-31 23:09:16,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d0a3d9a29d9ecd5adc878d6614646ca02f3d2536,d0a3d9a29d9ecd5adc878d6614646ca02f3d2536,"Merge pull request #168 from foxted/master
+
+Use the router from the IOC container"
+mcamara,2015-01-30 16:42:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b4bb3194ae45a7f9a1888a5c15d348e08635682b,b4bb3194ae45a7f9a1888a5c15d348e08635682b,"Fixed cookies, still have to fix tests"
+mcamara,2015-01-15 18:28:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/121c2f5778845744c1d9a9710ec3c16a7ba44ce6,121c2f5778845744c1d9a9710ec3c16a7ba44ce6,"Added Middleware, still have to fix tests"
+mcamara,2015-01-15 17:00:42,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fb11f515430565ea66c8871d69be12d0cc821bf2,fb11f515430565ea66c8871d69be12d0cc821bf2,Removed dir from config file
+mcamara,2015-01-14 18:44:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0cf2e3459fbaacc871c71f7dbb7df62bcb1d4f7a,0cf2e3459fbaacc871c71f7dbb7df62bcb1d4f7a,First step with Laravel 5
+mcamara,2014-12-21 23:50:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f0750a455a77b24e1e37e01e37c581756eca8a31,f0750a455a77b24e1e37e01e37c581756eca8a31,fixed phpdoc blocks in LanguageNegotiator
+mcamara,2014-12-21 23:45:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7d35756860c0f49e9774d3b89a2a23193cde23ea,7d35756860c0f49e9774d3b89a2a23193cde23ea,fixed phpdoc blocks in LanguageNegotiator
+mcamara,2014-12-21 23:38:20,https://api.github.com/repos/mcamara/laravel-localization/git/commits/72c6d29e887fca616d2dcd6ca267eb8d52a78298,72c6d29e887fca616d2dcd6ca267eb8d52a78298,fixed phpdoc blocks in LanguageNegotiator
+mcamara,2014-12-21 23:26:44,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bc1899e12c59331ead4ff71f10f64d78b0210467,bc1899e12c59331ead4ff71f10f64d78b0210467,extracted LanguageNegotiator
+mcamara,2014-12-21 23:05:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f7b57525bdc5c720665455c7170800458a695797,f7b57525bdc5c720665455c7170800458a695797,"refactored negotiateLanguage, extracted getMatchesFromAcceptedLanguages"
+mcamara,2014-12-21 22:55:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c1bee87dde6f6dec32687720b756334d43035a20,c1bee87dde6f6dec32687720b756334d43035a20,"modified checkLocaleInSupportedLocales, refactored negotiateLanguage"
+mcamara,2014-12-21 22:23:42,https://api.github.com/repos/mcamara/laravel-localization/git/commits/eff15d7374e8d13aac1c7b69b2592f13131e0be0,eff15d7374e8d13aac1c7b69b2592f13131e0be0,changed value of test class
+mcamara,2014-12-21 22:18:54,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f954fb941e501d61bb2f475baad4988ea54a2ee9,f954fb941e501d61bb2f475baad4988ea54a2ee9,coverage removed
+mcamara,2014-12-21 22:03:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6dff80801241ea8eeecbc606b7ded5b8dec7c664,6dff80801241ea8eeecbc606b7ded5b8dec7c664,changed value of test class
+mcamara,2014-12-21 21:55:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1b3fcc8b1b00b2af5172a16fc836aba739b92704,1b3fcc8b1b00b2af5172a16fc836aba739b92704,added coverage
+mcamara,2014-12-21 21:53:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8edf8b54d62bd8d20e1706b79207d8cda0613e0f,8edf8b54d62bd8d20e1706b79207d8cda0613e0f,Moved Exceptions
+mcamara,2014-12-21 21:45:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b0463d755711c88a1f1cd18fff53a1a509baf480,b0463d755711c88a1f1cd18fff53a1a509baf480,"Merge pull request #157 from mcamara/scrutinizer-patch-1
+
+Scrutinizer Auto-Fixes"
+scrutinizer-auto-fixer,2014-12-21 21:45:17,https://api.github.com/repos/mcamara/laravel-localization/git/commits/974d51c32fde940378d68efe2c71faf6ddd6e8b0,974d51c32fde940378d68efe2c71faf6ddd6e8b0,"Scrutinizer Auto-Fixes
+
+This commit consists of patches automatically generated for this project on https://scrutinizer-ci.com"
+mcamara,2014-12-18 22:52:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/33a40dd3bb1ba0f0be9f14865dcde8d24fa695a5,33a40dd3bb1ba0f0be9f14865dcde8d24fa695a5,refactored getURLFromRouteNameTranslated function
+mcamara,2014-12-18 22:32:17,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7679c6fd2f1732576a08e41349b9077ff7c54a10,7679c6fd2f1732576a08e41349b9077ff7c54a10,refactored findTranslatedRouteByUrl function
+mcamara,2014-12-18 22:25:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cfe79af701e5048fc0ea03018703ae1191297ef3,cfe79af701e5048fc0ea03018703ae1191297ef3,refactored getLocalizedURL function
+mcamara,2014-12-18 21:57:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3d076e60cf8e8800248f84e39c367c707d92773b,3d076e60cf8e8800248f84e39c367c707d92773b,refactored getCurrentLocale function
+mcamara,2014-12-18 21:54:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4e0a12d2622c47b6ecf36028df0e7426ff4066f8,4e0a12d2622c47b6ecf36028df0e7426ff4066f8,refactored getCurrentLocale function
+mcamara,2014-12-18 21:36:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5703a1185b6c4f9d04a06993ee6bb85e11cc3c29,5703a1185b6c4f9d04a06993ee6bb85e11cc3c29,sessions and cookies refactored
+mcamara,2014-12-18 20:29:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1860a77157c007696173873f5344452ae52f112b,1860a77157c007696173873f5344452ae52f112b,refactoring
+mcamara,2014-12-18 20:21:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cc09eef7626ace8c12606816b0fd1c10b7b6c1b4,cc09eef7626ace8c12606816b0fd1c10b7b6c1b4,"added SupportedLocalesNotDefined.php Exception, fixed getDefaultLocale"
+mcamara,2014-12-18 20:05:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0715095cbd2f3af25955ed117c21650f8fcc6b07,0715095cbd2f3af25955ed117c21650f8fcc6b07,"Removed deprecated functions, removed views"
+mcamara,2014-12-18 20:03:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/855fbeae5d9d3d7ef421dd4d247a358cd2551d15,855fbeae5d9d3d7ef421dd4d247a358cd2551d15,Parsed correctly
+mcamara,2014-11-24 09:54:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6dfcf17fe48ceb05c76b542cde648d8b6afe9e48,6dfcf17fe48ceb05c76b542cde648d8b6afe9e48,changed version number
+mcamara,2014-11-20 11:41:42,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b8cfbb3e1124e698187142d0c530a6b05e68653b,b8cfbb3e1124e698187142d0c530a6b05e68653b,"Merge pull request #153 from RaSiM/patch-1
+
+ErrorException (E_UNKNOWN)"
+rasim,2014-11-20 08:58:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/be54ad6a38cdc818b52da5693729c361e5c4c84c,be54ad6a38cdc818b52da5693729c361e5c4c84c,"ErrorException (E_UNKNOWN)
+
+Non-static method Illuminate\Routing\UrlGenerator::to() should not be called statically, assuming $this from incompatible context"
+mcamara,2014-11-13 14:25:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/29dcd27b9ccd6763912a04ded146bd03eeee3268,29dcd27b9ccd6763912a04ded146bd03eeee3268,"Merge pull request #152 from mcamara/development
+
+Version 0.15
+Added tests
+Changed functions (check README)
+Refactoring"
+mcamara,2014-11-13 14:24:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/20d39d655cb937a1c24bd2626393b507f859a20c,20d39d655cb937a1c24bd2626393b507f859a20c,version changed
+mcamara,2014-11-13 14:22:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5485819ab2bd5d4cd4312a92e7c6501347ffe06f,5485819ab2bd5d4cd4312a92e7c6501347ffe06f,README updated
+mcamara,2014-11-10 00:03:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/91002a5845ce4800662c5411ef0ef43a2443cff1,91002a5845ce4800662c5411ef0ef43a2443cff1,refactoring
+mcamara,2014-11-09 23:58:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e4b8bc730cbf50f84bba7fdbf2beb6850f980ddd,e4b8bc730cbf50f84bba7fdbf2beb6850f980ddd,refactoring
+mcamara,2014-11-09 12:38:10,https://api.github.com/repos/mcamara/laravel-localization/git/commits/32115db764569413d3f6b3e67cbf2af840af9e59,32115db764569413d3f6b3e67cbf2af840af9e59,Refactored findTranslatedRoute
+mcamara,2014-11-09 12:08:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c9585ccfdeeb53d97406f4f37d9bd4c25137a83d,c9585ccfdeeb53d97406f4f37d9bd4c25137a83d,Refactoring and bug fixing
+mcamara,2014-10-30 18:41:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c69a4ae5e0da287fcbf4f92b3a35b8f0b1aa2d5a,c69a4ae5e0da287fcbf4f92b3a35b8f0b1aa2d5a,"Some fixes, more tests. Readme to be done"
+mcamara,2014-10-27 19:01:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4fc4b13178d215a5a2007ddbcf76f8bd9bc848ab,4fc4b13178d215a5a2007ddbcf76f8bd9bc848ab,"Future version 0.15. Added tests, and fixed some issues in the main file, still some work to be done. README TBD"
+mcamara,2014-10-14 08:36:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/41a24af952aa3cfd6acf064f3031f741cadf24fb,41a24af952aa3cfd6acf064f3031f741cadf24fb,"Merge pull request #148 from marcmascarell/master
+
+added setSupportedLocales method"
+mcamara,2014-10-09 10:22:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9cc2cca01d474ee94b466dfbb82f2f9133a337d0,9cc2cca01d474ee94b466dfbb82f2f9133a337d0,"Merge pull request #147 from dimsav/patch-3
+
+Removed duplicate code"
+dimsav,2014-10-08 23:14:13,https://api.github.com/repos/mcamara/laravel-localization/git/commits/873d2fee89741a6d3837c017a1a6bc39507c81cd,873d2fee89741a6d3837c017a1a6bc39507c81cd,"Removed duplicate code
+
+OMFG. I am a horrible contributor."
+mcamara,2014-10-08 10:22:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/83013e3f53802dbdc139b872dbc5a3add33d3337,83013e3f53802dbdc139b872dbc5a3add33d3337,v 0.14.9
+mcamara,2014-10-08 10:20:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5f8af9bb5e7089399c8853a9b3293056e67c6b67,5f8af9bb5e7089399c8853a9b3293056e67c6b67,"Merge pull request #145 from dimsav/patch-2
+
+Check if php class Locale is loaded."
+dimsav,2014-10-07 07:29:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8f7a62f6c72e13e91b91adf2beae6094ca1899ed,8f7a62f6c72e13e91b91adf2beae6094ca1899ed,Dump commit to trigger travis
+dimsav,2014-09-30 13:11:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ea9543c2db08e40722bfd37e5a5dd43e59739c22,ea9543c2db08e40722bfd37e5a5dd43e59739c22,Check if php class Locale is loaded.
+mcamara,2014-09-30 12:34:40,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5c0db3a3a15faf8b7da3143fb71a888905cccc14,5c0db3a3a15faf8b7da3143fb71a888905cccc14,v0.14.8
+mcamara,2014-09-26 16:13:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6d2d00b490e634261e047bbf26c6182c1c25cf03,6d2d00b490e634261e047bbf26c6182c1c25cf03,"Merge pull request #141 from dimsav/patch-1
+
+Fixes undefined function fatal error because of namespace"
+dimsav,2014-09-26 15:12:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1c7ce04e36c5b31e315ca2e21baa65cd2d360401,1c7ce04e36c5b31e315ca2e21baa65cd2d360401,"Fixes undefined function fatal error because of namespace
+
+Call to undefined function Mcamara\LaravelLocalization\locale_accept_from_http()' in /home/forge/free-ebooks.gr/vendor/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/LaravelLocalization.php:951"
+mcamara,2014-09-24 08:13:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fe766f9a023c8791796e79435ff0bc754ac2669e,fe766f9a023c8791796e79435ff0bc754ac2669e,changed version number
+mcamara,2014-09-24 08:07:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2fb9343a02cac72619b65cd18c837ca9840853ff,2fb9343a02cac72619b65cd18c837ca9840853ff,"Merge pull request #138 from sangar82/master
+
+Check if locale_accept_from_http() is a supported locale"
+sangar82,2014-09-24 07:24:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d140a6fdcf3f218b61235ecc4c64d076bdcaa517,d140a6fdcf3f218b61235ecc4c64d076bdcaa517,Same code style
+sangar82,2014-09-24 07:23:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7972a3d74dbdc89ed6939a5a34cda134739953e0,7972a3d74dbdc89ed6939a5a34cda134739953e0,Fix Typo
+sangar82,2014-09-24 07:22:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3f7722d9e6003460be4d0f938dfd0543ef8b48b3,3f7722d9e6003460be4d0f938dfd0543ef8b48b3,Check if HTTP_ACCEPT_LANGUAGE is accepted on config
+mcamara,2014-09-23 14:52:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/708d851a7a0875fcca7f19d4349458eed837d6b4,708d851a7a0875fcca7f19d4349458eed837d6b4,"Merge pull request #137 from sangar82/master
+
+New way to obtain Accept-language Header"
+sangar82,2014-09-23 14:37:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0e462c7af907789f001df07a85d3624c5679a1cb,0e462c7af907789f001df07a85d3624c5679a1cb,"New way to obtain Accept-language Header
+
+Add this method http://php.net/manual/es/locale.acceptfromhttp.php
+Delete strtolower line 889"
+mcamara,2014-09-12 10:48:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f2acd2e7d23a3ce2f05736ff8d87b9e762e34a7b,f2acd2e7d23a3ce2f05736ff8d87b9e762e34a7b,added scrutinizer file and changing version
+mcamara,2014-09-12 10:30:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/250ba65de8ca172528cfb0857ee85e98072b4783,250ba65de8ca172528cfb0857ee85e98072b4783,"changed unparse_url to unparseURL (PSR-1 standard), fixed sessions on redirections, code improvement"
+mcamara,2014-09-09 13:31:34,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a98392361e73587d455d9f8bcb1494100a4670b1,a98392361e73587d455d9f8bcb1494100a4670b1,"More fixes to readability, getRouteNameFromAPath returns array"
+mcamara,2014-09-08 19:45:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b2c0bb8b283f9c84fe09ca4f1882d22f3ab95839,b2c0bb8b283f9c84fe09ca4f1882d22f3ab95839,"improvement of the readability of the code, some adjustments"
+mcamara,2014-08-19 10:25:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9ea9acaebc11b4a06890c4c243245399281af643,9ea9acaebc11b4a06890c4c243245399281af643,reverted changes in languages name
+mcamara,2014-08-18 09:24:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3a36ee8ab9637ba2b2413ff644a5bf84d2989b72,3a36ee8ab9637ba2b2413ff644a5bf84d2989b72,fixed session requirement
+mcamara,2014-08-17 19:48:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3aa70dc8a491f347a6390311ff1e6144545f2ab4,3aa70dc8a491f347a6390311ff1e6144545f2ab4,Added composer version
+mcamara,2014-08-17 19:44:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fc24db65ddb9d2c0fd8d451782f72675b1757610,fc24db65ddb9d2c0fd8d451782f72675b1757610,"Merge pull request #125 from brwnll/patch-1
+
+Re-flashing data before redirects"
+brwnll,2014-08-16 17:32:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/75dc257ea41064f524b96b2defb4c7251e3a16c6,75dc257ea41064f524b96b2defb4c7251e3a16c6,"Re-flashing data before redirects
+
+Adding Session::reflash() calls before redirecting within the route filter. This should preserve any previously flashed data."
+mcamara,2014-07-22 13:22:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ad1b6d3799cd94c4a54176881d557888b8ea77a2,ad1b6d3799cd94c4a54176881d557888b8ea77a2,Version 0.14.2
+mcamara,2014-07-22 13:19:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0f8f620bb2fac79bac4c7c67f2432c99de8e453f,0f8f620bb2fac79bac4c7c67f2432c99de8e453f,"Merge pull request #123 from dimsav/master
+
+Removed execution of code inside the LaravelLocalization class."
+dimsav,2014-07-22 09:51:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e875a216959d26895ee15e71cba9a163cd3bb64a,e875a216959d26895ee15e71cba9a163cd3bb64a,Removed execution of code inside the LaravelLocalization class.
+mcamara,2014-07-14 15:30:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/abbd881f1dd785fcbc7b2cda8ad9eb76b6c5dab1,abbd881f1dd785fcbc7b2cda8ad9eb76b6c5dab1,Version 0.14.1
+mrcbk,2014-07-11 08:49:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/93452073ca6d899d81059ecf84bf7e168e952f2a,93452073ca6d899d81059ecf84bf7e168e952f2a,- Fix localized routes when baseurl has url segments (eg http://example.com/example_segment/)
+mcamara,2014-06-02 15:51:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5bfb496b3abf5ee467f2a3f387c517f55314e26d,5bfb496b3abf5ee467f2a3f387c517f55314e26d,fixed composer.json
+mcamara,2014-06-02 15:39:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/52134b8c71b117d7e1ad128953bd3c00f8b10632,52134b8c71b117d7e1ad128953bd3c00f8b10632,fixed composer.json
+mcamara,2014-06-02 15:22:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7fc0d8172457d7dee55d7a75d10fc0115876d034,7fc0d8172457d7dee55d7a75d10fc0115876d034,fixed composer.json
+mcamara,2014-05-30 10:59:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/69c22e25b5a9cd2b6c74050c9da248027b5e6553,69c22e25b5a9cd2b6c74050c9da248027b5e6553,"Merge pull request #111 from jaumesala/patch-2
+
+Fix README.md"
+jaumesala,2014-05-29 10:14:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/83637069d9a64f50f110f8045b4f150ee97a59f9,83637069d9a64f50f110f8045b4f150ee97a59f9,"Fix README.md
+
+Fix documentation errors introduced in pull request #90 / commit 06b75066e413f1058e1bfacea7297d8ed0b82005"
+mcamara,2014-05-15 23:34:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/38ea1befacb1680034f4d995de5e10ceee9c24d8,38ea1befacb1680034f4d995de5e10ceee9c24d8,v 0.13.8
+mcamara,2014-05-15 22:39:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/62c290fe127a9c911120be2fd1995329436cc778,62c290fe127a9c911120be2fd1995329436cc778,"Merge pull request #110 from foxted/master
+
+Fix problem with routes with parameters and add event to deal with parameters translation"
+mcamara,2014-05-15 22:39:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a6ec4e73ec7b8f3631f84ce98cf4daf59e1c45b9,a6ec4e73ec7b8f3631f84ce98cf4daf59e1c45b9,"Merge pull request #107 from inov/master
+
+Added extra slash"
+inov,2014-05-09 12:20:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/943187b91d9c839c7d04d43a30f215dc88a1ae44,943187b91d9c839c7d04d43a30f215dc88a1ae44,"Added extra slash
+
+Prevents from adding duplicate locale prefix to url"
+mcamara,2014-05-05 21:27:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/98e5bb8fc3f4078e347efc6becbe39676bd664ab,98e5bb8fc3f4078e347efc6becbe39676bd664ab,updated version to 0.13.7
+mcamara,2014-05-05 21:25:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b643e062244a4d1dcc517fd9efd1c008e7986408,b643e062244a4d1dcc517fd9efd1c008e7986408,"Merge pull request #105 from inov/master
+
+Fix for typo in getURLFromRouteNameTranslated"
+inov,2014-05-05 13:41:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3bcb802dfaec0742fa8d8508d376b707d114e4ff,3bcb802dfaec0742fa8d8508d376b707d114e4ff,fixed typo
+inov,2014-05-05 13:21:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1349ac06eac1d9319ab1c53e1f3e539116cc342b,1349ac06eac1d9319ab1c53e1f3e539116cc342b,"Bugfix typo
+
+Bugfix typo"
+mcamara,2014-05-01 09:21:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0cd3df32f7f05cb030e77b5ec7e52705976075ac,0cd3df32f7f05cb030e77b5ec7e52705976075ac,"Merge pull request #100 from Steve-A-Orr/master
+
+Capitalized select singular Native entries."
+Steve-A-Orr,2014-04-30 19:10:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/af20fb6278431022bcacc6c125bef9b45b13fa07,af20fb6278431022bcacc6c125bef9b45b13fa07,"Capitalized select singular Native entries.
+
+Any single-word Native string, which had no mid-string capitalization, was capitalized."
+mcamara,2014-04-14 22:23:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/67e1fc67d01cef964096457e9ea82102fe452c13,67e1fc67d01cef964096457e9ea82102fe452c13,updated changelog
+mcamara,2014-04-10 21:57:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6588fa29b17745b14943d72e42f7cf7ab060aa57,6588fa29b17745b14943d72e42f7cf7ab060aa57,version changed
+mcamara,2014-04-10 07:02:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/06b75066e413f1058e1bfacea7297d8ed0b82005,06b75066e413f1058e1bfacea7297d8ed0b82005,"Merge pull request #90 from Sylvert0/master
+
+Fix LaravelLocalization.php"
+mcamara,2014-03-13 10:27:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/99ad6c10376d6f3b486a3ba0bac524e90917a05b,99ad6c10376d6f3b486a3ba0bac524e90917a05b,"Merge pull request #86 from drewjw81/readme-update
+
+Fixes example code for language bar in README."
+drewjw81,2014-03-13 09:28:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bd1d22a1b48054ce7ea8e6798087d6f35deb9f1f,bd1d22a1b48054ce7ea8e6798087d6f35deb9f1f,Move change log to CHANGELOG.md
+drewjw81,2014-03-13 09:26:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9530589f2b42531f0a3d6104d2594ed22430103d,9530589f2b42531f0a3d6104d2594ed22430103d,Added 0.13.4 fixes to Change Log.
+drewjw81,2014-03-13 09:04:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/405d0b1b18090ca8b656f47d6c07dacff8de0623,405d0b1b18090ca8b656f47d6c07dacff8de0623,Added warning in config and README for hideDefaultLocaleInURL
+drewjw81,2014-03-13 08:42:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/51cb159d4f4e3997ee7f367931e5e9d70b5ee573,51cb159d4f4e3997ee7f367931e5e9d70b5ee573,Fixes  example code for language bar.
+mcamara,2014-03-12 11:32:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a680934f177bcb2ae723042183fe861afa532493,a680934f177bcb2ae723042183fe861afa532493,fix when an url segment started with a language
+mcamara,2014-02-20 14:11:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/977eb7b50c81a31120f92afb8f913b8131d58063,977eb7b50c81a31120f92afb8f913b8131d58063,"Merge pull request #80 from drewjw81/fix-issue79
+
+Fix issue #79"
+drewjw81,2014-02-19 08:03:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c99a8e95ef88c75376779c483dcafe25ab73a69f,c99a8e95ef88c75376779c483dcafe25ab73a69f,Spelling fixes.
+drewjw81,2014-02-19 07:42:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1b74b7b70e9e5b2dfd10d36f6324237a165bd103,1b74b7b70e9e5b2dfd10d36f6324237a165bd103,Modified localizeUrl as per issue #79
+drewjw81,2014-02-19 07:41:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ba6231468b235c1286a75d4054dec49276f7df47,ba6231468b235c1286a75d4054dec49276f7df47,Add missing ChangeLog for v0.13.2
+mcamara,2014-02-18 22:34:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/96b4cff2c8e7e3dec4cbb45f84c429ee99461f46,96b4cff2c8e7e3dec4cbb45f84c429ee99461f46,"Merge pull request #77 from drewjw81/double-slash-fix
+
+Minor fix removes double slash '//' when base path is empty"
+drewjw81,2014-02-18 09:31:56,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cfc10a17fa087425ce2e0efa748d1e02d8e322fd,cfc10a17fa087425ce2e0efa748d1e02d8e322fd,Always strip trailing slash.
+drewjw81,2014-02-18 09:23:20,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1fe8e55c5da223781763a81e522643b5adb37160,1fe8e55c5da223781763a81e522643b5adb37160,Minor fix removes double // when base path is empty
+mcamara,2014-02-17 14:32:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/28916c1a228aa5be9f09eddabde72685558066ed,28916c1a228aa5be9f09eddabde72685558066ed,"Merge pull request #76 from drewjw81/baseurl-fix
+
+Fixes URL localization issue when the base path is not /"
+drewjw81,2014-02-17 04:44:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bbede24288442b32331bb324a33d6d5702f81727,bbede24288442b32331bb324a33d6d5702f81727,Fixes URL localization issue when the base path is not /
+mcamara,2014-02-15 00:20:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e7f6a9e8a4eaa49c8a87b2308c55c9480f992631,e7f6a9e8a4eaa49c8a87b2308c55c9480f992631,merged files
+mcamara,2014-02-15 00:15:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6571f1a9691396b839807f19110220ac3821665d,6571f1a9691396b839807f19110220ac3821665d,"Merge pull request #69 from drewjw81/defualt-check
+
+Force default locale to be in the supported locales array."
+mcamara,2014-02-15 00:14:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e0e1056949fc5fdcc1884d0bd300d287929d9723,e0e1056949fc5fdcc1884d0bd300d287929d9723,"Merge pull request #75 from fisharebest/master
+
+Issues #71 (script names) and #72 (language names)"
+fisharebest,2014-02-14 23:03:05,https://api.github.com/repos/mcamara/laravel-localization/git/commits/27ba46399009641c8747892d42054bfa86b8890e,27ba46399009641c8747892d42054bfa86b8890e,Wrong apostrophes
+fisharebest,2014-02-14 22:46:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e47d733152a307ad2c7354cf9287f8b1e57e3696,e47d733152a307ad2c7354cf9287f8b1e57e3696,Issues #71 (script names) and #72 (language names)
+drewjw81,2014-02-14 04:08:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f524cc353ece34bdaadc675600b54e76e86e3b03,f524cc353ece34bdaadc675600b54e76e86e3b03,Readme updated
+drewjw81,2014-02-14 04:05:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1100867e0df7001c8a5306405f3894e57e4746de,1100867e0df7001c8a5306405f3894e57e4746de,Readme update.
+drewjw81,2014-02-14 04:01:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fd711c2b7d8ca7eb1f3a13d4b8d32d7f9d396fb9,fd711c2b7d8ca7eb1f3a13d4b8d32d7f9d396fb9,Deprecated getLanguageBar.
+drewjw81,2014-02-14 03:44:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c9c73d88bacd489b9d94aeadeaa8121cbba18d40,c9c73d88bacd489b9d94aeadeaa8121cbba18d40,Adding missing documentation.
+drewjw81,2014-02-14 03:40:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2a48f88c3427063154127a560ea84262e182db76,2a48f88c3427063154127a560ea84262e182db76,v0.12.1
+drewjw81,2014-02-14 03:40:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0a5e8a1a1b8397bc049dc77b14d10104e4a547a7,0a5e8a1a1b8397bc049dc77b14d10104e4a547a7,Throw an exception if Laravel's default locale is not in the supportedLocales array.
+mcamara,2014-01-31 10:39:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cb6d59ff2ecfb26f1c023347bb115a5914a3638c,cb6d59ff2ecfb26f1c023347bb115a5914a3638c,"Merge pull request #65 from drewjw81/basic-tests
+
+Added the first set of basic tests."
+mcamara,2014-01-31 10:39:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3eaae153b6d18426385da05c86bce623da439cf1,3eaae153b6d18426385da05c86bce623da439cf1,"Merge pull request #63 from drewjw81/fix-62
+
+Fix issue 62 and add convenience function"
+drewjw81,2014-01-31 10:24:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a15bfdbc73f4174671200eed7bc7f3be9c37dfce,a15bfdbc73f4174671200eed7bc7f3be9c37dfce,Added the first set of basic tests.  Still a lot to go.
+mcamara,2014-01-31 10:22:13,https://api.github.com/repos/mcamara/laravel-localization/git/commits/538426b786220c3a21a6838111a86d41d1072063,538426b786220c3a21a6838111a86d41d1072063,"Merge pull request #64 from drewjw81/travis
+
+Adding Status icons"
+drewjw81,2014-01-31 04:48:32,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3b93eea782ecba5bea45e41e1c188062e32d3c41,3b93eea782ecba5bea45e41e1c188062e32d3c41,Adding statuses
+drewjw81,2014-01-31 04:44:16,https://api.github.com/repos/mcamara/laravel-localization/git/commits/86c0a496fb1f305dbb7acf4ebf47d4cdd60e2710,86c0a496fb1f305dbb7acf4ebf47d4cdd60e2710,Adding .travis.yml
+drewjw81,2014-01-31 04:31:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c3c9c5f7036c8378a337931fd57958a77f002db7,c3c9c5f7036c8378a337931fd57958a77f002db7,Added localizeURL
+drewjw81,2014-01-31 04:26:54,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0a4b81823848695e005ac23db313528fedd32518,0a4b81823848695e005ac23db313528fedd32518,307 rather than 302 to prevent POST values from being thrown away.
+drewjw81,2014-01-29 08:11:20,https://api.github.com/repos/mcamara/laravel-localization/git/commits/bb0e60187bdfad8d580ec11c22fae1fb3ef995a5,bb0e60187bdfad8d580ec11c22fae1fb3ef995a5,Convenience changes to getLocalizedURL
+mcamara,2014-01-24 02:31:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cf7e00ebc77e2ebd8119a43ad50367418a7fe012,cf7e00ebc77e2ebd8119a43ad50367418a7fe012,get values in translated routes
+mcamara,2014-01-23 17:23:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/76f789d07b527f2ad74ca93344b04cb74076c9eb,76f789d07b527f2ad74ca93344b04cb74076c9eb,"Merge pull request #60 from nikosv/patch-1
+
+getLocalizedURL() fix for urls that contain query strings"
+nikosv,2014-01-23 17:17:10,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2bb9b5cdde50f46289a7c9a6e821c73ce0a2ceea,2bb9b5cdde50f46289a7c9a6e821c73ce0a2ceea,getLocalizedURL() fix for urls that contain query strings
+mcamara,2014-01-22 11:13:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/331104d9a44e52aed8e89bdfd74d0b12ec9590bf,331104d9a44e52aed8e89bdfd74d0b12ec9590bf,"Merge pull request #57 from Omranic/master
+
+Function standardization (depricating old & creating new) + Cleaning.."
+Omranic,2014-01-22 11:06:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7073b39a7bbbf1c55f2d6cec9efd438b3af454de,7073b39a7bbbf1c55f2d6cec9efd438b3af454de,Updated version number
+Omranic,2014-01-22 11:05:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/444c283f039adf10c7b71ed41a8fd9a1213d6ec6,444c283f039adf10c7b71ed41a8fd9a1213d6ec6,Cleaning: Replacing spaces with tabs
+Omranic,2014-01-22 11:01:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cd5750eac0ae77e95d4fddc49e1218a05102bc3b,cd5750eac0ae77e95d4fddc49e1218a05102bc3b,Updated version & usage manual..
+Omranic,2014-01-22 10:56:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/08e99aeb52f7463385d5c42fd1c809d0e515940d,08e99aeb52f7463385d5c42fd1c809d0e515940d,"Added ""getCurrentLocaleName"" to retrieve locale name"
+Omranic,2014-01-22 10:56:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ea9b65adbf5b076930e55a73553d6d3918b4be26,ea9b65adbf5b076930e55a73553d6d3918b4be26,"Depricated ""getCurrentLanguageDirection"" & ""getCurrentLanguageScript""
+use ""getCurrentLocaleDirection"" & ""getCurrentLocaleScript"" instead"
+mcamara,2014-01-22 10:40:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/caa239c1c56080d4c424ac96039247de4e6ac47b,caa239c1c56080d4c424ac96039247de4e6ac47b,"Merge pull request #55 from drewjw81/more-47-fixes
+
+Language Bar template fixes"
+drewjw81,2014-01-22 03:53:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1028d52e72b2893fe38f495687b104299564c2f6,1028d52e72b2893fe38f495687b104299564c2f6,Fix issue with and add comments for unparse_url
+drewjw81,2014-01-22 03:14:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8c999f14995c383bfbf2976b80782ec836dce4f5,8c999f14995c383bfbf2976b80782ec836dce4f5,Prevent error if $parsed_url['path'] is empty.
+drewjw81,2014-01-22 02:55:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/24a74dd94ad1ac93ac251da455427486cd97e2fb,24a74dd94ad1ac93ac251da455427486cd97e2fb,Readme updates.
+drewjw81,2014-01-22 02:49:18,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b13bd0ec7ade2179d7d15929f3b805cc06359e65,b13bd0ec7ade2179d7d15929f3b805cc06359e65,"getLocalizedURL now returns URL paths in the same format as parameter inputted.
+merged getNonLocalizedURL and getLocalizedURL
+getNonLocalizedURL($url = null) is now a wrapper for getLocalizedURL(false, $url = null)"
+drewjw81,2014-01-22 01:42:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e68d304f2445a54eebd3de56504f80c6bcd2639c,e68d304f2445a54eebd3de56504f80c6bcd2639c,Used hideDefaultLocaleInURL in LaravelLocalizationRedirectFilter
+drewjw81,2014-01-22 01:38:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3e9bc176613a400f81d1b386d57457020e1016e6,3e9bc176613a400f81d1b386d57457020e1016e6,Fixed LaravelLocalizationRedirectFilter
+drewjw81,2014-01-22 01:30:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/24b041ae3cc10c401037dc8734ff8c568f4d0ee2,24b041ae3cc10c401037dc8734ff8c568f4d0ee2,v0.10.1
+drewjw81,2014-01-22 01:30:02,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ae9caa93c6bbfae367580bc0aa84556e517ee015,ae9caa93c6bbfae367580bc0aa84556e517ee015,Fixed backward compatibility of getLanguageBar with older templates.
+drewjw81,2014-01-22 00:36:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/87274191ee9c7238dbcb3e62a8447c11f16d4bd8,87274191ee9c7238dbcb3e62a8447c11f16d4bd8,Use getCurrentLocale.
+mcamara,2014-01-21 13:04:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/edbf9309b0a1812aa3fc6c7ba815a7700786535c,edbf9309b0a1812aa3fc6c7ba815a7700786535c,fixed translate url when /
+mcamara,2014-01-21 12:56:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a25edf7bd68031701caa5025a290eeba34d7a50a,a25edf7bd68031701caa5025a290eeba34d7a50a,added deprecated function until 1.0
+mcamara,2014-01-21 12:43:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cf6a46db7a3c6a57cbabeed7ff95de8da5c10f17,cf6a46db7a3c6a57cbabeed7ff95de8da5c10f17,"Merge pull request #53 from drewjw81/more-readme-fixes-v0.10
+
+Fixed usage example."
+drewjw81,2014-01-21 12:13:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6fb9a7a29a5f39bd4217bc25019c0b28e213ff64,6fb9a7a29a5f39bd4217bc25019c0b28e213ff64,Fix usage example.
+mcamara,2014-01-21 12:09:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2c3d8b4ee143058bf254da44f213bd7367611da0,2c3d8b4ee143058bf254da44f213bd7367611da0,"Merge pull request #52 from drewjw81/readme-fixes-v0.10
+
+Added missing read me changes for v0.10"
+drewjw81,2014-01-21 12:00:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/dc027b60033038bfad25b78c099573508dff2225,dc027b60033038bfad25b78c099573508dff2225,Added missing read me changes.
+mcamara,2014-01-21 11:54:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f3d9cde4831d5c2e7b9fe31768f227b9c1326d8c,f3d9cde4831d5c2e7b9fe31768f227b9c1326d8c,"Merge pull request #51 from drewjw81/language-to-locale
+
+Language to locale"
+mcamara,2014-01-21 11:49:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/298eb71734ab2b3d5954a9121fc730c24d841661,298eb71734ab2b3d5954a9121fc730c24d841661,"Merge pull request #49 from drewjw81/route-generation-fixes
+
+Fixes to route/URL generators."
+drewjw81,2014-01-21 11:47:45,https://api.github.com/repos/mcamara/laravel-localization/git/commits/84d33b89bbabda08a476104d74c4a74c40400052,84d33b89bbabda08a476104d74c4a74c40400052,Formatting fix.
+drewjw81,2014-01-21 11:45:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/732094f08cd5682e4ae17cfc51baa713ac2d80a2,732094f08cd5682e4ae17cfc51baa713ac2d80a2,Standardizing function and variable names.
+drewjw81,2014-01-21 10:59:13,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e4a301afc94c5976a9784d7c41c1463e3085a6d6,e4a301afc94c5976a9784d7c41c1463e3085a6d6,Remove code doing nothing.
+drewjw81,2014-01-21 10:58:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/13a3f10e17a5a8f6cbd5c3791e8c0db584c430bb,13a3f10e17a5a8f6cbd5c3791e8c0db584c430bb,Change language to locale where applicable.
+drewjw81,2014-01-21 10:33:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/765dfd0210b364b01748c29144b20d5311fe863f,765dfd0210b364b01748c29144b20d5311fe863f,Fixes issue when calling getURLLanguage
+drewjw81,2014-01-21 09:38:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0007eac07677650b40e5364616de5e67e8bf4a38,0007eac07677650b40e5364616de5e67e8bf4a38,Generate locales when constructing.
+drewjw81,2014-01-21 05:21:17,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a4fa9c8f737e5c1301af7ef1f7e079edeef98e52,a4fa9c8f737e5c1301af7ef1f7e079edeef98e52,"Fixes issue #47.
+Fixes issue where getCleanRoute would only clean out the currently set locale.
+getLocalizedURL now throws an UnsupportedLocaleException if the requested locale is not in the list of supported locales."
+mcamara,2014-01-20 14:22:34,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b41aed5e65103b6af7c144972a46b35511efd772,b41aed5e65103b6af7c144972a46b35511efd772,"Merge pull request #46 from drewjw81/formatting
+
+Fixing formatting to be consistent with Laravel framework coding style"
+drewjw81,2014-01-20 08:54:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0523f0f88522b653589634cc272a6da11cb419f6,0523f0f88522b653589634cc272a6da11cb419f6,Fixing my formatting to be consistent with Laravel framework coding style.
+mcamara,2014-01-19 18:48:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9050a8826c6e531680cee2c936fd796a78a11d3a,9050a8826c6e531680cee2c936fd796a78a11d3a,Capitalized Languages
+mcamara,2014-01-19 18:25:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/57e7df999c5cd2f30a76189be0363a79a60da23e,57e7df999c5cd2f30a76189be0363a79a60da23e,hide not translated routes by default
+mcamara,2014-01-19 17:54:13,https://api.github.com/repos/mcamara/laravel-localization/git/commits/741377b1b0d298d0664babbce33ee574ec2efef4,741377b1b0d298d0664babbce33ee574ec2efef4,Merge branch 'master' of https://github.com/mcamara/laravel-localization
+mcamara,2014-01-19 17:39:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4a229d3b9c6223b0a4bc8a3bbe97cd9e0b2950ff,4a229d3b9c6223b0a4bc8a3bbe97cd9e0b2950ff,Capitalized languages
+mcamara,2014-01-19 17:38:19,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0d778be811923219fce1085a83770c2e61e01730,0d778be811923219fce1085a83770c2e61e01730,fixed supportedLanguages problems
+mcamara,2014-01-19 15:46:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5055111d80ab792d624ae42ff15ef11c5e0c754f,5055111d80ab792d624ae42ff15ef11c5e0c754f,"Merge pull request #43 from drewjw81/readme-update
+
+Update to readme."
+drewjw81,2014-01-18 14:13:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1625896cb1f61dbcb43d589b1fa7b1d982d7420c,1625896cb1f61dbcb43d589b1fa7b1d982d7420c,Update to readme.
+mcamara,2014-01-18 12:04:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/74073a347853b59c42bf820b09e31b73cd4f18d7,74073a347853b59c42bf820b09e31b73cd4f18d7,"Merge pull request #41 from drewjw81/language-chooser
+
+Language bar functionality can all be controlled via the template"
+mcamara,2014-01-18 12:02:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5c671fe8fbfb55f06da927ae9ed6929e59226b1b,5c671fe8fbfb55f06da927ae9ed6929e59226b1b,"Merge pull request #40 from drewjw81/languages-merge
+
+Merged languagesAllowed & supportedLanguages"
+drewjw81,2014-01-18 06:28:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1cc9f9f140dd78a6d61fc811e49d8e1394840f1f,1cc9f9f140dd78a6d61fc811e49d8e1394840f1f,Increased version to v0.8
+drewjw81,2014-01-18 06:24:58,https://api.github.com/repos/mcamara/laravel-localization/git/commits/ab7bb41a85b3cd34f35c976814bb05fbdb1e50e0,ab7bb41a85b3cd34f35c976814bb05fbdb1e50e0,Merge branch 'languages-merge' into language-chooser
+drewjw81,2014-01-18 06:24:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/77929c70926dd96df34eebc060fb84f572fd22df,77929c70926dd96df34eebc060fb84f572fd22df,Increase to v0.7
+drewjw81,2014-01-18 05:28:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a69d2d923832fecaded07b2c9a26690c2c8c45a1,a69d2d923832fecaded07b2c9a26690c2c8c45a1,Deprecaed getLanguageBarClassName() as this should be altered directly in the view template.
+drewjw81,2014-01-18 05:21:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2ab3ab3fdd06cea727cf91f771bc808b365bc4b4,2ab3ab3fdd06cea727cf91f771bc808b365bc4b4,Move most of getLanguageBar’s functionality in to the template and deprecate getPrintCurrentLanguage
+drewjw81,2014-01-18 03:57:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/96786e88b8ecc3f9d85873d9b728c4da413652bb,96786e88b8ecc3f9d85873d9b728c4da413652bb,Removed deprecation left over from testing.
+drewjw81,2014-01-18 03:54:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b4c8b98e59820434428cc8d2a8ce29e9df09f99b,b4c8b98e59820434428cc8d2a8ce29e9df09f99b,Merged languagesAllowed & supportedLanguages into supportedLocales while retaining deprecated support for older config options.
+mcamara,2014-01-16 12:33:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/168fe90c678286a67b60a5d590ec83f84e0b4b95,168fe90c678286a67b60a5d590ec83f84e0b4b95,fix with older config files
+mcamara,2014-01-15 16:39:46,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d8de28f68d0f98502e19e1e10c38a66fdb2e7f72,d8de28f68d0f98502e19e1e10c38a66fdb2e7f72,"Merge pull request #38 from Omranic/master
+
+Added support for language script and direction"
+Omranic,2014-01-15 07:28:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1a260bd7bd8622a7609d50b16667092f5d4ec25c,1a260bd7bd8622a7609d50b16667092f5d4ec25c,Cleaning trailing whitespaces & fixing returns
+Omranic,2014-01-15 06:50:45,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3aad1f7dc0e0d3329a12ab40fc23d8bf1c1c3f9e,3aad1f7dc0e0d3329a12ab40fc23d8bf1c1c3f9e,"Merge pull request #1 from jaumesala/master
+
+Fix routing error if hideDefaultLanguageInRoute is true"
+Omranic,2014-01-15 06:35:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/48031156de9358589af53da9c94f58c57d2bc24d,48031156de9358589af53da9c94f58c57d2bc24d,Added support for language script and direction
+mcamara,2014-01-13 15:23:23,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e60f009f689a648fc76bedd50663f617f867d8a6,e60f009f689a648fc76bedd50663f617f867d8a6,"Merge pull request #35 from jaumesala/master
+
+Fix routing error if hideDefaultLanguageInRoute is true"
+jaumesala,2014-01-13 09:41:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cc95f4b02b540487d4e29962e5624a54987c4bf6,cc95f4b02b540487d4e29962e5624a54987c4bf6,"Fix routing error if hideDefaultLanguageInRoute is true
+
+There was a problem when changing from a language route to a
+defaultLanguage route if hideDefaultLanguageInRoute was true.
+
+Example
+Linking from (1) to (2) we got NotFoundException
+1. domain.com/en/services
+2. domain.com/servicios
+
+But from (1) to (2) and then (3) was OK
+1. domain.com/en/services
+2. domain.com/es/servicios
+3. domain.com/servicios"
+mcamara,2014-01-12 21:30:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8c5c37274aa83446b788f2968888495e8514dcf3,8c5c37274aa83446b788f2968888495e8514dcf3,"Merge pull request #33 from Omranic/master
+
+Added support for six more languages"
+Omranic,2014-01-12 13:05:04,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c8528596cade76f6afe1918fe564bae738d364b9,c8528596cade76f6afe1918fe564bae738d364b9,"Added support for six more languages
+	1. Uyghur
+	2. Sinhalese
+	3. Pashto
+	4. Kannada
+	5. Chichewa
+	6. Fulah"
+mcamara,2014-01-11 00:33:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/44ba875d2841653bed1188df3724e82b69f34805,44ba875d2841653bed1188df3724e82b69f34805,"Merge pull request #32 from jaumesala/master
+
+Fix getURLFromRouteNameTranslated"
+jaumesala,2014-01-10 11:41:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0c8fc4533b2970254860ad63875cb26de5f79973,0c8fc4533b2970254860ad63875cb26de5f79973,"Fix getURLFromRouteNameTranslated
+
+If hideDefaultLanguageInRoute is true getURLFromRouteNameTranslated
+should hide the default locale"
+mcamara,2014-01-07 11:35:47,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1c719634c7c00a6f3209af0a38c0119325441347,1c719634c7c00a6f3209af0a38c0119325441347,fixed getCleanRoute
+mcamara,2014-01-07 11:23:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/475b4d754633f6f56c59e20e662731d42f414a55,475b4d754633f6f56c59e20e662731d42f414a55,"Merge pull request #29 from drewjw81/doc-changes
+
+Comment changes & minor code fixes"
+mcamara,2014-01-07 11:19:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/5c3ffda235f27a5ebbe10ba47259e829d5ef8362,5c3ffda235f27a5ebbe10ba47259e829d5ef8362,"Merge pull request #26 from drewjw81/language-negotiation
+
+Language negotiation fixes and Cookie language storage"
+mcamara,2014-01-07 11:17:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/789264c0619254498f6e92db194754af9f0f0f3a,789264c0619254498f6e92db194754af9f0f0f3a,"Merge pull request #27 from drewjw81/header-redirect-fixes
+
+Send SEO Friendly headers when using LaravelLocalizationRedirectFilter"
+mcamara,2014-01-07 11:14:24,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f8c2d0016169116112ca67a9a5442552c5eb0705,f8c2d0016169116112ca67a9a5442552c5eb0705,"Merge pull request #25 from drewjw81/master
+
+Add .gitignore"
+drewjw81,2014-01-06 07:31:48,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8171fd782c63b18942dcc67f19086a2def7174cd,8171fd782c63b18942dcc67f19086a2def7174cd,Fixes issue where a generated generic could become higher priority than a requested language.
+drewjw81,2014-01-05 14:14:25,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1c87824ae37e04c65f88e843c23397847aca664b,1c87824ae37e04c65f88e843c23397847aca664b,Update README.md to match changes to code.
+drewjw81,2014-01-05 14:08:39,https://api.github.com/repos/mcamara/laravel-localization/git/commits/baee3055ea1a8c56fe80b70cec0a4c34c047897c,baee3055ea1a8c56fe80b70cec0a4c34c047897c,Changed getCleanRoute to prevent possible replacement of language strings not in the first section of the path variable.
+drewjw81,2014-01-05 14:06:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a942fba943169355785edf9ea095100f54e49bfd,a942fba943169355785edf9ea095100f54e49bfd,Use single quotes or \/ could cause an error
+drewjw81,2014-01-05 13:59:26,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b6490364dfefe408039b8eafbacde501570fad88,b6490364dfefe408039b8eafbacde501570fad88,Clean up documentation and make parameters consistent in comments.
+drewjw81,2014-01-05 07:47:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b34c64329fd3ea4bc5fbe3a6fa3de0333ae23553,b34c64329fd3ea4bc5fbe3a6fa3de0333ae23553,Redirect with a 302 and tell crawlers why we redirected.
+drewjw81,2014-01-05 07:37:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/cfa8a9776b1a1c821323e000ed21408acd37704c,cfa8a9776b1a1c821323e000ed21408acd37704c,Save an in_array call and slightly improve readability.
+drewjw81,2014-01-05 06:42:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d56229d2717da423e8eaf479de339ae16ddbcb0f,d56229d2717da423e8eaf479de339ae16ddbcb0f,Properly negotiate for the language rather than just taking the first two characters.
+drewjw81,2014-01-05 05:29:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/51692b70c7056f885daf27e49d37edf23bd9092c,51692b70c7056f885daf27e49d37edf23bd9092c,Get the Accept-Language header the Laravel way.
+drewjw81,2014-01-05 05:19:11,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9af625c26e92aaa6f21d39affe777e736d6bb5b1,9af625c26e92aaa6f21d39affe777e736d6bb5b1,Add cookie storage option for language.
+drewjw81,2014-01-05 04:20:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/026a2e4f315c8d8c4cb589ba5c11ff89c72f3d57,026a2e4f315c8d8c4cb589ba5c11ff89c72f3d57,Add .gitignore
+mcamara,2014-01-02 12:14:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e0316c3ebd890687f1caae9ac24c7da538460533,e0316c3ebd890687f1caae9ac24c7da538460533,"Merge pull request #24 from jaumesala/master
+
+Fixes compatibility with Laravel 4.1"
+jaumesala,2014-01-02 11:24:55,https://api.github.com/repos/mcamara/laravel-localization/git/commits/efe4fdcdc1ca35988254f9547cdcacd9e535a642,efe4fdcdc1ca35988254f9547cdcacd9e535a642,"Fixes compatibility with Laravel 4.1
+
+if (method_exists($router, 'getCurrentRoute')){…} fails to determine if
+we are using Laravel 4.1.x or 4.0.x.
+Instead, we can use a constant de identify the version..."
+mcamara,2013-12-30 17:30:35,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b8b5c8208cd6ef921725f1a71e4564ffcf75a027,b8b5c8208cd6ef921725f1a71e4564ffcf75a027,readme updated
+mcamara,2013-12-30 17:18:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/6861aa92fb2d4c60a7f4a2c40837aac2dad1b5e4,6861aa92fb2d4c60a7f4a2c40837aac2dad1b5e4,little fix
+mcamara,2013-12-30 10:31:07,https://api.github.com/repos/mcamara/laravel-localization/git/commits/19d2bdbbf12270ae0afa15658f4d762bae20347f,19d2bdbbf12270ae0afa15658f4d762bae20347f,"Merge pull request #23 from nikospkrk/patch-1
+
+Added optionnal $locale parameter to setLanguage()"
+mcamara,2013-12-16 19:12:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/2d742257164b4657dba179ee52c362c3d52d5443,2d742257164b4657dba179ee52c362c3d52d5443,small improvement
+mcamara,2013-12-16 17:36:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/aa1769d41c08eee91933a5ee0c744729900ec6de,aa1769d41c08eee91933a5ee0c744729900ec6de,Merge branch 'master' of https://github.com/mcamara/laravel-localization
+mcamara,2013-12-16 17:36:33,https://api.github.com/repos/mcamara/laravel-localization/git/commits/56977eb4ff4ac85cae4d2a0f6bc299ec5bcaab10,56977eb4ff4ac85cae4d2a0f6bc299ec5bcaab10,added custom view - languagebar
+mcamara,2013-12-13 17:52:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1f4b15d8ff6bed9cb9960bf244bffa53b26009d9,1f4b15d8ff6bed9cb9960bf244bffa53b26009d9,"Merge pull request #16 from nikospkrk/patch-1
+
+Starting forward slash issue on Laravel 4.1"
+mcamara,2013-12-12 13:28:57,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9c339e4fa31f7f72aa63afdfc0bcc8f725a8b1e8,9c339e4fa31f7f72aa63afdfc0bcc8f725a8b1e8,"Merge pull request #15 from nikospkrk/patch-1
+
+LaravelLocalization support for Laravel 4.1"
+mcamara,2013-12-10 18:18:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9940450dedfa50eedfdab14e586be2a4c3110d3b,9940450dedfa50eedfdab14e586be2a4c3110d3b,Merge branch 'master' of https://github.com/mcamara/laravel-localization
+mcamara,2013-12-10 18:17:41,https://api.github.com/repos/mcamara/laravel-localization/git/commits/09144cd7918f94f9d2516e378592a779f9db1d09,09144cd7918f94f9d2516e378592a779f9db1d09,Added the ability to hide the default language if it is in the route
+mcamara,2013-11-29 14:36:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e760b075d5c20c62e7b593f0eacfe3f2fd3bf0bc,e760b075d5c20c62e7b593f0eacfe3f2fd3bf0bc,"Merge pull request #13 from nikospkrk/patch-1
+
+Update README.md"
+mcamara,2013-11-27 01:52:10,https://api.github.com/repos/mcamara/laravel-localization/git/commits/02b3cb759a3b40f45426ee37e9141ff10a91755a,02b3cb759a3b40f45426ee37e9141ff10a91755a,README updated
+mcamara,2013-11-27 01:50:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/04dac6730ef6e7233acb42b8b056fe217b11e4f4,04dac6730ef6e7233acb42b8b056fe217b11e4f4,getAllowedLanguages is able to return languages not abbreviated
+mcamara,2013-11-18 16:12:16,https://api.github.com/repos/mcamara/laravel-localization/git/commits/36169116340021fb10eaceec6b4805e6108aba86,36169116340021fb10eaceec6b4805e6108aba86,0.5 - updated README
+mcamara,2013-11-18 16:09:00,https://api.github.com/repos/mcamara/laravel-localization/git/commits/eb303e032ef57f162c119e8200951dc2124779b7,eb303e032ef57f162c119e8200951dc2124779b7,0.5 - added translated routes
+mcamara,2013-11-15 16:22:53,https://api.github.com/repos/mcamara/laravel-localization/git/commits/8760fa3a926b6f76e8d8eb3896b6e156e75cfb6e,8760fa3a926b6f76e8d8eb3896b6e156e75cfb6e,"Merge pull request #11 from falzhobel/trailing-slash-trim
+
+Remove trailing slash in getCleanRoute to prevent 301 redirects"
+mcamara,2013-11-13 15:05:35,https://api.github.com/repos/mcamara/laravel-localization/git/commits/22c95dd6435c5bc5c07a423ba20588c73b69a24a,22c95dd6435c5bc5c07a423ba20588c73b69a24a,Added the ability to edit the language bar code
+mcamara,2013-11-13 14:25:36,https://api.github.com/repos/mcamara/laravel-localization/git/commits/9c5d8b3c99ddba48f66445c14090e485780e14b2,9c5d8b3c99ddba48f66445c14090e485780e14b2,added ability to show or not the current language in the language bar
+mcamara,2013-11-10 20:16:03,https://api.github.com/repos/mcamara/laravel-localization/git/commits/250b1fcc973b4f34ecbf95b797bb41ac2acd14a8,250b1fcc973b4f34ecbf95b797bb41ac2acd14a8,laravel 4.1 update
+mcamara,2013-11-08 12:08:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a6cd0a2e0df684b4b8231e00a4b8c8cf7ea8e67a,a6cd0a2e0df684b4b8231e00a4b8c8cf7ea8e67a,readme fix
+mcamara,2013-11-08 12:07:37,https://api.github.com/repos/mcamara/laravel-localization/git/commits/548d9c1d90ac657544ee6ec704631acaef26f2aa,548d9c1d90ac657544ee6ec704631acaef26f2aa,readme fix
+mcamara,2013-11-08 12:00:21,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c1aa980f7c9dc2f4a7bc416c187c91bd3c374b31,c1aa980f7c9dc2f4a7bc416c187c91bd3c374b31,added get allowed languages function
+mcamara,2013-11-08 11:49:42,https://api.github.com/repos/mcamara/laravel-localization/git/commits/aa2eed9c0cadd26ddec73fb7609599b732263e8b,aa2eed9c0cadd26ddec73fb7609599b732263e8b,"Merge pull request #9 from Gantorys/patch-1
+
+add hreflang to the link"
+Gantorys,2013-11-07 20:15:50,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4d3d515c94ebe8d92ab2db39b60ad8b14bf80eaf,4d3d515c94ebe8d92ab2db39b60ad8b14bf80eaf,Update languagebar.blade.php
+Gantorys,2013-11-07 20:13:12,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1e8a0d0b57e3709bb85cf58a0fe4609f0fe1c12c,1e8a0d0b57e3709bb85cf58a0fe4609f0fe1c12c,Update languagebar.blade.php
+mcamara,2013-10-20 22:52:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/a5013f4531cf669dd9e006081f16890fc942af8f,a5013f4531cf669dd9e006081f16890fc942af8f,comments
+mcamara,2013-10-20 19:21:43,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3ca1a6fdf76135d713ef0b43b7852d59104c3e61,3ca1a6fdf76135d713ef0b43b7852d59104c3e61,readme fix
+mcamara,2013-10-20 18:59:08,https://api.github.com/repos/mcamara/laravel-localization/git/commits/87f78cb947135b2d78979adc4d083bbe7442867d,87f78cb947135b2d78979adc4d083bbe7442867d,added filter
+mcamara,2013-10-14 09:23:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7d8d033814cb380f3e72a8ed08a87b250f1fc651,7d8d033814cb380f3e72a8ed08a87b250f1fc651,"Merge pull request #6 from keevitaja/master
+
+append languge to given URI"
+keevitaja,2013-10-13 21:13:52,https://api.github.com/repos/mcamara/laravel-localization/git/commits/add611f6b71638bafcb7ad4d19823ca0856a566c,add611f6b71638bafcb7ad4d19823ca0856a566c,get default language
+keevitaja,2013-10-13 20:55:06,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e24293870360915f4588340cbe57eb8b19aed75b,e24293870360915f4588340cbe57eb8b19aed75b,append languge to given URI
+mcamara,2013-10-09 17:20:29,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1bad0f8d01cfc35ceb0f424f7545ecc02d716c0b,1bad0f8d01cfc35ceb0f424f7545ecc02d716c0b,style fix
+mcamara,2013-10-09 15:38:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f4952bd1ea55b5ae6961ea23978616df86a07463,f4952bd1ea55b5ae6961ea23978616df86a07463,readme fix
+mcamara,2013-10-04 13:43:40,https://api.github.com/repos/mcamara/laravel-localization/git/commits/e9a5a3b6c7a9dad417385f6dc8277e29b78abc61,e9a5a3b6c7a9dad417385f6dc8277e29b78abc61,added useSessionLanguage option
+mcamara,2013-10-04 13:41:22,https://api.github.com/repos/mcamara/laravel-localization/git/commits/fbfca31e4f184ebf0e515d52317128cee8ee57f5,fbfca31e4f184ebf0e515d52317128cee8ee57f5,added useSessionLanguage option
+mcamara,2013-10-04 13:32:14,https://api.github.com/repos/mcamara/laravel-localization/git/commits/efbd43efc3145ae5eb79a1fbe22637a037dda629,efbd43efc3145ae5eb79a1fbe22637a037dda629,added useSessionLanguage option
+mcamara,2013-09-27 09:44:38,https://api.github.com/repos/mcamara/laravel-localization/git/commits/b164e8bd334275b128e9bfdec87fd34e2f22f270,b164e8bd334275b128e9bfdec87fd34e2f22f270,"Merge pull request #2 from djordje/config/languageBarClass
+
+Added ability to use custom class for language bar unordered list."
+djordje,2013-09-26 22:13:44,https://api.github.com/repos/mcamara/laravel-localization/git/commits/4585921c263fca0caa905994fbeb3e125775ef99,4585921c263fca0caa905994fbeb3e125775ef99,Added ability to use custom class for language bar unordered list.
+mcamara,2013-09-03 00:27:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/d504026a28496f379a11225fa17f7490c7b1d314,d504026a28496f379a11225fa17f7490c7b1d314,little bug fixed
+mcamara,2013-09-01 20:34:28,https://api.github.com/repos/mcamara/laravel-localization/git/commits/89b507e443580ac6f2f63873813ea8e3c14893fe,89b507e443580ac6f2f63873813ea8e3c14893fe,"v0.2 - README written, some features added"
+mcamara,2013-09-01 20:31:13,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0b18b34851c4ef78ef79fd4e8f0898ce62a8e7a0,0b18b34851c4ef78ef79fd4e8f0898ce62a8e7a0,"v0.2 - README written, some features added"
+mcamara,2013-09-01 20:19:09,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f98cf9152e573e1f8d1cd2d31abd84b0f8611b33,f98cf9152e573e1f8d1cd2d31abd84b0f8611b33,"v0.2 - README written, some features added"
+mcamara,2013-09-01 20:16:31,https://api.github.com/repos/mcamara/laravel-localization/git/commits/f3087364bb1195cc39b26cd3493eb53c2001f21e,f3087364bb1195cc39b26cd3493eb53c2001f21e,"v0.2 - README written, some features added"
+mcamara,2013-09-01 20:15:49,https://api.github.com/repos/mcamara/laravel-localization/git/commits/21f1a16ad543ab4cf14bf6fccd111e02c8c9ac43,21f1a16ad543ab4cf14bf6fccd111e02c8c9ac43,"v0.2 - README written, some features added"
+mcamara,2013-09-01 20:14:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/1ea9502132a91a70694947c09ce086c054a9efe8,1ea9502132a91a70694947c09ce086c054a9efe8,"v0.2 - README written, some features added"
+mcamara,2013-08-27 01:10:27,https://api.github.com/repos/mcamara/laravel-localization/git/commits/50b7b19d149f745466b3415fd7613939f937d4ac,50b7b19d149f745466b3415fd7613939f937d4ac,DSStore Deleted
+mcamara,2013-08-27 00:49:59,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c6f224e029bbb7187736920544dd74ff0d4ef3dd,c6f224e029bbb7187736920544dd74ff0d4ef3dd,functions added - version 0.2
+mcamara,2013-08-25 23:49:15,https://api.github.com/repos/mcamara/laravel-localization/git/commits/0a1237974bfb3b83b9ffc7cc8921ec2d1d0eea64,0a1237974bfb3b83b9ffc7cc8921ec2d1d0eea64,version added
+mcamara,2013-08-25 23:41:56,https://api.github.com/repos/mcamara/laravel-localization/git/commits/c264952460fe9e8e2785b0ef1f5f4f97f0e75c9e,c264952460fe9e8e2785b0ef1f5f4f97f0e75c9e,fixes - version 0.1
+mcamara,2013-08-25 23:18:51,https://api.github.com/repos/mcamara/laravel-localization/git/commits/7ba99cb42f638f04d07b7e38d0385e936f0aeccf,7ba99cb42f638f04d07b7e38d0385e936f0aeccf,version 0.1 - added files
+mcamara,2013-08-25 23:14:30,https://api.github.com/repos/mcamara/laravel-localization/git/commits/3b0171825a0bcda97f1a1f50d27861be6951f0de,3b0171825a0bcda97f1a1f50d27861be6951f0de,Initial commit

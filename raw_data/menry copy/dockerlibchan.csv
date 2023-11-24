@@ -1,0 +1,417 @@
+libchan,Like Go channels over the network
+username,timestamp,url,sha,message
+dmcgowan,2016-05-12 18:29:33,https://api.github.com/repos/docker/libchan/git/commits/0328dcec840a0659448faf08af087135fffb7fde,0328dcec840a0659448faf08af087135fffb7fde,"Merge pull request #108 from emosbaugh/handle-spdyconn-shutdown
+
+Handle spdyConn shutdown"
+emosbaugh,2016-05-12 01:08:57,https://api.github.com/repos/docker/libchan/git/commits/cad4c8ea50ef2e71b36d3bb81521c82025fb90bd,cad4c8ea50ef2e71b36d3bb81521c82025fb90bd,Handle spdyConn shutdown
+dmcgowan,2015-12-07 20:46:01,https://api.github.com/repos/docker/libchan/git/commits/9dd9a31df4d11db7856f62f5087b98c1ebc7f7c6,9dd9a31df4d11db7856f62f5087b98c1ebc7f7c6,"Merge pull request #107 from thaJeztah/update-maintainers
+
+update maintainers file for parsing"
+thaJeztah,2015-12-06 01:55:27,https://api.github.com/repos/docker/libchan/git/commits/6094644a4e21d534103ab2715d556ad08402450a,6094644a4e21d534103ab2715d556ad08402450a,"update maintainers file for parsing
+
+this updates the MAINTAINERS file to the new format,
+so that it can be parsed and collected in the docker/opensource
+repository.
+
+Signed-off-by: Sebastiaan van Stijn <github@gone.nl>"
+dmcgowan,2015-11-10 08:34:16,https://api.github.com/repos/docker/libchan/git/commits/bead27ab3a62deae8e113314e962e829623f6258,bead27ab3a62deae8e113314e962e829623f6258,"Merge pull request #106 from dmcgowan/fix-spdy-unit-test
+
+Remove bad local stream reference storage"
+dmcgowan,2015-11-07 05:52:58,https://api.github.com/repos/docker/libchan/git/commits/2202b62e09ecc6d1f35c88726d77cc13ce7aa9b5,2202b62e09ecc6d1f35c88726d77cc13ce7aa9b5,"Remove bad local stream reference storage
+
+Libchan reference ids unlike spdy IDs are only used remotely and increment by 1.
+Storing the locally generated id in the streams reference map causes a collision with remotely generated ids.
+Since the locally created streams are not referenced by incoming messages, only remote needs to be stored.
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-10-02 04:49:56,https://api.github.com/repos/docker/libchan/git/commits/a21c8f158a682120e34248f2fd7999ba2893a563,a21c8f158a682120e34248f2fd7999ba2893a563,"Merge pull request #102 from dmcgowan/go-channel-pipes
+
+Update inmem pipe to use go channel"
+dmcgowan,2015-09-16 02:39:50,https://api.github.com/repos/docker/libchan/git/commits/c77230a51aa9ae3aa793ddb95b271a82e8cb67da,c77230a51aa9ae3aa793ddb95b271a82e8cb67da,"Update inmem pipe to use go channel
+
+The inmemory pipe implementation may simply use go channels instead of using a pipe.
+
+Closes #92
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-09-15 15:45:18,https://api.github.com/repos/docker/libchan/git/commits/dbf3d8b0e62613a97d3113061d7356224f539a5d,dbf3d8b0e62613a97d3113061d7356224f539a5d,"Merge pull request #98 from dmcgowan/protocol-update-changes
+
+Protocol 0.2.0 changes"
+dmcgowan,2015-02-23 17:46:21,https://api.github.com/repos/docker/libchan/git/commits/3e33f1e90dd58e9d394c9177d5fff2dbff37d24f,3e33f1e90dd58e9d394c9177d5fff2dbff37d24f,"Split stream into separate type
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-04-05 00:20:31,https://api.github.com/repos/docker/libchan/git/commits/962230477d1bc4d228c5cb3b5848f620c7eebc88,962230477d1bc4d228c5cb3b5848f620c7eebc88,"Update rexec example to use updated interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-02-15 08:21:05,https://api.github.com/repos/docker/libchan/git/commits/224dfb0a5014deb5041e9bf7baed04192cd6750a,224dfb0a5014deb5041e9bf7baed04192cd6750a,"Update spdy implementation to use provider interface
+
+Define and use the simple provider interface instead of relying on spdystream directly.
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-04-20 04:29:00,https://api.github.com/repos/docker/libchan/git/commits/87eb956a4172e460d906b4de60ee77de23264fc1,87eb956a4172e460d906b4de60ee77de23264fc1,"Merge pull request #99 from liubin/fixtypos
+
+fix typo in source"
+liubin,2015-04-20 03:41:42,https://api.github.com/repos/docker/libchan/git/commits/c603e0a7f6c15358485f181827915686184f9e3d,c603e0a7f6c15358485f181827915686184f9e3d,"fix typo in source
+
+Signed-off-by: bin liu <liubin0329@gmail.com>"
+dmcgowan,2015-04-04 23:35:00,https://api.github.com/repos/docker/libchan/git/commits/78678c131010c548e95ede0de84991b92027d0be,78678c131010c548e95ede0de84991b92027d0be,"Merge pull request #85 from dmcgowan/new_msgpack_implementation
+
+Use new msgpack implementation"
+dmcgowan,2015-02-23 16:40:33,https://api.github.com/repos/docker/libchan/git/commits/341cc366c5bd0dc6ff916a7e11612de4f8b30189,341cc366c5bd0dc6ff916a7e11612de4f8b30189,"Update to use changes in msgpack library
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-02-05 20:24:26,https://api.github.com/repos/docker/libchan/git/commits/34edb20f16bed421ec6701712e953a406e151794,34edb20f16bed421ec6701712e953a406e151794,"Use single encoder/decoder and buffered io
+
+Update Send and Receive objects to lock access and save their encoder/decoder.  Additionally use a buffered writer on encode.
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-01-27 03:05:02,https://api.github.com/repos/docker/libchan/git/commits/64fd6a5f587ddf072a1470f477b424fd136b650c,64fd6a5f587ddf072a1470f477b424fd136b650c,"Update libchan to use new msgpack implementation
+
+- Reintroduce SendTo and ReceiveFrom
+- Use raw message when receiving from spdy
+- Zero copy in-mem transport
+- Remove raw connection encoding
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-04-04 23:13:40,https://api.github.com/repos/docker/libchan/git/commits/dc602eeaefe350ef65086140d622a7b76d93cfc8,dc602eeaefe350ef65086140d622a7b76d93cfc8,"Merge pull request #62 from dmcgowan/pipe_benchmark
+
+Add benchmark for pipe roundtrip"
+dmcgowan,2014-10-23 20:41:15,https://api.github.com/repos/docker/libchan/git/commits/03289a425b2a838370c71eb8ec35712c9676019c,03289a425b2a838370c71eb8ec35712c9676019c,"Add benchmark for pipe roundtrip
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-04-04 22:59:57,https://api.github.com/repos/docker/libchan/git/commits/d6b0ffa4a9626523b536770da30775c63dbad8b7,d6b0ffa4a9626523b536770da30775c63dbad8b7,"Merge pull request #95 from dmcgowan/benchmarks
+
+Add benchmarks to spdy implementation"
+dmcgowan,2015-04-04 22:54:53,https://api.github.com/repos/docker/libchan/git/commits/8f8a6a60133676ec2ba7bffc78f603446f07e4e6,8f8a6a60133676ec2ba7bffc78f603446f07e4e6,"Add benchmarks to spdy implementation
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-04-04 22:41:25,https://api.github.com/repos/docker/libchan/git/commits/d17a30d446865ed8fe778b5fa11e7bd0ad6499e9,d17a30d446865ed8fe778b5fa11e7bd0ad6499e9,"Merge pull request #96 from dmcgowan/circle-ci-updates
+
+Fix circle ci to build branches"
+dmcgowan,2015-04-04 22:20:27,https://api.github.com/repos/docker/libchan/git/commits/397e8c44770dac79d7037fa13d6cc61695f8c98e,397e8c44770dac79d7037fa13d6cc61695f8c98e,"Fix circle ci to build branches
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-03-30 15:09:26,https://api.github.com/repos/docker/libchan/git/commits/3d0b138624eacb3c7ad8e274c55e828dccabf310,3d0b138624eacb3c7ad8e274c55e828dccabf310,"Merge pull request #94 from drewwells/feature/portconflicts
+
+request free ports from the OS"
+drewwells,2015-03-29 01:11:28,https://api.github.com/repos/docker/libchan/git/commits/767d5476f19e628ab59a879edc7de0e5deac5b56,767d5476f19e628ab59a879edc7de0e5deac5b56,"request free ports from the OS
+
+passing host string is no longer required
+
+Signed-off-by: Drew Wells <drew.wells00@gmail.com>"
+dmcgowan,2015-02-18 00:48:48,https://api.github.com/repos/docker/libchan/git/commits/aea6f64450cfc4145ae3f1a9a821dafd97624f09,aea6f64450cfc4145ae3f1a9a821dafd97624f09,"Merge pull request #90 from dmcgowan/fix-spdy-pipe-return
+
+Update spdy Pipe return argument ordering"
+dmcgowan,2015-02-17 16:15:25,https://api.github.com/repos/docker/libchan/git/commits/fb74847ba9f454820937805a3159d8cefd2ec77a,fb74847ba9f454820937805a3159d8cefd2ec77a,"Update spdy Pipe return argument ordering
+
+Every other method which returns a pipe always returns the inbound side as the first return argument (see libchan.Pipe, io.Pipe). Now spdy.Pipe will follow the same convention.
+
+fixes #74
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-01-27 17:49:20,https://api.github.com/repos/docker/libchan/git/commits/d5db941c4d3d4b197eed8d7b5b98a8eac5721ba8,d5db941c4d3d4b197eed8d7b5b98a8eac5721ba8,"Merge pull request #81 from dmcgowan/spdy-cleanup
+
+Test and misc cleanup"
+dmcgowan,2015-01-27 17:49:07,https://api.github.com/repos/docker/libchan/git/commits/77ad7882583ec67baae33e4bef0f4687ed0c0d99,77ad7882583ec67baae33e4bef0f4687ed0c0d99,"Merge pull request #83 from dmcgowan/circlci-badge
+
+Add circleci in place of travis badge"
+dmcgowan,2015-01-27 16:54:14,https://api.github.com/repos/docker/libchan/git/commits/3be6a36b012ec31a03669c4d88e3b562a608e163,3be6a36b012ec31a03669c4d88e3b562a608e163,"Add circleci in place of travis badge
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-01-27 03:18:13,https://api.github.com/repos/docker/libchan/git/commits/5accbc634a2d1e258833537978b6bc41396e250d,5accbc634a2d1e258833537978b6bc41396e250d,"Test and misc cleanup
+
+Tests will now run faster since the tcp test will not cause a busy loop.
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-01-27 16:36:59,https://api.github.com/repos/docker/libchan/git/commits/9c6d1ac333cff9977fdfdcec88ff9d17c29bed54,9c6d1ac333cff9977fdfdcec88ff9d17c29bed54,"Merge pull request #82 from dmcgowan/rexec-golint-cleanup
+
+Add comments for golint to rexec example"
+dmcgowan,2015-01-27 16:32:55,https://api.github.com/repos/docker/libchan/git/commits/0b16b05ac5b3668f2afb61ad0bcff699d282ed85,0b16b05ac5b3668f2afb61ad0bcff699d282ed85,"Add comments for golint to rexec example
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2015-01-27 16:34:12,https://api.github.com/repos/docker/libchan/git/commits/32bad1df92a614fbc4fb5f228795e9f3f11deb85,32bad1df92a614fbc4fb5f228795e9f3f11deb85,"Merge pull request #78 from docker/CI
+
+CircleCI"
+dmp42,2014-12-16 01:39:53,https://api.github.com/repos/docker/libchan/git/commits/d217d8d01b4974d2559cdfd790c54a8670082fb3,d217d8d01b4974d2559cdfd790c54a8670082fb3,Update circle.yml
+dmcgowan,2014-10-31 16:08:16,https://api.github.com/repos/docker/libchan/git/commits/1e141b35ee958e9e2ab4ec4f1f87443cf1d39d19,1e141b35ee958e9e2ab4ec4f1f87443cf1d39d19,"Merge pull request #67 from dmcgowan/copy_updates
+
+Fix copying"
+dmcgowan,2014-10-23 20:41:42,https://api.github.com/repos/docker/libchan/git/commits/a4c7a6e4bda84f84e5a5cfe0b230e2142920a72e,a4c7a6e4bda84f84e5a5cfe0b230e2142920a72e,"Copy function update for better struct and map support
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-10-16 21:58:13,https://api.github.com/repos/docker/libchan/git/commits/d8a900f4d623ccf15c6e56f4dd12088caeefed28,d8a900f4d623ccf15c6e56f4dd12088caeefed28,"Add copy functions for read or write only streams
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-10-23 00:46:37,https://api.github.com/repos/docker/libchan/git/commits/a9af616551514af87e881105870894f620c55e79,a9af616551514af87e881105870894f620c55e79,"Merge pull request #54 from dmcgowan/channel_reference_id
+
+Update channel passing to use reference ids instead of stream ids"
+dmcgowan,2014-07-23 16:58:30,https://api.github.com/repos/docker/libchan/git/commits/4dbdacb70ae85a2307515d86ce042625e6fd4838,4dbdacb70ae85a2307515d86ce042625e6fd4838,"Update channel passing to use reference ids instead of stream ids
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-08-14 16:38:34,https://api.github.com/repos/docker/libchan/git/commits/8acda1e7bc9baff2981306b0d723bbdc3196f334,8acda1e7bc9baff2981306b0d723bbdc3196f334,"Merge pull request #55 from dmcgowan/rexec_example
+
+Remote execution example"
+dmcgowan,2014-08-07 23:13:41,https://api.github.com/repos/docker/libchan/git/commits/b3647bb7fb55e3af03ba1110bd04db23863549ef,b3647bb7fb55e3af03ba1110bd04db23863549ef,"Added remote execution example
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-08-07 18:37:43,https://api.github.com/repos/docker/libchan/git/commits/34bfab315b519d8ba9646975c7c4db148a97c48a,34bfab315b519d8ba9646975c7c4db148a97c48a,"Merge pull request #53 from mcollina/master
+
+Added jsChan as an alternative implementation"
+mcollina,2014-08-07 07:47:56,https://api.github.com/repos/docker/libchan/git/commits/207739dcd2709b87fe7d87477b5374fde8bbb54a,207739dcd2709b87fe7d87477b5374fde8bbb54a,Added jsChan as an alternative implementation
+dmcgowan,2014-08-07 04:51:13,https://api.github.com/repos/docker/libchan/git/commits/bfedc007ef2182a38963912d7826216ff1039857,bfedc007ef2182a38963912d7826216ff1039857,"Merge pull request #50 from pnasrat/new-docker-repo
+
+Fix references to dotcloud repo."
+shykes,2014-08-07 02:08:11,https://api.github.com/repos/docker/libchan/git/commits/217d5795ee8b24f61d2ba431c3c857dd8d8d4d11,217d5795ee8b24f61d2ba431c3c857dd8d8d4d11,Merge pull request #49 from shykes/derek-maintainer
+shykes,2014-08-07 02:07:17,https://api.github.com/repos/docker/libchan/git/commits/0636b9dfd60c858567b56c21ba5862156116553b,0636b9dfd60c858567b56c21ba5862156116553b,Merge pull request #38 from dmcgowan/interface_update
+shykes,2014-07-28 17:56:35,https://api.github.com/repos/docker/libchan/git/commits/8c54ad0b7fc7a419018232101e081d3ed8a79b27,8c54ad0b7fc7a419018232101e081d3ed8a79b27,"Add Derek as a maintainer
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+dmcgowan,2014-08-01 17:18:05,https://api.github.com/repos/docker/libchan/git/commits/3c2888414f6892090889f7c671bac0d5e68b7337,3c2888414f6892090889f7c671bac0d5e68b7337,"Reduce libchan interface in favor using Pipe for nesting
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-29 00:56:56,https://api.github.com/repos/docker/libchan/git/commits/1f39afd7bdc62e5544ba2ab49d4153c0d2faa02d,1f39afd7bdc62e5544ba2ab49d4153c0d2faa02d,"Update interface to make all byte streams transparent
+
+All ReadWriteClosers and channels will now be copied on send unless detected to have been created locally.
+
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-23 15:37:29,https://api.github.com/repos/docker/libchan/git/commits/934c2158a587f3e826f57dbc7c94842ddab87c5b,934c2158a587f3e826f57dbc7c94842ddab87c5b,"Update to pass lint test
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-16 21:09:20,https://api.github.com/repos/docker/libchan/git/commits/1342ccfd965c469b8a23705eebe30665df821b85,1342ccfd965c469b8a23705eebe30665df821b85,"Add ByteStreamWrapper to transparently copying ReadWriteClosers
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-16 15:33:40,https://api.github.com/repos/docker/libchan/git/commits/51d8e0ac26d01fa4b2672cdb00de437bf1fbdc73,51d8e0ac26d01fa4b2672cdb00de437bf1fbdc73,"Remove pipe implementation from exposed interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-16 16:53:18,https://api.github.com/repos/docker/libchan/git/commits/6f7b9df7ba3d237d9a4d6fec1fd8f83883fe08d9,6f7b9df7ba3d237d9a4d6fec1fd8f83883fe08d9,"Reduce transport interface and expose underlying spdy transport
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-16 00:30:16,https://api.github.com/repos/docker/libchan/git/commits/1e6ebd256032aecf59a26699e44c21df43ddca4d,1e6ebd256032aecf59a26699e44c21df43ddca4d,"Update msgpack library to use fork with fix for interfaces and pointers
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-16 00:11:13,https://api.github.com/repos/docker/libchan/git/commits/39c5a7a43d8cbb097a964fa7fec35f6805f475da,39c5a7a43d8cbb097a964fa7fec35f6805f475da,"Update new interface naming to naming of original interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 23:53:06,https://api.github.com/repos/docker/libchan/git/commits/3799b614120f5ffab6d2036a5a03cbf300d87f25,3799b614120f5ffab6d2036a5a03cbf300d87f25,"Rename http2 transport to spdy
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 23:49:51,https://api.github.com/repos/docker/libchan/git/commits/4852531b51c6c3575cbdb4217d713e6ecd9ac55e,4852531b51c6c3575cbdb4217d713e6ecd9ac55e,"Remove original interface and implementations
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 23:13:51,https://api.github.com/repos/docker/libchan/git/commits/101c9d84f00729d12c5c53d71d8edd64610708e9,101c9d84f00729d12c5c53d71d8edd64610708e9,"Clean up exposed interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 22:26:06,https://api.github.com/repos/docker/libchan/git/commits/01cb5a06e0335733256a5dd3689bce2fa37c6866,01cb5a06e0335733256a5dd3689bce2fa37c6866,"Clean up old http2 implementation
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 22:10:14,https://api.github.com/repos/docker/libchan/git/commits/e3f15eb52079d6d6373f02eae3d37de3f022f04b,e3f15eb52079d6d6373f02eae3d37de3f022f04b,"In memory implementation using updated interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-15 19:15:10,https://api.github.com/repos/docker/libchan/git/commits/33230e009832d978ce40241b104711300145439d,33230e009832d978ce40241b104711300145439d,"Add copy function for channels to allow for proxying
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-14 19:55:34,https://api.github.com/repos/docker/libchan/git/commits/7f8d483652cb146ff92c0cf419f78fa5b6f257e5,7f8d483652cb146ff92c0cf419f78fa5b6f257e5,"Add pipe implementation using unix sockets
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-14 17:55:15,https://api.github.com/repos/docker/libchan/git/commits/70c9c672f608eaa85cb99bd3ab1e63b96549fe78,70c9c672f608eaa85cb99bd3ab1e63b96549fe78,"Interface update to split sender and receiver channels
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-12 01:25:38,https://api.github.com/repos/docker/libchan/git/commits/fd5134755a480d1238549a44d358549ca03f6ba9,fd5134755a480d1238549a44d358549ca03f6ba9,Document interface functions
+dmcgowan,2014-07-11 16:07:01,https://api.github.com/repos/docker/libchan/git/commits/3813d2ce3415ba48ed7a99b6137e6010d6346511,3813d2ce3415ba48ed7a99b6137e6010d6346511,"Separate net.Conn handling from bytestream
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-10 21:34:31,https://api.github.com/repos/docker/libchan/git/commits/c5478c0225adf777c4235bd1aa141622b795daf5,c5478c0225adf777c4235bd1aa141622b795daf5,"Add simple in memory implementation
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-10 21:33:56,https://api.github.com/repos/docker/libchan/git/commits/2c0235fd64c9d19f8b7f253e9380008910f9f0bc,2c0235fd64c9d19f8b7f253e9380008910f9f0bc,"Add ByteStream type with related update to http2 transport
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-07 21:37:09,https://api.github.com/repos/docker/libchan/git/commits/87a73a49118841386f2daa882e52c2a1b1660fc5,87a73a49118841386f2daa882e52c2a1b1660fc5,"Add client and server listen interface to new session type
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-07 21:35:06,https://api.github.com/repos/docker/libchan/git/commits/8a325f7e4d6be2788aff13b2cc322e14e5dfc151,8a325f7e4d6be2788aff13b2cc322e14e5dfc151,"Moved direction to libchan, updated encoding
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-04 00:46:13,https://api.github.com/repos/docker/libchan/git/commits/500e632147f9d16b9c005aaa5cc8ef4236235a8e,500e632147f9d16b9c005aaa5cc8ef4236235a8e,"Create single channel interface with support for byte streams
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-02 23:02:07,https://api.github.com/repos/docker/libchan/git/commits/1d6f12586b40ed379aa51f6729f9b7f62e0bda6d,1d6f12586b40ed379aa51f6729f9b7f62e0bda6d,"Add timeout check to session unit tests
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-02 18:11:41,https://api.github.com/repos/docker/libchan/git/commits/259ed9f4ee1ad52869f93be922f0f0113feae620,259ed9f4ee1ad52869f93be922f0f0113feae620,"Add nested channel session using dynamic interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-07-02 22:26:14,https://api.github.com/repos/docker/libchan/git/commits/0db1a91c752441b1a578d186e66fb717c8f95f4f,0db1a91c752441b1a578d186e66fb717c8f95f4f,"Add decode and encode to msgpack to Message
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-06-26 23:03:09,https://api.github.com/repos/docker/libchan/git/commits/a8a3ff1748276359d8864204730b31757c69038f,a8a3ff1748276359d8864204730b31757c69038f,"Update message to use an io.ReadWriteCloser instead of an *os.File
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+shykes,2014-06-29 04:21:14,https://api.github.com/repos/docker/libchan/git/commits/459978d483ec79a7d8e980ebca00eb950eb64931,459978d483ec79a7d8e980ebca00eb950eb64931,Merge pull request #35 from fkautz/readme-alt-impl
+shykes,2014-06-29 04:20:45,https://api.github.com/repos/docker/libchan/git/commits/72754f8294ce601ea4a947a635df3252bb009e2d,72754f8294ce601ea4a947a635df3252bb009e2d,Merge pull request #36 from shykes/pr_out_protocol_md_remove_redundant_text
+shykes,2014-06-29 04:20:28,https://api.github.com/repos/docker/libchan/git/commits/7679abea413a0ba37b7d38143705fb5863add89e,7679abea413a0ba37b7d38143705fb5863add89e,"PROTOCOL.md: remove redundant text.
+
+Signed-off-by: Solomom Hykes <solomon@docker.com>"
+fkautz,2014-06-28 03:56:55,https://api.github.com/repos/docker/libchan/git/commits/e4ccb1bff614e66fcbfd51c9c520993198652038,e4ccb1bff614e66fcbfd51c9c520993198652038,"Adding alternative implemenations section
+
+Docker-DCO-1.1-Signed-off-by: Frederick F. Kautz IV <fkautz@alumni.cmu.edu> (github: fkautz)"
+shykes,2014-06-27 02:34:48,https://api.github.com/repos/docker/libchan/git/commits/31b04b7136d3c591e09bc65a1f53e5988d69ac2d,31b04b7136d3c591e09bc65a1f53e5988d69ac2d,Merge pull request #31 from pnasrat/trailing-beam-refs
+shykes,2014-06-26 23:56:00,https://api.github.com/repos/docker/libchan/git/commits/d8ed79be5829e69efe799e7c218a27519442dd18,d8ed79be5829e69efe799e7c218a27519442dd18,Merge pull request #32 from shykes/pr_out_first_draft_of_the_final_libchan_protocol
+shykes,2014-06-26 23:55:25,https://api.github.com/repos/docker/libchan/git/commits/2f5b8b49bc919465c3275ed885398fd544c9235a,2f5b8b49bc919465c3275ed885398fd544c9235a,"First draft of the final libchan protocol
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-26 00:36:24,https://api.github.com/repos/docker/libchan/git/commits/48e1d3441027a0fa76079cccae1f0c2fb3909d95,48e1d3441027a0fa76079cccae1f0c2fb3909d95,Merge pull request #28 from caindy/master
+shykes,2014-06-26 00:35:08,https://api.github.com/repos/docker/libchan/git/commits/2b7ac099ab335686eb1f1c9b7e83dfccc3257dc3,2b7ac099ab335686eb1f1c9b7e83dfccc3257dc3,Merge pull request #23 from LK4D4/travis_yml_fixes
+dmcgowan,2014-06-25 18:39:55,https://api.github.com/repos/docker/libchan/git/commits/c54b6570e33ee8cdc3d65a9c6e73fb9bc7c2fd56,c54b6570e33ee8cdc3d65a9c6e73fb9bc7c2fd56,"Merge pull request #24 from LK4D4/goimporting_repo
+
+Goimporting libchan repo, so travis will be happy"
+LK4D4,2014-06-16 04:31:59,https://api.github.com/repos/docker/libchan/git/commits/601709961d2245ec8d976e04802d834113400969,601709961d2245ec8d976e04802d834113400969,"Goimporting libchan repo, so travis will be happy
+
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+dmcgowan,2014-06-24 23:13:47,https://api.github.com/repos/docker/libchan/git/commits/c0e08e2e1691281581123d16a07f6075d3ae1400,c0e08e2e1691281581123d16a07f6075d3ae1400,"Merge pull request #27 from dmcgowan/http2_listener_fix
+
+Update listener to use stream session"
+shykes,2014-06-21 23:51:55,https://api.github.com/repos/docker/libchan/git/commits/397508a6b43b68fd621264e5287a36530a5edbf0,397508a6b43b68fd621264e5287a36530a5edbf0,"Merge pull request #29 from pnasrat/13-add-license
+
+Add NOTICE and LICENSE."
+caindy,2014-06-19 17:44:20,https://api.github.com/repos/docker/libchan/git/commits/f8521f538ee8aefad672e45e7105f049a6deeeec,f8521f538ee8aefad672e45e7105f049a6deeeec,Beam -> libchan
+shykes,2014-06-19 16:41:33,https://api.github.com/repos/docker/libchan/git/commits/a4d2ae2350861dde144bb2faf8f4de56ceca5574,a4d2ae2350861dde144bb2faf8f4de56ceca5574,Merge pull request #14 from fkautz/fix-formatting
+shykes,2014-06-19 16:39:12,https://api.github.com/repos/docker/libchan/git/commits/31ad0a3f4791b02bfc01862177aacd0cbd07eb16,31ad0a3f4791b02bfc01862177aacd0cbd07eb16,Merge pull request #26 from aphyr/master
+LK4D4,2014-06-16 04:25:04,https://api.github.com/repos/docker/libchan/git/commits/eaa4e94ff3f7be0064a8459470a5b285f2e882e7,eaa4e94ff3f7be0064a8459470a5b285f2e882e7,"Fixes to .travis.yml that was suggested by tianon
+
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+dmcgowan,2014-06-17 21:51:43,https://api.github.com/repos/docker/libchan/git/commits/5516ed4f94c7199c230af7f1f9cbef2f790c45c9,5516ed4f94c7199c230af7f1f9cbef2f790c45c9,"Update listener to use stream session
+
+Listener is currently broken when multiple connections are created, using sessions allows proper separation of each connection.
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+dmcgowan,2014-06-17 21:48:52,https://api.github.com/repos/docker/libchan/git/commits/33062922f53238286c458f09822dde9fe2f34eeb,33062922f53238286c458f09822dde9fe2f34eeb,"Merge pull request #25 from dmcgowan/spdystream_update
+
+Update authentication to use updated spdystream interface"
+aphyr,2014-06-16 23:16:26,https://api.github.com/repos/docker/libchan/git/commits/79ed4ba96ad8d85d7ebe335502807ac11a305df5,79ed4ba96ad8d85d7ebe335502807ac11a305df5,Notes on ordering/delivery invariants.
+dmcgowan,2014-06-16 18:51:54,https://api.github.com/repos/docker/libchan/git/commits/5d94bed588b5675d855e5ea7cb546b226682a0a5,5d94bed588b5675d855e5ea7cb546b226682a0a5,"Update authentication to use updated spdystream interface
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net> (github: dmcgowan)"
+shykes,2014-06-14 01:53:29,https://api.github.com/repos/docker/libchan/git/commits/a1bbd3104afca64249bfd98e56f1908f47860f88,a1bbd3104afca64249bfd98e56f1908f47860f88,Merge pull request #18
+dmcgowan,2014-06-12 18:34:51,https://api.github.com/repos/docker/libchan/git/commits/603b4f7ac3c1bde2911b1edf80192f76d8e4d84c,603b4f7ac3c1bde2911b1edf80192f76d8e4d84c,Add Derek to http2 maintainers
+shykes,2014-06-14 01:52:16,https://api.github.com/repos/docker/libchan/git/commits/04da5ebc09b45d4ec0f6a39dc181daf4f6dab5e9,04da5ebc09b45d4ec0f6a39dc181daf4f6dab5e9,Merge pull request #14
+dmcgowan,2014-06-11 23:23:11,https://api.github.com/repos/docker/libchan/git/commits/1927f781be1b10319ff5cdebdb15941ac88af97e,1927f781be1b10319ff5cdebdb15941ac88af97e,"Add documentation to http2 code
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net>"
+dmcgowan,2014-06-11 22:33:28,https://api.github.com/repos/docker/libchan/git/commits/9c47379be85263b31c4badd9f043693d66d941c3,9c47379be85263b31c4badd9f043693d66d941c3,"Add support for file descriptors
+Make use of header frames for commands which do not need streams
+
+Signed-off-by: Derek McGowan <derek@mcgstyle.net>"
+LK4D4,2014-06-12 09:09:56,https://api.github.com/repos/docker/libchan/git/commits/add84fd8d4c16fc862d4cff8be7996758005269d,add84fd8d4c16fc862d4cff8be7996758005269d,"Add travis badge
+
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+LK4D4,2014-06-11 11:09:32,https://api.github.com/repos/docker/libchan/git/commits/722a6f3295234c2679562fe4fbfdef852c7ec123,722a6f3295234c2679562fe4fbfdef852c7ec123,"Add .travis.yml
+
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+shykes,2014-06-14 01:00:54,https://api.github.com/repos/docker/libchan/git/commits/30e6695ce809976c1a8a71eb3a4d3e6eaf0b791d,30e6695ce809976c1a8a71eb3a4d3e6eaf0b791d,Merge pull request #8
+LK4D4,2014-06-11 09:13:30,https://api.github.com/repos/docker/libchan/git/commits/663fdc4f122be93c510150250d6af4f188ae1209,663fdc4f122be93c510150250d6af4f188ae1209,"Rename beam to libchan everywhere
+
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+shykes,2014-06-12 18:23:38,https://api.github.com/repos/docker/libchan/git/commits/80393d9090b76e1598e56a38874d1dbb3c16da0f,80393d9090b76e1598e56a38874d1dbb3c16da0f,Merge pull request #15 from bfirsh/remove-examples-directory
+LK4D4,2014-06-11 11:03:13,https://api.github.com/repos/docker/libchan/git/commits/063d6696e4e2915a7c5d24670a784b47fdab6d37,063d6696e4e2915a7c5d24670a784b47fdab6d37,"Fix TestSetMessageTwice failing because map is unordered
+
+Also added some more checks to data/message_test.go
+Docker-DCO-1.1-Signed-off-by: Alexandr Morozov <lk4d4math@gmail.com> (github: LK4D4)"
+shykes,2014-06-10 23:07:39,https://api.github.com/repos/docker/libchan/git/commits/c730c0be01d9dc5716f2d6a18879917b339888a6,c730c0be01d9dc5716f2d6a18879917b339888a6,"Merge pull request #3 from nathanleclaire/master
+
+Add example Solomon mentioned on HN"
+nathanleclaire,2014-06-10 18:52:45,https://api.github.com/repos/docker/libchan/git/commits/0e34f1a109debfa2a5da1c50d4e13100776f7eee,0e34f1a109debfa2a5da1c50d4e13100776f7eee,Add example Solomon mentioned on HN
+bfirsh,2014-06-10 18:40:38,https://api.github.com/repos/docker/libchan/git/commits/13363112e626419774f24aa27c1adb835b530a20,13363112e626419774f24aa27c1adb835b530a20,"Remove examples directory
+
+beamsh is broken and out of date -- we can add it back at some
+point, but it should be removed to avoid confusion.
+
+Signed-off-by: Ben Firshman <ben@firshman.co.uk>"
+tiborvass,2014-06-10 01:45:16,https://api.github.com/repos/docker/libchan/git/commits/f56ecdfdecbe80f13cef558176e4a590ddef2412,f56ecdfdecbe80f13cef558176e4a590ddef2412,Fix ambiguity in README
+shykes,2014-06-10 01:06:55,https://api.github.com/repos/docker/libchan/git/commits/c80bf5e20e5bc96a9dff86e582e7694b040669be,c80bf5e20e5bc96a9dff86e582e7694b040669be,Merge pull request #1 from dmcgowan/master
+dmcgowan,2014-06-10 00:51:37,https://api.github.com/repos/docker/libchan/git/commits/337b1ae9c16ac4f332d50b2876c0a12411535e76,337b1ae9c16ac4f332d50b2876c0a12411535e76,Remove verbs and import of libswarm
+shykes,2014-06-07 20:09:39,https://api.github.com/repos/docker/libchan/git/commits/0bef6473810da3d27914d12b77611daa639821a6,0bef6473810da3d27914d12b77611daa639821a6,"Remove libswarm leftovers from unix transport
+
+Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-07 19:40:49,https://api.github.com/repos/docker/libchan/git/commits/d63ce6d1e1eae225a85e274e36c1efc49d0d1576,d63ce6d1e1eae225a85e274e36c1efc49d0d1576,"Remove libswarm leftovers in unit tests
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-07 19:28:03,https://api.github.com/repos/docker/libchan/git/commits/5851cf347379267d9573730ef29ce10c3d98afc6,5851cf347379267d9573730ef29ce10c3d98afc6,"Start removing verbs and other higher-level constructs.
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-07 08:28:38,https://api.github.com/repos/docker/libchan/git/commits/5fb4a7e5dc944c11bec38951d26e38630823a675,5fb4a7e5dc944c11bec38951d26e38630823a675,"Rename beam to libchan
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-07 04:50:28,https://api.github.com/repos/docker/libchan/git/commits/ab3d6064c33afede14ca3bab5a35b0669a5e4e61,ab3d6064c33afede14ca3bab5a35b0669a5e4e61,"libchan: Go channels over the network
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+bfirsh,2014-06-07 02:07:03,https://api.github.com/repos/docker/libchan/git/commits/614bed24475c4030a758c1ff72c9a11fdc64f613,614bed24475c4030a758c1ff72c9a11fdc64f613,"Implement stop for apiserver and forward
+
+Signed-off-by: Ben Firshman <ben@firshman.co.uk>"
+dmcgowan,2014-06-07 00:33:21,https://api.github.com/repos/docker/libchan/git/commits/fda5c63a4a8b6ff10b594393df555ad8421b9af0,fda5c63a4a8b6ff10b594393df555ad8421b9af0,Add http2 implementation
+shykes,2014-06-06 01:38:28,https://api.github.com/repos/docker/libchan/git/commits/832e44d28d8f21d633102596a6f3f28706ae9dcc,832e44d28d8f21d633102596a6f3f28706ae9dcc,"beam.Copy doesn't return an error on EOF
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+bfirsh,2014-06-05 19:38:54,https://api.github.com/repos/docker/libchan/git/commits/878e88e777419ad5bd69ba537c062df7db26a7d4,878e88e777419ad5bd69ba537c062df7db26a7d4,"Add string representation of verb enum
+
+Docker-DCO-1.1-Signed-off-by: Ben Firshman <ben@firshman.co.uk> (github: bfirsh)"
+shykes,2014-06-05 07:02:21,https://api.github.com/repos/docker/libchan/git/commits/4a4b7018b20efcf63ae9bb5d4b35662fa97a5265,4a4b7018b20efcf63ae9bb5d4b35662fa97a5265,"beam: encode Verb in an enum instead of a string
+
+Signed-off-bu: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-05 07:00:30,https://api.github.com/repos/docker/libchan/git/commits/a8d2aed06def68a689e600f9050bb5e6c18d11d2,a8d2aed06def68a689e600f9050bb5e6c18d11d2,"Remove Hub
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-05 06:00:50,https://api.github.com/repos/docker/libchan/git/commits/ae167f2452a588f33496a40d95271502bc900c0f,ae167f2452a588f33496a40d95271502bc900c0f,"Break down beam plumbing into smaller, simpler files
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+aanand,2014-06-04 20:25:03,https://api.github.com/repos/docker/libchan/git/commits/75b8d449bc8e2412e87f2a90c8b48a3b8cb00ca8,75b8d449bc8e2412e87f2a90c8b48a3b8cb00ca8,"Remove extra goroutine wrapper in task.go
+
+Signed-off-by: Aanand Prasad <aanand.prasad@gmail.com>
+Signed-off-by: Ben Firshman <ben@firshman.co.uk>
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-03 00:03:01,https://api.github.com/repos/docker/libchan/git/commits/8feafc40e97b70ee764bb448fe90c1d7da640fc1,8feafc40e97b70ee764bb448fe90c1d7da640fc1,"beam.Tree: plumbing for an in-memory object tree
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-03 00:02:23,https://api.github.com/repos/docker/libchan/git/commits/cf60a1343279d8bbc0b92933ae89bf92707377d8,cf60a1343279d8bbc0b92933ae89bf92707377d8,"beam.Task: plumbing for a long running task
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-02 23:56:53,https://api.github.com/repos/docker/libchan/git/commits/b703300f966dd5362948ac810acf38b20c4b9028,b703300f966dd5362948ac810acf38b20c4b9028,"First version of an object model
+
+* beam.Verb enumerates all standard verbs
+* beam.Object implements standard verbs as convenience client methods
+* beam.Server implements stateless handlers to process incoming standard verbs
+* beam.Repeater always replies with the same message
+* beam.Handler exposes a function as a Receiver
+
+Standard verbs include:
+
+* Object navigation: ls, attach
+* Execution: spawn, start, stop
+* Notifications: log, error, ack
+* Data: set, get
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-02 23:55:15,https://api.github.com/repos/docker/libchan/git/commits/9f4ce8b76ad504cc53fd515d6e7a90d037010db6,9f4ce8b76ad504cc53fd515d6e7a90d037010db6,"Move Pipe() into the beam package
+
+Docker-DCO-1.1-Signed-off-by: Solomon Hykes <solomon@docker.com> (github: shykes)"
+shykes,2014-06-02 06:20:58,https://api.github.com/repos/docker/libchan/git/commits/5cc3959ed25217a424b9c4853375a2f108e13596,5cc3959ed25217a424b9c4853375a2f108e13596,"beam: Queue wraps a Sender in a channel for serializing and synchronizing
+
+Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-02 06:15:28,https://api.github.com/repos/docker/libchan/git/commits/e2bf2d4383f988689e9f78ffa563b481477c0142,e2bf2d4383f988689e9f78ffa563b481477c0142,"Simplify the beam API
+
+* Callback pattern that is easier to grok: each message has an optional nested return channel, instead of 2 nested streams
+* Return channel is in the Message structure: less arguments and return values to pass around
+* Caller can request a pipe as return channel, or pass its own. This makes proxying and advanced plumbing operations much easier.
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-02 06:12:41,https://api.github.com/repos/docker/libchan/git/commits/1b0f895abbdaaede76b8906b4dd5b8ed8319d325,1b0f895abbdaaede76b8906b4dd5b8ed8319d325,beam/inmem: remove unused structure field
+shykes,2014-06-02 06:09:44,https://api.github.com/repos/docker/libchan/git/commits/c85a8baa469ff327f228141257955ac925a116bc,c85a8baa469ff327f228141257955ac925a116bc,"swarmd: remove unused engine/beam adapters.
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-02 00:04:08,https://api.github.com/repos/docker/libchan/git/commits/95172a6cbe5ad29d020318ce4fb1c9f032c5dae0,95172a6cbe5ad29d020318ce4fb1c9f032c5dae0,"Change imports to use embedded beam version
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"
+shykes,2014-06-01 23:49:08,https://api.github.com/repos/docker/libchan/git/commits/dbd2087339c83dfaf7ae3366a22b0df8b6effe94,dbd2087339c83dfaf7ae3366a22b0df8b6effe94,"Merge beam into libswarm
+
+Signed-off-by: Solomon Hykes <solomon@docker.com>"

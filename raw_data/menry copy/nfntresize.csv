@@ -1,0 +1,94 @@
+resize,Pure golang image resizing 
+username,timestamp,url,sha,message
+nfnt,2018-02-21 19:10:11,https://api.github.com/repos/nfnt/resize/git/commits/83c6a9932646f83e3267f353373d47347b6036b2,83c6a9932646f83e3267f353373d47347b6036b2,"Merge pull request #64 from nfnt/update-readme
+
+Update README."
+nfnt,2018-02-21 19:05:46,https://api.github.com/repos/nfnt/resize/git/commits/dd4fa8443fab25d5827d3de224cc89f1be5dcd15,dd4fa8443fab25d5827d3de224cc89f1be5dcd15,Update README.
+nfnt,2018-02-21 18:27:29,https://api.github.com/repos/nfnt/resize/git/commits/ca1e14ffbddccab5684dd36166ac926f146b6746,ca1e14ffbddccab5684dd36166ac926f146b6746,Update Travis configuration.
+charlievieth,2015-10-05 03:59:20,https://api.github.com/repos/nfnt/resize/git/commits/14554cc7daa67339a68c1c1d70c9c1dc63c529b3,14554cc7daa67339a68c1c1d70c9c1dc63c529b3,Support 411 and 410 subsampling rations for go1.5+
+athomason,2016-11-15 23:39:27,https://api.github.com/repos/nfnt/resize/git/commits/874f89dba47d254fa82f0efd7c5da88e309a5431,874f89dba47d254fa82f0efd7c5da88e309a5431,"Don't resize inputs with zero width or height
+
+Inputs having zero as both width and height were caught, but either one
+alone caused a panic. This adds a test showing the old failing behavior
+and adds a check for non-positive width/height. Since Resize doesn't
+have an error return value, the behavior in this case is to return the
+original image.
+
+Fixes https://github.com/nfnt/resize/issues/52"
+e-asphyx,2016-01-07 16:38:35,https://api.github.com/repos/nfnt/resize/git/commits/9780a95734d23742b20dcd84721c81f2747bcb56,9780a95734d23742b20dcd84721c81f2747bcb56,Oops
+e-asphyx,2016-01-07 15:39:12,https://api.github.com/repos/nfnt/resize/git/commits/5311ab3c51ba61b98c538e4e4acd0f9f3a110943,5311ab3c51ba61b98c538e4e4acd0f9f3a110943,Reverse alpha premultiplication
+nfnt,2015-05-27 08:09:16,https://api.github.com/repos/nfnt/resize/git/commits/a3789c3aed10ffb21390fe2cd9bab2e4821167d5,a3789c3aed10ffb21390fe2cd9bab2e4821167d5,"Merge pull request #34 from minodisk/master
+
+Fix wrong color with RGBA input"
+minodisk,2015-05-25 09:53:05,https://api.github.com/repos/nfnt/resize/git/commits/87f723015c051c57ce5595d57de259251233f7ad,87f723015c051c57ce5595d57de259251233f7ad,Test same color with some color modes
+minodisk,2015-05-25 09:18:32,https://api.github.com/repos/nfnt/resize/git/commits/f430a41192ab83e08e5acb181bdce85694a4982e,f430a41192ab83e08e5acb181bdce85694a4982e,Fix wrong color with RGBA input
+nfnt,2015-05-12 14:00:13,https://api.github.com/repos/nfnt/resize/git/commits/f2d1b73023c55bdfb4fa2ed385d2bec95bce3692,f2d1b73023c55bdfb4fa2ed385d2bec95bce3692,"Merge branch 'alpha_channel_fix'
+
+Colors in image.RGBA, image.RGBA64 and generic types with alpha channel should
+now resize correctly. There's a small performance hit for these image types even
+if they don't use alpha channels though.
+Fixes bug #26."
+nfnt,2015-05-12 13:50:27,https://api.github.com/repos/nfnt/resize/git/commits/3502bb8cd1b6a81a3b4afe36fc8c1be73839c785,3502bb8cd1b6a81a3b4afe36fc8c1be73839c785,"Merge branch 'NRGBA_support'
+
+This adds optimized access to image.NRGBA, image.NRGBA64 types. Internally these
+image types are now preferred as they are easier to handle if alpha channels are
+used."
+nfnt,2015-05-12 13:47:43,https://api.github.com/repos/nfnt/resize/git/commits/03c3eb783234467ed1c5ae4855792ea1bd17eeaf,03c3eb783234467ed1c5ae4855792ea1bd17eeaf,"Mention optimized access for image.NRGBA, image.NRGBA64 in README."
+nfnt,2015-05-12 13:24:41,https://api.github.com/repos/nfnt/resize/git/commits/563154816f2ab7ceb8117c7a6e35c359d64eb76c,563154816f2ab7ceb8117c7a6e35c359d64eb76c,Remove debugging directives.
+nfnt,2015-05-12 13:19:11,https://api.github.com/repos/nfnt/resize/git/commits/c3c062672a859426c8583e197795e67150a01a89,c3c062672a859426c8583e197795e67150a01a89,"Reverse alpha-premultiplication for image.RGBA, image.RGBA64 and generic images
+types."
+nfnt,2015-05-12 13:18:07,https://api.github.com/repos/nfnt/resize/git/commits/5a6676c19e02828eb7c74cc5b7cde3297267eca2,5a6676c19e02828eb7c74cc5b7cde3297267eca2,Add test case for input data with pre-multiplied-alpha.
+disintegration,2015-03-19 19:52:55,https://api.github.com/repos/nfnt/resize/git/commits/0feec0664524f62666d0ad19f7c608ebd3d6a51e,0feec0664524f62666d0ad19f7c608ebd3d6a51e,Dst pixel coordinate fix
+charlievieth,2015-03-15 22:01:18,https://api.github.com/repos/nfnt/resize/git/commits/962e93a6e5fd3d9a5be7f47cb2b65ecabf156a93,962e93a6e5fd3d9a5be7f47cb2b65ecabf156a93,Merge branch 'optimization'
+charlievieth,2015-03-15 21:59:38,https://api.github.com/repos/nfnt/resize/git/commits/076a9ce3b9fe5c61d1bc81a3ef101d565707255e,076a9ce3b9fe5c61d1bc81a3ef101d565707255e,"Limit spawned goroutines to GOMAXPROCS(0).
+
+This change sets the number of spawned goroutines to the GOMAXPROCS
+value set by the user.
+
+Using more goroutines than available execution threads is slightly
+detrimental to performance (~0.5%), and prevents users of the library
+from controlling the number of spawned goroutines."
+charlievieth,2015-03-15 21:44:39,https://api.github.com/repos/nfnt/resize/git/commits/d8255b04211a049fb5895bc48f2d3e8086730d30,d8255b04211a049fb5895bc48f2d3e8086730d30,"Optimize bound checks.
+
+Optimizing the bound checks resulted in an overall 14% increase in
+conversion performance."
+charlievieth,2015-03-15 21:40:38,https://api.github.com/repos/nfnt/resize/git/commits/b09281bd36137474ebfaf08017a9e03b36e7d291,b09281bd36137474ebfaf08017a9e03b36e7d291,"Update benchmarks to focus on conversion performance.
+
+Benchmark each interpolation function for RGBA and YCbCr images.
+Reduce the image size used when benchmarking to reduce the influence of
+memory performance on results."
+dlackty,2014-11-21 09:00:51,https://api.github.com/repos/nfnt/resize/git/commits/f49722caca0800abfad3b926aec3b3f8f5536d9b,f49722caca0800abfad3b926aec3b3f8f5536d9b,Use SVG version badge for Travis CI
+charlievieth,2014-08-12 20:11:40,https://api.github.com/repos/nfnt/resize/git/commits/df655f3f701000b7ee02325bf3df1e28308109d4,df655f3f701000b7ee02325bf3df1e28308109d4,Merge branch 'YCC'
+charlievieth,2014-08-12 20:11:25,https://api.github.com/repos/nfnt/resize/git/commits/08b124d5410280a603feb315029cd942c5ca392f,08b124d5410280a603feb315029cd942c5ca392f,Fix bound out of range panic.
+charlievieth,2014-08-12 18:41:55,https://api.github.com/repos/nfnt/resize/git/commits/171c886e38f1c8d6d14e47af17b3a61f96d1b5c7,171c886e38f1c8d6d14e47af17b3a61f96d1b5c7,Merge branch 'YCC'
+charlievieth,2014-08-12 18:41:20,https://api.github.com/repos/nfnt/resize/git/commits/f03c78969b2b58411ec19a603fef146aac01e361,f03c78969b2b58411ec19a603fef146aac01e361,Fix YCC SubImage.
+charlievieth,2014-08-12 18:22:17,https://api.github.com/repos/nfnt/resize/git/commits/3c164b34f46e879a4dd355552117dba09037f3c2,3c164b34f46e879a4dd355552117dba09037f3c2,Merge branch 'YCC'
+charlievieth,2014-08-12 18:22:06,https://api.github.com/repos/nfnt/resize/git/commits/acea8646b263634ba1c40ff40cb3463a75a20015,acea8646b263634ba1c40ff40cb3463a75a20015,Fix error in YCC PixOffset and SubImage.
+charlievieth,2014-07-30 06:09:28,https://api.github.com/repos/nfnt/resize/git/commits/a5a6a66088239aa9f20d84217adeeb1e703da4a2,a5a6a66088239aa9f20d84217adeeb1e703da4a2,Merge branch 'refactor'
+charlievieth,2014-07-30 06:08:58,https://api.github.com/repos/nfnt/resize/git/commits/eefd4737aa938d38cedc7fc0a6e93e310dbc1001,eefd4737aa938d38cedc7fc0a6e93e310dbc1001,Optimize YCbCr image resize
+charlievieth,2014-07-29 22:48:50,https://api.github.com/repos/nfnt/resize/git/commits/ee540982e0f7f38c7e3973e60a1b674bfeae7f0e,ee540982e0f7f38c7e3973e60a1b674bfeae7f0e,Merge branch 'refactor'
+charlievieth,2014-07-29 22:32:58,https://api.github.com/repos/nfnt/resize/git/commits/427b8d133e710b7781794fbf781ade2c1a71dd2e,427b8d133e710b7781794fbf781ade2c1a71dd2e,Optimized Nearest-Neighbor function - 2x faster
+charlievieth,2014-07-29 20:53:35,https://api.github.com/repos/nfnt/resize/git/commits/80b3fc2b3f2d53ca32f7520fff4263dc14f55882,80b3fc2b3f2d53ca32f7520fff4263dc14f55882,"Pre-calculate start offset, optimize bound check
+
+Increased performance by 30% for RGBA and 45% for Gray images, minor
+performance increase for 16-bit images.
+
+The start offset calculated by createWeights are stored in a slice and
+passed to the resize functions to prevent duplication of effort."
+anisus,2014-06-16 03:53:36,https://api.github.com/repos/nfnt/resize/git/commits/f3cac2f86517fe7cef8bc956cf1b8603447d5793,f3cac2f86517fe7cef8bc956cf1b8603447d5793,"Fix to resize correctly when source image.Bounds().Min is not (0,0)"
+matrixik,2013-11-27 21:40:16,https://api.github.com/repos/nfnt/resize/git/commits/b744503c5ce43f760299c45fa53dbe73fee45135,b744503c5ce43f760299c45fa53dbe73fee45135,Add: thumbnail helper function
+gsadams,2013-07-04 09:28:43,https://api.github.com/repos/nfnt/resize/git/commits/c1b8c4986eed0c971827101d686b03d4e00e8024,c1b8c4986eed0c971827101d686b03d4e00e8024,"Use a lookup table to speed up the Lanczos kernel
+
+Profiling the resize operation using Lanczos kernels showed that most of
+the time was spent in the Sin function, which is called twice per
+evaluation of the Lanczos kernel. Generating a lookup table and doing a
+linear interpolation between table entries speeds up the resize by a
+factor of 4."
+jsummers,2012-11-28 01:49:01,https://api.github.com/repos/nfnt/resize/git/commits/cdbd68f34febffb5e2be86daf65cf4fe99189902,cdbd68f34febffb5e2be86daf65cf4fe99189902,"Improve the way the new canvas size is calculated
+
+If both dimensions are given, always use those dimensions, avoiding roundoff
+error.
+
+If only one dimension is given, slightly prefer rounding the other dimension
+up, to rounding it down."
+jsummers,2012-11-28 01:38:19,https://api.github.com/repos/nfnt/resize/git/commits/3d9094eb9e63d307bb33e0cff96b7e88e1faf8a0,3d9094eb9e63d307bb33e0cff96b7e88e1faf8a0,"Center the resized image on the canvas, instead of shifting it slightly"

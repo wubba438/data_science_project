@@ -1,0 +1,85 @@
+onepage-scroll,Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin
+username,timestamp,url,sha,message
+peachananr,2014-08-26 03:51:25,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/252829a55b0538424449e390fc5ba117e98ee448,252829a55b0538424449e390fc5ba117e98ee448,Update readme
+peachananr,2014-08-26 03:49:25,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/94777c89e16024103d4f27d326446029391712f4,94777c89e16024103d4f27d326446029391712f4,"Fix bower, add IE support, spacebar shortcut key"
+peachananr,2014-06-04 03:29:37,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/f6c948d284c8716e6fe28771bb373a0caef89df4,f6c948d284c8716e6fe28771bb373a0caef89df4,"1.3 release. Direction options, more hotkeys, more fixes"
+peachananr,2014-06-04 02:39:05,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/6c2794627d3087251fdc9bf0eeb4467b9320a500,6c2794627d3087251fdc9bf0eeb4467b9320a500,"Merge pull request #158 from peterdemin/master
+
+Provide current index fallback merged. Thanks!"
+peterdemin,2014-05-28 12:07:00,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/5a8dcd03539f2cfb9648793e84cefa08ff044a66,5a8dcd03539f2cfb9648793e84cefa08ff044a66,"Provide current index fallback
+
+This allows dynamic section creation (with AJAX, for example)"
+peachananr,2014-05-13 16:20:48,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/8ef53b04afba67333da9e203b1def6afbc2b1e80,8ef53b04afba67333da9e203b1def6afbc2b1e80,Update README.md
+peachananr,2014-05-13 12:06:35,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/ce2fca465c7bd5688f4ea884e7717f865e3ec931,ce2fca465c7bd5688f4ea884e7717f865e3ec931,Update README.md
+peachananr,2014-05-13 06:10:54,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/a9c6bb301d00f23c9245d248c7c2275b3a60c0d8,a9c6bb301d00f23c9245d248c7c2275b3a60c0d8,"Merge pull request #150 from dotkenny/master
+
+Updated bower.json version to 1.2.1"
+i-am-kenny,2014-05-04 20:20:54,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/46ae5dd8078a14e4f5b32c55aa1695ce9c2fcb7f,46ae5dd8078a14e4f5b32c55aa1695ce9c2fcb7f,Added UMD wrapper.
+i-am-kenny,2014-05-04 20:20:54,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/e27e8e38591b979f58544c02a1c2ca4321f684a4,e27e8e38591b979f58544c02a1c2ca4321f684a4,Added UMD wrapper.
+i-am-kenny,2014-05-04 19:45:04,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/5a963f9908f9cc3d6f9cc4a94397c4c9cc5ce907,5a963f9908f9cc3d6f9cc4a94397c4c9cc5ce907,"Update bower.json
+
+Updated bower.json version to match current version tag."
+peachananr,2014-03-23 06:39:42,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/fb65fb933553220982fe2c96da2bdc5afb52475b,fb65fb933553220982fe2c96da2bdc5afb52475b,"Merge pull request #26 from kevva/bower
+
+Add bower.json"
+peachananr,2014-03-23 06:35:55,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/da121fcdddd3f273214c2f009537838fbefb62fe,da121fcdddd3f273214c2f009537838fbefb62fe,"Merge pull request #105 from uniphil/callbackEnhancement
+
+Before/after move callback enhancements."
+peachananr,2014-03-02 02:18:49,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/d1d77a4fa787992b475bca932285b83cb4a621e6,d1d77a4fa787992b475bca932285b83cb4a621e6,"Better development ppment practices, remove unnecessary code"
+uniphil,2014-02-08 19:41:09,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/fb19a8139605da66881a52421a3659f474ef8daf,fb19a8139605da66881a52421a3659f474ef8daf,"Richer before/after move callbacks
+
+Adds an extra parameter to the before and after public callbacks, passing in the next jquery element in addition to the index.
+
+add functionality and update docs"
+uniphil,2014-02-08 19:23:07,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/ed0c05adcdc859f0b0f0b2ecf49461a52d2341df,ed0c05adcdc859f0b0f0b2ecf49461a52d2341df,"Fix double-trigger of beforeMove
+
+`beforeMove` was called in three places before:
+
+1. at the start of `$.fn.transformPage`
+2. in `$.fn.moveDown`
+3. in `$.fn.moveUp`
+4. in `$.fn.moveTo`
+
+The last three all call `beforeMove` in order to actually move, which meant `befmoreMove` was always called twice. This commit take out the redundant calls, so it always comes from `$.fn.transformPage`."
+uniphil,2014-02-08 19:14:02,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/40f9c491c9140290bd238bcd00331c294eade2a6,40f9c491c9140290bd238bcd00331c294eade2a6,"Fix documentation of beforeMove
+
+The docs currently suggest that the current page index is passed as an argument, when in fact -- and more usefully for my application -- the next page index is the one passed in"
+peachananr,2014-01-26 04:41:52,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/c140c1a945467c6110e77605cc4608f417b13de1,c140c1a945467c6110e77605cc4608f417b13de1,Fix input not working on responsive fallback
+peachananr,2014-01-26 03:59:43,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/e287ba61e8ba8a562d9d775c3e169c2c4c7bc599,e287ba61e8ba8a562d9d775c3e169c2c4c7bc599,"Merge pull request #62 from lipis/patch-1
+
+Invoke beforeMove when clicking on the pagination buttons"
+peachananr,2014-01-26 03:51:01,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/530a3c017611cc03316a4c97f7bc12c74a6c12e1,530a3c017611cc03316a4c97f7bc12c74a6c12e1,Fix index on callbacks
+peachananr,2014-01-26 03:47:47,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/227cecc6425ad4554ffdb8c48d900374f31a4c3b,227cecc6425ad4554ffdb8c48d900374f31a4c3b,"Merge pull request #76 from faygrin/faygrin_fix
+
+Fix error & refactor"
+peachananr,2014-01-26 03:25:21,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/3128d9ecf0ed0037b10d25c7d1bca6916656fc57,3128d9ecf0ed0037b10d25c7d1bca6916656fc57,Better readability readme
+peachananr,2014-01-26 03:19:42,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/4f0bb3c0f8ed87f37ff8daaa70ff470904d818f0,4f0bb3c0f8ed87f37ff8daaa70ff470904d818f0,"Merge pull request #88 from urban1702/patch-1
+
+Update README.md"
+peachananr,2014-01-26 03:18:45,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/9c0ccf511c52a75e7a4629514d8d14e9e5aaf527,9c0ccf511c52a75e7a4629514d8d14e9e5aaf527,"Merge pull request #93 from gyugyu/master
+
+Requirement added to README.md"
+peachananr,2014-01-26 03:18:26,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/50bad09afd0b9d2321eed7a33be5ffbb40946b02,50bad09afd0b9d2321eed7a33be5ffbb40946b02,"Merge pull request #94 from InfaMc/master
+
+url doesn't update itself with the $.moveTo method"
+gyugyu,2014-01-20 06:11:56,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/9a34e662143b55cf23751bc70277b709b51c51c2,9a34e662143b55cf23751bc70277b709b51c51c2,Requirement added to README.md
+peachananr,2014-01-13 13:26:28,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/51b05ec06efb449dcec28a19a9359eae30d6e675,51b05ec06efb449dcec28a19a9359eae30d6e675,Update README.md
+lipis,2013-11-20 17:49:53,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/7c8b4c4aeba9b5faaf7d4cadf074f12f1cd5ac28,7c8b4c4aeba9b5faaf7d4cadf074f12f1cd5ac28,"Invoke beforeMove when clicking on the pagination buttons
+
+When clicking on the pagination buttons the `beforeMove` should be also fired before start scrolling"
+peachananr,2013-11-06 03:17:44,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/d73dc7d343b3f4b2e728c1841c733feb8df24f7a,d73dc7d343b3f4b2e728c1841c733feb8df24f7a,Fix beforeMove not running on moveTo method
+peachananr,2013-11-05 05:00:42,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/41451f1ee2762a5ce4d0394c0f998c9d26d8b6f9,41451f1ee2762a5ce4d0394c0f998c9d26d8b6f9,Add responsive fallback and moveTo public method
+peachananr,2013-10-15 02:10:08,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/a5c20984d098620fc6a78a32f216001a1ea7bd85,a5c20984d098620fc6a78a32f216001a1ea7bd85,Update version number
+peachananr,2013-10-15 02:09:55,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/e647bd123c593d5429e503e6ecd60f7fa1c6f01f,e647bd123c593d5429e503e6ecd60f7fa1c6f01f,Update version number
+peachananr,2013-10-15 02:06:04,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/7ab997bfd5069a7b8e560f44d15dcf94f4b28ee1,7ab997bfd5069a7b8e560f44d15dcf94f4b28ee1,Fix loop option
+peachananr,2013-10-14 08:34:42,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/f5d7b9db48b36a752dc516409e861c2633c715c2,f5d7b9db48b36a752dc516409e861c2633c715c2,"Add keyboard support, callbacks and loop options"
+kevva,2013-10-09 10:20:42,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/6c8eee92e05f7ecb237c3a0b8980490475df27d7,6c8eee92e05f7ecb237c3a0b8980490475df27d7,Add bower.json
+peachananr,2013-10-04 03:41:04,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/96cdec116e9f98b36367ce647fa3d104d74bdb70,96cdec116e9f98b36367ce647fa3d104d74bdb70,Update README.md
+peachananr,2013-10-04 03:30:55,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/1499a1c10dfe6b856d732d17082ce07464ef995f,1499a1c10dfe6b856d732d17082ce07464ef995f,Fix screen flickering in safari
+peachananr,2013-10-02 02:44:55,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/32ece38ecc7af522cb458a8a3b1c945f429518f8,32ece38ecc7af522cb458a8a3b1c945f429518f8,Update README.md
+peachananr,2013-10-02 02:44:32,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/577b7d007393bcef6836869a3696548d52bb2217,577b7d007393bcef6836869a3696548d52bb2217,Update README.md
+peachananr,2013-10-02 02:43:19,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/f0ad69ceeb1ed69943e96e7672c6314fe408f95b,f0ad69ceeb1ed69943e96e7672c6314fe408f95b,Update README.md
+peachananr,2013-09-12 15:51:52,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/4a6f183dca47650d94ea94bf691a2ccf75a6f1cb,4a6f183dca47650d94ea94bf691a2ccf75a6f1cb,Add js examples for public methods
+peachananr,2013-09-12 15:50:13,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/833d1c201193421c50c39d6217498a764adec7f0,833d1c201193421c50c39d6217498a764adec7f0,Fix readme
+peachananr,2013-09-12 15:16:30,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/9328faa0e5c8831b6e539ab7274536bf1662934b,9328faa0e5c8831b6e539ab7274536bf1662934b,Initial version
+peachananr,2013-09-12 14:07:29,https://api.github.com/repos/peachananr/onepage-scroll/git/commits/d119760e43e4b48b6f68426421f89f46390ed30f,d119760e43e4b48b6f68426421f89f46390ed30f,Initial commit

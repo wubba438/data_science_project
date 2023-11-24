@@ -1,0 +1,1074 @@
+message_bus,A reliable and robust messaging bus for Ruby and Rack
+username,timestamp,url,sha,message
+SamSaffron,2019-08-09 07:24:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/138d74eaf63b88bff7d7d2e3e1b1098f46ac74e7,138d74eaf63b88bff7d7d2e3e1b1098f46ac74e7,"FEATURE: support status 429 from server and Retry-After header
+
+In some cases you may need to get message bus to reject requests
+cause server is overloaded, this allows server to communicate with
+client and ask it to back off for N seconds by return 429 with a
+Retry-After header with the amount of seconds to wait"
+SamSaffron,2019-08-09 07:01:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/895a851fbdae7ed48d537a9d757095ccd3d2c73d,895a851fbdae7ed48d537a9d757095ccd3d2c73d,Run prettier on file so it confirms to a consistent style
+chrismhilton,2019-06-05 10:17:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e2caee337ddf3ad09bba5c29b43be5219d2962eb,e2caee337ddf3ad09bba5c29b43be5219d2962eb,Fix to make the `is_readonly?` method compatible with the redis gem both pre and post v4.0 when the `client` attribute was removed - closes #208
+tgxworld,2019-05-17 08:19:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fff231150732091047af8d5e451a3f067bf4145d,fff231150732091047af8d5e451a3f067bf4145d,Print the full stack when message bus callback fails.
+SamSaffron,2019-04-29 23:59:44,https://api.github.com/repos/SamSaffron/message_bus/git/commits/90fba639eb5d332ca8e87fd35f1d603a5743076d,90fba639eb5d332ca8e87fd35f1d603a5743076d,bump version for release
+benlangfeld,2019-04-29 13:18:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/42faf7b93655a33134de443e088daa0d76abdc9f,42faf7b93655a33134de443e088daa0d76abdc9f,"Tests for handling of downstream errors
+
+See https://github.com/SamSaffron/message_bus/pull/205"
+benlangfeld,2019-04-26 20:17:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7241f3ecb4c52891f1ee110d5b318f4deb3c402c,7241f3ecb4c52891f1ee110d5b318f4deb3c402c,Removes trailing whitespace
+benlangfeld,2019-04-26 20:09:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bcf7832d271668e21a61c64ff0fd77fbdc06c163,bcf7832d271668e21a61c64ff0fd77fbdc06c163,"on_middleware_error only for internal errors
+
+Prior to this change, the `on_middleware_error` error handler was being invoked on all exceptions that hit this middleware, including those which come from lower-level middleware. This has the side-effect of potentially masking exceptions from the Rails application, and is surprising because `on_middleware_error` is assumed to handle only message_bus errors."
+tgodfrey,2019-04-17 21:03:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8e30aed1454ed5c95b0590ee8040352e5fe782ad,8e30aed1454ed5c95b0590ee8040352e5fe782ad,"update README
+
+Pointer to a gist with an approach for publishing to Redis from Elixir for MessageBus to pick up the message."
+tgxworld,2019-01-28 07:39:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f6891895b92ffb2a03693ad14446185287fc4c6d,f6891895b92ffb2a03693ad14446185287fc4c6d,Release 2.2.0.
+tgxworld,2019-01-15 03:04:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/751c95c1cbcccad58d326dca069cb7545b3a3f30,751c95c1cbcccad58d326dca069cb7545b3a3f30,"Merge pull request #198 from tgxworld/avoid_flooding_requests_to_server
+
+FIX: Ruby HTTP Client not backing off polling on error."
+tgxworld,2018-12-11 06:30:41,https://api.github.com/repos/SamSaffron/message_bus/git/commits/621d73a151e862a7790c03a0bedc0485dd0dffec,621d73a151e862a7790c03a0bedc0485dd0dffec,FIX: Ruby HTTP Client not backing off polling on error.
+tgxworld,2018-12-11 02:46:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/386233d20080eab5bddd6f86d9cacc488c31ceff,386233d20080eab5bddd6f86d9cacc488c31ceff,Specify units for Ruby HTTP Client configs.
+tgxworld,2018-12-11 02:05:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2c2aea2387131017bac0e9eba0ec05f8a3c9b05e,2c2aea2387131017bac0e9eba0ec05f8a3c9b05e,Release 2.2.0.pre.2.
+tgxworld,2018-12-11 02:02:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2661267764f835ff2d5c55458c0ad0d5235f3864,2661267764f835ff2d5c55458c0ad0d5235f3864,"Merge pull request #192 from tgxworld/mb_http_client
+
+FEATURE: Ruby MessageBus HTTP client."
+tgxworld,2018-12-05 08:05:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/742db42d901d0101adcf12be1f7b532677752e71,742db42d901d0101adcf12be1f7b532677752e71,FEATURE: Ruby MessageBus HTTP client.
+benlangfeld,2018-12-06 22:57:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f9bc50f666d1cb98ea6094c531eacf6aa3f55d0a,f9bc50f666d1cb98ea6094c531eacf6aa3f55d0a,"Merge pull request #194 from SamSaffron/improved-diagnostics
+
+Re-write diagnostics in React"
+benlangfeld,2018-12-06 22:18:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a947b9d41ab15a013aeef870d0efe9325a17f468,a947b9d41ab15a013aeef870d0efe9325a17f468,More diagnostics documentation
+benlangfeld,2018-12-06 20:35:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0fe0124269f80c8305860287897c6595ce9c6139,0fe0124269f80c8305860287897c6595ce9c6139,"Re-writes diagnostics UI using React
+
+The existing Ember app was using a 5 year old Ember release, and I am far more comfortable with React in order to further build out this functionality."
+benlangfeld,2018-12-06 18:16:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bba61e3cf1065ff13a7a78bdf17f1c059bc37a0c,bba61e3cf1065ff13a7a78bdf17f1c059bc37a0c,Make it easy to manually test the diagnostics UI
+benlangfeld,2018-12-06 12:51:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/010c66bddddde368d09c1294a0001ca75f5993eb,010c66bddddde368d09c1294a0001ca75f5993eb,Notes on performance tests in the README
+benlangfeld,2018-12-06 12:48:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0cb936531ba47f98f43a5fe8e7c36504065f3ca9,0cb936531ba47f98f43a5fe8e7c36504065f3ca9,"Merge pull request #190 from SamSaffron/performance-tests
+
+Performance tests"
+benlangfeld,2018-12-05 18:39:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/255c50bf40fbd96de753208639e0e20fbfa193ab,255c50bf40fbd96de753208639e0e20fbfa193ab,"Run variations on publish benchmark
+
+* Strictly publishing only, without subscribing
+* Publishing and subscribing with max backlog length large enough to not have to trim backlogs during the benchmark
+* Publishing and subscribing backlogs with approximately 10% of the capacity of the benchmark"
+benlangfeld,2018-12-05 14:08:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/79cba6d0f97fd85050aa7ac6eb27da10e95e2681,79cba6d0f97fd85050aa7ac6eb27da10e95e2681,Benchmark publication performance
+benlangfeld,2018-12-05 13:38:58,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1ea744ab6aef6dafa55f8e393c052e78b2d8d940,1ea744ab6aef6dafa55f8e393c052e78b2d8d940,"Generate backend-specific spec tasks automatically
+
+One less place to keep a list of backends. Also moves non-spec checks out of `rake spec` and into the `rake` default task, as well as renaming `spec_BACKEND` to `spec:BACKEND` (eg `rake spec:memory`) and giving tasks descriptions so they show up in `rake -T`."
+SamSaffron,2018-12-06 05:16:12,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e5c6553f9641e3b4339b6faebbdb6e614facdf3d,e5c6553f9641e3b4339b6faebbdb6e614facdf3d,Inherit rubocop off discourse
+benlangfeld,2018-12-03 15:35:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1b26c8e42374986c1d98de55cfba6008a62a555d,1b26c8e42374986c1d98de55cfba6008a62a555d,Re-generate rubocop todo list
+SamSaffron,2018-11-30 03:37:30,https://api.github.com/repos/SamSaffron/message_bus/git/commits/93f56d9840e6fb5528f3ea99404b9ca81f7a981c,93f56d9840e6fb5528f3ea99404b9ca81f7a981c,FIX: private method should not be invoked on self
+SamSaffron,2018-11-30 03:15:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c7fa9a8e4a00be62f2146573fa0b683a55ee2318,c7fa9a8e4a00be62f2146573fa0b683a55ee2318,release 2.2.0.pre
+SamSaffron,2018-11-30 03:13:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/53e6d747826e3efdeb09395564556e7e2dc30931,53e6d747826e3efdeb09395564556e7e2dc30931,FIX: stop leaking redis keys used for tracking per channel id
+benlangfeld,2018-11-29 22:21:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/695332f374ddb3a9ed33b3fe6a1fbd63a36d9c9c,695332f374ddb3a9ed33b3fe6a1fbd63a36d9c9c,Mention changelog entries in contributing docs
+benlangfeld,2018-11-29 22:02:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b0834db34f592ca806d06dbf12ccb19870524861,b0834db34f592ca806d06dbf12ccb19870524861,"Keep a running changelog of changes on master since the last release
+
+This puts the burden of writing change-logs on the contributor rather than the release manager, reducing the effort to cut a release and improving the accuracy of the changelog. It also means that changelog entries from now on are more likely to be useful in git blame when looking for the actual change that produced them."
+benlangfeld,2018-11-29 21:50:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1bba0610fa681560c834d24cc445bf125edbbb49,1bba0610fa681560c834d24cc445bf125edbbb49,"Merge pull request #185 from SamSaffron/mikz-rake-tasks-off
+
+Allows preventing MessageBus start-up"
+benlangfeld,2018-11-29 00:08:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0a2098a2d8e33b8e348ea62a780ef9721f8f5f9d,0a2098a2d8e33b8e348ea62a780ef9721f8f5f9d,Simple usage documentation
+benlangfeld,2018-11-28 18:16:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f01982ebdac9a4eb019a933374a26d2ce3edc4cc,f01982ebdac9a4eb019a933374a26d2ce3edc4cc,Raises rubocop limit on Metrics/ModuleLength
+benlangfeld,2018-11-28 18:10:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e7e4e2fb5a33a68345634dbbbfcd8964d897677f,e7e4e2fb5a33a68345634dbbbfcd8964d897677f,Allow destroying a bus that never had a backend
+benlangfeld,2018-11-28 18:10:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4502b4d09f64371e538ac11729d82d7f325ecabd,4502b4d09f64371e538ac11729d82d7f325ecabd,Test without mocks
+benlangfeld,2018-11-28 18:00:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8b6591a481e6ced4aca5189f1168a7fe5453e6cf,8b6591a481e6ced4aca5189f1168a7fe5453e6cf,Formatting
+benlangfeld,2018-11-28 17:59:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a8c67fa458ebfa634117d7e4bc871055282f1a77,a8c67fa458ebfa634117d7e4bc871055282f1a77,Makes this an opt-in change
+mikz,2017-08-23 10:31:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/25459da871a3c631cfe23844b9143c025c92dc13,25459da871a3c631cfe23844b9143c025c92dc13,"fix crashes when destroying message bus
+
+* do not crash when calling after_fork on destroyed bus
+* do not crash on calling destroy twice"
+mikz,2017-08-23 09:55:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1c4620e4c898872cb392db5d053238fb151064ea,1c4620e4c898872cb392db5d053238fb151064ea,"don't start message bus in rake tasks
+
+* turn off message bus by rails railtie when running rake
+* don't initialize middleware subscribed when off
+* method to detect if message bus is off"
+benlangfeld,2018-11-29 21:37:47,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fdd1d8550fc17c3240e546116915ace1d42a35c6,fdd1d8550fc17c3240e546116915ace1d42a35c6,"Merge pull request #184 from SamSaffron/api-docs
+
+Fuller interface documentation"
+benlangfeld,2018-11-29 21:25:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ca32197438f4490efffdf914d88c36497bc8fbfa,ca32197438f4490efffdf914d88c36497bc8fbfa,Use Client#close rather than Client#cancel
+benlangfeld,2018-11-28 17:02:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1666feece0bd8bcd9d75be08d954e7cc4fafeaf6,1666feece0bd8bcd9d75be08d954e7cc4fafeaf6,Documents MessageBus::Implementation interface
+benlangfeld,2018-11-28 13:16:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/45df4632571c5b67514f1e060a57e62223ae82a4,45df4632571c5b67514f1e060a57e62223ae82a4,These methods can be private
+benlangfeld,2018-11-28 13:12:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/dfc02e24e4d9bc5ca7cc61e058d85d99f6a17912,dfc02e24e4d9bc5ca7cc61e058d85d99f6a17912,Puts existing documentation in the right place
+benlangfeld,2018-11-28 12:50:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/816b35975520bdfc388ebc488882dc0f3d9fa4a3,816b35975520bdfc388ebc488882dc0f3d9fa4a3,Documents diagnostics interface
+benlangfeld,2018-11-28 12:42:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c5248e12379c9781f2dd3b6f756f819dd0de1f44,c5248e12379c9781f2dd3b6f756f819dd0de1f44,Much of the diagnostics implementation can be private
+benlangfeld,2018-11-28 12:40:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e29a42ab8a2ad97622c720388b87845372c03b25,e29a42ab8a2ad97622c720388b87845372c03b25,Documents MessageBus::Rack::Middleware
+benlangfeld,2018-11-28 00:48:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/26d218758f5104d8bcfc7de71c6ebc7096d791cc,26d218758f5104d8bcfc7de71c6ebc7096d791cc,Much of MessageBus::Rack::Middleware can be private
+benlangfeld,2018-11-28 00:45:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5c221b567a16305a80168c144fe62e04abde1f65,5c221b567a16305a80168c144fe62e04abde1f65,Documents ConnectionManager
+benlangfeld,2018-11-28 00:42:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/33c2c654a25238d642cb6f7440833f970e3a3049,33c2c654a25238d642cb6f7440833f970e3a3049,ConnectionManager#stats is unused
+benlangfeld,2018-11-28 00:23:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d668af58a802a83b8a69e959f41ba8e0035ffbe6,d668af58a802a83b8a69e959f41ba8e0035ffbe6,Documents the MessageBus::Client interface
+benlangfeld,2018-11-27 20:31:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/381437f9a395079791fb8b6a2ee79db8e6bc1a36,381437f9a395079791fb8b6a2ee79db8e6bc1a36,Three ways to close a client socket are unnecessary
+benlangfeld,2018-11-27 20:27:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/313f8ed98359c9b899e007e6c8233ccc03487347,313f8ed98359c9b899e007e6c8233ccc03487347,These methods can all be private
+benlangfeld,2018-11-26 17:05:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/508b330c5e2f392728273783efd6b07da20d3b20,508b330c5e2f392728273783efd6b07da20d3b20,"Merge pull request #183 from powerhome/block-length
+
+Long blocks in tests are normal"
+benlangfeld,2018-11-26 16:58:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ff7e08bdbe6b5e2a0d55f0b12ee27ace3a21e12d,ff7e08bdbe6b5e2a0d55f0b12ee27ace3a21e12d,Long blocks in tests are normal
+benlangfeld,2018-11-26 16:57:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5737f48c8afb80d2720e6aa39b65e454b401e6b1,5737f48c8afb80d2720e6aa39b65e454b401e6b1,Re-generate rubocop todos
+benlangfeld,2018-11-26 15:09:41,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f50f21bbdba9a7061bef79110eb8ca88a86eb321,f50f21bbdba9a7061bef79110eb8ca88a86eb321,"Merge pull request #182 from powerhome/document-backend-interface
+
+Consistent backend interface with documentation"
+benlangfeld,2018-11-26 14:05:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c44b38d19595f17e649c2c02401769688a14d570,c44b38d19595f17e649c2c02401769688a14d570,Don't repeat documentation
+benlangfeld,2018-11-26 13:43:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/33e4a5d8bf8dbcf969fa87687262491a017e5ca6,33e4a5d8bf8dbcf969fa87687262491a017e5ca6,"Don't abuse NotImplementedError
+
+http://chrisstump.online/2016/03/23/stop-abusing-notimplementederror/"
+benlangfeld,2018-11-26 13:28:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/df9bb6ab4b44ab08df50c6c54a3c52de9debf6c7,df9bb6ab4b44ab08df50c6c54a3c52de9debf6c7,Test public API only
+benlangfeld,2018-11-22 17:17:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d18b459a54913a50a2fd783fd9934f4b3784e11d,d18b459a54913a50a2fd783fd9934f4b3784e11d,Consistent backend interface with documentation
+benlangfeld,2018-11-22 17:36:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f15245eff78c4423c9bafcb38aa16b31a3ca5713,f15245eff78c4423c9bafcb38aa16b31a3ca5713,Groups backend implementations in a common module
+benlangfeld,2018-11-19 17:08:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e57b2b2c972af844d6187203963e81ed638dfd35,e57b2b2c972af844d6187203963e81ed638dfd35,Generate implementation docs and test them in CI
+benlangfeld,2018-11-19 16:55:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/95e849d2c88aa442c57092ab9dadd9348a25148f,95e849d2c88aa442c57092ab9dadd9348a25148f,Public API comment
+benlangfeld,2018-11-19 16:53:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/94b6eb9d46d80f1c7408e063ab1e0d6e5c78076a,94b6eb9d46d80f1c7408e063ab1e0d6e5c78076a,Begin class docs
+benlangfeld,2018-11-19 16:50:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8601f506fcfeff0021f02c4b270914bce5ffb705,8601f506fcfeff0021f02c4b270914bce5ffb705,Basic notes on implementation
+benlangfeld,2018-11-14 18:06:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c4020eea9b8d7e4e26059bdbe9082c1cc8f37f83,c4020eea9b8d7e4e26059bdbe9082c1cc8f37f83,Document the subscriber protocol
+benlangfeld,2018-11-09 17:10:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/abf1e94ab38a1d6006b54cd69ea58ef9cf8c7fea,abf1e94ab38a1d6006b54cd69ea58ef9cf8c7fea,"Improve readability: grammar, spelling etc"
+benlangfeld,2018-11-09 16:17:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/27cf2dbc7eef1800419ab1435e3f2ef8d9eab0bc,27cf2dbc7eef1800419ab1435e3f2ef8d9eab0bc,Consistent line spacing
+benlangfeld,2018-11-09 16:14:41,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c807e7e80c93b4fcdd52603b1d03a00696b3f414,c807e7e80c93b4fcdd52603b1d03a00696b3f414,Collects all contributor docs at the end where it's normally found
+benlangfeld,2018-11-09 16:10:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e869b17be7c3d3f079b086b573335430c2cbf536,e869b17be7c3d3f079b086b573335430c2cbf536,Consistent header syntax
+benlangfeld,2018-11-09 16:06:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/eb169efab6480a2fe426f54f840d12a22d29052c,eb169efab6480a2fe426f54f840d12a22d29052c,Correct language syntax
+benlangfeld,2018-11-09 16:06:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f2034fa53caa60879e223257dd2404bdc54fa83e,f2034fa53caa60879e223257dd2404bdc54fa83e,This shouldn't be as big as the main title
+benlangfeld,2018-11-08 00:15:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/348a6a5a55fd4f6cfcfe55f2b5cf2f242a4b2bd4,348a6a5a55fd4f6cfcfe55f2b5cf2f242a4b2bd4,Expire in-memory backlogs every second
+benlangfeld,2018-11-07 23:31:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d4c7116cfd48c0cbdf19f8a42d7c6f7e149c70e8,d4c7116cfd48c0cbdf19f8a42d7c6f7e149c70e8,Adds support for backlog expiry to memory backend
+benlangfeld,2018-11-07 21:05:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fa64c175029c187e59d5ea9359519f6bed9b8115,fa64c175029c187e59d5ea9359519f6bed9b8115,Support setting backlog expiry on publication w/ Postgres
+benlangfeld,2018-11-07 19:12:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8064ccee46d711b50e4f8d3d30a204e41ec1fa78,8064ccee46d711b50e4f8d3d30a204e41ec1fa78,Supports setting backlog size on publication for memory/postgres
+benlangfeld,2018-11-07 12:38:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4fd016a3de7e51d6ee08d19a670caf73a99e921f,4fd016a3de7e51d6ee08d19a670caf73a99e921f,"Defaults to enabling rubocop cops
+
+Explicitly pardons and builds a todo list of existing offences, with a view to correcting them over time."
+benlangfeld,2018-11-07 12:33:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/82ec0674b934c0f0cbda1c2fa17fec1ccdd8757b,82ec0674b934c0f0cbda1c2fa17fec1ccdd8757b,Enables duplicate method cop
+benlangfeld,2018-11-07 12:32:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/21ed1376a4c11a6d447da621faecf87aae9f1704,21ed1376a4c11a6d447da621faecf87aae9f1704,Enables several parentheses cops
+benlangfeld,2018-11-07 12:30:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/094e63bb9d40560a172a92897455dbc94b3ae5ed,094e63bb9d40560a172a92897455dbc94b3ae5ed,Enables useless assignment cops
+benlangfeld,2018-11-07 12:26:43,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6dccb02e9830b348d61c95c167e92fa385844a60,6dccb02e9830b348d61c95c167e92fa385844a60,Enables several alignment cops
+benlangfeld,2018-11-07 12:23:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/790f75301b1488ab38f8cc88f7e47b2788c79118,790f75301b1488ab38f8cc88f7e47b2788c79118,Enables several empty line cops
+benlangfeld,2018-11-07 12:19:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e5c7ad65ede9e2591d210b8c22ee392b53061ef2,e5c7ad65ede9e2591d210b8c22ee392b53061ef2,Enables several spacing cops
+SamSaffron,2018-11-07 23:39:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f07e4994270983cd08cc5d762be6ef5a41f40c67,f07e4994270983cd08cc5d762be6ef5a41f40c67,"FEATURE: Ruby 2.2.0 is no longer supported as it is EOL
+
+If you require an earlier version of Ruby use and earlier version of message bus"
+benlangfeld,2018-11-07 13:55:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/74405e83122b484b1aade0e4053a64bf885f8ec1,74405e83122b484b1aade0e4053a64bf885f8ec1,Typo
+benlangfeld,2018-11-07 21:29:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/eb4613c4b1d3d7f906f84b61bf645f8451fe38ac,eb4613c4b1d3d7f906f84b61bf645f8451fe38ac,"Only publish-trigger expiry for backends that require it
+
+This allows the tests to assert that the preferred behaviour is for expiry to be automatic at the correct time, and that this ocurrs on compatible backends. Conversely, the tests assert that backends which require publication-triggered expiry do not auto-expire; if they gain such functionality in the future, the tests would have to be updated to reflect this, allowing us to work towards eliminating this divergence in behaviour from the tests."
+benlangfeld,2018-11-07 21:10:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/123da9c420a3155dc7003ac18e6b74e6b6c98a3f,123da9c420a3155dc7003ac18e6b74e6b6c98a3f,Asserts that both the global and channel backlogs get expired
+benlangfeld,2018-11-07 21:03:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/41c7c9b8346c5aa911d76723da58984ee3704208,41c7c9b8346c5aa911d76723da58984ee3704208,Describes Postgres backend's expiry behaviour in tests
+benlangfeld,2018-11-07 20:32:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/10ae43f3e72245f117d0eda2f31346e3414cded6,10ae43f3e72245f117d0eda2f31346e3414cded6,"Tests backlog expiry actually working
+
+The previous tests simply asserted that the backend-specific mechanism for expiring backlogs on Redis was set up, but not that it actually worked. The test could not, then, be exercised on other backends, whose implementations of backlog expiry do not have the same behaviour as those of the Redis backend.
+
+These tests now assert the behaviour of the Redis backend, but do not invoke any private APIs specific to Redis, and can thus be applied to other backend implementations."
+benlangfeld,2018-11-07 19:15:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2fd7be419772bd09c5baba0d37fbeefc0bf580cd,2fd7be419772bd09c5baba0d37fbeefc0bf580cd,Tests storage reset recovery for all backends
+benlangfeld,2018-11-07 12:42:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3846e6c5ae9dc5ba8874fbce4da431488a92e809,3846e6c5ae9dc5ba8874fbce4da431488a92e809,"Reduces duplication in backend specs
+
+These specs were all being applied only to specific backends. Several of them are (functionally) the same, and do not need to be maintained separately. Those tests which do not apply to all backends are now clearly indicated by calling `test_only [some backend(s)]`, forming a todo list for building feature parity."
+benlangfeld,2018-11-07 16:45:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7449096c1b48938038dfd7edb4365584cc87a511,7449096c1b48938038dfd7edb4365584cc87a511,"Makes forking spec simpler and less flaky
+
+This test was introduced in https://github.com/SamSaffron/message_bus/commit/9c16e7ebaafaf2a3933a84fa1c517c0eba44b052 . Its purpose does not appear to be to assert that the forked process has a subscription (since no code is present to ensure that delivery ocurrs to both processes), nor does the order of publication or delivery appear to be important in this spec. All we're really interested in asserting here is that publications before a fork, from the forked process, and from the original process after the fork ocurrs, all get published and delivered. This change expresses that case much more simply.
+
+Prior to this change, this test would fail on Redis approximately 20% of the time. With this change, it did not fail at all in 30 executions."
+benlangfeld,2018-11-07 16:35:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c7cb072d1bfa0f7004a3124d28c2b34b0c06204f,c7cb072d1bfa0f7004a3124d28c2b34b0c06204f,Re-opening file descriptors is not material to this spec
+benlangfeld,2018-11-06 18:54:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/044c20381d23baa3e0ca04a586c5608a00cfa7e2,044c20381d23baa3e0ca04a586c5608a00cfa7e2,There is no point asserting before the child process exits
+benlangfeld,2018-11-06 18:53:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f9f43e46cb5c468d27fd3b4c5ee951e07c88b59d,f9f43e46cb5c468d27fd3b4c5ee951e07c88b59d,"Test for recovery from backlog expiry
+
+We were testing from recovery from a full flush, but it is also possible for a backlog to expire while message ID counters persist."
+benlangfeld,2018-11-05 03:15:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/35a0cb093aef9b09317b24729da69ef97b514e99,35a0cb093aef9b09317b24729da69ef97b514e99,"Workflow improvements (#172)
+
+* Run in-memory tests first
+
+Asserts a basic degree of functionality before involving complex dependencies such as Redis and Postgres.
+
+* Permit executing tests with only a dependency on Docker
+
+* Run rubocop in builds
+
+* Correct rubcop offences
+
+* Corrects rubocop rule names
+
+* Removes duplicate dependency specification
+
+* Only test supported rubies"
+SamSaffron,2018-10-15 02:43:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cb763851a4bdb88429c914f741e8e4b8202ae327,cb763851a4bdb88429c914f741e8e4b8202ae327,make test less fragile
+SamSaffron,2018-10-15 02:36:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1888ccb9c038f2aca47482cfa70f6c166dbc4169,1888ccb9c038f2aca47482cfa70f6c166dbc4169,version bump
+SamSaffron,2018-10-15 02:35:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e03504e37d867b9881f4c5ee70eb11e5353cf046,e03504e37d867b9881f4c5ee70eb11e5353cf046,version bump
+SamSaffron,2018-10-15 02:32:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c75e24360615755e1706c7fb8497e22f9ce4cfd2,c75e24360615755e1706c7fb8497e22f9ce4cfd2,example of app version expiry
+SamSaffron,2018-10-15 02:29:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0bf8d8fa752b31f9fff82ab1b0a2ca826735be6a,0bf8d8fa752b31f9fff82ab1b0a2ca826735be6a,remove concurrent ruby and add a sample
+nlalonde,2018-10-15 02:22:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/84fa19026962b29f3276e8c14e20f3a2f9185ba6,84fa19026962b29f3276e8c14e20f3a2f9185ba6,Add distributed_cache (#169)
+SamSaffron,2018-10-12 06:51:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/67978936bad934bca896f7ea3099181d25060370,67978936bad934bca896f7ea3099181d25060370,"PERF: use monotonic time in TimerThread
+
+monotonic time is far safer and also faster to get cause
+there is no wrapping object"
+ramontayag,2018-10-12 06:21:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/131b1a131579b62e1422a693f1fb7780bf19a3bc,131b1a131579b62e1422a693f1fb7780bf19a3bc,Add some debugging info to try the message bus endpoint without a client (#160)
+ramontayag,2018-10-11 22:56:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/abee204df84f2c75a9a610d39d4e3325bb9867de,abee204df84f2c75a9a610d39d4e3325bb9867de,`MesssageBus.publish` accepts `site_id` to publish to `site_id` (#166)
+stevenmichaelthomas,2018-10-10 00:58:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f087c119cb70fba59eb9995b6544da4acb5f8b72,f087c119cb70fba59eb9995b6544da4acb5f8b72,"FEATURE: Make minPollInterval customizable
+
+* Make minPollInterval customizable
+
+* Add readme note on minPollInterval"
+ted-hanson,2018-06-11 22:34:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/64a24a92ca9265a6ce44a4a154caa328b9a1d9c7,64a24a92ca9265a6ce44a4a154caa328b9a1d9c7,fix README typos (#162)
+SamSaffron,2018-05-16 03:58:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e79e9e27de64054160d65ac6796913a206a4ca39,e79e9e27de64054160d65ac6796913a206a4ca39,"Correct jasmine specs
+Improve stop semantics"
+SamSaffron,2018-05-16 02:13:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/00d6f21e48dcfba5c7854bd39ed5be97762e3c6d,00d6f21e48dcfba5c7854bd39ed5be97762e3c6d,version bump
+SamSaffron,2018-05-16 02:11:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cf1fcda72c24ff519abb0b2ab85842e865eccbf7,cf1fcda72c24ff519abb0b2ab85842e865eccbf7,FIX: long poller could be unset for 30 seconds on boot
+SamSaffron,2018-04-30 02:06:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a006b843d237572b73335beacd491275f740e262,a006b843d237572b73335beacd491275f740e262,"FEATURE: if channel is supplied and not a string, raise"
+SamSaffron,2018-04-20 05:48:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e6bfbe2d1dadd9d06af77d625dfba67a9e4ce300,e6bfbe2d1dadd9d06af77d625dfba67a9e4ce300,FIX: never allow concurrent ajax reqs
+SamSaffron,2018-04-20 04:47:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/41eaf581e49e557c334c5bd6665cf4feb44a527b,41eaf581e49e557c334c5bd6665cf4feb44a527b,bump version
+SamSaffron,2018-04-20 04:45:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e5ce849d809ed661ad082365bdfe2bcd2e694659,e5ce849d809ed661ad082365bdfe2bcd2e694659,FIX: pollTimeout must be unconditionally cleared
+ramontayag,2018-04-18 11:18:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/df0e071f193929a2f546c4a21a18d2ca8e8da2c3,df0e071f193929a2f546c4a21a18d2ca8e8da2c3,Apply missing Ruby syntax highlighting (#161)
+SamSaffron,2018-03-22 02:08:07,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8492b1720d4e36f30e9d5ef5a5a119b26e68afc8,8492b1720d4e36f30e9d5ef5a5a119b26e68afc8,improve readme
+jeremyevans,2018-03-11 23:35:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/811295955c855b32570c7100c744dba55d5dd08d,811295955c855b32570c7100c744dba55d5dd08d,"Fix using global MessageBus, always use the related instance (#158)
+
+If you are using MessageBus::Instance to create separate instances,
+none of that code should call the singleton MessageBus instance.
+This fixes all cases where the singleton was used.
+
+In order to implement this, MessageBus::Diagnostics.enable needs
+to take an argument for the bus to use.  To retain backwards
+compatibility, this argument defaults to MessageBus."
+SamSaffron,2018-01-09 01:16:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c5653990b7c4c2a7838a4c49865481fa5356592f,c5653990b7c4c2a7838a4c49865481fa5356592f,"FEATURE: minHiddenPollInterval to ensure hidden tabs don't flood with reqs
+FEATURE: added entropy of 500ms random to delayed polls"
+SamSaffron,2017-12-18 04:38:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f5e4871acd184cea6a53b3419e242fe8831c9255,f5e4871acd184cea6a53b3419e242fe8831c9255,bump
+SamSaffron,2017-12-18 04:37:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/51977dd620e7ff2523abb55e05af192984b6a9a9,51977dd620e7ff2523abb55e05af192984b6a9a9,FEATURE: allow max_backlog_age and size to be added via publish
+SamSaffron,2017-12-18 03:29:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e460e742702c4b69e0ecf5c1e10181fec51fa61a,e460e742702c4b69e0ecf5c1e10181fec51fa61a,FEATURE: allow subscriptions to gather last N messages
+SamSaffron,2017-12-13 00:19:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/da946557a35596901ab9edb5b8cf25de3de3b661,da946557a35596901ab9edb5b8cf25de3de3b661,update container so we use latest ruby
+SamSaffron,2017-11-23 21:57:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4431ee402313459a91adb0a198981f5265d78977,4431ee402313459a91adb0a198981f5265d78977,remove a puts
+SamSaffron,2017-11-23 21:56:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e0a0292206b40e58cd58e96b34a4768e12fcba3e,e0a0292206b40e58cd58e96b34a4768e12fcba3e,remove symlinks
+SamSaffron,2017-11-23 21:56:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fd89e7df1e78d92f6de416506bf7cfdd733732e8,fd89e7df1e78d92f6de416506bf7cfdd733732e8,avoid symlinks in build cause rubygems latest gets confused
+SamSaffron,2017-11-23 21:25:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7c9314fa02771c3b39b03c693659a581288931f0,7c9314fa02771c3b39b03c693659a581288931f0,FEATURE: on backend flush recover clients
+SamSaffron,2017-11-23 20:41:58,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e62168450214d90e9da8af7aa2a0fe206af31485,e62168450214d90e9da8af7aa2a0fe206af31485,one more test for bus reset
+SamSaffron,2017-11-23 20:15:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4c30661b1e22bea19be2007b4b258586e68261bc,4c30661b1e22bea19be2007b4b258586e68261bc,"- remove unsupported rubies
+- improve readme
+- rubocop formatting"
+SamSaffron,2017-11-23 20:05:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/55dc1280b6c08dd116c68c56d15d3543e026f803,55dc1280b6c08dd116c68c56d15d3543e026f803,rubocop
+SamSaffron,2017-11-23 20:05:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d2a9826945713f117f08afe0d4c04df2baf5dfb7,d2a9826945713f117f08afe0d4c04df2baf5dfb7,changlog
+hellaxe,2017-11-18 23:21:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/eef80d412c6fee7e9f607f8536a73dcb74ab758f,eef80d412c6fee7e9f607f8536a73dcb74ab758f,Fixed typos in README.md (#156)
+jamescook,2017-11-08 01:53:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cde065855adeff310e983232f7088a5317be09f6,cde065855adeff310e983232f7088a5317be09f6,"Refactor MessageBus::Message.decode to reduce object allocations (#155)
+
+* Refactor MessageBus::Message.decode to reduce object allocations
+
+* Use gsub! instead of gsub"
+SamSaffron,2017-10-06 00:44:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c923ff0aa8dd6fcfc3be522fa6e993867dc7a4f9,c923ff0aa8dd6fcfc3be522fa6e993867dc7a4f9,remove travis minor versions so we always test on latest
+SamSaffron,2017-10-06 00:41:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/25b538d7ca3a03c4ee8f3b4badd58a658b25c571,25b538d7ca3a03c4ee8f3b4badd58a658b25c571,try this
+SamSaffron,2017-10-06 00:36:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2d67d5dc105bca2bbfa6c5f409515e9b55d91705,2d67d5dc105bca2bbfa6c5f409515e9b55d91705,bump test versions
+SamSaffron,2017-10-06 00:32:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7fd1ba2ec071ae9c9a15c1d4e877c154d4a0bb98,7fd1ba2ec071ae9c9a15c1d4e877c154d4a0bb98,version bump
+SamSaffron,2017-10-06 00:29:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2a7c80071fb7ef56794611293e6ae7efe692dc99,2a7c80071fb7ef56794611293e6ae7efe692dc99,"Merge pull request #154 from tgxworld/more_dynamic_readonly_mode_handling
+
+Redis READONLY mesasge is not necessary located at start of string."
+tgxworld,2017-10-05 07:52:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/489040e396022990cb6fbebd56b5285729d4f821,489040e396022990cb6fbebd56b5285729d4f821,Redis READONLY mesasge is not necessary located at start of string.
+SamSaffron,2017-10-02 04:09:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c65e0483c2a768909ce61c8eb8e2927a8021d5c0,c65e0483c2a768909ce61c8eb8e2927a8021d5c0,"FEATURE/FIX: correct race condition in publish, use lua"
+SamSaffron,2017-10-02 04:08:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f249769b531a3251b001839dfb9c9dad71d833ac,f249769b531a3251b001839dfb9c9dad71d833ac,stop testing ruby 1.9 ... it is no longer supported
+SamSaffron,2017-09-29 06:56:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/27afbcc63841a36813a0420f950302f7bf7fa998,27afbcc63841a36813a0420f950302f7bf7fa998,correct versions for ruby 2.0
+SamSaffron,2017-09-29 06:49:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2ce407acfd6164f4f2ef009fb0eaec222e3f0074,2ce407acfd6164f4f2ef009fb0eaec222e3f0074,version bump
+SamSaffron,2017-09-29 06:48:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0664af8b4cfb395b47c3f3b669a874b44d073957,0664af8b4cfb395b47c3f3b669a874b44d073957,Fix: always deliver backlog even when short polling
+SamSaffron,2017-09-29 06:11:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/70f007b10ca018ab693e0e5695cdd059a0d84a17,70f007b10ca018ab693e0e5695cdd059a0d84a17,Correct deadlock on destroy and after_fork
+SamSaffron,2017-09-29 03:03:44,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9b1dbf7136e2df5f53cfc016a582f52c01b7f310,9b1dbf7136e2df5f53cfc016a582f52c01b7f310,lint file
+SamSaffron,2017-08-16 19:05:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6dd5df1c775bd70929c8a9f7a5de77b81df8dcff,6dd5df1c775bd70929c8a9f7a5de77b81df8dcff,oops bumped an extra minor by mistake
+SamSaffron,2017-08-16 19:01:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b2b2e40f0a33af45a5d41753efb62e47e82abdfe,b2b2e40f0a33af45a5d41753efb62e47e82abdfe,repackage with earlier version of ruby
+SamSaffron,2017-08-16 11:48:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9dc5d9f5b687d46fbf273388c408222114752b0f,9dc5d9f5b687d46fbf273388c408222114752b0f,version bump
+SamSaffron,2017-08-16 11:28:05,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2fdb2eff02383719adc001bb41878a1d6c03d8d3,2fdb2eff02383719adc001bb41878a1d6c03d8d3,"Merge pull request #150 from tgxworld/fix_broken_config
+
+Fix broken `MessageBus.redis_config`."
+SamSaffron,2017-08-16 11:27:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/07d23ced3aaf8df36f6c36969aa73039d534c747,07d23ced3aaf8df36f6c36969aa73039d534c747,"Merge pull request #151 from tgxworld/publish_status_to_clients_when_filtered_message_is_published
+
+FIX: Publish status update to all subscribed clients when a message i…"
+tgxworld,2017-08-16 06:24:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a052758ece106f861d414b57a7d64b5e9ce7eb46,a052758ece106f861d414b57a7d64b5e9ce7eb46,FIX: Publish status update to all subscribed clients when a message is filtered.
+tgxworld,2017-08-16 03:54:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bcaf268b071ad20dce427584220fd0240ef32ea0,bcaf268b071ad20dce427584220fd0240ef32ea0,Fix broken `MessageBus.redis_config`.
+SamSaffron,2017-08-16 03:33:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6cc0211f7b9e2fa233d07dce3752cea760235fab,6cc0211f7b9e2fa233d07dce3752cea760235fab,"Merge pull request #149 from cannikin/docs-only
+
+Updates README with instructions for setting on_middleware_error"
+cannikin,2017-08-15 21:42:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6a6f611782e6d961b12f5ae9c02c9fb69d455702,6a6f611782e6d961b12f5ae9c02c9fb69d455702,Typo
+cannikin,2017-08-15 21:37:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/620b237f238f06dfbb037463d4919a460a8f67fb,620b237f238f06dfbb037463d4919a460a8f67fb,Adds instructions for setting on_middleware_error
+cannikin,2017-08-15 20:42:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/667635810b4d765dec95f0c221deeffa4018dd83,667635810b4d765dec95f0c221deeffa4018dd83,"Revert ""Rescue from Errno::EPIPE when sending a message""
+
+This reverts commit 992356794c404ce488d1f0a24777aa32a0c16e8d."
+cannikin,2017-08-15 20:42:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/05cf158db6e6104e47f0061ced3d7f959dc09138,05cf158db6e6104e47f0061ced3d7f959dc09138,"Revert ""Casts a wider net on exceptions""
+
+This reverts commit a9eb8c61853e5c8ad8d54d6af2b24138cf8720d5."
+SamSaffron,2017-08-14 16:18:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a507b0fb1f00840a71f37648817703c542547911,a507b0fb1f00840a71f37648817703c542547911,"Merge pull request #147 from cannikin/master
+
+Rescue from Errno::EPIPE when sending a message"
+cannikin,2017-08-14 16:04:55,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a9eb8c61853e5c8ad8d54d6af2b24138cf8720d5,a9eb8c61853e5c8ad8d54d6af2b24138cf8720d5,Casts a wider net on exceptions
+cannikin,2017-08-11 22:29:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/992356794c404ce488d1f0a24777aa32a0c16e8d,992356794c404ce488d1f0a24777aa32a0c16e8d,Rescue from Errno::EPIPE when sending a message
+SamSaffron,2017-07-31 20:27:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b5867e9c9b739eff07e27e0afea3d21e98635c11,b5867e9c9b739eff07e27e0afea3d21e98635c11,PERF: add frozen string literal to save on memory
+SamSaffron,2017-07-31 19:53:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a08353c59a6754938691de27d1cd86353841698b,a08353c59a6754938691de27d1cd86353841698b,add rubocop and start enforcing it
+SamSaffron,2017-05-23 21:51:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2407a13c1a2e77d22ffda5f16e726073e3504a72,2407a13c1a2e77d22ffda5f16e726073e3504a72,"Merge pull request #140 from kubakrzempek/master
+
+Handle missing ActionDispatch::Flash in Railtie"
+kubakrzempek,2017-05-23 08:09:43,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2eaa4cedfa15b3cd0a0083ade31f3c14dd204ab7,2eaa4cedfa15b3cd0a0083ade31f3c14dd204ab7,"Handle missing ActionDispatch::Flash in Railtie
+
+The middleware config in Rails app operates on a MiddlewareStackProxy which more
+or less acts as a recorder of the operations that is applied over default stack
+when the app is initialized, hence a regular `rescue` won't work here.
+
+There are two cases to cover:
+1. Someone already ""deleted"" (meaning it will be deleted in the end but it is not just yet)
+   ActionDispatch::Flash from the stack
+2. ActionDispatch::Flash was never in the stack
+
+ #1 happens with Rails4 apps that are configured to be API-only or if someone
+doesn't want the middleware in their stack.
+ #2 is a Rails5 API-only app behaviour.
+
+To handle either case the initializer in `MessageBus::Rails::Railtie` is looking
+for both cases and applies the MessageBus middleware appropriately.
+The default behaviour can be easily changed via regular Rails config block.
+
+```ruby
+ # config/initializers/message_bus.rb
+Rails.application.config do |config|
+  # do anything you wish with config.middleware here
+end
+```"
+SamSaffron,2017-04-30 00:43:30,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9ba64780be801145c46a5f30e4a443f780dad708,9ba64780be801145c46a5f30e4a443f780dad708,Update README.md
+SamSaffron,2017-03-15 14:38:43,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ec0b02817df92b87867e6bba9cee1b1bf916f940,ec0b02817df92b87867e6bba9cee1b1bf916f940,"Merge pull request #133 from tgxworld/better_logging
+
+Better logging when MessageBus drops old message."
+SamSaffron,2017-03-15 14:36:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ed6979c72d85e7dd4329ec95aecc75915cd4d582,ed6979c72d85e7dd4329ec95aecc75915cd4d582,"Merge pull request #134 from tgxworld/fix_deprecation_warning
+
+Fix deprecation warnings in test."
+tgxworld,2017-03-15 08:22:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/41cad85a68091ec1754fcf68a26d4e86e6e663d1,41cad85a68091ec1754fcf68a26d4e86e6e663d1,Fix deprecation warnings in test.
+tgxworld,2017-03-15 07:15:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/15945bb86f7d7b0af433115bdf0c5c66b88b5734,15945bb86f7d7b0af433115bdf0c5c66b88b5734,Better logging when MessageBus drops old message.
+SamSaffron,2017-02-03 14:17:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7f80f8380bbb9efb9b28759c5d6b49758606b75d,7f80f8380bbb9efb9b28759c5d6b49758606b75d,"Merge pull request #132 from shrijanshukla89/typo-fix
+
+Typo fix"
+shrijanshukla89,2017-02-03 13:50:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/efbd15cbd0da9b3a729650170255617236c6dc35,efbd15cbd0da9b3a729650170255617236c6dc35,Typo fix
+SamSaffron,2016-08-25 05:29:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cb931abfef7493453900ab856ef96cd895da1cfd,cb931abfef7493453900ab856ef96cd895da1cfd,FEATURE: add support for on_middleware_error custom handling
+SamSaffron,2016-08-11 01:05:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1ffd128a953ccb30bf7e7ff42c87bd1adb6368a6,1ffd128a953ccb30bf7e7ff42c87bd1adb6368a6,"Merge pull request #126 from dleavitt/patch-1
+
+[ci skip] Update puma instructions for Rails 5"
+dleavitt,2016-08-11 00:50:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e0533268b520419944c05e5f67d6cdf9d9222678,e0533268b520419944c05e5f67d6cdf9d9222678,[ci skip] Update puma instructions for Rails 5
+SamSaffron,2016-07-27 05:00:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9d78a06c2f4d3ea8d1a79da3af5c5bfa0c3a0cfc,9d78a06c2f4d3ea8d1a79da3af5c5bfa0c3a0cfc,"FEATURE: add status() function
+
+implements #117"
+SamSaffron,2016-06-27 22:49:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3415039a3b4b25df640b1d8c7f497e5aa0d58b6e,3415039a3b4b25df640b1d8c7f497e5aa0d58b6e,"Merge pull request #120 from ffabreti/master
+
+Explains new params for JS-Client subscribe"
+ffabreti,2016-06-27 22:04:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/48445650b82529a57ecf100b3b6a337f3d8ada47,48445650b82529a57ecf100b3b6a337f3d8ada47,"Explains new params for JS-Client subscribe
+
+see #118"
+SamSaffron,2016-06-27 21:16:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/149a8c129510d04b09917dff5dc4289d813d8ea0,149a8c129510d04b09917dff5dc4289d813d8ea0,"Merge pull request #119 from ffabreti/master
+
+ get the last globalId and messageId for a channel."
+ffabreti,2016-06-27 16:27:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/103a81e02604748de36d26cf5b74856a2d589f76,103a81e02604748de36d26cf5b74856a2d589f76," get the last globalId and messageId for a channel.
+ helps subscribing to a point in time, recovering the backlog only after that point.
+ closes #118"
+SamSaffron,2016-06-21 00:09:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1ae3ffd3a223397859bd83c285bb1034ee7c0465,1ae3ffd3a223397859bd83c285bb1034ee7c0465,"fix, I need to do another release that builds with ruby 2.0 cause 2.3 has issues"
+SamSaffron,2016-06-21 00:03:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c906eea66be491b730b0aa70961e4558031c82f5,c906eea66be491b730b0aa70961e4558031c82f5,Version 2.0.0 !!!
+SamSaffron,2016-06-20 23:52:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/aca52431daf976c4c00044e56f77c861660c67fc,aca52431daf976c4c00044e56f77c861660c67fc,"Merge pull request #116 from uri/fix-rails-server-crash
+
+Catching kill signal to a potentially already terminated process"
+uri,2016-06-20 13:57:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/06434794f2eb97346578d82e75070446d8b3398b,06434794f2eb97346578d82e75070446d8b3398b,Catching kill signal to a potentially already terminated process
+SamSaffron,2016-06-08 23:40:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/dc7b92303b624e0787dc66954f84d9efa6e6e113,dc7b92303b624e0787dc66954f84d9efa6e6e113,"Merge pull request #114 from joseluistorres/issue-64-setting-user-ids
+
+adding an extra example to use with rails/devise"
+joseluistorres,2016-06-08 21:38:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d8fe0d43307f843dbb0b43cf314d9faae2c7e526,d8fe0d43307f843dbb0b43cf314d9faae2c7e526,adding an extra example to use with rails/devise
+SamSaffron,2016-05-27 00:07:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/746bb4dde2d3d0c8dd7c4fd0cf40947402b2d471,746bb4dde2d3d0c8dd7c4fd0cf40947402b2d471,"Merge pull request #110 from washu/patch-1
+
+Update message-bus.js"
+washu,2016-05-17 14:03:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/91c85179d190166784e133ad3086a99215007d68,91c85179d190166784e133ad3086a99215007d68,"Update message-bus.js
+
+added async: true as an explicit option instead of the default value as Firefox seems to intermittently hang up the UI during a long poll without a default"
+SamSaffron,2016-05-11 01:14:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/46cecf8bc3aab344f252d8bac6bea7f2d18314ac,46cecf8bc3aab344f252d8bac6bea7f2d18314ac,bump version
+SamSaffron,2016-05-11 00:40:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1b383e8371d9fffdc72cca4e4a70ae001f061909,1b383e8371d9fffdc72cca4e4a70ae001f061909,fix for rubygems issue
+SamSaffron,2016-05-10 23:57:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6349161e28b84a3c4ced91db0ae15d336e398f21,6349161e28b84a3c4ced91db0ae15d336e398f21,FIX: requests without content type are erroring out
+SamSaffron,2016-05-09 01:06:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e5533058dcd0fe94d78c221381a119807c0ee8ae,e5533058dcd0fe94d78c221381a119807c0ee8ae,"Merge pull request #108 from ffabreti/patch-2
+
+improve readme on how user_id_lookup is used"
+ffabreti,2016-05-04 23:47:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4f94d2b9abb53a25fa4817d8a9f69da274be8597,4f94d2b9abb53a25fa4817d8a9f69da274be8597,improve readme on how user_id_lookup is used
+jeremyevans,2016-05-01 22:39:43,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b817f720c8ee5e20c678ee1705b22e813b781eda,b817f720c8ee5e20c678ee1705b22e813b781eda,Fix error when clearing channel backlog (Fixes #104) (#105)
+SamSaffron,2016-04-27 05:16:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/447bda5d807196a389909897240c6edb864073c6,447bda5d807196a389909897240c6edb864073c6,version bump
+SamSaffron,2016-04-27 05:15:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/460e5e05bcecb951fdc8152436ae5e369b146d71,460e5e05bcecb951fdc8152436ae5e369b146d71,improve wrk bench
+SamSaffron,2016-04-27 04:33:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7a268b47b4663206fc0da3d3f782899a0f10f86d,7a268b47b4663206fc0da3d3f782899a0f10f86d,"Merge pull request #103 from tgxworld/test_when_current_id_equal_last_id
+
+Add tests when last backlog message id is equal to subscription's `la…"
+tgxworld,2016-04-27 04:10:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d86b38ff059b3f86dd4684c89f25db4c334ef19,5d86b38ff059b3f86dd4684c89f25db4c334ef19,Add tests when last backlog message id is equal to subscription's `last_id`.
+SamSaffron,2016-04-27 04:18:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4bc934eddd9f316e7bd88cfc4081b6428599ba40,4bc934eddd9f316e7bd88cfc4081b6428599ba40,make jasmine stop downloading on travis
+SamSaffron,2016-04-27 03:12:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/56627d22c6d7f3ac07e6ba1255539b50a40ffdd7,56627d22c6d7f3ac07e6ba1255539b50a40ffdd7,"Merge pull request #101 from tgxworld/fix_wrong_attribute
+
+FIX: Incorrect attribute."
+tgxworld,2016-04-27 03:06:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/59036d7d559f1361025745f83bfc693df2d406f8,59036d7d559f1361025745f83bfc693df2d406f8,FIX: Incorrect attribute.
+SamSaffron,2016-04-27 01:53:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2e8c192289f4774b0b17799b5e1865e3dbef191c,2e8c192289f4774b0b17799b5e1865e3dbef191c,"Merge pull request #100 from ffabreti/patch-1
+
+Fix #97"
+SamSaffron,2016-04-26 06:24:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2bc656445004ed2067abd05650cd37719ce53f5c,2bc656445004ed2067abd05650cd37719ce53f5c,bump version
+SamSaffron,2016-04-26 06:23:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ae0d7cdaf0d645da65da7f1b2041f0e6d645305b,ae0d7cdaf0d645da65da7f1b2041f0e6d645305b,FEATURE: support subscribe from a certain point
+ffabreti,2016-04-22 13:24:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d2f350f976f20c0dff703ae94a66606ead454341,d2f350f976f20c0dff703ae94a66606ead454341,Fix #97
+SamSaffron,2016-04-22 04:50:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a92e31f275f05f1f05bd3792e73ad0785e748529,a92e31f275f05f1f05bd3792e73ad0785e748529,"Merge pull request #99 from nathanstitt/ajax-headers
+
+Add headers config option"
+nathanstitt,2016-04-21 00:24:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6922007d7093f56209045fca0d9e0e80d078d094,6922007d7093f56209045fca0d9e0e80d078d094,Update example to use MessageBus.headers option
+nathanstitt,2016-04-21 00:18:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c18f4a5268d2196ddf58ade22d826587e35bbf60,c18f4a5268d2196ddf58ade22d826587e35bbf60,Document headers setting
+nathanstitt,2016-04-21 00:14:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7b493bd36938bf5ed4b76335124461f404b12919,7b493bd36938bf5ed4b76335124461f404b12919,"Include headers set on MessageBus in request
+
+As noted by #98, it was previously impossible to set headers on an ajax request."
+nathanstitt,2016-04-21 00:14:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e3b9f17a8f3edda9488f0891e55ef06b2b6deb18,e3b9f17a8f3edda9488f0891e55ef06b2b6deb18,record headers as they're set
+SamSaffron,2016-04-19 21:54:01,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cda02fe702e12da98c6fc22e14ca38870ec65bd4,cda02fe702e12da98c6fc22e14ca38870ec65bd4,"Merge pull request #96 from muratcorlu/master
+
+MessageBus native ajax implementation added to vendor folder"
+muratcorlu,2016-04-19 14:43:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2b7fea1df1211933437fc0ebd95fae9d627831e7,2b7fea1df1211933437fc0ebd95fae9d627831e7,MessageBus native ajax implementation added to vendor folder to use with rails sprockets
+jeremyevans,2016-04-13 21:49:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/98a71c19be425c820337e7a89a5ff3fef6b56158,98a71c19be425c820337e7a89a5ff3fef6b56158,"Handle dropped connections in backlog and global_backlog (#94)
+
+While here, remove a dead store."
+jeremyevans,2016-04-13 20:08:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f3dc516298c0d757aca8cabae4617de662848d93,f3dc516298c0d757aca8cabae4617de662848d93,Remove PostgreSQL connections from the pool if PG::UnableToSend is raised
+SamSaffron,2016-04-04 07:24:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7a93b755b4568becb3ef87ed8053aa3e4c5346a4,7a93b755b4568becb3ef87ed8053aa3e4c5346a4,add https support to sample site
+SamSaffron,2016-03-31 04:46:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fc367a176e08d10266805899e38687f7b28850b5,fc367a176e08d10266805899e38687f7b28850b5,version bump
+SamSaffron,2016-03-31 04:43:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e67b6f3719f968dfb3b213c4dfde8b0a2eaeef9c,e67b6f3719f968dfb3b213c4dfde8b0a2eaeef9c,"Merge pull request #90 from nathanstitt/xhr-fix
+
+Fixes for XMLHttpRequest when jQuery isn't present"
+nathanstitt,2016-03-31 02:27:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9a2e1e81ecb40f3b01256b6d714297ac044d5294,9a2e1e81ecb40f3b01256b6d714297ac044d5294,"Remove check for ajaxImplementation, it installs itself"
+nathanstitt,2016-03-31 02:25:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c959a9ae2197dde0d0e67bad83746edfd2b14fe1,c959a9ae2197dde0d0e67bad83746edfd2b14fe1,Check MessageBus existance before property access
+SamSaffron,2016-03-29 08:24:10,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1849eb3805de22a016fa2ad8af6e758fd815fb86,1849eb3805de22a016fa2ad8af6e758fd815fb86,"Merge pull request #89 from nathanstitt/no-conflict
+
+Add a noConflict method to remove MessageBus from global namespace"
+nathanstitt,2016-03-29 03:23:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6c016d2f96cdadfea7296c81e29f6759bac49056,6c016d2f96cdadfea7296c81e29f6759bac49056,"Ajax include should be loaded after MessageBus
+
+This way it extends itself just like another implementation would,
+without MessageBus having any special knowledge of it."
+nathanstitt,2016-03-29 03:23:11,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e14cb12eac98ca75fd34491ab4a7fc5f2050f4e5,e14cb12eac98ca75fd34491ab4a7fc5f2050f4e5,test noConflict method
+nathanstitt,2016-03-29 03:19:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3f5d9d3b7780d15641dad0ed610ccd7ff3ceeb99,3f5d9d3b7780d15641dad0ed610ccd7ff3ceeb99,"Wrap in fn, add noConflict, add var declarations"
+SamSaffron,2016-03-22 00:59:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f8a2efd0da0e45e97bfe6be6335da7c5bbb6381c,f8a2efd0da0e45e97bfe6be6335da7c5bbb6381c,"Merge pull request #86 from nathanstitt/xmlhttprequest
+
+Replace jQuery.ajax with XMLHttpRequest requests and some Jasmine client tests."
+nathanstitt,2016-03-18 14:59:07,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a349724cdb932d4205d24d20d520b3d5caef21d8,a349724cdb932d4205d24d20d520b3d5caef21d8,"Rename specs/javascripts directory to specs/assets
+
+Matches layout of project"
+nathanstitt,2016-03-14 03:25:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6d7fb44c379f251cb68abbbc9d09b6dd31beb561,6d7fb44c379f251cb68abbbc9d09b6dd31beb561,Raise exception if ajax implementation is missing
+nathanstitt,2016-03-14 02:01:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/10db5899b8d6f57c42fbd9a36d87fd1984de4960,10db5899b8d6f57c42fbd9a36d87fd1984de4960,"Use form data encoded parameters by default
+
+Only attempt to parse JSON content-type matches"
+nathanstitt,2016-03-13 02:31:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5cd06ccbebc2a9a19a34cb8389f9c1ac7166e4a9,5cd06ccbebc2a9a19a34cb8389f9c1ac7166e4a9,Document MessageBus.ajaxImplementation
+nathanstitt,2016-03-13 02:31:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/88a38851ceb9740f73fe81809423609f8c30cfbf,88a38851ceb9740f73fe81809423609f8c30cfbf,Restore MessageBus.ajax option
+nathanstitt,2016-03-13 02:12:01,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e3b599658a2f2aa1fa256fbf90ae5d4828256167,e3b599658a2f2aa1fa256fbf90ae5d4828256167,Run jasmine client specs as part of `rake spec`
+nathanstitt,2016-03-12 20:05:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/69b481653f9bc306b35a2ba6bff7644bc84cd490,69b481653f9bc306b35a2ba6bff7644bc84cd490,add cache busting parameter to match jQuery
+nathanstitt,2016-03-12 20:04:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3ffbbb4d27e340d2d73fdf0096e43395d079a450,3ffbbb4d27e340d2d73fdf0096e43395d079a450,Test additional methods and config options
+nathanstitt,2016-03-12 20:03:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f9deecf2cd56d6fda255bd28dbdddeaa492d0f9c,f9deecf2cd56d6fda255bd28dbdddeaa492d0f9c,Add testMB test helper
+nathanstitt,2016-03-12 20:02:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/86078ab16fed81fc89fd8fa4e186380f087ba10e,86078ab16fed81fc89fd8fa4e186380f087ba10e,Only append '?' if parameters are being added
+nathanstitt,2016-03-12 03:33:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2e9a5d59a3c3bb133a0fa01e57a15c5464340910,2e9a5d59a3c3bb133a0fa01e57a15c5464340910,Submit request body as JSON
+nathanstitt,2016-03-12 01:36:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5598cfcc356aca46d36fc863628864889def93b0,5598cfcc356aca46d36fc863628864889def93b0,"Restore $.ajax as default, use XMLHttpRequest as fallback"
+nathanstitt,2016-03-10 16:36:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bffb1c1858bdebd11756728d22fea7d28dcb26a0,bffb1c1858bdebd11756728d22fea7d28dcb26a0,Remove code from original helper example
+nathanstitt,2016-03-10 15:38:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/aec95bbf58ddb6b77695aadbc1e23e30fac6ebd9,aec95bbf58ddb6b77695aadbc1e23e30fac6ebd9,A minimal set of Jasmine specs for the client
+nathanstitt,2016-03-10 15:35:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b36e80e2706320c439dad9b2ce62acc291627260,b36e80e2706320c439dad9b2ce62acc291627260,"Use XMLHttpRequest instead of jQuery.ajax
+
+This replaces use of the $.ajax method with native XMLHttpRequest
+calls.  It also uses `FormData` to encode the request body, future
+updates may use a JSON body to eliminate that requirement."
+SamSaffron,2016-03-11 03:12:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f3a5175dd0b52f42a5f79f7335d600ad7b7142fc,f3a5175dd0b52f42a5f79f7335d600ad7b7142fc,fix spec
+SamSaffron,2016-03-11 03:09:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5c3b2f9031538b97524a1d907e227a2552d05840,5c3b2f9031538b97524a1d907e227a2552d05840,update changelog
+SamSaffron,2016-03-09 07:13:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c18bb98d03b3ea068e19272b897b2d5808cbbcfb,c18bb98d03b3ea068e19272b897b2d5808cbbcfb,Update README.md
+SamSaffron,2016-03-09 07:07:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/88aa8f9fb262c28af69ab3b6329535a2d70c5812,88aa8f9fb262c28af69ab3b6329535a2d70c5812,"FIX: when unsubscribing remove from array vs making a copy
+
+If we make a copy initial array is still exposed via MessageBus.callbacks
+
+fixes #83"
+SamSaffron,2016-03-09 07:04:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1e323d1969a85854ed628c138a9f1fc3c93eb5ed,1e323d1969a85854ed628c138a9f1fc3c93eb5ed,add gemfile so we can run using bundler
+SamSaffron,2016-03-07 04:38:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8d847da1d62617b187ef270ab1473ec64398bb75,8d847da1d62617b187ef270ab1473ec64398bb75,"Merge pull request #84 from tgxworld/fix_bus_causing_rails_app_to_stall
+
+FIX: MessageBus stucked in infinite loop."
+tgxworld,2016-03-07 03:50:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/76e0a98f30f6905e378861beff2d7f86af8cb0fd,76e0a98f30f6905e378861beff2d7f86af8cb0fd,FIX: MessageBus stucked in infinite loop.
+SamSaffron,2016-03-06 06:16:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1323dde7bb0959e9d5b9652cf77882f3639bb823,1323dde7bb0959e9d5b9652cf77882f3639bb823,Update README.md
+SamSaffron,2016-03-06 06:14:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fe523e1d2a9154c25b71f75ab7e64b8823bb9395,fe523e1d2a9154c25b71f75ab7e64b8823bb9395,"Merge pull request #80 from michalhorcic/patch-1
+
+Update README.md"
+michalhorcic,2016-03-04 13:20:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/012ff1b49ec66b1235dd556d2a140a903b58a645,012ff1b49ec66b1235dd556d2a140a903b58a645,"Update README.md
+
+Adding information about solving slow application under passenger with message_bus running"
+jeremyevans,2016-02-29 21:34:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/17ca0b403c345bbe67b83d392f0607936db05539,17ca0b403c345bbe67b83d392f0607936db05539,"Merge pull request #76 from jeremyevans/clear-every
+
+Support :clear_every option on postgres and memory backends"
+jeremyevans,2016-02-29 20:30:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2def2bed3dea02a9959eaf63eb30f489e76c6680,2def2bed3dea02a9959eaf63eb30f489e76c6680,"Support :clear_every option on postgres and memory backends
+
+This option will only clear the backlog every x requests,
+which can increase performance on the postgres backend
+by skipping 2 queries most calls to publish."
+jeremyevans,2016-02-29 20:36:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6bee5b8a1a50fb20773bc7553b7c77693cebce3a,6bee5b8a1a50fb20773bc7553b7c77693cebce3a,"Merge pull request #75 from jeremyevans/memory
+
+Add memory backend"
+jeremyevans,2016-02-29 19:30:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1e9583061cdb50ee2d743d0b18c66fcc5155a3c4,1e9583061cdb50ee2d743d0b18c66fcc5155a3c4,"Add memory backend
+
+The memory backend uses the same specs as the postgres backend,
+except it doesn't run the fork or multi_process specs, since
+those wouldn't work.
+
+Only change to the lib code is returning instead of raising on
+a destoryed bus.  The memory backend is fast enough that it
+exposes a race condition in the rack middleware spec causing
+warnings but no failures.  I think it's simpler to just
+return in this case, as if the bus has been destroyed, you
+don't want to keep subscribing."
+jeremyevans,2016-02-29 19:52:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0ce4eadcbbc4d103a662ec72f4d10083382fddd8,0ce4eadcbbc4d103a662ec72f4d10083382fddd8,"Merge pull request #74 from jeremyevans/pg-fork
+
+Make all specs run with same backend, fix PostgreSQL fork handling"
+jeremyevans,2016-02-29 19:28:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4f61d93e61ac472fad0f7cc7472906ca3e5ac719,4f61d93e61ac472fad0f7cc7472906ca3e5ac719,"Reset bus before each rack middleware spec
+
+Also, remove unused variable in after block."
+jeremyevans,2016-02-29 19:25:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6fdd197119e538490d9de22870f92a88e1474374,6fdd197119e538490d9de22870f92a88e1474374,"Require at least 2 characters for message data in postgres backend
+
+This will catch errors more quickly.
+
+Fix some specs that used the backend directly with only a single
+character."
+jeremyevans,2016-02-29 18:26:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/58af2c57cb8f1dcd8c0813fc1d10cc6f3267040d,58af2c57cb8f1dcd8c0813fc1d10cc6f3267040d,"Remove fork handling in the postgres backend subscribe
+
+It turns out we don't need to detect forks during subscribe.
+subscribe runs in a separate thread, and threads aren't copied
+on fork.
+
+In the general fork detection, don't clear listening_on, as that
+will cause the subscribe in child processes to fail early. This
+fixes the forking spec."
+jeremyevans,2016-02-29 18:18:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3920cb5de5dafb1279f601bcdcbd86c67d1f3ec6,3920cb5de5dafb1279f601bcdcbd86c67d1f3ec6,"Use reset! instead of pub_redis.flushall in specs
+
+pub_redis.flush_all is redis-backend specific."
+jeremyevans,2016-02-29 18:16:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cf9a06894463bceb55ece1f88349c998812dbb4d,cf9a06894463bceb55ece1f88349c998812dbb4d,"Use configure instead of redis_config= in specs
+
+redis_config= sets the backend to redis.  This resulted in some
+of the postgres specs actually running using redis previously."
+SamSaffron,2016-02-29 00:09:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/df0118180b37f74c5e83767595976f62569cde61,df0118180b37f74c5e83767595976f62569cde61,Update README.md
+SamSaffron,2016-02-28 23:50:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/08f378de2a939d81599251221181c4eb588f1da4,08f378de2a939d81599251221181c4eb588f1da4,"Disable redis logger by default, even in dev ... way too loud"
+SamSaffron,2016-02-28 23:27:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/738271373779fca57d1c0bf2fa91fe87d8613b64,738271373779fca57d1c0bf2fa91fe87d8613b64,Bump version
+SamSaffron,2016-02-28 23:11:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e8e4a2d2db9bd62e255a02c93534d8f37b9c5175,e8e4a2d2db9bd62e255a02c93534d8f37b9c5175,"- Run tests by default using the username of current user
+- Clean up global conf in specs
+- Document details on how to run specs"
+SamSaffron,2016-02-27 00:49:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/63f80309f4d68f813f562cc7481926c60b38e871,63f80309f4d68f813f562cc7481926c60b38e871,"Merge pull request #72 from jeremyevans/pg
+
+Add PostgreSQL backend using LISTEN/NOTIFY"
+jeremyevans,2016-02-26 18:29:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d957988afab251adae1bbf161f0c8001b0cb09f,5d957988afab251adae1bbf161f0c8001b0cb09f,"Avoid missed notifications when using the postgres backend
+
+In very rare cases a message could be missed when using the
+postgres backend.  This happened because PostgreSQL notifications
+are sent on transaction commit, which can be out of sequence with
+the global ids (which are created during the INSERT statement,
+before transaction commit).  Here's an example
+
+process 1: publish ""/foo"", ""a""
+process 1: INSERT query run
+process 2: publish ""/foo"", ""b""
+process 2: INSERT query run
+process 2: COMMIT
+process 1: COMMIT
+
+In the above case, the message published by process 1 will have
+a lower global id than the message published by process 2, but
+the notification for process 2 will go out first.  Because of
+the previous two-level processing of global backlog, with one
+before the LISTEN and one after, the above situation could
+result in a missed notification.  If process 3 is subscribed to
+channel /foo and the pre-LISTEN process global backlog ends with
+the notification published by process 2 (because the transaction
+committed before process 1), the highest_id returned by the
+pre-LISTEN process_global_backlog would be greater than the global
+id published by process 1.  If process 1 commits before process
+3 LISTENs, the post-LISTEN process_global_backlog will miss the
+message published by process 1.
+
+The simplest solution is just to only proces the global backlog
+post-LISTEN.  It would be possible to process the global backlog
+pre-LISTEN and record any missing ids, then also check for those
+ids post-LISTEN, but that's a more intrusive change."
+jeremyevans,2016-02-26 17:35:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a56aaf85db0e2ef7e2d8f1afde5c440adbea268a,a56aaf85db0e2ef7e2d8f1afde5c440adbea268a,"Better testing in multi_process_spec
+
+Keep track of all responses.  If an expected response was not
+received, post which one, and if an unexpected or duplicate
+response was received, also post that."
+jeremyevans,2016-02-26 17:17:11,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7acc4810ccf8d7f80ffe0ba4eaf36075841db377,7acc4810ccf8d7f80ffe0ba4eaf36075841db377,Remove unnecessary sleep call in spec
+jeremyevans,2016-02-25 23:37:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/22ad0462f6891806ee4bc634f71c34a5228afee3,22ad0462f6891806ee4bc634f71c34a5228afee3,"Fix thread safety issues
+
+The important fix here is always deleting from @allocated in the
+ensure clause in hold.  Not doing so causing the thread safety
+issues.
+
+Numerous other beneficial changes while here:
+
+* Keep references to inherited sockets, so they don't get garbage
+  collected. You still need to make sure to use exit! instead of
+  exit in the child processes.
+
+* Make @listening_on a hash, and store a unique value for the
+  channel.  This fixes issues if you subscribe, unsubscribe, and
+  resubscribe quickly.
+
+* Add exec_prepared method which automatically calls clear on the
+  PG::Result objects returned by PG::Connection#exec_prepared. This
+  cleans them up as soon as they aren't needed, as opposed to
+  waiting for GC.
+
+* Use separate connection for LISTEN, instead of a connection from
+  the pool.  This can fix issues if trying to use the same bus
+  inside the yielded messages.
+
+* Add better fork detection to hold and subscribe.
+
+* Remove queue in memory stuff, since it appears to be tied to
+  Redis specific code.
+
+* Don't use a separate MessageBus::Postgres::Client connection for
+  the subscribe, now that MessageBus::Postgres::Client uses a new
+  PG::Connection internally."
+jeremyevans,2016-02-25 23:34:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5a3c3c1210ea784b407befe3f758aba8f1060aa3,5a3c3c1210ea784b407befe3f758aba8f1060aa3,"Allow multi_process_spec to be run multiple times
+
+This supports a MULTI_PROCESS_SPEC environment variable, specifying
+how many times to run the spec.  As race conditions won't show up
+on every run, you may need to run it multiple times, and this
+provides an easy way to do so.  If one run fails, it skips the
+remaining runs.
+
+The other change is that after the responses have been collected,
+the bus is unsubscribed normally, and the thread is joined.  This
+makes it so threads aren't getting leaked."
+SamSaffron,2016-02-25 04:11:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/df09ab6f21bf28cf5a61347d9e2b36a2264ea248,df09ab6f21bf28cf5a61347d9e2b36a2264ea248,"Merge pull request #73 from jeremyevans/explicit-channels
+
+Support passing channels to Rack middleware via env['message_bus.channels']"
+jeremyevans,2016-02-25 00:01:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e0b9eafcd2af575ff5a34995da389f91e68d3f1a,e0b9eafcd2af575ff5a34995da389f91e68d3f1a,Remove connection from pool if there is an error in UNLISTEN
+jeremyevans,2016-02-24 23:59:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e2e85b722744ce7bd8fea2bb1131f1d574fadb6c,e2e85b722744ce7bd8fea2bb1131f1d574fadb6c,"Double allowed jitter in spec
+
+I see rare failures with both Redis and PostgreSQL with 50ms."
+jeremyevans,2016-02-24 23:09:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/aa6ccbc89c369a8253c156681976b70d14a2b9b3,aa6ccbc89c369a8253c156681976b70d14a2b9b3,"Support expiration of backlog
+
+This was previously not supported by the PostgreSQL backend, only
+by the Redis backend..
+
+For high performance, it would probably be better to support a
+method where clearing backlogs and expiring could be done every
+10/100 requests or 1/10 minutes, instead of doing so on every
+request."
+jeremyevans,2016-02-24 22:43:47,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fb1ac38d4f614bc52dbd15047b834bca38d0a258,fb1ac38d4f614bc52dbd15047b834bca38d0a258,"Support passing channels to Rack middleware via env['message_bus.channels']
+
+This changes MessageBus::Rack::Middleware to recognize the
+'message_bus.channels' env entry as the channels to use for the
+request, in preference to creating a new Rack::Request object
+and using Rack::Request#POST.
+
+This makes it easier for earlier middleware or request handler to
+handle access controls for channels.  Currently, to do so would
+require messing with rack.input, which is kind of a pain.
+
+To support setting the client.seq value, that can also be specified
+as the 'message_bus.seq' env entry.
+
+There is no change to backwards compatibility if the
+'message_bus.channels' env entry is not present."
+jeremyevans,2016-02-24 21:54:08,https://api.github.com/repos/SamSaffron/message_bus/git/commits/85275f926e981f2b6dbb04583004d6d2b8798647,85275f926e981f2b6dbb04583004d6d2b8798647,Minor README tweak to be less Redis-focused [ci skip]
+jeremyevans,2016-02-24 19:02:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2d363a878dc7e77245c6c386236987b7fe620c68,2d363a878dc7e77245c6c386236987b7fe620c68,Rename backend spec files to match lib file names
+jeremyevans,2016-02-24 18:59:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/002c3e82b1a01f5eb1cc744ac4067531fd820860,002c3e82b1a01f5eb1cc744ac4067531fd820860,"Remove pg from Gemfile, since it is now in the gemspec"
+jeremyevans,2016-02-24 18:55:07,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7ba9cb058b2fd3e53b0a3153cc1fbd0726522341,7ba9cb058b2fd3e53b0a3153cc1fbd0726522341,"Automatically create table if it doesn't exist in the postgres backend
+
+This makes the postgres backend like the redis backend in that
+it no longer requires special setup. Other changes:
+
+* Remove the setup!  and reset! class methods from Postgres::Client,
+  and the setup! method from Postgres::ReliablePubSub, no longer
+  needed.
+
+* Make some internal Postgres::Client instance methods private.
+
+* Correctly use a mutex in some additional cases.
+
+* Remove flushall and flushdb instance methods.
+
+* Use PG::Error instead of the historical PGError.
+
+* Remove connections from the pool if there is a PG::ConnectionBad
+  exception raised."
+jeremyevans,2016-02-24 18:08:12,https://api.github.com/repos/SamSaffron/message_bus/git/commits/46de2d4241f5902b14af50b3b92f7e9861989abe,46de2d4241f5902b14af50b3b92f7e9861989abe,"Remove redis runtime dependency from gemspec
+
+Move it to a development dependency, and add a development
+dependency on pg as well.
+
+While here, set required_ruby_version in gemspec to 1.9.3.
+MessageBus definitely does not support ruby 1.8.7 due at least to
+use of ruby 1.9+ hash syntax.  I'm not sure if 1.9.2 is supported,
+but since it's untested and probably unneeded, it shouldn't be an
+issue."
+jeremyevans,2016-02-24 18:06:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/36cc20b92c03064a17de6d598d0fd06275ee80f8,36cc20b92c03064a17de6d598d0fd06275ee80f8,"Support testing the PostgreSQL backend on travis
+
+Also add support for testing on ruby 2.3, and update the versions
+use for testing on other ruby versions."
+jeremyevans,2016-02-24 18:05:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/46cd278d5434e2a321c5986039e9fda62012b48d,46cd278d5434e2a321c5986039e9fda62012b48d,Remove redis-specific naming from PostgreSQL backend
+jeremyevans,2016-02-24 17:46:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f3dcbbedeb3d2c7c83e6e48c0330bc532e842d86,f3dcbbedeb3d2c7c83e6e48c0330bc532e842d86,"Add MessageBus.configure for configuration
+
+This adds a single entry point for configuration via an options
+hash.  It changes the previous configuration methods to use
+.configure internally, so it should be fully backwards compatible.
+
+The specs are now split into spec_redis and spec_postgres tasks,
+with the spec task now running both.
+
+I changed the PostgreSQL backend to pass connection options
+via :backend_options.  For backwards compatibility, I didn't modify
+how the Redis backend handles options.
+
+Backends are now stores in message_bus/backends/*.rb, allowing the
+use of external backends.  The backends should register themselves
+in MessageBus::BACKENDS using a backend symbol key matching the
+filename, and the value being the pub sub class."
+jeremyevans,2016-02-23 21:49:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5c22b1ef952f2c304d96a2070a4f3c6640ee853d,5c22b1ef952f2c304d96a2070a4f3c6640ee853d,"Add PostgreSQL backend using LISTEN/NOTIFY
+
+This supports PostgreSQL as a backend.  Originally, I attempted to
+just provide a replacement Redis object that duck-typed and worked
+on PostgreSQL, but due to differences between PostgreSQL and Redis
+I was not able to get it to reliably pass the multi_process_spec.
+
+This adds a lib/message_bus/postgres/reliable_pub_sub.rb file
+with the PostgreSQL support.  To use the support, you currently
+need to require that file manually, then pass a
+:pub_sub_class=>MessageBus::Postgres::ReliablePubSub option in
+your redis_config.  Connection options to PostgreSQL go in a
+:pg_config subhash.
+
+One significant difference between this PostgreSQL backend and the
+Redis one is the dropping of channel-specific backlog ids. The
+PostgreSQL backend only stores a single backlog id, not separate
+global and channel backlog ids.  I don't think the lack of a
+channel specific backlog id should be a problem. As long as the
+channel backlog id is monotonically increasing, no messages
+should be missed.
+
+This does make some minor changes to the specs to make them support
+both Redis and PostgreSQL.  Most of the changes are simple and
+self explanatory.  I did add a ensure exit!(0) to the specs that
+fork.  You can't call a normal exit in these specs, as the
+garbage collector messes with the database connection sockets,
+you need to call exit!(0) to skip that.  I added the ensure because
+if there is an exception, it will be caught by minitest, but the
+specs will keep running in both the child and parent processes.
+
+Currently, the PostgreSQL backend does not automatically create the
+table for you on first use, you need to do that manually by calling
+MessageBus::Postgres::ReliablePubSub.setup!, which also clears the
+table if it already exists.
+
+This PostgreSQL backend reliably passes all specs for me, and works
+for me in a simple application.  However, I didn't do any testing
+with it at scale."
+SamSaffron,2016-02-14 23:24:07,https://api.github.com/repos/SamSaffron/message_bus/git/commits/32f00ca5bd7430bb498bb0aeeac3b6815b01397e,32f00ca5bd7430bb498bb0aeeac3b6815b01397e,"Merge pull request #71 from jeremyevans/minitest
+
+Port the test suite to MiniTest"
+jeremyevans,2016-02-12 23:23:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0323e4cc7ff3f0183b6cd4366a9f55ce8056829a,0323e4cc7ff3f0183b6cd4366a9f55ce8056829a,"Port the test suite to MiniTest
+
+This actually uses minitest/spec.  Hopefully that's fine.
+
+This replaces rspec with minitest in the Gemfile, and removes
+the redis, rack, rbtrace, guard-rspec, and rb-notify gems from
+the Gemfile.  redis and rack in the gemspec and do not need to
+be specified twice, guard-rspec seems to be related to rspec,
+and rbtrace and rb-inotify don't seem to be needed to run the
+tests.
+
+Most of this was done mechanically using the same script I
+used for converting Sequel's and all of my other libraries'
+specs from rspec to minitest.
+
+I used require_relative in the specs to get the spec_helper.
+This should be fine as messagebus doesn't appear to support
+ruby 1.8."
+SamSaffron,2016-02-01 05:38:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/23bea1eb0dc0639686ca69e0cd7da69509909ccc,23bea1eb0dc0639686ca69e0cd7da69509909ccc,"Merge pull request #67 from Vaporizd/better_readme
+
+Explicitly say that message-bus can be required"
+SamSaffron,2016-01-28 04:33:47,https://api.github.com/repos/SamSaffron/message_bus/git/commits/98ffe415019368fe99db82a579bc75a8a1f60afa,98ffe415019368fe99db82a579bc75a8a1f60afa,"Merge pull request #68 from lowjoel/update-readme
+
+Link to the Ruby implementation of the client."
+lowjoel,2016-01-28 03:57:47,https://api.github.com/repos/SamSaffron/message_bus/git/commits/071c71aa4873c72cf1845ec9d006443107d273b8,071c71aa4873c72cf1845ec9d006443107d273b8,Link to the Ruby implementation of the client.
+Vaporizd,2016-01-25 18:36:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e356a9a904735f4a3a237c9d4fb106b1d5272a29,e356a9a904735f4a3a237c9d4fb106b1d5272a29,Explicitly say that message-bus can be required
+SamSaffron,2016-01-25 10:11:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d761607aabfba7e7edbaf0783f9af0ff7ac22476,d761607aabfba7e7edbaf0783f9af0ff7ac22476,FIX: do not fail out if there is nothing subscribed
+SamSaffron,2016-01-09 06:49:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/84f733c14e5b4e7f2464b5b45944ceccec727899,84f733c14e5b4e7f2464b5b45944ceccec727899,Update README.md
+SamSaffron,2016-01-06 09:18:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2726ddd467381183f75be88c98076bc8af46d3c9,2726ddd467381183f75be88c98076bc8af46d3c9,remove stray console.log
+SamSaffron,2016-01-06 06:48:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/aed098686b2023fb82630981ada668dd8e12d925,aed098686b2023fb82630981ada668dd8e12d925,"Merge pull request #62 from felixbuenemann/fix-readme-post-fork-missing-require
+
+[ci skip] Fix README examples for puma and unicorn"
+felixbuenemann,2016-01-06 03:30:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/da48002e77156b5cd94144b6b7f86cae44f2631e,da48002e77156b5cd94144b6b7f86cae44f2631e,"[ci skip] Fix README examples for puma and unicorn
+
+This makes sure that ::MessageBus is defined."
+SamSaffron,2016-01-06 02:30:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/912228a9469accdf03789310f1b4cc760e4b8d15,912228a9469accdf03789310f1b4cc760e4b8d15,"Merge pull request #61 from felixbuenemann/fix-benchmark
+
+Fix concurrency benchmark example"
+felixbuenemann,2016-01-06 01:45:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/747fd8fc1093042eb3d2c877fb87d8b7a6950364,747fd8fc1093042eb3d2c877fb87d8b7a6950364,"Fix concurrency benchmark example
+
+This changes the benchmark to use [wrk](https://github.com/wg/wrk)
+instead of apache bench for testing concurrency. This is required
+because we need to generate a unique client id or the server will
+immediately recycle the client's previous connection, making the
+benchmark useless. Also added a sample puma config."
+SamSaffron,2016-01-05 14:30:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b7d13ea391e04f692a140ee68167dc18e7be129d,b7d13ea391e04f692a140ee68167dc18e7be129d,try to fix travis
+SamSaffron,2016-01-05 14:03:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ceacdb7bc05632e0172e5d8760465e458225e75f,ceacdb7bc05632e0172e5d8760465e458225e75f,"Merge pull request #60 from kamil89/fix-readme-typos
+
+Fix typos in readme"
+kamil89,2016-01-05 13:30:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8079f489c90f8da38c7fcf7041942398c8fbbd99,8079f489c90f8da38c7fcf7041942398c8fbbd99,fix typos
+SamSaffron,2016-01-05 10:09:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/77acf884e51bae0667655bf9692d3f7b4de134ba,77acf884e51bae0667655bf9692d3f7b4de134ba,try harder to add message_bus even if for some reason Flash is missing
+SamSaffron,2016-01-05 10:08:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fd5689c4b82b0d34d858521240dff288970d6651,fd5689c4b82b0d34d858521240dff288970d6651,remove handlers from railties
+SamSaffron,2016-01-05 10:07:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ebb80d3a53df7ae06ad81f5a87cecf5363e56e17,ebb80d3a53df7ae06ad81f5a87cecf5363e56e17,"FEATURE: strip support for message handlers
+
+This feature was speculative and generally a bad practice"
+SamSaffron,2016-01-05 05:43:11,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7512998992aaddef4b8873941d7234d762712445,7512998992aaddef4b8873941d7234d762712445,speed up tests
+SamSaffron,2016-01-05 05:29:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f152e71bf2f7d677a7f8cc2d6244e0ee21d77983,f152e71bf2f7d677a7f8cc2d6244e0ee21d77983,prep for 2.0.0 beta.1
+SamSaffron,2016-01-05 05:18:08,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e533ffcc0c7241d9d8f35dd20d53dbc2be750525,e533ffcc0c7241d9d8f35dd20d53dbc2be750525,Improve spec so it stops failing intermittently and is clearer
+SamSaffron,2016-01-05 05:17:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/54943e743adff5e1064281b70c380154a3677cc7,54943e743adff5e1064281b70c380154a3677cc7,FEATURE: chunked_encoding_enabled? server side setting
+SamSaffron,2016-01-05 05:16:41,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b2a92f6a82477a87ea4b13a586fd728982a787c0,b2a92f6a82477a87ea4b13a586fd728982a787c0,"remove around filters and client filters
+
+These were undocumented speculative features that are
+not needed"
+SamSaffron,2016-01-05 03:57:30,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d7b775f9d4406b2991b176f4738816d3ca9563a,5d7b775f9d4406b2991b176f4738816d3ca9563a,correct spec
+SamSaffron,2016-01-04 11:14:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/779ae9c79f082933a6ed95e7780bacd5333ef59b,779ae9c79f082933a6ed95e7780bacd5333ef59b,fix speling
+SamSaffron,2016-01-04 10:59:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/10624adbef01a43317a9931882279332a226dfae,10624adbef01a43317a9931882279332a226dfae,FIX: use seperators as length in js is inconsistent with Ruby
+SamSaffron,2016-01-04 05:32:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6ca5dc3afe58c5811eb21b24006577fe2d96142a,6ca5dc3afe58c5811eb21b24006577fe2d96142a,"FIX: use length cause in JS we get unicode back,
+still need to allow for utf-16 potentially (may need to force encoding to utf8)"
+SamSaffron,2016-01-04 05:07:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e2a3da4ab83e7aeaf8d93dc031b81f978d0e56db,e2a3da4ab83e7aeaf8d93dc031b81f978d0e56db,clean up config
+SamSaffron,2016-01-04 04:30:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e0cd995ceaccb638449c84c06b5c11ad7c7e0be9,e0cd995ceaccb638449c84c06b5c11ad7c7e0be9,"FEATURE: automatically disable chunked encoding when needed
+
+If for any reason we ask for chunked and do not get it,
+hold off on using chunked for 30 requests"
+SamSaffron,2016-01-04 03:59:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/73b6d17b6afc68ce6beca5ca88c3785a336cc704,73b6d17b6afc68ce6beca5ca88c3785a336cc704,FIX: back off correctly to long polling if proxy is HTTP/1.0
+SamSaffron,2016-01-03 23:51:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/689809052a34c722b874f51cc3e6f3d3707d668f,689809052a34c722b874f51cc3e6f3d3707d668f,disable chunked encoding for now till we sort it out
+SamSaffron,2016-01-03 23:46:45,https://api.github.com/repos/SamSaffron/message_bus/git/commits/58f20fe240db03eb5a8bc6660f329b8a3ae8b1cd,58f20fe240db03eb5a8bc6660f329b8a3ae8b1cd,better allow http 1.1
+SamSaffron,2016-01-03 23:43:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/112d297a2fc31c6d59cf3a820200ce5b400f9925,112d297a2fc31c6d59cf3a820200ce5b400f9925,FEATURE: add support for chunked encoding
+SamSaffron,2016-01-01 03:09:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/68b8db40c51cb67f069d72b857fdc0d5fc309243,68b8db40c51cb67f069d72b857fdc0d5fc309243,We don't need ms twice
+SamSaffron,2015-12-28 06:55:07,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b3b50c64b690be549d360c0194c232b1206cbb2e,b3b50c64b690be549d360c0194c232b1206cbb2e,skip prereq checks for discourse
+SamSaffron,2015-12-28 06:52:25,https://api.github.com/repos/SamSaffron/message_bus/git/commits/72df1ce4675fa3efdc2edf109a8a3bed86226a1a,72df1ce4675fa3efdc2edf109a8a3bed86226a1a,client filtering is a complex concept not sure I want to keep it removing sample for now
+SamSaffron,2015-12-28 06:47:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0cb4c0e88bb88b30715ca756dc239da0ff7c3464,0cb4c0e88bb88b30715ca756dc239da0ff7c3464,update script needed fixing
+SamSaffron,2015-12-28 06:43:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/771750ec90846805a75d85648a5d58914efe2892,771750ec90846805a75d85648a5d58914efe2892,link to live demo
+SamSaffron,2015-12-28 06:35:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/46559576621b5d7a50f0f93030ccb3790f6fd1bb,46559576621b5d7a50f0f93030ccb3790f6fd1bb,correct puma params
+SamSaffron,2015-12-28 06:29:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bd485f4f7d6f2e37592730bc7236033ba51a093f,bd485f4f7d6f2e37592730bc7236033ba51a093f,fix wrong image name
+SamSaffron,2015-12-28 06:27:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ec41ca77c0ee15c6160a3373610be5fa1b0734ab,ec41ca77c0ee15c6160a3373610be5fa1b0734ab,use puma no need to use unicorn here
+SamSaffron,2015-12-15 09:45:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1e60b70c42903a087ab721187b4aa2dab02c90e6,1e60b70c42903a087ab721187b4aa2dab02c90e6,Update README.md
+SamSaffron,2015-12-14 04:08:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0f274a968249af0aae795fd6d267d1e7f6502fef,0f274a968249af0aae795fd6d267d1e7f6502fef,"Merge pull request #59 from powerhome/feature/reliable-first-connection-delivery
+
+Simple attempt at bridging message delivery race"
+benlangfeld,2015-12-12 21:40:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/da5252c55cf6ee4152d8df9c39715db8b3135b1e,da5252c55cf6ee4152d8df9c39715db8b3135b1e,"Simple attempt at bridging message delivery race
+
+In the case that a message is published while we're calculating the backlog, we previously missed it. If the backlog turned out to be empty, we would have begun waiting for new messages, but the published message could have been delivered to the connection manager prior to informing it of the client. This would result in the message failing to be delivered until our long-poll timeout.
+
+This adds an in-memory backlog per client which is filled while we calculate the backlog in Redis. The combined (deduplicated) backlog is then considered for delivery, closing the gap. Any messages received between collecting the message buffer and delivering the backlog will become part of the Redis backlog response on the next request."
+benlangfeld,2015-12-12 21:09:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b280adb6fc36571c2173dc297b0b67bfcdf96b9c,b280adb6fc36571c2173dc297b0b67bfcdf96b9c,Run tests when implementation is changed
+benlangfeld,2015-12-11 22:28:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a74b5a3663fa893c7d7376f32fe11fc8c9982844,a74b5a3663fa893c7d7376f32fe11fc8c9982844,Log message delivery to subscribers for debugging purposes
+SamSaffron,2015-12-09 02:54:12,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f0451b9879a7974194c039ea6b6841e24b10b5fb,f0451b9879a7974194c039ea6b6841e24b10b5fb,FIX: use site_id in client for backlog and last_id
+SamSaffron,2015-12-07 02:03:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a7e3fe18633971ce001c52032156252c4bbb00b7,a7e3fe18633971ce001c52032156252c4bbb00b7,Improve readme
+SamSaffron,2015-12-07 02:03:05,https://api.github.com/repos/SamSaffron/message_bus/git/commits/28ad4b878f6121a2a037dc8db1ab546946f7ffe3,28ad4b878f6121a2a037dc8db1ab546946f7ffe3,"Remove non needed code, make $ dependency totally optional"
+SamSaffron,2015-12-07 01:00:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7169c9bfc9fb73c6b01c3d0b49dfc8b8bc6133fa,7169c9bfc9fb73c6b01c3d0b49dfc8b8bc6133fa,bump version
+SamSaffron,2015-12-07 00:48:41,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b15ba77317ad049856f7dc25a0d397cf43d9bbf3,b15ba77317ad049856f7dc25a0d397cf43d9bbf3,"FIX: Keep track of clients sequence of messages on server
+
+Cancel on the client is async, meaning that you may in some circumstances
+recieve the ""cancelled"" subscription after you posted a new subscription
+
+Server also ensures at most it keeps track of only 1 client in client manager
+
+Corrects #55"
+SamSaffron,2015-12-07 00:42:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b433106ce6f9526ca91a46c839cf2433dacb2ed0,b433106ce6f9526ca91a46c839cf2433dacb2ed0,Minimize use of jQuery so we only require .ajax
+SamSaffron,2015-08-10 22:10:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/731f8225fa310c445ce61dfa4457eefeab55c90c,731f8225fa310c445ce61dfa4457eefeab55c90c,"Merge pull request #43 from jemminger/master
+
+Add forking server tips"
+jemminger,2015-08-10 14:59:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0c7e9a4b6d00ab219a260c28623a8cc067275c14,0c7e9a4b6d00ab219a260c28623a8cc067275c14,"Merge pull request #1 from jemminger/forking-server-docs
+
+Add forking server tips"
+jemminger,2015-08-10 14:58:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/325752343b6b67659188cb03b91f32bbc44c7f70,325752343b6b67659188cb03b91f32bbc44c7f70,Add forking server tips
+SamSaffron,2015-07-09 07:38:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e0e75b67a0aa82bd5ac32b013189a29857e2b288,e0e75b67a0aa82bd5ac32b013189a29857e2b288,"FIX: check keepalive timeout again, when callback happens
+FIX: change to 3x misses to invoke shutdown
+FIX: adjust for possible race condition"
+SamSaffron,2015-07-09 06:50:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d88a85134c260c53ab6bc169f06e484c391d1a3,5d88a85134c260c53ab6bc169f06e484c391d1a3,update changelog
+SamSaffron,2015-07-09 06:42:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/18f3b575abb48d9890fe759a4083da82c58c764c,18f3b575abb48d9890fe759a4083da82c58c764c,"FEATURE: expire all backlogs after 7 days
+
+configurable with max_backlog_age"
+SamSaffron,2015-07-09 06:17:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d0a1490efdaad02f9b733db26416fbb08db10b01,d0a1490efdaad02f9b733db26416fbb08db10b01,"CHANGE: shrink global backlog size to something a lot smaller
+
+This allows us to more safely catch up if needed"
+SamSaffron,2015-07-09 06:15:30,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8c04c1aced7b83f9b2a4904faa988e4d269a4527,8c04c1aced7b83f9b2a4904faa988e4d269a4527,"FIX: MessageBus.backlog(channel) returns backlog for channel
+FEATURE: MessageBus.global_backlog"
+SamSaffron,2015-07-02 01:58:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/50fad0064c63e960a5e06c522f13b0d67a17b5fb,50fad0064c63e960a5e06c522f13b0d67a17b5fb,"Merge pull request #41 from st0012/add-redis-config-to-readme
+
+Add redis configuration info to readme"
+st0012,2015-07-01 03:50:08,https://api.github.com/repos/SamSaffron/message_bus/git/commits/22c7926eefec45dfbfc664e2d9d8c7120b8a8535,22c7926eefec45dfbfc664e2d9d8c7120b8a8535,Add redis configuration info to readme
+SamSaffron,2015-06-23 12:31:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8e3431d58d657f7c942997cbdd96474041e96163,8e3431d58d657f7c942997cbdd96474041e96163,FIX: avoid Thread#kill at all costs
+SamSaffron,2015-06-22 20:28:26,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5900ef9b8f7f0ee2acd7d1d2ceabcf9947dc0af2,5900ef9b8f7f0ee2acd7d1d2ceabcf9947dc0af2,"Merge pull request #38 from elektronaut/readme
+
+Added missing syntax highlighting for the README"
+SamSaffron,2015-06-22 20:27:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f8d7634a5eecfd0a9f9b231b564b23c378486f80,f8d7634a5eecfd0a9f9b231b564b23c378486f80,"Merge pull request #39 from elektronaut/channel-name-prefix
+
+Changes redis_channel_prefix from discourse_ to _message_bus_"
+elektronaut,2015-06-22 14:46:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/512514032f136752e1bf492013385a9a9f0e9222,512514032f136752e1bf492013385a9a9f0e9222,Changes redis_channel_prefix from discourse_ to _message_bus_
+elektronaut,2015-06-22 14:39:16,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f9fa418e10808342a5b0daad870a7c7cd42ab1c2,f9fa418e10808342a5b0daad870a7c7cd42ab1c2,Improved syntax highlighting for README.md
+SamSaffron,2015-06-14 23:58:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/39805f66baaafa894f8be9a5e32180185e539bb0,39805f66baaafa894f8be9a5e32180185e539bb0,"Merge pull request #36 from tgxworld/test_against_ruby_2_2
+
+Test against Ruby 2.2.x."
+tgxworld,2015-06-12 09:18:55,https://api.github.com/repos/SamSaffron/message_bus/git/commits/310e3ce64ac52fce8b67798542cba2ec82fe92f7,310e3ce64ac52fce8b67798542cba2ec82fe92f7,Test against Ruby 2.2.x.
+SamSaffron,2015-06-08 08:08:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9a8fd935aa0305b91ebbd5d94693c2af6508d060,9a8fd935aa0305b91ebbd5d94693c2af6508d060,version bump
+SamSaffron,2015-06-08 08:06:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bdd95f5643b5da04134eb67b39edcae4c325bb6e,bdd95f5643b5da04134eb67b39edcae4c325bb6e,"Make global subscribe more reliable
+
+FIX: on reconnect we were not catching up on messages
+FEATURE: add keepalive that ensure subscribe thread can
+  process messages"
+SamSaffron,2015-06-08 07:29:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f0a252ec209e89da953fefafaf384203b5b4cbc0,f0a252ec209e89da953fefafaf384203b5b4cbc0,"Improve reliability
+
+- TimerThread #stop now ensures worker is stopped
+- Correct specs to clean up more correctly
+- Account for Ruby schedule jitter in Thread"
+SamSaffron,2015-06-04 00:05:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6ff46d620c24d3f7289b4a7d52f29355e3485414,6ff46d620c24d3f7289b4a7d52f29355e3485414,publish presense if we were timed out
+SamSaffron,2015-06-04 00:01:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/bb8976650b1c4514688cf1a9a3e669e83d6ec001,bb8976650b1c4514688cf1a9a3e669e83d6ec001,add rbtrace
+SamSaffron,2015-06-03 15:05:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e4128c00255457e2ce0e73b877617294c454d032,e4128c00255457e2ce0e73b877617294c454d032,scroll down after load
+SamSaffron,2015-06-02 07:30:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/526dee3f78a0011a52d8b37de938b414afb4aaf5,526dee3f78a0011a52d8b37de938b414afb4aaf5,not using correct param
+SamSaffron,2015-06-02 07:22:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c4734ba99a9da30a71cf80e037fbe276cdfce33a,c4734ba99a9da30a71cf80e037fbe276cdfce33a,Added timeout for sessions
+SamSaffron,2015-06-02 06:52:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d841e3844f129f6df7e0c072a58c6f0abdfb267,5d841e3844f129f6df7e0c072a58c6f0abdfb267,clenaup
+SamSaffron,2015-06-02 06:50:08,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9f9370b042044ae1df0e611395b06c69246f18cb,9f9370b042044ae1df0e611395b06c69246f18cb,Add basic presence to chat demo
+SamSaffron,2015-05-28 05:05:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5d9eb0b61f7d230857939156da0c3dbda121b611,5d9eb0b61f7d230857939156da0c3dbda121b611,FEATURE: allow targetting messages at particular clients
+SamSaffron,2015-05-12 06:17:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e7be176700964001bc50c2309be7e1d2bc8d16f7,e7be176700964001bc50c2309be7e1d2bc8d16f7,"Merge pull request #31 from jraedisch/custom_pub_sub
+
+Allow customizing ReliablePubSub"
+SamSaffron,2015-05-11 09:12:34,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3d8d49d10799c5bfc1a0fb785ea99b44d46653ec,3d8d49d10799c5bfc1a0fb785ea99b44d46653ec,"Merge pull request #29 from jraedisch/hotfix-max-backlog
+
+use max_backlog_size parameter"
+SamSaffron,2015-05-06 03:17:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/38dc85ad4f6d10f050ee90912447c0222a480de6,38dc85ad4f6d10f050ee90912447c0222a480de6,FIX: race
+SamSaffron,2015-05-03 23:59:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/863b6e71d3f7ca807b6ede54260db72fb266af32,863b6e71d3f7ca807b6ede54260db72fb266af32,we no longer need event machine
+SamSaffron,2015-05-03 23:50:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9d049d040720b4cc49e0a209934c32d09a8d21ad,9d049d040720b4cc49e0a209934c32d09a8d21ad,add stack prof for profiling
+SamSaffron,2015-05-03 23:43:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cb1baa104810fc70b9829c80239d30206ba57ac2,cb1baa104810fc70b9829c80239d30206ba57ac2,micro optimisations
+SamSaffron,2015-05-03 23:03:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2d9d4351ef794c38a25d90cd3e38b576a996fdff,2d9d4351ef794c38a25d90cd3e38b576a996fdff,FIX: keep working even if redis is flushed
+SamSaffron,2015-05-01 08:44:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cdd9e0c3ff65adcb67f4d792988d0e3bda13111f,cdd9e0c3ff65adcb67f4d792988d0e3bda13111f,fix up spec suite
+SamSaffron,2015-05-01 06:55:01,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6692766b340b6659ce9b0e952466f6a0402f4bed,6692766b340b6659ce9b0e952466f6a0402f4bed,add reconnect if for any reason we are in readonly
+SamSaffron,2015-05-01 01:58:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2d83a0057d01e6d945d25d795d9880eb7879a663,2d83a0057d01e6d945d25d795d9880eb7879a663,FEATURE: allow queuing of messages in memory if redis is readonly
+SamSaffron,2015-05-01 01:57:15,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d195dc26add356eb48ef97cd9b8df0591cf4ebd5,d195dc26add356eb48ef97cd9b8df0591cf4ebd5,update guard
+SamSaffron,2015-04-27 21:08:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cfa56a35ce43eb29309c4a5ee1bad5986a650708,cfa56a35ce43eb29309c4a5ee1bad5986a650708,"improve bench, these settings are already default"
+SamSaffron,2015-04-25 05:59:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9d31d33285a5ef7c45b05a7bb1aa8c8f1a53efbb,9d31d33285a5ef7c45b05a7bb1aa8c8f1a53efbb,"FEATURE: we no longer depend on EventMachine
+
+Implement an efficient thread based scheduler."
+SamSaffron,2015-04-23 18:35:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/47023330e0e022f0e3883995d03d20b1043c5ec6,47023330e0e022f0e3883995d03d20b1043c5ec6,Update chat.rb
+SamSaffron,2015-04-23 17:26:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c7f6fd849788a741cf13558fb3ddbb825cb23a74,c7f6fd849788a741cf13558fb3ddbb825cb23a74,Update chat.rb
+SamSaffron,2015-04-21 19:56:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/09faec402863c52456829cecefa7f1d65bbd8c5b,09faec402863c52456829cecefa7f1d65bbd8c5b,"Merge pull request #28 from riking/patch-1
+
+Add name to send button"
+riking,2015-04-21 19:23:58,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6fe778d56547e09b094a8e0c4efcc07eedcaf120,6fe778d56547e09b094a8e0c4efcc07eedcaf120,"Add name to send button
+
+Also use addClass(""hidden"") in favor of .hide()/.show() to avoid style recalcs"
+SamSaffron,2015-04-21 18:18:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ea9046ea6f4821db24842d391bc4b4e188e80df9,ea9046ea6f4821db24842d391bc4b4e188e80df9,"Merge pull request #27 from tms/patch-1
+
+Quick n' dirty auto-scroll"
+tms,2015-04-21 16:58:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f43f2c34ee994bd6452b7c9422b09b8446dd72e3,f43f2c34ee994bd6452b7c9422b09b8446dd72e3,"Quick n' dirty auto-scroll
+
+WIth <3"
+SamSaffron,2015-04-21 16:39:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/885b08be328244609227e47c80f32f65dc5965e0,885b08be328244609227e47c80f32f65dc5965e0,mobile fix and safety
+SamSaffron,2015-04-21 16:28:08,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8ae7ec0cfd62e4f64243ff7a2d3cb74eb632a54c,8ae7ec0cfd62e4f64243ff7a2d3cb74eb632a54c,xss
+SamSaffron,2015-04-21 15:47:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/dd891b4edf68d0e1ff9ca399967ff188da4d94a2,dd891b4edf68d0e1ff9ca399967ff188da4d94a2,update template
+SamSaffron,2015-04-21 15:43:43,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2fbe2af876e7da046bbf67ac953377eceb63a908,2fbe2af876e7da046bbf67ac953377eceb63a908,improve template
+SamSaffron,2015-04-21 15:27:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7348f17c2806000004bebdee9970aa4c9793abfe,7348f17c2806000004bebdee9970aa4c9793abfe,fix template
+SamSaffron,2015-04-21 15:20:24,https://api.github.com/repos/SamSaffron/message_bus/git/commits/77a3afaf0de5969cafdfffdc94f965fa55443430,77a3afaf0de5969cafdfffdc94f965fa55443430,work in progress docker container
+SamSaffron,2015-04-21 15:01:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/44046735cb05f16561600de8bbba1419d1e35ed9,44046735cb05f16561600de8bbba1419d1e35ed9,add some descriptive text and links
+SamSaffron,2015-03-23 01:24:11,https://api.github.com/repos/SamSaffron/message_bus/git/commits/10a342e7a4491b0c83a7b7e8f859e2ac40e45ca5,10a342e7a4491b0c83a7b7e8f859e2ac40e45ca5,version bump
+SamSaffron,2015-03-23 01:22:18,https://api.github.com/repos/SamSaffron/message_bus/git/commits/67633125c9e6245632a2aec53c57ea35f5c4ca57,67633125c9e6245632a2aec53c57ea35f5c4ca57,Use standard error so exceptions are easier to catch
+SamSaffron,2015-03-19 21:55:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5aeea0dfaa28952cdd550e337de9a95a08d22bff,5aeea0dfaa28952cdd550e337de9a95a08d22bff,FIX: aggressive short polling in background tabs
+SamSaffron,2015-03-16 07:25:11,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7f7cb8582d326e18fd011981d02cd93514ede26e,7f7cb8582d326e18fd011981d02cd93514ede26e,FEATURE: pause and resume bus
+SamSaffron,2015-03-16 07:24:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c7c3786c31fcf9cb682a24d70091ac6ecfe8aaec,c7c3786c31fcf9cb682a24d70091ac6ecfe8aaec,Feature: ability to pause and resume the bus
+SamSaffron,2015-02-02 23:19:38,https://api.github.com/repos/SamSaffron/message_bus/git/commits/45534c08ae5bc9fe5e882d6ae46883bebe70ad49,45534c08ae5bc9fe5e882d6ae46883bebe70ad49,Fix: global backlog not truncating correctly
+SamSaffron,2014-10-24 05:43:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d0d874ed7fe19f449e21868a309d7a6cf624241b,d0d874ed7fe19f449e21868a309d7a6cf624241b,up version
+SamSaffron,2014-10-24 05:42:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/32985f9b7a20f160b570052d85a05214f6483778,32985f9b7a20f160b570052d85a05214f6483778,FIX: ensure custom headers are shipped everywhere
+SamSaffron,2014-10-24 02:32:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/27dc804d3591d683f94509dc7b67885860792de8,27dc804d3591d683f94509dc7b67885860792de8,API needs to be more generic
+SamSaffron,2014-10-24 00:52:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2740e7b303209b33404d6d27b2e4ca43c4b80528,2740e7b303209b33404d6d27b2e4ca43c4b80528,amend api to use lookup style which works in multisite
+SamSaffron,2014-10-24 00:45:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1797337abb0fc27948adbfbfd7a0fbd11bc576a4,1797337abb0fc27948adbfbfd7a0fbd11bc576a4,FEATURE: allow adding access control headers
+SamSaffron,2014-10-23 23:49:55,https://api.github.com/repos/SamSaffron/message_bus/git/commits/5a2084a583dc3da027b77b9e2065f7f2a10f1d37,5a2084a583dc3da027b77b9e2065f7f2a10f1d37,version 1.0.1
+SamSaffron,2014-10-23 23:47:44,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4fec104f7f19ec0e0c2d982cff7bee50e3c0d350,4fec104f7f19ec0e0c2d982cff7bee50e3c0d350,FEATURE: allow unsubscription for a single func
+SamSaffron,2014-10-23 23:31:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/af88da9a4314d17a902e4561c2b7e1cf1610f2a4,af88da9a4314d17a902e4561c2b7e1cf1610f2a4,FEATURE: allow passing in of the $.ajax dependency in
+SamSaffron,2014-10-22 01:43:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7c622395ecfa092d736dd7f25f89b2ee0c02a602,7c622395ecfa092d736dd7f25f89b2ee0c02a602,"Merge pull request #21 from julik/master
+
+Zepto compat: pass the poll url to $.ajax via settings instead of the first argument"
+SamSaffron,2014-10-22 01:41:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3eccbe5f0f6efb70fa955950e45adc6a4d231835,3eccbe5f0f6efb70fa955950e45adc6a4d231835,"issue a poll when page becomes visible
+move long polling interval to 25 secs in sync with Discourse
+version bump to 1.0.0"
+julik,2014-10-21 10:22:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/18a2fd36104adc90f1ec63488475fce6a0144b57,18a2fd36104adc90f1ec63488475fce6a0144b57,"Zepto compat: pass the AJAX url in options
+
+Zepto does not want to have url as the first argument, so we put it into the options object instead."
+SamSaffron,2014-09-24 01:58:59,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d5fefb7c8d41509853daeafa9e2d51b9c8e2aeb5,d5fefb7c8d41509853daeafa9e2d51b9c8e2aeb5,bump version
+SamSaffron,2014-09-24 01:58:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/52fd1ae8f6f2be59cef204b8c23ebf35dae0a8e6,52fd1ae8f6f2be59cef204b8c23ebf35dae0a8e6,"Correct code so its not using messy alias method, and protects all methods
+
+(was missing map and a few others)"
+SamSaffron,2014-09-24 01:57:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/fdf2868ad7c7c77336b6d6abcb1d3da3e461ab2c,fdf2868ad7c7c77336b6d6abcb1d3da3e461ab2c,stop deprecation warnings
+SamSaffron,2014-09-24 01:28:12,https://api.github.com/repos/SamSaffron/message_bus/git/commits/263bbdb88384b1ba0af59cb82534946036fe68b7,263bbdb88384b1ba0af59cb82534946036fe68b7,Merge branch 'master' of github.com:SamSaffron/message_bus
+SamSaffron,2014-09-19 03:45:44,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ed769bc8b13253ee3986bbb5194d9ef0110fd846,ed769bc8b13253ee3986bbb5194d9ef0110fd846,"Merge pull request #19 from victorarias/master
+
+Fix threading issue in ConnectionManager"
+SamSaffron,2014-08-11 06:39:09,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8bb8735763ee1b12a504e32020140cec3e766957,8bb8735763ee1b12a504e32020140cec3e766957,"FIX: close db connection earlier
+
+(work around rails)"
+SamSaffron,2014-07-08 23:37:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d0e576ab7837d0449b12074949c3d62ac1eccde8,d0e576ab7837d0449b12074949c3d62ac1eccde8,Add Ruby 2.1.2
+SamSaffron,2014-07-08 23:36:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/dccb1e37d4af6c2b2a3e59f269e530ecc9abffa9,dccb1e37d4af6c2b2a3e59f269e530ecc9abffa9,get rid of color enabled for now
+SamSaffron,2014-07-08 23:30:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9a25a063b935d879d287a6f63a6c782fa5ac8936,9a25a063b935d879d287a6f63a6c782fa5ac8936,"Merge pull request #16 from felixbuenemann/fix-client-config
+
+Fix setting of MessageBus baseUrl and clientId"
+felixbuenemann,2014-07-03 16:51:40,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3e09ecdf008d3d3689162213e3d423ec12426749,3e09ecdf008d3d3689162213e3d423ec12426749,"Fix setting of MessageBus baseUrl and clientId
+
+This should fix issue #15."
+SamSaffron,2014-02-18 09:43:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/8dc09ee89a2da076d8b54b7f42c3f2cd02fac69b,8dc09ee89a2da076d8b54b7f42c3f2cd02fac69b,"Merge pull request #11 from julik/js-should-be-valid-utf8
+
+Ensure `message-bus.js` does not contain high ASCII"
+julik,2014-02-18 09:30:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c6bf64cea41b259b80df016654c879808ba95475,c6bf64cea41b259b80df016654c879808ba95475,It takes one apostrophe to bring down an asset compiler
+julik,2014-02-18 09:20:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c8a60f518625448b92b4ca8057528e0771ba8b33,c8a60f518625448b92b4ca8057528e0771ba8b33,"Limit checks to message-bus.js
+
+Other assets are also non-compliant but we can assume they will be sourced from elsewhere"
+julik,2014-02-17 09:38:02,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ae63e5727a92df71257301f60689c70c139e6eae,ae63e5727a92df71257301f60689c70c139e6eae,Add the asset encoding spec that demonstrates the issue
+SamSaffron,2014-01-20 02:40:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2686a4a8be66ff723109e4dbc2421de8ecbfdf9e,2686a4a8be66ff723109e4dbc2421de8ecbfdf9e,"Merge pull request #8 from armhold/move_middleware
+
+insert middleware before ActionDispatch::Flash so that ActionDispatch::S..."
+armhold,2014-01-20 01:45:53,https://api.github.com/repos/SamSaffron/message_bus/git/commits/54c56968ddde99cd35f9a0e67cfb1a88e015e1af,54c56968ddde99cd35f9a0e67cfb1a88e015e1af,"insert middleware before ActionDispatch::Flash so that ActionDispatch::Session is usable from MessageBus
+ fix javascript syntax in documentation"
+SamSaffron,2014-01-16 06:31:19,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3286e00d83796f202db28311b9162644c50c5a58,3286e00d83796f202db28311b9162644c50c5a58,"Merge pull request #7 from rjackson/update_gemspec
+
+Add license and homepage to gemspec."
+rwjblue,2014-01-16 02:27:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/988c52e123d1ed456b8c167b837b225ada8d69f4,988c52e123d1ed456b8c167b837b225ada8d69f4,"Add license and homepage to gemspec.
+
+I frequently lookup a gems homepage/repo_url RubyGems (e.g.
+https://rubygems.org/gems/message_bus). These settings will be picked up
+by rubygems.org upon publishing the next version.
+
+I also added the license (MIT) to the gemspec."
+SamSaffron,2014-01-14 05:37:56,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6b35994352e67224b98fd812951d0b7ef2220b8a,6b35994352e67224b98fd812951d0b7ef2220b8a,"Use MessageBus::Instance.new as opposed to MessageBus
+BUGFIX: subscribe could miss first message
+FEATURE: support for /global/ channels (accross all sites)
+Improved synchronization
+MessageBus.last_message (new API)"
+SamSaffron,2014-01-05 22:52:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/0b019a62df7d4dd641dfda13cb5cb09139237843,0b019a62df7d4dd641dfda13cb5cb09139237843,minimal example
+SamSaffron,2014-01-05 22:39:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7f06c0e889dc4a575777013779b5625cd8690002,7f06c0e889dc4a575777013779b5625cd8690002,"Merge pull request #5 from felixbuenemann/fix-js-client-timeout-error
+
+Fix #4 js client connection timeout exception"
+felixbuenemann,2014-01-05 04:45:28,https://api.github.com/repos/SamSaffron/message_bus/git/commits/339ebe2ed697d05159fb29830a8ca7467b8ec0ef,339ebe2ed697d05159fb29830a8ca7467b8ec0ef,"Fix #4 js client connection timeout exception
+
+If the server closes the connection without a reply, eg. because a
+timeout was hit before the MessageBus.long_polling_interval or due to a
+server restart, the success callback is called with null data.
+The code no handles this gracefully instead of raising a TypeError
+inside jQuery.each trying to call object.length on messages.
+This case is not counted as an error, because we usually can reconnect
+just fine instantly."
+SamSaffron,2013-12-06 05:29:48,https://api.github.com/repos/SamSaffron/message_bus/git/commits/4ce92a77903cf8394d40cc9f357c024b27dbdb6e,4ce92a77903cf8394d40cc9f357c024b27dbdb6e,fix permissions
+SamSaffron,2013-12-05 01:39:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/110c197c888c4252bc7be1d4bb92ade8acb00120,110c197c888c4252bc7be1d4bb92ade8acb00120,"Add MessageBus.diagnostics() to help trouble shoot issues
+Add exception handling for all external calls
+Minor cleanup"
+SamSaffron,2013-12-03 00:26:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/a68aaf912ac80e5d805fb5eb3a74cd035824ed38,a68aaf912ac80e5d805fb5eb3a74cd035824ed38,we need redis
+SamSaffron,2013-12-03 00:15:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/06963c2eb637d509b8ff8c005f414032f4adedc7,06963c2eb637d509b8ff8c005f414032f4adedc7,fix dependency
+SamSaffron,2013-12-03 00:05:51,https://api.github.com/repos/SamSaffron/message_bus/git/commits/299cd8977c09154fbf80646b5716456bb443ff20,299cd8977c09154fbf80646b5716456bb443ff20,prepare 0.9.3 release
+SamSaffron,2013-11-29 07:48:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/2343e7968e84ea70f5e562f5730dfef3ce9602d9,2343e7968e84ea70f5e562f5730dfef3ce9602d9,handle broken sockets correctly
+SamSaffron,2013-11-29 07:47:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/7323dd2a868fc2bd1fc13b2f896596c48bd9b8bd,7323dd2a868fc2bd1fc13b2f896596c48bd9b8bd,use our source
+SamSaffron,2013-11-29 07:47:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/823a287aaf0fdec28216e405c8ec552c47e1a494,823a287aaf0fdec28216e405c8ec552c47e1a494,"refactor long poller, ensure long polling takes into account the duration it already waited"
+SamSaffron,2013-11-25 07:51:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3d7132c1e84d5a0a197a9ea055ea78183634167e,3d7132c1e84d5a0a197a9ea055ea78183634167e,"remove thin, its not a dependency"
+SamSaffron,2013-11-25 06:56:36,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c37c06d4c2db730971e6eb547da316611b3100ae,c37c06d4c2db730971e6eb547da316611b3100ae,add ability to stop the message bus
+SamSaffron,2013-11-25 04:20:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6cdab8a4e0d06203cbdb146b52159e710b891a82,6cdab8a4e0d06203cbdb146b52159e710b891a82,engine for serving assets
+SamSaffron,2013-11-25 04:15:17,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9a26799bb422af341f4013464c25c2db2d24cee2,9a26799bb422af341f4013464c25c2db2d24cee2,add vendor symlink for railstie
+SamSaffron,2013-11-25 03:58:37,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ac658d027d2b83c02615a54bb704898cc9f2f82d,ac658d027d2b83c02615a54bb704898cc9f2f82d,start should be optional / automatic
+SamSaffron,2013-11-25 03:50:42,https://api.github.com/repos/SamSaffron/message_bus/git/commits/97b4e3fc8381e2a6e9b4598058548c33ab3c2942,97b4e3fc8381e2a6e9b4598058548c33ab3c2942,"chat sample, correct path detection, freeze a few strings"
+SamSaffron,2013-11-25 03:49:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1a560651355c21a358318fa7275fcb2b638bc594,1a560651355c21a358318fa7275fcb2b638bc594,remove _ dep
+SamSaffron,2013-11-24 23:27:33,https://api.github.com/repos/SamSaffron/message_bus/git/commits/951f959aeb5d8e3356d4f22615c0ee97a1a26a46,951f959aeb5d8e3356d4f22615c0ee97a1a26a46,move around samples
+SamSaffron,2013-11-24 23:27:21,https://api.github.com/repos/SamSaffron/message_bus/git/commits/02f07eb9a4ae953f6b9d196e4a306a884e831e6d,02f07eb9a4ae953f6b9d196e4a306a884e831e6d,update js include
+SamSaffron,2013-09-30 06:20:46,https://api.github.com/repos/SamSaffron/message_bus/git/commits/00f12ec544d7d72965f58d6af167cafa46aac582,00f12ec544d7d72965f58d6af167cafa46aac582,"Correct failures in 1.9
+Set up rack hijack by default"
+SamSaffron,2013-07-22 08:30:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/c357cbfea34eec3cca8f00754eb9d5bd2be98594,c357cbfea34eec3cca8f00754eb9d5bd2be98594,push middleware forward to work around wonky caches
+SamSaffron,2013-07-19 06:11:13,https://api.github.com/repos/SamSaffron/message_bus/git/commits/09392967940daf77943d1489ed3f1f71d6f8450a,09392967940daf77943d1489ed3f1f71d6f8450a,line endings
+SamSaffron,2013-07-19 05:51:52,https://api.github.com/repos/SamSaffron/message_bus/git/commits/71c95bbf1bb5bebd6c478cc14f660a28423c0e0f,71c95bbf1bb5bebd6c478cc14f660a28423c0e0f,"max active clients, disable hijack by default"
+SamSaffron,2013-07-19 05:51:22,https://api.github.com/repos/SamSaffron/message_bus/git/commits/147d27124cb653a7a6769c0b5523cd043982b932,147d27124cb653a7a6769c0b5523cd043982b932,bench files
+SamSaffron,2013-07-19 05:38:35,https://api.github.com/repos/SamSaffron/message_bus/git/commits/66f3163ceb02ef65782166a18f471f18155c7f83,66f3163ceb02ef65782166a18f471f18155c7f83,correct content length
+SamSaffron,2013-07-18 05:15:57,https://api.github.com/repos/SamSaffron/message_bus/git/commits/6d99e9f53fcb0377f95ae2c97e407e4c04d8f115,6d99e9f53fcb0377f95ae2c97e407e4c04d8f115,example server and hacks to work around apache bench being ... hmmm odd
+SamSaffron,2013-07-18 03:42:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/dacad243cc034c40c9827c53c335b3bc9cb26e41,dacad243cc034c40c9827c53c335b3bc9cb26e41,fix reactor auto launching code
+SamSaffron,2013-07-18 03:36:31,https://api.github.com/repos/SamSaffron/message_bus/git/commits/488b09a41a86bfcbac2ee47df9e842090a2cdc57,488b09a41a86bfcbac2ee47df9e842090a2cdc57,smarter loading of thin extension
+SamSaffron,2013-07-18 02:16:27,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b282e0e0aa204d1afa1f14e85c41dfd2ec191038,b282e0e0aa204d1afa1f14e85c41dfd2ec191038,auto spawn reactor if needed
+SamSaffron,2013-07-18 01:28:29,https://api.github.com/repos/SamSaffron/message_bus/git/commits/284bd29b166ec3827924b83f49cb2c36d8c0d4ed,284bd29b166ec3827924b83f49cb2c36d8c0d4ed,goodbye vim swap files
+SamSaffron,2013-07-18 01:27:50,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b59453ad1c0c3a62beddc0c309324b2f7e1f6704,b59453ad1c0c3a62beddc0c309324b2f7e1f6704,speed up specs
+SamSaffron,2013-07-17 13:00:23,https://api.github.com/repos/SamSaffron/message_bus/git/commits/682ba3542aeef67e4f645f0aa30051d165108962,682ba3542aeef67e4f645f0aa30051d165108962,first pass at rack hijack support
+SamSaffron,2013-07-13 23:37:58,https://api.github.com/repos/SamSaffron/message_bus/git/commits/beeaa22ea17551cbaff94a2cbc108fa79fc88546,beeaa22ea17551cbaff94a2cbc108fa79fc88546,thin extraction
+SamSaffron,2013-06-03 06:45:05,https://api.github.com/repos/SamSaffron/message_bus/git/commits/9c16e7ebaafaf2a3933a84fa1c517c0eba44b052,9c16e7ebaafaf2a3933a84fa1c517c0eba44b052,after forking we must reconnect redis and re-establish message subscriptions
+SamSaffron,2013-05-24 06:35:06,https://api.github.com/repos/SamSaffron/message_bus/git/commits/f55b41653d0c149938ebb803a97d946e5ae80439,f55b41653d0c149938ebb803a97d946e5ae80439,around_client_batch support
+SamSaffron,2013-05-21 04:41:30,https://api.github.com/repos/SamSaffron/message_bus/git/commits/031a107bbe6e468caa67ff540485d70230d1c362,031a107bbe6e468caa67ff540485d70230d1c362,improve filtering protocol
+SamSaffron,2013-05-21 02:33:39,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e5654728b1c1b97fa5c7bb79fd689b31cec3f01d,e5654728b1c1b97fa5c7bb79fd689b31cec3f01d,"corrected scoping of MessageBus module
+added client_filter functionality
+added ability to shut down a message bus"
+SamSaffron,2013-05-15 06:17:32,https://api.github.com/repos/SamSaffron/message_bus/git/commits/e8bfa0c1467d86ffcba97509f5191eca50483040,e8bfa0c1467d86ffcba97509f5191eca50483040,"up timeout, clean test in case this fixes travis"
+SamSaffron,2013-05-15 06:12:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b162a27ec72768d27438ba5005d224173ef8e3ef,b162a27ec72768d27438ba5005d224173ef8e3ef,bump rev
+SamSaffron,2013-05-15 06:11:00,https://api.github.com/repos/SamSaffron/message_bus/git/commits/d23a630ce3a3ae94e769f98af6ea3b6acb80ee71,d23a630ce3a3ae94e769f98af6ea3b6acb80ee71,add unsubscribe api
+SamSaffron,2013-05-15 05:21:54,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cbef2d34ea0611ae5aa182059226b55c178c1447,cbef2d34ea0611ae5aa182059226b55c178c1447,make travis build
+SamSaffron,2013-05-15 05:18:04,https://api.github.com/repos/SamSaffron/message_bus/git/commits/b7feaacc2b36b103231d0a666b5b4988403155e8,b7feaacc2b36b103231d0a666b5b4988403155e8,even more readme
+SamSaffron,2013-05-15 05:16:03,https://api.github.com/repos/SamSaffron/message_bus/git/commits/cd7aef307a2b7019a833a9059e56645d73ac239d,cd7aef307a2b7019a833a9059e56645d73ac239d,more readme
+SamSaffron,2013-05-15 05:07:12,https://api.github.com/repos/SamSaffron/message_bus/git/commits/994035af20d177f9c67e257d1087284e9416427d,994035af20d177f9c67e257d1087284e9416427d,add travis file
+SamSaffron,2013-05-15 05:04:49,https://api.github.com/repos/SamSaffron/message_bus/git/commits/1140590700762f0101103e1b2b65478ec4527906,1140590700762f0101103e1b2b65478ec4527906,doco update
+SamSaffron,2013-05-15 04:59:14,https://api.github.com/repos/SamSaffron/message_bus/git/commits/3326a569a67f53da0f3ce0fd960ad495a0aa09a0,3326a569a67f53da0f3ce0fd960ad495a0aa09a0,groups are working
+SamSaffron,2013-05-15 01:02:20,https://api.github.com/repos/SamSaffron/message_bus/git/commits/ec91f56d7be78e5186a2009e84ec0cb8ce0d3b12,ec91f56d7be78e5186a2009e84ec0cb8ce0d3b12,initial commit

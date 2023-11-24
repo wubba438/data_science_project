@@ -1,0 +1,1094 @@
+gizmo,A Microservice Toolkit from The New York Times
+username,timestamp,url,sha,message
+oliver-nyt,2019-09-11 13:40:36,https://api.github.com/repos/nytimes/gizmo/git/commits/fcf6e85e81166b1b06e72fb767a21d65c6d290b8,fcf6e85e81166b1b06e72fb767a21d65c6d290b8,"add http listen addr to config (#230)
+
+* go fmt
+
+* add HTTPAddr to config to allow configuring listen address"
+jprobinson,2019-09-09 20:32:58,https://api.github.com/repos/nytimes/gizmo/git/commits/99d516bb90e8ff69e9cc75429a19c9e2170980a8,99d516bb90e8ff69e9cc75429a19c9e2170980a8,"[server/kit] Adding log ""format"" functions that mimic `appengine/log` (#229)
+
+* tidying up example deps
+
+* adding log*f funcs for the kit server
+
+* variable firx
+
+* adding more test logging
+
+* DRY-ing things up a tad"
+jprobinson,2019-09-04 18:21:14,https://api.github.com/repos/nytimes/gizmo/git/commits/74213adfe29fa2be574a9883b8dc721bfca2fda5,74213adfe29fa2be574a9883b8dc721bfca2fda5,"tidying up example dependencies + updating go-kit (#227)
+
+* tidying up example deps
+
+* updating go-kit
+
+* also updating example go-kit"
+fsouza,2019-08-07 21:38:56,https://api.github.com/repos/nytimes/gizmo/git/commits/e9974020f1321c9525a8580866c354496a694ae2,e9974020f1321c9525a8580866c354496a694ae2,"Clean-up indirect dependencies (#226)
+
+sarama was causing some other indirect dependencies. Upgrading it fixes
+the issue.
+
+We now have 3 indirect dependencies listed in go.mod:
+
+- github.com/go-logfmt/logfmt
+- github.com/go-stack/stack
+- gopkg.in/jcmturner/goidentity.v3
+
+go-kit accounts for the first two and sarama for the last one. Since
+sarama does support go modules, this may be something missing on their
+side."
+marwan-at-work,2019-08-07 16:17:08,https://api.github.com/repos/nytimes/gizmo/git/commits/3438ac5ffb3701ec39fbbbdbc5ca8c839c00173e,3438ac5ffb3701ec39fbbbdbc5ca8c839c00173e,"go.mod: update ocagent to fix incorrect pseudo version (#225)
+
+* go.mod: update ocagent to fix incorrect pseudo version
+
+* update stackdriver"
+jprobinson,2019-07-31 20:08:35,https://api.github.com/repos/nytimes/gizmo/git/commits/c445d5430cd710114f816510ccadb17bcdd3c3b2,c445d5430cd710114f816510ccadb17bcdd3c3b2,"[server] Avoiding Prometheus memory bomb when using the new stdlib router (#223)
+
+* no longer using prom instrumentation if using the stdlib router
+
+* docs and downhill updates"
+jprobinson,2019-07-29 18:47:22,https://api.github.com/repos/nytimes/gizmo/git/commits/f17039006681d969066849e4bf51425932785308,f17039006681d969066849e4bf51425932785308,"[server] fixing stdlib router 😅 (#222)
+
+* adding tests to fix stdlib router in server bc we shouldve done it from the start
+
+* better test error msgs"
+jprobinson,2019-07-26 20:06:26,https://api.github.com/repos/nytimes/gizmo/git/commits/af7c08e604911bd59f49f0422c723600b2f4c2f8,af7c08e604911bd59f49f0422c723600b2f4c2f8,adding a stdlib router to use in the server package (#221)
+jprobinson,2019-07-16 19:54:24,https://api.github.com/repos/nytimes/gizmo/git/commits/93705ce51ebe08280485d13b615016ec0085e6ea,93705ce51ebe08280485d13b615016ec0085e6ea,"Adding log levels to kit/server.Log*Msg funcs (#220)
+
+* adding log levels to kit/server.Log*Msg funcs. resolves #13
+
+* adding warn and debug loggers, updating docs
+
+* adding tests"
+marwan-at-work,2019-06-12 14:46:17,https://api.github.com/repos/nytimes/gizmo/git/commits/4dd11b532acd7d3132f34a05f4268d78dc4746c7,4dd11b532acd7d3132f34a05f4268d78dc4746c7,"auth: expose ErrBadCreds to check for expected errs (#218)
+
+* auth: expose ErrBadCreds to check for expected errs
+
+* use gocenter temporarily
+
+* just kidding gocenter doesn't support branch gets
+
+* trigger build"
+jprobinson,2019-06-10 21:42:16,https://api.github.com/repos/nytimes/gizmo/git/commits/7e4d61387d89f9b0c095002ab0288de706a3ae82,7e4d61387d89f9b0c095002ab0288de706a3ae82,"[observe] Adding RegisterAndObserveGCP to use within the SimpleServer (or any non-sever/kit poject)) (#217)
+
+* adding RegisterAndObserveGCP func to use within gizmo/server
+
+* adding onError, fixing compile errors
+
+* adding more beef to docs
+
+* putting the GAE check first
+
+* adding observe.SkipObserve?
+
+* hooking into logger too
+
+* preventing a breaking change, NewLogger should still fall back to JSON on error and no skip is set"
+fsouza,2019-04-30 03:10:40,https://api.github.com/repos/nytimes/gizmo/git/commits/2c58cba52764bb65638fa5fced42f508edfc51ad,2c58cba52764bb65638fa5fced42f508edfc51ad,travis: replace cache hackery with GOPROXY (#215)
+jprobinson,2019-04-15 16:12:44,https://api.github.com/repos/nytimes/gizmo/git/commits/bdc8df6136507dea0199c3a3651b4eddccf4f3d6,bdc8df6136507dea0199c3a3651b4eddccf4f3d6,[server/kit] adding Google profiler if environment is GCP enabled (#214)
+jprobinson,2019-04-12 19:42:49,https://api.github.com/repos/nytimes/gizmo/git/commits/7b63b9be209f758c409f026939ec6b8486eae9dc,7b63b9be209f758c409f026939ec6b8486eae9dc,"[auth] adding VerifyRequest for use within http middlewares (#213)
+
+* [auth] adding VerifyRequest for use within http middleware
+
+* drying up a tad"
+jprobinson,2019-04-08 14:47:39,https://api.github.com/repos/nytimes/gizmo/git/commits/0358a1bfa8d5e429a96819ab23cecef69af3f37f,0358a1bfa8d5e429a96819ab23cecef69af3f37f,falling back to PORT env variable if HTTP_PORT is not set (#212)
+gaplyk,2019-03-16 14:42:44,https://api.github.com/repos/nytimes/gizmo/git/commits/b51b9142e212201e1d879d1ee0883176864995ac,b51b9142e212201e1d879d1ee0883176864995ac,"SetLogger and panic stacktrace. (#210)
+
+* Initialize opencensus for GKE
+
+* update readme
+
+* Generalize initialization of sd exporter
+
+* fix sdExporterOptions
+
+* do not initilize SD exporters and error reporting unless we are in the cloud or set proper environment variables
+
+* Update doc
+
+* address comments
+
+* remove redundant if
+
+* SetLogger to context. Log panic with a stacktrace.
+
+* Func comment
+
+* fix typo
+
+* fix typo"
+jprobinson,2019-03-12 22:16:43,https://api.github.com/repos/nytimes/gizmo/git/commits/6c9c411b77482b6cf460d10427bbb3b601e3a523,6c9c411b77482b6cf460d10427bbb3b601e3a523,removing unneeded appengine build tags
+fsouza,2019-03-05 16:26:52,https://api.github.com/repos/nytimes/gizmo/git/commits/0890480637cf59badd810b0664d917a8b78392ab,0890480637cf59badd810b0664d917a8b78392ab,"Update travis badge in readme and add canonical import paths (#208)
+
+* Update travis badge in readme and add canonical import paths
+
+The canonical import path thing should help with godoc.
+
+* readme: update coveralls badge too"
+marwan-at-work,2019-03-04 16:41:07,https://api.github.com/repos/nytimes/gizmo/git/commits/c84e1f2973d85f24f6f393685393ad174a4f7123,c84e1f2973d85f24f6f393685393ad174a4f7123,"README: include case sensitive installation (#207)
+
+* README: include case sensitive installation
+
+* Update README to include more context"
+jprobinson,2019-03-01 21:54:54,https://api.github.com/repos/nytimes/gizmo/git/commits/2c5fa25749ee673702560f45f31e155a60903735,2c5fa25749ee673702560f45f31e155a60903735,"Attempting to fix modules' indirect depedencies on master (#202)
+
+* attempting to fix modules
+
+* ensuring sarama is where it was before
+
+* go mod tidy"
+Gattermeier,2019-03-01 21:46:45,https://api.github.com/repos/nytimes/gizmo/git/commits/f435d7b50f86ca25549f6906d67aff37b4f3c5a4,f435d7b50f86ca25549f6906d67aff37b4f3c5a4,String() should not mutate object (#206)
+fsouza,2019-02-26 03:44:13,https://api.github.com/repos/nytimes/gizmo/git/commits/accd7fe5ee42e1cad9f5b8d4c7f620e823d6e049,accd7fe5ee42e1cad9f5b8d4c7f620e823d6e049,"travis: use go modules and latest Go (#205)
+
+* travis: update build steps
+
+Leveraging go modules. Also using ""1.x"" as the version of Go to ensure
+we always get the latest.
+
+go.sum changed after a go mod tidy x)
+
+* travis: add cache
+
+* Makefile: fix targets
+
+* travis: split pretest and coverage
+
+This way, travis can show us how long pretest and coverage take,
+separately.
+
+* travis: install goveralls before anything else
+
+* travis: debug
+
+* travis: debugged"
+jprobinson,2019-02-25 18:15:48,https://api.github.com/repos/nytimes/gizmo/git/commits/11877ba5aa8541d19ed6e8583588d99c4e5790dc,11877ba5aa8541d19ed6e8583588d99c4e5790dc,"Separating example modules, removing some unneeded/old depedencies (#201)
+
+* restarting the module separation
+
+* sum cleanup?
+
+* ..!
+
+* better syntax for replace"
+jprobinson,2019-02-20 19:07:49,https://api.github.com/repos/nytimes/gizmo/git/commits/579b195c81c14e3147d4c4fc7e9693c1bd0e5e49,579b195c81c14e3147d4c4fc7e9693c1bd0e5e49,ensuring the middleware is only initiated 1 time (#199)
+marwan-at-work,2019-02-12 22:57:45,https://api.github.com/repos/nytimes/gizmo/git/commits/73cf43d0dda788bd75b0ba72409cde7f3282a7a2,73cf43d0dda788bd75b0ba72409cde7f3282a7a2,"Extract GCP Monitoring (#192)
+
+* Extract GCP Monitoring
+
+* remove s
+
+* add pkg doc
+
+* return exporter
+
+* return flush func
+
+* try another approach
+
+* bypass if check
+
+* gcputil -> observe
+
+* fix doc
+
+* pr fixes
+
+* fix gae metrics
+
+* pr fixes
+
+* pr fixes
+
+* doc fixes
+
+* better err msg
+
+* log fix
+
+* remove prom from observe
+
+* sd brand
+
+* fix build
+
+* observe README"
+marwan-at-work,2019-02-11 18:17:03,https://api.github.com/repos/nytimes/gizmo/git/commits/dc1269db5b1eaa98c83ef83774dd3d63bfa167f3,dc1269db5b1eaa98c83ef83774dd3d63bfa167f3,"Remove Deprecated Fast Router (#191)
+
+* Remove Deprecated Fast Router
+
+* rm test
+
+* remote http router from server/kit"
+marwan-at-work,2019-02-08 21:01:19,https://api.github.com/repos/nytimes/gizmo/git/commits/9eaa369806392cf61240a2bafe30df7c59f5b7c0,9eaa369806392cf61240a2bafe30df7c59f5b7c0,Remove unnecessary body close (#189)
+marwan-at-work,2019-02-08 20:49:45,https://api.github.com/repos/nytimes/gizmo/git/commits/02ac312686be20331a540c073946744e3d15cb98,02ac312686be20331a540c073946744e3d15cb98,Drop support for Go 1.8 and below (#182)
+gaplyk,2019-02-05 22:17:49,https://api.github.com/repos/nytimes/gizmo/git/commits/a140a3d0c75bc4b2ab9b1da34f7db11874a5858e,a140a3d0c75bc4b2ab9b1da34f7db11874a5858e,"Add resource information to logger of GKE, GCE and AWS EC2 (#180)
+
+* Add resource information to logger of GKE, GCE and AWS EC2
+
+* Remove env var. Add return error
+
+* Handling error of stackdriver logger creation
+
+* Handling error of stackdriver logger creation
+
+* Docs for logID
+
+* LogID Doc and use default values if is not provided
+
+* Update error message
+
+* Update doc"
+jprobinson,2019-02-05 16:59:14,https://api.github.com/repos/nytimes/gizmo/git/commits/30c33e4f299a1a890c69b65c78adbbd654c9e402,30c33e4f299a1a890c69b65c78adbbd654c9e402,"Removing go-kit/metrics/provider to save us from dependency overload (#177)
+
+* removing go-kit/metrics/provider to save us from dependency overload
+
+* comment styling
+
+* setting prom-specific configs for better latency charts"
+gaplyk,2019-01-29 19:46:38,https://api.github.com/repos/nytimes/gizmo/git/commits/27bac814561a097fe9af4585fcefe223315973b2,27bac814561a097fe9af4585fcefe223315973b2,"Initialize opencensus for GKE (#176)
+
+* Initialize opencensus for GKE
+
+* update readme
+
+* Generalize initialization of sd exporter
+
+* fix sdExporterOptions
+
+* do not initilize SD exporters and error reporting unless we are in the cloud or set proper environment variables
+
+* Update doc
+
+* address comments
+
+* remove redundant if"
+katrogan,2019-01-25 20:35:59,https://api.github.com/repos/nytimes/gizmo/git/commits/b3a5760137539ecc39a0ee724f5613fcaf25f4ca,b3a5760137539ecc39a0ee724f5613fcaf25f4ca,"Remove explicit call to use credentials from environment variables (#175)
+
+* use default credentials
+
+* remove else block altogether
+
+* revert client initialization changes"
+jprobinson,2019-01-17 20:57:07,https://api.github.com/repos/nytimes/gizmo/git/commits/95e6953e212f2d06d0dbfab4acbe29423831eff1,95e6953e212f2d06d0dbfab4acbe29423831eff1,"[auth/gcp] properly setting the service account email as the issuer and subject for IAM (#174)
+
+* [auth/gcp] properly setting the service account email as the issuer and subject
+
+* mods update"
+jprobinson,2019-01-02 19:42:45,https://api.github.com/repos/nytimes/gizmo/git/commits/22091b3006006194e9d9a1896bd8129c8bac2d03,22091b3006006194e9d9a1896bd8129c8bac2d03,"[WIP] Cleaning up underused and non-recommended code (#171)
+
+Cleaning up underused and non-recommended code"
+jprobinson,2018-12-27 18:00:28,https://api.github.com/repos/nytimes/gizmo/git/commits/3fb7c2fffe4fbd92b17a448db51a26ba5b0b524e,3fb7c2fffe4fbd92b17a448db51a26ba5b0b524e,adding an iss field to IAM tokens (#172)
+jprobinson,2018-12-11 16:46:06,https://api.github.com/repos/nytimes/gizmo/git/commits/c66e686f6542056542dfb32debe58e5ecd406781,c66e686f6542056542dfb32debe58e5ecd406781,"[server/kit] adding NewLogger to use for background logging + updated docs (#170)
+
+* adding NewLogger to use for background logging + upped kit docs
+
+* doc cleanup
+
+* removing tab from docs
+
+* p->P"
+jprobinson,2018-11-28 16:14:28,https://api.github.com/repos/nytimes/gizmo/git/commits/c5b2efbb20e11398842ed60b948cc9fc8944ee5b,c5b2efbb20e11398842ed60b948cc9fc8944ee5b,"[auth/gcp] allowing IAMConfig to override default Google credentials (#169)
+
+* IAM going to provide my own JSON sometimes
+
+* using the proper token source"
+jprobinson,2018-11-27 22:28:22,https://api.github.com/repos/nytimes/gizmo/git/commits/859d35d894ad41c5927b513b2250a26fe247c78a,859d35d894ad41c5927b513b2250a26fe247c78a,"[server/kit] automatically enabling Stackdriver trace in Google App Engine (#168)
+
+* [server/kit] adding automatic stackdriver tracing in app engine
+
+* overwriting default labels for sd trace
+
+* adding OC HTTP wrapper
+
+* adding default trace attrs
+
+* adding stats exporter, grpc exporter & renaming file
+
+* removing odd label from trace
+
+* updating mods"
+jprobinson,2018-11-19 18:18:59,https://api.github.com/repos/nytimes/gizmo/git/commits/c21b078f2b49961552c03c25c5537664dad989ef,c21b078f2b49961552c03c25c5537664dad989ef,"[server/kit] adding protobuf go-kit funcs to mimic NYTimes/marvin (#167)
+
+* [server/kit] adding protobuf go-kit funcs to mimic NYTimes/marvin
+
+* lint!"
+DavyJ0nes,2018-11-19 16:42:35,https://api.github.com/repos/nytimes/gizmo/git/commits/7084bb2486e0b439522c767a51d5b36eeda57c6a,7084bb2486e0b439522c767a51d5b36eeda57c6a,"Update sqs constructor to allow custom endpoint (#166)
+
+To allow for mocking of SQS queues a configurable endpoint is required.
+For SNS this has already been done, this is just adding the same for
+SQS."
+jprobinson,2018-11-12 18:24:17,https://api.github.com/repos/nytimes/gizmo/git/commits/fe286d84be0e96bb4e61ef55e87c926e0abd9dbb,fe286d84be0e96bb4e61ef55e87c926e0abd9dbb," [server/kit] adding automatic error reporting for any panics encountered (#164)
+
+* [server/kit] adding automatic error reporting
+
+* better error message
+
+* no longer overwriting panic error, missing log keys
+
+* updating mods, adding error handler for error reporting"
+jprobinson,2018-11-09 22:04:31,https://api.github.com/repos/nytimes/gizmo/git/commits/5fcceaec4ae161579c0b9f4ae2a02c0682ab4412,5fcceaec4ae161579c0b9f4ae2a02c0682ab4412,"[server/kit] automatically registering ""warm up"" endpoint for GAE users (#163)"
+wild-endeavor,2018-11-06 19:53:11,https://api.github.com/repos/nytimes/gizmo/git/commits/5d6ab62295dc9a23f9aa09c82f657e7f069b1ced,5d6ab62295dc9a23f9aa09c82f657e7f069b1ced,"changing requestRoleCredentials (#162)
+
+* changing requestRoleCredentials
+
+* remove duration since it's default anyways'
+
+* removing idea"
+wild-endeavor,2018-11-05 23:34:23,https://api.github.com/repos/nytimes/gizmo/git/commits/19b29a0966ffe7a15f9cfe4228e0cae7622798f2,19b29a0966ffe7a15f9cfe4228e0cae7622798f2,"Prioritize Role over environment variables (#161)
+
+* Update aws.go
+
+* add also to subscriber"
+jprobinson,2018-11-05 22:40:17,https://api.github.com/repos/nytimes/gizmo/git/commits/ca1565f6b339ecf163a58ce890cfb401d74db2e8,ca1565f6b339ecf163a58ce890cfb401d74db2e8,actually passing the email this time
+jprobinson,2018-11-05 22:31:12,https://api.github.com/repos/nytimes/gizmo/git/commits/b8c7c8e7f85eed8daac6b2e6c7eb62e5491375cf,b8c7c8e7f85eed8daac6b2e6c7eb62e5491375cf,fixing err declaration
+jprobinson,2018-11-05 22:27:24,https://api.github.com/repos/nytimes/gizmo/git/commits/30935227dab5be4c21481db595804a63eb82f802,30935227dab5be4c21481db595804a63eb82f802,[auth/gcp] looking up IAM email before fetching keyset
+jprobinson,2018-11-05 20:06:46,https://api.github.com/repos/nytimes/gizmo/git/commits/ef75c2cc48ea973de951b544f99fe5058f89fc10,ef75c2cc48ea973de951b544f99fe5058f89fc10,"fixing audience check, using email in default credentials if it exists, using iam config email, if populated"
+jprobinson,2018-11-05 18:50:16,https://api.github.com/repos/nytimes/gizmo/git/commits/0b2492c5312a1bbd71085236e5af682b04a8f86c,0b2492c5312a1bbd71085236e5af682b04a8f86c,adding identity helper func
+jprobinson,2018-11-05 18:15:37,https://api.github.com/repos/nytimes/gizmo/git/commits/9aa1786d4304e7cbde4716c247be66f4e34070a0,9aa1786d4304e7cbde4716c247be66f4e34070a0,using a build tag so we can use GAE std with auth/gcp
+jprobinson,2018-11-05 17:58:33,https://api.github.com/repos/nytimes/gizmo/git/commits/ba3c663c49c7556c250c6eefbd468bd89057850e,ba3c663c49c7556c250c6eefbd468bd89057850e,"Adding ""auth"" and ""auth/gcp"" packages (#160)"
+jprobinson,2018-10-25 15:47:56,https://api.github.com/repos/nytimes/gizmo/git/commits/bb17238799b62b40a3bcb83a072d980562071436,bb17238799b62b40a3bcb83a072d980562071436,"[server/kit] Adding automatic Stackdriver logging for App Engine 2nd generation runtime (#159)
+
+* attempting to use stackdriver combined access/app logging in GAE 2nd gen runtime
+
+* adding new gae log file
+
+* setting traceid
+
+* letting sd client do the jsoning
+
+* fixing silliness
+
+* adding missed project, var args ...
+
+* no need to make the logger public
+
+* docs update
+
+* adding log levels
+
+* removing unused key
+
+* closing the sd logger at shutdown
+
+* removing zone"
+surajbarkale,2018-10-18 15:55:53,https://api.github.com/repos/nytimes/gizmo/git/commits/67a8a361a9b430b3455bb640bdb539bad3aee336,67a8a361a9b430b3455bb640bdb539bad3aee336,"Allow overriding of AWS endpoint (#157)
+
+* Allow overriding of AWS endpoint
+
+The AWS service endpoint can be overridden to enable emulation. For
+example by using localstack.
+
+* Add proper documentation for EndpointURL"
+jprobinson,2018-10-16 14:59:08,https://api.github.com/repos/nytimes/gizmo/git/commits/68db7bdc6b1caa2df7ea8b32ccfa6897e746af34,68db7bdc6b1caa2df7ea8b32ccfa6897e746af34,"fixing fetch path for go lint (#158)
+
+* fixing fetch path for go lint
+
+* bumping to 1.11"
+jprobinson,2018-10-09 20:17:35,https://api.github.com/repos/nytimes/gizmo/git/commits/66323c4e8342edc560a7e993f9a77123a8445bc3,66323c4e8342edc560a7e993f9a77123a8445bc3,"expanding HTTP publishers to implement the MultiPublisher interface (#155)
+
+* expanding HTTP publishers to implement the MultiPublisher interface
+
+* adding tests"
+avepr,2018-10-04 14:50:07,https://api.github.com/repos/nytimes/gizmo/git/commits/0e7f5a1d253b844ca397fd1d50d54ca67f2c398e,0e7f5a1d253b844ca397fd1d50d54ca67f2c398e,"Add AWS_SESSION_TOKEN into aws.Config to allow using temporary credentials (#154)
+
+* Add AWS_SESSION_TOKEN to allow using temp credentials
+
+Currently, using temp credentials is only possible via environment.
+If one requires to configure the client in code, there is no way
+to specify session token.
+
+* Update NewPublisher to make use of session token
+
+Subscriber constructor was modified to make use of newly added
+SessionToken field in the config.
+The publisher was missed out. Fixing this injustice..."
+avepr,2018-10-04 14:48:49,https://api.github.com/repos/nytimes/gizmo/git/commits/ec37f5d31022dab1e84d2ed5cc6f40446acd07d4,ec37f5d31022dab1e84d2ed5cc6f40446acd07d4,"Add SQS Queue URL to SQS config to simplify configuration of SQS Subscriber (#153)
+
+* Add SqsQueueURL config parameter
+
+- If Queue URL is set, it takes precedence over queue name
+
+* Fix assignment to pointer
+
+* Rephrase comment sentence to meet golang standards"
+jprobinson,2018-08-27 14:09:07,https://api.github.com/repos/nytimes/gizmo/git/commits/189a8de704acc4c8df6dcc6fd9ba602b8b68c111,189a8de704acc4c8df6dcc6fd9ba602b8b68c111,"adding modules support (#152)
+
+* first attempt at go modules
+
+* adding example deps"
+lopezator,2018-07-02 15:49:04,https://api.github.com/repos/nytimes/gizmo/git/commits/27fe9cacc49e85cd350c4c931b0512c16695ad18,27fe9cacc49e85cd350c4c931b0512c16695ad18,"gcp: Added GCP usage example (#147)
+
+Added GCP usage example into examples/pubsub folder. Closes #146"
+tizmagik,2018-06-21 18:22:26,https://api.github.com/repos/nytimes/gizmo/git/commits/f2b3deec03175b11cdfb6642245a49722751357f,f2b3deec03175b11cdfb6642245a49722751357f,Update service.go (#151)
+jprobinson,2018-06-20 03:19:58,https://api.github.com/repos/nytimes/gizmo/git/commits/6691aba8184f9538bc52f5dd3b929a4227e302de,6691aba8184f9538bc52f5dd3b929a4227e302de,making test publisher threadsafe
+gaplyk,2018-06-07 16:19:37,https://api.github.com/repos/nytimes/gizmo/git/commits/eb0da8c1d735655391dcbcf5f01accb4fc550cec,eb0da8c1d735655391dcbcf5f01accb4fc550cec,Add ability to define shutdown function for the service (#150)
+tonglil,2018-06-05 22:42:10,https://api.github.com/repos/nytimes/gizmo/git/commits/6c05da34500975b4c8fd60129c5d3dfe4f3ee1bf,6c05da34500975b4c8fd60129c5d3dfe4f3ee1bf,fix typo (#149)
+oliver-nyt,2018-06-05 16:02:12,https://api.github.com/repos/nytimes/gizmo/git/commits/5cd7239d0fb07989b19ed6e2201395933ca4e060,5cd7239d0fb07989b19ed6e2201395933ca4e060,"Revert ""Improve Prometheus metrics"" (#148)
+
+* Revert ""default handler for 404 metrics to '__404__'""
+
+This reverts commit 298b6aef2c55455b9b3db66eff8471187bb15857.
+
+* Revert ""update comments""
+
+This reverts commit bec4a802d517edc9ce935efbf4981b0e81db509d.
+
+* Revert ""address comments""
+
+This reverts commit 91ef5764d7add9005577da45df6f5b9f5aa4a52d.
+
+* Revert ""Add panic if metric was not registered.""
+
+This reverts commit 1f73b81977ab13a0c7cdbc24eaa1917b8712d68e.
+
+* Revert ""Improve Prometheus metrics""
+
+This reverts commit 99001b6f8667b0aab74c6ab1b6090895c13df67d."
+oliver-nyt,2018-06-04 17:52:59,https://api.github.com/repos/nytimes/gizmo/git/commits/298b6aef2c55455b9b3db66eff8471187bb15857,298b6aef2c55455b9b3db66eff8471187bb15857,default handler for 404 metrics to '__404__'
+gaplyk,2018-04-02 21:02:05,https://api.github.com/repos/nytimes/gizmo/git/commits/bec4a802d517edc9ce935efbf4981b0e81db509d,bec4a802d517edc9ce935efbf4981b0e81db509d,update comments
+gaplyk,2018-03-29 17:55:44,https://api.github.com/repos/nytimes/gizmo/git/commits/91ef5764d7add9005577da45df6f5b9f5aa4a52d,91ef5764d7add9005577da45df6f5b9f5aa4a52d,address comments
+gaplyk,2018-03-29 16:43:00,https://api.github.com/repos/nytimes/gizmo/git/commits/1f73b81977ab13a0c7cdbc24eaa1917b8712d68e,1f73b81977ab13a0c7cdbc24eaa1917b8712d68e,Add panic if metric was not registered.
+gaplyk,2018-03-29 16:08:52,https://api.github.com/repos/nytimes/gizmo/git/commits/99001b6f8667b0aab74c6ab1b6090895c13df67d,99001b6f8667b0aab74c6ab1b6090895c13df67d,Improve Prometheus metrics
+Fontinalis,2018-03-30 11:44:55,https://api.github.com/repos/nytimes/gizmo/git/commits/912a07ebc42144362769066014505937ba1fdc16,912a07ebc42144362769066014505937ba1fdc16,Added ErrMultiRegister on multiple Register calls
+jprobinson,2018-03-29 21:35:35,https://api.github.com/repos/nytimes/gizmo/git/commits/c2394f1e64570e9aef14b6a49214b95535880f69,c2394f1e64570e9aef14b6a49214b95535880f69,allowing users to pass a custom sarama config for kafka
+soluckykuku,2018-03-13 16:36:00,https://api.github.com/repos/nytimes/gizmo/git/commits/610de4b04f9dbd477df29174f1eb858480ce6904,610de4b04f9dbd477df29174f1eb858480ce6904,"enhancement - update README, more condensed/readable"
+jMuzsik,2018-03-09 20:10:43,https://api.github.com/repos/nytimes/gizmo/git/commits/6635716a2f851be8d692cd397094b60dac783d4d,6635716a2f851be8d692cd397094b60dac783d4d,"enhancement - update README, made it much more condensed/readable"
+jMuzsik,2018-03-09 20:03:56,https://api.github.com/repos/nytimes/gizmo/git/commits/cae3dca670e6871f205c395931f8ef317ef5fc72,cae3dca670e6871f205c395931f8ef317ef5fc72,"enhancement - update README, made it much more condensed/readable"
+jMuzsik,2018-03-07 23:13:38,https://api.github.com/repos/nytimes/gizmo/git/commits/482d032211310b454de6caadb693c36d329a3d71,482d032211310b454de6caadb693c36d329a3d71,Working on https://github.com/NYTimes/gizmo/issues/116
+gaplyk,2018-02-02 21:22:52,https://api.github.com/repos/nytimes/gizmo/git/commits/6fdbe2c1590e782aedb01eb3510fc0d9580bf3bd,6fdbe2c1590e782aedb01eb3510fc0d9580bf3bd,clean up test comment
+gaplyk,2018-02-02 21:19:42,https://api.github.com/repos/nytimes/gizmo/git/commits/66b05402cb630b0a0a69bbe2205887bc768c1e79,66b05402cb630b0a0a69bbe2205887bc768c1e79,fix panic when notfound handler been set.
+alessandrozucca,2018-01-23 15:42:13,https://api.github.com/repos/nytimes/gizmo/git/commits/e6489d1782e5e9cb39b1df5e9ed33e2ce033c842,e6489d1782e5e9cb39b1df5e9ed33e2ce033c842,Allow to specify an AWS Role to be used when creating the credentials with MFA support
+jprobinson,2018-01-05 19:49:25,https://api.github.com/repos/nytimes/gizmo/git/commits/1f8be3aa2aebbf2a3225e26a5072b299a148e9e5,1f8be3aa2aebbf2a3225e26a5072b299a148e9e5,better var name
+jprobinson,2018-01-05 19:13:22,https://api.github.com/repos/nytimes/gizmo/git/commits/1ad9a79056e2737bac1ff376bd0cfeb8b90a4279,1ad9a79056e2737bac1ff376bd0cfeb8b90a4279,fix rpc typo
+jprobinson,2018-01-05 19:07:34,https://api.github.com/repos/nytimes/gizmo/git/commits/193663e5a1c0bafb575d07c65016708f8f83d6c6,193663e5a1c0bafb575d07c65016708f8f83d6c6,first hack to fix #132
+jprobinson,2017-11-09 22:28:38,https://api.github.com/repos/nytimes/gizmo/git/commits/584d6c56247edeefd1deef98e761791d36a16312,584d6c56247edeefd1deef98e761791d36a16312,close the body
+jprobinson,2017-11-09 22:26:33,https://api.github.com/repos/nytimes/gizmo/git/commits/96af17639fc1def230e2b578be86d3ee46af321d,96af17639fc1def230e2b578be86d3ee46af321d,test the server without starting the server
+jprobinson,2017-11-09 21:38:46,https://api.github.com/repos/nytimes/gizmo/git/commits/69f28624eec07dfdda7d7e34d4a99598b1781f0f,69f28624eec07dfdda7d7e34d4a99598b1781f0f,removing more tls stuff
+jprobinson,2017-11-09 21:24:34,https://api.github.com/repos/nytimes/gizmo/git/commits/29a539a005235504c2722ddbc24750e0ed19f066,29a539a005235504c2722ddbc24750e0ed19f066,rollback TLS changes
+jprobinson,2017-11-09 20:29:52,https://api.github.com/repos/nytimes/gizmo/git/commits/966294b22efea7da1a71c035b63c8f67c3f8238f,966294b22efea7da1a71c035b63c8f67c3f8238f,resolves #129
+jprobinson,2017-09-28 17:41:55,https://api.github.com/repos/nytimes/gizmo/git/commits/d36c7282fef91965272dac8b3e418902e3f70938,d36c7282fef91965272dac8b3e418902e3f70938,hooking in config
+jprobinson,2017-09-28 17:29:08,https://api.github.com/repos/nytimes/gizmo/git/commits/6a68bd283e01fb12de42f34d858548da3682a149,6a68bd283e01fb12de42f34d858548da3682a149,adding pprof endpoints to all kit servers
+jprobinson,2017-09-16 18:03:08,https://api.github.com/repos/nytimes/gizmo/git/commits/87bdc393ca6d450a8880af5876867dca8736b62e,87bdc393ca6d450a8880af5876867dca8736b62e,"fixing log/thanks, vet!"
+jprobinson,2017-09-16 17:59:40,https://api.github.com/repos/nytimes/gizmo/git/commits/4eec314cfb98aeb3d990e97d3e480be75d08d606,4eec314cfb98aeb3d990e97d3e480be75d08d606,filtering expected shutdown errors & capturing test errors properly
+ctborg,2017-08-24 15:36:26,https://api.github.com/repos/nytimes/gizmo/git/commits/8a49dc46471d74ae0594200b5097d89472e51dba,8a49dc46471d74ae0594200b5097d89472e51dba,Update and rename LICENSE.md to LICENSE
+jprobinson,2017-08-19 15:33:37,https://api.github.com/repos/nytimes/gizmo/git/commits/488fd02283f0b56d156fa667d1185498aae287c4,488fd02283f0b56d156fa667d1185498aae287c4,fixes #123
+jprobinson,2017-08-05 15:34:02,https://api.github.com/repos/nytimes/gizmo/git/commits/b63903ae52d95e48f770c32144ce24b0b00dbc0a,b63903ae52d95e48f770c32144ce24b0b00dbc0a,always adding kit server request logger with context values
+jprobinson,2017-08-04 19:42:27,https://api.github.com/repos/nytimes/gizmo/git/commits/6f874ffe8fdb6a09bd48c81b30e7dcd08511f972,6f874ffe8fdb6a09bd48c81b30e7dcd08511f972,fixing context use in RPCServer example
+ianfoo,2017-07-19 21:01:13,https://api.github.com/repos/nytimes/gizmo/git/commits/3c00572b9514b6d4db44b0cbcc0ece2b38a8e403,3c00572b9514b6d4db44b0cbcc0ece2b38a8e403,Fix .drone.yml link and typo in README.md
+jprobinson,2017-07-19 19:16:12,https://api.github.com/repos/nytimes/gizmo/git/commits/076224197cb69714adc310799a706a0bab7cca40,076224197cb69714adc310799a706a0bab7cca40,"updating example with max limit, simplified drone.yml + docs for clarifying datastore key usage"
+jprobinson,2017-07-19 03:28:09,https://api.github.com/repos/nytimes/gizmo/git/commits/67a2441605f0fcaed1b847254fb355b6d279328e,67a2441605f0fcaed1b847254fb355b6d279328e,moving run_local
+jprobinson,2017-07-19 03:21:38,https://api.github.com/repos/nytimes/gizmo/git/commits/01cf993ac63636109739bbe2ca2b093cc3661f90,01cf993ac63636109739bbe2ca2b093cc3661f90,"removing example vendor dir, fixing vet"
+jprobinson,2017-07-19 03:13:53,https://api.github.com/repos/nytimes/gizmo/git/commits/6a95a7a93896dd3c06464b186772903eac37ef49,6a95a7a93896dd3c06464b186772903eac37ef49,no need to vet examples
+jprobinson,2017-07-19 03:07:37,https://api.github.com/repos/nytimes/gizmo/git/commits/1160070a6f6acd0007538f3d622561f386fd473b,1160070a6f6acd0007538f3d622561f386fd473b,config updates
+jprobinson,2017-07-19 03:05:44,https://api.github.com/repos/nytimes/gizmo/git/commits/ab1f4c24a67c2b44eb9889aa6f4191f16fe1ee5e,ab1f4c24a67c2b44eb9889aa6f4191f16fe1ee5e,hookin up http tracer
+jprobinson,2017-07-19 03:02:54,https://api.github.com/repos/nytimes/gizmo/git/commits/34b8c215f76e41b0c94f44e4133d92d8128c8db9,34b8c215f76e41b0c94f44e4133d92d8128c8db9,adding more docs and hooking up grpc tracing
+jprobinson,2017-07-19 02:57:05,https://api.github.com/repos/nytimes/gizmo/git/commits/477c4d30cb273abf0df9a8d0dbd4c77587f6839e,477c4d30cb273abf0df9a8d0dbd4c77587f6839e,adding kit/datastore reading-list example to mimic marvin
+jprobinson,2017-07-19 15:32:47,https://api.github.com/repos/nytimes/gizmo/git/commits/cc37ea9ea41f527a9c45e57f19ea3d1552751af7,cc37ea9ea41f527a9c45e57f19ea3d1552751af7,example no longer errors if there are no cats stories
+alrs,2017-07-13 01:55:28,https://api.github.com/repos/nytimes/gizmo/git/commits/1c0e1e9ca7a78cccba0be9bbb930543a186591f7,1c0e1e9ca7a78cccba0be9bbb930543a186591f7,Fix swallowed err in client example.
+jprobinson,2017-07-08 22:59:06,https://api.github.com/repos/nytimes/gizmo/git/commits/eaceabd8d5bfe0fde525f93724b9a1c675327ece,eaceabd8d5bfe0fde525f93724b9a1c675327ece,fixing tests
+jprobinson,2017-07-08 22:31:49,https://api.github.com/repos/nytimes/gizmo/git/commits/4fd90ba3de3d92c422a7dd9a2ccaf652cc116104,4fd90ba3de3d92c422a7dd9a2ccaf652cc116104,adding kit.Service.RPCMiddlware bc grpc only allows 1 unary interceptor
+wezzle,2017-07-06 16:19:07,https://api.github.com/repos/nytimes/gizmo/git/commits/8b0f78002ad276faede847a87cd8abc9bc6ca09a,8b0f78002ad276faede847a87cd8abc9bc6ca09a,"Makes gcp attributes accessible (#114)
+
+* Adds SetReceiveSettings to Subscriber
+
+- Makes gcp.subscriber public
+- Makes gcp.subscribeImpl.sub public
+- Applies case changes to tests
+
+* Adds comment to SetReceiveSettings
+
+* Makes gcp message attributes accessible
+
+- Makes subMessage public
+- Makes messageImpl's msg public
+- Channel runts SubMessage instead of interface
+
+* Implements pubsub.Subscriber again
+
+- Adds test for pubsub.Subscriber interface
+- Adds Attributes to SubMessage
+- Fills Attributes on Receive if msg is of type messageImpl
+- Allows for type conversion by external code on SubscriberMessage"
+jprobinson,2017-07-05 23:19:31,https://api.github.com/repos/nytimes/gizmo/git/commits/12a2cc2d3a3e41627e491869d94e4ab486c2ac99,12a2cc2d3a3e41627e491869d94e4ab486c2ac99,checking for nil context values in kit logger
+jprobinson,2017-07-05 20:18:38,https://api.github.com/repos/nytimes/gizmo/git/commits/cf276bf778ffd05c72809cd370aee3cf22eb07db,cf276bf778ffd05c72809cd370aee3cf22eb07db,making server/kit projects available to GAE users
+jprobinson,2017-06-26 17:16:20,https://api.github.com/repos/nytimes/gizmo/git/commits/bd99546be9d5aff4517f603f9f68abcd56522c66,bd99546be9d5aff4517f603f9f68abcd56522c66,including kit package in coverage
+jprobinson,2017-06-26 17:13:56,https://api.github.com/repos/nytimes/gizmo/git/commits/378b3c585297e38c5eba33474662fe0e5ddffac6,378b3c585297e38c5eba33474662fe0e5ddffac6,fixing kit log with fields
+jprobinson,2017-06-23 20:10:49,https://api.github.com/repos/nytimes/gizmo/git/commits/e233e3c29a7dbce1884f717eb93f3116d197b664,e233e3c29a7dbce1884f717eb93f3116d197b664,cleaning up imports for kit example
+jprobinson,2017-06-23 19:48:06,https://api.github.com/repos/nytimes/gizmo/git/commits/3ed843c392bb35330987355aeff6407494d91efe,3ed843c392bb35330987355aeff6407494d91efe,cleaning up kit example
+jprobinson,2017-06-23 19:34:42,https://api.github.com/repos/nytimes/gizmo/git/commits/8ce6660a151dcd0a5abeb9cc726649ed430bd01d,8ce6660a151dcd0a5abeb9cc726649ed430bd01d,docfxi
+jprobinson,2017-06-23 19:22:38,https://api.github.com/repos/nytimes/gizmo/git/commits/93c007aaf8b8a09c59d952c4ad8a8a0b74477599,93c007aaf8b8a09c59d952c4ad8a8a0b74477599,docfix
+jprobinson,2017-06-23 17:33:11,https://api.github.com/repos/nytimes/gizmo/git/commits/a6206a93667da0b1556a13d990a399ee6c65192b,a6206a93667da0b1556a13d990a399ee6c65192b,adding additional http fields to the logger
+jprobinson,2017-06-23 17:15:43,https://api.github.com/repos/nytimes/gizmo/git/commits/1632559466667b865a8a937704013b467054424c,1632559466667b865a8a937704013b467054424c,changing server log keys to match the new funcs
+jprobinson,2017-06-23 16:57:07,https://api.github.com/repos/nytimes/gizmo/git/commits/d7ce32e14f02083f558b2d944dca60914224a6ee,d7ce32e14f02083f558b2d944dca60914224a6ee,cleaning up http loging
+jprobinson,2017-06-23 16:08:23,https://api.github.com/repos/nytimes/gizmo/git/commits/d1c088d10c625ff6fb6534b9c879a9d95204b768,d1c088d10c625ff6fb6534b9c879a9d95204b768,fixing godocs for lint
+jprobinson,2017-06-23 16:04:04,https://api.github.com/repos/nytimes/gizmo/git/commits/a391853d6badbc735b234bccd3e3279a0a0ac039,a391853d6badbc735b234bccd3e3279a0a0ac039,import cleanup
+jprobinson,2017-06-23 16:02:25,https://api.github.com/repos/nytimes/gizmo/git/commits/6309d4ffa22d802971acdee7f35b4058c3b3e767,6309d4ffa22d802971acdee7f35b4058c3b3e767,adding additional logger funcs for convenience
+jprobinson,2017-06-23 15:20:51,https://api.github.com/repos/nytimes/gizmo/git/commits/6de5795c2cfab4019b29b83d10838f1bf344a5e3,6de5795c2cfab4019b29b83d10838f1bf344a5e3,cleanup extra line
+jprobinson,2017-06-23 15:20:05,https://api.github.com/repos/nytimes/gizmo/git/commits/ed6377e3efe4297fe090f75479fdab1da97b7ac3,ed6377e3efe4297fe090f75479fdab1da97b7ac3,cleaning up server logs and adding more tests
+jprobinson,2017-06-23 15:02:42,https://api.github.com/repos/nytimes/gizmo/git/commits/6ed18683f457ebcd2ab42a3f5098a759b5f13c3c,6ed18683f457ebcd2ab42a3f5098a759b5f13c3c,hooking kit Middleware into gRPC server and removing dep on cat example
+jprobinson,2017-06-19 20:14:04,https://api.github.com/repos/nytimes/gizmo/git/commits/c75c9ded3bf7a111221ef691f2fbfd6cdb70169e,c75c9ded3bf7a111221ef691f2fbfd6cdb70169e,exposing server/kit.Server for testers
+jprobinson,2017-06-19 16:10:08,https://api.github.com/repos/nytimes/gizmo/git/commits/1eefcbf09b02d6f9e12cf414aca2a938db29127a,1eefcbf09b02d6f9e12cf414aca2a938db29127a,adding shutdown timeout default
+jprobinson,2017-06-18 20:02:47,https://api.github.com/repos/nytimes/gizmo/git/commits/fd53ea967139899c98a825706fbf4f8f415281e9,fd53ea967139899c98a825706fbf4f8f415281e9,import cleanup
+jprobinson,2017-06-18 19:53:23,https://api.github.com/repos/nytimes/gizmo/git/commits/3dda0b4ff61fd81b89f81492a926fdee2590bf72,3dda0b4ff61fd81b89f81492a926fdee2590bf72,"- removing package level variables
+- only allowing for env variable configuration
+- cleaning up default configuration management
+- removing all other gizmo libs
+- adding end-to-end test that relies on cat example"
+jprobinson,2017-06-18 16:33:33,https://api.github.com/repos/nytimes/gizmo/git/commits/d1f63b45fdfad3d71008c0e9a7d3ca4a2572820d,d1f63b45fdfad3d71008c0e9a7d3ca4a2572820d,cleaning up docs
+jprobinson,2017-06-18 16:29:40,https://api.github.com/repos/nytimes/gizmo/git/commits/e420fb82e1c824e1ce5f78ce5e37ad536915dd96,e420fb82e1c824e1ce5f78ce5e37ad536915dd96,adding server.Config.LogJSONFormat. fixes #96
+jprobinson,2017-06-06 21:14:37,https://api.github.com/repos/nytimes/gizmo/git/commits/aa4a7f28c7b03de7f9434245ee9b0b787414b46c,aa4a7f28c7b03de7f9434245ee9b0b787414b46c,fxing tpyos
+jprobinson,2017-06-06 21:13:23,https://api.github.com/repos/nytimes/gizmo/git/commits/7c687371db088694859b42e2440696aa3b4f1823,7c687371db088694859b42e2440696aa3b4f1823,adding simple health check
+jprobinson,2017-06-06 20:32:02,https://api.github.com/repos/nytimes/gizmo/git/commits/a01f94f8264e4fcedbfe7c56c92b9b7680e47dad,a01f94f8264e4fcedbfe7c56c92b9b7680e47dad,dropping another unneeded _
+jprobinson,2017-06-06 20:30:20,https://api.github.com/repos/nytimes/gizmo/git/commits/1a1f0d17ab6feb1ab0e60948e4939c129900f307,1a1f0d17ab6feb1ab0e60948e4939c129900f307,dropping an unneeded _
+jprobinson,2017-06-05 20:09:22,https://api.github.com/repos/nytimes/gizmo/git/commits/14b914a39e988a55d32f061d24f96ec0e2a60bc2,14b914a39e988a55d32f061d24f96ec0e2a60bc2,adding readme to kit
+jprobinson,2017-06-05 20:09:13,https://api.github.com/repos/nytimes/gizmo/git/commits/61d044d795f56e6a1f0ca8f05a8e8cb830155fb7,61d044d795f56e6a1f0ca8f05a8e8cb830155fb7,final cleanup
+jprobinson,2017-06-05 15:18:12,https://api.github.com/repos/nytimes/gizmo/git/commits/008774353a7d290df6bdfe39eb07435029f929ad,008774353a7d290df6bdfe39eb07435029f929ad,fixing ce config
+jprobinson,2017-06-05 02:11:20,https://api.github.com/repos/nytimes/gizmo/git/commits/17289cfbdad6c5740b3421baef758a1611f61e2d,17289cfbdad6c5740b3421baef758a1611f61e2d,taking a whack at cloud endpoints
+jprobinson,2017-06-04 20:26:49,https://api.github.com/repos/nytimes/gizmo/git/commits/09a6856637baa52e0a557b20b3c67c4cdb33c46e,09a6856637baa52e0a557b20b3c67c4cdb33c46e,matching docs
+jprobinson,2017-06-04 20:24:25,https://api.github.com/repos/nytimes/gizmo/git/commits/75dc50d7d88536aa00223e9cf6c0ebec63786e51,75dc50d7d88536aa00223e9cf6c0ebec63786e51,kit server now is RPC-friendly
+jprobinson,2017-05-22 16:32:47,https://api.github.com/repos/nytimes/gizmo/git/commits/d89e11122031b9602bbab4c4e3180270ab1fb73a,d89e11122031b9602bbab4c4e3180270ab1fb73a,adding basic working example of kithttp service
+jprobinson,2017-05-02 22:47:19,https://api.github.com/repos/nytimes/gizmo/git/commits/a7c39a1e17c61a4ab8f74f84edcb3e02f61a4477,a7c39a1e17c61a4ab8f74f84edcb3e02f61a4477,"initial kithttp package, very much a wip"
+jbochi,2017-06-02 16:58:24,https://api.github.com/repos/nytimes/gizmo/git/commits/f33eb4e88181e97f420c42e7a62f21b1bbaa5f83,f33eb4e88181e97f420c42e7a62f21b1bbaa5f83,Add pprof trace endpoint
+oliver-nyt,2017-06-01 21:27:29,https://api.github.com/repos/nytimes/gizmo/git/commits/9840f5c407adadd34f387e404caec5354d92b0d6,9840f5c407adadd34f387e404caec5354d92b0d6,Handle method GET and HEAD for healthcheck requests
+MixedMessages,2017-05-18 20:59:12,https://api.github.com/repos/nytimes/gizmo/git/commits/3049233eb1f5d71d00745528e3d34dd804ccb6a2,3049233eb1f5d71d00745528e3d34dd804ccb6a2,Remove unused import
+jprobinson,2017-05-17 21:23:41,https://api.github.com/repos/nytimes/gizmo/git/commits/d3e4c168c015141462183d09ea00fc6e79eafba7,d3e4c168c015141462183d09ea00fc6e79eafba7,removing memory leak from mysql example
+mweagle,2017-04-04 21:23:36,https://api.github.com/repos/nytimes/gizmo/git/commits/88351dd24c9e15c59d4fa1398590fb16b4c3ecb3,88351dd24c9e15c59d4fa1398590fb16b4c3ecb3,"Add sconfig.Producer.Return.Successes value (#92)
+
+With the latest `sarama` library the `sconfig.Producer.Return.Successes` configuration value must be _true_ for the Sync Producer. Failing to configure this produces an error from `NewPublisher()` as in:
+
+```
+kafka: invalid configuration (Producer.Return.Successes must be true to be used in a SyncProducer)
+```"
+jprobinson,2017-04-04 21:19:44,https://api.github.com/repos/nytimes/gizmo/git/commits/89de1e07ec4feb01e101225584e9bfb118dbe0fc,89de1e07ec4feb01e101225584e9bfb118dbe0fc,"Updating GCP pubsub to match new API (#95)
+
+* implement new AddPermissionWithContext func within TestSNSAPI
+
+* implement new ...WithContext funcs for TestSNSAPI interface
+
+* Fix types for new WithContext funcs since sqs and sns arent the same thing
+
+* implement more WithContext funcs for pub, probably still need to add more for sub
+
+* add remaining WithContext funcs
+
+* Fix capitilization and implement SendMessageBatchWithContext
+
+* Fix capitilization in the errors this time...
+
+* wip
+
+* fixed tests, updated impls"
+gaplyk,2017-02-21 22:05:21,https://api.github.com/repos/nytimes/gizmo/git/commits/12c3a2a0a5dcc7cdc6f3d13b1ceae135872f786a,12c3a2a0a5dcc7cdc6f3d13b1ceae135872f786a,"Update server to support go1.7 context (#89)
+
+* Update server to support go1.7 context
+
+* Fix build
+
+* fix test
+
+* remove 1.6 from travis.yml because of hashicorp dependencies. It will work for 1.6 with pinned dependency."
+fsouza,2017-01-04 15:56:23,https://api.github.com/repos/nytimes/gizmo/git/commits/735e8305e65480d5b6f6239ae1976d9284808868,735e8305e65480d5b6f6239ae1976d9284808868,"server: support IdleTimeout (#88)
+
+* server: support IdleTimeout
+
+This is new in Go 1.8.
+
+* travis: add Go 1.8
+
+Also pick latest 1.6 and 1.7.
+
+1.8.x won't pick 1.8beta2, so I specified beta2 explicitly.
+
+* server: return a pointer on httpServer
+
+Making vet happy."
+KonoMaxi,2016-11-24 13:45:53,https://api.github.com/repos/nytimes/gizmo/git/commits/c02d020babd992176a96e3a6b345cbae7b98910b,c02d020babd992176a96e3a6b345cbae7b98910b,fixed a bug in the MonitorRPCRequest function of the RPCServer (#86)
+KonoMaxi,2016-11-19 15:55:21,https://api.github.com/repos/nytimes/gizmo/git/commits/9130a4e5d034a1d9b217425a2d5623d6ebb1c85f,9130a4e5d034a1d9b217425a2d5623d6ebb1c85f,"Error message added to MonitorRPCRequest in server/rpc_server.go (#84)
+
+* Update rpc_server.go
+
+Added an error message to MonitorRPCRequest for easier debugging
+
+* lint
+
+linted the code
+
+* fixed a typo
+
+I'll squash that mess this afternoon
+
+* Update rpc_server.go
+
+Added an error message to MonitorRPCRequest for easier debugging
+
+* Changed the structure of monitorRPC call.
+The x != nil call is redundant, but necessary to catch nil pointer dereference on m."
+oliver-nyt,2016-11-19 15:47:43,https://api.github.com/repos/nytimes/gizmo/git/commits/73db46d2c901dfd0cb3f45d67bc75c1a248eb685,73db46d2c901dfd0cb3f45d67bc75c1a248eb685,Fix string (#85)
+saranrapjs,2016-11-07 19:09:05,https://api.github.com/repos/nytimes/gizmo/git/commits/b3d23ee4598e58d1cc556ebb88f1c88e4628ad8b,b3d23ee4598e58d1cc556ebb88f1c88e4628ad8b,"embedding the Publisher interface into the MultiPublisher interface, and updating the GCP concrete implementations to use the hybrid interface (#83)"
+jprobinson,2016-11-04 21:49:39,https://api.github.com/repos/nytimes/gizmo/git/commits/efb0659f3317337b069dec06432a0d774552679f,efb0659f3317337b069dec06432a0d774552679f,"Adding a new HTTP Publisher type to `pubsub/gcp` for App Engine use (#82)
+
+* initial attempt at using GCP HTTP publisher
+
+* updating gRPC example to match updates
+
+* updating docs
+
+* plublish => publish"
+cristiangraz,2016-10-17 16:13:02,https://api.github.com/repos/nytimes/gizmo/git/commits/6a1ca7601d47f8d3f630eee9ff3205f30647effc,6a1ca7601d47f8d3f630eee9ff3205f30647effc,Add MultiPublisher pubsub interface (#78)
+jprobinson,2016-10-17 14:53:27,https://api.github.com/repos/nytimes/gizmo/git/commits/0d53bed0245cd3af25bdc32e52aceba65f223580,0d53bed0245cd3af25bdc32e52aceba65f223580,updating LogRPCWithFields to match new golint conventions around context.Context (#79)
+oliver-nyt,2016-10-10 20:50:46,https://api.github.com/repos/nytimes/gizmo/git/commits/db629691dea9bf56097cff74e3abd6ca0e589725,db629691dea9bf56097cff74e3abd6ca0e589725,"Add mysql config options (#77)
+
+* add mysql config options
+
+* requested fixes
+
+* let's use url.Parse/Encode"
+jprobinson,2016-09-23 21:41:21,https://api.github.com/repos/nytimes/gizmo/git/commits/3adc58798e01035e650fd418d29ed22e572d2427,3adc58798e01035e650fd418d29ed22e572d2427,"Cleaning up the rest of gorilla/context use for Go 1.7 (#76)
+
+* fixing memory leak with 1.7
+
+* cleaning up type check for vars
+
+* continuing the removal of gorilla context, updating example to show how current users can deal
+
+* cleaning up messups from merge
+
+* cleaning up messups from merge"
+jprobinson,2016-09-21 20:23:55,https://api.github.com/repos/nytimes/gizmo/git/commits/5d6cf612a51d81e2353489b56eee93ec811d797a,5d6cf612a51d81e2353489b56eee93ec811d797a,"Fixing memory leak caused by routers in 1.7 (#75)
+
+* fixing memory leak with 1.7
+
+* cleaning up type check for vars"
+jprobinson,2016-09-15 20:27:06,https://api.github.com/repos/nytimes/gizmo/git/commits/57e99e177652cb34d1ca2fe531a054a6715332b1,57e99e177652cb34d1ca2fe531a054a6715332b1,updating GCP PubSub Iterator => MessageIterator
+jprobinson,2016-08-26 14:45:41,https://api.github.com/repos/nytimes/gizmo/git/commits/f5e248abcafedadbbb7932f140177cffaf28a518,f5e248abcafedadbbb7932f140177cffaf28a518,updating test name for vet
+jprobinson,2016-08-26 14:36:20,https://api.github.com/repos/nytimes/gizmo/git/commits/c6a7ea09c4f2c19f431479aa31e5c34be4d41b47,c6a7ea09c4f2c19f431479aa31e5c34be4d41b47,"removing 1.5, adding 1.7"
+jprobinson,2016-08-26 14:34:10,https://api.github.com/repos/nytimes/gizmo/git/commits/ae909e7e43a755c0f6c8bbdeb147ae158a78d48d,ae909e7e43a755c0f6c8bbdeb147ae158a78d48d,"Metrics updates to match go-kit/kit/metrics changes (#72)
+
+* metrics updates to match go-kit/kit#313
+
+* changing histograms to use duration.Seconds()"
+darrenmcc,2016-08-17 13:54:58,https://api.github.com/repos/nytimes/gizmo/git/commits/43868ef6e96e07ac627b5e77b133c2e52d9f71ab,43868ef6e96e07ac627b5e77b133c2e52d9f71ab,"Updated number of service implementations, fixed grammar (#71)
+
+* Updated number of service implementations, fixed grammar
+
+* Put back plurals"
+marzagao,2016-08-16 22:11:21,https://api.github.com/repos/nytimes/gizmo/git/commits/1059f269df4eddf6a5d7a6bc853b3a1692553777,1059f269df4eddf6a5d7a6bc853b3a1692553777,pubsub: send log messages to debug level (#70)
+oliver-nyt,2016-08-12 16:10:22,https://api.github.com/repos/nytimes/gizmo/git/commits/54c4ae46d260457b7038247c85d05d65454dfb0c,54c4ae46d260457b7038247c85d05d65454dfb0c,"Fix and refactor prometheus metrics setup (#69)
+
+* fix prometheus metrics
+
+* move TrimPrefix() and change rpc_server"
+jprobinson,2016-08-11 16:54:29,https://api.github.com/repos/nytimes/gizmo/git/commits/85962394668f000f7e4d09ef79554570a34bcf86,85962394668f000f7e4d09ef79554570a34bcf86,switching out google.golang.org for cloud.google.com to deal with issue #66 (#67)
+jprobinson,2016-08-04 16:07:00,https://api.github.com/repos/nytimes/gizmo/git/commits/9758380175c5a362ba307d2217f702c735a51e56,9758380175c5a362ba307d2217f702c735a51e56,"Adding new ""appengine"" server.Config.Type to allow SimpleServer to run on App Engine Flexible VMs + PubSub fixes (#65)
+
+* testing out returning handler for App Engine
+
+* fixing pubsub config for json
+
+* getting flexible VM to work with simple server
+
+* adding safety nets to pubsub
+
+* adding updates for AWSs snsiface package
+
+* removing pubsub/gcp log statement"
+jprobinson,2016-07-25 18:48:00,https://api.github.com/repos/nytimes/gizmo/git/commits/de73128aa41864599ced6014f9a1c2dcebb83637,de73128aa41864599ced6014f9a1c2dcebb83637,adding updates for AWSs snsiface package
+jprobinson,2016-06-17 17:15:21,https://api.github.com/repos/nytimes/gizmo/git/commits/1cdaffd9dba57da6b53cd23db00f5b940aac02f1,1cdaffd9dba57da6b53cd23db00f5b940aac02f1,updating docs
+jprobinson,2016-06-17 17:11:36,https://api.github.com/repos/nytimes/gizmo/git/commits/b87fcb22a37bea9154a6eb139cba18c35e011027,b87fcb22a37bea9154a6eb139cba18c35e011027,removing JSONContextService as it was a dupe of MixedContextService. Adding Context endpoints to RPCService. Fixing examples
+jprobinson,2016-06-16 17:16:10,https://api.github.com/repos/nytimes/gizmo/git/commits/7367fd870af3d51c5137181b3e24a5388fa3c593,7367fd870af3d51c5137181b3e24a5388fa3c593,docfix for pubsub/http
+jprobinson,2016-06-16 17:14:46,https://api.github.com/repos/nytimes/gizmo/git/commits/70aff522abe8c4c3e467fa8fb73442a385be41f0,70aff522abe8c4c3e467fa8fb73442a385be41f0,adding pubsub/http
+jprobinson,2016-06-15 22:18:49,https://api.github.com/repos/nytimes/gizmo/git/commits/22fa9a74458018fffdd9f2f8110482552204d287,22fa9a74458018fffdd9f2f8110482552204d287,adding new config/gcp/Config.FlexibleVM flag for appengine environments
+jprobinson,2016-06-15 19:27:34,https://api.github.com/repos/nytimes/gizmo/git/commits/d13cb2bcc6cc0d7f494137c8fa1b11cbb78d6f8b,d13cb2bcc6cc0d7f494137c8fa1b11cbb78d6f8b,removing tests that interfere with coverage :\
+jprobinson,2016-06-15 19:10:11,https://api.github.com/repos/nytimes/gizmo/git/commits/c50779bb00e8548307f3b8429600da02b020132e,c50779bb00e8548307f3b8429600da02b020132e,adding ability to set -config flag again
+jprobinson,2016-06-15 18:18:49,https://api.github.com/repos/nytimes/gizmo/git/commits/9189d2ba4b1f109bf1dc208bd81ba8bffcfa881e,9189d2ba4b1f109bf1dc208bd81ba8bffcfa881e,"Breaking up the `config` and `pubsub` packages by dependency (#62)
+
+* [wip] initial config breakout, still need to fix examples
+
+* Adding config/combined, attempting to standardize config names
+
+* fixing examples
+
+* [wip] initial config breakout, still need to fix examples
+
+* Adding config/combined, attempting to standardize config names
+
+* fixing examples
+
+* gcp updates for the breakout
+
+* doc updates
+
+* fixing doc for vet
+
+* fixing flag management
+
+* updating rpc example for gRPC updates"
+jprobinson,2016-06-13 20:41:24,https://api.github.com/repos/nytimes/gizmo/git/commits/f908f584b01758315a80e97296e566ac654e7c35,f908f584b01758315a80e97296e566ac654e7c35,preventing deadlocks in GCPSubscriber when encountering an error
+jprobinson,2016-06-13 19:58:37,https://api.github.com/repos/nytimes/gizmo/git/commits/4d47ad36ac33eb7c9863c37478f8b39fe04e5144,4d47ad36ac33eb7c9863c37478f8b39fe04e5144,fixing bad log stmt
+jprobinson,2016-06-13 19:56:49,https://api.github.com/repos/nytimes/gizmo/git/commits/f2d17209dc0d3cfadf339a0cc2e12c51d941f393,f2d17209dc0d3cfadf339a0cc2e12c51d941f393,cleaning up GCP config JSON tags
+jprobinson,2016-06-13 19:28:54,https://api.github.com/repos/nytimes/gizmo/git/commits/971f3c6a845ca61f582bd5c9dfffedee79bd77fa,971f3c6a845ca61f582bd5c9dfffedee79bd77fa,preventing a panic when GCPSubscriber encounters an error on startup
+jprobinson,2016-06-13 15:48:32,https://api.github.com/repos/nytimes/gizmo/git/commits/46437ab910c2bb66af7d6dd1d2b34d37d1bfd4f3,46437ab910c2bb66af7d6dd1d2b34d37d1bfd4f3,"Adding configs and pubsub implementations for GCP plus additional context endpoints and service types (#61)
+
+* adding support for go-metrics/exp
+
+* go-metrics out, kit/metrics in. New config.Metrics type manage providers
+
+* removing nop Metrics and using kit/metrics/discard
+
+* adding metrics env load, updating examples to use kit/metrics and adding graphite host again as deprecated
+
+* [wip] adding initial GCP pubsub implementations
+
+* fixing gcp pubsub stop
+
+* adding datastore config and server context handlers
+
+* adding ctx to pubsub
+
+* adding gcp envconfig tags
+
+* more context mgmt
+
+* using context by default in pubsub
+
+* fixing pubsub tests, updating docs
+
+* go-metrics out, kit/metrics in. New config.Metrics type manage providers
+
+* adding metrics env load, updating examples to use kit/metrics and adding graphite host again as deprecated
+
+* [wip] adding initial GCP pubsub implementations
+
+* fixing gcp pubsub stop
+
+* adding datastore config and server context handlers
+
+* adding ctx to pubsub
+
+* adding gcp envconfig tags
+
+* more context mgmt
+
+* using context by default in pubsub
+
+* fixing pubsub tests, updating docs
+
+* filling in docs for pubsub/gcp
+
+* adding tests for pubsub/gcp
+
+* adding GCP to config.Config
+
+* context should be recreated fresh on each request
+
+* updating docs
+
+* more doc updates"
+jprobinson,2016-05-24 17:04:21,https://api.github.com/repos/nytimes/gizmo/git/commits/53c5ab2a4c1e0fcd674a2c940f4c33b3a0e7ce57,53c5ab2a4c1e0fcd674a2c940f4c33b3a0e7ce57,"Switching underlying metrics provider from `rcrowley/go-metrics` to `go-kit/kit/metrics` (#59)
+
+* adding support for go-metrics/exp
+
+* go-metrics out, kit/metrics in. New config.Metrics type manage providers
+
+* removing nop Metrics and using kit/metrics/discard
+
+* adding metrics env load, updating examples to use kit/metrics and adding graphite host again as deprecated
+
+* updating doc
+
+This resolves #56"
+mkaminski1988,2016-05-20 00:20:23,https://api.github.com/repos/nytimes/gizmo/git/commits/bcedbdc56c1add8a0b0ee7c3a2e1c48724bbe8f1,bcedbdc56c1add8a0b0ee7c3a2e1c48724bbe8f1,"Change server examples to use `web.Vars` (#60)
+
+See https://github.com/NYTimes/gizmo/issues/57"
+jprobinson,2016-05-18 14:59:31,https://api.github.com/repos/nytimes/gizmo/git/commits/5761566563fd7aedd9e9a4d8feb86ab3104f3c22,5761566563fd7aedd9e9a4d8feb86ab3104f3c22,fixing license link
+mkaminski1988,2016-05-17 17:01:14,https://api.github.com/repos/nytimes/gizmo/git/commits/2ae0a86940bdf5c8c50458d48b89484d17af78fa,2ae0a86940bdf5c8c50458d48b89484d17af78fa,Clarify service interface JSONEndpoints() documentation (#58)
+darrenmcc,2016-05-04 20:52:44,https://api.github.com/repos/nytimes/gizmo/git/commits/cd3d472c4dbd6de023d829adb5f6b00dd1fcbbca,cd3d472c4dbd6de023d829adb5f6b00dd1fcbbca,Extended SetLogLevel to use ParseLevel in the logrus package. This allows for more logging levels. (#55)
+scottefein,2016-05-04 17:37:39,https://api.github.com/repos/nytimes/gizmo/git/commits/c93ab26e7b79af2f8ce665197a21288fb9592161,c93ab26e7b79af2f8ce665197a21288fb9592161,Update README.md
+fsouza,2016-04-27 20:57:11,https://api.github.com/repos/nytimes/gizmo/git/commits/0302ba19e6e84e8b09868c6aa76bfce9c01e79b5,0302ba19e6e84e8b09868c6aa76bfce9c01e79b5,"config: fix LoadAWSFromEnv double indirection error (#52)
+
+Without this fix LoadAWSFromEnv panics with the message ""unable to load
+env variable: specification must be a struct pointer""."
+fsouza,2016-04-27 18:08:58,https://api.github.com/repos/nytimes/gizmo/git/commits/15344b08c5b93d4c0e2f5f3ca4a5be721fa5d02f,15344b08c5b93d4c0e2f5f3ca4a5be721fa5d02f,"pubsub: add method ExtendDoneTimeout to SubscriberMessage (#51)
+
+This method is defined to give more time for the handler of the massage
+to handle it.  On AWS (and other queue systems), if Done is not called
+within a certain amount of time, the message comes back to the queue,
+calling ExtendDoneTimeout keeps the message out of the queue for the
+given duration.
+
+This behavior is not present in Kafka, so this method is a nop on Kafka."
+jprobinson,2016-04-26 21:06:10,https://api.github.com/repos/nytimes/gizmo/git/commits/6bf26dae323d04945b9ad2edb7cb731cedde20fb,6bf26dae323d04945b9ad2edb7cb731cedde20fb,updating the LICENSE
+jprobinson,2016-04-22 19:07:42,https://api.github.com/repos/nytimes/gizmo/git/commits/aec167b294917ad7630ab5d586c10d6a23e5736a,aec167b294917ad7630ab5d586c10d6a23e5736a,fixing stack overflow on gorilla handlerfunc
+jprobinson,2016-04-20 20:13:00,https://api.github.com/repos/nytimes/gizmo/git/commits/90c1ec820118948dca3c950653a299ae56544718,90c1ec820118948dca3c950653a299ae56544718,fixing SetLogLevel
+jprobinson,2016-04-20 16:28:36,https://api.github.com/repos/nytimes/gizmo/git/commits/3e688ebfcabeea8f3e567e3baaf2f646d06eb95f,3e688ebfcabeea8f3e567e3baaf2f646d06eb95f,fixing CLI server overrides for access logs
+jprobinson,2016-04-19 22:11:25,https://api.github.com/repos/nytimes/gizmo/git/commits/015ebc7467b9fb02efa4b84b74f7ed10337533b9,015ebc7467b9fb02efa4b84b74f7ed10337533b9,dealing with grpc updates
+jprobinson,2016-04-19 22:02:00,https://api.github.com/repos/nytimes/gizmo/git/commits/3419e09e0f0b7eabdace807c94f4b0ab9f55c48c,3419e09e0f0b7eabdace807c94f4b0ab9f55c48c,"Adding `server.CustomHealthCheck` and `config.Server.CustomHealthCheckHandler` (#48)
+
+* adding custom health check handler
+
+* fixing server.Config doc"
+jprobinson,2016-04-19 21:58:02,https://api.github.com/repos/nytimes/gizmo/git/commits/b1198659fb37b4a3b4d13ecb49011c5862c17f5b,b1198659fb37b4a3b4d13ecb49011c5862c17f5b,adding better type checking in ContextFields to deal with possible context key conflicts
+NathanBWaters,2016-04-13 21:19:45,https://api.github.com/repos/nytimes/gizmo/git/commits/5b93b5d2b4e78e419101a47acc79307e9a0d6ded,5b93b5d2b4e78e419101a47acc79307e9a0d6ded,Create README.md (#50)
+saranrapjs,2016-04-06 18:22:32,https://api.github.com/repos/nytimes/gizmo/git/commits/0d88b837c0f533e67e40d4db50f8b2c5679ba913,0d88b837c0f533e67e40d4db50f8b2c5679ba913,"changing HTTPAccessLog to be a pointer
+
+* changing HTTPAccessLog to be a pointer
+nil = no log, ""stdout"" = os.Stdout, anything else logs to a file
+
+* RPCAccessLog as *string, centralized log logic
+
+* case for the *locLocation"
+jprobinson,2016-04-05 15:23:39,https://api.github.com/repos/nytimes/gizmo/git/commits/5815ae7a2f0b9fa9556a95fbe85540ab34531259,5815ae7a2f0b9fa9556a95fbe85540ab34531259,adding x-requested-by head to CORSHandler
+jprobinson,2016-04-04 21:26:00,https://api.github.com/repos/nytimes/gizmo/git/commits/e71bf7cbb67a8ee627ee5cfbb2be8d5af2929bd4,e71bf7cbb67a8ee627ee5cfbb2be8d5af2929bd4,adding a cleaner way for managing prefixes ending in /
+jprobinson,2016-04-04 21:23:59,https://api.github.com/repos/nytimes/gizmo/git/commits/e66ceefc498309fbd94d00f9cfe3586ac1846de1,e66ceefc498309fbd94d00f9cfe3586ac1846de1,"adding fix for backwards compatibility for prefixes with ""/"""
+jprobinson,2016-04-04 20:56:07,https://api.github.com/repos/nytimes/gizmo/git/commits/f9522525751c62ef8fe44e4fb3ac6d3005927f78,f9522525751c62ef8fe44e4fb3ac6d3005927f78,"Merge pull request #44 from NYTimes/router
+
+Adding a new `server.Router` interface and `config.Server.RouterType` option with 2 implementations"
+jprobinson,2016-04-04 20:49:14,https://api.github.com/repos/nytimes/gizmo/git/commits/44c43d80894ff74dcbd65d960d49352c6087cddb,44c43d80894ff74dcbd65d960d49352c6087cddb,removing unused global variable
+jprobinson,2016-04-04 20:35:00,https://api.github.com/repos/nytimes/gizmo/git/commits/88d34d5f38246acb35954c8879a8ed5fdbe63b5b,88d34d5f38246acb35954c8879a8ed5fdbe63b5b,using shared web.Vars for gorilla and httprouter
+jprobinson,2016-04-03 20:54:43,https://api.github.com/repos/nytimes/gizmo/git/commits/9d4bff63f8779806c3ec5af96c1b5adfdd2bce48,9d4bff63f8779806c3ec5af96c1b5adfdd2bce48,cleaning up FastRouter implementation more
+jprobinson,2016-04-03 20:48:45,https://api.github.com/repos/nytimes/gizmo/git/commits/55dd606d3600dd2c49ea8fbeb1516a3ac9117110,55dd606d3600dd2c49ea8fbeb1516a3ac9117110,fixing FastRouter method variable
+jprobinson,2016-04-03 20:40:59,https://api.github.com/repos/nytimes/gizmo/git/commits/eadc24fb4fe17f0e2c1b40a56e062e4a5c76aae5,eadc24fb4fe17f0e2c1b40a56e062e4a5c76aae5,FastAdapter => HTTPToFasteRoute to match middleware conventions
+jprobinson,2016-04-03 20:17:25,https://api.github.com/repos/nytimes/gizmo/git/commits/06dd68b777ccaccb04aac61111aef0162040a3d8,06dd68b777ccaccb04aac61111aef0162040a3d8,"cleaned up fast router implementation, added benchmarks"
+jprobinson,2016-04-03 16:47:33,https://api.github.com/repos/nytimes/gizmo/git/commits/985b26ce3ab2d5a23878a852f95eb0da264d763f,985b26ce3ab2d5a23878a852f95eb0da264d763f,doc cleanup
+jprobinson,2016-04-03 16:32:44,https://api.github.com/repos/nytimes/gizmo/git/commits/5bcb7665a4c85d67a6058c18f348f2d0a9f3ab60,5bcb7665a4c85d67a6058c18f348f2d0a9f3ab60,initial commit for adding httprouter support
+jprobinson,2016-03-28 15:32:31,https://api.github.com/repos/nytimes/gizmo/git/commits/c13e48c14b9df8f9f542ffc0dc83c653db034ac9,c13e48c14b9df8f9f542ffc0dc83c653db034ac9,"Merge pull request #42 from darrenmcc/cleanup
+
+Misc cleanup"
+darrenmcc,2016-03-28 14:49:20,https://api.github.com/repos/nytimes/gizmo/git/commits/7ee507edd443ccf144dcbcb1b7ed22efaa71b7a5,7ee507edd443ccf144dcbcb1b7ed22efaa71b7a5,Misc cleanup
+jprobinson,2016-03-25 14:42:34,https://api.github.com/repos/nytimes/gizmo/git/commits/0a49a793c4d08ab757b8c834a26eb689355e0ef8,0a49a793c4d08ab757b8c834a26eb689355e0ef8,"Merge pull request #41 from darrenmcc/mysql-port-config
+
+Added support for custom MySQL ports"
+darrenmcc,2016-03-25 14:38:17,https://api.github.com/repos/nytimes/gizmo/git/commits/6dee008ddb4794143a9490eb3f3825f7b9052b5d,6dee008ddb4794143a9490eb3f3825f7b9052b5d,Updated comment
+darrenmcc,2016-03-25 14:37:17,https://api.github.com/repos/nytimes/gizmo/git/commits/113650c80dc6b7852ea95c2a25c91b4d1630c39f,113650c80dc6b7852ea95c2a25c91b4d1630c39f,Renamed DefaultPort to DefaultMySQLPort
+darrenmcc,2016-03-25 14:09:35,https://api.github.com/repos/nytimes/gizmo/git/commits/07acab93c59c18ef418477bc698be59354d430c7,07acab93c59c18ef418477bc698be59354d430c7,Changed type of port from string to int
+darrenmcc,2016-03-25 13:51:06,https://api.github.com/repos/nytimes/gizmo/git/commits/08ef32c562f27219f3bc2154376edd19a1d20457,08ef32c562f27219f3bc2154376edd19a1d20457,Added support for custom MySQL ports
+jprobinson,2016-03-24 20:01:48,https://api.github.com/repos/nytimes/gizmo/git/commits/632f112aa64e33a9a7625ff4414607081b45e0e4,632f112aa64e33a9a7625ff4414607081b45e0e4,"Merge pull request #40 from NYTimes/1.6
+
+Adding Travis CI tests for Go version 1.6"
+jprobinson,2016-03-24 19:56:03,https://api.github.com/repos/nytimes/gizmo/git/commits/579d4e54195882ba90fa1ef8e41a171612a55e44,579d4e54195882ba90fa1ef8e41a171612a55e44,adding tests for 1.6
+jprobinson,2016-03-24 19:35:54,https://api.github.com/repos/nytimes/gizmo/git/commits/11c9c4620901fc6d826fbe7a5f3bd8e0871c6f21,11c9c4620901fc6d826fbe7a5f3bd8e0871c6f21,"Merge pull request #39 from gaplyk/master
+
+Custom metrics registry for gizmo"
+gaplyk,2016-03-24 19:32:43,https://api.github.com/repos/nytimes/gizmo/git/commits/9af49e11f10bb8ae6749e3f985f507f40756957d,9af49e11f10bb8ae6749e3f985f507f40756957d,Allow to set metrics to the config.Server to override default if set
+jprobinson,2016-03-24 15:58:13,https://api.github.com/repos/nytimes/gizmo/git/commits/6eb279824f35a164de5df3ff5d552015bb6d339c,6eb279824f35a164de5df3ff5d552015bb6d339c,"Merge pull request #38 from darrenmcc/swap-mysql-location
+
+Swapped if/else branches"
+darrenmcc,2016-03-24 15:53:55,https://api.github.com/repos/nytimes/gizmo/git/commits/eb1cab75a16f0d1eeefd40bf28f2490b401aee40,eb1cab75a16f0d1eeefd40bf28f2490b401aee40,Wrapped gitcookies.sh line
+darrenmcc,2016-03-24 15:49:29,https://api.github.com/repos/nytimes/gizmo/git/commits/32f83ff8ab4ccd4d60cd351ed4d1cdd04216feb1,32f83ff8ab4ccd4d60cd351ed4d1cdd04216feb1,Added dash to beginning of Travis command
+darrenmcc,2016-03-24 15:46:02,https://api.github.com/repos/nytimes/gizmo/git/commits/c282e3290e03fcdc5391bfefe2734fc8d623d1e1,c282e3290e03fcdc5391bfefe2734fc8d623d1e1,Modified Travis YAML file so remote pull requests pass
+darrenmcc,2016-03-24 15:42:20,https://api.github.com/repos/nytimes/gizmo/git/commits/26ac08007775c90a580545ba0ea63a6cc019b595,26ac08007775c90a580545ba0ea63a6cc019b595,Merge remote-tracking branch 'upstream/master' into swap-mysql-location
+darrenmcc,2016-03-24 14:06:17,https://api.github.com/repos/nytimes/gizmo/git/commits/de88c9244e9a5602d4c768f378ab3065b5392ed6,de88c9244e9a5602d4c768f378ab3065b5392ed6,Swapped branches so non-empty location strings get parsed rather than DefaultLocation in that case.
+jprobinson,2016-03-21 20:06:20,https://api.github.com/repos/nytimes/gizmo/git/commits/5e9125b1abc683f93032a3cdbc9c40d6adb7cdf5,5e9125b1abc683f93032a3cdbc9c40d6adb7cdf5,"Merge pull request #37 from NYTimes/timeout
+
+Adding default Read/WriteTimeouts & configs for overriding"
+jprobinson,2016-03-21 20:01:51,https://api.github.com/repos/nytimes/gizmo/git/commits/43fe027d5a7b99c3b9da4910ebb23ef75ed107cf,43fe027d5a7b99c3b9da4910ebb23ef75ed107cf,udpated gitcookies
+jprobinson,2016-03-21 19:50:47,https://api.github.com/repos/nytimes/gizmo/git/commits/7aeed2b06532f388dadbb4bb0dad354f243af982,7aeed2b06532f388dadbb4bb0dad354f243af982,fixing travis
+jprobinson,2016-03-21 18:31:12,https://api.github.com/repos/nytimes/gizmo/git/commits/c748749d9b1f1664260adf3e85cad8d21bea7e5a,c748749d9b1f1664260adf3e85cad8d21bea7e5a,naming gitcookies properly
+jprobinson,2016-03-21 18:26:13,https://api.github.com/repos/nytimes/gizmo/git/commits/6b9737033678866b26bbc7764bc15d2a40fdf162,6b9737033678866b26bbc7764bc15d2a40fdf162,adding .gitcookie for travis
+jprobinson,2016-03-21 15:52:50,https://api.github.com/repos/nytimes/gizmo/git/commits/33b39b8655800fe47c5349c0c9242c66d6a7362a,33b39b8655800fe47c5349c0c9242c66d6a7362a,cleaning up another comment
+jprobinson,2016-03-21 15:42:58,https://api.github.com/repos/nytimes/gizmo/git/commits/dd4dc857a297b8fb31537bbc76e84508e08371a9,dd4dc857a297b8fb31537bbc76e84508e08371a9,adding default Read/WriteTimeouts to http servers and configs to override them
+jprobinson,2016-03-19 20:08:09,https://api.github.com/repos/nytimes/gizmo/git/commits/970f99b8183602df8fde8ada021400f0be93681f,970f99b8183602df8fde8ada021400f0be93681f,fixing mostpopular schema & rpc access log
+jprobinson,2016-03-19 16:10:28,https://api.github.com/repos/nytimes/gizmo/git/commits/f5b781af819fd4ff6a015260663845976d02be5c,f5b781af819fd4ff6a015260663845976d02be5c,"fixing rpc server, example nyt  & updating rpc example client"
+jprobinson,2016-03-10 19:45:41,https://api.github.com/repos/nytimes/gizmo/git/commits/fbee99c992544612154cf47cbdc2f4266482fcec,fbee99c992544612154cf47cbdc2f4266482fcec,"Merge pull request #34 from gaplyk/master
+
+Fix memory leak in ContextSerivce."
+gaplyk,2016-03-10 19:29:19,https://api.github.com/repos/nytimes/gizmo/git/commits/e871a10a740718edcb2da3450ecab4f4a4d3f40a,e871a10a740718edcb2da3450ecab4f4a4d3f40a,Fix memory leak in ContextSerivce.
+jprobinson,2016-03-10 15:49:59,https://api.github.com/repos/nytimes/gizmo/git/commits/58839d42150dfebccf93f36e42d407dd0fc13842,58839d42150dfebccf93f36e42d407dd0fc13842,fixing elasticache config comment
+jprobinson,2016-03-10 04:13:50,https://api.github.com/repos/nytimes/gizmo/git/commits/7ca5b8ec206274c5b834de6cc0439deed4d8879d,7ca5b8ec206274c5b834de6cc0439deed4d8879d,fixing elasticache envconfig tag
+jprobinson,2016-03-10 00:20:52,https://api.github.com/repos/nytimes/gizmo/git/commits/71f46dc335f396264ee5ac383c4563cb6ae9de1e,71f46dc335f396264ee5ac383c4563cb6ae9de1e,"Merge pull request #33 from NYTimes/elasticache
+
+Adding `config.ElastiCache` struct and helper"
+jprobinson,2016-03-09 23:04:07,https://api.github.com/repos/nytimes/gizmo/git/commits/268284129798d1c626d0288c994a0961f8a2ec26,268284129798d1c626d0288c994a0961f8a2ec26,"fixing docs, adding env loader"
+jprobinson,2016-03-09 22:56:32,https://api.github.com/repos/nytimes/gizmo/git/commits/47b0d72e3debf1ff124dfc351211cd318a6a0c3a,47b0d72e3debf1ff124dfc351211cd318a6a0c3a,added elasticache config struct and helper
+jprobinson,2016-02-29 17:47:53,https://api.github.com/repos/nytimes/gizmo/git/commits/6f36eb863c6c33de9f8c26b414b2afdda2453e3e,6f36eb863c6c33de9f8c26b414b2afdda2453e3e,"Merge pull request #32 from NYTimes/sqsdone
+
+Allowing `SQSMessage.Done()` to be called after `SQSSubscriber.Stop()`"
+jprobinson,2016-02-27 21:16:31,https://api.github.com/repos/nytimes/gizmo/git/commits/9a39bda21204c2a94fbab1453cf7cf541830643c,9a39bda21204c2a94fbab1453cf7cf541830643c,comment cleanup
+jprobinson,2016-02-27 21:07:04,https://api.github.com/repos/nytimes/gizmo/git/commits/7e3936eab27399586e76e1a193ace64d18d41cf1,7e3936eab27399586e76e1a193ace64d18d41cf1,benchmark update
+jprobinson,2016-02-27 21:01:10,https://api.github.com/repos/nytimes/gizmo/git/commits/18e60f904ba9efe057abb2610aaf12b9a2c18918,18e60f904ba9efe057abb2610aaf12b9a2c18918,Merge remote-tracking branch 'origin/master' into sqsdone
+jprobinson,2016-02-27 21:00:26,https://api.github.com/repos/nytimes/gizmo/git/commits/8c6819a04c21c3edcf49dcdc84b57530cdefd2b2,8c6819a04c21c3edcf49dcdc84b57530cdefd2b2,added simple benchmark for sqs
+jprobinson,2016-02-27 20:24:54,https://api.github.com/repos/nytimes/gizmo/git/commits/513476463606d94c8a178c0755f41fd5f7bc218b,513476463606d94c8a178c0755f41fd5f7bc218b,fixing issue #30
+jprobinson,2016-02-23 20:57:54,https://api.github.com/repos/nytimes/gizmo/git/commits/993a2c9fad65ef9b803f5541b042d0f231547ea0,993a2c9fad65ef9b803f5541b042d0f231547ea0,"Merge pull request #31 from NYTimes/dynamodb
+
+adding a DynamoDB struct to the `config` package"
+jprobinson,2016-02-23 20:51:18,https://api.github.com/repos/nytimes/gizmo/git/commits/d2666663b597a0664c3472fd3ed1bd6413e5a097,d2666663b597a0664c3472fd3ed1bd6413e5a097,"fixed docs, cleaned up line"
+jprobinson,2016-02-23 20:38:00,https://api.github.com/repos/nytimes/gizmo/git/commits/9165c65ff3e7358e05d51b2c271ac3731532c234,9165c65ff3e7358e05d51b2c271ac3731532c234,adding a DynamoDB struct to the `config` package
+jprobinson,2016-02-10 22:52:52,https://api.github.com/repos/nytimes/gizmo/git/commits/278ad6adbd9f6a06b17227c74b1da229a92e5dd8,278ad6adbd9f6a06b17227c74b1da229a92e5dd8,"Merge pull request #29 from NYTimes/sqsbase64
+
+Renaming `ConsumeProtobuf` to `ConsumeBase64` and defaulting to 'true'"
+jprobinson,2016-02-10 22:12:27,https://api.github.com/repos/nytimes/gizmo/git/commits/48fedd811f7a836da7334f65556b13a52a62658c,48fedd811f7a836da7334f65556b13a52a62658c,"giving config flag a better name
+
+making it default to true
+
+fixing tests"
+jprobinson,2016-02-04 22:50:46,https://api.github.com/repos/nytimes/gizmo/git/commits/2a003aac271a7559d9cbb598d965766d32aa3c22,2a003aac271a7559d9cbb598d965766d32aa3c22,"Merge pull request #28 from fsouza/server-scoped-metrics
+
+Use server-scoped registry for metrics"
+fsouza,2016-02-04 22:42:23,https://api.github.com/repos/nytimes/gizmo/git/commits/bb4bad3ea6155d1728b720b41e9f7e6100c98f24,bb4bad3ea6155d1728b720b41e9f7e6100c98f24,"Use server-scoped registry for metrics
+
+This avoids having a global registry across different servers, and also
+avoids the need for always calling
+metrics.DefaultRegistry.UnregisterAll() on some tests (sometimes on loop
+iterations, if you have a table-driven test)."
+jprobinson,2016-02-01 16:54:21,https://api.github.com/repos/nytimes/gizmo/git/commits/a1bf982f9f1ca76a8fe4014d4c1821863af5f1ff,a1bf982f9f1ca76a8fe4014d4c1821863af5f1ff,"Merge pull request #27 from marcotroisi/improve-readme
+
+Fixed a couple of typos in Readme"
+marcotroisi,2016-02-01 07:35:26,https://api.github.com/repos/nytimes/gizmo/git/commits/e1d8ac5be82eb05f7ae0587c98443fc0d5b13ee3,e1d8ac5be82eb05f7ae0587c98443fc0d5b13ee3,Improved Readme
+marcotroisi,2016-02-01 07:32:38,https://api.github.com/repos/nytimes/gizmo/git/commits/c5445b31d899ed254215a41f6a4bcec3ee3cbc9b,c5445b31d899ed254215a41f6a4bcec3ee3cbc9b,Fixed a couple of typos in Readme
+jprobinson,2016-01-14 16:11:47,https://api.github.com/repos/nytimes/gizmo/git/commits/b839ebc7b7157ef90ef7707ee6b3e7a78e1b8e1f,b839ebc7b7157ef90ef7707ee6b3e7a78e1b8e1f,adding readme to mysql example
+jprobinson,2016-01-14 04:26:42,https://api.github.com/repos/nytimes/gizmo/git/commits/73988c21ea9c00d686131e5a3319b589082bb2b1,73988c21ea9c00d686131e5a3319b589082bb2b1,updating example docs
+jprobinson,2016-01-14 04:10:25,https://api.github.com/repos/nytimes/gizmo/git/commits/be6b6c8cc066de9de1750cd3614a638aeb3268bc,be6b6c8cc066de9de1750cd3614a638aeb3268bc,using logwithfields in example
+jprobinson,2016-01-13 23:39:23,https://api.github.com/repos/nytimes/gizmo/git/commits/3d3431ed7acb30ff6d30503abd4f2d44a55936a9,3d3431ed7acb30ff6d30503abd4f2d44a55936a9,more docs for the mysql exmaple
+jprobinson,2016-01-13 21:57:42,https://api.github.com/repos/nytimes/gizmo/git/commits/dc57afc275b02b8ff906b630af292b80dcf27bf7,dc57afc275b02b8ff906b630af292b80dcf27bf7,updating example status code
+jprobinson,2016-01-13 21:04:00,https://api.github.com/repos/nytimes/gizmo/git/commits/447e5501c3060b087a46b2ebc52153c740e567bc,447e5501c3060b087a46b2ebc52153c740e567bc,more docs for examples
+jprobinson,2016-01-13 20:58:11,https://api.github.com/repos/nytimes/gizmo/git/commits/1d3c0aa77e9cc265c696c665e7869c28297ef1b0,1d3c0aa77e9cc265c696c665e7869c28297ef1b0,cleaned up tests some
+jprobinson,2016-01-13 20:06:33,https://api.github.com/repos/nytimes/gizmo/git/commits/eed4f98052a169ecb89c379db13a9f913ad324d4,eed4f98052a169ecb89c379db13a9f913ad324d4,updating example docs
+jprobinson,2016-01-13 20:43:14,https://api.github.com/repos/nytimes/gizmo/git/commits/67e5b994180237f836149f9d05eac8d20aa05cae,67e5b994180237f836149f9d05eac8d20aa05cae,"Merge pull request #24 from fsouza/master
+
+web: simplify ParseTruthyFalsy a little further"
+fsouza,2016-01-13 20:38:32,https://api.github.com/repos/nytimes/gizmo/git/commits/54a336aa512a84302415afb7834ff2743e50945e,54a336aa512a84302415afb7834ff2743e50945e,"web: simplify ParseTruthyFalsy a little further
+
+%v is the default formatting flag, so just Sprint is enough."
+jprobinson,2016-01-13 18:09:01,https://api.github.com/repos/nytimes/gizmo/git/commits/75384e8d69884ab623688f68cf984c39cc18ce61,75384e8d69884ab623688f68cf984c39cc18ce61,dropping 1.4.2 testing bc of https://github.com/golang/go/issues/9171
+jprobinson,2016-01-13 17:58:19,https://api.github.com/repos/nytimes/gizmo/git/commits/1edab61b26b77300b35e273440a730754bb6bd04,1edab61b26b77300b35e273440a730754bb6bd04,fixing bad import
+jprobinson,2016-01-13 17:55:37,https://api.github.com/repos/nytimes/gizmo/git/commits/2dfc328acfe32e805c35cbab362ee0f6a0985c02,2dfc328acfe32e805c35cbab362ee0f6a0985c02,renamed saved-items example. added docs
+jprobinson,2016-01-11 21:06:34,https://api.github.com/repos/nytimes/gizmo/git/commits/d6a8667aa4606ca3bb35b60df8916e1abdd28b34,d6a8667aa4606ca3bb35b60df8916e1abdd28b34,fixing example for Go 1.4.2
+jprobinson,2016-01-11 20:38:02,https://api.github.com/repos/nytimes/gizmo/git/commits/68a28e496009b02ea55cf76c5740a63f0ccf8a16,68a28e496009b02ea55cf76c5740a63f0ccf8a16,initial saved-items example commit
+jprobinson,2016-01-07 23:03:18,https://api.github.com/repos/nytimes/gizmo/git/commits/72727ba3e02249518f294f13f8b29a31ece09a34,72727ba3e02249518f294f13f8b29a31ece09a34,adding syntax highlighting to readme
+jprobinson,2016-01-07 18:05:06,https://api.github.com/repos/nytimes/gizmo/git/commits/b04b6038811eb585ac3457379301e18c9389fdfe,b04b6038811eb585ac3457379301e18c9389fdfe,"Merge pull request #23 from gaplyk/master
+
+Include ContextService into README.md"
+gaplyk,2016-01-07 16:35:30,https://api.github.com/repos/nytimes/gizmo/git/commits/c91ec0da2adc44b615ccf9f6b419e4ee633d62fa,c91ec0da2adc44b615ccf9f6b419e4ee633d62fa,Include ContextService to README.md
+jprobinson,2016-01-06 23:32:35,https://api.github.com/repos/nytimes/gizmo/git/commits/9c23a01091aeb163e27811a86597eb1f4ecf2d75,9c23a01091aeb163e27811a86597eb1f4ecf2d75,"Merge pull request #21 from gaplyk/master
+
+ContextService type for SimpleServer"
+jprobinson,2016-01-06 23:20:33,https://api.github.com/repos/nytimes/gizmo/git/commits/f3cdf7e9b0a169cc4a15704996c6b5259247a18a,f3cdf7e9b0a169cc4a15704996c6b5259247a18a,removing errcheck to deal with Go 1.5.*
+gaplyk,2016-01-06 22:40:57,https://api.github.com/repos/nytimes/gizmo/git/commits/bcbe7001352dbabe8ef0ac7091d1117f6fcb6377,bcbe7001352dbabe8ef0ac7091d1117f6fcb6377,Context Service implementation for SimpleServer
+jprobinson,2016-01-06 16:17:46,https://api.github.com/repos/nytimes/gizmo/git/commits/e75a016395aa294516de402f08f1683a5f0b5792,e75a016395aa294516de402f08f1683a5f0b5792,"Merge pull request #22 from peter-edge/parse_truthy_falsy
+
+Simplify ParseTruthyFalsy function"
+pedgeio,2016-01-06 15:48:29,https://api.github.com/repos/nytimes/gizmo/git/commits/e7d235cc1c3bf21e4042ae77b351547c39c103e3,e7d235cc1c3bf21e4042ae77b351547c39c103e3,"simplify ParseTruthyFalsy function
+
+Signed-off-by: Peter Edge <peter.edge@gmail.com>"
+jprobinson,2016-01-04 18:58:12,https://api.github.com/repos/nytimes/gizmo/git/commits/3b11761280e9daac733af4b70af0f970cbb1a598,3b11761280e9daac733af4b70af0f970cbb1a598,"Merge pull request #20 from darrenmcc/empty-string-falsy
+
+modified ParseTruthyFalsy to evaluate empty strings as false"
+darrenmcc,2016-01-04 18:47:05,https://api.github.com/repos/nytimes/gizmo/git/commits/316b6f895bf231d2d7f4e7313d9c416eca729c78,316b6f895bf231d2d7f4e7313d9c416eca729c78,added test
+darrenmcc,2016-01-04 18:44:52,https://api.github.com/repos/nytimes/gizmo/git/commits/bb1d29cc73621eb0873e19c3e1aad5d06dd0c50b,bb1d29cc73621eb0873e19c3e1aad5d06dd0c50b,combined false cases
+darrenmcc,2016-01-04 18:26:06,https://api.github.com/repos/nytimes/gizmo/git/commits/c64c8167a712cff1500834b7c482a23b2a83b4cc,c64c8167a712cff1500834b7c482a23b2a83b4cc,modified ParseTruthyFalsy to evaluate empty strings as false
+jprobinson,2015-12-21 20:05:36,https://api.github.com/repos/nytimes/gizmo/git/commits/ef2ef0a7c9f8d9711ec9d5ee764042d2d7252060,ef2ef0a7c9f8d9711ec9d5ee764042d2d7252060,including pubsub/pubsubtest in lint
+jprobinson,2015-12-21 20:02:38,https://api.github.com/repos/nytimes/gizmo/git/commits/f6d267e413b6c560f8427fc234b817583b961a20,f6d267e413b6c560f8427fc234b817583b961a20,fixing bad doc in pubsub/pubsubtest
+jprobinson,2015-12-21 20:00:31,https://api.github.com/repos/nytimes/gizmo/git/commits/e8e5da59e355caf7c0675170bfc116b4d3866eee,e8e5da59e355caf7c0675170bfc116b4d3866eee,"Merge pull request #12 from buddhamagnet/housekeeping/golint
+
+Pass golint for non-example packages"
+buddhamagnet,2015-12-21 19:50:30,https://api.github.com/repos/nytimes/gizmo/git/commits/5c10e2f793ce77a6cbdd0f9a9cf52e648adb2a53,5c10e2f793ce77a6cbdd0f9a9cf52e648adb2a53,revert final variable name
+buddhamagnet,2015-12-21 19:49:19,https://api.github.com/repos/nytimes/gizmo/git/commits/0fc8370c1f81efe1da531084288aa6a712995101,0fc8370c1f81efe1da531084288aa6a712995101,drop test file added in error
+jprobinson,2015-12-21 19:44:02,https://api.github.com/repos/nytimes/gizmo/git/commits/ecfd68b29a3a3436226721659a0a9a4b995707f2,ecfd68b29a3a3436226721659a0a9a4b995707f2,"Merge pull request #16 from adammck/mixed-case-org-name
+
+nytimes -> NYTimes"
+adammck,2015-12-21 19:27:13,https://api.github.com/repos/nytimes/gizmo/git/commits/ac2ffbbe2346ad7bcf72ba395520eb547ecf508c,ac2ffbbe2346ad7bcf72ba395520eb547ecf508c,Remove now-unnecessary travis.yml hack
+adammck,2015-12-21 19:09:55,https://api.github.com/repos/nytimes/gizmo/git/commits/990e5d93e9d4fa7aa2a40c40dbadb2d8fc30af89,990e5d93e9d4fa7aa2a40c40dbadb2d8fc30af89,"nytimes -> NYTimes
+
+Our organization name is mixed-case. I'd prefer that it wasn't, but it
+is. Cloning (and go-getting) it in lowercase does work, but could result
+in multiple copies of the library existing in the GOPATH."
+jprobinson,2015-12-21 18:55:52,https://api.github.com/repos/nytimes/gizmo/git/commits/c3097526b9a9e1981d24993c9b4cc49f267c9892,c3097526b9a9e1981d24993c9b4cc49f267c9892,"Merge pull request #15 from durple/master
+
+Added a bit more docs for SNSPublisher and also added a validity chec…"
+durple,2015-12-21 18:49:29,https://api.github.com/repos/nytimes/gizmo/git/commits/a2718bed86165192e7c96bcef19fe5a900994edc,a2718bed86165192e7c96bcef19fe5a900994edc,Added a bit more docs for SNSPublisher and also added a validity check for the SNS Region in the pubsub package. Also changed the validity checks for an empty string to check against an empty string instead of the length.
+buddhamagnet,2015-12-21 17:51:27,https://api.github.com/repos/nytimes/gizmo/git/commits/99479abd483e020917f7683f795d3ecbe152157e,99479abd483e020917f7683f795d3ecbe152157e,revert changes to variable names
+jprobinson,2015-12-21 17:34:06,https://api.github.com/repos/nytimes/gizmo/git/commits/fcd5e32e8ecf55cf1a0c6344c982e701982a3970,fcd5e32e8ecf55cf1a0c6344c982e701982a3970,following protobuf conventions
+buddhamagnet,2015-12-21 17:26:13,https://api.github.com/repos/nytimes/gizmo/git/commits/e7f198900ab73c30c3b2193a50b8153046ee4465,e7f198900ab73c30c3b2193a50b8153046ee4465,correct typo
+jprobinson,2015-12-21 17:15:00,https://api.github.com/repos/nytimes/gizmo/git/commits/719690ab5a7611ed59f1f5e2fc88eb2ab29ecc67,719690ab5a7611ed59f1f5e2fc88eb2ab29ecc67,"Merge pull request #14 from scottefein/master
+
+Add CoC Source"
+scottefein,2015-12-21 17:10:09,https://api.github.com/repos/nytimes/gizmo/git/commits/d8d2d09160f5db6d54a1534532e22d5a18520c4b,d8d2d09160f5db6d54a1534532e22d5a18520c4b,Add CoC Source
+scottefein,2015-12-21 16:51:23,https://api.github.com/repos/nytimes/gizmo/git/commits/08a4f538319d355254f8ffdf6c52931d392c9e41,08a4f538319d355254f8ffdf6c52931d392c9e41,"Merge pull request #13 from scottefein/master
+
+Add Code of Conduct."
+scottefein,2015-12-21 16:50:29,https://api.github.com/repos/nytimes/gizmo/git/commits/25e2b3c0c04b5d600fa9cd3ef637e1f6098756e3,25e2b3c0c04b5d600fa9cd3ef637e1f6098756e3,Add like to CoC
+scottefein,2015-12-21 16:47:26,https://api.github.com/repos/nytimes/gizmo/git/commits/81312f969bf19afdf06caee22221acac143f4821,81312f969bf19afdf06caee22221acac143f4821,Rename CODE__OF_CONDUCT.md to CODE_OF_CONDUCT.md
+scottefein,2015-12-21 16:38:43,https://api.github.com/repos/nytimes/gizmo/git/commits/edb017bb683cf3bedb2709a8cf5e4b0a242a8e3f,edb017bb683cf3bedb2709a8cf5e4b0a242a8e3f,Rename CODE__OF_CONDUCT to CODE__OF_CONDUCT.md
+scottefein,2015-12-21 16:38:13,https://api.github.com/repos/nytimes/gizmo/git/commits/d2dba558b9e1bc6b3729a4e298760320c6076a75,d2dba558b9e1bc6b3729a4e298760320c6076a75,Add Code of Conduct
+buddhamagnet,2015-12-21 16:12:16,https://api.github.com/repos/nytimes/gizmo/git/commits/db833d0b50ee42b3f1742e1c2ffc185fc5941733,db833d0b50ee42b3f1742e1c2ffc185fc5941733,pass golint for non-example packages
+jprobinson,2015-12-19 16:40:11,https://api.github.com/repos/nytimes/gizmo/git/commits/1747e0c69755e6eb66cbe3849a4041649b973177,1747e0c69755e6eb66cbe3849a4041649b973177,"Merge pull request #8 from weilandia/readme_edit
+
+Fix typos in readme"
+jprobinson,2015-12-19 16:38:04,https://api.github.com/repos/nytimes/gizmo/git/commits/2666ed1ebb9dd204144fa64cd9455ecc00fecc5e,2666ed1ebb9dd204144fa64cd9455ecc00fecc5e,removing SIGKILL hooks
+jprobinson,2015-12-19 16:34:26,https://api.github.com/repos/nytimes/gizmo/git/commits/7ad119ef88b55e2fe8a68d69956bc54937c94602,7ad119ef88b55e2fe8a68d69956bc54937c94602,better error handling in kafka
+jprobinson,2015-12-19 16:31:23,https://api.github.com/repos/nytimes/gizmo/git/commits/c8d633cf094da250eebfa1bf5459c9d6f488b13d,c8d633cf094da250eebfa1bf5459c9d6f488b13d,better error checking in nyt client example
+jprobinson,2015-12-19 16:19:05,https://api.github.com/repos/nytimes/gizmo/git/commits/d286ff37a626df9a414b7e9f2f3f5b4af29dea7a,d286ff37a626df9a414b7e9f2f3f5b4af29dea7a,fixing deferred error
+jprobinson,2015-12-19 16:13:30,https://api.github.com/repos/nytimes/gizmo/git/commits/7f07bc91d2b9c1827fc4541018ee65bd7c180813,7f07bc91d2b9c1827fc4541018ee65bd7c180813,fixing err in sqs-sub example
+weilandia,2015-12-19 07:33:08,https://api.github.com/repos/nytimes/gizmo/git/commits/94836c06759c38ce543b64efacc994738152b1f2,94836c06759c38ce543b64efacc994738152b1f2,Fix typos in readme
+jprobinson,2015-12-19 01:00:23,https://api.github.com/repos/nytimes/gizmo/git/commits/be0627f252d5a3def5cccfad5d51af0e3f0f58ec,be0627f252d5a3def5cccfad5d51af0e3f0f58ec,typo
+jprobinson,2015-12-19 00:39:05,https://api.github.com/repos/nytimes/gizmo/git/commits/6f15bbcfd14fa4acb3aa8e39e266a21d53e4bd44,6f15bbcfd14fa4acb3aa8e39e266a21d53e4bd44,added kafka-websocket example
+jprobinson,2015-12-18 19:31:12,https://api.github.com/repos/nytimes/gizmo/git/commits/1a80062ad3c9c494892dcad6436fb3fa0eea7835,1a80062ad3c9c494892dcad6436fb3fa0eea7835,removing code climate
+jprobinson,2015-12-18 19:25:00,https://api.github.com/repos/nytimes/gizmo/git/commits/797998dc9ae6d09df7a91ff22b25ad0d3970827d,797998dc9ae6d09df7a91ff22b25ad0d3970827d,badge cleanup
+jprobinson,2015-12-18 19:19:46,https://api.github.com/repos/nytimes/gizmo/git/commits/6951cfba9ba5f01c73ce0705b1eeb099614a3535,6951cfba9ba5f01c73ce0705b1eeb099614a3535,fixing travis
+jprobinson,2015-12-18 19:14:15,https://api.github.com/repos/nytimes/gizmo/git/commits/bd3e2a2714ffc063f8ebd403482ca6e19de914e3,bd3e2a2714ffc063f8ebd403482ca6e19de914e3,"fixing coveralls, travis"
+jprobinson,2015-12-18 19:05:08,https://api.github.com/repos/nytimes/gizmo/git/commits/d25475d7f993b55b4be3493d416142dcea18a08a,d25475d7f993b55b4be3493d416142dcea18a08a,removing missing testrace
+jprobinson,2015-12-18 19:03:55,https://api.github.com/repos/nytimes/gizmo/git/commits/b82584424f6855357eb4c1516e5855ae7ece99a4,b82584424f6855357eb4c1516e5855ae7ece99a4,adding coverage reports
+scottefein,2015-12-18 18:01:00,https://api.github.com/repos/nytimes/gizmo/git/commits/f42392e9b396ca59c47c48bcd02c7b1d3a4a2004,f42392e9b396ca59c47c48bcd02c7b1d3a4a2004,Adding code climate test + score badges
+jprobinson,2015-12-18 17:55:40,https://api.github.com/repos/nytimes/gizmo/git/commits/296229a1625cfbed9355a765469afa6e615fd5eb,296229a1625cfbed9355a765469afa6e615fd5eb,fixing import
+jprobinson,2015-12-18 17:54:03,https://api.github.com/repos/nytimes/gizmo/git/commits/d697e6c59fd9f107f8eb936189d461444757080d,d697e6c59fd9f107f8eb936189d461444757080d,fixing import
+scottefein,2015-12-18 17:53:09,https://api.github.com/repos/nytimes/gizmo/git/commits/e71cc7920b1d227fb2e985a354a5e05ed8757b5c,e71cc7920b1d227fb2e985a354a5e05ed8757b5c,Add Coveralls Badge to README
+jprobinson,2015-12-18 17:35:19,https://api.github.com/repos/nytimes/gizmo/git/commits/f832e90d8dbb03b449c363b6980c48a335caff22,f832e90d8dbb03b449c363b6980c48a335caff22,added .gitignore
+jprobinson,2015-12-18 17:34:42,https://api.github.com/repos/nytimes/gizmo/git/commits/90f140e88c316f14a0bcd6b989762553d5b9060b,90f140e88c316f14a0bcd6b989762553d5b9060b,"added errcheck to Makefile, checked previously unchecked errors"
+jprobinson,2015-12-18 16:31:58,https://api.github.com/repos/nytimes/gizmo/git/commits/bd884d48cf5c7c5e2c8708b8789e016e81212e64,bd884d48cf5c7c5e2c8708b8789e016e81212e64,"Merge pull request #7 from peter-edge/makefile
+
+Add a Makefile, and fix golint and go vet errors"
+pedgeio,2015-12-18 10:53:41,https://api.github.com/repos/nytimes/gizmo/git/commits/e63ea0149de47ea193fd1acb0e019c90921c8f4f,e63ea0149de47ea193fd1acb0e019c90921c8f4f,"remove version from .PHONY, version is not in this Makefile
+
+Signed-off-by: Peter Edge <peter.edge@gmail.com>"
+pedgeio,2015-12-18 10:45:19,https://api.github.com/repos/nytimes/gizmo/git/commits/f78cfee9eec2bee79b6b9de10dff886965542ff8,f78cfee9eec2bee79b6b9de10dff886965542ff8,"update CONTRIBUTING.md for Makefile
+
+Signed-off-by: Peter Edge <peter.edge@gmail.com>"
+pedgeio,2015-12-18 10:44:15,https://api.github.com/repos/nytimes/gizmo/git/commits/9eeb114d1ccc673c3387af01c353485af0f5c24c,9eeb114d1ccc673c3387af01c353485af0f5c24c,"fix golint errors and add golint ignores
+
+Signed-off-by: Peter Edge <peter.edge@gmail.com>"
+pedgeio,2015-12-18 10:35:58,https://api.github.com/repos/nytimes/gizmo/git/commits/0a835d0b87d5fb6601498c11824e0be9a572a2b4,0a835d0b87d5fb6601498c11824e0be9a572a2b4,"add Makefile for basic development commands
+
+Signed-off-by: Peter Edge <peter.edge@gmail.com>"
+scottefein,2015-12-17 22:27:45,https://api.github.com/repos/nytimes/gizmo/git/commits/225374cc937d18f79a6fbbd6e7d0f46ba7f56e81,225374cc937d18f79a6fbbd6e7d0f46ba7f56e81,"Merge pull request #6 from connyay/markdown-go
+
+add go to fenced code blocks"
+connyay,2015-12-17 22:17:08,https://api.github.com/repos/nytimes/gizmo/git/commits/b938c5444f985b9bbb0f7e0583a38c01c2e985b8,b938c5444f985b9bbb0f7e0583a38c01c2e985b8,add go to fenced code blocks
+jprobinson,2015-12-17 15:58:11,https://api.github.com/repos/nytimes/gizmo/git/commits/35feeb067da77b429586b176ce8a3d78bea0d56b,35feeb067da77b429586b176ce8a3d78bea0d56b,removing go tip from ci
+jprobinson,2015-12-17 15:54:38,https://api.github.com/repos/nytimes/gizmo/git/commits/bfd28109bf73133925f18969e867bef73af1f8f1,bfd28109bf73133925f18969e867bef73af1f8f1,format
+jprobinson,2015-12-17 15:52:51,https://api.github.com/repos/nytimes/gizmo/git/commits/b7f7a02056c82908f16e1724ea502c9f795a1c87,b7f7a02056c82908f16e1724ea502c9f795a1c87,travis-ci badge
+jprobinson,2015-12-17 15:48:53,https://api.github.com/repos/nytimes/gizmo/git/commits/968e70d6eb0f019f98f92ee2fc2fe13127e0bd33,968e70d6eb0f019f98f92ee2fc2fe13127e0bd33,Update README.md
+jprobinson,2015-12-17 02:08:36,https://api.github.com/repos/nytimes/gizmo/git/commits/e8821ef0eafbacce57393c1c22d1bb4f2750f6cd,e8821ef0eafbacce57393c1c22d1bb4f2750f6cd,fixing badge
+jprobinson,2015-12-17 02:08:06,https://api.github.com/repos/nytimes/gizmo/git/commits/82b5ee336a163f196ac19089c12cb76f10356a74,82b5ee336a163f196ac19089c12cb76f10356a74,adding travis badge
+jprobinson,2015-12-17 02:07:23,https://api.github.com/repos/nytimes/gizmo/git/commits/43aeed180d1273593a9583b2d06aef93a3f46db0,43aeed180d1273593a9583b2d06aef93a3f46db0,"fixing example test, adding travis ci"
+jprobinson,2015-12-16 22:50:03,https://api.github.com/repos/nytimes/gizmo/git/commits/2a375bf91115f69d5d2c8b94e0120a5ca9bec6e0,2a375bf91115f69d5d2c8b94e0120a5ca9bec6e0,"Merge pull request #4 from darrenmcc/doc-cleanup
+
+Documentation cleanup"
+jprobinson,2015-12-16 22:49:50,https://api.github.com/repos/nytimes/gizmo/git/commits/173aea51dff76ee7ebb35e28ab81dc468f038771,173aea51dff76ee7ebb35e28ab81dc468f038771,"Merge pull request #5 from darrenmcc/fix-contributing-typos
+
+Fixed typos in contributing readme."
+darrenmcc,2015-12-16 21:12:33,https://api.github.com/repos/nytimes/gizmo/git/commits/e7fd4b0d3e2ed40f38f47c26c8efdf5c0e4b4591,e7fd4b0d3e2ed40f38f47c26c8efdf5c0e4b4591,Fixed typos in contributing readme.
+darrenmcc,2015-12-16 20:57:21,https://api.github.com/repos/nytimes/gizmo/git/commits/4c0149c31d3e60c913497b17a890898276e6b015,4c0149c31d3e60c913497b17a890898276e6b015,Documentation cleanup
+jprobinson,2015-12-16 17:44:22,https://api.github.com/repos/nytimes/gizmo/git/commits/e677200be6bca07bb44e21c133c1822514bbcaa9,e677200be6bca07bb44e21c133c1822514bbcaa9,added godoc badge
+jprobinson,2015-12-16 17:38:20,https://api.github.com/repos/nytimes/gizmo/git/commits/de29516c8f9417ac3e25362902923ec1f528028c,de29516c8f9417ac3e25362902923ec1f528028c,added contrib links
+jprobinson,2015-12-16 17:35:57,https://api.github.com/repos/nytimes/gizmo/git/commits/4ebd2806d86185a90727ad7276fdd5901d83e66f,4ebd2806d86185a90727ad7276fdd5901d83e66f,"Merge pull request #2 from darrenmcc/typo
+
+More cleanup"
+jprobinson,2015-12-16 17:35:31,https://api.github.com/repos/nytimes/gizmo/git/commits/89bb7c3d65bd416c588a71c170a7be6b7c4301db,89bb7c3d65bd416c588a71c170a7be6b7c4301db,removing session message
+jprobinson,2015-12-16 17:32:46,https://api.github.com/repos/nytimes/gizmo/git/commits/e69d0f284e433a493a665f3d9caed2bef2753e77,e69d0f284e433a493a665f3d9caed2bef2753e77,pulled from upstrea
+jprobinson,2015-12-16 17:29:17,https://api.github.com/repos/nytimes/gizmo/git/commits/936b60534e76ee8a38e33dc4f9ef3cf1c8e104fa,936b60534e76ee8a38e33dc4f9ef3cf1c8e104fa,added contributing
+jprobinson,2015-12-16 17:14:13,https://api.github.com/repos/nytimes/gizmo/git/commits/eb5af82260f55840600c2ba6ba4a52fee1bc1e26,eb5af82260f55840600c2ba6ba4a52fee1bc1e26,removing crypter & session message
+darrenmcc,2015-12-16 17:09:26,https://api.github.com/repos/nytimes/gizmo/git/commits/a29480e5d57262a50bfbabd06cef17d2a44ef65a,a29480e5d57262a50bfbabd06cef17d2a44ef65a,added another period
+darrenmcc,2015-12-16 17:08:13,https://api.github.com/repos/nytimes/gizmo/git/commits/37ec0a70ebd0aabe438ebf5558ad76cc1470526e,37ec0a70ebd0aabe438ebf5558ad76cc1470526e,removed more changes to .pb file
+darrenmcc,2015-12-16 17:07:50,https://api.github.com/repos/nytimes/gizmo/git/commits/ca7ffcce60e4be36726c83f501dbc1f5d0dd9e1a,ca7ffcce60e4be36726c83f501dbc1f5d0dd9e1a,removed change to .pb file
+darrenmcc,2015-12-16 16:49:24,https://api.github.com/repos/nytimes/gizmo/git/commits/63d16bef58a2c4b7e3bff6d3f9de85327014eea7,63d16bef58a2c4b7e3bff6d3f9de85327014eea7,more cleanup
+jprobinson,2015-12-16 05:03:31,https://api.github.com/repos/nytimes/gizmo/git/commits/df09af5f1216d4d55131258ef251e44c0691eb01,df09af5f1216d4d55131258ef251e44c0691eb01,spellcheck
+darrenmcc,2015-12-15 23:36:55,https://api.github.com/repos/nytimes/gizmo/git/commits/18a8fcf87d6fa7ca47b4b50b66ad70327c3894e6,18a8fcf87d6fa7ca47b4b50b66ad70327c3894e6,fixed more typos
+jprobinson,2015-12-15 23:28:32,https://api.github.com/repos/nytimes/gizmo/git/commits/8ff4005de9fda97117c9e134c04c3923f6d13f55,8ff4005de9fda97117c9e134c04c3923f6d13f55,"Merge pull request #1 from darrenmcc/cleanup
+
+Comments cleanup"
+darrenmcc,2015-12-15 23:23:36,https://api.github.com/repos/nytimes/gizmo/git/commits/ba6e918729a29b96083002aa1b63938ccf813781,ba6e918729a29b96083002aa1b63938ccf813781,finalized cleanup
+darrenmcc,2015-12-15 23:07:59,https://api.github.com/repos/nytimes/gizmo/git/commits/f146dc0f9ac32092d1f6050c0fff4cf73864fac4,f146dc0f9ac32092d1f6050c0fff4cf73864fac4,initial cleanup commit
+jprobinson,2015-12-15 20:28:59,https://api.github.com/repos/nytimes/gizmo/git/commits/4432c3c714ce225e0d8cb4fce642d2ed7297155e,4432c3c714ce225e0d8cb4fce642d2ed7297155e,protobuf update
+jprobinson,2015-12-15 20:02:48,https://api.github.com/repos/nytimes/gizmo/git/commits/261a124353975b1abb1ef2ea6912afd034f75a05,261a124353975b1abb1ef2ea6912afd034f75a05,fixing logrotate import
+jprobinson,2015-12-15 19:58:07,https://api.github.com/repos/nytimes/gizmo/git/commits/f084db01343c1743e952ab992dcaeabed8623546,f084db01343c1743e952ab992dcaeabed8623546,fixing logo
+jprobinson,2015-12-15 19:57:04,https://api.github.com/repos/nytimes/gizmo/git/commits/026ae64b20f9b77fb404f64dcdb3d3d992ddd019,026ae64b20f9b77fb404f64dcdb3d3d992ddd019,initial public commit

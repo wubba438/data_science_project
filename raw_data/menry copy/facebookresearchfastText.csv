@@ -1,0 +1,2474 @@
+fastText,Library for fast text representation and classification.
+username,timestamp,url,sha,message
+ajoulin,2019-09-06 14:45:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/252c8a577e6ddeb76749ef5a5afd03ae3f2a327d,252c8a577e6ddeb76749ef5a5afd03ae3f2a327d,"Add unsupervised multilingual alignement
+
+Summary: Add a script for unsupervised multilingual alignment.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17180273
+
+fbshipit-source-id: edbb139ff9474ef325a43bb16e9c0cf1a76e0900"
+Celebio,2019-08-30 09:35:05,https://api.github.com/repos/facebookresearch/fastText/git/commits/cc325e5db310b4cac91e23384b8fd9ebc1bf0100,cc325e5db310b4cac91e23384b8fd9ebc1bf0100,"unsupervised tutorial documentation with python tabs
+
+Summary: Docusaurus now allows multiple language tabs. This commit adds a python tab for unsupervised learning examples.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17093774
+
+fbshipit-source-id: ee443739b1d69804e0c6edac01a7454464ce8edd"
+Celebio,2019-08-30 08:50:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/8acd5d360c7954aba52824885e8cdb46855ab1a4,8acd5d360c7954aba52824885e8cdb46855ab1a4,"python bindings for nearest neighbors and analogies
+
+Summary: FastText in C++ exposes the functions getNN and getAnalogies, but those were not available in python. This commit brings them in the python side as well.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17093787
+
+fbshipit-source-id: 369c0f3921291ddf73db1b0ddb1280649a44ba6d"
+zpao,2019-08-30 06:19:10,https://api.github.com/repos/facebookresearch/fastText/git/commits/818d8c56694567f18183598869a6eb585e99ab2d,818d8c56694567f18183598869a6eb585e99ab2d,"Adopt Contributor Covenant
+
+Summary:
+In order to foster healthy open source communities, we're adopting the
+[Contributor Covenant](https://www.contributor-covenant.org/). It has been
+built by open source community members and represents a shared understanding of
+what is expected from a healthy community.
+
+Reviewed By: josephsavona, danobi, rdzhabarov
+
+Differential Revision: D17104640
+
+fbshipit-source-id: d210000de686c5f0d97d602b50472d5869bc6a49"
+Celebio,2019-08-28 13:06:05,https://api.github.com/repos/facebookresearch/fastText/git/commits/38350a57f6028a053d61b55c845071fdac214d9e,38350a57f6028a053d61b55c845071fdac214d9e,"supervised tutorial and autotune documentation with python tabs
+
+Summary: Docusaurus now allows multiple language tabs. This commit adds a python tab for supervised and autotune examples. It also includes a snippet that activates the same language tab for the whole page.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17091834
+
+fbshipit-source-id: 6e6f76aa9408baa08fcd6c0bfd011de2cb477dfb"
+Celebio,2019-08-26 18:49:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/4aca28c60569e5596b21bc054d01fdfe64a1cc37,4aca28c60569e5596b21bc054d01fdfe64a1cc37,"debian-jessie-python => debian-stretch-python
+
+Summary:
+debian:jessie does not include an automatic way to install python3.5, which is needed by the latest version of numpy.
+https://circleci.com/gh/facebookresearch/fastText/1522
+
+adding debian:stretch test instead.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17053979
+
+fbshipit-source-id: 685a21f4996af72600b3b7444f8895a6a37cd93b"
+Celebio,2019-08-26 16:20:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/7df288a2ce02aec933477a3e0bc03091bc2b7990,7df288a2ce02aec933477a3e0bc03091bc2b7990,"update debian:jessie python test to debian:stretch
+
+Summary:
+debian:jessie does not include an automatic way to install python3.5, which is needed by the latest version of numpy.
+https://circleci.com/gh/facebookresearch/fastText/1522
+
+adding debian:stretch test instead.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17051945
+
+fbshipit-source-id: 971e4d75008fcd5aa71c942b33c5a81f131db035"
+Celebio,2019-08-26 16:20:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/72cb86a2627fd5c038ecab35e8289b08a40aedf4,72cb86a2627fd5c038ecab35e8289b08a40aedf4,"fix debian:jessie compilation issue
+
+Summary: missing `#include <stdexcept>` in densematrix.h causes compilation issues on debian:jessie. This commit fixes this issue.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17051629
+
+fbshipit-source-id: 23a6cb07d49d69cebba3f9c7c5a21c23592b15aa"
+Celebio,2019-08-26 13:50:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/d0bf803d4cdc4c763d73c907f21b2fab0ede355e,d0bf803d4cdc4c763d73c907f21b2fab0ede355e,"autotune
+
+Summary: This commit implements automatic hyperparameters optimization (autotune). When `-autotune-validation` argument is provided, fastText will search the hyperparameters that gives the best f1-score on this validation file.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D17050215
+
+fbshipit-source-id: 13333181ee1162147f94085cac4ebabdd9b80d67"
+Celebio,2019-08-26 13:50:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/51699cca1a612be4697429add7faa679ac6a3745,51699cca1a612be4697429add7faa679ac6a3745,"Throw nice exception when the loss is diverging
+
+Summary: Multi-threaded training makes it difficult for some platforms to return whole exception information (`terminate called recursively`), and the message ""encountered NaN"" which is often due to diverging loss is misleading. When the exception is thrown, python binary doesn't crash, but returns an exception as well.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14912895
+
+fbshipit-source-id: 3971c83810d5cb9f91ca7fe5d464451dabda9601"
+Celebio,2019-08-26 13:50:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/c3d145773aee1687f9c0b45b5e6b734a8e1bd5c5,c3d145773aee1687f9c0b45b5e6b734a8e1bd5c5,"Use c++11 flag in build files
+
+Summary: Reflecting in build files that We are using c++11 features.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D15012079
+
+fbshipit-source-id: bd07b135cdbb99802459a372831f08f3f40c20d4"
+Celebio,2019-08-26 13:50:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/ad95d9bf5c4b259c09d0f477028570e22bb21138,ad95d9bf5c4b259c09d0f477028570e22bb21138,"Remove deprecated FastText functions
+
+Summary: This commit removes functions in FastText class that were marked as deprecated.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D16089965
+
+fbshipit-source-id: 25f0a1d260ec10fc6c03160eab85923ecfb883eb"
+lukeandshuo,2019-07-16 08:50:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/40a77442a756ab160ae3465b26322f6e480405d9,40a77442a756ab160ae3465b26322f6e480405d9,"fixed the python memory leak (#844)
+
+Summary:
+related to the issue https://github.com/facebookresearch/fastText/issues/841
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/844
+
+Test Plan:
+Detect leaks with valgrind and python compiled in debug mode; with docker and ubuntu 16.04;
+
+`docker run -it -v ~/development/otherstuff/dockerlinux/:/home/  ubuntu:16.04 bash`
+```
+apt update
+apt upgrade
+apt-get install g++ valgrind -y
+apt-get install libssl-dev zlib1g-dev   # needed by ssl and zlib enabled python (in order to run get-pip.py and get pip)
+```
+
+Download python's source code.
+Do these modifications :
+ - Uncomment Py_USING_MEMORY_DEBUGGER in Objects/obmalloc.c
+ - Uncomment the lines in Misc/valgrind-python.supp that suppress the warnings for PyObject_Free and PyObject_Realloc
+ - Uncomment ssl part in Modules/Setup.dist:
+```
+SSL=/usr
+_ssl _ssl.c \
+        -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+        -L$(SSL)/lib -lssl -lcrypto
+
+```
+
+now compile Python with
+```
+./configure --with-pydebug --without-pymalloc --with-valgrind --prefix /opt/debugpython/ OPT=-g
+make install
+```
+
+get `get-pip.py` from https://bootstrap.pypa.io/get-pip.py
+run `/opt/debugpython/bin/python get-pip.py`
+
+Now you have custom Python with pip.
+Install fasttext.
+
+Run valgrind on this custom built Python :
+```
+valgrind --tool=memcheck --leak-check=full --suppressions=/root/Python-2.7.8/Misc/valgrind-python.supp /opt/debugpython/bin/python memleak.py
+```
+
+With memleak.py :
+```
+#!/usr/bin/env python
+
+import fasttext
+
+ft = fasttext.load_model(""dbpedia.bin"")
+
+def leaker():
+    for i in range(1000000):
+        _ = ft.predict(""hello, world!"")
+
+if __name__ == '__main__':
+    leaker()
+```
+
+ ------------
+
+References:
+ - https://stackoverflow.com/questions/5937337/building-python-with-ssl-support-in-non-standard-location
+ - https://www.1stbyte.com/2005/06/26/configure-and-compile-python-with-zlib/
+ - https://askubuntu.com/questions/597906/how-to-install-pip-and-a-python-package-for-self-installed-python
+ - https://stackoverflow.com/questions/20112989/how-to-use-valgrind-with-python
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D16161994
+
+Pulled By: Celebio
+
+fbshipit-source-id: 31995d810a15a64139670abeff48f0e8e1ad5968"
+Celebio,2019-07-04 11:43:48,https://api.github.com/repos/facebookresearch/fastText/git/commits/b5b7d307274ce00ef52198fbc692ed3bd11d9856,b5b7d307274ce00ef52198fbc692ed3bd11d9856,"release 0.9.1
+
+Summary: Documentation update with the release 0.9.1
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D16120112
+
+fbshipit-source-id: 55373d02b202bd35368a8307a1c904bcae3d739a"
+Celebio,2019-06-27 06:27:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/979d8a9ac99c731d653843890c2364ade0f7d9d3,979d8a9ac99c731d653843890c2364ade0f7d9d3,"fix README open with encoding issue in python 2
+
+Summary: following pull request #834, opening the README file in python 2 fails due to a different API of the `open` function. Using `io.open` fixes the issue.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D16019456
+
+fbshipit-source-id: 107ff1017508b282524f804bd086e712715a6be3"
+Celebio,2019-06-26 19:25:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/624b7097abc8c209903d4ad8b8c12841d88bd38a,624b7097abc8c209903d4ad8b8c12841d88bd38a,"fix performance issue
+
+Summary:
+This commit fixes the issue https://github.com/facebookresearch/fastText/issues/826
+The call to base class' `size` function from `DenseMatrix` prevented the loop to be unrolled which caused a big performance drop.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D16007455
+
+fbshipit-source-id: 91c5b272abd2e9f52c10e36908ff657798f73915"
+Celebio,2019-06-25 15:59:36,https://api.github.com/repos/facebookresearch/fastText/git/commits/caec5be09d87c775d209782183aac4721eb4306d,caec5be09d87c775d209782183aac4721eb4306d,"New release of python module
+
+Summary:
+This commit modifies the python module's name from `fastText` to `fasttext`. It also defines top-level functions from the unofficial api : `cbow`, `skipgram`, `supervised`, and displays an error message to proceed with the migration as described at https://fasttext.cc/blog/2019/06/25/blog-post.html
+
+It also includes minor modifications to FastText model object returned by train functions to behave like the unofficial api's `WordVectorModel` and `SupervisedModel` classes.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D15770169
+
+fbshipit-source-id: b13def267afd94b9a0f9fcf53a712a719a094f01"
+davidalbertonogueira,2019-04-29 08:09:30,https://api.github.com/repos/facebookresearch/fastText/git/commits/6dd2e11b5fe82854c4529d2a58d699b2cb182b1b,6dd2e11b5fe82854c4529d2a58d699b2cb182b1b,"Fix Aligned word vectors URL
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/777
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14996906
+
+Pulled By: Celebio
+
+fbshipit-source-id: 8e23ced2b33d23955fa4381e7fe80e94146569a3"
+Celebio,2019-04-16 15:22:39,https://api.github.com/repos/facebookresearch/fastText/git/commits/157e80e5775e57f9c2e0e20ac8ab6721d4771169,157e80e5775e57f9c2e0e20ac8ab6721d4771169,"Explicitly return NaN when there is no prediction or gold
+
+Summary: When the `Meter` class didn't see any prediction (resp. gold) of a specific label, `precision` (resp. `recall`) function's behaviour was undefined. This commit makes it explicitely return a NaN.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14912163
+
+fbshipit-source-id: fa6a8b48b931df7074f4d20bc2cf9beed99a008c"
+Celebio,2019-04-16 15:22:39,https://api.github.com/repos/facebookresearch/fastText/git/commits/71c0ee5a8b91df21585aec8cb18991d696414fd5,71c0ee5a8b91df21585aec8cb18991d696414fd5,"fix UnicodeEncodeError when retrieving words from utf-8 encoded file
+
+Summary:
+This commit fixes the issue https://github.com/facebookresearch/fastText/issues/746
+pybind11's `py::str` constructor [has a different behaviour](https://github.com/pybind/pybind11/blob/ccbe68b084806dece5863437a7dc93de20bd9b15/include/pybind11/pytypes.h#L930) between Python 2 and Python 3. When casting from C++ string to py::str, we should decode as utf-8, but we should also encode it back in order to construct `py::str` correctly.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14783627
+
+fbshipit-source-id: 8a7d4b16f42d6d892203cf3d72f144427008dd7f"
+Celebio,2019-04-16 15:15:52,https://api.github.com/repos/facebookresearch/fastText/git/commits/4cd9db05d66eff5c8689f075558138da1f47ace0,4cd9db05d66eff5c8689f075558138da1f47ace0,"website : updating the tutorial, python readme and change of `Download` title to `Resources`
+
+Summary: The supervised tutorial is updated with the url of version 0.2, a small hierarchical softmax explanation and multi-label classification handling. A few typos and trailing spaces were fixed. The diff also specifies some titles on the installation guide of the python bindings, and it changes the header title from ""Download"" to ""Resources"".
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13558140
+
+fbshipit-source-id: 078fe847d75c21341068a3c43e47aa0dfb33b6f4"
+EdouardGrave,2019-04-04 22:05:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/294daf1c447d1091b5dedc7d669606f5d4527e9c,294daf1c447d1091b5dedc7d669606f5d4527e9c,"Fix broken URLs
+
+Summary: Fix some broken URLs in fastText documentation
+
+Reviewed By: ajoulin
+
+Differential Revision: D14785955
+
+fbshipit-source-id: 34f5c6ffc852471887d99cfa9a9f22f5afca0a1d"
+Celebio,2019-04-04 15:10:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/ebf807422ace063cf27cf841a32e951f5a5b669d,ebf807422ace063cf27cf841a32e951f5a5b669d,"set environment variable MACOSX_DEPLOYMENT_TARGET to be consistent with `-stdlib=libc++`
+
+Summary: On OS X, it shouldn't be necessary to manually set the variable `MACOSX_DEPLOYMENT_TARGET` when installing python bindings.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14726033
+
+fbshipit-source-id: 6583650c03f1a2c5da6922d70ca8eb90df89e5ef"
+Celebio,2019-04-01 16:33:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/36b147d6f071085619dbdd95a5e4e9cd2b0518e3,36b147d6f071085619dbdd95a5e4e9cd2b0518e3,"Update circle-ci debian releases and python images
+
+Summary: Wheezy is not supported any more : https://www.debian.org/releases/
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14706400
+
+fbshipit-source-id: 14dbb6b48b963f7802d82b64c64b14ca5f02eb0c"
+facebook-github-bot,2019-03-28 20:36:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/4ad49e97ad4f364fc5eb424df0591ccf042f7c61,4ad49e97ad4f364fc5eb424df0591ccf042f7c61,"Adding Code of Conduct file (#769)
+
+Summary:
+This is pull request was created automatically because we noticed your project was missing a Code of Conduct file.
+
+Code of Conduct files facilitate respectful and constructive communities by establishing expected behaviors for project contributors.
+
+This PR was crafted with love by Facebook's Open Source Team.
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/769
+
+Differential Revision: D14672570
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 16aaffe4dd5e7b6db362cf75ca7405d54b041594"
+piotr-bojanowski,2019-03-22 13:15:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/162bae385cd30774634f92c1a841195c2cad9d26,162bae385cd30774634f92c1a841195c2cad9d26,"Corrected typo in analogy dataset URL.
+
+Summary: There was a typo in the URL for word analogy datasets.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14576932
+
+fbshipit-source-id: 935cb09cfb9fc39750e96f2d3642e46ddce8a4ee"
+EdouardGrave,2019-03-19 21:31:48,https://api.github.com/repos/facebookresearch/fastText/git/commits/29c728ff4f05740be34a580ced3a065f57f8d10b,29c728ff4f05740be34a580ced3a065f57f8d10b,"Adding script for unsupervised alignment
+
+Summary: Adding script for unsupervised alignment
+
+Reviewed By: ajoulin
+
+Differential Revision: D10359563
+
+fbshipit-source-id: 39e50425bd809294a70530ee8b8b0a2739e8ef49"
+Celebio,2019-02-25 17:00:25,https://api.github.com/repos/facebookresearch/fastText/git/commits/51e6738d734286251b6ad02e4fdbbcfe5b679382,51e6738d734286251b6ad02e4fdbbcfe5b679382,"fix compilation issues on Wheezy
+
+Summary:
+see errors here :
+
+ - https://circleci.com/gh/facebookresearch/fastText/1241?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link
+ - https://circleci.com/gh/facebookresearch/fastText/1242?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14185058
+
+fbshipit-source-id: 9d8e608344e0e7cab368fccf86371fadf6e16b09"
+piotr-bojanowski,2019-02-22 15:20:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/ddb5e06e3b5bae043e5aec988af05323ecc26393,ddb5e06e3b5bae043e5aec988af05323ecc26393,"Corrected URL for lid models in the scripts to process CC.
+
+Summary: Previous URL was pointing to the old amazon aws hosting.
+
+Reviewed By: Celebio
+
+Differential Revision: D14165685
+
+fbshipit-source-id: ee52491be0fb73dff275e7e735af43328bbd1da4"
+Celebio,2019-02-22 11:11:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/4d6a80b02f721d16a5830a419a51b134d7520539,4d6a80b02f721d16a5830a419a51b134d7520539,"fix Makefile
+
+Summary: makefile tries to find basematrix.h which doesn't exist.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14182455
+
+fbshipit-source-id: 65051e02bc9eae71bdc724d00dab33662dad7d12"
+Celebio,2019-02-22 10:22:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/26bcbfc6b288396bd189691768b8c29086c0dab7,26bcbfc6b288396bd189691768b8c29086c0dab7,"thread dependent data in `State` class
+
+Summary: Instead of creating a `Model` for each thread, now we are creating a `State` object which contains every data related to the thread : hidden layer vector and its gradient, output vector, random generator state, local loss.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13488031
+
+fbshipit-source-id: ba04ea25c4d465e349e54229de9b398553dd8a04"
+Celebio,2019-02-22 10:22:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/b9f79a7dd68088e1702380ed507a93fe8104f71e,b9f79a7dd68088e1702380ed507a93fe8104f71e,"No more args_ in `Model`
+
+Summary: removing `args_` in `Model`
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13487730
+
+fbshipit-source-id: ef78aa00637b9b5a34935f5b41f3516a5d37866a"
+Celebio,2019-02-22 10:22:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/9ddcabd04f2a263b87074dd54cb3f99ed955f2f2,9ddcabd04f2a263b87074dd54cb3f99ed955f2f2,"Separating loss and gradient computation from model
+
+Summary:
+This commit splits the computation of the loss and the subsequent gradient into different classes. Each Loss class implements its own logic and contains the underlying data needed for the computation.
+
+There is a behavioural change :
+- now, `NegativeSampling` also uses the sigmoid output instead of softmax output for the prediction. Before this commit, it used sigmoid for train, softmax for prediction.
+
+We are passing many information to `Loss` classes. There are two things we should think next:
+- `State` class
+- `Model` classes instead of `Loss` classes
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13359871
+
+fbshipit-source-id: 2f53eaafb800a9a2742817aa113af5f6bd7e282e"
+Celebio,2019-02-22 10:22:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/c35edc3a26b4f0d2b67a18f2f8eb21209a7420a5,c35edc3a26b4f0d2b67a18f2f8eb21209a7420a5,"Base class for matrices
+
+Summary: This diff adds a base class Matrix
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13234636
+
+fbshipit-source-id: 0309b3b9b42a88571de77cc5e5269ce8b962979d"
+Celebio,2019-02-21 12:39:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/e13484bcb261cda51d33c4940ab5e207aba3ee79,e13484bcb261cda51d33c4940ab5e207aba3ee79,"adding unicode error handling on the python interface
+
+Summary:
+The issue was reported here : https://github.com/facebookresearch/fastText/issues/715
+Now, we can replace the line :
+```
+words = f.get_words()
+```
+by
+```
+words = f.get_words(on_unicode_error='replace')
+```
+in bin_to_vec.py
+
+The behaviour is similar to python's `decode` function : if there is an encoding issue, `strict`: it fails with an error, `replace`: replaces silently the malformed characters by the replacement character.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D14133996
+
+fbshipit-source-id: 9c82fef69b6d5223e4e5d60516a53467d8786ffc"
+Celebio,2019-02-19 13:29:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/82af80f244f0dcec2f0aaa944f746dcc0e92c221,82af80f244f0dcec2f0aaa944f746dcc0e92c221,"fix target index assert bug
+
+Summary: in Model class, the targetIndex was checked if it is less than the output size, while we need to check if it is less than the targets size.
+
+Reviewed By: EdouardGrave, piotr-bojanowski
+
+Differential Revision: D13431062
+
+fbshipit-source-id: 953c658750a8776c2be3a2705b16ff5a9c074117"
+Celebio,2019-02-19 10:20:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/a8cf97492142ddcff72e86c0f07bc25067878040,a8cf97492142ddcff72e86c0f07bc25067878040,"bug fix : label size clipped to 32 characters (issue #720)
+
+Summary:
+using np.dtype with '<U32' troncates the returned labels to 32 characters. This trick was used to unify multilinePredict function in the C++ code. Using `object` instead of `<U32` seems to fix the issue :
+* It keeps the entire label string
+* `%timeit` in IPython measure shows no performance drop
+* as we are converting the result with `tolist()`, we are keeping the backward type compatibility (we never returned `numpy.unicode_` but `unicode`)
+
+Issue reported here : https://github.com/facebookresearch/fastText/issues/720
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D14124360
+
+fbshipit-source-id: 17d98d40e862b6049576806107e24f98c630bc48"
+piotr-bojanowski,2019-01-31 10:16:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/bc1285939f1c216bd358425c3685a049dd8f56c0,bc1285939f1c216bd358425c3685a049dd8f56c0,"Fixed typo in English Crawl vectors URL
+
+Summary: Fixed typo in the url.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13894811
+
+fbshipit-source-id: f28ae2aa8a7d2b4133c317c65c739d4765f0d9bd"
+piotr-bojanowski,2019-01-25 17:05:20,https://api.github.com/repos/facebookresearch/fastText/git/commits/0a5759475265705b485fa9fae4d1186d248049aa,0a5759475265705b485fa9fae4d1186d248049aa,"Changing path to publicly-hosted pre-trained files.
+
+Summary:
+Changed all urls to pre-trained models.
+Re-organised the models into subfolders:
+- data/
+- supervised-models/
+- vectors-aligned/
+- vectors-crawl/
+- vectors-english/
+- vectors-wiki/
+- word-analogies/
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13750576
+
+fbshipit-source-id: feeb7e061c2ed986a744371cfbcb87440e4754f6"
+revolunet,2019-01-21 21:42:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/9761f8df88b1110b1c6e28931c56bc328bb275f6,9761f8df88b1110b1c6e28931c56bc328bb275f6,"fix typo
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/703
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13558111
+
+Pulled By: Celebio
+
+fbshipit-source-id: 3fb722ad23a2732522a40893e0bbb5e2e0548148"
+PhilipMay,2019-01-21 16:50:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/721c31944d30ef3e4478aba8d5a1eb87dae9f8d0,721c31944d30ef3e4478aba8d5a1eb87dae9f8d0,"version number update in readme (#712)
+
+Summary:
+This is a small fix. I updated the version number in readme.md from 0.1.0 to 0.2.2.
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/712
+
+Differential Revision: D13751218
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 809e3345d680c2f19eddb6072d9f1b1335c9dcae"
+EdouardGrave,2019-01-21 13:13:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/61f1838321e42da355ca42ad15503410a069e4f4,61f1838321e42da355ca42ad15503410a069e4f4,"Common crawl processing scripts
+
+Summary: Preprocessing scripts for common crawl
+
+Reviewed By: ajoulin
+
+Differential Revision: D9539724
+
+fbshipit-source-id: 72b1b0961ec4aa796add9f20246df4c40459f7b9"
+revolunet,2018-12-20 09:33:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/3c4a3ea5f59480377ad82ad39e7b8b4c10d29280,3c4a3ea5f59480377ad82ad39e7b8b4c10d29280,"footer language : default to EN (#581)
+
+Summary:
+Hi
+
+Looks like in some cases the `language` is not defined which result in 404 links.
+
+<img width=""398"" alt=""capture d ecran 2018-07-23 a 00 24 32"" src=""https://user-images.githubusercontent.com/124937/43050768-e1209046-8e0e-11e8-8510-beed7b549633.png"">
+
+This fix defaults the language to `en`
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/581
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13397407
+
+Pulled By: Celebio
+
+fbshipit-source-id: 5604039e9a4104ecadfbd8978ffe5a15317e5c56"
+EdouardGrave,2018-12-18 03:09:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/7842495a4d64c7a3bb4339d45d6e64321d002ed8,7842495a4d64c7a3bb4339d45d6e64321d002ed8,"Re-licensing fasttext to MIT
+
+Summary: Re-licensing fastText to MIT
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13415080
+
+fbshipit-source-id: 6708849531fe7559cde273a3024660bc8b3b3750"
+whiletruelearn,2018-12-04 16:01:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/501b9b1e4543fd2de55e4a621a9924ce7d2b5b17,501b9b1e4543fd2de55e4a621a9924ce7d2b5b17,"Better default for number of threads
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/659
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13318793
+
+Pulled By: Celebio
+
+fbshipit-source-id: 3b8fd28172b0291b2df93a526de630b01df680e8"
+Celebio,2018-12-04 15:05:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/7deac6d642bc09ab4ec31046be5c423bc84a21bc,7deac6d642bc09ab4ec31046be5c423bc84a21bc,"adding ova loss option to python bindings
+
+Summary: one-vs-all loss option is now available for python
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13232380
+
+fbshipit-source-id: 08c7f500fd7206132d0905f33b79e2f3dc745db2"
+Celebio,2018-11-27 11:12:07,https://api.github.com/repos/facebookresearch/fastText/git/commits/8850c51b972ed68642a15c17fbcd4dd58766291d,8850c51b972ed68642a15c17fbcd4dd58766291d,"One-vs-all cross-entropy loss
+
+Summary: The new option for the `loss` parameter allows to compute the loss as a sum of cross-entropy of each independent unit of the output.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D10853638
+
+fbshipit-source-id: dc4c56e25c89c9da1a33bda1b29db781080794fd"
+Celebio,2018-11-27 11:12:07,https://api.github.com/repos/facebookresearch/fastText/git/commits/71b410199cbf9c9d1d82f8905020aeafb16986cc,71b410199cbf9c9d1d82f8905020aeafb16986cc,"Normalize buffer vector in analogy queries
+
+Summary: The buffer vector should be normalized when added to the query vector.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13192638
+
+fbshipit-source-id: faa46d339e7cc0d149ccc5826fa7197ccfd81635"
+Celebio,2018-11-27 11:12:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/a84a6a4b29863ea3572d993e89f5726414fd092d,a84a6a4b29863ea3572d993e89f5726414fd092d,"add argument names in fasttext.h
+
+Summary: Argument names were missing from the fasttext.h file making it harder to read as an api. This commit adds their names. `loadVectors` function's argument is now a `const std::string &` instead of `std::string`.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13180989
+
+fbshipit-source-id: 81b63763047514ff13b60eb0cf7992601d33f188"
+Celebio,2018-11-27 10:16:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/b8022b5755e2531c5fe3b4e91dbd4e0025024428,b8022b5755e2531c5fe3b4e91dbd4e0025024428,"python install, a more robust pybind11 include
+
+Summary: In some environments, `python setup.py install` fails to install pybind11. The solution is given by `pybind11`'s repository which consists on calling `pip install pybind11` via subprocess. The issue and the solution were reported here https://github.com/facebookresearch/fastText/issues/512
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13167381
+
+fbshipit-source-id: 4ee7835a07e503d00728857242e085bc7de53c14"
+Celebio,2018-11-23 16:07:44,https://api.github.com/repos/facebookresearch/fastText/git/commits/256032b87522cdebc4850c99b204b81b3255cb2a,256032b87522cdebc4850c99b204b81b3255cb2a,"remove printing functions from fasttext class
+
+Summary:
+This diff removes the print capabilities from fasttext and defines a new api.
+- `predictLine` extracts predictions from exactly one line of the input stream.
+- the deprecated `printLabelStats` is removed as [js bindings don't use it]( https://www.facebook.com/groups/1174547215919768/?multi_permalinks=2328051983902613&comment_id=2360179150689896 )
+- `ngramVectors` is now deprecated by the addition of `getNgramVectors`. `Vector` class remains copy-free but move semantics has been added.
+- `analogies` is now deprecated by `getAnalogies`. when called, fastText class lazy-precomputes word vectors
+- `findNN` is now deprecated by `getNN`. when called, fastText class lazy-precomputes word vectors
+- `trainThread` and `printInfo` functions are now private.
+- `supervised`, `cbow`, `skipgram`, `selectEmbeddings`, `precomputeWordVectors` are now deprecated and will be private in the future.
+- `saveVectors`, `saveOutput` and `saveModel` without arguments are now deprecated by their equivalent with filename as string argument.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D13083799
+
+fbshipit-source-id: f557ed7c141a90a6171045fe118ac16c195c824f"
+Celebio,2018-11-21 09:57:19,https://api.github.com/repos/facebookresearch/fastText/git/commits/4aee63d6593e20652da9a23a7ef7258160a8da0c,4aee63d6593e20652da9a23a7ef7258160a8da0c,"Add circleci build badges to the README.md
+
+Summary: Suggested by user willianpaixao : https://github.com/facebookresearch/fastText/issues/674
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13136722
+
+fbshipit-source-id: 4ea07342ed659d312280fd6d9087376e9c9a82d0"
+Celebio,2018-11-20 10:34:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/ead79114b017083d56b8f6b54b9092f6125642f5,ead79114b017083d56b8f6b54b9092f6125642f5,"fix support for older C++11 compilers for python bindings
+
+Summary:
+The issue was reported here : https://github.com/facebookresearch/fastText/issues/678
+gcc 4.8.5 seems to not support `auto` as lambda parameters.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D13136421
+
+fbshipit-source-id: e1770c80f78f1b6578b8750059fe8c9220265f24"
+schneiderl,2018-11-08 08:46:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/5c229ab68827eb6ffcadcaa4eadbd25fc322a9c3,5c229ab68827eb6ffcadcaa4eadbd25fc322a9c3,"Fixed typos at readme.md (#662)
+
+Summary:
+Please be aware that this pull request was automatically created using [gtf](https://github.com/schneiderl/gtf) - a typo fixing bot.
+
+You should be able to merge this with no other problems.
+In case the proposed changes do not make sense I would be glad to hear about it.
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/662
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D12959092
+
+Pulled By: Celebio
+
+fbshipit-source-id: dcab01ffb1bad30e17f1ce9cad27d801edf66c99"
+Celebio,2018-11-07 16:45:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/c18078303dbd01df91921d5106c9236826ba6f60,c18078303dbd01df91921d5106c9236826ba6f60,"fix circleci errors
+
+Summary:
+Currently circleci tests fail for two reasons:
+- when the vm tries to install a specific version of pybind for testing fasttext version on pypi
+- when the vm has a compiler/stl version that needs explicit includes for stdexcept
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D12956910
+
+fbshipit-source-id: 8272415b41d54d880a37777a81a316741a5b920f"
+Celebio,2018-11-06 16:44:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/41a0f39dc7f51d1f61baae0266c12f43050835c4,41a0f39dc7f51d1f61baae0266c12f43050835c4,"putting back the usage of vector to loop in C++ in multiline prediction
+
+Summary: ""compute precision/recall for each label"" commit removed the function multilinePredict in the python bindings. However this causes performance issues. This diff is putting back the function by adapting it to the new api of `predict` function in fasttext.h. The issue was reported here : https://github.com/facebookresearch/fastText/issues/673
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D12900565
+
+fbshipit-source-id: 880cc428810e755021958e6427a5e6c4f2b43e79"
+Celebio,2018-11-06 16:44:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/0ddcd5f09d5ee6ab169304ed116762c776654f2b,0ddcd5f09d5ee6ab169304ed116762c776654f2b,"adding coverage option for Makefile and setup.py
+
+Summary: coverage option allows to compile in coverage mode in order to get execution metrics
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D11659859
+
+fbshipit-source-id: 0d831571e00fadf2002d6b074a89ff76fa7dcfe1"
+Celebio,2018-11-06 16:44:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/d759dd1b1d84b7b6e5441630aa13e91409be626e,d759dd1b1d84b7b6e5441630aa13e91409be626e,"adding python binding for `test-label`
+
+Summary: fasttext binary has now the command test-label to display the score for each individual label. This diff adds the corresponding python binding.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D11589785
+
+fbshipit-source-id: 809dd4a57750f05b68d6e576a58596b13fdc5d31"
+Celebio,2018-11-06 16:44:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/4a3b5afa9206810ef43be5d9b20e409b18d86a72,4a3b5afa9206810ef43be5d9b20e409b18d86a72,"meter class refactoring for per-label stats, some function deprecation in fasttext
+
+Summary:
+This diff is following up the pull-request diff `Refactor model testing and metrics code`:
+- Merging classes LabelMetricsAccumulator and MetricsAccumulator into one : Meter
+- putting back removed function signatures in fasttext.h and marking them as deprecated
+- removal of f1 score from results (that will be added again later)
+- simplifying main.cc thanks to the new api
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D12903111
+
+fbshipit-source-id: eb4116b207aad1713754c136e2a064e9517fdb57"
+Celebio,2018-11-02 11:29:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/58fe650b1da62f2a9cd96db0b2b69f3eeda66966,58fe650b1da62f2a9cd96db0b2b69f3eeda66966,"fixing missing include in productquantizer.cc that is causing compilation issues on some platforms
+
+Summary: the issue was reported here : https://github.com/facebookresearch/fastText/issues/666
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D12900614
+
+fbshipit-source-id: 04303eb1442b0ab7956c5a4b56d9d57eeb004961"
+edenbaus,2018-11-02 11:29:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/6efad3591efb65c39979afdbd0ce59442b91ca1e,6efad3591efb65c39979afdbd0ce59442b91ca1e,"duplicate import removed
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/610
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D12900420
+
+Pulled By: Celebio
+
+fbshipit-source-id: 7001549031dbdc904436ae2d2432470e0a5669ff"
+Celebio,2018-10-26 13:56:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/25c3994e17314f816b38ed86cda48526fadb3d94,25c3994e17314f816b38ed86cda48526fadb3d94,"fixing python binding for `predict` function
+
+Summary: The python binding for `predict` function was broken by the previous diff. The issue was reported here : https://github.com/facebookresearch/fastText/issues/670
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D10868209
+
+fbshipit-source-id: 77a2e38a74356973eedb28aa5fa348acd39c0aef"
+Celebio,2018-10-24 13:24:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/be1e597cb67c069ba9940ff241d9aad38ccd37da,be1e597cb67c069ba9940ff241d9aad38ccd37da,"Compute precision/recall for each label
+
+Summary:
+This diff adds a new command to fasttext to display precision/recall score for each individual label : `print-label-scores`
+It will get predicted labels above given threshold, and compute scores.
+
+For example, the question ""vinegar softens the bite of raw onions ?"" has two labels : ""vinegar"" and ""onions"". It will ask fastText to predict labels above given threshold. If there are two such labels : ""pickling"", ""onions"", we will obtain :
+""onions"" will have a precision of 100%,
+""pickling"" a precision of 0%,
+""onions"" will have a recall of 100%,
+""vinegar"" will have a recall of 0%.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D9991570
+
+fbshipit-source-id: 63cff90f57659d51f5aa1f10243d40e253445aa6"
+Celebio,2018-10-24 13:24:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/8e684628030f65146791744617f16bbe7892fdc3,8e684628030f65146791744617f16bbe7892fdc3,"Conforming to Facebook c++ style
+
+Summary: Conforming to Facebook c++ style https://our.intern.facebook.com/intern/wiki/CppStyle
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D10126506
+
+fbshipit-source-id: 8389b652697addf7176d5d8defddbcb22dab3526"
+EmilStenstrom,2018-09-13 20:26:59,https://api.github.com/repos/facebookresearch/fastText/git/commits/a5d22aba45f38c12d195ecc6c3e448aa3690fbbd,a5d22aba45f38c12d195ecc6c3e448aa3690fbbd,"Fix broken link (#590)
+
+Summary:
+The first link at https://fasttext.cc/docs/en/pretrained-vectors.html doesn't work. This fixes it.
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/590
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9489391
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: f1e1f0fe6a52d3d12d7a3dbf608848d68daa6c3f"
+Celebio,2018-09-13 08:59:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/c0e7a138bf454ff20a30113ebd1db934f9211c18,c0e7a138bf454ff20a30113ebd1db934f9211c18,"merge computeSubwords functions
+
+Summary: In the class Dictionary of fastText, merge the two methods named `computeSubwords`, by making the third argument an optional pointer.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D9766500
+
+fbshipit-source-id: ab12c432b371cf5b924660e12e79a5d7cea708e2"
+dmm-fb,2018-09-05 23:27:39,https://api.github.com/repos/facebookresearch/fastText/git/commits/31acb06467067883a0c61d877cb40c22b20fe3ab,31acb06467067883a0c61d877cb40c22b20fe3ab,"Initialize uninitialized std::atomic variables
+
+Summary: Initialize uninitialized std::atomic variables
+
+Reviewed By: WillerZ
+
+Differential Revision: D9661325
+
+fbshipit-source-id: d515b672b81d03a9e82e6a1ffb448ecca3518608"
+ajoulin,2018-09-05 12:11:20,https://api.github.com/repos/facebookresearch/fastText/git/commits/cb2e7704013d7be2d921d433b3d0c5f2186a8003,cb2e7704013d7be2d921d433b3d0c5f2186a8003,"citation in README
+
+Summary: markdown format.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9654259
+
+fbshipit-source-id: 6aafb8807d0698ae546f67c8018a6a19ec41ec76"
+ajoulin,2018-09-04 14:39:51,https://api.github.com/repos/facebookresearch/fastText/git/commits/1814eaf1ae4bd4df112dd0d374dbeb08ff43e40d,1814eaf1ae4bd4df112dd0d374dbeb08ff43e40d,"README in markdown format
+
+Summary: mv README README.md
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9634356
+
+fbshipit-source-id: 0ec7a98fa7bcad1a9c5495d3545ef8d12ffdbbad"
+ajoulin,2018-09-04 13:04:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/92bc7d230959e2a94125fbe7d3b05257effb1111,92bc7d230959e2a94125fbe7d3b05257effb1111,"update website with aligned vectors
+
+Summary: Add a webpage with aligned vectors
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9614144
+
+fbshipit-source-id: d168c1116615bcc04ff560750c081800f8361aa4"
+ajoulin,2018-09-04 11:37:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/99f23802d4572ba50417b062137fbd20aa03a794,99f23802d4572ba50417b062137fbd20aa03a794,"Supervised alignement
+
+Summary: Code for supervised alignment
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9554953
+
+fbshipit-source-id: 12fa9677537e3baf551ed486107bec64ba35a359"
+ajoulin,2018-08-28 13:23:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/5bf8b4c615b6308d76ad39a5a50fa6c4174113ea,5bf8b4c615b6308d76ad39a5a50fa6c4174113ea,"updating the website with English vectors
+
+Summary: Adding Grave et al. and Mikolov et a's missing English embeddings
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D9538955
+
+fbshipit-source-id: 3c4ab615ae9fd5466fee1dc8b9feb2435f571ee9"
+alexmarchant,2018-08-23 21:17:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/4a0da858a8c24d3c09530c7a68354207f3baf320,4a0da858a8c24d3c09530c7a68354207f3baf320,"Missing link in tutorial docs
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/600
+
+Differential Revision: D9470424
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: c34ef673349a81ae3933e7462bb13c59cd49b053"
+MagicBowen,2018-08-15 21:46:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/9fbc035bac1899a2f4c508e361b39f3047819ef3,9fbc035bac1899a2f4c508e361b39f3047819ef3,"Two modifications for python (#529)
+
+Summary:
+1) Remove duplicate isQuant defination in fasttext_pybing.cc.
+2) allow passing arg of pretrainedVectors to train in the python env.
+Pull Request resolved: https://github.com/facebookresearch/fastText/pull/529
+
+Differential Revision: D9349803
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 52d1d217c97684ceb4fd6046a27212751ddc3e8d"
+bact,2018-08-15 20:29:19,https://api.github.com/repos/facebookresearch/fastText/git/commits/b589d286e28998119a0beab835c6a25c1b0c7f81,b589d286e28998119a0beab835c6a25c1b0c7f81,"Remove duplicated imports in train_supervised.py
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/fastText/pull/524
+
+Differential Revision: D9348102
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 6fa88544517652f184254238d4129da9c5b734ce"
+EdouardGrave,2018-08-03 15:59:29,https://api.github.com/repos/facebookresearch/fastText/git/commits/9c9b9b2eca4fdc0182182cb69234fffbb847d820,9c9b9b2eca4fdc0182182cb69234fffbb847d820,"Fix undefined behavior in hash function
+
+Summary: chars can be signed or unsigned depending on the compiler. This diff fixes this undefined behavior.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D8904784
+
+fbshipit-source-id: 77b81630ebc006c87ffbd0d8ea137ce9bab782ce"
+ola13,2018-06-25 11:28:53,https://api.github.com/repos/facebookresearch/fastText/git/commits/25d0bb04bf43d8b674fe9ae5722ef65a0856f5d6,25d0bb04bf43d8b674fe9ae5722ef65a0856f5d6,"Fix division by 0
+
+Summary: As in title
+
+Differential Revision: D8608223
+
+fbshipit-source-id: 0286e7ae6204f3e96df176f693f8aa535eb9d7ff"
+EdouardGrave,2018-06-04 18:55:07,https://api.github.com/repos/facebookresearch/fastText/git/commits/4062c21e13eba9f7a5d7c516b045c901ea1510de,4062c21e13eba9f7a5d7c516b045c901ea1510de,"Clarify CPU/GPU question
+
+Summary: change answer in the FAQ
+
+Differential Revision: D8257254
+
+fbshipit-source-id: d62fea760d898b29e6759c74796a0fab1e779181"
+DomHudson,2018-05-24 18:56:37,https://api.github.com/repos/facebookresearch/fastText/git/commits/eefbf9580b7aaa4f3e9b2d660ff7fe608cc9b873,eefbf9580b7aaa4f3e9b2d660ff7fe608cc9b873,"Bug fix: ETA time
+
+Summary:
+Thank you very much for the great package. I did notice that when training the ETA is very innacurate. I propose a minor change to make this more accurate.
+
+https://github.com/facebookresearch/fastText/issues/500
+Closes https://github.com/facebookresearch/fastText/pull/501
+
+Differential Revision: D7830309
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 7f15200697725f667725284a6b54387f06c921a7"
+ola13,2018-05-18 20:15:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/89952e791267429efdfc5641504d1c2a46658105,89952e791267429efdfc5641504d1c2a46658105,"Fix division by 0 in word analogy evaluation
+
+Summary: As in title.
+
+Differential Revision: D7926370
+
+fbshipit-source-id: 1e1ff9604282ac0a345333cc58312629628244f9"
+EdouardGrave,2018-05-03 13:34:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/3ba1758d1ce4c660b82086067ad876a835af43ae,3ba1758d1ce4c660b82086067ad876a835af43ae,"update various readme
+
+Summary: update various readme
+
+Reviewed By: ajoulin
+
+Differential Revision: D7835091
+
+fbshipit-source-id: 8bf86ec8578b9dd30ae90f615a733b4b8821e2d9"
+brettkoonce,2018-05-02 02:16:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/df82ba8592a01cc735362d742c82d4e7b126580d,df82ba8592a01cc735362d742c82d4e7b126580d,"minor spelling tweaks for docs
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/442
+
+Differential Revision: D7840879
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 93c76f413d97d37d558a2719e5fcb41f497f5ad4"
+EdouardGrave,2018-04-16 20:35:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/3e64bf0f5b916532b34be6706c161d7d0a4957a4,3e64bf0f5b916532b34be6706c161d7d0a4957a4,"Add links to the evaluation datasets
+
+Summary: Add links to the evaluation datasets
+
+Differential Revision: D7642373
+
+fbshipit-source-id: 9ff6794703d48cdb95c9b48e85244da8055a0077"
+EdouardGrave,2018-03-16 14:11:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/53dd4c5cefec39f4cc9f988f9f39ab55eec6a02f,53dd4c5cefec39f4cc9f988f9f39ab55eec6a02f,"Fix dict initialization for pre-trained vectors
+
+Summary: This diff fixes the bug reported in issue 456.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D7230560
+
+fbshipit-source-id: 069be3becb8c33bbaf07d5f64e8060d0bc10b83c"
+JoelMarcey,2018-03-02 01:44:21,https://api.github.com/repos/facebookresearch/fastText/git/commits/3872afadb3a9f30de7c7792ff2ff1bda64242097,3872afadb3a9f30de7c7792ff2ff1bda64242097,"Publish with the docusaurus-bot
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/449
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D7126037
+
+Pulled By: JoelMarcey
+
+fbshipit-source-id: 778f14f3ffacbcedf884e9d2d8f0486350802bc9"
+mbyzhang,2018-02-28 17:32:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/a007b8fc0d8e79df58c91ac98435211a2597381e,a007b8fc0d8e79df58c91ac98435211a2597381e,"Fix an issue mentioned in #366
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/447
+
+Differential Revision: D7111569
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 61edc1960ce183901f7bb75adfccc13056e8b546"
+zphang,2018-02-22 21:05:52,https://api.github.com/repos/facebookresearch/fastText/git/commits/f8260d099b9c3bbadfbe3130d7bc38e0474c833f,f8260d099b9c3bbadfbe3130d7bc38e0474c833f,"Fixed link to crawl vectors in README.md
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/439
+
+Differential Revision: D7059225
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 8da4196b1ba891f0c056e2a50fdd8f96fd30264b"
+EdouardGrave,2018-02-22 20:04:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/e2035ff029037b3d19523f008b8d65507b47ee15,e2035ff029037b3d19523f008b8d65507b47ee15,"Change circleci config
+
+Summary: Change circleci config
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D7058302
+
+fbshipit-source-id: 57b3aa08c39944cae6118660f379ea5ddb3af15b"
+EdouardGrave,2018-02-22 18:10:04,https://api.github.com/repos/facebookresearch/fastText/git/commits/012615e034f2c2f8df38178c43ce273ef4288fbb,012615e034f2c2f8df38178c43ce273ef4288fbb,"Add README for pretrained vectors v2
+
+Summary: Add README for pretrained vectors version 2
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D7027075
+
+fbshipit-source-id: af448b608ae75e18fe389763b8914d62327a231e"
+EdouardGrave,2018-02-21 20:44:54,https://api.github.com/repos/facebookresearch/fastText/git/commits/e8ea6ce588cf68c49e65f94c447764c50df37651,e8ea6ce588cf68c49e65f94c447764c50df37651,"check that output file can be created before training
+
+Summary: This checks that the output file can be created before training.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D7010529
+
+fbshipit-source-id: 504813de5ded70a6201560625d254cfc61972b3d"
+joeykrim,2018-02-16 22:18:44,https://api.github.com/repos/facebookresearch/fastText/git/commits/ca8c5face7d5f3a64fff0e4dfaf58d60a691cb7c,ca8c5face7d5f3a64fff0e4dfaf58d60a691cb7c,"Fix broken anchor link
+
+Summary:
+Updated link to complete anchor link address
+Closes https://github.com/facebookresearch/fastText/pull/404
+
+Differential Revision: D7014872
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: ba926a1dda056ac48599e4568f12c7430c454b32"
+hyunyoung2,2018-02-16 21:49:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/1b841936be89250b6417d16ef29ca5fcb1b7eabe,1b841936be89250b6417d16ef29ca5fcb1b7eabe,"Update language-identification.md
+
+Summary:
+To add link as the same way of reference of page, https://fasttext.cc/docs/en/supervised-models.html.
+Closes https://github.com/facebookresearch/fastText/pull/408
+
+Differential Revision: D7014458
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 767393de456f8c28988998eba59d6189be8bb870"
+EmilStenstrom,2018-02-16 18:25:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/af68a9e2aeafe1ddf0b87dcda4260b08774d9aa1,af68a9e2aeafe1ddf0b87dcda4260b08774d9aa1,"Links in RSS feed breaks unless URL starts with https (Fixes #399)
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/412
+
+Differential Revision: D7011782
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 12cb5acb3f5a896bd3d72e2333380813da56cdb0"
+EdouardGrave,2018-02-01 20:42:36,https://api.github.com/repos/facebookresearch/fastText/git/commits/3b5fd293597de550a131d81436b9755902f39bb2,3b5fd293597de550a131d81436b9755902f39bb2,"Fix ETA computation
+
+Summary: Fix ETA computation
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D6711465
+
+fbshipit-source-id: 33e5f01fa60e7ed039b16eab37aeb21d6b9555ea"
+ajoulin,2018-01-10 17:16:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/596d04b82086ecc568d28c3e3c201325c9d9a7d7,596d04b82086ecc568d28c3e3c201325c9d9a7d7,"add kb completion scripts
+
+Summary: to reproduce the results from the paper
+
+Reviewed By: cpuhrsch
+
+Differential Revision: D6634349
+
+fbshipit-source-id: 7d3fcf2ce63e424d3e640e3da78b3db94c0ac7c1"
+kahne,2018-01-09 20:37:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/d72255386b8cd00981f4a83ae346754697a8f4b4,d72255386b8cd00981f4a83ae346754697a8f4b4,"Use threshold for prediction instead of top-k
+
+Summary: [fasttext] Use threshold for prediction instead of top-k
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5644298
+
+fbshipit-source-id: cc5ddaf9202d2bf0f9ed7a63ebdd3cc5a397965d"
+cpuhrsch,2018-01-03 20:32:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/605a3811a04d911d1371c2e84d25685d50c40e04,605a3811a04d911d1371c2e84d25685d50c40e04,"python readme fix
+
+Summary: See title.
+
+Reviewed By: ebetica
+
+Differential Revision: D6657141
+
+fbshipit-source-id: 9d5c71c6112043a5824bc3e67fa2b634dd2c91ee"
+cpuhrsch,2018-01-02 21:14:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/fa199a80771e4c7b4a456f70d45bfe83cf8559e7,fa199a80771e4c7b4a456f70d45bfe83cf8559e7,"small circleci config fix
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6651686
+
+fbshipit-source-id: 51e0ee83db039ce68fd4e418d447b552f57ad943"
+cpuhrsch,2018-01-02 20:56:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/426878390e80b1b86dadf72445b81dacca31445a,426878390e80b1b86dadf72445b81dacca31445a,"setup.py OS X compiler flags
+
+Summary: Change flags to better support clang
+
+Reviewed By: kahne
+
+Differential Revision: D6651377
+
+fbshipit-source-id: 5e8fb9362fe934edf75cdcea3bf87f96dff56c95"
+cpuhrsch,2018-01-02 19:47:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/c952cb60efc334936693fcbf2a55f77095443562,c952cb60efc334936693fcbf2a55f77095443562,"multiline get_line / model.test / unit test
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6629548
+
+fbshipit-source-id: 89e0b04097d54845f8c1264a3f1fa72678de9587"
+cpuhrsch,2017-12-23 05:22:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/eeddd0d190b2cb381334f1bc73fccb0430ebdfc7,eeddd0d190b2cb381334f1bc73fccb0430ebdfc7,"move nn from fasttext to main, remove cerr/cout from findNN
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6621783
+
+fbshipit-source-id: 49d57cc5022691b8b898918c6f4096d48c55e475"
+kahne,2017-12-22 16:40:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/bb2ea082d3046b0f1509ac692c4856bb8c692d88,bb2ea082d3046b0f1509ac692c4856bb8c692d88,"Make args dump function const / removed code in fasttext.cc
+
+Summary: Make args dump function const / removed code in fasttext.cc
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6619928
+
+fbshipit-source-id: 99152caa6f5799248bfcc6ae39a6ede29963765a"
+cpuhrsch,2017-12-22 15:50:19,https://api.github.com/repos/facebookresearch/fastText/git/commits/92108952c42f116c0869cb8410d8b47f62d3a394,92108952c42f116c0869cb8410d8b47f62d3a394,"remove cerr/cout from fasttext test
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6621580
+
+fbshipit-source-id: 271e9c3c2bc01bb6904c6b7ef829c2574569a6d9"
+cpuhrsch,2017-12-22 00:19:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/fce60afc3510e9380482874962bdac85669d25f3,fce60afc3510e9380482874962bdac85669d25f3,"python multiline predict / circleci fix
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6622722
+
+fbshipit-source-id: dc021bf899308ae68784e789639228e91eea3d5c"
+cpuhrsch,2017-12-21 17:11:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/166ffa3ee6c6e694e2c0e88cffb8dd14bb5ccb28,166ffa3ee6c6e694e2c0e88cffb8dd14bb5ccb28,"python get_line / getLine remove rng for supervised / PyTorch
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6619903
+
+fbshipit-source-id: 658ac873859860e64faec02c62568f69e6350797"
+kahne,2017-12-21 16:27:53,https://api.github.com/repos/facebookresearch/fastText/git/commits/add7db5a4dcaa1d3a78bc9b472a223feb9f0fd86,add7db5a4dcaa1d3a78bc9b472a223feb9f0fd86,"adaptive hash table sizes
+
+Summary: adaptive hash table sizes
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6165454
+
+fbshipit-source-id: 01009e50178d56cd3403d61903febe405f3fc2b1"
+cpuhrsch,2017-12-20 19:05:01,https://api.github.com/repos/facebookresearch/fastText/git/commits/ae2cdc0ca53f2b86862bf36ade6226c5d809c2f0,ae2cdc0ca53f2b86862bf36ade6226c5d809c2f0,"fix CI build errors
+
+Summary: See title
+
+Reviewed By: kahne
+
+Differential Revision: D6612325
+
+fbshipit-source-id: 697972439c57e5e1085b8b5732cfaa0a9fc0a8c1"
+cpuhrsch,2017-12-20 00:12:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/eb9703a4a7ed0f7559d6f341cc8e5d166d5e4d88,eb9703a4a7ed0f7559d6f341cc8e5d166d5e4d88,"more integration tests
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6606277
+
+fbshipit-source-id: 37045b67beee16c6b616345e2af0108f329cf769"
+kahne,2017-12-19 22:34:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/8b10430ec3038b390de7bdf6305d9bec3bb569aa,8b10430ec3038b390de7bdf6305d9bec3bb569aa,"add model inspection command
+
+Summary: add model inspection command
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5999484
+
+fbshipit-source-id: 249749339697945afcf7cd481f3c3066de822745"
+cpuhrsch,2017-12-19 03:59:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/5542ce0e9655664399132cc816b9908f825bc0d8,5542ce0e9655664399132cc816b9908f825bc0d8,"revert circleci to last working commit 4697db0
+
+Summary: See title.
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6599907
+
+fbshipit-source-id: 5499f2e0c0a98f1194a49c1a8244d97f00ffc2c2"
+cpuhrsch,2017-12-18 23:51:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/f138f3a1ac6f553774cefe90a65f793afcf5c5b5,f138f3a1ac6f553774cefe90a65f793afcf5c5b5,"remove log_stream / only update atomic loss_ if verbose > 1
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6596984
+
+fbshipit-source-id: 7d9520acd21b825b617d5e2648d713f9e805d017"
+cpuhrsch,2017-12-18 20:32:45,https://api.github.com/repos/facebookresearch/fastText/git/commits/d647be03243d2b83d0b4659a9dbfb01e1d1e1bf7,d647be03243d2b83d0b4659a9dbfb01e1d1e1bf7,"remove new/delete and malloc/free
+
+Summary: See title
+
+Reviewed By: nicolasvasilache
+
+Differential Revision: D6352410
+
+fbshipit-source-id: e73399bb7633937ce4e506045965854b4ee81961"
+cpuhrsch,2017-12-17 00:44:14,https://api.github.com/repos/facebookresearch/fastText/git/commits/49d5e83826be0ba4483ca673b080a392b44fb8e1,49d5e83826be0ba4483ca673b080a392b44fb8e1,"more examples / fixed width in printInfo
+
+Summary: See title.
+
+Reviewed By: kahne
+
+Differential Revision: D6565808
+
+fbshipit-source-id: 6b46a43bc533979132f86d0815ced13b0d9e4586"
+cpuhrsch,2017-12-14 06:11:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/97fcde80ea107ca52d3d778a083564619175039c,97fcde80ea107ca52d3d778a083564619175039c,"lots of tests
+
+Summary: More tests.
+
+Reviewed By: kahne
+
+Differential Revision: D6534850
+
+fbshipit-source-id: 95e95f0be552e5a367c5d654c3c89ae33185ff24"
+cpuhrsch,2017-12-13 19:40:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/c9de932a7db95b257beb85fd6059a4a31517efbf,c9de932a7db95b257beb85fd6059a4a31517efbf,"fix getSubwords for EOS
+
+Summary: Within initNgrams subwords aren't compute if the word is EOS, but not within getSubwords
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6550445
+
+fbshipit-source-id: 918cc8e70e4578cbab6bab28e158901753a8876f"
+cpuhrsch,2017-12-08 22:14:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/b928c9f01d02fcf2f115f06ee7a2c02d5c6a0ca2,b928c9f01d02fcf2f115f06ee7a2c02d5c6a0ca2,"support debian:wheezy
+
+Summary: Small C++ changes to extend support
+
+Differential Revision: D6520761
+
+fbshipit-source-id: 841cdd479d3f53c83902b19dee1524a641967509"
+cpuhrsch,2017-12-08 20:14:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/4697db0425950ecd9ddf1483735c7328fe40f66f,4697db0425950ecd9ddf1483735c7328fe40f66f,"t_sigmoid overflow when nan / remove new, delete from Model
+
+Summary:
+When running
+```
+fasttext supervised -input dbpedia.train -output /tmp/trash -lr 10.1 -loss ns -thread 1
+```
+the program quickly segfaults. This is because the argument to sigmoid becomes nan and the index overflows.
+
+This diff simply documents this fact. The check might be too costly for this to be worth it.
+
+It might still be good to add this to our FAQ.
+
+Reviewed By: wickedfoo
+
+Differential Revision: D5739447
+
+fbshipit-source-id: bdeca744e011a9f390ff157e4a205aeb37e38ebe"
+cpuhrsch,2017-12-08 15:24:43,https://api.github.com/repos/facebookresearch/fastText/git/commits/bcd5250fd441283c134d6c5972d8e16a7151fbc7,bcd5250fd441283c134d6c5972d8e16a7151fbc7,"move tests to OSS / util / update package name
+
+Summary: See title.
+
+Differential Revision: D6477912
+
+fbshipit-source-id: 6f9f0f4d6e1c8a4b20f117f2ad2d12211d09ac5a"
+cpuhrsch,2017-12-08 05:14:10,https://api.github.com/repos/facebookresearch/fastText/git/commits/a3cd0f1fc21aff2cbc76a3e20813fcedbceafde1,a3cd0f1fc21aff2cbc76a3e20813fcedbceafde1,"remove tutorials folder / merge with docs folder
+
+Summary: See title
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6514543
+
+fbshipit-source-id: 2878f445ede33237691d4546b5a3aaedb7290f57"
+cpuhrsch,2017-12-07 22:07:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/76a492c12b564f637163f959289228a52bb6da37,76a492c12b564f637163f959289228a52bb6da37,"small website fixes / Issue 377
+
+Summary: See title
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6512971
+
+fbshipit-source-id: 471347b1a77fb9e58863cec3f987119de1ea211c"
+cpuhrsch,2017-12-07 20:47:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/97e4b5685135ec1be1054a8b790f0a794689785e,97e4b5685135ec1be1054a8b790f0a794689785e,"projectName fasttext to fastText
+
+Summary: See title.
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6512033
+
+fbshipit-source-id: 168adca57ed7e30d0aca8f397e33c8d0178d8dc8"
+cpuhrsch,2017-12-07 19:21:19,https://api.github.com/repos/facebookresearch/fastText/git/commits/33da63cab781b0d774fd8bd30bdbe7685456f938,33da63cab781b0d774fd8bd30bdbe7685456f938,"circleci config fixes / circle integrate website
+
+Summary: See title.
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6510632
+
+fbshipit-source-id: ec5f1c18a2ee2296a3b7af4f7c99bd4f25e47222"
+cpuhrsch,2017-12-07 17:03:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/200be7582f69b6d91d26c92a131b4f8104694f56,200be7582f69b6d91d26c92a131b4f8104694f56,"examples linting
+
+Summary: See title
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6509346
+
+fbshipit-source-id: 1f1918c9ea2956ca468d6afd69c701a45e67820a"
+cpuhrsch,2017-12-06 22:35:29,https://api.github.com/repos/facebookresearch/fastText/git/commits/21b81fe298825491e5088579cc817c0e4d229d5c,21b81fe298825491e5088579cc817c0e4d229d5c,"website: sync tutorials
+
+Summary: Update website tutorials with most recent fixes.
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6502080
+
+fbshipit-source-id: 4b6624edef8fcec2bfc9e3a047ca2dcef9757df6"
+cpuhrsch,2017-12-06 21:15:36,https://api.github.com/repos/facebookresearch/fastText/git/commits/2fa6ae90f2f9fce38355339ff50bcf1b1e421e59,2fa6ae90f2f9fce38355339ff50bcf1b1e421e59,"integrate source for website
+
+Summary: See title.
+
+Reviewed By: JoelMarcey
+
+Differential Revision: D6459842
+
+fbshipit-source-id: 149f1998df917d41d94b79a491a00b42b2e4bb0c"
+cpuhrsch,2017-12-05 20:31:21,https://api.github.com/repos/facebookresearch/fastText/git/commits/fde065c39478b088b99f94555cdb76bfe346bb31,fde065c39478b088b99f94555cdb76bfe346bb31,"circleci: fix permission
+
+Summary: See title.
+
+Differential Revision: D6487960
+
+fbshipit-source-id: fc4d8f581d18907d8fcc38dcdbd1ec68ba423fed"
+cpuhrsch,2017-12-05 18:16:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/db82b70d63633e14427e866f05d11b85ea68b819,db82b70d63633e14427e866f05d11b85ea68b819,"small circleci fix
+
+Summary: See title.
+
+Differential Revision: D6483601
+
+fbshipit-source-id: 895041ef38702d4d6cf1ae1b7d951513c562a8fb"
+cpuhrsch,2017-12-02 06:56:20,https://api.github.com/repos/facebookresearch/fastText/git/commits/f356ca9fffced13d66295fb3dc543b659d0004af,f356ca9fffced13d66295fb3dc543b659d0004af,"circle.yml / pull request 375
+
+Summary: Configuration file for CircleCI's continuous integration platform.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5496187
+
+fbshipit-source-id: 805cbbdcd5734e03a6a37652cb1d851ce582af49"
+cpuhrsch,2017-12-02 03:00:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/02d02720c8cdfbb351b162c80c515d23ca6e3c16,02d02720c8cdfbb351b162c80c515d23ca6e3c16,"resolve pull requests 45 69 106 118 132 268 290 301 302 310 / boolToString / update README and CONTRIBUTING
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6447430
+
+fbshipit-source-id: b16447e5599808e8ff943bbdb931f0194505fea5"
+cpuhrsch,2017-11-30 23:40:43,https://api.github.com/repos/facebookresearch/fastText/git/commits/d428a196dd089fb687ac97f049a886ee7a943db9,d428a196dd089fb687ac97f049a886ee7a943db9,"march=native for Makefile
+
+Summary:
+Flag to enable vectorized instructions if available. See
+https://wiki.gentoo.org/wiki/GCC_optimization#-march
+
+Reviewed By: wickedfoo
+
+Differential Revision: D5827479
+
+fbshipit-source-id: 099c9927fd300fa8087ba3c6da074363edeaa87a"
+cpuhrsch,2017-11-30 20:55:23,https://api.github.com/repos/facebookresearch/fastText/git/commits/8ca5bf09b44ab335cee101f9023596d08c4d98b3,8ca5bf09b44ab335cee101f9023596d08c4d98b3,"use constexpr instead of define / use pragma once
+
+Summary: See title.
+
+Reviewed By: wickedfoo
+
+Differential Revision: D5559236
+
+fbshipit-source-id: 932c1e548a31c2defb4ab20c4c897b27ab4a55f0"
+cpuhrsch,2017-11-29 18:33:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/520b59d722c09943625ede522577119bdd158403,520b59d722c09943625ede522577119bdd158403,"CMakeLists.txt / eval.py lint / pull requests 236, 347, 371
+
+Summary: See title.
+
+Reviewed By: rhysparry
+
+Differential Revision: D6325293
+
+fbshipit-source-id: 1bf7a6a8c1628fac9434a2210ff59ba02eac5897"
+cpuhrsch,2017-11-28 02:33:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/a0fa139c06957e4e75f45372179287ba4a6671f7,a0fa139c06957e4e75f45372179287ba4a6671f7,"setup.py to support packaging and replace throw with exit
+
+Summary: setup.py in main directory to enable packaging and replacing exit with throw to prevent Python from quitting on fastText library errors.
+
+Reviewed By: ebetica
+
+Differential Revision: D6414897
+
+fbshipit-source-id: 0d614f0dec4b603c4083a9ef8d3bc0a657f1cd99"
+cpuhrsch,2017-11-27 23:32:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/aabf5edffb528b9c2253a3ba4011ef0e408a2f82,aabf5edffb528b9c2253a3ba4011ef0e408a2f82,"Fix Issue 370
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6419065
+
+fbshipit-source-id: 6030e93b6c5ddb31e41f94d255ff5bf10b96b1f9"
+ajoulin,2017-11-22 17:09:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/4a8488df2ffd5b71f9d7123661627a1e14b02829,4a8488df2ffd5b71f9d7123661627a1e14b02829,"change log and exp for prediction
+
+Summary: change the log and exp functions during test time.
+
+Reviewed By: EdouardGrave, cpuhrsch
+
+Differential Revision: D6285258
+
+fbshipit-source-id: 6fad063e04747519aa0a74e00b97cce433797b92"
+cpuhrsch,2017-11-15 21:56:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/a96b0d258b88596a38f8a464671c19797540fef1,a96b0d258b88596a38f8a464671c19797540fef1,"python: supervised enable minn,maxn for subwords
+
+Summary: See title.
+
+Differential Revision: D6339672
+
+fbshipit-source-id: 13d2a5fbc074f88d7380a39d5fec777b1ea4b129"
+cpuhrsch,2017-11-15 18:07:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/35679dc3d3b7cf3c641aebadafb2ab7f0fc0a2ca,35679dc3d3b7cf3c641aebadafb2ab7f0fc0a2ca,"python set bucket to 0 if wordNgrams leq 1 and maxn 0 - Issue 358
+
+Summary: Small fix for default parameters.
+
+Differential Revision: D6336380
+
+fbshipit-source-id: 936be5c36b992c921f917cd8fe23b81157eab459"
+cpuhrsch,2017-11-15 17:04:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/abb7b6060bc3b3d8644615fc9875137ab087b3b3,abb7b6060bc3b3d8644615fc9875137ab087b3b3,"switch private to protected
+
+Summary: Allow subclasses to access previously private member variables of subclass.
+
+Differential Revision: D6335909
+
+fbshipit-source-id: 5b6ee557947cba939e1c81388261440a22f2afd5"
+cpuhrsch,2017-11-15 16:17:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/6dfd5ddd215cc462e8da6c9ce5f1486c37b73849,6dfd5ddd215cc462e8da6c9ce5f1486c37b73849,"set target counts for model after training / include numeric for
+
+Summary:
+Target counts need to be set if model is to be used right after training for Python bindings.
+iota is technically part of numeric, so we need to include it for some versions of compilers.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6333718
+
+fbshipit-source-id: 606b91d6e62324f5985f9a455aa0fc7ed9d959c2"
+cpuhrsch,2017-11-14 23:15:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/53cf365df7e1242f6f39c3b9919c765cf9868da8,53cf365df7e1242f6f39c3b9919c765cf9868da8,"switch private to protected for fastText members
+
+Summary: See title.
+
+Differential Revision: D6329129
+
+fbshipit-source-id: 0628907861633f85781a4f059b07a33f763b9c21"
+cpuhrsch,2017-11-13 19:49:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/1de0624bfaff02d91fd265f331c07a4a0a7bb857,1de0624bfaff02d91fd265f331c07a4a0a7bb857,"additional tests for python bindings
+
+Summary: See title.
+
+Differential Revision: D6228155
+
+fbshipit-source-id: a96944c6cb003449734fdc1cf2fc3fa365237619"
+ot,2017-11-07 20:08:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/c5cb6b2d0e295e58cfa827e38d2e9b1e0cbe09e4,c5cb6b2d0e295e58cfa827e38d2e9b1e0cbe09e4,"Show getVector() deprecation message only if used
+
+Summary:
+The message is currently shown when compiling any code that uses fasttext. If the deprecated function is not used there should be no warning.
+
+The macro is copied from Folly, and it's portable.
+
+Reviewed By: yfeldblum
+
+Differential Revision: D6244673
+
+fbshipit-source-id: 96542adc20a7e9c8abfc8ef844801c8e1ead87dd"
+cpuhrsch,2017-11-02 16:42:34,https://api.github.com/repos/facebookresearch/fastText/git/commits/f4bced042bb8ece6cfde472b6cbd845506e721c3,f4bced042bb8ece6cfde472b6cbd845506e721c3,"setup.py fix for python2, README.md fix, Mac osx build failure, small fasttext.py fix
+
+Summary: See title.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6220933
+
+fbshipit-source-id: 1bc95ea0c3751c9fce6da6ec0f151eb79aadb3a2"
+cpuhrsch,2017-11-01 22:54:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/f10ec1faea1605d40fdb79fe472cc2204f3d584c,f10ec1faea1605d40fdb79fe472cc2204f3d584c,"integrate fasttextpy
+
+Summary: Changes to support Python bindings.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D6177403
+
+fbshipit-source-id: 51b271089496f72137ac7ef934f787a8c03e4e00"
+EdouardGrave,2017-10-20 00:08:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/431c9e2a9b5149369cc60fb9f5beba58dcf8ca17,431c9e2a9b5149369cc60fb9f5beba58dcf8ca17,"Print error message for invalid pretrained model files
+
+Summary: Print an error message for invalid pretrained models (i.e. non quantized models which have a pruneidx_idx_ field different than -1).
+
+Reviewed By: cpuhrsch
+
+Differential Revision: D6097450
+
+fbshipit-source-id: 203d1eeab03a3f8acb59926daa5ae2f54b7f236b"
+EdouardGrave,2017-10-03 15:06:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/ebbd3bfee59a319813214a5c50d7fabe8fb1e344,ebbd3bfee59a319813214a5c50d7fabe8fb1e344,"adding subwords for supervised models
+
+Summary: Quick hack to add subwords for supervised models. Small bug: word ids are added twice for in-vocabulary words.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D5444991
+
+fbshipit-source-id: 73c7f0bd44405292e5bb7e34225c9ecbab709931"
+EdouardGrave,2017-09-26 19:06:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/437f878bcca6d90c9dca9832f115d93c3df55665,437f878bcca6d90c9dca9832f115d93c3df55665,"Save output vectors for supervised model
+
+Summary: Save output vectors for supervised models, by using the command line option `-saveOutput 1`
+
+Reviewed By: cpuhrsch
+
+Differential Revision: D4716136
+
+fbshipit-source-id: fd023434587de953ea8af6b7e5caaf8c5149ca78"
+cpuhrsch,2017-09-16 03:41:37,https://api.github.com/repos/facebookresearch/fastText/git/commits/7e5c955a360d35f7d110b6c5421f65132da2bea0,7e5c955a360d35f7d110b6c5421f65132da2bea0,"getDictionary api for FastText
+
+Summary: Enable users to get const pointer to Dictionary.
+
+Reviewed By: stephenroller, EdouardGrave
+
+Differential Revision: D5826941
+
+fbshipit-source-id: 66442d7c6428c79aa74fbbce270aba3feccd34fa"
+cpuhrsch,2017-09-15 19:52:33,https://api.github.com/repos/facebookresearch/fastText/git/commits/1f69d8655f352bb17f891f21dea01fc47656c4c2,1f69d8655f352bb17f891f21dea01fc47656c4c2,"add link to website/faq/cheatsheet
+
+Summary: This diff adds a few useful links to our Readme.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5807871
+
+fbshipit-source-id: ca51c4b8b233327a07fc13e363da353c040e6216"
+EdouardGrave,2017-09-15 04:44:07,https://api.github.com/repos/facebookresearch/fastText/git/commits/c1e86b5c2c66b70c6797daaad8574656551b0406,c1e86b5c2c66b70c6797daaad8574656551b0406,"Fix print-vector for quantized models
+
+Summary: Fix print vector subcommands to work with quantized models
+
+Reviewed By: cpuhrsch
+
+Differential Revision: D5802822
+
+fbshipit-source-id: 24711c5b85978fed5104d1dd3fc84cbe1cc04d94"
+cpuhrsch,2017-09-11 22:28:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/48478390d8e64e425c3dbb1a8e8eab9778d9aed4,48478390d8e64e425c3dbb1a8e8eab9778d9aed4,"create grid of models w/ and w/o quantization
+
+Summary: script to create grid of models w/ and w/o quantization
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5029274
+
+fbshipit-source-id: bc23ce6c08e74bc541877de4822549fd090f2108"
+EdouardGrave,2017-09-11 20:21:16,https://api.github.com/repos/facebookresearch/fastText/git/commits/8ceaa133d88e37248fb1841eab2b5209d91b55b4,8ceaa133d88e37248fb1841eab2b5209d91b55b4,"fix build error
+
+Summary: Fix the ""ISO C++ forbids in-class initialization of non-const static member"" build error.
+
+Reviewed By: cpuhrsch
+
+Differential Revision: D5124035
+
+fbshipit-source-id: 1c715a252a9cb1ef2623ef8e7d77791f7f05bae8"
+cpuhrsch,2017-09-11 20:16:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/440d545635a8fdcdce55b1ab372539360b0b2be2,440d545635a8fdcdce55b1ab372539360b0b2be2,"script to evaluate trained models
+
+Summary: This script processes the trained unsupervised models and evaluates them against different tests.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5115345
+
+fbshipit-source-id: 78c0b5f5773ca5b789d37a20ef8ef4550127ac6d"
+cpuhrsch,2017-08-30 03:52:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/cf4877a225feec0929234a12ffeb10b5dbab01d8,cf4877a225feec0929234a12ffeb10b5dbab01d8,"display correct loss name under help
+
+Summary: Fix displayed name.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5557897
+
+fbshipit-source-id: 90a18e3503c0584b52b52f1367ff11d034df76ab"
+cpuhrsch,2017-08-25 22:29:14,https://api.github.com/repos/facebookresearch/fastText/git/commits/e39dfbe598542fbb8a8e25be596ecab3ad25edd9,e39dfbe598542fbb8a8e25be596ecab3ad25edd9,"getLine calculate hash only once
+
+Summary: This diff removes some of the duplicated calles to hash within getLine.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5042887
+
+fbshipit-source-id: 3864c7cfab9375d374ddf439fa4ab8e4ab9dfda1"
+cpuhrsch,2017-08-25 22:29:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/b20025702919f79173eb90a7a0ab942e1d1ba7ed,b20025702919f79173eb90a7a0ab942e1d1ba7ed,"use std::string instead of char* for args
+
+Summary: std::string is much safer than char* and easier to use.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5031526
+
+fbshipit-source-id: 92d5ab988ddc440ea9468f5e7227700013aec386"
+cpuhrsch,2017-08-25 16:18:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/dbd85380c201a42857229a26ab4322a5045651e5,dbd85380c201a42857229a26ab4322a5045651e5,"saveVectors for all modes
+
+Summary: Enable saveVectors for all modes
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5701240
+
+fbshipit-source-id: 69340a7498dfa361725a158ec0d3c5de2a44fc1d"
+cpuhrsch,2017-08-04 07:00:25,https://api.github.com/repos/facebookresearch/fastText/git/commits/6b74dfc3997593ec2e3c376f6510e990871acda7,6b74dfc3997593ec2e3c376f6510e990871acda7,"divide by 0 errors for 0 norms
+
+Summary: Some functions don't check for 0 before dividing.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5557786
+
+fbshipit-source-id: 24863e0ff0f1a280749e2a08a8ca3700b6bdf163"
+cpuhrsch,2017-07-17 23:37:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/8f036268097c76a284ee98e63d9a17e2feffe715,8f036268097c76a284ee98e63d9a17e2feffe715,"Fixes memory allocation and cleanup bugs in QMatrix
+
+Summary:
+1. When a QMatrix is created with the default constructor, codes_ is not allocated. Deconstructor should not attempt to delete codes in this case.
+2. When a QMatrix is created with the parameterized constructor, computation of codesize_ is incorrect because std::ceil is used incorrectly.
+
+Reviewed By: ajoulin
+
+Differential Revision: D5265558
+
+fbshipit-source-id: c5c258f2d3b28e6723652c39b3ad6fd613c1d595"
+cpuhrsch,2017-07-12 16:15:44,https://api.github.com/repos/facebookresearch/fastText/git/commits/a2cff9130936c629d25dd1fdcb641106016c0ce5,a2cff9130936c629d25dd1fdcb641106016c0ce5,"build wiki data script
+
+Summary: This diff contains a script that can be used to pull and preprocess wikipedia dumps we use for the word vectors.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D5400397
+
+fbshipit-source-id: f36678765d4d9b2e21a3f2a504fe5b0d4172a987"
+EdouardGrave,2017-07-04 17:00:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/0fff0b8b95bbc0d859d3b368ba2525ca771f765c,0fff0b8b95bbc0d859d3b368ba2525ca771f765c,"Fix small bug in predict
+
+Summary: predictions.clear() should be called earlier.
+
+Reviewed By: ajoulin
+
+Differential Revision: D5366752
+
+fbshipit-source-id: 30be9e59dd44fbb3ec28b925803114fe1d7e6ad9"
+cpuhrsch,2017-07-04 03:30:18,https://api.github.com/repos/facebookresearch/fastText/git/commits/6d2c453bf4e1610f056a51d1ead70c9c6e41074c,6d2c453bf4e1610f056a51d1ead70c9c6e41074c,"split help methods into categories
+
+Summary:
+Split the help text method into separate methods. This will allow us to
+only display relevant help text in future diffs.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5031516
+
+fbshipit-source-id: 57fc5da15db26b9653c5ad20ab980a7159276e15"
+cpuhrsch,2017-07-04 03:30:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/14c82eab2d9d15b196fed90419f4781892b4fe35,14c82eab2d9d15b196fed90419f4781892b4fe35,"remove convertNgrams stub from dictionary header
+
+Summary: This diff removes a line of dead code.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5031495
+
+fbshipit-source-id: 8e200a9a4e5fae9ec5dc4af2c17fac185a719310"
+cpuhrsch,2017-07-04 03:30:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/dc28e743243677c5daa74f1481ca0350a525aa93,dc28e743243677c5daa74f1481ca0350a525aa93,"different method name for word ngrams
+
+Summary:
+This diff attemps to rename the method names related to word ngrams to
+names that are easier to understand.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5031486
+
+fbshipit-source-id: d9d3073163b2b72780f5f1a8b76069765492e1cd"
+cpuhrsch,2017-07-04 03:30:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/9e4de663dc86cdeb760686924a91cc53d4a4a27f,9e4de663dc86cdeb760686924a91cc53d4a4a27f,"different method names for char ngrams
+
+Summary:
+This diff attempts to rename methods related to character ngrams
+with a clearer naming scheme.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5029766
+
+fbshipit-source-id: c3b9a8c097837f5a15200adeed1abb6034577d51"
+cpuhrsch,2017-07-04 03:30:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/5fb9cb4097bc78465e06cdd1eadaa596a2203687,5fb9cb4097bc78465e06cdd1eadaa596a2203687,"quantize reset clock before training
+
+Summary: During retraining for quantization the clock is not reset.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5014862
+
+fbshipit-source-id: effb619efdb55196971b7e18db89fcb344919d8e"
+edizel,2017-06-27 19:02:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/3346ac9cce7028d46014f6d1db7a3dba183f7f56,3346ac9cce7028d46014f6d1db7a3dba183f7f56,"added getVectorDimensions function
+
+Summary:
+added getVectorDimensions() function in order to access dimensions of the vector loaded by model
+Depends on D5227866
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5228510
+
+fbshipit-source-id: a0ed799a639a723f3f814d5c2a9d7b40f7f09064"
+edizel,2017-06-27 19:02:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/8b3806e7be29aaf5e2f3e7f5e69da5b2ca50efa9,8b3806e7be29aaf5e2f3e7f5e69da5b2ca50efa9,"modifier const added to getVector method
+
+Summary: In order to use fastText object as a const, we added the const modifier to getVector method.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5227866
+
+fbshipit-source-id: 44cc5c60caee22b90b1f789e252eabfc6dbb8131"
+edizel,2017-06-27 19:02:53,https://api.github.com/repos/facebookresearch/fastText/git/commits/b2210b73594cb330ef0bd9d59ceb88dd07e2451a,b2210b73594cb330ef0bd9d59ceb88dd07e2451a,"fixing a delete without checking for the existence of the object
+
+Summary: QMatrix deconstructor deleting ""codes_"" without checking its size. Check added.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D5227043
+
+fbshipit-source-id: 84cfafbb039aa3a59d5b9fdaf66b3c1571460fb5"
+cpuhrsch,2017-05-17 17:37:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/f24a781021862f0e475a5fb9c55b7c1cec3b6e2e,f24a781021862f0e475a5fb9c55b7c1cec3b6e2e,"update rw.zip link again
+
+Summary: This diff updates the rw.zip link to accomodate a recent change.
+
+Differential Revision: D5078450
+
+fbshipit-source-id: 669dab3bffd3c4bfa5192cecb8a34baea9a119e8"
+cpuhrsch,2017-05-16 17:52:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/11aec0234f7399c19cdfd1e9deeef989dfc2638f,11aec0234f7399c19cdfd1e9deeef989dfc2638f,"New rare word link - issue 217
+
+Summary:
+This diff updates the rareword link.
+
+(Note: this ignores all push blocking failures!)
+
+Differential Revision: D5070402
+
+fbshipit-source-id: d0147c16cb93ab83b9adff24433c17196a62435f"
+cpuhrsch,2017-05-03 21:34:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/b17497c0a92112abbabcdd55433db37ae838e89d,b17497c0a92112abbabcdd55433db37ae838e89d,"support empty pruneidx_ - Issue 196
+
+Summary:
+When pruning the dictionary you mind wind up not pruning any word ngrams.
+This then causes pruneidx_ to be empty, which in turn causes the dictionary
+to produce numbers that are out of bounds for the input matrix. This diff
+fixes that by introducing pruneidx_size_.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4994114
+
+fbshipit-source-id: 7eedb8663f8044b2182310a8f8d964cd9334cda7"
+cpuhrsch,2017-05-03 03:04:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/a9d7c2c6393ccca7276df0699441509fe95367e5,a9d7c2c6393ccca7276df0699441509fe95367e5,"print space instead of tab
+
+Summary: This diff reverts some of the recent changes that printed a tab in front of vectors instead of a single space.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4991760
+
+fbshipit-source-id: a81b479f4e946a92071faa44ebe98b2abda6d5c6"
+EdouardGrave,2017-05-03 01:33:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/2665eac73641246ebd754003862c07657c3131ad,2665eac73641246ebd754003862c07657c3131ad,"Add links to pretrained word vectors for 294 languages
+
+Summary: Add links to pretrained word vectors for 294 languages
+
+Reviewed By: ajoulin
+
+Differential Revision: D4972824
+
+fbshipit-source-id: 72d0618de8a206d90ce3cd7ef71ca4818eb5b339"
+cpuhrsch,2017-05-02 21:08:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/2c4eabb61a65a9453b56e1a76f262a44330a4ea8,2c4eabb61a65a9453b56e1a76f262a44330a4ea8,"Fix google drive links in classification-results.sh - Issue 193
+
+Summary: Recent changes in google drive require a different mechanism for retrieving the data.
+
+Reviewed By: ajoulin
+
+Differential Revision: D4988508
+
+fbshipit-source-id: 5ad51f450ed3b50de71622c72f4d609319aeb6cf"
+ajoulin,2017-05-02 18:48:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/f5f3ecd9b00cc84311a958da2b52e32fba6a491c,f5f3ecd9b00cc84311a958da2b52e32fba6a491c,"minor edits on tutorials
+
+Summary:
+fixing links and typos.
+
+(Note: this ignores all push blocking failures!)
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4987202
+
+fbshipit-source-id: bca441cb8781a06176239dad7deaab88b25ae88d"
+ajoulin,2017-05-02 18:10:26,https://api.github.com/repos/facebookresearch/fastText/git/commits/0f384496a018fcca02bb34e58841980c39f19613,0f384496a018fcca02bb34e58841980c39f19613,"fixing supervised tutorial
+
+Summary: failed mark-down
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4986411
+
+fbshipit-source-id: d7d49f8f8ac8621c9780508ca6992c8f0f28d5d5"
+cpuhrsch,2017-05-02 17:34:23,https://api.github.com/repos/facebookresearch/fastText/git/commits/7433376428426dd54c497dfb18227a7d9a1e3ae9,7433376428426dd54c497dfb18227a7d9a1e3ae9,"294 pretrained vectors
+
+Summary: [fastttext] 294 pretrained vectors
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4986430
+
+fbshipit-source-id: 2a05946d2fa983bce6246b5bd33af470990006d8"
+ajoulin,2017-05-02 16:02:50,https://api.github.com/repos/facebookresearch/fastText/git/commits/80a49bd724fe41cff6a159a2f88fc58685f0a8f9,80a49bd724fe41cff6a159a2f88fc58685f0a8f9,"update the readme
+
+Summary:
+Add the options and how to use the quantization.
+
+(Note: this ignores all push blocking failures!)
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D4985621
+
+fbshipit-source-id: 6877fee6ee0005e93bfc848b1007a3ac9a89a528"
+ajoulin,2017-05-02 15:48:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/00c8df9ee4959c58937ea1961c9c381845a75763,00c8df9ee4959c58937ea1961c9c381845a75763,"Add tutorials
+
+Summary:
+Adding tutorials on supervised and unsupervised learning with fastText library.
+
+(Note: this ignores all push blocking failures!)
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4859448
+
+fbshipit-source-id: 5a8b1e4d067135e8b0e3da9d10802c1ee9094189"
+piotr-bojanowski,2017-05-02 15:07:37,https://api.github.com/repos/facebookresearch/fastText/git/commits/a1b23749e91656940776e5bcfea2da944cb0c935,a1b23749e91656940776e5bcfea2da944cb0c935,"Added nearest neighbor queries and analogies.
+
+Summary:
+Added two functions to fasttext:
+./fasttext nn <model>
+./fasttext analogies <model>
+Both start an interactive prompt that ask for a query.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4357150
+
+fbshipit-source-id: 294d9e7ee4c0c9b777f227ba3cc589af86855ea7"
+piotr-bojanowski,2017-05-02 13:15:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/e833f1b24d07440e19678aa50150b3f0e14e8b0b,e833f1b24d07440e19678aa50150b3f0e14e8b0b,"hotfix public method loadModel
+
+Summary: I changed the method loadModel to public from private.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4985509
+
+fbshipit-source-id: 8e8c324570f9e4e632f1933be35304f56cb2516e"
+cpuhrsch,2017-05-02 04:18:53,https://api.github.com/repos/facebookresearch/fastText/git/commits/5282d91c9f116fe58b9bdbfd467fb1d24f5c4831,5282d91c9f116fe58b9bdbfd467fb1d24f5c4831,"remove quant flag
+
+Summary: remove quant flag
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4979844
+
+fbshipit-source-id: 1c92db0a0314b43f624e05022d037802ed662bfe"
+cpuhrsch,2017-05-02 04:18:51,https://api.github.com/repos/facebookresearch/fastText/git/commits/a74e4357138d50d79b3f1e8cb24a1e3a047a431c,a74e4357138d50d79b3f1e8cb24a1e3a047a431c,"grouping help by category
+
+Summary: grouping help by category
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4963989
+
+fbshipit-source-id: 3409d1c491b2148cb7cf42f4f0523c6790e91837"
+cpuhrsch,2017-05-02 04:18:49,https://api.github.com/repos/facebookresearch/fastText/git/commits/a7c24793427a4860d4fd831f4f1f38bb313eed47,a7c24793427a4860d4fd831f4f1f38bb313eed47,"print averaged sentence level vectors
+
+Summary: [fastText] print averaged sentence level vectors
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4798156
+
+fbshipit-source-id: ec561c997e0cda5705d6554dc9943fca118bb224"
+cpuhrsch,2017-05-02 04:18:48,https://api.github.com/repos/facebookresearch/fastText/git/commits/dbcd814bd154b09c69d112c130c3f7e937c49066,dbcd814bd154b09c69d112c130c3f7e937c49066,"getLine don't add hash if label
+
+Summary: getLine don't add hash if label
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4940342
+
+fbshipit-source-id: c7805f03da4f13048aad99239ba4475b8967d393"
+cpuhrsch,2017-05-02 04:18:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/9809c1ef28ad9aecd6af8813efa1abd6dbc5090b,9809c1ef28ad9aecd6af8813efa1abd6dbc5090b,"getLine remove vector<string> tokens
+
+Summary: getLine remove vector<string> tokens
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4940268
+
+fbshipit-source-id: b3cfa490794b1550610b18b1c1fbab5fa0a89b8f"
+cpuhrsch,2017-05-02 04:18:44,https://api.github.com/repos/facebookresearch/fastText/git/commits/e1ccaa7c5db5a5d9d9fc0d37afd3399787a7b352,e1ccaa7c5db5a5d9d9fc0d37afd3399787a7b352,"remove wordngram conversion
+
+Summary: remove wordngram conversion
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4939450
+
+fbshipit-source-id: 79e7ed7cd42d942541770e1696706c901ea107ac"
+cpuhrsch,2017-05-02 04:18:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/b1abc48b388fc0940cf3650be9e69fc902fa5d52,b1abc48b388fc0940cf3650be9e69fc902fa5d52,"don't use std::thread for 1 thread
+
+Summary: don't use std::thread for 1 thread
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4955927
+
+fbshipit-source-id: 7ee93929b6fa8b859fd34180d8194320bd521079"
+cpuhrsch,2017-05-02 04:18:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/af6893214573bf02ded3dc6a8eba7427c6e92923,af6893214573bf02ded3dc6a8eba7427c6e92923,"fileformat magic number and versioning
+
+Summary: [fasttext] fileformat magic number and versioning
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4868077
+
+fbshipit-source-id: db3b613c2fbb7c92c8bf5b3e6f0415fb9fe297d1"
+cpuhrsch,2017-05-02 04:18:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/7972ecdf47961e483df379d9f19caa3afc1fb7a7,7972ecdf47961e483df379d9f19caa3afc1fb7a7,"print logs and info to stderr
+
+Summary:
+Printing extra outputs to stderr makes it easier to postprocess the
+output of fasttext. For an example consider our test script. If stdout is
+restricted to the most essential (to the function) output it's easier to
+parse and compare.
+
+Reviewed By: nicolasvasilache
+
+Differential Revision: D4885099
+
+fbshipit-source-id: 6a14a55438f9c1a67a787899b97956f8832ed720"
+ajoulin,2017-05-02 03:01:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/fbc42146893cbdfdc784c50956d9b09dda9d46de,fbc42146893cbdfdc784c50956d9b09dda9d46de,"Quantization
+
+Summary: Add the quantization described in the paper fasttext.zip
+
+Reviewed By: mdouze
+
+Differential Revision: D4445021
+
+fbshipit-source-id: 12b9d6b6c358dc8232c03988273312dc32e907ff"
+piotr-bojanowski,2017-03-14 19:58:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/fdf325c57d3d2c6053084b9b1db9fae2b109c3f4,fdf325c57d3d2c6053084b9b1db9fae2b109c3f4,"Wrote function to output the embeddings of all the n-grams in a word
+
+Summary:
+For visualization and qualitative experiments, wrote a function that outputs
+the vectors of all the n-grams inside a word. Prints each ngram followed by
+the vector. Since for words inside the vocabulary the word itself is treated
+as an n-gram, output its vector if available, else output a vector of zeros.
+
+Reviewed By: ajoulin
+
+Differential Revision: D4258186
+
+fbshipit-source-id: 520f42d59123fe1c76332192c795f5ef12cb4939"
+piotr-bojanowski,2017-03-13 21:40:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/955fbe79848ac58554661f789e52e2f6be9d25cc,955fbe79848ac58554661f789e52e2f6be9d25cc,"added an option to save the output vectors
+
+Summary:
+added an option to save the output vectors too. -saveOutput 1 will
+save the output vectors along with the input ones. Saves to a file
+called [something].output
+
+Reviewed By: ajoulin
+
+Differential Revision: D3923702
+
+fbshipit-source-id: c2fb1cd0f6d51fcd9ed95fd54ee7e44c5e6fe861"
+piotr-bojanowski,2017-03-13 21:38:51,https://api.github.com/repos/facebookresearch/fastText/git/commits/3e4a9011cc1e346bad6ab390cbea9cc13465f1a8,3e4a9011cc1e346bad6ab390cbea9cc13465f1a8,"Corrected brace escaping in perl script
+
+Summary: In new versions of Perl, braces should be escaped in regex.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4351672
+
+fbshipit-source-id: dee6e24c705025a29612758547262d3695f349e7"
+EdouardGrave,2017-03-07 14:24:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/09d11569e81cc0daaed2d02e6fc1a33e2488f6b1,09d11569e81cc0daaed2d02e6fc1a33e2488f6b1,"Update pretrained vectors readme
+
+Summary: Update the readme for pre-trained word vectors.
+
+Reviewed By: ajoulin
+
+Differential Revision: D4664460
+
+fbshipit-source-id: 2f84379424f20e41d1b9ee61c99fb27657bde533"
+VessoVit,2017-03-02 16:32:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/9dc5f45f32303f59117c53cd513b5a1a13b59119,9dc5f45f32303f59117c53cd513b5a1a13b59119,"Correct spelling Bulgarian
+
+Summary:
+Bulgar, is an old, extinct language. :D The language is called Bulgarian, for last 14 centuries.
+Closes https://github.com/facebookresearch/fastText/pull/157
+
+Differential Revision: D4643024
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 93f66db1a3e0c955163421fd7c8f3b43a42f6fd4"
+EdouardGrave,2017-03-02 15:29:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/85ab1cf5db9e502eb2a03e5c4111ec0b180f2d1a,85ab1cf5db9e502eb2a03e5c4111ec0b180f2d1a,"Adding link to pretrained vectors in README + license info
+
+Summary: Adding link to pretraind word vectors in README and license information
+
+Reviewed By: ajoulin
+
+Differential Revision: D4633729
+
+fbshipit-source-id: 72bba6ca296cc7432375b0e5f74ec6245128a3fc"
+sleepinyourhat,2017-03-01 14:49:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/d468083d0724ca30b8059b3b70ba376da43c92e5,d468083d0724ca30b8059b3b70ba376da43c92e5,"'Eastern' doesn't look like a language name.
+
+Summary:
+File name with 'pa' suggests Punjabi.
+Closes https://github.com/facebookresearch/fastText/pull/154
+
+Differential Revision: D4635045
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 894248d16bcaf1faca6739555acf9f5fd85e547b"
+EdouardGrave,2017-02-28 18:31:23,https://api.github.com/repos/facebookresearch/fastText/git/commits/ac3339be3dc77cf1cc334c9a28e67bbaa37c5beb,ac3339be3dc77cf1cc334c9a28e67bbaa37c5beb,"Adding readme file for pretrained vectors.
+
+Summary: Adding readme file for pretrained word vectors
+
+Reviewed By: ajoulin
+
+Differential Revision: D4628468
+
+fbshipit-source-id: be5c4db327fb221bc661ee47075845b95920d498"
+EdouardGrave,2016-12-22 12:28:34,https://api.github.com/repos/facebookresearch/fastText/git/commits/26e524e1e97e060ac8055a7692bb1ddd2f5acb1b,26e524e1e97e060ac8055a7692bb1ddd2f5acb1b,"Add the end-of-sentence token to all lines
+
+Summary: Add the end-of-sentence token (""</s>"") to all lines. Thanks to this, there are no more empty lines.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D4357506
+
+fbshipit-source-id: 19d8c4808584dc6b5ae58600729c5586b7b41cbc"
+EdouardGrave,2016-10-21 14:58:02,https://api.github.com/repos/facebookresearch/fastText/git/commits/fa8fbe18b2afc1f977c3fa623b00fd57a820fae2,fa8fbe18b2afc1f977c3fa623b00fd57a820fae2,"Moved sigmoid and log functions inside Model class
+
+Summary:
+Moved the sigmoid and log functions inside the Model class.
+No more need for the thread-unsafe `fasttext::utils::initTables()` function.
+
+Reviewed By: ajoulin
+
+Differential Revision: D4052203
+
+fbshipit-source-id: ca593fdc83c1ed96abc5db5f09b8db2154062efa"
+ajoulin,2016-10-17 20:48:16,https://api.github.com/repos/facebookresearch/fastText/git/commits/221163900140ddadd95e87252d35757bfc655b8d,221163900140ddadd95e87252d35757bfc655b8d,"Add a -minCountLabel option
+
+Summary:
+In order to reproduce the results from [2] on YFCC100M, we add an option to
+remove unfrequent labels.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D4031684
+
+fbshipit-source-id: c3724706dc0ae35e7d9cc6d08a52cdd4b9d4bccc"
+ajoulin,2016-10-14 06:54:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/a88344f6de234bdefd003e9e55512eceedde3ec0,a88344f6de234bdefd003e9e55512eceedde3ec0,"fix link in bash script
+
+Summary:
+Google stopped to provide service for http-download.
+
+Following #89, the link is changed to a location on github.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D4020056
+
+fbshipit-source-id: d9abe5920f3e999f9c736575f38aedba47f7684e"
+ajoulin,2016-10-06 17:58:14,https://api.github.com/repos/facebookresearch/fastText/git/commits/385f93e980429cea22305a8929587c90df540d8e,385f93e980429cea22305a8929587c90df540d8e,"Make -verbose 0 == silent
+
+Summary: Allows silent training run
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3981525
+
+fbshipit-source-id: f553df43e908aa8ea21fd234f509a5bed562990f"
+ajoulin,2016-10-04 15:16:48,https://api.github.com/repos/facebookresearch/fastText/git/commits/c62abb89396a94520f009f9095874953735e0d75,c62abb89396a94520f009f9095874953735e0d75,"fixing the README
+
+Summary: Updating the README to match the latest version of the code.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3967650
+
+fbshipit-source-id: 30b35fc9df7e452e6a34aec5789356f4f418c9bd"
+ajoulin,2016-10-04 03:02:34,https://api.github.com/repos/facebookresearch/fastText/git/commits/4528a72e783ee14462fc721dc3fe3d46a869ca08,4528a72e783ee14462fc721dc3fe3d46a869ca08,"Make predict thread safe
+
+Summary: Change the predict function to make it thread safe.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3965123
+
+fbshipit-source-id: ea9cecebcf3762166269be86047418ffaa09ce92"
+ajoulin,2016-10-03 17:35:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/d5219c40dd28d628347c2fb077a4ec95094297c9,d5219c40dd28d628347c2fb077a4ec95094297c9,"make dictionary public
+
+Summary: dict_ is public.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3957282
+
+fbshipit-source-id: 0fd3f018fc073db9527e4b86c8d79f3f6f00eb50"
+EdouardGrave,2016-09-30 23:30:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/3518121af9af9349ea93e24feef3fcfacb68ad84,3518121af9af9349ea93e24feef3fcfacb68ad84,"Use istream in FastText::loadModel and add predict function
+
+Summary: Use istream in FastText::loadModel and add predict function
+
+Reviewed By: ajoulin
+
+Differential Revision: D3930362
+
+fbshipit-source-id: b2d99457ac20a09fa0a6572e406b5131792b5496"
+piotr-bojanowski,2016-09-30 07:54:49,https://api.github.com/repos/facebookresearch/fastText/git/commits/af55dd29bc2fc5edfed439cd1a349157724535a8,af55dd29bc2fc5edfed439cd1a349157724535a8,"changing the behavior of minn
+
+Summary:
+Changed the condition for adding an char n-gram. Before, length had to be
+between minn and maxn. Now if minn == 1, the bow and eow characters are
+not taken into account.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3923547
+
+fbshipit-source-id: 087a34d3b370a0d79ff15b1e30a23debe4d88d95"
+EdouardGrave,2016-09-27 18:06:51,https://api.github.com/repos/facebookresearch/fastText/git/commits/3f2cef0a75929eeb72e078b118da04defbf7b200,3f2cef0a75929eeb72e078b118da04defbf7b200,"add option for pretrained word vectors
+
+Summary: Add the option to initialize the model with pretrained word vectors
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3904598
+
+fbshipit-source-id: f7444c8ae2b5c85379b69fb13b6c4f73a8bcb82c"
+bcampbell,2016-09-26 19:51:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/f2aa520563f0c67ad980a5caacc1c9728b3af099,f2aa520563f0c67ad980a5caacc1c9728b3af099,"Add support for reading test data from stdin
+
+Summary:
+For ""predict"" and ""test"" operation, an input filename of ""-"" now
+causes the test data to be read from stdin. This allows other
+processes to easily pipe data into fastTest.
+It'd be nice if this could be supported for training too, but
+the training code needs to be able to seek about in the data,
+which really requires a proper file.
+Closes https://github.com/facebookresearch/fastText/pull/88
+
+Reviewed By: ajoulin
+
+Differential Revision: D3925763
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: b1f293d3aad7b35cb0f0240fabb52e6248fd8caf"
+EdouardGrave,2016-09-23 21:10:19,https://api.github.com/repos/facebookresearch/fastText/git/commits/1cb42f9cf584b881bf8b79ea56b102cf2e5470c3,1cb42f9cf584b881bf8b79ea56b102cf2e5470c3,"Fix printHelp function
+
+Summary: The printHelp function was not printing the correct loss function for the supervised setting
+
+Reviewed By: ajoulin
+
+Differential Revision: D3915973
+
+fbshipit-source-id: df4efb750387eb57cc65887610c2596b2fb02646"
+valeriyvan,2016-09-23 14:25:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/16f623f018506f07a0963c314c749622bf171fb6,16f623f018506f07a0963c314c749622bf171fb6,"Fixes spelling in README
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/43
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3913684
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 9c60459569ebcd5325a3dcbbfd62a66cf61868e2"
+icoxfog417,2016-09-23 01:55:26,https://api.github.com/repos/facebookresearch/fastText/git/commits/3b4579f07a1b8115604340c831705bb05dd7758c,3b4579f07a1b8115604340c831705bb05dd7758c,"always read as byte
+
+Summary:
+I think we have to open file as byte explicitly.
+
+[Specify when opening a file as binary](https://docs.python.org/3.3/howto/pyporting.html#specify-when-opening-a-file-as-binary)
+
+Always read as byte and decode it is good practice. I encountered encoding problem when using Japanese dataset, then this fix solve the problem.
+Closes https://github.com/facebookresearch/fastText/pull/70
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3900225
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: e0b8b2b545f89ff75612f321ed3ba808bdea031e"
+HotChick91,2016-09-22 21:13:04,https://api.github.com/repos/facebookresearch/fastText/git/commits/b480e11556c5a394074c96437c1dc3bbf73981d3,b480e11556c5a394074c96437c1dc3bbf73981d3,"Read directly from the stream buffer
+
+Summary:
+This PR improves performance by using `streambuf::sbumpc` and `streambuf::sungetc` instead of `istream` functions. I got the following speedup on my machine:
+- `classification-example.sh`: 20.1s -> 13.6s
+- `classification-results.sh`: 8m58s -> 5m49s
+- `word-vector-example.sh`: 4m39s -> 4m24s
+
+LTO may be worth enabling, as it shaves off another 2% or so of runtime.
+Closes https://github.com/facebookresearch/fastText/pull/86
+
+Reviewed By: ajoulin
+
+Differential Revision: D3909396
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: e09e72e368ba3d595b5f194fb9f4a5dc5df7b3b7"
+jernkuan,2016-09-21 15:35:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/f0795e13a2fa246477fee19234a1c9a60d6fde99,f0795e13a2fa246477fee19234a1c9a60d6fde99,"Update url for stanford rare word(rw).zip
+
+Summary:
+The url for stanford rare word is no longer accurate as of date.
+Closes https://github.com/facebookresearch/fastText/pull/80
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3900224
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: e22d48d0f5da2d540507f29e4b367a62c215256c"
+EdouardGrave,2016-09-13 03:54:01,https://api.github.com/repos/facebookresearch/fastText/git/commits/7b21700ce8b5c9090a700837e68d2604257d41da,7b21700ce8b5c9090a700837e68d2604257d41da,"Open model file in binary mode in saveModel and loadModel
+
+Summary: Open model file in binary model in saveModel and loadModel.
+
+Reviewed By: ajoulin
+
+Differential Revision: D3852452
+
+fbshipit-source-id: e591a462b6d272e9bcbfb74cd414d037e1acb6b9"
+piotr-bojanowski,2016-09-09 13:18:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/d652288bad3d5e30a350c67599df4c92dc471960,d652288bad3d5e30a350c67599df4c92dc471960,"added a text-vectors option that outputs vectors for lines in a test file.
+
+Summary:
+Added an option that allows the user to compute the vector for a line.
+Works a bit like predict: takes a bin file and a text file and outputs one
+vector per line.
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3827983
+
+fbshipit-source-id: 3339d60d73f31a77c79466cc5847bee650fded12"
+EdouardGrave,2016-09-08 14:00:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/6ab48c5cc4753fdf7d6d233f65a9b605d0be1f9a,6ab48c5cc4753fdf7d6d233f65a9b605d0be1f9a,"add verbose option
+
+Summary: Add verbose option.
+
+Reviewed By: ajoulin
+
+Differential Revision: D3828123
+
+fbshipit-source-id: 1f3769f696a89370759f28fa4a018fb4b021f357"
+EdouardGrave,2016-09-02 12:48:59,https://api.github.com/repos/facebookresearch/fastText/git/commits/602355a3b48c55c4b6e057a8ce3583f58ac6963d,602355a3b48c55c4b6e057a8ce3583f58ac6963d,"Fix empty vocabulary issue.
+
+Summary:
+Training with small files and large -minCount values can lead to empty vocabulary.
+In that case, fastText hangs indefinitely.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3810851
+
+fbshipit-source-id: 3be1a4da943c07845d00377f9d7a3d6b93f3ddd4"
+EdouardGrave,2016-09-02 12:47:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/763901cf3e75970e892291df2142efe00c75dca0,763901cf3e75970e892291df2142efe00c75dca0,"Moved #include <time.h> from fasttext.cc to fasttext.h
+
+Summary: Moved #include <time.h> to fix compilation issue.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3810847
+
+fbshipit-source-id: c69bfe74cba8f5314d117fd3fe7b789248739fac"
+EdouardGrave,2016-08-30 09:14:18,https://api.github.com/repos/facebookresearch/fastText/git/commits/fabb04e5a8b6a387df15e169f9ca88ef0e4f9ca5,fabb04e5a8b6a387df15e169f9ca88ef0e4f9ca5,"Avoid multiple allocations of sigmoid/log tables
+
+Summary: Avoid multiple allocation of sigmoid/log tables
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3785519
+
+fbshipit-source-id: efa50925ed5ace5786d8450dac656d1062eb4651"
+EdouardGrave,2016-08-30 09:14:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/c5eda6041e9274c672196d1f56bcb66e0682a18a,c5eda6041e9274c672196d1f56bcb66e0682a18a,"Remove info namespace & add getLoss to model
+
+Summary: Remove info namespace and add getLoss function to the class Model.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3785086
+
+fbshipit-source-id: d968d412f80fab26c320f3356d7ffd743c7d3099"
+EdouardGrave,2016-08-30 09:14:16,https://api.github.com/repos/facebookresearch/fastText/git/commits/ee6232bfcdb8adf906eeaeee3fa173e56e123a9a,ee6232bfcdb8adf906eeaeee3fa173e56e123a9a,"Remove global learning rate
+
+Summary: Remove global learning rate from model.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3784969
+
+fbshipit-source-id: 7b0e5987e8a47ba7ac8630b6ac97053f533c9e54"
+EdouardGrave,2016-08-30 09:14:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/93622ec670895af2ef8917153432abb2341ae7b3,93622ec670895af2ef8917153432abb2341ae7b3,"Create class FastText & remove global args
+
+Summary: Create class FastText, remove global args and replace references by shared_ptr.
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3784881
+
+fbshipit-source-id: 843bf9af210f2ed34bc5f920a066e7d5571e2d9b"
+EdouardGrave,2016-08-30 09:14:14,https://api.github.com/repos/facebookresearch/fastText/git/commits/b74b9b8475984b183978ec443fae39fae3ab799c,b74b9b8475984b183978ec443fae39fae3ab799c,"Replace ifstream/ofstream by istream/ostream in args, dictionary and matrix
+
+Summary: Replace ifstream/ofstream by istream/ostream in args, dictionary and matrix
+
+Reviewed By: piotr-bojanowski
+
+Differential Revision: D3782752
+
+fbshipit-source-id: 239404713f3f0d24efc8d0aad39b949b4fb46749"
+tomtung,2016-08-26 14:19:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/c110d86181c11c30a3ee9f1c50fecbca875254db,c110d86181c11c30a3ee9f1c50fecbca875254db,"Support printing probabilities of predicted labels
+
+Summary: Closes https://github.com/facebookresearch/fastText/pull/47
+
+Reviewed By: ajoulin
+
+Differential Revision: D3777320
+
+Pulled By: EdouardGrave
+
+fbshipit-source-id: 2312d939033305945128d23113de1c41aff0fd19"
+ajoulin,2016-08-25 23:12:10,https://api.github.com/repos/facebookresearch/fastText/git/commits/b10f8842b421569f13c366c96328439a80129657,b10f8842b421569f13c366c96328439a80129657,"Remove unused variable
+
+Summary: remove the c variable
+
+Reviewed By: EdouardGrave
+
+Differential Revision: D3774577
+
+fbshipit-source-id: 7bfabd79b0280143077918a5b8a58bf37f80c764"
+EdouardGrave,2016-08-24 15:04:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/27d90b13e73c5190e449423acc50a6c78966a0e7,27d90b13e73c5190e449423acc50a6c78966a0e7,Change defaults for supervised setting
+EdouardGrave,2016-08-24 14:14:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/05a85daa766f3cfdb21cfd25d7076ee3ba4741b1,05a85daa766f3cfdb21cfd25d7076ee3ba4741b1,Remove thresholding for labels.
+EdouardGrave,2016-08-22 15:17:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/32235263e10e0e76d6f62365a3c77586451f1aee,32235263e10e0e76d6f62365a3c77586451f1aee,Make dictionary::readWord faster by removing string allocation
+EdouardGrave,2016-08-19 14:43:39,https://api.github.com/repos/facebookresearch/fastText/git/commits/1826a12da3f983daceae0af3def95b1fa763b649,1826a12da3f983daceae0af3def95b1fa763b649,Change README.md
+EdouardGrave,2016-08-19 14:41:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/9fc806ce25d2792462d90671faca3541cf5b3132,9fc806ce25d2792462d90671faca3541cf5b3132,Change README.md
+EdouardGrave,2016-08-19 14:31:29,https://api.github.com/repos/facebookresearch/fastText/git/commits/8c9f1d588fb8b0ddecf0f2a66e5e4bbcf43ee85a,8c9f1d588fb8b0ddecf0f2a66e5e4bbcf43ee85a,Merge branch 'tomtung-k_best'
+EdouardGrave,2016-08-19 14:30:44,https://api.github.com/repos/facebookresearch/fastText/git/commits/a79c5749e6f6da7b5cbd64d9285cfef2fc2587b3,a79c5749e6f6da7b5cbd64d9285cfef2fc2587b3,Refactoring and adding precision and recall at k in test.
+EdouardGrave,2016-08-18 21:30:04,https://api.github.com/repos/facebookresearch/fastText/git/commits/ddc522fc1b0e47607c4f576f1ec0ca00481455d0,ddc522fc1b0e47607c4f576f1ec0ca00481455d0,Fix bug when null char in train file
+EdouardGrave,2016-08-18 14:18:49,https://api.github.com/repos/facebookresearch/fastText/git/commits/e8d8f9aafa5d1ad6a9f72689a72b352a0db53e64,e8d8f9aafa5d1ad6a9f72689a72b352a0db53e64,"Revert ""Refactor to remove duplicate code""
+
+This reverts commit 7c3f9bb5ad61aa52f4cffa200350db2275fce455."
+EdouardGrave,2016-08-18 14:02:37,https://api.github.com/repos/facebookresearch/fastText/git/commits/37485001301f7a0bc7d4f984dc416af0c66be0f8,37485001301f7a0bc7d4f984dc416af0c66be0f8,Merge branch 'k_best' of https://github.com/tomtung/fastText into tomtung-k_best
+EdouardGrave,2016-08-17 09:04:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/86e6b441007617feb73c201a8a09c866b82d14e3,86e6b441007617feb73c201a8a09c866b82d14e3,Fix potential source of NaN in softmax
+tomtung,2016-08-14 00:45:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/7c3f9bb5ad61aa52f4cffa200350db2275fce455,7c3f9bb5ad61aa52f4cffa200350db2275fce455,Refactor to remove duplicate code
+tomtung,2016-08-11 05:59:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/48b23525f886ec8d6f6d94bef59b29fd54699bb9,48b23525f886ec8d6f6d94bef59b29fd54699bb9,Bug fix
+EdouardGrave,2016-08-10 13:56:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/9bfa32d95ae49739eb0ab7c58dfab88408f8d990,9bfa32d95ae49739eb0ab7c58dfab88408f8d990,Add link to Google group
+piotr-bojanowski,2016-08-09 15:58:18,https://api.github.com/repos/facebookresearch/fastText/git/commits/206179d64c1730862328e9b750e98bd8aa1c16b5,206179d64c1730862328e9b750e98bd8aa1c16b5,corrected README with https clone and docker
+piotr-bojanowski,2016-08-09 15:55:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/ab287a7261b857f0a479d45c03add2d9b025971b,ab287a7261b857f0a479d45c03add2d9b025971b,"Merge pull request #3 from xeb/master
+
+Dockerfile for fastText"
+EdouardGrave,2016-08-09 12:13:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/b250b4219f5d720407d87547b7cd8fcfb6de5cd5,b250b4219f5d720407d87547b7cd8fcfb6de5cd5,Fix empty train file bug
+tomtung,2016-08-09 08:56:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/abe12a9d5939dfe5cbf4bbe7c8ce4047c330757a,abe12a9d5939dfe5cbf4bbe7c8ce4047c330757a,Add support for predicting k best labels
+piotr-bojanowski,2016-08-09 08:16:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/04b872ded4b499d66f033a47bcdf262d8aa96905,04b872ded4b499d66f033a47bcdf262d8aa96905,"Merge pull request #13 from gojomo/patch-1
+
+match args.cc current minCount & verbose values in README"
+xeb,2016-08-09 07:37:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/9e678fa74da762eb0a41598d3ea27f4f9d0e84fe,9e678fa74da762eb0a41598d3ea27f4f9d0e84fe,Adding Docker example to README
+EdouardGrave,2016-08-09 07:36:07,https://api.github.com/repos/facebookresearch/fastText/git/commits/6183f9c775763c4750efc67d8343149b8215d854,6183f9c775763c4750efc67d8343149b8215d854,Fix bug when computing OOV word vectors without ngrams
+gojomo,2016-08-08 19:47:43,https://api.github.com/repos/facebookresearch/fastText/git/commits/9d5f28472dc116510b1f93c83aa42521350b1d90,9d5f28472dc116510b1f93c83aa42521350b1d90,doc varying minCount default per command
+piotr-bojanowski,2016-08-08 15:08:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/16a8d4feed6d2d2fb4299204f0a2a2b75f438cb6,16a8d4feed6d2d2fb4299204f0a2a2b75f438cb6,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-08-08 15:08:30,https://api.github.com/repos/facebookresearch/fastText/git/commits/540c28359b8706e20ae4d8d2064d6c3b25214bb7,540c28359b8706e20ae4d8d2064d6c3b25214bb7,added debug option to makefile and atomized the asserts
+EdouardGrave,2016-08-08 15:08:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/8fa9704cf6b07ff1131869a2246e54311deee77b,8fa9704cf6b07ff1131869a2246e54311deee77b,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-08 15:05:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/e2a5d07be643187b4fba41fa6e3b0a6ea8897fd8,e2a5d07be643187b4fba41fa6e3b0a6ea8897fd8,Replace iswspace by isspace in dictionary.cc
+ajoulin,2016-08-08 13:11:34,https://api.github.com/repos/facebookresearch/fastText/git/commits/8be24fe929e5d8e72adeec40e6c70206c6260185,8be24fe929e5d8e72adeec40e6c70206c6260185,Merge branch 'master' of github.com:facebookresearch/fastText
+ajoulin,2016-08-08 09:15:50,https://api.github.com/repos/facebookresearch/fastText/git/commits/7867de23e1316a5470514018e5cf05824bed562a,7867de23e1316a5470514018e5cf05824bed562a,add argument for lr update rate / remove verbose
+piotr-bojanowski,2016-08-08 11:59:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/dc2e6a0dd9c4632c85fa4b2d36d7748169d7272f,dc2e6a0dd9c4632c85fa4b2d36d7748169d7272f,prefixed all include guards with FASTTEXT
+piotr-bojanowski,2016-08-08 11:32:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/ec493d160af94a0aeb6cc802bddd8ae1ca93c99a,ec493d160af94a0aeb6cc802bddd8ae1ca93c99a,Updated Readme with plaftorm information
+piotr-bojanowski,2016-08-08 11:27:36,https://api.github.com/repos/facebookresearch/fastText/git/commits/8748cd0cb478a45040da6afbe98dc7c8648f5689,8748cd0cb478a45040da6afbe98dc7c8648f5689,corrected /bin/sh path to /usr/bin/env bash in all scripts
+piotr-bojanowski,2016-08-08 11:25:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/98d9849bd2c450ae1b8e05e745cc3c8695a4a67d,98d9849bd2c450ae1b8e05e745cc3c8695a4a67d,"Merge pull request #2 from jaytaylor/jay/fix-classification-results
+
+Use `bash' instead of `sh' for classification-results.sh."
+piotr-bojanowski,2016-08-08 11:24:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/9f8a06e604b352217275baf140f1752a30354cdb,9f8a06e604b352217275baf140f1752a30354cdb,"Merge pull request #15 from pyk/hotfix/fix-segfault-dictionary
+
+Add bound checking to Dictionary::getLabel(lid)"
+piotr-bojanowski,2016-08-08 11:20:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/6a90a31d4dca06902bb59564880168179f2188bc,6a90a31d4dca06902bb59564880168179f2188bc,Set the pointers of precomputed tables to nullptr in Utils after delete.
+piotr-bojanowski,2016-08-08 10:09:34,https://api.github.com/repos/facebookresearch/fastText/git/commits/f693939374d7a3ea8498a5bc8f4b5aaf708c005c,f693939374d7a3ea8498a5bc8f4b5aaf708c005c,"Merge pull request #14 from infinite-Joy/joy.devel
+
+Removing string encoding incompatibility issues with python3."
+piotr-bojanowski,2016-08-08 09:27:41,https://api.github.com/repos/facebookresearch/fastText/git/commits/2dbccb1efea2212f8071d86fdb663080209c5994,2dbccb1efea2212f8071d86fdb663080209c5994,"Merge pull request #4 from alexbeletsky/update-readme
+
+Added links to articles and hacker news discussion to the Readme."
+piotr-bojanowski,2016-08-08 09:08:58,https://api.github.com/repos/facebookresearch/fastText/git/commits/2b5460e90cc89f4f451977c1b466e5106c1c7a7a,2b5460e90cc89f4f451977c1b466e5106c1c7a7a,corrected include syntax
+pyk,2016-08-07 11:22:25,https://api.github.com/repos/facebookresearch/fastText/git/commits/99c0e5a7dec28d771d4773ddf35f0b68bad41c70,99c0e5a7dec28d771d4773ddf35f0b68bad41c70,dictionary: add bound check to getLabel(lid)
+infinite-Joy,2016-08-07 10:57:09,https://api.github.com/repos/facebookresearch/fastText/git/commits/0e430d438c5be6c9e19695d2b5d7334314a6d09f,0e430d438c5be6c9e19695d2b5d7334314a6d09f,removing some incompatibility issues with python3
+gojomo,2016-08-06 21:45:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/f26bea7594509771821f1bcf2554be70d66cfbc6,f26bea7594509771821f1bcf2554be70d66cfbc6,match args.cc current minCount & verbose values
+alexbeletsky,2016-08-05 14:31:05,https://api.github.com/repos/facebookresearch/fastText/git/commits/1e7367ce7352f353883f7702bb17f5a54b34f58e,1e7367ce7352f353883f7702bb17f5a54b34f58e,discussion on HN link added
+alexbeletsky,2016-08-05 14:01:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/4f7c0b6618495fd118ed506308758ff85974a00b,4f7c0b6618495fd118ed506308758ff85974a00b,links to articles
+EdouardGrave,2016-08-04 22:52:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/cd5726ef4bbb62ff45514c34ec72168948346acd,cd5726ef4bbb62ff45514c34ec72168948346acd,Add -verbose option for LR update
+jaytaylor,2016-08-04 22:26:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/7249ec464de575614e41e7c4c024c4e74066ce25,7249ec464de575614e41e7c4c024c4e74066ce25,Use `bash' instead of `sh' for classification-results.sh.  Fixes issue #1.
+EdouardGrave,2016-08-04 17:20:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/0c67b64ef7f127aaf72ab833894a325c4d00cad8,0c67b64ef7f127aaf72ab833894a325c4d00cad8,Change in README.md
+piotr-bojanowski,2016-08-04 16:29:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/55ba6b505004539d3621d8eb5a10d5259faa4bb2,55ba6b505004539d3621d8eb5a10d5259faa4bb2,merge
+piotr-bojanowski,2016-08-04 16:28:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/09a3b544ed0ea5b6107f5cc78afd829efd250c4b,09a3b544ed0ea5b6107f5cc78afd829efd250c4b,added bibtex
+EdouardGrave,2016-08-03 18:13:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/6f3d6f06336a38b9e63ec5c7ae21073588322453,6f3d6f06336a38b9e63ec5c7ae21073588322453,Remove deprecated options in word-vector-example.sh
+EdouardGrave,2016-08-03 18:07:21,https://api.github.com/repos/facebookresearch/fastText/git/commits/dd7316857d3b104724cea966fb0d8cb09f25887d,dd7316857d3b104724cea966fb0d8cb09f25887d,Small changes in README.md
+EdouardGrave,2016-08-03 18:05:23,https://api.github.com/repos/facebookresearch/fastText/git/commits/0a6c547f0a0e612ceeaca34438127244d2f8b1c2,0a6c547f0a0e612ceeaca34438127244d2f8b1c2,Small changes in README.md
+EdouardGrave,2016-08-03 17:58:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/93a201bdb04a1ae2c2e29f1cdd6cd00bc3feaf9f,93a201bdb04a1ae2c2e29f1cdd6cd00bc3feaf9f,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-03 17:58:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/2e93166069b349a35db6ccb35b36fff807490a61,2e93166069b349a35db6ccb35b36fff807490a61,Cleanup of eval.py
+piotr-bojanowski,2016-08-03 17:14:10,https://api.github.com/repos/facebookresearch/fastText/git/commits/569577e38557be9c44cb2b7feeb14b326cfc1266,569577e38557be9c44cb2b7feeb14b326cfc1266,corrected gitignore
+piotr-bojanowski,2016-08-03 17:10:43,https://api.github.com/repos/facebookresearch/fastText/git/commits/14f48cac55d1ef5582ff1aa832569c0995584f4d,14f48cac55d1ef5582ff1aa832569c0995584f4d,added comments to the results script
+piotr-bojanowski,2016-08-03 17:06:15,https://api.github.com/repos/facebookresearch/fastText/git/commits/2945e6ff65bf84a1e3928224a49455509d0217e2,2945e6ff65bf84a1e3928224a49455509d0217e2,updated script names
+EdouardGrave,2016-08-03 16:06:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/70ab742d5dee92394163708da2d13bcccfbc96a6,70ab742d5dee92394163708da2d13bcccfbc96a6,Update README.md
+EdouardGrave,2016-08-03 13:04:38,https://api.github.com/repos/facebookresearch/fastText/git/commits/9adbd55a514c29f8d25b230051bb460c6089313d,9adbd55a514c29f8d25b230051bb460c6089313d,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-03 13:04:30,https://api.github.com/repos/facebookresearch/fastText/git/commits/bef5f3c73d9652a30e82d4b58113dd59b63ce351,bef5f3c73d9652a30e82d4b58113dd59b63ce351,Remove -sampling and -onlyWord arguments
+piotr-bojanowski,2016-08-02 16:05:25,https://api.github.com/repos/facebookresearch/fastText/git/commits/ceaa9c5ac24f9497f3f1e4ceff883c608f34ff4a,ceaa9c5ac24f9497f3f1e4ceff883c608f34ff4a,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-08-02 16:05:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/d96f036dee72e673154586454e5d6065aa0e54e4,d96f036dee72e673154586454e5d6065aa0e54e4,updated the Readme
+EdouardGrave,2016-08-02 14:06:42,https://api.github.com/repos/facebookresearch/fastText/git/commits/95e5277378e6755e0aadcb16a52df0ca2c20e59b,95e5277378e6755e0aadcb16a52df0ca2c20e59b,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-02 14:06:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/4f5866d73956c4b3908c8ad507ada1a5ce62ca7c,4f5866d73956c4b3908c8ad507ada1a5ce62ca7c,Cleanup of fasttext.cc
+piotr-bojanowski,2016-08-02 14:04:47,https://api.github.com/repos/facebookresearch/fastText/git/commits/d29c8022822dd8d961952c54e21fa8a00e23c949,d29c8022822dd8d961952c54e21fa8a00e23c949,corrected uppercase / formatting in readme
+piotr-bojanowski,2016-08-02 13:24:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/e1dd53126caaad9f5990e52a157645e02873774e,e1dd53126caaad9f5990e52a157645e02873774e,removed get-data and moved data getting to specific example scripts
+piotr-bojanowski,2016-08-02 12:41:52,https://api.github.com/repos/facebookresearch/fastText/git/commits/0f856f7260651d062e54dcb49df02332d2e49760,0f856f7260651d062e54dcb49df02332d2e49760,Merged with master
+piotr-bojanowski,2016-08-02 12:40:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/a75375205d607b794bd8df60d1997fbb63b25006,a75375205d607b794bd8df60d1997fbb63b25006,added initial README
+piotr-bojanowski,2016-08-02 12:38:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/946021067d5d5a1465618a67029d96ea32c33006,946021067d5d5a1465618a67029d96ea32c33006,wrote scripts allowing to reproduce numbers from [2]
+EdouardGrave,2016-08-02 10:54:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/8e4083b3501ab70a00b08b9b16798cccdd0939c5,8e4083b3501ab70a00b08b9b16798cccdd0939c5,Add entry_type and replace freq by counts
+EdouardGrave,2016-08-02 08:31:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/689c020af1a1f0212f7c9c06ac15f5e2d16f4707,689c020af1a1f0212f7c9c06ac15f5e2d16f4707,Change dictionary save/load
+EdouardGrave,2016-08-01 22:33:31,https://api.github.com/repos/facebookresearch/fastText/git/commits/61abe1fcc2f7918280e9c0a8e2bebe5c02ddbcde,61abe1fcc2f7918280e9c0a8e2bebe5c02ddbcde,Change loss computation in model.cc
+EdouardGrave,2016-08-01 21:32:17,https://api.github.com/repos/facebookresearch/fastText/git/commits/9062934e26906cbdaf0c80ec1ee6449a378e0905,9062934e26906cbdaf0c80ec1ee6449a378e0905,Fix local variable name in getLine
+piotr-bojanowski,2016-08-01 13:44:45,https://api.github.com/repos/facebookresearch/fastText/git/commits/427bce6f8cc650bfefb5f5418401fc99e9813209,427bce6f8cc650bfefb5f5418401fc99e9813209,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-08-01 13:44:24,https://api.github.com/repos/facebookresearch/fastText/git/commits/cdc98dd3936d9e1bacb31178ff6900ac0ef4f597,cdc98dd3936d9e1bacb31178ff6900ac0ef4f597,Added 3/4-th negative sampling.
+EdouardGrave,2016-08-01 13:41:37,https://api.github.com/repos/facebookresearch/fastText/git/commits/3ce34af798fb154452925a9c49c0d11852c21abf,3ce34af798fb154452925a9c49c0d11852c21abf,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-01 13:41:27,https://api.github.com/repos/facebookresearch/fastText/git/commits/1ce6ce892bec67b0965273b352de635b37450314,1ce6ce892bec67b0965273b352de635b37450314,Threshold dictionary if too large when building from file
+piotr-bojanowski,2016-08-01 13:35:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/c252779ac8965856f7972f1afd7f45a5db60b2b2,c252779ac8965856f7972f1afd7f45a5db60b2b2,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-08-01 13:35:03,https://api.github.com/repos/facebookresearch/fastText/git/commits/0dfc9882539ae727d8519ebf922c1b2e1f8af5ed,0dfc9882539ae727d8519ebf922c1b2e1f8af5ed,Created a method in fasttext for computing vector for a word.
+EdouardGrave,2016-08-01 11:58:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/90b1a9c79f7d5c71b37f363dbc0a25f33a218e6b,90b1a9c79f7d5c71b37f363dbc0a25f33a218e6b,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-08-01 11:55:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/aa036e3f0388b0e15875faef1108bda8a4ebec45,aa036e3f0388b0e15875faef1108bda8a4ebec45,Change getter names in dictionary.cc
+piotr-bojanowski,2016-08-01 10:05:22,https://api.github.com/repos/facebookresearch/fastText/git/commits/1d08471e6147a6ef1327fd1da802681f522ab7a5,1d08471e6147a6ef1327fd1da802681f522ab7a5,Checked for proper file status before reading from ifs.
+piotr-bojanowski,2016-08-01 09:33:39,https://api.github.com/repos/facebookresearch/fastText/git/commits/4a1c2adaf6015dafbccc3bb783a4d4f00a87baef,4a1c2adaf6015dafbccc3bb783a4d4f00a87baef,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-08-01 09:33:32,https://api.github.com/repos/facebookresearch/fastText/git/commits/2e2a55ff51ad18e2f980537466d592065c1ad892,2e2a55ff51ad18e2f980537466d592065c1ad892,added a wall clock timing of training
+EdouardGrave,2016-07-29 15:40:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/8fa344987a8c569b6c7445d9c62ac61b5f2ad32b,8fa344987a8c569b6c7445d9c62ac61b5f2ad32b,Replace !eof() by peek() != EOF
+EdouardGrave,2016-07-29 14:24:00,https://api.github.com/repos/facebookresearch/fastText/git/commits/909cd17c3bebf948106b92b6a33a2545fe4aee71,909cd17c3bebf948106b92b6a33a2545fe4aee71,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-07-29 14:16:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/52a5b3807cc16ec98b9f584d8d72c353ed643997,52a5b3807cc16ec98b9f584d8d72c353ed643997,Predict now outputs n/a for empty lines.
+EdouardGrave,2016-07-29 14:04:29,https://api.github.com/repos/facebookresearch/fastText/git/commits/6147096c17bad3d09fe457f4c2da2fd018c9ce49,6147096c17bad3d09fe457f4c2da2fd018c9ce49,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-07-29 14:04:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/459b504b7d834d4048c5a7e8dc501ea518d50bec,459b504b7d834d4048c5a7e8dc501ea518d50bec,Adding FNV hash function to dictionary.cc
+piotr-bojanowski,2016-07-29 13:25:51,https://api.github.com/repos/facebookresearch/fastText/git/commits/73d12c4ac8e3c0248adbf9e33628402e9ff163f8,73d12c4ac8e3c0248adbf9e33628402e9ff163f8,Get data now downloads yelp review full and ab_news. Wrote a script for sentence classification. Wrote a function predict to predict most likely label at test time.
+EdouardGrave,2016-07-27 17:41:20,https://api.github.com/repos/facebookresearch/fastText/git/commits/bc9f6a1a4e704e9abb86943d2ab093dbd3bf2d78,bc9f6a1a4e704e9abb86943d2ab093dbd3bf2d78,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-07-27 17:41:08,https://api.github.com/repos/facebookresearch/fastText/git/commits/12ea9d0ccc3592941906ad5f6be01e174a8e2197,12ea9d0ccc3592941906ad5f6be01e174a8e2197,"Removed wstring, wifstream, etc."
+piotr-bojanowski,2016-07-26 13:05:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/3195af6059fcfc7326deca74a00cfcb6d9aeb2f4,3195af6059fcfc7326deca74a00cfcb6d9aeb2f4,corrected Makefile and get-vectors after merging binaries
+EdouardGrave,2016-07-26 03:50:35,https://api.github.com/repos/facebookresearch/fastText/git/commits/f512bea43722070f43879b927f902b1d202fb291,f512bea43722070f43879b927f902b1d202fb291,Fix typo in Args::parseArgs
+EdouardGrave,2016-07-26 03:29:12,https://api.github.com/repos/facebookresearch/fastText/git/commits/3bb645f28e995eb376a83b62a01fdbd7257d6841,3bb645f28e995eb376a83b62a01fdbd7257d6841,Remove unused test in Args::parseArgs
+EdouardGrave,2016-07-26 03:05:56,https://api.github.com/repos/facebookresearch/fastText/git/commits/307d2235f0d24d23deda9ca74e6e6bf275adfb2a,307d2235f0d24d23deda9ca74e6e6bf275adfb2a,Removed function Args::checkArgs
+EdouardGrave,2016-07-26 02:26:25,https://api.github.com/repos/facebookresearch/fastText/git/commits/e524b992abc5ade49af4403455ed514fec0609ec,e524b992abc5ade49af4403455ed514fec0609ec,Merged the different functionalities in fasttext.cc
+EdouardGrave,2016-07-26 02:26:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/f253fff76d80dcb4105c0df9c3ed8ad64db4a434,f253fff76d80dcb4105c0df9c3ed8ad64db4a434,Merged the different functionalities in fasttext.cc
+EdouardGrave,2016-07-25 17:32:06,https://api.github.com/repos/facebookresearch/fastText/git/commits/c114135ed609bf3c314a3a30b646a9f78269e446,c114135ed609bf3c314a3a30b646a9f78269e446,Updated CONTRIBUTING.md
+EdouardGrave,2016-07-25 16:49:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/457db460545e3746abe10b8b6a19e2e6207a2fc5,457db460545e3746abe10b8b6a19e2e6207a2fc5,Fix includes
+EdouardGrave,2016-07-25 15:51:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/a518e99d5f508971bc8fa3b7201c2a445909398a,a518e99d5f508971bc8fa3b7201c2a445909398a,Merge branch 'master' of github.com:facebookresearch/fastText
+EdouardGrave,2016-07-25 15:51:46,https://api.github.com/repos/facebookresearch/fastText/git/commits/fe73e5ff9773897f2b4e3955552361e2c1367a4b,fe73e5ff9773897f2b4e3955552361e2c1367a4b,Remove unused variable & change long long to int64_t
+piotr-bojanowski,2016-07-25 15:31:26,https://api.github.com/repos/facebookresearch/fastText/git/commits/8a934fff15afe9622d7e17b5fedfe8a9ed2bda43,8a934fff15afe9622d7e17b5fedfe8a9ed2bda43,added a variable in sh files to specify the data and results folder
+piotr-bojanowski,2016-07-25 15:28:49,https://api.github.com/repos/facebookresearch/fastText/git/commits/9e7f160e691f858a21cdf423ac123ffc37320130,9e7f160e691f858a21cdf423ac123ffc37320130,changed file naming convention
+piotr-bojanowski,2016-07-25 15:03:55,https://api.github.com/repos/facebookresearch/fastText/git/commits/075a9463f6a3cd09fa7f22bf7dc3a81ea25a60a7,075a9463f6a3cd09fa7f22bf7dc3a81ea25a60a7,added the results folder to gitignore
+piotr-bojanowski,2016-07-25 14:53:40,https://api.github.com/repos/facebookresearch/fastText/git/commits/2d6fbb4f79fc16e234f30f7eaddbc4efe173fb1f,2d6fbb4f79fc16e234f30f7eaddbc4efe173fb1f,Merge branch 'master' of github.com:facebookresearch/fastText
+piotr-bojanowski,2016-07-25 14:53:33,https://api.github.com/repos/facebookresearch/fastText/git/commits/b44e9a3a520d42658f636fd14067f393911fad24,b44e9a3a520d42658f636fd14067f393911fad24,added headers to py and sh files
+EdouardGrave,2016-07-25 04:08:28,https://api.github.com/repos/facebookresearch/fastText/git/commits/2d90098a6e80ebccde539f208b519f83bc00868d,2d90098a6e80ebccde539f208b519f83bc00868d,Small refactoring of Model.cpp
+EdouardGrave,2016-07-24 21:40:54,https://api.github.com/repos/facebookresearch/fastText/git/commits/9ef982bd8b3e314574b16775746105c3d4e218f5,9ef982bd8b3e314574b16775746105c3d4e218f5,Change argument order in Matrix::dotRow and Matrix::addRow
+piotr-bojanowski,2016-07-22 07:24:11,https://api.github.com/repos/facebookresearch/fastText/git/commits/c600ed647249d68ac88ed84a48533baaf7ac18b5,c600ed647249d68ac88ed84a48533baaf7ac18b5,Changed default amount of threads in get-vectors.sh
+EdouardGrave,2016-07-22 04:05:13,https://api.github.com/repos/facebookresearch/fastText/git/commits/a82b88c5dfe1b67eb7824943e2c13a85310e3a2f,a82b88c5dfe1b67eb7824943e2c13a85310e3a2f,Remove unused code in Utils.cpp
+EdouardGrave,2016-07-22 03:56:57,https://api.github.com/repos/facebookresearch/fastText/git/commits/3a2593e494735bdf1fe68b1408d5066fd998760d,3a2593e494735bdf1fe68b1408d5066fd998760d,Fix rounding bug in utils::log
+piotr-bojanowski,2016-07-21 16:49:48,https://api.github.com/repos/facebookresearch/fastText/git/commits/5cf52403eda6af5995f4a9f30387273266690acf,5cf52403eda6af5995f4a9f30387273266690acf,Added the data folder to .gitignore.
+piotr-bojanowski,2016-07-21 16:32:14,https://api.github.com/repos/facebookresearch/fastText/git/commits/587c4ed67a788e281324b916640e53f9c53042d2,587c4ed67a788e281324b916640e53f9c53042d2,Fixed a bug in the Makefile. Use c++ instead of cc.
+piotr-bojanowski,2016-07-21 16:24:21,https://api.github.com/repos/facebookresearch/fastText/git/commits/a2d7b1fc5947bf265064cd3dd2d6a9432e96ae76,a2d7b1fc5947bf265064cd3dd2d6a9432e96ae76,Corrected a problem in Dictionary with long / int64_t

@@ -1,0 +1,1860 @@
+pq,Pure Go Postgres driver for database/sql
+username,timestamp,url,sha,message
+mjibson,2019-08-13 06:55:22,https://api.github.com/repos/lib/pq/git/commits/78223426e7c66d631117c0a9da1b7f3fde4d23a5,78223426e7c66d631117c0a9da1b7f3fde4d23a5,"Merge pull request #885 from muesli/vet-fixes
+
+Fixed error handling in NewConnector example"
+mjibson,2019-08-13 06:54:28,https://api.github.com/repos/lib/pq/git/commits/d4f1fb59425dd2129605215db9fc4d7e2258dcb3,d4f1fb59425dd2129605215db9fc4d7e2258dcb3,"Merge pull request #886 from muesli/linter-fixes
+
+Simplify code"
+mjibson,2019-08-13 06:54:11,https://api.github.com/repos/lib/pq/git/commits/70ff39830840b49fd6c5c89d6a15fc42f5018ba7,70ff39830840b49fd6c5c89d6a15fc42f5018ba7,"Merge pull request #884 from muesli/typo-fixes
+
+Fixed typos"
+mjibson,2019-08-13 06:53:50,https://api.github.com/repos/lib/pq/git/commits/13e871860d39318aa5fdc2a11b90cad5b2e2b37f,13e871860d39318aa5fdc2a11b90cad5b2e2b37f,"Merge pull request #888 from alex/zero-element-copy-rows-affected
+
+Fixed #887 -- don't nil-ptr-deref when calling RowsAffected on the result of a 0-item CopyIn"
+alex,2019-07-29 20:55:06,https://api.github.com/repos/lib/pq/git/commits/5fac031ac8893f26b4f19f94ad8fafe848ce17da,5fac031ac8893f26b4f19f94ad8fafe848ce17da,Fixed #887 -- don't nil-ptr-deref when calling RowsAffected on the result of a 0-item CopyIn
+muesli,2019-07-20 05:00:04,https://api.github.com/repos/lib/pq/git/commits/0566947fc3a55a4c748a9122a8bf40af62211bba,0566947fc3a55a4c748a9122a8bf40af62211bba,"Simplify code
+
+Just a tiny fix to improve code readability."
+muesli,2019-07-20 04:55:58,https://api.github.com/repos/lib/pq/git/commits/e642b39ccfa6d87156c4be6bdca7c6f92255654b,e642b39ccfa6d87156c4be6bdca7c6f92255654b,"Fixed error handling in NewConnector example
+
+err can't have changed since we last checked."
+muesli,2019-07-20 04:54:41,https://api.github.com/repos/lib/pq/git/commits/3c978b7c76f738eb8fe5599ae52b4ff8b1617392,3c978b7c76f738eb8fe5599ae52b4ff8b1617392,"Fixed typos
+
+Just two nit-picky typo fixes."
+mjibson,2019-07-16 17:26:55,https://api.github.com/repos/lib/pq/git/commits/3427c32cb71afc948325f299f040e53c1dd78979,3427c32cb71afc948325f299f040e53c1dd78979,"Merge pull request #883 from lib/update
+
+bump supported versions; fix tests"
+mjibson,2019-07-16 06:40:29,https://api.github.com/repos/lib/pq/git/commits/11a62a52976bd8f33ab4fe9d8b175e101bc967b1,11a62a52976bd8f33ab4fe9d8b175e101bc967b1,"bump supported versions; fix tests
+
+Our tested support for Go versions is changing to the two latest instead
+of three latest. This matches what the Go team supports. If lib/pq
+happens to not work in older versions of Go, you must use an earlier
+version of lib/pq.
+
+Remove tested support for Go 1.9 and 1.10, add Go 1.12. Remove tested
+support for unsupported Postgres versions (< 9.4).
+
+Megacheck was renamed to staticcheck.
+
+Fix two issues found by golint."
+mjibson,2019-07-16 06:26:05,https://api.github.com/repos/lib/pq/git/commits/a921722df8cf4f98a1bc56ba511976728f5f5442,a921722df8cf4f98a1bc56ba511976728f5f5442,"Merge pull request #882 from jordanlewis/fix-inf-test
+
+bugfix to infinity timestamp test"
+mjibson,2019-07-16 06:25:19,https://api.github.com/repos/lib/pq/git/commits/d14e375467a78598e88e2750844deb469bb12fc7,d14e375467a78598e88e2750844deb469bb12fc7,"Merge pull request #877 from tsenart/optimizations
+
+Reduce writeBuf.string run-time by 87.68%"
+mjibson,2019-07-16 06:22:15,https://api.github.com/repos/lib/pq/git/commits/99d493319e1ccb8dd181d883d6c7ae7e9aa6472f,99d493319e1ccb8dd181d883d6c7ae7e9aa6472f,"Merge pull request #872 from jaym/issue-731
+
+Refactor rollback in commit"
+mjibson,2019-07-16 06:20:45,https://api.github.com/repos/lib/pq/git/commits/cb2b4276bb62435f140cb330f14dea6feeccfe71,cb2b4276bb62435f140cb330f14dea6feeccfe71,"Merge pull request #865 from andriikushch/fix-receiver-name
+
+unify receiver name for conn struct methods"
+jordanlewis,2019-07-15 21:18:34,https://api.github.com/repos/lib/pq/git/commits/464bb40d5dada86e802fc4f511288f4b403b04d5,464bb40d5dada86e802fc4f511288f4b403b04d5,"bugfix to infinity timestamp test
+
+Previously, this test would panic the test suite if the server didn't
+return any error at all."
+tsenart,2019-07-02 16:50:13,https://api.github.com/repos/lib/pq/git/commits/e1aeba00749f8209383d972a63ba06051e225d19,e1aeba00749f8209383d972a63ba06051e225d19,Update buf.go
+tsenart,2019-07-01 14:30:59,https://api.github.com/repos/lib/pq/git/commits/b083f0c7ccad36da50886ad5d8ac30c57bbb2596,b083f0c7ccad36da50886ad5d8ac30c57bbb2596,"Reduce writeBuf.string run-time by 87.68%
+
+name                 old time/op    new time/op    delta
+_writeBuf_string-16    14.8ns ± 0%     1.8ns ± 0%  -87.68%  (p=0.000 n=12+15)
+
+name                 old alloc/op   new alloc/op   delta
+_writeBuf_string-16     0.00B          0.00B          ~     (all equal)
+
+name                 old allocs/op  new allocs/op  delta
+_writeBuf_string-16      0.00           0.00          ~     (all equal)"
+jaym,2019-06-01 13:59:34,https://api.github.com/repos/lib/pq/git/commits/7c6a1fc11534ff34a57967611307a851ccc4ca94,7c6a1fc11534ff34a57967611307a851ccc4ca94,"Refactor rollback in commit
+
+Rollback cannot be called in Commit as the function
+that watches the context for cancelation assumes it
+is only ever called once. Calling it multiple times
+hangs the goroutine.
+
+This is an alternative to #829.
+
+Fixes #731 and #848
+Replaces #829
+
+Signed-off-by: Jay Mundrawala <jmundrawala@chef.io>"
+adriansr,2019-05-07 19:18:18,https://api.github.com/repos/lib/pq/git/commits/2ff3cb3adc01768e0a552b3a02575a6df38a9bea,2ff3cb3adc01768e0a552b3a02575a6df38a9bea,"Fix connection leak on SSL failure
+
+When connecting to a server using SSL fails (i.e. with SSL disabled)
+the connection was never freed.
+
+Fixes #840"
+mjibson,2019-05-04 01:17:54,https://api.github.com/repos/lib/pq/git/commits/ceb88a0649027d76542fd8084fcb4e07b4d52295,ceb88a0649027d76542fd8084fcb4e07b4d52295,"Merge pull request #852 from jkatz/quote-literal
+
+Add `QuoteLiteral` function."
+jkatz,2019-04-23 21:44:38,https://api.github.com/repos/lib/pq/git/commits/5f09741a19a74ce3ac0cc0d1cf32ef453e706529,5f09741a19a74ce3ac0cc0d1cf32ef453e706529,"Add `QuoteLiteral` function.
+
+There already exists a `QuoteIdentifier` function that helps to escape
+identifiers that you need to dynamically generate. `QuoteLiteral` does the
+same, but for literals, which is helpful for DDL statements that utilize literals,
+as you cannot pass parameters into said statements.
+
+This is modeled after the way libpq implements `PQescapeStringInternal` and
+can be referenced here:
+
+https://git.postgresql.org/gitweb/?p=postgresql.git;a=blob;f=src/interfaces/libpq/fe-exec.c;hb=HEAD#l3336"
+mjibson,2019-05-03 17:57:21,https://api.github.com/repos/lib/pq/git/commits/bc6a3c0594130b1e34005880bc600b6d3f49fa7f,bc6a3c0594130b1e34005880bc600b6d3f49fa7f,"Merge pull request #857 from jordanlewis/float32
+
+encode: use 64-bit parsing for float32s"
+jordanlewis,2019-05-03 17:12:31,https://api.github.com/repos/lib/pq/git/commits/afdef4345f79d9b091a317aa94701c569391167e,afdef4345f79d9b091a317aa94701c569391167e,"encode: use 64-bit parsing for float32s
+
+Previously, float4 values were incorrectly parsed by this library. For
+example, a value of `1.2::float4` would be returned to the user as a
+float64 of `1.2000000476837158`. Now, float4s are parsed correctly,
+using the 64-bit-float string parsing facility, and return 1.2 as
+expected. Note that this problem only showed up if you used the returned
+float64 value from lib/pq directly - casting to a float32 would make the
+problem stay hidden - but since lib/pq returns float64, we should make
+an effort for that value to be correct anyway."
+raz-varren,2019-04-15 17:47:12,https://api.github.com/repos/lib/pq/git/commits/51e2106eed1cea199c802d2a49e91e2491b02056,51e2106eed1cea199c802d2a49e91e2491b02056,"Add SCRAM-SHA-256 authentication to this library (#833)
+
+Add SCRAM-SHA-256 authentication to this library"
+mjibson,2019-03-26 04:20:56,https://api.github.com/repos/lib/pq/git/commits/d6156e141ac6c06345c7c73f450987a9ed4b751f,d6156e141ac6c06345c7c73f450987a9ed4b751f,"Merge pull request #839 from kardianos/master
+
+pq: pipe the context through to the dialer, make use of the Connector"
+kardianos,2019-03-21 05:14:53,https://api.github.com/repos/lib/pq/git/commits/4c45500ad243cb750e4e38c9a58b6aa0b2c192cd,4c45500ad243cb750e4e38c9a58b6aa0b2c192cd,"pq: pipe the context through to the dialer, make use of the Connector
+
+Make minimal changes to enable using the Connector for real.
+This sets the stage to allow setting custom properties on the
+Connector (like DialerContext) or other userful properties
+that don't fit into a dsn.
+
+Fixes #783"
+mjibson,2019-03-21 21:06:58,https://api.github.com/repos/lib/pq/git/commits/5ccc9857e3a95a4233a13e445831cb31b90e73a6,5ccc9857e3a95a4233a13e445831cb31b90e73a6,"Merge pull request #737 from ghouscht/master
+
+implement driver.Pinger interface"
+mjibson,2019-03-14 17:36:50,https://api.github.com/repos/lib/pq/git/commits/7aad666537ab32b76f0966145530335f1fed51fd,7aad666537ab32b76f0966145530335f1fed51fd,"Merge pull request #837 from kardianos/master
+
+pq: support returning multiple result sets from a single query"
+kardianos,2019-03-14 01:32:52,https://api.github.com/repos/lib/pq/git/commits/ddb99717ca7f59f1678a241f0ab22e253868bd79,ddb99717ca7f59f1678a241f0ab22e253868bd79,"pq: support returning multiple result sets from a single query
+
+Tested with Cockroach v2.1.6 and PostgreSQL 11."
+mjibson,2018-10-16 16:26:27,https://api.github.com/repos/lib/pq/git/commits/9eb73efc1fcc404148b56765b0d3f61d9a5ef8ee,9eb73efc1fcc404148b56765b0d3f61d9a5ef8ee,"Merge pull request #798 from lib/https-docs
+
+Use https for godoc links"
+mjibson,2018-10-16 05:29:18,https://api.github.com/repos/lib/pq/git/commits/f4d386ecceb1b2b27ab6087c5a0ae692fb491634,f4d386ecceb1b2b27ab6087c5a0ae692fb491634,"Use https for godoc links
+
+Also fix golint import location.
+
+Fixes #791"
+mjibson,2018-10-16 05:27:06,https://api.github.com/repos/lib/pq/git/commits/0ac245bc3be505fde6900e1ca0f957c0845cbfa2,0ac245bc3be505fde6900e1ca0f957c0845cbfa2,"Merge pull request #779 from lib/go1-11
+
+Bump versions and tags for go1.11"
+ghouscht,2018-04-02 19:12:21,https://api.github.com/repos/lib/pq/git/commits/6508229390095ae125d7d8ad3fd2d2dddc7657e5,6508229390095ae125d7d8ad3fd2d2dddc7657e5,implement driver.Pinger interface
+mjibson,2018-08-25 23:32:14,https://api.github.com/repos/lib/pq/git/commits/d1995aac4a9f9e4775f6c20ee936320336388a4f,d1995aac4a9f9e4775f6c20ee936320336388a4f,"bump travis to 1.11, remove 1.8"
+mjibson,2018-08-25 23:31:48,https://api.github.com/repos/lib/pq/git/commits/e53edc9b26000fec4c4e357122d56b0f66ace6ea,e53edc9b26000fec4c4e357122d56b0f66ace6ea,"Remove go build tags < 1.9
+
+We no longer support those versions."
+mjibson,2018-08-25 23:28:06,https://api.github.com/repos/lib/pq/git/commits/a7a1d94d6391a31389484355ab1eb0bb4cc02276,a7a1d94d6391a31389484355ab1eb0bb4cc02276,Remove ssl renegotiation special casing of go1.7
+mjibson,2018-08-23 06:29:44,https://api.github.com/repos/lib/pq/git/commits/4ded0e9383f75c197b3a2aaa6d590ac52df6fd79,4ded0e9383f75c197b3a2aaa6d590ac52df6fd79,"Merge pull request #778 from lib/go-mod
+
+add a go.mod file in preparation for a tagged release"
+mjibson,2018-08-22 18:45:40,https://api.github.com/repos/lib/pq/git/commits/65bc794047b365165fd4e41d6b50008bb3ac1136,65bc794047b365165fd4e41d6b50008bb3ac1136,add a go.mod file in preparation for a tagged release
+nvx,2018-02-03 14:30:21,https://api.github.com/repos/lib/pq/git/commits/55f6f2718ccb74a33366eb78dac69fa02124b91f,55f6f2718ccb74a33366eb78dac69fa02124b91f,Fix Listen() hanging indefinitely when listener is closed
+leighmcculloch,2018-05-23 17:54:26,https://api.github.com/repos/lib/pq/git/commits/90697d60dd844d5ef6ff15135d0203f65d2f53b8,90697d60dd844d5ef6ff15135d0203f65d2f53b8,"Add more instructions for running tests (#750)
+
+What
+===
+Add more instructions for running tests.
+
+Why
+===
+For those starting out and not familiar with how to get a PostgresSQL
+up and running for tests some examples would be helpful."
+leighmcculloch,2018-05-23 03:11:17,https://api.github.com/repos/lib/pq/git/commits/0677bdde3e15a69060c33fac24fd53044b4694b8,0677bdde3e15a69060c33fac24fd53044b4694b8,"Add support for database/sql Connector and OpenDB (#749)
+
+* Add support for database/sql Connector and OpenDB
+
+What
+===
+Add support for `database/sql/driver` `Connector` and `database/sql`
+`OpenDB` that were added in go1.10.
+
+Why
+===
+To allow users to open a connection without using the registered drivers
+interface, and instead explicitly getting a `Connector` from the this
+driver and passing that connector to `database/sql` `OpenDB`.
+
+Notes
+===
+- The new types and functions are only built for go1.10 or newer because
+the `database/sql/driver` `Connector` interface and `database/sql`
+`OpenDB` function are only available in go1.10 or later.
+- The `NewConnector` has support for context, but the context isn't used
+at this point. Use of it could be added if desired, but that could occur
+separately to this change."
+mjibson,2018-03-27 07:18:24,https://api.github.com/repos/lib/pq/git/commits/d34b9ff171c21ad295489235aec8b6626023cd04,d34b9ff171c21ad295489235aec8b6626023cd04,"Merge pull request #734 from ainar-g/nopanicssl
+
+Don't panic in SSL code"
+ainar-g,2018-03-24 19:12:31,https://api.github.com/repos/lib/pq/git/commits/a8bb68eb453341d8c44a1333a579a13a8b4be428,a8bb68eb453341d8c44a1333a579a13a8b4be428,"Don't panic in SSL code
+
+This change removes panics from SSL code. This is a part of the ongoing
+process of removing panics from lib/pq code.
+
+Refs #681."
+mjibson,2018-03-26 17:53:50,https://api.github.com/repos/lib/pq/git/commits/614cb7963ff8ee90114d039a0f92dcd6a79292f9,614cb7963ff8ee90114d039a0f92dcd6a79292f9,"Merge pull request #730 from lib/fix-422
+
+Don't return ErrBadConn on a network error"
+mjibson,2018-03-19 19:58:54,https://api.github.com/repos/lib/pq/git/commits/6e2a335bdf9878301a663728f1b8b6483848beed,6e2a335bdf9878301a663728f1b8b6483848beed,"Don't return ErrBadConn on a network error
+
+This has been bad behavior for a long time and no one has brought up
+any reasons not to change it in #422. This is a more general fix than
+in #728.
+
+Fixes #422
+Closes #728"
+mjibson,2018-03-25 23:26:43,https://api.github.com/repos/lib/pq/git/commits/a96442e255fce502751c604916b0e14e81be6bf9,a96442e255fce502751c604916b0e14e81be6bf9,"Merge pull request #729 from lib/travis-update
+
+Travis update"
+mjibson,2018-03-19 19:28:17,https://api.github.com/repos/lib/pq/git/commits/b75c1328e7ddc1fe2897547419e47bbb1f2ce736,b75c1328e7ddc1fe2897547419e47bbb1f2ce736,"bump minimum go version to 1.8, add go 1.10"
+nickuraltsev,2018-03-19 19:41:35,https://api.github.com/repos/lib/pq/git/commits/b2004221932bd6b13167ef654c81cffac36f7537,b2004221932bd6b13167ef654c81cffac36f7537,"Fix failing builds (#719)
+
+Update expected error message in TestInfinityTimestamp"
+mjibson,2018-02-01 18:47:07,https://api.github.com/repos/lib/pq/git/commits/88edab0803230a3898347e77b474f8c1820a1f20,88edab0803230a3898347e77b474f8c1820a1f20,"Merge pull request #704 from lib/remove-go-15
+
+Stop testing with go 1.5"
+lmb,2018-01-19 15:11:48,https://api.github.com/repos/lib/pq/git/commits/19c8e9ad00952ce0c64489b60e8df88bb16dd514,19c8e9ad00952ce0c64489b60e8df88bb16dd514,"Fix deadlock in Listener.resync
+
+Listener.resync can execute in a fashion where notificationChan equals nil in the anonymous inner function. This leads to a deadlock if the function tries to range over notificationChan.
+
+Fixes #699"
+mjibson,2018-01-23 19:13:28,https://api.github.com/repos/lib/pq/git/commits/5b260f9ee2819d7d35bbe2a9cf507e0252ed89e9,5b260f9ee2819d7d35bbe2a9cf507e0252ed89e9,"Stop testing with go 1.5
+
+The correct fix for this would involve removing all the Go 1.5 stuff in the `script` block, but I'm not going to allocate time to that currently. For now, this should unbreak all of the PR build failures."
+mjibson,2018-01-23 04:52:42,https://api.github.com/repos/lib/pq/git/commits/61fe37aa2ee24fabcdbe5c4ac1d4ac566f88f345,61fe37aa2ee24fabcdbe5c4ac1d4ac566f88f345,"Merge pull request #698 from iangudger/master
+
+Fix connection leak on conn.ssl or conn.startup failure"
+iangudger,2018-01-18 06:47:46,https://api.github.com/repos/lib/pq/git/commits/5253e151309a1a9bb4be177572fbe84d30d0754b,5253e151309a1a9bb4be177572fbe84d30d0754b,Add test for connection leaking in DialOpen
+mjibson,2018-01-18 03:57:37,https://api.github.com/repos/lib/pq/git/commits/27ea5d92de30060e7121ddd543fe14e9a327e0cc,27ea5d92de30060e7121ddd543fe14e9a327e0cc,"Merge pull request #684 from vilterp/add-seq-exceeded
+
+add error code ""sequence_generator_limit_exceeded"""
+iangudger,2018-01-18 01:28:37,https://api.github.com/repos/lib/pq/git/commits/cd7087504b4639a9b67e108f365062ab26335e8b,cd7087504b4639a9b67e108f365062ab26335e8b,Fix connection leak on conn.ssl or conn.startup failure
+vilterp,2017-11-30 17:33:38,https://api.github.com/repos/lib/pq/git/commits/2eda755f78cef888f89b5477e8ada5bd1d83327a,2eda755f78cef888f89b5477e8ada5bd1d83327a,"add error code ""sequence_generator_limit_exceeded""
+
+(added in PG10)"
+mjibson,2017-11-26 05:04:59,https://api.github.com/repos/lib/pq/git/commits/83612a56d3dd153a94a629cd64925371c9adad78,83612a56d3dd153a94a629cd64925371c9adad78,"Merge pull request #680 from ainar-g/megacheck-2017.2
+
+Update megacheck to 2017.2.1"
+ainar-g,2017-11-24 19:38:57,https://api.github.com/repos/lib/pq/git/commits/754f7301a3869c954007131ff116aec2e794ce36,754f7301a3869c954007131ff116aec2e794ce36,"Update megacheck to 2017.2.1
+
+This commit updates the megacheck version to 2017.2.1. No new issues
+were found. It also replaces explicit checks ignoring with the -go 1.5
+flag."
+mjibson,2017-11-13 04:44:40,https://api.github.com/repos/lib/pq/git/commits/8c6ee72f3e6bcb1542298dd5f76cb74af9742cec,8c6ee72f3e6bcb1542298dd5f76cb74af9742cec,"Merge pull request #676 from anisse/patch-1
+
+Fix link to listen example"
+anisse,2017-11-12 14:41:01,https://api.github.com/repos/lib/pq/git/commits/3946dc9d20def2f19e34afb14113cd30989f2997,3946dc9d20def2f19e34afb14113cd30989f2997,Fix link to listen example
+tamird,2017-10-22 19:20:43,https://api.github.com/repos/lib/pq/git/commits/b609790bd85edf8e9ab7e0f8912750a786177bcf,b609790bd85edf8e9ab7e0f8912750a786177bcf,"Merge pull request #670 from ainar-g/issue669
+
+Add golint, make it pass cleanly, fix some docs"
+ainar-g,2017-10-22 12:10:50,https://api.github.com/repos/lib/pq/git/commits/44669ae07e6e602f20599c0239aadfee55f00056,44669ae07e6e602f20599c0239aadfee55f00056,"Add golint, make it pass cleanly, fix some docs
+
+This change introduces golint to the TravisCI build process, fixes
+everything it has found, and additionally fixes some Godoc scrolling
+isuues.
+
+Fixes #669."
+tamird,2017-10-21 18:26:24,https://api.github.com/repos/lib/pq/git/commits/b0d5024adb34b4122c6ee7eeb6ab511f7223222d,b0d5024adb34b4122c6ee7eeb6ab511f7223222d,"Merge pull request #668 from ainar-g/pg10
+
+Add PostgreSQL 10 to the list of versions to check"
+ainar-g,2017-10-21 11:58:42,https://api.github.com/repos/lib/pq/git/commits/dc4eb97256ab6b59780dbe1845c7c843dd1438be,dc4eb97256ab6b59780dbe1845c7c843dd1438be,"Add PostgreSQL 10 to the list of versions to check
+
+This change adds PostgreSQL 10 support for Travis builders."
+mjibson,2017-10-19 22:30:07,https://api.github.com/repos/lib/pq/git/commits/456514e2defec52e0cd37f90ccf17ec8b28295e2,456514e2defec52e0cd37f90ccf17ec8b28295e2,"Merge pull request #666 from necaris/fix/dont-break-in-pgpass
+
+Avoid potential runtime panic in connection initialization"
+tamird,2017-10-11 13:52:33,https://api.github.com/repos/lib/pq/git/commits/017e4c14d80628353eaee677a1aeffe47a10c0dc,017e4c14d80628353eaee677a1aeffe47a10c0dc,"Merge pull request #664 from ainar-g/issue662
+
+Check code with megacheck"
+ainar-g,2017-10-10 19:08:23,https://api.github.com/repos/lib/pq/git/commits/ce09698e42bf1cdbb6d882a15fb8c231399de8b9,ce09698e42bf1cdbb6d882a15fb8c231399de8b9,"Check code with megacheck
+
+Fix everything we can without losing Go 1.5 compatibility. Add
+megacheck, locked at 2017.1 release, and enabled for any version of Go
+except Go 1.5, to the Travis scripts to check every PR.
+
+Fixes #662."
+mjibson,2017-10-10 18:36:04,https://api.github.com/repos/lib/pq/git/commits/30d59eaf01528a141f560f34f0208e0ec5218e75,30d59eaf01528a141f560f34f0208e0ec5218e75,"Merge pull request #661 from ainar-g/master
+
+Fix some issues in tests"
+ainar-g,2017-10-07 22:26:53,https://api.github.com/repos/lib/pq/git/commits/1953ff4de237fed2eb512d2ab5ca260988b2bbd6,1953ff4de237fed2eb512d2ab5ca260988b2bbd6,"Fix some issues in tests
+
+These issues were found by megacheck. Mostly unused values and
+unchecked/underchecked errors."
+mjibson,2017-09-22 17:26:34,https://api.github.com/repos/lib/pq/git/commits/b77235e3890a962fe8a6f8c4c7198679ca7814e7,b77235e3890a962fe8a6f8c4c7198679ca7814e7,"Merge pull request #654 from jnewmano/bc-times
+
+Add support for BC dates"
+jnewmano,2017-08-30 16:39:46,https://api.github.com/repos/lib/pq/git/commits/a0866dbc9d1908b57ca614fc11c962673003af0a,a0866dbc9d1908b57ca614fc11c962673003af0a,"Add support for BC dates
+
+Existing tests check for support for BC datetimes, adds support for BC dates."
+mjibson,2017-09-18 17:50:43,https://api.github.com/repos/lib/pq/git/commits/23da1db4f16d9658a86ae9b717c245fc078f10f1,23da1db4f16d9658a86ae9b717c245fc078f10f1,"Merge pull request #647 from cyberdelia/rows
+
+Add ColumnType support"
+tamird,2017-09-18 12:55:39,https://api.github.com/repos/lib/pq/git/commits/aea9c482a1697adfbd993293e6465cd69598721b,aea9c482a1697adfbd993293e6465cd69598721b,"Merge pull request #657 from dvrkps/patch-1
+
+travis: update go version"
+dvrkps,2017-09-18 07:36:47,https://api.github.com/repos/lib/pq/git/commits/29bb1e4bbfc9336f244b4b8cf8dd4d9ee372b3b6,29bb1e4bbfc9336f244b4b8cf8dd4d9ee372b3b6,travis: update go version
+mjibson,2017-08-10 06:12:20,https://api.github.com/repos/lib/pq/git/commits/e42267488fe361b9dc034be7a6bffef5b195bceb,e42267488fe361b9dc034be7a6bffef5b195bceb,"Merge pull request #646 from cyberdelia/linter
+
+Fix some linting issues"
+mjibson,2017-07-07 05:36:02,https://api.github.com/repos/lib/pq/git/commits/dd1fe2071026ce53f36a39112e645b4d4f5793a4,dd1fe2071026ce53f36a39112e645b4d4f5793a4,"Merge pull request #634 from mjibson/close-next
+
+correctly close rows objects if there are multiple result sets"
+mjibson,2017-07-06 17:48:38,https://api.github.com/repos/lib/pq/git/commits/a8186bb1f92e6ce783019d6f2c511c985b4b746c,a8186bb1f92e6ce783019d6f2c511c985b4b746c,correctly close rows objects if there are multiple result sets
+mjibson,2017-06-03 22:54:54,https://api.github.com/repos/lib/pq/git/commits/8837942c3e09574accbc5f150e2c5e057189cace,8837942c3e09574accbc5f150e2c5e057189cace,"Merge pull request #619 from thatguystone/master
+
+Add support for sql.TxOptions"
+thatguystone,2017-06-02 21:16:25,https://api.github.com/repos/lib/pq/git/commits/23323c95acdebf97263124b0e2d961e7a0976673,23323c95acdebf97263124b0e2d961e7a0976673,"Fix deadlocked test
+
+Caused by https://github.com/golang/go/commit/dec95d8fad2e1b3dea3fa1472cc21542c40236ce"
+thatguystone,2017-05-31 19:13:49,https://api.github.com/repos/lib/pq/git/commits/ed1a26d9e1fd4eb1cc491e6d688467f4e81a413c,ed1a26d9e1fd4eb1cc491e6d688467f4e81a413c,Add support for sql.TxOptions
+tamird,2017-05-30 21:32:02,https://api.github.com/repos/lib/pq/git/commits/91f10e40ba0dd2d0bf9f93ec1d4077711a78df88,91f10e40ba0dd2d0bf9f93ec1d4077711a78df88,"Merge pull request #618 from ainar-g/master
+
+Avoid goroutine leak on error in query with context"
+mjibson,2017-03-24 20:46:54,https://api.github.com/repos/lib/pq/git/commits/2704adc878c21e1329f46f6e56a1c387d788ff94,2704adc878c21e1329f46f6e56a1c387d788ff94,"Merge pull request #585 from ExpansiveWorlds/master
+
+Rename drv to Driver, so that the driver can be wrapped"
+tamird,2017-03-13 20:04:23,https://api.github.com/repos/lib/pq/git/commits/472a0745531a17dbac346e828b4c60e73ddff30c,472a0745531a17dbac346e828b4c60e73ddff30c,"Merge pull request #578 from tamird/context-cancel-race
+
+Fix race condition in query cancellation"
+tamird,2017-03-13 16:41:09,https://api.github.com/repos/lib/pq/git/commits/e801e2cbb00df46649d2752dcb1a77dac8022272,e801e2cbb00df46649d2752dcb1a77dac8022272,"Fix race condition in query cancellation
+
+It was previously possible for context cancellation to interleave with
+query execution in such a way that the watcher goroutine would not be
+scheduled until after the query which it was meant to watch was
+complete, and would end up issueing a cancellation for the subsequent
+query.
+
+Fixes #577."
+tamird,2017-03-09 16:49:12,https://api.github.com/repos/lib/pq/git/commits/e4af84aab01e159ca479940dbde304519e8e8811,e4af84aab01e159ca479940dbde304519e8e8811,"Merge pull request #477 from mmlb/patch-1
+
+use svg build status badge"
+tamird,2017-03-09 16:48:23,https://api.github.com/repos/lib/pq/git/commits/a6140c91df5fb9306106d6de5f533783eacc1392,a6140c91df5fb9306106d6de5f533783eacc1392,"Merge pull request #573 from tamird/remove-values-methods
+
+ssl: only set ""sslrootcert"" once"
+tamird,2017-03-06 16:09:41,https://api.github.com/repos/lib/pq/git/commits/2df7fd4097b0afbbeb771dfd9b5a683177179ba9,2df7fd4097b0afbbeb771dfd9b5a683177179ba9,"ssl: only set ""sslrootcert"" once
+
+Fixes #570, though I have not been able to write a test for this.
+
+Remove methods on `values`. These methods are not a useful abstraction
+and only serve to obscure that the underlying structure is a map. Their
+presence is particularly inconvenient in that they promote confusing
+empty values with the lack of value.
+
+While I'm here, also improve conformance with libpq's treatment of
+blank sslcert and sslkey option values. See the test changes for
+specific changes."
+tamird,2017-03-06 18:37:09,https://api.github.com/repos/lib/pq/git/commits/ca5bc43047f2138703da0f3d3ca89a59f3d597f1,ca5bc43047f2138703da0f3d3ca89a59f3d597f1,"Merge pull request #572 from tamird/misc-cleanup
+
+Misc cleanup"
+tamird,2017-03-06 18:36:21,https://api.github.com/repos/lib/pq/git/commits/07190d56c3bb3d99be7757f73faa2d55d07bd4a4,07190d56c3bb3d99be7757f73faa2d55d07bd4a4,"Merge pull request #574 from tamird/fix-master
+
+Fix tests on Go master"
+tamird,2017-03-06 17:53:45,https://api.github.com/repos/lib/pq/git/commits/555c05f31d64ca8ae370af960a158c5ac802babb,555c05f31d64ca8ae370af960a158c5ac802babb,Fix tests on Go master
+tamird,2017-03-06 16:58:14,https://api.github.com/repos/lib/pq/git/commits/cd38f87fd342cd325d795dba48e53dd9fe8285bf,cd38f87fd342cd325d795dba48e53dd9fe8285bf,DRY context cancellation
+tamird,2017-03-06 16:22:05,https://api.github.com/repos/lib/pq/git/commits/879160c30b77168557fe303d03a02c79417f5374,879160c30b77168557fe303d03a02c79417f5374,Replace time.Sleep with time.AfterFunc
+tamird,2017-03-05 04:07:35,https://api.github.com/repos/lib/pq/git/commits/699d6b1bd83a497693f0863c142dd8759b35eb80,699d6b1bd83a497693f0863c142dd8759b35eb80,"Merge pull request #571 from jordanlewis/missing-oid-types
+
+Add missing OID types from Postgres 9.6"
+jordanlewis,2017-03-04 23:14:10,https://api.github.com/repos/lib/pq/git/commits/7ff47ae71be2c70823790d4fd2e9296a8875872b,7ff47ae71be2c70823790d4fd2e9296a8875872b,"Add missing OID types from Postgres 9.6
+
+Several new OID types were added since the last time types.go was
+updated. This commit adds the missing types as of Postgres 9.6.2."
+mjibson,2017-02-13 22:10:49,https://api.github.com/repos/lib/pq/git/commits/ba5d4f7a35561e22fbdf7a39aa0070f4d460cfc0,ba5d4f7a35561e22fbdf7a39aa0070f4d460cfc0,"Merge pull request #564 from mjibson/multiple-tag-last
+
+Return last instead of first tag"
+freeformz,2017-02-13 20:13:39,https://api.github.com/repos/lib/pq/git/commits/d67b1982b9d913b680e5f04323785fc69366d306,d67b1982b9d913b680e5f04323785fc69366d306,"Merge pull request #565 from icholy/master
+
+Remove unneeded for loop from listen example."
+icholy,2017-02-13 19:59:38,https://api.github.com/repos/lib/pq/git/commits/bae6be256ec79b9ba6cf8f054e1c5da3760ee887,bae6be256ec79b9ba6cf8f054e1c5da3760ee887,Remove unneeded for loop from listener example.
+mjibson,2017-02-11 20:09:42,https://api.github.com/repos/lib/pq/git/commits/eb5a319120705a51a86377295102efefb29bf298,eb5a319120705a51a86377295102efefb29bf298,Return last instead of first tag
+mjibson,2017-02-06 20:06:38,https://api.github.com/repos/lib/pq/git/commits/0477eb88c5ca4009cb281f13c90633375b6a9987,0477eb88c5ca4009cb281f13c90633375b6a9987,"Merge pull request #541 from mjibson/result-tag
+
+Add rows.{Result,Tag}() to enable access to the result/tag in queries."
+mjibson,2016-11-17 06:39:45,https://api.github.com/repos/lib/pq/git/commits/1105cc5a119c0ec7c0adb8d95ae514bf311d9a2b,1105cc5a119c0ec7c0adb8d95ae514bf311d9a2b,"Add rows.{Result,Tag}() to enable access to the result/tag in queries.
+
+Enable access to the driver result (rows affected) and command
+completion tag for statements executed via `conn.Query`.
+
+Although there are not many programs that need this feature, any
+program attempting to emulate the behavior of psql, which prints tags
+after statements, will need it. CockroachDB is one such example."
+mjibson,2017-02-01 01:15:56,https://api.github.com/repos/lib/pq/git/commits/a6657b2386e9b8be76484c08711b02c7cf867ead,a6657b2386e9b8be76484c08711b02c7cf867ead,"Merge pull request #535 from mjibson/ctx
+
+Add context methods"
+mjibson,2017-01-31 21:50:00,https://api.github.com/repos/lib/pq/git/commits/9c80e00bfcbde3be7e79d85df148856e2f26fa73,9c80e00bfcbde3be7e79d85df148856e2f26fa73,support conntext cancellation
+mjibson,2017-01-17 20:56:33,https://api.github.com/repos/lib/pq/git/commits/67c3f2a8884c9b1aac5503c8d42ae4f73a93511c,67c3f2a8884c9b1aac5503c8d42ae4f73a93511c,"Merge pull request #559 from mjibson/copy-bad-race
+
+enable -race in tests; fix race in COPY"
+mjibson,2017-01-17 20:26:28,https://api.github.com/repos/lib/pq/git/commits/46f7bf5f8bd7ae2461402d78d1b80b0bfbd80e69,46f7bf5f8bd7ae2461402d78d1b80b0bfbd80e69,"enable -race in tests; fix race in COPY
+
+Access cn.bad through a mutex during COPY.
+
+Fixes #558"
+mjibson,2017-01-03 19:20:09,https://api.github.com/repos/lib/pq/git/commits/8df6253d1317616f36b0c3740eb30c239a7372cb,8df6253d1317616f36b0c3740eb30c239a7372cb,"Merge pull request #484 from cbandy/time-format
+
+Use space to separate date and time portions of Time literals"
+cbandy,2016-08-11 05:51:36,https://api.github.com/repos/lib/pq/git/commits/8af01c1982a76c61fb253cbc1f8f0b353d253967,8af01c1982a76c61fb253cbc1f8f0b353d253967,"Use space to separate date and time portions of Time literals
+
+PostgreSQL accepts this format as input to more temporal types."
+mjibson,2016-12-31 17:40:29,https://api.github.com/repos/lib/pq/git/commits/22cb3e4c487ce6242e2b03369219e5631eed1221,22cb3e4c487ce6242e2b03369219e5631eed1221,"Merge pull request #373 from cbandy/binary-uuid
+
+Receive UUID in binary format when possible"
+cbandy,2016-12-31 16:21:49,https://api.github.com/repos/lib/pq/git/commits/0b1a2ee5bc036470c75756fd87f496a39ee040d3,0b1a2ee5bc036470c75756fd87f496a39ee040d3,Validate incoming binary UUID
+cbandy,2016-12-31 15:51:16,https://api.github.com/repos/lib/pq/git/commits/4aa31c7b72735e383e503fc7ccb650b2186f33c5,4aa31c7b72735e383e503fc7ccb650b2186f33c5,"Receive UUID in binary format
+
+This incurs client processing in exchange for higher network throughput."
+mjibson,2016-12-20 09:00:36,https://api.github.com/repos/lib/pq/git/commits/5bf161122cd640c2a5a2c1d7fa49ea9befff31dd,5bf161122cd640c2a5a2c1d7fa49ea9befff31dd,"Merge pull request #481 from cbandy/array-error
+
+Fix panic when parsing malformed array input"
+mjibson,2016-12-20 08:59:30,https://api.github.com/repos/lib/pq/git/commits/c0704fb42d08b40aead4bf6ac9021637ebbcfab9,c0704fb42d08b40aead4bf6ac9021637ebbcfab9,"Merge pull request #525 from cbandy/tls-fixes
+
+TLS fixes"
+mjibson,2016-12-20 04:47:46,https://api.github.com/repos/lib/pq/git/commits/c1ee285e12f70299b1a2d8319e7da69a44e35363,c1ee285e12f70299b1a2d8319e7da69a44e35363,"Merge pull request #545 from cbandy/array-null
+
+Handle nil and NULL values consistently for Array types"
+cbandy,2016-11-23 05:03:57,https://api.github.com/repos/lib/pq/git/commits/edf9f9f99e9cbeec669f15fed9a72f23ed193b8c,edf9f9f99e9cbeec669f15fed9a72f23ed193b8c,"Handle nil and NULL values consistently for Array types
+
+Value() of a nil slice is NULL, and Scan() of NULL sets a slice to nil.
+
+Fixes #540"
+caarlos0,2016-11-29 22:14:28,https://api.github.com/repos/lib/pq/git/commits/4a82388ebc5138c8289fe9bc602cb0b3e32cd617,4a82388ebc5138c8289fe9bc602cb0b3e32cd617,Test on Postgres 9.6 (#548)
+mjibson,2016-11-03 02:43:54,https://api.github.com/repos/lib/pq/git/commits/d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b,d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b,"Merge pull request #532 from mjibson/multiple-result-sets
+
+Support multiple results sets for go 1.8"
+mjibson,2016-11-02 22:15:43,https://api.github.com/repos/lib/pq/git/commits/22c5c996201466b1f6f7be1bf0a10c13d9354ab5,22c5c996201466b1f6f7be1bf0a10c13d9354ab5,Support multiple results sets for go 1.8
+mjibson,2016-11-02 07:48:14,https://api.github.com/repos/lib/pq/git/commits/a37edb86214894fa6c6c3401a4c4976b02176dd3,a37edb86214894fa6c6c3401a4c4976b02176dd3,"Merge pull request #527 from lib/Issue494
+
+Issue494"
+freeformz,2016-11-02 06:37:26,https://api.github.com/repos/lib/pq/git/commits/473284b18c24afb92f62c805b2155a14a7bb7934,473284b18c24afb92f62c805b2155a14a7bb7934,"Keep track of being in the middle of a copy or not.
+
+Fixes #494"
+cbandy,2016-10-23 04:32:17,https://api.github.com/repos/lib/pq/git/commits/d453fcd033b5143b5961be762d3e0d9c5aee63ea,d453fcd033b5143b5961be762d3e0d9c5aee63ea,"Skip TLS-key file permissions check on Windows
+
+On Windows, libpq skips this check, and the os package always returns
+""world"" permissions.
+
+Fixes #489"
+cbandy,2016-10-22 12:52:48,https://api.github.com/repos/lib/pq/git/commits/cf267f01dd68c3e2542220c35b40e1f813a5d425,cf267f01dd68c3e2542220c35b40e1f813a5d425,"Accept TLS renegotiation requests initiated by the backend
+
+This is the behavior of libpq and the default in older versions of
+PostgreSQL."
+cbandy,2016-10-20 02:31:34,https://api.github.com/repos/lib/pq/git/commits/8a872475f81d676506d59188a2603341a2b5c60b,8a872475f81d676506d59188a2603341a2b5c60b,Move SSL configuration functions off of conn
+mjibson,2016-10-14 01:16:34,https://api.github.com/repos/lib/pq/git/commits/ae8357db35d721c58dcdc911318b55bef6b1b001,ae8357db35d721c58dcdc911318b55bef6b1b001,"Merge pull request #517 from mjibson/close-conn
+
+Always close underlying connection"
+mjibson,2016-10-12 18:29:34,https://api.github.com/repos/lib/pq/git/commits/4741650f3c4ff8849f62ccd81879b4cc28d8b969,4741650f3c4ff8849f62ccd81879b4cc28d8b969,"Always close underlying connection
+
+Previously, connections marked as bad were previously never being closed
+and remained marked as ESTABLISHED in a netstat listing.
+
+Change connections to always be closed regardless of any previous failure.
+
+Closes #501"
+freeformz,2016-10-11 16:53:22,https://api.github.com/repos/lib/pq/git/commits/068cb1c8e4be77b9bdef4d0d91f162160537779e,068cb1c8e4be77b9bdef4d0d91f162160537779e,"Merge pull request #496 from cbandy/doc-datatypes
+
+Document data types returned to database/sql"
+mjibson,2016-10-07 18:28:02,https://api.github.com/repos/lib/pq/git/commits/fcb9ef54da7cae1ea08f0b5a92f236d83e59294a,fcb9ef54da7cae1ea08f0b5a92f236d83e59294a,"Merge pull request #500 from mjibson/empty
+
+Support empty Exec and Prepare"
+mjibson,2016-09-20 19:59:15,https://api.github.com/repos/lib/pq/git/commits/576ccab4e32c53f75c160743de45d843c4f1e6f1,576ccab4e32c53f75c160743de45d843c4f1e6f1,"Support empty Exec and Prepare
+
+Fixes #499"
+cbandy,2016-08-07 13:19:29,https://api.github.com/repos/lib/pq/git/commits/d1a78b4e3bb76339259ca08dc9dcb513bdedfb71,d1a78b4e3bb76339259ca08dc9dcb513bdedfb71,Check bounds when parsing malformed text array
+cbandy,2016-09-03 13:31:17,https://api.github.com/repos/lib/pq/git/commits/edc3da7abf80044f794c9e08c01f00629b48b68b,edc3da7abf80044f794c9e08c01f00629b48b68b,"Document data types returned to database/sql
+
+When scanning to *interface{}, database/sql performs no conversion."
+freeformz,2016-08-31 22:25:20,https://api.github.com/repos/lib/pq/git/commits/50761b0867bd1d9d069276790bcd4a3bccf2324a,50761b0867bd1d9d069276790bcd4a3bccf2324a,"Merge pull request #493 from jmhodges/sudo_build
+
+require sudo in travis.yaml"
+jmhodges,2016-08-30 00:02:49,https://api.github.com/repos/lib/pq/git/commits/18026c3d8b4a3e87da17a943df62663d4075ef11,18026c3d8b4a3e87da17a943df62663d4075ef11,require sudo in travis.yaml
+freeformz,2016-08-31 16:54:55,https://api.github.com/repos/lib/pq/git/commits/a11ab5d56294722de05a36a5082729a80be6eed0,a11ab5d56294722de05a36a5082729a80be6eed0,"Restore Tip to testing
+
+I dropped this by accident"
+freeformz,2016-08-31 16:40:59,https://api.github.com/repos/lib/pq/git/commits/eaaa4ce2f3824ebe41b6d8af847399106e477290,eaaa4ce2f3824ebe41b6d8af847399106e477290,"Merge pull request #483 from lib/dropGo1.4
+
+Drop go1.4"
+freeformz,2016-08-30 17:08:29,https://api.github.com/repos/lib/pq/git/commits/2fa40e61a635af20054a614049abbfa401d947a4,2fa40e61a635af20054a614049abbfa401d947a4,1.7
+freeformz,2016-08-10 18:10:18,https://api.github.com/repos/lib/pq/git/commits/a2016949a69442d65dc9a4137ba37b1392e101c4,a2016949a69442d65dc9a4137ba37b1392e101c4,"Drop support for go1.4
+
+FWIW: Go itself will drop support for go1.5 shortly as per:
+https://golang.org/doc/devel/release.html#policy
+
+Fixes #482"
+cbandy,2016-08-06 14:40:29,https://api.github.com/repos/lib/pq/git/commits/80f8150043c80fb52dee6bc863a709cdac7ec8f8,80f8150043c80fb52dee6bc863a709cdac7ec8f8,Add support for array Scanners and Valuers
+johto,2016-08-06 14:21:14,https://api.github.com/repos/lib/pq/git/commits/61c17ee82aabf68c4631d89cbf67772ac9e45bae,61c17ee82aabf68c4631d89cbf67772ac9e45bae,Dont assume . to be in PATH
+johto,2016-08-06 13:46:06,https://api.github.com/repos/lib/pq/git/commits/633336d19e274271b2d5bc8b7e9b4cb884215473,633336d19e274271b2d5bc8b7e9b4cb884215473,"Skip pgpass tests if not running under Travis
+
+These don't work without making too many assumption about what the
+user's pg_hba.conf looks like."
+johto,2016-08-06 13:38:50,https://api.github.com/repos/lib/pq/git/commits/3a92232051b6b111c4fdc95b34081b0b8c6fb9c1,3a92232051b6b111c4fdc95b34081b0b8c6fb9c1,Re-format an awfully long line
+uhoh-itsmaciek,2016-06-23 22:06:37,https://api.github.com/repos/lib/pq/git/commits/4dd446efc17690bc53e154025146f73203b18309,4dd446efc17690bc53e154025146f73203b18309,Fix typo
+uhoh-itsmaciek,2016-06-23 22:05:49,https://api.github.com/repos/lib/pq/git/commits/12941c7f7d758f6d0ccb1a196e57f7926bf83984,12941c7f7d758f6d0ccb1a196e57f7926bf83984,Update README to reflect my current GitHub handle
+uhoh-itsmaciek,2016-06-23 21:23:02,https://api.github.com/repos/lib/pq/git/commits/ff21d02999ccb8a2558eacda647534f57962d604,ff21d02999ccb8a2558eacda647534f57962d604,Merge remote-tracking branch 'origin/pr/469'
+tamird,2016-06-20 21:29:31,https://api.github.com/repos/lib/pq/git/commits/0661de2407f64cc64f9d02718654ec43a592ac33,0661de2407f64cc64f9d02718654ec43a592ac33,encode: minor cleanup
+tamird,2016-06-20 21:16:31,https://api.github.com/repos/lib/pq/git/commits/577df8d75998746877e6d666fcffef34c5707e3c,577df8d75998746877e6d666fcffef34c5707e3c,encode: golint fixes
+tamird,2016-02-11 19:20:07,https://api.github.com/repos/lib/pq/git/commits/e2402a7cd1e57e08a576b94cdfed36ae30366545,e2402a7cd1e57e08a576b94cdfed36ae30366545,"encode: `decode` T_text into a string
+
+This allows the caller to distinguish strings from byte arrays."
+tamird,2016-03-28 15:34:59,https://api.github.com/repos/lib/pq/git/commits/55196ec83d60d789e27b2627549bf00974a70084,55196ec83d60d789e27b2627549bf00974a70084,"Export FormatTimestamp for emitting the postgres timestamp format
+
+This is a dual to ParseTimestamp exported in 3cd0097, and is needed
+for CockroachDB."
+tamird,2016-02-08 16:06:36,https://api.github.com/repos/lib/pq/git/commits/d8a8e22c510f757bde3d4e2a47a5878994edfedf,d8a8e22c510f757bde3d4e2a47a5878994edfedf,"sslmode=require compliance when root cert provided
+
+Fixes #424."
+freeformz,2016-06-17 16:30:56,https://api.github.com/repos/lib/pq/git/commits/d9e86041d297497af138eda484e497f6845e319e,d9e86041d297497af138eda484e497f6845e319e,"Merge pull request #468 from cbandy/travis-ci
+
+Clean up .travis.yml and reduce build time"
+cbandy,2016-06-09 21:01:59,https://api.github.com/repos/lib/pq/git/commits/10a5689b79355756348e4103c2171ecd7863ccec,10a5689b79355756348e4103c2171ecd7863ccec,Use the matrix only for installation of Go and PostgreSQL
+cbandy,2016-06-09 17:11:06,https://api.github.com/repos/lib/pq/git/commits/ced54e4f308a09c41f7716363a6c11505a6ba363,ced54e4f308a09c41f7716363a6c11505a6ba363,"Move server and client setup into shell script
+
+The shell escaping necessary to keep everything inside YAML irritated
+me. Some commands make more sense with heredocs, others with conditional
+blocks; neither of which are supported by Travis inside `.travis.yml`."
+uhoh-itsmaciek,2016-05-10 22:24:21,https://api.github.com/repos/lib/pq/git/commits/ee1442bda7bd1b6a84e913bdb421cb1874ec629d,ee1442bda7bd1b6a84e913bdb421cb1874ec629d,Use goimports instead of gofmt
+uhoh-itsmaciek,2016-05-10 18:45:51,https://api.github.com/repos/lib/pq/git/commits/069df74ac3469c2d37f747f6a9c4831c7dd495c7,069df74ac3469c2d37f747f6a9c4831c7dd495c7,Fail Travis if code is not gofmted correctly
+uhoh-itsmaciek,2016-05-10 18:25:07,https://api.github.com/repos/lib/pq/git/commits/2f3fdc6692c20e2a3f07a9077897697d2cbfe67d,2f3fdc6692c20e2a3f07a9077897697d2cbfe67d,Run go fmt
+uhoh-itsmaciek,2016-05-11 03:47:28,https://api.github.com/repos/lib/pq/git/commits/e2a49bc163ca8d2c6be90cf729fc26f4e65b5f16,e2a49bc163ca8d2c6be90cf729fc26f4e65b5f16,Merge branch 'add-go-vet-to-travis'
+uhoh-itsmaciek,2016-05-11 03:17:56,https://api.github.com/repos/lib/pq/git/commits/6b50e1058912206aeff79984087c73158f08d3f0,6b50e1058912206aeff79984087c73158f08d3f0,Fix go vet lint even though it's kinda dumb here
+uhoh-itsmaciek,2016-02-08 05:15:21,https://api.github.com/repos/lib/pq/git/commits/7b524e9ff1ddf5a92b9a1e175b3d1e4d7185c8e3,7b524e9ff1ddf5a92b9a1e175b3d1e4d7185c8e3,"Move from /var/run/postgresql to /run/postgresql in examples
+
+Modern Linux has moved to plain /run. See http://lwn.net/Articles/436012/"
+uhoh-itsmaciek,2016-05-10 18:21:00,https://api.github.com/repos/lib/pq/git/commits/e7fc3074bc4ef5ce5e57eb85345b4d6db6a21673,e7fc3074bc4ef5ce5e57eb85345b4d6db6a21673,Have Travis run go vet
+uhoh-itsmaciek,2016-05-10 18:18:56,https://api.github.com/repos/lib/pq/git/commits/4bb18a681683108f2268fcfad6ba63806df95e4f,4bb18a681683108f2268fcfad6ba63806df95e4f,Merge remote-tracking branch 'origin/pr/461'
+gmccue,2016-05-10 14:03:38,https://api.github.com/repos/lib/pq/git/commits/d66e68a2f90dec5b9461462d1e2b78d232d95d8a,d66e68a2f90dec5b9461462d1e2b78d232d95d8a,Implement `go vet` fix.
+tessr,2016-05-06 00:04:11,https://api.github.com/repos/lib/pq/git/commits/48fc08417c3844a9b79cc7a0343e6e7810b292a1,48fc08417c3844a9b79cc7a0343e6e7810b292a1,Support arbitrary network dialers in listeners
+freeformz,2016-04-26 17:35:18,https://api.github.com/repos/lib/pq/git/commits/dd3290b2f71a8b30bee8e4e75a337a825263d26f,dd3290b2f71a8b30bee8e4e75a337a825263d26f,"Merge pull request #458 from vsukhin/master
+
+Support rumprun GOOS"
+vsukhin,2016-04-26 15:06:55,https://api.github.com/repos/lib/pq/git/commits/54b96ec0205484a1060a2730d68ad36b886f9e4a,54b96ec0205484a1060a2730d68ad36b886f9e4a,Support rumprun GOOS
+danhhz,2016-03-14 19:42:24,https://api.github.com/repos/lib/pq/git/commits/3cd0097429be7d611bb644ef85b42bfb102ceea4,3cd0097429be7d611bb644ef85b42bfb102ceea4,"Expose ParseTimestamp for parsing the postgres timestamp format
+
+Make it return errors where it used to panic, and add a couple tests for things that used to panic.
+
+For https://github.com/cockroachdb/cockroach/issues/4872."
+uhoh-itsmaciek,2016-03-02 08:17:19,https://api.github.com/repos/lib/pq/git/commits/165a3529e799da61ab10faed1fabff3662d6193f,165a3529e799da61ab10faed1fabff3662d6193f,Drop antediluvian Postgres and Go versions
+garrypolley,2016-03-01 15:48:02,https://api.github.com/repos/lib/pq/git/commits/e182dc4027e2ded4b19396d638610f2653295f36,e182dc4027e2ded4b19396d638610f2653295f36,"Add 1.6 to travis for testing
+
+Having an explicit test for 1.6 will help me out to know that 1.6 is working as desired"
+shawnps,2016-02-09 14:37:49,https://api.github.com/repos/lib/pq/git/commits/69552e54d2a9d4c6a2438926a774930f7bc398ec,69552e54d2a9d4c6a2438926a774930f7bc398ec,fix typo
+petermattis,2016-02-09 10:47:24,https://api.github.com/repos/lib/pq/git/commits/fde2b33cb1c820fbd3ff19eb9414be2d86b1bd12,fde2b33cb1c820fbd3ff19eb9414be2d86b1bd12,Remove unnecessary allocation
+tamird,2016-02-07 15:10:35,https://api.github.com/repos/lib/pq/git/commits/05333d3853e3fe6f3ff8a92f0b06d55906e88f84,05333d3853e3fe6f3ff8a92f0b06d55906e88f84,"Use `net.{Join,Split}HostPort` for proper ipv6 handling"
+tamird,2016-02-07 15:10:26,https://api.github.com/repos/lib/pq/git/commits/ac6673fb9e842a85e9dec562b3a736d17fbab85e,ac6673fb9e842a85e9dec562b3a736d17fbab85e,whitespace (gofmt)
+tamird,2016-02-07 16:19:56,https://api.github.com/repos/lib/pq/git/commits/8abfc3eeb742e153b764d3b75a2c7b9e3b34520b,8abfc3eeb742e153b764d3b75a2c7b9e3b34520b,"fix build on go1.6
+
+`database/sql.(*Row).Scan()`'s error message has changed slightly."
+tamird,2016-02-07 16:19:50,https://api.github.com/repos/lib/pq/git/commits/c792ebddd3c657c0269d6c05f3ba1895017f99b5,c792ebddd3c657c0269d6c05f3ba1895017f99b5,whitespace (gofmt)
+richo,2016-01-27 22:38:42,https://api.github.com/repos/lib/pq/git/commits/f59175c2986495ff94109dee3835c504a96c3e81,f59175c2986495ff94109dee3835c504a96c3e81,Add verify-ca to error message in conn
+markottt,2016-01-14 15:24:13,https://api.github.com/repos/lib/pq/git/commits/8ad2b298cadd691a77015666a5372eae5dbfac8f,8ad2b298cadd691a77015666a5372eae5dbfac8f,"TestCopyRespLoopConnectionError: Always ignore errors on stmt.Close()
+
+Since recent versions of Go now report the error in Stmt.Close(), we
+should not expect it to be nil."
+markottt,2016-01-14 12:59:31,https://api.github.com/repos/lib/pq/git/commits/cd0a25b105caf5e9d341ac77631a74d8e8516f78,cd0a25b105caf5e9d341ac77631a74d8e8516f78,"Fix intermittent test failure in TestCopyRespLoopConnectionError
+
+The stmt.Close() will also fail in the case of a ErrBadConn, so we need
+to ignore that error."
+markottt,2016-01-14 11:42:18,https://api.github.com/repos/lib/pq/git/commits/e5db530c038e76c0b2ef5dc10322fe14fd10ac24,e5db530c038e76c0b2ef5dc10322fe14fd10ac24,"Fix intermittent test failure in TestCopyRespLoopConnectionError
+
+The underlying error can sometimes be an EPIPE (which is then converted
+to driver.ErrBadConn), depending on the timing of operations.  Fix by
+accepting either error."
+freeformz,2016-01-13 18:11:39,https://api.github.com/repos/lib/pq/git/commits/33baa973510939ec77a67fb8b9a3019fee30c9bc,33baa973510939ec77a67fb8b9a3019fee30c9bc,"Merge pull request #418 from lib/9.5
+
+Add support for testing against 9.5"
+freeformz,2016-01-08 22:51:35,https://api.github.com/repos/lib/pq/git/commits/c50c2d37c4ac43cfbabc533764f04c3a178ed098,c50c2d37c4ac43cfbabc533764f04c3a178ed098,Add support for testing against 9.5
+uhoh-itsmaciek,2016-01-07 22:20:54,https://api.github.com/repos/lib/pq/git/commits/2d785ad24be7a038e2fc35424b993645a0025425,2d785ad24be7a038e2fc35424b993645a0025425,Document pgpass support
+uhoh-itsmaciek,2016-01-07 22:02:48,https://api.github.com/repos/lib/pq/git/commits/ebb2068e859ed10a2e50f8953bba9b8d82a9926f,ebb2068e859ed10a2e50f8953bba9b8d82a9926f,Add Fazal Majid to contributors
+johto,2015-11-25 21:47:21,https://api.github.com/repos/lib/pq/git/commits/11fc39a580a008f1f39bb3d11d984fb34ed778d9,11fc39a580a008f1f39bb3d11d984fb34ed778d9,"Also test prepared queries in TestEmptyResultSetColumns
+
+The original commit from Tamir Duberstein also tested that code path,
+but I missed that while hacking on the test case a bit."
+tamird,2015-11-25 21:43:27,https://api.github.com/repos/lib/pq/git/commits/351f9635305934d7e58b3adbbe80c48b6ef4c9c9,351f9635305934d7e58b3adbbe80c48b6ef4c9c9,"Fix empty query `Columns()` handling
+
+A query which returns an empty dataset no longer discards its
+`Columns()`."
+freeformz,2015-10-15 21:07:56,https://api.github.com/repos/lib/pq/git/commits/83c4f410d0aed80a0f44bac6a576a7f2435791f3,83c4f410d0aed80a0f44bac6a576a7f2435791f3,"Make copyin.Close() idempotent
+
+This change is causing breakage on tip:
+https://github.com/golang/go/issues/12798
+
+I think it's a reasonable upstream change.
+
+Looking at the commit that added the code that is failing on our side
+the lack of error propagation is called out and is the reason we're now
+failing.
+https://github.com/lib/pq/commit/72f84510ec4899677ec603abbaec5ba17a438a8c
+
+This change attempts to preserve old behavior while supporting the fact
+that errors are now propagated properly by Stmt.Close().
+
+Open to better ways to do this though."
+calebthompson,2015-10-07 18:57:36,https://api.github.com/repos/lib/pq/git/commits/ffe986aba3e6cfcded8b06615965941408891ef0,ffe986aba3e6cfcded8b06615965941408891ef0,Test against Go 1.5 on Travis
+markottt,2015-08-05 09:05:26,https://api.github.com/repos/lib/pq/git/commits/b269bd035a727d6c1081f76e7a239a1b00674c40,b269bd035a727d6c1081f76e7a239a1b00674c40,Add more checks for protocol-out-of-sync problems
+markottt,2015-07-23 08:53:16,https://api.github.com/repos/lib/pq/git/commits/0dad96c0b94f8dee039aa40467f767467392a0af,0dad96c0b94f8dee039aa40467f767467392a0af,"Document that readBuf.int16() is unsigned
+
+It might make sense to rename it to uint16, but seeing that we're never
+interested in signed 16-bit integers, it seems unnecessary."
+johto,2015-07-23 06:40:00,https://api.github.com/repos/lib/pq/git/commits/89d2f2462e1d58b4ac910c97575ee67138425850,89d2f2462e1d58b4ac910c97575ee67138425850,Add extra check for protocol-out-of-sync problems
+johto,2015-07-01 22:56:36,https://api.github.com/repos/lib/pq/git/commits/dc50b6ad2d3ee836442cf3389009c7cd1e64bb43,dc50b6ad2d3ee836442cf3389009c7cd1e64bb43,"Also send prepared statements' parameters over in binary
+
+.. if binary_parameters is set.  This should mean that both for a direct
+Query and a Prepare + Query the parameters get the same treatment.
+Though there's probably not much to gain in the latter case, it's better
+for consistency."
+johto,2015-07-01 22:27:57,https://api.github.com/repos/lib/pq/git/commits/f1fefde8223be245867c634aadc9298ea5155259,f1fefde8223be245867c634aadc9298ea5155259,Add Chris Gilling to the list of contributors
+johto,2015-07-01 22:25:50,https://api.github.com/repos/lib/pq/git/commits/2997d165a566810a3b9e4d16e7cff1300f744c12,2997d165a566810a3b9e4d16e7cff1300f744c12,"Implement driver option binary_parameters
+
+If set, all parameters of type []byte will be sent over as binary data,
+which allows the driver to avoid the second round-trip to the server
+when not using a prepared statement proper.  This also allows pgbouncer
+to be used with parameterized queries, which is impossible if
+binary_parameters has not been enabled.
+
+This patch is still missing documentation, but the code has been sitting
+on my hard drive for long enough.  I'll commit the docs in a followup
+commit.
+
+Marko Tiikkaja, with some help from Chris Gilling"
+johto,2015-06-30 22:01:05,https://api.github.com/repos/lib/pq/git/commits/e93ec67d8918c251d520df5f0c417f79fd09cb65,e93ec67d8918c251d520df5f0c417f79fd09cb65,"Smallish extended query logic refactoring
+
+This is preparatory work for the binary_parameters patch, which needs to
+reuse parts of this logic."
+johto,2015-06-30 21:08:08,https://api.github.com/repos/lib/pq/git/commits/8b4ab4ba2532620d29e0eb6dbc2f9f130c18cdf2,8b4ab4ba2532620d29e0eb6dbc2f9f130c18cdf2,Rename some poorly named functions and variables
+johto,2015-05-30 08:35:30,https://api.github.com/repos/lib/pq/git/commits/a8d8d01c4f91602f876bf5aa210274e8203a6b45,a8d8d01c4f91602f876bf5aa210274e8203a6b45,"Use rowFmtDataAllText if there are no result columns
+
+This results in a result-less statement's execution requiring us to send
+two fewer bytes over."
+johto,2015-05-30 01:45:33,https://api.github.com/repos/lib/pq/git/commits/c4afb3f5ae09066d9aaec61eebd9496f7a852082,c4afb3f5ae09066d9aaec61eebd9496f7a852082,"Transparently receive parameters in binary format when possible
+
+When preparing a statement for repeated execution (as opposed to just
+parameterizing a single query using the unnamed statement) we get to
+know the types of the resulting columns before we have to decide which
+ones to receive in binary and which ones in text.  We can use that to
+our advantage to transparently avoid unnecessary binary -> text ->
+binary conversions.
+
+This has been shown in some cases to provide massive performance
+benefits, with little to no penalty even in the pathological case.  But
+just to err on the safe side, an option for disabling this feature is
+provided, disable_prepared_binary_result.  It is not documented in the
+user-facing documentation since its use is expected to be practically
+nonexistent.
+
+In the current state of affairs, only bytea and int8/int4/int2 values are
+requested in binary from the server.  Floats and time-related types are
+probably the next types to get the same treatment.
+
+Chris Bandy and Marko Tiikkaja"
+johto,2015-05-29 23:18:10,https://api.github.com/repos/lib/pq/git/commits/54fc3929dd9e2f1059575b9ddc66abbb89a6dbd9,54fc3929dd9e2f1059575b9ddc66abbb89a6dbd9,"Decouple rows and stmt
+
+We need the ability to return rows objects which don't have an
+underlying prepared statement in order to support the single round-trip
+mode."
+johto,2015-05-29 23:15:37,https://api.github.com/repos/lib/pq/git/commits/d9003b8eab75e4ebeca9ead6d31d0be720c054bd,d9003b8eab75e4ebeca9ead6d31d0be720c054bd,"Refactor writeBuf
+
+This change allows a single writeBuf to be used for sending multiple
+messages over in a single write operation.  This can lead to fewer
+allocations and system calls."
+johto,2015-05-02 11:36:36,https://api.github.com/repos/lib/pq/git/commits/93e9980741c9e593411b94e07d5bad8cfb4809db,93e9980741c9e593411b94e07d5bad8cfb4809db,"Fix bugs in errRecoverNoErrBadConn
+
+Last-minute changes to commits without running go test.. tsk tsk."
+johto,2015-05-02 11:34:23,https://api.github.com/repos/lib/pq/git/commits/53b185f5a29d780ca4c6544e80c8745c35afb054,53b185f5a29d780ca4c6544e80c8745c35afb054,"ListenerConn: Improve implementation of Close
+
+The previous coding was both unsafe (since it tried to operate on the
+connection without holding senderLock), but also in some cases failed to
+wake up ongoing queries."
+johto,2015-05-02 11:15:54,https://api.github.com/repos/lib/pq/git/commits/f324032f2442919739d7f8f4a3654e1cf4c8562b,f324032f2442919739d7f8f4a3654e1cf4c8562b,"ListenerConn: Report better errors from sendSimpleQuery
+
+ErrBadConns here are completely useless, since there's no database/sql
+to talk to."
+johto,2015-05-02 10:53:22,https://api.github.com/repos/lib/pq/git/commits/40e0272772492b292e43970fb37e23c5dfcce155,40e0272772492b292e43970fb37e23c5dfcce155,"ListenerConn: Return l.err instead of EOF on query failure
+
+While io.EOF is not the worst choice here, it can be a bit misleading.
+Fix by providing the accurate error (which should always be set at this
+point)."
+johto,2015-05-02 10:41:28,https://api.github.com/repos/lib/pq/git/commits/00f549c7d76a32c76112d2423ff4b0742aacc78d,00f549c7d76a32c76112d2423ff4b0742aacc78d,"Add call to Gosched to the deadlock test case
+
+This should make it more likely that the pg_sleep() query is executed
+first."
+johto,2015-05-02 10:13:06,https://api.github.com/repos/lib/pq/git/commits/b389c3030e9b06a819eac850178d0ac5f252bea9,b389c3030e9b06a819eac850178d0ac5f252bea9,"ListenerConn: Fix deadlock when connection is lost while a query is queued
+
+Because the two goroutines acquire the two exclusive locks in different
+orders, they would deadlock with each other for no reason.  Fix by
+swapping the order of acquisition in acquireSenderLock.  If l.err is set
+nobody should be holding senderLock for a long time anyway, so undesired
+practical effects of this change should be very minimal."
+johto,2015-05-01 13:41:31,https://api.github.com/repos/lib/pq/git/commits/bf66dc8b2c99940cc7c3eeb0b4fa0261ef606e21,bf66dc8b2c99940cc7c3eeb0b4fa0261ef606e21,"Fix copy test failure in postgres HEAD
+
+Commit 4fe384bd858671d40d311ca68cc9b80f4c683a3e changed the way this
+works on postgres side, which sometimes caused this test to fail."
+erykwalder,2015-04-18 09:33:27,https://api.github.com/repos/lib/pq/git/commits/8910d1c3a4bda5c97c50bc38543953f1f1e1f8bb,8910d1c3a4bda5c97c50bc38543953f1f1e1f8bb,"Speed up encoding for int64, float64, and bool"
+cbandy,2015-04-18 09:31:33,https://api.github.com/repos/lib/pq/git/commits/62de2aaaa745da53320ffdd03367159df7254183,62de2aaaa745da53320ffdd03367159df7254183,"Remove code for encoding float32
+
+driver.Value values are always float64"
+uhoh-itsmaciek,2015-03-12 07:02:16,https://api.github.com/repos/lib/pq/git/commits/e51fec16be7847e24d0270a5ce1f95cf2482b5e9,e51fec16be7847e24d0270a5ce1f95cf2482b5e9,Fix now-too-strict scheme check in URL parsing
+uhoh-itsmaciek,2015-03-12 07:00:44,https://api.github.com/repos/lib/pq/git/commits/4611ad608a0002dc3aeebb50131ba77844a1e44a,4611ad608a0002dc3aeebb50131ba77844a1e44a,Add test for URL with 'postgresql' scheme
+wfarr,2015-03-06 16:23:19,https://api.github.com/repos/lib/pq/git/commits/ec83aaae1acf89e469d8e5cb19a70c4800ab9513,ec83aaae1acf89e469d8e5cb19a70c4800ab9513,"Add support for postgresql:// user scheme
+
+According to the postgresql documentation, this URI scheme is
+considered to be the general form.
+
+http://www.postgresql.org/docs/9.2/static/libpq-connect.html#LIBPQ-CONNSTRING"
+johto,2015-04-12 12:45:54,https://api.github.com/repos/lib/pq/git/commits/e13b3d914f10f00d683dc1d22e6713e87af1df99,e13b3d914f10f00d683dc1d22e6713e87af1df99,"Clean up the defaulting code in openTestConnConninfo
+
+Spotted some room for improvement while working on
+9c01d399eaff023903d4ee2f7b836f76b2073669."
+johto,2015-04-12 12:44:57,https://api.github.com/repos/lib/pq/git/commits/9c01d399eaff023903d4ee2f7b836f76b2073669,9c01d399eaff023903d4ee2f7b836f76b2073669,"Default to 127.0.0.1 instead of localhost in Travis
+
+It looks like looking up ""localhost"" can sometimes take more than four
+seconds in Travis, which makes tests with connection timeouts fail
+sporadically.  Try and fix that by avoiding the lookup by using the IP
+instead."
+johto,2015-04-11 18:33:30,https://api.github.com/repos/lib/pq/git/commits/2dc5e4aefbb6d49c0e5629455fdc9e5848a8fc5b,2dc5e4aefbb6d49c0e5629455fdc9e5848a8fc5b,Add Yaismel Miranda to the list of contributors
+johto,2015-04-02 20:48:50,https://api.github.com/repos/lib/pq/git/commits/a33d6053e025943d5dc89dfa1f35fe5500618df7,a33d6053e025943d5dc89dfa1f35fe5500618df7,"Disable SSL when connecting over a UNIX domain socket
+
+Previously if sslmode was not explicitly disabled, trying to connect
+over a UNIX domain socket would result in a ""pq: SSL is not enabled on
+the server"" error.  This is both silly and incompatible with libpq.  Fix
+by setting ""sslmode"" to ""disable"" automatically whenever a connection is
+made over a UNIX socket."
+dmitris,2015-03-20 20:37:10,https://api.github.com/repos/lib/pq/git/commits/ecb6ff476e28d2b3dd86fa70c2ca13fb544de3b8,ecb6ff476e28d2b3dd86fa70c2ca13fb544de3b8,remove unreachable code (return after panic)
+johto,2015-03-16 23:43:46,https://api.github.com/repos/lib/pq/git/commits/30ed2200d7ec99cf17272292f1d4b7b0bd7165db,30ed2200d7ec99cf17272292f1d4b7b0bd7165db,"Revert ""Temporarily disable TestSSLClientCertificates on 9.4 and above""
+
+The problem should be fixed upstream after commit ebe3d693d472f69c.
+
+This reverts commit f7ea31d05cd1cccff3ba98af46ccc261d4ff3fdd."
+johto,2015-02-19 18:49:13,https://api.github.com/repos/lib/pq/git/commits/72d960fe96ac86dfd376b0de7ca81c0334838d0b,72d960fe96ac86dfd376b0de7ca81c0334838d0b,Add Eric Garrido to the list of contributors
+minusnine,2015-02-18 22:08:49,https://api.github.com/repos/lib/pq/git/commits/c510087093da61ec639cf8367b557f7f34ed0858,c510087093da61ec639cf8367b557f7f34ed0858,"Reset deadline on TCP connection only if a one had been set
+
+Prior to this change, the connection logic would unconditionally reset
+the deadline on the TCP connection, even if a connection timeout hadn't
+been specified. This prevented a TCP connection tunnelled through an SSH
+session, as those connections do not support SetDeadline.
+
+Now, only call SetDeadline if a connection timeout had been set."
+johto,2015-02-17 21:27:36,https://api.github.com/repos/lib/pq/git/commits/f7ea31d05cd1cccff3ba98af46ccc261d4ff3fdd,f7ea31d05cd1cccff3ba98af46ccc261d4ff3fdd,Temporarily disable TestSSLClientCertificates on 9.4 and above
+cbandy,2015-02-17 21:21:34,https://api.github.com/repos/lib/pq/git/commits/d6717c737b67b442e4d922235ade199af3a36002,d6717c737b67b442e4d922235ade199af3a36002,Use hex.Encode rather than fmt %x
+truongsinh,2015-02-17 20:56:44,https://api.github.com/repos/lib/pq/git/commits/b34cf4c2f62cb77dd41e169c33c9856e98469c94,b34cf4c2f62cb77dd41e169c33c9856e98469c94,"Optionally enable infinity timestamp(tz)
+
+If EnableInfinityTs is not called, ""-infinity"" and ""infinity"" will
+return []byte(""-infinity"") and []byte(""infinity"") respectively, and
+potentially cause error ""sql: Scan error on column index 0: unsupported
+driver -> Scan pair: []uint8 -> *time.Time"", unless the input param is
+`*interface{}` instead of `*time.Time`"
+johto,2015-02-09 22:55:55,https://api.github.com/repos/lib/pq/git/commits/835d5eb08da4541f26181e6958d7400da769e44b,835d5eb08da4541f26181e6958d7400da769e44b,"Fix corner cases in Rollback and Commit
+
+In the unlikely event that the server somehow fails to roll back or
+commit a transaction and returns an ""in transaction"" flag in the
+ReadyForQuery packet, we should discard the connection."
+johto,2015-02-05 08:42:17,https://api.github.com/repos/lib/pq/git/commits/73672c22431294bd2d012742dfc488523cc631bd,73672c22431294bd2d012742dfc488523cc631bd,Add Travis Cline to the list of contributors
+cbandy,2015-01-30 04:54:20,https://api.github.com/repos/lib/pq/git/commits/2ca26b30a7edcd0b0af72d372c93a2d9d9c2038a,2ca26b30a7edcd0b0af72d372c93a2d9d9c2038a,"Remove workaround for golang/go#3487
+
+Fixed in Go 1.1"
+johto,2015-01-22 00:13:35,https://api.github.com/repos/lib/pq/git/commits/308412e3e54d78c6411b1d5ef52c0660b921c81b,308412e3e54d78c6411b1d5ef52c0660b921c81b,"Panic if expectEvent times out
+
+For some reason this only fails in Travis.  Let's try and get more
+information about what's going on."
+johto,2015-01-22 00:05:27,https://api.github.com/repos/lib/pq/git/commits/1046c2c577f5be9d829bda808a5696c4c74c9f3b,1046c2c577f5be9d829bda808a5696c4c74c9f3b,"Fix inconsistencies in import formatting
+
+Per investigation after a note from Chris Bandy on commit
+1612de03336f996059ccb76bc8615e6e20c29a3a."
+erykwalder,2015-01-21 21:21:01,https://api.github.com/repos/lib/pq/git/commits/1612de03336f996059ccb76bc8615e6e20c29a3a,1612de03336f996059ccb76bc8615e6e20c29a3a,Update import ordering with goimports
+markottt,2015-01-21 14:44:45,https://api.github.com/repos/lib/pq/git/commits/d95ddcd2ea88bde9b2b7461d5fc23a4e4843a337,d95ddcd2ea88bde9b2b7461d5fc23a4e4843a337,"Add comment
+
+Forgot to add this in my previous commit."
+markottt,2015-01-21 14:43:01,https://api.github.com/repos/lib/pq/git/commits/f709b902ce82147d238cd7c548d6857908e7c6be,f709b902ce82147d238cd7c548d6857908e7c6be,"Fix bug with B.C. timestamps and sub-hour UTC offsets
+
+The previous coding would output invalid timestamp formats such as
+""0001-02-03T04:05:06-07:30  BC:09"".
+
+TruongSinh Tran-Nguyen, with small changes by Eric Urban and myself."
+markottt,2015-01-21 14:29:27,https://api.github.com/repos/lib/pq/git/commits/95147cbb98447aa1bbb38acbb1b4bc5f86fa02ad,95147cbb98447aa1bbb38acbb1b4bc5f86fa02ad,Add Eric Urban to the list of contributors
+hydrogen18,2015-01-21 02:45:36,https://api.github.com/repos/lib/pq/git/commits/e9da0370c75812f614163c0f93851c2902a820b8,e9da0370c75812f614163c0f93851c2902a820b8,remove double call to t.Format() in formatTs
+markottt,2015-01-09 11:14:58,https://api.github.com/repos/lib/pq/git/commits/19eeca3e30d2577b1761db471ec130810e67f532,19eeca3e30d2577b1761db471ec130810e67f532,gofmt
+markottt,2015-01-09 11:13:21,https://api.github.com/repos/lib/pq/git/commits/8a40b687c1b6e05aa5da0b1437669d260a36c53c,8a40b687c1b6e05aa5da0b1437669d260a36c53c,Add Dan Sosedoff to the list of contributors
+sosedoff,2015-01-08 02:54:01,https://api.github.com/repos/lib/pq/git/commits/76f113b4cabd26bf64be03f3c774ae1e7806f8d8,76f113b4cabd26bf64be03f3c774ae1e7806f8d8,"Fallback to USER env var if user.Current failed
+
+Also expose the error emitted by lookup failures."
+johto,2015-01-06 02:31:00,https://api.github.com/repos/lib/pq/git/commits/c0cbb323331257e9e2f4bfc35f34b637863510ef,c0cbb323331257e9e2f4bfc35f34b637863510ef,Add TruongSinh Tran-Nguyen to the list of contributors
+truongsinh,2015-01-05 05:07:29,https://api.github.com/repos/lib/pq/git/commits/4b119a25550a9897e86a04e6baf2ef25d82d5dc4,4b119a25550a9897e86a04e6baf2ef25d82d5dc4,"Fix ISO year vs Gregorian year
+
+In this Gregorian system, the year 1 BC is followed by AD 1. In ISO
+system, year 1 is followed by year 0, and then -1."
+Rolinh,2014-12-27 12:56:34,https://api.github.com/repos/lib/pq/git/commits/3e3efe51a0c4b23e817075438703cb15bd58c1a8,3e3efe51a0c4b23e817075438703cb15bd58c1a8,Build user_posix.go on DragonFly BSD
+johto,2014-12-27 14:24:39,https://api.github.com/repos/lib/pq/git/commits/0ff1111e7753c23b71115842f18f8b99316d83f7,0ff1111e7753c23b71115842f18f8b99316d83f7,"Improve error handling in copyin.resploop()
+
+Calling recv1() without having an errRecover handler deferred would
+previously have caused unrecoverable panics if e.g. the connection was
+lost while COPY FROM was in progress.  But since the loop only has one
+recv* call, we can simply use recvMessage and handle the error properly."
+johto,2014-12-26 21:01:52,https://api.github.com/repos/lib/pq/git/commits/f4a344905071de25b348a8c6c8c57ae84c4f7366,f4a344905071de25b348a8c6c8c57ae84c4f7366,"Provide a convenience method for accessing Listener.Notify
+
+This makes mocking *pq.Listener in external services easier."
+johto,2014-12-25 18:55:07,https://api.github.com/repos/lib/pq/git/commits/f0c3b2c1c9eac6fdd75a9041b908691bed40b520,f0c3b2c1c9eac6fdd75a9041b908691bed40b520,"Un-skip benchmarks which no longer fail
+
+Noted by Robert Rasmussen."
+johto,2014-12-23 21:59:16,https://api.github.com/repos/lib/pq/git/commits/2cef02aef11d6a12c4ae39cba5002a7614b51a37,2cef02aef11d6a12c4ae39cba5002a7614b51a37,"Test against PostgreSQL 9.4 in Travis
+
+PostgreSQL 9.4 was released on 2014-12-18."
+johto,2014-12-23 20:29:50,https://api.github.com/repos/lib/pq/git/commits/98e520eb1a45456df870d15ff45508bcf1dc643a,98e520eb1a45456df870d15ff45508bcf1dc643a,"Use Skip() for skipping tests
+
+This was previously difficult since Go 1.0 didn't have *T.Skip()."
+johto,2014-12-23 20:21:38,https://api.github.com/repos/lib/pq/git/commits/11f192c067bb233d7fe4cdf41889f97e14fb7936,11f192c067bb233d7fe4cdf41889f97e14fb7936,Test Go 1.4 in Travis
+johto,2014-12-23 20:08:26,https://api.github.com/repos/lib/pq/git/commits/71079a83278ae07c6c3aec61c0edb5b53a881530,71079a83278ae07c6c3aec61c0edb5b53a881530,"Drop support for Go 1.0 from the master branch
+
+There's still a ""go1.0"" branch if you really need to build on Go 1.0,
+but it will only receive critical bug fixes from now on.  The cut-off
+point was also tagged with ""go1.0-cutoff""."
+johto,2014-12-21 14:57:28,https://api.github.com/repos/lib/pq/git/commits/5da87320b996b433460a8930bb6b8f4e5672d371,5da87320b996b433460a8930bb6b8f4e5672d371,Add Jonathan Rudenberg to the list of contributors
+titanous,2014-12-09 04:33:47,https://api.github.com/repos/lib/pq/git/commits/b8a6511b553b8f1914981a2485d0958a89e0173c,b8a6511b553b8f1914981a2485d0958a89e0173c,gofmt
+titanous,2014-12-09 04:33:16,https://api.github.com/repos/lib/pq/git/commits/1e8090f60212bd77f2e0d3df306ecc8c23e196e4,1e8090f60212bd77f2e0d3df306ecc8c23e196e4,Fix Fatalf call
+johto,2014-12-14 01:11:46,https://api.github.com/repos/lib/pq/git/commits/dc911180b321e9b7e08aa94f20939ef0109b9b24,dc911180b321e9b7e08aa94f20939ef0109b9b24,Fix some comments
+markottt,2014-12-08 11:47:46,https://api.github.com/repos/lib/pq/git/commits/cd423da7cd9a8aec58208a1109c59e87002792f4,cd423da7cd9a8aec58208a1109c59e87002792f4,Avoid using unnecessarily many connection in TestRuntimeParameters
+johto,2014-10-18 20:56:07,https://api.github.com/repos/lib/pq/git/commits/7175accbed18058468c07811f76440d6e8d7cf19,7175accbed18058468c07811f76440d6e8d7cf19,"Mark the connection bad on unexpected panics
+
+Since we have no way of knowing where things went wrong, consider the
+connection bad in its entirety."
+johto,2014-10-18 20:52:41,https://api.github.com/repos/lib/pq/git/commits/2a6b5d754f96abad023c2076004d516813601623,2a6b5d754f96abad023c2076004d516813601623,Mark the connection bad in a couple of more cases
+johto,2014-10-18 20:01:09,https://api.github.com/repos/lib/pq/git/commits/e306069416a935a5f26570a96bb0e4657cd7f4b7,e306069416a935a5f26570a96bb0e4657cd7f4b7,"Change the type of saveMessageBuffer
+
+It makes more sense to store it as a byte slice since that's how we
+ultimately treat it."
+markottt,2014-10-17 12:25:40,https://api.github.com/repos/lib/pq/git/commits/2e54331858de4ba372014d4ee03ae086b8fcb57d,2e54331858de4ba372014d4ee03ae086b8fcb57d,"Make TestErrorDuringStartup more resilient against different setups
+
+While the previous coding would always work in Travis, there's no reason
+to fail ""go test"" on other setups."
+markottt,2014-10-17 12:12:28,https://api.github.com/repos/lib/pq/git/commits/eafacf7f78ca4f24d2280cd3db2c388038a372cb,eafacf7f78ca4f24d2280cd3db2c388038a372cb,"Re-enable previously disabled test
+
+Seems like I accidentally committed this completely disabled."
+johto,2014-10-17 00:28:46,https://api.github.com/repos/lib/pq/git/commits/3eb51e830de1faa544b02a0ae0c47dff03201736,3eb51e830de1faa544b02a0ae0c47dff03201736,"Don't bypass the prepared statement in stmt.Exec()
+
+I fixed the Query case in 59dc557f48025f2793e034756cea8062643c53ca, but
+it apparently didn't go the entire way.  Using the already-prepared
+statement is both less surprising, and also *faster* than running
+simpleExec().
+
+This also means that there's no need to store the query inside the
+""stmt"" struct anymore, so get rid of it."
+johto,2014-10-16 22:40:24,https://api.github.com/repos/lib/pq/git/commits/5beaf8de41016ca326bf6e1bb53598e4fd07d36e,5beaf8de41016ca326bf6e1bb53598e4fd07d36e,Fix a couple of test error messages
+johto,2014-10-15 20:56:01,https://api.github.com/repos/lib/pq/git/commits/727befc3c2fd27f3493f88305e02800b4e4a76cd,727befc3c2fd27f3493f88305e02800b4e4a76cd,"Reorganize code to avoid double errRecover()s
+
+All callers of prepareTo() are already recovering from errors except
+Prepare().  Avoid the overhead of double errRecover by making Prepare
+handle it instead."
+johto,2014-10-14 20:37:37,https://api.github.com/repos/lib/pq/git/commits/2fe70547fcfbd6deedadd4af3702af16c0297723,2fe70547fcfbd6deedadd4af3702af16c0297723,"Avoid unnecessarily allocating readBufs for every row
+
+In 7b56638b9451914e65985950a0d6c0c3833e96e9 I removed a completely
+unnecessary allocation from recvMessage, but there was another
+allocation done on every call.  Allow callers of recv1 to supply their
+own readBuf where repeated allocations might be an issue, and implement
+it for the ""rows"" object (where it's been proven to be one)."
+johto,2014-10-13 18:49:58,https://api.github.com/repos/lib/pq/git/commits/b7af72a1fc1649a8871af32e23229fb89ae6cdc7,b7af72a1fc1649a8871af32e23229fb89ae6cdc7,Fix incorrect encoding of B.C. years
+johto,2014-10-12 10:08:49,https://api.github.com/repos/lib/pq/git/commits/d927af0dbef2a4ab92fd3edd7408b2d7aa197854,d927af0dbef2a4ab92fd3edd7408b2d7aa197854,"Load crypto/sha256 in ssl_test.go
+
+Go 1.0 doesn't seem to be automatically loading all the available hash
+algorithms, which made the tests fail.  Fix by importing crypto/sha256."
+johto,2014-10-12 09:14:06,https://api.github.com/repos/lib/pq/git/commits/6274f594ab69399288f3816c462cb51f7c5193f7,6274f594ab69399288f3816c462cb51f7c5193f7,Add Chris Bandy to the list of contributors
+cbandy,2014-10-12 04:27:48,https://api.github.com/repos/lib/pq/git/commits/58cb037d5c7a9bf83a1b03786d93f9cb34664b7f,58cb037d5c7a9bf83a1b03786d93f9cb34664b7f,Fix setup for SSL tests in Travis CI
+cbandy,2014-10-12 04:22:49,https://api.github.com/repos/lib/pq/git/commits/3fc0e294956d493b8831e5868f8d1669d9121e3f,3fc0e294956d493b8831e5868f8d1669d9121e3f,Move environment variables to the env configuration
+johto,2014-10-12 01:20:20,https://api.github.com/repos/lib/pq/git/commits/585ef5d6d502fd43589d48e448b91b449745e369,585ef5d6d502fd43589d48e448b91b449745e369,"Add support for sslmode=verify-ca
+
+This is like verify-full, except the Common Name isn't matched against
+the ""host"" parameter."
+johto,2014-10-12 00:57:17,https://api.github.com/repos/lib/pq/git/commits/31d32031b5c1e90483f4a3e63af4429f8eaf3440,31d32031b5c1e90483f4a3e63af4429f8eaf3440,Add Charlie Melbye to the list of contributors
+johto,2014-10-12 00:56:22,https://api.github.com/repos/lib/pq/git/commits/26a684e816ec94cabe1e7682f7ef0c48f6cbcfd1,26a684e816ec94cabe1e7682f7ef0c48f6cbcfd1,"Fix documentation for sslcert / sslkey
+
+All of the parameters are optional, so there's no need to mention it
+separately for these two."
+cmelbye,2014-01-30 21:47:12,https://api.github.com/repos/lib/pq/git/commits/b6ee44de41e01c1719a6dd5ba32b13bb477fed87,b6ee44de41e01c1719a6dd5ba32b13bb477fed87,Add support for sslrootcert option and PGSSLROOTCERT env. variable
+cbandy,2014-10-11 17:37:07,https://api.github.com/repos/lib/pq/git/commits/ac20047cf79435464799165320dc98f64a2e29c6,ac20047cf79435464799165320dc98f64a2e29c6,Calculate the distro codename for APT
+johto,2014-10-11 17:39:41,https://api.github.com/repos/lib/pq/git/commits/16b928d959716e3d7782364f644e106d36b05dc7,16b928d959716e3d7782364f644e106d36b05dc7,Add James Pozdena to the list of contributors
+johto,2014-10-11 17:30:13,https://api.github.com/repos/lib/pq/git/commits/e8ab9acdf742b7087c70926221ef40c829aad733,e8ab9acdf742b7087c70926221ef40c829aad733,"Add support for sslcert and sslkey
+
+This commit adds support for both automatically loading certificates
+from ~/.postgresql/ and loading them from arbitrary paths by using
+sslcert and sslkey (or their environmental equivalents PGSSLCERT and
+PGSSLKEY).  If their paths are set explicitly, the files must exist or
+connection attempts will fail.  The behaviour was designed to exactly
+match that implemented by libpq.
+
+Also add some basic testing for SSL features into Travis.  Previously
+the SSL support was not tested at all.  The tests are not run unless
+some special environment variables are set, since we can't run these
+tests without special support.
+
+James Pozdena (@jpoz) and Marko Tiikkaja (@johto)."
+johto,2014-10-11 11:58:02,https://api.github.com/repos/lib/pq/git/commits/dd9c0dbe6dc7cb5aee01bf65eb5614558da92bfd,dd9c0dbe6dc7cb5aee01bf65eb5614558da92bfd,"Make the handling of driver-only settings more consistent
+
+There seemed to be two different ways these were handled.  Pick one of
+them and embrace it."
+johto,2014-10-03 07:30:56,https://api.github.com/repos/lib/pq/git/commits/c6325123e6d45115749734a8bc35060ebac74d0e,c6325123e6d45115749734a8bc35060ebac74d0e,"Remove superfluous errRecover from simpleExec
+
+All of its callers are already recovering from errors (like they should
+be), so this is just unnecessary overhead."
+johto,2014-09-27 23:34:26,https://api.github.com/repos/lib/pq/git/commits/b1d1c3e32b52c49f3e29622b3d88755f6c2c5cd7,b1d1c3e32b52c49f3e29622b3d88755f6c2c5cd7,Remove superfluous type conversion
+johto,2014-09-27 23:26:47,https://api.github.com/repos/lib/pq/git/commits/d88e7934ab23861f5d79c398887550e0093e7b0a,d88e7934ab23861f5d79c398887550e0093e7b0a,"Display a nicer error when a query is run with more than 2^16-1 params
+
+Because the number of parameters in the wire protocol is an uint16,
+there's no way to execute a prepared statement with more than 2^16-1
+parameters.  Display a nicer error message in that case.
+
+The error will still be a bit obscure if the user explicitly prepared
+the statement, though, since database/sql will be the one complaining in
+that case.
+
+I also deliberately did not commit a test case for this, since running
+the test I wrote took more than 20 seconds on my laptop, which isn't
+justifiable for a corner case like this.  I've left my test case into
+issue #295.
+
+Per complaint from Brian Fallik in the same issue."
+johto,2014-09-27 21:39:17,https://api.github.com/repos/lib/pq/git/commits/90d58071e71fbe103083d227c47a4375d62071ae,90d58071e71fbe103083d227c47a4375d62071ae,"Mark the connection bad if the server responds with something unexpected
+
+Commit 07745050691bbe88ce770ca38311c19be9445e37 allows us to return an
+error message while still marking the connection bad.  Use that to our
+advantage in cases where the protocol state appears to be out of sync.
+This way the user still sees the specific error message (and hopefully
+we'll see a bug report), but we avoid putting bad connections into the
+pool thinking they're still A-ok."
+johto,2014-09-27 21:37:54,https://api.github.com/repos/lib/pq/git/commits/07745050691bbe88ce770ca38311c19be9445e37,07745050691bbe88ce770ca38311c19be9445e37,"Fix problem with explicit transactions and ErrBadConn
+
+Because database/sql ignores ErrBadConn from all *Tx methods, a bad
+connection might have been put back into the pool thinking it's in a
+transaction.  This connection would then on the next call to Begin()
+return the error ""pq: unexpected transaction status in a failed
+transaction"", and then be put back into the pool, again.  With bad
+enough luck the pool might get filled with these connections, and the
+application wouldn't be able to start any transactions, effectively
+rendering it useless :-(
+
+To fix, we have no option other than to remember when a connection is
+bad, and return ErrBadConn for such connections from any method
+database/sql might call."
+johto,2014-09-23 08:22:46,https://api.github.com/repos/lib/pq/git/commits/e31e9d09fa0cd168dd1a45ddb1dff76f1f55512a,e31e9d09fa0cd168dd1a45ddb1dff76f1f55512a,Add Fumin to the list of contributors
+fumin,2014-09-22 23:53:25,https://api.github.com/repos/lib/pq/git/commits/5ff334f6d5933d3f4abc6db89227d2bfaa3e5524,5ff334f6d5933d3f4abc6db89227d2bfaa3e5524,"Support arbitrary network dialers
+
+One such use case is to use the library within the constraints of Google
+App Engine
+https://developers.google.com/appengine/docs/go/sockets/reference"
+johto,2014-09-18 17:02:31,https://api.github.com/repos/lib/pq/git/commits/fbed41b4c063a307ab21bf37ae6705519fb34ca3,fbed41b4c063a307ab21bf37ae6705519fb34ca3,"Remove dead code
+
+This code has been dead since b7935a1b79fa2dee944d464273356dd3."
+johto,2014-09-16 08:15:12,https://api.github.com/repos/lib/pq/git/commits/04c77ed03f9b391050bec3b5f2f708f204df48b2,04c77ed03f9b391050bec3b5f2f708f204df48b2,"Don't return ErrBadConn from Open()
+
+Functionality-wise, there's no reason to return ErrBadConn from Open()
+since returning *any* error will make sure that the connection is not
+put into the pool.  But there's a very good reason not to return
+ErrBadConn; it makes diagnosing problems during connection establishment
+completely impossible without either having access to the server logs or
+interpreting captured network traffic.
+
+This is a minor backwards compatibility breakage, since we used to
+return ErrBadConn in a lot of cases previously.  However, there were
+several cases were we returned the real error instead, so any caller
+assuming that they would either get a nil or ErrBadConn from Open was
+already broken.
+
+Based on initial work from Paul Jolly, after discussions with Paul and
+Eric Chlebek."
+johto,2014-08-26 23:40:55,https://api.github.com/repos/lib/pq/git/commits/b021d0ef20de4f7ed239e2cbe3b95648d8e41e95,b021d0ef20de4f7ed239e2cbe3b95648d8e41e95,"Fix missing call to processReadyForQuery
+
+There was still one place which didn't update the transaction status
+indicator based on the ReadyForQuery message.  Prior to this fix, a call
+to Commit might have sometimes erroneously complained about the command
+tag being ROLLBACK instead of returning the correct error, ""Could not
+complete operation in a failed transaction"".  Though such an application
+would have had to ignore a failed query in the first place, which would
+explain the lack of bug reports.
+
+Found while investigating a report from Eric Chlebek in #225, though I
+can't come up with a scenario where his problem would have been caused
+by this."
+johto,2014-08-09 12:01:45,https://api.github.com/repos/lib/pq/git/commits/3c5c5bd6383b42aec97b5aa39fba2cddd35aea36,3c5c5bd6383b42aec97b5aa39fba2cddd35aea36,Add Joël Stemmer to the list of contributors
+johto,2014-08-09 11:06:44,https://api.github.com/repos/lib/pq/git/commits/580482d398176d3eb6624d678303c1d5234a8064,580482d398176d3eb6624d678303c1d5234a8064,Fix formatting verbs in test error message
+johto,2014-07-26 20:03:37,https://api.github.com/repos/lib/pq/git/commits/3e0659e626f761e9af7a8bd1c8b6aaea6770495b,3e0659e626f761e9af7a8bd1c8b6aaea6770495b,"Handle EmptyQueryResponses correctly
+
+Like hochhaus noted in #284, we previously didn't handle
+EmptyQueryResponses from the server correctly.  Fix by treating them as
+a 0-row, 0-column result set."
+johto,2014-07-24 00:49:33,https://api.github.com/repos/lib/pq/git/commits/8a6a4529571d69ac3646a3c129e96ff81d40e5aa,8a6a4529571d69ac3646a3c129e96ff81d40e5aa,"Skip test case for issue 282 on Go 1.0
+
+It unfortunately doesn't know about the Queryer interface :-("
+johto,2014-07-24 00:35:36,https://api.github.com/repos/lib/pq/git/commits/e94d0da13616c796fedfaeaea3a9818aee80e01a,e94d0da13616c796fedfaeaea3a9818aee80e01a,"Tolerate CommandComplete messages before the data in Simple Query
+
+Commit 1e2ccf84caca692327146254602c580cbf inadvertently broke the case
+where one or more CommandComplete messages were received before an
+actual result set, as reported in #282 by rylanhalteman.  Revert to the
+old behaviour of tolerating any number of CommandComplete messages
+before the actual data is received."
+johto,2014-07-21 19:58:53,https://api.github.com/repos/lib/pq/git/commits/960f4898d8d3ee5e1f47a8422e9b23ac7bab129b,960f4898d8d3ee5e1f47a8422e9b23ac7bab129b,Add Benjamin Heatwole to the list of contributors
+bheatwole,2014-07-15 15:02:19,https://api.github.com/repos/lib/pq/git/commits/dffddbcda422b88507795533be131d05e1a3dc71,dffddbcda422b88507795533be131d05e1a3dc71,"Cache time.Location for Performance
+
+Previously a new time.FixedZone was created for every single time
+fetched from the database. This is an immutable structure that is
+somewhat expensive to create and so should be cached. Benchmarks
+indicate slightly under a 20% speed improvement with a reduction in
+allocs from 5 to 2 and a reduction in memory allocated from 213 bytes to
+66."
+johto,2014-07-05 16:20:26,https://api.github.com/repos/lib/pq/git/commits/026717369ef25a05e0553b40f0711022b5422923,026717369ef25a05e0553b40f0711022b5422923,"Remove prepareToSimpleStmt
+
+It doesn't appear to be serving any purpose, so remove it."
+johto,2014-07-05 13:42:37,https://api.github.com/repos/lib/pq/git/commits/6d16a400975d186dbbf6334350fca31721b6efe5,6d16a400975d186dbbf6334350fca31721b6efe5,Add Eric Chlebek to the list of contributors
+johto,2014-06-25 22:17:03,https://api.github.com/repos/lib/pq/git/commits/b549d8792f245c2dcee7702ddcd844280b8ecb10,b549d8792f245c2dcee7702ddcd844280b8ecb10,Fix copypaste-o in Listener docs
+johto,2014-06-25 17:23:31,https://api.github.com/repos/lib/pq/git/commits/9907f3fe61e0ee8b0719352eff2e0652ec4902fa,9907f3fe61e0ee8b0719352eff2e0652ec4902fa,"Test against Go 1.3 in Travis
+
+Go 1.3 was released on 2014-06-18."
+johto,2014-06-25 17:02:24,https://api.github.com/repos/lib/pq/git/commits/7b56638b9451914e65985950a0d6c0c3833e96e9,7b56638b9451914e65985950a0d6c0c3833e96e9,"Avoid an unnecessary allocation in recvMessage
+
+Creating a readBuf here is a bit of an overkill since it's only used to
+read the length of the message.  Invoke encoding/binary directly to
+avoid the allocation, resulting in a ~10% performance gain in a
+benchmark as described in #270."
+hochhaus,2014-06-19 19:18:35,https://api.github.com/repos/lib/pq/git/commits/ae7391529ced9c12f06bf01eae33dadb4c70e49f,ae7391529ced9c12f06bf01eae33dadb4c70e49f,Fix GOOS=nacl cross compile.
+johto,2014-06-18 17:36:28,https://api.github.com/repos/lib/pq/git/commits/1e2ccf84caca692327146254602c580cbfd0a690,1e2ccf84caca692327146254602c580cbfd0a690,"Work around a bug in QueryRow in the simple query path
+
+In f8ffc32df8b9c5fd7d5ca1ac83 I fixed this for the extended query path
+where the problem was much more prevalent, but issue #266 pointed out a
+case where the simple query path is vulnerable to the same bug, which I
+had missed in my original fix.
+
+While at it, also add some more sanity checking to the conn.saveMessage*
+handling."
+uhoh-itsmaciek,2014-06-02 03:22:06,https://api.github.com/repos/lib/pq/git/commits/50a04ed4e5268fb34ca6d885202b569ef89c0a7a,50a04ed4e5268fb34ca6d885202b569ef89c0a7a,"Fix time decoding
+
+Compare time.Location names, not just offsets. Unfortuntately, we have
+to do this by comparing String representation of time.Times, since
+there's no way to compare time.Locations beyond just offset.
+
+Also fix the current parsing tests to expect a zero-offset time.Time,
+rather than time.UTC explicitly."
+uhoh-itsmaciek,2014-05-22 06:41:07,https://api.github.com/repos/lib/pq/git/commits/529edd91735bdd4b3cc61dcb9ed82cd8ddb616c4,529edd91735bdd4b3cc61dcb9ed82cd8ddb616c4,Add Lann Martin to list of contributors
+lann,2014-05-22 06:04:32,https://api.github.com/repos/lib/pq/git/commits/d9326667a1d5aef9426e00344a42de92dce86398,d9326667a1d5aef9426e00344a42de92dce86398,"Improve option parsing
+
+The existing code did not provide for escaping characters, which made
+certain option values impossible to represent, for example:
+
+ password='spaces and ' a quote'
+
+In addition, ParseUrl would not allow even a single space in any value.
+
+Add standard backslash escaping, matching libpq's own conninfo_parse.
+
+Apply this escaping to special characters in ParseURL."
+johto,2014-04-14 11:12:30,https://api.github.com/repos/lib/pq/git/commits/c808a1bb644594ca717ac61f71e6b0e454b835e2,c808a1bb644594ca717ac61f71e6b0e454b835e2,"Build user_posix.go on Solaris
+
+Per complaint from infolution."
+johto,2014-03-13 21:28:18,https://api.github.com/repos/lib/pq/git/commits/f08bb026e0d6b644cad24d850d13352cc47400c5,f08bb026e0d6b644cad24d850d13352cc47400c5,"Don't ignore the return value of SetDeadline()
+
+It is possible that the runtime has already closed this connection from
+underneath us and we would end up with a broken connection in the pool
+(since we don't convert timeouts into ErrBadConns).  Fix simply by also
+returning the error from Open(); we should not have to worry about
+getting timeouts after Open() has succeeded."
+johto,2014-03-02 19:12:48,https://api.github.com/repos/lib/pq/git/commits/61a77393e5a111ed4838f0fe24c0bf81361fd517,61a77393e5a111ed4838f0fe24c0bf81361fd517,"gofmt
+
+Not sure I agree with this, but all glory to gofmt.."
+johto,2014-01-18 14:17:43,https://api.github.com/repos/lib/pq/git/commits/a4953a8362c82d19c237dc81d993c5212af96cd7,a4953a8362c82d19c237dc81d993c5212af96cd7,Small editorialization of the error documentation
+johto,2014-01-18 14:11:46,https://api.github.com/repos/lib/pq/git/commits/5690e1085bef5ade23fc604ed38419d9a4c4f3d2,5690e1085bef5ade23fc604ed38419d9a4c4f3d2,"Add ErrorCode.Class()
+
+This returns the ""class"" of an error, which supports Name() to get the
+""condition name""."
+johto,2014-02-27 18:54:27,https://api.github.com/repos/lib/pq/git/commits/9dd136abd24227c7af773a9c32ef7eca53609202,9dd136abd24227c7af773a9c32ef7eca53609202,"Fix bug in dial() when connect_timeout is set
+
+I completely broke this in commit 344cc7146c482865d57b20ef84b5e600."
+johto,2014-02-27 18:53:01,https://api.github.com/repos/lib/pq/git/commits/99ae28ebe022195c106102e72ef3e9a444ce69ba,99ae28ebe022195c106102e72ef3e9a444ce69ba,"Improve comment about deadline in dial()
+
+I accidentally wrote ""timeout"" when I meant ""deadline"", but I think this
+is even better."
+johto,2014-02-27 18:47:11,https://api.github.com/repos/lib/pq/git/commits/344cc7146c482865d57b20ef84b5e6009da94f9f,344cc7146c482865d57b20ef84b5e6009da94f9f,"Make connect_timeout apply to the entire connection procedure
+
+As committed in 9d56fa64939666101a594570df8197, only the TCP connection
+establishment part was affected by the timeout.  The new behaviour is
+more intuitive and matches that of libpq's."
+johto,2014-02-17 00:18:46,https://api.github.com/repos/lib/pq/git/commits/6577a6a8a8b66cc558ebe37f51ca07833bfa433b,6577a6a8a8b66cc558ebe37f51ca07833bfa433b,"Avoid concurrent use of the scratch buffer in copyin.Close
+
+As noted in #235, previously both the Close() and the concurrently
+running resploop could be trying to operate on the scratch buffer if a
+message happened to arrive from the server just as we were sending the
+CopyDone message.  Fix by bypassing the scratch buffer for CopyDone."
+johto,2014-02-16 19:13:51,https://api.github.com/repos/lib/pq/git/commits/b49f0628b9aa9af60ea3109263ae1856a47cdab2,b49f0628b9aa9af60ea3109263ae1856a47cdab2,Gofmt conn.go
+johto,2014-02-16 18:53:59,https://api.github.com/repos/lib/pq/git/commits/4822f4f6ccf2d6129720f582aa5d890103d4eecc,4822f4f6ccf2d6129720f582aa5d890103d4eecc,Add Timothée Peignier to the list of contributors
+johto,2014-02-13 22:24:32,https://api.github.com/repos/lib/pq/git/commits/9637ade4813d37d1845ce60507dbdd968fae45e9,9637ade4813d37d1845ce60507dbdd968fae45e9,"Use strings.IndexRune instead of strings.IndexByte
+
+IndexByte didn't exist pre-1.2."
+johto,2014-02-13 20:37:51,https://api.github.com/repos/lib/pq/git/commits/2632b5718519805b873b951b192fb2d662d0e384,2632b5718519805b873b951b192fb2d662d0e384,"Don't allow zero bytes in the result of QuoteIdentifier
+
+Because a protocol-level String is null-terminated, there would have
+been a possibility of a specially crafted input string manipulating the
+protocol packet.  However, the worst thing I can see is that the
+attacker might be able to specify the input parameter types of a query
+in a Parse message, which doesn't seem too problematic."
+johto,2014-02-12 22:43:00,https://api.github.com/repos/lib/pq/git/commits/4d1372b2123acbc88fb268b8dd6e5a2a1c016577,4d1372b2123acbc88fb268b8dd6e5a2a1c016577,"Make the common error messages more consistent
+
+There are still several cases where the user could see an error not
+prefixed with ""pq: "", but there's no real reason why we couldn't fix
+these instances."
+johto,2014-02-12 22:16:18,https://api.github.com/repos/lib/pq/git/commits/932a348a1e4c983cca78586a90984f0eee2d6e63,932a348a1e4c983cca78586a90984f0eee2d6e63,"Expose quoteIdentifier
+
+It's not possible to parameterize identifiers in PostgreSQL, so to
+specify them dynamically one has to properly escape them before
+interpolating them into the SQL string.  There's no reason to force
+everyone to reinvent the wheel, so export our implementation.
+
+Per discussion in #232."
+johto,2014-02-08 17:16:43,https://api.github.com/repos/lib/pq/git/commits/46d1f25664323ac9f8f2af76f517c9785eb72ff9,46d1f25664323ac9f8f2af76f517c9785eb72ff9,Fix typo in error message
+johto,2014-02-08 17:09:05,https://api.github.com/repos/lib/pq/git/commits/fc6c729a082ddbf16c115c00828d77aebb8c1eae,fc6c729a082ddbf16c115c00828d77aebb8c1eae,"Remove references to senderToken
+
+This was replaced with senderLock at some point during the development,
+but some old comments weren't fixed."
+johto,2014-02-08 12:55:53,https://api.github.com/repos/lib/pq/git/commits/e8f39257b221fa168856dc229d19960d3e7f64d5,e8f39257b221fa168856dc229d19960d3e7f64d5,"Fix merge conflict in README
+
+I failed to notice this in commit 224d938d4ee50f27e668d0ffa4142822f11."
+johto,2014-02-08 09:43:20,https://api.github.com/repos/lib/pq/git/commits/3e128b3826e03cf5f33beeeb50981717f189fff1,3e128b3826e03cf5f33beeeb50981717f189fff1,gofmt notify_test.go
+johto,2014-02-08 09:38:17,https://api.github.com/repos/lib/pq/git/commits/224d938d4ee50f27e668d0ffa4142822f11da58c,224d938d4ee50f27e668d0ffa4142822f11da58c,"Add support for LISTEN/NOTIFY
+
+This commit adds support for the PostgreSQL LISTEN/NOTIFY mechanism by
+adding two new user-exposed interfaces:
+
+  - ListenerConn is a low level interface which establishes a connection
+    to a PostgreSQL server and only knows how to execute simple queries
+    and wait for notifications.  This interface does not know how to
+    reconnect, and does not maintain a list of the channels it is
+    listening on.  Its use is discouraged.
+  - Listener is the higher-level interface which uses ListenerConn
+    underneath to provide a simpler to use interface, supporting
+    automatic reconnection.  In order to do that, it also maintains a
+    list of channels it is already listening on.
+
+Significant contributions and ideas from Tommie Gannert.  Ideas and
+valuable feedback from Kamil Kisiel, Maciek Sakrejda and Paul Hammond."
+johto,2014-02-02 14:27:44,https://api.github.com/repos/lib/pq/git/commits/02882d753b6b43f9e5b9ff3fc4ca4aea556c2e03,02882d753b6b43f9e5b9ff3fc4ca4aea556c2e03,"Implement fallback_application_name
+
+This is a libpq-compatible parameter which can be used by generic
+programs to provide a ""default"" application_name the user can override
+via application_name or PGAPPNAME."
+johto,2014-01-18 14:36:33,https://api.github.com/repos/lib/pq/git/commits/1abc04666264e3f3b6c0907c92420789e72d987a,1abc04666264e3f3b6c0907c92420789e72d987a,Add Kir Shatrov to the list of contributors
+kirs,2014-01-18 14:32:02,https://api.github.com/repos/lib/pq/git/commits/3d89569678bc9d07a747634c60c3e6c930d0dfb8,3d89569678bc9d07a747634c60c3e6c930d0dfb8,"Improved `LastInsertId()` example
+
+Existing example wasn't full and this one may be useful for other developers."
+johto,2014-01-14 13:16:30,https://api.github.com/repos/lib/pq/git/commits/f33c463c61403380511e736794398fa41ed400dd,f33c463c61403380511e736794398fa41ed400dd,"Fix formatting directives in Fatal calls
+
+Spotted by go vet."
+johto,2014-01-14 13:14:23,https://api.github.com/repos/lib/pq/git/commits/56ca60e05ff0ddeb02ee6af3e75c38d7342d9ad7,56ca60e05ff0ddeb02ee6af3e75c38d7342d9ad7,"Fix recursive call to String method
+
+Spotted by go vet."
+johto,2014-01-10 11:26:22,https://api.github.com/repos/lib/pq/git/commits/1833e4c0260ac002be5a6383e1eb76a89f6a626d,1833e4c0260ac002be5a6383e1eb76a89f6a626d,"Run copy.go through gofmt
+
+Accidentally undid a previous run in 02c7286984a14e7515923acaee787."
+johto,2014-01-10 10:56:36,https://api.github.com/repos/lib/pq/git/commits/02c7286984a14e7515923acaee787d837a244f6b,02c7286984a14e7515923acaee787d837a244f6b,"Add an unreachable panic for Go 1.0
+
+Missed this in my previous commit."
+johto,2014-01-10 10:53:04,https://api.github.com/repos/lib/pq/git/commits/c4bd75a7bdd9899aa4ff65c607838939cd658f1b,c4bd75a7bdd9899aa4ff65c607838939cd658f1b,"Fix various problems with pq.CopyIn
+
+The biggest change is that COPY is only allowed inside an explicit
+transaction; see #214 for an explanation of the problems, and why
+this change is necessary.
+
+While changing the behaviour, I noticed and fixed a few other
+problems as well:
+  - Rogue COPY commands sent by the user were not recovered from
+    properly.
+  - CopyIn() and CopyInSchema() previously did not properly escape
+    the identifiers.
+  - Close() now returns an error if the stmt has been previously
+    closed.
+  - Some fixes to the general style in tests and documentation."
+johto,2014-01-01 21:55:48,https://api.github.com/repos/lib/pq/git/commits/6c54219055243614d4eaffea55917c15bea2ba2f,6c54219055243614d4eaffea55917c15bea2ba2f,"Install the contrib package in Travis
+
+This is necessary to test the hstore extension, which caused the
+bug fixed in ae25ed1a04796908bf4953e4a8f944ee9b3e to go unnoticed
+for quite some time."
+johto,2014-01-01 21:43:00,https://api.github.com/repos/lib/pq/git/commits/475be85d88fcf06f5eab2c636ea943678bc5d468,475be85d88fcf06f5eab2c636ea943678bc5d468,Add Patrick Hayes to the list of contributors
+phayes,2014-01-01 19:02:25,https://api.github.com/repos/lib/pq/git/commits/ae25ed1a04796908bf4953e4a8f944ee9b3e9df4,ae25ed1a04796908bf4953e4a8f944ee9b3e9df4,Don't escape newlines in hstore input format
+phayes,2014-01-01 07:41:50,https://api.github.com/repos/lib/pq/git/commits/444050d4f9927453dab8e3ff80f72ac8a2ccf475,444050d4f9927453dab8e3ff80f72ac8a2ccf475,"Use CREATE IF NOT EXISTS in hstore tests
+
+The previous coding was silently skipping the tests if the
+extension already existed in the target database."
+johto,2013-12-18 11:37:39,https://api.github.com/repos/lib/pq/git/commits/9aab0b6cd558515af6a595e55969e8efe8e66a71,9aab0b6cd558515af6a595e55969e8efe8e66a71,Clarify comments in parseBytea
+johto,2013-12-18 09:53:22,https://api.github.com/repos/lib/pq/git/commits/6d904c64c4c3018566c0174a1f281d04ad71ad09,6d904c64c4c3018566c0174a1f281d04ad71ad09,"Revert ""Test Queryer as well as Execer""
+
+Queryer wasn't present in Go 1.0, so we can't try and run this test
+there, at least not as written.  Reverting for now.
+
+This reverts commit de28fd30151bcc4bc7833c82d59051c443cee3aa."
+johto,2013-12-18 09:46:41,https://api.github.com/repos/lib/pq/git/commits/d274088db1c82bda20d88f6eed5e2e3b30f21687,d274088db1c82bda20d88f6eed5e2e3b30f21687,"Send bytea in the correct format in all cases
+
+I failed to spot this case in 6a22d6803c4697d6177a54c379f8d3de56,
+which means that we don't have automated tests for that case.  Add
+them as well."
+johto,2013-12-18 09:40:53,https://api.github.com/repos/lib/pq/git/commits/de28fd30151bcc4bc7833c82d59051c443cee3aa,de28fd30151bcc4bc7833c82d59051c443cee3aa,Test Queryer as well as Execer
+uhoh-itsmaciek,2013-12-17 18:03:49,https://api.github.com/repos/lib/pq/git/commits/a9c63e4d098c026bd990fe8b7993145e417b5753,a9c63e4d098c026bd990fe8b7993145e417b5753,"Process bytea through proper escaping
+
+This actually fixes COPY on 8.4"
+uhoh-itsmaciek,2013-12-17 15:57:45,https://api.github.com/repos/lib/pq/git/commits/a3366df46b972313c4848018b0bccdc920daa1f1,a3366df46b972313c4848018b0bccdc920daa1f1,"Fix 8.4 COPY
+
+This respects the bytea encoding format for 8.4 when using COPY."
+uhoh-itsmaciek,2013-12-15 19:01:38,https://api.github.com/repos/lib/pq/git/commits/fda846c284b1b2935e5f977da866408de90e2a10,fda846c284b1b2935e5f977da866408de90e2a10,Add Oliver Tonnhofer to Contributors; update Features/Future
+olt,2013-06-17 08:59:30,https://api.github.com/repos/lib/pq/git/commits/72f84510ec4899677ec603abbaec5ba17a438a8c,72f84510ec4899677ec603abbaec5ba17a438a8c,"Add support for bulk imports with COPY FROM STDIN
+
+ * db.Prepare(""COPY foo (a, b) FROM STDIN"") returns a COPY IN
+   statement
+ * stmt.Exec(a, b) inserts new items
+ * stmt.Exec() syncs the input stream, since sql.Stmt.Close() does not
+   return errors from stmt.Close()"
+uhoh-itsmaciek,2013-12-15 18:44:01,https://api.github.com/repos/lib/pq/git/commits/25103d455ed1017c39637b7a0e0868433309a509,25103d455ed1017c39637b7a0e0868433309a509,Note hstore support; in-progress LISTEN/NOTIFY support
+johto,2013-12-15 18:41:42,https://api.github.com/repos/lib/pq/git/commits/a075142243c7e6cab75c11ad58b60481bafde4ce,a075142243c7e6cab75c11ad58b60481bafde4ce,"Use t.Errorf instead of t.Println
+
+Silly thinko in 4c2445c5c31b5098f6d8355036."
+johto,2013-12-15 18:38:45,https://api.github.com/repos/lib/pq/git/commits/4c2445c5c31b5098f6d8355036a27f28a7c14e6f,4c2445c5c31b5098f6d8355036a27f28a7c14e6f,Add test cases encoding in both output formats
+johto,2013-12-15 18:17:10,https://api.github.com/repos/lib/pq/git/commits/63df9eb3c3077eae750b1a0fa5968495ea428e78,63df9eb3c3077eae750b1a0fa5968495ea428e78,"Try to infer the time zone for timestamptzs from TimeZone
+
+When receiving a ""timestamp with time zone"" value from the database
+we try to set its time zone based on the current value of TimeZone.
+If, and only if, the offset we got from the local time zone database
+matches the offset we got from the server, we return the new value
+with time zone information.  This way the user always gets the time
+as the database sent it (even if the local database is not in sync
+with the remote one), which maintains backwards compatibility and
+avoids confusion.
+
+This should currently work correctly in all cases, but if we ever
+start supporting multiple simultaneous queries, we will have to be
+careful to use the correct TimeZone value for each of them."
+uhoh-itsmaciek,2013-12-15 18:29:53,https://api.github.com/repos/lib/pq/git/commits/b2963e40a8ab0942742cc9e56fbb785cdcc1ac0e,b2963e40a8ab0942742cc9e56fbb785cdcc1ac0e,Add Jeremy Jay to Contributors
+pbnjay,2013-10-02 18:36:44,https://api.github.com/repos/lib/pq/git/commits/4a1f8e5f189255e0c9e0941f9b55fdca3088c493,4a1f8e5f189255e0c9e0941f9b55fdca3088c493,Adding Hstore support package
+uhoh-itsmaciek,2013-12-11 00:13:04,https://api.github.com/repos/lib/pq/git/commits/7ba4d32328c8fe9f04b09fc264a3787eee142e9e,7ba4d32328c8fe9f04b09fc264a3787eee142e9e,Add tests for 8.4
+johto,2013-12-11 20:08:22,https://api.github.com/repos/lib/pq/git/commits/a399bf35b774aa12f425d2a8ba354e21a66c7036,a399bf35b774aa12f425d2a8ba354e21a66c7036,Remove usage of DO in test cases
+johto,2013-12-11 20:01:39,https://api.github.com/repos/lib/pq/git/commits/46266a11e36eb60da28e5209177cedf313f11e1c,46266a11e36eb60da28e5209177cedf313f11e1c,Don't try to run TestByteaOutputFormats against old servers
+johto,2013-12-11 19:50:32,https://api.github.com/repos/lib/pq/git/commits/7473b463c485e9783dcc9d34eba50471f4cd7a38,7473b463c485e9783dcc9d34eba50471f4cd7a38,"Don't look at AffectedRows in SELECT for pre-9.0 servers
+
+It looks like the number of rows affected by SELECT was not part of
+the command tag before version 9.0, though I can't see a mention of
+it in the release notes."
+johto,2013-12-11 19:35:16,https://api.github.com/repos/lib/pq/git/commits/6a22d6803c4697d6177a54c379f8d3de5683044a,6a22d6803c4697d6177a54c379f8d3de5683044a,"Send bytea values in ""escape"" format to old servers"
+uhoh-itsmaciek,2013-12-11 17:25:45,https://api.github.com/repos/lib/pq/git/commits/5941153c8320b71da4590e39518ab5dba98a136c,5941153c8320b71da4590e39518ab5dba98a136c,"Bump down extra_float_digits to 2
+
+This is to avoid breaking 8.4 in preparation for fully supporting it
+in an upcoming patch (see #199).
+
+Note that the tests here do not correctly check for a required
+extra_float_digits=3, since they still pass; this should be
+reviewed further."
+johto,2013-12-05 21:12:57,https://api.github.com/repos/lib/pq/git/commits/1c1204adbb61a4f790a937eccf58fe3a592781a3,1c1204adbb61a4f790a937eccf58fe3a592781a3,"Specify sizes for the floats in TestIssue196
+
+float32 wasn't being tested at all."
+kr,2013-11-18 22:20:55,https://api.github.com/repos/lib/pq/git/commits/e8cf25d90a9b310f73f3cae01372b03614c23816,e8cf25d90a9b310f73f3cae01372b03614c23816,"Automate OID table generation
+
+Also document type Oid separately, and update
+OID table to the Postgres 9.3 version."
+uhoh-itsmaciek,2012-11-20 00:59:04,https://api.github.com/repos/lib/pq/git/commits/78a464e95daefb032cf2f5280255f5540cc3985b,78a464e95daefb032cf2f5280255f5540cc3985b,"Set extra_float_digits to preserve float fidelity.
+
+Without this setting, it's easy to lose fidelity when round-tripping data."
+uhoh-itsmaciek,2013-12-04 07:31:22,https://api.github.com/repos/lib/pq/git/commits/8168d2e5941735bd53a211f0836fcf31a8378a41,8168d2e5941735bd53a211f0836fcf31a8378a41,Add extra_float_digits issue test
+kisielk,2013-12-04 21:23:56,https://api.github.com/repos/lib/pq/git/commits/013a3ea98d2e607c596dd0a7d1bab939d4de06ad,013a3ea98d2e607c596dd0a7d1bab939d4de06ad,Add Go 1.2 to .travis.yml
+johto,2013-12-04 17:20:38,https://api.github.com/repos/lib/pq/git/commits/a662b6630abdd3d8bfc9431c1a95713dacd27179,a662b6630abdd3d8bfc9431c1a95713dacd27179,"Use a transaction in TestByteaOutputFormats
+
+This avoids relying on getting the same connection for consecutive
+queries from database/sql."
+uhoh-itsmaciek,2013-12-03 19:35:07,https://api.github.com/repos/lib/pq/git/commits/5cbb41f1bbfc9a4d83c2f938314b8719b376bf1f,5cbb41f1bbfc9a4d83c2f938314b8719b376bf1f,Add Matt Newberry to Contributors
+MattNewberry,2013-12-03 18:22:07,https://api.github.com/repos/lib/pq/git/commits/063222ec78e6d8f39acb4c33aece7b391cc4e3ff,063222ec78e6d8f39acb4c33aece7b391cc4e3ff,"Improved precision encoding support for float32 and float64
+
+This ensures that all IEEE754 single and double precision floating
+point values retain their full fidelity when submitted as parameters."
+uhoh-itsmaciek,2013-12-03 20:10:16,https://api.github.com/repos/lib/pq/git/commits/1c0fc733d06fce7e1803f8ee65fb9438295cd962,1c0fc733d06fce7e1803f8ee65fb9438295cd962,Add test for issue #196
+johto,2013-12-03 13:08:11,https://api.github.com/repos/lib/pq/git/commits/cdec65b52c8bfb35406389933d261474874ffd32,cdec65b52c8bfb35406389933d261474874ffd32,"Merge pull request #195 from johto/bytea_escape
+
+Support bytea_output=escape when receiving data"
+johto,2013-12-03 12:41:42,https://api.github.com/repos/lib/pq/git/commits/c021cdbfedbe8abdec9d307cc99f11cb18808417,c021cdbfedbe8abdec9d307cc99f11cb18808417,"Support the ""escape"" bytea format when receiving data
+
+This allows pq to operate correctly in both output formats, which
+should help users who are still on PG 9.0 or have resorted to
+setting bytea_output to ""escape"" for other reasons.
+
+Even after this commit, bytea data is always sent in the ""hex""
+format.  This is not a problem for PostgreSQL versions 9.0 and later
+as they are guaranteed to accept either format.  Older versions will
+continue to experience problems, but it's not clear whether that
+problem is worth fixing or not."
+johto,2013-11-20 20:06:29,https://api.github.com/repos/lib/pq/git/commits/14b615cd107b21ba6d6b0fdcc04f6fd228604c5b,14b615cd107b21ba6d6b0fdcc04f6fd228604c5b,"Fix handling of CommandComplete response to SimpleQuery
+
+The previous coding in simpleQuery was slightly misguided; it was
+written under the assumption that CommandComplete would only be
+sent after ErrorResponse, which, as pointed out in #186, is simply
+not true.  CommandComplete should only be received there as a
+response to a query which was successfully executed, but did not
+return any results.  This also means that we return a nil error
+*and* a nil rows to database/sql, which would either panic (if the
+user calls Rows.Close), or leak the connection (if he doesn't).
+
+While any program using Query to execute such queries will likely
+be experiencing problems already, there's no reason to completely
+break them.  To fix the problem, we return a rows object which has
+its ""done"" flag already set to allow the user to close the Rows
+object from database/sql to avoid leaking connections.  Also add a
+test case to check that we consistently allow both types of queries
+through both Query and Exec, both with and without parameters."
+johto,2013-11-14 22:34:27,https://api.github.com/repos/lib/pq/git/commits/25f3c489cd9a726e7fe441d67da26f47a834f843,25f3c489cd9a726e7fe441d67da26f47a834f843,"Check the number of supplied parameters against what the statement expects
+
+Panicking here is not a good idea, and an explicit error message should
+be a lot more helpful to the user as well."
+johto,2013-11-18 00:32:29,https://api.github.com/repos/lib/pq/git/commits/9fa22d47b017aa81fcfd425900e2c4c48a8170a7,9fa22d47b017aa81fcfd425900e2c4c48a8170a7,"Improve robustness of Begin, Rollback and Commit
+
+Commits 46e935d341c15691dfb2614375 and 44ea1b5c0bf9099acec9e6c5f1
+made the transactions handling functionality more robust, but we
+can do a bit better than that by also checking the ReadyForQuery
+state after these commands.
+
+They also made it possible for the functions to panic, which is not
+a good idea (see #178).  Guard against that with errRecover."
+johto,2013-11-11 08:21:18,https://api.github.com/repos/lib/pq/git/commits/db92f2c487d9458dfba604acfe30c9f36b55660a,db92f2c487d9458dfba604acfe30c9f36b55660a,"Avoid unnecessarily ignoring asynchronous messages
+
+Commit 7454a9817b0f148ab5b1 looks to have fixed all callers of recv1
+except this one."
+johto,2013-11-06 00:26:40,https://api.github.com/repos/lib/pq/git/commits/7454a9817b0f148ab5b18b1d5007b0c2b5fe8984,7454a9817b0f148ab5b18b1d5007b0c2b5fe8984,"Standardize the internal interface for receiving messages
+
+Previously all callers of recv1 had to remember to explicitly ignore
+asynchronous messages, which was quite tedious and error-prone (see
+for example #149).  Now recv1 ignores all asynchronous messages (with
+the exception of asynchronous ErrorResponse messages) transparently.
+If the caller wants to avoid that behaviour, it can either call recv
+(which the authentication procedure does) or recvMessage directly.
+
+The only behavioural change should be the use of recv1 in stmt.Close;
+the previous coding could have returned an error there for no reason
+if an asynchronous message was in the buffer but had not been
+processed yet."
+johto,2013-11-02 00:58:09,https://api.github.com/repos/lib/pq/git/commits/59dc557f48025f2793e034756cea8062643c53ca,59dc557f48025f2793e034756cea8062643c53ca,"Fix prepared statements
+
+Prepared statements were inadvertently broken in commit
+b7935a1b79fa2dee944d4 by making stmt.Query() re-prepare the statement
+every time."
+johto,2013-11-02 11:34:06,https://api.github.com/repos/lib/pq/git/commits/f8ffc32df8b9c5fd7d5ca1ac8345d75e82234edd,f8ffc32df8b9c5fd7d5ca1ac8345d75e82234edd,"Work around a bug in QueryRow
+
+Unfortunately for us, QueryRow ignores errors from the driver's Next,
+which in our case means that it will happily return ErrNoRows if a
+run-time error happens while processing an extended query.  Syntax
+errors are caught earlier and the simpleQuery path catches the error
+earlier, so it's possible that there are applications out there which
+are affected by the bug without knowing about it.
+
+To fix, we wait in Query for the first post-BindComplete message to
+arrive from the server.  If it's an error, we finish the extended query
+procedure inside Query, and return the error.  If it's a
+CommandComplete or a DataRow (i.e. the query is likely to succeed),
+we memorize the message inside the connection, and return a nil
+error from Query.  recv1 then returns the saved message on next call,
+presumably to either rows.Next or rows.Close.
+
+It is important to keep in mind that this hack does not fix run-time
+errors which happen after the server has sent the first row.  While
+that's a lot less common than getting an error before any rows are sent,
+it is still a valid concern which all clients should be aware of.  The
+documentation should probably be improved to make our users more aware
+of the caveats.
+
+There seems to be multiple instances of this bug being reported against
+QueryRow; a very quick scan shows at least #148 and #77, but I'm sure
+there are others.  Coincidentally, this also fixes the issue reported
+in #139, whose workaround (b7935a1b79fa) broke support for prepared
+statements.  This should be fixed in a follow-up commit."
+johto,2013-11-10 13:19:00,https://api.github.com/repos/lib/pq/git/commits/4a63ddf995ac75227e6d60e1ae3d960dcbd0048e,4a63ddf995ac75227e6d60e1ae3d960dcbd0048e,"Add comment explaining why we sometimes roll back in Commit
+
+Sending a ROLLBACK here also preserves historical behaviour, sans the
+return value."
+johto,2013-11-10 13:12:39,https://api.github.com/repos/lib/pq/git/commits/130adf2b6c7fe8059b6785fcd6601785d01e797a,130adf2b6c7fe8059b6785fcd6601785d01e797a,"Add test cases for parseComplete
+
+In passing, also improve comments in parseComplete."
+johto,2013-11-03 02:16:21,https://api.github.com/repos/lib/pq/git/commits/5212ab2907a425700cce55724f78457e5df3b054,5212ab2907a425700cce55724f78457e5df3b054,Add comment explaining what parseCommand does
+johto,2013-11-02 00:22:42,https://api.github.com/repos/lib/pq/git/commits/44ea1b5c0bf9099acec9e6c5f13b2c28008ca315,44ea1b5c0bf9099acec9e6c5f13b2c28008ca315,"Check ""command tag"" after BEGIN, COMMIT and ROLLBACK
+
+This provides additional security against protocol-out-of-sync
+errors.  The parsing of the command tag should be similar to what
+libpq does."
+johto,2013-11-01 20:37:12,https://api.github.com/repos/lib/pq/git/commits/46e935d341c15691dfb26143752bb41553c10c2c,46e935d341c15691dfb26143752bb41553c10c2c,"Keep track of the transaction indicator in ReadyForQuery messages
+
+As witnessed in issue #67, previous to this commit pq was happy to
+send a COMMIT in a failed transaction (effectively doing a ROLLBACK),
+and return a nil error to the caller.  Although one could quite easily
+argue that it's the caller's job to make sure that all queries in the
+transaction succeeded, it's not really a good idea to return no error
+in this case either.  Improve that by keeping track of whether we're
+in a failed transaction (or indeed a transaction at all), and fail
+explicitly if the caller tried to commit a failed transaction.  This
+should also provide increased robustness over protocol-out-of-sync
+problems.
+
+It's a bit ugly to have to do this in every code path where a 'Z' is
+expected, but the same is true for e.g. ignoring ParameterStatus
+messages.  It would be nice to do better than this, but that's a job
+for another day."
+johto,2013-10-29 15:59:21,https://api.github.com/repos/lib/pq/git/commits/e69688ec253497d90f2af023d6ad4d1d92d291c1,e69688ec253497d90f2af023d6ad4d1d92d291c1,"Don't tolerate CommandComplete after Parse + Describe + Sync
+
+Commit 13601feaf94cbd2df4a9b0b752150e08c5885f72 introduced this change,
+(after being reported in issue #77), but the problem does not seem to
+be with pq misbehaving; the test case itself is to blame.  It does not
+correctly close the Rows object before attempting to operate on the
+transaction again, which the ""Extended query"" mode does not like in
+the slightest.
+
+The TestRollback test also only tested the simpleQuery path, which
+did not have a problem to begin with because it eats the
+CommandComplete message from the server if the query returns no
+results.  Get rid of the defective test case, and add a new one
+testing an error response to the Parse message."
+johto,2013-10-29 15:56:45,https://api.github.com/repos/lib/pq/git/commits/1acdef3846743bb4f83c111941bd55197139cdd8,1acdef3846743bb4f83c111941bd55197139cdd8,"Don't tolerate BindComplete after Parse + Describe + Sync
+
+There's no real world scenario where this would happen."
+tmc,2013-10-17 18:41:51,https://api.github.com/repos/lib/pq/git/commits/39028c603e8d9c3bff4d3b52518dc5e62fa36961,39028c603e8d9c3bff4d3b52518dc5e62fa36961,Document Error type
+kisielk,2013-10-17 18:41:51,https://api.github.com/repos/lib/pq/git/commits/408ded22fe54c681491dbc3ead1bd36599e6cb70,408ded22fe54c681491dbc3ead1bd36599e6cb70,"Move usage docs out of README and into godoc.
+
+Minor style updates to the prose."
+uhoh-itsmaciek,2013-10-17 10:29:31,https://api.github.com/repos/lib/pq/git/commits/78760269eebe5e70b28bb94bff676d7b28df275d,78760269eebe5e70b28bb94bff676d7b28df275d,"Move client_encoding note from godoc to README for consistency
+
+We should consider moving this to the godoc wholesale, but it doesn't
+make sense to split the documentation right now."
+uhoh-itsmaciek,2013-10-17 10:28:43,https://api.github.com/repos/lib/pq/git/commits/425723b595889e42aed3daf7822b5693bb4ebd7b,425723b595889e42aed3daf7822b5693bb4ebd7b,"Clarify client_encoding error message
+
+We object to the setting, regardless of where it came from, rather
+than the env var itself (although the env var handling may need
+clearer errors itself--e.g., make the relationship explicit)."
+kr,2013-10-16 23:23:27,https://api.github.com/repos/lib/pq/git/commits/6b56193fd39fd5bde246c0d055a51f2f1d053984,6b56193fd39fd5bde246c0d055a51f2f1d053984,document client_encoding parameter
+kr,2013-10-16 21:38:42,https://api.github.com/repos/lib/pq/git/commits/bc281afffda1f17197927b26d70a824719cb34c8,bc281afffda1f17197927b26d70a824719cb34c8,"refactor
+
+This changes the behavior slightly: any supported value for
+client_encoding is now replaced with the exact string ""UTF8""."
+kr,2013-10-16 21:16:54,https://api.github.com/repos/lib/pq/git/commits/563ec7c5850439fda3c24bd162aed7aa80338cc6,563ec7c5850439fda3c24bd162aed7aa80338cc6,don't panic
+kr,2013-10-16 21:07:30,https://api.github.com/repos/lib/pq/git/commits/2c69084af3f71ef8ba457b156c650145d178dc63,2c69084af3f71ef8ba457b156c650145d178dc63,clarify commentary; remove regexp dependency
+kr,2013-10-16 21:17:04,https://api.github.com/repos/lib/pq/git/commits/63bff9a1d92370bf0057bf392d30566863580ea8,63bff9a1d92370bf0057bf392d30566863580ea8,gofmt
+StefanKjartansson,2013-10-14 21:26:55,https://api.github.com/repos/lib/pq/git/commits/d7412182eff67f887b635dfd9bf5d26079e5376f,d7412182eff67f887b635dfd9bf5d26079e5376f,"Add Travis support for Postgres 9.0, 9.1, 9.2, and 9.3
+
+Previously we just used the default available Postgres;
+this ensures pq works correctly on all supported versions."
+johto,2013-10-14 23:45:02,https://api.github.com/repos/lib/pq/git/commits/56f3233b1f0ee64763243c575ec452b3c98c4b90,56f3233b1f0ee64763243c575ec452b3c98c4b90,"Send the same client_encoding we expect to get back
+
+While 9.1 and later always replied with ""UTF8"", 9.0 at least seems
+to send us back ""UTF-8"" if that's what we asked for."
+johto,2013-10-14 23:42:12,https://api.github.com/repos/lib/pq/git/commits/8c647b7f08ec733c5b3a21ae0d6b9e4d880d9e70,8c647b7f08ec733c5b3a21ae0d6b9e4d880d9e70,"Use the E'..' syntax for escapes in tests
+
+Versions before 9.1 defaulted to standard_conforming_strings=off,
+which this test case did not fully take into account."
+johto,2013-10-13 19:58:18,https://api.github.com/repos/lib/pq/git/commits/67337afa3f68114351e1121d67edfbe22695af13,67337afa3f68114351e1121d67edfbe22695af13,"Support run-time parameters in connection strings
+
+Commit 423884a9f7667f5c6f1b6 made it superficially look like the
+startup message sent by pq included more parameters than just
+""user"" and ""database"", and commit 6c7918fdcbd1dacbf6104ab2a
+subsequently fell into the trap and attempted to introduce support
+for a number of environment variables.
+
+Fix the startup procedure to actually send the parameters to the
+server backend, thus adding support for a number of environment
+variables as well as connection string parameters.  This behaviour
+is slightly different from libpq, which only allows a specific
+subset of run-time parameters to be set directly in the connection
+string, requiring the rest to be set in the ""options"" parameter
+using a clumsy syntax.  libpq's behaviour was deemed inconsistent,
+and therefore was not faithfully reproduced.
+
+This change is not fully backwards compatible as the previous
+behaviour was to silently ignore invalid parameters in the
+connection string.  These applications will fail with ErrBadConn
+when attempting to operate on the sql.DB handle."
+uhoh-itsmaciek,2013-10-11 08:35:46,https://api.github.com/repos/lib/pq/git/commits/67cca662fb5744befae7cd855e5024f9afcd0538,67cca662fb5744befae7cd855e5024f9afcd0538,Add docs for getting inserted row ids and parameter markers
+kisielk,2013-10-10 22:21:01,https://api.github.com/repos/lib/pq/git/commits/acdeb6942b1f2f894800a5af874cda26878e9c56,acdeb6942b1f2f894800a5af874cda26878e9c56,Note that users no longer need to call ParseURL.
+kisielk,2013-10-11 04:00:52,https://api.github.com/repos/lib/pq/git/commits/effbf8cdf44a6e648a8860ddcd709691be5d396c,effbf8cdf44a6e648a8860ddcd709691be5d396c,"Merge pull request #166 from paulhammond/gofmt
+
+go fmt"
+paulhammond,2013-10-10 22:23:51,https://api.github.com/repos/lib/pq/git/commits/d64306a80d49ab83af8ac52ee7a86ef8bcd0b31b,d64306a80d49ab83af8ac52ee7a86ef8bcd0b31b,go fmt
+kisielk,2013-10-10 19:08:40,https://api.github.com/repos/lib/pq/git/commits/6ebbd10f139903142008f6978f15da8173814b9c,6ebbd10f139903142008f6978f15da8173814b9c,"Make option parsing more conformant to libpq behaviour.
+
+Fixes #162"
+paulhammond,2013-10-10 14:25:04,https://api.github.com/repos/lib/pq/git/commits/192bc5d7c5308ba8b7977dbf15f98288b62cc3e3,192bc5d7c5308ba8b7977dbf15f98288b62cc3e3,"Re-export Open
+
+https://github.com/lib/pq/pull/161#commitcomment-4297782 shows I was
+mistaken in assuming people don't use this function directly."
+uhoh-itsmaciek,2013-10-10 10:02:38,https://api.github.com/repos/lib/pq/git/commits/2803e18e4078202a391d99fdc221becb95053769,2803e18e4078202a391d99fdc221becb95053769,Add Paul Hammond to Contributors
+paulhammond,2013-10-09 21:28:55,https://api.github.com/repos/lib/pq/git/commits/7f7c7074eed37a65e7fc570eb75d7f89ba87b701,7f7c7074eed37a65e7fc570eb75d7f89ba87b701,godoc
+paulhammond,2013-10-10 02:08:08,https://api.github.com/repos/lib/pq/git/commits/274887e159f13a6984e38e5b40b387daba44652c,274887e159f13a6984e38e5b40b387daba44652c,Don't export newScanner.
+paulhammond,2013-10-09 21:10:23,https://api.github.com/repos/lib/pq/git/commits/0dee633ed7a884a8e451f4c2bf15311fb5c3af94,0dee633ed7a884a8e451f4c2bf15311fb5c3af94,"Don't export Values type.
+
+It is only used by internal methods as part of connection string parsing so
+no other code should be using it."
+paulhammond,2013-10-09 20:49:09,https://api.github.com/repos/lib/pq/git/commits/d1f169ec8e09451b2b75851c1dd2c87e4409d4c1,d1f169ec8e09451b2b75851c1dd2c87e4409d4c1,"Don't export Open, it shouldn't be called directly"
+uhoh-itsmaciek,2013-10-09 10:30:53,https://api.github.com/repos/lib/pq/git/commits/3042a7e8b70133121dfae99bf294143874c48e09,3042a7e8b70133121dfae99bf294143874c48e09,"Add reconnect test case
+
+This isn't really pq's purview, but it illustrates that issues like #95
+are a database/sql problem (hence fixed)."
+paulhammond,2013-10-07 21:42:07,https://api.github.com/repos/lib/pq/git/commits/04a70150b77a2708dee91efa1f33b297ab2cc6c3,04a70150b77a2708dee91efa1f33b297ab2cc6c3,Maintain legacy PGError interface
+tmc,2013-10-01 14:58:54,https://api.github.com/repos/lib/pq/git/commits/149cb3e81c622be08d56ac3aa03d6516f800252f,149cb3e81c622be08d56ac3aa03d6516f800252f,Add ErrorCode type and test
+tmc,2013-09-30 21:39:47,https://api.github.com/repos/lib/pq/git/commits/f0802e67221cd6a39afde9ac872fdf6f724b5e42,f0802e67221cd6a39afde9ac872fdf6f724b5e42,"Simplify error handling
+
+This removes the PGError interface, and moves all existing types to the Error type.
+The default representation of a Error now uses the human-readable 'Message' field.
+
+This additionally removes the potentially-confusing two-layer recover() situation in conn.Open()"
+tmc,2013-09-30 21:38:23,https://api.github.com/repos/lib/pq/git/commits/70220a89be33cd5222bc4cdb85fe00b64e145367,70220a89be33cd5222bc4cdb85fe00b64e145367,Make version number references consistent
+uhoh-itsmaciek,2013-10-07 00:28:52,https://api.github.com/repos/lib/pq/git/commits/0cbf7d2d198fb08409ead5bde569c8b652bdfb87,0cbf7d2d198fb08409ead5bde569c8b652bdfb87,"Add CONTRIBUTING.md for contributing guidelines
+
+This also lets us hook into the slick interface that GitHub provides:
+https://github.com/blog/1184-contributing-guidelines"
+uhoh-itsmaciek,2013-10-06 16:00:15,https://api.github.com/repos/lib/pq/git/commits/4a6b3a80d2f5d84d3612df85bd1c07666b4aed6b,4a6b3a80d2f5d84d3612df85bd1c07666b4aed6b,Add Marko Tiikkaja to contributors
+johto,2013-10-06 14:45:52,https://api.github.com/repos/lib/pq/git/commits/eabe3e8c31b3ccab5e354a8ea3a103a5fe614093,eabe3e8c31b3ccab5e354a8ea3a103a5fe614093,Avoid unnecessary code duplication
+johto,2013-10-06 14:41:02,https://api.github.com/repos/lib/pq/git/commits/86f9b5fa14d62dbb0f0bc606d1e628d7feb801e8,86f9b5fa14d62dbb0f0bc606d1e628d7feb801e8,"Ping the database when testing connection option strings
+
+In this particular case the code path wasn't tested at all as
+database/sql did not call our Open()."
+uhoh-itsmaciek,2013-10-04 08:37:06,https://api.github.com/repos/lib/pq/git/commits/8875df52e9844f4c3fce993c8598bbd1c95c8a0f,8875df52e9844f4c3fce993c8598bbd1c95c8a0f,Recognize URL as conn string and automagically do the right thing
+markottt,2013-09-27 09:17:31,https://api.github.com/repos/lib/pq/git/commits/5b160021580626641ceabe4bcde3cb77b3b833f1,5b160021580626641ceabe4bcde3cb77b3b833f1,"Ignore ParameterStatus while waiting for RowDescription or BindComplete
+
+If we happened to receive a ParameterStatus at the right moment, we would
+not only fail the current query, but also subsequent ones on the connection
+since the server is in a different state than we expect it to be."
+uhoh-itsmaciek,2013-09-26 23:05:29,https://api.github.com/repos/lib/pq/git/commits/fcda6b3234c0731296b01532050539395c563d08,fcda6b3234c0731296b01532050539395c563d08,Adding (and skipping) failing test for #148
+kisielk,2013-09-24 02:32:02,https://api.github.com/repos/lib/pq/git/commits/4c9138d5e409f9e473f433be1223cca0dfb33bdd,4c9138d5e409f9e473f433be1223cca0dfb33bdd,"Add origin of parsing code to parseOpts comment.
+
+That way we won't forget if we need to look at it as a reference."
+kisielk,2013-09-24 02:22:34,https://api.github.com/repos/lib/pq/git/commits/8f43b8bc9df34589cccc14acda5ab8c14a8ad62c,8f43b8bc9df34589cccc14acda5ab8c14a8ad62c,"Add a few more test cases to the option parser.
+
+Increases code coverage as determined by the new cover tool."
+kisielk,2013-09-22 04:27:47,https://api.github.com/repos/lib/pq/git/commits/f58d7d8c6e1fcc729895ef554bcebb7fe426ef99,f58d7d8c6e1fcc729895ef554bcebb7fe426ef99,Move benchmark to bench_test.go
+kisielk,2013-09-22 02:48:55,https://api.github.com/repos/lib/pq/git/commits/6cc56895c1f00176a8532671024b45440b153208,6cc56895c1f00176a8532671024b45440b153208,Added a test for errors returned during QueryRow
+kisielk,2013-09-22 02:43:31,https://api.github.com/repos/lib/pq/git/commits/27aff9ca8913bc178db23ebc5d3d704ee01c59fc,27aff9ca8913bc178db23ebc5d3d704ee01c59fc,Add a test for the RETURNING clause.
+uhoh-itsmaciek,2013-08-18 09:12:05,https://api.github.com/repos/lib/pq/git/commits/faae944327048ae177e748c535b857392959e874,faae944327048ae177e748c535b857392959e874,Home-grown time-parsing to resolve edge cases
+uhoh-itsmaciek,2013-09-18 05:21:54,https://api.github.com/repos/lib/pq/git/commits/22de2e19667566b2042da592c7196c408784eb81,22de2e19667566b2042da592c7196c408784eb81,Add encode/decode benchmarks for timestamptz
+uhoh-itsmaciek,2013-08-18 04:50:22,https://api.github.com/repos/lib/pq/git/commits/c9c648507e01edd9b04561b753deccaf29d3c3c5,c9c648507e01edd9b04561b753deccaf29d3c3c5,"Do not pretent we support client_encoding
+
+All pq code assumes (quite sensibly) that PGCLIENTENCODING is UTF-8.
+Setting this to an incompatible value can cause protocol integrity
+or data integrity issues."
+uhoh-itsmaciek,2013-08-29 17:34:47,https://api.github.com/repos/lib/pq/git/commits/8756be985d9ab43c2c89cd50e291d2c72cd317df,8756be985d9ab43c2c89cd50e291d2c72cd317df,"Don't panic when settings are as expected
+
+If libpq env vars that we can't allow customization of are
+present but set to the values that we need, don't panic--just
+ignore them."
+uhoh-itsmaciek,2013-08-18 04:45:16,https://api.github.com/repos/lib/pq/git/commits/225bffe4d7e01c44b1d63277e022d59393569578,225bffe4d7e01c44b1d63277e022d59393569578,"Panic on well-defined but unsupported settings
+
+When well-defined settings that are not supported by pq are
+present in the environment, we currently ignore them. This
+panics instead. Since unexpected values for settings like
+PGTZ or PGCLIENTENCODING (which we do not actually support)
+could cause data integrity issues, we should complain when
+these are present."
+uhoh-itsmaciek,2013-09-15 17:52:54,https://api.github.com/repos/lib/pq/git/commits/d1c35666e59d8f8333471beb16a4fd5eb91c64e6,d1c35666e59d8f8333471beb16a4fd5eb91c64e6,"Adding Kelly Dunn as contributor
+
+The last fix relies partly on his approach."
+uhoh-itsmaciek,2013-09-15 17:43:07,https://api.github.com/repos/lib/pq/git/commits/3cad8c3faa7bb65ff1bd18e76a8c2b096131a0b8,3cad8c3faa7bb65ff1bd18e76a8c2b096131a0b8,"Adding Nicolas Patry as contributor
+
+The last commit uses his test case."
+uhoh-itsmaciek,2013-09-13 23:57:49,https://api.github.com/repos/lib/pq/git/commits/b7935a1b79fa2dee944d464273356dd3ba338fc5,b7935a1b79fa2dee944d464273356dd3ba338fc5,Fix query error handling
+uhoh-itsmaciek,2013-08-29 17:36:45,https://api.github.com/repos/lib/pq/git/commits/6def7dc803263d1a70db36c3bb60bb4e8c6cbc4b,6def7dc803263d1a70db36c3bb60bb4e8c6cbc4b,Add Matt Robenolt to contributors
+mattrobenolt,2013-08-27 05:03:37,https://api.github.com/repos/lib/pq/git/commits/2cb3eee19bf18b770db3e489d3e4cdcdaf1e4c47,2cb3eee19bf18b770db3e489d3e4cdcdaf1e4c47,Run a query without prepare if no args are passed
+kisielk,2013-08-24 01:42:19,https://api.github.com/repos/lib/pq/git/commits/c39ed3397677d515e79ee33127c437a5bfc92b5c,c39ed3397677d515e79ee33127c437a5bfc92b5c,"Improved parsing of connection options
+
+The code is based on conninfo_parse from the C version of pq. I've
+included additional test cases.
+
+This also slightly changes the semantics of Open to return an error if
+the connection string cannot be parsed instead of panicking."
+kisielk,2013-08-24 00:18:01,https://api.github.com/repos/lib/pq/git/commits/c9824f8177f65ed7b22497399e19b62fd3b9e8bb,c9824f8177f65ed7b22497399e19b62fd3b9e8bb,"Revert ""New parseOpts implementation. Needs cleanup.""
+
+Pushed to the wrong repo. Sorry.
+
+This reverts commit 0b2fbdf8f35e6a3a457aeed8164bdc0ecd2881b5."
+kisielk,2013-08-24 00:13:14,https://api.github.com/repos/lib/pq/git/commits/0b2fbdf8f35e6a3a457aeed8164bdc0ecd2881b5,0b2fbdf8f35e6a3a457aeed8164bdc0ecd2881b5,New parseOpts implementation. Needs cleanup.
+kisielk,2013-08-23 21:55:35,https://api.github.com/repos/lib/pq/git/commits/dfc9785e4df898680dd4d7164bd9db59d5ea898f,dfc9785e4df898680dd4d7164bd9db59d5ea898f,Fix panic in bench_test when database auth is not set.
+uhoh-itsmaciek,2013-08-13 16:07:46,https://api.github.com/repos/lib/pq/git/commits/fc2713a82d48dc80f2b5026134535a534e60db37,fc2713a82d48dc80f2b5026134535a534e60db37,"Triage failure to build tests by disabling benchmarks on Go <1.1
+
+B.Skip() is only defined on 1.1+"
+edsrzf,2013-07-15 02:12:19,https://api.github.com/repos/lib/pq/git/commits/31326add1cf143e7a220dddbba4c336d59a9cc0f,31326add1cf143e7a220dddbba4c336d59a9cc0f,"Use scratch buffer instead of allocating in lots of places
+
+Improvements:
+
+benchmark                            old ns/op    new ns/op    delta
+BenchmarkMockSelectString                 8883         5910  -33.47%
+BenchmarkMockSelectSeries                67110        49027  -26.95%
+BenchmarkMockPreparedSelectString         3467         2392  -31.01%
+BenchmarkMockPreparedSelectSeries        61802        45087  -27.05%"
+uhoh-itsmaciek,2013-08-13 14:08:16,https://api.github.com/repos/lib/pq/git/commits/a16407254e72c29c3b499714c89136fdf9b688c1,a16407254e72c29c3b499714c89136fdf9b688c1,Skip inconsistent database-driven benchmarks for now
+edsrzf,2013-07-16 01:25:00,https://api.github.com/repos/lib/pq/git/commits/0689576967ce3bb1b7613f4496ba3c188ec0c88b,0689576967ce3bb1b7613f4496ba3c188ec0c88b,Add benchmarks
+uhoh-itsmaciek,2013-08-02 09:12:33,https://api.github.com/repos/lib/pq/git/commits/ee9892e25b5ea3b28be1d406eacc7d0d80f3de32,ee9892e25b5ea3b28be1d406eacc7d0d80f3de32,Correct test instructions
+kisielk,2013-07-19 06:38:17,https://api.github.com/repos/lib/pq/git/commits/1fecc588012d280d01a531bf0ea1cfbc61db7207,1fecc588012d280d01a531bf0ea1cfbc61db7207,Add Travis CI tag / link to README
+uhoh-itsmaciek,2013-07-19 06:25:41,https://api.github.com/repos/lib/pq/git/commits/2cf27182a11d5498aaf1676eb67b702cadb195ae,2cf27182a11d5498aaf1676eb67b702cadb195ae,"Configure pq for Travis CI builds for interesting versions
+
+ * 1.0.2: current stable Debian version
+ * 1.0.3: most recent 1.0 version
+ * 1.1: newest stable version
+ * tip: keep an eye on what's coming up"
+kisielk,2013-07-19 06:21:02,https://api.github.com/repos/lib/pq/git/commits/986ea27273b83390198a2aa10992e12749d31c9d,986ea27273b83390198a2aa10992e12749d31c9d,"Merge pull request #116 from edsrzf/cleanup
+
+Some small cleanup"
+uhoh-itsmaciek,2013-07-19 06:15:34,https://api.github.com/repos/lib/pq/git/commits/a361aa2ff6a31516708b26d7a7c8bcc32a47dfd4,a361aa2ff6a31516708b26d7a7c8bcc32a47dfd4,"Move xact test to own file, since skip is go1.1+
+
+This is less than ideal since the problem affects <1.1 as well,
+but there doesn't seem to be a great way to include a failing
+test otherwise, and time will paper over the grossness."
+uhoh-itsmaciek,2013-07-19 05:46:15,https://api.github.com/repos/lib/pq/git/commits/6e3d25168e32c476ca04dd4f8f7f87c9c6bf2edb,6e3d25168e32c476ca04dd4f8f7f87c9c6bf2edb,"Adding test for interleaved statements in a transaction
+
+See #81. Currently fails."
+edsrzf,2013-07-17 02:38:57,https://api.github.com/repos/lib/pq/git/commits/6276fd1d358ef9195dfd7a32bb663c080d2b4191,6276fd1d358ef9195dfd7a32bb663c080d2b4191,"Remove stmt.nparams
+
+It was always equal to len(st.paramTyps) and therefore redundant."
+edsrzf,2013-07-16 02:22:31,https://api.github.com/repos/lib/pq/git/commits/d6df7137b33dd79957faf411f2f97fa4e1713d52,d6df7137b33dd79957faf411f2f97fa4e1713d52,"Use IndexByte to find string terminator
+
+No performance gain since bytes.Index special cases this anyway, but it means
+stringTerm can go away."
+edsrzf,2013-07-15 02:29:28,https://api.github.com/repos/lib/pq/git/commits/cd527896ec38b37883721b9b26f36f3554f6cfe0,cd527896ec38b37883721b9b26f36f3554f6cfe0,Use driver.RowsAffected type
+edsrzf,2013-07-14 23:18:10,https://api.github.com/repos/lib/pq/git/commits/5af60380a12e1e814e6f5ce2cf6fd149f0aef9ce,5af60380a12e1e814e6f5ce2cf6fd149f0aef9ce,"Some minor cleanup
+
+- It's not necessary to take an address when calling a method
+- v, _ := m[k] is equivalent to v := m[k] when m is a map
+- k, _ := range ... is equivalent to k := range ...
+- Use for...range in a few places"
+fdr,2013-06-07 06:36:56,https://api.github.com/repos/lib/pq/git/commits/9afcd9aa793101bd0536da34e74ae0123345bab1,9afcd9aa793101bd0536da34e74ae0123345bab1,Add Chris Walsh as a contributor
+fdr,2013-06-07 06:14:07,https://api.github.com/repos/lib/pq/git/commits/01a9744f6d87bdf39113f43c74acf1b132676661,01a9744f6d87bdf39113f43c74acf1b132676661,"Add more accurate copyright clause
+
+Many people have contributed anad I've made effort to track every one
+in README, and their copyrights apply to this work.  So, I don't think
+ths change does anything but reflect reality."
+fdr,2013-06-07 06:11:58,https://api.github.com/repos/lib/pq/git/commits/debed5d358e507c65e7ee09eb8fb2f11ac68a361,debed5d358e507c65e7ee09eb8fb2f11ac68a361,Add contributor: Bill Mill
+uhoh-itsmaciek,2013-06-06 22:32:59,https://api.github.com/repos/lib/pq/git/commits/592007b48f75d9573123b0d7ff3cdf5e14a7d9a6,592007b48f75d9573123b0d7ff3cdf5e14a7d9a6,Fix Travis CI config
+fdr,2013-05-06 07:52:09,https://api.github.com/repos/lib/pq/git/commits/38062b270f943479cbd97129ccb6748259980961,38062b270f943479cbd97129ccb6748259980961,"Add contributor Ewan Chou
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+coocood,2013-04-17 05:21:57,https://api.github.com/repos/lib/pq/git/commits/656e89b2b33e7c19e0d1bfdb1bd6bd45deb832b9,656e89b2b33e7c19e0d1bfdb1bd6bd45deb832b9,"Call user.Current() only when ""user"" is not set.
+
+Editorialized somewhat by Daniel Farina.
+
+Fixes issue 69"
+fdr,2013-05-06 07:30:03,https://api.github.com/repos/lib/pq/git/commits/1bc496b525f91f1a9689b2f32ba8b85ee1d4e7b4,1bc496b525f91f1a9689b2f32ba8b85ee1d4e7b4,"Add contributor Gary Burd
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+garyburd,2013-05-01 17:05:13,https://api.github.com/repos/lib/pq/git/commits/a856d2f205fea3918a80cedea3db29f10554e89a,a856d2f205fea3918a80cedea3db29f10554e89a,"Add package comment.
+
+Add package comment, fix typo in error message, update link to
+godoc.org."
+uhoh-itsmaciek,2013-04-21 18:03:02,https://api.github.com/repos/lib/pq/git/commits/4b69ac4198b512ef92a1cd2b9a356422b5c9eb3f,4b69ac4198b512ef92a1cd2b9a356422b5c9eb3f,Ignore-SELECT-results tests for both Exec code paths
+uhoh-itsmaciek,2013-04-21 17:24:26,https://api.github.com/repos/lib/pq/git/commits/841aa552e5e6d5edc4481fe166512047f862d244,841aa552e5e6d5edc4481fe166512047f862d244,Also ignore RowDescription for Exec-with-params
+uhoh-itsmaciek,2013-04-21 17:22:07,https://api.github.com/repos/lib/pq/git/commits/35e6f059c77e7e8a682cb699e1fb4d3527b6c1fe,35e6f059c77e7e8a682cb699e1fb4d3527b6c1fe,Also fix case where parameters are passed in
+fdr,2013-04-20 00:50:58,https://api.github.com/repos/lib/pq/git/commits/a324649983c524027357ead9f21289d9adff71bd,a324649983c524027357ead9f21289d9adff71bd,"Contributor: Maciek Sakrejda
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+uhoh-itsmaciek,2013-04-20 00:33:17,https://api.github.com/repos/lib/pq/git/commits/50da8614dfbde723c3d40e5b87fd0d4cc0bff024,50da8614dfbde723c3d40e5b87fd0d4cc0bff024,"Ignore data rows for Exec queries
+
+The wording in the interface docs (""executes a query without returning
+any rows"") suggests that rows are ignored, not that the query must not
+return any rows. This change supports ignoring data rows."
+fdr,2013-04-05 01:47:34,https://api.github.com/repos/lib/pq/git/commits/592809dfd10e7e2b65c5f725625874d65511bd4e,592809dfd10e7e2b65c5f725625874d65511bd4e,"Travis-CI: Try to set up PostgreSQL test database properly
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-04-05 01:40:16,https://api.github.com/repos/lib/pq/git/commits/a3ecd12244dff5e776ae266ccb53c2f48baf741f,a3ecd12244dff5e776ae266ccb53c2f48baf741f,"Try this Travis thing
+
+Not a huge fan of having to commit a configuration file for this, but
+pragmatism wins today.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+kisielk,2013-03-29 19:17:17,https://api.github.com/repos/lib/pq/git/commits/5e0436147710016d572001d455547fe517419583,5e0436147710016d572001d455547fe517419583,Fixed imports of github.com/lib/pq/oid
+fdr,2013-03-29 10:06:42,https://api.github.com/repos/lib/pq/git/commits/799497b4d2aa3feef2637cd43d119db3b6800b80,799497b4d2aa3feef2637cd43d119db3b6800b80,"Fix another reference to the old repository
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-03-29 10:02:32,https://api.github.com/repos/lib/pq/git/commits/f4cd295f9d791cd1835ad06355de87505cb69001,f4cd295f9d791cd1835ad06355de87505cb69001,"Add contributors
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-03-29 09:47:26,https://api.github.com/repos/lib/pq/git/commits/3dedac4311bf5d4dc5f75caf2cfde399bb36a860,3dedac4311bf5d4dc5f75caf2cfde399bb36a860,"Break out Oids into a new subpackage
+
+To clean up docs, and also because some people wanted to re-use them
+separately.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-03-28 03:27:09,https://api.github.com/repos/lib/pq/git/commits/0ed95e4d06fc285148050368507d64241c487941,0ed95e4d06fc285148050368507d64241c487941,"Fix some bugs in the tests reported by 'go vet'
+
+Both format string confusion.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-03-28 03:08:16,https://api.github.com/repos/lib/pq/git/commits/a8a96c633d326fd897579206acba965f6cbbba21,a8a96c633d326fd897579206acba965f6cbbba21,"Regenerate OID table and make it public
+
+Also document how the table is generated.  This has been generated
+from a build of PostgreSQL 9.2.3.
+
+Previously, Oids above 10000 were included, but these are not
+guaranteed to remain stable between releases and don't seem very
+useful besides, so they are now omitted.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-03-28 02:44:48,https://api.github.com/repos/lib/pq/git/commits/656d85659029360b9acbd3b69a7543bed79a76b8,656d85659029360b9acbd3b69a7543bed79a76b8,"Editorialize comments
+
+Right now there is no obvious way to push command tags through
+database/sql, so just drop it on the floor.  libpq does little more
+than report it and transition the state machine to 'READY', and as of
+now Go pq has no state machine model to speak of.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+jmcvetta,2013-03-19 21:53:31,https://api.github.com/repos/lib/pq/git/commits/13601feaf94cbd2df4a9b0b752150e08c5885f72,13601feaf94cbd2df4a9b0b752150e08c5885f72,Handle 'C' command complete message
+jmcvetta,2013-03-15 21:54:18,https://api.github.com/repos/lib/pq/git/commits/3fba930202367ab298e74afebb6a04af84244667,3fba930202367ab298e74afebb6a04af84244667,Add test case for transaction rollback.  Currently fails with a nasty error.
+fdr,2013-01-05 13:41:14,https://api.github.com/repos/lib/pq/git/commits/284a1d41dcc27fe8ccc413c339464698ab99f6d1,284a1d41dcc27fe8ccc413c339464698ab99f6d1,"Support timestamp without tz, redux
+
+This time, some more effort has been paid to testing on an older Go
+version, 1.0.2, and carefully preserving the old hacks to make time
+parsing work with those older versions with a less useful time.Parse.
+It has also been tested on Go 1.0.3.
+
+This just lets the Go time package use its default behavior when one
+is left without time offset information.  Hope it is a behavior people
+want.
+
+The main change here is pushing down the column type into the parsing
+function, as Go's time parsing can't deal with data that only has the
+fractional-hour timezone offset when such a fraction exists
+(e.g. ""-07"" for ""-07:00"", but ""-7:30"" necessarily retaining its
+precision).  This old hack could not be applied unconditionally (it is
+wrong when the timestamp has no time zone offset suffix), so this
+information lets a correct decision be made.
+
+Clearly, this approach also can't handle the Postgres datestyle
+parameter, but that's a fight to pick some other time.
+
+As a target of opportunity, move the 'oid' type to 'types.go', since
+for now all oids I know of handled by the program are type oids.  This
+causes 'go fmt' to go a little nuts and rewrite the long but boring
+file.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+fdr,2013-01-05 19:09:36,https://api.github.com/repos/lib/pq/git/commits/2224d830fa2e2659184790bca4f22a4129818ac6,2224d830fa2e2659184790bca4f22a4129818ac6,"Revert ""Support timestamp without tz""
+
+Seems to work on some older or younger go devel, but not on a release
+version, it seems.
+
+This reverts commit 7f1933fdbdec31350abc6a616463eb85653fee31."
+fdr,2013-01-05 13:41:14,https://api.github.com/repos/lib/pq/git/commits/7f1933fdbdec31350abc6a616463eb85653fee31,7f1933fdbdec31350abc6a616463eb85653fee31,"Support timestamp without tz
+
+This just lets Go's time package do what it is going to by default
+when one is left without offset information.  Hope it's a behavior
+people want.
+
+The main change here is pushing down the column type into the parsing
+function, as Go's time parsing can't deal with data that only has the
+fractional-hour timezone offset when such a fraction exists
+(e.g. ""-07"" for ""-07:00"", but ""-7:30"" necessarily retaining its
+precision).  This old hack could not be applied unconditionally (it is
+wrong when the timestamp has no time zone offset suffix), so this
+information lets a correct decision be made.
+
+Clearly, this approach also can't handle the Postgres datestyle
+parameter, but that's a fight to pick some other time.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+martinolsen,2012-10-27 15:00:18,https://api.github.com/repos/lib/pq/git/commits/d59e16bcf534d6546641803f2aa847a1ef7a1330,d59e16bcf534d6546641803f2aa847a1ef7a1330,Add clear-text authentication.
+aeons,2012-10-03 09:10:07,https://api.github.com/repos/lib/pq/git/commits/924c035f2be36188187d83bdbc0bc319f7c4ca24,924c035f2be36188187d83bdbc0bc319f7c4ca24,"Add failing test for error checking on 64 bits int
+
+Currently some error checking in buf.go is done by converting an uint32 to
+int. For 32 bit int this works correctly, however when int is 64 bits,
+0xffffffff != -1 and this error checking fails, leading to a slice out of
+bounds panic.
+
+Some editorialization has been done to use a VALUES literal as opposed
+to temp table/inserts in the test.
+
+Signed-off-by: Daniel Farina <daniel@fdr.io>"
+jgallagher,2012-11-07 06:29:11,https://api.github.com/repos/lib/pq/git/commits/8605510626538b62063c01ed08d2e666950c0721,8605510626538b62063c01ed08d2e666950c0721,"Add more expansive timezone test.
+
+Also includes a fix for the ""30 minute offset"" timezones referenced in
+issue #51."
+jgallagher,2012-11-07 06:27:42,https://api.github.com/repos/lib/pq/git/commits/c61875595da3a75b82799eeff37800db713c1656,c61875595da3a75b82799eeff37800db713c1656,Change timeFormat to send full precision/TZ info.
+jgallagher,2012-11-07 06:26:26,https://api.github.com/repos/lib/pq/git/commits/b8f2f463c3efd53ef35d7a3295131f367469dc8b,b8f2f463c3efd53ef35d7a3295131f367469dc8b,"Ignore ParameterStatus responses to simpleQuery.
+
+This allows running, e.g., ""SET TIME ZONE 'US/Eastern'""."
+bmizerany,2012-10-08 19:20:51,https://api.github.com/repos/lib/pq/git/commits/948ed42a8a2f6dc656706e55c2fb0dffcfe70f7d,948ed42a8a2f6dc656706e55c2fb0dffcfe70f7d,fix #46 - ignore all notices
+jgallagher,2012-08-10 00:42:29,https://api.github.com/repos/lib/pq/git/commits/3eb53efe7981436debfbae832111938e2161e92f,3eb53efe7981436debfbae832111938e2161e92f,reduce network reads/writes with bufio
+bmizerany,2012-10-08 18:19:44,https://api.github.com/repos/lib/pq/git/commits/6ec6423a99e68aff0ec282fe2937553efdebe8a3,6ec6423a99e68aff0ec282fe2937553efdebe8a3,Merge remote-tracking branch 'traviscline/expose_pg_errors' into tmp
+bmizerany,2012-10-08 17:02:10,https://api.github.com/repos/lib/pq/git/commits/42994d7dd32116f8814e92318eb57588974db5dd,42994d7dd32116f8814e92318eb57588974db5dd,may be too harsh
+tmc,2012-09-20 04:27:23,https://api.github.com/repos/lib/pq/git/commits/5a14ef3cb19a7ede5227be6f6f4f04830b5b7e3c,5a14ef3cb19a7ede5227be6f6f4f04830b5b7e3c,"Add recover function that will report the PG reason.
+
+Update Open() to use this so connection errors can be seen."
+tmc,2012-09-14 23:43:29,https://api.github.com/repos/lib/pq/git/commits/e06d3ed0096f611d79ccfe74fa430daf00ee81ee,e06d3ed0096f611d79ccfe74fa430daf00ee81ee,Switch PGError to interface and implement SimplePGError
+bmizerany,2012-09-10 17:58:05,https://api.github.com/repos/lib/pq/git/commits/0f8f58bbdb19d6ca6a5ae12ef64d0fd87e383e82,0f8f58bbdb19d6ca6a5ae12ef64d0fd87e383e82,LICENCE - fixes #40
+bmizerany,2012-08-09 19:47:06,https://api.github.com/repos/lib/pq/git/commits/efb8a398df8dabfdbdeef2d0f08370f906d5e6f4,efb8a398df8dabfdbdeef2d0f08370f906d5e6f4,"Revert ""Use bufio.Reader""
+
+This reverts commit a6c22b1152ab04b5ecab9eb123c89491bc81183a."
+bmizerany,2012-08-07 23:28:07,https://api.github.com/repos/lib/pq/git/commits/a572141878fadffe6ab9504a880557ee8af1b272,a572141878fadffe6ab9504a880557ee8af1b272,Merge remote-tracking branch 'jgallagher/issue31'
+mbr,2012-08-04 22:46:05,https://api.github.com/repos/lib/pq/git/commits/d0631c674cfc339b267ae7770d860f45fba3b783,d0631c674cfc339b267ae7770d860f45fba3b783,"Discard notice messages.
+
+When running a simple query like 'DROP TABLE IF EXISTS foo;', Postgres
+will send a warning if ""foo"" does not exist. This patch makes it ignore
+the warning.
+
+It is not well tested, also I am unsure whether or not more data needs
+to be consumed. However, instead of putting into this specific issue,
+the following needs to be considered (from
+<http://www.postgresql.org/docs/9.1/static/protocol-flow.html#PROTOCOL-ASYNC?):
+
+  Note: At present, NotificationResponse can only be sent outside a
+  transaction, and thus it will not occur in the middle of a
+  command-response series, though it might occur just before
+  ReadyForQuery. It is unwise to design frontend logic that assumes
+  that, however. Good practice is to be able to accept
+  NotificationResponse at any point in the protocol."
+jgallagher,2012-08-04 00:19:20,https://api.github.com/repos/lib/pq/git/commits/a3363a7905ebef754c5b278550794755ddf3e50c,a3363a7905ebef754c5b278550794755ddf3e50c,"Fix for #31, incorrect error on prepare failure."
+jgallagher,2012-07-29 05:12:43,https://api.github.com/repos/lib/pq/git/commits/459be90492d8ba48d9bd04841ac791e4928c0635,459be90492d8ba48d9bd04841ac791e4928c0635,"Use simpleQuery for prepared Exec()s, too."
+jgallagher,2012-07-29 05:03:54,https://api.github.com/repos/lib/pq/git/commits/a8d26bb3f84751af411ec61c54d8bc3d37424aba,a8d26bb3f84751af411ec61c54d8bc3d37424aba,Use Postgres simple query for Execer with 0 args.
+jgallagher,2012-07-29 04:56:28,https://api.github.com/repos/lib/pq/git/commits/a6c22b1152ab04b5ecab9eb123c89491bc81183a,a6c22b1152ab04b5ecab9eb123c89491bc81183a,Use bufio.Reader
+bmizerany,2012-07-10 20:31:07,https://api.github.com/repos/lib/pq/git/commits/edea8d2246796b59b7fd192f169530bfe9015673,edea8d2246796b59b7fd192f169530bfe9015673,"handle error properly in prepareTo - fix #26, fix #28"
+kr,2012-06-20 23:43:57,https://api.github.com/repos/lib/pq/git/commits/c20a07df430778d782876138d1ec9b512504dbc3,c20a07df430778d782876138d1ec9b512504dbc3,link to docs
+bmizerany,2012-06-13 18:45:46,https://api.github.com/repos/lib/pq/git/commits/b37b2f38e67e65f1998783f5f38d1f9d68621575,b37b2f38e67e65f1998783f5f38d1f9d68621575,use Exec in transaction methods
+bmizerany,2012-06-13 18:43:32,https://api.github.com/repos/lib/pq/git/commits/ee28f18259114d19cbdbe5a0c990c7f967d2c36f,ee28f18259114d19cbdbe5a0c990c7f967d2c36f,clean up return
+bmizerany,2012-06-13 18:43:01,https://api.github.com/repos/lib/pq/git/commits/49cfdf6f7165f11f4b58b7e4d0ebfe4346c056b1,49cfdf6f7165f11f4b58b7e4d0ebfe4346c056b1,fix whitespace error
+andybalholm,2012-04-17 20:28:29,https://api.github.com/repos/lib/pq/git/commits/cf316d2848d70cd3898e169ff17217dc16134af2,cf316d2848d70cd3898e169ff17217dc16134af2,"Return integer and floating-point values as int64 and float64, not []byte"
+andybalholm,2012-04-17 20:27:38,https://api.github.com/repos/lib/pq/git/commits/2ed1d69d6f5414525ccab56397980bfc66094854,2ed1d69d6f5414525ccab56397980bfc66094854,Add Vim temporary and backup files to .gitignore.
+bgentry,2012-04-12 03:13:45,https://api.github.com/repos/lib/pq/git/commits/88f8226c0aedd2b7c0dd583e24521df10625bda1,88f8226c0aedd2b7c0dd583e24521df10625bda1,go fmt
+bgentry,2012-04-12 03:10:28,https://api.github.com/repos/lib/pq/git/commits/b48e1a27f71c015f27fcc99051af2b0e5014aa0f,b48e1a27f71c015f27fcc99051af2b0e5014aa0f,Properly handle net.OpError and handshake failure
+andybalholm,2012-04-10 20:58:25,https://api.github.com/repos/lib/pq/git/commits/b9a400040a1b8a186986a03222e9e2210ef6478c,b9a400040a1b8a186986a03222e9e2210ef6478c,Add test for scanning boolean into interface{}
+andybalholm,2012-04-10 17:46:51,https://api.github.com/repos/lib/pq/git/commits/04d7f62ad88108b9ed22534363b5f435041d7626,04d7f62ad88108b9ed22534363b5f435041d7626,"Return booleans as bool, not []byte."
+bgentry,2012-04-10 18:03:56,https://api.github.com/repos/lib/pq/git/commits/f4fe5872e124ea1b0ebc74039d87da5d399532dd,f4fe5872e124ea1b0ebc74039d87da5d399532dd,"In the event of an SSL error, return ErrBadConn"
+bmizerany,2012-04-10 03:57:33,https://api.github.com/repos/lib/pq/git/commits/dc605dd9537524c2716bf99e6893995445a81273,dc605dd9537524c2716bf99e6893995445a81273,test nil column value after valid
+bmizerany,2012-04-10 03:07:56,https://api.github.com/repos/lib/pq/git/commits/f45385b959b8dec907148be5360d038842e93317,f45385b959b8dec907148be5360d038842e93317,add Andy
+andybalholm,2012-04-10 02:34:42,https://api.github.com/repos/lib/pq/git/commits/f5c1ae0baf2b93cd15a5d7239212fee85220d331,f5c1ae0baf2b93cd15a5d7239212fee85220d331,"Explicitly store nil when reading a null value in rows.Next().
+
+Sometimes dest has leftover values in it from the previous row (when the
+query returns multiple rows). So we need to clear them."
+bmizerany,2012-04-10 00:14:31,https://api.github.com/repos/lib/pq/git/commits/e9652e4192847dd62364ceb6b9cb5991b99f5f2e,e9652e4192847dd62364ceb6b9cb5991b99f5f2e,add Ben
+bmizerany,2012-04-09 22:46:50,https://api.github.com/repos/lib/pq/git/commits/30c91a057a1f9ab08a03a394259179978062ca51,30c91a057a1f9ab08a03a394259179978062ca51,functional accrue for ParseURL
+benburkert,2012-04-08 18:03:43,https://api.github.com/repos/lib/pq/git/commits/a52fdba5d10f7c5ee7e0a266ca979c40a685cf97,a52fdba5d10f7c5ee7e0a266ca979c40a685cf97,Recover from a panic closing the socket.
+benburkert,2012-04-07 20:01:06,https://api.github.com/repos/lib/pq/git/commits/8e3a73021c3fa24b087d315dfe8282335c50b349,8e3a73021c3fa24b087d315dfe8282335c50b349,"Close Rows in tests.
+
+The sql.DB.Close() function only closes connections that are marked as
+free. The sql.Rows.Close() function marks the Row's connection as free,
+so it must be invoked to cleanly close the DB."
+benburkert,2012-04-07 19:31:54,https://api.github.com/repos/lib/pq/git/commits/00262e4415c06929227807d0a119cb35ee8b0166,00262e4415c06929227807d0a119cb35ee8b0166,"Send the Termination message when closing a connection.
+
+The Postgresql server expects the client to end the connection by
+first sending a Termination message ('X') followed up by closing the
+socket. The server logs a ""unexpected EOF on client connection"" warning
+if the socket is closed without the preceding Termination message."
+bmizerany,2012-04-06 22:21:46,https://api.github.com/repos/lib/pq/git/commits/29bcb7ed95adac65cf1082a9b15cdbcebe28db47,29bcb7ed95adac65cf1082a9b15cdbcebe28db47,fix #8 - handle bind error earlier
+bgentry,2012-04-06 18:43:52,https://api.github.com/repos/lib/pq/git/commits/d87bf35be1915113b30a2471f2def96a7b0e245c,d87bf35be1915113b30a2471f2def96a7b0e245c,Temp fix for time parsing with a single decimal digit
+bgentry,2012-04-05 00:08:44,https://api.github.com/repos/lib/pq/git/commits/3cb21db5b7d4d9f000b923c41eb4886b06eb1df4,3cb21db5b7d4d9f000b923c41eb4886b06eb1df4,Read exactly 5 bytes as we expected
+bmizerany,2012-04-02 20:11:24,https://api.github.com/repos/lib/pq/git/commits/f1219fd05935ce805940b3f3adad96141a38904c,f1219fd05935ce805940b3f3adad96141a38904c,no longer ref tip
+bmizerany,2012-04-02 18:35:05,https://api.github.com/repos/lib/pq/git/commits/12c53307d3b652138dcf1b1c8721c4fe68b6dbde,12c53307d3b652138dcf1b1c8721c4fe68b6dbde,doc ParseURL in README
+bmizerany,2012-04-01 22:10:42,https://api.github.com/repos/lib/pq/git/commits/432cab873162966bb204c75de824c266e013e863,432cab873162966bb204c75de824c266e013e863,note
+bmizerany,2012-04-01 22:09:24,https://api.github.com/repos/lib/pq/git/commits/ecf1213dfc5618ec1036af5431cf2acd7193be07,ecf1213dfc5618ec1036af5431cf2acd7193be07,refactor url parsing
+bmizerany,2012-03-28 21:55:24,https://api.github.com/repos/lib/pq/git/commits/6a5c55100ae4c25e6d3f564de18f26da2d2120d8,6a5c55100ae4c25e6d3f564de18f26da2d2120d8,ensure correct error handling in Query
+bmizerany,2012-03-28 21:48:07,https://api.github.com/repos/lib/pq/git/commits/12654acbf499a87c8c372677c760501f0aa79ed0,12654acbf499a87c8c372677c760501f0aa79ed0,better error test
+bmizerany,2012-03-28 21:43:24,https://api.github.com/repos/lib/pq/git/commits/cf05c060a911669145b601f4bbca45acf746db67,cf05c060a911669145b601f4bbca45acf746db67,remove more debug code
+bmizerany,2012-03-28 21:42:49,https://api.github.com/repos/lib/pq/git/commits/7eda25ee1c088ebe9a8f542be30ca6e58a9a299f,7eda25ee1c088ebe9a8f542be30ca6e58a9a299f,fix last wrong
+bmizerany,2012-03-28 21:40:26,https://api.github.com/repos/lib/pq/git/commits/451f35134b5d26dc3bb855d5b803b84f81cbcf10,451f35134b5d26dc3bb855d5b803b84f81cbcf10,simplify NullTime
+bmizerany,2012-03-28 21:40:06,https://api.github.com/repos/lib/pq/git/commits/6d3711241f9d4e348207598d3733ea61349867d2,6d3711241f9d4e348207598d3733ea61349867d2,remove debug
+bmizerany,2012-03-28 21:37:48,https://api.github.com/repos/lib/pq/git/commits/f7ca5d5c93abcde98c55e7edf9f262f9726cb90b,f7ca5d5c93abcde98c55e7edf9f262f9726cb90b,go fmt
+bmizerany,2012-03-28 21:37:31,https://api.github.com/repos/lib/pq/git/commits/d0b6a0821e3d3ad93c41fe45d1196716a1d60743,d0b6a0821e3d3ad93c41fe45d1196716a1d60743,ignore notices in Exec
+bmizerany,2012-03-28 21:36:46,https://api.github.com/repos/lib/pq/git/commits/557d9c688d6cc6f131672cdb3ac3740359238ac3,557d9c688d6cc6f131672cdb3ac3740359238ac3,quick fix #3
+bmizerany,2012-03-28 21:29:07,https://api.github.com/repos/lib/pq/git/commits/b04798a124743301c99cc092b7b4766a76cb6b22,b04798a124743301c99cc092b7b4766a76cb6b22,debug
+bmizerany,2012-03-27 20:42:46,https://api.github.com/repos/lib/pq/git/commits/b2be1641082bd435e98e058524b517058f436cf1,b2be1641082bd435e98e058524b517058f436cf1,test for non-fatal error
+bmizerany,2012-03-27 20:42:19,https://api.github.com/repos/lib/pq/git/commits/cef83fd2552e7f48eed455b17e6949aca4dc6bdc,cef83fd2552e7f48eed455b17e6949aca4dc6bdc,format
+bgentry,2012-03-28 19:58:35,https://api.github.com/repos/lib/pq/git/commits/b5d721a4f82a5fee7042c773fa51ffc276861444,b5d721a4f82a5fee7042c773fa51ffc276861444,Tests for NullTime Scan
+bgentry,2012-03-28 19:26:34,https://api.github.com/repos/lib/pq/git/commits/5f02c6f9667bf83a86aea6c7d60bc9c658ade39a,5f02c6f9667bf83a86aea6c7d60bc9c658ade39a,Add pq.NullTime type. Fixes #4
+bmizerany,2012-03-26 22:41:31,https://api.github.com/repos/lib/pq/git/commits/54c925e69955813f66a64825b78027ee9f0fe4bc,54c925e69955813f66a64825b78027ee9f0fe4bc,more debug
+bmizerany,2012-03-26 22:38:00,https://api.github.com/repos/lib/pq/git/commits/ac75fbc781714e494165a870e6f7887627d61105,ac75fbc781714e494165a870e6f7887627d61105,debug
+bgentry,2012-03-23 23:30:35,https://api.github.com/repos/lib/pq/git/commits/dc6073ceb30afb2317d809223da6e06bc0a52fe2,dc6073ceb30afb2317d809223da6e06bc0a52fe2,ParseUrl
+bmizerany,2012-03-10 06:42:05,https://api.github.com/repos/lib/pq/git/commits/df1f1317967381f224717825633bb31354d8767c,df1f1317967381f224717825633bb31354d8767c,init

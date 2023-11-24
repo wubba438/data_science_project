@@ -1,0 +1,1228 @@
+httpbin,"HTTP Request & Response Service, written in Python + Flask."
+username,timestamp,url,sha,message
+kennethreitz,2018-11-07 20:31:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f8ec666b4d1b654e4ff6aedd356f510dcac09f83,f8ec666b4d1b654e4ff6aedd356f510dcac09f83,"Merge pull request #496 from javabrett/docker-pipenv
+
+Dockerfile: Resolve deps using pipenv/Pipefile(.lock)"
+kennethreitz,2018-11-07 20:30:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0165e7ff9cd88a80b36a33f7d55dd38686f5296c,0165e7ff9cd88a80b36a33f7d55dd38686f5296c,"Merge pull request #524 from javabrett/fix-repository
+
+Corrected repository URL in app.json"
+javabrett,2018-11-07 06:25:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2f3921259b82ff5cfb36a2153b73c6eda9908358,2f3921259b82ff5cfb36a2153b73c6eda9908358,"Corrected repository URL in app.json.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+javabrett,2018-07-27 04:41:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/be1413fb022a3921d4a9b1a63e588199e2106f39,be1413fb022a3921d4a9b1a63e588199e2106f39,"Changed Dockerfile to resolve deps using pipenv/Pipefile(.lock) before pip3->setup.py for httpbin.
+
+Also added Pipfile(.lock) prior to the remaining source, improving Docker image cacheability.
+
+Git is also required to fetch pyyaml.
+
+This results in more deterministic and reproducible image builds, since httpbin dependencies
+are installed using locked versions from Pipfile.lock before httpbin is itself installed.
+
+Fixed #493."
+nateprewitt,2018-10-24 06:55:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7b3b70dbca05cdea049e1a74073339d52089c05b,7b3b70dbca05cdea049e1a74073339d52089c05b,"Merge pull request #512 from georgexsh/envheaders
+
+remove duplicated ""X-Forwarded-For"" from ENV_HEADERS"
+georgexsh,2018-09-21 06:48:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/12dab7ba22d9468eb77abc8715183af64e3aee36,12dab7ba22d9468eb77abc8715183af64e3aee36,"remove duplicated ""X-Forwarded-For"" from ENV_HEADERS"
+nateprewitt,2018-10-24 05:52:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/992eaa40e6fef975fa674f8a42f58c555fb909b1,992eaa40e6fef975fa674f8a42f58c555fb909b1,"Merge pull request #494 from javabrett/jquery-static-path
+
+Removed (another) stray space from static path for jquery js"
+nateprewitt,2018-10-24 05:52:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cca67864488d9f27891050ee7946d35d0e1c2a3f,cca67864488d9f27891050ee7946d35d0e1c2a3f,"Merge pull request #501 from phanikiranthaticharla/new_branch
+
+Removed httpbin.org link which is mentioned 3 times in README"
+nateprewitt,2018-10-24 05:24:15,https://api.github.com/repos/postmanlabs/httpbin/git/commits/27fcacbfac13a8a2faa66a6557487dafd1a06986,27fcacbfac13a8a2faa66a6557487dafd1a06986,"Merge pull request #518 from javabrett/travis-tox-py37
+
+Added Python 3.7 to Travis/Tox"
+javabrett,2018-10-24 05:12:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/02b0d2d2ea663e6e88c615dec581a125a6074d23,02b0d2d2ea663e6e88c615dec581a125a6074d23,"Added Python 3.7 to Travis/Tox.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+javabrett,2018-07-26 02:40:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ac3654e2bb13952fdaf5f96bdf22aed67b4bdfc2,ac3654e2bb13952fdaf5f96bdf22aed67b4bdfc2,Removed (another) stray space from static path for jquery js.
+sigmavirus24,2018-09-11 12:13:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/69c9c5c769296d0f8d0b16bf8bcea0b8425238a8,69c9c5c769296d0f8d0b16bf8bcea0b8425238a8,"Merge pull request #495 from javabrett/dockerignore-dot-git
+
+Changes in the local Git db should not invalidate Docker build cache"
+sigmavirus24,2018-08-31 22:43:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bd3c030734b9891eafbbedcc4863191938d51eb0,bd3c030734b9891eafbbedcc4863191938d51eb0,"Merge pull request #507 from BoboTiG/fix-unclosed-file
+
+Fix a ResourceWarning: unclosed file in core.py"
+BoboTiG,2018-08-31 14:43:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/52d823ce85eb683aee4c91bb9473a7c2d20b1cc4,52d823ce85eb683aee4c91bb9473a7c2d20b1cc4,Fix a ResourceWarning: unclosed file in core.py
+phanikiranthaticharla,2018-08-12 17:49:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fea47f6c2a9fc793ba2e350e1387a2f354a649b4,fea47f6c2a9fc793ba2e350e1387a2f354a649b4,"Removed httpbin.org link which is mentioned 3 times in README
+
+Signed-off-by: Phani Kiran Thaticharla <t.phani.kiran@gmail.com>"
+nateprewitt,2018-08-12 16:56:04,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e4ee61fbc61164623cbf1edefd228dcf621749e6,e4ee61fbc61164623cbf1edefd228dcf621749e6,"Merge pull request #500 from ghartsho/master
+
+Fixed minor typos"
+ghartsho,2018-08-12 16:52:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/20e93ee3bdf3a6c43efcb20eaa56dd6585a3e413,20e93ee3bdf3a6c43efcb20eaa56dd6585a3e413,Fixed minor typos with ..
+ghartsho,2018-08-12 16:50:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e7a12704a13d6434cb048d20d8d875cfa3843f7a,e7a12704a13d6434cb048d20d8d875cfa3843f7a,"Fixed minor typos with """""""""
+javabrett,2018-07-26 09:41:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b6d0ae1e8b081c542518b9dfae9c2869894413e9,b6d0ae1e8b081c542518b9dfae9c2869894413e9,.dockerignore .git. Changes in the local Git db should not invalidate the Docker build cache.
+kennethreitz,2018-07-25 12:52:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/16f408a7ad8ad7e6016f927d25737d66ef53e922,16f408a7ad8ad7e6016f927d25737d66ef53e922,"Merge pull request #492 from javabrett/487-headers-dict-revert-457
+
+Revert #457 ""Support `show_env` param in `/headers`"""
+javabrett,2018-07-25 01:55:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/59526b0915e2bb4a7ca0ac3b0ff33f39dc4396c9,59526b0915e2bb4a7ca0ac3b0ff33f39dc4396c9,"Revert ""Support `show_env` param in `/headers`"", reverting #457. Fixed #487.
+
+The docstring typo fixes are retained, along with the additional tests,
+modified to revert to the original ""headers"": { dict format.
+
+The reverted change get_dict('headers') -> get_headers() was not required. The
+query-string ?show_env=1 was already effective in allowing env headers to be
+returned.
+
+This partially reverts commit 31ffe79981a079d6605352d2d84de2f2d27ab6db."
+kennethreitz,2018-07-12 17:01:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fce4d8339702b5829e8c1dc7b2fff38e6a8b56bb,fce4d8339702b5829e8c1dc7b2fff38e6a8b56bb,"Merge pull request #485 from steffenschroeder/master
+
+Fixed #484 by correcting templates"
+kennethreitz,2018-07-12 17:01:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4cb4b1502d0c2bd857df4b1dadcbdcca13b16d18,4cb4b1502d0c2bd857df4b1dadcbdcca13b16d18,"Merge pull request #490 from GammaGames/master
+
+Update README.md"
+kennethreitz,2018-07-12 17:01:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5ba07086f028fbf0cc7fb6a511618605d8b82541,5ba07086f028fbf0cc7fb6a511618605d8b82541,"Merge pull request #491 from phanikiranthaticharla/master
+
+Removed hurl.it which is not reachable from references"
+phanikiranthaticharla,2018-07-12 04:41:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/503f55402d323f8d786d5bf821f8ac2f6b9bc994,503f55402d323f8d786d5bf821f8ac2f6b9bc994,Removed hurl.it which is not reachable from references
+GammaGames,2018-07-11 22:53:28,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f942a3d422efe0751b9cef6c5bf4be5b85ba5ef0,f942a3d422efe0751b9cef6c5bf4be5b85ba5ef0,"Update README.md
+
+Add instructions to run since the website keeps going down"
+steffenschroeder,2018-07-06 20:08:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4db88dfa551cd749884aef2c085134b3c6b89119,4db88dfa551cd749884aef2c085134b3c6b89119,Added test to make sure index (/) will render correctly (to prevent #484)
+steffenschroeder,2018-07-06 19:30:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4c267df3d911c50359713d4e508ba557bc10af45,4c267df3d911c50359713d4e508ba557bc10af45,Bump version to 0.9.2
+steffenschroeder,2018-07-06 19:25:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f83215d99b0cbe45fe17c5bc9b880c7b4fdb65dc,f83215d99b0cbe45fe17c5bc9b880c7b4fdb65dc,Fixed #484 by correcting template
+kennethreitz,2018-07-04 16:02:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c1633c82301e38768e9c7bd1ada32a8a0376d01c,c1633c82301e38768e9c7bd1ada32a8a0376d01c,"Revert ""remove heroku files""
+
+This reverts commit bfa5e3235f2637c32303a889693c01b0657a1d6d."
+kennethreitz,2018-07-04 15:34:55,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ee6b54671a87398d0c8a8115fb5569a7578ad5ba,ee6b54671a87398d0c8a8115fb5569a7578ad5ba,Merge branch 'master' of github.com:kennethreitz/httpbin
+kennethreitz,2018-07-04 15:34:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/efc3bf9a3f1d3cf4f1bc4a10326b551f261c35a9,efc3bf9a3f1d3cf4f1bc4a10326b551f261c35a9,improve footer
+kennethreitz,2018-07-04 15:33:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8545e2f05cec46bd7bc703721d6d59e0c0e27275,8545e2f05cec46bd7bc703721d6d59e0c0e27275,Update README.md
+kennethreitz,2018-07-04 15:31:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bfa5e3235f2637c32303a889693c01b0657a1d6d,bfa5e3235f2637c32303a889693c01b0657a1d6d,remove heroku files
+kennethreitz,2018-07-04 15:29:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/56a2cf576336361bf54080cacc877d8ee29e2c88,56a2cf576336361bf54080cacc877d8ee29e2c88,new version
+kennethreitz,2018-07-04 15:25:57,https://api.github.com/repos/postmanlabs/httpbin/git/commits/660801081cc485754720a11cc83a03c4c1df10e0,660801081cc485754720a11cc83a03c4c1df10e0,fix broken things
+kennethreitz,2018-07-04 15:15:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7079479690c9e706f84170cb633ba7f29859f952,7079479690c9e706f84170cb633ba7f29859f952,add pyyaml for 3.7
+kennethreitz,2018-07-04 15:09:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ee15d0e5ecda63ef0f44d746a6bac111a5275d31,ee15d0e5ecda63ef0f44d746a6bac111a5275d31,"Merge pull request #457 from sanketsaurav/454-fix-headers-view
+
+Fix #454: Support `show_env` param in `/headers`"
+kennethreitz,2018-07-04 15:08:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/607ab2264af7c1b3e485d369c4d3f248f29e7711,607ab2264af7c1b3e485d369c4d3f248f29e7711,"Merge pull request #462 from javabrett/setuptools-long-description
+
+Added long_description for setuptools."
+kennethreitz,2018-07-04 15:08:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4eb372f658c91851e700b747565ce5737806b9c0,4eb372f658c91851e700b747565ce5737806b9c0,Merge branch 'master' into setuptools-long-description
+kennethreitz,2018-07-04 15:07:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d99d4e311033ef16b30c4e08a37ef9ba587c0826,d99d4e311033ef16b30c4e08a37ef9ba587c0826,"Merge pull request #467 from hkosova/bearer-fix
+
+Fix incorrect /bearer behavior"
+kennethreitz,2018-07-04 15:07:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c5b6f39a5da29ec3b20fa7d3f77c8a5392f5804d,c5b6f39a5da29ec3b20fa7d3f77c8a5392f5804d,"Merge pull request #460 from javabrett/consolidate-version-string
+
+Consolidate httpbin version string into a single location (VERSION)"
+kennethreitz,2018-07-04 15:07:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/93e141807e4652c6c4f615d2b8e59fdbf489a081,93e141807e4652c6c4f615d2b8e59fdbf489a081,Merge branch 'master' into consolidate-version-string
+kennethreitz,2018-07-04 15:06:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ae4845789fe5aa3982d87556951a3ce03f71bfe8,ae4845789fe5aa3982d87556951a3ce03f71bfe8,"Merge pull request #461 from javabrett/manifest-fixes
+
+Manifest fixes"
+kennethreitz,2018-07-04 15:06:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ab170273168808dd17bb9db7357cf6e962077d85,ab170273168808dd17bb9db7357cf6e962077d85,"Merge pull request #468 from hkosova/pretty-print-json
+
+Pretty-print JSON responses"
+kennethreitz,2018-07-04 15:05:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/36a3df2f822935634697c415309967a37af614c3,36a3df2f822935634697c415309967a37af614c3,"Merge pull request #472 from SeverinLeonhardt/delay_more_methods
+
+Support more HTTP methods for /delay"
+kennethreitz,2018-07-04 15:05:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/27b604c435345a7509fb657acfcef71cb56e3241,27b604c435345a7509fb657acfcef71cb56e3241,"Merge pull request #477 from javabrett/dockerignore-dockerfile
+
+Added a .dockerignore file to ignore Dockerfile"
+kennethreitz,2018-07-04 15:04:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/45350ffc2096ca0f8ec9bbb03617f562021961d0,45350ffc2096ca0f8ec9bbb03617f562021961d0,"Merge pull request #478 from Lucretiel/master
+
+Documented query parameters for drip"
+kennethreitz,2018-07-04 15:04:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/371dc248f883253bfa76ccd35825eaffb7002929,371dc248f883253bfa76ccd35825eaffb7002929,"Merge pull request #480 from javabrett/476-fix-redirect-to
+
+Added url and status_code as query-string parameters for SwaggerUI"
+kennethreitz,2018-07-04 15:03:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8027ee956b0038e130c43a4866d3c0397ac298b3,8027ee956b0038e130c43a4866d3c0397ac298b3,"Merge pull request #481 from requests/test
+
+Test"
+kennethreitz,2018-07-04 15:00:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/390595e029e43a921a6a72c7c592a8da4f13114d,390595e029e43a921a6a72c7c592a8da4f13114d,template
+kennethreitz,2018-07-04 14:57:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6693e0d971a3ed8a50410431b9ea906091142c87,6693e0d971a3ed8a50410431b9ea906091142c87,fix
+kennethreitz,2018-07-04 14:57:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8f5464f5a3b8dbc3c00cd2245fb0cc09a4161929,8f5464f5a3b8dbc3c00cd2245fb0cc09a4161929,updates
+kennethreitz,2018-07-04 14:49:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4c3c25684157a773881fd98344c525a3793c3033,4c3c25684157a773881fd98344c525a3793c3033,now.json
+kennethreitz,2018-07-04 14:48:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fdad46da302eb1fd0023283e3c79a878c8b0a046,fdad46da302eb1fd0023283e3c79a878c8b0a046,only https
+kennethreitz,2018-07-04 14:01:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/665ec9710c060048dbdc15693ea955a9ace53e36,665ec9710c060048dbdc15693ea955a9ace53e36,labels for dockerfile
+kennethreitz,2018-07-04 14:01:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5e9eeecdcd40d94b498ece04e2d71a33e3d8d948,5e9eeecdcd40d94b498ece04e2d71a33e3d8d948,vscode
+kennethreitz,2018-07-04 13:55:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a578b69cc3acb95bbe82ee9265d67d51f1113608,a578b69cc3acb95bbe82ee9265d67d51f1113608,now
+javabrett,2018-07-02 05:04:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/dd2513ae5940bc104d8bc4a9cab24a80304bd1db,dd2513ae5940bc104d8bc4a9cab24a80304bd1db,"redirect_to: split arg process for GET vs POST/PATCH/PUT, so the latter use formData for parameters. Fixed #476.
+
+POST/PUT only support formData body, not JSON.
+
+Note that PATCH parameters do not appear in Swagger 2 UI."
+javabrett,2018-06-29 11:19:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d3d33de226ddbb6a93c4e1a5425bb98d4767f0f1,d3d33de226ddbb6a93c4e1a5425bb98d4767f0f1,redirect_to: Added url and status_code as query-string parameters for SwaggerUI.  Fixed #476.
+javabrett,2018-05-21 07:14:28,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6374680e7286636bb282302d04b0afc4ab88d67b,6374680e7286636bb282302d04b0afc4ab88d67b,"Consolidated httpbin version string into a single location in file VERSION.
+
+Also added the new VERSION file to the manifest.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+javabrett,2018-05-21 07:49:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6d382e3eed985d3c74e5de799076b57eb35110f9,6d382e3eed985d3c74e5de799076b57eb35110f9,"Added long_description for setuptools.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+Lucretiel,2018-06-29 01:43:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b4a37294dbb71ac56873b1aace385ebd28b61b31,b4a37294dbb71ac56873b1aace385ebd28b61b31,Documented query parameters for drip
+javabrett,2018-06-29 00:33:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7d4565afe6309e2f29979157e06486fb10f0b301,7d4565afe6309e2f29979157e06486fb10f0b301,"Added a .dockerignore file to ignore Dockerfile, prevent it from breaking cache and being added to the image."
+SeverinLeonhardt,2018-06-14 13:22:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4a5e87e918133436300fd1bfc0b56e20ac2ec5b1,4a5e87e918133436300fd1bfc0b56e20ac2ec5b1,Support more HTTP methods for /delay
+javabrett,2018-05-21 07:34:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fae67e82bb99ea6f88009dd9e131084e13fee5b0,fae67e82bb99ea6f88009dd9e131084e13fee5b0,"Fixed README.[rst->md] path in MANIFEST.in.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+javabrett,2018-05-21 07:27:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7e594911d9e7b290ec1a730c7dfb9b5648417c33,7e594911d9e7b290ec1a730c7dfb9b5648417c33,"Removed requirements.txt from MANIFEST.in.
+
+Signed-off-by: Brett Randall <javabrett@gmail.com>"
+kennethreitz,2018-05-29 00:58:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c39f63323604a7004795a54f33c21c08f97dad63,c39f63323604a7004795a54f33c21c08f97dad63,"Merge pull request #470 from javabrett/favicon
+
+Add a favicon.ico"
+javabrett,2018-05-28 11:44:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ea56eea0910f953aee971cd1cfa1ffc933a2e8f7,ea56eea0910f953aee971cd1cfa1ffc933a2e8f7,Added a favicon.ico.  Fixed #459.
+sigmavirus24,2018-05-25 17:20:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/62eeb3943519fd43ae4f9b0563ecac8c8afb94fd,62eeb3943519fd43ae4f9b0563ecac8c8afb94fd,"Merge pull request #469 from hkosova/typo-fix
+
+Fix typo in parameter name"
+hkosova,2018-05-25 17:09:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1f81491f714ec3cbb90734994924671591f0b78b,1f81491f714ec3cbb90734994924671591f0b78b,Fixed a typo (credentails -> credentials) in a parameter name
+hkosova,2018-05-25 08:55:15,https://api.github.com/repos/postmanlabs/httpbin/git/commits/379365f739a095071c4589f019cd57734b0a97b7,379365f739a095071c4589f019cd57734b0a97b7,Set JSONIFY_PRETTYPRINT_REGULAR=True to pretty-print JSON responses
+hkosova,2018-05-25 08:18:34,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fcef66c11718f055818cb4c37acd8c1d5b3c03ac,fcef66c11718f055818cb4c37acd8c1d5b3c03ac,Replaced str.split() with slice
+hkosova,2018-05-24 17:38:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4dcfa3d47d811206e6e724eabc046ba0f8071390,4dcfa3d47d811206e6e724eabc046ba0f8071390,Fixed incorrect Bearer token extraction and added tests
+kennethreitz,2018-05-19 19:25:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4163debe38e29769e4e60efb93cef68df265b280,4163debe38e29769e4e60efb93cef68df265b280,"Merge pull request #458 from steffenschroeder/master
+
+Dockerfile improvements"
+steffenschroeder,2018-05-19 18:59:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d449969d1b475087d705c596d7e811ab74260bc5,d449969d1b475087d705c596d7e811ab74260bc5,Reduce the number of docker layers
+steffenschroeder,2018-05-19 18:51:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/28247f47e67f78a36843799602c5ad8368902a29,28247f47e67f78a36843799602c5ad8368902a29,Improve usage of docker build cache
+sanketsaurav,2018-05-19 15:07:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/31ffe79981a079d6605352d2d84de2f2d27ab6db,31ffe79981a079d6605352d2d84de2f2d27ab6db,"Support `show_env` param in `/headers`
+
+If `show_env` is True, then return all the headers without stripping `ENV_HEADERS`. This fixes #454.
+
+Signed-off-by: Sanket Saurav <sanketsaurav@gmail.com>"
+kennethreitz,2018-05-18 23:25:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2f39ce3314b45f6a8e474e6224970ce7982d76d4,2f39ce3314b45f6a8e474e6224970ce7982d76d4,"Merge pull request #456 from rochacbruno/producers
+
+Producers"
+rochacbruno,2018-05-18 22:49:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6eaa53cf5598e052e23422da1de227a7086e3a79,6eaa53cf5598e052e23422da1de227a7086e3a79,Added header placeholder and loader spinner (in case page takes long time to load)
+rochacbruno,2018-05-18 22:49:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/129766d7a587194aa7111fb995acb4d609fa07ad,129766d7a587194aa7111fb995acb4d609fa07ad,Specified Content-Type/produces for each endpoint
+kennethreitz,2018-05-18 18:24:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/476824f69529639f2d369c281a62a4ee224bdb06,476824f69529639f2d369c281a62a4ee224bdb06,"alternative github icon
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-18 18:21:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c75b4b70a2a1ef77edfcc5b73a6d5ea0b77f7e2e,c75b4b70a2a1ef77edfcc5b73a6d5ea0b77f7e2e,"better github icon
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-18 18:17:34,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6ae1a0b5013ac9e1fcd7027e3cc9a2063cbdea01,6ae1a0b5013ac9e1fcd7027e3cc9a2063cbdea01,"cleanup
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-18 18:06:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/72357232c501761699d0c02a07d4d7e873cf20bf,72357232c501761699d0c02a07d4d7e873cf20bf,"Merge pull request #455 from rochacbruno/new_layot
+
+Adjusts in layout + categorized endpoints"
+rochacbruno,2018-05-18 18:00:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3964addb879687047f6ecd6a73edc1c04c42968c,3964addb879687047f6ecd6a73edc1c04c42968c,Customized Swagger template
+rochacbruno,2018-05-18 17:59:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/695ad587c1d6ac93426aac5274e6bc79b3ba1df0,695ad587c1d6ac93426aac5274e6bc79b3ba1df0,Added /json endpoint to match the /xml one
+rochacbruno,2018-05-18 17:59:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6af8d6695b1b07f92711e211c33c0eaae1c47905,6af8d6695b1b07f92711e211c33c0eaae1c47905,Tagged all the endpoints and added path to /legacy old site
+rochacbruno,2018-05-18 17:57:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c14cb78b9fcb5ccb81baf95bcf5c9dc6ff90c603,c14cb78b9fcb5ccb81baf95bcf5c9dc6ff90c603,Formatted description in 2 lines
+rochacbruno,2018-05-18 17:57:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c37321e13b6e61b55e3c51bd9ca97a244186570e,c37321e13b6e61b55e3c51bd9ca97a244186570e,Tracking exported as a global variable
+kennethreitz,2018-05-17 23:59:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/63a649f753e625feac9196115a8ba74fd36864fe,63a649f753e625feac9196115a8ba74fd36864fe,"port 80
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:46:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/852febb0b0e0703cc91f186af7bf98370d35b875,852febb0b0e0703cc91f186af7bf98370d35b875,"Merge pull request #453 from requests/swagger
+
+Swagger (WIP)"
+kennethreitz,2018-05-17 23:44:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bf0f18d38067f504d72e30c52832b3eb46dad51b,bf0f18d38067f504d72e30c52832b3eb46dad51b,Merge branch 'swagger' of github.com:kennethreitz/httpbin into swagger
+kennethreitz,2018-05-17 23:44:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a8c8e696590acee37e291946122511408a0b1dc0,a8c8e696590acee37e291946122511408a0b1dc0,"disable tests for tracking
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:43:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/140f29bcebdf8c6cee58d66ffafa55cf26637cfd,140f29bcebdf8c6cee58d66ffafa55cf26637cfd,Merge branch 'master' into swagger
+kennethreitz,2018-05-17 23:40:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0377bf6ddaacb83e1dddba78e91217b8d742bf08,0377bf6ddaacb83e1dddba78e91217b8d742bf08,"swagger
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:25:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7d6a7acb0d8f77b9a1d5500db61386360a4e2a07,7d6a7acb0d8f77b9a1d5500db61386360a4e2a07,"3.6
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:25:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/26a4892f14ab077833059cad2ca465d34b003f1b,26a4892f14ab077833059cad2ca465d34b003f1b,"0.9.0
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:24:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e0d22761cfce3194a46cc1a7c8d0ef42b7f35b03,e0d22761cfce3194a46cc1a7c8d0ef42b7f35b03,"setup.py
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 23:23:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9f15e09f49d1af0a758e070c9ef441076846b418,9f15e09f49d1af0a758e070c9ef441076846b418,"swagger
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:57:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0d7f363f63e4e62acc1aa06174a5ed0f6b7e1383,0d7f363f63e4e62acc1aa06174a5ed0f6b7e1383,"Docker updates (#452)
+
+* docker optimizations
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>
+
+* port 80
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>
+
+* no web concurrency
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>
+
+* docker compose
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>
+
+* v0.8.0
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:33:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/216ab6c3ded2ddc3a25ff1a291644be96a860d0c,216ab6c3ded2ddc3a25ff1a291644be96a860d0c,"v0.8.0
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:30:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7459424bfbe9926d4e0c14eb7a2c28cb4e88142e,7459424bfbe9926d4e0c14eb7a2c28cb4e88142e,"docker compose
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:23:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/566ab9ff1a328347d1b011b1fc529d6b877a785f,566ab9ff1a328347d1b011b1fc529d6b877a785f,"no web concurrency
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:17:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0334483a7211a73049d3ddd37ff447c367e565e8,0334483a7211a73049d3ddd37ff447c367e565e8,"port 80
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-17 22:16:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5f704cdea416633814b95d1e3d0e3b20944bb473,5f704cdea416633814b95d1e3d0e3b20944bb473,"docker optimizations
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:58:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d2da2f74efdf9fe2e7f931baf0c0e5b90f740da4,d2da2f74efdf9fe2e7f931baf0c0e5b90f740da4,"switch runscope with heroku
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:36:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/54e08a850fd3a2608e5f3c85267b10338eeff145,54e08a850fd3a2608e5f3c85267b10338eeff145,"gevent
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:30:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e5433806757a09d58e48935c081db80170296ab5,e5433806757a09d58e48935c081db80170296ab5,"remove raven
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:29:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d99bb0d267c0021ba2bd5e98af61c40566e2fa58,d99bb0d267c0021ba2bd5e98af61c40566e2fa58,"remove sentry support
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:26:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/581e22ac3e4f90fc71912f52d03e8aed9a3af98d,581e22ac3e4f90fc71912f52d03e8aed9a3af98d,"six
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2018-05-09 10:23:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2240bbf7636018bd4d9bd71f7c49ce65196e8ac6,2240bbf7636018bd4d9bd71f7c49ce65196e8ac6,"runtime.txt
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+sigmavirus24,2018-05-08 11:59:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2607b7e6c78bab21f9791331bdde15c583521c90,2607b7e6c78bab21f9791331bdde15c583521c90,Release v0.7.0
+sigmavirus24,2018-05-06 18:47:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2267669c82b081373861316a2e0b3b9e9572c0d4,2267669c82b081373861316a2e0b3b9e9572c0d4,"Merge pull request #444 from javabrett/patch-2
+
+setup.py - fixed url following relocation to 'requests' org."
+sigmavirus24,2018-05-06 12:20:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7a50a02ec848ca91cda9217a536da9c1fd0e4742,7a50a02ec848ca91cda9217a536da9c1fd0e4742,"Merge pull request #447 from javabrett/442-remove-flask-common
+
+Removed Flask-Common. Fixed #442."
+javabrett,2018-05-05 07:13:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e987ecffa8f26de17c5d59949561f06aab0d61cf,e987ecffa8f26de17c5d59949561f06aab0d61cf,Removed Flask-Common. Fixed #442.
+javabrett,2018-05-02 10:32:57,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b298b3cf32fb0310b7b251e5d7dc73c26419f466,b298b3cf32fb0310b7b251e5d7dc73c26419f466,setup.py - fixed url following relocation to 'requests' org.
+nateprewitt,2018-05-02 06:53:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f22f72a8fb29856692ce10146b17e3f81960f92e,f22f72a8fb29856692ce10146b17e3f81960f92e,"Merge pull request #443 from javabrett/patch-1
+
+Fixed Travis Build Status URL post relocation to requests org."
+javabrett,2018-05-02 05:05:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bef4d061ffa36f032a68be672208a93f153a79c0,bef4d061ffa36f032a68be672208a93f153a79c0,Fixed Travis Build Status URL post relocation to requests org.
+nateprewitt,2018-04-16 03:22:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bb4b335e46f99830ec10e90b5541acee4444124d,bb4b335e46f99830ec10e90b5541acee4444124d,"Merge pull request #438 from 10se1ucgo/patch-1
+
+Fix incorrect /range/ error response"
+10se1ucgo,2018-04-15 23:17:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cae4b919a81f656401f4ef2f50fb5a426b120bfd,cae4b919a81f656401f4ef2f50fb5a426b120bfd,"Fix incorrect /range/ error response
+
+100kb == 102400, was missing a trailing 0."
+sigmavirus24,2018-04-04 15:40:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8a06b19d431ee55806841078ae5001921d3bc3a8,8a06b19d431ee55806841078ae5001921d3bc3a8,"Merge pull request #436 from moul/patch-1
+
+Add grpcb.in in SEE ALSO"
+moul,2018-04-04 12:39:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/387d707bd18c68e55e0d5cfc7f4f67737a4dc0fd,387d707bd18c68e55e0d5cfc7f4f67737a4dc0fd,"Add grpcb.in in SEE ALSO
+
+(I'm the author)"
+kennethreitz,2018-03-20 13:39:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/03888871b88969eee1c4871469c70db6ed321811,03888871b88969eee1c4871469c70db6ed321811,procfile
+kennethreitz,2018-03-20 13:36:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/18f0154d0c0e02e45f9876b4cc5979ef5739faec,18f0154d0c0e02e45f9876b4cc5979ef5739faec,pipfile lock
+kennethreitz,2018-03-20 13:26:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/90cc5cc641d7fcca45ccb90c6d032e4ffb982a23,90cc5cc641d7fcca45ccb90c6d032e4ffb982a23,"Merge pull request #433 from jbogers/master
+
+Return ETag header with 304 response"
+sigmavirus24,2018-02-07 12:53:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ad6f6d12146558b143ebd1142825f700de2e8dbd,ad6f6d12146558b143ebd1142825f700de2e8dbd,"Merge pull request #426 from tmack8001/add-base64-to-index
+
+document decode_base64 endpoint /base64/:value on the index.html"
+tmack8001,2018-02-05 18:10:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f4182b868abce7b953e03013e5c8c8f0fe354ba1,f4182b868abce7b953e03013e5c8c8f0fe354ba1,document the decode_base64 endpoint /base64/:value on the index.html page
+sigmavirus24,2018-02-03 14:50:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/07418017b2aaf802292dbca4a9c64972fac02174,07418017b2aaf802292dbca4a9c64972fac02174,"Merge pull request #424 from kennethreitz/check_auth_header
+
+Send digest-auth challenge for wrong Authorization header"
+nateprewitt,2018-01-28 01:56:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/82d740826777c119642e81aacd1453faa5329476,82d740826777c119642e81aacd1453faa5329476,send digest-auth challenge if wrong authorization type sent
+sigmavirus24,2018-01-30 15:15:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/96c5e71c8eee4bd3526e24056286492882cd4ac4,96c5e71c8eee4bd3526e24056286492882cd4ac4,"Merge pull request #425 from kennethreitz/remove_content_type_check
+
+Remove test for empty Content-Type"
+nateprewitt,2018-01-28 03:02:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/75c83178c10c18cd4cf5ebde1a0d0b8b06a79000,75c83178c10c18cd4cf5ebde1a0d0b8b06a79000,"Remove test for empty Content-Type
+
+Werkzeug 14.0.0 introduced new behaviour stripping falsey
+values from being included in EnvironHeaders."
+kennethreitz,2017-12-18 16:49:33,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bec4514992964e39fd07a8cd80e6e1fa24adfce6,bec4514992964e39fd07a8cd80e6e1fa24adfce6,"Merge pull request #414 from graingert/patch-1
+
+s/explicityly/explicitly/"
+graingert,2017-12-18 16:13:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bb95fe610a5e4fd6f2e97f580c01ff02935ac129,bb95fe610a5e4fd6f2e97f580c01ff02935ac129,s/explicityly/explicitly/
+kennethreitz,2017-12-18 16:09:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f6c98bd4b8025d132615a71263fbc7bc0aadf177,f6c98bd4b8025d132615a71263fbc7bc0aadf177,"Merge pull request #386 from vanillajonathan/patch-1
+
+Add endpoint for Bearer authentication"
+kennethreitz,2017-12-18 16:08:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c0f5f0a57ff27b261c1ef43a74a7291f7160b7ba,c0f5f0a57ff27b261c1ef43a74a7291f7160b7ba,"Merge pull request #405 from javabrett/support-chunked-340
+
+Added support for chunked encoded requests when running gunicorn. #340"
+kennethreitz,2017-12-18 16:07:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c2a332d9bd7adb5e7eda2cedf1de46bbf9c2d0d8,c2a332d9bd7adb5e7eda2cedf1de46bbf9c2d0d8,"Merge pull request #410 from kennethreitz/bug/403
+
+Limit python setup.py test to our tests"
+sigmavirus24,2017-12-10 01:12:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6fd0adba842ebe4af9d16070b7b7c751a07be066,6fd0adba842ebe4af9d16070b7b7c751a07be066,Include tests in package
+sigmavirus24,2017-12-09 15:06:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/621604185916ebf6858c4f5fdc5ecdb44bb37766,621604185916ebf6858c4f5fdc5ecdb44bb37766,"Limit python setup.py test to our tests
+
+Tell unittest.discover specifically what to look for instead of letting
+them scan the entirety of our directory (which could have other
+dependencies downloaded with their tests that will fail).
+
+Closes #403"
+javabrett,2017-11-30 22:06:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ec79fee28a76daf51e550af26c67847272996ae5,ec79fee28a76daf51e550af26c67847272996ae5,Dropped logger-warning for input_terminated to debug.
+javabrett,2017-11-26 20:13:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9e9cb84724cfb72e7780a7c37c59468e55bb8f0d,9e9cb84724cfb72e7780a7c37c59468e55bb8f0d,"Added support for chunked encoded requests when running gunicorn. Fixed #340.
+
+In this commit:
+
+- when we see a Transfer-Encoding: chunked request, and the server is gunicorn,
+  we set environ wsgi.input_terminated, which is required by Werkzeug in the
+  absence of Content-Lenght, or it will empty the data stream.
+- for chunked requests to non-gunicorn, return 501 Not Implemented."
+kennethreitz,2017-11-28 16:06:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/260ee9b431882b5df6d081adac8fdfdc4da93e70,260ee9b431882b5df6d081adac8fdfdc4da93e70,"Merge pull request #406 from javabrett/patch-1
+
+Added a Travis build-status image"
+javabrett,2017-11-28 05:44:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/76cb701e9b8dd9ef744156bb23ed9c29efb08bd2,76cb701e9b8dd9ef744156bb23ed9c29efb08bd2,Added a Travis build-status image
+sigmavirus24,2017-11-27 13:09:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5b9bb956ba57b97af69e5fb75106c81cd94ac8c1,5b9bb956ba57b97af69e5fb75106c81cd94ac8c1,"Merge pull request #404 from javabrett/tox-py36
+
+Updated tox and Travis to use py36."
+javabrett,2017-11-27 01:06:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d2ca5e0b8aa77a916e5b2e118bf8eba98311e702,d2ca5e0b8aa77a916e5b2e118bf8eba98311e702,"Updated tox and Travis to use py36.
+
+- Added a matrix config to Travis to align tox an travis environments.
+- Locked dist to trusty"
+nateprewitt,2017-11-19 17:22:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/194df2e828e21551479faa57f4597dc3e0095135,194df2e828e21551479faa57f4597dc3e0095135,"Merge pull request #401 from linuxlizard/master
+
+add SHA-512 authentication"
+kennethreitz,2017-11-17 13:45:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d9678dac4545cb76507d9ea4597a00d5f5b0f57f,d9678dac4545cb76507d9ea4597a00d5f5b0f57f,"Merge pull request #399 from AdamWill/no-flask-limiter
+
+Don't require flask-limiter"
+AdamWill,2017-11-17 03:45:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8bc97fde62d481bf6a9f7d8e701d6baa78cf038c,8bc97fde62d481bf6a9f7d8e701d6baa78cf038c,"Don't require flask-limiter
+
+The rate limiting code has been ping ponged several times, but
+currently it's not there, so there is no reason to require
+flask-limiter.
+
+Signed-off-by: Adam Williamson <awilliam@redhat.com>"
+sigmavirus24,2017-10-19 12:50:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/75aca52834bf595e5d39b81ac1e709c9d0b93669,75aca52834bf595e5d39b81ac1e709c9d0b93669,"Merge pull request #391 from vanillajonathan/patch-3
+
+Use the algorithm parameter"
+sigmavirus24,2017-10-19 12:19:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/24d80ffed713e237788a3b254e124b8ef3670de8,24d80ffed713e237788a3b254e124b8ef3670de8,Bump version to 0.6.2
+sigmavirus24,2017-10-17 12:49:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/74c25ca993ce9b7985b60f3e8968762f12e52c3f,74c25ca993ce9b7985b60f3e8968762f12e52c3f,"Merge pull request #392 from kennethreitz/bug/380
+
+Add back fake cookie and make requiring it conditional"
+sigmavirus24,2017-10-15 00:14:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1bf7a6f23b36f23511be36268cc4e1d5c0008a1b,1bf7a6f23b36f23511be36268cc4e1d5c0008a1b,"Add back fake cookie and make requiring it conditional
+
+Our digest auth endpoint will once again return a fake cookie but will
+only require it if the query-string parameter `require-cookie` is
+present.
+
+Further, this fixes a bug in the digest auth implementation in httpbin
+where we were only considering the path portions of the request-uri in
+the specification. RFC 7230 is very clear that the request-uri includes
+the query-string if it is present which means it is necessary in our
+digest auth handling."
+vanillajonathan,2017-10-11 16:39:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/29f6bbb683f0849ed35f407fa7a56fe056117279,29f6bbb683f0849ed35f407fa7a56fe056117279,Use the algorithm parameter
+vanillajonathan,2017-09-24 19:48:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c432e7819fb00a2624f16e573d6b028f2470dcc7,c432e7819fb00a2624f16e573d6b028f2470dcc7,"Add endpoint for Bearer authentication
+
+Closes #385"
+kennethreitz,2017-09-08 14:54:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cd60b61d77e864883299136e0db26426941e65e6,cd60b61d77e864883299136e0db26426941e65e6,"Merge pull request #382 from jabagawee/patch-1
+
+Change base Dockerfile from Python 2 to Python 3"
+jabagawee,2017-09-08 06:37:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d76add4d7f8a99853eb11c19b86f8fad6edf7517,d76add4d7f8a99853eb11c19b86f8fad6edf7517,"Change base Dockerfile from Python 2 to Python 3
+
+As @kennethreitz likes to say:
+
+> The use of Python 3 is highly preferred over Python 2. Consider upgrading
+> your applications and infrastructure if you find yourself still using Python
+> 2 in production today. If you are using Python 3, congratulations — you are
+> indeed a person of excellent taste."
+kevin1024,2017-08-27 19:11:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8162241f219759fd673c28c7582de46983336a3b,8162241f219759fd673c28c7582de46983336a3b,bump version
+kevin1024,2017-08-27 19:09:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/672f3472ed720c4299635cca802bb2ea073fab15,672f3472ed720c4299635cca802bb2ea073fab15,"Revert ""chunked encoding""
+
+This reverts commit 2e94212886e4c9531b8ba7f55f4fb0b8134e10ac.
+
+This didn't fix the problem, and caused other issues when using werkzeug
+to execute httpbin, so let's remove it.  See also: #340"
+kennethreitz,2017-08-26 18:26:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cf6888255218196fd712f566f8631b13c51a5e65,cf6888255218196fd712f566f8631b13c51a5e65,uuid4
+kennethreitz,2017-08-25 18:48:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1cfd39b74c3be23a79f9e4ba11e5bd31f171fbe3,1cfd39b74c3be23a79f9e4ba11e5bd31f171fbe3,"Merge pull request #379 from chassing/master
+
+bump version to 0.6.0"
+chassing,2017-08-25 18:33:33,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f64502eb4eea541bc41220009dd8156d04b76e43,f64502eb4eea541bc41220009dd8156d04b76e43,"bump version to 0.6.0
+
+all lot of changes since June 2016"
+kennethreitz,2017-08-21 00:46:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b5466a026af4c028fd0977b5936f38737d402d10,b5466a026af4c028fd0977b5936f38737d402d10,"btc
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2017-08-21 00:38:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0167fd01be2d1b7048294d35803b89250f846668,0167fd01be2d1b7048294d35803b89250f846668,"coins
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2017-08-04 23:40:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2e94212886e4c9531b8ba7f55f4fb0b8134e10ac,2e94212886e4c9531b8ba7f55f4fb0b8134e10ac,"chunked encoding
+
+Signed-off-by: Kenneth Reitz <me@kennethreitz.org>"
+kennethreitz,2017-08-04 23:33:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6f6b82474572a7788de1106ce32c7e856eb8a8b8,6f6b82474572a7788de1106ce32c7e856eb8a8b8,"Merge pull request #366 from MarekR22/DigestStaleScenerio
+
+Digest authentication and expiried nonce - stale=true scenerio"
+kennethreitz,2017-07-27 20:13:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2f41299565f7000d480fd9d121e855a5abb868b5,2f41299565f7000d480fd9d121e855a5abb868b5,"Merge pull request #368 from OndrejIT/docker
+
+Update dockerfile"
+kennethreitz,2017-07-27 20:12:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/780ad83a81f0617913f06aa757b1c53c795b2d95,780ad83a81f0617913f06aa757b1c53c795b2d95,"Merge pull request #369 from macheins/extend-anything
+
+Allow all methods on /anything"
+macheins,2017-07-19 11:57:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6274e0999fc15e48ba2b50946a89287a1c29b9e6,6274e0999fc15e48ba2b50946a89287a1c29b9e6,Allow all methods on /anything
+OndrejIT,2017-07-18 18:02:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/650f829b2ccc843456a66ba926fd0aafb5a8f15f,650f829b2ccc843456a66ba926fd0aafb5a8f15f,Update dockerfile
+sigmavirus24,2017-07-14 11:01:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5b3a5380dd34171d4b4bc9b409265d1d6d884d2d,5b3a5380dd34171d4b4bc9b409265d1d6d884d2d,"Merge pull request #367 from fanofxiaofeng/patch-1
+
+each 'id' should only appear once"
+fanofxiaofeng,2017-07-14 04:59:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fdda7bc714382a852ff189e6c8bb9bb296867287,fdda7bc714382a852ff189e6c8bb9bb296867287,"each 'id' attribute should only appear once
+
+h2 tag in line 5 and line 11 both have id 'ENDPOINTS', I suppose the h2 tag in line 5 has a wrong id."
+MarekR22,2017-07-09 17:26:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/84edf61ad61ccd4bb7ecdf47fdeeffd49014cb73,84edf61ad61ccd4bb7ecdf47fdeeffd49014cb73,Split and strip qop.
+MarekR22,2017-07-08 09:27:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/477721960c08bd9c621ad196f4facd8cc78a6bcc,477721960c08bd9c621ad196f4facd8cc78a6bcc,Add test for wrong password and expired (reused) nonce value
+MarekR22,2017-07-08 08:59:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7e8015237d23ea5daddf2b1e47bca1eac47b83ea,7e8015237d23ea5daddf2b1e47bca1eac47b83ea,Add test to verify „stale after” scenario
+MarekR22,2017-07-06 21:24:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0c968cbd35f2fb7d6e32b1de18b2631a70c26aab,0c968cbd35f2fb7d6e32b1de18b2631a70c26aab,Refactor digest_auth test to be able add missing test cases in next commits
+MarekR22,2017-07-06 06:14:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8f93e11699bdb076edf265872a15e26d8abcc02f,8f93e11699bdb076edf265872a15e26d8abcc02f,"Improve when stale is reported
+
+- when authentication fails cookie „last_nonce” is set, this cookie is used to check that next
+  authentication is not used for next authentication attempt. If it is challenge response is send
+  with stale=true flag."
+MarekR22,2017-06-25 17:59:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/791e31cba4a4545352fa7d6e2d7019910166160a,791e31cba4a4545352fa7d6e2d7019910166160a,"Move stale functionality to main digest url
+
+- now digest url will contain number of request after which request with proper credentials
+  will be rejected since nonce value expiries"
+kennethreitz,2017-06-03 22:24:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3463b5ec56795a32ac44bb3e6af8ff720198ce10,3463b5ec56795a32ac44bb3e6af8ff720198ce10,runscope
+kennethreitz,2017-06-01 17:56:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a1a74f06fae4b90d499f5604d7d35082a8585406,a1a74f06fae4b90d499f5604d7d35082a8585406,"Merge pull request #360 from Flimm/anything
+
+Add /anything route"
+Flimm,2017-06-01 17:53:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/df3f0501a365e3dfc5e275eef090fc4ac1628c55,df3f0501a365e3dfc5e275eef090fc4ac1628c55,Add /anything route
+kennethreitz,2017-05-26 13:07:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/49cffc839f4e0d6bb4ad62db113808fd9d8987f0,49cffc839f4e0d6bb4ad62db113808fd9d8987f0,"Merge pull request #358 from mattwwarren/post-response-headers-357
+
+add POST to methods kwarg"
+kennethreitz,2017-05-25 17:11:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8d0c38b98035d845dc57acc494906b72e3f9098e,8d0c38b98035d845dc57acc494906b72e3f9098e,"Merge pull request #354 from janko-m/mention-chunked-encoding
+
+Mention that ""stream-bytes"" uses chunked encoding"
+kennethreitz,2017-05-15 19:50:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8779663d3bc2e10c218df282c421d43ee6f25b0b,8779663d3bc2e10c218df282c421d43ee6f25b0b,fix
+kennethreitz,2017-05-15 19:48:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/be842a46c46c3da75037ea2f90c0945da004ff18,be842a46c46c3da75037ea2f90c0945da004ff18,updated html
+kennethreitz,2017-05-11 15:41:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a39de83be1b7330f6a99981bf54152c525847299,a39de83be1b7330f6a99981bf54152c525847299,Flask-Common
+kennethreitz,2017-05-11 15:40:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a649abcb10ffe3b52acfad745d4597598204ac52,a649abcb10ffe3b52acfad745d4597598204ac52,meinheld server
+janko,2017-05-11 10:04:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e3ebd829b0a3bcb5641a9f2dfaf432fad2db1505,e3ebd829b0a3bcb5641a9f2dfaf432fad2db1505,"Mention that ""stream-bytes"" uses chunked encoding"
+kennethreitz,2017-04-24 16:43:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cb6795c0c66b3d8246a5a0bd099bebdf527fad52,cb6795c0c66b3d8246a5a0bd099bebdf527fad52,"Merge pull request #350 from mmattozzi/master
+
+Adding a /etag URL for testing If-Match and If-None-Match conditional logic"
+mmattozzi,2017-04-22 20:26:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7061616db859e0a6ae469647dd380c6b97e4af60,7061616db859e0a6ae469647dd380c6b97e4af60,Adding an etag URL for testing If-Match and If-None-Match logic
+nateprewitt,2017-03-30 16:37:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ef4f34adc99b4cb4490ea4f8ecf9df723c7adc23,ef4f34adc99b4cb4490ea4f8ecf9df723c7adc23,"Merge pull request #346 from nateprewitt/range_content_length
+
+fix Content-Length header values for /range endpoint"
+nateprewitt,2017-03-30 15:47:28,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b64036b3165655a06a749c7fb8408633ccd5dcd6,b64036b3165655a06a749c7fb8408633ccd5dcd6,fix Content-Length header value for /range endpoint
+kennethreitz,2017-03-22 17:01:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7dc2417f9c90ef79846b0ba1979d42be18c64dea,7dc2417f9c90ef79846b0ba1979d42be18c64dea,got rid of changelog
+kennethreitz,2017-03-22 16:59:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3945913c0f0e131d209e184940b525cdb01f0676,3945913c0f0e131d209e184940b525cdb01f0676,Connect-Time
+kennethreitz,2017-03-22 16:58:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/48ea5662def83fb3869117d1563a475202a770fb,48ea5662def83fb3869117d1563a475202a770fb,Total-Route-Time
+kennethreitz,2017-03-22 16:58:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0b7fadcb1d21ffd5314e87846d105586ebc35441,0b7fadcb1d21ffd5314e87846d105586ebc35441,via
+kennethreitz,2017-03-22 16:57:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f36890668f8fe3ef1be747e2a2b24f137e5ab86c,f36890668f8fe3ef1be747e2a2b24f137e5ab86c,fix helpers
+kennethreitz,2017-03-22 16:55:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4a8f70bcb8e0e076a6428f8a6f8de08cc16b38d3,4a8f70bcb8e0e076a6428f8a6f8de08cc16b38d3,hide x-request-id #342
+kennethreitz,2017-03-20 06:21:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b1118bbd23b493e038955bd3fb57006262e738ba,b1118bbd23b493e038955bd3fb57006262e738ba,"Revert ""Revert ""no rate limiting""""
+
+This reverts commit f8a7a6221c3e00d0125d7df552acbf785f4a0e63."
+kennethreitz,2017-03-20 02:36:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3d52c2a8b5f591ef7bc0eb86c177cf3a544e0bdd,3d52c2a8b5f591ef7bc0eb86c177cf3a544e0bdd,kennethreitz
+kennethreitz,2017-03-20 02:35:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e6e0300a5fe45d14e05adb1e75a541d24a4f98a1,e6e0300a5fe45d14e05adb1e75a541d24a4f98a1,tox changes
+kennethreitz,2017-03-20 02:26:55,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f8a7a6221c3e00d0125d7df552acbf785f4a0e63,f8a7a6221c3e00d0125d7df552acbf785f4a0e63,"Revert ""no rate limiting""
+
+This reverts commit f1042e3f2193b66cd4d0ff1e2b28851522abc379."
+kennethreitz,2017-03-20 02:25:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f1042e3f2193b66cd4d0ff1e2b28851522abc379,f1042e3f2193b66cd4d0ff1e2b28851522abc379,no rate limiting
+kennethreitz,2017-03-20 02:19:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/934b7908c65c8f7203bd859adafc0dfc9c2a2a79,934b7908c65c8f7203bd859adafc0dfc9c2a2a79,get_ipaddr
+kennethreitz,2017-03-20 02:12:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/df3c5ba2d560e789d6caf4e6711a1b15b577c356,df3c5ba2d560e789d6caf4e6711a1b15b577c356,rate-limiting
+kennethreitz,2017-03-20 01:58:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c8bcbb944cc4ce46521e4db4c4c766ef4a0c0916,c8bcbb944cc4ce46521e4db4c4c766ef4a0c0916,use gevent
+kennethreitz,2017-03-20 01:45:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8ad85bf12a178d8896a28f17f9bb838ed0a438dc,8ad85bf12a178d8896a28f17f9bb838ed0a438dc,typo
+kennethreitz,2017-03-20 01:44:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7df0b59801bd385e3e85844df97279d36e625bcc,7df0b59801bd385e3e85844df97279d36e625bcc,add sentry to httpbin application
+kennethreitz,2017-03-17 17:54:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4e7724ca6677569d0526ad06411b1f9d6e805d23,4e7724ca6677569d0526ad06411b1f9d6e805d23,"fine, 3.4 for whatever reason"
+kennethreitz,2017-03-17 17:45:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f76c685239395e06323820de9e7648c6b7329d7d,f76c685239395e06323820de9e7648c6b7329d7d,update tox
+kennethreitz,2017-03-17 17:16:57,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7d00169ca7b8bcedc08f3c70992bc4a10e3a181b,7d00169ca7b8bcedc08f3c70992bc4a10e3a181b,Merge branch 'master' of github.com:kennethreitz/httpbin
+kennethreitz,2017-03-17 17:16:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/47093ca9346b0091975d2cae56b1a0fceba185e7,47093ca9346b0091975d2cae56b1a0fceba185e7,no google analytics
+kennethreitz,2017-03-17 16:59:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/51ec6b9dd053c9d517fde9d14bab1fed8ee80f8d,51ec6b9dd053c9d517fde9d14bab1fed8ee80f8d,Update README.md
+kennethreitz,2017-03-17 16:55:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fb668b582df693a3c8f6ba885f4dfc9e630b4d32,fb668b582df693a3c8f6ba885f4dfc9e630b4d32,updated dockerfile
+kennethreitz,2017-03-17 16:46:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2fc2a3f47a685a438bc3d7f12e3a2ae3f8933d32,2fc2a3f47a685a438bc3d7f12e3a2ae3f8933d32,Update Dockerfile
+kennethreitz,2017-03-17 16:46:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e381c102dd3733437e33cf8fe4681e8950949daa,e381c102dd3733437e33cf8fe4681e8950949daa,"Merge pull request #216 from Lukasa/dockerfile
+
+[RFC] Dockerize"
+kennethreitz,2017-03-17 00:33:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e06a92fedcb16259d6153a0992f19bb11d2edfbd,e06a92fedcb16259d6153a0992f19bb11d2edfbd,spelling
+kennethreitz,2017-03-17 00:32:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/345822e724cf23dc6284f5826ce5ca4efb3cfc33,345822e724cf23dc6284f5826ce5ca4efb3cfc33,gaug.es
+kennethreitz,2017-03-17 00:29:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/33530aedb9b519dea78dc5d5a76583b3f545f70d,33530aedb9b519dea78dc5d5a76583b3f545f70d,changelog
+kennethreitz,2017-03-17 00:28:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7a66d7dc0194897fc6026b642f347cb2313b1c66,7a66d7dc0194897fc6026b642f347cb2313b1c66,brotli
+kennethreitz,2017-03-17 00:22:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/caf7a62534862153f7c3c1a9def5309859c8611f,caf7a62534862153f7c3c1a9def5309859c8611f,brotlipy
+kennethreitz,2017-03-17 00:21:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/36c68180d0631e8063a823fd90c882d6bc3782df,36c68180d0631e8063a823fd90c882d6bc3782df,"Merge pull request #254 from Lukasa/brotli
+
+Add a Brotli endpoint."
+kennethreitz,2017-03-17 00:21:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/341ddcc471daec659abd6eab45eed3e0e2fb592a,341ddcc471daec659abd6eab45eed3e0e2fb592a,"Merge pull request #312 from felixpalta/Runscope-GH-296-fix-drip-with-zero-numbytes
+
+Fix error 500 on drip due to division by zero (issue #296)"
+kennethreitz,2017-03-17 00:20:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f47d0b41bf66abbef2cb29220f178bf3717c545b,f47d0b41bf66abbef2cb29220f178bf3717c545b,"Merge pull request #314 from keflavich/content-length
+
+Return content-length in 'range' requests"
+kennethreitz,2017-03-17 00:16:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/027bb4e3184579ec3d63f9ec555d40dc45198d14,027bb4e3184579ec3d63f9ec555d40dc45198d14,kenneth reitz
+kennethreitz,2017-03-17 00:13:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5f03bba84cff1e7b3d3c720e9763060aabeff060,5f03bba84cff1e7b3d3c720e9763060aabeff060,md
+kennethreitz,2017-03-17 00:11:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7263b9ae976c9435f0290d0c4d5184afe65e24dc,7263b9ae976c9435f0290d0c4d5184afe65e24dc,readme
+kennethreitz,2017-03-17 00:10:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7f9e21d6ac258d1214af23764472ad3119b76bd5,7f9e21d6ac258d1214af23764472ad3119b76bd5,image
+kennethreitz,2017-03-17 00:08:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/17ecce689d6318837f155b15844f542b49e4ffc8,17ecce689d6318837f155b15844f542b49e4ffc8,more info
+kennethreitz,2017-03-17 00:08:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c81d0308993525cfe910c691dae8b5a1737aed25,c81d0308993525cfe910c691dae8b5a1737aed25,httpbin
+kennethreitz,2017-03-17 00:07:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6646c516d1943070d95b055dce7fddef75422b4a,6646c516d1943070d95b055dce7fddef75422b4a,simplify
+kennethreitz,2017-03-17 00:07:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/da301be0fefd47fe5b1a1b6e6eff95ebb8d127c9,da301be0fefd47fe5b1a1b6e6eff95ebb8d127c9,trying
+kennethreitz,2017-03-17 00:06:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e9f4e3cba33e75bde4bbfb50c9783a24cdb10939,e9f4e3cba33e75bde4bbfb50c9783a24cdb10939,that's it
+kennethreitz,2017-03-17 00:05:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/00b8162f19090a4db26ccb2384fb4779ec69a3ec,00b8162f19090a4db26ccb2384fb4779ec69a3ec,really simplify
+kennethreitz,2017-03-17 00:04:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0a8adb664cdc6072eb7d91e718a70f976bd1a053,0a8adb664cdc6072eb7d91e718a70f976bd1a053,simplify
+kennethreitz,2017-03-17 00:03:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5a9722b9c0fe48fb77d6d2529362aab7934e5268,5a9722b9c0fe48fb77d6d2529362aab7934e5268,shrinking
+kennethreitz,2017-03-17 00:02:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/288f803892a13472e697a3402a35d5ff78b9f9ff,288f803892a13472e697a3402a35d5ff78b9f9ff,see if this works
+kennethreitz,2017-03-17 00:01:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6e9ae8bb072c040bf59a19d516faa2c74578efa0,6e9ae8bb072c040bf59a19d516faa2c74578efa0,fix readme
+kennethreitz,2017-03-17 00:00:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fb6d2f745fc929959422872cc0c5d58bb8242e5f,fb6d2f745fc929959422872cc0c5d58bb8242e5f,simplify readme
+kennethreitz,2017-03-16 23:59:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/017810bcbdad7199b98f810828cef8329ee316e1,017810bcbdad7199b98f810828cef8329ee316e1,see if this fixes it
+kennethreitz,2017-03-16 23:56:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/519196d5abf72518bdf74619f1c4c55648909a36,519196d5abf72518bdf74619f1c4c55648909a36,fix failing test
+kennethreitz,2017-03-16 23:51:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/01ff7a088aded21d5d72e76c0965f0683ca05afe,01ff7a088aded21d5d72e76c0965f0683ca05afe,fix
+kennethreitz,2017-03-16 23:49:22,https://api.github.com/repos/postmanlabs/httpbin/git/commits/673495bab32c64440f19756fc49356d2a1d1495d,673495bab32c64440f19756fc49356d2a1d1495d,"remove links to http2bin, since it's down"
+kennethreitz,2017-03-16 20:35:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5eb18172826dd840347ec0de4eb1a5ed1cf957d8,5eb18172826dd840347ec0de4eb1a5ed1cf957d8,migrate to pipfile
+kennethreitz,2017-03-16 19:55:22,https://api.github.com/repos/postmanlabs/httpbin/git/commits/41e25c5d6677a7d5fa6aacf40d6899c0f580c80f,41e25c5d6677a7d5fa6aacf40d6899c0f580c80f,copyright
+kennethreitz,2017-03-16 19:52:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5c8f5c43e77a620e2269cde4ca7f363a477bf71a,5c8f5c43e77a620e2269cde4ca7f363a477bf71a,Merge branch 'master' of https://git.heroku.com/httpbin-org
+kennethreitz,2017-03-16 19:52:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cbbb1710e0bd5ad5542b271e4f4b53d7dc253254,cbbb1710e0bd5ad5542b271e4f4b53d7dc253254,a kennethreitz project
+Lukasa,2015-10-07 08:50:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c916b2197e049f13f939c77b8d3d1b1179a36442,c916b2197e049f13f939c77b8d3d1b1179a36442,"Brotli content-encoding renamed to 'br'.
+
+See https://bugzilla.mozilla.org/show_bug.cgi?id=1211916"
+Lukasa,2015-10-05 11:22:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/dfed4ad63511686d51aac26bbd751cffe37ee1f5,dfed4ad63511686d51aac26bbd751cffe37ee1f5,Add basic do-almost-nothing Brotli endpoint test
+Lukasa,2015-10-05 11:17:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b2bec66dc9233cf1020ea2997244ef4b34c866c3,b2bec66dc9233cf1020ea2997244ef4b34c866c3,Add a Brotli endpoint.
+kennethreitz,2017-03-14 21:21:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d5150ddb6d3a25ff41188451babd561fbaa36236,d5150ddb6d3a25ff41188451babd561fbaa36236,empty commit
+kennethreitz,2017-03-14 21:14:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e5d7751a338833d320365598a5a1f7570ccc661b,e5d7751a338833d320365598a5a1f7570ccc661b,Merge branch 'master' of https://git.heroku.com/httpbin-org
+kennethreitz,2017-03-14 21:14:04,https://api.github.com/repos/postmanlabs/httpbin/git/commits/db56addd692bbf0aa2a1676bb4604bbfb0d5f29a,db56addd692bbf0aa2a1676bb4604bbfb0d5f29a,don't specify gunicorn workers
+kennethreitz,2017-03-14 21:13:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3282bb2544de9f610e9041b949fd614aaef219d7,3282bb2544de9f610e9041b949fd614aaef219d7,a kenneth reitz production
+kennethreitz,2017-03-14 21:13:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4943ec43e2f01dfaa5090475b843410b0248fcd6,4943ec43e2f01dfaa5090475b843410b0248fcd6,update python version
+kennethreitz,2017-03-14 21:10:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/65e6a05d0bf152ad14b37a49994572316d6eb000,65e6a05d0bf152ad14b37a49994572316d6eb000,"Merge pull request #319 from puiterwijk/fix-response
+
+Use Response.data with older Werkzeug versions"
+kennethreitz,2017-03-14 21:10:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6290e0414abef39e81e9c477847ef1d597c14966,6290e0414abef39e81e9c477847ef1d597c14966,"Merge pull request #332 from andrewgaul/endpoints
+
+Add missing endpoints to README"
+kennethreitz,2017-03-14 21:00:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b4b890206a2d046dea623835ba304ea149ee963f,b4b890206a2d046dea623835ba304ea149ee963f,empty commit
+gaul,2017-01-20 02:00:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e00443ad157bca4a713a6875d58c63c1ebf57e28,e00443ad157bca4a713a6875d58c63c1ebf57e28,Add missing endpoints to README
+sigmavirus24,2017-02-19 14:39:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3fe84ea4760172f2ce2fde709127c3814fa0e88f,3fe84ea4760172f2ce2fde709127c3814fa0e88f,"Merge pull request #330 from kingslef/fix/500-invalid-status-code
+
+status/code: fix error 500 on invalid status code
+
+Closes #329"
+kingslef,2017-02-19 13:48:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/451a835c142e6c72a0ced7b25186c5f67edb05e5,451a835c142e6c72a0ced7b25186c5f67edb05e5,README: add a note that /status/code supports multiple codes
+kingslef,2017-02-19 13:44:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/94e64b45989113f40bfc419836ac5ba695e09a02,94e64b45989113f40bfc419836ac5ba695e09a02,"status/code: return 400 on invalid status code
+
+Request such as `/status/4!9` caused a `ValueError` exception when
+trying to cast the status to an int. Now the client is greeted with
+`400` and a body of `Invalid status code`.
+
+Fixes #329."
+sigmavirus24,2017-01-21 13:59:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a22fc1fb65adf8dda9888663a7e778e58c9b83e6,a22fc1fb65adf8dda9888663a7e778e58c9b83e6,"Merge pull request #325 from andrewgaul/clarify-image-endpoints
+
+Clarify image endpoints"
+sigmavirus24,2017-01-21 13:52:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/39878e86892fd2a7f7fec749c417254ed5f83b75,39878e86892fd2a7f7fec749c417254ed5f83b75,"Merge pull request #326 from andrewgaul/readme
+
+Correct display of endpoints"
+gaul,2017-01-20 01:46:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0d60c576daa8be883715325c0956aa011afc0ba6,0d60c576daa8be883715325c0956aa011afc0ba6,"Correct display of endpoints
+
+Over-long line added in eacc7ac58de6701416cbe5d44a4d3dfa4ba679a2
+prevents GitHub display of table."
+gaul,2017-01-19 20:58:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/08e979116faf3ae21834ac54fd321030448c4732,08e979116faf3ae21834ac54fd321030448c4732,"Clarify image endpoints
+
+These do not return HTML pages with a link to an image, they return
+images."
+puiterwijk,2016-12-30 21:07:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/512fbbd6109bc995756a71813665504328b7815d,512fbbd6109bc995756a71813665504328b7815d,"Use Response.data with older Werkzeug versions
+
+Response.get_data did not exist in older versions of Flask/Werkzeug,
+and is even now not documented.
+This will make httpbin work with either the new version where it does
+exist, and the older versions where it doesn't.
+
+Signed-off-by: Patrick Uiterwijk <patrick@puiterwijk.org>"
+keflavich,2016-12-24 20:41:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b4677d74666a5fb5b491d5395aa83890a9853030,b4677d74666a5fb5b491d5395aa83890a9853030,"should return content-length when requesting range, and that
+content-length should be the range specified in the url (i.e.,
+range/1024 has length 1024)"
+felixpalta,2016-12-04 20:54:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/62fbdd8c11974c4d5df6309117070bdfc04331c2,62fbdd8c11974c4d5df6309117070bdfc04331c2,Check numbytes parameter before initial delay
+felixpalta,2016-12-04 20:43:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bba7dd8ee43a0315f11f6d4dd1e6dfe84efeae46,bba7dd8ee43a0315f11f6d4dd1e6dfe84efeae46,Add test for drip with invalid numbytes parameter
+felixpalta,2016-12-04 20:08:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8609b0a1db5464c57d5abd038293d8af5df6f7cb,8609b0a1db5464c57d5abd038293d8af5df6f7cb,"Fix divide by zero error in drip
+
+It occured when 'numbytes' parameter was set to 0. In this case 'drip' should return 400('Bad request')."
+sigmavirus24,2016-12-04 20:38:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cff242d46f8068f3f1eacaf48ba0f7bb1cab20e4,cff242d46f8068f3f1eacaf48ba0f7bb1cab20e4,"Merge pull request #308 from felixpalta/Runscope-GH-307-fix-digest-auth-int
+
+GH-307 Fix error 500 on digest auth with qop='auth-int'"
+felixpalta,2016-12-04 18:33:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e7e9163625670d750540deaa9764b6a1ac51c6ab,e7e9163625670d750540deaa9764b6a1ac51c6ab,"Encode HA2() string parameters 'method', 'uri' and 'H(entityBody)'
+
+This fixes error 500, when httpbin is run with python3 and digest-auth is attempted with qop='auth-int'."
+felixpalta,2016-12-04 18:31:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/45058da87298122ffaafdb2f37d0f966157d9c57,45058da87298122ffaafdb2f37d0f966157d9c57,"Minor refactoring of _test_digest_auth
+
+Instead of joining encoded (binary) strings, join unicode strings first, then encode result, which leads to shorter and clearer code."
+felixpalta,2016-12-03 21:41:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/562a60bc233724da42879116eeee22aac3063b12,562a60bc233724da42879116eeee22aac3063b12,"Update comments, minor fixes"
+felixpalta,2016-12-03 21:25:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ec17414e947d7b7b963e772a598f63e83cb0fcf8,ec17414e947d7b7b963e772a598f63e83cb0fcf8,"Enable test cases for Digest auth requests with or without body
+
+When quality-of-protection (qop) is 'auth-int', the hash of request body is used to create digest response."
+felixpalta,2016-12-03 21:17:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9816125df33528ece3a706382e3b36a5192bc679,9816125df33528ece3a706382e3b36a5192bc679,Add test for different combinations of digest auth parameters
+felixpalta,2016-12-03 20:34:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ada6bd1508acab1ef98f0aee6883b99cb9cad2fd,ada6bd1508acab1ef98f0aee6883b99cb9cad2fd,Check response status code in test_digest_auth_with_wrong_password()
+felixpalta,2016-12-03 20:05:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f198dab947032095e937074bb193f339ba3918b9,f198dab947032095e937074bb193f339ba3918b9,"Add test implementation for Digest authentication
+
+It can be used for testing of all available combinations of qop (auth/auth-int/not specified) and algorithms (MD5, SHA-256)."
+felixpalta,2016-10-19 12:35:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cc2fc5ea14528372aee6b0a6197125819d9338d7,cc2fc5ea14528372aee6b0a6197125819d9338d7,"Pass algorithm parameter to H()
+
+This fixes error 500 on digest-auth test with qop='auth-int' (#307)"
+zhulongcheng,2016-10-04 13:48:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ce328618d8cd90ca8a5c16156e429bc4d7741780,ce328618d8cd90ca8a5c16156e429bc4d7741780,remove unused variable `form` from `helpers.get_dict` (#304)
+jeroen,2016-09-28 16:09:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f30e81eeeb09fdb54398183ae407d4db3992b695,f30e81eeeb09fdb54398183ae407d4db3992b695,advertise HTTP/2 mirror (#303)
+danstender,2016-08-18 16:09:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/440e2a525d41060488ae3fc5ef837bba8bc121b9,440e2a525d41060488ae3fc5ef837bba8bc121b9,use io.open() for long_description from file (#299)
+sigmavirus24,2016-08-15 11:29:57,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3f417eb81885f9e5fd99282121e3df9d619583c1,3f417eb81885f9e5fd99282121e3df9d619583c1,Add changelog notes for 0.5.0
+sigmavirus24,2016-08-11 10:47:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0717fae1bb9171caf9eaea7022afa662d4c45a9b,0717fae1bb9171caf9eaea7022afa662d4c45a9b,"Fix template usage of url_for(""digest_auth"", ...)"
+sigmavirus24,2016-08-11 00:49:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9259ce013695e5238d9fbefb3b369bc283f322fd,9259ce013695e5238d9fbefb3b369bc283f322fd,"Bump version to 0.5.0
+
+Hopefully we can get a release out on Monday"
+sigmavirus24,2016-08-11 00:47:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6f5d34f730860b476b720fc88b18563a5e414897,6f5d34f730860b476b720fc88b18563a5e414897,"Merge branch 'master' of https://github.com/Jaaap/httpbin into digest-auth-sha256
+
+Conflicts:
+    httpbin/templates/httpbin.1.html"
+sigmavirus24,2016-08-11 00:43:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c5015170b2d4e984ddd1d3cc5a3add29cd8fabbf,c5015170b2d4e984ddd1d3cc5a3add29cd8fabbf,"Merge branch 'master' of https://github.com/mansilladev/httpbin into drip-limit
+
+Conflicts:
+    README.rst"
+sigmavirus24,2016-08-10 11:51:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/eacc7ac58de6701416cbe5d44a4d3dfa4ba679a2,eacc7ac58de6701416cbe5d44a4d3dfa4ba679a2,"Update documentation with new redirect-to examples
+
+redirect-to now allows for a status_code parameter. This updates the
+index page and README to reflect that appropriately."
+tzickel,2016-08-10 11:20:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/aea465074e34f5ece32027a19c4a95bf6d482fbd,aea465074e34f5ece32027a19c4a95bf6d482fbd,Added supports for non-get redirect-to with other status_code (#284)
+sigmavirus24,2016-08-10 11:18:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0cd142b27575177c15d608827cbcb4355729715d,0cd142b27575177c15d608827cbcb4355729715d,"Do not use SSH URL for cloning
+
+This allows non-GitHub users to easily clone the repository as well.
+The SSH URL would require SSH authentication which in turn requires a
+GitHub account and we should never require someone to have one to use
+httpbin from source."
+wdschei,2016-08-10 11:15:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a9721f0293ee79b5859b43af16fb9de50d468dd8,a9721f0293ee79b5859b43af16fb9de50d468dd8,"Expand the direct install and run instructions
+
+Update the direct install and run instructions.
+
+See also #287"
+sigmavirus24,2016-08-10 11:12:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fc19ce3f2eb1fba3160a1b04f388404a65029b5c,fc19ce3f2eb1fba3160a1b04f388404a65029b5c,"Merge pull request #298 from Sjord/response-headers-without-content-length
+
+Don't check Content-Length header anymore"
+Sjord,2016-07-20 11:15:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f4a937e2cf976bb26301f7e5106c7c4c19e1b3c4,f4a937e2cf976bb26301f7e5106c7c4c19e1b3c4,"Fix python3 tests
+
+`headers.lists()` returns a generator, but `jsonify` can't handle generators.
+Make it a list explicitly."
+Sjord,2016-07-20 10:22:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8cfa026d44cadf07971b787955352cd6607a04e5,8cfa026d44cadf07971b787955352cd6607a04e5,"Don't check Content-Length header anymore
+
+Because it is not present in Flask 0.11. We keep merging the headers from the `headers` variable with the headers from the `response.headers`, because changing the response may change the headers, especially the `Content-Length` header. In Flask 0.11 this `Content-Length` header is no longer present in the `response.headers`, so we check whether the `response.data` has changed.
+
+Fixes #290"
+sigmavirus24,2016-06-30 12:00:22,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9b8de5d43f9666b71ac064dfaa2029d9558aa587,9b8de5d43f9666b71ac064dfaa2029d9558aa587,"Merge pull request #293 from waldyrious/patch-1
+
+add license title"
+waldyrious,2016-06-30 09:54:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b97fb7a97acf5bce2f2b6487e9721abdaeba8448,b97fb7a97acf5bce2f2b6487e9721abdaeba8448,"add license title
+
+It's not strictly required, but it's useful metadata, and part of the recommended license template text (see http://choosealicense.com/licenses/isc/ and https://opensource.org/licenses/isc-license)"
+sigmavirus24,2016-03-20 18:51:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3bb7b8f9aa0894bc7a27be2a2ca79f789ceb2cb2,3bb7b8f9aa0894bc7a27be2a2ca79f789ceb2cb2,"Merge pull request #253 from s-chizhik/feature
+
+Add ability to specify port/host to run on"
+sigmavirus24,2016-02-11 02:31:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/dee15b5c7f8f5c22c1b128114c03445bf5612828,dee15b5c7f8f5c22c1b128114c03445bf5612828,"Merge pull request #271 from mozillazg/fix-not-in
+
+`not x in` -> `x not in`"
+sigmavirus24,2016-02-11 02:31:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9efbdefcdc3cdc58b857d44dedc83cedca9ed825,9efbdefcdc3cdc58b857d44dedc83cedca9ed825,"Merge pull request #272 from mozillazg/remove-_encoded
+
+remove unused variable '_encoded'"
+sigmavirus24,2016-02-11 02:31:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/15ed6f7a5f4f0c11ec6c412d073b758b297db86d,15ed6f7a5f4f0c11ec6c412d073b758b297db86d,"Merge pull request #273 from mozillazg/patch-1
+
+str.lower(k) -> k.lower()"
+sigmavirus24,2016-02-11 02:30:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/74af8f20555e863a5ca90a2660d6bf675a306a1a,74af8f20555e863a5ca90a2660d6bf675a306a1a,"Merge pull request #276 from sigmavirus24/add-release-machinery
+
+Add machinery to create/upload releases"
+sigmavirus24,2016-01-27 16:33:55,https://api.github.com/repos/postmanlabs/httpbin/git/commits/dc7e81c4a1a372f2cae25d126066c275e5ebaf06,dc7e81c4a1a372f2cae25d126066c275e5ebaf06,"Add machinery to create/upload releases
+
+This uses twine to upload wheels and source distributions that we create
+for httpbin."
+mozillazg,2016-01-08 14:52:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/887b86059babaa2ac8e6d359d9b266b0d3444d65,887b86059babaa2ac8e6d359d9b266b0d3444d65,str.lower(k) -> k.lower()
+mozillazg,2016-01-08 06:51:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b4e6ab220d1efe564d5bf99f54a0935113821c65,b4e6ab220d1efe564d5bf99f54a0935113821c65,remove unused variable '_encoded'
+mozillazg,2016-01-08 06:49:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/82bbde7c73f51fc3c305f2c0f04a2d4a8e6a39f1,82bbde7c73f51fc3c305f2c0f04a2d4a8e6a39f1,`not x in` -> `x not in`
+sigmavirus24,2016-01-05 14:47:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5433f799e817ecfaf0d4ef72cff84b650e1fefc1,5433f799e817ecfaf0d4ef72cff84b650e1fefc1,"Merge pull request #270 from 0-wiz-0/master
+
+Avoid UTF-8 characters to let setup.py run in ASCII locale.
+
+Closes #269"
+0-wiz-0,2016-01-05 14:12:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/677c1a412093bff96549b62fd341a0362a98bfa0,677c1a412093bff96549b62fd341a0362a98bfa0,Avoid UTF-8 characters to let setup.py run in ASCII locale.
+sigmavirus24,2015-12-23 04:37:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/55faeb3cfb0b4b0b99e52d36b601bcd98b739719,55faeb3cfb0b4b0b99e52d36b601bcd98b739719,"Merge pull request #268 from Runscope/gevent-1.0.2
+
+Upgrade gevent to 1.0.2"
+sigmavirus24,2015-11-26 16:48:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5afd1e9f60af0a3395273d02cb741598f83550fe,5afd1e9f60af0a3395273d02cb741598f83550fe,"Merge pull request #267 from luhkevin/luhkevin/pull/277
+
+Changelog and setup updated for floating point support"
+luhkevin,2015-11-26 05:39:49,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a016d78df806944d4725b1ba224298e2fd794493,a016d78df806944d4725b1ba224298e2fd794493,Changelog and setup updated to 0.4.1; floating-point support for /delay endpoint
+sigmavirus24,2015-11-25 14:06:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6cdc1fb4f6a73926e52f5ecc663a02008b04759a,6cdc1fb4f6a73926e52f5ecc663a02008b04759a,"Merge pull request #266 from luhkevin/dev
+
+Floating point type conversion"
+luhkevin,2015-11-24 23:50:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b91e515929da06dde837547392eba8b124692312,b91e515929da06dde837547392eba8b124692312,Converted delay parameter to float from unicode
+sigmavirus24,2015-11-22 14:42:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4763d4761407dce3a99be3c6640c14dcd4be30fe,4763d4761407dce3a99be3c6640c14dcd4be30fe,"Merge branch 'floating-point-delay'
+
+Closes #265"
+luhkevin,2015-11-20 21:54:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/eef6c0f665a625aee403bc8c7d6124c6a5089313,eef6c0f665a625aee403bc8c7d6124c6a5089313,"Remove int constraint on delay
+
+This allows the delay endpoint to accept floats as delay values."
+sigmavirus24,2015-11-19 14:11:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/762079cbd3030f57fa9f96a3d32de2f4bd2a5f61,762079cbd3030f57fa9f96a3d32de2f4bd2a5f61,"Merge pull request #264 from JensRantil/clarify-upper-limits
+
+doc(limits): make the upper limit more explicit"
+JensRantil,2015-11-19 09:19:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/21f8d4231c5b5e7d72dbcb66e78bdf4a841e256d,21f8d4231c5b5e7d72dbcb66e78bdf4a841e256d,"doc(limits): make the upper limit more explicit
+
+I understood it as subtraction (and didn't understand why it was
+subtracting)."
+Jaaap,2015-11-06 12:48:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/82e67ed2101bf653f1ca4f82156f661a3d986f26,82e67ed2101bf653f1ca4f82156f661a3d986f26,"Made the Digest algorithm code backwards compatible with old URL style, /digest-auth/auth/user/passwd now works again"
+Jaaap,2015-11-04 14:30:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/14b7f46c7123e8ab6e6a7ac0df18fd55ddc8e390,14b7f46c7123e8ab6e6a7ac0df18fd55ddc8e390,"Added support for another Digest algorithm, SHA256."
+kevin1024,2015-10-22 19:03:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c688307868a2ace65b29b1e6d43b593ca154c913,c688307868a2ace65b29b1e6d43b593ca154c913,bump version
+sigmavirus24,2015-10-22 17:24:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9be2a362f6276594bd102378e0c15d8ff21692b0,9be2a362f6276594bd102378e0c15d8ff21692b0,"Merge pull request #259 from Lukasa/chunked
+
+Do not forcefully emit Transfer-Encoding header"
+Lukasa,2015-10-22 11:11:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/34a4381cdd8e082509d7e87814c995ecea6012aa,34a4381cdd8e082509d7e87814c995ecea6012aa,Do not forcefully emit Transfer-Encoding header
+sigmavirus24,2015-10-20 20:22:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3cab86a915b736a85488b3c6f0ce7f79b68cfd69,3cab86a915b736a85488b3c6f0ce7f79b68cfd69,"Merge pull request #258 from kennethreitz/patch-2
+
+Add Deploy to Heroku button"
+kennethreitz,2015-10-20 13:57:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3c1937f5ce71e2d025762e703642433c3518a606,3c1937f5ce71e2d025762e703642433c3518a606,Add Deploy to Heroku button
+sigmavirus24,2015-10-09 13:58:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d21fa82f99d1d1fed4f0d0b821fd64c41a602ba7,d21fa82f99d1d1fed4f0d0b821fd64c41a602ba7,"Merge pull request #256 from kennethreitz/patch-1
+
+update to latest python 2.7"
+kennethreitz,2015-10-09 13:46:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/957083b3d220e7825ded15c735bda14a1f4a0800,957083b3d220e7825ded15c735bda14a1f4a0800,update to latest python 2.7
+sigmavirus24,2015-09-17 16:36:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/efa9ae96dc615af63030564d8f4219b80d974518,efa9ae96dc615af63030564d8f4219b80d974518,"Merge pull request #250 from phouse512/master
+
+Added 406 unsupported media type response to /image"
+phouse512,2015-09-11 00:25:33,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2c51804e0be3e6e886fa001a054a9ed23fcb5a47,2c51804e0be3e6e886fa001a054a9ed23fcb5a47,Added 406 unsupported media type response to /image
+sigmavirus24,2015-09-10 16:04:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/01a9a4dd9b87f1aef32c92ca0c21969ec3881af0,01a9a4dd9b87f1aef32c92ca0c21969ec3881af0,"Merge pull request #249 from tehnomaag/master
+
+Added SVG image serving support under /image and /image/svg"
+kevin1024,2015-09-06 04:25:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8d0f835b542ccb4156bbe163a5d2bce1ccc8b60b,8d0f835b542ccb4156bbe163a5d2bce1ccc8b60b,version bump to v0.3.0
+sigmavirus24,2015-09-06 01:26:28,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7586d704a279187e7265cfb6f0bb87d65f8cf29b,7586d704a279187e7265cfb6f0bb87d65f8cf29b,"Merge pull request #246 from The-Compiler/tracking-scripts
+
+Turn off tracking unless HTTPBIN_TRACKING is set."
+The-Compiler,2015-08-31 19:55:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/355e1f4fc70d817751d9555de5d934538555212f,355e1f4fc70d817751d9555de5d934538555212f,Do env variable handling outside of template.
+johnsheehan,2015-08-31 19:46:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2f5fbdf8aeda8dd4c32766aa5ce7b473d47524e0,2f5fbdf8aeda8dd4c32766aa5ce7b473d47524e0,"Merge pull request #247 from The-Compiler/spelling
+
+Fix DELETE spelling in docstring."
+The-Compiler,2015-08-31 18:51:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/cca7119a606393fe48b487195c3b516990fcbb72,cca7119a606393fe48b487195c3b516990fcbb72,Fix DELETE spelling in docstring.
+The-Compiler,2015-08-31 18:48:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6858420e24673536bcc7401b928e6fadab09ac71,6858420e24673536bcc7401b928e6fadab09ac71,"Turn off tracking unless HTTPBIN_TRACKING is set.
+
+Fixes #245."
+mansilladev,2015-08-12 18:32:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d733461295a47b3404c28dac31d025d0c87087bf,d733461295a47b3404c28dac31d025d0c87087bf,Document max MB for /drip function
+mansilladev,2015-08-12 18:23:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2ca435800ad2e88fdff36cdc1e7c4479ab2e6078,2ca435800ad2e88fdff36cdc1e7c4479ab2e6078,Set 10MB limit on /drip
+sigmavirus24,2015-07-13 02:13:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/39009b9a8cd5035b2234796c1a4b54840ce95dab,39009b9a8cd5035b2234796c1a4b54840ce95dab,"Merge pull request #239 from tatsuhiro-t/use-url-for
+
+Use url_for to resolve path instead of hard coding it"
+tatsuhiro-t,2015-07-10 16:28:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/88a7e1966d8bdded683ed300683c8e2dacbd53d2,88a7e1966d8bdded683ed300683c8e2dacbd53d2,"Use url_for to resolve path instead of hard coding it
+
+Using url_for is useful if httpbin is served under a prefix path.  For
+example, we can serve httpbin under http://example.org/httpbin.
+Previously, we have to replace all hard coded paths, which produces
+many diffs, and it makes hard to upgrade httpbin from source.  This
+commit uses url_for to resolve correct path even if prefix path is
+used.  For digest auth, we have to prepend request.script_root to
+request.path to pass authentication."
+darrelmiller,2015-06-01 15:10:33,https://api.github.com/repos/postmanlabs/httpbin/git/commits/811d0d5177b5b808ce0ababa2e064e998571d733,811d0d5177b5b808ce0ababa2e064e998571d733,Fixed /image when accept header not present #225
+johnsheehan,2015-04-05 19:43:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9d946b5f0c976f7111946080a33e9806a2906bb8,9d946b5f0c976f7111946080a33e9806a2906bb8,"Merge pull request #222 from ant1441/patch-1
+
+Fix MANIFEST.in for README and templates/images"
+ant1441,2015-04-05 19:36:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ae8a4d7f507ca8c6224bee0c1c77dead1273dcfc,ae8a4d7f507ca8c6224bee0c1c77dead1273dcfc,"Fix MANIFEST.in
+
+* Fix README filename
+* Use recursive-include for templates dir to make sure images are included"
+johnsheehan,2015-03-07 20:22:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1e0e26e3cd13cfd277df276a95804e237e1a55dd,1e0e26e3cd13cfd277df276a95804e237e1a55dd,"Merge pull request #220 from frdmn/bug/hurl-link-fix
+
+Fix hurl.it links"
+frdmn,2015-03-07 20:19:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7fca5adcb8276a22fde2c564bbd9450d77bcf269,7fca5adcb8276a22fde2c564bbd9450d77bcf269,Fix hurl.it links
+johnsheehan,2015-02-24 18:48:54,https://api.github.com/repos/postmanlabs/httpbin/git/commits/261d7868513e73dd4c8df15378962d10f5e7b484,261d7868513e73dd4c8df15378962d10f5e7b484,"Merge pull request #202 from dshirley/master
+
+Add range request functionality"
+Lukasa,2015-02-22 09:38:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bf63216aa1224069e1f1a0ab837ccd5d46b50f86,bf63216aa1224069e1f1a0ab837ccd5d46b50f86,Set GUNICORN_WORKERS by environment variable.
+Lukasa,2015-02-22 08:42:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9582a689032599eb9c44894da3641fc89801547d,9582a689032599eb9c44894da3641fc89801547d,Add basic Dockerfile.
+johnsheehan,2015-02-20 23:16:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a250134edd23fc4046e79f75b424e72844d3e309,a250134edd23fc4046e79f75b424e72844d3e309,"Merge pull request #215 from philippgille/patch-1
+
+Fix typo"
+philippgille,2015-02-20 23:11:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/02c6f1e707ae729e7e795b188ac6ba9ea5f6d68c,02c6f1e707ae729e7e795b188ac6ba9ea5f6d68c,Fix typo
+dshirley,2015-02-19 19:41:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/60b0ada6f1541fd82d009bd08b8bbd7e0509bbf3,60b0ada6f1541fd82d009bd08b8bbd7e0509bbf3,Fixed unit tests for python3.4
+johnsheehan,2015-02-04 17:35:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b3151d45b02edf9abc39783bca7271b313a99d6f,b3151d45b02edf9abc39783bca7271b313a99d6f,"Merge pull request #211 from Runscope/gunicorn
+
+Restore gunicorn in the list of third-party requirements"
+dshirley,2015-01-26 22:54:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0484ea2c9142ddab602eb87b0cc5274ced809743,0484ea2c9142ddab602eb87b0cc5274ced809743,"Tidied the /range controller code
+
+Extracted some of the range processing logic into a separate function"
+johnsheehan,2015-01-26 22:21:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ecd0a9c7a9c999bf17ede05becdee70ea2d0828f,ecd0a9c7a9c999bf17ede05becdee70ea2d0828f,"Merge pull request #208 from Runscope/https-headers
+
+Allow httpbin to recognize SSL connections from more reverse proxy headers"
+dshirley,2015-01-26 21:51:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7e18da5ae9bace95115978d269cda8bc0b883911,7e18da5ae9bace95115978d269cda8bc0b883911,Renamed endpoint /range-request -> /range
+dshirley,2015-01-16 19:28:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/548e4df1f2dcac2ea65797f3d60475a09a65b2b3,548e4df1f2dcac2ea65797f3d60475a09a65b2b3,Remove trailing space from dictionary
+dshirley,2015-01-06 22:02:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d7180a9df85c54c87c31942f414cf5887763e8a5,d7180a9df85c54c87c31942f414cf5887763e8a5,"Tweaked the behavior of the 'duration' parameter of '/range-request'
+
+This endpoint will now respond immediately with the first chunk of
+data. It will then sleep right after sending each chunk."
+sigmavirus24,2015-01-06 03:21:26,https://api.github.com/repos/postmanlabs/httpbin/git/commits/28f8066c3a64e253550f92c36035090f5bba76d4,28f8066c3a64e253550f92c36035090f5bba76d4,"Merge pull request #193 from msabramo/image
+
+Update /image and add /image/{jpeg,png,webp}"
+msabramo,2015-01-03 05:12:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/528db4bc38b81e7b6b02ff2f05618714f5d0df6a,528db4bc38b81e7b6b02ff2f05618714f5d0df6a,"Delete Makefile
+
+Deprecates `make html` and `make run`
+Refs: #97, #186, #200"
+dshirley,2015-01-02 21:22:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e73f34e335aeb9a76a308d5643b16b8384d883ad,e73f34e335aeb9a76a308d5643b16b8384d883ad,"Added a /range-request endpoint
+
+This endpoint conforms to RFC7233.
+http://svn.tools.ietf.org/svn/wg/httpbis/specs/rfc7233.html
+
+It is functionally very similar to /stream-bytes, but it also
+allows specifying a ""Range"" header, which allows the client
+to ask for a specific portion of the resource.
+
+I didn't add this functionality to /stream-bytes so as not
+to break compatibility with any clients that expect range
+requests to fail on that endpoint. Perhaps I'm just being
+overly cautious."
+msabramo,2014-12-23 14:57:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/be53651b3a049a8f198b67783f10f76c219898e2,be53651b3a049a8f198b67783f10f76c219898e2,"Update /image and add /image/{jpeg,png,webp}
+
+Fixes #183"
+sigmavirus24,2014-12-24 01:56:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6b7676ba80d303e2b359ed6ff90b6718494fd73b,6b7676ba80d303e2b359ed6ff90b6718494fd73b,"Merge pull request #161 from edgurgel/fix-redirect
+
+Fix /redirect to return absolute URL"
+johnsheehan,2014-12-23 23:41:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/99bf12b6a194face22bdc4b05db6b9e5d8d88bbb,99bf12b6a194face22bdc4b05db6b9e5d8d88bbb,bump to 0.2.1
+johnsheehan,2014-12-23 23:29:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1b1853f9f47a8771072f426105eaba105e66cc6f,1b1853f9f47a8771072f426105eaba105e66cc6f,"Merge pull request #196 from msabramo/README_table
+
+README.rst: Display URLs in a table"
+msabramo,2014-12-23 22:00:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f6b8c9bdf7f11f35dcda8741f8692d69cb62a44b,f6b8c9bdf7f11f35dcda8741f8692d69cb62a44b,README.rst: Display URLs in a table
+johnsheehan,2014-12-23 21:14:18,https://api.github.com/repos/postmanlabs/httpbin/git/commits/388a3a8e07261deb5bf6fc737bf3823249ac26b3,388a3a8e07261deb5bf6fc737bf3823249ac26b3,"Merge pull request #195 from msabramo/fix_README_links
+
+README.rst: Fix links"
+johnsheehan,2014-12-23 21:13:32,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b92306e065023952a18838113554edccabaab026,b92306e065023952a18838113554edccabaab026,"Merge pull request #194 from msabramo/utf8
+
+/encoding/utf8: Add to httpbin.1.html, link to source of UTF-8-demo.txt"
+msabramo,2014-12-23 20:09:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7f81b32d7b38c66448076d9443a9d5cb7e675a90,7f81b32d7b38c66448076d9443a9d5cb7e675a90,"README.rst: Fix links
+
+that were broken by Markdown => reST conversion, by removing all double
+backquotes. I don't think reST allows double backquote (code font)
+nested inside a link."
+msabramo,2014-12-23 19:18:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/771be3aa6618708ff5149b27833d1f7f839c0c77,771be3aa6618708ff5149b27833d1f7f839c0c77,httpbin.1.html: Add /encoding/utf8
+msabramo,2014-12-23 19:17:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f1f4bee83f8b8aa6668a14ad42cbef2b494a2b6b,f1f4bee83f8b8aa6668a14ad42cbef2b494a2b6b,Link to source of UTF-8-demo.txt
+johnsheehan,2014-12-23 18:00:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/07dd3081126667c23bd61d637a86943b1db3dacb,07dd3081126667c23bd61d637a86943b1db3dacb,"Merge pull request #189 from msabramo/gunicorn_19_log_file_to_stdout
+
+Procfile: Add --log-file -"
+johnsheehan,2014-12-23 17:59:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/870912268548adda9ff756b2c3f7ad0769f24204,870912268548adda9ff756b2c3f7ad0769f24204,"Merge pull request #190 from msabramo/utf8
+
+Add /encoding/utf8 endpoint"
+johnsheehan,2014-12-23 17:50:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0b6f638b67fa1d86b572986833c42fc261fc97ef,0b6f638b67fa1d86b572986833c42fc261fc97ef,"Merge pull request #192 from tatsuhiro-t/secure-cookies
+
+Add secure attribute to cookies if wsgi.url_scheme == 'https'"
+sigmavirus24,2014-12-23 13:34:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/56b20baab4a9334678c089c8aaf7f0ebe549a333,56b20baab4a9334678c089c8aaf7f0ebe549a333,"Merge pull request #187 from msabramo/convert_readme_to_reST
+
+README.md => README.rst"
+tatsuhiro-t,2014-12-23 10:08:48,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e1024d989c0a3f667878aec385de2751f689d0fd,e1024d989c0a3f667878aec385de2751f689d0fd,Add secure attribute to cookies if wsgi.url_scheme == 'https'
+edgurgel,2014-09-20 12:12:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/54fc281ef78e438335cd3b27c8216d75eea31bf8,54fc281ef78e438335cd3b27c8216d75eea31bf8,Fix /redirect to return absolute URL
+msabramo,2014-12-23 03:11:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/57c44f6748bf2ad41cac50ab5f8871499f3eb90a,57c44f6748bf2ad41cac50ab5f8871499f3eb90a,"Add /encoding/utf8 endpoint
+
+Fixes #10"
+msabramo,2014-12-23 03:13:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/008bfee25e5438992db1ffc3e4ad65cffd7b6baa,008bfee25e5438992db1ffc3e4ad65cffd7b6baa,"Procfile: Add --log-file -
+
+so that output gets logged on gunicorn==19.1.1; otherwise it's totally
+silent, which sucks."
+sigmavirus24,2014-12-23 03:07:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8f61f1f9ea37713e5ce2d20d1f3b0f8e3a77e3c8,8f61f1f9ea37713e5ce2d20d1f3b0f8e3a77e3c8,"Merge pull request #188 from msabramo/add_newline_to_end_of_Procfile
+
+Procfile: Add newline to end of file"
+msabramo,2014-12-23 02:59:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6ee9f407c66b3d50a3d48f0e4edf1bddc9604553,6ee9f407c66b3d50a3d48f0e4edf1bddc9604553,"Procfile: Add newline to end of file
+
+Because that's a UNIX convention - see
+http://stackoverflow.com/questions/729692/why-should-files-end-with-a-newline"
+msabramo,2014-12-23 01:46:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b9d81b2e0b323a9cfcbc635c72f1e5708971f2cc,b9d81b2e0b323a9cfcbc635c72f1e5708971f2cc,README.md => README.rst
+johnsheehan,2014-12-23 00:51:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b16206b80af0ee41252b16e5801f585db2a5277f,b16206b80af0ee41252b16e5801f585db2a5277f,"Merge pull request #184 from msabramo/travis
+
+Add .travis.yml for Travis CI"
+msabramo,2014-12-23 00:42:57,https://api.github.com/repos/postmanlabs/httpbin/git/commits/34003b702a48825441c3ef3a492cea7188a02c7e,34003b702a48825441c3ef3a492cea7188a02c7e,README.md: Add Travis CI build badge
+msabramo,2014-12-23 00:35:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6ad0781991cd30e837ea995c1d2eee5505f80220,6ad0781991cd30e837ea995c1d2eee5505f80220,"Fix Travis py34 failure
+
+by not relying on core.pyc file in test"
+msabramo,2014-12-23 00:24:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3c85fbf3eb4844bd556ccae7e4a01648cc6b55f8,3c85fbf3eb4844bd556ccae7e4a01648cc6b55f8,Add .travis.yml for Travis CI
+johnsheehan,2014-12-23 00:22:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b226607c19249f88b052721a41c2ed9d096f5317,b226607c19249f88b052721a41c2ed9d096f5317,Merge branch 'msabramo-GH-168'
+johnsheehan,2014-12-23 00:21:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5858e3d43487450f8ee1534d3ca743081aabc12a,5858e3d43487450f8ee1534d3ca743081aabc12a,Merge branch 'GH-168' of https://github.com/msabramo/httpbin into msabramo-GH-168
+johnsheehan,2014-12-23 00:19:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6930f8225da40201db292395172ad1e231c3f2ce,6930f8225da40201db292395172ad1e231c3f2ce,"Merge pull request #160 from rictic/master
+
+Send an explicit Content-Length header with /drip/"
+msabramo,2014-11-29 17:21:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/24dadf082ccb0460d531d67b112070c2d4efec60,24dadf082ccb0460d531d67b112070c2d4efec60,"GH-168: Add newline to end of page
+
+Fixes GH-168"
+johnsheehan,2014-12-23 00:15:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6dc5270b57f3e861d6f027abc9b7ee786bd3175e,6dc5270b57f3e861d6f027abc9b7ee786bd3175e,"Merge pull request #158 from derflocki/wp-allow-headers
+
+support Access-Control-Request-Headers"
+johnsheehan,2014-12-22 23:52:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f62305569c0f9d86411a341eebe9f6e3c4193bf3,f62305569c0f9d86411a341eebe9f6e3c4193bf3,"Merge pull request #166 from shurane/patch-1
+
+Show way to run httpbin as a python module."
+johnsheehan,2014-12-22 23:42:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/21782f94ef36b42712e00332e1eec83176c68951,21782f94ef36b42712e00332e1eec83176c68951,more meta updates
+johnsheehan,2014-12-22 23:34:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0cdfb9e42be2762d15a98633d9ee83bc7566b3f9,0cdfb9e42be2762d15a98633d9ee83bc7566b3f9,readme update
+johnsheehan,2014-12-22 23:29:07,https://api.github.com/repos/postmanlabs/httpbin/git/commits/156525fe315a5d869eda4adb737ad55e30c0d127,156525fe315a5d869eda4adb737ad55e30c0d127,Merge branch 'master' of github.com:Runscope/httpbin
+johnsheehan,2014-12-22 23:22:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/54873992c91def4301347573bc9c2c1100706bef,54873992c91def4301347573bc9c2c1100706bef,"Merge pull request #171 from msabramo/GH-162
+
+GH-162: No 500 w/ better handle missing dict keys"
+johnsheehan,2014-12-22 23:22:11,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3031459c0581f3a6fc37a91f7ae7127a7fe131f1,3031459c0581f3a6fc37a91f7ae7127a7fe131f1,"Merge pull request #177 from mrkd/master
+
+Update template to fix deploy to Heroku button"
+johnsheehan,2014-12-22 23:21:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8c11ed9883a0afdfbdba330a68f8ce2b8a9f000d,8c11ed9883a0afdfbdba330a68f8ce2b8a9f000d,"Merge pull request #172 from msabramo/GH-125
+
+GH-125: Support multiple headers with same key"
+johnsheehan,2014-12-22 23:20:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/64aa956ad1f70782c74d144761b3af31bb4104ea,64aa956ad1f70782c74d144761b3af31bb4104ea,"Merge pull request #170 from msabramo/patch-1
+
+Imports; remove dup base64, alpha sort"
+mrkd,2014-12-15 21:47:12,https://api.github.com/repos/postmanlabs/httpbin/git/commits/79d62dbaef3791e7017209ef6a425b881a422443,79d62dbaef3791e7017209ef6a425b881a422443,Update httpbin.1.html
+frankstratton,2014-12-15 21:35:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/562e687cae48c76e67473964f5cebfabdfc3f3b1,562e687cae48c76e67473964f5cebfabdfc3f3b1,"Merge pull request #176 from mrkd/master
+
+Update Readme for Deploy to Heroku button fix"
+mrkd,2014-12-15 21:25:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/bf09ea0f5aebc50e41460753014cc5fef3df10db,bf09ea0f5aebc50e41460753014cc5fef3df10db,Update Readme for Deploy to Heroku button fix
+frankstratton,2014-12-15 21:12:33,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d322745f75f9cb207f8b31c832a8d105a34c3a01,d322745f75f9cb207f8b31c832a8d105a34c3a01,"Merge pull request #175 from sigmavirus24/patch-1
+
+Update repository URL in app.json"
+sigmavirus24,2014-12-15 20:21:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a9cfa4452eed1966ea714cdead0456a9b47d5718,a9cfa4452eed1966ea714cdead0456a9b47d5718,"Update repository URL in app.json
+
+Fixes #174"
+johnsheehan,2014-12-10 21:56:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9757efe6042ffb6ce4c8925410de61bec30342bc,9757efe6042ffb6ce4c8925410de61bec30342bc,add runscope trackign
+johnsheehan,2014-12-09 23:20:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e480818ab4615aa44f1615036c003c55946f5736,e480818ab4615aa44f1615036c003c55946f5736,move tracking scripts into separate file
+msabramo,2014-11-29 14:18:52,https://api.github.com/repos/postmanlabs/httpbin/git/commits/941033ddd29359ddfed6a231487680fbbccc51c3,941033ddd29359ddfed6a231487680fbbccc51c3,"GH-125: Support multiple headers with same key
+
+Fixes: GH-125"
+msabramo,2014-11-29 08:03:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3c40fab03b0b9da315b98e04a35da8aab6cae534,3c40fab03b0b9da315b98e04a35da8aab6cae534,GH-162: No 500 w/ better handle missing dict keys
+msabramo,2014-11-29 00:36:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ef9c3948e8cd8f95cad9a908b0a46cb5a633d480,ef9c3948e8cd8f95cad9a908b0a46cb5a633d480,"Imports; remove dup base64, alpha sort"
+shurane,2014-11-04 17:01:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/1fce5f6a20dc8ba1ade7e236f727fd43f6769011,1fce5f6a20dc8ba1ade7e236f727fd43f6769011,"Show way to run httpbin as a python module.
+
+It's already there, may as well mention how to run httpbin without gunicorn."
+rictic,2014-09-18 23:03:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5021b420ef2aa5319a5c23557744bb5507785f91,5021b420ef2aa5319a5c23557744bb5507785f91,"Send an explicit Content-Length header with /drip/
+
+It's useful for testing tools which track the progress of a request to know
+the content length ahead of time.
+
+Test included. I've verified that the new tests do fail without this change,
+response.content_length is None if an explicit Content-Length isn't set."
+derflocki,2014-09-11 18:24:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4554150ff9eb5ed9d630616f2e2d1aeaf480196e,4554150ff9eb5ed9d630616f2e2d1aeaf480196e,got rid of unnecessary .get call
+derflocki,2014-09-10 06:20:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e68741e1316909e6e59a5c31d45355510e76d826,e68741e1316909e6e59a5c31d45355510e76d826,cleaned up
+derflocki,2014-09-09 19:26:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/43ced62b4425b16c3537fdad8e375812ac2f01c2,43ced62b4425b16c3537fdad8e375812ac2f01c2,support Access-Control-Request-Headers
+kennethreitz,2014-08-19 16:36:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/93f83e17712232fe091d70417d32daf9c80f9523,93f83e17712232fe091d70417d32daf9c80f9523,"Merge pull request #154 from ivanjr0/master
+
+drip endpoint: adding custom status support"
+ivanjr0,2014-08-08 21:10:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/24025f4a61ff196d1fefe1a89640ff181acd3aae,24025f4a61ff196d1fefe1a89640ff181acd3aae,drip endpoint: adding custom status support
+kevin1024,2014-07-06 20:34:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f01e53a9fcfa19b042cb5138416cf940f496d5f3,f01e53a9fcfa19b042cb5138416cf940f496d5f3,Bump Version for Release
+kevin1024,2014-07-06 20:27:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/540b4144908362ec1e22866d67cac33a69e8411e,540b4144908362ec1e22866d67cac33a69e8411e,"Try to decode bytestrings from UTF8 in json_safe
+
+Closes #148"
+kevin1024,2014-06-22 01:51:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/320e994c30566dbe1f3770ffc37cfddf2da90d33,320e994c30566dbe1f3770ffc37cfddf2da90d33,"Add Access-Control-Allow-Credentials to All
+
+If you do a ""simple"" request, there will be no CORS preflight
+OPTIONS request.  That means that Basic auth will fail over
+CORS.  This adds the header to all requests, fixing the problem.
+
+Closes #122"
+kevin1024,2014-06-22 00:16:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f6d708ebe55078e10f3467c53b6619563421d365,f6d708ebe55078e10f3467c53b6619563421d365,"Check X-Forwarded-Proto when returning the url
+
+Closes #31"
+kevin1024,2014-06-21 23:58:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5ee70566ec7100654dbe562ced564a2d8331152f,5ee70566ec7100654dbe562ced564a2d8331152f,"Fix Digest Auth to Return Correct Header
+
+Digest Auth was returning the wrong header when a login attempt failed.
+
+Closes #133"
+kevin1024,2014-06-21 23:19:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/28482bb5210bb7c37d03c782ec29af217b182c7d,28482bb5210bb7c37d03c782ec29af217b182c7d,Regenerate index page from README
+kevin1024,2014-06-21 23:12:31,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3a530fc5f1a8dfb8bc70e4ba03288db6b5b57ba3,3a530fc5f1a8dfb8bc70e4ba03288db6b5b57ba3,"Update README
+
+ * Remove hurl.it URLs, they appear to be broken
+ * Update link to kennethreitz.org, it was broken
+ * Add new endpoints
+ * Add link to Runscope
+ * Add link to EU version
+ * Add link to Postbin"
+kevin1024,2014-06-21 22:48:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f3f136581aa899c0ba131df9b1891ba95f047f67,f3f136581aa899c0ba131df9b1891ba95f047f67,pep8 cleanup on tests
+kevin1024,2014-06-21 22:36:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e87899dd439bfe19a09c2f1fafc3e720590b0ec3,e87899dd439bfe19a09c2f1fafc3e720590b0ec3,Add XML endpoint to index
+kevin1024,2014-06-21 22:34:22,https://api.github.com/repos/postmanlabs/httpbin/git/commits/745f9b50095ee3b17f20c7ac8eb70d135ccabe12,745f9b50095ee3b17f20c7ac8eb70d135ccabe12,Add test for XML endpoint
+johnsheehan,2014-03-12 21:53:46,https://api.github.com/repos/postmanlabs/httpbin/git/commits/64d10cba0e8c0ffe3b16b29c93f736efbb366e6e,64d10cba0e8c0ffe3b16b29c93f736efbb366e6e,Add xml endpoint
+kevin1024,2014-06-21 22:16:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b2cb8678f37f0c49e0df4637632106b5e1623070,b2cb8678f37f0c49e0df4637632106b5e1623070,"Status Endpoint should Accept All HTTP Verbs
+
+Closes #32 (again)"
+kevin1024,2014-06-21 21:53:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2593a8ab673691b21919c21c192ce9e910101379,2593a8ab673691b21919c21c192ce9e910101379,"Add form and files to DELETE Endpoint
+
+The DELETE endpoint was missing form and files, so if you hit the
+endpoint with data in the envelope and a Content-Type header set to
+application/x-www-form-urlencoded, the data will disappear.  Since RFC
+2731 doesn't disallow content in the body of a DELETE request, let's
+allow that data to pass through
+
+Closes #143"
+kevin1024,2014-06-09 08:09:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/0c44ec9233960a3ca21f32d2952c2add7314e3f7,0c44ec9233960a3ca21f32d2952c2add7314e3f7,"Restore random seed function for byte endpoints
+
+os.urandom() ignores random.seed(), so I'm restoring the use of
+random.randint in a python3 compatible way."
+kevin1024,2014-06-09 04:04:22,https://api.github.com/repos/postmanlabs/httpbin/git/commits/dcb6f7ded601dd15faa6d3053badd43fce5494cd,dcb6f7ded601dd15faa6d3053badd43fce5494cd,bump version
+kevin1024,2014-06-09 03:42:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7e2214ce14f4771f34a43cf9e9a6c2c8477ca4f8,7e2214ce14f4771f34a43cf9e9a6c2c8477ca4f8,fix byte streaming endpoint in python3
+kevin1024,2014-06-09 03:42:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/16d6fea9b87689c176f24089884a5c887fb8b253,16d6fea9b87689c176f24089884a5c887fb8b253,Fix bytes endpoint in python3
+kevin1024,2014-06-06 03:56:34,https://api.github.com/repos/postmanlabs/httpbin/git/commits/32c842f06f109f68a03d2c182393225198b181f4,32c842f06f109f68a03d2c182393225198b181f4,"Fix bug that was causing POSTs missing a content-type header to 500
+
+Closes #141"
+kevin1024,2014-06-01 21:55:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a109bbbe298a6ef565b29c5a83b61cb9063a10d6,a109bbbe298a6ef565b29c5a83b61cb9063a10d6,"Include Templates and Bump Version to 0.1.1
+
+I forgot to include the templates in setup.py, so httpbin would complain
+and return a 500 when accessing views that require templates.  This
+fixes that problem by adding them as ""data"" in setup.py and MANIFEST.in"
+kevin1024,2014-06-01 22:01:04,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9074c3203025523d6bdc9912a41d42912b31ffc3,9074c3203025523d6bdc9912a41d42912b31ffc3,"Add setup.cfg since we are a univeral package
+
+For more see http://pythonwheels.com/"
+kennethreitz,2014-05-30 17:45:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8c9922de879c4c8676c752ce81237c6e1b22aec4,8c9922de879c4c8676c752ce81237c6e1b22aec4,"Merge pull request #138 from matt-hickford/patch-1
+
+Delete spurious empty file `...`"
+kennethreitz,2014-05-30 17:40:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/beae3f49c8207d0f4e675f1c49fb5227ed19ea4e,beae3f49c8207d0f4e675f1c49fb5227ed19ea4e,"Merge pull request #139 from matt-hickford/forms
+
+Add endpoint /forms/post with simple HTML form that submits to /post"
+hickford,2014-05-29 22:11:25,https://api.github.com/repos/postmanlabs/httpbin/git/commits/045f0f8843f24b4f0a8aa14c879c424d934bf9f0,045f0f8843f24b4f0a8aa14c879c424d934bf9f0,Add endpoint /forms/post with simple HTML form that submits to /post
+hickford,2014-05-29 21:18:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c4af2105311b264f49b398961a1f8422b172ce9d,c4af2105311b264f49b398961a1f8422b172ce9d,"Delete spurious empty file `...`
+
+Delete spurious empty file  `...`. It was causing me trouble cloning this repo on Windows.
+
+> error: unable to create file httpbin/templates/... (Is a directory)
+> fatal: unable to checkout working tree
+> warning: Clone succeeded, but checkout failed.
+> You can inspect what was checked out with 'git status'
+> and retry the checkout with 'git checkout -f HEAD'"
+kennethreitz,2014-05-27 17:13:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/8da97c43b7964ac42bea247fca41463bb08b6908,8da97c43b7964ac42bea247fca41463bb08b6908,"Merge pull request #137 from kevin1024/master
+
+Python3 Support"
+kevin1024,2014-05-26 05:39:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/940cb7b1521464448b6e450ec415a62b8a536c07,940cb7b1521464448b6e450ec415a62b8a536c07,"Add Tox
+
+Tox is a utility that helps you test on different versions of Python."
+kevin1024,2014-05-26 05:39:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/431acaabf7a3e77b416a57998bfadcb2d3864555,431acaabf7a3e77b416a57998bfadcb2d3864555,"Add a setup.py
+
+This allows tox to run, and allows me to install httpbin as a depenency
+(see #136)"
+kevin1024,2014-05-26 05:38:47,https://api.github.com/repos/postmanlabs/httpbin/git/commits/782a3411a7224fced70afddca908fb0853a45aba,782a3411a7224fced70afddca908fb0853a45aba,"Add Python3 Support
+
+I mostly just added a bunch of encoding, especially around the HTTP
+Digest Auth stuff.  This commit also adds six as a dependency."
+kennethreitz,2014-05-16 14:24:00,https://api.github.com/repos/postmanlabs/httpbin/git/commits/937d23779efbd7cafcc6dc350c82af35211e2951,937d23779efbd7cafcc6dc350c82af35211e2951,"Merge pull request #121 from ksato9700/flask_010
+
+Update components to the latest ones"
+kennethreitz,2014-05-16 14:23:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/82d4e2ac2f710c940b645b8ad252527c1d1b74d0,82d4e2ac2f710c940b645b8ad252527c1d1b74d0,"Merge pull request #123 from barnash/master
+
+added support for multiple files echo"
+kennethreitz,2014-05-16 14:20:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/623952d4010d39a4100bb2583f920ebcf93b5138,623952d4010d39a4100bb2583f920ebcf93b5138,"Merge pull request #129 from barunsthakur/master
+
+Add /deflate endpoint"
+kennethreitz,2014-05-16 14:18:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/02918f49bb136d0fa24a2c98801e26dad1b2de4a,02918f49bb136d0fa24a2c98801e26dad1b2de4a,"Merge pull request #135 from miikka/get-with-multiple-args
+
+Allow /get with multiple values for the same key"
+miikka,2014-05-15 17:02:38,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e70b0e425bd81107a9495be8a089ae08097259f8,e70b0e425bd81107a9495be8a089ae08097259f8,"Allow /get with multiple values for the same key
+
+/get now returns a list of values if there were more than one value for
+the same key in the query sting. This mirrors the behavior of /post with
+form fields.
+
+Fixes #134."
+kennethreitz,2014-04-24 03:21:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f15fcc15127843fbcafb018264b0d84abf3bc71f,f15fcc15127843fbcafb018264b0d84abf3bc71f,"Merge pull request #131 from zeke/master
+
+add app.json"
+zeke,2014-04-24 03:11:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/29423a30a5a67b14ab23066c8d021a4234a09699,29423a30a5a67b14ab23066c8d021a4234a09699,add app.json
+barunsthakur,2014-03-19 15:35:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6080ca1fc814e92891bbe01ba6881135b214ec2f,6080ca1fc814e92891bbe01ba6881135b214ec2f,"Add /deflate endpoint
+
+returns response with deflate encoded body(Content-Encoding='deflate')."
+kennethreitz,2014-03-12 16:00:37,https://api.github.com/repos/postmanlabs/httpbin/git/commits/2b01501a47834514bb0f51c47afc53d60f23bdaf,2b01501a47834514bb0f51c47afc53d60f23bdaf,"Merge pull request #127 from gruns/master
+
+Add /drip, which drips data over a duration after an optional initial delay."
+gruns,2014-02-28 09:48:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/07b0d1dce24de91639e1317bf9b463d10d39b0c7,07b0d1dce24de91639e1317bf9b463d10d39b0c7,"Add /drip, which drips data over a duration after an optional initial delay."
+barnash,2013-11-24 09:50:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/de681cb426580f0d9ec5e1c487c8278c6ce62bdb,de681cb426580f0d9ec5e1c487c8278c6ce62bdb,added support for multiple files echo
+ksato9700,2013-11-02 03:07:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/55b1e1b9542cc6ede73a242f3e85d47df769b899,55b1e1b9542cc6ede73a242f3e85d47df769b899,update components to the latest ones
+sigmavirus24,2013-07-19 20:48:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4870f70c0d10b61a7efe71e03c2aaebfc65b1ada,4870f70c0d10b61a7efe71e03c2aaebfc65b1ada,"Send/require a cookie header on digest-auth
+
+Also fix an import."
+carsonmcdonald,2013-06-26 10:53:13,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c8350ab822532d9135a2b53782e1d52a2689c479,c8350ab822532d9135a2b53782e1d52a2689c479,Add a small image response based on the Accept header.
+davechallis,2013-06-05 16:10:56,https://api.github.com/repos/postmanlabs/httpbin/git/commits/414a719b42a91306c28d72e6cb9d3ee8affe14b2,414a719b42a91306c28d72e6cb9d3ee8affe14b2,"Added endpoints '/bytes/:n', '/stream-bytes/:n' and '/links/:n'.
+
+'/bytes/:n' takes and optional 'seed' integer parameter, and returns n random
+bytes of binary data (limited to 100KB in size).
+
+'/stream-bytes/:n' is the same as above, but streams the data.  As well as a
+'seed' parameter, it accepts a 'chunk_size' parameter, which determines how
+many bytes are in each packet that is streamed.
+
+'/links/:n' generates a page containing n links, each of which links to another
+page containing those n links. The value of n is limited to 200."
+rcarz,2013-05-01 06:13:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9c7d3269c565579a507d24157cb44723e187f179,9c7d3269c565579a507d24157cb44723e187f179,added redirect-to endpoint for testing arbitrary redirects
+mattrobenolt,2013-05-19 18:57:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c8db04b97c6abb8b1cca6b736f02d04d4f31b5c3,c8db04b97c6abb8b1cca6b736f02d04d4f31b5c3,Also send back Last-Modified and ETag
+mattrobenolt,2013-05-19 18:21:05,https://api.github.com/repos/postmanlabs/httpbin/git/commits/27e3e7f426d4805ada122c3bac46f3994ba96dba,27e3e7f426d4805ada122c3bac46f3994ba96dba,Handle If-None-Match
+Lukasa,2013-05-19 09:43:19,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d8e71f9d75aef10eaa03903a31956c533b446f64,d8e71f9d75aef10eaa03903a31956c533b446f64,Add Cache endpoint to the front page.
+johnsheehan,2013-05-17 06:58:30,https://api.github.com/repos/postmanlabs/httpbin/git/commits/4dadd46dcaa815bf548e07f1b0051fe259ae64d8,4dadd46dcaa815bf548e07f1b0051fe259ae64d8,add sponsorship link and update postbin link to requestbin
+Lukasa,2013-05-11 08:55:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/a9dca7398cf9db014f825b255a78e776f21cfdd1,a9dca7398cf9db014f825b255a78e776f21cfdd1,Add basic Cache endpoint.
+johnsheehan,2013-04-26 17:07:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/045bc762c8342cb03e5bfebf5b4f0b87a5048fbc,045bc762c8342cb03e5bfebf5b4f0b87a5048fbc,remove broken hurl.it links and add patch to list of available endpoints
+rochacon,2013-01-31 04:43:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/e3cd47d0e297a7a5a73cd4921eec865920d2cccd,e3cd47d0e297a7a5a73cd4921eec865920d2cccd,"Use header Origin in response headers when available
+
+Since the RFC [1] doesn't allow wildcards for credentialed requests,
+add the requested Origin into the response headers.
+
+[1] https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS#Requests_with_credentials"
+rochacon,2013-01-31 04:40:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/3f45aba2afdbd917b404b1a6173a6b2a97bd946a,3f45aba2afdbd917b404b1a6173a6b2a97bd946a,Hardcoding cache
+rochacon,2013-01-31 04:39:43,https://api.github.com/repos/postmanlabs/httpbin/git/commits/faf559dcf5e130d1d351b75b14ddda61c9fdfaa4,faf559dcf5e130d1d351b75b14ddda61c9fdfaa4,Removing redundancy
+rochacon,2013-01-14 06:43:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/50ddd78b89c9c6008561323ba350293193239c03,50ddd78b89c9c6008561323ba350293193239c03,PEP8
+rochacon,2013-01-14 06:38:09,https://api.github.com/repos/postmanlabs/httpbin/git/commits/11a8c78aa5096b6df75df8580850504835e9dfe4,11a8c78aa5096b6df75df8580850504835e9dfe4,"Adding support for preflight request headers
+
+Just as stated in http://www.w3.org/TR/cors/#preflight-request, we must return some extra headers when dealing with preflight (HTTP OPTIONS method) requests."
+rochacon,2013-01-10 05:56:24,https://api.github.com/repos/postmanlabs/httpbin/git/commits/61bed33f242903e0964cc1e7d860bba128fd7ccb,61bed33f242903e0964cc1e7d860bba128fd7ccb,Adding CORS support for all requests
+senko,2012-10-12 15:01:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/faf0fea1b294e64cd2bdab0536ae122a7d4ec7ca,faf0fea1b294e64cd2bdab0536ae122a7d4ec7ca,"README: add https + show_env example
+
+Showcase a useful but undocumented feature of reporting what protocol
+the request was made over (amongst other info)."
+josher19,2012-09-10 05:43:01,https://api.github.com/repos/postmanlabs/httpbin/git/commits/24488f849ff23e2b7679a4f98f689e2e780a6102,24488f849ff23e2b7679a4f98f689e2e780a6102,"Update httpbin/core.py
+
+302 instead of 301 redirect in docs for def relative_redirect_n_times"
+snh,2012-08-20 13:40:45,https://api.github.com/repos/postmanlabs/httpbin/git/commits/08f8f0b516d44818977662da501d600d4f0c528b,08f8f0b516d44818977662da501d600d4f0c528b,Updated example linked to include two deletions.
+snh,2012-08-20 13:35:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6287af8186fa44f9d1ca581a6b37bdff701f3287,6287af8186fa44f9d1ca581a6b37bdff701f3287,New delete cookie endpoint.
+snh,2012-08-20 11:54:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b1196a239b862c3d7ce7809dbd84f667cfc4c014,b1196a239b862c3d7ce7809dbd84f667cfc4c014,Support for setting multiple cookies in a single request.
+randomir,2012-08-14 20:57:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9a56bb8dd02ad121cc02c4beb1d8238f6eb749f1,9a56bb8dd02ad121cc02c4beb1d8238f6eb749f1,"bugfix: JSON-safe encoding of raw binary data/files
+
+Encoding of the received files and/or body data was failing in case of raw
+binary data being POSTed/PUT/etc. (The exact trigger was actually a non-UTF-8
+data stream, since Flask's `jsonify`, i.e. `simplejson.dumps` assumes UTF-8.)
+
+Binary data in a JSON response are now encoded as ""data"" URLs, according to
+RFC 2397. ""Data"" URL scheme was chosen for its simplicity and clarity. MIME
+type is included. Plain text is passed thru unmodified, as before.
+
+Also, tests demonstrating the bug/fix added to `test_httpbin.py`."
+randomir,2012-08-14 18:43:35,https://api.github.com/repos/postmanlabs/httpbin/git/commits/213d03a09095e03804cc7941cd76f51ccb2abdb9,213d03a09095e03804cc7941cd76f51ccb2abdb9,"init fixes (git, pip & test related)
+
+  - gitignored: *.pyc, env/
+  - gevent added to requirements.txt
+  - test_httpbin syntax error fix"
+mnunberg,2012-08-03 00:56:51,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d96dd79579cb157acde8d3a3cd1d8da033949aa4,d96dd79579cb157acde8d3a3cd1d8da033949aa4,Use gevent.sleep to make the program non-blocking
+mnunberg,2012-08-03 00:56:28,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ad8d69e4c5447297db535f8ca9d1ac00e85f01e8,ad8d69e4c5447297db535f8ca9d1ac00e85f01e8,Use pywsgi.py instead of wsgi (better chunked handling)
+flaper87,2012-06-30 00:08:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6a3a2fb63aff97c5a5d7f55c1bd0cdb49a13ff7f,6a3a2fb63aff97c5a5d7f55c1bd0cdb49a13ff7f,updated README
+flaper87,2012-06-30 00:01:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/85c207c00113d3c4cd4872aae6c1e8387229d725,85c207c00113d3c4cd4872aae6c1e8387229d725,missing html
+flaper87,2012-06-29 23:52:42,https://api.github.com/repos/postmanlabs/httpbin/git/commits/62657b203d6093c58997b9b1865b1fb94a154816,62657b203d6093c58997b9b1865b1fb94a154816,"Added support for:
+    * Robots.txt requests which is usefule for robots rules tests.
+    * Robots denied page (/deny)
+    * Simple html page for views / calls that expect an html."
+mkomitee,2012-06-01 20:43:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/98ed988b7667ac9a309ef869da3d4c284abc6998,98ed988b7667ac9a309ef869da3d4c284abc6998,"401 is the proper status code for failed authentication here:
+
+10.4.2 401 Unauthorized
+
+The request requires user authentication. The response MUST include a
+WWW-Authenticate header field (section 14.47) containing a challenge applicable
+to the requested resource. The client MAY repeat the request with a suitable
+Authorization header field (section 14.8). If the request already included
+Authorization credentials, then the 401 response indicates that authorization
+has been refused for those credentials. If the 401 response contains the same
+challenge as the prior response, and the user agent has already attempted
+authentication at least once, then the user SHOULD be presented the entity that
+was given in the response, since that entity might include relevant diagnostic
+information. HTTP access authentication is explained in ""HTTP Authentication:
+Basic and Digest Access Authentication"" [43].
+
+10.4.4 403 Forbidden
+
+The server understood the request, but is refusing to fulfill it. Authorization
+will not help and the request SHOULD NOT be repeated. If the request method was
+not HEAD and the server wishes to make public why the request has not been
+fulfilled, it SHOULD describe the reason for the refusal in the entity. If the
+server does not wish to make this information available to the client, the
+status code 404 (Not Found) can be used instead."
+faulkner,2012-04-04 18:44:20,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6ac9dfe029fe04fcd50a8c5f18a97352cff5bbe9,6ac9dfe029fe04fcd50a8c5f18a97352cff5bbe9,Fix broken example link for delay endpoint.
+umbrae,2012-02-28 16:31:58,https://api.github.com/repos/postmanlabs/httpbin/git/commits/c4895849cc43e4592621a7269e79d3e4aeb538b2,c4895849cc43e4592621a7269e79d3e4aeb538b2,UTF8 Encoding
+umbrae,2012-02-28 15:43:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/295dc90db6f52c8581d8a656ec3928a8f184b1a2,295dc90db6f52c8581d8a656ec3928a8f184b1a2,Redirect-to now uses a query param instead.
+umbrae,2012-02-28 15:02:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/9e277be559f6fd0d144ee6591ddb2a866bd0eb68,9e277be559f6fd0d144ee6591ddb2a866bd0eb68,Some spelling fixes.
+umbrae,2012-02-28 15:02:10,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7de330b2fc7d62059ae7d3a1749b45e7b471cf56,7de330b2fc7d62059ae7d3a1749b45e7b471cf56,Add redirect_to functionality.
+kyleconroy,2012-02-27 06:38:17,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5eb1c9ad0d1cf18b676ffa270d5b390c15a5d247,5eb1c9ad0d1cf18b676ffa270d5b390c15a5d247,Remove app.debug
+kyleconroy,2012-02-27 06:35:36,https://api.github.com/repos/postmanlabs/httpbin/git/commits/38d04e0bb9544a1516fc49c08a7c28b1f68a304a,38d04e0bb9544a1516fc49c08a7c28b1f68a304a,Show proper scheme in urls
+kyleconroy,2012-02-27 06:23:02,https://api.github.com/repos/postmanlabs/httpbin/git/commits/16f7ab8c7060025bbbf8a63e76ae5d3da897c654,16f7ab8c7060025bbbf8a63e76ae5d3da897c654,Remove very broken JSON stuff
+kyleconroy,2012-02-27 05:59:34,https://api.github.com/repos/postmanlabs/httpbin/git/commits/da07bb6675bede549253c2ce569374b6bef0843c,da07bb6675bede549253c2ce569374b6bef0843c,Add POST PUT and DELETE to the status endpoint
+tomviner,2012-02-20 23:25:59,https://api.github.com/repos/postmanlabs/httpbin/git/commits/eda6e70bb81663ddbd92d6fe037e5634adcb65af,eda6e70bb81663ddbd92d6fe037e5634adcb65af,"typo ""eturns"""
+tomviner,2012-02-20 23:22:21,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f172f593599c6012e1d4e8bf8554fcdbe2dbaab7,f172f593599c6012e1d4e8bf8554fcdbe2dbaab7,"typo ""eturns"""
+rmccue,2012-02-08 07:57:06,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ed60c9612a10fc9883c4f7edf78721c58a2efa6e,ed60c9612a10fc9883c4f7edf78721c58a2efa6e,Note /delay/:n on index
+rmccue,2012-02-08 07:53:44,https://api.github.com/repos/postmanlabs/httpbin/git/commits/5c71ef399004ef5555c39eb58a7093c134639e9f,5c71ef399004ef5555c39eb58a7093c134639e9f,Add /delay/<int:n> endpoint for delayed responses. Fixes #26
+johtso,2012-01-23 01:10:08,https://api.github.com/repos/postmanlabs/httpbin/git/commits/92c35813e0c5031609b896822c9f1f62de03d89d,92c35813e0c5031609b896822c9f1f62de03d89d,Merge random status functionality into /status
+johtso,2012-01-20 04:11:41,https://api.github.com/repos/postmanlabs/httpbin/git/commits/7646e33daa2a4ff348b187655184db792d647fbf,7646e33daa2a4ff348b187655184db792d647fbf,"Add random status code feature
+
+Fixes issue #22"
+tcurvelo,2012-01-12 05:28:16,https://api.github.com/repos/postmanlabs/httpbin/git/commits/170901262f6607392b68f77653fb8e43a2032e7e,170901262f6607392b68f77653fb8e43a2032e7e,Use jsonify for digest_auth() and hidden_basic_auth() too
+atdt,2011-12-20 05:26:14,https://api.github.com/repos/postmanlabs/httpbin/git/commits/52871e83010e7d7dfc69735afe81c09d0559dcb9,52871e83010e7d7dfc69735afe81c09d0559dcb9,base64-decoding endpoint + test
+johtso,2011-12-08 01:20:29,https://api.github.com/repos/postmanlabs/httpbin/git/commits/15141c1a97c0b14ae28a5d934715e8de5d671510,15141c1a97c0b14ae28a5d934715e8de5d671510,"Put multiple form data values with same key into lists
+
+To avoid flattening the form data when converting to
+json, multiple values with the same key need to be in
+lists.
+
+Fixes issue #19"
+kyleconroy,2011-10-29 18:40:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/337fa135dc322e356754cf5b5c1fc337ca80b97a,337fa135dc322e356754cf5b5c1fc337ca80b97a,Rename the stream endpoint and provide more output per message
+kyleconroy,2011-10-29 18:17:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/b25e073b46295203b0bfd92edf9f5de908e3ae6e,b25e073b46295203b0bfd92edf9f5de908e3ae6e,The delete endpoint now returns JSON
+kyleconroy,2011-10-29 18:14:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/fa391da1b86ca58c5b87e5b8a0def85c4f71b38a,fa391da1b86ca58c5b87e5b8a0def85c4f71b38a,First version of streaming support
+shazow,2011-09-28 02:59:03,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f5b7a05b3711304f14eb91b2a1e3603ae4768f6d,f5b7a05b3711304f14eb91b2a1e3603ae4768f6d,reqs => requirements
+Lispython,2011-09-06 06:21:53,https://api.github.com/repos/postmanlabs/httpbin/git/commits/19e03446648211641869d6fdfe806d6056cb6c3a,19e03446648211641869d6fdfe806d6056cb6c3a,"Added digest auth endpoint with support qop of 2 types: auth and auth-int
+Added endpoint into README endpoints list"
+zsiciarz,2011-06-13 13:50:40,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f5ca0deb9009e3dd3bef7fa3d89367c1757c1ab8,f5ca0deb9009e3dd3bef7fa3d89367c1757c1ab8,Tweaking Basic Auth support.
+zsiciarz,2011-06-13 13:34:23,https://api.github.com/repos/postmanlabs/httpbin/git/commits/ce98a1bd0de688a5669a7b78a99eef29a4ff6467,ce98a1bd0de688a5669a7b78a99eef29a4ff6467,Merge branch 'master' into basic-auth
+zsiciarz,2011-06-13 13:33:39,https://api.github.com/repos/postmanlabs/httpbin/git/commits/d42b798b262031dd4d97e80a0b28b1dac0b137f3,d42b798b262031dd4d97e80a0b28b1dac0b137f3,First try at Basic Auth.
+zsiciarz,2011-06-13 10:47:50,https://api.github.com/repos/postmanlabs/httpbin/git/commits/f5612eecfab58be41f1a04e4723b03df86b304f6,f5612eecfab58be41f1a04e4723b03df86b304f6,Added cookie endpoints to readme.
+zsiciarz,2011-06-13 10:09:27,https://api.github.com/repos/postmanlabs/httpbin/git/commits/6ab7cf694371b8309a243ddfbe87214c1d7c2016,6ab7cf694371b8309a243ddfbe87214c1d7c2016,Viewing and setting cookies.

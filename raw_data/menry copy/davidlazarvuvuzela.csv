@@ -1,0 +1,569 @@
+vuvuzela,Private messaging system that hides metadata
+username,timestamp,url,sha,message
+davidlazar,2019-09-12 15:39:56,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/55ba49f81ad006877ae6b4d76c0958a3ee956441,55ba49f81ad006877ae6b4d76c0958a3ee956441,"all: incorporate edtls updates
+
+This also fixes a bug in mixnet authentication."
+davidlazar,2019-09-10 14:45:48,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/bef4fe4be189e412f4eaa31e6722210f67abbf7b,bef4fe4be189e412f4eaa31e6722210f67abbf7b,all: use new ed25519 package (requires Go 1.13+)
+cmnord,2019-04-09 22:14:18,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d1b3f2f878ab3167a87d1c572369f00d72e1a800,d1b3f2f878ab3167a87d1c572369f00d72e1a800,"cmd/vuvuzela-client: use random dead drop for cover traffic
+
+Fixes #54"
+davidlazar,2019-01-12 12:54:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/2304d375ff31519b7737fa71d698c9b873870667,2304d375ff31519b7737fa71d698c9b873870667,"cmd/vuvuzela-client: fix panic on `/w 0`
+
+Fixes issue #47."
+davidlazar,2019-01-08 08:31:39,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/accc45426a0ac240ce9c751282239c514ced3d12,accc45426a0ac240ce9c751282239c514ced3d12,"cmd/vuvuzela-client: fix warning message
+
+Updates issue #46."
+davidlazar,2019-01-08 07:18:54,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/88544428bdfbbfd124b8d3e47c90b54cf90ef983,88544428bdfbbfd124b8d3e47c90b54cf90ef983,"cmd/vuvuzela-client: add flag to specify coordinator latency
+
+This is a quick hack until we merge the PR that measures the latency to
+the coordinator."
+davidlazar,2018-10-23 03:00:58,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/98ed04cc75c52e986b81db6899e93e310a64a6b4,98ed04cc75c52e986b81db6899e93e310a64a6b4,"cmd/vuvuzela-{coordinator,mixer}: store persistent data in one place
+
+This should make it easier to deploy servers with Docker."
+davidlazar,2018-05-17 15:33:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/5494c99a25adc073157321e178dede6751a32f9a,5494c99a25adc073157321e178dede6751a32f9a,convo: add method to use latest version in convo config
+davidlazar,2018-06-25 18:12:21,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/118732877fcc7bab084926d1ee2677d353f348c0,118732877fcc7bab084926d1ee2677d353f348c0,github: add mailbot config
+davidlazar,2018-04-26 17:33:26,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8402348d9f9186fc4a07bb89a94247c421e38cf8,8402348d9f9186fc4a07bb89a94247c421e38cf8,"cmd: move command configs to separate package
+
+So that we can generate configs from other packages."
+davidlazar,2018-04-26 14:51:15,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/685df24ccd3665e8ee10216747d512513110817e,685df24ccd3665e8ee10216747d512513110817e,cmd/vuvuzela-mixer: use builtin rand package to generate private keys
+davidlazar,2018-04-20 21:31:34,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0e062fcea09c33d69fa402845ba5261acfc94533,0e062fcea09c33d69fa402845ba5261acfc94533,internal/vzlog: incorporate updates to log package
+davidlazar,2018-03-05 16:02:05,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/ab8e3695bb5056ab800d4c99529f108e9610de6c,ab8e3695bb5056ab800d4c99529f108e9610de6c,mixnet: fix panic when onion batch is empty
+davidlazar,2018-03-05 13:56:34,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c748e90a9ff902df465afc1b583c96d3b3e794a9,c748e90a9ff902df465afc1b583c96d3b3e794a9,"mixnet: add support for unidirectional mixnets
+
+This enables the AddFriend and Dialing protocols to take advantage of
+this mixnet package, which should improve performance and reduce code
+duplication.
+
+Clients and servers will need to be updated in tandem since this changes
+the RoundSettings struct in a non-backwards compatible way."
+davidlazar,2018-03-05 13:32:01,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/94e316207b5f04637e5de5e3a634a581cf62c238,94e316207b5f04637e5de5e3a634a581cf62c238,"cmd/vuvuzela-client: fix convo message test
+
+Also rename struct field for clarity."
+davidlazar,2018-02-22 02:08:33,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/3551130e6b6da8a7e55395091e9f7bceae7d3cac,3551130e6b6da8a7e55395091e9f7bceae7d3cac,mixnet: don't create a profile in tests by default
+davidlazar,2018-02-21 04:39:08,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b875ac08948d440bdf3500c8fc63d44116b95ede,b875ac08948d440bdf3500c8fc63d44116b95ede,"mixnet: remove SetNumIncoming RPC
+
+This avoids an extra round-trip by moving the SetNumIncoming logic into
+the AddOnions RPC."
+davidlazar,2018-02-21 01:47:33,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/20c890c91a72cb972b1f4ba4cb445e4677644341,20c890c91a72cb972b1f4ba4cb445e4677644341,mixnet: make stream metadata more extensible
+davidlazar,2018-02-21 04:29:24,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/dc2195c950b9d2e21e96acf745a8a1bde526fdbb,dc2195c950b9d2e21e96acf745a8a1bde526fdbb,mixnet: fix missing error check
+davidlazar,2018-02-20 18:27:22,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a247a772fc427d943f39c89314308a5ea31dd7f4,a247a772fc427d943f39c89314308a5ea31dd7f4,mixnet: parallelize NewRound RPCs
+davidlazar,2018-02-18 18:36:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/411bcc8976ba05d6528713d6ed95c8c921279527,411bcc8976ba05d6528713d6ed95c8c921279527,"mixnet: use multiple TCP conns for RPCs
+
+This forces gRPC to use multiple connections by dialing multiple times.
+This improves the performance test (chainLen=6 numMsgs=50000) on Ben
+(with 80 cores) from 2.0s to 1.5s."
+davidlazar,2018-02-18 18:34:03,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/30b36ef0db01a225e48d277bcade56a2a88b930d,30b36ef0db01a225e48d277bcade56a2a88b930d,client: fix multiple bugs in CloseConvo
+davidlazar,2018-02-18 16:18:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e52b90246ddb5d54c4321222b7e25795eb65ba60,e52b90246ddb5d54c4321222b7e25795eb65ba60,cmd/vuvuzela-client: simplify how latest round is tracked
+davidlazar,2018-02-18 14:10:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/2b9a899d992042a1a7b366b4704682884f0d250d,2b9a899d992042a1a7b366b4704682884f0d250d,client: also hide round not found errors
+davidlazar,2018-02-18 13:32:59,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c7a81c6497ee3e10340dcab16b5ef1b27498cdab,c7a81c6497ee3e10340dcab16b5ef1b27498cdab,"client: hide ""round is closed"" errors from coordinator
+
+Also hide these errors behind the debug flag."
+davidlazar,2018-02-18 13:26:42,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0651f01fed27319269b9b2d5794c1a1936e1de18,0651f01fed27319269b9b2d5794c1a1936e1de18,cmd/vuvuzela-client: add missing copyright headers
+davidlazar,2018-02-18 13:26:26,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c8e0d8ce006c49556523b24a1004b0b7d3e02bbe,c8e0d8ce006c49556523b24a1004b0b7d3e02bbe,convo: add missing copyright header
+davidlazar,2018-02-17 22:41:19,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/703f2f70357897886ae6c3f891c4bad618cc157d,703f2f70357897886ae6c3f891c4bad618cc157d,"cmd/vuvuzela-client: hide missed round errors behind debug flag
+
+The new ""unacked"" count in the status bar already indicates whether your
+buddy is receiving your messages."
+zeldovich,2018-02-17 22:31:24,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b53f0e5f3bc907dcd3e5fea93e2063ceb0a55a05,b53f0e5f3bc907dcd3e5fea93e2063ceb0a55a05,"cmd/vuvuzela-client: report number of unacked messages
+
+helpful to know if your buddy is getting your messages or not"
+davidlazar,2018-02-17 22:29:20,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0962ff464ddfddfa6542a7582d9d1680dcf122fe,0962ff464ddfddfa6542a7582d9d1680dcf122fe,cmd/vuvuzela-client: split code into multiple files
+davidlazar,2018-02-17 22:10:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c617b2dac1ec49b7e1883b5657c356cded1753b9,c617b2dac1ec49b7e1883b5657c356cded1753b9,cmd/vuvuzela-client: go fmt
+zeldovich,2018-02-17 21:39:03,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/85886386fbd7ee0f82b79bad1559972b2c7c0799,85886386fbd7ee0f82b79bad1559972b2c7c0799,"cmd/vuvuzela-client: connect to alpenhorn only after convo is running
+
+alpenhorn uses the approximate current convo round number as an epoch in
+dialing, so if the convo protocol hasn't initialized the current round
+number, the dialing protocol can get out of sync."
+zeldovich,2018-02-17 21:23:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8bc6295c6e10891a3e4584296910f136830241df,8bc6295c6e10891a3e4584296910f136830241df,"cmd/vuvuzela-client: avoid race conditions on gc.latestConvoRound()
+
+if a user initiated a /call right after the client started,
+latestConvoRound might not be set yet (and return 0)"
+zeldovich,2018-02-17 20:17:41,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/109d0295c81ef93e6f42e1a981c61bf202acdd08,109d0295c81ef93e6f42e1a981c61bf202acdd08,"cmd/vuvuzela-client: initialize seq# to the current round#
+
+avoids re-using the same seq# for different messages in case of client restart"
+zeldovich,2018-02-17 20:12:24,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/ee4a9f38b68eedc5d6cacd47bcbc080ccfde79c6,ee4a9f38b68eedc5d6cacd47bcbc080ccfde79c6,"cmd/vuvuzela-client: simplify seq/ack processing logic
+
+if there appears to be a gap in the sender's seq# space but the Lowest
+flag is set, catch up past this gap.  this unifies the case of getting
+the first message from the peer at the beginning of the convo, as well
+as an upcoming case of the peer having restarted and having chosen a
+larger seq#."
+zeldovich,2018-02-17 19:31:06,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/32b0e5338469b73b4985137bf1d7c4ca4ab4d39c,32b0e5338469b73b4985137bf1d7c4ca4ab4d39c,"cmd/vuvuzela-client: slightly better synchronization for seq#
+
+if the peer is already sending a list of messages, wait for them to
+send the lowest-numbered message before latching on to that as the
+peer's sequence#"
+zeldovich,2018-02-17 19:15:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/669fb1152506a57d8d65e9f441f0b483cf37932f,669fb1152506a57d8d65e9f441f0b483cf37932f,"cmd/vuvuzela-client: be more precise in adjusting lastOut on ack
+
+Previously, the sending sequence would restart from the lowest message
+when anything got ACKed.  In steady-state when there's no message
+loss, this resulted in stuttering: each message would get sent twice.
+When message 1 got acked, message 2 was already in-flight (and would have
+been acked soon), but resetting lastOut caused message 2 to be sent again.
+
+The new behavior is to continue in the looping order of outstanding
+messages.  In steady-state with no message loss, this should result in
+2x higher throughput by avoiding stuttering."
+davidlazar,2018-02-17 13:24:42,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0be4d3711f65af9aea69fc8e3937bdaf36a4a73a,0be4d3711f65af9aea69fc8e3937bdaf36a4a73a,cmd/vuvuzela-client: implement home and end keys
+davidlazar,2018-02-17 02:19:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/56117038cc7e63910129311f1789480152205a75,56117038cc7e63910129311f1789480152205a75,"cmd/vuvuzela-client: implement message retransmission
+
+The client cycles through the out queue to avoid unnecessary message
+retransmission. The client also prints incoming messages in sequence
+number order, queueing messages that come in out of order. The sequence
+number 0 is reserved for cover traffic.
+
+The client uses the first non-zero sequence number it sees as the
+starting ack value, but this means that messages can be lost at the
+start of a conversation.
+
+Updates issue #5."
+davidlazar,2018-02-16 18:32:19,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/98fe46f78b027f7658cc69d8715daa8c8e309e15,98fe46f78b027f7658cc69d8715daa8c8e309e15,"coordinator: fix deadlines after config server goes down
+
+The coordinator would announce expired rounds after the config server
+came back online."
+davidlazar,2018-02-16 14:48:51,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/1d90ee92ed5be3bc33f7c02e8c39c739b9361dfc,1d90ee92ed5be3bc33f7c02e8c39c739b9361dfc,cmd/vuvuzela-client: get rid of unused TimestampMessage
+davidlazar,2018-02-16 14:25:23,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/84413848f569c22cde36b91c59792540be42946a,84413848f569c22cde36b91c59792540be42946a,coordinator: delete failed rounds too
+davidlazar,2018-02-14 21:06:41,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/f5366e4c575bcc4bb1a04e880183e24e0e072aa1,f5366e4c575bcc4bb1a04e880183e24e0e072aa1,"coordinator,client: make coordinator loop more efficient
+
+The coordinator now starts multiple rounds in parallel and relies on the
+round's end time to schedule the rounds. This allows the coordinator to
+prep the mixers and clients for a round well in advance of clients
+submitting their onions. We also avoid fetching the latest config every
+round, and instead fetch it every minute. This change also combines the
+MixRound and NewRound messages to avoid an unnecessary round-trip. As a
+result, clients will need to be updated before reconnecting to the Convo
+service.
+
+Overall, this commit significantly improves the end-to-end latency of
+the convo protocol. However, there are several new knobs in this design
+that will be tweaked as we get experience with it in production."
+zeldovich,2018-02-13 16:46:56,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/569e22aa0fe87e6d150757745fdf0c989416f5a5,569e22aa0fe87e6d150757745fdf0c989416f5a5,make go vet happy
+davidlazar,2018-02-13 04:12:40,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d06ace3d3ea5d49ee0f6563da25774954a5e2168,d06ace3d3ea5d49ee0f6563da25774954a5e2168,cmd/vuvuzela-client: fix missing newline
+davidlazar,2018-02-12 23:23:41,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/3d222e7a3b85bc669a79783483a188b1b7515c12,3d222e7a3b85bc669a79783483a188b1b7515c12,client: notify users about global announcements
+davidlazar,2018-02-12 23:22:45,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/185023e89aa259e5f4f1bdbf565c9bf69ccb8aba,185023e89aa259e5f4f1bdbf565c9bf69ccb8aba,coordinator: allow guardians to send announcements to clients
+davidlazar,2018-02-12 22:54:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/7b4a08ca99ed9c4a05982d2544fb90f434043a68,7b4a08ca99ed9c4a05982d2544fb90f434043a68,mixnet: fix coordinator panic when onion batch is empty
+davidlazar,2018-02-11 21:07:38,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/573f3f5046cfe515ecb04993dc6b3b6bb5b13348,573f3f5046cfe515ecb04993dc6b3b6bb5b13348,mixnet: turn on profiling for one round
+davidlazar,2018-02-11 03:51:07,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/aaee9359fe7376fcc593aa40d58a8c2681dc2142,aaee9359fe7376fcc593aa40d58a8c2681dc2142,"mixnet: use streaming RPCs to improve performance
+
+This makes several changes that improve mixnet performance. I ran
+TestMixnetPerformance on Ben with 40 cores:
+
+./mixnet.test -test.v -test.run Perf -numMsgs=50000 -chainlen=6
+
+Before, RunRound took around 5s, now it takes around 2s."
+davidlazar,2018-02-11 03:40:25,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/5cbab457b886ff01d420943279c3b17d562e31dc,5cbab457b886ff01d420943279c3b17d562e31dc,mixnet: add decryption benchmark for reference
+davidlazar,2018-02-11 03:31:47,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/070e38f81817ff5778e15bfe80f01bef0b8fcd9d,070e38f81817ff5778e15bfe80f01bef0b8fcd9d,mixnet: add test for measuring performance
+davidlazar,2018-02-07 00:12:28,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/eaebd0764dc97b74ad06f502211d1d1984bacf3f,eaebd0764dc97b74ad06f502211d1d1984bacf3f,"cmd/vuvuzela-client: use 8-bit colors for status bar
+
+This should fix the status bar issue on Jon's machine."
+davidlazar,2018-02-06 15:12:56,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b7327a92cf66a4f839f9daca25aa7da5b6975775,b7327a92cf66a4f839f9daca25aa7da5b6975775,cmd/vuvuzela-client: add some more color
+davidlazar,2018-02-06 14:26:02,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/254667b5dce55d5c47273a59f819f6138d223954,254667b5dce55d5c47273a59f819f6138d223954,cmd/vuvuzela-client: print welcome message at startup
+davidlazar,2018-02-06 14:18:27,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c1994a60539954a859b2522bf2da5a6ee69de7ec,c1994a60539954a859b2522bf2da5a6ee69de7ec,cmd/vuvuzela-client: improve /help message
+davidlazar,2018-02-06 13:54:25,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/2c350a9db59214657c956fa6eb528a255aaf2293,2c350a9db59214657c956fa6eb528a255aaf2293,"cmd/vuvuzela-client: display timestamps in convo windows
+
+Eventually we should also print date changes like irssi does."
+davidlazar,2018-02-06 13:52:22,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/cba43cccfd8966aad0f88055418a2a4bd0df442b,cba43cccfd8966aad0f88055418a2a4bd0df442b,cmd/vuvuzela-client: use 256 color mode
+davidlazar,2018-02-05 16:46:21,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8e7a26e756dcf866e26f68459c262d114f5e9f51,8e7a26e756dcf866e26f68459c262d114f5e9f51,client: add comment
+davidlazar,2018-02-05 16:44:54,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e060010093e02d9bd20711d8728b6400f2d54b93,e060010093e02d9bd20711d8728b6400f2d54b93,client: check incoming onion size before decrypting
+davidlazar,2018-02-01 16:43:09,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/4d2b5993e2d2430df4cea4535fbef850bf0a322a,4d2b5993e2d2430df4cea4535fbef850bf0a322a,client: tweak error message
+davidlazar,2018-02-01 15:03:44,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/3471efd7472227be1b30d7ef352566968e1e4426,3471efd7472227be1b30d7ef352566968e1e4426,"cmd/vuvuzela-client: send notifications for new convo messages
+
+But not too often."
+davidlazar,2018-02-01 00:33:17,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b41479253f07f1f5d49f668049c153f65f81a9ca,b41479253f07f1f5d49f668049c153f65f81a9ca,"cmd/vuvuzela-client: display desktop notifications
+
+Only for a few events for now."
+davidlazar,2018-01-31 15:16:41,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/1f575ee36c72e684b6e6ef9b13757515511174d1,1f575ee36c72e684b6e6ef9b13757515511174d1,"cmd/vuvuzela-client: hide certain error messages by default
+
+This hides the ""round not configured"" errors unless the user runs the
+client with the -debug flag. This is a short-term hack. The long-term
+solution is to do something more clever with missed rounds."
+davidlazar,2018-01-31 15:15:12,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/13e8b212586ed1925858420ed58c6fa7b4a0929f,13e8b212586ed1925858420ed58c6fa7b4a0929f,client: send errors to Handler
+davidlazar,2018-01-30 20:40:46,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b28f488bf64a859406f3cc047a288e9af1e86cfd,b28f488bf64a859406f3cc047a288e9af1e86cfd,"cmd/vuvuzela-client: connect to servers after registering
+
+Otherwise it's unclear to the user what to do next."
+davidlazar,2018-01-30 20:24:31,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a6ada31a775a82da8c896d1fb2e02b4a0a11c010,a6ada31a775a82da8c896d1fb2e02b4a0a11c010,"client: notify app of config updates
+
+For consistency with the AddFriend and Dialing protocols."
+davidlazar,2018-01-30 14:32:04,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/87a1ebd58377c1ac90c314c83774c6c78abb0b34,87a1ebd58377c1ac90c314c83774c6c78abb0b34,cmd/vuvuzela-client: fix bug in connectLoop
+davidlazar,2018-01-29 22:19:33,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/724a2e046937e5d0e98f9b604cd5179ab7262fd7,724a2e046937e5d0e98f9b604cd5179ab7262fd7,"cmd/vuvuzela-mixer: reorder config fields
+
+To be consistent with the Alpenhorn mixer config."
+davidlazar,2018-01-29 22:18:28,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/5c39ea9891b32305ab89c645b5f874d96c0bed9a,5c39ea9891b32305ab89c645b5f874d96c0bed9a,cmd/vuvuzela-mixer: get coordinator key from convo config
+davidlazar,2018-01-27 23:08:27,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/34340fda350d335f3d66a3131671af740a95fc14,34340fda350d335f3d66a3131671af740a95fc14,"cmd/vuvuzela-client: overhaul the getting started process
+
+This overhauls how the user gets started using Vuvuzela, including key
+generation and registering with the PKGs.
+
+This removes the vuvuzela-keygen command. Instead, the Vuvuzela client
+generates the long-term key when it is launched for the first time.
+
+Users should now use the /register command to register with PKGs after
+obtaining a registration token (e.g., from vuvuzela.io). The /connect
+command is only used to retry connecting if it fails at startup."
+davidlazar,2018-01-27 14:31:34,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c61d700588f31318abfc69caa35e125ba3328a3f,c61d700588f31318abfc69caa35e125ba3328a3f,convo: add version number to convo config
+davidlazar,2018-01-17 04:59:20,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/9fff15ff5ac49e936ea17083497404d4890d6c27,9fff15ff5ac49e936ea17083497404d4890d6c27,client: fix crash when keywheel is ahead of current round
+davidlazar,2018-01-17 04:50:14,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/297b342e104f88209c4f1ea7622ac47b8ee6d231,297b342e104f88209c4f1ea7622ac47b8ee6d231,mixnet: improve logging
+davidlazar,2018-01-16 22:46:23,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/57afd2068b8f11169c9c73ef755e3c278ce4760c,57afd2068b8f11169c9c73ef755e3c278ce4760c,coordinator: improve logging
+davidlazar,2017-12-18 19:41:08,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/9d0bb27b7268b442baac240e878365448fad9523,9d0bb27b7268b442baac240e878365448fad9523,mixnet: delete duplicate log message
+davidlazar,2017-11-28 14:24:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/3f885c7b066b8e5930528451051f80388a0a19f8,3f885c7b066b8e5930528451051f80388a0a19f8,"all: write server logs to disk
+
+See the Alpenhorn commit with the same title for more information.
+
+The vzlog package is based on the alplog package. We should eventually
+merge these packages."
+davidlazar,2017-11-27 19:52:20,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e6b9f800f53f2ca331acc554255d3a2f4e09d395,e6b9f800f53f2ca331acc554255d3a2f4e09d395,"internal: delete unused logrus formatter
+
+The Vuvuzela packages no longer use logrus."
+davidlazar,2017-11-27 18:02:04,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/19ad67adf0b9bb064f1a7cd2abaec2567dcbf917,19ad67adf0b9bb064f1a7cd2abaec2567dcbf917,coordinator: use the Alpenhorn logging package
+davidlazar,2017-11-27 17:48:14,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0b167bbac61ae5fddabdcd7aa802bb4110015294,0b167bbac61ae5fddabdcd7aa802bb4110015294,mixnet: use the Alpenhorn logging package
+davidlazar,2017-11-27 17:57:48,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/2e4a260b3883ba211a5fb8b4c12d7e10a81dbbb8,2e4a260b3883ba211a5fb8b4c12d7e10a81dbbb8,"cmd/vuvuzela-mixer: delete histogram code
+
+This was a neat demo, but we don't need it in production."
+davidlazar,2017-11-15 02:16:28,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/de123509d3333a79403bb6f84ecf51e67ac5b951,de123509d3333a79403bb6f84ecf51e67ac5b951,"cmd/vuvuzela-client: add key bindings for scrolling
+
+Page Up and Page Down scroll the window.
+
+Fixes #23."
+davidlazar,2017-11-14 16:00:07,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/477db07cf6355b18493f35be188abeeef04807bc,477db07cf6355b18493f35be188abeeef04807bc,"cmd/vuvuzela-client: automatically reconnect if connection fails
+
+This syncs vuvuzela-client with recent changes that support
+reconnection. The client no longer attempts to register before
+connecting; future commits will improve the registration process."
+davidlazar,2017-11-14 01:55:15,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/6882038f3bba6def540652a4992f03c9d8fd7501,6882038f3bba6def540652a4992f03c9d8fd7501,"client: expose disconnects to applications
+
+See the Alpenhorn commit with the same title for an explanation."
+davidlazar,2017-10-31 00:52:28,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/462f957110b9547e09f069a926c1019e143c95f7,462f957110b9547e09f069a926c1019e143c95f7,"cmd/vuvuzela-client: improve latency calculation
+
+Previously, the latency displayed in the GUI was accurate only if your
+clock was in sync with your chat partner's clock, but this is rarely
+the case. Now the latency is computed using only your own clock.
+
+We leave TimestampMessage in the code as a reference for adding new
+types of messages later."
+davidlazar,2017-10-29 22:29:05,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/928799f9c01ad9742b6299048d337dfeb60c3be7,928799f9c01ad9742b6299048d337dfeb60c3be7,cmd/vuvuzela-client: delete completed rounds
+davidlazar,2017-10-27 20:22:40,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/4cdee70739c5e7f68b0ce03e91dc88a7db17e718,4cdee70739c5e7f68b0ce03e91dc88a7db17e718,"cmd/vuvuzela-client: implement forward secrecy for convo messages
+
+The idea is to use a keywheel (like in Alpenhorn's dialing protocol) to
+achieve forward secrecy for convo messages. Previously, the dialing
+protocol was used to agree on a session key that was fixed for the
+duration of the conversation. Now the session key is rotated every convo
+round via a keywheel. However, to bootstrap the keywheel, users need to
+agree on the convo round that the initial session key corresponds to.
+
+One naive solution is to use the latest convo round rounded down to the
+nearest multiple of 1000. This works most of the time, except when a
+call is sent near a rounding boundary (then the sender might think the
+keywheel starts at round x, while the receiver thinks it starts at
+x+1000).
+
+Our solution is to use dialing intents to indicate which side of the
+rounding boundary the sender intends to use. We use two intents: 0 means
+that the rounded down convo round is even, and 1 means that it is odd.
+Assuming the sender's and receiver's convo rounds are loosely synced,
+then this is sufficient for them to agree on a convo round. The new
+roundSyncer type implements this logic.
+
+Fixes #3."
+davidlazar,2017-10-27 15:52:02,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/9c7d02db99f2ac49afc7beeac53a6e53265c771a,9c7d02db99f2ac49afc7beeac53a6e53265c771a,cmd/vuvuzela-client: improve handling of `/w -3`
+davidlazar,2017-10-23 22:00:33,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/149ba324592c84e7958509d8306108c8b5c17325,149ba324592c84e7958509d8306108c8b5c17325,"cmd/vuvuzela-client: let users switch windows by index
+
+Fixes issue #22."
+davidlazar,2017-10-23 18:33:50,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/7d0240d75085e75c7736bb99786b12271dc5211c,7d0240d75085e75c7736bb99786b12271dc5211c,"cmd/vuvuzela-client: bold your username in convos
+
+This makes convos easier to read."
+davidlazar,2017-10-23 18:22:02,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a15a24be0484f5f15519489a4d022439f4faaf44,a15a24be0484f5f15519489a4d022439f4faaf44,cmd/vuvuzela-client: add context-aware tab completion
+davidlazar,2017-10-22 11:38:51,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/78853dc6b35fcf17c7d2b3387d0803958343a442,78853dc6b35fcf17c7d2b3387d0803958343a442,"cmd/vuvuzela-client: add /debugfriend command
+
+/debugfriend can be used to check that your and your friend's keywheels
+are in sync. This removes the need to show the keywheel state in /list."
+davidlazar,2017-10-22 02:40:24,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e8b22786f46741d9c4b9b50410894728cfeaa9cb,e8b22786f46741d9c4b9b50410894728cfeaa9cb,cmd/vuvuzela-client: include sent friend requests in /list
+davidlazar,2017-10-20 23:09:18,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/5ba7782f4921028477c4ceaeaa3bc95e0c2f4db2,5ba7782f4921028477c4ceaeaa3bc95e0c2f4db2,cmd/vuvuzela-client: add help for each command
+davidlazar,2017-10-17 18:01:27,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/980174a0b7f5196ff39279a3698aced0f15e72df,980174a0b7f5196ff39279a3698aced0f15e72df,"cmd/vuvuzela-client: support multiple conversations
+
+The GUI client now supports multiple concurrent conversations. There can
+be at most 5 active conversations. The client will generate cover
+traffic if there are fewer than 5 active conversations.
+
+The /call command is used to activate a conversation and invokes
+Alpenhorn's dialing protocol. The /hangup command ends a conversation
+and frees up slot to activate other conversations. If the client
+receives a call but is at the limit of active convos, then the client
+will hold the call. The user can answer a held call using the /answer
+command.
+
+Each conversation now has its own window (or view as gocui calls it).
+Users can create (or jump to) a conversation window with the /w command
+and close a window with /wc. Like in irssi, each window has a number and
+users can move between windows with Alt-{1,2,3,...}. The status bar now
+features a menu bar that signals the currently focused window and any
+windows with unread messages. The first window (window 1) is the main
+window and is used for non-convo-specific messages like friend requests.
+In code, this window is a special case since it does not map to a
+Conversation value.
+
+The concurrency in the GUI client is a bit of a mess. For example, there
+are now two ways to write to a window, Printf and PrintfSync, depending
+on which Go routine the call is made from. Also, having a mutex per
+conversation adds complexity and has been a source of deadlocks. The
+deadlock package has been useful in debugging deadlocks:
+
+    https://github.com/sasha-s/go-deadlock"
+davidlazar,2017-10-17 17:37:40,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/752204d3c1c0db54901e35353aaafed2176f0ed2,752204d3c1c0db54901e35353aaafed2176f0ed2,"client: support multiple conversations
+
+Previously, a ConvoHandler represented a single conversation that could
+be switched in and out of the client. Now there is just one ConvoHandler
+provided to the client when it is created. The new ConvoHandler supports
+multiple messages per round, but it is up to the handler to determine
+how these map to conversations. The ConvoHandler should create the same
+number of dead drop messages each round, but the client does not enforce
+this. In that sense, the client is a low-level interface to the convo
+protocol.
+
+The GUI client will be updated in a followup commit."
+davidlazar,2017-10-17 17:17:57,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/bd40094c255d71c416a5ffc1c7959c034ed5bc06,bd40094c255d71c416a5ffc1c7959c034ed5bc06,"coordinator: allow multiple onions from clients
+
+This is the first step in enabling the Vuvuzela client to support
+multiple conversations. Now clients can send multiple onions in a
+single ""onion"" message, and the coordinator's ""reply"" message will
+contain the corresponding response onions.
+
+The typesocket maxMessageSize will likely need to be increased to
+support larger messages.
+
+The client and GUI will be updated in followup commits."
+davidlazar,2017-10-07 14:31:40,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c2779b8547a9711cb697c3415e34fdbdb7e4d1f1,c2779b8547a9711cb697c3415e34fdbdb7e4d1f1,mixnet: fix contentious lock
+davidlazar,2017-10-07 14:31:02,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8b6303d1f2a06fae6d84daf1cb196559a75c3fc0,8b6303d1f2a06fae6d84daf1cb196559a75c3fc0,cmd/vuvuzela-mixer: enable runtime profiling
+davidlazar,2017-10-07 02:07:07,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a9870ede47fd5d81494ed2fae6682a1392b88893,a9870ede47fd5d81494ed2fae6682a1392b88893,mixnet: fix TestAuth
+davidlazar,2017-10-06 20:56:17,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/83df3c44f383d67172fa55b52be91e49337714b0,83df3c44f383d67172fa55b52be91e49337714b0,cmd/vuvuzela-keygen: validate usernames
+davidlazar,2017-10-06 20:26:04,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/2a0dbe364a762fc234553634684ba0abc2247fad,2a0dbe364a762fc234553634684ba0abc2247fad,cmd/vuvuzela-client: improve formatting of /list
+davidlazar,2017-10-04 00:18:43,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/4140fd9e54079887f267b85aa9feacce1a15f00f,4140fd9e54079887f267b85aa9feacce1a15f00f,"cmd/vuvuzela-client: use color in error messages
+
+The updated gocui package supports color now."
+davidlazar,2017-10-04 00:06:07,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d5a4f36a8dd9a89646d5df9c04fda4d75c702ecd,d5a4f36a8dd9a89646d5df9c04fda4d75c702ecd,cmd/vuvuzela-client: make errors look more consistent
+davidlazar,2017-10-04 00:05:49,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/22796d6d6d7639097bb6266712515e14c1ef4a22,22796d6d6d7639097bb6266712515e14c1ef4a22,client: improve log message
+davidlazar,2017-10-03 23:54:11,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/041285a5179da720a4eb2159a9689fa39f506c4a,041285a5179da720a4eb2159a9689fa39f506c4a,client: replace logrus with alpenhorn/log
+davidlazar,2017-10-03 23:33:15,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/6125711622c102358be92e869902800a8d5de4a3,6125711622c102358be92e869902800a8d5de4a3,"cmd/vuvuzela-client: fix error message
+
+`/call foo@example.com foo@example.com` should not respond with
+""Missing username""."
+davidlazar,2017-05-17 18:13:27,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/321d2188dc675ccbd22cb7297f5e8d7daa95252d,321d2188dc675ccbd22cb7297f5e8d7daa95252d,"cmd/vuvuzela-client: update to latest version of gocui
+
+This should make the GUI concurrent-safe."
+davidlazar,2017-10-03 17:47:07,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/5a749178efc57a174ecd1eca40dfc6fabb29d7ba,5a749178efc57a174ecd1eca40dfc6fabb29d7ba,"cmd/vuvuzela-client: redirect Alpenhorn log messages to GUI
+
+This is a temporary fix until we move the Vuvuzela code to the new
+Alpenhorn logger. Also, there are some issues with concurrent updates to
+views, but these would be addressed by updating the gocui dependency."
+davidlazar,2017-10-03 17:29:54,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a2d5b7c1fe3ddbb21f79435bc09334d48af51f1b,a2d5b7c1fe3ddbb21f79435bc09334d48af51f1b,"cmd/vuvuzela-{client,keygen}: register at client startup
+
+Moving PKG registration out of vuvuzela-keygen and into vuvuzela-client
+gives users an opportunity to retry registration by restarting their
+client."
+davidlazar,2017-09-30 00:42:11,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/ee66b26faea60d3c7ace7615f61a9087d549b7e3,ee66b26faea60d3c7ace7615f61a9087d549b7e3,"all: separate config server from coordinator
+
+This separates the config server from the coordinator, as explained in
+the Alpenhorn commit:
+
+a574a6951dc5db0a911e58300ba745c2385834cf  all: separate config server from coordinator
+
+From Vuvuzela's perspective, the most notable change is how the client
+is bootstrapped. Now, instead of having the user provide the initial
+add-friend, dialing, and convo configs, the vuvuzela-keygen command
+fetches the latest configs from the config server. Cautious users should
+verify the configs (especially the list of guardian keys) before
+continuing to use the client."
+davidlazar,2017-09-26 19:56:11,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/664706de5d9dd7db8e350f5b7743f847efc25f2c,664706de5d9dd7db8e350f5b7743f847efc25f2c,client: fix locking bug in newround handler
+davidlazar,2017-09-23 12:18:23,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/cb3695a0bffca2e6a73fdd26ef8263e78351b0bc,cb3695a0bffca2e6a73fdd26ef8263e78351b0bc,"client: handle config updates; new client package
+
+This commit syncs the client with recent changes to the coordinator and
+mixnet. The client now handles config updates sent by the coordinator
+via the newround message. Config updates need to be persisted for
+security, so now the client has persistent state.
+
+Previously, the Client type was part of the vuvuvzela-client package.
+Now, the vuvuzela-keygen command also needs access to the Client type
+so that it can bootstrap the client with an initial convo config. This
+commit moves the Client to its own package so that both commands can
+use it."
+davidlazar,2017-09-22 20:32:33,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/918f1ff7f617a28069c1cbbecf929ec8807f6748,918f1ff7f617a28069c1cbbecf929ec8807f6748,"coordinator: dynamically configure clients
+
+The coordinator now broadcasts a NewRound message at the start of every
+round to let clients know the configuration for that round. Configs are
+managed by an underlying config.Server that is loaded from the
+ConfigServerPersistPath. The coordinator still has its own persistent
+state to keep track of the last round but its format has changed. The
+init process is also revamped to match the Alpenhorn coordinator -- both
+coordinators can be bootstrapped from the same bootstrap config file.
+In the future, we may merge the two coordinators to reduce code
+duplication.
+
+This commit brings the coordinator in sync with the previous mixnet
+commit. Also, the HTTP routes have changed and clients must now connect
+to the coordinator over HTTPS (edTLS).
+
+This commit is based on commits to Alpenhorn:
+
+44d2d99fcd3b8eb73e2d0dfb946cc66aef5f8a4a  coordinator: dynamically configure clients
+7a0913486971623216ed5946bf171fc1326ac459  coordinator: use the new config server
+
+Those commits give a more detailed explanation of these changes and also
+talk about issues related to freshness of the configs.
+
+The client will be updated in the next commit."
+davidlazar,2017-09-22 15:44:16,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/7e37b489b958e1b809d0ac3331438277dafcc04f,7e37b489b958e1b809d0ac3331438277dafcc04f,"mixnet: switch to gRPC and make mix chains dynamic
+
+The switch to gRPC is motivated by needing more granular authentication
+than is provided by vrpc to support dynamic mix chains. From the mixnet
+server's perspective, the mix chain is now specified by the coordinator
+and can change from round to round. From the client's perspective, the
+mix chain is specified in a configuration (the convo.ConvoConfig type)
+that is signed by the guardians of the system and broadcast to the
+clients at the start of every round. This ensures the coordinator can
+not trick users into using a malicious chain and gives guardians the
+flexibility to add and remove servers in the chain.
+
+This commit also makes the mixnet server more generic via the MixService
+interface. One server can provide multiple mix services. Vuvuzela's
+conversation protocol is provided by the ""Convo"" mix service (whose
+implementation is now in the convo package). This also adds a test to
+the mixnet package that uses a mock mix server.
+
+This commit is based on commits to Alpenhorn:
+
+b295f62039f6fd917d61044a3c6ada6052cbf143  mixnet: switch to gRPC for RPCs
+b403340364b3d87ecff37c91a00a1f56b698cb71  mixnet: make mix chains dynamic
+ab104db9199bfb86bdc6fc98fb8c45b456c2e55d  config: use json for user-facing signed configs
+
+Those commits (and others in the Alpenhorn history) go into more detail
+about dynamic configuration and the motivation behind these changes. We
+note a few differences here:
+
+* We named the protobufs package ""convopb"" instead of ""mixnetpb"" to
+avoid gRPC conflicts with Alpenhorn.
+
+* We have not updated Vuvuzela to use the new logging package provided
+by Alpenhorn.
+
+* We have not extensively benchmarked the new gRPC-based implementation,
+but we don't expect that gRPC will get in the way of performance.
+
+The coordinator and client will be updated in upcoming commits."
+davidlazar,2017-05-17 13:59:31,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/f3b58b8fadc7d6d2087f8d18d8d1c1ef9db9120b,f3b58b8fadc7d6d2087f8d18d8d1c1ef9db9120b,"all: update logrus import path
+
+""The organization's name was changed to lower-case."""
+davidlazar,2017-05-16 14:45:11,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b984c649f94c536c0416cc48c07ee1b719fcb3c5,b984c649f94c536c0416cc48c07ee1b719fcb3c5,"cmd/vuvuzela-client: add /approve command
+
+The /approve command approves friend requests. Now friend requests are
+no longer automatically approved."
+davidlazar,2017-05-16 14:18:30,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b45f79bbcca0fa9c4e90d4b2bb3f2b40256c19ec,b45f79bbcca0fa9c4e90d4b2bb3f2b40256c19ec,"cmd/vuvuzela-client: include friend requests in /list
+
+One issue is that friend requests seem to disappear when they are sent
+because Alpenhorn removes sent friend requests from the outgoing queue
+and does not have a way to list sent requests."
+davidlazar,2017-05-16 03:40:37,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c3c9d732fd0231dd416f557baa82bfb674df96c5,c3c9d732fd0231dd416f557baa82bfb674df96c5,internal: delete unused code
+davidlazar,2017-05-16 03:39:40,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/75a0e0dbbaeff72e887b3237d21dd664b3d45644,75a0e0dbbaeff72e887b3237d21dd664b3d45644,internal/box: delete empty package
+davidlazar,2017-05-15 19:33:54,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/6d5b965a4a2cabf6b7b2afbc2b3643c6014698f5,6d5b965a4a2cabf6b7b2afbc2b3643c6014698f5,"all: rewrite mixnet and entry (coordinator) server
+
+The new mixnet package implements the Vuvuzela conversation protocol and
+is based on the Alpenhorn mixnet design. Now mixers are identified by
+their long-term signing keys and the onion keys are forward secure.
+
+The coordinator package replaces the Vuvuzela entry server and is based
+on the Alpenhorn coordinator. The Vuvuzela client is updated to speak
+with the new coordinator.
+
+The vuvuzela-mixer command replaces vuvuzela-server and the
+vuvuzela-coordinator command replaces vuvuzela-entry-server.
+
+Alpenhorn's config package is now used for global server configuration,
+so the PKI type is removed. This also deletes code that was only used by
+the previous server implementations."
+davidlazar,2017-05-15 19:23:10,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d697de0e0d7630d4cda353c5f687eb219d9b6c27,d697de0e0d7630d4cda353c5f687eb219d9b6c27,cmd/vuvuzela-keygen: use the updated config package
+davidlazar,2017-05-09 23:20:39,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/a91ecf4d793a9de599c49c320cff69a46a18aa37,a91ecf4d793a9de599c49c320cff69a46a18aa37,"Update README
+
+We will add new usage instructions after updating the server code."
+davidlazar,2017-05-09 23:10:50,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/52d4feacd5d38157738ac020bcd04dd60f46ab80,52d4feacd5d38157738ac020bcd04dd60f46ab80,Tweak README whitespace
+davidlazar,2017-05-09 22:26:48,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/749a677f365c60cab1230481f8f5053083716df3,749a677f365c60cab1230481f8f5053083716df3,Tweak README
+davidlazar,2017-05-09 21:33:22,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d4e7342660a3c9476f8b381b7e30e217dbf552dd,d4e7342660a3c9476f8b381b7e30e217dbf552dd,Get rid of dot imports
+zeldovich,2017-05-09 18:39:35,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/7a1aa2877fdba9325c3071bef1ffb61f7bc8771f,7a1aa2877fdba9325c3071bef1ffb61f7bc8771f,Add /delfriend command
+davidlazar,2017-05-09 18:30:36,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/aec6735bb5433c81f7acb89782a7e9bb3b73f901,aec6735bb5433c81f7acb89782a7e9bb3b73f901,"Add /list command that lists your friends
+
+For debugging, this prints part of the internal keywheel state for each
+friend."
+zeldovich,2017-05-09 18:24:54,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8375b776434142695897ae5e3f31c79b757cbc27,8375b776434142695897ae5e3f31c79b757cbc27,Add tab completion for commands too
+zeldovich,2017-05-09 18:19:18,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e2c2106c585ad99282b9ee1728638a4e396fabd1,e2c2106c585ad99282b9ee1728638a4e396fabd1,Generalize command handling in the client
+zeldovich,2017-05-09 15:36:58,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/04e2582f119932eff2810b79b3e4d67020ccaa92,04e2582f119932eff2810b79b3e4d67020ccaa92,Simplify and fix input handling when scrolling to the right
+zeldovich,2017-05-09 15:14:53,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/b0e3d66aa8687acaf48cca4ead0d258f4b7bf949,b0e3d66aa8687acaf48cca4ead0d258f4b7bf949,Add tab completion of friend usernames
+zeldovich,2017-05-09 14:48:06,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d426d1c3d0f279b3bfde63be1d92aea771ec17c1,d426d1c3d0f279b3bfde63be1d92aea771ec17c1,"Clean up input handling for the client
+
+Previously, we were building up a large unseen multi-line input buffer,
+in which the user could confusingly navigate with ""enter"", ""left"",
+""right"", ""up"", and ""down"".
+
+Now there's always a single input line, visible to the user."
+zeldovich,2017-05-09 14:34:13,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/1b9af3a1c8def0535390d1bbc0b847a8f64ab772,1b9af3a1c8def0535390d1bbc0b847a8f64ab772,Fix UI freeze when message queue is full
+davidlazar,2017-05-09 13:59:59,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0eb58dcaf9afc5ab5980539c98c6aabf86bd028f,0eb58dcaf9afc5ab5980539c98c6aabf86bd028f,"Integrate Alpenhorn into the Vuvuzela client
+
+The vuvuzela-client command now requires the -username flag, which
+expects a username that has been initialized with vuvuzela-keygen. The
+-pki flag is still required to provide server information for the convo
+service, but will be removed in a future commit after we overhaul the
+convo mixnet.
+
+This replaces the /talk command with two new commands: /addfriend and
+/call. The /addfriend command sends a friend request to another user.
+The /call command initiates a conversation with an existing friend.
+For now, the client accepts all friend requests and calls."
+davidlazar,2017-05-08 22:27:53,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/6819ffedc66a055cef267ffec708ce00f3937c47,6819ffedc66a055cef267ffec708ce00f3937c47,"Add new vuvuzela-keygen command
+
+The vuvuzela-keygen command is similar in spirit to ssh-keygen. Users
+must run vuvuzela-keygen to generate their long-term keys, create the
+Alpenhorn client state, and register with PKGs before running the
+Vuvuzela client for the first time."
+davidlazar,2017-05-08 22:20:41,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/65bf2ac261f103749635aeacba966fd677bffcde,65bf2ac261f103749635aeacba966fd677bffcde,Move commands to cmd directory
+davidlazar,2017-05-08 21:48:03,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/e2fc084718a91d7686bd6caec7bce2da6534fa37,e2fc084718a91d7686bd6caec7bce2da6534fa37,"Remove long-term encryption keys from the client
+
+Now conversations are encrypted with secretbox using a secret key that
+will be obtained through Alpenhorn's dialing protocol."
+davidlazar,2017-05-08 20:08:53,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/634808dd44c2d664c78adb82ce478dfe6185cae3,634808dd44c2d664c78adb82ce478dfe6185cae3,"Strip out the dialing protocol
+
+The dialing protocol will be replaced by Alpenhorn's more efficient
+dialing protocol."
+davidlazar,2016-11-24 21:25:39,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c2eca3642525f0bd081b3c6c06ac2eb009e46d76,c2eca3642525f0bd081b3c6c06ac2eb009e46d76,"Move repository and update import paths
+
+The repository has moved from github.com/davidlazar/vuvuzela
+to github.com/vuvuzela/vuvuzela.  The canonical import path
+is vuvuzela.io/vuvuzela/..."
+davidlazar,2016-09-08 02:45:20,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/0743a95b92526ee4bf22a5832adcc1f3c43ed8e6,0743a95b92526ee4bf22a5832adcc1f3c43ed8e6,Use the new Laplace type in vuvuzela.io/crypto/rand
+davidlazar,2016-07-08 02:20:56,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/bd8e768ea6c2f654a8a5a0a8912e3e6a5068c764,bd8e768ea6c2f654a8a5a0a8912e3e6a5068c764,Use the new concurrency package
+davidlazar,2016-07-08 02:11:22,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/9142c5aad94cd856d5eacac8e656be9c9bbd3eb4,9142c5aad94cd856d5eacac8e656be9c9bbd3eb4,"Move crypto packages to new repo and update imports
+
+Moved to: https://github.com/vuvuzela/crypto"
+davidlazar,2016-04-21 02:09:26,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/fa9f73944780d4874241794eccb23bc636a25c01,fa9f73944780d4874241794eccb23bc636a25c01,"Use fork of gocui library until it stabilizes
+
+This fixes build errors in the client."
+davidlazar,2016-03-22 22:06:00,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/fbefc71d4944eab8559d720c9982ab3e183f3455,fbefc71d4944eab8559d720c9982ab3e183f3455,Noise the dummy dialing dead drop (fixes #17)
+davidlazar,2016-03-07 23:37:25,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/8ac7808cb62bf8312c64d2faa052253e68c2ab1b,8ac7808cb62bf8312c64d2faa052253e68c2ab1b,Move shuffler into its own package
+davidlazar,2016-03-07 23:32:09,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/c5afbe7e85fed19ab757c60c958570ea64743b16,c5afbe7e85fed19ab757c60c958570ea64743b16,Make internal function private
+davidlazar,2016-02-14 01:58:57,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/cd9f450a8e04b2593680c091282c21bdd9e6b0fa,cd9f450a8e04b2593680c091282c21bdd9e6b0fa,Change license to AGPLv3
+davidlazar,2015-12-13 21:44:21,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/cbef121486924af7d4dc88976d44d1909d3532e7,cbef121486924af7d4dc88976d44d1909d3532e7,Add GPLv3 license text (fixes #12)
+davidlazar,2015-12-11 19:26:01,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/947ff9df210dc0570b70a991b6ea25f04f0a8c0d,947ff9df210dc0570b70a991b6ea25f04f0a8c0d,Add link to web client
+davidlazar,2015-12-06 01:21:24,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/ec8f5beeaf8e8126f081652fb9509869e2b19e32,ec8f5beeaf8e8126f081652fb9509869e2b19e32,"Fix bug in pki.Index
+
+Fail instead of returning an incorrect index when serverName is
+not contained in pki.ServerOrder."
+davidlazar,2015-12-03 17:14:08,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/35a3d4ece2a64e08ec8cb01b269191119a39482b,35a3d4ece2a64e08ec8cb01b269191119a39482b,Mention slides in README
+davidlazar,2015-12-03 16:34:11,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/7256b20938bc81e685ecc9f327af913b42a5440b,7256b20938bc81e685ecc9f327af913b42a5440b,"Merge pull request #11 from neuhaus/patch-1
+
+Go 1.4 or later is required"
+neuhaus,2015-12-03 12:47:34,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/469656cd663b0e9f7bf5b2517a1feed1e78a080d,469656cd663b0e9f7bf5b2517a1feed1e78a080d,"Go 1.4 or later is required
+
+I got this error with go 1.2 on Ubuntu Trusty:
+
+  # github.com/davidlazar/vuvuzela/rand
+  gocode/src/github.com/davidlazar/vuvuzela/rand/cpu_amd64.s:2 6a: No such file or directory: textflag.h
+
+I am not familiar with go but I think it's because go 1.4 or later is required?"
+davidlazar,2015-12-02 04:27:58,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/6498d2508d85dad1fd93d1e599dfdc8ba1750373,6498d2508d85dad1fd93d1e599dfdc8ba1750373,Tweak wording
+davidlazar,2015-12-02 03:59:31,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/cf61af556e43292b2c0283aa46334ffa0b9ba31c,cf61af556e43292b2c0283aa46334ffa0b9ba31c,Publish Vuvuzela v0.1
+davidlazar,2015-09-26 18:40:42,https://api.github.com/repos/vuvuzela/vuvuzela/git/commits/d54f8deb748c38487f9a947b5ee6bba70689cef2,d54f8deb748c38487f9a947b5ee6bba70689cef2,Add README

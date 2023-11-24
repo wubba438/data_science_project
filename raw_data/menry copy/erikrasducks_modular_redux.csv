@@ -1,0 +1,104 @@
+ducks-modular-redux,"A proposal for bundling reducers, action types and actions when using Redux"
+username,timestamp,url,sha,message
+Shelob9,2019-02-12 17:30:24,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/68c67b6d5746d4ed7fb2f194fb42575fef0e5bcd,68c67b6d5746d4ed7fb2f194fb42575fef0e5bcd,"Update cry install command (#76)
+
+When I ran `cry download erikras/ducks-modular-redux` I got the error`Command not found. Check the commands available above`
+The output was really well done and super useful."
+xander27,2018-06-06 07:47:49,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/2c3ccd7a358656311bc7ccf7a040c4b64d54d624,2c3ccd7a358656311bc7ccf7a040c4b64d54d624,"Add simple-duck implementation link (#72)
+
+* Add simple-duck implementation link
+
+I wasnt happy with existing implementations of duck idea, so created my own. Code looks pretty explicit and simple. Already used it couple projects (commercial can't show)
+
+* Update README.md
+
+* spellcheck"
+mfyz,2018-06-06 07:47:31,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/39a4bb5b23eb4f11a55707d1c81af448d92ec99e,39a4bb5b23eb4f11a55707d1c81af448d92ec99e,Turkish translation is added (#73)
+pedsmoreira,2018-06-06 07:47:14,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/de966e1619eb2d40041bb783e54f226723051c93,de966e1619eb2d40041bb783e54f226723051c93,Add duck battlecry generator (#74)
+shicholas,2018-02-22 16:36:20,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/713fceb6685cd917eeff1135abbd65b819c1030a,713fceb6685cd917eeff1135abbd65b819c1030a,added another implementation library (#68)
+drpicox,2018-02-22 16:36:05,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/7ae4c93d31a0f9352847a9bf0c7b56651f3ee157,7ae4c93d31a0f9352847a9bf0c7b56651f3ee157,"Add implementations: ducks-reducer & middleware (#71)
+
+Add ducks-reducer and ducks-middleware that are tools that assumes that ducks are combined in a single object and then you can use them all to create the store.
+
+```javascript
+import ducksReducer from 'ducks-reducer'
+import ducksMiddleware from 'ducks-middleware'
+
+import * as duckWishes from 'duck-wishes'
+import * as comments from './comments'
+import * as posts from './posts'
+import * as users from './users'
+
+const ducks = { comments, posts, users, duckWishes }
+const reducer = ducksReducer(ducks)
+const middleware = ducksMiddleware(ducks)
+
+const store = createStore(
+  reducer, 
+  preloadedState, 
+  applyMiddleware(middleware)
+)
+```"
+fhelwanger,2017-12-13 17:31:51,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/8e61275e07c27054bfcb4f60eae5b5248e63bb33,8e61275e07c27054bfcb4f60eae5b5248e63bb33,"Clarify what happens when importing * (#67)
+
+* Clarify what happens when importing *
+
+I think that mentioning what happens is enough, given that it works even with `default` there.
+
+It only adds an extra action named `default` that won't work... but I don't think it is really a problem.
+
+Fixes #13
+
+* Update README.md"
+erikras,2017-12-05 17:36:41,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/644442e2573af960e7eb032a4c6df1885ac2e597,644442e2573af960e7eb032a4c6df1885ac2e597,Removed sponsor
+erikras,2017-10-17 06:12:33,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/3e90faf455d236601ceb4addaba8f6ad970e3920,3e90faf455d236601ceb4addaba8f6ad970e3920,"Merge pull request #65 from maciejsikora/master
+
+Change example to using proper action creator name"
+erikras,2017-10-09 15:19:42,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/23816c42edaa0baea640cae4a47bd0112ac33bba,23816c42edaa0baea640cae4a47bd0112ac33bba,Added Codesponsor ad. 💰
+maciejsikora,2017-10-06 12:40:32,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/44f893fdf2641c5ab64391d5e94f3d67c3a0b6e1,44f893fdf2641c5ab64391d5e94f3d67c3a0b6e1,Change example to using proper action creator name
+erikras,2017-10-04 19:25:29,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/a4362081242d0637d6785762aaa6b735a76e1006,a4362081242d0637d6785762aaa6b735a76e1006,"Merge pull request #58 from saoirse-zee/patch-1
+
+Fix typo"
+erikras,2017-05-04 19:45:40,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/686ea8b592231efa711a93116ccc2a8101673bd9,686ea8b592231efa711a93116ccc2a8101673bd9,"Merge pull request #54 from investtools/master
+
+Library links"
+erikras,2017-05-04 19:45:08,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/c77a42606901cc004be73ba9e5798f3024809219,c77a42606901cc004be73ba9e5798f3024809219,"Merge pull request #50 from cdaringe/patch-1
+
+:memo: include side effects in proposal"
+erikras,2017-05-04 19:43:26,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/c174ac5445a603376a5f5bfc4491f430985c908a,c174ac5445a603376a5f5bfc4491f430985c908a,"Merge pull request #51 from deadivan/patch-1
+
+Update README.md"
+akelmanson,2017-03-27 18:03:32,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/4860006361440a4f399644c7cf88a52398d603c1,4860006361440a4f399644c7cf88a52398d603c1,Library links
+deadivan,2017-02-01 16:11:44,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/7a14c5a92620117e0b0f51054049e5d0ac49375b,7a14c5a92620117e0b0f51054049e5d0ac49375b,Update README.md
+cdaringe,2017-01-30 21:25:33,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/c5ad514b44ffa9407ecd55ed903843f78947fb22,c5ad514b44ffa9407ecd55ed903843f78947fb22,:memo: include side effects in proposal
+erikras,2017-01-07 10:40:54,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/fd4cfdcd1c831047f90e0a46f66f3e3fff5a0487,fd4cfdcd1c831047f90e0a46f66f3e3fff5a0487,Better styling on beerpay begging
+erikras,2017-01-07 10:38:54,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/c11ef2a911a18093b2c0699021106e791d28e802,c11ef2a911a18093b2c0699021106e791d28e802,Add Beerpay's badge
+erikras,2016-12-21 14:36:55,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/c9a3ac4e02f903f72f0a00dcf3ed285fe1551218,c9a3ac4e02f903f72f0a00dcf3ed285fe1551218,"Merge pull request #33 from cadc/patch-1
+
+added a todomvc example of ducks"
+erikras,2016-12-21 14:35:17,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/9ab0eb0076c63e1d540e759f8b21ee20a4022d6f,9ab0eb0076c63e1d540e759f8b21ee20a4022d6f,"Merge pull request #43 from JisuPark/docs/readme
+
+docs(readme): Add translation"
+erikras,2016-06-05 18:55:33,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/9048e1dba8824b31bf249cf1500d8746a6543be9,9048e1dba8824b31bf249cf1500d8746a6543be9,"Merge pull request #34 from sourcesoft/master
+
+better comments for beginners like me"
+sourcesoft,2016-06-05 17:27:14,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/b877328af449051aa51c7a134739c0827b6d03ae,b877328af449051aa51c7a134739c0827b6d03ae,better comments for beginners like me
+cadbox1,2016-06-02 03:46:17,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/7fab22a5829a26b4a06265cc86e896d4288304da,7fab22a5829a26b4a06265cc86e896d4288304da,added a todomvc example of ducks
+erikras,2016-04-23 08:47:55,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/0b4929e711ee45185b641867c7bb8743bf271f40,0b4929e711ee45185b641867c7bb8743bf271f40,"Merge pull request #32 from jayphelps/patch-1
+
+change word, component -> pieces"
+jayphelps,2016-04-23 08:44:15,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/f03004a3517520dc4bdc8a5e290f289a0df4a9b1,f03004a3517520dc4bdc8a5e290f289a0df4a9b1,"change word, component -> pieces
+
+People may think we're talking about react components."
+erikras,2015-10-05 18:44:26,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/021518168551a9b7e6d35b7f5f0ccb9a9a03c829,021518168551a9b7e6d35b7f5f0ccb9a9a03c829,Added better direction to example ducks.
+erikras,2015-10-05 18:43:08,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/7990aa573f0e0480548fe5bc89f7266c0fba068e,7990aa573f0e0480548fe5bc89f7266c0fba068e,Added link to example repo to address #7.
+erikras,2015-09-29 13:01:08,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/86e73e029778a6278de523ecae10eab3be60dcf3,86e73e029778a6278de523ecae10eab3be60dcf3,made latter example use same action creators
+erikras,2015-09-23 13:11:15,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/734b7a2fc480031a8a71813a72483475a2fcc2e5,734b7a2fc480031a8a71813a72483475a2fcc2e5,Fixed invalid import code. Fixes #5.
+erikras,2015-09-03 13:35:58,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/943e1056c990db9261bd0e14853e9bab33fc28ae,943e1056c990db9261bd0e14853e9bab33fc28ae,fixed comments around commonjs example
+erikras,2015-09-03 13:33:23,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/72c8755c99d3e6f068a4af7b5a90b6b3de62d38a,72c8755c99d3e6f068a4af7b5a90b6b3de62d38a,added common js example to fix #2. Thanks @insin!
+erikras,2015-09-02 23:42:32,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/d1243fe7b4d2dac02b9405577b842d1d812d768c,d1243fe7b4d2dac02b9405577b842d1d812d768c,"Merge pull request #1 from insin/patch-1
+
+Fix syntax errors in example duck"
+insin,2015-09-02 23:37:36,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/d6420ec83c6d00ac3379c60258a820bf48a06f75,d6420ec83c6d00ac3379c60258a820bf48a06f75,Fix syntax errors in example duck
+erikras,2015-08-31 15:42:37,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/0ce981f27d7c6a7b375666056b4f2930a4c3190f,0ce981f27d7c6a7b375666056b4f2930a4c3190f,added migrate meme
+erikras,2015-08-31 13:12:31,https://api.github.com/repos/erikras/ducks-modular-redux/git/commits/99e1c21280a1ce2112811b347d0c0a17f3b2e85d,99e1c21280a1ce2112811b347d0c0a17f3b2e85d,first commit

@@ -1,0 +1,898 @@
+PSTCollectionView,"Open Source, 100% API compatible replacement of UICollectionView for iOS4.3+"
+username,timestamp,url,sha,message
+steipete,2017-01-17 22:21:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/583d2e5e120d55252bb8c31c49db605668c5cfe8,583d2e5e120d55252bb8c31c49db605668c5cfe8,Finally retiring it.
+steipete,2014-08-14 23:44:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3add712952e24bc04396b34a17ef9fee16dcd1d9,3add712952e24bc04396b34a17ef9fee16dcd1d9,spacing
+steipete,2014-08-14 23:42:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/56314cce86aa944b63b95ce9a7d727cbbf2f0461,56314cce86aa944b63b95ce9a7d727cbbf2f0461,prepare 1.2.3
+steipete,2014-08-14 23:42:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/648310779658d8ec1bc17c9e4b89d962aa37c314,648310779658d8ec1bc17c9e4b89d962aa37c314,one more 64 bit fix
+steipete,2014-08-14 23:40:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/72f7e82b98170455b032e73193bed267827c0f14,72f7e82b98170455b032e73193bed267827c0f14,"Merge pull request #388 from jiwanqiang/master
+
+Fixed the display bug, when called the insertSections:"
+steipete,2014-08-14 23:34:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/61154d0b3a3facfcd26f1212daa46d9c6cc49b44,61154d0b3a3facfcd26f1212daa46d9c6cc49b44,"Merge pull request #378 from sugarmo/patch
+
+Delete a wrong delegate method declaration"
+steipete,2014-08-14 23:33:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5e1b1e96c1e6430b6d0d1e2e3c070d12a22ff872,5e1b1e96c1e6430b6d0d1e2e3c070d12a22ff872,update podspec to 1.2.2
+steipete,2014-08-14 22:46:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9b6c7f6583ed94c4eac89d00af2142c5d13d31ab,9b6c7f6583ed94c4eac89d00af2142c5d13d31ab,"Merge pull request #402 from binsoftware/patch/ios8-psui-size
+
+Handle the larger UICollectionView in iOS 8"
+ryanstew,2014-08-14 21:58:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f5d71972c01de13224641ea87a7a38c0b5451c74,f5d71972c01de13224641ea87a7a38c0b5451c74,"Handle the larger UICollectionView in iOS 8.
+
+In addition to increasing padding in PSTCollectionView, this also changes PST class registration so that it does an all-or-nothing superclass replacement of the PSUI*_ classes. This prevents instances like the current case on iOS8-beta 5: PSUICollectionView_ has a superclass of PSTCollectionView, but the other types (e.g. PSUICollectionViewLayout_) had their superclasses replaced with UICollectionView*. This mixed mode is dangerous, as the PST* implementations rely on other PSUI*_ types maintaining their PST* superclasses."
+steipete,2014-06-05 16:30:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/788e1bd98efbb8273de15327e36879b4d257c42d,788e1bd98efbb8273de15327e36879b4d257c42d,"Merge pull request #400 from DeepFriedTwinkie/master
+
+Updated podspec version to 1.2.1"
+DeepFriedTwinkie,2014-06-04 18:54:13,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e17a05377d6f94f9e4ba7b05681d25971ca7c905,e17a05377d6f94f9e4ba7b05681d25971ca7c905,"Updated podspec version to 1.2.1
+
+Bumped version number to reflect iOS 8 fixes.
+In order for this change to be in effect, @steipete will need to Tag the merged request as '1.2.1'"
+steipete,2014-06-04 07:18:37,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0c0d071013ea6fcf33ba129d67b2e67e96e1b03a,0c0d071013ea6fcf33ba129d67b2e67e96e1b03a,"Merge pull request #399 from darend/master
+
+Addressing compilation errors with XCode 6"
+steipete,2014-04-02 12:07:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/891b97cdaf110294ef926fe1a93d5193daa132b7,891b97cdaf110294ef926fe1a93d5193daa132b7,"Merge pull request #394 from pkclsoft/master
+
+Corrections/Improvements to selection of items in flow layout"
+pkclsoft,2014-04-02 07:19:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7e1754b7b7ce5a8df5225fd1c5647bf10e899408,7e1754b7b7ce5a8df5225fd1c5647bf10e899408,Fixed the way the frame attribute value is maintained.  It was being set such that it's origin was the centre of the view which made it next to impossible to get a meaningful tap detection.
+pkclsoft,2014-04-02 07:18:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/92bb4de3b71118c7d6eacf2395c3ab9196c27923,92bb4de3b71118c7d6eacf2395c3ab9196c27923,"Corrected/improved the hit detection of items within PSTCollectionViewFlowLayout.layoutAttributesArray.
+
+The existing code would return all items in the row tapped rather than just the item.  The new code now correctly adjusts the rectangle used to detect an intersection and only includes those items that intersect.
+
+This seems (to me) to be more consistent with the behaviour of the Apple classes."
+pkclsoft,2014-04-02 07:15:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dd1eaaca032f74f1b4c079e4cfeca692ac4a264b,dd1eaaca032f74f1b4c079e4cfeca692ac4a264b,"Ensure that when setCollectionViewLayout is called, the new layout is used when computing attributes of the contained items."
+steipete,2014-02-06 21:22:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c995cdc7c8cd14674b26a3de82d906266997cad2,c995cdc7c8cd14674b26a3de82d906266997cad2,"Merge pull request #390 from ianmurrays/index_path_point_fix
+
+indexPathForItemAtPoint: does not return an indexPath when the cell isn't visible"
+ianmurrays,2014-02-06 18:53:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5471e2629f5cb423f5c5a30b69a42efd16ee9ed8,5471e2629f5cb423f5c5a30b69a42efd16ee9ed8,Fixes issue where indexPathForItemAtPoint: would not return an indexPath when the cell wasn't visible.
+jiwq,2014-01-03 09:04:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b8280d3b017e84e1cc1ca8ce0be14139f904d890,b8280d3b017e84e1cc1ca8ce0be14139f904d890,"Fixed when user insert the new sections, the cell will display with a blink animation at the first operation."
+steipete,2013-12-27 10:39:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f8a9717eca9d32d5085154b1c6d58b4c59961a91,f8a9717eca9d32d5085154b1c6d58b4c59961a91,Update README.md
+steipete,2013-11-23 12:35:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1d81f11c20b4274866571a03c8d851efbfed19de,1d81f11c20b4274866571a03c8d851efbfed19de,"Merge pull request #384 from CanTheAlmighty/master
+
+Fixed issue on -shouldInvalidateLayoutForBoundsChange:"
+sugarmo,2013-10-30 09:21:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/23167f5c4a22e0a9bda5f758107f56306d12475d,23167f5c4a22e0a9bda5f758107f56306d12475d,Delete a wrong delegate method declaration
+steipete,2013-10-16 08:03:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/26dd43be95a31cdc8e43871842ab82c991ba1c8a,26dd43be95a31cdc8e43871842ab82c991ba1c8a,Fixes potential crash. Closes #372
+steipete,2013-10-06 14:10:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/791f4464b48f23677a7a0e0689b9ef43203010fd,791f4464b48f23677a7a0e0689b9ef43203010fd,update podspec
+steipete,2013-10-02 08:18:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/56e024fa82f671fb258c5fa88fb5b82887b1ad9f,56e024fa82f671fb258c5fa88fb5b82887b1ad9f,Don't use appledoc in comments.
+steipete,2013-09-12 21:10:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/86099eca6404d7ee3b8b4330943fbb6afe7d643a,86099eca6404d7ee3b8b4330943fbb6afe7d643a,"Merge pull request #361 from daniel-c/master
+
+Fix compilation error due to ambiguous addObject"
+steipete,2013-09-11 14:19:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3df44156e398e43f3e9f0f308b78f06904c89a1b,3df44156e398e43f3e9f0f308b78f06904c89a1b,Updates for arm64
+steipete,2013-09-04 21:50:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d80c2dadb33f65a23f9657234bf212500932b4ff,d80c2dadb33f65a23f9657234bf212500932b4ff,"Merge pull request #357 from GateGuru/feature/accessibility-traits
+
+Add selected accessibility trait to PSTCollectionViewCell for better int..."
+steipete,2013-09-01 19:35:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f90f13869743e0b832902074d6925ed26ff84755,f90f13869743e0b832902074d6925ed26ff84755,Add sentinel to disable UICollectionView forwarding if class exists
+steipete,2013-09-01 19:35:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d6f267f8168d908cfb19238c37ecf0707a23c864,d6f267f8168d908cfb19238c37ecf0707a23c864,space
+steipete,2013-09-01 19:35:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0dba68e2ddf8fe93e68c0ec2701578f85cb8380a,0dba68e2ddf8fe93e68c0ec2701578f85cb8380a,typo
+steipete,2013-08-27 09:22:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2a249e72b24512a44d8f5f78b79bddbe0890300f,2a249e72b24512a44d8f5f78b79bddbe0890300f,Check for userInteractionEnabled flag. Fixes #354
+steipete,2013-08-27 09:22:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f2ab34d15597ab1d21824f9da160b39af6c3d838,f2ab34d15597ab1d21824f9da160b39af6c3d838,code style
+steipete,2013-08-20 17:05:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a733a681d4aa9298ce24c090b5ea911bac8ead0b,a733a681d4aa9298ce24c090b5ea911bac8ead0b,update comment
+steipete,2013-08-13 16:22:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f09ff3da8b1ef46af88d95b9f348931e97560a0b,f09ff3da8b1ef46af88d95b9f348931e97560a0b,"Merge pull request #353 from 343max/superClassSwitching
+
+Super class switching"
+343max,2013-08-13 12:13:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a3c966a5a697e95603eeee2ad0af7da7d73f4871,a3c966a5a697e95603eeee2ad0af7da7d73f4871,some tiny code reformatting
+343max,2013-08-13 12:13:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/72772a093142612ca6c5c34ee7e89f5f10712876,72772a093142612ca6c5c34ee7e89f5f10712876,size diff could not become negative
+steipete,2013-08-12 20:54:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d89f9aaf0269730f304b8f32beaec8117210cd14,d89f9aaf0269730f304b8f32beaec8117210cd14,Add filler for PSTCollectionViewLayoutAttributes. Fixes #337.
+steipete,2013-07-31 08:49:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/023c7d49ade58d1bffe664264c44e7ecba36accd,023c7d49ade58d1bffe664264c44e7ecba36accd,"Merge pull request #351 from azone/patch-2
+
+Update PSTCollectionViewCell.m"
+azone,2013-07-31 07:12:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ec93900cbf7b574311d24b21486318074fbd07e6,ec93900cbf7b574311d24b21486318074fbd07e6,"Update PSTCollectionViewCell.m
+
+Avoiding highlight subviews if the view can't be highlight"
+steipete,2013-07-30 11:18:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d87fff843d9d3d6f2fbdabce7a23f565b0a7f053,d87fff843d9d3d6f2fbdabce7a23f565b0a7f053,remove whitespace
+steipete,2013-07-30 11:16:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8c83264dca569198dec0d0cd22a93511f2622499,8c83264dca569198dec0d0cd22a93511f2622499,"Merge pull request #350 from azone/patch-1
+
+Update PSTCollectionViewCell.m"
+azone,2013-07-30 10:41:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8eb9d53dfb6a038be0409084680a7e1bea17b960,8eb9d53dfb6a038be0409084680a7e1bea17b960,"Update PSTCollectionViewCell.m
+
+Shouldn't highlight UIControls"
+steipete,2013-07-28 09:15:37,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b4562e689db2b7089415de2b38d3f14d42d81df9,b4562e689db2b7089415de2b38d3f14d42d81df9,"Merge pull request #349 from grpaul/patch-1
+
+Avoid re-loading UIKit for simulator drag."
+grp,2013-07-28 06:14:23,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/829c66f003f55e40ad0a4e5385e23730be88ed3a,829c66f003f55e40ad0a4e5385e23730be88ed3a,"Avoid re-loading UIKit for simulator drag.
+
+PSTCollectionView depends on UIKit, so UIKit must be loaded into memory. Rather than finding the path and calling dlopen(), just search the existing symbols."
+steipete,2013-07-18 08:00:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/148e8ce41a366d4485aa4f4ae1be2da2cf10c927,148e8ce41a366d4485aa4f4ae1be2da2cf10c927,"Merge pull request #348 from RishabhJain96/master
+
+Fixed PSTCollectionViewLayoutAttributes"
+RishabhJain96,2013-07-17 22:30:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5b55a44a1c11185668abecf69a2140e41ef0f69d,5b55a44a1c11185668abecf69a2140e41ef0f69d,Fixed PSTCollectionViewLayoutAttributes
+steipete,2013-07-16 17:08:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fdaed7333e7db5ced4342a3edd3181d6dbf936da,fdaed7333e7db5ced4342a3edd3181d6dbf936da,Check if view is loaded before checking
+steipete,2013-07-16 17:02:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bc79b0dbd67f584896aba3588e946b25d089504e,bc79b0dbd67f584896aba3588e946b25d089504e,Fixes an regression with the detection if we should update the layout.
+steipete,2013-07-16 16:14:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/87f152d65a7a604e445ef6cbe65fb7c83852d28f,87f152d65a7a604e445ef6cbe65fb7c83852d28f,Merge PR #324 - fixes for decoration views
+steipete,2013-07-16 16:12:23,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/371f4f43aa3c72ab54e4459b130b755aacfd2326,371f4f43aa3c72ab54e4459b130b755aacfd2326,Touched by Xcode5
+steipete,2013-07-16 16:05:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1dd0506ce314bb022bd8880773493e14170ddd2d,1dd0506ce314bb022bd8880773493e14170ddd2d,Remove dead code
+steipete,2013-07-16 16:00:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/362f880b7d5521811d98edee8a2167d44dd259dd,362f880b7d5521811d98edee8a2167d44dd259dd,"Merge pull request #325 from mattjgalloway/prepare-layout
+
+If the layout isn't prepared, then prepare it when it's about to be used"
+steipete,2013-07-16 15:59:23,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7ce6ab08eefc5aee7a6cf04c8744456c72519d3c,7ce6ab08eefc5aee7a6cf04c8744456c72519d3c,"Merge pull request #326 from mattjgalloway/missing-assoc-object
+
+Fix associated object disappearing"
+steipete,2013-07-16 15:57:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/db1d8d806f7e8a9ee9a49f013cfae8127a432eb4,db1d8d806f7e8a9ee9a49f013cfae8127a432eb4,Fixes #340 (Calls viewDidLoad after lazy loading the collectionView.)
+alextud,2013-07-09 09:22:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dfc4803777e11a53668dec7d1b141ebaabc41b9a,dfc4803777e11a53668dec7d1b141ebaabc41b9a,Dequeue CollectionCell - apply the attribute (bounds) only once in method applyLayoutAttributes:
+steipete,2013-07-16 15:51:40,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3336eb5d901518a2b86611dcebac0a7fb32d4771,3336eb5d901518a2b86611dcebac0a7fb32d4771,"Merge pull request #342 from nxtbgthng/feature/invalidate-on-bounds-change
+
+Invalidate Layout on Bounds Change"
+steipete,2013-07-16 15:33:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/03ca86fd426f715142b9b16a7e208e5fad79ff85,03ca86fd426f715142b9b16a7e208e5fad79ff85,"Merge pull request #343 from nxtbgthng/feature/fix-collection-data-updateItemCounts
+
+Bug fix in  -[PSTCollectionViewData updateItemCounts]"
+steipete,2013-07-16 15:32:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/27916d5ce9dcb3f4921bd6bc8ee6433265b52c4b,27916d5ce9dcb3f4921bd6bc8ee6433265b52c4b,"Merge pull request #345 from Soph/master
+
+Updated .podspec for 1.1.0 release"
+steipete,2013-07-16 15:32:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/281cfa35f9bb992ae9497c2f1de1239c47a33d8b,281cfa35f9bb992ae9497c2f1de1239c47a33d8b,"Merge pull request #346 from nxtbgthng/fix/reuseidentifier-from-nib
+
+Correctly decoding reuseIdentifier when loading from Nib"
+stigi,2013-07-16 14:58:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ae1d57949b2bf65803753ed640665d1665dd8cd9,ae1d57949b2bf65803753ed640665d1665dd8cd9,Correctly decoding reuseIdentifier when loading from Nib
+Soph,2013-07-16 09:36:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/52d9f41d03c4cf0c15558e31b256c8720ef00ddc,52d9f41d03c4cf0c15558e31b256c8720ef00ddc,updated podspec to 1.1.0 tag
+steipete,2013-07-03 06:30:47,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/af3ab758b9c02cd6f5feb1557604ee0ae9887cfd,af3ab758b9c02cd6f5feb1557604ee0ae9887cfd,"Merge pull request #338 from camitox/master
+
+Crash while moving Cells - Tested on iOS 5.1"
+steipete,2013-06-19 08:24:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d5f303e5df8a24bcacf4ce4dcb91a1887d0dbf00,d5f303e5df8a24bcacf4ce4dcb91a1887d0dbf00,Fixes issue with class generation
+steipete,2013-06-19 08:24:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7656ed24e22ec38a00ff8e1a03dd9aa37a9560d4,7656ed24e22ec38a00ff8e1a03dd9aa37a9560d4,Use modern syntax
+steipete,2013-06-11 00:03:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6dd53c1580322d6b850ac5a6bd8d084e9c0690bd,6dd53c1580322d6b850ac5a6bd8d084e9c0690bd,Don't override dict
+steipete,2013-06-10 23:43:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/09dd1b4c5c17094c881c419a8511505fbebf4c93,09dd1b4c5c17094c881c419a8511505fbebf4c93,"Add some hacks to fix compatibility issues with iOS7 - this doesn't affect you if you use PSTCollectionView, but PSUICollectionView now works again"
+steipete,2013-06-10 23:42:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a348bdf045bbf37ba4e55985034ab6bd329419ca,a348bdf045bbf37ba4e55985034ab6bd329419ca,formatting
+steipete,2013-06-07 16:33:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4f814f17b2db4d6597e160e6206015db11ee88d9,4f814f17b2db4d6597e160e6206015db11ee88d9,"Merge pull request #332 from Cykey/master
+
+Fix a syntax error"
+davidmurray,2013-06-07 16:24:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/eb34352b037b5e4783d8362de6e65c95a0e66583,eb34352b037b5e4783d8362de6e65c95a0e66583,Fix syntax error
+steipete,2013-06-06 19:36:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ddda58cfea43813390b61957b17b40a0546a7121,ddda58cfea43813390b61957b17b40a0546a7121,"Merge pull request #329 from retendo/master
+
+Fixed numberOfItemsBeforeSection:"
+steipete,2013-06-02 17:46:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b6af2f8cb28d97d7a80fc463662e38bfd8861f1f,b6af2f8cb28d97d7a80fc463662e38bfd8861f1f,We can ignore cases where the PST class is larger than the UI-class.
+steipete,2013-06-02 17:18:13,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/41535edfae6d233a0b89879e7b3f20b5c51a466b,41535edfae6d233a0b89879e7b3f20b5c51a466b,The runtime class switcher now checks for the class size and tries to fix situations where the ivar size of the new superclass is different (e.g. potential future iOS updates)
+steipete,2013-06-02 16:31:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/302822613c3b8e29b05fc8d1a25d12a71994c99b,302822613c3b8e29b05fc8d1a25d12a71994c99b,Use dot notation for idempotent methods.
+mattjgalloway,2013-05-28 14:12:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ad0101931989c75e105afcff5bf379e10cf3953f,ad0101931989c75e105afcff5bf379e10cf3953f,"Fix associated object disappearing
+
+The associated object gets cleared out in invalidate layout, so it
+makes sense to add it in prepare layout. Otherwise, once the layout has
+been invalidated once, the associated object is gone forever and won't
+ever be created again."
+mattjgalloway,2013-05-28 14:10:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/351ab2852ca32d1a54e4b3d24dd198f88ae9e6c5,351ab2852ca32d1a54e4b3d24dd198f88ae9e6c5,"If the layout isn't prepared, then prepare it when it's about to be used"
+montreux,2013-05-28 12:07:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9499317bf0087646212b09999837fb797ba4dddb,9499317bf0087646212b09999837fb797ba4dddb,Removed reuseIdentifier which was no longer used along with two unused methods.
+montreux,2013-05-28 11:13:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4b74364d3d9da6b4c00e573f20e45f4d95c854ec,4b74364d3d9da6b4c00e573f20e45f4d95c854ec,Fix for issue 323. Decoration views do not display properly.
+steipete,2013-05-23 21:18:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a498fc2c90f575f7a08bbd692f93f2d17d7ab764,a498fc2c90f575f7a08bbd692f93f2d17d7ab764,"Merge pull request #319 from alexanderedge/master
+
+Fix assertion when deleting the last section."
+alexanderedge,2013-05-23 17:13:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8aba22b921c5a9f3e8ba264bdccf52fdd5c4b965,8aba22b921c5a9f3e8ba264bdccf52fdd5c4b965,Fix assertion when deleting the last section
+steipete,2013-05-22 19:56:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f89b14e1a5e7f8b084aad02626c3c6995a1b22e0,f89b14e1a5e7f8b084aad02626c3c6995a1b22e0,Add Decoration View test case (thanks to @cysp)
+steipete,2013-05-22 19:56:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/170c6954049858e4b14e088d506d645512bb8ba3,170c6954049858e4b14e088d506d645512bb8ba3,Rename const string
+steipete,2013-05-22 19:43:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/df8fd5278fac2c08ff4dec1cf9e7fb1cd010f3d0,df8fd5278fac2c08ff4dec1cf9e7fb1cd010f3d0,Add missing import
+steipete,2013-05-22 19:56:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0f73eff5f6f5159bc2fac43396b48df0bd48095d,0f73eff5f6f5159bc2fac43396b48df0bd48095d,"Merge pull request #256 from cysp/for-review/decorationview-itemkey
+
+DecorationView ""kind"" identifiers are ignored"
+steipete,2013-05-22 19:35:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/677101eca79dec11f81ca802760a5d0e0af0ce7f,677101eca79dec11f81ca802760a5d0e0af0ce7f,"Merge pull request #315 from mattjgalloway/speed-up-large-datasets
+
+Improve speed, especially with large data sets"
+steipete,2013-05-22 16:43:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/742a08dc6d19eab6044d2660ce69e5f6193a6214,742a08dc6d19eab6044d2660ce69e5f6193a6214,"Merge pull request #316 from mattjgalloway/lazy-load
+
+Lazy load the collection view for registering cells at init"
+meslater,2013-05-22 11:16:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1402177f165fc5656483d989e78facfb6ee69b4c,1402177f165fc5656483d989e78facfb6ee69b4c,Lazy load the collection view for registering cells at init
+mattjgalloway,2013-05-22 13:52:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/010f50f927db7fd6fb6fcb25c70bae911c6c6153,010f50f927db7fd6fb6fcb25c70bae911c6c6153,"Improve speed, especially with large data sets
+
+_globalItems is not a cache of the index paths (at least, in UICollectionView it isn't). This commit
+removes that concept for now. Eventually, it should be added back in, but when it does there are a
+whole load of other methods that need adding such as 'loadEverything' and
+'setLayoutAttributes:atGlobalItemIndex:'. We should do that, but that's for another day."
+cysp,2013-03-11 07:03:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3d6f506e5b4bf9968bfc4195c3462034f771b900,3d6f506e5b4bf9968bfc4195c3462034f771b900,Use reuseIdentifier in Decoration View ItemKeys
+steipete,2013-05-19 22:14:16,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/666e014817716adcf4393e874986e87418e781fb,666e014817716adcf4393e874986e87418e781fb,Update code style
+steipete,2013-05-18 12:22:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/06ad14bf5040723a07371981cedc7c9a6e69fc60,06ad14bf5040723a07371981cedc7c9a6e69fc60,"Several fixes for reloading sections, thanks to @danthorpe. Fixes #310"
+steipete,2013-05-18 12:11:14,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b0d2c6a669069a46d7b0157d6de2608adbd94e07,b0d2c6a669069a46d7b0157d6de2608adbd94e07,Use the proper reuse identifier for supplementary views (that also uses kind as part of it). Fixes #312
+steipete,2013-05-18 11:53:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c68a2fdd4cb8b1276544516e8c374ccbe8b4eabd,c68a2fdd4cb8b1276544516e8c374ccbe8b4eabd,Nicer syntax
+steipete,2013-05-16 19:49:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/86298499bacb00a520ca41245a1186df9eb101a5,86298499bacb00a520ca41245a1186df9eb101a5,"Merge pull request #314 from alexanderedge/master
+
+Items not removed from view when deleting sections"
+alexanderedge,2013-05-16 16:56:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9514da142331af22e8781240d2644785186fff03,9514da142331af22e8781240d2644785186fff03,Merge branch 'master' of https://github.com/steipete/PSTCollectionView
+steipete,2013-05-16 16:01:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/eaf68cd6ad949c9afe2f67223f2d8b7c6d601b5f,eaf68cd6ad949c9afe2f67223f2d8b7c6d601b5f,"Merge pull request #313 from JensDee/features/fixWarnings
+
+fix warnings"
+alexanderedge,2013-05-16 15:27:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/aaac0197b538fb47ce77dc72ee50f2b701709c0b,aaac0197b538fb47ce77dc72ee50f2b701709c0b,Use old collectionViewData when iterating through a deleted section
+JensDee,2013-04-26 12:24:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fac2e296c2d3437e2e60c10ce9d2230de2c06298,fac2e296c2d3437e2e60c10ce9d2230de2c06298,Fix implicit float/double conversion
+JensDee,2013-04-26 12:24:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/921df5b1cb61e023f154d85080f6361db3575222,921df5b1cb61e023f154d85080f6361db3575222,Fix comparison of different signs
+steipete,2013-05-16 14:33:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4fd6dfbdf57da86438aae656ecb018c3fda1d7af,4fd6dfbdf57da86438aae656ecb018c3fda1d7af,"Merge pull request #311 from sinnerschrader-mobile/master
+
+Fixes a crash when setting up a unit test environment"
+steipete,2013-05-14 12:47:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/17856a9dcd1b2d2a882f9b503742dc9bec0fbda6,17856a9dcd1b2d2a882f9b503742dc9bec0fbda6,"Merge pull request #307 from jlnr/apply-attributes
+
+Fix -[PSTCollectionViewCell applyLayoutAttributes:] (hopefully)"
+steipete,2013-05-14 12:33:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5624a90598b6995f031cc28d9b1ae4724a43069d,5624a90598b6995f031cc28d9b1ae4724a43069d,"Merge pull request #306 from kmy504/master
+
+#304 fixed."
+kmy504,2013-05-14 11:41:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/13616a69fb02c456b349fd1d69e94a7faef4207e,13616a69fb02c456b349fd1d69e94a7faef4207e,"fixed #304 problem to remove section with animation. when remove section with animation, cell in removing section remove from superview then remove section."
+steipete,2013-05-14 11:33:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4aecfc6001837e9368e8a8041e87165717b777af,4aecfc6001837e9368e8a8041e87165717b777af,"Merge pull request #305 from jlnr/readme-typos
+
+Fix a few typos in README.md"
+jlnr,2013-05-14 11:11:32,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3e41350a4e65d9cb5ba54f897ed8dc41ca9a877f,3e41350a4e65d9cb5ba54f897ed8dc41ca9a877f,"Fix -[PSTCollectionViewCell applyLayoutAttributes:] (hopefully, anyway)"
+jlnr,2013-05-14 10:52:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4c6837c8be2cc6d4c8fdd051757e1da0e6aa0369,4c6837c8be2cc6d4c8fdd051757e1da0e6aa0369,Fix a few typos in README.md
+steipete,2013-05-13 17:10:40,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c0ea2169c06d58d96e875d982e3fab69ef9ea269,c0ea2169c06d58d96e875d982e3fab69ef9ea269,Fixed problem with applied LayoutAttributes (fixes #225)
+steipete,2013-05-13 17:07:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9c70c260ecc17d44775c7aecb0df88348cf4e232,9c70c260ecc17d44775c7aecb0df88348cf4e232,Improve segue calling
+steipete,2013-05-13 17:04:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7a71917bd2a03fcd21f913c059c6954fa45586c3,7a71917bd2a03fcd21f913c059c6954fa45586c3,formatting
+steipete,2013-05-13 17:04:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b56a120bcfb4e463c191bee045dae198d4a41b43,b56a120bcfb4e463c191bee045dae198d4a41b43,Fixes an issue if the grid delegate was set to the grid
+steipete,2013-05-13 17:05:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a08ccb247852fd92707704d57746d84bdcfb4fbb,a08ccb247852fd92707704d57746d84bdcfb4fbb,"Merge pull request #284 from advantis/master
+
+Fix storyboard segues on iOS < 6.0"
+steipete,2013-05-03 20:58:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/89594e3109652d8f5fd3c19c070f500ba0144976,89594e3109652d8f5fd3c19c070f500ba0144976,"Merge pull request #300 from darcyliu/master
+
+Fix issue #292"
+steipete,2013-04-29 19:04:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/75c17df3edd00dbdbae39e862623bf42361a1e7a,75c17df3edd00dbdbae39e862623bf42361a1e7a,"Merge pull request #298 from willpragnell/master
+
+Small fix in README.md"
+goonzoid,2013-04-29 18:25:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2a64e244224de6074d9ea470a216cf9c336321fd,2a64e244224de6074d9ea470a216cf9c336321fd,small fix in README.md
+alloy,2013-04-26 09:29:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/55e59de076c254770336e7ab54081449d6b7fa18,55e59de076c254770336e7ab54081449d6b7fa18,"[podspec] Update source tag and remove superfluous public headers.
+
+By default all headers in the `source_files` are assumed to be public."
+steipete,2013-04-26 09:17:26,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9baef685cce213d991d046738974c4b08f6a8a48,9baef685cce213d991d046738974c4b08f6a8a48,update podspec
+steipete,2013-04-17 21:40:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cc7c705b5ea23c18bd55a06b192d7eb39b5fe7fb,cc7c705b5ea23c18bd55a06b192d7eb39b5fe7fb,"Merge pull request #295 from aburgel/move_fixes
+
+Fix batch updates with NSFetchedResultsController assertions"
+aburgel,2013-04-17 19:26:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ea929dde27daa5f1af7629342d32c8db6f18f23f,ea929dde27daa5f1af7629342d32c8db6f18f23f,Add batch update example app
+aburgel,2013-04-17 02:16:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cc51db399b06daba4ec09473a6e4cd6f9f903191,cc51db399b06daba4ec09473a6e4cd6f9f903191,"Fix move operations when batched with deletes
+
+Since deletes happen before moves, indexPathBeforeUpdate.item may no
+longer point to correct index, so search for the object we're looking
+for and use its index."
+aburgel,2013-04-16 23:31:19,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9bdeca77328df7c566b6136ad0536163f25e3c91,9bdeca77328df7c566b6136ad0536163f25e3c91,Fix assertion message typo
+aburgel,2013-04-16 23:31:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ef5c06ba8d816cc46c3eeab459c6f16e03a886bd,ef5c06ba8d816cc46c3eeab459c6f16e03a886bd,Fix assertion on deleting and moving same item
+advantis,2013-03-31 10:52:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c499407c0aa998118c4ba3aef2d34f6a2d0ea795,c499407c0aa998118c4ba3aef2d34f6a2d0ea795,Selection segue is triggered only after the corresponding index path has been added to the _indexPathsForSelectedItems
+advantis,2013-03-26 14:59:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/80f11a5a8caf0c7f5a7e9e79f10dd9844c09c3d2,80f11a5a8caf0c7f5a7e9e79f10dd9844c09c3d2,Added comment describing downsides of the current implementation
+advantis,2013-03-25 18:26:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3ada6179a06b2f40c0ed343c788fe7f3a21d8c35,3ada6179a06b2f40c0ed343c788fe7f3a21d8c35,Fix storyboard segues on iOS < 6.0 (closes #121)
+steipete,2013-03-21 10:07:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ce067baeb44fb4056906802d12670f53d8ba9b9b,ce067baeb44fb4056906802d12670f53d8ba9b9b,Reformat last animation view changes to now warn on overridden variables
+steipete,2013-03-21 09:39:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7b25ab18492bca8d111b6c54bec2125265c84162,7b25ab18492bca8d111b6c54bec2125265c84162,Fix compile issue on iOS6
+steipete,2013-03-21 09:40:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5bfc45f2400d989e8f2b2088984631a719de7196,5bfc45f2400d989e8f2b2088984631a719de7196,"Merge pull request #275 from alexanderedge/master
+
+Delete item causes display corruption in flow layout"
+alexanderedge,2013-03-20 10:17:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/549f468fa53292b09216e479b3eb2e523b7f98d8,549f468fa53292b09216e479b3eb2e523b7f98d8,"Uncomment removing deleted view from visible views dictionary
+
+Since `previouslyVisibleViewsDict` is no longer used, we can safely remove
+the deleted view from `_allVisibleViewsDict`."
+alexanderedge,2013-03-14 17:13:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ce0afad0c508c755f4b1c09835c9f59e3da362f6,ce0afad0c508c755f4b1c09835c9f59e3da362f6,Fix double 'batchUpdates'
+alexanderedge,2013-03-14 16:12:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/76db9bed5390ec5d3c4ae43b4cdaf695518d1ae0,76db9bed5390ec5d3c4ae43b4cdaf695518d1ae0,Fix compiler warning - unused variable
+alexanderedge,2013-03-14 16:01:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/04123be45bc7891e1cf81b19faf9e7d9b2537940,04123be45bc7891e1cf81b19faf9e7d9b2537940,Add array backing to illustrate deletion
+alexanderedge,2013-03-14 15:55:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6c0ab0be0840ca18b30a254b4895e0fdc513bbc3,6c0ab0be0840ca18b30a254b4895e0fdc513bbc3,"Assemble a dictionary of views that are to be removed
+
+The previous implementation would check if a given PSTCollectionViewItemKey is
+present in the new visible views dictionary. This did not work for the following
+case:
+
+Item [0,0]
+Item [0,1]
+Item [0,2]
+
+Deleting item at [0,1] should result in the alpha fade and eventual removal
+from the superview and recycle, but actually since [0,1] is a valid index in the
+new layout, [0,2] gets removed instead.
+
+This solution adds views that are to be deleted into a specific NSDictionary
+that gets enumerated after all animations are finished. All views contained
+inside are recycled."
+alexanderedge,2013-03-14 15:55:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/985a605fe2783cbd24791c5a66a397437965b929,985a605fe2783cbd24791c5a66a397437965b929,Set indexPath regardless of if it is present in the new model
+steipete,2013-03-20 10:12:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/885d275d8016b3062fd8260ade9af59e8fac380e,885d275d8016b3062fd8260ade9af59e8fac380e,Better match scroll to item behavior to UICollectionView
+steipete,2013-03-19 17:27:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e0c2e8c9023e95c8d765fbc4d19a154807da5420,e0c2e8c9023e95c8d765fbc4d19a154807da5420,use objc subscripting
+steipete,2013-03-09 21:28:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/38ab15a451cffcd06c80a6639eb60cd9267c0c39,38ab15a451cffcd06c80a6639eb60cd9267c0c39,code style
+steipete,2013-03-18 21:13:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f5e0bd83b16e0520fee166a13b92339a337797b1,f5e0bd83b16e0520fee166a13b92339a337797b1,"Merge pull request #277 from jeff96/master
+
+Fix for Issue: #276 - encodeWithCoder:(NSCoder *)coder in PSTCollectionViewFlowLayout is not implemented"
+steipete,2013-03-13 18:40:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7ce86e118e01aa8ae79b638244babfd9ac5b1fd4,7ce86e118e01aa8ae79b638244babfd9ac5b1fd4,"Merge pull request #274 from gavrix/reloadsection_bugfix
+
+reloading sections fixed"
+gavrix,2013-03-13 18:36:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2e54232118b2839090e8eb326649dd66a0ccdfac,2e54232118b2839090e8eb326649dd66a0ccdfac,reloading sections fixed
+steipete,2013-03-12 06:20:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/54f92bd7524e7983f7263001af9e81c0ecfbeefb,54f92bd7524e7983f7263001af9e81c0ecfbeefb,"Merge pull request #272 from lono175/master
+
+fix a typo which prevents _moveItems being created"
+lono175,2013-03-12 02:58:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0dcc108569b43345118207bd7ba961d49ff43c2d,0dcc108569b43345118207bd7ba961d49ff43c2d,fix a typo which prevents _moveItems being created
+steipete,2013-03-12 00:04:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6672581c5e711aa442a55d48db2e81d093cee15c,6672581c5e711aa442a55d48db2e81d093cee15c,"Merge pull request #271 from kurt-schaefer/master
+
+Grid Layout Row Snapping Fix"
+kurt-schaefer,2013-03-11 23:44:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e27e47062b58eaf4ee8c18fc12514dd751058021,e27e47062b58eaf4ee8c18fc12514dd751058021,"Make it so the grid layout no longer forces the rects to be integer aligned, this is closer to the native collection layout behaviour."
+steipete,2013-03-11 08:19:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/21c031856f2ec63f29f841e28dc62b69deb11a0c,21c031856f2ec63f29f841e28dc62b69deb11a0c,"Merge pull request #268 from cysp/for-review/layoutattributesfordecorationview
+
+Implement -layoutAttributesForDecorationViewOfKind:…"
+cysp,2013-03-11 07:06:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a8ff7bb51f9cb71311eb6664074e4c5615da4ecb,a8ff7bb51f9cb71311eb6664074e4c5615da4ecb,Implement -layoutAttributesForDecorationViewOfKind:…
+steipete,2013-03-09 21:22:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f5c6dfaca3085788e5d7c685a74ab497c636e8ed,f5c6dfaca3085788e5d7c685a74ab497c636e8ed,"Merge pull request #266 from gavrix/flowlayout_crash_fix
+
+#255 fix and better supplementary views support in animations"
+gavrix,2013-03-09 20:24:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3ed0e9f898d83680485c1e2bead6d149773bbfeb,3ed0e9f898d83680485c1e2bead6d149773bbfeb,#255 fix and better supplementary views support in animations
+steipete,2013-03-09 10:59:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7dce69226966f79bd709488d8f6bee30a19d209d,7dce69226966f79bd709488d8f6bee30a19d209d,"Merge pull request #263 from guykogus/master
+
+Applied the transform to the collection view cell's frame"
+guykogus,2013-03-09 09:17:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ae518a3bbf4d5440d134b7855ecf79076d6de120,ae518a3bbf4d5440d134b7855ecf79076d6de120,Set the frame to be applied by its transform.
+steipete,2013-03-06 22:20:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5ef5c761d80d54456311deeea1b4fe8a591fbf0f,5ef5c761d80d54456311deeea1b4fe8a591fbf0f,"Merge pull request #254 from fduch2k/master
+
+Fix for incorrect loading layout from nib"
+fduch2k,2013-03-06 20:15:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/11ab111e9c658d8c52b4cc70820b3e2b54f07890,11ab111e9c658d8c52b4cc70820b3e2b54f07890,"Fix for incorrect loading layout from nib
+
+Fixing issue described here:
+https://github.com/steipete/PSTCollectionView/issues/157"
+steipete,2013-03-05 16:43:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/45c19b8954efc4c6aacd1b09d126cfc8b2df1609,45c19b8954efc4c6aacd1b09d126cfc8b2df1609,"Merge pull request #253 from sibljon/master
+
+Revert delegate setting related commits"
+sibljon,2013-03-05 16:32:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/475bc25bb01ec8d38e815773d9ff18fee3846146,475bc25bb01ec8d38e815773d9ff18fee3846146,"Revert commits related to delegate setting
+
+This reverts the following commits:
+- efc4f9948db0a89435627bde32d2232efc04d020 (modify delegate setting)
+- bca811fc9618236c937d3945834d81201a7080ed (comment on the modification
+that was made)"
+steipete,2013-03-05 13:34:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8f6c5401b127afc55a0c93bf196d1c641e8ac165,8f6c5401b127afc55a0c93bf196d1c641e8ac165,"Merge pull request #252 from cysp/for-review/decoration-views
+
+Implement Decoration views"
+steipete,2013-03-05 13:27:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5b2e22bfe44f0b31469cdf4da23c1ec1206e0afe,5b2e22bfe44f0b31469cdf4da23c1ec1206e0afe,"Merge pull request #250 from kgn/master
+
+PSTCollectionElementCategory and layout subclassing"
+cysp,2013-03-05 09:45:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6ce57ce3de52dc1c5cf6d0db36587b8a5043f34c,6ce57ce3de52dc1c5cf6d0db36587b8a5043f34c,Reuse decoration views after animation
+cysp,2013-03-05 09:25:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/22369b74a7fd81f51cfa8e0cb881692504b80c48,22369b74a7fd81f51cfa8e0cb881692504b80c48,Implement Decoration views
+kgn,2013-03-04 23:36:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dd53f9b54ba4029535ae9adc9afd8cb8b798a9ae,dd53f9b54ba4029535ae9adc9afd8cb8b798a9ae,Added PSTCollectionElementCategory and exposed layoutAttributesForSupplementaryViewOfKind:atIndexPath: for subclassing layouts
+gavrix,2013-03-01 20:39:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7af778ad77da09dcbf9459a79ca6ac4c6ed8af99,7af778ad77da09dcbf9459a79ca6ac4c6ed8af99,Fixes view reusing after animations
+steipete,2013-03-01 12:31:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/38d0ae5cfd3733087c31b49bcbd8242f09884665,38d0ae5cfd3733087c31b49bcbd8242f09884665,use modern objc syntax
+steipete,2013-03-01 10:32:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3440837110ee9f98bf94616413d3a433eca65e7e,3440837110ee9f98bf94616413d3a433eca65e7e,"Reverts 09ae07dca, thus fixing #244."
+steipete,2013-02-28 15:59:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/447b7dd3cc448a62cc0ced767df9a4e96e13e6a2,447b7dd3cc448a62cc0ced767df9a4e96e13e6a2,Merge branch 'master' into animation-bug
+steipete,2013-02-28 15:59:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/28b3154e6a4beae8216ae7c8ea8972ba63aaca43,28b3154e6a4beae8216ae7c8ea8972ba63aaca43,add kPSTEnableFastAnimationTest to enable/disable the test
+steipete,2013-02-28 15:46:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c53cbe63304aa2ede04379a4acecfda8476a26d3,c53cbe63304aa2ede04379a4acecfda8476a26d3,Add note about willTransitionFromLayout call
+steipete,2013-02-28 15:45:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/43eae93c25a1f5a13ebcbf36db6043a9bde23d14,43eae93c25a1f5a13ebcbf36db6043a9bde23d14,"Merge pull request #246 from jnjosh/master
+
+Added support for [will/did]TransitionFromLayout:toLayout:"
+steipete,2013-02-28 15:41:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3cf886bb54bc6790308975c0f9a460e3b0e13fa5,3cf886bb54bc6790308975c0f9a460e3b0e13fa5,mostly code style improvements
+steipete,2013-02-28 15:37:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bca811fc9618236c937d3945834d81201a7080ed,bca811fc9618236c937d3945834d81201a7080ed,Document delegate setting
+sibljon,2013-02-28 04:19:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/efc4f9948db0a89435627bde32d2232efc04d020,efc4f9948db0a89435627bde32d2232efc04d020,Fix stack overflow caused during scroll view delegate callbacks
+steipete,2013-02-28 15:33:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ee64c5d1b799366f1541b7123d8b80acbdf92d59,ee64c5d1b799366f1541b7123d8b80acbdf92d59,Code style
+steipete,2013-02-28 15:33:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e4f0601f820090d4e69be1598f25e613c5f93d18,e4f0601f820090d4e69be1598f25e613c5f93d18,Add some documentation
+steipete,2013-02-28 15:29:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4c698f3a46c0b16e3b3cf331660dac2e0973f879,4c698f3a46c0b16e3b3cf331660dac2e0973f879,"Merge pull request #245 from taiyangc/select_background
+
+Modify highlighting behavior when cell's setHighlighted method is not ov..."
+taiyangc,2013-02-28 14:17:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c1ff506bd3b6b79c1ce4b1a4675facc22c1f3ee0,c1ff506bd3b6b79c1ce4b1a4675facc22c1f3ee0,Add pedantic touching state cleaning
+streeter,2013-02-21 21:38:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ed386be2c62a4b02b0a57717166c0cb1f2e2fa48,ed386be2c62a4b02b0a57717166c0cb1f2e2fa48,A test case to reproduce an animation bug.
+steipete,2013-02-27 09:42:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/167d122dd1c8c69c3798329d1f1b1654c4cfa11c,167d122dd1c8c69c3798329d1f1b1654c4cfa11c,"Merge pull request #240 from educreations/fix-typos
+
+Adjust some typos in some in-line comments."
+streeter,2013-02-26 23:56:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/226c4ecbc5915578482a3121eaa836a24fd7bc6e,226c4ecbc5915578482a3121eaa836a24fd7bc6e,Adjust some typos in some in-line comments.
+taiyangc,2013-02-26 04:07:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0d857e33aa8372fe54fda08fbb8a7505fef538b0,0d857e33aa8372fe54fda08fbb8a7505fef538b0,Modify highlighting behavior when cell's setHighlighted method is not overwritten - specifically touchesMoved behavior
+steipete,2013-02-25 15:33:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/30f28600fb987b4c5f85a81f1edacd0d09cf6334,30f28600fb987b4c5f85a81f1edacd0d09cf6334,"Merge pull request #239 from gavrix/bugfix
+
+some explanation in comments added"
+gavrix,2013-02-25 15:27:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/df789a6e539b67f4bf1184879e842bbe631d3caa,df789a6e539b67f4bf1184879e842bbe631d3caa,some explanation in comments added
+steipete,2013-02-24 23:29:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9f606044d5075ff3c1a70782ca2816df714ce646,9f606044d5075ff3c1a70782ca2816df714ce646,"Merge pull request #235 from 500px/Missing-Cells-take-two
+
+Fixes issue where Cells are Missing after updateVisibleCellsNow"
+steipete,2013-02-22 15:57:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bc51d38c0963de3d93eb145fab00e9115a5eb7fa,bc51d38c0963de3d93eb145fab00e9115a5eb7fa,"Merge pull request #233 from 500px/Issue#226-Dissappearing-cells
+
+Issue #226 -  Fixes an issue where cells weren't being drawn"
+steipete,2013-02-22 14:08:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dc9a600be7d251bc808300b205e268123598ca16,dc9a600be7d251bc808300b205e268123598ca16,"Merge pull request #232 from alexanderedge/master
+
+Cells are not added in the same order as layoutAttributesArray"
+alexanderedge,2013-02-22 12:26:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/819e1aabd281085fd8e5874873ee134e6089a7a8,819e1aabd281085fd8e5874873ee134e6089a7a8,Add new cells in the order defined by layout attributes
+steipete,2013-02-22 07:11:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/eb63113c11aefb210d6c69a0c313708c43ed05fb,eb63113c11aefb210d6c69a0c313708c43ed05fb,"Merge pull request #229 from gavrix/bugfix
+
+#228 fix"
+gavrix,2013-02-21 23:54:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fb943ef86464b16c6f1f173b318ab8ef6c0216bd,fb943ef86464b16c6f1f173b318ab8ef6c0216bd,228 fix
+steipete,2013-02-21 22:14:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/56e6479c40d538558e337df2541019560b10c79a,56e6479c40d538558e337df2541019560b10c79a,"Merge pull request #227 from educreations/remove-gesture-recognizer
+
+Remove unused gesture recognizer."
+streeter,2013-02-21 21:40:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d6007c90419519a50564dade7bdc3ac231608dbf,d6007c90419519a50564dade7bdc3ac231608dbf,Remove unused gesture recognizer.
+steipete,2013-02-21 16:59:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b91c0a905815b5a65dfee2f21038ce2d225946b4,b91c0a905815b5a65dfee2f21038ce2d225946b4,"Merge pull request #223 from taiyangc/selection-example
+
+Add UILabel highlight log output"
+steipete,2013-02-21 11:38:19,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/20821bdf4b59b8208a0b5c631424162f3c4427b2,20821bdf4b59b8208a0b5c631424162f3c4427b2,Update LICENSE
+taiyangc,2013-02-21 08:13:23,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5edb3be67e00498bd0d0540e6fb44279da839d72,5edb3be67e00498bd0d0540e6fb44279da839d72,Add UILabel highlight log output
+steipete,2013-02-20 15:05:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/323b1087f9e1f7e5a08800417c67065754c6c275,323b1087f9e1f7e5a08800417c67065754c6c275,"Merge pull request #222 from juolgon/master
+
+Add support for custom subclasses of PSTCollectionViewLayoutAttributes"
+juolgon,2013-02-20 14:42:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7f8b9e629f6c1ec3d7597047c2f8870637eaaf9b,7f8b9e629f6c1ec3d7597047c2f8870637eaaf9b,Added support for custom subclasses of PSTCollectionViewLayoutAttributes
+alextud,2013-02-19 13:57:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0a1bdf59f046554589225a5d5941641bccf07711,0a1bdf59f046554589225a5d5941641bccf07711,Add new dequeued cell below scroll indicator view.
+steipete,2013-02-16 01:23:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6fad7498b0a341b3022affe11796df3614f07f24,6fad7498b0a341b3022affe11796df3614f07f24,"Merge pull request #219 from educreations/master
+
+Patch to really removed deleted views"
+steipete,2013-02-13 23:34:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/012af66635ca8cb3643e78fd6fbf08e5753fdb32,012af66635ca8cb3643e78fd6fbf08e5753fdb32,"Merge pull request #216 from educreations/master
+
+Only apply cell attrs to cells"
+steipete,2013-02-13 10:46:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/93705e5f67b133daf5555927893366ea2b359540,93705e5f67b133daf5555927893366ea2b359540,Properly invalidates the flow layout if the sectionInset is changed.
+steipete,2013-02-13 10:46:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8a38b3e33ca7795d2cb43ef8cb8bc8adb3a69402,8a38b3e33ca7795d2cb43ef8cb8bc8adb3a69402,Remove garbage
+steipete,2013-02-11 19:14:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0ebb4a5ce5f3974b459beb419d6a6309e7cf4949,0ebb4a5ce5f3974b459beb419d6a6309e7cf4949,"Merge pull request #214 from gretzki/fix-layout-invalidation-flow-layout
+
+fix condition for layout invalidation"
+steipete,2013-02-11 10:57:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fbef3079fb3dabfe20f2116edd1955ace254bb57,fbef3079fb3dabfe20f2116edd1955ace254bb57,"Merge pull request #213 from scutdavy/master
+
+fix #212 Supplementary view invisible in ios 4.3"
+steipete,2013-02-10 17:50:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c6cab15cfe15bcb41d38fe31624a31cf0106b53c,c6cab15cfe15bcb41d38fe31624a31cf0106b53c,"Merge pull request #211 from emeitch/fix_set_collection_view_layout_bugs
+
+Fix set collection view layout bugs"
+emeitch,2013-02-10 17:44:14,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/28eaea13e210ed3b97d75aa7c50ef6b97b001119,28eaea13e210ed3b97d75aa7c50ef6b97b001119,fix wrong predicates
+emeitch,2013-02-10 17:43:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f19dcbc19ca6993a6f83c15e7f806e6dc66a4010,f19dcbc19ca6993a6f83c15e7f806e6dc66a4010,fix aborting at empty visibleItems
+steipete,2013-02-10 15:25:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/60fe2780dd26a84c0535f91b5cdda88d99ce6a95,60fe2780dd26a84c0535f91b5cdda88d99ce6a95,"Merge pull request #210 from emeitch/fix_set_layout_offset
+
+fix setCollectionViewLayout method's slowly & contentOffset setting"
+emeitch,2013-02-10 14:46:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/312f78c5c76b0693081b51e9c96345b4cc7dab06,312f78c5c76b0693081b51e9c96345b4cc7dab06,fix setCollectionViewLayout method's slowly & contentOffset setting
+steipete,2013-02-10 10:54:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2eb7985a283e6f0d48549b14ee2d879c596781dc,2eb7985a283e6f0d48549b14ee2d879c596781dc,Always apply layout attributes. Fixes #203.
+steipete,2013-02-10 09:48:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e711ae325003b09e8f59e00e4d52c6e2abdb2352,e711ae325003b09e8f59e00e4d52c6e2abdb2352,"Merge pull request #209 from guykogus/master
+
+NSIndexPath error on iOS 5.x in demo projects"
+guykogus,2013-02-10 09:14:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1385829afea0456ffc724d76f9e44b38128b2e9b,1385829afea0456ffc724d76f9e44b38128b2e9b,Added NSIndexPath+PSTCollectionViewAdditions.h/m to the projects so that calls to [NSIndexPath indexPathForItem:inSection:] work on pre-iOS 6.
+guykogus,2013-02-10 09:14:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/19ac1473524b32ed3ddb881b9bf8e42f9bf7f5fb,19ac1473524b32ed3ddb881b9bf8e42f9bf7f5fb,Added calls to [super viewDidLoad] so that the view controllers finish loading their views.
+guykogus,2013-02-10 09:06:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4583013be9714007daac82ef73dd5132557086b4,4583013be9714007daac82ef73dd5132557086b4,Called [super viewDidLoad] so that the view controller appears.
+steipete,2013-02-09 09:56:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f5554407934e139524ea78e900ad3e091f64fcde,f5554407934e139524ea78e900ad3e091f64fcde,Fixes various typos in comments and headers
+steipete,2013-02-08 23:19:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e8b31301806e7eef6276ad69bd315cee939307ef,e8b31301806e7eef6276ad69bd315cee939307ef,"Merge pull request #207 from educreations/master
+
+Add filter for cell layoutAttributes"
+steipete,2013-02-08 17:51:37,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e194cab92609e01457f8d32ec0f52831562c8297,e194cab92609e01457f8d32ec0f52831562c8297,"Merge pull request #206 from educreations/develop
+
+Make indexPathsForVisibleItems return just the visible cells"
+steipete,2013-02-08 13:33:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/591dc583ba4b96f1c9ed13d5e55cc04b6f101524,591dc583ba4b96f1c9ed13d5e55cc04b6f101524,"Merge pull request #204 from neilkimmett/master
+
+Fix inconsistency with UICollectionView's performBatchUpdates:completion: behaviour"
+steipete,2013-02-08 13:32:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/68d1533c5dd5f99c95fd28668b0371411da6a684,68d1533c5dd5f99c95fd28668b0371411da6a684,"Merge pull request #205 from CitronEvanescent/CE_Issue163
+
+HotFix For issue #163"
+neilkimmett,2013-02-08 12:30:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/131f36827e3e77ec8a5585ea3ee9b8d7efe4897a,131f36827e3e77ec8a5585ea3ee9b8d7efe4897a,Don't return early from performBatchUpdates with nil updates block
+steipete,2013-02-07 22:31:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7a747c8b5366adacba5b99b8578a23cb78ba20f9,7a747c8b5366adacba5b99b8578a23cb78ba20f9,"Merge pull request #202 from RobotsandRockets/master
+
+non-visible cell remains selected after deselect"
+ttsubota,2013-02-07 16:52:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6f83a0131d69b48934d96cdfc16e78c1274e9382,6f83a0131d69b48934d96cdfc16e78c1274e9382,"always remove indexPath from the selectedItems set when deselecting an item
+
+in deselectItemAtIndexPath:, always remove the item indexPath from _indexPathsForSelectedItems regardless of the cell visibility."
+steipete,2013-02-07 12:26:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4a9f46e619f88af275cdff76a8bd65de48a23f28,4a9f46e619f88af275cdff76a8bd65de48a23f28,Use modern ObjC syntax
+steipete,2013-02-07 12:26:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/02b11a3b3831d16d9e2619267e18844697c3fe64,02b11a3b3831d16d9e2619267e18844697c3fe64,Actually use sorted result. Fixes #197
+steipete,2013-02-07 08:54:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8e0626d7e5164a42e35627588deb0bdefa71f2a0,8e0626d7e5164a42e35627588deb0bdefa71f2a0,Make view loading more compatible with UICollectionViewController
+steipete,2013-02-05 13:48:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/86950ce77098e8794deac37ec1d0c14b596c2705,86950ce77098e8794deac37ec1d0c14b596c2705,Cleanup code that was targeted for iOS SDK 5 (Xcode 4.4)
+steipete,2013-02-05 09:44:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/146861d1e06fc988cd67035563e8eeefb559a0bf,146861d1e06fc988cd67035563e8eeefb559a0bf,"Merge pull request #193 from cysp/for-review/programmatic-cell-selection
+
+Programmatically selecting an indexPath that has not yet been displayed does not appear to work"
+cysp,2013-02-05 03:14:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e0d56dc9c50d8e7c1bcc5159d71d44d98e0ee3a0,e0d56dc9c50d8e7c1bcc5159d71d44d98e0ee3a0,Allow programmatic cell selection prior to their display
+steipete,2013-02-05 00:51:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/43028cd3b490aba5e3f930d4d5969f3ae2b664b5,43028cd3b490aba5e3f930d4d5969f3ae2b664b5,"Merge pull request #191 from cysp/for-review/uikit-imports
+
+Fix compilation without UIKit in a prefix header"
+steipete,2013-02-05 00:51:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7f7fac4bd7da9278551ae7f9d8cee5bbcb8d349b,7f7fac4bd7da9278551ae7f9d8cee5bbcb8d349b,"Merge pull request #192 from cysp/for-review/select-scrollposition
+
+Implement scrolling when selecting / highlighting cells"
+cysp,2013-02-04 09:38:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/635a8ef2865d35fee88fdfcc8d954e0721323321,635a8ef2865d35fee88fdfcc8d954e0721323321,Fix compilation without UIKit in a prefix header
+cysp,2013-02-04 09:36:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/768eae3e4db2229898e3705f5a9ff1329b4d9d26,768eae3e4db2229898e3705f5a9ff1329b4d9d26,Implement scrolling when selecting / highlighting cells
+steipete,2013-02-01 14:46:47,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c35cc711dfacb2044b79b1c9459f54bf32f7d0f0,c35cc711dfacb2044b79b1c9459f54bf32f7d0f0,"Merge pull request #190 from viking2009/master
+
+fix typo in PSTCollectionViewCell.m"
+viking2009,2013-02-01 14:44:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/30689528a519ce5ce245058367d33a138edd3592,30689528a519ce5ce245058367d33a138edd3592,fix #189
+steipete,2013-02-01 04:56:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/efc366cc34a7d7c65944cb3920afbcd92043beed,efc366cc34a7d7c65944cb3920afbcd92043beed,"Merge pull request #187 from loganmoseley/master
+
+Fix typo in setting backgroundView.autoresizingMask"
+loganmoseley,2013-02-01 00:34:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/94845f463c0aca50244c2913a87dc8c3c166778b,94845f463c0aca50244c2913a87dc8c3c166778b,Fix typo in setting backgroundView.autoresizingMask
+steipete,2013-01-30 20:23:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/90a09d4ffc6704ea3f7d506582bc3d1405d017aa,90a09d4ffc6704ea3f7d506582bc3d1405d017aa,"Merge pull request #184 from larcus94/master
+
+Avoiding UIButtons from highlighting"
+steipete,2013-01-25 06:49:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5d5429baf004eacd0d141d448b2b74b89d03e52a,5d5429baf004eacd0d141d448b2b74b89d03e52a,"Merge pull request #180 from neoneye/master
+
+Fixed crash in [PSTCollectionView updateWithItems:] oldToNewIndexMap"
+steipete,2013-01-25 06:47:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3c3aefef6fcf9636f338aebc02d7d52451e2b140,3c3aefef6fcf9636f338aebc02d7d52451e2b140,"Merge pull request #181 from taiyangc/fix_highlight
+
+Fix highlight"
+neoneye,2013-01-24 22:25:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f96992c69224a7b46cff7211d870813542887b77,f96992c69224a7b46cff7211d870813542887b77,"Fixed crash where the array oldToNewIndexMap was accessed with oldGlobalIndex, a huge number that is out of range."
+taiyangc,2013-01-24 17:21:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/eb6ce7bf98527ae93fd8f8eb8f2c1acad38a643f,eb6ce7bf98527ae93fd8f8eb8f2c1acad38a643f,Fix highlighting behavior when touches move; cells should unhighlight immediately when scrolling happens
+taiyangc,2013-01-24 06:24:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/71f8544a812c7d011f48ad69ce5c8c79789ac125,71f8544a812c7d011f48ad69ce5c8c79789ac125,Merge branch 'master' into fix_highlight
+taiyangc,2013-01-23 17:45:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4c93e84a881600b5319ce32f7a54779be3a4648d,4c93e84a881600b5319ce32f7a54779be3a4648d,Add shouldDeselectItemAtIndexPath delegate check; update SelectionDelegateExample accordingly
+taiyangc,2013-01-23 16:32:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4524e95a5bb7b4716130efa48b5d853f0df6a27e,4524e95a5bb7b4716130efa48b5d853f0df6a27e,Modified SelectionDelegateExample for better highlighting/selection debugging (in the future)
+taiyangc,2013-01-23 16:30:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/852672d5467e3530ffb8aa44b3148c60f88ad6fd,852672d5467e3530ffb8aa44b3148c60f88ad6fd,"Fixed cell highlighting inconsistences with iOS6, including the order and number of calls"
+steipete,2013-01-23 13:13:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8f094e3325ee9676808eccd3b1841e2e681532be,8f094e3325ee9676808eccd3b1841e2e681532be,"Merge pull request #178 from tyrone-sudeium/bugfix/attributes-not-applied
+
+CreatePreparedCellForItem... doesn't apply attributes."
+steipete,2013-01-23 13:12:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f80d22251d934267a9573d545c92994d5808232b,f80d22251d934267a9573d545c92994d5808232b,"Merge pull request #179 from tyrone-sudeium/bugfix/nil-layout-attributes
+
+Behaviour when layoutAttributesForElementsInRect is nil"
+tyrone-sudeium,2013-01-23 10:33:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/648d0ecb9880b7cfd65450c7e30986bc968a34e8,648d0ecb9880b7cfd65450c7e30986bc968a34e8,Fixed nil return from layoutAttributesForElementsInRect resulting in all cells being removed.
+tyrone-sudeium,2013-01-23 10:30:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d62e2812eedbc7856b522e12066aed215180f427,d62e2812eedbc7856b522e12066aed215180f427,Fixed createPreparedCellForItemAtIndexPath:layoutAttributes: not applying attributes
+steipete,2013-01-22 12:15:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1c0120899029e1757ed539bd9a539d48fbbee716,1c0120899029e1757ed539bd9a539d48fbbee716,Preserve ivar layout.
+steipete,2013-01-22 12:10:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/aef88128812eb4020caaea2664774586a73ba7a8,aef88128812eb4020caaea2664774586a73ba7a8,"Merge pull request #170 from lono175/master
+
+Fix ""targetContentOffsetForProposedContentOffset:withScrollingVelocity:"" not called"
+steipete,2013-01-22 05:10:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fdc22408663b6f54af8d6669e207d3b80d5f73ae,fdc22408663b6f54af8d6669e207d3b80d5f73ae,"Merge pull request #177 from loganmoseley/master
+
+-[PSTCollectionViewFlowLayout updateItemsLayout] changes to correct contentSize."
+loganmoseley,2013-01-21 20:27:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2bd170d9554f8062ae85e71ea23cdccca6383a96,2bd170d9554f8062ae85e71ea23cdccca6383a96,PSTCVFlowLayout -updateItemsLayout takes into accout PSTGridLayoutSection.sectionMargins to set contentSize.
+loganmoseley,2013-01-21 18:57:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d045dc883771d005fc3771058302554b213bc50d,d045dc883771d005fc3771058302554b213bc50d,"Fix to effectively ignoring contentInset with a small contentSize.
+Removed the minimum contentSize setter in -[PSTCollectionViewFlowLayout updateItemsLayout]."
+steipete,2013-01-20 15:48:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/10b5d9b5ea56a7ee34903f1d81b37cf06b4b6d78,10b5d9b5ea56a7ee34903f1d81b37cf06b4b6d78,"Merge pull request #176 from r618/master
+
+Added invalidateLayout implementation for PSTCollectionViewLayout"
+r618,2013-01-20 15:34:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/00d54d4e751bd9c9274e835183c768f420596474,00d54d4e751bd9c9274e835183c768f420596474,Added invalidateLayout implementation for PSTCollectionViewLayout.m
+lono175,2013-01-17 19:34:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ab597332fa544b02c3458e814a7250f924a01804,ab597332fa544b02c3458e814a7250f924a01804,- relay UIScrollViewDelegate methods to _collectionViewDelegate
+lono175,2013-01-16 20:40:19,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0d83f856e0fa6778e354879e43ba08da8c2f3470,0d83f856e0fa6778e354879e43ba08da8c2f3470,- fix targetContentOffsetForProposedContentOffset:withScrollingVelocity: not called
+steipete,2013-01-15 22:04:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e5aac6c287510957d2238c89d8da5b30de470edd,e5aac6c287510957d2238c89d8da5b30de470edd,Update header
+steipete,2013-01-15 22:01:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bafd651060693e9b9f6cf7990a58cb88904a151f,bafd651060693e9b9f6cf7990a58cb88904a151f,"Merge pull request #166 from taiyangc/highlight
+
+Fix highlighting behavior and reorganize how selection and highlighting ..."
+steipete,2013-01-15 21:49:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3a43ab675cc9a577ab61f4cee0b7105a51ec851f,3a43ab675cc9a577ab61f4cee0b7105a51ec851f,"Merge pull request #169 from mikevoyt/fixwarnings
+
+fix incompatible pointer type warning for Deployment Targets >= iOS 6.0"
+mikevoyt,2013-01-15 20:16:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4b68c1424b8b382eb21b14eb0fd941cb77755f3e,4b68c1424b8b382eb21b14eb0fd941cb77755f3e,fix incompatible pointer type warning for Deployment Targets >= iOS 6.0
+taiyangc,2013-01-12 15:14:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e17515c4bf1893d2bef4a5f748a369821f1aa17f,e17515c4bf1893d2bef4a5f748a369821f1aa17f,Fix highlighting behavior and reorganize how selection and highlighting iteract
+steipete,2013-01-12 01:52:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cddaf502a814f5404ed39c042a791af60d5e286d,cddaf502a814f5404ed39c042a791af60d5e286d,"Merge pull request #165 from smule/master
+
+Override the UIView designated initializer in PSTCollectionView"
+steipete,2013-01-11 19:03:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/519445bc93bd7877d87cfb3f20ceb236b0547252,519445bc93bd7877d87cfb3f20ceb236b0547252,"Merge pull request #164 from gavrix/bugfix
+
+Inserting cells without initialLayoutAttrs bugfix"
+gavrix,2013-01-11 17:14:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d8a9d9fdd7ad7884ea1bc7c733fae4e7d640d0c7,d8a9d9fdd7ad7884ea1bc7c733fae4e7d640d0c7,"Inserting cells without initialLayoutAttrs bugfix
+
+(now using regular layoutAttrs with fade-in using alpha)"
+steipete,2013-01-03 01:40:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0b32348895887fbd4cb425ccadb4275431c02eb0,0b32348895887fbd4cb425ccadb4275431c02eb0,"Merge pull request #160 from pinterest/aly_view_ordering
+
+Honor the z-index of PSTCollectionReusableView's when adding as subviews to PSTCollectionView"
+steipete,2012-12-29 10:26:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f4b922e81f2b69f25e5037ab4dc19bcb99654b64,f4b922e81f2b69f25e5037ab4dc19bcb99654b64,fixes a typo
+steipete,2012-12-29 10:25:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f714692e0d164a317821cf5141fb46cca8483d57,f714692e0d164a317821cf5141fb46cca8483d57,"Merge pull request #159 from imageoptimiser/optimised-images
+
+Optimise images (1 MB reduction)"
+steipete,2012-12-29 10:24:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d6173ab2bd022d1e1d01c8c5c15b94fbb434d04b,d6173ab2bd022d1e1d01c8c5c15b94fbb434d04b,"Merge pull request #155 from pinterest/Layout_Attribute_Application_Fix
+
+Cell LayoutAttributes Should be Applied Before ""cellForItemAtIndexPath:"""
+imageoptimiser,2012-12-24 16:12:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/151d8c71f8958b3698b7972c5ea8a4a0f9b1c965,151d8c71f8958b3698b7972c5ea8a4a0f9b1c965,Optimised images
+Christopher-A,2012-12-19 23:49:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/493406421b67469d02395f7beb81390db96e0cee,493406421b67469d02395f7beb81390db96e0cee,Applied LayoutAttributes to Cell/SupplementaryView at dequeue time as opposed to configuration time.
+steipete,2012-12-19 20:37:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0b02fa9e56198e85ad59999b62ef438f3041d9ba,0b02fa9e56198e85ad59999b62ef438f3041d9ba,"Merge pull request #156 from danthorpe/delete_sections
+
+Fixes deleting sections."
+steipete,2012-12-17 23:53:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/29bd53b747b3f60ac879e941efb06f221a1d3f83,29bd53b747b3f60ac879e941efb06f221a1d3f83,"Merge pull request #153 from pinterest/Layout_Update_Crash_Fix
+
+Fixed a crash when switching between layouts and/or different data sources."
+Christopher-A,2012-12-17 23:20:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/490b7bfbc7df6a8d5bd6aefb2a79fed9cc5db3d5,490b7bfbc7df6a8d5bd6aefb2a79fed9cc5db3d5,Fixed a crash when switching between layouts and/or different data sources.
+steipete,2012-12-14 09:34:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/98fe95de4a059f827cc73660ba72acb6c6fa4656,98fe95de4a059f827cc73660ba72acb6c6fa4656,"Merge pull request #147 from taiyangc/one_item_justify
+
+Justify one item row to center"
+steipete,2012-12-13 13:10:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d958052598690285a7a98aca10acc9ea319386ab,d958052598690285a7a98aca10acc9ea319386ab,"Merge pull request #144 from iwascoding/master
+
+Fix for -[PSTCollectionView insertSections:]"
+lluuaapp,2012-12-13 12:30:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d0f4571dbf2ab00297d5727b2752b04272c89682,d0f4571dbf2ab00297d5727b2752b04272c89682,"Fix for -[PSTCollectionView insertSections:] II
+
+Maybe this is the better way of fixing the issue. You have to decide."
+lluuaapp,2012-12-13 12:21:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/63dac15193909de00c33ce5fd67eaf60f440b2cf,63dac15193909de00c33ce5fd67eaf60f440b2cf,"Fix for insertSections:
+
+A call to -[PSTCollectionView insertSections:] has no balanced calls of suspendReloads/resumeReloads and therefore the -[PSTCollectionView reloadData] call has no effect afterwards"
+steipete,2012-12-13 09:45:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d3eea2e94048aba91a3237638987a45d1482ddde,d3eea2e94048aba91a3237638987a45d1482ddde,Add QuartzCore reference
+steipete,2012-12-13 09:38:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/34de3d96e51d2e21c1f1d8cbef823e8846874686,34de3d96e51d2e21c1f1d8cbef823e8846874686,"Merge pull request #143 from gavrix/visibleBoundsRect
+
+_visibleBounds changed to self.visibleBoundsRect"
+gavrix,2012-12-13 00:39:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f540ef7f6258599f121ccac4a19687a10ec15a39,f540ef7f6258599f121ccac4a19687a10ec15a39,_visibleBounds changed to self.visibleBoundsRect
+steipete,2012-12-12 08:25:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d135fa1a2efddbf8d2a4d66233a73f926d4161cf,d135fa1a2efddbf8d2a4d66233a73f926d4161cf,"Merge pull request #141 from taiyangc/fix_linelayout
+
+Fix linelayout example by removing invalid bound checks"
+taiyangc,2012-12-12 03:57:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c4e9ea4fec1ab16bd323ae2793919372819bc1d4,c4e9ea4fec1ab16bd323ae2793919372819bc1d4,Fix linelayout example by removing invalid bound checks
+steipete,2012-12-11 22:50:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/53453a6e74fa3d21bc4bc3f07eabc66e204df372,53453a6e74fa3d21bc4bc3f07eabc66e204df372,"Merge pull request #140 from ksuther/master
+
+Modify UIView's frame instead of CALayer's frame in applyLayoutAttributes:"
+ksuther,2012-12-11 22:47:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/eedec0b06961fe1f35fc55098462b2144089deb5,eedec0b06961fe1f35fc55098462b2144089deb5,"Modify frame/center instead of layer.frame/layer.position.
+Changing the CALayer's frame instead of the UIView's frame prevents the subviews from resizing correctly. This can result in an incorrectly-sized contentView and other views that have been added to the view hierarchy."
+taiyangc,2012-12-11 18:23:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/910d8150300067b406d71959ed82c52ec5c55dec,910d8150300067b406d71959ed82c52ec5c55dec,Justify one item row to center
+steipete,2012-12-09 13:01:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5a0117c926e3ba8d061172ca358c374f1644688d,5a0117c926e3ba8d061172ca358c374f1644688d,Update README.md
+steipete,2012-12-09 12:59:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/01a0c648f3b8b9acddf8a04b3187413cbafe4966,01a0c648f3b8b9acddf8a04b3187413cbafe4966,"Merge pull request #129 from alvinsj/add-scrollposition
+
+implemented scroll positions for scrollToItemAtIndexPath:atScrollPosition:animated:"
+steipete,2012-12-05 19:42:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/308ddccebdcaa19472711de950e8ce8c3258e2e7,308ddccebdcaa19472711de950e8ce8c3258e2e7,fixes some typos and casts
+steipete,2012-12-05 12:32:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0f491d2ca0a520cf2bb195f54853c477a44ec074,0f491d2ca0a520cf2bb195f54853c477a44ec074,"Merge pull request #128 from beingenious/master
+
+Fix some storyboard incompatibility and collection view behaviours."
+benjaminbarbe,2012-12-05 11:07:14,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9cd064c93e7b113aabe834ad18802f7580814341,9cd064c93e7b113aabe834ad18802f7580814341,Fix some storyboard incompatibility and collection view behaviours.
+steipete,2012-11-28 23:21:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6d7f8dbc63d6076f117befa6e615d9f62c1bcf89,6d7f8dbc63d6076f117befa6e615d9f62c1bcf89,"Merge pull request #118 from diederich/develop
+
+fix unused variable warning"
+diederich,2012-11-28 23:02:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b06b567a105feedc29392e51d3a0046fc17b912e,b06b567a105feedc29392e51d3a0046fc17b912e,"fix unused variable warning
+
+ifdef the whole loop in NS_BLOCK_ASSERTIONS
+to prevent an unused variable warning."
+matej,2012-11-28 15:14:59,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1aa538360f3b4476b8018de2de85683168033a68,1aa538360f3b4476b8018de2de85683168033a68,"Flow layout contentSize computation improvements.
+
+- fixes premature cell removal when alwaysBounce* is enabled #117"
+steipete,2012-11-27 21:38:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/14ad178405c9c622bdd42f005b58492bfee404eb,14ad178405c9c622bdd42f005b58492bfee404eb,"Merge pull request #116 from ShonFrazier/master
+
+minor README edits"
+steipete,2012-11-25 11:27:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7ac51346835e49eba3cd9d9610739319821bfa98,7ac51346835e49eba3cd9d9610739319821bfa98,"Add PSUICollectionViewDelegateFlowLayout declaration (by valdyr, Issue #115)"
+steipete,2012-11-25 11:23:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/22fadca5d0f18d6d637e0dfb4c51748bc862f459,22fadca5d0f18d6d637e0dfb4c51748bc862f459,"rename visibleBounds -> visibleBoundRect, since former apparently was flagged wrongly as private API."
+steipete,2012-11-23 10:49:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/44cf0b3d7e22d18fcf1c59098152aca5f6b64873,44cf0b3d7e22d18fcf1c59098152aca5f6b64873,"Merge pull request #113 from rromanchuk/fix-reload-count
+
+Fix the reloads count so you can actually use reloadData"
+rromanchuk,2012-11-23 10:44:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/183d534298babd3f87c7824dde3abda21af89bce,183d534298babd3f87c7824dde3abda21af89bce,fix the reloads count so you can actually use reloadData
+steipete,2012-11-22 07:22:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cf16b274de929a4de4735daa88390934f236dd4f,cf16b274de929a4de4735daa88390934f236dd4f,Simplify code from #108
+steipete,2012-11-22 07:20:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f3c59b2a10df5ab9954aff5968a64e865aee321e,f3c59b2a10df5ab9954aff5968a64e865aee321e,"Merge pull request #108 from inamiy/master
+
+Fix validateLayoutInRect"
+inamiy,2012-11-22 05:26:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5d9227471ff1e0b7af6ef75f851c367e8bfd7e79,5d9227471ff1e0b7af6ef75f851c367e8bfd7e79,Fix validateLayoutInRect by limiting rect.size within contentSize.
+steipete,2012-11-21 15:47:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f4dba70e9376f00c9f6cf92564252552a77e66a2,f4dba70e9376f00c9f6cf92564252552a77e66a2,"Merge pull request #106 from toco/backgroundView-fix
+
+fixing backgroundView hierarchy and positioning"
+toco,2012-11-21 15:30:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ef1f2f75285937bfa7962c33f25519dc10d4eec8,ef1f2f75285937bfa7962c33f25519dc10d4eec8,"fixing backgroundView hierarchy and positioning
+fixes #103 properly"
+steipete,2012-11-21 13:26:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cef8f9e6bb2a0c5ea012fd5b4cfc0984a53a3da2,cef8f9e6bb2a0c5ea012fd5b4cfc0984a53a3da2,Restore backgroundView setter and comment why it's that way. Closes #103
+steipete,2012-11-21 12:23:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bbfa8be7c228cc02f19a7cecd59590b13a600b6a,bbfa8be7c228cc02f19a7cecd59590b13a600b6a,ensure selection is also updated for non-visible cells
+steipete,2012-11-21 08:26:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/73d50e8c40c9862d2eb538ec2ca3545e74a936a7,73d50e8c40c9862d2eb538ec2ca3545e74a936a7,"Merge pull request #104 from taiyangc/flow_justify
+
+More comments on row item spacing calculation"
+taiyangc,2012-11-21 01:26:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cdcbbfff455eff4c3abf03f228041fe9efb53eab,cdcbbfff455eff4c3abf03f228041fe9efb53eab,More comments on row item spacing calculation
+steipete,2012-11-20 20:24:37,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e28f9d76a6e7c4611043a35df18554a30a657590,e28f9d76a6e7c4611043a35df18554a30a657590,"Merge pull request #101 from taiyangc/flow_justify
+
+Flow layout now performs justify alignment correctly"
+steipete,2012-11-20 20:22:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/795ef4f4ed26e181e5f6ada88154ba2bce282816,795ef4f4ed26e181e5f6ada88154ba2bce282816,"Merge pull request #102 from orikad/master
+
+fixed PSTCollectionViewCell backgroundView resizing"
+orikad,2012-11-20 17:10:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1cb9a1e708f19e97d491ab49e2508c350e7b9a3d,1cb9a1e708f19e97d491ab49e2508c350e7b9a3d,fixed PSTCollectionViewCell backgroundView resizing
+steipete,2012-11-20 11:18:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f9f1d720d5632f66b6382884b21d623a7a8e6bc0,f9f1d720d5632f66b6382884b21d623a7a8e6bc0,re-adding update item header. CircleLayout example needs it.
+taiyangc,2012-11-20 11:04:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/acc606985e4ddb9d1da6060d89cb4048ed678a6d,acc606985e4ddb9d1da6060d89cb4048ed678a6d,Adjust last row alignment as if filled
+steipete,2012-11-20 09:28:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a15ea39e623b631c1135a384b5f29fd412fb9962,a15ea39e623b631c1135a384b5f29fd412fb9962,backgroundView is now scaled to the collectionView and resized correctly. Fixes #99
+steipete,2012-11-20 09:23:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e6182f24ebd1b6009e9191731527baeef9314183,e6182f24ebd1b6009e9191731527baeef9314183,"visibleCells should only return current visible cells, not all preloaded cells. Closes #100."
+taiyangc,2012-11-20 09:11:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bf283af3ed9ab9fa45ab6a4763c76352c8b79c20,bf283af3ed9ab9fa45ab6a4763c76352c8b79c20,Flow layout now performs justify alignment correctly
+steipete,2012-11-17 20:26:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2d6906b7cb9eb84ef69918c2a25cc7decc366431,2d6906b7cb9eb84ef69918c2a25cc7decc366431,add import where it's needed
+steipete,2012-11-17 20:19:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/781850a6d720c5a86ed5cc443556c210a24aa76b,781850a6d720c5a86ed5cc443556c210a24aa76b,remove unused import
+steipete,2012-11-16 23:08:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/97181bf015f7f4ba2cc7015eca616c6f81112bb6,97181bf015f7f4ba2cc7015eca616c6f81112bb6,fixes a retain cycle. Thanks to @merowing_ for spotting that!
+steipete,2012-11-15 09:39:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/73d43cda396099c0244fb53f1c24ec9564a438dd,73d43cda396099c0244fb53f1c24ec9564a438dd,update readme
+steipete,2012-11-15 09:36:59,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0edf713c0dc66f7e23ecf73be08c0f4625be0deb,0edf713c0dc66f7e23ecf73be08c0f4625be0deb,update all examples to include the new PSTCollectionViewUpdateItem
+steipete,2012-11-15 09:29:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6295a8c3f5356891e241a9b0f5654673382b2a14,6295a8c3f5356891e241a9b0f5654673382b2a14,reformat the new animation code - thanks to Sergey Gavrilyuk for the implementation!
+steipete,2012-11-15 09:29:16,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2d5c19a823560416b24c00db452539cb1dc1b3e7,2d5c19a823560416b24c00db452539cb1dc1b3e7,remove interoperability code by default
+steipete,2012-11-15 09:24:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7555c8465d57f721e0f50a0b9a25ad0c4a6f05a4,7555c8465d57f721e0f50a0b9a25ad0c4a6f05a4,update formatting
+gavrix,2012-11-10 07:54:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7ededea79115e75d2b06ba4374f7853669776079,7ededea79115e75d2b06ba4374f7853669776079,Merge with current master
+gavrix,2012-11-10 07:31:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d0d78b7b43ad99f44bca8934c00eeaa0597de8b3,d0d78b7b43ad99f44bca8934c00eeaa0597de8b3,CircleLayout example updated so that to show animations in action
+gavrix,2012-11-10 07:29:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/af5f828800660e81e5403a9bbd502699b04d3175,af5f828800660e81e5403a9bbd502699b04d3175,final animations stuff
+gavrix,2012-11-09 20:44:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d064dae230950b818417686f51d9b49110d75202,d064dae230950b818417686f51d9b49110d75202,assertions for update operations added
+gavrix,2012-11-05 15:08:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/54b6dbf2faf1e7505b39954a24b20ae4c8c41e6d,54b6dbf2faf1e7505b39954a24b20ae4c8c41e6d,"insert/delete items added, first bunch of changes"
+steipete,2012-11-06 06:36:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/830e2d76ee811694317d564b0656e92a00d42540,830e2d76ee811694317d564b0656e92a00d42540,"Merge pull request #91 from taiyangc/cell_visibility
+
+Cells should be above supplementary views but below scroll indicators"
+steipete,2012-11-06 06:34:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b10dd20cf7ec85974a38c830883e270f1581e5c9,b10dd20cf7ec85974a38c830883e270f1581e5c9,"Merge pull request #92 from orta/master
+
+Added an Example App for Delegate Methods, made setAllowsMultipleSelection deselection act the same as UICollectionView"
+orta,2012-11-06 04:49:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5f5e9ee977106e83bff9d536cdd7af539e77468e,5f5e9ee977106e83bff9d536cdd7af539e77468e,better comments in setAllowsMultipleSelection
+orta,2012-11-06 04:45:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fa73c74994e1033b2ebda7ea299556ecfd825765,fa73c74994e1033b2ebda7ea299556ecfd825765,minor typo fix in readme
+orta,2012-11-06 04:42:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/292f7269033727ed68c7cfffa1f19a8c175928b9,292f7269033727ed68c7cfffa1f19a8c175928b9,improved the removal of selections from setAllowsMultipleSelection
+orta,2012-11-06 04:16:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/662eb0dd036d38723558335f2a53a5d8b75004c7,662eb0dd036d38723558335f2a53a5d8b75004c7,Added another example application
+taiyangc,2012-11-06 02:16:39,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f7e938a759230077ae498e0d0cdc2a593621e813,f7e938a759230077ae498e0d0cdc2a593621e813,Make sure cells are placed above supplementary views but below scroll indicators
+steipete,2012-11-05 21:21:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9ee96d7946974eec7b0b2de667470f6d2735181f,9ee96d7946974eec7b0b2de667470f6d2735181f,"Merge pull request #89 from orta/master
+
+Add Delegate support for ""shouldDeselect"""
+orta,2012-11-05 10:24:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b1b99a7ee66b0face70ecd53bd0709cba31ff8ac,b1b99a7ee66b0face70ecd53bd0709cba31ff8ac,unbroke selection handling for single selection modes
+orta,2012-11-05 09:51:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a9bc642f95b426ac72c89ac47bc84816fb93bbeb,a9bc642f95b426ac72c89ac47bc84816fb93bbeb,"Merge branch 'master' of git://github.com/steipete/PSTCollectionView
+
+* 'master' of git://github.com/steipete/PSTCollectionView:
+  Fix row dimension calculation in computeLayout, should fix #71"
+orta,2012-11-05 09:51:19,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1e4ca4b4fc698451fb6feab12d1b010b13e456ae,1e4ca4b4fc698451fb6feab12d1b010b13e456ae,should deselect
+steipete,2012-11-04 21:27:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f1ac287010ac0f9a241a3e3314570aea17826bd4,f1ac287010ac0f9a241a3e3314570aea17826bd4,"Merge pull request #88 from taiyangc/fix_row_dimen
+
+Fix row dimension calculation in computeLayout, should fix #71"
+taiyangc,2012-11-04 20:59:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f41a9a5f9740293db2a4018c91b2ccf08bffa808,f41a9a5f9740293db2a4018c91b2ccf08bffa808,"Fix row dimension calculation in computeLayout, should fix #71"
+steipete,2012-11-04 09:26:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6d0e4c8630e0aae40cb520680335f9861c66e6f0,6d0e4c8630e0aae40cb520680335f9861c66e6f0,"Merge pull request #87 from orta/master
+
+Allow deselection / selection when allowsMultipleSelection is on"
+orta,2012-11-04 02:15:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c6017445aff9079aed48cb7df6594baa8b398508,c6017445aff9079aed48cb7df6594baa8b398508,include notify delegate check
+orta,2012-11-04 02:09:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/de29b2ed7132b29cc6d09b95be646c1abbd00ac8,de29b2ed7132b29cc6d09b95be646c1abbd00ac8,Support allows mutliple selections
+steipete,2012-11-03 11:03:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/adc6e0714877ee8b7c5634910c1d76f59eb90a0b,adc6e0714877ee8b7c5634910c1d76f59eb90a0b,"Merge pull request #86 from DocuSignDev/a92d14003b5fff7316735b705e3ddfa57570538a
+
+Fixes bug with dimensionLeft being decremented for greater than 2 rows in flow layout."
+deyton,2012-11-01 21:11:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a92d14003b5fff7316735b705e3ddfa57570538a,a92d14003b5fff7316735b705e3ddfa57570538a,"Fixes incorrect decrement of dimensionLeft, it should be reset to dimension after starting a new row, not decremented"
+steipete,2012-11-02 09:59:14,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/857a29e89adf71ea70da04b8fe21e9920076f12e,857a29e89adf71ea70da04b8fe21e9920076f12e,"Merge pull request #85 from BarryHaanstra/master
+
+Fix for issue #80 - performBatchUpdates does not run the updates block Edit"
+steipete,2012-11-02 06:24:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cbcdfc500721b1a1ee32b32aec1531d231f0dbb2,cbcdfc500721b1a1ee32b32aec1531d231f0dbb2,"Merge pull request #84 from jinthagerman/master
+
+Reordered PSTCollectionViewItemType so it matches UICollectionElementCategory"
+steipete,2012-10-31 06:51:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4fc55371c164e10d8ab2fa1da6f5ac8d71798589,4fc55371c164e10d8ab2fa1da6f5ac8d71798589,"Merge pull request #82 from ksuther/master
+
+Fixed shadowed variable warning"
+ksuther,2012-10-31 04:58:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/61d00b8ec100cbd2a5767f19b3c1c9a38dfa4e3a,61d00b8ec100cbd2a5767f19b3c1c9a38dfa4e3a,Reuse previously-declare variable to avoid shadowed local variable warning.
+steipete,2012-10-30 14:13:59,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ddb32f6a9a5ed591c3c8cd7f4d1199321bc6c094,ddb32f6a9a5ed591c3c8cd7f4d1199321bc6c094,Fixes issues with NSFetchedResultsController. References #78
+steipete,2012-10-30 14:08:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/938794c6fe750e9676f8440c04f53a65d96b368a,938794c6fe750e9676f8440c04f53a65d96b368a,Proper view handling on low memory situations. Fixes Issue #73
+steipete,2012-10-30 13:59:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1a0af2c432a673692996e5463c9ffe6a8dcdd77a,1a0af2c432a673692996e5463c9ffe6a8dcdd77a,Remove hacks required for Xcode 4.4. Everyone should be on 4.5 by now.
+steipete,2012-10-30 13:54:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/01bed30c3b86a782241adf3587e0af0c06e69b20,01bed30c3b86a782241adf3587e0af0c06e69b20,update readme
+steipete,2012-10-30 13:47:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c5cc2f288863e421eba6beaf16179f39ed696ee4,c5cc2f288863e421eba6beaf16179f39ed696ee4,"Merge pull request #79 from hezi/master
+
+changed flowDataSource to be collection view’s delegate property, according to apple documentation."
+steipete,2012-10-30 08:07:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6b4dba5d26cd5a57eaa175e3f6c95d514104b31e,6b4dba5d26cd5a57eaa175e3f6c95d514104b31e,Small fix related to #78 (section indexPath only has one index)
+steipete,2012-10-30 07:58:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a97c1dacdc34989fab28ff11fa6a1c2f354f8031,a97c1dacdc34989fab28ff11fa6a1c2f354f8031,"Merge pull request #78 from ZarraStudios/supplementary-views
+
+Implement Supplementary Views"
+beaugbolle,2012-10-30 03:25:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/113c90cc255cda22b64464aabb4ddd2559a0cfc1,113c90cc255cda22b64464aabb4ddd2559a0cfc1,Implemented layoutAttributesForSupplementaryViewOfKind:atIndexPath:.
+beaugbolle,2012-10-29 23:30:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e474c8827117a80fea974abd1e09b60e3c12384e,e474c8827117a80fea974abd1e09b60e3c12384e,Fixed registerNib:forSupplementaryViewOfKind:withReuseIdentifier:.
+beaugbolle,2012-10-25 21:33:21,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9ab9fdb7c09191d58c354168fd22ff7352308ca4,9ab9fdb7c09191d58c354168fd22ff7352308ca4,Added support for header and footer views when using the flow layout.
+gavrix,2012-10-25 01:36:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ef34a177ec6d7d6d15abc73d4b8c0b01274fa5f2,ef34a177ec6d7d6d15abc73d4b8c0b01274fa5f2,setCollectionViewLayout:animated animations added
+steipete,2012-10-23 07:06:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f82f9d83a2207f08a7deb30d2cbe58596fd27b74,f82f9d83a2207f08a7deb30d2cbe58596fd27b74,"Merge pull request #75 from joelcarranza/reload-data-clears-selection
+
+reload methods should clear highlight/selection state of affected cells"
+joelcarranza,2012-10-23 02:09:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/82ea027d378b55ce6a58e87e4b533270a8bb6ba5,82ea027d378b55ce6a58e87e4b533270a8bb6ba5,reload methods should clear highlight/selection state of affected cells
+steipete,2012-10-22 08:18:47,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a56d4b21c6ac614b5be0404e1e4700f63803adad,a56d4b21c6ac614b5be0404e1e4700f63803adad,"Merge pull request #74 from joelcarranza/selection-delegate-notification
+
+PSTCollection delegate messages for selection behavior are wrong"
+joelcarranza,2012-10-22 03:13:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f0185f3f1080273df9de955d1aa887b8a5905b6f,f0185f3f1080273df9de955d1aa887b8a5905b6f,"PSTCollection delegate messages for selection behavior does not match UICollectionView behavior
+
+Delegate messages should only be sent when performed by user. didDeselect message is not sent when user changes selection"
+steipete,2012-10-19 12:42:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9473bed71cf3c21d19ce5917bba77f284a701773,9473bed71cf3c21d19ce5917bba77f284a701773,"Merge pull request #70 from BarryHaanstra/master
+
+Example for issue#43"
+steipete,2012-10-15 08:50:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c32cfc8684c42ab5caee12872f4e6124896993f9,c32cfc8684c42ab5caee12872f4e6124896993f9,"flow layout calculation is now smart enough to correctly size the margins of the unfinished row, even if there is only one row (to match UICollectionViewFlowLayout style)"
+steipete,2012-10-15 08:08:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4ea9a94a744991cfa15b874bcd45e6ac4c6d1d22,4ea9a94a744991cfa15b874bcd45e6ac4c6d1d22,fixes layouting for non-fixed size layouts (sizeForItemAtIndexPath). Fixes #68
+steipete,2012-10-14 20:43:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a9f96f571c77f7b22d14391f8bae061efa415389,a9f96f571c77f7b22d14391f8bae061efa415389,Improve access to additional variables (PSTCollectionViewExt)
+inamiy,2012-10-12 12:41:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/33a48ae3b791adbd3d5eeefc0d92f753fe016b3b,33a48ae3b791adbd3d5eeefc0d92f753fe016b3b,Change ivar to associated object.
+inamiy,2012-10-12 12:03:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5f96306effa3144d243fabdce52d88853beb7167,5f96306effa3144d243fabdce52d88853beb7167,Fix single/multiple highlight & selection.
+steipete,2012-10-14 12:11:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/851117e1466f4170e276bb7188b2983cbfc8e087,851117e1466f4170e276bb7188b2983cbfc8e087,"Merge pull request #67 from taiyangc/fix_spacing
+
+Fix the problem that each row adds one extra iter-item spacing"
+taiyangc,2012-10-14 11:51:43,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f7d4953b7c618426247357726559acbc4b0216be,f7d4953b7c618426247357726559acbc4b0216be,Fix the problem that each row adds one extra iter-item spacing
+steipete,2012-10-12 13:37:12,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/47b660344504318fb04717f2dbe1c9276e4605c8,47b660344504318fb04717f2dbe1c9276e4605c8,fixes flow layout IB deserialization (default values are not set in nscoder)
+steipete,2012-10-12 00:02:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/36b1c85d01c66a20bf50df0d32d83de6d96b8a6e,36b1c85d01c66a20bf50df0d32d83de6d96b8a6e,"Merge pull request #64 from pat2man/FlowNib
+
+Load PSTCollectionViewFlowLayout correctly from nib"
+ptescher,2012-10-11 23:59:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4a3162e3f7cf6a1ad0f401f7a73329c18945b06e,4a3162e3f7cf6a1ad0f401f7a73329c18945b06e,Load PSTCollectionViewFlowLayout correctly from nib
+steipete,2012-10-11 22:10:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9bf13e6c37f6b9ee720a7e6b77c207bce83687dc,9bf13e6c37f6b9ee720a7e6b77c207bce83687dc,Adds implementation of reloadItemsAtIndexPaths by @tapi. Closes #56.
+steipete,2012-10-11 20:36:32,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ef2f731be926af5dc1874aaeb8bf176bb8fbe311,ef2f731be926af5dc1874aaeb8bf176bb8fbe311,remove the datasource check - better to crash then to fail silently.
+steipete,2012-10-11 19:36:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f7b7626ddb37194dd89060210b296a71ff85a3a5,f7b7626ddb37194dd89060210b296a71ff85a3a5,"Merge pull request #60 from toco/master
+
+fixing issue #59 'visibleCells returns all visible views not just cells'"
+toco,2012-10-11 19:28:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c567c0ea4b915f2861aef5b9069ebce96cd22345,c567c0ea4b915f2861aef5b9069ebce96cd22345,fixing issue #59 'visibleCells returns all visible views not just cells'
+ksuther,2012-10-11 06:15:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d0a2c87f12cafe25d94a40211040c85c9aab846b,d0a2c87f12cafe25d94a40211040c85c9aab846b,Remove duplicate shadowed variable.
+ksuther,2012-10-03 00:02:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f71cc20c94eecfc5315024cbf2ce0eff6dba40fb,f71cc20c94eecfc5315024cbf2ce0eff6dba40fb,Forward layoutAttributesForItemAtIndexPath: and layoutAttributesForSupplementaryElementOfKind:atIndexPath: to the layout.
+ksuther,2012-10-01 18:15:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c7e2692096c23509aad1e1e71630df5c9d5d00db,c7e2692096c23509aad1e1e71630df5c9d5d00db,Using indexOfObjectIdenticalTo rather than indexOfObject.
+steipete,2012-10-10 22:25:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dc478206e3ab47af8cac7472f7f042c7b09f0d74,dc478206e3ab47af8cac7472f7f042c7b09f0d74,fixes missing identifier on collectionItemKeyForLayoutAttributes (via @michaelmcdaniel)
+steipete,2012-10-09 21:05:47,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/27b2c4dd3a20ed14834a2460873486f059a367a9,27b2c4dd3a20ed14834a2460873486f059a367a9,Preserve highlight/selected state. Should fix #47
+steipete,2012-10-09 21:04:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/efb49747182ee497e8f7122296fd9b9a35218121,efb49747182ee497e8f7122296fd9b9a35218121,refactor underscored methods
+steipete,2012-10-09 20:57:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/33cac0f69de658bf40e0c33ecf280c42246edf1f,33cac0f69de658bf40e0c33ecf280c42246edf1f,"Merge pull request #53 from connorhu/master
+
+fix init bug"
+steipete,2012-10-09 20:56:23,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2f775d81cc77ebe5cf3f3a289fa119f0e6ad9892,2f775d81cc77ebe5cf3f3a289fa119f0e6ad9892,"Merge pull request #55 from pat2man/StoryBoardSupport
+
+Nib Decoding of Cells"
+ptescher,2012-10-09 00:40:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2e60c8ca6acb0f94cd7595b868bfffba4b9cc2f5,2e60c8ca6acb0f94cd7595b868bfffba4b9cc2f5,Use associated object for cellObjectsDict.
+connorhu,2012-10-09 18:39:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/574c3b6429000cdd2130f333f0f75bac4ea67629,574c3b6429000cdd2130f333f0f75bac4ea67629,more init bugfix using storyboard
+connorhu,2012-10-09 18:10:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8457b4c8a38a0f26c1d06938885f90852a1f3ba6,8457b4c8a38a0f26c1d06938885f90852a1f3ba6,implement initWithCoder for interface builder
+ptescher,2012-10-05 23:22:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3b1e193030603180b3b6c66354ba99872e155165,3b1e193030603180b3b6c66354ba99872e155165,Decode cells with collection view. Remove autolayout since its not compatible with iOS 5.
+steipete,2012-10-07 15:49:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bc6302aa329861e590dea0615736d8d832542db0,bc6302aa329861e590dea0615736d8d832542db0,"Merge pull request #52 from taiyangc/fix_basic_example
+
+Remove extra bottom line of spacing in Basic example for iOS5 targets"
+taiyangc,2012-10-07 15:43:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cab9eb3dc6df07da29a700cdd9c4a0c4afd91e75,cab9eb3dc6df07da29a700cdd9c4a0c4afd91e75,Remove extra bottom line of spacing in Basic example for iOS5 targets
+steipete,2012-10-07 12:02:47,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/365afb138551236224ca8a01f4aaaf07cdb4c994,365afb138551236224ca8a01f4aaaf07cdb4c994,fixes current/lastRow detection. References #35.
+steipete,2012-10-07 11:59:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f233e8910189fbbfb0afb250f9d4fbd2944c49c8,f233e8910189fbbfb0afb250f9d4fbd2944c49c8,update defaults for FlowLayout. Fixes #49
+steipete,2012-10-07 00:48:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/aacd87ecb6be9834d368f258ca93fb7d39c3b681,aacd87ecb6be9834d368f258ca93fb7d39c3b681,"Merge pull request #49 from paiv/master
+
+Default value for allowsSelection: YES"
+paiv,2012-10-07 00:22:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/68a05e226ce3bef135e5aee6a7c0989d4f7bd408,68a05e226ce3bef135e5aee6a7c0989d4f7bd408,% Default value for allowsSelection: YES
+steipete,2012-10-05 20:38:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/64967ce1326c07f558f11ed5b71bf7b2d7150eb3,64967ce1326c07f558f11ed5b71bf7b2d7150eb3,"Merge pull request #48 from MassiveHealth/master
+
+Typo in PSUI #define for PSUICollectionViewFlowLayout"
+carmandrew,2012-10-05 20:08:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ae182de9a8ecb90b2d746072649f515ba9f97398,ae182de9a8ecb90b2d746072649f515ba9f97398,Fix typo in PSUI #defines.
+steipete,2012-10-03 16:07:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dfdeb533829e52f4521b6de187c01f6831fa743b,dfdeb533829e52f4521b6de187c01f6831fa743b,match ivar layout 1:1. Fixes #46.
+steipete,2012-10-02 17:00:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f8d5cd1f6a0e595e4a6ca79bfcdb6c6eaf5e1146,f8d5cd1f6a0e595e4a6ca79bfcdb6c6eaf5e1146,update ivar layout to match the one of UICollectionViewFlowLayout
+steipete,2012-09-27 21:27:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f23163f937d458475a95564e797b33a81612e3c1,f23163f937d458475a95564e797b33a81612e3c1,code style
+steipete,2012-09-27 20:08:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fa6aea6da2c46e4a1e6a4dacd8f6377d72a22d98,fa6aea6da2c46e4a1e6a4dacd8f6377d72a22d98,preserve ivar layout; fixes crashes with UICollectionViewCell
+steipete,2012-09-27 19:42:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4868b5974ba88c7a2489321e1eddb56ad7daadc2,4868b5974ba88c7a2489321e1eddb56ad7daadc2,add default autoresize mask to match UICollectionViewController. Fixes #39
+steipete,2012-09-27 17:46:40,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6c9f87ce9258973705dd4e2c4a09cf34754f4ec1,6c9f87ce9258973705dd4e2c4a09cf34754f4ec1,PSTCollectionView - now with 100% less magic numbers ;)
+steipete,2012-09-27 17:42:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/87d285a2bb2e2a81db72798e779049f84e9cb548,87d285a2bb2e2a81db72798e779049f84e9cb548,rumtime ;)
+steipete,2012-09-27 17:37:56,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d37fd44a6542ef3e7969955133d4e924b8cb3334,d37fd44a6542ef3e7969955133d4e924b8cb3334,don't show deprecation warnings
+steipete,2012-09-27 17:37:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7c33959b8c84904e22169a30eced19853600cafb,7c33959b8c84904e22169a30eced19853600cafb,move up header
+steipete,2012-09-27 17:32:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8f84138276b8f80cee8f04fc2dcaebac93834a17,8f84138276b8f80cee8f04fc2dcaebac93834a17,updated readme
+steipete,2012-09-27 17:30:37,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/02b79b3f87e6267f1e13c2f1cc4d09678f4353bf,02b79b3f87e6267f1e13c2f1cc4d09678f4353bf,updated readme
+steipete,2012-09-27 17:29:27,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6261c16e75a5a6713b997be59e4026f5500af251,6261c16e75a5a6713b997be59e4026f5500af251,updated readme
+steipete,2012-09-27 17:28:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/fccea2577c6564cdff0c2aa41ebe85289ad056cc,fccea2577c6564cdff0c2aa41ebe85289ad056cc,updated readme
+steipete,2012-09-27 17:22:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3a16e4fd4bd197d2d827774260645db4a1b4ab36,3a16e4fd4bd197d2d827774260645db4a1b4ab36,"move delegate and dataSource into Common header, fixes recursive header imports"
+steipete,2012-09-27 17:21:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8681bbfc78fbdbe8302297733dffe5927da91d42,8681bbfc78fbdbe8302297733dffe5927da91d42,make static to fix warning
+steipete,2012-09-27 17:16:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e20b22fa2997c7da8ae67f6b035d59b16b90a38b,e20b22fa2997c7da8ae67f6b035d59b16b90a38b,Merge remote-tracking branch 'origin/master' into psui-experimental
+steipete,2012-09-27 17:16:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a690c27cba044f0a98747375f302c6d654ca6c17,a690c27cba044f0a98747375f302c6d654ca6c17,"fixes crashes when using PSUI* classes, interoperability works now. Improves support for loading Nibs, but still not finished."
+steipete,2012-09-27 13:03:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/79a42f4a65683a0a3d7c74877f7aa785984d57c9,79a42f4a65683a0a3d7c74877f7aa785984d57c9,"Merge pull request #38 from danthorpe/cache_item_rect_bug
+
+Clear item rect caches between sections"
+steipete,2012-09-27 02:19:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c5594ff89d2364c83713b9ebc136d22e9dc39a95,c5594ff89d2364c83713b9ebc136d22e9dc39a95,add experimental support for PSUICollectionView * classes that use either PSTCollectionView or UICollectionView
+steipete,2012-09-26 23:52:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/69e2d78f95e18fc627d1f798e3209bac4275273f,69e2d78f95e18fc627d1f798e3209bac4275273f,"Merge pull request #37 from ReneLindhorst/master
+
+PSTCollectionViewDelegateFlowLayout collectionView:layout:insetForSectionAtIndex:"
+ReneLindhorst,2012-09-26 20:18:11,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/20c9a9d9540f5eb689cb4b599540955498a6d5b8,20c9a9d9540f5eb689cb4b599540955498a6d5b8,use PSTCollectionViewDelegateFlowLayout collectionView:layout:insetForSectionAtIndex: if implemented
+steipete,2012-09-25 14:02:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f5944ac0646d705c3df4792b3524f43fc3f31f24,f5944ac0646d705c3df4792b3524f43fc3f31f24,add space on @property
+steipete,2012-09-25 14:02:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/69b7efe36fff698258d0b8985cef1715744bad15,69b7efe36fff698258d0b8985cef1715744bad15,add missing external declarations
+steipete,2012-09-20 13:39:50,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a34f7deecf48890707adc4c08fc9adb8f9721918,a34f7deecf48890707adc4c08fc9adb8f9721918,Use PSTCollectionView in examples. Should fix Issue #30
+steipete,2012-09-20 06:56:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6ac179111729648db06b988ce544b747bd487228,6ac179111729648db06b988ce544b747bd487228,"Merge pull request #28 from lawrencelomax/master
+
+Fix a few more PS -> PST typos"
+steipete,2012-09-19 18:34:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/dd6fe147dc8585a2b0bfa0fde68c25bfc4b72f86,dd6fe147dc8585a2b0bfa0fde68c25bfc4b72f86,"Merge pull request #27 from ksuther/master
+
+PS -> PST typo"
+ksuther,2012-09-19 18:15:38,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b428813b392820d4e5da7e8f3c14ea88bad1543b,b428813b392820d4e5da7e8f3c14ea88bad1543b,PS -> PST typo.
+steipete,2012-09-19 18:15:29,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9aa220a7801185472021743e08bcecc67c0561bb,9aa220a7801185472021743e08bcecc67c0561bb,"Merge pull request #26 from ksuther/master
+
+Added range check on indexPath in layoutAttributesForItemAtIndexPath:"
+ksuther,2012-09-19 18:05:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/713b9235502b6d582f80bc41b06cad468a7cc215,713b9235502b6d582f80bc41b06cad468a7cc215,Range check on indexPath in layoutAttributesForItemAtIndexPath:
+steipete,2012-09-19 17:33:01,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d9b66a34708f8053998c16585600aa2140eb8976,d9b66a34708f8053998c16585600aa2140eb8976,PSCollectionView renamed to PSTCollectionView; updated examples
+steipete,2012-09-15 14:17:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8758a97e12cfcede646db3667bffa5c7209443e9,8758a97e12cfcede646db3667bffa5c7209443e9,add extern for const strings; fixes a warning
+steipete,2012-09-15 14:17:13,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b8a62247d55b3b4d6b4600e79fcb6983094fd7e6,b8a62247d55b3b4d6b4600e79fcb6983094fd7e6,ensure that UICollectionViewCell/UICollectionReusableView are not linked by the compiler (fixes binary compatibility between components compiled with Xcode 4.5 then linked with 4.4)
+steipete,2012-08-22 16:36:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1931ed27ed65b591ce67022f984bc0073a9acff0,1931ed27ed65b591ce67022f984bc0073a9acff0,Do not fork this repo!
+steipete,2012-08-22 16:28:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/670498cdd7063681d2f4b15129fef23805c545f6,670498cdd7063681d2f4b15129fef23805c545f6,Do not fork this repo!
+steipete,2012-08-22 16:01:17,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ea44c8373f0717e9fee0ac9f6958adbaa22058fd,ea44c8373f0717e9fee0ac9f6958adbaa22058fd,ensure grid is layouted before scrolling.
+toco,2012-08-21 10:20:05,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/36f7237b1475cd891144b25560ee288ee81aa26b,36f7237b1475cd891144b25560ee288ee81aa26b,"Merge pull request #22 from moviepilot/master
+
+Apply layout alpha to collection cells"
+jlnr,2012-08-21 09:29:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/53d691a6adf0e3e73fea896a6b569bed70979eeb,53d691a6adf0e3e73fea896a6b569bed70979eeb,Apply layout alpha to collection cells
+steipete,2012-08-20 18:56:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/65b8f823b53be4837ba035efe75c7efaa62b8e32,65b8f823b53be4837ba035efe75c7efaa62b8e32,Update PSCollectionView.podspec
+steipete,2012-08-20 18:55:40,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/4fc36b0b37e7817a2a5f97bcadd9a37d26115576,4fc36b0b37e7817a2a5f97bcadd9a37d26115576,"Merge pull request #20 from steipete/cocoapods_spec
+
+Add CocoaPods spec"
+mbinna,2012-08-20 14:54:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6c287fe9dba9ad141943403d0c124c2d1e2bad16,6c287fe9dba9ad141943403d0c124c2d1e2bad16,"Add CocoaPods spec
+
+The spec uses version 0.0.1 (which does not exist yet) as a starting
+point. This version references HEAD. We should create the first
+annotated tag in this repository and then update the spec to reference
+this version instead."
+steipete,2012-08-19 18:54:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9eee5074b5f75bdcab0e5839d8d5ce407382e5c6,9eee5074b5f75bdcab0e5839d8d5ce407382e5c6,"Merge pull request #19 from gcerquant/master
+
+Little progress on #5 : Implement registerNib:* methods"
+gcerquant,2012-08-19 17:59:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5cc2824b8592ff2236fe6f3aa213725566d41803,5cc2824b8592ff2236fe6f3aa213725566d41803,"[+] Little progress on bug #5 ""Implement registerNib:* methods"".
+Implemented `registerNib: forCellWithReuseIdentifier:`.
+Did not took care of `registerNib: forSupplementaryViewOfKind: withReuseIdentifier:`"
+gcerquant,2012-08-19 17:21:14,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e48918abef23464dc1c394c27182b8a0f1d32b86,e48918abef23464dc1c394c27182b8a0f1d32b86,[x] Fixed link in ReadMe file to HowTo section
+toco,2012-08-17 23:28:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5c24e7e7f89f1db661b12af25cc4e6ce3ea22276,5c24e7e7f89f1db661b12af25cc4e6ce3ea22276,"fixing: 'Collection was mutated while being enumerated.'
+-> create a immutable copy of the collection which should be enumerated and modified"
+steipete,2012-08-17 19:43:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8f7ea0f5752b3847842ba41fc78adc5ff350787b,8f7ea0f5752b3847842ba41fc78adc5ff350787b,no need to do fancy calculation here
+fabiankr,2012-08-17 18:55:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c08b8953a8108b9284a33b0e1114b5929f57a93b,c08b8953a8108b9284a33b0e1114b5929f57a93b,Fixed unnecessary conversions between NSUInteger and NSInteger. (PSGridLayoutRow only uses NSInteger for its index.)
+fabiankr,2012-08-17 18:54:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e8165b59dbcd406870cbfefa0c3163e68d56ead2,e8165b59dbcd406870cbfefa0c3163e68d56ead2,Correctly encapsulate the CGPoint creation in curly braces when creating a CGRect.
+fabiankr,2012-08-17 18:53:32,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/395e5233b078c8282208beb8e4cb075572a321f3,395e5233b078c8282208beb8e4cb075572a321f3,Fixed a shadowing local variable in PSCollectionView.
+steipete,2012-08-17 18:31:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7203d7cbe8eb1cd4cabacd3b51271a0fc448f6e6,7203d7cbe8eb1cd4cabacd3b51271a0fc448f6e6,"use subscripting, add header"
+steipete,2012-08-17 18:31:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/bca35dd00e9c44c2556a8571aca8289d06dc1be8,bca35dd00e9c44c2556a8571aca8289d06dc1be8,more fine grained subscripting support
+steipete,2012-08-17 17:10:59,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d6e88023b30958816449994effa5cf1d033ab6a5,d6e88023b30958816449994effa5cf1d033ab6a5,update comments
+steipete,2012-08-17 17:10:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d51217e34652fb19f783552909044e35c63ce6e8,d51217e34652fb19f783552909044e35c63ce6e8,improve rotation and scrollToItem
+toco,2012-08-07 10:18:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3ee39f0807b2b4ad3fba73b96b110c43d822c015,3ee39f0807b2b4ad3fba73b96b110c43d822c015,fix initWithFrame
+steipete,2012-08-07 09:38:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/18253cb138ecaeb3f30450df59fc5e7c77af3499,18253cb138ecaeb3f30450df59fc5e7c77af3499,add UI* definitions if not on iOS6 SDK
+toco,2012-08-04 13:06:19,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0673a03470f68b36eb7da61aa2de35380e7fda40,0673a03470f68b36eb7da61aa2de35380e7fda40,fix view hierarchy in PSCollectionViewController
+steipete,2012-08-04 10:52:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d448d33dc561aa67c43350b961e1a2d281eed7af,d448d33dc561aa67c43350b961e1a2d281eed7af,add Basic example project (merges example-project branch… thanks!)
+steipete,2012-08-04 10:52:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/37ac336e1aacfce2d91489993065212515bc22f8,37ac336e1aacfce2d91489993065212515bc22f8,query delegate for minimumLineSpacing/InterimSpacing
+steipete,2012-08-04 10:35:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/df82d69d343b1338c9e463548025faf3e3578cb5,df82d69d343b1338c9e463548025faf3e3578cb5,"add Apple examples; they're even partly working!
+(this merges PSCollectionViewController-toco)"
+steipete,2012-08-04 10:35:16,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c08ed4d3fbf740b59007b03fb3dfb723f1083338,c08ed4d3fbf740b59007b03fb3dfb723f1083338,including PSCollectionView is enough to get all PSCollectionView* classes
+steipete,2012-08-04 10:11:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/737ac997d371f415ec862e7eb6bdbda5447fb838,737ac997d371f415ec862e7eb6bdbda5447fb838,move classes into a folder
+steipete,2012-08-03 16:03:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0067feba35391fb894f5a2353f740f94ddad355d,0067feba35391fb894f5a2353f740f94ddad355d,Initial scroll to indexPath support
+tibr,2012-08-03 14:09:30,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/df0ff5cbb3e691706376136f7e64f2bcd937effd,df0ff5cbb3e691706376136f7e64f2bcd937effd,Calling unhighlightAllItems when touches cancel
+tibr,2012-08-01 16:37:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0be00bafcc3915568ab0fb1c03ee0b7b273946d2,0be00bafcc3915568ab0fb1c03ee0b7b273946d2,Existing views need to be removed from the superview when reloading data
+tibr,2012-08-01 16:28:53,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ca090a06c6011d4aac58919bd75d5d8ff404b54e,ca090a06c6011d4aac58919bd75d5d8ff404b54e,"Improving reloadData, all cached cells now removed properly"
+tibr,2012-08-01 12:14:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/923eaaa777ad17bd8ede942f3f442d1e70ad0964,923eaaa777ad17bd8ede942f3f442d1e70ad0964,Removing underscore as method name prefix to prevent potential private API alarms
+steipete,2012-08-01 11:33:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cf492adaf088b558f18d994764f23c9274ae9de9,cf492adaf088b558f18d994764f23c9274ae9de9,update readme
+steipete,2012-08-01 11:29:44,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5a135b984d02293be3c3ebd208684daeb42146af,5a135b984d02293be3c3ebd208684daeb42146af,update readme
+steipete,2012-08-01 11:26:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b6ca552fdbad3c637f4e27040a422c552d2f2457,b6ca552fdbad3c637f4e27040a422c552d2f2457,"update readme, added how to help"
+steipete,2012-08-01 11:20:16,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5a4f7d804ebf77250475782a48a67014163b7efe,5a4f7d804ebf77250475782a48a67014163b7efe,update read me
+tibr,2012-08-01 10:59:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7d9ec78c68d22ef8643129d2b6c41b4d0f47b6dd,7d9ec78c68d22ef8643129d2b6c41b4d0f47b6dd,"Adding basic highlighting support
+
+Closing #6"
+tibr,2012-08-01 10:46:28,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ff251dac2a8e1a47e1ebbec74eadf8120aef60f2,ff251dac2a8e1a47e1ebbec74eadf8120aef60f2,"Adding indexPathForItemAtPoint: and indexPathForCell:
+
+Closes #10"
+tibr,2012-08-01 10:36:10,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6aeb526ad007459d32ee22f77f41d00beec4dd24,6aeb526ad007459d32ee22f77f41d00beec4dd24,Adding basic selection support to PSCollectionView
+tibr,2012-08-01 10:34:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2692cd86ecf0cc89ae296545165acd5213cda1ca,2692cd86ecf0cc89ae296545165acd5213cda1ca,Highlighting or selecting a PSCollectionViewCell highlights all of its content views subviews
+tibr,2012-08-01 10:33:31,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/6fc871a3e1d76d1e1c3fc728638337e259253097,6fc871a3e1d76d1e1c3fc728638337e259253097,PSCollectionViewCell now returns the correct hightlighted valued
+tibr,2012-08-01 10:28:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2690d6c01a29c1112821092519297f1530c0dd65,2690d6c01a29c1112821092519297f1530c0dd65,PSCollectionViewCell now returns the correct selected valued
+tibr,2012-08-01 10:10:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/30296875bb05f88af57c7f50dc597ccb862c2f8a,30296875bb05f88af57c7f50dc597ccb862c2f8a,Adding support for selectedBackgroundView to PSCollectionViewCell
+tibr,2012-08-01 09:54:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/08f0c12436494329e932aee55e1c9aed90ef316b,08f0c12436494329e932aee55e1c9aed90ef316b,allowsSelection has default value YES
+steipete,2012-08-01 01:13:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0a5d1642bfc4b69cf311ecf5621fc46f82b1e42c,0a5d1642bfc4b69cf311ecf5621fc46f82b1e42c,Add collectionView header for Xcode 4.4
+steipete,2012-08-01 01:11:25,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3c6f629702c24e016d9285610f7f923decdfcf2d,3c6f629702c24e016d9285610f7f923decdfcf2d,move enum
+steipete,2012-08-01 00:42:03,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/2ece8c21155c54d1954623d668c56786ed1a527d,2ece8c21155c54d1954623d668c56786ed1a527d,"first collect old cells, then use new cells. will save a few cells during scrolling."
+steipete,2012-08-01 00:41:34,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/009dbbae562da24cf1de7bad41c4313a80d5b8a3,009dbbae562da24cf1de7bad41c4313a80d5b8a3,fixes justify calculation
+steipete,2012-08-01 00:07:02,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/171e4c3229e23be461b4275213dcece5b5fa88f7,171e4c3229e23be461b4275213dcece5b5fa88f7,Fix slowness factor #1 (lots of isEqual calls into PScollectionViewItemKey)
+steipete,2012-07-31 23:56:55,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b38b9be391a6c29c0e27a79601a87471f99c5710,b38b9be391a6c29c0e27a79601a87471f99c5710,Call delegates on cell hiding. Fixes #9
+steipete,2012-07-31 23:56:22,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/cdfeb773665597659d556331a11d57b069bd9ce7,cdfeb773665597659d556331a11d57b069bd9ce7,implement decoration/supplementary view init methods.
+steipete,2012-07-31 23:43:41,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/de1dae64dff7530bb45b0e437d90f9cc5bd8690a,de1dae64dff7530bb45b0e437d90f9cc5bd8690a,revert protocol changes; add reusable view alias
+steipete,2012-07-31 23:43:26,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/612963b0c523c224a27d6e08bbd6fd339ff3cae1,612963b0c523c224a27d6e08bbd6fd339ff3cae1,fixes compiling in Xcode 4.4 (NS_ENUM)
+steipete,2012-07-31 23:18:57,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a75fba6b3ace05aec819d3d60584f482085f49bf,a75fba6b3ace05aec819d3d60584f482085f49bf,add cache to make grid with fixed item sizes even faster
+steipete,2012-07-31 23:15:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/192ce60539fa9430ccb358ead2d7a33438094ebd,192ce60539fa9430ccb358ead2d7a33438094ebd,invalidate layout on reload
+steipete,2012-07-31 23:11:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d9ca04e645073e59b24fe64ac6be711061eeb1f8,d9ca04e645073e59b24fe64ac6be711061eeb1f8,fixes category ifdef
+steipete,2012-07-31 23:03:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/30068d9d211c641861288e9236a4e086f87e628b,30068d9d211c641861288e9236a4e086f87e628b,don't add the category if we require iOS6.
+steipete,2012-07-31 22:38:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/94a30dbee38e65476c5d2a5a970d9c509e22b344,94a30dbee38e65476c5d2a5a970d9c509e22b344,"Add support for alignment; now defaults to justify (as it's default in UICollectionView)
+Note that alignmentOptions is a private API; there still exists a delegate flag so I assume Apple was thinking about having this private API, and the code is still there; however no delegates are called anymore. In PSCollectionView, this is an optional but public API.
+
+Also allows accessing the row coordinates directly; this helps to keep the alignment code in PSGridLayoutRow."
+steipete,2012-07-31 22:35:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ed8635c48e91fe757b3afe26c28db448bca35062,ed8635c48e91fe757b3afe26c28db448bca35062,set complete and indexOfImcompleteRow properties on a row.
+steipete,2012-07-31 22:35:06,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/533a7a579a5e45cd5497909896b1119489e597d0,533a7a579a5e45cd5497909896b1119489e597d0,use compatibility_alias for protocols too; disable automatic UICollectionView relay until the PSCollectionViewCell bug is resolved
+steipete,2012-07-31 21:05:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/b782dc013968815b5a3f8ce56bfb66efdab45613,b782dc013968815b5a3f8ce56bfb66efdab45613,add support for minimumLineSpacing
+steipete,2012-07-31 19:12:07,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d65009ec3d309d629ad1e93d70237b46d7865a44,d65009ec3d309d629ad1e93d70237b46d7865a44,Add UICollectionView protocol if it's not in the runtime already.
+tibr,2012-07-31 16:40:42,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/812406b09a4022f2ed19883dd90b2e72d33885df,812406b09a4022f2ed19883dd90b2e72d33885df,Adding very basic reload support
+tibr,2012-07-31 16:13:33,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/44d1f83db00b733795f3d855da45e276b6127255,44d1f83db00b733795f3d855da45e276b6127255,"In UICollectionView the backgroundView seems gets set on the background view, adopting that behavior"
+tibr,2012-07-31 15:11:49,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e36d18db8bf2017c40f82e9085e07a42e087ce22,e36d18db8bf2017c40f82e9085e07a42e087ce22,Adding handling of zIndex of PSCollectionReusableView
+tibr,2012-07-31 14:54:45,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ffb507f3dc4aab22f4b0d3091f7d9226b09469c9,ffb507f3dc4aab22f4b0d3091f7d9226b09469c9,Adding basic supplementary view support
+tibr,2012-07-31 14:51:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9fa663299f5584b0ef0cb610accb1f823c262323,9fa663299f5584b0ef0cb610accb1f823c262323,Adding custom setter for background view of collection view cell
+tibr,2012-07-31 14:04:35,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9ccc0ba1da04952b5251c63afeffd71133f7c782,9ccc0ba1da04952b5251c63afeffd71133f7c782,Fixing cell count when using multiple sections
+tibr,2012-07-31 13:59:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c68b2b8930f2a85ab20790ead871e369cd6cfd0e,c68b2b8930f2a85ab20790ead871e369cd6cfd0e,Newly created cells are created with the correct frame if possible.
+tibr,2012-07-31 12:57:20,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/c27c581762fbd1217aa08bd418fa542a6c73db41,c27c581762fbd1217aa08bd418fa542a6c73db41,"Setting the size or center updates the frame attribute while setting the frame attribute updates the size and center attributes.
+
+As specified in iOS class reference."
+tibr,2012-07-31 08:55:09,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/02caabb5ae53b246269b822dc63f4e4af2cc3586,02caabb5ae53b246269b822dc63f4e4af2cc3586,Removing obsolete imports
+steipete,2012-07-30 01:00:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/8acb2cdb7654283ea82728e32c0034a22794685a,8acb2cdb7654283ea82728e32c0034a22794685a,performance improvement
+steipete,2012-07-30 00:27:36,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1f498a78c74003e89243ad570e8bd2c5b274b3e6,1f498a78c74003e89243ad570e8bd2c5b274b3e6,better interoperability for cell
+steipete,2012-07-30 00:27:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7e9cfc0022c1afcbbb03e0a75b42bede83a8bc4e,7e9cfc0022c1afcbbb03e0a75b42bede83a8bc4e,add comments
+steipete,2012-07-30 00:15:26,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/f2f036eff03a090a5cbac78d8bec9c5ad08d97e7,f2f036eff03a090a5cbac78d8bec9c5ad08d97e7,Allow compilation with Xcode 4.4
+steipete,2012-07-29 16:00:24,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/26bb4f952e60f65e467026981b6edde7d29a399b,26bb4f952e60f65e467026981b6edde7d29a399b,enables cellForItemAtIndexPath
+steipete,2012-07-29 15:55:46,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/ae24978842bd2e2bbd4acf13fda81b113af2baed,ae24978842bd2e2bbd4acf13fda81b113af2baed,correctly calculate dimension with margins (math is hard ;)
+steipete,2012-07-29 15:45:58,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/622764909a0860b69179453452715396fec3eb9e,622764909a0860b69179453452715396fec3eb9e,enable layout invalidation on frame change; add fade animation on rotate
+steipete,2012-07-29 15:28:48,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/9674dfc7e95b7a756b66d92fe3ee281dc08bca16,9674dfc7e95b7a756b66d92fe3ee281dc08bca16,add section margin support.
+steipete,2012-07-29 15:16:54,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/3c65ee38bc7dda2dc6252a7ba25343e7e4e6d206,3c65ee38bc7dda2dc6252a7ba25343e7e4e6d206,hack no longer needed as we tackle this at runtime
+steipete,2012-07-29 14:56:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/a3ecabb5560ca75d244d0da009d5290112020a58,a3ecabb5560ca75d244d0da009d5290112020a58,add support for margins
+steipete,2012-07-29 13:25:04,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/02a54c6aa4e163d8430966afee19f3cffdcb5930,02a54c6aa4e163d8430966afee19f3cffdcb5930,bring PSCollectionViewLayoutAttributes more in line with reference implementation
+steipete,2012-07-29 13:24:08,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/0a765f2970f41888a2e85ec097434bbaf10e42a1,0a765f2970f41888a2e85ec097434bbaf10e42a1,"update license, add how to"
+steipete,2012-07-29 09:56:00,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/e1c1e0f100aecd08678395f818ba972c831cb725,e1c1e0f100aecd08678395f818ba972c831cb725,typo
+steipete,2012-07-29 02:46:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/332f263d6d51dbaac8db6e2a34a9ac2a564117b9,332f263d6d51dbaac8db6e2a34a9ac2a564117b9,update readme
+steipete,2012-07-29 02:46:18,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/d4284af5c53a5bf15842c56673040ac4d5bcc4da,d4284af5c53a5bf15842c56673040ac4d5bcc4da,update readme
+steipete,2012-07-29 02:43:51,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/7e64fdaf659b608dcb13dea804803b77a1226102,7e64fdaf659b608dcb13dea804803b77a1226102,update readme
+steipete,2012-07-29 02:42:15,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/1b706feb2e5cf8162ec6f28481d02917fc9b88c1,1b706feb2e5cf8162ec6f28481d02917fc9b88c1,update readme
+steipete,2012-07-29 02:36:52,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/5a53e94b2a23c16eebe9c365c3f995273e3c5b92,5a53e94b2a23c16eebe9c365c3f995273e3c5b92,initial commit
+steipete,2012-07-29 02:31:13,https://api.github.com/repos/steipete/PSTCollectionView/git/commits/74a2a37705e19cb3c59923550d92698c160d8ed6,74a2a37705e19cb3c59923550d92698c160d8ed6,Initial commit

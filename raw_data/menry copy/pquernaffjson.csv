@@ -1,0 +1,890 @@
+ffjson,faster JSON serialization for Go
+username,timestamp,url,sha,message
+pquerna,2019-08-13 04:57:41,https://api.github.com/repos/pquerna/ffjson/git/commits/dac163c6c0a9ef0e673a032791a335d31f7e2586,dac163c6c0a9ef0e673a032791a335d31f7e2586,"Merge pull request #251 from RomanKrasavtsev/patch-1
+
+Fix typo"
+pquerna,2019-08-13 04:57:22,https://api.github.com/repos/pquerna/ffjson/git/commits/158af08888d984fe93fa5a882aec5369557374d5,158af08888d984fe93fa5a882aec5369557374d5,"Merge pull request #253 from conradludgate/modules
+
+Fix for go mod"
+conradludgate,2019-08-10 16:27:29,https://api.github.com/repos/pquerna/ffjson/git/commits/3b68c537b228b76c69dce9f122de373aeac31f20,3b68c537b228b76c69dce9f122de373aeac31f20,Fix for go mod
+RomanKrasavtsev,2019-01-04 20:17:49,https://api.github.com/repos/pquerna/ffjson/git/commits/e239afd0e92a9a0fe21bcde7eec1202385e363c1,e239afd0e92a9a0fe21bcde7eec1202385e363c1,Fix typo
+pquerna,2018-10-28 06:43:49,https://api.github.com/repos/pquerna/ffjson/git/commits/e517b90714f7c0eabe6d2e570a5886ae077d6db6,e517b90714f7c0eabe6d2e570a5886ae077d6db6,"Merge pull request #250 from HaraldNordgren/go_versions
+
+Bump Go versions and use 1.n.x to get latest minor versions"
+HaraldNordgren,2018-10-27 22:28:05,https://api.github.com/repos/pquerna/ffjson/git/commits/0e8e5398718508351e51dfcb297c861e0c5d402f,0e8e5398718508351e51dfcb297c861e0c5d402f,Bump Go versions and use 1.n.x to get latest minor versions
+pquerna,2018-07-17 14:41:49,https://api.github.com/repos/pquerna/ffjson/git/commits/af8b230fcd2007c7095168ca8ab94c68b60840c6,af8b230fcd2007c7095168ca8ab94c68b60840c6,"Merge pull request #242 from erikdubbelboer/fixbugs
+
+Fix NaN bug and all broken tests"
+erikdubbelboer,2018-07-17 08:49:55,https://api.github.com/repos/pquerna/ffjson/git/commits/ab0e2ee58bee771e1359b17a0a69d6350fa38bd2,ab0e2ee58bee771e1359b17a0a69d6350fa38bd2,"Fix NaN bug and all broken tests
+
+- Fix Makefile to remove all generated files on clean
+- Return an error when trying to parse NaN (Fix #241)
+- Fix marshalling of RawMessage test (Closes #234)
+- Fix float errors in fuzz tests caused by default lib marshaling
+  0.00000012 as 1.2e-7 while ffjson doesn't
+- Remove invalid TODO
+- Update travis Go version to 1.10"
+pquerna,2017-10-02 14:47:29,https://api.github.com/repos/pquerna/ffjson/git/commits/d49c2bc1aa135aad0c6f4fc2056623ec78f5d5ac,d49c2bc1aa135aad0c6f4fc2056623ec78f5d5ac,"Merge pull request #233 from nkovacs/error-formatting-directive-fix
+
+Fix formatting directive in Error call"
+nkovacs,2017-10-02 07:40:05,https://api.github.com/repos/pquerna/ffjson/git/commits/fa9fe1b4a9d362268fd391be6a828a5f9113aee6,fa9fe1b4a9d362268fd391be6a828a5f9113aee6,"Fix formatting directive in Error call
+
+Use Errorf."
+pquerna,2017-09-28 19:03:03,https://api.github.com/repos/pquerna/ffjson/git/commits/619064c2092f8ed31957bf7af846f1af0529b737,619064c2092f8ed31957bf7af846f1af0529b737,"Merge pull request #232 from nkovacs/231-struct-ptr
+
+Fix encode and decode when slice has null structs"
+nkovacs,2017-09-27 17:32:09,https://api.github.com/repos/pquerna/ffjson/git/commits/77ded21d7fa01f3333338871637aed4db2ad4de8,77ded21d7fa01f3333338871637aed4db2ad4de8,"Fix encode and decode when slice has null structs
+
+If a struct contains a slice or map of structs,
+this code can appear inside a for loop, and returning
+from the entire function/going back to mainparse
+generates invalid json/is unable to correctly parse
+valid json.
+Fixes #231"
+pquerna,2017-08-12 16:10:14,https://api.github.com/repos/pquerna/ffjson/git/commits/9a5203b7a07166f217f5f8177d5b16177acad3b2,9a5203b7a07166f217f5f8177d5b16177acad3b2,"Merge pull request #223 from y0ssar1an/master
+
+Fix bugs caught by go vet"
+y0ssar1an,2017-08-05 06:24:28,https://api.github.com/repos/pquerna/ffjson/git/commits/f31cfcc3d448a51e07592c337532862ce70a0fc4,f31cfcc3d448a51e07592c337532862ce70a0fc4,Fix bugs caught by go vet
+pquerna,2017-08-01 15:06:05,https://api.github.com/repos/pquerna/ffjson/git/commits/5333e98ee8b90e40336e56eb540641519813383b,5333e98ee8b90e40336e56eb540641519813383b,"Merge pull request #222 from ei-grad/generated-code-header
+
+Adopt the standartized generated code header"
+ei-grad,2017-08-01 06:41:12,https://api.github.com/repos/pquerna/ffjson/git/commits/efe3182e6b1371579f0f8d199f819b7baddcfd36,efe3182e6b1371579f0f8d199f819b7baddcfd36,"Adopt the standartized generated code header
+
+Comment must be a single line and must start with ""Code generated"" and
+end with ""DO NOT EDIT."", with a period.
+
+See https://golang.org/s/generatedcode"
+pquerna,2017-07-06 04:51:09,https://api.github.com/repos/pquerna/ffjson/git/commits/e17ae1e9b229dae956972fddd3479917136b749e,e17ae1e9b229dae956972fddd3479917136b749e,"Merge pull request #220 from cblomart/master
+
+lint compatibility & tests"
+cblomart,2017-07-01 17:21:07,https://api.github.com/repos/pquerna/ffjson/git/commits/59190621b708ee94c84cb344fe522f1541f7bb53,59190621b708ee94c84cb344fe522f1541f7bb53,Update goser
+cblomart,2017-07-01 16:33:49,https://api.github.com/repos/pquerna/ffjson/git/commits/f0089423290075970443f21ba2c66c09a410b09b,f0089423290075970443f21ba2c66c09a410b09b,Exit on lint issue
+cblomart,2017-07-01 16:31:13,https://api.github.com/repos/pquerna/ffjson/git/commits/c26aafa15a1af375256d6e2f1b5e22cd7531a02e,c26aafa15a1af375256d6e2f1b5e22cd7531a02e,update customer
+cblomart,2017-07-01 16:15:00,https://api.github.com/repos/pquerna/ffjson/git/commits/20a2e3258e75d0827871934130aefce30fa93f37,20a2e3258e75d0827871934130aefce30fa93f37,update fields
+cblomart,2017-07-01 15:59:54,https://api.github.com/repos/pquerna/ffjson/git/commits/1a4e9baac0b2aac51b94c7b42880c2e6683729db,1a4e9baac0b2aac51b94c7b42880c2e6683729db,update fields to ff
+cblomart,2017-07-01 15:47:00,https://api.github.com/repos/pquerna/ffjson/git/commits/7a0d5d9d9cb8e26e676aa1fb6e4d916335d1b247,7a0d5d9d9cb8e26e676aa1fb6e4d916335d1b247,finish ff comments
+cblomart,2017-07-01 13:28:44,https://api.github.com/repos/pquerna/ffjson/git/commits/5708738212e7a6e71e600adc1ddf0c25a4ac07a5,5708738212e7a6e71e600adc1ddf0c25a4ac07a5,comment ff continue
+cblomart,2017-07-01 13:15:39,https://api.github.com/repos/pquerna/ffjson/git/commits/761b6f851d471eb11b5631d5ab6a576bda3d91aa,761b6f851d471eb11b5631d5ab6a576bda3d91aa,contine ff coments
+cblomart,2017-07-01 12:57:39,https://api.github.com/repos/pquerna/ffjson/git/commits/b3f68b590eafaf278d83406a1bdc7c21cbd1300f,b3f68b590eafaf278d83406a1bdc7c21cbd1300f,start ff comments
+cblomart,2017-07-01 12:42:26,https://api.github.com/repos/pquerna/ffjson/git/commits/cfd3f659690dbc33c1c5a96cfaec440da22e2952,cfd3f659690dbc33c1c5a96cfaec440da22e2952,comment type test and everything
+cblomart,2017-06-30 21:20:41,https://api.github.com/repos/pquerna/ffjson/git/commits/997fc5a092c1301bbb5ebb031e9bfdef8105da67,997fc5a092c1301bbb5ebb031e9bfdef8105da67,lint test/number
+cblomart,2017-06-30 21:14:27,https://api.github.com/repos/pquerna/ffjson/git/commits/1f1e7e4c6a4590c3bb34820b4d59005daae879a9,1f1e7e4c6a4590c3bb34820b4d59005daae879a9,Correct last missing OriginId
+cblomart,2017-06-30 21:09:26,https://api.github.com/repos/pquerna/ffjson/git/commits/ff8d38398782af9882999db0a9ef831f32b4357a,ff8d38398782af9882999db0a9ef831f32b4357a,update test to follow linted
+cblomart,2017-06-30 21:00:09,https://api.github.com/repos/pquerna/ffjson/git/commits/cdbaf4fdacfed7e8446efca7e9987c52d40c750a,cdbaf4fdacfed7e8446efca7e9987c52d40c750a,lint customer
+cblomart,2017-06-30 20:49:17,https://api.github.com/repos/pquerna/ffjson/git/commits/29e86685f6c64455019e605a147b5a7923ad260f,29e86685f6c64455019e605a147b5a7923ad260f,lint tests/base.go
+cblomart,2017-06-30 20:39:38,https://api.github.com/repos/pquerna/ffjson/git/commits/952a8541bff058f366663ba2a6f84c361faf3c74,952a8541bff058f366663ba2a6f84c361faf3c74,Comment marshalling funcs
+cblomart,2017-06-30 20:23:00,https://api.github.com/repos/pquerna/ffjson/git/commits/817a34844ae1c722cb614d56505b59f8edb37a63,817a34844ae1c722cb614d56505b59f8edb37a63,uj and mj to j
+cblomart,2017-06-30 19:28:43,https://api.github.com/repos/pquerna/ffjson/git/commits/cacdaaacd281ff36237a1bc5c6c8b8de0ac42616,cacdaaacd281ff36237a1bc5c6c8b8de0ac42616,remove _ from get tmp var
+cblomart,2017-06-30 18:59:57,https://api.github.com/repos/pquerna/ffjson/git/commits/08026f076aca0e8f79dc61f6b53d63a2eab8ed43,08026f076aca0e8f79dc61f6b53d63a2eab8ed43,remote ffj_key and ffj_set
+cblomart,2017-06-30 18:40:44,https://api.github.com/repos/pquerna/ffjson/git/commits/002b816d0897304cf7b8a99ab09d048de852ca61,002b816d0897304cf7b8a99ab09d048de852ca61,Corrent makefile separator
+cblomart,2017-06-30 18:35:27,https://api.github.com/repos/pquerna/ffjson/git/commits/b6128f4af61f44b64f71a8a35e436a13bc8602c3,b6128f4af61f44b64f71a8a35e436a13bc8602c3,Install golint
+cblomart,2017-06-30 18:17:19,https://api.github.com/repos/pquerna/ffjson/git/commits/9e47713191d60e9f92b1be5279cecec3ae22d6ba,9e47713191d60e9f92b1be5279cecec3ae22d6ba,Add lint tests
+cblomart,2017-06-30 17:57:39,https://api.github.com/repos/pquerna/ffjson/git/commits/0250158c8b0cddc68a1921b3182806cfdb12730c,0250158c8b0cddc68a1921b3182806cfdb12730c,remove init to null and comment exported func
+cblomart,2017-06-28 19:53:06,https://api.github.com/repos/pquerna/ffjson/git/commits/0f910db9732dda9d5f3413564ee18d7a780b25bc,0f910db9732dda9d5f3413564ee18d7a780b25bc,"update ffj_t
+
+Missed some _"
+cblomart,2017-06-28 19:25:00,https://api.github.com/repos/pquerna/ffjson/git/commits/7b5c698ad44255beb148000a8474c6089b9ed180,7b5c698ad44255beb148000a8474c6089b9ed180,remove ffj_t
+pquerna,2017-05-17 16:37:23,https://api.github.com/repos/pquerna/ffjson/git/commits/0a1032732ea92f86ab22e27b9d55cd182f2f4a1b,0a1032732ea92f86ab22e27b9d55cd182f2f4a1b,"Merge pull request #216 from croath/master
+
+Add escaping html option"
+croath,2017-05-17 16:29:27,https://api.github.com/repos/pquerna/ffjson/git/commits/8a500f1b8bd8c18ed143d4cc9db5dccbd824439d,8a500f1b8bd8c18ed143d4cc9db5dccbd824439d,Merge branch 'master' into master
+croath,2017-05-17 16:27:21,https://api.github.com/repos/pquerna/ffjson/git/commits/35a0af3b3a3e604bb0223421e05c4bf8a865839d,35a0af3b3a3e604bb0223421e05c4bf8a865839d,Remove support for go versions under 1.7
+pquerna,2017-05-15 18:13:17,https://api.github.com/repos/pquerna/ffjson/git/commits/b53863bb239068d459d9378f6dd6c0578c366190,b53863bb239068d459d9378f6dd6c0578c366190,"Merge pull request #215 from posener/vendor
+
+Fix usage of vendored type"
+croath,2017-05-10 04:06:35,https://api.github.com/repos/pquerna/ffjson/git/commits/901bd2d2676fc6d5aa8390772a2be074a3e2974c,901bd2d2676fc6d5aa8390772a2be074a3e2974c,Add escape html option
+posener,2017-05-04 20:13:17,https://api.github.com/repos/pquerna/ffjson/git/commits/37ed83d78548464a7c9cb695e97d180a6badf9a0,37ed83d78548464a7c9cb695e97d180a6badf9a0,"[travis] Add GO15VENDOREXPERIMENT env
+
+Fix issues when testing vendored packages"
+posener,2017-05-04 19:58:46,https://api.github.com/repos/pquerna/ffjson/git/commits/a0ea746378adb95d3ac1a8abf28dcb8a97088522,a0ea746378adb95d3ac1a8abf28dcb8a97088522,"Fix usage of vendored type
+
+Package path is needed to be changed before importing it.
+The package path of package github.com/a/b if it is in the
+vendor directory will be $GOPATH/my/project/vendor/github.com/a/b.
+That can't be used in the import statement.
+This change trims everything before and including a path containing
+a '/vendor/' in it.
+
+Fixes #214"
+pquerna,2017-05-04 19:27:39,https://api.github.com/repos/pquerna/ffjson/git/commits/8da775d42d3f7b9914d786965a7ad5dc27219d3f,8da775d42d3f7b9914d786965a7ad5dc27219d3f,"Merge pull request #213 from posener/add-go-1.7
+
+Add go 1.7"
+posener,2017-05-04 19:11:16,https://api.github.com/repos/pquerna/ffjson/git/commits/2d9bb09a323b5fea1c051777e5e15bca58e949bd,2d9bb09a323b5fea1c051777e5e15bca58e949bd,[travis] Add go 1.7
+posener,2017-05-04 19:10:46,https://api.github.com/repos/pquerna/ffjson/git/commits/d1163ccf6abb9a742dd4c8ba9c977d0d32e63c17,d1163ccf6abb9a742dd4c8ba9c977d0d32e63c17,[travis] Use get -t instead of manually get test dependencies
+pquerna,2017-04-28 00:01:18,https://api.github.com/repos/pquerna/ffjson/git/commits/5fa75d54bb3e5387611d822d668870ecbb6f4c33,5fa75d54bb3e5387611d822d668870ecbb6f4c33,"Merge pull request #210 from BlueMonday/patch-1
+
+Fix Tip 4 and 5 headers"
+BlueMonday,2017-04-27 20:37:59,https://api.github.com/repos/pquerna/ffjson/git/commits/5faffa3ad56221599fc72ae366860b8bfe57e43d,5faffa3ad56221599fc72ae366860b8bfe57e43d,"Fix Tip 4 and 5 headers
+
+The headers for tip 4 and 5 did not contain a space after the '#' symbol which resulted in them not being rendered as headers by Github."
+pquerna,2017-03-09 00:06:51,https://api.github.com/repos/pquerna/ffjson/git/commits/f60b597ded7e7542b36fe20999dfd48166abd5ae,f60b597ded7e7542b36fe20999dfd48166abd5ae,"Merge pull request #207 from hasKeef/master
+
+Why break symlinks in GOPATH?"
+hasKeef,2017-03-08 23:19:09,https://api.github.com/repos/pquerna/ffjson/git/commits/83935a9f9698cae5eb636b7b4bb4700d7ca32180,83935a9f9698cae5eb636b7b4bb4700d7ca32180,Stop breaking symlinks in GOPATH
+pquerna,2017-03-02 13:23:00,https://api.github.com/repos/pquerna/ffjson/git/commits/3d026ef03048958e4dd62b23e09bea58eeeedb9a,3d026ef03048958e4dd62b23e09bea58eeeedb9a,"Merge pull request #206 from chapsuk/patch-1
+
+README: fixed disabling code generation examples"
+chapsuk,2017-03-01 08:16:16,https://api.github.com/repos/pquerna/ffjson/git/commits/2f9a40eca3a5727f12ceba3ed62fa6a32afcd52c,2f9a40eca3a5727f12ceba3ed62fa6a32afcd52c,README: fixed disabling code generation examples
+pquerna,2017-02-08 16:31:26,https://api.github.com/repos/pquerna/ffjson/git/commits/de51d9f018fa9a60153a04c94a031eff81ac4502,de51d9f018fa9a60153a04c94a031eff81ac4502,"Merge pull request #204 from erikdubbelboer/poolbug
+
+Don't Pool buffers that are still in use"
+erikdubbelboer,2017-02-08 09:54:12,https://api.github.com/repos/pquerna/ffjson/git/commits/5d35a925cae2b91c6763c5c824f53a8cf59bc4b4,5d35a925cae2b91c6763c5c824f53a8cf59bc4b4,"Don't Pool buffers that are still in use
+
+Fix #203"
+pquerna,2016-12-13 16:03:21,https://api.github.com/repos/pquerna/ffjson/git/commits/c24ab9baf274473906fbdba5fccb594aec4b9ff1,c24ab9baf274473906fbdba5fccb594aec4b9ff1,"Merge pull request #195 from cmeon/master
+
+inception: Reset undefined fields when reusing objects."
+erikdubbelboer,2016-11-09 10:42:37,https://api.github.com/repos/pquerna/ffjson/git/commits/65f05c15d381bd0b6b7c79ea6294bca5f020dff8,65f05c15d381bd0b6b7c79ea6294bca5f020dff8,Optionally reset undefined fields when reusing objects
+pquerna,2016-11-07 02:01:34,https://api.github.com/repos/pquerna/ffjson/git/commits/a29c662791e4de7fc53a6cf209c9af657bba96f3,a29c662791e4de7fc53a6cf209c9af657bba96f3,"Merge pull request #197 from zofrex/patch-1
+
+Minor typo in README.md"
+zofrex,2016-11-04 14:55:17,https://api.github.com/repos/pquerna/ffjson/git/commits/9a2c644c6ea497e215981b7fe6292a0d377c34ce,9a2c644c6ea497e215981b7fe6292a0d377c34ce,Minor typo in README.md
+pquerna,2016-08-11 18:35:19,https://api.github.com/repos/pquerna/ffjson/git/commits/9d7075fb37d35c5b005b4cd3bdd1074e345a5d4e,9d7075fb37d35c5b005b4cd3bdd1074e345a5d4e,"Merge pull request #191 from dx034/master
+
+Fix Issue with multiple string tags"
+dx034,2016-08-11 12:32:16,https://api.github.com/repos/pquerna/ffjson/git/commits/0d7ae8aabc3f02e1ca9ae869af0175588a9bd9d3,0d7ae8aabc3f02e1ca9ae869af0175588a9bd9d3,fix multiple string issue
+pquerna,2016-07-27 15:24:13,https://api.github.com/repos/pquerna/ffjson/git/commits/5b79949af5378123d6b0672afc88d3b214bb4f9f,5b79949af5378123d6b0672afc88d3b214bb4f9f,"Merge pull request #190 from chucknthem/slice_pointer
+
+Fix *[]string type"
+chucknthem,2016-07-27 11:06:12,https://api.github.com/repos/pquerna/ffjson/git/commits/9697224ac52734b9800fee07609fb52a5c9a3554,9697224ac52734b9800fee07609fb52a5c9a3554,Fix code gen pointer to slice
+pquerna,2016-06-13 14:33:54,https://api.github.com/repos/pquerna/ffjson/git/commits/a16f62ecdaf7d13077d64d3cdb1cc43486119809,a16f62ecdaf7d13077d64d3cdb1cc43486119809,"Merge pull request #188 from erikdubbelboer/jsonnumber
+
+Add json.Number support, fix #153"
+erikdubbelboer,2016-06-13 12:34:30,https://api.github.com/repos/pquerna/ffjson/git/commits/4be63ae34a07e136e03be4c2da43cf004c9c4998,4be63ae34a07e136e03be4c2da43cf004c9c4998,"Add json.Number support, fix #153"
+pquerna,2016-06-01 05:06:53,https://api.github.com/repos/pquerna/ffjson/git/commits/674bc015b5b3f50f9bb2561179778586b9af68c5,674bc015b5b3f50f9bb2561179778586b9af68c5,"Merge pull request #186 from absourdnoise/fix-typo
+
+Fix typo in flag description"
+pquerna,2016-06-01 05:06:31,https://api.github.com/repos/pquerna/ffjson/git/commits/2bc754a03f220c9b27bd0c13c99db785394f187f,2bc754a03f220c9b27bd0c13c99db785394f187f,"Merge pull request #185 from yixizhang/master
+
+Remove duplicate word from README.md"
+dAdAbird,2016-05-31 19:57:55,https://api.github.com/repos/pquerna/ffjson/git/commits/f4ab97b1501e209716a2bc153192635c5ee3db76,f4ab97b1501e209716a2bc153192635c5ee3db76,Fix typo in flag description
+pquerna,2016-05-11 19:28:55,https://api.github.com/repos/pquerna/ffjson/git/commits/fa49a9f5832ba121db144795c147fe8449124aeb,fa49a9f5832ba121db144795c147fe8449124aeb,"Merge pull request #182 from reillywatson/master
+
+Fix typo"
+reillywatson,2016-05-11 10:24:26,https://api.github.com/repos/pquerna/ffjson/git/commits/3426d7ba98133925ed1ffd699f4bf319fd57da4f,3426d7ba98133925ed1ffd699f4bf319fd57da4f,Fix typo
+pquerna,2016-05-05 16:20:20,https://api.github.com/repos/pquerna/ffjson/git/commits/6cb0d17684c750fa55e8475b02b0a8c3b062efbc,6cb0d17684c750fa55e8475b02b0a8c3b062efbc,"Merge pull request #175 from pquerna/pq/trap_trailing_newline_from_encoder_encode
+
+Slice off trailing newline from json.Encoder.Encode."
+pquerna,2016-04-26 16:25:01,https://api.github.com/repos/pquerna/ffjson/git/commits/0ffb2b0305b5927b936a35dc3a440fdfede62420,0ffb2b0305b5927b936a35dc3a440fdfede62420,"Merge pull request #180 from tkrajina/master
+
+Eval symlinks in input files"
+tkrajina,2016-04-26 14:23:15,https://api.github.com/repos/pquerna/ffjson/git/commits/9c2964e6984b211181e696cfdd4425b8e8b63040,9c2964e6984b211181e696cfdd4425b8e8b63040,"Eval symlinks in input files
+
+Allows ffjson to be executed in a symlinked directory pointing to a
+directory in $GOPATH."
+pquerna,2016-04-07 23:15:28,https://api.github.com/repos/pquerna/ffjson/git/commits/7327d038fae6927740461371efe7f330c23c3e5f,7327d038fae6927740461371efe7f330c23c3e5f,"Merge pull request #176 from pquerna/pq/always_use_generic_scanner
+
+Always use generic scanner -- we never finished an amd64 specialization"
+pquerna,2016-04-07 23:02:09,https://api.github.com/repos/pquerna/ffjson/git/commits/14b192a08cdd1ac00f7c308caa296655c31f7b5d,14b192a08cdd1ac00f7c308caa296655c31f7b5d,Always use generic scanner -- we never finished an amd64 specialization
+pquerna,2016-04-07 22:54:26,https://api.github.com/repos/pquerna/ffjson/git/commits/6ef5e922026c15330be6ccc944d441419e2b4856,6ef5e922026c15330be6ccc944d441419e2b4856,Slice off trailing newline from json.Encoder.Encode. Fixes #173.
+pquerna,2016-04-07 22:34:00,https://api.github.com/repos/pquerna/ffjson/git/commits/3fb249a5b296f68cd71cb1e7deb8e2606e0e8ead,3fb249a5b296f68cd71cb1e7deb8e2606e0e8ead,"Merge pull request #172 from ikruglov/master
+
+fix go1.6 compatibility problem in tests"
+ikruglov,2016-03-24 20:41:14,https://api.github.com/repos/pquerna/ffjson/git/commits/312584e609dda360336d8ac2ac1f25d05ccb4ba4,312584e609dda360336d8ac2ac1f25d05ccb4ba4,"fix go1.6 compatibility problem in tests
+
+https://tip.golang.org/doc/go1.6
+
+The reflect package has resolved a long-standing incompatibility between
+the gc and gccgo toolchains regarding embedded unexported struct types
+containing exported fields. Code that walks data structures using
+reflection, especially to implement serialization in the spirit of the
+encoding/json and encoding/xml packages, may need to be updated.
+
+The problem arises when using reflection to walk through an embedded
+unexported struct-typed field into an exported field of that struct. In
+this case, reflect had incorrectly reported the embedded field as exported,
+by returning an empty Field.PkgPath. Now it correctly reports the field as
+unexported but ignores that fact when evaluating access to exported fields
+contained within the struct.
+
+Updating: Typically, code that previously walked over structs and used
+
+f.PkgPath != """"
+to exclude inaccessible fields should now use
+
+f.PkgPath != """" && !f.Anonymous
+For example, see the changes to the implementations of encoding/json and
+encoding/xml.
+
+Also see code for more details"
+pquerna,2016-03-24 17:15:59,https://api.github.com/repos/pquerna/ffjson/git/commits/a4cf0d628f2b6d823c648db52670b87a4f610a67,a4cf0d628f2b6d823c648db52670b87a4f610a67,Add go 1.6 to travis
+pquerna,2016-03-24 15:00:07,https://api.github.com/repos/pquerna/ffjson/git/commits/d19902d87d7c1ffad97283458745172505dca80e,d19902d87d7c1ffad97283458745172505dca80e,"Merge pull request #171 from ikruglov/master
+
+optimize FFLexer.wantBytes() and FFLexer.lexNumber()"
+ikruglov,2016-03-23 22:26:26,https://api.github.com/repos/pquerna/ffjson/git/commits/def4da9175b83ee81cdb8d6115cc6573a18746da,def4da9175b83ee81cdb8d6115cc6573a18746da,"optimize FFLexer.wantBytes() and FFLexer.lexNumber()
+
+short story:
+The idea behind the optimization is to replace multiple WriteByte(byte)
+calls by single Write([]byte) call.
+
+long story:
+While profiling my application I noticed that some Buffer's functions
+takes uncomfortable amount time. For example 10% for (*Buffer).grow().
+Providing the lexer with preallocated buffer didn't change the picture.
+
+```
+...
+2.90s  9.65% 34.31%      6.81s 22.66% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).lexNumber
+2.70s  8.99% 43.29%      2.88s  9.58% github.com/pquerna/ffjson/fflib/v1.(*Buffer).grow
+2.60s  8.65% 51.95%      5.03s 16.74% github.com/pquerna/ffjson/fflib/v1.(*Buffer).WriteByte
+2.16s  7.19% 59.13%     18.54s 61.70% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).Scan
+1.90s  6.32% 65.46%      1.90s  6.32% github.com/pquerna/ffjson/fflib/v1.(*ffReader).ReadByteNoWS
+1.24s  4.13% 69.58%      1.24s  4.13% github.com/pquerna/ffjson/fflib/v1.(*Buffer).Reset
+1.23s  4.09% 73.68%      1.23s  4.09% github.com/pquerna/ffjson/fflib/v1.scanString
+1.15s  3.83% 77.50%      2.17s  7.22% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).wantBytes
+...
+```
+
+Further profiling and investigation showed that grow() is called for
+each WriteByte() call. The later one is heavily used by lexer for
+parsing a JSON document. But the hotspot was lexNumber() in my case
+where WriteByte() is invoked for every character of a number (indeed,
+the document I parsed contained thousands of unix timestamps which are
+long numbers).
+
+So, instead of calling WriteByte() after every parsed character my patch
+makes the code to parse a number first and invoke Write([]byte) once for
+the entire number. I also patched wantBytes() in similar fashion.
+
+Profile after the change:
+
+```
+...
+3.14s 10.45% 36.86%      4.53s 15.07% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).lexNumber
+2.53s  8.42% 45.28%     17.31s 57.58% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).Scan
+2.28s  7.58% 52.86%      2.28s  7.58% github.com/pquerna/ffjson/fflib/v1.(*ffReader).ReadByteNoWS
+1.46s  4.86% 57.72%      1.46s  4.86% github.com/pquerna/ffjson/fflib/v1.scanString
+1.22s  4.06% 61.78%      1.22s  4.06% github.com/pquerna/ffjson/fflib/v1.(*Buffer).Reset
+1.10s  3.66% 65.44%      3.38s 11.24% github.com/pquerna/ffjson/fflib/v1.(*FFLexer).scanReadByte
+1.08s  3.59% 69.03%      2.87s  9.55% github.com/pquerna/ffjson/fflib/v1.(*Buffer).Write
+1.04s  3.46% 72.49%      1.25s  4.16% github.com/pquerna/ffjson/fflib/v1.(*Buffer).grow
+...
+```
+
+Patched ffjson gave me 10-15% speed up.
+
+Please note that some tests failed in master before the patch. So, I
+didn't have nice test reports. But no new tests failed at least :-)."
+pquerna,2016-03-18 19:25:20,https://api.github.com/repos/pquerna/ffjson/git/commits/03d5a0ae3a5a5d0cd8d2b593e247bb073c25dbcb,03d5a0ae3a5a5d0cd8d2b593e247bb073c25dbcb,"Merge pull request #170 from i/master
+
+Fix typo in MarshalFast godoc"
+i,2016-03-18 17:48:43,https://api.github.com/repos/pquerna/ffjson/git/commits/8923230c26636abc907c36ebb328d8265a27f130,8923230c26636abc907c36ebb328d8265a27f130,"Merge pull request #1 from i/i.fix-typo
+
+Fix typo in MarshalFast godoc"
+i,2016-03-18 17:47:05,https://api.github.com/repos/pquerna/ffjson/git/commits/13efdf9df58cf1d1bdfba2f1608e5af977a7ba8a,13efdf9df58cf1d1bdfba2f1608e5af977a7ba8a,Fix typo in MarshalFast godoc
+pquerna,2016-02-27 17:47:21,https://api.github.com/repos/pquerna/ffjson/git/commits/215028ffa1b291d28e4007437cbdb53a9a958a3d,215028ffa1b291d28e4007437cbdb53a9a958a3d,"Merge pull request #164 from dimfeld/vendoring_fix
+
+Put temporary inception file inside the project."
+dimfeld,2016-02-10 17:04:28,https://api.github.com/repos/pquerna/ffjson/git/commits/f1b4a3cc5f11b447ad3e4c6a9ce60a95493cda00,f1b4a3cc5f11b447ad3e4c6a9ce60a95493cda00,"Put temporary inception file inside the project.
+
+A temporary directory is generated to avoid package name
+problems.
+
+Fixes #163"
+pquerna,2016-02-10 16:12:57,https://api.github.com/repos/pquerna/ffjson/git/commits/7b05a7d3d8064feff39ce06557fe402d9f16ab29,7b05a7d3d8064feff39ce06557fe402d9f16ab29,"Merge pull request #162 from shawnps/patch-1
+
+fix typo"
+shawnps,2016-02-06 13:40:28,https://api.github.com/repos/pquerna/ffjson/git/commits/3996f5329445b21f7a453a4e5dde62156c89f364,3996f5329445b21f7a453a4e5dde62156c89f364,fix typo
+pquerna,2016-02-03 18:49:06,https://api.github.com/repos/pquerna/ffjson/git/commits/e95840efb343d3d733788d87628b4bd025e94470,e95840efb343d3d733788d87628b4bd025e94470,"Merge pull request #161 from PlanitarInc/map-of-arrays
+
+Support nested maps, arrays and slices"
+pquerna,2016-02-02 22:09:40,https://api.github.com/repos/pquerna/ffjson/git/commits/42f9a517252686cee79d8c5288d40d149dffda12,42f9a517252686cee79d8c5288d40d149dffda12,Update .travis.yml
+pquerna,2016-02-02 22:09:08,https://api.github.com/repos/pquerna/ffjson/git/commits/f27ba305de347ec30e29eede299ee4d23fc477fd,f27ba305de347ec30e29eede299ee4d23fc477fd,"Merge pull request #160 from PlanitarInc/support-arrays
+
+Support array decoding"
+pquerna,2015-11-18 21:49:35,https://api.github.com/repos/pquerna/ffjson/git/commits/4a0805c1782dcdf59a133bd8c91810245d5eda4c,4a0805c1782dcdf59a133bd8c91810245d5eda4c,"Merge pull request #155 from kipal/master
+
+Force regenerate"
+kipal,2015-11-18 21:32:31,https://api.github.com/repos/pquerna/ffjson/git/commits/18f955716ac2ea72eab945b24b84f0847a404e0e,18f955716ac2ea72eab945b24b84f0847a404e0e,Merge branch 'force-regeneration' (original generator package) (reverted from commit 6fb7b464d4d173c1de3bf79f9d375855aa3aa5c9)
+kipal,2015-11-18 21:30:34,https://api.github.com/repos/pquerna/ffjson/git/commits/6fb7b464d4d173c1de3bf79f9d375855aa3aa5c9,6fb7b464d4d173c1de3bf79f9d375855aa3aa5c9,Merge branch 'force-regeneration' (original generator package)
+kipal,2015-11-18 21:30:07,https://api.github.com/repos/pquerna/ffjson/git/commits/ae0ffc8d7b34a9f92be33ffaaa2e3914599ac3ab,ae0ffc8d7b34a9f92be33ffaaa2e3914599ac3ab,Merge branch 'force-regeneration' (original generator package)
+kipal,2015-11-18 21:28:36,https://api.github.com/repos/pquerna/ffjson/git/commits/79b91464d2e1c260ed1b85c3ddf2ef84e5e52667,79b91464d2e1c260ed1b85c3ddf2ef84e5e52667,Extended with force-regenaration feature.
+pquerna,2015-08-04 23:22:36,https://api.github.com/repos/pquerna/ffjson/git/commits/184f78649ba053f484de46921391e6d0c6f5172f,184f78649ba053f484de46921391e6d0c6f5172f,"Merge pull request #146 from dancannon/master
+
+Added support for unmarshaling complex maps"
+dancannon,2015-07-17 09:03:23,https://api.github.com/repos/pquerna/ffjson/git/commits/bf78cca7c8ffa6ebcecc18db0693b07909ef6946,bf78cca7c8ffa6ebcecc18db0693b07909ef6946,Fixed failing tests
+dancannon,2015-07-16 15:30:55,https://api.github.com/repos/pquerna/ffjson/git/commits/10d2ff3428e7167e4f1411f9d63985be7ea8394b,10d2ff3428e7167e4f1411f9d63985be7ea8394b,Bug fixes
+dancannon,2015-07-16 13:56:02,https://api.github.com/repos/pquerna/ffjson/git/commits/ddc4d2e354bfaebcdcd4a92602a4158c8bf75f29,ddc4d2e354bfaebcdcd4a92602a4158c8bf75f29,Fixed issue when encoding pointers
+dancannon,2015-07-16 11:12:02,https://api.github.com/repos/pquerna/ffjson/git/commits/39c9391b5c81f5fbc4f6e0caacd298ba9f6903ad,39c9391b5c81f5fbc4f6e0caacd298ba9f6903ad,Added support for unmarshaling complex maps
+pquerna,2015-06-28 07:14:43,https://api.github.com/repos/pquerna/ffjson/git/commits/39a6b41ac09316969fe5efbad024dd066774e09b,39a6b41ac09316969fe5efbad024dd066774e09b,"Merge pull request #145 from memoleaf/master
+
+Resolve #80: Support ""string"" tag in decoder"
+memoleaf,2015-06-26 05:40:42,https://api.github.com/repos/pquerna/ffjson/git/commits/697feb55bc0a0b0b0303bea09e87df6dfadf8411,697feb55bc0a0b0b0303bea09e87df6dfadf8411,"- resolve #80
+- change .travis.yml to handle fork better"
+pquerna,2015-06-20 16:42:19,https://api.github.com/repos/pquerna/ffjson/git/commits/3c3e6a43f09a2f2ab57c801dcffa3378cc603126,3c3e6a43f09a2f2ab57c801dcffa3378cc603126,"Merge pull request #143 from ceram1/master
+
+Added a comment for appengine build. #142"
+ceram1,2015-06-20 08:13:13,https://api.github.com/repos/pquerna/ffjson/git/commits/637a161b27a9f83704c1320d9a401ff6b7eba594,637a161b27a9f83704c1320d9a401ff6b7eba594,Update reader_scan_amd64.s
+pquerna,2015-05-23 15:43:36,https://api.github.com/repos/pquerna/ffjson/git/commits/a92a0de889079f63cf471daa5cb150804f6bcd22,a92a0de889079f63cf471daa5cb150804f6bcd22,"Merge pull request #140 from larsmans/go/format
+
+use go/format instead of gofmt call via os/exec and tempfiles"
+larsmans,2015-05-23 10:55:37,https://api.github.com/repos/pquerna/ffjson/git/commits/99cf38b55d84b7d3535a6eaeac72592d38c77cca,99cf38b55d84b7d3535a6eaeac72592d38c77cca,use go/format instead of gofmt call via os/exec and tempfiles
+klauspost,2015-05-19 14:54:25,https://api.github.com/repos/pquerna/ffjson/git/commits/f961104bcd0c6ca9295200fda10ef95891fead3f,f961104bcd0c6ca9295200fda10ef95891fead3f,"Merge pull request #139 from larsmans/go1.2
+
+Go 1.2 backport"
+larsmans,2015-05-18 15:59:13,https://api.github.com/repos/pquerna/ffjson/git/commits/64fa69957fed3bd6bfadab7deec6a16fbef1329b,64fa69957fed3bd6bfadab7deec6a16fbef1329b,backport to Go 1.2 by stubbing out sync.Pool usage
+larsmans,2015-05-18 15:58:23,https://api.github.com/repos/pquerna/ffjson/git/commits/fddcf0d24cc933c2ed184b89d9a7647d8483ea8d,fddcf0d24cc933c2ed184b89d9a7647d8483ea8d,"fix compile error on Go 1.2 due to scanStringSSE
+
+Function's use was disabled anyway, so I commented it out."
+pquerna,2015-04-26 16:50:33,https://api.github.com/repos/pquerna/ffjson/git/commits/23598776f41886d6464ba237c6ae33d57ccd1e3f,23598776f41886d6464ba237c6ae33d57ccd1e3f,"Merge pull request #133 from klauspost/fix-imports-no-fields
+
+bytes package is not used if there are no fields."
+pquerna,2015-04-26 16:50:20,https://api.github.com/repos/pquerna/ffjson/git/commits/a14ef3c9d8865d489ed62398128db66e682eb75e,a14ef3c9d8865d489ed62398128db66e682eb75e,"Merge pull request #131 from klauspost/add-internal-aliased-types
+
+Add (recursive) aliased internal types."
+klauspost,2015-04-26 09:14:42,https://api.github.com/repos/pquerna/ffjson/git/commits/18234224fad2ae148af3ced54ae067c71e1ae9d4,18234224fad2ae148af3ced54ae067c71e1ae9d4,"bytes package is not used if there are no fields.
+
+Fixes 'imported and not used: ""bytes""'"
+klauspost,2015-04-20 12:42:53,https://api.github.com/repos/pquerna/ffjson/git/commits/ba0b77bf46d506c7b303614f037b5a4700101350,ba0b77bf46d506c7b303614f037b5a4700101350,"Add (recursive) aliased internal types.
+
+This will check a type, if it is an alias for an internal type, and add ffjson for that type.
+
+Added tests for recursive aliases."
+klauspost,2015-04-20 11:00:15,https://api.github.com/repos/pquerna/ffjson/git/commits/9942bd02178ea8eced80204e67d785c8304df0d5,9942bd02178ea8eced80204e67d785c8304df0d5,"Update README.md
+
+Add tip about structs in different files."
+klauspost,2015-04-20 10:19:01,https://api.github.com/repos/pquerna/ffjson/git/commits/e834ca0c35bd7133c0b53d54bbe7dee8969e2795,e834ca0c35bd7133c0b53d54bbe7dee8969e2795,Check if slice struct element is a named type.
+klauspost,2015-04-20 08:44:22,https://api.github.com/repos/pquerna/ffjson/git/commits/0b87bf9bfa2d58b22a14b6a65eb4d9ad1382316d,0b87bf9bfa2d58b22a14b6a65eb4d9ad1382316d,"Merge pull request #128 from klauspost/add-slice-of-struct-decoding
+
+Add decoding of slice of structs."
+pquerna,2015-04-18 16:35:26,https://api.github.com/repos/pquerna/ffjson/git/commits/e5c6729581a560fe244627296fb6bca02bc4fd0a,e5c6729581a560fe244627296fb6bca02bc4fd0a,"Merge pull request #126 from klauspost/fix-unmarshal-pointer
+
+Check if the pointer to a type implements the decoder."
+pquerna,2015-04-18 16:34:25,https://api.github.com/repos/pquerna/ffjson/git/commits/8593e9bf0858e94e839f81f8f9eb130051d6fb61,8593e9bf0858e94e839f81f8f9eb130051d6fb61,"Merge pull request #124 from klauspost/update-ftoa
+
+Update ftoa to tip."
+pquerna,2015-04-18 16:34:08,https://api.github.com/repos/pquerna/ffjson/git/commits/e4eedc1ef1988cd62ffff9306ad7a1aeccbbf14d,e4eedc1ef1988cd62ffff9306ad7a1aeccbbf14d,"Merge pull request #127 from klauspost/add-byte-slice-writejson
+
+Reduce lexer allocations"
+pquerna,2015-04-18 16:33:33,https://api.github.com/repos/pquerna/ffjson/git/commits/101e4fc47dfce86903e837f6427bc2642f7ff5c6,101e4fc47dfce86903e837f6427bc2642f7ff5c6,"Merge pull request #129 from klauspost/reusable-decoder
+
+Reusable decoder"
+klauspost,2015-04-17 16:25:11,https://api.github.com/repos/pquerna/ffjson/git/commits/ab75802d1af07950cfbbdd8f2a42e8ebf075ec0c,ab75802d1af07950cfbbdd8f2a42e8ebf075ec0c,Inline unmarshal call.
+klauspost,2015-04-17 10:44:15,https://api.github.com/repos/pquerna/ffjson/git/commits/64004956df5a2dd65686106a94cb7699852f5be9,64004956df5a2dd65686106a94cb7699852f5be9,Add a reusable decoder to the ffjson library.
+klauspost,2015-04-17 10:32:31,https://api.github.com/repos/pquerna/ffjson/git/commits/886b6c1434e5daea1fdb967143071d6f135da8f5,886b6c1434e5daea1fdb967143071d6f135da8f5,"Add Reset function to the Lexer, to allow reuse of an FFLexer object."
+klauspost,2015-04-17 10:11:06,https://api.github.com/repos/pquerna/ffjson/git/commits/7c3281e2219e097d427f1182c27b8f6343627919,7c3281e2219e097d427f1182c27b8f6343627919,Add decoding of slice of structs.
+klauspost,2015-04-17 09:45:09,https://api.github.com/repos/pquerna/ffjson/git/commits/e10b1e6ebe75a5dfa0441761309e1487c9ef12c9,e10b1e6ebe75a5dfa0441761309e1487c9ef12c9,Fix syntax.
+klauspost,2015-04-17 09:38:06,https://api.github.com/repos/pquerna/ffjson/git/commits/e107ed492f44f12aa467137359fc0834351d5e9c,e107ed492f44f12aa467137359fc0834351d5e9c,"- Add internal buffer to the lexer to avoid allocations.
+- Send byte slice to WriteJson instead of converting to []byte->string"
+klauspost,2015-04-17 09:36:35,https://api.github.com/repos/pquerna/ffjson/git/commits/0e2fa0540640d208d80f5c1640eaf58eec1c94c5,0e2fa0540640d208d80f5c1640eaf58eec1c94c5,Refactor WriteJson from WriteJsonString accepts a byte array to avoid copying bytes to string in lexer.
+klauspost,2015-04-17 09:25:38,https://api.github.com/repos/pquerna/ffjson/git/commits/19895b36f8d600059c151c9408ede3be9be960c2,19895b36f8d600059c151c9408ede3be9be960c2,Check if the pointer to a type implements the decoder.
+klauspost,2015-03-27 15:44:34,https://api.github.com/repos/pquerna/ffjson/git/commits/0b321aecd6ebd08eed65f0ab1360dc5fd584806b,0b321aecd6ebd08eed65f0ab1360dc5fd584806b,"Update ftoa to tip.
+
+Includes https://go-review.googlesource.com/#/c/5600/"
+klauspost,2015-03-17 08:16:23,https://api.github.com/repos/pquerna/ffjson/git/commits/87e8e39fdfc8a3e4967b26b7321a520b9d4e9e71,87e8e39fdfc8a3e4967b26b7321a520b9d4e9e71,"Merge pull request #121 from rande/patch-1
+
+Update README.md"
+rande,2015-03-16 23:11:05,https://api.github.com/repos/pquerna/ffjson/git/commits/cc43abdc7b80bf9a8620db7e04e1108e44dd3372,cc43abdc7b80bf9a8620db7e04e1108e44dd3372,"Update README.md
+
+From the generated code, the comment is now ``/* Falling back. type=[]core.Reference kind=slice */``"
+klauspost,2015-03-04 14:23:50,https://api.github.com/repos/pquerna/ffjson/git/commits/4c10e6c3ddb41e54a9e01647060138413865a0b8,4c10e6c3ddb41e54a9e01647060138413865a0b8,Update Windows benchmark/tests.
+pquerna,2015-03-03 18:03:31,https://api.github.com/repos/pquerna/ffjson/git/commits/27f4be5ac9f0fccc2ae2534fb9e5c9830a71abe9,27f4be5ac9f0fccc2ae2534fb9e5c9830a71abe9,"Merge pull request #117 from klauspost/send-struct-ptr
+
+Send pointers to structs."
+klauspost,2015-03-03 16:43:33,https://api.github.com/repos/pquerna/ffjson/git/commits/573604734b9c5b6b731df7a8023738de01030d9a,573604734b9c5b6b731df7a8023738de01030d9a,"When encoding a struct with the json encoder, send a pointer to the struct. This avoids a struct copy."
+klauspost,2015-03-03 11:49:44,https://api.github.com/repos/pquerna/ffjson/git/commits/288bf0de8983de1db6465817f6e531c798f5ecdf,288bf0de8983de1db6465817f6e531c798f5ecdf,"Merge pull request #116 from klauspost/ffjson-encoder-api
+
+Add reusable Encoder API, similar to encoding/json"
+klauspost,2015-03-03 11:40:13,https://api.github.com/repos/pquerna/ffjson/git/commits/6c97d3ad01167b28d7ed069536beb8e4d7fa00e6,6c97d3ad01167b28d7ed069536beb8e4d7fa00e6,Remove async encoder and add tests for error states.
+klauspost,2015-03-02 21:55:20,https://api.github.com/repos/pquerna/ffjson/git/commits/8ad89c3c836713b1fc911298225418fda97e04e1,8ad89c3c836713b1fc911298225418fda97e04e1,"Update README.md
+
+Add encoder info"
+philips,2015-03-02 18:12:06,https://api.github.com/repos/pquerna/ffjson/git/commits/492df202add39da2c94a8ad9cefd7d86b4f2904b,492df202add39da2c94a8ad9cefd7d86b4f2904b,README: fixup grammar on deterministic build note
+pquerna,2015-03-02 18:05:32,https://api.github.com/repos/pquerna/ffjson/git/commits/bb29e70e93f3af9bcc602b3100ffdf95429b94fa,bb29e70e93f3af9bcc602b3100ffdf95429b94fa,Merge branch 'klauspost-test-rename-dominant-field'
+pquerna,2015-03-02 18:05:14,https://api.github.com/repos/pquerna/ffjson/git/commits/0341131db4e37dfec5238340ce9ea967128bba49,0341131db4e37dfec5238340ce9ea967128bba49,"Merge branch 'test-rename-dominant-field' of https://github.com/klauspost/ffjson into klauspost-test-rename-dominant-field
+
+Conflicts:
+	tests/ff.go
+	tests/ff_test.go"
+pquerna,2015-03-02 18:01:56,https://api.github.com/repos/pquerna/ffjson/git/commits/2df0f0d35dc413c6fcfaea8174b9bb93627aab82,2df0f0d35dc413c6fcfaea8174b9bb93627aab82,Merge branch 'klauspost-buffered-appendfloat'
+klauspost,2015-02-12 20:24:26,https://api.github.com/repos/pquerna/ffjson/git/commits/71b6cbb6dadb1a86edfc63462179ec90864e1a54,71b6cbb6dadb1a86edfc63462179ec90864e1a54,Convert strconv.AppendFloat to use the internal buffer for writing.
+klauspost,2015-03-02 13:23:37,https://api.github.com/repos/pquerna/ffjson/git/commits/867aac0599d025d2cceacc36b4f93309b387f395,867aac0599d025d2cceacc36b4f93309b387f395,"Adds a reusable encoder API, similar to encoding/json, as well as an async encoder that will encode objects from several goroutines to a single io.Writer."
+pquerna,2015-02-27 21:00:35,https://api.github.com/repos/pquerna/ffjson/git/commits/e30d0bf8c7d91db9f284bf9afd19a04856b5f079,e30d0bf8c7d91db9f284bf9afd19a04856b5f079,"Merge pull request #111 from klauspost/pool-json-marshal
+
+Fix incoming buffers being misplaced."
+pquerna,2015-02-27 19:26:39,https://api.github.com/repos/pquerna/ffjson/git/commits/0d063fc19ddc04afcfd90cf27c560eff4bf9487f,0d063fc19ddc04afcfd90cf27c560eff4bf9487f,"Merge pull request #114 from klauspost/use-encoder-in-buffer-for-fallbacks
+
+Use encoder in buffer for fallbacks"
+klauspost,2015-02-27 15:50:47,https://api.github.com/repos/pquerna/ffjson/git/commits/49ce74caedd4da04ce9a42f9f399c2c6729f7bb5,49ce74caedd4da04ce9a42f9f399c2c6729f7bb5,Merge branch 'use-encoder-in-buffer-for-fallbacks' of https://github.com/klauspost/ffjson into use-encoder-in-buffer-for-fallbacks
+klauspost,2015-02-27 15:49:31,https://api.github.com/repos/pquerna/ffjson/git/commits/6d5aeb2147d669fa6f279944f614cf14c1c8ca91,6d5aeb2147d669fa6f279944f614cf14c1c8ca91,"Merge branch 'master' of https://github.com/pquerna/ffjson into use-encoder-in-buffer-for-fallbacks
+
+Conflicts:
+	inception/encoder.go"
+klauspost,2015-02-27 15:16:49,https://api.github.com/repos/pquerna/ffjson/git/commits/cd33bd38c94344b0933859edbbccc826b623b776,cd33bd38c94344b0933859edbbccc826b623b776,"Use a JSON Encoder in buffer.
+
+Instead of getting a byte buffer back every time we are falling back, re-use an encoder we keep in the buffer. Approx ~10-20% speedup."
+klauspost,2015-02-26 14:06:12,https://api.github.com/repos/pquerna/ffjson/git/commits/e3dc85654c9701136e75ee432b31ede3664fc6af,e3dc85654c9701136e75ee432b31ede3664fc6af,New branch for Generate inline structs for encoder. #93
+klauspost,2015-02-27 15:41:10,https://api.github.com/repos/pquerna/ffjson/git/commits/b84c2c4feb66c1dac16aea28c4c09c4171cd5d02,b84c2c4feb66c1dac16aea28c4c09c4171cd5d02,"Update README.md
+
+Add notice on using ffjson library, and avoid using interfaces."
+pquerna,2015-02-27 15:29:09,https://api.github.com/repos/pquerna/ffjson/git/commits/374f112ad2fb07757ca8dfcaa0ba48c681e17cc8,374f112ad2fb07757ca8dfcaa0ba48c681e17cc8,"Merge pull request #110 from klauspost/inline-structs-resubmit
+
+New branch for Generate inline structs for encoder. #93"
+klauspost,2015-02-27 15:16:49,https://api.github.com/repos/pquerna/ffjson/git/commits/f48de74d09ad3acab01d88d8c4947a012858a0fc,f48de74d09ad3acab01d88d8c4947a012858a0fc,"Use a JSON Encoder in buffer.
+
+Instead of getting a byte buffer back every time we are falling back, re-use an encoder we keep in the buffer. Approx ~10-20% speedup."
+klauspost,2015-02-27 14:19:41,https://api.github.com/repos/pquerna/ffjson/git/commits/470220d3ff8b0934ca30d77e0882bc80644dc7af,470220d3ff8b0934ca30d77e0882bc80644dc7af,"Remove pooling. I get much better results using an *json.Encoder instance.
+
+I will send as a separate patch."
+klauspost,2015-02-27 10:16:15,https://api.github.com/repos/pquerna/ffjson/git/commits/da8422d7ab9edb8222b425a9764f297ab6b9ef8c,da8422d7ab9edb8222b425a9764f297ab6b9ef8c,Fix incoming buffers being placed in wrong buckets.
+klauspost,2015-02-26 22:17:16,https://api.github.com/repos/pquerna/ffjson/git/commits/d8f1741e051d39ff4fe8e91ac2dc46d2edab70c9,d8f1741e051d39ff4fe8e91ac2dc46d2edab70c9,Don't pool buffer smaller than 64 bytes.
+klauspost,2015-02-26 22:03:37,https://api.github.com/repos/pquerna/ffjson/git/commits/f3f929baeb46e0a9935dfa4121eacfa68d1b6ae9,f3f929baeb46e0a9935dfa4121eacfa68d1b6ae9,Pool buffers returned from json.Marshal.
+pquerna,2015-02-26 15:23:53,https://api.github.com/repos/pquerna/ffjson/git/commits/ab793d085c4eef8aa7bc68bfe35535864b6772da,ab793d085c4eef8aa7bc68bfe35535864b6772da,"Merge pull request #109 from klauspost/add-ffjson-library-pool
+
+Add Pool() function to ffjson."
+klauspost,2015-02-26 14:06:12,https://api.github.com/repos/pquerna/ffjson/git/commits/eb471b674a72c890e46cdcc024c552f0cc3a3a1a,eb471b674a72c890e46cdcc024c552f0cc3a3a1a,New branch for Generate inline structs for encoder. #93
+klauspost,2015-02-26 13:15:05,https://api.github.com/repos/pquerna/ffjson/git/commits/53e7a6fad839d637a605daf9f24867d7e31b997f,53e7a6fad839d637a605daf9f24867d7e31b997f,"Update README.md
+
+Add Godoc links."
+klauspost,2015-02-26 13:03:16,https://api.github.com/repos/pquerna/ffjson/git/commits/63be407d6f7647738b12ed005ca72dc25f82c950,63be407d6f7647738b12ed005ca72dc25f82c950,Add Pool() function to ffjson.
+klauspost,2015-02-26 12:44:42,https://api.github.com/repos/pquerna/ffjson/git/commits/3fb5e6a4b7e9b7d19cf99990be0e3aa69c444790,3fb5e6a4b7e9b7d19cf99990be0e3aa69c444790,"Update README.md
+
+Update doc to reflect ffjson package."
+klauspost,2015-02-26 12:20:33,https://api.github.com/repos/pquerna/ffjson/git/commits/5325660ebc58dcf475f73ad9556a4ac99b5a5f2c,5325660ebc58dcf475f73ad9556a4ac99b5a5f2c,Fix for https://github.com/pquerna/ffjson/issues/107 #107.
+pquerna,2015-02-25 18:47:04,https://api.github.com/repos/pquerna/ffjson/git/commits/bcfb2fe3caa6c9b2fe5f21410a60df1fc2be90c1,bcfb2fe3caa6c9b2fe5f21410a60df1fc2be90c1,"Merge pull request #104 from klauspost/remove-sse4-for-now
+
+Disable SSE4.2 on App Engine"
+klauspost,2015-02-25 16:54:20,https://api.github.com/repos/pquerna/ffjson/git/commits/8007afe1e0c781fe813ac977593956a8aa0c0d35,8007afe1e0c781fe813ac977593956a8aa0c0d35,"Update README.md
+
+Remove funny stuff ;)"
+klauspost,2015-02-25 16:49:06,https://api.github.com/repos/pquerna/ffjson/git/commits/865bb53409ff531bd4bd6c8e26bdf7c491b7d33d,865bb53409ff531bd4bd6c8e26bdf7c491b7d33d,Add app engine flags. Restore code.
+pquerna,2015-02-25 16:32:57,https://api.github.com/repos/pquerna/ffjson/git/commits/67240f1e87908f224e56959ff5f6a41bc9f95d5a,67240f1e87908f224e56959ff5f6a41bc9f95d5a,Quick README tweaks
+pquerna,2015-02-25 16:29:03,https://api.github.com/repos/pquerna/ffjson/git/commits/33271b58e841ff855caf6b440fb87d8d645cf28a,33271b58e841ff855caf6b440fb87d8d645cf28a,"Merge pull request #96 from pquerna/documentation-v1-updates
+
+Update documentation"
+pquerna,2015-02-25 16:28:06,https://api.github.com/repos/pquerna/ffjson/git/commits/3d4e8e0d41321a7d10a760557ac206a4528cf1f8,3d4e8e0d41321a7d10a760557ac206a4528cf1f8,"Merge pull request #99 from klauspost/fflib-marshal-unmarshal
+
+Add Marshal/Unmarshal to ffjson package."
+klauspost,2015-02-25 15:40:21,https://api.github.com/repos/pquerna/ffjson/git/commits/8fd6c4b97d95b097da04c5a150c27c8e8a99465f,8fd6c4b97d95b097da04c5a150c27c8e8a99465f,"Having this unused code makes App Engine compiles fail, since it cannot find the ""func haveSSE42() bool""/scanStringSSE function.
+
+So let's remove them until we need them."
+klauspost,2015-02-25 15:35:08,https://api.github.com/repos/pquerna/ffjson/git/commits/b26d8074a67ecf18a5fe8b1dad4b615786cd69c4,b26d8074a67ecf18a5fe8b1dad4b615786cd69c4,Move Marshal/Unmarshal into ffjson package.
+klauspost,2015-02-25 15:25:45,https://api.github.com/repos/pquerna/ffjson/git/commits/1cef0cb74c81acedb70950f175da448481233784,1cef0cb74c81acedb70950f175da448481233784,Add tests for field/struct renaming and dominant fields.
+pquerna,2015-02-23 21:59:53,https://api.github.com/repos/pquerna/ffjson/git/commits/4cdb1f696d6afd701f8a42ec2b6be387c409e42c,4cdb1f696d6afd701f8a42ec2b6be387c409e42c,add MarshalJSONBuf for goser
+pquerna,2015-02-23 18:51:41,https://api.github.com/repos/pquerna/ffjson/git/commits/966963ef3743dbec424dd7ff67cd6157564c9dd5,966963ef3743dbec424dd7ff67cd6157564c9dd5,"Merge pull request #102 from pquerna/pool-format-bits-scratch
+
+Power Format Bits Scratch with Buffer Pools"
+pquerna,2015-02-23 18:35:13,https://api.github.com/repos/pquerna/ffjson/git/commits/fb43299b4ee874003a56388b88ab5b54728a951e,fb43299b4ee874003a56388b88ab5b54728a951e,Remove scratch from generated code
+pquerna,2015-02-23 18:33:29,https://api.github.com/repos/pquerna/ffjson/git/commits/230361093945af182a21d58169a3891306de1e1b,230361093945af182a21d58169a3891306de1e1b,Add FormatBits2 which doesnt take scratch
+pquerna,2015-02-23 18:27:14,https://api.github.com/repos/pquerna/ffjson/git/commits/2ec2570c1603f3535df9f34b7f5ced07ea2ebdf0,2ec2570c1603f3535df9f34b7f5ced07ea2ebdf0,Use Buffer pools for FormatBitsScratch
+pquerna,2015-02-23 18:20:19,https://api.github.com/repos/pquerna/ffjson/git/commits/b00adca34cb1fcdcd71dd1902c2e74d41dda798c,b00adca34cb1fcdcd71dd1902c2e74d41dda798c,"Merge pull request #101 from pquerna/klauspost-reuse-buffer
+
+Buffer Pooling"
+pquerna,2015-02-23 18:12:43,https://api.github.com/repos/pquerna/ffjson/git/commits/d7eaad0d78b608cab0ea2184341a105d6f1616e3,d7eaad0d78b608cab0ea2184341a105d6f1616e3,"Use non-pointer array, and when finding an empty buffer, allocate the right size directly"
+klauspost,2015-02-17 19:35:33,https://api.github.com/repos/pquerna/ffjson/git/commits/21d75a3989f7f0f8e9a8ddbc0aae04b8afac93c3,21d75a3989f7f0f8e9a8ddbc0aae04b8afac93c3,Update README.md
+pquerna,2015-02-17 16:33:17,https://api.github.com/repos/pquerna/ffjson/git/commits/f115f806ff72fa378ad19d51be8eb663ab5ff092,f115f806ff72fa378ad19d51be8eb663ab5ff092,"Merge pull request #98 from klauspost/fix-skipped-types
+
+Fix skipped types"
+klauspost,2015-02-17 15:47:59,https://api.github.com/repos/pquerna/ffjson/git/commits/26a0bff32fabe36ec0097036fc7d20375ce27772,26a0bff32fabe36ec0097036fc7d20375ce27772,"Add Marshal/Unmarshal to fflib.
+
+This is intended to fix the chichen&egg problem with using the generated functions directly.
+
+There are functions to help testing."
+klauspost,2015-02-16 21:45:30,https://api.github.com/repos/pquerna/ffjson/git/commits/6491b19dea247e55e8696a6eff9018b19fad82fb,6491b19dea247e55e8696a6eff9018b19fad82fb,Update README.md
+pquerna,2015-02-16 19:57:40,https://api.github.com/repos/pquerna/ffjson/git/commits/fe840187c405a24839c4f5a5ec6a7ac4aa1070e7,fe840187c405a24839c4f5a5ec6a7ac4aa1070e7,reset slide when adding back into pool
+pquerna,2015-02-16 19:57:09,https://api.github.com/repos/pquerna/ffjson/git/commits/6e86c142e042d84a09a10763a2f01dde3ceea6fd,6e86c142e042d84a09a10763a2f01dde3ceea6fd,"Don't attempt to pre-calc needed buffer sizes, the new sync.Pool backed buffers are bette than this."
+pquerna,2015-02-16 19:11:21,https://api.github.com/repos/pquerna/ffjson/git/commits/d49d185e5c3b944a2c70361e5b3a540cc1ef3e66,d49d185e5c3b944a2c70361e5b3a540cc1ef3e66,Convert Pools into a slice of Pools rather than a Map
+pquerna,2015-02-16 18:03:48,https://api.github.com/repos/pquerna/ffjson/git/commits/6457dd0d0b1a0a823273982f8ba24e20d4778d88,6457dd0d0b1a0a823273982f8ba24e20d4778d88,Make all buffers smaller than 64 bytes use 64 byte buffers
+pquerna,2015-02-16 17:51:44,https://api.github.com/repos/pquerna/ffjson/git/commits/ecb1cc13128d4526be7a58d458d39a8e45bdf0f8,ecb1cc13128d4526be7a58d458d39a8e45bdf0f8,Keep a sync.Pool for a common set of power of 2 sizes.
+pquerna,2015-02-12 01:27:51,https://api.github.com/repos/pquerna/ffjson/git/commits/a04833fa99601a33c35dd85556af213e369ccffa,a04833fa99601a33c35dd85556af213e369ccffa,Remove double buffer.Reset
+pquerna,2015-02-12 00:56:52,https://api.github.com/repos/pquerna/ffjson/git/commits/3af310532e1b6ca880bc82c6ba33ecd05cd47cb8,3af310532e1b6ca880bc82c6ba33ecd05cd47cb8,"Allow buffer reuse for less GC stress
+
+With this addition there is now two ways to reuse the buffer.
+
+1) Reuse the fflib.Buffer and use the custom encoding. Good for file encoding, etc.
+2) Handing back the byte array after you have finished using it by useing fflib.Pool(bytes). good for webservers where everything is in separate goroutines.
+
+Note that fflib will now require Go 1.3+"
+pquerna,2015-02-16 16:52:25,https://api.github.com/repos/pquerna/ffjson/git/commits/d947e188474f3a1bf76c3c81f0ac240251522aee,d947e188474f3a1bf76c3c81f0ac240251522aee,Add benchmark taget for root tests directory.
+klauspost,2015-02-16 12:50:28,https://api.github.com/repos/pquerna/ffjson/git/commits/6b1d3ac4c8aae5d8d72badbde11d5392558096b2,6b1d3ac4c8aae5d8d72badbde11d5392558096b2,Add test for renamed structs and embedding structs where decoder/encoder has been disabled.
+klauspost,2015-02-16 12:48:09,https://api.github.com/repos/pquerna/ffjson/git/commits/c192a39006f5ff36ba63ff15811441dea2f22e66,c192a39006f5ff36ba63ff15811441dea2f22e66,"Fix cases where other objects are asking if the type is in inception, and either encoder or decoder has been disabled."
+klauspost,2015-02-16 11:49:12,https://api.github.com/repos/pquerna/ffjson/git/commits/1f0dd99745ec536f5a73e50e4b18d80e2312c2f4,1f0dd99745ec536f5a73e50e4b18d80e2312c2f4,Add similar projects.
+klauspost,2015-02-15 20:09:14,https://api.github.com/repos/pquerna/ffjson/git/commits/81db64238abcc2b332b2ec9455a47e6dde02418f,81db64238abcc2b332b2ec9455a47e6dde02418f,Shorter title.
+klauspost,2015-02-15 20:06:46,https://api.github.com/repos/pquerna/ffjson/git/commits/3fb64f68d6a19f63fe898e0a66eea1b401ce335b,3fb64f68d6a19f63fe898e0a66eea1b401ce335b,Formatting
+klauspost,2015-02-15 20:01:23,https://api.github.com/repos/pquerna/ffjson/git/commits/efc52cb15432c1df13a0d674abe34230ecc81b28,efc52cb15432c1df13a0d674abe34230ecc81b28,Add direct marshalling as optimization proposal.
+klauspost,2015-02-15 14:31:03,https://api.github.com/repos/pquerna/ffjson/git/commits/6017c637d1d388c982d8ddf6b825b28b11ef6e00,6017c637d1d388c982d8ddf6b825b28b11ef6e00,Add section on reducing GC pressure.
+klauspost,2015-02-15 12:28:26,https://api.github.com/repos/pquerna/ffjson/git/commits/4e97cf7040a2839595347e7e090bcc5fef816f43,4e97cf7040a2839595347e7e090bcc5fef816f43,Add skipping options.
+klauspost,2015-02-15 12:17:05,https://api.github.com/repos/pquerna/ffjson/git/commits/1ad7c010b41685d5af8fe7be9bc5ef3553a5b397,1ad7c010b41685d5af8fe7be9bc5ef3553a5b397,"Update usage, etc."
+klauspost,2015-02-15 11:51:54,https://api.github.com/repos/pquerna/ffjson/git/commits/c6f7645ea0ddca891c8e17a191b9513f0a417115,c6f7645ea0ddca891c8e17a191b9513f0a417115,Add 'Using ffjson' section.
+klauspost,2015-02-15 10:28:58,https://api.github.com/repos/pquerna/ffjson/git/commits/73c1e6278c247eff442b4418dceeb0e961ea18cb,73c1e6278c247eff442b4418dceeb0e961ea18cb,"Merge pull request #95 from klauspost/add-missing-import
+
+Fallback requires encoding/json. Fix for #94."
+klauspost,2015-02-15 10:22:47,https://api.github.com/repos/pquerna/ffjson/git/commits/05d1e32a1f1fcbf0b254652e7e35a8eb2aaed682,05d1e32a1f1fcbf0b254652e7e35a8eb2aaed682,Fallback requires encoding/json. Fix for #94.
+pquerna,2015-02-13 15:39:16,https://api.github.com/repos/pquerna/ffjson/git/commits/50049f17e949eca45cff7aada1e8c6ab5d26ccac,50049f17e949eca45cff7aada1e8c6ab5d26ccac,"Merge pull request #92 from klauspost/fix-types-in-slices
+
+Fix various types in slices and empty interfaces"
+klauspost,2015-02-13 13:21:01,https://api.github.com/repos/pquerna/ffjson/git/commits/0f331fc1b35c67ef675eb7b6dffbe5e2e08edf16,0f331fc1b35c67ef675eb7b6dffbe5e2e08edf16,Also handle slices with slices/arrays.
+klauspost,2015-02-13 12:53:14,https://api.github.com/repos/pquerna/ffjson/git/commits/71f2eeff17e06306be44a75a701faaf5170f71c6,71f2eeff17e06306be44a75a701faaf5170f71c6,"Fix various types in slices and empty interfaces, mainly by falling back to reflection."
+pquerna,2015-02-12 00:51:31,https://api.github.com/repos/pquerna/ffjson/git/commits/eee537e434ae5ffba381f2c166fedaba526e6af3,eee537e434ae5ffba381f2c166fedaba526e6af3,"Merge pull request #88 from pquerna/unmarshal_case_insensitive
+
+Add basic support for Unmarshall's case insensitive key finding"
+pquerna,2015-02-11 22:20:51,https://api.github.com/repos/pquerna/ffjson/git/commits/93138eec2e6ed1fd01750e64812744836a23c68c,93138eec2e6ed1fd01750e64812744836a23c68c,add non-simple-bytes folding support
+pquerna,2015-02-11 19:30:34,https://api.github.com/repos/pquerna/ffjson/git/commits/45288be260d6762a54753823852898c86ba29556,45288be260d6762a54753823852898c86ba29556,Add basic support for Unmarshall's case insensitive key finding
+pquerna,2015-02-11 18:06:43,https://api.github.com/repos/pquerna/ffjson/git/commits/d74d2c598a4fa5357b34a5de5bd70cb93814680d,d74d2c598a4fa5357b34a5de5bd70cb93814680d,Add 'feature' about tests
+pquerna,2015-02-11 18:05:16,https://api.github.com/repos/pquerna/ffjson/git/commits/e8548f6f7f223a947e2f6a75b073460d467cd5ab,e8548f6f7f223a947e2f6a75b073460d467cd5ab,Add travis badge
+pquerna,2015-02-11 01:20:00,https://api.github.com/repos/pquerna/ffjson/git/commits/d68bd414ef9df5ddb1ded4485c3ae11d0439b809,d68bd414ef9df5ddb1ded4485c3ae11d0439b809,"Merge pull request #87 from pquerna/update_for_require_equal_values
+
+Use require.EqualValues in test"
+pquerna,2015-02-11 00:54:18,https://api.github.com/repos/pquerna/ffjson/git/commits/d92c38492670210be6908ed26182c27630ac5dc2,d92c38492670210be6908ed26182c27630ac5dc2,Use require.EqualValues. Depends on https://github.com/stretchr/testify/pull/130
+pquerna,2015-02-10 21:34:54,https://api.github.com/repos/pquerna/ffjson/git/commits/5c410f733010199d66597f0c8ff110a62846cf50,5c410f733010199d66597f0c8ff110a62846cf50,Handle null fields with either custom Unmarshal or already-ffjson-ized fields. Fixes #82. Fixes #77
+pquerna,2015-02-10 01:18:36,https://api.github.com/repos/pquerna/ffjson/git/commits/9117807307f5ba0b27b2d03131872defafb67e45,9117807307f5ba0b27b2d03131872defafb67e45,"Merge pull request #83 from klauspost/add-string-and-omitempty
+
+Add tests for string and omitempty tags, and fix issues found"
+klauspost,2015-02-09 17:16:34,https://api.github.com/repos/pquerna/ffjson/git/commits/655cc741fd89292d6e2dbfdd808ced8f1728a650,655cc741fd89292d6e2dbfdd808ced8f1728a650,Skip string tag tests on Go 1.3 and 1.2
+pquerna,2015-02-09 17:02:47,https://api.github.com/repos/pquerna/ffjson/git/commits/60f46773b01d714676a5d1804232ae3ed630fc00,60f46773b01d714676a5d1804232ae3ed630fc00,"Merge pull request #73 from remerge/override_import_name
+
+support import name override"
+klauspost,2015-02-09 14:08:24,https://api.github.com/repos/pquerna/ffjson/git/commits/0cd51d22607dbcc3b5093b3bf59c245d66ed93d5,0cd51d22607dbcc3b5093b3bf59c245d66ed93d5,"Add tests for string and omitempty tags, and fix issues found. This fixes:
+
+* https://github.com/pquerna/ffjson/issues/76  (Omitempty on pointer to value should only omit if not nil)
+* https://github.com/pquerna/ffjson/issues/81 (Different encoding of value)
+* https://github.com/pquerna/ffjson/issues/75 (Pointer to string with tag ""string"" has a closing quotation.)
+
+It adds (disabled) test for these issues:
+* https://github.com/pquerna/ffjson/issues/82 (Decoder: Attempting to decode null value)
+* https://github.com/pquerna/ffjson/issues/80 (Support ""string"" tag in decoder)
+
+Sorry about the big blob, but keeping tests in sync was important for me."
+klauspost,2015-02-09 09:36:18,https://api.github.com/repos/pquerna/ffjson/git/commits/ac3c66a716f268a6ee7a0dfdeb16427c17a22861,ac3c66a716f268a6ee7a0dfdeb16427c17a22861,"Merge pull request #74 from remerge/omitempty_stray_comma
+
+add comma only if field is non-empty"
+hollow,2015-02-08 15:43:39,https://api.github.com/repos/pquerna/ffjson/git/commits/63b8fb2d58f96b46be57320f23b180a39e46b4ad,63b8fb2d58f96b46be57320f23b180a39e46b4ad,add comma only if field is non-empty
+hollow,2015-02-08 15:48:49,https://api.github.com/repos/pquerna/ffjson/git/commits/4d4d6a01b54179f4810c1f865c75851c191987de,4d4d6a01b54179f4810c1f865c75851c191987de,use command line flag instead of env
+hollow,2015-01-18 19:46:29,https://api.github.com/repos/pquerna/ffjson/git/commits/d51c4ed31ee8cf95f1d825a00f6d0d809e020b28,d51c4ed31ee8cf95f1d825a00f6d0d809e020b28,support import name override
+pquerna,2015-02-06 15:48:45,https://api.github.com/repos/pquerna/ffjson/git/commits/9b62e2316d5f81952ba0b320b2bf547437601a4d,9b62e2316d5f81952ba0b320b2bf547437601a4d,"Merge pull request #70 from klauspost/issue-43-optional-params
+
+Allow disabling encoder/decoder on all structs or by adding comment to struct"
+pquerna,2015-02-06 15:46:21,https://api.github.com/repos/pquerna/ffjson/git/commits/fe066df99c8e479f493f555c18bb59e6c66da416,fe066df99c8e479f493f555c18bb59e6c66da416,"Merge pull request #69 from klauspost/test-all-fields
+
+Change 'testCycle' to unmarshal into an empty struct"
+pquerna,2015-02-06 15:45:00,https://api.github.com/repos/pquerna/ffjson/git/commits/8742da2ab40a113b61332fe899489ece7e423cfb,8742da2ab40a113b61332fe899489ece7e423cfb,"Merge pull request #71 from klauspost/fix-float-format
+
+Use format 'g' for strconv.FormatFloat"
+klauspost,2015-02-06 13:22:54,https://api.github.com/repos/pquerna/ffjson/git/commits/43d63402cfc87ebfd3a1c85f1c5772a210216756,43d63402cfc87ebfd3a1c85f1c5772a210216756,"floatEncoder uses format 'g' for strconv.FormatFloat, see http://golang.org/src/encoding/json/encode.go#L512
+
+We should do the same. Disabling map in big fuzz test - that makes it complete."
+klauspost,2015-02-06 12:54:22,https://api.github.com/repos/pquerna/ffjson/git/commits/b06ca1969503750b195a79db38413316d78ca766,b06ca1969503750b195a79db38413316d78ca766,Add missing struct definition.
+klauspost,2015-02-06 12:45:11,https://api.github.com/repos/pquerna/ffjson/git/commits/a284d638e4b458b0f908afdf1ab704a959b5bdda,a284d638e4b458b0f908afdf1ab704a959b5bdda,"Add //ffjson: nodecoder and //ffjson: noencoder as well as commandline options to disable generation of en/decoder. Fixes issue #43.
+
+Commandline options are defaults, and struct comments allow to further disable parts of the generation."
+klauspost,2015-02-06 12:25:25,https://api.github.com/repos/pquerna/ffjson/git/commits/6b669e455bcb920698a7c73fc35486e4b9d8ab67,6b669e455bcb920698a7c73fc35486e4b9d8ab67,Encoder does not require bytes.
+klauspost,2015-02-06 11:04:29,https://api.github.com/repos/pquerna/ffjson/git/commits/29f19d826ac61d0ef9894b79e1c2c3e3ef6bf71d,29f19d826ac61d0ef9894b79e1c2c3e3ef6bf71d,"Change 'testCycle' to unmarshal into an empty struct, so we can detect if fields are not filled as we would expect, otherwise untouched fields would have the expected value. This would mean that ""return nil"" as Unmarshal function would pass.
+* Test all fields in testCycle, not just ""X"".
+* Change small tests to have the same fields instead of embedded fields, so structs can be compared.
+* Add i18n field names test (passes)"
+pquerna,2015-02-05 22:34:16,https://api.github.com/repos/pquerna/ffjson/git/commits/201f7496afdf85ec0579668380dd8f4c08cff79d,201f7496afdf85ec0579668380dd8f4c08cff79d,Fix escaping of captured-sub-fields when on the fallback path. Fixes #66.
+pquerna,2015-02-05 19:23:21,https://api.github.com/repos/pquerna/ffjson/git/commits/2a3cdc0da42baca8bb03a4db8808b5d44a8180ce,2a3cdc0da42baca8bb03a4db8808b5d44a8180ce,Merge branch 'master' of github.com:pquerna/ffjson
+pquerna,2015-02-05 19:23:11,https://api.github.com/repos/pquerna/ffjson/git/commits/c5371bd510bd6050166968a449732a7bcddf33fc,c5371bd510bd6050166968a449732a7bcddf33fc,Properly address types with their package name when handling an array or slice of them. Fixes #64
+pquerna,2015-02-05 18:36:26,https://api.github.com/repos/pquerna/ffjson/git/commits/22312068506e951446f1b9f148287a116078afa5,22312068506e951446f1b9f148287a116078afa5,"Merge pull request #68 from klauspost/map-string-generation
+
+Add map[string] code generation for marshall."
+pquerna,2015-02-05 17:36:52,https://api.github.com/repos/pquerna/ffjson/git/commits/86aaa1f2bdaaf88192d7a8ee743d5cf1ebe620e8,86aaa1f2bdaaf88192d7a8ee743d5cf1ebe620e8,Add Credits section.
+klauspost,2015-02-05 17:02:40,https://api.github.com/repos/pquerna/ffjson/git/commits/a8d2348a861821c372385e8d5a186ffd26560891,a8d2348a861821c372385e8d5a186ffd26560891,"Add code generation for map[string](simple-type like int, string) marshalling instead of using built-in."
+pquerna,2015-02-05 16:56:40,https://api.github.com/repos/pquerna/ffjson/git/commits/494f5eab120fb17e89dd5d3b4dba0ef70cc5c213,494f5eab120fb17e89dd5d3b4dba0ef70cc5c213,append to empty byte slice
+pquerna,2015-02-05 16:34:55,https://api.github.com/repos/pquerna/ffjson/git/commits/03a36e7e394c8d05af0c14e0335b241dc9666d80,03a36e7e394c8d05af0c14e0335b241dc9666d80,"handle decoding of []byte in the same way as encoding/json, by base64 decoding the string.  Fixes #65"
+pquerna,2015-02-05 16:09:14,https://api.github.com/repos/pquerna/ffjson/git/commits/552a292e4fba16e339615f8921dfce2af6f60b25,552a292e4fba16e339615f8921dfce2af6f60b25,"Merge pull request #67 from klauspost/add-fuzz-testing
+
+Add Fuzz Tests."
+klauspost,2015-02-05 14:50:28,https://api.github.com/repos/pquerna/ffjson/git/commits/22eafbe77d7d3d929ce47fcc737d8adde3997c1a,22eafbe77d7d3d929ce47fcc737d8adde3997c1a,Add gofuzz to dependencies.
+klauspost,2015-02-05 13:48:09,https://api.github.com/repos/pquerna/ffjson/git/commits/81b94670e08dbf52a943aa151e49baf9401574a4,81b94670e08dbf52a943aa151e49baf9401574a4,"Add Fuzz Tests.
+* Uses github.com/google/gofuzz to generate (predictable) test data in structures.
+* I have added standalone tests for the issues I have found.
+* Tests 1000 random values per type. Values are the same between runs.
+* This covers a lot more base types than before (array of X, array with pointer to x)"
+pquerna,2015-02-05 01:23:41,https://api.github.com/repos/pquerna/ffjson/git/commits/9cf92d190962ac7b34615a22988691d8805a7769,9cf92d190962ac7b34615a22988691d8805a7769,Handle byte slices in the same was as standard encoding/json.
+pquerna,2015-02-04 23:18:47,https://api.github.com/repos/pquerna/ffjson/git/commits/ae54e3b0872ff28abbd061215352fa92bff9da15,ae54e3b0872ff28abbd061215352fa92bff9da15,Properly pass in if a bool is a pointer.  Fixes #55.
+pquerna,2015-02-04 22:57:31,https://api.github.com/repos/pquerna/ffjson/git/commits/1e09210c6101f5a20abf1f4c6d23742a4f8ce79b,1e09210c6101f5a20abf1f4c6d23742a4f8ce79b,"Remove recover/panic from makeSlice, making Marshalling 4% faster
+
+Fixes #62.
+
+Suggested by: @klauspost"
+pquerna,2015-02-04 16:08:24,https://api.github.com/repos/pquerna/ffjson/git/commits/040cdf3b1d6e3257d1cf7e8b9091593dbebb8bb1,040cdf3b1d6e3257d1cf7e8b9091593dbebb8bb1,"Merge pull request #63 from klauspost/sort-output-order
+
+Consistent output between each generation run."
+pquerna,2015-02-04 16:08:02,https://api.github.com/repos/pquerna/ffjson/git/commits/d59444968b57ff58f60a87401d2036aaa9306436,d59444968b57ff58f60a87401d2036aaa9306436,"Merge pull request #60 from klauspost/re-enable-tests
+
+Re-enable tests of structures that require default sort order."
+klauspost,2015-02-04 12:45:37,https://api.github.com/repos/pquerna/ffjson/git/commits/2137233cabad39ebb4178ea0907015d558540c92,2137233cabad39ebb4178ea0907015d558540c92,"When generating code to be included in VCS it is frustrating that the output is different every time the generator is run.
+
+This will sort the output order in the ""_ffjson.go"" file. That way it is easy to see a diff of changes when the generated code is updated."
+klauspost,2015-02-04 10:21:07,https://api.github.com/repos/pquerna/ffjson/git/commits/cdf6e6f6ac586694c817a540ed0692079844bbe6,cdf6e6f6ac586694c817a540ed0692079844bbe6,Re-enable tests of structures that require default sort order.
+pquerna,2015-02-03 22:42:45,https://api.github.com/repos/pquerna/ffjson/git/commits/6299e68dee1b12383d873f4832429a358413dbc4,6299e68dee1b12383d873f4832429a358413dbc4,make sure base doesn't accidently have an ffjson impl
+pquerna,2015-02-03 22:30:25,https://api.github.com/repos/pquerna/ffjson/git/commits/32f1f888127d3c76673fc1be029b4462bebe4a5d,32f1f888127d3c76673fc1be029b4462bebe4a5d,Assert that the FF object in tests implements all of our ffjson interfaces
+pquerna,2015-02-03 21:36:44,https://api.github.com/repos/pquerna/ffjson/git/commits/7a5c18db42213d735dd5b99100d37283cc3b5b15,7a5c18db42213d735dd5b99100d37283cc3b5b15,"Merge pull request #57 from klauspost/more-tests
+
+Add more tests"
+pquerna,2015-02-03 21:32:36,https://api.github.com/repos/pquerna/ffjson/git/commits/91f8227d2be3eb1963fc886dd3f03372f12c320d,91f8227d2be3eb1963fc886dd3f03372f12c320d,Merge branch 'klauspost-eliminate-runtime-branching'
+pquerna,2015-02-03 21:15:01,https://api.github.com/repos/pquerna/ffjson/git/commits/0ac0a07b354248acc80e05cc169ed92abf540799,0ac0a07b354248acc80e05cc169ed92abf540799,Merge branch 'eliminate-runtime-branching' of https://github.com/klauspost/ffjson into klauspost-eliminate-runtime-branching
+pquerna,2015-02-03 21:05:18,https://api.github.com/repos/pquerna/ffjson/git/commits/86b8ff7bdc14d42baca40f9d286350c5ee7e103b,86b8ff7bdc14d42baca40f9d286350c5ee7e103b,Merge branch 'klauspost-fix-test-typo'
+pquerna,2015-02-03 21:05:04,https://api.github.com/repos/pquerna/ffjson/git/commits/5dd5ef3a22b55492bc7087b9be6d9b0710625c70,5dd5ef3a22b55492bc7087b9be6d9b0710625c70,"Remove sorting of fields, fixing #36"
+pquerna,2015-02-03 21:03:26,https://api.github.com/repos/pquerna/ffjson/git/commits/0baf884d10707e5b7b5314a970cb6291974bbf20,0baf884d10707e5b7b5314a970cb6291974bbf20,Merge branch 'fix-test-typo' of https://github.com/klauspost/ffjson into klauspost-fix-test-typo
+klauspost,2015-02-03 17:00:30,https://api.github.com/repos/pquerna/ffjson/git/commits/6af98f1cab57c907a49ee4e90899de075758d78c,6af98f1cab57c907a49ee4e90899de075758d78c,Use t.Skip() to skip test.
+klauspost,2015-02-03 16:54:32,https://api.github.com/repos/pquerna/ffjson/git/commits/a6d683f5629381a5e060b71e0a410d48844eaea1,a6d683f5629381a5e060b71e0a410d48844eaea1,"Fix typo in ""ffjson: skip"" in tests
+
+Tests will fail because of issue #36."
+pquerna,2015-02-03 16:17:20,https://api.github.com/repos/pquerna/ffjson/git/commits/9baa7e8f5dce0194c05b6fdf7b8a3f2033b2d186,9baa7e8f5dce0194c05b6fdf7b8a3f2033b2d186,"Merge pull request #58 from klauspost/windows-batch-files
+
+Add Windows batch file for testing and benchmarking."
+klauspost,2015-02-03 15:18:17,https://api.github.com/repos/pquerna/ffjson/git/commits/72a751085228a46837a534078247e4bf3702ac4e,72a751085228a46837a534078247e4bf3702ac4e,Add Windows batch file for testing and benchmarking.
+klauspost,2015-02-03 14:17:27,https://api.github.com/repos/pquerna/ffjson/git/commits/d67f24892122138c722ba76b681b0af0cfa9fa23,d67f24892122138c722ba76b681b0af0cfa9fa23,"Here are some more tests I have written.
+
+Some are converted from the golang encoder tests. Some of them are disabled waiting for issues to be resolved."
+klauspost,2015-02-03 13:57:42,https://api.github.com/repos/pquerna/ffjson/git/commits/26762049f0456ade3041ce050c3cde23bc3c5e14,26762049f0456ade3041ce050c3cde23bc3c5e14,"This should completely elimiate runtime branching, and remove the buf.Rewind(2) in cases where the last field isn't ""omitempty"".
+
+The branch can be removed because we now insert an extra space when starting an object. If no fields are written, buf.Rewind(1) will not just delete that space.
+
+The result is code that is much cleaner and faster when there are omitempties in a struct, and as efficient as handwritten code."
+pquerna,2015-01-27 18:41:07,https://api.github.com/repos/pquerna/ffjson/git/commits/d9b839f531ea3c49354a7daeebd76e00e78627de,d9b839f531ea3c49354a7daeebd76e00e78627de,dont need this install step
+pquerna,2015-01-27 18:26:11,https://api.github.com/repos/pquerna/ffjson/git/commits/59e25ef684512ac3e56ab13c4ddb9919715c7985,59e25ef684512ac3e56ab13c4ddb9919715c7985,custom build step
+pquerna,2015-01-27 17:55:50,https://api.github.com/repos/pquerna/ffjson/git/commits/d6754d7c46cc0232f9cdc7702d7c4ed598a07068,d6754d7c46cc0232f9cdc7702d7c4ed598a07068,"Merge pull request #54 from pquerna/null_value_for_arrays
+
+Fix null values for arrays"
+pquerna,2015-01-27 17:19:07,https://api.github.com/repos/pquerna/ffjson/git/commits/1d085b667b5c581b0bb97861911f60edf892adf9,1d085b667b5c581b0bb97861911f60edf892adf9,"When we get a null value for an array, nil it, and move back to mainparse. Fixes #53."
+pquerna,2015-01-27 17:21:04,https://api.github.com/repos/pquerna/ffjson/git/commits/ef787eab0926243af1f38bdc302c86b2b6851c2f,ef787eab0926243af1f38bdc302c86b2b6851c2f,Fix travis.yml from a tab invasion.
+pquerna,2015-01-18 19:29:14,https://api.github.com/repos/pquerna/ffjson/git/commits/9a02c4c8b924e376bf648748e252c117fd8b3a36,9a02c4c8b924e376bf648748e252c117fd8b3a36,add testify manual install
+pquerna,2015-01-18 18:55:19,https://api.github.com/repos/pquerna/ffjson/git/commits/91f12167508dc4ca6e9bcb786dd22ea03998cc5a,91f12167508dc4ca6e9bcb786dd22ea03998cc5a,"Merge pull request #51 from sztanpet/readmetweak
+
+readme: make it more clear what 'a reasonable setup of a project under GOPATH' means"
+pquerna,2015-01-17 19:27:03,https://api.github.com/repos/pquerna/ffjson/git/commits/a064ed60318d5fe8f4478d628ce56495f039c0dc,a064ed60318d5fe8f4478d628ce56495f039c0dc,Add travis.yml
+sztanpet,2015-01-17 18:44:02,https://api.github.com/repos/pquerna/ffjson/git/commits/ee71ccd24266391132d1c7bdf72c4a6f3761e5d1,ee71ccd24266391132d1c7bdf72c4a6f3761e5d1,readme: make it more clear what 'a reasonable setup of a project under GOPATH' means
+pquerna,2014-12-23 23:15:50,https://api.github.com/repos/pquerna/ffjson/git/commits/cc2b7957bfba4889f91e2ab55bfd83c27d7f29d1,cc2b7957bfba4889f91e2ab55bfd83c27d7f29d1,"Merge pull request #48 from pquerna/revert-47-create-blank-impl
+
+Revert ""Stub new methods out in `_expose.go`, and delete output file bef..."
+pquerna,2014-12-23 23:15:18,https://api.github.com/repos/pquerna/ffjson/git/commits/72eb0113f844af82d2dd6103e6e871bb73e58348,72eb0113f844af82d2dd6103e6e871bb73e58348,"Revert ""Stub new methods out in `_expose.go`, and delete output file before running inception."""
+pquerna,2014-12-23 21:17:55,https://api.github.com/repos/pquerna/ffjson/git/commits/9499e44f2eae82d14dc372c1a875deea166f9420,9499e44f2eae82d14dc372c1a875deea166f9420,"Merge pull request #47 from pquerna/create-blank-impl
+
+Stub new methods out in `_expose.go`, and delete output file before running inception."
+pquerna,2014-12-23 21:10:44,https://api.github.com/repos/pquerna/ffjson/git/commits/f89b36bbcb02532c3f9c570255dd1d44aea882f2,f89b36bbcb02532c3f9c570255dd1d44aea882f2,"Expose structs with their new prototypes, and delete the existing _ffjson.go if present. Fixes #42"
+pquerna,2014-12-23 21:02:44,https://api.github.com/repos/pquerna/ffjson/git/commits/5c06c77cca26a0be2cbd39f95a16e1ae28a72647,5c06c77cca26a0be2cbd39f95a16e1ae28a72647,"Merge pull request #46 from pquerna/type_propogation
+
+Type propogation"
+pquerna,2014-12-17 01:34:57,https://api.github.com/repos/pquerna/ffjson/git/commits/c87577c22738fba855882a2c19cf19586358a3f6,c87577c22738fba855882a2c19cf19586358a3f6,Add test case for time.Time pointer
+pquerna,2014-12-17 01:17:48,https://api.github.com/repos/pquerna/ffjson/git/commits/0e2a5c31ae0682097b1bf157a661bfc0bb47db3c,0e2a5c31ae0682097b1bf157a661bfc0bb47db3c,add suport for types with their own unmarshlers to the type propogration
+pquerna,2014-12-17 00:19:06,https://api.github.com/repos/pquerna/ffjson/git/commits/d35d6ab8de7a583e134c392a12a34c6c73151ce5,d35d6ab8de7a583e134c392a12a34c6c73151ce5,Add handling of types in poiinters
+pquerna,2014-12-17 00:14:33,https://api.github.com/repos/pquerna/ffjson/git/commits/21038e97b867490e92d702d90a171ba9e0a3e378,21038e97b867490e92d702d90a171ba9e0a3e378,basic handling of string type alias
+pquerna,2014-12-14 18:03:00,https://api.github.com/repos/pquerna/ffjson/git/commits/73bf53358ef4a9feb7349c8bfe6f7079708045d8,73bf53358ef4a9feb7349c8bfe6f7079708045d8,add test for sorting of fields the same way encoding/json does
+pquerna,2014-12-14 17:51:21,https://api.github.com/repos/pquerna/ffjson/git/commits/ade93290fb56d0f95408d01273446d9a98ecc6e9,ade93290fb56d0f95408d01273446d9a98ecc6e9,Allow integer input to floating points. Fixes #37
+pquerna,2014-12-14 17:48:46,https://api.github.com/repos/pquerna/ffjson/git/commits/e1da0f8b60905558f419d461ba4ee7df903f2dad,e1da0f8b60905558f419d461ba4ee7df903f2dad,"Match behavoir of encoding/json when a field has a JSON null, leave it untouched, without an error. Fixes #38"
+pquerna,2014-12-14 17:35:12,https://api.github.com/repos/pquerna/ffjson/git/commits/27dad3a10b6cc1392a75932968ab487a7d2d128d,27dad3a10b6cc1392a75932968ab487a7d2d128d,"Fix an off by one mistake, Handle max byte encounters, and return errors instead of panics. Fixes #39."
+pquerna,2014-12-12 20:16:28,https://api.github.com/repos/pquerna/ffjson/git/commits/fb011c01f35bda0e3584cef2e90cdce5731592c5,fb011c01f35bda0e3584cef2e90cdce5731592c5,Add test cases for string tag
+pquerna,2014-12-12 19:56:56,https://api.github.com/repos/pquerna/ffjson/git/commits/0c541b8e9688a767eddcf1eb5f411ea3c261059a,0c541b8e9688a767eddcf1eb5f411ea3c261059a,Merge branch 'klauspost-lazy-literal-printing'
+pquerna,2014-12-12 19:55:21,https://api.github.com/repos/pquerna/ffjson/git/commits/a25effee6a7748d28f40a20aea7b3795a04b1224,a25effee6a7748d28f40a20aea7b3795a04b1224,Merge branch 'lazy-literal-printing' of https://github.com/klauspost/ffjson into klauspost-lazy-literal-printing
+klauspost,2014-12-12 10:01:55,https://api.github.com/repos/pquerna/ffjson/git/commits/385d447819ff601750ad14844dd2048e0fe20db1,385d447819ff601750ad14844dd2048e0fe20db1,"Fix float point precision, so we match encoding/json byte for byte."
+klauspost,2014-12-12 09:59:39,https://api.github.com/repos/pquerna/ffjson/git/commits/33e8fecf348c1a30221dffc7804fe85549510b05,33e8fecf348c1a30221dffc7804fe85549510b05,"Fix trailing comma, if all fields are not omitempty, but the last one is, and it is not omitted.
+
++ Document comma handling."
+klauspost,2014-12-12 09:07:54,https://api.github.com/repos/pquerna/ffjson/git/commits/37e43b2d464fecfc190fae876f848c77bbf78aec,37e43b2d464fecfc190fae876f848c77bbf78aec,"Add ""string"" support to encoder."
+pquerna,2014-12-11 17:23:44,https://api.github.com/repos/pquerna/ffjson/git/commits/de085c8a0af0f9d834d54e01092e6e4a2a6a57cc,de085c8a0af0f9d834d54e01092e6e4a2a6a57cc,"Use -1 as percision in converting floats to a string, to match encoding/json's behavoir. Fixes #35"
+klauspost,2014-12-11 15:06:08,https://api.github.com/repos/pquerna/ffjson/git/commits/92e14dbde3897ac1b70e58a6c7f589ef11b7520d,92e14dbde3897ac1b70e58a6c7f589ef11b7520d,"Use old Rewind method to remove last "", "", if any values was written."
+klauspost,2014-12-11 14:56:48,https://api.github.com/repos/pquerna/ffjson/git/commits/5bfde78399388c1e9f13fde88f8cacb73f2c4147,5bfde78399388c1e9f13fde88f8cacb73f2c4147,Add missing newline.
+klauspost,2014-12-11 14:48:55,https://api.github.com/repos/pquerna/ffjson/git/commits/7ab42aa0a12d8b40de2e3830d598d8963ac384cd,7ab42aa0a12d8b40de2e3830d598d8963ac384cd,Always flush on omitempties.
+klauspost,2014-12-11 13:31:04,https://api.github.com/repos/pquerna/ffjson/git/commits/cec19fce2217aa6b0fdcc82150a2e385aef07448,cec19fce2217aa6b0fdcc82150a2e385aef07448,"More fixes on matching the standard library.
+
+According to the specs: ""Pointer values encode as the value pointed to. A nil pointer encodes as the null JSON object."""
+klauspost,2014-12-11 12:39:48,https://api.github.com/repos/pquerna/ffjson/git/commits/99285f379b5f50c9b8bac988b8b4e4cecc874350,99285f379b5f50c9b8bac988b8b4e4cecc874350,"Rewrite Conditional writes, so if all fields are conditional and nothing is encoded ""{}"" is sent as output."
+klauspost,2014-12-11 12:02:19,https://api.github.com/repos/pquerna/ffjson/git/commits/7f35b493d1f518a2065c0116071717ce589eb93d,7f35b493d1f518a2065c0116071717ce589eb93d,Use a simple queue to combine literal string writes into one.
+pquerna,2014-12-09 13:28:58,https://api.github.com/repos/pquerna/ffjson/git/commits/52cc6faf0aa47eb887502193b7c82a0461eb777f,52cc6faf0aa47eb887502193b7c82a0461eb777f,Alias import of the source package in inception. Fixes #31
+pquerna,2014-12-08 05:12:34,https://api.github.com/repos/pquerna/ffjson/git/commits/f3927f80a3f252c421bbf93b9f205bb4c0e2a5d9,f3927f80a3f252c421bbf93b9f205bb4c0e2a5d9,Fix handling of numeric type aliases
+pquerna,2014-12-07 22:21:02,https://api.github.com/repos/pquerna/ffjson/git/commits/331a6711c09929639b771b1b0f7ecee75464d7fa,331a6711c09929639b771b1b0f7ecee75464d7fa,Add more sub-object test cases
+pquerna,2014-12-07 20:30:18,https://api.github.com/repos/pquerna/ffjson/git/commits/8ebb47cb471ae673c76b221dbcdf55aae851d5a0,8ebb47cb471ae673c76b221dbcdf55aae851d5a0,Mention ffjson: skip.
+pquerna,2014-12-07 20:25:22,https://api.github.com/repos/pquerna/ffjson/git/commits/b3ea9eef126b03102773729addafb0e863253184,b3ea9eef126b03102773729addafb0e863253184,Update README.md
+pquerna,2014-12-07 20:10:12,https://api.github.com/repos/pquerna/ffjson/git/commits/963b0729d9475ba5b4c6672475003f46fa8710e1,963b0729d9475ba5b4c6672475003f46fa8710e1,"Merge pull request #25 from pquerna/v0.9-dev
+
+v0.9 dev"
+pquerna,2014-12-06 01:32:22,https://api.github.com/repos/pquerna/ffjson/git/commits/a9fc848759d4c9a1fdf50628ebfc609f0fcc9e54,a9fc848759d4c9a1fdf50628ebfc609f0fcc9e54,add test for an invalid float
+pquerna,2014-12-06 01:27:55,https://api.github.com/repos/pquerna/ffjson/git/commits/83cce7733b8a8bf4c83ee12fc5d373b20369efa9,83cce7733b8a8bf4c83ee12fc5d373b20369efa9,add tests for null bytes
+pquerna,2014-12-06 01:25:35,https://api.github.com/repos/pquerna/ffjson/git/commits/93b1ffa7c92d65bd33b22bb64e9f5aa40c867b3c,93b1ffa7c92d65bd33b22bb64e9f5aa40c867b3c,more invalid tests
+pquerna,2014-12-06 01:22:54,https://api.github.com/repos/pquerna/ffjson/git/commits/7858ed5017e3cfa992ec0abad8da57eb45c02671,7858ed5017e3cfa992ec0abad8da57eb45c02671,detect use of invalid unicode surrogate
+pquerna,2014-12-06 01:12:29,https://api.github.com/repos/pquerna/ffjson/git/commits/7be016cc6b588282462569891004570ed40798d5,7be016cc6b588282462569891004570ed40798d5,Add more invalid json tests
+pquerna,2014-12-06 01:12:07,https://api.github.com/repos/pquerna/ffjson/git/commits/d3fbf091d0b0d50a7a54f6213564b1654dbba322,d3fbf091d0b0d50a7a54f6213564b1654dbba322,Encode Big Errors in wrap to get line numbers.
+pquerna,2014-12-06 00:17:06,https://api.github.com/repos/pquerna/ffjson/git/commits/8bcfc24a1f384aac745e1729c85d2f20563f75bb,8bcfc24a1f384aac745e1729c85d2f20563f75bb,Add tests for invalid arrays and empty values
+pquerna,2014-12-06 00:06:48,https://api.github.com/repos/pquerna/ffjson/git/commits/30b88bba203a6c7d82208a7625a743a25be7bd86,30b88bba203a6c7d82208a7625a743a25be7bd86,"Fix handling of [,,,] arrays"
+pquerna,2014-12-05 23:56:26,https://api.github.com/repos/pquerna/ffjson/git/commits/977523b72aa919a3e815611bb83804c254bd5ef3,977523b72aa919a3e815611bb83804c254bd5ef3,"Remove FFTok_string_with_escapes, as we always do escape decoding inline."
+pquerna,2014-12-05 23:44:25,https://api.github.com/repos/pquerna/ffjson/git/commits/d6badb7d2f7fd41c3b38b7c567d3d28a7bd9ba4f,d6badb7d2f7fd41c3b38b7c567d3d28a7bd9ba4f,start testing invalid json
+pquerna,2014-12-05 23:25:14,https://api.github.com/repos/pquerna/ffjson/git/commits/f81247b7e402c1a3b0e749c5ea9e687de6c55487,f81247b7e402c1a3b0e749c5ea9e687de6c55487,add tests for floats
+pquerna,2014-12-05 23:08:25,https://api.github.com/repos/pquerna/ffjson/git/commits/cf9ad54988491b0503773535defc600abf3aa95b,cf9ad54988491b0503773535defc600abf3aa95b,Add more multi-byte utf tests
+pquerna,2014-12-05 21:52:03,https://api.github.com/repos/pquerna/ffjson/git/commits/053e18e52ceab517f6e9d04c65ce232027b1771f,053e18e52ceab517f6e9d04c65ce232027b1771f,remove unneeded else path
+pquerna,2014-12-05 21:51:06,https://api.github.com/repos/pquerna/ffjson/git/commits/2d0ab411a9f6b3ac4d3e95330088501fee5b943e,2d0ab411a9f6b3ac4d3e95330088501fee5b943e,handle escaped /
+pquerna,2014-12-05 21:39:10,https://api.github.com/repos/pquerna/ffjson/git/commits/1397ea5cc1bab2a17af4020db29dcc9c8345fc6a,1397ea5cc1bab2a17af4020db29dcc9c8345fc6a,Add more string specific test cases
+pquerna,2014-12-05 19:20:07,https://api.github.com/repos/pquerna/ffjson/git/commits/585894902acc4574b527b9d15502d609192ea132,585894902acc4574b527b9d15502d609192ea132,Add cycle tests for strings
+pquerna,2014-12-05 19:12:43,https://api.github.com/repos/pquerna/ffjson/git/commits/4e53272040ba9af17e10edad2472e1c307399b8c,4e53272040ba9af17e10edad2472e1c307399b8c,Add benchmark for Unmarshaling Stripe customer example
+pquerna,2014-12-05 19:06:49,https://api.github.com/repos/pquerna/ffjson/git/commits/a8997b326b01090a93fa47542c715610cb59bf4a,a8997b326b01090a93fa47542c715610cb59bf4a,Improve testing for implements of an interface
+pquerna,2014-12-05 17:36:36,https://api.github.com/repos/pquerna/ffjson/git/commits/be229b6a82cdc0253b2a178af69ea71d6f11d0bc,be229b6a82cdc0253b2a178af69ea71d6f11d0bc,"If a struct has its own MarshalJSON or UnmarshalJSON implemented, let it keep using that. Fixes #30"
+pquerna,2014-12-05 00:48:37,https://api.github.com/repos/pquerna/ffjson/git/commits/028394e57c8d34afa90bcaa7f6dceceac3ad5beb,028394e57c8d34afa90bcaa7f6dceceac3ad5beb,test arrays of int pointers
+pquerna,2014-12-04 23:39:30,https://api.github.com/repos/pquerna/ffjson/git/commits/76ab8a9f0b44852420ece5b35c1bbe4b2ffb5b24,76ab8a9f0b44852420ece5b35c1bbe4b2ffb5b24,make arrays not embeded
+pquerna,2014-12-04 23:30:08,https://api.github.com/repos/pquerna/ffjson/git/commits/2c3645a3df12072a53d6989b135b331a4fd6449a,2c3645a3df12072a53d6989b135b331a4fd6449a,Close templated files before trying to remove them. Fixes #28
+pquerna,2014-12-04 23:23:06,https://api.github.com/repos/pquerna/ffjson/git/commits/ffb80eb413641f9b5068c4e68289deefc7e06f4a,ffb80eb413641f9b5068c4e68289deefc7e06f4a,recursively look for if we will need the scratch space for ints
+pquerna,2014-12-04 23:17:18,https://api.github.com/repos/pquerna/ffjson/git/commits/8b1655e2d89e806a145613f31b3a93edfb27ab57,8b1655e2d89e806a145613f31b3a93edfb27ab57,Don't overrun buffer if error is on the last byte.
+pquerna,2014-12-04 19:57:48,https://api.github.com/repos/pquerna/ffjson/git/commits/249676e0c29c6a20391a4cf6fbc919506367a80d,249676e0c29c6a20391a4cf6fbc919506367a80d,test more types
+pquerna,2014-12-04 19:57:20,https://api.github.com/repos/pquerna/ffjson/git/commits/1f83325cc7dc019352048694a1438161f319e538,1f83325cc7dc019352048694a1438161f319e538,comment out wanted byte message.
+pquerna,2014-12-04 06:48:31,https://api.github.com/repos/pquerna/ffjson/git/commits/e17372ddf6f2cd2962fbae9fd7b54d152b5a9787,e17372ddf6f2cd2962fbae9fd7b54d152b5a9787,add tests for more types
+pquerna,2014-12-03 18:51:40,https://api.github.com/repos/pquerna/ffjson/git/commits/15788640d2d5dfe6d300675bfaeba38c3cb07b86,15788640d2d5dfe6d300675bfaeba38c3cb07b86,"remove wraperr label, fixing #29"
+pquerna,2014-12-02 06:45:21,https://api.github.com/repos/pquerna/ffjson/git/commits/844a9e1fa4be30a1785dff2c25f4b0f5395113b9,844a9e1fa4be30a1785dff2c25f4b0f5395113b9,"Add support for an ""ffjson: skip"" comment to mark a struct as something ffjson should ignore"
+pquerna,2014-12-02 00:48:10,https://api.github.com/repos/pquerna/ffjson/git/commits/3a5d887db2ec7718f6a13f8e89cf42f1761a9b64,3a5d887db2ec7718f6a13f8e89cf42f1761a9b64,fix handling of unmarshallers
+pquerna,2014-12-01 23:53:26,https://api.github.com/repos/pquerna/ffjson/git/commits/fc937547d248565032087a2302db3f78841201da,fc937547d248565032087a2302db3f78841201da,Use native UnmarshalJSON name
+pquerna,2014-12-01 22:41:51,https://api.github.com/repos/pquerna/ffjson/git/commits/0c28641f71064a7a4c40f1127af16adb6679fa70,0c28641f71064a7a4c40f1127af16adb6679fa70,dont expose the interfaces
+pquerna,2014-12-01 22:35:55,https://api.github.com/repos/pquerna/ffjson/git/commits/84c550e58fb28d81c385bbb3bbc852f81f341d1f,84c550e58fb28d81c385bbb3bbc852f81f341d1f,Make MinRead private
+pquerna,2014-12-01 22:34:55,https://api.github.com/repos/pquerna/ffjson/git/commits/9b28230210e0d0bf8d9303572a7defae016f9e7a,9b28230210e0d0bf8d9303572a7defae016f9e7a,make byte lookup constants private
+pquerna,2014-12-01 22:27:16,https://api.github.com/repos/pquerna/ffjson/git/commits/f1b016eb42d1552870b20137af13406a512c3584,f1b016eb42d1552870b20137af13406a512c3584,make a section for blog posts
+pquerna,2014-12-01 22:21:55,https://api.github.com/repos/pquerna/ffjson/git/commits/ac2ac321bd48833d6f9be20e6f2756a82199a9aa,ac2ac321bd48833d6f9be20e6f2756a82199a9aa,update README
+pquerna,2014-12-01 19:25:06,https://api.github.com/repos/pquerna/ffjson/git/commits/72343662f9f237219fbeac1b2287a5931e16dea3,72343662f9f237219fbeac1b2287a5931e16dea3,improve size estimation
+pquerna,2014-12-01 18:23:01,https://api.github.com/repos/pquerna/ffjson/git/commits/cc39161d6b062117bb1d4e71331ad3617f4049c1,cc39161d6b062117bb1d4e71331ad3617f4049c1,Add FormatBitsScratch to re-use buffer when writing numbers
+pquerna,2014-12-01 17:53:59,https://api.github.com/repos/pquerna/ffjson/git/commits/161f39747188bea007cfaddc01fe09ab91aa4b2b,161f39747188bea007cfaddc01fe09ab91aa4b2b,"Improve interfaces used for buffers by reducing their surface area, and change write path to reduce brnaching needed when you dont have a omit/pointer situation"
+pquerna,2014-11-26 22:58:15,https://api.github.com/repos/pquerna/ffjson/git/commits/111a9d8d4cd37ebd23858520f2953c92cc4796eb,111a9d8d4cd37ebd23858520f2953c92cc4796eb,handle interfaces by falling back
+pquerna,2014-11-25 04:58:03,https://api.github.com/repos/pquerna/ffjson/git/commits/a241161d9df823332d0968803470ff1e5cf699ea,a241161d9df823332d0968803470ff1e5cf699ea,update README
+pquerna,2014-11-25 01:20:12,https://api.github.com/repos/pquerna/ffjson/git/commits/2cc9e62f0ce557a1e1f76be38e9e883e1b6a7189,2cc9e62f0ce557a1e1f76be38e9e883e1b6a7189,blah
+pquerna,2014-11-24 23:21:02,https://api.github.com/repos/pquerna/ffjson/git/commits/1e4191af5e3b4eae13d0df9dfc6ef96c756e391d,1e4191af5e3b4eae13d0df9dfc6ef96c756e391d,stub out push scanString into asm
+pquerna,2014-11-24 22:57:13,https://api.github.com/repos/pquerna/ffjson/git/commits/48c87832433d0d50a86043aacaeb290c1a8f0f50,48c87832433d0d50a86043aacaeb290c1a8f0f50,break out string scanning to a separate function to prep for ASMing it
+pquerna,2014-11-24 22:22:14,https://api.github.com/repos/pquerna/ffjson/git/commits/3453a99589e4c5a054cca120338f633b26d5d53b,3453a99589e4c5a054cca120338f633b26d5d53b,handle invalid json character
+pquerna,2014-11-24 21:42:54,https://api.github.com/repos/pquerna/ffjson/git/commits/6d45967e20dd544c89ae6d911b534d918c14e680,6d45967e20dd544c89ae6d911b534d918c14e680,"fix buffer.Truncate to handle non-zero resets, and remove detection of invalid usage"
+pquerna,2014-11-24 21:34:31,https://api.github.com/repos/pquerna/ffjson/git/commits/0bf4473ecd98a09c97b4218e22833dfc994b659a,0bf4473ecd98a09c97b4218e22833dfc994b659a,use switch based on first byte of key to reduce number of if statements
+pquerna,2014-11-24 21:08:28,https://api.github.com/repos/pquerna/ffjson/git/commits/65eeddf4174fd8c1b4d4a9b3d1ea6edb0f75dd98,65eeddf4174fd8c1b4d4a9b3d1ea6edb0f75dd98,move handle escaped into its own func
+pquerna,2014-11-24 20:51:51,https://api.github.com/repos/pquerna/ffjson/git/commits/f148206500ca9137f4f2f52d8c0c2a9cd15f1b95,f148206500ca9137f4f2f52d8c0c2a9cd15f1b95,simplify truncate
+pquerna,2014-11-24 20:46:32,https://api.github.com/repos/pquerna/ffjson/git/commits/552c299ad5f8d10f05747eda047423dc77e47da7,552c299ad5f8d10f05747eda047423dc77e47da7,add ffbufer
+pquerna,2014-11-24 20:46:19,https://api.github.com/repos/pquerna/ffjson/git/commits/6c59973b67a9b655f8cba0be5a199634d8160e78,6c59973b67a9b655f8cba0be5a199634d8160e78,use ffbuffer
+pquerna,2014-11-24 19:44:26,https://api.github.com/repos/pquerna/ffjson/git/commits/784b5847d2a11da7d842ebf6b93320ab880e9273,784b5847d2a11da7d842ebf6b93320ab880e9273,fast path for small numbers on Parse
+pquerna,2014-11-24 19:32:22,https://api.github.com/repos/pquerna/ffjson/git/commits/1014c068d26cd97e26414dd28db085a5b85d86d9,1014c068d26cd97e26414dd28db085a5b85d86d9,remove unneeded condition
+pquerna,2014-11-24 19:17:29,https://api.github.com/repos/pquerna/ffjson/git/commits/f0dc06c03773d396c3eb149f98133ac5e5d61846,f0dc06c03773d396c3eb149f98133ac5e5d61846,try to improve buf calc
+pquerna,2014-11-24 19:08:10,https://api.github.com/repos/pquerna/ffjson/git/commits/ddf9d0b7645994308ca48c4a5db5094d2166e5f9,ddf9d0b7645994308ca48c4a5db5094d2166e5f9,increase default grow size
+pquerna,2014-11-24 18:49:38,https://api.github.com/repos/pquerna/ffjson/git/commits/5561f748c49015a1db18fbb92a07dbe8c0a24fa0,5561f748c49015a1db18fbb92a07dbe8c0a24fa0,use fast lookups for small numbers
+pquerna,2014-11-24 18:38:42,https://api.github.com/repos/pquerna/ffjson/git/commits/b2b3f1d9988b68b27ee0a5e2bbae772b7226ef19,b2b3f1d9988b68b27ee0a5e2bbae772b7226ef19,"now that functions are in fflib, move constants to package level"
+pquerna,2014-11-24 18:12:50,https://api.github.com/repos/pquerna/ffjson/git/commits/b6602854ed8ffcf93a5b6fcfcb3c43484493f39d,b6602854ed8ffcf93a5b6fcfcb3c43484493f39d,move scanner into fflib
+pquerna,2014-11-24 06:43:38,https://api.github.com/repos/pquerna/ffjson/git/commits/29873c1399e23ce817dfb0472bf1c554c4675436,29873c1399e23ce817dfb0472bf1c554c4675436,Add support for unexported structs. Fixes #24.
+pquerna,2014-11-23 01:07:48,https://api.github.com/repos/pquerna/ffjson/git/commits/27d635a2235faf0e306b2ebae4670b57e71a382d,27d635a2235faf0e306b2ebae4670b57e71a382d,Basic support for Embedded structs. Closes #16
+pquerna,2014-11-22 00:01:10,https://api.github.com/repos/pquerna/ffjson/git/commits/e439f00607afbe25974999aa53a7dd8372469dd0,e439f00607afbe25974999aa53a7dd8372469dd0,add lookup table for WriteJsonString
+pquerna,2014-11-21 23:49:06,https://api.github.com/repos/pquerna/ffjson/git/commits/e42db021bf9fdf736a11998da9bee6bd9c08a454,e42db021bf9fdf736a11998da9bee6bd9c08a454,cleanup extractfields
+pquerna,2014-11-21 23:31:22,https://api.github.com/repos/pquerna/ffjson/git/commits/5572a4da60edc14038ff35ef0b00bf15cb6f0193,5572a4da60edc14038ff35ef0b00bf15cb6f0193,wip embedded structs
+pquerna,2014-11-20 06:31:04,https://api.github.com/repos/pquerna/ffjson/git/commits/99ccbc182e3a4b6f3d460c298f43f060fc42f562,99ccbc182e3a4b6f3d460c298f43f060fc42f562,move first bits of marshaler to templates
+pquerna,2014-11-20 06:18:04,https://api.github.com/repos/pquerna/ffjson/git/commits/9d3fe839307fcdbe355774f1f7e6f370ab79308b,9d3fe839307fcdbe355774f1f7e6f370ab79308b,start cleaning up org of templates
+pquerna,2014-11-20 05:58:40,https://api.github.com/repos/pquerna/ffjson/git/commits/0bf0e77d6de493d32ddf52c00848a84c32580f83,0bf0e77d6de493d32ddf52c00848a84c32580f83,"change from pills model to fflib, where we export a stable ABI for the ffjson library"
+pquerna,2014-11-20 01:22:11,https://api.github.com/repos/pquerna/ffjson/git/commits/9a5689c28dfea4dba48d0388ea5f50dd5d50db02,9a5689c28dfea4dba48d0388ea5f50dd5d50db02,move more to templates
+pquerna,2014-11-15 01:35:38,https://api.github.com/repos/pquerna/ffjson/git/commits/4b0c6ef66caa85c780dce51b9ec841734c14fdb5,4b0c6ef66caa85c780dce51b9ec841734c14fdb5,"Revert ""experiment with a bool lookup table for strings""
+
+This reverts commit c7b300959716381d5348ae8396e511d6d85b289b."
+pquerna,2014-11-15 01:31:27,https://api.github.com/repos/pquerna/ffjson/git/commits/cc4f64c1d85621c7a0a859a814b66e84b8d86d87,cc4f64c1d85621c7a0a859a814b66e84b8d86d87,experiment with a bool lookup table for strings
+pquerna,2014-11-15 00:59:24,https://api.github.com/repos/pquerna/ffjson/git/commits/2c1f9b6532779b2842473193a4ff0617d15895f9,2c1f9b6532779b2842473193a4ff0617d15895f9,handle escaped the rest of the escaped characters
+pquerna,2014-11-15 00:39:50,https://api.github.com/repos/pquerna/ffjson/git/commits/ac347ac197748c929eec3619e2e427d2d958bd4d,ac347ac197748c929eec3619e2e427d2d958bd4d,Improve lexer tests
+pquerna,2014-11-14 17:54:18,https://api.github.com/repos/pquerna/ffjson/git/commits/8bec46f22e59ab3179404961c53be502c0f29c12,8bec46f22e59ab3179404961c53be502c0f29c12,add more unicode tests
+pquerna,2014-11-12 04:25:05,https://api.github.com/repos/pquerna/ffjson/git/commits/2707e36116bf75f06581a5a2303df4d0f719c943,2707e36116bf75f06581a5a2303df4d0f719c943,Convert decoding code generation to text/templates.
+pquerna,2014-11-11 23:25:02,https://api.github.com/repos/pquerna/ffjson/git/commits/a24a8e460c1d59ea06d330e9007dcc505ce5bd87,a24a8e460c1d59ea06d330e9007dcc505ce5bd87,temp hack for handling arrays of ptrs
+pquerna,2014-11-11 23:10:30,https://api.github.com/repos/pquerna/ffjson/git/commits/11dd9e9fa143175f0233f2d0a5f5df969f4b63db,11dd9e9fa143175f0233f2d0a5f5df969f4b63db,"use byteLookupTable directly, another 5%"
+pquerna,2014-11-11 22:45:15,https://api.github.com/repos/pquerna/ffjson/git/commits/31a3522d9465fe73a510c43c9f76b5e6771bf2a2,31a3522d9465fe73a510c43c9f76b5e6771bf2a2,add ReadByteNoWS to skip over whitepsace inline of the main loop
+pquerna,2014-11-11 16:28:21,https://api.github.com/repos/pquerna/ffjson/git/commits/79ad37429e23a573903a2ce90e7b21244315c3cb,79ad37429e23a573903a2ce90e7b21244315c3cb,"handle ptr types and their elems, and a little more strings"
+pquerna,2014-11-11 01:59:02,https://api.github.com/repos/pquerna/ffjson/git/commits/9865e12e5a289b9fb08a0ef3f9306b93139dbc9c,9865e12e5a289b9fb08a0ef3f9306b93139dbc9c,handle whitespace skipping in the inner byte loop
+pquerna,2014-11-11 01:07:50,https://api.github.com/repos/pquerna/ffjson/git/commits/fc8dd588788c42fc1a222bd9eccd99131b3bc6a7,fc8dd588788c42fc1a222bd9eccd99131b3bc6a7,"add []byte specialized float handler, add test with Everything being deserialized"
+pquerna,2014-11-10 23:57:41,https://api.github.com/repos/pquerna/ffjson/git/commits/7c6f1ea15ff99d58b2ffed04886d00c7a64e9d48,7c6f1ea15ff99d58b2ffed04886d00c7a64e9d48,"Add native []byte parsers for Parsing ints, removing allocations and gaining another ~4% on goser"
+pquerna,2014-11-10 23:28:03,https://api.github.com/repos/pquerna/ffjson/git/commits/d46da0401cb214bc2e74772912462da0fc184110,d46da0401cb214bc2e74772912462da0fc184110,remove unused counter
+pquerna,2014-11-10 23:24:33,https://api.github.com/repos/pquerna/ffjson/git/commits/1c985289f1fc0c757fefc24e8fdcbcb1b362e197,1c985289f1fc0c757fefc24e8fdcbcb1b362e197,inline the slice string instead of reading one byte at a time
+pquerna,2014-11-10 22:14:40,https://api.github.com/repos/pquerna/ffjson/git/commits/7b9236e279a6e91e836a1801acd7b6db1880e4fb,7b9236e279a6e91e836a1801acd7b6db1880e4fb,dont need error handling on unreadByte.
+pquerna,2014-11-10 22:05:50,https://api.github.com/repos/pquerna/ffjson/git/commits/ee1651a03db552a32ed8013aa025a42163c6b11c,ee1651a03db552a32ed8013aa025a42163c6b11c,"move line counting to only happen on error, instead of all the time"
+pquerna,2014-11-10 19:12:26,https://api.github.com/repos/pquerna/ffjson/git/commits/4e74082535fcae59004a5d4719494c43999a28ba,4e74082535fcae59004a5d4719494c43999a28ba,"remove io.Reader interface, it was only used in tests, in preperation for byte read optimizations"
+pquerna,2014-11-08 06:36:59,https://api.github.com/repos/pquerna/ffjson/git/commits/8ac237f3f6609a85020be8eb7f54850a4210d6d6,8ac237f3f6609a85020be8eb7f54850a4210d6d6,try to use byte compare rather than string names for keynames
+pquerna,2014-11-08 05:35:57,https://api.github.com/repos/pquerna/ffjson/git/commits/342663bdb001d6d26a4631be04d04e68729c0766,342663bdb001d6d26a4631be04d04e68729c0766,try a local buffer before inserting into output buffer
+pquerna,2014-11-08 05:12:54,https://api.github.com/repos/pquerna/ffjson/git/commits/c056fabaaf9153a7b3a1bf63de3386e34a7e1c32,c056fabaaf9153a7b3a1bf63de3386e34a7e1c32,grow default output buffer
+pquerna,2014-11-07 22:30:16,https://api.github.com/repos/pquerna/ffjson/git/commits/24ee6949e8724389c93322187ab7fd599f8bf919,24ee6949e8724389c93322187ab7fd599f8bf919,start on capturing sub-structs and recursive usage of lexer.
+pquerna,2014-11-07 20:01:09,https://api.github.com/repos/pquerna/ffjson/git/commits/a44f144751412382384cbdcbb9be3ae2b29c766a,a44f144751412382384cbdcbb9be3ae2b29c766a,"convert charLookupTable to using []int8 instead of map to reduce use of hashing, which we spent 20% of our time in from a profile"
+pquerna,2014-11-07 19:34:36,https://api.github.com/repos/pquerna/ffjson/git/commits/53587f11e24641dfa52aa0b11ef77da719587e75,53587f11e24641dfa52aa0b11ef77da719587e75,try to use original io.Reader whenever possible
+pquerna,2014-11-07 19:32:54,https://api.github.com/repos/pquerna/ffjson/git/commits/081af43c8059c2133e3154dc5e7baa9d1a181edb,081af43c8059c2133e3154dc5e7baa9d1a181edb,Use a bytes.Reader to avoid the allocations from a bufio.Reader if we dont need to wrap a bare io.Reader
+pquerna,2014-11-07 17:29:22,https://api.github.com/repos/pquerna/ffjson/git/commits/d6177594ad0515cfed1ea68202b12bcde4034e58,d6177594ad0515cfed1ea68202b12bcde4034e58,"Use bytes.Buffer for .Output, reducing allocs per parse"
+pquerna,2014-11-07 16:17:26,https://api.github.com/repos/pquerna/ffjson/git/commits/5c173d92f4bf8905d06fdc46beb0a89becfb29af,5c173d92f4bf8905d06fdc46beb0a89becfb29af,use types and name strings to prep for recursive value handling
+pquerna,2014-11-06 23:34:20,https://api.github.com/repos/pquerna/ffjson/git/commits/489d3760d480ef111f78bd88bbe6494cd031c511,489d3760d480ef111f78bd88bbe6494cd031c511,Add more type decoding
+pquerna,2014-04-03 16:04:38,https://api.github.com/repos/pquerna/ffjson/git/commits/dae7d6b96d5af9cd67adde73d38234805186f296,dae7d6b96d5af9cd67adde73d38234805186f296,Begin work on Unmarshal support in ffjson.
+pquerna,2014-11-06 23:33:49,https://api.github.com/repos/pquerna/ffjson/git/commits/869bf0ff12cb18d243b71b55a69e75c978003db8,869bf0ff12cb18d243b71b55a69e75c978003db8,Guess at the relative size of a struct
+pquerna,2014-11-04 16:10:49,https://api.github.com/repos/pquerna/ffjson/git/commits/49c82c130e2446abec2711ad611883ac2365452d,49c82c130e2446abec2711ad611883ac2365452d,Improve handling of Pointers inside structs.  Fixes #19
+pquerna,2014-08-02 18:41:05,https://api.github.com/repos/pquerna/ffjson/git/commits/da857a23c99dea129e7ff9b18bb4ffcedd4345b7,da857a23c99dea129e7ff9b18bb4ffcedd4345b7,"Merge pull request #21 from pquerna/add_go_cmd_flag
+
+Add -go-cmd to allow hopefully support goapp / app engine"
+pquerna,2014-08-02 18:40:15,https://api.github.com/repos/pquerna/ffjson/git/commits/8d91cb13ca14f31af6498dccb0bf4bf148f74337,8d91cb13ca14f31af6498dccb0bf4bf148f74337,Add -go-cmd to allow hopefully support goapp / app engine
+pquerna,2014-06-21 17:02:06,https://api.github.com/repos/pquerna/ffjson/git/commits/568e7b5d5aaeaea243b6e4a5bbc502997d19d24e,568e7b5d5aaeaea243b6e4a5bbc502997d19d24e,Merge branch 'bombworm-windows-support'
+pquerna,2014-04-06 21:15:06,https://api.github.com/repos/pquerna/ffjson/git/commits/4b3a70ae0e21ce52a3436a26284598ee65738506,4b3a70ae0e21ce52a3436a26284598ee65738506,"Merge pull request #15 from pquerna/sort_names
+
+Sort fields by their JSON name."
+pquerna,2014-04-06 21:06:22,https://api.github.com/repos/pquerna/ffjson/git/commits/238d05f10b608542b61c9c2fc8a0e8aaffb7b0f1,238d05f10b608542b61c9c2fc8a0e8aaffb7b0f1,Sort fields by their JSON name.
+pquerna,2014-04-03 16:23:45,https://api.github.com/repos/pquerna/ffjson/git/commits/32c275d031d8789ff46fb7d9353ed289588a1973,32c275d031d8789ff46fb7d9353ed289588a1973,"Fix Array and Float serializations, and add test case covering generation of these types.  Fixes #14."
+pquerna,2014-04-01 14:36:18,https://api.github.com/repos/pquerna/ffjson/git/commits/86c1792ad05f675f4c973691cad94dbac1c596d1,86c1792ad05f675f4c973691cad94dbac1c596d1,"Merge pull request #11 from rschmukler/master
+
+fix readme typo"
+rschmukler,2014-04-01 04:01:52,https://api.github.com/repos/pquerna/ffjson/git/commits/f84feb068771f343ffb0e91778a7a68575587384,f84feb068771f343ffb0e91778a7a68575587384,"fix readme typo
+
+changed funcions to functions"
+pquerna,2014-04-01 00:50:51,https://api.github.com/repos/pquerna/ffjson/git/commits/ef3884d964045d03c6cbe72741079d699e2d47fb,ef3884d964045d03c6cbe72741079d699e2d47fb,"Merge pull request #10 from rasky/fix_short_rel
+
+Fix panic on short relpath"
+pquerna,2014-04-01 00:50:37,https://api.github.com/repos/pquerna/ffjson/git/commits/72e64bac220f2700ff4944eff9a0375586d21b62,72e64bac220f2700ff4944eff9a0375586d21b62,"Merge pull request #8 from ddispaltro/master
+
+Fix spelling mistake"
+pquerna,2014-04-01 00:50:25,https://api.github.com/repos/pquerna/ffjson/git/commits/b22349af566d6810cb2e39437c172951fb95cd62,b22349af566d6810cb2e39437c172951fb95cd62,"Merge pull request #9 from rasky/fix_ptr
+
+Fix pasto in Ptr encoding"
+rasky,2014-03-31 23:14:35,https://api.github.com/repos/pquerna/ffjson/git/commits/7ad44618cf140b7f8cbd503f658b20d89396c354,7ad44618cf140b7f8cbd503f658b20d89396c354,Fix reference to object name
+rasky,2014-03-31 22:51:11,https://api.github.com/repos/pquerna/ffjson/git/commits/1afbeef8d3843c96b0eb8f3e0fbb5277c3a8818f,1afbeef8d3843c96b0eb8f3e0fbb5277c3a8818f,Correctly propagate error
+rasky,2014-03-31 22:49:40,https://api.github.com/repos/pquerna/ffjson/git/commits/a48fb9810ffe522c5bf24687d9a042fa833b6d5c,a48fb9810ffe522c5bf24687d9a042fa833b6d5c,Avoid crashing if a short relpath is returned
+rasky,2014-03-31 22:46:41,https://api.github.com/repos/pquerna/ffjson/git/commits/888beee45e8f9032d42e02f143fa2e39819fd8cf,888beee45e8f9032d42e02f143fa2e39819fd8cf,Fix pasto in Ptr encoding
+dispalt,2014-03-31 20:09:06,https://api.github.com/repos/pquerna/ffjson/git/commits/b5f302e74a0fa4240db61687929de11e07d5dd70,b5f302e74a0fa4240db61687929de11e07d5dd70,Fix spelling mistake
+pquerna,2014-03-31 15:51:51,https://api.github.com/repos/pquerna/ffjson/git/commits/be103513742bfa7271405d09d26a8ad2f10843bc,be103513742bfa7271405d09d26a8ad2f10843bc,Update README.md
+pquerna,2014-03-30 04:11:05,https://api.github.com/repos/pquerna/ffjson/git/commits/c0fbe6e233c2bf9cc76012a01deef9885a514879,c0fbe6e233c2bf9cc76012a01deef9885a514879,"Remove this os.Remove, it is handled inside inceptionmain now."
+pquerna,2014-03-30 03:49:39,https://api.github.com/repos/pquerna/ffjson/git/commits/066eebe8cce430774f0838d1d9f1a494bbdd502c,066eebe8cce430774f0838d1d9f1a494bbdd502c,truths
+pquerna,2014-03-30 03:47:37,https://api.github.com/repos/pquerna/ffjson/git/commits/276e45c0fdbe5e0405fefc85af1cca4001f081c1,276e45c0fdbe5e0405fefc85af1cca4001f081c1,README tweaks
+pquerna,2014-03-30 00:18:26,https://api.github.com/repos/pquerna/ffjson/git/commits/e0e1191352af9b1ab18b8f494225f64e922c6395,e0e1191352af9b1ab18b8f494225f64e922c6395,Update README
+pquerna,2014-03-30 00:13:18,https://api.github.com/repos/pquerna/ffjson/git/commits/17f4c5eae20dfa6dd308d754b79c72e1eca1e28a,17f4c5eae20dfa6dd308d754b79c72e1eca1e28a,"Merge pull request #7 from pquerna/improve_go_stripe_perf
+
+Improve go stripe perf"
+pquerna,2014-03-30 00:05:31,https://api.github.com/repos/pquerna/ffjson/git/commits/2ac97adb9492bc0c06769d715e6546cd5bad4195,2ac97adb9492bc0c06769d715e6546cd5bad4195,combine a WriteString
+pquerna,2014-03-30 00:00:52,https://api.github.com/repos/pquerna/ffjson/git/commits/ddd66cc8bbdad9cdb5b3d8e6d48fac76c72c2693,ddd66cc8bbdad9cdb5b3d8e6d48fac76c72c2693,Add support for native pointers
+pquerna,2014-03-29 23:52:08,https://api.github.com/repos/pquerna/ffjson/git/commits/e2f5e4b10cf31b1d10b3a43b3fde3808c2feb56a,e2f5e4b10cf31b1d10b3a43b3fde3808c2feb56a,Add support for Slices and put in a comment when we are falling back
+pquerna,2014-03-29 23:41:30,https://api.github.com/repos/pquerna/ffjson/git/commits/6ae9b9097c341ebfc91ceb24726ce66d3b439546,6ae9b9097c341ebfc91ceb24726ce66d3b439546,Add specialization for Bool type
+pquerna,2014-03-29 23:37:00,https://api.github.com/repos/pquerna/ffjson/git/commits/7a3f40d05974f3770e94cd87844c83bc2fcee462,7a3f40d05974f3770e94cd87844c83bc2fcee462,"Merge pull request #6 from pquerna/add_go_stripe_benchmark
+
+Add a test and benchmark based on go.stripe"
+pquerna,2014-03-29 23:32:02,https://api.github.com/repos/pquerna/ffjson/git/commits/2e14312ff61389f8833210422573c769288ff8eb,2e14312ff61389f8833210422573c769288ff8eb,Add a test and benchmark based on go.stripe
+pquerna,2014-03-29 22:50:31,https://api.github.com/repos/pquerna/ffjson/git/commits/1eaea2fc2fd6f9786621803eb4374024ffcfff33,1eaea2fc2fd6f9786621803eb4374024ffcfff33,update README.md
+pquerna,2014-03-29 22:20:46,https://api.github.com/repos/pquerna/ffjson/git/commits/1f0fd7924f6e8aad7eea03268c03ff268bcacb74,1f0fd7924f6e8aad7eea03268c03ff268bcacb74,"Merge pull request #5 from pquerna/format_bits_to_buffer
+
+Add a native FormatBits"
+pquerna,2014-03-29 22:18:31,https://api.github.com/repos/pquerna/ffjson/git/commits/7033a98f8f4313e2df255ff177654bc5bb99d671,7033a98f8f4313e2df255ff177654bc5bb99d671,"Add NOTICE file, make clear files that were ported from the stdlib"
+pquerna,2014-03-29 22:07:17,https://api.github.com/repos/pquerna/ffjson/git/commits/23b49937c4629e54f2fb026319732721b1f3b40b,23b49937c4629e54f2fb026319732721b1f3b40b,Add a native FormatBits which appends to a bytes.Buffer eliminating many temp allocations for int/uint formating
+pquerna,2014-03-29 21:39:18,https://api.github.com/repos/pquerna/ffjson/git/commits/3bd3e1f6649e594ea88a16985223dc27e8960f9e,3bd3e1f6649e594ea88a16985223dc27e8960f9e,"Merge pull request #4 from pquerna/skip_unexported_fields
+
+if the field is not exported, or set to a name of `-`, skip it"
+pquerna,2014-03-29 21:37:39,https://api.github.com/repos/pquerna/ffjson/git/commits/f87556d3abb5873a01d81ecd90148afe4e23dfb4,f87556d3abb5873a01d81ecd90148afe4e23dfb4,"if the field is not exported, or set to a name of `-`, skip it"
+pquerna,2014-03-29 20:07:06,https://api.github.com/repos/pquerna/ffjson/git/commits/8f7f4f7c1cc5f88aa2cba5e8cbd82b3bc35d345f,8f7f4f7c1cc5f88aa2cba5e8cbd82b3bc35d345f,"Merge pull request #3 from pquerna/shared_buffer_interface
+
+Add a .MarshalJSONBuf interface to reduce bytes.Buffer allocations"
+pquerna,2014-03-29 19:59:25,https://api.github.com/repos/pquerna/ffjson/git/commits/2f5a4f27de84b1c5ff6b286aa030ee92031ec696,2f5a4f27de84b1c5ff6b286aa030ee92031ec696,"Add a .MarshalJSONBuf interface to the generated code, so for structs containing other ffjson structs, we can avoid having to allocate multiple bytes.Buffers"
+pquerna,2014-03-29 19:57:51,https://api.github.com/repos/pquerna/ffjson/git/commits/2631358a53caada91fe5ca1b4cb0b9fc19c56f10,2631358a53caada91fe5ca1b4cb0b9fc19c56f10,"Merge pull request #2 from pquerna/pill_injection
+
+Add injecting of pills into the generated code"
+pquerna,2014-03-29 19:43:30,https://api.github.com/repos/pquerna/ffjson/git/commits/2a39533a92027f19904f8aa07a089a3a9904590e,2a39533a92027f19904f8aa07a089a3a9904590e,Add injecting of pills into the generated code
+pquerna,2014-03-29 17:50:26,https://api.github.com/repos/pquerna/ffjson/git/commits/2369da46c73907420d8a12f18510c4a144f7f07f,2369da46c73907420d8a12f18510c4a144f7f07f,tweak/make more accurate.
+pquerna,2014-03-29 17:46:59,https://api.github.com/repos/pquerna/ffjson/git/commits/be2e7d2ce67fd88da7236892587fd9bbb174a787,be2e7d2ce67fd88da7236892587fd9bbb174a787,Only delete on success path.
+pquerna,2014-03-29 17:30:25,https://api.github.com/repos/pquerna/ffjson/git/commits/5a0d6c1c0d9b21564611a96976a24793bd3b9596,5a0d6c1c0d9b21564611a96976a24793bd3b9596,add ffize target.
+pquerna,2014-03-27 15:29:44,https://api.github.com/repos/pquerna/ffjson/git/commits/2767f758f4ff96de0f57965a128bff913c52076e,2767f758f4ff96de0f57965a128bff913c52076e,"yeah, this aint done"
+pquerna,2014-03-27 15:27:06,https://api.github.com/repos/pquerna/ffjson/git/commits/fe638a6bf213ce5fbe0fc1a8e6e52b830295446f,fe638a6bf213ce5fbe0fc1a8e6e52b830295446f,start on making the json string writer pill
+pquerna,2014-03-27 15:13:09,https://api.github.com/repos/pquerna/ffjson/git/commits/169bbb7acb5a719b216f1006d86d3011c430dd6f,169bbb7acb5a719b216f1006d86d3011c430dd6f,improve error message and cleanups around the inception go run
+pquerna,2014-03-27 15:00:21,https://api.github.com/repos/pquerna/ffjson/git/commits/7145219263bd0526159e1cd0585293dff9c6b7c0,7145219263bd0526159e1cd0585293dff9c6b7c0,improve error message and keep temp file on failure
+pquerna,2014-03-27 14:56:51,https://api.github.com/repos/pquerna/ffjson/git/commits/bab2d647e376fa9210d7ff8ea1430e7c16846b44,bab2d647e376fa9210d7ff8ea1430e7c16846b44,add a round trip test
+pquerna,2014-03-26 18:20:26,https://api.github.com/repos/pquerna/ffjson/git/commits/512cddc63e64795aa5860e27b3552106593f1418,512cddc63e64795aa5860e27b3552106593f1418,start on benchmark make target
+pquerna,2014-03-26 00:29:49,https://api.github.com/repos/pquerna/ffjson/git/commits/e051035a3d85bf2f63d76aae41cdaece39c0a364,e051035a3d85bf2f63d76aae41cdaece39c0a364,add in example structs from goser
+pquerna,2014-03-26 00:29:18,https://api.github.com/repos/pquerna/ffjson/git/commits/22190e7cea6e74a4fdcd6e068f36d48d689bfd00,22190e7cea6e74a4fdcd6e068f36d48d689bfd00,Hack around with pre-growing the bytes.Buffer.
+pquerna,2014-03-26 00:29:03,https://api.github.com/repos/pquerna/ffjson/git/commits/2664f88ed6e3fd76e44a168d0a2f0b51ab03c449,2664f88ed6e3fd76e44a168d0a2f0b51ab03c449,"Remove Type, unused."
+pquerna,2014-03-25 23:11:17,https://api.github.com/repos/pquerna/ffjson/git/commits/37c0196d337a70788169f82c942636c9aaaac1f3,37c0196d337a70788169f82c942636c9aaaac1f3,"Only import the imports we need in generated code, and add specialization for other types that we are currently generating code for."
+pquerna,2014-03-25 22:12:36,https://api.github.com/repos/pquerna/ffjson/git/commits/7b6dbe623cc0b39ab4664922ac6ed10a0b2491d1,7b6dbe623cc0b39ab4664922ac6ed10a0b2491d1,add shared
+pquerna,2014-03-25 22:10:42,https://api.github.com/repos/pquerna/ffjson/git/commits/146c2f75deee60b5f6f6161aa868a8b94b9008b2,146c2f75deee60b5f6f6161aa868a8b94b9008b2,"Merge pull request #1 from pquerna/inception
+
+Inception: ast ain't good enough"
+pquerna,2014-03-25 21:58:04,https://api.github.com/repos/pquerna/ffjson/git/commits/bd5cb47e7102e1a70b613de547e29039840f76f8,bd5cb47e7102e1a70b613de547e29039840f76f8,inception is functional
+pquerna,2014-03-24 18:58:43,https://api.github.com/repos/pquerna/ffjson/git/commits/4f08a72fa1ad0fb1a5a6383463e38032bc536861,4f08a72fa1ad0fb1a5a6383463e38032bc536861,add output path
+pquerna,2014-03-24 18:50:20,https://api.github.com/repos/pquerna/ffjson/git/commits/c373f6f981694db17b071556fc0d5e2647085406,c373f6f981694db17b071556fc0d5e2647085406,"move output path to inside structs, kill unneeded inceptioncontext"
+pquerna,2014-03-24 17:18:16,https://api.github.com/repos/pquerna/ffjson/git/commits/df3a98a91b86202a7770f7cd184f1d7fccc57b15,df3a98a91b86202a7770f7cd184f1d7fccc57b15,don't need a pointer to the struct type
+pquerna,2014-03-24 17:14:32,https://api.github.com/repos/pquerna/ffjson/git/commits/cf2664482dd57910f18bbe4d5e00686dd923ae3d,cf2664482dd57910f18bbe4d5e00686dd923ae3d,start on recursion into arrays
+pquerna,2014-03-24 05:49:27,https://api.github.com/repos/pquerna/ffjson/git/commits/c6efcc3da38080477c0f5b7f515bed0274e4f260,c6efcc3da38080477c0f5b7f515bed0274e4f260,start on the inception package
+pquerna,2014-03-23 21:50:35,https://api.github.com/repos/pquerna/ffjson/git/commits/3cf92ddb8bd73a2ce55a5a87c3fbbb2027a43315,3cf92ddb8bd73a2ce55a5a87c3fbbb2027a43315,fix bool
+pquerna,2014-03-23 21:48:55,https://api.github.com/repos/pquerna/ffjson/git/commits/9bc23c146d89712966c122f38920762e560dffb1,9bc23c146d89712966c122f38920762e560dffb1,start making OmitEmpty work
+pquerna,2014-03-23 21:29:17,https://api.github.com/repos/pquerna/ffjson/git/commits/df07ddb5ff8ee47be35e78943944dacbe20d83d9,df07ddb5ff8ee47be35e78943944dacbe20d83d9,start using a generator context to keep track of what to render in the template
+pquerna,2014-03-23 21:05:19,https://api.github.com/repos/pquerna/ffjson/git/commits/3f755692a22b14050ed468cdee17ee66586659d2,3f755692a22b14050ed468cdee17ee66586659d2,add more test benchs
+pquerna,2014-03-21 23:54:58,https://api.github.com/repos/pquerna/ffjson/git/commits/5eb066272499af7efbe2822da2a9a6a771c91cc9,5eb066272499af7efbe2822da2a9a6a771c91cc9,specialize for ints
+pquerna,2014-03-21 23:54:00,https://api.github.com/repos/pquerna/ffjson/git/commits/d68be8a5532a114fcece3618d6651e3b7e3938a0,d68be8a5532a114fcece3618d6651e3b7e3938a0,tweak readme
+pquerna,2014-03-21 22:17:30,https://api.github.com/repos/pquerna/ffjson/git/commits/14645eb5f4a9edf6bad29e979ee7f64454e6f0d4,14645eb5f4a9edf6bad29e979ee7f64454e6f0d4,start on benching
+pquerna,2014-03-21 22:06:21,https://api.github.com/repos/pquerna/ffjson/git/commits/aa69a13e20fbaa03e0a6e07d76e19663a136afaa,aa69a13e20fbaa03e0a6e07d76e19663a136afaa,Add basic encoder
+pquerna,2014-03-21 20:38:18,https://api.github.com/repos/pquerna/ffjson/git/commits/e07a183900e4eb6a70d48303781f218372ab674d,e07a183900e4eb6a70d48303781f218372ab674d,start on more generator structure
+pquerna,2014-03-20 14:09:26,https://api.github.com/repos/pquerna/ffjson/git/commits/3294e34b47ad95ffab900792f1aacc72b2429acb,3294e34b47ad95ffab900792f1aacc72b2429acb,base structure

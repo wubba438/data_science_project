@@ -1,0 +1,41 @@
+AudioStreamer,A streaming audio player class (AudioStreamer) for Mac OS X and iPhone.
+username,timestamp,url,sha,message
+sdesimone,2013-10-30 18:31:15,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/86e545a7177da89d08a54d75e71c8a30ecc0dce0,86e545a7177da89d08a54d75e71c8a30ecc0dce0,added shouldDisplayAlertOnError flag to control alert display on failure
+sdesimone,2013-10-30 18:19:45,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/05e67695a5e2dd068867901cedf64a54a53b2fe9,05e67695a5e2dd068867901cedf64a54a53b2fe9,added isAborted method to represent the condition state==AS_STOPPING && stopReason==AS_STOPPING_ERROR
+sdesimone,2013-10-30 18:18:06,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/97c63fdbde2ecabfd9d1c449f5013e78675fe3fe,97c63fdbde2ecabfd9d1c449f5013e78675fe3fe,added missing code error for AS_FILE_STREAM_SET_PROPERTY_FAILED
+sdesimone,2013-10-30 17:56:53,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/be42aa055586df18c726ba893d663166d2fac857,be42aa055586df18c726ba893d663166d2fac857,removed direct usage of presentAlertWithTitle; now presentAlertWithTitle is only called thru failWithError; also added relevant code error for AS_FILE_STREAM_SET_PROPERTY_FAILED
+sdesimone,2013-10-30 17:52:32,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/fdede700d143de7ef1c39799660c7a4a9de726bc,fdede700d143de7ef1c39799660c7a4a9de726bc,remove self delegate from presentAlertWithTitle to avoid crash when alert is dismissed after streamer's dealloc
+mattgallagher,2013-07-28 04:49:17,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/715e8506fe96ecddf3cb1e33c882cdeda45080eb,715e8506fe96ecddf3cb1e33c882cdeda45080eb,"Merge pull request #71 from chenhong/master
+
+fix: short audio will not be paused when the state is AF_STOPPING"
+chenhong,2013-07-28 04:19:21,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/1437ed61bbec35e7e955eb06f3d45c31bc388534,1437ed61bbec35e7e955eb06f3d45c31bc388534,fix: short audio will not be paused when the state is AF_STOPPING
+mattgallagher,2013-07-26 02:38:37,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/2913224bb5c105ea653c34dc1a7f3ef506758d35,2913224bb5c105ea653c34dc1a7f3ef506758d35,"Merge pull request #70 from tuoxie007/master
+
+fixed: missing check value of isRunning"
+mattgallagher,2013-05-02 01:59:45,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/e09d2ee5d8cad45fb737d4c750e52e553a1acb35,e09d2ee5d8cad45fb737d4c750e52e553a1acb35,"Merge pull request #63 from azone/patch-1
+
+Fixed issue #6"
+azone,2013-04-27 02:08:08,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/f15bea0243efae9266a1cdb639ac2d107c83c064,f15bea0243efae9266a1cdb639ac2d107c83c064,"Fixed issue #6
+
+fixed `ASAudioSessionInterruptionListener` crash issue"
+azone,2013-04-26 09:37:55,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/248844d50e810bc8b254181a4707a94dc4078b15,248844d50e810bc8b254181a4707a94dc4078b15,"Update AudioStreamer.m
+
+Fixed issue #6"
+mattgallagher,2012-07-17 17:20:55,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/0f5f4d9f94d260e1037245c2fdc041c56d375d7b,0f5f4d9f94d260e1037245c2fdc041c56d375d7b,"Merge pull request #36 from devgeeks/setFileExtension
+
+Include an overrideable file extension property."
+devgeeks,2011-07-27 05:56:02,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/1df91108f332ec2498ca700a84a09855749de07f,1df91108f332ec2498ca700a84a09855749de07f,"Changed attribute definition after reading http://stackoverflow.com/questions/387959/nsstring-property-copy-or-retain/388002#388002
+
+Seems copy is the appropriate choice according to the logic in this
+stack overflow answer:
+http://stackoverflow.com/questions/387959/nsstring-property-copy-or-retain/388002#388002"
+devgeeks,2011-07-22 06:00:34,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/87a3af0417c9e4b6e6b868ffffdb1d7963f0408a,87a3af0417c9e4b6e6b868ffffdb1d7963f0408a,Xcode was defaulted to spaces instead of tabs for indenting.
+devgeeks,2011-07-22 05:55:42,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/6cdbe2b7109fe99d311b6405133a95de6d9f1c31,6cdbe2b7109fe99d311b6405133a95de6d9f1c31,"Added fileExtension member to aid/override detection of stream type for URLs without an extension present.
+
+Comment at line 1297 of AudioStreamer.m mentions possibly having to hard
+code a file-type if the detection doesn't work based on the stream URL.
+Trying to avoid this, I have added a fileExtension member that can be se
+t from whatever is instantiating AudioStreamer (your view controller or
+whatever) to aid it in playing these kinds of streams. If not set it wil
+l continue to attempt detection based on the URL."
+marcboquet,2010-04-10 09:57:22,https://api.github.com/repos/mattgallagher/AudioStreamer/git/commits/d0a5a94ab38419738f74793a64d59a0f253d95f8,d0a5a94ab38419738f74793a64d59a0f253d95f8,Added code to handle interruptions (phone calls) correctly

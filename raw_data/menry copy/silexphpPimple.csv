@@ -1,0 +1,2126 @@
+Pimple,A small PHP 5.3 dependency injection container
+username,timestamp,url,sha,message
+fabpot,2018-04-20 06:17:25,https://api.github.com/repos/silexphp/Pimple/git/commits/21e3e0dc89183c96fad7f12e09e1d345558e9a56,21e3e0dc89183c96fad7f12e09e1d345558e9a56,fixed project's URL
+fabpot,2018-02-09 15:35:40,https://api.github.com/repos/silexphp/Pimple/git/commits/9aaff1cb2f24988bd5d23a20f1578da118360525,9aaff1cb2f24988bd5d23a20f1578da118360525,"minor #245 Fixed php 5.3 builds on Travis (derrabus)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Fixed php 5.3 builds on Travis
+
+Commits
+-------
+
+e3ab11a Fixed php 5.3 builds on Travis."
+derrabus,2018-02-09 15:22:43,https://api.github.com/repos/silexphp/Pimple/git/commits/e3ab11a001074351c7fadc6d2e622a04874b1faf,e3ab11a001074351c7fadc6d2e622a04874b1faf,Fixed php 5.3 builds on Travis.
+fabpot,2018-01-21 10:38:34,https://api.github.com/repos/silexphp/Pimple/git/commits/77e63f56742802485f0ac90f34da3dc3c3f775f6,77e63f56742802485f0ac90f34da3dc3c3f775f6,fixed year
+fabpot,2018-01-21 07:46:04,https://api.github.com/repos/silexphp/Pimple/git/commits/49b8e184e0cc7bd4ac3e4871f4e8491b7423c300,49b8e184e0cc7bd4ac3e4871f4e8491b7423c300,made small changes
+fabpot,2018-01-21 07:42:36,https://api.github.com/repos/silexphp/Pimple/git/commits/9e403941ef9d65d20cba7d54e29fe906db42cf32,9e403941ef9d65d20cba7d54e29fe906db42cf32,"minor #244 Use absolute function reference (rullzer)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Use absolute function reference
+
+See https://github.com/Roave/FunctionFQNReplacer
+
+Commits
+-------
+
+507aed6 Use absolute function reference"
+rullzer,2018-01-18 22:26:48,https://api.github.com/repos/silexphp/Pimple/git/commits/507aed624ad9c9ef9307bc274c76a2ccaef66e96,507aed624ad9c9ef9307bc274c76a2ccaef66e96,"Use absolute function reference
+
+Signed-off-by: Roeland Jago Douma <roeland@famdouma.nl>"
+fabpot,2017-08-23 11:42:00,https://api.github.com/repos/silexphp/Pimple/git/commits/b5e5c1809fc323428715aa6a66ddca180e0adc0f,b5e5c1809fc323428715aa6a66ddca180e0adc0f,"minor #240 Probably parameter names were mixed in documentation (hywak)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Probably parameter names were mixed in documentation
+
+I believe that `session_storage_class` and `session_storage` parameters were mixed. Overriding `cookie_name` parameter will easily change cookie name, not editing `session_storage_class`.
+
+Commits
+-------
+
+25a786c Update README.rst"
+hywak,2017-08-23 08:21:08,https://api.github.com/repos/silexphp/Pimple/git/commits/25a786cc21b9b94a43f51afa006f154dfa6fe33f,25a786cc21b9b94a43f51afa006f154dfa6fe33f,"Update README.rst
+
+I believe that `session_storage_class` and `session_storage` parameters were mixed. Overriding `cookie_name` parameter will easily change cookie name, not editing `session_storage_class`."
+fabpot,2017-07-23 07:32:49,https://api.github.com/repos/silexphp/Pimple/git/commits/b734609e7928349247a1217c5461c8d41e898d2c,b734609e7928349247a1217c5461c8d41e898d2c,bumped version to 3.2.3
+fabpot,2017-07-23 07:32:15,https://api.github.com/repos/silexphp/Pimple/git/commits/4d45fb62d96418396ec58ba76e6f065bca16e10a,4d45fb62d96418396ec58ba76e6f065bca16e10a,prepared 3.2.2 release
+fabpot,2017-07-23 07:31:56,https://api.github.com/repos/silexphp/Pimple/git/commits/ed11d8b06865b7973f4b11d471732fa55386678d,ed11d8b06865b7973f4b11d471732fa55386678d,fixed version
+fabpot,2017-07-23 07:31:30,https://api.github.com/repos/silexphp/Pimple/git/commits/ac14d7bf413cc5f2454bd10f99ee5d5f28cb188c,ac14d7bf413cc5f2454bd10f99ee5d5f28cb188c,updated CHANGELOG
+fabpot,2017-07-23 07:30:36,https://api.github.com/repos/silexphp/Pimple/git/commits/89a5be7b383388ecb57fd045702d649103b837e6,89a5be7b383388ecb57fd045702d649103b837e6,updated CHANGELOG
+fabpot,2017-07-23 07:29:48,https://api.github.com/repos/silexphp/Pimple/git/commits/2aa8c45202c36a8aacb0d68bd916bafb4d7767bd,2aa8c45202c36a8aacb0d68bd916bafb4d7767bd,"bug #239 Revert #237 and deprecate extending a protected closure (skalpa)
+
+This PR was squashed before being merged into the 3.2.x-dev branch (closes #239).
+
+Discussion
+----------
+
+Revert #237 and deprecate extending a protected closure
+
+Reverts #237 and throws a deprecation notice instead of an exception when attempting to extend a protected closure.
+
+As I said in silexphp/Silex#1538, I believe there are two ways to correctly handle the issue:
+
+1. We throw an exception, considering that protected closures are parameters values and that extending them should be forbidden.
+
+2. We allow users to extend anything. In that case, one should expect both these tests to work IMHO:
+
+```php
+$pimple['foo'] = 'Hello';
+
+$pimple['bar'] = $pimple->protect(function () {
+    return 'Hello';
+});
+
+$pimple->extend('foo', function ($helloString) {
+    return $helloString.' World';
+});
+
+$pimple->extend('bar', function ($helloClosure) {
+    return $helloClosure().' World';
+});
+
+$this->assertSame('Hello World', $pimple['foo']);
+$this->assertSame('Hello World', $pimple['bar']);
+```
+
+Now, considering that Pimple invokes protected closures when the service is initialized, the current behavior forces you to do this instead (it basically ignores that the closure is protected and treats it as a regular, unprotected entry):
+
+```php
+$pimple['bar'] = $pimple->protect(function () {
+    return 'Hello';
+});
+
+$pimple->extend('bar', function ($helloString) {
+    return $helloString.' World';
+});
+```
+
+That means both fixes would break BC, so I reverted #237 and added a deprecation notice instead.
+
+(PHP implementation is fixed, C is coming up)
+
+Commits
+-------
+
+9bcdb4d Revert #237 and deprecate extending a protected closure"
+skalpa,2017-07-20 14:53:12,https://api.github.com/repos/silexphp/Pimple/git/commits/9bcdb4d77fc7cf6df06cbc874a0ebe3dc585ef2e,9bcdb4d77fc7cf6df06cbc874a0ebe3dc585ef2e,Revert #237 and deprecate extending a protected closure
+fabpot,2017-07-18 08:42:19,https://api.github.com/repos/silexphp/Pimple/git/commits/ea636ec4ff99cc8d1d18a32fe6a16ef910565f6c,ea636ec4ff99cc8d1d18a32fe6a16ef910565f6c,"bug #238 Fixed ServiceLocator compatibility with PHP5 (skalpa)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Fixed ServiceLocator compatibility with PHP5
+
+Merging #233 and #236 together broke the `ServiceLocator` compatibility with PHP 5.x (PHP complains because there is already a class named `Container` in the current namespace):
+
+```
+PHP Fatal error:  Cannot use Pimple\Container as Container because the name is already in use in /home/travis/build/skalpa/Pimple/src/Pimple/Psr11/ServiceLocator.php on line 29
+```
+
+Commits
+-------
+
+a915d63 Fixed ServiceLocator compatibility with PHP5"
+skalpa,2017-07-17 17:36:03,https://api.github.com/repos/silexphp/Pimple/git/commits/a915d631108959fcba6c76bd11072220852b576c,a915d631108959fcba6c76bd11072220852b576c,Fixed ServiceLocator compatibility with PHP5
+fabpot,2017-07-17 17:06:34,https://api.github.com/repos/silexphp/Pimple/git/commits/2a37c5d9bdd4d1cee424f5f46cd738a776b00228,2a37c5d9bdd4d1cee424f5f46cd738a776b00228,bumped version to 3.2.1
+fabpot,2017-07-17 17:05:21,https://api.github.com/repos/silexphp/Pimple/git/commits/729436408ef52f9845f9b60d60b2563f314bf1a9,729436408ef52f9845f9b60d60b2563f314bf1a9,updated CHANGELOG
+fabpot,2017-07-17 17:01:16,https://api.github.com/repos/silexphp/Pimple/git/commits/1a07df004b8624706b4698da6e0d3de72dbad00b,1a07df004b8624706b4698da6e0d3de72dbad00b,"feature #233 Added PSR-11 wrapper (skalpa)
+
+This PR was squashed before being merged into the 3.2.x-dev branch (closes #233).
+
+Discussion
+----------
+
+Added PSR-11 wrapper
+
+Adds a PSR-11 wrapper that can be used to access the content of a Pimple container using `Psr\Container\ContainerInterface`.
+
+I know that since #222 implementing such a wrapper is trivial, however I still believe it makes sense to provide one. The class is `final`, so I guess the maintenance costs won't be too high.
+
+If this gets accepted, I'll also add a service provider and an `ArgumentValueResolver` to Silex so users can do:
+```php
+$app->get('/route', function (Psr\Container\ContainerInterface $container) {
+});
+```
+
+The implementations (C and PHP) are ready to review, I'll add the documentation and ping you once it's ready to merge.
+
+Commits
+-------
+
+5949dae Added PSR-11 wrapper"
+skalpa,2017-07-07 11:48:08,https://api.github.com/repos/silexphp/Pimple/git/commits/5949dae370fac0bf532e9266b42243742b141d26,5949dae370fac0bf532e9266b42243742b141d26,Added PSR-11 wrapper
+fabpot,2017-07-17 16:56:51,https://api.github.com/repos/silexphp/Pimple/git/commits/76344d4fa24960d1a393166a0b3856e61828bbea,76344d4fa24960d1a393166a0b3856e61828bbea,"feature #234 Added ServiceIterator (skalpa)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Added ServiceIterator
+
+Adds a `ServiceIterator` that only initializes the services when iterated:
+
+```php
+$iterator = new ServiceIterator($pimple, array('service1', 'service2'));
+foreach ($iterator as $service) {
+}
+```
+
+It's useful:
+- When you may not need to load all the services in the collection
+- To avoid circular dependencies issues (see silexphp/Silex#1530)
+
+The implementations (C and PHP) are ready to review, I'll add the documentation and ping you once it's ready to merge.
+
+Commits
+-------
+
+bae2d44 Added ServiceIterator"
+fabpot,2017-07-17 16:52:15,https://api.github.com/repos/silexphp/Pimple/git/commits/b3426f6ec1cc6f0014beb88191c9c1e5b5798b77,b3426f6ec1cc6f0014beb88191c9c1e5b5798b77,"feature #236 Added PSR-11 service locator (skalpa)
+
+This PR was merged into the 3.2.x-dev branch.
+
+Discussion
+----------
+
+Added PSR-11 service locator
+
+The service locator extracted from #224 (with the iterator that I sent in #234).
+
+The documentation is adapted from the [Symfony](https://symfony.com/doc/master/service_container/service_locators.html) docs.
+
+Commits
+-------
+
+61002f6 Added PSR-11 service locator"
+fabpot,2017-07-17 16:50:15,https://api.github.com/repos/silexphp/Pimple/git/commits/ad69a1b76e3c705647be4d2688d59e9c9b417758,ad69a1b76e3c705647be4d2688d59e9c9b417758,bumped version to 3.2
+fabpot,2017-07-17 16:46:22,https://api.github.com/repos/silexphp/Pimple/git/commits/420de77405fb59c9b57e60e8733eef886685068d,420de77405fb59c9b57e60e8733eef886685068d,"bug #237 Throw InvalidServiceIdentifierException when extending a protected closure (skalpa)
+
+This PR was merged into the 3.1.x-dev branch.
+
+Discussion
+----------
+
+Throw InvalidServiceIdentifierException when extending a protected closure
+
+Fixes #190 by adding a test that checks if the entry you are trying to `extend` is a protected closure.
+
+Commits
+-------
+
+a773860 Throw InvalidServiceIdentifierException when trying to extend a protected closure"
+fabpot,2017-07-13 08:55:36,https://api.github.com/repos/silexphp/Pimple/git/commits/16281bf853bcf76cdbb548d5427b9f2d0ca57a62,16281bf853bcf76cdbb548d5427b9f2d0ca57a62,"minor #235 Documented the new exceptions in docblocks (skalpa)
+
+This PR was merged into the 3.1.x-dev branch.
+
+Discussion
+----------
+
+Documented the new exceptions in docblocks
+
+I forgot to update the docblocks in #222.
+
+While I was at it, I fixed a few typos here and there.
+
+Commits
+-------
+
+47bba9c Documented the new exceptions in docblocks"
+skalpa,2017-07-12 17:14:10,https://api.github.com/repos/silexphp/Pimple/git/commits/a7738605f79df9da2ce029ba7c5536cff5eb6c5b,a7738605f79df9da2ce029ba7c5536cff5eb6c5b,Throw InvalidServiceIdentifierException when trying to extend a protected closure
+skalpa,2017-07-12 01:59:29,https://api.github.com/repos/silexphp/Pimple/git/commits/61002f64f83fac1567a5a4fd0ff88da5b2866b98,61002f64f83fac1567a5a4fd0ff88da5b2866b98,Added PSR-11 service locator
+skalpa,2017-07-07 22:23:38,https://api.github.com/repos/silexphp/Pimple/git/commits/47bba9c7224df7ab7a426df9f5e80ac3779a6a61,47bba9c7224df7ab7a426df9f5e80ac3779a6a61,Documented the new exceptions in docblocks
+skalpa,2017-07-07 15:32:54,https://api.github.com/repos/silexphp/Pimple/git/commits/bae2d44a83c08b1b54ecf8ea94cb2a3d39645dbf,bae2d44a83c08b1b54ecf8ea94cb2a3d39645dbf,Added ServiceIterator
+fabpot,2017-07-03 14:07:39,https://api.github.com/repos/silexphp/Pimple/git/commits/5c267af44b450aff6f034efadbf772186dfbe7bf,5c267af44b450aff6f034efadbf772186dfbe7bf,bumped version to 3.1.1
+fabpot,2017-07-03 14:06:46,https://api.github.com/repos/silexphp/Pimple/git/commits/279b56046fb368deacf77e2f8f3bdcea45cc367a,279b56046fb368deacf77e2f8f3bdcea45cc367a,prepared 3.1.0
+fabpot,2017-07-03 14:05:49,https://api.github.com/repos/silexphp/Pimple/git/commits/9a77bf17d209924c6ef574cc53ddfe3ebdd4f0d8,9a77bf17d209924c6ef574cc53ddfe3ebdd4f0d8,fixed README to use best practices
+fabpot,2017-07-03 14:01:28,https://api.github.com/repos/silexphp/Pimple/git/commits/06b8ce4dd2faafd778049f6502f5df3ffe2372df,06b8ce4dd2faafd778049f6502f5df3ffe2372df,"feature #231 Deprecate the C extension (fabpot, jpauli)
+
+This PR was merged into the 3.1.x-dev branch.
+
+Discussion
+----------
+
+Deprecate the C extension
+
+Commits
+-------
+
+4890d72 Pimple-C deprecation
+91f1a84 deprecated the C extension"
+jpauli,2017-07-03 08:24:45,https://api.github.com/repos/silexphp/Pimple/git/commits/4890d728087153b0427810cc3c6d8400616b9bdf,4890d728087153b0427810cc3c6d8400616b9bdf,Pimple-C deprecation
+fabpot,2017-07-03 07:53:57,https://api.github.com/repos/silexphp/Pimple/git/commits/91f1a84cfd49ac833fc63f14cecd380dcc9c63e6,91f1a84cfd49ac833fc63f14cecd380dcc9c63e6,deprecated the C extension
+fabpot,2017-07-03 07:48:18,https://api.github.com/repos/silexphp/Pimple/git/commits/bd60f7e4dae3d891df0f653e453b4bb04cc61121,bd60f7e4dae3d891df0f653e453b4bb04cc61121,updated CHANGELOG
+fabpot,2017-07-03 07:42:29,https://api.github.com/repos/silexphp/Pimple/git/commits/ea362d9fd46bdbe797fdfa2fdf4ea9dfdc332f91,ea362d9fd46bdbe797fdfa2fdf4ea9dfdc332f91,"feature #222 Throw more specific / PSR-11 exceptions (skalpa)
+
+This PR was squashed before being merged into the 3.0.x-dev branch (closes #222).
+
+Discussion
+----------
+
+Throw more specific / PSR-11 exceptions
+
+Pimple now throws more specific exceptions.
+
+#### An attempt to modify a frozen service was made
+- Before: `\RuntimeException`
+- After: `FrozenServiceException extends \RuntimeException`
+
+#### The identifier of a valid service or parameter was expected
+- Before: `\InvalidArgumentException`
+- After: `UnknownIdentifierException extends \InvalidArgumentException`
+
+#### A closure or invokable object was expected
+- Before: `\InvalidArgumentException`
+- After: `ExpectedInvokableException extends \InvalidArgumentException`
+
+#### A attempt to perform an operation that requires a service identifier was made
+Thrown when trying to `extend()` a parameter
+
+- Before: `\InvalidArgumentException`
+- After: `InvalidServiceIdentifierException extends \InvalidArgumentException`
+
+## PSR-11 compatibility
+
+All the classes implement `Psr\Container\ContainerExceptionInterface` and `UnknownIdentifierException` implements `NotFoundExceptionInterface`.
+
+I believe it doesn't hurt and couldn't find a reason not to do it like this.
+
+Also, this will make PSR-11 wrappers faster. Until now, these wrappers have to do something like this:
+
+```php
+class PimpleContainer implements \Psr\Container\ContainerInterface
+{
+    public function get($id)
+    {
+        if (!isset($this->container[$id]) {
+            throw new NotFoundException(sprintf('The identifier %s is not defined.', $id));
+        }
+
+        return $this->container[$id];
+    }
+}
+```
+
+The additional cost is:
+- 2 function calls: `ContainerInterface::get()` and `Pimple\Container::offsetExists()`
+- 1 `isset()` (the one in `offsetExists()`)
+
+By making the Pimple exceptions Compliant with PSR-11, this cost can be reduced to a single function call:
+
+```php
+class PimpleContainer implements \Psr\Container\ContainerInterface
+{
+    public function get($id)
+    {
+        return $this->container[$id];
+    }
+}
+```
+
+## Code changes
+
+All the changes are pretty straightforward. The only one that may have to be discussed is the introduction of a test that throws a `FrozenServiceException` in `extend()`. I'll post a separate issue to explain the behavior this fixes.
+
+## The tests
+
+I've kept the old tests and renamed them `legacySomething()`, so we could check that the changes didn't break BC. It's probably safer to keep them, but if you think that's superfluous I can remove them before merge.
+
+Commits
+-------
+
+4b86d9a Throw more specific / PSR-11 exceptions"
+skalpa,2017-06-04 21:11:43,https://api.github.com/repos/silexphp/Pimple/git/commits/4b86d9a97385b7ceb9f4c4bbd22c9ec8bd5e3b30,4b86d9a97385b7ceb9f4c4bbd22c9ec8bd5e3b30,Throw more specific / PSR-11 exceptions
+fabpot,2017-06-04 15:04:52,https://api.github.com/repos/silexphp/Pimple/git/commits/2af86acb99d69fda50fe441cc45574d70c6267b8,2af86acb99d69fda50fe441cc45574d70c6267b8,"minor #226 Fix the HHVM travis build (skalpa)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Fix the HHVM travis build
+
+Fixed the HHVM build by explicitely adding HHVM + trusty + _PIMPLE_EXT=no_ to the matrix.
+
+Commits
+-------
+
+4c3fe5a Fixed the HHVM travis build"
+skalpa,2017-06-04 05:31:23,https://api.github.com/repos/silexphp/Pimple/git/commits/4c3fe5a2d99f673335e04f5566688d9c4a08193a,4c3fe5a2d99f673335e04f5566688d9c4a08193a,Fixed the HHVM travis build
+fabpot,2017-03-24 14:13:45,https://api.github.com/repos/silexphp/Pimple/git/commits/93ec38f1df4d4ad3f0c71bc9273139fa8af29f3e,93ec38f1df4d4ad3f0c71bc9273139fa8af29f3e,removed usage of getMock()
+fabpot,2017-03-24 14:12:20,https://api.github.com/repos/silexphp/Pimple/git/commits/2be062671f942be6cffb9dbd49095867d98a4951,2be062671f942be6cffb9dbd49095867d98a4951,"minor #218 Use simple-phpunit to fix build issues (Sam Burns)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Use simple-phpunit to fix build issues
+
+The build is currently breaking in [other pull requests](https://github.com/silexphp/Pimple/pull/216).  The reason is that the Travis PHPUnit binary is being used, and Travis have just upgraded this to PHPUnit 6 for PHP >=7.0.  Our tests here don't work in PHPUnit 6, and that is unlikely to change soon.
+
+In [PRs in other projects](https://github.com/twigphp/Twig/pull/2339), objections have been raised about adding `phpunit/phpunit` to the `require-dev` sections of Composer files.  Therefore, this PR uses `symfony/phpunit-bridge` instead, to get PHPUnit < 6.
+
+Commits
+-------
+
+68d24c7 Use simple-phpunit to fix build issues"
+Sam-Burns,2017-03-24 10:37:22,https://api.github.com/repos/silexphp/Pimple/git/commits/68d24c761d02a0e4b21a02a7b5c40d71395a11e4,68d24c761d02a0e4b21a02a7b5c40d71395a11e4,Use simple-phpunit to fix build issues
+fabpot,2017-01-02 20:35:07,https://api.github.com/repos/silexphp/Pimple/git/commits/ac03ac93edb0ac6d2aced595ee00577ebc6ff480,ac03ac93edb0ac6d2aced595ee00577ebc6ff480,updated LICENSE year
+fabpot,2016-11-19 22:52:52,https://api.github.com/repos/silexphp/Pimple/git/commits/1ce4ec44d782ecacd45e8644006b8a5d96ca7b3d,1ce4ec44d782ecacd45e8644006b8a5d96ca7b3d,"minor #206 Test PHP code on PHP 7 in Travis CI (hkdobrev)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Test PHP code on PHP 7 in Travis CI
+
+As #187 has stalled I think it's worth testing the PHP part of the library under PHP 7.
+
+This is in part addressing #184.
+
+Commits
+-------
+
+a9a2306 Test PHP code on PHP 7 in Travis CI"
+hkdobrev,2016-07-20 18:04:08,https://api.github.com/repos/silexphp/Pimple/git/commits/a9a23066fe3add3576ec9a26c6dd28912c501b70,a9a23066fe3add3576ec9a26c6dd28912c501b70,Test PHP code on PHP 7 in Travis CI
+fabpot,2016-09-10 19:36:25,https://api.github.com/repos/silexphp/Pimple/git/commits/44515c40a4c4effc53c1e6c0e7158f711473dc98,44515c40a4c4effc53c1e6c0e7158f711473dc98,"Merge branch '1.1'
+
+* 1.1:
+  updated LICENSE year"
+fabpot,2016-09-10 19:35:52,https://api.github.com/repos/silexphp/Pimple/git/commits/cae373ff3d87f8763fe78557312ec7f47f5c745c,cae373ff3d87f8763fe78557312ec7f47f5c745c,updated LICENSE year
+fabpot,2016-09-10 19:35:04,https://api.github.com/repos/silexphp/Pimple/git/commits/53afbb6742ac0e8b94c5d4850b2988ce1ee18cc9,53afbb6742ac0e8b94c5d4850b2988ce1ee18cc9,added quote in README for shells that expand ~
+fabpot,2015-09-11 15:11:22,https://api.github.com/repos/silexphp/Pimple/git/commits/64e0f8320639b434baa073a40dd1e037e3286555,64e0f8320639b434baa073a40dd1e037e3286555,bumped version to 3.0.3-DEV
+fabpot,2015-09-11 15:10:35,https://api.github.com/repos/silexphp/Pimple/git/commits/a30f7d6e57565a2e1a316e1baf2a483f788b258a,a30f7d6e57565a2e1a316e1baf2a483f788b258a,prepared the 3.0.2 release
+fabpot,2015-09-11 15:10:06,https://api.github.com/repos/silexphp/Pimple/git/commits/327b9697d8bc126000517429d0e0775701b69488,327b9697d8bc126000517429d0e0775701b69488,updated CHANGELOG
+fabpot,2015-09-11 15:04:22,https://api.github.com/repos/silexphp/Pimple/git/commits/7b317e589c69ecb9b8f56b34897132208b6f0325,7b317e589c69ecb9b8f56b34897132208b6f0325,"minor #185 Set right path for pimple container class (arduanov)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Set right path for pimple container class
+
+Commits
+-------
+
+ba7d6a6 Set right path for pimple container class"
+fabpot,2015-09-11 15:02:43,https://api.github.com/repos/silexphp/Pimple/git/commits/9c66c5d84a7dc4a63a8a3ea061e96e652f4c7099,9c66c5d84a7dc4a63a8a3ea061e96e652f4c7099,removed 5.3 mention in composer.json
+arduanov,2015-08-21 16:20:25,https://api.github.com/repos/silexphp/Pimple/git/commits/ba7d6a69b993eaa8e7ecd73d5ae7689275776d78,ba7d6a69b993eaa8e7ecd73d5ae7689275776d78,Set right path for pimple container class
+fabpot,2015-08-01 06:02:40,https://api.github.com/repos/silexphp/Pimple/git/commits/62b5d317a83b02eea42b5b785b62a29fba458bcf,62b5d317a83b02eea42b5b785b62a29fba458bcf,fixed CS
+fabpot,2015-07-30 15:53:20,https://api.github.com/repos/silexphp/Pimple/git/commits/3fefc20740e90f845bb0c793c8ce9b954ae58111,3fefc20740e90f845bb0c793c8ce9b954ae58111,"minor #182 Little refactor (jpauli)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Little refactor
+
+Commits
+-------
+
+b29807d Little refactor"
+jpauli,2015-07-30 13:51:00,https://api.github.com/repos/silexphp/Pimple/git/commits/b29807d250cd18bff4e9a3560d8652869f61f2ef,b29807d250cd18bff4e9a3560d8652869f61f2ef,Little refactor
+fabpot,2015-07-30 09:57:46,https://api.github.com/repos/silexphp/Pimple/git/commits/3313af5935dbc560fab845b76a1ca351b47855af,3313af5935dbc560fab845b76a1ca351b47855af,"updated CHANGELOG, prepare 3.0.1 release"
+fabpot,2015-07-30 09:56:10,https://api.github.com/repos/silexphp/Pimple/git/commits/bdfb3b3e45133612fadc44aeefcef726bcc68ea6,bdfb3b3e45133612fadc44aeefcef726bcc68ea6,"minor #179 Simplify test for callable (krzysiekpiasecki)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Simplify test for callable
+
+- Closures and other objects implementing __invoke are callable
+- Function method_exists accepts any 'object' parameter
+- Strong typing is coming in php7 for objects
+
+Commits
+-------
+
+b086ef8 Simplify test for callable"
+fabpot,2015-07-30 09:54:21,https://api.github.com/repos/silexphp/Pimple/git/commits/0a3e5dd9e564f56b1b9d3ce2c86ec3a49f1cf7e4,0a3e5dd9e564f56b1b9d3ce2c86ec3a49f1cf7e4,"bug #181 Fix segfault in extension's protect (jbboehr)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Fix segfault in extension's protect
+
+Fixes a segfault in the extension. The function being protected seems to need to have the refcount incremented.
+
+```
+php --version
+PHP 5.5.9-1ubuntu4.11 (cli) (built: Jul  2 2015 15:23:08)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
+    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
+    with Xdebug v2.2.3, Copyright (c) 2002-2013, by Derick Rethans
+```
+
+tests/015.mem
+```
+==32129== Invalid read of size 1
+==32129==    at 0x6DDE55: zval_call_destructor (zend_execute_API.c:203)
+==32129==    by 0x6FBE63: zend_hash_reverse_apply (zend_hash.c:799)
+==32129==    by 0x6DE290: shutdown_destructors (zend_execute_API.c:217)
+==32129==    by 0x6EDD23: zend_call_destructors (zend.c:919)
+==32129==    by 0x68E2A4: php_request_shutdown (main.c:1750)
+==32129==    by 0x79EF49: do_cli (php_cli.c:1177)
+==32129==    by 0x461E0F: main (php_cli.c:1378)
+==32129==  Address 0x77d5b74 is 20 bytes inside a block of size 32 free'd
+==32129==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32129==    by 0x750C508: pimple_bucket_dtor (pimple.c:490)
+==32129==    by 0x6FB977: zend_hash_destroy (zend_hash.c:560)
+==32129==    by 0x750CEE1: pimple_free_object_storage (pimple.c:189)
+==32129==    by 0x715E3B: zend_objects_store_del_ref_by_handle_ex (zend_objects_API.c:226)
+==32129==    by 0x715E62: zend_objects_store_del_ref (zend_objects_API.c:178)
+==32129==    by 0x6DDEBF: _zval_ptr_dtor (zend_variables.h:35)
+==32129==    by 0x6FA334: zend_hash_apply_deleter (zend_hash.c:650)
+==32129==    by 0x6FBE78: zend_hash_reverse_apply (zend_hash.c:804)
+==32129==    by 0x6DE290: shutdown_destructors (zend_execute_API.c:217)
+==32129==    by 0x6EDD23: zend_call_destructors (zend.c:919)
+==32129==    by 0x68E2A4: php_request_shutdown (main.c:1750)
+==32129==
+==32129== Invalid read of size 4
+==32129==    at 0x6DDE62: zval_call_destructor (zend_execute_API.c:203)
+==32129==    by 0x6FBE63: zend_hash_reverse_apply (zend_hash.c:799)
+==32129==    by 0x6DE290: shutdown_destructors (zend_execute_API.c:217)
+==32129==    by 0x6EDD23: zend_call_destructors (zend.c:919)
+==32129==    by 0x68E2A4: php_request_shutdown (main.c:1750)
+==32129==    by 0x79EF49: do_cli (php_cli.c:1177)
+==32129==    by 0x461E0F: main (php_cli.c:1378)
+==32129==  Address 0x77d5b70 is 16 bytes inside a block of size 32 free'd
+==32129==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==32129==    by 0x750C508: pimple_bucket_dtor (pimple.c:490)
+==32129==    by 0x6FB977: zend_hash_destroy (zend_hash.c:560)
+==32129==    by 0x750CEE1: pimple_free_object_storage (pimple.c:189)
+==32129==    by 0x715E3B: zend_objects_store_del_ref_by_handle_ex (zend_objects_API.c:226)
+==32129==    by 0x715E62: zend_objects_store_del_ref (zend_objects_API.c:178)
+==32129==    by 0x6DDEBF: _zval_ptr_dtor (zend_variables.h:35)
+==32129==    by 0x6FA334: zend_hash_apply_deleter (zend_hash.c:650)
+==32129==    by 0x6FBE78: zend_hash_reverse_apply (zend_hash.c:804)
+==32129==    by 0x6DE290: shutdown_destructors (zend_execute_API.c:217)
+==32129==    by 0x6EDD23: zend_call_destructors (zend.c:919)
+==32129==    by 0x68E2A4: php_request_shutdown (main.c:1750)
+
+```
+
+Commits
+-------
+
+8476b1f Fix segfault in extension's protect"
+jbboehr,2015-07-30 00:24:51,https://api.github.com/repos/silexphp/Pimple/git/commits/8476b1f1470d31190a12ef1803e209b756ec83af,8476b1f1470d31190a12ef1803e209b756ec83af,Fix segfault in extension's protect
+krzysiekpiasecki,2015-06-09 22:17:39,https://api.github.com/repos/silexphp/Pimple/git/commits/b086ef8b3c25a931dbb6829bf9e03beff7b06675,b086ef8b3c25a931dbb6829bf9e03beff7b06675,"Simplify test for callable
+
+- Closures and other objects implementing __invoke are callable
+- Function method_exists accepts any 'object' parameter
+- Strong typing is coming in php7 for objects"
+fabpot,2015-05-29 22:13:37,https://api.github.com/repos/silexphp/Pimple/git/commits/976f9b385ff8e850e967ba6dd99071df11488f17,976f9b385ff8e850e967ba6dd99071df11488f17,"minor #178 Update ServiceProviderInterface.php (andreas-weber)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Update ServiceProviderInterface.php
+
+Wording
+
+Commits
+-------
+
+fed785c Update ServiceProviderInterface.php"
+andreas-weber,2015-05-29 18:41:09,https://api.github.com/repos/silexphp/Pimple/git/commits/fed785c882fd53bc2825b70ab12690dcfa2dac70,fed785c882fd53bc2825b70ab12690dcfa2dac70,"Update ServiceProviderInterface.php
+
+Wording"
+fabpot,2015-01-26 16:18:50,https://api.github.com/repos/silexphp/Pimple/git/commits/2bcd90124a31bcf61804b9eb5badb85679469921,2bcd90124a31bcf61804b9eb5badb85679469921,"minor #171 Update license year. (marcusesa)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Update license year.
+
+Commits
+-------
+
+2190fd7 Update license year."
+fabpot,2015-01-26 16:18:30,https://api.github.com/repos/silexphp/Pimple/git/commits/27957e2c9ec109e8ca5cc742ef962736d82aef39,27957e2c9ec109e8ca5cc742ef962736d82aef39,"minor #174 Fix PHP extension installation documentation (kix)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Fix PHP extension installation documentation
+
+I think it would be better if we explicitly add `git clone` and `cd` steps, as finding the extension sources might be not so obvious.
+
+Commits
+-------
+
+895c0d9 Fix PHP extension installation doc"
+kix,2015-01-26 12:12:48,https://api.github.com/repos/silexphp/Pimple/git/commits/895c0d9e0b32656c637c113b5b28c981a7f03e27,895c0d9e0b32656c637c113b5b28c981a7f03e27,Fix PHP extension installation doc
+fabpot,2015-01-16 14:35:03,https://api.github.com/repos/silexphp/Pimple/git/commits/718d503a0047ccaa724d6ee4804a6de8b774fdad,718d503a0047ccaa724d6ee4804a6de8b774fdad,fixed CS
+fabpot,2015-01-16 14:34:23,https://api.github.com/repos/silexphp/Pimple/git/commits/ee8e9eeea0f9310b03cc0f3c2564b54431bc7a4e,ee8e9eeea0f9310b03cc0f3c2564b54431bc7a4e,"minor #173 Fully qualify class name for expectedException in PimpleTest (Dave Hulbert)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Fully qualify class name for expectedException in PimpleTest
+
+As far as I can tell PHPUnit currently doesn't seem to mind if
+you don't import or specify the full namespace for an
+expectedException if it's in the root namespace. This is expected
+as the class name is a string.
+
+This seems the right thing to do though, and is done in other
+places in the test.
+
+Commits
+-------
+
+a0425f8 Fully qualify class name for expectedException in PimpleTest"
+marcusesa,2015-01-04 01:17:31,https://api.github.com/repos/silexphp/Pimple/git/commits/2190fd78093b42bc15ad988a0b848e5ec7cc302b,2190fd78093b42bc15ad988a0b848e5ec7cc302b,Update license year.
+fabpot,2014-11-09 08:04:37,https://api.github.com/repos/silexphp/Pimple/git/commits/08502c02fc490678847f733e0a0b784628033b3a,08502c02fc490678847f733e0a0b784628033b3a,moved to silexphp organization
+fabpot,2014-08-29 17:31:46,https://api.github.com/repos/silexphp/Pimple/git/commits/8156c13d978b98d6b1e6395b9c9f0adc8814c20a,8156c13d978b98d6b1e6395b9c9f0adc8814c20a,partially reverted previous commit
+fabpot,2014-08-29 17:30:30,https://api.github.com/repos/silexphp/Pimple/git/commits/a2bc5bb8adb3f630d8dff161ba51e4416801ab67,a2bc5bb8adb3f630d8dff161ba51e4416801ab67,"bug #155 Test fluent register interface and fix c extension (henrikbjorn)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Test fluent register interface and fix c extension
+
+this should fix the issue with the c extension not returning self. Fixes #154
+
+Commits
+-------
+
+5f98b55 Test fluent register interface and fix c extension"
+fabpot,2014-08-29 17:23:39,https://api.github.com/repos/silexphp/Pimple/git/commits/df5ecb5e0aeda391f914f7725c476791e4eeff27,df5ecb5e0aeda391f914f7725c476791e4eeff27,"bug #157 Fix #154, register() is fluent in C pimple (jpauli)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+Fix #154, register() is fluent in C pimple
+
+Commits
+-------
+
+b141399 Fix #154, register() is fluent in C pimple"
+jpauli,2014-08-29 16:26:51,https://api.github.com/repos/silexphp/Pimple/git/commits/b14139986a43c93106458b5de4bdb809fbd583fe,b14139986a43c93106458b5de4bdb809fbd583fe,"Fix #154, register() is fluent in C pimple"
+henrikbjorn,2014-08-27 14:01:35,https://api.github.com/repos/silexphp/Pimple/git/commits/5f98b558f423c7c88910475928a10ebf79289cfa,5f98b558f423c7c88910475928a10ebf79289cfa,Test fluent register interface and fix c extension
+fabpot,2014-07-29 17:32:26,https://api.github.com/repos/silexphp/Pimple/git/commits/3764c3985684ad6af4ad3c7d2e0595f9f09faf5f,3764c3985684ad6af4ad3c7d2e0595f9f09faf5f,"minor #152 README.rst : Correct a missing closing parenthesis (andylibrian)
+
+This PR was merged into the 3.0.x-dev branch.
+
+Discussion
+----------
+
+README.rst : Correct a missing closing parenthesis
+
+I just noticed that an example on the README was missing a closing parentheses. Thanks.
+
+Commits
+-------
+
+c15b3c3 README.rst : Correct a missing closing parenthesis"
+andylibrian,2014-07-29 16:21:41,https://api.github.com/repos/silexphp/Pimple/git/commits/c15b3c340f64b3c676b9fffac68c09f0859c2405,c15b3c340f64b3c676b9fffac68c09f0859c2405,README.rst : Correct a missing closing parenthesis
+fabpot,2014-07-24 09:48:55,https://api.github.com/repos/silexphp/Pimple/git/commits/0812d715d521d7582a0706514d2803e838b819c2,0812d715d521d7582a0706514d2803e838b819c2,bumped version to 3.0.1-DEV
+fabpot,2014-07-24 09:48:15,https://api.github.com/repos/silexphp/Pimple/git/commits/876bf0899d01feacd2a2e83f04641e51350099ef,876bf0899d01feacd2a2e83f04641e51350099ef,prepare 3.0.0 release
+fabpot,2014-07-24 08:52:58,https://api.github.com/repos/silexphp/Pimple/git/commits/35a9262e7b524fe0945233962ddd229c9b6224e4,35a9262e7b524fe0945233962ddd229c9b6224e4,moved tests under src/
+fabpot,2014-07-24 07:13:11,https://api.github.com/repos/silexphp/Pimple/git/commits/8dafa9407b474339546c176ba1657ef6ec4c553b,8dafa9407b474339546c176ba1657ef6ec4c553b,bumped version to 3.0.0
+fabpot,2014-07-24 07:10:08,https://api.github.com/repos/silexphp/Pimple/git/commits/ea22fb2880faf7b7b0e17c9809c6fe25b071fd76,ea22fb2880faf7b7b0e17c9809c6fe25b071fd76,prepare 2.1.1 release
+fabpot,2014-07-24 07:07:22,https://api.github.com/repos/silexphp/Pimple/git/commits/3d8ce4046181c04965320aa40cb5b53db36d7736,3d8ce4046181c04965320aa40cb5b53db36d7736,updated CHANGELOG
+fabpot,2014-07-23 12:55:07,https://api.github.com/repos/silexphp/Pimple/git/commits/87740e3af5fad3972fb6186fdd43c369d55d52b0,87740e3af5fad3972fb6186fdd43c369d55d52b0,"minor #150 Fix compiler warnings (jpauli)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+Fix compiler warnings
+
+Commits
+-------
+
+c9d5cab Fix compiler warnings"
+jpauli,2014-07-23 12:49:47,https://api.github.com/repos/silexphp/Pimple/git/commits/c9d5cab69c1b47ba14e843b00f42dc67457d33e6,c9d5cab69c1b47ba14e843b00f42dc67457d33e6,Fix compiler warnings
+fabpot,2014-07-15 06:25:58,https://api.github.com/repos/silexphp/Pimple/git/commits/8ac98abd7513dac79bed367c709658fe77b9e5c2,8ac98abd7513dac79bed367c709658fe77b9e5c2,"bug #147 fixed code when dealing with circular references (fabpot)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+fixed code when dealing with circular references
+
+Fix for #120 (thanks @davedevelopment). At least, it's behaving ""correctly"" when there is a circular reference. Not sure if this is worth fixing, but that would make the PHP and C implementations behave in the same way as the C version already segfaults in such a case.
+
+Commits
+-------
+
+52f5d09 fixed code when dealing with circular references"
+fabpot,2014-07-13 08:59:48,https://api.github.com/repos/silexphp/Pimple/git/commits/c4d56ed5cfafcf0278e0a355d8925904dc0f931d,c4d56ed5cfafcf0278e0a355d8925904dc0f931d,fixed Travis config for C tests
+fabpot,2014-07-13 08:48:04,https://api.github.com/repos/silexphp/Pimple/git/commits/6406c7937588e269b887865c2856c9cde90fdc37,6406c7937588e269b887865c2856c9cde90fdc37,"minor #146 fixed C tests (fabpot)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+fixed C tests
+
+closes #131
+
+Commits
+-------
+
+a26b44f fixed C tests"
+fabpot,2014-07-12 17:18:55,https://api.github.com/repos/silexphp/Pimple/git/commits/a26b44f89415785b61645e032be23c0deb90e214,a26b44f89415785b61645e032be23c0deb90e214,fixed C tests
+fabpot,2014-07-12 18:22:25,https://api.github.com/repos/silexphp/Pimple/git/commits/5b9e03e1fdc508dbba1f36bee4be335830de650a,5b9e03e1fdc508dbba1f36bee4be335830de650a,fixed changelog
+fabpot,2014-07-12 17:32:39,https://api.github.com/repos/silexphp/Pimple/git/commits/aedb593dc6904df53370d6f116196a5130f989bc,aedb593dc6904df53370d6f116196a5130f989bc,"minor #145 rewrote the README file (fabpot)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+rewrote the README file
+
+closes #126
+
+Commits
+-------
+
+c572305 rewrote the README file"
+fabpot,2014-07-12 17:19:20,https://api.github.com/repos/silexphp/Pimple/git/commits/52f5d0969c998aa5ca7156e6ffb45eb610e235dc,52f5d0969c998aa5ca7156e6ffb45eb610e235dc,fixed code when dealing with circular references
+fabpot,2014-07-12 16:33:01,https://api.github.com/repos/silexphp/Pimple/git/commits/c5723054beb7a1e19fe0ed6a55e65c3424ad6e2a,c5723054beb7a1e19fe0ed6a55e65c3424ad6e2a,rewrote the README file
+fabpot,2014-06-26 14:39:39,https://api.github.com/repos/silexphp/Pimple/git/commits/6a18683f5f52c7eff442812b48122d21d44fbddb,6a18683f5f52c7eff442812b48122d21d44fbddb,"minor #141 Reworded headline (WouterJ)
+
+This PR was squashed before being merged into the 2.1.x-dev branch (closes #141).
+
+Discussion
+----------
+
+Reworded headline
+
+Imo, ""Creation"" happends when you first retrieve a service from the container, in this section it's about `Definition` instead
+
+Commits
+-------
+
+fa90cc5 Reworded headline"
+wouterj,2014-06-26 08:04:10,https://api.github.com/repos/silexphp/Pimple/git/commits/fa90cc5667a3f2a83b452dec013c3e0710c9b113,fa90cc5667a3f2a83b452dec013c3e0710c9b113,Reworded headline
+fabpot,2014-06-24 06:42:49,https://api.github.com/repos/silexphp/Pimple/git/commits/175904c2d78972d2c1f89391e835a54ac02f94b9,175904c2d78972d2c1f89391e835a54ac02f94b9,bumped version to 2.1.1
+fabpot,2014-05-01 10:34:00,https://api.github.com/repos/silexphp/Pimple/git/commits/90b4710f115766d12e1a579b816c0974887b87a7,90b4710f115766d12e1a579b816c0974887b87a7,"minor #133 Updated license year (leettastic)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+Updated license year
+
+Commits
+-------
+
+795f6a3 Updated license year"
+leettastic,2014-05-01 10:19:30,https://api.github.com/repos/silexphp/Pimple/git/commits/795f6a3b007d9dd31bd6f2988b3b11c0b6511117,795f6a3b007d9dd31bd6f2988b3b11c0b6511117,Updated license year
+fabpot,2014-05-01 06:59:03,https://api.github.com/repos/silexphp/Pimple/git/commits/1d9c939ac814bc2cc42fb6376f4f47a04e645289,1d9c939ac814bc2cc42fb6376f4f47a04e645289,fixed README markup
+fabpot,2014-05-01 06:58:12,https://api.github.com/repos/silexphp/Pimple/git/commits/d8600f74175b489d0dbdf3df3664fd1f4637a456,d8600f74175b489d0dbdf3df3664fd1f4637a456,added instructions about how to install the C extension
+fabpot,2014-05-01 06:53:02,https://api.github.com/repos/silexphp/Pimple/git/commits/25f8cb0379e931772e37b18905496c700bf84ca4,25f8cb0379e931772e37b18905496c700bf84ca4,updated the README to use composer for installation
+fabpot,2014-05-01 06:45:00,https://api.github.com/repos/silexphp/Pimple/git/commits/43c830951d5cd7ec909c554f165b785c82960107,43c830951d5cd7ec909c554f165b785c82960107,"minor #129 Made the phpt tests report a failure exit code (stof)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+Made the phpt tests report a failure exit code
+
+Without the REPORT_EXIT_STATUS environment variable, running phpt tests on the extension will always report a success exit code, which does not make the build fail on failure
+
+Commits
+-------
+
+8fa404c Made the phpt tests report a failure exit code"
+stof,2014-04-29 16:58:25,https://api.github.com/repos/silexphp/Pimple/git/commits/8fa404c8f711570e2687e9c732597f098315cda8,8fa404c8f711570e2687e9c732597f098315cda8,"Made the phpt tests report a failure exit code
+
+Without the REPORT_EXIT_STATUS environment variable, running phpt tests on the extension will always report a success exit code, which does not make the build fail on failure"
+fabpot,2014-04-29 13:51:53,https://api.github.com/repos/silexphp/Pimple/git/commits/9b3f4ac670b37d8724032713e824115fae7c3221,9b3f4ac670b37d8724032713e824115fae7c3221,"feature #121 Pimple C extension (jpauli)
+
+This PR was merged into the 2.1.x-dev branch.
+
+Discussion
+----------
+
+Pimple C extension
+
+Pimple C extension
+
+Commits
+-------
+
+f0fc45c Pimple C extension"
+jpauli,2013-11-07 16:36:16,https://api.github.com/repos/silexphp/Pimple/git/commits/f0fc45cebf122cc38bb6a19da17978ad4611b9e3,f0fc45cebf122cc38bb6a19da17978ad4611b9e3,Pimple C extension
+fabpot,2014-04-29 12:15:50,https://api.github.com/repos/silexphp/Pimple/git/commits/22f11ba1341678e4ff65d1b24d9515134bcd74d2,22f11ba1341678e4ff65d1b24d9515134bcd74d2,migrated everything to Pimple\Container
+fabpot,2014-04-29 10:11:19,https://api.github.com/repos/silexphp/Pimple/git/commits/61a3b3b4f2c4888462ca44e54dbf9a908d38d87c,61a3b3b4f2c4888462ca44e54dbf9a908d38d87c,"feature #124 add service provider interface (dominikzogg, fabpot)
+
+This PR was merged into the 2.0.x-dev branch.
+
+Discussion
+----------
+
+add service provider interface
+
+finished #123
+
+Commits
+-------
+
+fd6ab9a created a sub-namespaces for Fixtures in tests
+32b79eb removed obsolete @package annotations
+0ab4f51 updated docs for 2.1
+c67c27a removed the bootstrap file for tests
+40b099a moved lib/ to src/
+a895667 updated CHANGELOG
+9b769de add service provider interface
+a8625ba bumped version to 2.1"
+fabpot,2014-04-29 06:15:37,https://api.github.com/repos/silexphp/Pimple/git/commits/fd6ab9a0eeea4ac066a8c8d8195ce3daf8aadb94,fd6ab9a0eeea4ac066a8c8d8195ce3daf8aadb94,created a sub-namespaces for Fixtures in tests
+fabpot,2014-04-29 06:09:44,https://api.github.com/repos/silexphp/Pimple/git/commits/32b79ebd4fe454be244cea7b8480a623b81c03f2,32b79ebd4fe454be244cea7b8480a623b81c03f2,removed obsolete @package annotations
+fabpot,2014-04-29 06:02:47,https://api.github.com/repos/silexphp/Pimple/git/commits/0ab4f51f12037927702ce0a86b063de2fa708e09,0ab4f51f12037927702ce0a86b063de2fa708e09,updated docs for 2.1
+fabpot,2014-04-29 05:52:03,https://api.github.com/repos/silexphp/Pimple/git/commits/c67c27ac309c8a6ff9e321201ff670a416318449,c67c27ac309c8a6ff9e321201ff670a416318449,removed the bootstrap file for tests
+fabpot,2014-04-29 05:51:44,https://api.github.com/repos/silexphp/Pimple/git/commits/40b099ade49d03c9f4910160c1d664af02546e24,40b099ade49d03c9f4910160c1d664af02546e24,moved lib/ to src/
+fabpot,2014-04-29 05:46:57,https://api.github.com/repos/silexphp/Pimple/git/commits/a895667b4f37c89f3e97f3245a9a305414269a93,a895667b4f37c89f3e97f3245a9a305414269a93,updated CHANGELOG
+dominikzogg,2014-04-27 22:21:55,https://api.github.com/repos/silexphp/Pimple/git/commits/9b769dec134c30af32075e0e51191a41da524939,9b769dec134c30af32075e0e51191a41da524939,add service provider interface
+fabpot,2014-04-29 06:03:54,https://api.github.com/repos/silexphp/Pimple/git/commits/a8625bad94d886ba2b77935e4fb621471421bb23,a8625bad94d886ba2b77935e4fb621471421bb23,bumped version to 2.1
+fabpot,2014-04-20 07:26:52,https://api.github.com/repos/silexphp/Pimple/git/commits/e8b5fe6f7782d72a70d444798cdeaf1fb611ea8b,e8b5fe6f7782d72a70d444798cdeaf1fb611ea8b,"minor #116 Root namespace for exceptions (vlakarados)
+
+This PR was merged into the 2.0.x-dev branch.
+
+Discussion
+----------
+
+Root namespace for exceptions
+
+Prepend `\` (backslash) to all PHP built-in classes for those who namespace the library.
+
+This is quite necessary as while developing it's possible not stumble upon exceptions and this will kill production with an uncaught exception, which has a great chance because this library is mainly used in the core of the application where `try/catch` is used rarely.
+
+Commits
+-------
+
+fac4177 Root namespace for exceptions"
+fabpot,2014-04-20 07:24:32,https://api.github.com/repos/silexphp/Pimple/git/commits/e1d4c24a7d01915508804fd034931ba1f83488cc,e1d4c24a7d01915508804fd034931ba1f83488cc,"Merge branch '1.1'
+
+* 1.1:
+  Added PHP 5.6 and HHVM to travis."
+fabpot,2014-04-20 07:24:09,https://api.github.com/repos/silexphp/Pimple/git/commits/bc2fc12cdf1f29bcad9e650d493a54a8fd1f3d85,bc2fc12cdf1f29bcad9e650d493a54a8fd1f3d85,"minor #118 Added PHP 5.6 and HHVM to travis. (h4cc)
+
+This PR was merged into the 1.1 branch.
+
+Discussion
+----------
+
+Added PHP 5.6 and HHVM to travis.
+
+Build and tests still run :)
+
+Commits
+-------
+
+9c2d6d1 Added PHP 5.6 and HHVM to travis."
+h4cc,2014-04-12 09:06:45,https://api.github.com/repos/silexphp/Pimple/git/commits/9c2d6d176e8b04d148ae8986c1a91f29ecb64dbc,9c2d6d176e8b04d148ae8986c1a91f29ecb64dbc,Added PHP 5.6 and HHVM to travis.
+vlakarados,2014-04-02 12:32:25,https://api.github.com/repos/silexphp/Pimple/git/commits/fac4177de87c243fe1c0eab4d2f10932c27694bc,fac4177de87c243fe1c0eab4d2f10932c27694bc,"Root namespace for exceptions
+
+Prepend backslash to all PHP built-in classes for those who namespace the library."
+fabpot,2014-03-06 16:54:55,https://api.github.com/repos/silexphp/Pimple/git/commits/a9e94d9fd6cb9e8f097551a25ffec73ff2480a24,a9e94d9fd6cb9e8f097551a25ffec73ff2480a24,"minor #112 use of keys prop for isset() check of services/values (raphahardt)
+
+This PR was merged into the 2.0.x-dev branch.
+
+Discussion
+----------
+
+use of keys prop for isset() check of services/values
+
+Why not just use the keys prop for check if a service/value exists in Pimple?
+
+Commits
+-------
+
+e2b05ce use of keys prop for isset() check of services/values"
+raphahardt,2014-03-05 14:23:09,https://api.github.com/repos/silexphp/Pimple/git/commits/e2b05ce6ae32873662f6df09206cf4f69aad60e9,e2b05ce6ae32873662f6df09206cf4f69aad60e9,use of keys prop for isset() check of services/values
+fabpot,2014-02-11 08:54:01,https://api.github.com/repos/silexphp/Pimple/git/commits/30651c5b19e1ec24e26d33c1600fc09ea3802f7a,30651c5b19e1ec24e26d33c1600fc09ea3802f7a,fixed missing property
+fabpot,2014-02-10 08:05:32,https://api.github.com/repos/silexphp/Pimple/git/commits/f99b3df12991c22463927aa6a18fd9b2212917f2,f99b3df12991c22463927aa6a18fd9b2212917f2,removed the mention of PHP 5.3 as 5.2 is very outdated now
+fabpot,2014-02-10 07:58:56,https://api.github.com/repos/silexphp/Pimple/git/commits/dc045cf355eaad8b0d9b87cf7ef9c59875bec8ba,dc045cf355eaad8b0d9b87cf7ef9c59875bec8ba,fixed a memory leak
+fabpot,2014-02-10 07:47:59,https://api.github.com/repos/silexphp/Pimple/git/commits/4b3989f576d5c9cdd9bf19bfb0e583459a2e537e,4b3989f576d5c9cdd9bf19bfb0e583459a2e537e,"minor #99 fix phpdoc (dominikzogg)
+
+This PR was merged into the 2.0.x-dev branch.
+
+Discussion
+----------
+
+fix phpdoc
+
+Commits
+-------
+
+d8d01f9 fix phpdoc"
+fabpot,2014-02-10 07:45:20,https://api.github.com/repos/silexphp/Pimple/git/commits/0be105f528e000130b440525de9a9351353b6e5b,0be105f528e000130b440525de9a9351353b6e5b,updated the README file to make things clearer between 1.x and 2.x
+fabpot,2014-02-03 08:30:25,https://api.github.com/repos/silexphp/Pimple/git/commits/457742085939b5d095f2a0bba9fed023da9a57be,457742085939b5d095f2a0bba9fed023da9a57be,removed share() as it gives a false sense of compatibility between 1.x and 2.x
+dominikzogg,2013-12-09 08:40:59,https://api.github.com/repos/silexphp/Pimple/git/commits/d8d01f93c72807d1961a405158bc3ba4a74e4e19,d8d01f93c72807d1961a405158bc3ba4a74e4e19,fix phpdoc
+fabpot,2013-11-30 15:29:54,https://api.github.com/repos/silexphp/Pimple/git/commits/dc03a407f20cbd4eaf55472875ad47ee96d921ea,dc03a407f20cbd4eaf55472875ad47ee96d921ea,"minor #98 Calling the parent constructor is required in Pimple 2.0. (gigr)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Calling the parent constructor is required in Pimple 2.0.
+
+Commits
+-------
+
+3a4d240 Calling the parent constructor is required in Pimple 2.0."
+fabpot,2013-11-30 15:29:32,https://api.github.com/repos/silexphp/Pimple/git/commits/f35df0c1e473a024cfc324ea032d7a44efef420b,f35df0c1e473a024cfc324ea032d7a44efef420b,"bug #97 Allow setting protected and factory services inside the constructor. (gigr)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Allow setting protected and factory services inside the constructor.
+
+Fixes the following scenario.
+
+```php
+
+class Foo extends Pimple
+{
+    public function __construct()
+    {
+        parent::__construct([
+            // $this->protect(), while callable, does not yet have
+            // $this->protected initialized, so it blows up.
+            'bar' => $this->protect(function () {
+                 return 'Hi, Fabien!';
+             }),
+        ]);
+    }
+}
+
+$foo = new Foo(); // kersplode!
+```
+
+This has no effect when constructing a bare Pimple object, since you cannot call `protect()` without first fully instantiating the object.
+
+```php
+$pimple = new Pimple([
+    // $pimple->protect() is obviously not callable here since
+    // the object isn't fully constructed.
+]);
+```
+
+I'm going to send another PR for fixing the documentation. The section about packaging a container for reusability is incorrect since it suggests that you do not need to call the parent constructor (you totally do in Pimple 2.0).
+
+Commits
+-------
+
+fc50725 Allow setting protected and factory services inside the constructor."
+gigr,2013-11-30 15:11:11,https://api.github.com/repos/silexphp/Pimple/git/commits/3a4d24073265bcf71ed388be5a955e368c169716,3a4d24073265bcf71ed388be5a955e368c169716,Calling the parent constructor is required in Pimple 2.0.
+gigr,2013-11-30 15:07:17,https://api.github.com/repos/silexphp/Pimple/git/commits/fc50725c1b435b56689bce9e4cd9a72b6e8439ae,fc50725c1b435b56689bce9e4cd9a72b6e8439ae,"Allow setting protected and factory services inside the constructor.
+
+Fixes the following scenario. 
+
+```php
+
+class Foo extends Pimple
+{
+    public function __construct()
+    {
+        parent::__construct([
+            // $this->protect(), while callable, does not have
+            // $this->protected initialized yet, so it blows up.
+            'bar' => $this->protect(function () {
+                 return 'Hi, Fabien!';
+             }),
+        ]);
+    }
+}
+
+$foo = new Foo(); // kersplode!
+```
+
+This has no effect when constructing a bare Pimple object, since you cannot call `protect()` without first fully instantiating the object.
+
+```php
+$pimple = new Pimple([
+    // $pimple->protect() is obviously not callable here since
+    // the object isn't fully constructed.
+]);
+```
+
+I'm going to send another PR for fixing the documentation. The section about packaging a container for reusability is incorrect since it suggests that you do not need to call the parent constructor (you totally do in Pimple 2.0)."
+fabpot,2013-11-22 08:33:47,https://api.github.com/repos/silexphp/Pimple/git/commits/bd842675ad1c32f606ac6e572d46a780cdfdf6da,bd842675ad1c32f606ac6e572d46a780cdfdf6da,unified @return and @param tags
+fabpot,2013-11-22 08:32:19,https://api.github.com/repos/silexphp/Pimple/git/commits/d6d36c3069d33894859274a69fab7d7af2cc7d81,d6d36c3069d33894859274a69fab7d7af2cc7d81,"Merge branch '1.1'
+
+* 1.1:
+  fix doc blocks
+
+Conflicts:
+	lib/Pimple.php"
+fabpot,2013-11-22 08:30:29,https://api.github.com/repos/silexphp/Pimple/git/commits/2019c145fe393923f3441b23f29bbdfaa5c58c4d,2019c145fe393923f3441b23f29bbdfaa5c58c4d,"minor #93 fix doc blocks (Sorien)
+
+This PR was submitted for the master branch but it was merged into the 1.1 branch instead (closes #93).
+
+Discussion
+----------
+
+fix doc blocks
+
+prevent IDE (as PhpStorm) to mark `$app['foo'] = $app->protect(function () ... );` as `Expected object, got callable`
+
+Commits
+-------
+
+757e766 fix doc blocks"
+fabpot,2013-11-14 08:09:47,https://api.github.com/repos/silexphp/Pimple/git/commits/9cb15c608ff9283a7017ce33c4a64d09cf27cb12,9cb15c608ff9283a7017ce33c4a64d09cf27cb12,"feature #94 Performance optimization (annesosensio)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Performance optimization
+
+Commits
+-------
+
+11debc8 Performance optimization"
+annesosensio,2013-11-13 17:36:06,https://api.github.com/repos/silexphp/Pimple/git/commits/11debc827d212b4116155abc578f80828713dc64,11debc827d212b4116155abc578f80828713dc64,Performance optimization
+fabpot,2013-11-13 13:35:01,https://api.github.com/repos/silexphp/Pimple/git/commits/8d584e77bc125250b12c350e4d7b58da8fdd97d8,8d584e77bc125250b12c350e4d7b58da8fdd97d8,moved values to private as people can mess things up by using it directly
+fabpot,2013-11-12 21:06:05,https://api.github.com/repos/silexphp/Pimple/git/commits/0a8dfb8ce74f7f05f7421cd19e3f710463bad39b,0a8dfb8ce74f7f05f7421cd19e3f710463bad39b,moved protected properties to private
+fabpot,2013-11-12 20:51:54,https://api.github.com/repos/silexphp/Pimple/git/commits/26cfc99da4949e3ba0c9f11dc210bcdd5b6e2cb5,26cfc99da4949e3ba0c9f11dc210bcdd5b6e2cb5,"feature #92 optimized performance ... a lot (fabpot)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+optimized performance ... a lot
+
+performance improvement when dealing with shared services:
+
+get() calls are 6x faster
+set() calls are 3x faster
+
+Commits
+-------
+
+c94869c optimized performance ... a lot"
+fabpot,2013-11-12 18:35:24,https://api.github.com/repos/silexphp/Pimple/git/commits/c94869c7396d1617f6191435f0f5828cec40b036,c94869c7396d1617f6191435f0f5828cec40b036,"optimized performance ... a lot
+
+get() calls are 6x faster
+set() calls are 3x faster"
+fabpot,2013-11-12 06:03:01,https://api.github.com/repos/silexphp/Pimple/git/commits/a3572e001f43ab90b3cabdfab6a5b742c8fee4cd,a3572e001f43ab90b3cabdfab6a5b742c8fee4cd,added @deprecated tag to Pimple::share()
+fabpot,2013-11-11 20:02:23,https://api.github.com/repos/silexphp/Pimple/git/commits/86e2ad291e44f47532e69925fde6cd812c473fb5,86e2ad291e44f47532e69925fde6cd812c473fb5,"minor #91 Fugbix typo. (whatthejeff)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Fugbix typo.
+
+Commits
+-------
+
+7d6a1bf Fugbix typo."
+whatthejeff,2013-11-11 19:53:56,https://api.github.com/repos/silexphp/Pimple/git/commits/7d6a1bf42a5b34d9c3250c2e92ee228bf4a1aac6,7d6a1bf42a5b34d9c3250c2e92ee228bf4a1aac6,Fugbix typo.
+fabpot,2013-11-11 18:51:08,https://api.github.com/repos/silexphp/Pimple/git/commits/120df7ff59576bdaec0ce57e53d7aaa064f2727c,120df7ff59576bdaec0ce57e53d7aaa064f2727c,added a CHANGELOG
+fabpot,2013-11-11 18:21:11,https://api.github.com/repos/silexphp/Pimple/git/commits/f97ffadd6cbe47eb1fce45a66e3ffac78cb1d17c,f97ffadd6cbe47eb1fce45a66e3ffac78cb1d17c,"minor #90 Added syntax highlighting. (whatthejeff)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Added syntax highlighting.
+
+Commits
+-------
+
+0975d86 Added syntax highlighting."
+fabpot,2013-11-11 18:19:29,https://api.github.com/repos/silexphp/Pimple/git/commits/f524b9f2b7c3ee7761b3e5e763b905ef0d2b5d6a,f524b9f2b7c3ee7761b3e5e763b905ef0d2b5d6a,"minor #89 Fugbix typo. (whatthejeff)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Fugbix typo.
+
+Commits
+-------
+
+95f020a Fugbix typo."
+fabpot,2013-11-11 18:18:48,https://api.github.com/repos/silexphp/Pimple/git/commits/4679cb97f5a84dc5fb6a8d25764cdd4b1fd0f6ae,4679cb97f5a84dc5fb6a8d25764cdd4b1fd0f6ae,"feature #88 [2.0] changed extend to automatically re-assign the extended service and keep it as shared or factory (fabpot)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+[2.0] changed extend to automatically re-assign the extended service and keep it as shared or factory
+
+alternative to #87
+
+Commits
+-------
+
+382678c changed extend to automatically re-assign the extended service and keep it as shared or factory"
+fabpot,2013-11-11 18:17:16,https://api.github.com/repos/silexphp/Pimple/git/commits/8af0166958971e42f704b7d5f2c48b8b59006147,8af0166958971e42f704b7d5f2c48b8b59006147,"feature #84 [2.0] Frozen container after first service access (igorw)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+[2.0] Frozen container after first service access
+
+A big issue with pimple is that you can instantiate services and then re-
+define the factories that produced dependencies of those services, leading
+to inconsistent results.
+
+An example:
+
+ * foo depends on baz
+ * bar depends on baz
+
+foo and baz are defined, foo is accessed. baz is re-defined, bar is defined.
+Although both foo and bar depend on baz, they got a different version of it.
+
+A way to fix this problem is to freeze the container when the first service
+is accessed. After the freeze you can still define new services and
+parameters, but you cannot override existing ones.
+
+In case you really must re-define a service, you can explicitly unset it,
+but that is bad practice and should be avoided.
+
+This is a BC break, as such it targets pimple 2.0.
+
+Commits
+-------
+
+c5426eb Frozen container after first service access"
+whatthejeff,2013-11-11 14:56:29,https://api.github.com/repos/silexphp/Pimple/git/commits/0975d8639294a180e92b00651cdd6037dfe0f04a,0975d8639294a180e92b00651cdd6037dfe0f04a,Added syntax highlighting.
+whatthejeff,2013-11-11 14:20:06,https://api.github.com/repos/silexphp/Pimple/git/commits/95f020a9655dc569bbfcb08abe9ebe4dffb37914,95f020a9655dc569bbfcb08abe9ebe4dffb37914,Fugbix typo.
+igorw,2013-11-10 19:08:38,https://api.github.com/repos/silexphp/Pimple/git/commits/c5426eb2abddb425d2613369e9de15837c851fd3,c5426eb2abddb425d2613369e9de15837c851fd3,"Frozen container after first service access
+
+A big issue with pimple is that you can instantiate services and then re-
+define the factories that produced dependencies of those services, leading
+to inconsistent results.
+
+An example:
+
+ * foo depends on baz
+ * bar depends on baz
+
+foo and baz are defined, foo is accessed. baz is re-defined, bar is defined.
+Although both foo and bar depend on baz, they got a different version of it.
+
+A way to fix this problem is to freeze the container when the first service
+is accessed. After the freeze you can still define new services and
+parameters, but you cannot override existing ones.
+
+This freezing happens on a per-service basis.
+
+In case you really must re-define a service, you can explicitly unset it,
+but that is bad practice and should be avoided.
+
+This is a BC break, as such it targets pimple 2.0."
+fabpot,2013-11-11 10:20:31,https://api.github.com/repos/silexphp/Pimple/git/commits/382678c32845e583f2084dd737aa81ce5106a5cb,382678c32845e583f2084dd737aa81ce5106a5cb,changed extend to automatically re-assign the extended service and keep it as shared or factory
+fabpot,2013-11-11 11:52:38,https://api.github.com/repos/silexphp/Pimple/git/commits/bfce1174ac133bfcdb13e1e98d57e0e607a2737a,bfce1174ac133bfcdb13e1e98d57e0e607a2737a,"feature #86 [2.0] renamed prototype to factory (fabpot)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+[2.0] renamed prototype to factory
+
+The only valid usage for the `prototype` type of services is factories. So, I'd like to rename prototype to factory in the code to make things easier to understand.
+
+Commits
+-------
+
+6d6925b renamed prototype to factory"
+fabpot,2013-11-11 10:23:24,https://api.github.com/repos/silexphp/Pimple/git/commits/6d6925b43bf34eb06b4b93fd0e02e1a12ed7bdeb,6d6925b43bf34eb06b4b93fd0e02e1a12ed7bdeb,renamed prototype to factory
+fabpot,2013-11-11 07:48:47,https://api.github.com/repos/silexphp/Pimple/git/commits/352ed5ae634e09d906bb1667c5b488aae5427d29,352ed5ae634e09d906bb1667c5b488aae5427d29,"feature #83 [2.0] changed services to be shared by default (fabpot)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+[2.0] changed services to be shared by default
+
+Now that we have several years of experience using Pimple, I think everyone agrees that having to call `share` everytime you need to define a service is cumbersome. And it is even error-prone when calling `extend` as one needs to call `share` again.
+
+#62 proposes a shortcut for the extend use case, but I want to go one step further in Pimple 2.0: remove the need to call `share` altogether.
+
+The reasoning is quite simple: services are 99.9% shared (I don't even have an example for a prototype service).
+
+So, this PR makes closure shared by default. If you need to define a prototype service, call `prototype`.
+
+This change is almost backward compatible as the `share` method is kept as a no-op method. The only BC break is if you have a prototype service in which case you need to wrap it with a `prototype` call.
+
+Of course, Pimple 2.0 will be used in Silex 2.0, which will make things much easier to read and shorter.
+
+TODO:
+
+ - [x] update docs and website for 2.0
+
+Commits
+-------
+
+e5309ac changed services to be shared by default"
+fabpot,2013-11-10 16:46:14,https://api.github.com/repos/silexphp/Pimple/git/commits/e5309ac85979a58678bd0fa2d2394eec21f256d7,e5309ac85979a58678bd0fa2d2394eec21f256d7,changed services to be shared by default
+fabpot,2013-09-19 04:53:08,https://api.github.com/repos/silexphp/Pimple/git/commits/471c7d7c52ad6594e17b8ec33efdd1be592b5d83,471c7d7c52ad6594e17b8ec33efdd1be592b5d83,"merged branch carlosbuenosvinos/patch-2 (PR #80)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Remove space between testConstructorInjection and braces
+
+Commits
+-------
+
+540a301 Remove space between testConstructorInjection and braces"
+fabpot,2013-09-19 04:51:44,https://api.github.com/repos/silexphp/Pimple/git/commits/2566236a94f229adef406ddd7b094b201802361f,2566236a94f229adef406ddd7b094b201802361f,"merged branch carlosbuenosvinos/patch-1 (PR #79)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Remove space between constructor and its parameters
+
+Commits
+-------
+
+a8131ef Remove space between constructor and its parameters"
+fabpot,2013-08-29 06:29:11,https://api.github.com/repos/silexphp/Pimple/git/commits/dd112b96b5836f896b01d344c85de1ed7140c334,dd112b96b5836f896b01d344c85de1ed7140c334,bumped Pimple version
+fabpot,2013-08-29 06:26:01,https://api.github.com/repos/silexphp/Pimple/git/commits/26d3c773c9ce63ba08a58530ce080a22743559ca,26d3c773c9ce63ba08a58530ce080a22743559ca,"merged branch whatthejeff/invokables (PR #65)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Alternative to PR #61
+
+This PR is a continuation of a419262.  It allows invokable objects to be shared, extended, and protected.  The unit tests have been updated (where applicable) to use data providers to ensure that invokable objects work in all situations where Closures work.
+
+Unlike #61, this PR contains no major refactoring.
+
+Commits
+-------
+
+294533b Allow invokable objects to be shared, extended, and protected."
+fabpot,2013-03-08 08:21:40,https://api.github.com/repos/silexphp/Pimple/git/commits/ae11e57e8c2bb414b2ff93396dbbfc0eb92feb94,ae11e57e8c2bb414b2ff93396dbbfc0eb92feb94,"merged branch mvriel/patch-1 (PR #56)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+53ec09c Initialize property for serializers
+
+Discussion
+----------
+
+Initialize property for serializers
+
+Serializers and test frameworks skip the constructor using
+serialization tricks. This means that if an empty Pimple instance is
+serialized and later deserialized that the $values property contains
+'null'. This breaks offsetExists() and several other locations that
+assume the $values property contains an array.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-12-18T01:36:38Z
+
+Serializing a pimple instance? Sounds scary.
+
+Btw, see also #54 which is a superset of this PR.
+
+---------------------------------------------------------------------------
+
+by stof at 2012-12-18T10:01:06Z
+
+Yeah, Pimple is meant to contain closures so serializing it sounds really scary
+
+---------------------------------------------------------------------------
+
+by mvriel at 2012-12-18T10:36:20Z
+
+Apparently PHPUnit does it since all my unit tests fail unless I add that initializer. Perhaps I can tweak a setting in PHPUnit to resolve this but haven't had time to dive into which option that should be
+
+---------------------------------------------------------------------------
+
+by SergSerbin at 2012-12-18T11:36:12Z
+
+For PHPUnit you should be able to solve it with adding  ` @backupGlobals disabled` to the phpDoc of a test method (or test class) definition.
+http://www.phpunit.de/manual/current/en/appendixes.annotations.html
+
+---------------------------------------------------------------------------
+
+by igorw at 2013-01-13T20:58:09Z
+
+My PR which included this change was closed. @fabpot This PR should be merged."
+fabpot,2013-03-08 08:10:10,https://api.github.com/repos/silexphp/Pimple/git/commits/a958cd9ed75ed8b0ddaff59f9b8ede1d20483888,a958cd9ed75ed8b0ddaff59f9b8ede1d20483888,"merged branch ArabCoders/master (PR #66)
+
+This PR was squashed before being merged into the master branch (closes #66).
+
+Commits
+-------
+
+afece3c Change  Visibility to be protected
+
+Discussion
+----------
+
+Change $values Visibility to be protected
+
+This change allow other classes to extend Pimple and override some core class function.
+
+EDIT: change public to protected
+
+---------------------------------------------------------------------------
+
+by stof at 2013-02-14T08:26:41Z
+
+Why public ? It make no sense to have it public as some work needs to be done when accessing the values.
+
+---------------------------------------------------------------------------
+
+by ArabCoders at 2013-02-14T09:35:35Z
+
+Hi
+@stof,
+
+it does make sense when you want to override(ie: overload) function take the following example
+
+````php
+class diDebug extends \Pimple
+{
+    public function offsetGet($id)
+    {
+        if (!array_key_exists($id, $this->values)) {
+            throw new InvalidArgumentException(sprintf('Identifier ""%s"" is not defined.<BR />%s', $id, $this->get_backtrace() ));
+        }
+
+        $isFactory = is_object($this->values[$id]) && method_exists($this->values[$id], '__invoke');
+
+        return $isFactory ? $this->values[$id]($this) : $this->values[$id];
+    }
+
+    public function raw($id)
+    {
+        if (!array_key_exists($id, $this->values)) {
+            throw new InvalidArgumentException(sprintf('Identifier ""%s"" is not defined.<BR /> %s', $id, $this->get_backtrace() ));
+        }
+
+        return $this->values[$id];
+    }
+}
+````
+
+this example will not work because pimple::$values is set to private, and i dont think its reasonable to expect every call to the dependency injection class to be in try {} catch{} block
+
+---------------------------------------------------------------------------
+
+by fabpot at 2013-02-14T09:37:51Z
+
+protected would be enough.
+
+---------------------------------------------------------------------------
+
+by stof at 2013-02-14T09:40:02Z
+
+@ArabCoders thus, why do you need to include the backtrace in the exception message ? Enable XDebug and the trace will be displayed when an exception occurs.
+
+---------------------------------------------------------------------------
+
+by ArabCoders at 2013-02-14T09:43:22Z
+
+@fabpot, indeed that will works too, i can send another pull request if you want.
+
+@stof that's because most shared hosts dont have xdebug enabled or even compiled, and I have to debug manually.
+
+---------------------------------------------------------------------------
+
+by stof at 2013-02-14T09:45:06Z
+
+are you developing directly on your hosting ?
+
+---------------------------------------------------------------------------
+
+by whatthejeff at 2013-02-14T09:48:27Z
+
+Why not just do this:
+
+```php
+class diDebug extends \Pimple
+{
+    public function offsetGet($id)
+    {
+        try {
+           return parent::offsetGet($id);
+        } catch (Exception $exception) {
+           // do whatever
+        }
+    }
+}
+
+---------------------------------------------------------------------------
+
+by ArabCoders at 2013-02-14T09:53:35Z
+
+@stof No, Im trying to debug client framework, and i run into this issue the other developer didn't follow any logical patterns, or test environment and the website is huge to be copied over to my test server. to replicate the problem so i had to make do with what is other developer had at that time and invent some hacks to make it work.
+
+Anyway its not about me, i just think $values should be either public or protected so that other classes can extend it without any problems. ^^
+
+---------------------------------------------------------------------------
+
+by ArabCoders at 2013-02-14T09:59:10Z
+
+@whatthejeff Yes it can be done that way too, i only showed an example for use case to make $values [public/protected] not necessarily the only example ^^
+
+---------------------------------------------------------------------------
+
+by stof at 2013-02-14T10:00:47Z
+
+@ArabCoders Making it public means that it is part of the public API. But this is wrong. People should not be able to access the internal storage from the outside.
+
+---------------------------------------------------------------------------
+
+by ArabCoders at 2013-02-14T10:05:35Z
+
+@stof yeah i realized that, that's why i asked if @fabpot wanted me to do another pull request with protected or he would do it :) im kinda new to the whole fork/pull thing.
+
+PS: English is not my first tongue, so forgive any grammar mistakes"
+ArabCoders,2013-02-14 08:01:30,https://api.github.com/repos/silexphp/Pimple/git/commits/afece3ce4da738b4b3554cc4ad457bbe74a31a39,afece3ce4da738b4b3554cc4ad457bbe74a31a39,Change  Visibility to be protected
+whatthejeff,2013-02-13 07:39:19,https://api.github.com/repos/silexphp/Pimple/git/commits/294533be693492d8156b33ecf40cb95d0670d32f,294533be693492d8156b33ecf40cb95d0670d32f,"Allow invokable objects to be shared, extended, and protected."
+fabpot,2013-02-09 15:33:26,https://api.github.com/repos/silexphp/Pimple/git/commits/5a8936d9d31eb613f1a33753e5f22bffebe0bbc3,5a8936d9d31eb613f1a33753e5f22bffebe0bbc3,"merged branch igorw/static-share-protect (PR #63)
+
+This PR was squashed before being merged into the master branch (closes #63).
+
+Commits
+-------
+
+f3e834d Introduce static versions of share() and protect()
+
+Discussion
+----------
+
+Introduce static versions of share() and protect()
+
+I have a use case where I want to be able to pass parameters to an object that will then at some point create and initialize a pimple container. Then set the parameters. I want to be able to override defaults, including services.
+
+Essentially, this:
+
+    createContainer([
+        'foo' => Pimple::shareStatic(function () { return new Foo(); }),
+    ]);
+
+Since the container does not exist yet, I have no instance to call share() on. Therefore, I want static versions of share and protect, so that this use case is supported properly.
+
+I'm open to:
+
+* Removing the docblocks on the static versions
+* Finding better names for the static versions
+* Just making the existing `share` and `protect` methods static and abuse the fact that PHP allows them to be called dynamically as well
+
+---------------------------------------------------------------------------
+
+by fabpot at 2013-02-09T10:54:00Z
+
+Option 3 seems better to me (just making the current methods static).
+
+---------------------------------------------------------------------------
+
+by simensen at 2013-02-09T15:19:18Z
+
+:+1:
+
+Option 3 is my favorite as well.
+
+---------------------------------------------------------------------------
+
+by igorw at 2013-02-09T15:20:50Z
+
+In that case I sincerely hope that PHP does not decide to deprecate that in the future. Updating PR.
+
+---------------------------------------------------------------------------
+
+by igorw at 2013-02-09T15:23:31Z
+
+Done, changed to option 3."
+igorw,2013-02-09 07:15:58,https://api.github.com/repos/silexphp/Pimple/git/commits/f3e834dc2611a73e2098de0a9c8eef7fd247a786,f3e834dc2611a73e2098de0a9c8eef7fd247a786,Introduce static versions of share() and protect()
+fabpot,2013-02-05 08:06:03,https://api.github.com/repos/silexphp/Pimple/git/commits/94a46d638debccc5fe88ea293b39462f1a30e2c2,94a46d638debccc5fe88ea293b39462f1a30e2c2,added Travis configuration
+fabpot,2013-01-07 10:39:26,https://api.github.com/repos/silexphp/Pimple/git/commits/d58cec632dfdd3305d6b4f2563a5cf2a75b4d978,d58cec632dfdd3305d6b4f2563a5cf2a75b4d978,"merged branch lyrixx/patch-1 (PR #58)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+72837a4 Fixed Extend documentation
+
+Discussion
+----------
+
+Fixed Extend documentation
+
+---------------------------------------------------------------------------
+
+by igorw at 2013-01-06T14:57:41Z
+
+:+1:
+
+---------------------------------------------------------------------------
+
+by lyrixx at 2013-01-06T14:59:48Z
+
+@igorw you are faster than @stof !!!
+
+@fabpot After the merge, can you update the website ? Thanks?
+
+---------------------------------------------------------------------------
+
+by stof at 2013-01-06T16:57:55Z
+
+@lyrixx do I have the permission to have a lfe outside github ?
+
+---------------------------------------------------------------------------
+
+by lyrixx at 2013-01-06T20:06:14Z
+
+@stof Yes, of course :)"
+lyrixx,2013-01-06 14:56:34,https://api.github.com/repos/silexphp/Pimple/git/commits/72837a4e002aff484b9ab0c6fcbd60a211e34dca,72837a4e002aff484b9ab0c6fcbd60a211e34dca,Fixed Extend documentation
+fabpot,2013-01-04 16:53:43,https://api.github.com/repos/silexphp/Pimple/git/commits/f145dc796b76635e5419354e6d7dce4d6c8cd04d,f145dc796b76635e5419354e6d7dce4d6c8cd04d,updated license year
+mvriel,2012-12-17 21:25:57,https://api.github.com/repos/silexphp/Pimple/git/commits/53ec09c044bf01248cd81885adda6ecf03be5cd2,53ec09c044bf01248cd81885adda6ecf03be5cd2,"Initialize property for serializers
+
+Serializers and test frameworks skip the constructor using
+serialization tricks. This means that if an empty Pimple instance is
+serialized and later deserialized that the $values property contains
+'null'. This breaks offsetExists() and several other locations that 
+assume the $values property contains an array."
+fabpot,2012-11-11 08:32:34,https://api.github.com/repos/silexphp/Pimple/git/commits/86df0604a10c5faf20b466ae6a0b762cc6ed0a35,86df0604a10c5faf20b466ae6a0b762cc6ed0a35,"merged branch cordoval/patch-1 (PR #53)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+584e413 remove extra verb
+
+Discussion
+----------
+
+remove extra verb"
+cordoval,2012-11-11 02:35:42,https://api.github.com/repos/silexphp/Pimple/git/commits/584e413c3245e497c387751650abb9544b077079,584e413c3245e497c387751650abb9544b077079,remove extra verb
+fabpot,2012-09-10 12:09:48,https://api.github.com/repos/silexphp/Pimple/git/commits/b9f27b8dc18c08f00627dec02359b46a24791dc3,b9f27b8dc18c08f00627dec02359b46a24791dc3,"merged branch igorw/invokable-factory (PR #47)
+
+Commits
+-------
+
+a419262 Treat invokable objects as factories too (just like closures)
+
+Discussion
+----------
+
+Treat invokable objects as factories too (just like closures)
+
+Note: instances of Closure are also invokable.
+
+---------------------------------------------------------------------------
+
+by fabpot at 2012-09-10T07:00:31Z
+
+Can you squash your commits before I merge? Thanks.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-09-10T10:57:53Z
+
+Done."
+igorw,2012-09-08 15:14:29,https://api.github.com/repos/silexphp/Pimple/git/commits/a419262d639edf490599f9d6cd89c4e22fb861c9,a419262d639edf490599f9d6cd89c4e22fb861c9,Treat invokable objects as factories too (just like closures)
+fabpot,2012-07-23 13:54:08,https://api.github.com/repos/silexphp/Pimple/git/commits/db836b8cfadc0f39dacafa2bf311a1ab603600bb,db836b8cfadc0f39dacafa2bf311a1ab603600bb,"merged branch cs278/master (PR #45)
+
+Commits
+-------
+
+92e26ec Remove version from composer.json
+
+Discussion
+----------
+
+Remove version number from composer.json
+
+Currently Composer recognises the master branch as being a stable release.
+
+---------------------------------------------------------------------------
+
+by stof at 2012-07-23T13:41:49Z
+
+I don't see how it could recognize master as being stable. Composer simply ignores the explicit version for branches.
+But it should indeed be removed as it can only harm later tags if not updated but cannot add any value for a VCS type."
+cs278,2012-07-23 12:42:05,https://api.github.com/repos/silexphp/Pimple/git/commits/92e26ec4f49ef027c0b98f359e86ced6e025f384,92e26ec4f49ef027c0b98f359e86ced6e025f384,Remove version from composer.json
+fabpot,2012-07-01 10:38:20,https://api.github.com/repos/silexphp/Pimple/git/commits/d2cfa2f02f50abef65c238747c753a5f6786f6be,d2cfa2f02f50abef65c238747c753a5f6786f6be,"merged branch lyrixx/psr (PR #41)
+
+Commits
+-------
+
+f59e901 Fixed PSR rules
+
+Discussion
+----------
+
+Fixed PSR rules"
+fabpot,2012-06-21 13:34:38,https://api.github.com/repos/silexphp/Pimple/git/commits/86cae5c9e85cd02f1703c774ddf12f2448a5938c,86cae5c9e85cd02f1703c774ddf12f2448a5938c,"merged branch GromNaN/patch-1 (PR #42)
+
+Commits
+-------
+
+6e2ebca Replace is_null by null comparison
+
+Discussion
+----------
+
+Replace is_null by null comparison
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-06-21T11:24:30Z
+
+Why?
+
+---------------------------------------------------------------------------
+
+by GromNaN at 2012-06-21T11:29:57Z
+
+This is known to be faster.
+It was replaced everywhere in symfony."
+GromNaN,2012-06-21 11:22:37,https://api.github.com/repos/silexphp/Pimple/git/commits/6e2ebca62bac4ec1980735641888af8050c6db4a,6e2ebca62bac4ec1980735641888af8050c6db4a,Replace is_null by null comparison
+lyrixx,2012-06-13 17:04:55,https://api.github.com/repos/silexphp/Pimple/git/commits/f59e901ec520ea8622dd902c53a8c24dfc1094ef,f59e901ec520ea8622dd902c53a8c24dfc1094ef,Fixed PSR rules
+fabpot,2012-06-11 16:58:24,https://api.github.com/repos/silexphp/Pimple/git/commits/694448bdd2b7d802517104bdafe1a6f2591506c8,694448bdd2b7d802517104bdafe1a6f2591506c8,"merged branch lyrixx/fix-offset-exists (PR #40)
+
+Commits
+-------
+
+ea954d2 Fixed Pimple::offsetExists
+
+Discussion
+----------
+
+Fixed Pimple::offsetExists
+
+If the value set into container is null,
+the offsetExists method will return false."
+fabpot,2012-06-11 16:58:14,https://api.github.com/repos/silexphp/Pimple/git/commits/e85e64f7f95c0a56fd0987d0a2f008e8b6612695,e85e64f7f95c0a56fd0987d0a2f008e8b6612695,"merged branch lyrixx/tests (PR #38)
+
+Commits
+-------
+
+76e565e Removed extends of Services
+
+Discussion
+----------
+
+Removed extends of Services
+
+```Pimple\Tests\Service``` does not extends  ```\PHPUnit_Framework_TestCase```
+anymore, as i not needed
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-06-11T16:43:01Z
+
+This is also covered by #37.
+
+---------------------------------------------------------------------------
+
+by lyrixx at 2012-06-11T16:45:56Z
+
+ok, Thanks. I did not see it. Do you think your PR will be merged ? (ie : should i close mine)"
+lyrixx,2012-06-11 16:48:42,https://api.github.com/repos/silexphp/Pimple/git/commits/ea954d20f37d5c13b318c4851d7137832cefbabb,ea954d20f37d5c13b318c4851d7137832cefbabb,"Fixed Pimple::offsetExists
+
+If the value set into container is null,
+the offsetExists method will return false."
+lyrixx,2012-06-11 16:25:33,https://api.github.com/repos/silexphp/Pimple/git/commits/76e565e8d6657181a693a1a5aceef70c4bab735b,76e565e8d6657181a693a1a5aceef70c4bab735b,"Removed extends of Services
+
+```Pimple\Tests\Service``` does not extends ```\PHPUnit_Framework_TestCase```
+anymore, as i not needed"
+fabpot,2012-06-09 20:02:25,https://api.github.com/repos/silexphp/Pimple/git/commits/5bd96492f13a09210b3f62a8c2c5179716033e2c,5bd96492f13a09210b3f62a8c2c5179716033e2c,"added a keys() method that returns all defined value names (closes #36, closes #24)"
+fabpot,2012-05-08 13:57:24,https://api.github.com/repos/silexphp/Pimple/git/commits/89ae8deda2fa41b69d2b983556ad30f0317d9416,89ae8deda2fa41b69d2b983556ad30f0317d9416,"merged branch stof/patch-2 (PR #35)
+
+Commits
+-------
+
+db2c7be Added the branch alias
+
+Discussion
+----------
+
+Added the branch alias
+
+This allows other packages to depend on Pimple ``1.0.*`` instead of having to depend on ``*`` or ``dev-master`` (which are unbound constraints and so should never be used in tags as they assume we know the future)
+
+---------------------------------------------------------------------------
+
+by stof at 2012-05-08T11:43:08Z
+
+Btw, you should probably tag a stable release of pimple, to avoid issue once composer supports stability flags on versions to prefer stable packages (which is a WIP currently)"
+stof,2012-05-08 11:41:13,https://api.github.com/repos/silexphp/Pimple/git/commits/db2c7be5808c447b9eab72bcb16d37e962e7d7a8,db2c7be5808c447b9eab72bcb16d37e962e7d7a8,Added the branch alias
+fabpot,2012-04-21 20:35:11,https://api.github.com/repos/silexphp/Pimple/git/commits/2c7b104e6a5ca9207bd713892979882f1d310abc,2c7b104e6a5ca9207bd713892979882f1d310abc,fixed doc
+fabpot,2012-04-21 20:33:49,https://api.github.com/repos/silexphp/Pimple/git/commits/090f1c9870340ab64dda4e23868bc5c9b586a0cd,090f1c9870340ab64dda4e23868bc5c9b586a0cd,"merged branch WouterJ/master (PR #34)
+
+Commits
+-------
+
+1bff131 Fixed Documentation: Replaced $c->extend() by $container->extend()
+
+Discussion
+----------
+
+Fixed Documentation on the Modifying section
+
+Expected `$container->extend(...)` instead of `$c->extend(...)` on the modifying section (line 92).
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-21T18:55:10Z
+
+It's actually inconsistent throughout the doc. I suggest using `$container` everywhere."
+wouterj,2012-04-21 18:28:37,https://api.github.com/repos/silexphp/Pimple/git/commits/1bff131f481586ede4ba18774e6b501cb510e3cb,1bff131f481586ede4ba18774e6b501cb510e3cb,Fixed Documentation: Replaced $c->extend() by $container->extend()
+fabpot,2012-04-20 05:32:46,https://api.github.com/repos/silexphp/Pimple/git/commits/f593ea9beabd16bfe1d877a193ff4d0b9a909a5a,f593ea9beabd16bfe1d877a193ff4d0b9a909a5a,"merged branch davedevelopment/shared-extend-docs (PR #33)
+
+Commits
+-------
+
+2a3eee1 Attempt to clarify the need to re-share extended services
+1cecce2 Fixes #32 - Better practice in twig extend example
+
+Discussion
+----------
+
+Fixes #32 - Better practice in twig extend example
+
+---------------------------------------------------------------------------
+
+by stof at 2012-04-16T11:21:03Z
+
+IMO, it should be a separate note telling it needs to be wrapped in ``share`` again after extending. But the first explanation about ``extend`` should not do it to keep things simple.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-16T11:26:13Z
+
+What happens if twig already was shared?
+
+---------------------------------------------------------------------------
+
+by davedevelopment at 2012-04-16T11:31:59Z
+
+@stof agreed, will come up with a simple example and rewrite the explanation for the twig
+
+@igorw The initial twig instantiation is shared as expected, but the new Closure created by ``extend`` will call the Closure passed to it on each subsequent request
+
+---------------------------------------------------------------------------
+
+by stof at 2012-04-16T11:34:07Z
+
+@igorw extend will allow you to extend it, however forgetting to share it again may lead to unexpected behaviors: the twig object will be shared (because of the inner closure sharing it) but the extra logic would be executed each time, meaning you would register your Twig extension each time you call Twig
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-16T12:05:57Z
+
+Re-sharing kind of fixes the problem, but it introduces two layers of sharing, I'm not sure this is a good thing.
+
+share(extend(extendCallable(share(serviceDefinitionCallable))))
+
+---------------------------------------------------------------------------
+
+by stof at 2012-04-16T12:30:42Z
+
+@igorw it is not really an issue as the outer sharing will take care to call the inner code only once. so the inner sharing is useless (and adds some memory overhead) but does not break things. And if you want to avoid this, it requires changing the way the sharing is done because there is no way to access the original closure inside the shared one."
+davedevelopment,2012-04-16 11:43:03,https://api.github.com/repos/silexphp/Pimple/git/commits/2a3eee11f2cbb70a30dfa432d858c9d790af1b15,2a3eee11f2cbb70a30dfa432d858c9d790af1b15,Attempt to clarify the need to re-share extended services
+davedevelopment,2012-04-16 11:10:30,https://api.github.com/repos/silexphp/Pimple/git/commits/1cecce2e3c542a32e1b2804df7c96a4bc719a71c,1cecce2e3c542a32e1b2804df7c96a4bc719a71c,Fixes #32 - Better practice in twig extend example
+fabpot,2012-04-06 08:25:25,https://api.github.com/repos/silexphp/Pimple/git/commits/4e5fc6a6d58a7d9ad1d1974726edc360d28b70ab,4e5fc6a6d58a7d9ad1d1974726edc360d28b70ab,"merged branch igorw/extend-docs (PR #30)
+
+Commits
+-------
+
+f0f0414 change teerminology from object => service
+8e0f1bd [docs] enhance extend docs
+6213e14 [docs] add docs for extend and raw
+
+Discussion
+----------
+
+[docs] add docs for extend and raw
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-01T15:58:22Z
+
+Fixed.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-01T19:05:06Z
+
+What are your thoughts on calling them services / service definitions?
+
+---------------------------------------------------------------------------
+
+by fabpot at 2012-04-01T19:12:58Z
+
+I would like to avoid calling them services as we are not using this term anywhere else in the doc.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-01T19:16:12Z
+
+I am suggesting changing the terminology in the whole doc.
+
+---------------------------------------------------------------------------
+
+by fabpot at 2012-04-01T19:27:20Z
+
+I'm fine with this change but please, add a small sentence to explain what a service is.
+
+---------------------------------------------------------------------------
+
+by igorw at 2012-04-05T23:00:58Z
+
+I have changed it in the whole doc."
+igorw,2012-04-05 23:00:28,https://api.github.com/repos/silexphp/Pimple/git/commits/f0f0414b592cca43911bf806e722fe04cf8d9a83,f0f0414b592cca43911bf806e722fe04cf8d9a83,change teerminology from object => service
+igorw,2012-04-01 15:57:55,https://api.github.com/repos/silexphp/Pimple/git/commits/8e0f1bd3e8c10f47c40613a8869067412d6e4d24,8e0f1bd3e8c10f47c40613a8869067412d6e4d24,[docs] enhance extend docs
+igorw,2012-04-01 14:36:30,https://api.github.com/repos/silexphp/Pimple/git/commits/6213e14d6fa2ee29a00ca7d4c2ae6ad966e3e123,6213e14d6fa2ee29a00ca7d4c2ae6ad966e3e123,[docs] add docs for extend and raw
+fabpot,2012-04-01 09:35:08,https://api.github.com/repos/silexphp/Pimple/git/commits/a687126f3d49c576eb33568d57e4d46a35c45cb2,a687126f3d49c576eb33568d57e4d46a35c45cb2,fixed phpdoc
+fabpot,2012-04-01 09:34:07,https://api.github.com/repos/silexphp/Pimple/git/commits/6a9847db259da0491dc3b47c5bb142c5a0827e25,6a9847db259da0491dc3b47c5bb142c5a0827e25,"merged branch davedevelopment/extend-existing-services (PR #29)
+
+Commits
+-------
+
+6677eeb Check definition is actually a Closure
+7367dca Adds extend method
+
+Discussion
+----------
+
+Adds extend method, allowing users to extend/customise object Closures
+
+Kind of like an after filter for objects.
+
+Use case:
+
+Third party code is used to register an object, user wishes to add method calls to the definition, without loading it before it is actually required.
+
+e.g. Add a custom loader to the Twig Service when using Silex
+
+``` php
+<?php
+
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path'       => __DIR__.'/views',
+    'twig.class_path' => __DIR__.'/vendor/twig/lib',
+));
+
+$app->extend('twig', function($twig, $c) {
+    $twig->addLoader($c['my.custom.loader']);
+    return $twig;
+});
+
+```
+
+I thought about returning a Closure and the user having to reassign it to maintain consistency with the existing API, like:
+
+``` php
+<?php
+
+$app['twig'] = $app->extend('twig', function($twig, $c) {
+    $twig->addLoader($c['my.custom.loader']);
+    return $twig;
+});
+```
+
+But I can't think of a use case where you wouldn't want to assign it, so made the assignment part of the method.
+
+Another option I considered would be to not require the original object to be returned in the extending Closure, but that would prevent people using decorators and such.
+
+---------------------------------------------------------------------------
+
+by stof at 2012-03-31T23:34:30Z
+
+I like it. It seems far easier to use than the current way to do this by retrieving the raw definition and doing some work by hand to extend the definition"
+davedevelopment,2012-03-31 23:40:41,https://api.github.com/repos/silexphp/Pimple/git/commits/6677eeb4c76520bbfec231a6d183b8779b36d418,6677eeb4c76520bbfec231a6d183b8779b36d418,Check definition is actually a Closure
+davedevelopment,2012-03-31 22:55:42,https://api.github.com/repos/silexphp/Pimple/git/commits/7367dca50e98dbcecd5744c8a8108ca5a3dcdc88,7367dca50e98dbcecd5744c8a8108ca5a3dcdc88,Adds extend method
+fabpot,2012-01-26 09:23:17,https://api.github.com/repos/silexphp/Pimple/git/commits/321db91e49b6cf8cbeed58d8db662d40de96d2c3,321db91e49b6cf8cbeed58d8db662d40de96d2c3,"merged branch marijn/feature/constructor-arguments (PR #23)
+
+Commits
+-------
+
+2bf06b5 Added constructor arguments.
+
+Discussion
+----------
+
+Added constructor arguments.
+
+When creating dedicated containers with only a handful of parameters it can be nice to have constructor injection.
+
+```php
+<?php
+
+$pimple = new Pimple(array('secret' => 'fabp0t'));
+```
+
+---------------------------------------------------------------------------
+
+by igorw at 2011-11-29T09:41:01Z
+
+I don't see the need for this. Especially with silex extending it, I think it's better to keep the constructor empty. I can also see Pimple moving to a PHP 5.4 trait in the future (with a standard class using it), where defining the constructor would not make much sense.
+
+---------------------------------------------------------------------------
+
+by marijn at 2011-11-29T09:45:54Z
+
+I'm not sure I follow your analogy: ""*with silex extending it*"". Could you elaborate?
+
+I can understand it if you want to keep `Pimple` simple, however, I do think it's a valid use case...
+
+---------------------------------------------------------------------------
+
+by igorw at 2011-11-29T09:52:35Z
+
+It was not an analogy at all, I'm referring to the ""Silex\Application"" class: https://github.com/fabpot/Silex extending the ""Pimple"" class.
+
+---------------------------------------------------------------------------
+
+by marijn at 2011-11-29T09:58:52Z
+
+I understand, that's why I don't see what it has to do with this issue. I'm simply suggesting that `Pimple` (and indeed `Silex`) in some cases might benefit from constructor arguments.
+
+As much as I'd love to see Pimple move to a trait, I'm not sure if anticipating for it at the moment is really viable.
+
+Anyway, feel free to close this if you reckon this is too bloated :-)
+
+---------------------------------------------------------------------------
+
+by marijn at 2012-01-25T21:39:52Z
+
+@fabpot do you have an opinion on this matter?
+
+What can I do to make this merge-able?"
+marijn,2011-10-09 14:54:32,https://api.github.com/repos/silexphp/Pimple/git/commits/2bf06b5111ee1e934bb340ab0c719c3856cb7020,2bf06b5111ee1e934bb340ab0c719c3856cb7020,Added constructor arguments.
+fabpot,2011-11-14 07:02:33,https://api.github.com/repos/silexphp/Pimple/git/commits/f11c40f9c3b3efc04a49c4a150f28a3775f63c45,f11c40f9c3b3efc04a49c4a150f28a3775f63c45,"merged branch stof/patch-1 (PR #22)
+
+Commits
+-------
+
+4dfc000 Added autoloading info in composer.json
+
+Discussion
+----------
+
+Added autoloading info in composer.json"
+stof,2011-11-14 00:36:49,https://api.github.com/repos/silexphp/Pimple/git/commits/4dfc000bf5413fa5088a61adc00eb396255582be,4dfc000bf5413fa5088a61adc00eb396255582be,Added autoloading info in composer.json
+fabpot,2011-11-09 06:32:47,https://api.github.com/repos/silexphp/Pimple/git/commits/8c77a39cee7b995dd69a80d070d031c3ffcb6379,8c77a39cee7b995dd69a80d070d031c3ffcb6379,"merged branch mtdowling/ee0cdaa4ad6e3cbab25227785f49a75b9fd828f4 (PR #18)
+
+Commits
+-------
+
+a78e1f7 Using array_key_exists for raw instead of isset. Adding coverage.
+
+Discussion
+----------
+
+Adding test coverage for raw
+
+---------------------------------------------------------------------------
+
+by igorw at 2011/08/16 07:25:29 -0700
+
+Thanks, one minor thing. The naming is inconsistent with `testOffsetGetValidatesKeyIsPresent`. Key vs Identifier.
+
+---------------------------------------------------------------------------
+
+by mtdowling at 2011/08/17 12:16:16 -0700
+
+I corrected the naming inconsistency and modified the getRaw() method to use array_key_exists instead of isset.
+
+---------------------------------------------------------------------------
+
+by igorw at 2011/08/17 13:56:53 -0700
+
+Please, `testRawWithNullValue()` instead of testing two things in one test.
+
+---------------------------------------------------------------------------
+
+by mtdowling at 2011/08/17 14:08:25 -0700
+
+Done.  Used the same naming convention as testOffsetGetHonorsNullValues().
+
+---------------------------------------------------------------------------
+
+by igorw at 2011/08/17 14:56:57 -0700
+
+Looks good to me.
+
+---------------------------------------------------------------------------
+
+by fabpot at 2011/08/18 10:15:48 -0700
+
+Can you squash your 3 commits? Thanks.
+
+On a side note, what about using `array_key_exists()` in `offsetExists()` too?
+
+---------------------------------------------------------------------------
+
+by mtdowling at 2011/08/18 11:05:54 -0700
+
+Sure thing. I'll try to figure it out and update the pull request.
+
+I'm not sure about changing `offsetExists()`... Calling `isset()` on a null value returns false.  Because `offsetExists()` is triggered by an `isset()` call, I think it should return false for keys that are set to null values so that it is consistent with standard array behavior.
+
+```php
+<?php
+$a = array(""a"" => null);
+var_export(isset($a[""a""]));
+```
+outputs `false`
+
+---------------------------------------------------------------------------
+
+by igorw at 2011/11/08 04:55:26 -0800
+
+I would keep the isset() in offsetExists. If you need help with the squashing, send me a private message here on github.
+
+---------------------------------------------------------------------------
+
+by mtdowling at 2011/11/08 19:23:52 -0800
+
+Sorry that took so long.  I squashed it into one commit.  Let me know if that doesn't look right."
+mtdowling,2011-08-16 13:27:28,https://api.github.com/repos/silexphp/Pimple/git/commits/a78e1f7b51e9d6f4cdead1ac0bf2e47420ec9e77,a78e1f7b51e9d6f4cdead1ac0bf2e47420ec9e77,Using array_key_exists for raw instead of isset. Adding coverage.
+fabpot,2011-09-29 15:23:00,https://api.github.com/repos/silexphp/Pimple/git/commits/22e02440e1252cc578f2f92e3e3ee060defbdd2f,22e02440e1252cc578f2f92e3e3ee060defbdd2f,fixed composer.json file
+fabpot,2011-09-29 15:13:23,https://api.github.com/repos/silexphp/Pimple/git/commits/449912f04cdd2d0eb4327d7a410554dbfa27ba65,449912f04cdd2d0eb4327d7a410554dbfa27ba65,"merged branch igorw/composer (PR #21)
+
+Commits
+-------
+
+e595ddc update composer.json
+1694527 Add composer.json
+
+Discussion
+----------
+
+Add composer.json"
+igorw,2011-09-24 17:42:43,https://api.github.com/repos/silexphp/Pimple/git/commits/e595ddc8ce982f68372e060685fa81018d17ffca,e595ddc8ce982f68372e060685fa81018d17ffca,update composer.json
+igorw,2011-09-14 18:42:43,https://api.github.com/repos/silexphp/Pimple/git/commits/16945275fd2f831efe8607594931d41115969c1a,16945275fd2f831efe8607594931d41115969c1a,Add composer.json
+fabpot,2011-08-16 06:03:35,https://api.github.com/repos/silexphp/Pimple/git/commits/6ead2e306ed254fe93b1fcae9c694a98a73a63fb,6ead2e306ed254fe93b1fcae9c694a98a73a63fb,"merged branch mtdowling/master (PR #17)
+
+Commits
+-------
+
+3900a1b Allowing null values to be set and retrieved from Pimple.  Adding test coverage.
+53c82f1 Ignoring phpunit.xml
+
+Discussion
+----------
+
+Allow null values to be set and retrieved from Pimple
+
+Pimple currently throws an InvalidArgumentException if you try to retrieve a value that is set to null.  I changed the isset() check in Pimple::offsetGet() to array_key_exists() and added test coverage."
+mtdowling,2011-08-16 03:04:02,https://api.github.com/repos/silexphp/Pimple/git/commits/3900a1bf26d089916e4bfd1958ddddd49ee4ec34,3900a1bf26d089916e4bfd1958ddddd49ee4ec34,Allowing null values to be set and retrieved from Pimple.  Adding test coverage.
+mtdowling,2011-08-16 03:01:06,https://api.github.com/repos/silexphp/Pimple/git/commits/53c82f1d928830f33538148e165710b886b29b54,53c82f1d928830f33538148e165710b886b29b54,Ignoring phpunit.xml
+fabpot,2011-08-15 06:09:19,https://api.github.com/repos/silexphp/Pimple/git/commits/dd218be36ca5011b207fc9e772bb978113387821,dd218be36ca5011b207fc9e772bb978113387821,added a way to get the closure defining a service
+fabpot,2011-05-26 14:52:57,https://api.github.com/repos/silexphp/Pimple/git/commits/7133d9351ffb7612e7d9416a69bdedf62665001f,7133d9351ffb7612e7d9416a69bdedf62665001f,added a note about why we don't allow any callable anymore
+fabpot,2011-05-26 14:49:38,https://api.github.com/repos/silexphp/Pimple/git/commits/442de4b2c57c99f5f7c1ce61a4d5060f978bdb02,442de4b2c57c99f5f7c1ce61a4d5060f978bdb02,"Merge remote branch 'igorw/cs'
+
+* igorw/cs:
+  Make coding style of closures consistent"
+igorw,2011-05-26 13:19:56,https://api.github.com/repos/silexphp/Pimple/git/commits/0e77953b6dcd7c924af193ce63028e2ae0b65b99,0e77953b6dcd7c924af193ce63028e2ae0b65b99,Make coding style of closures consistent
+igorw,2011-05-26 13:15:40,https://api.github.com/repos/silexphp/Pimple/git/commits/e03223da1d1fa6fb475c715c18572c8efe9bf6d8,e03223da1d1fa6fb475c715c18572c8efe9bf6d8,"Enforce services to be closures
+
+As was discussed in issue #8, having any *callable* value be a service leads
+to issues, because function names are callable. Thus any parameter value
+that is a global function name would have to be protected.
+
+The easiest solution is to only treat closures as services, and treat
+everything else as a parameter. This is actually the expected behavior,
+according to the documentation."
+igorw,2011-05-22 08:01:41,https://api.github.com/repos/silexphp/Pimple/git/commits/8675694ed65821a92683b0e0328a397a0bf62da8,8675694ed65821a92683b0e0328a397a0bf62da8,"allow and document protecting global function names
+
+when a parameter's value is a valid callable (eg. name
+of an existing global function) it must also be protected.
+
+See issue #8."
+fabpot,2011-05-19 14:30:57,https://api.github.com/repos/silexphp/Pimple/git/commits/2bce05bdedb849e7bc4e4217aa3183a57681a2ba,2bce05bdedb849e7bc4e4217aa3183a57681a2ba,fixed phpdoc (closes #7)
+fabpot,2011-05-13 17:02:01,https://api.github.com/repos/silexphp/Pimple/git/commits/0d89ddddb1e05318eb98b4a47bc5dfbe1f07a430,0d89ddddb1e05318eb98b4a47bc5dfbe1f07a430,updated README
+igorw,2011-03-27 09:26:52,https://api.github.com/repos/silexphp/Pimple/git/commits/6b461421428719002885fb91a6f6264f89a463dc,6b461421428719002885fb91a6f6264f89a463dc,Closure type hinting for protect and share
+fabpot,2011-03-27 09:12:20,https://api.github.com/repos/silexphp/Pimple/git/commits/597a5314a384c03534795397652b5a0e2d497a31,597a5314a384c03534795397652b5a0e2d497a31,renamed asShared() to share()
+fabpot,2011-03-27 09:11:20,https://api.github.com/repos/silexphp/Pimple/git/commits/6959e23ab8a6c8e5574ab037526ccf21997d48a4,6959e23ab8a6c8e5574ab037526ccf21997d48a4,added a protect() method to be able to have an anonymous function as a parameter
+igorw,2011-03-26 19:26:03,https://api.github.com/repos/silexphp/Pimple/git/commits/d71729fa950c9db6f7ec539ae6ec83d43ef7bd9c,d71729fa950c9db6f7ec539ae6ec83d43ef7bd9c,use service class everywhere for consistency
+igorw,2011-03-26 18:43:47,https://api.github.com/repos/silexphp/Pimple/git/commits/35de2472e15d51aecb6ae101355049251159a43d,35de2472e15d51aecb6ae101355049251159a43d,add test for passing $this as parameter to the closure
+igorw,2011-03-26 18:19:13,https://api.github.com/repos/silexphp/Pimple/git/commits/06dd9dae828b5d31d944e4ceb939e77f601b7232,06dd9dae828b5d31d944e4ceb939e77f601b7232,initial test suite
+fabpot,2011-03-26 08:01:10,https://api.github.com/repos/silexphp/Pimple/git/commits/0f20b9db3f19898a39fb0e751cd6ec1274696da8,0f20b9db3f19898a39fb0e751cd6ec1274696da8,"Revert ""added a way to add several values with one method call""
+
+This reverts commit 88134a72102d002f20d798662364cc3a5fa74623."
+fabpot,2011-03-22 14:52:37,https://api.github.com/repos/silexphp/Pimple/git/commits/88134a72102d002f20d798662364cc3a5fa74623,88134a72102d002f20d798662364cc3a5fa74623,added a way to add several values with one method call
+fabpot,2011-03-22 14:51:54,https://api.github.com/repos/silexphp/Pimple/git/commits/c0eeeff777f9a996d4fda8636b66b11840c0d5d3,c0eeeff777f9a996d4fda8636b66b11840c0d5d3,"Revert ""added an attach() method as syntatic sugar to embed a container into another one""
+
+This reverts commit 5c1d923a756444a88fba0e92bcf75dc7003cd7f2."
+fabpot,2011-03-22 12:14:44,https://api.github.com/repos/silexphp/Pimple/git/commits/5c1d923a756444a88fba0e92bcf75dc7003cd7f2,5c1d923a756444a88fba0e92bcf75dc7003cd7f2,added an attach() method as syntatic sugar to embed a container into another one
+fabpot,2011-03-22 12:09:40,https://api.github.com/repos/silexphp/Pimple/git/commits/7294dc289e6d8ae3a81018a444552651c45cd118,7294dc289e6d8ae3a81018a444552651c45cd118,changed API to use ArrayAccess instead of properties to allow any string as identifier
+fabpot,2009-06-22 15:51:23,https://api.github.com/repos/silexphp/Pimple/git/commits/e5a3cb274dac33805950ed5b9dfa98ced988656b,e5a3cb274dac33805950ed5b9dfa98ced988656b,fixed README file
+fabpot,2009-06-22 15:49:55,https://api.github.com/repos/silexphp/Pimple/git/commits/7ec520812079ac07a2b42ac7dc79f8473a53d5f6,7ec520812079ac07a2b42ac7dc79f8473a53d5f6,added an example of container embedding
+fabpot,2009-06-15 16:25:33,https://api.github.com/repos/silexphp/Pimple/git/commits/64655fcdeba7dea2c4426fdd67de3255373f1b64,64655fcdeba7dea2c4426fdd67de3255373f1b64,reformated the README file
+fabpot,2009-06-15 16:20:23,https://api.github.com/repos/silexphp/Pimple/git/commits/c1a32f0baa5578826b9e08019b735cd278531518,c1a32f0baa5578826b9e08019b735cd278531518,added PHPDoc to the Pimple class
+fabpot,2009-06-15 16:14:41,https://api.github.com/repos/silexphp/Pimple/git/commits/6ba202fa57ba6f663814e866069cdeb10a72cc74,6ba202fa57ba6f663814e866069cdeb10a72cc74,removed old stuff
+fabpot,2009-06-15 16:12:53,https://api.github.com/repos/silexphp/Pimple/git/commits/12967be747afc002284fb206ca64a248d4f6d44e,12967be747afc002284fb206ca64a248d4f6d44e,renamed README for Github
+fabpot,2009-06-15 16:10:07,https://api.github.com/repos/silexphp/Pimple/git/commits/e677a530fd580e5e6036c7e0b9ce994b06480fee,e677a530fd580e5e6036c7e0b9ce994b06480fee,added Pimple code and documentation

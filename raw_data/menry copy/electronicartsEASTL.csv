@@ -1,0 +1,998 @@
+EASTL,EASTL stands for Electronic Arts Standard Template Library.  It is an extensive and robust implementation that has an emphasis on high performance.
+username,timestamp,url,sha,message
+rparolin,2019-09-06 18:29:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/20284b7a5c4f5a6ea5515e0435f11c4915483a65,20284b7a5c4f5a6ea5515e0435f11c4915483a65,3.14.02 release
+rparolin,2019-08-18 18:08:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/2feb6d54a8e232bb32b2087445969bc1cc7c7592,2feb6d54a8e232bb32b2087445969bc1cc7c7592,minor refactoring changes
+rparolin,2019-08-18 17:48:22,https://api.github.com/repos/electronicarts/EASTL/git/commits/e321f9369c133e72db50127b12bc3cbd31d7a0d3,e321f9369c133e72db50127b12bc3cbd31d7a0d3,adding char8_t builds to ci
+hamzasood,2019-08-18 16:33:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/d4ae8dfbe6b655cb8fe5b529b858bbb889401ee4,d4ae8dfbe6b655cb8fe5b529b858bbb889401ee4,Fix unused parameter warnings in a DecodePart overload (#311)
+lhamot,2019-08-16 03:22:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/e4b46ee0a2fcf3c02ea4962974e25fae1f346ce2,e4b46ee0a2fcf3c02ea4962974e25fae1f346ce2,"Add stable_partition algorithm with unit tests (#308)
+
+* Add stable_partition algorithm with unit tests
+
+* Move the `const` keyword to the left"
+theryee,2019-08-07 17:56:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/83c212f1028768f7743ed579ef217e436a8aa5b4,83c212f1028768f7743ed579ef217e436a8aa5b4,"Fix memory leak in string_hash_map::insert_or_assign (#303)
+
+* Fix memory leak in string_hash_map::insert_or_assign
+
+Previous implementation always duplicated the key
+(even if a previous key already existed).
+
+A leak occurred because the clear was not aware of the
+previous key that was discared by the newly duplicated key.
+
+This solution only duplicates a new key if necessary.
+
+* Added fixed size tracking test case
+
+* add some documentation about the size
+
+* use EA_ALIGN_OF
+
+* fixed test name
+
+* Using counting allocator"
+rparolin,2019-07-27 15:46:38,https://api.github.com/repos/electronicarts/EASTL/git/commits/5bc06c380cac19395c42bb54e690ae2ee9f29ee1,5bc06c380cac19395c42bb54e690ae2ee9f29ee1,adding docs on how to fetch the source with submodules
+rparolin,2019-07-26 15:50:41,https://api.github.com/repos/electronicarts/EASTL/git/commits/96aeae40ac08e9a68de0fc75801bb14f85893352,96aeae40ac08e9a68de0fc75801bb14f85893352,updating submodules
+rparolin,2019-07-26 15:14:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/329af147e8a4ace4b3f5f450251530e464418b0c,329af147e8a4ace4b3f5f450251530e464418b0c,3.14.01
+rparolin,2019-07-17 15:02:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/c18a037660ee213e9546edbbbddf31634af11a56,c18a037660ee213e9546edbbbddf31634af11a56,Update LICENSE (#297)
+rparolin,2019-07-10 22:10:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/dcd2b838d52de13691999aff8faeaa8f284928ac,dcd2b838d52de13691999aff8faeaa8f284928ac,update dependencies
+wmamrak,2019-07-08 19:24:43,https://api.github.com/repos/electronicarts/EASTL/git/commits/090e3031b01ad84a185e8f64217e5eca27105d27,090e3031b01ad84a185e8f64217e5eca27105d27,"Compliance with the standard fix of inserts in vector_multiset and vector_multimap. (#291)
+
+* Changed insertion place of insert to be at the upper bound of the range (since C++11)
+
+* Tests for insertion at the upper bound of a range."
+rparolin,2019-07-02 19:03:36,https://api.github.com/repos/electronicarts/EASTL/git/commits/b702be371849bc384fb9966aba9e328867bf9ef4,b702be371849bc384fb9966aba9e328867bf9ef4,migrating to relative git submodules to work around the git/https submodules issue
+rparolin,2019-06-28 13:05:55,https://api.github.com/repos/electronicarts/EASTL/git/commits/462a208139e5f4c98afe660781f29d5f0b16b93a,462a208139e5f4c98afe660781f29d5f0b16b93a,Delete OpenSource.md
+rparolin,2019-06-18 22:50:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/f8b878d7aa6355b8559b39e74f23e186eef7fdd5,f8b878d7aa6355b8559b39e74f23e186eef7fdd5,"Update README.md
+
+Fixing documentation link"
+eugeneko,2019-06-18 17:03:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/708072e3b5f9edf6cea469a450412835fa23fbbd,708072e3b5f9edf6cea469a450412835fa23fbbd,"Fix UB causing crashes with some compilers. (#280)
+
+It's not allowed (Undefined Behavior) to call memmove with null pointers even if the size is 0.
+In vector::DoInsertValueEnd memmove is called via eastl::uninitialized_move_ptr_if_noexcept unconditionally even for null pointers (when vector is empty).
+Therefore, further checks for p in vector::DoFree and allocator::deallocate get optimized away which leads to crashes."
+rparolin,2019-06-17 17:08:36,https://api.github.com/repos/electronicarts/EASTL/git/commits/d3789b60b771f9675e607900a3b9f1fcb0a77994,d3789b60b771f9675e607900a3b9f1fcb0a77994,removing appveyor badge
+rparolin,2019-06-17 16:09:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/376bcdc93502208b3e61b88c911fad0f9c9e3f60,376bcdc93502208b3e61b88c911fad0f9c9e3f60,"Git submodules (#284)
+
+* adding windows to travis ci scripts
+
+* updating submodules"
+rparolin,2019-05-31 18:12:44,https://api.github.com/repos/electronicarts/EASTL/git/commits/af7e82c45c7cdbac6c106ca824581af7f1115b02,af7e82c45c7cdbac6c106ca824581af7f1115b02,3.13.06
+rparolin,2019-05-15 17:00:35,https://api.github.com/repos/electronicarts/EASTL/git/commits/2491faf753389df8189e54be1479eac255ff0c82,2491faf753389df8189e54be1479eac255ff0c82,Resolving compiler warnings on MSVC
+rparolin,2019-04-29 23:00:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/e0cdbf7dabf80ab090858de592dd479173e2f86d,e0cdbf7dabf80ab090858de592dd479173e2f86d,release candidate
+hamzasood,2019-03-29 01:56:58,https://api.github.com/repos/electronicarts/EASTL/git/commits/4cebe5249d6f13887f3640d524d7a32b8db97bf9,4cebe5249d6f13887f3640d524d7a32b8db97bf9,"Add a missing include to optional.h (#273)
+
+This caused a compilation error when compiling with exceptions enabled."
+rparolin,2019-03-16 23:59:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/6089142a0a2b81221ac56eaa35c025b60974169e,6089142a0a2b81221ac56eaa35c025b60974169e,3.13.04 release
+wmamrak,2019-03-15 21:57:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/15dd3e87605d2eb7590189b8a90795762998d3e0,15dd3e87605d2eb7590189b8a90795762998d3e0,Fixed typo in equal_range benchmark (#271)
+wmamrak,2019-03-12 22:29:44,https://api.github.com/repos/electronicarts/EASTL/git/commits/2dc410a83119760bb8a85bd995717adf13490ded,2dc410a83119760bb8a85bd995717adf13490ded,Fixed incorrect descriptions of size_type in containers. (#270)
+rparolin,2019-02-28 23:01:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/4bb92c79cc450f611453af65d465e8ce6426a283,4bb92c79cc450f611453af65d465e8ce6426a283,"Update CONTRIBUTING.md
+
+Updating CLA url."
+rparolin,2019-02-25 17:54:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/76bacfe3d725fa8994ab3954959d4ba6cd7c1b92,76bacfe3d725fa8994ab3954959d4ba6cd7c1b92,3.13.03 release
+Meorawr,2019-02-25 17:33:34,https://api.github.com/repos/electronicarts/EASTL/git/commits/b696125dabd25fa264de4d14ad29051bb690dd0d,b696125dabd25fa264de4d14ad29051bb690dd0d,"Fix unused parameter in variant monostate hasher (#268)
+
+Fixes a C4100 warning under MSVC, for example when compiling under the
+/W4 warning level."
+rparolin,2019-02-05 21:17:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/76bf5a393b303aa19341f2b8b169f4c0a5f47eec,76bf5a393b303aa19341f2b8b169f4c0a5f47eec,3.13.02 release
+rparolin,2019-01-27 20:46:57,https://api.github.com/repos/electronicarts/EASTL/git/commits/4ac68a0fc4ce8d10b367aa5e742d5297d5e65512,4ac68a0fc4ce8d10b367aa5e742d5297d5e65512,moving the verbose flag
+rparolin,2019-01-23 19:23:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/e1b1b12c267e0f6072a19284396215e5457e3000,e1b1b12c267e0f6072a19284396215e5457e3000,compile fix
+rparolin,2019-01-23 18:24:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/87967e4c05ee22e13551f85d8a0c13a8a349e274,87967e4c05ee22e13551f85d8a0c13a8a349e274,3.13.00 release
+egranata,2019-01-13 02:35:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/d581ecd66c3e18816ddf158b396cb26005fd07bc,d581ecd66c3e18816ddf158b396cb26005fd07bc,"Fix an enumeral/non-enumeral type mix (#257)
+
+With a recent gcc and -Wextra, compiling string.h yields a warning:
+
+EASTL/string.h:3255:55: warning: enumeral and non-enumeral type in conditional expression [-Wextra]
+   return (currentCapacity <= SSOLayout::SSO_CAPACITY) ? SSOLayout::SSO_CAPACITY : (2 * currentCapacity);
+
+This patch fixes the warning by turning the enumeral into an explicit
+size_type member variable
+
+   return (currentCapacity <= SSOLayout::SSO_CAPACITY) ? SSOLayout::SSO_CAPACITY : (2 * currentCapacity);"
+AntonYudintsev,2019-01-11 21:38:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/2360e8597624f1c74a3fc44a8837138a869fb8bf,2360e8597624f1c74a3fc44a8837138a869fb8bf,"hashtable: DoInsertKey with externally provided hash value (#244)
+
+In some cases calculation a hash can be expensive and application can already have it calculated.
+This doesn't change any public API functions, but allows external application to save some performance
+by using already caclulated hash in their own hashmap/hashset implementation based on internal EASTL 'hashtable' container"
+vangelists,2019-01-10 04:06:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/9ab24aa3ed7fdbb923d0024d7c7f0adecd1b3e8a,9ab24aa3ed7fdbb923d0024d7c7f0adecd1b3e8a,"Minor indentation fix (#256)
+
+* Minor indentation fix
+
+* Minor indentation fix"
+Alan5142,2019-01-08 21:47:08,https://api.github.com/repos/electronicarts/EASTL/git/commits/b67428723ba41fa8a89d5dc4da7833aa37008f1f,b67428723ba41fa8a89d5dc4da7833aa37008f1f,"Constexpr String View (#254)
+
+* Constexpr String View
+
+Using eastl::string_view in a constexpr context causes a compile error
+
+* Fix constexpr in VS 2015
+
+Changed EA_CONSTEXPR to EA_CPP14_CONSTEXPR"
+rparolin,2019-01-04 17:22:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/7c31d3717cf37c4465bdd06f3df20e2e1b7fc92a,7c31d3717cf37c4465bdd06f3df20e2e1b7fc92a,3.12.08 release
+AntonYudintsev,2019-01-02 16:37:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/e75a74ed07f33b7678087a5810b368b80c8466c4,e75a74ed07f33b7678087a5810b368b80c8466c4,"Consistent use of noexcept/EA_NOEXCEPT in vector (#243)
+
+For apps not using exceptions, using noexcept can trigger compilation errors"
+theryee,2019-01-02 16:36:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/c71b3d12292fedecc47a7fa5862fdc5adf286491,c71b3d12292fedecc47a7fa5862fdc5adf286491,"Fix leak in TestSList (#248)
+
+- use fixed allocator and pre-defined buffer"
+rc-matthew-l-weber,2018-12-18 18:12:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/45469730d641868ce05433fff2e199510c7d45c3,45469730d641868ce05433fff2e199510c7d45c3,"eastl: add support for Linux AArch64 (#241)
+
+Borrowed definitions from Android/iPhone ARM64.
+
+Signed-off-by: Maury Anderson <maury.anderson@rockwellcollins.com>"
+aymarino,2018-12-15 05:54:44,https://api.github.com/repos/electronicarts/EASTL/git/commits/54e7bb8de566db4400f94e01015960f569d9d662,54e7bb8de566db4400f94e01015960f569d9d662,Remove redundant ctor declarations for C++20 aggregate defn change (#240)
+christinaa,2018-12-08 21:13:45,https://api.github.com/repos/electronicarts/EASTL/git/commits/21058cee33f9579282e5327c94dc46304d510560,21058cee33f9579282e5327c94dc46304d510560,"Do not define char8_t if it's defined in a C++20 compiler (#239)
+
+Use `__cpp_char8_t` as a feature check to make sure if `char8_t` is
+defined by the compiler it is not redefined."
+rparolin,2018-12-06 18:53:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/2c75cf60f2d67036f75b162f169206e3a73951ff,2c75cf60f2d67036f75b162f169206e3a73951ff,Resolving GCC compiler errors due to constexpr limitation and upgrading travis scripts.
+rparolin,2018-12-06 17:36:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/549400c110712a8a66d3932c072ac603d6811ab5,549400c110712a8a66d3932c072ac603d6811ab5,3.12.07 release
+theryee,2018-11-21 04:20:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/cc64dc5f1d923b5dd06a0e56ca4cae741c674d8e,cc64dc5f1d923b5dd06a0e56ca4cae741c674d8e,Use pre-defined buffer to avoid leaking in TestList (#237)
+theryee,2018-11-19 23:50:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/0d15360e79966e1436fc54fe77daad7e7c5accc8,0d15360e79966e1436fc54fe77daad7e7c5accc8,Fix leak in TestTypeTraits (#236)
+jatinx,2018-11-10 01:49:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/b0016e9818b9ee3d85466c54b3e5fd27ad7dba1a,b0016e9818b9ee3d85466c54b3e5fd27ad7dba1a,"adding unsafe any cast operations (#232)
+
+* adding unsafe any cast operations
+
+* Removed the space in EANOEXCEPT"
+jvidziunas,2018-11-10 01:45:47,https://api.github.com/repos/electronicarts/EASTL/git/commits/8eebda057618bb2e77772ac46ce4b706dee9a682,8eebda057618bb2e77772ac46ce4b706dee9a682,"Adding `get_allocator()` method to `tuple_vector` for parity with other containers (#230)
+
+* Adding `get_allocator()` method to `tuple_vector` for parity with other
+container types
+
+* Updating fixed container variant to match
+
+* * Creating test for `tuple_vector_alloc` allocator manipulation
+* Adding `set_allocator() method to `tuple_vector()`
+
+* Equality test is not assignment"
+rparolin,2018-11-02 17:52:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/edb6b8699c7b204d21e60d7a759928f691afb8c2,edb6b8699c7b204d21e60d7a759928f691afb8c2,3.12.04 release
+rparolin,2018-11-01 22:03:19,https://api.github.com/repos/electronicarts/EASTL/git/commits/6f90e81cd8ecd9a87b8911e3d48ef90d7e2e81d3,6f90e81cd8ecd9a87b8911e3d48ef90d7e2e81d3,disabling permissive mode for msvc
+jatinx,2018-10-30 17:24:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/f16742055e05574b731b50c1b4517680c58fa0d9,f16742055e05574b731b50c1b4517680c58fa0d9,"Fixing ADL manually (#227)
+
+* Fixing ADL manually
+
+* Adding test for combnation of eastl::fixed_vector and std::variant
+
+* adding C++17 flags and guards for variants
+
+* Adding EASTL Standard C++17 Check"
+dave-cope,2018-10-26 16:23:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/fa950f49ee4e8ccdad83885f726ce373498942c0,fa950f49ee4e8ccdad83885f726ce373498942c0,Fixed format specifiers for several strings in the benchmarks so that output is correct on compilers like clang/gcc. (#228)
+rparolin,2018-10-22 22:24:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/2e0734c02a9e578b9629f7c1812db95a4e4fe2cf,2e0734c02a9e578b9629f7c1812db95a4e4fe2cf,removing buck files
+CypherSignal,2018-10-22 12:48:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/2855ae90e1ee5b984c299d8456acd82b38ec05fa,2855ae90e1ee5b984c299d8456acd82b38ec05fa,"Minor tuple_vector cleanup (#224)
+
+* Fixing up some minor inconsistencies
+
+In particular, fixing uses of size_t instead of eastl_size_t, and integer_sequence instead of index_sequence.
+This also addresses an issue where sometimes the appropriate index_sequence on the operators could not be derived.
+
+* Adding missing arithmetic operators for move_iterator of tuple_vector
+
+* Moving non-standard swap of rvalue-of-tuple-of-lvalue-references
+
+* Fixing move_iterator operators
+
+* Adding a missing include to tuple_vector (compressed_pair)"
+dave-cope,2018-10-22 12:45:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/da744e882dff451431d75a83d5ee7e1611c32b25,da744e882dff451431d75a83d5ee7e1611c32b25,Added some notes about generating projects with support for benchmarks. (#225)
+dave-cope,2018-10-15 19:31:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/73b661fdf64e27121a707c8d57555f7b2334d1cd,73b661fdf64e27121a707c8d57555f7b2334d1cd,"Made optimizations to merge_sort. (#223)
+
+* Implemented a version of merge sort with the ability to call insertion sort for smaller lists as well as optimizations for presorted data.
+
+* Fixed a compilation error on clang."
+zertyz,2018-10-12 21:08:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/f5375370696fd0220af49b136183e08adf9d2623,f5375370696fd0220af49b136183e08adf9d2623,"Improves support for Linux on ARM devices. (#222)
+
+* now supports Linux on ARM devices such as Raspberry Pi 1 & 2
+
+* supports Linux on ARM devices -- additional comments"
+theryee,2018-10-05 05:06:04,https://api.github.com/repos/electronicarts/EASTL/git/commits/acab806f46b380eadf02ddc87630db1eb75e0bfc,acab806f46b380eadf02ddc87630db1eb75e0bfc,Fix warnings: unused variables (#220)
+dave-cope,2018-10-02 16:56:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/a768d3171856f08fbcbe716cf3e789dbd31ade62,a768d3171856f08fbcbe716cf3e789dbd31ade62,"Optimized the implementation of 'merge' to avoid the overhead of calling copy twice (when only one copy has non-zero length). (#216)
+
+* Optimized the implementation of 'merge' to avoid the overhead of calling copy twice (when only one copy has non-zero length).
+
+* Added benchmarks for std::merge vs eastl::merge for predictable and unpredictable merge orders."
+CypherSignal,2018-09-21 23:37:48,https://api.github.com/repos/electronicarts/EASTL/git/commits/d28cbde72a4b661529358133cf2165c7ef28842b,d28cbde72a4b661529358133cf2165c7ef28842b,"Fixing issue where tuple_vector::operator= for init-list was not used (#215)
+
+This was not previously not an issue because the operator= for rvalue-ref of tuple was being invoked implicitly."
+CypherSignal,2018-09-21 19:42:19,https://api.github.com/repos/electronicarts/EASTL/git/commits/93390eed463f00ed4c85c9953dde0c78f7517be8,93390eed463f00ed4c85c9953dde0c78f7517be8,"Adding initializer_list support to tuple_vector (and support for _conditionally_ explicit support for tuple copy/move ctor) (#205)
+
+* Initial impl of initializer-lists for tuple_vec - *unit tests fail*
+
+This has a basic interface for initializer-list support on tuple_vector and fixed_tuple_vector, and expected test-cases set up, but none of the necessary implementation to satisfy the unit tests is set up yet.
+
+* Implementation of ctor via init-list
+
+* Implementation of assign via init-list
+
+* Fixing realloc in the fixed_tuple_vector test-case on no-overflow variant
+
+
+Fixing bug in fixed_tuple_vector test case
+
+* Implementation of insert via init-list
+
+All unit tests now pass!
+
+* Clean up of init-from-tuple-array code by collapsing common behaviour
+
+* Fixing bug introduced in insert() init-list
+
+* Fixing unnecessary copies in iter-range variant of tuple_vector::insert
+
+* Make ctors in tuple conditionally explicit for init-list's of tuples
+
+* Removed explicit constructions from init-lists in fixed_tuple_vector
+
+* Improving support for conditionally-explicit constructors on tuple
+
+Also fixing a couple compilation errors in TestFixedTupleVector
+Adding test case for conditionally-explicit ctor
+
+* Removing some bits from testing/iteration that were accidentally included
+
+* Updates to init-list support for compressed_pair's
+
+* Rework of ""is_constructible"" type_trait to use intrinsics where possible
+
+This fixes an issue where some helper functions (for verifying some _other_ type traits) on ::tuple_vector or ::tuple would fail to construct on some aligned data types on VS2015. Gcc still uses the non-intrinsic variant."
+rparolin,2018-09-21 16:05:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/777352480c256a15b40e996317596d6f4ce636d3,777352480c256a15b40e996317596d6f4ce636d3,removing brew commands
+rparolin,2018-09-21 15:50:35,https://api.github.com/repos/electronicarts/EASTL/git/commits/dee47d216cad490770d07127ad46d0bc8f58379f,dee47d216cad490770d07127ad46d0bc8f58379f,removing brew setup
+rparolin,2018-09-20 21:29:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/98a5a7bd1365668fc7ad792184b97473e0d42ea9,98a5a7bd1365668fc7ad792184b97473e0d42ea9,removing buck files
+CypherSignal,2018-09-20 18:30:55,https://api.github.com/repos/electronicarts/EASTL/git/commits/9076c4dc46c086eceb38f8994277d5c456d2ed85,9076c4dc46c086eceb38f8994277d5c456d2ed85,"Fixing problem where eastl::partition on tuple_vector could not compile due to missing swap on eastl::tuple&& (#212)
+
+* Adding test case (and fix) that runs eastl::partition on tuple_vector
+
+Technically this is mostly about fixing a hole where swapping rvalue refs of tuples didn't compile - eastl::partition on tuple_vector just happened to be a good case for it.
+
+* Fixing compilation error in TestFixedTupleVector"
+hamzasood,2018-09-20 18:29:34,https://api.github.com/repos/electronicarts/EASTL/git/commits/52d958c51a979267fb8fc277d2e839385386a4f1,52d958c51a979267fb8fc277d2e839385386a4f1,"Misc build fixes (#211)
+
+* Add some missing includes
+
+These caused build errors if EASTL/string_view.h was included before any
+other files
+
+* Fix build errors when compiling with EASTL_STRING_OPT_RANGE_ERRORS
+
+basic_string::compare tried to access data members that no longer exist.
+
+* Add support for compiling with clang-cl
+
+clang-cl was previously identified as a Clang compiler, which was the
+cause of some subtly incorrect behaviour.
+
+1. A CMake script added GCC-style flags to a clang-cl command, which
+triggered an unknown argument warning.
+
+2. EABase was checking for clang-specific macros that aren't defined
+in CL-mode; clang-cl is now treated as an MSVC compiler in the majority
+of cases."
+rparolin,2018-09-20 18:10:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/8fc4fa35d98e6557c7ea33b2e08f0b0ea3ee1cbc,8fc4fa35d98e6557c7ea33b2e08f0b0ea3ee1cbc,disable mingw builds on appveyor
+CypherSignal,2018-08-21 20:02:03,https://api.github.com/repos/electronicarts/EASTL/git/commits/fb46446bfe5ea5d840f7a1b1dd812f9d23ffde4b,fb46446bfe5ea5d840f7a1b1dd812f9d23ffde4b,"Update tuple_vector_readme.md (#208)
+
+* Update tuple_vector_readme.md
+
+Filling in some missing details, and fixing various bits of awkward language and spelling mistakes.
+
+* Update tuple_vector_readme.md"
+CypherSignal,2018-08-20 17:56:05,https://api.github.com/repos/electronicarts/EASTL/git/commits/956a80e32826961fb14164dcc6ba92df5b34b3a5,956a80e32826961fb14164dcc6ba92df5b34b3a5,"Use compressed_pair in tuple_vec as a small opt for empty allocators (#203)
+
+Also rearranged the data members of tuple_vector ever-so-slightly to move more commonly accessed data to the start of the class."
+CypherSignal,2018-08-11 22:29:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/04ecf65d77f23a53abd19fdfd3ab3f724ea7a600,04ecf65d77f23a53abd19fdfd3ab3f724ea7a600,"tuple_vector - a new STL-compatible container that abstracts a SoA-style data layout (#197)
+
+eastl::tuple_vector implementation.  eastl::tuple_vector a new STL-compatible container that abstracts a SoA-style data layouts."
+rparolin,2018-08-09 15:31:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/f906c20bfc0d84c2a8173ef98cf319abd78a9794,f906c20bfc0d84c2a8173ef98cf319abd78a9794,3.12.01 release
+dave-cope,2018-07-30 21:44:48,https://api.github.com/repos/electronicarts/EASTL/git/commits/1160859aeae65334c38223398d785cf02b6b6020,1160859aeae65334c38223398d785cf02b6b6020,"Added a new benchmark to better measure the performance of sorting small arrays/sub-arrays. (#202)
+
+In addition, the CompareSortPerformance function was slightly modified
+so that assignment and comparison counts were recorded for the best
+performance run of a test instead of the last run."
+dave-cope,2018-07-24 20:15:36,https://api.github.com/repos/electronicarts/EASTL/git/commits/999732ede5acda3ba1d0f089ab3e3fd62eda9958,999732ede5acda3ba1d0f089ab3e3fd62eda9958,"This commit reintroduces two changes that were accidentally lost during (#198)
+
+the merge of the 3.10.00 release.
+
+Briefly, the changes are:
+- Made a bug fix related to gVerbosityLevel.
+- Added benchmarks for std::stable_sort."
+moretromain,2018-07-24 19:48:08,https://api.github.com/repos/electronicarts/EASTL/git/commits/735534026b61d44cb7ccaf4004810b7744b527ac,735534026b61d44cb7ccaf4004810b7744b527ac,"Fix basic_string_view sub-string based basic_string constructor (#195)
+
+* Fix basic_string_view sub-string based basic_string constructor
+
+* Add tests for basic_string(basic_string_view) constructors"
+zheland,2018-07-24 19:06:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/00e456953e0541c95c521ca6ee5c1c54131d338e,00e456953e0541c95c521ca6ee5c1c54131d338e,"Fix unmached optional value constructor/destructor calls (#188)
+
+Optional copy constructor should use inplace constructor
+instead copy assigment operator because constructed value,
+does not exist yet and assigment operator can not be used.
+
+Optional move constructor should not use swap operation
+for engaged flag because according to C++ draft N4762, page 537:
+constexpr optional(optional&& rhs) noexcept(see below );
+7 Effects: ... bool(rhs) is unchanged.
+8 Ensures: bool(rhs) == bool(*this).
+
+Optional assignment operators should use in-place construct
+instead value assignment operator if lhs if nullopt.
+If rhs is nullopt it should destruct value in lhs.
+
+Also move assigment operator should not use
+swap for engaged flag because according to C++ draft N4762, page 539:
+optional<T>& operator=(optional&& rhs) noexcept(see below );
+8 Effects: ... The result of the expression bool(rhs) remains unchanged.
+10 Ensures: bool(rhs) == bool(*this).
+
+Test where unique ptr moved from one to another optional is
+incorrect due to after optional moved bool(optional) remains unchanged.
+Test fixed and unique_ptr ownership movement check added."
+theryee,2018-07-12 04:32:08,https://api.github.com/repos/electronicarts/EASTL/git/commits/f81a8bdfe18021f15e006b4a8ffbd9ab9d1ac745,f81a8bdfe18021f15e006b4a8ffbd9ab9d1ac745,"C++14: type_trait is_final (#187)
+
+* is_final
+
+* add guard: compiler must implement support for type_traits
+
+* compare std and eastl is_final results; add default is_final impl
+
+* per review"
+CypherSignal,2018-07-12 04:19:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/dd5026dcbb964f0302a9f72449d2d78ace81948f,dd5026dcbb964f0302a9f72449d2d78ace81948f,"Updating the fixed_pool impl of swap to use Move  (#193)
+
+* Updating impl of fixed_swap to support Containers with moveonly types
+
+And adding a corresponding test case in TestFixedVector to check this.
+
+* Using EASTL_MOVE macro instead of eastl::move"
+theryee,2018-07-12 04:13:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/04f3482723133db87b0146b8aa59bbac9afc0c8e,04f3482723133db87b0146b8aa59bbac9afc0c8e,C++20: type_trait's endian (#196)
+dave-cope,2018-07-09 17:33:44,https://api.github.com/repos/electronicarts/EASTL/git/commits/b58d4d4edc3239a5fc599b27ac5b26cd8cd47846,b58d4d4edc3239a5fc599b27ac5b26cd8cd47846,"Improved the sorting tests (#191)
+
+The first improvement is to add a sanity check to make sure the sum of the array elements is the same after sorting as before sorting.  Otherwise a sort function that simply zeroed every element in the container could pass the 'is_sorted' test.
+
+The second improvement was to add a test that verifies if the stable sort algorithms are actually stable."
+rparolin,2018-07-06 16:52:35,https://api.github.com/repos/electronicarts/EASTL/git/commits/2b516e72e9146091c9084183a6ecdd990d24a781,2b516e72e9146091c9084183a6ecdd990d24a781,"Merge tag '3.10.00'
+
+3.10.00 Release"
+rparolin,2018-07-03 23:35:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/5403710599793863ef7c463e88e290aa35cdce7b,5403710599793863ef7c463e88e290aa35cdce7b,3.10.00 release
+dave-cope,2018-06-30 01:28:25,https://api.github.com/repos/electronicarts/EASTL/git/commits/a57bafacd26fbf90a6d3e4034e8ff3cb1b2e71bb,a57bafacd26fbf90a6d3e4034e8ff3cb1b2e71bb,"Added benchmarks for std::stable_sort. (#189)
+
+The rationale for adding this is the same as for benchmarking std::sort.  Namely that there should be a benchmark against the std implementations of this sort to ensure the EASTL equivalent of std::stable_sort has competitive performance."
+dave-cope,2018-06-25 16:41:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/d0a099d8fbb11ba63f79b03858b124f1d97143a8,d0a099d8fbb11ba63f79b03858b124f1d97143a8,"Made a couple radix sort optimizations (#179)
+
+* Optimized radix_sort to reduce memory traffic and potentially skip some scatter operations depending on the input data being sorted.
+
+This change also removes two specializations of radix_sort that can be handled by the generic code.
+The change also introduces a template parameter for 'DigitBits' which defaults to 8.  In some cases users may be able to acheive even better performance by tuning this value based on the data being sorted.
+
+* Added radix_sort tests including tests that exercise the internals of the optimized algorithm and test various values for 'DigitBits'."
+theryee,2018-06-25 16:38:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/0725aed1fb7faa9e46e659346b4aec3771a6ba69,0725aed1fb7faa9e46e659346b4aec3771a6ba69,"Fix warnings (#186)
+
+* Fix warnings
+
+* use static assert"
+CypherSignal,2018-06-24 01:00:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/d77672f560c73336f12d4c87acce43280edbefc7,d77672f560c73336f12d4c87acce43280edbefc7,"Adding tests and fixes for, e.g., comparison of tuples w/ non-const refs (#185)
+
+""const"" qualifier on const tuple_element_t<I, TupleImpl<Indices, Ts...>>& gets dropped when Ts is an lvalue ref. In this case, the only source of 'const-ness' on tuple_element_t comes from being baked into the source type. This means for non-const lvalue refs, the return type just bcomes ""Ts&"", but getInternal will attempt to return a const-ref values, and fail to compile because we cannot remove the const qualifier. Changing out the typename used by adding const specifically to the type of the ref, instead of trying to add it to the ref, solves the problem and we guarantee a const-ref return type."
+CypherSignal,2018-06-24 00:59:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/ea09e8154343f9dd1a4d77a2b1d8e00618771a1d,ea09e8154343f9dd1a4d77a2b1d8e00618771a1d,"Adding ""bonus"" headers to files included in EASTL project (#183)"
+BillyONeal,2018-06-24 00:41:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/7fd6adbc2f45926768d3bc83a83aede3470ca418,7fd6adbc2f45926768d3bc83a83aede3470ca418,Fix a few more _YVALS -> _CPPLIB_VER. (#184)
+CypherSignal,2018-06-22 03:33:37,https://api.github.com/repos/electronicarts/EASTL/git/commits/dfc78d352d6b6dc6557b36c8e5422aaba176d464,dfc78d352d6b6dc6557b36c8e5422aaba176d464,"Adding test cases and fixes around move-only/ref types for Tuples (#181)
+
+Additional test cases now check that tuples with move-only ref types now compile properly, instead of, apparently, finding a template deduction that attempted an implicit cast to value-type.
+
+Also, the missing cast of a ValueType& for the TupleLeaf ref specialization was added to satisfy the new test cases."
+BillyONeal,2018-06-22 03:32:19,https://api.github.com/repos/electronicarts/EASTL/git/commits/53f52aaafba99c28f8808850dfb7c2d3f7e2f4a0,53f52aaafba99c28f8808850dfb7c2d3f7e2f4a0,"Test for Dinkumware with _CPPLIB_VER instead of _YVALS. (#182)
+
+In VS2017 ""15.8"" changes have been made to the standard library to allow
+including some headers, like <type_traits>, in completely freestanding (not
+linking with msvcp140.dll) mode, so that these may be consumed by the kernel
+or similar constrained environments.
+
+Unfortunately this causes problems because the link dependency on the DLL is
+injected in yvals.h, so including <cstddef> no longer causes _YVALS to be
+defined, since that is the header guard for the yvals.h header.
+
+This file is already using _CPPLIB_VER for detection of specific Dinkumware
+version, so it's already assuming _CPPLIB_VER indicates Dinkumware, and that
+macro is at least pseudo-documented."
+zheland,2018-06-18 18:35:10,https://api.github.com/repos/electronicarts/EASTL/git/commits/12e3bc4559f8f98be8d602c75d9a09984e68a035,12e3bc4559f8f98be8d602c75d9a09984e68a035,"Fix constexpr specifier for integral_constant (#177)
+
+integral_constant<T, v>::value should be constexpr.
+
+This fix use of constexpr non-integral constants, e.g.:
+type_traits.h:264:18: error: `constexpr` needed
+for in-class initialization of static data member
+`int* const eastl::integral_constant<int*, 0u>::value`
+of non-integral type [-fpermissive]"
+CypherSignal,2018-06-18 18:34:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/4cec4f9e3971f3488b739c5347400fef5331a5d5,4cec4f9e3971f3488b739c5347400fef5331a5d5,"Adding ""inline"" to a handful of get() functions for TupleImpl (#178)
+
+The lack of inline on these functions was causing some performance problems in some situations where tuple is heavily utilized, often resulting in having to change Cmake's ""RelWithDebugInfo"" generated configuration in order to get accurate performance data. 
+Note that both of these functions callers and callees have the inline tag, and when ""any suitable"" inlining is enabled, these functions get inlined away in almost all cases - after all, it just acts as an intermediary between TupleImpl and one of its TupleLeaf's."
+dave-cope,2018-06-16 03:51:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/770c61082dd344f7e2269eb5431cdeb93792e777,770c61082dd344f7e2269eb5431cdeb93792e777,"Fixed a bug related to gVerbosityLevel. (#176)
+
+The variable was previously declared as being static which meant it could take on different values in different translation units.  The issue was resolved by making the variable extern and defining it in EAEntryPointMain.inl (which is assumed to be included exactly once for a program)."
+dave-cope,2018-06-14 14:05:52,https://api.github.com/repos/electronicarts/EASTL/git/commits/f7421804c2268ced8809890eac432b39cd35a577,f7421804c2268ced8809890eac432b39cd35a577,"Implemented basic command line handling in EAMain. (#175)
+
+* Implemented basic command line handling in EAMain.
+
+Note: Some constructors for the CommandLine class still have empty implementations.  However enough of the class has been implemented to be useful on Windows/Unix systems.
+
+* Implemented a case sensitive/insensitive string prefix helper function to avoid depending on non-standard string compare functions.
+
+The code used should be more portable than trying to detect what case insensitive compare function is available on each platform, and it also avoids dependencies on other libraries to provide this functionality."
+dave-cope,2018-06-12 16:54:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/2b321128a9b4c9d628e4fc317cb44cf6a207082b,2b321128a9b4c9d628e4fc317cb44cf6a207082b,"Radix sort test improvements (#174)
+
+* Implemented test verification for radix_sort which was previously not implemented.
+
+This change also eliminates some redundancy defining the various RadixSortElement types.
+
+Note: Tests for RadixSortElement8 now fail because of a bug in the uint8_t specialization for radix_sort_impl.
+
+* Resolved a bug in the uint8_t specialization of radix_sort_impl that was detected by adding verification to a sorting test."
+dave-cope,2018-06-03 17:50:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/dd359e08c59865ee65e69cbd085cd000a767a0f4,dd359e08c59865ee65e69cbd085cd000a767a0f4,"Radix sort benchmark improvements (#172)
+
+* Added a new randomization type that is somewhat similar to kOrdered, but doesn't perform in a pathological way for radix_sort.
+
+* Removed a bunch of special case code for radix sort benchmarks by implementing a custom key extractor.
+
+* Added ability to benchmark radix_sort for the ""slow assignment"" tests.
+
+Note: this change also modified the element being compared from a int32_t to a uint32_t so that the test could be easily performed using radix sort."
+dave-cope,2018-05-30 17:50:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/6e536d1682a46cd984063209436fe46f7331ce27,6e536d1682a46cd984063209436fe46f7331ce27,"Allowed kSize[] to be updated without requiring manual updates to kSizeCount or kArraySizeMax. (#170)
+
+Various sort benchmarks now operate on a vector of sort functions instead of explicitly skipping sort functions in multiple locations. This change also eliminates the need to handle sort functions in switch statements in order to skip them.
+
+The primary reason for these changes is so that it is easier to benchmark larger array sizes and/or to modify the sort functions that will be benchmarked (since it quickly becomes impractical to benchmark O(n^2) sort functions for larger array sizes)."
+mapx,2018-05-28 14:57:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/2948558d40072211a99c1faf3232637f7ea01732,2948558d40072211a99c1faf3232637f7ea01732,Correct the name of container's reset member function (#165)
+zahirtezcan-bugs,2018-05-28 14:56:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/c7c89371b75b3eea9f73d2829e8f780bd776fb8f,c7c89371b75b3eea9f73d2829e8f780bd776fb8f,converted direct allocate/deallocate calls into EASTLAlloc/Free macros (#168)
+mapx,2018-05-10 18:38:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/74dc7343224c66a73f868a70a990531b905635e2,74dc7343224c66a73f868a70a990531b905635e2,Fix typos (#163)
+jlaumon,2018-05-04 17:37:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/95ef3aefa508fe7328e6140bf90d5ac123cf68ca,95ef3aefa508fe7328e6140bf90d5ac123cf68ca,Fixing eastl::bitset natvis (#162)
+zahirtezcan-bugs,2018-05-03 20:20:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/4bd53f0f195b8e808fd26ac0bdfee5addbdaef25,4bd53f0f195b8e808fd26ac0bdfee5addbdaef25,ResetToSSO now zeroes out the whole RawLayout in order to suppress msvc code analysis buffer overrun warning. (#161)
+BlamKiwi,2018-05-03 15:41:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/e117c22d8d3782524e219434eb4415697547e72c,e117c22d8d3782524e219434eb4415697547e72c,"Fix unused variable warning/error in tuple. (#159)
+
+An unused variable in `template<> tuple::swap()` causes issues with Wall & Werror enabled."
+mapx,2018-04-25 15:18:32,https://api.github.com/repos/electronicarts/EASTL/git/commits/d922e16a9b2b5d582ece171bad1fc7c8ef10b59f,d922e16a9b2b5d582ece171bad1fc7c8ef10b59f,Fix typos (#157)
+rparolin,2018-03-29 15:37:25,https://api.github.com/repos/electronicarts/EASTL/git/commits/84127fd4ac234b24a40ea7911d05c85e7ba75120,84127fd4ac234b24a40ea7911d05c85e7ba75120,3.09.00
+rparolin,2018-03-29 15:32:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/328a7f0f0402ec4ad39f12eb7c120f73ca960191,328a7f0f0402ec4ad39f12eb7c120f73ca960191,updating readme
+virt00l,2018-03-23 16:37:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/2bb9d83d2d787d0717cc8331750b30ec269b8088,2bb9d83d2d787d0717cc8331750b30ec269b8088,"fix noexcept warnings in case if compiled with EA_COMPILER_NO_NOEXCEPT (#152)
+
+E.g.:
+
+EASTL/string.h(419): error C2220: warning treated as error - no 'object' file generated
+EASTL/string.h(419): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc"
+rparolin,2018-03-19 19:12:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/a3fb7366ebc03b2cde935174d26eeb4470f1a316,a3fb7366ebc03b2cde935174d26eeb4470f1a316,removing non-ascii characters
+rparolin,2018-03-19 18:50:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/4faf972c48e4f3b958570ffb8409d900d586d543,4faf972c48e4f3b958570ffb8409d900d586d543,adding memfill8
+rparolin,2018-03-19 17:56:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/9a0d5e59af7ee4f501c3f81154ed3ba9a0c20c9f,9a0d5e59af7ee4f501c3f81154ed3ba9a0c20c9f,3.08.00
+zheland,2018-02-28 01:02:22,https://api.github.com/repos/electronicarts/EASTL/git/commits/2c788633a35fe456c222689dc3b12d833821a72e,2c788633a35fe456c222689dc3b12d833821a72e,"fix eastl::string_view compare for string with different sizes (#146)
+
+string_view.compare method should return non-zero result,
+when compare strings with different sizes and same common part.
+
+Added helper static compare function similar to used in string.h.
+Fixed string_view compare method using static compare function.
+Fixed and added unit tests for string_view."
+virt00l,2018-02-19 23:48:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/b6b873285fabeddbafc718e8e42afc56f3e923b6,b6b873285fabeddbafc718e8e42afc56f3e923b6,"fix broken include numeric.h dependency on iterator.h (#145)
+
+If numeric.h included before iterator.h was included it's won't compile
+on GCC, e.g:
+
+EASTL/numeric.h:132:35: error: expected initializer before ¿<¿ token typedef typename iterator_traits<InputIterator>::value_type value_type;
+
+and Clang, e.g.:
+
+EASTL/numeric.h:159:20: error: expected a qualified name after 'typename'
+                typedef typename iterator_traits<InputIterator>::value_type value_type;"
+virt00l,2018-02-19 23:45:08,https://api.github.com/repos/electronicarts/EASTL/git/commits/3bb0ee24733aad9acd2309f8df1254105aea64b4,3bb0ee24733aad9acd2309f8df1254105aea64b4,"fix eastl::optional<> MSVC /Wall level 4 warnings (#144)
+
+optional.h(42): warning C4574: 'EASTL_EXCEPTIONS_ENABLED' is defined to be '0': did you mean to use '#if EASTL_EXCEPTIONS_ENABLED'?
+optional.h(81): warning C4582: 'eastl::Internal::optional_storage<T,false>::val': constructor is not implicitly called"
+artemartey,2018-02-19 23:44:13,https://api.github.com/repos/electronicarts/EASTL/git/commits/fe7d35b3c661f1203822ab11e8076fcd53f3f3f5,fe7d35b3c661f1203822ab11e8076fcd53f3f3f5,"String view type fixes (#143)
+
+* string_view: add unit test
+
+* functional: implement hash for wchar_t*
+
+* string_view: fix hash types
+
+* string_view: cache end in local var"
+artemartey,2018-02-19 01:39:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/9bd9fb936645d575544e5f3a48f07a75c3fdf93b,9bd9fb936645d575544e5f3a48f07a75c3fdf93b,"String view hash fixes (#142)
+
+* string_view: add counterexample for string_view hash calculation
+
+* string_view: fix hash calc"
+rparolin,2018-02-11 19:12:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/52c0c7a21bdc52e09c7c24f3576f8d09f7de087b,52c0c7a21bdc52e09c7c24f3576f8d09f7de087b,Merge branch '3.07.02'
+rparolin,2018-02-02 04:09:12,https://api.github.com/repos/electronicarts/EASTL/git/commits/e1ee3f28781a8cc9a722730e15cbf5d162d07ee3,e1ee3f28781a8cc9a722730e15cbf5d162d07ee3,disabling invoke_result test on gcc
+rparolin,2018-02-01 05:56:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/a941693b9b9f775080cf552cbd4c1fb63d3b866e,a941693b9b9f775080cf552cbd4c1fb63d3b866e,fixing shadowing issue in fixed_function
+rparolin,2018-02-01 05:15:22,https://api.github.com/repos/electronicarts/EASTL/git/commits/f94ab40fcdd3dffe64d5e7170348965131ab3b1f,f94ab40fcdd3dffe64d5e7170348965131ab3b1f,updating gcc version to C++14 compatible
+rparolin,2018-02-01 05:04:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/219e79cf15f65d015098bbfe12d1e38818d05b69,219e79cf15f65d015098bbfe12d1e38818d05b69,removing buck builds
+rparolin,2018-02-01 04:59:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/036fa884c1d07c0a119e33eba87cf94026126a6f,036fa884c1d07c0a119e33eba87cf94026126a6f,merge conflict
+rparolin,2018-01-30 20:01:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/b9be6af4392d8bd6865c00b6d265c8896553db8a,b9be6af4392d8bd6865c00b6d265c8896553db8a,3.07.01 release
+rparolin,2018-01-30 19:23:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/ab43be42d2fe9754a65d64eb14915133ad6e1bb8,ab43be42d2fe9754a65d64eb14915133ad6e1bb8,removing digit seperator
+claimred,2018-01-03 20:08:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/d08a3bb220fbad14f0606f442d5f204c04fd7115,d08a3bb220fbad14f0606f442d5f204c04fd7115,fixed https://github.com/electronicarts/EASTL/issues/135 (#137)
+theryee,2018-01-03 17:30:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/af81e2c9a7a2bd6b5a50f3f64c7d12e6e240260c,af81e2c9a7a2bd6b5a50f3f64c7d12e6e240260c,shrink_to_fit issue#119 (#134)
+rparolin,2018-01-30 20:20:43,https://api.github.com/repos/electronicarts/EASTL/git/commits/934bf60606b8f3204831ff6bbcdab57d2372d6b7,934bf60606b8f3204831ff6bbcdab57d2372d6b7,3.07.02 release
+rparolin,2018-01-30 19:23:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/cc4605070e027f18c35d0ac23366f2ef3dade170,cc4605070e027f18c35d0ac23366f2ef3dade170,removing digit seperator
+rparolin,2018-01-30 19:10:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/cba0583f43d206cc20d59a1cfd1f28f97121d3fe,cba0583f43d206cc20d59a1cfd1f28f97121d3fe,Merge branch 'master' into 3.07.00
+rparolin,2018-01-30 19:08:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/85e85872cd71b08742147e165a1d037690a2a125,85e85872cd71b08742147e165a1d037690a2a125,3.07.00 release
+claimred,2018-01-03 20:08:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/fdf2007ec50dff1db9c8a1611acd2cfdcffaaeaa,fdf2007ec50dff1db9c8a1611acd2cfdcffaaeaa,fixed https://github.com/electronicarts/EASTL/issues/135 (#137)
+theryee,2018-01-03 17:30:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/d88d9a74f0cd80205bccac568f510530436a11fb,d88d9a74f0cd80205bccac568f510530436a11fb,shrink_to_fit issue#119 (#134)
+wmamrak,2017-12-13 18:53:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/1359697e7b45386344da20224fd46a0a20fd35db,1359697e7b45386344da20224fd46a0a20fd35db," Make return types of insert conforming with c++11 (with tests) (#133)
+
+* Make return types of insert conforming with c++11
+
+Make return types of insert conforming with c++11, i.e. iterator, instead of void.
+
+* Added tests for the modified insert methods"
+sfinktah,2017-11-12 19:34:03,https://api.github.com/repos/electronicarts/EASTL/git/commits/cb810a012c56dd6b02155782904d059cb3c396d9,cb810a012c56dd6b02155782904d059cb3c396d9, just some even prettier alignment and a tiny typo in comments fixed (#129)
+rparolin,2017-11-08 21:17:56,https://api.github.com/repos/electronicarts/EASTL/git/commits/2e6e631333aa89769f14bc8628ad0ae4bc58aadf,2e6e631333aa89769f14bc8628ad0ae4bc58aadf,gcc compiler fix
+rparolin,2017-11-08 20:38:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/d269f2be6398a38db175c9f1a05625fb60801d53,d269f2be6398a38db175c9f1a05625fb60801d53,3.06.00 release
+rparolin,2017-10-27 12:17:37,https://api.github.com/repos/electronicarts/EASTL/git/commits/f92de00816bdfd66cdec844158c133afa0f56d10,f92de00816bdfd66cdec844158c133afa0f56d10,"Appveyor compiler fixes for MinGW and VS2017 support (#127)
+
+* adding vs2017 to appveyor script
+* removing vs2013 builds
+* Update .appveyor.yml"
+Leandros,2017-10-26 19:58:09,https://api.github.com/repos/electronicarts/EASTL/git/commits/242d863a30bdc863833752a1dea07d9219987367,242d863a30bdc863833752a1dea07d9219987367,"Allow move-constructing optional_storage with value_type (#125)
+
+* Allow move-constructing optional_storage with value_type
+
+* Add test for optional move constructor"
+Leandros,2017-10-26 19:55:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/6db0f7bf85de80588a1186914c2e6e0e997f2511,6db0f7bf85de80588a1186914c2e6e0e997f2511,Bump EASTL version to 3.05.09 (#126)
+Leandros,2017-10-19 16:23:47,https://api.github.com/repos/electronicarts/EASTL/git/commits/14231da7c9e495519ac513d532639c05a162132f,14231da7c9e495519ac513d532639c05a162132f,"define _SSIZE_T_DEFINED, when defining typedef ssize_t (#121)
+
+* define _SSIZE_T_DEFINED, when defining typedef ssize_t
+
+* Correctly guard the ssize_t typedef with defines
+
+Use both _SSIZE_T_ & _SSIZE_T_DEFINED as found in
+several other project to guard against multiple
+definition of ssize_t"
+Leandros,2017-10-16 19:58:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/4b74ec95b6361b04feb56a7069cbddd7dddfc527,4b74ec95b6361b04feb56a7069cbddd7dddfc527,"Rename IN to in, to avoid compiler errors on windows (#123)"
+bnason-nf,2017-10-16 19:58:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/ae8c57d64b41a5bfb60b90051db516051e612e83,ae8c57d64b41a5bfb60b90051db516051e612e83,"Check for empty range in vector::erase(first,last) (#124)
+
+* Check for empty range in vector::erase(first,last)
+
+When erase() is called on a vector with an empty range (first == last),
+it should be a no-op. If erase() does not check for this case, it can
+end up calling the move assignment operator for an obect with itself as
+the source and dest. This is unnecessary work at best, and at worst
+could cause problems if the object's implementation of the move
+assignment does not handle this case well, leaving the object in an
+undefined state.
+
+This fix simply adds a check for first==last and avoids doing any work
+in that case.
+
+* Update naming for empty vector::erase() test
+
+- Rename testmovetoself to TestMoveAssignToSelf
+- Rename TestMoveAssignToSelf member movedtoself to mMovedToSelf
+- Rename moveblevec to v1"
+rparolin,2017-10-16 17:57:19,https://api.github.com/repos/electronicarts/EASTL/git/commits/fce4c9a510b82f3e9aa91420e2dee6fc64c07fdb,fce4c9a510b82f3e9aa91420e2dee6fc64c07fdb,Merge branch 'master' into 3.05.09
+rparolin,2017-10-16 17:22:09,https://api.github.com/repos/electronicarts/EASTL/git/commits/2605ac30de028fb2907de49891b4f77750a1f28f,2605ac30de028fb2907de49891b4f77750a1f28f,3.05.09
+rparolin,2017-10-10 16:49:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/55b5912888bd8702c395886a29aeef3730906a72,55b5912888bd8702c395886a29aeef3730906a72,adding link path
+rparolin,2017-10-10 16:25:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/f89051384a523f3c6941b3ce5b01c0017900a840,f89051384a523f3c6941b3ce5b01c0017900a840,adding libcxx libs for clang
+rparolin,2017-10-10 16:16:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/64b2e4ea6672ce9b454c9b2e888b8cc14cab83ed,64b2e4ea6672ce9b454c9b2e888b8cc14cab83ed,upgrading to c++14
+kfitch,2017-08-16 03:21:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/b6d25bb823a790d230596947b9ae2afc47993f9b,b6d25bb823a790d230596947b9ae2afc47993f9b,"Fix pragma to disable ""literal suffix"" warning on GCC. (#117)
+
+Unfortunately this only disables the warning on GCC 7.x. GCC 6.x seems to be
+unable to disable this warning."
+theryee,2017-08-13 16:44:03,https://api.github.com/repos/electronicarts/EASTL/git/commits/807d496dd01f2c3b5f65a407dada7299ffecb099,807d496dd01f2c3b5f65a407dada7299ffecb099,"Unable to sort non-copy-constructible objects (Issue #92) (#101)
+
+* issue #92; Unable to sort non-copy-constructible objects
+
+* MSVC 2013
+
+* fix typo
+
+* use correct metafunction
+
+* Reduce code duplication; support non-comparable variants
+
+* msvc2013 + eastl::forward
+
+* per review
+
+* Reduce code duplication
+
+* remove code duplication in adjust_heap
+
+* reduce median code duplication
+
+* Remove promote_heap code duplication
+
+* Remove get_partition code duplication
+
+* per review comments"
+rparolin,2017-08-10 23:28:32,https://api.github.com/repos/electronicarts/EASTL/git/commits/8e50e2d5984618e574060f67c2e52260ca3d55f4,8e50e2d5984618e574060f67c2e52260ca3d55f4,removing buck gcc builds on linux
+rparolin,2017-08-10 23:13:36,https://api.github.com/repos/electronicarts/EASTL/git/commits/c7dbea1df78af1f828f611afae81911191885804,c7dbea1df78af1f828f611afae81911191885804,disabling gcc buck builds on linux due to it being flaky
+rparolin,2017-08-10 22:29:58,https://api.github.com/repos/electronicarts/EASTL/git/commits/33263ca62729680ae786380ef057bafd485119fb,33263ca62729680ae786380ef057bafd485119fb,removing vs2013 builds from appveyor
+rparolin,2017-08-10 22:07:57,https://api.github.com/repos/electronicarts/EASTL/git/commits/b500bc5d74a12cfd3aba6dc07f4c339a3a41186a,b500bc5d74a12cfd3aba6dc07f4c339a3a41186a,3.05.08 release
+theryee,2017-06-28 05:10:38,https://api.github.com/repos/electronicarts/EASTL/git/commits/cc0f3b1172d375ecc1f3cedb72f21beefe1312cb,cc0f3b1172d375ecc1f3cedb72f21beefe1312cb,Travis PR validation moji check (#112)
+rparolin,2017-06-21 16:54:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/d321f4810d1e7a0588ee9f258683f61da6503860,d321f4810d1e7a0588ee9f258683f61da6503860,3.05.07 release
+njlr,2017-06-20 13:51:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/e5b0dc0c29eb5569929e4935b2e4b513b35de303,e5b0dc0c29eb5569929e4935b2e4b513b35de303,"Buck build support (#110)
+
+*  * Added support for Buck build
+
+*  * Added Buck build to the Travis file
+
+*  * Fixed syntax error in Travis file
+
+*  * Fixed casing of Buck target for eathread
+
+*  * Fixed Homebrew install path in Travis
+
+* Split brew install steps in case of time-outs
+
+*  * Pull ant out as brew install
+
+*  * Switched to cpp11 by default
+
+*  * Added build flavours based on travis platforms
+
+*  * Locked version to cpp14
+
+*  * Linux to cpp11
+
+*  * Add -v
+
+*  * Added Linuxbrew gcc for Buck
+
+*  * Fixed syntax error
+
+*  * Attempt to split buck build and cmake build on Travis
+
+*  * Fixed syntax errors
+
+*  * Fixed missing paren
+
+*  * Removed CMake build when running Buck build on Travis
+
+*  * Fixed syntax error"
+swardle,2017-06-14 04:32:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/7b790f5df64c7ff004a534f195e6e985fdee92b8,7b790f5df64c7ff004a534f195e6e985fdee92b8,"Merge pull request #111 from dAu6jARL/patch-1
+
+Remove Mojibake"
+dAu6jARL,2017-06-14 01:25:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/624bcb0e29a5c5c7c5c2681e02f1105e469cf57d,624bcb0e29a5c5c7c5c2681e02f1105e469cf57d,"Remove Mojibake
+
+Visual Studio 2017 Japanese version compiler occurs warning message as below.
+warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。"
+swardle,2017-06-10 05:03:57,https://api.github.com/repos/electronicarts/EASTL/git/commits/fcca0963108ff2dd42807b104109232dbe91e8e5,fcca0963108ff2dd42807b104109232dbe91e8e5,gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+mwolting,2017-06-05 20:28:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/b1e5074809ea9cbe7a7bd30333a1ef9b0903b0c1,b1e5074809ea9cbe7a7bd30333a1ef9b0903b0c1,Add support for Android on ARM64 (#106)
+rparolin,2017-06-05 17:52:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/826c3982d8d3a240808efe40d9ade841eace65bc,826c3982d8d3a240808efe40d9ade841eace65bc,3.05.06 release
+rparolin,2017-05-01 18:09:56,https://api.github.com/repos/electronicarts/EASTL/git/commits/5b2481c783784b05b1df8e7b990fd2e4cbd986c1,5b2481c783784b05b1df8e7b990fd2e4cbd986c1,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2017-05-01 18:09:52,https://api.github.com/repos/electronicarts/EASTL/git/commits/11fbe3ff742f37bc9cc303e433d06b1468b9d5c5,11fbe3ff742f37bc9cc303e433d06b1468b9d5c5,fixing comment
+gian21391,2017-05-01 18:09:12,https://api.github.com/repos/electronicarts/EASTL/git/commits/22cc2b8fffb2f0d914c632213be60d10c797c561,22cc2b8fffb2f0d914c632213be60d10c797c561,"Corrected the constructor of ref_count_sp (#102)
+
+Corrected the definition of the constructor ref_count_sp to match the declaration"
+theryee,2017-04-08 06:13:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/bfb8a82a25964f005706a403f570461799b0e19c,bfb8a82a25964f005706a403f570461799b0e19c,"Fix for issue #82; move semantics with hash_map::operator[] (#95)
+
+* Fix for issue #82; move semantics with hash_map::operator[]"
+rparolin,2017-04-03 18:07:48,https://api.github.com/repos/electronicarts/EASTL/git/commits/8f640f894ac90378839ff34dd71554c79e3ba4cf,8f640f894ac90378839ff34dd71554c79e3ba4cf,3.05.04 release
+rparolin,2017-03-15 20:24:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/1502123be32e320b0a78836bf51261a4fdaf3026,1502123be32e320b0a78836bf51261a4fdaf3026,Merge branch 'master' into 3.05.03
+rparolin,2017-03-15 20:16:09,https://api.github.com/repos/electronicarts/EASTL/git/commits/c151dc8a0dc7c523f30f054c54482fd82d790371,c151dc8a0dc7c523f30f054c54482fd82d790371,3.05.03 release
+theryee,2017-02-15 19:23:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/6218bb79752ed086945d0099442edc9021ca22a7,6218bb79752ed086945d0099442edc9021ca22a7,"mapAt (#87)
+
+* mapAt
+
+* Added exception guard
+
+* move branch"
+theryee,2017-02-13 19:07:13,https://api.github.com/repos/electronicarts/EASTL/git/commits/651281e121af897395dd2f131ee4308b42d985a5,651281e121af897395dd2f131ee4308b42d985a5,travis test for clang v 3.9 on osx; fix AppleClang detection (#86)
+rparolin,2017-02-08 17:33:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/cd72aa5d0306d771267c82ea4351916775415c2c,cd72aa5d0306d771267c82ea4351916775415c2c,3.05.02 release
+zhiguangwang,2017-01-19 03:28:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/34706c31cbfa768766680107cbddca1f60335512,34706c31cbfa768766680107cbddca1f60335512,"Fix C99 inttypes.h macro redefinition warnings with VS2013 and above (#81)
+
+* Fix C99 inttypes.h macro redefinition warnings when compiling with VS2013 and above.
+
+* Restrict the compiler version checks to MSVC, as requested."
+rparolin,2016-12-07 19:38:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/9dfa6a2c0ec969845033de94ed63c81872dbb921,9dfa6a2c0ec969845033de94ed63c81872dbb921,3.05.00 release
+rparolin,2016-12-03 22:42:30,https://api.github.com/repos/electronicarts/EASTL/git/commits/201e4c2595918de9c0613683402a80470147507b,201e4c2595918de9c0613683402a80470147507b,removing gitter tag
+DragoonX6,2016-12-03 07:53:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/8a605b3b698de15a24632aceb58c88dc69e766f0,8a605b3b698de15a24632aceb58c88dc69e766f0,"Ignore IDE and build files. (#75)
+
+Ignores Visual Studio .suo files,
+Qt Creator .user files,
+and the folders generated by the CI scripts."
+DragoonX6,2016-12-03 00:43:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/8dd0fe293ec2fa25cb6dab8d837f6a1880ad9a3c,8dd0fe293ec2fa25cb6dab8d837f6a1880ad9a3c,"Remove the need to update pacman before mingw appveyor builds. (#76)
+
+* Ignore IDE and build files.
+
+Ignores Visual Studio .suo files,
+Qt Creator .user files,
+and the folders generated by the CI scripts.
+
+* Remove the need to update pacman on appveyor.
+
+This is not needed anymore since gcc and clang
+are stable enough on the current install on appveyor."
+dAu6jARL,2016-12-02 17:33:37,https://api.github.com/repos/electronicarts/EASTL/git/commits/20e97f2822d44403daf261315d0b7a561beec3b7,20e97f2822d44403daf261315d0b7a561beec3b7,"Mojibake in EASTL header files. #71 (#74)
+
+* Update optional.h
+
+U+2019 UTF8 character ""’"" exists in line 15. I replace U+2019 by 0x27.
+
+* Update type_pod.h
+
+Latin-1 tilde 0x98(U+02DC) is used in line 1670.
+To resolve C4819 warning in non latin-1 version Visual Studio, replace it normal tilde 0x7e."
+martty,2016-12-01 07:38:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/d04a5f49af405006bd09f9aacac5253ddc3f0be9,d04a5f49af405006bd09f9aacac5253ddc3f0be9,Non-member functions should be marked inline to prevent ODR errors (#72)
+swardle,2016-11-24 03:03:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/bdd3ae9cf41f6fc1877a0a9f491a2fdd3eab06db,bdd3ae9cf41f6fc1877a0a9f491a2fdd3eab06db,"Add /MP to builds.  On my local computer is quite a bit faster with quad core hyper threaded computer.
+
+before 3.5 min
+ 18:29:24.67
+ 18:32:59.57
+
+after 2 min
+ 18:43:10.46
+ 18:44:53.17"
+rparolin,2016-11-22 03:46:58,https://api.github.com/repos/electronicarts/EASTL/git/commits/1898f447e1dd2e25a85c03d09f241b49be4ffa5c,1898f447e1dd2e25a85c03d09f241b49be4ffa5c,hash<wchar_t> compiler error fix and script edits to ensure failed builds are detected by appveyor
+Wawha,2016-11-21 20:43:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/ba1443bee1da09ac13b0adb45d1bbd714384d100,ba1443bee1da09ac13b0adb45d1bbd714384d100,"Use move semantic instead of copy in vector::insert() and vector::set_capacity() (#66)
+
+* TestVector: add tests to check move in vector::insert() and vector::set_capacity()
+* TestVector: add #if EASTL_MOVE_SEMANTICS_ENABLED/endif for test which use move semantic"
+dierkes,2016-11-12 14:53:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/7fdf731b9862a3d599abe3dbf99b69985f0ce543,7fdf731b9862a3d599abe3dbf99b69985f0ce543,"Compatibility with VC9 and VC10 (#69)
+
+* Fixed C++11 switch for VC9
+
+* Fixed guards for C++11 features"
+rparolin,2016-11-08 17:34:16,https://api.github.com/repos/electronicarts/EASTL/git/commits/e29c8b559713457783cdf51fb417476855ddbd97,e29c8b559713457783cdf51fb417476855ddbd97,Changed travis script to ensure unit test failure are not hidden by benchmarks.
+DragoonX6,2016-11-04 17:11:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/256c7122ec40bfd78d87ea08c1591abd4e8abf17,256c7122ec40bfd78d87ea08c1591abd4e8abf17,Fix aliasing issues with intrusive_list.
+CypherSignal,2016-11-01 21:18:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/e1dc101b3c0d4bda56938fad265c41e166c13e0c,e1dc101b3c0d4bda56938fad265c41e166c13e0c,"Adding support for typed get for tuple, e.g. get<typename T>(tuple<Ts...>& t) (#65)"
+rparolin,2016-10-26 16:50:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/0caa54e1f909d35c3e92303fc6ecbaa972aea1da,0caa54e1f909d35c3e92303fc6ecbaa972aea1da,"gcc fixes (#63)
+
+gcc compiler fixes for in_place and minor fix to any.h to remove constexpr from constructor temporarily"
+rparolin,2016-10-26 14:46:48,https://api.github.com/repos/electronicarts/EASTL/git/commits/d153910373cb1d50f72e1ab077794e177c15500b,d153910373cb1d50f72e1ab077794e177c15500b,3.04.00 release
+CypherSignal,2016-10-25 02:31:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/0788b8c74d41cc9189259a02fc2ffe9568b2704b,0788b8c74d41cc9189259a02fc2ffe9568b2704b,"Update is_assignable to be well-defined on MSVC 2013+ (#62)
+
+* Adding test case for is_Assignable of non-primitive value to ref
+
+* Add support to let MSVC 2013+ pass new test case
+
+* Moved is_assignable test to appropriate location
+
+Prevents fail on vs2012-"
+bowlofstew,2016-09-30 15:09:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/51718cd804bd3a5b446a305826e164cf35776518,51718cd804bd3a5b446a305826e164cf35776518,Update Travis to use CMake 3.1.3 (#59)
+ofwinterpassed,2016-09-28 04:55:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/f4dad883c78027bd29fcf062286683d721a77576,f4dad883c78027bd29fcf062286683d721a77576,"Hack to avoid warning on MSVC (#54)
+
+MSVC (at least 2013) gives a warning if you store a type with an auto generated destructor in some containers (e.g. vector_set) claiming p is unreferenced. This is clearly a problem from their side but this small change ensures that the code compiles."
+DragoonX6,2016-09-07 00:03:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/e16f7712ec6f3857e769172c020441d358002d34,e16f7712ec6f3857e769172c020441d358002d34,Fix timing numbers for MinGW (issue #50). (#53)
+DragoonX6,2016-09-06 17:44:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/edb79f91773b7d0fec6083975b47596bdcc5d562,edb79f91773b7d0fec6083975b47596bdcc5d562,"MinGW-w64 support (#51)
+
+
+Add appveyor scripts for mingw-w64 gcc and clang (MSYS2).
+Minimize whitespace changes.
+Update CMakeLists to insert appropriate -std=c++** flags.
+Ignore IDE generated files *.suo (VS) and *.user (VS and Qt Creator)
+Use EA_UNUSED instead of a cast to void.
+Check for apple clang in CMakeLists, since apple doesn't follow the same
+versioning as LLVM.
+Modularize CMake files.
+Fix isnan selection in eahave.h
+Merge appveyor scripts and improve the corresponding build scripts.
+Move CMake folder to scripts folder to comply with EA internal standards.
+Update corresponding cmake files."
+DragoonX6,2016-08-15 18:19:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/04414fe43da944ce12ec9beabfd3f49bdd13c747,04414fe43da944ce12ec9beabfd3f49bdd13c747,Fix linking error on windows when not using msvc. (#49)
+rparolin,2016-07-18 15:30:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/dd987c3e18b0b48d9b6d0a61966fee6eb9e141e4,dd987c3e18b0b48d9b6d0a61966fee6eb9e141e4,3.02.01 release
+rparolin,2016-07-18 15:31:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/7c10a9dc5f86b0fdb4e5426e9866a11de49b89a5,7c10a9dc5f86b0fdb4e5426e9866a11de49b89a5,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-07-18 15:30:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/f080dddd68af5971ba4d886e942100cb8f7f4b35,f080dddd68af5971ba4d886e942100cb8f7f4b35,3.02.01 release
+rparolin,2016-07-10 00:10:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/313377697fa127b9510a888b8eecf97514de16ec,313377697fa127b9510a888b8eecf97514de16ec,reformatting appveyor.yml
+rparolin,2016-07-10 00:09:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/f61cbf0c8ee7db8c822ac0bba33d0751090524eb,f61cbf0c8ee7db8c822ac0bba33d0751090524eb,reformating travis script
+rparolin,2016-05-25 23:30:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/7ef3a6a2aaf45613d8aa5056a22838a0ce55cc76,7ef3a6a2aaf45613d8aa5056a22838a0ce55cc76,3.01.01 release
+HFTrader,2016-04-08 15:29:56,https://api.github.com/repos/electronicarts/EASTL/git/commits/895afcd5555cb625a86b071078f8f30f16030c36,895afcd5555cb625a86b071078f8f30f16030c36,"Fixed issue where cmake (3.2.2) does not understand its own tests  (#41)
+
+* Fixed issue where cmake (3.2.2) does not understand its own tests
+CMake Error at /usr/local/share/cmake-3.2/Modules/CheckIncludeFiles.cmake:74 (try_compile):
+  Unknown extension "".c"" for file
+
+* Set PROJECT to default (C/C++) in CMakeLists.txt since specifying CXX would cause problems in some older versions of cmake"
+rparolin,2016-04-04 19:56:48,https://api.github.com/repos/electronicarts/EASTL/git/commits/35f09aa265ec714ca2f820028f18957b5c1e77ae,35f09aa265ec714ca2f820028f18957b5c1e77ae,3.01.00 release
+rparolin,2016-04-03 20:09:43,https://api.github.com/repos/electronicarts/EASTL/git/commits/124048e69d5299aa3f6b28b62874ffca2cf4077e,124048e69d5299aa3f6b28b62874ffca2cf4077e,"Merge pull request #37 from DragoonX6/master
+
+Fixing MingW/Clang issues on Windows."
+DragoonX6,2016-04-03 19:54:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/2a72b7b16e522dd5b92424ce900415f2b142c179,2a72b7b16e522dd5b92424ce900415f2b142c179,"Changes:
+* Add _SCL_SECURE_NO_WARNINGS to benchmarks.
+* Make platform check in type_traits.h a one liner."
+DragoonX6,2016-04-03 19:35:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/43b9ed61aa2a0470b1eefd6b80610e05512a0fae,43b9ed61aa2a0470b1eefd6b80610e05512a0fae,"Changes:
+* Fix indentation.
+* Revert pointer to bool conversion fix.
+* Disable pointer to bool conversion warning.
+* Disable _SCL_SECURE_WARNINGS on VS."
+DragoonX6,2016-04-01 18:15:43,https://api.github.com/repos/electronicarts/EASTL/git/commits/f4bb619d64a42777667643ec931417ddfd785505,f4bb619d64a42777667643ec931417ddfd785505,"Changes:
+* Get .inl files of tests to show in IDE.
+* Fix indentation.
+* Fix pointer to bool conversion warning.
+* Fix string copying test."
+DragoonX6,2016-03-26 03:27:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/dd462a4d37dc737fcfa5563b74e3b4df56d3660d,dd462a4d37dc737fcfa5563b74e3b4df56d3660d,Merge branch 'master' of github.com:electronicarts/EASTL
+DragoonX6,2016-03-26 03:26:22,https://api.github.com/repos/electronicarts/EASTL/git/commits/748f5167c3f49b49a19e57a37c151737e79e1263,748f5167c3f49b49a19e57a37c151737e79e1263,"Changes:
+* Wrap the old UB expressions in a cast, as opposed to casting ~0 to word_type directly."
+rparolin,2016-03-25 20:45:58,https://api.github.com/repos/electronicarts/EASTL/git/commits/5a1f0ffcd10d524062bc727e636a5de8630d92f4,5a1f0ffcd10d524062bc727e636a5de8630d92f4,"Merge pull request #39 from DragoonX6/revert-38-master
+
+Revert ""Allow libs of different configs to be installed in parallel"""
+DragoonX6,2016-03-25 14:03:18,https://api.github.com/repos/electronicarts/EASTL/git/commits/442f12d8d3987c93e482d2d76e502c525777f213,442f12d8d3987c93e482d2d76e502c525777f213,"Changes:
+* Fix spaces to tabs in bitset.h"
+DragoonX6,2016-03-25 13:55:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/fae4c661876068ecc41579c92873180310b1f576,fae4c661876068ecc41579c92873180310b1f576,"Revert ""Allow libs of different configs to be installed in parallel"""
+DragoonX6,2016-03-24 11:13:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/e7c03773325aad6d9d06f63d53270a276a0ecaac,e7c03773325aad6d9d06f63d53270a276a0ecaac,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-03-24 04:44:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/2ba21258f44c0486b0b4460141624d3f7ae25413,2ba21258f44c0486b0b4460141624d3f7ae25413,"Merge pull request #38 from pzychotic/master
+
+Allow libs of different configs to be installed in parallel"
+DragoonX6,2016-03-22 19:41:46,https://api.github.com/repos/electronicarts/EASTL/git/commits/dcd1a78f6c137938a1d225a7cbbe4b3ef05e6340,dcd1a78f6c137938a1d225a7cbbe4b3ef05e6340,"Changes:
+* Fix undefined behaviour in eastl::bitset, along with fixing warnings.
+* Revert change to EASTL_OPENSOURCE in config.h
+* Remove silencing of shiftwarnigns in clang, now that they're fixed."
+pzychotic,2016-03-22 19:24:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/532765dbed3e192dd412d4761e8be59fed286fc4,532765dbed3e192dd412d4761e8be59fed286fc4,Allow libs of different configs to be installed in parallel.
+DragoonX6,2016-03-21 20:47:45,https://api.github.com/repos/electronicarts/EASTL/git/commits/b6abb6efb3217645dee172b52d753f5df7e0c52b,b6abb6efb3217645dee172b52d753f5df7e0c52b,"Changes:
+* Clean up cmakelists.
+* Enable crash workarounds for all optimizing configurations in EASTLBenchmarkon MingW."
+DragoonX6,2016-03-21 19:31:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/0c8ba579fd6fd05c7aac1cb09b2ca3c1d2388bf1,0c8ba579fd6fd05c7aac1cb09b2ca3c1d2388bf1,Merge branch 'master' of github.com:electronicarts/EASTL
+DragoonX6,2016-03-21 17:28:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/0e400b5dc91c82c06777a3b165e30767ee8c7e86,0e400b5dc91c82c06777a3b165e30767ee8c7e86,"Changes:
+* Fix a release crash bug in the benchmarks with MingW, clang and gcc.
+* Set EASTL_OPENSOURCE to 1 for proper code path visualization in IDEs."
+DragoonX6,2016-03-21 17:27:14,https://api.github.com/repos/electronicarts/EASTL/git/commits/d484daa03ea7e5c9a84c58d54c886f800663170a,d484daa03ea7e5c9a84c58d54c886f800663170a,"Changes:
+* Fix compiler error with Clang on visual studio."
+DragoonX6,2016-03-21 17:24:45,https://api.github.com/repos/electronicarts/EASTL/git/commits/3ba09e281207d46f2b8165598948f1bd58488fc8,3ba09e281207d46f2b8165598948f1bd58488fc8,"Changes:
+* Align definition and declaration of operator new with the standard."
+rparolin,2016-03-18 05:21:32,https://api.github.com/repos/electronicarts/EASTL/git/commits/2c516098f217ff3695aa23764600e3014a6ff864,2c516098f217ff3695aa23764600e3014a6ff864,"Merge pull request #35 from pzychotic/varargs
+
+Close varargs before reassignment with va_copy and after using them"
+pzychotic,2016-03-14 21:29:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/5f858a00b34af6d55586cce19d0f333ff36c4c15,5f858a00b34af6d55586cce19d0f333ff36c4c15,Close varargs before reassignment with va_copy and after using them.
+rparolin,2016-03-14 04:59:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/c9a3355ccf90913de95f37036bec21bf40e77df4,c9a3355ccf90913de95f37036bec21bf40e77df4,"Merge pull request #32 from pzychotic/cmake
+
+CMake restructuring"
+pzychotic,2016-03-13 21:01:52,https://api.github.com/repos/electronicarts/EASTL/git/commits/c55bb9c2f23121c5e0b7051bcc117acde5924d17,c55bb9c2f23121c5e0b7051bcc117acde5924d17,"Added CMake options to optionally build benchmark and tests.
+Changed build scripts to enable CMake options for benchmark and tests.
+Changed documentation for new CMake structure and options."
+pzychotic,2016-03-09 20:10:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/ee5a947a663cc385b65587a2dae990222564a565,ee5a947a663cc385b65587a2dae990222564a565,Back to using glob as requested in #32.
+pzychotic,2016-03-06 18:07:56,https://api.github.com/repos/electronicarts/EASTL/git/commits/57fd96b0a4e9c33a31a20a407fbd69743033a233,57fd96b0a4e9c33a31a20a407fbd69743033a233,Fixed copy&paste error in variable name.
+pzychotic,2016-03-06 17:59:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/d8ac24eb0826c2d9e1a541694f7a8343de1a7f4d,d8ac24eb0826c2d9e1a541694f7a8343de1a7f4d,Fixed build script.
+pzychotic,2016-03-06 17:17:05,https://api.github.com/repos/electronicarts/EASTL/git/commits/448bb5dcc548f746f3995da4e9d1839338b266b7,448bb5dcc548f746f3995da4e9d1839338b266b7,Changed build scripts to work with the current CMake changes.
+pzychotic,2016-03-06 17:15:07,https://api.github.com/repos/electronicarts/EASTL/git/commits/7f4e70f50ce766239e633765f0229f7a272f8a64,7f4e70f50ce766239e633765f0229f7a272f8a64,"Removed redundant include directory, gets automatically added from the public include definition in EABase."
+pzychotic,2016-03-06 17:11:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/ed101f673ede10a63191ddb77424ce960aff8d65,ed101f673ede10a63191ddb77424ce960aff8d65,Restructured CMake file so everything can be build from the top-level CMake file.
+pzychotic,2016-03-06 17:06:18,https://api.github.com/repos/electronicarts/EASTL/git/commits/f5e78a425ccb5e9959552837619eae7f57605664,f5e78a425ccb5e9959552837619eae7f57605664,"Added all source files to libraries to show up in IDEs.
+Added workaround for header-only / interface libraries to also show up in IDEs."
+pzychotic,2016-03-06 16:59:10,https://api.github.com/repos/electronicarts/EASTL/git/commits/2eb1dc55bfdafbbed09caebf5a2e81e12d2a52fb,2eb1dc55bfdafbbed09caebf5a2e81e12d2a52fb,"Added project() call to all projects / packages.
+Set language for all projects to C++ (CXX) to prevent CMake from unnecessary trying to detect a working C compiler."
+DragoonX6,2016-03-03 23:03:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/35885c1427750aaec7e2c89c70f0d1043107af1a,35885c1427750aaec7e2c89c70f0d1043107af1a,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-02-28 16:08:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/ef2dac0531b3cb2cc2a1ff68e5507adfb2579fbf,ef2dac0531b3cb2cc2a1ff68e5507adfb2579fbf,rename appveyor.yml to .appveyor.yml
+DragoonX6,2016-02-27 23:57:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/1a620a423bade56d3e391c619d1bdc281635909e,1a620a423bade56d3e391c619d1bdc281635909e,Merge branch 'master' of github.com:electronicarts/EASTL
+DragoonX6,2016-02-27 23:35:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/a74294c87fb4080b87729bf7addd65e03f3f80d3,a74294c87fb4080b87729bf7addd65e03f3f80d3,"Changes:
+* Fix outputting of the time it took to complete all benchmarks."
+DragoonX6,2016-02-27 23:30:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/e22023de00f536af7bc41c34a0b1caef6b4e79a4,e22023de00f536af7bc41c34a0b1caef6b4e79a4,"Changes:
+* Fix: enable std::unordered_map on Clang if C++11 is enabled."
+DragoonX6,2016-02-27 22:54:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/4bfde449c49682f011e07acd0f536cef13fa940f,4bfde449c49682f011e07acd0f536cef13fa940f,"Changes:
+* Enable C++11 for the benchmarks on GCC and Clang.
+* Define _DEBUG for debug builds of the benchmarks on GCC and Clang."
+DragoonX6,2016-02-27 22:43:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/0a7b2e5be15775446c6908e488ef29d130d97b9f,0a7b2e5be15775446c6908e488ef29d130d97b9f,"Changes:
+* Fix string tests."
+DragoonX6,2016-02-27 22:40:43,https://api.github.com/repos/electronicarts/EASTL/git/commits/3224696b2bfb550f98cd31e85f69709b3bb889fc,3224696b2bfb550f98cd31e85f69709b3bb889fc,"Changes:
+* Fix EASTLTestAllocator.
+* Include stdlib.h on MingW."
+DragoonX6,2016-02-27 22:35:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/eacdff90ff2e7b451cb5b2d29032e337178b350a,eacdff90ff2e7b451cb5b2d29032e337178b350a,"Changes:
+* Fix stopwatch implementation to actually use the units and take the start immediately parameter in account."
+DragoonX6,2016-02-27 22:27:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/9e329620ea7656fcbe33ed11fbb8d4ab3edc5172,9e329620ea7656fcbe33ed11fbb8d4ab3edc5172,"Changes:
+* Make Clang use std::isnan and std::isinf on Windows."
+DragoonX6,2016-02-27 22:26:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/fb8d4ff3c0c699e8a1a3d62f58b28e5864aaf41f,fb8d4ff3c0c699e8a1a3d62f58b28e5864aaf41f,"MingW GCC and Clang also don't compile the variadic templates that VS2013 fails on, I suspect this might be non-standard code.
+
+Changes:
+* Disable variadic static min/max for MingW GCC and Clang.
+
+TODO:
+* Test variadic static min/max on Linux."
+DragoonX6,2016-02-27 22:10:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/d58b72e135a50dfd82bc4c3a1c3bfcf30570e780,d58b72e135a50dfd82bc4c3a1c3bfcf30570e780,"Changes:
+* Adjust the documentation of EASTL_OPENSOURCE to be in line with the logical structure of the source."
+DragoonX6,2016-02-27 22:09:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/66e66858a217fa945b7d29d783f7ca2887d24d4e,66e66858a217fa945b7d29d783f7ca2887d24d4e,"Changes:
+* Adjust platform detection to work with MingW-w64."
+DragoonX6,2016-02-27 21:54:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/8037cdb3321b131b3817b975cd500d7109cfe4a5,8037cdb3321b131b3817b975cd500d7109cfe4a5,"Changes:
+* Enable C++11 for the tests on GCC and Clang.
+* Define _DEBUG for debug builds of the tests on GCC and Clang.
+* Disable some warnings that occur when building the tests with Clang."
+swardle,2016-02-27 21:14:09,https://api.github.com/repos/electronicarts/EASTL/git/commits/c5997e722573a8aee3b2e744ba04544c23253154,c5997e722573a8aee3b2e744ba04544c23253154,normalize appveyor.yml line ending for unix
+rparolin,2016-02-22 13:04:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/2235b85fa196b1c135de3136c15015711c735720,2235b85fa196b1c135de3136c15015711c735720,Update README.md
+rparolin,2016-02-22 10:54:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/60245e5591c98d67d5e66f88c8c4d0e998d5ed12,60245e5591c98d67d5e66f88c8c4d0e998d5ed12,Update README.md
+rparolin,2016-02-22 01:28:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/ccaa3daeee01d76e898f6d9377e062cbf7b8c093,ccaa3daeee01d76e898f6d9377e062cbf7b8c093,Update README.md
+rparolin,2016-02-22 01:20:55,https://api.github.com/repos/electronicarts/EASTL/git/commits/0fc365fd7b0e26c86af32c6216dc69f9230011b4,0fc365fd7b0e26c86af32c6216dc69f9230011b4,adding appveyor.yml for windows builds
+rparolin,2016-02-22 00:49:13,https://api.github.com/repos/electronicarts/EASTL/git/commits/2455af03d208ff9b18b0cf368eb43d7c2a512388,2455af03d208ff9b18b0cf368eb43d7c2a512388,Adding AppVeyor badge
+rparolin,2016-02-21 14:07:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/db31f3fd0fe6b287524d38ea1dba766f1e1429e1,db31f3fd0fe6b287524d38ea1dba766f1e1429e1,"Merge pull request #29 from lukaszdk/cmake-include-headers
+
+Include header files in project sources"
+lukaszdk,2016-02-21 09:57:19,https://api.github.com/repos/electronicarts/EASTL/git/commits/b9540b5e95564ed3faf5189f78168b1fba47079f,b9540b5e95564ed3faf5189f78168b1fba47079f,Include header files in project sources.
+rparolin,2016-02-20 17:03:23,https://api.github.com/repos/electronicarts/EASTL/git/commits/e1aabbec632b3e99ddd8ff3eaf5a897e98be3809,e1aabbec632b3e99ddd8ff3eaf5a897e98be3809,Changes to run benchmarks on Travis CI
+rparolin,2016-02-20 16:40:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/38e12dcc1fb351f6f087035ef0d3f692a987a0f8,38e12dcc1fb351f6f087035ef0d3f692a987a0f8,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-02-20 16:39:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/4c2b09077486f5fc352780e6ac84ee46f803be89,4c2b09077486f5fc352780e6ac84ee46f803be89,updating .gitignore
+rparolin,2016-02-20 05:28:47,https://api.github.com/repos/electronicarts/EASTL/git/commits/a790302c2cc121feec0a2748e49cac31e9baece5,a790302c2cc121feec0a2748e49cac31e9baece5,"Merge pull request #28 from Leandros/pr1
+
+Add install target"
+Leandros,2016-02-19 16:42:54,https://api.github.com/repos/electronicarts/EASTL/git/commits/5b4de5d7d4db0b4728806febee7f7f5467fde81f,5b4de5d7d4db0b4728806febee7f7f5467fde81f,We should probably also install the EABase headers
+Leandros,2016-02-19 16:26:52,https://api.github.com/repos/electronicarts/EASTL/git/commits/8be33d4ba8ecefadd3bfde95f9f980523f64882b,8be33d4ba8ecefadd3bfde95f9f980523f64882b,Add install target
+rparolin,2016-02-19 04:54:28,https://api.github.com/repos/electronicarts/EASTL/git/commits/d7ffc6c3541450e316f4bb6b7d907a47cd167376,d7ffc6c3541450e316f4bb6b7d907a47cd167376,Fixing typo in GetPlatformCycleFrequency
+rparolin,2016-02-18 05:13:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/4f884c7bd6ebbc6ed66db5da37e3ffde22893f78,4f884c7bd6ebbc6ed66db5da37e3ffde22893f78,Stopwatch migrated to C++11 high_resolution_clock
+rparolin,2016-02-18 04:14:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/b449cc48e8d5993d83d2f5415f7ce003e2e0bade,b449cc48e8d5993d83d2f5415f7ce003e2e0bade,benchmarks build and running on windows.  Linux/osx needs clock frequency code that I can't test.
+rparolin,2016-02-17 06:38:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/7762a3990b5253019dad6833bc0bd0240ca7e99b,7762a3990b5253019dad6833bc0bd0240ca7e99b,"Merge pull request #26 from philix/fix-eatest-link
+
+Don't link EATest in the top-level CMakeLists.txt"
+philix,2016-02-17 06:28:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/07f160a3942a1935496340cdd717fd9a3554657f,07f160a3942a1935496340cdd717fd9a3554657f,Don't link EATest in the top-level CMakeLists.txt
+rparolin,2016-02-17 06:04:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/70ae6de08673a56f5e0e62521c065c8a2ae642d7,70ae6de08673a56f5e0e62521c065c8a2ae642d7,"Merge pull request #24 from philix/notest-build
+
+Include EASTL from the test folder, but allow EASTL to be built separately"
+philix,2016-02-16 05:42:24,https://api.github.com/repos/electronicarts/EASTL/git/commits/30bb4f1b7478747c80cf0213da2788d265c8740b,30bb4f1b7478747c80cf0213da2788d265c8740b,"Include EASTL from the test folder, but allow EASTL to be built separately
+
+This will allow building EASTL separate from the tests.  Now EASTL can be used
+from a CMake project via `add_subdirectory(EASTL)`. The `test` folder became
+just an example of that."
+rparolin,2016-02-16 08:20:51,https://api.github.com/repos/electronicarts/EASTL/git/commits/67204e7466758c633f9c977865570cba40f3a692,67204e7466758c633f9c977865570cba40f3a692,"Merge pull request #25 from breannansmith/intel_cmake_fix
+
+Updated the CMake build system to work with Intel's compilers on Unix based systems, including OS X."
+breannansmith,2016-02-16 08:07:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/8608d83ec278344e27c6cf1dfa0c0a405d3fdd1c,8608d83ec278344e27c6cf1dfa0c0a405d3fdd1c,"Updated the CMake build system to work with Intel's compilers on Unix based systems, including OS X."
+rparolin,2016-02-16 06:35:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/34da2b7071b1ff47ae9b2c4f122d4fe75ab3c3c6,34da2b7071b1ff47ae9b2c4f122d4fe75ab3c3c6,adding rawgit link to the documenation
+rparolin,2016-02-16 06:25:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/5a450fe8dd53afdad22e4d7bf6126561b7d8057c,5a450fe8dd53afdad22e4d7bf6126561b7d8057c,Merge branch 'philix-cmake-version'
+rparolin,2016-02-16 06:25:42,https://api.github.com/repos/electronicarts/EASTL/git/commits/a9d11dfa01d89887125b0cc2ff314647e958956c,a9d11dfa01d89887125b0cc2ff314647e958956c,commit resolve
+rparolin,2016-02-16 06:07:36,https://api.github.com/repos/electronicarts/EASTL/git/commits/70430f894dcdfb656a6e20aa32f131d7744c6cd4,70430f894dcdfb656a6e20aa32f131d7744c6cd4,vs2012 fixes
+rparolin,2016-02-16 04:28:56,https://api.github.com/repos/electronicarts/EASTL/git/commits/ae10b466b309f955dfc1ed893ca1cb62a953f7b8,ae10b466b309f955dfc1ed893ca1cb62a953f7b8,improving char16/32/wchar feature defines)
+rparolin,2016-02-16 03:56:13,https://api.github.com/repos/electronicarts/EASTL/git/commits/194c4a249bc9a4e5062a8e8f0b7671a7d4479136,194c4a249bc9a4e5062a8e8f0b7671a7d4479136,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-02-15 23:59:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/0d42bbd6d860fdacfd757d46209402a826f53849,0d42bbd6d860fdacfd757d46209402a826f53849,"Merge pull request #21 from lukaszdk/cmake-c++11-fix
+
+Set C++11 property on EASTL target. Fixes Xcode 7.2.1 build."
+lukaszdk,2016-02-15 08:10:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/df12c10b83c27ee2f3ed2cb87384445872aa5363,df12c10b83c27ee2f3ed2cb87384445872aa5363,Set C++11 property on EASTL target. Fixes Xcode 7.2.1 build.
+rparolin,2016-02-15 01:49:12,https://api.github.com/repos/electronicarts/EASTL/git/commits/9a272f1e82ca319f7413461386476c7d8366432d,9a272f1e82ca319f7413461386476c7d8366432d,vs2012 fixes
+rparolin,2016-02-14 20:24:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/a77b5485c98490c6f5a4c3a0e316589248764556,a77b5485c98490c6f5a4c3a0e316589248764556,Merge branch 'master' of github.com:electronicarts/EASTL
+rparolin,2016-02-14 20:21:01,https://api.github.com/repos/electronicarts/EASTL/git/commits/61b268d55f55c74a05d3f475e8d794836e419ac4,61b268d55f55c74a05d3f475e8d794836e419ac4,fixing typo
+rparolin,2016-02-14 20:17:15,https://api.github.com/repos/electronicarts/EASTL/git/commits/be7f786a0c5afaf19d2fd6f1d388ba54e0132edd,be7f786a0c5afaf19d2fd6f1d388ba54e0132edd,.gitignore updates
+rparolin,2016-02-14 20:15:53,https://api.github.com/repos/electronicarts/EASTL/git/commits/fd0dcbbf11eb291137a4b26dcfe882e7b6ac3e48,fd0dcbbf11eb291137a4b26dcfe882e7b6ac3e48,attempt to run unit tests
+rparolin,2016-02-14 20:01:45,https://api.github.com/repos/electronicarts/EASTL/git/commits/5fde8ac23cb3ba8c5880582a5e41535157e180e9,5fde8ac23cb3ba8c5880582a5e41535157e180e9,"Merge pull request #20 from pra85/patch-1
+
+Fix typos in Introduction"
+pra85,2016-02-14 17:51:27,https://api.github.com/repos/electronicarts/EASTL/git/commits/ca2a14c57d307df3daa3076706a2f1fb0c00daa9,ca2a14c57d307df3daa3076706a2f1fb0c00daa9,"Fix typos in Introduction
+
+`Interent` → `Internet`
+`commerical` → `commercial`"
+swardle,2016-02-14 05:47:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/2c9502ea702e7f9613fd92001ef81121ef203267,2c9502ea702e7f9613fd92001ef81121ef203267,update docs to talk about how I am using bash
+rparolin,2016-02-14 03:16:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/95bd622b9a6d73ef2e692e3522a2ec36ba60a045,95bd622b9a6d73ef2e692e3522a2ec36ba60a045,enable osx builds
+rparolin,2016-02-14 03:02:20,https://api.github.com/repos/electronicarts/EASTL/git/commits/f66ace060e4a210be13a641247326845a2f4ce9c,f66ace060e4a210be13a641247326845a2f4ce9c,enabling osx for work branch
+rparolin,2016-02-14 02:59:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/9f5b3428fac342be26969a046566631702b97af0,9f5b3428fac342be26969a046566631702b97af0,disabling OSX builds on travis until stable
+swardle,2016-02-14 02:49:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/0af8772f17785743b4d5e3b6cd1543223a26ac7c,0af8772f17785743b4d5e3b6cd1543223a26ac7c,fix formating
+swardle,2016-02-14 02:46:47,https://api.github.com/repos/electronicarts/EASTL/git/commits/d46232728540deb25266f3b0d3c72b009513f814,d46232728540deb25266f3b0d3c72b009513f814,update .travis.yml to support osx more correctly... the directory of linux is different then osx
+swardle,2016-02-14 02:36:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/dce77bdcceafd4a53eda02ae4d8868e3865e11b2,dce77bdcceafd4a53eda02ae4d8868e3865e11b2,update .travis.yml to support osx more correctly... small type-o
+swardle,2016-02-14 02:32:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/4dbf3200663d31abb756898a18e1782db103e6af,4dbf3200663d31abb756898a18e1782db103e6af,update .travis.yml to support osx more correctly... I am going to have to use a osx computer soon :)
+swardle,2016-02-14 02:25:08,https://api.github.com/repos/electronicarts/EASTL/git/commits/f36c8db6a61d3c1405f52c6ba0dd2813ac943b78,f36c8db6a61d3c1405f52c6ba0dd2813ac943b78,update .travis.yml to support osx more correctly... well I was right... my bash is weak try again
+swardle,2016-02-14 02:20:05,https://api.github.com/repos/electronicarts/EASTL/git/commits/d8f1b49bd628e3a95c60581458b1eab2bfa2e432,d8f1b49bd628e3a95c60581458b1eab2bfa2e432,update .travis.yml to support osx more correctly... might not work yet
+swardle,2016-02-14 01:35:55,https://api.github.com/repos/electronicarts/EASTL/git/commits/cc0caa1161d3abfd3e78da6f13bce6ec1ba5b6e6,cc0caa1161d3abfd3e78da6f13bce6ec1ba5b6e6,switch to POSIX_memalign from aligned_alloc fix build break on gcc 4.6
+rparolin,2016-02-13 23:35:37,https://api.github.com/repos/electronicarts/EASTL/git/commits/4a59f120dafc84319f010f1c46083a71eab4d625,4a59f120dafc84319f010f1c46083a71eab4d625,Fixes for ubuntu with gcc
+rparolin,2016-02-13 16:21:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/058d57d3727175b3d1619b14052156da12518683,058d57d3727175b3d1619b14052156da12518683,Updating travis.yml with GCC 4.8
+rparolin,2016-02-13 16:08:37,https://api.github.com/repos/electronicarts/EASTL/git/commits/621d5a629677e89674b6668fa1638bd1c4df9c2c,621d5a629677e89674b6668fa1638bd1c4df9c2c,"Merge pull request #16 from Draghi/UbuntuCompilationFix
+
+A fix for compilation on Ubuntu"
+Draghi,2016-02-13 14:59:58,https://api.github.com/repos/electronicarts/EASTL/git/commits/9f6a9f7e0bdabdf49a740ea9fb09f4398aacdff5,9f6a9f7e0bdabdf49a740ea9fb09f4398aacdff5,Fixed spelling mistakes
+Draghi,2016-02-13 14:57:18,https://api.github.com/repos/electronicarts/EASTL/git/commits/1cddc1e12f42967abbb026ba9f3a46a146784ad0,1cddc1e12f42967abbb026ba9f3a46a146784ad0,"Added copy constructor to EAThread, reverted change to gGlobalErrorCount"
+Draghi,2016-02-13 10:03:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/71095e7846b7b876ba4d8dade1327126f53cd231,71095e7846b7b876ba4d8dade1327126f53cd231,Fixed comment style.
+Draghi,2016-02-13 01:45:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/b0f210ba4963427e701c96602315cc1e2040231b,b0f210ba4963427e701c96602315cc1e2040231b,Fixed compilation on ubuntu. My fix for EA::Thread::SetThreadPriority is not the best.
+rparolin,2016-02-12 21:54:47,https://api.github.com/repos/electronicarts/EASTL/git/commits/2696c86e3060d49bafc93295f36b020c45bb24e1,2696c86e3060d49bafc93295f36b020c45bb24e1,"Merge pull request #15 from Nuclearfossil/master
+
+Updating README.md with a link to build instructions."
+Nuclearfossil,2016-02-12 20:29:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/e6f5915eef8970a350dedfa8492260e4347b3206,e6f5915eef8970a350dedfa8492260e4347b3206,Setting the link to CONTRIBUTING.md
+Nuclearfossil,2016-02-12 20:24:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/62a312f491333f22b3c3f66bc85f2ef0a9656778,62a312f491333f22b3c3f66bc85f2ef0a9656778,"Merge pull request #1 from electronicarts/master
+
+PR from electronicarts"
+rparolin,2016-02-12 18:50:50,https://api.github.com/repos/electronicarts/EASTL/git/commits/8857b0477374e7cdac6db3a81e412fd912a5981c,8857b0477374e7cdac6db3a81e412fd912a5981c,"Merge pull request #10 from Nuclearfossil/master
+
+Potential fix for https://github.com/electronicarts/EASTL/issues/9"
+rparolin,2016-02-11 06:24:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/eaf37f469ec33df52cf92f263e0716a06cbec90c,eaf37f469ec33df52cf92f263e0716a06cbec90c,Update README.md
+rparolin,2016-02-11 04:39:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/8a7a737a1767ecb324fc0fc232aca8cf97f1994c,8a7a737a1767ecb324fc0fc232aca8cf97f1994c,Update .travis.yml
+rparolin,2016-02-11 04:32:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/0ecb4f2c11128558d543d5b8ee9ecab0305fba4f,0ecb4f2c11128558d543d5b8ee9ecab0305fba4f,Update README.md
+rparolin,2016-02-11 04:29:40,https://api.github.com/repos/electronicarts/EASTL/git/commits/67a3c5a799a6cabc888efa0083e5f45d922364b6,67a3c5a799a6cabc888efa0083e5f45d922364b6,Update .travis.yml
+rparolin,2016-02-11 04:28:06,https://api.github.com/repos/electronicarts/EASTL/git/commits/8c6eb7642005919a14bfeba26c515498f7939df7,8c6eb7642005919a14bfeba26c515498f7939df7,Update .travis.yml
+rparolin,2016-02-11 04:26:32,https://api.github.com/repos/electronicarts/EASTL/git/commits/02f7a4401124e3e7fae994c34f995e11694b9055,02f7a4401124e3e7fae994c34f995e11694b9055,Update .travis.yml
+rparolin,2016-02-11 04:21:31,https://api.github.com/repos/electronicarts/EASTL/git/commits/3d2121ebdb086da367f285dd86c03f915eb2cdfb,3d2121ebdb086da367f285dd86c03f915eb2cdfb,Update .travis.yml
+rparolin,2016-02-11 04:06:59,https://api.github.com/repos/electronicarts/EASTL/git/commits/d44ae2561fd378041744d134c5b79f05b9316935,d44ae2561fd378041744d134c5b79f05b9316935,Update .travis.yml
+rparolin,2016-02-11 03:51:00,https://api.github.com/repos/electronicarts/EASTL/git/commits/eb2710800481f2220152ea55243da5909267d015,eb2710800481f2220152ea55243da5909267d015,"Merge pull request #11 from gitter-badger/gitter-badge
+
+Add a Gitter chat badge to README.md"
+rparolin,2016-02-10 22:59:11,https://api.github.com/repos/electronicarts/EASTL/git/commits/d630f5ecabe37d793c77d2ed1eb2d83aebdbdf6e,d630f5ecabe37d793c77d2ed1eb2d83aebdbdf6e,updating 3rdpartylicenses.txt file
+gitter-badger,2016-02-10 22:38:02,https://api.github.com/repos/electronicarts/EASTL/git/commits/ff06c1c82ef6b80e4e77539d7887574a9d35659c,ff06c1c82ef6b80e4e77539d7887574a9d35659c,Add Gitter badge
+rparolin,2016-02-10 20:22:21,https://api.github.com/repos/electronicarts/EASTL/git/commits/974a748e76015b390674e7476a4bfdf142cc777b,974a748e76015b390674e7476a4bfdf142cc777b,renaming LICENCE to LICENSE
+rparolin,2016-02-10 19:31:29,https://api.github.com/repos/electronicarts/EASTL/git/commits/dc1b00bd8432857b548295bb4fa8ce4f5964336e,dc1b00bd8432857b548295bb4fa8ce4f5964336e,"Merge pull request #8 from NotBela/master
+
+Spelling mistake in readme.md"
+0xbe7a,2016-02-10 15:32:39,https://api.github.com/repos/electronicarts/EASTL/git/commits/698887d232ee3f84164d3aa2607e8057c26e4a0e,698887d232ee3f84164d3aa2607e8057c26e4a0e,"Spelling
+
+See above"
+rparolin,2016-02-10 13:10:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/4ad5f13abd6a9ac34a56509ed6292a85fe734f9c,4ad5f13abd6a9ac34a56509ed6292a85fe734f9c,"Merge pull request #5 from radarhere/patch-1
+
+Fixed typo in 3RDPARTYLICENSES.TXT"
+radarhere,2016-02-10 13:00:17,https://api.github.com/repos/electronicarts/EASTL/git/commits/7bdbb2ffeb58e678d0caf4cc83e6ef80bc4eb435,7bdbb2ffeb58e678d0caf4cc83e6ef80bc4eb435,Fixed typo
+swardle,2016-02-10 06:41:26,https://api.github.com/repos/electronicarts/EASTL/git/commits/4764712f34251e2b5e715ce03c2bcaeddfec296f,4764712f34251e2b5e715ce03c2bcaeddfec296f,this example batch file makes the tests easier to read
+swardle,2016-02-10 06:36:49,https://api.github.com/repos/electronicarts/EASTL/git/commits/e36b0b1b18ac122241e02938bb3d030265e9a4ce,e36b0b1b18ac122241e02938bb3d030265e9a4ce,updating build instructions to make them more concrete
+rparolin,2016-02-10 05:00:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/d6ad9a1b6670aac48f52289874ecca4bb3bdc473,d6ad9a1b6670aac48f52289874ecca4bb3bdc473,"Merge pull request #4 from IonicaBizauKitchen/typos
+
+Fix typos in README.md"
+IonicaBizau,2016-02-10 04:55:09,https://api.github.com/repos/electronicarts/EASTL/git/commits/653e56e3ea28ea267dc6306f8e63368a2077962b,653e56e3ea28ea267dc6306f8e63368a2077962b,Fix typos in README.md
+rparolin,2016-02-10 04:53:33,https://api.github.com/repos/electronicarts/EASTL/git/commits/ecf0ecfe09bf6d94818e38eb7bb489da8e33ba8d,ecf0ecfe09bf6d94818e38eb7bb489da8e33ba8d,corrected build file generation typo
+rparolin,2016-02-09 22:27:10,https://api.github.com/repos/electronicarts/EASTL/git/commits/cfc0d4a5412096971271629cf3cf46727f854db3,cfc0d4a5412096971271629cf3cf46727f854db3,travis.yml
+rparolin,2016-01-11 23:10:54,https://api.github.com/repos/electronicarts/EASTL/git/commits/800bc26659f834354e38ee3de4c7300e739ed255,800bc26659f834354e38ee3de4c7300e739ed255,initial commit

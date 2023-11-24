@@ -1,0 +1,120 @@
+gow,Unix command line utilities installer for Windows.
+username,timestamp,url,sha,message
+bmatzelle,2016-02-27 14:56:32,https://api.github.com/repos/bmatzelle/gow/git/commits/c033136df2532a7573bea6fd9403e0403faa1211,c033136df2532a7573bea6fd9403e0403faa1211,"Merge pull request #200 from oliverpool/patch-1
+
+Remove repeated ""of"" type in the ReadMe"
+oliverpool,2015-08-11 14:54:54,https://api.github.com/repos/bmatzelle/gow/git/commits/08c5f63f5de01cc5ad317966d257d09b60ed2217,08c5f63f5de01cc5ad317966d257d09b60ed2217,"Remove repeated ""of"""
+bmatzelle,2015-04-29 00:27:23,https://api.github.com/repos/bmatzelle/gow/git/commits/c1d59b6c960506909d04334b13e7bbd295eb2d68,c1d59b6c960506909d04334b13e7bbd295eb2d68,"Merge pull request #172 from jdmears2/silent-install-option
+
+Updating installer to support managed (silent) installations and upgrade..."
+bmatzelle,2015-04-29 00:26:20,https://api.github.com/repos/bmatzelle/gow/git/commits/75d05a981b6012f344c895ec1d2aa16ed37602fd,75d05a981b6012f344c895ec1d2aa16ed37602fd,"Merge pull request #182 from SaqibS/master
+
+Setup tweaks to enable easier running of Bash from Gow"
+SaqibS,2015-04-26 11:33:57,https://api.github.com/repos/bmatzelle/gow/git/commits/e1004d79ccf3f9d2808c53c8846091183c81e7b5,e1004d79ccf3f9d2808c53c8846091183c81e7b5,"Adding default Bash configuration to set user's home directory, and load user-specific settings."
+SaqibS,2015-04-26 11:02:48,https://api.github.com/repos/bmatzelle/gow/git/commits/d21710c65cc642bc20866db2cebf91ea67a38617,d21710c65cc642bc20866db2cebf91ea67a38617,Bash won't run without the etc directory present; updating the installer to create it.
+bmatzelle,2014-02-15 20:58:40,https://api.github.com/repos/bmatzelle/gow/git/commits/7e268e3593d988f835caec5159d726d9252391c2,7e268e3593d988f835caec5159d726d9252391c2,"Updated cURL & Vim and ssh alias for plink.
+
+modified:   bin/curl.exe
+* Updated cURL to 7.35.0.
+
+new file:   bin/ssh.bat
+* Alias for plink.exe so you can run the 'ssh' command.
+
+modified:   bin/vim.exe
+* Updated Vim to 7.3_46."
+bmatzelle,2014-02-15 20:09:40,https://api.github.com/repos/bmatzelle/gow/git/commits/9442e79ed6b03720f8b71decde26dc5f941ca617,9442e79ed6b03720f8b71decde26dc5f941ca617,"Added PuTTy 0.63, Markdown ReadMe, Nano etc.
+
+new file:   .gitignore
+* Added the installer file so that it doesn't get picked up.
+
+new file:   ReadMe.md
+deleted:    ReadMe.txt
+* Renamed ReadMe.txt to ReadMe.md so that it looks nicer.
+* Added links at the top of the file, especially the Download link so that
+  people can quickly get it.
+* Added some quotes about the project.
+* Added the Contributing link.
+
+modified:   bin/gow.vbs
+modified:   setup/Gow.nsi
+* Updated the version to 0.8.0.
+
+renamed:    bin/sort.exe -> bin/gsort.exe
+* Renamed to gsort.exe
+
+new file:   bin/libiconv2.dll
+* This is just a copy of libiconv-2.dll for ls.exe so that it works.
+
+new file:   bin/nano.exe
+* Added GNU Nano 2.3.1.
+
+modified:   bin/pageant.exe, bin/plink.exe, bin/pscp.exe, bin/psftp.exe,
+            bin/putty.exe, bin/puttygen.exe
+* Updated PuTTy to 0.63."
+bmatzelle,2014-02-15 18:16:31,https://api.github.com/repos/bmatzelle/gow/git/commits/149ae5afa6c9c0c219c9921add22130e97486caa,149ae5afa6c9c0c219c9921add22130e97486caa,"Added all 0.7.0 binaries and fixed a couple issues.
+
+Now others should be able to create builds easily since I'm committing
+all of the *.dll and *.exe binaries.  I'm old school and I didn't want
+to do it but for Gow to live on it needs to be easy to build and
+enhance.
+
+I am committing the old 0.7.0 binaries for now.  The next commit or
+two will include all of the binaries.
+
+I also updated the version numbers to 0.7.0 to reflect the version."
+bmatzelle,2011-11-21 02:33:15,https://api.github.com/repos/bmatzelle/gow/git/commits/8dfd37977c708c97293aa81c5a0715d367f4f201,8dfd37977c708c97293aa81c5a0715d367f4f201,"Modified   ReadMe.txt
+* Updated copyright date.
+* Updated documentation and links.
+
+Modified   setup/Gow.nsi
+* Updated version to 0.5.0.
+* Set compression method to LZMA to make it a bit smaller."
+bmatzelle,2010-07-25 23:46:52,https://api.github.com/repos/bmatzelle/gow/git/commits/2026078b54ea74dbbc97e2ec1f3f508c2a0df167,2026078b54ea74dbbc97e2ec1f3f508c2a0df167,"Rewrote the gow.vbs file to accept multiple commands like a true command-line application.  Added to the installer the capability to remove the older installations, added better debugging, added a feature which should allow Windows 7 installers to function and a couple more small tweaks.
+
+Modified   bin/gow.vbs
+* Main: Takes the first argument and looks for the command-line switches.  Prints out a message if there are errors.
+* PrintUsage: Prints out the full program usage.
+* Print: Prints out a command to the console.
+* Version: Returns the version number of the application.
+* ScriptPath: Returns the path of the gow.vbs VBS script.
+* ExecutablesList: Now uses the ScriptPath method to get the folder path to list.
+
+Modified   setup/Gow.nsi
+* Added RequestExecutionLevel of 'admin' so that it works with Windows 7 installers.
+* Set all show details commands to ""hide"" so that you can look at the commands if you wish.
+* Added DetailPrint messages to most functions so that people will know what step caused an error if any come up.
+* Configure: Now clears all errors so that the gow.bat file is written out correctly.
+* Files: Installs all .dll files since there is one now.
+* RemoveOldInstallation: New function that checks for previously installed Gow products and if it finds one it will prompt to uninstall the previous version.
+* Shortcuts: Removed the antiquated Change Log message since this is now posted on GitHub.
+* .onInit: Calls the RemoveOldInstallation function before the installer begins."
+bmatzelle,2010-07-20 11:54:20,https://api.github.com/repos/bmatzelle/gow/git/commits/932a8b597b3e6b0e332a7071eada70f92e4cbea7,932a8b597b3e6b0e332a7071eada70f92e4cbea7,"Updated the readme with some better text, added the Gow license, improved the installer with the version number added in a couple places.
+
+Modified   ReadMe.txt
+* Updated About section, added new Features & Benefits section, added feedback section and
+
+Added      licenses/Gow-License.txt
+* Created new ""licenses"" directory and added the Gow MIT license.
+
+Rename     licenses/GPL-License.txt(from GPL-License.txt)
+Rename     licenses/NcFTP-License.txt(from NcFTP-License.txt)
+Rename     licenses/Putty-License.txt(from Putty-License.txt)
+* Moved the other licenses into this directory.
+
+Modified   setup/Gow.nsi
+* Updated version to 0.4.0 in anticipation of next release.
+* Added the version of the installer to the branding so people know which version they're installing.
+* Files: Added the new ""licenses"" directory.
+* Shortcuts: Added the Gow licenses and fixed the paths of the old licenses. Added the version to the text so they can check the version without having to go to the Add/Remove Programs screen."
+bmatzelle,2010-07-14 13:49:22,https://api.github.com/repos/bmatzelle/gow/git/commits/414a7324b76a22045078e00571ef07896eb09ff4,414a7324b76a22045078e00571ef07896eb09ff4,"Made a few changes to make the project ready for Github.  There's still some work to do of course.
+
+Deleted    ChangeLog.txt
+* This will be added as a wiki page on Github so we don't need it.
+
+Modified   ReadMe.txt
+* Updated the description of the project.
+
+Modified   setup/Gow.nsi
+* Updated the copyright information, version number to 0.3.0
+* Configure: Fixed a hard-coded path."
+bmatzelle,2010-07-14 13:19:51,https://api.github.com/repos/bmatzelle/gow/git/commits/238fdeec41ab409b6a7781d721cedff0eb38511b,238fdeec41ab409b6a7781d721cedff0eb38511b,Initial import of the code I developed back in 2006.  Nothing has been changed since then.  I'll be preparing it for import to Github soon.

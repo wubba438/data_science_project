@@ -1,0 +1,2461 @@
+Sami,An API documentation generator
+username,timestamp,url,sha,message
+fabpot,2018-09-13 16:44:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/394f3e156e814d362b88fa2f682fb8f5c273c970,394f3e156e814d362b88fa2f682fb8f5c273c970,added warning about the status of the project
+fabpot,2018-07-02 13:20:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/19b8a82b858bd31544c468317c8307188ccb4022,19b8a82b858bd31544c468317c8307188ccb4022,"bug #355 Allow $this type hint (CharlotteDunois)
+
+This PR was merged into the 4.1-dev branch.
+
+Discussion
+----------
+
+Allow $this type hint
+
+This PR allows the `$this` type hint (use case: return type). This removes the absurd cases of `\MyNamespace\$this` in the documentation.
+
+Commits
+-------
+
+50d4d98 Allow `$this` type hint"
+CharlotteDunois,2018-07-02 12:37:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/50d4d9834bafab3d39b11409e34f50c8105a527a,50d4d9834bafab3d39b11409e34f50c8105a527a,Allow `$this` type hint
+fabpot,2018-06-26 16:39:40,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/13f9f53d433124a5e61bfb89430a92e5faf4d93f,13f9f53d433124a5e61bfb89430a92e5faf4d93f,"bug #353 Removed use of ProcessBuilder (dborsatto)
+
+This PR was merged into the 4.1-dev branch.
+
+Discussion
+----------
+
+Removed use of ProcessBuilder
+
+Hello,
+
+Version 4.1 of Sami is currently not working when using `GitVersionCollection`, because it relies on `Symfony\Component\Process\ProcessBuilder`, which has been removed in version 4 of `symfony/process`.
+
+Version 4.0 of Sami pointed to version `~3.0` of `symfony/process`, so that works regularly. According to the Symfony upgrade guide, instead of relying on `ProcessBuilder`, we just use `Process` directly.
+
+The Phar at `http://get.sensiolabs.org/sami.phar` is affected, so it might be breaking some CI builds (that's how I discovered about this).
+
+Commits
+-------
+
+6197d13 Removed use of ProcessBuilder"
+dborsatto,2018-06-26 13:45:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6197d135a695b871fe661347f732f85096c9deaa,6197d135a695b871fe661347f732f85096c9deaa,Removed use of ProcessBuilder
+fabpot,2018-06-25 13:48:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/88072913cd58105a1205d98b1b1182ad9579c7a1,88072913cd58105a1205d98b1b1182ad9579c7a1,prepared version 4.1.0
+fabpot,2018-06-25 13:48:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6ec251359406376e8898b2226e20cfe3f5b1f161,6ec251359406376e8898b2226e20cfe3f5b1f161,bumped version to 4.1
+fabpot,2018-06-25 13:48:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4a766175b3df740f1b8fa189c771505cdaa8a4a1,4a766175b3df740f1b8fa189c771505cdaa8a4a1,updated changelog
+fabpot,2018-06-25 13:45:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/20aa66ce86c932a31dc871f77c50b254085ccc38,20aa66ce86c932a31dc871f77c50b254085ccc38,"feature #352 Add support for Symfony 4 (fabpot)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Add support for Symfony 4
+
+Commits
+-------
+
+046bee8 added support for Symfony 4"
+fabpot,2018-06-25 12:48:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/046bee8a9cbc95949cfe1245d3f4a6f886aeca48,046bee8a9cbc95949cfe1245d3f4a6f886aeca48,added support for Symfony 4
+fabpot,2018-06-25 13:40:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c0478ddeb9af73d90833b596041e84d9a81aa1fe,c0478ddeb9af73d90833b596041e84d9a81aa1fe,dropped support for PHP 7.0
+fabpot,2018-06-25 13:38:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f0b724a00cecea2237824e02a65b4481203e2a09,f0b724a00cecea2237824e02a65b4481203e2a09,"minor #343 chore: clone last commit (DanielRuf)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+chore: clone last commit
+
+To be equal to https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.11/.travis.yml#L5-L6 and improve the build times a bit.
+
+Commits
+-------
+
+3540f54 chore: clone last commit"
+fabpot,2018-06-25 12:36:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cc1bfea736cb820d702825a642c6234fafc4733f,cc1bfea736cb820d702825a642c6234fafc4733f,"feature #345 Add support for PHP7 return types (markdunphy)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Add support for PHP7 return types
+
+Hi @fabpot -
+
+Thanks for all your work on Sami! This feature was discussed in https://github.com/FriendsOfPHP/Sami/issues/256 and you suggested it could be implemented. Please let me know your thoughts on this PR.
+
+Commits
+-------
+
+95eeb68 add support for php7 return types"
+fabpot,2018-06-25 12:35:15,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c660012b3acbed336de97d9eddae50bdb2614d32,c660012b3acbed336de97d9eddae50bdb2614d32,"bug #328 allow `true` and `false` type-hint (pine3ree)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+allow `true` and `false` type-hint
+
+thus removing weird `abbr` titles such as `my\namespaced\class\false`
+
+Commits
+-------
+
+b8b7f88 allow `true` and `false` type-hint"
+fabpot,2018-06-25 12:34:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/dd3564f433141e95e3a8dba14ba2536135a1c908,dd3564f433141e95e3a8dba14ba2536135a1c908,"minor #348 Remove unused 'use' (williamdes)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Remove unused 'use'
+
+`use Sami\RemoteRepository\GitHubRemoteRepository;` is not used, removed.
+
+Commits
+-------
+
+501e40a Remove unused 'use'"
+williamdes,2018-05-29 21:30:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/501e40abe308b2e409bc9f67e60cd6a9b28d4edd,501e40abe308b2e409bc9f67e60cd6a9b28d4edd,Remove unused 'use'
+DanielRuf,2018-05-12 17:33:53,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3540f54626ef9bcce6506aa93ebbba5a549fd859,3540f54626ef9bcce6506aa93ebbba5a549fd859,chore: clone last commit
+fabpot,2018-04-04 07:39:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/488e5ad5115b357b287f1e9a4527ca1ed2ae9395,488e5ad5115b357b287f1e9a4527ca1ed2ae9395,updated CHANGELOG
+fabpot,2018-04-04 07:30:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f88a2be621a800cb02f81bec37c19d67b69eda7e,f88a2be621a800cb02f81bec37c19d67b69eda7e,updated CHANGELOG
+fabpot,2018-04-04 07:28:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/96343b425028787dfd4d4eea0fa77d519ba86c64,96343b425028787dfd4d4eea0fa77d519ba86c64,"bug #338 Hotfix/335 (Tomasz Struczyński)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Hotfix/335
+
+Fixes #335
+
+Commits
+-------
+
+0b83d5b Fix #289"
+fabpot,2018-02-22 07:06:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2e24ce638fb86aaddd9952526e62f0ccd4d316af,2e24ce638fb86aaddd9952526e62f0ccd4d316af,"feature #289 Add extended support for @see tag (Tomasz Struczyński)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #289).
+
+Discussion
+----------
+
+Add extended support for @see tag
+
+This PR adds extended support for @see tag. It tries to maintain backwards compatibility with templates (see tag is still present in getOtherTags with the same structure, as before). But it is also avaiable as new  `Reflection::getSee()` class method, which adds possibility to create class/method/URL links.
+
+Commits
+-------
+
+332dac2 Add extended support for @see tag"
+pine3ree,2018-02-07 16:50:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b8b7f88ae9667d94aa422edb8b200d49b73d4f83,b8b7f88ae9667d94aa422edb8b200d49b73d4f83,allow `true` and `false` type-hint
+fabpot,2018-02-05 06:04:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4201a10b65fb7cb62b2f0bae2da025968a82acf3,4201a10b65fb7cb62b2f0bae2da025968a82acf3,bumped version to 4.0.15
+fabpot,2018-02-05 06:00:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c71dcaf3cdfb6db40a6d420cde24923c3e3d0ded,c71dcaf3cdfb6db40a6d420cde24923c3e3d0ded,"bug #327 Fix type null for nullable type parameters not added as type (CharlotteDunois)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Fix type null for nullable type parameters not added as type
+
+I've started using PHP 7.1 nullable types and noticed, that Sami is not able to parse them. I saw the issue #264, but it does not fix the issue, at least not for parameters.
+
+For example `function setAvatar(?string $data)` will result in a type of `string`, and not `string|null` as expected. The PHP documentation for that element *is* `@param string|null $data`.
+
+This PR fixes this by adding the `null` type to the type array when resolving hints.
+
+Commits
+-------
+
+ae635f6 Fix"
+CharlotteDunois,2018-02-02 22:26:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ae635f6121d8caeb8f0039aaa1b9d55744a157ac,ae635f6121d8caeb8f0039aaa1b9d55744a157ac,Fix
+fabpot,2018-01-10 18:20:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/dbbc169b4a8ab808fc6a8b6dba516262c1c976e3,dbbc169b4a8ab808fc6a8b6dba516262c1c976e3,bumped version to 4.0.14
+fabpot,2018-01-10 18:19:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7ff31a8973df2470a1df02e01871f94a597537eb,7ff31a8973df2470a1df02e01871f94a597537eb,updated CHANGELOG
+fabpot,2018-01-10 18:16:45,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e844a08faf0494c10ecff19768606f45f59c3910,e844a08faf0494c10ecff19768606f45f59c3910,"bug #324 Inconsistent result on Index Page (CharlotteDunois)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Inconsistent result on Index Page
+
+Switches a boolean in the macro to provide, by default, a consistent result on the index page. Fixes #309.
+
+Commits
+-------
+
+bc0ac7d Update macros.twig"
+CharlotteDunois,2018-01-10 15:57:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bc0ac7df6d5875bec783cc95bb38f6a6c93e91ef,bc0ac7df6d5875bec783cc95bb38f6a6c93e91ef,Update macros.twig
+fabpot,2018-01-10 07:21:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/acf9dff95bf87b0c4c8fb19706d8d5a7ad4d3b87,acf9dff95bf87b0c4c8fb19706d8d5a7ad4d3b87,fixed CS
+fabpot,2018-01-10 06:54:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/26abe81643089c901a0e8601998950f1cba3c9b0,26abe81643089c901a0e8601998950f1cba3c9b0,"feature #321 Implement option to sort properties, methods, constants, traits and interfaces (CharlotteDunois)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #321).
+
+Discussion
+----------
+
+Implement option to sort properties, methods, constants, traits and interfaces
+
+This simple PR adds the possibility for the user to decide if the properties, methods, constants and traits get sorted on the class page. This can be done by simple defining a truthy value (`true`), to sort by lexicographical (used gets `uksort`). It's also possible to define a callable, which then gets passed to `uksort`.
+
+New options available:
+`sort_class_properties`
+`sort_class_methods`
+`sort_class_constants`
+`sort_class_traits`
+`sort_class_interfaces`
+
+Fixes #319.
+
+Commits
+-------
+
+05c0b70 Implement option to sort properties, methods, constants, traits and interfaces"
+CharlotteDunois,2017-12-22 09:23:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/05c0b70b8ce646da6ecec234b0f90326c3236acc,05c0b70b8ce646da6ecec234b0f90326c3236acc,"Implement option to sort properties, methods, constants, traits and interfaces"
+fabpot,2017-12-31 04:09:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/63bc00b07efcc7d09d4658b020023d0c71213957,63bc00b07efcc7d09d4658b020023d0c71213957,bumped version to 4.0.13-DEV
+fabpot,2017-12-31 04:08:45,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/77c441e606849e8384c5552eab43b6bb25baeb2a,77c441e606849e8384c5552eab43b6bb25baeb2a,prepared RELEASE 4.0.12
+fabpot,2017-12-31 04:04:37,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3165009846492a5fe6225703655204a5e9da24dc,3165009846492a5fe6225703655204a5e9da24dc,"feature #320 Adds variadic arguments support (CharlotteDunois)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #320).
+
+Discussion
+----------
+
+Adds variadic arguments support
+
+This patch adds variadic arguments support. Fixes #313.
+
+This is how it will look like:
+![grafik](https://user-images.githubusercontent.com/4529744/34228420-df8410c8-e5d0-11e7-9376-e626359ddaf8.png)
+
+Commits
+-------
+
+1a979c1 Adds variadic arguments support"
+CharlotteDunois,2017-12-20 20:49:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1a979c1ec4ba9c38e3609f978b75a24d22307d4e,1a979c1ec4ba9c38e3609f978b75a24d22307d4e,Adds variadic arguments support
+fabpot,2017-12-20 15:31:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/336f2f35d0570a130bd1bb0f83118308d39e805e,336f2f35d0570a130bd1bb0f83118308d39e805e,bumped version to 4.0.12-DEV
+fabpot,2017-12-20 15:31:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2456a75088aa44fbc0e258ca5626e34ab539c968,2456a75088aa44fbc0e258ca5626e34ab539c968,bumped version to 4.0.11
+fabpot,2017-12-20 15:31:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ba2200809fb2abdd806fe7fa194cf8d2bf43cf47,ba2200809fb2abdd806fe7fa194cf8d2bf43cf47,updated CHANGELOG
+fabpot,2017-12-20 15:19:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/95b7c6289d3eba13efca4cc54e113d8abd4f65b2,95b7c6289d3eba13efca4cc54e113d8abd4f65b2,"minor #318 Remove support for HHVM (fabpot)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Remove support for HHVM
+
+Tests do not pass anyway on HHVM.
+
+Commits
+-------
+
+c4ee12a removed support for HHVM"
+fabpot,2017-12-20 15:13:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c4ee12aa7450ecc55727fd0599677ab147793ec5,c4ee12aa7450ecc55727fd0599677ab147793ec5,removed support for HHVM
+fabpot,2017-12-20 15:12:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0fd8e81ea470e4ed80fd689f7c6d0e3d4b5bf946,0fd8e81ea470e4ed80fd689f7c6d0e3d4b5bf946,"minor #314 Test against PHP 7.2 (carusogabriel)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Test against PHP 7.2
+
+With the release of [`PHP 7.2`](php.net/archive/2017.php#id2017-11-30-1), would be interesting to test it.
+
+Commits
+-------
+
+261d67c Test against PHP 7.2"
+fabpot,2017-12-20 15:10:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/04c47d3f882db9e330ffc3cc96ceed0e2a9936cc,04c47d3f882db9e330ffc3cc96ceed0e2a9936cc,"minor #310 Update to phpunit-bridge 4.0 (carusogabriel)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Update to phpunit-bridge 4.0
+
+I use the `PHPUnit\Framework\TestCase` notation instead of `PHPUnit_Framework_TestCase` while extending our TestCases. This will help us migrate to PHPUnit 6, that [no longer support snake case class names](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-6.0.md#changed-1).
+
+I just need to update `symfony/phpunit-bridge` to support this `namespace`.
+
+Commits
+-------
+
+c3acbe8 Update to phpunit-bridge 4.0"
+fabpot,2017-12-20 15:09:11,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2166446b497001023b2cc6f70175132775299731,2166446b497001023b2cc6f70175132775299731,"minor #315 Use assertCount (carusogabriel)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Use assertCount
+
+Commits
+-------
+
+3dbdf0d Use assertCount"
+fabpot,2017-12-20 15:08:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c75d288678c41381651743bd3e7683f9392ee966,c75d288678c41381651743bd3e7683f9392ee966,"minor #316 Use Null Coalesce Operator (carusogabriel)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Use Null Coalesce Operator
+
+Commits
+-------
+
+843ed1f Use Null Coalesce Operator"
+fabpot,2017-12-20 15:05:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/63f1789c53e80fd2cfdfa1520cd3a7effb1ed824,63f1789c53e80fd2cfdfa1520cd3a7effb1ed824,"bug #317 Fix ""0"" as default value not shown (CharlotteDunois)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Fix ""0"" as default value not shown
+
+Fixes #258
+
+Commits
+-------
+
+52469c8 Update macros.twig"
+CharlotteDunois,2017-12-20 14:59:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/52469c80579d3d7ce4be56b52562c5620d5559d8,52469c80579d3d7ce4be56b52562c5620d5559d8,Update macros.twig
+carusogabriel,2017-12-10 05:21:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/843ed1f607d0436a215ba2f52a1201a3e0c4d568,843ed1f607d0436a215ba2f52a1201a3e0c4d568,Use Null Coalesce Operator
+carusogabriel,2017-12-10 05:17:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3dbdf0d5a9532857330fef2925284b84202efb47,3dbdf0d5a9532857330fef2925284b84202efb47,Use assertCount
+carusogabriel,2017-11-06 06:57:20,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c3acbe810e0a3cf530d1e65d5a01b7762083fbfc,c3acbe810e0a3cf530d1e65d5a01b7762083fbfc,Update to phpunit-bridge 4.0
+carusogabriel,2017-12-10 05:04:13,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/261d67c9510a01f8cb7df5fea5d796aad80b1aa7,261d67c9510a01f8cb7df5fea5d796aad80b1aa7,Test against PHP 7.2
+fabpot,2017-11-09 05:23:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8b02ef7633bcc2c671022b1452e3b55c51f47bd8,8b02ef7633bcc2c671022b1452e3b55c51f47bd8,bumped version
+fabpot,2017-11-09 05:22:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/23f655ae8ecbaf56bff69e7d7f9eb3c99714e94b,23f655ae8ecbaf56bff69e7d7f9eb3c99714e94b,prepare 4.0.10
+fabpot,2017-11-09 05:19:40,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/38b55bfd3f7c451faf9e8095395d3cc51807e886,38b55bfd3f7c451faf9e8095395d3cc51807e886,"bug #311 BUG Correct cache pollution between versions (tractorcow)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #311).
+
+Discussion
+----------
+
+BUG Correct cache pollution between versions
+
+Fixes #62 (four year old bug :) )
+
+I appreciate critique regarding the removal of the cache warming between versions; My experience is that the error in the output outweigh the performance benefit, but I stand to be corrected if possible. :)
+
+Possibly there is another caching warming / reuse pattern that could be replaced, but I'm not familiar enough with the design to implement one I'm afraid.
+
+I had some issue with ArrayStore not respecting the project version, but out of respect I've opted not to try to shiv in a fix for it.
+
+Commits
+-------
+
+14997ad Use build dir as tree cache identifier
+1e884d8 BUG Correct cache pollution between versions Fixes #62"
+fabpot,2017-10-28 22:21:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/df5bc654b38374069d2600a973b4d5c3b5b3c46a,df5bc654b38374069d2600a973b4d5c3b5b3c46a,bumped version
+fabpot,2017-10-28 22:18:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/be3544eb44ffedad3d241788d7bd3d304d7f15be,be3544eb44ffedad3d241788d7bd3d304d7f15be,bumped version
+fabpot,2017-10-28 22:17:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/907d3a771d1366fc7ef154737f26469e70916285,907d3a771d1366fc7ef154737f26469e70916285,updated CHANGELOG
+fabpot,2017-10-28 22:15:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2cd055089ee4454b853434ca603f954261847932,2cd055089ee4454b853434ca603f954261847932,fixed CS
+fabpot,2017-10-28 22:15:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/15789c738bcbcb608b341028e6d1e8871b2d3e51,15789c738bcbcb608b341028e6d1e8871b2d3e51,"bug #307 Prevent scope collision in sami config file (KorvinSzanto)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Prevent scope collision in sami config file
+
+Before this change it's possible to define the ""input"" variable in the config file and have it pollute the scope of the loading block. After this change scope is completely isolated.
+
+Commits
+-------
+
+516996b Update Command.php"
+fabpot,2017-10-28 22:13:16,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/41c172f8890dc0ad17383fdbb0a5a4316442ae3c,41c172f8890dc0ad17383fdbb0a5a4316442ae3c,"bug #308 fix: wrong variable using in NodeVisitor (feiyuanqiu)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #308).
+
+Discussion
+----------
+
+fix: wrong variable using in NodeVisitor
+
+Since $class is a ClassReflection object, the if statement would never
+be true. According to the context, change $class to $node
+
+Commits
+-------
+
+bad132b fix: wrong variable using in NodeVisitor"
+feiyuanqiu,2017-10-28 13:20:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bad132b8f36ba0f7ac75fff13e6351f0c839b3dd,bad132b8f36ba0f7ac75fff13e6351f0c839b3dd,fix: wrong variable using in NodeVisitor
+KorvinSzanto,2017-10-23 19:33:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/516996bb17b4ed1ef5072a6bcafbb2a2247b3d31,516996bb17b4ed1ef5072a6bcafbb2a2247b3d31,"Update Command.php
+
+Before this change it's possible to define the ""input"" variable in the config file and have it pollute the scope of the loading block. After this change scope is completely isolated."
+fabpot,2017-09-06 14:17:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2a158d9ddf02f510257fff7718b00ffed9b65a34,2a158d9ddf02f510257fff7718b00ffed9b65a34,"minor #306 code grooming (keradus)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+code grooming
+
+Commits
+-------
+
+e46c969 code grooming"
+keradus,2017-09-06 12:34:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e46c9693e4ea280c45658b38a07683e84abcbf94,e46c9693e4ea280c45658b38a07683e84abcbf94,code grooming
+fabpot,2017-09-05 19:59:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ad64addbaf9451249e729b3f8ca95d0233887da7,ad64addbaf9451249e729b3f8ca95d0233887da7,udpated CHANGELOG
+fabpot,2017-09-05 15:46:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/742f2575c6382c8a362c3c99974399de382bfa63,742f2575c6382c8a362c3c99974399de382bfa63,"bug #303 Fix counting of non-countable versions for PHP 7.2 (SerafimArts)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Fix counting of non-countable versions for PHP 7.2
+
+Same issue: https://github.com/FriendsOfPHP/Sami/issues/302
+
+Commits
+-------
+
+ef03fcd Fix counting of non-countable versions for PHP 7.2"
+fabpot,2017-09-05 15:44:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d00683c19c6ab93c239415f5b87a1d0a3a758581,d00683c19c6ab93c239415f5b87a1d0a3a758581,"bug #305 Make Sami skip anonymous classes (fixes #294 and #252) (paulofreitas)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Make Sami skip anonymous classes (fixes #294 and #252)
+
+As discussed on issues #294 and #252, there's a bug in Sami that prevents it generating documentations when it reaches anonymous classes nodes - a feature from PHP 7.x.
+
+As it was never supported before and I'm not sure if it's reasonable to have support for that I'm just proposing this PR to skip those anonymous classes and let Sami works flawlessly as before.
+
+Commits
+-------
+
+65db55d Make Sami skip anonymous classes"
+paulofreitas,2017-09-05 15:25:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/65db55d2d8bea501d3128072d04c24082dda2474,65db55d2d8bea501d3128072d04c24082dda2474,Make Sami skip anonymous classes
+SerafimArts,2017-08-30 15:07:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ef03fcd3f48c4598baa9482f4925fbeb7fd23efb,ef03fcd3f48c4598baa9482f4925fbeb7fd23efb,Fix counting of non-countable versions for PHP 7.2
+fabpot,2017-08-13 16:18:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8d2912faff2876c8818a41ece5da3e63dd17b88f,8d2912faff2876c8818a41ece5da3e63dd17b88f,"bug #296 Fix Sami for PHP 7.2 (mhujer)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Fix Sami for PHP 7.2
+
+This change fixes the Sami for PHP 7.2
+
+Otherwise it fails on PHP 7.2:
+> count(): Parameter must be an array or an object that implements Countable
+
+Commits
+-------
+
+973fda4 make sure VersionCollection::$versions is always an array"
+mhujer,2017-08-12 20:33:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/973fda48247322d92203355cc264c87fa611de2f,973fda48247322d92203355cc264c87fa611de2f,"make sure VersionCollection::$versions is always an array
+
+Otherwise it fails on PHP 7.2:
+> count(): Parameter must be an array or an object that
+> implements Countable"
+fabpot,2017-07-25 10:58:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1085ac8297e93498dd00bfd1d66212846343949f,1085ac8297e93498dd00bfd1d66212846343949f,added a note about PHP 7 requirement
+fabpot,2017-07-25 10:26:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6c89fec1e434d7080b548980502809617cad6c16,6c89fec1e434d7080b548980502809617cad6c16,added a note about installing Sami as a Composer dep
+fabpot,2017-06-08 23:56:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/68d124b354cab4bb3143d6c0cfefc2c53372338e,68d124b354cab4bb3143d6c0cfefc2c53372338e,"bug #287 Correct docblock based method parameters (Tomasz Struczyński)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #287).
+
+Discussion
+----------
+
+Correct docblock based method parameters
+
+This fixes #281 - again. This time for docblock based parameters.
+
+I have refactored tests class, so data provider sub functions use main data provider function as a prefix. I have also added tests for docblock based type hints and allowed testing for multiple type hints on one parameter.
+
+Commits
+-------
+
+e886aa5 Correct docblock based method parameters"
+fabpot,2017-06-06 13:19:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a4424bccd711af77ea40d36795298a6ac6725f11,a4424bccd711af77ea40d36795298a6ac6725f11,"bug #286 Correct node visitor to correctly resolve hints to class parameters (Tomasz Struczyński)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #286).
+
+Discussion
+----------
+
+Correct node visitor to correctly resolve hints to class parameters
+
+This should close #281 .
+
+Commits
+-------
+
+5916e55 Correct node visitor to correctly resolve hints to class parameters"
+fabpot,2017-05-31 18:21:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f7a25633f8cf9a52b462ede1837bac52839945e0,f7a25633f8cf9a52b462ede1837bac52839945e0,"bug #285 feature #283 Make namespace copyable (d3f3kt)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+feature #283 Make namespace copyable
+
+Remove css ::before selector and add li elements with backslashes to make
+the breadcrumb copyable.
+
+Commits
+-------
+
+8df8e3a feature #283 Make namespace copyable"
+d3f3kt,2017-05-31 10:39:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8df8e3ad2741a54b1228532011f3b26ba43af067,8df8e3ad2741a54b1228532011f3b26ba43af067,"feature #283 Make namespace copyable
+
+Remove css ::before selector and add li elements with backslashes to make
+the breadcrumb copyable."
+fabpot,2017-05-05 18:46:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2511ed9293461b2199e0afa7822dbcd5ce3e4a32,2511ed9293461b2199e0afa7822dbcd5ce3e4a32,bumped version to 4.0.4-DEV
+fabpot,2017-05-05 18:45:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e7bcdd6f5b3111241550ec61314d73c1efdc8cec,e7bcdd6f5b3111241550ec61314d73c1efdc8cec,bumped version
+fabpot,2017-05-05 18:45:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/43afb06f6ecabe5d5913b3bbdc59a6247b5386ab,43afb06f6ecabe5d5913b3bbdc59a6247b5386ab,updated CHANGELOG
+fabpot,2017-05-05 18:35:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d33c748ed952abe2bbf67363213af78baeef35ea,d33c748ed952abe2bbf67363213af78baeef35ea,"bug #202 Tree parser sets links for namespaces containing sub namespaces (Tomasz Struczyński)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #202).
+
+Discussion
+----------
+
+Tree parser sets links for namespaces containing sub namespaces
+
+Helps with #174 . This may not be a complete fix, as there also should be checks in twig templates. But helps in case when namespace contains no classes, but only subnamespaces.
+
+Commits
+-------
+
+2801f10 Tree parser sets links for namespaces containing sub namespaces"
+fabpot,2017-05-05 18:32:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a75769f285052522afc3d7eada11fe08eb33309a,a75769f285052522afc3d7eada11fe08eb33309a,fixed travis
+fabpot,2017-05-05 18:32:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/14ad116243249b7bb1c5a3ce7f599938ec64f026,14ad116243249b7bb1c5a3ce7f599938ec64f026,"minor #277 Add PHP 7.1 to Travis build matrix (emirb)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Add PHP 7.1 to Travis build matrix
+
+Commits
+-------
+
+c22cab3 Add PHP 7.1 to Travis build matrix"
+fabpot,2017-05-05 18:31:37,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fb8f1bc51472f4a59f4e11c2eb4dafc414140861,fb8f1bc51472f4a59f4e11c2eb4dafc414140861,"feature #278 Use Markdown Extra instead of Markdown (mattgorle)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #278).
+
+Discussion
+----------
+
+Use Markdown Extra instead of Markdown
+
+By using MarkdownExtra, significant extra functionality is made available to users.  For example, it is now possible to format tables within docblocks.
+
+This update does not alter any existing behaviour of sami.
+
+For a full explanation of the extra features available in Markdown Extra, see [https://michelf.ca/projects/php-markdown/extra/](https://michelf.ca/projects/php-markdown/extra/)
+
+Commits
+-------
+
+a8bebe4 Use Markdown Extra instead of Markdown"
+mattgorle,2017-04-25 20:54:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a8bebe42933b298517bedc53a65bbcefce79bd3a,a8bebe42933b298517bedc53a65bbcefce79bd3a,Use Markdown Extra instead of Markdown
+fabpot,2017-05-05 18:29:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/71927fb4ec389d631c026cf4554fc673be1cb733,71927fb4ec389d631c026cf4554fc673be1cb733,"feature #265 Adds @todo tag support (philip)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #265).
+
+Discussion
+----------
+
+Adds @todo tag support
+
+This is a PR for FriendsOfPHP/Sami#263 that adds `@todo` tag support.
+Adds a new insert_todos configuration option (disabled by default)
+If enabled, @todo tags are parsed and added below class and method descriptions.
+
+Please ignore original commit message, where my brain mixed the strings 'tag' and 'todo' :)
+
+Commits
+-------
+
+1ba77bc Adds @todo tag support"
+philip,2017-01-20 22:49:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1ba77bc5af8bf91383398e6ee61811020d900187,1ba77bc5af8bf91383398e6ee61811020d900187,Adds @todo tag support
+emirb,2017-04-23 02:00:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c22cab31abb10d66f3969e703a45bc2df0bf3ee5,c22cab31abb10d66f3969e703a45bc2df0bf3ee5,Add PHP 7.1 to Travis build matrix
+fabpot,2017-04-18 22:24:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fb577aee7cb36aa820c582cd7fb6b63e02e1e392,fb577aee7cb36aa820c582cd7fb6b63e02e1e392,"bug #274 Adds $this hint support (TheRealDarklord)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Adds $this hint support
+
+PR for issue FriendsOfPHP/Sami#273
+
+Commits
+-------
+
+8590c01 Add $this as class name alias for hints"
+TheRealDarklord,2017-04-13 13:48:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8590c01162aad2fe5b83e7bccefcec956144eaa1,8590c01162aad2fe5b83e7bccefcec956144eaa1,Add $this as class name alias for hints
+fabpot,2017-03-24 16:25:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/af1155ca95929c72353513fa52c58f6341cb72e0,af1155ca95929c72353513fa52c58f6341cb72e0,"bug #269 Fix parsing nullable types with php 7.1 (derFunk)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #269).
+
+Discussion
+----------
+
+Fix parsing nullable types with php 7.1
+
+See also https://github.com/FriendsOfPHP/Sami/issues/264.
+
+This fixes the exception which was preventing document generation.
+The resulting docs which state e.g. `null|string` for a nullable `?string`.
+
+Commits
+-------
+
+521210e Fix parsing nullable types with php 7.1"
+derFunk,2017-01-30 22:01:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/521210e5ae9e8097af2c34fd59a2cd6aa878accd,521210e5ae9e8097af2c34fd59a2cd6aa878accd,Fix parsing nullable types with php 7.1
+fabpot,2017-01-05 22:32:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f947536fe5899c94d9bcf2d49435f62467725a94,f947536fe5899c94d9bcf2d49435f62467725a94,bumped version to 4.0.1-DEV
+fabpot,2017-01-05 20:54:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/44715dd4fbbecdf3eafc92a75b3db99f0c207ca0,44715dd4fbbecdf3eafc92a75b3db99f0c207ca0,bumped Twig to 2.0 final
+fabpot,2017-01-04 03:02:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d145117a1514440934855aa9b9f2e6f1624631cb,d145117a1514440934855aa9b9f2e6f1624631cb,fixed modifiers parsing
+fabpot,2017-01-04 02:13:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/46ac5a03dc5400047f5f2437ecfb2a9145843dd7,46ac5a03dc5400047f5f2437ecfb2a9145843dd7,allowed HHVM to fail
+fabpot,2017-01-04 02:07:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9d6332c34197cc3af0ce9e4f811d52ea5c7f075c,9d6332c34197cc3af0ce9e4f811d52ea5c7f075c,fixed HHVM support
+fabpot,2017-01-04 02:06:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fc9343dda4da96055270d8ffb7f943077cb2e112,fc9343dda4da96055270d8ffb7f943077cb2e112,fixed travis
+fabpot,2017-01-02 20:41:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/dfc0724ca06cde0278cc0f1d43e89c25e19f3fe5,dfc0724ca06cde0278cc0f1d43e89c25e19f3fe5,updated LICENSE year
+fabpot,2016-12-26 11:18:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8f24959b54eedb08d73b8e1c9de42e77a30240e2,8f24959b54eedb08d73b8e1c9de42e77a30240e2,updated CHANGELOG
+fabpot,2016-12-26 11:18:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/42609b69e300d87253b5b7cf6c1a185a2453a2c0,42609b69e300d87253b5b7cf6c1a185a2453a2c0,fixed CS
+fabpot,2016-12-26 11:17:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ddc33e45dbe5554ed606c805214fbeb480e69797,ddc33e45dbe5554ed606c805214fbeb480e69797,"bug #239 Use JS to select good entry in version dropdown (gza)
+
+This PR was squashed before being merged into the 4.0-dev branch (closes #239).
+
+Discussion
+----------
+
+Use JS to select good entry in version dropdown
+
+Fixes #121
+
+If a page is the same between versions, it is not possible to select dropdown entry staticaly.
+Let's do it by JavaScript
+
+Commits
+-------
+
+7e97566 Use JS to select good entry in version dropdown"
+fabpot,2016-12-26 11:16:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/698f9b82d6effd91116b0cadebf97b9712f1dda4,698f9b82d6effd91116b0cadebf97b9712f1dda4,-
+fabpot,2016-12-26 11:16:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6a0a85066f451faf8c0b21c1d6e030acffae4539,6a0a85066f451faf8c0b21c1d6e030acffae4539,"minor #246 Fix a typo (landrok)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Fix a typo
+
+Commits
+-------
+
+b504790 Fix a typo"
+fabpot,2016-12-26 11:14:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/db471791f3f18c46b72ee89f6f2c112b1d6b9e5d,db471791f3f18c46b72ee89f6f2c112b1d6b9e5d,bumped minimum PHP version to 7.0
+fabpot,2016-12-26 10:57:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2a892822415a20be948971538535faf2aee07cf0,2a892822415a20be948971538535faf2aee07cf0,removed unreachable code
+fabpot,2016-12-26 10:57:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8926d7e5fb357fc106b43c72c10d32cf93b9db7d,8926d7e5fb357fc106b43c72c10d32cf93b9db7d,updated deps
+landrok,2016-12-02 14:30:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b504790afbebdbc5249342fdb6116a6401225d91,b504790afbebdbc5249342fdb6116a6401225d91,Fix a typo
+fabpot,2016-11-15 21:07:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2048fcb7d40758e84f6927b6ec9501e56a36d8a5,2048fcb7d40758e84f6927b6ec9501e56a36d8a5,"bug #244 updated code to work with latest Twig 2.0 (fabpot)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+updated code to work with latest Twig 2.0
+
+fixes #243
+
+Commits
+-------
+
+092defd updated code to work with latest Twig 2.0"
+fabpot,2016-11-15 20:56:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/092defd02a08967c5013d18b16b54052b829247a,092defd02a08967c5013d18b16b54052b829247a,updated code to work with latest Twig 2.0
+fabpot,2016-09-12 20:04:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/35011d288259e27362a53fc3eba044fbddf553c1,35011d288259e27362a53fc3eba044fbddf553c1,"minor #237 Use bin/simple-phpunit from phpunit-bridge ~3.2 (nicolas-grekas)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+Use bin/simple-phpunit from phpunit-bridge ~3.2
+
+Commits
+-------
+
+713b81d Use bin/simple-phpunit from phpunit-bridge ~3.2"
+nicolas-grekas,2016-09-12 19:52:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/713b81dc2b8d18fe500173dbeb5b5b43ebf23167,713b81dc2b8d18fe500173dbeb5b5b43ebf23167,Use bin/simple-phpunit from phpunit-bridge ~3.2
+fabpot,2016-09-11 19:45:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0603c11b6ad994105edc401e1ff0e66466511b04,0603c11b6ad994105edc401e1ff0e66466511b04,updated CHANGELOG
+fabpot,2016-09-11 19:44:33,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e72f9afedafc1b810985f50d01346054764dfad1,e72f9afedafc1b810985f50d01346054764dfad1,"bug #224 FIX parsing of @property Tags in DocBlocks (Christoph-Harms)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+FIX parsing of @property Tags in DocBlocks
+
+Replaces #223, closes #114, Hopefully, I got it right this time.
+
+Commits
+-------
+
+317cc88 FIX parsing of @property Tags in DocBlocks"
+fabpot,2016-09-11 19:30:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/191406e3784477b36fcea3d09fe074d0e974b8c1,191406e3784477b36fcea3d09fe074d0e974b8c1,"feature #236 removed SymfonyFilter (fabpot)
+
+This PR was merged into the 4.0-dev branch.
+
+Discussion
+----------
+
+removed SymfonyFilter
+
+`@api` is not used anymore by Symfony
+changed the default filter to included protected
+
+closes #193, #175
+
+Commits
+-------
+
+ced84f6 changed the behavior of the default filter
+259dd02 removed SymfonyFilter"
+fabpot,2016-09-11 17:31:14,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ced84f639df03de82c5ffda9b8e1835de0da98e8,ced84f639df03de82c5ffda9b8e1835de0da98e8,changed the behavior of the default filter
+fabpot,2016-09-11 17:28:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/259dd02f4d1f71ac9610a3ee88bfcb1ef9b8f61d,259dd02f4d1f71ac9610a3ee88bfcb1ef9b8f61d,removed SymfonyFilter
+fabpot,2016-09-11 17:08:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/98e879b634e46997108e3c2618cf71f7d268f8e8,98e879b634e46997108e3c2618cf71f7d268f8e8,"feature #235 upgraded to Symfony 3.0 (fabpot)
+
+This PR was merged into the 3.3-dev branch.
+
+Discussion
+----------
+
+upgraded to Symfony 3.0
+
+Upgrading to Symfony 3.0 means :
+
+* removal of 5.3 and 5.4 support;
+* bumping to a new major version.
+
+As we have a new major version, I have also:
+
+* removed support for Twig 1.x;
+* upgraded to PHPParser version 3.0.
+
+Fixes #232, #192, #217, #216, and #228
+
+Commits
+-------
+
+aba7a3f updated PHP requirement to PHP 5.5
+2abd94e bumped PHPParser to 3.0, removed support for Twig 1.x
+8c20f4c upgraded to Symfony 3.0"
+fabpot,2016-01-19 11:31:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/aba7a3ffa2d3d78c533cc8dbdb6621e893a3d83a,aba7a3ffa2d3d78c533cc8dbdb6621e893a3d83a,updated PHP requirement to PHP 5.5
+fabpot,2016-09-10 01:22:37,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2abd94e61f19f3cfee3ed62a761ff79d220925dd,2abd94e61f19f3cfee3ed62a761ff79d220925dd,"bumped PHPParser to 3.0, removed support for Twig 1.x"
+fabpot,2016-09-10 00:31:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8c20f4cccc2859e458d90a8af13185a6566fed99,8c20f4cccc2859e458d90a8af13185a6566fed99,upgraded to Symfony 3.0
+fabpot,2016-09-10 00:26:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a41586c02952c6f96193434b714fa0997cea848f,a41586c02952c6f96193434b714fa0997cea848f,"minor #234 Replaces phpunit to a local one to avoid dep conflicts (fabpot)
+
+This PR was merged into the 3.3-dev branch.
+
+Discussion
+----------
+
+Replaces phpunit to a local one to avoid dep conflicts
+
+Commits
+-------
+
+b53ba57 fixed test that uses a non-declared dependency
+8d1d13a changed Travis to use out own PHPUnit to avoid conflicts"
+fabpot,2016-09-10 00:20:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b53ba57ddf440860f35e1cb8e72c2b1038623b64,b53ba57ddf440860f35e1cb8e72c2b1038623b64,fixed test that uses a non-declared dependency
+fabpot,2016-09-10 00:17:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8d1d13a3860b1b6f1e4a224af1d08264e9eeae5c,8d1d13a3860b1b6f1e4a224af1d08264e9eeae5c,changed Travis to use out own PHPUnit to avoid conflicts
+fabpot,2016-09-10 00:05:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6d771a32db468677cd388d46c17ad1129d544d48,6d771a32db468677cd388d46c17ad1129d544d48,"minor #233 replaced deprecated usage of getMock() in tests (fabpot)
+
+This PR was merged into the 3.3-dev branch.
+
+Discussion
+----------
+
+replaced deprecated usage of getMock() in tests
+
+Commits
+-------
+
+3d1254f replaced deprecated usage of getMock() in tests"
+fabpot,2016-09-09 23:57:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3d1254fdbcc15c058c8e0987a0af94adc5c0fb8d,3d1254fdbcc15c058c8e0987a0af94adc5c0fb8d,replaced deprecated usage of getMock() in tests
+fabpot,2016-08-11 17:29:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5cfcf97b7be9c53886cb29f3cbc51f18572f8ba9,5cfcf97b7be9c53886cb29f3cbc51f18572f8ba9,"minor #229 Fix help messages for update and render commands (krzysiekpiasecki)
+
+This PR was merged into the 3.3-dev branch.
+
+Discussion
+----------
+
+Fix help messages for update and render commands
+
+Before PR:
+
+```php vendor/bin/sami.php parse parse config/symfony.php --force```
+...
+
+After PR:
+
+```php vendor/bin/sami.php parse config/symfony.php --force```
+...
+
+Commits
+-------
+
+7b4ded8 Fix help message"
+krzysiekpiasecki,2016-08-11 12:01:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7b4ded87b79d2c59d96279d31fd00e533b99ca68,7b4ded87b79d2c59d96279d31fd00e533b99ca68,Fix help message
+Christoph-Harms,2016-07-06 14:53:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/317cc88cbb0dc5e4efab2a65f07d0ea46e22a8cd,317cc88cbb0dc5e4efab2a65f07d0ea46e22a8cd,FIX parsing of @property Tags in DocBlocks
+fabpot,2016-06-28 05:19:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5806ad25ec881ccdeb5d93ce2643526e458cbb2e,5806ad25ec881ccdeb5d93ce2643526e458cbb2e,"minor #221 The ""line"" word was shown twice in method line link (aik099)
+
+This PR was merged into the 3.3-dev branch.
+
+Discussion
+----------
+
+The ""line"" word was shown twice in method line link
+
+The `method_source_link` macro already returns `line X` or `<a href=""..."">line X</a>` and adding one more `line` word in front of it's result is redundant.
+
+![2016-06-25_2053](https://cloud.githubusercontent.com/assets/1277526/16358306/023471ea-3b18-11e6-80ad-62a2f49fa2b3.png)
+
+Commits
+-------
+
+aee8cf4 The ""line"" word was shown twice in method line link"
+aik099,2016-06-25 18:00:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/aee8cf40e44fb4150c05ddcde1bbc1f68b68a35c,aee8cf40e44fb4150c05ddcde1bbc1f68b68a35c,"The ""line"" word was shown twice in method line link"
+fabpot,2016-06-07 16:37:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5e4d6ecacc54b1bc2c81e699a05761ddf8689205,5e4d6ecacc54b1bc2c81e699a05761ddf8689205,bumped version
+fabpot,2016-06-07 16:36:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f76c8f6dd0c7c27156f193cbc666dd4b36f68d0d,f76c8f6dd0c7c27156f193cbc666dd4b36f68d0d,prepared released of 3.3.0
+fabpot,2016-06-07 16:29:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/accfc563e33bb4cf1128df4972f28e039f65f7ad,accfc563e33bb4cf1128df4972f28e039f65f7ad,"feature #214 added support for the deprecated tag (fabpot)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+added support for the deprecated tag
+
+closes #203
+
+Commits
+-------
+
+4de3058 added support for the deprecated tag"
+fabpot,2016-06-07 15:41:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4de3058dd5530bb87d15fde933beafe42c7ce675,4de3058dd5530bb87d15fde933beafe42c7ce675,added support for the deprecated tag
+fabpot,2016-06-07 16:24:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/64ff98d250aced99b4ec4849d6e1a51d1e97cae3,64ff98d250aced99b4ec4849d6e1a51d1e97cae3,"bug #215 fixed extra whitespace in generated HTML (fabpot)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+fixed extra whitespace in generated HTML
+
+Commits
+-------
+
+fa017e2 fixed extra whitespace in generated HTML"
+fabpot,2016-06-07 16:22:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fa017e26507dc98082da394a90c35139a36d341f,fa017e26507dc98082da394a90c35139a36d341f,fixed extra whitespace in generated HTML
+fabpot,2016-06-07 12:08:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8a3dad8f667295f49fc3292375c9a250c2328dc0,8a3dad8f667295f49fc3292375c9a250c2328dc0,updated deps
+fabpot,2016-06-07 11:59:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/14ab59b23833d049b301c57c9821a7fff27023a4,14ab59b23833d049b301c57c9821a7fff27023a4,"bug #213 removed usage of PHP reflection to determine if a class is internal (fabpot)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+removed usage of PHP reflection to determine if a class is internal
+
+fixes #200 and #158
+
+Commits
+-------
+
+1879296 removed usage of PHP reflection to determine if a class is internal"
+fabpot,2016-06-07 11:31:16,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/18792966d01db4d0dce1f9c650ed88b729cf8a2a,18792966d01db4d0dce1f9c650ed88b729cf8a2a,removed usage of PHP reflection to determine if a class is internal
+fabpot,2016-05-31 10:08:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ec03c177159de1605cf8eb4df82a216cea132be1,ec03c177159de1605cf8eb4df82a216cea132be1,"minor #212 Fixed a minor typo in an error message (javiereguiluz)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+Fixed a minor typo in an error message
+
+Commits
+-------
+
+9d5bf40 Fixed a minor typo in an error message"
+javiereguiluz,2016-05-31 07:20:53,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9d5bf40cc5438f89a837dadb22c9984ff110f264,9d5bf40cc5438f89a837dadb22c9984ff110f264,Fixed a minor typo in an error message
+fabpot,2016-05-12 12:36:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0d63f25ad740bffa3dde5278d4856578b4324ca9,0d63f25ad740bffa3dde5278d4856578b4324ca9,"bug #208 Don't detect trait ""use ..."" statements in filtered-out classes (aik099)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+Don't detect trait ""use ..."" statements in filtered-out classes
+
+Closes #204
+
+Commits
+-------
+
+99d9f8e Don't detect trait ""use ..."" statements in filtered-out classes"
+aik099,2016-05-12 08:02:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/99d9f8eb25eddea3c3d619aada6d38d44d27c99d,99d9f8eb25eddea3c3d619aada6d38d44d27c99d,"Don't detect trait ""use ..."" statements in filtered-out classes"
+fabpot,2016-05-11 17:44:40,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/29091e5d67d7ec74a22a1aae00a5bd45006910e1,29091e5d67d7ec74a22a1aae00a5bd45006910e1,"bug #207 Fixing failing ""PropertyClassVisitor"" class test (aik099)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+Fixing failing ""PropertyClassVisitor"" class test
+
+ Fixing failing `PropertyClassVisitorTest`, that was broken since #206.
+
+Commits
+-------
+
+faf3851 Fixing failing ""PropertyClassVisitor"" class test"
+aik099,2016-05-11 17:39:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/faf3851961d497f814dbf5dd0d03db7bd7e54755,faf3851961d497f814dbf5dd0d03db7bd7e54755,"Fixing failing ""PropertyClassVisitor"" class test"
+fabpot,2016-05-11 17:25:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d8e23d0b345c8890673e0737a1c1d54ed51e0b81,d8e23d0b345c8890673e0737a1c1d54ed51e0b81,fixed CS
+fabpot,2016-05-11 17:24:13,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/411d867df58eee4afbbaf94fb62de14f7a357448,411d867df58eee4afbbaf94fb62de14f7a357448,"bug #206 Use phpDocumentor's parser for ""@property"" tag parsing (aik099)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+Use phpDocumentor's parser for ""@property"" tag parsing
+
+The built-in code for parsing `@property` tag is now replaced with call to phpDocumentor class (we use it already in other places) to have consistent parsing.
+
+Closes #205
+
+Commits
+-------
+
+781d517 Use phpDocumentor's parser for ""@property"" tag parsing"
+aik099,2016-05-11 17:17:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/781d5175e1713dff8d616a0cef5a975365a21808,781d5175e1713dff8d616a0cef5a975365a21808,"Use phpDocumentor's parser for ""@property"" tag parsing"
+fabpot,2016-01-22 07:52:40,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3a46b98e2fa4d4819018e3767ba6346bfed92957,3a46b98e2fa4d4819018e3767ba6346bfed92957,"bug #197 Handle FQCN parsed parameter as it (shulard)
+
+This PR was merged into the 3.1-dev branch.
+
+Discussion
+----------
+
+Handle FQCN parsed parameter as it
+
+A `PhpParser\Node\Name\FullyQualified` parsed parameter type is not handle like it must be. The `resolveAlias` method check for the `\\` prefix which is missing here so we got a wrong alias.
+
+Now, the parameter parsed type is checked to add the prefix when necessary.
+
+Work on #194
+
+Commits
+-------
+
+fa383f7 Handle FQCN parsed parameter as it"
+shulard,2016-01-20 22:22:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fa383f7c19fb877de4b7e3042dc5071c4773bf11,fa383f7c19fb877de4b7e3042dc5071c4773bf11,"Handle FQCN parsed parameter as it
+
+A `PhpParser\Node\Name\FullyQualified` parsed parameter type is not handle like it must be. The `resolveAlias` method check for the `\\` prefix which is missing here so we got a wrong alias.
+
+Now, the parameter parsed type is checked to add the prefix when necessary.
+
+Work on #194"
+fabpot,2016-01-21 15:29:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cc5bbc12f34fec3e89540e4922c6aae064a4f0b5,cc5bbc12f34fec3e89540e4922c6aae064a4f0b5,updated deps
+fabpot,2016-01-21 15:01:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/db266d9df06a20b480693256ad35c00e0fdb721e,db266d9df06a20b480693256ad35c00e0fdb721e,updated deps
+fabpot,2016-01-19 12:01:42,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1ce42aeb2b543993f94bbd5c2a7d73c208165f7c,1ce42aeb2b543993f94bbd5c2a7d73c208165f7c,bumped LICENSE year
+fabpot,2016-01-19 12:01:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ed2a83de62411ab90a40198bb2ba0b129fadd58f,ed2a83de62411ab90a40198bb2ba0b129fadd58f,bumped version
+fabpot,2016-01-19 11:59:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ca2518422012203a1ad939fcb86387cd8473420e,ca2518422012203a1ad939fcb86387cd8473420e,updated CHANGELOG and bumped version
+fabpot,2016-01-19 11:49:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2dfb2d1dd27aa26efac8285a5638754c581eb5d4,2dfb2d1dd27aa26efac8285a5638754c581eb5d4,"feature #181 optimized template escaping (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+optimized template escaping
+
+Yet another optimization pass for Sami. This one should be reviewed carefully as we remove escaping when not needed.
+
+For the curious:
+
+https://blackfire.io/profiles/compare/0c9d9c97-7a4a-44e1-9218-3e248e65ece5/graph
+
+Commits
+-------
+
+5bba72e optimized template escaping"
+fabpot,2016-01-19 11:47:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6f0a9a5e91326926692284b9920845ac678e2b2e,6f0a9a5e91326926692284b9920845ac678e2b2e,"feature #190 Adding BitBucket support. (antoligy)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Adding BitBucket support.
+
+Commits
+-------
+
+1811af0 Adding BitBucket support."
+fabpot,2016-01-19 11:46:42,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/032d1471dcaf7b283e40e6137a8b0f384b04cb2e,032d1471dcaf7b283e40e6137a8b0f384b04cb2e,"feature #186 Add a link to class methods if a remote repository is configured (mzur)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Add a link to class methods if a remote repository is configured
+
+The link will be shown as the ""at line ###"" part for each method.
+![link](https://cloud.githubusercontent.com/assets/2457311/10710148/7ee1c41a-7a4b-11e5-9092-d39b46f0435b.png)
+Using the link, the users can directly jump to the method source.
+
+This is an extension of #91
+
+Commits
+-------
+
+6bac774 Add a link to class methods if a remote repository is configured"
+fabpot,2016-01-19 11:45:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d842bf56268b00c885cfe5ae27d5ecd92d472bde,d842bf56268b00c885cfe5ae27d5ecd92d472bde,"feature #189 Add GitLab support. (Totof6942)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Add GitLab support.
+
+Add support of GitLab with the possibility to use its own GitLab server.
+
+Commits
+-------
+
+14d49a6 Add GitLab support."
+fabpot,2016-01-19 11:43:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6055d3d00abf1dc5650810fcf5be77618259ee26,6055d3d00abf1dc5650810fcf5be77618259ee26,"bug #196 fixed Windows support (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+fixed Windows support
+
+closes #170
+
+Commits
+-------
+
+0e5e72d fixed Windows support"
+fabpot,2016-01-19 11:39:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0e5e72d895374c06ab0257775d97d33d2d08ab65,0e5e72d895374c06ab0257775d97d33d2d08ab65,fixed Windows support
+fabpot,2016-01-18 09:51:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/731d0ec72d49833a55275bfcae1f4961296c5fff,731d0ec72d49833a55275bfcae1f4961296c5fff,"minor #195 Removed command name duplication (EmanueleMinotto)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Removed command name duplication
+
+Commits
+-------
+
+34dfd95 removed command name duplication"
+EmanueleMinotto,2016-01-14 20:33:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/34dfd9519f3da23153f6658c45f5b48c95cbc95d,34dfd9519f3da23153f6658c45f5b48c95cbc95d,removed command name duplication
+antoligy,2015-11-16 00:31:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1811af0359cdded9e946901f00f254838dfc6349,1811af0359cdded9e946901f00f254838dfc6349,Adding BitBucket support.
+Totof6942,2015-11-09 21:00:41,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/14d49a64ccc6967372d38d7dd35c7d9a68406da6,14d49a64ccc6967372d38d7dd35c7d9a68406da6,Add GitLab support.
+fabpot,2015-10-29 22:46:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/68f932ec3ed9ec99e968db51213ebb8a0e199a37,68f932ec3ed9ec99e968db51213ebb8a0e199a37,"feature #182 Add some Blackfire tests to ensure no regression in past weeks performance optimizations (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Add some Blackfire tests to ensure no regression in past weeks performance optimizations
+
+Just a proof of concept for now...
+
+Commits
+-------
+
+38c2fda tweaked travis configuration
+42f95a7 added some BF tests"
+fabpot,2015-10-08 16:42:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/38c2fda06175f6088b58214bfe43e936bc6f2836,38c2fda06175f6088b58214bfe43e936bc6f2836,tweaked travis configuration
+mzur,2015-10-24 10:27:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6bac774938c1ca7a6e2beba5162277dd2c22e1be,6bac774938c1ca7a6e2beba5162277dd2c22e1be,"Add a link to class methods if a remote repository is configured
+
+The link will be shown as the ""at line ###"" part for each method.
+Using the link, the users can directly jump to the method source.
+
+This is an extension of #91"
+fabpot,2015-09-21 16:17:38,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/42f95a7cd15a11d86d1157d4ec56dad61052b4ab,42f95a7cd15a11d86d1157d4ec56dad61052b4ab,added some BF tests
+fabpot,2015-10-07 15:32:20,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0a526ff0d6e098f6dd07d2e131cb1487cbace112,0a526ff0d6e098f6dd07d2e131cb1487cbace112,updated deps
+fabpot,2015-09-15 13:33:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5bba72e02a968f7a7dcf63a6151ebf34fc5fd189,5bba72e02a968f7a7dcf63a6151ebf34fc5fd189,optimized template escaping
+fabpot,2015-09-15 12:44:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1f381b7ba769d23f4789972409ef6709b1f4e902,1f381b7ba769d23f4789972409ef6709b1f4e902,made a small perf opt
+fabpot,2015-09-15 12:30:13,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/99062cf71e818ab93cb3c3c12ad66f7f2d24e180,99062cf71e818ab93cb3c3c12ad66f7f2d24e180,fixed --force which should also remove Twig template cache dir
+fabpot,2015-09-15 12:12:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/006223c6258e89b4d7c3086fce9f6f8a19c59ec8,006223c6258e89b4d7c3086fce9f6f8a19c59ec8,fixed --force option for rendering
+fabpot,2015-09-14 09:53:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/19007a9041673e88d4107ecca8c99c988b16272b,19007a9041673e88d4107ecca8c99c988b16272b,optimized performance (thanks again Blackfire)
+fabpot,2015-08-30 14:17:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f5171fae4399ca612ade1bf16ec608caf7c7d52b,f5171fae4399ca612ade1bf16ec608caf7c7d52b,bumped versoin
+fabpot,2015-08-30 14:15:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/504f99a1783e2e0e8817a57be946f7c699b83163,504f99a1783e2e0e8817a57be946f7c699b83163,"minor #179 Improve parsing speed when cache is available (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Improve parsing speed when cache is available
+
+While fixing some bugs on Sami, I spent some time measuring Sami speed with Blackfire. For now, I've just analyzed the parsing phase, and this is the first optimization pass based on what I've seen on Blackfire.
+
+I can see a 25/30% speed improvement over Twig or Symfony when cache is there:
+
+https://blackfire.io/profiles/compare/d8aa0168-ed7a-4721-8695-cd86b051b6c7/graph
+
+and a negligible impact when cache is not available:
+
+https://blackfire.io/profiles/compare/1a4d0266-60fb-4c4e-abd4-576ea0f76d51/graph
+
+The speed-up comes from:
+
+* Not storing the same class more than once;
+* Not visiting classes when they come from the cache are were not modified (or their parent/interfaces).
+
+Commits
+-------
+
+f93108a optimized parsing speed thanks to Blackfire.io"
+fabpot,2015-08-28 06:56:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/84770d9acfdef063d0628c439e99e672b20132ff,84770d9acfdef063d0628c439e99e672b20132ff,fixed method/property modifiers
+fabpot,2015-08-28 06:02:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f93108ac436d0cbe0986b43c0396a527d191dc03,f93108ac436d0cbe0986b43c0396a527d191dc03,optimized parsing speed thanks to Blackfire.io
+fabpot,2015-08-28 06:23:14,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f03494dfd6138e8200d3f79fae0b63346811aa5c,f03494dfd6138e8200d3f79fae0b63346811aa5c,fixed --force flag
+fabpot,2015-08-28 04:47:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/02d812472bf5eac20684e81b920c3ebf4d3e6475,02d812472bf5eac20684e81b920c3ebf4d3e6475,fixed caching invalidation
+fabpot,2015-08-28 04:44:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f7a4a3985ec7f957315ff1044dd0c92a799c553e,f7a4a3985ec7f957315ff1044dd0c92a799c553e,fixed method doccomments on inherited classes when using caching
+fabpot,2015-08-28 04:43:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4f9442d9584313b613b95010948f7dfed696f9fe,4f9442d9584313b613b95010948f7dfed696f9fe,simplified code + small perf boost
+fabpot,2015-08-28 03:37:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8ee8d770d3b0c4f865cc78acf1aa6c0a013fdd94,8ee8d770d3b0c4f865cc78acf1aa6c0a013fdd94,fixed visibility issue on methods and properties
+fabpot,2015-08-18 08:04:37,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5a468aa762c9426548af45b344a46083a54c52dc,5a468aa762c9426548af45b344a46083a54c52dc,removed usage of _self in Twig templates
+fabpot,2015-08-13 07:35:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c7f82710279c9aaa673b1ad27148749e9bf7223c,c7f82710279c9aaa673b1ad27148749e9bf7223c,"feature #176 Allow to use Twig 1.x or 2.x (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Allow to use Twig 1.x or 2.x
+
+Commits
+-------
+
+4907024 updated .travis.yml
+4809442 allow Twig 1.x or 2.x
+97dff91 removed usage of deprecated features in Twig"
+fabpot,2015-08-12 21:53:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4907024350a431c0fa3bc60f0fe98f868227c34d,4907024350a431c0fa3bc60f0fe98f868227c34d,updated .travis.yml
+fabpot,2015-08-11 15:05:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4809442709840060699ce44d9db078309960ffb9,4809442709840060699ce44d9db078309960ffb9,allow Twig 1.x or 2.x
+fabpot,2015-08-11 12:40:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/97dff917510ac2d8038b8cda8dad51582a588662,97dff917510ac2d8038b8cda8dad51582a588662,removed usage of deprecated features in Twig
+fabpot,2015-08-11 15:10:18,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b29e3d680cf653129db73e229933506c8ecf2087,b29e3d680cf653129db73e229933506c8ecf2087,fixed CS
+fabpot,2015-07-11 08:42:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ea26c987e08088abbcf44c5722af2fed6aea2ecb,ea26c987e08088abbcf44c5722af2fed6aea2ecb,"bug #165 Add responsive meta tags. (benjy)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Add responsive meta tags.
+
+Without these tags the responsive works on desktop but not on mobile. I only tested this on an S5 but I presume other devices would have similar issues.
+
+Commits
+-------
+
+000871e Add responsive meta tags."
+fabpot,2015-06-28 07:20:53,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fd74f64f7356f3b2e95eaa435f2416cea4153c77,fd74f64f7356f3b2e95eaa435f2416cea4153c77,bumped version to 3.0.7
+fabpot,2015-06-28 07:20:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1c38e4f9bb664f73731869cf63e6c267c0986939,1c38e4f9bb664f73731869cf63e6c267c0986939,prepare 3.0.6 version
+fabpot,2015-06-28 07:15:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f1307facdb57a0e97eb1421fb44bf20e56719268,f1307facdb57a0e97eb1421fb44bf20e56719268,"bug #172 Fix for wrong slashes on Windows (NicholasJohn16)
+
+This PR was squashed before being merged into the 3.0-dev branch (closes #172).
+
+Discussion
+----------
+
+Fix for wrong slashes on Windows
+
+It was generating links for Github with back-slashes instead of forward-slashes on my PC.
+
+Commits
+-------
+
+bc02b16 Fix for wrong slashes on Windows"
+NicholasJohn16,2015-06-26 06:05:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bc02b16df80ac8c3d5fa3a661e8b37de7c336a19,bc02b16df80ac8c3d5fa3a661e8b37de7c336a19,Fix for wrong slashes on Windows
+fabpot,2015-05-30 16:31:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0828c3700604eee9ec3f6f4affa6a9224f4ce76a,0828c3700604eee9ec3f6f4affa6a9224f4ce76a,"feature #91 Adding ""View Source"" link to the class page (anlutro, aik099)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Adding ""View Source"" link to the class page
+
+This is an implementation of #63 task based on original commit made in #64.
+
+___Usage___
+By default Sami doesn't know on which hosting Git repository is located and doesn't add `View Source` links on class detail pages. However if you specify `remote_repository` option with instance of `AbstractRemoteRepository` class sub-class, then the `View Source` link would be added:
+
+![sami_viewsourcelink](https://cloud.githubusercontent.com/assets/1277526/3411930/ed431ede-fdf8-11e3-89df-0d6019d5f51c.png)
+
+For example:
+
+```php
+array(
+...
+'remote_repository' => new GitHubRemoteRepository('username/repository', '/path/to/repository'),
+...
+)
+```
+The `'/path/to/repository'` is required, because Sami doesn't know base folder on GitHub (or any other service), where original files (for which documentation is being generated) live.
+
+Thanks to @anlutro, which commit (squashed) was used as a base for my changes.
+
+Closes #63
+
+Commits
+-------
+
+a077a75 Extracting url building logic to dedicated GitHubRemoteRepository class
+21dcc46 Working prototype with class ""View Source"" links"
+aik099,2014-06-26 21:05:28,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a077a7554a19fde04ba74dc40b1ea015f3ff262e,a077a7554a19fde04ba74dc40b1ea015f3ff262e,"Extracting url building logic to dedicated GitHubRemoteRepository class
+
+1. refactoring to increase clarity of added logic
+2. adding parenthesis around ""View Source"" link
+3. updating documentation
+4. adding ""GitHubRemoteRepository"" class import to the examples"
+anlutro,2013-12-11 18:30:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/21dcc46cb0508686bc29534b4d8baa159db7dad4,21dcc46cb0508686bc29534b4d8baa159db7dad4,"Working prototype with class ""View Source"" links"
+benjy,2015-05-24 12:09:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/000871eae8d6d46de57d13c9fdba35a0f5029e8a,000871eae8d6d46de57d13c9fdba35a0f5029e8a,Add responsive meta tags.
+fabpot,2015-05-20 16:44:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/66dc7592ecd73d8a9f612ffd7a29c0635a53dd93,66dc7592ecd73d8a9f612ffd7a29c0635a53dd93,"bug #164 Undefined Property (mpingo)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Undefined Property
+
+I've downloaded a fresh copy of Sami to document my code. However when I tried to generate the documentation I encountered the error below.
+
+[ErrorException]
+Notice: Undefined property: PhpParser\Node\Stmt\Interface_::$type in ~/sami/vendor/sami/sami/Sami/Parser/NodeVisitor.php line 114
+
+When I made the changes indicated in this request, I was able to generate my documentation. Was this a bug? Or have I an issue with my installation?
+
+Commits
+-------
+
+d0c7331 Undefined Property"
+mpingo,2015-04-29 13:40:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d0c73313509b092a6c09264f7ddc1c96fa0cf4d5,d0c73313509b092a6c09264f7ddc1c96fa0cf4d5,"Undefined Property
+
+I've downloaded a fresh copy of Sami to document my code. However when I tried to generate the documentation I encountered the error below.
+
+[ErrorException]
+Notice: Undefined property: PhpParser\Node\Stmt\Interface_::$type in /home/bart/bin/temp/vendor/sami/sami/Sami/Parser/NodeVisitor.php line 114
+
+When I made the changes indicated in this request, I was able to generate my documentation. Was this a bug? Or have I an issue with my installation?"
+fabpot,2015-04-08 05:19:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ad41b11c7ff3d46e3345c833e77a31f58340b177,ad41b11c7ff3d46e3345c833e77a31f58340b177,bumped version to 3.0.4-DEV
+fabpot,2015-04-08 05:18:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ce9f0d0ca877018e66094c6f20d8e0e941790e4d,ce9f0d0ca877018e66094c6f20d8e0e941790e4d,updated CHANGELOG
+fabpot,2015-04-08 05:16:33,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c378c338ddf6847caab48f1b91ba9334b1b40113,c378c338ddf6847caab48f1b91ba9334b1b40113,"minor #153 Closes #84 - fix php documentation links (mickaelandrieu)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Closes #84 - fix php documentation links
+
+@fabpot should we add locale support for this stuff ? I think it's out of scope for now.
+
+Commits
+-------
+
+2511f65 Closes #84 - fix php documentation links"
+fabpot,2015-04-08 05:14:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7468cf20864a1189cb5d11c25d1d12fb2a20e8a5,7468cf20864a1189cb5d11c25d1d12fb2a20e8a5,"minor #156 Update README.rst (NightFox7)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Update README.rst
+
+Replate sami.php with sami.phar
+
+Commits
+-------
+
+05ffb78 Update README.rst"
+fabpot,2015-04-08 05:13:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f38dba805ba9e3bbc9ce64b3a6818cd7aee0f131,f38dba805ba9e3bbc9ce64b3a6818cd7aee0f131,updated deps
+fabpot,2015-04-08 05:12:53,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4a6b6ef53b82722bad84ec9a458af931f1b9d2b3,4a6b6ef53b82722bad84ec9a458af931f1b9d2b3,"bug #162 Adding a fix to parse the contents of a file rather than trying to parse a filename (mtdowling)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Adding a fix to parse the contents of a file rather than trying to parse a filename
+
+This PR closes #160 to ensure that Sami parses the contents of a yaml file rather than trying to parse the filename of a yaml file.
+
+Commits
+-------
+
+924a797 Adding a fix to parse the contents of a file rather than trying to parse a filename"
+mtdowling,2015-04-07 21:13:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/924a7976003fee5b53ce1763a690b442f5e58dd7,924a7976003fee5b53ce1763a690b442f5e58dd7,Adding a fix to parse the contents of a file rather than trying to parse a filename
+NightFox7,2015-03-05 14:56:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/05ffb78eb032ca13c943c26b80e1b48ca51b8add,05ffb78eb032ca13c943c26b80e1b48ca51b8add,"Update README.rst
+
+Replate sami.php with sami.phar"
+fabpot,2015-03-02 12:22:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e9f1b809171d191274005c09690bb099e841ea0e,e9f1b809171d191274005c09690bb099e841ea0e,"minor #155 travis: PHP 7.0 nightly added (TomasVotruba)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+travis: PHP 7.0 nightly added
+
+Commits
+-------
+
+33bf97d travis: PHP 7.0 nightly added"
+fabpot,2015-02-21 12:45:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2b3c0a2a0c2b78912e826038bcaae81607f8e24c,2b3c0a2a0c2b78912e826038bcaae81607f8e24c,bumped version to 3.0.3
+fabpot,2015-02-21 12:44:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b850ab439114a845f612543f3936a8604db85956,b850ab439114a845f612543f3936a8604db85956,prepared version 3.0.2
+fabpot,2015-02-21 12:44:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e975ed496d86bc48020ac45620ad9d38da6c6d23,e975ed496d86bc48020ac45620ad9d38da6c6d23,"bug #152 fixed error messages for methods and properties (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+fixed error messages for methods and properties
+
+alternative (#151) fix for #147
+
+Commits
+-------
+
+ac7d636 fixed error messages for methods and properties"
+mickaelandrieu,2015-02-19 14:37:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2511f657b361d08d6dc3763569eeb39790e9c071,2511f657b361d08d6dc3763569eeb39790e9c071,Closes #84 - fix php documentation links
+fabpot,2015-02-19 11:12:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ac7d636ff2ede5f7a7d4aa41091bfcf2422cf318,ac7d636ff2ede5f7a7d4aa41091bfcf2422cf318,fixed error messages for methods and properties
+fabpot,2015-02-18 18:05:47,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5688ed2b9460446c55be1921cf677aa07bbeea11,5688ed2b9460446c55be1921cf677aa07bbeea11,bumped version to 3.0.2
+fabpot,2015-02-18 18:04:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/703722059d351327e3c3af6b0497fdc092d7c16a,703722059d351327e3c3af6b0497fdc092d7c16a,prepared the 3.0.1 release
+fabpot,2015-02-18 18:04:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e6a1c29b36b2e6427f1f4c5943e766dc7e811543,e6a1c29b36b2e6427f1f4c5943e766dc7e811543,"bug #150 fixed command exit code when some parsing error occur to 64 (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+fixed command exit code when some parsing error occur to 64
+
+fixes #116
+
+Commits
+-------
+
+b178dd1 fixed command exit code when some parsing error occur to 64"
+fabpot,2015-02-18 18:03:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3aaa6672ee0b9ca3963dceb93cfd81e1f7573c79,3aaa6672ee0b9ca3963dceb93cfd81e1f7573c79,"bug #149 fixed parsing error display when using --no-ansi (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+fixed parsing error display when using --no-ansi
+
+fixes #117
+
+Commits
+-------
+
+a6a4aec updated the error message for phpdocs issues to include the file name
+7bf80c5 fixed parsing error display when using --no-ansi"
+fabpot,2015-02-18 11:35:09,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b178dd176b19bb9bd191452d5a316f8fe0155920,b178dd176b19bb9bd191452d5a316f8fe0155920,fixed command exit code when some parsing error occur to 64
+fabpot,2015-02-18 11:16:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a6a4aec37d6512684015da6b3e90d9c1dbe8b367,a6a4aec37d6512684015da6b3e90d9c1dbe8b367,updated the error message for phpdocs issues to include the file name
+fabpot,2015-02-18 11:04:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7bf80c51313e0bb119ceca526e0da9d449adab33,7bf80c51313e0bb119ceca526e0da9d449adab33,fixed parsing error display when using --no-ansi
+fabpot,2015-02-18 11:03:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d6b2780e59584e74ee59074643dbf7da5555d092,d6b2780e59584e74ee59074643dbf7da5555d092,fixed tag parsing when the value is already an array
+fabpot,2015-02-18 10:36:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0cc0ffd8fb04ec5e5688b4ed4d20d96448cf0805,0cc0ffd8fb04ec5e5688b4ed4d20d96448cf0805,"minor #148 add composer.lock file to repo (keradus)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+add composer.lock file to repo
+
+Commits
+-------
+
+f2ab4dc add composer.lock file to repo"
+keradus,2015-02-17 16:37:15,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f2ab4dc708c6c59ccf65d44ece75be5a60e59632,f2ab4dc708c6c59ccf65d44ece75be5a60e59632,add composer.lock file to repo
+fabpot,2015-02-17 11:41:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/83ca39f91f359a4db90a13ddfd55d6be28d11229,83ca39f91f359a4db90a13ddfd55d6be28d11229,bumped version to 3.0.1
+fabpot,2015-02-17 11:40:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b324ab477d9f823359efe266463c0ab9b0a99b36,b324ab477d9f823359efe266463c0ab9b0a99b36,prepared the 3.0.0 release
+fabpot,2015-02-17 11:38:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/107b4efd9c247dc4bc65844213995eefc5e5a836,107b4efd9c247dc4bc65844213995eefc5e5a836,udpated CHANGELOG
+fabpot,2015-02-17 11:35:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9b870a22d8eee09185dead5f7a9e798e026598e0,9b870a22d8eee09185dead5f7a9e798e026598e0,"minor #141 Simplified the parseTag function (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Simplified the parseTag function
+
+A switch statement would be far more appropriate here.
+
+Commits
+-------
+
+b04ca96 Simplified the parseTag function"
+fabpot,2015-02-17 11:34:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/15e6396db7455054bb82cd801330ed64212a0480,15e6396db7455054bb82cd801330ed64212a0480,"feature #145 Move docblock processing outside/before filtering (erikwiffin)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Move docblock processing outside/before filtering
+
+Resolves https://github.com/FriendsOfPHP/Sami/issues/99
+
+Commits
+-------
+
+c0d90a5 Move docblock processing outside/before filtering"
+fabpot,2015-02-17 11:30:11,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e647453700ff8a21e8195976ab21f73dcb92fd67,e647453700ff8a21e8195976ab21f73dcb92fd67,"bug #144 Fix NULL being added to ParserContext classes (Erik Wiffin)
+
+This PR was squashed before being merged into the 3.0-dev branch (closes #144).
+
+Discussion
+----------
+
+Fix NULL being added to ParserContext classes
+
+Fixes bug referenced by ezzatron in https://github.com/FriendsOfPHP/Sami/issues/99#issuecomment-57895131. NULL was being added to the ParserContext classes array because of a complicated chain of events in PHP-Parser that resulted in `leaveClass` getting called without a matching `enterClass`. This doesn't fix the root cause, but it does allow for filtering out classes (ie. if SymfonyFilter is used).
+
+Commits
+-------
+
+4d92830 Fix NULL being added to ParserContext classes"
+fabpot,2015-02-17 11:28:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/256df22ecc65b2ee8c33f39f69a77b2624f1c939,256df22ecc65b2ee8c33f39f69a77b2624f1c939,"bug #146 Fixes a bug with the height of the api-tree in the default theme (mzur)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Fixes a bug with the height of the api-tree in the default theme
+
+The api tree in the left column of the default theme has a CSS height of `100%`. Because of the search form and version switcher at the top of the left column, the api tree is too high and can't be scrolled completely down, leaving the items displayed at the bottom invisible. Take the [Laravel API](http://laravel.com/api/5.0/index.html) for example:
+
+![screen shot 2015-02-16 at 19 37 58-arrow](https://cloud.githubusercontent.com/assets/2457311/6217406/c7861768-b613-11e4-9593-1f4768e74e9e.png)
+
+I fixed the issue using a CSS flexbox while remaining fully compatible to browsers not supporting flexbox (those have to live with the invisible items).
+
+See the fix applied to the example from above:
+![screen shot 2015-02-16 at 19 38 31](https://cloud.githubusercontent.com/assets/2457311/6217416/e8d43ff8-b613-11e4-9a77-c55bf26b7f48.png)
+
+Commits
+-------
+
+95643c3 Fixes a bug with the height of the api-tree in the default theme. The api tree in the left column of the default theme has a CSS height of 100%. Because of the search form and version switcher at the top of the left column, the api tree is too high and can't be scrolled completely down, leaving the items displayed at the botom invisible. This fixes the issue using a CSS flexbox while remaining fully compatible to browsers not supporting flexbox (those have to live woth the invisible items)."
+mzur,2015-02-16 18:30:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/95643c3aac35d488b054946b87f856459872b47c,95643c3aac35d488b054946b87f856459872b47c,"Fixes a bug with the height of the api-tree in the default theme.
+The api tree in the left column of the default theme has a CSS height of 100%. Because of the search form and version switcher at the top of the left column, the api tree is too high and can't be scrolled completely down, leaving the items displayed at the botom invisible.
+This fixes the issue using a CSS flexbox while remaining fully compatible to browsers not supporting flexbox (those have to live woth the invisible items)."
+erikwiffin,2015-01-17 19:05:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c0d90a59d2b94feabd5601a113ae2033e93356bc,c0d90a59d2b94feabd5601a113ae2033e93356bc,Move docblock processing outside/before filtering
+GrahamCampbell,2014-12-12 15:52:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b04ca965f3b4349f06d0d78c1b3329c9b87d6f08,b04ca965f3b4349f06d0d78c1b3329c9b87d6f08,Simplified the parseTag function
+fabpot,2014-12-12 14:58:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0e70f3316920df58d903de0bf2222e49784c8317,0e70f3316920df58d903de0bf2222e49784c8317,"bug #140 manifest.yml fixes (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+manifest.yml fixes
+
+Commits
+-------
+
+5eb92cd manifest.yml fixes"
+GrahamCampbell,2014-12-12 14:39:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5eb92cdc904c7cad89a72ab62f2bb1ddc526c927,5eb92cdc904c7cad89a72ab62f2bb1ddc526c927,manifest.yml fixes
+fabpot,2014-12-12 13:36:42,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/60ad993eeb48a5573bf652fdf3cef495ea8b243f,60ad993eeb48a5573bf652fdf3cef495ea8b243f,"minor #132 .gitignore - add composer.lock file (keradus)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+.gitignore - add composer.lock file
+
+Commits
+-------
+
+7d85292 .gitignore - add composer.lock file"
+fabpot,2014-12-12 13:36:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/775c94ad5dc1dcf77e98a56208966f220f9deab0,775c94ad5dc1dcf77e98a56208966f220f9deab0,"bug #139 Fixed the TraitUseNode typehint (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Fixed the TraitUseNode typehint
+
+Commits
+-------
+
+276a5e7 Fixed the TraitUseNode typehint"
+fabpot,2014-12-12 13:35:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0ea29e50d9ba51c473acba56fa8f75db4f272fe2,0ea29e50d9ba51c473acba56fa8f75db4f272fe2,"bug #135 fixed various errors (fabpot)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+fixed various errors
+
+Commits
+-------
+
+69ae4ad fixed various errors"
+fabpot,2014-12-12 13:35:15,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e56a91e05c3cebb47fc8d049c30d97b9139528e5,e56a91e05c3cebb47fc8d049c30d97b9139528e5,"feature #136 Updated to bootstrap 3.3.1 (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Updated to bootstrap 3.3.1
+
+Commits
+-------
+
+7981119 Updated to bootstrap 3.3.1"
+fabpot,2014-12-12 13:32:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a2f34085cbbc6b3d46c698e1f44b4fe47a3e4aa8,a2f34085cbbc6b3d46c698e1f44b4fe47a3e4aa8,"bug #138 Fixed the namespaces links (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Fixed the namespaces links
+
+Commits
+-------
+
+0845cae Fixed the namespaces links"
+GrahamCampbell,2014-12-12 13:27:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/276a5e71421b21c01d9c05da65af665bfe8461f4,276a5e71421b21c01d9c05da65af665bfe8461f4,Fixed the TraitUseNode typehint
+GrahamCampbell,2014-12-12 13:21:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0845cae17899a4e7f6dfb563009c8aa9e0cb4b3b,0845cae17899a4e7f6dfb563009c8aa9e0cb4b3b,Fixed the namespaces links
+GrahamCampbell,2014-12-12 13:11:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/79811197df48ed88cc403f31a100c2d1f9679f85,79811197df48ed88cc403f31a100c2d1f9679f85,Updated to bootstrap 3.3.1
+fabpot,2014-12-01 18:51:33,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/69ae4ada6d830a47084f3474e54d879b793a26fa,69ae4ada6d830a47084f3474e54d879b793a26fa,fixed various errors
+fabpot,2014-11-17 07:42:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e1f752952773ec2aa54e114cf0832b53b7c94aa7,e1f752952773ec2aa54e114cf0832b53b7c94aa7,"minor #133 CS fixes (keradus)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+CS fixes
+
+Commits
+-------
+
+aa213ec add usage of PHP CS Fixer"
+keradus,2014-11-16 19:00:42,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/aa213eccf07360bf18c3e1adadddaf96b76a14d0,aa213eccf07360bf18c3e1adadddaf96b76a14d0,add usage of PHP CS Fixer
+keradus,2014-11-16 18:54:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7d8529231c6419da8818623580bbd481b2eb4152,7d8529231c6419da8818623580bbd481b2eb4152,.gitignore - add composer.lock file
+fabpot,2014-11-06 16:44:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/735b41605b6866e81bc2627a189def78cbb1c3c3,735b41605b6866e81bc2627a189def78cbb1c3c3,adjusted an example
+fabpot,2014-11-03 19:11:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/4700a5abc4377472c949ab7edbc81ac8153d09cd,4700a5abc4377472c949ab7edbc81ac8153d09cd,"minor #130 PSR-4 Autoloading (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+PSR-4 Autoloading
+
+This moves us to PSR-4 autoloading without changing the directory structure.
+
+Commits
+-------
+
+351f1dd PSR-4 autoloading"
+fabpot,2014-11-03 19:09:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/708edc589232ab353d5124447962bd8b1c5a526d,708edc589232ab353d5124447962bd8b1c5a526d,"minor #129 Updated The Travis Config (GrahamCampbell)
+
+This PR was merged into the 3.0-dev branch.
+
+Discussion
+----------
+
+Updated The Travis Config
+
+* Let's run the test on php 5.3.3 too since we are supposed to support it.
+* The composer install should take place under `install` rather than `before_script`.
+* I've wrapped the composer install in `travis_retry` so that if there is a networking issue causing a failed download, then travis will retry the command upto 3 times before giving up.
+* I've removed the `--dev` flag from the composer install since it's obsolte - composer will install dev-dependencies by default, and we don't even have any dev-dependencies anyway.
+* I've removed hhvm from `allow_failures` since the test suite has been passing on hhvm for a long time.
+
+Commits
+-------
+
+a5f2a37 Updated the travis config"
+GrahamCampbell,2014-10-31 18:54:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/351f1dd93fdeadfaef927dff9bc52917a5888c38,351f1dd93fdeadfaef927dff9bc52917a5888c38,PSR-4 autoloading
+GrahamCampbell,2014-10-31 18:48:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a5f2a3767b79c11de3abd86458531c06e2eb5d75,a5f2a3767b79c11de3abd86458531c06e2eb5d75,Updated the travis config
+fabpot,2014-10-31 18:40:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8b13ef74b8296b660cef1dbd757a9b47bb81314d,8b13ef74b8296b660cef1dbd757a9b47bb81314d,"feature #128 Upgraded php parser and pimple (GrahamCampbell)
+
+This PR was squashed before being merged into the 3.0-dev branch (closes #128).
+
+Discussion
+----------
+
+Upgraded php parser and pimple
+
+I've taken a real close look at the changes and the commit history of this repo to make sure this is done right. I've upgraded us to php parser 1.0 and pimple 3.0 (pimple required no changes). I've also cleaned up the imports.
+
+Commits
+-------
+
+1a57b9b Upgraded php parser and pimple"
+GrahamCampbell,2014-10-31 16:48:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1a57b9b3590587940c23e00e7ad6e351fcf44e94,1a57b9b3590587940c23e00e7ad6e351fcf44e94,Upgraded php parser and pimple
+fabpot,2014-10-23 20:44:38,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8f4a37291e38a8371815bc561da43319ed1d7ac4,8f4a37291e38a8371815bc561da43319ed1d7ac4,updated CHANGELOG
+fabpot,2014-10-23 20:43:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/05ae74c983217d0ab318b1cc71f025a6ada9a4c4,05ae74c983217d0ab318b1cc71f025a6ada9a4c4,"feature #124 Adding a theme based on twitter bootstrap not using frames (mtdowling)
+
+This PR was squashed before being merged into the 2.0-dev branch (closes #124).
+
+Discussion
+----------
+
+Adding a theme based on twitter bootstrap not using frames
+
+This commit adds a bootstrap 3 powered theme to Sami that does not use frames.
+
+Closes #119, #122, #47, #13, #123.
+
+This pull request adds a new theme that is completely rewritten to be simpler, not use frames, and is now responsive (i.e., looks good on a phone). I've re-implemented the left-navigation using a much simpler approach, created a new search implementation that allows users to hook in custom search result types by extending the theme, and added breadcrumbs. I tried to keep a relatively similar look and feel to the existing Sami theme, but with a bit of twitter bootstrap on top.
+
+Because this provides the same features of the default theme and includes additional features, I would recommend making this the default theme and removing the ""enhanced"" theme. If you'd like me to do this, then let me know and I'll rebase with those changes.
+
+Here are some screenshots and descriptions of what they do.
+
+Namespaces
+----
+
+This is the namespaces page. It just lists each namespace. This is also the homepage if a project has classes.
+
+![screen shot 2014-08-27 at 9 05 35 pm](https://cloud.githubusercontent.com/assets/190930/4071023/99ca9ca0-2e68-11e4-99f4-b3a4a23e3315.png)
+
+Here is is at a smaller width:
+
+![screen shot 2014-08-27 at 9 17 16 pm](https://cloud.githubusercontent.com/assets/190930/4071119/3bb59f82-2e6a-11e4-9943-c0319ebe1636.png)
+
+Note: the button at the top provides a drop down containing the menu.
+
+Classes
+-----
+
+Here is the ""classes"" page, full-screen.
+
+![screen shot 2014-08-27 at 9 08 02 pm](https://cloud.githubusercontent.com/assets/190930/4071038/eb77dfb8-2e68-11e4-8f40-14e46534d95b.png)
+
+And again, small screen:
+
+![screen shot 2014-08-27 at 9 08 19 pm](https://cloud.githubusercontent.com/assets/190930/4071041/fc6b8644-2e68-11e4-8ea0-7c640aacc014.png)
+
+Note: Traits, and interfaces look that same as this page.
+
+Index page (doc-index)
+----
+
+![screen shot 2014-08-27 at 9 09 12 pm](https://cloud.githubusercontent.com/assets/190930/4071049/1d782572-2e69-11e4-9a42-52043d7d450d.png)
+
+This looks good on a phone too:
+
+![screen shot 2014-08-27 at 9 09 53 pm](https://cloud.githubusercontent.com/assets/190930/4071055/3373766a-2e69-11e4-890f-d6f6c86ac3d0.png)
+
+Interface
+----
+
+Here's an interface page. Just like with class and namespace pages, the left-nav is scrolled down to show the currently selected node.
+
+![screen shot 2014-08-27 at 9 10 35 pm](https://cloud.githubusercontent.com/assets/190930/4071062/5fb33e54-2e69-11e4-8d04-22e37aae2a16.png)
+
+Here are the start of the methods:
+
+![screen shot 2014-08-27 at 9 11 36 pm](https://cloud.githubusercontent.com/assets/190930/4071065/6c724338-2e69-11e4-8f36-84a031e336c7.png)
+
+Namespace page
+----
+
+Here's a namespace page. It lists the sub-namespaces, the classes, traits, interfaces, etc.
+
+![screen shot 2014-08-27 at 9 12 02 pm](https://cloud.githubusercontent.com/assets/190930/4071068/8d4a8c46-2e69-11e4-953c-4df5fa23ba55.png)
+
+Search page
+-----
+
+When you submit a search query, it takes you to this page.
+
+![screen shot 2014-08-27 at 9 12 57 pm](https://cloud.githubusercontent.com/assets/190930/4071078/a481571e-2e69-11e4-80a6-b02d2d923474.png)
+
+The search looks through the names of each thing in the search index. The search index contains each namespace, class, interface, trait, and methods from each of these.
+
+Commits
+-------
+
+91a2bf8 Adding a theme based on twitter bootstrap not using frames"
+mtdowling,2014-08-28 05:14:33,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/91a2bf805feeb57bd83e407333fbbde03495f033,91a2bf805feeb57bd83e407333fbbde03495f033,Adding a theme based on twitter bootstrap not using frames
+fabpot,2014-07-28 13:26:11,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/faac3961cc46eb7534230635e37f5c340a9f719b,faac3961cc46eb7534230635e37f5c340a9f719b,"minor #111 Don't update Composer on each buld (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Don't update Composer on each buld
+
+Currently at least 1 of builds in build matrix fails because of `composer self-update` command in the `.travis.yml`. See https://travis-ci.org/fabpot/Sami/jobs/30440724
+
+I've removed it since I haven't witnessed a case, that even month old `composer.phar` has created problems during a build.
+
+Commits
+-------
+
+3aaf100 Don't update Composer on each buld"
+aik099,2014-07-21 10:09:20,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3aaf10041335e25f7baf78516b196b4fa287fd4f,3aaf10041335e25f7baf78516b196b4fa287fd4f,Don't update Composer on each buld
+fabpot,2014-07-20 16:52:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/98efb5aae7824351cbcd2fead2e8998b1c62837a,98efb5aae7824351cbcd2fead2e8998b1c62837a,"bug #109 Add tests to verify proper parsing of each supported DocBlock tag (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Add tests to verify proper parsing of each supported DocBlock tag
+
+Adding tests to verify, that each of 19 supports tags in DocBlocks are parsed as expected.
+
+Before tests were added the error during `@method` and `@property*` wasn't discovered in time, when #101 was implemented. Now all should work fine.
+
+Closes #108
+
+Commits
+-------
+
+c84546d Add tests to verify proper parsing of each supported DocBlock tag"
+aik099,2014-07-20 16:04:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c84546d2586bfe95f543b930a32316084cd4c05c,c84546d2586bfe95f543b930a32316084cd4c05c,Add tests to verify proper parsing of each supported DocBlock tag
+fabpot,2014-07-20 10:21:33,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6a25b1694909b54fa54578e7f98008b0e49284f5,6a25b1694909b54fa54578e7f98008b0e49284f5,"bug #106 Increasing Xdebug nesting level during parsing (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Increasing Xdebug nesting level during parsing
+
+Increasing xdebug nesting level during usage of PHP_Parser. Without this it's practically impossible (due multiple Fatal Errors) to generate Symfony documentation.
+
+Closes #21
+
+Commits
+-------
+
+446e782 Increasing Xdebug nesting level during parsing"
+fabpot,2014-07-20 10:19:30,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/35637a1fc0739d86f67406818060ace1305752d9,35637a1fc0739d86f67406818060ace1305752d9,"feature #107 Make DocBlock parser use PhpDocumentor's DocBlock component (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Make DocBlock parser use PhpDocumentor's DocBlock component
+
+Use DocBlock parser from phpDocumentor to ensure we always parse according to latest PhpDoc standards. All previous DocBlock parser tests are passing on phpDocumentor DocBlock parser as well.
+
+Side benefit:
+New DocBlock parser is converting class/interface/trait names to FQCN format and that allows to detect exception classes in `@throw` and `@throws` tags and make them clickable in generated documentation.
+
+Parsing performance change: does it 1 second faster (was 34 seconds for me) on Symfony codebase.
+
+Closes #101
+
+Commits
+-------
+
+10f92d1 Make DocBlock parser use PhpDocumentor's DocBlock component"
+aik099,2014-07-19 19:00:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/10f92d1efe6f90ab6274fb1061f8822e67eb10f5,10f92d1efe6f90ab6274fb1061f8822e67eb10f5,Make DocBlock parser use PhpDocumentor's DocBlock component
+aik099,2014-07-19 20:00:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/446e7827906a54199c0c5e3be8137ca031640fc3,446e7827906a54199c0c5e3be8137ca031640fc3,Increasing Xdebug nesting level during parsing
+fabpot,2014-07-19 19:34:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/edf895bc6220e80a1a1ab57ee53055ae1252cbe3,edf895bc6220e80a1a1ab57ee53055ae1252cbe3,"feature #105 New line symbol after dot is required to separate short and long description (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+New line symbol after dot is required to separate short and long description
+
+Change short description detection logic to match one used in current PhpDocumentor version (v2). Now short description can be separated from long description by these means:
+
+* dot and \n
+* \n\n
+
+before it was
+
+* dot
+* \n\n
+
+Closes #104
+
+Commits
+-------
+
+a0c69c9 New line symbol after dot is required to separate short and long description"
+fabpot,2014-07-19 19:33:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/faa3dffeaab028cc44182049462a3aa56c937f48,faa3dffeaab028cc44182049462a3aa56c937f48,"minor #103 Preserve new line symbols in short description (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Preserve new line symbols in short description
+
+Preserve new line symbols in short description, but remove any leading whitespaces from each line.
+
+This change one of the change set to bring used DocBlock parser in sync with https://github.com/phpDocumentor/ReflectionDocBlock .
+
+Closes to #102
+
+Commits
+-------
+
+1701d5d Preserve new line symbols in short description"
+aik099,2014-07-19 19:28:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a0c69c9b7dfcc909f47b8a6ba063a1dfc0800ee3,a0c69c9b7dfcc909f47b8a6ba063a1dfc0800ee3,New line symbol after dot is required to separate short and long description
+aik099,2014-07-19 19:15:18,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1701d5dce4c9029b8cdce38ac6884ab84efc78ce,1701d5dce4c9029b8cdce38ac6884ab84efc78ce,"Preserve new line symbols in short description
+
+Preserve new line symbols in short description, but remove any leading whitespaces from each line."
+fabpot,2014-07-18 10:40:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/249de56d8efec93c53dc4675047d733ef92d1d9a,249de56d8efec93c53dc4675047d733ef92d1d9a,"minor #100 Fixing TrueFilter example (aik099)
+
+This PR was squashed before being merged into the 2.0-dev branch (closes #100).
+
+Discussion
+----------
+
+Fixing TrueFilter example
+
+In the config file $this doesn't represent Sami instance and will lead to Fatal Error.
+
+The syntax highlighting was also fixed in the example code.
+
+Commits
+-------
+
+042226b Fixing TrueFilter example"
+aik099,2014-07-18 10:28:40,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/042226b1c458a9910d13af3822b429e51547b41a,042226b1c458a9910d13af3822b429e51547b41a,Fixing TrueFilter example
+fabpot,2014-07-12 12:53:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8749e04f7509f35bd891f3a27fa26a471813a858,8749e04f7509f35bd891f3a27fa26a471813a858,"minor #97 Fixed indentation (GrahamCampbell)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Fixed indentation
+
+Commits
+-------
+
+62a3b7d Fixed indentation"
+GrahamCampbell,2014-07-12 12:46:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/62a3b7db5e5e519f9ca30a741029dc8afaedb4dc,62a3b7db5e5e519f9ca30a741029dc8afaedb4dc,Fixed indentation
+fabpot,2014-07-10 15:46:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/90d6be5ba8ceef195dad2ce7fee916398f9cf337,90d6be5ba8ceef195dad2ce7fee916398f9cf337,"minor #95 Fixed A Typo In The Change Log (GrahamCampbell)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Fixed A Typo In The Change Log
+
+""losing"" not ""loosing"".
+
+Commits
+-------
+
+65aa4a5 Fixed a typo"
+fabpot,2014-07-10 15:46:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6f1bb1c86d2a80bb717c9750dfb0018cd7f2e2d7,6f1bb1c86d2a80bb717c9750dfb0018cd7f2e2d7,"minor #94 Update CHANGELOG (GrahamCampbell)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Update CHANGELOG
+
+Let's update the change log for the most recent feature addition.
+
+Commits
+-------
+
+f144a71 Update CHANGELOG"
+GrahamCampbell,2014-07-10 14:19:09,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/65aa4a5ca594f9b9f0710bc61b86a4900d2db0d4,65aa4a5ca594f9b9f0710bc61b86a4900d2db0d4,Fixed a typo
+GrahamCampbell,2014-07-10 13:46:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f144a713e443d2acb22e1ccf76656644b1ab21c7,f144a713e443d2acb22e1ccf76656644b1ab21c7,Update CHANGELOG
+fabpot,2014-07-10 12:46:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c749901f7835e037153799ddb9ee083b72ca5203,c749901f7835e037153799ddb9ee083b72ca5203,"feature #93 Shows trait properties/methods on class detail page (aik099)
+
+This PR was squashed before being merged into the 2.0-dev branch (closes #93).
+
+Discussion
+----------
+
+Shows trait properties/methods on class detail page
+
+What's added to class details page:
+
+1. show all traits that are used within a class in special ""Traits"" sub-section above ""Properties"" sub-section
+2. show properties/methods that come from trait only if same property/methods doesn't exist in the class, which uses that trait (according to http://www.php.net/manual/en/language.oop5.traits.php#language.oop5.traits.precedence)
+
+![sami_showtraitsinclass](https://cloud.githubusercontent.com/assets/1277526/3417378/292f6cd8-fe38-11e3-955e-03e23d63a8b2.png)
+
+I'm a bit unsure about the trait list design, because right now it's plain UL. Maybe it should be a table (like with properties) and in 1st column will be trait name and in 2nd column would be trait description (if any).
+
+This PR implements item 1 from #78
+
+Commits
+-------
+
+a4af84e Shows trait properties/methods on class detail page"
+aik099,2014-06-27 18:58:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a4af84e320f6836276e7f8da3ca5071c3fbf13c2,a4af84e320f6836276e7f8da3ca5071c3fbf13c2,Shows trait properties/methods on class detail page
+fabpot,2014-07-03 06:39:04,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/56cb938fccfe461307b6a1d199d73d93d53bc3ec,56cb938fccfe461307b6a1d199d73d93d53bc3ec,added missing Container init
+fabpot,2014-06-27 16:12:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b17349a37442fcb6cac0a46e673bbb72aab9ac17,b17349a37442fcb6cac0a46e673bbb72aab9ac17,"minor #92 Simplify DIC access code in service closures (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Simplify DIC access code in service closures
+
+Closes #89
+
+Commits
+-------
+
+cef1780 Simplify DIC access code in service closures"
+aik099,2014-06-27 16:05:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cef17803c118bd8fa073faa7f57ccc87007a68a7,cef17803c118bd8fa073faa7f57ccc87007a68a7,Simplify DIC access code in service closures
+fabpot,2014-06-26 07:19:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0697500a98c1912a0f18dff35abdfe0929b1d045,0697500a98c1912a0f18dff35abdfe0929b1d045,fixed default value for default_opened_level
+fabpot,2014-06-26 07:19:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5e31696453125c71e86718c35950450988e87e3a,5e31696453125c71e86718c35950450988e87e3a,fixed CS
+fabpot,2014-06-26 07:18:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3d9a256705f87fc5867fedd59b9d76be43fc697c,3d9a256705f87fc5867fedd59b9d76be43fc697c,bumped version to 2.0.1-DEV
+fabpot,2014-06-26 05:58:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/935e71b9310e74bc63b396c7353eed9340f660ab,935e71b9310e74bc63b396c7353eed9340f660ab,"feature #87 Show scope for public and private class properties (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Show scope for public and private class properties
+
+Show scope next to public and private class/trait properties.
+
+Closes #86
+
+Commits
+-------
+
+da9d948 Don't show ""public"" scope for class properties/methods
+372e3aa Show scope for public and private class properties"
+aik099,2014-06-25 21:03:14,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/da9d9484d131e80c3c7fd79972adeb023d9a573c,da9d9484d131e80c3c7fd79972adeb023d9a573c,"Don't show ""public"" scope for class properties/methods"
+fabpot,2014-06-25 19:26:51,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5c4c87fd766271000ca3d155074e4e270f54272f,5c4c87fd766271000ca3d155074e4e270f54272f,"feature #88 Show ""From ..."" class for properties (when defined in super class) (aik099)
+
+This PR was merged into the 2.0-dev branch.
+
+Discussion
+----------
+
+Show ""From ..."" class for properties (when defined in super class)
+
+I like how class, where method is originally defined is listed on the right of method name. Here I'm just replicating this for class properties:
+![sami_fromforproperties](https://cloud.githubusercontent.com/assets/1277526/3388728/d6b6e4ac-fc8b-11e3-8692-2d8cfe658566.png)
+
+Commits
+-------
+
+64329d6 Show ""From ..."" class for properties (when defined in super class)"
+aik099,2014-06-25 17:10:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/64329d62fb550ab2513e7af46c7dcc37a5057a6c,64329d62fb550ab2513e7af46c7dcc37a5057a6c,"Show ""From ..."" class for properties (when defined in super class)"
+aik099,2014-06-25 16:49:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/372e3aa32afa04514e1405b268c39bf837990d39,372e3aa32afa04514e1405b268c39bf837990d39,Show scope for public and private class properties
+fabpot,2014-06-25 12:05:18,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fa58b324f41aa2aefe21dac4f22d8c98965fc012,fa58b324f41aa2aefe21dac4f22d8c98965fc012,prepared 2.0.0
+fabpot,2014-06-25 12:00:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0d3e4402d212c49e323257687797bb7b41648a2d,0d3e4402d212c49e323257687797bb7b41648a2d,added phar configuration
+fabpot,2014-06-25 11:58:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/84d7dad2ee86e748736eba357b68371a27064dd8,84d7dad2ee86e748736eba357b68371a27064dd8,udpated the CHANGELOG
+fabpot,2014-06-25 11:47:55,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7317ed365e0634a0b5c080d8a39bc524dc446f65,7317ed365e0634a0b5c080d8a39bc524dc446f65,bumped deps (including Pimple 2.x)
+fabpot,2014-06-25 11:24:03,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/70f29c781f7bef30181c814b9471b2ceac694454,70f29c781f7bef30181c814b9471b2ceac694454,documented how to include all methods/properties in the API docs
+fabpot,2014-06-25 11:14:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bfddda89c75f8dec56d9a9b322778cbe9f8aebb0,bfddda89c75f8dec56d9a9b322778cbe9f8aebb0,"bug #85 Project title is missing in generated documentation (aik099)
+
+This PR was merged into the 1.4-dev branch.
+
+Discussion
+----------
+
+Project title is missing in generated documentation
+
+Specified project title isn't included in generated documentation.
+
+Before:
+![sami_withoutshowntitle](https://cloud.githubusercontent.com/assets/1277526/3382292/b6c20cbc-fc36-11e3-8060-6fdb8d4b875c.png)
+
+After:
+![sami_withshowntitle](https://cloud.githubusercontent.com/assets/1277526/3382293/bb31ef9c-fc36-11e3-9188-ceece5b90dab.png)
+
+Commits
+-------
+
+762190c Project title is missing in generated documentation"
+aik099,2014-06-25 06:59:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/762190cd7f18bce0e0a8518a0c430b8a39c22ac7,762190cd7f18bce0e0a8518a0c430b8a39c22ac7,Project title is missing in generated documentation
+fabpot,2014-05-02 13:21:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/23272c77da0978ec0811b963ab3efd9712bbbdc9,23272c77da0978ec0811b963ab3efd9712bbbdc9,"bug #76 Clarified error message when count of @param tags != count method params (petert82)
+
+This PR was squashed before being merged into the 1.4-dev branch (closes #76).
+
+Discussion
+----------
+
+Clarified error message when count of @param tags != count method params
+
+Hi, the old message for the case where the number of @param tags was not equal to the number of parameters that a method actually has was not especially clear. Hopefully this version is slightly easier to understand!
+
+Commits
+-------
+
+f86396e Clarified error message when count of @param tags != count method params"
+fabpot,2014-03-02 09:04:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a9578e8b51c70929b3687f57028699d403aafa84,a9578e8b51c70929b3687f57028699d403aafa84,fixed CLI when passing a directory as a config file
+fabpot,2014-02-20 19:47:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/157335a995165e74445f1995540923cf82c2997b,157335a995165e74445f1995540923cf82c2997b,"feature #67 Allow permalinks in the frame-based interface via the URI fragment (ezzatron)
+
+This PR was merged into the 1.4-dev branch.
+
+Discussion
+----------
+
+Allow permalinks in the frame-based interface via the URI fragment
+
+This PR allows for permalinks to specific content in rendered APIs whilst retaining the search pane of the frame-based interface. For example, previously the only way to link directly to a class would be something like:
+
+http://api.symfony.com/2.4/Symfony/Component/Yaml/Yaml.html
+
+...but this excludes the search bar. With this change, the following would become possible:
+
+http://api.symfony.com/2.4/#Symfony/Component/Yaml/Yaml.html
+
+This would link the user to the API docs for the `Yaml` class, and the search pane would still be visible, and functional.
+
+Commits
+-------
+
+8b492e0 Allow permalinks in the frames interface via the URI fragment."
+fabpot,2014-02-20 19:45:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5ea4a04075ee0ceb04932d1365c1bb916d2f068e,5ea4a04075ee0ceb04932d1365c1bb916d2f068e,"minor #71 Travis Updates (GrahamCampbell)
+
+This PR was merged into the 1.4-dev branch.
+
+Discussion
+----------
+
+Travis Updates
+
+Added php 5.6 and hhvm on allow failures and tweaked the before commands.
+
+Commits
+-------
+
+fbf6007 Travis updates"
+fabpot,2014-02-20 19:44:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/70ef2b0e101e956c6817586d55b083250e747065,70ef2b0e101e956c6817586d55b083250e747065,"minor #72 Removed Trailing Whitespace (GrahamCampbell)
+
+This PR was merged into the 1.4-dev branch.
+
+Discussion
+----------
+
+Removed Trailing Whitespace
+
+I've removed a bit of trailing whitespace.
+
+Commits
+-------
+
+e3be874 Removed trailing whitespace"
+GrahamCampbell,2014-02-20 14:30:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e3be8741ffbbdac0f4efa686ee4bcc0ed8d4eeb7,e3be8741ffbbdac0f4efa686ee4bcc0ed8d4eeb7,Removed trailing whitespace
+GrahamCampbell,2014-02-20 14:29:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/fbf600780b5a9eacc961497951ca2cca4da22544,fbf600780b5a9eacc961497951ca2cca4da22544,Travis updates
+fabpot,2014-02-11 09:06:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9a64cb07d4bc9965d640add82bb798bcf53744ed,9a64cb07d4bc9965d640add82bb798bcf53744ed,fixed API change
+fabpot,2014-02-11 09:05:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d8acbfa35dae42a4a45e7f5c0eafc68fd1afa445,d8acbfa35dae42a4a45e7f5c0eafc68fd1afa445,fixed various typos
+fabpot,2014-01-25 08:17:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/81574456d90f4f6034cc39ca00546106657728ce,81574456d90f4f6034cc39ca00546106657728ce,added Travis configuration
+fabpot,2014-01-25 08:12:13,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/01fb01f1cfcd65b81922b5a00be699b3d19805f6,01fb01f1cfcd65b81922b5a00be699b3d19805f6,fixed --version option of console commands (renamed to --only-version)
+fabpot,2014-01-25 07:51:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/39df5c406fd3f7a6b133da3d3557be15be56f59d,39df5c406fd3f7a6b133da3d3557be15be56f59d,fixed typos in command descriptions
+ezzatron,2014-01-21 08:39:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8b492e016c7acc6a34323a7be645d21f307cf020,8b492e016c7acc6a34323a7be645d21f307cf020,Allow permalinks in the frames interface via the URI fragment.
+fabpot,2013-12-23 07:15:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8f9bc5e184fc7deb3c0c505b480c5e1476c92d97,8f9bc5e184fc7deb3c0c505b480c5e1476c92d97,removed dead code
+fabpot,2013-11-30 17:17:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/87baace23e5bb2022a4264d96d56fd6006e6a93b,87baace23e5bb2022a4264d96d56fd6006e6a93b,bumped version to 1.4
+fabpot,2013-11-30 17:16:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/76f2ed80b3420f7e2f6dcd5b7218b5a5781f4110,76f2ed80b3420f7e2f6dcd5b7218b5a5781f4110,prepared the 1.3 release
+fabpot,2013-11-30 17:12:15,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f16ef450b17514354937afbc1627154f430588da,f16ef450b17514354937afbc1627154f430588da,updated CHANGELOG
+fabpot,2013-11-30 16:59:52,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cda36adad72f4b4ce531a0503af19bcc08f5ded9,cda36adad72f4b4ce531a0503af19bcc08f5ded9,fixed missing deep argument in ClassReflection
+fabpot,2013-11-30 16:43:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/51040678b0e66a55637b3c25f5e9d3bb29361d33,51040678b0e66a55637b3c25f5e9d3bb29361d33,added some unit tests
+fabpot,2013-11-30 12:59:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f4bec394e6f84321d8a228b6cccf52c599a52183,f4bec394e6f84321d8a228b6cccf52c599a52183,udpated CHANGELOG
+fabpot,2013-11-11 19:15:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/143063296fe214a6091689fb1a2076675dfe9ab3,143063296fe214a6091689fb1a2076675dfe9ab3,moved README to rst
+fabpot,2013-10-18 19:34:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c0bc11b187a2f57414e2bf8dd7b40455e9b21ffe,c0bc11b187a2f57414e2bf8dd7b40455e9b21ffe,"bug #61 [FIX] Added forwarding of default_opened_level configuration parameter from pimple container to Project object. (jmalloc)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+[FIX] Added forwarding of default_opened_level configuration parameter from pimple container to Project object.
+
+Commits
+-------
+
+90365ed Added forwarding of default_opened_level configuration parameter."
+fabpot,2013-10-12 16:14:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/72e064cc37c3062afd5716386d691db669c2da5d,72e064cc37c3062afd5716386d691db669c2da5d,changed Markdown lib (closes #60)
+jmalloc,2013-10-12 06:02:38,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/90365ed8b4d5f35bbad674d3db74d84028e00ab4,90365ed8b4d5f35bbad674d3db74d84028e00ab4,Added forwarding of default_opened_level configuration parameter.
+fabpot,2013-10-03 20:41:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b6f7305608b1c70fb2fe4c2153c952d13f6cd3af,b6f7305608b1c70fb2fe4c2153c952d13f6cd3af,fixed reflection class
+fabpot,2013-09-27 17:44:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5c7a289b01ccc677a01206d186b6a1400d666095,5c7a289b01ccc677a01206d186b6a1400d666095,added a check for non-clean repository to avoid loosing changes (closes #58)
+fabpot,2013-09-27 17:34:24,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8c3cf2c18cc6f015920976f8959cb75c40ad33e1,8c3cf2c18cc6f015920976f8959cb75c40ad33e1,fixed CS
+fabpot,2013-09-27 17:31:35,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7cf954eda3408a2552a38e04b7fc8450ce9452ad,7cf954eda3408a2552a38e04b7fc8450ce9452ad,"feature#53 Adding trait support (Trismegiste)
+
+This PR was squashed before being merged into the master branch (closes #53).
+
+Discussion
+----------
+
+Adding trait support
+
+Hello,
+
+I've added some flag in ClassReflection to enhance its behavior with Trait.
+
+This class should be refactored in 3 (class, interface and trait) but it is too complicated due to static factory ""fromArray()"".
+
+Hope this helps
+
+:sunny:
+
+Commits
+-------
+
+c3f8431 Adding trait support"
+Trismegiste,2013-08-10 21:55:57,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/c3f843142fef3f2c55d7d3689bafda0d8a44d557,c3f843142fef3f2c55d7d3689bafda0d8a44d557,Adding trait support
+fabpot,2013-09-27 17:24:41,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7dca09e752c23e41df03b66d7a4f65ad89560999,7dca09e752c23e41df03b66d7a4f65ad89560999,bumped version to 1.3-DEV
+fabpot,2013-09-27 17:24:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8d6d896c48766e0cb08b651fb5aca77a1dd788e0,8d6d896c48766e0cb08b651fb5aca77a1dd788e0,prepared the 1.2 release
+fabpot,2013-09-27 17:22:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/58ea1114dd737cecc2a3f4e357206a062ebdaf18,58ea1114dd737cecc2a3f4e357206a062ebdaf18,fixed support for PHPParser 0.9.1 (closes #59)
+fabpot,2013-09-19 04:52:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a0c61407331850fa3999127496d7e7e4a1919829,a0c61407331850fa3999127496d7e7e4a1919829,"merged branch kherge/master (PR #57)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Fixes #56 - recoginizing more valid PHP types.
+
+Commits
+-------
+
+40b2662 Fixes #56 - recoginizing more valid PHP types."
+kherge,2013-09-18 21:49:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/40b26626fa6d841a6b5a6b1a2ba4cffe7a92d780,40b26626fa6d841a6b5a6b1a2ba4cffe7a92d780,Fixes #56 - recoginizing more valid PHP types.
+fabpot,2013-08-04 15:16:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cc3bcaf63a87378957921f10d3ef16c493f2c5c7,cc3bcaf63a87378957921f10d3ef16c493f2c5c7,removed some more required deps from Project
+fabpot,2013-08-04 15:10:56,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cd0f05022f78f1ccca544ef8f89c978f397956cf,cd0f05022f78f1ccca544ef8f89c978f397956cf,changed the parser to be optional on Project
+fabpot,2013-08-04 14:34:31,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/1bb1e77f13d8cbe8adb86a935a88accac3d47223,1bb1e77f13d8cbe8adb86a935a88accac3d47223,fixed VERSION
+fabpot,2013-08-04 14:31:45,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ff4f1d943842593b77b2a4b3d4e8410db1bb239a,ff4f1d943842593b77b2a4b3d4e8410db1bb239a,removed the injection of the service container into the project
+fabpot,2013-08-04 14:26:36,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/73a286e000234728f11d3393cb403aabe1d88dac,73a286e000234728f11d3393cb403aabe1d88dac,changed the renderer to be optional on Project
+fabpot,2013-08-04 14:24:39,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/774da2d3a3e56a25ec95d8b6dc6f8698cf5e4a29,774da2d3a3e56a25ec95d8b6dc6f8698cf5e4a29,moved the tree and indexer deps from Project to Renderer
+fabpot,2013-08-04 13:56:41,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/46c58957ce4823c613e8535626b81e2fd80a9865,46c58957ce4823c613e8535626b81e2fd80a9865,persisted errors in the store for later retrieval
+fabpot,2013-08-04 13:25:14,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9714a36b0a83c3ac7a7f5d847ce875476e667190,9714a36b0a83c3ac7a7f5d847ce875476e667190,fixed property algorithm to avoid PHP notices
+fabpot,2013-08-04 13:17:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5312219edcf5e477f099fcef5d13df5e605ed1a2,5312219edcf5e477f099fcef5d13df5e605ed1a2,tweaked json_encode call to ease debugging
+fabpot,2013-08-04 13:15:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/eb4f7a514153f393b0e9da5304af36c4eb7730b3,eb4f7a514153f393b0e9da5304af36c4eb7730b3,fixed typo
+fabpot,2013-08-02 15:11:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/dec16723f3a3d8f9590d8dfa53c860630b71cac1,dec16723f3a3d8f9590d8dfa53c860630b71cac1,fxied CS
+fabpot,2013-08-02 15:08:16,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b0c23329add98ca0d67c563a667d4242f887c5f9,b0c23329add98ca0d67c563a667d4242f887c5f9,"merged branch patmcnally/property-tag-support (PR #46)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Property tag support
+
+Address issue #45. Provides support for @property tag in a docBlock associated with a class.
+
+Commits
+-------
+
+87ffd4f Support @property tag for 'magic' properties"
+fabpot,2013-06-02 12:00:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9503a81e0b505be1cd9f7eec93e0da8b2615c211,9503a81e0b505be1cd9f7eec93e0da8b2615c211,fixed error handler signature
+fabpot,2013-05-29 10:01:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/3bb2fded8e5ddfa884e550a95c31ea9c0ff24c6a,3bb2fded8e5ddfa884e550a95c31ea9c0ff24c6a,removed unneeded use statements
+fabpot,2013-05-24 13:19:43,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/53d4da30072da752d2214a6686c1d65762751ac8,53d4da30072da752d2214a6686c1d65762751ac8,"merged branch patmcnally/multiple-class-visitors (PR #44)
+
+This PR was merged into the master branch.
+
+Discussion
+----------
+
+Support multiple visitors that modify a class
+
+Fixes issue #43
+
+Commits
+-------
+
+9733c2d Support multiple visitors that modify a class"
+patmcnally,2013-05-24 01:58:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/87ffd4f50a5b037d834ec0c5e18666a6fe6d5264,87ffd4f50a5b037d834ec0c5e18666a6fe6d5264,Support @property tag for 'magic' properties
+patmcnally,2013-05-23 18:18:19,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9733c2da74767f8cc9267e3b2b2ba9660ad69106,9733c2da74767f8cc9267e3b2b2ba9660ad69106,Support multiple visitors that modify a class
+fabpot,2013-05-04 14:14:44,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e2a24dfb102d9d3deac6ef0a276351245f8517ee,e2a24dfb102d9d3deac6ef0a276351245f8517ee,added some comment to clarify the intent of the example (closes #30)
+digitalnature,2012-12-29 12:51:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f433c288f0eca5d97af85411a26e7188fbe4f461,f433c288f0eca5d97af85411a26e7188fbe4f461,"Param matching regex to include references
+
+Like `@param &$var Bla blah...`"
+fabpot,2013-05-04 12:49:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/ccd9c96cda9377cb40e555d9f712ebd452de373b,ccd9c96cda9377cb40e555d9f712ebd452de373b,"removed support for HTML in descriptions, fixed autoescaping"
+fabpot,2013-05-04 12:47:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/5d66687655b19b7c2a91a44e459b1e67e40dd8d9,5d66687655b19b7c2a91a44e459b1e67e40dd8d9,"merged branch kherge/master (PR #40)
+
+This PR was squashed before being merged into the master branch (closes #40).
+
+Discussion
+----------
+
+Supporting Markdown and HTML docblocks
+
+Made changes to support Markdown and HTML docblocks, closing tickets #11 and #31.
+
+Commits
+-------
+
+3725598 Supporting Markdown and HTML docblocks"
+kherrera-ebsco,2013-05-01 23:04:08,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/37255989116ae589816567fc3787eafd979e9b03,37255989116ae589816567fc3787eafd979e9b03,Supporting Markdown and HTML docblocks
+fabpot,2013-04-24 20:02:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d40930dfa56dfa38f65f89972ca70b5fd5a0508e,d40930dfa56dfa38f65f89972ca70b5fd5a0508e,"Merge pull request #39 from egrajeda/master
+
+Clicking an item in the panel frame wasn't working when inside an <iframe>"
+egrajeda,2013-04-24 19:18:21,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/435429a79b4fb96e3888584dba81eca6b0583419,435429a79b4fb96e3888584dba81eca6b0583419,fixed js bug when inside an iframe
+fabpot,2013-04-11 20:25:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e7b9a442dea0abd7230ce0cba22074e32a99b698,e7b9a442dea0abd7230ce0cba22074e32a99b698,simplified code
+fabpot,2013-04-11 20:24:25,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/973cfcc411575e7ee6c13603062bd0271b173309,973cfcc411575e7ee6c13603062bd0271b173309,simplified code
+fabpot,2013-04-05 13:01:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a3ceda872e37d001650ad0fe67c93ac669a48d52,a3ceda872e37d001650ad0fe67c93ac669a48d52,fixed composer.json
+fabpot,2013-04-05 12:59:59,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f32aaff85a54b222831bdf630a2668c8db1ff9d3,f32aaff85a54b222831bdf630a2668c8db1ff9d3,updated deps
+fabpot,2013-03-20 19:08:32,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7c0ddabd7f7530225608982bae83e31106597ec3,7c0ddabd7f7530225608982bae83e31106597ec3,fixed how we checkout a project (closes #34)
+fabpot,2013-01-08 14:05:13,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8ba8d81abcc555c6defbda7d2fb721a8fd8b2af2,8ba8d81abcc555c6defbda7d2fb721a8fd8b2af2,changed the way we switch from one version to another
+fabpot,2013-01-04 16:54:17,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/142fe5e3fa1f7a517019ebb7ff976f26adfe578a,142fe5e3fa1f7a517019ebb7ff976f26adfe578a,updated license year
+fabpot,2012-12-15 16:58:45,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/66cfc786def6cb9ecf0ec7e573e38798bb4b046d,66cfc786def6cb9ecf0ec7e573e38798bb4b046d,"merged branch mtdowling/method_tag (PR #5)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+a4fadba Adding @method support to dynamically insert new methods into a class
+
+Discussion
+----------
+
+Adding @method support to dynamically insert new methods into a class
+
+This PR adds support for the @method tag so that methods are dynamically added to classes when parsing.
+
+    /**
+     * @method foo()
+     * @method foo() This is the description
+     * @method int foo($arg1, $arg2)
+     * @method Guzzle\Common\Collection foo(int $arg1, string $arg2, $arg3 = 'default')
+     * @method array foo(array $config = array(), $bar = ""default value"") Description!
+     */
+
+---------------------------------------------------------------------------
+
+by sli-systems at 2012-12-13T22:53:49Z
+
+:+1:
+
+---------------------------------------------------------------------------
+
+by bdunogier at 2012-12-15T13:24:08Z
+
+Very useful ! Anything preventing this PR from being merged in ?"
+fabpot,2012-12-04 08:21:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0fc2df326cddeb6bcb6583581792113dca49c87b,0fc2df326cddeb6bcb6583581792113dca49c87b,fixed depth management for the latest versions of Twig (closes #29)
+fabpot,2012-11-09 13:19:22,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/04158483967c30695d9531bd39d8c224150e2083,04158483967c30695d9531bd39d8c224150e2083,"merged branch havvg/master (PR #26)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+9b8dafa fix GitVersionCollection::setGitPath
+
+Discussion
+----------
+
+fix GitVersionCollection::setGitPath"
+fabpot,2012-11-09 13:19:00,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/0432a378ba381f122084ee007718a58d09a5a13c,0432a378ba381f122084ee007718a58d09a5a13c,"merged branch ltouroumov/master (PR #27)
+
+This PR was squashed before being merged into the master branch (closes #27).
+
+Commits
+-------
+
+63bc416 Added default for arrays to prevent errors in php 5.4+
+
+Discussion
+----------
+
+Added default for arrays to prevent errors in php 5.4+
+
+Initialized array properties with empty arrays in `Sami/Console/Command` so it doesn't break on php 5.4+.
+
+Also added sanity checks in `displayParseSummary` and `displayRenderSummary` to prevent iterating over empty arrays (also causes an error).
+
+---------------------------------------------------------------------------
+
+by ltouroumov at 2012-11-09T13:15:08Z
+
+Return statements have been wrapped with `{}`."
+ltouroumov,2012-09-21 13:22:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/63bc4165a2a10fb92c222f8ac92162588908b0f6,63bc4165a2a10fb92c222f8ac92162588908b0f6,Added default for arrays to prevent errors in php 5.4+
+havvg,2012-11-02 09:52:38,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9b8dafaeeada763aaefea454a847fa23aa7af29b,9b8dafaeeada763aaefea454a847fa23aa7af29b,fix GitVersionCollection::setGitPath
+fabpot,2012-10-04 13:34:34,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/35e7ae109e17277baa0ef066f9448078b5aca5e0,35e7ae109e17277baa0ef066f9448078b5aca5e0,"merged branch romainneutron/master (PR #17)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+8dff761 Look into interface parents when requesting parent method
+
+Discussion
+----------
+
+Look into interfaces parents when requesting parent method
+
+When looking for parent method, search is limited to immediate interfaces.
+
+This PR fix the behavior and extend search to interfaces parents"
+fabpot,2012-10-04 13:33:27,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/82d1fc3fc0f814589fed887727330ecf52e457f0,82d1fc3fc0f814589fed887727330ecf52e457f0,"merged branch hason/nesting_level (PR #23)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+b22d813 Fixed ""Fatal error: Nesting level too deep - recursive dependency?"" during rendering pages for classes
+
+Discussion
+----------
+
+Fixed ""Fatal error: Nesting level too deep - recursive dependency?"" duri...
+
+...ng rendering pages for classes
+
+Solves problem described int http://www.richardlord.net/blog/php-nesting-level-too-deep-recursive-dependency"
+fabpot,2012-10-02 07:35:12,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d83d1ddae80bea2042deb853ce34fbd4017966d4,d83d1ddae80bea2042deb853ce34fbd4017966d4,removed composer lock
+fabpot,2012-10-02 07:34:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/7cde191aa84ec202f47cd21c80fc7b6816045f3a,7cde191aa84ec202f47cd21c80fc7b6816045f3a,"merged branch Seldaek/patch-1 (PR #24)
+
+This PR was merged into the master branch.
+
+Commits
+-------
+
+2c94f82 Fix requirements
+
+Discussion
+----------
+
+Fix requirements"
+Seldaek,2012-10-01 12:20:50,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/2c94f8295deaf4442ebd6c576b7b5f1db2791d4e,2c94f8295deaf4442ebd6c576b7b5f1db2791d4e,Fix requirements
+hason,2012-09-13 16:18:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/b22d813623e5b729f847f1bcfe2dc4a91bce86ec,b22d813623e5b729f847f1bcfe2dc4a91bce86ec,"Fixed ""Fatal error: Nesting level too deep - recursive dependency?"" during rendering pages for classes"
+fabpot,2012-09-11 13:01:58,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d3e3067796a5180ddd18f5a67c154bc2154f1f1d,d3e3067796a5180ddd18f5a67c154bc2154f1f1d,updated composer
+fabpot,2012-08-07 06:18:46,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cef4abb9344cb0e6de77de5e01da7359001726f9,cef4abb9344cb0e6de77de5e01da7359001726f9,fixed Sami when used with --no-ansi or when not run from the CLI (closes #20)
+fabpot,2012-07-19 13:27:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/80efb05509e7d217465036e40089ccff75f56551,80efb05509e7d217465036e40089ccff75f56551,"merged branch aderuwe/readme-update (PR #19)
+
+Commits
+-------
+
+cc13723 Add note about Chrome's ""--allow-file-access-from-files"" option
+
+Discussion
+----------
+
+Add note about Chrome's ""--allow-file-access-from-files"" option
+
+Adding this option when starting Chrome (close all Chrome instances first, otherwise the option will not take effect), will allow the client side search engine to work when accessing the generated documentation through the file:// protocol."
+aderuwe,2012-07-19 11:04:49,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/cc137232b3be43a31cb771cd3e0944e81e982fce,cc137232b3be43a31cb771cd3e0944e81e982fce,"Add note about Chrome's ""--allow-file-access-from-files"" option"
+romainneutron,2012-06-30 16:03:10,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8dff761747540847d208af760f8c8b805f133786,8dff761747540847d208af760f8c8b805f133786,Look into interface parents when requesting parent method
+fabpot,2012-07-04 18:36:42,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/8f0c437728c8ec9e91b0cb57c55d46fe434d94cb,8f0c437728c8ec9e91b0cb57c55d46fe434d94cb,updated vendors
+fabpot,2012-06-25 06:37:23,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/50a0421aaf07a63c0423c7f975a76e7908112e53,50a0421aaf07a63c0423c7f975a76e7908112e53,"merged branch coss/fix/git-co (PR #16)
+
+Commits
+-------
+
+a75705b Changed ""git co"" to ""git checkout"". In a default git install on Ubuntu, git co is not a valid command.
+
+Discussion
+----------
+
+Changed ""git co"" to ""git checkout"".
+
+In a default git install on Ubuntu, git co is not a valid command."
+coss,2012-06-24 23:12:02,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a75705bdb2e8382abd38b3c059c2ab9aa075a773,a75705bdb2e8382abd38b3c059c2ab9aa075a773,"Changed ""git co"" to ""git checkout"". In a default git install on Ubuntu, git co is not a valid command."
+fabpot,2012-06-20 20:24:07,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/419c02fc0c3e242bc396db322496f07d440da4cd,419c02fc0c3e242bc396db322496f07d440da4cd,fixed typos
+fabpot,2012-05-24 15:28:18,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/9d47d4314c63f481d8fdc456e17f8596c1253142,9d47d4314c63f481d8fdc456e17f8596c1253142,"merged branch lyrixx/composer-lock (PR #15)
+
+Commits
+-------
+
+24c6522 Fixed composer.lock
+
+Discussion
+----------
+
+Fixed composer.lock
+
+There was a problem on `Symfony/Finder`
+
+I updated all vendors
+
+P.S. : of course, Unit Tests are ok"
+lyrixx,2012-05-24 14:54:16,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/24c65227ce46a665ea3c8e0d66de4b69b9aea374,24c65227ce46a665ea3c8e0d66de4b69b9aea374,Fixed composer.lock
+fabpot,2012-05-18 18:39:20,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bf37e399e0b114d3b332ff1557b92f2794408e4f,bf37e399e0b114d3b332ff1557b92f2794408e4f,"merged branch mtdowling/gitignore (PR #10)
+
+Commits
+-------
+
+6680f3a Adding build/ and cache/ to .gitignore
+
+Discussion
+----------
+
+Adding build/ and cache/ to .gitignore"
+fabpot,2012-05-18 07:34:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/894c174572d29c527241ace6362f34819a3e7873,894c174572d29c527241ace6362f34819a3e7873,made command helps more generic
+mtdowling,2012-05-17 17:07:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/6680f3a8815ff82281e0b9c33a6d8b794e99717e,6680f3a8815ff82281e0b9c33a6d8b794e99717e,Adding build/ and cache/ to .gitignore
+fabpot,2012-05-17 08:57:54,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f3911fd102220fc2ec8bfa2c00825eceac6777ec,f3911fd102220fc2ec8bfa2c00825eceac6777ec,removed links in the tree when namespaces do not have direct sub-classes
+fabpot,2012-05-17 08:51:29,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/e0d7d920e29390db32b7657a5d6cf7d1a06d6fbd,e0d7d920e29390db32b7657a5d6cf7d1a06d6fbd,added all namespaces when namespaces are simulated
+fabpot,2012-05-17 08:51:06,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/bcd3a5e8a3017498754b260248207ca1ee3ba862,bcd3a5e8a3017498754b260248207ca1ee3ba862,removed wrong links for empty URLs in the tree
+fabpot,2012-05-17 08:15:48,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/797f2f290f77bd7f032653fe6605d89979101080,797f2f290f77bd7f032653fe6605d89979101080,fixed broken top-link namespace links (closes #7)
+mtdowling,2012-05-16 20:52:01,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/a4fadba06bdfc1b2c4e565fae8b02dfbef4c33a9,a4fadba06bdfc1b2c4e565fae8b02dfbef4c33a9,Adding @method support to dynamically insert new methods into a class
+fabpot,2012-05-16 18:04:14,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/f7786cf100a406c7c8a7846affa2f0e6481286a3,f7786cf100a406c7c8a7846affa2f0e6481286a3,"merged branch benja-M-1/master (PR #4)
+
+Commits
+-------
+
+d03e2b1 Fix typo
+
+Discussion
+----------
+
+Fix typo"
+benja-M-1,2012-05-16 16:53:26,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/d03e2b1f6d3ec045387929a7eda1673609d22d1a,d03e2b1f6d3ec045387929a7eda1673609d22d1a,Fix typo
+fabpot,2012-05-15 16:13:45,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/042239e57ed216c6e1912cd542db265bfaf2c7d8,042239e57ed216c6e1912cd542db265bfaf2c7d8,fixed packagist link
+fabpot,2012-05-15 11:21:05,https://api.github.com/repos/FriendsOfPHP/Sami/git/commits/aa8d08664f4b5c1d733e882383add048e3301476,aa8d08664f4b5c1d733e882383add048e3301476,added files

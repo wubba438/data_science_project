@@ -1,0 +1,310 @@
+angular-scroll,"Scrollspy, animated scrollTo and scroll events for angular.js"
+username,timestamp,url,sha,message
+oblador,2017-05-11 06:18:12,https://api.github.com/repos/oblador/angular-scroll/git/commits/ce0b3e6bfd0d7fff98702cdb8dc83998ed32861a,ce0b3e6bfd0d7fff98702cdb8dc83998ed32861a,Released 1.0.2
+oblador,2017-05-11 06:17:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/d9854cfc15e1f02b2d54ffd84b481d8509fe6a76,d9854cfc15e1f02b2d54ffd84b481d8509fe6a76,"Revert ""Replace el.scrollTo usage with doScrollTo (#167)""
+
+This reverts commit 54ed34517ff94b613293eb58c6240c49aebf8a4e."
+oblador,2017-05-04 19:54:58,https://api.github.com/repos/oblador/angular-scroll/git/commits/740d17e34dc0471cbc1d599e4b599b9cc57eaf1f,740d17e34dc0471cbc1d599e4b599b9cc57eaf1f,Released 1.0.1
+mkoryak,2017-05-04 19:43:31,https://api.github.com/repos/oblador/angular-scroll/git/commits/54ed34517ff94b613293eb58c6240c49aebf8a4e,54ed34517ff94b613293eb58c6240c49aebf8a4e,"Replace el.scrollTo usage with doScrollTo (#167)
+
+* dont use el.scrollTo, use doScrollTo 
+
+I happen to have jquery.scrollTo installed which has a different api than your `scrollTo` method. It overwrites your method with its own. 
+
+Your method takes params of (left, top,  ... ) while their method is (top, ....) which is really bad. 
+
+without this fix, I am forced to remove scrollTo and rewrite some legacy code to make use of your scrollTo method, which is ok, but not ideal.
+
+Also the bug this caused was hard to track down.
+
+* $window isnt an jqlite element :P"
+jalexanderfox,2017-05-04 19:42:25,https://api.github.com/repos/oblador/angular-scroll/git/commits/3f4f9ac32fbe12f94854869011bd03195eb50a33,3f4f9ac32fbe12f94854869011bd03195eb50a33,Document duScrollSpyWait (debounce) (#168)
+atefBB,2017-04-21 08:04:33,https://api.github.com/repos/oblador/angular-scroll/git/commits/76c0b4c9fa9389c89559ad10cd2145b1bb18b182,76c0b4c9fa9389c89559ad10cd2145b1bb18b182,Fix typo in README (#204)
+oblador,2016-01-15 06:16:58,https://api.github.com/repos/oblador/angular-scroll/git/commits/2f80c65d726c1cb7a62cb5ba50c8675c4bb25767,2f80c65d726c1cb7a62cb5ba50c8675c4bb25767,"Merge pull request #166 from pkaminski/null-element
+
+Guard against race condition when removing spies"
+pkaminski,2016-01-02 20:30:31,https://api.github.com/repos/oblador/angular-scroll/git/commits/9b71020439cbfe2390de1a69810b9e3a524f0f40,9b71020439cbfe2390de1a69810b9e3a524f0f40,Guard against race condition when removing spies
+oblador,2015-11-22 15:16:02,https://api.github.com/repos/oblador/angular-scroll/git/commits/561265d8433752cad4c519c4d2751a45b81300e8,561265d8433752cad4c519c4d2751a45b81300e8,"Merge pull request #110 from pkaminski/interval-refresh
+
+Optionally refresh spy positions at regular intervals"
+pkaminski,2015-03-05 09:45:36,https://api.github.com/repos/oblador/angular-scroll/git/commits/6aa3df4f59b12c59bae5d4b2ab1d8dddf01e0326,6aa3df4f59b12c59bae5d4b2ab1d8dddf01e0326,Optionally refresh spy positions at regular intervals
+oblador,2015-11-19 21:44:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/21ffc8c2c7638b3e2a021f5076fbb31e414f8c76,21ffc8c2c7638b3e2a021f5076fbb31e414f8c76,Bumped to 1.0.0 instead to not break existing installations.
+oblador,2015-11-19 18:59:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/6328e9ea902cd898c28a3d70050913453ddcd424,6328e9ea902cd898c28a3d70050913453ddcd424,Released 0.7.4.
+oblador,2015-11-19 18:35:32,https://api.github.com/repos/oblador/angular-scroll/git/commits/c0d27ed0413d6a3f09dd2553267c715bd6c54fb3,c0d27ed0413d6a3f09dd2553267c715bd6c54fb3,"Merge pull request #161 from homerjam/webpack
+
+Add index.js file and change `main` property in package.json"
+homerjam,2015-11-19 11:43:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/e8291496b4386e060b3e0eac0ececda35a73df37,e8291496b4386e060b3e0eac0ececda35a73df37,Add index.js file and change `main` property in package.son to better support webpack/browserify bundlers
+oblador,2015-11-09 21:03:56,https://api.github.com/repos/oblador/angular-scroll/git/commits/8c74beb93d4168eb4a8fff582905f606246419f7,8c74beb93d4168eb4a8fff582905f606246419f7,"Merge pull request #157 from jrr/ie11-duScrollBottomSpy
+
+workaround for document.body.scrollHeight on IE11"
+jrr,2015-11-04 20:19:24,https://api.github.com/repos/oblador/angular-scroll/git/commits/cc7631965c56a6e6bdcafd9506ff8f91405e13b7,cc7631965c56a6e6bdcafd9506ff8f91405e13b7,compiled assets
+jrr,2015-11-04 20:09:55,https://api.github.com/repos/oblador/angular-scroll/git/commits/1521dbb52324ea4ecabfabc9f9950b76db051428,1521dbb52324ea4ecabfabc9f9950b76db051428,workaround for document.body.scrollHeight on IE11
+oblador,2015-10-30 14:58:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/f466465699f6a07c3d26d49b3b6010281edc22e5,f466465699f6a07c3d26d49b3b6010281edc22e5,"Merge pull request #155 from mchambaud/master
+
+Improved Browserify compatibility"
+mchambaud,2015-10-30 13:27:00,https://api.github.com/repos/oblador/angular-scroll/git/commits/dcb57bb9ff2511205b7417021c9e030ca10a0b96,dcb57bb9ff2511205b7417021c9e030ca10a0b96,Angular-scroll now exporting itself for UMD compatibility.
+mchambaud,2015-10-30 13:23:19,https://api.github.com/repos/oblador/angular-scroll/git/commits/ecb4e0486f07e979e7645d0a94a9943fa8d5752b,ecb4e0486f07e979e7645d0a94a9943fa8d5752b,NPM's main file should not be minified
+oblador,2015-10-13 00:34:07,https://api.github.com/repos/oblador/angular-scroll/git/commits/565ab8477faee961b9df8aed797680e08f6d554d,565ab8477faee961b9df8aed797680e08f6d554d,"Merge pull request #152 from pkaminski/inactive-on-destroy
+
+Trigger becameInactive event when active spy destroyed."
+pkaminski,2015-10-13 00:27:06,https://api.github.com/repos/oblador/angular-scroll/git/commits/4e5a96134bd746738457902abc37d56bfe5e9dc5,4e5a96134bd746738457902abc37d56bfe5e9dc5,Trigger becameInactive event when active spy destroyed.
+oblador,2015-10-01 22:29:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/b8e0cb1cd63d25368cd8c645acfcd4215946331f,b8e0cb1cd63d25368cd8c645acfcd4215946331f,Released 0.7.3.
+oblador,2015-10-01 22:28:34,https://api.github.com/repos/oblador/angular-scroll/git/commits/4bf41c859eeb676879343d0f4280626c8dce6d19,4bf41c859eeb676879343d0f4280626c8dce6d19,Added $target argument to scroll spy events. Fixes #127
+oblador,2015-09-24 15:25:19,https://api.github.com/repos/oblador/angular-scroll/git/commits/bfc4bca8a82fcae0c60ed161eba726f855153ea6,bfc4bca8a82fcae0c60ed161eba726f855153ea6,"Merge pull request #149 from pkaminski/early-destroy
+
+Clean up properly if scrollspy scope destroyed before timeout runs."
+pkaminski,2015-09-24 05:35:01,https://api.github.com/repos/oblador/angular-scroll/git/commits/7cffaad7abb87e8de15587eddf41e2f1b42b402d,7cffaad7abb87e8de15587eddf41e2f1b42b402d,Clean up properly if scrollspy scope destroyed before timeout runs.
+oblador,2015-08-13 21:40:25,https://api.github.com/repos/oblador/angular-scroll/git/commits/b2a1a8e5ab7ddee8432d1b1fd5877da68db81bf0,b2a1a8e5ab7ddee8432d1b1fd5877da68db81bf0,Released 0.7.2
+oblador,2015-08-07 16:49:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/b25cffae00ee482d49be6c6ba41fae7ebe4e1b57,b25cffae00ee482d49be6c6ba41fae7ebe4e1b57,"Merge pull request #138 from MartyIX/patch-1
+
+Update README.md"
+MartyIX,2015-08-07 16:46:11,https://api.github.com/repos/oblador/angular-scroll/git/commits/698f003e3c1e32f0e95521b2053c57b1455e5602,698f003e3c1e32f0e95521b2053c57b1455e5602,Update README.md
+oblador,2015-08-05 00:55:12,https://api.github.com/repos/oblador/angular-scroll/git/commits/545438666bbce92b2cf81b737a6c22572408ee9d,545438666bbce92b2cf81b737a6c22572408ee9d,"Merge pull request #137 from gnomeontherun/active-class
+
+Allow active class to be configured. Fixes #129"
+gnomeontherun,2015-08-05 00:32:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/bc59d4600bfa37adfc76764d2355ec066c1673a7,bc59d4600bfa37adfc76764d2355ec066c1673a7,allow active class to be configured
+oblador,2015-06-02 17:00:22,https://api.github.com/repos/oblador/angular-scroll/git/commits/ab81a5d301e1d2d0e4e1c3536f14afe2f0b4b0d5,ab81a5d301e1d2d0e4e1c3536f14afe2f0b4b0d5,Better test of history API availability.
+oblador,2015-06-02 08:20:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/b622f528ffe3fb540aa727cc414c0a88b3f64c3f,b622f528ffe3fb540aa727cc414c0a88b3f64c3f,Added TOC example.
+oblador,2015-06-02 08:20:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/e175bc5c4c0d7c57ced29ead2c82550198f7ce98,e175bc5c4c0d7c57ced29ead2c82550198f7ce98,Released v0.7.1.
+oblador,2015-06-02 08:17:36,https://api.github.com/repos/oblador/angular-scroll/git/commits/f14ad61c48868da11bc3e14f5221e1f2e062d324,f14ad61c48868da11bc3e14f5221e1f2e062d324,Updated `duScrollspy:becameActive` example to use `history` API directly. #112
+oblador,2015-06-01 22:09:55,https://api.github.com/repos/oblador/angular-scroll/git/commits/2b54fae160089b51b4e076325f86a00769d9a479,2b54fae160089b51b4e076325f86a00769d9a479,Added duScrollCancelOnEvents setting.
+oblador,2015-06-01 21:55:13,https://api.github.com/repos/oblador/angular-scroll/git/commits/a9762decf9a7ca4068c97827961212d26f1494dc,a9762decf9a7ca4068c97827961212d26f1494dc,Added documentation about the `du-smooth-scroll` attribute.
+oblador,2015-04-24 08:13:58,https://api.github.com/repos/oblador/angular-scroll/git/commits/4185867f041ecc01c5b159d35482dd74ee52e903,4185867f041ecc01c5b159d35482dd74ee52e903,Fixed broken example.
+oblador,2015-04-24 08:05:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/228606e24a02fd73823eb18002fe27f82efb7089,228606e24a02fd73823eb18002fe27f82efb7089,Released 0.7.0.
+oblador,2015-04-24 08:01:27,https://api.github.com/repos/oblador/angular-scroll/git/commits/d1052fae4c3e8ad9c7a6effb2ff99ddc6706a0c5,d1052fae4c3e8ad9c7a6effb2ff99ddc6706a0c5,Fixed jslint error (missing semicolon).
+oblador,2015-04-24 07:58:38,https://api.github.com/repos/oblador/angular-scroll/git/commits/4d2174811f1a3acab7eb0731d3fd7500e4f0f813,4d2174811f1a3acab7eb0731d3fd7500e4f0f813,Updated README with new `duScrollBottomSpy` setting.
+oblador,2015-04-24 07:57:27,https://api.github.com/repos/oblador/angular-scroll/git/commits/18a42a2d35b7ccf2392c7e5e67359505245eabf9,18a42a2d35b7ccf2392c7e5e67359505245eabf9,Added support for name and duSmoothScroll attributes in the scrollSpy directive. #118 #117 #111
+oblador,2015-04-24 07:54:30,https://api.github.com/repos/oblador/angular-scroll/git/commits/306b342f30b0840d8c6d527f293f7bfc52b6c070,306b342f30b0840d8c6d527f293f7bfc52b6c070,Added tests for name and duSmootScroll attributes.
+oblador,2015-04-24 07:29:23,https://api.github.com/repos/oblador/angular-scroll/git/commits/ce7316a8e3c1ec3ac5c71bc66c9dac3904eb3863,ce7316a8e3c1ec3ac5c71bc66c9dac3904eb3863,"Merge pull request #117 from homerjam/master
+
+Optionally use du-smooth-scroll attr instead of href to specify target"
+oblador,2015-04-23 16:37:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/a981c360485e70b8dd136f33a3c6ccb79ef2a422,a981c360485e70b8dd136f33a3c6ccb79ef2a422,"Merge pull request #118 from varya/master
+
+Try to look for a target with ""name"" attribute"
+varya,2015-04-23 11:57:13,https://api.github.com/repos/oblador/angular-scroll/git/commits/1a0a5e1b13e5b21784c31bc96a044751bedd126f,1a0a5e1b13e5b21784c31bc96a044751bedd126f,"Try to look for a target with ""name"" attribute"
+homerjam,2015-04-23 09:48:33,https://api.github.com/repos/oblador/angular-scroll/git/commits/e320975cd1c18622983c34c22bd2244f153568f2,e320975cd1c18622983c34c22bd2244f153568f2,Optionally use du-smooth-scroll attr instead of href to specify target
+oblador,2015-04-18 19:52:41,https://api.github.com/repos/oblador/angular-scroll/git/commits/568def69b678f8b136faac7dec80dd19124d2597,568def69b678f8b136faac7dec80dd19124d2597,Fixed memory leak in scrollspy. Fixes #113
+oblador,2015-02-24 04:17:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/98d10b731ae799ab78d8729800fd450dc9275a30,98d10b731ae799ab78d8729800fd450dc9275a30,Breaking change: Added duScrollBottomSpy setting and made the behavior disabled by default. #87
+oblador,2015-02-20 08:46:43,https://api.github.com/repos/oblador/angular-scroll/git/commits/db40a772c78ad6549c230ed4d16faa47fc8284b3,db40a772c78ad6549c230ed4d16faa47fc8284b3,Released 0.6.5.
+oblador,2015-02-20 08:37:12,https://api.github.com/repos/oblador/angular-scroll/git/commits/a492cae326a49e5b586ba1cf1199d7364066468a,a492cae326a49e5b586ba1cf1199d7364066468a,"Bumped dependencies, updated promise test to better work across angular versions and added Firefox runner."
+oblador,2015-02-20 07:29:13,https://api.github.com/repos/oblador/angular-scroll/git/commits/88d3fce9d912f4c87e720595e608ca8697c81e5f,88d3fce9d912f4c87e720595e608ca8697c81e5f,Moved away from gulp-karma.
+oblador,2015-02-20 07:05:57,https://api.github.com/repos/oblador/angular-scroll/git/commits/cff5b507df2441629aa53936dd7df7c6270a0e3c,cff5b507df2441629aa53936dd7df7c6270a0e3c,Fixed bug where the initial touch event would cancel the scroll animation. Fixes #106.
+oblador,2015-01-07 11:05:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/12c7799ca6201c8899850e8f30703954a70993ed,12c7799ca6201c8899850e8f30703954a70993ed,Added travis config.
+oblador,2015-01-07 10:23:42,https://api.github.com/repos/oblador/angular-scroll/git/commits/4805f79bfc9f4262885587d1b2297945bdd95cb7,4805f79bfc9f4262885587d1b2297945bdd95cb7,"Updated readme with cdnjs info.
+Fixes #102"
+oblador,2014-12-28 06:02:18,https://api.github.com/repos/oblador/angular-scroll/git/commits/e1a9529dc56bf74404295b94305c8195e37ab50d,e1a9529dc56bf74404295b94305c8195e37ab50d,Running tests on both example pages and bumped their angular version to latest.
+oblador,2014-12-28 05:50:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/4bec6549e46c4eb16ec7012cbed9e5cab6443b07,4bec6549e46c4eb16ec7012cbed9e5cab6443b07,Fixed e2e bug and added click frenzy test.
+oblador,2014-12-28 05:33:19,https://api.github.com/repos/oblador/angular-scroll/git/commits/ee85785b833d1f15077d9b8bd215da10dfd935cc,ee85785b833d1f15077d9b8bd215da10dfd935cc,Added unit tests for animation promises.
+oblador,2014-12-25 15:39:16,https://api.github.com/repos/oblador/angular-scroll/git/commits/0cbc9c72dcd1cbeca539e72cc982b9bea31ab72a,0cbc9c72dcd1cbeca539e72cc982b9bea31ab72a,Released 0.6.4.
+oblador,2014-12-25 15:29:20,https://api.github.com/repos/oblador/angular-scroll/git/commits/1de57de506ddc084968caae9a211e8fde0046649,1de57de506ddc084968caae9a211e8fde0046649,Fixed missing semi-colon.
+oblador,2014-12-25 15:20:36,https://api.github.com/repos/oblador/angular-scroll/git/commits/cd40cd9da15d8a3af2ce6c174280135985ecf9ed,cd40cd9da15d8a3af2ce6c174280135985ecf9ed,Changed to window.pageYOffset for better cross browser compatibility.
+oblador,2014-12-22 12:34:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/718a68427be5107d882be0a525cb28432c75b815,718a68427be5107d882be0a525cb28432c75b815,Updated old repo urls in example files.
+oblador,2014-12-22 08:05:25,https://api.github.com/repos/oblador/angular-scroll/git/commits/3feedfd190c8b6dcd8c670366c7f674f21132994,3feedfd190c8b6dcd8c670366c7f674f21132994,"Merge branch 'issue-72-duScrollGreedy' of https://github.com/oblador/angular-scroll
+
+Conflicts:
+	src/services/spy-api.js"
+oblador,2014-12-22 06:39:02,https://api.github.com/repos/oblador/angular-scroll/git/commits/131618de31ac80122c2f081029926be3f4a4367b,131618de31ac80122c2f081029926be3f4a4367b,Activate bottom most scroll spy when reaching bottom of container. #87
+oblador,2014-12-22 05:53:56,https://api.github.com/repos/oblador/angular-scroll/git/commits/99f1857128f6a795f4ae0ba354d49d924de766d3,99f1857128f6a795f4ae0ba354d49d924de766d3,Always return a promise if duration argument is passed to helper. #97
+oblador,2014-12-22 05:41:56,https://api.github.com/repos/oblador/angular-scroll/git/commits/8c3f759947c2f1c5e591608933bba93e63c61137,8c3f759947c2f1c5e591608933bba93e63c61137,Added editorconfig #97
+oblador,2014-12-22 05:30:40,https://api.github.com/repos/oblador/angular-scroll/git/commits/2b33cc94b238cab3893b4fc1630e5cf664fd4221,2b33cc94b238cab3893b4fc1630e5cf664fd4221,"Merge pull request #98 from pkaminski/master
+
+Capture spy scope explicitly."
+oblador,2014-12-22 05:21:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/ddb87b895a4cf4c867324b7acb1f7ec9312359f2,ddb87b895a4cf4c867324b7acb1f7ec9312359f2,Released 0.6.3.
+oblador,2014-12-22 05:20:31,https://api.github.com/repos/oblador/angular-scroll/git/commits/1669d46e268359d05b35e378892ad4cea854fcf7,1669d46e268359d05b35e378892ad4cea854fcf7,"Revert ""Looser bower dependencies. #90""
+
+This reverts commit 3fd61b0f18d88910482bf0d39f2adb8554c494b5."
+pkaminski,2014-12-21 00:14:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/a54ed6fdfa978bd42ba9cb1f8960b78d19030f6f,a54ed6fdfa978bd42ba9cb1f8960b78d19030f6f,Capture spy scope explicitly.
+tschneid,2014-12-02 22:05:48,https://api.github.com/repos/oblador/angular-scroll/git/commits/441bb41b1f8aadc5e17bf74bc61f39f402f89638,441bb41b1f8aadc5e17bf74bc61f39f402f89638,"round scroll positions, since there is sometimes an offset < 1"
+oblador,2014-11-28 23:05:14,https://api.github.com/repos/oblador/angular-scroll/git/commits/f4d91e6262e74372b800e907f0b08f7f78d2a076,f4d91e6262e74372b800e907f0b08f7f78d2a076,Prefix scroll helper functions. Fixes #91. #86
+oblador,2014-11-28 19:28:07,https://api.github.com/repos/oblador/angular-scroll/git/commits/3fd61b0f18d88910482bf0d39f2adb8554c494b5,3fd61b0f18d88910482bf0d39f2adb8554c494b5,Looser bower dependencies. #90
+oblador,2014-10-20 09:01:14,https://api.github.com/repos/oblador/angular-scroll/git/commits/4a479ead42be7b8919cfb704609ea9cee1e686c5,4a479ead42be7b8919cfb704609ea9cee1e686c5,Updated repo urls.
+oblador,2014-10-06 07:39:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/7e9d3ad261c2baab0222ea52309aa1d671ea9dca,7e9d3ad261c2baab0222ea52309aa1d671ea9dca,"Merge pull request #82 from caustique/master
+
+Fixing memory leak in removeSpy"
+szantner,2014-10-03 17:10:18,https://api.github.com/repos/oblador/angular-scroll/git/commits/480cc7edf0ad0c6f6006563b1d3f7207e6b8b09f,480cc7edf0ad0c6f6006563b1d3f7207e6b8b09f,Fixing memory leak in removeSpy
+oblador,2014-09-28 06:51:17,https://api.github.com/repos/oblador/angular-scroll/git/commits/200a51ef9fc6e234f09acb37bb09802a04edb294,200a51ef9fc6e234f09acb37bb09802a04edb294,"Merge pull request #79 from jacksonrayhamilton/master
+
+Have bower.json ""main"" field point to the unminified script."
+jacksonrayhamilton,2014-09-26 21:04:23,https://api.github.com/repos/oblador/angular-scroll/git/commits/cd920acbcd4db915edf6e00d507b194c2dd37b7a,cd920acbcd4db915edf6e00d507b194c2dd37b7a,"Have bower.json ""main"" field point to the unminified script."
+oblador,2014-09-10 20:11:16,https://api.github.com/repos/oblador/angular-scroll/git/commits/2b23531bfcde875a533651b6bea58428e14cbe87,2b23531bfcde875a533651b6bea58428e14cbe87,Refactored functionality of duScrollGreedy to work better with fast scrolling/small elements. #72
+oblador,2014-09-10 09:15:46,https://api.github.com/repos/oblador/angular-scroll/git/commits/fd5ae6579be3cfcc55380797df6aae244625b21e,fd5ae6579be3cfcc55380797df6aae244625b21e,Typo fix.
+oblador,2014-09-10 08:39:34,https://api.github.com/repos/oblador/angular-scroll/git/commits/45d1fa801d9f19e3ac322d91994723d334bc8fd0,45d1fa801d9f19e3ac322d91994723d334bc8fd0,Released v0.6.2.
+oblador,2014-09-02 08:39:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/377973d5c36cec88f21d9526b77308fc32d3309a,377973d5c36cec88f21d9526b77308fc32d3309a,Added `duScrollOffset` setting and added *Animated convenience functions. #60
+oblador,2014-08-30 09:57:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/2cc09c824e9da9e86d803afdba370283bf1c1f09,2cc09c824e9da9e86d803afdba370283bf1c1f09,"Merge pull request #70 from pkaminski/master
+
+Prevent error when scope disappears too quickly."
+pkaminski,2014-08-30 06:10:50,https://api.github.com/repos/oblador/angular-scroll/git/commits/a4f2ce7fa7e96e112b9253a37b76e369a2655438,a4f2ce7fa7e96e112b9253a37b76e369a2655438,Prevent error when scope disappears too quickly.
+oblador,2014-08-22 06:17:30,https://api.github.com/repos/oblador/angular-scroll/git/commits/39b88d664e1d44fc3fd365bb23100bef2968c4fd,39b88d664e1d44fc3fd365bb23100bef2968c4fd,"Merge pull request #67 from 1wheel/master
+
+Corrects spelling"
+1wheel,2014-08-21 21:40:58,https://api.github.com/repos/oblador/angular-scroll/git/commits/6aa28352cc2385f54f43cc0ae0c26386626f9998,6aa28352cc2385f54f43cc0ae0c26386626f9998,Corrects spelling
+oblador,2014-08-15 08:55:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/b8aad821c70e83eef398f9e02cf60a6ed1d44a07,b8aad821c70e83eef398f9e02cf60a6ed1d44a07,"Merge pull request #65 from pkaminski/master
+
+Prevent unnecessary digest cycles."
+pkaminski,2014-08-14 22:17:45,https://api.github.com/repos/oblador/angular-scroll/git/commits/c64d904a05d59ba4be12ca7e3c48db2c9e71fcf3,c64d904a05d59ba4be12ca7e3c48db2c9e71fcf3,Prevent unnecessary digest cycles.
+oblador,2014-08-13 22:11:04,https://api.github.com/repos/oblador/angular-scroll/git/commits/665f7b7bad46abb99cc54e49aae9aafa627bd02c,665f7b7bad46abb99cc54e49aae9aafa627bd02c,Updated build dependencies with faster builds and fancier sourcemaps.
+oblador,2014-08-06 15:18:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/ce3bd8c5901a6732129695d2c770d49c60cc5b54,ce3bd8c5901a6732129695d2c770d49c60cc5b54,"Merge pull request #62 from twhitbeck/update-angular-dep
+
+Loosen angular dep in bower.json"
+twhitbeck,2014-08-06 14:29:22,https://api.github.com/repos/oblador/angular-scroll/git/commits/e31f92f0bd4fd9cb06f71604e9d15ed8bfaa7e0c,e31f92f0bd4fd9cb06f71604e9d15ed8bfaa7e0c,Loosen angular dep in bower.json
+oblador,2014-07-16 08:03:53,https://api.github.com/repos/oblador/angular-scroll/git/commits/861796c80210360f71ffbacbcdc6cdd3733796f3,861796c80210360f71ffbacbcdc6cdd3733796f3,Released 0.6.1
+oblador,2014-07-16 07:59:00,https://api.github.com/repos/oblador/angular-scroll/git/commits/f08ecb1ae2f1f703de984b4ed453db3d6e9df1e8,f08ecb1ae2f1f703de984b4ed453db3d6e9df1e8,Merge branch 'debounce-scrollspy'
+oblador,2014-07-15 09:29:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/d1341c6777a4737721a043055facf85a57d20d4c,d1341c6777a4737721a043055facf85a57d20d4c,Move duScroll.requestAnimation dependency to the correct place.
+oblador,2014-07-15 09:26:17,https://api.github.com/repos/oblador/angular-scroll/git/commits/3d4bc1f121b212c027f306cfb352b05a08a0ae28,3d4bc1f121b212c027f306cfb352b05a08a0ae28,"Merge pull request #55 from pkaminski/master
+
+Add spyContext module dependency."
+pkaminski,2014-07-15 09:23:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/7a99d4e5034abf1eeeb154d08c8420e3454552dc,7a99d4e5034abf1eeeb154d08c8420e3454552dc,Add spyContext module dependency.
+oblador,2014-07-15 09:19:59,https://api.github.com/repos/oblador/angular-scroll/git/commits/a4cd5113b16a168ecaa7431116793eed96704196,a4cd5113b16a168ecaa7431116793eed96704196,Implemented experimental debouncer for scroll spy handler. #53
+oblador,2014-07-15 08:49:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/56e5bd147711a9be749104325274278b96723720,56e5bd147711a9be749104325274278b96723720,Strict mode and associated bugfixes. #51
+oblador,2014-07-09 09:42:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/2991490fe867600a9280f53b6eecd63876327dd2,2991490fe867600a9280f53b6eecd63876327dd2,Released v0.6.0.
+oblador,2014-07-09 09:37:55,https://api.github.com/repos/oblador/angular-scroll/git/commits/4b90f5b3b4ac2c33a2add8fcb776132c3a145440,4b90f5b3b4ac2c33a2add8fcb776132c3a145440,"Merge branch 'cancel-on-scroll'
+Closes #49"
+oblador,2014-07-09 09:35:44,https://api.github.com/repos/oblador/angular-scroll/git/commits/dd39f3bd836edd57ebdfc388eddecbfa2f14f79a,dd39f3bd836edd57ebdfc388eddecbfa2f14f79a,Refactored scroll animation cancelling and made it container specific.
+oblador,2014-07-07 21:02:55,https://api.github.com/repos/oblador/angular-scroll/git/commits/68a9ab42d3d34745ab1735ed38c1d0dccd030923,68a9ab42d3d34745ab1735ed38c1d0dccd030923,"Merge pull request #48 from HHogg/cancel-on-scroll
+
+Issue #40: Cancel scroll on mousewheel"
+oblador,2014-07-01 10:58:08,https://api.github.com/repos/oblador/angular-scroll/git/commits/239fc577218be7665ae57e108cdb6540ae326199,239fc577218be7665ae57e108cdb6540ae326199,"Merge pull request #45 from moumar/master
+
+fixed HTMLElement check to be compatible with IE8"
+moumar,2014-06-26 22:02:40,https://api.github.com/repos/oblador/angular-scroll/git/commits/9161717e5fc7560980c17bea24861eee7cf20c3f,9161717e5fc7560980c17bea24861eee7cf20c3f,fixed HTMLElement check to be compatible with IE8
+oblador,2014-06-22 21:26:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/2ab8fb405b4d1b8f143f484b6317f13cc8e6dc05,2ab8fb405b4d1b8f143f484b6317f13cc8e6dc05,Released v0.5.8.
+oblador,2014-05-29 14:53:51,https://api.github.com/repos/oblador/angular-scroll/git/commits/1e7cb26fcdd12b328ed441bccf37bd7e09530a05,1e7cb26fcdd12b328ed441bccf37bd7e09530a05,Reverted previous changes and instead check if container is within document. #41
+oblador,2014-05-29 10:01:30,https://api.github.com/repos/oblador/angular-scroll/git/commits/844951ff44fe6f910565b674e5639e027933a774,844951ff44fe6f910565b674e5639e027933a774,Rebind scroll container watchers on location change. Fixes #41.
+oblador,2014-05-29 08:12:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/787edec720dfb3f8cf870237625487636756fca1,787edec720dfb3f8cf870237625487636756fca1,Fixed ui-router event $stateChangeSuccess listener.
+oblador,2014-05-23 07:42:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/119697ba6e33fb39d2605661eb93ca2522c15be4,119697ba6e33fb39d2605661eb93ca2522c15be4,Released 0.5.7.
+oblador,2014-05-22 17:25:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/f5923ecc9f41b5d48c426554c10563bb550f6ec2,f5923ecc9f41b5d48c426554c10563bb550f6ec2,Fix mobile safari status bar scroll bug. #38
+oblador,2014-05-22 10:58:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/0a5ab0664f36402e338c0a00f7528cabe6f83c70,0a5ab0664f36402e338c0a00f7528cabe6f83c70,Added contributing info.
+oblador,2014-05-21 12:57:53,https://api.github.com/repos/oblador/angular-scroll/git/commits/e457476ba763cbd7963a6e1bcdf002509733e8d8,e457476ba763cbd7963a6e1bcdf002509733e8d8,"Added greedy option, fixes #36."
+oblador,2014-05-21 07:15:47,https://api.github.com/repos/oblador/angular-scroll/git/commits/4d8de4615ffed494159537c6cd1be5c5c7cf3b55,4d8de4615ffed494159537c6cd1be5c5c7cf3b55,Clarified du-scrollspy functionality in Readme. Fixes #37.
+oblador,2014-05-19 07:13:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/dc875b55a5f74eea4d9ec30d18f6bc4e6889e39b,dc875b55a5f74eea4d9ec30d18f6bc4e6889e39b,Always return promises on animated scrolls. Fixes #35.
+oblador,2014-05-14 13:36:13,https://api.github.com/repos/oblador/angular-scroll/git/commits/afa7594465daaa3e87f5ccda80e36955c5c551ca,afa7594465daaa3e87f5ccda80e36955c5c551ca,Added some e2e tests.
+oblador,2014-05-12 18:20:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/ca9c5e45d241e2ef5bd6447d0711d450d156e13d,ca9c5e45d241e2ef5bd6447d0711d450d156e13d,Released 0.5.6.
+oblador,2014-05-11 19:11:34,https://api.github.com/repos/oblador/angular-scroll/git/commits/ffb743910ccf684c031d76f8a012367886a01fcb,ffb743910ccf684c031d76f8a012367886a01fcb,"Merge pull request #33 from a-bashtannik/master
+
+Add support of angular-ui/ui-router states change"
+a-bashtannik,2014-05-11 16:56:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/2253779d44eed10544e3cd796a8c6c42dfea14e1,2253779d44eed10544e3cd796a8c6c42dfea14e1,"Add support of angular-ui/ui-router states change
+
+Compatibility with popular angular-ui/ui-router. This addition make scroll spy working not only if location changes (typical behavior for ngRoute), but and if state changes without modifying url by adding `$stateChangeSuccess` event listener."
+oblador,2014-05-09 11:15:17,https://api.github.com/repos/oblador/angular-scroll/git/commits/8dd2497a96854f9096741119823f5962bbe71efb,8dd2497a96854f9096741119823f5962bbe71efb,Fixed getContextForSpy for spies without scope. Fixes #30.
+oblador,2014-05-06 07:32:06,https://api.github.com/repos/oblador/angular-scroll/git/commits/b57d59a6af1345ceedf4b75023c08a5b5928e9f6,b57d59a6af1345ceedf4b75023c08a5b5928e9f6,Also ngmin non-minified target. #29
+oblador,2014-05-05 21:04:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/d72d9abfbe20dbadcd3a1677f8ea07ab072dc6fe,d72d9abfbe20dbadcd3a1677f8ea07ab072dc6fe,Released v0.5.5.
+oblador,2014-05-05 18:21:01,https://api.github.com/repos/oblador/angular-scroll/git/commits/b11c47e14d63b6406ddce9d5d27ebdb8ef3516f7,b11c47e14d63b6406ddce9d5d27ebdb8ef3516f7,Made .scrollTo(element) a proper alias for scrollToElement(element) with all arguments. #27.
+oblador,2014-04-29 09:30:02,https://api.github.com/repos/oblador/angular-scroll/git/commits/1b13129784423a31d9c32f5c1c71b686b89c3282,1b13129784423a31d9c32f5c1c71b686b89c3282,Release 0.5.4.
+oblador,2014-04-29 09:28:55,https://api.github.com/repos/oblador/angular-scroll/git/commits/d2f5cd9990fda01293eec5d9b41fbb331679de8a,d2f5cd9990fda01293eec5d9b41fbb331679de8a,Solved jQuery conflict with scrollLeft/Top.
+oblador,2014-04-27 21:28:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/7ed1f18f8747fbb2997e72451a801fc97c106622,7ed1f18f8747fbb2997e72451a801fc97c106622,"Merge pull request #25 from a-bashtannik/patch-1
+
+Fix #23"
+a-bashtannik,2014-04-27 15:38:12,https://api.github.com/repos/oblador/angular-scroll/git/commits/89fcdbf18e13dd3723c3baf130381520199fdfca,89fcdbf18e13dd3723c3baf130381520199fdfca,Fix durated/angular-scroll#23
+oblador,2014-04-23 13:59:51,https://api.github.com/repos/oblador/angular-scroll/git/commits/16422e4d3e58144de2b0807e11bed746a2ecdf7e,16422e4d3e58144de2b0807e11bed746a2ecdf7e,Release 0.5.3.
+oblador,2014-04-23 13:55:26,https://api.github.com/repos/oblador/angular-scroll/git/commits/ad223ed17b8d8c9160120b6c723ecaec228e228c,ad223ed17b8d8c9160120b6c723ecaec228e228c,Added promises to scroll animations. #22
+oblador,2014-04-23 13:28:06,https://api.github.com/repos/oblador/angular-scroll/git/commits/fc3663df2288212d7dea89011b2d49174fe0c39a,fc3663df2288212d7dea89011b2d49174fe0c39a,Release 0.5.2
+oblador,2014-04-23 13:25:56,https://api.github.com/repos/oblador/angular-scroll/git/commits/46f2f4e33d4dacd84dd41f3424c016d7664c36a5,46f2f4e33d4dacd84dd41f3424c016d7664c36a5,Better IE8 compatibility.
+oblador,2014-04-23 12:17:23,https://api.github.com/repos/oblador/angular-scroll/git/commits/9deeb22725240c0d9cfb7af9e802b1d00df3838a,9deeb22725240c0d9cfb7af9e802b1d00df3838a,Refactored animated scrolling #22.
+oblador,2014-04-23 09:28:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/a0601b17b59743775ddc75a57998517ef3234833,a0601b17b59743775ddc75a57998517ef3234833,"Merge pull request #22 from xperiments/master
+
+Fixed bug in way total anim frames are calculated"
+xperiments,2014-04-23 09:09:16,https://api.github.com/repos/oblador/angular-scroll/git/commits/457c110c22b054bbeeff8ab213b043846f25a343,457c110c22b054bbeeff8ab213b043846f25a343,Fixed bug in way total anim frames are calculated
+oblador,2014-04-13 23:45:30,https://api.github.com/repos/oblador/angular-scroll/git/commits/6b7220ae0753eeb6b7a1bcbcd76def568a6df0d6,6b7220ae0753eeb6b7a1bcbcd76def568a6df0d6,Added tests to gulp build process.
+oblador,2014-04-13 23:42:08,https://api.github.com/repos/oblador/angular-scroll/git/commits/9561df6d59467354c8c99ce63ee709cb1a24e172,9561df6d59467354c8c99ce63ee709cb1a24e172,Migrated to gulp for building and linting.
+oblador,2014-04-13 22:35:27,https://api.github.com/repos/oblador/angular-scroll/git/commits/9121176b9f8c4bc7c2491ffadce2b4f7671aa262,9121176b9f8c4bc7c2491ffadce2b4f7671aa262,Moved to karma/jasmine 2.0.
+oblador,2014-04-13 16:03:24,https://api.github.com/repos/oblador/angular-scroll/git/commits/e4e7a65a8d193c63e9c23ad79502c6a3544d5e9d,e4e7a65a8d193c63e9c23ad79502c6a3544d5e9d,Added service unit tests.
+oblador,2014-04-13 15:12:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/d17252576e2fe34efa0597217f7349d05d56c029,d17252576e2fe34efa0597217f7349d05d56c029,Added module and defaults midway tests.
+oblador,2014-04-12 21:38:33,https://api.github.com/repos/oblador/angular-scroll/git/commits/47813f949ef8f863af5bcd53821859caa5a8eda3,47813f949ef8f863af5bcd53821859caa5a8eda3,Fixed broken container demo source link.
+oblador,2014-04-12 21:15:51,https://api.github.com/repos/oblador/angular-scroll/git/commits/cf540f247f39169e43da0b917bcb45daf960241e,cf540f247f39169e43da0b917bcb45daf960241e,Released v0.5.1.
+oblador,2014-04-12 21:03:32,https://api.github.com/repos/oblador/angular-scroll/git/commits/bdcdc59b3160aa29b3535a5237297a6247a9a1ff,bdcdc59b3160aa29b3535a5237297a6247a9a1ff,Better IE9 support.
+oblador,2014-04-12 20:45:01,https://api.github.com/repos/oblador/angular-scroll/git/commits/eb8657d8b9e9d7bb1e60bf58ed6042ac6f15cabe,eb8657d8b9e9d7bb1e60bf58ed6042ac6f15cabe,Fixed readme typo.
+oblador,2014-04-12 19:28:34,https://api.github.com/repos/oblador/angular-scroll/git/commits/046b7df7e17ccdc496a9696afe70beb4f2f318c9,046b7df7e17ccdc496a9696afe70beb4f2f318c9,Fixed broken container example link.
+oblador,2014-04-12 19:15:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/1590e32d3db677d41c1cc4f4dc6104ec194b5518,1590e32d3db677d41c1cc4f4dc6104ec194b5518,Released v0.5.0.
+oblador,2014-04-12 19:12:47,https://api.github.com/repos/oblador/angular-scroll/git/commits/f61a6f422525d3fb2005694eca3dd4f3fc7a1bed,f61a6f422525d3fb2005694eca3dd4f3fc7a1bed,Readme organization tweaks.
+oblador,2014-04-12 19:06:18,https://api.github.com/repos/oblador/angular-scroll/git/commits/878e62a79f70d71386d529a0853cc20941bb7a73,878e62a79f70d71386d529a0853cc20941bb7a73,Updated README with API changes.
+oblador,2014-04-12 18:09:14,https://api.github.com/repos/oblador/angular-scroll/git/commits/83b2381ee8d673e7c31ee26ccd941536bcb71f5d,83b2381ee8d673e7c31ee26ccd941536bcb71f5d,Updated demos to new API.
+oblador,2014-04-12 18:05:13,https://api.github.com/repos/oblador/angular-scroll/git/commits/ec38a8fe92e4deeef3a4133394d5489c79604377,ec38a8fe92e4deeef3a4133394d5489c79604377,Refactored scrollSpy to be container aware and removed prefix from services.
+oblador,2014-04-12 17:15:17,https://api.github.com/repos/oblador/angular-scroll/git/commits/19ba18710b309487dfd801a2e24a27046a10689f,19ba18710b309487dfd801a2e24a27046a10689f,Migrated directives away from scroller service to helper functions.
+oblador,2014-04-12 17:06:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/606543f961d41b83e15b9863a86938062307aaa5,606543f961d41b83e15b9863a86938062307aaa5,Added duration and easing support.
+oblador,2014-04-12 16:34:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/3788ea87f49888fa4095d230fc746caf4c5458ab,3788ea87f49888fa4095d230fc746caf4c5458ab,Added scrollToElement support.
+oblador,2014-04-12 16:22:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/3cc5618437764dff13d92860afd712dc1a2b7055,3cc5618437764dff13d92860afd712dc1a2b7055,Fixed bug where 0 values would not be regarded to scroll.
+oblador,2014-04-12 16:14:42,https://api.github.com/repos/oblador/angular-scroll/git/commits/a09a1a569d56ab88a8fd7c27114dfb59a2f5faba,a09a1a569d56ab88a8fd7c27114dfb59a2f5faba,Added angular.element scroll functions.
+oblador,2014-04-12 14:45:32,https://api.github.com/repos/oblador/angular-scroll/git/commits/f93241bdb6eee562261e7838a573bdef2091b318,f93241bdb6eee562261e7838a573bdef2091b318,Fixed memory leak.
+oblador,2014-04-12 14:39:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/a53ac90925b52fc37902fa2dfaeca0dcacd28ece,a53ac90925b52fc37902fa2dfaeca0dcacd28ece,Renamed scroll context to scroll container to avoid confusion with spy context.
+oblador,2014-04-09 21:30:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/df82d840775d3294786204d822049e51ba594d11,df82d840775d3294786204d822049e51ba594d11,Minor Readme changes.
+oblador,2014-04-09 21:21:07,https://api.github.com/repos/oblador/angular-scroll/git/commits/375d84fd5046b80872276035ce10ada277ffdf36,375d84fd5046b80872276035ce10ada277ffdf36,Released v0.4.1
+oblador,2014-04-09 21:18:58,https://api.github.com/repos/oblador/angular-scroll/git/commits/94f904c234371a933a8940bc01c1c7fa0cda71cf,94f904c234371a933a8940bc01c1c7fa0cda71cf,Fixed bug in the smootScroll directive where offset was wrongly inverted twice.
+oblador,2014-04-09 11:04:14,https://api.github.com/repos/oblador/angular-scroll/git/commits/0ad030c7cc5160e52efa2158098d7637353584ab,0ad030c7cc5160e52efa2158098d7637353584ab,Renamed context example file.
+oblador,2014-04-09 10:59:25,https://api.github.com/repos/oblador/angular-scroll/git/commits/5c9cf44260f4a59201a05e8af56a66a1ca8a9808,5c9cf44260f4a59201a05e8af56a66a1ca8a9808,Released v0.4.0
+oblador,2014-04-09 10:58:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/1fbdf0b395891dbba8d24868151f16d36dc09b46,1fbdf0b395891dbba8d24868151f16d36dc09b46,Updated with context demo and documentation. #18
+oblador,2014-04-09 10:44:51,https://api.github.com/repos/oblador/angular-scroll/git/commits/b2f10aa26f3c9575f161567ab3dfc59049b5ad36,b2f10aa26f3c9575f161567ab3dfc59049b5ad36,Properly offset scrolling depending on context. #18
+oblador,2014-04-09 10:23:00,https://api.github.com/repos/oblador/angular-scroll/git/commits/aabd409afdf0d719cb0d678d415bae576f9c9772,aabd409afdf0d719cb0d678d415bae576f9c9772,Added duScrollContext to make duSmoothScroll directive context aware. #18
+oblador,2014-04-09 09:35:31,https://api.github.com/repos/oblador/angular-scroll/git/commits/db379589a100292f0bfce9b60956f06448cc6553,db379589a100292f0bfce9b60956f06448cc6553,Refactored for more uniform file/directive/service structure.
+oblador,2014-04-09 09:24:41,https://api.github.com/repos/oblador/angular-scroll/git/commits/1de3ec66f46978627a196f26d0e97113bf5dbab1,1de3ec66f46978627a196f26d0e97113bf5dbab1,Removed unnecessary jQuery dependency. #18
+oblador,2014-04-09 09:16:17,https://api.github.com/repos/oblador/angular-scroll/git/commits/6bcd497d82118f4039852d874a563aac376d9303,6bcd497d82118f4039852d874a563aac376d9303,"Merge pull request #18 from AlexCppns/master
+
+enabling optional context to make it work with modal windows"
+AlexCppns,2014-04-04 15:39:00,https://api.github.com/repos/oblador/angular-scroll/git/commits/7182f6927e4e879d0ce86a5baccb75e198c9b6dd,7182f6927e4e879d0ce86a5baccb75e198c9b6dd,enabling optional context to make it work with modal windows
+oblador,2014-03-31 13:49:18,https://api.github.com/repos/oblador/angular-scroll/git/commits/ca15393b6f0bbd50866eec91924112f3a91bd8eb,ca15393b6f0bbd50866eec91924112f3a91bd8eb,Released 0.3.0.
+oblador,2014-03-31 13:47:22,https://api.github.com/repos/oblador/angular-scroll/git/commits/0d63ad0a156e61c848a184eb70193dc0bd87bbef,0d63ad0a156e61c848a184eb70193dc0bd87bbef,Added du-spy-context to allow multiple spies on the same target. #13
+oblador,2014-03-31 12:28:04,https://api.github.com/repos/oblador/angular-scroll/git/commits/90d08a57d9a94bbfc3f6382402a10d1cb26b7d1b,90d08a57d9a94bbfc3f6382402a10d1cb26b7d1b,Readme typo.
+oblador,2014-03-31 12:26:59,https://api.github.com/repos/oblador/angular-scroll/git/commits/63a15728e5311e53349dbdc286b9e560c63a5a0e,63a15728e5311e53349dbdc286b9e560c63a5a0e,Released v0.2.10
+oblador,2014-03-31 12:26:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/b0075ef8632a943f626cfdb2ec3a5db4037e501f,b0075ef8632a943f626cfdb2ec3a5db4037e501f,Added support for passing the targetId via the du-scrollspy attribute.
+oblador,2014-03-28 16:50:33,https://api.github.com/repos/oblador/angular-scroll/git/commits/b4d2adf03dfc287257bdc71f180a6e77a1adf932,b4d2adf03dfc287257bdc71f180a6e77a1adf932,Refactored init code.
+oblador,2014-03-28 16:15:51,https://api.github.com/repos/oblador/angular-scroll/git/commits/f4f78ef3ecb68d234285e311a48017df80b056b4,f4f78ef3ecb68d234285e311a48017df80b056b4,Released v0.2.9.
+oblador,2014-03-28 16:14:52,https://api.github.com/repos/oblador/angular-scroll/git/commits/2777995ca100f87705e68e8bf2ec4ecdeb0d49f6,2777995ca100f87705e68e8bf2ec4ecdeb0d49f6,Added init events for scrollPosition.
+oblador,2014-03-13 12:12:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/9a530897b3b1c64c68e13ad53b3b936493aa98bf,9a530897b3b1c64c68e13ad53b3b936493aa98bf,Released v0.2.8.
+oblador,2014-03-13 12:11:23,https://api.github.com/repos/oblador/angular-scroll/git/commits/6b3e5485591b18dd213cc52bd8213777672c77c1,6b3e5485591b18dd213cc52bd8213777672c77c1,Improved easing function and made it configurable.
+oblador,2014-03-11 22:11:36,https://api.github.com/repos/oblador/angular-scroll/git/commits/9e86f9bb2bcb398b3d67ae4c6644a3f510b05d08,9e86f9bb2bcb398b3d67ae4c6644a3f510b05d08,Released version 0.2.7.
+oblador,2014-03-11 22:10:18,https://api.github.com/repos/oblador/angular-scroll/git/commits/c133e8a7649be015d6494e5da8329de22f5c9a88,c133e8a7649be015d6494e5da8329de22f5c9a88,Made duScrollspy events prefixed/more sensibly named and added documentation.
+oblador,2014-03-11 21:35:01,https://api.github.com/repos/oblador/angular-scroll/git/commits/ce92a77d96d9acb7d2398b6b5e143acd1f51a1ee,ce92a77d96d9acb7d2398b6b5e143acd1f51a1ee,"Merge pull request #10 from garbados/broadcast
+
+broadcast events when elements become active"
+garbados,2014-03-11 16:49:42,https://api.github.com/repos/oblador/angular-scroll/git/commits/467b2672ed41bd63566f6d6b920407b5aa23f7a2,467b2672ed41bd63566f6d6b920407b5aa23f7a2,broadcast events when elements become active
+oblador,2014-03-10 21:53:59,https://api.github.com/repos/oblador/angular-scroll/git/commits/a41a140ea59e6adad94fc0e17107321a3911744a,a41a140ea59e6adad94fc0e17107321a3911744a,Added ngHref support.
+oblador,2014-02-04 16:39:53,https://api.github.com/repos/oblador/angular-scroll/git/commits/8382a2c93fdbf3c3d27c57a83eefef6422da3640,8382a2c93fdbf3c3d27c57a83eefef6422da3640,Released 0.2.6.
+oblador,2014-02-04 16:38:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/bb14514dc5a11e3d6ea438365116123903b1e294,bb14514dc5a11e3d6ea438365116123903b1e294,Made default scroll duration configurable.
+oblador,2014-02-01 19:14:09,https://api.github.com/repos/oblador/angular-scroll/git/commits/1ddfa69c6eb08ec45a3dd816e3c155fb1709a31d,1ddfa69c6eb08ec45a3dd816e3c155fb1709a31d,"Merge pull request #7 from stefanhenze/master
+
+Added additional attribute 'duration' to smoothScroll"
+oblador,2014-01-18 22:43:40,https://api.github.com/repos/oblador/angular-scroll/git/commits/8987ed4ebd9464f612f420da075fa6880b520524,8987ed4ebd9464f612f420da075fa6880b520524,Released v0.2.5.
+oblador,2014-01-18 14:39:30,https://api.github.com/repos/oblador/angular-scroll/git/commits/d199507ed4e4a459ad6584c2521d8f5108391ccb,d199507ed4e4a459ad6584c2521d8f5108391ccb,Added flushing of cached target element. #6
+oblador,2014-01-16 11:59:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/10888c75921ce38cf6457fa4cd4ca7674f33a6e4,10888c75921ce38cf6457fa4cd4ca7674f33a6e4,Released 0.2.4
+oblador,2014-01-16 11:54:19,https://api.github.com/repos/oblador/angular-scroll/git/commits/4852d011b957804bd5612ce25c69f1f6e3717692,4852d011b957804bd5612ce25c69f1f6e3717692,Refactored scroll spy handling.
+oblador,2014-01-16 11:52:08,https://api.github.com/repos/oblador/angular-scroll/git/commits/f1e668f8b3b852c4d3c96e3938b6e56d95c752ec,f1e668f8b3b852c4d3c96e3938b6e56d95c752ec,Moved to $duScrollChanged broadcast instead of scrollPosition.listen
+oblador,2014-01-16 11:15:27,https://api.github.com/repos/oblador/angular-scroll/git/commits/cb45f0d511b9dc6ce1e958eeb69d8c229dcb47f9,cb45f0d511b9dc6ce1e958eeb69d8c229dcb47f9,"Merge pull request #5 from larrifax/master
+
+Delays spy target aquisition until the gotScroll-method"
+oblador,2014-01-16 11:03:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/fed7afabc68713e29ddf7934ad9b94c10ceedb86,fed7afabc68713e29ddf7934ad9b94c10ceedb86,Added support for passing a jQuery(Lite) object to scrollToElement (not just DOM elements).
+larrifax,2014-01-16 11:01:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/fbe063b05e2d12bafae1a644c8d52e9d003896ba,fbe063b05e2d12bafae1a644c8d52e9d003896ba,"Delays spy target aquisition until the gotScroll-method
+
+To fix cases in which a spy's target is not available when the
+scrollspy-directive's link function is called."
+oblador,2014-01-16 10:50:43,https://api.github.com/repos/oblador/angular-scroll/git/commits/a94bd30fd9158809924f4761ed93ec5f27760ff5,a94bd30fd9158809924f4761ed93ec5f27760ff5,"Merge pull request #4 from larrifax/master
+
+Fixes some memory leaks"
+larrifax,2014-01-16 10:35:54,https://api.github.com/repos/oblador/angular-scroll/git/commits/797135467a48d3329994692882dd4614d69a53be,797135467a48d3329994692882dd4614d69a53be,Prevents scrollspy directive from calling observe() multiple times
+larrifax,2014-01-16 10:33:14,https://api.github.com/repos/oblador/angular-scroll/git/commits/4917b010ecf758d5dc12a3278c831f4e405b210b,4917b010ecf758d5dc12a3278c831f4e405b210b,"Removes spies on $scope.$destroy event
+
+To prevent memory leaks"
+oblador,2014-01-08 09:11:41,https://api.github.com/repos/oblador/angular-scroll/git/commits/ce09311d879d9b0faae5b7f96c9fd4bf51f13cd0,ce09311d879d9b0faae5b7f96c9fd4bf51f13cd0,Added scroller.scrollToElement and released v0.2.3.
+oblador,2013-11-21 22:32:49,https://api.github.com/repos/oblador/angular-scroll/git/commits/905ef7c6bacd3ec6a09c69cd034a3d399c342079,905ef7c6bacd3ec6a09c69cd034a3d399c342079,Released 0.2.2
+oblador,2013-11-21 22:28:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/89f4bc78181fdd45c597952edbe7c019c1635075,89f4bc78181fdd45c597952edbe7c019c1635075,Fallback to regular anchor scroll if not supporting getBoundingClientRect().
+oblador,2013-11-21 22:15:01,https://api.github.com/repos/oblador/angular-scroll/git/commits/fcdb711ed7abfcd816656f009e76183a7ca7a991,fcdb711ed7abfcd816656f009e76183a7ca7a991,Introduced scrollPosition.y/x as cross browser getter. Fixes #1.
+oblador,2013-10-22 14:20:20,https://api.github.com/repos/oblador/angular-scroll/git/commits/73559a9e08553059b2fbe62db4d7d0fa88eadf20,73559a9e08553059b2fbe62db4d7d0fa88eadf20,Better IE suppport.
+oblador,2013-10-11 11:56:09,https://api.github.com/repos/oblador/angular-scroll/git/commits/c5ca91d0630940e58444e49bac8c829293fc0f41,c5ca91d0630940e58444e49bac8c829293fc0f41,Added dependency info to readme.
+oblador,2013-10-11 11:49:29,https://api.github.com/repos/oblador/angular-scroll/git/commits/674a6b62a4f5edae8f4f97db63543e674c319d47,674a6b62a4f5edae8f4f97db63543e674c319d47,Added links to build files.
+oblador,2013-10-11 11:30:47,https://api.github.com/repos/oblador/angular-scroll/git/commits/e1bb137de1a90c6d7e24f95ed2da37b50fe3cad1,e1bb137de1a90c6d7e24f95ed2da37b50fe3cad1,Updated example.
+oblador,2013-10-10 22:09:40,https://api.github.com/repos/oblador/angular-scroll/git/commits/1bcc56c231e12fc79c3d558f5bbec053821ee437,1bcc56c231e12fc79c3d558f5bbec053821ee437,Released 0.2.0.
+oblador,2013-10-10 22:09:03,https://api.github.com/repos/oblador/angular-scroll/git/commits/2fcf369f6cc8429d8f96d150249a403b8de9c9ee,2fcf369f6cc8429d8f96d150249a403b8de9c9ee,Added simple example.
+oblador,2013-10-10 21:40:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/b1af8f53430c9253d060e0e2508472781d5331e0,b1af8f53430c9253d060e0e2508472781d5331e0,Updated README with documentation stub.
+oblador,2013-10-10 21:40:05,https://api.github.com/repos/oblador/angular-scroll/git/commits/87370b186160b8f16e46b97c24b5fe18f5a360d2,87370b186160b8f16e46b97c24b5fe18f5a360d2,Renamed smoothScroll to duSmoothScroll too keep things consistent.
+oblador,2013-10-10 21:32:36,https://api.github.com/repos/oblador/angular-scroll/git/commits/bbd1bc0a570274b7ed24266382030c990ce7497b,bbd1bc0a570274b7ed24266382030c990ce7497b,Added 20 margin for scrollspy.
+oblador,2013-10-10 21:26:28,https://api.github.com/repos/oblador/angular-scroll/git/commits/c8ab6da96291328f1cd81276c41b69f9a4d4e853,c8ab6da96291328f1cd81276c41b69f9a4d4e853,Added scrollspy directive.
+oblador,2013-10-10 21:01:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/cbaddc16574b45d20342c801f5779e6acdca4a5a,cbaddc16574b45d20342c801f5779e6acdca4a5a,Better support for ie7 & very excplicit anchor links.
+oblador,2013-10-10 20:57:21,https://api.github.com/repos/oblador/angular-scroll/git/commits/b5c7587af751e0ab841ee091a5a6ba6868ef8509,b5c7587af751e0ab841ee091a5a6ba6868ef8509,Added ability to define offsets.
+oblador,2013-10-10 17:43:53,https://api.github.com/repos/oblador/angular-scroll/git/commits/40caa06d71ca4606abe7ca22f735798706d8bcc8,40caa06d71ca4606abe7ca22f735798706d8bcc8,Fixed bug where animated scrollTo sometimes will overshoot.
+oblador,2013-10-10 17:43:07,https://api.github.com/repos/oblador/angular-scroll/git/commits/8920c0d1068fa3cb73a28538fc2c81ea5ca1378e,8920c0d1068fa3cb73a28538fc2c81ea5ca1378e,Fixed jshinting.
+oblador,2013-10-07 10:57:15,https://api.github.com/repos/oblador/angular-scroll/git/commits/946276e1779855a982b4a186d5804fa2ed09c024,946276e1779855a982b4a186d5804fa2ed09c024,Minor performance tweak.
+oblador,2013-10-06 11:33:38,https://api.github.com/repos/oblador/angular-scroll/git/commits/28fd41eb9d7f3736b44893ed141a5853764f0013,28fd41eb9d7f3736b44893ed141a5853764f0013,Removed redundant clean step.
+oblador,2013-10-06 11:06:59,https://api.github.com/repos/oblador/angular-scroll/git/commits/f2d2bf303e56af00990c15d10ef107d271af18f0,f2d2bf303e56af00990c15d10ef107d271af18f0,Renamed listen to observe.
+oblador,2013-10-06 08:48:10,https://api.github.com/repos/oblador/angular-scroll/git/commits/ee2463025ec9d64ba5ca8e6be2baeadf9aef2ce0,ee2463025ec9d64ba5ca8e6be2baeadf9aef2ce0,Updated readme
+oblador,2013-10-06 08:40:04,https://api.github.com/repos/oblador/angular-scroll/git/commits/624bd14de865bbd86c2d066281841b02d6f7ee40,624bd14de865bbd86c2d066281841b02d6f7ee40,Populated package.json.
+oblador,2013-10-06 08:31:35,https://api.github.com/repos/oblador/angular-scroll/git/commits/6a54de21407de3fff05c0ed13c35932649882a83,6a54de21407de3fff05c0ed13c35932649882a83,Updated bower ignore list.
+oblador,2013-10-06 08:27:40,https://api.github.com/repos/oblador/angular-scroll/git/commits/43ffa342b238afb032c824ae1616b3658e222719,43ffa342b238afb032c824ae1616b3658e222719,Initial Commit.
+oblador,2013-10-06 08:23:57,https://api.github.com/repos/oblador/angular-scroll/git/commits/7d0d44e529dda8383b496810e553f4cb96ad3684,7d0d44e529dda8383b496810e553f4cb96ad3684,Initial commit

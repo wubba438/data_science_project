@@ -1,0 +1,519 @@
+web,The easiest way to create web applications with Go
+username,timestamp,url,sha,message
+hoisie,2016-08-09 14:13:53,https://api.github.com/repos/hoisie/web/git/commits/a498c022b2c0babab2bf9c0400754190b24c8c39,a498c022b2c0babab2bf9c0400754190b24c8c39,"Merge pull request #207 from hoisie/key-cleanup
+
+Move encKey and signKey from ServerConfig to Server"
+hoisie,2016-08-09 07:02:05,https://api.github.com/repos/hoisie/web/git/commits/83519dd4099705ea1b238f178aed92f4d1b3ee65,83519dd4099705ea1b238f178aed92f4d1b3ee65,"Move encKey and signKey from ServerConfig to Server
+
+Belonging to the `Server` struct seems more appropriate than
+`ServerConfig`. The `ServerConfig` is mainly for user-defined
+configuration, and the keys are generated during runtime."
+hoisie,2016-08-09 06:24:41,https://api.github.com/repos/hoisie/web/git/commits/3a2d960a9ecb874d854f5ca71cebca996ceceeeb,3a2d960a9ecb874d854f5ca71cebca996ceceeeb,"Merge pull request #206 from hoisie/cleanup-spacing
+
+Remove superfluous newlines in secure_cookie.go"
+hoisie,2016-08-09 06:21:26,https://api.github.com/repos/hoisie/web/git/commits/27fd338e8fba5200b61de4016752af34c80fd1f6,27fd338e8fba5200b61de4016752af34c80fd1f6,"Remove superfluous newlines in secure_cookie.go
+
+Whitespace only change. I forgot to add this file when amending the
+commit."
+hoisie,2016-08-09 06:19:29,https://api.github.com/repos/hoisie/web/git/commits/06d920f2c8b83a4952c3bcc3da818cc7d75c5b13,06d920f2c8b83a4952c3bcc3da818cc7d75c5b13,"Merge pull request #204 from hoisie/encrypted-cookie
+
+Switch secure cookie implementation"
+hoisie,2016-08-09 06:15:39,https://api.github.com/repos/hoisie/web/git/commits/fe499299ddfe95c4d4350654e28513a46a5928d9,fe499299ddfe95c4d4350654e28513a46a5928d9,"Switch secure cookie implementation
+
+Previously, secure cookies in web.go were only cryptographically signed.
+This prevented them from being tampered with. However, the contents of
+the cookies were still transmitted in plain text to the client.
+
+Instead of only signing the contents of the cookie, encrypt the contents
+as well. This prevents any kind of information leakage.
+
+Secure cookies are now encrypted with AES counter mode with a 32 bit
+key. The contents are still signed using HMAC. Both the encryption key
+and the signature key are generated using pbkdf2 using the CookieSecret
+config option as the password source. The ciphertext, initialization
+vector, and signature are now transmitted to the client.
+
+Although the API is the same, cookies previously stored will not be
+readable. Unfortunately there is no smooth upgrade process.
+
+An example of using secure cookies has been added as well.
+
+Fixes #160"
+hoisie,2016-08-08 05:58:18,https://api.github.com/repos/hoisie/web/git/commits/1bed69c29fd4d1b53a195df769a9bfface305a48,1bed69c29fd4d1b53a195df769a9bfface305a48,"Merge pull request #203 from hoisie/simplify-base64
+
+Simplify base64 encoding logic in SetSecureCookie"
+hoisie,2016-08-08 05:54:33,https://api.github.com/repos/hoisie/web/git/commits/955fd9413489f37867778a0ce588cce61fa132d9,955fd9413489f37867778a0ce588cce61fa132d9,"Simplify base64 encoding logic in SetSecureCookie
+
+Use `EncodeToString` instead of setting up a separate buffer.
+This code was likely written before `EncodeToString` existed."
+hoisie,2016-08-06 17:53:34,https://api.github.com/repos/hoisie/web/git/commits/ae6bbd0d4434b12935b5a882baa3c9fda69a716c,ae6bbd0d4434b12935b5a882baa3c9fda69a716c,"Merge pull request #202 from hoisie/tty-colors
+
+Clean up the logic for color logging"
+hoisie,2016-08-06 17:36:55,https://api.github.com/repos/hoisie/web/git/commits/22000d109c0416fa17f621574f7a5c57b95d06af,22000d109c0416fa17f621574f7a5c57b95d06af,"Clean up the logic for color logging
+
+Previously, the escape sequences for terminal colors were included
+directly in the log string. This made it difficult to understand what
+was being logged. Add some wrapper methods to clean up the abstraction
+of the color output logic. Also, avoid using color logging if web.go
+isn't running in a terminal (e.g the output is being piped)."
+hoisie,2016-08-05 00:58:34,https://api.github.com/repos/hoisie/web/git/commits/6f789047ba816338142718e668881ec69474c87e,6f789047ba816338142718e668881ec69474c87e,"Merge pull request #201 from hoisie/bad-request
+
+Add a helper method for returning HTTP 400"
+hoisie,2016-08-05 00:46:46,https://api.github.com/repos/hoisie/web/git/commits/c1d5d893c4f1f7bffba532ea674a11ecd74c8f9c,c1d5d893c4f1f7bffba532ea674a11ecd74c8f9c,"Add a helper method for returning HTTP 400
+
+This will cause HTTP 400 Bad Request to be returned.
+
+Resolves #180"
+hoisie,2016-08-02 04:01:30,https://api.github.com/repos/hoisie/web/git/commits/037f438a3e914c12d3aa6f29dd78b0326c63758c,037f438a3e914c12d3aa6f29dd78b0326c63758c,"Merge pull request #200 from hoisie/discard-output
+
+Discard log output during TestCustomHandlerContentType"
+hoisie,2016-08-02 03:58:07,https://api.github.com/repos/hoisie/web/git/commits/acb3d146a1d11bb9b91bccdfbeb395c0f735050f,acb3d146a1d11bb9b91bccdfbeb395c0f735050f,"Discard log output during TestCustomHandlerContentType
+
+The request log wasn't being discarded."
+hoisie,2016-08-02 03:55:11,https://api.github.com/repos/hoisie/web/git/commits/62eb47b072eaba8beedefd5cc2bfd68dcec5c4c7,62eb47b072eaba8beedefd5cc2bfd68dcec5c4c7,"Merge pull request #199 from hoisie/malformed-scgi
+
+Gracefully handle malformed SCGI requests"
+hoisie,2016-08-02 01:16:19,https://api.github.com/repos/hoisie/web/git/commits/2f9512f85248b40f3c0db8cf09567e883ff2865f,2f9512f85248b40f3c0db8cf09567e883ff2865f,"Gracefully handle malformed SCGI requests
+
+Previously, malformed SCGI requests would cause a panic when they were
+processed. Gracefully handle malformed SCGI requests. Also, add some
+additional error checking when parsing the length of the request, and
+clean up the code related to logging SCGI errors.
+
+Fixes #166"
+hoisie,2016-08-02 01:41:36,https://api.github.com/repos/hoisie/web/git/commits/5e5e9511bb2ec88729d51eecf566b753a914c24e,5e5e9511bb2ec88729d51eecf566b753a914c24e,"Merge pull request #198 from hoisie/travis-tweaks
+
+Travis tweaks"
+hoisie,2016-08-02 01:38:03,https://api.github.com/repos/hoisie/web/git/commits/3c7dcfd7f2d75673f948a2fe3dd529f99774752d,3c7dcfd7f2d75673f948a2fe3dd529f99774752d,"Specify go versions for Travis
+
+This should help maintain backwards compatibility with older go
+versions."
+hoisie,2016-08-02 01:26:31,https://api.github.com/repos/hoisie/web/git/commits/86285b6b1fbb195e233c61641cccc4873a1c03f0,86285b6b1fbb195e233c61641cccc4873a1c03f0,"Simplify gofmt check in Travis
+
+Instead of providing a custom script, the check can be replaced with a
+handy one-liner:
+
+`diff -u <(echo -n) <(gofmt -d -s .)`"
+hoisie,2016-07-31 03:57:38,https://api.github.com/repos/hoisie/web/git/commits/ffb574b09a28585d9386724471661520a0e72137,ffb574b09a28585d9386724471661520a0e72137,"Merge pull request #197 from hoisie/content-type-custom-handler
+
+Content type custom handler"
+hoisie,2016-07-31 03:52:46,https://api.github.com/repos/hoisie/web/git/commits/c21e884130c4417c9339d509d8dfc1997b5a9787,c21e884130c4417c9339d509d8dfc1997b5a9787,"Stop setting a 'Content-Type' header for custom HTTP handlers
+
+Previously, when using web.Handle, the `Content-Type` HTTP header was
+set by default to `text/html; charset=utf-8`. This does not play
+nicely well with Go's FileHandler. If a `Content-Type` header is set,
+Go's FileHandler will not overwrite it. This breaks serving static
+assets with a FileHandler.
+
+This resolves #158"
+hoisie,2016-07-31 03:49:07,https://api.github.com/repos/hoisie/web/git/commits/6e587a8844f2b8b3e521a6083d1193021a260f32,6e587a8844f2b8b3e521a6083d1193021a260f32,"Rename 'web.Handler' to 'web.Handle'
+
+Most other functions in `web` are in the imperative tense. Rename
+`Handler` to `Handle` for consistency.
+
+Perform a similar rename for the 'Server' type.
+
+Also, simplify the comment a bit."
+hoisie,2016-07-30 21:38:17,https://api.github.com/repos/hoisie/web/git/commits/454e24cfc59ef139dd8a915b401b7194f681ab28,454e24cfc59ef139dd8a915b401b7194f681ab28,"Merge pull request #196 from hoisie/secure-cookie-crash
+
+Secure cookie crash"
+hoisie,2016-07-30 21:36:07,https://api.github.com/repos/hoisie/web/git/commits/05245864d04b88eaef648e1b053bef9d9c01861f,05245864d04b88eaef648e1b053bef9d9c01861f,"Add trailing newlines to many of the 'hello world' examples
+
+This makes them more curl-friendly."
+hoisie,2016-07-30 21:29:39,https://api.github.com/repos/hoisie/web/git/commits/bbb68ed3db57539d60bf62efddf37a9d0f84a45e,bbb68ed3db57539d60bf62efddf37a9d0f84a45e,"Add check for secure cookie structure
+
+A secure cookie has three parts separated by the pipe (""|"") character.
+Before trying to parse it, ensure there are actually three parts.
+
+This is a potential fix for #163"
+hoisie,2016-07-30 19:56:16,https://api.github.com/repos/hoisie/web/git/commits/07b29866943a0a4c405ec936a9e9a2acfdff18d4,07b29866943a0a4c405ec936a9e9a2acfdff18d4,"Merge pull request #195 from hoisie/basic-auth-crash
+
+Add check for 'Authorization' header in GetBasicAuth"
+hoisie,2016-07-30 19:03:49,https://api.github.com/repos/hoisie/web/git/commits/5a1d2269626044d0e9d98d9a989b4cd0e087d858,5a1d2269626044d0e9d98d9a989b4cd0e087d858,"Add check for 'Authorization' header in GetBasicAuth
+
+Previously, if the `Authorization` header was not provided, the method
+would crash.  Add a check for the presence a header, and a test case
+as well.
+
+Resolves #174"
+hoisie,2016-07-30 19:48:25,https://api.github.com/repos/hoisie/web/git/commits/14bd2ffe0a4df6658273eb6a61548d8d6ce8f5bc,14bd2ffe0a4df6658273eb6a61548d8d6ce8f5bc,"Add gofmt check for Travis
+
+This will help ensure that code is properly formatted."
+hoisie,2016-07-30 19:35:22,https://api.github.com/repos/hoisie/web/git/commits/19e018c8945a2eaab35b458f175da76509441a23,19e018c8945a2eaab35b458f175da76509441a23,"Update build badge
+
+The CI has been moved from Drone to Travis."
+hoisie,2016-07-30 19:30:59,https://api.github.com/repos/hoisie/web/git/commits/461beeadb26c180179850f73dbfedf54d77a6db3,461beeadb26c180179850f73dbfedf54d77a6db3,"Override install script for travis
+
+Update the `install` script to a more simple `go get`. The Travis
+default `go get ./...` has problems with the examples directory."
+hoisie,2016-07-30 19:27:43,https://api.github.com/repos/hoisie/web/git/commits/f7bc145ffb32239bbdf80e27954c70324e38a292,f7bc145ffb32239bbdf80e27954c70324e38a292,"Override test script for Travis
+
+By default Travis runs `go test ./...` as the test script, which fails
+on the examples. Change it to `go test -short`."
+hoisie,2016-07-30 19:21:54,https://api.github.com/repos/hoisie/web/git/commits/8df0eaef3a5767d2690a0fec741786226b5c13b6,8df0eaef3a5767d2690a0fec741786226b5c13b6,"Add .travis.yml file
+
+Because Drone doesn't seem to be able to set pull request build
+statuses, I'd like to give Travis a try."
+hoisie,2016-07-30 18:29:31,https://api.github.com/repos/hoisie/web/git/commits/081f84cbb73559a18540ff909c7d543c6bef8005,081f84cbb73559a18540ff909c7d543c6bef8005,"Merge pull request #194 from hoisie/color-output
+
+Add the 'ColorOutput' server config option"
+hoisie,2016-07-30 18:27:23,https://api.github.com/repos/hoisie/web/git/commits/128d5dd585a2170e5128c8362e00de881caea5ef,128d5dd585a2170e5128c8362e00de881caea5ef,"Add the 'ColorOutput' server config option
+
+When this option is set to true, the log output will contain color
+escape sequences. Set it to false to disable color escape sequences.
+
+Inspired by https://github.com/xyproto/web/commit/88b1a319e4f07943b0e4d3ac032862cd1aaf15c2
+
+Resolves #153"
+hoisie,2016-07-30 18:18:49,https://api.github.com/repos/hoisie/web/git/commits/062368c4c9a20a717333a16051db3ff91a34b0b4,062368c4c9a20a717333a16051db3ff91a34b0b4,"Fix formatting of web_test.go
+
+There was an extra space before the call to http.StatusText. A check has
+been added to Drone to catch these issues."
+hoisie,2016-07-30 15:59:37,https://api.github.com/repos/hoisie/web/git/commits/acfbad68f14cee20d03f005d6f11265ffa4ca685,acfbad68f14cee20d03f005d6f11265ffa4ca685,"Use Go's http.StatusText for HTTP status messages
+
+Also remove `status.go`, which contained all the status messages copied
+from the Go http package."
+hoisie,2016-07-30 15:39:45,https://api.github.com/repos/hoisie/web/git/commits/933ddbbefbb44b04d32a8f36e3fcae3aa48ac36f,933ddbbefbb44b04d32a8f36e3fcae3aa48ac36f,"Merge pull request #193 from hoisie/tabs
+
+Use standard tab indentation for web.go source files"
+hoisie,2016-07-29 18:03:08,https://api.github.com/repos/hoisie/web/git/commits/2de8b2a91a52bbcf11f14fdd1c935d792a23268e,2de8b2a91a52bbcf11f14fdd1c935d792a23268e,"Use standard tab indentation for web.go source files
+
+This is a whitespace change only.
+
+Run all the source files through `gofmt`. Previously, all web.go files
+were indented using four spaces. Convert all the spaces into tabs.
+
+Also, remove `Makefile`, which contained the old formatting command."
+hoisie,2016-07-29 18:30:20,https://api.github.com/repos/hoisie/web/git/commits/f4313eecb599571ba11f30eb4b1a8beaed81d69b,f4313eecb599571ba11f30eb4b1a8beaed81d69b,"Merge pull request #167 from ghost/patch-1
+
+remove hex assignment and just return the value directly from fmt.Sprint..."
+hoisie,2016-07-29 18:27:40,https://api.github.com/repos/hoisie/web/git/commits/2ba703e1b81f80c8f604cf15127b94581290be78,2ba703e1b81f80c8f604cf15127b94581290be78,"Clean up initial log statements
+
+1. In RunTLS, only print the initial log statement if `Listen` is
+successful. Also, print the actual address instead of the one passed
+in.
+2. Change `l.Addr().String()` to `l.Addr()`. The Addr interface has a
+`String` method, which will be called by fmt."
+hoisie,2016-07-29 18:21:43,https://api.github.com/repos/hoisie/web/git/commits/14141749fabb990fac98d34f119557f4d464c3cb,14141749fabb990fac98d34f119557f4d464c3cb,"Merge pull request #171 from dbowring/zero-port
+
+Fix 'serving' message displaying wrong address when using 0 as port"
+hoisie,2016-07-29 18:05:48,https://api.github.com/repos/hoisie/web/git/commits/97d9f318762a398a8bf853670a3853ff0e9c1ad2,97d9f318762a398a8bf853670a3853ff0e9c1ad2,"Merge pull request #170 from danielhernik/master
+
+Added starting message to RunTLS function"
+hoisie,2016-07-29 17:40:45,https://api.github.com/repos/hoisie/web/git/commits/f0ce9727b1cd60f6a1cbc1c909f3a315a52379ad,f0ce9727b1cd60f6a1cbc1c909f3a315a52379ad,"Merge pull request #181 from mashuai/master
+
+change 4 to runtime.NumCPU"
+hoisie,2016-07-29 17:30:11,https://api.github.com/repos/hoisie/web/git/commits/9b25872c812bb12b68b6e8c47cc5987a93a97808,9b25872c812bb12b68b6e8c47cc5987a93a97808,Add drone.io build status badge
+hoisie,2016-07-29 14:07:52,https://api.github.com/repos/hoisie/web/git/commits/3ce393d4fcd3b7ed72f50bb9b627555c6f3c6b8b,3ce393d4fcd3b7ed72f50bb9b627555c6f3c6b8b,"Merge pull request #190 from NurdTurd/patch-1
+
+Change HTTP to HTTPS"
+hoisie,2016-07-28 20:33:39,https://api.github.com/repos/hoisie/web/git/commits/e5d74875471b0b313cdd77d3996ba2ae5712b82f,e5d74875471b0b313cdd77d3996ba2ae5712b82f,"Fix links in Readme.md
+
+The webgo.io domain name has expired. Change the docs link to Github
+Pages. Also, remove my home page link."
+hoisie,2016-01-28 00:05:05,https://api.github.com/repos/hoisie/web/git/commits/bb5992ad5e02a2b8bd2a69fae788781d4b1f80a9,bb5992ad5e02a2b8bd2a69fae788781d4b1f80a9,"Merge pull request #187 from michaelbeam/master
+
+replaced reference to deprecated code.google.com"
+michaelbeam,2016-01-27 23:37:42,https://api.github.com/repos/hoisie/web/git/commits/81a3e63a574c9de77045a30d73fab7c5d7095b48,81a3e63a574c9de77045a30d73fab7c5d7095b48,replaced reference to depricated code.google.com
+dbowring,2013-12-04 01:58:30,https://api.github.com/repos/hoisie/web/git/commits/5ae152733435d12b8d8bc2c68886580b9530880e,5ae152733435d12b8d8bc2c68886580b9530880e,Fix 'serving' message displaying wrong address when using 0 as port
+danielhernik,2013-11-24 20:12:03,https://api.github.com/repos/hoisie/web/git/commits/2863de8211bd9ac775790b9e39a2b88436dddb52,2863de8211bd9ac775790b9e39a2b88436dddb52,Added starting message to RunTLS function
+hoisie,2013-06-30 19:54:56,https://api.github.com/repos/hoisie/web/git/commits/5a66d0fa07a54688eba8fa506576a78a942ef243,5a66d0fa07a54688eba8fa506576a78a942ef243,"Merge pull request #151 from octplane/enhanced_log_line
+
+Log Request in a separated method"
+octplane,2013-06-01 17:56:00,https://api.github.com/repos/hoisie/web/git/commits/c9bfdd55b10eb65b72ac4471dca5b9a0b9b59593,c9bfdd55b10eb65b72ac4471dca5b9a0b9b59593,"Log Request in a separated method
+
+Log more informations in console:
+- static and dynamic requests
+- duration
+- request ip
+- Handled RemoteAddr more gracefully with non standard HttpRequest
+- Format"
+pbdeuchler,2013-06-04 17:26:37,https://api.github.com/repos/hoisie/web/git/commits/bac245b4730c2a4e1f2465b977dab28192ff5df2,bac245b4730c2a4e1f2465b977dab28192ff5df2,"Added NotAuthorized function, which gives a 403 response, and the respective tests. Also added additional logging for route/response code testing
+
+Refactored to include Unauthorized and Forbidden methods, instead of NotAuthorized
+
+Squash previous two commits, added Forbidden and Unauthorized methods"
+hoisie,2013-06-29 14:46:02,https://api.github.com/repos/hoisie/web/git/commits/0b255516b9e776d0e82e1ee59661c986f1cc388e,0b255516b9e776d0e82e1ee59661c986f1cc388e,gofmt
+hoisie,2013-06-29 13:55:31,https://api.github.com/repos/hoisie/web/git/commits/cda806d0a6b155038b10a615fab7adc7c4b6bb84,cda806d0a6b155038b10a615fab7adc7c4b6bb84,Fix example imports
+hoisie,2013-06-29 13:34:27,https://api.github.com/repos/hoisie/web/git/commits/0e56555fe45d13d4ec58725127c0b9dbaef3c900,0e56555fe45d13d4ec58725127c0b9dbaef3c900,Add benchmarks for processing GET and POST requests
+hoisie,2013-06-27 13:33:59,https://api.github.com/repos/hoisie/web/git/commits/644d4bf023e50730677ba9502d68312698de5b7f,644d4bf023e50730677ba9502d68312698de5b7f,"Merge pull request #147 from pbdeuchler/basic-auth-rebase
+
+Basic auth rebase"
+pbdeuchler,2013-06-26 17:01:23,https://api.github.com/repos/hoisie/web/git/commits/382370852226881f6caae0b9b2fd6c9954b4892c,382370852226881f6caae0b9b2fd6c9954b4892c,Added BasicAuth tests
+pbdeuchler,2013-06-07 15:45:01,https://api.github.com/repos/hoisie/web/git/commits/90a5c6a3b5833a155e4cb836be106de3f2fe6597,90a5c6a3b5833a155e4cb836be106de3f2fe6597,"Initial implementation of getBasicAuth, a *Context helper method
+
+Fixed implementation
+
+Added extra error checking"
+hoisie,2013-06-26 14:21:28,https://api.github.com/repos/hoisie/web/git/commits/5abfc73f6ed1693b3696a2531099b4f9e032159b,5abfc73f6ed1693b3696a2531099b4f9e032159b,"Merge pull request #135 from apeacox/master
+
+Refactor Makefile to decouple from filenames"
+hoisie,2013-06-16 16:30:07,https://api.github.com/repos/hoisie/web/git/commits/d3156c83ce44c88d9cc1a28266c745317dcb13c1,d3156c83ce44c88d9cc1a28266c745317dcb13c1,"Merge pull request #139 from elliotttf/master
+
+Support websockets"
+elliotttf,2013-06-01 02:50:47,https://api.github.com/repos/hoisie/web/git/commits/81cad026d8456e7a8d6f8a698b47af01a6fdd583,81cad026d8456e7a8d6f8a698b47af01a6fdd583,Refactoring patch from #58.
+andreapavoni,2013-05-22 13:54:27,https://api.github.com/repos/hoisie/web/git/commits/d57f883a1a4d9e69fe01673478d0ac5d0d4af1df,d57f883a1a4d9e69fe01673478d0ac5d0d4af1df,refactor Makefile to decouple from filenames
+hraban,2013-04-18 12:29:01,https://api.github.com/repos/hoisie/web/git/commits/673c0e6c22775b025b7559129a63a00cf152ff62,673c0e6c22775b025b7559129a63a00cf152ff62,"More flexible ContentType implementation
+
+Fixes issue #76"
+hoisie,2013-04-26 13:58:10,https://api.github.com/repos/hoisie/web/git/commits/45d52ef39b08a9e75bd45581a339f6fc40ce9553,45d52ef39b08a9e75bd45581a339f6fc40ce9553,Run `gofmt`
+hoisie,2013-04-25 21:26:19,https://api.github.com/repos/hoisie/web/git/commits/b134e0f381ff03344528485d3646206190af5a4e,b134e0f381ff03344528485d3646206190af5a4e,Add example of a streaming HTTP connection
+hoisie,2013-04-22 02:55:23,https://api.github.com/repos/hoisie/web/git/commits/3a821750e98a8bc938a9c12c804cd01fd15b429a,3a821750e98a8bc938a9c12c804cd01fd15b429a,"Add 'Profiler' option to ServerConfig
+
+This enables the http/pprof endpoints."
+hoisie,2013-04-21 07:32:42,https://api.github.com/repos/hoisie/web/git/commits/8fa83a37f22c2b39adde71cf2eec09d0a6f24f29,8fa83a37f22c2b39adde71cf2eec09d0a6f24f29,"Split out web.Server and its methods into server.go
+
+Also, add helpers.go to store the helper methods"
+hoisie,2013-04-20 18:23:14,https://api.github.com/repos/hoisie/web/git/commits/42fa074daeb10225de499c9a3fb59ddf3d6f1ca0,42fa074daeb10225de499c9a3fb59ddf3d6f1ca0,Remove some dead code in web_test.go
+hoisie,2013-04-20 18:19:57,https://api.github.com/repos/hoisie/web/git/commits/4692e21b93150c454a0731627ffb7dd655b70e10,4692e21b93150c454a0731627ffb7dd655b70e10,Add test for SetHeader
+hoisie,2013-04-20 17:51:22,https://api.github.com/repos/hoisie/web/git/commits/a6926a85f1557a4def5c7db1bda202b2a6a83d3b,a6926a85f1557a4def5c7db1bda202b2a6a83d3b,"Updates to SCGI
+
+* use a bufio.Reader when reading the request
+* avoid reading the entire request body
+* add test for reading method
+* refactor buildTestScgiRequest and make sure it builds valid SCGI requests
+  according to the spec"
+hoisie,2013-04-16 07:02:14,https://api.github.com/repos/hoisie/web/git/commits/7166e9bc4fe9e9d3dac122386223514cd1b10f5c,7166e9bc4fe9e9d3dac122386223514cd1b10f5c,"Remove reference to 'weekly' go branch
+
+Go 1 does not do weekly releases anymore."
+hoisie,2013-04-16 06:22:40,https://api.github.com/repos/hoisie/web/git/commits/3f6ad2fe737f9b29a78daa21fa220d44d841dea8,3f6ad2fe737f9b29a78daa21fa220d44d841dea8,"Fix serving static files with `go run`
+
+The sequence is now:
+1) Look in Config.StaticDir
+2) Look in the 'static' directory in the parent directory of the executable.
+3) Look in 'static' directory in the current working directory
+
+`go run` places the executable in a temp directory, so the only option is
+to also look in the current working directory."
+hoisie,2013-04-14 23:59:41,https://api.github.com/repos/hoisie/web/git/commits/0b82c6bb2a9b4c716a9a653b0f16e87c3449c590,0b82c6bb2a9b4c716a9a653b0f16e87c3449c590,"Use native net/http/fcgi package to serve FastCGI requests
+
+This package didn't exist when I first wrote fcgi.go, and it
+doesn't make sense to have a separate implementation."
+johnpmayer,2012-04-21 21:55:38,https://api.github.com/repos/hoisie/web/git/commits/4b4df918850ec6043ccd712342d8d10ca7ce91c3,4b4df918850ec6043ccd712342d8d10ca7ce91c3,Removed ResponseWriter interface and responseWriter struct
+hoisie,2013-04-13 20:24:44,https://api.github.com/repos/hoisie/web/git/commits/1148b5c11ed33b1cf0de86912da3cdc497461bb7,1148b5c11ed33b1cf0de86912da3cdc497461bb7,"SetCookie now takes an http.Cookie
+
+This provies more flexibility when setting cookie properties.
+There's a new helper method, NewCookie, that can construct
+http.Cookie objects from common values.
+
+Also include a cookie example"
+mattn,2013-04-13 17:26:21,https://api.github.com/repos/hoisie/web/git/commits/646b194f6ec3bd6821abf7c25d6d372d38326a3a,646b194f6ec3bd6821abf7c25d6d372d38326a3a,"Add web.Process and web.Server.Process
+
+These invoke the routing system directly. They can be used for testing,
+as well as processing HTTP requests that are constructed from other
+sources."
+hoisie,2013-04-12 15:52:14,https://api.github.com/repos/hoisie/web/git/commits/0e30b3f84cc493c262a765a0ac14d0a72b610273,0e30b3f84cc493c262a765a0ac14d0a72b610273,Added web.Slug helper method for URL slugs
+hoisie,2013-04-12 15:09:35,https://api.github.com/repos/hoisie/web/git/commits/49c24c8437c3974f0815eac627ef63db92c620af,49c24c8437c3974f0815eac627ef63db92c620af,"Remove Twitter link from Readme
+
+I'm not particularly active on Twitter, so 
+it doesn't make sense to keep a link in
+the Readme."
+hoisie,2013-04-12 06:20:45,https://api.github.com/repos/hoisie/web/git/commits/7948ed1b01b066d7d690c48b6ddc88d978d77a1f,7948ed1b01b066d7d690c48b6ddc88d978d77a1f,Fix multipart.go example
+hoisie,2013-04-12 05:11:12,https://api.github.com/repos/hoisie/web/git/commits/12889b4d961d4207f42616bc568390b64f15c976,12889b4d961d4207f42616bc568390b64f15c976,"Add web.Match
+
+This can match arbitrary HTTP methods (i.e OPTIONS or PATCH)"
+hoisie,2013-04-11 13:55:10,https://api.github.com/repos/hoisie/web/git/commits/b95054075a6a199964ba8511dc12e888bec3c1bf,b95054075a6a199964ba8511dc12e888bec3c1bf,Update docs link in Readme
+hoisie,2013-04-10 16:06:40,https://api.github.com/repos/hoisie/web/git/commits/fe50ad83a84a9ea9849384693064f4a67280072f,fe50ad83a84a9ea9849384693064f4a67280072f,Add link to new docs site
+hoisie,2013-04-10 15:43:55,https://api.github.com/repos/hoisie/web/git/commits/49fb59bde73938a124c200ed7dbd06cabe21112d,49fb59bde73938a124c200ed7dbd06cabe21112d,Added Jekyll output directory to gitignore
+hoisie,2013-04-10 15:42:56,https://api.github.com/repos/hoisie/web/git/commits/1a740cda879c832177fa756b6447d047ac8bb54c,1a740cda879c832177fa756b6447d047ac8bb54c,"Added more method docs.
+
+This is in preparation for the new godoc-driven
+docs page."
+hoisie,2013-04-10 05:39:48,https://api.github.com/repos/hoisie/web/git/commits/25edc217a468cea55312b4a4a72390861733cf4f,25edc217a468cea55312b4a4a72390861733cf4f,"Merge pull request #75 from ghost/master
+
+Add missing </form> to params example"
+hoisie,2013-04-09 15:50:14,https://api.github.com/repos/hoisie/web/git/commits/72710bfa5cb18f6a6eb8922f3eb5e80ca811827b,72710bfa5cb18f6a6eb8922f3eb5e80ca811827b,"Use http.Cookie library for Set-Cookie
+
+This will fix the arc challange test."
+hoisie,2013-04-08 17:05:39,https://api.github.com/repos/hoisie/web/git/commits/ba8d89252ebe88cabb05448fc1004ce6d546c072,ba8d89252ebe88cabb05448fc1004ce6d546c072,"Update Makefile
+
+- Remove methodhandler.go reference until it is fixed
+- Add examples/tls.go"
+hoisie,2013-04-08 16:47:28,https://api.github.com/repos/hoisie/web/git/commits/5b2377a916667ecb229641848e5e2981e11dc8ce,5b2377a916667ecb229641848e5e2981e11dc8ce,"RunTLS now takes a *tls.Config, and add a TLS example"
+hoisie,2013-04-08 05:43:31,https://api.github.com/repos/hoisie/web/git/commits/91ad5f1922c3ce4217424f6c1550703e936e294f,91ad5f1922c3ce4217424f6c1550703e936e294f,Minor updates to Readme
+hoisie,2013-04-08 05:38:44,https://api.github.com/repos/hoisie/web/git/commits/bfaf3541b611bcf94a6cdba74651de1d62138b31,bfaf3541b611bcf94a6cdba74651de1d62138b31,Fix examples
+hoisie,2013-04-07 19:49:05,https://api.github.com/repos/hoisie/web/git/commits/c22a2bc896ea98aed6ec257b39803747e5cb7165,c22a2bc896ea98aed6ec257b39803747e5cb7165,"Merge pull request #119 from stevenleeg/patch-1
+
+Adds syntax highlighting to readme"
+hoisie,2013-04-07 19:44:18,https://api.github.com/repos/hoisie/web/git/commits/92c10c4d3a4dd610555ebc5d20cc790a054636e9,92c10c4d3a4dd610555ebc5d20cc790a054636e9,"Remove links to getwebgo.com.
+
+The site is dead, and the docs will be moving to Github pages soon."
+hoisie,2012-04-09 21:18:30,https://api.github.com/repos/hoisie/web/git/commits/5482cc70ca154a19264cffb6f8680fb97aca12c5,5482cc70ca154a19264cffb6f8680fb97aca12c5,Update Readme.md
+hoisie,2012-03-23 20:09:04,https://api.github.com/repos/hoisie/web/git/commits/a6d87d9a0916232447bfbd90fcdef78bc451cfcc,a6d87d9a0916232447bfbd90fcdef78bc451cfcc,"Modernize web.go to make it more compatible with the current http package:
+
+- Remove request.go, servefile.go, and cookie.go, which were duplicating a lot of functionality from Go's HTTP versions. I created them to fix bugs in Go's http libraries, which have since been fixed
+- Remove web.Request, and use http.Request instead. Most of the custom functionality I needed has been added to http.Request
+- Move Params to web.Context
+- Create a wrapper for http.ResponseWriter that allows connections to be closed
+- Use http.ServeFile and cgi.RequestFromMap (better performance and reliability)
+- Lots of small fixes"
+hoisie,2012-03-15 19:56:42,https://api.github.com/repos/hoisie/web/git/commits/2f96b10833e967a7b4334d45e6defaf34fa3f170,2f96b10833e967a7b4334d45e6defaf34fa3f170,Update fcgi ReadFull issue for -weekly
+hoisie,2012-03-15 19:46:18,https://api.github.com/repos/hoisie/web/git/commits/f16f5d2e15bb7aacfa8779c0a15dbc2214201309,f16f5d2e15bb7aacfa8779c0a15dbc2214201309,"From Andrew Pritchard:
+use io.ReadFull in fcgi implementation
+in some cases, particularly UNIX domain sockets, pipes, or other things
+with 4k (page-sized) buffers, FCGI requests longer than that buffer size
+are truncated by io.Reader.Read returning fewer bytes than the full
+slice size.  Fix this by using io.ReadFull"
+hoisie,2012-03-15 19:30:00,https://api.github.com/repos/hoisie/web/git/commits/61b0bff9352ad3acbcf8005c3bfbb57a54e223b9,61b0bff9352ad3acbcf8005c3bfbb57a54e223b9,"Merge branch 'weekly' of github.com:hoisie/web.go into weekly
+
+Conflicts:
+	Readme.md"
+hoisie,2012-03-15 19:28:46,https://api.github.com/repos/hoisie/web/git/commits/485f31dddb5d8d307cb525adb5f2d28e345e8740,485f31dddb5d8d307cb525adb5f2d28e345e8740,Update for weekly.2012-03-13
+hoisie,2011-10-30 20:06:56,https://api.github.com/repos/hoisie/web/git/commits/05b6a777f017df37c22532121732a5f27bf162ac,05b6a777f017df37c22532121732a5f27bf162ac,Update for weekly 2011-09-01
+hoisie,2012-03-15 17:08:11,https://api.github.com/repos/hoisie/web/git/commits/0d05faa788aa09aafbcd665c5ef5dfd157fee9c9,0d05faa788aa09aafbcd665c5ef5dfd157fee9c9,Update Readme.md
+hoisie,2012-03-14 19:51:05,https://api.github.com/repos/hoisie/web/git/commits/e551e3715aa5dd5a5385df2387d7ae365d82f28f,e551e3715aa5dd5a5385df2387d7ae365d82f28f,"Updates:
+- logging: print params if they're present, and add some color
+- Don't include Content-Type when returning 304"
+hoisie,2012-03-07 19:40:34,https://api.github.com/repos/hoisie/web/git/commits/4166509a84087acf7de1f9d1c8aba76d722a35db,4166509a84087acf7de1f9d1c8aba76d722a35db,Support []byte return value from handler
+hoisie,2012-01-23 18:00:21,https://api.github.com/repos/hoisie/web/git/commits/013d0f919fc236eb3aadc47a847f06202fd5902a,013d0f919fc236eb3aadc47a847f06202fd5902a,"Remove UnmarshalParams, it was just a temporary fix for accepting json data"
+hoisie,2012-01-17 19:16:19,https://api.github.com/repos/hoisie/web/git/commits/66cf9c5c891b3fbe31aaebc8dc5d0665d8c7fed6,66cf9c5c891b3fbe31aaebc8dc5d0665d8c7fed6,"Change import statements to"" github.com/hoisie/web.go"""
+hoisie,2011-10-30 20:06:56,https://api.github.com/repos/hoisie/web/git/commits/fac53a2fbc37ccbd97542c0446171d68ea48eb2a,fac53a2fbc37ccbd97542c0446171d68ea48eb2a,Update for weekly 2011-09-01
+hoisie,2011-10-24 17:12:48,https://api.github.com/repos/hoisie/web/git/commits/f197debd938af75883b0b1e919fb1b56e6baa50e,f197debd938af75883b0b1e919fb1b56e6baa50e,Fix for release.r60.3
+hoisie,2011-10-24 17:08:04,https://api.github.com/repos/hoisie/web/git/commits/d811c30d50d122170611c3bc57e8895a130e8055,d811c30d50d122170611c3bc57e8895a130e8055,"* Remove dependency on container/vector
+* Fix multipart POST requests"
+hoisie,2011-09-15 16:09:41,https://api.github.com/repos/hoisie/web/git/commits/2f9d30b8a1e3eac32d1d58678a24476db10d4bd2,2f9d30b8a1e3eac32d1d58678a24476db10d4bd2,Update .gitignore
+hoisie,2011-09-15 16:09:04,https://api.github.com/repos/hoisie/web/git/commits/36c4ac8a5048305dc3eac5589b392a41b616351c,36c4ac8a5048305dc3eac5589b392a41b616351c,Update for release 60
+kpumuk,2011-08-03 18:18:21,https://api.github.com/repos/hoisie/web/git/commits/111463f1adef3302a37f820c8e8fc13b8935fd65,111463f1adef3302a37f820c8e8fc13b8935fd65,Updates for Go r.59
+hoisie,2011-07-22 01:14:48,https://api.github.com/repos/hoisie/web/git/commits/9e4be1faf59d5422902f60a67d017b784c6381d7,9e4be1faf59d5422902f60a67d017b784c6381d7,"Merge https://github.com/fiber/web.go
+
+Conflicts:
+	cookie.go
+	web.go
+	web_test.go"
+fiber,2011-07-09 08:53:24,https://api.github.com/repos/hoisie/web/git/commits/3b40eac423176a0ff2fcb54b652fd10560d5eacb,3b40eac423176a0ff2fcb54b652fd10560d5eacb,update for gc weekly.2011-07-07
+fiber,2011-07-05 13:21:09,https://api.github.com/repos/hoisie/web/git/commits/79dc98d08d984e20144de615a0858aedbf4c24f4,79dc98d08d984e20144de615a0858aedbf4c24f4,update for gc weekly.2011-06-23
+fiber,2011-05-26 12:32:43,https://api.github.com/repos/hoisie/web/git/commits/32ed88126edf4d60e30d56c134a3d5caa55ae332,32ed88126edf4d60e30d56c134a3d5caa55ae332,update for gc weekly.2011-05-22
+hoisie,2011-05-09 04:16:07,https://api.github.com/repos/hoisie/web/git/commits/56fb5f6660937a2ee316da005f10b34089d058f0,56fb5f6660937a2ee316da005f10b34089d058f0,"Merge pull request #65 from gtalent/master
+
+Updated some function descriptions"
+gtalent,2011-05-09 02:10:25,https://api.github.com/repos/hoisie/web/git/commits/e775851dfe0384ca7afb3933b00d21f7e49da637,e775851dfe0384ca7afb3933b00d21f7e49da637,"Fixed the output requesting a secure cookie secret to fit the new API for doing that.
+Fixed some comments for some nearby methods."
+hoisie,2011-05-03 19:12:19,https://api.github.com/repos/hoisie/web/git/commits/f128494cd786ceb4514ed7987aea30e449b06d82,f128494cd786ceb4514ed7987aea30e449b06d82,Merge branch 'master' of github.com:hoisie/web.go
+hoisie,2011-05-03 19:12:03,https://api.github.com/repos/hoisie/web/git/commits/38eadede92ad483f0039b893151176d71a41c30e,38eadede92ad483f0039b893151176d71a41c30e,Add support for http/pprof
+hoisie,2011-04-28 23:37:39,https://api.github.com/repos/hoisie/web/git/commits/edcff5bc2729beeebc812092a488af58cc51b4c7,edcff5bc2729beeebc812092a488af58cc51b4c7,Edited Readme.md via GitHub
+hoisie,2011-04-28 23:34:50,https://api.github.com/repos/hoisie/web/git/commits/400aa2d8ef72cb426c224bf7f8dfbcd529e703b4,400aa2d8ef72cb426c224bf7f8dfbcd529e703b4,Fix formatting for web_test.go
+hoisie,2011-04-28 23:20:38,https://api.github.com/repos/hoisie/web/git/commits/ea4be703fadabda0765f1366cb35478e453a8b7b,ea4be703fadabda0765f1366cb35478e453a8b7b,Fix for weekly.2011-04-27
+hoisie,2011-04-28 23:26:29,https://api.github.com/repos/hoisie/web/git/commits/d56ba649fdd6cff50d53104a786a5c5f496373af,d56ba649fdd6cff50d53104a786a5c5f496373af,Edited Readme.md via GitHub
+fiber,2011-04-14 08:27:53,https://api.github.com/repos/hoisie/web/git/commits/9a6ba18a9fc544186a6cedf92fb14cf1d9d9410c,9a6ba18a9fc544186a6cedf92fb14cf1d9d9410c,make format
+aparent,2011-04-12 21:55:07,https://api.github.com/repos/hoisie/web/git/commits/0a6394a2f81dd9ac6e1433bce21b85449822dbd0,0a6394a2f81dd9ac6e1433bce21b85449822dbd0,Fixed to work with the newest version of reflect
+fiber,2011-04-05 20:35:11,https://api.github.com/repos/hoisie/web/git/commits/b2888a358a010756f94c664d2c2968a87c12906a,b2888a358a010756f94c664d2c2968a87c12906a,merging fixes for weekly gc.2011-04-04
+fiber,2011-04-05 20:33:00,https://api.github.com/repos/hoisie/web/git/commits/05550eeb000250bdd06da0c80715e435fe0882eb,05550eeb000250bdd06da0c80715e435fe0882eb,fixes
+fiber,2011-04-05 20:31:22,https://api.github.com/repos/hoisie/web/git/commits/0a633f5c767e0eb369b289a81616ff071efaf60d,0a633f5c767e0eb369b289a81616ff071efaf60d,Merge branch 'master' of github.com:fiber/web.go
+mattn,2011-04-05 07:48:15,https://api.github.com/repos/hoisie/web/git/commits/843f22e4702309429b3958116ee93d9714dbc7cb,843f22e4702309429b3958116ee93d9714dbc7cb,Fix for lastest.
+hoisie,2011-03-11 20:22:10,https://api.github.com/repos/hoisie/web/git/commits/c1907978aa8e014a04bab9ff5d33aad170a932e5,c1907978aa8e014a04bab9ff5d33aad170a932e5,Fix for release.r56
+gnanderson,2011-03-09 13:05:51,https://api.github.com/repos/hoisie/web/git/commits/22e80d222ec3801ea84626dec69f36f5a88bda4e,22e80d222ec3801ea84626dec69f36f5a88bda4e,"- Fixes for 20110307 release
+- Use net/textproto/MIMEHeader in request.go
+- Type assert http.ResponseWriter into hijacker to access Hijack()"
+fiber,2011-03-09 09:51:36,https://api.github.com/repos/hoisie/web/git/commits/5228c5fae6c4b7176d722705bcad0ff8b7b159d5,5228c5fae6c4b7176d722705bcad0ff8b7b159d5,"MIMEHeader values are []string, not string"
+fiber,2011-03-09 09:51:16,https://api.github.com/repos/hoisie/web/git/commits/6d7f1a063931c18b6bb2a8c9db79f9520435408b,6d7f1a063931c18b6bb2a8c9db79f9520435408b,gc release.2011-03-07.1 changes: http.Hijacker interface
+fiber,2011-03-09 09:44:40,https://api.github.com/repos/hoisie/web/git/commits/86ddc1667443f28a77677b72ed26310c8b1e3b10,86ddc1667443f28a77677b72ed26310c8b1e3b10,"MIMEHeader values are []string, not string"
+fiber,2011-03-09 09:37:15,https://api.github.com/repos/hoisie/web/git/commits/57ee0c9b2c4a53223352bfd14d5412a34001d8d0,57ee0c9b2c4a53223352bfd14d5412a34001d8d0,release.2011-03-07 fix: Hijacker interface
+fiber,2011-03-09 09:16:15,https://api.github.com/repos/hoisie/web/git/commits/e6700df1a5ef2c3065b9d2f063724f4c301f348b,e6700df1a5ef2c3065b9d2f063724f4c301f348b,Merge branch 'master' of https://github.com/hoisie/web.go
+gnanderson,2011-03-01 14:29:23,https://api.github.com/repos/hoisie/web/git/commits/8979b7a253308fe6c7a21f495a4d55a5799b7268,8979b7a253308fe6c7a21f495a4d55a5799b7268,Merge branch 'master' of https://github.com/hoisie/web.go
+hoisie,2011-03-01 02:01:17,https://api.github.com/repos/hoisie/web/git/commits/7bea18c37cbd613ff2fd5db4bf9aa386af66bf82,7bea18c37cbd613ff2fd5db4bf9aa386af66bf82,Fix cgi headers
+fiber,2011-02-28 09:57:54,https://api.github.com/repos/hoisie/web/git/commits/19c5d20d567039ee345790739854c70dffcbffad,19c5d20d567039ee345790739854c70dffcbffad,Merge https://github.com/mattn/web.go into release.2011-02-25
+fiber,2011-02-28 09:54:20,https://api.github.com/repos/hoisie/web/git/commits/f5b48032ad61b5762f1f7851199d4f9d7dabb08c,f5b48032ad61b5762f1f7851199d4f9d7dabb08c,Merge branch 'master' of github.com:fiber/web.go
+mattn,2011-02-23 12:06:26,https://api.github.com/repos/hoisie/web/git/commits/767094a774a817fed4695b9ef7486e1a03ee372d,767094a774a817fed4695b9ef7486e1a03ee372d,fix build: depend on http://codereview.appspot.com/4185053
+hoisie,2011-02-03 08:26:01,https://api.github.com/repos/hoisie/web/git/commits/a462c8248d711a09939831f37679e059a38c0f8a,a462c8248d711a09939831f37679e059a38c0f8a,Change log.Exit to log.Fatal
+hoisie,2011-02-03 08:26:01,https://api.github.com/repos/hoisie/web/git/commits/f24bf504beeb4b90cc435323b85b55be1fdab32c,f24bf504beeb4b90cc435323b85b55be1fdab32c,Change log.Exit to log.Fatal
+fiber,2011-02-02 20:47:53,https://api.github.com/repos/hoisie/web/git/commits/ecea3a61c6cdf15a5e67eece6a795147b407298b,ecea3a61c6cdf15a5e67eece6a795147b407298b,update for gc release.2011-02-01
+hoisie,2011-01-25 07:26:24,https://api.github.com/repos/hoisie/web/git/commits/3fa1ccd0a66fec99c5decba55efebf35159cefe7,3fa1ccd0a66fec99c5decba55efebf35159cefe7,Remove potentially incorrect debug statement
+hoisie,2011-01-25 04:02:13,https://api.github.com/repos/hoisie/web/git/commits/ca99f934ccba1d001048bc3a2d71576a9e5079b9,ca99f934ccba1d001048bc3a2d71576a9e5079b9,Web request: combine url params and body params on POST request
+gnanderson,2011-02-02 15:39:07,https://api.github.com/repos/hoisie/web/git/commits/032494d5af69b4a53ddbed82295d6135cc19af18,032494d5af69b4a53ddbed82295d6135cc19af18,upate log.exit() to latest spec log.Fatal()
+hoisie,2011-01-25 07:26:24,https://api.github.com/repos/hoisie/web/git/commits/52f1da938b3bf94a57a3ea850cc99863f7427a93,52f1da938b3bf94a57a3ea850cc99863f7427a93,Remove potentially incorrect debug statement
+hoisie,2011-01-25 04:02:13,https://api.github.com/repos/hoisie/web/git/commits/53009aeb4552852a2bdc0840fc084a7ca0269918,53009aeb4552852a2bdc0840fc084a7ca0269918,Web request: combine url params and body params on POST request
+axel-b,2011-01-19 11:04:54,https://api.github.com/repos/hoisie/web/git/commits/7f75d2cfb1fef35e3d2db3c046b55becee7633ad,7f75d2cfb1fef35e3d2db3c046b55becee7633ad,made filename of uploaded file accessable again
+hoisie,2010-12-30 01:01:57,https://api.github.com/repos/hoisie/web/git/commits/e6bcb7c8347ca2f6599bcc2be135454019915020,e6bcb7c8347ca2f6599bcc2be135454019915020,Remove print statement
+hoisie,2010-12-30 00:32:04,https://api.github.com/repos/hoisie/web/git/commits/c11eef08b5dc54d42f9956f53525d9187f9ebaad,c11eef08b5dc54d42f9956f53525d9187f9ebaad,Add server.Close() method which stops the server. In theory this works but in practice it's a little buggy: see issue 1375
+hoisie,2010-12-29 19:33:10,https://api.github.com/repos/hoisie/web/git/commits/f1696a3f372e5e817b909fe309ab520e956b9971,f1696a3f372e5e817b909fe309ab520e956b9971,Initial support for method handlers with example
+hoisie,2010-12-20 10:12:16,https://api.github.com/repos/hoisie/web/git/commits/42e144ac2074aec82cf8aaa75247b0d1e02c548b,42e144ac2074aec82cf8aaa75247b0d1e02c548b,Add basic support for JSON form encoding
+hoisie,2010-12-13 22:05:14,https://api.github.com/repos/hoisie/web/git/commits/9a76ea58f2918a4ddf3330d345d56e63a27eafe8,9a76ea58f2918a4ddf3330d345d56e63a27eafe8,"Added ctx.ContentType(ext), which sets the Content-Type header to the mime type corresponding to the extension"
+hoisie,2010-12-06 05:53:15,https://api.github.com/repos/hoisie/web/git/commits/fce5443e681e824affc8c6a8416e8ea94df01073,fce5443e681e824affc8c6a8416e8ea94df01073,Merge branch 'master' of github.com:hoisie/web.go
+hoisie,2010-12-06 05:52:54,https://api.github.com/repos/hoisie/web/git/commits/f251c3bb8afe928f74cd0a70d27e10d0690233ba,f251c3bb8afe928f74cd0a70d27e10d0690233ba,Fix bool parsing in ctx.UnmarshalParams
+hoisie,2010-11-21 21:18:41,https://api.github.com/repos/hoisie/web/git/commits/2fa211ee95ec375b65c95b4384fdd616e0631a61,2fa211ee95ec375b65c95b4384fdd616e0631a61,Close the connection after a fastcgi request. This lets web.go work with the nginx fastcgi module.
+hoisie,2010-11-03 07:08:12,https://api.github.com/repos/hoisie/web/git/commits/237b79a515610e7ecaf0161d494bf4a12c522100,237b79a515610e7ecaf0161d494bf4a12c522100,"scgi: add header variables with the prefix HTTP_, and make sure to write response headers when there is no body"
+hoisie,2010-10-28 20:46:23,https://api.github.com/repos/hoisie/web/git/commits/d187fc1d89c9a8648ee0d50e4cb54c7813f0895a,d187fc1d89c9a8648ee0d50e4cb54c7813f0895a,"Run gofmt -s, add it to the Makefile"
+hoisie,2010-10-25 23:18:00,https://api.github.com/repos/hoisie/web/git/commits/1a1255321564688196deac533fa40a0e49790cdf,1a1255321564688196deac533fa40a0e49790cdf,"Static files: support If-Modified-Since and If-None-Match. Also, use UTC dates for everything."
+hoisie,2010-10-25 21:02:30,https://api.github.com/repos/hoisie/web/git/commits/262ba5f9aa602a8e26e9fcc91f319fa190dde375,262ba5f9aa602a8e26e9fcc91f319fa190dde375,Fixed null panic in multiserver example. Thanks to lonnc.
+hoisie,2010-10-25 20:51:11,https://api.github.com/repos/hoisie/web/git/commits/fac3eab3ac9a619be55258831414547b2dac2014,fac3eab3ac9a619be55258831414547b2dac2014,Updated readme
+ality,2010-10-23 00:17:44,https://api.github.com/repos/hoisie/web/git/commits/3af13f8bb5e5125f297fbe888c797818ecb2d004,3af13f8bb5e5125f297fbe888c797818ecb2d004,"Fixes to serveFile:
+    · include DEL in the test for unprintable characters
+    · call Stat() on the already-opened file (to save a
+      potential walk in the kernel)
+    · reduce the number of conversions from int to string"
+hoisie,2010-10-20 07:14:43,https://api.github.com/repos/hoisie/web/git/commits/7485d96c4a7849089c260b4209152766c644eb45,7485d96c4a7849089c260b4209152766c644eb45,"ctx.UnmarshalParams: don't run strconv.Atob to check for true/false, just check for existence"
+hoisie,2010-10-19 18:44:06,https://api.github.com/repos/hoisie/web/git/commits/c0023165e808181c8cb6e7c9131d49a8cd22df94,c0023165e808181c8cb6e7c9131d49a8cd22df94,Hide log output during test
+invalid-email-address,2010-10-17 22:44:01,https://api.github.com/repos/hoisie/web/git/commits/b673215de2ac365f1278ded8c94bcb4d27bb5f83,b673215de2ac365f1278ded8c94bcb4d27bb5f83,Add support for unix sockets in fcgi and scgi
+hoisie,2010-10-15 17:24:52,https://api.github.com/repos/hoisie/web/git/commits/856929c4f1b6016692367c1d60265441f6b479a3,856929c4f1b6016692367c1d60265441f6b479a3,Added params.go test file
+hoisie,2010-10-15 16:24:26,https://api.github.com/repos/hoisie/web/git/commits/f61b666b871d0c2c9f2cff1b20ff639d18891cb7,f61b666b871d0c2c9f2cff1b20ff639d18891cb7,Added request.UnmarshalParams. This makes copying request params into a struct or map type a lot easier.
+hoisie,2010-10-14 15:36:24,https://api.github.com/repos/hoisie/web/git/commits/95753d17a94aec39bd0c36c403f33a21195bddd1,95753d17a94aec39bd0c36c403f33a21195bddd1,Change type of web.ctx.Params to map[string]string. web.ctx.FullParams is still a map[string][]string. This makes parsing requests more straight forward.
+hoisie,2010-10-13 01:35:33,https://api.github.com/repos/hoisie/web/git/commits/aa7a9ecfec5645d372fde3f46b4045c993e78bec,aa7a9ecfec5645d372fde3f46b4045c993e78bec,Add warnings in readme
+hoisie,2010-10-12 19:47:11,https://api.github.com/repos/hoisie/web/git/commits/fb48f4b30529c641979f74e546bcd9e309a8d579,fb48f4b30529c641979f74e546bcd9e309a8d579,Update readme to include section about $GOROOT.
+hoisie,2010-10-12 00:07:42,https://api.github.com/repos/hoisie/web/git/commits/aee960041d22579fd54ee49e174ad0f4d7d62bea,aee960041d22579fd54ee49e174ad0f4d7d62bea,Small refactoring in request.go
+hoisie,2010-10-10 03:54:59,https://api.github.com/repos/hoisie/web/git/commits/5593bacbdbe40203a99f9e8ef5213f4086b1291d,5593bacbdbe40203a99f9e8ef5213f4086b1291d,"Add web.Config and the ServerConfig type. This changes the way config is stored. Instead of having setters you can just use web.Config to store config variables. For instance, web.SetStaticDir is now web.Config.StaticDir."
+hoisie,2010-10-09 18:24:14,https://api.github.com/repos/hoisie/web/git/commits/d0cbb808649997fac056d47735366e4a7fb2f073,d0cbb808649997fac056d47735366e4a7fb2f073,Added multiserver example
+hoisie,2010-10-09 18:23:50,https://api.github.com/repos/hoisie/web/git/commits/b4ead9fbc2fc30e09fe478559ba2977faf3a45be,b4ead9fbc2fc30e09fe478559ba2977faf3a45be,"Add support for running multiple servers with a new type, web.Server"
+hoisie,2010-10-08 17:11:21,https://api.github.com/repos/hoisie/web/git/commits/9fe8ab0d1a52b2dd6d44ae906809cad586d98411,9fe8ab0d1a52b2dd6d44ae906809cad586d98411,Add RemoteAddr and RemotePort to web.Request
+hoisie,2010-10-07 18:51:40,https://api.github.com/repos/hoisie/web/git/commits/0554b31fb44d6a5d62bf89ba211558ec8d1dbd40,0554b31fb44d6a5d62bf89ba211558ec8d1dbd40,"Use mime/multipart instead of hacky system
+Add multipart example"
+hoisie,2010-09-30 14:54:36,https://api.github.com/repos/hoisie/web/git/commits/b4dbaf9a5c5ba64607ca902f7dc87cb6fd3a6ca4,b4dbaf9a5c5ba64607ca902f7dc87cb6fd3a6ca4,Updates for release 2010-09-29
+hoisie,2010-09-16 17:58:40,https://api.github.com/repos/hoisie/web/git/commits/b74f121ba2ba34f87f8eeaab94dce8aa16dbaac7,b74f121ba2ba34f87f8eeaab94dce8aa16dbaac7,Update to work with release.2010-09-15/release
+hoisie,2010-08-18 15:41:18,https://api.github.com/repos/hoisie/web/git/commits/d2c7b7badbde74014ded02591e48fb01d4d432cb,d2c7b7badbde74014ded02591e48fb01d4d432cb,Log request parameter
+cthom06,2010-08-11 20:53:41,https://api.github.com/repos/hoisie/web/git/commits/b1f7241f22d48b86875322a3b7dac4ec97551324,b1f7241f22d48b86875322a3b7dac4ec97551324,"Look for index.html, index.htm on requests for a subdirectory of the static directory"
+ericvh,2010-07-13 21:00:11,https://api.github.com/repos/hoisie/web/git/commits/f782b6738b3fb3e5650a65de8835341cb6037921,f782b6738b3fb3e5650a65de8835341cb6037921,"build: fix to adapt to vector API change
+
+on tip of go and tip of web.go:
+
+/home/ericvh/bin/6g -o go.6 fcgi.go request.go scgi.go servefile.go status.go web.go request.go:129: vec.Data undefined (type vector.StringVector has no field Data)
+make: *** [go.6] Error 1
+
+Signed-off-by: Eric Van Hensbergen <ericvh@gmail.com>"
+hoisie,2010-05-21 23:00:14,https://api.github.com/repos/hoisie/web/git/commits/94803c2695dc10644e2768082d5fc369c7a6376a,94803c2695dc10644e2768082d5fc369c7a6376a,Fix format of Date header
+rafalsobota,2010-04-08 17:12:49,https://api.github.com/repos/hoisie/web/git/commits/ef77177f3b84b34c10c96a8ae4e58f10a1d70e21,ef77177f3b84b34c10c96a8ae4e58f10a1d70e21,trying to serve index.html on / path
+hoisie,2010-01-18 03:36:19,https://api.github.com/repos/hoisie/web/git/commits/450827e80115ecef60cca452dd914b5c400a0396,450827e80115ecef60cca452dd914b5c400a0396,Add proper handling for HEAD requests
+hoisie,2010-01-15 07:35:00,https://api.github.com/repos/hoisie/web/git/commits/d3143d37c9b2d1b4896d034b9836d88f15b6916b,d3143d37c9b2d1b4896d034b9836d88f15b6916b,"Fixed issue parsing invalid cookies
+The logger prints the request method"
+hoisie,2010-01-06 09:07:21,https://api.github.com/repos/hoisie/web/git/commits/eb2bbf59644bbcb5fa20a3181ef4bb9eb5b25dd9,eb2bbf59644bbcb5fa20a3181ef4bb9eb5b25dd9,removed print statement
+hoisie,2010-01-06 09:00:39,https://api.github.com/repos/hoisie/web/git/commits/d5de75a89d99603c7e8ec5af2d27afad4f0fea48,d5de75a89d99603c7e8ec5af2d27afad4f0fea48,Added ctx.NotFound
+hoisie,2010-01-06 08:52:45,https://api.github.com/repos/hoisie/web/git/commits/dfd1f2b370327fdc6eede86fbf2385ad654b7a39,dfd1f2b370327fdc6eede86fbf2385ad654b7a39,"Replaced session logic with secure cookies. Users can implement their own session logic with secure cookies. It's simpler, at least for now."
+hoisie,2010-01-05 18:14:23,https://api.github.com/repos/hoisie/web/git/commits/c2eece42534cdd1d1cf265b2107b7ca8401e37cb,c2eece42534cdd1d1cf265b2107b7ca8401e37cb,Updated doc section of Readme
+hoisie,2010-01-05 05:13:47,https://api.github.com/repos/hoisie/web/git/commits/db0c289205d4a158d1a1205133e658350542154a,db0c289205d4a158d1a1205133e658350542154a,Merge branch 'master' of git@github.com:hoisie/web.go
+hoisie,2010-01-05 05:13:22,https://api.github.com/repos/hoisie/web/git/commits/2f7d97d15ea41f4112e74429617c5daad740d7cc,2f7d97d15ea41f4112e74429617c5daad740d7cc,Added web.Urlencode method
+hoisie,2010-01-04 03:20:18,https://api.github.com/repos/hoisie/web/git/commits/95980ff059302f5e280bcacdc0d401c434553bce,95980ff059302f5e280bcacdc0d401c434553bce,Added ctx.Redirect and request.HasParam methods
+hoisie,2010-01-03 20:07:04,https://api.github.com/repos/hoisie/web/git/commits/e0de8debcfc54e175f905769d48f672043d24e78,e0de8debcfc54e175f905769d48f672043d24e78,Merge branch 'master' of git://github.com/hoisie/web.go
+hoisie,2010-01-03 20:06:46,https://api.github.com/repos/hoisie/web/git/commits/4318eaa705665dd2fe22281f1357ef916659a446,4318eaa705665dd2fe22281f1357ef916659a446,Added .htm extension to servefile
+hoisie,2010-01-03 05:53:28,https://api.github.com/repos/hoisie/web/git/commits/0bb87f5f67801309202452e2fcb90421efdb5eab,0bb87f5f67801309202452e2fcb90421efdb5eab,Updated readme.
+hoisie,2010-01-03 05:51:31,https://api.github.com/repos/hoisie/web/git/commits/00b4b715ef2cf19fb5e80d4d840038229c4d0c02,00b4b715ef2cf19fb5e80d4d840038229c4d0c02,Small changes to readme
+hoisie,2010-01-03 05:49:42,https://api.github.com/repos/hoisie/web/git/commits/9216362319d0622da66b75fda2ef76a2941c619e,9216362319d0622da66b75fda2ef76a2941c619e,Update readme
+hoisie,2010-01-03 05:33:52,https://api.github.com/repos/hoisie/web/git/commits/045bd47db8658d3acd3abafc1378e3dab455aca4,045bd47db8658d3acd3abafc1378e3dab455aca4,"Merge branch 'master' of git://github.com/hoisie/web.go
+
+Conflicts:
+	web.go"
+hoisie,2010-01-03 04:49:17,https://api.github.com/repos/hoisie/web/git/commits/b0acb23506d123cbf755fb687d80f506e408e0d3,b0acb23506d123cbf755fb687d80f506e408e0d3,Simplified hello
+hoisie,2010-01-03 04:15:25,https://api.github.com/repos/hoisie/web/git/commits/3426e74e141b3bf7e54d890fe662d8313a3ee726,3426e74e141b3bf7e54d890fe662d8313a3ee726,Got rid of unnecessary check in routeHandler
+hoisie,2010-01-03 04:07:28,https://api.github.com/repos/hoisie/web/git/commits/95906b97269b0b1600cfb05ad15b827072fee9eb,95906b97269b0b1600cfb05ad15b827072fee9eb,"Simplified the testing harness. There are new convenience methods that make testing slightly easier. Also, there are new tests which test error conditions."
+hoisie,2010-01-03 02:33:47,https://api.github.com/repos/hoisie/web/git/commits/507ef474dbade08307961c5b712672b2cab25d5b,507ef474dbade08307961c5b712672b2cab25d5b,"Added support for sessions. Whenever a handler sets data in the session type, a cookie containing a session id is sent back to the client. This cookie identifies the session on future requests."
+hoisie,2010-01-02 22:51:57,https://api.github.com/repos/hoisie/web/git/commits/bce6d91873a33507756f439552fe4e26f0ed9bba,bce6d91873a33507756f439552fe4e26f0ed9bba,Updated format target
+hoisie,2010-01-02 22:33:26,https://api.github.com/repos/hoisie/web/git/commits/3586f2f5b57ee3e57ce06905e4b1a25240c4742b,3586f2f5b57ee3e57ce06905e4b1a25240c4742b,Fixed bug in multiple matching groups. Ran formatting.
+hoisie,2010-01-02 19:14:16,https://api.github.com/repos/hoisie/web/git/commits/3e311c3042a191fe4920d265ecaa457b07f15539,3e311c3042a191fe4920d265ecaa457b07f15539,Add request.go
+hoisie,2010-01-02 19:14:08,https://api.github.com/repos/hoisie/web/git/commits/b5e5d46be206a1a8506a54c65c946a6a1420b9dc,b5e5d46be206a1a8506a54c65c946a6a1420b9dc,"Added SetCookie method to ctx, which sets response cookies. This involves creating a new type for web.Request instead of just using http.Request. Also this sets the groundwork for session support."
+hoisie,2010-01-01 23:56:16,https://api.github.com/repos/hoisie/web/git/commits/d4353876d296b72f91d1ffffcc6b46863db56a20,d4353876d296b72f91d1ffffcc6b46863db56a20,Formatted the code for documentation
+hoisie,2010-01-01 00:49:01,https://api.github.com/repos/hoisie/web/git/commits/d4dc4c17527b7ed6a957b8d4c28c602cbab7af7d,d4dc4c17527b7ed6a957b8d4c28c602cbab7af7d,Removed Render functions
+hoisie,2009-12-31 02:31:54,https://api.github.com/repos/hoisie/web/git/commits/88240d5c1543fc4915c50d9c3e41891e0bc9ba34,88240d5c1543fc4915c50d9c3e41891e0bc9ba34,deleted gostache submodule -- seems like too big a hassle
+hoisie,2009-12-31 02:29:26,https://api.github.com/repos/hoisie/web/git/commits/a319ac03a086a6fc25ec89880e94f42831683db7,a319ac03a086a6fc25ec89880e94f42831683db7,Added gostache submodule
+hoisie,2009-12-30 05:29:40,https://api.github.com/repos/hoisie/web/git/commits/207f520b2eedc7711a9203dffb51194c6c94f723,207f520b2eedc7711a9203dffb51194c6c94f723,Merge branch 'master' of git://github.com/hoisie/web.go
+hoisie,2009-12-23 23:23:34,https://api.github.com/repos/hoisie/web/git/commits/8b19cfe0e6178687404ac4e02882cce28c136631,8b19cfe0e6178687404ac4e02882cce28c136631,Merge branch 'master' of git://github.com/hoisie/web.go
+phf,2009-12-23 21:43:29,https://api.github.com/repos/hoisie/web/git/commits/5a26f2f6b20eda2e1a073dd6f010fe7d3c736784,5a26f2f6b20eda2e1a073dd6f010fe7d3c736784,Adapted to NumSubexp() name from CL 183044.
+phf,2009-12-23 18:49:02,https://api.github.com/repos/hoisie/web/git/commits/abe0db0bc7d6ecef0c2f232f8bde89aa7ec6c6f6,abe0db0bc7d6ecef0c2f232f8bde89aa7ec6c6f6,Ensure only one subexpression in static route.
+phf,2009-12-23 18:34:08,https://api.github.com/repos/hoisie/web/git/commits/0152350b5b65062fa8e3b85912300a0a0f5f37c4,0152350b5b65062fa8e3b85912300a0a0f5f37c4,Added a route for static files.
+phf,2009-12-23 15:50:16,https://api.github.com/repos/hoisie/web/git/commits/7b505278c4bc8cc7d0e1ace73a8ca2dbef3c3cc3,7b505278c4bc8cc7d0e1ace73a8ca2dbef3c3cc3,Set and check directories for static files and templates.
+phf,2009-12-23 15:36:00,https://api.github.com/repos/hoisie/web/git/commits/5c301b9819292f819700024faa004140b043bda7,5c301b9819292f819700024faa004140b043bda7,"It's not CWD on Unix, it's PWD."
+phf,2009-12-23 15:05:15,https://api.github.com/repos/hoisie/web/git/commits/4ad3e2744aa98001f2579ac4b7725f29db654737,4ad3e2744aa98001f2579ac4b7725f29db654737,Rename requestType to contextType.
+phf,2009-12-23 15:00:07,https://api.github.com/repos/hoisie/web/git/commits/e111be0b0f3ce95fe35f39216da4358145101b02,e111be0b0f3ce95fe35f39216da4358145101b02,Don't shadow predeclared len identifier.
+phf,2009-12-21 02:44:53,https://api.github.com/repos/hoisie/web/git/commits/524ee1ea01e7df5542137a309af68ceb7c8dccd5,524ee1ea01e7df5542137a309af68ceb7c8dccd5,Simpler way to check for Request type.
+phf,2009-12-21 01:55:45,https://api.github.com/repos/hoisie/web/git/commits/f4f1b81e3cc12c32d33656fe52d4b65864c525df,f4f1b81e3cc12c32d33656fe52d4b65864c525df,Makefile for examples.
+phf,2009-12-21 01:49:06,https://api.github.com/repos/hoisie/web/git/commits/6dfbb7df278fa70d604d837d7cad68203aee8c41,6dfbb7df278fa70d604d837d7cad68203aee8c41,My standard gitignore for Go.
+phf,2009-12-21 01:36:06,https://api.github.com/repos/hoisie/web/git/commits/8fa4652a923f999a040337c7211a6d2d46e173d7,8fa4652a923f999a040337c7211a6d2d46e173d7,Replaced fmt and builtin println with log package.
+phf,2009-12-21 01:19:33,https://api.github.com/repos/hoisie/web/git/commits/affeff1d6447639e5f1cd8ed4723053c3b3c3d81,affeff1d6447639e5f1cd8ed4723053c3b3c3d81,Don't process routes if we served a static file.
+dhobsd,2009-12-16 22:10:34,https://api.github.com/repos/hoisie/web/git/commits/54f78907eb53f16af8b0f0c1ea768a0146203469,54f78907eb53f16af8b0f0c1ea768a0146203469,"8g -> $(GC), 8l -> $(LD) chmod+cp -> install in Makefile"
+hoisie,2009-12-16 16:36:32,https://api.github.com/repos/hoisie/web/git/commits/7eaf28efe5a37830e94d250e04956322c6edba6d,7eaf28efe5a37830e94d250e04956322c6edba6d,"Updated Makefile to work on macs, removed signal handling code -- it's being fixed in the language"

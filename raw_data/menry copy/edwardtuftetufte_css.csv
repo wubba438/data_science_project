@@ -1,0 +1,646 @@
+tufte-css,Style your webpage like Edward Tufte’s handouts.
+username,timestamp,url,sha,message
+daveliepmann,2019-09-02 09:18:17,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c414b9117d5b39bdb747a172822333fc1043aee3,c414b9117d5b39bdb747a172822333fc1043aee3,"Document deployment process
+
+Closes #122 because this is our preferred method."
+daveliepmann,2019-09-02 08:13:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/878cf0f1486b87868befaae8189702c22c0577c9,878cf0f1486b87868befaae8189702c22c0577c9,"`font-display: swap` for FOPST instead of FOUT/FOIT
+
+Despite lack of universal browser support, this CSS feature seems like
+a useful way to lessen the effects of waiting for our custom font to
+load. This avoids FOIT (flash of invisible text) and FOUT (flash of
+unstyled text) by telling the browser to use the next available font
+in our `font-family` stack until our preferred font is
+downloaded. This should replace FOUT with what we might call
+FOPST (flash of partially styled text).
+
+I'm also leaving open the possibility of switching to `optional`, so
+that users on slow connections are not forced to download our
+preferred font. Further experimentation is necessary.
+
+Fixes #148"
+daveliepmann,2019-07-08 11:11:35,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7d2e450c01b21fde4b936d5818472525a13b638e,7d2e450c01b21fde4b936d5818472525a13b638e,Bump version to 1.7.1
+daveliepmann,2019-07-08 11:11:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/dd77d4bd84b1cacca8147c79e7af6ef0a907318b,dd77d4bd84b1cacca8147c79e7af6ef0a907318b,Update minified CSS
+daveliepmann,2019-07-08 11:05:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f2fc4b300555aa14177e60853d52c04ec5729883,f2fc4b300555aa14177e60853d52c04ec5729883,"Nix advice to use only color to denote links
+
+Closes #144"
+daveliepmann,2019-07-08 10:57:41,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/270b265a6f2f89561e3b79d2d5d8a339b82f06f9,270b265a6f2f89561e3b79d2d5d8a339b82f06f9,"Bump version to 1.7
+
+* fix `pre > code` blocks"
+daveliepmann,2019-07-08 10:51:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/8b350943ea286788228c99e9f3d1d15013c4c86c,8b350943ea286788228c99e9f3d1d15013c4c86c,"Migrate from <pre class=""code""> to <pre><code>
+
+The new format should have been instituted at the same time as #102.
+
+* update all instances in example doc
+* update how-to in example doc
+* switch all rules on deprecated `code` class on `pre` elements"
+daveliepmann,2019-06-02 18:21:01,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/79f5c8129fed8c6faa1824fe8656a78efe3bf979,79f5c8129fed8c6faa1824fe8656a78efe3bf979,No style guide _to_ keep in mind
+daveliepmann,2019-06-02 16:46:14,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3527cd2cf8f59ba24c127d1f235fa4d63f5ef089,3527cd2cf8f59ba24c127d1f235fa4d63f5ef089,Bump version to 1.6
+daveliepmann,2019-06-02 16:43:55,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d5c8b719152f9addddb497a4bc66e81eab2eabe6,d5c8b719152f9addddb497a4bc66e81eab2eabe6,"Merge pull request #143 from mhuebert/gh-pages
+
+tufte-underline extensions"
+mhuebert,2019-06-02 14:13:45,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9a16f6355281931da261d5dcebd79458c3bc122d,9a16f6355281931da261d5dcebd79458c3bc122d,remove ::selection overrides
+mhuebert,2019-06-02 14:07:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ce9f48b8935bd8c05b4938d7cc4b4ab3ed1fad0c,ce9f48b8935bd8c05b4938d7cc4b4ab3ed1fad0c,"tufte-underline escape hatch + opt-in
+
+- the .no-tufte-underline class to remove the default underline style from a link
+- the .tufte-underline class adds underline style to any element
+- the .hover-tufte-underline class adds underline style on hover to any element
+
+use both .no-tufte-underline and .hover-tufte-underline class on a link to override the existing behaviour and only underline on hover."
+daveliepmann,2019-06-02 12:47:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/89da6826acfc6bcf48d10519ce54074ed832db50,89da6826acfc6bcf48d10519ce54074ed832db50,Refactor: unify ::selection with ::-moz-selection
+daveliepmann,2019-06-02 11:42:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2a2096d42cb71f554b30ff62fabce92f015cb1d1,2a2096d42cb71f554b30ff62fabce92f015cb1d1,"NPM files: whitelist necessary files
+
+* Tufte CSS, normal & minified
+* fonts
+
+Nothing else is needed, AFAIK"
+daveliepmann,2019-06-02 11:21:24,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/fcbaa818a7fe977ee028450c1de416b9a9c7acff,fcbaa818a7fe977ee028450c1de416b9a9c7acff,"Add minified CSS
+
+Used clean-css-cli@4.3.0"
+daveliepmann,2019-06-02 11:00:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/514a6ad676cf08c5ae9756a0d1a93e477cb691cd,514a6ad676cf08c5ae9756a0d1a93e477cb691cd,Add package metadata file
+daveliepmann,2019-06-02 10:58:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/908e230ad34fb1278054d69b3967adee22becfeb,908e230ad34fb1278054d69b3967adee22becfeb,Deprecate CSS style guide in favor of standard formatting
+daveliepmann,2019-06-01 12:34:28,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c330c2a13e88e15b3f71e1fe2cfc57cba15f94ab,c330c2a13e88e15b3f71e1fe2cfc57cba15f94ab,Prevent adjustments in `code` font size after orientation changes in iOS
+daveliepmann,2019-06-01 12:07:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/bfbe3b5c50ee450ba09122f1506233edf6a97ffe,bfbe3b5c50ee450ba09122f1506233edf6a97ffe,"Major refactor: implement standard CSS formatting
+
+Fixes #101
+
+Many thanks to Adam Schwartz for raising this issue."
+daveliepmann,2019-06-01 11:55:31,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/076732e747913e4c7e80ac1cfc656a4730c9568b,076732e747913e4c7e80ac1cfc656a4730c9568b,"Remove apparently useless `relative` position from `article`
+
+Fixes #113."
+daveliepmann,2019-06-01 10:53:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/847434d1d009306ddd42eed0239a0e75cd95d99d,847434d1d009306ddd42eed0239a0e75cd95d99d,"Merge pull request #142 from mhuebert/patch-1
+
+use currentColor for link underline"
+mhuebert,2019-05-31 11:41:51,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/de191fa9c7ac1548531cd716efe846b9ed5e0d31,de191fa9c7ac1548531cd716efe846b9ed5e0d31,"use currentColor for link underline
+
+The css `currentColor` has ~99% coverage (https://caniuse.com/#search=currentColor) and would match the link underline with the current color of the link."
+daveliepmann,2018-08-11 17:19:31,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/58d3cf8250b4898e57ba563a90391a5f4b1ed500,58d3cf8250b4898e57ba563a90391a5f4b1ed500,"Merge pull request #136 from uhoreg/sidenote-number-size
+
+match font size for sidenote numbers"
+uhoreg,2018-08-10 18:07:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/91c9c91cf9f9ac14bf6407d130f2edd4f0a66912,91c9c91cf9f9ac14bf6407d130f2edd4f0a66912,"match font size for sidenote numbers
+
+Matches the font size for sidenote numbers on the side with the corresponding
+number in the main body.
+
+fixes #135"
+daveliepmann,2018-05-22 08:46:18,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/680576f0f004e4e7f3d21a8d435b8b81294f9f3e,680576f0f004e4e7f3d21a8d435b8b81294f9f3e,Documentation: clarify contribution guidelines
+daveliepmann,2018-05-22 08:35:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/20568ef2c3552ade1594763b54d52c79adb77384,20568ef2c3552ade1594763b54d52c79adb77384,"Documentation: clarify project scope and maintenance status
+
+Although it has been mentioned in various commit/issue/PR threads, it
+is better to be up-front about expectations regarding what the project
+is and is not."
+daveliepmann,2018-05-22 07:58:23,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f0a96ae6a0da9b7eba3302a2398255a4fc3721ff,f0a96ae6a0da9b7eba3302a2398255a4fc3721ff,"Merge pull request #132 from jboynyc/patch-1
+
+Make horizontal rules responsive"
+jboynyc,2018-05-17 09:40:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0f3a49acaf027e5b46b3a11f5237d5f4cd6b55dd,0f3a49acaf027e5b46b3a11f5237d5f4cd6b55dd,"Make horizontal rules responsive
+
+Currently <hr>elements stay 55% wide regardless of screen size. By including them in the `@media` rule, they become responsive."
+daveliepmann,2018-03-01 11:41:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ea24633b6db3a335d124b7ff7a4b88e91b5eaee7,ea24633b6db3a335d124b7ff7a4b88e91b5eaee7,"Merge pull request #126 from jez/jez-margin-bottom
+
+Make 'h2'/'h3' margin consistent with 'p' margin"
+jez,2017-11-16 05:15:30,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/249fde791b5947eb194ecf71dd966f4e02c1a221,249fde791b5947eb194ecf71dd966f4e02c1a221,"Make 'h2'/'h3' margin consistent with 'p' margin
+
+The margin-top and margin-bottom on a `<p>` tag is 1.4rem.  When two
+`<p>` tags are adjacent to each other, the margin bottom of the first
+and the margin top of the second collapse together—they're only
+separated by 1.4rem total.
+
+On the other hand, the margin-bottom on `<h2>` and `<h3>` is 0.
+Normally this is fine, because of the time a `<p>` follows the heading,
+so the margin-top on the paragraph picks up the correct vertical
+spacing.
+
+The problem is when a heading isn't followed by a paragraph (let's say:
+a generic <div>). If that div doesn't set margin-top like paragraphs do,
+then both the heading and the div will be 0px apart. (In particular, if
+there are descenders in the heading, they'll overlap!)
+
+There are then two solutions:
+
+1. Set a margin-bottom on the heading
+2. Set a margin-top on the div
+
+Setting a margin-top on the div essentially adds a *special case* for
+the div. On the other hand, setting a margin-bottom solves the *general
+case* of ""vertical spacing after a heading."""
+daveliepmann,2017-11-07 21:38:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/59c69cf5d3407e2debf5c26724e4676601b9cccc,59c69cf5d3407e2debf5c26724e4676601b9cccc,"Merge pull request #118 from jez/jez-better-lists
+
+TLC for Lists"
+daveliepmann,2017-11-07 21:36:53,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/284248efd08ea930cffcef7e68c99879d775a212,284248efd08ea930cffcef7e68c99879d775a212,"Merge pull request #123 from wilburhimself/remove_redundant_sidenote_counter
+
+Remove redundant sidenote counter"
+wilburhimself,2017-11-06 19:53:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4ffb6a635188c94f996b4a2dce7e5415a8887405,4ffb6a635188c94f996b4a2dce7e5415a8887405,remove redundandt sidenote counter
+daveliepmann,2017-11-06 12:21:19,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e3faa865117863e265fead96a4e978957543c03f,e3faa865117863e265fead96a4e978957543c03f,"Merge pull request #121 from Saturate/feature/performance-fix
+
+Optimize all images"
+Saturate,2017-11-06 10:49:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6a885f663c470fccf8378c76f5132a1877117998,6a885f663c470fccf8378c76f5132a1877117998,"Optimize all images
+
+Optimized images losslessly for web, they could be scaled down as well, but I'm not sure if they are used in their full size, so this commit does not include that optimization."
+jez,2017-10-16 05:18:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/814733714bc350827fa8061f6e978df66d82c18e,814733714bc350827fa8061f6e978df66d82c18e,"Use margin instead of padding for lists
+
+Using margin instead of padding is preferred for nested lists.
+
+We also drop the padding from 0.5rem to 0.25rem.
+For use cases where you want a lot of spacing between the list items,
+you should be wrapping the contents of the list item in a paragraph tag."
+jez,2017-10-16 05:16:42,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/52e8fd0aea1031aa0253af960fe5610761ef7dad,52e8fd0aea1031aa0253af960fe5610761ef7dad,"Only restrict width for top-level paragraphs
+
+Top-level paragraphs should take up a percentage of the surrounding
+<section>. All other paragraphs, (for example, those nested inside a
+list, in a sidenote, etc.) should have the default: 100%."
+jez,2017-10-16 05:15:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/96311a0c28606b0dc3da4fed2ca8fc386e3c5ec9,96311a0c28606b0dc3da4fed2ca8fc386e3c5ec9,Consistent line height in lists & paragraphs
+daveliepmann,2017-08-27 17:50:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3edc471212c72dd1a01ad60a9d68e6277f2276be,3edc471212c72dd1a01ad60a9d68e6277f2276be,"Merge pull request #116 from daiyi/gh-pages
+
+Add class and example for responsive iframes"
+daiyi,2017-08-26 21:47:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2ff8da4cd258ce1ebcf66fb9b68927b289f152f9,2ff8da4cd258ce1ebcf66fb9b68927b289f152f9,Fix pesky indentation
+daveliepmann,2017-08-24 07:19:06,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2fe521ae62338ed731a33e2840fb7fc37da1f904,2fe521ae62338ed731a33e2840fb7fc37da1f904,Use an Ed Tufte video about iPhones for our example YouTube embed
+daveliepmann,2017-08-24 07:10:32,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2318fdb23b7d124db2333e1eab0f1f5312e3a99a,2318fdb23b7d124db2333e1eab0f1f5312e3a99a,Incorporate embeds into Figures section.
+daveliepmann,2017-08-24 06:22:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0d812d762d2a8e270cf398a706ffab4ff164a086,0d812d762d2a8e270cf398a706ffab4ff164a086,Whitespace fixes / conform to indentation rules
+daiyi,2017-08-21 11:12:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2754d70a997b6f8cd69f71b4bc358fd59b4c2c54,2754d70a997b6f8cd69f71b4bc358fd59b4c2c54,"Conform to project CSS conventions
+
+formatting my CSS as if I were writing clojure ooookay"
+daiyi,2017-08-21 10:54:24,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a6a00e9c827bfbd77b5d282b18e274e1b885910f,a6a00e9c827bfbd77b5d282b18e274e1b885910f,Add class and example for responsive iframes
+daveliepmann,2017-08-20 16:52:57,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4fb9eefbe063c529b1c63dce31933259a22e1e78,4fb9eefbe063c529b1c63dce31933259a22e1e78,"Reset section > ul width on mobile
+
+Fixes #111"
+daveliepmann,2016-11-23 07:20:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/1f77d86595a3bf66a367c0c8d3ed8e4a9fdd222a,1f77d86595a3bf66a367c0c8d3ed8e4a9fdd222a,Support for horizontal rules <hr/>
+daveliepmann,2016-11-10 20:00:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f0019b9d2a56950da0ba610b79b1051542fa26f9,f0019b9d2a56950da0ba610b79b1051542fa26f9,"THOU SHALT HAVE NO GOD BEFORE @CHARSET
+
+Per W3C:
+https://www.w3.org/International/questions/qa-css-charset#atcharset
+...charset declaration must be at the very beginning of the file, before
+comments."
+daveliepmann,2016-10-30 09:06:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e6ec954e7d9130546806b8186f00db16c43090d7,e6ec954e7d9130546806b8186f00db16c43090d7,"Right-justify figcaption to figure, not screen
+
+Fixes issue #108. Credit to @mbucc for patch."
+daveliepmann,2016-09-20 06:02:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c929b8026218006739511fe3ca189e850db09f18,c929b8026218006739511fe3ca189e850db09f18,"Address HTML compliance (by validator.w3.org)
+
+Add <html> opening tab, add lang attribute, fix duplicate section ID,
+add alt tags to images, close unclosed section tag."
+daveliepmann,2016-09-20 05:39:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/006939cb4d4f5cf9bf967e876d0eb02dd782a2eb,006939cb4d4f5cf9bf967e876d0eb02dd782a2eb,Switch from .code <span>s to <code>
+daveliepmann,2016-09-20 05:33:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/32d8839ade749835dd6e42c1989d1d6761cdbed5,32d8839ade749835dd6e42c1989d1d6761cdbed5,Remove deprecated table styles
+daveliepmann,2016-09-20 05:29:03,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b75e31928d485fa283fe3968cd5d05584b191bf7,b75e31928d485fa283fe3968cd5d05584b191bf7,Embiggen code within the sans class
+daveliepmann,2016-09-19 08:07:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/01e1b940d9a2e197a10781d9daaa0fa9e24501c7,01e1b940d9a2e197a10781d9daaa0fa9e24501c7,Leave breadcrumb pointing to text example
+daveliepmann,2016-09-19 08:07:29,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d2e89057aacb18e2750176a52c5388039349b0e0,d2e89057aacb18e2750176a52c5388039349b0e0,"By ET request, add link to ET forum thread"
+daveliepmann,2016-09-19 07:23:42,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f743c7d6033890badb0ddcd9d2f1673c6d8bbd87,f743c7d6033890badb0ddcd9d2f1673c6d8bbd87,"Fix blockquotes. Fix small-viewport centering.
+
+Tufte-style blockquotes do not have a right margin. On small screens,
+content was shifted too much to the right and had excessive
+margins. Media queries were unnecessarily split into two."
+daveliepmann,2016-09-19 06:17:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/462d1e2861591389731334e5c1fe6e0fd7c06933,462d1e2861591389731334e5c1fe6e0fd7c06933,"Shrink font size in pre-formatted code blocks
+
+Smaller font in code blocks decreases the incidence of horizontal text
+overflow, helps differentiate code from body text, and does not seem to
+harm readability."
+daveliepmann,2016-09-18 09:40:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9b85b282a60eb9843798f9d4d8c5e3422e356275,9b85b282a60eb9843798f9d4d8c5e3422e356275,"Merge pull request #94 from statshero/patch-1
+
+Specify positioning of sidenotes within blockquotes. Fixes #92."
+daveliepmann,2016-09-18 09:20:53,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/660410db5eb07b62d4b014fd9a7362b3ef4cae63,660410db5eb07b62d4b014fd9a7362b3ef4cae63,"Only restrict width of top-level ul/ol lists.
+
+Addresses #91"
+daveliepmann,2016-09-18 09:00:59,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7dbacf38c0970f8deabf84d6375d6dcb4495f17d,7dbacf38c0970f8deabf84d6375d6dcb4495f17d,Merge branch 'mbucc-code_wrapping' into gh-pages
+daveliepmann,2016-09-18 09:00:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/103d465e39ccd5955a360f5e81e3aba55002457e,103d465e39ccd5955a360f5e81e3aba55002457e,"Merge branch 'code_wrapping' of https://github.com/mbucc/tufte-css into mbucc-code_wrapping
+
+Conflicts:
+	tufte.css"
+daveliepmann,2016-09-18 08:17:42,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/bb56bcd000a6dc2bdbb5cd5baa23fcd0664ffe9a,bb56bcd000a6dc2bdbb5cd5baa23fcd0664ffe9a,Remove line wrap on sidenote code sample
+daveliepmann,2016-09-18 06:47:14,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6961201c10888bb0733f0636c20833507619fc1e,6961201c10888bb0733f0636c20833507619fc1e,Bring font-faces in line with style guidelines
+daveliepmann,2016-09-18 06:34:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b59fc8621ea38162f90a7213c09a1ce2edcbcf86,b59fc8621ea38162f90a7213c09a1ce2edcbcf86,Credit Adam Schwartz. Remove cruft in README.
+adamschwartz,2016-09-17 20:27:06,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0de67a595f5963234322719916605b202c530405,0de67a595f5963234322719916605b202c530405,square up line wrap arrow image
+adamschwartz,2016-09-17 19:39:58,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c15070ca84f19cfa994dd38bb92adccb1d4fbed7,c15070ca84f19cfa994dd38bb92adccb1d4fbed7,add icons preceding wrapped code lines via `.with-wrapping` #90
+adamschwartz,2016-09-17 19:22:14,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4bc16a9ff5d8bfa9a53b9ca30e423f9f17569e34,4bc16a9ff5d8bfa9a53b9ca30e423f9f17569e34,cleanup
+statzhero,2016-07-22 01:13:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0d17e469073029ac25388dc50d47205672f436d7,0d17e469073029ac25388dc50d47205672f436d7,"A possible fix to issue #92
+
+Really just experimenting, so someone who knows what they're talking about should look at this."
+mbucc,2016-06-18 11:48:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/446fcb017e1ad2f860b32bdb8a1de9a4ae11a742,446fcb017e1ad2f860b32bdb8a1de9a4ae11a742,"Reduce font size and provide new fullwidth class for code.
+
+Wrapping with pure CSS looks like a no go [1].  It is possible to do with
+Javascript, but it gets complex to do right; for example, rewrapping long lines
+on browser resize.
+
+So, take solution from @Norgat in edwardtufte/tufte-css#80 and bump the font
+down to 1rem.  This gives you:
+
+    100 characters @ body width of 1040px
+     80 @ 828px
+     73 @ 750px (css break)
+
+Seems like the best we can do.
+
+Note that stackoverflow takes the same approach with code snippets; there is no
+wrapping and you have to scroll horizontally.  So this UX is what most coders
+are used to on the web.
+
+It's kind of funny that neither Microsoft's [2], Google's [3] or iOS [4] style
+guides mention showing code as text!
+
+[1] http://stackoverflow.com/a/3750513
+[2] https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/fonts
+[3] https://material.google.com/style/typography.html#
+[4] https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/ColorImagesText.html#//apple_ref/doc/uid/TP40006556-CH58-SW1"
+daveliepmann,2016-04-01 09:17:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/fcd8840cb375c73435a4bf4eba5ce45fc98411dc,fcd8840cb375c73435a4bf4eba5ce45fc98411dc,"Merge pull request #84 from padenot/patch-1
+
+Update README.md with new instructions to get started"
+padenot,2016-04-01 06:54:36,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/48e5faf21a8b5f7a3631ca152a53d5c113269858,48e5faf21a8b5f7a3631ca152a53d5c113269858,"Update README.md with new instructions to get started
+
+It looks like the font location changed."
+daveliepmann,2016-03-13 19:40:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9de67a62aaafa516466407141c25c354fb61e0b0,9de67a62aaafa516466407141c25c354fb61e0b0,Fix LICENSE link in README
+daveliepmann,2016-03-13 19:38:02,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/8869e2b283df39b9cb189c8428a76c54059e137f,8869e2b283df39b9cb189c8428a76c54059e137f,Re-do of pra85's patch #77 in old master branch
+adamschwartz,2016-03-04 21:11:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f9612adbdc7a3c028c191faf934e8be7d832a1a7,f9612adbdc7a3c028c191faf934e8be7d832a1a7,Spelling correction
+daveliepmann,2016-01-31 15:57:26,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/924d6bc7c8c07d05831aa151b7ff5d6b92603e55,924d6bc7c8c07d05831aa151b7ff5d6b92603e55,"Merge pull request #78 from EdenSG/patch-2
+
+Add id's to headers for url navigation"
+EdenSG,2016-01-29 23:17:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7dbbd92651864ab197133418f4c1c97f88b4d1ef,7dbbd92651864ab197133418f4c1c97f88b4d1ef,"Add id's to headers for url navigation
+
+I'm not sure if we want to do this, but I've added id's to `h1`s through `h3`s so that they can be referenced in page urls (https://edwardtufte.github.io/tufte-css/#fundamentals)."
+daveliepmann,2015-12-28 00:52:34,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/70326956117d951c5c249b11a4529cea4cb67704,70326956117d951c5c249b11a4529cea4cb67704,"Nix figcaption and word ""iconic"""
+daveliepmann,2015-12-28 00:36:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b28a958a722a0e3bba3680c10ff27ee5cb778318,b28a958a722a0e3bba3680c10ff27ee5cb778318,"Merge branch 'patch-1' of https://github.com/edent/tufte-css into overflow-x
+
+Conflicts:
+	tufte.css"
+daveliepmann,2015-12-23 17:02:19,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a2953c038d86dae89aad9ced814bc685cee0ae91,a2953c038d86dae89aad9ced814bc685cee0ae91,Point to correct live demo URL
+daveliepmann,2015-12-13 11:07:01,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0a184b7b43d6f8834fe99fc522ba18e6cadb0d63,0a184b7b43d6f8834fe99fc522ba18e6cadb0d63,Update contributors
+daveliepmann,2015-12-13 09:59:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5f6d7cbe0e1d46f9b0fc7b953c3c9752966a4ec0,5f6d7cbe0e1d46f9b0fc7b953c3c9752966a4ec0,"Merge branch 'master' into gh-pages
+
+Conflicts:
+	index.html"
+daveliepmann,2015-12-13 09:49:57,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3a3bcf2c32ba9fc882dc7d451b197c34b1c38b45,3a3bcf2c32ba9fc882dc7d451b197c34b1c38b45,"Merge pull request #73 from ursachec/make-valid-html
+
+Make index.html confirm to HTML5 spec"
+daveliepmann,2015-11-17 17:04:43,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2525fd41a53eb3b838388bf5ff7059c1949972db,2525fd41a53eb3b838388bf5ff7059c1949972db,New and improved thanking
+daveliepmann,2015-11-17 16:47:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ccfb1b759363b4b91acf5c27914962ae284ec531,ccfb1b759363b4b91acf5c27914962ae284ec531,"""Thanks"" in Epilogue"
+daveliepmann,2015-11-17 16:38:09,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/03eb7903bb82f464d7f8e89f7545560f79d7e5f5,03eb7903bb82f464d7f8e89f7545560f79d7e5f5,"Link to ImageQuilts thread, per request"
+daveliepmann,2015-11-17 16:29:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/cea451a1b6516901d500e33d564c7bff8cf16298,cea451a1b6516901d500e33d564c7bff8cf16298,Nix all table styles per ET
+daveliepmann,2015-11-17 16:28:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e857f0fbd3b84b33be82c7e0759a3a39b8b59a11,e857f0fbd3b84b33be82c7e0759a3a39b8b59a11,Nix all table styles per ET.
+daveliepmann,2015-11-17 16:26:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/94ac0dfc49729269523b9234c853b27f5458d6f2,94ac0dfc49729269523b9234c853b27f5458d6f2,Merge branch 'master' into gh-pages
+daveliepmann,2015-11-17 16:23:00,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/93ed472cdf5419cf0ee5648f19569b8892d0afaa,93ed472cdf5419cf0ee5648f19569b8892d0afaa,"Incorporate Edward Tufte's Nov 17 revisions
+
+Attribute project per ET. Nix extraneous sidenotes. ""ETBook"" preferred usage. Nix ugly italic and bold examples. Don't denigrate switching between font faces. Nix tables and lists; people should do as they wish. Elide figcaptions since they aren't yet right. Wording changes. Nix ""Other Tools"" section."
+daveliepmann,2015-11-17 16:15:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/af179c458100ab0b13abb80d8210e1e98024b832,af179c458100ab0b13abb80d8210e1e98024b832,"Merge pull request #69 from ReadmeCritic/master
+
+Update README URLs based on HTTP redirects"
+daveliepmann,2015-11-17 16:15:10,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5db3d7c34b90c7e90bb2a2aac58e3973411ce2c5,5db3d7c34b90c7e90bb2a2aac58e3973411ce2c5,"Merge pull request #70 from EdenSG/patch-1
+
+Fix text-shadow for latex when selected and for superscript text"
+daveliepmann,2015-11-17 16:14:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/57fe9cc76a6ff73d2b264fba66239e974517f1bc,57fe9cc76a6ff73d2b264fba66239e974517f1bc,"Merge pull request #71 from zeke/patch-1
+
+Add missing ""in"""
+zeke,2015-11-15 05:23:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9dcd0afecb2aa9f5d999a560f0ef660d63459266,9dcd0afecb2aa9f5d999a560f0ef660d63459266,"Add missing ""in"""
+EdenSG,2015-11-15 03:28:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/87b73f45eb0a3338f1d06bb4c1ca776fd96b04a8,87b73f45eb0a3338f1d06bb4c1ca776fd96b04a8,"Fix text-shadow for latex
+
+Text-shadow of superscript latex characters was removed because it was unnecessary and sometimes overlapped a part of adjacent characters. Proper text-shadow colors during selection were added as well."
+ReadmeCritic,2015-11-14 23:36:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ee385386b31377b9053e53c4b20641498cbc8e51,ee385386b31377b9053e53c4b20641498cbc8e51,Update README URLs based on HTTP redirects
+edent,2015-11-14 11:24:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f84c03a4b3cf40edc6e3ef0fc7ff999419126c22,f84c03a4b3cf40edc6e3ef0fc7ff999419126c22,"Remove unnecessary scroll bars from inline content
+
+As per https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x
+
+Fixes #67"
+daveliepmann,2015-11-07 08:48:01,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f04c07c7a656cedc9a787503f57dfaa82afad8c7,f04c07c7a656cedc9a787503f57dfaa82afad8c7,"Switch ""I"" to Royal We"
+daveliepmann,2015-11-07 08:32:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a7d03f912fa36c478185da82d27e77dbcce8940e,a7d03f912fa36c478185da82d27e77dbcce8940e,Change attributive subtitle
+daveliepmann,2015-11-06 07:16:55,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b111e300cc5464fb8775b9d022d7dc3e925b94b3,b111e300cc5464fb8775b9d022d7dc3e925b94b3,Introduce ImageQuilt support
+daveliepmann,2015-10-28 12:30:28,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/22436c566f76fe7c54c50af190d2236e7786a5ab,22436c566f76fe7c54c50af190d2236e7786a5ab,Link to new home for github repo
+daveliepmann,2015-10-28 09:14:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ec00e6d4440d5dc28202930720c964789aa9e846,ec00e6d4440d5dc28202930720c964789aa9e846,Explain table divider class
+daveliepmann,2015-10-28 08:48:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a8eeae87b9b0b53e5ba08e56a611d78593aadd3b,a8eeae87b9b0b53e5ba08e56a611d78593aadd3b,Explain & tweak table styling.
+daveliepmann,2015-10-26 18:16:46,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e2b11a879ccf766ab8f2fb9f279d3981ab609e6a,e2b11a879ccf766ab8f2fb9f279d3981ab609e6a,Finalize study of Pravda table
+daveliepmann,2015-10-25 22:16:27,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/52c6dd05b7cf4ea1b5e92387fa5e27cbb1913964,52c6dd05b7cf4ea1b5e92387fa5e27cbb1913964,Pravda table example
+daveliepmann,2015-10-25 21:21:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0566bd30d98f8a9146986bac7d33668f1011178c,0566bd30d98f8a9146986bac7d33668f1011178c,Default table font. O-ring table example.
+daveliepmann,2015-10-19 13:24:41,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c24b431de6eff6cb3852ec607efdb959f7da3ec2,c24b431de6eff6cb3852ec607efdb959f7da3ec2,Supertable - first draft
+daveliepmann,2015-10-18 17:20:34,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/21fc8c865df5dbd125a5259beacd65ddc72b53b2,21fc8c865df5dbd125a5259beacd65ddc72b53b2,Monotype Bembo not Monotype Book
+daveliepmann,2015-10-18 17:15:03,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a7eb5f53fbd39960209e259a1a0246aced53498a,a7eb5f53fbd39960209e259a1a0246aced53498a,"Merge pull request #65 from adilzeshan/master
+
+Rename font to ET Book"
+adilzeshan,2015-10-18 00:51:32,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/57271650e531a0c1824eb8df747eb01062be67d9,57271650e531a0c1824eb8df747eb01062be67d9,Update index.html with references to ET Book per @edwardtufte's request
+adilzeshan,2015-10-18 00:36:01,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9ea19ef3f9b9d75068f27a880730490a5e5f52cb,9ea19ef3f9b9d75068f27a880730490a5e5f52cb,Update tufte.css with references to ET Book per @edwardtufte's request
+adilzeshan,2015-10-18 00:19:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ec605d9c619460c553b79ddf238c4c53fcf76c52,ec605d9c619460c553b79ddf238c4c53fcf76c52,Rename font files to et-book per @edwardtufte's request
+adilzeshan,2015-10-18 00:01:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b45612bdb27d095a894e4039b0183dd428138525,b45612bdb27d095a894e4039b0183dd428138525,Rename font subfolders to et-book per @edwardtufte's request
+adilzeshan,2015-10-17 23:56:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/19c324726868f0cd127f99363117a3caa114d887,19c324726868f0cd127f99363117a3caa114d887,Rename font folder to et-book per @edwardtufte's request
+daveliepmann,2015-10-12 07:16:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/1ac00f7426ba7b1f06bc58d02dc7f9387a8f6634,1ac00f7426ba7b1f06bc58d02dc7f9387a8f6634,Remove table caption; we don't want these anymore.
+daveliepmann,2015-10-12 07:12:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/22ec43cd4438c02e3f28a4616e7bd043d0d51444,22ec43cd4438c02e3f28a4616e7bd043d0d51444,Merge branch 'master' of https://github.com/edwardtufte/tufte-css
+daveliepmann,2015-10-12 07:12:00,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/205ab38fa9d21c4f9197a46a1135e54f9bc92cbc,205ab38fa9d21c4f9197a46a1135e54f9bc92cbc,Eliminate extraneous anchor. Fixes #63.
+daveliepmann,2015-10-11 13:40:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/897f7b901c98e0dac028d25b55a8b89569950fa6,897f7b901c98e0dac028d25b55a8b89569950fa6,"Merge pull request #59 from sbichenko/latex-sub-sup
+
+LaTeX span no longer messes up the line height"
+sbichenko,2015-10-11 10:52:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/55c41d78b4f689358c1e39034651984d7df94515,55c41d78b4f689358c1e39034651984d7df94515,LaTeX span no longer messes up the line height
+daveliepmann,2015-10-05 14:29:45,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d15487138577601132d1ca4f5bc515da7b4d3a29,d15487138577601132d1ca4f5bc515da7b4d3a29,"Merge pull request #57 from pixolin/pull_request_ol
+
+fixes #56 by adding indentation to ordered lists"
+daveliepmann,2015-10-04 19:09:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/335627287dbe626ec993d9b7a886d7d15155a24a,335627287dbe626ec993d9b7a886d7d15155a24a,"We don't have ""bright red"" sidenotes anymore"
+daveliepmann,2015-10-04 13:45:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/8511846d60f3babd52689bd275d7b565e600b015,8511846d60f3babd52689bd275d7b565e600b015,No longer using Linjie's italicized font
+daveliepmann,2015-10-04 13:06:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7b24a55805fbd9f499091123f3f755a4d7aab7e3,7b24a55805fbd9f499091123f3f755a4d7aab7e3,Additional booktabs explanation
+daveliepmann,2015-10-04 13:01:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/994fd365b23f3a5beb6f87e0a976b7eddfebe090,994fd365b23f3a5beb6f87e0a976b7eddfebe090,Remove top and bottom borders on booktabs
+daveliepmann,2015-10-04 13:00:23,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/517a3634b4ae516f85becae75d9cbbf99e7ab3f6,517a3634b4ae516f85becae75d9cbbf99e7ab3f6,Adam Schwartz' link underlining to clear descenders
+daveliepmann,2015-10-04 12:00:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b41149b29ea1e892424db62b60ee427b7c6b5ce2,b41149b29ea1e892424db62b60ee427b7c6b5ce2,"Merge pull request #55 from mgraupner/firefox-image-fix
+
+Firefox image fix"
+daveliepmann,2015-10-04 11:53:00,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/21c6273b6eaad2ac96b734b54f4d9c2dd2d09bfc,21c6273b6eaad2ac96b734b54f4d9c2dd2d09bfc,Merge branch 'master' of https://github.com/edwardtufte/tufte-css
+daveliepmann,2015-10-04 11:48:16,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/58eb6843cbe6a4e063fb8fc4ee3108973792283e,58eb6843cbe6a4e063fb8fc4ee3108973792283e,Epigraphs
+daveliepmann,2015-10-04 11:47:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9f721d785486e6ec5e9fe6021bb273e4f8a64242,9f721d785486e6ec5e9fe6021bb273e4f8a64242,"Merge pull request #54 from crmackay/fix-firefox-float
+
+Fix firefox float"
+daveliepmann,2015-10-04 08:14:58,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b9a2204fcc03ae3e686e70f0983b9bb432481a59,b9a2204fcc03ae3e686e70f0983b9bb432481a59,ET Bembo styles into main CSS. Nix mix-blend-mode.
+mgraupner,2015-09-26 09:36:13,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f73e0f9bec4f013573fb4e4bd7cc4b1902f13201,f73e0f9bec4f013573fb4e4bd7cc4b1902f13201,Merge branch 'fix-firefox-float' of https://github.com/crmackay/tufte-css into firefox-image-fix
+mgraupner,2015-09-26 09:36:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/adda322a32c57ba498688ad11f9d4ef4f6b98505,adda322a32c57ba498688ad11f9d4ef4f6b98505,Fixed default margin/padding from browser
+crmackay,2015-09-25 15:44:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6c2f3e8e7c4e3d009d62a80bbb5c54de2a9601dd,6c2f3e8e7c4e3d009d62a80bbb5c54de2a9601dd,"adding a clear to full-width figures
+
+fixes edwardtufte/tufte-css/issues/53"
+crmackay,2015-09-25 15:31:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/1f99727de8c03931723ac5d0a4b5744e5ee08d7b,1f99727de8c03931723ac5d0a4b5744e5ee08d7b,"Merge pull request #11 from edwardtufte/master
+
+pulling in updates"
+daveliepmann,2015-09-22 08:24:49,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/12b1e435d783ba14351d003c3e8d0bd00a89724a,12b1e435d783ba14351d003c3e8d0bd00a89724a,"Remove ""Table 2"" reference"
+daveliepmann,2015-09-22 08:19:06,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/eb095b9a46ddb150c9d76f45fdce65da28cb75b5,eb095b9a46ddb150c9d76f45fdce65da28cb75b5,"Sidenotes per Edward Tufte.
+
+""Use old-style figures for numerals, remove the red coloring, remove the “.”, make them superscripted, and don’t outdent them."""
+daveliepmann,2015-09-22 07:34:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/651f3a3b6530aa5cd1c919d27689905dd71b26bd,651f3a3b6530aa5cd1c919d27689905dd71b26bd,Pull in et-bembo files from official repo
+daveliepmann,2015-09-22 07:04:35,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/16a34665c8d37a9d88e91a0f091430b2b164dbb3,16a34665c8d37a9d88e91a0f091430b2b164dbb3,Switch to official et-bembo fonts. Move images.
+daveliepmann,2015-09-21 08:05:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/673a2b722481002308b597ef8b25e945ff4dff9d,673a2b722481002308b597ef8b25e945ff4dff9d,"Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+
+Conflicts:
+	tufte.css"
+daveliepmann,2015-09-21 07:55:45,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3aa48b4ac13cfe1e323e4547844eee555edc4703,3aa48b4ac13cfe1e323e4547844eee555edc4703,"1st draft of Tufte's revisions
+
+Swap out images, change wording regarding ET Bembo (now open-source), nix old table data and start to replace with multiple table examples, italicize book titles."
+daveliepmann,2015-09-10 15:19:32,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/33371fc8cd08925064effa20896e3c2e230f7842,33371fc8cd08925064effa20896e3c2e230f7842,Other approaches to sidenotes
+daveliepmann,2015-09-01 03:58:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9f6fbfe5592d0308f9229405473fbe9275be4aa2,9f6fbfe5592d0308f9229405473fbe9275be4aa2,"Merge pull request #52 from iDGS/patch-1
+
+Fixes table-caption/table layout issue in Firefox"
+iDGS,2015-08-31 19:36:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ce53b96e0651708bc2650c7477e74fccfeeb1bc2,ce53b96e0651708bc2650c7477e74fccfeeb1bc2,"Fixes table-caption/table layout issue in Firefox
+
+Inserted `clear: left` in CSS for `table` so table would be positioned below table-caption, instead of colliding with it at mobile widths in Firefox 40.0.3/Mac."
+daveliepmann,2015-08-19 13:47:24,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c191a344fdb6a86ab5ed47cabdb592dfbff104fc,c191a344fdb6a86ab5ed47cabdb592dfbff104fc,Fix figure numbering in demo doc
+daveliepmann,2015-08-19 13:35:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a72d0c3c8092b46dae700fb6317fa11ef7f40359,a72d0c3c8092b46dae700fb6317fa11ef7f40359,"Emergency figcaption fix.
+
+Figcaptions were causing x-overflow on small screens."
+daveliepmann,2015-08-19 13:26:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/908f91aabae5b0606e4ecdadc0d8251881d68416,908f91aabae5b0606e4ecdadc0d8251881d68416,Improve pre.code block widths on small screens
+daveliepmann,2015-08-19 12:30:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a3245e61132041d51db5657fc353b8f55b573311,a3245e61132041d51db5657fc353b8f55b573311,Fix CSS-style-guide-nonconformant typo
+daveliepmann,2015-08-19 12:30:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aa108da81a16d92745bb1cd8b29ae5341f112601,aa108da81a16d92745bb1cd8b29ae5341f112601,Update Contributors. Link to their contributions.
+crmackay,2015-08-17 16:58:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aa5bcdeb298dbd989d4238b9b4ed1a69cb074c30,aa5bcdeb298dbd989d4238b9b4ed1a69cb074c30,"Merge pull request #10 from daveliepmann/master
+
+pulling in changes"
+daveliepmann,2015-08-15 15:03:45,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ee2ffbad6cd2250b63a66a1b61aa103a22b2f618,ee2ffbad6cd2250b63a66a1b61aa103a22b2f618,"Merge pull request #47 from janfabry/patch-1
+
+Replace curved quotes in HTML tags"
+janfabry,2015-08-15 14:52:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f5fa15a80766bf3c4da407268e21bf73cf1b14ff,f5fa15a80766bf3c4da407268e21bf73cf1b14ff,"Replace curved quotes in HTML tags
+
+These quote marks should be ""straight"" quote marks, as they are part of the HTML tag, not the text. Currently they are interpreted as part of the attribute value, and breaking the style and the links."
+daveliepmann,2015-08-14 18:23:26,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/18e97815b39012de2dc1ad79f8a442e0cd738131,18e97815b39012de2dc1ad79f8a442e0cd738131,<subtitle> isn't a thing. Fixes #46.
+daveliepmann,2015-08-14 17:13:31,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b02ab81ac282b10f896a25535c17f0eb889fba4c,b02ab81ac282b10f896a25535c17f0eb889fba4c,Mention blockquotes in demo doc
+daveliepmann,2015-08-14 17:12:59,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9fbebed084fc91b9b750088165d3fc4b9c4a1a9b,9fbebed084fc91b9b750088165d3fc4b9c4a1a9b,Similar projects
+daveliepmann,2015-08-14 15:52:14,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/29d1e3c5a820835a8ddf029352c6a6f1090139eb,29d1e3c5a820835a8ddf029352c6a6f1090139eb,Don't wrap figures in paragraphs
+daveliepmann,2015-08-14 15:12:03,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d596b171b09e11565d06d3170e966f1b36741a79,d596b171b09e11565d06d3170e966f1b36741a79,Phrasing
+daveliepmann,2015-08-14 15:10:36,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/631d254ec4c8ee4cb3dfa9e1e4e753b773133acd,631d254ec4c8ee4cb3dfa9e1e4e753b773133acd,More substantial code example. Fixes `for` loop.
+daveliepmann,2015-08-14 04:02:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4bfa86d66c743d69bd33491ad5501886ca12321f,4bfa86d66c743d69bd33491ad5501886ca12321f,Smart quotes throughout. (Thanks typopunct.)
+daveliepmann,2015-08-14 02:36:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/98e00be02cd47bfa8166fe1548f6cc08762c78b8,98e00be02cd47bfa8166fe1548f6cc08762c78b8,Improve wording in demo doc
+daveliepmann,2015-08-13 23:48:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5e0052f7f49b29023fb7827d7dbdb4f77e36c4d6,5e0052f7f49b29023fb7827d7dbdb4f77e36c4d6,Semantic rather than numbered side/marginnote ids
+daveliepmann,2015-08-13 22:38:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ae4370f86f4c550c5e9cf0ab4ad39a4f5aea4062,ae4370f86f4c550c5e9cf0ab4ad39a4f5aea4062,Describe font degradation and Other Tools
+daveliepmann,2015-08-13 21:43:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a72b8c31e5b917cd14692bc7bdd3e812b37160d3,a72b8c31e5b917cd14692bc7bdd3e812b37160d3,Explain side/margin notes better. More examples.
+daveliepmann,2015-08-13 20:59:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/94c004c81ea3f79e46ef03c1809b0e7d656fd744,94c004c81ea3f79e46ef03c1809b0e7d656fd744,Revise & describe link styling. Combine sections.
+crmackay,2015-08-11 17:23:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a16e68550c47699f9d35566174555de6691de8ab,a16e68550c47699f9d35566174555de6691de8ab,Merge branch 'daveliepmann/master'
+daveliepmann,2015-08-10 17:04:26,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/fa85349be0ffe02439e1310aff9e97341023ad42,fa85349be0ffe02439e1310aff9e97341023ad42,Clarify list discussion
+daveliepmann,2015-08-10 17:00:09,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aec343461a12d37cb1db9f048c02a7c274c5205c,aec343461a12d37cb1db9f048c02a7c274c5205c,Lists
+daveliepmann,2015-08-10 03:49:29,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0a8b54cd07d7d95f7ecac1d03ab89fc453cc082b,0a8b54cd07d7d95f7ecac1d03ab89fc453cc082b,Adjust styling/demo of sidenote #s on small screens
+daveliepmann,2015-08-10 03:32:14,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/bd3b277fd3775a7981a132d47aa6d55cedbb0e09,bd3b277fd3775a7981a132d47aa6d55cedbb0e09,Enforce CSS style guide
+daveliepmann,2015-08-10 03:22:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/224565edd593ca1b48a70f6bd737cd7914e60f51,224565edd593ca1b48a70f6bd737cd7914e60f51,"Merge pull request #39 from crmackay/toggle-margin-method-2
+
+Toggle margin content on small screens"
+crmackay,2015-08-10 01:03:46,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/03ead10d14a1aa72d18d4bb7f95032fefbd934f9,03ead10d14a1aa72d18d4bb7f95032fefbd934f9,nvm - actually fixing the img tag on small screens
+crmackay,2015-08-10 01:00:46,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c8d71c45b5c6a64482e1d07ecabd6b3977b6a7e5,c8d71c45b5c6a64482e1d07ecabd6b3977b6a7e5,"Merge branch 'master' into toggle-margin-method-2
+
+Conflicts:
+	index.html
+	tufte.css"
+crmackay,2015-08-10 00:56:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/75d52e2efc9aba126c4e18dbcb225c67bf3c35f5,75d52e2efc9aba126c4e18dbcb225c67bf3c35f5,"updating `img` css
+
+- add width:100% property to only during a media query"
+crmackay,2015-08-10 00:51:43,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/edd7c52984df76c81525d9a3ec4e55deb23519a2,edd7c52984df76c81525d9a3ec4e55deb23519a2,"Merge pull request #5 from daveliepmann/master
+
+pulling in changes"
+daveliepmann,2015-08-09 21:05:59,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f5d164ae8c12446c71d6b69b786905b657154ca9,f5d164ae8c12446c71d6b69b786905b657154ca9,"Fix table centering, booktabs and non."
+crmackay,2015-08-09 04:33:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2dcd6ce6b88d799e9fcf37625cadb872d8be334e,2dcd6ce6b88d799e9fcf37625cadb872d8be334e,fixing formatting to conform to style guide
+crmackay,2015-08-09 04:30:03,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/37c2606692c423efbdc33c56b8777cf0b0c50673,37c2606692c423efbdc33c56b8777cf0b0c50673,"sqwashing some bugs
+
+- fix marginnote sidenote widths
+- changing img width to 100%;"
+crmackay,2015-08-09 04:23:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/28674c5d1ae2dc7582dae6b545cfc235e769f6b2,28674c5d1ae2dc7582dae6b545cfc235e769f6b2,"fix table captions and sidenote number positions
+
+- table captions are now their own entity
+  - they do not collapse on a small screen, instead they expand to full
+width and left align on top of the table
+- table widths are now full width when on a small screen
+- sidetone numbers were nudged a bit to left"
+crmackay,2015-08-09 03:09:36,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4afc5b392387615f9ff32d69a3f78f40f7640918,4afc5b392387615f9ff32d69a3f78f40f7640918,toggle margin content at next line break - working
+crmackay,2015-08-08 19:19:41,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/62c6ab12b7b68cdec1b92caa0c5e61b7b44b368a,62c6ab12b7b68cdec1b92caa0c5e61b7b44b368a,"cleaning up css page
+
+- streaminlining the media queries a bit"
+crmackay,2015-08-08 18:52:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9ce07188c4b534a67b30b50d18ceeae99d11190a,9ce07188c4b534a67b30b50d18ceeae99d11190a,"working demo of expandable margin content
+
+- have to add input and label elements just before hand
+- sidenote autonumbering still works
+- sidenote numbers act as clickable symbols to reveal the note
+
+- I do wonder if this is overkill thought….what if the margin content
+is just inserted in place and always visible?"
+crmackay,2015-08-08 17:13:08,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9a0108594fa11ea57ff8b5327b92aa07f1840ea5,9a0108594fa11ea57ff8b5327b92aa07f1840ea5,"Merge pull request #3 from daveliepmann/master
+
+pulling changes"
+daveliepmann,2015-08-08 03:55:10,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6c0666c8630b010016e78088708144441f6ac4a3,6c0666c8630b010016e78088708144441f6ac4a3,"Tweak README: instructions, section order"
+daveliepmann,2015-08-08 03:50:28,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/faad9035c7d1990b13abc1210281fa57574f0e04,faad9035c7d1990b13abc1210281fa57574f0e04,Improve wording about contributing
+daveliepmann,2015-08-08 03:26:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4ecfba47462e897fbf53e3ee497adb5804907b8f,4ecfba47462e897fbf53e3ee497adb5804907b8f,Clean up booktabs and latex styles
+daveliepmann,2015-08-08 03:18:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/31191496d6f2623c3feb9a390bda3fdc6248e2fb,31191496d6f2623c3feb9a390bda3fdc6248e2fb,Revise booktabs wording. Fix code class in margin.
+daveliepmann,2015-08-08 03:04:13,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/52ea73bd5b509f39cd714398924779473b49e31a,52ea73bd5b509f39cd714398924779473b49e31a,"Merge pull request #27 from godbyk/booktabs
+
+Provide 'booktabs' style for tables."
+daveliepmann,2015-08-08 02:48:43,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/60ab62a8b125730a48ae69f74047360b80fb4ec2,60ab62a8b125730a48ae69f74047360b80fb4ec2,Embiggen newthought's small-caps
+daveliepmann,2015-08-08 02:38:42,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b39f28c4dcb4cf53ff644cc0f802ecf18b4df5f7,b39f28c4dcb4cf53ff644cc0f802ecf18b4df5f7,"Tweak tables, code, sidenote margins on small screens"
+godbyk,2015-08-08 02:18:38,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/8dee1108f313d950bd4c9e226d50750042b23c33,8dee1108f313d950bd4c9e226d50750042b23c33,"Provides a `booktabs` class for styling tables.
+
+The booktabs package <http://ctan.org/pkg/booktabs> provides nice rules
+and spacing for tables. Tables of this style are frequently used in
+academic journals.
+
+A heavy rule is used at the top and bottom of the table.
+A medium-weight rule is separates the head row from the table contents."
+daveliepmann,2015-08-08 02:12:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/fa3ee726bf03ec292aabe90f575444ceca6ce5db,fa3ee726bf03ec292aabe90f575444ceca6ce5db,"Merge pull request #36 from TBRSS/sidenotes
+
+Improved handling of sidenotes on small screens."
+daveliepmann,2015-08-08 02:04:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7920c286eec1bacc0fe8dca010026bc54256b4c0,7920c286eec1bacc0fe8dca010026bc54256b4c0,Credit Ben Newman and tweak sidenote number style
+daveliepmann,2015-08-08 01:59:29,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e44002a88a4724654814a44026413d983da4c42e,e44002a88a4724654814a44026413d983da4c42e,Merge pull #9 from benjamn
+daveliepmann,2015-08-08 01:44:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/dbd1e8ba9d0cad73104aff98e8410c066ba910eb,dbd1e8ba9d0cad73104aff98e8410c066ba910eb,Fix wacky sidenote-numbering typo
+daveliepmann,2015-08-08 01:19:59,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/69255155c916b4025e40460fd4b507c00be36dff,69255155c916b4025e40460fd4b507c00be36dff,Fix typo @ Bembo sidenote. Fix code overflow.
+ruricolist,2015-08-08 01:14:23,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5091713df358bf318a5d94f74a3cd39bf8003351,5091713df358bf318a5d94f74a3cd39bf8003351,Use visibility:hidden for sidenote numbers.
+daveliepmann,2015-08-08 00:58:42,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/fff3152d1c48c831e6949c563b35581a8a50a429,fff3152d1c48c831e6949c563b35581a8a50a429,Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+daveliepmann,2015-08-08 00:57:35,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e0893c9e8ff7d5d12fba39cdd287057280935941,e0893c9e8ff7d5d12fba39cdd287057280935941,Fix figure label position. Change first side note.
+ruricolist,2015-08-08 00:41:13,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/609d6986d64ac7c723e6a9b37fa94fc559f3b56a,609d6986d64ac7c723e6a9b37fa94fc559f3b56a,Improved handling of sidenotes on small screens.
+daveliepmann,2015-08-07 19:04:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/82293ef481b13a2c7553bdf8c9a3f88675c18abd,82293ef481b13a2c7553bdf8c9a3f88675c18abd,"Merge pull request #35 from fasiha/code-in-header
+
+Adjusted code snippets' font-size when in headings, fixes daveliepmann/tufte-css#33"
+crmackay,2015-08-07 18:31:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d8d18a5abb340eb9fa6e76566005d61d8aabf827,d8d18a5abb340eb9fa6e76566005d61d8aabf827,"Merge pull request #2 from daveliepmann/master
+
+getting updates"
+daveliepmann,2015-08-07 16:37:30,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aa669d0de81da970683f240b29b31a925282ea21,aa669d0de81da970683f240b29b31a925282ea21,"Consistent apostrophes. Refer to pull #18.
+
+https://github.com/daveliepmann/tufte-css/pull/18"
+daveliepmann,2015-08-07 16:29:32,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3f6eef6e5c5ded022b438ab1dfc472fd405b7637,3f6eef6e5c5ded022b438ab1dfc472fd405b7637,Clarify wording of code/sans fonts.
+daveliepmann,2015-08-07 16:27:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ed5eec8a6db5b740f7ff5e238f9364ee7cb9102a,ed5eec8a6db5b740f7ff5e238f9364ee7cb9102a,"Merge pull request #19 from moubry/inline-code-size
+
+Increase x-height of inline code"
+daveliepmann,2015-08-07 16:22:05,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4645d0928388aba90972ad0ec92ecfcc618b4935,4645d0928388aba90972ad0ec92ecfcc618b4935,"Links must be underlined, but need not be ugly"
+moubry,2015-08-06 14:46:55,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ce0e15355ecb559ba1631d9f71e57e34792ae61f,ce0e15355ecb559ba1631d9f71e57e34792ae61f,"Increase x-height of inline code
+
+In the Tufte sample handout PDF, the inline monospace font has the same
+x-height as its surrounding serif text. So, I’m increasing it from 16px
+to 18px, which looks right to me."
+daveliepmann,2015-08-07 16:04:37,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/cbe423ff18c04d480ef850bc0ba2f2ec9e8b3efd,cbe423ff18c04d480ef850bc0ba2f2ec9e8b3efd,Accidentally a word
+daveliepmann,2015-08-07 16:00:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b4596f97ea8c06e92715faa3000381baa82d2c67,b4596f97ea8c06e92715faa3000381baa82d2c67,Don't scale fonts as viewport narrows.
+daveliepmann,2015-08-07 14:22:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6d0373ccccb48f9a2b2f6dc32538ad8dbd324810,6d0373ccccb48f9a2b2f6dc32538ad8dbd324810,Un-crowd sidenote-numbered text.
+daveliepmann,2015-08-07 14:09:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6f897d119d25296d65c6053d3254e28801c2ab74,6f897d119d25296d65c6053d3254e28801c2ab74,Revise sidenotes on small screens
+daveliepmann,2015-08-07 14:08:50,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3ac9484f05b20b8728bd16f95463fbf364565667,3ac9484f05b20b8728bd16f95463fbf364565667,Describe project goals and non-goals
+daveliepmann,2015-08-07 05:13:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6aca33a664100669372e7bab0fbff8ad9c42160a,6aca33a664100669372e7bab0fbff8ad9c42160a,Lessen line height. Addresses #29
+daveliepmann,2015-08-07 05:06:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5c3fd4b8158ed09a9e1ee28e97e97a485f38729e,5c3fd4b8158ed09a9e1ee28e97e97a485f38729e,Rename sidenotes and sidenote-numbers
+daveliepmann,2015-08-07 04:34:31,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d304780dd880e32d8b067bbd5be25020b3daa83d,d304780dd880e32d8b067bbd5be25020b3daa83d,"Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+
+Conflicts:
+	index.html"
+daveliepmann,2015-08-07 04:25:23,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/72d26cc8e39ace92276c219ec0e658dd6e4979b8,72d26cc8e39ace92276c219ec0e658dd6e4979b8,Wording in demo doc. Figure/figcaption.
+daveliepmann,2015-08-07 04:04:34,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a1e51fc4f75c8b6fb62a8e57a9db0bc33d1c24ce,a1e51fc4f75c8b6fb62a8e57a9db0bc33d1c24ce,"Merge pull request #28 from TDaltonC/master
+
+javascript libraries for making sparklines"
+TDaltonC,2015-08-07 03:57:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b18303b2097d1e645b04245821b4307d20a737da,b18303b2097d1e645b04245821b4307d20a737da,javascript libraries for making sparklines
+daveliepmann,2015-08-06 23:28:35,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4405829f240a2a62bf08190de6caa74ded724c00,4405829f240a2a62bf08190de6caa74ded724c00,"Merge pull request #25 from jameskolce/master
+
+Fix the use of sidenotes"
+jameskolce,2015-08-06 22:24:59,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b3568afebd40c7c52d1e58a125b5958dcc10d89e,b3568afebd40c7c52d1e58a125b5958dcc10d89e,"Change name of sidenotes
+
+Since `.sidenote-number` no longer contains only a number but a fragment
+of text, we change the name to `.sidenote` and `.sidenote` to
+`.sidenote-content`."
+jameskolce,2015-08-06 22:11:58,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/47902f6a4d163be786b6b2d7a6660eb1514838b2,47902f6a4d163be786b6b2d7a6660eb1514838b2,"Fix the use of sidenotes
+
+Span elements aren't self-closed tags in HTML5 (only in XHTML).
+The symbol `/` is omited in HTML5, so `<span/>` is the same as `<span>`
+The browser will find a way to close those tags somewhere and that's not
+something we want.
+
+To fix this we close the tags properly and to avoid empty elements we
+wrap the relevant fragment of the text (see code).
+
+By default `.sidenote-number` adds a number `before` the element, this work
+only before the changes, so `:before` is replaced with `:after` to have
+the desired result."
+crmackay,2015-08-06 21:38:55,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aff33471cd9838d25bc7e5b6bf9ea1c953868084,aff33471cd9838d25bc7e5b6bf9ea1c953868084,"Merge pull request #1 from daveliepmann/master
+
+pulling in updates"
+daveliepmann,2015-08-06 21:15:02,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/18ac51fcdd6eb2b4918eab9938a668ddfbacf4b7,18ac51fcdd6eb2b4918eab9938a668ddfbacf4b7,Call for help
+daveliepmann,2015-08-06 20:40:57,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/61d5f00afd219876d3ce8e0fe070d03d20194789,61d5f00afd219876d3ce8e0fe070d03d20194789,Fix sidenote numberings. Smaller URLs.
+daveliepmann,2015-08-06 20:33:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/161f5911b57d5f6df258a9f083b6495984bc0dee,161f5911b57d5f6df258a9f083b6495984bc0dee,Attribution for autonumbering
+daveliepmann,2015-08-06 20:31:03,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/28b09e069ec26a83b88aea8d1fdf074e32cd4631,28b09e069ec26a83b88aea8d1fdf074e32cd4631,Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+daveliepmann,2015-08-06 20:30:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c46b8b516a06537f7f40106e0ebd1aed752c4ba4,c46b8b516a06537f7f40106e0ebd1aed752c4ba4,"Tables: less ink, more description"
+daveliepmann,2015-08-06 20:29:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6c2aa5c0b041fa5031abadb94acd316a2096a55a,6c2aa5c0b041fa5031abadb94acd316a2096a55a,"Merge pull request #14 from sathomas/autonumber
+
+Automatically number sidenotes"
+daveliepmann,2015-08-06 19:41:47,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5f362a8d9d9209e98defcf545d3cdaa2c32607ed,5f362a8d9d9209e98defcf545d3cdaa2c32607ed,Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+daveliepmann,2015-08-06 19:38:06,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/1752c355154cbd6f8dd24b59a983cde267dea7a8,1752c355154cbd6f8dd24b59a983cde267dea7a8,"""Tufte CSS"", describe figure integration, mix-blend-mode"
+daveliepmann,2015-08-06 19:25:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/caa287973527785cb1d83e1b3f7e23dc289842be,caa287973527785cb1d83e1b3f7e23dc289842be,"Merge pull request #20 from bronzehedwick/patch-1
+
+Add syntax highlighting to README code snippets"
+bronzehedwick,2015-08-06 18:00:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a3146380917d66849190bc81e57af1b0f724ca50,a3146380917d66849190bc81e57af1b0f724ca50,Add syntax highlighting to README code snippets
+sathomas,2015-08-06 17:11:25,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/728369779c3591a2b39b7be68a8c483c03a05e00,728369779c3591a2b39b7be68a8c483c03a05e00,Merge branch 'master' of https://github.com/daveliepmann/tufte-css into autonumber
+daveliepmann,2015-08-06 14:33:11,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7e67efd938f344271948432f6cfc7f4f0d8ad496,7e67efd938f344271948432f6cfc7f4f0d8ad496,"""Data"" is a plural"
+sathomas,2015-08-06 12:30:57,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c095355e2caab7c5ccc98c30f0cf9fc3057bb3dc,c095355e2caab7c5ccc98c30f0cf9fc3057bb3dc,auto-number sidenotes
+daveliepmann,2015-08-06 04:14:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/566e64316656b5c2366099d4a9b125dd4ae0b659,566e64316656b5c2366099d4a9b125dd4ae0b659,"Improve wording (three ""use""s?!)"
+daveliepmann,2015-08-06 04:12:29,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a1d033f75a1724c64303421247ee9206279744f3,a1d033f75a1724c64303421247ee9206279744f3,Remove statement that font is open source
+daveliepmann,2015-08-06 02:24:13,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b7327499f70ca7a7f8b6356607953e000c773976,b7327499f70ca7a7f8b6356607953e000c773976,Whoops! da325d4 fixed the wrong margin.
+daveliepmann,2015-08-06 02:20:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/da325d4828fb4f0d9c5d968f949ddccc9a53db03,da325d4828fb4f0d9c5d968f949ddccc9a53db03,Modify code margin to fix overflow on small screen
+daveliepmann,2015-08-06 01:13:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7698f8ab160d438483d4825366bdb8dd0f8b0ddf,7698f8ab160d438483d4825366bdb8dd0f8b0ddf,Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+daveliepmann,2015-08-06 01:13:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/41760e34c81c60993f09e1bfc5fd568b1c8b53b3,41760e34c81c60993f09e1bfc5fd568b1c8b53b3,"""Tufte CSS"" not ""Tufte-CSS"""
+daveliepmann,2015-08-06 01:10:27,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/7f2d57f77da46794ea0e38e748d9e700c84db6c9,7f2d57f77da46794ea0e38e748d9e700c84db6c9,"Merge pull request #8 from pyrocat101/master
+
+ETBembo italic"
+pyrocat101,2015-08-05 21:21:22,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0a810a7d5f4707941c6f9fe99a53ec41f50a5c00,0a810a7d5f4707941c6f9fe99a53ec41f50a5c00,ETBembo italic
+daveliepmann,2015-08-04 05:18:27,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e2ec9aa90d948e92b34b4897ffbfcf33c177ff25,e2ec9aa90d948e92b34b4897ffbfcf33c177ff25,Fix typo in Tufte quote
+daveliepmann,2015-08-04 05:15:43,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/736832f7e0ff84cd7397386a1649aebd7e96b7b6,736832f7e0ff84cd7397386a1649aebd7e96b7b6,Ibid 18159d0
+daveliepmann,2015-08-04 05:11:37,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/18159d0dd7f4ff074813c6faacaffb86c89f1e5a,18159d0dd7f4ff074813c6faacaffb86c89f1e5a,Fix widths for non-p elements on small devices.
+daveliepmann,2015-08-04 04:39:30,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aa79cc75d0d53f9b71da4faed46c07b9b30720c4,aa79cc75d0d53f9b71da4faed46c07b9b30720c4,Remove bottom-of-page padding
+daveliepmann,2015-08-03 22:11:51,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/81c72af1cb21cd74104271c076d98a208a6d0c75,81c72af1cb21cd74104271c076d98a208a6d0c75,Revise demo doc for clarity. Extract LaTeX styles.
+daveliepmann,2015-08-03 21:11:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/72cc6eaeb29e47122bba71144c20fa7c15d41132,72cc6eaeb29e47122bba71144c20fa7c15d41132,Clarify How to Use
+daveliepmann,2015-08-03 20:53:29,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/878050f8ccb54c414c829f35629e94571a03a5d6,878050f8ccb54c414c829f35629e94571a03a5d6,"""How to Use"" section and other re-wording."
+daveliepmann,2015-08-03 18:10:51,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/30b6af39ebab51b91b313eae83236eba14576dbb,30b6af39ebab51b91b313eae83236eba14576dbb,Close article and section tags. Reorder sections.
+daveliepmann,2015-08-03 18:04:49,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a582b3ead9333db5203401efb84f9d540e05139a,a582b3ead9333db5203401efb84f9d540e05139a,Improve wording and links in introduction of demo
+daveliepmann,2015-08-03 17:44:27,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/afb86ad11f357d823fd43238bd2e290270c350a3,afb86ad11f357d823fd43238bd2e290270c350a3,Tighten demo document
+daveliepmann,2015-08-03 17:12:02,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aadf703bc211c83ecdbc2112a4f37077939d9fb0,aadf703bc211c83ecdbc2112a4f37077939d9fb0,Add blockquote functionality. Smaller code blocks.
+daveliepmann,2015-08-03 16:31:48,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/cb4a81d72ad044da7565a46a9e175a239d22d31e,cb4a81d72ad044da7565a46a9e175a239d22d31e,Nix cruft
+daveliepmann,2015-08-03 16:29:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/dacba9fd3ab830765c8a87f4761588496824dd82,dacba9fd3ab830765c8a87f4761588496824dd82,"Whitespace between sections. Bigger H1, H2."
+daveliepmann,2015-08-03 03:17:18,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a8e858e2c234f099f6904c8c0c8eacf052be9300,a8e858e2c234f099f6904c8c0c8eacf052be9300,Update Tufte-LaTeX URL
+daveliepmann,2015-08-03 03:12:30,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/1f2c981a30024c13f1d61e15d359575a4a7e8e73,1f2c981a30024c13f1d61e15d359575a4a7e8e73,Un-italicize H1. Column-align some CSS blocks.
+daveliepmann,2015-02-22 19:48:27,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3e894a86d27ec5965d3d86ef73fd4265f509f35f,3e894a86d27ec5965d3d86ef73fd4265f509f35f,Add link to issues classified Help Wanted
+daveliepmann,2015-02-09 13:38:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/cda1b8b289bebecebf60913823570a123c1b6fd8,cda1b8b289bebecebf60913823570a123c1b6fd8,Merge branch 'clayh53-master'
+daveliepmann,2015-02-09 13:35:23,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b0622f42253dea3bb05ace2733414f675fd79875,b0622f42253dea3bb05ace2733414f675fd79875,"Merge branch 'master' of https://github.com/clayh53/tufte-css into clayh53-master
+
+Conflicts:
+	tufte.css"
+clayh53,2015-02-09 13:26:06,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4d79b96423454b08258b39583dcb3722e84e6db7,4d79b96423454b08258b39583dcb3722e84e6db7,"Merge pull request #2 from clayh53/clayh53-patch-2-print-media
+
+Added print media queries on separate branch"
+daveliepmann,2015-02-09 13:20:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e030d778385c9a8a7fe7eb07f718255d8d78b3f3,e030d778385c9a8a7fe7eb07f718255d8d78b3f3,Apply CSS standards to 'print' media query
+daveliepmann,2015-02-09 13:18:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/02104db45c130aafcf338e21eaf0f82eb722eceb,02104db45c130aafcf338e21eaf0f82eb722eceb,"Merge pull request #6 from clayh53/patch-1
+
+Add media query for print"
+clayh53,2015-02-09 13:16:12,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2335b0fc7b7530d3073cad89315d9272ae76602f,2335b0fc7b7530d3073cad89315d9272ae76602f,"Added print media query
+
+This is the second pull request for the print media query part. I think what I have been doing wrong is initiating the pull requests from inside my forked repo instead of directly on your repo. This"
+clayh53,2015-02-09 12:54:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/140224dfcfab8ba6ef9d698567ef7a85a9b0f554,140224dfcfab8ba6ef9d698567ef7a85a9b0f554,"Added print media queries on separate branch
+
+Print media queries added to css file. Created on a separate branch."
+clayh53,2015-02-09 12:47:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9ff6bcc0adabcea0398c061560544b480f3e7bf7,9ff6bcc0adabcea0398c061560544b480f3e7bf7,More granular pull request - only < 600px changes
+daveliepmann,2015-02-09 04:47:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/12f8cf4a34636d3c6fa4b6aea84b3720eb107be6,12f8cf4a34636d3c6fa4b6aea84b3720eb107be6,Indent code blocks. Reorganize CSS.
+daveliepmann,2015-02-09 04:32:25,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c9a56001c95d389fa288f1043011b9ab2c41ff45,c9a56001c95d389fa288f1043011b9ab2c41ff45,Linkify quote sources. Fix code example.
+daveliepmann,2015-02-09 04:23:01,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/de2e1c5da49ff16edb56d9762c024486ff2e43ff,de2e1c5da49ff16edb56d9762c024486ff2e43ff,Add line breaks before the source of a quote
+daveliepmann,2015-02-09 04:21:43,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c744d23cd2daa2530846ba8460a5471631be4565,c744d23cd2daa2530846ba8460a5471631be4565,Add style guide
+daveliepmann,2015-02-08 16:39:58,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3d76586b918c88f77741ada00659ce1fca6c89d4,3d76586b918c88f77741ada00659ce1fca6c89d4,"Remove support for h4, h5, h6. Tweak h1, h2, h3."
+clayh53,2015-02-08 13:05:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/aa0a3088f68a20e103796110c026214d7b0aab6f,aa0a3088f68a20e103796110c026214d7b0aab6f,"Update tufte.css
+
+Added a media query for printing that is directly cribbed from the HTML5 Boilerplate"
+clayh53,2015-02-08 13:04:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6bc1ea716705970be93524fc27c973fc42740e90,6bc1ea716705970be93524fc27c973fc42740e90,"Update tufte.css
+
+Modified < 600px media query to give the sidenote / marginnote class right margins a little more breathing room between 400px and 600px  browser width"
+daveliepmann,2015-02-08 09:04:28,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/cd1c148d2b21dfc29ab5ac4233d989e06740892e,cd1c148d2b21dfc29ab5ac4233d989e06740892e,Fix markdown error (can't handle angle brackets)
+daveliepmann,2015-02-08 09:01:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/96a261680d82ea6ce62483f235a8fc460b37402a,96a261680d82ea6ce62483f235a8fc460b37402a,Remove extraneous CSS (CSS Linter)
+daveliepmann,2015-02-08 09:00:52,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/553d8894f066e2ef6bfbce8600e63cb662a903fd,553d8894f066e2ef6bfbce8600e63cb662a903fd,Describe project better.
+daveliepmann,2015-02-08 08:33:30,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/5930cae9ec2f83467a9a7e4ad9943a24e5a34e07,5930cae9ec2f83467a9a7e4ad9943a24e5a34e07,Make bottom margin relative to screen size.
+daveliepmann,2015-02-08 08:29:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/c79112a3a696e24a4c855ced5b3cc3b2187c5e5b,c79112a3a696e24a4c855ced5b3cc3b2187c5e5b,"Fix article top margin. Improve LaTeX logo.
+
+Latest pull request eliminated the top margin. The alignment of 'A' and 'E' in the LaTeX logo was previously not exactly correct."
+daveliepmann,2015-02-08 08:09:25,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ef08d956358faa5ac6812fb5c98e7c461d25718c,ef08d956358faa5ac6812fb5c98e7c461d25718c,Fix issues with LaTeX logo stemming from f42314e.
+daveliepmann,2015-02-08 08:05:19,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f251331da8cf9567149da3d8208ca084c8a56e87,f251331da8cf9567149da3d8208ca084c8a56e87,Add 'Use' and 'Contributors' sections.
+daveliepmann,2015-02-08 07:54:54,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/df477607e96876bde72e1add0aa125088a486208,df477607e96876bde72e1add0aa125088a486208,"Enforce CSS formatting standards.
+
+Add spaces before open-parens, keep end-parens on the same line as the last declaration. Maintain one blank line between declaration blocks unless they are media-specific."
+daveliepmann,2015-02-08 07:40:15,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/f42314ec35d2ca54d80abdb9f1c7889b9566956e,f42314ec35d2ca54d80abdb9f1c7889b9566956e,"Merge pull request #2 from clayh53/master
+
+Integrate clayh53's changes: rem units, media queries."
+clayh53,2015-02-07 21:27:20,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/2c20d5a330b16faaea1d9523547945cd9ab17969,2c20d5a330b16faaea1d9523547945cd9ab17969,Update tufte.css
+clayh53,2015-02-07 21:06:51,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/679cf978638efa1bc0f40e2706392ec4679f1b0f,679cf978638efa1bc0f40e2706392ec4679f1b0f,"Merge pull request #1 from clayh53/clayh53-patch-1
+
+Update tufte.css"
+clayh53,2015-02-07 21:03:24,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/e401bd604717f53bab827b46d5a1664c4ccc054e,e401bd604717f53bab827b46d5a1664c4ccc054e,"Update tufte.css
+
+corrected typo for base font name"
+clayh53,2015-02-07 20:47:07,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/bb2585c6d33e9a36e329aea1d035fa1d0ea714f2,bb2585c6d33e9a36e329aea1d035fa1d0ea714f2,"Update tufte.css
+
+one more catch. Decided to drop the font size for subtitle to the same as the H3 tag. Added some additional bottom margin to H1 tag"
+clayh53,2015-02-07 20:38:40,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/950673fa9010cc9e6e0c1680bc88d468722eedab,950673fa9010cc9e6e0c1680bc88d468722eedab,"Update tufte.css
+
+Found an error in the base line height for paragraphs - was 1.6, should be 1.4"
+clayh53,2015-02-07 17:17:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/034a1d126c95293dd355d748161756deb739ead4,034a1d126c95293dd355d748161756deb739ead4,"Update tufte.css
+
+Changed font sizing to rems, and added media queries so that fonts scale as browser is resized in width. Also added top and bottom margins and rationalized line-heights so that sidenotes and marginnotes align to the same baseline as the main body copy.  For widths < 400px, sidenotes and marginnotes are not displayed at all."
+daveliepmann,2014-10-19 20:17:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/50c7705e4160725212784cca8ae5d91b32e6b7f0,50c7705e4160725212784cca8ae5d91b32e6b7f0,Images should not exceed their containers.
+daveliepmann,2014-10-19 20:15:02,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/6035bb3ab74420be1619aa535c8772bc428e217e,6035bb3ab74420be1619aa535c8772bc428e217e,Full-width figures/images
+daveliepmann,2014-10-15 12:58:21,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/62073e50888549ebea6cdf919a8a6e8d369d6534,62073e50888549ebea6cdf919a8a6e8d369d6534,README. Credits.
+daveliepmann,2014-10-15 12:48:33,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/4d3d94f03c5c8bba415c3ef0de055482b9265b1e,4d3d94f03c5c8bba415c3ef0de055482b9265b1e,"Headings 4,5,6"
+daveliepmann,2014-10-15 12:18:55,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/ba65f1077fe613919a2b9b6d150e2cf738f1c517,ba65f1077fe613919a2b9b6d150e2cf738f1c517,Merge branch 'master' of https://github.com/daveliepmann/tufte-css
+daveliepmann,2014-10-15 12:16:44,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/a63101cbe205fa5214af0045018c2146dbc97459,a63101cbe205fa5214af0045018c2146dbc97459,Initial commit
+daveliepmann,2014-10-15 12:08:19,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/0d0584f70c4d586324918c028b9ad254e6995f86,0d0584f70c4d586324918c028b9ad254e6995f86,"Color, width finalization. Font-face ETBembo. Figure instructions."
+daveliepmann,2014-10-15 12:07:41,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/839f399ccbac9aa6b0802815f936613475b5d912,839f399ccbac9aa6b0802815f936613475b5d912,Add example figures
+daveliepmann,2014-10-15 09:07:04,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/b8d0e77265c5bbd1048192ecb9939fd581e17752,b8d0e77265c5bbd1048192ecb9939fd581e17752,URLs -> anchors. MathJax link. Describe fonts.
+daveliepmann,2014-10-15 08:43:39,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/3b3587109899413150a8ac38ab89b57fddc77917,3b3587109899413150a8ac38ab89b57fddc77917,"Describe what Tufte CSS does. Add code, tables."
+daveliepmann,2014-10-15 08:43:02,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/d2e0f5fa6b902ca8e27f4d3cdd4376a226eadbea,d2e0f5fa6b902ca8e27f4d3cdd4376a226eadbea,Add ETBembo font.
+daveliepmann,2014-10-15 07:52:56,https://api.github.com/repos/edwardtufte/tufte-css/git/commits/9f53cdfc48789fd2380d931fd4093f024d8813b1,9f53cdfc48789fd2380d931fd4093f024d8813b1,I guess this project is real enough to track now.

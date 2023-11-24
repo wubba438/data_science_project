@@ -1,0 +1,559 @@
+android-priority-jobqueue,"A Job Queue specifically written for Android to easily schedule jobs (tasks) that run in the background, improving UX and application stability."
+username,timestamp,url,sha,message
+yigit,2019-01-10 17:26:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/991eb73acc4cc2d59b3bd5ab310cd8539b899e5b,991eb73acc4cc2d59b3bd5ab310cd8539b899e5b,deprecate :'(
+sockeqwe,2017-04-27 04:54:22,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2f4079c24381c3c8c55f4d179194a59f6b9b55d0,2f4079c24381c3c8c55f4d179194a59f6b9b55d0,Tiny markdown fix (#359)
+yigit,2017-03-04 21:40:48,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/caaa09d3db34d1fa33cdaedf41334a452f0ffff0,caaa09d3db34d1fa33cdaedf41334a452f0ffff0,add codecov back
+yigit,2017-03-04 21:20:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/91142c40e3241fa80d2a9a4758dff21a73609b98,91142c40e3241fa80d2a9a4758dff21a73609b98,fix jacoco
+yigit,2017-03-04 21:16:00,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/024acd0049c6c2e7b71d18d4bb0008ec0f56f131,024acd0049c6c2e7b71d18d4bb0008ec0f56f131,removed codecov until coverage report is fixed.
+yigit,2017-03-04 20:09:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0fab29d104d43a3cffa02128efad0d1c01fb852e,0fab29d104d43a3cffa02128efad0d1c01fb852e,"Fix build (#332)
+
+* update dependencies
+
+* update build tools and circle yml
+
+* update roboelectric, rollback support distribution until play service update their dependencies
+
+* Fix KeepAliveTest
+
+This CL fixes the KeepAliveTest to better handle the delay between
+finishing a job and consumer going idle. I've also changed when
+we save when a consumer is done. This would not have any effect on
+real time but important for test stability."
+stkent,2017-02-28 07:26:30,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7ef816e1d4fb2928cbab9c1011de013b927a36cb,7ef816e1d4fb2928cbab9c1011de013b927a36cb,Fix typo in README (#327)
+JSBerrocoso,2017-02-20 01:59:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b0dece65e92ca1dd4fe6074b379e6b6eab118638,b0dece65e92ca1dd4fe6074b379e6b6eab118638,Update GCM dependency for Sample app (#322)
+yigit,2017-01-15 22:23:42,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/57f97ae67fbd2a46632b94efddb627d76876b14e,57f97ae67fbd2a46632b94efddb627d76876b14e,incrementl keep alive test timeout and ensure the previous job is complete
+yigit,2017-01-15 21:33:41,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d9ecea31a70d5b7d63e21636e7e0211024efc864,d9ecea31a70d5b7d63e21636e7e0211024efc864,update gcm dependency
+yigit,2017-01-15 18:26:23,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6177bb85033a5c7491c095afa9da6ae91bc8f9fe,6177bb85033a5c7491c095afa9da6ae91bc8f9fe,fix flaky keep alive test
+yigit,2017-01-15 16:41:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/51b9d12610343bc68e7fbde98d46ee04719189b5,51b9d12610343bc68e7fbde98d46ee04719189b5,"Avoid crashes when app is already finishing.
+Bug: #294"
+yigit,2017-01-15 18:04:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0c76d034300078ad5187335bf52e8c52a89542fa,0c76d034300078ad5187335bf52e8c52a89542fa,Update dependencies (#304)
+yigit,2016-10-11 15:16:28,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e77c85de6f5db6f65a1a8ba55f7061a95ea617c6,e77c85de6f5db6f65a1a8ba55f7061a95ea617c6,2.0.1
+yigit,2016-10-11 15:14:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f807cdd4bc8425944702182fa66de59b36193c00,f807cdd4bc8425944702182fa66de59b36193c00,Add configuration builder test
+yigit,2016-10-11 15:13:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6de0d0d0c8b6553e1ccf3475ce20603120f2848b,6de0d0d0c8b6553e1ccf3475ce20603120f2848b,"handle bad bundles from scheduler callbacks #254 (#264)
+
+* handle bad bundles from scheduler callbacks #254
+
+* catch exceptions in test"
+yigit,2016-10-11 05:22:55,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3315288c353e73f121030af4049c9562661c83b2,3315288c353e73f121030af4049c9562661c83b2,"avoid infinite loop in idle callbacks (#263)
+
+This CL fixes a bug where JobManager would keep waking up
+itself even though there are no available consumers for
+the waiting jobs. #262
+
+* always reset constraint change lock"
+mortonfox,2016-09-16 22:55:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/58fc9dfc63f1358b32b26a262a81e2b98e6441ae,58fc9dfc63f1358b32b26a262a81e2b98e6441ae,Update link to Junit 4 license file (#249)
+deviant-studio,2016-09-03 03:20:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0d9be7956705abe2371f11dc8d00cb194c20fe32,0d9be7956705abe2371f11dc8d00cb194c20fe32,Update README.md (#242)
+yigit,2016-08-15 15:50:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8620d1ba8b8e2a581def53ca14d098d6066b87da,8620d1ba8b8e2a581def53ca14d098d6066b87da,update changelog for 2.0
+yigit,2016-08-15 15:48:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/50b129dafbfbd76a039b7191855c9fa0f7a1b710,50b129dafbfbd76a039b7191855c9fa0f7a1b710,validate job manager id (#229)
+yigit,2016-08-14 20:16:22,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e0d1f0e51506e65e34b9cfa873b04f6ce9077653,e0d1f0e51506e65e34b9cfa873b04f6ce9077653,hello v2
+yigit,2016-08-14 17:33:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/761e08e6b061aadaff67f721a6a202104b3654b4,761e08e6b061aadaff67f721a6a202104b3654b4,fix sample app gradle version
+yigit,2016-08-08 02:14:07,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4fe76c4f5faa8ceaa9e639adc3332552268334c4,4fe76c4f5faa8ceaa9e639adc3332552268334c4,beta3
+yigit,2016-08-07 21:06:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0715800e63b995979915cb90c671747e5e612f1d,0715800e63b995979915cb90c671747e5e612f1d,fix dependencies
+yigit,2016-08-07 21:05:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/228c9e6a61cb68bc6b1364436b10bd189d1d19af,228c9e6a61cb68bc6b1364436b10bd189d1d19af,fix machine configuration for circleci
+yigit,2016-08-07 21:04:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5448deee2eb09caafebba2fd6135c8de74dbb25e,5448deee2eb09caafebba2fd6135c8de74dbb25e,Add circle ci tools 24 configuration
+yigit,2016-08-07 20:54:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c1d8f7768021a4eee0d0a98d4967119550015e1f,c1d8f7768021a4eee0d0a98d4967119550015e1f,code cleanup
+yigit,2016-08-07 18:01:29,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/70334ae3671968f87113ec982ac031cd5ccc1840,70334ae3671968f87113ec982ac031cd5ccc1840,"More Scheduler Tests
+
+* FrameworkSchedulerService tests
+
+* Gcm scheduler tests
+
+* removed unused constructor in CancelResult"
+yigit,2016-08-02 15:48:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/eb63d7165249056945a5923f0097500f89167030,eb63d7165249056945a5923f0097500f89167030,add status badges (#221)
+yigit,2016-08-01 06:15:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/658c69ef1587b6dbe46b02de051126cddf086d04,658c69ef1587b6dbe46b02de051126cddf086d04,codecov integration (#219)
+yigit,2016-07-25 16:01:33,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/aaa874d5bf2ee942f1e5498818338980d0b2f12d,aaa874d5bf2ee942f1e5498818338980d0b2f12d,beta2 (#218)
+aryarohit07,2016-07-25 15:43:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/21078a4427084959e63e55a6b94eae4ffc343ab8,21078a4427084959e63e55a6b94eae4ffc343ab8,"Fixed broken link to NetworkUtil.java (#216)
+
+* Fixed broken link to NetworkUtil.java
+
+* fixed broken links in README.md"
+yigit,2016-07-24 03:22:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/661d15849d40ceafbd4e6465abf4f1ee85e40a66,661d15849d40ceafbd4e6465abf4f1ee85e40a66,Keep cancel field on disk #212 (#215)
+yigit,2016-07-22 15:07:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a097eebf465cf7adee7047c70e17015d6bf2eec2,a097eebf465cf7adee7047c70e17015d6bf2eec2,Add duration parameter to batching scheduler. #202 (#214)
+yigit,2016-07-22 14:32:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9f42943268f4e44e0adccabd4fb332c93913a5df,9f42943268f4e44e0adccabd4fb332c93913a5df,Add more tests for framework scheduler. (#213)
+yigit,2016-07-20 01:45:32,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/86ff750af5a7432d74d0bcd78c013d194b22bed3,86ff750af5a7432d74d0bcd78c013d194b22bed3,Close tags cursor when it is empty. #206 (#209)
+yigit,2016-06-28 08:24:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e7a1434686ac7301ff122a93183ac1d42db13a6d,e7a1434686ac7301ff122a93183ac1d42db13a6d,prepare beta1 (#199)
+yigit,2016-06-26 07:15:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d80a8a8ac03de65811b9cb5fb96f50509db872ac,d80a8a8ac03de65811b9cb5fb96f50509db872ac,"Cancel reason fix (#198)
+
+* fix typo in test names
+
+* Pass throwable if job decides to cancel on shouldRetry #197
+
+* update callback test to expect throwable"
+yigit,2016-06-22 06:17:21,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/bdcdfb9e1c5791b8ef026782fa78e7f6c8eecf9a,bdcdfb9e1c5791b8ef026782fa78e7f6c8eecf9a,alpha 5 release
+yigit,2016-06-22 06:14:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/539c2f052781caf1f889d3f31e07643e96d366c3,539c2f052781caf1f889d3f31e07643e96d366c3,"Merge pull request #192 from yigit/alpha-5
+
+Alpha 5"
+yigit,2016-06-22 06:01:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0bd96520c7db5f77f3ff0d6690e50a6c8ddbf9e4,0bd96520c7db5f77f3ff0d6690e50a6c8ddbf9e4,pass correct delay to the scheduler #187
+yigit,2016-06-22 06:00:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6feb43b755ce553d5fd7ab9e04f761b4e2eab1b7,6feb43b755ce553d5fd7ab9e04f761b4e2eab1b7,Make sure we reference app context. #190
+yigit,2016-06-18 17:54:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/afffb7ea346bd9d51a56e437c0b90415b083f8d9,afffb7ea346bd9d51a56e437c0b90415b083f8d9,"Vs job scheduler (#188)
+
+* job queue vs JobScheduler
+
+* fix internal link"
+yigit,2016-06-16 07:15:15,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/efd6b7afe1e1d717ad64093f8815a17d157744ba,efd6b7afe1e1d717ad64093f8815a17d157744ba,add licenses for new dependencies
+yigit,2016-06-16 07:12:29,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b263500592c6f0d3abed4b1570dc16a91691e528,b263500592c6f0d3abed4b1570dc16a91691e528,prepare for alpha 4
+yigit,2016-06-16 07:07:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ba693a35e22753e8a9050a9ad572d4b2b9959467,ba693a35e22753e8a9050a9ad572d4b2b9959467,"Deadline Parameter (#179)
+
+* WIP first pass on deadline. #177
+
+This CL instroduces the parameters and adds support in
+queues. JobManager is still not aware of it
+
+* Make JobManager deadline aware
+
+* add wasDeadlineReached variable to the job
+
+* clarify cancel on deadline behavior
+
+* added deadline support to schedulers
+
+* handle the case where a job hits deadline after failure
+
+* Let deadline be equal to delay
+
+* remove network specific deadlines
+
+* more batching scheduler tests
+
+* failing tests for deadline bugs
+
+* fix both queues to honor deadline properly #182
+
+* update docs to clarify deadline behavior"
+yigit,2016-06-12 09:01:11,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8b98333b5066e9dfaa4cff227069c9e3f88e9b63,8b98333b5066e9dfaa4cff227069c9e3f88e9b63,"fix flaky retry test (#181)
+
+This CL fixes a bug in retry test where it could hit a race condition
+and report false negatives if next job starts before callbacks
+are consumed"
+yigit,2016-06-05 19:12:15,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2c8cb23cb709b50ab3ac2948ec954e979d1dd91b,2c8cb23cb709b50ab3ac2948ec954e979d1dd91b,"Transient jobs (#176)
+
+* WIP transient base job. #174
+
+* WIP more transient base job cleanup
+
+* cleanup
+
+* fix javadoc"
+yigit,2016-06-04 18:43:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ed545906945f645461bd6843d6af90465c50ed91,ed545906945f645461bd6843d6af90465c50ed91,fix flaky test
+yigit,2016-06-04 18:12:07,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c96802d8c96955828e803f2e7130199b88d15272,c96802d8c96955828e803f2e7130199b88d15272,"Jobs in files (#175)
+
+* WIP keep persistent jobs on disk
+
+* Move file storage to okio. #169
+
+* review fixes"
+3flex,2016-05-31 04:06:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0f162b74355631e8f02ebfbc4c9186cf69b2d4cb,0f162b74355631e8f02ebfbc4c9186cf69b2d4cb,fix typos in README (#170)
+yigit,2016-05-30 06:09:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e22308c467e34052eaac44cdf5f965e8642aa66d,e22308c467e34052eaac44cdf5f965e8642aa66d,Throw an exception if job serialization fails (#168)
+yigit,2016-05-30 05:42:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ee498e9e2b94ac16f53a584d10f84d6596a842ff,ee498e9e2b94ac16f53a584d10f84d6596a842ff,Assert threads #125 (#167)
+yigit,2016-05-30 03:16:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/41857b28365e17a5047f9351752d851dea19e08a,41857b28365e17a5047f9351752d851dea19e08a,Error logger (#165)
+yigit,2016-05-30 03:16:07,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3ae31216868311646162b2a962c3586d6c1b6e3e,3ae31216868311646162b2a962c3586d6c1b6e3e,"Make some Job and JobHolder fields volatile as these (#164)
+
+might be accessed w/o memory barriers by external code #153"
+yigit,2016-05-28 21:26:27,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d3a650b50cd33b3dd05b06050ca37f93785fc480,d3a650b50cd33b3dd05b06050ca37f93785fc480,update readme for 2.0.0-alpha3 release.
+yigit,2016-05-28 21:15:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/09bdb0ae18edada6369d0e797c96b696db9c2c45,09bdb0ae18edada6369d0e797c96b696db9c2c45,"Cleanup for docs, more annotations on fields (#166)"
+yigit,2016-05-28 19:13:35,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/bb16d8c69a177f3f89b4e4b08c52612be212a17f,bb16d8c69a177f3f89b4e4b08c52612be212a17f,"updated on Added change, update on Cancel API"
+yigit,2016-05-28 19:06:29,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0d3f5bb21d26a9ffb909c14529341329d6c5a3a7,0d3f5bb21d26a9ffb909c14529341329d6c5a3a7,Fix demo app to always create the job manager
+yigit,2016-05-28 18:53:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8ef3d746a466f9547de151c0da8c4207e8b077f9,8ef3d746a466f9547de151c0da8c4207e8b077f9,prepare v2 alpha 3 release
+yigit,2016-05-28 18:49:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ab240bc53f2e508f9c05092d5d3c723abadacc99,ab240bc53f2e508f9c05092d5d3c723abadacc99,Change scheduler API to avoid NPE mistakes. #157 (#163)
+dmarcato,2016-05-15 17:38:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/74a63d31ed388b4cca7c66decb12a6431097247d,74a63d31ed388b4cca7c66decb12a6431097247d,"Add ThreadFactory interface to provide a way to create workers (#152)
+
+* Add WorkerFactory interface to provide a way to create workers
+
+* Fix test after rebase
+
+* Switch implementation to ThreadFactory
+
+* Rename WorkerFactory to ThreadFactory
+Fix some nullability annotations"
+yigit,2016-05-15 01:47:17,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c203793f8d27ba84c5ba5a147fa4212859463830,c203793f8d27ba84c5ba5a147fa4212859463830,"Merge pull request #148 from dmarcato/pass_throwable_oncancel
+
+Pass last Throwable from onRun() down to onCancel()"
+dmarcato,2016-05-11 21:20:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/334554fd296ba201c968157e87497d104a3faa96,334554fd296ba201c968157e87497d104a3faa96,"Add some @NonNull annotations
+Replace getter with field access"
+dmarcato,2016-05-11 20:54:32,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ad5456590423fe6194047cec5caace89c8362426,ad5456590423fe6194047cec5caace89c8362426,Pass last Throwable from onRun() down to onCancel()
+stkent,2016-05-10 04:49:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/bf68533b8f13d87431f672f41951b0154b128be1,bf68533b8f13d87431f672f41951b0154b128be1,Fix example comment typo (#146)
+JimVanG,2016-04-21 16:47:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c49f5e09a40995eebabc598ef946dc652e045dc9,c49f5e09a40995eebabc598ef946dc652e045dc9,"Update README.md (#141)
+
+Update the README to include a brief note that all work done in `onRun()` should be synchronous."
+robertoallende,2016-04-15 18:13:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8f2be5323f4f268186e051d787cea42a7f4dcbc8,8f2be5323f4f268186e051d787cea42a7f4dcbc8,"Small improvements for Sample App. (#135)
+
+* Sample App: adding a method called v to a CustomLogger Anonymous class to avoid failing compilation.
+
+* Sample App: Upgrading to grade 2.0.0."
+gmerinojimenez,2016-04-06 18:52:28,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d12cea7a200b8be3a13be157d7fb768cf06aef8a,d12cea7a200b8be3a13be157d7fb768cf06aef8a,"Logging JobManagerThread.getNextJob() logs in verbose mode
+
+* Only logging if debug is enabled
+
+* Adding a verbose mode in logger.
+
+* Using verbose log
+
+* Updating test code"
+yigit,2016-04-03 05:35:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/570e3f8b99bbf46f40d40eca9286b412ee3075f6,570e3f8b99bbf46f40d40eca9286b412ee3075f6,move version to rc1
+yigit,2016-04-03 05:15:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2d47d836000709dc675ed5bb2fa74d9bf01b6a5c,2d47d836000709dc675ed5bb2fa74d9bf01b6a5c,"Merge pull request #128 from yigit/clear-tags
+
+Clear tags"
+yigit,2016-03-29 08:32:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/85ba1535d91bd2f9a51719869912a8e04a6e92e6,85ba1535d91bd2f9a51719869912a8e04a6e92e6,remove info from circle CI to reduce its output
+yigit,2016-03-27 19:40:25,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/538596ec533a22c31df9af671e2b7a486fa71b9a,538596ec533a22c31df9af671e2b7a486fa71b9a,clear tags table when queue is cleared
+yigit,2016-03-27 19:07:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d6e2720e17c96706cc9fab8be08f6235d6b68fab,d6e2720e17c96706cc9fab8be08f6235d6b68fab,Delete tags when a job is removed. #109
+yigit,2016-03-27 04:14:03,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ca48bb3d9cf85bf61c60b88cfb196325c59e931a,ca48bb3d9cf85bf61c60b88cfb196325c59e931a,Update README.md
+yigit,2016-03-27 04:10:21,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/49b67b3db71f1e9b213bc6c474b393db7f1f09d4,49b67b3db71f1e9b213bc6c474b393db7f1f09d4,"Merge pull request #124 from mseshachalam/patch-1
+
+Corrected the function name"
+yigit,2016-03-27 04:09:51,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/22d83b1e15e230df158f614e062d49367f5320be,22d83b1e15e230df158f614e062d49367f5320be,Update README.md
+yigit,2016-03-26 20:47:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3200f0480cca443122e3531c0a3d9c407db957ea,3200f0480cca443122e3531c0a3d9c407db957ea,Update README.md
+yigit,2016-03-26 20:43:03,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1855d7df1427d0673215b2ab7084c8f0fa132a2a,1855d7df1427d0673215b2ab7084c8f0fa132a2a,inc version to alpha2
+yigit,2016-03-26 20:37:35,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4f395547c66fed10a528f3a7b31f6af082c28140,4f395547c66fed10a528f3a7b31f6af082c28140,add necesary permissions to the manifest so that they are auto-merged
+yigit,2016-03-26 20:35:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/30ecaa1e1cd9acff5895cfd1671a042338a1f3d6,30ecaa1e1cd9acff5895cfd1671a042338a1f3d6,Update README.md
+yigit,2016-03-26 20:29:32,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d1853b1fd12f2bf865f5b1e6091e711b740dfb60,d1853b1fd12f2bf865f5b1e6091e711b740dfb60,increment version to 2.0 alpha 1
+yigit,2016-03-26 20:21:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a50630f8ead0a45abfe1c65d02468587581c5e14,a50630f8ead0a45abfe1c65d02468587581c5e14,"enable jacoco, exclude gms from javadocs"
+yigit,2016-03-26 20:06:10,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7d5ad191372eb445a576184de32204956d10c9ef,7d5ad191372eb445a576184de32204956d10c9ef,"Merge pull request #123 from yigit/v2
+
+V2"
+yigit,2016-03-26 19:38:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a0023f35b46f1b774b9fc89bc82531af124653ee,a0023f35b46f1b774b9fc89bc82531af124653ee,Fix javadocs
+yigit,2016-03-26 19:04:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/33d4f45b6b7aa261c2f951f1aa2c195a00dba455,33d4f45b6b7aa261c2f951f1aa2c195a00dba455,"Use connectivity manager to listen for network on API 21
+
+On API 21+, use connectivity manager so that are are notified only
+when there is a good connection to the internet. #116"
+yigit,2016-03-24 09:25:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1af3f9f11417583172e32bd83d1f814073fa2395,1af3f9f11417583172e32bd83d1f814073fa2395,"Merge pull request #120 from yigit/move-packages-rebase
+
+Move packages rebase"
+yigit,2016-03-24 09:20:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ccf9b60fc0b414aa20a153e5a743da525bec1f6a,ccf9b60fc0b414aa20a153e5a743da525bec1f6a,Update README.md
+yigit,2016-03-24 09:17:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d8d1d02445ed3dd87b11051bcd2049054ac0c8fc,d8d1d02445ed3dd87b11051bcd2049054ac0c8fc,Provide an easier API for schedulers
+yigit,2016-03-24 07:59:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6d936739840b9538a74841a1c6558b2a16a19fb5,6d936739840b9538a74841a1c6558b2a16a19fb5,re-enable fw scheduler in test app
+yigit,2016-03-23 09:16:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2f9cf68a56431ecb9bb972efa3084d830b0b5a98,2f9cf68a56431ecb9bb972efa3084d830b0b5a98,reference correct class when cancelling gcm tasks
+yigit,2016-03-23 09:11:29,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/fc6a9a5ac612041143b3400abd333d0f20ed2357,fc6a9a5ac612041143b3400abd333d0f20ed2357,WIP GCM scheduler
+yigit,2016-03-20 18:21:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f352d683c145d862aa3e5e0841610c1e3a5c081e,f352d683c145d862aa3e5e0841610c1e3a5c081e,disable batching for scheduler test
+yigit,2016-03-20 17:50:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/fef71fc9d54944223e11d1eb266842b34bda71bd,fef71fc9d54944223e11d1eb266842b34bda71bd,enable configuration parameter for batching scheduler
+yigit,2016-03-09 09:33:27,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b21e27bb2e103089c79fa75304d774e25aab5965,b21e27bb2e103089c79fa75304d774e25aab5965,"Get rid of JobManager2 class, remove deprecated methods"
+yigit,2016-03-09 09:10:34,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/018231acbd09ad6b95eef13ce227edba1ee670e9,018231acbd09ad6b95eef13ce227edba1ee670e9,move everything to birbit package
+yigit,2016-03-24 07:58:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d54299b86f085a46709ce983f118351080b5b417,d54299b86f085a46709ce983f118351080b5b417,"Merge pull request #117 from tuenti/v2-thread-priority
+
+V2 thread priority"
+alexmiragall,2016-03-21 17:47:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/748520415cb28fcc41f49c7bb9d0ea207be1c184,748520415cb28fcc41f49c7bb9d0ea207be1c184,changed indentation with tab
+alexmiragall,2016-03-16 11:12:30,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8e10eb08e28d3052a14c7a11ed86b1d780ee63e8,8e10eb08e28d3052a14c7a11ed86b1d780ee63e8,Setting thread priority based on JobManager's configuration
+alexmiragall,2016-03-21 17:19:45,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e524394ed438f129c004a96bfde78afe8f2f1e3c,e524394ed438f129c004a96bfde78afe8f2f1e3c,Setting thread priority in configuration
+yigit,2016-03-09 08:52:53,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/41285b4cc7343e1de21d8e99846dc2eb991291f3,41285b4cc7343e1de21d8e99846dc2eb991291f3,Merge branch 'job-scheduler-merge' into v2
+yigit,2016-03-09 07:21:03,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a41849806a87fd6b69de03d96b38c3d684bc66c6,a41849806a87fd6b69de03d96b38c3d684bc66c6,Merge branch 'v2' into job-scheduler-merge
+yigit,2016-03-06 19:57:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/292a21d8eebcf96731f0b26e0554f6c9ca2804c9,292a21d8eebcf96731f0b26e0554f6c9ca2804c9,"Merge pull request #106 from guavabot/single-id-2
+
+Single id rebased on v2"
+guavabot,2016-03-06 19:07:55,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2a8c44f7cad74e281f548b3203e33efbfff2700c,2a8c44f7cad74e281f548b3203e33efbfff2700c,"Merge branch 'v2' into single-id-2
+
+# Conflicts:
+#	examples/twitter/TwitterClient/build.gradle"
+yigit,2016-03-06 00:56:45,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/925df1e816fcd66e09fdfbf69567b9f25cf835b1,925df1e816fcd66e09fdfbf69567b9f25cf835b1,WIP batching scheduler
+yigit,2016-03-05 23:46:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/035e6bdb4b44a06f3cd82431179c69391d2b8d91,035e6bdb4b44a06f3cd82431179c69391d2b8d91,"add some scheduler tests, simplify logic, implement basic scheduler cancelation"
+yigit,2016-03-04 08:20:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0287d52e38e3b05d6fa5ec6ae11cd8b7635eafff,0287d52e38e3b05d6fa5ec6ae11cd8b7635eafff,"WIP experimental job scheduler API
+This CL introduces an experimental scheduler API. It does not have tests etc yet,
+not completely sure about whether each job should be forwarded to the scheduler
+or they should be batched. On the other hand, it is proof of concept and close
+to the final model"
+yigit,2016-03-05 21:10:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a26bc55be1a86eb4dc716eb1ef35c1294b71d862,a26bc55be1a86eb4dc716eb1ef35c1294b71d862,do not poke waiting consumers if we don't have too many waiting
+yigit,2016-03-05 18:25:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/68e241cdcb69d5a9d355bd0c5b90709f594f38ee,68e241cdcb69d5a9d355bd0c5b90709f594f38ee,fix keep alive logic to avoid keepings threads alive more than necessary and simplify wake up
+yigit,2016-03-04 09:53:35,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dbc88cfd69c24e6c20e8e9ba3c0cb1e049fda16e,dbc88cfd69c24e6c20e8e9ba3c0cb1e049fda16e,Use timer in system timer test
+yigit,2016-03-04 09:39:17,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/99b9af8fc7ba0cafbabbec5328b85ae84b9d2bb2,99b9af8fc7ba0cafbabbec5328b85ae84b9d2bb2,Use TimeUnit for the SystemTimer wait
+yigit,2016-03-04 09:16:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dbf210acaac821ff3ac33a47a5cbd4ece38440f7,dbf210acaac821ff3ac33a47a5cbd4ece38440f7,update readme to reference jitpack for the v2 snapshots
+yigit,2016-03-04 09:12:42,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/406c5d7f2c0c20e1cf6bea6bd2f88e3852ae7cec,406c5d7f2c0c20e1cf6bea6bd2f88e3852ae7cec,"Merge pull request #108 from yigit/jitpack
+
+Jitpack integration"
+yigit,2016-03-04 09:11:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b39c2d36ef8212fd04dbac0e02c13e0198d83395,b39c2d36ef8212fd04dbac0e02c13e0198d83395,Move sample project to jitpack
+yigit,2016-03-04 09:03:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3a30513b6668748ced4ff604f10ceb37f0afdb30,3a30513b6668748ced4ff604f10ceb37f0afdb30,enable jitpack
+yigit,2016-03-04 08:59:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6d40bf4b8532e5fa558942aa13a2b9a811be1006,6d40bf4b8532e5fa558942aa13a2b9a811be1006,"Fix race condition when job manager is idle.
+Try to fix SystemTimer test for CI"
+guavabot,2016-02-28 21:20:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3560dce6381cd211b62403c19e07843f33bcdf32,3560dce6381cd211b62403c19e07843f33bcdf32,use @IntDef for CancelReason
+guavabot,2016-01-16 00:05:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/02f0822927d31c6d79f41f9832118e7e908694f2,02f0822927d31c6d79f41f9832118e7e908694f2,update FetchTweetsJob to use singleId feature instead of AtomicInteger to avoid repeated jobs
+guavabot,2016-02-07 16:52:17,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/eb395982212cd5c99c804df0019588e09f066fb1,eb395982212cd5c99c804df0019588e09f066fb1,"replace running job by new one with same singleId in same transaction
+
+This avoid a having 2 jobs with same single id in the queue if app crashes after adding job and before the other one is removed"
+guavabot,2016-02-01 12:35:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a8b7bdc71b53cd8787ba1e18562093d9c0058eff,a8b7bdc71b53cd8787ba1e18562093d9c0058eff,send CancelReason to onCancel
+guavabot,2016-02-01 12:03:34,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/26be0d0b7cdbd38187b4b0dc8fa6b036058fec1e,26be0d0b7cdbd38187b4b0dc8fa6b036058fec1e,mark running job as cancelled when another one with same single id is queued
+guavabot,2016-01-31 20:44:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/975869f4cd7dd52eea1d80003a9d397976c8a1ca,975869f4cd7dd52eea1d80003a9d397976c8a1ca,implement handling of queued singleId
+guavabot,2016-01-30 17:47:33,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d0fc3528d5342bb82c8569f868b414e353095b8e,d0fc3528d5342bb82c8569f868b414e353095b8e,automatically set group id if none was chosen but has single id
+guavabot,2016-01-14 23:56:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/225826749e3ac513b219c90b919a4e8965d6aa11,225826749e3ac513b219c90b919a4e8965d6aa11,add singleId Param to Jobs
+yigit,2016-02-27 17:18:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5fe46d51a456cee9cea53a70a41bb8c0c4e0d804,5fe46d51a456cee9cea53a70a41bb8c0c4e0d804,Extend the range for system timer to play nice with CI
+guavabot,2016-01-15 23:50:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/cd298099e5f3673662407d5deced2eac3a4f60f6,cd298099e5f3673662407d5deced2eac3a4f60f6,configure sample app to use library from local instead of from maven
+yigit,2016-02-24 06:09:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ff04ede4fcef83df8556fa72ec7f4f93c455dda4,ff04ede4fcef83df8556fa72ec7f4f93c455dda4,reference v2
+yigit,2016-02-24 06:04:45,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/278855e35d2bf8a43e010b3afca7c1846988b80e,278855e35d2bf8a43e010b3afca7c1846988b80e,"Fix bad system timer bug #104
+
+Also removed the jar task from maven deployment since now we have
+a library dependency thus need to use aar.
+
+Updated the example project to use the new snapshot version"
+yigit,2016-02-24 05:28:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f0bd74e95536b1688cea3dafacad2eb5864a3b61,f0bd74e95536b1688cea3dafacad2eb5864a3b61,rename wifi to unmetered for better consistency with job schedulers
+yigit,2016-02-20 18:45:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7444287f5d50b61a26bb8aff6f12bf01f9bf50d2,7444287f5d50b61a26bb8aff6f12bf01f9bf50d2,Allow posting into message queue when idle callback is running #98
+yigit,2016-02-17 09:13:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d3a14b913466127c317830665b279afa502609ee,d3a14b913466127c317830665b279afa502609ee,"New NetworkUtil API with WIFI support. More tests around WIFI requirement.
+Ethernet is also considered as WIFI since it is usually meant to be used for unmetered/fast connection #62"
+yigit,2016-02-16 01:08:27,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/631373ed4c0062c577441e9161a986dae32df371,631373ed4c0062c577441e9161a986dae32df371,"WIP WIFI requirement for jobs.
+
+This CL introduces a new API to specify WIFI requirement for jobs with an optional
+timeout. JobQueue, Params and Jobs API are implemented & test. Still need to
+change the NetworkUtil to receive the connection type and also adds tests for
+JobManager and do the necessary bindings. #62"
+yigit,2016-02-15 20:53:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7087bb0a33e631e120fc43b554688b6d1864666a,7087bb0a33e631e120fc43b554688b6d1864666a,"Allow require network with a timeout.
+
+This CL introduces a new Params API where the network requirement can be
+set to timeout. It is useful if you want to run some requiest or inform
+the user if you cannot after a certain time.
+This is also a preliminary step to introduce WIFI requirement since it
+is useless without a timeout (there are many devices which will never see
+WIFI"
+yigit,2016-02-15 06:56:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/79901f02a3f2af3442d8cc67db8beaa6847bc1d1,79901f02a3f2af3442d8cc67db8beaa6847bc1d1,"Do not reset delays on restart. Instead, rely on wall clock on app restart.
+The previous behavior can be activated from JobManager configuration. #68"
+yigit,2016-02-15 00:49:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0b5e991645f34563699c879fba597e62193c2793,0b5e991645f34563699c879fba597e62193c2793,Fix bad tests
+yigit,2016-02-14 20:44:53,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/72ebad3d7c7af4837e6686235ef283da0f22e306,72ebad3d7c7af4837e6686235ef283da0f22e306,Code cleanup
+yigit,2016-02-12 03:46:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/97cef2c1f69b1f37934c4189304fa3355d46f706,97cef2c1f69b1f37934c4189304fa3355d46f706,"Merge pull request #94 from coltin/downgrade_db_gracefully
+
+On downgrade drop the tables instead of throwing an exception."
+yigit,2016-02-11 06:34:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7ce294b9f3f91293b98b98c155d0e1b670190db6,7ce294b9f3f91293b98b98c155d0e1b670190db6,"remove travis, re-enable jacoco"
+yigit,2016-02-09 08:21:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c4a78a7cfe64feffcebc0c4a39a4b7edf503f6d3,c4a78a7cfe64feffcebc0c4a39a4b7edf503f6d3,Move to circle CI
+yigit,2016-01-29 07:48:57,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ff0973575265e4efe2a43909edfa440b012a0564,ff0973575265e4efe2a43909edfa440b012a0564,fix jacoco
+yigit,2016-01-24 18:55:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/23f70c3c96c88884fe0a57188be809cdbd4ca5c5,23f70c3c96c88884fe0a57188be809cdbd4ca5c5,Cache sql queries
+yigit,2016-01-23 06:41:53,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8fb2b636a64944a79ea798ee558f220d23d2c6e1,8fb2b636a64944a79ea798ee558f220d23d2c6e1,"Lint notes, fixed job docs"
+yigit,2016-01-19 01:07:35,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c73ee211f0dd45251e0b4a735ec325d9dc85e054,c73ee211f0dd45251e0b4a735ec325d9dc85e054,Add simple in memory queue to be basis for new implementation
+yigit,2016-01-19 00:19:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dfc3b3f070fe3b11f26815d78d81f4ee71531824,dfc3b3f070fe3b11f26815d78d81f4ee71531824,First step at generalizing JobQueue query. Lost some caching capabilities and non-persistent queue does not implement the API correctly yet
+yigit,2016-01-18 20:15:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d677619fcf63e50c664e84e6b9cad7ae31600bc7,d677619fcf63e50c664e84e6b9cad7ae31600bc7,"Add documentation, update some APIs"
+yigit,2016-01-18 02:44:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/792a8cf28f638b9cfde83e7ed15490eb66a69cf5,792a8cf28f638b9cfde83e7ed15490eb66a69cf5,Assert job errors in ApplicationContext test
+yigit,2016-01-18 02:31:17,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d63896d73697d5e69d7c88d51d80ac0f446b7ab5,d63896d73697d5e69d7c88d51d80ac0f446b7ab5,Enable message recycling
+yigit,2016-01-18 00:03:18,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a17f84e731b3b1eecbd21cc1ea68e3294b025073,a17f84e731b3b1eecbd21cc1ea68e3294b025073,Improve network test to avoid race condition of idling. This only affects the test's flakiness
+yigit,2016-01-17 23:34:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7e498b5a799a34172307bca3cb1556fcde01c7a1,7e498b5a799a34172307bca3cb1556fcde01c7a1,"Move reflective test calls to a JobManagerThread runnable to avoid multi-threaded access.
+Enabled tests on travis
+Added timeout Rule and Cleanup Rule"
+yigit,2016-01-11 09:01:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5704c03f54b64149147b148c2dc0c8719ad02786,5704c03f54b64149147b148c2dc0c8719ad02786,"Move job ids to string, more tests for new components"
+yigit,2016-01-10 06:03:18,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/82defc43d8373f815373523fd7db8c27549b6201,82defc43d8373f815373523fd7db8c27549b6201,"More tests for new components
+Support for message deletion"
+yigit,2016-01-07 10:28:29,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3fc161e166fa6e95eaba8e35a849e043f3b9b889,3fc161e166fa6e95eaba8e35a849e043f3b9b889,Disable travis for the branch
+yigit,2016-01-07 10:27:22,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3e845538708a40962de63e1de2d55553e37ca7bf,3e845538708a40962de63e1de2d55553e37ca7bf,WIP Make test run with the mq based JobManager
+yigit,2016-01-03 22:31:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/34f1bc97e77f1ea3e68e7642ef93f26f5288ed7e,34f1bc97e77f1ea3e68e7642ef93f26f5288ed7e,WIP cancel handler
+yigit,2016-01-03 21:21:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/934b8fcb9e8cbdade8710fc1293d1d6d6630be59,934b8fcb9e8cbdade8710fc1293d1d6d6630be59,WIP message queue step 1
+yigit,2016-01-02 03:49:11,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/af6258874d5b1a06c14c9615f3c66e05eb4e2f93,af6258874d5b1a06c14c9615f3c66e05eb4e2f93,"WIP Introduce Timer, major rewrite of tests #79"
+yigit,2016-01-01 02:43:14,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/440cca3c4ba53e7a78e74c26b73c56a62f20ff02,440cca3c4ba53e7a78e74c26b73c56a62f20ff02,"Merge pull request #78 from yigit/fix-travis-flaky
+
+Reconfigure delay to make the test less flaky"
+yigit,2016-01-01 01:50:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9b15788ae49693fdfd12ccef8c8ff138455b9003,9b15788ae49693fdfd12ccef8c8ff138455b9003,Reconfigure delay to make the test less flaky
+yigit,2016-01-01 00:06:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dab2e3ec2d0a0d7ac21722d4322e5505695d71a8,dab2e3ec2d0a0d7ac21722d4322e5505695d71a8,remove build status until flaky tests are resolved.
+yigit,2016-01-01 00:01:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b9adfa63031512d2dc487bb64344c9b9fc488dc1,b9adfa63031512d2dc487bb64344c9b9fc488dc1,"Merge pull request #77 from yigit/travis-fix
+
+Specificy tools versions for travis"
+yigit,2015-12-31 23:46:11,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c13e423d4943169e40805ff45d345161fe75e82c,c13e423d4943169e40805ff45d345161fe75e82c,Specificy tools versions for travis
+yigit,2015-12-31 23:39:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/58fba9305751b4284d709195bc354708f4118263,58fba9305751b4284d709195bc354708f4118263,"Merge pull request #76 from yigit/job-callback
+
+JobManager callback class."
+yigit,2015-12-27 01:13:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/365533f5ad469361ae1351777aa62326544c825b,365533f5ad469361ae1351777aa62326544c825b,"JobManager callback class.
+
+This CL adds a new JobManager callback class that can be notified
+about Job state changes."
+yigit,2015-12-31 23:23:51,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6dfee1e114f69f0c8540fc9fee044e735f985294,6dfee1e114f69f0c8540fc9fee044e735f985294,"Merge pull request #74 from yigit/travis-s3
+
+s3 integration to export reports"
+yigit,2015-12-31 23:23:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f081ffbf6d01b2cd8206e83c7947ded7edde4845,f081ffbf6d01b2cd8206e83c7947ded7edde4845,"Merge pull request #73 from yigit/doze-aware
+
+Add support to ignore doze mode. #57"
+yigit,2015-12-31 22:45:44,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/bbf9748d9c2148071b440147ce27a8f8009063c7,bbf9748d9c2148071b440147ce27a8f8009063c7,s3 integration to export reports
+yigit,2015-12-31 22:39:04,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/80037b626843885b27c835fe2ebdc836ad349f57,80037b626843885b27c835fe2ebdc836ad349f57,Add support to ignore doze mode. #57
+yigit,2015-11-26 23:30:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0b4fc809583baac6adc7f71ea46f58748288d31d,0b4fc809583baac6adc7f71ea46f58748288d31d,"Merge pull request #55 from yigit/travis
+
+Travis CI integration."
+yigit,2015-11-26 21:29:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/199182ae28314a1ae649ce815f49e726b42c57c9,199182ae28314a1ae649ce815f49e726b42c57c9,Removed travis branch limitation.Added build status to the README file
+yigit,2015-11-26 21:25:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a87381397827c7731ac48d4b7f84492a62ed5c76,a87381397827c7731ac48d4b7f84492a62ed5c76,add tools so that it can fetch 23.0.2
+yigit,2015-11-26 21:16:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c2392b2134bf6230a36996e47eca60380f4c73f2,c2392b2134bf6230a36996e47eca60380f4c73f2,set build tools and sdk versions
+yigit,2015-11-26 21:10:56,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/421b49bba3e955c49635de90cc2c66c1820a45e7,421b49bba3e955c49635de90cc2c66c1820a45e7,"Limit builds to travis branch, disable debug to avoid log limit"
+yigit,2015-11-26 21:06:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/096749463d716a881037b5f3c4618c1f6a05d687,096749463d716a881037b5f3c4618c1f6a05d687,Move script to one line and add stacktrace to detect errors
+yigit,2015-11-26 21:02:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/47fd86b3271f93b9396e47d9556b5abbb4dd6e38,47fd86b3271f93b9396e47d9556b5abbb4dd6e38,Add travis CI file
+yigit,2015-11-08 17:15:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ee249b6166aa0c3d9ec4eb8ce4c86c0cd20afa19,ee249b6166aa0c3d9ec4eb8ce4c86c0cd20afa19,Force roboeletric to use 21 until 23 support is here. #37
+yigit,2015-11-08 01:42:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6ec22bf8cc8f11b5a73b5d2a9a6fc16d7433abda,6ec22bf8cc8f11b5a73b5d2a9a6fc16d7433abda,"Update README.md
+
+updated test command"
+yigit,2015-11-08 01:30:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/235779623ad64173eb4593cc8273a35d8502856c,235779623ad64173eb4593cc8273a35d8502856c,update README version to 1.3.5
+yigit,2015-11-03 08:58:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e65d9aa9f30d6689b6f9e526901ae709242b1362,e65d9aa9f30d6689b6f9e526901ae709242b1362,"Add support for delaying a group #41
+
+This CL extends RetryConstraint to enable delaying a group.
+When a group is delayed, any job added afterwards into that
+group will also be affected. Like other delays, these delays
+are not persistent between application re-launches."
+yigit,2015-11-07 23:58:51,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/acee7df270a309ecf68bdafa35a4b38b8e1972fe,acee7df270a309ecf68bdafa35a4b38b8e1972fe,"Merge pull request #47 from coltin/idle_mode_awareness
+
+Idle mode awareness"
+yigit,2015-10-01 18:56:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f12d04ff367ffb679a744adbb9a32c01f29030ff,f12d04ff367ffb679a744adbb9a32c01f29030ff,Update README.md
+yigit,2015-09-13 02:57:55,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f90741fe7434429560e18d9dbe2f9fedf359df3e,f90741fe7434429560e18d9dbe2f9fedf359df3e,Inc version for release
+yigit,2015-09-13 02:57:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/717cf5d082e04b3c866eaa71c5eab79c1ccbd4ae,717cf5d082e04b3c866eaa71c5eab79c1ccbd4ae,Don't sync on this on main thread #40
+yigit,2015-09-13 02:43:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5620ccf8c7d70aff2cd09ccf971831910362fb47,5620ccf8c7d70aff2cd09ccf971831910362fb47,Fix broken tests
+yigit,2015-09-13 02:11:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/35bb6a239c77848a61c955c76f12a31adf6fb5aa,35bb6a239c77848a61c955c76f12a31adf6fb5aa,Fix sample app
+yigit,2015-07-12 17:47:36,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9328d772b94657703290dfa55545a16eaa5fea4b,9328d772b94657703290dfa55545a16eaa5fea4b,update readme for new shouldReRun method
+yigit,2015-07-12 17:42:04,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0dbf62974433d1eb79ff6c77cca5fd6973226137,0dbf62974433d1eb79ff6c77cca5fd6973226137,"Fix default exponential backoff
+
+Issue: #33"
+yigit,2015-07-05 20:00:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/cbe2c0473951c1d42e26d58dcbce0b6f2c0ae397,cbe2c0473951c1d42e26d58dcbce0b6f2c0ae397,fix javadoc and coverage report links
+yigit,2015-07-05 19:49:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8c6db985bdfa2826a0871d5866feb14a475979b0,8c6db985bdfa2826a0871d5866feb14a475979b0,"Update version, fix javadocs"
+yigit,2015-07-05 19:37:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d44969c6f7cfda6d3acd31120e2d68663072150b,d44969c6f7cfda6d3acd31120e2d68663072150b,"Merge pull request #31 from yigit/retry-logic
+
+Retry logic"
+yigit,2015-07-05 19:36:30,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/cd606e809c02f145e4ba95d5192f3c0d1d452f01,cd606e809c02f145e4ba95d5192f3c0d1d452f01,Clean unit test style
+yigit,2015-07-05 18:16:00,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/345280641bbff081e55eff93d45eedddec7957dc,345280641bbff081e55eff93d45eedddec7957dc,"Fix an edge case where jobmanager would not create a consumer if there are none running and newly added job has a delay
+
+Issue: #30"
+yigit,2015-07-04 04:22:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4fba6f28e157ee150db1187a7132ed4e24b626b4,4fba6f28e157ee150db1187a7132ed4e24b626b4,"Add ability to customize retry logic for failing jobs
+
+This CL adds a new shouldReRunOnThrowable method which returns a RetryConstraint
+that can keep additional information to change job's priority or add delay.
+
+Issue: #11"
+yigit,2015-07-04 02:58:41,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f8a2befd48eeaaeb5b3db6bde0a53cb405b33a8d,f8a2befd48eeaaeb5b3db6bde0a53cb405b33a8d,Add missing application context test
+yigit,2015-07-04 02:44:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3bfe69fde426aa7f88e71007daf10ca4362504f0,3bfe69fde426aa7f88e71007daf10ca4362504f0,"Clarfiy onAdded thread strategy.
+
+Issue: #6"
+yigit,2015-07-04 02:38:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/fa04043fc0d3ca2b1e46efa32f5cf1f972844131,fa04043fc0d3ca2b1e46efa32f5cf1f972844131,"Add a method to get application context in a job.
+
+Issue: #18"
+yigit,2015-07-04 02:21:51,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a6c51852662eed521141f5f9e5d26d18e711a92b,a6c51852662eed521141f5f9e5d26d18e711a92b,"Merge pull request #29 from yigit/robolectric-3
+
+Update to robolectric 3.0-rc3"
+yigit,2015-07-03 18:28:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8f46e56e40d861fba68f4a0d9139aa622cd356c5,8f46e56e40d861fba68f4a0d9139aa622cd356c5,Fix version in README
+yigit,2015-07-03 18:27:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/176e97a4fd9eeb5a89a9a53749034f80e6793b10,176e97a4fd9eeb5a89a9a53749034f80e6793b10,"Update to robolectric 3.0-rc3
+
+This CL updates robolectric version to 3.0 and also fixes issue #23"
+yigit,2015-04-20 15:52:15,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a87b23c5ecbec66623468b0a9065d125b6409218,a87b23c5ecbec66623468b0a9065d125b6409218,updated version in gradle sample
+yigit,2015-04-20 03:07:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0cd2f01026ac389779ad2ac9d2e21e98282fc924,0cd2f01026ac389779ad2ac9d2e21e98282fc924,"Remove robolectric plugin since it is not needed anymore
+
+This CL also replaces Cobertura with Jacoco and removes ant build"
+yigit,2015-04-20 02:51:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2577d5e8879cab3db591de4e06da77127243c800,2577d5e8879cab3db591de4e06da77127243c800,"Remove canceled failing jobs from running group Ids.
+Fixes issue #19"
+yigit,2015-04-12 21:13:00,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ac52a7c15199fd450769480588f37cec57e39f02,ac52a7c15199fd450769480588f37cec57e39f02,Update gradle and robolectric
+yigit,2015-03-23 16:22:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5ba10eb6a2aa053c6b6763c0b6abd7e6da18e751,5ba10eb6a2aa053c6b6763c0b6abd7e6da18e751,readme fixes
+yigit,2015-03-23 16:21:41,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ee679deeb74fc575a5e0a194be3fdb9e859f277f,ee679deeb74fc575a5e0a194be3fdb9e859f277f,fixed version number
+yigit,2015-03-23 16:19:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/007a852413902d048e1d1cafa6988c348f1a9f5f,007a852413902d048e1d1cafa6988c348f1a9f5f,Merge pull request #16 from yigit/cancelation-2
+yigit,2015-03-21 17:37:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/32db6fa3f28c77a8f5841bbac30ee34fd5f45bbf,32db6fa3f28c77a8f5841bbac30ee34fd5f45bbf,"Remove deprecated BaseJob
+Add onCancel guarantee for jobs canceled by the user. Previous, job was
+removed from disk instantly and if app termniates before onCancel is called,
+job would not get a chance to clean after itself.
+
+This CL also adds a test mode to job manager configuration to use in
+memory database for persistent queue."
+yigit,2015-03-21 17:12:23,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/eed9d0cf09dc01ffb6b1cfbd80e90c50bedb2558,eed9d0cf09dc01ffb6b1cfbd80e90c50bedb2558,"Merge pull request #15 from yigit/tagging
+
+Tagging & Job Cancelation"
+yigit,2015-03-14 08:58:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a6d916fa0e8a2ef4b5d68c6f4b02f997b8913712,a6d916fa0e8a2ef4b5d68c6f4b02f997b8913712,update build configuration for new maven setup
+yigit,2014-08-11 01:24:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3507cebf8ada968af31f8e197007e52236a083fb,3507cebf8ada968af31f8e197007e52236a083fb,dos2unix cleanup
+yigit,2014-08-11 01:16:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/836cbc39da23c49ce3bdaf895898f988775aca26,836cbc39da23c49ce3bdaf895898f988775aca26,"Add more cancelation tests, added test cleanup code"
+yigit,2014-08-10 21:33:17,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/31b197a3c17752e664f453f86d789bc1dac1cc32,31b197a3c17752e664f453f86d789bc1dac1cc32,"Update copyright notice, serialize tags with job"
+yigit,2014-08-10 20:51:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/212d088bfa680403f4b4eb9c37bda6c9b1aecbbc,212d088bfa680403f4b4eb9c37bda6c9b1aecbbc,Introduce tag constraint to be able to select with ANY or ALL
+yigit,2014-08-10 17:58:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/860f69ce520d36c4a45de32fb439cbb505112ed5,860f69ce520d36c4a45de32fb439cbb505112ed5,Add tagging for jobs
+yigit,2014-07-07 04:04:14,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/25baa288c856c3c65ca7e85b7f74199b4c3832ce,25baa288c856c3c65ca7e85b7f74199b4c3832ce,Deprecate base job
+yigit,2014-02-19 01:59:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/89d76ea193cfded0d9401f534fedbfe14c981c04,89d76ea193cfded0d9401f534fedbfe14c981c04,update readme
+yigit,2014-02-19 01:57:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0d6dc37632cf558d1c314bb85e71b2c6cb3de903,0d6dc37632cf558d1c314bb85e71b2c6cb3de903,remove snapshot
+yigit,2014-02-19 01:34:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9c1e7267eabac62bddc078694b05bb51e346609c,9c1e7267eabac62bddc078694b05bb51e346609c,catch add job in background exceptions and log it back to user. #31
+yigit,2014-02-19 01:34:18,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6bd43e534970c6f4f5732271e950b68776a97fcc,6bd43e534970c6f4f5732271e950b68776a97fcc,stop forking for junit to handle multiple ant versions
+yigit,2014-02-19 01:28:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5cf2c7e87b61e3dffb4ff2e3a3f2f187699b58e1,5cf2c7e87b61e3dffb4ff2e3a3f2f187699b58e1,failing unit test fest exceptions in background thread
+yigit,2014-02-08 11:06:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/94716f8a2672dfc5063bb3e52489b4a73835f642,94716f8a2672dfc5063bb3e52489b4a73835f642,update readme for 1.1.1
+yigit,2014-02-08 10:46:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9e29aa7ca4439c5b121ff17fc3deb9dedde76da0,9e29aa7ca4439c5b121ff17fc3deb9dedde76da0,fix race condition which may cause running same group jobs in parallel #35
+yigit,2014-01-31 00:52:14,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/efd79cf255e347fbfc9b9feefca78b546a7b95bd,efd79cf255e347fbfc9b9feefca78b546a7b95bd,update readme for 1.1 release
+yigit,2014-01-30 22:24:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dd23b74fed734a5aa45da758e08c857e57a99a14,dd23b74fed734a5aa45da758e08c857e57a99a14,"inc build tools version, add gradlew"
+yigit,2014-01-30 22:13:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ace3be364ed956758ab1cbc5c1d9c6391c19c576,ace3be364ed956758ab1cbc5c1d9c6391c19c576,set release version
+yigit,2014-01-29 00:00:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f2fb380be9913e3f9b8251d7aead9b97f6f79d25,f2fb380be9913e3f9b8251d7aead9b97f6f79d25,"up versions, replace tokens, added gradlew"
+yigit,2014-01-28 23:26:08,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e5847964dae1c983bf5c2ad8411fdacb7608fc24,e5847964dae1c983bf5c2ad8411fdacb7608fc24,make params getters public. #27
+yigit,2014-01-28 21:52:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/bd0d0740d76201042031d5ec25df60743d70dc5a,bd0d0740d76201042031d5ec25df60743d70dc5a,review changes
+yigit,2014-01-23 02:22:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/52a9bab971319b0c539651b6f702d71de1550e08,52a9bab971319b0c539651b6f702d71de1550e08,query interface test for delayed jobs. #18
+yigit,2014-01-23 00:36:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/eb09552d34fe8287ee965b623d084a43bd13f681,eb09552d34fe8287ee965b623d084a43bd13f681,job status implementation #18
+yigit,2014-01-22 22:32:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a9567ff591ed015b831c2febb83303d9456db7a9,a9567ff591ed015b831c2febb83303d9456db7a9,job status failing test case #18
+yigit,2014-01-22 21:47:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/50b5c7a0324a88c108aff095519da696c2de86ad,50b5c7a0324a88c108aff095519da696c2de86ad,find by id implementation for sqlite queue and non-persistent queue
+yigit,2014-01-22 20:23:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7234c05065af5f77640d67820bdacebea38768d9,7234c05065af5f77640d67820bdacebea38768d9,failing unit tests for find job by id for queues. #18
+yigit,2014-01-21 18:21:03,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/039f3692605c98b8519cc0cf18c0a219a289d8ca,039f3692605c98b8519cc0cf18c0a219a289d8ca,job status functionality. WIP #18
+dmarcato,2014-01-22 04:53:02,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/d3b33d9ae94df76ffde1f4b9735c0f7cc6463384,d3b33d9ae94df76ffde1f4b9735c0f7cc6463384,"Merge pull request #22 from path/stackoverflow_in_queue_21
+
+Stackoverflow in queue 21"
+yigit,2014-01-21 21:34:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/703e57306e41ae5be2c9f585ab0330232306a2f9,703e57306e41ae5be2c9f585ab0330232306a2f9,avoid recursive calls in Merged Queue fixes: #21
+yigit,2014-01-21 21:18:18,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c4d1c228f0cbff8ceed70f4ca8b48b2d3da7cf5a,c4d1c228f0cbff8ceed70f4ca8b48b2d3da7cf5a,failing unit test for #21
+yigit,2014-01-14 19:15:28,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c4ce282879850ca0845b58d5b322f3ee2a89c18e,c4ce282879850ca0845b58d5b322f3ee2a89c18e,add missing link
+yigit,2014-01-14 19:13:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9bf72e89252ce9b7608c66ad8992e17ef8bd4a34,9bf72e89252ce9b7608c66ad8992e17ef8bd4a34,add version history to wiki
+yigit,2014-01-14 19:02:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/8a8a1b83be4fafe4ab385b959bc08b257a272ec5,8a8a1b83be4fafe4ab385b959bc08b257a272ec5,inc version code in readme
+yigit,2014-01-14 19:00:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/2b3577916f645cb60659d598243fa242c432ec08,2b3577916f645cb60659d598243fa242c432ec08,"Merge pull request #20 from path/parameterized-constructor
+
+Parameterized constructor"
+yigit,2014-01-14 18:58:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/588f5768d36adfac220e1d85ceda1ecb2d6624b6,588f5768d36adfac220e1d85ceda1ecb2d6624b6,remove PersistentDummyJob #17
+yigit,2014-01-14 02:38:56,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7f67c0e7f2f879ccbd36f52c0edb482fe1d2fc27,7f67c0e7f2f879ccbd36f52c0edb482fe1d2fc27,parameterized constructor for jobs. deprecated BaseJob #17
+yigit,2014-01-07 21:24:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1429d87e986081b3c8c18ecf9df3cdee8fedf9f4,1429d87e986081b3c8c18ecf9df3cdee8fedf9f4,move to android.gradle 0.7. inc library version to 1.0
+yigit,2014-01-07 21:24:18,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4dbb18fc06a653281076858395e3ff8f71eac11e,4dbb18fc06a653281076858395e3ff8f71eac11e,clear delay times when job queue restarts
+yigit,2013-12-30 17:17:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ea823fb9f70b5c426f84873ebeaacbfbf8ea8bac,ea823fb9f70b5c426f84873ebeaacbfbf8ea8bac,put status verification to example.
+yigit,2013-12-30 17:14:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/158f1cb4beaad6c118d7c928dfbcfeacfb5fe55c,158f1cb4beaad6c118d7c928dfbcfeacfb5fe55c,update real file references
+yigit,2013-12-17 02:20:46,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/13720b8cee534340e36e63560e053616d48e4fdc,13720b8cee534340e36e63560e053616d48e4fdc,Update README.md
+yigit,2013-12-17 02:19:48,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a567dac6b3be67f095aac8da795945d75c801131,a567dac6b3be67f095aac8da795945d75c801131,update description to support 0.9.9
+yigit,2013-12-17 02:05:25,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e4f039880e2490a7bb34a651a7ef7b7922a00249,e4f039880e2490a7bb34a651a7ef7b7922a00249,add proper snapshot repo description
+yigit,2013-12-16 23:49:50,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c18c71f1bed0a63d28bd3722c8a4d8326e5d776b,c18c71f1bed0a63d28bd3722c8a4d8326e5d776b,check if job manager is enabled b4 querying disk
+yigit,2013-12-16 22:13:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/73678d524e8c7e94c539fd055ffcac744cd44ddc,73678d524e8c7e94c539fd055ffcac744cd44ddc,failing unit test impl. issue #11
+yigit,2013-12-16 21:43:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/079b86306fa28f9bb9e2088932915f0e2ed7b240,079b86306fa28f9bb9e2088932915f0e2ed7b240,"Merge pull request #12 from path/add_in_bg
+
+Add a convenience method to add jobs in background thread. issue #9"
+yigit,2013-12-16 21:41:10,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3f1e18cd09728f331d4d70a3cf106b461d5a383a,3f1e18cd09728f331d4d70a3cf106b461d5a383a,documentation for addInBackground
+yigit,2013-12-16 21:23:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f3001b6ee224e6c95c42b7c9fd94eccb4495b1af,f3001b6ee224e6c95c42b7c9fd94eccb4495b1af,add convenience method to add jobs in background thread. issue #9
+rayho,2013-12-06 01:27:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7e1955858f3f1b9227470ca3f277692999eb6fbb,7e1955858f3f1b9227470ca3f277692999eb6fbb,Typo fix
+rayho,2013-12-06 01:24:38,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3ae598a8cfe689a39266715ec60aada8889626ce,3ae598a8cfe689a39266715ec60aada8889626ce,Updated again
+rayho,2013-12-06 01:15:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/fb10149bfa6193ceacce9136e874dc78c83ab754,fb10149bfa6193ceacce9136e874dc78c83ab754,"Updated ""Why"" section"
+yigit,2013-12-06 00:44:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9fa33c03ad0da6a810f7bdca459068245cdd2c55,9fa33c03ad0da6a810f7bdca459068245cdd2c55,re-wrote why section
+yigit,2013-11-28 22:00:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4f7c5872d35f17552ccfa9a67fc0a150095b340e,4f7c5872d35f17552ccfa9a67fc0a150095b340e,update build and dependency information.
+yigit,2013-11-28 00:54:09,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7572bc343c8c904285d75eaf370db25eb53490e0,7572bc343c8c904285d75eaf370db25eb53490e0,initial gradle script to compile and push to sonatype. changed sample app to use that distribution
+yigit,2013-11-27 09:52:23,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c2419664626879966cd8d3a5af113bdd916e32d4,c2419664626879966cd8d3a5af113bdd916e32d4,clarification
+yigit,2013-11-22 23:38:04,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/06b5f60c820100170468c6a580dc27b96c67a8b5,06b5f60c820100170468c6a580dc27b96c67a8b5,add license to repo
+rayho,2013-11-20 02:04:57,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/51f78783b5e59ba7bb48f46e2752d604be0e2db2,51f78783b5e59ba7bb48f46e2752d604be0e2db2,Rewording
+rayho,2013-11-20 02:01:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/84e5130bd43f6f725d464c2b326ca6dc63973e58,84e5130bd43f6f725d464c2b326ca6dc63973e58,Fixed capitalization and EventBus URL
+yigit,2013-11-15 22:31:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3d6df3505950ba9499e0220825e98f1454788640,3d6df3505950ba9499e0220825e98f1454788640,add license to outpur jar. remove unnecessary resource files. inc app version string
+yigit,2013-11-15 22:27:03,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b119c9335408d945b42434deb6460985a51c8415,b119c9335408d945b42434deb6460985a51c8415,Update README.md
+yigit,2013-11-15 22:25:30,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ba84329579e57a4906a6a3e6d67cb0bed494656a,ba84329579e57a4906a6a3e6d67cb0bed494656a,more licensing information
+yigit,2013-11-15 20:08:40,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6bfd22ee56ce2ee0f8a7bdd9f0890dc79ff74541,6bfd22ee56ce2ee0f8a7bdd9f0890dc79ff74541,Update README.md
+yigit,2013-11-15 19:58:50,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/956a67a70b7401a79fea86af2a09af50112e5896,956a67a70b7401a79fea86af2a09af50112e5896,Update README.md
+yigit,2013-11-15 19:57:26,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/85976c5960876b3c2ac12f98545c8b0f0d11b365,85976c5960876b3c2ac12f98545c8b0f0d11b365,Update README.md
+yigit,2013-11-15 19:57:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/15f9e8a9b3739af1b9117ba2303469ab3f6576d2,15f9e8a9b3739af1b9117ba2303469ab3f6576d2,Update README.md
+yigit,2013-11-15 19:50:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/27a87f0f47a5070099634cddd451f4c3b5038817,27a87f0f47a5070099634cddd451f4c3b5038817,Update README.md
+yigit,2013-11-15 19:30:13,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6c6bb1609284b67f0e6ce68af38dd34fca803831,6c6bb1609284b67f0e6ce68af38dd34fca803831,small clarifications
+rayho,2013-11-15 07:24:47,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ff684eda327b91911d410a28dc5a0d8fc0cce9a0,ff684eda327b91911d410a28dc5a0d8fc0cce9a0,First proofread pass
+dmarcato,2013-11-15 04:00:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/cd70b4a25b3da9cd597fae5b288ec66268406385,cd70b4a25b3da9cd597fae5b288ec66268406385,Update README.md
+yigit,2013-11-15 02:55:21,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/220f1a1b7efc4463e4fbe93b82e989d6c0d9bdbe,220f1a1b7efc4463e4fbe93b82e989d6c0d9bdbe,Update README.md
+yigit,2013-11-14 21:55:31,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/0b82a483642aa399d063d0cc3d5a096e94d6c7fd,0b82a483642aa399d063d0cc3d5a096e94d6c7fd,Update README.md
+yigit,2013-11-14 21:52:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7d77d7869a63305f2d5604192ee7a8369b203fdb,7d77d7869a63305f2d5604192ee7a8369b203fdb,Update README.md
+yigit,2013-11-14 21:51:51,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e139b770387ef1c2db9243f02b48f6e4cab30b4b,e139b770387ef1c2db9243f02b48f6e4cab30b4b,Update README.md
+yigit,2013-11-14 21:26:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1c52c3fc83cde6c92d5929a6ee6cf0b24aacc4c4,1c52c3fc83cde6c92d5929a6ee6cf0b24aacc4c4,Update README.md
+yigit,2013-11-14 19:15:48,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/578a0e5d092b8165be66ddf1acd088e4c0ea6c8f,578a0e5d092b8165be66ddf1acd088e4c0ea6c8f,Update README.md
+yigit,2013-11-14 19:13:30,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/42523f8b95949f15e423bf46693f77645bb93f98,42523f8b95949f15e423bf46693f77645bb93f98,Update README.md
+yigit,2013-11-09 01:21:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/633238e67884f6f966cdbfdeb27a264477495210,633238e67884f6f966cdbfdeb27a264477495210,Update README.md
+yigit,2013-11-09 00:46:50,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3a4362c586968a8668e0c1a331cd04f79b7242b6,3a4362c586968a8668e0c1a331cd04f79b7242b6,Update README.md
+yigit,2013-11-09 00:46:25,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/68010bc657e5f3a96c7c498a813b942d69d7fc46,68010bc657e5f3a96c7c498a813b942d69d7fc46,Update README.md
+yigit,2013-11-08 01:05:10,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/94faef4bfc1b5f6d382c82f653dee65804f0dc49,94faef4bfc1b5f6d382c82f653dee65804f0dc49,add convenient method to change job serializer. issue #5
+yigit,2013-11-07 01:41:41,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/29be5a1199ca240800d5195e40294ee0673ac7dd,29be5a1199ca240800d5195e40294ee0673ac7dd,Update README.md
+yigit,2013-11-06 19:49:53,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f824016a04fecf1be62e55ffa66d0540932bbb50,f824016a04fecf1be62e55ffa66d0540932bbb50,remove todo since we have issues.
+yigit,2013-11-06 19:48:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1279989e9b64b8662843b8ab954e40d44c4f7b7c,1279989e9b64b8662843b8ab954e40d44c4f7b7c,add readme for sample app
+yigit,2013-11-06 19:47:52,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/318a2da764042040da868b8274cc76e353d7220c,318a2da764042040da868b8274cc76e353d7220c,inc version
+yigit,2013-11-06 18:48:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/646291cdf5a985de7d637e6290c3bcaa65befdcc,646291cdf5a985de7d637e6290c3bcaa65befdcc,update sample app to latest
+yigit,2013-11-06 18:48:28,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/cd363190612e930b6d65cba4240970ec5cb3caaa,cd363190612e930b6d65cba4240970ec5cb3caaa,add context to Configuration.Builder and automatically support network event listener
+yigit,2013-11-06 18:47:42,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/254cd596fb0c5ab16a7259fda6a6d90ce7fb6944,254cd596fb0c5ab16a7259fda6a6d90ce7fb6944,fix an overflow issue while calculating next job time
+yigit,2013-11-06 01:42:32,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/66363dd3c93066c8ddeb1728f25804ec2522ab09,66363dd3c93066c8ddeb1728f25804ec2522ab09,refactory configuration to use a builder. clean some IDE warnings. issue #6
+yigit,2013-11-06 01:19:48,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ff945d3e49f1f679a86030d82f6ea1b709577707,ff945d3e49f1f679a86030d82f6ea1b709577707,extract QueueFactory from JobManager
+yigit,2013-11-05 02:37:04,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/787cfafca492892a70f970e3b91a521c08029bfa,787cfafca492892a70f970e3b91a521c08029bfa,rename persistence method to make more sense
+yigit,2013-11-05 02:23:25,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/658d6333cc6207aa6768f1aed5aedcb45db1441c,658d6333cc6207aa6768f1aed5aedcb45db1441c,Update README.md
+yigit,2013-11-04 21:33:14,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c148a43781fd27d7aa0eb529bbb2702fc48d4216,c148a43781fd27d7aa0eb529bbb2702fc48d4216,Update README.md
+yigit,2013-11-04 21:30:16,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/b516e08e81a513bb00b461a2466db0d265820b4e,b516e08e81a513bb00b461a2466db0d265820b4e,Update README.md
+yigit,2013-11-04 21:24:00,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4067aaabbeaf571816e35e2bbd93e19ae2415f9e,4067aaabbeaf571816e35e2bbd93e19ae2415f9e,simplify example.
+yigit,2013-10-23 00:17:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5c8db9bf34259f13e9d1994c7160b41599f454a0,5c8db9bf34259f13e9d1994c7160b41599f454a0,Update README.md
+yigit,2013-10-23 00:08:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/76dd2a461b1da7da19a50a6a677187167997eb88,76dd2a461b1da7da19a50a6a677187167997eb88,Update README.md
+yigit,2013-10-23 00:02:33,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/f536b55f7f3b0d46cd72486ee569ad64a2274c9f,f536b55f7f3b0d46cd72486ee569ad64a2274c9f,add toc
+yigit,2013-10-22 23:59:24,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/568d3d77b8a1a353982e1776d9d93d577b399646,568d3d77b8a1a353982e1776d9d93d577b399646,Update README.md
+yigit,2013-10-22 23:57:23,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/be82850505480206f9e32ef0960bcb3369af17e0,be82850505480206f9e32ef0960bcb3369af17e0,Update README.md
+yigit,2013-10-22 07:37:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9515a313113f16a553b85d24c9dbc2e7622a6378,9515a313113f16a553b85d24c9dbc2e7622a6378,Update README.md
+yigit,2013-10-22 07:34:49,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/261d47f48a9a2cc5e44c8f221e0b0b920516f99a,261d47f48a9a2cc5e44c8f221e0b0b920516f99a,Update README.md
+yigit,2013-10-22 07:29:37,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5d821c4e9dd0036ef236007cc6841397cd68c042,5d821c4e9dd0036ef236007cc6841397cd68c042,Update README.md
+yigit,2013-10-21 00:51:39,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/1dd5c04f02a781d3d68ac3c454a3742830842c5b,1dd5c04f02a781d3d68ac3c454a3742830842c5b,Update README.md
+yigit,2013-10-19 21:55:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c96b347c31ffaa6b6f493160011ce06a0f78c3df,c96b347c31ffaa6b6f493160011ce06a0f78c3df,Update README.md
+yigit,2013-10-19 21:54:23,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/a55d980047bcc6e3f7da32872ce758269fde3c41,a55d980047bcc6e3f7da32872ce758269fde3c41,Update README.md
+yigit,2013-10-17 06:36:11,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/e31435656905282e29f802a5ec75e7a5c0238ec7,e31435656905282e29f802a5ec75e7a5c0238ec7,Update README.md
+yigit,2013-10-17 06:35:41,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/72822058f0d3a26245d7e3cb4ff2de1a18e13d05,72822058f0d3a26245d7e3cb4ff2de1a18e13d05,adding build information
+yigit,2013-10-17 00:43:20,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/dd7e60c6c4518ae7efbac2be4a65630d26efc3c4,dd7e60c6c4518ae7efbac2be4a65630d26efc3c4,update example for better ordering
+yigit,2013-10-13 18:57:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/77b3f8ff2b9ce7e102c025069fc00a26144f4246,77b3f8ff2b9ce7e102c025069fc00a26144f4246,move sample app to gradle. still WIP
+yigit,2013-10-13 18:57:05,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/c18069e258d78a75e2d56403b98c3120edc1f155,c18069e258d78a75e2d56403b98c3120edc1f155,update version number. add more javadoc to configuration
+yigit,2013-10-13 06:32:06,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/ea640c1430da379c89068842d18b8f6a6942983b,ea640c1430da379c89068842d18b8f6a6942983b,add more documentation. change persistence callback with a constructor parameter for configuration consistency
+yigit,2013-10-13 18:29:12,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/4d24ca086e22b4b9d3a99c9a7aac85251874d00f,4d24ca086e22b4b9d3a99c9a7aac85251874d00f,Update README.md
+yigit,2013-10-13 18:26:55,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/5d4d8564421c0b43bb6ad5f35c0b136cc28460a7,5d4d8564421c0b43bb6ad5f35c0b136cc28460a7,updated readme example
+yigit,2013-10-12 01:48:43,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/3d4159032aa6002816001d78e66c71ffe9688754,3d4159032aa6002816001d78e66c71ffe9688754,replace timer w/ scheduled executer
+yigit,2013-05-19 21:23:54,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7ad65622c24a17844da4b8e2fae5bcb8414e1756,7ad65622c24a17844da4b8e2fae5bcb8414e1756,Update README.md
+yigit,2013-05-12 20:49:32,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/eed81cb198b79df8ecac9896f583f2c0dfd06044,eed81cb198b79df8ecac9896f583f2c0dfd06044,Update README.md
+yigit,2013-05-12 20:45:59,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/6e78347ae4ab7de754523e74dd43b4da85625fe8,6e78347ae4ab7de754523e74dd43b4da85625fe8,Update README.md
+yigit,2013-05-12 20:36:19,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/7ae3e402de8a1cf674426415f8493e4347ed7ee0,7ae3e402de8a1cf674426415f8493e4347ed7ee0,"added main advantages of JobManager, added Apache 2 license"
+yigit,2013-05-12 20:22:58,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9919b648f617dd77a19c7d171135c129ecad69bb,9919b648f617dd77a19c7d171135c129ecad69bb,creating README.md with sample
+yigit,2013-04-09 08:43:01,https://api.github.com/repos/yigit/android-priority-jobqueue/git/commits/9790cb8df56d0335077085fb0c006a3be623d283,9790cb8df56d0335077085fb0c006a3be623d283,Initial commit

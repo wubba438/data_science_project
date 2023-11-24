@@ -1,0 +1,917 @@
+vim-dispatch,dispatch.vim: Asynchronous build and test dispatcher
+username,timestamp,url,sha,message
+tpope,2019-08-07 20:22:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a76bec9196fe27e195d167a5c2ee1da763d31b96,a76bec9196fe27e195d167a5c2ee1da763d31b96,Don't leak $VIM variables into environment
+tpope,2019-08-01 23:28:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c58708e820252d594541a86e31fbc95ec8d37e3e,c58708e820252d594541a86e31fbc95ec8d37e3e,Avoid long title for embedded start task
+anark,2019-07-26 01:50:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8e046e365fb74309f2504e9a3bcb2234e17a371b,8e046e365fb74309f2504e9a3bcb2234e17a371b,"Enable tmux pipe-pane with fish
+
+References https://github.com/tpope/vim-dispatch/pull/281"
+blueyed,2019-07-25 08:43:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ccac3a7e00cff88433fea1e8f9653c4274d7b7e2,ccac3a7e00cff88433fea1e8f9653c4274d7b7e2,"Shorten displayed message to avoid hit-enter prompt
+
+Closes https://github.com/tpope/vim-dispatch/issues/166"
+tpope,2019-07-25 23:44:35,https://api.github.com/repos/tpope/vim-dispatch/git/commits/64be3b0e0c70f2808cf2247a20d207d425a65f00,64be3b0e0c70f2808cf2247a20d207d425a65f00,"Guard against race condition creating quickfix list
+
+Closes https://github.com/tpope/vim-dispatch/issues/282"
+tpope,2019-07-19 13:18:52,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0722f74ec551b0526c9f136f3aeae8db9726db6a,0722f74ec551b0526c9f136f3aeae8db9726db6a,"Fix jump to top of file on :AbortDispatch
+
+Closes https://github.com/tpope/vim-dispatch/issues/279"
+SevereOverfl0w,2019-07-12 07:32:34,https://api.github.com/repos/tpope/vim-dispatch/git/commits/fd4410f237206da3f71f2f1152b693a9005e54bb,fd4410f237206da3f71f2f1152b693a9005e54bb,"Use xprop for x11 window switching
+
+Some popular terminals, e.g. gnome-terminal do not set $WINDOWID.
+Additionally, the Neovim TUI does not yet support $WINDOWID.
+
+Fix #277"
+tpope,2019-07-16 13:17:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/40aec75b9c083381e87ad6861f5d298ec9462023,40aec75b9c083381e87ad6861f5d298ec9462023,Fix shell escaping in job strategy on win32
+tpope,2019-07-16 13:05:58,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c327125d0788491906d4caf2934c3a3d21df3729,c327125d0788491906d4caf2934c3a3d21df3729,Fix escaping for :Dispatch echo \% on win32
+tpope,2019-07-01 03:37:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5b58b6dc290ece1c37e806e46ee117f5722a535a,5b58b6dc290ece1c37e806e46ee117f5722a535a,Handle spaces in 'shell' and 'shellcmdflag'
+tpope,2019-06-30 02:36:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a625661cd1d35b454c9b2a9452dbfec46c4d3e17,a625661cd1d35b454c9b2a9452dbfec46c4d3e17,Close stdin on nvim jobs
+tpope,2019-06-26 06:58:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b59859e4487fc14bfc6ee7cf3551fe4711ee32a8,b59859e4487fc14bfc6ee7cf3551fe4711ee32a8,"Start job with input open to fix win32 support
+
+Closes https://github.com/tpope/vim-dispatch/issues/275"
+tpope,2019-06-21 18:12:48,https://api.github.com/repos/tpope/vim-dispatch/git/commits/219df23e822206a25e7c40bf4329774aa19f7732,219df23e822206a25e7c40bf4329774aa19f7732,"Remove X11 Make
+
+References https://github.com/tpope/vim-dispatch/issues/274"
+tpope,2019-06-13 19:03:04,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ce4e07690d0dc651cf4038e3b24318c5e0aa84ac,ce4e07690d0dc651cf4038e3b24318c5e0aa84ac,"Check g:dispatch_no_strategyname_spawn
+
+The low level actions are spawn and make and the high level are start
+and dispatch.  We should probably be consistent in naming the options
+too."
+kiryph,2019-06-09 09:15:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2c5b28387ab50f6e6c6034a5b362b24be63734a3,2c5b28387ab50f6e6c6034a5b362b24be63734a3,Mention default maps also in README
+tpope,2019-06-09 19:39:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/597b338f3579ca6929c47465397974d366f4eccc,597b338f3579ca6929c47465397974d366f4eccc,Add Vim 8 and Neovim job handler
+tpope,2019-06-06 01:51:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9096c8bba04046a18d252bb21dabec3bb3fedbbe,9096c8bba04046a18d252bb21dabec3bb3fedbbe,"Require :chistory for asynchronous dispatch
+
+Hopefully for the last time!"
+tpope,2019-06-09 19:37:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/20acbacae15280c80e6e88f9f082bbd4e1b344c5,20acbacae15280c80e6e88f9f082bbd4e1b344c5,Remove old tmux version note
+tpope,2019-06-09 04:00:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/488940870ab478cc443b06d5a62fea7ab999eabf,488940870ab478cc443b06d5a62fea7ab999eabf,"dispatch.vim 1.8
+
+* Support :vert Copen and other mods.
+* Provide options for partially disabling strategies.
+* Bug fixes."
+tpope,2019-06-09 03:32:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/233f56fce914fa8577ac98e15fc42461491d6963,233f56fce914fa8577ac98e15fc42461491d6963,Provide configuration options to disable individual strategies
+tpope,2019-06-08 21:47:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/183d15406d61160cf4c650f1be5da78e9ea8998a,183d15406d61160cf4c650f1be5da78e9ea8998a,Remove extra blank line
+tpope,2019-06-08 06:20:29,https://api.github.com/repos/tpope/vim-dispatch/git/commits/582cab48158c87d2d3efee64e12e56309e8110bc,582cab48158c87d2d3efee64e12e56309e8110bc,Fix incorrect focus display of -compiler=foo --
+tpope,2019-06-08 06:13:50,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4c1d81be43376bcca80d122e29d0f6291bf61003,4c1d81be43376bcca80d122e29d0f6291bf61003,Rename confusing variable
+tpope,2019-06-08 05:27:56,https://api.github.com/repos/tpope/vim-dispatch/git/commits/78906b08d8e5b6a0dd4d3dd1db8268d1070e59d4,78906b08d8e5b6a0dd4d3dd1db8268d1070e59d4,Ensure :Focus :Dispatch always uses absolute directory
+tpope,2019-06-08 05:06:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ae9195079a48a40a209ee0df920897fc5877ce74,ae9195079a48a40a209ee0df920897fc5877ce74,Ensure correct directory for :Focus :Dispatch
+tpope,2019-06-08 04:38:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6c4db33688a28ee6a542b85ce9511be744d97847,6c4db33688a28ee6a542b85ce9511be744d97847,Use case sensitive operators for string equality
+tpope,2019-06-08 04:08:58,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2260de92dd0687277768ef6e7140da1f50c6bd50,2260de92dd0687277768ef6e7140da1f50c6bd50,Support %f in hints
+tpope,2019-06-06 00:33:01,https://api.github.com/repos/tpope/vim-dispatch/git/commits/eac3a56511119e3c2ca2eec2ba6e6bad72bc09a8,eac3a56511119e3c2ca2eec2ba6e6bad72bc09a8,"Send <mods> to all commands
+
+Supporting :tab Focus to set the tab's focus is mighty silly but I'm
+doing it anyways."
+tpope,2019-06-06 00:48:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9c5ad04bc24c3df6ffca64b80f3635754bf4f37b,9c5ad04bc24c3df6ffca64b80f3635754bf4f37b,Remove accidental commented code
+tpope,2019-06-06 00:01:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e41a60f04ddff371f2450b868f42aa48ee848003,e41a60f04ddff371f2450b868f42aa48ee848003,Add hints to force dispatch to use :Start/:Spawn
+tpope,2019-05-15 21:40:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/786feb1f2926f24e4757ffb4d6d104e0a0efcc21,786feb1f2926f24e4757ffb4d6d104e0a0efcc21,"Allow embedding default start in 'errorformat'
+
+Being liberal in what I accept because I'm not ready to pick a side in
+snake case versus camel case."
+tpope,2019-06-05 05:17:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/21a36d131b7e10cc030b90b2a19f98b0698a66e4,21a36d131b7e10cc030b90b2a19f98b0698a66e4,Clean up hint handling
+tpope,2019-05-29 21:02:07,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f329f8f1284296b6478e6b5b268edcda6a3ce9c7,f329f8f1284296b6478e6b5b268edcda6a3ce9c7,Fix message after setting buffer focus
+tpope,2019-05-22 02:51:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/da6855765d1868e021082caaaaae5146a1edd7a6,da6855765d1868e021082caaaaae5146a1edd7a6,Handle yarn's use of `\e[2K\e[1G` to clear line
+tpope,2019-05-15 21:52:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d8bf968958f4bdc838321cceace52299f28ad750,d8bf968958f4bdc838321cceace52299f28ad750,"Support nvim's tab local directories
+
+Closes https://github.com/tpope/vim-dispatch/issues/262"
+tpope,2019-04-29 23:21:23,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c219ec8603ac19631f49cefca06546b519ca4b5f,c219ec8603ac19631f49cefca06546b519ca4b5f,Handle count on start/spawn query maps
+tpope,2019-02-28 21:08:34,https://api.github.com/repos/tpope/vim-dispatch/git/commits/929e0d0aa1139d483c070e4ee2a05f4a3425b0af,929e0d0aa1139d483c070e4ee2a05f4a3425b0af,"dispatch.vim 1.7
+
+* Support force killing a dispatch with :AbortDispatch!.
+* Support Fish shell.
+* Invoke ShellCmdPost and :checktime on completion.
+* Bug fixes."
+tpope,2019-02-23 23:48:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/75d531db0596630877f1f0575914b39c69ac1448,75d531db0596630877f1f0575914b39c69ac1448,"Revert ""Require :chistory for asynchronous dispatch""
+
+This is still slated for 2.0, but I plan on cutting a maintenance
+release first.
+
+This reverts commit da5562f12795c9a8eaf346573af2876300048ca4."
+tpope,2019-01-03 19:36:55,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a795955b64a2eb15c1f05ae1434a89cc8ca16611,a795955b64a2eb15c1f05ae1434a89cc8ca16611,Invoke ShellCmdPost on completion
+tpope,2019-01-03 19:25:28,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9abd7cf09a5b00b3194a71f84e2911b280f30b1e,9abd7cf09a5b00b3194a71f84e2911b280f30b1e,"Force :checktime on completion
+
+Closes https://github.com/tpope/vim-dispatch/issues/255"
+tpope,2018-10-31 18:33:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d4b8940fd1cd77fc6d300f003b18745a584295b2,d4b8940fd1cd77fc6d300f003b18745a584295b2,Use global not default 'errorformat' for make command
+tpope,2018-10-02 17:11:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ab7470d4b03bae9880bf2b5cef60fc0fb51b1101,ab7470d4b03bae9880bf2b5cef60fc0fb51b1101,Use correct line number for :.Start
+teoljungberg,2018-09-19 17:00:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/72a08f297e71f25e569f66a825ce2878b038e045,72a08f297e71f25e569f66a825ce2878b038e045,"Fix spelling error
+
+`Provida` -> `Provide`."
+tpope,2018-09-13 17:44:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/fe48d002ce5d473b2057641666d643c66ede6230,fe48d002ce5d473b2057641666d643c66ede6230,"Fix :Focus :Dispatch
+
+Closes https://github.com/tpope/vim-dispatch/issues/247"
+tpope,2018-08-20 21:45:35,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4566b8892715361f9952fa4c29c05035fdede09d,4566b8892715361f9952fa4c29c05035fdede09d,"Support Fish shell
+
+Closes https://github.com/tpope/vim-dispatch/issues/217"
+tpope,2018-08-20 21:59:54,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6be2bcad68a71c5eba0310022690b823fcc0764e,6be2bcad68a71c5eba0310022690b823fcc0764e,Don't overwrite read only environment variables
+tpope,2018-08-17 00:44:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7ea180d0032039342d59256a49076894aecb5a44,7ea180d0032039342d59256a49076894aecb5a44,Pass bang argument to custom kill
+tpope,2018-08-17 00:41:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a803831a462b272ce67990f04d93da5e541b276c,a803831a462b272ce67990f04d93da5e541b276c,Support forcefully aborting a dispatch with bang
+tpope,2018-08-08 02:50:16,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f708ce535d9e65ca0a31626bcff290a5fc23d881,f708ce535d9e65ca0a31626bcff290a5fc23d881,"Redraw more aggressively
+
+This seems necessary for the upcoming job adapter, and also improves the
+behavior with tmux."
+tpope,2018-08-01 04:05:35,https://api.github.com/repos/tpope/vim-dispatch/git/commits/da5562f12795c9a8eaf346573af2876300048ca4,da5562f12795c9a8eaf346573af2876300048ca4,Require :chistory for asynchronous dispatch
+tpope,2018-08-01 04:55:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b85ade732ac9518912258d822c8a427d46b89c63,b85ade732ac9518912258d822c8a427d46b89c63,"dispatch.vim 1.6
+
+* Provide maps for :Make, :Dispatch, :Start, and :Spawn.
+* Provide :AbortDispatch.
+* Enable :Dispatch -- to run :Make directly.
+* Support :{range}Spawn to interactively spawn default dispatch.
+* Support %:S to shell escape filename.
+* Use job support plus FIFO for callback when dispatch completes.
+* Bug fixes and robustness improvements."
+tpope,2018-08-01 04:19:12,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9932afbeebe170ab617d09c71f68ae53a09b5844,9932afbeebe170ab617d09c71f68ae53a09b5844,"Drop elaborate map override instructions
+
+This system is still there if you need it, but these instructions were
+more confusing than helpful."
+tpope,2018-08-01 01:40:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/cd0556405561c46c2135ee74a0e3f09f0efb3f48,cd0556405561c46c2135ee74a0e3f09f0efb3f48,Fix alignment
+tpope,2018-08-01 01:39:27,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9dbd795b297b7ec612bcd271116725340c05dc4b,9dbd795b297b7ec612bcd271116725340c05dc4b,"Add option for disabling maps
+
+Closes https://github.com/tpope/vim-dispatch/issues/236"
+tpope,2018-07-31 01:57:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7b224da227146a9f82e7d58a20c637f37a7d0c74,7b224da227146a9f82e7d58a20c637f37a7d0c74,Fix expansion of buffer by number
+tpope,2018-07-23 18:40:28,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1e9bd0cdbe6975916fa444ae727663afcea36fb5,1e9bd0cdbe6975916fa444ae727663afcea36fb5,"Set l# alongside v:lnum
+
+This enables line number handling in a way that, unlike `=...`
+expressions, is compatible with plain Vim.
+
+    let b:dispatch = 'rspec %:s/$/\=exists(""l#"") ? "":"".l# : """")/'
+
+Assigning to a local variable with a hash symbol in the name isn't
+normally allowed, so this is great for avoiding false positives as well
+as style.  Older versions of Vim don't accept such variable names with
+the l: prefix, so make sure you omit it.
+
+I've also defined a backup variable in case further issues crop up with
+the cool, cool name."
+tpope,2018-07-29 23:03:19,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4cffaed743e1ee6f57d14a7d76fe949bcfe16dbc,4cffaed743e1ee6f57d14a7d76fe949bcfe16dbc,More robust parsing of embedded default tasks
+tpope,2018-07-29 21:34:58,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ead0dccc433debef8f6db232587d95d520ece0f8,ead0dccc433debef8f6db232587d95d520ece0f8,Update installation instructions
+tpope,2018-07-29 21:33:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/cd2f26ff59006668cbfab663895e074975de3822,cd2f26ff59006668cbfab663895e074975de3822,"Also run default dispatch on :0Start
+
+This might get superseded by something more interesting later, so leave
+it as unofficial and undocumented."
+tpope,2018-07-25 14:31:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5867f4aade74f7b6cbda8cc6219b7a52fdc8a4de,5867f4aade74f7b6cbda8cc6219b7a52fdc8a4de,"Add g` maps as alias for g'
+
+This fits with the new :{range}Spawn mechanic."
+tpope,2018-07-26 19:32:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b0c384679bbfc4d6dfe70b08bc558eea9cadb25a,b0c384679bbfc4d6dfe70b08bc558eea9cadb25a,Don't expand m? without a count
+tpope,2018-07-25 22:15:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ea57d9c757ebc7a94730197dbea3429f8588bbbe,ea57d9c757ebc7a94730197dbea3429f8588bbbe,Fix default make query with line number
+tpope,2018-07-25 22:13:29,https://api.github.com/repos/tpope/vim-dispatch/git/commits/861de017e7ce550f63fdb61167344936b35d9e3a,861de017e7ce550f63fdb61167344936b35d9e3a,Don't double expand on default :.Spawn
+tpope,2018-07-25 18:06:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/dbb9320d000caa56dfada5f99fe0b5209ef0590b,dbb9320d000caa56dfada5f99fe0b5209ef0590b,Fix :0Spawn calling :Make
+tpope,2018-07-25 14:18:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/879634adf66be96c911c4d8c8eb5e7834aa2b3f7,879634adf66be96c911c4d8c8eb5e7834aa2b3f7,Support :{range}Spawn to spawn default dispatch
+tpope,2018-07-25 14:13:55,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d434c19823d5df35fd7784ac11429c3c5f4a2dfa,d434c19823d5df35fd7784ac11429c3c5f4a2dfa,"Support combining default command with options
+
+This lets you do `:Start -wait=always` and still use b:start."
+tpope,2018-07-24 20:27:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1ebe96e2ce5f972afbef3408100815f90832f24b,1ebe96e2ce5f972afbef3408100815f90832f24b,"Drop g maps
+
+Someone pointed out this would make more sense as :grep and when you're
+right, you're right."
+tpope,2018-07-24 21:26:04,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f7ef62a0b1e1313bd35fdd2ed1b1f150c5a70fec,f7ef62a0b1e1313bd35fdd2ed1b1f150c5a70fec,"Use built-in shellescape for :S
+
+This way people don't get confused by the lack of quotes in some cases."
+tpope,2018-07-24 02:02:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/54e2b9c2e3719112b7a78b5a6c1cdacb9b56d729,54e2b9c2e3719112b7a78b5a6c1cdacb9b56d729,Fix directory for expansion in :Start and :Spawn
+tpope,2018-07-24 01:54:03,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8627afc83eaaa05f11f5161ebbe0c0b8a0ab5447,8627afc83eaaa05f11f5161ebbe0c0b8a0ab5447,"Disallow empty expansions
+
+Ideally we'd show an error just like Vim does, but that's hard to do."
+tpope,2018-07-23 22:21:27,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ec6906c3927cc201aef65f63d397174acbdfd9d4,ec6906c3927cc201aef65f63d397174acbdfd9d4,"Unify expansion
+
+I was going to a great deal of trouble to apply `=...` expansion
+separately for 'makeprg' so that QuickFixCmdPre wouldn't get an
+inaccurate picture of the command to run.  But I've decided that this
+expansion is on the way out and it doesn't really matter if the
+auto-command sees some weird syntax.
+
+This also drops some support for experimental variations of that syntax
+that were never officially supported."
+tpope,2018-07-23 20:59:19,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f0a51dc1169df89b6e546d3656369196b3456c74,f0a51dc1169df89b6e546d3656369196b3456c74,"Add option to disable FIFO callback
+
+I've been experiencing some weirdness and need a way to rule this out."
+tpope,2018-07-23 22:00:41,https://api.github.com/repos/tpope/vim-dispatch/git/commits/76d3915f53651621cb35efb9f9918ff8fe47bbcd,76d3915f53651621cb35efb9f9918ff8fe47bbcd,"Don't normalize line number before expansion
+
+This has no effect on the current code base, but I have aspirations to
+use the value in the future."
+tpope,2018-07-24 06:00:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5c3afa8f2f7e1c99b48d056e0ef18e5d1db3bb74,5c3afa8f2f7e1c99b48d056e0ef18e5d1db3bb74,Change section header style
+tpope,2018-07-24 05:50:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d3f6ba821b1a2fd792af0a203fb4ecf9107a5f89,d3f6ba821b1a2fd792af0a203fb4ecf9107a5f89,"Remove broken, unused catch clause"
+tpope,2018-07-24 17:34:01,https://api.github.com/repos/tpope/vim-dispatch/git/commits/25f825d92b329e3b68d8c25718dd85923626b0aa,25f825d92b329e3b68d8c25718dd85923626b0aa,"Ignore extra arguments to command implementation functions
+
+This is so I can later add line1 and line2 parameters and not burn
+people who install a new version with the plugin already loaded but the
+autoload file not loaded."
+tpope,2018-07-23 18:20:54,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c8651401fb70bbff0ae45d933c05496da82febf0,c8651401fb70bbff0ae45d933c05496da82febf0,Set v:lnum during all expansion
+tpope,2018-07-19 03:06:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/43760f9d8469d59fd629a97e19dce4491192cca6,43760f9d8469d59fd629a97e19dce4491192cca6,Don't expand % or # inside `= expressions
+tpope,2018-07-13 20:17:55,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b460520473212a7b332a93a32ae7bbf9614dfa7e,b460520473212a7b332a93a32ae7bbf9614dfa7e,Expand line number at same time as other expansions
+tpope,2018-07-13 17:25:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/fcf6cbb51aa30702ca9044c2a1cbe4b8cefe3bb0,fcf6cbb51aa30702ca9044c2a1cbe4b8cefe3bb0,"Fix syntax error
+
+Closes https://github.com/tpope/vim-dispatch/issues/241"
+tpope,2018-07-11 03:24:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4a3bb08137eab3a0020cbb0a9be90efc9e4682f8,4a3bb08137eab3a0020cbb0a9be90efc9e4682f8,More robust escaping
+tpope,2018-07-11 06:27:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8c6678ed189d7cfececbaf1f30649fe282a31f40,8c6678ed189d7cfececbaf1f30649fe282a31f40,Extract helper for injecting arguments into 'makeprg'
+tpope,2018-07-11 06:14:47,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c4916ef78f7e1a2919155d4634a78e88d7fdf3da,c4916ef78f7e1a2919155d4634a78e88d7fdf3da,Extract helper for injecting line number into ex command
+tpope,2018-07-11 02:57:37,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a5c71e719abbd94b092340fa86b80650487b4876,a5c71e719abbd94b092340fa86b80650487b4876,Use expanded command for iTerm title
+tpope,2018-07-11 04:39:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a32adbf7776d100d701223fa3d5478110d04fdb0,a32adbf7776d100d701223fa3d5478110d04fdb0,Assume presence of 'title' on start requests
+tpope,2018-07-11 02:43:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f55b807d6be2324eac0b99940eaadb6f16f53cf5,f55b807d6be2324eac0b99940eaadb6f16f53cf5,Make v:lnum available in quickfix autocommands
+tpope,2018-07-11 01:01:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/57c7dac78de9305eb827b14b54f0637975b7c7c7,57c7dac78de9305eb827b14b54f0637975b7c7c7,Support %:S to shell escape filename
+tpope,2018-07-10 23:55:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c6c28405fd84138ed6bd957fdb01e7351737b93a,c6c28405fd84138ed6bd957fdb01e7351737b93a,Fix :FocusDispatch output for :Make default
+tpope,2018-07-10 22:23:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/946bed3ff01231e7899440b73a75c5f58f9b661d,946bed3ff01231e7899440b73a75c5f58f9b661d,"Provide fnameescape
+
+Vim didn't get fnameescape until 7.1."
+tpope,2018-07-10 21:50:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5116b0ff05b6f9a67e71fe12f4456d63aeecba51,5116b0ff05b6f9a67e71fe12f4456d63aeecba51,Support completion function embedded in 'errorformat'
+tpope,2018-07-10 07:11:16,https://api.github.com/repos/tpope/vim-dispatch/git/commits/eac960af08663691a732de2e0ee68f8cd6ab720d,eac960af08663691a732de2e0ee68f8cd6ab720d,"Enable :Dispatch -- to run :Make
+
+I used _ as a placeholder for :Make without giving it much thought, but
+this is natural enough that I'm exposing it to end users."
+tpope,2018-07-10 05:35:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3faa784c978acccb44ed678547e511f6394f3d8c,3faa784c978acccb44ed678547e511f6394f3d8c,Enable :.FocusDispatch {command} to set buffer local focus
+tpope,2018-07-10 05:58:12,https://api.github.com/repos/tpope/vim-dispatch/git/commits/90126c87b91fa931f3ffa575820094332ef83c69,90126c87b91fa931f3ffa575820094332ef83c69,Tweak `m?` output to more accurately reflect :Make behavior
+tpope,2018-07-10 07:44:25,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f71caaadf7364131beb52934afc5956b32e1dcbe,f71caaadf7364131beb52934afc5956b32e1dcbe,Don't expand backtick expressions inside options
+tpope,2018-07-10 06:59:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/19ccdd5154af6e2ebe5bff7be5187c2fcfa2dada,19ccdd5154af6e2ebe5bff7be5187c2fcfa2dada,Fix output of :FocusDispatch when falling back to :Make
+tpope,2018-07-10 07:28:34,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c38eea65234c5ca442d4aa972463c6438ae44617,c38eea65234c5ca442d4aa972463c6438ae44617,"Fix edge cases in :Dispatch defaulting to :Make
+
+* Don't add buffer task to focus or buffer default.
+* Prevent extra space when no buffer task in 'errorformat'.
+* Fall back to default when no buffer task in 'errorformat'.
+* Rearrange to reduce coupling to buffer local options."
+tpope,2018-07-10 06:54:55,https://api.github.com/repos/tpope/vim-dispatch/git/commits/95ec554532c01dbbfb35e1c8afd9a16804b5e80f,95ec554532c01dbbfb35e1c8afd9a16804b5e80f,Fix :FocusDispatch -option :Dispatch
+tpope,2018-07-10 05:56:09,https://api.github.com/repos/tpope/vim-dispatch/git/commits/59bb920cd12766d4c77eadd90af930584ab79631,59bb920cd12766d4c77eadd90af930584ab79631,Simplify
+tpope,2018-07-10 05:46:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3f0a76b74e7757a53ed84e2e736265af8ec44162,3f0a76b74e7757a53ed84e2e736265af8ec44162,Show default tasks on `m?`
+tpope,2018-07-10 05:18:32,https://api.github.com/repos/tpope/vim-dispatch/git/commits/259c096adcc831a3c6ad744d4b8172a4ceca70fb,259c096adcc831a3c6ad744d4b8172a4ceca70fb,Ensure :FocusDispatch takes precedence over previous buffer focus
+tpope,2018-07-10 05:17:27,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9cb8ad2ce02493956192b8aa866857c998182dd7,9cb8ad2ce02493956192b8aa866857c998182dd7,Remove transitional support for lowercase focus variables
+tpope,2018-07-10 05:11:56,https://api.github.com/repos/tpope/vim-dispatch/git/commits/935ed7a7cd7e967032dfc6841962f752807f33b7,935ed7a7cd7e967032dfc6841962f752807f33b7,Fix :FocusDispatch to expand %
+tpope,2018-07-02 19:28:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/916b8d5dbffca021d0e9c3476f0d1992e7491e32,916b8d5dbffca021d0e9c3476f0d1992e7491e32,Don't focus foreground iTerm dispatch
+tpope,2018-06-02 22:35:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e009487bdc27320b0c96fa2db649d558add1583f,e009487bdc27320b0c96fa2db649d558add1583f,"Allow buffer local focus
+
+Why didn't I think of this sooner.  Use b:dispatch for default and
+b:Dispatch for override."
+tpope,2018-06-25 16:32:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/afd899dca53f1f84a0ee9354a26e491b71c4e526,afd899dca53f1f84a0ee9354a26e491b71c4e526,Clarify disabling mappings
+shym,2018-06-02 20:37:56,https://api.github.com/repos/tpope/vim-dispatch/git/commits/47729b7831421f20fa40a7d5b3e9b928faf18e75,47729b7831421f20fa40a7d5b3e9b928faf18e75,"Spawn tmux fg job in bg window when height <= 0
+
+When the requested height for a tmux split is 0 or less and that the
+spawned job will be able to call back, spawn the foreground job in a new
+background window, just as if it were a background job
+If no callback mechanism is available, use a split of -height lines"
+shym,2018-05-26 12:53:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6f931093d482844489f287b1262c9ec8b43f3c5a,6f931093d482844489f287b1262c9ec8b43f3c5a,"Skip automatic copen when height <= 0
+
+copen and cwindow expect a positive number for the window height so we
+can use the value 0 to state that the quickfix window should not be
+opened or closed automatically
+So when setting g:dispatch_quickfix_height to 0, `:Copen` updates the
+quickfix list without opening the quickfix window and prevents the
+quickfix window from opening on completion of a `:Dispatch` until the
+next explicit `:copen`"
+tpope,2018-05-31 17:38:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1ea256e6ae0f88bfbec23953acbb73d00155971b,1ea256e6ae0f88bfbec23953acbb73d00155971b,Don't wait on a spawned shell
+tpope,2018-05-29 23:26:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c82af5829da36340ca2e71bcb60916f0b66669ba,c82af5829da36340ca2e71bcb60916f0b66669ba,Eliminate redundant tmux poll
+tpope,2018-05-29 04:12:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d42c5c4b7016b97006e152dbff215a806263e4d8,d42c5c4b7016b97006e152dbff215a806263e4d8,Don't pass -1 range when delegating to command
+tpope,2018-05-29 04:11:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/28309535a247730ed35e00a61408114cf8664b1a,28309535a247730ed35e00a61408114cf8664b1a,Fix missing bang
+tpope,2018-05-22 23:13:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0c56e38669f4912aae99081834d8c44726176077,0c56e38669f4912aae99081834d8c44726176077,Use job support plus FIFO for completion callback
+tpope,2018-05-24 18:35:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/331277479507167a63558dcae9fe4178cf3bcb52,331277479507167a63558dcae9fe4178cf3bcb52,"Try g mappings for :Dispatch
+
+While I'm loathe to enter the loaded g namespace, it does pair really
+well with ' and g'."
+tpope,2018-05-22 22:56:25,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5d0d63e3ffe49af64f4bd355499ebfd30a79f895,5d0d63e3ffe49af64f4bd355499ebfd30a79f895,Add abstraction to check for GUI callback support
+tpope,2018-05-22 23:01:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1846292dca6d07ef3700dc2d91a0d8634c580ea4,1846292dca6d07ef3700dc2d91a0d8634c580ea4,Fix GNU Screen focus on Neovim
+tpope,2018-05-19 21:15:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1ec1518629b276d55bd55407beac828f27e11c42,1ec1518629b276d55bd55407beac828f27e11c42,Tentatively finalize maps
+tpope,2018-05-19 21:16:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/449a1c89b1d165cb86d46f067f76ea0c5011d5be,449a1c89b1d165cb86d46f067f76ea0c5011d5be,Blow up on g:nremap = ''
+tpope,2018-05-18 22:35:32,https://api.github.com/repos/tpope/vim-dispatch/git/commits/08ca562591388b929e1079534321d9baa40d9b0a,08ca562591388b929e1079534321d9baa40d9b0a,"Tweak delay to prevent race conditions
+
+Closes https://github.com/tpope/vim-dispatch/issues/235"
+tpope,2018-05-13 23:22:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e733011b56fc4f9413245b2d07519fbee7e3170c,e733011b56fc4f9413245b2d07519fbee7e3170c,Drop netrw hack
+tpope,2018-05-13 21:02:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2d6ca494f9fc7253d6be3e8aebde07b484ad6e57,2d6ca494f9fc7253d6be3e8aebde07b484ad6e57,"Skip over broken requests when retrieving
+
+References https://github.com/tpope/vim-dispatch/issues/235"
+tpope,2018-05-13 23:18:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e052da08c84f34d105fb57d7e0ade203dee7278c,e052da08c84f34d105fb57d7e0ade203dee7278c,"More mapping changes
+
+Turns out people actually use <Space> and <CR> as motions, so the d
+family of maps is a no go."
+tpope,2018-05-13 21:29:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/bafee5f449b9557d8ffc3fa80f84a127473d0af8,bafee5f449b9557d8ffc3fa80f84a127473d0af8,Don't include press enter prompt in make dispatches
+tpope,2018-05-12 23:09:34,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f402098c1cb2b4180b01a2f786db85f512eafb5f,f402098c1cb2b4180b01a2f786db85f512eafb5f,"Add ` maps
+
+It's not looking good for d."
+tpope,2018-05-07 19:55:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/673b6e6f3fac03390a98ee1235138150c8dcd5e8,673b6e6f3fac03390a98ee1235138150c8dcd5e8,"Return original handler response after dispatch
+
+This special ""2"" value is lost otherwise."
+tpope,2018-05-07 19:47:48,https://api.github.com/repos/tpope/vim-dispatch/git/commits/be29e769ca1d62dbeda85689517b0d019eb72cf1,be29e769ca1d62dbeda85689517b0d019eb72cf1,"Guard against broken requests setting up quickfix
+
+References https://github.com/tpope/vim-dispatch/issues/235"
+tpope,2018-05-07 19:36:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e4828f2ecd0ed847599763524d029eff6e79aac5,e4828f2ecd0ed847599763524d029eff6e79aac5,Document :AbortDispatch
+tpope,2018-04-22 19:37:27,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ca88fd7bd3d58620c7bfd604e3ebfa71b9c5001d,ca88fd7bd3d58620c7bfd604e3ebfa71b9c5001d,"Provide d maps for :Dispatch
+
+Picking a fight with Netrw here, which seems to think that mkdir is
+important enough to completely take over the letter d.  This is a
+dubious strategy, and I'll abandon it for a different map (maybe
+backtick?) if people have issues."
+tpope,2014-03-30 03:24:56,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7f164471d00688baf72979d9e1bfeaa0de21a4af,7f164471d00688baf72979d9e1bfeaa0de21a4af,"Provide :AbortDispatch
+
+Closes https://github.com/tpope/vim-dispatch/issues/28
+Closes https://github.com/tpope/vim-dispatch/issues/190"
+tpope,2018-04-15 22:39:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b07f1232db5c038043d3d8f95ae934f20ed5631a,b07f1232db5c038043d3d8f95ae934f20ed5631a,"Accept ++args
+
+I modeled -dir= after :command, but ++dir= is more in line with typical
+Vim commands, and in particular matches up with the new :terminal
+command.  It's also distinct enough that we could potentially support it
+for :Make.  For now, quietly support it as an alternative syntax."
+tpope,2018-04-15 22:19:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5f2d8ed69d6c2c9598daf1c7cf079b742d9d0ea6,5f2d8ed69d6c2c9598daf1c7cf079b742d9d0ea6,"Specify buffer specific task in 'errorformat'
+
+This task is used for :.Make, :0Make, and as a penultimate fallback for
+:Dispatch."
+tpope,2018-03-18 20:35:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f6b3e7799e6dce08869d7744aa7faa6528f065f5,f6b3e7799e6dce08869d7744aa7faa6528f065f5,"Allow forcing a :Make subcommand to use :Start
+
+Say makeprg is lein, and you want to override `:Make repl` to call not
+`:Dispatch lein repl` but rather `:Start lein repl`.  This change
+enables achieving that with a special declaration in errorformat:
+
+    setl errorformat+=%\\&terminal=%\\Crepl%\\>%.%#
+
+The pattern uses Vim's peculiar scanf variant documented under the
+errorformat help topic.  Note the use of %\C, because Vim is case
+insensitive by default in this context.  The key name ""terminal"" is
+meant to convey the underlying semantic: the command requires a
+terminal, and should not be piped to a file.
+
+I am experimentally providing this to help with ""do what I mean"", but it
+goes against the spirit of :Make as a paper thin :make wrapper, so even
+if it sticks around, I'll still be favoring dedicated commands like
+:Console as the official interface."
+tpope,2018-04-04 21:03:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8acdd1345a8d700190c592ca4d1c78b5fd2965b4,8acdd1345a8d700190c592ca4d1c78b5fd2965b4,Tweak delegation of count to :Command
+tpope,2018-04-15 04:31:31,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b80b931ef7b0fc61de2a531212caeeccc05d9709,b80b931ef7b0fc61de2a531212caeeccc05d9709,Fix linting issues
+tpope,2018-04-15 04:29:47,https://api.github.com/repos/tpope/vim-dispatch/git/commits/62827f4a5027eb75676903700910abb8f2842d7c,62827f4a5027eb75676903700910abb8f2842d7c,Fix iTerm activation
+filcab,2018-04-12 22:32:08,https://api.github.com/repos/tpope/vim-dispatch/git/commits/bbb830e2cf62dc43457524cf3f011c339a1bce8b,bbb830e2cf62dc43457524cf3f011c339a1bce8b,"Fix tempname() results when we get short paths
+
+Shortpaths might be returned on windows (e.g: if the user's name is long)"
+tpope,2018-03-25 19:49:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b80fd418082471e5b1150a97e8cab53035ffe502,b80fd418082471e5b1150a97e8cab53035ffe502,Record program and args for more dispatches
+tpope,2018-04-01 19:10:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7e253a0b916a2a1050c26b33d70de006dc87bb89,7e253a0b916a2a1050c26b33d70de006dc87bb89,"Open quickfix window for adapters upon request
+
+This is for use by adapters that update the quickfix list automatically."
+tpope,2018-04-01 18:20:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/65f53770e3229d90371dd1413b5779e33af63b5a,65f53770e3229d90371dd1413b5779e33af63b5a,Only claim quickfix list if we can append later
+tpope,2018-04-01 18:14:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c2cca4bdc0e327cc964b612e83f0ba0f183032dd,c2cca4bdc0e327cc964b612e83f0ba0f183032dd,Fix missing abort
+tpope,2018-04-01 04:13:32,https://api.github.com/repos/tpope/vim-dispatch/git/commits/40819ad46ed01072d201c12656fbe8dfdf66d55b,40819ad46ed01072d201c12656fbe8dfdf66d55b,"dispatch.vim 1.5
+
+* Provide m maps for :Make.
+* Show :Dispatch command in quickfix title.
+* Include handler/pid in summary and quickfix title.
+* Clear and claim quickfix list immediately after :Dispatch.
+* Open quickfix window with dispatched working directory.
+* Accept :FocusDispatch :.Dispatch to focus buffer default.
+* Allow configuration of size of quickfix window (and tmux panel).
+* Auto-write before :Start, :Spawn, and :Dispatch :vimcommand.
+* Store global focused command in session.
+* Support iTerm 3.
+* Enable X11 terminal flags other than -e.
+* Assorted bug fixes."
+tpope,2018-03-28 20:57:54,https://api.github.com/repos/tpope/vim-dispatch/git/commits/593c732679fec66c2c841b0c09aee6213a70783b,593c732679fec66c2c841b0c09aee6213a70783b,Store global focused command in session
+tpope,2018-03-14 21:57:12,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4104901e9d6a304a5022b780f8e20d3becc7da93,4104901e9d6a304a5022b780f8e20d3becc7da93,"Provide m maps for :Make
+
+I want to provide d maps for :Dispatch too (and maybe something for
+:Start), but I'm not sure what to do about Netrw's infuriating use of a
+<nowait> d map.  What a waste of a perfectly good key!"
+tpope,2018-03-17 19:53:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1fe6e005d1e521439354478b26d0b76debc8c973,1fe6e005d1e521439354478b26d0b76debc8c973,"Accept g:Dispatch just like g:dispatch
+
+Capitalized variables are stored in session files, so this could be
+useful.  This might become the default for :FocusDispatch in the future.
+
+Support other variables too, for consistency."
+teoljungberg,2018-03-18 16:53:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9bfd28aea89093d8a8a0db932b871b100bacf09d,9bfd28aea89093d8a8a0db932b871b100bacf09d,Add tab completion for dispatching ex commands
+tpope,2018-03-14 21:58:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/195a641a23fdb50cacc21d41455986aa6d63ae68,195a641a23fdb50cacc21d41455986aa6d63ae68,"Enable :FocusDispatch :.Dispatch
+
+Closes https://github.com/tpope/vim-dispatch/pull/230"
+tpope,2018-03-14 19:36:29,https://api.github.com/repos/tpope/vim-dispatch/git/commits/69e06f5c0640929be0488b15a432afe8d9ad86ca,69e06f5c0640929be0488b15a432afe8d9ad86ca,Add error handling for bogus request
+tpope,2018-03-04 00:59:47,https://api.github.com/repos/tpope/vim-dispatch/git/commits/867313e7f2503ba67f4000048f16580190de1037,867313e7f2503ba67f4000048f16580190de1037,"Use default :Make task found in 'errorformat'
+
+This is intended to let :Make run something useful by default for
+commands like `rails` and `lein` that display usage information or
+something equally worthless when called with no arguments.
+
+This works by looking for `%\&default=...` in 'errorformat.  The `%\&`
+prevents Vim from matching it to any error output."
+tpope,2018-03-03 16:44:55,https://api.github.com/repos/tpope/vim-dispatch/git/commits/19b211e8c223e66652790b2990d4df5dba3bc145,19b211e8c223e66652790b2990d4df5dba3bc145,Auto-write before :Dispatch :vimcommand
+tpope,2018-03-02 18:17:51,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e83ac42fefa4bcf2b4197bec2b4d917e15225815,e83ac42fefa4bcf2b4197bec2b4d917e15225815,Fix regex back reference issue on some Vim versions
+tpope,2018-03-02 16:49:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8e7a343891070532c66187ea598c5084bd18ab52,8e7a343891070532c66187ea598c5084bd18ab52,"Don't assume returned title from getqflist()
+
+Closes https://github.com/tpope/vim-dispatch/issues/229"
+tpope,2018-03-02 00:29:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5bfe928cd989a64ca4e2c2f51423a0c063a20d42,5bfe928cd989a64ca4e2c2f51423a0c063a20d42,"Change order of line number expansion
+
+I don't think <line1> and the like will ever be an official interface,
+but if that changes you should be able to use them inside a `=...`
+expression too just like you can in a :command declaration.
+
+Also the string indexing of [6:-1] only worked for the 6 character
+<lnum>, oops."
+tpope,2018-03-01 22:12:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f7be1ccdcb242139ddd32c1d78af8fec438939ce,f7be1ccdcb242139ddd32c1d78af8fec438939ce,Simplify conditional for count check
+tpope,2018-02-25 20:59:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a737b4b1a9ce1b5f182f99d131708873d4f0873e,a737b4b1a9ce1b5f182f99d131708873d4f0873e,Replace existing quickfix list if from same invocation
+tpope,2018-02-20 15:42:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b5dc0ce9fa2ab39cbb309b36e274d2990f7abe6e,b5dc0ce9fa2ab39cbb309b36e274d2990f7abe6e,Don't add second number to focused :Command
+tpope,2018-02-20 15:37:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3db34691deaab652a6d8d5120d14b60a34bc8a6f,3db34691deaab652a6d8d5120d14b60a34bc8a6f,Fix bogus line number injections in focused :Command
+tpope,2018-02-06 16:41:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/65c24010de70bb53248a12e2d07b4188b7f47ee0,65c24010de70bb53248a12e2d07b4188b7f47ee0,"Fix x11 terminal invocation
+
+Closes https://github.com/tpope/vim-dispatch/issues/227"
+tpope,2017-12-16 18:11:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c5b1bbe1662d76c0aa9f6d325c3fb1b8db62ba02,c5b1bbe1662d76c0aa9f6d325c3fb1b8db62ba02,"Enable terminal flags other than -e
+
+Closes https://github.com/tpope/vim-dispatch/issues/223"
+thepith,2017-10-10 08:20:08,https://api.github.com/repos/tpope/vim-dispatch/git/commits/be7b194f47bdee6baa4460ccd030b860ada548dd,be7b194f47bdee6baa4460ccd030b860ada548dd,"Filtering out multiple consecutive \r at line end
+
+Using pdflatex (Miktex) and cygwin produces messages which are appended
+by two \r. Not filtering out these leads to a removal of the whole
+line by the ""s/.*\r//"" rule."
+tpope,2017-08-03 22:25:12,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6dd4480388e4727dfe5c723484c500e03b429c28,6dd4480388e4727dfe5c723484c500e03b429c28,"Fix background start with :command delgation
+
+Closes https://github.com/tpope/vim-dispatch/issues/211"
+tpope,2017-07-12 17:02:58,https://api.github.com/repos/tpope/vim-dispatch/git/commits/14a1695f844a320dd28a7706710325773d1046a8,14a1695f844a320dd28a7706710325773d1046a8,"Fix repeated background execution
+
+Closes https://github.com/tpope/vim-dispatch/issues/205"
+tpope,2017-06-23 18:26:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ca10dc106a5a3684573a3841560b167f4b86fde1,ca10dc106a5a3684573a3841560b167f4b86fde1,"Default tmux height to quickfix height
+
+Must not have been paying close attention when merging the original
+changeset because forcing users to set both options is stupid.
+
+References https://github.com/tpope/vim-dispatch/issues/177"
+tpope,2017-06-11 00:57:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/de1c879ee675b5e20e756700177cd9e7c3e9d27a,de1c879ee675b5e20e756700177cd9e7c3e9d27a,Only claim quickfix on foreground builds
+tpope,2017-06-06 18:16:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1beee74e5ae75c46fd3f1255cce2543769102dc0,1beee74e5ae75c46fd3f1255cce2543769102dc0,"Revert ""Add Vim 8 job handler""
+
+This reverts commit e44176583274802a4a7be97a57beed408a4c65fd, which was
+accidentally pushed to the wrong branch."
+tpope,2017-04-03 03:32:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e44176583274802a4a7be97a57beed408a4c65fd,e44176583274802a4a7be97a57beed408a4c65fd,Add Vim 8 job handler
+tpope,2017-05-28 17:38:52,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d6927ff305cc13a605907de8511a738c2f8b2892,d6927ff305cc13a605907de8511a738c2f8b2892,"Completion fixes
+
+Closes https://github.com/tpope/vim-dispatch/issues/202"
+tpope,2017-05-27 18:04:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2013b5a8a2caaeae37be936c5953e33a5ee92546,2013b5a8a2caaeae37be936c5953e33a5ee92546,Fix completion on dir/<Tab>
+tpope,2017-05-19 02:31:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/897de5eaaac017491b5d00e0caebaf4dc13c84ac,897de5eaaac017491b5d00e0caebaf4dc13c84ac,"Claim quickfix immediately after :Dispatch
+
+I'd like to ditch :Copen entirely in favor of a richer interface for
+reloading the quickfix window.  This is a prerequisite."
+tpope,2017-04-23 22:08:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/64ae8a26b9d8869aab9bef5b92602c8da541c7b7,64ae8a26b9d8869aab9bef5b92602c8da541c7b7,Separate cgetfile from window logic
+tpope,2017-04-23 22:14:25,https://api.github.com/repos/tpope/vim-dispatch/git/commits/319a8b261c934d3a4642562b2103c5e0e189cecb,319a8b261c934d3a4642562b2103c5e0e189cecb,"Use DispatchComplete() when argument is an id
+
+I'm considering making dispatch#request() accept a pid, and this
+provides a clean way to differentiate."
+tpope,2017-04-18 03:46:23,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2ede8329962893ee4bcf512e0bee1b2eeab73618,2ede8329962893ee4bcf512e0bee1b2eeab73618,"Fix recursive loop getting request
+
+Closes https://github.com/tpope/vim-dispatch/issues/197"
+tpope,2017-04-15 04:41:50,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9a806080b94a2798227c6dbea5eae897195bcad0,9a806080b94a2798227c6dbea5eae897195bcad0,"Fix error on default handler
+
+Closes https://github.com/tpope/vim-dispatch/issues/196"
+tpope,2017-04-14 04:25:50,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0386ac25a4142523e355a117e4630d46b430c499,0386ac25a4142523e355a117e4630d46b430c499,Enabling parsing w:quickfix_title in request finder
+tpope,2017-04-14 04:18:58,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8ff007b25ba0a5c7b3e765aa96be769b34b37875,8ff007b25ba0a5c7b3e765aa96be769b34b37875,Fix for missing function
+tpope,2017-04-14 03:59:04,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2688733da2e95cf3c3d00335b64d28756adbb365,2688733da2e95cf3c3d00335b64d28756adbb365,Fix window focus after failed :Dispatch
+tpope,2017-04-14 02:58:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d5da31c438530eb86a018330f13172cd42e28b28,d5da31c438530eb86a018330f13172cd42e28b28,Extract quickfix window check
+tpope,2017-04-14 02:16:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/13f2aa8bad7e47e9bcf4edb06b41153b71542e68,13f2aa8bad7e47e9bcf4edb06b41153b71542e68,Persistent quickfix title
+tpope,2017-04-14 02:01:16,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b982e5305fb940a2808c57a0a47bce6750a69309,b982e5305fb940a2808c57a0a47bce6750a69309,Include handler/pid in summary and quickfix title
+tpope,2017-04-14 01:14:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/86ba4bdbbd162be4fd596f9f107450ee95588007,86ba4bdbbd162be4fd596f9f107450ee95588007,No longer delete pid file
+tpope,2017-04-14 01:14:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f01fe3449858c1b994e51e604945a3f8d0b534ed,f01fe3449858c1b994e51e604945a3f8d0b534ed,Return pid even if process finished
+tpope,2017-04-13 23:44:07,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1a47caf50344dea8e488b3166dce992ada3212bb,1a47caf50344dea8e488b3166dce992ada3212bb,"Add extra guarantees around .complete file
+
+I'd like to make the pid a first class id for the request, which means
+.complete will become more important."
+tpope,2017-04-14 01:22:48,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f56b7618bb3c8b0100c4c7e3dee5c7a4555fa329,f56b7618bb3c8b0100c4c7e3dee5c7a4555fa329,Allow checking run status without handler
+tpope,2017-04-14 00:42:26,https://api.github.com/repos/tpope/vim-dispatch/git/commits/63942194f59685e5acfb6bba2f8a7ee3f68f450f,63942194f59685e5acfb6bba2f8a7ee3f68f450f,Reuse tempname in isolate
+tpope,2017-04-14 00:13:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9b819d29b3efb5520d4a341b48cc2149084b79af,9b819d29b3efb5520d4a341b48cc2149084b79af,Fix status capture on csh
+tpope,2017-04-13 23:19:14,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5160fdb2b02ea1e528019a44c15b6c4d631ea748,5160fdb2b02ea1e528019a44c15b6c4d631ea748,"Don't show :Make in quickfix title
+
+This turned out to be confusing in the case where another command
+wrapped :Make."
+tpope,2017-04-11 01:21:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ef4f05b11e6565f98f0a4103d83efc619db8d63f,ef4f05b11e6565f98f0a4103d83efc619db8d63f,Fix window focus after quickfix open
+tpope,2017-04-05 23:22:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/40a7d5b8fa4450d75e3e2dfa69d794216796146c,40a7d5b8fa4450d75e3e2dfa69d794216796146c,"Document :Dispatch quickfix window default
+
+Closes https://github.com/tpope/vim-dispatch/issues/80"
+tpope,2017-04-03 02:36:19,https://api.github.com/repos/tpope/vim-dispatch/git/commits/dafa9414fa36293333b129e6445af2790f2bc912,dafa9414fa36293333b129e6445af2790f2bc912,Show :Dispatch command in quickfix title
+tpope,2017-04-03 02:30:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/25c010a4fd812b9d893e15684f744ee3bb93828b,25c010a4fd812b9d893e15684f744ee3bb93828b,"Only set quickfix window compiler options for :Make
+
+Setting 'errorformat' without 'makeprg' is helpful as a reference but
+terrible for actual usage."
+tpope,2017-04-02 23:28:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ce1ca57cf84d41a9e964548a9ac53ee57bddb340,ce1ca57cf84d41a9e964548a9ac53ee57bddb340,"Drastically simplify quickfix setup
+
+Not only does this get rid of the window shenanigans, it also improves
+support for :colder and :cnewer."
+tpope,2017-04-03 01:29:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/83172f8ddb18941dd9518084f1ad4b4404034cc9,83172f8ddb18941dd9518084f1ad4b4404034cc9,Use canonical function for latest dispatch
+tpope,2017-04-03 03:05:41,https://api.github.com/repos/tpope/vim-dispatch/git/commits/eea13a30a51f0fce6040ccad57de3f1e84dbe583,eea13a30a51f0fce6040ccad57de3f1e84dbe583,Remove debugging statement
+tpope,2017-04-02 22:55:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a9ca58836c06f9a8e5435b898a69f847d04ed122,a9ca58836c06f9a8e5435b898a69f847d04ed122,Make b:dispatch in quickfix window more robust
+tpope,2017-04-02 21:16:51,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f3efeae065ed25eefb830a77e0eedb232582fe36,f3efeae065ed25eefb830a77e0eedb232582fe36,Skip location lists when finding quickfix list
+tpope,2017-04-02 03:09:32,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1bfe97a6e5a2ef87e0c67116bcd4ac59969a3cbd,1bfe97a6e5a2ef87e0c67116bcd4ac59969a3cbd,Look for quickfix window at bottom first
+tpope,2017-04-02 02:42:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/605631c9ca9bfde16962da11bda98cbfcc35f76a,605631c9ca9bfde16962da11bda98cbfcc35f76a,Open quickfix window with dispatch directory
+tpope,2017-04-01 23:54:00,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9aa047fa05c908094921974cf3bf11919b4b7859,9aa047fa05c908094921974cf3bf11919b4b7859,Fix string slicing issue in tab complete
+tpope,2017-03-29 03:21:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/adecb36506cc8c84361faddd13094b15079f0037,adecb36506cc8c84361faddd13094b15079f0037,Autowrite before :Start or :Spawn
+scizo,2017-04-02 00:26:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a206bc68b44e76262aeb739de0799cfda8f3f4d8,a206bc68b44e76262aeb739de0799cfda8f3f4d8,"iTerm 3 compatability (#174)
+
+iTerm 3 introduced breaking changes to the AppleScript api, mentioned
+here https://www.iterm2.com/version3.html and here
+https://www.iterm2.com/documentation-scripting.html. This allows the
+iTerm dispatcher to work with either the version 2 or version 3 api."
+pbogut,2016-08-30 04:04:20,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a54f2c5e18b8c2aad8c6f8ba474760e70fdaaca3,a54f2c5e18b8c2aad8c6f8ba474760e70fdaaca3,Allow configure size of quickfix and tmux panel (#162)
+Kjir,2016-07-29 02:34:09,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f1d0a5e7a5743edf5d7c7cb5fac8e6ee447f7175,f1d0a5e7a5743edf5d7c7cb5fac8e6ee447f7175,"Fix documentation for the :Dispatch command (#181)
+
+In the documentation of `:Dispatch` there is an inconsistency: the
+argument name is `{program}`, but in the documentation body there is a
+reference to `{command}` which is unclear. This removes the
+inconsistency and renames `{command}` to `{program}` in the
+documentation body."
+lazyatom,2016-07-23 05:29:47,https://api.github.com/repos/tpope/vim-dispatch/git/commits/099130173d97f273695159a3a8dcaff8de2b4f76,099130173d97f273695159a3a8dcaff8de2b4f76,Strip control characters from Ack output under tmux (#175)
+tpope,2016-05-12 17:16:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5f5c22c9ed48ee64fc5f02ac3acd543b97732fe8,5f5c22c9ed48ee64fc5f02ac3acd543b97732fe8,"Disable unsupported tmux foreground builds
+
+Closes https://github.com/tpope/vim-dispatch/issues/171"
+tpope,2016-04-01 22:29:04,https://api.github.com/repos/tpope/vim-dispatch/git/commits/fc8d1e68cd58fb3ffdd56109bf855cda92b10b70,fc8d1e68cd58fb3ffdd56109bf855cda92b10b70,"dispatch.vim 1.4
+
+* Show success/failure (zero/nonzero) exit status on completion.
+* Always open quickfix on failure exit status.
+* Pause after :Start failure exit status.
+* Support :Start -wait= for exit pause control.
+* Add make support to X11 handler.
+* Set window title in tmux panes.
+* Allow tmux completion to call other autocommands.
+* Fix X11 adapter in terminal with foreground :Make.
+* Support %< in makeprg string.
+* Don't try to use clientserver support on Neovim.
+* Strip `^O` from the output.
+* Fix focus after screen foreground :Dispatch.
+* Drop interrupt special casing."
+tpope,2016-02-17 20:02:09,https://api.github.com/repos/tpope/vim-dispatch/git/commits/eb3e564fb1edfee09fe6aeb57f3388e273da72c8,eb3e564fb1edfee09fe6aeb57f3388e273da72c8,Fix title OSC showing up in tmux make output
+tpope,2016-02-17 04:32:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8c68969463383fa2cab3047b995d3f6d52c0b562,8c68969463383fa2cab3047b995d3f6d52c0b562,"Set window title in tmux panes
+
+What is up with that hostname default?  tmux is a poster child for bad
+taste."
+tpope,2016-02-11 23:47:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6a197e5069b355ce0c9f30022763ff274a920f5d,6a197e5069b355ce0c9f30022763ff274a920f5d,"Fix focus after screen foreground :Dispatch
+
+This is only relevant if v:servername is present."
+teoljungberg,2015-12-20 12:28:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e8c075f30d6e003e94c6bab6e37d4e5f7f6056cc,e8c075f30d6e003e94c6bab6e37d4e5f7f6056cc,"Strip `^O` from the output
+
+- Split out `filter` to multiple lines
+- Use octal escape
+
+References #119"
+tpope,2016-01-27 18:33:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/144c46cf97691114c16ad9c732f32b879b819936,144c46cf97691114c16ad9c732f32b879b819936,"Verify clientserver support (for nvim)
+
+Closes https://github.com/tpope/vim-dispatch/issues/163"
+jasonchoimtt,2015-12-13 04:20:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2e42270923f165e6fee8d051030448b3b22b3c7a,2e42270923f165e6fee8d051030448b3b22b3c7a,Support for legacy %< format in makeprg string
+tpope,2015-07-25 21:50:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/69fea418692f76058d5cd95f0a17ed6b0f5bbb77,69fea418692f76058d5cd95f0a17ed6b0f5bbb77,Support :Start -wait=...
+tpope,2015-07-24 00:41:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c935be9c5e89521f21b56a1726277945976c0480,c935be9c5e89521f21b56a1726277945976c0480,Eliminate possible duplicate autocmd run
+tpope,2015-07-01 19:08:25,https://api.github.com/repos/tpope/vim-dispatch/git/commits/06af3287fb5df1f955345d7b381c7142a80bccb0,06af3287fb5df1f955345d7b381c7142a80bccb0,Always open quickfix on non-zero exit
+tpope,2015-07-01 18:31:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c514fe76c74a21292f0584a4b7cd59bf068004fc,c514fe76c74a21292f0584a4b7cd59bf068004fc,"Use same length ""Failure""/""Success"" in finish message"
+tpope,2015-07-01 18:36:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/868009d060082a7812fe9bab4a585074e78b0710,868009d060082a7812fe9bab4a585074e78b0710,Fix X11 adapter in terminal with foreground :Make
+tpope,2015-06-28 18:45:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/39c7b3361041c1a8abe9416d23de070766f20a2c,39c7b3361041c1a8abe9416d23de070766f20a2c,"Drop interrupt special casing
+
+The only concrete behavior this enables is opening the quickfix after an
+interrupt, which is of dubious value, especially since it is limited to
+Bourne compatible shells."
+tpope,2015-06-20 23:13:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f6573af6fa0cc68417fbd1ad1a3a5eef0a791752,f6573af6fa0cc68417fbd1ad1a3a5eef0a791752,Allow tmux completion to call other autocommands
+tpope,2015-07-01 18:13:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ca8a200c89228965105ff8b49f6fe925e5660f81,ca8a200c89228965105ff8b49f6fe925e5660f81,Remove debugging message
+zorab47,2015-06-05 03:10:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/374a3c2ea68acd528a90a8e838af99b6ab201b0f,374a3c2ea68acd528a90a8e838af99b6ab201b0f,Add make support to X11 handler
+tpope,2015-05-28 00:18:47,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2f5d15fea4c9427ba3f7d8d82c838890b8522125,2f5d15fea4c9427ba3f7d8d82c838890b8522125,Show success/failure status on completion
+tpope,2015-05-20 23:36:50,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e7ed067185a32ab776095b71442b55c044de5361,e7ed067185a32ab776095b71442b55c044de5361,"Capture exit status
+
+This sacrifices the ability to use a custom shell pipe such as 2>&1|tee
+on Windows."
+tpope,2015-05-10 04:07:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/45abeb140f017b836c6a678169c46977c00a46d8,45abeb140f017b836c6a678169c46977c00a46d8,"Pause after :Start command failure
+
+On UNIX, an exception is made for interrupts, exit status 130.  On
+Windows, exit status for interrupt appears to vary, so pausing happens
+on any failure."
+tpope,2015-05-09 21:57:14,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4d9ec7398e87ee46fee71a62fe76d7c7cc6b53c0,4d9ec7398e87ee46fee71a62fe76d7c7cc6b53c0,"Better signal handling
+
+Best I can tell, the INT handling was causing the trap to run twice, and
+the TERM handling was just plain broken."
+tpope,2015-05-08 02:25:05,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5d9d94f6997e38a0c04313cb0d748b1fb149f4cc,5d9d94f6997e38a0c04313cb0d748b1fb149f4cc,"dispatch.vim 1.3
+
+* Support :Dispatch/:Start -dir= to run in the given directory.
+* Support :Dispatch -compiler= to force compiler plugin.
+* Expand `=vimexpr` in b:dispatch, with v:lnum set to :Dispatch's count.
+* Show exact command that will run on :{count}FocusDispatch.
+* Use g:completion_filter on completion results if available.
+* Match programs with dots in the name, e.g. ""py.test"".
+* Avoid error on old Vim without haslocaldir().
+* Fix pid functions for cygwin shells.
+* Strip out ^[[2K and ^[[0G in tmux output."
+tpope,2015-05-08 02:42:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/602c70c65a51fa55b4a14d72108cd5bcda4fa013,602c70c65a51fa55b4a14d72108cd5bcda4fa013,Add script id
+tpope,2015-05-05 23:41:52,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d94c8b2de27dad4c0a94de93b99ef81cff8d83ab,d94c8b2de27dad4c0a94de93b99ef81cff8d83ab,"Rename function
+
+The presence of dispatch#dir_opt serves as a flag -dir= and `=...` are
+available."
+tpope,2015-05-03 03:25:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3a9b13c65421b9a365be12183b4d4b96cf6c7dd3,3a9b13c65421b9a365be12183b4d4b96cf6c7dd3,Store full directory on :FocusDispatch -dir=
+tpope,2015-04-30 22:41:19,https://api.github.com/repos/tpope/vim-dispatch/git/commits/af2db848c73ffe357cd2bfae1e1ae4f35961ba6e,af2db848c73ffe357cd2bfae1e1ae4f35961ba6e,Escape !#% when expanding `=expr`
+tpope,2015-04-30 20:13:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/59c5a49df19c0f0f664e77a967268f25bb73f0db,59c5a49df19c0f0f664e77a967268f25bb73f0db,Document -options
+tpope,2015-04-29 16:20:41,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5ad57ff17e6ea5adca2262f56e015020e02c31a2,5ad57ff17e6ea5adca2262f56e015020e02c31a2,Provide tab completion for :Dispatch -options
+tpope,2015-04-29 16:19:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b74395a642b7a1321916979aebfc44124733cb4c,b74395a642b7a1321916979aebfc44124733cb4c,Whitelist supported -options
+tpope,2015-04-29 15:57:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/bff82a666f05dc7dfaed1b5afc880fcd60a784ac,bff82a666f05dc7dfaed1b5afc880fcd60a784ac,Fix issue with -dir=/
+tpope,2015-04-29 15:19:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f45702860fbe68988c6859a5d14408662a316d43,f45702860fbe68988c6859a5d14408662a316d43,Fix reload issue
+tpope,2015-04-28 18:54:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f366a3d91be70fab8717edac49fbdab1b7638342,f366a3d91be70fab8717edac49fbdab1b7638342,Hide redundant info in :{range}FocusDispatch
+tpope,2015-04-28 04:27:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7342479fed62b13d89c664ad22771bb42c6d9a09,7342479fed62b13d89c664ad22771bb42c6d9a09,Support -directory when delegating to a :Command
+tpope,2015-04-27 20:54:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/030d77a73562d1f0e147a175ce0479025696bdae,030d77a73562d1f0e147a175ce0479025696bdae,"Expand `=expr` in arguments
+
+The primary use case here is to set a dynamic default in b:dispatch,
+based on the current line number or some other criteria.  :FocusDispatch
+has changed to show the raw backtick expressions without a count and the
+expansions if a count is given.
+
+In addition to `=expr`, there is also `+=expr`, which expands only with
+a line number, and `-=expr`, which expands only without one.  In all
+three, v:lnum is set to the line number given or zero."
+tpope,2015-04-22 23:47:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/67b3f46033f3557fe8135499e3f3cbe90a2dd81a,67b3f46033f3557fe8135499e3f3cbe90a2dd81a,Allow handlers to override running check
+tpope,2015-04-22 04:27:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/dcce6d38fec2a9b378ef8a4dd15aa328a9b30779,dcce6d38fec2a9b378ef8a4dd15aa328a9b30779,Fix title for :Dispatch on tmux
+tpope,2015-04-19 03:20:04,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9f0ad9f0b7c27d3b2b635469853f82522b14c4e8,9f0ad9f0b7c27d3b2b635469853f82522b14c4e8,Support :Dispatch -compiler=... -title=...
+tpope,2015-04-19 02:53:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/98ebc5f6ecb214f18c7b8807d748802f1f784daa,98ebc5f6ecb214f18c7b8807d748802f1f784daa,Support -directory=...
+tpope,2015-04-19 02:46:23,https://api.github.com/repos/tpope/vim-dispatch/git/commits/67b65d73ec8300fb98437b3c991491ad9500f0f5,67b65d73ec8300fb98437b3c991491ad9500f0f5,Accept (and ignore) arbitrary -options
+blueyed,2015-04-11 18:28:03,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f18abc46c23c9ce8af8b2cd03a3ce1d1d43c285c,f18abc46c23c9ce8af8b2cd03a3ce1d1d43c285c,"Handle programs with dots in the name, e.g. ""py.test""
+
+Ref: https://github.com/tpope/vim-dispatch/issues/71#issuecomment-45694142"
+tpope,2015-03-15 17:55:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5a645702f85d3a090385c2079f5b7abd6a1af5b6,5a645702f85d3a090385c2079f5b7abd6a1af5b6,Use g:completion_filter if available
+tpope,2015-03-11 16:56:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/70d47ab198458cd0869283cd4252df4fee6e622d,70d47ab198458cd0869283cd4252df4fee6e622d,"Revert ""Repeat last task with :Dispatch -""
+
+This reverts commit a833860a3891908c856fece5af2c207f88fb8e05."
+tpope,2015-03-11 16:12:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a833860a3891908c856fece5af2c207f88fb8e05,a833860a3891908c856fece5af2c207f88fb8e05,Repeat last task with :Dispatch -
+tpope,2015-03-11 02:45:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/db42bd03d9d92abb43788c6b735f9264bcdbae77,db42bd03d9d92abb43788c6b735f9264bcdbae77,Add a FAQ
+cybeliak,2014-12-26 05:00:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/77455b92048bb00fef752be1218a174a05d0c2b6,77455b92048bb00fef752be1218a174a05d0c2b6,"Fix pid functions with cygwin shells
+
+The actually problem is that vim automatically set &shellquote='""' when
+&shell is some kind of posix-like shells. When &shellquote is '""',
+writing double quotes in the command passed to system() would cause the
+command to be misinterpreted, and producing the weird error as reported
+in #108.  The solution is to detect whether shellquote is set to double
+quote, and alter the sent command accordingly.
+
+Note that this issue would not affect default windows cmd shell, thus
+the command should only be altered when *sh shells are used.
+
+Fixes #108."
+tpope,2014-12-21 05:30:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c4390c5724f9d262aeba62ab69c5bc5246626c6f,c4390c5724f9d262aeba62ab69c5bc5246626c6f,"Silence any perl warnings
+
+Closes #107."
+tpope,2014-11-09 19:11:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/78ed0c065ee65c8368f1f10566b96cd890c14358,78ed0c065ee65c8368f1f10566b96cd890c14358,Expose options to quickfix autocommands
+tpope,2014-09-04 19:52:37,https://api.github.com/repos/tpope/vim-dispatch/git/commits/71499a6438a65d9aa6224a2388165321831ae2d8,71499a6438a65d9aa6224a2388165321831ae2d8,"Work around zshenv dependent on $SHELL
+
+References #94."
+tpope,2014-08-18 00:21:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/24be95143651d02b3af3cf5478f7d7526a9911aa,24be95143651d02b3af3cf5478f7d7526a9911aa,Add check for haslocaldir()
+mbrgm,2014-08-12 09:29:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b71bec4a71d3253531317b303a16ef18aa8f88f2,b71bec4a71d3253531317b303a16ef18aa8f88f2,"Strip out ^[[2K and ^[[0G in tmux output
+
+^[[2K^[[0G means ""clear line and move to the first column"". They clutter up the
+output and should be stripped from it.
+
+Closes #86."
+tpope,2014-07-14 22:55:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/990d542c2d1da39d879a19dc07587240f8ea322e,990d542c2d1da39d879a19dc07587240f8ea322e,"dispatch.vim 1.2
+
+* Make :Start idempotent, finding existing process if running.
+* Provide :Spawn with :Start's old, non-idempotent behavior.
+* Show PID of created process.
+* Enable compiler plugins to provide custom completion.
+* Allow :0Dispatch to bypass focus.
+* Strip out ^[[K and progress bars in tmux output.
+* Don't tmux pipe-pane if error format targets \r or \e.
+* Use wmctrl if available to enable X11 :Start!.
+* Use :cwindow semantics when opening/closing quickfix window.
+* Remove catch-all ignores from error formats.
+* Show shell command not Vim command in ""Finished"" message.
+* Add QuickFixCmdPre cgetfile event.
+* Add QuickFix dispatch-make events.
+* Don't fire modelines for QuickFix events.
+* Fix shell escaping of exported bash functions.
+* Fix output of :Focus when focused on Vim command."
+tpope,2014-07-14 17:15:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/40854cc920db3075d8c9b208f95591d49fa81894,40854cc920db3075d8c9b208f95591d49fa81894,"Add potential future alternatives to <lnum>
+
+<line1> and <line2> are used by Vim in command definitions, and would
+probably be a better alternative to inventing our own <lnum>."
+tpope,2014-07-14 17:09:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2a6aad663f0ef98044edd6dcfd26e5858a1c4cfd,2a6aad663f0ef98044edd6dcfd26e5858a1c4cfd,Eliminate use of feedkeys()
+tpope,2014-07-14 16:49:48,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e292d2c55b2bbd7270fa90fc6e32904ce80f7648,e292d2c55b2bbd7270fa90fc6e32904ce80f7648,Simplify nested try block
+tpope,2014-07-13 16:11:18,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4d40dec4bfdbc0e3e70b747b8c710748f4a3ec37,4d40dec4bfdbc0e3e70b747b8c710748f4a3ec37,"Don't fire modelines quickfix autocommands
+
+Modelines can trigger the FileType event, which can in turn clobber our
+'errorformat'."
+tpope,2014-06-29 16:51:28,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9255742d23d15f53f88ac7dea43b1f4ee4f63c50,9255742d23d15f53f88ac7dea43b1f4ee4f63c50,"Allow :0Dispatch to bypass focus
+
+Really both focusing and default tasks belong in separate plugins, but
+until that happens, provide a way to override the focus with the buffer
+default.
+
+One can also use 2:Dispatch, which is convenient with a map."
+tpope,2014-06-29 00:51:07,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4caf963116a7a20be0c682f7082f37838d3a503f,4caf963116a7a20be0c682f7082f37838d3a503f,Provide :Spawn
+tpope,2014-06-25 01:23:39,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c7368992c2604a665349fc63e2588653e518d452,c7368992c2604a665349fc63e2588653e518d452,Always call custom compiler with Make prefix
+tpope,2014-06-21 22:23:38,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d32ad3440c5299107570108631ac535027369055,d32ad3440c5299107570108631ac535027369055,"Fix null for newline in env vars
+
+Closes #29."
+tpope,2014-06-21 19:47:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b77a97d2ce755e0f97f9aa4965c08db43db73c5f,b77a97d2ce755e0f97f9aa4965c08db43db73c5f,"Fix shell escaping of exported bash functions
+
+Closes #29."
+tpope,2014-06-21 11:03:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/285d903dc249127f87df7c65dd985c8ebbcbc914,285d903dc249127f87df7c65dd985c8ebbcbc914,Fix tab complete
+tpope,2014-06-20 15:11:52,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b0ce64720d11f11239e48efe01a101b93f5bfa70,b0ce64720d11f11239e48efe01a101b93f5bfa70,"Simpler quickfix behavior
+
+Previous behavior was based on my incorrect assumption that :cwindow
+would open for only invalid entries."
+tpope,2014-06-20 15:09:13,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e20479969940b4b4a1f9735e52dc6072822a7e71,e20479969940b4b4a1f9735e52dc6072822a7e71,"Don't tmux pipe-pane if efm targets \r or \e
+
+If the user cares about these special characters, make sure the captured
+output is identical to the other adapters."
+tpope,2014-06-18 04:26:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3890dff8af3c114f6fa1698e752e8ed64aa37bd6,3890dff8af3c114f6fa1698e752e8ed64aa37bd6,"Remove catch-all ignore from error format
+
+Since :Make, unlike :make, never shows you the original output, it makes
+sense to be less aggressive in filtering out unrecognized lines.
+Previously this would have had the downside of opening the quickfix
+window for uneventful runs, but recent commits rectify this."
+tpope,2014-06-18 03:03:20,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b9aca1a1e3310d89725d877c6b17d81e04a09010,b9aca1a1e3310d89725d877c6b17d81e04a09010,Update docs to reflect smarter quickfix window
+tpope,2014-06-17 06:14:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9bffef962b43bfa6674846727af969d1268132c4,9bffef962b43bfa6674846727af969d1268132c4,"Close quickfix window if no ""valid"" entries
+
+Invalid entries are those which are not matched by any pattern in
+'errorformat'."
+tpope,2014-06-17 06:09:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/59b4921a491b98704bde97a708f9d0a772e28164,59b4921a491b98704bde97a708f9d0a772e28164,Set type in default format to informational
+tpope,2014-06-13 09:16:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2d202d5de2dda74fd6d8d340201d0460dfea6f14,2d202d5de2dda74fd6d8d340201d0460dfea6f14,Allow lists through unmodified on compiler completion
+tpope,2014-06-13 07:55:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2e1920ccd970223b78ad03e903b542d23c979bd6,2e1920ccd970223b78ad03e903b542d23c979bd6,"Enable per-compiler completion
+
+To use, put a valid -complete=... declaration in the compiler plugin, or
+define a CompilerComplete_<compilername> function."
+tpope,2014-06-11 01:29:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/81e55508c428b25d054d6b854a7737c8a29e3c5a,81e55508c428b25d054d6b854a7737c8a29e3c5a,Skip missing compiler plugins
+tpope,2014-06-10 23:31:03,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7083b480142640a80e4d7947c6b56c543f60b177,7083b480142640a80e4d7947c6b56c543f60b177,"Strip out ^[[K and progress bars in tmux output
+
+^[[K is an escape code that means ""clear to end of line"", and should be
+a no-op in absence of other cursor movement.
+
+Closes #69."
+tpope,2014-06-10 22:07:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f1ab1cb53cafd483d5487dc965fe84eb038468a1,f1ab1cb53cafd483d5487dc965fe84eb038468a1,"Fix deletion of PID file
+
+Closes #70."
+tpope,2014-05-07 18:31:51,https://api.github.com/repos/tpope/vim-dispatch/git/commits/49307b76fc076f8a44bbda020bcc48e951e1ffc1,49307b76fc076f8a44bbda020bcc48e951e1ffc1,"Guard against corrupted g:DISPATCH_STARTS
+
+References #64."
+tpope,2014-05-05 05:50:33,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7b02b1d2b76608ab8b8290f2f2788171023cad18,7b02b1d2b76608ab8b8290f2f2788171023cad18,Ignore failure to write
+tpope,2014-05-04 22:41:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a4f8de914873af4953a565ca891368df38d628a0,a4f8de914873af4953a565ca891368df38d628a0,Change autocmd to match *make
+tpope,2014-04-24 23:51:11,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5d791269cd552cd43e886720f467678abdeb41a6,5d791269cd552cd43e886720f467678abdeb41a6,Remove projectile.vim special casing
+tpope,2014-04-10 16:54:44,https://api.github.com/repos/tpope/vim-dispatch/git/commits/3071ff66ce95b42b3e19458866583d269f780c8f,3071ff66ce95b42b3e19458866583d269f780c8f,"Expand <lnum> in :.Dispatch
+
+This expands to an empty string if no count is given, so with some
+clever use of filename-modifiers, you can generally make a default that
+works both ways.  Example:
+
+    let b:dispatch = 'rspec %<lnum>:s?^?:?'
+
+References #19."
+tpope,2014-04-09 06:22:57,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f2d5fa93d27d84eafc30ba12caf0ad3ec01b51b8,f2d5fa93d27d84eafc30ba12caf0ad3ec01b51b8,"Dispatch autocommands
+
+My goal is to enable wrapping a dispatch in an automatic current
+directory change, although whether that's a good idea is up for debate."
+tpope,2014-04-08 23:30:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/17a4b26d3f5a6646298d6aa0c94ce745bc1d74af,17a4b26d3f5a6646298d6aa0c94ce745bc1d74af,Compensate for slow Windows PID write
+tpope,2014-04-08 23:13:20,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a6e8b674551c182986f3a86565ec4eb296d561c5,a6e8b674551c182986f3a86565ec4eb296d561c5,"Make :Start idempotent
+
+This is a major change, and might need to be rolled into a separate
+command instead if it's too invasive."
+tpope,2014-04-08 06:33:51,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1548a2f6bf49ed4009b28ac636ad46227e2d4d2f,1548a2f6bf49ed4009b28ac636ad46227e2d4d2f,"Show literal command in finished message
+
+I just noticed that plugins that wrap :Make get a rather boring finished
+message otherwise."
+tpope,2014-04-08 06:30:54,https://api.github.com/repos/tpope/vim-dispatch/git/commits/55c5af4a3e88708ffd1213741a0a4090f1b6f24a,55c5af4a3e88708ffd1213741a0a4090f1b6f24a,Don't expand focused Vim commands
+tpope,2014-04-07 17:37:16,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e6ada2ea44593cb5040060df28bb99026e4cdfdf,e6ada2ea44593cb5040060df28bb99026e4cdfdf,Proper feedkeys() mode
+tpope,2014-04-07 09:30:43,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5f915dd5387aca1e12acc448372612e18f1ede5b,5f915dd5387aca1e12acc448372612e18f1ede5b,"Mention tmux version constraint
+
+Closes #39."
+tpope,2014-04-07 04:00:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b1885da022c2c27dfc1dc653208654cd68737f95,b1885da022c2c27dfc1dc653208654cd68737f95,Show PID
+tpope,2014-04-07 04:00:32,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c592bbd47301595cba617fe60692fe4f665d28d4,c592bbd47301595cba617fe60692fe4f665d28d4,"Tweak pid checking logic to accommodate blank file
+
+Word on the street is that Windows XP home doesn't have WMIC, and if
+that's the case, the likely outcome is that pid file comes up empty.
+Let's not block in that case."
+tpope,2014-04-07 03:52:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5324c702e3220322becc382aab61d9fd9408ab92,5324c702e3220322becc382aab61d9fd9408ab92,"Use feedkeys() to bypass synchronous press enter prompt
+
+This is pretty hacky so there's a reasonable chance it will need to be
+rolled back."
+tpope,2014-04-06 23:35:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e4f82b1a224a68c567681b6052608e08aa42d660,e4f82b1a224a68c567681b6052608e08aa42d660,Fix activators to require living pid
+tpope,2014-04-06 06:35:41,https://api.github.com/repos/tpope/vim-dispatch/git/commits/635a2b6e16b618670b2f418791507f09855b65c0,635a2b6e16b618670b2f418791507f09855b65c0,Fix output of :Focus when focused on command
+tpope,2014-04-06 06:35:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/27cfcb7e08f4fdd18b7ab2174b27b58b55005205,27cfcb7e08f4fdd18b7ab2174b27b58b55005205,Delay to enable capturing PID of short lived :Start
+tpope,2014-04-06 06:17:07,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8a93283490a2326194788ab1016363e08c5af91c,8a93283490a2326194788ab1016363e08c5af91c,Fix loading of errors on synchronous build
+tpope,2014-04-06 05:13:10,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4de736595e8b85d790622c66d1ab94ff2eaaf241,4de736595e8b85d790622c66d1ab94ff2eaaf241,"Don't open quickfix after synchronous dispatch
+
+If another plugin has wrapped :Make in a construct that changes and
+restores the current directory, opening the quickfix after a synchronous
+make means restoring the directory for the wrong window.  Running
+synchronously is already a vastly different experience than the other
+adapters, so I think an additional small inconsistency is acceptable
+price to pay for rectifying this behavior."
+tpope,2014-04-05 06:11:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/a3dca46d8454ef92c9fde0e17a53108559b2ad2c,a3dca46d8454ef92c9fde0e17a53108559b2ad2c,"Function to retrieve PID
+
+This is surprisingly difficult to do while avoiding race conditions."
+tpope,2014-04-05 06:03:23,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6f71f3215b548df03bc87fd896b00ce574f52c4e,6f71f3215b548df03bc87fd896b00ce574f52c4e,"Activation API
+
+UI TBD."
+tpope,2014-04-05 07:25:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/8461c10e4db17fba8beceb44e2633c51c9f303a8,8461c10e4db17fba8beceb44e2633c51c9f303a8,Track starts by temp file
+tpope,2014-04-05 05:01:31,https://api.github.com/repos/tpope/vim-dispatch/git/commits/35d66e30b80df88fd8fc0eb1f7282389c15f314d,35d66e30b80df88fd8fc0eb1f7282389c15f314d,"Stop storing tmux_pane
+
+It can be retrieved with ps ewww -p, if necessary."
+tpope,2014-04-05 04:59:27,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1e7ae294eb34ca0471cc00e5c524dfb12e879370,1e7ae294eb34ca0471cc00e5c524dfb12e879370,Use wmctrl if available to enable X11 :Start!
+tpope,2014-04-04 23:25:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e184cc2726bf3578088eef4addf8bfd0e9b2bf97,e184cc2726bf3578088eef4addf8bfd0e9b2bf97,Capture :Start PID
+tpope,2014-04-04 22:58:35,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0e8e295788d4805d10905d5617bbb8bbcdf55f5d,0e8e295788d4805d10905d5617bbb8bbcdf55f5d,Preserve tmux and screen identifiers
+tpope,2014-04-04 21:18:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6279904af6d47d41f015a8b54a8f7aba2d872ac3,6279904af6d47d41f015a8b54a8f7aba2d872ac3,"Provide a temp file to :Start invocations
+
+Intent is to use this to capture PIDs."
+tpope,2014-04-04 06:17:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0419f08ee6839908d3be11289aa2e7c5c5bbb0ee,0419f08ee6839908d3be11289aa2e7c5c5bbb0ee,Whitespace
+tpope,2014-04-04 01:25:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5944d3ae33d40c58730b734ee7094afd885772f3,5944d3ae33d40c58730b734ee7094afd885772f3,Add QuickFixCmdPre cgetfile for symmetry
+tpope,2014-04-01 16:54:29,https://api.github.com/repos/tpope/vim-dispatch/git/commits/432aba50ede4ae97c34030919eaf1f278e780b5a,432aba50ede4ae97c34030919eaf1f278e780b5a,"dispatch.vim 1.1
+
+* Force quickfix window to very bottom.
+* Fire a QuickFixCmdPost event after loading results.
+* Set xterm title with screen and tmux.
+* Tweak screen adapter for wider version and distribution support.
+* Default :Start to b:start.
+* Ensure identical environment vars (fixing in particular RVM support).
+* Allow greater compiler detection control with g:dispatch_compilers.
+* Enhance and fix bugs in compiler detection.
+* Don't launch iTerm if not already running.
+* Numerous small bug fixes."
+tpope,2014-04-01 07:46:03,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5d4af4a4ba4c35f254e9194bc351bed1c4245304,5d4af4a4ba4c35f254e9194bc351bed1c4245304,Header tweaks
+tpope,2014-03-31 06:05:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e3b75b232bafc52c4ff572353bf8f0fd35d2b5d7,e3b75b232bafc52c4ff572353bf8f0fd35d2b5d7,Add missing aborts
+tpope,2014-03-31 04:01:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/68ee1bc5568e3890daed99dfddefa211cd510cf6,68ee1bc5568e3890daed99dfddefa211cd510cf6,Typo
+tpope,2014-03-31 03:11:01,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6dfe6133755fc5a4ee4d9ca52ecac523f4985dd6,6dfe6133755fc5a4ee4d9ca52ecac523f4985dd6,"Allow greater errorformat control with g:dispatch_compilers
+
+References #10, #42, #43."
+tpope,2014-03-31 01:36:34,https://api.github.com/repos/tpope/vim-dispatch/git/commits/86ce2ece2348506e82c8fc1cb6400265f90b628d,86ce2ece2348506e82c8fc1cb6400265f90b628d,"Stopgap solution for projectile.vim
+
+I want to be able to change the working directory for the default
+:Start, but it's not clear how that should work, so I'm cheating and
+adding a special case for projectile.vim.  Sue me."
+tpope,2014-03-30 07:33:21,https://api.github.com/repos/tpope/vim-dispatch/git/commits/da35f9ffc7288f00741a64bf64996a4daff4135e,da35f9ffc7288f00741a64bf64996a4daff4135e,Separate :Start from dispatch#start
+tpope,2014-03-30 19:49:01,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4dc751e8a87e4981007cb381d5524e6c2ea97663,4dc751e8a87e4981007cb381d5524e6c2ea97663,Fix default dispatch of Vim command
+tpope,2014-03-30 07:46:14,https://api.github.com/repos/tpope/vim-dispatch/git/commits/eb3cb761efb6608e00be6ef05af5250302cb80f1,eb3cb761efb6608e00be6ef05af5250302cb80f1,Delete pid file afterwards on Windows
+tpope,2014-03-30 06:28:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d20062c08a277778e26f967e7fe9b0e057e9e10e,d20062c08a277778e26f967e7fe9b0e057e9e10e,"Record handler of request
+
+Recording it in the request object means it's no longer a request
+object.  Oops."
+tpope,2014-03-30 05:02:36,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2944afda392d72e8d8e8c5c4b4de09b190e212d1,2944afda392d72e8d8e8c5c4b4de09b190e212d1,"Expose request object
+
+Note this API is unofficial and the contents of the request object are
+subject to change."
+tpope,2014-03-30 04:31:06,https://api.github.com/repos/tpope/vim-dispatch/git/commits/26b78497ce23a53ed20871688777d14bd93a2398,26b78497ce23a53ed20871688777d14bd93a2398,"Only tmux pipe-pane if appropriate for 'shellpipe'
+
+Closes #59."
+tpope,2014-03-30 01:58:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0b2fe3dd522d96722a550b444a4850de56b3d942,0b2fe3dd522d96722a550b444a4850de56b3d942,Accept a bar with :Copen
+tpope,2014-03-29 03:09:19,https://api.github.com/repos/tpope/vim-dispatch/git/commits/26e7b2a9d7e2dc6064c21336f0e08e92d86be659,26e7b2a9d7e2dc6064c21336f0e08e92d86be659,"Allow :Start :vimcommand
+
+Once again, probably a bad idea."
+tpope,2014-03-28 17:12:41,https://api.github.com/repos/tpope/vim-dispatch/git/commits/2c9acf5a01f43f4ae63571d0212bf04bf1fd8f97,2c9acf5a01f43f4ae63571d0212bf04bf1fd8f97,Fix escaping issue
+tpope,2014-03-28 16:47:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/35211f6092412cb9bac206d9da6ed2d5c1438934,35211f6092412cb9bac206d9da6ed2d5c1438934,"Capture Windows PID
+
+References #28."
+tpope,2014-03-28 05:26:05,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b75b963918fe9f48078351d473e20d456183b964,b75b963918fe9f48078351d473e20d456183b964,"Allow delegating to a Vim command in default dispatch
+
+Not convinced this is anything but trouble, but the idea is that
+sometimes you'd rather let another plugin handle the :Dispatch details
+(e.g., rails.vim's :Rake) or just do something else entirely (e.g.,
+scriptease.vim's :Runtime).  This works with :FocusDispatch too, but
+note that :FocusDispatch :Rake runs :Rake literally, which is probably
+not what you want if you switch buffers."
+tpope,2014-03-24 19:47:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/946e5b7f8f0d076ed3c8dda1c9675219d134b49f,946e5b7f8f0d076ed3c8dda1c9675219d134b49f,"Accept non-string tmux session
+
+Closes #66."
+tpope,2014-03-23 22:31:59,https://api.github.com/repos/tpope/vim-dispatch/git/commits/974a34becf34746c42384fc941fcbb55253410fc,974a34becf34746c42384fc941fcbb55253410fc,"Don't launch iTerm if not already running
+
+Closes #46."
+tpope,2014-03-23 20:13:22,https://api.github.com/repos/tpope/vim-dispatch/git/commits/f8ff6fb0192bee67fada67433031cb839834a643,f8ff6fb0192bee67fada67433031cb839834a643,"Prefer compilers where full 'makeprg' matches
+
+Closes #10."
+kianryan,2014-03-15 14:23:49,https://api.github.com/repos/tpope/vim-dispatch/git/commits/acfd302ffab5b67dc7a3498c107c844f70d9ee5c,acfd302ffab5b67dc7a3498c107c844f70d9ee5c,"Wrap returned command with shellxquote on Windows
+
+Closes #62
+
+On Win32 gVim, shellquote is null, where shellxquote is populated with
+""("".  Wrap returned command with shellxquote, instead of shellquote."
+tpope,2013-12-10 13:03:25,https://api.github.com/repos/tpope/vim-dispatch/git/commits/bc415acd37187cbd6b417d92af40ba2c4b3b8775,bc415acd37187cbd6b417d92af40ba2c4b3b8775,Remove incorrect special case on screen 4
+tpope,2013-09-09 22:20:05,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6a88e79a7157dc74d1892c6fc0ac91cd35cb738f,6a88e79a7157dc74d1892c6fc0ac91cd35cb738f,"Fix file name flags
+
+Closes #52."
+tpope,2013-09-09 21:14:09,https://api.github.com/repos/tpope/vim-dispatch/git/commits/30f19b302d370e7073a8b444ab7a29ca634af2a3,30f19b302d370e7073a8b444ab7a29ca634af2a3,"Fix expansion of :s substitution
+
+Closes #52."
+LeszekSwirski,2013-08-03 13:53:14,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9cdd05a87f8a47120335be03dfcd8358544221cd,9cdd05a87f8a47120335be03dfcd8358544221cd,"Add multiple search paths for vim executable
+
+Adds support for version independent windows installations, could be
+useful on other systems too."
+tpope,2013-08-02 05:35:14,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d3ce7b3980b4f0eacee739b0da564418c7baf9d7,d3ce7b3980b4f0eacee739b0da564418c7baf9d7,Support 'autowriteall'
+tpope,2013-08-01 03:46:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/da5817898d6aa0f39094891e3f21f6459b53b730,da5817898d6aa0f39094891e3f21f6459b53b730,Fix error on Vim versions older than 7.3
+kippr,2013-06-04 10:06:01,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ffbd5eb50c9daf67657b87fd767d1801ac9a15a7,ffbd5eb50c9daf67657b87fd767d1801ac9a15a7,"Use system sed in osx to avoid local incompatible gnu sed installs
+
+If people have installed gnu sed into /usr/local/bin, we don't
+want to use it as it does not support the -l option."
+tpope,2013-06-15 19:02:24,https://api.github.com/repos/tpope/vim-dispatch/git/commits/9a9828edf895223d745f7c6ea278c9b5136a0d54,9a9828edf895223d745f7c6ea278c9b5136a0d54,"Fix cd with spaces
+
+Closes #38."
+tpope,2013-05-14 00:18:35,https://api.github.com/repos/tpope/vim-dispatch/git/commits/4abbd1392616f943700570aac3aba8a4af94e62b,4abbd1392616f943700570aac3aba8a4af94e62b,"Fix capture of xterm title in tmux
+
+This technique for setting the title in xterm sometimes gets captured as
+output, so abandon it for now."
+tpope,2013-04-19 15:46:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b171bbc64a18dd565ff4d354d340ee5f0bbd4ac1,b171bbc64a18dd565ff4d354d340ee5f0bbd4ac1,"Detect make programs containing hyphens
+
+Closes #30."
+tpope,2013-04-12 15:50:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7af3fd562ab385369b667996fc9d6fc67af896f2,7af3fd562ab385369b667996fc9d6fc67af896f2,"Default :Start to b:start
+
+I would like to provide an interface for setting the title as well, but
+I'm not sure what that should look like."
+tpope,2013-04-12 05:27:53,https://api.github.com/repos/tpope/vim-dispatch/git/commits/78770d51dc957c8eaa820173b2535d1e72432dda,78770d51dc957c8eaa820173b2535d1e72432dda,"Ignore non-strings in b:dispatch
+
+In the future, function references may also be supported."
+tpope,2013-04-09 16:30:17,https://api.github.com/repos/tpope/vim-dispatch/git/commits/0d8c95d646e431c2f632de79705e1ea50eeadc3d,0d8c95d646e431c2f632de79705e1ea50eeadc3d,"Support stable release of screen
+
+Closes #25."
+tpope,2013-04-08 15:43:30,https://api.github.com/repos/tpope/vim-dispatch/git/commits/c0cae499ab0d727d43940b3200e8daa3b25bf220,c0cae499ab0d727d43940b3200e8daa3b25bf220,Fix executable tab complete on Windows
+tpope,2013-04-07 19:21:46,https://api.github.com/repos/tpope/vim-dispatch/git/commits/18f013aee8fdbb254754874fc16fabb054a9177f,18f013aee8fdbb254754874fc16fabb054a9177f,Fix formatting
+tpope,2013-04-07 04:25:54,https://api.github.com/repos/tpope/vim-dispatch/git/commits/1c2abfc2062497da8472b28e383a05fd7b34d0cb,1c2abfc2062497da8472b28e383a05fd7b34d0cb,Set xterm title with screen and tmux
+tpope,2013-04-05 17:16:45,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6ef287ecef90da80c0397cf6026c0a581a642924,6ef287ecef90da80c0397cf6026c0a581a642924,"Use correct shell and environment
+
+This fixes issues ranging from RVM to fish.
+
+Closes #3.  Closes #9."
+tpope,2013-04-05 02:14:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/6cc8fc15b6b5f4d56de3b4cdbe468029213bd534,6cc8fc15b6b5f4d56de3b4cdbe468029213bd534,"Fix post-completion redraw issue on Windows
+
+Closes #17."
+tpope,2013-04-05 02:12:51,https://api.github.com/repos/tpope/vim-dispatch/git/commits/e320801c20d123df4e866c9b843d485733f3bb7e,e320801c20d123df4e866c9b843d485733f3bb7e,Remove obsolete code
+tpope,2013-04-03 23:33:23,https://api.github.com/repos/tpope/vim-dispatch/git/commits/b26ff36a7790040c7e77d1ba9dea0319826a9102,b26ff36a7790040c7e77d1ba9dea0319826a9102,"Fix potential need for redraw with tmux
+
+Closes #5."
+tpope,2013-04-04 20:52:02,https://api.github.com/repos/tpope/vim-dispatch/git/commits/5c0b55ece80b5c58dbf83f0f5fa1a59724063112,5c0b55ece80b5c58dbf83f0f5fa1a59724063112,"Fix missing sleep for fast running tasks
+
+Closes #12."
+tpope,2013-04-04 00:55:15,https://api.github.com/repos/tpope/vim-dispatch/git/commits/7bd12f84add94455931bce759f8d93354a19eea4,7bd12f84add94455931bce759f8d93354a19eea4,"Fire a QuickFixCmdPost event after loading results
+
+Closes #2."
+tpope,2013-04-02 17:12:42,https://api.github.com/repos/tpope/vim-dispatch/git/commits/173e69c4bbe02f5c6a2fcc3031d2de21c27aa350,173e69c4bbe02f5c6a2fcc3031d2de21c27aa350,"Force quickfix window to very bottom
+
+Closes #4."
+reinh,2013-04-02 16:26:37,https://api.github.com/repos/tpope/vim-dispatch/git/commits/d0946d300d828c7340fd11762c9c53b328c09ce2,d0946d300d828c7340fd11762c9c53b328c09ce2,Fix link to rails.vim in README
+tpope,2013-04-01 23:52:40,https://api.github.com/repos/tpope/vim-dispatch/git/commits/ef6ac42cfccac7e546ae03ee4acb07d3ab10c1e0,ef6ac42cfccac7e546ae03ee4acb07d3ab10c1e0,dispatch.vim 1.0

@@ -1,0 +1,273 @@
+logster,"Parse log files, generate metrics for Graphite and Ganglia"
+username,timestamp,url,sha,message
+benburry,2017-07-24 15:46:58,https://api.github.com/repos/etsy/logster/git/commits/a24249886391a8b885d21c882f6fcaa95e29b015,a24249886391a8b885d21c882f6fcaa95e29b015,"Merge pull request #104 from elukey/master
+
+Reduce DNS lookups for the statsd domain"
+elukey,2017-07-24 13:20:17,https://api.github.com/repos/etsy/logster/git/commits/19dddafb75e10e10431f9caad068b64bcced4160,19dddafb75e10e10431f9caad068b64bcced4160,"Reduce DNS lookups for the statsd domain
+
+The sendto socket call is very flexible but it currently
+issue a DNS lookup for the statsd domain for every
+metric in the for loop to push. This change ensures that
+only one lookup is performed for each batch of metrics
+to send. It is particularly useful when logster runs
+every minute and the number of metrics to push is very high."
+benburry,2016-03-01 16:09:40,https://api.github.com/repos/etsy/logster/git/commits/5083e6b1e643e447cbbdacdd6e24455e44ef7195,5083e6b1e643e447cbbdacdd6e24455e44ef7195,"Merge pull request #97 from sideshowdave7/master
+
+add error when MetricObject name contains a space for Graphite output…"
+sideshowdave7,2016-02-29 18:04:24,https://api.github.com/repos/etsy/logster/git/commits/f2cb4c74caeb1321d69188d5e9e19827d6805f09,f2cb4c74caeb1321d69188d5e9e19827d6805f09,return after graphite output error
+sideshowdave7,2016-02-25 01:28:48,https://api.github.com/repos/etsy/logster/git/commits/0e4c490463461a723ae17c0f6cf71bdd47f6d05b,0e4c490463461a723ae17c0f6cf71bdd47f6d05b,"add error when MetricObject name contains a space for Graphite outputs, it causes a silent failure"
+benburry,2016-02-03 16:51:47,https://api.github.com/repos/etsy/logster/git/commits/ceeef545d223f46f9e5dd239953cd5ec4ecff07c,ceeef545d223f46f9e5dd239953cd5ec4ecff07c,"Merge pull request #96 from liangricha/rl-travis-img
+
+update readme to use svg travis build icon"
+benburry,2015-11-12 16:42:05,https://api.github.com/repos/etsy/logster/git/commits/1b5560db7db5c6c7d3745e49fb369eadd705d8f0,1b5560db7db5c6c7d3745e49fb369eadd705d8f0,"Merge pull request #92 from sferencik/master
+
+add support for --locker portalocker"
+benburry,2015-08-16 13:53:56,https://api.github.com/repos/etsy/logster/git/commits/40b6f413635f57c5a9d3ab75d50f6ef1b003603b,40b6f413635f57c5a9d3ab75d50f6ef1b003603b,"Merge pull request #90 from daharon/master
+
+#89 Fix typo: SyntaxError: invalid syntax"
+daharon,2015-08-16 13:02:50,https://api.github.com/repos/etsy/logster/git/commits/ac12f84cbdcb74a796419ab298b188117edccee0,ac12f84cbdcb74a796419ab298b188117edccee0,#89 Fix typo: SyntaxError: invalid syntax
+benburry,2015-08-14 16:41:25,https://api.github.com/repos/etsy/logster/git/commits/426fbcfc7c287402ab7fb81ae97ede5c0066f73f,426fbcfc7c287402ab7fb81ae97ede5c0066f73f,"Merge pull request #88 from mmercedes/master
+
+More elaborate error messages for locking issues"
+mmercedes,2015-08-10 18:55:47,https://api.github.com/repos/etsy/logster/git/commits/f2d8aa87a0a53ef31e72c367844cbd80b8f837f7,f2d8aa87a0a53ef31e72c367844cbd80b8f837f7,More elaborate error messages for locking issues
+benburry,2015-01-10 16:11:44,https://api.github.com/repos/etsy/logster/git/commits/8ff2a1ea673cc669cdf276652560f6c20aeb79b2,8ff2a1ea673cc669cdf276652560f6c20aeb79b2,"Merge pull request #80 from gilgamezh/master
+
+In python3, have to convert strings in bytes when usings sockets. Related to #78"
+benburry,2015-01-10 16:04:48,https://api.github.com/repos/etsy/logster/git/commits/80de03f090910bc40a4db935aee89bc1ffbbdcc3,80de03f090910bc40a4db935aee89bc1ffbbdcc3,"Merge pull request #81 from grahamlyons/json_parser
+
+JSON parser"
+ottomata,2013-11-26 18:59:24,https://api.github.com/repos/etsy/logster/git/commits/7ea253d11d57dec5601967e8126e71f0c62d472b,7ea253d11d57dec5601967e8126e71f0c62d472b,"Adding JsonLogster parser.
+
+This can be used to parse log files in which there is one json object per line.
+Each json object will be flattened into metrics keyed by the concatenated
+keys in the original json object."
+gilgamezh,2014-12-01 21:28:45,https://api.github.com/repos/etsy/logster/git/commits/2126117766802449391a509cd5e62172afde8674,2126117766802449391a509cd5e62172afde8674,"In python3, have to convert strings in bytes when usings sockets. Related to #78"
+benburry,2014-11-01 20:19:08,https://api.github.com/repos/etsy/logster/git/commits/b54b97d8cba05fa18d9cf4313f56a30f5f313002,b54b97d8cba05fa18d9cf4313f56a30f5f313002,"Merge pull request #70 from dataloop/master
+
+Specify graphite output protocol (tcp or udp)"
+benburry,2014-10-05 15:26:57,https://api.github.com/repos/etsy/logster/git/commits/f73b1a38f475a455e74f9bf2cd9fb3b3a3a9e031,f73b1a38f475a455e74f9bf2cd9fb3b3a3a9e031,"Merge pull request #64 from avdv/issue-63
+
+Check whether return value of popen.close() is not None"
+benburry,2014-10-05 14:56:19,https://api.github.com/repos/etsy/logster/git/commits/7fe1b0e52844ae22536d2df2ee310ace0e0bf3ce,7fe1b0e52844ae22536d2df2ee310ace0e0bf3ce,"Merge pull request #76 from jblaine/solaris_locking
+
+Don't OR fcntl.LOCK_NB on Solaris when unlocking"
+jblaine,2014-09-29 13:35:32,https://api.github.com/repos/etsy/logster/git/commits/3855c3045e6edb4eacbedfba8825b11fe484558d,3855c3045e6edb4eacbedfba8825b11fe484558d,"Don't OR fcntl.LOCK_NB on Solaris when unlocking
+
+Fixes #17"
+benburry,2014-09-20 21:57:42,https://api.github.com/repos/etsy/logster/git/commits/68f9f75ff8753bfcf44fdcc574596cd9a4d6e29d,68f9f75ff8753bfcf44fdcc574596cd9a4d6e29d,"Merge pull request #68 from 5nafu/master
+
+Fix percentage calculation."
+kamaradclimber,2014-08-18 07:28:09,https://api.github.com/repos/etsy/logster/git/commits/a4b9f46c5b4167bde66dd47056cd0ed52ed8f1c2,a4b9f46c5b4167bde66dd47056cd0ed52ed8f1c2,"Allow to specify file based logging configuration
+
+This file based configuration will be applied *after* the default conf
+(rotating file) but *before* the option debug. File based logging conf
+will override the default configuration."
+ethan-eb,2014-06-05 06:29:48,https://api.github.com/repos/etsy/logster/git/commits/fb2af83e92e3ca0f65987f6b23bb4ca4a8bb59af,fb2af83e92e3ca0f65987f6b23bb4ca4a8bb59af,#55 Allows multiple output types without accumulated naming changes
+sacreman,2014-04-12 17:44:24,https://api.github.com/repos/etsy/logster/git/commits/cee5dd204ff820102d25193e9cce54a3f8b7f1f8,cee5dd204ff820102d25193e9cce54a3f8b7f1f8,clean up options
+sacreman,2014-04-12 17:41:26,https://api.github.com/repos/etsy/logster/git/commits/0d77d2c67c505ff66e6c9d42f96dbaf75c8599da,0d77d2c67c505ff66e6c9d42f96dbaf75c8599da,adds graphite socket protocol option (choose tcp or udp)
+tvollmer-at-is24,2014-04-01 11:16:46,https://api.github.com/repos/etsy/logster/git/commits/f3c4d5e947cf4621eadc516031382649c9faedf6,f3c4d5e947cf4621eadc516031382649c9faedf6,Fix percentage calculation. Old version calculated only 0 or 100 on Python 2.6.6 / 2.7.5+ due to integer division
+avdv,2014-01-17 12:45:35,https://api.github.com/repos/etsy/logster/git/commits/6ebd1a403bd572d5ed83bc836ad00f5bbbd41f49,6ebd1a403bd572d5ed83bc836ad00f5bbbd41f49,"Check whether return value of popen.close() is not None
+
+This fixes #63."
+mrtazz,2014-01-15 20:42:23,https://api.github.com/repos/etsy/logster/git/commits/7475c53822c2e22d0994ea059bfd482044019a5b,7475c53822c2e22d0994ea059bfd482044019a5b,"Merge pull request #62 from aruetten/manpage
+
+Add manpage for version 0.0.1"
+aruetten,2014-01-12 17:55:16,https://api.github.com/repos/etsy/logster/git/commits/d2c23d3f94fabadbecf174ca61594505df03f6d7,d2c23d3f94fabadbecf174ca61594505df03f6d7,Add manpage for version 0.0.1
+mrtazz,2013-12-20 06:19:51,https://api.github.com/repos/etsy/logster/git/commits/d51342aa1e51232254e641e8a280551255e62487,d51342aa1e51232254e641e8a280551255e62487,add info how to contribute to the README
+mrtazz,2013-12-20 03:49:46,https://api.github.com/repos/etsy/logster/git/commits/e62b783dad82161b806db523517aa3601f2222a1,e62b783dad82161b806db523517aa3601f2222a1,"Merge pull request #60 from guynamededd/master
+
+The type of metric sent to statsd can now be set on MetricObject."
+mrtazz,2013-12-20 03:48:24,https://api.github.com/repos/etsy/logster/git/commits/afb07cd2ea3b09bdf2f4add85bcbe76ca1548780,afb07cd2ea3b09bdf2f4add85bcbe76ca1548780,"Merge pull request #61 from darxriggs/master
+
+Fixed logster path in Usage section"
+mrtazz,2013-12-20 03:47:35,https://api.github.com/repos/etsy/logster/git/commits/8b9950a4c91039be0df54725ca1d861199182502,8b9950a4c91039be0df54725ca1d861199182502,travis ci doesn't support 2.5 anymore
+darxriggs,2013-12-19 20:51:28,https://api.github.com/repos/etsy/logster/git/commits/a775f781dd8585bad2a0bef066ccf88f8b7cf2c6,a775f781dd8585bad2a0bef066ccf88f8b7cf2c6,Fixed logster path in Usage section
+AgentJeremyWelkley,2013-12-19 20:13:38,https://api.github.com/repos/etsy/logster/git/commits/3cf2d877f476f96883a7ccf55180a1ffc5e0ea70,3cf2d877f476f96883a7ccf55180a1ffc5e0ea70,The type of metric sent to statsd can now be set on MetricObject.
+mrtazz,2013-12-03 20:24:44,https://api.github.com/repos/etsy/logster/git/commits/45274ce3e8ee399298d9cd90155d2fb7ee776d00,45274ce3e8ee399298d9cd90155d2fb7ee776d00,"Merge pull request #37 from rtoma/master
+
+added support for cmdline option log_dir"
+mrtazz,2013-10-02 22:08:03,https://api.github.com/repos/etsy/logster/git/commits/7eefb4a04336f325c402ecf4df93b603b0db63c0,7eefb4a04336f325c402ecf4df93b603b0db63c0,"Merge pull request #56 from grahamlyons/readme
+
+Update readme with latest output from logster -h"
+grahamlyons,2013-10-01 09:49:47,https://api.github.com/repos/etsy/logster/git/commits/ac61005536d431b2d32b0eee4ac122ece202bf05,ac61005536d431b2d32b0eee4ac122ece202bf05,Update readme with latest output from logster -h
+mrtazz,2013-08-06 09:00:09,https://api.github.com/repos/etsy/logster/git/commits/c36d15ee38c9168646641ede0dd3fb97fa72fff4,c36d15ee38c9168646641ede0dd3fb97fa72fff4,"Merge pull request #54 from chasemp/master
+
+Adding statsd handler."
+chasemp,2013-08-06 00:14:09,https://api.github.com/repos/etsy/logster/git/commits/68e26f3b58b3b4e2b423076dcbac68c44f5cc944,68e26f3b58b3b4e2b423076dcbac68c44f5cc944,Adding statsd handler.
+mrtazz,2013-04-18 09:11:12,https://api.github.com/repos/etsy/logster/git/commits/72587392f3f2781474469c7c9b97692c149a5655,72587392f3f2781474469c7c9b97692c149a5655,"Merge pull request #50 from benburry/nsca
+
+Add logster output for Nagios Service Check Acceptor (nsca)"
+benburry,2013-04-11 14:02:44,https://api.github.com/repos/etsy/logster/git/commits/d7498eb02181effc9238be55eadf7b5f543caa36,d7498eb02181effc9238be55eadf7b5f543caa36,Add logster output for Nagios Service Check Acceptor (nsca)
+mrtazz,2013-03-23 21:41:36,https://api.github.com/repos/etsy/logster/git/commits/ea194fcf6a9f108ada557519f8ed50f9ea047da0,ea194fcf6a9f108ada557519f8ed50f9ea047da0,"Merge pull request #43 from citylive/module_anywhere
+
+Allow full module name to specify the parser"
+mrtazz,2013-03-23 21:40:45,https://api.github.com/repos/etsy/logster/git/commits/2520e4261be709b330c80c0074c270e3d0f3b51f,2520e4261be709b330c80c0074c270e3d0f3b51f,"Merge pull request #44 from snocrossgjd/master
+
+Adding timestamp to stdout output"
+mrtazz,2013-03-23 21:38:30,https://api.github.com/repos/etsy/logster/git/commits/ee0864651fd16a2af45d43587b8d3a2b8c1bd713,ee0864651fd16a2af45d43587b8d3a2b8c1bd713,"Merge pull request #48 from PeterScott/master
+
+Graphite socket bug -- send() vs sendall()"
+mrtazz,2013-03-23 21:37:33,https://api.github.com/repos/etsy/logster/git/commits/755929aafb592ef2d20a59be4a0eb17b594b8e89,755929aafb592ef2d20a59be4a0eb17b594b8e89,"Merge pull request #46 from rafael81/logster-master
+
+Add Amazon CloudWatch"
+PeterScott,2013-03-22 01:10:23,https://api.github.com/repos/etsy/logster/git/commits/8e29705f4315f58da25b00a6952490c185570ef7,8e29705f4315f58da25b00a6952490c185570ef7,"Make sure that graphite socket is closed, even if there is an exception while it is open."
+PeterScott,2013-03-22 01:04:25,https://api.github.com/repos/etsy/logster/git/commits/366241a820b1768fcd72d05076baaa27ce2edcb1,366241a820b1768fcd72d05076baaa27ce2edcb1,"Write all data to graphite socket.
+
+The socket.send() method does not guarantee that all data will be
+sent. Either use socket.sendall() instead, or check the return value
+from send() and loop to send all the data. This is a nasty cause of
+intermittent, hard-to-find bugs."
+rafael81,2013-02-26 04:19:40,https://api.github.com/repos/etsy/logster/git/commits/62e8200c86ea56534a5b92f22c924ed0bdfff2ed,62e8200c86ea56534a5b92f22c924ed0bdfff2ed,Add Amazon CloudWatch
+mrtazz,2013-02-26 02:34:46,https://api.github.com/repos/etsy/logster/git/commits/7448dd9ec91445a3379ee835bfb0c9ccca3c4bb1,7448dd9ec91445a3379ee835bfb0c9ccca3c4bb1,"Merge pull request #39 from rafael81/logster-master
+
+add new feature for amazon web service cloudwatch"
+gregdurham,2013-02-20 07:56:47,https://api.github.com/repos/etsy/logster/git/commits/85409aa330ebb8c4504d2f6f5573e66dd35c5337,85409aa330ebb8c4504d2f6f5573e66dd35c5337,Added timestamp to stdout
+rafael81,2013-02-12 13:25:23,https://api.github.com/repos/etsy/logster/git/commits/cca1bdee026c28570d754e0f66a1570d47142c03,cca1bdee026c28570d754e0f66a1570d47142c03,Remove bytes function on python 2.5
+rafael81,2013-02-12 03:58:12,https://api.github.com/repos/etsy/logster/git/commits/4290c3ecb452bd2e32473c425cb76906311897a2,4290c3ecb452bd2e32473c425cb76906311897a2,Fix testing on python 2.5
+janfabry,2013-01-31 13:22:34,https://api.github.com/repos/etsy/logster/git/commits/1ff0fa104f32e55886d437ae90d402b9a7585c55,1ff0fa104f32e55886d437ae90d402b9a7585c55,Allow parser from any reachable module
+rafael81,2013-01-31 07:15:00,https://api.github.com/repos/etsy/logster/git/commits/c5d703e8f571d68e14d9c40f1fa28df1bc550678,c5d703e8f571d68e14d9c40f1fa28df1bc550678,Fix testing on python 3.2
+rafael81,2013-01-26 14:21:43,https://api.github.com/repos/etsy/logster/git/commits/64e37827ac94bbf704322f6c6d69ca86a00a7e00,64e37827ac94bbf704322f6c6d69ca86a00a7e00,Add unittest for Amazon CloudWatch
+rafael81,2013-01-26 07:57:43,https://api.github.com/repos/etsy/logster/git/commits/856729b4ca209e8c69333dc419248af426805da1,856729b4ca209e8c69333dc419248af426805da1,Add some test for Amazon CloudWatch
+mrtazz,2013-01-22 17:08:28,https://api.github.com/repos/etsy/logster/git/commits/8403d9dad1e88968898b8ecf2e9412018da3a7cd,8403d9dad1e88968898b8ecf2e9412018da3a7cd,remove testing on python 3.1
+rafael81,2013-01-19 13:39:49,https://api.github.com/repos/etsy/logster/git/commits/b892e955eea262cf27e5e24dd8e3b777eca970e7,b892e955eea262cf27e5e24dd8e3b777eca970e7,Fix import method
+rafael81,2013-01-18 06:03:41,https://api.github.com/repos/etsy/logster/git/commits/17610f92023ee6d74e63da5fc45a23416577d6f7,17610f92023ee6d74e63da5fc45a23416577d6f7,Update README with Amazon CloudWatch instructions
+rafael81,2013-01-03 11:48:15,https://api.github.com/repos/etsy/logster/git/commits/51f9076d55c6d00c1a0309ddb40da5716fa0183f,51f9076d55c6d00c1a0309ddb40da5716fa0183f,Delete debug msg
+rafael81,2013-01-03 09:43:47,https://api.github.com/repos/etsy/logster/git/commits/1b53658b40c7e0391ac573c91279d3c527067f54,1b53658b40c7e0391ac573c91279d3c527067f54,"Add options for aws key, aws secret key"
+rafael81,2013-01-03 08:40:52,https://api.github.com/repos/etsy/logster/git/commits/d549c728459b6234a386c4ed18f3fbb6e58fcb98,d549c728459b6234a386c4ed18f3fbb6e58fcb98,Add new feature for Amazon Web Service CloudWatch
+rafael81,2013-01-03 08:40:52,https://api.github.com/repos/etsy/logster/git/commits/8b5e195bf9dfdbc5260456e07261ca9e9637c35c,8b5e195bf9dfdbc5260456e07261ca9e9637c35c,add new feature for Amazon Web Service CloudWatch
+rtoma,2012-12-19 15:51:07,https://api.github.com/repos/etsy/logster/git/commits/6d4c4f6c45c59c81cb4523bba4d3cf518fbe9ffd,6d4c4f6c45c59c81cb4523bba4d3cf518fbe9ffd,add cmdline support for log_dir
+mrtazz,2012-12-15 22:19:47,https://api.github.com/repos/etsy/logster/git/commits/16960bf118cc4bd21a3bace837000cbc624ef9cf,16960bf118cc4bd21a3bace837000cbc624ef9cf,"Merge pull request #34 from elasticdog/python24
+
+Do not rely on keyword arguments for __import__()"
+mrtazz,2012-12-15 22:17:43,https://api.github.com/repos/etsy/logster/git/commits/ba6b5d948fce61379daedf9993e2824d439d8e51,ba6b5d948fce61379daedf9993e2824d439d8e51,"Merge pull request #35 from adobo/fix_imports
+
+Fix ErrorLog and Squid parsers"
+adobo,2012-12-12 12:25:03,https://api.github.com/repos/etsy/logster/git/commits/0bbf808ad22344c3fcfc0217c6cf710a9ed7504f,0bbf808ad22344c3fcfc0217c6cf710a9ed7504f,"Fix import
+
+ErrorLog and Squid parsers couldn't find logster_helper"
+elasticdog,2012-12-10 23:53:15,https://api.github.com/repos/etsy/logster/git/commits/b2104622b4ccc1aeda07a3e1df2fb27aca7b58f8,b2104622b4ccc1aeda07a3e1df2fb27aca7b58f8,"Do not rely on keyword arguments for __import__()
+
+This is the only change currently needed for backward compatibility with
+Python 2.4, so Logster can be used on RHEL 5.x hosts out of the box."
+mrtazz,2012-12-09 04:40:30,https://api.github.com/repos/etsy/logster/git/commits/7971cf75df6c939722fe00462c4a6438366d69ad,7971cf75df6c939722fe00462c4a6438366d69ad,"Merge pull request #33 from elasticdog/makefile
+
+Remove broken Makefile"
+mrtazz,2012-12-09 04:38:36,https://api.github.com/repos/etsy/logster/git/commits/22c1df673f9c3597920f51f388b35ad4e5766ff2,22c1df673f9c3597920f51f388b35ad4e5766ff2,"Merge pull request #32 from elasticdog/specfile
+
+Add logster.spec file for generating RPM packages"
+elasticdog,2012-12-04 23:08:49,https://api.github.com/repos/etsy/logster/git/commits/86fe77074cf14bbe9bf9ef671e4aa63114b253e3,86fe77074cf14bbe9bf9ef671e4aa63114b253e3,Add logster.spec file for generating RPM packages
+elasticdog,2012-12-04 23:06:25,https://api.github.com/repos/etsy/logster/git/commits/ae69728629b6bf82a3785fdab087ab2e86ec64e4,ae69728629b6bf82a3785fdab087ab2e86ec64e4,Remove broken Makefile
+mrtazz,2012-12-02 22:26:21,https://api.github.com/repos/etsy/logster/git/commits/16c0c77130ac42b6fb38bd7d5647fb83a2fa8328,16c0c77130ac42b6fb38bd7d5647fb83a2fa8328,update README with setup.py installation instructions
+mrtazz,2012-12-02 22:22:29,https://api.github.com/repos/etsy/logster/git/commits/cbf3c79d09dbf6dd2ca80f766c6ab75a791d2bb8,cbf3c79d09dbf6dd2ca80f766c6ab75a791d2bb8,"Merge pull request #31 from StoneIsle/option_stdout_seperator
+
+Option stdout separator"
+StoneIsle,2012-11-30 13:03:53,https://api.github.com/repos/etsy/logster/git/commits/bfdaf3d9c73ad061c47b29c10b6f92824aac8c9a,bfdaf3d9c73ad061c47b29c10b6f92824aac8c9a,Changed seperator to the correct separator
+StoneIsle,2012-11-30 12:55:23,https://api.github.com/repos/etsy/logster/git/commits/661f8b6df948c7f347daabcd7fb98d6beace7d49,661f8b6df948c7f347daabcd7fb98d6beace7d49,Added a period to make the help text consistent with the rest og the options
+StoneIsle,2012-11-30 12:40:08,https://api.github.com/repos/etsy/logster/git/commits/a85a982270127272d32d7fd130a24b3c5fee8a34,a85a982270127272d32d7fd130a24b3c5fee8a34,Fixed typo
+StoneIsle,2012-11-30 11:36:01,https://api.github.com/repos/etsy/logster/git/commits/46d9997013a81d84f80865cddc0b62ba5fc739f1,46d9997013a81d84f80865cddc0b62ba5fc739f1,Added option stdout-seperator
+mrtazz,2012-11-24 23:32:34,https://api.github.com/repos/etsy/logster/git/commits/567d88c4c1c6af7a1e2a7e616941aa8de6378b12,567d88c4c1c6af7a1e2a7e616941aa8de6378b12,"Merge pull request #28 from khuongdp/master
+
+support timestamp argument in MetricObject"
+mrtazz,2012-11-24 23:31:23,https://api.github.com/repos/etsy/logster/git/commits/a8228ab841c45d72948001a698dcf8d65c8cc5c7,a8228ab841c45d72948001a698dcf8d65c8cc5c7,"Merge pull request #27 from pshen/master
+
+Fix import of MetricLogster.py"
+khuongdp,2012-11-24 22:17:31,https://api.github.com/repos/etsy/logster/git/commits/8c68b66eabe9e1c9a38fadc7edde7893023e6aaf,8c68b66eabe9e1c9a38fadc7edde7893023e6aaf,support timestamp argument
+pshen,2012-11-22 11:04:40,https://api.github.com/repos/etsy/logster/git/commits/de0626e1cb9bfa5509ad99a5122da7eccc7305cb,de0626e1cb9bfa5509ad99a5122da7eccc7305cb,fix import
+mrtazz,2012-11-03 20:37:36,https://api.github.com/repos/etsy/logster/git/commits/fef5fb978925b6605b70f8ee2ee7c106236bf467,fef5fb978925b6605b70f8ee2ee7c106236bf467,"Merge pull request #25 from chino/add-parsers-to-setup-py
+
+adding logster/parsers to be packaged with the egg"
+mrtazz,2012-11-01 05:34:06,https://api.github.com/repos/etsy/logster/git/commits/69dab589199e70e47d5b59a6359d0130569c6f30,69dab589199e70e47d5b59a6359d0130569c6f30,"Merge pull request #26 from chino/ignore-build-artifacts
+
+ignoring build and dist folders produced during build/install"
+chino,2012-10-31 21:33:19,https://api.github.com/repos/etsy/logster/git/commits/18c543a125e862426e5634cd69e889a16f90e179,18c543a125e862426e5634cd69e889a16f90e179,ignoring build and dist folders produced during build/install
+chino,2012-10-31 20:35:37,https://api.github.com/repos/etsy/logster/git/commits/57de61a3d9fe3f21a9456984fb7fb39b8603b660,57de61a3d9fe3f21a9456984fb7fb39b8603b660,adding logster/parsers to be packaged with the egg
+mrtazz,2012-10-27 03:35:15,https://api.github.com/repos/etsy/logster/git/commits/b4af82a86d26afa2573848f712d1af5bede39cc1,b4af82a86d26afa2573848f712d1af5bede39cc1,"Merge pull request #23 from ericachelis/makepaths
+
+Updating Makefile to accommodate recent package structure changes"
+mrtazz,2012-10-21 18:24:37,https://api.github.com/repos/etsy/logster/git/commits/286f72e1c32e06076203f5883e722bba60110e8e,286f72e1c32e06076203f5883e722bba60110e8e,adapt MetricLogster to packaged format
+mrtazz,2012-10-21 18:05:03,https://api.github.com/repos/etsy/logster/git/commits/0802fc8f17e0c5fd81735511983735838d46b319,0802fc8f17e0c5fd81735511983735838d46b319,move all parsers into the logster.parsers directory
+mrtazz,2012-10-21 18:03:50,https://api.github.com/repos/etsy/logster/git/commits/ff0a0340d2e602433211c01a22f7aeeed73f48f4,ff0a0340d2e602433211c01a22f7aeeed73f48f4,Merge branch 'pythonize-2' of https://github.com/msabramo/logster
+mrtazz,2012-10-21 17:40:16,https://api.github.com/repos/etsy/logster/git/commits/57efd70e645f9fbe8d3ad0824e40621fe98aeee2,57efd70e645f9fbe8d3ad0824e40621fe98aeee2,fix minor README formatting bug
+mrtazz,2012-10-21 17:28:27,https://api.github.com/repos/etsy/logster/git/commits/86137f67f5e3ac784a3964582f327280b49faf39,86137f67f5e3ac784a3964582f327280b49faf39,explicitly cast array index to int in stats_helper
+mrtazz,2012-10-21 17:23:23,https://api.github.com/repos/etsy/logster/git/commits/30cb0a0eff6836498d085afa982b36c77ae992ed,30cb0a0eff6836498d085afa982b36c77ae992ed,add .md extension to README
+mrtazz,2012-10-21 17:22:55,https://api.github.com/repos/etsy/logster/git/commits/31e9f56490612d0a104c597e8f4eb949fd145d90,31e9f56490612d0a104c597e8f4eb949fd145d90,format README to proper markdown and add travis build status
+mrtazz,2012-10-21 17:16:51,https://api.github.com/repos/etsy/logster/git/commits/f076a819eed3c31e3d563e15066c4fc02a55fc80,f076a819eed3c31e3d563e15066c4fc02a55fc80,add travis testing configuration
+mrtazz,2012-10-21 17:11:56,https://api.github.com/repos/etsy/logster/git/commits/6f71a2b4d5e529c51a805b455a3f0fabb4ba3acb,6f71a2b4d5e529c51a805b455a3f0fabb4ba3acb,move tests to tests folder
+mrtazz,2012-10-21 17:11:37,https://api.github.com/repos/etsy/logster/git/commits/0baf72e9ce14ced04fe00dafd54991c497f67329,0baf72e9ce14ced04fe00dafd54991c497f67329,"Merge branch 'gitignore' of https://github.com/msabramo/logster
+
+Conflicts:
+	.gitignore"
+mrtazz,2012-10-21 16:58:50,https://api.github.com/repos/etsy/logster/git/commits/69fe8cf74c3636cc5fd52ca1ce61decb2a068bf8,69fe8cf74c3636cc5fd52ca1ce61decb2a068bf8,"Merge pull request #18 from mrmanc/master
+
+MetricLogster recognises difference between counters and times"
+mrtazz,2012-10-21 16:52:34,https://api.github.com/repos/etsy/logster/git/commits/1efa1e06724b21c4559afa61b7962e210525a04e,1efa1e06724b21c4559afa61b7962e210525a04e,"Merge pull request #19 from horacix/master
+
+I've added a sample parser for getting stats from Apache error logs"
+mrtazz,2012-10-21 16:51:29,https://api.github.com/repos/etsy/logster/git/commits/7a37b5d31014ded08d310ab24e4d3d9976c1f590,7a37b5d31014ded08d310ab24e4d3d9976c1f590,"Merge pull request #21 from roidelapluie/master
+
+Add a new parser: SquidLosgter"
+mrtazz,2012-10-21 16:50:50,https://api.github.com/repos/etsy/logster/git/commits/568ef6da54526c9d00fa8a6127e76a40961115ee,568ef6da54526c9d00fa8a6127e76a40961115ee,"Merge pull request #20 from kamaradclimber/metric_suffix
+
+New option metric-suffix"
+kamaradclimber,2012-10-21 09:28:57,https://api.github.com/repos/etsy/logster/git/commits/776e7562b03a4c6615bae2cf4a36549a642a2754,776e7562b03a4c6615bae2cf4a36549a642a2754,More pythonic tests
+kamaradclimber,2012-10-20 08:29:05,https://api.github.com/repos/etsy/logster/git/commits/7bd234927b899489e112aad5a19fe8f954e97834,7bd234927b899489e112aad5a19fe8f954e97834,Use None as default value for metric suffix
+roidelapluie,2012-09-18 07:26:54,https://api.github.com/repos/etsy/logster/git/commits/71580933ef651ba92f06dcc09d18bd1ea50d13f3,71580933ef651ba92f06dcc09d18bd1ea50d13f3,update squid parser
+roidelapluie,2012-09-18 07:09:17,https://api.github.com/repos/etsy/logster/git/commits/38b219f3be6c2149b047043cdbfdddd25d5a4aa0,38b219f3be6c2149b047043cdbfdddd25d5a4aa0,add a Squid parser
+kamaradclimber,2012-08-13 14:26:53,https://api.github.com/repos/etsy/logster/git/commits/261c9b308ccb91617052e8093ab1529ad5c04ec8,261c9b308ccb91617052e8093ab1529ad5c04ec8,Update README
+kamaradclimber,2012-08-13 14:11:35,https://api.github.com/repos/etsy/logster/git/commits/6319cc170ae805930866db252b2642fe05d4f4ba,6319cc170ae805930866db252b2642fe05d4f4ba,Added metric suffix option
+mrtazz,2012-08-08 04:10:07,https://api.github.com/repos/etsy/logster/git/commits/4f134128cdc410322b30e759bb0a74e66898cfb5,4f134128cdc410322b30e759bb0a74e66898cfb5,"Merge pull request #14 from msabramo/add-logtail-option
+
+Add a --logtail option so that the user can specify a location for logtail other than /usr/sbin/logtail2"
+mrmanc,2012-06-25 23:05:03,https://api.github.com/repos/etsy/logster/git/commits/72bb27080589628438df494aea33aefb977033c2,72bb27080589628438df494aea33aefb977033c2,"Improved accuracy and reliability of percentile calculations
+
+Fixed some problems with percentiles for non-integer values. Improved
+this and also coped better with arbitrary percentile values (especially
+100% i.e. max)."
+mrmanc,2012-05-14 20:25:58,https://api.github.com/repos/etsy/logster/git/commits/8956f8bdf9845f4ee975421ed29c7ec26a2b4f54,8956f8bdf9845f4ee975421ed29c7ec26a2b4f54,"Generalised MetricLogster extracts time unit from log line
+
+When pushing into Ganglia, the unit for the time metrics will now be
+extracted from the log lines - it is assumed that metrics with the same
+name will share the same unit; the parser will simply use the first it
+encounters in the event they do not."
+mrmanc,2012-05-12 15:40:40,https://api.github.com/repos/etsy/logster/git/commits/13c8950dae2a4c300c6eb0e51b18d26f1a4a3b64,13c8950dae2a4c300c6eb0e51b18d26f1a4a3b64,"Allowed operator to configure different time units. Unit does not need
+to appear in the log statement as this would be an unnecessary
+restriction."
+mrmanc,2012-05-12 00:09:27,https://api.github.com/repos/etsy/logster/git/commits/49c1232b87658b3376e3b3be55795e133899723a,49c1232b87658b3376e3b3be55795e133899723a,"Improved the MetricLogster with capability to calculate distribution
+statistics of time metrics."
+msabramo,2012-05-08 20:36:21,https://api.github.com/repos/etsy/logster/git/commits/5e1246461841625a58afe25fc8eb271322ada32b,5e1246461841625a58afe25fc8eb271322ada32b,"Add a --logtail option so that the user can specify a location for logtail
+other than /usr/sbin/logtail2"
+msabramo,2012-05-08 20:35:29,https://api.github.com/repos/etsy/logster/git/commits/804f2773ef8783948a60e128867fb0f88eb61210,804f2773ef8783948a60e128867fb0f88eb61210,Add a .gitignore
+msabramo,2012-05-08 20:23:01,https://api.github.com/repos/etsy/logster/git/commits/726be501e26c05b739d6846e660fa04bd66fa6e2,726be501e26c05b739d6846e660fa04bd66fa6e2,"Cleanup to get rid of warning: ""logster_helper.py:53:
+DeprecationWarning: BaseException.message has been deprecated as of
+Python 2.6"""
+msabramo,2012-05-08 20:21:29,https://api.github.com/repos/etsy/logster/git/commits/1aea44305cee1b45dabf09d184cd50a5426e61a2,1aea44305cee1b45dabf09d184cd50a5426e61a2,Reworked importing to use new packaging
+msabramo,2012-05-08 20:16:41,https://api.github.com/repos/etsy/logster/git/commits/b2578a8f0ba1ab57d18bbc3cf3ac6ad3bbd55955,b2578a8f0ba1ab57d18bbc3cf3ac6ad3bbd55955,"Don't need to add stuff like /usr/share/logster to sys.path if we import
+from a Python package."
+msabramo,2012-05-08 20:14:36,https://api.github.com/repos/etsy/logster/git/commits/c948241c34886401281b215bc4f7c899c4e5310b,c948241c34886401281b215bc4f7c899c4e5310b,Add a setup.py
+msabramo,2012-05-08 20:13:32,https://api.github.com/repos/etsy/logster/git/commits/e57531ef61d1f3cee6152da516939b3da98597a5,e57531ef61d1f3cee6152da516939b3da98597a5,"Move stuff to a more standard directory structure used by Python
+projects with distutils or setuptools"
+mikebrittain,2012-04-11 02:18:10,https://api.github.com/repos/etsy/logster/git/commits/f60dd6a0cfe91d1eb60f2567b02c511150102e33,f60dd6a0cfe91d1eb60f2567b02c511150102e33,"Merge pull request #13 from jblaine/master
+
+Mild cleanup of README"
+jblaine,2012-03-31 00:58:32,https://api.github.com/repos/etsy/logster/git/commits/e57a228dd4198873856c41b61f3816516925f2a1,e57a228dd4198873856c41b61f3816516925f2a1,Mild cleanup from a dude with a keen eye for errors
+jblaine,2012-03-31 00:54:34,https://api.github.com/repos/etsy/logster/git/commits/a6a1da5a3a1ad527f3493cfe4b561893932207ec,a6a1da5a3a1ad527f3493cfe4b561893932207ec,Added MetricLogster parser
+mikebrittain,2011-10-08 22:38:51,https://api.github.com/repos/etsy/logster/git/commits/3da8f9c103e43e8a8e81ea35cee8871a1b05b4b1,3da8f9c103e43e8a8e81ea35cee8871a1b05b4b1,"Merge pull request #6 from jbeardsley/master
+
+PostfixLogster parser from jbeardsley"
+jbeardsley,2011-07-07 20:57:08,https://api.github.com/repos/etsy/logster/git/commits/04b5e684066f8d4ba912843732f1616c17454fef,04b5e684066f8d4ba912843732f1616c17454fef,Adding parser for Postifx logs
+mikebrittain,2011-06-29 15:46:24,https://api.github.com/repos/etsy/logster/git/commits/cc0eb8e44f739a589779ebbf2dfcc92e498fe37e,cc0eb8e44f739a589779ebbf2dfcc92e498fe37e,Updating __init__ signature for sample parser to allow parser options from command line.
+mikebrittain,2011-06-29 15:44:07,https://api.github.com/repos/etsy/logster/git/commits/96ecad6edfe94dca7354928cb2d8b0191095ce4f,96ecad6edfe94dca7354928cb2d8b0191095ce4f,Remove commented path.
+mikebrittain,2011-06-23 17:06:15,https://api.github.com/repos/etsy/logster/git/commits/4aa593787c4ca728ab2bf502f9a4b87fccd78e12,4aa593787c4ca728ab2bf502f9a4b87fccd78e12,"Merge pull request #4 from phobologic/master
+
+Better exception message for unhandled exceptions that occur within parsers."
+mikebrittain,2011-06-23 17:04:13,https://api.github.com/repos/etsy/logster/git/commits/c368072b023583a028620942f8766cce33722516,c368072b023583a028620942f8766cce33722516,"Merge pull request #3 from mbabineau/master
+
+Log4jLogster and parser-specific option support"
+mbabineau,2011-05-12 23:08:23,https://api.github.com/repos/etsy/logster/git/commits/6922936fc8ee9f58fc0f493127b632078f414cf6,6922936fc8ee9f58fc0f493127b632078f414cf6,"Added sample parser for log4j logs
+Added pass-through of parser-specific options
+Moved parsers into a subdir
+Updated docs accordingly"
+mikebrittain,2011-04-27 21:51:32,https://api.github.com/repos/etsy/logster/git/commits/134dc3dd582d86a853585ea52792ba8b772d8b05,134dc3dd582d86a853585ea52792ba8b772d8b05,"Updated docs, fixed 'type' parameter for MetricsObject, ensure graphite host is set if graphite is used at the output type"
+mikebrittain,2011-04-27 18:22:18,https://api.github.com/repos/etsy/logster/git/commits/03bb9bed2e2c29644908a7f467bd604e1175a79b,03bb9bed2e2c29644908a7f467bd604e1175a79b,Updating install based on katzj's merging of sample parsers.
+katzj,2011-03-21 18:45:44,https://api.github.com/repos/etsy/logster/git/commits/f64402b4ea5681bddd73a3bee371b8e280c7c7dc,f64402b4ea5681bddd73a3bee371b8e280c7c7dc,add timestamp to the MetricObject
+mikebrittain,2011-03-12 19:58:12,https://api.github.com/repos/etsy/logster/git/commits/07e3b6a13a196e48ed9304e8c6b1a071da61244a,07e3b6a13a196e48ed9304e8c6b1a071da61244a,First release.

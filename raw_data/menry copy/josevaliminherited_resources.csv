@@ -1,0 +1,1387 @@
+inherited_resources,
+username,timestamp,url,sha,message
+deivid-rodriguez,2019-08-21 09:58:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/47acbb1b0859b68639b85ebe95f99e67c34e8e1d,47acbb1b0859b68639b85ebe95f99e67c34e8e1d,"Let Dependabot always handle security updates (#531)
+
+Dependabot doesn't currently create PRs for security updates if they are
+indirect production (runtime) dependencies (not direct dependencies of
+the gem, but dependencies of a runtime dependency). Like nokogiri here.
+
+Since Github still creates security alerts for those, I'd like
+dependabot to handle these automatically too.
+
+My guess is that dependabot classifies dependency types like this:
+
+    ▾ all
+    ├── ▾ direct
+    │   ├── production
+    │   └── development
+    └── indirect
+
+And not like this as I thought:
+
+    ▾ all
+    ├── ▾ production
+    │   ├── direct
+    │   └── indirect
+    └── ▾ development
+        ├── direct
+        └── indirect
+
+So specifying `type: production` won't suffice for this type of
+dependencies. Let's try with `type: all`."
+deivid-rodriguez,2019-08-20 19:12:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f93703e26007359a2d3303ab8ee6c04a5c0f0e15,f93703e26007359a2d3303ab8ee6c04a5c0f0e15,Use dependabot for runtime security updates (#530)
+deivid-rodriguez,2019-08-19 15:16:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7f78a38747372e82d2db2233af9c342a0a9545e7,7f78a38747372e82d2db2233af9c342a0a9545e7,Switch main Gemfile to Rails 6 (#529)
+deivid-rodriguez,2019-08-18 21:21:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7f9f5319c32c384fe15a3317af9ece0e21decfd2,7f9f5319c32c384fe15a3317af9ece0e21decfd2,"bin/rake bundle[update,rails]"
+dependabot-preview[bot],2019-08-12 13:08:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/29ed7764364c420f9f30d04b432a1f8e63713e79,29ed7764364c420f9f30d04b432a1f8e63713e79,"[Security] Bump nokogiri from 1.10.3 to 1.10.4 in /test/rails_60
+
+Bumps [nokogiri](https://github.com/sparklemotion/nokogiri) from 1.10.3 to 1.10.4. **This update includes a security fix.**
+- [Release notes](https://github.com/sparklemotion/nokogiri/releases)
+- [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/sparklemotion/nokogiri/compare/v1.10.3...v1.10.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-08-12 09:40:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/012be04257e8b387b7e81e13a8d44c49e110bff6,012be04257e8b387b7e81e13a8d44c49e110bff6,"[Security] Bump nokogiri from 1.10.3 to 1.10.4 in /test/rails_51
+
+Bumps [nokogiri](https://github.com/sparklemotion/nokogiri) from 1.10.3 to 1.10.4. **This update includes a security fix.**
+- [Release notes](https://github.com/sparklemotion/nokogiri/releases)
+- [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/sparklemotion/nokogiri/compare/v1.10.3...v1.10.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-08-12 09:39:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/579c39f80bfe0b464c18a199b79030fd8f015b1b,579c39f80bfe0b464c18a199b79030fd8f015b1b,"[Security] Bump nokogiri from 1.10.3 to 1.10.4 in /test/rails_50 (#524)
+
+Bumps [nokogiri](https://github.com/sparklemotion/nokogiri) from 1.10.3 to 1.10.4. **This update includes a security fix.**
+- [Release notes](https://github.com/sparklemotion/nokogiri/releases)
+- [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/sparklemotion/nokogiri/compare/v1.10.3...v1.10.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-08-12 09:18:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c17fb06afdad0cbe043a80b1bfbdc50f393f93f1,c17fb06afdad0cbe043a80b1bfbdc50f393f93f1,"[Security] Bump nokogiri from 1.10.3 to 1.10.4 (#526)
+
+Bumps [nokogiri](https://github.com/sparklemotion/nokogiri) from 1.10.3 to 1.10.4. **This update includes a security fix.**
+- [Release notes](https://github.com/sparklemotion/nokogiri/releases)
+- [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/sparklemotion/nokogiri/compare/v1.10.3...v1.10.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+javierjulio,2019-08-05 16:56:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4cf737a9c4dd47d5f6cc5aeacfe45edcf3a65277,4cf737a9c4dd47d5f6cc5aeacfe45edcf3a65277,"Merge pull request #523 from activeadmin/get_ready_for_1_11_0_release
+
+Get ready for 1.11.0 release"
+deivid-rodriguez,2019-08-05 16:02:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a15cd52bae2f8ec7d1874db0faa05d902d1bd569,a15cd52bae2f8ec7d1874db0faa05d902d1bd569,Cut responders 1.11.0
+deivid-rodriguez,2019-08-05 16:01:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/affb1f514bba8a4e7cb57e429202bfdc1e7073b5,affb1f514bba8a4e7cb57e429202bfdc1e7073b5,Add missing changelog entry
+dependabot-preview[bot],2019-08-01 07:15:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7ed39c832e866ba9f89f4a197fc65b000e0712dc,7ed39c832e866ba9f89f4a197fc65b000e0712dc,Bump responders from 2.4.1 to 3.0.0 in /test/rails_50 (#522)
+dependabot-preview[bot],2019-08-01 07:11:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f8c38c06498d57b406383c2d40fa3d13a8e1055e,f8c38c06498d57b406383c2d40fa3d13a8e1055e,Bump responders from 2.4.1 to 3.0.0 in /test/rails_51 (#521)
+dependabot-preview[bot],2019-08-01 06:57:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1f1065e529aa3ec983d2448e0c00d6b395de7605,1f1065e529aa3ec983d2448e0c00d6b395de7605,"Bump responders from 2.4.1 to 3.0.0 (#520)
+
+Bumps [responders](https://github.com/plataformatec/responders) from 2.4.1 to 3.0.0.
+- [Release notes](https://github.com/plataformatec/responders/releases)
+- [Changelog](https://github.com/plataformatec/responders/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/plataformatec/responders/compare/v2.4.1...v3.0.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 21:41:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/40e8facc24ea4364801563c475e83ad17af151bf,40e8facc24ea4364801563c475e83ad17af151bf,"Bump rubocop from 0.73.0 to 0.74.0 (#518)
+
+Bumps [rubocop](https://github.com/rubocop-hq/rubocop) from 0.73.0 to 0.74.0.
+- [Release notes](https://github.com/rubocop-hq/rubocop/releases)
+- [Changelog](https://github.com/rubocop-hq/rubocop/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/rubocop-hq/rubocop/compare/v0.73.0...v0.74.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+javierjulio,2019-07-31 21:32:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f8a8b3fe20b6850ac9acb3fc9705cbcc22b5d01d,f8a8b3fe20b6850ac9acb3fc9705cbcc22b5d01d,"Merge pull request #513 from activeadmin/run_rubocop
+
+Run rubocop in CI"
+deivid-rodriguez,2019-07-31 16:20:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/556a0f619b6603c830284e0609c91a1ffbe171c7,556a0f619b6603c830284e0609c91a1ffbe171c7,Consistenly use `-r` flag for requires
+deivid-rodriguez,2019-07-31 10:23:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/936595dc6f0b879d7a3aabccda59224e775a8026,936595dc6f0b879d7a3aabccda59224e775a8026,Check gemfiles & gemspec only as part of lint job
+deivid-rodriguez,2019-07-31 08:07:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/23a2de8ee9c4a79ed857cb895bbb8171d754e8f8,23a2de8ee9c4a79ed857cb895bbb8171d754e8f8,Run linters as part of the CI
+deivid-rodriguez,2019-07-31 15:52:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/21ae2373056fac549cc166a1d05f0b3735302aa0,21ae2373056fac549cc166a1d05f0b3735302aa0,Replace rubocop rake task with a binstub
+deivid-rodriguez,2019-07-31 07:59:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/36fa78d830a23a3bc624ef3ddc402d3c6ec47a71,36fa78d830a23a3bc624ef3ddc402d3c6ec47a71,Leave rubocop only on main Gemfile
+deivid-rodriguez,2019-07-31 07:37:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f383f64c9e3ba6a428b753d454522de14f671008,f383f64c9e3ba6a428b753d454522de14f671008,Fix some hash rocket offenses
+deivid-rodriguez,2019-07-31 07:36:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/76073832ad017ae2d4cf776c2ef89130279035c4,76073832ad017ae2d4cf776c2ef89130279035c4,Use new name for cop style
+deivid-rodriguez,2019-07-31 07:36:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7b50c23f56416f3bb9e8cdc2f4e40c2bf94802f3,7b50c23f56416f3bb9e8cdc2f4e40c2bf94802f3,Prefer `ruby -rbundler/setup` to `bundle exec ruby`
+javierjulio,2019-07-31 16:13:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/048af2634adfca9bd7920d307e2c6bf31ea5e66f,048af2634adfca9bd7920d307e2c6bf31ea5e66f,"Merge pull request #515 from activeadmin/fix_ci_false_negatives
+
+Fix CI false negatives"
+deivid-rodriguez,2019-07-31 15:18:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9d91c2c358fdc74f77f662cf54a0197ed08b52a5,9d91c2c358fdc74f77f662cf54a0197ed08b52a5,Get lock files back in sync
+deivid-rodriguez,2019-07-31 15:17:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/95c9581b27c86363d1fae344bc10276d672ddc11,95c9581b27c86363d1fae344bc10276d672ddc11,Fix incorrect exit status of some tasks
+dependabot-preview[bot],2019-07-31 14:22:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ef78d2d9f11fd5a121043ad6528b6a5b3de59929,ef78d2d9f11fd5a121043ad6528b6a5b3de59929,"Bump rails from 6.0.0.rc1 to 6.0.0.rc2 in /test/rails_60 (#509)
+
+Bumps [rails](https://github.com/rails/rails) from 6.0.0.rc1 to 6.0.0.rc2.
+- [Release notes](https://github.com/rails/rails/releases)
+- [Commits](https://github.com/rails/rails/compare/v6.0.0.rc1...v6.0.0.rc2)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 13:57:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/59521af1f928aa516a327431ecfae3b922323de4,59521af1f928aa516a327431ecfae3b922323de4,"Update responders requirement from ~> 2.0 to >= 2, < 4 in /test/rails_60 (#505)
+
+Updates the requirements on [responders](https://github.com/plataformatec/responders) to permit the latest version.
+- [Release notes](https://github.com/plataformatec/responders/releases)
+- [Changelog](https://github.com/plataformatec/responders/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/plataformatec/responders/compare/v2.4.1...v3.0.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+javierjulio,2019-07-31 13:47:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/098d85cb61e527f015fad21c2c85bcd8a6940a7a,098d85cb61e527f015fad21c2c85bcd8a6940a7a,"Merge pull request #514 from activeadmin/bump_rubies_and_bundler_in_CI
+
+Bump rubies and bundler in CI"
+javierjulio,2019-07-31 13:46:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9c6c65f9e757fbb4a037dc812de698ebc5c1927d,9c6c65f9e757fbb4a037dc812de698ebc5c1927d,"Merge pull request #511 from activeadmin/changelog_tweaks
+
+Changelog tweaks"
+deivid-rodriguez,2019-07-31 07:49:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/80603e484a698f2fdcdecdd74260e5ff5ebf4416,80603e484a698f2fdcdecdd74260e5ff5ebf4416,Fix several markdown syntax issues
+deivid-rodriguez,2019-07-31 07:48:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1964ab575ea8eac2ada775cfa069c148f46337eb,1964ab575ea8eac2ada775cfa069c148f46337eb,Add a main changelog header
+deivid-rodriguez,2019-07-31 08:12:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/131bd6efd62af36315fb6d280cbef33b70176943,131bd6efd62af36315fb6d280cbef33b70176943,Bump all rubies used in CI to latest patch levels
+deivid-rodriguez,2019-07-31 08:11:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0c510e55eca21dbea63e304a3ff1b916847d95b0,0c510e55eca21dbea63e304a3ff1b916847d95b0,Bump bundler to 2.0.2 in CI
+deivid-rodriguez,2019-07-31 13:25:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d1199f999f3bc7fc035ff366c57fb298577ccd3e,d1199f999f3bc7fc035ff366c57fb298577ccd3e,"Wrap Gemfile gems with development group (#510)
+
+To teach dependabot that in the case of gems, everything in the Gemfile
+is a development dependency."
+deivid-rodriguez,2019-07-31 13:21:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2a5f6cafda35dc12c4fcc4fc52785a11c01d49e9,2a5f6cafda35dc12c4fcc4fc52785a11c01d49e9,Drop ruby 2.3 support (#512)
+dependabot-preview[bot],2019-07-31 11:22:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fcdee6ed2965d3f126b1260ec67c522b90cb0979,fcdee6ed2965d3f126b1260ec67c522b90cb0979,Bump rubocop from 0.65.0 to 0.73.0 in /test/rails_60 (#508)
+dependabot-preview[bot],2019-07-31 11:06:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9ae766a3177d168f5629e8cbf3788dd30d60ce57,9ae766a3177d168f5629e8cbf3788dd30d60ce57,"Bump rails-controller-testing from 1.0.2 to 1.0.4 in /test/rails_50 (#507)
+
+Bumps [rails-controller-testing](https://github.com/rails/rails-controller-testing) from 1.0.2 to 1.0.4.
+- [Release notes](https://github.com/rails/rails-controller-testing/releases)
+- [Commits](https://github.com/rails/rails-controller-testing/compare/v1.0.2...v1.0.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 10:53:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/59e6e83840e7d56fefcc8451883cf8834d5c5d6d,59e6e83840e7d56fefcc8451883cf8834d5c5d6d,Bump rubocop from 0.62.0 to 0.73.0 in /test/rails_50 (#502)
+dependabot-preview[bot],2019-07-31 10:26:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8c252debf661569a840a28a51125d9f7642c8236,8c252debf661569a840a28a51125d9f7642c8236,"Bump rails-controller-testing from 1.0.2 to 1.0.4 in /test/rails_51 (#506)
+
+Bumps [rails-controller-testing](https://github.com/rails/rails-controller-testing) from 1.0.2 to 1.0.4.
+- [Release notes](https://github.com/rails/rails-controller-testing/releases)
+- [Commits](https://github.com/rails/rails-controller-testing/compare/v1.0.2...v1.0.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 09:12:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e3e110b386e4c39f13d7c8d0bcb08bc4b3c40054,e3e110b386e4c39f13d7c8d0bcb08bc4b3c40054,Bump mocha from 1.7.0 to 1.9.0 in /test/rails_50 (#504)
+dependabot-preview[bot],2019-07-31 08:27:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ad0c14538dd0261f69e02f4f4d34bdba4a625122,ad0c14538dd0261f69e02f4f4d34bdba4a625122,"Bump mocha from 1.7.0 to 1.9.0 in /test/rails_51 (#503)
+
+Bumps [mocha](https://github.com/freerange/mocha) from 1.7.0 to 1.9.0.
+- [Release notes](https://github.com/freerange/mocha/releases)
+- [Changelog](https://github.com/freerange/mocha/blob/master/RELEASE.md)
+- [Commits](https://github.com/freerange/mocha/compare/v1.7.0...v1.9.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 07:39:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9fb2486baefdc7bd6f695392c66b2e7012eef0e,a9fb2486baefdc7bd6f695392c66b2e7012eef0e,"Bump rubocop from 0.62.0 to 0.73.0 in /test/rails_51 (#501)
+
+Bumps [rubocop](https://github.com/rubocop-hq/rubocop) from 0.62.0 to 0.73.0.
+- [Release notes](https://github.com/rubocop-hq/rubocop/releases)
+- [Changelog](https://github.com/rubocop-hq/rubocop/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/rubocop-hq/rubocop/compare/v0.62.0...v0.73.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-31 07:22:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/afd01ebe38570cefaf86828429452608147e1169,afd01ebe38570cefaf86828429452608147e1169,"Bump mocha from 1.8.0 to 1.9.0 in /test/rails_60 (#500)
+
+Bumps [mocha](https://github.com/freerange/mocha) from 1.8.0 to 1.9.0.
+- [Release notes](https://github.com/freerange/mocha/releases)
+- [Changelog](https://github.com/freerange/mocha/blob/master/RELEASE.md)
+- [Commits](https://github.com/freerange/mocha/compare/v1.8.0...v1.9.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+deivid-rodriguez,2019-07-30 20:22:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/22a01cc501c8478ed3a02b9da7e631b47bdf91a7,22a01cc501c8478ed3a02b9da7e631b47bdf91a7,"Merge pull request #496 from activeadmin/dependabot
+
+Configure dependabot"
+dependabot-preview[bot],2019-07-30 19:00:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b6f5bc3e5baf813a337073d5974f2113012b907f,b6f5bc3e5baf813a337073d5974f2113012b907f,Merge pull request #497 from activeadmin/50f8dependabot/bundler/mocha-1.9.0
+dependabot-preview[bot],2019-07-30 18:44:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8c57f18f85f01c1e3fdcc98cb31a1d6aa93184eb,8c57f18f85f01c1e3fdcc98cb31a1d6aa93184eb,"Bump mocha from 1.7.0 to 1.9.0
+
+Bumps [mocha](https://github.com/freerange/mocha) from 1.7.0 to 1.9.0.
+- [Release notes](https://github.com/freerange/mocha/releases)
+- [Changelog](https://github.com/freerange/mocha/blob/master/RELEASE.md)
+- [Commits](https://github.com/freerange/mocha/compare/v1.7.0...v1.9.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-30 18:43:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1b76c0c4fc62d461ae76d328beb48c42119543bb,1b76c0c4fc62d461ae76d328beb48c42119543bb,Merge pull request #498 from activeadmin/1823dependabot/bundler/rails-controller-testing-1.0.4
+timoschilling,2019-07-30 18:27:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1f3593f2f0bd97add864195f3c3a2dd4eea8b101,1f3593f2f0bd97add864195f3c3a2dd4eea8b101,Merge branch 'master' into 1823dependabot/bundler/rails-controller-testing-1.0.4
+dependabot-preview[bot],2019-07-30 18:27:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/908c92ab41db91900f036adeb58a044370303123,908c92ab41db91900f036adeb58a044370303123,Merge pull request #499 from activeadmin/bbfbdependabot/bundler/rubocop-0.73.0
+dependabot-preview[bot],2019-07-30 16:46:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4613487206c0371fe65dee8f1c22c14b30bd4d01,4613487206c0371fe65dee8f1c22c14b30bd4d01,"Bump rubocop from 0.62.0 to 0.73.0
+
+Bumps [rubocop](https://github.com/rubocop-hq/rubocop) from 0.62.0 to 0.73.0.
+- [Release notes](https://github.com/rubocop-hq/rubocop/releases)
+- [Changelog](https://github.com/rubocop-hq/rubocop/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/rubocop-hq/rubocop/compare/v0.62.0...v0.73.0)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+dependabot-preview[bot],2019-07-30 16:45:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c9b65f50dee0a71c764799810e06df054e34fc07,c9b65f50dee0a71c764799810e06df054e34fc07,"Bump rails-controller-testing from 1.0.2 to 1.0.4
+
+Bumps [rails-controller-testing](https://github.com/rails/rails-controller-testing) from 1.0.2 to 1.0.4.
+- [Release notes](https://github.com/rails/rails-controller-testing/releases)
+- [Commits](https://github.com/rails/rails-controller-testing/compare/v1.0.2...v1.0.4)
+
+Signed-off-by: dependabot-preview[bot] <support@dependabot.com>"
+deivid-rodriguez,2019-07-30 16:36:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b2aae2770c60c329a9b33fad0b47bfa648a8172b,b2aae2770c60c329a9b33fad0b47bfa648a8172b,Add dependabot configuration
+deivid-rodriguez,2019-07-30 16:34:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5d9c3c6c6d0ff7065a592a830917d5a635406cc5,5d9c3c6c6d0ff7065a592a830917d5a635406cc5,Normalize gemfile loop
+deivid-rodriguez,2019-07-30 16:32:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8a1c0cc6a5f36e26fc722aed35d1519b14b02bfd,8a1c0cc6a5f36e26fc722aed35d1519b14b02bfd,"Move each Gemfile to each own folder
+
+So we can configure dependabot for each Gemfile."
+tomgilligan,2019-06-24 13:28:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e51a54d0d5c8c701ef77ea97a74de9c19d637a50,e51a54d0d5c8c701ef77ea97a74de9c19d637a50,"Use #update instead of newly deprecated #update_attributes (#495)
+
+https://github.com/activeadmin/inherited_resources/issues/490"
+javierjulio,2019-06-20 14:13:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/90fcb6a7ea1c229393790c96f3e9748b7a0d7f70,90fcb6a7ea1c229393790c96f3e9748b7a0d7f70,"Merge pull request #494 from activeadmin/allow_rails_61
+
+Allow rails 6.1"
+deivid-rodriguez,2019-06-20 09:47:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e33e1588565e519fc9a128ba23193b0390be8474,e33e1588565e519fc9a128ba23193b0390be8474,"bin/rake bundle[update,rails]"
+deivid-rodriguez,2019-06-20 09:44:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/898c53f6b5ec641cb441558d5adfc7e57a40ff09,898c53f6b5ec641cb441558d5adfc7e57a40ff09,"Relax Rails dependencies to allow current master
+
+So it's easier to try it, and thus most likely to find about regressions
+early and get bug reports."
+deivid-rodriguez,2019-06-13 13:29:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1976131ec9106e295af7f91e927b2d36b58f315c,1976131ec9106e295af7f91e927b2d36b58f315c,"Enable github sponsors button (#493)
+
+And link to Tidelift."
+javierjulio,2019-05-09 14:56:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bd6aeddcd5daa9b0eab3278e72988f433ba25d2a,bd6aeddcd5daa9b0eab3278e72988f433ba25d2a,"Merge pull request #491 from activeadmin/tidelift_add
+
+Fix Tidelift link and add funding section"
+deivid-rodriguez,2019-05-09 11:13:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e483ed953337d3dd7b5447a78cb95e13390cb11,5e483ed953337d3dd7b5447a78cb95e13390cb11,Fix link to Tidelift
+deivid-rodriguez,2019-05-09 11:09:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1d859823ba2ccc4c278733be55dd6acaf0ff0c47,1d859823ba2ccc4c278733be55dd6acaf0ff0c47,Add funding section to README
+javierjulio,2019-04-03 14:19:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2ba6982ddd6a56e7ef9ed7396473e5500ad77126,2ba6982ddd6a56e7ef9ed7396473e5500ad77126,"Merge pull request #489 from activeadmin/cut_1.10_final
+
+Cut 1.10 final"
+deivid-rodriguez,2019-04-03 11:16:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/867b3bfd89f0b84574a33c54e7dff78fb537ab20,867b3bfd89f0b84574a33c54e7dff78fb537ab20,Get ready for 1.10.0 release
+deivid-rodriguez,2019-04-03 11:12:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b97dcb90f7bc1462fbfe0ed9a876b9eaed397088,b97dcb90f7bc1462fbfe0ed9a876b9eaed397088,Add missing gitignore
+javierjulio,2019-03-24 17:30:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ef943a6b6d5d0fdb5ea29adbcfada8b576a79d9b,ef943a6b6d5d0fdb5ea29adbcfada8b576a79d9b,"Merge pull request #488 from activeadmin/release_tools
+
+Release tools"
+deivid-rodriguez,2019-03-24 16:42:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/38204280369508c836e270e00608ed50d4a33061,38204280369508c836e270e00608ed50d4a33061,Add chandler to automate github releases
+deivid-rodriguez,2019-03-24 16:41:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c83886711cae8c0ba7b772d1022cb833616fe147,c83886711cae8c0ba7b772d1022cb833616fe147,Add a rake binstub
+javierjulio,2019-03-24 16:28:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4289f8efb90384518c35f4557e7cc6f6cff320c7,4289f8efb90384518c35f4557e7cc6f6cff320c7,"Merge pull request #487 from activeadmin/cut_1.10.0.rc1
+
+Cut 1.10.0.rc1"
+deivid-rodriguez,2019-03-24 15:53:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d72650add9a2c28a5890ca2ec7b37e8707da5c26,d72650add9a2c28a5890ca2ec7b37e8707da5c26,Cut 1.10.0.rc1
+deivid-rodriguez,2019-03-24 15:52:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5eb71345ade125031048badf1ceffed1b051480f,5eb71345ade125031048badf1ceffed1b051480f,Add missing changelog entry
+deivid-rodriguez,2019-03-24 14:51:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3647829bf0be824e9afec10043ff9f0f2a9c0c92,3647829bf0be824e9afec10043ff9f0f2a9c0c92,Improve gemspec (#486)
+deivid-rodriguez,2019-03-14 11:22:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/95d1e24d97dd0f871fecfea662805953d7fcd44b,95d1e24d97dd0f871fecfea662805953d7fcd44b,"Merge pull request #485 from activeadmin/bump_bundle
+
+Bump bundle"
+deivid-rodriguez,2019-03-14 10:22:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a6ad76c4da5c47b6f09b034121db8441a0a1c287,a6ad76c4da5c47b6f09b034121db8441a0a1c287,Rename jruby jobs for consistency
+deivid-rodriguez,2019-03-14 10:21:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bb1c4bcfd791521894c20a9c2c45046bb5fcb6ee,bb1c4bcfd791521894c20a9c2c45046bb5fcb6ee,Remove now unnecessary env variable
+deivid-rodriguez,2019-03-14 10:21:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4e84f072f503a86b85e5f4391c00c5b832d53788,4e84f072f503a86b85e5f4391c00c5b832d53788,Bump base docker rubies
+deivid-rodriguez,2019-03-14 09:28:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ca610ccca4084edbacc0cc2edafb97a6273b88f7,ca610ccca4084edbacc0cc2edafb97a6273b88f7,Check for outdated gemfiles
+deivid-rodriguez,2019-03-14 09:44:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5f6097ba1e2681a539ddd4855441416d8512824c,5f6097ba1e2681a539ddd4855441416d8512824c,"bundle exec rake bundle[lock,--add-platform,java]
+
+To make gemfiles jruby friendly."
+deivid-rodriguez,2019-03-14 09:36:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a02412a534f21257e35b808ab6989278a169339a,a02412a534f21257e35b808ab6989278a169339a,"bundle exec rake bundle[update,rails]
+
+To shush security alerts."
+deivid-rodriguez,2019-03-14 09:30:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a45e971074e85bbfef756c7c5e90c786f75dad44,a45e971074e85bbfef756c7c5e90c786f75dad44,"Use a consistent Rails requirement in Gemfiles
+
+One that allows all prereleases for the major version it tests."
+deivid-rodriguez,2019-03-14 09:29:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8df739f6342ac2b585e87a155ff3caec8abd1f1d,8df739f6342ac2b585e87a155ff3caec8abd1f1d,Bring outdated gemfiles up to date
+deivid-rodriguez,2019-03-14 09:22:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/07604158c382c7d48e40f5d5fd6e59894d417867,07604158c382c7d48e40f5d5fd6e59894d417867,"Rename Rails 6.0 Gemfile
+
+For consistency with the other gemfiles."
+deivid-rodriguez,2019-03-09 14:32:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/310ecd28a039e75e7bbdfc103b37a416cab56d42,310ecd28a039e75e7bbdfc103b37a416cab56d42,"Reconcile jruby 9.2 + Rails 6.0 base docker image (#484)
+
+Use the same base image and tag as the other jruby images."
+javierjulio,2019-03-09 03:10:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6f36fedafc86145b17aab29ae4deb4064162e945,6f36fedafc86145b17aab29ae4deb4064162e945,"Merge pull request #483 from activeadmin/jruby_improvements_in_ci
+
+Jruby improvements in CI"
+deivid-rodriguez,2019-03-08 09:42:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/206ae8eebc5d26959cc95b3200d85a4b8aca3ee6,206ae8eebc5d26959cc95b3200d85a4b8aca3ee6,Use latest patch level image of jruby 9.2
+deivid-rodriguez,2019-03-08 09:42:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/49c83f09d4863c0386386dc9e13e704ddfcd47c2,49c83f09d4863c0386386dc9e13e704ddfcd47c2,Use official CircleCI jruby images
+matheusvetor,2019-03-09 01:43:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c2fdd47e5ccdc9d344312a614b45b586e3961886,c2fdd47e5ccdc9d344312a614b45b586e3961886,added missing test rails6beta against jruby92 (#482)
+matheusvetor,2019-03-07 19:36:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1597ddaae144f3030000a94bff47f74ae57f87da,1597ddaae144f3030000a94bff47f74ae57f87da,"added support to ruby 2.6 (#481)
+
+* added support to ruby 2.6
+* Added missing structure"
+ionut998,2019-03-04 13:44:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eb822433650bba76f8c41be2b90d749548efcb9f,eb822433650bba76f8c41be2b90d749548efcb9f,"Add support for Rails 6 beta (#479)
+
+* Allow newer versions of actionpack and railties
+
+* Run tests on Rails 6 beta as well"
+deivid-rodriguez,2019-01-07 16:56:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7f86f6044e050350188a85e00543929afbcd1652,7f86f6044e050350188a85e00543929afbcd1652,Bump locked bundler to 2.0.1 (#475)
+deivid-rodriguez,2019-01-07 16:45:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6d7ff0b00345c9f0b168972f3b647845594d2536,6d7ff0b00345c9f0b168972f3b647845594d2536,Add security contact information (#478)
+deivid-rodriguez,2019-01-07 16:15:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f0e1a38cc0fc150f4310c8dd9e6e9ea26d137e47,f0e1a38cc0fc150f4310c8dd9e6e9ea26d137e47,Remove a bunch of unnecessary stubs in tests (#477)
+deivid-rodriguez,2019-01-07 15:21:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a30b4f7f157ca67eea687dca59dfae7f2a764093,a30b4f7f157ca67eea687dca59dfae7f2a764093,"bundle exec rake bundle[update,rubocop] (#476)"
+deivid-rodriguez,2018-11-15 17:46:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/db6eb312b7cac6baf0023f720cf6785a9849fa85,db6eb312b7cac6baf0023f720cf6785a9849fa85,"Merge pull request #471 from activeadmin/bump_rack
+
+Bump rack"
+deivid-rodriguez,2018-11-15 17:34:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/644a8716e8db6a210905b5153ddaa8de81ac3f89,644a8716e8db6a210905b5153ddaa8de81ac3f89,Bump rack to 2.0.6
+deivid-rodriguez,2018-11-15 17:34:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f038115f8ee0f9f93370547ef2484e8121fec6d0,f038115f8ee0f9f93370547ef2484e8121fec6d0,Rake task to update all gemfiles at once
+javierjulio,2018-11-15 14:59:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/95b7be6bfa14fcd7042822e7588f149359daba92,95b7be6bfa14fcd7042822e7588f149359daba92,"Merge pull request #470 from javierjulio/update-test-run-random
+
+Update test to run in random order"
+javierjulio,2018-11-14 18:25:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2d74dcf47058f6105801d9e11af892d625795094,2d74dcf47058f6105801d9e11af892d625795094,"Move redirect cases into its own test to fix random failures
+
+These tests were causing others to fail at random when they were all in the same test case. That's why we changed the test order to run them in order rather than the new default of random. The issue is that in these test cases the controller class is modified to define explicit actions which affect other test cases where those are expected to be there. I couldn't figure out how to undo that so I split these up and used a different named controller so we can specify explicit actions whereas the other test assumes the default."
+javierjulio,2018-11-14 18:22:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bd55e908911193d87f2532c0b9e2cd9c8a1330b1,bd55e908911193d87f2532c0b9e2cd9c8a1330b1,Remove unncessary stub call that causes failure
+deivid-rodriguez,2018-11-14 10:52:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f6886eaa4a448d9ee68b8f4a5bccc12b28aea56,2f6886eaa4a448d9ee68b8f4a5bccc12b28aea56,"Merge pull request #459 from javierjulio/fix-test-warnings
+
+Fix warnings from running the test suite"
+javierjulio,2018-11-13 17:30:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ade2aea886f5a8f09034b927e389c041b85f9203,ade2aea886f5a8f09034b927e389c041b85f9203,"Remove global test suite routes
+
+These are now defined in each test case where only the necessary routes are drawn for each specific test. This way we also no longer rely on dynamic segments which are deprecated in newer versions of Rails."
+javierjulio,2018-11-13 17:29:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0ffbe2bd67928aac2f51657a683faff99bf3f929,0ffbe2bd67928aac2f51657a683faff99bf3f929,Add note to fix test so it runs in random order
+javierjulio,2018-11-13 17:28:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ec7ebddd70dad4f591b2ae5f674ed49864db3a48,ec7ebddd70dad4f591b2ae5f674ed49864db3a48,Update each test to define the routes it requires
+javierjulio,2018-11-13 17:24:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/639b3c2f7d179de0704328a25e108be06781b87b,639b3c2f7d179de0704328a25e108be06781b87b,"Add `draw_routes` and `clear_routes` helper methods
+
+We want each test to setup only the routes and resources it requires rather than have it be global for the entire test suite. Also we can't rely on dynamic segments anymore with newer versions of Rails so its best we have explicit routes."
+deivid-rodriguez,2018-10-30 23:28:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b1a73e4ab386ca4a4c2399378fb8ccf8e6be8bd0,b1a73e4ab386ca4a4c2399378fb8ccf8e6be8bd0,Fix `parent` and `parent?` warnings
+javierjulio,2018-10-27 03:13:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ed30b65cb68a94c17350718111b544d36989ef94,ed30b65cb68a94c17350718111b544d36989ef94,"Rename test class to be unique so it now runs
+
+This duplicate test class was introduced in https://github.com/activeadmin/inherited_resources/commit/5c18cf12 but it was emitting a warning of:
+
+```
+defaults_test.rb:190: warning: method redefined; discarding old test_that_it_picked_the_camelcased_model
+defaults_test.rb:171: warning: previous definition of test_that_it_picked_the_camelcased_model was here
+```
+
+This means that the test case wasn't running since it was overridden but now it is and it passes."
+javierjulio,2018-10-27 02:31:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/de598e9e632144f0a4aad76cdd46ed4191fbad43,de598e9e632144f0a4aad76cdd46ed4191fbad43,"Fix polymorphic warning to ensure instance variable is defined
+
+The test case `test_parent_as_instance_variable_on_index_when_method_overwritten` in `polymorphic_test.rb` was emitting the following warning:
+
+```
+lib/inherited_resources/polymorphic_helpers.rb:123: warning: instance variable @user not initialized
+```
+
+This is easy to resolve, as we just need to ensure the instance variable is defined before we attempt to retrieve it."
+javierjulio,2018-10-27 02:15:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/04d87485394f2c23d18fb537e46ff29c3741941f,04d87485394f2c23d18fb537e46ff29c3741941f,"Rename and fix test case
+
+This test case too was not running because there is another test case with the same name in this file. That issue was introduced in: https://github.com/activeadmin/inherited_resources/commit/3a4894e7#diff-f18627fee27eba459b80262e6a0f1278
+
+If you search for ""test_assigns_country_and_state_and_city_on_create"" you'll see it listed twice in that file.
+
+Once the test case name is unique, it runs but it will fail with an error of:
+
+```
+NoMethodError: undefined method `all' for City:Class
+```
+
+I wasn't sure how to correct this but I searched the repository for ""undefined method all"" and on this page: https://github.com/activeadmin/inherited_resources/search?q=undefined+method+all&type=Issues I found the PR: https://github.com/activeadmin/inherited_resources/pull/116 I then noticed other tests for get requests on index actions that used `expects(:scoped)` instead. Exact same style setup but this was just wrong and since it wasn't running we didn't know."
+javierjulio,2018-10-27 01:54:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5b3df1086caa6143b88d38e4aeca08b867781151,5b3df1086caa6143b88d38e4aeca08b867781151,"Rename test case to be unique so it runs
+
+This redirect test case is testing the create action, not update. Another same test case in this file tests the update action so this is renamed to be correct. More importantly now it actually runs. Since it was a duplicate, this test case was never running."
+javierjulio,2018-10-26 21:12:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6e884a037441131cbaf2c024d0069591b86fac31,6e884a037441131cbaf2c024d0069591b86fac31,"Fix undefined instance variable @parent_type warning
+
+When running the test suite, the following warning appears *many* times:
+
+```
+warning: instance variable @parent_type not initialized
+```
+
+We have to wrap both in conditionals because if you review `symbols_for_association_chain` carefully it may not set the instance variable leaving it in a still undefined state. In case it is, we fall on the default behavior of returning nil. This is passes all the tests while removing all warnings for this variable."
+javierjulio,2018-10-30 14:57:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/46ab7d0ff3d2c8606d8d7f142f1e80c4e4dbc4fe,46ab7d0ff3d2c8606d8d7f142f1e80c4e4dbc4fe,Replace deprecated `Fixnum` with `Integer` instead
+javierjulio,2018-11-13 19:51:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ed00fb99c1cea4343caa67f9bbd841506a594497,ed00fb99c1cea4343caa67f9bbd841506a594497,"Merge pull request #469 from activeadmin/remove_double_empty_lines
+
+Remove double empty lines"
+deivid-rodriguez,2018-11-13 19:06:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3ffac36b5b882399e5e733f0693e43f006f88139,3ffac36b5b882399e5e733f0693e43f006f88139,Remove double empty lines
+deivid-rodriguez,2018-11-06 22:01:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c59e5a3c47cb1b73d7ddfad0e9521810e502e687,c59e5a3c47cb1b73d7ddfad0e9521810e502e687,"Merge pull request #468 from activeadmin/bump_loofah
+
+Bump loofah version in lock files"
+deivid-rodriguez,2018-11-06 21:16:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c872cace97809eb4675e72fe5c7d3e4a91e3ec38,c872cace97809eb4675e72fe5c7d3e4a91e3ec38,"Bump loofah version in lock files
+
+Not a real vulnerability under our responsability (users should upgrade
+the dependency on their final apps), but let's bump it anyways to ""fix""
+the security alerts."
+javierjulio,2018-11-06 20:05:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a863c1b58019f63e0ecf34960d4fe4737fc94bfb,a863c1b58019f63e0ecf34960d4fe4737fc94bfb,"Merge pull request #466 from activeadmin/more_rubocop
+
+More rubocop"
+deivid-rodriguez,2018-10-30 11:19:08,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6938803cf05e4918b858e8404facc5a1fddb2199,6938803cf05e4918b858e8404facc5a1fddb2199,Bring alternate gemfiles up to date
+deivid-rodriguez,2018-10-30 11:11:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/74ca2f87600b8dbb54d7b15b98f7770b6ffaab4d,74ca2f87600b8dbb54d7b15b98f7770b6ffaab4d,Add rubocop as part of the default task
+deivid-rodriguez,2018-10-29 23:22:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0e9b51acd3eb957cc8acf668ef11eddb19c0ddc9,0e9b51acd3eb957cc8acf668ef11eddb19c0ddc9,Enable Layout/IndentationWidth cop
+deivid-rodriguez,2018-10-30 12:36:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/de2ceb15b91679d48016bbe7da6505955223b38a,de2ceb15b91679d48016bbe7da6505955223b38a,Enable Layout/EndAlignment cop
+deivid-rodriguez,2018-10-29 23:21:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0c8d455297b50391802aa8147035c44f1fe92e18,0c8d455297b50391802aa8147035c44f1fe92e18,Normalize indentation of comments
+deivid-rodriguez,2018-10-29 23:21:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a536c8782397afb8000c15058afd6051b1730c33,a536c8782397afb8000c15058afd6051b1730c33,Remove commented out code
+deivid-rodriguez,2018-10-29 23:14:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/33d13261f52b6d17065254ee4cba4c3693fef418,33d13261f52b6d17065254ee4cba4c3693fef418,Enforce Rails indentation consistency rules
+deivid-rodriguez,2018-10-29 23:13:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3b3172a8bb1b742907af00896b43859e64b1d608,3b3172a8bb1b742907af00896b43859e64b1d608,Enforce no tabs
+deivid-rodriguez,2018-10-29 23:09:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b0b18b563e558468d89d625b3f5d473535adf870,b0b18b563e558468d89d625b3f5d473535adf870,Enable Style/HashSyntax cop
+javierjulio,2018-10-30 17:19:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bf4a5bac90ea0bfb00b236ea9cb625fc9c19e250,bf4a5bac90ea0bfb00b236ea9cb625fc9c19e250,"Merge pull request #467 from javierjulio/update-tests
+
+General updates to test cases"
+deivid-rodriguez,2018-10-30 17:00:08,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8c50ee714ecb91e098a2ebf8251d35355aae435a,8c50ee714ecb91e098a2ebf8251d35355aae435a,Inline `request_params` method
+javierjulio,2018-10-27 02:57:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/11e80525ca53ba235092c1c294cc339e2a7be891,11e80525ca53ba235092c1c294cc339e2a7be891,"Rename duplicate Professor test data class to fix warning
+
+The set of test cases here was introduced in https://github.com/activeadmin/inherited_resources/commit/903d1e49#diff-c66cdb7c833309c1697b40c1f6eb9e87R76
+
+The issue is that the Professor class is also defined in the `customized_belongs_to_test.rb` file so when running the full test suite you'll see the following 2 warnings:
+
+```
+defaults_test.rb:77: warning: method redefined; discarding old human_name
+customized_belongs_to_test.rb:7: warning: previous definition of human_name was here
+```
+
+Since the commit introduced a mixture of painter/professor and its own views, I think it was best to edit these to be unique to not conflict with test case in `customized_belongs_to_test.rb` that has been around a lot longer.
+
+I went with the Lecturer since while Einstein was a professor he was also a lecturer. I updated any mixed professor/painter instances to just be lecturer instead so its consistent. This now resolves those 2 warnings."
+javierjulio,2018-10-30 14:45:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e17c16582985c50b3ff00d939c856dfc97d1c43,5e17c16582985c50b3ff00d939c856dfc97d1c43,"Add request params for single resource calls
+
+Most tests cases that work with a single resource specify request params with an id but not all. As we move to defining explicit routes/resources, we need to be consistent and specify request params across the board."
+javierjulio,2018-10-30 15:15:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fee0a59a2d81d09c3bb7f150912aaabea85d4407,fee0a59a2d81d09c3bb7f150912aaabea85d4407,Fix indentation on test case
+javierjulio,2018-10-27 20:11:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cb60c0824b0f034fb8bdee0bd0a5e6e77147592d,cb60c0824b0f034fb8bdee0bd0a5e6e77147592d,"Update request_params with options
+
+We need this for some tests that pass `format: :js` for example but are for single resources (have an id). We need to support this while still working with Rails 4."
+javierjulio,2018-10-27 01:51:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/487ee4219034dbfb531648c25db5083384235129,487ee4219034dbfb531648c25db5083384235129,"Remove duplicate test case
+
+This was a duplicate test case introduced in PR and commit: https://github.com/activeadmin/inherited_resources/pull/258/files#diff-62c651579bf983dfc4dc2a48c50a3440R470
+
+If you expand the lines on that file and go all the way to around 750 or so and you'll see the same test case name. That version of the test case has additional checks in the end but is the same as this one (which never ran because of the duplicate name). The only difference is the one running has stubs for `persisted?` on table and dish right after the intialization of each."
+javierjulio,2018-10-29 17:04:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/276f1360088451b6fabaf1c8d65489caa0f538ea,276f1360088451b6fabaf1c8d65489caa0f538ea,"Merge pull request #464 from activeadmin/enable_rubocop
+
+Enable rubocop"
+deivid-rodriguez,2018-10-28 20:21:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0bb75b766d90c15a26ef7f0e76c30a223afb0ec0,0bb75b766d90c15a26ef7f0e76c30a223afb0ec0,Enable Layout/EmptyLinesAroundClassBody cop
+deivid-rodriguez,2018-10-28 20:18:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/29fa1f945ff20cd5ea88cec105955ec0365211dd,29fa1f945ff20cd5ea88cec105955ec0365211dd,Enable Layout/EmptyLinesAroundAccessModifier cop
+deivid-rodriguez,2018-10-28 20:16:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1ccfdf01efd6d8d77da7ecb6ea82513c5735d7a7,1ccfdf01efd6d8d77da7ecb6ea82513c5735d7a7,Enable Layout/TrailingBlankLines cop
+deivid-rodriguez,2018-10-27 21:20:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4fda5852d589a33f5df2e6cd8ee3194fdcdb02f9,4fda5852d589a33f5df2e6cd8ee3194fdcdb02f9,Bump locked bundler version to 1.17.1
+deivid-rodriguez,2018-10-27 21:19:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/663dbeebce486e99ffe1e52ccb950da4c3a03a95,663dbeebce486e99ffe1e52ccb950da4c3a03a95,Enable rubocop only with trailing whitspace rule
+deivid-rodriguez,2018-10-27 21:18:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8a02b3dc6217ab99b8c9f8cc64beb780d8e498b9,8a02b3dc6217ab99b8c9f8cc64beb780d8e498b9,"Rename controller template to `.tt`
+
+So it's not recognized by rubocop as a ruby file."
+javierjulio,2018-10-28 22:33:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/aa218583c44ad741681105d1c611041ef35cfb7c,aa218583c44ad741681105d1c611041ef35cfb7c,"Merge pull request #465 from javierjulio/add-circleci
+
+Add CircleCI Setup"
+javierjulio,2018-10-28 13:28:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/94e0a2f6fa6eb683529f42716f9c01da3e9a095c,94e0a2f6fa6eb683529f42716f9c01da3e9a095c,Add CircleCI badge
+javierjulio,2018-10-28 13:26:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a302b8f772f955045fe323f64f81a43203205391,a302b8f772f955045fe323f64f81a43203205391,Remove Travis
+javierjulio,2018-10-28 01:15:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d8a8c9ed2b931d5b227f191be8fd545f02b943e2,d8a8c9ed2b931d5b227f191be8fd545f02b943e2,"Add CircleCI config with working builds
+
+This matches exactly what we would build with Travis but overall runs much faster than Travis. With CircleCI, builds now take 3 minutes whereas with Travis they took over 10 minutes!"
+javierjulio,2018-10-28 01:46:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3cb837d22fcc7a657281096a436e0363d03a42a3,3cb837d22fcc7a657281096a436e0363d03a42a3,"Merge pull request #463 from javierjulio/drop-rails-4-2
+
+Drop support for Rails 4.2"
+javierjulio,2018-10-27 20:58:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d853ff1a19200da4e052fefe5f05a9bd922e0176,d853ff1a19200da4e052fefe5f05a9bd922e0176,Add changelog for dropping Rails 4.2 support
+javierjulio,2018-10-27 18:22:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/50d4f6f85d345909829cef28e11036af287591c6,50d4f6f85d345909829cef28e11036af287591c6,"Remove conditional for AR deprecated finders
+
+We no longer need this after removing Rails 4 support."
+javierjulio,2018-10-27 18:13:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5216806caefa64c8c1c881e6bb84cae9452ba105,5216806caefa64c8c1c881e6bb84cae9452ba105,"Remove outdated request params support
+
+Since I'm updating test warnings in a separate PR and I don't know when this will be merged, I don't want to update all tests yet."
+javierjulio,2018-10-27 18:11:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0b3fbd2c135baea9dbc4559de2bf652ba378d44b,0b3fbd2c135baea9dbc4559de2bf652ba378d44b,Remove conditional for AP 4 and below
+javierjulio,2018-10-27 18:11:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/48be2907de214535700a0a53e0d745f242d0c428,48be2907de214535700a0a53e0d745f242d0c428,"Remove conditional for AP 4 and up
+
+This is now the default supported behavior so the conditional is no longer necessary."
+javierjulio,2018-10-27 18:09:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b668a8e5ea8b990f48acab66e71af68bda08f85f,b668a8e5ea8b990f48acab66e71af68bda08f85f,"Remove require for strong_parameters
+
+This is not needed anymore. This was only for ActionPack 3 but even with the latest release of IR, we no longer support it so this isn't necessary."
+javierjulio,2018-10-27 18:08:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/42e2450a73c9bf7376b3dcef454f65c2beb9ccb4,42e2450a73c9bf7376b3dcef454f65c2beb9ccb4,"Replace plain_text method with inline plain rendering
+
+Since we now only support Rails 5 and up, we no longer need this method. We can just inline the plain text rendering to simplify these tests."
+javierjulio,2018-10-27 17:26:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a3180bf8889fc255b16d95d63563f7fb50333dfe,a3180bf8889fc255b16d95d63563f7fb50333dfe,"Remove unnecessary conditional for Rails 4+
+
+This now the default supported behavior so we no longer need to do a check."
+javierjulio,2018-10-27 17:24:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/058e29db97689695fdf56ac94f831d392b0bf09f,058e29db97689695fdf56ac94f831d392b0bf09f,Remove now unused gemfiles for Rails 4.2
+javierjulio,2018-10-27 17:24:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6961b43ac70e7e645bc5a18734507bbee945b3e7,6961b43ac70e7e645bc5a18734507bbee945b3e7,Require minimum of Rails 5.0+ for dependencies
+javierjulio,2018-10-27 17:06:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4b6b3fb62f5b9787f9ae4c824047658d98e09f2a,4b6b3fb62f5b9787f9ae4c824047658d98e09f2a,Remove Travis build for Rails 4.2
+javierjulio,2018-10-28 01:03:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/884849439ac2b42c18240997237455a7738f4d1d,884849439ac2b42c18240997237455a7738f4d1d,"Merge pull request #460 from javierjulio/template-update
+
+General update to gem template files"
+javierjulio,2018-10-27 16:51:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/92bd229683faf078428e2c9e274bf45e0554de1f,92bd229683faf078428e2c9e274bf45e0554de1f,"Update tests to now use `require 'test_helper'` everywhere
+
+Now that we've updated the Rakefile to be inline with how new ones are when creating a new gem, we can have a simpler way of requiring the test helper that will work across the board."
+javierjulio,2018-10-27 16:49:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ed118c357e1f0b96979dd7a977f6b4cde41199d7,ed118c357e1f0b96979dd7a977f6b4cde41199d7,"Update generated template files for gem
+
+Since this library has been around so long, when creating a new gem, the generated files have changed since then. This just keeps the files that we don't usually ever update once a gem is created to be current."
+javierjulio,2018-10-27 16:47:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c9f1b6437fe129cbef43c64f0e54fe5e471f4b4f,c9f1b6437fe129cbef43c64f0e54fe5e471f4b4f,Update homepage with secure URL
+javierjulio,2018-10-25 17:05:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f4794094f8e4bdce5f30df4349097216f21eb89b,f4794094f8e4bdce5f30df4349097216f21eb89b,"Specify specific patch numbers for Ruby versions
+
+This way we ensure Travis runs builds against the latest Ruby patch release for each minor version."
+javierjulio,2018-10-24 20:08:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/44cb4e6999243c5c304cc6e5995a778bf04322f6,44cb4e6999243c5c304cc6e5995a778bf04322f6,"Merge pull request #458 from javierjulio/update-changelog
+
+Add changelog test to maintain consistency"
+javierjulio,2018-10-24 16:54:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/96dcaf24eeae01cb2193a67effde2c1393af4f49,96dcaf24eeae01cb2193a67effde2c1393af4f49,"Update changelog to pass test
+
+Any line starting with a ""*"" (list item) now has to end with either a ""."" or "":"".
+
+Any list items that had hard returns are now all on one line."
+javierjulio,2018-10-24 16:49:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d2157ce9783fabbbe85718c11caaf6ab76a4bcfb,d2157ce9783fabbbe85718c11caaf6ab76a4bcfb,Update test to assert line does end with punctuation
+javierjulio,2018-10-24 14:50:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ecd158a1af54ef6356b1de87f3edc6cbc916b89a,ecd158a1af54ef6356b1de87f3edc6cbc916b89a,"Add changelog spec to maintain consistency
+
+Brought this over and coverted to minitest from https://github.com/activeadmin/activeadmin/pull/5474"
+javierjulio,2018-10-24 14:47:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/45380ac00dd576f7c23930b5af4a3ee25f68aa89,45380ac00dd576f7c23930b5af4a3ee25f68aa89,"Rename changelog with "".md"" extension"
+javierjulio,2018-10-24 15:23:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/613b2c269c7b65155d9a5bf57cb64927c48ffedc,613b2c269c7b65155d9a5bf57cb64927c48ffedc,"Merge pull request #457 from javierjulio/update-travis
+
+Update jruby versions in Travis"
+javierjulio,2018-10-24 14:08:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1610a9532427ef3bc8b49b295ab0902d63624748,1610a9532427ef3bc8b49b295ab0902d63624748,Add jruby 9.2.0
+javierjulio,2018-10-24 14:07:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/65b2768b750e36a3a2a13ef943c008e2954042d0,65b2768b750e36a3a2a13ef943c008e2954042d0,Remove jruby from allow_failures as its passing
+javierjulio,2018-10-24 14:05:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/28e4c23ea14e4769a3b93cf89d4539524ec5593c,28e4c23ea14e4769a3b93cf89d4539524ec5593c,Update jruby to 9.1.17
+javierjulio,2018-10-20 01:43:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3e52ca479f8e791e7b0a910e1ac50a79767fb0a9,3e52ca479f8e791e7b0a910e1ac50a79767fb0a9,"Merge pull request #455 from varyonic/refactor-url-helpers
+
+Refactor url helpers"
+varyonic,2018-10-08 14:46:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/338b76e38ca74a2e2b56f910f65b8e8ff73f5e20,338b76e38ca74a2e2b56f910f65b8e8ff73f5e20,"Address feedback: remove redundant ivar assignment, change ?_ to ‘_’"
+deivid-rodriguez,2018-10-09 12:23:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3524e3171ae935469f06e8ee32835c1a8b4de2c1,3524e3171ae935469f06e8ee32835c1a8b4de2c1,"Merge pull request #456 from activeadmin/build_only_prs
+
+Build only PRs"
+deivid-rodriguez,2018-10-08 20:31:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/40384d96da64176609441d643910d3b7c5a3c6b4,40384d96da64176609441d643910d3b7c5a3c6b4,Build only PRs
+varyonic,2018-10-04 20:21:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/96f33139f210f8fe3e6a4dcd339b8753ca14c63f,96f33139f210f8fe3e6a4dcd339b8753ca14c63f,Replace class_eval with define_method.
+varyonic,2018-10-04 19:52:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1e0ef11b66ca2213a4f378375c312f0593120ca0,1e0ef11b66ca2213a4f378375c312f0593120ca0,Pass ivar into the params proc instead of the class_eval.
+varyonic,2018-10-04 14:56:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/07ccebcb47e2a6503ec327637b5e8fed5c06e016,07ccebcb47e2a6503ec327637b5e8fed5c06e016,Move handling of polymorphic collection into params_helper
+varyonic,2018-10-03 18:54:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0dca5f6817a8d8324221346fee72e721aacc6d25,0dca5f6817a8d8324221346fee72e721aacc6d25,Simplify singleton and polymorphic helper setup.
+varyonic,2018-10-03 18:02:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fb79485375c26ef9cf2c72f051aba3d56948d79e,fb79485375c26ef9cf2c72f051aba3d56948d79e,Move extraction of given_options to params helper.
+varyonic,2018-10-02 20:55:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5931624fd35d27baa54bab7ef3a477ecd4edcb34,5931624fd35d27baa54bab7ef3a477ecd4edcb34,Move handling of resource param into params_helper
+varyonic,2018-10-03 16:00:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0821476ff2a66abe6e09cafee2b3a5be2fe590a3,0821476ff2a66abe6e09cafee2b3a5be2fe590a3,Move handling of polymorphic params into params_helper
+varyonic,2018-10-03 15:26:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a1926124d412ce965ede7c207f72e1fb9e466278,a1926124d412ce965ede7c207f72e1fb9e466278,Pass given_args to params helper.
+varyonic,2018-10-03 14:32:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2c00928e0c2eea096ef158c7390ce9743e5d0487,2c00928e0c2eea096ef158c7390ce9743e5d0487,Don’t need to append ‘given_options’ to ivars.
+varyonic,2018-10-03 14:16:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d61ed3a7d3a251ae2ddce8c3b9bb5c56d9712dcc,d61ed3a7d3a251ae2ddce8c3b9bb5c56d9712dcc,Splice in params_helper created with define_method instead of class_eval.
+varyonic,2018-10-02 18:46:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/95b6e11daded3e4cafd6742dcd36582c2f096fa0,95b6e11daded3e4cafd6742dcd36582c2f096fa0,"Pass ivars to define_helper_method as Array, not String"
+varyonic,2018-10-02 21:00:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0b23ced60010bb6ba5e5d7c325044a81ef844db6,0b23ced60010bb6ba5e5d7c325044a81ef844db6,Hoist undef_method helper_method_name
+varyonic,2018-10-02 17:47:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a724d235a1f9303811016d11568912cd80056661,a724d235a1f9303811016d11568912cd80056661,Pass symbols for define_helper_method prefix and suffix.
+varyonic,2018-10-02 17:13:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d7cf784babc4af4104b17f6275bbbd2cb350fd1b,d7cf784babc4af4104b17f6275bbbd2cb350fd1b,Extract method ‘define_helper_method’
+javierjulio,2018-09-22 00:09:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d6c58b180dacf18067f8b8650e8669954f43631c,d6c58b180dacf18067f8b8650e8669954f43631c,"Merge pull request #454 from activeadmin/gemfile_management
+
+Gemfile management"
+deivid-rodriguez,2018-09-19 23:54:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/370f83fb5e2dea8749e13c23d523302a583be18a,370f83fb5e2dea8749e13c23d523302a583be18a,"Revert ""Remove deployment bundler arg""
+
+This reverts commit ea2e085f7b5b9d8f5fa9add33f7d6be402eee6e9.
+
+I think the reason I needed this was that my initial patch was
+incorrect."
+deivid-rodriguez,2018-09-19 23:52:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/96199464e52c8c5c812974d55dd7e137ded28e8f,96199464e52c8c5c812974d55dd7e137ded28e8f,"Move lock file removal to before_install
+
+So that it's run before bundle install. We can also remove back the
+default `script:` as it was before."
+deivid-rodriguez,2018-09-19 22:18:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ea2e085f7b5b9d8f5fa9add33f7d6be402eee6e9,ea2e085f7b5b9d8f5fa9add33f7d6be402eee6e9,Remove deployment bundler arg
+deivid-rodriguez,2018-09-19 21:59:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/709da98c32b157022f223219ad42d06913679717,709da98c32b157022f223219ad42d06913679717,"Test against latest dependencies in CI
+
+This is not very good for contributors, since they might get a failing
+build when it's not their fault and build passes locally, but it's good
+for discovering incompatibilities in latest dependencies.
+
+We decided to go for the latter."
+deivid-rodriguez,2018-09-19 21:58:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ce5f833b1ff4106c08262d8a3273e80cf16e2cdf,ce5f833b1ff4106c08262d8a3273e80cf16e2cdf,"Add lockfiles to the repo
+
+So the resulting environment for a given Gemfile is deterministic."
+deivid-rodriguez,2018-09-19 21:53:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e866626a504f844ec40207a05fcac275a54ea42f,e866626a504f844ec40207a05fcac275a54ea42f,"Move latest Gemfile to repo root
+
+So that contributors have an initial working bundle."
+varyonic,2018-09-19 18:24:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7c39bf2a8c41e22d7bdab95a5ed1a2943135335c,7c39bf2a8c41e22d7bdab95a5ed1a2943135335c,"Merge pull request #453 from activeadmin/tidelift-support
+
+Tidelift support"
+varyonic,2018-09-18 20:39:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6ee721a188afe193fc864cd7ce54b509e496ae32,6ee721a188afe193fc864cd7ce54b509e496ae32,Add Tidelift badge and link to README.
+varyonic,2018-09-18 20:33:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b03206287d9727c10f7a8916445af8b476883226,b03206287d9727c10f7a8916445af8b476883226,Remove unused Gemfile.lock missed by e258e88
+varyonic,2018-08-10 17:36:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/44276af84e669d46905f1902c4721b72b4344779,44276af84e669d46905f1902c4721b72b4344779,"Merge pull request #451 from activeadmin/release/1.9.0
+
+Prepare for release 1.9.0"
+varyonic,2018-08-10 15:25:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6904664d19eebfa4c1457a554ca97439f4a78e9d,6904664d19eebfa4c1457a554ca97439f4a78e9d,Allow JRuby failures.
+varyonic,2018-03-24 14:22:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ddac102e35db39ed9bdbbb93a44e2b05a926a432,ddac102e35db39ed9bdbbb93a44e2b05a926a432,"Bump version, update CHANGELOG."
+varyonic,2018-08-10 14:45:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/538ba4adf02387dbc7cdc6f16dd6f530a241fb29,538ba4adf02387dbc7cdc6f16dd6f530a241fb29,"Drop Ruby 2.2 support, past end of life."
+varyonic,2018-03-24 14:35:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e258e889b06f2fbf3571635b888606e1d59f5af7,e258e889b06f2fbf3571635b888606e1d59f5af7,Clean up unused Gemfiles.
+varyonic,2018-07-31 19:06:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/743962e46fdbbf10e31cb234b95ab65cd6d1ab43,743962e46fdbbf10e31cb234b95ab65cd6d1ab43,"Merge pull request #449 from jpawlyn/fix/dependencies-for-rails-5.2.1
+
+Fix dependencies so gem works with rails 5.2.1.rc1 and all other 5.2.x versions"
+jpawlyn,2018-07-31 10:38:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a90768d5b1027c3fda86d923e11ae188757e90ce,a90768d5b1027c3fda86d923e11ae188757e90ce,Fix dependencies so gem works with rails 5.2.1 and all other 5.2.x versions
+timoschilling,2018-06-19 18:09:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bb9047bf95b1b2861b60db69e958c23957cb8099,bb9047bf95b1b2861b60db69e958c23957cb8099,"Merge pull request #448 from activeadmin/update-dependencies
+
+update dependencies"
+timoschilling,2018-06-19 07:27:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a7e87a817981c0023f4797fa64526ae68227d51a,a7e87a817981c0023f4797fa64526ae68227d51a,update dependencies
+varyonic,2018-02-23 13:39:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/652686148f554fb9ce0ebee5d857b3d3decc0272,652686148f554fb9ce0ebee5d857b3d3decc0272,"Merge pull request #446 from nicolasleger/patch-1
+
+[CI] Test against Ruby 2.x"
+nicolasleger,2018-02-21 13:30:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ffc23baa27ec844a976577b8858788bc813e208c,ffc23baa27ec844a976577b8858788bc813e208c,[CI] Test against Ruby 2.x
+varyonic,2017-12-01 19:39:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8603b3054683fa798134d76c12a32d9e287b307e,8603b3054683fa798134d76c12a32d9e287b307e,"Merge pull request #443 from activeadmin/rails-5.2
+
+Verify support for Rails 5.2."
+varyonic,2017-11-30 01:03:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0a771e79d7baa9acf140336c870831ce5dd694be,0a771e79d7baa9acf140336c870831ce5dd694be,Test support for Rails 5.2.
+rafaelfranca,2017-11-21 20:20:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/46493ce10fc7d9f0bcd753f5d298c67ca83cf9b0,46493ce10fc7d9f0bcd753f5d298c67ca83cf9b0,"Merge pull request #440 from fernandomm/action-controller-parameters-fix
+
+Fix URL helpers not working with ActionController::Parameters"
+fernandomm,2017-11-20 12:54:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1570b9da5fbcae518e1f3b1655b7ee3b54c2e493,1570b9da5fbcae518e1f3b1655b7ee3b54c2e493,Remove check to verify if ActionController::Parameters is defined
+fernandomm,2017-11-20 11:20:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2b8b2e402417d28791801249b95d2648259437f7,2b8b2e402417d28791801249b95d2648259437f7,Apply change requested in the PR review
+fernandomm,2017-11-11 18:53:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1887777be86d999825cbcf55f11ec14109360266,1887777be86d999825cbcf55f11ec14109360266,"Fix URL helpers not working with ActionController::Parameters
+
+Helpers like collection_url/path use extract_options! which won't work with ActionController::Parameters since it isn't a hash.
+
+This PR adds a check and transform ActionController::Parameters to a hash if necessary, making URL helpers behave like the Rails ones when parameter is a ActionController::Parameters object.
+
+Fix #439."
+varyonic,2017-06-15 17:15:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5d18499877852437f2c058747f07bc80e46557fc,5d18499877852437f2c058747f07bc80e46557fc,"Merge pull request #437 from activeadmin/travis
+
+Test support for Ruby 2.4, drop unsupported configurations"
+varyonic,2017-06-07 01:14:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/82c0ce1020e085fdbbd000fbdd0b11e62d476793,82c0ce1020e085fdbbd000fbdd0b11e62d476793,Update CHANGELOG.
+varyonic,2017-06-06 18:20:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/53eb5f6a4b490090f8d09f9f8fa868929b824043,53eb5f6a4b490090f8d09f9f8fa868929b824043,"Add Ruby 2.4, released December 2016.
+Drop Ruby 2.1, desupported April 2017.
+Community support for Rails 3.2/4.0 ended December 2015, 4.1 in 2016."
+varyonic,2017-06-08 17:56:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ff1a206b5126f8f084ff14a9f01df6f07be0463e,ff1a206b5126f8f084ff14a9f01df6f07be0463e,"Merge pull request #339 from xamut/master
+
+checkout ""association_chain"" method for default behavior"
+varyonic,2017-05-24 18:11:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/398a3bf731d101d26064467ead6a101d825cc02c,398a3bf731d101d26064467ead6a101d825cc02c,"Merge pull request #404 from lumoslabs/isolated_engine_models
+
+Correct request_name in isolated engines"
+varyonic,2017-05-19 18:05:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/051b3c9e7b22e3d45c090c1c91f3569eafc13d41,051b3c9e7b22e3d45c090c1c91f3569eafc13d41,"Merge pull request #390 from activeadmin/remove-http-caching-responder
+
+Removed HttpCacheResponder, closes #342"
+bitboxer,2015-01-22 14:47:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9fb8e1cbf346cf217483b0a45ce04384b10c41e,a9fb8e1cbf346cf217483b0a45ce04384b10c41e,"Removed HttpCacheResponder, closes #342
+
+This responder hit us @bitcrowd and @brendon by
+surprise. It only adds caching if used as an API
+endpoint, not when serving html pages."
+varyonic,2017-05-19 17:13:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/65a4cea1fb2e58a70abd3f6b00f632b3845543c9,65a4cea1fb2e58a70abd3f6b00f632b3845543c9,"Merge pull request #326 from activeadmin/hotfix/class_name_in_belongs_to
+
+Fixed issue when unnecessary modification of the class_name in belongs_to breaks class name"
+cheef,2013-10-09 16:25:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/acebc1c0b0d34ba0a1df0644a35995fa0f026f25,acebc1c0b0d34ba0a1df0644a35995fa0f026f25,Fixed issue when unnecessary modification of the class_name in belongs_to breaks class name
+Fivell,2017-05-03 11:20:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2c6c8caeeb2fe6d3ae8aabc138bf7ea08e781b9b,2c6c8caeeb2fe6d3ae8aabc138bf7ea08e781b9b,"Merge pull request #435 from activeadmin/1.7.2
+
+Prepare for the 1.7.2 release"
+Fivell,2017-05-03 09:15:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fbb8e2616ced8963d9cb5140c720b93797d9d86d,fbb8e2616ced8963d9cb5140c720b93797d9d86d,Prepare for the 1.7.2 release
+deivid-rodriguez,2017-05-02 18:09:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d2f0975003dd3cbe6932ac45b9ca7fe70e0034a0,d2f0975003dd3cbe6932ac45b9ca7fe70e0034a0,"Merge pull request #433 from maschwenk/rails-5.1
+
+Support Rails 5.1"
+maschwenk,2017-05-02 08:36:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/34d8fde5b3d6cee676660f5040935b53d2ee3c69,34d8fde5b3d6cee676660f5040935b53d2ee3c69,Request/respond backwards compatiblity
+maschwenk,2017-05-02 08:28:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/44620c2f9851cd237074ff020e50f7e5b4f25f7b,44620c2f9851cd237074ff020e50f7e5b4f25f7b,Fix render :text -> :plain
+maschwenk,2017-05-02 07:09:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b86825e57982709b5a47e8a8607df9506fd5de1d,b86825e57982709b5a47e8a8607df9506fd5de1d,Utilize helper for Rails 5 kw args params deprecation
+maschwenk,2017-04-29 21:29:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/013e10c76c0c31fcc76e536e3e7c3c6b98b96ca6,013e10c76c0c31fcc76e536e3e7c3c6b98b96ca6,Relax Rails dependency
+maschwenk,2017-04-28 08:36:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/945496cea0fe13b0c57a9e6a6f761f6b0b1eb113,945496cea0fe13b0c57a9e6a6f761f6b0b1eb113,Support Rails 5.1
+rafaelfranca,2017-04-11 14:30:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0839b077a791013e741ea12cb793b6809a007317,0839b077a791013e741ea12cb793b6809a007317,"Merge pull request #432 from activeadmin/release
+
+Prepare for the 1.7.1 release"
+rafaelfranca,2017-04-07 20:24:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eae4e851945edc55c5cc916e887335813f8e72ed,eae4e851945edc55c5cc916e887335813f8e72ed,Prepare for the 1.7.1 release
+varyonic,2017-03-08 00:52:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eea3aa21f3867dc182e4db24d1c765bdbcb3df34,eea3aa21f3867dc182e4db24d1c765bdbcb3df34,"Merge pull request #430 from noahpatterson/patch-1
+
+Fix deprecation of interpolation_options in responders"
+noahpatterson,2017-03-07 15:30:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b287575cc2975e53d727d48ea6907d103134fdc3,b287575cc2975e53d727d48ea6907d103134fdc3,"Fix deprecation of interpolation_options in responders
+
+The `interpolation_options` method is deprecated. Update to the suggested `flash_interpolation_options` method. This is only a documentation change to the suggested override."
+rafaelfranca,2017-02-15 19:34:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/615b0d5c37a4bfc86ad18ec22b90d161fd996130,615b0d5c37a4bfc86ad18ec22b90d161fd996130,"Merge pull request #429 from activeadmin/fix-428
+
+Do not use local jump in the on_load hook"
+rafaelfranca,2017-02-15 19:06:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6eb6158a1c1efb59b49ac786812a5a350b1db8ea,6eb6158a1c1efb59b49ac786812a5a350b1db8ea,"Do not use local jump in the on_load hook
+
+Some versions of Ruby will fail with a LocalJumpError.
+
+Fixes #428"
+rafaelfranca,2017-02-14 00:42:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f04e0422213fb9e585c252db312c79e33399c8cc,f04e0422213fb9e585c252db312c79e33399c8cc,"Merge pull request #427 from activeadmin/fix-ivar-methoda
+
+Keep returning nil when the instance variable is not present"
+rafaelfranca,2017-02-13 23:34:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/415846503ac419c6b6bbabf686b8663cf92a54f4,415846503ac419c6b6bbabf686b8663cf92a54f4,"Nodoc the private API methods
+
+Private methods are private API by default but seems IH have some public
+API private methods so we need to be explicit."
+rafaelfranca,2017-02-13 23:33:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f6f0c6f7a07361cf74c02c1dad86af96a65ab59b,f6f0c6f7a07361cf74c02c1dad86af96a65ab59b,"Keep returning nil when the instance variable is not present
+
+In fccf98fbcefe7891e0661f4313b4e658cf736089 there were a subtle behavior
+change that was returning false when the instance variable was not
+defined."
+rafaelfranca,2017-02-12 17:37:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6fa6e5b9d29c45c04db35ff42f4d9db48cf05716,6fa6e5b9d29c45c04db35ff42f4d9db48cf05716,"Merge pull request #426 from activeadmin/refactoring-engine
+
+Refactoring engine and initialization"
+rafaelfranca,2017-02-07 17:11:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a7fc2cadcb1d2b2e83f2ca0d05351039dd551045,a7fc2cadcb1d2b2e83f2ca0d05351039dd551045,Develop with latest rails by default
+rafaelfranca,2017-02-07 15:44:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4cc8ced1f7083d5f03c32777eb66333453da62d7,4cc8ced1f7083d5f03c32777eb66333453da62d7,"Use ActiveSupport.on_load hooks to extend ActionController::Base
+
+This will avoid loading ActionController::Base at boot time and mess
+with the Rails initialization process."
+rafaelfranca,2017-02-07 15:38:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/af1fba285e0245d1c779323b6d6c0eca679b5fef,af1fba285e0245d1c779323b6d6c0eca679b5fef,"Move the engine to its own file
+
+It makes easy to understand the project structure."
+rafaelfranca,2017-02-07 16:19:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c8ad6a861288b91abdf8745c005016cb5ff1d4ad,c8ad6a861288b91abdf8745c005016cb5ff1d4ad,"Merge pull request #425 from activeadmin/copyright-notice-and-cleanup
+
+Copyright notice and cleanup"
+rafaelfranca,2017-02-07 15:31:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fe3fb91eab4ee3006b0a385466494d345c2255f8,fe3fb91eab4ee3006b0a385466494d345c2255f8,Upgrade the year at the copyright notice
+rafaelfranca,2017-02-07 15:31:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/de5b8b7351ceaeac628838de07461b7fbdfe8312,de5b8b7351ceaeac628838de07461b7fbdfe8312,:scissors:
+varyonic,2017-02-07 15:15:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/749d8994be4372116862444cdb36704e85e45553,749d8994be4372116862444cdb36704e85e45553,"Merge pull request #424 from activeadmin/rafaelfranca-patch-1
+
+Add has_scope bump in the CHANGELOG"
+rafaelfranca,2017-02-07 12:51:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9f55d21a0fb499a2c7f3c496818b344c09968f10,9f55d21a0fb499a2c7f3c496818b344c09968f10,Add has_scope bump in the CHANGELOG
+varyonic,2017-01-31 00:18:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3efcc730d2390b7f9c7c2bd69a638e92d8137d33,3efcc730d2390b7f9c7c2bd69a638e92d8137d33,"Merge pull request #422 from activeadmin/v1-7-0
+
+release v1.7.0"
+timoschilling,2017-01-30 21:29:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/391c69353b45229875674475cc33a447391c65c4,391c69353b45229875674475cc33a447391c65c4,release v1.7.0
+varyonic,2017-01-29 19:39:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/95d5f93e92e757aefeba6515ec67148ea4e9dfdf,95d5f93e92e757aefeba6515ec67148ea4e9dfdf,"Merge pull request #421 from varyonic/rails-5
+
+Verify Rails 5 support"
+varyonic,2017-01-28 22:00:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fccf98fbcefe7891e0661f4313b4e658cf736089,fccf98fbcefe7891e0661f4313b4e658cf736089,Suppress ruby warning that instance variable undefined.
+varyonic,2017-01-28 16:35:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b4ec96e3aaaf6d32c6dbbd25fd9b8220c4fe21a0,b4ec96e3aaaf6d32c6dbbd25fd9b8220c4fe21a0,Suppress ruby warning that method redefined.
+varyonic,2017-01-28 18:13:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/00d1c0bb7054b6994ca4fd7b7ac6bdd4e5c4a9d1,00d1c0bb7054b6994ca4fd7b7ac6bdd4e5c4a9d1,Fix (ignore) random failures.
+varyonic,2017-01-28 16:30:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/52f81f214283c98983c5b8ecc723824f8cea74b6,52f81f214283c98983c5b8ecc723824f8cea74b6,Fix minitest deprecation warning.
+varyonic,2017-01-27 14:26:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/14931c5adb53daad49896005527dfd7fc6a727e0,14931c5adb53daad49896005527dfd7fc6a727e0,"Rails 5 TestRequest has new params, TestResponse moved to ActionDispatch."
+varyonic,2017-01-26 19:22:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/25c49cc4ef3539c972142e3a43de1f217d927fb2,25c49cc4ef3539c972142e3a43de1f217d927fb2,Test with Rails 5.0.
+varyonic,2017-01-25 18:17:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e48c1bd28e98d02a0d0cf4765f6ba531c6f5d1bc,e48c1bd28e98d02a0d0cf4765f6ba531c6f5d1bc,"Merge pull request #420 from varyonic/fix-tests
+
+Fix tests"
+varyonic,2017-01-23 18:38:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e4053414433a301f0c0c7b6f19d06dbece17dc51,e4053414433a301f0c0c7b6f19d06dbece17dc51,"Rubinius 2.2 is obsolete, later versions unsupported, see #389."
+varyonic,2017-01-22 19:10:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9b64ecb5a41399ff5434b3967d48226c5363c0b4,9b64ecb5a41399ff5434b3967d48226c5363c0b4,Update to JRuby 9.1.
+varyonic,2017-01-22 18:38:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/60a89c311b15ec6c9f4cf532e29ca22be0dca6bb,60a89c311b15ec6c9f4cf532e29ca22be0dca6bb,Add test-unit to Rails 3.2 Gemfile to support Ruby 2.2.
+varyonic,2017-01-22 19:49:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/532f3311da0d3274e25a0998001c2fc1cd1daba3,532f3311da0d3274e25a0998001c2fc1cd1daba3,Update Gemfile.lock to reflect inherited_resources 1.6 / has_scope 0.7
+varyonic,2017-01-22 19:00:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/849eecd13dd699c2528878165b87b992fc083b88,849eecd13dd699c2528878165b87b992fc083b88,Update README: new maintainers.
+rafaelfranca,2016-10-17 18:15:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6707bf7e45b9a25e84c6c95a37d67b1dc28d211d,6707bf7e45b9a25e84c6c95a37d67b1dc28d211d,"Merge pull request #418 from OlegSmelov/master
+
+Fix rescue from LoadError in engine loading"
+OlegSmelov,2016-10-11 18:20:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/db803393cf852656b8d516ca0d54ccaf9c2ea2af,db803393cf852656b8d516ca0d54ccaf9c2ea2af,Fix rescue from LoadError in engine loading
+rafaelfranca,2016-07-17 06:54:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4434f0ae72f790cf371728838c927c338100555d,4434f0ae72f790cf371728838c927c338100555d,"Merge pull request #411 from activeadmin/master
+
+Version bumps for Rails 5"
+seanlinsley,2016-07-14 17:02:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ba9467db4817944591df35dfe340f4c05a948033,ba9467db4817944591df35dfe340f4c05a948033,update Ruby versions in Travis config
+seanlinsley,2016-07-14 16:58:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6f4f9daedf5de04487965edf97eb4ad7b5770c0e,6f4f9daedf5de04487965edf97eb4ad7b5770c0e,remove support for Ruby >= 2.1
+timoschilling,2016-07-01 03:38:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d50b05f7e9e36dd45f065871e836a57a33ba4118,d50b05f7e9e36dd45f065871e836a57a33ba4118,allow has_scope > 6
+timoschilling,2016-07-01 02:57:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ecd3a489889de0f9bfa78c5f27359964f33e9671,ecd3a489889de0f9bfa78c5f27359964f33e9671,allow rails 5.0
+brianswko,2015-09-01 18:02:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e61f9bce9f8e6096f67047f33bd82ed9e5a0d580,e61f9bce9f8e6096f67047f33bd82ed9e5a0d580,use model_name.param_key if available
+rafaelfranca,2015-08-12 14:42:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eb430c1ea8c5118bd0437108b14a5d0d0a6b7196,eb430c1ea8c5118bd0437108b14a5d0d0a6b7196,"Merge pull request #401 from rin/patch-2
+
+Fix typos in documentation."
+rin,2015-08-12 13:45:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b15c7f3bb61568d2e93470474343147d6465e620,b15c7f3bb61568d2e93470474343147d6465e620,Fix typos in documentation.
+rafaelfranca,2015-07-21 14:01:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1ca42fedd8831f083490089dbf4609bc7e354fff,1ca42fedd8831f083490089dbf4609bc7e354fff,"Merge pull request #400 from rin/patch-1
+
+Fix typo."
+rin,2015-07-21 13:42:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3b70d6d42fe9a091ba944db801deadcba80e3037,3b70d6d42fe9a091ba944db801deadcba80e3037,Fix typo.
+rafaelfranca,2015-04-09 17:09:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d43bd6d1adfd90e0d73ec9e6191a3c9eb612c375,d43bd6d1adfd90e0d73ec9e6191a3c9eb612c375,"Merge pull request #382 from juniorz/mountable_engines
+
+Fix url helpers on mountable engines"
+rafaelfranca,2015-01-05 12:42:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ff1c991307ff78cce98882b6986aeabbbcfd70c4,ff1c991307ff78cce98882b6986aeabbbcfd70c4,"Merge pull request #389 from dontfidget/rails-4-2
+
+run specs on travis against all major rails versions"
+ashanbrown,2015-01-05 02:18:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bfb28eb54bf62c0643d8b9d300cf199e61d894c5,bfb28eb54bf62c0643d8b9d300cf199e61d894c5,also test against rails 3.2 and 4.0
+ashanbrown,2015-01-04 23:17:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7c29a616d9bcbafcf3627ace8a443b5f48cc9be0,7c29a616d9bcbafcf3627ace8a443b5f48cc9be0,test against rails 4.1 and rails 4.2 on travis
+rafaelfranca,2015-01-04 23:07:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4e348783157488b48ab6ed11afcd1e31604987aa,4e348783157488b48ab6ed11afcd1e31604987aa,"Merge pull request #387 from dontfidget/rails-4-2
+
+allow test cases to safely modify controller class by making it unique p..."
+ashanbrown,2015-01-04 23:04:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e2034749655f10654665683e20ed24324168e627,e2034749655f10654665683e20ed24324168e627,fix specs to pass on rails 4.2
+ashanbrown,2014-12-29 17:28:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b5beebdb85ed7c58e8424aad4b9bc83227d6a069,b5beebdb85ed7c58e8424aad4b9bc83227d6a069,eliminate attempts to restore controller state
+ashanbrown,2014-12-29 01:34:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ac83b53a4117eeb1d56112d1fc33b2cf4678bf0f,ac83b53a4117eeb1d56112d1fc33b2cf4678bf0f,allow test cases to safely modify controller class by making it unique per test case
+juniorz,2011-12-27 00:53:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1a549db1153c7bd53a8382dee1102bbe429576ce,1a549db1153c7bd53a8382dee1102bbe429576ce,fix url helpers on mountable engines
+rafaelfranca,2014-10-29 20:14:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c35f4a88e4db67452c894d8158c989ec87afa7f0,c35f4a88e4db67452c894d8158c989ec87afa7f0,"Merge pull request #378 from dmitri-wm/master
+
+change controller scaffold template in order to build resource params"
+dmitri-wm,2014-10-27 16:01:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/72d826c6b4884460b6dc03ff6e7041a1f9c2137a,72d826c6b4884460b6dc03ff6e7041a1f9c2137a,generate resource params if rails 4 app or used strong params gem
+dmitri-wm,2014-10-24 10:21:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1c044c62cee66be8dd6dc4bc5dd18b1179af78aa,1c044c62cee66be8dd6dc4bc5dd18b1179af78aa,change fetch to require in resource params
+dmitri-wm,2014-10-23 08:01:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7be1cbf63f64794ce978ca0f485a56db7b61c2e4,7be1cbf63f64794ce978ca0f485a56db7b61c2e4,change controller scaffold template in order to build resource params
+rafaelfranca,2014-10-10 17:03:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cc93af4584c0671c57beebd9b2abd275f09beff8,cc93af4584c0671c57beebd9b2abd275f09beff8,"Merge pull request #316 from gunnarblom/patch-1
+
+Make pagination example work for multiple controllers"
+rafaelfranca,2014-10-10 17:00:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e8abf281b55f2f14653d1fa22ba7cb722ddab26,5e8abf281b55f2f14653d1fa22ba7cb722ddab26,"Merge pull request #348 from evilguc/resource_class_definition_fix
+
+fix for resource_class default value definition"
+rafaelfranca,2014-10-09 22:30:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/24c20248e0a88892e10949ef42d262c11f59e770,24c20248e0a88892e10949ef42d262c11f59e770,"Merge pull request #376 from petergoldstein/feature/minimal_fix_for_parent_class
+
+Minimal fix for parent class issue."
+petergoldstein,2014-09-29 18:20:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/159670e70771a69f218dd6439888619cb1a9a720,159670e70771a69f218dd6439888619cb1a9a720,This is a minimal fix for the parent class issue in the case of a namespaced controller and a non-namespaced model.  Deliberately makes the minimal change to existing code to address the issue.
+andriytyurnikov,2014-09-01 10:25:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/02b99fb76136b28b403dedcb1255d5205c41640b,02b99fb76136b28b403dedcb1255d5205c41640b,"mocha updated
+turn replaced with minitest-rg"
+josevalim,2014-06-03 14:55:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/38009de075d4c7e5170a582af9c09002ff6fc4b5,38009de075d4c7e5170a582af9c09002ff6fc4b5,Update LICENSE and other files
+josevalim,2014-06-03 14:48:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/905b04ac35f50f1dc8c12e0137535cbbed638c67,905b04ac35f50f1dc8c12e0137535cbbed638c67,Update README.md
+rafaelfranca,2014-06-03 02:51:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/039e1794921ef595818a3115450c5d1d3038c40f,039e1794921ef595818a3115450c5d1d3038c40f,"Merge pull request #366 from lksv/master
+
+Update responders dependency from 1.0.0 to 1.1.0"
+lksv,2014-06-02 13:35:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b325f6920b3ab6fb9f545cfcf04eeec3da2bcdd5,b325f6920b3ab6fb9f545cfcf04eeec3da2bcdd5,Update responders dependency from 1.0.0 to 1.1.0
+rafaelfranca,2014-05-06 00:55:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/559161287cd705def4868d3c0de6ddc2d8a8564c,559161287cd705def4868d3c0de6ddc2d8a8564c,"Merge pull request #327 from elgalu/patch-1
+
+Small README typo ""want to to"" for ""want to"""
+rafaelfranca,2014-05-06 00:55:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e13e106defc342efa3f174c202cf33fc2a0ddd8e,e13e106defc342efa3f174c202cf33fc2a0ddd8e,"Merge pull request #331 from edgurgel/patch-1
+
+Fix typo"
+rafaelfranca,2014-05-06 00:55:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f7e13ccdde480ecb4f745200e4a89020507acfa6,f7e13ccdde480ecb4f745200e4a89020507acfa6,"Merge pull request #332 from divineforest/update-responders-dependency
+
+Update responders dependency from 1.0.0.rc to 1.0.0"
+rafaelfranca,2014-05-06 00:54:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/68dd475af291bb4bab378d43193411f9f053f10a,68dd475af291bb4bab378d43193411f9f053f10a,"Merge pull request #357 from rafaelgoulart/master
+
+syntax highlight about Rails 4 strong parameters notation in README"
+joelmoss,2014-04-29 08:45:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c30230765db3377ea05610e69fba7b251dda2b50,c30230765db3377ea05610e69fba7b251dda2b50,"Merge pull request #361 from juanpastas/patch-1
+
+Update README.md"
+rafaelgoulart,2014-04-06 22:11:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/94930cdf6059c73f3163739ead79a98b44bb42e5,94930cdf6059c73f3163739ead79a98b44bb42e5,apply syntax highlight about Rails 4 strong parameters notation in README
+joelmoss,2014-04-04 08:56:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c7b387198ff5f5b19f5da15d19e7ce742c59e4b7,c7b387198ff5f5b19f5da15d19e7ce742c59e4b7,"Merge pull request #353 from Hirurg103/master
+
+Fix README: remove excess -to- from '... you do so because you want to to change its redirect url ...'"
+joelmoss,2014-04-04 08:52:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1e186175465c55b233b0452e4c72c5856becfbbc,1e186175465c55b233b0452e4c72c5856becfbbc,"Merge pull request #286 from prijutme4ty/strong_params
+
+strong parameter support refined to allow standard Rails 4 notation"
+VorontsovIE,2014-04-04 01:06:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d1ad9347cb93df0754c7d1e87c51012f2b6554a8,d1ad9347cb93df0754c7d1e87c51012f2b6554a8,strong parameters support refined
+Hirurg103,2014-03-23 18:53:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/304beb476d1c1b8b5025781b7a509d48eef6063b,304beb476d1c1b8b5025781b7a509d48eef6063b,Fix README: remove excess -to- from '... you do so because you want to to change its redirect url ...'
+joelmoss,2014-03-19 16:30:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5b61f8a58ab39ea8be11435e750ea90c6a5925af,5b61f8a58ab39ea8be11435e750ea90c6a5925af,"Merge pull request #347 from blaind/master
+
+Documentation for adding exta methods to update"
+evilguc,2014-02-22 19:54:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0662450faf01ae89b5279b6bce7095bcb50303fc,0662450faf01ae89b5279b6bce7095bcb50303fc,fix for resource_class default value definition
+blaind,2014-02-15 15:17:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d07d6cdbd2d1a4d8aaf602ef3bb0dc8c622c5b44,d07d6cdbd2d1a4d8aaf602ef3bb0dc8c622c5b44,Documentation for adding exta methods to update
+joelmoss,2013-11-21 16:28:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e4fb9fc804488532014307190812946d63a480a3,e4fb9fc804488532014307190812946d63a480a3,"Merge pull request #338 from milushov/patch-1
+
+fix readme"
+xamut,2013-11-21 05:11:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0c9556e76f82f01a79819105d8c83b33f9731e1a,0c9556e76f82f01a79819105d8c83b33f9731e1a,"checkout ""association_chain"" method for default behavior"
+milushov,2013-11-19 11:58:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f7a6372b9b1f7ffb2ad8c6bc4e28c31873c1413,2f7a6372b9b1f7ffb2ad8c6bc4e28c31873c1413,make link
+joelmoss,2013-11-08 16:16:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3c316911ff433ef690e8093d29e122ce0b7f1001,3c316911ff433ef690e8093d29e122ce0b7f1001,"Merge pull request #335 from onemanstartup/readme_update
+
+Update README.md"
+onemanstartup,2013-11-08 16:06:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/87695ffd09c3ace6b2875f25728ccc5ab1916d7b,87695ffd09c3ace6b2875f25728ccc5ab1916d7b,"Update README.md
+
+I found this problem when using InheritedResources. Here fix and explanation why https://github.com/rails/rails/issues/9534"
+joelmoss,2013-11-06 13:51:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e7ada04505d8665afb4e3da7c8632bb1db3f4fd4,e7ada04505d8665afb4e3da7c8632bb1db3f4fd4,"Merge pull request #334 from nerde/master
+
+Minor spell fix."
+nerde,2013-11-06 12:41:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/30e8b16385d62ae1905f151add1ae876b9696953,30e8b16385d62ae1905f151add1ae876b9696953,Minor spell fix.
+divineforest,2013-10-22 19:06:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/db84252d0afb7ef91132ac3525d7fa64c73ca5b4,db84252d0afb7ef91132ac3525d7fa64c73ca5b4,Update responders dependency from 1.0.0.rc to 1.0.0
+edgurgel,2013-10-21 15:52:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4f161b4aef428630e5d92a993517a86608b59b77,4f161b4aef428630e5d92a993517a86608b59b77,"Fix typo
+
+[ci skip]"
+elgalu,2013-10-10 21:53:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/972a63cf45c8a5ec43d41557ccab6f412e45aabb,972a63cf45c8a5ec43d41557ccab6f412e45aabb,"Small README typo ""want to to"" for ""want to"""
+joelmoss,2013-09-05 18:12:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cf9c44845c6af46739978fdca8ed06ea840d01a1,cf9c44845c6af46739978fdca8ed06ea840d01a1,"Merge pull request #313 from bschaeffer/patch-1
+
+Update README to acutally link to has_scope and responders"
+bschaeffer,2013-09-05 17:14:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5934a6df1ccb7ae6efbaf67ac9f272be1079efe7,5934a6df1ccb7ae6efbaf67ac9f272be1079efe7,Update README to acutally link to has_scope and responders
+joelmoss,2013-09-03 15:27:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/58f81b47f94881116e9e8956e99bf9b55dfa4058,58f81b47f94881116e9e8956e99bf9b55dfa4058,"Merge pull request #311 from evilguc/master
+
+typo in comment in lib/inherited_resources/class_methods.rb"
+i-gutsalyuk-itransition,2013-09-03 15:14:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bd505478b77c0acf946caa8fce866637ab7eec65,bd505478b77c0acf946caa8fce866637ab7eec65,typo in comment in lib/inherited_resources/class_methods.rb
+joelmoss,2013-08-20 14:53:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fdc9de6ca213ab8f3b97f37e5d071363198e018a,fdc9de6ca213ab8f3b97f37e5d071363198e018a,"Merge pull request #308 from funkydrummer/master
+
+typo in test/class_methods_test.rb"
+joelmoss,2013-08-19 14:45:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c8af8cfc33ebef9333df4928ccdd93223f187b83,c8af8cfc33ebef9333df4928ccdd93223f187b83,"Merge pull request #307 from Bonias/patch-1
+
+README - fix permitted_params info"
+Bonias,2013-08-19 13:36:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9bbbed19b69774214c794bd46b63449ff7d635f4,9bbbed19b69774214c794bd46b63449ff7d635f4,README - fix permitted_params info
+joelmoss,2013-08-18 16:52:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1242d7680a61ee731ea260dd24293b6b11fecedd,1242d7680a61ee731ea260dd24293b6b11fecedd,Update CHANGELOG
+joelmoss,2013-08-18 16:51:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/02f0906243d2c7754099d7c665ecac79f716aa93,02f0906243d2c7754099d7c665ecac79f716aa93,"Merge pull request #303 from ka8725/namespaced_model
+
+Fetch namespaced model in the namespaced controller firstly"
+joelmoss,2013-08-18 16:43:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c1bb61d2326d8c7e67532fa1906483314c5be4d5,c1bb61d2326d8c7e67532fa1906483314c5be4d5,"Merge pull request #302 from ka8725/fix_class_methods_test
+
+Pass test/class_methods_test.rb to in isolation"
+joelmoss,2013-08-18 16:43:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0fb50c24629f075cc7617fa0002408c422908d96,0fb50c24629f075cc7617fa0002408c422908d96,"Merge pull request #304 from ka8725/fix_gemfile_lock
+
+Fix actual version for inherited_resources"
+ka8725,2013-08-12 12:25:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/630a2775fab351540fc9bd8aa0ce43d4d039f44a,630a2775fab351540fc9bd8aa0ce43d4d039f44a,Fetch namespaced model in the namespaced controller firstly
+ka8725,2013-08-12 10:47:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/735dc0dfc945fd7316b03e75f133e2fd8ceb8666,735dc0dfc945fd7316b03e75f133e2fd8ceb8666,Lock 1.4.1 version to Gemfile.lock
+ka8725,2013-08-12 10:48:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ce819c1d93a11c62d2ca4fe9841f6408e2cf19ff,ce819c1d93a11c62d2ca4fe9841f6408e2cf19ff,Pass test/class_methods_test.rb to in isolation
+joelmoss,2013-07-31 19:32:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ae1516a3f1a01f98beac3334f76831a1c793c521,ae1516a3f1a01f98beac3334f76831a1c793c521,Released!
+joelmoss,2013-07-25 21:02:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6d451d4bb2026b6c1920ba15838adb4d4b2aa3a4,6d451d4bb2026b6c1920ba15838adb4d4b2aa3a4,Bumped version to 1.4.1 and updated CHANGELOG
+joelmoss,2013-07-25 20:58:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d46855ae33836a953a4099af955e356c422c21c6,d46855ae33836a953a4099af955e356c422c21c6,Fixed tests to work with Rails 4 and updated bundle and Gemfile for use with Rails 4
+joelmoss,2013-07-25 19:47:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8dde92431acc19cd0289883b9e9a0376fa95e458,8dde92431acc19cd0289883b9e9a0376fa95e458,"Merge pull request #294 from atd/patch-1
+
+Fix typo in ActionController::Base.inherit_resources doc"
+joelmoss,2013-07-25 19:46:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/03754c95a045b508c44bfe0cbfe20150abc90dfc,03754c95a045b508c44bfe0cbfe20150abc90dfc,"Merge pull request #298 from dougo/deprecated-Relation#all
+
+Don't use deprecated ActiveRecord::Relation#all."
+joelmoss,2013-07-25 19:46:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7433b68c303e2b2cd3c51ab07a2c26b674f04a34,7433b68c303e2b2cd3c51ab07a2c26b674f04a34,"Merge pull request #297 from janko-m/syntax-highlighting
+
+Added syntax highlighting to the readme"
+dougo,2013-07-24 02:16:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1538e195a2b68be67763aa5509404b2efc42789b,1538e195a2b68be67763aa5509404b2efc42789b,Don't use deprecated ActiveRecord::Relation#all.
+janko,2013-07-20 08:51:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/81d72c592ed9302cf463b2596cc56d16bd7e8432,81d72c592ed9302cf463b2596cc56d16bd7e8432,Add syntax highlighting to the readme
+atd,2013-07-08 10:33:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d1c6b737a9fe08e66e1117d0b927b929aab85373,d1c6b737a9fe08e66e1117d0b927b929aab85373,Fix typo in ActionController::Base.inherit_resource doc
+joelmoss,2013-06-17 17:16:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2656ca0cea51cc7469be1d30cace24752d5b4e3b,2656ca0cea51cc7469be1d30cace24752d5b4e3b,"Merge pull request #288 from dougo/check-for-activerecord
+
+Use a safer check for :scoped being deprecated."
+joelmoss,2013-06-17 17:16:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/66a96888b1e435b40f7ade08397b3e87bfc3c40e,66a96888b1e435b40f7ade08397b3e87bfc3c40e,"Merge pull request #292 from vitaly/master
+
+added README example of overriding build_resource_params to support strong_parameters"
+vitaly,2013-06-17 16:54:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a21c7a9b9806267dfed9d5829c6ec267f3660e6e,a21c7a9b9806267dfed9d5829c6ec267f3660e6e,add example of build_resource_params override to support strong_parameters
+dougo,2013-05-24 18:51:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3b4a3dbb8811b02e632fda034ddf8b5b677310bf,3b4a3dbb8811b02e632fda034ddf8b5b677310bf,"Use a safer check for :scoped being deprecated.
+
+This works even if ActiveRecord is not defined."
+joelmoss,2013-05-11 16:01:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2c57b0566e6eee75e84e3fb7d6ab45a812b493c1,2c57b0566e6eee75e84e3fb7d6ab45a812b493c1,"Merge pull request #282 from Rio517/master
+
+Small documentation fix"
+Rio517,2013-05-11 14:10:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8d42c5932072a55d9841dfb8ed9ae5a21c8514af,8d42c5932072a55d9841dfb8ed9ae5a21c8514af,class_methods.rb: update documentation for to match newer code
+joelmoss,2013-05-11 09:20:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9366ccfb88d4efa3456af6ec46efe902218c7e28,9366ccfb88d4efa3456af6ec46efe902218c7e28,Using release candidates of responders and has_scope gems
+joelmoss,2013-05-11 09:12:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/211a5b6956a9ef1763bd13a818ae5760ba549bcb,211a5b6956a9ef1763bd13a818ae5760ba549bcb,"Merge pull request #279 from prijutme4ty/simplified_unsplatting
+
+Unsplatting simplified"
+joelmoss,2013-05-11 08:59:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/37173b4215410ac62bf8cbec11be26afb51bd66c,37173b4215410ac62bf8cbec11be26afb51bd66c,"Merge pull request #273 from dougo/rails-4-deprecation-warning
+
+Don't call :scoped if it's deprecated."
+joelmoss,2013-05-11 08:58:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/27ce8655d9914e439d6628d864c2dc236d32e4f4,27ce8655d9914e439d6628d864c2dc236d32e4f4,"Merge pull request #277 from prijutme4ty/test_private_permitted_params
+
+test changed so that permitted_params are tested in case it's private (r..."
+joelmoss,2013-05-11 08:58:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c066301d89dd90c87f9fb963dcededb4e2ecc32d,c066301d89dd90c87f9fb963dcededb4e2ecc32d,"Merge pull request #278 from prijutme4ty/caching_refactored
+
+caching refactored to `@var ||= begin ... end` form"
+VorontsovIE,2013-04-25 19:35:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/80ce2ed9546fb9151a3de1eaff037468e9c901b4,80ce2ed9546fb9151a3de1eaff037468e9c901b4,caching refactored to @var||= begin ... end form
+VorontsovIE,2013-04-25 19:32:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bf659843dccec5b72b105e6ff9a581a84b9d53ef,bf659843dccec5b72b105e6ff9a581a84b9d53ef,Unsplatting simplified
+VorontsovIE,2013-04-24 19:26:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a99f59f718fe83f5e1c6a193072161056f31dbd3,a99f59f718fe83f5e1c6a193072161056f31dbd3,test changed so that permitted_params are tested in case it's private (regression test)
+joelmoss,2013-04-16 07:14:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0ac04d631ad3ce1e151e6ebfbbc1c2657f9e2e3b,0ac04d631ad3ce1e151e6ebfbbc1c2657f9e2e3b,"Merge pull request #274 from lnakamura/master
+
+Minor Readme indentation fix"
+lnakamura,2013-04-16 05:44:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/36f64d6912f8fcb85dfde18e01dc1b3ab036305d,36f64d6912f8fcb85dfde18e01dc1b3ab036305d,Minor indentation fix
+joelmoss,2013-04-15 18:13:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c52f4f8212ece9e7fb3519aa56297239ae94768c,c52f4f8212ece9e7fb3519aa56297239ae94768c,"Merge pull request #269 from iantropov/master
+
+Update Singleton section of Readme"
+joelmoss,2013-04-15 18:12:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0eed41519d7666e9925bd2f3f1bedf8b7de37886,0eed41519d7666e9925bd2f3f1bedf8b7de37886,"Merge pull request #271 from rubysolo/allow-private-method
+
+allow permitted_params to be a private method"
+joelmoss,2013-04-15 18:10:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9f7ed0f94117d6bae54b2f30094d43756c480f5c,9f7ed0f94117d6bae54b2f30094d43756c480f5c,"Merge pull request #272 from tab/master
+
+typo fix"
+dougo,2013-04-13 00:49:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fce9532f0a3251393d6b923f802aa924f2481367,fce9532f0a3251393d6b923f802aa924f2481367,Don't call :scoped if it's deprecated.
+tab,2013-04-12 07:48:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f38ea30839be27f77f5500424c064a3bc769e7ad,f38ea30839be27f77f5500424c064a3bc769e7ad,typo fix
+rubysolo,2013-04-08 13:34:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/18364267cb8cef0813329ec8cfa64156b7a57f14,18364267cb8cef0813329ec8cfa64156b7a57f14,"allow permitted_params to be a private method
+
+The examples in the strong_parameters README show a private method
+for parameter sanitization.  This tiny change allows for following
+that pattern."
+iantropov,2013-04-07 05:55:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/20574e0184adb0b4a1a650d66017c372f41f61a6,20574e0184adb0b4a1a650d66017c372f41f61a6,"Update README.rdoc
+
+Update Singleton section of Readme, to accord undocumented yet changes (https://github.com/josevalim/inherited_resources/commit/cfb2d88c6d93dbaf9bd4a81996a660181fd2b2e1 - Allow for nesting of singleton belong_to's.)"
+joelmoss,2013-03-26 23:16:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b304fb3703f3edca54836fffe41a27bcd61817b6,b304fb3703f3edca54836fffe41a27bcd61817b6,"Merge pull request #268 from jeffweiss/master
+
+Add license to gemspec"
+joelmoss,2013-03-25 19:44:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6a94a2c1b45215ee023804979321d889483c87ea,6a94a2c1b45215ee023804979321d889483c87ea,Release 1.4.0
+joelmoss,2013-03-25 19:44:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/09d4145e6824a140e6c5312e7f71fa7fea806a29,09d4145e6824a140e6c5312e7f71fa7fea806a29,Updated CHANGELOG
+joelmoss,2013-03-25 19:25:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e120038042d6fac55f32662f34382b145a3a5f5,5e120038042d6fac55f32662f34382b145a3a5f5,Bundle update
+joelmoss,2013-03-25 19:18:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/aa599f9bd74c3ed845042cc314c996a27a5e33a1,aa599f9bd74c3ed845042cc314c996a27a5e33a1,"Merge pull request #258 from stephenprater/pull_request_194
+
+Pull request #194"
+joelmoss,2013-03-25 19:13:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/995e28240918f247c3553b5b92ccc4a225c39fcf,995e28240918f247c3553b5b92ccc4a225c39fcf,"Merge pull request #260 from taavo/strong_parameters
+
+Integrate with strong_parameters"
+joelmoss,2013-03-25 19:03:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3e0dd524c46f8ceee1672d5ae5722295f0d14b02,3e0dd524c46f8ceee1672d5ae5722295f0d14b02,"Merge pull request #267 from BlackFoks/master
+
+Fix Readme typo"
+BlackFoks,2013-03-12 04:55:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d2e8549c097bcea2da5d10361eb3e00f714a7b90,d2e8549c097bcea2da5d10361eb3e00f714a7b90,Fix Readme typo
+joelmoss,2013-02-28 14:05:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/820e4f6bb904b113e20b379d4052b41d321958e8,820e4f6bb904b113e20b379d4052b41d321958e8,"Merge pull request #263 from mehanoid/master
+
+Compatibility with Ruby 2.0 (including smart redirects fix)"
+mehanoid,2013-02-27 17:06:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0f252c032ac66156444603eda29cd8271a4750bc,0f252c032ac66156444603eda29cd8271a4750bc,Fix smart redirects for compatibility with ruby 2.0
+corny,2013-02-27 13:16:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e3f54dbb5dfec2c2736279f2790029412bf559ca,e3f54dbb5dfec2c2736279f2790029412bf559ca,"Compatibility with ruby 2.0
+
+Passing true as second argument to respond_to? to check for protected methods in Ruby 2.0."
+taavo,2013-02-27 04:21:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9cf7d733eef8c66eaca062cdac0e7472c294fc29,9cf7d733eef8c66eaca062cdac0e7472c294fc29,add strong parameters support to readme
+taavo,2013-02-27 03:35:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/db52f6a4ded354152b593cc852839261127ca0b0,db52f6a4ded354152b593cc852839261127ca0b0,support strong parameteters via permitted_params method
+taavo,2013-02-27 03:34:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e229edd42e661a7ae86f93c14d469afcce119d85,e229edd42e661a7ae86f93c14d469afcce119d85,add strong parameters test
+joelmoss,2012-12-23 11:15:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d4e3b89a3ad406f9d235f4d72ee4a9930a4ca5a6,d4e3b89a3ad406f9d235f4d72ee4a9930a4ca5a6,Make test the default task
+joelmoss,2012-12-23 11:11:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d5a3200159b96dbf71ea4da447e4d15f3f992f6a,d5a3200159b96dbf71ea4da447e4d15f3f992f6a,Merge branch 'master' of git://github.com/josevalim/inherited_resources
+carlosantoniodasilva,2012-12-03 21:22:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7d8120f9c44ecca08bf3a86f282e801ae65d1c65,7d8120f9c44ecca08bf3a86f282e801ae65d1c65,"Merge pull request #249 from ka8725/master
+
+Add space after deploy! eval [ci skip]"
+ka8725,2012-12-03 19:43:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c6fe2a6c69cd574b488c1a95cb6cf1f3f24661d0,c6fe2a6c69cd574b488c1a95cb6cf1f3f24661d0,Add space between destroy! and block in README
+joelmoss,2012-11-09 15:34:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f5ac00d7c9217618d06c9aef200b3dae543322f,2f5ac00d7c9217618d06c9aef200b3dae543322f,"Merge pull request #243 from ka8725/master
+
+Change misleading comment for actions method"
+joelmoss,2012-11-09 15:33:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f120a635ba6e424e535c6e2e19afed8da5f1d538,f120a635ba6e424e535c6e2e19afed8da5f1d538,"Merge pull request #244 from betelgeuse/grammar_fix
+
+Better grammar in documentation"
+joelmoss,2012-11-09 15:33:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/aa52a0a2a36fbea440948773a747147410530283,aa52a0a2a36fbea440948773a747147410530283,"Merge pull request #241 from dim/master
+
+Incorrect `collection_path` is generated for uncountable shallow resources"
+betelgeuse,2012-10-09 07:07:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5d799a57914f643b8cbe34cd06cf5c0ce0a9b29d,5d799a57914f643b8cbe34cd06cf5c0ce0a9b29d,Better grammar in documentation
+ka8725,2012-10-08 22:04:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9ab26b6cca41f271b3c6e9b9ceb8800405abb7a5,9ab26b6cca41f271b3c6e9b9ceb8800405abb7a5,Fix missunderstaning comment for actions method
+rafaelfranca,2012-09-21 02:20:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/797e2ba806b770947dfac6355ba6c06e44881934,797e2ba806b770947dfac6355ba6c06e44881934,"Merge pull request #242 from phocke/master
+
+small typo"
+phocke,2012-09-21 00:11:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eaed4ebc24bc2fd13b509b5f243235793ccbf834,eaed4ebc24bc2fd13b509b5f243235793ccbf834,fix small typo
+dim,2012-09-19 15:15:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ae4235257819822e0853666cb637074600ed1321,ae4235257819822e0853666cb637074600ed1321,"Generate correct URLs for uncountable, shallow child resources"
+joelmoss,2012-08-27 10:11:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cf88956a36f55f78101a3985c764fd450acb139c,cf88956a36f55f78101a3985c764fd450acb139c,"Merge pull request #235 from aderyabin/without_protection_feature
+
+added without_protection feature"
+aderyabin,2012-08-27 04:41:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ea062a88ff9db1f1de6b56b85236cf0225336828,ea062a88ff9db1f1de6b56b85236cf0225336828,added without_protection feature
+rafaelfranca,2012-07-19 13:54:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e9bda9416224e83857a9a1a8d3457aa8761f88aa,e9bda9416224e83857a9a1a8d3457aa8761f88aa,Update MIT-LICENSE
+rafaelfranca,2012-07-19 13:54:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a5d79e76fc6c7a9199301b90e0e7a2226a28bf51,a5d79e76fc6c7a9199301b90e0e7a2226a28bf51,Update the Copyright
+joelmoss,2012-07-05 09:29:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/07eafe38b2c55cd2f908b4e37a1932d812aacd71,07eafe38b2c55cd2f908b4e37a1932d812aacd71,Bundle update and using Turn wherever possible
+joelmoss,2012-07-05 09:25:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cc6eb1d32547ec613bcb5f2b098e15e447cab12f,cc6eb1d32547ec613bcb5f2b098e15e447cab12f,"Merge pull request #230 from jayzes/master
+
+Bump responders dependency version"
+jayzes,2012-07-02 22:04:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d69cf9ad65e9af67027f81085e14472538141293,d69cf9ad65e9af67027f81085e14472538141293,Bump responders to the 0.9 range
+joelmoss,2012-07-02 15:59:08,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c32401e2f9f08d9b68de162eeb62dfb048bfeb14,c32401e2f9f08d9b68de162eeb62dfb048bfeb14,"Merge pull request #229 from atd/master
+
+Memoize resource_params"
+atd,2012-07-02 13:54:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/af354db363523a263b7fd199cf551298ce97bb8d,af354db363523a263b7fd199cf551298ce97bb8d,"Memoize resource_params
+
+Fixes #216"
+joelmoss,2012-06-28 22:36:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4b053ca384d5729f59783a1720e93607f7d57f41,4b053ca384d5729f59783a1720e93607f7d57f41,Removed deprecation notice from README. We're bringing this baby back!
+rafaelfranca,2012-04-08 07:28:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3fb7c758b0528be95d30dd77a90eb0965fec60a8,3fb7c758b0528be95d30dd77a90eb0965fec60a8,"Merge pull request #224 from twe4ked/patch-1
+
+Add missing space to `symbols_for_association_chain` keys empty error"
+twe4ked,2012-04-08 07:15:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d5b723d46b4ca1e4e316fd8a81a1f4084f5d73c7,d5b723d46b4ca1e4e316fd8a81a1f4084f5d73c7,Add missing space to `symbols_for_association_chain` keys empty error.
+carlosantoniodasilva,2012-03-28 12:25:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0381c1b12ca917ad795864bdc9f5f32036b3eeb8,0381c1b12ca917ad795864bdc9f5f32036b3eeb8,"Merge pull request #221 from xocs/patch-1
+
+Minor Typo."
+xocs,2012-03-28 10:53:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c505230f3e5d229ae65a854b6ab2ccd3a1192cb2,c505230f3e5d229ae65a854b6ab2ccd3a1192cb2,Minor Typo.
+rafaelfranca,2012-03-12 14:56:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d1d03958d635726176d46756b8c81ef0af739a85,d1d03958d635726176d46756b8c81ef0af739a85,"Merge pull request #211 from mforsyth/mf/document_when_to_use_inherit_resources_macro
+
+Document a case when you need to use the ""inherit_resources"" macro."
+rafaelfranca,2012-03-06 15:17:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9e7eace950e9acfaab61d2ddb6232272958ee374,9e7eace950e9acfaab61d2ddb6232272958ee374,Update README.rdoc
+josevalim,2012-03-06 09:27:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/53b4689cd7ad18dbe8c8e50c6ae8fd316afd4b8c,53b4689cd7ad18dbe8c8e50c6ae8fd316afd4b8c,Update README.rdoc
+josevalim,2012-03-06 09:26:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0c7298d2419add60ef61eb15d80571d065f1ccdc,0c7298d2419add60ef61eb15d80571d065f1ccdc,Update README.rdoc
+josevalim,2012-03-06 09:26:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b7a6eae83cbb923fec9bb75104aba405d5182971,b7a6eae83cbb923fec9bb75104aba405d5182971,Update README.rdoc
+mforsyth,2012-02-23 15:41:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4515d915e4cfd57d600d7dbcf40bc274d432dd46,4515d915e4cfd57d600d7dbcf40bc274d432dd46,"Document a case when you need to use the ""inherit_resources"" macro."
+josevalim,2012-02-09 08:34:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/39e2f0f746221a916aa2f1633909787eba6251d4,39e2f0f746221a916aa2f1633909787eba6251d4,"Merge pull request #189 from indrekj/polymorphic-belongs-to
+
+can't get the parent in a polymorphic_belongs_to (rebased)"
+josevalim,2012-01-30 15:12:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5cc7602bb8b6c1a0748ab18d19c2377c944363ea,5cc7602bb8b6c1a0748ab18d19c2377c944363ea,"Merge pull request #200 from jsl/master
+
+Minor changes to the README.rdoc."
+jsl,2012-01-28 14:44:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/40634faed072d9191e9280c22864c1cadb5a51fb,40634faed072d9191e9280c22864c1cadb5a51fb,Fix some typos.
+DouweM,2012-01-08 01:27:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cfb2d88c6d93dbaf9bd4a81996a660181fd2b2e1,cfb2d88c6d93dbaf9bd4a81996a660181fd2b2e1,"Allow for nesting of singleton belong_to's.
+
+Note that
+    class ThingAController < InheritedResource::Base
+        belongs_to :thing_b, :singleton => true
+    end
+used to mean there was only one ThingA (so resource_path == /thing_bs/123/thing_a), while it now means there is only one ThingB (so resource_path == /thing_b/thing_as/123)
+
+To specify there is only one ThingA, you'll need
+    defaults :singleton => true"
+indrekj,2011-08-23 16:53:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/36e2246fb3d65ad7a6768a5938c0f36fa2f0c67f,36e2246fb3d65ad7a6768a5938c0f36fa2f0c67f,load parent if not already loaded using resource
+indrekj,2011-08-23 17:48:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9ae90f896a0f7498d9e2626675cc94095c0f92b9,9ae90f896a0f7498d9e2626675cc94095c0f92b9,add a test to show that parent can't be used like resource
+josevalim,2011-12-07 11:17:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a6e24770da0ca0a4a93753facd29c830dbe73aeb,a6e24770da0ca0a4a93753facd29c830dbe73aeb,Fix failing tests after moving to latest Rails.
+josevalim,2011-12-07 11:08:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7245836897b271646dd0fc5db709c017f43c64e2,7245836897b271646dd0fc5db709c017f43c64e2,Run against rails 3.1.2
+josevalim,2011-09-01 17:08:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/289669a0dc3233f0b44a7daead8f56cbac9971e3,289669a0dc3233f0b44a7daead8f56cbac9971e3,Release 1.3.0.
+josevalim,2011-08-23 11:52:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e7dc9bf5674de7edf8fbd3934c53f97db712bfc2,e7dc9bf5674de7edf8fbd3934c53f97db712bfc2,Update lock file.
+josevalim,2011-08-23 11:50:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/72fc253b79720fe3327d53f1c5258412226f7348,72fc253b79720fe3327d53f1c5258412226f7348,"Merge pull request #142 from karsthammer/pr
+
+Added support for multiple polymorphic optional nesting."
+josevalim,2011-08-23 11:47:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0cbfafe1758374179d4e1b736945aa556182b526,0cbfafe1758374179d4e1b736945aa556182b526,Improve README.
+josevalim,2011-08-23 11:42:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/18189d06a99b47db853f2187eb25ec396e611c18,18189d06a99b47db853f2187eb25ec396e611c18,Improve docs and code.
+josevalim,2011-08-23 11:24:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/117bed87296fbdaba44b28a58dfdc0c67955af95,117bed87296fbdaba44b28a58dfdc0c67955af95,Fix failing tests.
+josevalim,2011-08-23 22:04:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/23ad335bcf2ee4048d98490937b389613bedcab4,23ad335bcf2ee4048d98490937b389613bedcab4,LOL-copy-and-paste
+karsthammer,2011-08-03 15:40:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/82265496e6ceba374b49dc0002909d1f1578efea,82265496e6ceba374b49dc0002909d1f1578efea,Fixed merge conflicts
+josevalim,2011-07-27 18:07:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/07bcdbfd30647565c6cb0fc91c2ec43b128b961b,07bcdbfd30647565c6cb0fc91c2ec43b128b961b,"Merge pull request #152 from tb/master
+
+fix nested namespace in mountable apps"
+josevalim,2011-07-08 18:25:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5f50c0b21a1646d39edf708c247dccebd2eb0f37,5f50c0b21a1646d39edf708c247dccebd2eb0f37,"Merge pull request #153 from Somebody32/master
+
+Added support for rails 3.1 new mass assignment conventions"
+somebody32,2011-07-08 16:19:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/79d4c1e00f890bed3807c1fa50fc179eec97c810,79d4c1e00f890bed3807c1fa50fc179eec97c810,added with_role method to support Rails 3.1 mass assignment
+tb,2011-06-29 16:02:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f4b2fca2993a0f6b6fc481376a24d36f875ea0d9,f4b2fca2993a0f6b6fc481376a24d36f875ea0d9,fix mountable apps namespace issue
+tb,2011-06-24 11:57:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b21aa27b218aa831592a449e554a2361bfc39d6f,b21aa27b218aa831592a449e554a2361bfc39d6f,do not overwrite class_attribute :resource_class defined in controller
+josevalim,2011-06-20 14:15:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7870f027e3b55991b3f9a474dcaa7d9bcfe2b79b,7870f027e3b55991b3f9a474dcaa7d9bcfe2b79b,Fix remaining tests.
+josevalim,2011-06-20 13:03:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8320335837101f75046c5657f6f58371be8b88ad,8320335837101f75046c5657f6f58371be8b88ad,Update to 3.1.rc4 and fix polymorphic tests.
+josevalim,2011-06-20 12:00:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/57b2f290d6a5f28c421a81d1b69d9e7279715fa5,57b2f290d6a5f28c421a81d1b69d9e7279715fa5,Make test suite run again.
+josevalim,2011-06-07 11:26:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3ef233a59abb597a861b1bc0da25f329c0154469,3ef233a59abb597a861b1bc0da25f329c0154469,"Merge pull request #145 from thedarkone/reloadable-fix
+
+Turn InheritedResources::Base into a reloadable constant."
+thedarkone,2011-05-18 13:53:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9886f20de211a550ab0d81a98fa11e38676b35c3,9886f20de211a550ab0d81a98fa11e38676b35c3,Turn InheritedResources::Base into a reloadable constant.
+josevalim,2011-05-06 05:19:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e5334f01898024894470545dd5cef015d8d55517,e5334f01898024894470545dd5cef015d8d55517,Edited README.rdoc via GitHub
+josevalim,2011-05-01 18:51:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3331df082f7ef69ad6133553f867de2bee1eaa7c,3331df082f7ef69ad6133553f867de2bee1eaa7c,"Merge pull request #140 from jcarlson/master.
+
+Fix for Issue #139"
+jcarlson,2011-05-01 18:48:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/30b078eb61201e5e70d50d83f7ed6fc4f7fa4463,30b078eb61201e5e70d50d83f7ed6fc4f7fa4463,Resolves https://github.com/josevalim/inherited_resources/issues/139
+josevalim,2011-04-18 07:17:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/12571db2d9524d52fe8785c3023221cf1ceb1cae,12571db2d9524d52fe8785c3023221cf1ceb1cae,Rails 3.1 forward compability.
+josevalim,2011-04-17 16:05:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cbf12d4f881edc9df59c7f26814952cd804bb607,cbf12d4f881edc9df59c7f26814952cd804bb607,Release v1.2.2
+fschwahn,2011-01-28 10:24:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0ad511fcdca08c4cae646a633cf6329f0dca1dc4,0ad511fcdca08c4cae646a633cf6329f0dca1dc4,fixed reloading of ApplicationHelper in development mode
+karsthammer,2010-10-15 14:49:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e95449165ac0b4f90889ee7e301cc61612481245,e95449165ac0b4f90889ee7e301cc61612481245,"Added support for multiple polymorphic optional nesting.
+
+Added tests for multiple polymorphic optional nesting."
+josevalim,2011-02-24 18:12:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5d988cfcfa632cc9c67fff4cb100594ea683482a,5d988cfcfa632cc9c67fff4cb100594ea683482a,CollectionResponder info on README.
+lda,2011-02-24 05:26:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e1a46c1727b8ab8d4e7436690607a8b82136e618,e1a46c1727b8ab8d4e7436690607a8b82136e618,Fallback to use params[resource_name] if params[request_name] undefined (usually with nested models)
+lda,2011-01-26 11:09:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a6ada355d9314dcf6222bf477a103683770b47c1,a6ada355d9314dcf6222bf477a103683770b47c1,search object attributes in params[resource_instance_name] if they params[resource_request_name] empty
+josevalim,2011-02-04 19:44:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/edf672178750372f5dfa1fc59926b5370b28a1d7,edf672178750372f5dfa1fc59926b5370b28a1d7,belong_to => belongs_to (tks to amanelis)
+josevalim,2011-01-28 19:39:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2aefadd8aa5633f966fc58620607ced77c4357aa,2aefadd8aa5633f966fc58620607ced77c4357aa,Release new version.
+josevalim,2011-01-28 19:14:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b3d527dfa3878eae6d76ca43399ce504d6906962,b3d527dfa3878eae6d76ca43399ce504d6906962,Fix failing test.
+sirupsen,2011-01-28 18:34:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/283b29bc6248e95f9f46148ca5eb49b2bc52c893,283b29bc6248e95f9f46148ca5eb49b2bc52c893,"Request param troubles in namespaced controllers fixed, fixes #117"
+sirupsen,2011-01-27 20:11:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5c18cf12d7de31bd53720727af3009480a78372a,5c18cf12d7de31bd53720727af3009480a78372a,Added test for last fallback for namespaced controllers
+josevalim,2011-01-25 20:42:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bcd63f7f92bf1bfd146b2840e31312d0c40c1bab,bcd63f7f92bf1bfd146b2840e31312d0c40c1bab,Remove Jeweler and bump to 1.2.
+josevalim,2011-01-25 20:28:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8bd1fdaaa74909e8d493dc18fe4bf85fe5c2cfb0,8bd1fdaaa74909e8d493dc18fe4bf85fe5c2cfb0,Tidy up README and CHANGELOG for new release.
+josevalim,2011-01-25 20:13:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/752545e29288f6277467516c31101c95ce5ad7f7,752545e29288f6277467516c31101c95ce5ad7f7,"Merge branch 'master' of https://github.com/openteam/inherited_resources
+
+Conflicts:
+	lib/inherited_resources/actions.rb
+	lib/inherited_resources/class_methods.rb"
+josevalim,2011-01-25 20:06:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4ec53b761272805e312adced9f4b537e406c0e62,4ec53b761272805e312adced9f4b537e406c0e62,"Merge branch 'magic_namespaces' of https://github.com/Sirupsen/inherited_resources
+
+Conflicts:
+	lib/inherited_resources/class_methods.rb"
+josevalim,2011-01-25 20:04:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8c10956e8f51ca2d08eb08dcfc1c96255a6baa4b,8c10956e8f51ca2d08eb08dcfc1c96255a6baa4b,Update tests to 3.0.3.
+josevalim,2011-01-25 19:39:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/92d0404cae760da1aea6431c7c952d0243381e6d,92d0404cae760da1aea6431c7c952d0243381e6d,Properly dup values.
+josevalim,2011-01-25 19:19:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e22948e13b47bcd123a02fda9c38770e625bd3f6,e22948e13b47bcd123a02fda9c38770e625bd3f6,Protect all methods instead of undefining them.
+lda,2011-01-21 05:40:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/98c291618f097eb19bd07765249a525d3c363d58,98c291618f097eb19bd07765249a525d3c363d58,"Smart redirects. Action redirects calculates in the following order: resource_url, collection_url, parent_url, root_url"
+lda,2011-01-18 07:31:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/89bfe61a0fb9ca2604c84c83d040f203017aeb47,89bfe61a0fb9ca2604c84c83d040f203017aeb47,Merge git://github.com/josevalim/inherited_resources
+lda,2011-01-18 07:30:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eb7af82d7a192f732a465f7b81130c07d121eaf7,eb7af82d7a192f732a465f7b81130c07d121eaf7,resource_configuration inheritance now works in production
+sirupsen,2011-01-14 20:44:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/24a6f40c293761d487da9b38ba758ed78325fa52,24a6f40c293761d487da9b38ba758ed78325fa52,Readme updated to include namespaced controllers support
+sirupsen,2011-01-14 20:30:58,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8e5732a45adb6007e500551baa864af46324f04e,8e5732a45adb6007e500551baa864af46324f04e,"Resource class priority system for namespaced controllers
+
+Implemented a resource class priority system for namespaced
+controllers, for instance if you got a controller called:
+  Admin::GroupController
+
+First priority for the resource will be the namespaced
+model, i.e.:
+  Admin::Group
+
+Second priority for the resource is the camelcased model,
+i.e.:
+  AdminGroup
+
+Otherwise it will use the controller's name, or fail with
+a TypeError, i.e.:
+  Group"
+sirupsen,2011-01-14 19:33:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/903d1e49c727673c663dc22f854f7157a6ef6896,903d1e49c727673c663dc22f854f7157a6ef6896,"Request parameters fetched independently of instance name
+
+In #build_reaouce and #update the params were found by instance_name,
+which required the instance name to have the same name as the controller
+(including namespaces). This is no longer the case, it is now
+automatically found from the controller's name, thus users are free to
+modify the instance name, furthermore controller namespaces is much better
+supported."
+lda,2010-12-23 11:16:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/64082a0ec5de82fd2d2012d4f46c43e62c24fc18,64082a0ec5de82fd2d2012d4f46c43e62c24fc18,segments may by nil
+lda,2010-12-22 04:29:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d397e16e050234b6fbb89687ea1f31245322aa40,d397e16e050234b6fbb89687ea1f31245322aa40,controllers should inherits self options
+lda,2010-12-21 09:11:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/821020532ad6709ecfbd8982087905dfe83097f2,821020532ad6709ecfbd8982087905dfe83097f2,redirect to parent_url if show and index not defined
+lda,2010-12-21 06:38:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c9b74acf4a6b856b9967e2e5d217432cc4bab9b4,c9b74acf4a6b856b9967e2e5d217432cc4bab9b4,"define helper_methods for custom actions, so generated url helpers can be accessible in views"
+josevalim,2010-12-20 11:48:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3e99f6e7fba9afea84cb1eabf6bc728059b7f562,3e99f6e7fba9afea84cb1eabf6bc728059b7f562,Refactor a bit redirection responsiblity.
+lda,2010-12-20 10:13:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1e6af2285704d457bc15335a4f9e43c6907e462a,1e6af2285704d457bc15335a4f9e43c6907e462a,FIX: errors on loading chain when using shallowed belongs_to with finder method
+lda,2010-12-18 10:22:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0b6428391f3fd0073e54336808ad8e03014ab9de,0b6428391f3fd0073e54336808ad8e03014ab9de,we should not use instance_name when loading parents in shallowed mode
+lda,2010-12-18 09:34:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d8d8e04fcf821fcaaf81cbcc7f5e8d5d9bb60c00,d8d8e04fcf821fcaaf81cbcc7f5e8d5d9bb60c00,Ability to find resources when to_param in model overloaded (uasble when using slugs)
+lda,2010-12-18 08:22:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4f84ab65e355345fee562ef610998912aa83f51b,4f84ab65e355345fee562ef610998912aa83f51b,fixed wrong parent class gessing within nested models and shallowed controller
+lda,2010-12-18 06:34:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5512e7f510cf6640b4d305332d4977890b72d0ff,5512e7f510cf6640b4d305332d4977890b72d0ff,"ability to use arrays, when specify custom actions"
+lda,2010-12-17 06:54:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bf826ab3a0f541abaa367fe9ddeb8a8cd473ddf5,bf826ab3a0f541abaa367fe9ddeb8a8cd473ddf5,support for nested models in shallowed helper
+lda,2010-12-16 11:37:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4145f11dc9e30e0c487f9b6f1fab874430d90148,4145f11dc9e30e0c487f9b6f1fab874430d90148,generate custom action stubs
+lda,2010-12-16 10:05:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/523196854810829845122485eb3be6e8604f1bf3,523196854810829845122485eb3be6e8604f1bf3,generate url helpers for custom actions
+lda,2010-11-30 07:57:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/abdb44ea250593e17d04d6c86411d8982da57020,abdb44ea250593e17d04d6c86411d8982da57020,FIX: namespaced controllers doesn't works with shallowed urls
+janisr,2010-11-12 13:08:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e551600f511c919126c1dfae81d207732f5ebc12,e551600f511c919126c1dfae81d207732f5ebc12,Add tests for redirect to index action in show not defined
+janisr,2010-11-12 10:22:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e11b02e63e83cf4ccdcbee4799868c1ec02906e3,e11b02e63e83cf4ccdcbee4799868c1ec02906e3,Redirect to index action in show not defined
+josevalim,2010-10-26 18:36:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/83ae72b221339e01d2516f736812eccd96df64d2,83ae72b221339e01d2516f736812eccd96df64d2,Add Gemfile lock.
+josevalim,2010-10-26 18:36:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4c7b5ad0f5dee90853aef09c52560eaf18ceebca,4c7b5ad0f5dee90853aef09c52560eaf18ceebca,Clean up the code a bit.
+josevalim,2010-10-26 18:15:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/44cc62186d61bcaf0652a360870ce966a5348c6b,44cc62186d61bcaf0652a360870ce966a5348c6b,Merge branch 'master' of http://github.com/lda/inherited_resources
+josevalim,2010-10-26 18:14:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/48b049bd377ff6695f760127336ec9f1fa53e366,48b049bd377ff6695f760127336ec9f1fa53e366,Make it run on Rails master.
+bdn,2010-10-20 09:43:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6e98a5e31209b6ebed6b67806f0ee9276875cbe5,6e98a5e31209b6ebed6b67806f0ee9276875cbe5,#5342. inherit_resources: nested_belongs_to url after destroy
+lda,2010-10-20 04:35:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d14d8676f0c9ace4fb917fc87158c2d508dba178,d14d8676f0c9ace4fb917fc87158c2d508dba178,support for nested shallow
+lda,2010-10-19 03:11:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8d38be6011b9ddd6aa59a291580feae760889525,8d38be6011b9ddd6aa59a291580feae760889525,rake test passes
+lda,2010-10-19 02:31:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/77d405ad3d8241de5737109ad1c0f8bf068d0799,77d405ad3d8241de5737109ad1c0f8bf068d0799,prepare params for shallow url
+lda,2010-10-18 08:36:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/878c0a581f1ee601e7282be71672f49d38ac3283,878c0a581f1ee601e7282be71672f49d38ac3283,support for :shallow option
+lucasmazza,2010-08-26 18:02:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2707d5e8687a533f5bfae7ca89796e8e9d6fe9b4,2707d5e8687a533f5bfae7ca89796e8e9d6fe9b4,'parent' and 'parent?' as helper methods
+jherdman,2010-08-20 20:57:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0c240751e1ff69442d5d4bfbae5b193931349815,0c240751e1ff69442d5d4bfbae5b193931349815,Fix path to test_helper.rb
+chipiga,2010-07-02 08:18:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d11e8848c69f85922883e46feb3ad09d4005ffe1,d11e8848c69f85922883e46feb3ad09d4005ffe1,Fix uncountable route name support
+fredwu,2010-08-05 22:39:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c60fb93b06020ed92ca6670615f9c0e5c9eafa6f,c60fb93b06020ed92ca6670615f9c0e5c9eafa6f,Updated the README to reference Inherited Resources Views and Inherited Views projects.
+josevalim,2010-06-26 17:57:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9e105b4309f2cf457778a586ae9db60c7630cf07,9e105b4309f2cf457778a586ae9db60c7630cf07,Do not mention sudo.
+raul,2010-06-26 17:44:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d5365f114c17b0663408f4cce85d7cf1c183d7f0,d5365f114c17b0663408f4cce85d7cf1c183d7f0,Install instructions splitted in sections for different Rails versions. Added steps for to install via Bundler.
+raul,2010-06-26 17:41:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e80e72ecbe39d41926477894b8db6e9cdedeec34,e80e72ecbe39d41926477894b8db6e9cdedeec34,Fixed gem version in installation doc
+josevalim,2010-06-26 13:41:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6e3dd36116124880111e4eee727e771a56e1049e,6e3dd36116124880111e4eee727e771a56e1049e,Use bundler.
+claudiob,2010-06-03 11:11:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d553b28cb70ec8f81ea6970a04850575a7c505a4,d553b28cb70ec8f81ea6970a04850575a7c505a4,Fixed the 'Optional belongs to' case so both text and code use 'Comments' as the example model
+iain,2010-05-30 10:10:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4edc51c13b93cf257684e61cccc89155bf7e6aed,4edc51c13b93cf257684e61cccc89155bf7e6aed,Use Model.all instead of Model.find(:all)
+josevalim,2010-04-03 11:45:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b19d580c4682374d2b513cb11db11bb0e6e66580,b19d580c4682374d2b513cb11db11bb0e6e66580,Bump tiny.
+josevalim,2010-04-03 11:44:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d767f7cc8e105d4ee8013c1f9161c656fe382b22,d767f7cc8e105d4ee8013c1f9161c656fe382b22,Update dependencies and README to release a new gem.
+josevalim,2010-04-03 11:40:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5a4495c694013696d56c8658f7e3327652890fec,5a4495c694013696d56c8658f7e3327652890fec,Updated to be compatible with Rails master.
+josevalim,2010-03-30 09:33:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a1037aab1aff1c7c13e98a39bfc6c690fbd09995,a1037aab1aff1c7c13e98a39bfc6c690fbd09995,Require generators from the proper location.
+josevalim,2010-03-30 09:05:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3820d43677a01045d6bc824b4605de9056ef2112,3820d43677a01045d6bc824b4605de9056ef2112,Compatible with Rails master.
+carlosantoniodasilva,2010-03-26 14:07:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/257af4ac82aba45f60073bb8443e1de709232afe,257af4ac82aba45f60073bb8443e1de709232afe,Test flash messages with javascript requests (ajax)
+josevalim,2010-03-26 11:10:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eec8cbe23aa7b9b44bba86c5f33595db207080df,eec8cbe23aa7b9b44bba86c5f33595db207080df,Make tests green once again.
+josevalim,2010-03-26 10:59:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4fb3fe712a47fd9db56972ae5f99c8cb49dbd778,4fb3fe712a47fd9db56972ae5f99c8cb49dbd778,Update dependencies.
+josevalim,2010-03-16 10:23:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bf99df4541ca25ff31f095c2e69750da6771dcfd,bf99df4541ca25ff31f095c2e69750da6771dcfd,Make tests run on master.
+josevalim,2010-02-18 18:23:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cb5f354922fb8ccbb2144cd9be524d44fc892834,cb5f354922fb8ccbb2144cd9be524d44fc892834,Always send options downstream.
+kevwil,2010-02-08 16:45:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0997d5aaad5a244fa474a950d7ca790904920dae,0997d5aaad5a244fa474a950d7ca790904920dae,clear up wording about backward compatibility
+josevalim,2010-02-07 20:48:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3c8793774bbb9a02803bed93ab5c6258cafc0b27,3c8793774bbb9a02803bed93ab5c6258cafc0b27,Update README.
+josevalim,2010-02-07 14:30:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3da5f3adc15d9714022c995d5c151c3f42cccebe,3da5f3adc15d9714022c995d5c151c3f42cccebe,Commit gemspec.
+josevalim,2010-02-07 10:34:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/05dbab41e748027e14d05d84dd328260d411186e,05dbab41e748027e14d05d84dd328260d411186e,Locale files should be added by responder.
+josevalim,2010-02-06 18:15:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1cc6d6291bbea8fad20621a135bfdd3ae6e99019,1cc6d6291bbea8fad20621a135bfdd3ae6e99019,Move locales one folder higher.
+josevalim,2010-02-06 12:36:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ca9494ba15773e7a4f195850760bf04b51472bb7,ca9494ba15773e7a4f195850760bf04b51472bb7,Add generators.
+josevalim,2010-02-06 12:28:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2e8ab7743a308f46908bf8b92cb325fc3e40941a,2e8ab7743a308f46908bf8b92cb325fc3e40941a,Update responders dependency and re-release gem.
+josevalim,2010-02-06 11:59:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/63acada7f07b0f44befa1b54c74b37ccbf621b7c,63acada7f07b0f44befa1b54c74b37ccbf621b7c,Commit gemspec.
+josevalim,2010-02-06 11:58:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/13e4343c9d7a2a0e96bb224de4addee2490dff84,13e4343c9d7a2a0e96bb224de4addee2490dff84,Release 1.1.pre gem.
+josevalim,2010-02-06 11:48:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c7d15b0c5ad20fc91e833985ab4a7566e622bf86,c7d15b0c5ad20fc91e833985ab4a7566e622bf86,Clear up README about Rails 3.
+josevalim,2010-02-06 11:40:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4c0f8e26e1c0db93613497a85140455b4e84bd3f,4c0f8e26e1c0db93613497a85140455b4e84bd3f,Rails 3 compatible.
+josevalim,2010-02-06 11:02:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c3e625b7d21e662331612546d87ad1296ae052d1,c3e625b7d21e662331612546d87ad1296ae052d1,Do not swallow all errors.
+mileszs,2010-02-03 19:18:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/105869ea12f6eb8ee505a31de880b1598789c2d3,105869ea12f6eb8ee505a31de880b1598789c2d3,Fix mismatched quotes in code example I wrote
+mileszs,2010-02-03 19:15:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e3cd652dbebcab287682145ad91ce2068a9e2ee1,e3cd652dbebcab287682145ad91ce2068a9e2ee1,Add note about overriding flash messages to README
+josevalim,2010-01-11 09:24:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/73f41123c507ff34845397d280ee7a9fa5475a45,73f41123c507ff34845397d280ee7a9fa5475a45,Bump tiny.
+josevalim,2010-01-09 16:51:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/94a8b43a4097719347d0ae892b0ad0531d8e5c5d,94a8b43a4097719347d0ae892b0ad0531d8e5c5d,Clear up Rspec session.
+josevalim,2010-01-05 23:46:24,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e26a0a900b4ad30d053fea1abe869cbfab1a5f7a,e26a0a900b4ad30d053fea1abe869cbfab1a5f7a,Update dependencies.
+josevalim,2010-01-05 15:29:14,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e4ec453dfc54662b6f92e4257ee2df49dcf91bf4,e4ec453dfc54662b6f92e4257ee2df49dcf91bf4,Make it work with bundler (at least I hope so).
+josevalim,2009-12-29 22:41:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/73c389e53aac38994bf16840787badeeca71d471,73c389e53aac38994bf16840787badeeca71d471,Release new version.
+josevalim,2009-12-29 22:41:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/477427d7343416576c92bfb1ed2dab7793b0a896,477427d7343416576c92bfb1ed2dab7793b0a896,Tell about before_destroy callbacks in the README
+josevalim,2009-12-29 22:38:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/55c797ab981c108268d1b1687e8e2b7ef67f6fcc,55c797ab981c108268d1b1687e8e2b7ef67f6fcc,Responder should be set in all cases.
+josevalim,2009-12-22 18:23:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/de94d27b9c744739df48479fbbef4d708d741333,de94d27b9c744739df48479fbbef4d708d741333,Bump to 1.0 (gem will be published soon).
+emmanuel,2009-10-02 09:42:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e2931cb0e62f3cc6dd43994603ef30a5911a1709,e2931cb0e62f3cc6dd43994603ef30a5911a1709,Added #parent and #parent_type to BelongsToHelper.
+josevalim,2009-12-22 13:18:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2ea5a6477d5ad68f5340fdd523da347b9a3c3d48,2ea5a6477d5ad68f5340fdd523da347b9a3c3d48,Minor load paths tweaks.
+josevalim,2009-12-22 13:07:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b614fb96b2c0bec7b2cd1218cc39982f9f1be951,b614fb96b2c0bec7b2cd1218cc39982f9f1be951,Minor tweaks to README.
+josevalim,2009-12-22 12:54:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8b9ba336c58cfa3511166bb132fcc5101fa3ac83,8b9ba336c58cfa3511166bb132fcc5101fa3ac83,Release 1.0.pre (install with gem install inherited_resources --version=1.0.pre)
+josevalim,2009-12-22 12:47:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9b807042b75782bb913ea88d440536b9ec8de3c,a9b807042b75782bb913ea88d440536b9ec8de3c,Add InheritedResources.flash_keys delegator.
+josevalim,2009-12-22 12:43:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/41f46e50411f43a6568faca9d2fcceaf29a54f4a,41f46e50411f43a6568faca9d2fcceaf29a54f4a,Try to be more polite to Datamapper users.
+josevalim,2009-12-22 12:38:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b0e5b466629f17857742e145cfd6baffcda0d131,b0e5b466629f17857742e145cfd6baffcda0d131,Do not rescue nil on constantize.
+josevalim,2009-12-22 12:36:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f668c0087c3263d1d75a28ceaaa1d1550e5f68a6,f668c0087c3263d1d75a28ceaaa1d1550e5f68a6,Send the whole chain to respond_with.
+josevalim,2009-12-22 12:12:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2d3d0279bab00581d223ec49b8366167cb677f32,2d3d0279bab00581d223ec49b8366167cb677f32,Rely on responders as a dependency.
+josevalim,2009-12-22 11:26:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9207c297a285c5110a3c9e03f6e95f5450fd0196,9207c297a285c5110a3c9e03f6e95f5450fd0196,Remove has_scope from core.
+josevalim,2009-12-22 10:06:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/499054ba6467d2f7fa5a9e8e8d3aa8678aa8eb4d,499054ba6467d2f7fa5a9e8e8d3aa8678aa8eb4d,Update responder to be on pair with Rails 3 version.
+josevalim,2009-12-22 09:15:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f58c0154d6f0bdfa403917feef6dd3e43ddb73f0,f58c0154d6f0bdfa403917feef6dd3e43ddb73f0,Revert setting flash messages in :sucess and :failure for a while and bump to 0.9.5. Expect a 1.0 release soon with the ability to configure which flash messages to use.
+josevalim,2009-12-22 09:13:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/dd4e2947fa9b4423f55024ae35e408b41b8956a9,dd4e2947fa9b4423f55024ae35e408b41b8956a9,Reverting.
+josevalim,2009-12-22 09:12:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cf8ce2705ac15d3b10f8f5e92f1192441fcb4fbc,cf8ce2705ac15d3b10f8f5e92f1192441fcb4fbc,"Revert ""Proper error messages""
+
+This reverts commit e62747279cf9addb7b81451dbeb6a8befece4724."
+josevalim,2009-12-22 09:11:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2fb63e0410f052ea33104503a1a1ccc9429fea93,2fb63e0410f052ea33104503a1a1ccc9429fea93,"Revert ""Update README""
+
+This reverts commit d0a652be3099a572a1ba9e5bde8b79adaa0123d1."
+josevalim,2009-12-13 01:43:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d0a652be3099a572a1ba9e5bde8b79adaa0123d1,d0a652be3099a572a1ba9e5bde8b79adaa0123d1,Update README
+josevalim,2009-12-13 01:39:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e62747279cf9addb7b81451dbeb6a8befece4724,e62747279cf9addb7b81451dbeb6a8befece4724,Proper error messages
+josevalim,2009-12-12 11:29:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e70ff55690af2180647feba519303cfd3c0dffb6,e70ff55690af2180647feba519303cfd3c0dffb6,Release 0.9.4
+georgeguimaraes,2009-12-01 16:12:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d26b659e87820aa410769aeeb1fc17fb103bb22b,d26b659e87820aa410769aeeb1fc17fb103bb22b,typo corrected
+josevalim,2009-11-25 14:25:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eefd0eeea4b4c3102cdafcfe7fd3ad81bf84b0ca,eefd0eeea4b4c3102cdafcfe7fd3ad81bf84b0ca,Added edit_parent_url
+josevalim,2009-11-25 12:42:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/60751e523cbabdcf3835033f74a0d7ba598cc152,60751e523cbabdcf3835033f74a0d7ba598cc152,Ensure excluded actions cannot be rendered.
+josevalim,2009-11-25 12:35:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c27b71ce30208d3694e55d91a96dcc938a0a9788,c27b71ce30208d3694e55d91a96dcc938a0a9788,"Convert messages from notice/error to success/failure (like in Devise, Clearence...)."
+josevalim,2009-11-21 19:15:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d77777e8d5ee8b1c26b3064c52bcd80471bd6d90,d77777e8d5ee8b1c26b3064c52bcd80471bd6d90,Release version 0.9.3.
+josevalim,2009-11-21 19:14:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6356a50c9f55b8e0329802376464ed8294a5eb2e,6356a50c9f55b8e0329802376464ed8294a5eb2e,Bring dual blocks back to destroy action.
+josevalim,2009-10-15 23:34:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6284ba802d935de936542edafcd960951d5fb604,6284ba802d935de936542edafcd960951d5fb604,Talking about gemcutter on README.
+josevalim,2009-10-15 23:23:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/953299dcfa0526576eb0d493718fd6665f919ec0,953299dcfa0526576eb0d493718fd6665f919ec0,Release to gemcutter.
+josevalim,2009-09-30 14:30:28,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d60a0efb4842483a494a0c68ba1fbcdb34b44bbf,d60a0efb4842483a494a0c68ba1fbcdb34b44bbf,Do not overwrite action! methods.
+josevalim,2009-09-30 13:52:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d853e803e25e7b759c077352c15e2b9051c0e031,d853e803e25e7b759c077352c15e2b9051c0e031,Updated CHANGELOG.
+josevalim,2009-09-30 13:49:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9a150dc52ed9bcd97dd245ba71a82fb0f305aeaa,9a150dc52ed9bcd97dd245ba71a82fb0f305aeaa,Bump version.
+josevalim,2009-09-30 13:47:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f8084fb130123f3c25f9aa93236f6f353734fd48,f8084fb130123f3c25f9aa93236f6f353734fd48,Tidying up some loose ends.
+sabotatore,2009-09-22 09:38:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6034256df0a15cd138594333edbf822ea279fd07,6034256df0a15cd138594333edbf822ea279fd07,"Correct default resource_name for flash
+  Before: FileVersion => Fileversion
+  After: FileVersion => File version"
+JackDanger,2009-09-26 04:14:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b71045c3b3b91cc479089639142327de71b7874e,b71045c3b3b91cc479089639142327de71b7874e,"avoiding common `classify` bug with singular nouns
+
+Most singular nouns can be `classify`'d just fine but anything
+that ends in 's' in the singular form will be improperly transformed.
+
+If a resource is named :business the previous code would attempt:
+
+   :business.to_s.classify.constantize # => Unknown Constant 'Busines'
+
+This patch allows:
+
+   :business.to_s.pluralize.classify.constantize # => Business"
+JackDanger,2009-09-24 23:04:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9c852dcae65cdf82e7de3eaad811553bec16364,a9c852dcae65cdf82e7de3eaad811553bec16364,"adding support for :if and :unless scope options
+
+This provides the same functionality as the :if and :unless behavior
+on before_filters and after_filters.  A scope will be applied if :if
+evaluates to true and will be skipped if :unless evaluates to true.
+
+Particularly helpful for situations like the following:
+
+  has_scope :not_deleted, :default => true, :unless => :is_admin?
+
+Accepts:
+  - Strings
+  - Procs
+  - Symbol method names"
+JackDanger,2009-09-24 22:47:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/91a344c74406539dba35b9580e1f156769741587,91a344c74406539dba35b9580e1f156769741587,getting tests working with recent gem versions
+josevalim,2009-09-28 11:51:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f20cec9c2d3dabf21909240c3aba33e85ddd483,2f20cec9c2d3dabf21909240c3aba33e85ddd483,Added link to the mailing list in README.
+carlosantoniodasilva,2009-09-19 14:06:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4a3f7c3d36468347d862c2141912d79a8b647ab1,4a3f7c3d36468347d862c2141912d79a8b647ab1,"Introducing new controller helpers: create_resource, update_resource and destroy_resource.
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+carlosantoniodasilva,2009-09-19 11:58:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f47613d34b34cf8f9bc6a61e9a6f3d03d169e1b,2f47613d34b34cf8f9bc6a61e9a6f3d03d169e1b,"Removing has_scope deprecation in class_methods test.
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+josevalim,2009-09-09 19:19:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a8751f45e5c5803d525ee3acd11eca62ad077da3,a8751f45e5c5803d525ee3acd11eca62ad077da3,Change README to talk about rspec bug and polymorphic associations.
+josevalim,2009-09-04 00:19:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c7b5003e580a8a2d3be02542164b762507224c7c,c7b5003e580a8a2d3be02542164b762507224c7c,Kick tests back to life.
+ellenvb,2009-09-03 21:42:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9b84d012d2eebbc1de9ab6a95179c80341dc0058,9b84d012d2eebbc1de9ab6a95179c80341dc0058,"Tests flash messages on destroy
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+ellenvb,2009-09-03 14:44:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9f6204231c9ca24c4cb053300087efbc9c1d4df3,9f6204231c9ca24c4cb053300087efbc9c1d4df3,"Test if the object was successfully destroyed or not, providing the right flash message (:notice or :error) for each case. Business rules can avoid destroying.
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+josevalim,2009-09-01 13:39:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/945c2386386c5c39a60de12857fe504f7a531d65,945c2386386c5c39a60de12857fe504f7a531d65,Updated README with a link to Fabio Akita's screencast.
+josevalim,2009-09-01 08:46:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/35467faa873d80a13d92fd6b412a6a5c2791b4a8,35467faa873d80a13d92fd6b412a6a5c2791b4a8,Updated README
+josevalim,2009-09-01 08:41:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c25da84e3ac356ba4145c6c46bab083d93900648,c25da84e3ac356ba4145c6c46bab083d93900648,Bump tiny.
+josevalim,2009-09-01 08:36:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5bba068ce745341bdb9661e133e363df3a7fc8e3,5bba068ce745341bdb9661e133e363df3a7fc8e3,Wrap everything before new release.
+josevalim,2009-09-01 07:40:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/58b27b0a82aba4da7e22e73e85b03654d09fdd80,58b27b0a82aba4da7e22e73e85b03654d09fdd80,Added parent_url.
+josevalim,2009-09-01 07:20:05,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c3763dd1db1e0efd844857aaed66fd31821ea25a,c3763dd1db1e0efd844857aaed66fd31821ea25a,Added association_chain.
+josevalim,2009-09-01 07:08:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3b4fa893d6765af44cae472757913711d9667a59,3b4fa893d6765af44cae472757913711d9667a59,Update Responder to include latest edge changes.
+josevalim,2009-08-28 20:08:29,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6170f59baccd81e9e7a0b6f05c797b94cd6ba8b7,6170f59baccd81e9e7a0b6f05c797b94cd6ba8b7,Use :as instead of :key in has_scope.
+josevalim,2009-08-25 19:22:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/47769272dcc71f6080f14d4fabe260440909318e,47769272dcc71f6080f14d4fabe260440909318e,"Added class method DSL, fixed polymorphic helpers message and updated README."
+josevalim,2009-08-25 17:24:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9225a1c24f806573afab521b01ca446acc7b4c74,9225a1c24f806573afab521b01ca446acc7b4c74,Release new inherited resources with responder.
+josevalim,2009-08-25 15:21:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/31e0b74389283b54bb5bcb6958606194886e5357,31e0b74389283b54bb5bcb6958606194886e5357,Merge branch 'master' of git@github.com:josevalim/inherited_resources
+josevalim,2009-08-25 15:19:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d927d25e9713d37f68b0d4164ccac2870b0b153c,d927d25e9713d37f68b0d4164ccac2870b0b153c,Ported ActionController::Responder from Rails 3.0.
+josevalim,2009-08-25 13:58:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0d72175e8b6f0bcf64f5c374303067558679c971,0d72175e8b6f0bcf64f5c374303067558679c971,Added responder and legacy.
+josevalim,2009-08-25 13:22:35,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7b83e87112dd7c9cc5e80032f23ff64bae372bd2,7b83e87112dd7c9cc5e80032f23ff64bae372bd2,Documentation patches.
+gaizka,2009-08-23 11:00:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5bb3dff4b59e83251089670d1dd2554fc774a289,5bb3dff4b59e83251089670d1dd2554fc774a289,"Allow belongs_to to have a common options[:finder]
+
+So you can have:
+
+   class CommentsController < InheritedResources::Base
+     belongs_to :task, :message, :polymorphic => true, :finder => :find_by_title
+   end
+
+And you can use this urls:
+
+/tasks/:task_title/comments
+/messages/:message_title/comments
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+dcrec1,2009-08-07 00:42:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/bebcda491ae61994610cf2bcc746c9a1d4bdc6d0,bebcda491ae61994610cf2bcc746c9a1d4bdc6d0,"models are initializated with an empty hash instead of nil so IR works with ActiveResource models
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+dcrec1,2009-08-07 00:30:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/57187e1d57b9337e351054284b5e60f0fce8b9c7,57187e1d57b9337e351054284b5e60f0fce8b9c7,"ruby-debug is optional, no ruby-debug for Ruby 1.9
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+dcrec1,2009-08-07 00:28:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7ad58fd02997e19c5ddb74b5ef7180a35db13397,7ad58fd02997e19c5ddb74b5ef7180a35db13397,"added magic comment to Rakefile so it works with Ruby 1.9 UTF-8
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+josevalim,2009-07-29 13:10:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4a6dbb223e448035a6cd8152723da80a831fe522,4a6dbb223e448035a6cd8152723da80a831fe522,"More refactoring, now in actions.rb."
+josevalim,2009-07-29 12:36:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/96659842e7e877c4ea1a886ccff50a3733608b33,96659842e7e877c4ea1a886ccff50a3733608b33,More changes to new respond_to.
+josevalim,2009-07-29 12:11:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cf4b2347942a643710a9abecb9679354667df02f,cf4b2347942a643710a9abecb9679354667df02f,Complete refactoring of respond_to.
+josevalim,2009-07-27 09:51:32,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/58b318695126f99742986c3592a2129fcd956be0,58b318695126f99742986c3592a2129fcd956be0,Remove rspec 1.1.12 bug reference since we already are at rspec 1.2.7.
+josevalim,2009-07-27 09:46:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/872ffaf6a5b0c3edc95924ef9a1ec3f43e3ec087,872ffaf6a5b0c3edc95924ef9a1ec3f43e3ec087,More typos fixed in the README (Thanks to Alexei again!)
+josevalim,2009-07-27 07:37:57,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/79950ad16a2aff9e304d850354578e412a3b2466,79950ad16a2aff9e304d850354578e412a3b2466,Fixed typo in README (thanks to Alexei)
+josevalim,2009-07-24 20:44:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b965b35e7ae365a9fc0538a237680343f1f509e8,b965b35e7ae365a9fc0538a237680343f1f509e8,Bump tiny once again with variables cache (optimization) and namespaced optional belongs to fix.
+josevalim,2009-07-24 20:43:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/687366f0fa50d51f0c39c03b5ae905aff1dbef55,687366f0fa50d51f0c39c03b5ae905aff1dbef55,Cache resource class new to avoid initializing several objects.
+josevalim,2009-07-24 20:39:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/64b2006f5cae0ca760a1eb24fff8c96da51af5ca,64b2006f5cae0ca760a1eb24fff8c96da51af5ca,Allow an extra parameter to be given to collection_url in polymorphic cases.
+josevalim,2009-07-24 19:34:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c77ffba1ea4d7de3694dda7ca7e29f8e77589fb4,c77ffba1ea4d7de3694dda7ca7e29f8e77589fb4,Bump tiny.
+josevalim,2009-07-24 19:33:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5383a3ff5872b0dd6d8e92ebeff2c52502390f80,5383a3ff5872b0dd6d8e92ebeff2c52502390f80,Ensure that namespaced controllers still generate proper urls on polymorphic cases.
+josevalim,2009-07-23 14:36:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0a902a0311df550d791ba02496d8f54d78ce16c6,0a902a0311df550d791ba02496d8f54d78ce16c6,Using jeweler and bump tiny.
+josevalim,2009-07-23 14:33:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5f98d727653f2bde7a7ee917e5a1f21e7d0baccf,5f98d727653f2bde7a7ee917e5a1f21e7d0baccf,Version bump to 0.0.0
+josevalim,2009-07-23 14:28:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9c648233e499a0fb2f195cea76ad726c421b0546,9c648233e499a0fb2f195cea76ad726c421b0546,Remove spec fix.
+josevalim,2009-07-23 14:27:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/72c548142966cad9ca27ec28231992f3be2837de,72c548142966cad9ca27ec28231992f3be2837de,Allow Inherited Resources controllers to be inherited.
+josevalim,2009-05-28 10:34:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7769b428cdb8ece277c47976d672f025c138837e,7769b428cdb8ece277c47976d672f025c138837e,Ensure that filters are not added twice (and releasing a new gem).
+josevalim,2009-05-26 06:18:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9e58d22bf9076bac20cfc0b7b6ce47c6fe71790,a9e58d22bf9076bac20cfc0b7b6ce47c6fe71790,Removed attributes from build_resource signature. Now you have to invoke parameters from inside the method.
+josevalim,2009-05-23 16:18:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/07d1b26ebb80f604a53be69e820f9556b2d558d2,07d1b26ebb80f604a53be69e820f9556b2d558d2,Bumping tiny to see if github gem builder works (rebuild latest gem does not work).
+josevalim,2009-05-22 16:45:10,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/defc28b85b5b3dce44afbc65640638ae7219c430,defc28b85b5b3dce44afbc65640638ae7219c430,singleton associations does not call build_association if we don't have a parent.
+betamatt,2009-05-20 21:39:36,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/806e6c081b370516919b79333ec3e9f2834b949a,806e6c081b370516919b79333ec3e9f2834b949a,"Fixed deprecation warnings by removing space before parens
+
+Signed-off-by: José Valim <jose.valim@gmail.com>"
+josevalim,2009-05-20 15:12:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e9df22ca88113a7465d722c371d2b440a7676c49,e9df22ca88113a7465d722c371d2b440a7676c49,Allow inherited resources to work just calling inherit_resources inside your controller.
+josevalim,2009-05-20 13:54:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4108d80a078855a5c734c82b91741a14e44ec69b,4108d80a078855a5c734c82b91741a14e44ec69b,Huge refactoring on url helpers. Much cleaner.
+josevalim,2009-05-20 13:53:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8e9b3c12a33725dcf0e8f69788626ae69d629f41,8e9b3c12a33725dcf0e8f69788626ae69d629f41,Moved actions to a new file.
+josevalim,2009-05-20 10:21:02,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/80ca97309bc8d7a4d9a9b47637c89efe093d0deb,80ca97309bc8d7a4d9a9b47637c89efe093d0deb,Added tests to inherited controllers that inherit from inherited resources.
+josevalim,2009-05-03 07:14:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e64b53d96ca4639c37fff5b81abdcd6cbf63f7b4,e64b53d96ca4639c37fff5b81abdcd6cbf63f7b4,"Decouple class accessors initialization from URL generation, so anyone can use the first without calling the second."
+josevalim,2009-04-28 20:30:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/deeb6ef78640c8a3a9cd6678e0ba20892479848a,deeb6ef78640c8a3a9cd6678e0ba20892479848a,Remove the deprecation warning (but the warning remains on the gem).
+josevalim,2009-04-28 16:24:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d067733216bd6f812df36b8f24bf51c46dea8adc,d067733216bd6f812df36b8f24bf51c46dea8adc,Ensure proper backtrace on deprecation warning.
+josevalim,2009-04-28 15:28:21,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/33f5ee5a62247488bd63a102b371fde25ca5ec2b,33f5ee5a62247488bd63a102b371fde25ca5ec2b,Bump tiny to 0.7.2
+josevalim,2009-04-28 15:26:49,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e094deb35a86f885ce749bb5f74345cda395c37a,e094deb35a86f885ce749bb5f74345cda395c37a,Allow procs to be given as default values to has scope.
+josevalim,2009-04-28 14:01:08,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3b4120422109ec1cee91c0224a00f9e434420c2c,3b4120422109ec1cee91c0224a00f9e434420c2c,Allow blocks with arity equal zero to be given as redirect_url
+josevalim,2009-04-28 13:13:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0f7bfd53b1ad68e029fa4b50e767da7b39fe260d,0f7bfd53b1ad68e029fa4b50e767da7b39fe260d,Allow interpolation options to be set in the application controller.
+josevalim,2009-04-26 21:41:53,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2aa1762d9a7930bbabd2a240f00f30cdc1202603,2aa1762d9a7930bbabd2a240f00f30cdc1202603,Updated README
+josevalim,2009-04-26 21:28:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/dd394d76e67ca584d825e2382c6257e42b2ba706,dd394d76e67ca584d825e2382c6257e42b2ba706,Remove useless features and bump tiny.
+josevalim,2009-04-26 21:10:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5d076c8afe7d82148c7dc7243334e56703b8dd67,5d076c8afe7d82148c7dc7243334e56703b8dd67,Removing unecessary code.
+josevalim,2009-04-26 20:32:12,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f6fb96a0cb6e86a8a254deba71952c7f28e24ba6,f6fb96a0cb6e86a8a254deba71952c7f28e24ba6,Updated README and moving to 0.7.0
+josevalim,2009-04-26 19:58:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6eee1fd680d000a7338545e68079baa7ee912fa2,6eee1fd680d000a7338545e68079baa7ee912fa2,Added has_scopes to InheritedResources.
+josevalim,2009-04-26 19:41:37,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7fb1acc1d6c6f35bd98765735a04bbc230cfb816,7fb1acc1d6c6f35bd98765735a04bbc230cfb816,Added base tests for has scope.
+josevalim,2009-04-26 18:44:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c32a713d816336ba34af272806a06d77a4a70044,c32a713d816336ba34af272806a06d77a4a70044,Preparing to add more tests.
+josevalim,2009-04-26 18:07:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d2853bbd96bea6a02d2cfa75838077dc674136bb,d2853bbd96bea6a02d2cfa75838077dc674136bb,Added tests for has_scope and load_scopes_from class methods.
+josevalim,2009-04-26 15:25:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/22b6a6d4b1beb6e4f14d28f0d4eb3f0e5625ba5b,22b6a6d4b1beb6e4f14d28f0d4eb3f0e5625ba5b,Added :default as option to has_scope and load_scopes_from class method.
+josevalim,2009-04-26 14:42:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/714eb9d049026a49a8178e9d4aa14dd0f9f6610c,714eb9d049026a49a8178e9d4aa14dd0f9f6610c,Add scope helper only when it exists.
+josevalim,2009-04-26 14:37:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0cb8ba38e94ec64eb2f8bbacf2e1702fa820b45e,0cb8ba38e94ec64eb2f8bbacf2e1702fa820b45e,Added has scope internal logic.
+josevalim,2009-04-26 14:07:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7d347b5dc5c8be92304b765e820cda5f9a619169,7d347b5dc5c8be92304b765e820cda5f9a619169,Ensure nested belongs to with blocks generate urls just once.
+josevalim,2009-04-26 12:41:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/aa0c7d222abe2c7713a65c8c38b3f211a89f7f3e,aa0c7d222abe2c7713a65c8c38b3f211a89f7f3e,Added hooks for scopes.
+josevalim,2009-04-26 11:38:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c1eb780eda13567019a5f4d7d4f4a5c9d73553a8,c1eb780eda13567019a5f4d7d4f4a5c9d73553a8,First scratch at scopes implementation.
+josevalim,2009-04-26 11:03:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c51ddf6f985f6c35fe3a2f15c783162494bebd1a,c51ddf6f985f6c35fe3a2f15c783162494bebd1a,Moving documentation to the proper place.
+josevalim,2009-04-26 11:01:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fe3098615664f93438890bddf8e1abc87cbaa97a,fe3098615664f93438890bddf8e1abc87cbaa97a,More documentation.
+josevalim,2009-04-26 10:53:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/90d4daec745c5055e09f8e7e4a029461df2dcef3,90d4daec745c5055e09f8e7e4a029461df2dcef3,More documentation.
+josevalim,2009-04-26 10:37:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/d201f1fc2261a504386e97fae56a7fcd4429366e,d201f1fc2261a504386e97fae56a7fcd4429366e,More README cleanup.
+josevalim,2009-04-26 08:38:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/99211de882548ef3c1261e4545e9fb394110a946,99211de882548ef3c1261e4545e9fb394110a946,"Improved documentation and load belongs_to, singleton and polymorphic helpers only if they are going to be used."
+josevalim,2009-04-24 21:40:27,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/795af37e86b2f5ef737f1b5df838bf2d64aa49a0,795af37e86b2f5ef737f1b5df838bf2d64aa49a0,Bump tiny (0.6.3)
+josevalim,2009-04-24 21:33:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/6058b2ecff8e78f78985a97b322ab134ca2d2539,6058b2ecff8e78f78985a97b322ab134ca2d2539,Ensure the default template is not rendered if the default template format is not accepted.
+josevalim,2009-04-24 20:37:46,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1b51e6b5271e937b5f1b39ab4899cd81d64fc90a,1b51e6b5271e937b5f1b39ab4899cd81d64fc90a,"Fixed a bug that happens only when format.xml is given to blocks and then it acts as default, instead of format.html"
+josevalim,2009-04-24 19:59:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/feb2e861b5d6f9bb46b00bc9e99cc552099fe9ac,feb2e861b5d6f9bb46b00bc9e99cc552099fe9ac,Fixed strange bug when create.html.erb or update.html.erb exists and Mime::ALL is requested.
+josevalim,2009-04-19 19:44:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/32da26bfda1c80c9629ff669c7646d30c0f5764c,32da26bfda1c80c9629ff669c7646d30c0f5764c,Stop rescueing any error and bump tiny.
+josevalim,2009-04-15 09:50:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f1975305813fc6a2107e261ee786b1d160b23307,f1975305813fc6a2107e261ee786b1d160b23307,Bump tiny.
+josevalim,2009-04-15 09:50:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c784dac0fb393b1ddceb5bc2a3bc7b0906e3e825,c784dac0fb393b1ddceb5bc2a3bc7b0906e3e825,Ensure route prefix can be set to nil.
+josevalim,2009-04-14 21:27:09,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/49ff64155bd864fff291c37e94389a0db0935449,49ff64155bd864fff291c37e94389a0db0935449,Telling more about belongs_to options in the README
+josevalim,2009-04-05 09:28:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f45a6ee125bf5c6466dde4c9f3aa1372fa8f21c6,f45a6ee125bf5c6466dde4c9f3aa1372fa8f21c6,Bump minor.
+josevalim,2009-04-04 21:46:52,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/1699e0b2727cacc4d8b22e96b2a3b20d4985a36e,1699e0b2727cacc4d8b22e96b2a3b20d4985a36e,Simplifying responder structure and base.
+josevalim,2009-04-04 21:01:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a3cb5028b8029329c8941bd1e2ae5cf3d4f5380d,a3cb5028b8029329c8941bd1e2ae5cf3d4f5380d,Cleaning up responder.
+josevalim,2009-04-04 20:23:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3a4894e7acb10b8cf89f4972fff675f259a59954,3a4894e7acb10b8cf89f4972fff675f259a59954,Cleaning up tests.
+josevalim,2009-04-04 18:19:54,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2f62e3e2f069aaa827ca6abee52558e752758d43,2f62e3e2f069aaa827ca6abee52558e752758d43,"[BACKWARDS_INCOMPATIBLE] By default, we respond only to html requests."
+josevalim,2009-04-04 18:09:55,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a99ce3b3d3e181a1cdbdd899aac87352d61c32d4,a99ce3b3d3e181a1cdbdd899aac87352d61c32d4,More documentation.
+josevalim,2009-04-04 17:50:59,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7c1c06058e5aaf630bcaa13e0b3f17bd74b69ed8,7c1c06058e5aaf630bcaa13e0b3f17bd74b69ed8,Redirect to url can be given as parameter to aliases.
+josevalim,2009-03-22 09:10:34,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/4ba36fb391897cf96dd96d6099731cb0dc795bf1,4ba36fb391897cf96dd96d6099731cb0dc795bf1,Bump to 0.5.2
+josevalim,2009-03-22 09:00:17,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a3a735a39952fafa37107cf8a5b8c4ad7bfc11a7,a3a735a39952fafa37107cf8a5b8c4ad7bfc11a7,Decoupled routes names from collection name and instance name to allow more flexibility.
+josevalim,2009-03-16 19:06:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/830b4c1fe1e6dd903176d8137e74ef28cec533da,830b4c1fe1e6dd903176d8137e74ef28cec533da,Bump to 0.5.1
+josevalim,2009-03-16 19:04:11,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fa8abf79fca18b6dc47183f06a854bb09deb3b66,fa8abf79fca18b6dc47183f06a854bb09deb3b66,Make flash options inherited properly when using namespaced controllers and call I18n only if it is defined.
+josevalim,2009-03-16 15:46:22,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e2b8d47d3c50ffdaa6226fae9f3cb791460f66e,5e2b8d47d3c50ffdaa6226fae9f3cb791460f66e,Adding to README that it is tested and compatible with Rails 2.2.x and Rails 2.3.x
+josevalim,2009-03-16 15:43:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ccc3fbb176d9d899462cec64b44fd328710a294f,ccc3fbb176d9d899462cec64b44fd328710a294f,Going to 0.5.0! (yikes!)
+josevalim,2009-03-16 15:42:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c126db69d4a6f9aa4f33f1eea1933dbaa69d72f5,c126db69d4a6f9aa4f33f1eea1933dbaa69d72f5,"Removing deprecation warning on flash message. If you were using {{resource}} in your I18n files, please rename it to {{resource_name}}."
+josevalim,2009-03-16 15:40:38,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/dae6f039de524fe1cafdb548a6920b01980fa986,dae6f039de524fe1cafdb548a6920b01980fa986,Manually getting the metaclass instead of using Rails helpers.
+josevalim,2009-03-11 11:49:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/7def86b8418dcf1c59fb62f86f0f96e5682478c4,7def86b8418dcf1c59fb62f86f0f96e5682478c4,Namespaced controllers now work out of the box (no configuration needed) and bumping version to release a new gem (0.4.6)
+josevalim,2009-03-11 10:39:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/97a262f13896b819255f3068cbc7b5845842006d,97a262f13896b819255f3068cbc7b5845842006d,Added tests to route_prefix.
+josevalim,2009-03-11 10:34:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/828ac2dbea5234e6a680e463748075727605ca6d,828ac2dbea5234e6a680e463748075727605ca6d,Added tests to defaults.
+josevalim,2009-03-11 10:26:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/b18bcd94131431bfd8a7dfa1b8f615e20e89a96b,b18bcd94131431bfd8a7dfa1b8f615e20e89a96b,Added support to namespaced routes with defaults :route_prefix.
+josevalim,2009-03-06 08:19:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/944a46118773c8e843f9b2f2fecc6199a23304cc,944a46118773c8e843f9b2f2fecc6199a23304cc,Bump version.
+josevalim,2009-03-05 19:23:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fda95250a99213cf22c7abfb8e33bdab24fcd782,fda95250a99213cf22c7abfb8e33bdab24fcd782,Bug fix when resource_url is not defined.
+josevalim,2009-02-28 16:50:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2394a6eea59fd6833bb534956647d1e5fcfced1c,2394a6eea59fd6833bb534956647d1e5fcfced1c,Improving namespaced controller fallback on I18n.
+josevalim,2009-02-27 15:14:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2622e6d59f1658a3853cb47f0ca41060cf380f77,2622e6d59f1658a3853cb47f0ca41060cf380f77,Bump to 0.4.4.
+josevalim,2009-02-27 14:07:33,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c11f33494e00a253204ae6fa4cc89ed064b9f2d0,c11f33494e00a253204ae6fa4cc89ed064b9f2d0,Added support to namespaced flash messages.
+josevalim,2009-02-27 13:58:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/89fd71b3eac40dda794a629a5a46ce9a5b73bc43,89fd71b3eac40dda794a629a5a46ce9a5b73bc43,Deprecating {{resource}}. Use {{resource_name}} instead.
+josevalim,2009-02-27 13:34:30,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/be8c9f5bb5368bf915c6668061c0c66465b5fb6a,be8c9f5bb5368bf915c6668061c0c66465b5fb6a,Better template_exists? handling for Rails 2.3 (to deal with namespaced controllers).
+josevalim,2009-02-27 12:26:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0e986fe27512f449d80a2b324d828fde4b5a795b,0e986fe27512f449d80a2b324d828fde4b5a795b,evaluate_parent first searches for a cached version of the object
+josevalim,2009-02-27 12:12:40,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/383881f5d9c9077e613038bcbaff5be4a8796b78,383881f5d9c9077e613038bcbaff5be4a8796b78,DumbResponder returns nil instead of true.
+josevalim,2009-02-26 19:10:15,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e2c8e2d8e4edc89a6ffcf9a05d1cfbe34f757d2f,e2c8e2d8e4edc89a6ffcf9a05d1cfbe34f757d2f,rspec fix is not automatically loaded anymore. Releasing a new gem.
+josevalim,2009-02-23 17:37:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/86d1ee0cefefc5e39138857ff613695e8927953b,86d1ee0cefefc5e39138857ff613695e8927953b,Bump to 0.4.2
+josevalim,2009-02-23 17:34:07,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0aeb37e76c37c171cc8a5c011ddca658cb791ac6,0aeb37e76c37c171cc8a5c011ddca658cb791ac6,Fixing nasty rspec <= 1.1.12 bug.
+josevalim,2009-02-17 13:05:31,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/eac8bd1614e7d26d65f33a43fd9f17f365b3f07a,eac8bd1614e7d26d65f33a43fd9f17f365b3f07a,Fixing small typo.
+josevalim,2009-02-17 12:58:39,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/5e9177d9e18b80527f0121fe5fc923163fc4a67e,5e9177d9e18b80527f0121fe5fc923163fc4a67e,Going to 0.4.1!
+josevalim,2009-02-17 12:45:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/626dbfc1d09f3ebe7b6f6985fd714b01b7212262,626dbfc1d09f3ebe7b6f6985fd714b01b7212262,Added support to options in url helpers.
+josevalim,2009-02-17 12:06:41,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9a580eba10fee38a904ed64778044e24b3135878,9a580eba10fee38a904ed64778044e24b3135878,parent? does not take begin_of_association_chain into account anymore.
+josevalim,2009-02-15 12:41:04,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e2ecbe44a5e932ee274cda37702b990422bdec89,e2ecbe44a5e932ee274cda37702b990422bdec89,Bump to 0.4
+josevalim,2009-02-15 12:35:56,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/3770dba75d7df086ccee0566807b4b67999a9c9a,3770dba75d7df086ccee0566807b4b67999a9c9a,Speeding up belongs_to associations by removing polymorphic logic and adding it only when needed.
+josevalim,2009-02-15 12:26:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/8b5b2c5bfbc90c17f0113dbcc3a265888bc864f1,8b5b2c5bfbc90c17f0113dbcc3a265888bc864f1,Added :optional information on README
+josevalim,2009-02-15 12:20:43,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/c66a01cb471f988e6bdc618661f16aab599505a2,c66a01cb471f988e6bdc618661f16aab599505a2,Added more tests to optional case.
+josevalim,2009-02-15 12:19:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/72800c055b1651c8864ee5a74b1c9b89d4eb0f3d,72800c055b1651c8864ee5a74b1c9b89d4eb0f3d,Removing unecessary tests.
+josevalim,2009-02-15 12:03:16,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/366f88f11c29c20db1f267e61b7fda23045b4908,366f88f11c29c20db1f267e61b7fda23045b4908,Added support to :optional on belongs_to
+josevalim,2009-02-15 11:09:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/cfeaef61f7e8925387ba2960f872493ba8162e2b,cfeaef61f7e8925387ba2960f872493ba8162e2b,Tyding up to add new option called optional
+josevalim,2009-02-12 18:06:13,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fbaeb3386c85a126570ec1e908f5249e4503153e,fbaeb3386c85a126570ec1e908f5249e4503153e,Minor bump after some bug fixes.
+josevalim,2009-02-12 17:57:20,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f8adbdc7f3111f0e407df01744037330008f825e,f8adbdc7f3111f0e407df01744037330008f825e,Solving annoying problem with ApplicationController not being unloaded properly in development.
+josevalim,2009-02-12 16:27:26,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/e769c872f51846dfc45d98feff8c2b365831cfc2,e769c872f51846dfc45d98feff8c2b365831cfc2,Going to 0.2.2
+josevalim,2009-02-12 16:25:44,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/ec5c4e2a9042712357ccc4c387979b93aa35bf2d,ec5c4e2a9042712357ccc4c387979b93aa35bf2d,URL helpers now deal properly with root singleton urls.
+josevalim,2009-02-07 13:31:18,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/adaaf2f02984c694e1142434f111e91dd567540f,adaaf2f02984c694e1142434f111e91dd567540f,Bug fix when ApplicationController is already loaded when we load respond_to (now we are on 0.2.1)
+josevalim,2009-02-06 17:16:48,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/579fc66037e313824e7f3b8836b47b9f625da4a3,579fc66037e313824e7f3b8836b47b9f625da4a3,New gem version 0.2.0 and pushed documentation about success/failure blocks.
+josevalim,2009-02-06 16:52:42,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a2c30e265c99697e557b8bab06c5081d900a0587,a2c30e265c99697e557b8bab06c5081d900a0587,Another take on eager loading files. Now it works. :)
+josevalim,2009-02-06 16:47:50,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9ed8014d52627c347c4a8af1a131aeea3fbde6eb,9ed8014d52627c347c4a8af1a131aeea3fbde6eb,Removing &block from dumb_responder to avoid unecessary to_proc call.
+josevalim,2009-02-06 16:41:47,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/40c13b165a9fd7e7c8ebf3d4f042fa3a37f65350,40c13b165a9fd7e7c8ebf3d4f042fa3a37f65350,"Revert ""Eager loading plugin to work in multithreaded environments (but not releasing as gem since I want to check it more!)""
+
+This reverts commit a594f5c598cee679f7c040510483d945d7a8f2ae."
+josevalim,2009-02-06 16:27:45,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a594f5c598cee679f7c040510483d945d7a8f2ae,a594f5c598cee679f7c040510483d945d7a8f2ae,Eager loading plugin to work in multithreaded environments (but not releasing as gem since I want to check it more!)
+josevalim,2009-02-06 16:16:19,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/249d2ce6ac316663a096ce2320df6bca21edb51f,249d2ce6ac316663a096ce2320df6bca21edb51f,"Added support for ""success/failure blocks"" (thanks grosser for the idea!)"
+josevalim,2009-02-06 14:52:00,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/fcb9b0fb126f744b3562f5581a32ada92c2df675,fcb9b0fb126f744b3562f5581a32ada92c2df675,Going to version 0.1.2
+josevalim,2009-02-06 14:51:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/960671bdd20c72a5ad1b9394469bb77460bb055c,960671bdd20c72a5ad1b9394469bb77460bb055c,Added parents helpers when using polymorphic controllers.
+josevalim,2009-02-06 14:29:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/941a7b6385d0d672854036f94110962f37d6c591,941a7b6385d0d672854036f94110962f37d6c591,Added :resource and :collection as helpers (available in your views).
+josevalim,2009-02-05 14:12:23,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/0e34348a03716f7a0e64428d549ac7fd5d3b7e87,0e34348a03716f7a0e64428d549ac7fd5d3b7e87,"Changing version for 0.1.1, which is compatible with Rails 2.3.0."
+josevalim,2009-02-05 14:09:01,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/2467ea3e4f1457e1abb135310042ed5eeed6debc,2467ea3e4f1457e1abb135310042ed5eeed6debc,Tests passing on Rails 2.2.2 and Rails 2.3.0
+josevalim,2009-02-05 13:52:51,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/a9df01f4a4a148c9666cc2bd19fdcd6ba3925460,a9df01f4a4a148c9666cc2bd19fdcd6ba3925460,Added support to Rails 2.3.0
+josevalim,2009-02-04 22:12:06,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/9263deeabbd1d3038a6b275487bfa22640e1f90d,9263deeabbd1d3038a6b275487bfa22640e1f90d,Added more information on README.
+josevalim,2009-02-04 21:38:25,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/92dec4e528b1dbacda490653226806bc98bb5927,92dec4e528b1dbacda490653226806bc98bb5927,Added gemspec
+josevalim,2009-02-04 21:13:03,https://api.github.com/repos/activeadmin/inherited_resources/git/commits/f0b92a431193e6434412979c004f8c6fcc56e3e4,f0b92a431193e6434412979c004f8c6fcc56e3e4,First commit! :)

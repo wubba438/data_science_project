@@ -1,0 +1,1901 @@
+clang_complete,Vim plugin that use clang for completing C/C++ code.
+username,timestamp,url,sha,message
+xaizek,2018-09-19 09:42:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/0b98d7533ad967aac3fc4c1a5b0508dafa8a676f,0b98d7533ad967aac3fc4c1a5b0508dafa8a676f,"Less confusing installation instructions in README
+
+Closes #565."
+xaizek,2018-01-18 18:28:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/0918788ea0b9dc4c753ffd162c95f890ae57a275,0918788ea0b9dc4c753ffd162c95f890ae57a275,"Merge pull request #542 from bbaldino/fix_single_quote_escape_in_results
+
+Fix the way single quotes are escaped to match what VimScript expects."
+bbaldino,2017-10-02 01:27:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/396803f3cfa20021ae9340f5eb9e125c1a9c9cf4,396803f3cfa20021ae9340f5eb9e125c1a9c9cf4,"fix the way single quotes are escaped to match what vimscript expects
+
+python will escape a single quote in a string with a slash (""\'""), but
+vimscript wants it done via doubling the single quote (""''"").  this
+commit introduces a new dictionary type used by the code which formats
+the completion results to properly escape single quotes"
+xaizek,2017-09-25 13:14:26,https://api.github.com/repos/xavierd/clang_complete/git/commits/fb8f4f25ab808bc83bc7c704f23171cb6b020737,fb8f4f25ab808bc83bc7c704f23171cb6b020737,"Merge pull request #540 from refacto/fix-doc-typo
+
+Fix a typo in the docs."
+refacto,2017-09-25 12:16:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/08e740d8ef851dad8189ec1c30fe0a281a37c44f,08e740d8ef851dad8189ec1c30fe0a281a37c44f,Fix typo in docs.
+xaizek,2017-07-15 16:17:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/c41eea05317526a4ddd3bd389f3723390b196d4d,c41eea05317526a4ddd3bd389f3723390b196d4d,"Merge branch 'consider-args-on-caching'
+
+* Do a copy of a list passed into TranslationUnit::from_source()
+* Consider arguments in cache entries
+
+Fixes #534."
+xaizek,2017-07-15 09:38:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/52c88ca5abe13ebcba06d8bad0d2285b8a3af9f9,52c88ca5abe13ebcba06d8bad0d2285b8a3af9f9,Consider arguments in cache entries
+xaizek,2017-07-15 09:31:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/3843d9f5c1bc596ffa9c099d90f2fcac5e56f5a5,3843d9f5c1bc596ffa9c099d90f2fcac5e56f5a5,"Do a copy of a list passed into TU::from_source()
+
+We're modifying it."
+xaizek,2017-06-03 20:33:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/c963df1cd10463166e1245445bff27f28e89f9f7,c963df1cd10463166e1245445bff27f28e89f9f7,"Merge pull request #530 from mlen/fix-when-filename-is-not-present
+
+Fix for errors that don't have filename attached"
+mlen,2017-06-03 20:03:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/84d2462e4d5f5cc9f7e4a8585cf19f4f3f770624,84d2462e4d5f5cc9f7e4a8585cf19f4f3f770624,"Fix for errors that don't have filename attached
+
+Some errors, for example ""too many errors emitted, stopping now"" don't
+have file property set. Skip highlighting errors in this case,
+previously they weren't highlighted, because generated command matched
+line 0, column 0."
+xaizek,2017-05-29 13:12:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/73821c340b660d85f18e0f24156bb0a59dc550de,73821c340b660d85f18e0f24156bb0a59dc550de,"Merge pull request #528 from mlen/allow-skip-builtininc
+
+Skip builtin headers when `-nobuiltininc` option is specified."
+mlen,2017-05-29 09:14:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/b32dec962ca4b33ae05f64e4b5d560426012b3d6,b32dec962ca4b33ae05f64e4b5d560426012b3d6,"Allow to skip builtin headers
+
+This is useful when developing for embedded devices, like esp8266"
+xaizek,2017-05-29 09:42:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/fbc0e8d9c23a04445be1cbf2ab4a9c12b1f4e996,fbc0e8d9c23a04445be1cbf2ab4a9c12b1f4e996,"Merge pull request #527 from mlen/highlight-only-diagnostics-from-current-file
+
+Only highlight diagnostics from the current file"
+mlen,2017-05-29 08:24:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/5e802f7a2ee928aa9b27a5699e39c980fd3a13c1,5e802f7a2ee928aa9b27a5699e39c980fd3a13c1,"Only highlight diagnostics from the current file
+
+When issues were detected in an included header file, they would get
+incorrectly highlighted by clang_complete in the file that included that
+header."
+xaizek,2017-05-23 15:42:46,https://api.github.com/repos/xavierd/clang_complete/git/commits/d8a2bec19dfac82b4a136b86613e13cc6aced431,d8a2bec19dfac82b4a136b86613e13cc6aced431,"Merge pull request #524 from mlen/use-json-to-stringify
+
+Use json.dumps to stringify quickfix content, fixes #270"
+mlen,2017-05-12 06:04:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/bb3708c7ebc7b4466a85f45369e3c98e6275e5ad,bb3708c7ebc7b4466a85f45369e3c98e6275e5ad,Use json.dumps to stringify quickfix content
+xaizek,2017-02-07 19:52:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/54ff6bac1404f3f768459f4bce3f0722d26db671,54ff6bac1404f3f768459f4bce3f0722d26db671,"Make navigation work even with remapped `m`
+
+Closes #512."
+xaizek,2017-01-24 11:48:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/1c25564ba94d2914db7e07ae3403a3d293257c74,1c25564ba94d2914db7e07ae3403a3d293257c74,"Merge branch 'support-python3'
+
+* Update except statements to work with Python2 & 3
+* Update raise statements to work with Python 2&3
+* Update print statements to work with Python2 & 3
+* Decode/encode strings as necessary for Python 3
+* Work around map/filter returning iterators in py3
+* Add python3 support to VimL part
+* Make sorted() invocation work in Python2 & 3
+* Update print statements in more scripts for Py2&3
+
+Closes #430.
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-19 15:47:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/596054f5f6475223cbafe9557664dd625d863166,596054f5f6475223cbafe9557664dd625d863166,"Update print statements in more scripts for Py2&3
+
+Saw the missing bits in #510 from @dugachen."
+xaizek,2016-12-14 15:40:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/d20b969e7ce8c67598256d95152729534d106398,d20b969e7ce8c67598256d95152729534d106398,"Make sorted() invocation work in Python2 & 3
+
+They changed its signature in Python3.
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-14 11:24:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/0a9f2b06144bb13f888f04dabb43b4cf3e8943cf,0a9f2b06144bb13f888f04dabb43b4cf3e8943cf,"Add python3 support to VimL part
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-14 11:20:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/5bca8be67dec1184c097f968e9807e5ab0be1476,5bca8be67dec1184c097f968e9807e5ab0be1476,"Work around map/filter returning iterators in py3
+
+That is they don't do anything unless iterated and need explicit
+conversion to a list or processing.
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-13 22:07:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/a6221327310d1b7136efd1f477cae2ffc8506b5c,a6221327310d1b7136efd1f477cae2ffc8506b5c,"Decode/encode strings as necessary for Python 3
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-13 21:58:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/57f1539d5e93626e780af89219f7b5e04172cf77,57f1539d5e93626e780af89219f7b5e04172cf77,"Update print statements to work with Python2 & 3
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-13 21:56:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/5fd1482d653418a60190000a36b20a9d231dab4f,5fd1482d653418a60190000a36b20a9d231dab4f,"Update raise statements to work with Python 2&3
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-12-13 21:55:26,https://api.github.com/repos/xavierd/clang_complete/git/commits/c1003cb0c6f0bd8de69694fd5aaee09e8176c0cf,c1003cb0c6f0bd8de69694fd5aaee09e8176c0cf,"Update except statements to work with Python2 & 3
+
+Based on changes from https://github.com/myint/clang-complete by
+Steven Myint (a.k.a. myint)."
+xaizek,2016-09-25 08:38:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/e536ca69f275a1c615550fc4aada5e320802262a,e536ca69f275a1c615550fc4aada5e320802262a,"Merge branch 'readme-improvements'
+
+* Convert the README to markdown format (its README.md now).
+* Add instructions for minimum setup.
+* Provide clearer description of g:clang_library_path."
+xaizek,2016-09-24 12:18:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/5335b3c2fd501afe70c2c547d6c5dcc3a3598af5,5335b3c2fd501afe70c2c547d6c5dcc3a3598af5,More formatting for Troubleshooting section
+xaizek,2016-09-24 12:16:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/4dc6612bd79a36370addb2a0fb442452803811f6,4dc6612bd79a36370addb2a0fb442452803811f6,Make all README.md headers of equal size
+xaizek,2016-09-24 12:15:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/7dc66489b1cc0ce96b5dfe11ed27fe5d3575a937,7dc66489b1cc0ce96b5dfe11ed27fe5d3575a937,Use better wording for g:clang_library_path
+sittim,2016-09-23 21:29:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/2806752bf4aee6679cadc599136cb012a17d8841,2806752bf4aee6679cadc599136cb012a17d8841,Update
+sittim,2016-09-23 21:23:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/8a8979836ec90e5379615fe48a9df86d7365b8e0,8a8979836ec90e5379615fe48a9df86d7365b8e0,Added info to markdown
+xaizek,2016-06-01 17:30:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/c7f5673a5d31704e9ec43d43c0606b243d5ef623,c7f5673a5d31704e9ec43d43c0606b243d5ef623,"Merge pull request #492 from graywolf/cxcursors_script
+
+Script for fetching cursors kinds from Index.h
+
+This script was created in reaction to the original comment:
+
+# Manually extracted from Index.h
+# Doing it by hand is long, error prone and horrible, we must find a way
+# to do that automatically.
+
+It seems to do the job. Just pass the path of Index.h as first argument
+and it regenerates the new kinds.py file holding the dictionary."
+graywolf,2016-06-01 17:18:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/b5ac4c8807b438aa2462ced6eaf21dd6832758cc,b5ac4c8807b438aa2462ced6eaf21dd6832758cc,resolved feedback
+graywolf,2016-06-01 14:30:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/08c8bbaa6e0b57f727b36d5263593915b294d258,08c8bbaa6e0b57f727b36d5263593915b294d258,"Created script for generating kinds.py file
+
+* ./bin/generate_kinds.py /usr/include/clang-c/Index.h
+* plugin/kinds.py commited even when generated so there is no need
+  to regenerate it after cloning the repository
+
+Fixes: https://github.com/graywolf/clang_complete/issues/1"
+graywolf,2016-06-01 13:00:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/387e001b16bca3742aed771360263998ec39f022,387e001b16bca3742aed771360263998ec39f022,kinds separated into separate file
+xaizek,2016-05-25 08:59:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/3c1a6ff811773d744ac2399ec1ef8b2e32c1d085,3c1a6ff811773d744ac2399ec1ef8b2e32c1d085,"Merge pull request #491 from deffi420/better-builtin-includes-search
+
+Fix #238, libclang.py builtin includes search.
+
+Also fixes #486."
+deffi420,2016-05-24 15:50:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/6303dd150f8082d73fbf1715c580a8fcfdc946b1,6303dd150f8082d73fbf1715c580a8fcfdc946b1,"Fix libclang.py builtin includes search (#238)
+
+The old code tried to find builtin includes from the lexicographically
+last directory returned by os.listdir() for the hardcoded knownPaths.
+However, the code did not check that the filename listed by os.listdir()
+was indeed a directory and not a file. clang>=3.8.0 added c++-analyzer
+and ccc-analyzer binaries under /usr/lib/clang, which broke the builtin
+includes search. This commit adds the missing os.isdir() check."
+xaizek,2016-05-18 08:45:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/b3ce4fbf374059792cc1c62c034a1ae669a1ff67,b3ce4fbf374059792cc1c62c034a1ae669a1ff67,"Merge pull request #489 from graywolf/github/488
+
+Added CXCursor_TypeAliasTemplateDecl to the list"
+xaizek,2016-05-18 08:40:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/533d0cd6ff34d01acdd6eda4e0ba3c714b5bc068,533d0cd6ff34d01acdd6eda4e0ba3c714b5bc068,"Merge pull request #487 from graywolf/pass-no-color-diagnostics
+
+Pass -fno-color-diagnostics to clang
+
+Fix #453, bug in clang itself is open for quite some
+time now, so in the meantime adding workaround directly
+into clang_complete seems like a reasonable workaround."
+graywolf,2016-05-17 16:40:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/f815a3aa34164fdf5da6b0a4d7fe9c5462e7ad74,f815a3aa34164fdf5da6b0a4d7fe9c5462e7ad74,"Added CXCursor_TypeAliasTemplateDecl to the list
+
+Added CXCursor_TypeAliasTemplateDecl (601) to the list.
+
+Fixes #488"
+graywolf,2016-05-17 16:33:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/7fe40da15e418112eeb525ca05e48ade5a79aa0e,7fe40da15e418112eeb525ca05e48ade5a79aa0e,"Pass -fno-color-diagnostics to clang
+
+Fixes #453, bug in clang itself is open for some quite
+time now, so in the meantime adding workaround directly
+into clang_complete seems reasonable workaround."
+xaizek,2016-03-11 14:19:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/3eb9a8b746609ea304b40d234a16b22e87d1160f,3eb9a8b746609ea304b40d234a16b22e87d1160f,"Merge pull request #480 from egorutsov/master
+
+Add isystem compilation flag parsing to cc_args.py"
+egorutsov,2016-03-11 13:02:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/0402f05a03a7769268e0e00661d212007074ea2c,0402f05a03a7769268e0e00661d212007074ea2c,Added files via upload
+xaizek,2016-03-03 10:29:46,https://api.github.com/repos/xavierd/clang_complete/git/commits/2265e9389c3970a059e157a4d5c6a7310b0aa98c,2265e9389c3970a059e157a4d5c6a7310b0aa98c,"Merge pull request #477 from tony/patch-2
+
+Fix typo in docs"
+tony,2016-03-03 02:24:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/afe41b032a1f2ac6b8fc5b938c6557f51a2dd51f,afe41b032a1f2ac6b8fc5b938c6557f51a2dd51f,Fix typo in docs
+xaizek,2016-01-27 19:21:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/5f610761bb42c51bdf726ada1c1b8ab722eea57d,5f610761bb42c51bdf726ada1c1b8ab722eea57d,"Add objc and objcpp filetypes for deoplete
+
+Closes #473 on GitHub."
+xaizek,2016-01-27 13:13:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/cabd8060bab5eb78eaa41d6c40a534464bd38d90,cabd8060bab5eb78eaa41d6c40a534464bd38d90,"Merge pull request #472 from felixendres/master
+
+Fix missing support for cpp sub-filetypes"
+felixendres,2016-01-27 11:03:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/6cfbca62a6cd59b1aab1a8f59c72441d0d36140a,6cfbca62a6cd59b1aab1a8f59c72441d0d36140a,"Fix missing support for cpp sub-filetypes
+
+When setting a subtype for the cpp filetype, e.g. cpp.doxygen to highlight
+doxygen documentation, clang_complete did not recognize it as c++ anymore."
+xaizek,2016-01-26 15:24:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/ffa07b8a93d0b4a61b62c5fa1758262e95d8e25f,ffa07b8a93d0b4a61b62c5fa1758262e95d8e25f,"Update for deoplete per comment in #463
+
+See https://github.com/Rip-Rip/clang_complete/issues/463#issuecomment-175000044
+
+This is a new option though, so probably needs latest deoplete."
+xaizek,2016-01-26 15:23:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/0a8c5ef730be358adacc4730473510eba0f472dc,0a8c5ef730be358adacc4730473510eba0f472dc,Add basic troubleshooting section to the README
+xaizek,2016-01-18 08:52:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/2289f34cbea9765fbb2e82f5c53c53ecc8b60571,2289f34cbea9765fbb2e82f5c53c53ecc8b60571,"Merge pull request #468 from tony/patch-1
+
+Fix completion minimum pattern length"
+tony,2016-01-18 04:07:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/cfa531d3c3beb039fffb94856e200063012965bf,cfa531d3c3beb039fffb94856e200063012965bf,"Fix completion minimum pattern length
+
+See also: https://git.io/vzWX4
+Related: #463"
+xaizek,2015-10-26 14:33:26,https://api.github.com/repos/xavierd/clang_complete/git/commits/bb4f7dd72e2be5771044307f6fe4d7db97007a04,bb4f7dd72e2be5771044307f6fe4d7db97007a04,"Merge pull request #462 from expipiplus1/deoplete-improvements
+
+Deoplete support code improvements"
+expipiplus1,2015-10-26 14:23:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/c6509228e3ba5ae5603c346642c2e424ee21cda8,c6509228e3ba5ae5603c346642c2e424ee21cda8,Use vim.call over vim.eval
+expipiplus1,2015-10-26 14:22:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/650c5bbb1b7c52770b70785c1cab7f26c2176ab2,650c5bbb1b7c52770b70785c1cab7f26c2176ab2,Remove unused imports in deoplete source
+xaizek,2015-10-23 12:31:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/78d34f5205b9a8459a635e8d2b912d76d6fdfccb,78d34f5205b9a8459a635e8d2b912d76d6fdfccb,"Merge pull request #461 from expipiplus1/upstream
+
+Add basic deoplete hooks.
+
+This is a neovim plugin that orchestrates various completion plugins."
+expipiplus1,2015-10-23 02:42:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/531747655418f902982099506b7176208d08362c,531747655418f902982099506b7176208d08362c,"Add basic deoplete hooks,
+
+Closes #460"
+xaizek,2015-10-22 15:27:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/d32ea17bca2586db95e0fe7fe12c1a879f736330,d32ea17bca2586db95e0fe7fe12c1a879f736330,"Merge branch 'better-spaces-handling-on-win'
+
+The following variants should work now:
+
+-IC:/no_space_path
+-I""C:/has space path""
+-I../no_space_path
+-I""../has space path"""
+xaizek,2015-10-22 15:25:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/0872c3d8e203d7fa13f2a653a0e3d1a14bf4a606,0872c3d8e203d7fa13f2a653a0e3d1a14bf4a606,Fix shlex.split usage
+ZSaberLv0,2015-10-22 13:21:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/2c0e2931d55cbbf134c36dc4824df0cd8a4f2624,2c0e2931d55cbbf134c36dc4824df0cd8a4f2624,solve problem if path contain spaces under Windows;
+ZSaberLv0,2015-10-22 08:41:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/361051718680b997199fababd844b06389ded3bb,361051718680b997199fababd844b06389ded3bb,no quote if source path has no quote;
+ZSaberLv0,2015-10-22 08:10:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/a87c469dc2869a71074e3d57169ca40a55ac77df,a87c469dc2869a71074e3d57169ca40a55ac77df,solve relative path issue in .clang_complete under Windows gVim;
+xaizek,2015-09-22 17:55:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/096381d15edc6b118c7753d3428509b84856e1c5,096381d15edc6b118c7753d3428509b84856e1c5,"Merge pull request #454 from martina-if/find_clang_library
+
+Find the correct clang library version in linux
+
+In linux the loading of the clang library might fail unless you specify let g:clang_library_path='/usr/lib/llvm-3.4/lib/libclang.so.1.
+
+Using find_library() can help solving this problem by finding the correct file looking at different versions of the library in the path."
+martina-if,2015-09-22 15:58:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/473cd77d2de1715a34dfa4ef9e5f39581401560a,473cd77d2de1715a34dfa4ef9e5f39581401560a,Find the correct clang library version in linux
+xaizek,2015-09-05 16:55:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/3fa0142d931dda29a6c324fff32d5379fbdad360,3fa0142d931dda29a6c324fff32d5379fbdad360,"Merge pull request #450 from chumakd/master
+
+Add OmniCppComplete compatibility mode
+
+Allow clang_complete to be used in parallel with OmniCppComplete, mostly
+as an alternative manual-completion method.
+
+In this mode all omni auto-completion is kept in control of
+OmniCppComplete plugin, clang's auto-completion is disabled, keeping
+only <C-X><C-U> as main clang completion function.
+
+This mode is enabled by g:clang_omnicppcomplete_compliance configuration
+option."
+chumakd,2015-09-05 16:19:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/50485b7a1b915966befa0fbae411ad3ffa66b8de,50485b7a1b915966befa0fbae411ad3ffa66b8de,"Add OmniCppComplete compatibility mode
+
+Allow clang_complete to be used in parallel with OmniCppComplete, mostly
+as an alternative manual-completion method.
+
+In this mode all omni auto-completion is kept in control of
+OmniCppComplete plugin, clang's auto-completion is disabled, keeping
+only <C-X><C-U> as main clang completion function.
+
+This mode is enabled by g:clang_omnicppcomplete_compliance configuration
+option."
+xaizek,2015-07-26 18:21:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/b8a541777c7ae9b5097c702cbe183aeab8a2b933,b8a541777c7ae9b5097c702cbe183aeab8a2b933,"Merge pull request #448 from DroZ-hun/optional_parameters
+
+Optional parameters were not present in completion menu.
+This change adds them in this format: foo(int a, int b=?)
+It would be great if it would be possible to print the exact value
+instead of '?', but this is better then nothing.
+Snippet can also contain default argument if
+g:clang_complete_optional_args_in_snippets is set to 1."
+DroZ-hun,2015-07-06 22:13:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/f3a4a6d01447c56e6e9f0fd29ac6842da679b324,f3a4a6d01447c56e6e9f0fd29ac6842da679b324,Optional arguments are supported in completion.
+xaizek,2015-01-26 06:48:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/1724008e987de584bec0823bfb8959b0a3183c51,1724008e987de584bec0823bfb8959b0a3183c51,Reduce nesting in s:StopMonitoring()
+xaizek,2015-01-26 06:45:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/4a1a5d5b92d4ddff8216d9308aee6deb0448350c,4a1a5d5b92d4ddff8216d9308aee6deb0448350c,"Merge pull request #440 from wilywampa/add_if_map
+
+Check g:clang_make_default_keymappings before unmapping"
+wilywampa,2015-01-25 23:44:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/4ada9c1a9647a0ff3f698376beb5fa408955342b,4ada9c1a9647a0ff3f698376beb5fa408955342b,Check g:clang_make_default_keymappings before unmapping
+xaizek,2015-01-20 06:41:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/92414cc0b4e12bd7c8ae0fff8c4ac37da16ca0fe,92414cc0b4e12bd7c8ae0fff8c4ac37da16ca0fe,"Merge pull request #438 from brianmwaters/master
+
+Add -ansi and -pedantic to cc_args.py"
+xaizek,2015-01-20 06:36:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/3ab3d2817a1fab0847b3079882283a72f579ce4a,3ab3d2817a1fab0847b3079882283a72f579ce4a,"Merge pull request #439 from wilywampa/old_cr
+
+Restore <CR> map with all options"
+wilywampa,2015-01-20 02:50:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/5beaff1d386ed08de56fc378d040e7ba06cea957,5beaff1d386ed08de56fc378d040e7ba06cea957,Add support for old Vim versions
+wilywampa,2015-01-18 19:50:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/94f6b570325869db9259f6b3332a98b0d16d3274,94f6b570325869db9259f6b3332a98b0d16d3274,Fix snippet not triggering
+wilywampa,2015-01-18 19:22:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/72eabd5516ce19801a691022d4ac9d5b04b09df2,72eabd5516ce19801a691022d4ac9d5b04b09df2,Move unmaps to separate function called by autocmd
+wilywampa,2015-01-18 18:57:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/ba3d972b7daa9697a2b165ffd4c01cfa4258a544,ba3d972b7daa9697a2b165ffd4c01cfa4258a544,Remove buffer imap if old_cr wasn't a <buffer> map
+wilywampa,2015-01-18 03:45:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/35d2956d5764eeb3891d80d1219dd961d4386c91,35d2956d5764eeb3891d80d1219dd961d4386c91,Fix restore of recursive map
+wilywampa,2015-01-18 02:50:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/610e77ce7ebb38f6c8e884599282b3f337f7af09,610e77ce7ebb38f6c8e884599282b3f337f7af09,Restore <CR> map with all options
+brianmwaters,2015-01-16 08:28:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/c6d3cf58f17ad09e643096869548a4486c30e40d,c6d3cf58f17ad09e643096869548a4486c30e40d,Add -ansi and -pedantic to cc_args.py
+xaizek,2014-12-27 14:24:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/ba9cbed07ecff774bd949495ef8ede5201c0691b,ba9cbed07ecff774bd949495ef8ede5201c0691b,"Merge pull request #434 from salty-horse/patch-1
+
+Fix project pronoun"
+salty-horse,2014-12-27 13:45:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/b66ec8946fa864b1b5b455948bdc822431774ad0,b66ec8946fa864b1b5b455948bdc822431774ad0,Fix project pronoun
+xaizek,2014-12-15 16:45:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/c632539379d0a951bae317a89d078544d5d7f58f,c632539379d0a951bae317a89d078544d5d7f58f,"Merge pull request #416 from tokoro/fix-ultisnips
+
+Conflicts:
+	plugin/snippets/ultisnips.py
+
+Fixes #426."
+tobig,2014-11-19 20:13:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/f241549019bf17443c37239162ac6313497e9a53,f241549019bf17443c37239162ac6313497e9a53,"Merge pull request #428 from mkc188/master
+
+Revert some changes to get back compatibility"
+mkc188,2014-11-19 18:35:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/1330d0cce215e4ab4dbd48d1ce6d06d13e9e363a,1330d0cce215e4ab4dbd48d1ce6d06d13e9e363a,Revert some changes to get back compatibility
+tobig,2014-11-19 13:01:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/70c9796eb56f0874c5467eaa833dabbbf12d0a2c,70c9796eb56f0874c5467eaa833dabbbf12d0a2c,"Merge pull request #427 from mkc188/master
+
+Fix return key mapping conflicts with auto-pairs"
+mkc188,2014-11-19 12:33:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/2f2fdd7efaf583be0c97341d22a319578bc83f84,2f2fdd7efaf583be0c97341d22a319578bc83f84,Fix return key mapping conflicts with auto-pairs
+tobig,2014-10-24 20:18:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/6a7ad8249a209ad90b9f95e4611e911fb1339a32,6a7ad8249a209ad90b9f95e4611e911fb1339a32,"Merge pull request #424 from wilywampa/master
+
+Get dirname of library_path if library_path is a file"
+wilywampa,2014-10-24 20:16:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/ee182f3c8aff2ed435e8b8c87cfe200a6ad27035,ee182f3c8aff2ed435e8b8c87cfe200a6ad27035,Get dirname of library_path if library_path is a file
+tobig,2014-10-24 06:08:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/fc494e211e1859babb1ea1254388ff37f68a408a,fc494e211e1859babb1ea1254388ff37f68a408a,"Merge pull request #423 from Keithbsmiley/ks-ultisnips-fix
+
+Update to new Ultisnips API"
+keith,2014-10-23 21:52:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/e80014169a85bdf72e63d218252c5a15a5e8db5a,e80014169a85bdf72e63d218252c5a15a5e8db5a,"Update to new Ultisnips API
+
+* Fixes #415"
+tobig,2014-10-10 09:21:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/82b04b809a9c3a424e345495f620935e0aaee5fa,82b04b809a9c3a424e345495f620935e0aaee5fa,"Merge pull request #419 from muggenhor/clang-lib-file
+
+Allow specifying clang's lib full path, not just its dir"
+muggenhor,2014-09-10 12:07:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/f1ec6ba3e8d9a3ab94f892ce60f894340512f41a,f1ec6ba3e8d9a3ab94f892ce60f894340512f41a,"Allow specifying clang's lib full path, not just its dir
+
+Some systems don't install a libclang.so symlink but instead leave
+filenames like libclang.so.1 [1]. So the ability to specify the
+directory containing the clang shared library isn't always enough. This
+change allows specifying the full library path while maintaining the
+ability to specify just its containing directory.
+
+As an example of the problem,
+[libclang1-3.4:amd64=1:3.4-1ubuntu3~precise1][1] on Ubuntu has both these
+full paths available for clang's shared library (one's a symlink),
+neither of which is named exactly 'libclang.so':
+ * /usr/lib/llvm-3.4/lib/libclang.so.1
+ * /usr/lib/x86_64-linux-gnu/libclang-3.4.so.1
+
+[1]: http://packages.ubuntu.com/precise-updates/amd64/libclang1-3.4/filelist"
+tokoro10g,2014-08-13 13:19:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/14a006dc98fcb26b1a106c8abf79897dfa2e4b00,14a006dc98fcb26b1a106c8abf79897dfa2e4b00,Bugfix of clearing Ultisnips snippets
+tobig,2014-07-16 09:37:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/db6efa2bffea500ae82f06fb7a82f35f05b5ff1f,db6efa2bffea500ae82f06fb7a82f35f05b5ff1f,"Merge pull request #410 from brunodefraine/patch-1
+
+set mark when jumping to location in current file"
+brunodefraine,2014-07-16 08:58:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/4b53210472b4a53819be5a9114d967eb18e0db5d,4b53210472b4a53819be5a9114d967eb18e0db5d,"set mark when jumping to location in current file
+
+The normal mode command m' was there before but got broken by commit 6f491682: m without the single quote is not a normal mode command. When changing files, the jump list is already updated."
+tobig,2014-07-15 13:01:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/5d3b9bdc07ad32e40d354650398d6ec1841cf4c3,5d3b9bdc07ad32e40d354650398d6ec1841cf4c3,"Merge pull request #409 from tobig/revert-tab-in-insert-mode
+
+Revert ""Simple hack/fix to allow tab in insert mode when completing func..."
+tobig,2014-07-15 12:56:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/852580521d334e3e21b15886d231f2116d6606a9,852580521d334e3e21b15886d231f2116d6606a9,"Revert ""Simple hack/fix to allow tab in insert mode when completing function and template arguments""
+
+This reverts commit d9dccefca96f95a1d1543425dec33fbfadd7daf0.
+
+This caused conflicts with supertab and ultisnips. I revert it for now.
+
+I still like this functionality, but we obviously need to design it
+better."
+tobig,2014-07-10 14:25:36,https://api.github.com/repos/xavierd/clang_complete/git/commits/9de23631b3225e64e5b82928c1aea00b1b55f519,9de23631b3225e64e5b82928c1aea00b1b55f519,"Merge pull request #399 from modk/master
+
+Simple hack to allow tab in insert mode when completing function arguments"
+tobig,2014-06-27 14:48:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/4386a2a6a1e4dbc6b4f0a406075f211ffc736c22,4386a2a6a1e4dbc6b4f0a406075f211ffc736c22,"Merge pull request #405 from branoh/fix-jumpToLocation
+
+Fixed jumpToLocation path containing spaces"
+branoh,2014-06-27 12:55:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/aaf496d864d333317f0c5c65c281d0375519d446,aaf496d864d333317f0c5c65c281d0375519d446,Fixed jumpToLocation path containing spaces - added backslash to escape the spaces
+Silex,2014-06-24 07:29:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/8e64cabd0d017f54b697e6ad01af812be2028aa2,8e64cabd0d017f54b697e6ad01af812be2028aa2,"Merge pull request #404 from crucerucalin/master
+
+Makefile fix: SHELL should be set to /usr/bin/env bash not $(/usr/bin/en..."
+calincru,2014-06-23 21:30:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/ab26b4771d1c3b7afcd2deff0284db6937d0207c,ab26b4771d1c3b7afcd2deff0284db6937d0207c,Makefile fix: SHELL should be set to /usr/bin/env bash not $(/usr/bin/env bash)
+tobig,2014-06-19 15:16:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/024dd4be05e31d7efda502ab215dca80c469a079,024dd4be05e31d7efda502ab215dca80c469a079,"Merge pull request #403 from Arnaud-de-Grandmaison/issue372
+
+Make all include path absolute, so that it is no longer needed to change..."
+tobig,2014-06-19 14:17:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/9e5d4b17a2a2a4bcd5b400ccab06c96d6a6f14b3,9e5d4b17a2a2a4bcd5b400ccab06c96d6a6f14b3,"Merge pull request #400 from opntr/master
+
+fixed bash path in Makefile"
+tobig,2014-06-19 14:16:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/fba94613d25804841f57b325aecc7403073e5552,fba94613d25804841f57b325aecc7403073e5552,"Merge pull request #390 from Andrew-Dunn/better_absolute_paths
+
+Improve relative>absolute filename option handling"
+tobig,2014-06-19 14:14:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/f7b2d2c8efaf81b486c697ea9757df01da1ee9b7,f7b2d2c8efaf81b486c697ea9757df01da1ee9b7,"Merge pull request #402 from kevincox/master
+
+Made GotoDeclaration functions public."
+kevincox,2014-06-19 13:44:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/9049783363f3f891c9993d5a29e2e64bb992797a,9049783363f3f891c9993d5a29e2e64bb992797a,Add GotoDeclaration functions to documentation.
+kevincox,2014-06-19 13:39:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/77f582ba8952554332df4efc52cb85cd4335de51,77f582ba8952554332df4efc52cb85cd4335de51,Add global functions for GotoDeclaration().
+Arnaud-de-Grandmaison,2014-03-08 20:47:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/e247feecdddf7251cf3cfe1bf0d6181858026297,e247feecdddf7251cf3cfe1bf0d6181858026297,"Make all include path absolute, so that it is no longer needed to change the working directory"
+opntr,2014-05-26 12:47:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/ec4960c6ca2a7fa60191129936baea7834f98e7a,ec4960c6ca2a7fa60191129936baea7834f98e7a,"fixed bash path in Makefile
+
+Signed-off-by: Oliver Pinter <oliver.pntr@gmail.com>"
+modk,2014-05-09 09:38:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/d9dccefca96f95a1d1543425dec33fbfadd7daf0,d9dccefca96f95a1d1543425dec33fbfadd7daf0,Simple hack/fix to allow tab in insert mode when completing function and template arguments
+xaizek,2014-04-13 10:37:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/5b3ced59588dc9f65e9e916890cb6795764c3fe4,5b3ced59588dc9f65e9e916890cb6795764c3fe4,"Swap default sources of command-line options
+
+Previous order caused system-wide include paths become more prioritized
+than ones specified by a user in `.clang_complete`.
+
+Resolves #396."
+tobig,2014-03-26 15:58:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/f3db9fde67f1f7ba93cefda83dfb0940ff584976,f3db9fde67f1f7ba93cefda83dfb0940ff584976,"Merge pull request #393 from bartlibert/jump_in_preview
+
+Show declaration in preview window"
+tobig,2014-03-20 09:24:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/e9073f2f644df826033dfdb78cf47b6676bbc750,e9073f2f644df826033dfdb78cf47b6676bbc750,"Merge pull request #392 from tobig/kill-bg-thread
+
+Do not kill vim, just mark background threads as deamons"
+tobig,2014-03-18 20:08:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/5db14030c39cc0b44ed3abea1ef248b62e80df4f,5db14030c39cc0b44ed3abea1ef248b62e80df4f,"Do not kill vim, just mark background threads as deamons"
+xavierd,2014-03-09 04:52:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/858a6d2e0e24abc88d91ef4a871200f0007f7491,858a6d2e0e24abc88d91ef4a871200f0007f7491,"Merge pull request #389 from tobig/kill-bg-thread
+
+Prevent vim from hanging on exit"
+xavierd,2014-03-08 03:36:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/263c26007b78807fa9dd8e03a307d1457bfcce1d,263c26007b78807fa9dd8e03a307d1457bfcce1d,"Merge pull request #387 from abrausch/master
+
+Fix ultisnip snippets #382"
+tobig,2014-03-06 16:16:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/a14be2bfcfdbec411186005e05b915695c62a710,a14be2bfcfdbec411186005e05b915695c62a710,"Prevent vim from hanging on exit
+
+Until now, vim would hang on exit to wait for the warmup thread or other
+completion threads to finish. This can cause an annoying 1-5 seconds
+delay when exiting vim. We address this issue by manually closing the
+current buffer and then directly killing vim. This is a little hackish,
+but we unfortunately do not have any control over running clang threads.
+As we close all buffers in advance, the risk that we loose something by
+killing vim is minimal. The only remaining annoyance is that vim prints
+'Killed' on exit. I doubt there is a lot we can do about this."
+xavierd,2014-03-06 06:18:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/5c419c57cc327819a15a7e3baeae0ca099b23e44,5c419c57cc327819a15a7e3baeae0ca099b23e44,"Merge pull request #383 from Andrew-Dunn/argument_escape_handling
+
+Split clang option arguments using POSIX standard."
+Andrew-Dunn,2014-03-05 21:45:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/0124252bdc1d9fe81be4924054ef9e1cd3771f0c,0124252bdc1d9fe81be4924054ef9e1cd3771f0c,"Option splitting logic is now different for Windows
+
+This change should allow for backslashes in the future. It also means
+option splitting will work similarly to the native command environment.
+
+Minimum python version increased to 2.6.
+
+Note that cygwin python environments will use posix style option splitting."
+Andrew-Dunn,2014-03-04 15:19:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/bed3f5514480264bb4c0e77f1fb55d48e63ca3ca,bed3f5514480264bb4c0e77f1fb55d48e63ca3ca,"Use shlex.split() instead of list(shlex.shlex())
+
+Previously used `list(shlex.shlex(options, posix=True))`.
+It turns out this is exactly the same as calling:
+`shlex.split(options)`
+So I did that instead because it's much cleaner."
+Andrew-Dunn,2014-03-04 14:17:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/ddbdc3663ff82e5d761b0993b003a1bd43df94af,ddbdc3663ff82e5d761b0993b003a1bd43df94af,"Split clang option arguments using POSIX standard.
+
+Uses Python standard library's `shlex` class to provide
+accurate option parsing. It also prevents options quoted using
+single quotes from being mishandled. i.e. The quotes are stripped
+as expected.
+
+Escaping using the escape character `\` is not supported at the
+moment due to the clang_complete.vim converting all backslashes to
+forward slashes (which is incorrect behaviour I might add).
+However this is consistent with the current behaviour regardless."
+xavierd,2014-02-20 05:01:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/fe9e21235f23c1992e0fc537ffa84a0873ef1526,fe9e21235f23c1992e0fc537ffa84a0873ef1526,"Merge pull request #360 from suy/compatibility
+
+Allow not mapping keys by default"
+suy,2013-06-07 11:34:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/c8673142759b87316265eb0edd1f620196ec1fba,c8673142759b87316265eb0edd1f620196ec1fba,Allow not mapping keys by default
+xavierd,2014-02-16 06:00:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/d1140fb80d159050eb0610d7efd3a5a4c7a37598,d1140fb80d159050eb0610d7efd3a5a4c7a37598,"Merge pull request #357 from johnsyweb/better_logging
+
+Improvement to logging when loading libclang fails"
+xavierd,2014-02-15 21:30:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/58b5479e0e5d6ed2be9b4fb7acd04b4f6e08159f,58b5479e0e5d6ed2be9b4fb7acd04b4f6e08159f,"Merge pull request #324 from Rip-Rip/disable-clang_complete
+
+Add the ability to disable clang_complete."
+Silex,2014-02-13 18:32:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/fba93515286b74d2df7caf023cc43da75c313ef6,fba93515286b74d2df7caf023cc43da75c313ef6,"Merge pull request #377 from rasendubi/master
+
+Remove incompatibility issues with UltiSnips"
+rasendubi,2014-02-13 15:41:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/1cb922d1dbb962d892b81a25ca54455e03bf628d,1cb922d1dbb962d892b81a25ca54455e03bf628d,Remove incompatibility issues with UltiSnips
+xaizek,2014-02-11 18:35:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/20028494e7cf8214cdb937c30cf11d0982711cdd,20028494e7cf8214cdb937c30cf11d0982711cdd,"Merge pull request #375 from rasendubi/patch-1
+
+Activate clang_complete for C file sub-types
+
+When writing documentation with Doxygen, some people automatically
+set doxygen file sub-type for files. As a result, vim doesn't activate clang_complete.
+This patch fixes problem for doxygen and all others sub-types."
+rasendubi,2014-02-11 13:09:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/b306c5285484a9d828e616857cd3b5c7305d0ab3,b306c5285484a9d828e616857cd3b5c7305d0ab3,"Activate clang_complete for C file sub-types
+
+Since I often write documentation with Doxygen, I automatically set doxygen file sub-type for C files. As a result, vim doesn't activate clang_complete.
+This patch fixes problem for doxygen and all others sub-types."
+xaizek,2013-12-20 11:58:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/101ab718578d9afcf7e9df51c7004ba41ee99eba,101ab718578d9afcf7e9df51c7004ba41ee99eba,"Merge pull request #367 from DeaR/fix-path-split
+
+Fix path split
+
+path split by , , if fails error of included path of (whitespace) or ,.
+
+:help path
+
+Spaces can also be used to separate directory names (for backwards
+compatibility with version 3.0). To have a space in a directory
+name, precede it with an extra backslash, and escape the space:
+
+:set path=.,/dir/with\\\ space
+To include a comma in a directory name precede it with an extra
+backslash:
+
+:set path=.,/dir/with\\,comma"
+DeaR,2013-12-19 11:23:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/460c1aa9fc33e20b19a613808a8bb60485488e0d,460c1aa9fc33e20b19a613808a8bb60485488e0d,Fix path split.
+Silex,2013-12-17 12:43:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/3081c0d233a37bc293e37b5e234231d76281510b,3081c0d233a37bc293e37b5e234231d76281510b,"Merge pull request #336 from visitor83/master
+
+ Fix for jumpToLocation when loc.file is NoneType"
+Silex,2013-12-16 15:19:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/ee5841996c69fc96c21dd6e3696cac169ad779eb,ee5841996c69fc96c21dd6e3696cac169ad779eb,"Merge pull request #364 from Fat-Zer/master
+
+Fix race condition with changing directory"
+Fat-Zer,2013-12-13 17:50:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/592be35022467d566c4873dc957d0d9a607c0865,592be35022467d566c4873dc957d0d9a607c0865,fix race condition with changing directory
+xavierd,2013-05-19 13:26:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/9c23b9075e3716f4ee5f83a3233bbee13fea15b2,9c23b9075e3716f4ee5f83a3233bbee13fea15b2,Add the ability to disable clang_complete.
+xavierd,2013-05-19 13:01:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/b4880dcb45e10c658bfa1f5a4702173997ba8896,b4880dcb45e10c658bfa1f5a4702173997ba8896,"Merge pull request #319 from kirneh1986/master
+
+Only map <CR> when needed"
+xavierd,2013-04-20 16:52:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/5ce0d12d3ee7e074720fb9075119b3a3810b9478,5ce0d12d3ee7e074720fb9075119b3a3810b9478,Workaround issue #297
+xavierd,2013-04-20 16:40:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/00adc4f1b7fbd553be82193e8691db0272084fb4,00adc4f1b7fbd553be82193e8691db0272084fb4,"Objective-c++ files were considered as c++ files.
+
+Fix issue #313"
+xavierd,2013-04-20 16:30:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/b54f1e31722de7626a681ac4be09dbabb2097d45,b54f1e31722de7626a681ac4be09dbabb2097d45,"Merge pull request #311 from Rip-Rip/goto-definition-same-tu
+
+Try to jump to definition before trying to go to the declaration."
+xavierd,2013-04-13 16:28:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/a9871c832839b7e1b44c5dfc5867d88d7bae8d28,a9871c832839b7e1b44c5dfc5867d88d7bae8d28,Try to jump to definition before trying to go to the declaration.
+xavierd,2013-04-13 15:28:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/350bebcef27ce3605a31093aa2dc41f5d66ddf4a,350bebcef27ce3605a31093aa2dc41f5d66ddf4a,Merge branch 'master' of git://github.com/daedric/clang_complete into daedric-master
+daedric,2013-04-07 11:06:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/a9eb9b4086acaf56c986fdd805dcc5d229a51923,a9eb9b4086acaf56c986fdd805dcc5d229a51923,"Improve cc_args by supporting warning and std options
+
+* cc_args now save -W* and -std=* arguments
+* Minor code cleaning"
+taketwo,2013-03-23 18:14:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/bb1c086578b80e367c151becde0081ca5ba237d1,bb1c086578b80e367c151becde0081ca5ba237d1,"Add options to control ""jump to declaration"" key mappings.
+
+g:clang_jumpto_declaration_key sets the key used to jump to declaration.
+g:clang_jumpto_back_key sets the key used to jump back.
+The default values are <C-]> and <C-T> respectively."
+xavierd,2013-03-18 00:47:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/16e5cefc44d6a1d15e72181b2606cd9b0e869669,16e5cefc44d6a1d15e72181b2606cd9b0e869669,Fix canFindBuiltinHeaders if index.parse fails.
+xavierd,2013-03-16 20:24:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/d4294956991bb33f49337a1b078322ab861adc57,d4294956991bb33f49337a1b078322ab861adc57,"Index.parse doesn't return None on failure.
+
+It raises a TranslationUnitLoadError."
+xavierd,2013-03-16 06:01:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/fbbab605fff9d0d8453f0099da486dac6e74fbdf,fbbab605fff9d0d8453f0099da486dac6e74fbdf,"A NULL pointer returned by libclang shouldn't be compared against None.
+
+This fix #299."
+xavierd,2013-03-06 05:38:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/d14eb8739cc2e52d17dda2084962c586af2757f8,d14eb8739cc2e52d17dda2084962c586af2757f8,"Introduce a new snippets API.
+
+The snippets plugins are now fully written in python.
+
+Total completion time went from 0.220s to 0.160s."
+xavierd,2013-03-09 21:22:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/0f7bbb14a210b088e061a7e84317aced4687d680,0f7bbb14a210b088e061a7e84317aced4687d680,Fix a nasty typo.
+xavierd,2013-03-09 03:29:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/308b2366109760a1867af04ade5e0ab7296c0a87,308b2366109760a1867af04ade5e0ab7296c0a87,"Alert the user whenever goto declaration is used and the file is not saved.
+
+Fix #294."
+xavierd,2013-01-29 04:25:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/07f77e0b60098185a5d6ad54f436d8cc2c35830e,07f77e0b60098185a5d6ad54f436d8cc2c35830e,Add support for goto-declaration.
+xavierd,2013-03-05 04:37:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/7293cd9b79114b24a6915827f9ab10c566ceaf65,7293cd9b79114b24a6915827f9ab10c566ceaf65,"Add Tobias to the license, and slightly reword it."
+xavierd,2013-03-04 07:01:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/e369230f3c619d5d5a43c02bf324401cddecb05a,e369230f3c619d5d5a43c02bf324401cddecb05a,Update the doc.
+xavierd,2013-03-04 07:23:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/749b8984200a91f488ca379e6d0f2ee6973cbf8a,749b8984200a91f488ca379e6d0f2ee6973cbf8a,Remove support for snipmate.
+cryptomilk,2013-03-04 21:44:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/957b1ed3e2cd7a9460e7546549d2ae6a4a82c89f,957b1ed3e2cd7a9460e7546549d2ae6a4a82c89f,Add library path for x86_64 Linux systems.
+tobig,2013-01-20 15:48:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/68b0691bc6eb7e010d445a6bea8abf01f340ec52,68b0691bc6eb7e010d445a6bea8abf01f340ec52,"Remove unnecessary assignment
+
+Only print abbr, if no snippets are enabled.
+
+Conflicts:
+	plugin/clang_complete.vim"
+xavierd,2013-03-04 06:17:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/449b2724746eacabde0045e68df1724d281f6f16,449b2724746eacabde0045e68df1724d281f6f16,Merge branch 'kill-clang'
+xavierd,2013-03-04 06:17:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/b19924c4cb4276c2e4f217df81a8909568b07cdb,b19924c4cb4276c2e4f217df81a8909568b07cdb,Last fix.
+xavierd,2013-03-04 06:14:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/768384c925ed0bebedb202d72521ef66aa24d443,768384c925ed0bebedb202d72521ef66aa24d443,More cleanup.
+xavierd,2013-03-04 05:51:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/c021ee9c5c54f54c1e03a9f325d22e5353d9cce4,c021ee9c5c54f54c1e03a9f325d22e5353d9cce4,"Merge pull request #287 from pcc/resolve-paths
+
+Have getCompilationDBParams resolve paths relative to command's working directory"
+pcc,2013-03-03 04:25:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/608f79443ca075aab77970f9c32f5a77fd3fb138,608f79443ca075aab77970f9c32f5a77fd3fb138,Have getCompilationDBParams resolve paths relative to command's working directory
+tobig,2013-02-20 22:16:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/058a1741b1c7273285a6f65dbc15b0872d2df837,058a1741b1c7273285a6f65dbc15b0872d2df837,"Ensure to not expose the last_query cache
+
+Ensure we do not give out a reference to the internal argument cache of
+the compilation database. Instead explicitly copy the internal cache.
+The problem with just giving out a reference is that later passes may
+modify the argument list. This does not only add unrelated content to
+the internal cache, but it also may lead to random crashes in case we
+use the argument list from different threads."
+xavierd,2013-02-19 01:26:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/4800e66d93d610a0db1d4b14e787752f13643fd6,4800e66d93d610a0db1d4b14e787752f13643fd6,More cleanup.
+xavierd,2013-02-19 00:56:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/162279c0171d5dacf7fa3ac678d96ab5f827ec91,162279c0171d5dacf7fa3ac678d96ab5f827ec91,Bye clang binary.
+xavierd,2013-02-17 21:20:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/3a2f0a52015ffb7dcc4b1ffd8c39267838e47ede,3a2f0a52015ffb7dcc4b1ffd8c39267838e47ede,Merge branch 'issue264'
+xavierd,2013-02-17 21:19:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/ce262cf55d67d6b3aedfbbd2f9b9fb9c8cd8eb04,ce262cf55d67d6b3aedfbbd2f9b9fb9c8cd8eb04,"Revert ""If the path to libclang contains space, the plugin will spit errors.""
+
+This reverts commit 76975ae71717c5b73ffeb4e6357c6d54728f1d53."
+xavierd,2013-02-17 06:53:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/b4149f2da55e8001411de6bf5b951763339e4110,b4149f2da55e8001411de6bf5b951763339e4110,Merge branch 'update-kinds'
+xavierd,2013-02-15 07:06:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/a1c45e07699a9ba8c0e4d5c1665c410ac425405e,a1c45e07699a9ba8c0e4d5c1665c410ac425405e,Merge branch 'issue264'
+xavierd,2013-02-15 07:06:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/9b11ee6dde2533c02ae776926021f0549f1b7dfd,9b11ee6dde2533c02ae776926021f0549f1b7dfd,Merge branch 'patch-1' of git://github.com/gokcehan/clang_complete into issue264
+xavierd,2013-02-15 06:42:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/4aa62c6488782e9fbc241b6efd02c41af4208cdb,4aa62c6488782e9fbc241b6efd02c41af4208cdb,Merge branch 'add_builtin_directories' of git://github.com/tobig/clang_complete into builtin-dirs
+gokcehan,2013-02-09 23:06:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/9cd7b207209d1cc511f3830d198ada1e7e2cb50a,9cd7b207209d1cc511f3830d198ada1e7e2cb50a,"Update plugin/clang_complete.vim
+
+simple fix for #264 after 3 hours of struggling.."
+tobig,2013-02-05 08:16:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/a49143054194a9a28348da30e64d2797ddef9883,a49143054194a9a28348da30e64d2797ddef9883,Remove misleading suggestion
+tobig,2013-02-05 08:14:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/b3c63ce6a2fe602b138aaee45d405651d3ef71a1,b3c63ce6a2fe602b138aaee45d405651d3ef71a1,Add another system path
+Arnaud-de-Grandmaison,2013-02-03 20:14:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/e88527cd7a96bc79aa50a44e8a44e6332dc84871,e88527cd7a96bc79aa50a44e8a44e6332dc84871,Document the behaviour of getCompilationDBParams when a file is not found in the compilation database
+Arnaud-de-Grandmaison,2013-01-18 22:07:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/d3100361cb5a0718840e5cbd9e3532d53da50dc5,d3100361cb5a0718840e5cbd9e3532d53da50dc5,"Remember the last compilationDatabase query, and return it when the file is not found
+
+This is a very common case : it happens for all headers. In practice, this heuristics gives good results."
+tobig,2013-02-03 09:24:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/0dc4600ad38e3d668be516159f2cf69123239b9b,0dc4600ad38e3d668be516159f2cf69123239b9b,Add a couple of known builtin directory locations
+xavierd,2013-02-03 03:43:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/76975ae71717c5b73ffeb4e6357c6d54728f1d53,76975ae71717c5b73ffeb4e6357c6d54728f1d53,"If the path to libclang contains space, the plugin will spit errors."
+xavierd,2013-01-31 04:46:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/dcc32f917568aac075b98dab193190a537384946,dcc32f917568aac075b98dab193190a537384946,"Fix initialisation of the compilation database.
+
+If g:clang_use_library wasn't set in the .vimrc, the use of compilation
+database would generate an error."
+xavierd,2013-01-30 04:06:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/12bda7bed90bd62398fe47fa11939b1b5746f573,12bda7bed90bd62398fe47fa11939b1b5746f573,Fix indent.
+xavierd,2013-01-30 04:03:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/3968e650d4c3b37b6af31debe8086fd7a5aa4ca1,3968e650d4c3b37b6af31debe8086fd7a5aa4ca1,"Use the 'with' syntax with the libclangLock.
+
+This removes the .acquire() and .release(), and avoid potential lockups
+if the code wasn't guarded by try catch."
+xavierd,2013-01-29 05:16:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/3b91672df9f4dee34378917a36ebc1c97360511a,3b91672df9f4dee34378917a36ebc1c97360511a,"Replace call to vim.eval/command to vim python API.
+
+This is easier to read, and may be a bit faster."
+xavierd,2013-01-23 05:37:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/8ab46dad15788874d2b02b1068b91f08afe18a8c,8ab46dad15788874d2b02b1068b91f08afe18a8c,Merge branch 'deprecate-non-libclang'
+xavierd,2013-01-22 06:48:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/54afc12fd1320447d1df6cdac37613929052731a,54afc12fd1320447d1df6cdac37613929052731a,Fix header regexp.
+xavierd,2013-01-22 06:34:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/6dfb7b96a951d2f87025105b6604e2eaf9ac9a3c,6dfb7b96a951d2f87025105b6604e2eaf9ac9a3c,It's time to deprecate the clang binary code path.
+xavierd,2013-01-22 06:09:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/409a1577d601b49f5905b0cdef10356d95ef9bed,409a1577d601b49f5905b0cdef10356d95ef9bed,Update the kinds dictionnary.
+tobig,2013-01-20 00:35:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/e8d0f36a8f3e58a75a4539ed5e6273f8b1595575,e8d0f36a8f3e58a75a4539ed5e6273f8b1595575,"Merge: [cindex.py]: Use spaces instead of tabs
+
+The tabs slipped in accidentally.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@172934"
+tobig,2012-12-21 18:50:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/7fa1d1a68f98c505177012cd7d1f7f3f023c3236,7fa1d1a68f98c505177012cd7d1f7f3f023c3236,"Merge: [cindex.py] Add cache for CompletionChunk spellings
+
+Most of the CompletionChunks represent braces, colons or other one
+character spellings. There is no need to call libclang, to figure out
+how to write a colon. Instead we use an internal cache to retrieve the
+correct spelling. As function calls from python are very expensive and
+this is a performance critical part of auto completion this patch makes
+formatting of auto completion results a lot faster.
+
+Formatting time changes from 0.57 to 0.45 seconds
+
+https://llvm.org/svn/llvm-project/cfe/trunk@172901"
+tobig,2012-12-21 18:27:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/b764adec84b7bb438c0ea396a50ee3911ae3cc33,b764adec84b7bb438c0ea396a50ee3911ae3cc33,"Merge: [cindex.py] Replace CachedProperty with our own implementation
+
+This is a very performance critical point for auto completion. The
+manual implementation gives a large speedup. As it does not complicate
+the code a lot, I figured it is worth the change. If anybody understands
+why the CachedProperty is here so much slower, I am very interested in
+working on an improvement of CachedProperty.
+
+Formatting time changes from 0.72 to 0.57 seconds.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@172900"
+tobig,2012-12-21 17:32:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/96924a7ef4908d7daba5a15402d421510ba16154,96924a7ef4908d7daba5a15402d421510ba16154,"Merge: [cindex.py]: Speed up lookup of the completion kind
+
+We can directly the number of the kind instead of going through the
+completionChunkKindMap.
+
+Formatting time changes from 0.84 to 0.72 seconds.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@17289"
+tobig,2013-01-19 09:55:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/64491be5d313ab0c977016b9600ad0959ac50ddd,64491be5d313ab0c977016b9600ad0959ac50ddd,"Merge: [python bindings] Expose cursor.referenced (clang_getCursorReferenced).
+
+Patch by Matthew King!
+
+https://llvm.org/svn/llvm-project/cfe/trunk@171423"
+tobig,2013-01-19 09:53:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/14906a4c69f093ef6288fcbffa9c78d2c7816b76,14906a4c69f093ef6288fcbffa9c78d2c7816b76,"Merge: Fix a copypasto bug. Also rename the parameter in question to not
+shadow the 'file' builtin, and fix up a docstring a little.
+
+Hat tip to Sebastian Kreft Carreno at Google for noticing the bug.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@169887"
+xavierd,2013-01-19 20:52:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/a2eaf0470fe238e2842a21e842defffac4794c60,a2eaf0470fe238e2842a21e842defffac4794c60,"Merge branch 'perf'
+
+Conflicts:
+	plugin/libclang.py"
+xavierd,2013-01-19 04:06:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/fb8eb3d03e10e0845360d8960e93ea739640eed3,fb8eb3d03e10e0845360d8960e93ea739640eed3,"Use get() to retrieve the translation unit.
+
+While I cannot show any performance improvement, I'll argue that the
+complexity of retrieving a translation unit is now two times faster.
+
+The python ""in"" keyword has to walk to the datastructure once, and we
+walk a second time to retrieve it. We only walk it once now."
+xavierd,2013-01-19 03:57:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/07633dc4e76fc88d68160f6448875f805e203887,07633dc4e76fc88d68160f6448875f805e203887,Improve filtering: from 0.027s to 0.021s
+xavierd,2013-01-18 05:27:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/1a5107682eb62010c76a37d2601931fe76bad6f0,1a5107682eb62010c76a37d2601931fe76bad6f0,Calling python print in a thread can segv vim.
+xavierd,2013-01-18 06:36:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/0fc92a595dcd50df6b23a1c84f28fe5a18b7091f,0fc92a595dcd50df6b23a1c84f28fe5a18b7091f,"Do not filter before going through all the chunks of a result.
+
+This save some ms: from 0.147s to 0.137s"
+xavierd,2013-01-18 06:18:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/f448f68ba4104bd3e0247056d03bb4792b2291e2,f448f68ba4104bd3e0247056d03bb4792b2291e2,Speed up alpha sorting: from 0.070 to 0.027.
+xavierd,2013-01-15 06:59:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/5b44ffff1c90e85924b9aa58a43f877fca432848,5b44ffff1c90e85924b9aa58a43f877fca432848,We shouldn't use vim API inside clang_complete threads.
+xavierd,2013-01-15 06:08:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/633b33b543150dc724b5619264694841a49f3d15,633b33b543150dc724b5619264694841a49f3d15,Warn if snippet conceal is requested but not available.
+tobig,2013-01-12 15:17:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/22ada62f3e9b26559f4bcef8ef4e37ba0589bf61,22ada62f3e9b26559f4bcef8ef4e37ba0589bf61,"Automatically use libclang if available
+
+If the user did not request anything specific, we first try to use
+libclang and only fall back to the clang executable if libclang could
+not be found. Error messages are only printed in debugging mode or
+if the user explicitly requested libclang.
+
+This patch allows us to use libclang.so as soon as it can be found in
+the system library path. No further configuration is required in
+.vimrc."
+tobig,2013-01-12 14:00:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/2f5f59b3c3d3c21ba3a1bbb87b43dc0f788cd0af,2f5f59b3c3d3c21ba3a1bbb87b43dc0f788cd0af,"libclang: Rework handling of builtin includes
+
+If libclang is installed in some non-default location, it sometimes
+fails to find the path to the builtin includes. This will cause an error
+when including these headers which again blocks precompiled header
+caching. Even though autocompletion often still works, it is annoyingly
+slow.
+
+We now check explicitly if the builtin includes are available. If they
+are not we try to find them ourselves. Only if this does not work, we
+warn the user and ask him to report a problem."
+tobig,2013-01-12 13:54:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/6f9269f8f1bfb956f81916fa57c2c42d539dc083,6f9269f8f1bfb956f81916fa57c2c42d539dc083,"Catch Exception when loading libclang fails
+
+Instead of passing on the exception, we now provide a proper error
+message to the user and fall back to the clang executable."
+tobig,2013-01-12 13:36:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/23b6a1d5e557ddfdf974825c3a5f16364ed20969,23b6a1d5e557ddfdf974825c3a5f16364ed20969,Make it clear that we disable libclang if the initialization fails
+tobig,2013-01-12 13:25:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/82b4e66646ebc5d8cefda0dab318bb2ff394cecd,82b4e66646ebc5d8cefda0dab318bb2ff394cecd,"Always initialize g:clang_library_path
+
+Like this we can avoid special cases in the later code path"
+tobig,2013-01-12 11:27:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/8ecd3a0419948c31d1354ad51d12e9aeb5f4ddb8,8ecd3a0419948c31d1354ad51d12e9aeb5f4ddb8,"Do not provide the clang/gcc autoloader any more
+
+The clang and gcc autoloaders are not necessary any more to optain the
+system include paths. Due to the previous commit, the include paths are
+now correctly added by the clang driver. libclang always used internally
+the clang driver and never had problems finding the system include paths.
+
+We remove these options as incorrectly derived include paths can cause
+all kind of spurious problems.
+
+We now print the following message, if someone manually adds 'clang' or
+'gcc' to the auto_user_options:
+
+  'gcc' in clang_auto_user_options is deprecated."
+tobig,2013-01-12 11:23:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/954410d7138353cc4b2b90402807d0916fb38d2c,954410d7138353cc4b2b90402807d0916fb38d2c,"Use the clang driver instead of 'clang -cc1'
+
+By using the clang driver all system include paths are automatically
+available and there is no need to recover in any way."
+tobig,2013-01-13 01:26:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/f57879d1056b8a74a873a408ba868083179bed2e,f57879d1056b8a74a873a408ba868083179bed2e,Fix merge error
+xavierd,2013-01-12 20:39:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/ac0f0a311e64077d6dc435c9489d8e1d57d0a401,ac0f0a311e64077d6dc435c9489d8e1d57d0a401,"Merge branch 'print_command_line' of git://github.com/tobig/clang_complete into tobig
+
+Conflicts:
+	plugin/libclang.py"
+xavierd,2013-01-12 20:32:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/d0ee88d5ffd89ac99e71a63e61c727800637951d,d0ee88d5ffd89ac99e71a63e61c727800637951d,Merge branch 'cdb_v5' of git://github.com/Arnaud-de-Grandmaison/clang_complete into cdb
+tobig,2013-01-12 09:13:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/8393c74c1a77099f8f4d60e01dc69c5b24e301ad,8393c74c1a77099f8f4d60e01dc69c5b24e301ad,debug mode: Print clang command line for completion
+tobig,2012-11-29 21:49:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/ed1e7e6e13d88b136b3c151a0ef9c2d609c51966,ed1e7e6e13d88b136b3c151a0ef9c2d609c51966,debug mode: Print clang command line for parsing
+tobig,2012-12-06 07:28:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/e914f11a4993126da6ff934c7455718055fae178,e914f11a4993126da6ff934c7455718055fae178,Remove a workaround due to broken cindex.py iterator
+Arnaud-de-Grandmaison,2012-12-03 09:51:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/ee959ddfe842a5d97a7ec39e7fd9f9ffeb486ab3,ee959ddfe842a5d97a7ec39e7fd9f9ffeb486ab3,Refactor the compiler arguments processing
+xavierd,2013-01-12 02:59:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/84629dc9a4c2ab8542fa66d10680bea598fee260,84629dc9a4c2ab8542fa66d10680bea598fee260,"Revert ""Don't allow duplicate entry in the completion popup.""
+
+This reverts commit 53462d915fcd4ae805d69eb6ff7ba104d390a5a1.
+
+That was causing issues when snippets were disabled."
+Arnaud-de-Grandmaison,2012-12-04 12:55:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/80e554e8238ba13f5c35bfedd9ef28b5ce8658ab,80e554e8238ba13f5c35bfedd9ef28b5ce8658ab,"Use a context manager to handle working directory changes. Needs python 2.6.
+
+Python 2.5 can be supported if we add the appropriate import from future."
+Arnaud-de-Grandmaison,2012-12-03 16:10:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/5a8dd20124b66869e0f684bacda1145ce919a254,5a8dd20124b66869e0f684bacda1145ce919a254,Use CompilationDatabase from libclang
+Arnaud-de-Grandmaison,2012-12-03 09:51:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/cd2e02e034b0bf338833d57ba945812efb3a0eb2,cd2e02e034b0bf338833d57ba945812efb3a0eb2,Refactor the compiler arguments processing
+xavierd,2012-11-21 05:14:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/ef3ddfdbf49e85e835cbe6b8e257b18f5bb07d03,ef3ddfdbf49e85e835cbe6b8e257b18f5bb07d03,"Merge pull request #213 from tobig/update_cindexpy
+
+Update cindex.py up to clang from 01/11/2012"
+tobig,2012-11-18 12:52:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/5cdcc085103e613ce09324ab71bea5af7fd066a3,5cdcc085103e613ce09324ab71bea5af7fd066a3,"Merge: [clang.py] Add Cursor.get_arguments()
+
+Patch provided by Matthias Kleine <matthias_kleine@gmx.de>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@167216"
+tobig,2012-11-18 12:51:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/57f7a1347f58e4cb38daa211db176ec715f81060,57f7a1347f58e4cb38daa211db176ec715f81060,"Merge: Python bindings: fix typo.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@165375"
+tobig,2012-11-18 12:51:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/99ce1673483babdb62bf60e1ac0c2232b6bf610d,99ce1673483babdb62bf60e1ac0c2232b6bf610d,"Merge: Python bindings: Add missing availability kind.
+
+Patch by Leo Liu, test case by me.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@165374"
+tobig,2012-11-18 12:50:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/f16fd0fc31fd580d1c8578ead890944a5e40484c,f16fd0fc31fd580d1c8578ead890944a5e40484c,"Merge: Fix cindex.py compatibility with older libclang.so
+
+The issue is that we were calling clang_getCompletionBriefComment
+unconditionally.  New we check if this function is available before
+calling it.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@164464"
+tobig,2012-11-18 12:49:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/3715c41176a24f72e0563d079f7b383bfaddc522,3715c41176a24f72e0563d079f7b383bfaddc522,"Merge: Add bindings for clang_getCompletionBriefComment to cindex.py.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@163966"
+xavierd,2012-09-11 03:39:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/d41dfae0b1e790de18f976af213cf5cdc9be0a46,d41dfae0b1e790de18f976af213cf5cdc9be0a46,Merge branch 'tobig-master'
+tobig,2012-09-05 20:31:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/bd2cfe20fba6c714e14f771a4a649c6fcdbaa55d,bd2cfe20fba6c714e14f771a4a649c6fcdbaa55d,"libclang: Do not check for strict compatibility
+
+libclang now allows to remove the compatibility check. This is done on
+our own risk and no upstream support is provided. My tests have shown
+that with this patch, we can provide code completion back to clang 2.8
+and error highlighting at least back to 3.0."
+tobig,2012-09-05 20:22:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/746b23c51b7af97467f3f5be68ddd7e7c609c5c8,746b23c51b7af97467f3f5be68ddd7e7c609c5c8,"Merge: [cindex.py] Make the use of a compatibilty check explicit
+
+At the moment, we implictly check compatibility between the python
+bindings and libclang, as the python bindings will fail to load in
+case a method we use in libclang is not available.
+
+This patch makes the use of this compatibility check explicit and
+introduces a flag to optionally disable the check. This will allow us to
+further harden the compatibility check, but it also gives the user the
+possibility to disable the compatibility check to evaluate compatibility
+with older libclang versions.
+
+I added documentation that makes clear the python bindings are only
+tested with the libclang version they have been shipped with
+
+https://llvm.org/svn/llvm-project/cfe/trunk@163238"
+tobig,2012-09-05 08:22:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/bd7173ead54ef7795df6a98fa71e2919d8727d65,bd7173ead54ef7795df6a98fa71e2919d8727d65,"Merge: [cindex.py] Allow to configure the path of libclang
+
+By calling cindex.Config.set_library_path(path) or
+cindex.Config.set_library_file(file) it is possible to specify from
+where we load libclang. This fixes an open FIXME.
+
+We also point the user to these functions, in case libclang can not be
+loaded sucessfully.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@163121
+
+This merge removes the last difference between our python bindings and
+the official ones. There is no need any more to use sys.argv to secretly
+forward the library path."
+tobig,2012-09-05 07:55:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/d3e53523d45938d6375270a0f10d41608a7a05c5,d3e53523d45938d6375270a0f10d41608a7a05c5,"Merge: Add helper to initialize libclang functions
+
+The helper allows us to define how the initialization of functions
+should behave. We use this patch to provide an informative error
+message, in case a function is not available:
+
+""LibclangError: /home/grosser/Projekte/llvm/install/lib/libclang.so:
+undefined symbol: clang_method_added_in_2020. Please ensure that your
+python bindings are compatible with your libclang.so version.""
+
+This patch also ensures that no spelling mistakes slip into the library
+initialization. At the moment, there are a couple of 'argtype' ->
+'argtypes' mispellings that have been overlooked.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@163057"
+tobig,2012-09-05 07:53:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/880df9ef7a4eb5ee9f59b1bca68f482e195357e5,880df9ef7a4eb5ee9f59b1bca68f482e195357e5,"Merge: [cindex.py] Cache the number of chunks in CompletionString
+
+Without this patch, lib.clang_getNumCompletionChunks is called at
+each _iteration_ of a 'for chunk in CompletionString' loop. Now we
+call it just once.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@16220"
+tobig,2012-08-19 22:25:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/19df215b2fe6cd21a70255df3715032cb75220d1,19df215b2fe6cd21a70255df3715032cb75220d1,"Merged: Add CachedProperty to CompletionChunk
+
+Suggested by:  Francisco Lopes  <oblita@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@162191"
+tobig,2012-08-19 22:24:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/b711baae4d0039cc4cbecf02b619da11d6c56d26,b711baae4d0039cc4cbecf02b619da11d6c56d26,"Merge: Add CachedProperty decorator
+
+It isn't used anywhere yet.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@162190"
+tobig,2012-08-18 23:53:54,https://api.github.com/repos/xavierd/clang_complete/git/commits/486f91275d795e6c41cfcc0126e7217944432d8b,486f91275d795e6c41cfcc0126e7217944432d8b,"Merge: Use spaces, not tabs for indentation
+
+Reported by: Francisco Lopes  <oblita@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@162182"
+tobig,2012-08-18 23:06:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/d1a66811ac423b3fc1fc21863c27aa63b523f289,d1a66811ac423b3fc1fc21863c27aa63b523f289,"Merge: Dispose code completion results properly
+
+https://llvm.org/svn/llvm-project/cfe/trunk@162181"
+tobig,2012-08-18 22:54:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/6551711c0a41a0b2da3e746df3c2cb439aa651a8,6551711c0a41a0b2da3e746df3c2cb439aa651a8,"Merge: Implement Token API
+
+https://llvm.org/svn/llvm-project/cfe/trunk@160111"
+tobig,2012-08-18 22:52:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/76a8a5dbb27e10cbad48432915739e08940a2d15,76a8a5dbb27e10cbad48432915739e08940a2d15,"Merge: Add TranslationUnit.get_{file,source_location,source_range}
+
+https://llvm.org/svn/llvm-project/cfe/trunk@160107"
+tobig,2012-08-18 22:52:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/ddd28221b8d141422ae8e5a184b29b43000dbdc7,ddd28221b8d141422ae8e5a184b29b43000dbdc7,"Merge: Refactor how ctypes functions are registered
+
+https://llvm.org/svn/llvm-project/cfe/trunk@16010"
+tobig,2012-08-18 22:51:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/26bbc46536783b64c89f5b4e97fe8612afb8d360,26bbc46536783b64c89f5b4e97fe8612afb8d360,"Merge: Make CompileCommand.arguments usage consistent with
+       CompileCommand.directory and the rest of the python binding
+
+Patch by David Röthlisberger
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159970"
+tobig,2012-08-18 22:50:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/0190ea8f4f1e07293a20de162c1b227d9363df17,0190ea8f4f1e07293a20de162c1b227d9363df17,"Merge: fix infinite iteration of compilation database CompileCommands
+
+Patch by David Röthlisberger
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159926"
+tobig,2012-08-18 22:50:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/ea11a827ca49ec338a8b24f320c4fb1bef408169,ea11a827ca49ec338a8b24f320c4fb1bef408169,"Merge: Fix erroneous comment for CompileCommands
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159810"
+tobig,2012-08-18 22:49:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/6749ee3e433ecb9d168de1bcda15a4cb85382558,6749ee3e433ecb9d168de1bcda15a4cb85382558,"Merge:  CompilationDatabase naming and comment fixes
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159682"
+tobig,2012-08-18 22:49:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/d45543f713224c3aa193f7b6d08618775afa24d3,d45543f713224c3aa193f7b6d08618775afa24d3,"Merge: Fix comments
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159492"
+tobig,2012-08-18 22:48:54,https://api.github.com/repos/xavierd/clang_complete/git/commits/fffd9092e110bce473d2a93a6d4c290ac4254bc5,fffd9092e110bce473d2a93a6d4c290ac4254bc5,"Merge:  add CompilationDatabase support
+
+https://llvm.org/svn/llvm-project/cfe/trunk@159485"
+tobig,2012-08-18 22:48:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/dda0f3043a3d092432821f263642313452873802,dda0f3043a3d092432821f263642313452873802,"Merge: Implement SourceLocation.from_offset
+
+https://llvm.org/svn/llvm-project/cfe/trunk@158307"
+tobig,2012-08-18 22:48:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/08465162d5d0b4ec039b1844cc78985d7f84fb79,08465162d5d0b4ec039b1844cc78985d7f84fb79,"Merge: Implement Cursor.is_static_method
+
+https://llvm.org/svn/llvm-project/cfe/trunk@158277"
+tobig,2012-08-18 22:47:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/5b4c36b1776dad918850bf47529ba1046dbf8743,5b4c36b1776dad918850bf47529ba1046dbf8743,"Merge: Fix typo ""CursorKind.CONDITONAL_OPERATOR"" in Python bindings, from Manish Verma!
+
+https://llvm.org/svn/llvm-project/cfe/trunk@158182"
+tobig,2012-08-18 22:47:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/104cd4f283f9c0ae7fd822a7371dcfc51ca204a9,104cd4f283f9c0ae7fd822a7371dcfc51ca204a9,"Merge: Store reference to TranslationUnit in Cursor and Type
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156846"
+tobig,2012-08-18 22:46:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/2a22988686b71ed284ccb7fc43fa8b901f592800,2a22988686b71ed284ccb7fc43fa8b901f592800,"Merge:  Implement Cursor.canonical
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156753"
+tobig,2012-08-18 22:46:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/144f86f60735a469b92b5aadd3cd5fb62bf80e8f,144f86f60735a469b92b5aadd3cd5fb62bf80e8f,"Merge:  Implement Cursor.result_type
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156752"
+tobig,2012-08-18 22:45:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/948f813c383749e94aba3ffc95551117d0013b00,948f813c383749e94aba3ffc95551117d0013b00,"Merge: Followup to TranslationUnit refactor
+
+* Document index argument in TranslationUnit.from_source
+* Add numeric error code to TranslationUnitSaveError string
+  representation
+* Use None instead of [] for default argument value in
+  TranslationUnit.codeComplete
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156722"
+tobig,2012-08-18 22:44:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/309a5c237c8c502545d073be490bd96fd24340a5,309a5c237c8c502545d073be490bd96fd24340a5,"Merge: Remove trailing whitespace from recent commits
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156373"
+tobig,2012-08-18 22:18:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/ebff11d6e4264aae07ff261f1688ce6a5b3524b8,ebff11d6e4264aae07ff261f1688ce6a5b3524b8,"Merge: TranslationUnit API improvements
+
+* TranslationUnit reading and parsing now implemented as
+  TranslationUnit.from_ast() and TranslationUnit.from_source().
+* Index.parse() and Index.read() implemented through above.
+* Index.parse() and Index.read() now raise a TanslationUnitLoadException
+  instead of returning None if a TranslationUnit could not be
+  instantiated. This is backwards incompatible.
+* Ability to save TranslationUnits via TranslationUnit.save().
+* TranslationUnit now holds onto Index instance that created. This means
+  the Index can't be GC'd until the TranslationUnit is itself GC'd,
+  making memory management thoughtless.
+* Don't use [] as a default argument value, as the initial value used is
+  reused for the duration of the program.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@15637
+
+This also allows us to reduce the diff to the offical python bindings
+even further."
+tobig,2012-08-18 22:05:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/d64785fa413b9dbb0f66c52fdcf1c1b5600e0260,d64785fa413b9dbb0f66c52fdcf1c1b5600e0260,"Merge:
+
+- Adding lexical_parent and semantic_parent properties to
+  clang.cindex.Cursor
+
+- Two new tests (one for each property), require libclang built from
+  r155858 or later to pass
+
+- New test utility function (get_cursors) that gets all the nodes with a
+  specific spelling.
+
+Patch by Evan Pipho.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156286"
+tobig,2012-08-18 22:03:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/a8f246bc4485a32d8acba6e5a6f2ba1bfa227199,a8f246bc4485a32d8acba6e5a6f2ba1bfa227199,"Merge: Add Cursor.enum_value wrapping clang_getEnumConstantDeclValue
+
+https://llvm.org/svn/llvm-project/cfe/trunk@156017"
+tobig,2012-08-18 22:02:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/8d65c6d3fc029dcb8acd24c244a0a58bcda456cf,8d65c6d3fc029dcb8acd24c244a0a58bcda456cf,"Merge: Implement TypeKind.spelling
+
+https://llvm.org/svn/llvm-project/cfe/trunk@154769"
+tobig,2012-08-18 22:01:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/7adf35852ca11bd290477607026bdf3436b474d1,7adf35852ca11bd290477607026bdf3436b474d1,"Merge:  Implement Cursor.objc_type_encoding
+
+https://llvm.org/svn/llvm-project/cfe/trunk@152513"
+tobig,2012-08-18 22:00:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/496a564ad1d98b3e086159702ca6da0627b292e8,496a564ad1d98b3e086159702ca6da0627b292e8,"Merge: Return bool from Cursor.__eq__
+
+https://llvm.org/svn/llvm-project/cfe/trunk@152011"
+tobig,2012-08-18 21:59:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/ca2aa7b5e11b365c2dbd805e89a49b1ebf31a075,ca2aa7b5e11b365c2dbd805e89a49b1ebf31a075,"Merge: Format and add documention for Type
+
+https://llvm.org/svn/llvm-project/cfe/trunk@150972"
+tobig,2012-08-18 21:59:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/ffa154eee3a91c3f0eaff97bb080a71dc919359f,ffa154eee3a91c3f0eaff97bb080a71dc919359f,"Merge: Implement Type.argument_types()
+
+https://llvm.org/svn/llvm-project/cfe/trunk@150970"
+tobig,2012-08-18 21:58:36,https://api.github.com/repos/xavierd/clang_complete/git/commits/e5a249e72b38484b65c4221af7808a8a17fb755b,e5a249e72b38484b65c4221af7808a8a17fb755b,"Merge:  Implement Type.__eq__ and Type.__ne__
+
+https://llvm.org/svn/llvm-project/cfe/trunk@150969"
+tobig,2012-08-18 21:57:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/864a3f8aa7e92a2629dfe56e91226ae92847b6ff,864a3f8aa7e92a2629dfe56e91226ae92847b6ff,"Merge: Implement Type.is_function_variadic
+
+https://llvm.org/svn/llvm-project/cfe/trunk@15093"
+tobig,2012-08-18 21:57:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/77dc720532444cf8d5ee49aeadd4eb624a41272a,77dc720532444cf8d5ee49aeadd4eb624a41272a,"Merge:  Implement Type.element_count
+
+https://llvm.org/svn/llvm-project/cfe/trunk@150800"
+tobig,2012-08-18 21:56:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/1e5d32f2ce15157395a32efe2eb4cbbadff21713,1e5d32f2ce15157395a32efe2eb4cbbadff21713,"Merge: Implement Type.element_type
+
+https://llvm.org/svn/llvm-project/cfe/trunk@150799"
+tobig,2012-08-18 21:56:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/24f512777701a977b35d5571c0a2a6b6931e7f4c,24f512777701a977b35d5571c0a2a6b6931e7f4c,"Merge: Implement Type.is_pod
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149842"
+tobig,2012-08-18 21:55:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/acd060cacf833173c61b814d57f7bd8bbfa5a892,acd060cacf833173c61b814d57f7bd8bbfa5a892,"Merge: Change type -> Type
+
+Names that have corresponding classes in python are commonly started
+with an uppercase letter. Let's follow that convention
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149831"
+tobig,2012-08-18 21:54:54,https://api.github.com/repos/xavierd/clang_complete/git/commits/cb719c251a0766aa877d3a2dfd5263d804705632,cb719c251a0766aa877d3a2dfd5263d804705632,"Merge: Implement Cursor.enum_type
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149830"
+tobig,2012-08-18 21:53:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/e8cb3333b3c06692cb7662c880c684a087bab82d,e8cb3333b3c06692cb7662c880c684a087bab82d,"Merge: Implement Cursor.underlying_typedef_type
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149829"
+tobig,2012-08-18 21:52:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/de02e86a209bb6f0904e0c834ff1d7cc9d947f17,de02e86a209bb6f0904e0c834ff1d7cc9d947f17,"Merge: add TypeKind.VECTOR
+
+Added a missing enumeration.
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149828"
+tobig,2012-08-18 21:52:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/5969500a8531b1460808fce8343326702bc1ff1c,5969500a8531b1460808fce8343326702bc1ff1c,"Merge: Add CursorKind.{is_translation_unit, is_preprocessing, is_unexposed}
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149827"
+tobig,2012-08-18 21:51:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/4638a593a4b4973798578a66de7e70fc5924d334,4638a593a4b4973798578a66de7e70fc5924d334,"Merge: Implement Cursor.hash
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@149826"
+tobig,2012-08-18 21:51:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/a5f9aa295077f2b4b343b5724714365cfbdacf58,a5f9aa295077f2b4b343b5724714365cfbdacf58,"Merge: Expose diagnostic category and option info to Python binding
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@14982"
+tobig,2012-08-18 21:50:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/1dcab6d916f4a6f679f2d3bfe9ca57da8270b461,1dcab6d916f4a6f679f2d3bfe9ca57da8270b461,"Merge: Implement __eq__ and __ne__ on SourceLocation and SourceRange
+
+There is no type checking in __eq__, so ctypes will throw if the wrong
+Python type is passed in to the C function. Personally, I feel garbage
+in means garbage out and it isn't worth testing for this explicitly.
+
+Contributed by: Gregory Szorc <gregory.szorc@gmail.com>
+
+https://llvm.org/svn/llvm-project/cfe/trunk@14982"
+tobig,2012-08-18 21:49:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/aa5a64d4645c9aeb324f0a7f0a575e224e1df416,aa5a64d4645c9aeb324f0a7f0a575e224e1df416,"Merge from clang
+
+Add CXX_FINAL_ATTR, CXX_OVERRIDE_ATTR, ANNOTATE_ATTR and ASM_LABEL_ATTR
+to the python bindinds. patch by Tom Schuster!
+
+https://llvm.org/svn/llvm-project/cfe/trunk@1473"
+tobig,2012-08-18 21:47:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/e263fa5f96eddf1649968568298651326b87a20a,e263fa5f96eddf1649968568298651326b87a20a,"Merge: Mass rename C1x references to C11. The name hasn't proliferated like
+""C++0x"" so this patch is surprisingly small.
+
+Also drop -Wc1x-extensions in favor of -Wc11-extensions. I don't think
+we need to keep this around for compatibility.
+
+https://llvm.org/svn/llvm-project/cfe/trunk@147221"
+xaizek,2012-08-29 10:47:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/2831a5040ee328103b941fcdbc3c8d6ef5593b59,2831a5040ee328103b941fcdbc3c8d6ef5593b59,"Pass -stdlib=... to clang to get list of includes
+
+Otherwise wrong library specific paths can be used (from default
+standard library).
+
+Closes #195."
+xavierd,2012-08-25 19:24:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/6b8216ef567efd97ec66edc2771857b2245a4d36,6b8216ef567efd97ec66edc2771857b2245a4d36,"Merge pull request #192 from oblitum/empty_bufname
+
+Removes checking whether file is readable for guard against unreadable buffers at initialization"
+oblitum,2012-08-24 05:38:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/0c1367795227acccfe8c8f43797548f40a2aa633,0c1367795227acccfe8c8f43797548f40a2aa633,"Removes checking whether file is readable
+
+Checking whether file is readable prior to loading clang_complete
+is wrong. The plugin can't get loaded on creation of new files."
+xavierd,2012-08-24 03:27:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/246750bbcf760b4091a0b643de4c5e6599bf8e46,246750bbcf760b4091a0b643de4c5e6599bf8e46,"Merge pull request #189 from tobig/improved_code_completion_timer
+
+Improved code completion timer"
+xavierd,2012-08-24 03:25:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/5f78c84beca5f63bf0c3da221b707e23d8fa6287,5f78c84beca5f63bf0c3da221b707e23d8fa6287,"Merge pull request #184 from oblitum/empty_bufname
+
+Guard against unreadable buffers at initialization"
+xavierd,2012-08-24 03:24:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/e308d33ddefd796b4292e6473831ff517a9efbb5,e308d33ddefd796b4292e6473831ff517a9efbb5,"Merge pull request #186 from oblitum/suppress_unused_args_diagnostic
+
+Fix continuous QuickFix warning for unused args"
+tobig,2012-08-17 12:48:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/750358350b9f984d5d4730862e03ccce633d14c5,750358350b9f984d5d4730862e03ccce633d14c5,"Add a more verbose code completion timer.
+
+Signed-off-by: Tobias Grosser <tobias@grosser.es>"
+tobig,2012-08-17 11:16:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/1866ae74f5c680cd14b9e99755555da83b9e68c5,1866ae74f5c680cd14b9e99755555da83b9e68c5,"No need to sleep after printing debug output.
+
+The output can always be accessed with ':mess'. See #188.
+
+Signed-off-by: Tobias Grosser <tobias@grosser.es>"
+oblitum,2012-08-14 04:27:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/fedf1b9cfbaac3e7249b6e84da197b44feb17d7a,fedf1b9cfbaac3e7249b6e84da197b44feb17d7a,"Fix continuous QuickFix warning for unused args
+
+Fix continuous QuickFix warning when g:clang_complete_macros or
+g:clang_complete_patterns are enabled. This options makes reparse
+to generate warning messages for unused arguments.
+
+Warning messages for unused arguments are now being filtered out."
+oblitum,2012-08-13 08:30:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/a0b1c1a2c1b8ca467be92ca3bf3370280a66f934,a0b1c1a2c1b8ca467be92ca3bf3370280a66f934,"Guard against unreadable buffers at initialization
+
+Fix initialization being triggered with unnamed/unreadable buffers,
+which was causing parsing of translation units called None, generating
+several error messages.
+
+This was happening calling g:ClangUpdateQuickFix()."
+xaizek,2012-07-28 22:19:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/742694bbbe4a72a8b8a22e46ba61062f3c53e421,742694bbbe4a72a8b8a22e46ba61062f3c53e421,"Add g:clang_trailing_placeholder option
+
+To add an extra placeholder at the and of function snippet.
+
+See #176"
+xaizek,2012-07-28 22:03:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/443fe689ad6d149455ba061f02217b56de007ad0,443fe689ad6d149455ba061f02217b56de007ad0,"Consider g:clang_conceal_snippets variable value
+
+Part of code was probably lost during moving snippets code to
+autoload."
+xaizek,2012-07-28 21:31:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/3cf8d971177c0e491495ad5dee358a8b82edec2a,3cf8d971177c0e491495ad5dee358a8b82edec2a,"Add an example of conceal configuration to docs
+
+See #176"
+xaizek,2012-07-28 21:24:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/d9c18e29d5fed53f6f28fe1ad90379a89ee15f4b,d9c18e29d5fed53f6f28fe1ad90379a89ee15f4b,"Fix conceal feature resetting on `:set syntax=foo`
+
+See #176"
+xaizek,2012-07-25 21:42:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/364f1c3425383412bb1d90f09ad8e08db85470c8,364f1c3425383412bb1d90f09ad8e08db85470c8,"Merge pull request #175 from smancill/master
+
+Another small fix to integration with UltiSnips"
+xaizek,2012-07-24 17:36:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/5a0faa6041a16c4420779c8aacbd391dc36f869e,5a0faa6041a16c4420779c8aacbd391dc36f869e,"Merge remote-tracking branch 'leszek/master'
+
+Conflicts:
+	doc/clang_complete.txt"
+xaizek,2012-07-17 05:02:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/bb5392f80c1c82a29ec4a83b9caa146fae89241b,bb5392f80c1c82a29ec4a83b9caa146fae89241b,Escape parenthesis in shell command on *nix
+xaizek,2012-07-09 19:36:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/cc3cbb028540f3d557c6acf9301b5b3f4fa59311,cc3cbb028540f3d557c6acf9301b5b3f4fa59311,"State time of loading options in the documentation
+
+Closes #168."
+xaizek,2012-07-07 16:59:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/09423eec88c72c132f8c8a74a89bab02eb55c9ce,09423eec88c72c132f8c8a74a89bab02eb55c9ce,Merge branch 'small-documentation-fixes'
+xaizek,2012-07-07 16:58:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/5dc1418fe085f13a121d90020cf698c7f5b84dbb,5dc1418fe085f13a121d90020cf698c7f5b84dbb,Use help hyperlinks in the documentation more
+xaizek,2012-07-07 16:53:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/0832cbc78276d05bd4487a775f8a692973659313,0832cbc78276d05bd4487a775f8a692973659313,Remove trailing spaces in the documentation
+xaizek,2012-07-07 16:50:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/b9fdc82d807734c6c8d1585f48fb32d95a33c53c,b9fdc82d807734c6c8d1585f48fb32d95a33c53c,"Update documentation for g:clang_user_options
+
+Closes #166"
+LeszekSwirski,2012-06-29 15:01:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/fa7f36acbca80e3664944ba2c7e448a34b632ee3,fa7f36acbca80e3664944ba2c7e448a34b632ee3,Updated docs about auto options
+LeszekSwirski,2012-06-29 14:59:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/a8392f0db8ceeb23c7b2c350e343ec5fe8d3f6b9,a8392f0db8ceeb23c7b2c350e343ec5fe8d3f6b9,Fixed possibility of using 'cache' as a user option
+LeszekSwirski,2012-06-29 14:49:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/bbb7d23fe07fd17c3b18c0179bbb60be1b95c10f,bbb7d23fe07fd17c3b18c0179bbb60be1b95c10f,Refactored common functionality for getopts
+LeszekSwirski,2012-06-28 13:10:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/92b1710f8e116b9e821eb3d83332ddd132496cd9,92b1710f8e116b9e821eb3d83332ddd132496cd9,Changed auto user options to use clang paths
+LeszekSwirski,2012-06-28 13:07:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/af7d97130389baab04f7a7a41f0a040ade283b21,af7d97130389baab04f7a7a41f0a040ade283b21,Added clang_parameters to libclang
+Silex,2012-06-26 16:33:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/e307411cf73bbacdaacc0d386048309d51dd7ead,e307411cf73bbacdaacc0d386048309d51dd7ead,"Merge pull request #161 from smancill/master
+
+Small fix on integration with UltiSnips"
+SirVer,2012-06-26 09:07:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/1d1885459c8de2b2a623a3c1d180dbe39009ee36,1d1885459c8de2b2a623a3c1d180dbe39009ee36,Improved integration with UltiSnips
+xavierd,2012-06-26 01:56:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/5a0e108d0fbb55000ef1238cb252201771418ff0,5a0e108d0fbb55000ef1238cb252201771418ff0,"Revert ""Use find_library to locate libclang.""
+
+This reverts commit 95ccca1c768991a274feb99078ea4fa805637b39.
+
+It broke clang_complete for too many people."
+bmihai,2012-06-21 20:55:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/95ccca1c768991a274feb99078ea4fa805637b39,95ccca1c768991a274feb99078ea4fa805637b39,"Use find_library to locate libclang.
+Should work crossplatform, but only tested on Linux Debian."
+Silex,2012-06-04 07:47:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/71b66746f94955d4577af1aebc20a6574fa2e297,71b66746f94955d4577af1aebc20a6574fa2e297,"Merge pull request #153 from dave-h/quickfix_race_fix
+
+Crash when clang_periodic_quickfix enabled, race with WarmupCache"
+dave-h,2012-06-03 18:26:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/e87781e2837b45f5d5e07ad62d24281b5ad38823,e87781e2837b45f5d5e07ad62d24281b5ad38823,"Fix libclang race with clang_periodic_quickfix
+
+Fixes race between WarmupCache and updateCurrentDiagnostics, when the
+inital parsing triggered by WarmupCache takes longer then the timeout
+before updateCurrentDiagnostics is called and attempts to reparse
+
+Replaces CompleteThread's lock with a global libclangLock that is also
+used by updateCurrentDiagnotics"
+xaizek,2012-05-27 17:24:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/22629de5e75ca0a997519cf44cc4226c5d297dbb,22629de5e75ca0a997519cf44cc4226c5d297dbb,"Revert ""Preserve existing <CR> mappings in insert mode""
+
+This reverts commit f6ced73ea19457d079550681126f5ed8cf835247.
+
+Combining mappings of different plugins needs further
+investigation."
+xaizek,2012-05-26 13:32:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/f6ced73ea19457d079550681126f5ed8cf835247,f6ced73ea19457d079550681126f5ed8cf835247,"Preserve existing <CR> mappings in insert mode
+
+Closes #136. Thanks to @pera."
+xavierd,2012-05-03 05:22:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/1c72c6eba9aa727edc7a4a0b09935ca5d567ec7e,1c72c6eba9aa727edc7a4a0b09935ca5d567ec7e,"Merge pull request #146 from Arnaud-de-Grandmaison/master
+
+Add an 'uninstall' convenience target to the Makefile"
+Arnaud-de-Grandmaison,2012-05-02 20:55:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/880290512b7b170c43eb54b127c39edd26e2105e,880290512b7b170c43eb54b127c39edd26e2105e,Add an uninstall convenience target
+xaizek,2012-05-02 14:26:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/f4c5cdc252ba75991f6e63d14e181da5b74b76f2,f4c5cdc252ba75991f6e63d14e181da5b74b76f2,"Correct concatenation of lists in cc_args.py
+
+Closes #145. Make it compatible with Python 2.x and Python 3.x
+at the same time."
+xavierd,2012-04-21 07:02:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/4162272b914d93a780dcad45a0dbc63577c41d82,4162272b914d93a780dcad45a0dbc63577c41d82,"Merge pull request #141 from Arnaud-de-Grandmaison/master
+
+The vimball is now a .vmb, not a .vba"
+Arnaud-de-Grandmaison,2012-04-20 21:23:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/e64e8d1cd529b2398314e67e813fd23aeffdc137,e64e8d1cd529b2398314e67e813fd23aeffdc137,The vimball is a .vmb instead of .vba
+xaizek,2012-04-17 20:08:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/1e6898ad827b0548ff8bfbb0018f8d8757a74b08,1e6898ad827b0548ff8bfbb0018f8d8757a74b08,"Automatically invalidate include paths cache
+
+This is done by checking each of include paths for existence.
+If at least one of them doesn't exist, the cache is regenerated."
+xavierd,2012-04-15 21:16:54,https://api.github.com/repos/xavierd/clang_complete/git/commits/fcbed9cd1a9bbcd298287ef3b05a62ac3221aa07,fcbed9cd1a9bbcd298287ef3b05a62ac3221aa07,Fix issue #138
+xaizek,2012-03-18 11:41:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/dae9c120248e2f48436a8cb33bad9ac61e7b53b3,dae9c120248e2f48436a8cb33bad9ac61e7b53b3,"Merge pull request #131 from ianliu/master
+
+Correctly execute the command passed to cc_args.py"
+ianliu,2012-03-18 08:33:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/0b6b4c0ad12260ed1005c35f729d806f80a7204a,0b6b4c0ad12260ed1005c35f729d806f80a7204a,"Correctly execute the command passed to cc_args.py
+
+The original command line passed to cc_args.py program was losing shell
+escaping sequences. For instance, if one would execute the following
+command
+
+ $ cc_args.py gcc -DVERSION=\""0.1.0\"" ...
+
+the command would first be unescaped by the shell and then cc_args.py
+would execute
+
+ $ gcc -DVERSION=""0.1.0"" ...
+
+which is incorrect."
+xaizek,2012-02-23 19:42:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/cfe53bc6eb00ca0bfd5010b34b455844dc694b7f,cfe53bc6eb00ca0bfd5010b34b455844dc694b7f,Use :call instead of :exe. Fixes #129
+xaizek,2012-02-02 20:38:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/a6091847b3ff01cc23a176b449048d5a4f235e3c,a6091847b3ff01cc23a176b449048d5a4f235e3c,"Merge pull request #121 from dtzWill/fix_typo
+
+Fix minor typo that can cause completion failures."
+dtzWill,2012-02-02 20:17:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/f8070a3d7c3555fdf54d5514f38fe02134a4c36e,f8070a3d7c3555fdf54d5514f38fe02134a4c36e,"Fix minor typo that caused completion failures.
+
+(Without this fix, I'm unable to complete anything)"
+xaizek,2012-02-02 19:23:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/e4fba151248a4b8d271738ce754ab095a19e23bd,e4fba151248a4b8d271738ce754ab095a19e23bd,"Merge pull request #120 from tobig/speedup
+
+Speedup code completion results."
+tobig,2012-02-02 11:25:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/f31fbcab64a58e2a4d8da150e8f27b4c674fd36e,f31fbcab64a58e2a4d8da150e8f27b4c674fd36e,"libclang.py: Introduce option sorting=none
+
+0.34 -> 0.28 sec completion time on (examples/boost.cpp)
+
+This was compared to soring=alpha
+
+No sorting makes sense as vim will automatically sort the results as
+soon as we type the first character. So spending a lot of time on
+sorting may not be worth it.
+
+In later patches I will try to speed up our own sorting, such that it
+becomes less an issue. clang already provides a c function for this.
+Though at the moment this function does not work for me (it crashes)."
+tobig,2012-02-02 11:13:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/acbd61f515517c20ea089ea2628560ef42a781a2,acbd61f515517c20ea089ea2628560ef42a781a2,"libclang.py: Get the abbreviation without reiterating over the list of chunks
+
+0.34 -> 0.322 sec completion time on (examples/boost.cpp)"
+tobig,2012-02-02 10:39:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/f1d71f6363d56547835337a2158c60eb12abbd50,f1d71f6363d56547835337a2158c60eb12abbd50,"libclang.py: Find the return value faster
+
+0.38 -> 0.34 sec completion time on (examples/boost.cpp)"
+tobig,2012-02-02 10:30:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/f8719230edce232dec96c5a3340a45ed284a5a84,f8719230edce232dec96c5a3340a45ed284a5a84,"libclang.py: Use a different variable name for different types
+
+word -> chunks"
+tobig,2012-02-02 10:25:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/431857af8684b9fb50f383a3fb005399abf0bdb9,431857af8684b9fb50f383a3fb005399abf0bdb9,"libclang.py: Take advantage of empty completion base
+
+0.42 -> 0.38 sec completion time (examples/boost.cpp)"
+tobig,2012-02-02 10:23:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/54607c0d7a512250e7ed836c3c367a4e1d57a03c,54607c0d7a512250e7ed836c3c367a4e1d57a03c,libclang.py: Improve code formatting (no functional changes)
+tobig,2012-02-02 09:09:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/8d46ef6980d1d1e9fadbc7c01005566d345c5bc8,8d46ef6980d1d1e9fadbc7c01005566d345c5bc8,libclang.py: Add timing for code completion post processing
+tobig,2012-02-02 10:16:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/ac5ab7e16357ae0c4c773bb0ef25ccaf02f96067,ac5ab7e16357ae0c4c773bb0ef25ccaf02f96067,libclang.py: Limit timing to three digits
+tobig,2012-02-02 10:52:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/d389b01b361366c177cd2a8eb6efd2e13109afb7,d389b01b361366c177cd2a8eb6efd2e13109afb7,Add examples/boost.cpp as common test file
+xaizek,2012-01-17 18:15:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/a065c408b70c9e63d28914924e373fe9b90d02b5,a065c408b70c9e63d28914924e373fe9b90d02b5,"Merge pull request #118 from jimenezrick/master
+
+Ignore cache files"
+jimenezrick,2012-01-16 11:36:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/a8dca739ecb7488a1b8427adefc0dd46a9e621bc,a8dca739ecb7488a1b8427adefc0dd46a9e621bc,Ignore cache files
+xaizek,2012-01-15 16:41:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/82d2e9f87291b7a5a07262d3e3fcb63b7001f4af,82d2e9f87291b7a5a07262d3e3fcb63b7001f4af,Add gcc custom option source script.
+xaizek,2012-01-13 18:02:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/acff6aab8460488875b61c68ece921daefbbe8e3,acff6aab8460488875b61c68ece921daefbbe8e3,"Merge pull request #116 from xaizek/master
+
+More accurate .clang_complete parsing"
+xaizek,2012-01-10 18:58:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/a551403f17987effb9d05c68db476662c7b3bf13,a551403f17987effb9d05c68db476662c7b3bf13,Parse .clang_complete more accurate. Fixes #111.
+xavierd,2012-01-02 12:18:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/72ef1c4f82e2800d716531b1e31d9a96b8dcb913,72ef1c4f82e2800d716531b1e31d9a96b8dcb913,"Merge pull request #113 from xaizek/master
+
+More detailed description of .clang_complete file in the documentation"
+xaizek,2012-01-01 17:47:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/51943397286dfee964da353e2cf28daee33bef84,51943397286dfee964da353e2cf28daee33bef84,Add .clang_complete file example
+xaizek,2012-01-01 16:33:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/2470ac000ca3ecad3e9c91d1f42f14cdd012fba8,2470ac000ca3ecad3e9c91d1f42f14cdd012fba8,"Add some details about .clang_complete file to doc
+
+Closes #112."
+xavierd,2011-12-22 20:36:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/d81ede0113819966264d818a742a33325b1d2aae,d81ede0113819966264d818a742a33325b1d2aae,Re-add return type on completion window. Fix issue 107.
+xavierd,2011-12-09 21:13:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/60ab2aceb804d28ae8ef3b1595e7c939ace1dbb1,60ab2aceb804d28ae8ef3b1595e7c939ace1dbb1,Merge branch 'tobig-master'
+Silex,2011-12-02 14:29:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/8fa8cd5b8421fb8406ed9e5318f09c35f861a76f,8fa8cd5b8421fb8406ed9e5318f09c35f861a76f,"Merge pull request #104 from exclipy/info_diagnostic
+
+Include ""note"" diagnostic messages (for clang executable mode)"
+exclipy,2011-12-02 14:22:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/e532bf2c73e2793ff92abfb348081aea9da5d6b9,e532bf2c73e2793ff92abfb348081aea9da5d6b9,"Include ""note"" diagnostics (clang executable mode)"
+Silex,2011-11-28 21:19:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/1e907b0031550d67bd84db20e1afc9256c3089ca,1e907b0031550d67bd84db20e1afc9256c3089ca,"Merge pull request #103 from jimenezrick/master
+
+Hides `doautocmd QuickFixCmdPost make' annoying message"
+jimenezrick,2011-11-28 19:36:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/fb49c5ef162d02f2240b39b02670570e0ed95e4d,fb49c5ef162d02f2240b39b02670570e0ed95e4d,"Fixes `No matching autocommands' message
+
+When doing `doautocmd QuickFixCmdPost make', if no autocommands are
+registered for QuickFixCmdPost, that annoying message is shown, we need
+to add `:silent'.
+
+Closes #96"
+Silex,2011-11-21 09:49:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/a5b93fad343873fd2d36bc91d1dcd1a134c71b14,a5b93fad343873fd2d36bc91d1dcd1a134c71b14,"Merge pull request #102 from majutsushi/threadfix
+
+Fix threading race condition"
+xdegaye,2011-11-20 23:12:54,https://api.github.com/repos/xavierd/clang_complete/git/commits/2bb600d4358e1be6c3e8c1f15990c33655bd7c5e,2bb600d4358e1be6c3e8c1f15990c33655bd7c5e,Fix threading race condition
+tobig,2011-10-31 02:00:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/7baefbfaf565c648d9f6c0aa350922380dd69960,7baefbfaf565c648d9f6c0aa350922380dd69960,"cindex.py: Remove useless line
+
+We do this to get in sync with the clang version of cindex.py"
+tobig,2011-10-31 01:59:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/0c9470056a3a811f52d29591af1c9be4929f428e,0c9470056a3a811f52d29591af1c9be4929f428e,cindex.py: Add CodeCompletionResult.kind (as available in clang repo)
+tobig,2011-10-31 01:20:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/b3ca6917828680fe032410e1389efe89d54103a4,b3ca6917828680fe032410e1389efe89d54103a4,"cindex.py: Port 'Allow to create a cursor from file/row/column'
+
+Original commit message:
+========================================================================
+    commit 87d010289c6984d7408303b69bdc79dd108838aa
+    Author: grosser <grosser@91177308-0d34-0410-b5e6-96231b3b80d8>
+    Date:   Mon Oct 31 00:31:32 2011 +0000
+
+    cindex.py: Allow to create a cursor from file/row/column
+
+    We add a constructor to create a SourceLocation from a position in
+    a file and we use this SourceLocation to retrieve a cursor.
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@143322
+========================================================================"
+tobig,2011-10-31 01:19:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/5c1021e75c52fed0e5da4982307f5f60619f31fc,5c1021e75c52fed0e5da4982307f5f60619f31fc,"cindex.py: Port 'Add File.create_from_name()'
+
+Original commit message:
+========================================================================
+    commit a9ea5df14abb807eb0173e2737c5a1d61e86975b
+    Author: Tobias Grosser <grosser@fim.uni-passau.de>
+    Date:   Mon Oct 31 00:07:19 2011 +0000
+
+    cindex.py: Add File.create_from_name()
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@143321
+========================================================================"
+tobig,2011-10-31 01:17:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/655f3be0076e88af6fa186f5927de2f6ca1995c3,655f3be0076e88af6fa186f5927de2f6ca1995c3,"cindex.py: Port 'Add support for constant arrays'
+
+Original commit message:
+========================================================================
+    commit 13102ffbb00f1397fa02950e0cbc82d17be21792
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Wed Oct 19 05:51:43 2011 +0000
+
+     Add support for constant arrays, from Anders Waldenborg!.
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@142477
+========================================================================"
+tobig,2011-10-31 01:15:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/2b3bf7bb83b3cbee66d5f76327f1bc634b90a0ad,2b3bf7bb83b3cbee66d5f76327f1bc634b90a0ad,"cindex.py: Port 'Add TypeKind.CONSTANTARRAY'
+
+Original commit message:
+========================================================================
+commit 38d2d5539e72ce3d92c4746b632f3a7c2e48b4a2
+Author: Douglas Gregor <dgregor@apple.com>
+Date:   Wed Oct 19 05:50:34 2011 +0000
+
+    Add TypeKind.CONSTANTARRAY, from  Anders Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@142476
+========================================================================"
+tobig,2011-10-31 01:14:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/26e29204586fab235ed4c2bae5d263aaf7384043,26e29204586fab235ed4c2bae5d263aaf7384043,"cindex.py: Port 'Fix error message for unknown type kind'
+
+Original commit message:
+========================================================================
+    commit 9d342ab031ba831263291a3bcda485e684508ea9
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Wed Oct 19 05:49:29 2011 +0000
+
+    Fix error message for unknown type kind, from Anders Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@142475
+========================================================================"
+tobig,2011-10-31 01:12:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/d5c5779fa11c0301f2d6c5ab04282f4fda521de9,d5c5779fa11c0301f2d6c5ab04282f4fda521de9,"cindex.py: Port 'This new field was introduced in clang-c in r141277'
+
+Original commit message:
+========================================================================
+    commit 2abfec3240e8f2dafc9b62a71c69a6380aa5509a
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Wed Oct 19 05:47:46 2011 +0000
+
+    This new field was introduced in clang-c in r141277
+
+    Python needs this in its structure definition so it allocates enough
+    memory. From Anders Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@142474
+========================================================================"
+tobig,2011-10-31 01:10:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/1cb54e1a5ee7ee7c1e6d03025dabbb94bae33383,1cb54e1a5ee7ee7c1e6d03025dabbb94bae33383,"cindex.py: Port 'Expose more statement, expression, and declaration ...]
+
+Original commit message:
+========================================================================
+    commit 42b2984771a7fd1b17c78bbb2c59fed3db2f1960
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Wed Oct 5 19:00:14 2011 +0000
+
+    Expose more statement, expression, and declaration kinds in
+    libclang, from Manuel Holtgrewe!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@141200
+========================================================================"
+tobig,2011-10-31 01:02:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/8912688dc3ab067873b4727e0ace8650564ed363,8912688dc3ab067873b4727e0ace8650564ed363,"cindex.py: Port 'Add support for Cursor.displayname in python bindings'
+
+Original commit message:
+========================================================================
+    commit b60a2bebb5f3048f6c53d4f3997ebd84493a2d98
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Tue Aug 30 00:15:34 2011 +0000
+
+    Add support for Cursor.displayname in python bindings, from Anders
+    Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@138785
+========================================================================"
+tobig,2011-10-31 01:26:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/417e747da6846db0696a110327f8e9d9b11c98a5,417e747da6846db0696a110327f8e9d9b11c98a5,"cindex.py: Port '[python] Fix bug of the SourceLocation binding'
+
+Original commit message:
+========================================================================
+    commit 6b04623bcc64a5091a47fb18cd40af5e93b773ad
+    Author: Argyrios Kyrtzidis <akyrtzi@gmail.com>
+    Date:   Wed Aug 17 17:20:24 2011 +0000
+
+    [python] Fix bug of the SourceLocation binding.
+    Patch by Anders Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@137829
+========================================================================"
+tobig,2011-10-31 01:00:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/eb1f3a8faabcddb7e0382018fd285b5547a6b201,eb1f3a8faabcddb7e0382018fd285b5547a6b201,"cindex.py: Port '[python] Add support for CXType to python bindings.'
+
+Original commit message:
+========================================================================
+    commit d7933e6f29b4c93df8263df21ff5e2e1dd0cecb8
+    Author: Argyrios Kyrtzidis <akyrtzi@gmail.com>
+    Date:   Wed Aug 17 00:43:03 2011 +0000
+
+    [python] Add support for CXType to python bindings.
+    Patch by Anders Waldenborg!
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@137797
+========================================================================"
+tobig,2011-10-31 00:56:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/85568ce206dfa9f3275e9b3b9cb957e6645ce56a,85568ce206dfa9f3275e9b3b9cb957e6645ce56a,"cindex.py: Port 'Improve the Python bindings for libclang in a few ways'
+
+Original commit message:
+========================================================================
+    commit 8be80e1e6effd5a333bc70e7f030dc9397d0554e
+    Author: Douglas Gregor <dgregor@apple.com>
+    Date:   Wed Jul 6 03:00:34 2011 +0000
+
+    Improve the Python bindings for libclang in a few ways, from Eli
+    Bendersky. Specifically:
+
+    * Implemented a new function in libclang: clang_isAttribute
+
+    * Fixing TranslationUnit.get_includes to only go through the
+    * argument
+    * buffer when it contains something. This fixed a crash on Windows
+
+    * clang_getFileName returns CXString, not char*. Made appropriate
+    * fixes in cindex.py - now the relevant tests pass and we can see
+    * the
+    * full locations correctly again (previously there was garbage in
+    * place of the file name)
+    * Exposed clang_getCursorDisplayName to the python bindings
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@134460
+========================================================================"
+tobig,2011-10-31 01:35:44,https://api.github.com/repos/xavierd/clang_complete/git/commits/295a59b7bcd71c8a0f3baafa7466bc6127df8fb1,295a59b7bcd71c8a0f3baafa7466bc6127df8fb1,"cindex.py: Port 'python bindings: Synchronize cursor kinds'
+
+Original commit message:
+==================================================================
+    commit 4ed73ce03bbdc56692f3bc232cb64632dc9dbc0f
+    Author: Tobias Grosser <grosser@fim.uni-passau.de>
+    Date:   Sat Feb 5 17:53:47 2011 +0000
+
+    python bindings: Synchronize cursor kinds
+
+    clang-c/Index.h contained cursor kinds not yet available in the
+    python bindings.
+
+    Contributed-By: jmuizelaar@mozilla.com
+
+    git-svn-id: https://llvm.org/svn/llvm-project/cfe/trunk@124951
+=================================================================="
+tobig,2011-10-29 00:17:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/9bbe9476f2db67c4999cb150e71f47698550f40b,9bbe9476f2db67c4999cb150e71f47698550f40b,"libclang: Parse the python bindings only once
+
+We accidently parsed the whole python bindings whenever we changed the
+file that is in the vim buffer. This does not only cost runtime, but it
+also yields to locking problems as we may allocate more than one lock.
+
+Signed-off-by: Tobias Grosser <tobias@grosser.es>"
+tobig,2011-10-28 23:54:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/0fc13aed200934c36cd8a1c75abb10f0883ffc89,0fc13aed200934c36cd8a1c75abb10f0883ffc89,"libclang: Evaluate the options before starting a new thread
+
+This fixes an error that arise because vim variables are not yet available
+in the thread's context. This was the original error message:
+
+Error detected while processing function <SNR>50_Detect:
+E121: Undefined variable: b:clang_user_options
+E15: Invalid expression: b:clang_user_options
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File ""C:\Python27\Lib\threading.py"", line 530, in __bootstrap_inner
+    self.run()
+  File ""SOMEPATHHERE/plugin/libclang.py"", line 223, in run
+    getCurrentTranslationUnit()
+  File ""SOMEPATHHERE/plugin/libclang.py"", line 23, in
+getCurrentTranslationUnit
+    userOptionsLocal = splitOptions(vim.eval(""b:clang_user_options""))
+vim.error: invalid expression
+
+Signed-off-by: Tobias Grosser <tobias@grosser.es>"
+tobig,2011-10-28 23:49:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/5c9f2f58d6ba407e3b59058953b2ba95295bcc6e,5c9f2f58d6ba407e3b59058953b2ba95295bcc6e,"Remove unused function
+
+Signed-off-by: Tobias Grosser <tobias@grosser.es>"
+Silex,2011-10-26 09:28:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/00c641dd8570a9c2f66b77196b69caf5e53561cb,00c641dd8570a9c2f66b77196b69caf5e53561cb,"Merge pull request #95 from jimenezrick/add-gitignore
+
+Adds `tags' to .gitignore file (useful with pathogen)"
+jimenezrick,2011-10-25 18:31:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/b27d359c6e3457a62ce051269d759579c8533834,b27d359c6e3457a62ce051269d759579c8533834,"Adds `tags' to .gitignore file, useful with pathogen
+
+Ignore `tags' files created when using pathogen."
+xavierd,2011-10-23 23:03:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/00c17c230f2c71226048fb788cb0324c84baabc0,00c17c230f2c71226048fb788cb0324c84baabc0,Remove some lines in the TODO
+xavierd,2011-10-23 23:02:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/53462d915fcd4ae805d69eb6ff7ba104d390a5a1,53462d915fcd4ae805d69eb6ff7ba104d390a5a1,Don't allow duplicate entry in the completion popup.
+xavierd,2011-10-23 23:00:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/901b26f99eaf8c7ebd96f477981c12c42b368697,901b26f99eaf8c7ebd96f477981c12c42b368697,Add a function to set the snippet engine: g:ClangSetSnippetEngine.
+xavierd,2011-10-23 22:48:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/fabe1e349b2f09238078680f9d32819f914df569,fabe1e349b2f09238078680f9d32819f914df569,"Instead of a common formatting between libclang and clang, compute the 'args_pos' when filling the dictionnary used by vim for the completion."
+xavierd,2011-10-17 19:53:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/0c7f4d95f369c506bf6067ee45a31047601e4032,0c7f4d95f369c506bf6067ee45a31047601e4032,Merge branch 'snips'
+Silex,2011-10-17 10:40:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/34b056558e8334a38c2ebea2fbd9f7b172f00141,34b056558e8334a38c2ebea2fbd9f7b172f00141,Fix UltiSnips snippets
+Silex,2011-10-17 10:34:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/8eb48403924ee10df4d7c8c05b542f5259917a77,8eb48403924ee10df4d7c8c05b542f5259917a77,Correct dummy example
+tobig,2011-10-17 07:51:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/373aa7ca85d4913c6adbe3729844cd259cc2929b,373aa7ca85d4913c6adbe3729844cd259cc2929b,"libclang: Parse file on load to fill caches.
+
+As soon as a new file is opened, we compile it in the background. This
+allows clang to fill its caches, such that the first user completion
+happens already on a cached file. This significantly speeds up the first
+completion."
+xavierd,2011-10-16 09:29:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/e20416850a95d4f0927889d86d60ff7f15ab93fa,e20416850a95d4f0927889d86d60ff7f15ab93fa,Merge branch 'master' into snips
+xavierd,2011-10-16 09:28:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/482cb2d26f346a855c175fb40c5c295316b5d33c,482cb2d26f346a855c175fb40c5c295316b5d33c,"Swap the behaviour of clang_auto_select = 1 or 2.
+
+That way we're backward compatible."
+xavierd,2011-10-15 22:22:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/29b745b09077d3c8fff6015b20ca18d47cc52375,29b745b09077d3c8fff6015b20ca18d47cc52375,"Update snipmate and ultisnips to use the new interface.
+
+I didn't tested it with ultisnips but due to the similarity of the code,
+it should works. Some features were removed for now and may be
+reintroduced in the future."
+xavierd,2011-10-15 13:22:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/d7a491cd93a0c898854906d6e2449d09b6faaf07,d7a491cd93a0c898854906d6e2449d09b6faaf07,Merge branch 'master' into snips
+xavierd,2011-10-15 13:22:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/bd14fc044812eb73c04acbb23f69d1adb6794b59,bd14fc044812eb73c04acbb23f69d1adb6794b59,Suppress useless variable.
+xavierd,2011-10-15 12:58:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/e5087e0475b9da26a05bff27f95966b51fb34334,e5087e0475b9da26a05bff27f95966b51fb34334,Merge branch 'master' into snips
+xavierd,2011-10-15 12:53:26,https://api.github.com/repos/xavierd/clang_complete/git/commits/a846d6ea7852ff143576e3517b160411d89fe4fa,a846d6ea7852ff143576e3517b160411d89fe4fa,Change the behavior of g:clang_auto_select.
+xavierd,2011-10-15 11:50:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/08f1f8008bb6246e0c5529d453974ae7625db46a,08f1f8008bb6246e0c5529d453974ae7625db46a,Suppress the now useless hack on snippets.
+xavierd,2011-10-08 17:55:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/f7e3ccff21ecb404eae7e03527ad661ba230d417,f7e3ccff21ecb404eae7e03527ad661ba230d417,"First try at fixing the snippet engine.
+
+Only currently works on the ""native"" engine."
+Silex,2011-09-24 21:13:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/2ede68da8230fb1a102c77cbe328018f893e15ca,2ede68da8230fb1a102c77cbe328018f893e15ca,"Merge pull request #86 from xaizek/master
+
+Fix return code of cc_args.py"
+xaizek,2011-09-24 20:06:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/7bed1bb886641f10c55836b00cec4da2870e6c37,7bed1bb886641f10c55836b00cec4da2870e6c37,"Fix cc_args.py exit status. Closes #85
+
+Used to return signal number that killed child process, now returns exit
+code or 1 if child process is killed by signal."
+Silex,2011-09-11 13:30:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/53b615be1c17fe41e5501238cd879bbfdd01bac2,53b615be1c17fe41e5501238cd879bbfdd01bac2,"Merge pull request #82 from exclipy/fatal_diagnostic
+
+Include informational and fatal errors to the diagnostic list."
+exclipy,2011-09-09 15:35:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/237d5fa670569bc1f9374d49c196a8048ca06ddf,237d5fa670569bc1f9374d49c196a8048ca06ddf,Include informational and fatal errors to the diagnostic list.
+Silex,2011-08-29 10:15:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/dcf853fa95386fb1cb0b34f1fb5578a9c00335a6,dcf853fa95386fb1cb0b34f1fb5578a9c00335a6,Keep note about manual installation procedure
+Silex,2011-08-29 10:11:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/f0ce66e64a073462bf6c6687bd61e68f51dbd421,f0ce66e64a073462bf6c6687bd61e68f51dbd421,"Merge pull request #75 from exclipy/master
+
+Add a Makefile to generate a Vimball Archive"
+exclipy,2011-08-28 06:33:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/837d74210735696f7c2cb8e4eccc5501734e3665,837d74210735696f7c2cb8e4eccc5501734e3665,"Add a Makefile to generate a Vimball Archive
+
+Moved LICENSE and TODO files into doc/clang_complete.txt.
+This will ensure these texts are included when the plugin is distributed
+as the .vba file.
+
+Moved cc_args.py to bin/cc_args.py.
+So it doesn't clutter the user's ~/.vim
+
+Updated cc_args.py section of the docs to refer to its installed
+location"
+Silex,2011-08-23 14:24:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/243298aa619abd4d139f238d2aa5382c17e997b3,243298aa619abd4d139f238d2aa5382c17e997b3,"Merge pull request #72 from bogado/master
+
+the clang_complete file is not found when it is in a build dir."
+bogado,2011-08-23 13:19:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/1217bf33d9cac7929679561456f35c6fac7c5d5b,1217bf33d9cac7929679561456f35c6fac7c5d5b,"Searches the current dir for the config file.
+
+The .clang_complete file can be seperated from the sources, for instance
+if you are using a build dir that is outside your source path."
+bogado,2011-08-22 15:24:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/86da4aceedf47b4fe2fd114b279fd2594842a3ad,86da4aceedf47b4fe2fd114b279fd2594842a3ad,Adds gitignore to remove pyc files from the status
+Silex,2011-08-22 10:33:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/60f6232d704914cbb3b64763d8ed924ce1185eba,60f6232d704914cbb3b64763d8ed924ce1185eba,Fix g:clang_user_options documentation.
+bogado,2011-08-15 12:59:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/785267353463e1671242d8b3e831f95bfddd6129,785267353463e1671242d8b3e831f95bfddd6129,usa sys.exit para funcionar com o python antigo.
+Silex,2011-07-29 11:26:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/66a6fb05a1296eea4a6452368d0cc93b2670f574,66a6fb05a1296eea4a6452368d0cc93b2670f574,"Merge pull request #65 from xaizek/master
+
+Fix Control Y."
+xaizek,2011-07-25 12:00:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/f2b42e3b6454fed4dffb95ba874eb68b14f97828,f2b42e3b6454fed4dffb95ba874eb68b14f97828,Merge branch 'master' of https://github.com/Rip-Rip/clang_complete
+xaizek,2011-07-25 11:59:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/9dc8cb0134ee423ed2eb93722b91c5af04ba4832,9dc8cb0134ee423ed2eb93722b91c5af04ba4832,Complete fix for Control-Y.
+karelzak,2011-07-12 10:43:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/ab68a298d00748763682186c8a7119c5508333cb,ab68a298d00748763682186c8a7119c5508333cb,"Support -include compiler option
+
+Sometimes is better for autotools based build systems to use ""-include
+config.h"" compiler option than add #include to the all .[ch] files. The
+compiler arguments parser in cc_args.py does not support this option."
+Silex,2011-06-14 10:41:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/23c9db9d706f54b05082056274dfdb9dc47e41c5,23c9db9d706f54b05082056274dfdb9dc47e41c5,"Merge pull request #61 from xaizek/master
+
+Don't release lock twice. 2 small fixes for clang_complete snippets."
+xaizek,2011-06-14 10:09:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/12d5009b87bc151a5cf420e85fbc52f949b55ff6,12d5009b87bc151a5cf420e85fbc52f949b55ff6,"Fix clang_complete snippets for ""struct s s; s|"""
+xaizek,2011-06-14 09:54:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/f47ad274b5fbaf059430bff2605cd1270dee7d56,f47ad274b5fbaf059430bff2605cd1270dee7d56,"Fix clang_complete snippets for ""float flo; fl|"""
+xaizek,2011-06-14 09:04:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/bf4441d25846e6654dedebf12ec375eb53c32dfe,bf4441d25846e6654dedebf12ec375eb53c32dfe,Don't release unlocked lock.
+Silex,2011-06-10 10:17:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/c7be2d38ad0e1faa718d92523fc3d23314a9a77c,c7be2d38ad0e1faa718d92523fc3d23314a9a77c,"Merge pull request #59 from xaizek/master
+
+Three small changes for clang_complete snippets."
+xaizek,2011-06-10 07:03:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/bad1df66333c3e4935677b127cd1a6a45de6bc65,bad1df66333c3e4935677b127cd1a6a45de6bc65,map.swap isn't fixed yet.
+xaizek,2011-06-09 19:37:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/d048f90427ee74a95dd0d44f60e37644805772ad,d048f90427ee74a95dd0d44f60e37644805772ad,Removed map.swap problem from the TODO list.
+xaizek,2011-06-09 19:18:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/a70b6c345b63ca82db3b0d45bf4b3e2f5118b406,a70b6c345b63ca82db3b0d45bf4b3e2f5118b406,Merge branch 'master' of https://github.com/Rip-Rip/clang_complete
+xaizek,2011-06-08 19:07:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/35303597e0b09619cf5c803a7672bb8fa465fe46,35303597e0b09619cf5c803a7672bb8fa465fe46,"Made clang_complete snippets more quiet.
+Don't change @/. Don't display cmdline commands.
+Don't use escape key if already in normal mode."
+Silex,2011-06-08 14:15:25,https://api.github.com/repos/xavierd/clang_complete/git/commits/c41b18ac6da40d59304485d56ca16920fa5d1538,c41b18ac6da40d59304485d56ca16920fa5d1538,"Merge pull request #58 from xaizek/master
+
+Tool that generates .clang_complete. Fix for clang_complete snippets."
+xaizek,2011-06-08 13:55:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/caf665d0e2a8a152ed29368a847349ce0da9f6a9,caf665d0e2a8a152ed29368a847349ce0da9f6a9,"Merge branch 'master' of https://github.com/Rip-Rip/clang_complete
+
+Conflicts:
+	TODO"
+xaizek,2011-06-08 08:11:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/bb1f24f13faa9cd90ed6306c7fcbd87b22f054a4,bb1f24f13faa9cd90ed6306c7fcbd87b22f054a4,Fixed clang_complete snippets selection for something like pthread_create().
+xaizek,2011-06-07 20:52:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/85cc582b4949b0d260d7153c51df4d1d91f44daf,85cc582b4949b0d260d7153c51df4d1d91f44daf,Tool that generates .clang_complete automagically.
+Silex,2011-06-06 08:33:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/5bb95592182526120702fd5bb9a7b6fbe227ee09,5bb95592182526120702fd5bb9a7b6fbe227ee09,Merge pull request #57 from zaizek/master
+xaizek,2011-06-04 14:25:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/2ffdba679c757e83ff41a115272c12c725aeb3cb,2ffdba679c757e83ff41a115272c12c725aeb3cb,Real help with tags.
+Silex,2011-06-01 14:12:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/85b59129d80dd0f131c151bef6bab09dca456bd0,85b59129d80dd0f131c151bef6bab09dca456bd0,"Merge pull request #56 from xaizek/master
+
+Fix for Control-Y fix."
+Silex,2011-06-01 13:19:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/057292818bae0da31c87dadaedc526535d2e3eb8,057292818bae0da31c87dadaedc526535d2e3eb8,Add TODO about unit tests
+xaizek,2011-06-01 13:19:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/803179847995c248f640dd43a456a44006d6c7d6,803179847995c248f640dd43a456a44006d6c7d6,Don't show error message when <c-y> is already unmapped.
+Silex,2011-06-01 09:43:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/0ad43a1ef33254e7610f8830c8f6df9ee0ab430c,0ad43a1ef33254e7610f8830c8f6df9ee0ab430c,"Merge pull request #55 from xaizek/master
+
+Small fix for clang_complete snippets."
+xaizek,2011-06-01 08:08:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/c7c518ae8e8ff1d6f38b52b220d3515f74be295e,c7c518ae8e8ff1d6f38b52b220d3515f74be295e,Don't break standard behaviour of <c-y> in insert mode.
+xaizek,2011-06-01 07:13:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/0e761d87252ba7270a70fc747e71d5193c18a119,0e761d87252ba7270a70fc747e71d5193c18a119,"Fix clang_complete snippets completion of for example ""float oat; oa|""."
+Silex,2011-05-31 20:45:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/a38d75779324868efe53f38c7712d10d462899c9,a38d75779324868efe53f38c7712d10d462899c9,Updated TODO about edited item.
+Silex,2011-05-31 20:41:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/25d829d13368146f3352d17751f3667f7b16a2e1,25d829d13368146f3352d17751f3667f7b16a2e1,"Merge pull request #54 from xaizek/master
+
+Handle quoted text in clang_user_options when using libclang."
+xaizek,2011-05-31 20:34:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/02c3fd229a98f2c2473d6cd6b32077c75305ecee,02c3fd229a98f2c2473d6cd6b32077c75305ecee,Use 'd' for macroses instead of 'm' which means members.
+xaizek,2011-05-31 17:44:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/926f5f069fa60a75500f5d261ca5aaf27a39a525,926f5f069fa60a75500f5d261ca5aaf27a39a525,Properly handle quoted text in clang_user_options when using libclang.
+Silex,2011-05-31 16:14:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/cb56ece4322f7610d6d778bf3f9d6c45dd86e71e,cb56ece4322f7610d6d778bf3f9d6c45dd86e71e,"Merge pull request #53 from bogado/master
+
+Fixes remaining python 2.4 issues."
+bogado,2011-05-31 13:52:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/c4e70a183db3f1384870acb8e137089ebbb2bcae,c4e70a183db3f1384870acb8e137089ebbb2bcae,In python 2.4 is_alive is called isAlive. :-P
+bogado,2011-05-31 13:43:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/d355d172b09f8e33d71b9cd17fee3169fd715a78,d355d172b09f8e33d71b9cd17fee3169fd715a78,"Remove the use of ""with"" construct not avaiulable in old python"
+Silex,2011-05-25 17:20:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/c3c34d568c55a77927b24781f3f8cbf9006183a8,c3c34d568c55a77927b24781f3f8cbf9006183a8,"Merge pull request #52 from ton/master
+
+Fix cursor moving in case clang_auto_select is enabled"
+ton,2011-05-25 14:40:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/508081b86f76c7fe2d625cfb32b4e2e3a8739887,508081b86f76c7fe2d625cfb32b4e2e3a8739887,Document clang_auto_select option.
+ton,2011-05-25 14:39:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/3002cc1ea001439a29c50f74cf9d30e7c0d61a2a,3002cc1ea001439a29c50f74cf9d30e7c0d61a2a,Fix cursor moving in case at most one completion item is available.
+Silex,2011-05-20 09:23:36,https://api.github.com/repos/xavierd/clang_complete/git/commits/844eb4d70c461234a2bfb8a47bf3a835f7bf0d21,844eb4d70c461234a2bfb8a47bf3a835f7bf0d21,"Merge pull request #50 from yiding/master
+
+allows completion to be interrupted by key press"
+Silex,2011-05-19 12:36:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/bc920d8fa7c701dcee7cb866b404bc88a4af156c,bc920d8fa7c701dcee7cb866b404bc88a4af156c,"Merge pull request #49 from xaizek/master
+
+Add &path to -I by default. Don't break normal <tab> behaviour."
+xaizek,2011-05-19 09:57:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/1996bfc336a5cdea673868110240d23e82827487,1996bfc336a5cdea673868110240d23e82827487,Added g:clang_auto_user_options to README.
+xaizek,2011-05-19 09:48:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/101b7f49df0c0d2ccf4e9a3517a65ca3d6ae0d16,101b7f49df0c0d2ccf4e9a3517a65ca3d6ae0d16,Added g:clang_auto_user_options option.
+xaizek,2011-05-18 14:48:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/fd9c9953fa1ac0306cbe15a831d17afa30387358,fd9c9953fa1ac0306cbe15a831d17afa30387358,Add &path to -I by default
+xaizek,2011-05-18 14:13:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/1a6cc1d9add628c86575dc44ff374d8c183a7b00,1a6cc1d9add628c86575dc44ff374d8c183a7b00,Merge branch 'master' of https://github.com/Rip-Rip/clang_complete
+Silex,2011-05-18 13:51:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/192246eb27ea10cab0448d9f82c5aa9eb865eb7c,192246eb27ea10cab0448d9f82c5aa9eb865eb7c,Updated TODO
+Silex,2011-05-18 09:16:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/585fe95e0ed1660459e8249c0c3dd24ce92298a9,585fe95e0ed1660459e8249c0c3dd24ce92298a9,Fix for the previous fix :)
+xaizek,2011-02-07 19:09:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/d46362e8e547009009681341bf01c68a9c86a239,d46362e8e547009009681341bf01c68a9c86a239,Added a note about not obvious error message in Vim 7.2. Thanks to gladiac.
+Silex,2011-05-17 15:52:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/64b44915cb174a47a9fd1b570678f623dfc2a00f,64b44915cb174a47a9fd1b570678f623dfc2a00f,Added a TODO.
+Silex,2011-05-17 15:49:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/a365429a86996f04d6bc45ff836bce6a32c21530,a365429a86996f04d6bc45ff836bce6a32c21530,"Fix for bug saying ""nested ="" snippets engine
+
+PlasmaHH reported this, it happens because in substitute's replacement
+string stuffs like ""~destructor()"" have a special meaning."
+xaizek,2011-05-16 14:03:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/b6a9b3815710d59e1ae0ffb8e3d2d6d9ebf47cd7,b6a9b3815710d59e1ae0ffb8e3d2d6d9ebf47cd7,Merge branch 'master' of https://github.com/Rip-Rip/clang_complete
+Silex,2011-05-16 08:51:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/d753e36d38f2823bc64247f936a5d1d81db067a3,d753e36d38f2823bc64247f936a5d1d81db067a3,Fix for python 2.4 refactoring
+Silex,2011-05-15 21:16:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/01bc932ba09a4c9922df3e2aac100a804199276b,01bc932ba09a4c9922df3e2aac100a804199276b,"Merge pull request #43 from fraxbe/master
+
+Complete Macros and Patterns: Issue #42"
+fraxbe,2011-05-15 20:53:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/65989a1fbfad32638c44db33c59714a0e495c2d1,65989a1fbfad32638c44db33c59714a0e495c2d1,forgot init g:clang_complete_lib_flags = 0
+Silex,2011-05-15 19:11:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/8fc34bdc15e63e27e534abe4ed290019c56ba7a7,8fc34bdc15e63e27e534abe4ed290019c56ba7a7,Fix #41 and avoid name clash with other plugins
+Silex,2011-05-08 22:11:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/e313b22e221e82dd47459a48e6dd5899871cf3d1,e313b22e221e82dd47459a48e6dd5899871cf3d1,UltiSnips's latest version removed UltiSnipsReset
+Silex,2011-05-08 21:42:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/b9625a117a6436d74471ec39f0e061cc58b1b76d,b9625a117a6436d74471ec39f0e061cc58b1b76d,Temporary fix for issue #44
+Silex,2011-05-15 20:17:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/a8cb0b44761e612325c37cfc3c6e9f0ef596c137,a8cb0b44761e612325c37cfc3c6e9f0ef596c137,"Merge pull request #47 from ton/master
+
+Add clang_auto_select option."
+Silex,2011-05-15 20:13:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/06761b8736cac199628b7f3db95c2d1212a6ec23,06761b8736cac199628b7f3db95c2d1212a6ec23,"Merge pull request #46 from bogado/master
+
+Makes the python code compatible with the 2.4 python"
+ton,2011-05-12 20:46:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/34d75eabbde633a0bc056fff29708b3db57e6311,34d75eabbde633a0bc056fff29708b3db57e6311,"Add clang_auto_select option.
+
+Enabling clang_auto_select will automatically select the first entry in
+the omni completion popup window once it pops up."
+bogado,2011-05-06 13:06:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/3165b15422866b21e6dbe6646095427a78593094,3165b15422866b21e6dbe6646095427a78593094,Merge remote branch 'origin/master' into bogado
+bogado,2011-03-15 14:15:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/06dbfe62eb562c90e79b7a07d304c57c983f5335,06dbfe62eb562c90e79b7a07d304c57c983f5335,Makes the python code compatible with python 2.4
+fraxbe,2011-05-02 18:22:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/3e90952b099214504735f91ba27129d9ca8ae799,3e90952b099214504735f91ba27129d9ca8ae799,Added macro and pattern completion options
+xaizek,2011-04-25 09:09:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/717ed13c0c7f799ca21a358ee126eaa3cc0c1812,717ed13c0c7f799ca21a358ee126eaa3cc0c1812,Don't break <c-i> normal mode command.
+xaizek,2011-04-25 08:50:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/31c659548792d9f901a490e72ccc92c4a5b5b224,31c659548792d9f901a490e72ccc92c4a5b5b224,Merge remote-tracking branch 'riprips/master'
+xavierd,2011-04-02 14:33:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/7fa6b5deb6a0cc8ee87611c4f317a3e495e81e32,7fa6b5deb6a0cc8ee87611c4f317a3e495e81e32,Merge branch 'silex-master'
+Silex,2011-03-29 14:05:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/e4975ee6725caccc30a76df8d269b3c43a1a3dad,e4975ee6725caccc30a76df8d269b3c43a1a3dad,Fix for when .clang_complete file isn't readable
+Silex,2011-03-12 20:54:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/cec1f94fe5b93faf29d50ba237cde29102c68b81,cec1f94fe5b93faf29d50ba237cde29102c68b81,Cleanup.
+xavierd,2011-03-07 21:10:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/c19695ceedd703f685fc754d35337bfa23669c7c,c19695ceedd703f685fc754d35337bfa23669c7c,"Add a space after ',' on snippets."
+xavierd,2011-03-06 14:52:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/9a3d070e24a82fc046d263648e885a9b1d35ac8b,9a3d070e24a82fc046d263648e885a9b1d35ac8b,"Improve the worst case completion time.
+
+By using vim's builtin filter(), the completion time for completing
+NSStr on OSX drop from 5minutes to 1second."
+xavierd,2011-03-06 14:37:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/c7fff4dac096c1a902a2dc499631b85f7d5fa096,c7fff4dac096c1a902a2dc499631b85f7d5fa096,s:ClangCompleteBinary() should return a list on errors.
+xavierd,2011-03-06 14:36:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/897739803e12c3d487b2946bd53d087e4b23b60e,897739803e12c3d487b2946bd53d087e4b23b60e,Add template parameters into the native snippets engine.
+xavierd,2011-03-06 12:38:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/37aa606c889dc11cf9f675146bc82dae69823d6e,37aa606c889dc11cf9f675146bc82dae69823d6e,Add a warning if the snippets engine is not found.
+Silex,2011-02-27 22:54:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/5f1aece74bc84ba70e268b84f4f80d07759ca144,5f1aece74bc84ba70e268b84f4f80d07759ca144,Added clang_complete's snippets engine.
+Silex,2011-02-27 22:28:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/c61bb51fe0fbfecfc13bd51185fb0f25ea11657d,c61bb51fe0fbfecfc13bd51185fb0f25ea11657d,"Snippets engine api modification
+
+Made it so add_snippet() returns the text to be inserted, also fixed
+snipmate and ultisnips snippets for overloading."
+Silex,2011-02-22 01:43:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/edf6dacdd73dd25d37f1622e181bb27c82867f28,edf6dacdd73dd25d37f1622e181bb27c82867f28,Added UltiSnips snippets.
+Silex,2011-02-22 01:16:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/cdca40000a6e7a5bf9bc087a437b2132d001eb31,cdca40000a6e7a5bf9bc087a437b2132d001eb31,Added snipmate completion
+Silex,2011-02-21 23:23:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/7d14e41f4748facb752f6ed3d5cbfe95f1b833cc,7d14e41f4748facb752f6ed3d5cbfe95f1b833cc,Refactored for easier snippets engines addition
+xaizek,2011-02-07 19:09:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/5583681f22311e7255ddf029cd7c44cf1ae342aa,5583681f22311e7255ddf029cd7c44cf1ae342aa,Added a note about not obvious error message in Vim 7.2. Thanks to gladiac.
+xavierd,2011-02-06 20:43:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/22c75cede7ebd89e137de9f3eeb65b3506041403,22c75cede7ebd89e137de9f3eeb65b3506041403,Merge branch 'nofile' of https://github.com/nico/clang_complete into nico-nofile
+nico,2011-02-06 18:55:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/ba60b7f3f7fcaf5fcbf481bec178f6fc8590a5d0,ba60b7f3f7fcaf5fcbf481bec178f6fc8590a5d0,Fix None dereference in getQuickFix().
+xaizek,2011-02-06 14:30:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/ba3d487b17f03d01d280d78eb18db2dd8de00481,ba3d487b17f03d01d280d78eb18db2dd8de00481,Fix for accidentally removed condition.
+xaizek,2011-02-05 18:30:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/9c305a578be32c319c0dc38335f5eec68b2c9ca8,9c305a578be32c319c0dc38335f5eec68b2c9ca8,"Make snipmate work when libclang is used. Show a character as kind of
+completion instead of a number."
+xaizek,2011-02-05 13:18:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/14cf91d32a5fbe159cd166b8d0e72a1b5449f223,14cf91d32a5fbe159cd166b8d0e72a1b5449f223,Fix for Issue 24. Second try.
+xaizek,2011-02-04 22:32:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/daa1feb682742a8e3ffda1abfcf678a3d9015e75,daa1feb682742a8e3ffda1abfcf678a3d9015e75,Add modelines.
+xaizek,2011-02-04 22:22:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/f4b1666ff29e49c0607df441fe08d365d1efaf7c,f4b1666ff29e49c0607df441fe08d365d1efaf7c,"Fixed bug with undefined 'debug' and corrected getting buffer number for
+QuickFix."
+xaizek,2011-02-04 20:51:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/6d5f8a8e717873bd4a77d33c0712da01fe46d8a5,6d5f8a8e717873bd4a77d33c0712da01fe46d8a5,Fix for Issue 24.
+xavierd,2011-02-04 18:54:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/cb35391e0aa5c43e22180e89894fb00920ca5fc7,cb35391e0aa5c43e22180e89894fb00920ca5fc7,Add xaizek fix for Issue 22.
+xavierd,2011-01-30 18:40:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/20db91f79d7124fc42f17898f98b5bab3e6e7eff,20db91f79d7124fc42f17898f98b5bab3e6e7eff,Add a not on README about the file covered by the LICENSE.
+xavierd,2011-01-30 18:36:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/d4834c0e858198da0438a79ebc441f2593d79500,d4834c0e858198da0438a79ebc441f2593d79500,"Add a 3-clause BSD License.
+
+If anybody who contribute to clang_complete has a problem with it,
+please contact me."
+Silex,2011-01-29 13:06:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/0e45b514df15f66dfe7eeeebf796f3c5636ff09c,0e45b514df15f66dfe7eeeebf796f3c5636ff09c,Removed magic 0x14 value
+Silex,2011-01-29 11:20:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/2790f1af945debcf3ca44c9ba1c0f5a4919f4136,2790f1af945debcf3ca44c9ba1c0f5a4919f4136,Set 'priority' as default for g:clang_sort_algo.
+Silex,2011-01-23 22:39:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/c13e92118bdeb8fbdd30a13508a1c02dd61e1daa,c13e92118bdeb8fbdd30a13508a1c02dd61e1daa,"Added g:clang_sort_algo
+
+You can now choose between 'alpha' or 'priority' about how the results
+are sorted."
+Silex,2011-01-23 21:46:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/a15ab918d03ad7397d9b346d568db859487e00c4,a15ab918d03ad7397d9b346d568db859487e00c4,Added the magic 0x14 flag that triggers libclang's cache for faster completion.
+Silex,2011-01-23 21:45:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/97ebe159dffbbe475cf53f03b2f6eb127ce690cf,97ebe159dffbbe475cf53f03b2f6eb127ce690cf,Moved debug flag evaluation to a better place.
+xavierd,2011-01-22 13:35:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/c04c2d046c99ba825a627212795e29c3e4ce6d06,c04c2d046c99ba825a627212795e29c3e4ce6d06,Merge branch 'master' into Silex-master
+xavierd,2011-01-22 13:26:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/8d4245a3dc7468bacaeb0b16e74bd02adb0e985f,8d4245a3dc7468bacaeb0b16e74bd02adb0e985f,"When using libclang, the ""a:base"" parameter was not used.
+
+When completing std::cou for exemple would display a list for everything
+in std."
+Silex,2011-01-22 12:09:53,https://api.github.com/repos/xavierd/clang_complete/git/commits/e66d34f1e6b506a9458e603685e38125ef2e50ac,e66d34f1e6b506a9458e603685e38125ef2e50ac,Don't try to use libclang without +python support
+Silex,2011-01-22 12:07:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/ae99f938a400d14e5e37ec91e26d4f507f918c98,ae99f938a400d14e5e37ec91e26d4f507f918c98,Corrected 'echo' into correct 'echoe/echom'
+Silex,2011-01-22 11:59:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/d39fd6d8f539d821d1c5675b0b2f3e8fb1c883c2,d39fd6d8f539d821d1c5675b0b2f3e8fb1c883c2,Added missing default in 'documentation'
+Silex,2011-01-22 11:46:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/48c594011021391f1716e718b6dde9c41486fe8b,48c594011021391f1716e718b6dde9c41486fe8b,Added g:clang_debug
+xavierd,2011-01-17 18:10:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/cdce5732144f1ee4f3383e57dd89982489500cd8,cdce5732144f1ee4f3383e57dd89982489500cd8,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+Silex,2011-01-17 11:26:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/f753e45485c469b6e4298f8449d52905c8f50947,f753e45485c469b6e4298f8449d52905c8f50947,On windows we need to escape the \ characters for python.
+tobig,2011-01-16 20:53:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/fc6a81e1a412f1f2e9d7869017a2e13fdfc9f08b,fc6a81e1a412f1f2e9d7869017a2e13fdfc9f08b,"Load the library from the system search path
+
+If no library_path was given, try to load it from the normal system
+library search pass."
+tobig,2011-01-16 20:45:20,https://api.github.com/repos/xavierd/clang_complete/git/commits/27a39c06872cd11c922e15b787a8e2106b776330,27a39c06872cd11c922e15b787a8e2106b776330,"Put libclang python bindings at the beginning of the path
+
+Otherwise outdated python bindings somewhere in the path may be loaded
+instead of the ones included with clang_complete."
+Silex,2011-01-15 01:26:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/ead763c8e91c54695a2ab53ed662915b4cb656d0,ead763c8e91c54695a2ab53ed662915b4cb656d0,Don't reset g:clang_use_library if it was already set
+Silex,2011-01-15 01:03:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/1de77ce9983daa2dd665d6a6dba4ec8bb6c385e2,1de77ce9983daa2dd665d6a6dba4ec8bb6c385e2,Handle g:clang_library_path correctly
+Silex,2011-01-15 01:00:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/ca91b6524dae441d6e00ffccc2fe49ebb134f4df,ca91b6524dae441d6e00ffccc2fe49ebb134f4df,Don't give g:clang_library_path a default value
+xavierd,2011-01-14 20:39:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/70ecd8b9bbb7f0bc4a64e6fa8730d69d5dcbe59a,70ecd8b9bbb7f0bc4a64e6fa8730d69d5dcbe59a,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+tobig,2011-01-14 03:43:56,https://api.github.com/repos/xavierd/clang_complete/git/commits/9a2538dd33f6bf0958ef54f68b9d1d4f5e37da97,9a2538dd33f6bf0958ef54f68b9d1d4f5e37da97,README: Add libclang info to PCH section.
+tobig,2011-01-14 03:41:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/93a05dfa36c089b8f4f6b595b2f98b4147d4fecb,93a05dfa36c089b8f4f6b595b2f98b4147d4fecb,Remove unneeded instructions from README
+tobig,2011-01-14 03:39:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/95e3e00f10349e86951c67895dd0512010159391,95e3e00f10349e86951c67895dd0512010159391,Update README and comment of clang_library_path
+tobig,2011-01-14 03:19:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/34a0e53a619ca31709e7b44013d7394ffea26f2a,34a0e53a619ca31709e7b44013d7394ffea26f2a,Use global and local user options
+tobig,2011-01-14 02:38:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/eb4209625dd6b11863ae834ce0e611d974cc2211,eb4209625dd6b11863ae834ce0e611d974cc2211,"Do not fail if clang_library_path is not set, but clang_use_library used
+
+Also print an error message if python support is not available."
+tobig,2011-01-14 02:20:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/47b0e5f5d07800d914d7b26a675c5c959cb4d7a6,47b0e5f5d07800d914d7b26a675c5c959cb4d7a6,"Merge remote branch 'silix/libclang' into HEAD
+
+Conflicts:
+	plugin/clang_complete.vim"
+simbuerg,2011-01-13 19:02:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/a24a83f95c32199cdab908a9d5d90191ca400f83,a24a83f95c32199cdab908a9d5d90191ca400f83,"Use b:clang_user_options.
+
+Using b:clang_user_options instead of g:clang_user_options
+re-enables the ability to use a .clang_complete dotfile
+for extended configuration.
+
+Signed-off-by: Andreas Simbuerger <simbuerg@fim.uni-passau.de>"
+tobig,2011-01-01 13:45:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/7078a9c22805c0d0efdaf0f9959257ac3c0e2c0e,7078a9c22805c0d0efdaf0f9959257ac3c0e2c0e,libclang: libclang support is off by default
+tobig,2011-01-01 13:44:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/6331e74999eadc8673a142c6ea033f86f199a658,6331e74999eadc8673a142c6ea033f86f199a658,libclang: Automatically disable libclang if the python library cannot be found
+Silex,2011-01-13 09:50:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/39a75ec3c701ccd45811cdf8912da42e373d361c,39a75ec3c701ccd45811cdf8912da42e373d361c,Reindented libclang.py
+Silex,2011-01-12 23:31:08,https://api.github.com/repos/xavierd/clang_complete/git/commits/2e79314a3860dc71e3357207f011cfba49f584e2,2e79314a3860dc71e3357207f011cfba49f584e2,"Libclang is now much easier to configure.
+
+- Added g:clang_library_path
+- Added the python cindex library directly within clang_complete"
+Silex,2011-01-08 21:33:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/d4e5e143bfcd34dcbf6fef796e55e90e75e7315a,d4e5e143bfcd34dcbf6fef796e55e90e75e7315a,"Moved python script to its own file for easier editing, also removed error when vim isn't compiled with python"
+Silex,2011-01-08 21:23:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/977223ef6ef8430576c0ff31785ab986b352a4a9,977223ef6ef8430576c0ff31785ab986b352a4a9,Cleanup & function that reloads when resourced
+Silex,2011-01-08 20:55:06,https://api.github.com/repos/xavierd/clang_complete/git/commits/13557191d4c5e940a3782f39aa7b352ec3391eef,13557191d4c5e940a3782f39aa7b352ec3391eef,Merge git://github.com/tobig/clang_complete into libclang
+xavierd,2011-01-01 10:07:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/a9536e068c9bb17b5d0398295f4e6b12e4c25bdb,a9536e068c9bb17b5d0398295f4e6b12e4c25bdb,Check the value of g:clang_complete_auto at runtime.
+xavierd,2010-12-27 11:48:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/2909cacdd7329681c828e76e1d23bae6f68d33fa,2909cacdd7329681c828e76e1d23bae6f68d33fa,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+tobig,2010-12-23 00:48:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/582db4c4c050144a0a99f7c64bb9f056e3562f93,582db4c4c050144a0a99f7c64bb9f056e3562f93,libclang: Distingues the different completion kinds. Currently just a number
+tobig,2010-12-22 23:56:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/4dc3582ce75644bd310c828e760cd8a0dafc4112,4dc3582ce75644bd310c828e760cd8a0dafc4112,Set the quickfixlist at one place for libclang / clang executable
+tobig,2010-12-22 23:42:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/0afdd742369a7d6e71a62fe23b49ed8e46531304,0afdd742369a7d6e71a62fe23b49ed8e46531304,"Merge remote branch 'origin/master'
+
+Conflicts:
+	plugin/clang_complete.vim"
+xavierd,2010-12-22 23:29:35,https://api.github.com/repos/xavierd/clang_complete/git/commits/34b4b2d1058b011401f6eaada32bf3240aac1a7d,34b4b2d1058b011401f6eaada32bf3240aac1a7d,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+tobig,2010-12-22 23:26:19,https://api.github.com/repos/xavierd/clang_complete/git/commits/2413ee40926450ff3e9241f5ef7b163816d2cfbb,2413ee40926450ff3e9241f5ef7b163816d2cfbb,libclang: 80 columns fixes
+tobig,2010-12-22 23:21:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/47f34017adcc9e8f4056263951e7438c223aa29a,47f34017adcc9e8f4056263951e7438c223aa29a,"libclang: Simplify code, reduce indentation. Improve timing output a little"
+tobig,2010-12-22 23:08:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/7959fd97cfee105b5e527ced2d4bae289c4ca5c9,7959fd97cfee105b5e527ced2d4bae289c4ca5c9,"libclang: Cleanup, factor out some code used twice"
+tobig,2010-12-22 22:45:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/79e08f322676f7cd2d211a136f5432fef5b91d91,79e08f322676f7cd2d211a136f5432fef5b91d91,libclang: always reparse to initialize the PCH cache. Otherwise codecompletion will not have one
+tobig,2010-12-22 22:36:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/8a2d5a7811e4bb32b453705d442ef96633973444,8a2d5a7811e4bb32b453705d442ef96633973444,libclang: Show an error message if the source file cannot be parsed
+xavierd,2010-12-22 20:46:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/c0d2b64fdb6ab70b780c66b7e3bd595650d4d143,c0d2b64fdb6ab70b780c66b7e3bd595650d4d143,Correct an undefined symbol when snippets are not used.
+xavierd,2010-12-22 18:27:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/d5ca9e7141677bdbd890b9c669d20be8cd6d696c,d5ca9e7141677bdbd890b9c669d20be8cd6d696c,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+xavierd,2010-12-22 18:26:41,https://api.github.com/repos/xavierd/clang_complete/git/commits/95c994db849667cdad9c38c8f90fd465d0b664e8,95c994db849667cdad9c38c8f90fd465d0b664e8,Workaround for a bug in old vim version when cwindow on empty qflist does not work.
+xavierd,2010-12-22 18:04:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/30f1bf42d2252244daaec00f045753fc6ae925aa,30f1bf42d2252244daaec00f045753fc6ae925aa,"On automatic completion, does not select the first item.
+
+No changes, expect for people who didn't have ""longest"" in completeopt."
+tobig,2010-12-22 17:56:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/3875f7611a9f4e7f415a519ceb1cb37172445cbc,3875f7611a9f4e7f415a519ceb1cb37172445cbc,libclang: sort results by priority
+tobig,2010-12-22 05:40:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/5e53b8cc23e466eab632f5fc0fd24ba5db3aa91a,5e53b8cc23e466eab632f5fc0fd24ba5db3aa91a,libclang: Replace dummy completion results with valid results
+tobig,2010-12-22 05:03:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/df5553d3b4b2874efc7cce0e472d9aa2af0b4cf1,df5553d3b4b2874efc7cce0e472d9aa2af0b4cf1,Add a dummy completion for every result
+tobig,2010-12-22 04:57:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/2d0f134efea1ea48376fe2bf2e108e8a8f964330,2d0f134efea1ea48376fe2bf2e108e8a8f964330,Call code completion at the right place
+tobig,2010-12-22 04:50:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/3ac1eb797450893e029616e20ae4206cc6b230c3,3ac1eb797450893e029616e20ae4206cc6b230c3,Always return a dummy completion for libclang
+tobig,2010-12-22 04:25:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/da8ed4ddbdd4f234218a8b36f0a214660f500aa4,da8ed4ddbdd4f234218a8b36f0a214660f500aa4,Move parsing of the clang executable into its own function
+tobig,2010-12-22 04:20:51,https://api.github.com/repos/xavierd/clang_complete/git/commits/fd33adec1ee41bbd6672f1d21d31ce82cd1f3b39,fd33adec1ee41bbd6672f1d21d31ce82cd1f3b39,Fix QuickFix if library is not used
+xavierd,2010-12-21 18:51:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/48df5632b22d3f20e9d005ae3ac338a9accb3ae3,48df5632b22d3f20e9d005ae3ac338a9accb3ae3,Merge branch 'master' of https://github.com/tobig/clang_complete into tobig-libclang
+xavierd,2010-12-20 18:32:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/b89253220899cc503026bd46b5406150a92fe901,b89253220899cc503026bd46b5406150a92fe901,Handle Pattern with snipmate.
+Silex,2010-12-19 21:02:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/396e9d952e3b26f0180c7267845ba7843db3766d,396e9d952e3b26f0180c7267845ba7843db3766d,Bugfix for completion when cursor is on the first column
+Silex,2010-12-19 20:49:38,https://api.github.com/repos/xavierd/clang_complete/git/commits/56e8bb02d6c210854899ddd4f9d4020da3b48cd3,56e8bb02d6c210854899ddd4f9d4020da3b48cd3,"Changed the way snipmate's snippets are processed.
+
+This should fix some of the bugs we were having, also as snipmate
+doens't support recursive snippets made it so snipmate isn't triggered
+again when if you use the completion menu again."
+Silex,2010-12-19 13:27:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/e4fbd450ee64c127f6aa8015bafdce8cd0370124,e4fbd450ee64c127f6aa8015bafdce8cd0370124,Use &filetype instead of hardcoded 'cpp' value for snipmate's snippets
+xavierd,2010-12-18 16:20:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/312cbbce9d6222e6ae23cfbc77ae16fc4b05c702,312cbbce9d6222e6ae23cfbc77ae16fc4b05c702,Do not use snipmate if the user wanted to use the integrated snippets.
+xavierd,2010-12-18 16:18:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/3bd4e0b0527597f0829e2bab0f040a7b831f13b7,3bd4e0b0527597f0829e2bab0f040a7b831f13b7,Suppress the trailing whitespaces.
+Silex,2010-12-18 14:33:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/c21f18a36cfc47a53f8773a2ee16ec302799c078,c21f18a36cfc47a53f8773a2ee16ec302799c078,Fix bugs related to parameter-less functions/types
+Silex,2010-12-18 13:19:01,https://api.github.com/repos/xavierd/clang_complete/git/commits/693572611ed7f13b6d361aaa0d1d3c4ba9898f03,693572611ed7f13b6d361aaa0d1d3c4ba9898f03,Correct the const functions problem
+Silex,2010-12-18 12:36:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/c2c9a06607cfdb55cc9c81b9147d5babb71df164,c2c9a06607cfdb55cc9c81b9147d5babb71df164,Managed to make it work WITHOUT having to modify snipmate!
+Silex,2010-12-18 03:54:12,https://api.github.com/repos/xavierd/clang_complete/git/commits/96e165ce7a24b92a898e15efdaed0db9f946573d,96e165ce7a24b92a898e15efdaed0db9f946573d,Merge branch 'master' of git://github.com/Rip-Rip/clang_complete
+Silex,2010-12-18 03:53:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/35733bdcd08ec8d197b32735e581d89e73b84f27,35733bdcd08ec8d197b32735e581d89e73b84f27,First attempt at snipmate's snippets
+xavierd,2010-12-17 18:45:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/6db3ac3f4d93bab29dc88fff55c9f8a4efd8d939,6db3ac3f4d93bab29dc88fff55c9f8a4efd8d939,Definitively fix doxygen comments.
+xavierd,2010-12-16 21:23:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/4c03acafa447c91aaaaecea62ecd738032d02ba1,4c03acafa447c91aaaaecea62ecd738032d02ba1,"Use of synstack() in ShouldComplete.
+
+Now, there is no specific case for cFormat of doxygen which were
+included inside comments, or string."
+tobig,2010-12-16 05:57:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/b3c4926074d34eb3b1fdc80553c0d4a918b3a412,b3c4926074d34eb3b1fdc80553c0d4a918b3a412,"libclang: Add function to call code completion
+
+This function can be called by using :completeCurrentAt(line, column). It
+is still very verbose and probably incorrect. It just shows that we can
+call code completion."
+tobig,2010-12-15 16:40:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/4445ce70b8049c65a82fe3603c8d067806d96158,4445ce70b8049c65a82fe3603c8d067806d96158,libclang: Enable range highlighting
+xavierd,2010-12-15 18:36:42,https://api.github.com/repos/xavierd/clang_complete/git/commits/b96324bdd871636ee38f0a509d7611fdb0a0183c,b96324bdd871636ee38f0a509d7611fdb0a0183c,Fix the snippets when &selection = exclusive.
+xavierd,2010-12-15 18:31:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/af264bc4e20f18fdd3f10acabed3f39e31ec7308,af264bc4e20f18fdd3f10acabed3f39e31ec7308,"Don't try to complete inside doxygen's comment.
+
+Fix Issue #12"
+tobig,2010-12-15 00:39:18,https://api.github.com/repos/xavierd/clang_complete/git/commits/7d58c422494cf839db4c137293218ed1d66ed523,7d58c422494cf839db4c137293218ed1d66ed523,"Do not parse the libclang output
+
+Create the highlighting and the quickfix from the python data
+structures."
+tobig,2010-12-15 00:08:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/b43c35bee2d9b945f6db9d0323572220897235aa,b43c35bee2d9b945f6db9d0323572220897235aa,Highlight based on the information provided by libclang
+tobig,2010-12-14 22:48:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/2d909c11a7fd2cfe94345c9178b85e9d7245e90c,2d909c11a7fd2cfe94345c9178b85e9d7245e90c,libclang: No need to parse a string to update the quickfix window
+tobig,2010-12-14 20:50:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/e81ea1f9c0460b3b172d8864afd4e938202ca021,e81ea1f9c0460b3b172d8864afd4e938202ca021,Fix grammar II
+tobig,2010-12-14 20:47:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/fa8b79030bcead5b5dabe4b0ccde6a4f182a736f,fa8b79030bcead5b5dabe4b0ccde6a4f182a736f,Fix grammar
+tobig,2010-12-14 20:44:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/79887b49e75d09d566245c235a84275c7a57d8dd,79887b49e75d09d566245c235a84275c7a57d8dd,Move the todo and installation comments further down
+tobig,2010-12-14 18:28:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/3244fd2c82bf3ae8421299f07833b00fd47ffd4a,3244fd2c82bf3ae8421299f07833b00fd47ffd4a,Mention libclang currently just works for quickfix
+tobig,2010-12-14 18:27:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/f25021fbc6d2bacc2b7a26bc5ae8fb8b3f89f0d9,f25021fbc6d2bacc2b7a26bc5ae8fb8b3f89f0d9,Mention the needed patch to make this work
+tobig,2010-12-14 18:12:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/52457326fe0df452f8d632d6784077adacbed720,52457326fe0df452f8d632d6784077adacbed720,Format the timing output nicer
+tobig,2010-12-14 18:06:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/419aabb20834923b637c79be59e8c9fdb0074819,419aabb20834923b637c79be59e8c9fdb0074819,Do not create a tempFile if libclang is used
+tobig,2010-12-14 18:00:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/855bf4dd426989790375c53845d65ed0feed4c3e,855bf4dd426989790375c53845d65ed0feed4c3e,Move python code into its own functions
+tobig,2010-12-14 17:37:46,https://api.github.com/repos/xavierd/clang_complete/git/commits/7674b9c1a54744dcdbc9e19503bf60d8ca1bde99,7674b9c1a54744dcdbc9e19503bf60d8ca1bde99,Take advantage of reparsing an existing translationunit
+tobig,2010-12-14 05:44:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/213f589ff2cfc1c89a24289d723c3b10162353f1,213f589ff2cfc1c89a24289d723c3b10162353f1,Pass global user arguments to libclang
+tobig,2010-12-14 05:30:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/47b68f6dcd777c178efbef2d46b1543b3616599f,47b68f6dcd777c178efbef2d46b1543b3616599f,Return first warning strings from libclang
+tobig,2010-12-14 04:48:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/4887195d0d47fd3b63b6a541630d78c79ca978f4,4887195d0d47fd3b63b6a541630d78c79ca978f4,Add warning about development status
+tobig,2010-12-14 04:47:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/1276205f2d4b3abf0f965d595ecb920ac4c97b59,1276205f2d4b3abf0f965d595ecb920ac4c97b59,Add new option to readme
+tobig,2010-12-14 04:46:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/013b0fc843fe079983fcbf3e20aafb2f3523a786,013b0fc843fe079983fcbf3e20aafb2f3523a786,Add information needed to load the clang library
+tobig,2010-12-14 04:43:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/2afc477ad3ff283b68a7117f934d306a367ecf05,2afc477ad3ff283b68a7117f934d306a367ecf05,Dump diagnostics
+tobig,2010-12-14 03:51:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/46263bebb642716b232482c149553d54e4a5fb7e,46263bebb642716b232482c149553d54e4a5fb7e,Create an Clang Index and parse the file
+tobig,2010-12-14 03:32:02,https://api.github.com/repos/xavierd/clang_complete/git/commits/39eb6a7dab26fd9457e15382756aef2620bad29e,39eb6a7dab26fd9457e15382756aef2620bad29e,Create functions to either call the clang binary or libclang
+tobig,2010-12-14 03:12:32,https://api.github.com/repos/xavierd/clang_complete/git/commits/6d3e8329bd1e277629b717056a25622eeba1343b,6d3e8329bd1e277629b717056a25622eeba1343b,Load python bindings of libclang
+tobig,2010-12-14 02:48:05,https://api.github.com/repos/xavierd/clang_complete/git/commits/150ec2b3fb42b59adf653a2f9233ecdc91d5019e,150ec2b3fb42b59adf653a2f9233ecdc91d5019e,Add flag to enable the use of the clang library
+xavierd,2010-12-10 21:23:50,https://api.github.com/repos/xavierd/clang_complete/git/commits/64d5268f3e0f569d4f98cf49a9ef12ca2a9d9341,64d5268f3e0f569d4f98cf49a9ef12ca2a9d9341,"Correct a logical bug introduced with the previous commit.
+
+Snippets weren't launched when g:clang_snippets was set."
+xavierd,2010-12-04 21:17:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/cb3c19b371a67bd7b398546eb2244662cdadc700,cb3c19b371a67bd7b398546eb2244662cdadc700,<Tab> only moves to the next snippets of the current line.
+xavierd,2010-12-01 21:34:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/0280336b316f5d819793b75ed2e4e49e13d688e5,0280336b316f5d819793b75ed2e4e49e13d688e5,Try to handle optional parameters correctly.
+xavierd,2010-12-01 20:36:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/4637266834b5c6895a140bba86e869b3199be733,4637266834b5c6895a140bba86e869b3199be733,Add another syntax exception on ShouldComplete
+Silex,2010-11-26 21:27:59,https://api.github.com/repos/xavierd/clang_complete/git/commits/3db55e6761232a9e45038318fc4c8cd9044d3796,3db55e6761232a9e45038318fc4c8cd9044d3796,Merge branch 'master' of git://github.com/Rip-Rip/clang_complete
+Silex,2010-11-26 21:26:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/6d1af5ed209e5a4da903be98f3ee2df3d0a7990a,6d1af5ed209e5a4da903be98f3ee2df3d0a7990a,"Made it so g:clang_user_options are always evaluated and used single
+quotes where appropriate"
+xavierd,2010-11-26 19:00:58,https://api.github.com/repos/xavierd/clang_complete/git/commits/e13e5720441f87b2cdac37c53ebb69324a61ed69,e13e5720441f87b2cdac37c53ebb69324a61ed69,Add a Known Issue (completing private members/methods)
+Silex,2010-11-26 17:33:00,https://api.github.com/repos/xavierd/clang_complete/git/commits/8e05a8380a4525d4924a43b8fa96a29f86583fc8,8e05a8380a4525d4924a43b8fa96a29f86583fc8,Merge branch 'master' of git://github.com/Rip-Rip/clang_complete
+xavierd,2010-11-25 22:47:22,https://api.github.com/repos/xavierd/clang_complete/git/commits/508f9399ec1d12373e4b935cfa7860ecbc11b100,508f9399ec1d12373e4b935cfa7860ecbc11b100,Do not add types to the completion list after '.' and '->'
+Silex,2010-11-24 10:28:39,https://api.github.com/repos/xavierd/clang_complete/git/commits/b54646988c3df5554144b661051d375656cc6358,b54646988c3df5554144b661051d375656cc6358,Merge branch 'master' of git://github.com/Rip-Rip/clang_complete
+xavierd,2010-11-23 18:04:40,https://api.github.com/repos/xavierd/clang_complete/git/commits/a1d26d9951f70a53dfff29b46d81de65cb7f83c3,a1d26d9951f70a53dfff29b46d81de65cb7f83c3,Do not complete numbers.
+xavierd,2010-11-17 18:46:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/f7a02b882204b0a92290777dcfafc54631675142,f7a02b882204b0a92290777dcfafc54631675142,Update readme. Add description for g:clang_user_options.
+Silex,2010-11-17 13:39:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/72f03df544c99cdea714d04bd69be86cff266e43,72f03df544c99cdea714d04bd69be86cff266e43,Added g:clang_user_options
+Silex,2010-11-17 13:39:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/b2c2360452dadfaddcc4cf886f408e1cff5db854,b2c2360452dadfaddcc4cf886f408e1cff5db854,Added g:clang_user_options
+xavierd,2010-11-16 20:07:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/45c6b302aaac96321727a9b60c271688bd3c3720,45c6b302aaac96321727a9b60c271688bd3c3720,Clang executable name is now configurable (g:clang_exec)
+xavierd,2010-11-15 22:10:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/67d26de107b8be2914d89470f526e305ae9a9b0a,67d26de107b8be2914d89470f526e305ae9a9b0a,"Slightly rework the way <tab> is working for snippets.
+
+It's now selecting the next snippet, not the first.
+Also add a mapping in select mode"
+xavierd,2010-11-15 20:21:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/2a31da596d4e1a91270e9adc6ad54d791cff4487,2a31da596d4e1a91270e9adc6ad54d791cff4487,"Suppress the comments on copen's bug (fixed with 7.3.052)
+
+It was also corrected by a previous commit on unpatched vim."
+xavierd,2010-11-15 20:19:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/552c82c749f31b0fd12399746a84eb6ba43b3db4,552c82c749f31b0fd12399746a84eb6ba43b3db4,"Conceal the <# #>.
+
+Configurable by g:clang_conceal_snippets"
+xavierd,2010-11-14 10:20:24,https://api.github.com/repos/xavierd/clang_complete/git/commits/a40d48b045070062ca8959191778e6fcacddaa39,a40d48b045070062ca8959191778e6fcacddaa39,Correct a reintroduced bug on OVERLOAD when the function takes 0 arguments.
+xavierd,2010-11-13 23:11:04,https://api.github.com/repos/xavierd/clang_complete/git/commits/4abd45521a500a03e2f56e00edfa69c56748bf9c,4abd45521a500a03e2f56e00edfa69c56748bf9c,Do not put the parameters when g:clang_snippets is not set.
+xavierd,2010-11-13 22:52:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/80137fec3c24beed9ee2d3435c971e7107ba0c6e,80137fec3c24beed9ee2d3435c971e7107ba0c6e,"Add *real* snippets.
+
+When you are completing a function/member/pattern/whatever have a
+<#...#> in clang's output, snippets can be used. It is automatically launched
+(if you have set g:clang_snippets) after completing. To get to the next
+<#...#> simply switch to normal mode and push <tab> (in fact it will
+select the first <#...#> on the line)
+
+It may be extremely buggy and has only been tested on simple examples.
+Note that the plugin wasn't tested with g:clang_snippets disabled, so
+the result may have regressed"
+xavierd,2010-11-13 16:03:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/0787f588e4ff67d16426c294325cd966e6b4db86,0787f588e4ff67d16426c294325cd966e6b4db86,Force the case sensitive on .clang_complete parsing.
+xavierd,2010-11-12 21:10:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/8a7353fa6144da9a3ed378926409c61eaad0f208,8a7353fa6144da9a3ed378926409c61eaad0f208,Do not run UpdateSnips if there isn't any launched completion.
+xavierd,2010-11-10 21:34:47,https://api.github.com/repos/xavierd/clang_complete/git/commits/cecca90ae43972e1a20fb75e126238d174ed7125,cecca90ae43972e1a20fb75e126238d174ed7125,"Add a section about PCH into the readme, it should speed up c++ completion."
+xavierd,2010-11-10 21:12:23,https://api.github.com/repos/xavierd/clang_complete/git/commits/4c4f42a96054f29b394e905c50d749cee4952d38,4c4f42a96054f29b394e905c50d749cee4952d38,"Correct a ""timing bug"": if you type very fast std::b, you were ending with std::advanceb which is not what you expected.
+
+Addition:
+Add an option for the snippets (g:clang_snippets, disabled by default)
+Update the readme"
+xavierd,2010-11-08 21:35:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/3aa6681dee9109966b186490c1fe873a00b1bc85,3aa6681dee9109966b186490c1fe873a00b1bc85,"First try at snippets on OVERLOAD.
+
+It is working, but I don't think it is optimal."
+xavierd,2010-11-06 14:12:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/7415d67d39ad1a1ae297a4fa3a93d04fd22403d0,7415d67d39ad1a1ae297a4fa3a93d04fd22403d0,"After copen, the buffer variables weren't re-set, correct this by manually switching to the correct buffer.
+
+It seems that you could now set g:clang_complete_copen without any
+patched vim version (I haven't deeply tested this)"
+xavierd,2010-11-03 21:33:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/e547830c281a11676e4cbd6d697519114c57d07f,e547830c281a11676e4cbd6d697519114c57d07f,Don't highlight other file errors on the current buffer.
+xavierd,2010-11-03 18:34:09,https://api.github.com/repos/xavierd/clang_complete/git/commits/4a552796809934a5a07618dfa053c5b1ce27f4e2,4a552796809934a5a07618dfa053c5b1ce27f4e2,Report errors from the included file correctly.
+xavierd,2010-11-03 18:26:45,https://api.github.com/repos/xavierd/clang_complete/git/commits/fb0116a2c171cb1d58352c326988617422133580,fb0116a2c171cb1d58352c326988617422133580,"Move some highlighting, to highlight the error even if there is no range for the error."
+xavierd,2010-11-02 19:02:37,https://api.github.com/repos/xavierd/clang_complete/git/commits/84a82699ebcef22f18f5e759363475d5f17d87e1,84a82699ebcef22f18f5e759363475d5f17d87e1,"Add an option to control if the periodic quickfix function should be invoqued.
+
+Also add g:ClangUpdateQuickFix() that can be used for a mapping to
+update the quickfix window."
+xavierd,2010-11-02 18:39:30,https://api.github.com/repos/xavierd/clang_complete/git/commits/4015e435557eb903bef37f48df889783c12ef769,4015e435557eb903bef37f48df889783c12ef769,"Don't forget to reset the Spell{Bad,Local} before quickfix."
+xavierd,2010-11-02 18:36:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/eefa02b1a3bf3cea38ca119b6fc6c36577d68474,eefa02b1a3bf3cea38ca119b6fc6c36577d68474,Catch the 'cannot write file' error.
+xavierd,2010-11-01 21:59:36,https://api.github.com/repos/xavierd/clang_complete/git/commits/2ce9ac130576c72dbb777128df09569b126b85db,2ce9ac130576c72dbb777128df09569b126b85db,Typos and update the readme
+xavierd,2010-11-01 21:51:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/05112ba0160943fe2d05eb4d305f1e01f7244e4a,05112ba0160943fe2d05eb4d305f1e01f7244e4a,Highlight the errors and warnings like clang's carets on the console.
+xavierd,2010-11-01 20:23:57,https://api.github.com/repos/xavierd/clang_complete/git/commits/ee40da5c20aaf7ea67db76756f417ecf8e31f233,ee40da5c20aaf7ea67db76756f417ecf8e31f233,Execute QuickFixCmdPost after each setqflist()
+xavierd,2010-11-01 20:20:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/0fed73a8e2672cba7ccf8baf2312e6f2dd368028,0fed73a8e2672cba7ccf8baf2312e6f2dd368028,Correct a bug on error highlighting.
+xavierd,2010-11-01 09:21:15,https://api.github.com/repos/xavierd/clang_complete/git/commits/273c63a83a7405a253797b5d7dc9c32d86afccf4,273c63a83a7405a253797b5d7dc9c32d86afccf4,Clear the quickfix window when the errors are corrected.
+xavierd,2010-10-30 17:20:52,https://api.github.com/repos/xavierd/clang_complete/git/commits/bc212ea3403541371f18f7244ff4aba828821451,bc212ea3403541371f18f7244ff4aba828821451,"Highlight the error on the error line, not everywhere."
+xavierd,2010-10-30 17:03:27,https://api.github.com/repos/xavierd/clang_complete/git/commits/0a659d3e57bbde9c9fa9a8b83840ac6a1814ed09,0a659d3e57bbde9c9fa9a8b83840ac6a1814ed09,"Highlights the errors as SpellBad, so that the user see what is wrong.
+
+Not deeply tested, but it should work."
+xavierd,2010-10-30 16:16:34,https://api.github.com/repos/xavierd/clang_complete/git/commits/a57eaa2467d248a2696cf47737d05d15fc5e3c2d,a57eaa2467d248a2696cf47737d05d15fc5e3c2d,"Check for errors when the user is doing nothing, and fill the quickfix window.
+
+For now, CursorHold and CursorHoldI are used."
+xavierd,2010-10-30 10:48:13,https://api.github.com/repos/xavierd/clang_complete/git/commits/8f2a038c91a46cadae994a4d6464c5c270ee0453,8f2a038c91a46cadae994a4d6464c5c270ee0453,"Handle absolute path in configuration file.
+
+Escaped whitespaces should also be supported (not really tested).
+
+Note: Don't put absolute and relative include path on the same line,
+this is currently not supported."
+xavierd,2010-10-29 19:51:21,https://api.github.com/repos/xavierd/clang_complete/git/commits/b85de74d9d0ad95bbd4e8a315d8913aeb53cbac8,b85de74d9d0ad95bbd4e8a315d8913aeb53cbac8,"Factorise some code, and add comments on future direction."
+xavierd,2010-10-29 19:42:03,https://api.github.com/repos/xavierd/clang_complete/git/commits/ed038e4b02e45aa337ccef71f181e3b6ff740164,ed038e4b02e45aa337ccef71f181e3b6ff740164,Try to handle Pattern and Hidden completion.
+xavierd,2010-10-29 19:17:16,https://api.github.com/repos/xavierd/clang_complete/git/commits/32bff98c4ff7b062a734459e6c7c71ba7f7d9c4d,32bff98c4ff7b062a734459e6c7c71ba7f7d9c4d,"Put clang_complete inside the plugin directory
+
+It should fix Issue 2."
+xavierd,2010-10-29 18:49:28,https://api.github.com/repos/xavierd/clang_complete/git/commits/8308580e21b8754a3a5ac73dab4ce8dc9e01e66d,8308580e21b8754a3a5ac73dab4ce8dc9e01e66d,Don't try to complete on #import line.
+xavierd,2010-10-29 17:41:17,https://api.github.com/repos/xavierd/clang_complete/git/commits/1bb918b6868af22b04a984c1ee8e4cfb1addf39c,1bb918b6868af22b04a984c1ee8e4cfb1addf39c,Add a test to avoid completing on an include line.
+xavierd,2010-10-29 17:34:10,https://api.github.com/repos/xavierd/clang_complete/git/commits/85a00c24a0f9fcae84eb988f350e3e88dd7ef553,85a00c24a0f9fcae84eb988f350e3e88dd7ef553,"Add <buffer> to the inoremap, so that mapping are local to the buffer."
+xavierd,2010-10-28 20:13:49,https://api.github.com/repos/xavierd/clang_complete/git/commits/479450e9615bcc4fa0c4714ba64f1810b49e5161,479450e9615bcc4fa0c4714ba64f1810b49e5161,Add a Known Issue section in the README.
+xavierd,2010-10-28 20:11:14,https://api.github.com/repos/xavierd/clang_complete/git/commits/084a2b6e5d22d81192518942651e7f0d38f0117c,084a2b6e5d22d81192518942651e7f0d38f0117c,Try to be smarter for OVERLOAD.
+xavierd,2010-10-28 19:11:33,https://api.github.com/repos/xavierd/clang_complete/git/commits/63b1c928b3aa8c948d5f410e509fee5880d46eb6,63b1c928b3aa8c948d5f410e509fee5880d46eb6,"Add objective-c (and objective-c++) support.
+
+Totally untested, but it should work :)"
+xavierd,2010-10-28 19:00:55,https://api.github.com/repos/xavierd/clang_complete/git/commits/b12961a6a583a2311a7c31627fcae567e4e25bfa,b12961a6a583a2311a7c31627fcae567e4e25bfa,Correctly escape the tempfile in case of space in directory.
+xavierd,2010-10-28 18:48:07,https://api.github.com/repos/xavierd/clang_complete/git/commits/4f71b1ebef82adee42108be8d95d91769a66373f,4f71b1ebef82adee42108be8d95d91769a66373f,"Use the localtime() function instead of system(""mktemp"") for creating a random filename."
+xavierd,2010-10-28 17:32:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/39e2e7f8037ee2130621066f8d46310746623194,39e2e7f8037ee2130621066f8d46310746623194,Escape mktemp tmpdir argument with shellescape().
+xavierd,2010-10-28 17:29:29,https://api.github.com/repos/xavierd/clang_complete/git/commits/ec6778924a34dd793fb181a75418c9b2b2d634b2,ec6778924a34dd793fb181a75418c9b2b2d634b2,Verify that .clang_complete exist before parsing it.
+xavierd,2010-10-28 17:26:31,https://api.github.com/repos/xavierd/clang_complete/git/commits/3c5c96c8786217aa4e7ea3e5aae7247212930121,3c5c96c8786217aa4e7ea3e5aae7247212930121,"Use of readfile instead of system(""cat"") for reading .clang_complete."
+xavierd,2010-10-26 19:37:48,https://api.github.com/repos/xavierd/clang_complete/git/commits/2976b5d5e37ab8b0756d7d551d8e4c4ae8fb515c,2976b5d5e37ab8b0756d7d551d8e4c4ae8fb515c,Fill the readme.
+xavierd,2010-10-26 19:25:43,https://api.github.com/repos/xavierd/clang_complete/git/commits/11f020f83aaa5a445b86c4c55cd90f38e461043c,11f020f83aaa5a445b86c4c55cd90f38e461043c,avoid a strange bug when opening a new buffer.
+xavierd,2010-10-26 19:24:11,https://api.github.com/repos/xavierd/clang_complete/git/commits/9b440d894fd1d5f85ad8ea048650558764880281,9b440d894fd1d5f85ad8ea048650558764880281,Initial commit.

@@ -1,0 +1,361 @@
+node-heapdump,Make a dump of the V8 heap for later inspection.
+username,timestamp,url,sha,message
+bnoordhuis,2019-07-28 03:37:19,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/8505f537d1272c7506adad8af79690b598d5a1ec,8505f537d1272c7506adad8af79690b598d5a1ec,"lib,src: report write errors
+
+Propagate fopen() and fclose() errors to the callback if one is present.
+
+Refs: https://github.com/bnoordhuis/node-heapdump/issues/54"
+bnoordhuis,2019-05-07 18:42:59,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/8b1896f6919075d3b76f5fec87d13be820aac2eb,8b1896f6919075d3b76f5fec87d13be820aac2eb,"package: upgrade to newer nan version
+
+People building against Node.js v12.x may encounter build errors with
+heapdump when another dependency pins NAN to an outdated version.
+
+Refs: https://github.com/bnoordhuis/node-heapdump/issues/129"
+bnoordhuis,2019-04-26 06:19:31,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/6f2c53bbe598eb9e4267e3586c1349a30481abd8,6f2c53bbe598eb9e4267e3586c1349a30481abd8,"src: make compatible with node.js v12.x
+
+Replace a removed V8 API with its NAN equivalent.
+
+Fixes: https://github.com/bnoordhuis/node-heapdump/issues/127"
+bnoordhuis,2018-11-21 17:56:05,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/25fa37390181ff17168143040746d214c6ae51b5,25fa37390181ff17168143040746d214c6ae51b5,"lib: fix heapdump write error reporting
+
+The cleanup in the previous commit now makes it straightforward to fix.
+
+Fixes: https://github.com/bnoordhuis/node-heapdump/issues/125"
+bnoordhuis,2018-11-21 17:56:05,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/f1c949baaf58b35f50bbb481d1340534a31281a8,f1c949baaf58b35f50bbb481d1340534a31281a8,"src: remove fork/nofork code
+
+Its functionality has been effectively dead since Node.js v0.12
+went end-of-life and removing it simplifies the code a great deal.
+
+This is prep work for fixing issue #125.
+
+Refs: https://github.com/bnoordhuis/node-heapdump/issues/125"
+bnoordhuis,2018-11-16 11:06:06,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/bcce40979791712fab6ce94d6f1ea3f37162a9e9,bcce40979791712fab6ce94d6f1ea3f37162a9e9,"doc: add warning about snapshot load times
+
+Refs: https://bugs.chromium.org/p/chromium/issues/detail?id=901007
+Refs: https://github.com/bnoordhuis/node-heapdump/issues/113"
+bnoordhuis,2018-11-15 20:56:12,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/312c0fa72c3c9797b384d8d3ee9f08c7e5c2de0f,312c0fa72c3c9797b384d8d3ee9f08c7e5c2de0f,"test: rename callback tests
+
+test/test-callback-without-filename.js tested the callback _with_
+a filename whereas test/test-callback.js did exactly the opposite.
+
+Apparently it's been this way ever since they were introduced in 2014
+and it always escaped my (or anyone's) notice."
+bnoordhuis,2018-11-01 21:00:10,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/6f321d0b2235600bf020f92448369336191979a4,6f321d0b2235600bf020f92448369336191979a4,"src: fix include_dirs stanza on windows
+
+It was reported that v0.3.10 fails to build on Windows because it can't
+find nan.h. Change the include_dirs stanza to what node-iconv uses since
+that one is known to work.
+
+Fixes: https://github.com/bnoordhuis/node-heapdump/issues/122"
+bnoordhuis,2018-10-30 19:26:52,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/a1ebc363778d18a0098ae7ca031741136ea90952,a1ebc363778d18a0098ae7ca031741136ea90952,"src: node 11 compatibility, switch to nan
+
+* remove the compatibility shim, broken with node 11
+
+* add a dependency on nan and switch the code base to it
+
+* bump the patchlevel; bug fix only, no functional changes
+
+Fixes: https://github.com/bnoordhuis/node-heapdump/issues/121"
+bnoordhuis,2018-10-30 19:26:52,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/b4c181c7896aef377d0586029d09f6ba186f5799,b4c181c7896aef377d0586029d09f6ba186f5799,lib: move lib/main.js to index.js
+runk,2017-10-03 23:48:57,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/3a8e53145953db03e97e20835f453510aa16f0b1,3a8e53145953db03e97e20835f453510aa16f0b1,"doc: use new name of Profiles tab in README.md
+
+PR-URL: https://github.com/bnoordhuis/node-heapdump/pull/112
+Reviewed-By: Ben Noordhuis <info@bnoordhuis.nl>"
+waldyrious,2016-06-30 09:55:50,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/0ca52441e46241ffbea56a389e2856ec01c48c97,0ca52441e46241ffbea56a389e2856ec01c48c97,"doc: add license title
+
+It's not strictly required, but it's useful metadata, and part of the
+recommended license template text.
+
+See http://choosealicense.com/licenses/isc/ and
+https://opensource.org/licenses/isc-license
+
+PR-URL: https://github.com/bnoordhuis/node-heapdump/pull/85
+Reviewed-By: Ben Noordhuis <info@bnoordhuis.nl>"
+bnoordhuis,2017-04-04 20:21:00,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/7cf17e9b2a629fa5708717874ced2a7ae6cb2e13,7cf17e9b2a629fa5708717874ced2a7ae6cb2e13,"Re-publish because of npm brain damage.
+
+It looks like `npm publish` when `ignore-scripts=true` is set in .npmrc
+creates a package that doesn't invoke `node-gyp rebuild` when installed;
+the `scripts` property in the generated package.json is empty where it
+normally inserts an auto-generated `{""install"":""node-gyp rebuild""}`
+stanza.
+
+Fixes: https://github.com/bnoordhuis/node-heapdump/issues/98
+Refs: https://github.com/npm/npm/issues/16243"
+bnoordhuis,2017-04-04 08:10:36,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/405152bfaf4c9fbf09e5f50006228cd5522d311e,405152bfaf4c9fbf09e5f50006228cd5522d311e,"lib: don't swallow module mismatch exceptions
+
+Only try the debug build when the release build failed to load with
+a MODULE_NOT_FOUND exception, otherwise we swallow module version
+mismatch exceptions."
+bnoordhuis,2015-08-05 12:06:42,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/3e308b302fb2d7beba5b1c4a6eaf92caba51cbf2,3e308b302fb2d7beba5b1c4a6eaf92caba51cbf2,"src: update compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Makes node-heapdump compatible with io.js v3.0.0.
+
+Fixes #61."
+bnoordhuis,2015-06-15 02:23:06,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/78056ec103572f496e92951f7e847a1b2a25cbe7,78056ec103572f496e92951f7e847a1b2a25cbe7,"src: disable win_delay_load_hook in binding.gyp
+
+Fix a Windows-only load time linker error caused by nodejs/io.js@efadffe
+(""win,node-gyp: optionally allow node.exe/iojs.exe to be renamed""),
+which was made the default in io.js v2.2.0.
+
+Fixes the following error whe trying to load the add-on:
+
+    LINK : fatal error LNK1194: cannot delay-load ""iojs.exe"" due to
+    import of data symbol """"__declspec(dllimpo rt) const
+    v8::OutputStream::`vftable'"" (__imp_??_7OutputStream@v8@@6B@)"";
+    link without /DELAYLOAD:iojs.exe
+
+Fixes #57."
+bnoordhuis,2015-01-25 12:49:39,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/b9a059df2cd4f3829b908adb04a4c5471ed9c275,b9a059df2cd4f3829b908adb04a4c5471ed9c275,"src: update v0.10/v0.12v/v1.0 compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Makes node-heapdump compatible with node.js v0.11.15.
+
+Fixes #49."
+bnoordhuis,2015-01-11 21:07:43,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/726073fc913babad7fa9803cd071dad4a56eab71,726073fc913babad7fa9803cd071dad4a56eab71,"src: update v0.10/v0.12v/v1.0 compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Makes node-heapdump compatible with io.js: https://github.com/iojs/io.js
+
+Fixes #48."
+bnoordhuis,2014-12-01 14:26:16,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/aad9f78eec68e9d900a1fb37b810e976784cce15,aad9f78eec68e9d900a1fb37b810e976784cce15,"src: update v0.10/v0.12 compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Fixes a build error with VS 2013.  Credit goes to @lee-houghton
+for coming up with an alternative solution to the SFINAE problem.
+
+Fixes #44 - hopefully for good this time."
+bnoordhuis,2014-11-27 12:39:09,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/2acee7605a02ea2a4cceb8d725fdbe1ce1b66757,2acee7605a02ea2a4cceb8d725fdbe1ce1b66757,"src: release heap snapshot, fix memory leak
+
+Release the heap snapshot after it's written to disk.  Fixes unbound
+memory consumption when repeatedly taking snapshots.
+
+Fixes #45."
+bnoordhuis,2014-11-18 16:14:44,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/a0efb6f24f7d550a63a07fc5a82b5887dae55f65,a0efb6f24f7d550a63a07fc5a82b5887dae55f65,"src: update v0.10/v0.12 compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Fixes a build error with VS < 2013.
+
+Fixes #44."
+bnoordhuis,2014-11-18 13:41:44,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/6fe504b6b1f605a9fd12f020e1792ee7a3c597dd,6fe504b6b1f605a9fd12f020e1792ee7a3c597dd,"src: fix benign C4244 VS warning
+
+Fixes a ""conversion from 'int64_t' to 'int', possible loss of data""
+compiler warning."
+bnoordhuis,2014-11-03 21:54:07,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/7c593ec0b9871c3050da99a3ed99c2389de19951,7c593ec0b9871c3050da99a3ed99c2389de19951,"npm: publish v0.3.0
+
+There are enough substantial changes in this release to warrant a bump
+of the minor version."
+bnoordhuis,2014-11-03 21:52:39,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/ee7e99d6595ea5c60ba9d8abb0e7e0ce8cd008d8,ee7e99d6595ea5c60ba9d8abb0e7e0ce8cd008d8,"src: rename kNo{Fork,Signal}Flag flags
+
+Rename kNoForkFlag and kNoSignalFlag to kForkFlag and kSignalFlag
+respectively in order to cut down on the number of double negations."
+bnoordhuis,2014-11-03 21:37:55,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/57c849c23f3b4b6b8909f32d07777d6c6ff4379d,57c849c23f3b4b6b8909f32d07777d6c6ff4379d,"lib,src: make nofork the default behavior
+
+Fork-before-snapshotting is fundamentally incompatible with newer V8
+releases.  V8 uses threads now but those don't survive the call to
+fork().  Then, when creating the snapshot, V8 tries to sync up with
+a thread that no longer exists and deadlocks.
+
+Another issue is that forking breaks the comparison view in DevTools
+because the heap object IDs don't match up.  V8 updates them after
+creating the snapshot but those changes don't make it back to the
+parent process.
+
+Fixes #37 and #41."
+bnoordhuis,2014-11-03 19:36:10,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/9cb5afa02af6c93481502a83832178c8790e4b29,9cb5afa02af6c93481502a83832178c8790e4b29,"src: update v0.10/v0.12 compatibility shim
+
+Update the compatibility shim to the latest version from
+https://github.com/strongloop/strong-agent
+
+Fixes a segmentation fault with V8 3.29.  It's no longer safe to call
+v8::V8::IsDead() from an atexit destructor."
+bnoordhuis,2014-11-01 21:05:45,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/b272e21787b02c9a742d51332da0d6538b9d0a5c,b272e21787b02c9a742d51332da0d6538b9d0a5c,"src: add nofork option
+
+Add an option to prevent node-heapdump from forking on UNIX platforms.
+Forking is incompatible with node.js v0.12 and it breaks the comparison
+view in Chrome DevTools.  An upcoming commit makes nofork the default
+behavior.
+
+Refs #37 and #41."
+bnoordhuis,2014-11-01 17:28:38,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/c5a78df913c60abeedb3b10ff9324f478a2a31eb,c5a78df913c60abeedb3b10ff9324f478a2a31eb,"src: pass .snapshot filename to callback
+
+Fixes #42."
+bnoordhuis,2014-10-30 10:29:55,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/26f14b6e76ca8e99e977685178f4ab4c2340d8ac,26f14b6e76ca8e99e977685178f4ab4c2340d8ac,"src: move code around
+
+This is prep work for #37, #41 and particularly #42.  There are no real
+functional changes in this commit, just a reordering of source code to
+make upcoming changes easier."
+bnoordhuis,2014-10-30 09:47:08,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/2f337cd608f47e4bd5a27ebaa1e919a052b1377c,2f337cd608f47e4bd5a27ebaa1e919a052b1377c,"test: fix bad cwd assumption from tests
+
+The tests assumed that `process.cwd() == __dirname` when scanning
+for files but did not actually enforce that.  The result was that
+`cd test && node test-sigusr2.js` worked but `node test/test-sigusr2.js`
+did not.  This commit fixes that by always chdir'ing into test/ first."
+bnoordhuis,2014-09-04 21:12:40,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/ac9c7ceae8acf26ad7771cec936bd9088ebebaa8,ac9c7ceae8acf26ad7771cec936bd9088ebebaa8,"src: format with `clang-format --style=google`
+
+Format the source code with clang-format.  No more shall we argue about
+what brace goes where."
+bnoordhuis,2014-09-04 20:13:09,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/72b7e6d28f823cc2553bfb7730404e0ce382b035,72b7e6d28f823cc2553bfb7730404e0ce382b035,"src: use SL v0.10/v0.11 compat shim
+
+Replace the homegrown compatibility shim with what we use at StrongLoop.
+Besides being battle tested, it's also more pleasing to the eye."
+bnoordhuis,2014-09-04 19:38:25,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/d44714767f113bdf8fb0cc107c1435200db15a7d,d44714767f113bdf8fb0cc107c1435200db15a7d,"src, test: update copyright boilerplate
+
+Semantic null change, touches or adds only copyright comments."
+bnoordhuis,2014-08-17 09:20:10,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/0e9c12f1e7c323f3964ea087f5bcecaed81347df,0e9c12f1e7c323f3964ea087f5bcecaed81347df,npm: publish v0.2.10
+kraman,2014-08-13 01:09:49,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/1122abf4887fa1a20e1c21c65fc2bb4975c77dd3,1122abf4887fa1a20e1c21c65fc2bb4975c77dd3,"src: add optional completion callback
+
+Add an optional callback argument which takes a function and is
+triggered upon completion of the heap dump."
+bnoordhuis,2014-06-03 10:26:13,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/d8c0f0b6409f501dbb75a061081c4bb18a99edd7,d8c0f0b6409f501dbb75a061081c4bb18a99edd7,"src: fix use of uninitialized signal handle
+
+With NODE_HEAPDUMP_OPTIONS=nosignal, the SIGCHLD signal handle wasn't
+initialized even though it's used by heapdump::WriteSnapshot().
+
+See discussion in #16."
+bnoordhuis,2014-05-18 20:19:35,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/e45699745d89b22d421dbe82d7b8998e9ae667c1,e45699745d89b22d421dbe82d7b8998e9ae667c1,"src: update to v8 3.25 api
+
+Apply some fix-ups to make it work with V8 3.25.  No major changes,
+just more more API functions that take an explicit isolate argument.
+
+Fixes #31."
+bnoordhuis,2014-03-16 17:06:34,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/27f4158b244fd053f895b89c4b6fb4ca7e8a3ea6,27f4158b244fd053f895b89c4b6fb4ca7e8a3ea6,"src: fix windows build
+
+Include node.h so the BUILDING_NODE_EXTENSION macro can work its magic
+and exports V8 functions and types properly.  Fixes the following
+build error:
+
+    node.lib(node.exe) : error LNK2005: ""public: __cdecl
+    v8::Handle<class v8::Object>::Handle<class v8::Object>(class
+    v8::Object *)"" (??0?$Handle@VObject@v8@@@v8@@QEAA@PEAVObject@1@@Z)
+    already defined in platform-win32.obj
+    node.lib(node.exe) : error LNK2005: ""public: __cdecl
+    v8::Handle<class v8::FunctionTemplate>::Handle<class
+    v8::FunctionTemplate>(void)""
+    (??0?$Handle@VFunctionTemplate@v8@@@v8@@QEAA@XZ) already defined
+    in platform-win32.obj
+
+Fixes #30."
+bnoordhuis,2014-02-13 13:33:33,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/c6e8a07a8a003281f562a053121041706913ec46,c6e8a07a8a003281f562a053121041706913ec46,"src: make backwards compatible with v0.10
+
+Apply some macro magic to make the module compile with both v0.10 and
+v0.11.  It doesn't look pretty but it's fairly unobtrusive.  This also
+spells the end of the v0.10 branch.
+
+Fixes #28."
+bnoordhuis,2014-02-01 14:13:11,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/9c6a1d483a74076b41d8fb32298a44e48cafe5f3,9c6a1d483a74076b41d8fb32298a44e48cafe5f3,Merge branch 'v0.10'
+bnoordhuis,2014-02-01 14:05:04,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/c0035ab99410ffa6e097cb75f535bcb604f02718,c0035ab99410ffa6e097cb75f535bcb604f02718,"src: fix windows-only memory leak
+
+Call v8::HeapSnapshot::Delete() to free the memory.  Doing so requires
+a const_cast<> that is currently safe.  Let's hope it stays that way
+with future V8 releases.
+
+The memory leak only affects Windows.  On UNIX platforms, the snapshot
+is created in a forked process that exits after writing it to disk.
+
+Fixes #24.
+Fixes #27."
+bnoordhuis,2013-11-15 13:18:06,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/6e77f9803c4fb9cb70eaf30a0d4a47da415c2a09,6e77f9803c4fb9cb70eaf30a0d4a47da415c2a09,"src: update to V8 3.22 API
+
+Make node-heapdump work with node.js v0.11.  The most interesting
+change is that we now need to specify the v8::Isolate explicitly
+in most places."
+bnoordhuis,2013-10-21 21:04:57,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/e300dde89314af66a6c052844afa08aae2015ec5,e300dde89314af66a6c052844afa08aae2015ec5,"unix: don't abort when waitpid() returns ECHILD
+
+A bug in libuv makes it call `waitpid(-1)` before node-heapdump gets
+a chance to call `waitpid(pid)` and, as a result, libuv consumes the
+exit event of the process that node-heapdump forked off.
+
+It looks like the bug is not fixable in libuv v0.10 without undue effort
+so it probably won't get addressed.  (Libuv master is unaffected as a
+side effect of commit joyent/libuv@5c00a0e.)
+
+Not all is lost, however: ECHILD means there is no child process with
+that pid so we know for sure that it's safe to stop our signal watcher.
+
+Fixes #22."
+bnoordhuis,2013-10-07 09:31:54,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/ff8a3f9e08bd2df4e85fcbdf70cb759d3e44767c,ff8a3f9e08bd2df4e85fcbdf70cb759d3e44767c,"doc: add caveats section, document memory usage
+
+Due to fork()'s copy-on-write behavior on modern Unices and the fact
+that a major garbage collection cycle is performed right afterwards,
+creating a snapshot may require about 2x the amount of memory that
+was in use right before the snapshot."
+bnoordhuis,2013-10-06 19:04:44,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/3133d1da0e24892a7abde44b6fdd0f9f6a1b13f6,3133d1da0e24892a7abde44b6fdd0f9f6a1b13f6,"unix: allow disabling of SIGUSR2 signal handler
+
+Allow the user to override the installation of a SIGUSR2 signal handler
+by having him set NODE_HEAPDUMP_OPTIONS=nosignal in the environment.
+
+Fixes #21."
+bnoordhuis,2013-10-06 18:49:53,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/df97a7d51fb9a87004a80483ebe1faf4ca48e8d2,df97a7d51fb9a87004a80483ebe1faf4ca48e8d2,"build: remove wscript
+
+node-waf was deprecated in v0.8 and removed in v0.10.  Pre-v0.10 node.js
+versions are no longer supported as of commit 8bfd1023 so there is no
+point in keeping the node-waf build script around."
+bnoordhuis,2013-09-25 20:24:42,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/c9d6f31be8821e1ad365b570177f7673bd32ab95,c9d6f31be8821e1ad365b570177f7673bd32ab95,"src: make snapshot filename configurable
+
+`heapdump.writeSnapshot()` now accepts an optional filename argument.
+
+Fixes #14."
+bnoordhuis,2013-08-19 04:42:45,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/1ef27b3954ed9116235fd3bad103a6de54f6c69a,1ef27b3954ed9116235fd3bad103a6de54f6c69a,"npm: document license in package.json
+
+Fixes #19."
+bnoordhuis,2013-07-17 21:39:45,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/cef47578eef65e31b8bf7339325e1c9a13d98ac4,cef47578eef65e31b8bf7339325e1c9a13d98ac4,npm: publish v0.2.1
+bnoordhuis,2013-07-17 21:38:42,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/8c54b6fcf8f0571c2cf339b28032c3aee8988644,8c54b6fcf8f0571c2cf339b28032c3aee8988644,"unix: reap child process
+
+Don't leave zombie processes behind, reap the child process when it's
+done writing out the snapshot.
+
+Fixes #16."
+bnoordhuis,2013-06-10 20:45:40,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/8bfd102324adbf1434d3f6bc57564acc5ac5b4ab,8bfd102324adbf1434d3f6bc57564acc5ac5b4ab,npm: publish v0.2.0
+bnoordhuis,2013-06-10 20:37:42,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/c2b203f08bd8cff712d1246df2f622805ec2c0b4,c2b203f08bd8cff712d1246df2f622805ec2c0b4,"unix: use uv_signal_*() functions
+
+Makes it possible for multiple SIGUSR2 handlers to coexist peacefully.
+Consider this snippet:
+
+    var heapdump = require('heapdump');
+    process.on('SIGUSR2', function() {
+      // ...
+    });
+
+Before this commit, a snippet like the one below would stop heapdump
+from working because the event listener overrides the signal handler
+that heapdump installs.
+
+This change makes node-heapdump incompatible with node.js <= 0.8 as it
+uses a libuv API that is only available in node.js >= 0.10.
+
+Fixes #13."
+bnoordhuis,2013-01-27 22:10:34,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/8e7a78c71392af48423b4cecdff15e040e2e70d8,8e7a78c71392af48423b4cecdff15e040e2e70d8,npm: publish v0.1.0
+bnoordhuis,2012-11-08 00:31:45,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/b769f353ecb696d3ab79083d2a2830b07cf6b622,b769f353ecb696d3ab79083d2a2830b07cf6b622,addon: basic windows support
+bnoordhuis,2012-11-20 23:25:32,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/17e7e005761b5d0b233e28074845251facef970a,17e7e005761b5d0b233e28074845251facef970a,npm: publish v0.0.4
+bnoordhuis,2012-11-20 23:22:51,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/1d49679918aeedc918c06ffeff72651b1630af52,1d49679918aeedc918c06ffeff72651b1630af52,"addon: fix snapshot truncation, ignore SIGINT
+
+Ignore SIGINT signals so that a C-c to the parent process doesn't kill the
+child process that's busy writing out the heap snapshot."
+bnoordhuis,2012-11-07 23:51:40,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/4b8cad56b177ea785fcbee218daee9b44928d504,4b8cad56b177ea785fcbee218daee9b44928d504,"doc: update signal instructions
+
+`pkill -USR2 node` will kill all node processes that don't have a SIGUSR2
+handler installed, i.e. are not running node-heapdump."
+bnoordhuis,2012-08-11 17:05:05,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/1aceeb5072409cb925b88a1d235feacc455c6ab2,1aceeb5072409cb925b88a1d235feacc455c6ab2,"npm: publish v0.0.3
+
+Make npm use build/Release/heapdump as the main module."
+bnoordhuis,2012-08-10 16:14:14,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/2e57be8fe5e3eb144118d3a35c01d96322ab63b1,2e57be8fe5e3eb144118d3a35c01d96322ab63b1,npm: publish v0.0.2
+bnoordhuis,2012-08-10 16:10:11,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/9f855d3706280eb0740673817dc93e1c0ac21b41,9f855d3706280eb0740673817dc93e1c0ac21b41,build: add wscript for node 0.6
+bnoordhuis,2012-08-10 16:06:59,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/427c529e714f64947af831f530a6d806a11ea478,427c529e714f64947af831f530a6d806a11ea478,"addon: add missing #include
+
+Fixes a ""memset was not declared in this scope"" build error."
+bnoordhuis,2012-08-10 14:34:35,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/85084d07859d9699015ff3e261cb108fe5db1c35,85084d07859d9699015ff3e261cb108fe5db1c35,doc: add README
+bnoordhuis,2012-08-10 14:24:48,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/9c7a985a1ef2c0960dd6ecd73262a717b4c13821,9c7a985a1ef2c0960dd6ecd73262a717b4c13821,"addon: give dump file a *.heapsnapshot suffix
+
+Chromium won't load the heap snapshot unless it has a .heapsnapshot suffix."
+bnoordhuis,2012-08-10 13:30:29,https://api.github.com/repos/bnoordhuis/node-heapdump/git/commits/66fbea72efa7a5c492ba452d4b81ca6ca424a185,66fbea72efa7a5c492ba452d4b81ca6ca424a185,"V8 heap dump tool, first commit."

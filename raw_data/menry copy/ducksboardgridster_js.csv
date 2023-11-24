@@ -1,0 +1,513 @@
+gridster.js,gridster.js is a jQuery plugin that makes building intuitive draggable layouts from elements spanning multiple columns 
+username,timestamp,url,sha,message
+vieron,2014-09-25 10:27:05,https://api.github.com/repos/ducksboard/gridster.js/git/commits/314037471fac083626f5140845a9d471a54e0bee,314037471fac083626f5140845a9d471a54e0bee,Release v0.5.6
+vieron,2014-09-25 10:24:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/79aff38c60cc6ce2c0f0160bd3c6f93cb2511642,79aff38c60cc6ce2c0f0160bd3c6f93cb2511642,"fix(draggable): namespace events with unique ids
+
+Until now if you had multiple instances of Draggable in the same page,
+when destroying one of them, all of the events binded to other
+instances were also destroyed.
+
+So, we are namespacing event names with unique id’s per instance to ensure
+only that only the corresponding events are unbinded.
+
+The other solution is to cache references to the event handlers, but most
+of them are proxied or throttled which makes more mess..."
+vieron,2014-07-25 13:50:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1d06af1d5c5ea372fb0f901e30cd7b271e7d6ef4,1d06af1d5c5ea372fb0f901e30cd7b271e7d6ef4,Release v0.5.5
+vieron,2014-07-25 13:43:23,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9926ceff59cba49c71542e45aa095be35eb1df58,9926ceff59cba49c71542e45aa095be35eb1df58,"fix(gridster): fire `positionschanged` when widget orig position changes
+
+Until now `gridster:positionschanged` was being fired only if the widget
+was moved up, but we also need to know if position is different when
+`avoid_overlapped_widgets` is set to true (by default)."
+vieron,2014-07-16 18:29:47,https://api.github.com/repos/ducksboard/gridster.js/git/commits/76409719054e6136f567d212ec1fc70b2e9821d1,76409719054e6136f567d212ec1fc70b2e9821d1,Release v0.5.4
+vieron,2014-07-16 18:28:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/93df6cf6907fd0fb8787b3d068c9a9c467dcc020,93df6cf6907fd0fb8787b3d068c9a9c467dcc020,"fix(gridster): serialize returns an Array object, not a jQuery object
+
+Fixes #394"
+vieron,2014-07-04 17:04:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e837ded844b48394e2356029e35fbbdc6011757c,e837ded844b48394e2356029e35fbbdc6011757c,Release v0.5.3
+vieron,2014-06-25 21:24:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6bcfa6e16e4a88cbb5efff1ce29308737884a89d,6bcfa6e16e4a88cbb5efff1ce29308737884a89d,fix(gridster): custom `ignore_dragging` overwrites the default value
+vieron,2014-06-25 21:10:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/21a294cf29814b046a7c042b8068e5156b3f8b6b,21a294cf29814b046a7c042b8068e5156b3f8b6b,chore: add reference to defaults in constructors
+vieron,2014-06-25 08:57:19,https://api.github.com/repos/ducksboard/gridster.js/git/commits/a9c76d572bc8207f65df169152a24770d56595c4,a9c76d572bc8207f65df169152a24770d56595c4,"feature(gridster): added `auto_init` config option, default to true
+
+Useful when using `positionschanged` event, fired before gridster
+instance is cached."
+vieron,2014-06-24 21:19:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/589d7fd509a570fd02666c2f8231545211d6c83f,589d7fd509a570fd02666c2f8231545211d6c83f,feat: make gridster AMD compatible
+vieron,2014-06-24 21:15:20,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5c6d25cbbe3de021806408f3cff6cb1e139c0a25,5c6d25cbbe3de021806408f3cff6cb1e139c0a25,fix(gridster): sort widgets appropriately when reading them from DOM
+vieron,2014-06-24 21:14:07,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8ec307b6f7173e94610409adcb1671372cc2c67d,8ec307b6f7173e94610409adcb1671372cc2c67d,feat(gridster): move widget up when added if there is space available
+vieron,2014-06-24 21:08:05,https://api.github.com/repos/ducksboard/gridster.js/git/commits/aef185c5da44ab3156c6b88d2d98a2a2f445a8a9,aef185c5da44ab3156c6b88d2d98a2a2f445a8a9,style: some formatting changes
+vieron,2014-06-24 21:04:33,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b2323910bae220944421a08c887675d67a974ae5,b2323910bae220944421a08c887675d67a974ae5,"chore: move sorting methods in prototype to the constructor
+
+Useful to use them when we there is no gridster instance, like sorting
+a previously stored output from the serialize method."
+vieron,2014-06-16 17:03:21,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c554aa89d8d97da0fdd3eed7ef5221c7d5c8b1a6,c554aa89d8d97da0fdd3eed7ef5221c7d5c8b1a6,Release 0.5.2
+vieron,2014-06-16 08:43:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/021a6c23e851210c1b817bd353a1e5e19ce10b90,021a6c23e851210c1b817bd353a1e5e19ce10b90,"fix(draggable): handle both touch and click events
+
+Fixes #207, #236, #329, and #380"
+kwak27,2014-04-03 18:32:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7d22e6c8b201de33e33def77a93dc9009d0aa4cb,7d22e6c8b201de33e33def77a93dc9009d0aa4cb,fix(gridster): fix add_widget to use correct size_y when adding rows
+rebugger,2014-04-08 09:43:42,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bb7463a3241750397492dfbac133cea193f0254f,bb7463a3241750397492dfbac133cea193f0254f,"fix(draggable): replaced scrollX/Y with scrollLeft/Top
+
+window.scrollX/Y is only available in Chrome, not in IE"
+rebugger,2014-04-08 08:26:42,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c726c4ad9c18fea95e4b46b9bacd36c42aa9691c,c726c4ad9c18fea95e4b46b9bacd36c42aa9691c,"fix(draggable): fix offset during drag
+
+when the scrollX/Y is changed during drag (e.g. by the mousewheel)
+the offset wasn't correct"
+dasmall,2014-04-10 20:22:43,https://api.github.com/repos/ducksboard/gridster.js/git/commits/93c46ff45ebe59f3658b7f32f05b67109aa87311,93c46ff45ebe59f3658b7f32f05b67109aa87311,"fix(gridster): Removing previously added style tags before adding new one.
+
+Hopefully fixes #211 and #294."
+rebugger,2014-04-14 07:07:19,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dd6c7420087d5810a9f6b02bf9d81a04a60ae840,dd6c7420087d5810a9f6b02bf9d81a04a60ae840,"fix(draggable): bind drag events to $document
+
+$body won't receive mouseup if the cursor is outside the browser window, $document does"
+vieron,2014-03-26 11:38:25,https://api.github.com/repos/ducksboard/gridster.js/git/commits/a4f3baf38ffdffdc8b7cccd55a8f2667a593adf7,a4f3baf38ffdffdc8b7cccd55a8f2667a593adf7,update dist
+vieron,2014-03-26 11:38:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/69fcfe459678e833cb53de040b9fbc96dd687543,69fcfe459678e833cb53de040b9fbc96dd687543,feat(draggable): allow ignore_dragging config option to be a function
+vieron,2014-03-12 23:11:55,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f1ad03cc36cef4f0e414ebdf6376114fb4f6a469,f1ad03cc36cef4f0e414ebdf6376114fb4f6a469,chore: update dist
+vieron,2014-03-12 23:11:29,https://api.github.com/repos/ducksboard/gridster.js/git/commits/03910df967a1ae7bcb2fa3aadd58255e0bcbf327,03910df967a1ae7bcb2fa3aadd58255e0bcbf327,feat(draggable): option to not remove helper on drag stop
+vieron,2014-03-05 18:02:30,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b84f364d4ada76456620948f506642dcabf415f9,b84f364d4ada76456620948f506642dcabf415f9,Release v0.5.1
+vieron,2014-03-05 17:26:45,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dc09f191d8503669cfa4737122c77cb0f5b9c3d2,dc09f191d8503669cfa4737122c77cb0f5b9c3d2,feat(gridster): destroy element's data and optionally remove from DOM
+vieron,2014-03-05 16:47:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/04868a384d655d110f2d153d2fddb94b1c6d54a9,04868a384d655d110f2d153d2fddb94b1c6d54a9,feat(draggable): keep container position prop if different than static
+vieron,2014-03-05 16:36:11,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6f22217f056e4fc52f6405f2af49596105aae150,6f22217f056e4fc52f6405f2af49596105aae150,feat(coords): allow both (left/x1) and (top/y1) attr keys
+vieron,2014-03-05 16:33:04,https://api.github.com/repos/ducksboard/gridster.js/git/commits/fdeee4f636266c7a0579ced833f04fec013b6863,fdeee4f636266c7a0579ced833f04fec013b6863,feat(coords): add destroy method
+vieron,2014-03-05 16:29:45,https://api.github.com/repos/ducksboard/gridster.js/git/commits/720d487e3988593e2c60909c88aaff13fbd4f842,720d487e3988593e2c60909c88aaff13fbd4f842,feat(collision): overlapping region as a config option
+vieron,2014-02-14 12:13:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/967984f16b761385566eebdc65e434bb3aa65215,967984f16b761385566eebdc65e434bb3aa65215,Release v0.5.0
+g0ddest,2012-11-23 09:30:34,https://api.github.com/repos/ducksboard/gridster.js/git/commits/073fdc40e0a94dd371646fc54cd420e3ddab0254,073fdc40e0a94dd371646fc54cd420e3ddab0254,feat(draggable): Add toggle draggable method.
+ciaranj,2014-01-13 20:37:20,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e21f63a05a539f5c611eb49cd6861b1e38b36531,e21f63a05a539f5c611eb49cd6861b1e38b36531,"fix(resize.stop): Call resize.stop at the latest possible moment
+
+Previously the resize.stop callback was being called before the widget
+had reached the end size that Gridster would make it (the widget grows
+to match the placeholder size after releasing the drag)
+
+This change pushes the resize.stop callback to the last possible moment
+where the size of the widget the callback receives is more likely to be
+correct.
+
+Signed-off-by: ciaranj <ciaranj@gmail.com>
+
+Conflicts:
+	src/jquery.gridster.js"
+vieron,2014-02-14 10:37:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/835c2df84419a92b1641b687fcf083f3ff102627,835c2df84419a92b1641b687fcf083f3ff102627,fix(autogrow): refining autogrow_cols behavior and grid width issues
+vieron,2014-02-13 10:27:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9796c44dc62befafad78e75cdb578b93bc2a36f9,9796c44dc62befafad78e75cdb578b93bc2a36f9,Release v0.4.4
+vieron,2014-02-13 10:26:56,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7ca8deec8559d950097a6dc351cb0c6fcef3458d,7ca8deec8559d950097a6dc351cb0c6fcef3458d,feat(resize): add start/stop/resize event triggers
+vieron,2014-02-11 00:05:24,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6121eb6888e5ac4fe46c32e0d8877ec87fe3743a,6121eb6888e5ac4fe46c32e0d8877ec87fe3743a,Release v0.4.3
+vieron,2014-02-11 00:03:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f8b04f298e12e46ca9b07f0bae0abc6b08ed6e18,f8b04f298e12e46ca9b07f0bae0abc6b08ed6e18,fix(generated-styles): cleaning cached serializations properly
+vieron,2014-02-07 17:28:23,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e76eed7ac4c86bbea34fa9540bbc0421278cbcdd,e76eed7ac4c86bbea34fa9540bbc0421278cbcdd,Release v0.4.2
+vieron,2014-02-07 17:27:07,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4774597834300601fc81d5111a31a8c1672c55e1,4774597834300601fc81d5111a31a8c1672c55e1,fix: recalculate grid width when adding widgets
+vieron,2014-02-07 14:15:30,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7c1453c6be9249b2e6122c4ff5cfd0e8e902383b,7c1453c6be9249b2e6122c4ff5cfd0e8e902383b,chore: fix mistakes in changelog
+vieron,2014-02-07 14:10:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6eef93cc1670f47403565ec3bf60b0c67b8df99b,6eef93cc1670f47403565ec3bf60b0c67b8df99b,Release v0.4.1
+vieron,2014-02-07 14:09:55,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5672edb05e39c6b9ff5e3ca31d68c9e94dfaa617,5672edb05e39c6b9ff5e3ca31d68c9e94dfaa617,fix: add resize.min_size option to default config object
+vieron,2014-02-07 12:15:09,https://api.github.com/repos/ducksboard/gridster.js/git/commits/46e0abe34663f58f4e245305d5371a67c0da443a,46e0abe34663f58f4e245305d5371a67c0da443a,Release v0.4.0
+beeftornado,2013-10-31 09:58:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1aee438becc3bb19e47f215dd5f4daa0da4ba633,1aee438becc3bb19e47f215dd5f4daa0da4ba633,"chore: Updated node package dependencies to work on clean system.
+
+qunit->qunitjs and jquery 2.0 isn't listed in npm repository so
+replaced it with the git location."
+myabc,2013-12-06 00:10:14,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7ed79e56721069e90686a52d11eb7430d4cbf96e,7ed79e56721069e90686a52d11eb7430d4cbf96e,"fix(gridster): leaking options with multiple Gridster instances
+
+`defaults` was being overwritten.
+
+See [jQuery documentation](http://api.jquery.com/jQuery.extend/):
+
+> Keep in mind that the target object (first argument) will be modified, and will also be returned from $.extend()."
+febeling,2013-12-06 16:44:17,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e9d8d8d6e2e492d4081431d644ed135953d913cf,e9d8d8d6e2e492d4081431d644ed135953d913cf,"fix(readme): link title jsfiddle -> jsbin, edit 5) of process steps"
+martinwoodward,2014-01-10 06:43:28,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6f207230393f068bcab13f21b547c708f9fc3983,6f207230393f068bcab13f21b547c708f9fc3983,"fix(licenses): add required copyright message for underscore
+
+Add the copyright message for the code taken from underscore as required
+by the MIT license."
+UlTriX,2014-01-14 14:40:16,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e9dc5134573d0a83413ad86b45e30587ca45b65f,e9dc5134573d0a83413ad86b45e30587ca45b65f,"fix(gridster): resize.axes default option only 'both'
+
+If passing resize.axes option it will be
+what is defined and not ['x','y','both']."
+vieron,2013-11-18 18:30:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/04cb32f6f366bc8ba517d95704557b6106bce078,04cb32f6f366bc8ba517d95704557b6106bce078,Release v0.3.0
+vieron,2013-11-18 18:21:24,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b65a802964f74092fbb6d356ef933d63775f8956,b65a802964f74092fbb6d356ef933d63775f8956,feat(gridster): increase grid width when dragging or resizing
+vieron,2013-11-18 18:05:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8fa3ad258f7f64a1288df6ef9ba528ed766e054f,8fa3ad258f7f64a1288df6ef9ba528ed766e054f,feat(draggable): method to set drag limits dynamically
+vieron,2013-11-18 18:05:30,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3e426c93017dfee06fa8af7efbbc602910e4354f,3e426c93017dfee06fa8af7efbbc602910e4354f,chore: rename calculate_positions to calculate_dimensions
+vieron,2013-11-18 18:04:17,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b0b4464a5cdb5651edc36134ceda766dcce01bed,b0b4464a5cdb5651edc36134ceda766dcce01bed,feat(draggable): support horizontal scrolling while dragging
+vieron,2013-11-14 15:36:44,https://api.github.com/repos/ducksboard/gridster.js/git/commits/381a8815011971acde241736a8fa3fdc1a3f60fa,381a8815011971acde241736a8fa3fdc1a3f60fa,chore: use $ instead of jQuery inside gridster
+vieron,2013-12-10 16:26:45,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b6ec35252d896662252bed605ec0a867fe0aa667,b6ec35252d896662252bed605ec0a867fe0aa667,chore: add bitdeli badge to readme
+vieron,2013-10-29 22:59:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/26031042aa1fefd8a23d0ca625a27f63f8d4d65e,26031042aa1fefd8a23d0ca625a27f63f8d4d65e,docs: add guidelines for contributing
+vieron,2013-10-28 22:57:52,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bc94351205c457c3fb4e1fa2c2fd57435e6f11a7,bc94351205c457c3fb4e1fa2c2fd57435e6f11a7,Release v0.2.1
+activeworx,2013-10-28 14:04:21,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d4ec7140f736bc30697c75b54ed3242ddf1d75b9,d4ec7140f736bc30697c75b54ed3242ddf1d75b9,feat(resize): Add start/stop/resize callbacks
+vieron,2013-10-26 17:54:50,https://api.github.com/repos/ducksboard/gridster.js/git/commits/277d8a7753a95e23454d4668928456266a1a8988,277d8a7753a95e23454d4668928456266a1a8988,Release v0.2.0
+vieron,2013-10-26 15:35:20,https://api.github.com/repos/ducksboard/gridster.js/git/commits/21f53a7bd40cc162a0bd54eb342a6d3b6ae04a57,21f53a7bd40cc162a0bd54eb342a6d3b6ae04a57,chore(readme): update readme
+vieron,2013-10-26 14:52:33,https://api.github.com/repos/ducksboard/gridster.js/git/commits/07ebe675407dc9153d502e89863ac1a278a31f76,07ebe675407dc9153d502e89863ac1a278a31f76,chore(docs): update ducksboard logo URL
+vieron,2013-10-25 20:29:58,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e19240532de0bad35ffe6e5fc63934819390adc5,e19240532de0bad35ffe6e5fc63934819390adc5,feat(gridster): drag-and-drop widget resizing
+vieron,2013-10-25 20:39:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/65d93a44dbb46d3b4a2a4f01e7e2ce87965587d6,65d93a44dbb46d3b4a2a4f01e7e2ce87965587d6,chore(grunt): add css files to grunt watch command
+vieron,2013-10-25 19:18:51,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8e58cf8a4436f511a379d81a25aeb4a85380bb06,8e58cf8a4436f511a379d81a25aeb4a85380bb06,"style: some whitespaces, line-breaks..."
+vieron,2013-10-25 19:16:41,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d0ca62826a84879790c11cecfbdaf5b3b005b217,d0ca62826a84879790c11cecfbdaf5b3b005b217,"chore(draggable): jQuery adapter returns Draggable instance
+
+Draggable instance instead of a jQuery collection.
+Why? Becomes a mess if Draggable is instantiated multiple times from
+the same HTML element.
+
+BREAKING CHANGES: If you was accessing to Draggable instances through
+.data('drag') you should remove the `data` getter. Since now the instance
+is returned directly."
+vieron,2013-10-25 19:04:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4d9b2a84f11cb7cb2ddad51c158d92b82e7bc447,4d9b2a84f11cb7cb2ddad51c158d92b82e7bc447,feat(draggable): new config option to move or not the dragged element
+vieron,2013-10-25 19:02:02,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0f95624925be97aee7a8450707e04e887e4dac58,0f95624925be97aee7a8450707e04e887e4dac58,feat(draggable): CSS selectors support in `ignore_dragging` config opt
+vieron,2013-10-25 18:56:19,https://api.github.com/repos/ducksboard/gridster.js/git/commits/055cc0e4f6f9de5721986515656ac894855f9e02,055cc0e4f6f9de5721986515656ac894855f9e02,feat(draggable): pass previous position to the drag callback
+vieron,2013-10-25 18:48:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/91ca65721c2eb32b5dec82cdc5e5e7f81dac329e,91ca65721c2eb32b5dec82cdc5e5e7f81dac329e,"feat(draggable): Don't start new drag if previous one hasn't stopped
+
+Moving 4e6159fb by @atesgoral into draggable.js"
+vieron,2013-10-25 18:42:28,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4b1b2b7259e5316a3c572e798162f25c6e68b8e6,4b1b2b7259e5316a3c572e798162f25c6e68b8e6,chore(draggable): add default `helper` config option for clarify
+vieron,2013-10-25 18:39:50,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c1668d9ab6261d3c5dc4215abdb73ca516492c19,c1668d9ab6261d3c5dc4215abdb73ca516492c19,"chore(css naming): `gs_w` to `gs-w` following CSS naming conventions
+
+BREAKING CHANGE: If you are using `gs_w` classes somewhere, replace
+them with `gs-w`"
+vieron,2013-10-25 18:22:34,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8dda2410f300592706985c05141ca6b702977dc0,8dda2410f300592706985c05141ca6b702977dc0,"feat(draggable): pass useful data to all drag callbacks
+
+start/stop/drag callbacks receive: element offset, cursor position,
+and references to $player and $helper elements."
+vieron,2013-10-25 15:45:34,https://api.github.com/repos/ducksboard/gridster.js/git/commits/faa6c5db0002feccf681e9f919ed583eef152773,faa6c5db0002feccf681e9f919ed583eef152773,feat(utils): add delay helper to utils
+vieron,2013-10-18 17:53:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bdfff6ce6729764c14225c91079dea58780482d3,bdfff6ce6729764c14225c91079dea58780482d3,chore(grunt): add grunt-conventinal-changelog
+vieron,2013-10-18 17:42:38,https://api.github.com/repos/ducksboard/gridster.js/git/commits/307f8ade36ced20503e2ac238c11938bfa8537a5,307f8ade36ced20503e2ac238c11938bfa8537a5,chore(grunt): add grunt-bump to manage releases
+vieron,2013-10-18 17:18:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/21fcad9a28581a8e9513c112c1c4d3631336439e,21fcad9a28581a8e9513c112c1c4d3631336439e,style(generated-css): add line breaks in css declarations
+vieron,2013-10-18 17:17:18,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ae02b32b9210c6328f4acc339e215ae50c134f77,ae02b32b9210c6328f4acc339e215ae50c134f77,fix: fixes and improvements in widget-resizing. Closes #32
+atesgoral,2013-08-14 20:25:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1ade74e239485b07e870fca44e1eafb3ff1ae283,1ade74e239485b07e870fca44e1eafb3ff1ae283,"fix(gridster): the preview holder should not always use `li`
+
+Use the same element as the original widget for the preview holder.
+Using a <li> can cause a list item bullet to be displayed when widgets
+are not necessarily <li> elements."
+bastianonm,2013-04-04 08:20:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/31fd8d6ba893e4c39b91ba30d429e37f3da30b24,31fd8d6ba893e4c39b91ba30d429e37f3da30b24,fix(gridster): overlapping widget problem
+atesgoral,2013-08-14 20:32:17,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1b13617df2ce53235bdf3a1e38f1555f529663c3,1b13617df2ce53235bdf3a1e38f1555f529663c3,"fix(gridster): Orphan preview holder when dragging is interrupted
+
+After beginning a drag, if the mouse button is released outside of the
+screen, and if a subsequent drag operation is begun on another widget
+(while the previous widget still follows the mouse around), Draggable
+will trigger a new drag start event, causing Gridster to leave the
+current widget + its preview holder aside and start dragging the new
+widget. This will lead to an orphan preview holder to be left on the
+screen.
+
+A quick solution is to ignore drag start without receiving a drag stop."
+stefek99,2013-09-09 14:15:29,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5bfbc5c0b5ab49c2a7c651327ce2e0f30f594985,5bfbc5c0b5ab49c2a7c651327ce2e0f30f594985,"fix(gridster): remove_widget Returns the instance of the Gridster Class
+
+Following same pattern as remove_all_widgets --> remove_widget also
+return *this* (as per inlined comment documentation)"
+vieron,2013-06-14 10:05:52,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ef626f8132db3848baaba26c5bda988e0016dcdf,ef626f8132db3848baaba26c5bda988e0016dcdf,update dist
+vieron,2013-06-14 10:05:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f418ecd5262950eec94c07c47cb279a5a5f71a0b,f418ecd5262950eec94c07c47cb279a5a5f71a0b,"grunt/config: change output file names due to the name change in package.json
+
+Package name was changed from `jquery.gridster` to `gridster`"
+vieron,2013-06-14 10:03:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c0c12d0c385be667338c0faff8db8aa15b557932,c0c12d0c385be667338c0faff8db8aa15b557932,"gridster/fix: calculating container_width correctly
+
+Thanks @badtant for the notice (https://github.com/ducksboard/gridster.js/commit/3d755fd793e7e74cbdc56d9a86143f4ebf779a98#commitcomment-3423763)"
+vieron,2013-06-13 15:56:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/10ef102e345aeff9a32e2daefe57063ee2c30dd8,10ef102e345aeff9a32e2daefe57063ee2c30dd8,"bower: merging bower.json into package.json. 
+
+Install gridster via bower was broken."
+vieron,2013-06-13 13:36:40,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f749c13e4a09e8c47a8f64b35aab20551a7c3e44,f749c13e4a09e8c47a8f64b35aab20551a7c3e44,updated dist
+vieron,2013-06-13 13:22:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8239d2e4ceb9e9d6a286f33f21dc2654cb474b1b,8239d2e4ceb9e9d6a286f33f21dc2654cb474b1b,updated dist
+vieron,2013-06-13 13:22:27,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0a3315d3cb2d490afdb49417a5c4e30cf77ae373,0a3315d3cb2d490afdb49417a5c4e30cf77ae373,"max_cols: to disable max_col option set to `null` instead of '-1'.
+
+Default is null."
+vieron,2013-06-13 10:14:21,https://api.github.com/repos/ducksboard/gridster.js/git/commits/23482b58cda870a098721415fccbee7bd75ec948,23482b58cda870a098721415fccbee7bd75ec948,updated diet
+vieron,2013-06-13 10:14:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b4ac8dc0bdddb9457a57562ee5e1b679393c9028,b4ac8dc0bdddb9457a57562ee5e1b679393c9028,drag/touch: don't prevent default when start dragging in touch device
+vieron,2013-06-13 10:01:47,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e1a5b4ed5234607ad9d14983bd3773473fb537a0,e1a5b4ed5234607ad9d14983bd3773473fb537a0,"gridster/fix: using comparators in sort methods.
+
+Sort method by default orders alphabetically, but we are sorting numbers
+and this means that: 40 < 6. And we not expect this result."
+vieron,2013-05-02 22:02:22,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bfbcba0ea3bab4a895731c37546e9e52612ee11e,bfbcba0ea3bab4a895731c37546e9e52612ee11e,Added watch command to Gruntfile config
+vieron,2013-05-02 22:01:51,https://api.github.com/repos/ducksboard/gridster.js/git/commits/86ab9701c5bead42ee2e244ec21ca45aa740a0cf,86ab9701c5bead42ee2e244ec21ca45aa740a0cf,Ignore libs folder
+vieron,2013-05-02 21:57:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/fa227ec66ec5d2a1bdeb088cd1c734930747e774,fa227ec66ec5d2a1bdeb088cd1c734930747e774,bump up to jQuery 2.0 and start using bower for managing dependencies
+vieron,2013-05-02 21:54:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d3785c49fcf02e07f80f5fd7c581368557d0f22b,d3785c49fcf02e07f80f5fd7c581368557d0f22b,Removed `libs` folder from the repo. Install dependencies with bower.
+vieron,2013-05-01 21:43:36,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4c02e4c1edda0b86a7e4fe3c10da023343e363a2,4c02e4c1edda0b86a7e4fe3c10da023343e363a2,"Reverting some changes in commit 6302b98
+
+Check to avoid generation of duplicated stylesheet-tags shouldn't have
+been removed from Gridster. It's useful when calling multiple times 
+`generate_stylesheet` method once Gridster is initializated. We use it
+at ducksboard to generate a TVmode version of the grid with bigger widgets.
+
+Refactored the way stylesheet tags are removed. When created I push them 
+to a jQuery collection which is removed when `destroy` method is executed."
+vieron,2013-05-01 19:14:27,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3d755fd793e7e74cbdc56d9a86143f4ebf779a98,3d755fd793e7e74cbdc56d9a86143f4ebf779a98,Pass container width to draggable instance. Relative to 5569caa687
+vieron,2013-05-01 16:51:45,https://api.github.com/repos/ducksboard/gridster.js/git/commits/2aa9b554335a51aa7d34d39e892444434117c893,2aa9b554335a51aa7d34d39e892444434117c893,namespaced events instead of caching callbacks
+brokenseal,2013-02-15 13:29:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/213a40c7ea07b7698a46d222acedc72eedc112b4,213a40c7ea07b7698a46d222acedc72eedc112b4,"Fixed a couple of errors in the methods definition
+Added my own IDE filed in the .gitignore file"
+vieron,2013-03-19 00:35:43,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6fdb2a5ead74677b499d090f17b92311083d4c23,6fdb2a5ead74677b499d090f17b92311083d4c23,gitignore: added .DS_Store
+vieron,2013-03-18 22:42:36,https://api.github.com/repos/ducksboard/gridster.js/git/commits/70ccff71de431967f5c3db80c2a96ccf5b3ddfbe,70ccff71de431967f5c3db80c2a96ccf5b3ddfbe,Update gruntfile and package.json to compliance with grunt 0.4.x
+dustmoo,2013-05-15 16:29:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/20f98ae3833a37b0aed5a631df8ff2052bfcf818,20f98ae3833a37b0aed5a631df8ff2052bfcf818,Updated Dist and Gruntfile
+dustmoo,2013-05-15 16:29:34,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ef476bcd1eacccebe05b90766a301ef69d2a3dab,ef476bcd1eacccebe05b90766a301ef69d2a3dab,Merge branch 'master' of https://github.com/ducksboard/gridster.js
+dustmoo,2013-05-15 16:28:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c2fcff72762533ddaa7080832450a39a93e6268b,c2fcff72762533ddaa7080832450a39a93e6268b,Updated Dist and Gruntfile
+dustmoo,2013-05-14 15:42:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/eca38b6272fd005c453dac75052a33ae5d7434b0,eca38b6272fd005c453dac75052a33ae5d7434b0,"Merge pull request #165 from matiangul/master
+
+Fix is_empty method"
+dustmoo,2013-05-14 15:40:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/361c751e6ee94dc4be98cc7c63b20bd550164d46,361c751e6ee94dc4be98cc7c63b20bd550164d46,Updated Readme
+dustmoo,2013-05-14 14:54:20,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bc9859fede23f6cf41b57e79f96224c41144fccf,bc9859fede23f6cf41b57e79f96224c41144fccf,Add Gruntfile
+dustmoo,2013-05-14 14:50:05,https://api.github.com/repos/ducksboard/gridster.js/git/commits/52dc36ead99964fa8b71382137cef334530fe517,52dc36ead99964fa8b71382137cef334530fe517,"Merge pull request #169 from tuvokki/master
+
+Fix for Issue #158"
+tuvokki,2013-05-13 14:14:47,https://api.github.com/repos/ducksboard/gridster.js/git/commits/826120bdb16438b4b36b1e5cd2010a74432cc34e,826120bdb16438b4b36b1e5cd2010a74432cc34e,"resize_widget function with callback parameter
+
+Is it possible to add a callback to the resize_widget function, that is
+called when the resizing of a widget is finished? This may help to
+update the widget content properly."
+matiangul,2013-05-04 09:05:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/fca830007ac13f6d320dc3fda6bfb877c4cc79b7,fca830007ac13f6d320dc3fda6bfb877c4cc79b7,Fixed is_empty method
+dustmoo,2013-04-25 16:16:28,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4c9d502cbe98a95351ce5050e8da9c6119d08f42,4c9d502cbe98a95351ce5050e8da9c6119d08f42,Updated Readme added PSA
+dustmoo,2013-04-25 15:36:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bd63315641e13a237cef8c800b37fd4d26377ec8,bd63315641e13a237cef8c800b37fd4d26377ec8,Updated to latest version of Grunt
+dustmoo,2013-04-24 15:13:30,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d56f6d80a3897ae87bb04f14c4afed7d988258a6,d56f6d80a3897ae87bb04f14c4afed7d988258a6,"Merge pull request #152 from rfink/master
+
+Fix for issue #46"
+dustmoo,2013-04-24 15:08:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c0d0cd33ce5588d61945f55b4e9fb68eb3eab58b,c0d0cd33ce5588d61945f55b4e9fb68eb3eab58b,"Merge pull request #154 from tuvokki/master
+
+Add setting for maximum number of columns"
+tuvokki,2013-04-11 12:18:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5569caa6878d7af82e8fc8c59725903927e71911,5569caa6878d7af82e8fc8c59725903927e71911,"Add max_cols setting
+
+Right now the number of columns is calculated by dividing the available
+space by the necessary space. I want to have an option to limit the
+number of calculated columns, without changing the width of the div my
+grid lives in.
+
+In order to limit the number of calculated columns max_cols is set to a
+number. To have 'unlimited' columns set the value of max_cols to -1 (as
+ids done in the default settings). This provides the arbitrary useful
+functionality to set the max number of columns to 0. Any sideeffect
+caused by this are mitigated by checking that the max_cols is larger
+than the min_cols setting."
+dustmoo,2013-04-02 14:52:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b58f1454a5183e577fc20f9bbc7db2236697369d,b58f1454a5183e577fc20f9bbc7db2236697369d,"Merge pull request #125 from brokenseal/master
+
+Possible solution to memory leak #124"
+pushmatrix,2013-03-22 17:10:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d6f696e4f59d8d20ffd3e491eb4585d7007353d7,d6f696e4f59d8d20ffd3e491eb4585d7007353d7,"Merge pull request #76 from pushmatrix/master
+
+Fix inverted arguments for a collision callback"
+brokenseal,2013-02-15 15:50:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7f3f679cb615e1de734222f85464d0fb882768a1,7f3f679cb615e1de734222f85464d0fb882768a1,Fixed a minor issue when trying to destroy a non existing drag_api
+brokenseal,2013-02-15 14:25:44,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7217b040e67b263f07289fe5ad0e4fef7cc4c2c4,7217b040e67b263f07289fe5ad0e4fef7cc4c2c4,Built new version
+brokenseal,2013-02-15 14:25:09,https://api.github.com/repos/ducksboard/gridster.js/git/commits/233129b183ace84a39a203612b601a50c2590411,233129b183ace84a39a203612b601a50c2590411,"Bound leftover callbacks are one of the main causes of memory leaks, let's remove them inside the destroy method"
+brokenseal,2013-02-15 13:30:20,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ac2908e1a2f0a3fd774f0ac26eca5e09d200a814,ac2908e1a2f0a3fd774f0ac26eca5e09d200a814,Added a destroy method on the Gridster class
+brokenseal,2013-02-15 13:29:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/36bec0bb14ed3e43f18bd14a91fa2d7143375188,36bec0bb14ed3e43f18bd14a91fa2d7143375188,"Fixed a couple of errors in the methods definition
+Added my own IDE filed in the .gitignore file"
+pushmatrix,2012-11-01 04:47:07,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ce391ae13e200ec583d935eaf8378e003e34ac90,ce391ae13e200ec583d935eaf8378e003e34ac90,"Fix inverted arguments for a collision callback
+
+The start and stop callbacks on this line seem to be backwards."
+vieron,2012-10-19 23:49:11,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b538d64969c2c02636d1f79292c46eff3e1c0c03,b538d64969c2c02636d1f79292c46eff3e1c0c03,updated dist
+vieron,2012-10-19 23:37:41,https://api.github.com/repos/ducksboard/gridster.js/git/commits/55edd11ef8b99994b3cf45d50857b47f24d0dc0c,55edd11ef8b99994b3cf45d50857b47f24d0dc0c,"gridster: new method remove_all_widgets
+
+Remove multiple widgets without chaining callbacks was not possible so I've added a new argument to remove_widget method named `silent` which if it's value is true, widgets below the removed will not move up.
+
+Also added the method remove_all_widgets.
+
+Fixes #63"
+vieron,2012-10-19 22:14:14,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c75db76f4eeaaa5c86cb3238cb76f063c9403ff7,c75db76f4eeaaa5c86cb3238cb76f063c9403ff7,updated dist
+vieron,2012-10-19 22:07:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/a20f3d53b59e68684536be2e0b51f1b1d51fb676,a20f3d53b59e68684536be2e0b51f1b1d51fb676,ignoring demo folder
+manavo,2012-10-09 10:24:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/552df22e1c6cc52c6809f5ce458d3a46dc6aa3fa,552df22e1c6cc52c6809f5ce458d3a46dc6aa3fa,"Allow for an optional drag handle to be specified
+
+When defining the gridster, you can now define a draggable.handle selector:
+
+For example:
+
+    $(""#widgets"").gridster({
+        widget_margins: [10, 10],
+        widget_base_dimensions: [565, 400],
+		draggable: {
+			stop: function(event, ui) {
+				console.log('save new columns');
+			},
+			handle: '.title'
+		}
+    });
+
+If handle is omitted (or left blank), it works as it did previously. If a value is specified, then dragging only starts if the element which was clicked matches the selector specified.
+
+Added by @vieron:
+Closes #29"
+vieron,2012-10-15 14:27:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/07b34131bd1a36ef91fdd5bd836e7d2ffddc0f7a,07b34131bd1a36ef91fdd5bd836e7d2ffddc0f7a,update dist
+vieron,2012-10-15 13:34:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/68f1d6279c2237b91d6e577bdecf041d4c5791cc,68f1d6279c2237b91d6e577bdecf041d4c5791cc,"Avoid dynamic column generation.
+
+Using add_faux_col each time a new widget is added to the grid caused the widget was always positioned in the first row on the right. Related to #60."
+vieron,2012-10-07 19:45:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/a5d122246dff4ae812dccba925f8ad1e54dd3eb9,a5d122246dff4ae812dccba925f8ad1e54dd3eb9,updated dist
+vieron,2012-10-07 19:36:58,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5411836c881813ade8ef4f1a6fd69e183232b352,5411836c881813ade8ef4f1a6fd69e183232b352,"events/onselectstart: Don't prevent default behaviour on form fields
+
+Fixes #56."
+vieron,2012-10-07 19:04:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5a3c382c8b9016a5333b1cac271a307f95670505,5a3c382c8b9016a5333b1cac271a307f95670505,Immediate children selection for widgets. Fixes #52.
+vieron,2012-10-03 13:54:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6ebd10139ffbaf883b971148216aa7e567d75ec4,6ebd10139ffbaf883b971148216aa7e567d75ec4,updated dist
+vieron,2012-10-03 13:54:31,https://api.github.com/repos/ducksboard/gridster.js/git/commits/42ce094e1c95ca66a4f0c5576175be8041c5bbaa,42ce094e1c95ca66a4f0c5576175be8041c5bbaa,updated grunt config to generate gridster+extras distribution
+vieron,2012-10-03 13:48:32,https://api.github.com/repos/ducksboard/gridster.js/git/commits/cd5c936939fc51ee60a3e9aebf91eaba34ad980a,cd5c936939fc51ee60a3e9aebf91eaba34ad980a,"gridster extra methods
+
+Some new methods we need at Ducksboard to implement TV mode.
+
+Two new distributions of Gridster are generated with grunt:
+    - jquery.gridster.with-extras.js
+    - jquery.gridster.with-extras.min.js"
+vieron,2012-10-03 13:46:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7dbbc105c11449ae8ccb0fd80bafc79b93536903,7dbbc105c11449ae8ccb0fd80bafc79b93536903,add_faux_cell: create parent array if doesn't exists
+vieron,2012-10-03 13:44:09,https://api.github.com/repos/ducksboard/gridster.js/git/commits/82b8778762132ac35dcb784b5545289f4658d553,82b8778762132ac35dcb784b5545289f4658d553,"if not passed, use default namespace for generating stylessheets"
+vieron,2012-10-03 13:43:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7fc97d0f79d8f4e156a9976387beb0ef38bfcc83,7fc97d0f79d8f4e156a9976387beb0ef38bfcc83,Allow to extend gridster out of the scope
+vieron,2012-10-03 13:40:52,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0b1c9899d08680352fd934d900de70a428e72c24,0b1c9899d08680352fd934d900de70a428e72c24,some code style corrections/improvements
+vieron,2012-10-03 13:40:16,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c4fee63b966307c22336b3a3cb01e6c9ceb99260,c4fee63b966307c22336b3a3cb01e6c9ceb99260,ability to specify a max row as limit in can_move_to method
+vieron,2012-10-03 13:33:46,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3d5077dd7b7473c229425cad087d9a94562824e6,3d5077dd7b7473c229425cad087d9a94562824e6,add_faux_cols method
+vieron,2012-10-03 11:48:55,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c6bd80be8ee12dbe8f9f0c6d70c9adf5eca2d501,c6bd80be8ee12dbe8f9f0c6d70c9adf5eca2d501,"Fixed disable method, it didn't work well for multiple instances.
+
+Previously, disabling gridster caused all the instances of Gridster running on the pages was disabled. Because Draggable class uses event delegation from the body to manage drag events."
+vieron,2012-09-12 15:51:44,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c503a4f99e9d434b57460def5fd8e96a9c9fe401,c503a4f99e9d434b57460def5fd8e96a9c9fe401,updated dist
+vieron,2012-09-12 15:50:40,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3bc9ea3527bc0aeb4d1378a0acfd13d2ed41e7a5,3bc9ea3527bc0aeb4d1378a0acfd13d2ed41e7a5,"Possibility to namespace first-time styles generated by gridster.
+
+Useful if you have multiple grid instances in the same document."
+vieron,2012-09-09 12:32:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/104ee3220df8df191989fe110e9ef7279b0e6464,104ee3220df8df191989fe110e9ef7279b0e6464,updated dist
+vieron,2012-09-09 12:21:31,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b71b8727df99b81f0e5bbb5c450645f86b506882,b71b8727df99b81f0e5bbb5c450645f86b506882,"gridster: moving down widgets under placeholder. Related to #4.
+
+This solves the overlapping-blocks seen in the screencast provided by @daniel-nelson. I've captured another one trying to reproduce the same movements with this commit applied: http://www.screenr.com/g7J8"
+vieron,2012-09-08 11:58:47,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dc61567454a36901c091314de6bc9c8a99097451,dc61567454a36901c091314de6bc9c8a99097451,"collision: ignore min_area in collision sorting
+
+This doesn't work with grids with small values in widget_base_dimensions and widget_margins options."
+vieron,2012-08-20 19:06:38,https://api.github.com/repos/ducksboard/gridster.js/git/commits/60fbb1cbf2bbe8cdbe79784f7c5a594d889b394b,60fbb1cbf2bbe8cdbe79784f7c5a594d889b394b,updated dist
+vieron,2012-08-20 19:06:21,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9402f202b8a9662953c028578aa0568193ed9e9a,9402f202b8a9662953c028578aa0568193ed9e9a,"update coords for the new widget size. 
+
+Reported by @bmla in https://github.com/ducksboard/gridster.js/commit/dbf98cc9bdc#commitcomment-1735360"
+vieron,2012-08-19 23:46:52,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1086fe5b770fa1429a396c8e5079d1afdd2e45c7,1086fe5b770fa1429a396c8e5079d1afdd2e45c7,updated dist
+vieron,2012-08-19 22:45:04,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dbf98cc9bdcad136f1e1d62261b5d5a2e1b4e4d8,dbf98cc9bdcad136f1e1d62261b5d5a2e1b4e4d8,"Resize widgets feature. Closes #15.
+
+By popular demand, now gridster allows to change the size of widgets dynamically.
+
+Usage.
+- gridster_api.resize_wiget($widget, [size_x], [size_y]);
+
+E.g. (try in gridster.net):
+    - gridster.resize_widget($('.gs_w:eq(3)'), 6);
+    - gridster.resize_widget($('.gs_w:eq(3)'), 1, 4);
+
+To do this, two new methods were added to gridster:
+
+    - empty_cells(col, row, size_x, size_y, $exclude)
+      Move down widgets in cells represented by the arguments col, row, size_x,
+      size_y.
+
+    - remove_empty_cells(col, row, size_x, size_y, $exclude)
+      Move up widgets below cells represented by the arguments col, row, size_x,
+      size_y.
+
+Also, add_widget method supports specifying a row and column. This was easy
+through empty_cells method. Related to #24. Thanks to @parkerd for the help!
+
+The code should be improved and make it more reusable when the feature of
+""move widgets dynamically"" is added (related to #20)."
+vieron,2012-08-18 20:09:23,https://api.github.com/repos/ducksboard/gridster.js/git/commits/010444f57caf084c7d14db34e6d2e1dbb2981489,010444f57caf084c7d14db34e6d2e1dbb2981489,Allow widgets to start in a specific col+row on the grid
+vieron,2012-08-13 20:14:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/32ea0da04b28b9d4648278be9916721429f3eaa0,32ea0da04b28b9d4648278be9916721429f3eaa0,wip: resize widget feature
+vieron,2012-08-18 17:47:26,https://api.github.com/repos/ducksboard/gridster.js/git/commits/04301f48c90808f7d60d71be82376e7279217397,04301f48c90808f7d60d71be82376e7279217397,updated dist
+vieron,2012-08-18 16:46:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1d65da926039144239aa2fc82aef44fc23b2265f,1d65da926039144239aa2fc82aef44fc23b2265f,"Improving the way that rows are calculated. Related to #30.
+
+Until now, the number of rows for the faux grid (this.cols) was calculated taking the highest
+value among min_rows option, the highest widget, and the number of rows
+that fits on the wrapper height (based on widget_base_dimensions, widget_margins
+and extra_rows options).
+
+In addition to this, styles for data-row attributes ara generated based on
+this.cols (above) plus a constant value of 10. This was done to reduce
+the number of cells by which iterate when dragging, but it's not very logical...
+
+So, now the number of rows is calculated by adding the height of all widgets.
+In this way we ensure that there is always available cells in the grid.
+Also the same number of rows are generated for both the faux grid and
+the DOM grid (css styles)."
+vieron,2012-08-13 22:11:01,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3ba70b74535f7c01b93756b24da22823b4efd853,3ba70b74535f7c01b93756b24da22823b4efd853,updated dist
+vieron,2012-08-13 22:06:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/573ed669224ef511f8b7c6e78c77fdcdbfdc47ad,573ed669224ef511f8b7c6e78c77fdcdbfdc47ad,"fixes in drag/stop callbacks. Related to #23.
+
+- break ondrag callback execution if stop event already was fired.
+- unset this.$player after the execution of draggable.stop callback."
+vieron,2012-08-13 20:32:35,https://api.github.com/repos/ducksboard/gridster.js/git/commits/81c96b92d50ae5267dd7e73ce2f0e2ddd375905c,81c96b92d50ae5267dd7e73ce2f0e2ddd375905c,"fixed: drag api access from gridster and draggable.disable method.
+
+Fixes #25. I broke this in the issue #17 and commit 8e7a5c."
+vieron,2012-08-12 23:18:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0fadccaa2f01faa34498e433259fc5bf96083699,0fadccaa2f01faa34498e433259fc5bf96083699,updated dist
+vieron,2012-08-12 22:18:29,https://api.github.com/repos/ducksboard/gridster.js/git/commits/8e7a5cec53656069e524ecfb18b99da22c566489,8e7a5cec53656069e524ecfb18b99da22c566489,prevent selection when dragging
+vieron,2012-08-12 16:38:18,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6c9eaf067d19a494386d75a858e9be31989f22fe,6c9eaf067d19a494386d75a858e9be31989f22fe,"Fixes related to overlapping problems. Solve part of #4.
+
+Some fixes are about errors (seen in the link provided by @floflow in #16)
+produced by drag large blocks."
+vieron,2012-08-08 21:36:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c047153f05ef52453c6b122df094df039de3075d,c047153f05ef52453c6b122df094df039de3075d,updated dist
+vieron,2012-08-08 21:33:31,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d78bd254bd8e162ae113a7bb6c71b539eaf78728,d78bd254bd8e162ae113a7bb6c71b539eaf78728,"renamed jQuery adapter for Draggable class to $.fn.drag. Fixes #17.
+
+Prevents name collisions with jQuery UI draggable module."
+vieron,2012-08-08 18:39:08,https://api.github.com/repos/ducksboard/gridster.js/git/commits/2c166389050f4bd3ed6967541f67aeb443a57c36,2c166389050f4bd3ed6967541f67aeb443a57c36,updated dist
+vieron,2012-08-08 18:17:14,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5f4e6ded395d6c051641abdff69f025aa87938ea,5f4e6ded395d6c051641abdff69f025aa87938ea,fixed index error in for loop. Fixes #16.
+vieron,2012-08-07 23:23:33,https://api.github.com/repos/ducksboard/gridster.js/git/commits/568f7210eaa4d22b3f42adf2f39ff833a5ef2f88,568f7210eaa4d22b3f42adf2f39ff833a5ef2f88,updated dist
+vieron,2012-08-07 23:18:04,https://api.github.com/repos/ducksboard/gridster.js/git/commits/148963d12fb54a829ae53b32c50b67eeb98fa032,148963d12fb54a829ae53b32c50b67eeb98fa032,"added max_size_x and max_size_y as configurable options. Fixes #16.
+
+The maximum number of columns/rows that a widget can span
+was hardcoded to 6. Maybe it makes sense for dashboards but
+not for other uses of gridster."
+vieron,2012-08-06 23:01:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/151b3bffa6d8f68314048342a64de47a83d031eb,151b3bffa6d8f68314048342a64de47a83d031eb,updated dist
+vieron,2012-08-06 23:00:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7dbf396e9c30715fef80c9b29c6179ef3efa03dc,7dbf396e9c30715fef80c9b29c6179ef3efa03dc,grunt: modified watch command config
+vieron,2012-08-06 22:59:58,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dc0a548bd4befbd65581e3288e9a65ac5b8bd2c2,dc0a548bd4befbd65581e3288e9a65ac5b8bd2c2,stupid typos
+vieron,2012-08-06 22:59:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ca7577950e3bbb8dd8888ebadf3251d2ad63991a,ca7577950e3bbb8dd8888ebadf3251d2ad63991a,don't start drag if <button> is clicked
+vieron,2012-08-06 21:55:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ded20e32f1565d782ad4194ff57f40caeec61159,ded20e32f1565d782ad4194ff57f40caeec61159,updated dist
+vieron,2012-08-06 21:55:30,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f359a7eb76409d5edc39f25a31dfdfcd24af313c,f359a7eb76409d5edc39f25a31dfdfcd24af313c,fixed typo in docs
+vieron,2012-08-05 10:40:27,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6e8de6d9ab313e8a3d47e791034f02ed061a95b1,6e8de6d9ab313e8a3d47e791034f02ed061a95b1,updated dist
+vieron,2012-08-05 10:39:51,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1316a37e6046db67c10eacc5e1b0ea1dfeabf91b,1316a37e6046db67c10eacc5e1b0ea1dfeabf91b,"added touch support. Closes #12, closes #9"
+vieron,2012-08-05 09:00:08,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0e942677ec5f99bd36adb53f65fe99c853c09b65,0e942677ec5f99bd36adb53f65fe99c853c09b65,increased scroll area size and scroll speed
+vieron,2012-08-03 21:51:55,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9bf0283a1fbfedea1774b09157c9dae83fb4d901,9bf0283a1fbfedea1774b09157c9dae83fb4d901,updated dist
+vieron,2012-08-03 21:49:46,https://api.github.com/repos/ducksboard/gridster.js/git/commits/39a473cedf203326e79219d0d5ce09be97e96c95,39a473cedf203326e79219d0d5ce09be97e96c95,Doing form elements inside widgets clickable. Fixes #7.
+vieron,2012-08-03 14:45:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9987989c8c8d94099427285ec97035b42c0e8acc,9987989c8c8d94099427285ec97035b42c0e8acc,Caching $(document.body) once document is ready. Fixes #10.
+vieron,2012-07-30 19:18:43,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c03a11eed83e697ae7522e78312bc7991f8b944f,c03a11eed83e697ae7522e78312bc7991f8b944f,updated dist
+vieron,2012-07-30 19:17:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4048784eaf77b35cda3845b08f38ecb0005b87ef,4048784eaf77b35cda3845b08f38ecb0005b87ef,Forcing conversion to arrays before calling Math.max
+vieron,2012-07-30 10:49:42,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d6d3c67ea41caf002a3a4e92a817463d562365a6,d6d3c67ea41caf002a3a4e92a817463d562365a6,updated dist
+vieron,2012-07-30 10:49:28,https://api.github.com/repos/ducksboard/gridster.js/git/commits/07784bc1a0e9c769d515e20a87b9f352fed83adb,07784bc1a0e9c769d515e20a87b9f352fed83adb,updated grunt config to generate a copy of dist/ inside gh-pages
+vieron,2012-07-27 15:56:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/dffdc794c71278773b3831243359af4b20a5acbd,dffdc794c71278773b3831243359af4b20a5acbd,generated dist
+vieron,2012-07-27 15:55:04,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6972f9fb333af9ac1ef645347272beb4491b6d9b,6972f9fb333af9ac1ef645347272beb4491b6d9b,recalculate grid height when a widget is removed
+wulczer,2012-07-27 11:51:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/698bc9c5f1a4095384b0bfa3618128f83def8468,698bc9c5f1a4095384b0bfa3618128f83def8468,generated dist
+wulczer,2012-07-27 11:51:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/817c9936ad87234aadd7b2e652db7561e60c4364,817c9936ad87234aadd7b2e652db7561e60c4364,change homepage url and description
+wulczer,2012-07-27 11:40:56,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5006689badf922c0a5f09e75ac8e601d97646d20,5006689badf922c0a5f09e75ac8e601d97646d20,add a simple README file
+wulczer,2012-07-27 11:29:50,https://api.github.com/repos/ducksboard/gridster.js/git/commits/74cc7c49a90e26c21a12b7c74a81a2257c89dd80,74cc7c49a90e26c21a12b7c74a81a2257c89dd80,generated dist
+wulczer,2012-07-27 11:29:42,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d84de52886379f62d856804d8d720084ae12bf55,d84de52886379f62d856804d8d720084ae12bf55,update .gitignore
+wulczer,2012-07-27 11:29:31,https://api.github.com/repos/ducksboard/gridster.js/git/commits/ec60bde4df6805b204490f5947ee1021b22d4463,ec60bde4df6805b204490f5947ee1021b22d4463,make the description more descriptive
+wulczer,2012-07-27 11:29:07,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f4e425ced25790966ea633283660c464b58b68df,f4e425ced25790966ea633283660c464b58b68df,switch to using the MIT license exclusively
+wulczer,2012-07-27 11:28:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9cdd02df41f88b78d10259617678da02c250f56d,9cdd02df41f88b78d10259617678da02c250f56d,"get rid of jquery-ui, not used anymore"
+vieron,2012-07-26 10:37:02,https://api.github.com/repos/ducksboard/gridster.js/git/commits/a993008afbcff4aab1d6d362dae66031005e559c,a993008afbcff4aab1d6d362dae66031005e559c,removing also demo site from master
+vieron,2012-07-26 10:35:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c46c3482230f57407bff88537869e430f30b8ea2,c46c3482230f57407bff88537869e430f30b8ea2,removing docs from master
+vieron,2012-07-26 10:34:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/fe1a536a31efa1bd803cea7cb3ccb084727ef6a2,fe1a536a31efa1bd803cea7cb3ccb084727ef6a2,modified grunt to generate docs in gh-pages folder
+vieron,2012-07-26 08:00:00,https://api.github.com/repos/ducksboard/gridster.js/git/commits/cf4e876a84823cce1fdc9d8cb8fee66f898d07ec,cf4e876a84823cce1fdc9d8cb8fee66f898d07ec,updated dist
+vieron,2012-07-26 07:58:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/341e1bbd4c035254577b5a119d3e6cdf69b533b6,341e1bbd4c035254577b5a119d3e6cdf69b533b6,prevent cols/rows from being empty arrays (needed to pass phantom tests)
+vieron,2012-07-25 15:59:01,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c6e77dc66198f55756248cc64da3e99ef1911949,c6e77dc66198f55756248cc64da3e99ef1911949,generated dist
+vieron,2012-07-25 15:58:18,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e4e06f4cde80e3f7a4094b4c30ddfd5ba2fe9557,e4e06f4cde80e3f7a4094b4c30ddfd5ba2fe9557,gridster: passing Math (not null) as first argument in Math.max.apply()
+vieron,2012-07-24 15:03:42,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f12cebb33ed56f5f129233394abd0b08525c7a06,f12cebb33ed56f5f129233394abd0b08525c7a06,increased the mouse area that triggers scroll
+vieron,2012-07-24 14:56:37,https://api.github.com/repos/ducksboard/gridster.js/git/commits/cdf8e26c6488b1ca83e193d150e9f5ec909d1c81,cdf8e26c6488b1ca83e193d150e9f5ec909d1c81,updated docs and dist
+vieron,2012-07-24 14:56:16,https://api.github.com/repos/ducksboard/gridster.js/git/commits/06b53fdc192bff54cd5af80542d02de1263f24c4,06b53fdc192bff54cd5af80542d02de1263f24c4,throttling to 60ms to prevent overlapping
+vieron,2012-07-24 14:55:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0016c99a617f55ebca15bbc562bccbb271747b83,0016c99a617f55ebca15bbc562bccbb271747b83,offsetX is not needed
+vieron,2012-07-24 14:25:55,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bfe21a568dfc3781e7d1d4982f28baab51da9a97,bfe21a568dfc3781e7d1d4982f28baab51da9a97,updated docs and dist
+vieron,2012-07-24 14:25:43,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3460a436b2d9b3a10ffa2aab8a91cfcdebdf7125,3460a436b2d9b3a10ffa2aab8a91cfcdebdf7125,"scroll logic based on mouse position, not in items position"
+vieron,2012-07-24 13:43:19,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5ab5ce95dc279148f9d9340fe5efbdf9490bc6bd,5ab5ce95dc279148f9d9340fe5efbdf9490bc6bd,updated docs and dist
+vieron,2012-07-24 13:40:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3456aef4089192f41a7009b233694b37121d6879,3456aef4089192f41a7009b233694b37121d6879,trottling drag callback
+vieron,2012-07-24 13:40:32,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b5a2a2c4cd74e963e4568f9b272be2215e14bed9,b5a2a2c4cd74e963e4568f9b272be2215e14bed9,scroll document when dragging up or down
+vieron,2012-07-24 08:51:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7e4fa9fcbe3543379b69c2f659884e1097d27477,7e4fa9fcbe3543379b69c2f659884e1097d27477,updated remove_widget method in doc
+vieron,2012-07-24 08:35:07,https://api.github.com/repos/ducksboard/gridster.js/git/commits/62caa4abf72d2861917762fba4d7ec791a3c3b36,62caa4abf72d2861917762fba4d7ec791a3c3b36,updated docs and dist
+vieron,2012-07-24 08:31:08,https://api.github.com/repos/ducksboard/gridster.js/git/commits/443d0fbc29bfe633bcf07e90c92bc32164e9e61e,443d0fbc29bfe633bcf07e90c92bc32164e9e61e,jslinting
+vieron,2012-07-23 20:51:04,https://api.github.com/repos/ducksboard/gridster.js/git/commits/4eb679fb78035c171f8388f8b08da279c32387f7,4eb679fb78035c171f8388f8b08da279c32387f7,documentation fixes
+vieron,2012-07-23 20:08:09,https://api.github.com/repos/ducksboard/gridster.js/git/commits/aa939d8bf7ed5360b721a920770336dd6dff1c1c,aa939d8bf7ed5360b721a920770336dd6dff1c1c,updated docs and dist
+vieron,2012-07-23 20:07:43,https://api.github.com/repos/ducksboard/gridster.js/git/commits/33b8f206cf11dc325a25f9f3383a56bb943479c1,33b8f206cf11dc325a25f9f3383a56bb943479c1,updated Gridster doc and code style corrections
+vieron,2012-07-23 19:50:15,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7e8ce8dd0ac6bf563b75dc03ccbff1e3772f3200,7e8ce8dd0ac6bf563b75dc03ccbff1e3772f3200,Coords constructor documentation
+vieron,2012-07-23 19:49:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7ae385ea05adee3f89a0ec241750f73667fe0247,7ae385ea05adee3f89a0ec241750f73667fe0247,some small documentation for draggable class
+vieron,2012-07-23 19:48:25,https://api.github.com/repos/ducksboard/gridster.js/git/commits/00e7c46b31a5f423f7b1c460e4fc813feca9946f,00e7c46b31a5f423f7b1c460e4fc813feca9946f,avoid calls to empty functions in defaults object
+vieron,2012-07-23 19:46:27,https://api.github.com/repos/ducksboard/gridster.js/git/commits/bf2ee674506904c6e88a60de088cbc724b462cf3,bf2ee674506904c6e88a60de088cbc724b462cf3,only start drag with right click
+vieron,2012-07-23 19:44:51,https://api.github.com/repos/ducksboard/gridster.js/git/commits/981895eab4fe25388cd2fdd96e3b11d44eb6e111,981895eab4fe25388cd2fdd96e3b11d44eb6e111,"default value for css transitions is: ""all 0s"" not ""none"""
+vieron,2012-07-23 19:44:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f650da85862d055d7b64e9fada53311c8baee572,f650da85862d055d7b64e9fada53311c8baee572,fixing tab spaces and some documentation
+vieron,2012-07-23 13:15:26,https://api.github.com/repos/ducksboard/gridster.js/git/commits/c998cb49b375f6175adea8172a384d7b6c58adec,c998cb49b375f6175adea8172a384d7b6c58adec,updated docs and dist
+vieron,2012-07-23 13:14:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f0a50649d1d13a986aa6253ff63bd294a33015b4,f0a50649d1d13a986aa6253ff63bd294a33015b4,removing playing-revert class when gridster is disabled
+vieron,2012-07-23 09:04:33,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d1b7009fc91289aa447ba3d75c7e7c1d22db9c4b,d1b7009fc91289aa447ba3d75c7e7c1d22db9c4b,improved and more robust css
+vieron,2012-07-23 09:03:06,https://api.github.com/repos/ducksboard/gridster.js/git/commits/3e1d00558568e2fd7e1c0078915de8f9b9ad4ab6,3e1d00558568e2fd7e1c0078915de8f9b9ad4ab6,don`t recalculate offset if it is passed to the update method
+vieron,2012-07-23 09:02:18,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0446186c988c941b9b08d88d6f2d1b66e0027b15,0446186c988c941b9b08d88d6f2d1b66e0027b15,"utils: throttle, debounce"
+vieron,2012-07-23 09:01:48,https://api.github.com/repos/ducksboard/gridster.js/git/commits/288df54e869ee3f4bc1ccc8d6fd4f2255e9cde74,288df54e869ee3f4bc1ccc8d6fd4f2255e9cde74,basic jQuery draggable plugin
+vieron,2012-07-23 09:01:05,https://api.github.com/repos/ducksboard/gridster.js/git/commits/5edfe0a4880e11c58f8c0eba537f3df0d1b53a02,5edfe0a4880e11c58f8c0eba537f3df0d1b53a02,"new methods, fixes and improvements:
+
+- new disable, enable methods
+
+- don't generate duplicated stylesheets for the same origin config
+
+- new configuration option called avoid_overlapped_widgets. Avoid that widgets loaded from the DOM can be overlapped. It is helpful if the positions were bad stored in the database or if there was any conflict.
+
+- Removed jquery ui dependencie.
+
+- Fix to prevent widgets go out of the grid.
+
+- New methods to get all widgets from a column or row.
+
+- generate_stylesheets method now supports namespaces to generate multiple stylesheets based on a parent class."
+vieron,2012-07-23 08:53:57,https://api.github.com/repos/ducksboard/gridster.js/git/commits/1507974e07c26149ed27455d1b91f2d8d4edd310,1507974e07c26149ed27455d1b91f2d8d4edd310,collision: don't calculate player coords if we have it
+vieron,2012-07-20 13:48:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/60a873a131dfbeae17dfb460c4a194c6c62b4fea,60a873a131dfbeae17dfb460c4a194c6c62b4fea,updated dist
+vieron,2012-07-20 13:47:39,https://api.github.com/repos/ducksboard/gridster.js/git/commits/18b620f6cecaad773d804f1e27b68a651bb346f1,18b620f6cecaad773d804f1e27b68a651bb346f1,the remove_widget callback must be inside the fadeout callback
+vieron,2012-07-20 12:03:32,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0b310de6e7c401c9a0fc9512aaa57afb855b92f6,0b310de6e7c401c9a0fc9512aaa57afb855b92f6,updated dist
+vieron,2012-07-20 12:03:24,https://api.github.com/repos/ducksboard/gridster.js/git/commits/fbeb2ac05c2801eafccd42d8076183a1f2ae748f,fbeb2ac05c2801eafccd42d8076183a1f2ae748f,fixed add_widget method
+vieron,2012-07-20 12:03:03,https://api.github.com/repos/ducksboard/gridster.js/git/commits/9dbad2b29eeacad747a560ec92fb4b0dc90e94e0,9dbad2b29eeacad747a560ec92fb4b0dc90e94e0,remove_widget accepts a callback as second argument
+vieron,2012-07-20 09:06:26,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7624182bf46f914d6702bed72255e5f50367a193,7624182bf46f914d6702bed72255e5f50367a193,updated docs and diet
+vieron,2012-07-20 09:04:54,https://api.github.com/repos/ducksboard/gridster.js/git/commits/0e03a0543597963f6f22092b31446bc895cff7e6,0e03a0543597963f6f22092b31446bc895cff7e6,"namespaced gridster events: dragstart, dragstop, drag"
+vieron,2012-07-19 14:45:01,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f2356c8a08669bb12930a9d595359dff091438c0,f2356c8a08669bb12930a9d595359dff091438c0,updated docs and dist
+vieron,2012-07-19 14:44:49,https://api.github.com/repos/ducksboard/gridster.js/git/commits/79bec6897f04f60d8a538558ad34c817ddc81e88,79bec6897f04f60d8a538558ad34c817ddc81e88,using next_positions inside add_widget method
+vieron,2012-07-19 14:10:38,https://api.github.com/repos/ducksboard/gridster.js/git/commits/e610465a2782f551215e06e5ac8f1c477f04dbde,e610465a2782f551215e06e5ac8f1c477f04dbde,updated docs and dist
+vieron,2012-07-19 14:10:31,https://api.github.com/repos/ducksboard/gridster.js/git/commits/97074001bbd55459d8a202def038c935301f9ede,97074001bbd55459d8a202def038c935301f9ede,fixed a bug that caused next_positions method redefinition
+vieron,2012-07-19 13:56:12,https://api.github.com/repos/ducksboard/gridster.js/git/commits/d4145e873cf0a975817afa6affdd0082197cc1dd,d4145e873cf0a975817afa6affdd0082197cc1dd,updated doc and dist
+vieron,2012-07-19 13:56:01,https://api.github.com/repos/ducksboard/gridster.js/git/commits/2bcd943fffcab3bf8714720dd88690d23ed84d3c,2bcd943fffcab3bf8714720dd88690d23ed84d3c,new method to get the next position of a new widget
+vieron,2012-07-19 09:16:29,https://api.github.com/repos/ducksboard/gridster.js/git/commits/15a2dba98ed9811d54d7838df1eccbb96448372a,15a2dba98ed9811d54d7838df1eccbb96448372a,updated docs and dist
+vieron,2012-07-19 09:08:10,https://api.github.com/repos/ducksboard/gridster.js/git/commits/b83d993d4bfb195785028f39383c00fe7967e70c,b83d993d4bfb195785028f39383c00fe7967e70c,recalculate faux grid offsets when browser is resized
+vieron,2012-07-18 19:49:08,https://api.github.com/repos/ducksboard/gridster.js/git/commits/7e1e5e5217dc3e9785b005871520fa526d1103dd,7e1e5e5217dc3e9785b005871520fa526d1103dd,minified versions
+vieron,2012-07-18 19:48:53,https://api.github.com/repos/ducksboard/gridster.js/git/commits/31028a39759720e2041c38f62a30b47e206a333d,31028a39759720e2041c38f62a30b47e206a333d,fixed compatibility issues with the helper:clone option of Draggable
+vieron,2012-07-18 17:08:36,https://api.github.com/repos/ducksboard/gridster.js/git/commits/6fe6f720dad7d6a3641b3fb2a36b89e62f82a357,6fe6f720dad7d6a3641b3fb2a36b89e62f82a357,documentation typos
+vieron,2012-07-18 17:07:59,https://api.github.com/repos/ducksboard/gridster.js/git/commits/f4a9ae80d843dec631e126d0dae7e7c7bd986996,f4a9ae80d843dec631e126d0dae7e7c7bd986996,links to downloads and others
+vieron,2012-07-18 16:31:44,https://api.github.com/repos/ducksboard/gridster.js/git/commits/257914ee99521abcd98c97775ff010082b564f0a,257914ee99521abcd98c97775ff010082b564f0a,initial commit

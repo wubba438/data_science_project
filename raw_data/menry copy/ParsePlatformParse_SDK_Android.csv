@@ -1,0 +1,1369 @@
+Parse-SDK-Android,Parse SDK for Android
+username,timestamp,url,sha,message
+oliveiradev,2019-09-16 15:39:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f085fe7a7f9d78d77dd4f5e7cce702b111b2c8aa,f085fe7a7f9d78d77dd4f5e7cce702b111b2c8aa,"Enhancement/parsequery operations (#972)
+
+* Add more operation extensions to parse query
+
+* Add a coroutine builder to call parse query operations as a receiver
+
+* Change package structure
+
+* Add parse object support"
+oliveiradev,2019-08-09 18:30:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/39e0da3672945c6651e3deb3b78fd283e3d4f793,39e0da3672945c6651e3deb3b78fd283e3d4f793,"Feature/coroutines support (#958)
+
+* Add Coroutines suport
+
+Call parse query find as a suspend function
+Call login and singup as a suspend function
+Call cloud function as a suspend function
+
+* Add coroutines README link at root project"
+danielsanfr,2019-08-09 15:31:39,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/34514353d2965593ad87072486905016e103f3d6,34514353d2965593ad87072486905016e103f3d6,"Bugfix save user in batch (#964)
+
+* Fix for #499
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>
+
+* Avoid code smell
+
+According to SonarLint this is a necessary change to avoid code smell:
+https://rules.sonarsource.com/java/tag/brain-overload/RSPEC-135
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>"
+rogerhu,2019-04-16 15:38:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7417db52564a763303eef6c79b2507cf3d5a5ef3,7417db52564a763303eef6c79b2507cf3d5a5ef3,Firebase is still not using AndroidX so use Jetifier for now (#942)
+ovidiulaz7,2019-04-11 14:50:39,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d947987f9f7c5c4623d48f385eb2bf93ebccbb6f,d947987f9f7c5c4623d48f385eb2bf93ebccbb6f,Fixed fetchAllIfNeeded and fetchAllIfNeededInBackground returning default Parse Query limit of 100 objects. (#939)
+TomWFox,2019-04-01 21:03:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0d5c3d6a305387292fa7bdd91ef16ef5df3b996c,0d5c3d6a305387292fa7bdd91ef16ef5df3b996c,fix badge links
+TomWFox,2019-03-30 19:34:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e0bca71826633afd12407635e920cf7ba5a556fc,e0bca71826633afd12407635e920cf7ba5a556fc,Update README.md
+TomWFox,2019-03-30 19:15:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e4d2c84680562b4b10959973170eef98ab8a128a,e4d2c84680562b4b10959973170eef98ab8a128a,Update README.md
+TomWFox,2019-03-21 17:34:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/31828b90c84e0fb764a4e26dd646b1f73e0f874e,31828b90c84e0fb764a4e26dd646b1f73e0f874e,"Create CODE_OF_CONDUCT.md (#935)
+
+* Create CODE_OF_CONDUCT.md
+
+* change email"
+danielsanfr,2019-02-28 19:00:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3f0f63cb354b0b366b5aa53a192f5c14e6bf015c,3f0f63cb354b0b366b5aa53a192f5c14e6bf015c,"Expose useful constants (#930)
+
+* Expose useful constants
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>
+
+* Fix import order
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>"
+danielsanfr,2019-02-26 17:46:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/aa36e0ef0da0bb6b906b6a22497edf9c0d0f044b,aa36e0ef0da0bb6b906b6a22497edf9c0d0f044b,"ParseQuery extensions (#929)
+
+* Implement extensions to ParseQuery to use property's name as key instead of strings
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>
+
+* Update README to show ParseQuery extensions
+
+Signed-off-by: Daniel San <daniel.samrocha@gmail.com>"
+Jawnnypoo,2019-02-19 15:26:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/966a740a13bcd198d51691fe8b4141aeb4644de9,966a740a13bcd198d51691fe8b4141aeb4644de9,Change to use non-deprecated methods for registering FCM push token (#927)
+Jawnnypoo,2019-02-14 16:24:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/29c45f49d0f1aeac4462d2c2a5a29c5b9e599485,29c45f49d0f1aeac4462d2c2a5a29c5b9e599485,Convert project to use AndroidX (#926)
+jhansche,2019-02-14 15:46:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f2e64752fa78a2163c7f991918a4d2e9d1a617d3,f2e64752fa78a2163c7f991918a4d2e9d1a617d3,"Fix StackOverflowError when merging ParseObject from JSON (#925)
+
+* Add test for StackOverflowError during mergeFromServer
+
+This test shows the #896 bug.
+
+* Make a synchronized copy of availableKeys
+
+`synchronizedSet(s)` ends up making a new wrapper for the supplied set, which
+means on subsequent calls, it becomes a SynchronizedSet, wrapped in a
+SynchronizedSet, wrapped ... etc.
+
+When using the LocalDataStore, the ParseObject.State is reused for every
+matching ClassName+ObjectId pair, so every time a ParseObject is parsed from
+JSON data, the existing object is ""refreshed"" by making a copy of its State,
+and then merging with the new data. Every call to State.newBuilder() is
+therefore adding a new layer of SynchronizedSet to the availableKeys Set.
+
+Eventually that nested hierarchy of sets becomes so large that it causes a
+StackOverflowError for any operation on the collection.
+
+By making a copy of the set before wrapping it in synchronizedSet(), that
+nested hierarchy becomes severed, and we end up with just one level of
+wrappers.
+
+* Accept the updated Android Build-Tools 27 license"
+rogerhu,2018-12-20 22:48:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5bd91aa2f47574eb9cbfadd627f005df7cb968a9,5bd91aa2f47574eb9cbfadd627f005df7cb968a9,Google should come first now (#917)
+eduardbosch,2018-12-20 18:03:39,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ce7757af2c76db63f28576dd64fb7bc336bdc98f,ce7757af2c76db63f28576dd64fb7bc336bdc98f,chore: Update firebase messaging to 17.3.4 (#916)
+danielsanfr,2018-10-02 16:49:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/696af29ab042ff922ba44b7949fc0a8ba32d2873,696af29ab042ff922ba44b7949fc0a8ba32d2873,"Feature kotlin delegates (#892)
+
+* Implement generic delegate for attributes
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for boolean
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for double
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for float
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for int
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for long
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for string
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for bytes
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for map
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for list
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for JsonArray
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for JsonObject
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for ParseRelation
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement specialized property delegation for Enum
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Implement generic delegate for attributes with some checks
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Small fix on ParseDelegate set property type
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Add basic documentation to all delegate classes
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Add property delegation documentation on README.md
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>
+
+* Update kotlin version
+
+Signed-off-by: Daniel San <danielsan@ilhasoft.com.br>"
+mmimeault,2018-09-25 14:04:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ff97db39efd7120e5660816a274b88349de11cd4,ff97db39efd7120e5660816a274b88349de11cd4,NullSafe getNotification when building push notification (#889)
+rodrigosmarques,2018-09-02 10:10:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cbb1b80c8018388f850cfdef8630d4588b3c980f,cbb1b80c8018388f850cfdef8630d4588b3c980f,"Update README.md (#883)
+
+The service definition ""com.parse.fcm.ParseFirebaseMessagingService"" was missing the "">"" character at the end, causing error in AndroidManifest.xmll"
+Jawnnypoo,2018-08-01 01:06:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c475694e34672d5a197fc9e780129ae1f6007ebd,c475694e34672d5a197fc9e780129ae1f6007ebd,"Set version name to ""unknown"" if not found in manifest (#870)"
+Jawnnypoo,2018-07-31 15:10:28,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dd3641cec429c943eed612ead279c63ddd1dcd4c,dd3641cec429c943eed612ead279c63ddd1dcd4c,Fix badges (#868)
+Jawnnypoo,2018-07-31 15:03:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/40398222a668ead208b37ac2c2284a909a322c76,40398222a668ead208b37ac2c2284a909a322c76,Add links for additional projects (#867)
+Jawnnypoo,2018-07-26 12:34:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5795828c1a1eeb820264e1b8c218e6da6af7c5a7,5795828c1a1eeb820264e1b8c218e6da6af7c5a7,Return null result properly for cloud function (#862)
+Jawnnypoo,2018-07-25 21:31:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0cfc67e9a3bcedc714f0041ee60cafb40ed93520,0cfc67e9a3bcedc714f0041ee60cafb40ed93520,"Cleanup (#861)
+
+* Remove unneeded throws calls and remove some deprecated methods
+
+* Fix lint warnings, including javadocs, redundant initializers, and more
+
+* Remove some outdated things from the contributing doc
+
+* Fix potential null pointer exception within the push broadcast receiver
+
+* Add findAll to ktx and make extension functions inline
+
+* Remove more unused methods and inspection warnings
+
+* Update dependencies and remove unused class"
+Jawnnypoo,2018-07-23 16:39:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4030884b0e4731dc4e208d5371d1a124d0fc2321,4030884b0e4731dc4e208d5371d1a124d0fc2321,"Add KTX module (#860)
+
+* Add KTX module
+
+* Add contribution note
+
+* Add a few other extensions related to primative support"
+Jawnnypoo,2018-07-23 14:44:00,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ca91d879868f90220197920d5b0721a15fd4c78b,ca91d879868f90220197920d5b0721a15fd4c78b,Make PointerEncoder public for LiveQuery (#859)
+Jawnnypoo,2018-07-23 14:32:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2708284a933296f3e1b9919928143c731711cab3,2708284a933296f3e1b9919928143c731711cab3,Make things public for LiveQuery (#858)
+Jawnnypoo,2018-07-23 13:49:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c2103e17b6cfb760679003d0b21c2b1c1de174e8,c2103e17b6cfb760679003d0b21c2b1c1de174e8,Nullability annotations (#857)
+Jawnnypoo,2018-07-23 12:47:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8f3a2d8775eac444261c8ac24445503a7d8c737e,8f3a2d8775eac444261c8ac24445503a7d8c737e,Fix broken README links (#856)
+Jawnnypoo,2018-07-23 12:37:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cedc1dfb03348761688d5abd87c552a1b9cd4b19,cedc1dfb03348761688d5abd87c552a1b9cd4b19,"Formatting (#855)
+
+* Make things public for Parse LiveQuery
+
+* Rename part 1
+
+* Rename part 2
+
+* Auto formatting of all files using default Android Studio lint rules
+
+* Deploy with JitPack
+
+* Remove references to library version, since they would no longer be accurate"
+cjosepha,2018-07-20 05:11:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b0b00d1257c46a50619a4729853b48b7c933db1a,b0b00d1257c46a50619a4729853b48b7c933db1a,"Save eventually issue (#831)
+
+* - Added a failing test for https://github.com/parse-community/Parse-SDK-Android/issues/827
+- The eventually queue should be cleared at each test execution but Parse.getEventuallyQueue().clear() crashes, that's why line 1585 is commented
+
+* Removed unused imports
+
+* Fixed ParseUserTest.testSaveEventuallyWhenSessionIsInvalid() so it reproduce exactly issue https://github.com/parse-community/Parse-SDK-Android/issues/827
+
+* Fixed server response mocking in ParseUserTest.testSaveEventuallyWhenSessionIsInvalid()
+
+* Failing test for #827 fails when the deadlock at ParseObject.java:L1604 occurs
+
+* * Suggestion of fix for #827
+* Improved test for #827 :
+- Generalize to any server error that is different to CONNECTION_FAILED (not only INVALID_SESSION_TOKEN)
+- Added isDirty() checks
+- fixed test tearDown
+
+* Working fix suggestion for #827"
+cjosepha,2018-07-16 20:12:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2817393a163142cbb3faf0bb43b76b0862134c58,2817393a163142cbb3faf0bb43b76b0862134c58,Improved exception handling in EventuallyPin.findAllPinned() (#843)
+cjosepha,2018-06-06 19:58:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8b6c1c11d1eb685c2b1e900ba1c98963ad094547,8b6c1c11d1eb685c2b1e900ba1c98963ad094547,"Delete issue (#832)
+
+* Added tests for https://github.com/parse-community/Parse-SDK-Android/issues/825
+
+* Fixed ParseObjectTest.testFailingSave() issue that was due to ParsePlugins already initialized.
+
+* Fixed https://github.com/parse-community/Parse-SDK-Android/issues/825
+
+* Fixed parseObjectTest.testFailingSave() issue due to other test class side effect.
+
+* Fixed code style"
+rogerhu,2018-06-01 17:10:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/76df4ae714b17679d08d0cb2e6d608a1512d785c,76df4ae714b17679d08d0cb2e6d608a1512d785c,"partial string match (#839)
+
+* feat: Search $all strings starting with given strings
+
+* fix: Use regex for containsAllStartsWith query condition
+
+* doc: Update containsAll documentation
+
+* refactor: Use KeyConstraints in containsAllStartsWith
+
+Reverts ParseEncoder changes
+
+* refactor: Revert line change
+
+* fix: containsAllStartingWith for offline datastore
+
+* fix: Constraints for $all $regex are KeyConstraints and not strings
+
+* fix: Remove unexistent call
+
+* Revert stuff"
+Jawnnypoo,2018-05-29 15:07:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/eea6dd40aecc1a4834a7f45c131c3353e070459b,eea6dd40aecc1a4834a7f45c131c3353e070459b,Match up all docs with artifact names (#836)
+flovilmart,2018-05-29 13:58:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bfd26558767f716d6b6ad9d6006b2f62fdeaefe9,bfd26558767f716d6b6ad9d6006b2f62fdeaefe9,publish fcm / gcm on their subpath (#835)
+Jawnnypoo,2018-05-24 14:45:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/624084062fcc2959184c4c4f375fb8b97e540862,624084062fcc2959184c4c4f375fb8b97e540862,Correction to gcm artifact name (#830)
+kurtisnelson,2018-05-19 00:01:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ff3e27b4328c0f39c419eddd7a6084d893f17d6f,ff3e27b4328c0f39c419eddd7a6084d893f17d6f,"Annotate nullable methods on ParseObject
+
+This makes the object linter/Kotlin friendly."
+Jawnnypoo,2018-05-08 19:33:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e86b920a001e9b184aa7d7f81cad00abcbe2afe8,e86b920a001e9b184aa7d7f81cad00abcbe2afe8,Remove package comments (#824)
+rogerhu,2018-05-07 17:00:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6916f25ccc04b8a4c80718a0d5dcf89dee498801,6916f25ccc04b8a4c80718a0d5dcf89dee498801,Update README.md
+rogerhu,2018-05-06 21:54:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b20042d9093d65779bb9e64749b64ba566ce784e,b20042d9093d65779bb9e64749b64ba566ce784e,Change README (#823)
+rogerhu,2018-05-06 18:45:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2da07fa957b752cb17ea9718d95ea6187f51af15,2da07fa957b752cb17ea9718d95ea6187f51af15,Bump to snapshot
+rogerhu,2018-05-06 16:33:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ce0fe9f7c0a084d3b92a61e1019dcbc3390d9a4e,ce0fe9f7c0a084d3b92a61e1019dcbc3390d9a4e,Bump version
+rogerhu,2018-05-06 16:33:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/827dad27bebb3095b1bc4c80494b041f7348e4e8,827dad27bebb3095b1bc4c80494b041f7348e4e8,Fix grammar
+rogerhu,2018-05-06 16:31:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3d7561fb9fe53a99741915408b60605e9c0da5c5,3d7561fb9fe53a99741915408b60605e9c0da5c5,Add README.md description
+rogerhu,2018-05-06 16:28:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f410409067f7f2a296303a0d5faa8949eec6cf8e,f410409067f7f2a296303a0d5faa8949eec6cf8e,Using fcm requires Parse servers to add FCM to their push configs
+rogerhu,2018-05-06 00:43:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/794421643b2129b674fcca6ecfe2947836377537,794421643b2129b674fcca6ecfe2947836377537,Bump to snapshot
+rogerhu,2018-05-06 00:42:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8df5ce3cba0ec51d945cbb5b2d2777539f854cc4,8df5ce3cba0ec51d945cbb5b2d2777539f854cc4,Bump to latest version
+rogerhu,2018-05-05 22:52:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6e16d421a37effd801130946b9379fecc5882113,6e16d421a37effd801130946b9379fecc5882113,Bump to 1.17.2
+rogerhu,2018-05-05 07:05:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4d3d28b8a256b5eda3377f350ccd34536e83a986,4d3d28b8a256b5eda3377f350ccd34536e83a986,Use a constant instead (#821)
+rogerhu,2018-05-05 06:44:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f3d47f6eb1a03240ad48fd10b35d75b61d8c48ff,f3d47f6eb1a03240ad48fd10b35d75b61d8c48ff,"Set installation to fcm now. (#820)
+
+The push adapter actually ignores the push type and falls back to the device type.  It should be OK to classify these pushes as FCM.
+
+https://github.com/parse-community/parse-server-push-adapter/blob/master/src/PushAdapterUtils.js#L20
+https://github.com/parse-community/parse-server-push-adapter/blob/master/src/ParsePushAdapter.js#L35
+
+We should move off the parse-server GCM module because the FCM send only needs the GCloud project instead of sender ID."
+rogerhu,2018-05-04 21:11:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ffea69feeb129db7d046ce39bc959ffd3bc9d879,ffea69feeb129db7d046ce39bc959ffd3bc9d879,Bump to snapshot
+rogerhu,2018-05-04 07:20:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1fbc7711905b75dbf0a131b9b7e60f8c877f3c45,1fbc7711905b75dbf0a131b9b7e60f8c877f3c45,Add upgrade instructions
+Jawnnypoo,2018-05-04 20:46:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8659e9b92fc23c2aa0cb95855aab8f88738eee13,8659e9b92fc23c2aa0cb95855aab8f88738eee13,Fix for allowing for override of notification builder
+rogerhu,2018-05-04 18:57:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/65c754ea837a62624b6de379f60f08156748b758,65c754ea837a62624b6de379f60f08156748b758,Fix parens
+rogerhu,2018-05-04 18:55:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ba106dd4298a1bea80e349e8db3470af2469dd56,ba106dd4298a1bea80e349e8db3470af2469dd56,Update README docs
+rogerhu,2018-05-04 18:53:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4ae6de4487d8028e2d9f34d3bf989e776566feba,4ae6de4487d8028e2d9f34d3bf989e776566feba,"Revert ""Allow override using the builder, so that small modifications can be made""
+
+This reverts commit 9949db74a848cf166c51df4cd3e609a1e1aa14e8."
+rogerhu,2018-05-04 18:52:38,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f8a5ba2ae9636795fcde2017a46260a65fdd259f,f8a5ba2ae9636795fcde2017a46260a65fdd259f,javadoc creation is broken after FCM/GCM modules... need to figure out how to fix it later
+rogerhu,2018-05-04 18:38:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5d48ed32a1097d18cd76cffa6521879d50669e13,5d48ed32a1097d18cd76cffa6521879d50669e13,Add POM metadata back
+rogerhu,2018-05-04 18:34:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/046c6e25273b9ee9be0775f9853a47237bd95a29,046c6e25273b9ee9be0775f9853a47237bd95a29,kill uploadArchives task
+rogerhu,2018-05-04 18:21:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b659ba6411e2497cdab8d9b0745b407fc0a7e009,b659ba6411e2497cdab8d9b0745b407fc0a7e009,Bump version to 1.17.0
+rogerhu,2018-05-04 17:22:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/afd3335bc27cfa41327865b9776c03c6603d9b2d,afd3335bc27cfa41327865b9776c03c6603d9b2d,Fix README (#818)
+rogerhu,2018-05-04 14:24:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/23c1dee785ed8c093bf445bb11d246efd55d56dd,23c1dee785ed8c093bf445bb11d246efd55d56dd,"Update README with Jitpack (#816)
+
+* Update README with Jitpack
+
+* remove publishing snapshots"
+rogerhu,2018-05-04 14:08:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b4beae39584562f7679b06f5e8b3927d16db88b6,b4beae39584562f7679b06f5e8b3927d16db88b6,Fix ParseGCM so that it works (#817)
+rogerhu,2018-05-02 14:28:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/256b955f0128fff22607c5e0c8ab9d3b8ca55e39,256b955f0128fff22607c5e0c8ab9d3b8ca55e39,"Update README.md (#813)
+
+Make consistent with changes"
+rogerhu,2018-05-02 07:03:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6bbd02c83904257dd81202a58b97a3381174be62,6bbd02c83904257dd81202a58b97a3381174be62,Fix javadoc issue
+rogerhu,2018-05-02 14:02:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/426a8e45708ef29cf905789a4359f9c89a27c41d,426a8e45708ef29cf905789a4359f9c89a27c41d,"Make LogLevel DEBUG instead of VERBOSE for FCM/GCM registration messages (#814)
+
+* We should make these messages debug logging level.
+
+* Add additional logging"
+Jawnnypoo,2018-05-02 06:40:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bff5381a951265dd5f82824210b38b45882a50e7,bff5381a951265dd5f82824210b38b45882a50e7,Update Google services version and OkHttp version
+Jawnnypoo,2018-05-02 06:31:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9949db74a848cf166c51df4cd3e609a1e1aa14e8,9949db74a848cf166c51df4cd3e609a1e1aa14e8,"Allow override using the builder, so that small modifications can be made"
+Jawnnypoo,2018-05-02 04:58:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2b84d8d5eaf43859c6da75319e956c11d7fc277e,2b84d8d5eaf43859c6da75319e956c11d7fc277e,"Remove support for manifest configuration (#809)
+
+* Remove support for manifest configuration. Unify API for FCM and GCM recievers
+
+* Return to getting the GCM sender ID from the manifest"
+Jawnnypoo,2018-04-27 22:02:18,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/329ef4aa5c54e7638c17ec8d1068015a68c2c604,329ef4aa5c54e7638c17ec8d1068015a68c2c604,Update README.md (#807)
+Jawnnypoo,2018-04-14 07:56:26,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/12968d5911c97260daab84cc907f53043a55c158,12968d5911c97260daab84cc907f53043a55c158,Apply maven plugin to all libraries
+Jawnnypoo,2018-04-14 01:16:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fbf8981e0407eaf8077802a38195f698511d5908,fbf8981e0407eaf8077802a38195f698511d5908,Remove PushService from manifest
+Jawnnypoo,2018-04-14 00:00:25,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f60d2e09cad6c5561718c3c8e765f2441601a069,f60d2e09cad6c5561718c3c8e765f2441601a069,"Apply common lib version to all modules
+
+downgrade for now
+
+change to snapshot
+
+delete this line
+
+add back in
+
+update tab"
+Jawnnypoo,2018-04-13 02:28:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/31ef44ce3f76324a53f53080926cb3639d4ea075,31ef44ce3f76324a53f53080926cb3639d4ea075,Update docs and make job tags constants
+Jawnnypoo,2018-04-12 07:34:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1729c765222e33c5eb0d7096fd9a239cc7a97ef1,1729c765222e33c5eb0d7096fd9a239cc7a97ef1,Use global SDK versions
+Jawnnypoo,2018-04-12 07:28:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c8718df7fb68b950a9628c68b5547d4c5d62a1bf,c8718df7fb68b950a9628c68b5547d4c5d62a1bf,Add deprecation notice to GCM module README
+Jawnnypoo,2018-04-12 07:08:04,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bb0476d4c26636a6873152b9746ac6986cc4889d,bb0476d4c26636a6873152b9746ac6986cc4889d,Add notes about calling register
+Jawnnypoo,2018-04-12 05:56:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e0a07f9f392737e494f49bd32c049c227f27b67f,e0a07f9f392737e494f49bd32c049c227f27b67f,Remove obsolete code
+Jawnnypoo,2018-04-12 05:42:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cc6b62befe379d813fd91d66385c86304da9f467,cc6b62befe379d813fd91d66385c86304da9f467,Move GCM out into its own module
+Jawnnypoo,2018-04-11 23:44:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c8c73fe5abbc609294cc800812b3b2e198cb890e,c8c73fe5abbc609294cc800812b3b2e198cb890e,Update FCM build to pass FCM message to the push receiver
+Jawnnypoo,2018-04-11 03:09:38,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/afb4182658161fc1573e30585af80e055abdff59,afb4182658161fc1573e30585af80e055abdff59,compileOnly
+Jawnnypoo,2018-04-11 03:02:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c853113cbddc3c703ef6261c212a940ca0e2de62,c853113cbddc3c703ef6261c212a940ca0e2de62,Log some things
+Jawnnypoo,2018-04-11 02:39:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/812285a89d3eeb94a1a75530c5cb80a8dbdc1960,812285a89d3eeb94a1a75530c5cb80a8dbdc1960,Initial FCM setup
+rogerhu,2018-04-13 16:19:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/87ecbffd7f4964a921066fa34b5938bc0dd5861e,87ecbffd7f4964a921066fa34b5938bc0dd5861e,Simplify our dependency creation by using plugin (#804)
+canuludag,2018-04-13 15:00:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a848b0450cc5a471d98ebfb608e9157e172ce2a9,a848b0450cc5a471d98ebfb608e9157e172ce2a9,feat: Make ParseObject availableKeys Set a thread safe synchronizedSet (#795)
+rogerhu,2018-04-13 14:33:52,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/332f02cab99e2af552459a43b73a87ce007a4d2a,332f02cab99e2af552459a43b73a87ce007a4d2a,"Bump to Gradle v4.4 (#802)
+
+Fixed according to https://github.com/google/ExoPlayer/commit/13592dfb53ec99ce1fdb2744e34717dbdec9dea8"
+addisonElliott,2018-04-13 12:24:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9b1fde52fbd54238f68615f304cb98b34a278fad,9b1fde52fbd54238f68615f304cb98b34a278fad,"Add automated docs in Travis CI (#801)
+
+* Automated docs
+
+Updates gradle to create docs directory on Travis deployment. Use Travis pages provider to upload the docs directory
+
+* Made some small changes
+
+* Write docs to api folder
+
+Stays consistent with existing format for JS and iOS docs"
+rogerhu,2018-03-06 17:29:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/01299c90f2404cc79b146eb294c7527eff03f47f,01299c90f2404cc79b146eb294c7527eff03f47f,Bump snapshot version
+rogerhu,2018-03-06 07:30:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4c8627093b06e1bc3347d4f430c22706ebd42da4,4c8627093b06e1bc3347d4f430c22706ebd42da4,Bump to 1.16.7
+mhartvick,2018-03-06 07:29:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2b3a68fc462bf98e0cc1bc52566a4260937c9194,2b3a68fc462bf98e0cc1bc52566a4260937c9194,Test for failed auth data not cleared + fix (#787)
+addisonElliott,2018-02-06 02:08:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/71d9d9b572d2df97de99f18d0ee86a9b9b4c4d2f,71d9d9b572d2df97de99f18d0ee86a9b9b4c4d2f,Add javadoc artifact to maven publication (#785)
+Jawnnypoo,2018-02-01 04:11:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/937fc853e0154e5bbcd11d92bb8bed090cc67662,937fc853e0154e5bbcd11d92bb8bed090cc67662,"Allow setting of max retries (#782)
+
+* Remove ParsePlugins abstraction to Android, since that is our only target
+
+* Remove obsolete setting of system properties
+
+* Remove references to enabling/disable retry on command since all are retry enabled
+
+* Use max retries from configuration
+
+* Use the same default max retries as ParseRequest"
+Jawnnypoo,2018-01-31 23:05:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c1fc653f46c8fcf69d2cf7c9c28f61753e2e3c98,c1fc653f46c8fcf69d2cf7c9c28f61753e2e3c98,"Build for any SDK on Travis. (#774)
+
+* Build for any SDK on Travis.
+
+* Use sdkmanager to approve licenses
+
+* Revert ""Use sdkmanager to approve licenses""
+
+This reverts commit b51d415e48113b595f05509ee2f6499269c86708."
+rogerhu,2018-01-30 21:17:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2c276741c975462d74bae4056bab076232f4409b,2c276741c975462d74bae4056bab076232f4409b,Bump to snapshot
+rogerhu,2018-01-30 21:02:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8a5cd1f8de8db7db35d9f741bcfe30ef269100e5,8a5cd1f8de8db7db35d9f741bcfe30ef269100e5,"Fix POM dependency build (#781)
+
+* Fix for Gradle v4
+
+* Bump release"
+iainmerrick,2018-01-25 22:48:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c421d03037e99f6234c25272c78d8d59bdf5cf1a,c421d03037e99f6234c25272c78d8d59bdf5cf1a,Fix Gradle command line in README.md (#776) (#777)
+mmimeault,2018-01-22 21:16:26,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/07e739fc7c0639da0d78b6d8ac9b3c3f15664359,07e739fc7c0639da0d78b6d8ac9b3c3f15664359,Bump to 1.16.6-SNAPSHOT
+mmimeault,2018-01-22 19:56:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8409bc9bf457c09ec2f025d26ae7523e034cd649,8409bc9bf457c09ec2f025d26ae7523e034cd649,Bump to 1.16.5 (#775)
+mmimeault,2018-01-22 19:50:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0324c21188e7e1ef5539a5442d9f6be27c632a88,0324c21188e7e1ef5539a5442d9f6be27c632a88,"Merge pull request #723 from wondrous-io/pr/fix-209
+
+Check for JSONObject.NULL before casting to String [Fixes #209]"
+jhansche,2017-08-24 18:27:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c57552489fd715ad51c118fed998bd6eb59a9be8,c57552489fd715ad51c118fed998bd6eb59a9be8,"Properly decode JSONObject.NULL => null [Fixes #209]
+
+ParseEncoder encodes (null) => JSONObject.NULL. But ParseDecoder was not
+doing the inverse conversion.
+
+That resulted in JSONObject.NULL values being in the ParseObject.State map,
+which means any calls to State.get(key) that were casting the result to a
+specific type (i.e., String) without first checking the Object return type
+would result in a ClassCastException.
+
+ParseObject already accounts for this possibility by checking the Object type
+before casting it, and returning null if the type did not match.
+
+The known case that causes crashes is #209, where ParseUser.State.sessionToken()
+casts the result of get(KEY_SESSION_TOKEN) to String. When that was null it
+would be encoded as JSONObject.NULL due to the ParseEncoder; but after decoding
+it would not convert back to a native null, leading to the ClassCastException."
+rogerhu,2018-01-13 21:20:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3cc9570c94987ddab5d51c7bb5e4dce335c09f6d,3cc9570c94987ddab5d51c7bb5e4dce335c09f6d,Bump to 1.16.5-SNAPSHOT
+rogerhu,2018-01-13 17:57:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/182cc12a4311813e2ac8ef8604c781c5da0f470f,182cc12a4311813e2ac8ef8604c781c5da0f470f,Fix Travis for Android API 27
+rogerhu,2018-01-13 17:52:22,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8507c9df53ed7d74e75321a27a75f784b79f528b,8507c9df53ed7d74e75321a27a75f784b79f528b,Bump to 1.16.4
+dplewis,2018-01-13 08:43:52,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/af10e53cd55614d2e31340a00b00e2242abc7181,af10e53cd55614d2e31340a00b00e2242abc7181,Support for Full Text Search (#772)
+Jawnnypoo,2017-11-14 17:22:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/60810e93ce5ee2c53046cb616cf12db690363f71,60810e93ce5ee2c53046cb616cf12db690363f71,"Compile with 27, Android Gradle plugin 3.0.0 (#760)"
+rogerhu,2017-10-10 15:40:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d994f80cd0b70697883a8baf4797bc7d8acaf1e3,d994f80cd0b70697883a8baf4797bc7d8acaf1e3,Bump to 1.16.4-SNAPSHOT
+rogerhu,2017-10-10 15:54:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/229c9b9c8e19c5da64edfa4e9ac8cc5ded1928f6,229c9b9c8e19c5da64edfa4e9ac8cc5ded1928f6,Bump to 1.16.3 (#749)
+natario1,2017-10-10 15:37:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/300c3ec0232acc49b66646a096323c8074b521d2,300c3ec0232acc49b66646a096323c8074b521d2,"Better setup / teardown for JobService (#745)
+
+* Better setup / teardown for JobService
+
+* Move to lazy pattern"
+natario1,2017-09-17 07:14:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2b7bb5b6cf67caae9c477233645c84ef4d6222cc,2b7bb5b6cf67caae9c477233645c84ef4d6222cc,Delete THIRD_PARTY_NOTICES.txt (#742)
+natario1,2017-09-16 19:34:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7608f581f0c3ee3a241d87f71d3f956843362370,7608f581f0c3ee3a241d87f71d3f956843362370,Bump to snapshot (#741)
+natario1,2017-09-16 19:18:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/04db99550adf47f9e7dfebfc5ec9e11abb721873,04db99550adf47f9e7dfebfc5ec9e11abb721873,Bump version (#740)
+natario1,2017-09-16 18:05:28,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/034c526c9ae23442198504d3b0af6db575390e07,034c526c9ae23442198504d3b0af6db575390e07,Fix service declaration (#739)
+natario1,2017-09-16 04:53:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/aab7ae53cd9e1acd5499427b9c225000b506e752,aab7ae53cd9e1acd5499427b9c225000b506e752,"Use JobScheduler for push (#735)
+
+* Use JobScheduler for push
+
+* Rearrange tests
+
+* Rename PushService26 to PushServiceApi26"
+rogerhu,2017-09-10 05:54:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dfc41e84aaf381c2a68bd5105104cd1e63f02c52,dfc41e84aaf381c2a68bd5105104cd1e63f02c52,Bump to snapshot
+rogerhu,2017-09-10 05:46:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/86ff6254183746dfad38931ecdf46ffcb128910d,86ff6254183746dfad38931ecdf46ffcb128910d,Bump to 1.16.1 release
+natario1,2017-09-10 05:45:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6dbf4bab46a71b3ca2e86eb6d96ece78e8f0952f,6dbf4bab46a71b3ca2e86eb6d96ece78e8f0952f,"Push handling cleanup (#732)
+
+* Refactor push handling
+
+* Delegate manifest parsing to handlers
+
+* Moved some logic for consistency
+
+* PushService tests"
+Kiwifed0r,2017-09-05 04:52:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a69d99416eb3cfcba22953f035d45d45d32c0c22,a69d99416eb3cfcba22953f035d45d45d32c0c22,Changed endpoint classes/_User to users (#717)
+natario1,2017-09-01 22:46:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/28c739cca91b67554eba8862860d2dba49024fe3,28c739cca91b67554eba8862860d2dba49024fe3,"Fix ParseUserCurrentCoder bug (#724)
+
+* Fix ParseUserCurrentCoder bug
+
+* Fix tests
+
+* Fix TimeZone test"
+iernie,2017-09-01 19:25:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c0e03a7b51062c5c6247a0c5fb4f6571647ff9a4,c0e03a7b51062c5c6247a0c5fb4f6571647ff9a4,Update the Javadoc (#726)
+natario1,2017-08-24 15:11:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/538de56185edef86571b6df9d29ad2a1503ae2c1,538de56185edef86571b6df9d29ad2a1503ae2c1,Update to SNAPSHOT (#722)
+natario1,2017-08-24 13:53:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3639523fa103bf164b5687656d8f9044b5cecf5a,3639523fa103bf164b5687656d8f9044b5cecf5a,"Bump version (#721)
+
+* Bump version
+
+* Fix readme"
+Jawnnypoo,2017-08-23 14:04:04,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e0391f7f3b2e339a1f83cfd46e6efbda4d6a630a,e0391f7f3b2e339a1f83cfd46e6efbda4d6a630a,"Merge pull request #716 from Jawnnypoo/updates
+
+Update to support 26, gradle 4.1. Changes min to 14"
+Jawnnypoo,2017-08-23 13:35:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/82dca35da86ae934fed8cffe6ced72fff76e026b,82dca35da86ae934fed8cffe6ced72fff76e026b,Merge branch 'master' into updates
+natario1,2017-08-23 08:54:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/78ca0f21875381b9cd2af363304aeca6470fc18b,78ca0f21875381b9cd2af363304aeca6470fc18b,Fix ParseFieldOperations bug when decoding parcels (#703)
+Jawnnypoo,2017-08-22 20:16:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d4a5c1148d75b10dc539e079edc3f012b59decc2,d4a5c1148d75b10dc539e079edc3f012b59decc2,"Update to support 26, gradle 4.1. Changes min to 14"
+iernie,2017-08-22 19:43:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/48039531c10fc7b537695ab9d4362a95f9f02a50,48039531c10fc7b537695ab9d4362a95f9f02a50,"Add support for Android O (#713)
+
+* Add Notification Channels configuration for Android O
+
+* Revert build tools version
+
+* Update travis.yml to android-26
+
+* Switch to making a notification channel instead based on feedback
+
+* Add comment on recreating notification channels
+
+* Only call getNotificationChannel on SDK >= 26
+
+* Extract createNotificationChannel to own method and call it from getNotification
+
+* Update to build-tools 26.0.1
+
+* Save channelId instead of whole channel in NotificationCompat
+
+* Update robolectric to support API 26
+
+* Downgrade to robolectric 3.3.2"
+addisonElliott,2017-08-19 16:02:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e637667f69b72ffe421b5bc6c2d39c73e2707198,e637667f69b72ffe421b5bc6c2d39c73e2707198,Update OkHttp dependency in Parse (#714)
+Jawnnypoo,2017-08-18 22:30:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/28254592924a9f1063853ba024becb6e1ab476bb,28254592924a9f1063853ba024becb6e1ab476bb,"Merge pull request #708 from addisonElliott/update-coverage-shield
+
+Update coverage shield on README"
+addisonElliott,2017-08-17 05:14:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c9d6642b9375abc9654444eaf9548a6702b2bc03,c9d6642b9375abc9654444eaf9548a6702b2bc03,Merge branch 'master' into update-coverage-shield
+addisonElliott,2017-08-17 05:11:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/aa2c6206079c86377012b97c7427b1a7bcb1af1d,aa2c6206079c86377012b97c7427b1a7bcb1af1d,"Include dependency & references shield in README (#707)
+
+* Include dependency & references shield in README
+
+Add a dependency shield that determines if the dependencies in the repository are up to date. If not, the shield will indicate out of date and this will notify contributors that the libraries need to be updated.
+
+In addition, a references shield is included which shows the number of projects that reference this project.
+
+These two badges are included in the Android-SDK-iOS-OSX project and it is nice to stay consistent between the various projects of Parse. Badges are obtained via VersionEye.
+
+* Update dependency and references shield link"
+addisonElliott,2017-08-17 04:50:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ea430fc7cb7ae4852593dcee962a21b9b5bc4d07,ea430fc7cb7ae4852593dcee962a21b9b5bc4d07,"Add additional getting started info to README (#706)
+
+* Update README.md
+
+Begin working on README fix
+
+* Update README.md
+
+* Update README.md
+
+* Update README.md
+
+* Update README.md
+
+* Update README.md"
+addisonElliott,2017-08-17 04:47:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/12ced16fdf37f95eda472f989eb6d87a46063f14,12ced16fdf37f95eda472f989eb6d87a46063f14,"Update coverage shield on README
+
+The coverage shield was showing unknown and clicking on the link would take to a page not indicating the current coverage of the SDK.
+
+Change the shield to use codecov (like the Parse-SDK-iOS-OSX Github repo does) to report the code coverage."
+dplewis,2017-08-16 11:08:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/28fd9e15167d98256f12730aa8f471a236081025,28fd9e15167d98256f12730aa8f471a236081025,"Add withinPolygon to Query (#684)
+
+* Add withinPolygon to Query
+* offline query support for geowithin
+* withinPolygon with polygon"
+dplewis,2017-08-15 16:40:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/351d54bb4d8684d0f855699e3fe94e297a0d3b4a,351d54bb4d8684d0f855699e3fe94e297a0d3b4a,"Add Type Polygon to Schema and PolygonContains to query (#696)
+
+* Add Type Polygon to Schema and PolygonContains to query
+
+* offlineQuery"
+rogerhu,2017-06-21 04:02:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b1fead8fbe2ef5a4cc3d4e3d4b555ff2089e6136,b1fead8fbe2ef5a4cc3d4e3d4b555ff2089e6136,Bump to 1.15.9-SNAPSHOT
+rogerhu,2017-06-21 04:02:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3e32f00a425064f78050ec459d1710a0406203e1,3e32f00a425064f78050ec459d1710a0406203e1,"Kill --info, it pollutes the Travis logs"
+rogerhu,2017-06-21 03:59:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0516d241b09d55ea50233a86eff985668da69068,0516d241b09d55ea50233a86eff985668da69068,Allow tagged branches
+rogerhu,2017-06-21 03:15:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2f6c78a687ac4682bef720a807c27270eb17f3b6,2f6c78a687ac4682bef720a807c27270eb17f3b6,Bump version (#685)
+batkov,2017-06-20 13:40:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b94f80c5d36e20f4eb7b02643e613cc2febec4ed,b94f80c5d36e20f4eb7b02643e613cc2febec4ed,Make isLocalDataStoreEnabled public (#682)
+natario1,2017-06-03 17:50:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d8f96ff5cf53cda9341d1b0a0bd17eb884e6a200,d8f96ff5cf53cda9341d1b0a0bd17eb884e6a200,Fix bug in count queries incorrectly retrieving object data (#678)
+natario1,2017-06-03 10:52:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/657a478c3e94bda87992df4c0e1680f137de8c34,657a478c3e94bda87992df4c0e1680f137de8c34,"Add client support for scheduling push notifications (#675)
+
+* Add client support for push_time
+* Tests"
+Jawnnypoo,2017-06-01 13:28:25,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e741077166943fc637046976858db59459c0fc55,e741077166943fc637046976858db59459c0fc55,"Merge pull request #677 from Jawnnypoo/updates
+
+A few updates"
+Jawnnypoo,2017-06-01 13:06:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/621a8e7173f0a1f3ec168aa760dd94ad3808e788,621a8e7173f0a1f3ec168aa760dd94ad3808e788,"Use Google maven repo for support lib, remove provided stetho dependency,  update some dependencies"
+natario1,2017-06-01 12:36:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d98f847c082010a2efbde45a05eb0d157eacd19c,d98f847c082010a2efbde45a05eb0d157eacd19c,Refactor ParseFieldOperations into own class file (#676)
+natario1,2017-06-01 08:00:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e4e53b1028faa1687dd937f6a37798008464b533,e4e53b1028faa1687dd937f6a37798008464b533,"Merge pull request #661 from natario1/allow-multiple-find
+
+Allow multiple find/count operations on queries. Expose fromNetwork and isRunning"
+natario1,2017-05-29 18:53:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9f4083ad9f39ef3b9f7a311fdcbc94bf2475f4bc,9f4083ad9f39ef3b9f7a311fdcbc94bf2475f4bc,Ability to clear constraints for a given key
+natario1,2017-05-17 10:03:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bc94bcc5b095fb6919d07cfba68c752adbb47160,bc94bcc5b095fb6919d07cfba68c752adbb47160,Operations management consistent with ParseFile
+natario1,2017-05-08 11:01:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/369feafb4ee14f5bca9b9b57ac4aadefab1a34eb,369feafb4ee14f5bca9b9b57ac4aadefab1a34eb,Tests
+natario1,2017-05-08 09:50:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9aecf851fffb8bfe806236681527ddba8901bb22,9aecf851fffb8bfe806236681527ddba8901bb22,Allow multiple find/count operation. Exposing fromNetwork and isRunning
+Jawnnypoo,2017-05-17 05:58:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ff7c712eabf7c6e4c3616b8d3975ef9d0c79eb40,ff7c712eabf7c6e4c3616b8d3975ef9d0c79eb40,"Merge pull request #669 from parse-community/Jawnnypoo-patch-1
+
+Remove jar link"
+Jawnnypoo,2017-05-17 05:51:06,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/eb85c7cdf0df4bf5620e626910d02658b6c67328,eb85c7cdf0df4bf5620e626910d02658b6c67328,Merge branch 'master' into Jawnnypoo-patch-1
+rogerhu,2017-05-17 05:28:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/974cbb873dd0658b1d95fafc76f0d7ac6ce2c427,974cbb873dd0658b1d95fafc76f0d7ac6ce2c427,Bump snapshot version
+Jawnnypoo,2017-05-17 05:08:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/92fb41abb58865ff27de184ec5e3caa698040fd9,92fb41abb58865ff27de184ec5e3caa698040fd9,Remove jar link
+rogerhu,2017-05-17 05:02:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/24715d3958c8eed6bc1e34d2484fa48d87e24a31,24715d3958c8eed6bc1e34d2484fa48d87e24a31,Bump to 1.15.7
+rogerhu,2017-05-17 05:02:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b9dff3921254d80efd5feae4aa9a18d837d5c44e,b9dff3921254d80efd5feae4aa9a18d837d5c44e,More cleanup (#668)
+rogerhu,2017-05-17 04:36:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d44fdfc6f766cc6245f33c78b6ffbbc90f90ccd9,d44fdfc6f766cc6245f33c78b6ffbbc90f90ccd9,Exclude packaging options (#667)
+hermanliang,2017-05-17 04:18:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7e51014d971a6f37bf1a84faf7873e630563ca19,7e51014d971a6f37bf1a84faf7873e630563ca19,Setup default use permissions (#666)
+rogerhu,2017-05-17 04:18:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fb502dc431d5d602c096aefb3263fcc32d8daf3e,fb502dc431d5d602c096aefb3263fcc32d8daf3e,"Add jFrog OSS (#654)
+
+https://www.jfrog.com/confluence/display/RTF/Deploying+Snapshots+to+oss.jfrog.org"
+hermanliang,2017-05-08 14:32:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bee0310349688268d71ed14e67585b6273bfbb8b,bee0310349688268d71ed14e67585b6273bfbb8b,Bug fixes: add synchronized block to map operation in OfflineStore (#659)
+rogerhu,2017-05-05 08:32:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a314c5d3fdf854bd083ce6fa867880ad334b976d,a314c5d3fdf854bd083ce6fa867880ad334b976d,"Add auto-deploy on tagged releases (#656)
+
+* Add auto-deploy on tagged releases
+
+* Update .travis.yml"
+rogerhu,2017-05-05 05:12:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/eb6a0cde4e2dc318b5e7dbca7dbfb683b1b9d7fe,eb6a0cde4e2dc318b5e7dbca7dbfb683b1b9d7fe,Consolidate POM config
+natario1,2017-05-04 18:10:26,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/405e21a955c3dfe9a79c566c3f9409feb12941fa,405e21a955c3dfe9a79c566c3f9409feb12941fa,Jump off the network executor when needed (#655)
+rogerhu,2017-05-03 05:10:18,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4e4ffad99dd19689131be77984d029d864f65a3f,4e4ffad99dd19689131be77984d029d864f65a3f,Bump to snapshot version
+rogerhu,2017-05-03 05:07:04,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c3f7eabfe6bec179016e6da65a9cd37562f6b7ff,c3f7eabfe6bec179016e6da65a9cd37562f6b7ff,Bump to 1.15.6 release
+aontas,2017-05-03 05:03:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f958b6c5c1eaa9a37a9a327ef0ffa5858791e7b6,f958b6c5c1eaa9a37a9a327ef0ffa5858791e7b6,Add missing HEADER_OS_VERSION header. (#653)
+aontas,2017-05-02 07:58:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/887359766d28a6cb11e96f7d507fafdba92d12a3,887359766d28a6cb11e96f7d507fafdba92d12a3,Add missing User-Agent header. (#651)
+rogerhu,2017-05-01 04:40:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b80f25f7f8c461997a28d111b634158225a2a2f4,b80f25f7f8c461997a28d111b634158225a2a2f4,Bump to snapshot
+rogerhu,2017-04-30 08:21:04,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6d579d9217ceb00937cf7156a752abccdf8fce15,6d579d9217ceb00937cf7156a752abccdf8fce15,"Revert ""Rename project name so that Bintray will upload it properly""
+
+This reverts commit 5b4b16b2d869d9f00929deb335cc92148f40b4ad."
+rogerhu,2017-04-30 08:16:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b6469fc4986421a0cccf98d23f9f6c579e4c4c9b,b6469fc4986421a0cccf98d23f9f6c579e4c4c9b,Release 1.15.5
+rogerhu,2017-04-30 08:15:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c6b3981ab9494022d3d7e0ffc80425f411d2b99d,c6b3981ab9494022d3d7e0ffc80425f411d2b99d,Bump to 1.15.5-SNAPSHOT
+mmimeault,2017-04-30 08:14:18,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a9de2f44ce5d54038c70c7b5f1d6aa4ecc629f72,a9de2f44ce5d54038c70c7b5f1d6aa4ecc629f72,"Allow the GcmBroadcastReceiver to be subclassed (#638)
+
+* Allow the GcmBroadcastReceiver to act as a composite so we can extend its functionnality
+
+* Rollback composite and remove final with call super annotation
+
+* Proper formatting
+
+* Change the validation to support BroadcastReceiver subclasses"
+rogerhu,2017-04-30 07:43:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5b4b16b2d869d9f00929deb335cc92148f40b4ad,5b4b16b2d869d9f00929deb335cc92148f40b4ad,Rename project name so that Bintray will upload it properly
+rogerhu,2017-04-30 04:47:38,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4cd7881d0f0c3e4894bdd75ffa57dadf5d4eb8d2,4cd7881d0f0c3e4894bdd75ffa57dadf5d4eb8d2,Add auto-syncing to Maven Central
+rogerhu,2017-04-30 04:24:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/08343a544f8672d0fdb73c1ae87c948d295e853d,08343a544f8672d0fdb73c1ae87c948d295e853d,Bump to 1.15.4 release
+natario1,2017-04-30 04:24:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/44eca4967d9380ea22708efe5d799e9e8293af76,44eca4967d9380ea22708efe5d799e9e8293af76,Fix executor for network requests (#648)
+Jawnnypoo,2017-04-30 04:23:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/803d2600b6bb28bbc941a749782e1ba4029d89a4,803d2600b6bb28bbc941a749782e1ba4029d89a4,Remove some unused or unneeded proguard rules (#649)
+rogerhu,2017-04-30 04:13:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1983eee649ae72dfae77679a5872e8b0e605b65c,1983eee649ae72dfae77679a5872e8b0e605b65c,"Bump to 1.15.4-SNAPSHOT
+
+Use BuildConfig.VERSION_NAME so we don't need to update ParseObject all the time"
+rogerhu,2017-04-30 04:08:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b15f25512e37f58aabc922f9383860c2e7b14496,b15f25512e37f58aabc922f9383860c2e7b14496,Make sure to publish dependencies too
+rogerhu,2017-04-29 10:37:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/032054bdc771ceb15f0d49be95a70c406e211ada,032054bdc771ceb15f0d49be95a70c406e211ada,Maven Central wants this SCM URL
+rogerhu,2017-04-29 07:31:18,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d1034025bc2b85f60dea68b56c5d747f57f34f75,d1034025bc2b85f60dea68b56c5d747f57f34f75,Update link
+rogerhu,2017-04-29 07:22:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7821ea32deaadeb4c764d0c9d4e7924ed0b35cc5,7821ea32deaadeb4c764d0c9d4e7924ed0b35cc5,Bump to 1.15.3
+rogerhu,2017-04-29 07:19:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6f9060adab10a49ae71cbca81281ae167cb7b23d,6f9060adab10a49ae71cbca81281ae167cb7b23d,Fix Bintray to use maven-publish
+rogerhu,2017-04-28 06:06:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c650b2cfd049b13436e09c7ff5b18b5a7cb74341,c650b2cfd049b13436e09c7ff5b18b5a7cb74341,Update to SNAPSHOT
+rogerhu,2017-04-28 06:05:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bb37a1ef5fccb6433983ac7d04c213b1519814d1,bb37a1ef5fccb6433983ac7d04c213b1519814d1,Fix Bintray
+rogerhu,2017-04-27 17:37:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d74633cf35a14376e6c9fff310f58b0f26600075,d74633cf35a14376e6c9fff310f58b0f26600075,Fix bintray config
+rogerhu,2017-04-27 16:57:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/34a4ec4709f7eebcdb788aec34ddeb943ef1428e,34a4ec4709f7eebcdb788aec34ddeb943ef1428e,Bump to release 1.15.2
+rogerhu,2017-03-15 07:37:38,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5680162f97ad596d2a0604be2648f578df917a35,5680162f97ad596d2a0604be2648f578df917a35,Add support for Bintray uploads
+hermanliang,2017-04-26 20:08:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2e158131176377cc42434dd4d29129705a1a4f24,2e158131176377cc42434dd4d29129705a1a4f24,"Do not initialize when parse is already initialized (#640)
+
+* do not throw an exception when init parse more than once, just issue a warning
+
+* Revert ""do not throw an exception when init parse more than once, just issue a warning""
+
+This reverts commit ddbc5622bb8b2fd697fb84cdc8724996711f6d32.
+
+* do not initialize when parse is already initialized"
+natario1,2017-04-26 20:07:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e706c074bf7ac7ae9446e05b9fc9a3eaee474e98,e706c074bf7ac7ae9446e05b9fc9a3eaee474e98,"Fix encoding nested objects (#645)
+
+* Fix encoding nested objects
+
+* Adds stronger test for circular references"
+hermanliang,2017-04-24 09:24:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e82808e8fdc05799b963c2951f94e8f7f7b0515b,e82808e8fdc05799b963c2951f94e8f7f7b0515b,update repo url (#644)
+hermanliang,2017-04-21 21:37:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/82af59494a007f1bf08ebe7893615ed51e9fbad0,82af59494a007f1bf08ebe7893615ed51e9fbad0,bug fixes: reset LDS after test (#642)
+hermanliang,2017-04-21 01:17:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6e8804cd721513dff78c68ea9b99f27830e41e3c,6e8804cd721513dff78c68ea9b99f27830e41e3c,"Re-save installation is allowed if LDS is enabled (#607)
+
+* Allowing to re-save installation if LDS is enabled
+
+* handle MissingRequiredFieldError exception (code 135)"
+Jawnnypoo,2017-04-20 20:21:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2659e7d597bc94890bf6d389fd7bb0d8f884f86b,2659e7d597bc94890bf6d389fd7bb0d8f884f86b,Allow redirects (#641)
+hermanliang,2017-04-20 18:30:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f5188d6b045d989a376135547b436b1091584ec2,f5188d6b045d989a376135547b436b1091584ec2,"Not allowing setObjectId() in ParseInstallation (#611)
+
+* Not allowing setObjectId() in ParseInstallation
+
+* minor fixes & update test"
+rogerhu,2017-04-20 00:57:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6223d06626b6805586047d4b79caa4f3a0ae457b,6223d06626b6805586047d4b79caa4f3a0ae457b,"Merge pull request #619 from natario1/parcelable-point
+
+Implementing Parcelable in ParseGeoPoint"
+natario1,2017-04-19 23:42:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9ac85893227af6ed560e5e9041052d35083bc63e,9ac85893227af6ed560e5e9041052d35083bc63e,Update encoder/decoder
+natario1,2017-04-03 14:26:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0dd526e54233e868ca244d9810be6d2640f9c527,0dd526e54233e868ca244d9810be6d2640f9c527,Support for inheritance
+natario1,2017-04-03 11:46:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cc8101c21724b1774f02381e8be14a7b9d259423,cc8101c21724b1774f02381e8be14a7b9d259423,Implementing Parcelable in ParseGeoPoint
+rogerhu,2017-04-19 23:09:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/46a023333d9069a54f45bbe377214489094a9eec,46a023333d9069a54f45bbe377214489094a9eec,"Merge pull request #624 from natario1/parcelable-file
+
+Implementing Parcelable in ParseFile"
+natario1,2017-04-19 22:53:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/51523691ec4bee80faae026c1c5973e4fbe3d345,51523691ec4bee80faae026c1c5973e4fbe3d345,Fix tests
+natario1,2017-04-19 22:47:52,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/081b8ec86851f63aa9eb75d05b9e2467a92979b5,081b8ec86851f63aa9eb75d05b9e2467a92979b5,Update encoder/decoder
+natario1,2017-04-03 16:25:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/92a9c6accf2cdce933177bbe02063be3f1cc4228,92a9c6accf2cdce933177bbe02063be3f1cc4228,Implementing Parcelable in ParseFile
+rogerhu,2017-04-19 21:04:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/aaf740aba216836a2621ed6987bf5eed09dec442,aaf740aba216836a2621ed6987bf5eed09dec442,"Merge pull request #625 from natario1/parcelable-object
+
+Enable Parcelable object on main ParseObject"
+natario1,2017-04-18 09:58:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e06280a6c6c0ff23f51986d36d09156c273c47f6,e06280a6c6c0ff23f51986d36d09156c273c47f6,Fix docs and tests
+natario1,2017-04-06 15:48:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9e1240d367fd3bfd742bb658cfb7f8abf3a09cbe,9e1240d367fd3bfd742bb658cfb7f8abf3a09cbe,Warn with delete operations ongoing. Support for LDS
+natario1,2017-04-05 23:08:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bf55908b0f0b0edbead9bf64c8f03075101135c3,bf55908b0f0b0edbead9bf64c8f03075101135c3,"Test parcel while saving, tests for ParseRelation"
+natario1,2017-04-05 20:38:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e68a2daa8e92851168dce689c461276035bbf7ed,e68a2daa8e92851168dce689c461276035bbf7ed,Encode circular references as pointers. Support for ParseRelation
+natario1,2017-04-05 18:33:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e1a5bab75fded2e119d99d0eecef0c007bfc01c2,e1a5bab75fded2e119d99d0eecef0c007bfc01c2,Ability to pass encoders/decoders down the object tree
+natario1,2017-04-05 14:18:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/24f5cc3463e16076c40af3bf8e0315763f2dfdbb,24f5cc3463e16076c40af3bf8e0315763f2dfdbb,"Tests for ParseObject, ParseUser, ParseACL"
+natario1,2017-04-05 12:34:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0b3a8c41e897f7c5d69b1b2d022fd57d1614f9a8,0b3a8c41e897f7c5d69b1b2d022fd57d1614f9a8,Name constants for operations
+natario1,2017-04-05 03:03:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/df6fc0ee9e243953afb96289dfdffbd95acc4b45,df6fc0ee9e243953afb96289dfdffbd95acc4b45,Parceling ParseFieldOperations instead of estimatedData
+natario1,2017-04-04 22:22:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5912b05e23920044bc2780f36c1bb5974f7bfbe1,5912b05e23920044bc2780f36c1bb5974f7bfbe1,Parcelable to ParseObject and subclasses
+natario1,2017-04-04 19:16:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b8e1714c0f70f0d053ea6d33f98fd3ece0bdcead,b8e1714c0f70f0d053ea6d33f98fd3ece0bdcead,Parcelable to ParseACL
+Jawnnypoo,2017-04-19 20:46:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/53b05e9edbf89d9bc502eec2d5cd78f5e089211a,53b05e9edbf89d9bc502eec2d5cd78f5e089211a,"Code cleanup (#632)
+
+* Remove unused method in ParseHttpClient
+
+* Remove redundant access modifiers on interfaces
+
+* Collapse Exceptions
+
+* Remove redundant typing
+
+* Remove redundant casting
+
+* Simplify some boolean logic, access static methods via static class
+
+* Change some access levels for ParseHttpClient"
+natario1,2017-04-19 07:11:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/394851ad60f9f0cdd304bea5ab674c5c3a496ff7,394851ad60f9f0cdd304bea5ab674c5c3a496ff7,Add link to ParseLiveQuery (#635)
+Jawnnypoo,2017-04-18 21:50:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b74b25649a750afa975328dcdc9a357fbc2a62a9,b74b25649a750afa975328dcdc9a357fbc2a62a9,Add link to Gitter (#639)
+rogerhu,2017-04-18 16:51:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/137a30ec072182007c507bb5b4990ed04e209c98,137a30ec072182007c507bb5b4990ed04e209c98,Bump to 1.15.2-SNAPSHOT
+rogerhu,2017-04-18 16:41:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c2d6c73282b874996b0523a7d3f3e8f8cc20838c,c2d6c73282b874996b0523a7d3f3e8f8cc20838c,Bump to 1.15.1 release
+Jawnnypoo,2017-04-18 16:20:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/638f03cdb99f31993081d87b108df2354d5eb6d0,638f03cdb99f31993081d87b108df2354d5eb6d0,Use the right builder (#637)
+rogerhu,2017-04-18 06:17:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/01a79b6ac2fab5a52f90981aaa2b6c2fe02b8b91,01a79b6ac2fab5a52f90981aaa2b6c2fe02b8b91,Bump to 1.15.1-SNAPSHOT
+rogerhu,2017-04-18 00:45:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9d72c9c85ca5e2c1b6980084dd47541a6d023390,9d72c9c85ca5e2c1b6980084dd47541a6d023390,Bump to 1.15.0 release
+rogerhu,2017-04-18 00:44:28,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/65008da9a4a6fd30453ea2b5fcee1413e55c65e1,65008da9a4a6fd30453ea2b5fcee1413e55c65e1,Bump to 1.15.0-SNAPSHOT
+mmimeault,2017-04-13 17:22:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dfd4f40ebbc50748f9c5f13fae309a8295e0530e,dfd4f40ebbc50748f9c5f13fae309a8295e0530e,"Update docs urls to parse community (#634)
+
+* Update docs urls to parse community
+
+* Update parse.com to parseplatform"
+Jawnnypoo,2017-04-12 04:51:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e1e01a6f834eb787ae89c47bca35989e0efcac48,e1e01a6f834eb787ae89c47bca35989e0efcac48,Remove references to Parse.com (#631)
+Jawnnypoo,2017-04-11 04:03:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6cfc4a0d8b57e508d8b3d801922138c9fa4461db,6cfc4a0d8b57e508d8b3d801922138c9fa4461db,"OkHttp Builder Exposed for REST and AWS (#628)
+
+* Update some dependencies
+
+* Direct access to ParseOkHttpClient since it is the only one
+
+* ParseOkHttpClient becomes ParseHttpClient
+
+* Remove ParseNetworkInterceptor in favor of OkHttp interceptors
+
+* Modify tests that need Plugin teardown to do so to prevent random tests from failing
+
+* Joint support library version
+
+* Add back in checkinit
+
+* Remove AWS client builder (build the http builder instead). AWS -> File
+
+* Fix ParseFileRequestTest
+
+* Reset in between test cases in ParseCloudTest
+
+* Add plugin resetting to both the setup and tear down of tests"
+hermanliang,2017-04-06 14:32:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/38b1e29e0c78ac2c75972e6a9682e0b79dfbea6f,38b1e29e0c78ac2c75972e6a9682e0b79dfbea6f,replace deprecated code & minor optimization (#629)
+flovilmart,2017-04-05 21:19:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d66c5a311ee2592df8f8ee51b11ef43b3d2ca20b,d66c5a311ee2592df8f8ee51b11ef43b3d2ca20b,update shields
+lacker,2017-04-05 20:58:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ed5380f60975e4f612cd6961930b55647a9e83d2,ed5380f60975e4f612cd6961930b55647a9e83d2,transfer code
+rogerhu,2017-04-03 17:24:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/379c1433dcb8ae43a147852a0f035fed3929fc9d,379c1433dcb8ae43a147852a0f035fed3929fc9d,Switch default packaging to AAR (#621)
+rogerhu,2017-03-25 07:58:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a8c380dc4d959bbe345c85151ae83eece1b486b7,a8c380dc4d959bbe345c85151ae83eece1b486b7,Bump to 1.14.2-SNAPSHOT
+rogerhu,2017-03-25 07:54:00,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/70677cd975180bad9c3579cf17760d2bf055f2db,70677cd975180bad9c3579cf17760d2bf055f2db,Bump to 1.14.1 version
+rogerhu,2017-03-25 07:52:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4da6a0f3ee79ebd374b3c827321e983b1a42a2b3,4da6a0f3ee79ebd374b3c827321e983b1a42a2b3,Fix DELETE operations (#616)
+rogerhu,2017-03-25 07:28:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f39540e5e077eda6e5227cc0c099e1bd9ca10db7,f39540e5e077eda6e5227cc0c099e1bd9ca10db7,clientKey can be null now (#613)
+rogerhu,2017-03-25 07:27:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2611253c761ef0cf713701a567b94415c2ff252f,2611253c761ef0cf713701a567b94415c2ff252f,Require a SENDER_ID now. (#615)
+rogerhu,2017-03-17 16:28:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/05795898c2cf63e78bedba6c9e20f569294685df,05795898c2cf63e78bedba6c9e20f569294685df,Bump to v1.14-1-SNAPSHOT
+rogerhu,2017-03-17 13:27:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5795ec9bfa9533ad2a6564e63e6b3aa08fe65e10,5795ec9bfa9533ad2a6564e63e6b3aa08fe65e10,Release to v1.14.0
+hermanliang,2017-03-17 01:40:25,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fedb7ef5e65de5486877355cb9e4fef042caf67c,fedb7ef5e65de5486877355cb9e4fef042caf67c,"Support for setting up Server Url in the Manifest (#600)
+
+* Supports setting Server Url in Manifest
+
+* Add test and update JavaDoc
+
+* remove redundant null assignment
+
+* using Roboelectric to mock Context & PackageManager
+add testConfigureFromManifestWithoutClientKey
+
+* minor optimization for unit test & update Javadoc"
+rogerhu,2017-03-16 06:01:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/511bf398fadbc891fa75e056482bc25a7aa9a6f8,511bf398fadbc891fa75e056482bc25a7aa9a6f8,Bump to 1.14.0-SNAPSHOT (shouldn't have been 1.14.1-SNAPSHOT)
+hermanliang,2017-03-15 06:00:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e0f096e850511e4dea7f1b0781186cf32e83e12b,e0f096e850511e4dea7f1b0781186cf32e83e12b,Minor optimization in ParseObject.markAllFieldsDirty() (#603)
+hermanliang,2017-03-15 03:00:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1e882557c248b21d427596b8163b6d0b161a0263,1e882557c248b21d427596b8163b6d0b161a0263,fix typo (#602)
+flovilmart,2017-03-13 16:37:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0ceda1ae9b1668407deff75f5b5972fbaf70975c,0ceda1ae9b1668407deff75f5b5972fbaf70975c,CI: report coverage as failing when < 45% (#598)
+natario1,2017-03-13 12:20:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ddf8de457bcdb588aa243339fbc42be54c0a1df5,ddf8de457bcdb588aa243339fbc42be54c0a1df5,"Adding availableKeys to ParseObject.State (#596)
+
+* Add safeKeys that can be safely accessed. Exposing isDataAvailable(key)
+
+* Add tests
+
+* Support for LocalDataStore; fixed some bugs
+
+* Support for dot notation in selected keys
+
+* Addressing nested keys without parent key
+
+* Adding extra tests
+
+* New test, fixed a bug
+
+* New signature for fromJSON
+
+* Added some comments
+
+* Refactored safeKeys() into availableKeys()"
+hermanliang,2017-03-13 03:50:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/809b829cac9c97f8a4ca762697d65028c2a95fab,809b829cac9c97f8a4ca762697d65028c2a95fab,"Attempt to re-save installation if Installation was deleted on the server (#579)
+
+* Attempt to re-save installation if Installation was deleted on the server
+
+* add test
+
+* minor change of verification"
+Jawnnypoo,2017-03-09 07:43:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/aed49e230d1f8cc12957f2f8a29c5a727fdab7f8,aed49e230d1f8cc12957f2f8a29c5a727fdab7f8,"Remove Apache dependency to allow for higher Android target SDK. (#554)
+
+* Remove Apache dependency to allow for higher Android target SDK.
+
+* Remove ParseURLConnectionHttpClient in favor of ParseOkHttpClient
+
+* Add JDK specification to Travis
+
+* Assure the latest tools are installed
+
+* Update to the latest dependencies
+
+* Update so that the notification is built properly"
+rogerhu,2017-03-09 07:26:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/93dbb830b6011a88facb8b52dec5662c46e2831f,93dbb830b6011a88facb8b52dec5662c46e2831f,Bump to 1.14.1 snapshot
+rogerhu,2017-03-09 01:36:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5bacd0821d4c286dba3c29ef49dd92175f0ffcb7,5bacd0821d4c286dba3c29ef49dd92175f0ffcb7,Bump to v1.13.3 release
+natario1,2017-03-09 01:34:25,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/735be4939a5e67b53dc29fb3f46cdbc60abfba23,735be4939a5e67b53dc29fb3f46cdbc60abfba23,"Closing streams in ParseAWSRequest (#590)
+
+* Update ParseAWSRequest.java"
+flovilmart,2017-03-09 01:33:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3fced984c8e0fb24c57f322a9fe02f0870c341e2,3fced984c8e0fb24c57f322a9fe02f0870c341e2,Create .codecov.yml (#594)
+rogerhu,2017-03-08 20:15:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ea489eb5144dbd6b0998165fc8481076a0737927,ea489eb5144dbd6b0998165fc8481076a0737927,"Merge pull request #592 from rogerhu/1.13.3
+
+Bump to v1.13.3-SNAPSHOT"
+rogerhu,2017-03-08 20:14:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b6c98bd3a05707357bcc492136adac1aede59589,b6c98bd3a05707357bcc492136adac1aede59589,Bump to v1.13.3-SNAPSHOT
+rogerhu,2017-03-08 20:10:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5434260dcfa0f94e02e34c769670e4d75064ffec,5434260dcfa0f94e02e34c769670e4d75064ffec,"Merge pull request #591 from rogerhu/1.13.2
+
+Bump to v1.13.2 release"
+rogerhu,2017-03-08 20:08:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2f2d8566a5f06149132744a788cdd46fc93ad56d,2f2d8566a5f06149132744a788cdd46fc93ad56d,Bump to v1.13.2 release
+rogerhu,2017-03-08 20:06:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/64e74dcf830958d83435438aef76b32d1b1b32b7,64e74dcf830958d83435438aef76b32d1b1b32b7,"Merge pull request #506 from posativ/patch-1
+
+only add client key if non-null"
+grantland,2017-02-15 21:57:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fe083452808629cd290b1b85b3571a2c872e1a41,fe083452808629cd290b1b85b3571a2c872e1a41,"Merge pull request #584 from JulienGenoud/patch-1
+
+Update README.md"
+JulienGenoud,2017-02-13 23:22:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9460842913dc807d42ae8c5d2e58bcc7d95cb3d8,9460842913dc807d42ae8c5d2e58bcc7d95cb3d8,"Update README.md
+
+update links"
+grantland,2016-11-08 19:07:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e797ec8c23edef66a6aba92d1e067097f7cfb198,e797ec8c23edef66a6aba92d1e067097f7cfb198,"Merge pull request #542 from zhoul-HS/master
+
+fix bug in ParseOkHttpClient that can cause errors when saving ParseFile"
+grantland,2016-06-08 22:55:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0c3009afd0070fc7867f94d3a11f38195382a27d,0c3009afd0070fc7867f94d3a11f38195382a27d,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2016-06-08 22:01:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c4efc79e7eb436163c3e7e551e5bc0e0c4832e8f,c4efc79e7eb436163c3e7e551e5bc0e0c4832e8f,:zap: Release 1.13.1 :zap:
+grantland,2016-06-08 21:59:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/04036ac8896e480dcebaa81938fb545b7ca4cdf5,04036ac8896e480dcebaa81938fb545b7ca4cdf5,Update Gradle
+grantland,2016-05-31 17:22:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0764933025b0d591aec3b3281a9d579a2f4c3a50,0764933025b0d591aec3b3281a9d579a2f4c3a50,"Merge pull request #468 from rogerhu/okhttp3
+
+Update for OkHttp3"
+rogerhu,2016-04-06 19:26:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8b10c8d8b16283e08fd109cfec890f178a2a2bfa,8b10c8d8b16283e08fd109cfec890f178a2a2bfa,Update for OkHttp3
+grantland,2016-05-27 23:23:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7725a962d612e973ef415ddea4c1bfb97497cf74,7725a962d612e973ef415ddea4c1bfb97497cf74,"Merge pull request #435 from rogerhu/okhttp3
+
+Update for OkHttp3"
+rogerhu,2016-04-06 19:26:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b3f457f556899358da781e902094c863051d6834,b3f457f556899358da781e902094c863051d6834,Update for OkHttp3
+grantland,2016-05-26 22:49:46,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4b88c2898e9eb522bdd838386a209e1e2f429684,4b88c2898e9eb522bdd838386a209e1e2f429684,"Merge pull request #465 from egk35/patch-2
+
+Don't override default SSL Socket Factory"
+egk35,2016-05-26 18:22:18,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/300140b88ea58d7166d8d2dc2da01cbc9f2a6251,300140b88ea58d7166d8d2dc2da01cbc9f2a6251,"Don't override default SSL Socket Factory
+
+This SSL Socket Factory is causing a javax.net.ssl.SSLPeerUnverifiedException exception when integrating an app with both Parse and Account Kit (https://developers.facebook.com/products/account-kit). Is there a reason why we're using the SSLCertificateSocketFactory? I think the default one should be fine."
+grantland,2016-05-24 22:24:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/758f23682a674eaa3bb2eb732271f5ea5709f0af,758f23682a674eaa3bb2eb732271f5ea5709f0af,"Merge pull request #462 from kristoprifti/master
+
+Removed file size check, Parse Android SDK"
+rogerhu,2016-04-08 00:46:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/95b6b1789dc86374fdb449329e7032e9054bfe55,95b6b1789dc86374fdb449329e7032e9054bfe55,"For open source Parse with /parse mounts, this fix helps avoid the problem of remembering to add (#436)
+
+the trailing slash."
+grantland,2016-03-10 18:53:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/036b0cbb4ed826bc67a26e07fefef1b9f447a679,036b0cbb4ed826bc67a26e07fefef1b9f447a679,"Merge pull request #414 from Allsimon/master
+
+Fix #343: Add proguard consumer file"
+Allsimon,2016-03-10 09:29:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/95aa512eb44f6aac0e0ece042cd504c1ff7f9fc1,95aa512eb44f6aac0e0ece042cd504c1ff7f9fc1,Add proguard consumer file
+grantland,2016-01-22 20:12:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f439b3d3ba02eaad52e653b6890b3a10e74168da,f439b3d3ba02eaad52e653b6890b3a10e74168da,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2016-01-22 20:06:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8909ebff3042306d4da05da276adf54aec3d4cc0,8909ebff3042306d4da05da276adf54aec3d4cc0,:zap: Release 1.13.0 :zap:
+wangmengyan95,2016-01-22 00:21:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cad0e6ea13a52804ff77d16361a0afbad0876384,cad0e6ea13a52804ff77d16361a0afbad0876384,"Merge pull request #361 from ParsePlatform/wangmengyan.make_initialize_eventuallyQueue_not_reply_on_ParsePlugins
+
+Make eventuallyQueue initialization not rely on ParsePlugins"
+wangmengyan95,2016-01-21 23:46:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/14f857055dd46b412743393830e2003b37514675,14f857055dd46b412743393830e2003b37514675,Make eventuallyQueue initialization not rely on ParsePlugins
+wangmengyan95,2016-01-21 19:43:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0a055142a3f24338b777a1483c9753682cab1783,0a055142a3f24338b777a1483c9753682cab1783,"Merge pull request #356 from ParsePlatform/wangmengyan.fix_server_url_bug
+
+Fix default parse server url"
+wangmengyan95,2016-01-21 18:35:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/626218f2d913d6a7089e1b816c4efcede05a5b0f,626218f2d913d6a7089e1b816c4efcede05a5b0f,"Merge pull request #359 from ParsePlatform/wangmengyan.remove_content_encoding_header_when_auto_unzip_response
+
+Remove Content-Encoding header when we auto unzip the response steram"
+wangmengyan95,2016-01-21 04:42:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/79786961246e7362684b3320a1abb0ea3db690a9,79786961246e7362684b3320a1abb0ea3db690a9,Remove Content-Encoding header when we auto unzip the response steram
+wangmengyan95,2016-01-21 00:36:39,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/033d6425c13da31b2b7eef3725cf6da1de30457d,033d6425c13da31b2b7eef3725cf6da1de30457d,"Merge pull request #358 from ParsePlatform/wangmengyan.avoid_add_unnecessary_ParseDecompressInterceptor
+
+Avoid add unnecessary ParseDecompressInterceptor"
+wangmengyan95,2016-01-20 23:29:22,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c3bb7db9eda6bbb168a72bbdc87dfc07fefc6145,c3bb7db9eda6bbb168a72bbdc87dfc07fefc6145,Avoid add unnecessary ParseDecompressInterceptor
+grantland,2016-01-19 22:13:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b0da6b479cdf85e7c93f4d0f3073ef0184e2fb6e,b0da6b479cdf85e7c93f4d0f3073ef0184e2fb6e,"Merge pull request #349 from ParsePlatform/grantland.bolts
+
+Update bolts-tasks to 1.4.0"
+wangmengyan95,2016-01-19 20:27:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e3d9234bfb798d8252be930c94a397efd2c159f4,e3d9234bfb798d8252be930c94a397efd2c159f4,Fix default parse server url
+grantland,2016-01-16 19:56:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e2329512e5531f0efd56671c02f476285f87386b,e2329512e5531f0efd56671c02f476285f87386b,"Merge pull request #310 from daisuke-nomura/master
+
+Replace deprecated"
+daisuke-nomura,2015-12-18 15:53:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d551b2e0181ac44aae33afae929683dbdc83fd58,d551b2e0181ac44aae33afae929683dbdc83fd58,replace deprecated
+grantland,2016-01-15 23:48:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9257c217bff243f3f56b7427640825892776a48d,9257c217bff243f3f56b7427640825892776a48d,Update bolts-tasks to 1.4.0
+wangmengyan95,2016-01-13 01:43:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d34e5fae850527880de0766b68100464d37e277c,d34e5fae850527880de0766b68100464d37e277c,"Merge pull request #339 from ParsePlatform/wangmengyan.update_ParseFile_cancel_comment
+
+Update comment for ParseFile.cancel()"
+richardjrossiii,2016-01-12 22:34:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e6227a6bb6957a579d0e7fd8061b5ea60b7fb57a,e6227a6bb6957a579d0e7fd8061b5ea60b7fb57a,"Merge pull request #245 from ParsePlatform/richardross.subclassing.decouple
+
+Decouple object subclassing."
+wangmengyan95,2016-01-12 18:51:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e0acb530588530214d0f157f74b0f4781efc904b,e0acb530588530214d0f157f74b0f4781efc904b,Update comment for ParseFile.cancel()
+richardjrossiii,2016-01-11 21:32:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d4d9305f364c9f70e310d1396382896f9dae3f22,d4d9305f364c9f70e310d1396382896f9dae3f22,"Remove ObjectSubclassInfo class, fix unit test."
+richardjrossiii,2015-11-11 01:35:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/76b23fc9e80bed15a289925ad9a7151688b621ac,76b23fc9e80bed15a289925ad9a7151688b621ac,"Decouple object subclassing.
+
+This fully decouples object subclassing from the ParseObject class, bringing it up to parity with our other native platforms."
+richardjrossiii,2016-01-06 00:17:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2dd0095f5674fd2e89dbcd19e9d46f43034ce904,2dd0095f5674fd2e89dbcd19e9d46f43034ce904,"Merge pull request #330 from ParsePlatform/richardross.configuration.serverurl
+
+Add configurable serverURL to Parse.Configuration."
+richardjrossiii,2016-01-04 22:18:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/01b06386d85f408c0e48563f7a975b2de1b88add,01b06386d85f408c0e48563f7a975b2de1b88add,"Add configurable serverURL to Parse.Configuration.
+
+Moves `server` from ParseObject to ParseRestCommand, and allows it to be
+changed via `Builder.server(""myUrl"")`."
+wangmengyan95,2015-12-29 00:04:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7745c88afb91e7dc8fdf9bbcaae28c68089c726e,7745c88afb91e7dc8fdf9bbcaae28c68089c726e,:tada: Prepare for next development iteration :confetti_ball:
+wangmengyan95,2015-12-28 22:22:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cd6155377a61a9347b7489263b673bae3b92ca31,cd6155377a61a9347b7489263b673bae3b92ca31,:zap: Release 1.12.0 :zap:
+grantland,2015-12-22 01:22:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/67b6d53aebf45713c0e946b956cc5a996eaeff75,67b6d53aebf45713c0e946b956cc5a996eaeff75,"Merge pull request #317 from ParsePlatform/grantland.lazy
+
+Simplify authenticating w/ third party & automatic users"
+grantland,2015-12-22 01:08:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7d908f3d1cbed3c89addfac49419c6c2f1859d62,7d908f3d1cbed3c89addfac49419c6c2f1859d62,"Simplify authenticating w/ third party & automatic users
+
+Authenticating with third party auth providers while automatic
+users were enabled and no current user existed would cause an
+automatic user to be created just to be resolved.
+
+Instead, don't create an automatic user but just authenticate
+normally."
+grantland,2015-12-21 20:27:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1e1f146f876a66bfed09ca4d35ed8a3ddf3fd731,1e1f146f876a66bfed09ca4d35ed8a3ddf3fd731,"Merge pull request #311 from ParsePlatform/grantland.copy
+
+Add copying"
+wangmengyan95,2015-12-21 20:11:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/62f9912b0478785ccb3fd11a8f5d365c3571d2ed,62f9912b0478785ccb3fd11a8f5d365c3571d2ed,"Merge pull request #312 from ParsePlatform/wangmengyan.fix_set_user_state_add_none_existed_authData_bug
+
+Fix ParseUser#setState(state) unnecessarily creating authData"
+grantland,2015-12-18 20:45:22,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a1ab2ebc01e36ae5a97937638ca0f2ccdbd76f5b,a1ab2ebc01e36ae5a97937638ca0f2ccdbd76f5b,"Implement copying
+
+* ParseQuery
+* ParseGeoPoint
+* ParseACL
+* ParsePush"
+wangmengyan95,2015-12-19 00:00:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5e2994798bb51fd65ef8f3190001285494e9f98c,5e2994798bb51fd65ef8f3190001285494e9f98c,Fix ParseUser#setState(state) unnecessarily creating authData
+grantland,2015-12-17 23:01:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/65546a9d61b2c65a62a2d28176f90b0f04b2cee0,65546a9d61b2c65a62a2d28176f90b0f04b2cee0,"Merge pull request #306 from ParsePlatform/grantland.starter
+
+Remove Parse Gradle plugin from ParseStarterProject"
+grantland,2015-12-17 22:56:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3891801ecc41ae7aade623e19819bad992d83c17,3891801ecc41ae7aade623e19819bad992d83c17,"Remove Parse Gradle plugin from ParseStarterProject
+
+No longer relevant without ParseCrashReporting support"
+grantland,2015-12-17 20:27:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d8137676e5f74b4acbe40cfa831421d3b5ede79b,d8137676e5f74b4acbe40cfa831421d3b5ede79b,"Merge pull request #305 from ParsePlatform/grantland.json
+
+Prevent JSONObject/Array + Map/List combinations and unnecessary conversions back and forth"
+grantland,2015-12-16 21:56:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cf58d030563c6f25113e53426aabe4b838229b90,cf58d030563c6f25113e53426aabe4b838229b90,"Prevent JSONObject/Array + Map/List combinations and unnecessary conversions back and forth
+
+We have a bunch of cases where we combine `JSONObject`/`JSONArray` and `Map`/`List` and a bunch of cases where unnecessarily convert `JSONObject` <-> `Map` and `JSONArray` <-> `List` back and forth. This PR simplifies things by removing `JSONObject` and `JSONArray` encoding so that we don't unnecessarily combine or convert back and forth.
+
+* Make encoding JSONObject/JSONArray illegal as we shouldn't be utilizing
+  JSONObject/Array before encoding.
+* Encode JSONObject/Array on `ParseObject.put(key, value)`
+* Do not combine Map & JSONObject for ParsePush - `ParsePush#setData(data)`
+  already accepts `JSONObject` parameter so we shouldn't use `Map<String ?>`
+  to generate REST parameters that contain the `JSONObject` parameter just
+  to convert it back to `JSONObject`
+* Do not combine JSONObject/Array with Map/List for ParseRESTObjectBatchCommand
+* Do not convert Map -> JSONObject -> Map -> JSONObject for ParseAnalytics
+* Simplify ParseConfig tests to utilize Maps/Lists - No reason to convert
+  JSONObject/JSONArray <-> Map/List
+* Convert ParseConfig JSON constructor to factory method"
+grantland,2015-12-17 20:20:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e3f68fe8995d9c169f2707795d55ff296a61594d,e3f68fe8995d9c169f2707795d55ff296a61594d,"Merge pull request #303 from ParsePlatform/grantland.cached
+
+Remove caching of auto-converted values"
+grantland,2015-12-16 01:41:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/34c5def026e051714fa61f546e3b85f5f63bef70,34c5def026e051714fa61f546e3b85f5f63bef70,"Remove caching of auto-converted values
+
+We cache auto-convert JSONObject/JSONArray values from Map/List which causes confusion when the cached value gets returned instead of fresh values from the server. This PR removes cache and instead auto-converts JSONObject/JSONArray values from Map/List on every call to getJSONObject(key) and getJSONArray(key)."
+wangmengyan95,2015-12-17 02:53:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/00e0d08b17e2ba840ad066cc1d3e9609216cbaae,00e0d08b17e2ba840ad066cc1d3e9609216cbaae,"Merge pull request #304 from ParsePlatform/wangmengyan.fix_clear_currentUser_authData
+
+Avoid cleaning currentUser authData in setState"
+wangmengyan95,2015-12-17 01:50:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/497187360873bfac7dee92862303f502549a28f2,497187360873bfac7dee92862303f502549a28f2,Avoid cleaning currentUser authData in setState
+richardjrossiii,2015-12-15 21:09:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2864a95a96d8122a0603088df82c9c5b71c50bdc,2864a95a96d8122a0603088df82c9c5b71c50bdc,"Merge pull request #297 from ParsePlatform/richardross.npe.fix
+
+Properly initialize `Configuration.interceptors` when using old-style APIs."
+richardjrossiii,2015-12-14 23:28:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/210c913c7a8dd98783665c975b884f2a1ac8b9e8,210c913c7a8dd98783665c975b884f2a1ac8b9e8,"Properly initialize `Configuration.interceptors` when using old-style APIs.
+
+This happened because `this.interceptors` was null when `clear()` was invoked.
+
+Fixes #296."
+richardjrossiii,2015-12-12 00:55:22,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8542d982a63c7e3b242fa2a2747b7b2f25fd9f63,8542d982a63c7e3b242fa2a2747b7b2f25fd9f63,"Merge pull request #284 from ParsePlatform/richardross.initialization.update
+
+Add better, more flexible APIs for SDK initialization."
+richardjrossiii,2015-12-08 01:37:22,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7cec3b41e4f96dc43b4d97e4783b03967aed41f0,7cec3b41e4f96dc43b4d97e4783b03967aed41f0,"Add better, more flexible APIs for SDK initialization.
+
+This PR hopes to unify some of these initialization settings int o a single 'configuration' class that can be easily used to intialize parse in a much cleaner way, especially as we add even more initialization options."
+grantland,2015-12-10 19:55:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c686f256c41fd31cf5d53bb114e73e7680641aa6,c686f256c41fd31cf5d53bb114e73e7680641aa6,"Merge pull request #286 from ParsePlatform/grantland.permissions
+
+Allow the system to error when missing required permissions"
+grantland,2015-12-10 19:32:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6ba2ba4ac63bec7bd4bff40094d0779a75349cbb,6ba2ba4ac63bec7bd4bff40094d0779a75349cbb,"Allow the system to error when missing required permissions
+
+Our GCM permission checks would NPE if there were no permissions
+defined. Adding a proper null check allows the system to properly
+throw when missing required ACCESS_NETWORK_STATE or INTERNET
+permissions"
+nlutsenko,2015-12-09 21:05:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/04ed975fe57a9daa1d5b17e82d360f98cf310797,04ed975fe57a9daa1d5b17e82d360f98cf310797,"Merge pull request #285 from ParsePlatform/nlutsenko.readme
+
+Add cross-references to README"
+nlutsenko,2015-12-09 19:22:00,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/53baf65fa5ef97eb95a87ac6098cb61eb42cecdf,53baf65fa5ef97eb95a87ac6098cb61eb42cecdf,Add cross-references to README.
+grantland,2015-12-07 18:56:26,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/652ede350e50c01bba98cc10bf5172df16d1cdc9,652ede350e50c01bba98cc10bf5172df16d1cdc9,"Merge pull request #281 from ParsePlatform/grantland.npe
+
+Fix NPE"
+grantland,2015-12-04 22:58:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/21fb42133a16dd25c415af836cb46992212ac4fd,21fb42133a16dd25c415af836cb46992212ac4fd,"Fix NPE
+
+If `directory == null`, we'll NPE on `directory.mkdir()`."
+wangmengyan95,2015-12-02 21:21:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dfd52abdde55d70bb51c690db4dac373b0fa0641,dfd52abdde55d70bb51c690db4dac373b0fa0641,"Merge pull request #249 from ParsePlatform/wangmengyan.update_detail_log_about_push
+
+Add more log for push"
+wangmengyan95,2015-11-20 22:23:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e8fc559dc79aec5e803f73a280a987b209cc65dd,e8fc559dc79aec5e803f73a280a987b209cc65dd,Add more log for push
+wangmengyan95,2015-11-23 19:29:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c08310bf24891a16680ae92a0233ddbeec57ac41,c08310bf24891a16680ae92a0233ddbeec57ac41,"Merge pull request #261 from ParsePlatform/wangmengyan.add_null_checking_for_push_raw_data
+
+Add null checking for push raw data"
+wangmengyan95,2015-11-20 22:45:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f2a578b2c7e6a264539189355d25995bb3ccc125,f2a578b2c7e6a264539189355d25995bb3ccc125,Add null checking for push raw data
+grantland,2015-11-11 22:51:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a7f3f9b71ed24978e8dd0b675b88e6d5e19f41dd,a7f3f9b71ed24978e8dd0b675b88e6d5e19f41dd,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2015-11-11 22:50:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3441303006e0ae51c37a0008e4f891fb87afc2ee,3441303006e0ae51c37a0008e4f891fb87afc2ee,:zap: Release 1.11.0 :zap:
+wangmengyan95,2015-11-11 20:29:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0123b4acd4fb3769f160b1ce5259c15a42c5be62,0123b4acd4fb3769f160b1ce5259c15a42c5be62,"Merge pull request #116 from ParsePlatform/wangmengyan.t8120706_remove_ParseFile_in_memory_cache
+
+Remove ParseFile in memory cache"
+wangmengyan95,2015-09-08 19:56:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/31da68c174850b3cfd8d866071a94ba4e8584783,31da68c174850b3cfd8d866071a94ba4e8584783,Remvoe ParseFile in-memory cache
+grantland,2015-11-11 00:24:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/279f7a14c5324e8b99c31cd2215163b1fe5dc8fa,279f7a14c5324e8b99c31cd2215163b1fe5dc8fa,"Merge pull request #244 from ParsePlatform/grantland.bolts
+
+Update Bolts, use bolts-tasks instead of bolts-android"
+grantland,2015-11-11 00:06:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5cee40a15e50ff014dac24801e916a0e9f119441,5cee40a15e50ff014dac24801e916a0e9f119441,"Update Bolts, use bolts-tasks instead of bolts-android"
+grantland,2015-11-06 19:41:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/95db225761b7a246f25ae91d70d48c6cbd25ef9f,95db225761b7a246f25ae91d70d48c6cbd25ef9f,"Merge pull request #234 from ParsePlatform/grantland.android-23
+
+Update proguard-rules.pro for android-23"
+grantland,2015-11-06 00:47:39,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/167a67d4708f6d7ddcb6ec0f88990e2b070903a0,167a67d4708f6d7ddcb6ec0f88990e2b070903a0,"Merge pull request #108 from ParsePlatform/grantland.mutable
+
+Remove mutable container tracking"
+grantland,2015-09-04 21:55:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bf4bab2e75f8df6331dc667606cdaab29b55569b,bf4bab2e75f8df6331dc667606cdaab29b55569b,"Remove mutable container tracking
+
+Resolves #58"
+grantland,2015-11-05 19:14:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9e69cb02ba4c145923f1384df3bcba3c5bcff515,9e69cb02ba4c145923f1384df3bcba3c5bcff515,"Update proguard-rules.pro for android-23
+
+android-23 removed some APIs that our SDK uses internally. Luckily,
+we only conditionally use these APIs on older devices so this is
+a non-issue for our SDK running on android-23.
+
+This change adds instructions to ignore warnings from proguard stating
+that these APIs do not exist when using `compileSdkVersion = 23` since
+we already have checks in place."
+wangmengyan95,2015-11-04 18:26:09,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0e71f10372e77931f749e13516fa68ace2207ee0,0e71f10372e77931f749e13516fa68ace2207ee0,"Merge pull request #216 from ParsePlatform/wangmengyan.remove_unnecessary_installation_save
+
+Do not save installation when we only set pushType"
+grantland,2015-10-27 00:45:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a221bb2cd3c5698a582f86ef876b38b8cf3c90a9,a221bb2cd3c5698a582f86ef876b38b8cf3c90a9,"Merge pull request #215 from ParsePlatform/grantland.gcm
+
+Remove GET_ACCOUNTS requirement in Parse"
+grantland,2015-10-26 18:38:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/eeb4203944bbafcb666e2595d5da05e02a1b657c,eeb4203944bbafcb666e2595d5da05e02a1b657c,"Merge pull request #208 from ParsePlatform/grantland.fix-installation
+
+Fix: Multiple ""current"" ParseInstallation instances being created"
+grantland,2015-10-20 23:29:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fbdffa70b01f5a7723b1529062da9653ec346566,fbdffa70b01f5a7723b1529062da9653ec346566,"Fix: Multiple ""current"" ParseInstallation instances being created
+
+This fixes a race condition where multiple `ParseInstallation`
+instances can be returned as ""current""."
+wangmengyan95,2015-10-23 21:57:25,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ebef65696a900aba35c340d355f843d94c50b717,ebef65696a900aba35c340d355f843d94c50b717,Do not save installation when we only set pushType
+grantland,2015-10-23 17:50:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/500a2cbdb62f37af75b665490f7662510c5e6132,500a2cbdb62f37af75b665490f7662510c5e6132,"Merge pull request #214 from ParsePlatform/grantland.rmdefaultclient
+
+Remove ParseRequest defaultClient"
+grantland,2015-10-22 23:20:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e494151bca35534459ab784fabba337127489477,e494151bca35534459ab784fabba337127489477,"Remove GET_ACCOUNTS requirement in Parse
+
+GET_ACCOUNTS is only required for GCM on devices running lower than 4.0.4.
+This will allow developers to leave out this permission if they are targetting
+4.0.4+.
+
+This also removes some trailing whitespace."
+wangmengyan95,2015-10-20 19:17:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/350eece811c51447adb77692a5e33a99ba0926cf,350eece811c51447adb77692a5e33a99ba0926cf,"Merge pull request #195 from ParsePlatform/wangmengyan.remove_gradle.properties
+
+Remove gradle.properties"
+wangmengyan95,2015-10-16 01:51:58,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bdb3cab7b225434013f04872b7cb562733b00a98,bdb3cab7b225434013f04872b7cb562733b00a98,Remove gradle.properties
+grantland,2015-10-14 18:16:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6e5e151d7bd54e2bd1c9b256bee8608df638e48a,6e5e151d7bd54e2bd1c9b256bee8608df638e48a,"Merge pull request #190 from ParsePlatform/grantland.gradle
+
+targetSdkVersion 23"
+grantland,2015-10-14 00:18:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2625f8712f72f3cd1ec152fcde65f0567479559c,2625f8712f72f3cd1ec152fcde65f0567479559c,"targetSdkVersion 23
+
+Unable to update compileSdkVersion due to #189"
+wangmengyan95,2015-10-08 19:41:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bdd5f50d51d30030b9df12c0e09d08d8859e64be,bdd5f50d51d30030b9df12c0e09d08d8859e64be,:tada: Prepare for next development iteration :confetti_ball:
+wangmengyan95,2015-10-08 00:28:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1043763ed31e53ab93051577326503c25dfb2b06,1043763ed31e53ab93051577326503c25dfb2b06,:zap: Release 1.10.3 :zap:
+grantland,2015-10-07 20:47:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7d8f0b764311f945fdd32e3f0180e0931b5fddb6,7d8f0b764311f945fdd32e3f0180e0931b5fddb6,"Merge pull request #177 from ParsePlatform/grantland.fixup
+
+Clean up"
+wangmengyan95,2015-10-06 23:49:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/522ac134c6d8ed47a36fe3f46c10037002ff7d92,522ac134c6d8ed47a36fe3f46c10037002ff7d92,"Merge pull request #113 from ParsePlatform/wangmengyan.t8120706_add_download_file_stream_api
+
+Add new ParseFile download api"
+grantland,2015-10-06 23:45:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e08ec807e8db071c936747cdcd3ebfc593cad6c8,e08ec807e8db071c936747cdcd3ebfc593cad6c8,"Clean up
+
+whitesace & typos"
+wangmengyan95,2015-09-06 00:02:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/831fbbe31b189445cb90a54a3c54c5f77db1e534,831fbbe31b189445cb90a54a3c54c5f77db1e534,Add file stream api
+grantland,2015-10-05 20:56:49,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dbf80ecbe58cbee73b1c4a82a264cf26e40978f9,dbf80ecbe58cbee73b1c4a82a264cf26e40978f9,"Merge pull request #164 from YaoPersonal/makestaticfetchinclude
+
+Make OfflineQueryLogic.fetchIncludeAsync static"
+grantland,2015-10-05 19:09:28,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b7bcd5e4be4a4a9511a79cb2fd49044509db3d0a,b7bcd5e4be4a4a9511a79cb2fd49044509db3d0a,"Merge pull request #168 from ParsePlatform/grantland.readme
+
+Update README.md"
+grantland,2015-10-02 18:27:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/159762c21db92dce5fc44c1bc49c40fbe6be0165,159762c21db92dce5fc44c1bc49c40fbe6be0165,Update README.md
+stanleyw,2015-09-30 17:06:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/04655c3967a94b9da793acd4613cd6eba775e1c9,04655c3967a94b9da793acd4613cd6eba775e1c9,"Merge pull request #143 from ParsePlatform/stanleyw.link_to_network_debugging_tools
+
+Link to Network Debugging Tools in Bug Reporting Guidelines."
+stanleyw,2015-09-30 17:03:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/297e8caaf9caedd655133dafaa99832cc86d8a38,297e8caaf9caedd655133dafaa99832cc86d8a38,Update CONTRIBUTING.md
+wangmengyan95,2015-09-22 04:30:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8012ff4eec8950f72109b32443056f0b0de37b10,8012ff4eec8950f72109b32443056f0b0de37b10,"Merge pull request #115 from ParsePlatform/wangmengyan.t8120706_add_upload_file_stream_api
+
+Add new ParseFile constructors and update save method"
+wangmengyan95,2015-09-06 00:43:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cbdf919b05bcfa4c19dcbdc5d6787782614d5a2e,cbdf919b05bcfa4c19dcbdc5d6787782614d5a2e,Add upload stream api
+wangmengyan95,2015-09-18 19:36:21,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/da739de941c852154016a5706cc53a15ee2fce95,da739de941c852154016a5706cc53a15ee2fce95,"Merge pull request #141 from ParsePlatform/wangmengyan.t8376668_NPE_in_ParseKeyValueCache
+
+Fix NPE in ParseKeyValueCache due to cache dir not exist"
+wangmengyan95,2015-09-17 21:19:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e8ebbc74e779731894f02b53010a291dabebc26e,e8ebbc74e779731894f02b53010a291dabebc26e,Fix NPE in ParseKeyValueCache due to cache dir not exist
+stanleyw,2015-09-18 19:28:52,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/02ff1300e4d380479bd249d097dc1c4ca24e5ddf,02ff1300e4d380479bd249d097dc1c4ca24e5ddf,"Link to Network Debugging Tools
+
+In bug reporting guidelines, link to network debugging tools."
+grantland,2015-09-16 03:57:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d1e29071cef5f0c93ec0ba2c1794089cc411c806,d1e29071cef5f0c93ec0ba2c1794089cc411c806,"Merge pull request #136 from ParsePlatform/grantland.push
+
+Clean up Push warnings"
+grantland,2015-09-16 03:57:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0e03cebc0f5ff357c5afc48dcc6ad25a1758db5c,0e03cebc0f5ff357c5afc48dcc6ad25a1758db5c,"Merge pull request #137 from ParsePlatform/grantland.codecov
+
+Add CodeCov support"
+grantland,2015-09-15 23:04:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fc8c6a5f119102d1e6a37490ebf13a2b194da09d,fc8c6a5f119102d1e6a37490ebf13a2b194da09d,Add CodeCov support
+grantland,2015-09-15 21:25:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b829180f592c9220de4ebd57ce626f607aa3412b,b829180f592c9220de4ebd57ce626f607aa3412b,Clean up Push warnings
+grantland,2015-09-15 01:20:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a3000f2bf68bb5d50b079e85cf471ab6930193c8,a3000f2bf68bb5d50b079e85cf471ab6930193c8,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2015-09-15 01:18:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/18fdba3352d24bd189be4d1f2bf8b18985a3a152,18fdba3352d24bd189be4d1f2bf8b18985a3a152,:zap: Release 1.10.2 :zap:
+wangmengyan95,2015-09-15 00:23:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cd7ae2cfbeba3491ce558251fbfc8980411e3c5e,cd7ae2cfbeba3491ce558251fbfc8980411e3c5e,"Merge pull request #134 from ParsePlatform/wangmengyan.public_add/remove_interceptor_method
+
+Public add/remove interceptor method"
+wangmengyan95,2015-09-15 00:06:55,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7e3740df0c4189f8fded0b9412d0544e9e43bb72,7e3740df0c4189f8fded0b9412d0544e9e43bb72,Update comment
+wangmengyan95,2015-09-14 23:43:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8850e9530b19585a291bcc515606dab1fe58b43c,8850e9530b19585a291bcc515606dab1fe58b43c,"Merge pull request #133 from ParsePlatform/wangmengyan.Change_ParseHttpBody_fields_to_private
+
+Change ParseHttpBody fields access"
+wangmengyan95,2015-09-14 23:42:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2653b03aca177c330eb5808ae20d56765e90971a,2653b03aca177c330eb5808ae20d56765e90971a,Public add/remove interceptor method
+wangmengyan95,2015-09-14 23:27:32,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cf5223ac6a070133da3bec0b5e501801ea69b4de,cf5223ac6a070133da3bec0b5e501801ea69b4de,Change ParseHttpBody fields to private and ParseByteHttpBody fields to package protected
+wangmengyan95,2015-09-14 23:20:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2c1147ca8ea50f732fa94171cfd9119e27b03290,2c1147ca8ea50f732fa94171cfd9119e27b03290,"Merge pull request #119 from ParsePlatform/wangmengyan.t8184922_ParseAWSRequest_tempFile_creation
+
+Create cache dir if it does not exist before we use tempFile"
+wangmengyan95,2015-09-11 22:01:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/441aab86944a2770e39a3c718dee226f367667b9,441aab86944a2770e39a3c718dee226f367667b9,Combine unit test cases
+wangmengyan95,2015-09-10 00:55:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/600c8bcf35cdd299cc12503a14cf0518b919fe20,600c8bcf35cdd299cc12503a14cf0518b919fe20,Create cache dir if it does not exist before we create tempFile in ParseAWSRequest
+grantland,2015-09-14 22:53:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/799d288c064fb41ccade634e7194455bc454c0c4,799d288c064fb41ccade634e7194455bc454c0c4,"Merge pull request #128 from ParsePlatform/grantland.auth_callbacks
+
+Clean up third party authentication APIs"
+grantland,2015-09-11 23:12:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/51ada3ec54149a80996b43f94d1532dbd22d9d75,51ada3ec54149a80996b43f94d1532dbd22d9d75,Rename to AuthenticationCallback and onRestore
+wangmengyan95,2015-09-11 23:27:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6d51a0160d99b7436f43a3625c43f41845e57197,6d51a0160d99b7436f43a3625c43f41845e57197,"Merge pull request #126 from ParsePlatform/wangmengyan.public_ParseHttpRequest_ParseHttpResponse_and_ParseNetworkInterceptor
+
+Public Interceptor related classes"
+wangmengyan95,2015-09-11 00:49:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0072ae443697605d6906eb546606ab0637c23817,0072ae443697605d6906eb546606ab0637c23817,Move ParseHttpRequset/Response/Body and ParseNetworkInterceptor to separate package and publicize
+grantland,2015-09-11 22:30:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/cf8b4dcbdbfbdef5024b475bc09f712bdb2999bc,cf8b4dcbdbfbdef5024b475bc09f712bdb2999bc,Clean up unecessarily complex code
+grantland,2015-09-11 22:07:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f0eda12d780c7a1dc1bf0775c1b42aa8be286d06,f0eda12d780c7a1dc1bf0775c1b42aa8be286d06,"Clean up third party authentication APIs
+
+* ParseAuthenticationProvider -> ParseAuthenticationCallbacks
+* ParseAuthenticationCallback APIs are synchronous, but executed on bg thread to simplify usage
+* ParseAuthenticationCallback APIs are named more callback-y
+* ParseUser.registerAuthenticationCallbacks(authType, callback) <- now takes ""authType"" to match rest of APIs"
+grantland,2015-09-11 19:08:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4684053712c49c8df6f10bb79d59ed5e61820809,4684053712c49c8df6f10bb79d59ed5e61820809,"Merge pull request #125 from ParsePlatform/grantland.authentication_public
+
+Publicize Third Party Authentication methods"
+grantland,2015-09-09 23:00:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c79d8c175fe01149cb1ccd352789e0bd8b9bc652,c79d8c175fe01149cb1ccd352789e0bd8b9bc652,"Publicize Third Party Authentication methods
+
+Publicize + JavaDoc. Required for open sourcing ParseFacebookUtils and ParseTwitterUtils"
+grantland,2015-09-11 19:02:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/da458dda18bd7df37b4c40fa640d3c6bcac98a66,da458dda18bd7df37b4c40fa640d3c6bcac98a66,"Merge pull request #112 from ParsePlatform/grantland.revert
+
+Publicize ParseObject.revert() and revert(key)"
+grantland,2015-09-08 22:57:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/624e65cca177683ee5eb37335ee681e0e73c2d19,624e65cca177683ee5eb37335ee681e0e73c2d19,"Publicize ParseObject.revert() and revert(key)
+
+Also adds JavaDoc, tests, and optimizations.
+
+Resolves #111"
+hallucinogen,2015-09-11 00:38:15,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a0bc43e92273eadafb983e4d42e9e05a31915dc2,a0bc43e92273eadafb983e4d42e9e05a31915dc2,"Merge pull request #124 from ParsePlatform/gogo.tidy-current-user
+
+Consistent naming for CurrentUserController"
+grantland,2015-09-10 23:43:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3fc9bf858bdf7ed7204b86bb3f9f01e94b29da1a,3fc9bf858bdf7ed7204b86bb3f9f01e94b29da1a,"Merge pull request #117 from ParsePlatform/grantland.authentication_async
+
+Convert `restoreAuthentication` to asynchronous"
+grantland,2015-08-29 00:19:37,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7284301a22951b83d2540086f4d2d6765870ffce,7284301a22951b83d2540086f4d2d6765870ffce,Convert `restoreAuthentication` to asynchronous
+wangmengyan95,2015-09-10 22:56:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/29a37953d4de34b225a578c1c7a75b81af15fb82,29a37953d4de34b225a578c1c7a75b81af15fb82,"Merge pull request #120 from ParsePlatform/wangmengyan.t8184922_ParseFileController_delete_cache_file_before_move_temp_file
+
+Manually delete cacheFile before we write to it"
+hallucinogen,2015-09-10 22:37:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/53bb001916ff4def397f280419202512998ee703,53bb001916ff4def397f280419202512998ee703,Consistent naming for CurrentUserController
+wangmengyan95,2015-09-10 03:02:52,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ed75e68a2ef8e1a3cc1b8f320e92b9523c2222d9,ed75e68a2ef8e1a3cc1b8f320e92b9523c2222d9,"Merge pull request #121 from ParsePlatform/wangmengyan.delete_interceptors
+
+Delete ParseNetworkInterceptor implementations and tests"
+wangmengyan95,2015-09-10 02:03:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d5594beca577979ef033ac185b1aaa346ee92aa3,d5594beca577979ef033ac185b1aaa346ee92aa3,Delete ParseNetworkInterceptor implementations and tests
+wangmengyan95,2015-09-10 01:58:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b88231533ac82256f8c04c137496bec2f1c40241,b88231533ac82256f8c04c137496bec2f1c40241,Manually delete cacheFile before we write to it
+grantland,2015-09-09 19:59:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2ee74c423e15a3617216210aaa20d767e25c3e49,2ee74c423e15a3617216210aaa20d767e25c3e49,"Merge pull request #107 from ParsePlatform/grantland.data_availability
+
+Use estimatedData for data availability"
+grantland,2015-09-04 20:30:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/537b389d9a431c0ae90c6589c053fedeb1ca207e,537b389d9a431c0ae90c6589c053fedeb1ca207e,"Use estimatedData for data availability
+
+No need for another `Map` with Autoboxed `Boolean` values."
+grantland,2015-09-09 02:08:04,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/49d1a29db0cbafa2cff9a3b12305354d62f2266b,49d1a29db0cbafa2cff9a3b12305354d62f2266b,"Merge pull request #77 from ParsePlatform/grantland.authentication_controller
+
+Implement ParseAuthenticationManager"
+grantland,2015-08-27 19:42:23,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6bc204b8a7e24d74f1475f4309a5332ed6e4e18c,6bc204b8a7e24d74f1475f4309a5332ed6e4e18c,"Implement ParseAuthenticationManager
+
+* Decouples managing ParseAuthentication providers, convert deauthenticate to async
+* Convert ParseAuthenticationProvider into a interface"
+grantland,2015-09-04 22:02:03,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a2a1fd053d512176d3feef48c196fb8335d0a052,a2a1fd053d512176d3feef48c196fb8335d0a052,"Merge pull request #34 from ParsePlatform/grantland.ui_thread
+
+Don't share locks across UI thread and long running processes"
+grantland,2015-08-20 01:45:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4d5096d9805cfb1df605fce500af80503f5e8e34,4d5096d9805cfb1df605fce500af80503f5e8e34,"Don't share locks across UI thread and long running processes
+
+`setConnected` uses the same lock we use for synchronizing disk I/O, so there's a possibility
+that we can block the UI thread on disk I/O, so we're going to bump the lock usage to a
+different thread."
+grantland,2015-09-04 21:58:40,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dd0a4a7d5451ba20ac280865f997a0857d37ea7f,dd0a4a7d5451ba20ac280865f997a0857d37ea7f,"Merge pull request #105 from ParsePlatform/grantland.lds_file
+
+Remove unused methods"
+grantland,2015-09-04 20:14:36,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e54e7f4376f46ceae4b08277c76e488682013062,e54e7f4376f46ceae4b08277c76e488682013062,Remove unused methods
+wangmengyan95,2015-09-04 00:40:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/70f5c206fc886d52ab535bca60a9176ec5b4a70b,70f5c206fc886d52ab535bca60a9176ec5b4a70b,"Merge pull request #99 from ParsePlatform/wangmengyan.clean_ParseHttpRequset_and_ParseHttpResponse
+
+Clean ParseHttpRequset and ParseHttpResposne"
+wangmengyan95,2015-09-04 00:07:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/224909c5157a70880558b6c0de754b046cc8be4d,224909c5157a70880558b6c0de754b046cc8be4d,Remove newBuilder method for ParseHttpRequest and ParseHttpResponse
+wangmengyan95,2015-09-03 00:20:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/75a265212155b113dbc6e15da2a4c84bfeefe625,75a265212155b113dbc6e15da2a4c84bfeefe625,Update comment
+wangmengyan95,2015-08-31 19:24:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7b47082dbf87809cad220b13f0d06d44687e7cad,7b47082dbf87809cad220b13f0d06d44687e7cad,Clean ParseHttpRequset and ParseHttpResposne
+wangmengyan95,2015-09-03 23:59:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/063ce1b24ca4367d53c5b58854250fb9e43d2b9a,063ce1b24ca4367d53c5b58854250fb9e43d2b9a,"Merge pull request #53 from ParsePlatform/wangmengyan.t8120706_download_ParseFile_content_to_file_instead_of_memory
+
+Download ParseFile content to file instead of memory"
+wangmengyan95,2015-09-03 23:58:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/20a6818903bc49ca0b2bce60a2e3f9d36ac1a3d4,20a6818903bc49ca0b2bce60a2e3f9d36ac1a3d4,"Merge pull request #48 from ParsePlatform/wangmengyan.add_Stetho_interceptor
+
+Add ParseStethoInterceptor"
+wangmengyan95,2015-09-03 21:49:38,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/dd591a92cb175b17b0edb3264b35628cf1ed4e53,dd591a92cb175b17b0edb3264b35628cf1ed4e53,Rebase master and nit changes
+wangmengyan95,2015-09-03 00:26:05,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8c3ed884b876b8b47c5e23f5473a9138927efcf6,8c3ed884b876b8b47c5e23f5473a9138927efcf6,Make ParseAWSRequest.onResponse run in io thread
+wangmengyan95,2015-09-02 18:54:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/228790f8605f5f22319d9031bf6f8a93073743e2,228790f8605f5f22319d9031bf6f8a93073743e2,"Change to io executor, remove delete temp file and nit changes"
+wangmengyan95,2015-09-01 02:34:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d4d754f0417486dea8b9916d4b46a041c1064e2a,d4d754f0417486dea8b9916d4b46a041c1064e2a,Update getTempFile and delete tempFile before download
+wangmengyan95,2015-08-25 02:06:00,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/32876a96ba32f17df4e29894153158a61aad7502,32876a96ba32f17df4e29894153158a61aad7502,Download ParseFile content to file instead of memory
+wangmengyan95,2015-09-03 01:33:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/14ca2dac813f681b85d0091bd92bad6cc1bdbe5b,14ca2dac813f681b85d0091bd92bad6cc1bdbe5b,Add copyright header
+wangmengyan95,2015-09-02 04:29:10,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bccbcbb8f8ae91241c8f273ca5adb9067f8c4123,bccbcbb8f8ae91241c8f273ca5adb9067f8c4123,"Merge pull request #73 from ParsePlatform/wangmengyan.t8145279_create_ParseFileController_save_and_fetch_file_version
+
+Update ParseFileController to allow save file not only byte array"
+wangmengyan95,2015-08-26 22:42:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6929721870b937333b2f62e0b58985209d2b64cb,6929721870b937333b2f62e0b58985209d2b64cb,Update ParseFileController to save file
+wangmengyan95,2015-09-02 00:15:50,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/092962655c566d09523e8017bb69b1660e0dd245,092962655c566d09523e8017bb69b1660e0dd245,"Merge pull request #89 from ParsePlatform/wangmengyan.move_Method_enum_to_ParseHttpRequest
+
+Move Method enum to ParseHttpRequest"
+wangmengyan95,2015-08-31 23:56:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/74e1df76e29d1274423d1160fceb160bf30379fb,74e1df76e29d1274423d1160fceb160bf30379fb,Move Method enum to ParseHttpRequest
+wangmengyan95,2015-09-01 20:50:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/056d552ff99a10c6ba10b965ef17556d2edd98c2,056d552ff99a10c6ba10b965ef17556d2edd98c2,"Merge pull request #88 from ParsePlatform/wangmengyan.t8184922_update_Parse_comment
+
+Update Parse interceptor comment"
+wangmengyan95,2015-09-01 00:25:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f52438762161fbb1c5bcb727d5248ea3df08a634,f52438762161fbb1c5bcb727d5248ea3df08a634,Update java doc
+grantland,2015-09-01 16:43:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/95052e6c1abb9b5e48d81e14d5a9977c5637d1e0,95052e6c1abb9b5e48d81e14d5a9977c5637d1e0,"Merge pull request #93 from ParsePlatform/grantland.gradle
+
+Update Gradle scripts due to changes in 1.3.0"
+grantland,2015-09-01 07:29:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/526446cb5d2c9462adeb9d3bcd1b9853f1d4e185,526446cb5d2c9462adeb9d3bcd1b9853f1d4e185,Update execution data path
+grantland,2015-09-01 07:12:33,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bbcb77328ebd0a63f1786c9e8ca39960a4ef3d3a,bbcb77328ebd0a63f1786c9e8ca39960a4ef3d3a,"Update Gradle scripts due to changes in 1.3.0
+
+testDebug is now testDebugUnitTest"
+wangmengyan95,2015-09-01 00:46:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bd7ddf72eec7773bbc979a6c4ead5ea1a7c64228,bd7ddf72eec7773bbc979a6c4ead5ea1a7c64228,Rebase and update comment
+wangmengyan95,2015-08-25 04:11:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8ee8f9ac6f4dad64aa2e558540936b652b5cf61f,8ee8f9ac6f4dad64aa2e558540936b652b5cf61f,Nit changes
+wangmengyan95,2015-08-23 18:17:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/20a6abb4ec2252505db1eeef5928b478e1307757,20a6abb4ec2252505db1eeef5928b478e1307757,Add ParseStethoInterceptor
+wangmengyan95,2015-09-01 00:08:12,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/984080fa97ae18ff54d2cad53c0ece22cc34675c,984080fa97ae18ff54d2cad53c0ece22cc34675c,"Merge pull request #87 from ParsePlatform/wangmengyan.t8184922_add_ParseNetworkInterceptor_comment
+
+Add comment for ParseNetworkInterceptor"
+wangmengyan95,2015-09-01 00:08:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d611e965178d188940eaad37ec0c726625cdb45c,d611e965178d188940eaad37ec0c726625cdb45c,"Merge pull request #86 from ParsePlatform/wangmengyan.t8184922_add_ParseLogInterceptor_comment
+
+Add comment for ParseLogInterceptor"
+wangmengyan95,2015-08-31 22:51:08,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/88340f98ebc38edf808e6040d5d8d295b194e56a,88340f98ebc38edf808e6040d5d8d295b194e56a,Update Parse interceptor comment
+wangmengyan95,2015-08-31 20:09:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/bd83e7dcf4d0c917bf56a998f5c3ec70ec0524a8,bd83e7dcf4d0c917bf56a998f5c3ec70ec0524a8,Add comment for ParseNetworkInterceptor
+wangmengyan95,2015-08-31 22:28:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/32a7a3e2f65ffb4ae3ccf988443d88736c660751,32a7a3e2f65ffb4ae3ccf988443d88736c660751,Add comment for ParseLogInterceptor
+wangmengyan95,2015-08-31 17:58:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/371a15e8629518411167fb76ffcb9879c00d0dcb,371a15e8629518411167fb76ffcb9879c00d0dcb,"Merge pull request #83 from ParsePlatform/wangmengyan.t8184922_add_ParseHttpBody_comment
+
+Add comment for ParseHttpBody"
+wangmengyan95,2015-08-30 21:39:07,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a0643800738ecdd513ddc46a103ef2243048331f,a0643800738ecdd513ddc46a103ef2243048331f,Add comment for ParseHttpBody
+wangmengyan95,2015-08-29 22:07:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/37d08185e013376aa505b3963283d6838ba1046c,37d08185e013376aa505b3963283d6838ba1046c,"Merge pull request #82 from ParsePlatform/wangmengyan.update_ParseHttpResponse_builder
+
+Add ParseHttpResponse state builder constructor"
+wangmengyan95,2015-08-28 22:59:43,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/77e195fbd6677a35cf69cc3b544be56ad8b05fda,77e195fbd6677a35cf69cc3b544be56ad8b05fda,Add ParseHttpResponse state builder constructor
+wangmengyan95,2015-08-28 23:09:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/af5c5731620f9891b59b7f1ff6d4ad3712674148,af5c5731620f9891b59b7f1ff6d4ad3712674148,"Merge pull request #70 from ParsePlatform/wangmengyan.t8145272_add_ParseFileHttpBody
+
+Add ParseFileHttpBody and ParseCountingFileHttpBody"
+wangmengyan95,2015-08-28 20:05:11,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/36278cad009e4fb715dfdd8fb64c0d63fff77c7f,36278cad009e4fb715dfdd8fb64c0d63fff77c7f,"Merge pull request #74 from ParsePlatform/wangmengyan.update_ParseCountingByteArrayHttpBodyTest
+
+Update ParseCountingByteArrayHttpBodyTest"
+wangmengyan95,2015-08-28 20:04:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/11b168582ceb31a00a72caa6b40a74c6f90b73be,11b168582ceb31a00a72caa6b40a74c6f90b73be,"Merge pull request #49 from ParsePlatform/wangmengyan.fix_ApacheHttpClient_streamEntity_exception
+
+Disable ApacheHttpClient auto retry in order to expose real exception to interceptor"
+wangmengyan95,2015-08-23 21:32:19,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8e8bebb4cb839f5b4d476dc661dcd67edd7fa159,8e8bebb4cb839f5b4d476dc661dcd67edd7fa159,Disable ApacheHttpClient retry logic
+wangmengyan95,2015-08-28 18:40:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/300a352e33510d4cb3e16eeb124fe0c3a9e96e09,300a352e33510d4cb3e16eeb124fe0c3a9e96e09,"Merge pull request #42 from ParsePlatform/wangmengyan.use_OkHttp_interceptor_list_when_we_use_ParseOkHttpClient
+
+Use OKHttp interceptor list when we use ParseOkHttpClient"
+wangmengyan95,2015-08-21 00:23:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f46c8bfc9336460fef46c5308ac5c939bd847df4,f46c8bfc9336460fef46c5308ac5c939bd847df4,Use OKHttp interceptor list when we use ParseOkHttpClient
+wangmengyan95,2015-08-28 18:32:26,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/765589c70b34817def10395bd1b3a91a2fecb2ee,765589c70b34817def10395bd1b3a91a2fecb2ee,"Merge pull request #36 from ParsePlatform/wangmengyan.add_decompress_interceptor_when_we_have_external_interceptors
+
+Disable transparent ungzip and add decompress interceptor"
+wangmengyan95,2015-08-20 07:49:20,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/01a30d50eda78aa7a9ca8a8743486031a115ef43,01a30d50eda78aa7a9ca8a8743486031a115ef43,Disable transparent ungzip and add decompress interceptor
+wangmengyan95,2015-08-28 18:20:41,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/7e0ea0dd74c8ceead7536dda73681e00fb729b12,7e0ea0dd74c8ceead7536dda73681e00fb729b12,"Merge pull request #33 from ParsePlatform/wangmengyan.update_LogInterceptor_to_handle_gzip_android
+
+Update ParseLogInterceptor to handle gzip stream"
+wangmengyan95,2015-08-19 22:10:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/0da624a32aed2fd2092c3e63c22d9250a691afe9,0da624a32aed2fd2092c3e63c22d9250a691afe9,Update ParseLogInterceptor to handle gzip stream
+grantland,2015-08-28 05:44:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/45a7bf489d048bba85eb02cf38c9d02eff35a042,45a7bf489d048bba85eb02cf38c9d02eff35a042,"Merge pull request #79 from ParsePlatform/grantland.gradle
+
+Update Gradle plugin to 1.3.1"
+grantland,2015-08-28 03:14:45,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/1cd424562e3b3dc9837b2f1b3ea0b40dcf87cf44,1cd424562e3b3dc9837b2f1b3ea0b40dcf87cf44,Update Gradle plugin to 1.3.1
+lukas1994,2015-08-27 18:49:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/77cf6ef383eb686b83a93b4a04ddd0f746994b66,77cf6ef383eb686b83a93b4a04ddd0f746994b66,"Merge pull request #56 from lukas1994/acl
+
+Refactored ParseACL to use POJOs instead of JSON objects"
+grantland,2015-08-27 18:42:02,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/92ceb12982878b55f9ce7607f4b05f48737a9898,92ceb12982878b55f9ce7607f4b05f48737a9898,"Merge pull request #72 from ParsePlatform/grantland.lazy
+
+Fix signUp and linkWith with an anonymous user"
+grantland,2015-08-26 07:53:01,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fc249c024dee8a3a10f9e0f79e4c93f8ecadbeff,fc249c024dee8a3a10f9e0f79e4c93f8ecadbeff,"Fix signUp and linkWith with an anonymous user
+
+Fixes integration test failures caused by #52
+
+We strip anonymity in `signUp` and `linkWith` before calling into
+`saveAsync` where there's a fork in logic for `isLazy()`. Since we
+now determine `isLazy()` based off `objectId != null && ParseAnonymousUtils.isLinked(this)`,
+`isLazy()` returns the incorrect value for these logic paths.
+
+The solution is to get the value of `isLazy()` before stripping
+anonymity and passing it through to `saveAsync()`.
+
+* Callers of resolveLazinessAsync never use it's return value, might as well make it Void
+* Make signUp more robust by reverting current user's password on failure if that's how it originally was
+* Make signUp more robust by reverting the current user's password on success"
+wangmengyan95,2015-08-27 02:07:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5fa29de25c5f32867df1e55b4f67155334176fa3,5fa29de25c5f32867df1e55b4f67155334176fa3,Update ParseCountingByteArrayHttpBodyTest
+grantland,2015-08-27 01:57:57,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4f93715ecc8b939a5cae4702a79514170c9701ac,4f93715ecc8b939a5cae4702a79514170c9701ac,"Merge pull request #59 from ParsePlatform/grantland.auth_cancel
+
+Remove ParseAuthenticationProvider.cancel()"
+grantland,2015-08-26 03:05:00,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ec2747d580dff1eb7559d3298cf390bebda5af85,ec2747d580dff1eb7559d3298cf390bebda5af85,"Remove ParseAuthenticationProvider.cancel()
+
+Unused"
+grantland,2015-08-27 01:56:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/8b5403ecf3bf213a4a7e30880f4edaf7a8b26adf,8b5403ecf3bf213a4a7e30880f4edaf7a8b26adf,"Merge pull request #60 from ParsePlatform/grantland.auth_callback
+
+Remove unecessary ParseAuthenticationCallback"
+grantland,2015-08-26 03:00:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6701fcb36152e6c5cd6bdff8a2049bafa2ed383d,6701fcb36152e6c5cd6bdff8a2049bafa2ed383d,Remove unecessary ParseAuthenticationCallback
+grantland,2015-08-27 01:55:53,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2f4dbba9f94dca5ff2893e79d78cb109514c3b6a,2f4dbba9f94dca5ff2893e79d78cb109514c3b6a,"Merge pull request #67 from ParsePlatform/grantland.clean_up
+
+Clean up unused code"
+grantland,2015-08-26 18:48:56,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/f01a0b293bc5c29b66f2dbac2aa088ca6a769492,f01a0b293bc5c29b66f2dbac2aa088ca6a769492,"Clean up unused code
+
+Unused"
+grantland,2015-08-27 01:47:48,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/fa8ac07783e20827a4a1ff0fd8a7226b2faaecac,fa8ac07783e20827a4a1ff0fd8a7226b2faaecac,"Merge pull request #71 from ParsePlatform/grantland.clean_parse_user_test
+
+Clean warnings in ParseUserTest"
+grantland,2015-08-26 23:34:51,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/2afe99479aa9b29795a362579b379764629ddf56,2afe99479aa9b29795a362579b379764629ddf56,Clean warnings in ParseUserTest
+wangmengyan95,2015-08-26 22:42:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c7554b977da5a4f5149759de573b1213bfbc660c,c7554b977da5a4f5149759de573b1213bfbc660c,Add ParseFileHttpBody and ParseCountingFileHttpBody
+grantland,2015-08-25 20:25:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/44d313387cbabb73160a24d3463a6cb784fa6660,44d313387cbabb73160a24d3463a6cb784fa6660,"Merge pull request #52 from lukas1994/lazy
+
+Remove isLazy property in ParseUser"
+wangmengyan95,2015-08-20 20:15:44,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ed4eb6ad080672858c298f7bb09beb39ac399006,ed4eb6ad080672858c298f7bb09beb39ac399006,"Merge pull request #40 from ParsePlatform/wangmengyan.close_network_stream_in_ParseRESTCommand_onResponse
+
+Close network stream in ParseRESTCommand after we consume it"
+wangmengyan95,2015-08-20 18:08:35,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/e6caef002fb853625df624d71b991a29678aa146,e6caef002fb853625df624d71b991a29678aa146,Close network stream in ParseRESTCommand after we consume it
+grantland,2015-08-19 18:57:42,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/c85a1eaa520a94fe0cbf4ec9740a06a8c4ad4878,c85a1eaa520a94fe0cbf4ec9740a06a8c4ad4878,:zap: Release 1.10.1 :zap:
+grantland,2015-08-19 03:10:24,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/46ee1b151b0319fda70ef35889074d2d124bf9b8,46ee1b151b0319fda70ef35889074d2d124bf9b8,:zap: Prepare for next development iteration :zap:
+grantland,2015-08-19 02:48:30,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/b541aa6a1ac6a5d2ea0fc624d811dc9ea79db1f5,b541aa6a1ac6a5d2ea0fc624d811dc9ea79db1f5,:zap: Release 1.10.1 :zap:
+grantland,2015-08-19 00:22:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/19e175a92e7cdcf317ca408437404c8d8eea7d42,19e175a92e7cdcf317ca408437404c8d8eea7d42,"Merge pull request #32 from ParsePlatform/grantland.cloud
+
+Fix: Unable to receive null response from Cloud Code"
+grantland,2015-08-18 23:29:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/a0b351c682fb510f109fd2b3cf160ae3a07b5ccf,a0b351c682fb510f109fd2b3cf160ae3a07b5ccf,Remove test that no longer applies
+lukas1994,2015-08-18 21:00:17,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5c59ea11bd316a711b232ad51de293b729781f12,5c59ea11bd316a711b232ad51de293b729781f12,"Merge pull request #3 from lukas1994/bug_fix
+
+Fixed: ParseUser.getCurrentUser() returns a non authenticated user when local datastore is used"
+grantland,2015-08-18 19:14:14,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/5b16e3b26afe3d96cbc6fce8840e3c749c3881f4,5b16e3b26afe3d96cbc6fce8840e3c749c3881f4,"Fix: Unable to receive null response from Cloud Code
+
+`res.success(null)` from Cloud Code caused `ParseCloud.callFunctionInBackground()` to return a JSONObject, which would result in `ClassCastException` in developer code since they would normally expect a `String` or something.
+
+This change fixes that."
+lukas1994,2015-08-18 19:06:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/609d3298bed48b0e31da0a847a4320a7806814e6,609d3298bed48b0e31da0a847a4320a7806814e6,"Merge pull request #29 from lukas1994/push.translation
+
+Push Translation"
+grantland,2015-08-17 18:43:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/6ed95a5e0f2cb1cbebd8b542e835e430699e97fd,6ed95a5e0f2cb1cbebd8b542e835e430699e97fd,"Merge pull request #25 from sowrabh/parserelation-fix
+
+Fixed #7 - Keep `WeakReference` to parent `ParseObject` in `ParseRelation`"
+sowrabh,2015-08-17 10:51:54,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/12b6cb0b91334fe2774e5760aea2896156024119,12b6cb0b91334fe2774e5760aea2896156024119,"Fixed #7 - Keep `WeakReference` to parent `ParseObject` in `ParseRelation`
+As suggested in the issue, keeping reference to parent objectId, className and recreating parent pointer when the parent is GC'ed. All tests passed locally.
+
+Fixed #7 - Keep `WeakReference` to parent `ParseObject` in `ParseRelation`
+As suggested in the issue, keeping reference to parent objectId, className and recreating parent pointer when the parent is GC'ed. All tests passed locally.
+
+Addressing CR comments
+
+Merge branch 'parserelation-fix' of https://github.com/sowrabh/Parse-SDK-Android into parserelation-fix"
+grantland,2015-08-14 23:11:28,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/08b1f232030028b85116f6870c9f539eaf9ec01f,08b1f232030028b85116f6870c9f539eaf9ec01f,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2015-08-14 22:31:59,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4dd058736cd81d3f4245d237e22ff4db7aabc763,4dd058736cd81d3f4245d237e22ff4db7aabc763,"Merge pull request #17 from ParsePlatform/grantland.proguard
+
+Add proguard rules to ParseStarterProject"
+grantland,2015-08-14 19:36:47,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/ac5db47a936e0f12e23f8985280945af428e77e2,ac5db47a936e0f12e23f8985280945af428e77e2,"Merge pull request #5 from ParsePlatform/grantland.lds_jsonarray
+
+Fix querying for a ParseObject with JSONArray key"
+grantland,2015-08-13 22:32:29,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/4fba2cc269dd4c19177dd46a15810bb634bd8044,4fba2cc269dd4c19177dd46a15810bb634bd8044,"Fix querying for a ParseObject with JSONArray key
+
+`OfflineQueryLogic` was missing the proper code path to compare
+a value against a `JSONArray`.
+
+Added tests for comparing a value against a `List`."
+grantland,2015-08-14 17:24:31,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/d7d4b936af1a4d238e855582f5939e91be797c6c,d7d4b936af1a4d238e855582f5939e91be797c6c,Add proguard rules to ParseStarterProject
+grantland,2015-08-13 21:30:16,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/3873c3df97b4d1b09e52eed39a46458794a5009f,3873c3df97b4d1b09e52eed39a46458794a5009f,"Merge pull request #2 from Kiloreux/Kiloreux
+
+Added caching for travis builds"
+kiloreux,2015-08-13 19:33:27,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/34c7a3ba5056a3e116cbd7e6267bd59f3e887d9e,34c7a3ba5056a3e116cbd7e6267bd59f3e887d9e,Added caching for travis builds
+grantland,2015-08-13 02:09:34,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/56d7970038aac120947af5f5f313eca6928174ad,56d7970038aac120947af5f5f313eca6928174ad,:tada: Prepare for next development iteration :confetti_ball:
+grantland,2015-08-13 01:50:13,https://api.github.com/repos/parse-community/Parse-SDK-Android/git/commits/9458e862320783480aea2b2f2d170415bab44a2a,9458e862320783480aea2b2f2d170415bab44a2a,(っ˘▽˘)っ :cloud: ⊂(◕。◕⊂)

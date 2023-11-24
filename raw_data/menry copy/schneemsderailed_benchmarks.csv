@@ -1,0 +1,731 @@
+derailed_benchmarks,"Go faster, off the Rails - Benchmarks for your whole Rails app"
+username,timestamp,url,sha,message
+schneems,2019-08-29 08:12:01,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e13f99c175cc4d2a04f332bb7b107d7484830e1b,e13f99c175cc4d2a04f332bb7b107d7484830e1b,"Merge pull request #147 from hmcfletch/feature/ips-env-var
+
+Allow config of `Benchmark.ips` via env vars"
+hmcfletch,2019-08-28 17:19:43,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/7395049716f73d04a9d0703ad3c086a0552355dc,7395049716f73d04a9d0703ad3c086a0552355dc,CHANGELOG and README
+hmcfletch,2019-08-28 17:19:30,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/673883edbb297b3510491b72f3ada5c0415cdc6e,673883edbb297b3510491b72f3ada5c0415cdc6e,update env var names and add `suite` and `iterations`
+hmcfletch,2019-08-28 16:08:34,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/08ade2604e7ec89363a3ef87782c4c5a5f7400ef,08ade2604e7ec89363a3ef87782c4c5a5f7400ef,allow config of `Benchmark.ips` via env vars
+schneems,2019-07-11 00:14:07,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a5eac5e369e4ecdcb733fc074cee6fef522281e8,a5eac5e369e4ecdcb733fc074cee6fef522281e8,"Merge pull request #143 from Jason-Cooke/patch-1
+
+docs: fix typos"
+Jason-Cooke,2019-07-10 21:28:34,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/927b8edb7c382a7337b2b875a13b149ecfb6a862,927b8edb7c382a7337b2b875a13b149ecfb6a862,docs: fix typos
+schneems,2019-07-09 18:25:04,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ad2dd07ff3839118d5a617359e24a7895244c669,ad2dd07ff3839118d5a617359e24a7895244c669,Fewer allocations for `require_relative` logic
+schneems,2019-07-09 18:24:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/eeb1b1820c3655130f3e67a2e64ea616ff68c1b1,eeb1b1820c3655130f3e67a2e64ea616ff68c1b1,Clean up warnings
+schneems,2019-07-09 18:12:42,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/4443901ff8e4152a2c584be971c4171a3f2b8507,4443901ff8e4152a2c584be971c4171a3f2b8507,v1.4.0
+schneems,2019-07-08 22:26:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/738b77e6c5dce76df07ad0005669c62ce7df1703,738b77e6c5dce76df07ad0005669c62ce7df1703,"Merge pull request #142 from michaelherold/require-relative-for-non-relative-paths
+
+Allow `require_relative` to accept absolute paths"
+michaelherold,2019-07-08 21:48:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/feafd7d1bf228a05868074ee7bcc2fc9543bf8a4,feafd7d1bf228a05868074ee7bcc2fc9543bf8a4,"Allow `require_relative` to accept absolute paths
+
+Ruby's `require_relative` [converts paths to absolute paths][1] before
+calling `require`. This conversion effectively means that you can pass
+an absolute path to `require_relative` and have it load the file
+correctly, as if it were a relative path.
+
+This is an idiosyncrasy of Ruby that doesn't match the semantics of the
+method. However, some libraries, like [grpc][2], rely on the
+idiosyncrasy to load files. Because Derailed's implementation doesn't
+conform to this idiosyncrasy, it is unable to work when such libraries
+exist in a project.
+
+This change makes Derailed's implementation of `require_relative` behave
+more closely to the implementation in Ruby. By making this change, you
+can use Derailed with any offending gem.
+
+[1]: https://github.com/ruby/ruby/blob/v2_6_3/load.c#L832-L841
+[2]: https://github.com/grpc/grpc/blob/v1.22.0/src/ruby/lib/grpc/grpc.rb#L20"
+schneems,2019-07-01 16:57:11,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1b0c425720fd6cc575edbb389b434f461cb65989,1b0c425720fd6cc575edbb389b434f461cb65989,"Merge pull request #141 from schneems/schneems/stats-dir-call-and-stuff
+
+Better defaults for perf:library"
+schneems,2019-07-01 16:13:42,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/77db229808becc8b5b12aa40aa8cbd636cde0149,77db229808becc8b5b12aa40aa8cbd636cde0149,Fix tests
+schneems,2019-07-01 15:45:49,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e3c30e8c9704c51fa9c0485c6417ac441b52524a,e3c30e8c9704c51fa9c0485c6417ac441b52524a,"Better defaults for perf:library
+
+By default perf:library will not stop when it detects 10 runs that are
+statistically significant. This provides an average that is not as
+accurate, but decreases the time to run a benchmark from 60+ minutes per
+run to as little as 3 minutes and results are roughly comparable. This
+setting can also be tuned so that all benchmark iterations are forced to
+run.
+
+In addition, one SHA can be specified instead of 2. When this is
+provided then derailed will assume you want this SHA run against the
+most recent commit present. This could be useful if you are trying out
+different changes on a branch and want to always compare the same
+baseline to the latest commit in your branch."
+schneems,2019-06-28 17:50:50,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2ee367f36baf63ac0b1475f137eaeaa25af68525,2ee367f36baf63ac0b1475f137eaeaa25af68525,"Merge pull request #140 from schneems/schneems/default-last-two-commits
+
+Default perf:library to last two commits"
+schneems,2019-06-28 15:54:18,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a741883206d341842dd799f1fa514e6ea3d2a3ce,a741883206d341842dd799f1fa514e6ea3d2a3ce,"Default perf:library to last two commits
+
+The most common case will be to test the last to git SHAs, so when the
+env var does not specify specific commits, we will default to the last
+two in the git repo."
+schneems,2019-06-27 22:35:53,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b70e8a3dcd9ddd164c3039b55a1cbc6d1f34f5f8,b70e8a3dcd9ddd164c3039b55a1cbc6d1f34f5f8,"Merge pull request #139 from schneems/schneems/more-info-rails-bench
+
+Add commit description and ordering to output"
+schneems,2019-06-27 22:08:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b3f5988fed7b798af572ece319738d527c23895c,b3f5988fed7b798af572ece319738d527c23895c,"Use more descriptive commands and env vars
+
+If you use a branch name with the method that is given i.e. ""master"" it
+can mess things up since ""master"" is the commit SHA you specify in the
+Gemfile.lock and not the actual master value (though this works
+correctly if you're specifying path: in your Gemfile).
+
+We can use SHA instead of BRANCHES for the input. Also just plain
+""library"" instead of ""library_branches"""
+schneems,2019-06-27 20:51:58,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fced9e20d465d21f64cf758156086226abdeea97,fced9e20d465d21f64cf758156086226abdeea97,"Add commit description and ordering to output
+
+There were some problems to the old formatting of the library comparison
+output. The x faster and % faster were confusing because it wasn't clear
+how they were derived. Also it was not clear which commit SHA belonged
+to which values.
+
+In this updated value we give the formulas for the values that are being
+shown as well. The latest commit is always first and the value will show
+either SLOWER or FASTER based on actual values. Finally we're including
+the git first line description to make it clearer which commit is which.
+
+New output looks like this:
+
+```
+❤️ ❤️ ❤️  (Statistically Significant) ❤️ ❤️ ❤️
+
+[7b4d80cb37] ""1.8x Faster Partial Caching - Faster Cache Keys"" - (10.9711965 seconds)
+  FASTER by:
+    1.0870x [older/newer]
+    8.0026% [(older - newer) / older * 100]
+[13d6aa3a7b] ""Merge pull request #36284 from kamipo/fix_eager_loading_with_string_joins"" - (11.9255485 seconds)
+
+P-value: 4.635595463712749e-05
+Is significant? (P-value < 0.05): true
+```"
+schneems,2019-06-27 14:41:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ced4aa76e9afe3084617eeec641cfb9199069a32,ced4aa76e9afe3084617eeec641cfb9199069a32,"Merge pull request #138 from schneems/schneems/string-literal-comment
+
+Frozen string literals"
+schneems,2019-06-26 21:58:55,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ad442b88fdf48da348e87e8f46d7cdc80d0064c9,ad442b88fdf48da348e87e8f46d7cdc80d0064c9,"Speed up test
+
+We only need to verify that it ran, not run it 1000 times. By only
+running 10 iterations, we can speed it up."
+schneems,2019-06-26 21:55:52,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/19e0e8ad30ab3225f0f6d1e0aa8ce5a8b4ac47c6,19e0e8ad30ab3225f0f6d1e0aa8ce5a8b4ac47c6,"Fix test count runs
+
+Previously TEST_COUNT controlled how many iterations were run, but then
+I changed it so that it didn't affect the sub script. I forgot to update
+the env var in this test. We only need it to run twice."
+schneems,2019-06-26 16:29:35,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/644fe6c98809275a77722c27d5c85abd52d24c27,644fe6c98809275a77722c27d5c85abd52d24c27,"Merge pull request #135 from schneems/schneems/compare_library_branch
+
+Test if a Rails patch is statistically faster"
+schneems,2019-06-25 21:38:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/66563acffbb4b94ca3ec0fcc4f946e2d096a3f97,66563acffbb4b94ca3ec0fcc4f946e2d096a3f97,Frozen string literals
+schneems,2019-06-25 20:36:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c5b082ff728c785c2e88b2c14c94a930e729183e,c5b082ff728c785c2e88b2c14c94a930e729183e,"Don't over-write env var
+
+The sub script that we execute also uses TEST_COUNT, so this accidentally sets it to only run 100 times.
+
+By using a custom env var here, we can avoid the problem."
+schneems,2019-06-25 18:54:00,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1e2dbbf36842143ddaf33955eddd35cf85ea453f,1e2dbbf36842143ddaf33955eddd35cf85ea453f,More consistent test
+schneems,2019-06-25 18:44:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d0c84b96f78131aaa7ae5bbded5eb94d16c4b016,d0c84b96f78131aaa7ae5bbded5eb94d16c4b016,"Use Rails 5.2 git commits due to issue
+
+https://github.com/rails/rails/issues/36544"
+schneems,2019-06-23 22:55:49,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d387ae0e9567c3f13d4547d68f8d71b8fcbbed90,d387ae0e9567c3f13d4547d68f8d71b8fcbbed90,Fix test
+schneems,2019-06-23 20:28:16,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/8b8e0a5006d2e1629325f1993fa9d0dc612d6b50,8b8e0a5006d2e1629325f1993fa9d0dc612d6b50,"Test if a Rails patch is statistically faster 
+
+When you're trying to submit a performance patch to rails/rails then they'll likely ask you for a benchmark. While you can sometimes provide a microbenchmark, a real world full stack request/response test is the gold standard. 
+
+That's what this section is about. You'll need a rails app, ideally one you can open source (see [example apps](http://codetriage.com/example_app) if you need inspiration for extracting your private code into something external).
+
+Then you'll need to fork rails and make a branch. Then point your rails app to your branch in your gemfile
+
+```
+gem 'rails', github: ""<github username>/rails"", branch: ""<your branch name>""
+```
+
+Now you can specify two different commits to test against. Derailed will cycle betwen them, hitting each with 1000 requests. It will record the time it takes to do this 100 times. It uses the different times from the different runs to generate a [student's T test]() which will tell you if the outcome is likely the result of your change or if it's statistical noise. This is important, because moving the needle on the request/response cycle is very difficult, and a performance improvement of 1.01x or 1% faster can be of value, but you have to make sure such a small change isn't the result of noise.
+
+To run your test:
+
+```
+$ BRANCHES_TO_TEST=""7b4d80cb373e,13d6aa3a7b70"" bundle exec derailed exec perf:library_branches
+```
+
+> Use a comma to seperate your branch names
+
+Derailed will automatically find where you've installed Rails and switch between the branches for you between the tests.
+
+These tests take a along time to run so the output is stored on disk incase you want to see them in the future, they're at `tmp/library_branches/<timestamp>` and labeled with the same names as your branches.
+
+Before running tests you should close all programs on your laptop, turn on a program to prevent your laptop from going to sleep (or increase your sleep timer). Make sure it's plugged into a power outlet and  go grab a cup of coffee. If you do anything on your laptop while this test is running you risk the chance of skewing your results.
+
+When the test is done it will output which commit ""won"" and by how much:
+
+```
+Test ""7b4d80cb373e"" is faster than ""13d6aa3a7b70"" by
+  1.0062x faster or 0.6131% faster
+
+P-value: 3.733653842080382e-05
+Is signifigant? (P-value < 0.05): true
+```
+
+You can provide this to the Rails team along with the example app you used to benchmark (so they can independently verify if needed).
+
+Generally performance patches have to be weighted in terms of how much they help versus how large/difficult/gnarly the patch is. If the above example was a really tiny patch and it was in a common component, then half a percent might be a justafiable increase. If it was a huge re-write then it's likely going to be closed. In general I tend to not submit patches unless I'm seeing `>= 1%` performance increases.
+
+You can use this to test changes in other libraries that aren't rails, you just have to tell it the path to the library you want to test against with the `DERAILED_PATH_TO_LIBRARY` env var."
+schneems,2019-06-23 20:03:35,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0aae39ddfe8a7e381a5e4c3280912b6dcdef7cba,0aae39ddfe8a7e381a5e4c3280912b6dcdef7cba,Change test name to make some sense
+schneems,2019-06-23 20:00:58,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3faba98f0053d7f29ba8512958917f6d43df1d6b,3faba98f0053d7f29ba8512958917f6d43df1d6b,Move setup tasks to their own file
+schneems,2019-06-23 20:00:46,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2a1efab92702f01c43fcc5635bfd9078d7b5ef25,2a1efab92702f01c43fcc5635bfd9078d7b5ef25,Convert benchmark files to numbers with statistical significants
+schneems,2019-06-23 08:16:04,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/088a53e181e6f264b96e21c2a4c75487b586d4e4,088a53e181e6f264b96e21c2a4c75487b586d4e4,v1.3.6
+schneems,2019-06-22 12:19:37,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/686e0fb90aba5ea1d65bd4eb3abb3c21bdf036f0,686e0fb90aba5ea1d65bd4eb3abb3c21bdf036f0,"Merge pull request #132 from schneems/benoittgt-avoid_loading_source_annotation_extractor
+
+Merge ALL the PRs"
+schneems,2019-06-11 17:20:13,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/71761fbeca575dce75dba9667efc3b2e7a0b0541,71761fbeca575dce75dba9667efc3b2e7a0b0541,Use specific version of Rails
+schneems,2019-06-11 16:54:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/29118990afc7794d3e3f4a2538bda767343ec5c1,29118990afc7794d3e3f4a2538bda767343ec5c1,Does this work?
+benoittgt,2019-05-29 20:03:07,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5292dbe5b28e5ea19063262954483e79c1de0c28,5292dbe5b28e5ea19063262954483e79c1de0c28,Add rails v6.0.0.rc1 as Gemfile and to TravisCI
+benoittgt,2019-05-29 19:54:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/209a52a51ce2402dbd4fa3fb2862fd31e8d60068,209a52a51ce2402dbd4fa3fb2862fd31e8d60068,"Deal with crash when loading deprecated rails lib
+
+Fix https://github.com/schneems/derailed_benchmarks/issues/128"
+schneems,2019-06-11 16:42:37,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/bc08de1bc6cba62f23e4ebb248c22066701fc9d1,bc08de1bc6cba62f23e4ebb248c22066701fc9d1,Fix deprecation warning
+schneems,2019-06-11 16:42:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d486631ab0db54dd2577be8fdcd4ad1109eef232,d486631ab0db54dd2577be8fdcd4ad1109eef232,Fix test helper logic
+schneems,2019-06-11 16:42:13,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2828c0c7482b3135ba395f95c70ec2333620b5ae,2828c0c7482b3135ba395f95c70ec2333620b5ae,Fix warnings
+schneems,2019-06-11 15:18:27,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fac3cbbc88895fc0b2f04653ad02f6f4be26e634,fac3cbbc88895fc0b2f04653ad02f6f4be26e634,Raise instead of warn
+schneems,2019-06-11 03:00:50,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6bac57ba9c60146837e5ea28ca7ede9ce16104bd,6bac57ba9c60146837e5ea28ca7ede9ce16104bd,Update gem file tests
+schneems,2019-06-11 02:50:37,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0566cefc4aa61988ad2c5db195576312e40f38a9,0566cefc4aa61988ad2c5db195576312e40f38a9,Fix test
+schneems,2019-06-11 02:48:59,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9bc5b85e83be2fdf4b93a7eb78571313773c8b56,9bc5b85e83be2fdf4b93a7eb78571313773c8b56,"Add the ""m"" gem"
+NickLaMuro,2017-05-24 16:26:00,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/af11bcc46a4fa24f79e4897a51034927a56e077e,af11bcc46a4fa24f79e4897a51034927a56e077e,"Include require_relative RequireTree
+
+Kernel.require_relative is actually defined in the load.c file of ruby's
+source:
+
+https://github.com/ruby/ruby/blob/b7ad549/load.c#L829-L846
+
+Which effectively takes the current thread's callstack, determines
+the caller's absolute filepath from that, and then runs the same
+`rb_require_safe` as the C `require` function (`rb_f_require` is defined
+right above the `require_relative` link from above).
+
+Because we add another layer into the stack when monkey patching
+`require_relative`, this doesn't work properly, and it tries to find the
+file in the directory that require_relative was monkey patched from, not
+from caller of `require_relative`.
+
+The fix for this the monkey patching of `require_relative` was to call
+into the monkey patched `require` defined above it, and pass it the
+absolute path of the file based on the caller's absolute_path.  This is
+similar to the C implementation, but does have the negative side effect
+of probably not being as fast as it's C counter part, but I think that
+this will be fine, as we are measuring memory, not boot time."
+schneems,2019-06-22 10:56:29,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9bd8be247b1a13568b421af63c62334e6038c4e7,9bd8be247b1a13568b421af63c62334e6038c4e7,"Merge pull request #134 from benoittgt/require_need_to_be_private
+
+Prevent undefining ""require"" by making it private"
+benoittgt,2019-06-22 07:24:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a0ac202f962020e20c37084aa85f5fa13dd9edc7,a0ac202f962020e20c37084aa85f5fa13dd9edc7,"Prevent undefining ""require"" by making it private
+
+There is a code in rails in DeprecationProxy that undef methods of
+deprecated object, constant, etc. But in our case we were making
+""require"" public so it was undefined and it was leading to a crash.
+
+Fix: https://github.com/schneems/derailed_benchmarks/issues/128
+Related:
+- https://github.com/schneems/derailed_benchmarks/pull/130
+- https://github.com/rails/rails/pull/36530"
+schneems,2019-06-11 02:26:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e5f087a16dda70db6d2d85dbc7906a8af75fc0e1,e5f087a16dda70db6d2d85dbc7906a8af75fc0e1,"Merge pull request #100 from zavan/patch-1
+
+Clearance authentication example"
+schneems,2019-03-05 16:24:08,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/294d94c268d4b9507e2312d50229158fdb991c0a,294d94c268d4b9507e2312d50229158fdb991c0a,"Merge pull request #127 from yjukaku/better-error-raising
+
+Better error raising"
+yjukaku,2019-03-04 17:13:51,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/75caa7ead553bbc4d310775260216d6607830fb0,75caa7ead553bbc4d310775260216d6607830fb0,"Use exit() instead of raise to prevent bundler reporting error
+
+Closes #112"
+schneems,2018-09-11 16:45:44,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/674be15a36b01338b677cf2271ae6d8a3cbefef4,674be15a36b01338b677cf2271ae6d8a3cbefef4,V1.3.5
+schneems,2018-09-11 16:43:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d0ef3a67ffbac8992305ec792193f9de6753046c,d0ef3a67ffbac8992305ec792193f9de6753046c,"Label report with ""derailed""
+
+This allows for easier grepping in the output."
+k0kubun,2018-07-03 11:57:34,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cd6befa4aa7d7d10e6fbbd126ff60fb4ec8cf2f2,cd6befa4aa7d7d10e6fbbd126ff60fb4ec8cf2f2,"Stop depending on ActiveSupport on rake task
+
+Fix #123"
+k0kubun,2018-03-09 16:23:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0d5a653428bd67c408130b1c015a713bdf8bd80f,0d5a653428bd67c408130b1c015a713bdf8bd80f,"Merge pull request #120 from k0kubun/const-warning
+
+Fix ""already initialized constant"" warning"
+k0kubun,2018-03-09 16:09:23,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cab87e6eea5ea913785808dd03ebf20a8c4fbdba,cab87e6eea5ea913785808dd03ebf20a8c4fbdba,"Fix ""already initialized constant"" warning"
+schneems,2018-03-09 15:31:22,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a93708b143a810e085354752b3ae111b21d5a791,a93708b143a810e085354752b3ae111b21d5a791,v1.3.4
+schneems,2018-03-09 15:30:36,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/651efa1948c7a8cdc213f1b0e15c093c2468d8ac,651efa1948c7a8cdc213f1b0e15c093c2468d8ac,"Merge pull request #119 from schneems/schneems/warmup
+
+Allow warm up before recording data"
+schneems,2018-03-08 17:32:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d72085d0430a81e69e8d1aa7fbc0384ce311c799,d72085d0430a81e69e8d1aa7fbc0384ce311c799,"Allow warm up before recording data
+
+When testing with a system that uses jit is often times desirable to “warm up” the code to test that optimizations applied after jit has run are faster.
+
+https://twitter.com/samsaffron/status/971531146956697601
+
+
+This PR allows an app to be called X times before being measured by supplying the environment variable `WARM_COUNT` with any number greater than 0. For example `WARM_COUNT=5000` will hit the app 5000 times before measurements are started. 
+
+Default warm up is 0 so original behavior is preserved."
+schneems,2018-03-07 15:38:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d389095ffa6510d51f91b4112c8d4bd9a8b9b3f8,d389095ffa6510d51f91b4112c8d4bd9a8b9b3f8,v1.3.3
+schneems,2018-03-07 15:36:55,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c32512d603703b17c0fdf1d6b3d9cf97c259710d,c32512d603703b17c0fdf1d6b3d9cf97c259710d,"Merge pull request #118 from schneems/schneems/fix-dirs-with-spaces-issue
+
+Make tests work when directory has spaces"
+schneems,2018-03-07 15:36:46,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/12f07e45f8cdeb95caa92c6f10a19e296f5a8b73,12f07e45f8cdeb95caa92c6f10a19e296f5a8b73,"Merge pull request #117 from schneems/schneems/bootsnap-error
+
+Fix bootsnap error"
+schneems,2018-03-07 15:24:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1f3666acb3b8856f7d650e9adc1d03af763c7970,1f3666acb3b8856f7d650e9adc1d03af763c7970,Make tests work when directory has spaces
+schneems,2018-03-07 15:19:34,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9f04edbe13a7e24418c25973c248de36f1c533b8,9f04edbe13a7e24418c25973c248de36f1c533b8,Fix bootsnap error
+schneems,2018-02-05 14:41:52,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a49f4580a0c4b974026faea68d9eb08dea03cd50,a49f4580a0c4b974026faea68d9eb08dea03cd50,"Merge pull request #116 from djberube/master
+
+Update README.md"
+djberube,2018-02-05 14:32:56,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/55ddb4d641b62c8d39707ed5a898e39365514557,55ddb4d641b62c8d39707ed5a898e39365514557,"Update README.md
+
+Fix typo."
+schneems,2017-12-30 18:25:10,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/7053aeeaa4bf25c8b2949e624190a57ee0abe881,7053aeeaa4bf25c8b2949e624190a57ee0abe881,"Merge pull request #114 from schneems/schneems/codetriage-badge
+
+[ci skip] Add CodeTriage badge"
+schneems,2017-12-30 18:24:17,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2a053becbf6eec4c12457fffb3636c6a9c8f0bb6,2a053becbf6eec4c12457fffb3636c6a9c8f0bb6,"[ci skip] Add CodeTriage badge
+
+[CodeTriage](https://www.codetriage.com/) is an app I have maintained
+for the past 4-5 years with the goal of getting people involved in
+Open Source projects like this one. The app sends subscribers a random
+open issue for them to help ""triage"". For some languages you can also
+suggested areas to add documentation.
+
+The initial approach was inspired by seeing the work of the small
+core team spending countless hours asking ""what version was
+this in"" and ""can you give us an example app"". The idea is to
+outsource these small interactions to a huge team of volunteers
+and let the core team focus on their work.
+
+I want to add a badge to the README of this project. The idea is to
+provide an easy link for people to get started contributing to this
+project. A badge indicates the number of people currently subscribed
+to help the repo. The color is based off of open issues in the project.
+
+Here are some examples of other projects that have a badge in their
+README:
+
+- https://github.com/crystal-lang/crystal
+- https://github.com/rails/rails
+- https://github.com/codetriage/codetriage
+
+Thanks for building open source software, I would love to help you find some helpers."
+schneems,2017-05-30 16:13:37,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/dcccae665e75fd63cf1f6632d0a4350c0444063c,dcccae665e75fd63cf1f6632d0a4350c0444063c,"Merge pull request #106 from NickLaMuro/test_multiple_rails_versions
+
+Test Multiple Rails versions on Travis"
+NickLaMuro,2017-05-24 20:13:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/7573f01477d4b33c09dde0b9fc6827277d0d2422,7573f01477d4b33c09dde0b9fc6827277d0d2422,"Add support in travis for testing multiple RoR
+
+Using the generated gemfiles from appraisal to add gemfiles to the build
+matrix for travis.  Doesn't run builds in Rails 3-4.1 on
+ruby-2.4/ruby-head since they aren't supported."
+NickLaMuro,2017-05-24 19:52:38,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/95d1ddc3dbf568536ac54f4ffec2672ca86a7ec6,95d1ddc3dbf568536ac54f4ffec2672ca86a7ec6,"Add appraisal gem as dev dependency
+
+Using the `apprasial` gem, we can also test against multiple Rails
+versions at the same time.  This is something is claimed to be supported
+in the README, but currently isn't done in practice/on travis.  This
+facilitates automating that effort."
+NickLaMuro,2017-05-24 19:48:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ad638416c94abe2b2911227b059b9c554c996aa9,ad638416c94abe2b2911227b059b9c554c996aa9,"Proper version check for migrations
+
+In 9593919, I attempted to fixes for migrations in Rails 3.2 to 4.1
+since the class doesn't support the `[]` operator, but it turns out that
+4.2 also doesn't have that fix backported (or at least yet...).
+
+To solve for that, just making Rails 5+ be the cut off for trying to use
+the new ActiveRecord::Migration inheritance syntax."
+schneems,2017-05-24 19:19:47,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1694afd7e1d594f9bd3a50811dc6e469fe991857,1694afd7e1d594f9bd3a50811dc6e469fe991857,"Merge pull request #105 from NickLaMuro/fix_travis
+
+Fix travis tests for Rails 5.1+"
+NickLaMuro,2017-05-24 18:52:59,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/95939192543bf2c19d1db04a014e9c621205fe81,95939192543bf2c19d1db04a014e9c621205fe81,"Fix migrations for Rails 3.2 to 5.1+
+
+In Rails 5.1, ActiveRecord::Migration raises an error when
+inherited from directly:
+
+https://github.com/rails/rails/blob/158742e/activerecord/CHANGELOG.md
+
+> Raise when ActiveRecord::Migration is inherited from directly.
+>
+> Rafael Mendonça França
+
+To allow support for 4.2 to 5.1+, inheriting from
+ActiveRecord::Migration[4.2] corrects the error, but to run on
+""rails <=3.2"", inheriting from ActiveRecord::Migration directly is still
+required.
+
+By checking the Rails version before the migration is defined, we can
+determine the proper class to inherit from and support Rails versions
+3.2+ still in our tests."
+NickLaMuro,2017-05-24 18:13:04,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/62e94ff1a8230b01db6169bd03962f4b600651a4,62e94ff1a8230b01db6169bd03962f4b600651a4,"Don't use `before_filter` for test rails_app
+
+Rails changed before_filter to become before_action, so prefer using
+that over before_filter (since it has been removed in the newest
+versions of Rails.
+
+Also, since we are making `before_action` backwards compatible for older
+versions of Rails where `before_filter` was the only method available,
+move that alias builder to the ApplicationController instead of the
+AuthenticatedController which was where it lived prior."
+schneems,2017-04-06 22:23:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/8a7a5599090235446cf73eab6144a69bda14ff71,8a7a5599090235446cf73eab6144a69bda14ff71,"Merge pull request #101 from melvin0008/patch-1
+
+Typo for the word usage"
+melvin0008,2017-04-03 18:11:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fb9bf03d3a6a4eac7209ff41949264acc69ac6d7,fb9bf03d3a6a4eac7209ff41949264acc69ac6d7,"Typo for the word usage
+
+The word usage was mispelled"
+zavan,2017-03-31 16:26:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b477524bba5a535f3115cd4ac966ed83c944b4bf,b477524bba5a535f3115cd4ac966ed83c944b4bf,Clearance authentication example
+schneems,2017-03-16 20:20:30,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2f518d51d9f17f5cbaa1e3f0a484d4e831db3b16,2f518d51d9f17f5cbaa1e3f0a484d4e831db3b16,"Merge pull request #94 from csmuc/http_headers_via_env
+
+support passing HTTP headers via ENV"
+schneems,2017-03-09 23:11:12,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c9208782ba95fb7921585940ab1ac29a62c72e65,c9208782ba95fb7921585940ab1ac29a62c72e65,"Merge pull request #98 from NickLaMuro/remove_foo_task
+
+Remove task `:foo` from tasks.rb"
+NickLaMuro,2017-03-09 23:03:35,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/59a8f32e454c4e1d27e2ccf81971dc36968a140e,59a8f32e454c4e1d27e2ccf81971dc36968a140e,"Remove task `:foo` from tasks.rb
+
+This is not used/documented."
+csmuc,2016-04-19 14:56:07,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/904ee548cd8bee0698c2458741fe820e2ca6a36b,904ee548cd8bee0698c2458741fe820e2ca6a36b,support passing HTTP headers via ENV
+schneems,2017-01-12 20:39:58,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f8ac749a3a16b370ea3ff3b8cddbebf60a2be9ec,f8ac749a3a16b370ea3ff3b8cddbebf60a2be9ec,[ci skip] v1.3.2
+schneems,2017-01-09 21:08:46,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f9d83461b2c6d0a03b8eae7f8c554b184e1bce46,f9d83461b2c6d0a03b8eae7f8c554b184e1bce46,"Merge pull request #90 from schneems/schneems/rake-12
+
+Rake 12 support"
+schneems,2017-01-09 20:45:17,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5bea235257249856c30e9271312646f26e761c03,5bea235257249856c30e9271312646f26e761c03,Remove Gemfile.lock from repo
+schneems,2017-01-09 20:37:13,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/bcf32e9e1a34c8c16832b8827054851bcad6fc1f,bcf32e9e1a34c8c16832b8827054851bcad6fc1f,Rake 12 support
+schneems,2016-12-13 23:06:41,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d9639ec8405c0519c1af4170f814a2f1c88931c2,d9639ec8405c0519c1af4170f814a2f1c88931c2,"Merge pull request #88 from jacobbednarz/force-ruby-2.1-or-newer
+
+Add minimum Ruby version to gemspec"
+jacobbednarz,2016-12-13 05:44:18,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/45f81a1f76a0c2e4c41817d75accce77b66f941f,45f81a1f76a0c2e4c41817d75accce77b66f941f,"Add minimum Ruby version to gemspec
+
+Updates the minimum Ruby version to be newer than 2.1.0 since the
+following dependencies need to be met:
+
+- memory_profiler wants >= 2.1.0
+- rack wants >= 2.2.0
+
+This also updates CI to only run the newer versions of Ruby since < 2.1
+shouldn't work anyway and there is no point having ""allowed failures"" if
+it will always fail."
+schneems,2016-08-15 18:05:22,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2af972934835502c7b710b1effbf98326f2416f9,2af972934835502c7b710b1effbf98326f2416f9,"Merge pull request #83 from ugisozols/patch-2
+
+Fix typos"
+ugisozols,2016-08-10 08:13:30,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cd7fd98a1fafe0e726f6fbf2d5374d5a86f38572,cd7fd98a1fafe0e726f6fbf2d5374d5a86f38572,Fix typos.
+schneems,2016-07-21 13:37:55,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f573b63ec96bca88d923d0a09a019af705824a58,f573b63ec96bca88d923d0a09a019af705824a58,"Merge pull request #82 from ugisozols/patch-1
+
+Remove dup 'is'."
+ugisozols,2016-07-21 10:24:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/04268a2bc364f666485fb3a8111f1783007c4856,04268a2bc364f666485fb3a8111f1783007c4856,Remove dup 'is'.
+schneems,2016-06-15 14:02:31,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/594f1dae156c50444d13eea7a038cda8771dd8d5,594f1dae156c50444d13eea7a038cda8771dd8d5,"Merge pull request #56 from halostatue/patch-1
+
+Fix recommended mime-types require"
+schneems,2016-06-15 14:02:07,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2c6fb1dced45ed31f33a9b1f3e199808e0817c9f,2c6fb1dced45ed31f33a9b1f3e199808e0817c9f,"Merge pull request #57 from ankit8898/master
+
+Create /tmp directory if doesn't exist"
+schneems,2016-06-15 14:01:38,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0f24fb94d88fd0e6c31d5df529c337896a9bd284,0f24fb94d88fd0e6c31d5df529c337896a9bd284,"Merge pull request #80 from schneems/schneems/fix-travis-june-1026
+
+Schneems/fix travis june"
+schneems,2016-06-14 14:01:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6c446f164cce42754537365e6d728ad19fb53c80,6c446f164cce42754537365e6d728ad19fb53c80,Fix travis bug
+schneems,2016-06-14 14:00:49,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/bca536710a994566032fa8d60357fcd025190369,bca536710a994566032fa8d60357fcd025190369,Prefer derailed_benchmarks
+schneems,2016-06-07 17:06:17,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/10e1f7d5fb4bae5f5b12aa0d9fab936c098934b8,10e1f7d5fb4bae5f5b12aa0d9fab936c098934b8,"Merge pull request #79 from csmuc/keep_log_level
+
+Leep log level if defined"
+csmuc,2016-06-02 18:43:47,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5bdb6bc54b0d0e25a7c696758b299df9f77ec173,5bdb6bc54b0d0e25a7c696758b299df9f77ec173,keep log level if defined
+schneems,2016-04-11 15:08:28,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fe6658fa8e79ba5de6d20b7b4e04546492057862,fe6658fa8e79ba5de6d20b7b4e04546492057862,"Merge pull request #76 from caifara/patch-1
+
+Explain the use of PATH_TO_HIT for a subdomain"
+caifara,2016-04-11 08:26:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f55dfaedf46561b4be7116f6de0673c2fd0603f3,f55dfaedf46561b4be7116f6de0673c2fd0603f3,"Explain the use of PATH_TO_HIT for a subdomain
+
+issue: https://github.com/schneems/derailed_benchmarks/issues/34"
+schneems,2016-03-24 16:57:11,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/13f2f29b428fa0106ee023244ab47c267e5bb3f6,13f2f29b428fa0106ee023244ab47c267e5bb3f6,gemfile.lock
+schneems,2016-03-24 16:55:59,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/79b807195b07f87110c37cdfb26269c91e10da20,79b807195b07f87110c37cdfb26269c91e10da20,v1.3.1
+schneems,2016-03-24 16:40:13,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/765bf9df3dac7bba627a273ea369d825dfa7a910,765bf9df3dac7bba627a273ea369d825dfa7a910,Update derailed_benchmarks.gemspec
+schneems,2016-03-08 00:04:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b56fe251f6b07fcd5c787cc326bf3dabae72097e,b56fe251f6b07fcd5c787cc326bf3dabae72097e,"Merge pull request #73 from mamute/patch-1
+
+Update README.md"
+marcusvmsa,2016-03-07 23:00:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/bed3fe123e77bf5b974e3ed968ccd0f8f4a7e0a7,bed3fe123e77bf5b974e3ed968ccd0f8f4a7e0a7,"Update README.md
+
+Remove duplicated `bundle exec` at Dissecting a Memory Leak section"
+schneems,2016-02-10 17:31:28,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/341ffa07ad28e88214d35a4548282d934bcf90f6,341ffa07ad28e88214d35a4548282d934bcf90f6,"Merge pull request #72 from VICEMedia/fix_curl_quotes
+
+Fixed cURL requests for URLs with ampersands"
+benjaminjackson,2016-02-10 16:52:14,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f0073bbeaab3f1c0069a26e8f6d002f75b90ba0a,f0073bbeaab3f1c0069a26e8f6d002f75b90ba0a,Added single quotes around the URL passed into cURL when benchmarking in order to avoid breaking the requests for URLs with ampersands in the query strings (these cause the process to fork if the URL isn't enclosed in quotes).
+schneems,2016-02-03 20:46:53,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0a441cf11b14d45f17650eddd023ea0aa1f50af0,0a441cf11b14d45f17650eddd023ea0aa1f50af0,"Merge pull request #71 from tjschuck/patch-1
+
+Grammar/typo"
+tjschuck,2016-02-03 20:45:41,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2f64c8fdda5011491e3f52512b96e60b5ff7afd5,2f64c8fdda5011491e3f52512b96e60b5ff7afd5,Grammar/typo
+schneems,2016-01-27 19:54:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5ab3e9c03832e856e3dcdece22c1d19da166cb2d,5ab3e9c03832e856e3dcdece22c1d19da166cb2d,"Merge pull request #68 from ReadmeCritic/master
+
+Update README URLs based on HTTP redirects"
+ReadmeCritic,2016-01-22 15:19:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1dcb7152c35740ad36488fbf45131d83f44b64f5,1dcb7152c35740ad36488fbf45131d83f44b64f5,Update README URLs based on HTTP redirects
+schneems,2016-01-22 14:38:51,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c3108f68478ec9776652cd2eb0e977054a6fb51d,c3108f68478ec9776652cd2eb0e977054a6fb51d,"Merge pull request #67 from bearded/patch-1
+
+trucated -> truncated in README"
+bearded,2016-01-22 08:57:08,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/eb13e7ff0409166b7073b95eb64f61469b07ccf6,eb13e7ff0409166b7073b95eb64f61469b07ccf6,trucated -> truncated in README
+schneems,2016-01-21 22:11:58,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1a6eaaf2a6f6c571961cae5577824fe72636fff9,1a6eaaf2a6f6c571961cae5577824fe72636fff9,"Merge pull request #65 from vipulnsward/uniform-bundle-usage
+
+Make uniform usage of `bundle exec ..` in the `derailed` commands in README"
+vipulnsward,2016-01-18 09:00:49,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2a04476d3356f41b69c2dec8e8895d46473debe5,2a04476d3356f41b69c2dec8e8895d46473debe5,Make uniform usage of `bundle exec ..` in the `derailed` commands in README.
+schneems,2016-01-07 19:46:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b4f7d8d3d3075e52facc772dbfe4aa96f67ff664,b4f7d8d3d3075e52facc772dbfe4aa96f67ff664,[ci skip] v1.3.0
+schneems,2016-01-07 18:56:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f1a1601b7feff8a955cb2e2d53b9c6d836bf678c,f1a1601b7feff8a955cb2e2d53b9c6d836bf678c,"Merge pull request #64 from prathamesh-sonpatki/allow-rack-2
+
+Loosen constraint on Rack version so that derailed_benchmarks can be used with Rails 5 and Rack 2"
+schneems,2016-01-07 18:33:01,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/32e269be697fad9e82c0124c82daddfe3e7786fd,32e269be697fad9e82c0124c82daddfe3e7786fd,"Merge pull request #60 from ashrestha91/ignoreActiveRecord
+
+Add environment variable check before using ActiveRecord"
+prathamesh-sonpatki,2015-12-25 16:26:28,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b012a05323b8dffbfbc2596c8941879fbd56db74,b012a05323b8dffbfbc2596c8941879fbd56db74,Loosen constraint on Rack version so that derailed_benchmarks can be used with Rails 5 and Rack 2
+ashrestha91,2015-11-16 20:40:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3caae7a138ffd55296b2165b60d9b1123cf71c2f,3caae7a138ffd55296b2165b60d9b1123cf71c2f,Only check for presence of env variable
+ashrestha91,2015-11-16 20:37:41,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/99f8896032cea67d87aafa8225bce10d56c5725e,99f8896032cea67d87aafa8225bce10d56c5725e,Only check for presence of env variable
+ashrestha91,2015-11-14 22:42:32,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5a1c429610b027e7817eea417ce2946846ee72ae,5a1c429610b027e7817eea417ce2946846ee72ae,Add documentation
+ashrestha91,2015-10-08 18:54:06,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/dc568ba9bc27b53745827faf63b0485bf07e454b,dc568ba9bc27b53745827faf63b0485bf07e454b,Add environment variable check before using ActiveRecord
+schneems,2015-10-23 04:19:09,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/4c3183eb72d62eeba0fc4288eb4351973d51f18d,4c3183eb72d62eeba0fc4288eb4351973d51f18d,"Merge pull request #61 from hugoabonizio/patch-1
+
+Add missing syntax highlighting to some examples"
+hugoabonizio,2015-10-23 03:31:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d19d7b430393fbd3dd8b3bc9649f825a37f448e4,d19d7b430393fbd3dd8b3bc9649f825a37f448e4,"Add missing syntax highlighting to some examples
+
+A simple README.md update."
+schneems,2015-10-15 16:49:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5220c1e8b077fcab56848fc1abde5c1c69910711,5220c1e8b077fcab56848fc1abde5c1c69910711,update docs
+ankitmoveinc,2015-10-06 05:23:17,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/90b10804137f13001af105db3f438d0d63c574b9,90b10804137f13001af105db3f438d0d63c574b9,only tmp folder included
+ankit8898,2015-10-06 05:08:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/662fd14092b4d2b431e010ecb9e085a66fa6b88d,662fd14092b4d2b431e010ecb9e085a66fa6b88d,create the heap dump file with tmp folder if tmp goes missing
+schneems,2015-10-05 22:08:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0e449e45473f43cfc00d918ba8b498079e935cb0,0e449e45473f43cfc00d918ba8b498079e935cb0,[ci skip] v1.1.2
+schneems,2015-10-05 22:07:23,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2deebd8745d6a73534c18728943d4091f00f8076,2deebd8745d6a73534c18728943d4091f00f8076,Allow TEST_COUNT use with perf:heap
+halostatue,2015-10-04 03:19:39,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b22457b04e4eee6ec7bce86716e7a75ad6382ff9,b22457b04e4eee6ec7bce86716e7a75ad6382ff9,"Fix recommended mime-types require
+
+`mime/types/columnar` wasn’t added until 2.6.1."
+schneems,2015-10-01 17:49:38,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/148d1471d43430d7a1b1c065256d01286b16ab1d,148d1471d43430d7a1b1c065256d01286b16ab1d,[ci skip] v1.1.1
+schneems,2015-10-01 17:44:28,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ee855a527b88fe7d45723fd994f14167b9bf32d9,ee855a527b88fe7d45723fd994f14167b9bf32d9,"Merge pull request #55 from schneems/schneems/heap-analyzer
+
+Heap dump generator and analyzer"
+schneems,2015-10-01 17:35:43,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/abb738cf4256feba1fc9e3e178d90b06ba404347,abb738cf4256feba1fc9e3e178d90b06ba404347,Heap dump generator and analyzer
+schneems,2015-10-01 14:24:31,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/14ce5482ea8258f325d4e20922f0d5935a58f247,14ce5482ea8258f325d4e20922f0d5935a58f247,[ci skip] document how to setup a rack app
+schneems,2015-09-09 23:10:43,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/7184344211c0fbe373ba0c9b9c1a803618c69c77,7184344211c0fbe373ba0c9b9c1a803618c69c77,[ci skip] fix date formatting
+schneems,2015-09-09 23:09:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6880eae02e340248c4209159437f8ea2090acc3e,6880eae02e340248c4209159437f8ea2090acc3e,[ci skip] v1.1.0
+schneems,2015-09-09 22:55:15,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/15217147fd7450c05c8718f38d4601ab8ee83e35,15217147fd7450c05c8718f38d4601ab8ee83e35,"Revert ""Fix link to blog post on ""How Ruby Uses Memory""""
+
+This reverts commit 2e5491acc58c2ddb9636e051ed56b0daceeacdf4."
+schneems,2015-09-09 22:46:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/64760390be737c2b5d8225fd1c5cd73f2def016e,64760390be737c2b5d8225fd1c5cd73f2def016e,Update README.md
+schneems,2015-08-26 21:26:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/eaadc3b055c3ba9c16329ccc1d4c895051c39846,eaadc3b055c3ba9c16329ccc1d4c895051c39846,"Merge pull request #49 from derekprior/dp-tmp-file-name
+
+Fix temp file names for ram_over_time"
+schneems,2015-08-26 20:49:39,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b5d38404ae43d80814db337b374c1578f864fd39,b5d38404ae43d80814db337b374c1578f864fd39,"Merge pull request #52 from monkbroc/custom-auth-user
+
+Set custom auth user using a lambda in perf.rake"
+monkbroc,2015-08-24 19:31:44,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b79f633db89f3e304fcedae0034c8fe360829c1a,b79f633db89f3e304fcedae0034c8fe360829c1a,Set custom auth user using a lambda in perf.rake
+derekprior,2015-08-21 21:08:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/4026e13e2227404e32c926a7be32d41bdc755376,4026e13e2227404e32c926a7be32d41bdc755376,"Remove newline from ruby version in tempfile name
+
+The newline character at the end of the ruby version part of the temp
+file name is causing odd behavior for me on OS X. In some cases it was
+causing two actual files to be created. In others, it was causing the
+newline to be replaced with `?`.
+
+`chomp`ing the newline seems to resolve both of these issues."
+schneems,2015-08-20 20:56:16,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cdc7cedecd9d1fdacc30d07e2bd76379fb9f74c0,cdc7cedecd9d1fdacc30d07e2bd76379fb9f74c0,"Merge pull request #50 from derekprior/dp-consistent-names
+
+Use consistent names for memory tasks"
+derekprior,2015-08-19 00:50:44,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a65fee41ba4d6c2cf3bf82b419b764012f038590,a65fee41ba4d6c2cf3bf82b419b764012f038590,"Use consistent names for memory tasks
+
+I kept having trouble remembering if a task name referred to memory as
+`mem` or `ram`. Seems like something that should be consistent. I prefer
+`ram` but `mem` was more frequently used."
+schneems,2015-08-18 19:29:28,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0fa6aea32206b480648095121230329fe8405659,0fa6aea32206b480648095121230329fe8405659,"Merge pull request #47 from kwugirl/patch-1
+
+Fix link to blog post on ""How Ruby Uses Memory"""
+schneems,2015-08-18 18:57:12,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3be59fcafb7b3cbfaf65abee6a35326880c5a332,3be59fcafb7b3cbfaf65abee6a35326880c5a332,"Merge pull request #48 from areina/require-benchmark
+
+Require benchmark in perf:test task"
+areina,2015-08-18 18:47:15,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/98ad4e7ec294e30cb8c89d756acd26111dfcda97,98ad4e7ec294e30cb8c89d756acd26111dfcda97,Require benchmark in perf:test task
+kwugirl,2015-08-17 16:29:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2e5491acc58c2ddb9636e051ed56b0daceeacdf4,2e5491acc58c2ddb9636e051ed56b0daceeacdf4,"Fix link to blog post on ""How Ruby Uses Memory"""
+schneems,2015-08-15 01:44:35,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ce0ded60217da552e6098381a8df3bda25d49c20,ce0ded60217da552e6098381a8df3bda25d49c20,"Merge pull request #46 from ericcf/ericcf-README-typo
+
+fix minor typo in README"
+ericcf,2015-08-15 01:41:15,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/7e19c28740e019d09d5b28c7300c93e9ac9a916f,7e19c28740e019d09d5b28c7300c93e9ac9a916f,fix minor typo in README
+schneems,2015-08-14 22:07:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/883e56c5642137d1e48342bc429d65485f3e384d,883e56c5642137d1e48342bc429d65485f3e384d,"Merge pull request #45 from claudiob/patch-1
+
+Fix logs/ to log/ in README.md"
+claudiob,2015-08-12 12:36:00,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1d17d24abba9b68bc5dbcbb4d673390824118403,1d17d24abba9b68bc5dbcbb4d673390824118403,"Fix logs/ to log/ in README.md
+
+I believe that’s what you meant… 
+…and also, thanks for this amazing :gem:"
+schneems,2015-08-11 20:08:35,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/eab8e647aa515a6d070e5a0880a9e764d095d899,eab8e647aa515a6d070e5a0880a9e764d095d899,"Merge pull request #43 from JuanitoFatas/doc/fix-quotes
+
+Make copy-paste gem to Gemfile smooth [ci skip]"
+JuanitoFatas,2015-08-11 07:09:32,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f098785e7d606da0ec28ec29a1d5f77d15c4840a,f098785e7d606da0ec28ec29a1d5f77d15c4840a,Make copy-paste gem to Gemfile smooth [ci skip]
+schneems,2015-08-10 19:46:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cc0fec6215e6f8e81abb637fa3103ecb10c09131,cc0fec6215e6f8e81abb637fa3103ecb10c09131,"Merge pull request #42 from eoinkelly/master
+
+Add thor as an explicit gem dependency"
+eoinkelly,2015-08-10 19:29:51,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/810ed4e757e29547b2c32ce1a4e9127fb104ead2,810ed4e757e29547b2c32ce1a4e9127fb104ead2,"Add thor as an explicit gem dependency
+
+Add thor as gem dependency for situations where it it not loaded
+implicitly by other gems. This makes it possible to use `derailed`
+outside of apps that already load `thor`"
+schneems,2015-08-09 23:50:56,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6b3533e6ec16b61924782176e9f74fbc028ee049,6b3533e6ec16b61924782176e9f74fbc028ee049,"Merge pull request #41 from jacobbednarz/remove-ruby-weekly-tracking
+
+Removes the RubyWeekly tracking information"
+jacobbednarz,2015-08-09 22:11:12,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9c566cc846f216e3b607032c62bf5d29925d8ad3,9c566cc846f216e3b607032c62bf5d29925d8ad3,"Removes the RubyWeekly tracking information
+
+This removes the query parameters used by tracking tools in order to define the
+source and medium of the traffic."
+schneems,2015-08-07 00:19:16,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/eb7c3a201183d35e2b77b99c5533f5b767aac729,eb7c3a201183d35e2b77b99c5533f5b767aac729,"Merge pull request #40 from elia/patch-1
+
+A horible typo"
+elia,2015-08-06 23:46:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ec2b5003bff997e8e0c22cb5fabecc1fffd6ff4a,ec2b5003bff997e8e0c22cb5fabecc1fffd6ff4a,A horible typo
+schneems,2015-08-03 04:25:34,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5bc5526f2eb672ea2ea404d041818ddb20865427,5bc5526f2eb672ea2ea404d041818ddb20865427,Allow only recording of certain files with memory_profiler
+schneems,2015-06-20 15:02:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/4f52be88500d97638c4c4121daae14237edcce3e,4f52be88500d97638c4c4121daae14237edcce3e,[ci skip] travis ci badge
+schneems,2015-06-20 14:58:36,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/37534b87f09409b8784fd369e2cb98c45018bf30,37534b87f09409b8784fd369e2cb98c45018bf30,[ci skip] v1.0.1
+schneems,2015-06-20 01:42:09,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/058c1259f169f5feb08d161d9aa4b674848dce46,058c1259f169f5feb08d161d9aa4b674848dce46,"Merge pull request #36 from schneems/schneems/better-dup-display
+
+Display more info about duplicate requires"
+schneems,2015-06-13 16:24:16,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2a736e1bfa83d7f3e3e4babb9432726e06b0bd88,2a736e1bfa83d7f3e3e4babb9432726e06b0bd88,"Display more info about duplicate requires
+
+The same file may be required by several libraries, since Ruby only requires files once, the cost is only associated with the first library to require a file. To make this more visible duplicate entries will list all the parents they belong to. For example both `mail` and `fog` require `mime/types. So it may show up something like this in your app:
+
+```ruby
+$ derailed bundle:mem
+TOP: 54.1836 mb
+  mail: 18.9688 mb
+    mime/types: 17.4453 mb (Also required by: fog/storage)
+    mail/field: 0.4023 mb
+    mail/message: 0.3906 mb
+```
+
+That way you'll know that simply removing the top level library (mail) would not result in a memory reduction. The output is trucated after the first two entries:
+
+
+```ruby
+fog/core: 0.9844 mb (Also required by: fog/xml, fog/json, and 48 others)
+fog/rackspace: 0.957 mb
+fog/joyent: 0.7227 mb
+  fog/joyent/compute: 0.7227 mb
+```
+
+If you want to see everything that requires `fog/core` you can run `CUT_OFF=0 bundle exec derailed bundle:mem` to get the full output that you can then grep through manually."
+schneems,2015-05-18 17:14:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a6ebb769b8ec82af7e778ad515b6f5399c320f32,a6ebb769b8ec82af7e778ad515b6f5399c320f32,"Fix ugly error
+
+```
+WARN: Unresolved specs during Gem::Specification.reset:
+      rake (~> 10.4)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+```
+
+Resolve specs before requiring `rake`"
+schneems,2015-05-27 04:37:17,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c47ef5488bcf2520821b549387476cb889b8afaa,c47ef5488bcf2520821b549387476cb889b8afaa,"Merge pull request #32 from JuanitoFatas/doc/fix-typo
+
+Fix a typo in README.md [ci skip]"
+schneems,2015-05-27 04:37:04,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9c6785cebf47f985b319d8a0be97825bc28abda9,9c6785cebf47f985b319d8a0be97825bc28abda9,"Merge pull request #33 from JuanitoFatas/doc/mib
+
+Use correct IEEE unit for Mebibyte in tasks.rb"
+JuanitoFatas,2015-05-27 01:12:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6a9d2372c97b45c3ca968c735d4720972c77c765,6a9d2372c97b45c3ca968c735d4720972c77c765,Use correct IEEE unit for Mebibyte in tasks.rb
+JuanitoFatas,2015-05-27 00:58:53,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2ce5dba09fc7b2d1ad0dabf71ab2b25efb8b4c57,2ce5dba09fc7b2d1ad0dabf71ab2b25efb8b4c57,Fix a typo in README.md [ci skip]
+schneems,2015-05-24 04:16:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/81042758d776c8a19cc194c0fd1d3639f930487e,81042758d776c8a19cc194c0fd1d3639f930487e,"Merge pull request #31 from jayroh/jro-update-readme
+
+Grammar edits in README.md"
+jayroh,2015-05-23 21:18:21,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fe4dfac60c454813de45a1663db31c500fbc7b41,fe4dfac60c454813de45a1663db31c500fbc7b41,"Grammar edits in README.md
+
+Small edits."
+schneems,2015-05-18 18:25:40,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5f2b2d1b8b970e417800d8ec15496a45c222a914,5f2b2d1b8b970e417800d8ec15496a45c222a914,"Merge pull request #28 from calebthompson/si-units
+
+Use correct IEEE unit for Mebibyte"
+schneems,2015-05-18 18:22:12,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c01a4e8892cceabda9d320a4f27b39d5cf9fb079,c01a4e8892cceabda9d320a4f27b39d5cf9fb079,"Merge pull request #30 from chrisccerami/cerami-relax-rake-version
+
+Change rake dependency from 10.4 to 10"
+chrisccerami,2015-05-18 18:19:42,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d780e5d1f4e139f6411f630adab6a7646eb54957,d780e5d1f4e139f6411f630adab6a7646eb54957,Change rake dependency from 10.4 to 10
+calebthompson,2015-05-18 17:48:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e8550f479e5703b9e0e03a928e6bf900ee6cdc99,e8550f479e5703b9e0e03a928e6bf900ee6cdc99,"Use correct IEEE unit for Mebibyte
+
+A ""MiB"", which is the [IEEE] and [IEC] symbol for Mebibyte, is 2^20
+bytes / 1024 Kibibytes (which are in turn 1024 bytes).
+
+[IEEE]: http://en.wikipedia.org/wiki/IEEE_1541-2002
+[IEC]: http://en.wikipedia.org/wiki/IEC_80000-13"
+schneems,2015-05-18 16:45:18,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/82fdee5150f303414bf85d711fc0db8a646746c2,82fdee5150f303414bf85d711fc0db8a646746c2,v1.0.0 and a Changelog
+schneems,2015-05-18 03:11:41,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9138d99b35feb117dc025e229df3ebbb1c5d6542,9138d99b35feb117dc025e229df3ebbb1c5d6542,"Merge pull request #26 from schneems/schneems/bin-files
+
+Add `$ derailed` command."
+schneems,2015-05-18 03:01:43,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/436fdede3ad7086b17f43376f7b8010f7aed2399,436fdede3ad7086b17f43376f7b8010f7aed2399,Fix tests
+schneems,2015-05-17 17:41:00,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/63e6fa4c41e2bd25561935e109cdfc4e57513d19,63e6fa4c41e2bd25561935e109cdfc4e57513d19,"Add `$ derailed` command.
+
+
+Allows you to get memory use information from gems without having to boot up your app using `$ derailed bundle:mem` command. No longer requires you to have a `perf.rake` file.
+
+Re-wrote readme to be more task oriented."
+schneems,2015-05-04 16:36:01,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/cfd152ec4c5d440cb665a9cec1e6faa0796a54fc,cfd152ec4c5d440cb665a9cec1e6faa0796a54fc,"Merge pull request #12 from timraymond/add-stackprof-dep
+
+Add stackprof dependency"
+timraymond,2015-04-29 20:13:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d49856a147e4e854789e25625cc8097d4106b050,d49856a147e4e854789e25625cc8097d4106b050,"Guard against lack of stackprof
+
+Stackprof doesn't work on Ruby < 2.0. Since other metrics work fine on
+earlier Rubies, we should fail gracefully if users attempt to use the
+stackprof task. This attempts to require it, and informs the user with a
+helpful error if it's not present."
+schneems,2015-05-01 17:45:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e14937afc762c5e953379e84989c3ed85a642e83,e14937afc762c5e953379e84989c3ed85a642e83,"Merge pull request #13 from schneems/schneems/devise
+
+Allow testing against authenticated endpoints"
+schneems,2015-05-01 17:31:08,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/a8c865d83f76b54479aa61d53ee89109b641db4d,a8c865d83f76b54479aa61d53ee89109b641db4d,remove sqlite files from git
+schneems,2015-05-01 17:29:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ff68960284cf466dc037e5794f71c470be07b353,ff68960284cf466dc037e5794f71c470be07b353,Support Rails 3.2 database stuff
+schneems,2014-12-19 16:43:14,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/14eddbb2066f6867c907243928e60353a7ed4ca0,14eddbb2066f6867c907243928e60353a7ed4ca0,Allow testing against authenticated endpoints
+schneems,2015-04-29 00:48:14,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3e6a7c0c1cdeff3bbb3304c3ba5cab4f007fd0a3,3e6a7c0c1cdeff3bbb3304c3ba5cab4f007fd0a3,"Fix tests
+
+Devise was being required but not explicitly in the gemspec"
+schneems,2015-04-15 17:32:01,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/36fd32239808ec31f1a08dc1ad28a9c6ee573647,36fd32239808ec31f1a08dc1ad28a9c6ee573647,"Merge pull request #23 from schneems/schneems/fix-require
+
+Schneems/fix require"
+schneems,2015-04-06 16:30:29,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/4656a0f959acf6e1db84d8ddd1167d24e5dd504b,4656a0f959acf6e1db84d8ddd1167d24e5dd504b,[close #22] Fix location of Kernel#require patch
+schneems,2014-12-11 22:34:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/169a67ec3a32517be02ac576e22206a8bbbc323a,169a67ec3a32517be02ac576e22206a8bbbc323a,rename dummy app to rails_app
+schneems,2015-01-15 15:22:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f0e3c9d10095c3aabe2def30d5624351ffb3ae85,f0e3c9d10095c3aabe2def30d5624351ffb3ae85,"Merge pull request #21 from gangleton/master
+
+Namespace rake rack_load task in README and in default output"
+gangleton,2015-01-15 01:13:57,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/c5721eb59cf459a18b114455150d66fa85f6f729,c5721eb59cf459a18b114455150d66fa85f6f729,Namespace rake rack_load task in README and in default output
+schneems,2015-01-07 18:00:42,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5550752a859635c8bf0f9efac0d64a0659ed45c5,5550752a859635c8bf0f9efac0d64a0659ed45c5,"Merge pull request #20 from deepj/master
+
+Tests against the latest version of Ruby 2.2 on travis"
+deepj,2015-01-07 02:10:55,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6446cb773b70ba72ef07238c01ed02fc53aa994c,6446cb773b70ba72ef07238c01ed02fc53aa994c, Add test-unit like a dev dependancy gem since removing it in Ruby 2.2
+deepj,2015-01-07 02:03:38,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/64bced00256fdd00a0a31f249ecc7a0da752e02e,64bced00256fdd00a0a31f249ecc7a0da752e02e,Tests against the latest version of Ruby 2.2 on travis
+schneems,2015-01-06 15:23:14,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/e4912cb12621ba6479b8ebca08b6b700e720b00f,e4912cb12621ba6479b8ebca08b6b700e720b00f,"Merge pull request #15 from larrylv/patch-1
+
+Update README.md"
+schneems,2015-01-06 15:23:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/bed1b9b1bb27e0e575645ad4c6aa0a7682ab8d9d,bed1b9b1bb27e0e575645ad4c6aa0a7682ab8d9d,"Merge pull request #16 from larrylv/patch-2
+
+Fix typo in comments."
+schneems,2015-01-06 15:22:33,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1e180dbcc4c368a258c86589274958cef7ada240,1e180dbcc4c368a258c86589274958cef7ada240,"Merge pull request #17 from larrylv/patch-3
+
+Fix space format."
+schneems,2015-01-06 15:21:39,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/5c1a71df61b1df859155dbd077cc96c52c9c8077,5c1a71df61b1df859155dbd077cc96c52c9c8077,"Merge pull request #18 from larrylv/patch-4
+
+Setup bundle environment in test_helper.rb"
+schneems,2015-01-06 15:20:59,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d2a33ae4fa9a1435c74b90b8b4d12b0fa4705fe0,d2a33ae4fa9a1435c74b90b8b4d12b0fa4705fe0,"Merge pull request #19 from larrylv/patch-5
+
+Remove duplicated codes."
+larrylv,2015-01-06 11:48:55,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/599d70a050fdd1d0e42b27062df4e69c2f036cdd,599d70a050fdd1d0e42b27062df4e69c2f036cdd,"Remove duplicated codes.
+
+I believe this is not intentional?"
+larrylv,2015-01-06 11:41:05,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/85906bc0d664b5a00114fa72916dbc625f6c1b50,85906bc0d664b5a00114fa72916dbc625f6c1b50,"Setup bundle environment in test_helper.rb
+
+With this we can run separate tests for every file successfully."
+larrylv,2015-01-06 09:57:10,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6923e2c18b09e71da3b09f82f529953a1701da4e,6923e2c18b09e71da3b09f82f529953a1701da4e,"Fix space format.
+
+[ci skip]"
+larrylv,2015-01-06 09:54:26,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d90aced6d9276cbdb5ab8671c2f74abffc7631aa,d90aced6d9276cbdb5ab8671c2f74abffc7631aa,"Fix typo in comments.
+
+[ci skip]"
+larrylv,2015-01-06 09:36:24,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/8355d517cc0e39da494b47a8ca3a134fd83b17e1,8355d517cc0e39da494b47a8ca3a134fd83b17e1,"Update README.md
+
+Rails 3 doesn't support the latest Ruby version 2.2.0"
+schneems,2014-12-04 11:15:05,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3786c4e5d2bd42603354e236c5183982e380e32c,3786c4e5d2bd42603354e236c5183982e380e32c,"Merge pull request #11 from schneems/schneems/tests
+
+Add testing"
+schneems,2014-12-04 06:18:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/d61e785c69243bae3857d54c9c59d641b00194a8,d61e785c69243bae3857d54c9c59d641b00194a8,travis.yml
+schneems,2014-12-04 02:46:00,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/ddbcc5c03efc176dc714d9ee6a2c5829f8ac8ef8,ddbcc5c03efc176dc714d9ee6a2c5829f8ac8ef8,add default testing task
+schneems,2014-12-03 09:26:50,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/fcb211474d4505893e81b4bf2774f4b369e19916,fcb211474d4505893e81b4bf2774f4b369e19916,Write tests!
+schneems,2014-11-27 15:13:48,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/1618a490d235bcc26404b9bcc2f3f4ec9ddd7671,1618a490d235bcc26404b9bcc2f3f4ec9ddd7671,Dummy rails app
+schneems,2014-11-27 14:54:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/f2f0ec592cf27d8b936da958741669fccac6c7a6,f2f0ec592cf27d8b936da958741669fccac6c7a6,test kernel require profiling
+schneems,2014-11-14 00:59:19,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/9281350276814ecde0d535c213b9565100f97541,9281350276814ecde0d535c213b9565100f97541,"Merge pull request #9 from yakloinsteak/version_doc
+
+Version/Compatibility documentation"
+yakloinsteak,2014-11-13 01:11:50,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/382f18dafbc61b41d4b0b0c5903a9b42febeeb54,382f18dafbc61b41d4b0b0c5903a9b42febeeb54,Requirements
+yakloinsteak,2014-11-13 01:06:50,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/8abc222a7d513bc7432f09efb97ef71186ed577b,8abc222a7d513bc7432f09efb97ef71186ed577b,Indirectly warn that production is used.
+schneems,2014-11-13 16:26:09,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/b0a099bbf524a9db8488558da9c4e693a12afcc4,b0a099bbf524a9db8488558da9c4e693a12afcc4,"Merge pull request #1 from schneems/schneems/rack
+
+Initial rack support?"
+schneems,2014-11-13 16:25:02,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2aa82a640939d6a1818db1327d1f577b19e3face,2aa82a640939d6a1818db1327d1f577b19e3face,fix merge
+schneems,2014-10-16 02:25:10,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/0ce0bec3a5d1d44f7825e8589416a5d478ee605f,0ce0bec3a5d1d44f7825e8589416a5d478ee605f,Initial rack support?
+schneems,2014-11-07 19:18:03,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/236579f67877a78a1fbbf5d277eff4837b86a8c3,236579f67877a78a1fbbf5d277eff4837b86a8c3,"Merge pull request #4 from Kagetsuki/master
+
+check for ActiveRecord (to handle non AR apps)"
+Kagetsuki,2014-11-07 16:08:25,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/6b79f6df103cc2ae73d845e25d50b6346de1c9c3,6b79f6df103cc2ae73d845e25d50b6346de1c9c3,check for ActiveRecord (to handle non AR apps)
+schneems,2014-10-22 13:26:27,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/db2cb12469a0e1b998d53f30b3e7a01be96d49ac,db2cb12469a0e1b998d53f30b3e7a01be96d49ac,"Merge pull request #3 from rafaelfranca/patch-1
+
+Fix README"
+rafaelfranca,2014-10-20 17:22:46,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/198295258d49c602e6cdd788a1d56b9f09c22ac0,198295258d49c602e6cdd788a1d56b9f09c22ac0,Fix README
+schneems,2014-10-17 23:59:23,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/43ffa4ed3c15931292c633859d026d761015bb30,43ffa4ed3c15931292c633859d026d761015bb30,"Merge pull request #2 from rafaelfranca/rm-rails-3.2-support
+
+Support for Rails 3.2 profiling"
+schneems,2014-10-16 02:25:54,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/3396c0c12cc20958e4d1f7146d7e51eeb43d4058,3396c0c12cc20958e4d1f7146d7e51eeb43d4058,Critical pieces
+schneems,2014-10-15 20:44:06,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/45c18ba736899ebec3f1883408e3005f73fd5300,45c18ba736899ebec3f1883408e3005f73fd5300,README and working `require_bench`
+schneems,2014-10-14 19:48:16,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/2a10ead6307065674cee04b7bd82911c45e6d79a,2a10ead6307065674cee04b7bd82911c45e6d79a,next
+schneems,2014-10-12 19:09:44,https://api.github.com/repos/schneems/derailed_benchmarks/git/commits/dcda3defcbaf08b6dc641b04fbe705a83f7ea88c,dcda3defcbaf08b6dc641b04fbe705a83f7ea88c,first

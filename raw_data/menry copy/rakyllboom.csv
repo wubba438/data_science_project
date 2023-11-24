@@ -1,0 +1,274 @@
+boom,"HTTP(S) load generator, ApacheBench (ab) replacement, written in Go"
+username,timestamp,url,sha,message
+rakyll,2016-09-02 20:02:15,https://api.github.com/repos/rakyll/boom/git/commits/e99ce27f0878c1d266c8a3c266029038e78c5380,e99ce27f0878c1d266c8a3c266029038e78c5380,"Deprecate the boom command in favor of hey
+
+Fixes #130."
+rakyll,2016-07-27 00:44:12,https://api.github.com/repos/rakyll/boom/git/commits/e721321a71a42df095d43519103a25c2ea802240,e721321a71a42df095d43519103a25c2ea802240,"Merge pull request #121 from rafael84/master
+
+Allow overriding the HTTP Host header"
+rakyll,2016-07-07 20:05:35,https://api.github.com/repos/rakyll/boom/git/commits/7ed4259af9f7fe357031d032f37973098d116a47,7ed4259af9f7fe357031d032f37973098d116a47,"Merge pull request #120 from xuqingfeng/h2
+
+feat: h2 - make HTTP2 request"
+rakyll,2016-06-27 18:11:46,https://api.github.com/repos/rakyll/boom/git/commits/4a00fe227181baee3d0b38b2dfc0db8e285922c7,4a00fe227181baee3d0b38b2dfc0db8e285922c7,"Merge pull request #115 from kevinburke/n-c-error
+
+Error if n < c"
+xuqingfeng,2016-06-07 05:42:34,https://api.github.com/repos/rakyll/boom/git/commits/5b477b35d547600a97f8f1d9513366fefff0aabf,5b477b35d547600a97f8f1d9513366fefff0aabf,disable HTTP/2 if -h2 is turned off
+rakyll,2016-06-03 19:07:58,https://api.github.com/repos/rakyll/boom/git/commits/09d44d34aff12510ac85fc22bb9f6c996ef50419,09d44d34aff12510ac85fc22bb9f6c996ef50419,travis: build only against 1.6 and the tip
+xuqingfeng,2016-05-26 09:22:14,https://api.github.com/repos/rakyll/boom/git/commits/1812960bd73099b2083c3da8602c47967702c897,1812960bd73099b2083c3da8602c47967702c897,feat: h2 - make HTTP2 request
+rakyll,2016-05-02 09:20:03,https://api.github.com/repos/rakyll/boom/git/commits/1881f0a61667048ed30ed60474ae73f27dd4564b,1881f0a61667048ed30ed60474ae73f27dd4564b,"Merge pull request #118 from Luit/master
+
+Update README removing -readall and -allow-insecure"
+Luit,2016-04-26 09:13:23,https://api.github.com/repos/rakyll/boom/git/commits/70d1de9ba270add4c116f008168f89fc1720ba86,70d1de9ba270add4c116f008168f89fc1720ba86,"Update README removing -readall and -allow-insecure
+
+The flags removed in 7f4c622 and bc64737 were still present
+in README.md"
+kevinburke,2016-04-22 08:08:17,https://api.github.com/repos/rakyll/boom/git/commits/0e35f688f7382eb2b570cfaae66bc0921fa97cf4,0e35f688f7382eb2b570cfaae66bc0921fa97cf4,"Error if n < c
+
+Previously if you set n to 50 and concurrency to 100 the program would exit 0
+without making any requests. Instead let's print an error message and display
+the program's usage.
+
+Happy to add tests but I think this would need a larger refactoring to do flag
+parsing outside the main function :( I verified that this works by running it
+at the command line with and without n < c."
+rakyll,2016-03-24 16:46:42,https://api.github.com/repos/rakyll/boom/git/commits/ad1206917c4a20e755ba4f319d86a5c9f501567d,ad1206917c4a20e755ba4f319d86a5c9f501567d,"Merge pull request #89 from missedone/issue/82
+
+fix issue #82: Header values cannot contain semicolons"
+rakyll,2016-03-24 16:44:35,https://api.github.com/repos/rakyll/boom/git/commits/d237b82b4a8b819ca15718963a0cdb687d5dac30,d237b82b4a8b819ca15718963a0cdb687d5dac30,"Merge pull request #109 from ericmdantas/travis-build
+
+build: use different go versions"
+ericmdantas,2016-03-23 12:17:32,https://api.github.com/repos/rakyll/boom/git/commits/82c96f31e4878a0f034c15ffaf280e462948c3a9,82c96f31e4878a0f034c15ffaf280e462948c3a9,build: use different go versions
+rakyll,2016-03-12 00:48:26,https://api.github.com/repos/rakyll/boom/git/commits/bc64737aae8ee4bfafff9ced4a8555f6ca2d471e,bc64737aae8ee4bfafff9ced4a8555f6ca2d471e,Always allow insecure connections; this is a tool used during development.
+rakyll,2016-03-12 00:12:49,https://api.github.com/repos/rakyll/boom/git/commits/154afdb2c488aa96a92f6c800fda11c4193ae907,154afdb2c488aa96a92f6c800fda11c4193ae907,Reformat the output.
+rakyll,2016-03-12 00:09:12,https://api.github.com/repos/rakyll/boom/git/commits/253eb084270f3ac933655437a47701a55a812f86,253eb084270f3ac933655437a47701a55a812f86,Readability improvements
+rakyll,2016-03-12 00:06:06,https://api.github.com/repos/rakyll/boom/git/commits/7f4c62228ab4759a425a0aa929a02c11d6ddf35c,7f4c62228ab4759a425a0aa929a02c11d6ddf35c,readall is mandatory not to leak
+rakyll,2016-03-12 00:03:28,https://api.github.com/repos/rakyll/boom/git/commits/df3b89ae1067a74b91f54a4ba48d325e7dd8a775,df3b89ae1067a74b91f54a4ba48d325e7dd8a775,Remove the progress bar and the throttling job channel.
+rakyll,2016-03-11 23:32:53,https://api.github.com/repos/rakyll/boom/git/commits/592ac386b9e3815f8c9ca952f98142683ea66223,592ac386b9e3815f8c9ca952f98142683ea66223,Merge branch 'master' of github.com:rakyll/boom
+rakyll,2016-03-11 21:30:10,https://api.github.com/repos/rakyll/boom/git/commits/60215bbed4ac206649c46693222b80fa1e1bd01a,60215bbed4ac206649c46693222b80fa1e1bd01a,Fewer wait group calls
+rakyll,2016-03-11 20:03:35,https://api.github.com/repos/rakyll/boom/git/commits/3f2c4fe3e56bcd4ab6ae4e1b0401c11165f8e454,3f2c4fe3e56bcd4ab6ae4e1b0401c11165f8e454,Exit on SIGINT
+rakyll,2015-12-23 06:33:34,https://api.github.com/repos/rakyll/boom/git/commits/758f4140140923a4d17561f0c52e8a6cee60a0e6,758f4140140923a4d17561f0c52e8a6cee60a0e6,"Merge pull request #96 from gsquire/fix-auth-parsing
+
+Auth RE update"
+gsquire,2015-12-23 01:12:17,https://api.github.com/repos/rakyll/boom/git/commits/ebe6ef6f479ddb9a3ffb70342f0e9ea1cd5b454b,ebe6ef6f479ddb9a3ffb70342f0e9ea1cd5b454b,fix auth RE to allow meta characters
+rakyll,2015-11-16 22:55:57,https://api.github.com/repos/rakyll/boom/git/commits/8ef8228559e78d3503540b45235d82a4aeeff4e8,8ef8228559e78d3503540b45235d82a4aeeff4e8,"Revert global client for more idle connections per worker.
+
+Fixes #93."
+rakyll,2015-11-13 21:08:50,https://api.github.com/repos/rakyll/boom/git/commits/9157efd7316677505f0b01bc6af6a6db22c88af6,9157efd7316677505f0b01bc6af6a6db22c88af6,Print the stats at interrupt.
+rakyll,2015-11-13 19:01:51,https://api.github.com/repos/rakyll/boom/git/commits/ff9faf7be8eba2f6531076241f04beef6d4483af,ff9faf7be8eba2f6531076241f04beef6d4483af,Rename run_test.
+rakyll,2015-11-11 21:09:24,https://api.github.com/repos/rakyll/boom/git/commits/6d715544b4d6f34caf35c300b4333a9862afee43,6d715544b4d6f34caf35c300b4333a9862afee43,Fix the broken build.
+rakyll,2015-11-11 21:09:11,https://api.github.com/repos/rakyll/boom/git/commits/9078dc98e5f46e09ee80436da36f316841e5a1b3,9078dc98e5f46e09ee80436da36f316841e5a1b3,Add the missing body to the cloned requests.
+rakyll,2015-11-11 19:50:02,https://api.github.com/repos/rakyll/boom/git/commits/62920bfeccd243c0a1daa5a8cf2785b19ec08673,62920bfeccd243c0a1daa5a8cf2785b19ec08673,Remove ReqOpts.
+rakyll,2015-11-11 19:30:08,https://api.github.com/repos/rakyll/boom/git/commits/d6d000d894dcdbf5e1a309dfab1096c8d2416e80,d6d000d894dcdbf5e1a309dfab1096c8d2416e80,Readability improvements.
+rakyll,2015-11-11 19:27:27,https://api.github.com/repos/rakyll/boom/git/commits/b23e53f6b851e31984705c83f90239693791ff7f,b23e53f6b851e31984705c83f90239693791ff7f,Don't report progress in csv mode.
+rakyll,2015-11-11 19:24:08,https://api.github.com/repos/rakyll/boom/git/commits/23ff3edf8b8931e3ec335f81298fe9e4cca83f08,23ff3edf8b8931e3ec335f81298fe9e4cca83f08,Reorganize progress reporting.
+rakyll,2015-11-11 19:15:44,https://api.github.com/repos/rakyll/boom/git/commits/4ca32972f34b62694aee32fb61a9feb532ef7eda,4ca32972f34b62694aee32fb61a9feb532ef7eda,Add a report constructor.
+rakyll,2015-11-11 19:12:06,https://api.github.com/repos/rakyll/boom/git/commits/4111a6d5a138d3ebc40b1fcb739c060f1dd9b679,4111a6d5a138d3ebc40b1fcb739c060f1dd9b679,Reorganize boomer.
+rakyll,2015-11-11 19:09:54,https://api.github.com/repos/rakyll/boom/git/commits/94b8a90f5c61aedbdee88855f8953ee1545d5cb1,94b8a90f5c61aedbdee88855f8953ee1545d5cb1,Readability improvement.
+rakyll,2015-11-11 19:07:50,https://api.github.com/repos/rakyll/boom/git/commits/194ee49b885e1d52e6835669b9ca2b3225baa440,194ee49b885e1d52e6835669b9ca2b3225baa440,Print malformed input when parsing fails.
+missedone,2015-11-05 14:14:08,https://api.github.com/repos/rakyll/boom/git/commits/d772b7c0696fa41aae1ecdb9a3e125bafa55fa01,d772b7c0696fa41aae1ecdb9a3e125bafa55fa01,fix issue #82: Header values cannot contain semicolons
+rakyll,2015-11-04 22:48:24,https://api.github.com/repos/rakyll/boom/git/commits/0233e039a2fe711f1ee5ec7a85fbec4909f2b348,0233e039a2fe711f1ee5ec7a85fbec4909f2b348,Update README with -readall.
+rakyll,2015-11-04 22:47:23,https://api.github.com/repos/rakyll/boom/git/commits/84d1d3814b5c5bfe3089071a8e1ec6a04701a6d2,84d1d3814b5c5bfe3089071a8e1ec6a04701a6d2,Reuse the same http.Transport for better connection pooling.
+rakyll,2015-11-04 22:39:41,https://api.github.com/repos/rakyll/boom/git/commits/5d051b61ca6c098f77137c4f6224fa263da365b2,5d051b61ca6c098f77137c4f6224fa263da365b2,Introduce the readall flag to allow users to consume the request body entirely.
+rakyll,2015-08-19 17:26:26,https://api.github.com/repos/rakyll/boom/git/commits/79153762c259a71f2febd651a619c8b20d0f5178,79153762c259a71f2febd651a619c8b20d0f5178,Add license.
+rakyll,2015-08-19 17:24:08,https://api.github.com/repos/rakyll/boom/git/commits/504dbc63a4c7eecbbad20958eb42d317cdea9d33,504dbc63a4c7eecbbad20958eb42d317cdea9d33,Remove dead code.
+rakyll,2015-08-19 17:21:52,https://api.github.com/repos/rakyll/boom/git/commits/41d690a3486568a40ca0b23d972d2fbe462db9f4,41d690a3486568a40ca0b23d972d2fbe462db9f4,Don't abuse named return values.
+rakyll,2015-08-19 17:21:28,https://api.github.com/repos/rakyll/boom/git/commits/c17fdf05249fc4dbc9bd9d86fca191ca50622ff5,c17fdf05249fc4dbc9bd9d86fca191ca50622ff5,Provide better help message for invalid output type.
+rakyll,2015-08-19 17:19:51,https://api.github.com/repos/rakyll/boom/git/commits/69e352b8ec5e3906b20a9150b55b68ffac5b148f,69e352b8ec5e3906b20a9150b55b68ffac5b148f,"Remove manual DNS resolving.
+
+It is unexpected to replace the hostname with an IP address, given
+the fact that this behavior can be replicated by users themselves
+by providing a resolved URL if they are not willing to count of the
+DNS solver and its overhead."
+rakyll,2015-08-19 17:10:25,https://api.github.com/repos/rakyll/boom/git/commits/7119e468343060778d449714c0fd177f10b1bab6,7119e468343060778d449714c0fd177f10b1bab6,Merge branch 'master' of github.com:rakyll/boom
+rakyll,2015-08-19 17:09:57,https://api.github.com/repos/rakyll/boom/git/commits/23b21b6af3614040a3ae137373cfefac2bb9df54,23b21b6af3614040a3ae137373cfefac2bb9df54,Remove line from bad merge.
+rakyll,2014-11-03 00:54:34,https://api.github.com/repos/rakyll/boom/git/commits/372ea3b0e6cb084657d1db7eacccdfae929af5b9,372ea3b0e6cb084657d1db7eacccdfae929af5b9,"Merge pull request #51 from SchumacherFM/bugfixUsageMessage
+
+BUGFIX: Add display NumCPU in usage string"
+SchumacherFM,2014-11-02 01:39:29,https://api.github.com/repos/rakyll/boom/git/commits/80aca4ccc058e59b1e7a3529ee8e6b2ee9a61ab5,80aca4ccc058e59b1e7a3529ee8e6b2ee9a61ab5,BUGFIX: Add display NumCPU in usage string
+rakyll,2014-10-14 23:47:49,https://api.github.com/repos/rakyll/boom/git/commits/6c268863675877e7b9f38013d87f8f98d147f205,6c268863675877e7b9f38013d87f8f98d147f205,Fix proxying.
+rakyll,2014-10-14 22:04:15,https://api.github.com/repos/rakyll/boom/git/commits/f173312eb49123a6fdebae002c5f23b794e7a789,f173312eb49123a6fdebae002c5f23b794e7a789,"Fix the build, remove test that require boomer to export the non-consumable results."
+rakyll,2014-10-14 21:09:38,https://api.github.com/repos/rakyll/boom/git/commits/713a46a3302ec79ba07223d21785fa993aa46151,713a46a3302ec79ba07223d21785fa993aa46151,Improving readability.
+rakyll,2014-10-14 21:07:05,https://api.github.com/repos/rakyll/boom/git/commits/5d2b920c8d0c8bd0f7f931d242966dece6b228fe,5d2b920c8d0c8bd0f7f931d242966dece6b228fe,"Simplify the runner.
+
+This was my first Go program and I have never maintained it since
+then. The codebase is ugly, non-idiomatic and needs peer review."
+rakyll,2014-10-14 19:31:34,https://api.github.com/repos/rakyll/boom/git/commits/22024893a26737c83301775e6f9b1414b4c43336,22024893a26737c83301775e6f9b1414b4c43336,Test against go 1.3.
+rakyll,2014-10-14 19:25:18,https://api.github.com/repos/rakyll/boom/git/commits/c32318f843b89770cc150542feafd43d12694b76,c32318f843b89770cc150542feafd43d12694b76,"Revert back dial timeout, add TLS handshake timeout."
+rakyll,2014-10-14 19:10:59,https://api.github.com/repos/rakyll/boom/git/commits/e45d95ff3a9e3df3af10e39913699055aa29e8ae,e45d95ff3a9e3df3af10e39913699055aa29e8ae,Adding timeout flag.
+rakyll,2014-10-14 18:43:02,https://api.github.com/repos/rakyll/boom/git/commits/6f0569e79ac7776b372b7015870e85c59188b7db,6f0569e79ac7776b372b7015870e85c59188b7db,"Merge branch 'master' of github.com:rakyll/boom
+
+Conflicts:
+	boom.go"
+rakyll,2014-10-14 17:52:39,https://api.github.com/repos/rakyll/boom/git/commits/2c5b2ce9cf956e291ebcb3cd188d3cef0caad7be,2c5b2ce9cf956e291ebcb3cd188d3cef0caad7be,Formatting and readability improvements.
+rakyll,2014-09-21 19:41:14,https://api.github.com/repos/rakyll/boom/git/commits/ab9a0a9abd81a81859836e2afa1eeca4119abbca,ab9a0a9abd81a81859836e2afa1eeca4119abbca,"Merge pull request #49 from beatrichartz/cleanup_regexp
+
+Flag parsing for headers allows `|`, Flag parsing for auth password is too strict"
+beatrichartz,2014-09-21 12:24:10,https://api.github.com/repos/rakyll/boom/git/commits/fe57084a128496fab1fb4d2a648fc5edba2f1787,fe57084a128496fab1fb4d2a648fc5edba2f1787,"Clean up regular expressions for headers and auth and fix | being allowed for headers, allow any characters for auth password"
+miolini,2014-08-20 09:16:26,https://api.github.com/repos/rakyll/boom/git/commits/ebef8dbc2ef2dc7d21ad920b888080a60231e241,ebef8dbc2ef2dc7d21ad920b888080a60231e241,apply for pull request
+miolini,2014-08-20 04:30:20,https://api.github.com/repos/rakyll/boom/git/commits/8d39b0d40f9bbd6d6249a5269bdf8e4338e172a6,8d39b0d40f9bbd6d6249a5269bdf8e4338e172a6,update README.md
+miolini,2014-08-20 04:20:11,https://api.github.com/repos/rakyll/boom/git/commits/d6a716e645129aa94cead32bbc8dc74bfb42ab20,d6a716e645129aa94cead32bbc8dc74bfb42ab20,add feature: cores - specify number of used cpu cores
+miolini,2014-08-20 04:09:12,https://api.github.com/repos/rakyll/boom/git/commits/4791ce8c938f4a5bbe6e6e792108cedbd8d9544e,4791ce8c938f4a5bbe6e6e792108cedbd8d9544e,add feature: disable keepalive
+miolini,2014-08-20 04:03:47,https://api.github.com/repos/rakyll/boom/git/commits/5fd251f438bd46679033028a0e1727b6f1c18d85,5fd251f438bd46679033028a0e1727b6f1c18d85,add feature: disable compression
+rakyll,2014-08-09 07:10:06,https://api.github.com/repos/rakyll/boom/git/commits/db15474eb3b26a6d57c95c652f749d477f338300,db15474eb3b26a6d57c95c652f749d477f338300,"Merge pull request #44 from ejholmes/accept-header
+
+Allow for easy setting of the Accept header."
+ejholmes,2014-08-09 05:31:11,https://api.github.com/repos/rakyll/boom/git/commits/1ce5d5a01d048ac434f3e02fa06562f342064bd8,1ce5d5a01d048ac434f3e02fa06562f342064bd8,Allow for easy setting of the Accept header.
+rakyll,2014-05-08 08:08:16,https://api.github.com/repos/rakyll/boom/git/commits/02a485410c2fac66f106cf3d5f812442a2208cb8,02a485410c2fac66f106cf3d5f812442a2208cb8,"Merge pull request #37 from behrendtio/fix_http_auth_regex
+
+Fix http auth regex to allow dash, dot and underscore, refs #36"
+behrendtio,2014-04-14 14:14:35,https://api.github.com/repos/rakyll/boom/git/commits/f17a096c38101882293cd25b287212a5a28d3f43,f17a096c38101882293cd25b287212a5a28d3f43,"Fix http auth regex to allow dash, dot and underscore, refs #36"
+rakyll,2014-04-08 20:27:56,https://api.github.com/repos/rakyll/boom/git/commits/ab630f61ce32b7ab2d38b1b766bf4560d2d01864,ab630f61ce32b7ab2d38b1b766bf4560d2d01864,"Merge pull request #34 from rubenk/master
+
+Fix a few typos"
+rubenk,2014-04-08 20:25:51,https://api.github.com/repos/rakyll/boom/git/commits/6c983d86b90d02c9851bf3e5f6be9b485df55a73,6c983d86b90d02c9851bf3e5f6be9b485df55a73,"Fix a few typos
+
+Signed-off-by: Ruben Kerkhof <ruben@rubenkerkhof.com>"
+rakyll,2014-02-25 14:05:55,https://api.github.com/repos/rakyll/boom/git/commits/629053fa2bb0faad3dcde8192b0d252815cefc77,629053fa2bb0faad3dcde8192b0d252815cefc77,Renaming commands package.
+rakyll,2014-02-11 13:39:55,https://api.github.com/repos/rakyll/boom/git/commits/167a73ecacf49d34d642915d1d64bba31dd9f4a0,167a73ecacf49d34d642915d1d64bba31dd9f4a0,"Merge pull request #33 from oxtoacart/master
+
+Added support for TCP/HTTP proxy"
+oxtoacart,2014-02-11 13:16:15,https://api.github.com/repos/rakyll/boom/git/commits/ace2003946758d444dbd157f1a16e28231a90c9a,ace2003946758d444dbd157f1a16e28231a90c9a,Fixed usage note for proxy
+oxtoacart,2014-02-11 13:13:25,https://api.github.com/repos/rakyll/boom/git/commits/2a8e6733fffeacca133575c157dc3ffd90bfdb23,2a8e6733fffeacca133575c157dc3ffd90bfdb23,Fixed missiong io import
+oxtoacart,2014-02-11 12:29:35,https://api.github.com/repos/rakyll/boom/git/commits/3063711f8227c056ab10bdbc0501bb1a7a4179da,3063711f8227c056ab10bdbc0501bb1a7a4179da,Implemented feedback from Burcu
+oxtoacart,2014-02-11 04:31:57,https://api.github.com/repos/rakyll/boom/git/commits/e47d49c8cf6af9dc949433951e5beac44cd0f38a,e47d49c8cf6af9dc949433951e5beac44cd0f38a,Added support for TCP/HTTP proxy
+rakyll,2014-02-07 15:24:42,https://api.github.com/repos/rakyll/boom/git/commits/7f0b19881760b97afd461653cf6ae84c0212188b,7f0b19881760b97afd461653cf6ae84c0212188b,"Merge pull request #32 from mdakin/minicik
+
+Boom's current design is resilient to c > n situation, it still fires n ..."
+mdakin,2014-02-07 13:50:30,https://api.github.com/repos/rakyll/boom/git/commits/a2ab02b4cf848d2b215779369d994b75e04986b8,a2ab02b4cf848d2b215779369d994b75e04986b8,"Boom's current design is resilient to c > n situation, it still fires n requests and ends. No need to change n silently."
+rakyll,2014-02-07 10:52:39,https://api.github.com/repos/rakyll/boom/git/commits/384686a2a52ef300f47c5a2e5aa73809c2ebd4e4,384686a2a52ef300f47c5a2e5aa73809c2ebd4e4,"Merge pull request #31 from keramidasceid/data
+
+Added ""Total Data Recieved"" to output"
+keramidasceid,2014-02-06 23:55:17,https://api.github.com/repos/rakyll/boom/git/commits/41cbfb5c77d3b24cd45ea09bd757485138b87c0c,41cbfb5c77d3b24cd45ea09bd757485138b87c0c,Introduced some changes based on rakyll suggestions
+keramidas89,2014-02-06 10:47:43,https://api.github.com/repos/rakyll/boom/git/commits/607dbd15f888e840c55c7c60cf100bb1d55a4d44,607dbd15f888e840c55c7c60cf100bb1d55a4d44,Do not print statistics if the site does not provide the Content Length
+keramidasceid,2014-02-05 22:40:04,https://api.github.com/repos/rakyll/boom/git/commits/ffa4a83b245fecc1fc4bd076efc94e28f5213707,ffa4a83b245fecc1fc4bd076efc94e28f5213707,Merge branch 'data' of github.com:keramidasceid/boom into data
+keramidasceid,2014-02-05 22:37:20,https://api.github.com/repos/rakyll/boom/git/commits/5a7497f38219aaf1cf97a96d7c905e65a8a87b2e,5a7497f38219aaf1cf97a96d7c905e65a8a87b2e,Merge branch 'data' of github.com:keramidasceid/boom into data
+keramidasceid,2014-02-05 22:37:20,https://api.github.com/repos/rakyll/boom/git/commits/a0c452138a923340cea03a117a0243ddaf75a7a9,a0c452138a923340cea03a117a0243ddaf75a7a9,Merge branch 'data' of github.com:keramidasceid/boom into data
+keramidasceid,2014-02-05 20:38:56,https://api.github.com/repos/rakyll/boom/git/commits/573ac20444534270cb3b7d74c41fc1d63ae9391d,573ac20444534270cb3b7d74c41fc1d63ae9391d,Added Total Data Transferred to output
+keramidasceid,2014-02-05 20:38:56,https://api.github.com/repos/rakyll/boom/git/commits/f750cf989fa1e690ed71b327a3801f34b7d5bbc0,f750cf989fa1e690ed71b327a3801f34b7d5bbc0,Added Total Data Transferred to output
+rakyll,2014-02-05 19:37:15,https://api.github.com/repos/rakyll/boom/git/commits/cf6f99598d1343292cc742494cb86257edb7bcc5,cf6f99598d1343292cc742494cb86257edb7bcc5,ServerName should not contain a port.
+rakyll,2014-02-04 09:18:49,https://api.github.com/repos/rakyll/boom/git/commits/723957d2027ea61a42221cbdff411a554e6b84bc,723957d2027ea61a42221cbdff411a554e6b84bc,"Merge pull request #30 from matzhouse/master
+
+Send hostname all the way through the request as the Host header"
+rakyll,2014-01-27 11:07:07,https://api.github.com/repos/rakyll/boom/git/commits/5592a15e6f7cf3843c602f9b84725a76cf02e4e7,5592a15e6f7cf3843c602f9b84725a76cf02e4e7,Adding request testing.
+rakyll,2014-01-27 10:33:42,https://api.github.com/repos/rakyll/boom/git/commits/efa2dd7dca8a095fb63e992361e38956ed4555be,efa2dd7dca8a095fb63e992361e38956ed4555be,"Boom is the original title. Don't escape, don't lower."
+rakyll,2014-01-27 10:30:01,https://api.github.com/repos/rakyll/boom/git/commits/82937a0d17b0effbacd061f08e83e3f803abca8e,82937a0d17b0effbacd061f08e83e3f803abca8e,"Request should not be reused.
+
+If there is a body is set, it's getting closed after the initial req,
+and couldn't be used multiple times."
+rakyll,2014-01-26 15:53:16,https://api.github.com/repos/rakyll/boom/git/commits/bbb9c7b1bba7b54954afb32735901700ff238f52,bbb9c7b1bba7b54954afb32735901700ff238f52,Merge branch 'master' of github.com:rakyll/boom
+rakyll,2014-01-26 15:47:58,https://api.github.com/repos/rakyll/boom/git/commits/4cf9b9a16c6d784474eb916031b54037b19f90c7,4cf9b9a16c6d784474eb916031b54037b19f90c7,Put square brackets only around IPv6s.
+rakyll,2014-01-24 15:41:46,https://api.github.com/repos/rakyll/boom/git/commits/353bd375748a467d93554bdff9b250835b1fabed,353bd375748a467d93554bdff9b250835b1fabed,"Merge pull request #28 from mdakin/bom
+
+Change pb to something more explosive."
+rakyll,2014-01-24 15:07:11,https://api.github.com/repos/rakyll/boom/git/commits/4961ce687aaa45c8968754a035f85611e4a9de89,4961ce687aaa45c8968754a035f85611e4a9de89,Merge branch 'bom' of github.com:mdakin/boom
+rakyll,2014-01-24 11:12:48,https://api.github.com/repos/rakyll/boom/git/commits/55d25c99401403eb0290d551e673112d8923c35f,55d25c99401403eb0290d551e673112d8923c35f,Adding tests for number of requests and rate limiting.
+rakyll,2014-01-24 10:16:32,https://api.github.com/repos/rakyll/boom/git/commits/32a607787d26cd37b686e5f9696cc2e67d08041d,32a607787d26cd37b686e5f9696cc2e67d08041d,Test URL parsing with an URL with a path and raw query.
+mdakin,2014-01-24 01:05:42,https://api.github.com/repos/rakyll/boom/git/commits/a5afe6b6f9c9235c464ed4918c14f6e396c87977,a5afe6b6f9c9235c464ed4918c14f6e396c87977,Change pb to something more explosive.
+rakyll,2014-01-23 23:28:06,https://api.github.com/repos/rakyll/boom/git/commits/4131f2483c7402e2b4a0d170c54463711c43fdc2,4131f2483c7402e2b4a0d170c54463711c43fdc2,Print lookup error instead of a custom message.
+rakyll,2014-01-23 17:12:59,https://api.github.com/repos/rakyll/boom/git/commits/fbcfd0d9815e0c2f06c9ffefa7c8833dc3d268cd,fbcfd0d9815e0c2f06c9ffefa7c8833dc3d268cd,Adding tests for DNS resolving.
+rakyll,2014-01-23 15:22:13,https://api.github.com/repos/rakyll/boom/git/commits/232d50ef5b321297ba226db7d5c5c29acf927a40,232d50ef5b321297ba226db7d5c5c29acf927a40,Handling IPv6 and TLS handshake after IP resolve. Some cleanup.
+rakyll,2014-01-23 14:29:01,https://api.github.com/repos/rakyll/boom/git/commits/c10a28ab95b70b1fb7d6c70d1e32c1575a4a0d63,c10a28ab95b70b1fb7d6c70d1e32c1575a4a0d63,Merge branch 'master' of github.com:rakyll/boom into dns_cache
+pasc,2014-01-23 13:09:20,https://api.github.com/repos/rakyll/boom/git/commits/bf1c87183eec36db2b3bea6e6c349c8c8766c723,bf1c87183eec36db2b3bea6e6c349c8c8766c723,Use standard library functions to manipulate host/port combinations
+pasc,2014-01-22 11:53:12,https://api.github.com/repos/rakyll/boom/git/commits/41f9b88dcc333430ca9f5b4ba6d460d7033e6c65,41f9b88dcc333430ca9f5b4ba6d460d7033e6c65,Moved hostname parsing and request creation into its own function
+pasc,2014-01-22 11:25:43,https://api.github.com/repos/rakyll/boom/git/commits/95209ec9750c152c84c6f04d6af858302079e30e,95209ec9750c152c84c6f04d6af858302079e30e,Remove un-needed variable
+rakyll,2014-01-21 21:44:17,https://api.github.com/repos/rakyll/boom/git/commits/3bb14ff688e86d2ebcbcfecdabe349c7e3a1a638,3bb14ff688e86d2ebcbcfecdabe349c7e3a1a638,Making sure no histogram and latency summary is printed if all reqs fail. Minor formatting change for error reporting.
+rakyll,2014-01-21 21:26:49,https://api.github.com/repos/rakyll/boom/git/commits/226d3299bc1bf3444960af7fc9e96c42720b310c,226d3299bc1bf3444960af7fc9e96c42720b310c,Merge branch 'master' of github.com:rakyll/boom
+rakyll,2014-01-21 21:24:42,https://api.github.com/repos/rakyll/boom/git/commits/0cc76c8d3018158b7d2b2c8116912c75fff1f396,0cc76c8d3018158b7d2b2c8116912c75fff1f396,"Merge pull request #21 from pasc/valid_only_count
+
+Show errors, and don't include them in timing stats"
+pasc,2014-01-21 12:48:29,https://api.github.com/repos/rakyll/boom/git/commits/c47c36d5bd7185ca5d1bcd7c03565e0a277d515f,c47c36d5bd7185ca5d1bcd7c03565e0a277d515f,Only lookup the hostname once
+pasc,2014-01-20 12:18:45,https://api.github.com/repos/rakyll/boom/git/commits/4e9e762e774ff31997a9a8a6b9a6845ed262fd5f,4e9e762e774ff31997a9a8a6b9a6845ed262fd5f,"Show errors, and don't include them in timing stats"
+rakyll,2014-01-20 21:24:13,https://api.github.com/repos/rakyll/boom/git/commits/8355b8cbcca687cb05ffe4a88185f29a0fb9c8b3,8355b8cbcca687cb05ffe4a88185f29a0fb9c8b3,Remove unnecessary doc file.
+rakyll,2014-01-20 21:11:44,https://api.github.com/repos/rakyll/boom/git/commits/82956dc6a9a8965fac1e3568f5c7f39d7c91969e,82956dc6a9a8965fac1e3568f5c7f39d7c91969e,Dump all latencies in csv mode.
+rakyll,2014-01-20 13:34:26,https://api.github.com/repos/rakyll/boom/git/commits/8215487c18777ab7c172c7c55532f44bf2908781,8215487c18777ab7c172c7c55532f44bf2908781,Output error for invalid URIs. More verbose error reporting.
+rakyll,2014-01-20 11:46:48,https://api.github.com/repos/rakyll/boom/git/commits/c05a60785257ab866068e6077960ba590ae0c05e,c05a60785257ab866068e6077960ba590ae0c05e,"Tweaking the description of output flag, updating the usage on the README."
+rakyll,2014-01-20 11:30:15,https://api.github.com/repos/rakyll/boom/git/commits/c49a4dca819dca4b2ac51ff5b9374fdd70446a0a,c49a4dca819dca4b2ac51ff5b9374fdd70446a0a,"Merge pull request #19 from pasc/csv_output
+
+Added a CSV output option"
+pasc,2014-01-20 10:40:00,https://api.github.com/repos/rakyll/boom/git/commits/e1b49c68f8330b32f253f56e7a2147767e5b2389,e1b49c68f8330b32f253f56e7a2147767e5b2389,Disable status bar
+pasc,2014-01-20 10:39:35,https://api.github.com/repos/rakyll/boom/git/commits/2988b28c95eefa15a9720c60e6128dc9e612ebff,2988b28c95eefa15a9720c60e6128dc9e612ebff,Change output command format
+pasc,2014-01-19 11:19:33,https://api.github.com/repos/rakyll/boom/git/commits/22b457a0803c64da659807669e846d89abd09c9d,22b457a0803c64da659807669e846d89abd09c9d,Added a CSV output option
+rakyll,2014-01-17 11:59:20,https://api.github.com/repos/rakyll/boom/git/commits/ada962a0381083c72c4681654b6c8c67c3cc63ce,ada962a0381083c72c4681654b6c8c67c3cc63ce,"Merge pull request #18 from mdakin/minifix
+
+Minor fix for latency percentiles."
+mdakin,2014-01-17 11:43:11,https://api.github.com/repos/rakyll/boom/git/commits/eaf001e8a6e365509d1f2af9e3c037953ff9d69d,eaf001e8a6e365509d1f2af9e3c037953ff9d69d,Minor fix for latency percentiles.
+rakyll,2014-01-16 21:51:40,https://api.github.com/repos/rakyll/boom/git/commits/33d0a5e38734dbbc3a3e0ffaf1852b42e01b27bd,33d0a5e38734dbbc3a3e0ffaf1852b42e01b27bd,"Import rakyll/pb, so pb doesn't break boom builds."
+rakyll,2014-01-12 15:28:01,https://api.github.com/repos/rakyll/boom/git/commits/b75ddf7544cc40696fd287c66d59491594e296be,b75ddf7544cc40696fd287c66d59491594e296be,"Merge pull request #14 from cheggaaa/master
+
+New progress bar formatting"
+cheggaaa,2014-01-12 10:57:47,https://api.github.com/repos/rakyll/boom/git/commits/58270b97c7a4d83fbe3f7a3fe620f3aab2c1157f,58270b97c7a4d83fbe3f7a3fe620f3aab2c1157f,"New pb formatting, bar start"
+cheggaaa,2014-01-12 10:54:35,https://api.github.com/repos/rakyll/boom/git/commits/b02c0c1115644fddb9f2219e7f382205d2110f4c,b02c0c1115644fddb9f2219e7f382205d2110f4c,New pb formatting
+rakyll,2014-01-11 19:36:47,https://api.github.com/repos/rakyll/boom/git/commits/0794be4351697c07672804e7aff34bc9428fc637,0794be4351697c07672804e7aff34bc9428fc637,"Handle header values with spaces, allow header keys to contain dashes."
+rakyll,2014-01-11 18:38:33,https://api.github.com/repos/rakyll/boom/git/commits/0d1ba1c335efdb8380ac596e997fa77eb5263f18,0d1ba1c335efdb8380ac596e997fa77eb5263f18,Replacing bar char with a medium sized.
+rakyll,2014-01-11 17:50:33,https://api.github.com/repos/rakyll/boom/git/commits/d15783ab144feef99c9f2b308732e1b911c2414e,d15783ab144feef99c9f2b308732e1b911c2414e,Renaming Boom fields and adding docs.
+rakyll,2014-01-11 16:57:29,https://api.github.com/repos/rakyll/boom/git/commits/1939f5edfb8b6967b2aa7f7c3545307458ee8288,1939f5edfb8b6967b2aa7f7c3545307458ee8288,"Code reorg and major rollback to old concurrency model, not supporting timeouts temporarily.
+
+The old concurrency model has a few race conditions that were causing
+boom to crash. The code was quite complex for what it has been doing,
+so I'm reverting it back to our initial model."
+rakyll,2014-01-11 15:36:14,https://api.github.com/repos/rakyll/boom/git/commits/72b0f33008bb1445bc4061fa19a7f5a5896d45cf,72b0f33008bb1445bc4061fa19a7f5a5896d45cf,More lightweight progress bar styling.
+rakyll,2014-01-11 15:21:13,https://api.github.com/repos/rakyll/boom/git/commits/af5a3e3feedacf664d3466b9e3c92a64df44b33d,af5a3e3feedacf664d3466b9e3c92a64df44b33d,Replace sharp bars with solid bars.
+rakyll,2014-01-11 12:14:35,https://api.github.com/repos/rakyll/boom/git/commits/9966e9be556d62f4e21df7b7b70f72bc82846968,9966e9be556d62f4e21df7b7b70f72bc82846968,"Merge pull request #10 from mdakin/master
+
+Move more stuff to report, minor cleanup"
+mdakin,2014-01-11 07:00:48,https://api.github.com/repos/rakyll/boom/git/commits/a98ea553969960df322f6eb3e2931f775b61c5cc,a98ea553969960df322f6eb3e2931f775b61c5cc,"Updare readme, fix ugliness."
+mdakin,2014-01-11 00:25:59,https://api.github.com/repos/rakyll/boom/git/commits/a93e0e5fe8b98b00361fe6bdea42f880d6c8a2fe,a93e0e5fe8b98b00361fe6bdea42f880d6c8a2fe,"Move more stuff to report, minor cleanup"
+rakyll,2014-01-10 23:38:16,https://api.github.com/repos/rakyll/boom/git/commits/14f0ba2ac344cf32f3999ecabf050ae99dfd7f76,14f0ba2ac344cf32f3999ecabf050ae99dfd7f76,"Merge pull request #9 from mdakin/master
+
+Add simple timeout and throttling support."
+mdakin,2014-01-10 22:09:38,https://api.github.com/repos/rakyll/boom/git/commits/051680549d06140e12df36e49d22fa49a4eae54c,051680549d06140e12df36e49d22fa49a4eae54c,Merge upstream.
+mdakin,2014-01-10 22:06:29,https://api.github.com/repos/rakyll/boom/git/commits/0404b862db2870e0493a2395d2d66fa9f88b1874,0404b862db2870e0493a2395d2d66fa9f88b1874,"Make report private, Make funcs in print funcs or report, address comments."
+mdakin,2014-01-10 18:40:40,https://api.github.com/repos/rakyll/boom/git/commits/c6903bbc08bcfd3c9f82ac516675914af3df930f,c6903bbc08bcfd3c9f82ac516675914af3df930f,"Simplfy, remove unnecessary timeout related code."
+mdakin,2014-01-10 18:11:54,https://api.github.com/repos/rakyll/boom/git/commits/28789684e320629893fc5f675cd735134dee103c,28789684e320629893fc5f675cd735134dee103c,Properly stop workers and request sender.
+mdakin,2014-01-10 16:48:51,https://api.github.com/repos/rakyll/boom/git/commits/ae36d4858bf0b36dba880346133b8fe9a26f2778,ae36d4858bf0b36dba880346133b8fe9a26f2778,Remove dead code.
+mdakin,2014-01-10 16:18:39,https://api.github.com/repos/rakyll/boom/git/commits/86fdf9e2b2d35876297ceda9d337e00b17e5107b,86fdf9e2b2d35876297ceda9d337e00b17e5107b,Remove dead code
+mdakin,2014-01-10 15:40:51,https://api.github.com/repos/rakyll/boom/git/commits/779cb1bae54c0a4f961fed18cae014f476caa9d0,779cb1bae54c0a4f961fed18cae014f476caa9d0,"Add simple timeout and throttling support, start collecting results immediately, refactor."
+rakyll,2014-01-10 09:42:03,https://api.github.com/repos/rakyll/boom/git/commits/95565f19290a78cd35f00e5e59f3514c59326ad0,95565f19290a78cd35f00e5e59f3514c59326ad0,"Merge pull request #5 from Tanerax/master
+
+added body closing fixing the open files problem"
+Tanerax,2014-01-08 20:39:27,https://api.github.com/repos/rakyll/boom/git/commits/ff0773a1e56e436be4c318b1c578585b8bcc26bd,ff0773a1e56e436be4c318b1c578585b8bcc26bd,"added body closing fixing the open files problem
+added reading of the resp body, allowing Go to reuse resources"
+rakyll,2014-01-07 20:54:01,https://api.github.com/repos/rakyll/boom/git/commits/0af5e91852849f81823ff9bbc715f3294ed104bc,0af5e91852849f81823ff9bbc715f3294ed104bc,Updating the sample output.
+rakyll,2014-01-07 20:43:31,https://api.github.com/repos/rakyll/boom/git/commits/ddda7057da64ce74637cbf3b022c2637034ca634,ddda7057da64ce74637cbf3b022c2637034ca634,"Merge pull request #4 from mdakin/histogram
+
+Simple Histogram support. Code is a bit sloppy. Merge if you think it is useful."
+mdakin,2014-01-07 20:00:15,https://api.github.com/repos/rakyll/boom/git/commits/161351998f377a7e121900e4373bc7c0fa3941fb,161351998f377a7e121900e4373bc7c0fa3941fb,Minor doc fix.
+mdakin,2014-01-07 19:57:38,https://api.github.com/repos/rakyll/boom/git/commits/01e8ba26a402cf8f3808ba056334646ddbf68ec5,01e8ba26a402cf8f3808ba056334646ddbf68ec5,Sanity checks for n and c.
+mdakin,2014-01-07 19:43:47,https://api.github.com/repos/rakyll/boom/git/commits/4b3dff3b54134ec9f5d3f2e8fd94bf088712ddba,4b3dff3b54134ec9f5d3f2e8fd94bf088712ddba,Merge branch 'histogram' of https://github.com/mdakin/boom into histogram
+mdakin,2014-01-07 19:41:50,https://api.github.com/repos/rakyll/boom/git/commits/0cdccf96b1deeff9db60f8fa21d2a8bba155664a,0cdccf96b1deeff9db60f8fa21d2a8bba155664a,Address comments.
+mdakin,2014-01-07 19:25:22,https://api.github.com/repos/rakyll/boom/git/commits/28fdb1e82a98725cb44e6e0fe9edc5532c6f46e7,28fdb1e82a98725cb44e6e0fe9edc5532c6f46e7,Merge remote-tracking branch 'upstream/master' into histogram
+rakyll,2014-01-07 14:05:44,https://api.github.com/repos/rakyll/boom/git/commits/90b179051e1531ff887d5bedda2b66e80e6b623b,90b179051e1531ff887d5bedda2b66e80e6b623b,Add travis build.
+rakyll,2014-01-07 14:00:58,https://api.github.com/repos/rakyll/boom/git/commits/56a0c056fcb13cf105a96b0bc6c762e9d9f021e7,56a0c056fcb13cf105a96b0bc6c762e9d9f021e7,Fixing the name of ab.
+mdakin,2014-01-07 08:51:41,https://api.github.com/repos/rakyll/boom/git/commits/b0bed17095bf858dd347502871620f77f1330b5b,b0bed17095bf858dd347502871620f77f1330b5b,Merge branch 'histogram' of https://github.com/mdakin/boom into histogram
+rakyll,2014-01-07 07:39:49,https://api.github.com/repos/rakyll/boom/git/commits/9460f6e3ce7bb2a72ad08b37928b0c748e83bb3b,9460f6e3ce7bb2a72ad08b37928b0c748e83bb3b,"Merge pull request #2 from mdakin/master
+
+Try to utilize concurrent workers better. Previously each batches of request were blocked on completion of previous batch. Now when a goroutine completes its task it immediately picks another request from channel."
+mdakin,2014-01-07 01:05:51,https://api.github.com/repos/rakyll/boom/git/commits/7fc452f581f08abfc82e5be012113c1b06342bf7,7fc452f581f08abfc82e5be012113c1b06342bf7,Add simple histogram.
+mdakin,2014-01-06 22:50:50,https://api.github.com/repos/rakyll/boom/git/commits/89c7889d2a3abfb3be1b3688988f6c606630d52c,89c7889d2a3abfb3be1b3688988f6c606630d52c,Address comments.
+rakyll,2014-01-06 19:41:49,https://api.github.com/repos/rakyll/boom/git/commits/89340518ebf74dda53c989211d01cfcda12650e5,89340518ebf74dda53c989211d01cfcda12650e5,Add Google Analytics.
+mdakin,2014-01-06 17:21:47,https://api.github.com/repos/rakyll/boom/git/commits/cdeb812c244f245b6d84b2a957f5469ae7d40d65,cdeb812c244f245b6d84b2a957f5469ae7d40d65,Fix import order.
+mdakin,2014-01-06 17:14:12,https://api.github.com/repos/rakyll/boom/git/commits/b5a01c84e9dae564f6460c8d3d74f691abe6202b,b5a01c84e9dae564f6460c8d3d74f691abe6202b,Increase channel buffer size.
+mdakin,2014-01-06 16:22:13,https://api.github.com/repos/rakyll/boom/git/commits/143b780846dd4850c7ad51c573a97793adda8e43,143b780846dd4850c7ad51c573a97793adda8e43,Try to immediately use workers when they are done.
+rakyll,2014-01-06 13:29:21,https://api.github.com/repos/rakyll/boom/git/commits/8ffc08005922fdff984180202b754ec5397fc4b3,8ffc08005922fdff984180202b754ec5397fc4b3,"Merge pull request #1 from mdakin/master
+
+Add latency distribution and minor formatting changes."
+mdakin,2014-01-06 13:18:59,https://api.github.com/repos/rakyll/boom/git/commits/f3f167b5a39ea4e90507d7c4f35efcb91fc63ad5,f3f167b5a39ea4e90507d7c4f35efcb91fc63ad5,Apply gofmt.
+mdakin,2014-01-06 13:11:38,https://api.github.com/repos/rakyll/boom/git/commits/636c4d4c93fb6d9ce8316b8c7d3589a138a221f5,636c4d4c93fb6d9ce8316b8c7d3589a138a221f5,Add latency information for certain percentiles.
+mdakin,2014-01-06 10:40:48,https://api.github.com/repos/rakyll/boom/git/commits/d94594fdb362f01383866379b962c0b238c50902,d94594fdb362f01383866379b962c0b238c50902,Slightly better formatting.
+rakyll,2014-01-05 21:02:50,https://api.github.com/repos/rakyll/boom/git/commits/1ef6c5c212032d2b558425cb44ad58064945d31d,1ef6c5c212032d2b558425cb44ad58064945d31d,Add README.
+rakyll,2014-01-05 20:57:38,https://api.github.com/repos/rakyll/boom/git/commits/fde62d5b95e4c378156f35f3e639d06532cfe8a0,fde62d5b95e4c378156f35f3e639d06532cfe8a0,"If concurrency level is set higher than number of requests, don't exit."
+rakyll,2014-01-05 20:57:05,https://api.github.com/repos/rakyll/boom/git/commits/06ff7caa074b7749d22bd5cef1f91c373a66b662,06ff7caa074b7749d22bd5cef1f91c373a66b662,Add license and some docs.
+rakyll,2014-01-05 20:54:54,https://api.github.com/repos/rakyll/boom/git/commits/073f316b425c69f51c271d2f48eefbfc907ba5a4,073f316b425c69f51c271d2f48eefbfc907ba5a4,Don't handle headers if it's not set.
+rakyll,2014-01-05 20:24:09,https://api.github.com/repos/rakyll/boom/git/commits/65b32a27c37f4d515eb812d1e061117bc8593fa7,65b32a27c37f4d515eb812d1e061117bc8593fa7,"Handle headers, body and basic auth flags."
+rakyll,2014-01-05 20:23:37,https://api.github.com/repos/rakyll/boom/git/commits/c93039a92f6b05e652d9e83c7d45342d67d74863,c93039a92f6b05e652d9e83c7d45342d67d74863,Code reorg.
+rakyll,2014-01-05 19:34:25,https://api.github.com/repos/rakyll/boom/git/commits/49851b2c342bf42303016be0a99e7ab6258494eb,49851b2c342bf42303016be0a99e7ab6258494eb,Fixing typo.
+rakyll,2014-01-05 19:25:08,https://api.github.com/repos/rakyll/boom/git/commits/727c9b304dcc9560e9be6ce2227f56c869b2cabf,727c9b304dcc9560e9be6ce2227f56c869b2cabf,Calculate average with not successful responses.
+rakyll,2014-01-05 18:59:47,https://api.github.com/repos/rakyll/boom/git/commits/6c5941cefa11a8004522f0c9b464fb37fadc87f5,6c5941cefa11a8004522f0c9b464fb37fadc87f5,Better looking usage guide.
+rakyll,2014-01-05 18:59:33,https://api.github.com/repos/rakyll/boom/git/commits/6546f6c63c521c4272688e2a8c8d52bd337f5846,6546f6c63c521c4272688e2a8c8d52bd337f5846,Add status code based response dist.
+rakyll,2014-01-05 17:46:59,https://api.github.com/repos/rakyll/boom/git/commits/32d69a5b69ab8eeb22f6e762e6dd3234e4b1ea7c,32d69a5b69ab8eeb22f6e762e6dd3234e4b1ea7c,Convert average to secs.
+rakyll,2014-01-05 17:41:59,https://api.github.com/repos/rakyll/boom/git/commits/7ab0385760331e31ca615dfebc84d4d636745f5a,7ab0385760331e31ca615dfebc84d4d636745f5a,Fixing summary.
+rakyll,2014-01-05 17:41:51,https://api.github.com/repos/rakyll/boom/git/commits/e1ed87001e5f208e510601a6f60533793158614c,e1ed87001e5f208e510601a6f60533793158614c,Make n requests with c concurrency.
+rakyll,2014-01-05 17:22:31,https://api.github.com/repos/rakyll/boom/git/commits/4ee4b55542163f278468da9da0abdcf83734c937,4ee4b55542163f278468da9da0abdcf83734c937,More flag parsing.
+rakyll,2014-01-05 17:22:22,https://api.github.com/repos/rakyll/boom/git/commits/bd32018c1171aa6fe2e1357170c121db97e1d817,bd32018c1171aa6fe2e1357170c121db97e1d817,Reorg commands.
+rakyll,2014-01-05 16:46:50,https://api.github.com/repos/rakyll/boom/git/commits/ad2c7b63f4f79ff3e6552455a611f313e2d1a356,ad2c7b63f4f79ff3e6552455a611f313e2d1a356,Don't calculate non-2xx requests.
+rakyll,2014-01-05 16:31:50,https://api.github.com/repos/rakyll/boom/git/commits/91e534c84e5047e95eb7c39431737afd5a69d442,91e534c84e5047e95eb7c39431737afd5a69d442,Initial commit.

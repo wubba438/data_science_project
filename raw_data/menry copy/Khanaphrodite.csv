@@ -1,0 +1,1894 @@
+aphrodite,"Framework-agnostic CSS-in-JS with support for server-side rendering, browser prefixing, and minimum CSS generation"
+username,timestamp,url,sha,message
+BenjaVR,2019-08-28 16:29:44,https://api.github.com/repos/Khan/aphrodite/git/commits/dc4269a9d66cd270b746d9a1fd58320e1e42b9be,dc4269a9d66cd270b746d9a1fd58320e1e42b9be,Make parameter typings for StyleSheet.create more typed (#375)
+kinoroy,2019-08-28 16:18:52,https://api.github.com/repos/Khan/aphrodite/git/commits/e53f34d38f3e6ae271746d3705f90ee88f58c337,e53f34d38f3e6ae271746d3705f90ee88f58c337,"Add Typescript export for flushToStyleTag (#379)
+
+* Export flushToStyleTag function from typings file
+
+* Add TS test for flushToStyleTag existence"
+milesj,2019-08-28 16:01:31,https://api.github.com/repos/Khan/aphrodite/git/commits/06a881b387656f0b5f08ab6997373e78d0c1a1f9,06a881b387656f0b5f08ab6997373e78d0c1a1f9,"Allow already injected to be reset (#380)
+
+* Add resetInjected.
+
+* Update types.
+
+* Fix tests.
+
+* Rename to resetInjectedStyle
+
+* Update docs.
+
+* Revert dist changes
+
+* Add tests.
+
+* Change word."
+lencioni,2019-04-06 21:02:42,https://api.github.com/repos/Khan/aphrodite/git/commits/bf95d9feab9744acd949cb79548ae46819edd20f,bf95d9feab9744acd949cb79548ae46819edd20f,"Update inline-style-prefixer 5.0.4 → 5.1.0 (#373)
+
+Changes:
+
+- added a plugin that transforms grid properties"
+galencorey,2019-04-06 21:00:09,https://api.github.com/repos/Khan/aphrodite/git/commits/1211bea177d7fc8887d49dd308bcf00826ccbebe,1211bea177d7fc8887d49dd308bcf00826ccbebe,"Clearer error message (#349)
+
+* added error
+
+* added test
+
+* revert tests
+
+* added test back"
+kevinbarabash,2019-04-05 13:53:36,https://api.github.com/repos/Khan/aphrodite/git/commits/1beabca0947a9311fa9a9c533f8f41d005f2935f,1beabca0947a9311fa9a9c533f8f41d005f2935f,"Fix examples, fixes #366 (#367)
+
+* Fix examples, fixes #366
+
+* unclobber the root .babelrc, upgrade eslint
+
+* remove 'resolve' section from webpack config, revert unnecessary changes to root .babelrc
+
+* build files before running tests
+
+* use before_script for things we want to run before the tests"
+lencioni,2019-04-05 02:08:51,https://api.github.com/repos/Khan/aphrodite/git/commits/cf83722a1852b3962c45a08997c1ac80babf28eb,cf83722a1852b3962c45a08997c1ac80babf28eb,"Roll up inline-style-prefixer (#364)
+
+Since v5 of inline-style-prefixer removed the dynamic generator, it only
+works with static generator data. It seems unlikely that other
+dependencies in an application will bring in inline-style-prefixer, so
+we can likely reduce bundle size a little by rolling it up here."
+lencioni,2019-02-19 18:50:26,https://api.github.com/repos/Khan/aphrodite/git/commits/833eec329d489ba6f6e41b1002ef4b8a89863da9,833eec329d489ba6f6e41b1002ef4b8a89863da9,2.3.1
+lencioni,2019-02-19 18:49:51,https://api.github.com/repos/Khan/aphrodite/git/commits/3a3951a8f4f937a989c6916e1dbee46216b4c17e,3a3951a8f4f937a989c6916e1dbee46216b4c17e,Update changelog for v2.3.1
+lencioni,2019-02-19 18:49:04,https://api.github.com/repos/Khan/aphrodite/git/commits/f3cca9b80a32c95ff4aca7bc0e130c34d17f173e,f3cca9b80a32c95ff4aca7bc0e130c34d17f173e,"Merge pull request #363 from Khan/prefixer-deep-import
+
+Use deep import for inline-style-prefixer"
+lencioni,2019-02-19 18:42:31,https://api.github.com/repos/Khan/aphrodite/git/commits/3f95745dbacdacae5b8f596977058deed88c9391,3f95745dbacdacae5b8f596977058deed88c9391,"Use deep import for inline-style-prefixer
+
+After updating to 2.3.0, I noticed a large bundle size increase. I
+believe this is due to switching this from a deep import to a named
+import, so we were duplicating a bunch of code (the named import used
+the es build, which brought in the es plugins, but our generated data
+brought in the lib plugins).
+
+As a quick fix, I think we can bring bundle sizes back down by using a
+deep import here again."
+lencioni,2019-02-19 18:21:48,https://api.github.com/repos/Khan/aphrodite/git/commits/c73dd6d370c7d7c1ce46d00ec3892e9d7ba4c618,c73dd6d370c7d7c1ce46d00ec3892e9d7ba4c618,Add .nyc_output to .npmignore
+lencioni,2019-02-19 18:20:30,https://api.github.com/repos/Khan/aphrodite/git/commits/a8e69c48b0d192302d9a281bcd3d792476ae4c88,a8e69c48b0d192302d9a281bcd3d792476ae4c88,2.3.0
+lencioni,2019-02-19 18:19:41,https://api.github.com/repos/Khan/aphrodite/git/commits/592df4e4d961c3fd87abc84bd85d837e8c7adbb6,592df4e4d961c3fd87abc84bd85d837e8c7adbb6,Update changelog for v2.3.0
+lencioni,2019-02-19 18:13:48,https://api.github.com/repos/Khan/aphrodite/git/commits/41b2aa2417b5b0fb62d3461d4bbc7e1298188d43,41b2aa2417b5b0fb62d3461d4bbc7e1298188d43,"Merge pull request #362 from Khan/rollupgrade
+
+Update rollup and babel"
+lencioni,2019-02-19 18:04:01,https://api.github.com/repos/Khan/aphrodite/git/commits/07d8d47e1c7500f1d6b35dafc0b821c8cb968aed,07d8d47e1c7500f1d6b35dafc0b821c8cb968aed,"Compile with loose classes
+
+This will reduce bundle sizes a little and improve runtime speed.
+
+There are some risks here, but I think they are minimal and won't affect
+us:
+
+  https://babeljs.io/docs/en/babel-plugin-transform-classes#loose"
+lencioni,2019-02-19 18:01:51,https://api.github.com/repos/Khan/aphrodite/git/commits/f36c7347417b61fe342d2c2e1a3b3c459e245e44,f36c7347417b61fe342d2c2e1a3b3c459e245e44,Update rollup and babel
+lencioni,2019-02-19 18:01:41,https://api.github.com/repos/Khan/aphrodite/git/commits/cdff9b297dd988e35ef467edae61f259bce8b7b7,cdff9b297dd988e35ef467edae61f259bce8b7b7,"Merge pull request #361 from calinoracation/callie--ie10
+
+Verify IE10 support for flex styles"
+lencioni,2019-02-19 17:51:37,https://api.github.com/repos/Khan/aphrodite/git/commits/a9f69f490cd743324222c3f7847dea2de56770a3,a9f69f490cd743324222c3f7847dea2de56770a3,"Merge pull request #358 from Khan/update-prefixer-dependency
+
+Bump up inline-style-prefixer version"
+lencioni,2019-02-16 22:53:38,https://api.github.com/repos/Khan/aphrodite/git/commits/1fd0f973683b04ee22a96c58f13d4af8f3975d2a,1fd0f973683b04ee22a96c58f13d4af8f3975d2a,"Merge pull request #360 from oshi97/master
+
+Update README.md"
+oshi97,2019-02-16 22:44:15,https://api.github.com/repos/Khan/aphrodite/git/commits/a86e6e07330194529b433d152d79704552f0935d,a86e6e07330194529b433d152d79704552f0935d,"Update README.md
+
+small typo"
+chenyejia,2019-02-07 16:53:35,https://api.github.com/repos/Khan/aphrodite/git/commits/220dbc7d9914757afa95d3190d7ea5b7cca45386,220dbc7d9914757afa95d3190d7ea5b7cca45386,Bump up inline-style-prefixer version
+csilvers,2018-12-05 21:31:45,https://api.github.com/repos/Khan/aphrodite/git/commits/05334ac3437d4e38229be13b02e45121a94d62ec,05334ac3437d4e38229be13b02e45121a94d62ec,"Merge pull request #354 from istvanmakary/patch-1
+
+update README.md to warn against a server-side rendering gotcha"
+istvanmakary,2018-12-05 20:33:27,https://api.github.com/repos/Khan/aphrodite/git/commits/63ed15c36ef4a6fc244545676e7298026094e495,63ed15c36ef4a6fc244545676e7298026094e495,update README.md
+drosile,2018-11-29 16:55:20,https://api.github.com/repos/Khan/aphrodite/git/commits/28eba5fddec45c26f57a5a2c2b22cb340a4c160c,28eba5fddec45c26f57a5a2c2b22cb340a4c160c,"Merge pull request #351 from Khan/audit-fix
+
+Update some packages to fix security warnings."
+csilvers,2018-11-28 23:12:13,https://api.github.com/repos/Khan/aphrodite/git/commits/c22dc0daf7b893ef880ba4ce49cfd16a65cd3de9,c22dc0daf7b893ef880ba4ce49cfd16a65cd3de9,"Update some packages to fix security warnings.
+
+I had to fix a broken test that was asserting that a substring was
+present in some element of a list.  I am guessing old versions of
+mocha stringified the list and checked if the substring was in that
+stringification, but now it gives a type error (as it should).
+
+Test Plan:
+I ran `npm test`.  This doesn't test coveralls -- I don't know how to
+do that -- but even if it's wrong a github-bot should notice.  No
+changes were made to library-specific deps so I feel pretty confident
+this won't break things badly."
+lencioni,2018-08-20 20:37:34,https://api.github.com/repos/Khan/aphrodite/git/commits/84e0a72ce20d77c8d5481f1509ece86ffa704515,84e0a72ce20d77c8d5481f1509ece86ffa704515,2.2.3
+lencioni,2018-08-20 20:36:48,https://api.github.com/repos/Khan/aphrodite/git/commits/378a07e3300202cd8fe7bb996bcd4fc1067ee829,378a07e3300202cd8fe7bb996bcd4fc1067ee829,Update changelog for 2.2.3
+lencioni,2018-08-20 20:33:36,https://api.github.com/repos/Khan/aphrodite/git/commits/ee1a58059cbca52f31527670e9ae79d655c16484,ee1a58059cbca52f31527670e9ae79d655c16484,"Prevent package-lock.json
+
+Since this repo is non-deployable, we don't want a lockfile."
+lencioni,2018-08-20 16:56:40,https://api.github.com/repos/Khan/aphrodite/git/commits/4782d37c20ba79cca9233ebf0d0afbb0626c276c,4782d37c20ba79cca9233ebf0d0afbb0626c276c,"Merge pull request #341 from calinoracation/callie--bump-style-prefixer-and-deps
+
+Bump inline-style-prefixer to 4.0.2"
+lencioni,2018-06-08 17:31:12,https://api.github.com/repos/Khan/aphrodite/git/commits/62ee2f0a39f10be75322dc0f77d1346e9731ffbf,62ee2f0a39f10be75322dc0f77d1346e9731ffbf,2.2.2
+lencioni,2018-06-08 17:30:34,https://api.github.com/repos/Khan/aphrodite/git/commits/51b4a4a15cf640dcec367f3bde5f8a62ef0e5a41,51b4a4a15cf640dcec367f3bde5f8a62ef0e5a41,Update changelog for v2.2.2
+lencioni,2018-06-08 17:12:47,https://api.github.com/repos/Khan/aphrodite/git/commits/1e1965d9a4086b8ebc4caa3cd55776fa7b462388,1e1965d9a4086b8ebc4caa3cd55776fa7b462388,"Increase typings test timeout from 5000 to 10000
+
+This test seems to be failing in Travis sometimes, so I'm increasing the
+timeout."
+lencioni,2018-06-08 17:01:58,https://api.github.com/repos/Khan/aphrodite/git/commits/091eb62efa1d579e81221e5073f2c37ea3e99660,091eb62efa1d579e81221e5073f2c37ea3e99660,Update tslint and typescript
+lencioni,2018-06-08 16:53:21,https://api.github.com/repos/Khan/aphrodite/git/commits/90825cdf19c9366edad455efd85c165a055577db,90825cdf19c9366edad455efd85c165a055577db,Update npm-run-all v1 -> v4
+lencioni,2018-06-08 15:29:30,https://api.github.com/repos/Khan/aphrodite/git/commits/629a007e4db2560594e4927c51b66fcd866937e1,629a007e4db2560594e4927c51b66fcd866937e1,Update jsdom 11.6 -> 11.11
+lencioni,2018-06-08 15:27:09,https://api.github.com/repos/Khan/aphrodite/git/commits/dd49cfdc97156a1900e3dbb658488e4c54cb8baa,dd49cfdc97156a1900e3dbb658488e4c54cb8baa,Update cross-env and rimraf
+lencioni,2018-06-08 15:25:04,https://api.github.com/repos/Khan/aphrodite/git/commits/72c9dc22de9cac00ccbf0c54dcc26b1e7a1e9c92,72c9dc22de9cac00ccbf0c54dcc26b1e7a1e9c92,"Update flow to 0.74.0
+
+While updating this I ran into an issue with styleTag.styleSheet not
+being on HTMLStyleElement that I wasn't sure how to properly fix, so I
+am just disabling flow on this line for now.
+
+https://github.com/facebook/flow/blob/22fe6fc7f/lib/dom.js#L3118-L3124"
+lencioni,2018-06-08 15:16:40,https://api.github.com/repos/Khan/aphrodite/git/commits/02edbad23e1c9ec7975db871517510f581281dfc,02edbad23e1c9ec7975db871517510f581281dfc,Update babel dependencies
+lencioni,2018-06-08 15:14:53,https://api.github.com/repos/Khan/aphrodite/git/commits/7c6a4c37233625e84978d8ca29f09fad04f1b404,7c6a4c37233625e84978d8ca29f09fad04f1b404,"Update rollup dependencies
+
+rollup-plugin-uglify changed from a default export to a named export, so
+I also needed to update the config at the same time."
+Sibz,2018-05-28 15:36:54,https://api.github.com/repos/Khan/aphrodite/git/commits/8df7404a3e80640b6fa3a469195dee4461daf15b,8df7404a3e80640b6fa3a469195dee4461daf15b,Update typings to resolve #329
+milesj,2018-06-08 15:08:37,https://api.github.com/repos/Khan/aphrodite/git/commits/7d61c9bfaba582a8c0574d5c07843d36600fd343,7d61c9bfaba582a8c0574d5c07843d36600fd343,Fix multiple @font-face of the same name (#327)
+lencioni,2018-05-14 15:19:36,https://api.github.com/repos/Khan/aphrodite/git/commits/b9f5ae2dcc7fc0abeb426ea6f7939978e36b90e4,b9f5ae2dcc7fc0abeb426ea6f7939978e36b90e4,2.2.1
+lencioni,2018-05-14 15:18:26,https://api.github.com/repos/Khan/aphrodite/git/commits/9d7f3e7c079078c0aec96dd348f1048d4855d11b,9d7f3e7c079078c0aec96dd348f1048d4855d11b,Update changelog for v2.2.1
+lencioni,2018-05-11 17:00:54,https://api.github.com/repos/Khan/aphrodite/git/commits/d28337631fc305dd20d2fc37c66fa1fabbccecc2,d28337631fc305dd20d2fc37c66fa1fabbccecc2,"Use code splitting for default and no-important builds
+
+If two copies of Aphrodite end up being run at the same time, you can
+easily encounter issues due to state stored by Aphrodite not being
+shared between the multiple copies (e.g. `isBuffering`).
+
+Since v2, when we started using rollup to build Aphrodite, this was
+pretty easy to accidentally do if you weren't careful about when you
+imported from `aphrodite` or `aphrodite/no-important`. This has resulted
+in some issues, particularly around
+react-with-styles-interface-amp-aphrodite and hypernova-amp not being
+super careful about which version of aphrodite they import. One of the
+recent fixes for this can be seen here:
+
+  https://github.com/airbnb/react-with-styles-interface-amp-aphrodite/pull/8
+
+In an effort to make this safer, I am making a small change to how we
+build this library. Rollup offers an experimental code splitting mode
+that allows us to keep the separate entry points and automatically
+dedupe all of the shared code into a single chunk that each entry point
+imports. As a result, we can provide the same API we currently do to
+consumers, and avoid this issue to some extent.
+
+The result of running this build on the es directory looks like the
+following:
+
+- chunk-957f2f88.js
+- index.js
+- no-important.js
+
+and es/index.js ends up looking like:
+
+```js
+import { a as makeExports } from './chunk-957f2f88.js';
+import 'string-hash';
+import 'inline-style-prefixer/static/plugins/calc';
+import 'inline-style-prefixer/static/plugins/crossFade';
+import 'inline-style-prefixer/static/plugins/cursor';
+import 'inline-style-prefixer/static/plugins/filter';
+import 'inline-style-prefixer/static/plugins/flex';
+import 'inline-style-prefixer/static/plugins/flexboxIE';
+import 'inline-style-prefixer/static/plugins/flexboxOld';
+import 'inline-style-prefixer/static/plugins/gradient';
+import 'inline-style-prefixer/static/plugins/imageSet';
+import 'inline-style-prefixer/static/plugins/position';
+import 'inline-style-prefixer/static/plugins/sizing';
+import 'inline-style-prefixer/static/plugins/transition';
+import 'inline-style-prefixer/static/createPrefixer';
+import 'asap';
+
+var useImportant = true; // Add !important to all style definitions
+
+var Aphrodite = makeExports(useImportant);
+
+var StyleSheet = Aphrodite.StyleSheet,
+    StyleSheetServer = Aphrodite.StyleSheetServer,
+    StyleSheetTestUtils = Aphrodite.StyleSheetTestUtils,
+    css = Aphrodite.css,
+    minify = Aphrodite.minify,
+    flushToStyleTag = Aphrodite.flushToStyleTag,
+    injectAndGetClassName = Aphrodite.injectAndGetClassName,
+    defaultSelectorHandlers = Aphrodite.defaultSelectorHandlers;
+
+export { StyleSheet, StyleSheetServer, StyleSheetTestUtils, css, minify, flushToStyleTag, injectAndGetClassName, defaultSelectorHandlers };
+```
+
+(es/no-important.js looks almost identical)
+
+The bulk of the library ends up in es/chunk-957f2f88.js, which should
+allow the state to be consolidated in this scenario."
+lencioni,2018-04-19 16:05:43,https://api.github.com/repos/Khan/aphrodite/git/commits/d29ce3d7baee18459edc57fb393c52f05742e7e2,d29ce3d7baee18459edc57fb393c52f05742e7e2,2.2.0
+lencioni,2018-04-19 16:01:15,https://api.github.com/repos/Khan/aphrodite/git/commits/aab31078c0b8e66a2d9efc58199c57630aa090c5,aab31078c0b8e66a2d9efc58199c57630aa090c5,Update changelog for v2.2.0
+lencioni,2018-04-19 16:03:31,https://api.github.com/repos/Khan/aphrodite/git/commits/c4a2e3b18fdf5800455a5bb91ab739904842d5d3,c4a2e3b18fdf5800455a5bb91ab739904842d5d3,"Update rollup 0.56 -> 0.58, rollup-plugin-node-resolve 3.2 -> 3.3"
+majapw,2018-04-18 20:55:34,https://api.github.com/repos/Khan/aphrodite/git/commits/6bb00447e5965a6706ede23c90f8308b0049d275,6bb00447e5965a6706ede23c90f8308b0049d275,Expose defaultSelectorHandlers and injectAndGetClassName
+lencioni,2018-04-11 01:50:29,https://api.github.com/repos/Khan/aphrodite/git/commits/c3d128e2d779cb64b231658a432d4d5150228391,c3d128e2d779cb64b231658a432d4d5150228391,Move bundle size badges into readme title
+lencioni,2018-04-11 01:48:58,https://api.github.com/repos/Khan/aphrodite/git/commits/8c1bc7a1ca32a86f1c5431d4db47fd67d7325195,8c1bc7a1ca32a86f1c5431d4db47fd67d7325195,"Move description out of title in readme
+
+This is good information, but since the title is so
+large and bold, it seems a little unnecessary."
+lencioni,2018-04-11 01:42:16,https://api.github.com/repos/Khan/aphrodite/git/commits/3342a810f39ee8e47b4d1c36a4de04213289e791,3342a810f39ee8e47b4d1c36a4de04213289e791,2.1.1
+lencioni,2018-04-11 01:40:53,https://api.github.com/repos/Khan/aphrodite/git/commits/ddb3b30f479cb918f4b9e021ca415ff81ee0aa0b,ddb3b30f479cb918f4b9e021ca415ff81ee0aa0b,Update changelog for v2.1.1
+lencioni,2018-04-11 01:38:17,https://api.github.com/repos/Khan/aphrodite/git/commits/af259b9330e50173bce9bb45f5c0a80243fcca3e,af259b9330e50173bce9bb45f5c0a80243fcca3e,Update package-lock.json
+dmiller9911,2018-03-30 21:50:32,https://api.github.com/repos/Khan/aphrodite/git/commits/3395c2b40ea35c88317b44a988bcbf758bae5bff,3395c2b40ea35c88317b44a988bcbf758bae5bff,"fix(no-important): Fixes #311 Adds minify and flushToStyleTag to no-important
+
+Added missing exports from no-important.  Added a test to verify that the exports for each package
+match to avoid this in the future.  Updated chai to use a new assertion."
+dmiller9911,2018-03-30 21:12:45,https://api.github.com/repos/Khan/aphrodite/git/commits/f23bc885caf3bdbbc489dae08821e4ee29be3605,f23bc885caf3bdbbc489dae08821e4ee29be3605,docs(README): Add jest-aphrodite-react to tools listed on README.md
+lencioni,2018-03-15 06:18:30,https://api.github.com/repos/Khan/aphrodite/git/commits/23e2d255341cb42102fc4451e8abcbc06842e9e7,23e2d255341cb42102fc4451e8abcbc06842e9e7,2.1.0
+lencioni,2018-03-15 06:18:00,https://api.github.com/repos/Khan/aphrodite/git/commits/804f12579b088f86290145127aff0b603aee6a35,804f12579b088f86290145127aff0b603aee6a35,Update changelog for 2.1.0
+lencioni,2018-03-15 06:06:50,https://api.github.com/repos/Khan/aphrodite/git/commits/dd4f733d85ca92cf381c72898c66451789415b62,dd4f733d85ca92cf381c72898c66451789415b62,"Expose flushToStyleTag
+
+v2 switched from webpack to rollup for its build. As part of this, the
+individual files that were previously importable by intrepid spirits
+gave access to some functions that were not explicitly exposed as part
+of Aphrodite's public API.
+
+At least one of these is cited in some issues as a workaround for some
+edge cases like #76, and is used by projects like
+react-with-styles-interface-aphrodite to allow folks to work around some
+of these same types of issues.
+
+To allow folks relying on this function to update to v2, I am adding
+this as an export."
+lencioni,2018-03-15 05:45:35,https://api.github.com/repos/Khan/aphrodite/git/commits/94d5f07e361006e24938e030bb87728e49a91969,94d5f07e361006e24938e030bb87728e49a91969,Update changelog for v2.0.0
+lencioni,2018-03-15 05:28:35,https://api.github.com/repos/Khan/aphrodite/git/commits/6703eb72313df354db017fbda9e933bbf6cd6845,6703eb72313df354db017fbda9e933bbf6cd6845,2.0.0
+lencioni,2018-03-15 05:18:05,https://api.github.com/repos/Khan/aphrodite/git/commits/e70c85086460ae6d8f52940b3f87242ca27d1ce1,e70c85086460ae6d8f52940b3f87242ca27d1ce1,"Update flow 0.34 -> 0.67
+
+This shook out a couple of new warnings, which I also addressed in this
+commit."
+lencioni,2018-03-15 04:57:22,https://api.github.com/repos/Khan/aphrodite/git/commits/cabad9380b5b9bbc18f3d9dcdefcdcf1379fa559,cabad9380b5b9bbc18f3d9dcdefcdcf1379fa559,Update rollup devDependencies
+lencioni,2018-03-04 00:43:45,https://api.github.com/repos/Khan/aphrodite/git/commits/427fc691e3e82264172500b3bf8640a5e6fcbeee,427fc691e3e82264172500b3bf8640a5e6fcbeee,"Allow StyleSheetServer to be minified out in client-only bundles
+
+Webpack can be configured to minify out this code when building bundles
+that are client-only. This can be accomplished via the DefinePlugin:
+
+```
+new webpack.DefinePlugin({
+  ""typeof window"": JSON.stringify(""object"")
+})
+```"
+lencioni,2018-03-04 00:41:21,https://api.github.com/repos/Khan/aphrodite/git/commits/e1a71ff7539f41eb5c0837df006322ac9d4b5488,e1a71ff7539f41eb5c0837df006322ac9d4b5488,"Allow StyleSheetTestUtils to be minified out in production
+
+These should never be used in production, so let's write it in a way
+that it can be minified out to further reduce bundle sizes. Not a huge
+impact, but might as well squeeze out a few more bytes."
+lencioni,2018-03-03 18:59:26,https://api.github.com/repos/Khan/aphrodite/git/commits/1af3bb25edd3ee751c3408c7f162352f3cced2b6,1af3bb25edd3ee751c3408c7f162352f3cced2b6,"Remove separate iteration for summing length of style defs
+
+I've been profiling and noticed that injectAndGetClassName is a very hot
+path so I've been thinking about ways to make it more efficient. I
+noticed that we were iterating over things twice unnecessarily, so I've
+moved a reduce function inline with our original iteration. This
+improves my naive benchmark from ~2.94s to ~2.77s.
+
+While I was at it, I removed an unnecessary object creation here, to hlp
+improve efficiency and reduce the memory footprint.
+
+I think it might be possible to further improve perf here by converting
+the recursive function into an interative one, which I'm going to dig
+into next."
+lencioni,2018-03-03 17:48:04,https://api.github.com/repos/Khan/aphrodite/git/commits/83693f2d912f589f545db8bbcdf0527cf14c21ca,83693f2d912f589f545db8bbcdf0527cf14c21ca,"Update Travis config
+
+Node 4 is really old, and doesn't seem to work with the new version of
+jsdom. Also, newer versions of node are out that we should be running
+tests on.
+
+While I was at it, I enabled sudo: false, which opts our tests into
+faster, containerized builds."
+lencioni,2018-03-03 17:42:25,https://api.github.com/repos/Khan/aphrodite/git/commits/f41a3756d1be3f229a4a09f4309f4f6b066a46fc,f41a3756d1be3f229a4a09f4309f4f6b066a46fc,Update jsdom v6 -> v11
+lencioni,2018-03-03 17:15:04,https://api.github.com/repos/Khan/aphrodite/git/commits/fc85217dc6b1a96ac35756ae3eb90e6445e6a796,fc85217dc6b1a96ac35756ae3eb90e6445e6a796,Update package-lock.json
+lencioni,2018-03-03 15:49:40,https://api.github.com/repos/Khan/aphrodite/git/commits/fcc50762612c819eae0a5b2527cdbb28919800e5,fcc50762612c819eae0a5b2527cdbb28919800e5,"Replace object spread with a reducer
+
+In my previous commit, I did this with a Set, but I was bummed about
+this being a breaking change that causes people to have to make sure
+they use a polyfill for older browsers, so I gave it some more thought.
+After doing some profiling, I've found that this method may actually be
+a little faster than Set, and it is not breaking. Seems like a good win."
+lencioni,2018-02-16 19:21:24,https://api.github.com/repos/Khan/aphrodite/git/commits/e0e7fbfb77e10ed77b3e9bfc3ae61ed8a114d9f5,e0e7fbfb77e10ed77b3e9bfc3ae61ed8a114d9f5,"Replace object spread with Set in generateCSSRuleset
+
+I was profiling Aphrodite and noticed that the self time in
+generateCSSRuleset is one of the most expensive bits. Digging in a bit,
+it looked like most of this was coming from the object spread here,
+which we use do copy the original object so we can reference its keys
+with fast lookups. By swapping this out for a Set we greatly reduce the
+self time of this function from ~7% of total runtime to ~3%.
+
+I've implemented this in a way that expects Set to be available in the
+browser or polyfilled, which I think is a reasonable explanation. I've
+documented this in the readme. If we move forward with this, we could
+also make Map a requirement and simplify a couple of codepaths if we
+want."
+jlfwong,2018-03-02 21:32:29,https://api.github.com/repos/Khan/aphrodite/git/commits/c24225a23fa1fa52d1584aef961c0d72d3e71ffe,c24225a23fa1fa52d1584aef961c0d72d3e71ffe,"Merge pull request #302 from dmiller9911/typings
+
+Moved typings into repo, and updated typings to improve type safety."
+dmiller9911,2018-03-02 20:29:55,https://api.github.com/repos/Khan/aphrodite/git/commits/6abe53754e919a18fab5d3e6f374ab201122bf8c,6abe53754e919a18fab5d3e6f374ab201122bf8c,Remove StyleDeclarationValue private members from export.  Remove unused exports from css-properties.  Add license/permission from glamorous typings to be safe. Add tests to verify typing functionality over time.
+dmiller9911,2018-02-21 23:24:07,https://api.github.com/repos/Khan/aphrodite/git/commits/dcd39418c9e2e4de3d1bfc2ce4313a15b40cb2ca,dcd39418c9e2e4de3d1bfc2ce4313a15b40cb2ca,"Moved typings into repo, and updated typings to improve type safety.
+
+Replaces #258 since the contributor has asked for someone else to take over.
+
+* Provides intellisense for propteries in StyleSheet.Create
+* Provides type safety for fonts
+* updated to include new minify function and StyleSheetTestUtils.getBufferedStyles
+* Removed dependency on React.CSSProperties typings by pulling in typings from glamorous, and editing to match Aphrodite."
+dmiller9911,2018-02-21 21:36:41,https://api.github.com/repos/Khan/aphrodite/git/commits/860fc47e3ef4e79926667a7b4bc7cac0f3a609f5,860fc47e3ef4e79926667a7b4bc7cac0f3a609f5,Use cross-env and add node to build:prefixes to support developers on windows.
+lencioni,2018-02-16 17:16:20,https://api.github.com/repos/Khan/aphrodite/git/commits/37fa9cf4862a71a64f641d6f3ee00759cb1c19bc,37fa9cf4862a71a64f641d6f3ee00759cb1c19bc,"Document why we are keeping logic out of StyleSheet.create
+
+As suggested in code review, this will help people understand why things
+are written the way they are, which will make it less likely to regress."
+lencioni,2018-02-16 01:33:20,https://api.github.com/repos/Khan/aphrodite/git/commits/2e15da8a669f20f956c228bf387d8f683feb1b29,2e15da8a669f20f956c228bf387d8f683feb1b29,"Add es to .eslintignore
+
+I forgot to do this in my rollup PR."
+lencioni,2018-02-16 01:32:19,https://api.github.com/repos/Khan/aphrodite/git/commits/416cf3691e2bfbccd307f8ecc53608311f4ebd7c,416cf3691e2bfbccd307f8ecc53608311f4ebd7c,"Hoist conditional out of hot path
+
+Instead of checking this on every iteration, we can just set it when the
+module first runs, and then switch it out when minify() is called. This
+should keep the hot path as fast as possible."
+lencioni,2018-02-16 00:33:10,https://api.github.com/repos/Khan/aphrodite/git/commits/e02911f2ceb790e7746a3fcb30c24880d48be331,e02911f2ceb790e7746a3fcb30c24880d48be331,"Inline mapObj into StyleSheet.create
+
+Removing this abstraction that was only used in one place simplifies the
+code a little and theoretically should improve performance by avoiding
+some extra function calls and object creation. I say theoretically
+because my rudimentary profiling is pretty inconclusive. It is possible
+that my benchmark scenario is non-representative, the browser is
+optimizing this away anyway. In either case, this seems like a small
+improvement."
+lencioni,2018-02-15 23:43:56,https://api.github.com/repos/Khan/aphrodite/git/commits/8b3e5db4f89b6b73b33cf1b6fa86b8620986694b,8b3e5db4f89b6b73b33cf1b6fa86b8620986694b,"Update rollup 0.55.3 -> 0.56.0
+
+Changelog:
+
+  https://github.com/rollup/rollup/blob/master/CHANGELOG.md#0560"
+Soreine,2018-02-15 17:25:01,https://api.github.com/repos/Khan/aphrodite/git/commits/c4bd7409852ff767a6cc0f0b34c7e3f0413191eb,c4bd7409852ff767a6cc0f0b34c7e3f0413191eb,Fix export of minify global function
+lencioni,2018-02-15 00:06:46,https://api.github.com/repos/Khan/aphrodite/git/commits/3d233f6f922b166aed83c31463ada6d9585e0d6c,3d233f6f922b166aed83c31463ada6d9585e0d6c,Add link to react-with-styles in readme
+Soreine,2017-12-08 14:50:56,https://api.github.com/repos/Khan/aphrodite/git/commits/2e8b94539322574b361d44c882c4b44f70f44734,2e8b94539322574b361d44c882c4b44f70f44734,Document feature
+Soreine,2017-12-08 14:41:44,https://api.github.com/repos/Khan/aphrodite/git/commits/61426eeaf92888720df3911090d5c4025017f507,61426eeaf92888720df3911090d5c4025017f507,Add minify global function to force style names minification
+calinoracation,2018-02-14 23:38:18,https://api.github.com/repos/Khan/aphrodite/git/commits/bc53066c50fd356c6f660e890102315cef2facd2,bc53066c50fd356c6f660e890102315cef2facd2,Bump inline-style-prefixer to 4.0.0 (#297)
+lencioni,2018-02-14 23:37:34,https://api.github.com/repos/Khan/aphrodite/git/commits/8b742a08fde44b0f7e442a072362a4d13abad37c,8b742a08fde44b0f7e442a072362a4d13abad37c,"Build with rollup instead of webpack (#281)
+
+Rollup will produce a smaller and more optimized bundle than webpack,
+and can be configured in a way that works perfectly for libraries, such
+as Aphrodite. This will help to minimize the bundle size impact of using
+this package, and may even give a small runtime speedup. For reference,
+React 16 is built using Rollup.
+
+Rollup does not allow Babel 5, so I also updated to Babel 6 at the same
+time. In this update, I tried to take care to maintain the same list of
+browser support that we have listed in the CSS prefixes that we build.
+At some point, we probably want to unify this configuration via
+browserslist. Issue:
+
+  https://github.com/Khan/aphrodite/issues/239
+
+I noticed that this Babel update caused branch coverage to drop a
+little, and I was unable to fix it by adding a test that definitely
+covered the missing branch. Thankfully, all I needed to do was add the
+istanbul Babel plugin to fix this. This is the approach recommended by
+the istanbul documentation:
+
+  https://github.com/istanbuljs/nyc#use-with-babel-plugin-istanbul-for-babel-support
+
+Along with this update, I decided to add an ES modules build since it
+was easy enough. This will be used automatically by tools such as
+webpack 2+ to import the ES6 module version directly. I think it still
+makes sense to run these through Babel since most people don't run their
+node_modules through Babel, so the main difference here is that the
+import/export statements will not be compiled to require/module.exports.
+This allows webpack to perform optimizations such as tree-shaking and
+scope hoisting.
+
+One risk to be on the lookout for when people update to this version is
+that if you are using `require` to bring in Aphrodite with a version of
+webpack that is ES modules capable, it will break. Those consumers will
+need to switch to import instead. For this reason, I would be okay with
+removing the `module` field from the package.json for an initial release
+of the rollup build, and then we can add it later when the ecosystem has
+time to catch up. This is the approach we landed on for react-waypoint:
+
+1. https://github.com/brigade/react-waypoint/pull/220
+2. https://github.com/brigade/react-waypoint/pull/223
+
+The filesize of the dist builds before this change looked like:
+
+```
+ 83K aphrodite.js
+ 84K aphrodite.umd.js
+104K aphrodite.umd.js.map
+ 23K aphrodite.umd.min.js
+204K aphrodite.umd.min.js.map
+```
+
+And after this change:
+
+```
+ 72K aphrodite.js
+ 73K aphrodite.umd.js
+108K aphrodite.umd.js.map
+ 20K aphrodite.umd.min.js
+ 93K aphrodite.umd.min.js.map
+```
+
+So it looks like the minified UMD build dropped from 24 KiB to 20 KiB."
+kentcdodds,2018-01-31 22:30:25,https://api.github.com/repos/Khan/aphrodite/git/commits/6df193b7584c1f113ada3e2c38fc81eaf7394539,6df193b7584c1f113ada3e2c38fc81eaf7394539,"docs(tagline): update tagline (#113)
+
+* docs(tagline): update tagline
+
+Because using `Inline styles` is misleading and turns people off of the
+library.
+
+Closes #111"
+dmiller9911,2018-01-24 04:16:20,https://api.github.com/repos/Khan/aphrodite/git/commits/b3984e1d652dd9ac9649eec3cc1e46a4e12e244c,b3984e1d652dd9ac9649eec3cc1e46a4e12e244c,Fixes #293 Add method to get string value of buffered styles during testing. This will allow for creating a tool for more detailed snapshots.
+pouwerkerk,2017-06-06 18:32:48,https://api.github.com/repos/Khan/aphrodite/git/commits/1ded64a0f44e58cc1b167a8fba5a10659c72c0c4,1ded64a0f44e58cc1b167a8fba5a10659c72c0c4,Simplify output for more useful RunKit result
+lencioni,2018-01-31 21:38:30,https://api.github.com/repos/Khan/aphrodite/git/commits/b31a6f0dcf35ef1d8d0047c03b9d5343c994b7df,b31a6f0dcf35ef1d8d0047c03b9d5343c994b7df,"Add spaces back to inject with multiple properties test
+
+These were erroneously removed by
+d3a0fbff7ec5c50988a71bb0efdbbbc7b8a854ec."
+reklawnos,2018-01-30 22:54:46,https://api.github.com/repos/Khan/aphrodite/git/commits/d3a0fbff7ec5c50988a71bb0efdbbbc7b8a854ec,d3a0fbff7ec5c50988a71bb0efdbbbc7b8a854ec,Fix broken tests
+reklawnos,2017-05-16 23:38:33,https://api.github.com/repos/Khan/aphrodite/git/commits/a2b28587604c5ffbfccea37f7fb28679f1fb3072,a2b28587604c5ffbfccea37f7fb28679f1fb3072,Add Flow type to injectionBuffer
+reklawnos,2017-05-16 23:09:32,https://api.github.com/repos/Khan/aphrodite/git/commits/62c0e7c261e8161ce12efd46b2bf748a979b79a6,62c0e7c261e8161ce12efd46b2bf748a979b79a6,Batch update innerText
+reklawnos,2017-05-16 23:09:13,https://api.github.com/repos/Khan/aphrodite/git/commits/c75625321d897e8539209552400d40cc3c62d687,c75625321d897e8539209552400d40cc3c62d687,Rename cssContents -> cssRules
+reklawnos,2017-05-16 23:00:56,https://api.github.com/repos/Khan/aphrodite/git/commits/afee3bd4f92396a74830f0a43ac2468d8d8df612,afee3bd4f92396a74830f0a43ac2468d8d8df612,Use `@media all {...}` to combine multiple rules into one
+reklawnos,2017-05-16 21:22:33,https://api.github.com/repos/Khan/aphrodite/git/commits/6422ec68a45a962486f58598ce72d1b77c0f996e,6422ec68a45a962486f58598ce72d1b77c0f996e,Cache sheet.cssRules.length
+reklawnos,2017-05-11 23:44:01,https://api.github.com/repos/Khan/aphrodite/git/commits/55ed90a9dfd6e1f7260f97790f75e201a28c280b,55ed90a9dfd6e1f7260f97790f75e201a28c280b,"Use `insertRule` to inject styles
+
+Instead of appeding a new text node to a style tag or appending to the
+`cssText` property of the stylesheet (which broke media queries in IE as
+documented in #238), use `insertRule` to add CSS rules to the `style`
+element.
+
+This change requires styles to be generated as an array of strings with
+one rule per string, rather than a single large string that contains
+multiple rules."
+vladnicula,2017-10-12 06:23:40,https://api.github.com/repos/Khan/aphrodite/git/commits/a05782725aa1f273f6e470017b871a3db9fb0387,a05782725aa1f273f6e470017b871a3db9fb0387,Added gzip and bundle sizes in readme
+lencioni,2017-10-11 23:56:28,https://api.github.com/repos/Khan/aphrodite/git/commits/cace162bcfa85c96a38c46aad92f814b92543b28,cace162bcfa85c96a38c46aad92f814b92543b28,1.2.5
+lencioni,2017-10-11 23:55:35,https://api.github.com/repos/Khan/aphrodite/git/commits/b6c8ac855e0eae4c1f9a9b475422f37ffd74e2f5,b6c8ac855e0eae4c1f9a9b475422f37ffd74e2f5,Update changelog for upcoming 1.2.5 release
+lencioni,2017-10-11 23:28:19,https://api.github.com/repos/Khan/aphrodite/git/commits/1ca597db1def203887ca5f09064d6f2de164f27b,1ca597db1def203887ca5f09064d6f2de164f27b,"Invert boolean argument on OrderedElements set()
+
+As @xymostech pointed out in code review
+
+> I'd assume that preserveOrder would be the default in something called
+> OrderedElements
+
+This makes sense to me, so I am inverting this boolean and explicitly
+passing it in everywhere it is used now."
+lencioni,2017-10-11 22:51:46,https://api.github.com/repos/Khan/aphrodite/git/commits/a60aaa882f5adf3f0c315a873e6041a615d44d7f,a60aaa882f5adf3f0c315a873e6041a615d44d7f,"Allow overridden styles to re-order in generated CSS
+
+We ran into a weird scenario, where if you passed the following two
+objects to css() in this order:
+
+```js
+{
+  '@media all and (min-width: 1128px)': {},
+},
+{
+  '@media all and (min-width: 744px)': {
+    backgroundColor: 'red',
+  },
+  '@media all and (min-width: 1128px)': {
+    backgroundColor: 'blue',
+  },
+}
+```
+
+you would normally expect it to produce a style that has the 744px
+min-width media query first. Unfortunately, because the first object
+already had that media query as an ordered key in its OrderedElements
+object, it maintained its original position. This caused the 1128px
+media query to be output first, which is unexpected and ended up causing
+a visual bug.
+
+To fix this, I modified OrderedElements to always move overridden keys
+to the end. This now behaves more like you would expect regular CSS to
+work.
+
+I needed to add a special case for string handlers, since they aren't
+actually overriding a style but rather replacing a property with a newly
+computed value."
+lencioni,2017-10-11 22:51:03,https://api.github.com/repos/Khan/aphrodite/git/commits/61472fb4caf42ef9a65fae7d54749ae547e02ffe,61472fb4caf42ef9a65fae7d54749ae547e02ffe,"Return nothing from runStringHandlers
+
+This method works by mutating its first argument. The return value is
+never used here, so I am removing it to simplify."
+lencioni,2017-10-10 17:59:13,https://api.github.com/repos/Khan/aphrodite/git/commits/7527fbee41f04051522091298758818e621deb1d,7527fbee41f04051522091298758818e621deb1d,"Add tests for keyframes with multiple properties (#277)
+
+I was investigating a bug and wanted to have concrete proof that it was
+not present in Aphrodite, so I wrote this test. Since I took the time to
+write it, I figured I might as well commit it up."
+102,2017-10-10 04:28:25,https://api.github.com/repos/Khan/aphrodite/git/commits/7da5258c8a2b27092754de2f3de0be4784c8fd60,7da5258c8a2b27092754de2f3de0be4784c8fd60,"Update README.md
+
+Fix a little of grammar"
+lencioni,2017-09-12 17:46:50,https://api.github.com/repos/Khan/aphrodite/git/commits/f7c37e584ee2ba874d37cd3b53e1067858317fae,f7c37e584ee2ba874d37cd3b53e1067858317fae,1.2.4
+lencioni,2017-09-12 17:41:53,https://api.github.com/repos/Khan/aphrodite/git/commits/d048293b12a75000492d42097ba306475cb406d9,d048293b12a75000492d42097ba306475cb406d9,Update changelog for upcoming 1.2.4 release
+lencioni,2017-09-12 17:40:11,https://api.github.com/repos/Khan/aphrodite/git/commits/86135d60377eec95ce30aa05e2291eadc9eb79b4,86135d60377eec95ce30aa05e2291eadc9eb79b4,"Remove note about murmurhash license from readme
+
+This was replaced with a different hashing algorithm by
+https://github.com/Khan/aphrodite/pull/203, so I don't think we really
+need this note anymore."
+lencioni,2017-09-12 17:34:03,https://api.github.com/repos/Khan/aphrodite/git/commits/46a73de464e3229e369ed03cf3f6e4497b6c2e10,46a73de464e3229e369ed03cf3f6e4497b6c2e10,"Update changelog for 1.2.2, 1.2.3
+
+1.2.1 -> 1.2.2: https://github.com/Khan/aphrodite/compare/1082d9a...eca3b733
+1.2.2 -> 1.2.3: https://github.com/Khan/aphrodite/compare/eca3b733...88e5926"
+lencioni,2017-08-17 22:04:27,https://api.github.com/repos/Khan/aphrodite/git/commits/43b3d87059c60fcac5fb6527701f9e7feaad0bdf,43b3d87059c60fcac5fb6527701f9e7feaad0bdf,"Merge pull request #263 from gilbox/gil-fix-styleDefinitions-null-values
+
+Fix injectAndGetClassName and ignore null values in styleDefinitions"
+gilbox,2017-07-19 19:00:07,https://api.github.com/repos/Khan/aphrodite/git/commits/7f9f6028ec9600d8f20f39ac54431d8b801029d9,7f9f6028ec9600d8f20f39ac54431d8b801029d9,"Minify combined class names (#248)
+
+* Minify combined class names
+
+* rmv underscare from _name in production
+
+* hashString
+
+* avoid re-hashing in production
+
+* fix re-hash logic and add re-hash spec
+
+* hashObject use hashString
+
+* add _len to StyleSheet definition and use it in getStyleDefinitionsLengthHash to add extra hash bit in prod
+
+* improve comment"
+jeresig,2017-07-14 20:54:50,https://api.github.com/repos/Khan/aphrodite/git/commits/88e5926b96fb0aa29ee3ce32bd60ffa3e607053d,88e5926b96fb0aa29ee3ce32bd60ffa3e607053d,Publish v1.2.3.
+jeresig,2017-07-14 20:52:55,https://api.github.com/repos/Khan/aphrodite/git/commits/f162220e3d7321c7ede0aefc189de9bb694e5107,f162220e3d7321c7ede0aefc189de9bb694e5107,"Revert ""Make String Handlers Use useImportant""
+
+This reverts commit 51b08e5c4378675b248c8bc806c15c5277e2532e.
+
+Apparently `!important` in CSS Animations completely break. Sigh."
+jeresig,2017-07-14 20:38:22,https://api.github.com/repos/Khan/aphrodite/git/commits/eca3b733d959d5462f3f686d8eecc23279cf3dfe,eca3b733d959d5462f3f686d8eecc23279cf3dfe,Release v1.2.2.
+jeresig,2017-07-14 20:36:12,https://api.github.com/repos/Khan/aphrodite/git/commits/a86b69bc2be39685a5bdf80253d4dc76d3fc9ea7,a86b69bc2be39685a5bdf80253d4dc76d3fc9ea7,"Bring in caniuse-api dependency
+
+This was made a peer dependency in inline-style-prefixer:
+https://github.com/rofrischmann/inline-style-prefixer/commit/08528345bcd027fba8b53259c18e543a2935e740
+
+This fixes that. I also added in a package-lock.json fiel to hopefully prevent this in the future, at least for those using NPM v5+.
+
+Test Plan:
+`npm test` now passes without crashing!"
+jeresig,2017-07-14 19:20:12,https://api.github.com/repos/Khan/aphrodite/git/commits/8a5afdf07bf93cd4fb638f1770d2a64ab3df883f,8a5afdf07bf93cd4fb638f1770d2a64ab3df883f,"Merge pull request #256 from Khan/string-handlers-important
+
+Make String Handlers Use useImportant"
+jeresig,2017-07-14 18:52:40,https://api.github.com/repos/Khan/aphrodite/git/commits/51b08e5c4378675b248c8bc806c15c5277e2532e,51b08e5c4378675b248c8bc806c15c5277e2532e,"Make String Handlers Use useImportant
+
+The string handlers were always inserting rules with no `!important`, rather than respecting the settings specified by the library. This updates the string handlers to receive an additional `useImportant` argument, which is then passed down to the various places that need it (rather than just passing `false`). I updated the existing test, which was confirming the wrong input, and also added some more tests to `no-important_test.js` to confirm that it was still being disabled.
+
+In practice this helps to fix the issue where Firefox makes it impossible to override CSS that has `!important` with an animation, unless the animation is, also, using `!important`:
+http://tosbourn.com/firefox-honours-important-in-css-animations-no-one-else-seems-to/
+
+Test Plan:
+I ran `npm test` and it passed."
+xymostech,2017-06-20 17:52:38,https://api.github.com/repos/Khan/aphrodite/git/commits/12300db1ea3f55ae623463655ee13fca4dc807be,12300db1ea3f55ae623463655ee13fca4dc807be,"Update examples README.md with clearer instructions
+
+Summary: @omarzach discovered that just running `npm install && npm run
+examples` in the examples/ directory wasn't enough to get the examples working,
+you needed to setup the root directory as well. This fixes the instructions to
+be more clear.
+
+Fixes #250
+Fixes #251"
+gilbox,2017-06-13 00:28:59,https://api.github.com/repos/Khan/aphrodite/git/commits/a32fd444c08ec23b65614adffd5c8cea007edef7,a32fd444c08ec23b65614adffd5c8cea007edef7,"Add compile-time option for class minification (#246)
+
+* Add compile-time option for class minification
+
+* Add TODO: Further minify the -O_o--combined hashes
+
+* use NODE_ENV instead of APHRODITE_KEYS"
+omerzach,2017-05-31 23:22:59,https://api.github.com/repos/Khan/aphrodite/git/commits/deb4f457323ec7f327e44028684e2bdceb43ca0d,deb4f457323ec7f327e44028684e2bdceb43ca0d,Add missing paren to example in README.md (#242)
+lencioni,2017-04-27 22:44:44,https://api.github.com/repos/Khan/aphrodite/git/commits/1082d9a447011bf47279a7247d046cc9aaac8db4,1082d9a447011bf47279a7247d046cc9aaac8db4,1.2.1
+lencioni,2017-04-27 22:42:43,https://api.github.com/repos/Khan/aphrodite/git/commits/b23c9fc3426ba254218e4f78587445329452f459,b23c9fc3426ba254218e4f78587445329452f459,Update changelog for v1.2.1
+lencioni,2017-04-27 22:38:07,https://api.github.com/repos/Khan/aphrodite/git/commits/96f439add08410e3867a441772e5925762e0d3cb,96f439add08410e3867a441772e5925762e0d3cb,Update changelog for v1.2.0
+lencioni,2017-04-27 22:30:57,https://api.github.com/repos/Khan/aphrodite/git/commits/7988e1bcb7adbe785b242df11032e5e866e06f8d,7988e1bcb7adbe785b242df11032e5e866e06f8d,"Move changelog to its own file
+
+This is where most people expect to see the chanelog."
+lencioni,2017-04-27 15:39:36,https://api.github.com/repos/Khan/aphrodite/git/commits/cd1069bfe8bf8102b0c274f7451a3480c2177c9d,cd1069bfe8bf8102b0c274f7451a3480c2177c9d,"Merge pull request #216 from Khan/optimize-generateCSSRuleset
+
+Optimize css()"
+lencioni,2017-03-11 17:42:16,https://api.github.com/repos/Khan/aphrodite/git/commits/0700a571b40085eaa16c689c6be3c178b5549279,0700a571b40085eaa16c689c6be3c178b5549279,"Factor out flattenDeep from injectAndGetClassName
+
+In my profiling, calling flattenDeep in here takes 1437ms out of
+3418ms, and that's with already flattened arrays. By refactoring this
+code, we can actually avoid a lot of the work done here and make this
+faster. This change drops css() down from 3418ms to 2045ms."
+lencioni,2017-03-10 22:26:12,https://api.github.com/repos/Khan/aphrodite/git/commits/1efad183f2fb7a0ebc01fa1ecd977952cc59b69c,1efad183f2fb7a0ebc01fa1ecd977952cc59b69c,"Refactor out recursiveMerge
+
+We only use this in one place, so I decided to rewrite this for the
+specific use-case to improve performance.
+
+While I was at it, I found and fixed a bug that causes nested objects to
+be mutated.
+
+I decided to change the signature of OrderedElements's forEach callback
+to match that of Map's forEach.
+
+In my benchmark this brings css() down from 1470ms to 1350ms."
+lencioni,2017-04-20 18:40:00,https://api.github.com/repos/Khan/aphrodite/git/commits/86d61896f436b8a12b883384a199851fb2a6a4cb,86d61896f436b8a12b883384a199851fb2a6a4cb,"Merge pull request #233 from Khan/some-optimizations
+
+Optimize css() some"
+lencioni,2017-03-10 20:44:53,https://api.github.com/repos/Khan/aphrodite/git/commits/15d8c26c6ea1ff12d776addd9b13d0d056c5cba1,15d8c26c6ea1ff12d776addd9b13d0d056c5cba1,"Optimize runStringHandlers
+
+I noticed that we loop over every declaration in this method, seeing if
+there is a stringHandler available for it. However, it is more likely
+that there will be fewer stringHandlers than declarations, so we can
+speed this up by inverting the loop and check here.
+
+While I was at it, I decided to prevent this method from creating a new
+OrderedElements object every time and instead to just mutate it. I
+believe this will be safe and should buy us more performance. This means
+we no longer need the .map method on this class.
+
+This change reduces the time spent in runStringHandlers from 8.6% of
+css() runtime to 0.26% and brings the runtime of my benchmark down from
+2150ms to 1950ms."
+lencioni,2017-03-10 20:32:21,https://api.github.com/repos/Khan/aphrodite/git/commits/019012767d160428ba14618d8bd7c95b971466bf,019012767d160428ba14618d8bd7c95b971466bf,"Hoist stringHandlers check in runStringHandlers
+
+This is a tiny optimization that helps us avoid this check from
+happening inside the loop."
+lencioni,2017-03-10 20:27:58,https://api.github.com/repos/Khan/aphrodite/git/commits/61a3c74ab75b9239522c534e6b8a0b7348dcb4be,61a3c74ab75b9239522c534e6b8a0b7348dcb4be,"Avoid function creation in generateCSSRuleset
+
+This is a micro-optimization. We can eek out a tiny bit more performance
+by moving the function declaration up to the module level. I decided to
+put it next to the related functions in the util module."
+lencioni,2017-03-10 20:09:31,https://api.github.com/repos/Khan/aphrodite/git/commits/9c54dc185fbe106d52a1be316d06a2cef50a54c9,9c54dc185fbe106d52a1be316d06a2cef50a54c9,"Optimize generateCSSRuleset
+
+After the 1.2.0 release, I noticed that most of my optimizations were
+completely offset by the ordering bugfixes that were added. After some
+profiling, I noticed that generateCSSRuleset was ripe for optimization.
+
+My approach here is to reduce the amount of work that needs to be done
+to a bare minimum. I accomplish this by being smarter about when to loop
+and how many loops to run. In my benchmark, this PR reduces the runtime
+of css() from 3200s to 2150 ms, which is 1.49x faster."
+lencioni,2017-03-23 16:59:13,https://api.github.com/repos/Khan/aphrodite/git/commits/5f9cd9f0d2d3af2daec6fb6ee99378da5168b98f,5f9cd9f0d2d3af2daec6fb6ee99378da5168b98f,"Merge pull request #232 from Khan/coverage
+
+Exclude tests directory from test coverage, update .gitignore and .eslintignore"
+lencioni,2017-03-23 16:28:16,https://api.github.com/repos/Khan/aphrodite/git/commits/41a7dea1c45a5b2774884682035c613818347077,41a7dea1c45a5b2774884682035c613818347077,"Re-order display flex prefixed styles in test
+
+This test seems to have started to fail suddenly. I am not entirely sure
+why, but the new order is also acceptable, so I am going to update this
+test and see if that fixes it."
+lencioni,2017-03-13 19:19:07,https://api.github.com/repos/Khan/aphrodite/git/commits/69ee4873c3312d105b62b233065d2f6d3c718d62,69ee4873c3312d105b62b233065d2f6d3c718d62,"Exclude tests directory from test coverage
+
+We don't need to ensure that tests fully pass coverage. nyc by default
+has some patterns to exclude tests, but they didn't match the naming
+convention of this project, so I am updating it here.
+
+https://github.com/istanbuljs/nyc#excluding-files"
+lencioni,2017-03-13 18:56:42,https://api.github.com/repos/Khan/aphrodite/git/commits/92271f36540a1a01fff29ebeec971caf8ae79f99,92271f36540a1a01fff29ebeec971caf8ae79f99,"Add coverage and .DS_Store to .gitignore/.eslintignore
+
+The coverage directory can be generated to see more information about
+test coverage. We don't want to check this in or enforce code quality
+tools on it, so let's ignore it if it exists.
+
+Similarly, MacOS has a tendency to drop .DS_Store files all over the
+place, and we don't want to check these in.
+
+While I was at it, I sorted these files alphabetically."
+thiamsantos,2017-03-11 01:02:27,https://api.github.com/repos/Khan/aphrodite/git/commits/c42ae31b6cbffa9866e1dabef21ab25fbb45c329,c42ae31b6cbffa9866e1dabef21ab25fbb45c329,"Coveralls (#219)
+
+* add coveralls to package.json
+
+* add coveralls to travis.yml
+
+* add coveralls badge to readme
+
+* add coveralls as a devDependency"
+lencioni,2017-03-09 00:46:00,https://api.github.com/repos/Khan/aphrodite/git/commits/c9461c9a08b4c9a8b7e0640227c5555aa6bd4f8d,c9461c9a08b4c9a8b7e0640227c5555aa6bd4f8d,"Merge pull request #215 from Khan/eslint
+
+Enable some eslint rules"
+lencioni,2017-03-09 00:28:11,https://api.github.com/repos/Khan/aphrodite/git/commits/a50d811020696fbead1af9b93c533f7b1f80d0e1,a50d811020696fbead1af9b93c533f7b1f80d0e1,"Enable some eslint rules
+
+These kept coming up in code review. Let's make the machines do the work
+for us. Most of the code changes were brought to you by eslint autofix."
+xymostech,2017-03-08 23:59:48,https://api.github.com/repos/Khan/aphrodite/git/commits/413d20db4ffe7bf3492b9cc1c011f2fc3c28c5db,413d20db4ffe7bf3492b9cc1c011f2fc3c28c5db,1.2.0
+lencioni,2017-03-08 23:58:29,https://api.github.com/repos/Khan/aphrodite/git/commits/1f230434574c90f14e3b4007617c3b1680396f92,1f230434574c90f14e3b4007617c3b1680396f92,"Optimize injectAndGetClassName (#213)
+
+This function is called every time css() is used, so we want it to be as
+fast as possible. I spotted three loops here that could be condensed
+into one. In my profiling this seems to make the function about 30%
+faster."
+xymostech,2017-03-08 23:48:29,https://api.github.com/repos/Khan/aphrodite/git/commits/bbd0cefa8acfc3dc509f43c4cc92a782cb6aff66,bbd0cefa8acfc3dc509f43c4cc92a782cb6aff66,"Handle null property values (#212)
+
+Summary: The recent changes to `importantify` made it no longer worked when
+passed in non-strings (such as `null` and `undefined`). This recovers the old
+behaviour by manually converting the input to a string, and adds a test to make
+sure this edge case is handled in the future.
+
+Test Plan:
+ - `npm run test`
+
+@lencioni"
+xymostech,2017-03-08 23:17:05,https://api.github.com/repos/Khan/aphrodite/git/commits/d1ba1cf7d9358360c955d2735e338e1e6d7208d0,d1ba1cf7d9358360c955d2735e338e1e6d7208d0,"Use browser versions that were supported in inline-style-prefixer v2
+
+Summary: This just copies the browser versions that inline-style-prefixer into
+the versions that we support.
+
+Test Plan:
+ `npm run test`"
+xymostech,2017-03-08 23:13:01,https://api.github.com/repos/Khan/aphrodite/git/commits/95feeecc70c2b140cb25eda0f9f92d25b77d5d86,95feeecc70c2b140cb25eda0f9f92d25b77d5d86,"Sort prefixed values before unprefixed values with the same key (#211)
+
+Summary: In #200 the way we started sorting prefixed and unprefixed values
+differently. This builds on that by making sure that when style values are
+prefixed, they come before the unprefixed values with the same key.
+
+E.g.
+
+```css
+display: -webkit-flex; // prefixed value comes before
+display: flex;         // unprefixed value
+```
+
+@lencioni"
+lencioni,2017-03-08 22:24:43,https://api.github.com/repos/Khan/aphrodite/git/commits/fb9850760e48a2a456e87525357f2e0d64b935c6,fb9850760e48a2a456e87525357f2e0d64b935c6,"Update inline-style-prefixer ^2.0.0 -> ^3.0.1 (#205)
+
+* Update inline-style-prefixer ^2.0.0 -> ^3.0.1
+
+It seems that this version is a complete rewrite with some performance
+improvements. In my benchmarks, this seems to improve the speed of
+`css()` by about 10%.
+
+Changelog:
+* performance improvements (~10% faster)
+* ordering prefixed properties correctly
+* introducing new core prefixer that perform up to 4.5x faster
+* added a whole new generator to create your custom prefixer
+* added 4 new plugins to prefix special values
+* new documentation using gitbook
+* integrated flowtype
+
+It seems that some of the prefixing is different, so I updated the tests
+to match the new behavior. Since I had a hard time seeing the difference
+in the test failures, I made them a little easier to see by adding some
+formatting to the error messages.
+
+* Re-enable prefixing for all browser versions
+
+The v3 update of inline-style-prefixer changed the set of browsers that
+it would generate prefixes for by default. To prevent this from being a
+breaking change for Aphrodite users, we are generating our own prefixer
+data in a way that supports all versions of all browsers. The guide for
+this can be found at:
+
+  https://github.com/rofrischmann/inline-style-prefixer/blob/master/docs/guides/CustomPrefixAll.md
+
+It would be nice to eventually allow consumers of Aphrodite to customize
+the browser support matrix, but in the meantime, this will do."
+xymostech,2017-03-08 21:10:10,https://api.github.com/repos/Khan/aphrodite/git/commits/3d4a5bdb4a28928015d4903a5cb2f4e20544c812,3d4a5bdb4a28928015d4903a5cb2f4e20544c812,"Allow specifying styles as `Map`s to guarantee ordering (#200)
+
+Summary: Key ordering in objects can be different in different environments.
+Sometimes, this causes problems, like where styles generated on the server are
+not in the same order as the same styles generated on the client. This
+manifests in problems such as #199
+
+This change lets users manually fix instances where the ordering of elements
+changes by specifying their styles in an ES6 `Map`, which has defined value
+ordering.
+
+In order to accomplish this, an `OrderedElements` class was created, which is
+sorta like a `Map` but can only store string keys and lacks most of the
+features. Internally, `Map`s and objects are converted into this and then these
+are merged together to preserve the ordering.
+
+Fixes #199
+
+Test Plan:
+ - `npm test`
+
+@lencioni @ljharb"
+lencioni,2017-03-08 21:06:56,https://api.github.com/repos/Khan/aphrodite/git/commits/21ef03b7c2a1448f07f48c241d3d205fea2b4c82,21ef03b7c2a1448f07f48c241d3d205fea2b4c82,"Replace murmur hash with djb2 hash (#203)
+
+* Replace murmur hash with djb2 hash
+
+In profiling StyleSheet.create, I noticed that much of the time was
+spent hashing. So, I found a faster hashing algorithm.
+
+The implementation was taken from:
+
+  https://github.com/darkskyapp/string-hash
+
+According to this StackExchange post, this algorithm doesn't have as
+good of randomness, but it has about the same percentage of collisions.
+I don't think randomness matters for this application, so I think this
+is okay.
+
+  http://softwareengineering.stackexchange.com/a/145633
+
+Using similar methodology to #202, this appears to make StylSheet.create
+~15% faster (~220ms to ~185ms).
+
+* Depend on string-hash for djb2 hashing algorithm
+
+This is where I copied the code for this algorithm from, seems like we
+might as well just bring in the dependency for it."
+lencioni,2017-03-07 18:29:48,https://api.github.com/repos/Khan/aphrodite/git/commits/dbb38793c1049d8d004d33affc5f5b867acff89e,dbb38793c1049d8d004d33affc5f5b867acff89e,"Improve `importantify()` performance (#201)
+
+* Avoid unused capture group in IMPORTANT_RE
+
+I was rolling through the code here looking for some opportunities to
+speed it up and I noticed that there is a capture group in this regex
+that isn't being used. By changing `(` to `(?:` we can avoid capturing
+this group while still being able to use the parens for grouping.
+
+* Use string for importantify replace
+
+I was curious about the performance characteristics of various options
+here, and using a string in this way seems to have the edge, at least in
+Firefox (35% faster) and Safari (12% faster)--Chrome performance seems
+pretty similar for all possibilities. I also find this version more
+readable, so it seems like we may as well go with this option.
+
+https://jsperf.com/replace-string-vs-function/
+
+* Simplify importantify regex
+
+I don't think we actually need a capture group at all here and can
+accomplish the same thing by just anchoring on the end of the string.
+This reduces the runtime of this function in my benchmark from ~105ms to
+~35ms.
+
+* Scope importantify to just the value
+
+Since we only call this function from one place, and we already have the
+CSS property name and value split out, we can further optimize this hot
+path by only running importantify on the CSS property value. In my
+benchmark, this change speeds up this map by ~22% (~128ms to ~100ms).
+
+* Remove regex from importantify
+
+Now that this has been sufficiently simplified, we can easily remove the
+regex entirely.
+
+* Add bracket optimization to importantify
+
+In our microbenchmark, adding this optimization performs a good amount
+better. Since it is a simple optimization to add, it seems like we may
+as well do it.
+
+https://jsperf.com/slice-vs-bracket-string-check-with-imporant
+
+I considered using bracket notation for the whole check, but I decided
+that was too verbose. So instead, I decided to just check for one
+character and follow up with a more thorough but concise check
+afterward. This optimization favors the case where the style does not
+already have `!important` on it, which is by and large likely to be the
+general case.
+
+* Move conditional out of loop in generateCSSRuleset
+
+This cleans up the code a bit, and is also faster!
+
+https://jsperf.com/if-vs-extra-function/1"
+lencioni,2017-03-07 01:35:10,https://api.github.com/repos/Khan/aphrodite/git/commits/5e9a0cba4181cf661d63100ac014a82ff58a2d4d,5e9a0cba4181cf661d63100ac014a82ff58a2d4d,"Optimize mapObj (#202)
+
+I did some profiling of StyleSheet.create and noticed that mapObj was a
+good target for optimization.
+
+Methodology
+
+I created an HTML document with the following code in it:
+
+```html
+<script type=""text/javascript"" src=""./dist/aphrodite.umd.js""></script>
+<!-- setup -->
+<script type=""text/javascript"">
+// build up an array of styles objects to run our test on
+var styles = [];
+for (var i = 0; i < 10000; i += 1) {
+  styles.push({
+    [`a${Math.random()}`]: {
+      [`a${Math.random()}`]: Math.random(),
+      [`b${Math.random()}`]: String(Math.random()),
+      [`c${Math.random()}`]: String(Math.random()),
+    },
+
+    [`b${Math.random()}`]: {
+      [`a${Math.random()}`]: Math.random(),
+      [`b${Math.random()}`]: String(Math.random()),
+      [`c${Math.random()}`]: String(Math.random()),
+    },
+
+    [`c${Math.random()}`]: {
+      [`a${Math.random()}`]: Math.random(),
+      [`b${Math.random()}`]: String(Math.random()),
+      [`c${Math.random()}`]: String(Math.random()),
+    },
+  });
+}
+</script>
+
+<!-- test -->
+<script type=""text/javascript"">
+setTimeout(() => {
+  performance.mark('start_run');
+  for (var i = 0; i < styles.length; i += 1) {
+    // prevent caching optimizations
+    eval('');
+    performance.mark('start_stylesheet_create');
+    aphrodite.StyleSheet.create(styles[i]);
+    performance.mark('end_stylesheet_create');
+    performance.measure(
+      'aphrodite.StyleSheet.create',
+      'start_stylesheet_create',
+      'end_stylesheet_create'
+    );
+    performance.clearMarks('start_stylesheet_create', 'end_stylesheet_create');
+  }
+  performance.mark('end_run');
+  performance.measure(`Benchmark ${styles.length}`, 'start_run', 'end_run');
+  performance.clearMarks();
+});
+</script>
+```
+
+Then, looking at the timeline tool in Chrome, I loaded the page a few
+times before and after this change. Similarly, I ran a CPU profile
+before and after this change through 5 page reloads each.
+
+In this test, the timeline was not very helpful, I think because of the
+testing overhead. However, the CPU profile was very clear. Before this
+change, normalizing for the callback showing up in a different part of
+the profile, `mapObj` took ~317ms and after this change, it drops to
+~211ms. `StyleSheet.create` drops from ~755ms to ~670ms or roughly 11%
+faster. The rest of the time in `StyleSheet.create` is spent in
+`murmurhash2_32_gc` and `hashObject`."
+lencioni,2017-03-06 23:14:19,https://api.github.com/repos/Khan/aphrodite/git/commits/5d36d56c002041351d6be562290505545e2f3174,5d36d56c002041351d6be562290505545e2f3174,"Optimize kebabify (#207)
+
+* Optimize kebabify
+
+By passing a function to replace, we can do the uppercase to lowercase
+conversion at the same time. This is pretty much the exact example that
+MDN gives, with the only difference being that we aren't checking
+against the offset here to avoid adding ""-"" at the beginning of the
+string:
+
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Using_an_inline_function_that_modifies_the_matched_characters
+
+In my profiling, this seems to make kebabify 50% faster (50ms -> 25ms).
+
+* Collapse kebabify into kebabifyStyleName
+
+Now that we've simplified kebabify, there really isn't much value in
+having it be in its own function like this. Moving it into
+kebabifyStyleName to simplify and optimize.
+
+* Add tests for kebabifyStyleName
+
+My refactoring caused test coverage to drop, so I decided to add some
+unit tests here. They pass before and after my refactoring.
+
+* Replace ms- to -ms- regex with logic
+
+This avoids an often-unnecessary regex run, which makes this function
+run a little faster. I first went with str.slice, but benchmarking
+showed that to be 18% slower than bracket access."
+lencioni,2017-03-06 23:04:52,https://api.github.com/repos/Khan/aphrodite/git/commits/a7d2aff40285338970588974e3a4c8bb59679fec,a7d2aff40285338970588974e3a4c8bb59679fec,"Replace forEach with for loop in runStringHandlers (#208)
+
+* Replace forEach with for loop in runStringHandlers
+
+According to my profiling, this seems to make runStringHandlers about
+10% faster.
+
+* Avoid implicit object to boolean conversion in loop
+
+Profiling in Chrome shows that moving this out of the loop makes this
+function ~30% faster."
+lencioni,2017-03-06 21:50:15,https://api.github.com/repos/Khan/aphrodite/git/commits/41b3e176618b9e2cc7967d65d4396aab681445fa,41b3e176618b9e2cc7967d65d4396aab681445fa,"Avoid deoptimization in generateCSS() (#204)
+
+I was profiling the css() function and Chrome raised a flag on this
+function:
+
+> Not optimized: Bad value context for arguments value
+
+More info on this warning:
+https://github.com/GoogleChrome/devtools-docs/issues/53#issuecomment-51941358
+
+Looking at the warning and the compiled version of this code, it seems
+to do some things with `arguments` when using the default values
+here, which is causing this deoptimization.
+
+```js
+var selectorHandlers = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
+var stringHandlers = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
+var useImportant = arguments.length <= 4 || arguments[4] === undefined ? true : arguments[4];
+```
+
+By removing the default values for the arguments, the deoptimization
+disappears. I thought about adding logic that would provide values for
+these arguments if they aren't defined, but since the only thing that
+relies on that is tests I decided to just update the tests to always
+pass all of the arguments.
+
+In my benchmark, this does not seem to make much of a difference but it
+still seems like a good idea to avoid things that the browser tells us
+is deoptimized."
+lencioni,2017-03-06 21:47:53,https://api.github.com/repos/Khan/aphrodite/git/commits/7c1e609097214129b3a0e30358be79d8bdf8e0cf,7c1e609097214129b3a0e30358be79d8bdf8e0cf,"Avoid full string scan in generateCSSRuleset (#206)
+
+Bracket access is a better choice here. This probably won't have a huge
+impact, but I don't see any reason to not do it.
+
+JSPerf shows this to be about 25% faster, and I assume the performance
+difference is even better as the string gets longer:
+
+  https://jsperf.com/test-start-of-string/1"
+milesj,2017-02-03 16:44:42,https://api.github.com/repos/Khan/aphrodite/git/commits/e30ed7ba6a2cc2290da271c399d3956823f6132a,e30ed7ba6a2cc2290da271c399d3956823f6132a,"Added Aesthetic to libraries list (#182)
+
+As the title states."
+tuchk4,2017-02-03 16:42:07,https://api.github.com/repos/Khan/aphrodite/git/commits/cb65fef7a8a35687d18783f4af0f95545a8aedd7,cb65fef7a8a35687d18783f4af0f95545a8aedd7,Little update for extend (#192)
+lazopm,2017-02-01 18:47:59,https://api.github.com/repos/Khan/aphrodite/git/commits/bbdc0bec18263b4e2dcfd55796ebc14bdde98126,bbdc0bec18263b4e2dcfd55796ebc14bdde98126,"Add description of rehydration to README.md (#190)
+
+* Add description of rehydration to README.md
+
+* Update rehydration description in README.md"
+lukevenn,2017-01-25 19:53:10,https://api.github.com/repos/Khan/aphrodite/git/commits/3f9c28e1445038ddfa4e6bd6eb2e9b2fb4c7545e,3f9c28e1445038ddfa4e6bd6eb2e9b2fb4c7545e,"Fix to prevent arrays being mutated into objects (#188)
+
+* Added fix to prevent arrays being mutated into objects when recursuvely merging
+
+* Amended 'recursiveMerge' test title to better reflect what is happening
+
+* Added an object check so that we don't try and merge non-objects"
+borkxs,2017-01-23 23:07:23,https://api.github.com/repos/Khan/aphrodite/git/commits/889d7f0f5bd4ea2d87ffcbe83b27cc286feb088b,889d7f0f5bd4ea2d87ffcbe83b27cc286feb088b,"Remove mentions of unimplemented feature (#186)
+
+The comments for `generateCSS` included descendant selector example from closed PR #61"
+xymostech,2017-01-23 23:05:48,https://api.github.com/repos/Khan/aphrodite/git/commits/38eb1c6ddb70bbdbd651b9f1d9db89504920adb8,38eb1c6ddb70bbdbd651b9f1d9db89504920adb8,"Fix tests after inline-style-prefixer v2.0.5
+
+Summary: inline-style-prefixer changed the order of the prefixed properties it
+outputs. This fixes the tests to account for that.
+
+Test Plan:
+ - `rm -rf node_modules`
+ - `npm install`
+ - `npm run tests`"
+jokeyrhyme,2016-11-16 02:24:09,https://api.github.com/repos/Khan/aphrodite/git/commits/35e22c4db3e6de451272284ddf811fb54e04f447,35e22c4db3e6de451272284ddf811fb54e04f447,"add FlowType annotations (#162)
+
+* add FlowType and run after ESLint
+
+* add FlowType annotations using comments syntax
+
+* FlowType: ignore problematic module files"
+jlfwong,2016-11-15 06:45:20,https://api.github.com/repos/Khan/aphrodite/git/commits/6e9a50de3c7217f297b8373d82faed834e94d96b,6e9a50de3c7217f297b8373d82faed834e94d96b,Fix link to animations section in Changelog
+xymostech,2016-11-08 00:21:27,https://api.github.com/repos/Khan/aphrodite/git/commits/0ea47fcd05f18af851f0a77c54bf9db8b6b538df,0ea47fcd05f18af851f0a77c54bf9db8b6b538df,"Add 1.1.0 changelog, clean up some changelog links"
+xymostech,2016-11-08 00:06:08,https://api.github.com/repos/Khan/aphrodite/git/commits/f7fa7216ab00a46cedc784669c0366400920d73b,f7fa7216ab00a46cedc784669c0366400920d73b,1.1.0
+joshwcomeau,2016-11-08 00:04:59,https://api.github.com/repos/Khan/aphrodite/git/commits/bff20d67495f4fddfa62803a8665f221e3418927,bff20d67495f4fddfa62803a8665f221e3418927,"Support multiple animation names (#167)
+
+* Updated the `animationName` handler to accept arrays of animation
+  names
+* Added an example showcasing two asynchronous animations
+* Updated documentation to include info about single and multiple
+  animations."
+jlfwong,2016-10-25 18:13:48,https://api.github.com/repos/Khan/aphrodite/git/commits/16050591bc42f3b90ea6e526c2ded9c8450b18c2,16050591bc42f3b90ea6e526c2ded9c8450b18c2,Add basic changelog to README.md
+jlfwong,2016-10-22 18:11:58,https://api.github.com/repos/Khan/aphrodite/git/commits/e750b49d072c65b29ecf68279c6a4aee83c4ac74,e750b49d072c65b29ecf68279c6a4aee83c4ac74,Add missing syntax highlighting to README
+xymostech,2016-10-21 20:22:15,https://api.github.com/repos/Khan/aphrodite/git/commits/f14ae2816a3784b261b3f82e07fcca4967886976,f14ae2816a3784b261b3f82e07fcca4967886976,1.0.0
+xymostech,2016-10-21 20:02:21,https://api.github.com/repos/Khan/aphrodite/git/commits/f315bfdc8223153b62dce9e323e68df975c1f25f,f315bfdc8223153b62dce9e323e68df975c1f25f,"Exclude more things from eslintignore
+
+Summary: Some built files and install files were trying to be linted
+by eslint. This ignores them. Ideally we'd include `.gitignore` in the
+`.eslintignore` but there doesn't seem to be a good way to do this.
+
+Test Plan:
+ - `npm install`
+ - `npm run build`
+ - `npm run lint`
+ - See that there are no lint errors about our built files."
+xymostech,2016-10-21 19:59:55,https://api.github.com/repos/Khan/aphrodite/git/commits/61d1ec7062f451cf8c184af8dfb948d6a7708dd5,61d1ec7062f451cf8c184af8dfb948d6a7708dd5,"Allow additional handlers for special selectors to be added. (#95)
+
+Summary: This adds the ability for users of Aphrodite to add extensions
+which support other special selectors. This should let people add
+extensions to write global styles or many other not-terribly-well-supported
+use cases until we have better solutions.
+
+This adds docs on how to use the extensions, and adds a bunch of jsdocs
+to make things clear in the code.
+
+Test Plan:
+ - `npm run test`"
+jokeyrhyme,2016-10-11 00:35:44,https://api.github.com/repos/Khan/aphrodite/git/commits/05f3f0cf07eafed210d7669231c9a65e6b47b1a3,05f3f0cf07eafed210d7669231c9a65e6b47b1a3,add EditorConfig for happiness :) (#125)
+xymostech,2016-10-11 00:34:22,https://api.github.com/repos/Khan/aphrodite/git/commits/ad85a680c2fd5f4a4abdd646002181784a507fd6,ad85a680c2fd5f4a4abdd646002181784a507fd6,"Add a caveat about how to combine styles (#114)
+
+This comes up a lot in different discussions, and there isn't a definitive
+reference for it, so I figured I should add one! No more lengthy explanations
+in github issues!
+
+I'm very open to feedback about the wording of this, please leave comments!"
+jokeyrhyme,2016-10-11 00:29:23,https://api.github.com/repos/Khan/aphrodite/git/commits/c3a9b87b19636f14530c1471594ea1493e64100d,c3a9b87b19636f14530c1471594ea1493e64100d,add ESLint with React/JSX and recommended rules (#153)
+jlfwong,2016-10-09 17:04:25,https://api.github.com/repos/Khan/aphrodite/git/commits/70ff52bdd0119743e875ff5c1c3dfab199384415,70ff52bdd0119743e875ff5c1c3dfab199384415,0.6.0
+jlfwong,2016-10-09 16:59:22,https://api.github.com/repos/Khan/aphrodite/git/commits/c6dc5f9df57822cd910b838c22da07b4496521e0,c6dc5f9df57822cd910b838c22da07b4496521e0,"Merge pull request #154 from ide/css-arrays
+
+RFC: Accept arrays of styles in css()"
+ide,2016-10-07 07:43:26,https://api.github.com/repos/Khan/aphrodite/git/commits/b4e2a6b2f1b446648ce46c833fe0f470dea63b52,b4e2a6b2f1b446648ce46c833fe0f470dea63b52,"Accept arrays of styles in css()
+
+Accepting both styles and arrays of styles improves developer ergonomics with how I use Aphrodite when passing styles into components. The biggest problem I run into is that the spread operator doesn't work with undefined, so this code fails:
+
+```js
+// Component.js
+class Component extends React.Component {
+  static propTypes = { styles: PropTypes.array };
+  render() {
+    // this css() call fails because spreading `undefined` is an error
+    return <div className={css(styles.myStyle, ...this.props.styles)} />;
+  }
+}
+
+const styles = StyleSheet.create({...});
+
+// OwnerComponent.js
+class OwnerComponent extends React.Component {
+  render() {
+    return <Component />;  // we're happy with the default styles
+  }
+}
+```
+
+The second, more cosmetic issue, is that even if I'm passing down just one style I need to create an array:
+
+```js
+// OwnerComponent.js
+class OwnerComponent extends React.Component {
+  render() {
+    return <Component styles={[styles.customStyle]} />;  // need the [ ]
+  }
+}
+
+const styles = StyleSheet.create({...});
+```
+
+With this PR, you'd write `css(styles.myStyle, this.props.styles)` and it'd address both these issues. Aphrodite would flatten `this.props.styles` if it were an array, it would leave it alone if it were an Aphrodite style object, and it would also leave it alone and filter it out if it were falsy.
+
+As a data point, React Native flattens style arrays (recursively, actually) and it's pretty convenient with little downside. So just wanted to float this idea out there.
+
+Test Plan: added unit tests"
+jlfwong,2016-10-04 22:12:12,https://api.github.com/repos/Khan/aphrodite/git/commits/1763b305e1af611d8e63d82108946be4e5be3cf2,1763b305e1af611d8e63d82108946be4e5be3cf2,"Merge pull request #149 from cogell/fix-typo
+
+chore(README): fix small typo in caveats"
+cogell,2016-10-04 20:37:52,https://api.github.com/repos/Khan/aphrodite/git/commits/5cbd92763c55c74d89d6c074d9bdadc68b3feaa8,5cbd92763c55c74d89d6c074d9bdadc68b3feaa8,chore(README): fix small typo in caveats
+xymostech,2016-09-21 23:17:42,https://api.github.com/repos/Khan/aphrodite/git/commits/a5f4bc4b282bb27335f4a271a58ee2112dcf2259,a5f4bc4b282bb27335f4a271a58ee2112dcf2259,"Add a RunKit example to Aphrodite (#142)
+
+Summary: RunKit (previously TonicDev) lets you add a custom example on
+the package page linked to from npmjs.com:
+https://discuss.runkit.com/t/customizing-your-npm-packages-page-on-tonic/23
+
+This adds such an example!
+
+See #140
+
+Test Plan:
+ - Publish this as the new package, `aphrodite-test`
+ - See that the runkit integration works :)"
+jdan,2016-09-16 18:28:59,https://api.github.com/repos/Khan/aphrodite/git/commits/8f2e11f2443fe56a48399eb67e19965ded9cdc8f,8f2e11f2443fe56a48399eb67e19965ded9cdc8f,"Check for already-injected @font-face rules by src - Fixes #80 (#82)
+
+This changeset modifies the call to `injectStyleOnce` to use `src` as the key, rather than `fontName` [which does not need to be unique](http://fonts.googleapis.com/css?family=Inconsolata:400,700).
+
+I added a quick test as well, let me know if you'd like it to be more thorough. You can also [see the fix in action on my cloned Aphrodite output](https://output.jsbin.com/yujaqagiho?code=%7B%0A%20%20%22test%22%3A%20%7B%0A%20%20%20%20fontFamily%3A%20%5B%7B%0A%20%20%20%20%20%20fontStyle%3A%20%22normal%22%2C%0A%20%20%20%20%20%20fontWeight%3A%20%22normal%22%2C%0A%20%20%20%20%20%20fontFamily%3A%20%22My%20Font%22%2C%0A%20%20%20%20%20%20src%3A%20%27url%28blah%29%20format%28%22woff%22%29%2C%20url%28blah%29%20format%28%22truetype%22%29%27%0A%20%20%20%20%7D%2C%20%7B%0A%20%20%20%20%20%20fontStyle%3A%20%22italic%22%2C%0A%20%20%20%20%20%20fontWeight%3A%20%22normal%22%2C%0A%20%20%20%20%20%20fontFamily%3A%20%22My%20Font%22%2C%0A%20%20%20%20%20%20src%3A%20%27url%28blahitalic%29%20format%28%22woff%22%29%2C%20url%28blahitalic%29%20format%28%22truetype%22%29%27%0A%20%20%20%20%7D%5D%0A%20%20%7D%0A%7D)."
+jlfwong,2016-07-27 22:50:22,https://api.github.com/repos/Khan/aphrodite/git/commits/b21a937d608a4461a3d42eaf945cc42deda9e7e5,b21a937d608a4461a3d42eaf945cc42deda9e7e5,"Merge pull request #116 from kentcdodds/patch-2
+
+add conditional css API example"
+kentcdodds,2016-07-27 19:17:59,https://api.github.com/repos/Khan/aphrodite/git/commits/09a187e0017351eefd85c212a749a2a3dceef34f,09a187e0017351eefd85c212a749a2a3dceef34f,"add conditional css API example
+
+ref: https://github.com/Khan/aphrodite/pull/114#issuecomment-235669930"
+lencioni,2016-07-25 15:53:02,https://api.github.com/repos/Khan/aphrodite/git/commits/a1fdb520fd9fcc50148a30de2c49c7c1253a604e,a1fdb520fd9fcc50148a30de2c49c7c1253a604e,"Use JSX syntax highlighting for JSX code in readme (#112)
+
+This improves the syntax highlighting of this code block."
+jlfwong,2016-07-25 05:27:38,https://api.github.com/repos/Khan/aphrodite/git/commits/436325f8848db974e6f9ffba18afa6af1c426095,436325f8848db974e6f9ffba18afa6af1c426095,"Merge pull request #109 from kentcdodds/patch-2
+
+add screencast playlist"
+kentcdodds,2016-07-24 16:05:56,https://api.github.com/repos/Khan/aphrodite/git/commits/a86c6d15c9e5d4b67d4376df78e924d6410bd5c0,a86c6d15c9e5d4b67d4376df78e924d6410bd5c0,add screencast playlist
+jlfwong,2016-07-20 23:49:58,https://api.github.com/repos/Khan/aphrodite/git/commits/de0bd50dc9901a22a04f8dd48fec796e58ff136c,de0bd50dc9901a22a04f8dd48fec796e58ff136c,0.5.0
+jlfwong,2016-07-20 23:47:49,https://api.github.com/repos/Khan/aphrodite/git/commits/c4835b618e8e5b8e0ca3ea1aafd855369a62ea68,c4835b618e8e5b8e0ca3ea1aafd855369a62ea68,"Merge pull request #104 from Khan/jlfwong-without-bang-important
+
+Allow disabling of !important appending via aphrodite/no-important"
+jlfwong,2016-07-20 23:13:26,https://api.github.com/repos/Khan/aphrodite/git/commits/2bc23fd779d1e1344decc52a844e2e7995081743,2bc23fd779d1e1344decc52a844e2e7995081743,Switch to aphrodite/no-important
+jlfwong,2016-07-20 18:49:38,https://api.github.com/repos/Khan/aphrodite/git/commits/30e4aa448aa3677844937cebb0baee8ee2139fbb,30e4aa448aa3677844937cebb0baee8ee2139fbb,Use useImportant variable
+jlfwong,2016-07-20 18:41:39,https://api.github.com/repos/Khan/aphrodite/git/commits/9c049da889c3df213b02aa4d52762baf5426f8a4,9c049da889c3df213b02aa4d52762baf5426f8a4,Fix comments
+jlfwong,2016-07-20 18:33:53,https://api.github.com/repos/Khan/aphrodite/git/commits/2e48dd25f11b8da3d5a4fdae6980ff5e3d1ca2cb,2e48dd25f11b8da3d5a4fdae6980ff5e3d1ca2cb,Allow usage via aphrodite/without-bang-important
+jlfwong,2016-07-20 18:23:44,https://api.github.com/repos/Khan/aphrodite/git/commits/ba42197f9a0e681d904233f6367c15f2fb6a9924,ba42197f9a0e681d904233f6367c15f2fb6a9924,Introduce aphrodite/lib/without-bang-important
+jlfwong,2016-07-20 18:11:19,https://api.github.com/repos/Khan/aphrodite/git/commits/17d971e5b01473251db81b01c6913276f58ea139,17d971e5b01473251db81b01c6913276f58ea139,Extract core of css() function into inject.js
+jlfwong,2016-07-07 16:07:30,https://api.github.com/repos/Khan/aphrodite/git/commits/617de58c4fd48aa4f53765573eb78e85fe81e9c1,617de58c4fd48aa4f53765573eb78e85fe81e9c1,0.4.1
+jlfwong,2016-07-07 16:05:19,https://api.github.com/repos/Khan/aphrodite/git/commits/7c2a145ef381987e6f48686a70aba4fc13d450ac,7c2a145ef381987e6f48686a70aba4fc13d450ac,"Merge pull request #99 from gscottolson/master
+
+Update inline-style-prefixer, add transition: border-color test"
+gscottolson,2016-07-06 22:47:40,https://api.github.com/repos/Khan/aphrodite/git/commits/6dcc0b65f44c7e5e159848fb94413141ff4f2a27,6dcc0b65f44c7e5e159848fb94413141ff4f2a27,Add test for border-color
+gscottolson,2016-07-06 22:34:37,https://api.github.com/repos/Khan/aphrodite/git/commits/0ff066993d809d871550b05f779e76a7896eb9fc,0ff066993d809d871550b05f779e76a7896eb9fc,Update inline-style-prefixer
+jlfwong,2016-06-16 18:18:21,https://api.github.com/repos/Khan/aphrodite/git/commits/db9481becf033fef8b504ec6dab25673e3ec3b95,db9481becf033fef8b504ec6dab25673e3ec3b95,Removing lingering note about AST transform
+jlfwong,2016-06-16 18:15:34,https://api.github.com/repos/Khan/aphrodite/git/commits/cad92de64dcee921b0dbf4074846d7577f8d1c8a,cad92de64dcee921b0dbf4074846d7577f8d1c8a,"Remove TODO about AST transform from README
+
+That AST transform would be non-trivial, because the
+contents of the `StyleSheet.create` call might contain
+variable references or other function calls.
+
+I think it would end up being a PITA to maintain, since
+it would need to understand a lot about Aphrodite
+internals."
+jlfwong,2016-06-16 18:13:15,https://api.github.com/repos/Khan/aphrodite/git/commits/71410c22490c55395f4e07fdb5e58e226482aef2,71410c22490c55395f4e07fdb5e58e226482aef2,"Reorder sections in README.md
+
+Now all the parts that are actually part of the API are under the API section,
+and the bit about buffering is in the caveats section :)"
+jlfwong,2016-06-16 17:54:43,https://api.github.com/repos/Khan/aphrodite/git/commits/f88d541cec3c125b437336d1e099b55e0e45d40f,f88d541cec3c125b437336d1e099b55e0e45d40f,0.4.0
+jlfwong,2016-06-16 17:53:41,https://api.github.com/repos/Khan/aphrodite/git/commits/c8cf1d822db2cfb752531ba24e451e3041624c2f,c8cf1d822db2cfb752531ba24e451e3041624c2f,"git add generated files in dist in npm version script
+
+The version script is run before the commit, but only files explicitly added to
+the git stage will be included in the version bump commit. I'd like the
+generated files to be included in that commit, so we do `git add dist` as part
+of the version script now."
+jlfwong,2016-06-16 17:50:10,https://api.github.com/repos/Khan/aphrodite/git/commits/c21d310c4580beafdd4d18da9dc2aea942835b9b,c21d310c4580beafdd4d18da9dc2aea942835b9b,"Merge pull request #91 from Khan/jlfwong-test-utils
+
+Introduce StyleSheetTestUtils to make writing tests for Aphrodite easier"
+jlfwong,2016-06-16 17:33:28,https://api.github.com/repos/Khan/aphrodite/git/commits/18f473621f0326755e43a89fb1862c0809e3bf3a,18f473621f0326755e43a89fb1862c0809e3bf3a,"Introduce StyleSheetTestUtils to make writing tests for Aphrodite easier
+
+Imagine you're trying to introduce Aphrodite gradually into an existing codebase
+that already has extensive test coverage for rendering components.
+
+If those tests are run in node without any fake DOM being constructed, your
+previously working tests will now fail with the following error:
+
+     Error: Cannot automatically buffer without a document
+
+The introduction of StyleSheetTestUtils makes it easy to suppress such problems
+by preventing Aphrodite from trying to interact with the DOM at all.
+
+The new API would be usable in your tests like so (using Mocha syntax for
+demonstration purposes):
+
+    import { StyleSheetTestUtils } from 'aphrodite';
+
+    beforeEach(() => {
+        StyleSheetTestUtils.suppressStyleInjection();
+    });
+
+    afterEach(() => {
+        StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+    });
+
+I intentionally did not expose an API returning CSS content here to allow us
+flexibility to change the CSS formatting or class name generation without
+considering it a breaking API change.
+
+Meant to solve the problem presented in #90"
+jlfwong,2016-06-08 03:48:59,https://api.github.com/repos/Khan/aphrodite/git/commits/d0f695b4d05bb4a76017d3b20603e88751eb1da9,d0f695b4d05bb4a76017d3b20603e88751eb1da9,"Merge pull request #87 from Khan/jlfwong-docs
+
+Document generateCSS and generateCSSRuleset methods"
+jlfwong,2016-06-07 01:59:42,https://api.github.com/repos/Khan/aphrodite/git/commits/e3817276782e9e7cbdcd5a9beba97230ddbb91e5,e3817276782e9e7cbdcd5a9beba97230ddbb91e5,0.3.3
+jlfwong,2016-06-07 01:47:56,https://api.github.com/repos/Khan/aphrodite/git/commits/29cb180aa519f21b5051d0e4f5acae8cc448a67b,29cb180aa519f21b5051d0e4f5acae8cc448a67b,"Document generateCSS and generateCSSRuleset methods
+
+I'm reluctant to let #61 land because of the complexity it introduces, but would
+like these docs to land (slightly modified from #61), and would prefer to not
+make them landing dependant on the complexity of #61."
+jlfwong,2016-06-07 01:25:32,https://api.github.com/repos/Khan/aphrodite/git/commits/73c0245204eb7267c2a68a3ea3efe722c0a1e54b,73c0245204eb7267c2a68a3ea3efe722c0a1e54b,"Merge pull request #85 from Khan/jlfwong-better-release
+
+Replace npm run release script with hooks into npm version"
+jlfwong,2016-06-07 01:12:51,https://api.github.com/repos/Khan/aphrodite/git/commits/202331fbfd48b2aa15238f0a9187b3098a0c181f,202331fbfd48b2aa15238f0a9187b3098a0c181f,"Replace npm run release script with hooks into npm version
+
+So long as the version is always bumped via `npm version`, this ensures that npm
+releases will always be published with all files in `dist/` up to date (which
+I messed up with
+0.3.2).
+
+It seems the current proposed workflow (which I forgot) was to use `npm release`
+instead of `npm publish` in order to accomplish something similar, but I think
+this is slightly better, because now `version` does all the useful,
+non-destructive actions in one shot (whereas `version` would still have to be
+done separately with `npm release`).
+
+Now the workflow for published a new version is as follows:
+
+    npm version [major|minor|patch]
+    git push
+    npm publish
+
+In the previous workflow, it was unclear to me where the commit should happen.
+I suppose you would publish then commit and push? Publishing from unpushed
+commits makes me a litle uneasy."
+jlfwong,2016-06-07 00:44:34,https://api.github.com/repos/Khan/aphrodite/git/commits/bdb813acc64800245747587317e27b95371779d6,bdb813acc64800245747587317e27b95371779d6,0.3.2
+jlfwong,2016-06-03 20:54:47,https://api.github.com/repos/Khan/aphrodite/git/commits/6b0560fa6d22432ccee295cee8f9a71b92766a21,6b0560fa6d22432ccee295cee8f9a71b92766a21,"Merge pull request #79 from pvolok/buffer-flush-note
+
+Add note about async buffer flushing."
+pvolok,2016-06-01 07:50:21,https://api.github.com/repos/Khan/aphrodite/git/commits/a0985c7c3f7087f59d0a1d25406d639ef4d282a8,a0985c7c3f7087f59d0a1d25406d639ef4d282a8,Add note about async buffer flushing.
+jlfwong,2016-05-13 17:06:02,https://api.github.com/repos/Khan/aphrodite/git/commits/e3f73d7817c39c8bef83a71d4074c88e526e3dba,e3f73d7817c39c8bef83a71d4074c88e526e3dba,"Merge pull request #75 from victorwpbastos/patch-1
+
+Typos"
+victorwpbastos,2016-05-13 16:46:28,https://api.github.com/repos/Khan/aphrodite/git/commits/84713a60f0355f8d2c9e78a37ca5deaae9c2d244,84713a60f0355f8d2c9e78a37ca5deaae9c2d244,Typos
+xymostech,2016-05-12 04:53:58,https://api.github.com/repos/Khan/aphrodite/git/commits/cea4ea5b65b9f1444b02810e63c2a2c72b31dcaf,cea4ea5b65b9f1444b02810e63c2a2c72b31dcaf,"Add code coverage tests (#73)
+
+This adds code coverage tests using [nyc](https://github.com/bcoe/nyc),
+based on #51. This both makes the tests run code coverage, as well as
+adding tests to get us up to 100% line and branch coverage!
+
+Test Plan: `npm run test`
+
+@jlfwong @kentcdodds"
+zgotsch,2016-05-10 19:20:14,https://api.github.com/repos/Khan/aphrodite/git/commits/78cbfd498e1060ae04eac3d6ad6f1e6449e86249,78cbfd498e1060ae04eac3d6ad6f1e6449e86249,"Upgrade prefixer, don't handle multiple rules at once (#71)
+
+Use the new inline-style-prefix-all, which gives us a nice array of rules which need to be prefixed. Only importantify one rule at a time, so we don't have to parse css in order to pick the right semicolons :)
+
+fixes #70
+
+* Upgrade prefixer, don't handle multiple rules at once
+* Changes for review
+* Add a test which ensures things don't get double importants
+* Order prefixed CSS rules alphabetically"
+kentcdodds,2016-05-04 18:16:29,https://api.github.com/repos/Khan/aphrodite/git/commits/3ba5a3ec822a56f1e705d653116ffaf79c25bad8,3ba5a3ec822a56f1e705d653116ffaf79c25bad8,docs(tools): Add link to a handy tool (#67)
+xymostech,2016-04-29 19:12:18,https://api.github.com/repos/Khan/aphrodite/git/commits/d3ec690c4b08bab48e1113292f1ea35acb4853fa,d3ec690c4b08bab48e1113292f1ea35acb4853fa,"Release 3.0.1
+
+Summary: We need to pin to inline-style-prefix-all@1.0.5 because 1.1.0
+introduced a breaking change.
+
+Fixes #66
+
+Test Plan:
+ - `npm install`
+ - `npm run test`"
+xymostech,2016-04-25 20:54:53,https://api.github.com/repos/Khan/aphrodite/git/commits/630abb3d58c0787229665e788b8c4d6d07c7589b,630abb3d58c0787229665e788b8c4d6d07c7589b,"Version bump, 0.3.0
+
+Test Plan:
+N/A
+
+@jlfwong"
+natew,2016-04-22 23:52:14,https://api.github.com/repos/Khan/aphrodite/git/commits/1587c55b98f6bb9247566cdfebeb2f4b7a47af80,1587c55b98f6bb9247566cdfebeb2f4b7a47af80,"move to inline-style-prefix-all (#54)
+
+* move to inline-style-prefix-all
+
+* 0.2.1
+
+* Revert rename
+
+* Revert re-version
+
+* update version
+
+* change last two tests to cover new functionality
+
+* revert name of test"
+xymostech,2016-04-17 18:07:31,https://api.github.com/repos/Khan/aphrodite/git/commits/9f286edb0fe108109c38e7b98387c1d14cc0367b,9f286edb0fe108109c38e7b98387c1d14cc0367b,"Merge pull request #55 from kentcdodds/pr/script-cleanup
+
+improve npm scripts and add more builds"
+kentcdodds,2016-04-15 02:29:49,https://api.github.com/repos/Khan/aphrodite/git/commits/0836bcd09c708144042df1b3b5506cc2ac3c979a,0836bcd09c708144042df1b3b5506cc2ac3c979a,"improve npm scripts and add more builds
+
+Here's how things work now with this PR:
+
+1. There are 4 builds:
+  - `main` uses babel and is what the package.json main points to. This
+    is pretty much the same as before
+  - `umd` uses webpack and specifies that the output should use UMD and
+    it outputs a sourcemap file as well.
+  - `umdmin` is the same as `umd` except it's run in webpack production
+    mode (minified)
+  - `commonjs` is exactly as it was before, a bundled module exported as
+    a CommonJS module
+2. There is a `watch` script associated with each of these
+3. There is a `build` script which runs all the builds in parallel
+4. There is a `watch:build` script which runs all the builds in watch
+  mode in parallel
+5. The `prepublish` script was removed because it's not doing what you
+  probably think it's doing: (https://github.com/npm/npm/issues/3059)
+  and we now have a `release` script which runs the build first and
+  then runs `npm publish`. Just run `npm run release` instead of
+  `npm publish`.
+6. `.gitattributes` now excludes everything in `dist` from `diff`
+  because we now have several files exporting there
+
+That's it! I'll add a gif to the PR showing this in action"
+xymostech,2016-04-14 21:45:05,https://api.github.com/repos/Khan/aphrodite/git/commits/44f2ce7e2bbf4ce6ad79cf8a89a685bd3f7c0259,44f2ce7e2bbf4ce6ad79cf8a89a685bd3f7c0259,"Merge pull request #56 from conorfennell/caveats
+
+Added a caveats section to README.md"
+conorfennell,2016-04-14 20:42:27,https://api.github.com/repos/Khan/aphrodite/git/commits/51906d8e43abd29c20a00664989f3275203a2f90,51906d8e43abd29c20a00664989f3275203a2f90,fixed headings in caveats and reworded content property caveat
+conorfennell,2016-04-14 20:27:26,https://api.github.com/repos/Khan/aphrodite/git/commits/380f48c5d172376bfe9134e9e96fb037d495cb57,380f48c5d172376bfe9134e9e96fb037d495cb57,Added a caveats section to README.md
+xymostech,2016-04-11 02:29:48,https://api.github.com/repos/Khan/aphrodite/git/commits/fe27e13d026f867110faeea5ece85ed0532824bc,fe27e13d026f867110faeea5ece85ed0532824bc,"Merge pull request #50 from sarbbottam/regex
+
+use consistent regex naming convention"
+xymostech,2016-04-11 02:05:36,https://api.github.com/repos/Khan/aphrodite/git/commits/9d2408ae5e8e4525d024f73df774a41fda83ea0e,9d2408ae5e8e4525d024f73df774a41fda83ea0e,"Merge pull request #48 from sarbbottam/unitless-number
+
+added missing unitless numbers"
+sarbbottam,2016-04-10 23:00:00,https://api.github.com/repos/Khan/aphrodite/git/commits/511fda69666c9eb20d33212b6b552058a1e41330,511fda69666c9eb20d33212b6b552058a1e41330,use consistent regex naming convention
+sarbbottam,2016-04-10 22:29:01,https://api.github.com/repos/Khan/aphrodite/git/commits/01f5bfe4155c7ad38d4b9a555b050f2f07b8516f,01f5bfe4155c7ad38d4b9a555b050f2f07b8516f,"added missing unitless numbers
+
+in sync with React's CSSProperty.js"
+xymostech,2016-04-09 02:07:59,https://api.github.com/repos/Khan/aphrodite/git/commits/4b607d8c8bed214dbbc1a952eb0bf9f38cad98cd,4b607d8c8bed214dbbc1a952eb0bf9f38cad98cd,"Add travis/gitter integration
+
+Summary: This just follows the instructions from gitter on how to make travis
+builds appear on gitter.
+
+Test plan:
+ - cross fingers!
+
+Auditors: alex"
+xymostech,2016-04-08 22:30:52,https://api.github.com/repos/Khan/aphrodite/git/commits/dfccb9654edad1f07b3156363a6b199af3046fbe,dfccb9654edad1f07b3156363a6b199af3046fbe,"Merge pull request #42 from kentcdodds/patch-2
+
+add gitter chat badge"
+kentcdodds,2016-04-08 15:20:17,https://api.github.com/repos/Khan/aphrodite/git/commits/e6a67956487cfe0c681c1b40e24530487bb13fce,e6a67956487cfe0c681c1b40e24530487bb13fce,"add gitter chat badge
+
+This isn't setup yet, but I'd like to be :-)"
+xymostech,2016-04-06 17:02:26,https://api.github.com/repos/Khan/aphrodite/git/commits/70626fa289ae64a6452f1c5bc66a5a96cbd71507,70626fa289ae64a6452f1c5bc66a5a96cbd71507,"Merge pull request #37 from kentcdodds/patch-1
+
+add installation instructions to README"
+kentcdodds,2016-04-06 01:36:32,https://api.github.com/repos/Khan/aphrodite/git/commits/586af5953ebc4590f01e2e3f610f82412b354f8f,586af5953ebc4590f01e2e3f610f82412b354f8f,add installation instructions to README
+jeresig,2016-03-28 18:59:45,https://api.github.com/repos/Khan/aphrodite/git/commits/61a38246b52b4620be7ad6360f3821b30bc9de7b,61a38246b52b4620be7ad6360f3821b30bc9de7b,"Merge pull request #34 from Khan/add-keyframes
+
+Add keyframes support"
+xymostech,2016-03-27 16:12:12,https://api.github.com/repos/Khan/aphrodite/git/commits/a74a1ac7c32a2608cff9c3892d62dfb5ed6c5e7c,a74a1ac7c32a2608cff9c3892d62dfb5ed6c5e7c,"Add keyframes support
+
+Summary: This adds support for keyframes using the same mechanism that
+we support `font-family` with. By passing in an object of keyframes as
+the value of `animationName`, this will generate an `@keyframes` block
+and return the name.
+
+Test Plan:
+ - `npm run test`
+ - Visit the examples page at http://localhost:4114/, see that the ""This
+   should animate"" text animates.
+ - Visit the ssr examples page at http://localhost:4114/ssr,
+   see the text still animates.
+
+@jeresig, @jlfwong"
+jlfwong,2016-03-16 23:05:26,https://api.github.com/repos/Khan/aphrodite/git/commits/716352e6596449c4e896a22548c742289563df0a,716352e6596449c4e896a22548c742289563df0a,"Version bump to 0.2.0 to publish style prefixing changes
+
+Test Plan:
+N/A
+
+Auditors: emily"
+jlfwong,2016-03-08 01:37:07,https://api.github.com/repos/Khan/aphrodite/git/commits/c61a7a5900e55476234c8aa05c61cb1438137b6b,c61a7a5900e55476234c8aa05c61cb1438137b6b,"Add Travis CI 
+
+Auditors: emily"
+jlfwong,2016-03-08 01:34:21,https://api.github.com/repos/Khan/aphrodite/git/commits/d37fa23793a52c219d8eed4aa5ca6fd9db5c3884,d37fa23793a52c219d8eed4aa5ca6fd9db5c3884,"Add .travis.yml to set us up on Travis CI
+
+Test Plan:
+Lookit https://travis-ci.org/Khan/aphrodite after I push this
+
+Auditors: emily"
+jlfwong,2016-02-25 20:23:59,https://api.github.com/repos/Khan/aphrodite/git/commits/331a0696d9eb6810432c10bd9f6924a7543e4e9d,331a0696d9eb6810432c10bd9f6924a7543e4e9d,"Fix conduit_url in .arcconfig
+
+I don't know how this worked before..."
+jlfwong,2016-02-17 18:42:49,https://api.github.com/repos/Khan/aphrodite/git/commits/cbebc365b55c9a22d7633042a50ea41bee262e16,cbebc365b55c9a22d7633042a50ea41bee262e16,"Merge pull request #21 from montemishkin/improve-server-rendering-docs
+
+improved server-side rendering example code"
+montemishkin,2016-02-17 09:44:17,https://api.github.com/repos/Khan/aphrodite/git/commits/dab12d26f7a174bd4040140b901f158441ae9b89,dab12d26f7a174bd4040140b901f158441ae9b89,improved server-side rendering example code
+jlfwong,2016-02-13 01:24:04,https://api.github.com/repos/Khan/aphrodite/git/commits/08de5d71d343e1b57bb3cdd788d14b6fbae65cba,08de5d71d343e1b57bb3cdd788d14b6fbae65cba,"Merge pull request #19 from tbranyen/readme-phrasing
+
+An example of better messaging with the README"
+tbranyen,2016-02-12 20:47:18,https://api.github.com/repos/Khan/aphrodite/git/commits/9ca163addc2576e3794c08f03b2ce38a11f02700,9ca163addc2576e3794c08f03b2ce38a11f02700,"An example of better messaging with the README
+
+I complained about the README wording in a GitHub issue and this is my
+attempt of rewording the prominent React messaging."
+xymostech,2016-02-12 18:43:13,https://api.github.com/repos/Khan/aphrodite/git/commits/87479dfab02ba3b7090ccf5c64ff920d01c71595,87479dfab02ba3b7090ccf5c64ff920d01c71595,"Substate inline-style-prefixer
+
+Test Plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+jlfwong,2016-02-11 18:13:08,https://api.github.com/repos/Khan/aphrodite/git/commits/47cf0a5d1d0a6ce59e74e12fb129841891e4a037,47cf0a5d1d0a6ce59e74e12fb129841891e4a037,"Merge pull request #15 from gaearon/patch-1
+
+Add syntax highlighting to README"
+gaearon,2016-02-11 17:33:29,https://api.github.com/repos/Khan/aphrodite/git/commits/e7b3171c8d59f9baee3fadbcad7dd025abfd771a,e7b3171c8d59f9baee3fadbcad7dd025abfd771a,Add syntax highlighting to README
+rileyjshaw,2016-02-03 20:42:14,https://api.github.com/repos/Khan/aphrodite/git/commits/dd43050b240d002871a59310c60ce2e87a217c2d,dd43050b240d002871a59310c60ce2e87a217c2d,"Add autoprefixing
+
+Summary:
+This diff pulls in a small library called `inline-style-prefixer`. It's used by Radium & written by the author of [Look](https://github.com/rofrischmann/react-look).  Now that we've dropped IE9, the biggest thing stopping us from using flexbox is IE's [ 2012 properties](http://caniuse.com/#feat=flexbox). This handles those, making us pretty green across the board. This library also works seamlessly with what we've already written. It accepts our nested style objects, and prefixed output works with `kebabifyStyleName`! :)
+
+Bigger solutions like [PostCSS + Autoprefixer](https://github.com/postcss/autoprefixer) could work on the server, but they're way too big to send down. Getting checksums to line up would probably be a pain if we tried to use one on the client + the other on the server.
+
+Note: The inclusion of `inline-style-prefixer` almost doubles the size of Aphrodite, from 2955 bytes to 5904 bytes (3k -> 6k). Using the default build of `inline-style-prefixer` would have bumped us up to about 12k, but I dug into the library and got rid of as many parts as I could. In particular, since we're only using the `prefixAll` functionality, I got rid of anything that wasn't used along those code paths. I also got rid of the browser-agent-reading library, bowser. I also figured out a cheap way to compress the caniuse data bundle a little bit more to fit our use case.
+
+Test Plan:
+ - `npm run test`
+ - `cd examples && npm run examples`
+ - Visit http://localhost:4114/, see that the box is centered.
+ - Visit http://localhost:4114/ in a browserstack IE 10 VM, see that the box is centered: {F268555}
+
+Reviewers: riley, jlfwong
+
+Reviewed By: jlfwong
+
+Subscribers: jordan, anju
+
+Differential Revision: https://phabricator.khanacademy.org/D24566"
+jlfwong,2016-01-30 10:23:46,https://api.github.com/repos/Khan/aphrodite/git/commits/099cc3a000231ae85bc78a2f6e85cc7a559f3e57,099cc3a000231ae85bc78a2f6e85cc7a559f3e57,"Add an empty .npmignore to allow the lib/ dir to be published
+
+Summary:
+Since we want our package to be available for consumptino as an ES5 module, we
+do a prepublish step and make the entry point of the package in lib instead of
+src.
+
+If you don't have a .npmignore file, npm will use your .gitignore, which we set
+to ignore the lib directory, preventing it from being uploaded as part of the
+publish.
+
+Test Plan:
+    npm publish
+
+Then consume it in another repository.
+
+Auditors: emily"
+jlfwong,2016-01-27 20:07:20,https://api.github.com/repos/Khan/aphrodite/git/commits/21892b2017d8a42297fdf3b11272219bd961efa1,21892b2017d8a42297fdf3b11272219bd961efa1,"Version bump to 0.1.1 to update NPM page
+
+Test Plan:
+N/A
+
+Auditors: emily"
+jlfwong,2016-01-27 20:06:27,https://api.github.com/repos/Khan/aphrodite/git/commits/3c3ca703c4bc2f3fe90fc62e9fd854c1bf38abb1,3c3ca703c4bc2f3fe90fc62e9fd854c1bf38abb1,"Update repository URL, add keywords
+
+Test Plan:
+N/A
+
+Auditors: emily"
+jlfwong,2016-01-27 20:02:15,https://api.github.com/repos/Khan/aphrodite/git/commits/d81818f65027f18c7a70f291848f6e17cc547428,d81818f65027f18c7a70f291848f6e17cc547428,"Version bump to 0.1.0, add npm package badge
+
+Test Plan:
+N/A
+
+Auditors: emily"
+xymostech,2016-01-14 23:19:04,https://api.github.com/repos/Khan/aphrodite/git/commits/097799720543443cca6b24bcce48ef7d87248d1d,097799720543443cca6b24bcce48ef7d87248d1d,"Update the README to describe the new API.
+
+Summary: Also, remove the warning about Aphrodite maybe not working.
+
+Test Plan: - ????
+
+Reviewers: jlfwong, csilvers
+
+Reviewed By: csilvers
+
+Subscribers: csilvers, john
+
+Differential Revision: https://phabricator.khanacademy.org/D24645"
+xymostech,2016-01-14 22:30:05,https://api.github.com/repos/Khan/aphrodite/git/commits/ee73653f7e8083cefe99bfd378fba09ea82b7d27,ee73653f7e8083cefe99bfd378fba09ea82b7d27,"Make `css` automatically start buffering, and flush styles using asap.
+
+Summary:
+`renderBuffered` turned out to have problems which might have
+caused a flash of unstyled content, if a long-running async buffered
+render overlapped a short-running render, where the styles wouldn't be
+written until the end of the long-running render, leaving the short
+render content unstyled.
+
+We fix the problem by getting rid of explicit buffered rendering, and
+instead use the `asap` library to automatically schedule buffered
+flushes. This means we get some of the performance benefits of buffering
+the styles, while also ensuring that styles for a given piece of HTML
+will never be rendered without the styles being injected too.
+
+Test Plan:
+ - `npm run test`
+ - run `npm run examples` in the examples/ directory
+ - Visit http://localhost:4114/ in Chrome, see that the styles work.
+   Inspect the `<style data-aphrodite>` tag, and see that there are only
+   2 text nodes inside of it, implying that the first chunk of styles
+   was buffered correctly.
+ - Add the lines
+```
+    let x = 0;
+    for (let i = 0; i < 1000000000; i++) {
+        x += (x - 1);
+    }
+```
+   at the beginning of the `flushToStyleTag` function. Refresh
+   http://localhost:4114/, see that the page freezes for a bit (running
+   my really long for loop), but that there is no visible content during
+   that time. This hopefully implies that `flushToStyleTag` is being
+   called before the browser passes up control to render the content of
+   the page, which hopefully means we won't get FOUCs.
+ - Visit http://localhost:4114/ssr, see that the styles work correctly.
+
+Reviewers: jlfwong
+
+Reviewed By: jlfwong
+
+Subscribers: john, csilvers
+
+Differential Revision: https://phabricator.khanacademy.org/D24643"
+xymostech,2016-01-14 22:03:38,https://api.github.com/repos/Khan/aphrodite/git/commits/4174a315d0b8738bd370b1083fc53e0510f600c8,4174a315d0b8738bd370b1083fc53e0510f600c8,"Make sure we only ever create a single <style> tag.
+
+Summary:
+Or I guess maybe 2 with server-side rendering. This makes
+aphrodite reuse an existing style tag most of the time and only create a
+new one when it can't find one in the DOM.
+
+Fixes #6
+
+Test Plan:
+ - `npm test`
+ - Run `npm run examples` from the examples/ directory
+ - Visit http://localhost:4114/, see that the styles work and there's
+   only one style tag.
+ - Visit http://localhost:4114/ssr, see that the styles work and there's
+   only one style tag.
+
+Reviewers: csilvers, jlfwong
+
+Reviewed By: csilvers, jlfwong
+
+Subscribers: csilvers, john
+
+Differential Revision: https://phabricator.khanacademy.org/D24641"
+xymostech,2016-01-11 21:57:46,https://api.github.com/repos/Khan/aphrodite/git/commits/40aa9689f64a07b5520c4ecb03a87f6a4962cef5,40aa9689f64a07b5520c4ecb03a87f6a4962cef5,"Add an example of using server-side rendering with aphrodite
+
+Summary:
+This modifies the examples server to show off server-side
+rendering. I replaced the default webpack server with a custom express
+one, and added a page at http://localhost:4114/ssr that uses server-side
+rendering.
+
+Depends on D24509
+
+Test Plan:
+ - Run `npm run examples` from the examples/ directory
+ - Visit http://localhost:4114/, see that the examples work (the
+   examples describe what they should be, so it's easy to tell if they
+   work!)
+ - Visit http://localhost:4114/ssr, see that the examples work
+ - Open up the chrome developer tools, inspect the HTML, and see that
+   there are only 2 <style> tags, one which is large, and the other one
+   only contains `.blue_2{color:blue !important;}`
+ - In the developer tools settings, check the ""Disable JavaScript""
+   checkbox.
+ - Refresh http://localhost:4114/ssr
+ - See that all of the examples work, except the one that's supposed to
+   flash doesn't flash.
+
+Reviewers: john, csilvers, jlfwong
+
+Reviewed By: csilvers, jlfwong
+
+Differential Revision: https://phabricator.khanacademy.org/D24515"
+xymostech,2016-01-11 20:16:51,https://api.github.com/repos/Khan/aphrodite/git/commits/c65db52f22c232980dd1233b45d98625203c0268,c65db52f22c232980dd1233b45d98625203c0268,"Update the aphrodite API to easily allow for server-side rendering.
+
+Summary:
+Update the aphrodite API by making the usage of rendering clearer. Namely:
+
+ - `StyleSheet.renderBuffered` now handles buffered rendering on the client,
+   as well as rehyrdation in an initial render.
+ - `StyleSheetServer.renderStatic` now handles rendering on the server, and
+   returns the appropriate data for rendering HTML and rehydrating.
+
+I moved a bunch of the injection functions into a separate inject.js file to make
+index.js cleaner and to allow for testing of some of the internal functions. I
+added tests for the functions in inject.js, and a test to make sure renderStatic
+returns what it's supposed to.
+
+I added examples of server-side rendering in a second diff, D24515.
+
+Test Plan: - `npm run test`
+
+Reviewers: john, csilvers, jlfwong
+
+Reviewed By: csilvers, jlfwong
+
+Differential Revision: https://phabricator.khanacademy.org/D24509"
+xymostech,2016-01-10 02:25:16,https://api.github.com/repos/Khan/aphrodite/git/commits/f45f87d25f53644a360979479bf0c0b8a8ba1ff8,f45f87d25f53644a360979479bf0c0b8a8ba1ff8,"Make the suffix of class names deterministic based on their values.
+
+Summary:
+Use a hash of the styles for each class name to determine the suffix
+added to the name. This means that if multiple styles are created in different
+places with the same values, they will use the same class. This is mostly
+useful for ensuring that the suffixes are generated the same on both servers
+and clients.
+
+I'm still not 100% sure that `JSON.stringify` necessarily produces the same
+results on all clients. It looks like ES2015 compliant browser engines have
+defined property order that we can count on, but I'm not sure if there are any
+of those yet? But Ben Alpert has made a convincing case that Facebook would
+break if browsers didn't have consistent ordering so....
+
+Test Plan: - `npm run test`
+
+Reviewers: jlfwong, csilvers
+
+Reviewed By: jlfwong, csilvers
+
+Subscribers: alpert, csilvers, john
+
+Differential Revision: https://phabricator.khanacademy.org/D24493"
+allofthenorthwood,2016-01-10 23:50:02,https://api.github.com/repos/Khan/aphrodite/git/commits/00f431dc3c868763ffa572aad0d51a40bcbab691,00f431dc3c868763ffa572aad0d51a40bcbab691,"Add prefixed versions of properties to isUnitlessNumber list
+
+Summary: Taken from: https://github.com/facebook/react/blob/3b96650e39ddda5ba49245713ef16dbc52d25e9e/src/renderers/dom/shared/CSSProperty.js
+
+Test Plan: Ran `npm run test` and they all still passed. I also added this to a test file with inline aphrodite styles and verified that `WebkitFlex` now comes out with a value of `0` instead of `0px`, just like `flex`.
+
+Reviewers: emily
+
+Differential Revision: https://phabricator.khanacademy.org/D24492"
+jeresig,2016-01-06 22:05:30,https://api.github.com/repos/Khan/aphrodite/git/commits/904472a5971979d34957ef2aa3db45a1b6cf8f26,904472a5971979d34957ef2aa3db45a1b6cf8f26,"Merge pull request #13 from Khan/disable-important-font-face
+
+Make it so that !important can be disabled for certain style rules."
+jeresig,2016-01-05 18:19:14,https://api.github.com/repos/Khan/aphrodite/git/commits/4eb74b58ce2eb29251ed65b8e520cedbceeda056,4eb74b58ce2eb29251ed65b8e520cedbceeda056,Make it so that \!important can be disabled for certain style rules. Specifically disable it for all @font-face rules as it breaks them.
+jeresig,2015-11-10 21:12:20,https://api.github.com/repos/Khan/aphrodite/git/commits/9a8961b62c356710cfa6fa62c4c1d1b5c5cc8181,9a8961b62c356710cfa6fa62c4c1d1b5c5cc8181,"Add in support for @font-face rules so that they are globally available.
+
+Summary:
+This adds in support for the global `@font-face` rule, inserting it explicitly on StyleSheet creation. This is a weird case because it's not directly associated with an element on the page. I figure having it exist on StyleSheet creation is OK as if the module isn't loaded then the font-face rule won't be inserted into the page.
+
+I added in support for this so that a FontAwesome implementation could be built.
+
+Test Plan:
+Use it and check to see that custom fonts work. They do! Example:
+https://www.dropbox.com/s/v3f24v31yk13vy4/Screenshot%202015-10-26%2020.58.50.png?dl=0
+
+Reviewers: emily, jlfwong
+
+Reviewed By: jlfwong
+
+Subscribers: csilvers
+
+Differential Revision: https://phabricator.khanacademy.org/D22756"
+jlfwong,2015-10-27 21:49:04,https://api.github.com/repos/Khan/aphrodite/git/commits/2c6c06c9cfe3e8dda2712aad3ad9c9c777031527,2c6c06c9cfe3e8dda2712aad3ad9c9c777031527,"Merge pull request #1 from Khan/jlfwong-batching
+
+Add support for client-side batching to generate fewer <style> tags."
+jlfwong,2015-10-09 08:43:39,https://api.github.com/repos/Khan/aphrodite/git/commits/8e304550d50b4ae39f3b51de8948cd967bfb46a6,8e304550d50b4ae39f3b51de8948cd967bfb46a6,"Add support for client-side batching to generate fewer <style> tags
+
+This also adds some examples to the repo, and paves the path forward for serverside rendering.
+
+Test Plan:
+
+    cd examples
+    npm install
+    npm run examples
+    Open http://localhost:4114/, see 2 style tags generated: one for initial render, one for the dynamic blue added by the timer."
+jlfwong,2015-10-21 18:01:47,https://api.github.com/repos/Khan/aphrodite/git/commits/6719bb11bc5c92c4db5c3ff16cb3c14c5eae5292,6719bb11bc5c92c4db5c3ff16cb3c14c5eae5292,"Add prepublish hook to do babel compilation for consumption through npm
+
+Test Plan:
+Ran `npm run prepublish`, saw it compiled to ES5 into the `lib` directory.
+
+Auditors: emily"
+xymostech,2015-10-15 22:58:33,https://api.github.com/repos/Khan/aphrodite/git/commits/da4f9f663b7d1e77c1ea1663f074d6510aa3791f,da4f9f663b7d1e77c1ea1663f074d6510aa3791f,"Update the built file.
+
+Summary: Forgot to update the built file in the last commit.
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-15 22:27:33,https://api.github.com/repos/Khan/aphrodite/git/commits/8ece192a75a89f7562697abdf720177109e31365,8ece192a75a89f7562697abdf720177109e31365,"Add tests and a fix for empty styles/css calls.
+
+Summary: I found cases where empty style definitions and empty calls to css
+were being made. This ensures that these things work.
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-15 21:17:32,https://api.github.com/repos/Khan/aphrodite/git/commits/144337a6c5d059ae7114abbe2fb056cb953b07df,144337a6c5d059ae7114abbe2fb056cb953b07df,"Update documentation for css change.
+
+Summary: `css()` doesn't take an array now, update the corresponding
+documentation.
+
+Test plan:
+ - `grep -r 'css(\[' .` returns no results.
+
+Auditors: jlfwong"
+xymostech,2015-10-15 20:55:24,https://api.github.com/repos/Khan/aphrodite/git/commits/b54e063c36568db33a7e734fb77a840cf9538564,b54e063c36568db33a7e734fb77a840cf9538564,"Make the `css` function use args, not take an array.
+
+Summary: Instead of taking an array, we can just use the list of arguments that
+was taken. The `...rest` operator makes this really easy.
+
+Also, clean up the `css()` tests to be a lot nicer. And add a `.gitattributes`
+file so that the dist/ file is treated as binary.
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-13 19:22:44,https://api.github.com/repos/Khan/aphrodite/git/commits/c4869fbbfd65ccc7bac4928b0de60ad1b8cc6238,c4869fbbfd65ccc7bac4928b0de60ad1b8cc6238,"Add a big warning before we open source.
+
+Summary: We're going to public this, so add a big warning that this isn't officially supported right now in case other people try to use it.
+
+Test plan:
+ - Look at the preview, see it looks good.
+
+Auditors: jlfwong"
+xymostech,2015-10-12 02:41:38,https://api.github.com/repos/Khan/aphrodite/git/commits/7528828f3af089d96ebc5f308c73e62aab32171f,7528828f3af089d96ebc5f308c73e62aab32171f,"Check in built files.
+
+Summary: We're going to use a submodule of this repository in webapp
+so we need the built files checked in!
+
+Test plan:
+ - See that dist/aphrodite.js exists!
+
+Auditors: jlfwong"
+xymostech,2015-10-12 03:44:55,https://api.github.com/repos/Khan/aphrodite/git/commits/e8838bb0ed504f5eb44cef5c97771bc1c5d72e24,e8838bb0ed504f5eb44cef5c97771bc1c5d72e24,"Add default Phabricator configuration.
+
+Summary: No idea what this does!
+
+Test plan:
+ - `arc lint`
+ - Cross fingers!
+
+Auditors: jlfwong"
+xymostech,2015-10-09 22:46:24,https://api.github.com/repos/Khan/aphrodite/git/commits/a6393c033fdfef6bb86e8670c9f955dd0e3ac22a,a6393c033fdfef6bb86e8670c9f955dd0e3ac22a,"Filter out falsy values so the `css` interface is nicer.
+
+Summary: A common pattern for inline styles is `style={{ ...base,
+...test && override }}`. This adds the ability to do the  analagous
+`className={css([base, test && override])}`.
+
+Test plan:
+ - `npm run test`
+
+Reviewers: @jlfwong"
+xymostech,2015-10-09 19:23:44,https://api.github.com/repos/Khan/aphrodite/git/commits/4c8019444b6a402a42146c8d54e5b55c8493ef6e,4c8019444b6a402a42146c8d54e5b55c8493ef6e,"Copy React's unitless number logic to add 'px' to properties.
+
+Summary: Add the ability to use numbers as values and duplicate React's
+logic of adding the correct suffix.
+
+Test plan:
+ - `npm run test`
+
+Reviewers: @jlfwong"
+xymostech,2015-10-09 20:20:38,https://api.github.com/repos/Khan/aphrodite/git/commits/a519a882d8655ad457f97aac74eaa22948fb4fbd,a519a882d8655ad457f97aac74eaa22948fb4fbd,"Rename inline-styles-that-work to aphrodite
+
+Summary:
+Do the rename! Also, export both `StyleSheet` and `css` as
+properties from the main bundle, so we don't have to do
+```
+var StyleSheet = require(""aphrodite"");
+var css = StyleSheet.css;
+```
+but now
+```
+var { StyleSheet, css } = require(""aprodite"");
+```
+
+Note that I didn't change the github repo URL in package.json nor
+actually move the repo.
+
+Test Plan:
+ - `npm run test`
+
+Reviewers: @jlfwong"
+xymostech,2015-10-08 21:48:06,https://api.github.com/repos/Khan/aphrodite/git/commits/dd3203b3b37d2cd31ac95fec1a1f47d863719829,dd3203b3b37d2cd31ac95fec1a1f47d863719829,"Add a test for `.css`
+
+Summary: Add jsdom as a dependency and use that to at least test that
+`.css` doesn't throw errors.
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-08 21:38:07,https://api.github.com/repos/Khan/aphrodite/git/commits/7e2f47f5e3d6deebfd16848025bfe850608311d3,7e2f47f5e3d6deebfd16848025bfe850608311d3,"Make `pairsToObject` iterative.
+
+Summary: The `pairsToObject` function was horribly slow, this fixes
+that.
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-08 21:36:32,https://api.github.com/repos/Khan/aphrodite/git/commits/ab028b9f742d9eebe371112866626f2d51b30450,ab028b9f742d9eebe371112866626f2d51b30450,"Fix bugs with the `.css` function.
+
+Summary: Looks like other stuff was refactored without testing this :)
+
+Test plan:
+ - Use `StyleSheet.css`
+ - See that it returns classnames, instead of throwing errors.
+
+Auditors: jlfwong"
+xymostech,2015-10-08 19:29:50,https://api.github.com/repos/Khan/aphrodite/git/commits/500c1e0015cb6a1c17521dea083e27db3fc379c0,500c1e0015cb6a1c17521dea083e27db3fc379c0,"Make the webpack export a UMD wrapper.
+
+Summary: So that we can import it in webapp!
+
+Test plan:
+ - `npm run build`
+ - See a UMD header?
+
+Auditors: jlfwong"
+xymostech,2015-10-08 19:27:54,https://api.github.com/repos/Khan/aphrodite/git/commits/05f70d6a477c605de6d3cbf76d89680c853c6681,05f70d6a477c605de6d3cbf76d89680c853c6681,"Use `export const` instead of `export default`
+
+Summary: I have no strong opinions about this but I find this more
+useful?
+
+Test plan:
+ - `npm run test`
+
+Auditors: jlfwong"
+xymostech,2015-10-08 19:24:09,https://api.github.com/repos/Khan/aphrodite/git/commits/1361c9b54ac04f5e79362ea2d44860ce6dddc312,1361c9b54ac04f5e79362ea2d44860ce6dddc312,Style fixes for README.md
+jlfwong,2015-10-07 09:55:44,https://api.github.com/repos/Khan/aphrodite/git/commits/79aa8faccec3b13f95834cc2e811d65a8bf987ff,79aa8faccec3b13f95834cc2e811d65a8bf987ff,One more README fix
+jlfwong,2015-10-07 09:51:29,https://api.github.com/repos/Khan/aphrodite/git/commits/35e8868c4102ab5e24b9d3e7295c91eaaad13471,35e8868c4102ab5e24b9d3e7295c91eaaad13471,README changes
+jlfwong,2015-10-07 09:48:47,https://api.github.com/repos/Khan/aphrodite/git/commits/29d6842e7d6a1577d8c23d5910e6d7898f17bda7,29d6842e7d6a1577d8c23d5910e6d7898f17bda7,Initial commit

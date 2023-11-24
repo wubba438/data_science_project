@@ -1,0 +1,1381 @@
+libphenom,An eventing framework for building high performance and high scalability systems in C.
+username,timestamp,url,sha,message
+Imxset21,2019-03-08 18:48:07,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2878c267153a3e9f423edb3c918edbd1e1aaf5c7,2878c267153a3e9f423edb3c918edbd1e1aaf5c7,Update README with deprecation message
+wez,2016-01-28 00:22:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b93da641dd8f678b49692bcdfb6407bea7bdbca3,b93da641dd8f678b49692bcdfb6407bea7bdbca3,Bump up minimum CK version to 0.5.0
+wez,2016-01-28 00:18:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/8bb10c25bbcb8fc68aa67e949399c84aa1e93050,8bb10c25bbcb8fc68aa67e949399c84aa1e93050,mechanical change to allow compilation with CK 0.5.x
+tyrellj,2015-12-08 18:57:39,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d187b1163ee9ed05f632dff014e6aff014055963,d187b1163ee9ed05f632dff014e6aff014055963,fix warning for implicit declaration of function 'ph_snprintf' in tests/buf.c
+tyrellj,2015-12-08 18:57:00,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6c14c49bd5e864285cb496c6e0c207d9ca6599cc,6c14c49bd5e864285cb496c6e0c207d9ca6599cc,Mark static assert type as unused.
+tyrellj,2015-11-17 01:11:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6f4094821ef32a27d79ee2b9b11a42631728c1e7,6f4094821ef32a27d79ee2b9b11a42631728c1e7,"Cleanup leftover ph_stm_init() prototype.
+
+The method was removed in commit 07b55a27.
+
+fixes issue #77."
+richardjrossiii,2015-05-13 20:37:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4d56a10b2c7f36a169400a85dbb76397bc1f11d5,4d56a10b2c7f36a169400a85dbb76397bc1f11d5,"Added support for buffer queue max_record_size.
+
+Summary: Added max_record_size for buffer queues to limit memory and CPU usage when scanning extremely large buffers in an append -> consume_record loop.
+
+Test Plan: Create a new buffer queue, note that it will truncate itself after exceeding its max record size limit and set errno to EOVERFLOW.
+
+Reviewers: wez
+
+Reviewed By: wez
+
+Differential Revision: https://phabricator.fb.com/D2046371
+
+Tasks: 4455985
+
+Signature: t1:2046371:1431547070:fe2b6de6deffbf1d901199ed8584f792199f4bf7"
+mattus,2014-11-08 13:27:07,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7360fea43b49fd89a1a8c02e3f41eefa383b81c1,7360fea43b49fd89a1a8c02e3f41eefa383b81c1,fixed: l_isxdigit macro should only allow hexadecimal characters
+mattus,2014-11-08 13:24:50,https://api.github.com/repos/facebookarchive/libphenom/git/commits/22d5c0952b60be40073b0dd1874a37f6cf55b4eb,22d5c0952b60be40073b0dd1874a37f6cf55b4eb,new test case around unicode escaping in json parser
+wez,2014-11-13 15:29:10,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c371263ec2df0d485a2c5e0bbefda2a94c89f707,c371263ec2df0d485a2c5e0bbefda2a94c89f707,"linting: Default to pwd if the .git dir is missing
+
+The cause of the build failure in https://github.com/facebook/libphenom/issues/72
+is that the brew build checks out the repo without the .git dir.
+
+The linter is looking to make paths relative to the root, and it was
+finding the .git dir to determine where the root was.  Without the git
+dir being present, it ends up being relative to `/` and fails the build
+because the include guards don't match that scheme.
+
+If the .git dir is missing, we'll now just assume that we're being run
+from the root, which is the only way that this script is run in
+libphenom."
+wez,2014-08-23 21:01:34,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3da7cc622b6a33a0c6522e826804953b67bb36a1,3da7cc622b6a33a0c6522e826804953b67bb36a1,Re-point travis to the CK repo
+sbahra,2014-08-19 17:57:44,https://api.github.com/repos/facebookarchive/libphenom/git/commits/5c8704755e21861ed555d3d379cd9ef04f62aa95,5c8704755e21861ed555d3d379cd9ef04f62aa95,corelib/counter: Correctly handle NULL case.
+sbahra,2014-08-19 17:45:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c432aa6b49859a47bce3aaf3f59153235a22ef28,c432aa6b49859a47bce3aaf3f59153235a22ef28,"corelib/counter: Fix ck_malloc wrapper functions.
+
+Return NULL on allocation failure and do not ignore
+deferral flag. This avoids unnecessary deferrals if
+possible."
+wez,2014-07-10 00:34:28,https://api.github.com/repos/facebookarchive/libphenom/git/commits/01c39330cd856b8ab05a3799ebbc30a34994e09a,01c39330cd856b8ab05a3799ebbc30a34994e09a,"Make epoll_ctl errors fatal errors
+
+We see this every so often and they result in a bad state, so it is
+best to terminate."
+abelmathew,2014-06-12 22:22:59,https://api.github.com/repos/facebookarchive/libphenom/git/commits/883c11fd83fc3d2bcf496dd8d07d497c24cacb43,883c11fd83fc3d2bcf496dd8d07d497c24cacb43,"Correctly set EVFILT_WRITE for nbio emitters when using kqueue.
+
+Summary: Fixes a typo in corelib/nbio/kqueue.c:ph_nbio_emitter_apply_io_mask
+that incorrectly set EVFILT_READ when the mask parameter specified interest in
+write events."
+wez,2014-05-08 20:57:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4eebc82ec0969ed3c9852bd50cd3dd1af150cecf,4eebc82ec0969ed3c9852bd50cd3dd1af150cecf,"libphenom: test and fix bufq ad-hoc size buf
+
+Summary:
+The bug was caused by calling `select_size` to determine which
+of the pre-defined buffer buckets to use and passing the result down
+to the buffer constructor, which itself calls `select_size`.
+
+If the desired buffer to be appended is larger than 64k, we'll try to use a
+single ad-hoc buffer that exactly matches the size to be appended.  In this
+case, `select_size` will return zero.
+
+When `select_size` is called with 0 as the size, it will pick a default size of
+8192 bytes.  When calling `ph_bufq_append` with a len > 64k we actually end up
+allocating 8192 bytes instead and end up writing only 8192 but recording the original size,
+and subsequently read off the end of the buffer space :-(
+
+In the environment where this was detected, ASAN didn't catch the invalid
+memory accesses.
+
+The resolution is to simply pass the length down to the buf constructor
+function; the intermediate assignment to the `buflen` is not needed and is a
+remnant of an earlier incarnation of this function.
+
+Test Plan:
+Added a unit test to verify memory integrity with a range of buffer sizes.
+
+```
+brew install concurrencykit  # or otherwise install locally
+./autogen.sh
+./configure
+make check
+```"
+wez,2014-04-21 16:47:38,https://api.github.com/repos/facebookarchive/libphenom/git/commits/18cefb23a97befdccede96a88a1cd6b48cef253b,18cefb23a97befdccede96a88a1cd6b48cef253b,Remove ares from pkg-config deps
+saghul,2014-04-21 10:48:13,https://api.github.com/repos/facebookarchive/libphenom/git/commits/99abee7da7b66091a03234c4bd2d83d82312f50a,99abee7da7b66091a03234c4bd2d83d82312f50a,update readme about c-ares dependency
+wez,2014-04-20 20:12:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/93f9015d2aaa1a7253bbbd3e9fa9c2aa8a3c02e6,93f9015d2aaa1a7253bbbd3e9fa9c2aa8a3c02e6,"Fixup install rule for ck unbundling
+
+Also add `make install` to travis to try to catch this sort of issue
+faster in the future."
+wez,2014-04-19 19:27:51,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d929042db682b5d297df1e417b7dbc162f45e3af,d929042db682b5d297df1e417b7dbc162f45e3af,update readme about CK dependency
+wez,2014-04-19 19:08:23,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2203f9e3a3de1b94c0b5db0bb217c25a92db9bb8,2203f9e3a3de1b94c0b5db0bb217c25a92db9bb8,"Fixup travis build for CK upgrade
+
+Bump the CK version that we pull in for travis builds.
+
+Can't use unlikely in this code branch, because the code branch is already
+unlikely and the code size would grow:
+
+```
+thirdparty/ck/include/ck_ring.h:243:1: error: inlining failed in call to 'ck_ring_enqueue_spmc': call is unlikely and code size would grow [-Werror=inline]
+corelib/job.c:539:12: error: called from here [-Werror=inline]
+```"
+brucespang,2014-04-09 00:51:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/01b3837258eaf5e86d833c5985a94ce71129d663,01b3837258eaf5e86d833c5985a94ce71129d663,"Upgrade concurrency-kit to 0.4.1
+
+This includes a breaking api change for ck_ring (introduced in ck
+0.3.3). Applications that use both libphenom and ck_ring will need to
+modify their use of ck_ring."
+wez,2014-04-19 18:55:13,https://api.github.com/repos/facebookarchive/libphenom/git/commits/95f47d376ce6663ffd9932452a5d7417fdd64771,95f47d376ce6663ffd9932452a5d7417fdd64771,remove ares from travis build config too
+wez,2014-04-19 18:47:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e2894dff7ae11cdc3a18dd6d818de370b664844f,e2894dff7ae11cdc3a18dd6d818de370b664844f,"Remove libcares support
+
+See https://github.com/facebook/libphenom/issues/57 for context
+
+The future is most likely http://getdnsapi.net/"
+wez,2014-04-19 16:08:18,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6e88a904cf0fae84d2d0c81ca123a4fc9702f3ae,6e88a904cf0fae84d2d0c81ca123a4fc9702f3ae,"Fix up travis build for unbundled CK
+
+Since we don't bundle the library, we need to fetch and build it as part
+of the travis run."
+brucespang,2014-04-09 00:53:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/31803b9acee83e22cb81fc579211cc0b39d33762,31803b9acee83e22cb81fc579211cc0b39d33762,Remove thirdparty/ck references in Makefile
+brucespang,2014-04-08 23:30:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/18e1a9a0346f6104bdd31519fb1544949eb70bfa,18e1a9a0346f6104bdd31519fb1544949eb70bfa,Use pkg-config to build concurrency-kit
+brucespang,2014-04-08 20:43:43,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6008e942802c9166d525ba4bd308de8712e0eedc,6008e942802c9166d525ba4bd308de8712e0eedc,Remove bundled ck
+wez,2014-03-31 01:44:57,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bc0153bff605b52f6c2301fddf652dcef48ca3b0,bc0153bff605b52f6c2301fddf652dcef48ca3b0,"Allow listeners to opt out of SSL_CTX_free for ph_sock_t
+
+Summary: SSL server contexts are relatively more expensive to create
+than client contexts because they have to load certificates, keys and
+perhaps also DH parameters for PFS.  The unilateral SSL_CTX_free in
+sock_dtor forces a more expensive (and likely blocking!) operation for
+these sorts of contexts.
+
+This diff allows disabling the the SSL_CTX_free; when disabled, the
+application is solely responsible for managing the lifetime of the
+SSL_CTX associated with the SSL object that was enabled on the sock
+object.
+
+I've modified `examples/echo.c` to show how to use it in this fashion
+for listeners.  The `sclient` example code remains unchanged.
+
+Addresses https://github.com/facebook/libphenom/issues/58"
+wez,2014-03-05 03:56:44,https://api.github.com/repos/facebookarchive/libphenom/git/commits/5ba4197e20594e9755f81b67a64a639757d8e4db,5ba4197e20594e9755f81b67a64a639757d8e4db,"Make it clearer that you need defs.h first
+
+Addresses https://github.com/facebook/libphenom/pull/55"
+brucespang,2014-02-18 19:08:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9386edfa3ba58149ad3f685bcfd315e2b679f558,9386edfa3ba58149ad3f685bcfd315e2b679f558,Mention that the DNS thread pool is a part of the scheduler
+brucespang,2014-02-18 19:05:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6523eaacdb4cca228d6a9d61c6617cba1b002db4,6523eaacdb4cca228d6a9d61c6617cba1b002db4,Mention that restarting the scheduler is unsupported
+brucespang,2014-02-06 06:26:41,https://api.github.com/repos/facebookarchive/libphenom/git/commits/aa81addccce73dcdfa94dc0e6c34f783c98013f4,aa81addccce73dcdfa94dc0e6c34f783c98013f4,match pointer formatting
+brucespang,2014-01-24 02:54:09,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c62a102c6b775aed0a78e3d4c2d011917e759714,c62a102c6b775aed0a78e3d4c2d011917e759714,"reorder acceptor_data, since I was seeing inexplicable segfaults with the previous order"
+brucespang,2014-01-23 20:01:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3568daa4753864848fe88bfe3f40bdecff56f5eb,3568daa4753864848fe88bfe3f40bdecff56f5eb,add accessors and documentation for listener data
+brucespang,2014-01-23 18:37:55,https://api.github.com/repos/facebookarchive/libphenom/git/commits/34d355403c4fc661c31636e97bcbd827e502a3c5,34d355403c4fc661c31636e97bcbd827e502a3c5,"Add data pointer to listener struct.
+
+This allow us to preserve more state about the listener object when we handle an accept than was previously doable."
+wez,2014-02-09 23:38:12,https://api.github.com/repos/facebookarchive/libphenom/git/commits/af1a10049cc43dc62901c904f23108518a6566c7,af1a10049cc43dc62901c904f23108518a6566c7,"disable fini routines by default
+
+Added an --enable-placate-valgrind configure switch to turn them back
+on.
+
+They're problematic (read: unsafe) if you have C++ code that triggers
+during global destruction and calls into libphenom.  They only exist
+so that valgrind doesn't report leaks, so let's turn them off by
+default."
+wez,2014-02-08 20:26:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/202b74dcc8eb4a64ad55256a7601d65dce5b892b,202b74dcc8eb4a64ad55256a7601d65dce5b892b,"improve handling in a couple more edge cases
+
+No reason to roll back a partial operation on a bufq when the API
+provides a mechanism for indicating a partial.
+
+Treat EINTR and EINPROGRESS similarly to EAGAIN for fd operations."
+wez,2014-02-06 09:01:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f02e0c00aa14946bed7846929d7f7bb6ff5e3774,f02e0c00aa14946bed7846929d7f7bb6ff5e3774,"avoid looping on error
+
+I saw some cases where we'd get stuck looping after hitting a broken
+pipe.  If we detect an error, avoid triggering the speculative
+read/write logic that was recently added for ssl enabled sockets"
+wez,2014-02-04 17:54:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a2792b97295a80b0af428e3d38ea47a4ee5c267d,a2792b97295a80b0af428e3d38ea47a4ee5c267d,fix my lint error
+wez,2014-02-04 17:47:53,https://api.github.com/repos/facebookarchive/libphenom/git/commits/59d630992d684b4c3e6fcdf7c83aac1f9dae7cb1,59d630992d684b4c3e6fcdf7c83aac1f9dae7cb1,"handle more wakeup edge cases
+
+Do a better job at handling edge cases where we can try to operate
+on a job that has been scheduled for deferred free.
+
+We do this by performing more sanity checks for the pending-free state
+to avoid enqueuing more work that will likely trigger post-free
+
+Note that this was deployed in concert with setting
+$.nbio.max_per_wakeup = 1 to reduce the chances that we try to operate
+on a stale view of the event state (the wakeups were across threads)."
+wez,2014-02-04 17:42:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7d90f782d045c8c049eaa3cf5560e070941e916a,7d90f782d045c8c049eaa3cf5560e070941e916a,"Remove hyperthreading check on Linux
+
+This has been made obsolete by the thread affinity controls
+for thread pools, and in fact gets in the way of managing
+affinity directly because of the way we mod the assignment
+over the number of detected physical cores."
+wez,2014-01-30 00:15:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6439a96646c74e86ed90c97bebf53f7faa8139dd,6439a96646c74e86ed90c97bebf53f7faa8139dd,"sock: fixup stuck SSL sessions, tidy up free and affinity
+
+* For async connects, round-robin over the emitters for the completion
+  callback for better distribution.  You may use the new
+  ph_thread_emitter_affinity() function to obtain an affinity value
+  for the currently executing thread.  This is useful in cases where
+  you create a job for a connected socket and want to maintain
+  affinity with the connection callback thread (this is usually
+  desirable in order to minimize the chance that you schedule the
+  same fd in two different epoll instances on different threads)
+
+* For longer lived SSL sessions and/or systems under load with a
+  large number of concrrent SSL sessions, we observed that we could
+  get stuck pending read with partial data in the read buffer.
+  The data was actually read and staged somewhere in the SSL internals.
+  Avoid getting stuck by performing a speculative read after a dispatch;
+  if the read buffer size changed then we make another pass through
+  the dispatch callback.  This looks fugly and can bias towards
+  hot sessions, but works well in practice thus far."
+wez,2014-01-30 00:12:50,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c0d37781a7cd6b1cd36f532ae2e317259ee501ad,c0d37781a7cd6b1cd36f532ae2e317259ee501ad,"extend epoch around the full set of events from epoll
+
+The observation was that a mixture of timer and fd events coming back in
+a batch would operate on the same job; one would cause the underlying
+data to be ph_job_free()'d and reaped by the time the second one was
+dispatched.
+
+The equivalent to this should also be applied to the other nbio
+implementations.
+
+Also: fix missing mask assignment in the removal case."
+wez,2014-01-30 00:11:09,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ce09a6e82092201dd4e41e8953da45354917da96,ce09a6e82092201dd4e41e8953da45354917da96,avoid fault when printf'ing a null ph_string_t
+wez,2014-01-30 00:10:20,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e9011b35593f54fcf3e8684b69ce77509e2e130d,e9011b35593f54fcf3e8684b69ce77509e2e130d,add assertion to catch a double ph_job_free()
+wez,2014-01-20 23:50:36,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0e79792700cd3c4392a30e004b07758be50857d7,0e79792700cd3c4392a30e004b07758be50857d7,"prevent invalid free when using string slices
+
+I think I must have thought that the INVALID value was -1... :-/
+
+Without this fix, the revised unit test will fault"
+wez,2014-01-16 22:14:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b8b394543fc56201a3d7a11e5f9a03eb3af7f0de,b8b394543fc56201a3d7a11e5f9a03eb3af7f0de,"fixup osx and solaris builds to match epoll changes
+
+Moral equivalent of the epoll.c changes in
+37f54141e7739f8825c751708fd04f5974fb53ed
+
+Without this, iobasic.t will fail on OSX.  Solaris doesn't seem to care,
+but we should make the equivalent change for consistency."
+wez,2014-01-16 21:49:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e486ef426f1af668869900e982d13d314b45cccb,e486ef426f1af668869900e982d13d314b45cccb,"Be more aggressive at applying nbio masks
+
+If we are the target emitter, there is no reason to defer applying
+timer or epoll settings because we won't see the results of these
+changes until we unwind back up the stack; the purpose of deferring
+changes is so that the target nbio or thread pool won't start until
+after the current dispatch has unwound enough such that we avoid
+bugs where the target thread completes before the originating thread
+has finished revising its state to receive completion notification."
+wez,2014-01-16 21:47:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/588925f05328ccf8b45b07bb0156dffd43c7a2c0,588925f05328ccf8b45b07bb0156dffd43c7a2c0,"Downgrade ssl errors to INFO level
+
+A surprising number of SSL/TLS enabled services on the public internet
+have broken configurations (ranging from invalid certs, to ""bad"" cipher
+selections).
+
+Avoid making noise in the log stream when these are encountered.
+
+We probably should have a way to tap into the underlying SSL error stack
+in case there are interesting things that could be done at a high layer
+in the stack, but for most practical purposes all we care about is that
+an error was found."
+wez,2014-01-16 21:43:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7bf51e4465f47b22c41c64108f803cf2c2a9937c,7bf51e4465f47b22c41c64108f803cf2c2a9937c,"For short writev results, update bufq rpos correctly
+
+We were moving rpos to the end unconditionally.  Is situations where
+the data is large and a short writev result is encountered, we'd believe
+that we had sent all the data that was there when we actually had not.
+
+Manifestations would be missing chunks of data in the worst case, or
+stalled sessions in the best case (due to protocol mismatch)"
+wez,2014-01-14 03:52:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b0eff23ae652e4205fd584bc58e37088c23c06f4,b0eff23ae652e4205fd584bc58e37088c23c06f4,"Fixup some lint checks
+
+These weren't visible on my other system"
+wez,2014-01-14 03:25:01,https://api.github.com/repos/facebookarchive/libphenom/git/commits/37f54141e7739f8825c751708fd04f5974fb53ed,37f54141e7739f8825c751708fd04f5974fb53ed,"Conservative edge case hunt
+
+I've been hunting down some weird edges this past week.
+This commit is a bit of a lump of multiple pieces thrown together;
+sorry.
+
+job.c/common.c: Mildly gross check to see if we are pending apply or
+pending wakeup in the deferred free routine.  If we are, re-defer and
+free later.
+
+memory.c: In tracking down what turned out to be a memory corruption
+issue in a client of the library, needed to see which memtypes were
+at fault in some of our abort cases, so introduce memory_panic as a
+means for showing them.  The memtype paramter is typically optimized
+aware making it impossible to debug sanely via coredump.  We can't
+simply use ph_panic() in here as this may need to allocate memory
+and cause a double fault.
+
+epoll.c: don't inspect kmask as a means to avoid epoll_ctl syscalls.
+Relax the panic condition.  In the hunt this past week, it looked
+like were not applying our changes to epoll in a timely fashion.
+This change raises the volume of epoll_ctl syscalls that we make as
+a conservative measure to ensure that the correct state is applied.
+It may be that we don't need to be so aggressive, but for now, we
+know that this results in correct operation.
+
+socket.c: be more aggressive at pumping data into the appropriate bufqs.
+We saw what looked like stalled sessions (perhaps due to the reasons
+mentioned above for epoll.c) so we wanted to ratchet things up a bit.
+Also: when suspended, don't try to operate on bufqs when we get
+signalled.
+
+ssl_stream.c: if someone tries to use us after we've been closed,
+indicate an EBADF error rather than segv."
+wez,2014-01-10 04:23:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6fcffba5a8f89f8b2bb3a6e509d0092a8bf0e376,6fcffba5a8f89f8b2bb3a6e509d0092a8bf0e376,"Ensure that we remove a timer prior to manipulation
+
+In some cases, I've seen the timerwheel cascade fault with an invalid
+timer pointer.
+
+The theory is that we're disabling but not removing some timers either
+at all, or in time for the cascade to trigger and then we get tripped up
+over our bad state.
+
+This diff ensures that we remove the timer from its containing wheel
+before we either arrange to cancel to reschedule it out later."
+kev009,2013-12-23 04:56:41,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ee340daf0c3e3f9cccd19ec1d0d89330aae14aee,ee340daf0c3e3f9cccd19ec1d0d89330aae14aee,"Make _XOPEN_SOURCE definition agree with _POSIX_C_SOURCE for POSIX 2008 env
+
+Treat Solaris as POSIX 2001 as their check is not additive
+
+Addresses https://github.com/facebook/libphenom/pull/47"
+wez,2013-12-23 19:33:14,https://api.github.com/repos/facebookarchive/libphenom/git/commits/48bd43ddb8b156f4fd883eecf732c204048a1239,48bd43ddb8b156f4fd883eecf732c204048a1239,"Fix false affinity error on FreeBSD
+
+It was succeeding but we were claiming failure
+
+Reported in https://github.com/facebook/libphenom/issues/48"
+wez,2013-12-23 19:18:07,https://api.github.com/repos/facebookarchive/libphenom/git/commits/77d29f26c4dfb22e5867ecbebf4b073eef487e0b,77d29f26c4dfb22e5867ecbebf4b073eef487e0b,"Remove usage of AI_V4MAPPED
+
+This caused our tests to fail on FreeBSD and doesn't really add any
+value.
+
+Addresses https://github.com/facebook/libphenom/issues/49"
+kev009,2013-12-20 23:28:12,https://api.github.com/repos/facebookarchive/libphenom/git/commits/be110fbfa83bb997e0fa5bf08325f804e4300ee6,be110fbfa83bb997e0fa5bf08325f804e4300ee6,Fix a couple unused param warnings found by clang on FreeBSD
+wez,2013-11-30 20:23:00,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c2f3484e3f6a9a4f01ad755bf1eb03d8e78753f6,c2f3484e3f6a9a4f01ad755bf1eb03d8e78753f6,add pending jobs counter to thread pools
+wez,2013-11-29 06:58:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a847705381a0c74efad34e8f356e2e212bf8ec69,a847705381a0c74efad34e8f356e2e212bf8ec69,"add ""collector"" callbacks for idle threads
+
+Details in the header docs.
+
+Tested this by adding a collector to examples/echo and observing it
+get called every 5 seconds for the scheduler thread and dns threads.
+
+If I connect to the echo server and interact with it, the collector
+for the scheduler thread is delayed by my interaction before resuming
+every 5 seconds."
+wez,2013-11-27 19:08:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2771014b4178e116a82f8d66216aa5b0023dadb2,2771014b4178e116a82f8d66216aa5b0023dadb2,"fix size calculation for hash tables
+
+Addresses https://github.com/facebook/libphenom/issues/44
+
+The problem was that the compiler was producing int32_t sized results
+when figuring out sizes and offsets.  Combine this with a large number
+of elements (large enough to overflow 32-bits) and the table would be
+allocated smaller than we needed.
+
+This solves the problem in the fewest keystrokes by promoting the
+size of a couple of fields to 64-bit, but has the side effect of
+changing the size of the hashtable struct."
+wez,2013-11-27 01:12:03,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6f6c1a82fdc74e5d3446549e67498baacb93990f,6f6c1a82fdc74e5d3446549e67498baacb93990f,"Expand thread affinity support
+
+Details on usage are in the docs.  This diff is mostly a fairly
+simple refactor of the affinity setting routines and some parsing
+of configuration parameters."
+wez,2013-11-26 07:45:28,https://api.github.com/repos/facebookarchive/libphenom/git/commits/21e66657cc4ceb603bcb212c1221dfff36170eea,21e66657cc4ceb603bcb212c1221dfff36170eea,increase size of circular log buffer
+wez,2013-11-26 03:19:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/fef94b26abbfb9745a00e828b72aec8f4c54afb9,fef94b26abbfb9745a00e828b72aec8f4c54afb9,coalesce pings when queueing affine function calls
+wez,2013-11-25 19:40:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7c83f8283659a7d051c107bbd368b6f36f124b34,7c83f8283659a7d051c107bbd368b6f36f124b34,gimli: show deferred items for threads in the trace
+wez,2013-11-25 07:04:04,https://api.github.com/repos/facebookarchive/libphenom/git/commits/379c4fa762384e26ca6b12d049f92de06a8fe17c,379c4fa762384e26ca6b12d049f92de06a8fe17c,"timer: make sure emitters catch up their timers
+
+If a dispatch takes longer than 100ms, an emitter will start to
+fall behind on timer dispatches.  Make sure we catch up each time
+we dispatch a timer trigger."
+wez,2013-11-24 01:46:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/06f4e0a6d645f4e6df1deda2d202e30cf90c6b60,06f4e0a6d645f4e6df1deda2d202e30cf90c6b60,"Add ph_nbio_queue_affine_func(), ph_job_wakeup()
+
+This reinstate some of the affine dispatch functionality from an earlier
+incarnation of phenom.  This allows executing an application defined
+callback function in the context of a specific emitter thread (selected
+using the emitter_affinity value).
+
+A trivial example of its use is seen in examples/sclient.c where we
+read a line from stdin, mutate the state associated with a sock object,
+and then wake it up so that it can send out that data.
+
+Another use case is scheduling a periodic job, but causing it to
+trigger immediately in response to some other stimulus."
+wez,2013-11-23 21:21:26,https://api.github.com/repos/facebookarchive/libphenom/git/commits/52dd10aec41a17c8427c197b96fa214a93c4e3ab,52dd10aec41a17c8427c197b96fa214a93c4e3ab,"add <phenom/feature_test.h> to detect configure time features
+
+This is distinct from the generate bucket-of-HAVE_XXX stuff that
+we accumulate in configure, because we want to be deliberate about
+what we put into the global C namespace"
+wez,2013-11-23 20:41:30,https://api.github.com/repos/facebookarchive/libphenom/git/commits/99206cff12129e8932c2e7aa550555b4b88cb6af,99206cff12129e8932c2e7aa550555b4b88cb6af,"make libcares optional
+
+Had a couple of folks run into problems with this dependency, and it
+isn't so critical that this needs to be a hard requirement.
+
+Also handle being built against older versions of the library such
+as those on Ubuntu 10.04.
+
+Will likely need to evolve a nicer feature test system for the headers
+to deal with this functionality not being present in the library."
+wez,2013-11-21 18:46:05,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2864ff2250ed9ac8b344685215eb6a4418ba1fbd,2864ff2250ed9ac8b344685215eb6a4418ba1fbd,"make sure we remove our timer when we free a job
+
+We've seen a couple of timer related faults; on further inspection,
+we weren't ever explicitly removing a timer when we freed a job.
+
+This amends ph_job_free to disable a timer at the point where the
+free is deferred, and then remove the item from the wheel during the
+dtor (this latter is a blocking operation)."
+wez,2013-11-21 02:43:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/234de68a0147311d8893952fe4f10887945d2117,234de68a0147311d8893952fe4f10887945d2117,fun with stdio buffering
+wez,2013-11-18 18:29:18,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3370574d07bdddd3542ef51889aec13050cf5516,3370574d07bdddd3542ef51889aec13050cf5516,"fixup stream.t on some platforms
+
+libphenom.a isn't guaranteed to be present now that we're using libtool,
+so use aclocal.m4 instead (>300k)"
+wez,2013-11-16 20:21:15,https://api.github.com/repos/facebookarchive/libphenom/git/commits/49527e8bffc040ab025fbe0c8a69aafea9d75aa6,49527e8bffc040ab025fbe0c8a69aafea9d75aa6,"add gimli tracer module support
+
+Moves a couple of private types into internal headers and build a shared object
+that the gimli glider debugger can load to extract more human readable
+information about a faulting process (see below for example of how it renders
+when run against the echo server example).
+
+Since the glider module itself uses libphenom, and the glider module has to be
+a shared object, we also need to build a shared object for libphenom.
+
+This requires the current HEAD version of gimli, but only if you enable gimli
+support during configure.
+
+Adds a circular log buffer so that we can capture some recent error state in
+the trace files produced by gimli too.
+
+```
+$ glider `pgrep -x phenom:sched`
+
+...
+
+COUNTERS
+                                   bytes  oom  allocs  frees
+              memory.ares.channel     88    0       1      0
+                memory.ares.query      0    0       0      0
+               memory.ares.socket      0    0       0      0
+                memory.buffer.16k      0    0       0      0
+                memory.buffer.32k      0    0       0      0
+                memory.buffer.64k      0    0       0      0
+                 memory.buffer.8k      0    0       0      0
+             memory.buffer.object      0    0       0      0
+              memory.buffer.queue      0    0       0      0
+          memory.buffer.queue_ent      0    0       0      0
+              memory.dns.addrinfo      0    0       0      0
+        memory.example.echo_state      0    0       0      0
+                 memory.hook.hook      8    0       1      0
+                memory.hook.unreg      0    0       0      0
+        memory.socket.connect_job      0    0       0      0
+           memory.socket.listener    656    0       2      0
+memory.socket.resolve_and_connect      0    0       0      0
+               memory.socket.sock      0    0       0      0
+             memory.stream.string      0    0       0      0
+             memory.string.string     40    0       1      0
+           memory.threadpool.pool    832    0       1      0
+           memory.variant.variant      0    0       0      0
+
+                                   bytes  oom  allocs  frees  realloc
+       memory.ares.query_response      0    0       0      0        0
+               memory.ares.string      0    0       0      0        0
+              memory.buffer.vsize      0    0       0      0        0
+                memory.dns.string      0    0       0      0        0
+           memory.hashtable.table   3136    0       3      0        0
+                 memory.hook.head      0    0       0      0        0
+               memory.hook.string     19    0       1      0        0
+             memory.stream.stream      0    0       0      0        0
+        memory.threadpool.ringbuf   8480    0       2      0        0
+             memory.variant.array      0    0       0      0        0
+              memory.variant.json      0    0       0      0        0
+
+                                   dispatched  timer_ticks  timer_busy
+                          iosched         120          118           0
+
+                                   dispatched  consumer_sleep  producer_sleep
+                   threadpool.dns           0               6               0
+
+RECENT LOGS
+1384727716.988 err: phenom:sched/0 will listen on [::]:8080
+```"
+wez,2013-11-16 00:42:39,https://api.github.com/repos/facebookarchive/libphenom/git/commits/5c1795401d62d9d259a9bee266a517934621ac95,5c1795401d62d9d259a9bee266a517934621ac95,"Allow overriding the PYTHON at make time
+
+This is useful in some automated build environments where we are
+sensitive to python versions and where we don't care about the lint
+results."
+wez,2013-11-16 00:27:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/716adb01aef29a17fd489e8cb4ae8864ededcee7,716adb01aef29a17fd489e8cb4ae8864ededcee7,"Add test for bufq straddle when searching for delimiters
+
+And fix bug..."
+wez,2013-11-15 21:41:05,https://api.github.com/repos/facebookarchive/libphenom/git/commits/852b19faecccecc667d99c09b990a8dc82485252,852b19faecccecc667d99c09b990a8dc82485252,tidy up return values for this ares call
+wez,2013-11-01 09:13:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bc9b8bd9d22d94813a86978d14e3206baf2f03a7,bc9b8bd9d22d94813a86978d14e3206baf2f03a7,"fixup string stream seek position
+
+Two issues addressed here:
+
+* json dumping to a string was overwriting rather than appending to the
+  stream
+* Boundary check for string streams meant that you couldn't set the seek
+  position to append"
+wez,2013-11-01 02:15:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/10dbc30d2c6e4a5f730eb48b4707baa0a54b88c1,10dbc30d2c6e4a5f730eb48b4707baa0a54b88c1,"fix issue with stack -> heap growable strings
+
+Whoops; we weren't copying the original buffer over when we were
+doing our initial allocation.
+
+This meant that we'd end up with random string contents if the
+string was non-zero in length prior to the append that put us
+over the stack allocation size."
+wez,2013-11-01 02:15:32,https://api.github.com/repos/facebookarchive/libphenom/git/commits/09944d8cf1e83efbcaf275142c3b1bc3af7ecbe8,09944d8cf1e83efbcaf275142c3b1bc3af7ecbe8,Fixup constant name for docs
+wez,2013-10-23 19:38:51,https://api.github.com/repos/facebookarchive/libphenom/git/commits/af1e7dd6dadd20a8f12bf381a07ec5b53e5d5d1e,af1e7dd6dadd20a8f12bf381a07ec5b53e5d5d1e,"Fix build on Mavericks
+
+(Suppress more deprecation stuff in the openssl headers)"
+wez,2013-10-23 16:30:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7081dc3c00d7e6acf12fe6bddcf0176ea3e93ae9,7081dc3c00d7e6acf12fe6bddcf0176ea3e93ae9,"whoops, one more pthread_getname_np
+
+https://github.com/facebook/libphenom/issues/38"
+wez,2013-10-23 16:28:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/143bd9b5ea5e78ecd100a96792d0e44bccbb5750,143bd9b5ea5e78ecd100a96792d0e44bccbb5750,"Detect pthread_getname_np in configure
+
+Addresses https://github.com/facebook/libphenom/issues/38"
+wez,2013-10-23 16:18:02,https://api.github.com/repos/facebookarchive/libphenom/git/commits/50be7bd7004844111174b840e7fd05096f7d9e97,50be7bd7004844111174b840e7fd05096f7d9e97,"Raise default max dns timeout to 60 seconds
+
+5 was too short, leading to spurious false timeouts on successive
+queries."
+wez,2013-10-19 23:00:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/86a69d878b835f94307ef9c19f6f836047410c96,86a69d878b835f94307ef9c19f6f836047410c96,"actually reap after idling in worker threads
+
+We don't exit this loop unless we have a job or unless we're shutting
+down, so we should reap inside it."
+wez,2013-10-18 20:58:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3d2ac590c257b740a30c5d3a77deb559dbedf7c4,3d2ac590c257b740a30c5d3a77deb559dbedf7c4,"Fix an issue with deferred memory reclamation
+
+Thread pool workers would only poll for reclamation while busy.
+If a thread falls idle before an epoch ends, then its memory
+won't get reclaimed until that thread wakes up to process work
+later on.
+
+This diff introduces a maximum wait of 5000 milliseconds (configurable)
+for worker threads; if the worker idles for this period, we'll wake
+up and poll for memory to reclaim."
+wez,2013-10-17 04:31:03,https://api.github.com/repos/facebookarchive/libphenom/git/commits/74faec25ab670e29470c374948d0e0c84dc33208,74faec25ab670e29470c374948d0e0c84dc33208,"fix ph_assert expr
+
+Whoops..."
+wez,2013-10-10 17:40:29,https://api.github.com/repos/facebookarchive/libphenom/git/commits/cfae96c2770228995f9b6b3905d47af03d429b41,cfae96c2770228995f9b6b3905d47af03d429b41,"augment thread name in ph_log
+
+In environments where we're mixing libphenom with other systems (such as
+thrift dispatchers), we may invoke logging from a thread that doesn't
+have phenom TLS.  In that case we want to print out a more meaningful
+name.
+
+This is two-pronged: when setting up phenom TLS, try to copy the
+name from the system.
+
+When logging, if we don't have phenom TLS, use the name and the thread
+id.  We try to get the LWPid from the system if we can."
+wez,2013-10-10 16:40:29,https://api.github.com/repos/facebookarchive/libphenom/git/commits/370ed3b4a5c69a51807a8727006ae603c6e7bad9,370ed3b4a5c69a51807a8727006ae603c6e7bad9,"[lint] use a more active mode of speech
+
+It may be lint, but I'm not going to take code that doesn't match
+the styling, and the build will fail if you don't address it,
+so make the output more commanding."
+wez,2013-10-10 16:22:09,https://api.github.com/repos/facebookarchive/libphenom/git/commits/5c59fbba544c3b4c841851e6f0788abe7968c436,5c59fbba544c3b4c841851e6f0788abe7968c436,"[docs] fixup parameter names
+
+resolves https://github.com/facebook/libphenom/issues/36"
+wez,2013-10-10 04:25:32,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e774550542a518b809a53ea6c0f7edb022ae569d,e774550542a518b809a53ea6c0f7edb022ae569d,"add PH_STRING_DECLARE_STATIC_CSTR
+
+Complements PH_STRING_DECLARE_STATIC but can be used with char pointers
+and not just string literals."
+wez,2013-10-09 23:35:20,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7b50834e17b0a8c30277561fa135edf5f23f80b7,7b50834e17b0a8c30277561fa135edf5f23f80b7,"Add ph_job_dispatch_now
+
+This executes a job right now on the calling context.
+This is useful for passing ""closures"" around and signalling completion."
+wez,2013-10-09 03:58:09,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d9619578d1eead9fb11432572fd7b9a92ddc45f8,d9619578d1eead9fb11432572fd7b9a92ddc45f8,"build in parallel on travis hosts
+
+Should speed up the clang-analyze portion of the build there"
+wez,2013-10-09 03:51:30,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0667f67f73caf6023d757171ccfe55b117fb1873,0667f67f73caf6023d757171ccfe55b117fb1873,"Add compiler option to enable address sanitizer
+
+Default to enabling this for travis builds.  I don't think we
+need to have with/without modes for it, at least not explicitly...
+The gcc version available in the travis environment doesn't support
+it, so we should only see it when we use clang there."
+wez,2013-10-08 18:49:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9ae39bc0d8db177774a1a9804f984f7ec4db4108,9ae39bc0d8db177774a1a9804f984f7ec4db4108,add PH_STRING_DECLARE_STATIC
+wez,2013-10-07 19:15:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9e71a80f47e46493430181dec9df9fa85c6e7d70,9e71a80f47e46493430181dec9df9fa85c6e7d70,"Add checks for select and stdio usage
+
+Also: redundant return statements at the bottom of void functions."
+wez,2013-10-07 08:29:42,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a36575d4e50ab74f7519eb377bed60d15f4dd56d,a36575d4e50ab74f7519eb377bed60d15f4dd56d,"add clang-analyze target for enabling static analysis
+
+We run this in the travis builds, but we don't make things fatal because
+the false positive rate is > 50%.
+
+It did find a couple of real issues in the buf code though, so it's
+worth keeping"
+wez,2013-10-07 07:28:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2f1cd27550a04ebd36b1785dd6179bb975784a88,2f1cd27550a04ebd36b1785dd6179bb975784a88,"Modify cpplint to more closely approximate libphenom style
+
+Tidy up some lint issues that it found and make lint issues that it
+discovers be classed as broken build issues.  This will allow us to
+proceed with pretty strict rules, and will help avoid making a bunch
+of seemingly pedantic comments on incoming pull requests.
+
+Pipe this into `arc lint` too, for folks running arcanist (you get nicer
+context displays with arc lint)."
+wez,2013-10-07 01:38:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a5e8e080b25d74281e69a6f32c49dc984cfe0527,a5e8e080b25d74281e69a6f32c49dc984cfe0527,"Add cpplint.py
+
+We'll tweak this to match the libphenom styling; this is the unmodified
+version."
+wez,2013-10-04 21:14:32,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7c4f63b444e21072210d0a1d0a518a30b528a312,7c4f63b444e21072210d0a1d0a518a30b528a312,add explicit clear_timer function
+wez,2013-10-03 00:36:56,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9c446f7e22c8d28262729a0cc89c991b37d7f6c7,9c446f7e22c8d28262729a0cc89c991b37d7f6c7,"add ph_stm_readahead()
+
+Requests that we fill up our buffer.  Useful in situations where
+you are willing to block now if it will help you avoid blocking
+in a different context.  For example: you are in a thread pool now
+but will be executing NBIO later."
+wez,2013-10-02 20:42:15,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d63b1044ee99ff3cd8e0ac15697ad117c56b9e2d,d63b1044ee99ff3cd8e0ac15697ad117c56b9e2d,"call ph_stm_flush() as part of ph_stm_close()
+
+you know, it might be important to actually write that data out."
+wez,2013-10-02 20:32:17,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d43de0ea81d24f99890f0896579a6afc0f6942aa,d43de0ea81d24f99890f0896579a6afc0f6942aa,add unistd.h for SEEK_SET
+wez,2013-10-02 18:07:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2c6eb33359e82de30299783e23cbe95cb75af08c,2c6eb33359e82de30299783e23cbe95cb75af08c,"add ph_stm_copy()
+
+Another one that I always end up wanting/needing.
+
+Also: tweak the test harness to make it clearer when the plan is messed
+up by colorizing things... and also have it detect bogus printf
+formatting."
+wez,2013-10-02 17:36:42,https://api.github.com/repos/facebookarchive/libphenom/git/commits/8b0d40129938abfde09df960c7904cc01fca18d3,8b0d40129938abfde09df960c7904cc01fca18d3,"rampage against automake: move aux dir
+
+The new test-driver stuff that lands in the top level is rage inducing
+when it comes to tab completion.  Move it aside!"
+wez,2013-10-01 18:47:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/004baaa6c5f49d39441759b9c7c8768ab9fdc6b7,004baaa6c5f49d39441759b9c7c8768ab9fdc6b7,"fixup c++ compilation
+
+and add some docs for the job template stuff"
+wez,2013-10-01 00:28:42,https://api.github.com/repos/facebookarchive/libphenom/git/commits/388360b3b8bbbe6f31c211906c608bd2908f118d,388360b3b8bbbe6f31c211906c608bd2908f118d,"add ph_thread_pool_signal_stop()
+
+This allows tearing down the threads when they are no longer required.
+This doesn't free the underlying pool (it's considered permanent)"
+deepak1556,2013-10-01 03:43:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f19444dc4b4206b033f1242bcc9b23f552af44d7,f19444dc4b4206b033f1242bcc9b23f552af44d7,"auto generation of proper tags
+
+For context, see:
+
+https://github.com/facebook/libphenom/pull/28
+https://github.com/facebook/libphenom/pull/30"
+wez,2013-09-30 21:56:10,https://api.github.com/repos/facebookarchive/libphenom/git/commits/59f0167d4dcf3884df21a944d73151ae1fe2fec1,59f0167d4dcf3884df21a944d73151ae1fe2fec1,"add helper for getting at a c-string rendition of a ph_string_t
+
+Docs explain it; we prefer to copy (or not copy if possible) to the
+stack over using the heap.  The rationale is that most of the strings
+we'll pass to c-string APIs will be small enough that stack will be
+appropriate; my immediate use case is passing strings to posix APIs
+for use as filenames."
+wez,2013-09-30 17:50:17,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4ffab02cfe242f25de26b0bcebb30102f0723240,4ffab02cfe242f25de26b0bcebb30102f0723240,more crosslinks for variant docs
+wez,2013-09-30 17:43:52,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ce76ff757ae6e593fe36256b48ed81d65594810d,ce76ff757ae6e593fe36256b48ed81d65594810d,improve cross-links in the variant docs
+wez,2013-09-30 07:37:10,https://api.github.com/repos/facebookarchive/libphenom/git/commits/09570f3d043e3d3c413c7eaadc2a188190a0f572,09570f3d043e3d3c413c7eaadc2a188190a0f572,"pretty print json for the docs
+
+Not sure if this was breaking gh-pages or if something else broke it
+around the same time... but having put this code together, might
+as well check it in now."
+wez,2013-09-30 07:07:27,https://api.github.com/repos/facebookarchive/libphenom/git/commits/20d22c50dd5e57f59d445e502794138143c77d5a,20d22c50dd5e57f59d445e502794138143c77d5a,"fixup doc entry name matching
+
+Adding `PH_` for macros meant that struct ph_job was being mislabeled
+as a PH_STAILQ_ENTRY.  Make the title check prefer `struct`s that start
+the line.  This duplicates a later rule that matches `struct` anywhere
+in the line because it is late and I'm too lazy to check to see what
+might be affected if I remove the latter."
+wez,2013-09-30 06:59:38,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d7be502ef6398c5ee2171d0315135335a0e5901c,d7be502ef6398c5ee2171d0315135335a0e5901c,"fix potential use-after-free with ares
+
+Noticed this while digging into
+https://github.com/facebook/libphenom/issues/29:
+
+```
+==26939== Invalid write of size 8
+==26939==    at 0x10000AFD8: ph_job_set_nbio (in ./tests/dns.t)
+==26939==    by 0x10000388B: sock_state_cb (in ./tests/dns.t)
+==26939==    by 0xCD79: ares__close_sockets (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+==26939==    by 0xD976: ares__destroy_servers_state (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+==26939==    by 0xD871: ares_destroy (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+==26939==    by 0x100003AC7: do_ares_fini (in ./tests/dns.t)
+==26939==    by 0x100001C0F: ph_library_teardown (in ./tests/dns.t)
+==26939==    by 0x2FC524: __cxa_finalize (in /usr/lib/system/libsystem_c.dylib)
+==26939==    by 0x2FE68A: exit (in /usr/lib/system/libsystem_c.dylib)
+==26939==    by 0x2667E7: start (in /usr/lib/system/libdyld.dylib)
+==26939==  Address 0x100105950 is 16 bytes inside a block of size 120 free'd
+/*
+==26939==    at 0x75B8: free (in /usr/local/Cellar/valgrind/HEAD/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==26939==    by 0x100009DB7: ph_mem_free (in ./tests/dns.t)
+==26939==    by 0x1000038A6: sock_state_cb (in ./tests/dns.t)
+==26939==    by 0xCD79: ares__close_sockets (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+==26939==    by 0xD976: ares__destroy_servers_state (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+/*
+==26939==    by 0xD871: ares_destroy (in /usr/local/Cellar/c-ares/1.10.0/lib/libcares.2.dylib)
+==26939==    by 0x100003AC7: do_ares_fini (in ./tests/dns.t)
+==26939==    by 0x100001C0F: ph_library_teardown (in ./tests/dns.t)
+==26939==    by 0x2FC524: __cxa_finalize (in /usr/lib/system/libsystem_c.dylib)
+==26939==    by 0x2FE68A: exit (in /usr/lib/system/libsystem_c.dylib)
+==26939==    by 0x2667E7: start (in /usr/lib/system/libdyld.dylib)
+```
+
+I only saw it once, so seems hard to trigger, but nonetheless:
+Switch to using a job template and SMR to address this."
+wez,2013-09-30 06:18:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/66a16e7e6c4933421ca60b87391b6d7f9b6c046e,66a16e7e6c4933421ca60b87391b6d7f9b6c046e,"add null ptr check in ph_string_equal_cstr
+
+See https://github.com/facebook/libphenom/issues/29 for context"
+wilsonwen,2013-09-29 19:19:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bcd585b03a2f968855764cd467354963e08c5141,bcd585b03a2f968855764cd467354963e08c5141,fix line wrapping & use ck_pr_faa_8
+wilsonwen,2013-09-27 22:51:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/06317880e22156836492312bcbe8f32405e614b7,06317880e22156836492312bcbe8f32405e614b7,Fix thread-unsafe bug.
+wilsonwen,2013-09-25 22:48:48,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3a1f3a824cc10095bef6eb4331e8b538625089fe,3a1f3a824cc10095bef6eb4331e8b538625089fe,"It's not thread safe.
+
+Use concurrency kit cas to make thread safe."
+wilsonwen,2013-09-25 22:25:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/19415c7df23026b81ce9c3eae0a78356ae52311c,19415c7df23026b81ce9c3eae0a78356ae52311c,'Slot' should be put before the compare expression to guarantee thread safe.
+wez,2013-09-29 20:31:57,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3612c82170df75a959e6c464c49840ebc3223adf,3612c82170df75a959e6c464c49840ebc3223adf,"Consolidate counter and thread TLS data, revise init
+
+Tackle a couple of things:
+
+* Both threads and counters had their own copies of code to manage
+  allocations and TLS data; consolidate it into one
+* Resolve some initialization issues
+* Addresses https://github.com/facebook/libphenom/issues/11 by
+  removing the dependency on ph_mem_alloc for ph_thread_t data
+
+This gives us better defined initialization semantics both within
+the library and for the client applications that consume it.
+
+It also reduces some boilerplate with pthread_once and the (albeit
+very very small) overhead that introduced into the various call sites.
+
+The new initialization approach uses the `constructor` attribute of
+gcc to cause a shim function to run prior to `main`.  This shim function
+registers the true constructor/destructor functions and arranges for
+them to run at `ph_library_init` time.
+
+Using the linker to manage construction means that we'll only pull
+in the pieces that are used in the application.
+
+gcc supports specifying priorities for constructors but this isn't
+available to all systems (notably Solaris)."
+wez,2013-09-29 00:35:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4fe1692013051701b40c20c1f2e5022990100a4d,4fe1692013051701b40c20c1f2e5022990100a4d,affinity: make listener round-robin the accepted sock
+wez,2013-09-29 00:31:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d5409e06373f68ec908381f86130641b82f23584,d5409e06373f68ec908381f86130641b82f23584,"some gccs barf on pragma diagnostic push
+
+So let's just be explicit about what we want to happen"
+wez,2013-09-26 18:37:05,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3a80820a3edfa80273e3415d9f859280ac4d9ba4,3a80820a3edfa80273e3415d9f859280ac4d9ba4,Fixup build on kssl enabled platforms
+wez,2013-09-26 18:06:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/07cd4ef81f472e76d81037cd0656c41de16cb08a,07cd4ef81f472e76d81037cd0656c41de16cb08a,ensure that inttypes.h exports PRIxXX
+wez,2013-09-26 17:41:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/007fc36b5e7266b3a51b2cc52290135ebbe30a4b,007fc36b5e7266b3a51b2cc52290135ebbe30a4b,add ph_string_append_str
+wez,2013-09-22 05:27:07,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4004c02f57861388222e0d73dae1132a9849f049,4004c02f57861388222e0d73dae1132a9849f049,"Add OpenSSL support to ph_sock_t
+
+Addresses https://github.com/facebook/libphenom/issues/20
+
+Since SSL carries around a lot of state, we chose to implement the
+bulk of the logic in ph_sock_t.
+
+This commit adds some connectors for BIO->ph_stream_t and so on;
+these exist to facilitate the ph_sock_t implementation and have
+some limitations (such as missing read primitives) in some cases.
+
+We choose to provide just enough infrastructure for you to build
+your protocol on top of ph_sock_t.  In particular, you need to provide
+the SSL context and object management.
+
+We may evolve this over time to add more convenience functions.
+
+This commits augments the echo example to demonstrate how to enable
+SSL for a listener, and adds a very simple sclient example that shows
+how to build an SSL client.
+
+Also: fixup an issue with bufq's where gc can leave them completely
+empty of spare buffers."
+wez,2013-09-25 02:46:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0d8723cd0fccb94e8a9f3292bddc8549adb3ff3a,0d8723cd0fccb94e8a9f3292bddc8549adb3ff3a,"add emitter affinity
+
+Addresses the bulk of https://github.com/facebook/libphenom/issues/21
+I'm punting on mutiplexing scheduler threads on emitters for now,
+simply because the current epoll() syscall implementation is a
+limiting factor.
+
+This commit does a couple of things:
+
+* Factors the various system dependent emitter code out into files
+  of their own
+* Factors the emitters so that we can set up multiple emitters
+* Create one emitter per scheduler thread
+* Increases the size of the emitter event buffer; previously, we
+  would collect only a single event at a time in order to be fairer
+  to the rest of the scheduler threads.  Since jobs are now affine,
+  we no longer have this concern.  (This comes at the cost of a slow
+  job delaying all the other jobs with the same affinity)
+* Adds `emitter_affinity` to the job struct; this can be used to
+  set the affinity of the job (surprise!)
+* Set emitter_affinity in iopipes.c
+* Fixup the Illumos build
+
+The affinity change gives us almost linear scaling of the dispatch
+rate in iopipes.t as we raise the number of scheduler threads;
+previously, we'd see a drop-off as we passed HT and socket boundaries
+due to cache coherency traffic overheads."
+jsavolainen,2013-09-24 12:16:52,https://api.github.com/repos/facebookarchive/libphenom/git/commits/889334016ea490e8cfdd437268c7a9f24254bb78,889334016ea490e8cfdd437268c7a9f24254bb78,Fixed bug when reading data from buffer queue with more than one buffers
+wez,2013-09-23 00:12:28,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7068b7b463c91f3edab220fedcfd73452ac0c043,7068b7b463c91f3edab220fedcfd73452ac0c043,"update quick start
+
+* make sure they `make install`
+* make sure they're using optimization
+
+also: advertise the IRC channel"
+wez,2013-09-21 21:09:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3d05d804ed1e73f4ee9ef285892f11df0927860d,3d05d804ed1e73f4ee9ef285892f11df0927860d,"Add an echo server example
+
+Addresses (at least in part!)
+https://github.com/facebook/libphenom/issues/10"
+wez,2013-09-21 17:44:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b00674ade800ad1a8a216435138fd39b5bb6f618,b00674ade800ad1a8a216435138fd39b5bb6f618,"fix build on 32-bit systems
+
+Addresses https://github.com/facebook/libphenom/issues/13
+The underlying issue is that 32-bit systems don't have 64-bit CAS
+primitives so we need to size our ring bits to the system pointer
+size instead.
+
+I did some light testing of this by amending tpool.t to use 64 threads
+and it seemed to work (the concern would be whether we overflow
+MAX_RINGS)"
+wez,2013-09-21 06:23:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c902bc37f2de33876f1ac27c048a5f3e721564d2,c902bc37f2de33876f1ac27c048a5f3e721564d2,"fixup quickstart example
+
+Also advertise the cares dependency in the pkg-config file so that
+we can use the simple compiler invocation I've just added to the docs."
+wez,2013-09-21 06:15:03,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e810f4dddbc8d4ee04771d269de22aa83bf0e50e,e810f4dddbc8d4ee04771d269de22aa83bf0e50e,"Don't leak bufs and streams in the debug console
+
+There's some slight irony in that checking the memory usage could leak
+memory."
+wez,2013-09-21 05:55:53,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2df1452eb3336feafeae8002b461aeeea63c97d3,2df1452eb3336feafeae8002b461aeeea63c97d3,"nbio scheduler adjustments for OSX
+
+- Don't treat EV_EOF as an error condition.  It can be asserted even
+  when there is data pending read in the kernel buffer; if the remote
+  does SHUT_RD but is still connected we'll get EV_EOF.
+  Instead, we detect EOF by attempting to read.  Adjust debug_console
+  accordingly.
+
+- Because of this difference, the socket dispatcher will attempt queue
+  up an nbio mask manipulation for read, then queue up a subsequent
+  clearing of the mask during free.  Our STAILQ stuff will corrupt
+  the list if you attempt a double insert and this leads to badness.
+  So we need to use a flag to determine if we have a pending item."
+wez,2013-09-21 05:42:03,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a96b180d98d9f805b5a531d8503b117789e646ae,a96b180d98d9f805b5a531d8503b117789e646ae,"fix runtime assert to assert if !expr...
+
+welp, that's a bit embarrasing.  Also print out a more meaningful
+message."
+wez,2013-09-20 03:49:27,https://api.github.com/repos/facebookarchive/libphenom/git/commits/663def5bf527d634f284cc0740ad576627d03216,663def5bf527d634f284cc0740ad576627d03216,Allow json parser to indicate whether a failure is transient
+wez,2013-09-20 03:16:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a728f7f33e5d62f2d4d71e29cf9169d1f835ac6d,a728f7f33e5d62f2d4d71e29cf9169d1f835ac6d,"add note about autoconf and automake
+
+See https://github.com/facebook/libphenom/issues/14"
+wez,2013-09-19 00:07:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/83c88b0b4fb0a7fbc4defa98fe119a4a0f607399,83c88b0b4fb0a7fbc4defa98fe119a4a0f607399,"use a smaller font for scale.png
+
+Makes it easier to read off the numbers when we go as high as 100k"
+wez,2013-09-18 21:56:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3bd71be7ded8a78a179af4aa53a37a50a4611d58,3bd71be7ded8a78a179af4aa53a37a50a4611d58,"tidy up gimli heartbeat
+
+Just use a simpler approach of triggering a barrier on a set interval,
+then pinging the heartbeat afterwards."
+wez,2013-09-18 18:48:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7a57cd2574c7d11b400b898a3eedd29197ad79f0,7a57cd2574c7d11b400b898a3eedd29197ad79f0,"Make it easier to bench and chart iopipes.t
+
+Relatively quick and dirty PHP script to drive iopipes.t with varying
+parameters and collect it into a csv.
+
+Thanks to Samy Al Bahra for the `R' script"
+wez,2013-09-18 15:13:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2f9290b1321fb84fc31189eed3110c390025011a,2f9290b1321fb84fc31189eed3110c390025011a,"update ignores for newer automake test suite artifacts
+
+I updated my autotools and have a bunch of new generated bits to ignore"
+flowly,2013-09-18 00:55:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6bcb020c5801af990cb80b43cfb424a1debff176,6bcb020c5801af990cb80b43cfb424a1debff176,Fix bug: close socket when connect failed
+wez,2013-09-18 02:35:18,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ae1968f3f35cd70077d177aafe489b80efbda327,ae1968f3f35cd70077d177aafe489b80efbda327,"more work towards https://github.com/facebook/libphenom/issues/6
+
+I could only get this to repro with clang built using homebrew,
+and it triggered rarely.
+
+This is a continuation of the prior fix attempt, which ""fixes""
+things by not triggering the barrier call from inside the TLS
+dtor.
+
+This introduces the possibility of a resource leak on thread shutdown
+if the thread is not one spawned by the phenom thread functions
+directly, so we'll need to do some follow-up work on this."
+wez,2013-09-17 07:47:42,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b23ae9e4edebc4bf503f0a977bf3532d6008f34f,b23ae9e4edebc4bf503f0a977bf3532d6008f34f,"address https://github.com/facebook/libphenom/issues/7
+
+Use a good old fashioned #define instead of an inline to
+avoid this compiler bug:
+
+```
+corelib/variant/json-dump.c: In function ‘dump_string’:
+corelib/variant/json-dump.c:34: error: inlining failed in call to ‘dump’: call is unlikely and code size would grow
+corelib/variant/json-dump.c:151: error: called from here
+make: *** [corelib/variant/libphenom_a-json-dump.o] Error 1
+```"
+wez,2013-09-17 06:50:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/75a11cb7fc73c649d56267a39177025c03977da0,75a11cb7fc73c649d56267a39177025c03977da0,"address https://github.com/facebook/libphenom/issues/6
+
+What was going on here was a bit tricky; I'm not entirely sure why
+this only triggered with clang on OSX.
+
+I could reproduce a very similar stack trace reasonably often with
+dns.t
+
+The sequence of operations was this:
+
+A DNS worker thread finished:
+
+- the counter TLS key was destroyed, tearing down the epoch_record
+  associated with that thread
+- the ph_thread TLS key was destroyed.  There were deferred items
+  to be reclaimed (scheduled with ph_thread_epoch_defer) and these
+  were dispatched now in the TLS dtor.  This in turn called
+  ph_mem_free(), which in turn wants to update memory counters.
+- The counter subsystem noticed that it didn't have a counter head
+  for this thread (we tore it down already) so attempted to recycle
+  and register a new head.  At some point in this process, the
+  memory in the ph_thread_t for the current got corrupted.
+
+We can avoid this by having our spawned threads trigger an explicit
+barrier before they exit; this will cause the deferred memory to
+get freed and counters updated before we land in the TLS dtor code.
+
+We might just be dodging a problem here; if the dtors allocate memory
+we'll also trigger code to establish counter heads.  We'll probably
+revisit this issue again in the future."
+wez,2013-09-17 00:37:27,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ffda5bcf759274ca05fc375e582fd9bf162fc6b6,ffda5bcf759274ca05fc375e582fd9bf162fc6b6,add travis build status icon
+wez,2013-09-17 00:22:19,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f3450e7249a3fdc31161e9de2fe1da063c419841,f3450e7249a3fdc31161e9de2fe1da063c419841,"Fixup build with clang 3.2
+
+https://travis-ci.org/facebook/libphenom/jobs/11442675#L383"
+wez,2013-09-16 23:46:17,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bb8fc815b1a7c330f2ae9394f1a08b9377912470,bb8fc815b1a7c330f2ae9394f1a08b9377912470,fixup compilation and build with clang
+wez,2013-09-16 21:49:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4840489f1691e1232e065507985097a5feec7780,4840489f1691e1232e065507985097a5feec7780,kick travis
+wez,2013-09-16 21:36:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2c307fb103fbd5743260bb2fd723ec76457bf7d8,2c307fb103fbd5743260bb2fd723ec76457bf7d8,take a stab at travis-CI integration
+wez,2013-09-16 19:26:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/ca4dbd4c09924fdf1ef170e958e23aaea4543493,ca4dbd4c09924fdf1ef170e958e23aaea4543493,typo
+wez,2013-09-16 19:22:43,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9e5de95cd155a7dbeac7b06df41326e80b440baa,9e5de95cd155a7dbeac7b06df41326e80b440baa,couple of doc tweaks
+wez,2013-09-16 18:16:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/11a7ecdc18fcf819622d2038774af0b48c0eddcd,11a7ecdc18fcf819622d2038774af0b48c0eddcd,"we're not 1.0 yet, dial it back to 0.1"
+wez,2013-09-16 17:45:01,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4e4827748fbaf8b3c620d92814caff232bfa0f45,4e4827748fbaf8b3c620d92814caff232bfa0f45,add a note on how to get a hold of the code
+wez,2013-09-16 02:13:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0d968be0bb59c1ad41146400b49bea74ce94b57c,0d968be0bb59c1ad41146400b49bea74ce94b57c,couple of adjustments for watchman
+wez,2013-09-14 20:29:20,https://api.github.com/repos/facebookarchive/libphenom/git/commits/dfdc5c2826943153580f708c52c77a6190d75a1e,dfdc5c2826943153580f708c52c77a6190d75a1e,"tidy up our namespace
+
+Don't install or export the defines we detect during configure.
+Instead, for the one thing that we do need to export, put that
+into a pkg-config file"
+wez,2013-09-14 16:54:46,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3bb36c3d9b95e07d0984cc00611f7fa595f1f14c,3bb36c3d9b95e07d0984cc00611f7fa595f1f14c,"Sync up with imminent CK 0.3 release
+
+This is current with 1237681a71ed24a9f66ccd541605bd14cd5d6253
+in CK master; we were previously floating between releases.
+
+This adds arm support to CK, but libphenom itself needs to recognize
+arm before it can be used."
+wez,2013-09-13 06:20:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/7644196fc8f2ae133e2b81c85e742074c9fcd4b6,7644196fc8f2ae133e2b81c85e742074c9fcd4b6,add gimli heartbeat support
+wez,2013-09-14 16:35:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c9d9965cf67368af39baf6bbc673a2cfa8bce656,c9d9965cf67368af39baf6bbc673a2cfa8bce656,resolve the gcc optimization bug during thread boot
+wez,2013-09-14 04:01:24,https://api.github.com/repos/facebookarchive/libphenom/git/commits/011a0067d8af8d59ae3f2562b34c381a979ff172,011a0067d8af8d59ae3f2562b34c381a979ff172,Rename to libPhenom
+wez,2013-09-13 01:58:14,https://api.github.com/repos/facebookarchive/libphenom/git/commits/cb8b1749c825a1974d906869cef1d35dadc271e4,cb8b1749c825a1974d906869cef1d35dadc271e4,"change counter separator to '.'
+
+This improves compatibility with some other infra that we talk to
+internally."
+wez,2013-09-12 22:53:07,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6f6eeb9118d187da77fb2e2268638928bccb9183,6f6eeb9118d187da77fb2e2268638928bccb9183,"s/unused_parameter/ph_unused_parameter/
+
+Was originally intended to be an implementation detail, but
+we're using it in timerwheel.h"
+wez,2013-09-12 21:51:34,https://api.github.com/repos/facebookarchive/libphenom/git/commits/724594f2ecb61abf426d34250e6c1cc6e4fda8bc,724594f2ecb61abf426d34250e6c1cc6e4fda8bc,"also install the CK headers
+
+fixup mkdir_p portability w/ other versions of automake"
+wez,2013-09-12 21:29:00,https://api.github.com/repos/facebookarchive/libphenom/git/commits/125fd041f701c1f8a253b5a940f525904ac19233,125fd041f701c1f8a253b5a940f525904ac19233,install headers during `make install`
+wez,2013-09-12 20:19:39,https://api.github.com/repos/facebookarchive/libphenom/git/commits/45b3e3308865a30b7a034e6fb1e8670ee249795d,45b3e3308865a30b7a034e6fb1e8670ee249795d,"only look for libevent if asked
+
+only run php to build docs if we found it"
+wez,2013-09-12 06:52:06,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4d4eb1fd5b3f53114e061e8d32c1448104030a82,4d4eb1fd5b3f53114e061e8d32c1448104030a82,make it easier to build docs for the web site
+wez,2013-09-12 06:22:28,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2f7267e0844aaaa560baf04969dfd74838d91c4d,2f7267e0844aaaa560baf04969dfd74838d91c4d,doc update
+wez,2013-09-11 23:03:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bfe0c16584660a77e569958ed6766056e9743f42,bfe0c16584660a77e569958ed6766056e9743f42,free everything in iopipes.t
+wez,2013-09-11 23:00:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f9eb28dfe60b86672b3abf21f9972e5f26980b07,f9eb28dfe60b86672b3abf21f9972e5f26980b07,"Add hook facility, allow hooking logging
+
+Hook facility allows runtime definition of hookpoints.  Each hook has
+a unique name and can have 0 or more subscribers bound to it.
+Similar in some ways to the glib signal mechanism, but much simpler.
+
+Default logging can be turned off and replaced with a hook
+implementation."
+wez,2013-09-11 09:14:16,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3c17ce9f0ea5e2e087f88b7ff551f181b1a82ea7,3c17ce9f0ea5e2e087f88b7ff551f181b1a82ea7,add runtime assertions
+wez,2013-09-11 01:46:56,https://api.github.com/repos/facebookarchive/libphenom/git/commits/cf82ea5bf5b2256a83ad3b44041e016f17c9519c,cf82ea5bf5b2256a83ad3b44041e016f17c9519c,add ph_static_assert support
+wez,2013-09-10 17:55:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/223302c0a701b1479097d6acc0f32760b9b7d6fd,223302c0a701b1479097d6acc0f32760b9b7d6fd,"use gcc builtin for offsetof, if available"
+wez,2013-09-10 02:36:48,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e2a834b2b1a3373f877ddb445df6cb0cb725c634,e2a834b2b1a3373f877ddb445df6cb0cb725c634,"add simple configuration API, using JSONPath syntax
+
+Add a relatively simplistic configuration API that uses the psuedo
+specification that is JSONPath for referencing a location in an
+object tree using a simple path notation.
+
+Adjust some API functions to use the API to set their values."
+wez,2013-09-09 22:18:27,https://api.github.com/repos/facebookarchive/libphenom/git/commits/38130a11d479a742512f6a579fe0a7a8ecc111c3,38130a11d479a742512f6a579fe0a7a8ecc111c3,"Add super simple debug ""console""
+
+Allows very simple interrogation of system state using a one shot
+invocation:
+
+```echo memory | nc -UC /tmp/phenom-debug-console```
+
+or
+
+```echo counters | nc -UC /tmp/phenom-debug-console```"
+wez,2013-09-09 21:02:29,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a687e2ce9fb7681c6648a6791dd87a6ae4f9a188,a687e2ce9fb7681c6648a6791dd87a6ae4f9a188,"add sock_free API
+
+Also add a printf renderer for bufs."
+wez,2013-09-09 17:53:03,https://api.github.com/repos/facebookarchive/libphenom/git/commits/cb736971dd4be240a4714a1871abb3c36400441a,cb736971dd4be240a4714a1871abb3c36400441a,add simple listener API
+wez,2013-09-08 22:48:01,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0adffbf8e2d011f77c80486279101eec025841af,0adffbf8e2d011f77c80486279101eec025841af,Allow registering formatters for our printf
+wez,2013-09-08 18:30:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/12a9cc717c0bfcbe46bbbe732d95a9708c8b29a2,12a9cc717c0bfcbe46bbbe732d95a9708c8b29a2,"add socket object API
+
+This helps in constructing clients"
+wez,2013-09-08 16:53:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/78e7e85cec028e4ad0cdf584612e76b6d0ab3c96,78e7e85cec028e4ad0cdf584612e76b6d0ab3c96,"add ph_stm_writev, remember need_mask
+
+The need mask will be useful later, when SSL support is added, so
+that we can tell if we need to be read/write to service a logic
+read or write operation."
+wez,2013-09-08 16:50:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a68f3ec4d6df93fe95a3150134b02fc94c6ae05e,a68f3ec4d6df93fe95a3150134b02fc94c6ae05e,add ph_dns_channel_gethostbyname()
+wez,2013-09-08 16:48:24,https://api.github.com/repos/facebookarchive/libphenom/git/commits/deaa86f9a4070ac49b2db884fd952d882ec1a157,deaa86f9a4070ac49b2db884fd952d882ec1a157,Add buffer API
+wez,2013-09-08 16:36:44,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b8c52987ea6c41d9d288d9da39cce76d0e50001c,b8c52987ea6c41d9d288d9da39cce76d0e50001c,"hopefully this resolves the va_list passthru stuff
+
+Visited this a couple of times already; it seems like we must pass
+the address of the va_list through, regardless of platform, but that
+we must also va_copy the address that we pass through so that it is
+in a deterministic state--seems like the optimizer can break it
+for us in some cases if we don't va_copy."
+wez,2013-09-08 16:35:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c04d49624d13e922f43d9fa6ffb92742346e71a1,c04d49624d13e922f43d9fa6ffb92742346e71a1,always want dwarf debug info
+wez,2013-09-04 23:20:17,https://api.github.com/repos/facebookarchive/libphenom/git/commits/5748084933309d3c75ed81b0d743b93289a78fa2,5748084933309d3c75ed81b0d743b93289a78fa2,add async connect function
+wez,2013-09-05 06:20:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/65b81b86d22fec4c4bc00e55a925f29ccd21eebd,65b81b86d22fec4c4bc00e55a925f29ccd21eebd,"take a stab at using epoch based reclamation
+
+Provides a facility integrated into our thread layer.
+Workers and NBIO threads start implicit epochs on each
+dispatch, and poll to reclaim between dispatches.
+
+Jobs are the first objects to be tracked in this way."
+wez,2013-09-04 19:19:05,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b5ecc5f5fd39b3033934b784a836a203e5931760,b5ecc5f5fd39b3033934b784a836a203e5931760,fixup pkg-config usage and rpath for osx
+wez,2013-09-04 19:13:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/117c1d98c66077b5d626ea9306b90b996c21a557,117c1d98c66077b5d626ea9306b90b996c21a557,"Fixup pkg-config usage so that we set the rpath
+
+Needed for systems where the library is somewhere outside of the default
+path"
+wez,2013-09-04 18:33:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3399f295591031e6f9c3bcd6442932f5ad24d3dc,3399f295591031e6f9c3bcd6442932f5ad24d3dc,"Add async DNS resolution facilities
+
+Paving the way to async connection functionality"
+wez,2013-09-03 02:10:27,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2bd38a08566a05484e54a8b6e54d5d72b377684b,2bd38a08566a05484e54a8b6e54d5d72b377684b,add simple async getaddrinfo API
+wez,2013-09-02 21:09:57,https://api.github.com/repos/facebookarchive/libphenom/git/commits/1ffa66737058d681fa06e291939e73a6d4b2cdd7,1ffa66737058d681fa06e291939e73a6d4b2cdd7,add sockaddr type
+wez,2013-09-02 18:17:16,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e06ab14b0344fdc5bcaa6309e6ee9c97885b7cae,e06ab14b0344fdc5bcaa6309e6ee9c97885b7cae,"Fixup docs search
+
+Hash can be an empty string and jquery doesn't like searching for that"
+wez,2013-09-02 17:17:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4e70c5219db5ce3628fe004866bf6c4879f5c3ce,4e70c5219db5ce3628fe004866bf6c4879f5c3ce,"fixup build on centos 5
+
+Compiles and runs properly on my centos5 machine"
+wez,2013-07-23 07:16:29,https://api.github.com/repos/facebookarchive/libphenom/git/commits/07b55a276df3e58c3c134f2c8a6a6539e8eb676d,07b55a276df3e58c3c134f2c8a6a6539e8eb676d,"Centralize initialization to ph_library_init()
+
+You still need to invoke ph_nbio_init() with your desired number
+of schedulers.  Will ultimately add a variation on this that will
+consume some kind of standardized configuration file.
+
+closes issue #5"
+sbahra,2013-07-22 05:04:15,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c0f43f628470a104fbfcea2c96588616a12a5e22,c0f43f628470a104fbfcea2c96588616a12a5e22,"build: Update CK to something more recent.
+
+Next step is to fix the actual integration so it's less
+of a headache for the Phenom team."
+wez,2013-07-16 07:31:00,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d1160beea866e777d72a4f43733df2d614e2721d,d1160beea866e777d72a4f43733df2d614e2721d,"docs: add note about how to get access to the docs
+
+Lots of docs you can read if only you knew how..."
+wez,2013-07-16 07:05:55,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2af407b194249f001e4e95ebbe0a523e0546c06c,2af407b194249f001e4e95ebbe0a523e0546c06c,"variant: add pack/unpack API
+
+Modeled closely after the Jansson library equivalents, but tweaked
+to accomodate our ph_string_t type."
+wez,2013-07-15 01:27:33,https://api.github.com/repos/facebookarchive/libphenom/git/commits/99f6b548aa5024655c8d77ae657e398a65fd408b,99f6b548aa5024655c8d77ae657e398a65fd408b,variant: add ph_var_equal
+wez,2013-07-14 21:45:55,https://api.github.com/repos/facebookarchive/libphenom/git/commits/240fa7c256a3d8ed2b9ccfcce0611163cc41d080,240fa7c256a3d8ed2b9ccfcce0611163cc41d080,"json: add dump support
+
+We can now dump variants as JSON text.
+
+Other semi-related tweaks:
+
+- Allow ph_mem_free() of a NULL pointer (NOP)
+- Colorize TAP output when session is interactive
+- Fix positioning issue with string streams"
+wez,2013-07-13 23:10:52,https://api.github.com/repos/facebookarchive/libphenom/git/commits/eb45e03b72ec3657dfb3d9fd4a33199365c1b79b,eb45e03b72ec3657dfb3d9fd4a33199365c1b79b,"Add json loading
+
+This is a port of the jansson JSON parser that targets the
+phenom variant layer."
+wez,2013-07-13 18:33:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a9fa46bca4d05dbba513b9dfb922af60bb3bfcfc,a9fa46bca4d05dbba513b9dfb922af60bb3bfcfc,Add string stream
+wez,2013-07-13 16:39:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/6b4fded150f45842262d8584fb2ea83cf3257f76,6b4fded150f45842262d8584fb2ea83cf3257f76,"Add simple UTF-8 and UTF-16 string support
+
+This is intended to support serialization to/from JSON and is not
+to be construed as full unicode support by any stretch of the
+imagination."
+wez,2013-07-01 00:47:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c0afec171aef1632e00fced50cd9f87970dd7a91,c0afec171aef1632e00fced50cd9f87970dd7a91,wip: variant
+wez,2013-07-07 20:05:05,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b2a82bae6a3c05e02902e448c8b828456913d3db,b2a82bae6a3c05e02902e448c8b828456913d3db,add some docs for defs.h
+wez,2013-07-05 17:39:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/b6c51c128a8920d3ef112f73572acd4499666971,b6c51c128a8920d3ef112f73572acd4499666971,"Add a hashtable facility
+
+Considering this v1 of the hash table facility.
+I usually implement open hashing and there may be some tweaking
+we can do for the probing in this implementation.
+
+Documentation included in the header file.
+
+Also tweak the doc processing to support Phabricator ""Remarkup"" inspired
+counter-examples and notes."
+wez,2013-07-06 18:24:23,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e17e918db75f9c1f0bdb1bb17a10f456d0a31d1c,e17e918db75f9c1f0bdb1bb17a10f456d0a31d1c,"more doc work
+
+Add access to the header files via a Headers dropdown.
+
+Tighten up the styling of the search typeahead; also attempt to show
+excerpts of the matching docs in the typeahead."
+wez,2013-07-06 02:34:35,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a5d5a632e9aa4d83fe5ae3322eb18f0c6cb4e026,a5d5a632e9aa4d83fe5ae3322eb18f0c6cb4e026,"docs: make one html file to rule them all
+
+This embraces javascript and sticks all the generated docs in one html
+file.  Despite the summary, the html file is actually a fairly small
+static shell that loads the declmap file, computes a full text search
+index and dynamically renders markdown.
+
+The topics have been moved into a drop down menu because they take up
+too much horizontal space.
+
+A search box has been added that uses the bootstrap typeahead to call
+into the lunr client side search engine and suggests the correct
+document locations.
+
+Switching topics munges the DOM and applys the markdown from the new
+topic.
+
+Just start typing while the page is focused and you'll jump to the
+search bar and activate the typeahead.
+
+You can explicitly focus the typeahead by using the '/' key.
+
+Removed the individual generated html and markdown files."
+wez,2013-07-03 06:50:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/95eb710140f99ef230f0f5dee43a018a8d291cbe,95eb710140f99ef230f0f5dee43a018a8d291cbe,"Tweak timerwheel docs, add toggle header file section to docs"
+wez,2013-07-02 08:29:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d043545373d6fddda521c2582231e530dee3c2b0,d043545373d6fddda521c2582231e530dee3c2b0,"auto-linkify function names in docs
+
+If we see something like `foo()` and `foo` is in our list of titles
+computed when we built the docs, swap that out for a hyperlink to the
+appropriate doc."
+wez,2013-07-01 06:44:02,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3b901f3d660c66f0696e1096ca91272b7768e94c,3b901f3d660c66f0696e1096ca91272b7768e94c,fix doc id generation for headings with spaces
+wez,2013-07-01 06:22:37,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c4f32b113532c3f10efad83bf4355173fe9c7ddd,c4f32b113532c3f10efad83bf4355173fe9c7ddd,"Add ph_string_XXX suite of functions
+
+Docs are inline in the header file.
+
+Took the opportunity to increase the memtype id of the first valid
+memtype to make it easier to implement some of the string functions,
+as we are slightly evil and abuse negative memtype values.  Since 0
+doesn't have a valid negative value, we need to ensure that the first
+memtype is not zero.  We also want to avoid flipping the invalid memtype
+value (-1) to 1, so our first valid memtype value is 2.
+
+Realized that we might as well just redefine PH_MEMTYPE_INVALID to 0."
+wez,2013-06-30 23:21:09,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2c8d57a0d392002090055af9f3e605cbe27f48a4,2c8d57a0d392002090055af9f3e605cbe27f48a4,tidy up some doc formatting issues
+wez,2013-06-30 23:10:06,https://api.github.com/repos/facebookarchive/libphenom/git/commits/09a764445ba545ba80e68f7ebd0fdf93c231946c,09a764445ba545ba80e68f7ebd0fdf93c231946c,"Revise doc styling a bit more
+
+Fixup scrollspy offset too"
+wez,2013-06-30 18:16:21,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2e681e5027233b324c9502ff4fcbc35a34c311a9,2e681e5027233b324c9502ff4fcbc35a34c311a9,debug sidenav css issues
+wez,2013-06-27 21:01:56,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c54b09af96683568d60088427b8fb8f094ccb9b8,c54b09af96683568d60088427b8fb8f094ccb9b8,Fixup doc extraction and tweak doc comments
+wez,2013-06-27 19:57:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a1bda985c0aab37e70698a19707d40d8058fc841,a1bda985c0aab37e70698a19707d40d8058fc841,Pull the js/css we use for docs down locally and use those
+wez,2013-06-27 09:23:59,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4eace1f08a1e459147c0798552631aa3b03139c3,4eace1f08a1e459147c0798552631aa3b03139c3,"fixup decl detection
+
+Improve some of the docs a bit more"
+wez,2013-06-27 08:41:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/89aa3af65c8eb9332a563f12409ad4410c3310c8,89aa3af65c8eb9332a563f12409ad4410c3310c8,Add the readme to the html content we produce for docs
+wez,2013-06-27 08:34:34,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3faf5afccb72d5a07436e29ef2aedb41caacbed4,3faf5afccb72d5a07436e29ef2aedb41caacbed4,reinstate sidenav id
+wez,2013-06-27 08:31:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c7c6f8ba19690a4b558a4b8769dd3c262397e185,c7c6f8ba19690a4b558a4b8769dd3c262397e185,"Pull some of the doc bits into the tree
+
+This allows us to produce a TOC within the pages.
+
+Add doc build to the makefile."
+wez,2013-06-27 05:56:01,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f89cfcd13a69bfc215c2070cb9e36ed9eb867a73,f89cfcd13a69bfc215c2070cb9e36ed9eb867a73,let's also emit some HTML and use strapdown to render it
+wez,2013-06-27 00:35:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/efff73816be0f07c5f56d0be23242cfd0eb21b92,efff73816be0f07c5f56d0be23242cfd0eb21b92,tidy up counter docs
+wez,2013-06-26 23:58:43,https://api.github.com/repos/facebookarchive/libphenom/git/commits/8a7fa3c2ab694b0494116ad2334bbad586601ba9,8a7fa3c2ab694b0494116ad2334bbad586601ba9,"Combine epoch and counter heads into one struct
+
+This saves a TLS key and ""solves"" the TODO for recycling heads by
+having that handled by the epoch recycling functionality.
+
+Remove the barrier calls in the TLS dtor as these can cause deadlock
+on scheduler shutdown, and the memory associated with them should be
+sufficiently small that we don't really care about getting that
+back any time soon; much rather leave it hanging around for another
+thread to recycle and use later, assuming that this thread spawn/exit
+pattern is common in the applications that opt to use it, even if
+we'd prefer that the application use a set of long-lived threads anyway."
+wez,2013-06-26 23:18:25,https://api.github.com/repos/facebookarchive/libphenom/git/commits/478a45b0dae90b5f86aebc40af5d37f69ae8885e,478a45b0dae90b5f86aebc40af5d37f69ae8885e,"sweep counter init back into the pthread_once function
+
+You have to define at least one counter before using the other
+functions, and we define counters when we init the memory subsystem
+so this seems safe enough to me."
+wez,2013-06-26 22:06:54,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a24234497e30b091c649d3b6c154d6c72e213807,a24234497e30b091c649d3b6c154d6c72e213807,"Fixup compilation on OSX
+
+Need to always set the TLS for the epoch record otherwise our dtor
+won't get called.
+
+Rename some internal functions that will never be exported out of
+this file."
+wez,2013-06-26 07:53:42,https://api.github.com/repos/facebookarchive/libphenom/git/commits/e5d9ed440c3bfd41d7c1ec20b6a111981b9b3249,e5d9ed440c3bfd41d7c1ec20b6a111981b9b3249,"Remove doxygen thingy, replace with markdown extraction
+
+I don't really like the very bitty and disjoint nature of doxygen,
+so here's how we're doing docs:
+
+By convention, each header file begins with a section of markdown
+text enclosed in a C-style docblock region (enclosed in /** */).
+This is intended to describe in broad terms the facilities provided
+by that file and give some general examples.
+
+Then, each declaration in the header is prefixed with a docblock
+comment that contains documentation for that declaration.
+
+The convention for these is that the first line of the docblock is
+the abbreviated summary description of the thing and the remainder
+document it in more detail.
+
+The mkdoc.php script walks over the header files and produces a series
+of reasonably formatted markdown files in the docs dir which you are
+then free to consume using tools of your choice.
+
+The end result should be something reasonably well consumable by
+humans."
+wez,2013-06-26 05:24:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a0ec09fbb62a3d0904b1765cf5abee87fabc5b33,a0ec09fbb62a3d0904b1765cf5abee87fabc5b33,"Add very preliminary doxygen configuration
+
+Just run `doxygen` to build html docs; they land in docs/html"
+wez,2013-06-25 05:31:36,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a0fcb2ceefb7056563f43492e7797934a4fa7044,a0fcb2ceefb7056563f43492e7797934a4fa7044,track some missing CK files
+wez,2013-06-09 19:49:56,https://api.github.com/repos/facebookarchive/libphenom/git/commits/41b6106f04fe62cb1d86c9682ded55ab3be980a9,41b6106f04fe62cb1d86c9682ded55ab3be980a9,"Streamline nbio scheduling a bit
+
+Add a libevent comparison option to iopipes.t (-e) so that it is simpler
+to gut check against it. Couple of numbers are included at the bottom of
+this commit message; TL;DR is that we're a bit faster because we're
+doing overall less book keeping per event.
+
+Adding scheduler threads doesn't improve performance as linearly as we
+see with the pure thread pool dispatch in tpool.t, which isn't
+surprising, but it does seem to level off pretty rapidly with a small
+handful of threads for the iopipes workload.
+
+For kqueue, twist the deferred event scheduling code path so that we can
+batch the EV_SET operations into one kevent() syscall.  This makes a big
+difference and is worth the complexity.
+
+- Remove some sanity checks from the hot ph_job_set_nbio() function;
+  they slow it down.
+
+- Keep track of what we believe the kernel state of our descriptors to
+  be in the scheduling mechanism so that we can avoid making syscalls.
+
+Some numbers; single core only because that's all we can meaningfully
+use to compare against libevent here.  Adding more cores (raising the -c
+number) can increase overall events/s but we observe a decrease in
+events/s/core for the iopipes.t workload.
+
+The OSX and Linux boxes used to prepare these numbers are different
+machines.
+
+OSX/phenom:
+
+```
+./tests/bench/iopipes.t -n 1024 -c 1
+Over 0.995s, fired 505,155 events/s
+```
+
+OSX/libevent:
+
+```
+./tests/bench/iopipes.t -n 1024 -c 1 -e
+Over 1.004s, fired 471,385 events/s
+```
+
+Linux/phenom:
+
+```
+./tests/bench/iopipes.t -n 1024 -c 1
+Over 0.996s, fired 366,624 events/s
+```
+
+Linux/libevent:
+```
+./tests/bench/iopipes.t -n 1024 -c 1 -e
+Over 1.004s, fired 264,129 events/s
+```"
+wez,2013-06-08 23:08:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/0912af72e4875bccb593d6fc543fd490dec67aa0,0912af72e4875bccb593d6fc543fd490dec67aa0,"Add nbio benchmarking tool
+
+Also add some counters in the scheduler so that we can collect this
+data via counter-blocks and avoid additional counter overheads."
+wez,2013-06-08 19:41:02,https://api.github.com/repos/facebookarchive/libphenom/git/commits/52bd552bcd3528eaa0ba4b6c00189e6b5a36e752,52bd552bcd3528eaa0ba4b6c00189e6b5a36e752,"simplify timer and nbio jobs
+
+I didn't like the owner and versioning thing; it was too complex.
+This simplifies timer processing by making the following observations:
+
+Most timers on IO jobs are for timeout events, and those are typically
+far enough in the future that repeated remove/insert operations on
+an active fd are likely to compute the same bucket in the wheel.
+
+In addition, timeout triggers are pretty rare compared to actual IO
+dispatches anyway.
+
+Rather than force the sequence:
+
+```
+descriptor_ready:
+  lock_wheel()
+  remove_timer()
+  unlock_wheel()
+  dispatch_event()
+  lock_wheel()
+  add_timer()
+  unlock_wheel()
+```
+
+we can use:
+
+```
+descriptor_ready:
+  disable_timer()
+  dispatch_event()
+  enable_timer()
+```
+
+where the disable_timer function is a single CAS operation and needn't
+block any other dispatching threads.  This minimizes wheel locks to
+the timer dispatcher itself, or situations where the timer is newly
+added, being completely removed, or is re-bucketed.
+
+As another nod to avoid racy situations, this adds an additional
+before_dispatch callback in the timer_tick routine that allows the
+driver of the wheel to opt out of dispatching just-in-time or, as
+wired up in nbio.c, disable the IO portion of the event in the kernel."
+wez,2013-06-03 05:07:44,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c2753c2154a0cffc0bd70e8f28dd0ea884aab4fd,c2753c2154a0cffc0bd70e8f28dd0ea884aab4fd,"Add thread pools
+
+This is a pretty big commit due to a bunch of tuning and
+experimentation guided by some long cache profiling runs.
+
+More details on the thread pool implementation can be found in both
+job.c and job.h.
+
+tpool.t is able to sustain a rate in excess of 40mm jobs per second per
+core with a linear relationship to the number of physical cores.
+We observe this trailing off as virtual cores are used; results were
+observed on a 16 core (32 with HT enable) system.  Performance rapidly
+reduced to half the jobs-per-second-per-core once we passed 16 cores.
+
+* Reduced contention for ph_counter.  We no longer use ck_sequence
+  for counters as it introduced a number of expensive atomics that
+  we don't strictly need in our use case.  We still follow the
+  spirit of the sequence operation but the strength of the published
+  counters is a bit ""weaker"" in return for increased throughput.
+
+* Replaced ph_time_t with a regular timeval.  This resolves some
+  resolution issues with time math (signed 64-bit was not enough).
+
+* Expended ph_log() to include a higher resolution timestamp,
+  a readable level label and intelligently handle trailing newlines.
+  In addition, we print the thread name and tid.
+
+* Runs clean under valgrind --leak-check=full.  This is managed using
+  atexit() to force destroy a number of key structures that wouldn't
+  otherwise get destroyed.
+
+* ph_num_cores() - returns the number of physical cores (not
+  hyperthreads).  We use this to size the scheduler pool size and also
+  a pool size in the tpool.t test case."
+wez,2013-06-03 06:54:12,https://api.github.com/repos/facebookarchive/libphenom/git/commits/9c04a70f1e9bb7c7fcced5941bb9f6d978a89f7a,9c04a70f1e9bb7c7fcced5941bb9f6d978a89f7a,Fix compile warning
+wez,2013-06-03 05:14:16,https://api.github.com/repos/facebookarchive/libphenom/git/commits/3c126249ecfd83634a8b798859670d185cd64b32,3c126249ecfd83634a8b798859670d185cd64b32,Update CK to 0.2.18 (actually 3ca7072c146b62dd8)
+wez,2013-05-27 16:33:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/673fb2bf490ec3b7dde37985df5571542fb9338b,673fb2bf490ec3b7dde37985df5571542fb9338b,"simplify work into jobs
+
+Remove affinity; I wasn't happy with the amount of work we needed
+to do under the covers to make that work."
+wez,2013-05-26 22:14:41,https://api.github.com/repos/facebookarchive/libphenom/git/commits/448b54836b28eb21504115426b799bc4a63f323c,448b54836b28eb21504115426b799bc4a63f323c,log stacktrace on ph_panic()
+wez,2013-05-26 21:41:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/8589f78c19c7afcb9b0ec802d0eb1d5c4542d8e7,8589f78c19c7afcb9b0ec802d0eb1d5c4542d8e7,"make timer.t pass on solaris under arc unit
+
+Digging into this showed that our `Pv%s%p recursive format expansion
+stuff wasn't quite right on solaris.
+
+Introduce a macro to correctly(?) pass the va_list down.  I think
+this is a bit sketchy but seems to work out ok.  I wouldn't be
+surprised if this needs revisiting again in the future."
+wez,2013-05-26 20:06:43,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a2029a1a2e5add814de7ee4c6089f5ac23845f77,a2029a1a2e5add814de7ee4c6089f5ac23845f77,"add basic stream implementation
+
+Borrows some techniques from the stdio implementation in the MIT
+licensed musl libc."
+wez,2013-05-25 22:28:45,https://api.github.com/repos/facebookarchive/libphenom/git/commits/bee70be54a032d238e1963d86d66becbad619510,bee70be54a032d238e1963d86d66becbad619510,fix compile on osx
+wez,2013-05-18 15:24:14,https://api.github.com/repos/facebookarchive/libphenom/git/commits/d897528086fa283e7c97219fec380b4362a95e6f,d897528086fa283e7c97219fec380b4362a95e6f,Expand readme very slightly
+wez,2013-05-18 15:22:35,https://api.github.com/repos/facebookarchive/libphenom/git/commits/a33a409f1fa7e363c380f119ce4a02281bd15512,a33a409f1fa7e363c380f119ce4a02281bd15512,"Disable DEFAULT_INCLUDES in automake
+
+This causes some conflict issues because it seems to generate
+-Iinclude/phenom and that places headers like phenom/queue.h
+ahead of the system queue.h and so on."
+wez,2013-05-18 15:20:34,https://api.github.com/repos/facebookarchive/libphenom/git/commits/afbf85da8c220fd1650d5d8de72f8abaf0679500,afbf85da8c220fd1650d5d8de72f8abaf0679500,re-namespace from phenom_ -> ph_ ; life is too short
+wez,2013-01-01 06:29:08,https://api.github.com/repos/facebookarchive/libphenom/git/commits/46fb35af3f584783ac13aa2a4311faad4d64b3bc,46fb35af3f584783ac13aa2a4311faad4d64b3bc,refactor some build bits; now builds and passes on OpenBSD 5.2
+wez,2012-12-31 11:18:04,https://api.github.com/repos/facebookarchive/libphenom/git/commits/40fd49f28035cd5ecd525a0f95d2bbd4acd3e9b8,40fd49f28035cd5ecd525a0f95d2bbd4acd3e9b8,"use the ck hash set instead of the hash table for counter scopes
+
+I'm told that these will support MPMC without needing a write lock,
+and that the APIs are moving more in this direction."
+wez,2012-12-30 21:56:13,https://api.github.com/repos/facebookarchive/libphenom/git/commits/27a95fdc040c2370a5ddfc4405bab0d6b7b7be65,27a95fdc040c2370a5ddfc4405bab0d6b7b7be65,Now compiles and passes tests on fbsd 9.1
+wez,2012-12-30 18:58:58,https://api.github.com/repos/facebookarchive/libphenom/git/commits/4f7e8d95a2ad7844d0f3995a6d02a678192861bd,4f7e8d95a2ad7844d0f3995a6d02a678192861bd,"use __thread for counter.c
+
+Also add some branch prediction hints"
+wez,2012-12-30 18:43:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c366528de1e79244fa041e4d9aa7efebe38af45c,c366528de1e79244fa041e4d9aa7efebe38af45c,"only memset thread if we have __thread
+
+We may be able to eliminate it completely if the system guarantees
+that it is initialized to zero.
+
+In the non __thread case we allocate and zero the memory."
+wez,2012-12-30 18:19:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/95bdd668fa16318c1a55713f2e7f250b694c053a,95bdd668fa16318c1a55713f2e7f250b694c053a,always include debug info in the build
+wez,2012-12-30 08:57:22,https://api.github.com/repos/facebookarchive/libphenom/git/commits/58a759e8f6fb47baa2708f03451dab04b2e5d758,58a759e8f6fb47baa2708f03451dab04b2e5d758,"augument test runner to support code coverage
+
+This adds code coverage information collected via callgrind + dwarfdump.
+This also adds primitive support for defaulting to similar sounding
+tests when running arc unit."
+wez,2012-12-30 01:00:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/c851cee996a83562ab73c83eb9be91133fbca9d9,c851cee996a83562ab73c83eb9be91133fbca9d9,fix non-solaris build
+wez,2012-12-30 00:57:11,https://api.github.com/repos/facebookarchive/libphenom/git/commits/1ff9659ef8c0ecf3577e21656465283776716756,1ff9659ef8c0ecf3577e21656465283776716756,"on solaris, use port_send() instead of a trigger fifo
+
+Not sure how this compares perf wise, but seems like it might be
+a little more efficient... need to benchmark it really; should be
+fairly easy to switch between the two when we're ready for that."
+wez,2012-12-30 00:36:29,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f3b20bb528424b97471164d62f76265c273d1ac6,f3b20bb528424b97471164d62f76265c273d1ac6,perror -> phenom_log
+wez,2012-12-30 00:21:00,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f446cd8c57efe89f7e15393308afbc1c5f62d562,f446cd8c57efe89f7e15393308afbc1c5f62d562,we now build and pass tests on illumos
+wez,2012-12-29 18:29:40,https://api.github.com/repos/facebookarchive/libphenom/git/commits/adb862552f51e6cb47291d91867f37fd2a1630eb,adb862552f51e6cb47291d91867f37fd2a1630eb,add basic test for fd io
+wez,2012-12-29 10:16:31,https://api.github.com/repos/facebookarchive/libphenom/git/commits/99fb2557059d447eb9b82dab8f2294b63233d952,99fb2557059d447eb9b82dab8f2294b63233d952,name the scheduler threads for easier debugging
+wez,2012-12-29 09:56:47,https://api.github.com/repos/facebookarchive/libphenom/git/commits/01b9ea05daa8b8252d74208cb8e78d4fc5c192c5,01b9ea05daa8b8252d74208cb8e78d4fc5c192c5,add asprintf style functions
+wez,2012-12-29 06:34:16,https://api.github.com/repos/facebookarchive/libphenom/git/commits/f9d090a575a89dc7d13cc6f639fb13d5a177be53,f9d090a575a89dc7d13cc6f639fb13d5a177be53,"Add ""`Pv%s%p"" format option for passing thru fmt + va_list"
+wez,2012-12-29 05:43:13,https://api.github.com/repos/facebookarchive/libphenom/git/commits/2993fdbb7c206edb1076af3a7c6cc14ba58604b2,2993fdbb7c206edb1076af3a7c6cc14ba58604b2,initial commit

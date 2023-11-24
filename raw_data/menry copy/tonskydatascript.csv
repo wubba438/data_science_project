@@ -1,0 +1,638 @@
+datascript,"Immutable database and Datalog query engine for Clojure, ClojureScript and JS"
+username,timestamp,url,sha,message
+tonsky,2019-09-12 11:46:26,https://api.github.com/repos/tonsky/datascript/git/commits/96ab44d57e98752e435958ff24f01147a1f23a85,96ab44d57e98752e435958ff24f01147a1f23a85,Version 0.18.5
+tonsky,2019-09-12 11:44:32,https://api.github.com/repos/tonsky/datascript/git/commits/1d1516c15336294e661529f89c8dcb897a053d9d,1d1516c15336294e661529f89c8dcb897a053d9d,Fixed core.cljc NS declaration to require cljs.reader (closes #316)
+tonsky,2019-06-05 13:48:47,https://api.github.com/repos/tonsky/datascript/git/commits/f18db4e595692603e7c0904b7d0ef96837d586da,f18db4e595692603e7c0904b7d0ef96837d586da,Version 0.18.4
+tonsky,2019-06-05 13:47:07,https://api.github.com/repos/tonsky/datascript/git/commits/f76a64bc22fa309e7467acae0b9a38775b5346d6,f76a64bc22fa309e7467acae0b9a38775b5346d6,Added re-pattern and str/blank? str/includes? str/starts-with? str/ends-with? to built-ins (#306)
+dpsutton,2019-06-03 02:49:58,https://api.github.com/repos/tonsky/datascript/git/commits/9584ed9f1f163c264cf9e957d22667b90a4207f7,9584ed9f1f163c264cf9e957d22667b90a4207f7,"Add `re-pattern` to builtins
+
+Clojure can resolve functions from clojure/string so that you can
+check for substrings
+
+`[(clojure.string/includes? ?term ""X"")]`
+
+Clojurescript lacks this runtime resolution so there is no way to
+check for string containment. There are some helpful regex functions
+but this requires the regex pattern to be constructed outside of the
+query. This change allows to create the pattern in the query as
+demonstrated in the test:
+
+``` clojure
+(d/q '[:find  ?name
+       :in    [?name ...] ?key
+       :where [(re-pattern ?key) ?pattern]
+              [(re-find ?pattern ?name)]]
+     #{""abc"" ""abcX"" ""aXb""}
+     ""X"")
+```"
+dpsutton,2019-05-27 17:20:36,https://api.github.com/repos/tonsky/datascript/git/commits/9a77e2f6a6de5b9db2e8141c4677cd8d0c8d24c7,9a77e2f6a6de5b9db2e8141c4677cd8d0c8d24c7,"Remove call to `persistent!` in cljs lru print function
+
+no longer pased on transients. And even if it were calling persistent
+on a transient in a side-effecting operation that changes the
+transient.
+
+This error would manifest itself just by calling the lru function:
+
+```cljs
+(require '[datascript.lru :as lru])
+(lru/lru 3)
+
+```"
+tonsky,2019-05-27 10:37:41,https://api.github.com/repos/tonsky/datascript/git/commits/9a1559c3a15fb8760da11394bffff6e78cb61878,9a1559c3a15fb8760da11394bffff6e78cb61878,exclude user ns from ci tests
+tonsky,2019-05-27 10:30:36,https://api.github.com/repos/tonsky/datascript/git/commits/d13fe79cbd45c7523a36747631553f098fb850dd,d13fe79cbd45c7523a36747631553f098fb850dd,Version 0.18.3
+dpsutton,2019-05-27 04:30:17,https://api.github.com/repos/tonsky/datascript/git/commits/706b823eb4a2d226b4ce92f411722589f4e5f0e5,706b823eb4a2d226b4ce92f411722589f4e5f0e5,"Update cljs build settings
+
+The cljs.closure/Compilable protocol has two methods and right now
+running `(node-repl)` from the user ns throws an error about the
+missing method `find-sources`"
+tonsky,2019-05-27 10:27:19,https://api.github.com/repos/tonsky/datascript/git/commits/aff3d3f99764d86504417f0f87aea3da40504364,aff3d3f99764d86504417f0f87aea3da40504364,Vector misbehaving in query in CLJS (closes #262)
+teodorlu,2019-05-15 11:04:45,https://api.github.com/repos/tonsky/datascript/git/commits/da2fb704f976a2651888b284dddeb26a6913d746,da2fb704f976a2651888b284dddeb26a6913d746,Fix typo in listen! docs
+tonsky,2019-03-11 20:00:48,https://api.github.com/repos/tonsky/datascript/git/commits/651e9e7a0a71167be70020b7a2a110a9f254c241,651e9e7a0a71167be70020b7a2a110a9f254c241,Use clojure command to power release.clj shebang
+tonsky,2019-03-11 19:53:09,https://api.github.com/repos/tonsky/datascript/git/commits/5740b9108504c7d8410177e194379d401a452e10,5740b9108504c7d8410177e194379d401a452e10,Version 0.18.2
+tonsky,2019-03-11 19:49:36,https://api.github.com/repos/tonsky/datascript/git/commits/bef1aba0572d8aa6518364e9ded2280bd1c99fb3,bef1aba0572d8aa6518364e9ded2280bd1c99fb3,Fixed regression when unique ref tempid was not resolved during transaction (closes #295)
+tonsky,2019-03-11 19:29:23,https://api.github.com/repos/tonsky/datascript/git/commits/4b5d2324fa334b6281726df584199a49bddfd87f,4b5d2324fa334b6281726df584199a49bddfd87f,Fixed regression when transient indexes were mutated and iterated during single tx (closes #294)
+darkleaf,2019-03-05 12:43:15,https://api.github.com/repos/tonsky/datascript/git/commits/cb5a4a9b92d058ee28b4ae9fd34b6784b5de908e,cb5a4a9b92d058ee28b4ae9fd34b6784b5de908e,add datom-added to pprint view
+tonsky,2019-02-19 21:24:12,https://api.github.com/repos/tonsky/datascript/git/commits/8416a014f754017ab23efb30b7328cc835a3d6ff,8416a014f754017ab23efb30b7328cc835a3d6ff,README version bump
+tonsky,2019-02-19 21:20:55,https://api.github.com/repos/tonsky/datascript/git/commits/bcd6326330c9ee676091a5ad03d1abb8a32cef15,bcd6326330c9ee676091a5ad03d1abb8a32cef15,Version 0.18.1
+tonsky,2019-02-19 21:19:39,https://api.github.com/repos/tonsky/datascript/git/commits/fdc947c89dcd2dc8c5dbc91ce59744b98c3608b2,fdc947c89dcd2dc8c5dbc91ce59744b98c3608b2,Bumped persistent-sorted-set to 0.1.1 (Java 8 bytecode)
+tonsky,2019-02-19 21:14:01,https://api.github.com/repos/tonsky/datascript/git/commits/7c9d8cb58f56133df2f9ccacbc4d3e3ee031b3b1,7c9d8cb58f56133df2f9ccacbc4d3e3ee031b3b1,upd CircleCI
+tonsky,2019-02-19 21:00:57,https://api.github.com/repos/tonsky/datascript/git/commits/f763d01afb1d9bfc61aa114f3e78c5b7e97ba007,f763d01afb1d9bfc61aa114f3e78c5b7e97ba007,Version 0.18.0
+tonsky,2019-02-19 20:55:00,https://api.github.com/repos/tonsky/datascript/git/commits/c6b626c5c554207dcbab8e1fd254ee25b8ce2774,c6b626c5c554207dcbab8e1fd254ee25b8ce2774,Extracted btset to
+tonsky,2019-02-18 21:12:24,https://api.github.com/repos/tonsky/datascript/git/commits/f346ff08c56a4c69356743e719f1e4479e136989,f346ff08c56a4c69356743e719f1e4479e136989,"Primitive ints in Datom, added represented as tx sign"
+tonsky,2019-02-15 22:27:27,https://api.github.com/repos/tonsky/datascript/git/commits/feb9fce614e7c4c21fe06e6951e6ead37fbe6311,feb9fce614e7c4c21fe06e6951e6ead37fbe6311,restored fast init-db
+tonsky,2019-02-15 19:50:41,https://api.github.com/repos/tonsky/datascript/git/commits/2f7a4b3ddd92e18f697907ba77448069c995dd5c,2f7a4b3ddd92e18f697907ba77448069c995dd5c,Restored btset/from-sorted
+tonsky,2019-02-15 08:09:42,https://api.github.com/repos/tonsky/datascript/git/commits/358077c3b4f9b87c6b238bb3a0380a47e770c660,358077c3b4f9b87c6b238bb3a0380a47e770c660,revived bench/
+tonsky,2019-02-14 14:19:02,https://api.github.com/repos/tonsky/datascript/git/commits/755dafd98d421c232f02713a7bdaf69200d67252,755dafd98d421c232f02713a7bdaf69200d67252,slice with comparator in btset.cljs
+tonsky,2019-02-13 19:27:53,https://api.github.com/repos/tonsky/datascript/git/commits/68d2d3bce34dcdcec2d511c6ee4eba958503c210,68d2d3bce34dcdcec2d511c6ee4eba958503c210,use transient sets during transaction
+tonsky,2019-02-12 21:36:05,https://api.github.com/repos/tonsky/datascript/git/commits/51b89acc7dac6b5c0e999135df05ba232e451e5a,51b89acc7dac6b5c0e999135df05ba232e451e5a,Refactored Bench to use IPersistentSet. Extracted slices to ISortedSet
+tonsky,2019-02-12 19:56:09,https://api.github.com/repos/tonsky/datascript/git/commits/87c6246b45f503252734fe9abed633370bdd7f68,87c6246b45f503252734fe9abed633370bdd7f68,Binary search in searchFirst/last and BoundSliceBench
+tonsky,2019-02-12 16:45:55,https://api.github.com/repos/tonsky/datascript/git/commits/c670c812ee301a15d97c02907b35597c9c6b83b2,c670c812ee301a15d97c02907b35597c9c6b83b2,implement Sorted
+tonsky,2019-02-12 14:55:36,https://api.github.com/repos/tonsky/datascript/git/commits/493370945ac327df0f809357ceeed8453215eb67,493370945ac327df0f809357ceeed8453215eb67,"IReduce, IChunkedSeq, tests, kaocha-cljs"
+tonsky,2019-02-11 17:13:02,https://api.github.com/repos/tonsky/datascript/git/commits/bb1aba4ee22371bfae84229c381048b6ee9aa829,bb1aba4ee22371bfae84229c381048b6ee9aa829,removed type hints in btset.cljs
+tonsky,2019-02-10 22:13:39,https://api.github.com/repos/tonsky/datascript/git/commits/7e951c66f2c8b2b762c36c15988cf8d13c0d6f01,7e951c66f2c8b2b762c36c15988cf8d13c0d6f01,migrated datascript to SortedSet.java
+tonsky,2019-02-05 15:42:15,https://api.github.com/repos/tonsky/datascript/git/commits/c053e4b29eb7ff507717a2937c2e03801adeef9f,c053e4b29eb7ff507717a2937c2e03801adeef9f,Added datomic.BTSet to the bench
+darkleaf,2019-02-03 10:09:50,https://api.github.com/repos/tonsky/datascript/git/commits/aa67e7a4d99b954a357b0c6533bd7039f5d99e54,aa67e7a4d99b954a357b0c6533bd7039f5d99e54,fix `validate-query` error message
+tonsky,2019-02-02 21:33:32,https://api.github.com/repos/tonsky/datascript/git/commits/4f4f4aedcb46265d665f76f4e4d95858087c688f,4f4f4aedcb46265d665f76f4e4d95858087c688f,Implemented Clojure interfaces for BTreeSet
+tonsky,2019-02-01 16:20:39,https://api.github.com/repos/tonsky/datascript/git/commits/5e4c084146c2154de82214af50f5de77611b6862,5e4c084146c2154de82214af50f5de77611b6862,Slice iterator in JVM set
+tonsky,2019-01-31 22:35:53,https://api.github.com/repos/tonsky/datascript/git/commits/a8a2866b1da4284b16632a74bae3a2f41ebbd88a,a8a2866b1da4284b16632a74bae3a2f41ebbd88a,"Disjoin and transient disjoin in JVM sets, remove bench"
+tonsky,2019-01-30 21:26:48,https://api.github.com/repos/tonsky/datascript/git/commits/6f12ab1aff0e2264e62feac463853206cc93389f,6f12ab1aff0e2264e62feac463853206cc93389f,"Java impls of BTSet iterators, refactored Bench code"
+tonsky,2019-01-29 19:41:18,https://api.github.com/repos/tonsky/datascript/git/commits/b441e0c3e653f106c6bb301da83f3b3d88485b25,b441e0c3e653f106c6bb301da83f3b3d88485b25,Faster set impls with linear search and smaller transient overhead
+tonsky,2019-01-28 20:18:37,https://api.github.com/repos/tonsky/datascript/git/commits/0762425b8fe2527fcb184fc1b65b8125aaaa083c,0762425b8fe2527fcb184fc1b65b8125aaaa083c,formatting
+tonsky,2019-01-28 20:06:37,https://api.github.com/repos/tonsky/datascript/git/commits/aecb4483552ae14103b0ab57f758034530102851,aecb4483552ae14103b0ab57f758034530102851,Throw on tempid in :db.fn/cas (closes #264)
+tonsky,2019-01-26 21:50:30,https://api.github.com/repos/tonsky/datascript/git/commits/515f24d3a0ed88dd9ebcaedb4124d56280ca3e6c,515f24d3a0ed88dd9ebcaedb4124d56280ca3e6c,Hide kaocha stacktrace elements
+tonsky,2019-01-26 21:20:33,https://api.github.com/repos/tonsky/datascript/git/commits/cf9fba29208d781ca37bfa3a756cb9e30b4538b0,cf9fba29208d781ca37bfa3a756cb9e30b4538b0,Fixed cases when upsert resolves to tempid (closes #285). Added Kaocha
+tonsky,2019-01-23 19:42:35,https://api.github.com/repos/tonsky/datascript/git/commits/1c05eddd2429fd16734bc63380cc52898ce38ff0,1c05eddd2429fd16734bc63380cc52898ce38ff0,Fixed DB and Datom pprinting (closes #287)
+tonsky,2019-01-23 15:49:26,https://api.github.com/repos/tonsky/datascript/git/commits/906347bfa010f4f93a9c20501a7b2766fe746e99,906347bfa010f4f93a9c20501a7b2766fe746e99,make 1.10 the default
+jdf-id-au,2019-01-19 11:00:57,https://api.github.com/repos/tonsky/datascript/git/commits/d8e3ff363cdd0a7c8ae08b426464dac59140abff,d8e3ff363cdd0a7c8ae08b426464dac59140abff,"distinct should return a set not a vector
+
+Like datomic https://docs.datomic.com/on-prem/query.html"
+tonsky,2019-01-15 23:23:39,https://api.github.com/repos/tonsky/datascript/git/commits/41b43d0d04ccb019ef63628a488ee4c2f14e984d,41b43d0d04ccb019ef63628a488ee4c2f14e984d,Experimental transient BTSet impls in Java
+tonsky,2018-12-13 22:03:11,https://api.github.com/repos/tonsky/datascript/git/commits/eef79f8c21be50a63e77dbe5672a307c6980fb90,eef79f8c21be50a63e77dbe5672a307c6980fb90,Version 0.17.1
+tonsky,2018-12-13 21:54:13,https://api.github.com/repos/tonsky/datascript/git/commits/32e1530ce4c527ffd41165d315faaaa9e678bcc1,32e1530ce4c527ffd41165d315faaaa9e678bcc1,thrown-msg?
+tonsky,2018-12-13 20:40:18,https://api.github.com/repos/tonsky/datascript/git/commits/52fa290625200d90fea3428a739f53c8dd852559,52fa290625200d90fea3428a739f53c8dd852559,cleanup
+tonsky,2018-12-13 20:32:39,https://api.github.com/repos/tonsky/datascript/git/commits/679fe2213d7e40a286ca81096ca78f05d0b6abd7,679fe2213d7e40a286ca81096ca78f05d0b6abd7,“(not ...)” in queries
+tonsky,2018-12-12 21:25:50,https://api.github.com/repos/tonsky/datascript/git/commits/9a99c1e8bf26bc8362b5e6b411f5251b52f8db1f,9a99c1e8bf26bc8362b5e6b411f5251b52f8db1f,or-join
+tonsky,2018-12-12 19:22:45,https://api.github.com/repos/tonsky/datascript/git/commits/6d6e9386bcb7dbbb8cf6c5f25d86afd5d4b09d7d,6d6e9386bcb7dbbb8cf6c5f25d86afd5d4b09d7d,Specify sources in OR
+tonsky,2018-12-11 22:00:40,https://api.github.com/repos/tonsky/datascript/git/commits/9bbde6939e5b3b74b583bd91c4657b41ed1a2bd7,9bbde6939e5b3b74b583bd91c4657b41ed1a2bd7,sum-rel and basic OR support
+tonsky,2018-12-07 17:53:29,https://api.github.com/repos/tonsky/datascript/git/commits/09fa0758e21aba656fd55aab89774b2f8892fdfa,09fa0758e21aba656fd55aab89774b2f8892fdfa,Version 0.17.0
+tonsky,2018-12-07 17:42:30,https://api.github.com/repos/tonsky/datascript/git/commits/34c122e0b5192bb58a797137fbb1f6bd1b236e6d,34c122e0b5192bb58a797137fbb1f6bd1b236e6d,Calling transaction fns through idents directly (closes #185)
+refset,2018-10-08 11:50:52,https://api.github.com/repos/tonsky/datascript/git/commits/0273a731102ad77357f27385c9bd922579c9d65d,0273a731102ad77357f27385c9bd922579c9d65d,Added installed transaction functions using :db/ident and :db/fn semantics
+tonsky,2018-12-06 15:16:49,https://api.github.com/repos/tonsky/datascript/git/commits/2a8f5a362476248eb5c2bc2ecefe803af8eb747d,2a8f5a362476248eb5c2bc2ecefe803af8eb747d,datomic alias in deps.edn
+tonsky,2018-12-06 15:16:36,https://api.github.com/repos/tonsky/datascript/git/commits/96732b0fab29eb5c93e7eae386aee69fcacba758,96732b0fab29eb5c93e7eae386aee69fcacba758,"JS API correctly handles nested maps with `{"":db/id""}` in transactions (closes #228)"
+tonsky,2018-12-06 14:21:24,https://api.github.com/repos/tonsky/datascript/git/commits/ce4b07c188d4b982ce34af9825d9997043726f97,ce4b07c188d4b982ce34af9825d9997043726f97,deps.edn-based repl
+tonsky,2018-11-30 19:16:59,https://api.github.com/repos/tonsky/datascript/git/commits/d63ca3f253a72158c4ce61c49bc79518d10dd9f5,d63ca3f253a72158c4ce61c49bc79518d10dd9f5,Support idents expansion (closes #245)
+bamarco,2018-11-30 11:37:49,https://api.github.com/repos/tonsky/datascript/git/commits/6ed07ce0f6225a4b9af8913adb1e4172e370a508,6ed07ce0f6225a4b9af8913adb1e4172e370a508,added the ability to use keyword refs directly as entity ids
+tonsky,2018-11-30 11:01:08,https://api.github.com/repos/tonsky/datascript/git/commits/35cd7dcf4c759d74a019efb0031475495117b594,35cd7dcf4c759d74a019efb0031475495117b594,updated CircleCI config
+CodingAgainstChaos,2018-11-30 00:02:17,https://api.github.com/repos/tonsky/datascript/git/commits/4d4573ad42300747252451bc0a77e779fff0a48e,4d4573ad42300747252451bc0a77e779fff0a48e,"Update projects in README
+
+We shut Bitfountain down a while ago. Just realized we're still on the README."
+tonsky,2018-11-29 21:12:02,https://api.github.com/repos/tonsky/datascript/git/commits/57381efc9a52da1bf96a4e4fd9b4eca41fe553e5,57381efc9a52da1bf96a4e4fd9b4eca41fe553e5,"Support `:as` in Pull API an attr-with-opts syntax (closes #270, closes #271)"
+Jumblemuddle,2018-07-28 02:17:37,https://api.github.com/repos/tonsky/datascript/git/commits/1a1f3c4c900121aee5200a884485f3c17859c750,1a1f3c4c900121aee5200a884485f3c17859c750,Add support for `:as` attr-opt; Close #270
+thheller,2017-04-11 09:11:32,https://api.github.com/repos/tonsky/datascript/git/commits/68a438dcd7e5dc63932528fd1fd411fbf5aff0ba,68a438dcd7e5dc63932528fd1fd411fbf5aff0ba,fix externs.js and the exported symbols (closes #216)
+tonsky,2018-11-29 19:27:42,https://api.github.com/repos/tonsky/datascript/git/commits/7fbb4841a5b089b522404c463bd8ad136d664a30,7fbb4841a5b089b522404c463bd8ad136d664a30,Drop 1.7 and 1.8 support
+tonsky,2018-11-29 18:44:29,https://api.github.com/repos/tonsky/datascript/git/commits/7705df8a3f87004a788f37d742de1b837e046668,7705df8a3f87004a788f37d742de1b837e046668,Implement `clojure.data/diff` on `datascript/DB` (closes #281)
+tonsky,2018-11-28 19:36:21,https://api.github.com/repos/tonsky/datascript/git/commits/e177884c5427b280e88cd8620be26d323cddab26,e177884c5427b280e88cd8620be26d323cddab26,Deploy AOT-compiled versions under their own classifiers
+tonsky,2018-11-28 17:37:28,https://api.github.com/repos/tonsky/datascript/git/commits/f74399c0097d883c052cd745846f07ab4670846f,f74399c0097d883c052cd745846f07ab4670846f,Version 0.16.9
+tonsky,2018-11-28 17:32:39,https://api.github.com/repos/tonsky/datascript/git/commits/225a8ee6750cfa697c91d4f4adb92cd15383ac12,225a8ee6750cfa697c91d4f4adb92cd15383ac12,"AOT artifacts are now deployed with classifiers (closes #279, closes #280)"
+tonsky,2018-11-27 17:46:48,https://api.github.com/repos/tonsky/datascript/git/commits/b181ca2a862a93fd2e7ef10a5d00b975d1ea48b6,b181ca2a862a93fd2e7ef10a5d00b975d1ea48b6,Version 0.16.8
+tonsky,2018-11-25 17:02:41,https://api.github.com/repos/tonsky/datascript/git/commits/5cf55d6fb40d8578728229675e566c8e5255d0b2,5cf55d6fb40d8578728229675e566c8e5255d0b2,Docstrings for datascript.core
+fversnel,2018-07-13 15:46:18,https://api.github.com/repos/tonsky/datascript/git/commits/b8680e67446ecdc4ac1ba9e354fab35a6b985b0f,b8680e67446ecdc4ac1ba9e354fab35a6b985b0f,#258: Doc string formatting
+fversnel,2018-07-13 15:43:38,https://api.github.com/repos/tonsky/datascript/git/commits/acd0f497833d6366f780e21880bf6265951f2f34,acd0f497833d6366f780e21880bf6265951f2f34,#258: Initial set of doc strings for the public api.
+tonsky,2018-10-30 13:18:00,https://api.github.com/repos/tonsky/datascript/git/commits/25f6c1afdc60004bd5936fec917139eac59fa3b1,25f6c1afdc60004bd5936fec917139eac59fa3b1,fixed build script
+tonsky,2018-10-30 13:11:30,https://api.github.com/repos/tonsky/datascript/git/commits/6cffe3aa4c9254306f6ba465338bf8e7c356e656,6cffe3aa4c9254306f6ba465338bf8e7c356e656,Version 0.16.7
+tonsky,2018-10-30 12:58:01,https://api.github.com/repos/tonsky/datascript/git/commits/66530d6f37d46305ad6cb768c5e19f85b8756ce1,66530d6f37d46305ad6cb768c5e19f85b8756ce1,Removed references to `perf` from `datascript.query-v3` (closes #272)
+tonsky,2018-09-18 20:15:50,https://api.github.com/repos/tonsky/datascript/git/commits/c6cc4d370092077f0e61a5f3eefbb5da9c46c5b1,c6cc4d370092077f0e61a5f3eefbb5da9c46c5b1,Patreon banner
+tonsky,2018-06-06 18:42:25,https://api.github.com/repos/tonsky/datascript/git/commits/1661c524b544fa0c212bc2db65ef7ad22cecb319,1661c524b544fa0c212bc2db65ef7ad22cecb319,Version 0.16.6
+kennyjwilli,2018-06-06 18:32:27,https://api.github.com/repos/tonsky/datascript/git/commits/c75b5030f7c75248e4ea1f17c165d90a5899592f,c75b5030f7c75248e4ea1f17c165d90a5899592f,Add support for renamed DB functions :db/retractEntity and :db/cas (#266)
+tonsky,2018-05-06 18:13:15,https://api.github.com/repos/tonsky/datascript/git/commits/6f34b24e949dfc579dbac9d4fe0cc934234969b0,6f34b24e949dfc579dbac9d4fe0cc934234969b0,deploy profile fix
+tonsky,2018-05-06 18:09:11,https://api.github.com/repos/tonsky/datascript/git/commits/31028759e39951885812d203c91f49b9894c3e73,31028759e39951885812d203c91f49b9894c3e73,Version 0.16.5
+tonsky,2018-05-06 18:05:53,https://api.github.com/repos/tonsky/datascript/git/commits/f9b2d0a3fd5b2124db6f78033b80518b1b651b5d,f9b2d0a3fd5b2124db6f78033b80518b1b651b5d,release.clj
+tonsky,2018-05-06 17:54:50,https://api.github.com/repos/tonsky/datascript/git/commits/88a98af379866db38717ed1ba6443756be68b9ba,88a98af379866db38717ed1ba6443756be68b9ba,Provision AOT-compiled classes in datascript.jar (closes #241)
+tonsky,2018-05-06 17:53:49,https://api.github.com/repos/tonsky/datascript/git/commits/fb49c7e2728200df83edcf0d14ac2d1df65c0484,fb49c7e2728200df83edcf0d14ac2d1df65c0484,"Fixed direct-linking compatibility (rolled back #197, fixed #219, closes #259)"
+shparun,2018-04-28 15:57:13,https://api.github.com/repos/tonsky/datascript/git/commits/5b413d0a6059401d5283d9e54c9b4b5ecfb586d9,5b413d0a6059401d5283d9e54c9b4b5ecfb586d9,raise treats last argument as data for ex-info which must be map
+tonsky,2018-03-15 16:40:04,https://api.github.com/repos/tonsky/datascript/git/commits/4df745223ad6c799f6a5887b598a72e4e5c60181,4df745223ad6c799f6a5887b598a72e4e5c60181,moved build badge
+tonsky,2018-03-15 16:36:51,https://api.github.com/repos/tonsky/datascript/git/commits/7bbd32d1126752687c6198f436741bd65ce0b7cb,7bbd32d1126752687c6198f436741bd65ce0b7cb,Version 0.16.4
+carocad,2018-03-10 14:58:36,https://api.github.com/repos/tonsky/datascript/git/commits/a122f5eb64c0d5c9e0a97ec7f3404db06be2f5d3,a122f5eb64c0d5c9e0a97ec7f3404db06be2f5d3,fix: avoid wrong Java equality semantics for collections
+tonsky,2018-03-15 16:22:12,https://api.github.com/repos/tonsky/datascript/git/commits/4b05866dd6875f8c737a996d92f27b693d38e2b7,4b05866dd6875f8c737a996d92f27b693d38e2b7,"Added `rseek-datoms` (closes #253, closes #254)"
+refset,2018-02-21 21:59:50,https://api.github.com/repos/tonsky/datascript/git/commits/6efd1d0e9f3ee984f3e119b03f7daea249f113af,6efd1d0e9f3ee984f3e119b03f7daea249f113af,Added rseek-datoms
+tonsky,2018-03-15 16:16:40,https://api.github.com/repos/tonsky/datascript/git/commits/aa3e647ee6d29f0e9c1a4d40b22055fff8a22d61,aa3e647ee6d29f0e9c1a4d40b22055fff8a22d61,Support string tempids (closes #251)
+kennyjwilli,2018-02-20 21:43:25,https://api.github.com/repos/tonsky/datascript/git/commits/ea303a9dd0f99ac0bf56c389ce41b50d3f4e16dd,ea303a9dd0f99ac0bf56c389ce41b50d3f4e16dd,Add support for string tempids.
+tonsky,2018-03-15 15:17:54,https://api.github.com/repos/tonsky/datascript/git/commits/02feebfedfd1b86db1ae35bf821f54da9f61bcf0,02feebfedfd1b86db1ae35bf821f54da9f61bcf0,new logo
+tonsky,2018-03-01 07:08:54,https://api.github.com/repos/tonsky/datascript/git/commits/7b54b9675261d3d1f605a73a0850886503bb17ca,7b54b9675261d3d1f605a73a0850886503bb17ca,circle ci 2.0
+tonsky,2017-12-29 03:30:07,https://api.github.com/repos/tonsky/datascript/git/commits/eaa83844efda2e8d83e80521dd06a15a154c710b,eaa83844efda2e8d83e80521dd06a15a154c710b,README #235
+teeler,2017-12-12 18:14:32,https://api.github.com/repos/tonsky/datascript/git/commits/c99b40ada69458f16f4a46ae5ffdf8787dbda32d,c99b40ada69458f16f4a46ae5ffdf8787dbda32d,remove dead link
+tonsky,2017-11-30 09:36:34,https://api.github.com/repos/tonsky/datascript/git/commits/272787225712c78b16c9d4e9e9ab60e59ac888b0,272787225712c78b16c9d4e9e9ab60e59ac888b0,Gitter → Slack
+tonsky,2017-11-29 15:21:35,https://api.github.com/repos/tonsky/datascript/git/commits/955307ded033b22dbe67a13c96757da54f0d5116,955307ded033b22dbe67a13c96757da54f0d5116,Version 0.16.3
+tonsky,2017-11-29 15:18:15,https://api.github.com/repos/tonsky/datascript/git/commits/6f71cd3157890cc8ad0fddcab26ea13085e05836,6f71cd3157890cc8ad0fddcab26ea13085e05836,Silently skip nils in transaction (was stopping processing without an error before)
+tonsky,2017-08-17 08:04:33,https://api.github.com/repos/tonsky/datascript/git/commits/ba1d66e0975ba70aac35de643e1f7f4aaea01dc9,ba1d66e0975ba70aac35de643e1f7f4aaea01dc9,Version 0.16.2
+tonsky,2017-07-14 17:16:06,https://api.github.com/repos/tonsky/datascript/git/commits/dcb29c4b7e45aa5ba4c68c4ef61e91a72a117c30,dcb29c4b7e45aa5ba4c68c4ef61e91a72a117c30,Use goog.object instead of aget in js.cljs
+tonsky,2017-07-14 17:03:52,https://api.github.com/repos/tonsky/datascript/git/commits/898938250fd1bce7757c1a265e6633dea7e7d3fa,898938250fd1bce7757c1a265e6633dea7e7d3fa,Renamed parser/Query fields to compile under CLJS 1.9.660 (closes #233)
+denistakeda,2017-06-17 09:38:30,https://api.github.com/repos/tonsky/datascript/git/commits/f65f33bb68862aa2ed1dc88eb8dcd34050f85393,f65f33bb68862aa2ed1dc88eb8dcd34050f85393,data-frame library been renamed to re-posh (#229)
+tonsky,2017-06-14 10:11:14,https://api.github.com/repos/tonsky/datascript/git/commits/7b516c2f0fb1a3ae7aa3c862e3f230501e8e3a0c,7b516c2f0fb1a3ae7aa3c862e3f230501e8e3a0c,Added link to data-frame
+tosh,2017-05-25 12:29:22,https://api.github.com/repos/tonsky/datascript/git/commits/af0d4df10cdbc7810ddcdc37ac728aab5d961c18,af0d4df10cdbc7810ddcdc37ac728aab5d961c18,add lemmings.io as user of DataScript
+tonsky,2017-04-18 13:47:05,https://api.github.com/repos/tonsky/datascript/git/commits/9803f96cd0cdfc586fd4d26b675abf78783275a3,9803f96cd0cdfc586fd4d26b675abf78783275a3,Version 0.16.1
+tonsky,2017-04-18 13:44:40,https://api.github.com/repos/tonsky/datascript/git/commits/27da7e39505f63a7f8473205c20c6d6e89cc1a83,27da7e39505f63a7f8473205c20c6d6e89cc1a83,Fixed rules ignoring false arguments passed to them (closes #218)
+tonsky,2017-04-09 18:23:54,https://api.github.com/repos/tonsky/datascript/git/commits/6ec7319c64b6b2500c74ece55b0fca5c00f113cf,6ec7319c64b6b2500c74ece55b0fca5c00f113cf,Version 0.16.0
+tonsky,2017-04-09 18:20:47,https://api.github.com/repos/tonsky/datascript/git/commits/130e06f87aff3269b25a43c458709903cc39858b,130e06f87aff3269b25a43c458709903cc39858b,"Removed ^:exports from `datascript.core` to enable dead code elimination (reverts #139, closes #191)"
+tonsky,2017-04-09 17:23:42,https://api.github.com/repos/tonsky/datascript/git/commits/19bdbd1beb5d027f5cc99e1c006002f2ac6bbd3a,19bdbd1beb5d027f5cc99e1c006002f2ac6bbd3a,Optimize generated JS code by declaring fn arities (closes #197)
+tonsky,2017-04-09 14:22:11,https://api.github.com/repos/tonsky/datascript/git/commits/7d2fe9eacd0fde2924fb05ae58375ef06307818c,7d2fe9eacd0fde2924fb05ae58375ef06307818c,Speed up rschema calculation (#192)
+tonsky,2017-04-09 13:59:29,https://api.github.com/repos/tonsky/datascript/git/commits/98600a66fd57f56304e6ca4fd7f76d927d9584ca,98600a66fd57f56304e6ca4fd7f76d927d9584ca,Fixed issue when string values were interpreted as lookup refs (closes #214)
+tonsky,2017-04-08 16:08:01,https://api.github.com/repos/tonsky/datascript/git/commits/cb50be9bd0dded21747ac5670c601e39957866d4,cb50be9bd0dded21747ac5670c601e39957866d4,Force Object arrays in btset (closes #212)
+rauhs,2016-12-09 20:50:41,https://api.github.com/repos/tonsky/datascript/git/commits/d1aad4502b876994001502af82cd7b5ea201ca86,d1aad4502b876994001502af82cd7b5ea201ca86,Optimization: Don't transform datoms array if array
+tonsky,2017-04-08 15:31:56,https://api.github.com/repos/tonsky/datascript/git/commits/bded68bb362e3f34275d72a5fd0813d56376f390,bded68bb362e3f34275d72a5fd0813d56376f390,Use if-some instead of if-let in entity cache lookup
+tonsky,2017-04-08 15:24:59,https://api.github.com/repos/tonsky/datascript/git/commits/96fe303e9cdd127bb21164330c205409f63a0c58,96fe303e9cdd127bb21164330c205409f63a0c58,fixed cljc compatibility in bench/perf
+brandonbloom,2016-12-20 23:38:40,https://api.github.com/repos/tonsky/datascript/git/commits/0412863491c56c599593a086223642bb62e51a79,0412863491c56c599593a086223642bb62e51a79,Fix handling of false in entity cache
+brandonbloom,2016-12-20 23:37:37,https://api.github.com/repos/tonsky/datascript/git/commits/6671212c68282c53016c4b26e050292c5f28d472,6671212c68282c53016c4b26e050292c5f28d472,Pin-point failure to entity caching.
+tonsky,2017-04-08 14:26:15,https://api.github.com/repos/tonsky/datascript/git/commits/b76a3262dec1dbdc671699514fa7c23bbd440565,b76a3262dec1dbdc671699514fa7c23bbd440565,Added `contains?` to built-ins (closes #211)
+tonsky,2017-03-20 08:34:48,https://api.github.com/repos/tonsky/datascript/git/commits/806ae43953948451cb1ee5a91e8fe9acbe1c1895,806ae43953948451cb1ee5a91e8fe9acbe1c1895,Fixed Dropbox links
+tonsky,2017-03-01 15:20:17,https://api.github.com/repos/tonsky/datascript/git/commits/55981c3e8878d2482748b499de2f27563afd7271,55981c3e8878d2482748b499de2f27563afd7271,simpler bench output
+tonsky,2017-03-01 13:41:32,https://api.github.com/repos/tonsky/datascript/git/commits/e7e158f4509b19c4c95b183f6f5929ba8f0a5932,e7e158f4509b19c4c95b183f6f5929ba8f0a5932,Fixed infinite loop in parser on CLJS 1.9.456+ (closes #210)
+mikeivanov,2016-12-21 09:12:09,https://api.github.com/repos/tonsky/datascript/git/commits/b75e23a62db016122af87b5ff9cd608897888c8a,b75e23a62db016122af87b5ff9cd608897888c8a,Fixed a typo/spelling error (#199)
+wambat,2016-11-29 14:19:48,https://api.github.com/repos/tonsky/datascript/git/commits/91bce857274607193f6ada7fb4516ff06ecee98f,91bce857274607193f6ada7fb4516ff06ecee98f,namespace function in built-ins (#188)
+tonsky,2016-11-18 08:08:34,https://api.github.com/repos/tonsky/datascript/git/commits/94aacb5ba4e82a9f713649aec30ec3393a794060,94aacb5ba4e82a9f713649aec30ec3393a794060,Version 0.15.5
+tonsky,2016-11-18 08:05:42,https://api.github.com/repos/tonsky/datascript/git/commits/df938d6865ccff62a7a778a03e04c40df61d3dc0,df938d6865ccff62a7a778a03e04c40df61d3dc0,"When filtering already filtered DB, filters were applied in the wrong order"
+tonsky,2016-11-06 18:10:37,https://api.github.com/repos/tonsky/datascript/git/commits/b864f53644d0e77ec3134fba24afb6ca1c17103e,b864f53644d0e77ec3134fba24afb6ca1c17103e,"Added `array-map`, `list` and `set` to query fns too"
+claj,2016-11-06 18:05:12,https://api.github.com/repos/tonsky/datascript/git/commits/3d86cb32f4f4615b0d382978697bfe7bf9ad688c,3d86cb32f4f4615b0d382978697bfe7bf9ad688c,"Built in vector, hash-map (#186)
+
+Add vector and hash-map to built-in query functions"
+zachcp,2016-09-28 20:50:04,https://api.github.com/repos/tonsky/datascript/git/commits/d45ddf6e73a542e3bcf6e8845c0c21d2eea20f21,d45ddf6e73a542e3bcf6e8845c0c21d2eea20f21,Add an entry for datamaps (#181)
+tonsky,2016-09-26 09:10:43,https://api.github.com/repos/tonsky/datascript/git/commits/78a23c51b173b02c229409b6ed13cdf09fb9984e,78a23c51b173b02c229409b6ed13cdf09fb9984e,Version 0.15.4
+tonsky,2016-09-26 09:01:04,https://api.github.com/repos/tonsky/datascript/git/commits/6142144c52fa2829a26fc3e9b2c3e2cc5597cde8,6142144c52fa2829a26fc3e9b2c3e2cc5597cde8,Lookup refs now work with `:db.unique/value` too (closes #171)
+tonsky,2016-09-26 08:58:46,https://api.github.com/repos/tonsky/datascript/git/commits/4b7e2c447da7253be5eb846b231ab831542aba7e,4b7e2c447da7253be5eb846b231ab831542aba7e,Support JS arrays as lookup refs in datoms and queries (closes #179)
+tonsky,2016-09-25 19:22:26,https://api.github.com/repos/tonsky/datascript/git/commits/7dada20fa98df268fdb05083638781ae7d63b3b3,7dada20fa98df268fdb05083638781ae7d63b3b3,Fixed typo in query pred/fn call code (#180)
+tonsky,2016-09-25 17:19:14,https://api.github.com/repos/tonsky/datascript/git/commits/7eac14d2bbba47b36c108d1f3aed3c6e60a27a23,7eac14d2bbba47b36c108d1f3aed3c6e60a27a23,Speed up pred/fn calls in queries (closes #180)
+tonsky,2016-09-25 16:36:00,https://api.github.com/repos/tonsky/datascript/git/commits/ba1246704c1dfe48a5f0abc330a5098b5f79edce,ba1246704c1dfe48a5f0abc330a5098b5f79edce,Added query over call to JS API tests (closes #179)
+tonsky,2016-09-15 15:26:25,https://api.github.com/repos/tonsky/datascript/git/commits/3fbe1d842f14e176a0fb26a28a41a721eda6a417,3fbe1d842f14e176a0fb26a28a41a721eda6a417,Version 0.15.3
+tonsky,2016-09-15 15:22:23,https://api.github.com/repos/tonsky/datascript/git/commits/c1ca560d3cbe8e9eef3235f604bcf256edf76dc6,c1ca560d3cbe8e9eef3235f604bcf256edf76dc6,Resolve fully-qualified aggregates functions on JVM
+levand,2016-09-15 12:45:33,https://api.github.com/repos/tonsky/datascript/git/commits/587e1e16f068f915cd2d7541989402da952e30b4,587e1e16f068f915cd2d7541989402da952e30b4,"Var resolution for query fns/preds when in JVM (#178)
+
+This commit adds a reader conditional to enable the use of
+namespace-qualified symbols as query functions or predicates, when in
+JVM Clojure. This allows queries using functions or predicates to be
+reused between Datomic and DataScript when running on the JVM.
+
+The semantics of a DataScript query are otherwise unchanged; global var
+resolution is only attempted as a final step before failure.
+
+The semantics when operating in a ClojureScript context are entirely
+unchanged, since global symbol->var resolution is not supported."
+tonsky,2016-09-14 18:43:43,https://api.github.com/repos/tonsky/datascript/git/commits/e9a6b6754cb049463d5c1863268bebc0eb29ec32,e9a6b6754cb049463d5c1863268bebc0eb29ec32,Compatibility with 1.9 defrecords (closes #176)
+tonsky,2016-07-13 17:59:55,https://api.github.com/repos/tonsky/datascript/git/commits/7e77545285610a0523200ba49703a210aac5d4b8,7e77545285610a0523200ba49703a210aac5d4b8,Version 0.15.2
+tonsky,2016-07-13 17:56:57,https://api.github.com/repos/tonsky/datascript/git/commits/0684c4102706bf4ee8b2496ad35c32ced08640fc,0684c4102706bf4ee8b2496ad35c32ced08640fc,large long entity ids were breaking `init-db` (closes #165)
+tonsky,2016-07-06 09:20:08,https://api.github.com/repos/tonsky/datascript/git/commits/0481764e8f80afc5946463535b18bfa389255e04,0481764e8f80afc5946463535b18bfa389255e04,changelog for #163/#164
+tonsky,2016-07-06 09:17:20,https://api.github.com/repos/tonsky/datascript/git/commits/52f55465fb15dcdaa8bcf4df28f247c47c56433a,52f55465fb15dcdaa8bcf4df28f247c47c56433a,Version 0.15.1
+ncalexan,2016-07-06 08:59:54,https://api.github.com/repos/tonsky/datascript/git/commits/783bba9de18d762471c8bc297b814ef246636b88,783bba9de18d762471c8bc297b814ef246636b88,"Filter assertions concerning transaction entities when determining max-eid. (closes #163) (#164)
+
+This patch ensures that max-eid is not set into the transaction
+partition if there are assertions about transaction ids in the initial
+collection of datoms provided to db-init.
+
+This means that replaying transactions yields a database identical in
+all ways, including the max-eid field."
+tonsky,2016-07-06 07:39:43,https://api.github.com/repos/tonsky/datascript/git/commits/e2c64a25c7f09e48a4606336c1e3e3ab6bddce1a,e2c64a25c7f09e48a4606336c1e3e3ab6bddce1a,added Learning ClojureScript to the list of resources
+djwhitt,2016-06-07 09:57:47,https://api.github.com/repos/tonsky/datascript/git/commits/87e1f967c1b1641b17edbbebe143af26494c4833,87e1f967c1b1641b17edbbebe143af26494c4833,Adding Zetawar to list of projects using DataScript (#161)
+tonsky,2016-04-29 07:40:26,https://api.github.com/repos/tonsky/datascript/git/commits/69054acc5273607bb985bede823216698c806348,69054acc5273607bb985bede823216698c806348,Added DataScript 101 to README
+tonsky,2016-04-18 08:07:41,https://api.github.com/repos/tonsky/datascript/git/commits/4b7533de965a5eecc05ef2699514fe4c412e2587,4b7533de965a5eecc05ef2699514fe4c412e2587,Added OmNext TodoMVC (closes #157)
+tonsky,2016-04-01 12:41:01,https://api.github.com/repos/tonsky/datascript/git/commits/bb97e5fdd88cddbeaf3d692dc99a5c41c7b3566f,bb97e5fdd88cddbeaf3d692dc99a5c41c7b3566f,couple of links
+tonsky,2016-04-01 11:20:02,https://api.github.com/repos/tonsky/datascript/git/commits/60dbb436036d67b126f9016bd1465a7f5b7c239b,60dbb436036d67b126f9016bd1465a7f5b7c239b,Changelog & credits to typeetfunc
+visibletrap,2016-01-27 11:36:30,https://api.github.com/repos/tonsky/datascript/git/commits/e1ca971762401444660924120cc6d9d0be58c7c0,e1ca971762401444660924120cc6d9d0be58c7c0,Add video link for PolyConf July 2015 talk
+tonsky,2016-01-25 08:36:13,https://api.github.com/repos/tonsky/datascript/git/commits/8e32a9e41472edab6dd5daee92bddbb6b6aff204,8e32a9e41472edab6dd5daee92bddbb6b6aff204,Added link to Om Next / localisation demo
+tonsky,2016-01-24 09:33:57,https://api.github.com/repos/tonsky/datascript/git/commits/4d27be699348f0f89744211fc206d7d385d6b92d,4d27be699348f0f89744211fc206d7d385d6b92d,`get-else` throws if `nil` is used for default value
+tonsky,2016-01-24 09:19:29,https://api.github.com/repos/tonsky/datascript/git/commits/a98dc779995cd8dbb521a3c84e63720d01281724,a98dc779995cd8dbb521a3c84e63720d01281724,marked nil/remove behavior for query fns as breaking
+robert-stuttaford,2016-01-24 07:17:49,https://api.github.com/repos/tonsky/datascript/git/commits/8d2f121f8c5c06703cc457fed5d1ca2dff0a9cd1,8d2f121f8c5c06703cc457fed5d1ca2dff0a9cd1,Fix Cognician url
+tonsky,2016-01-17 20:04:53,https://api.github.com/repos/tonsky/datascript/git/commits/87e5bc251172213fd47cc359998722be76589845,87e5bc251172213fd47cc359998722be76589845,Version 0.15.0
+tonsky,2016-01-17 19:49:17,https://api.github.com/repos/tonsky/datascript/git/commits/a8da9eb9ae61ad31f68a51493ba03b3782d51602,a8da9eb9ae61ad31f68a51493ba03b3782d51602,"Added `reset-conn`, `conn-from-datoms` and `conn-from-db` (closes #45)"
+tonsky,2016-01-17 16:59:47,https://api.github.com/repos/tonsky/datascript/git/commits/6ed256f2097ec38665a3a0e46d784ed82a3b9a2c,6ed256f2097ec38665a3a0e46d784ed82a3b9a2c,Added all `datascript.core` symbols to externs (closes #139)
+tonsky,2016-01-17 16:07:21,https://api.github.com/repos/tonsky/datascript/git/commits/d50c2552391d876b1d57153ea4ea24926e7bac33,d50c2552391d876b1d57153ea4ea24926e7bac33,Can put datoms into transaction directly (closes #121)
+tonsky,2016-01-16 17:42:32,https://api.github.com/repos/tonsky/datascript/git/commits/d1ff71d3d1e59a626cadc59bedf314d07902a429,d1ff71d3d1e59a626cadc59bedf314d07902a429,"Upsert works in vector form too (closes #99, #109)"
+tonsky,2016-01-16 16:37:29,https://api.github.com/repos/tonsky/datascript/git/commits/ff6ed5773e7f859d25baaf3a4d50a627a4d01eef,ff6ed5773e7f859d25baaf3a4d50a627a4d01eef,"Refactored map processing in transact, backtracking for tempids in upserts (closes #76)"
+tonsky,2016-01-11 17:25:55,https://api.github.com/repos/tonsky/datascript/git/commits/d6f2b0a25aa9e39592fa5337a3d5a7d242ce5f3b,d6f2b0a25aa9e39592fa5337a3d5a7d242ce5f3b,Version 0.14.0
+tonsky,2016-01-11 16:44:36,https://api.github.com/repos/tonsky/datascript/git/commits/668c35544629ef578dcf2e9748e14bf286dd9f54,668c35544629ef578dcf2e9748e14bf286dd9f54,Fixed BTSet implementation of IReduceInit (closes #124)
+tonsky,2016-01-11 15:02:34,https://api.github.com/repos/tonsky/datascript/git/commits/fba94934661ad04cfcba7a73b590d6124f864d5f,fba94934661ad04cfcba7a73b590d6124f864d5f,Retract functions do not fail if lookup ref is pointing nowhere (closes #131)
+tonsky,2016-01-11 14:26:48,https://api.github.com/repos/tonsky/datascript/git/commits/7a955e2cb676550f079bd5c99490b2e2094c6a85,7a955e2cb676550f079bd5c99490b2e2094c6a85,Allow pull-pattern to be specified with a input variable without `?` prefix (closes #136 and #122)
+tonsky,2016-01-10 17:03:58,https://api.github.com/repos/tonsky/datascript/git/commits/2913c967a67ee9d52636a0d56a4358aa2619ccd7,2913c967a67ee9d52636a0d56a4358aa2619ccd7,Lookups with nil value (`[<attr> nil]`) resolve to nil (closes #140)
+tonsky,2016-01-10 13:01:56,https://api.github.com/repos/tonsky/datascript/git/commits/bcdb222f7b8883aec6e3a5889bf880f31a14ba6e,bcdb222f7b8883aec6e3a5889bf880f31a14ba6e,Added new built-ins
+tonsky,2016-01-09 18:57:59,https://api.github.com/repos/tonsky/datascript/git/commits/34bef060080b2a76691a9ddb23c30ac98e90a684,34bef060080b2a76691a9ddb23c30ac98e90a684,Added list of related projects to README
+tonsky,2016-01-09 18:57:37,https://api.github.com/repos/tonsky/datascript/git/commits/2e0dff0a27ad526048556b73e346081000964f18,2e0dff0a27ad526048556b73e346081000964f18,"Bumped cljs version to 1.7.228, enabled parallel builds"
+tonsky,2016-01-09 07:50:37,https://api.github.com/repos/tonsky/datascript/git/commits/ff887c8f69aa3da466f5e25679daf0865c64e4d0,ff887c8f69aa3da466f5e25679daf0865c64e4d0,Throw when calling unbount function/predicate in a query (#111)
+tonsky,2016-01-09 06:33:04,https://api.github.com/repos/tonsky/datascript/git/commits/251477c2ac8ddc7da2e8d1ece0d23f042963ba27,251477c2ac8ddc7da2e8d1ece0d23f042963ba27,Returning nil from query function filters out tuple from result
+tonsky,2016-01-09 06:30:21,https://api.github.com/repos/tonsky/datascript/git/commits/a638c91631ba83b8910f8b65a66b31515fa6d9e5,a638c91631ba83b8910f8b65a66b31515fa6d9e5,changed get-some to return [attr value] instead of just value
+tonsky,2016-01-08 14:45:17,https://api.github.com/repos/tonsky/datascript/git/commits/809d6acf88ea2e4506a1ac1117d99258acfa4b3a,809d6acf88ea2e4506a1ac1117d99258acfa4b3a,Changelog about #138 and #141
+abrooks,2015-12-23 04:06:48,https://api.github.com/repos/tonsky/datascript/git/commits/65d42f4d59b1d78fe36804e5a1056e36cead4a8f,65d42f4d59b1d78fe36804e5a1056e36cead4a8f,"Fix bind-by-fn which failed to resolve conflicting bindings.
+
+'datascript.query.bind-by-fn now uses 'collapse-rels instead of 'conj
+to incorporate the new relation when updating the context
+relations. 'conj blindly adds the relation whereas 'collapse-rels will
+properly handle cases of conflicting bindings.
+
+Fixes the case where this query:
+
+    (let [conn (ds/create-conn {})]
+      (dq/q '[:find ?n
+              :where [(identity 1) ?n]
+                     [(identity 2) ?n]]
+            @conn))
+
+Would yield the resuld #{[1]} instead of #{}. The parent commit
+provides tests of this and other failing cases."
+abrooks,2015-12-23 04:01:38,https://api.github.com/repos/tonsky/datascript/git/commits/9a0613a1bf2aff3b87d3a1b4e26ac603cb90e87c,9a0613a1bf2aff3b87d3a1b4e26ac603cb90e87c,"Add tests covering interaction of query function bindings.
+
+Interactions include:
+ - interactions with other query function bindings
+ - interactions with rule bindings
+ - interactions relational bindings
+
+These tests include alternate orderings as the problems often trigger
+in one order but not the other.
+
+This commit also includes some trailing whitespace removal."
+tonsky,2016-01-08 12:44:55,https://api.github.com/repos/tonsky/datascript/git/commits/a69960f1b23d22ecfddc7685b494ff80c3734d60,a69960f1b23d22ecfddc7685b494ff80c3734d60,bump CLJS to 1.7.170 and lein-cljsbuild to 1.1.2
+claj,2015-11-28 19:46:17,https://api.github.com/repos/tonsky/datascript/git/commits/a13e98d01cf3ae8a505ee17df53301e693f75ceb,a13e98d01cf3ae8a505ee17df53301e693f75ceb,A recent cljs-version in the usage example
+tonsky,2015-11-06 18:54:58,https://api.github.com/repos/tonsky/datascript/git/commits/f043466442915eed2a0f1ebc4d2a5ba910dad311,f043466442915eed2a0f1ebc4d2a5ba910dad311,Version 0.13.3
+petterik,2015-11-05 13:54:44,https://api.github.com/repos/tonsky/datascript/git/commits/990ea0edbb6dd466b5cb80e844c0f7b2c5a1443a,990ea0edbb6dd466b5cb80e844c0f7b2c5a1443a,Let old-value for db.fn/cas be nil
+tonsky,2015-10-21 14:18:48,https://api.github.com/repos/tonsky/datascript/git/commits/8df5be2153eca1c93f22e564c54cd58107a48dba,8df5be2153eca1c93f22e564c54cd58107a48dba,Version 0.13.2
+tonsky,2015-10-21 14:11:21,https://api.github.com/repos/tonsky/datascript/git/commits/07c402bcc0a7760da557525047820f4ea5aca7f4,07c402bcc0a7760da557525047820f4ea5aca7f4,Fixed binding large collections (closes #120)
+tonsky,2015-09-20 18:58:02,https://api.github.com/repos/tonsky/datascript/git/commits/e52ee66a332820137a14c8fa8eb47e9357f1b93a,e52ee66a332820137a14c8fa8eb47e9357f1b93a,Version 0.13.1
+piranha,2015-09-18 09:59:29,https://api.github.com/repos/tonsky/datascript/git/commits/6976422d3dba8f8ecdad21275d9eebb485b6a564,6976422d3dba8f8ecdad21275d9eebb485b6a564,make conn? work with any atom-like entity
+tonsky,2015-09-19 20:53:16,https://api.github.com/repos/tonsky/datascript/git/commits/f6c98f563b3772059931cfca969247e252c2ea32,f6c98f563b3772059931cfca969247e252c2ea32,Version 0.13.0
+tonsky,2015-09-19 20:31:52,https://api.github.com/repos/tonsky/datascript/git/commits/dcd0d9ecce4f34e8bd2f00f8d46af1fbadfa4b77,dcd0d9ecce4f34e8bd2f00f8d46af1fbadfa4b77,datascript.shim → datascript.arrays
+tonsky,2015-09-19 20:07:40,https://api.github.com/repos/tonsky/datascript/git/commits/31793ab1048213f91f367c35c4e1199c91a8a30f,31793ab1048213f91f367c35c4e1199c91a8a30f,"Renamed datascript.core → datascript.db, datascript → datascript.core"
+refset,2015-09-16 19:18:45,https://api.github.com/repos/tonsky/datascript/git/commits/3c260bb0919b8a142d872e56cab633cb9f06704a,3c260bb0919b8a142d872e56cab633cb9f06704a,corrected typo
+tonsky,2015-09-16 07:43:41,https://api.github.com/repos/tonsky/datascript/git/commits/6d45909ed40c5599b0c933c67cc63604a9d02d27,6d45909ed40c5599b0c933c67cc63604a9d02d27,Version 0.12.2
+lynaghk,2015-09-15 22:37:07,https://api.github.com/repos/tonsky/datascript/git/commits/49516628973123d9c40635793fcd3928eb7ac3a2,49516628973123d9c40635793fcd3928eb7ac3a2,Fix null pointer exception when `contains?` is called with an entity.
+tonsky,2015-09-14 22:54:45,https://api.github.com/repos/tonsky/datascript/git/commits/a7d7c89182a4d9ba23a300340ba84d4c4c5c66cd,a7d7c89182a4d9ba23a300340ba84d4c4c5c66cd,couple of projects
+tonsky,2015-09-12 17:23:49,https://api.github.com/repos/tonsky/datascript/git/commits/8be6e847226296650125e155d1f7dfbd3e35dfa4,8be6e847226296650125e155d1f7dfbd3e35dfa4,edge case in btset stresstest
+tonsky,2015-09-12 16:29:10,https://api.github.com/repos/tonsky/datascript/git/commits/a81988de7c7ca74f1e92a2cc8735b7d5ec5063ca,a81988de7c7ca74f1e92a2cc8735b7d5ec5063ca,Version 0.12.1
+tonsky,2015-09-12 16:27:23,https://api.github.com/repos/tonsky/datascript/git/commits/e99f249ba37096ae20f754c84772b497ac3a31fb,e99f249ba37096ae20f754c84772b497ac3a31fb,db-init respects :db/index property
+tonsky,2015-09-07 10:53:21,https://api.github.com/repos/tonsky/datascript/git/commits/fc51b698ab6e6dfe575922121aec4b64b57dfc7c,fc51b698ab6e6dfe575922121aec4b64b57dfc7c,Updated CHANGELOG
+tonsky,2015-09-07 10:27:05,https://api.github.com/repos/tonsky/datascript/git/commits/d163dc79928e648201b492d02d955f4050163f0f,d163dc79928e648201b492d02d955f4050163f0f,Version 0.12.0
+tonsky,2015-09-07 09:23:10,https://api.github.com/repos/tonsky/datascript/git/commits/2b1df061d68369b97cf7633131fe19d530fc9d23,2b1df061d68369b97cf7633131fe19d530fc9d23,fixing compilation && js tests
+tonsky,2015-09-07 09:05:09,https://api.github.com/repos/tonsky/datascript/git/commits/fc0e195d12e419e6749067e5adc3f90fdb4b1f71,fc0e195d12e419e6749067e5adc3f90fdb4b1f71,updated README
+tonsky,2015-09-07 08:52:22,https://api.github.com/repos/tonsky/datascript/git/commits/ae3412122b8223fccdb651e68b89cb50490a1b8d,ae3412122b8223fccdb651e68b89cb50490a1b8d,introduced :db/index attribute
+tonsky,2015-08-31 05:18:53,https://api.github.com/repos/tonsky/datascript/git/commits/7823d1c7840949690ba4835c796610e45fb96a3a,7823d1c7840949690ba4835c796610e45fb96a3a,Update README.md
+tonsky,2015-08-31 05:13:37,https://api.github.com/repos/tonsky/datascript/git/commits/c894b39d79ca284c3cbb4a4317377cbb8184e35b,c894b39d79ca284c3cbb4a4317377cbb8184e35b,updated cljs version
+tonsky,2015-08-08 15:27:49,https://api.github.com/repos/tonsky/datascript/git/commits/f94f3378b86444e4e1ceedb45cb3d71a0476ae73,f94f3378b86444e4e1ceedb45cb3d71a0476ae73,single-pass recursive bindings
+tonsky,2015-08-03 18:18:49,https://api.github.com/repos/tonsky/datascript/git/commits/f1bf32d87129ab2a71af57ee553ecd2e47483c9a,f1bf32d87129ab2a71af57ee553ecd2e47483c9a,Predicates in q3
+tonsky,2015-08-02 20:09:11,https://api.github.com/repos/tonsky/datascript/git/commits/c562d2a0603524d3d65c4867135fa537d86b2317,c562d2a0603524d3d65c4867135fa537d86b2317,use array-rel for resolve-or
+tonsky,2015-08-02 19:45:19,https://api.github.com/repos/tonsky/datascript/git/commits/9cd272077404af5ccfd7339c9680c2a9ba73397f,9cd272077404af5ccfd7339c9680c2a9ba73397f,fixed rel union in q3
+tonsky,2015-08-02 19:21:49,https://api.github.com/repos/tonsky/datascript/git/commits/76f0b1a90d32ed48913723f6ce686f3c88656094,76f0b1a90d32ed48913723f6ce686f3c88656094,Or/and clause solver for q3
+tonsky,2015-08-02 00:22:22,https://api.github.com/repos/tonsky/datascript/git/commits/65cd89da58aef22d276116ddf34bef15841bbb53,65cd89da58aef22d276116ddf34bef15841bbb53,tests for “not” clause
+tonsky,2015-08-01 00:16:15,https://api.github.com/repos/tonsky/datascript/git/commits/ec49fbfdb6947d976c1d3acd82c9a18122b4e7a4,ec49fbfdb6947d976c1d3acd82c9a18122b4e7a4,Not clause solver for q3
+tonsky,2015-07-30 21:21:15,https://api.github.com/repos/tonsky/datascript/git/commits/b0a5e2d99f10e8f3200c9616ff0ef1229997486f,b0a5e2d99f10e8f3200c9616ff0ef1229997486f,polyfill performance.now
+tonsky,2015-07-30 20:40:27,https://api.github.com/repos/tonsky/datascript/git/commits/3b47f927d15f2c6392ab5e8035f2516e6358fea4,3b47f927d15f2c6392ab5e8035f2516e6358fea4,"fixed arange, hash-arr, refactor resolve-clause"
+aengelberg,2015-07-23 21:47:56,https://api.github.com/repos/tonsky/datascript/git/commits/331773b25ec08b07a646037097e104b3df7f0b5c,331773b25ec08b07a646037097e104b3df7f0b5c,Fix sneaky parens caught by humane-test-output
+tonsky,2015-07-25 00:39:35,https://api.github.com/repos/tonsky/datascript/git/commits/160be5365237eb05d37f478b25db7c7611cd9792,160be5365237eb05d37f478b25db7c7611cd9792,"datoms to support nth, q3/collect via target-idxs"
+tonsky,2015-07-24 23:39:01,https://api.github.com/repos/tonsky/datascript/git/commits/99c3ffb68c648c8d084f69c8dccef9895bb447ef,99c3ffb68c648c8d084f69c8dccef9895bb447ef,q3 set collector
+tonsky,2015-07-21 14:11:00,https://api.github.com/repos/tonsky/datascript/git/commits/f8e5d67760133f22e01f7a1f40e0e369d732372a,f8e5d67760133f22e01f7a1f40e0e369d732372a,values you put to database under the same attribute should be comparable
+tonsky,2015-07-20 22:26:03,https://api.github.com/repos/tonsky/datascript/git/commits/4499c67f1214f50e88e424339f575ad3eb568fec,4499c67f1214f50e88e424339f575ad3eb568fec,preliminary q3 work
+tonsky,2015-07-20 09:42:42,https://api.github.com/repos/tonsky/datascript/git/commits/1f1489c7f97a85e6873f8f5370b1ea256c2f52d8,1f1489c7f97a85e6873f8f5370b1ea256c2f52d8,partsbox description update
+tonsky,2015-07-19 20:41:29,https://api.github.com/repos/tonsky/datascript/git/commits/c038300dc8c25091e75206484f25e540b88f7a03,c038300dc8c25091e75206484f25e540b88f7a03,Version 0.11.6
+tonsky,2015-07-19 20:34:23,https://api.github.com/repos/tonsky/datascript/git/commits/08730fd3f8923231e8a411cad88987f07e101c44,08730fd3f8923231e8a411cad88987f07e101c44,fixed id allocation bug (closes #66)
+tonsky,2015-07-19 20:09:41,https://api.github.com/repos/tonsky/datascript/git/commits/9f20183cb1cdc8a7ef8735e3717da979d59e249f,9f20183cb1cdc8a7ef8735e3717da979d59e249f,trying more reliable test-uuid test
+tonsky,2015-07-19 19:57:40,https://api.github.com/repos/tonsky/datascript/git/commits/8020986d8828a7347465da11eacefb0ad63821a3,8020986d8828a7347465da11eacefb0ad63821a3,Preconditions to validate db/conn arguments (closes #101)
+tonsky,2015-07-19 19:30:43,https://api.github.com/repos/tonsky/datascript/git/commits/976bd20be3d8bc237006884dac52c13ba8a67e6a,976bd20be3d8bc237006884dac52c13ba8a67e6a,typo
+tonsky,2015-07-19 19:22:20,https://api.github.com/repos/tonsky/datascript/git/commits/4b63a1a48366f702bc541eb07b86b4c2ae3054f4,4b63a1a48366f702bc541eb07b86b4c2ae3054f4,Node.js and Browser repls for dev profile (closes #93)
+mattsenior,2015-06-20 11:08:33,https://api.github.com/repos/tonsky/datascript/git/commits/a7eb43edf5f265a65d49a901f988fe56b8d3a7ab,a7eb43edf5f265a65d49a901f988fe56b8d3a7ab,Return collections on reverse non-component pull
+mattsenior,2015-06-23 13:34:24,https://api.github.com/repos/tonsky/datascript/git/commits/18ab268d4682f2ef0c75ce42548494726009f82f,18ab268d4682f2ef0c75ce42548494726009f82f,Enable JS lookup refs
+tonsky,2015-07-19 12:49:16,https://api.github.com/repos/tonsky/datascript/git/commits/f2f05fa7ef956358ef5680e861b11a6e84087be3,f2f05fa7ef956358ef5680e861b11a6e84087be3,"ms argument to squuid (closes #95, #97)"
+tonsky,2015-07-14 19:09:49,https://api.github.com/repos/tonsky/datascript/git/commits/6e2ae22ce80c8a9a57432d6cc5e327faf8f719d2,6e2ae22ce80c8a9a57432d6cc5e327faf8f719d2,tips&tricks link
+tonsky,2015-07-09 20:07:48,https://api.github.com/repos/tonsky/datascript/git/commits/065e396c8cd3fc2c80e729984e5e45a2da6e9e70,065e396c8cd3fc2c80e729984e5e45a2da6e9e70,ported query_v3 to clj
+tonsky,2015-07-09 17:56:16,https://api.github.com/repos/tonsky/datascript/git/commits/77e3df0f218b82f84267d1352b16030f272c6b57,77e3df0f218b82f84267d1352b16030f272c6b57,Added LightMesh.com
+tonsky,2015-07-08 14:43:03,https://api.github.com/repos/tonsky/datascript/git/commits/77c7c4d281df5c2f4a5e82f2439f5613ca4e9448,77c7c4d281df5c2f4a5e82f2439f5613ca4e9448,Updated README
+tonsky,2015-07-08 14:11:58,https://api.github.com/repos/tonsky/datascript/git/commits/0ddddd6c26c31026f47af54305c8f385012d54c2,0ddddd6c26c31026f47af54305c8f385012d54c2,"readme link, closes #98"
+tonsky,2015-07-08 07:17:21,https://api.github.com/repos/tonsky/datascript/git/commits/eac3f10d28dd02aabfb031d3bffc5f4e5361edeb,eac3f10d28dd02aabfb031d3bffc5f4e5361edeb,add partbox.io to README
+tonsky,2015-07-04 09:45:51,https://api.github.com/repos/tonsky/datascript/git/commits/36637c1fd52ddffc7038b0b786d57661c0e154a6,36637c1fd52ddffc7038b0b786d57661c0e154a6,added logo
+tonsky,2015-06-28 21:05:10,https://api.github.com/repos/tonsky/datascript/git/commits/fc1f04344b1df14da9a72bb963fd631441c2af7c,fc1f04344b1df14da9a72bb963fd631441c2af7c,bench results
+tonsky,2015-06-28 19:18:07,https://api.github.com/repos/tonsky/datascript/git/commits/1457c2ac1b0ee9e74ca9d1e1e1f196e69745c107,1457c2ac1b0ee9e74ca9d1e1e1f196e69745c107,Version 0.11.5
+tonsky,2015-06-28 19:04:54,https://api.github.com/repos/tonsky/datascript/git/commits/d1744675f73db419a2c74b3fb4ddd3762c8324f8,d1744675f73db419a2c74b3fb4ddd3762c8324f8,last minor improvements
+tonsky,2015-06-28 17:26:39,https://api.github.com/repos/tonsky/datascript/git/commits/67a0b80d08ed5f7067847a876c08cf91eccd37b6,67a0b80d08ed5f7067847a876c08cf91eccd37b6,some type annotations
+tonsky,2015-06-28 15:59:00,https://api.github.com/repos/tonsky/datascript/git/commits/5fce6ea8a71a80f72fcc6b75af0a5357c13d1dfe,5fce6ea8a71a80f72fcc6b75af0a5357c13d1dfe,chunked iteration for btset
+tonsky,2015-06-28 15:40:32,https://api.github.com/repos/tonsky/datascript/git/commits/4251ea0ee95c0d2cd8af0fa9f1ba00e52cd0bf85,4251ea0ee95c0d2cd8af0fa9f1ba00e52cd0bf85,some type annotations
+tonsky,2015-06-27 21:07:07,https://api.github.com/repos/tonsky/datascript/git/commits/510460fa6f8c40aa145e86c959f1448bcb582b04,510460fa6f8c40aa145e86c959f1448bcb582b04,use System/arraycopy
+tonsky,2015-06-27 19:04:30,https://api.github.com/repos/tonsky/datascript/git/commits/f43b0b75e9350a6abf3b3d9a363ca3f28591b36e,f43b0b75e9350a6abf3b3d9a363ca3f28591b36e,removed dynamic *cmp* var from btset
+tonsky,2015-06-26 15:19:47,https://api.github.com/repos/tonsky/datascript/git/commits/1c3227024bbaa303c6017ab7de6dd6eaeeac0054,1c3227024bbaa303c6017ab7de6dd6eaeeac0054,added :ts to bench reports
+tonsky,2015-06-26 15:01:21,https://api.github.com/repos/tonsky/datascript/git/commits/f8bbb48206d9001c07c1877ebd21d216d98d411d,f8bbb48206d9001c07c1877ebd21d216d98d411d,bench merges and persists results
+tonsky,2015-06-26 14:11:59,https://api.github.com/repos/tonsky/datascript/git/commits/8071220486b8a9d2d75919a09334c9b2e6c819a0,8071220486b8a9d2d75919a09334c9b2e6c819a0,fixed btset disj on big sets
+tonsky,2015-06-25 21:56:02,https://api.github.com/repos/tonsky/datascript/git/commits/ef96824caf1184e352cb8d0f89e6c14255631958,ef96824caf1184e352cb8d0f89e6c14255631958,returned js interop tests
+tonsky,2015-06-25 21:21:49,https://api.github.com/repos/tonsky/datascript/git/commits/de84aef3fd1b0b58f82b2b7c82b52d7a072c57a8,de84aef3fd1b0b58f82b2b7c82b52d7a072c57a8,migrated to cljs.test
+tonsky,2015-06-25 20:15:50,https://api.github.com/repos/tonsky/datascript/git/commits/690c05eb7e6f35f15b97da1e592b73d828c33555,690c05eb7e6f35f15b97da1e592b73d828c33555,node-based test runner
+tonsky,2015-06-25 19:48:23,https://api.github.com/repos/tonsky/datascript/git/commits/040a2d883db7fa5083e737b5a506a8d86dfd0a5d,040a2d883db7fa5083e737b5a506a8d86dfd0a5d,btset ported to clj
+avevlad,2015-06-20 19:38:17,https://api.github.com/repos/tonsky/datascript/git/commits/fcd480d98adef40a973a8634698ff69c0c961661,fcd480d98adef40a973a8634698ff69c0c961661,Update README.md
+tonsky,2015-06-15 22:35:36,https://api.github.com/repos/tonsky/datascript/git/commits/8bd281755763bea18664720ba048b1f0d2b7d953,8bd281755763bea18664720ba048b1f0d2b7d953,datomic bench runner
+tonsky,2015-06-15 21:29:06,https://api.github.com/repos/tonsky/datascript/git/commits/bd90b608fb9e0640fee98078183ad55b1abc433d,bd90b608fb9e0640fee98078183ad55b1abc433d,benchmark runner
+tonsky,2015-06-15 01:16:00,https://api.github.com/repos/tonsky/datascript/git/commits/3fea221d52bbacf936f78e1ba702dab2387abb4d,3fea221d52bbacf936f78e1ba702dab2387abb4d,added batch mode for JVM & JS benches
+tonsky,2015-06-14 20:48:22,https://api.github.com/repos/tonsky/datascript/git/commits/fa905ffc6c51a6462097a1ddef4a796176f3fe92,fa905ffc6c51a6462097a1ddef4a796176f3fe92,unified perf namespace
+tonsky,2015-06-08 00:09:26,https://api.github.com/repos/tonsky/datascript/git/commits/f6f79c1ed2770a180ad63f1fbc8d95a9a5edb966,f6f79c1ed2770a180ad63f1fbc8d95a9a5edb966,Version 0.11.4
+tonsky,2015-06-07 23:53:06,https://api.github.com/repos/tonsky/datascript/git/commits/5384cdd46f53280e44842daab96b4bab44544951,5384cdd46f53280e44842daab96b4bab44544951,refreshed/fixed perftests
+tonsky,2015-06-07 21:01:50,https://api.github.com/repos/tonsky/datascript/git/commits/8901769c6341a3f30c0c50f08651352bddf8e9b0,8901769c6341a3f30c0c50f08651352bddf8e9b0,got rid of variable-arity defns
+tonsky,2015-06-07 20:41:34,https://api.github.com/repos/tonsky/datascript/git/commits/a394028669bf319073a83beba4acd6d123e723c8,a394028669bf319073a83beba4acd6d123e723c8,LRU ported to CLJ
+tonsky,2015-06-06 20:54:07,https://api.github.com/repos/tonsky/datascript/git/commits/f76427863814ede08172746421fcc9ebd495d9fe,f76427863814ede08172746421fcc9ebd495d9fe,got rid of reflection warnings
+tonsky,2015-06-01 11:09:30,https://api.github.com/repos/tonsky/datascript/git/commits/b802a0daaf38fc1ce807add981892543d8f43748,b802a0daaf38fc1ce807add981892543d8f43748,Version 0.11.3
+tonsky,2015-06-01 11:05:06,https://api.github.com/repos/tonsky/datascript/git/commits/b4c104d64e27f012e7457f1c224fdbe07c60bb8a,b4c104d64e27f012e7457f1c224fdbe07c60bb8a,"Updated deps, added squuid test"
+tonsky,2015-05-24 18:44:00,https://api.github.com/repos/tonsky/datascript/git/commits/7fc9e75a0aa0ef20a9f888002b26a7549e457360,7fc9e75a0aa0ef20a9f888002b26a7549e457360,updated requirements
+tonsky,2015-05-24 16:56:38,https://api.github.com/repos/tonsky/datascript/git/commits/2030333d1ad0b5c122486da737c7a5287ec4d720,2030333d1ad0b5c122486da737c7a5287ec4d720,Version 0.11.2
+benfleis,2015-05-20 14:54:51,https://api.github.com/repos/tonsky/datascript/git/commits/6d30234532c63b92e469dba9c0f0d06afd1f9d3c,6d30234532c63b92e469dba9c0f0d06afd1f9d3c,"- fix tuple-key-fn to return array in CLJ
+- revert 2 of the aget -> get CLJ conditionals; the rest appear to be necessary due to use of string keys"
+benfleis,2015-05-20 13:48:33,https://api.github.com/repos/tonsky/datascript/git/commits/858225db756dffc52e2b883befd6f2fd5b916b9c,858225db756dffc52e2b883befd6f2fd5b916b9c,use cemerick/prismatic technique+code to smoooooosh defrecord-updatable-* into a single macro.
+benfleis,2015-05-20 13:39:33,https://api.github.com/repos/tonsky/datascript/git/commits/7ebb30839f119377640d42b55c114198382b4a04,7ebb30839f119377640d42b55c114198382b4a04,"- revert retract-components to transducer form
+- s/get-compat/#?(:cljs aget :clj get)/g
+- use areduce instead of array-reduce/reduce combo
+- move all ExceptionInfo imports into main ns clause (in tests)"
+benfleis,2015-05-20 10:02:41,https://api.github.com/repos/tonsky/datascript/git/commits/5ee68b74c221ff49dab1a3329f3e4420510d6c3a,5ee68b74c221ff49dab1a3329f3e4420510d6c3a,"ALL tests pass :)
+lots of little fixes pulled up from original diff
+- aget/get -> get-compat
+- add __hash to FilteredDB
+- Datom supports gets w/ keyword and string
+- fix a couple test bits (namely entity-map and catches in transact)"
+benfleis,2015-05-19 13:39:25,https://api.github.com/repos/tonsky/datascript/git/commits/7e9ef153b8dc0f5b39674d667ba92c9c6ef360d3,7e9ef153b8dc0f5b39674d667ba92c9c6ef360d3,"- upgrade cljsbuild to 1.0.6! auto will work again :)
+- update all `ns` blocks
+- in tests replace all `dp/Foo.` with `dp/->Foo` (avoids the big import blocks, and for these performance isn't critical)
+- drop all embedded #js and js/, replacing with compat and def'd equivalents
+- move debug macros into debug.cljc"
+tonsky,2015-05-19 12:59:26,https://api.github.com/repos/tonsky/datascript/git/commits/180c4efc503b0c55c630dedff5b6059d60595abe,180c4efc503b0c55c630dedff5b6059d60595abe,some updates to readers tests
+benfleis,2015-05-19 11:01:39,https://api.github.com/repos/tonsky/datascript/git/commits/88ccd189a54a4a273f49093df0b8b284b0d0480c,88ccd189a54a4a273f49093df0b8b284b0d0480c,"- update EDN reader tests to try clojure.core and .edn methods, explicit and implicit
+- update validate-attr for -index-range
+- remove filtered-db?"
+benfleis,2015-05-19 08:58:49,https://api.github.com/repos/tonsky/datascript/git/commits/764f20e6d368b26ef7774ef39161750ad0b1fc81,764f20e6d368b26ef7774ef39161750ad0b1fc81,"- query/make-obj-array -> dc/arr
+- attempt to fix up data readers for both langs; in-src unit test failing, commented out
+- redefine db? based on interfaces
+- revert mapa for CLJS"
+benfleis,2015-05-18 14:47:13,https://api.github.com/repos/tonsky/datascript/git/commits/56e5d166001d0d0e9efeb73cfa68f0cfa393e8d8,56e5d166001d0d0e9efeb73cfa68f0cfa393e8d8,"- track clojure-1.7.0-beta3
+- get rid of macro-only .clj files, moving their content into core.cljc
+- get entity tests to work, implying:
+    - update `ns` blocks in src, and a little bit in test
+    - apply a number of small fixes from previous patch, mostly cljs -> clj tweaks
+- add serialization tests, fix related code
+- add a couple type hints to Datom/DB funcs, as a basis for reducing reflection warnings
+- big progress toward getting everything to at least compile in CLJ, and be able to use cljsbuild 1.0.6
+
+- open questions:
+    - is-filtered predicate: consistency w/ other added type check predicates? (replace w/ filtered-db?)
+    - could switch deftrecord to use defrecord-updatable, allowing specific instances to override, naturally (ITraversable, Not Or Variable)
+    - ICache protocol unused. intentional?"
+benfleis,2015-05-18 12:27:46,https://api.github.com/repos/tonsky/datascript/git/commits/59ef4f18ebee49de82b3c34c083fa807aa5a91c6,59ef4f18ebee49de82b3c34c083fa807aa5a91c6,Merge branch 'move-to-cljc-dbs' of github.com:tonsky/datascript into move-to-cljc-dbs
+benfleis,2015-05-18 07:21:45,https://api.github.com/repos/tonsky/datascript/git/commits/391afca775e2063352acff820e8e2d9d5e2e1919,391afca775e2063352acff820e8e2d9d5e2e1919,set boolean return type hints via reader conditional
+tonsky,2015-05-17 21:08:38,https://api.github.com/repos/tonsky/datascript/git/commits/4658db40ed021f4d0515143ef931d4dc194cda68,4658db40ed021f4d0515143ef931d4dc194cda68,"fixed max-eid, restricted __hash to clj only"
+benfleis,2015-05-16 20:10:09,https://api.github.com/repos/tonsky/datascript/git/commits/8e12ed85beed36405cb8dbf517727b85d98b9e3b,8e12ed85beed36405cb8dbf517727b85d98b9e3b,"- return max-eid calc to its proper place, with comment
+- add hash caching for DB in CLJ (via atom)"
+benfleis,2015-05-16 15:19:09,https://api.github.com/repos/tonsky/datascript/git/commits/5bd694cb1a83dcffeccf2c6f7bcca77e63f0fa2e,5bd694cb1a83dcffeccf2c6f7bcca77e63f0fa2e,"- single empty-db func, so that (empty …) calls grab schema and use it
+- migrate empty-db/init-db (and semi-private reps) -> core.cljc to avoid circular refs
+- use direct field names in CLJ defrecord funcs, when possible
+- defrecord-extendable -> defrecord-updatable
+- use hash-ordered-coll in hash-db [cljs]
+- remove faulty type hint on hash-db
+- remove unused {assoc,val-at}-db"
+benfleis,2015-05-15 14:20:53,https://api.github.com/repos/tonsky/datascript/git/commits/abae65917b17fdb2bcf0e835d6e805eee19a4ccd,abae65917b17fdb2bcf0e835d6e805eee19a4ccd,"Move DB and FilteredDB structures into defrecord-extendable, leverging
+both defrecord built-in semantics, and expanding where needed."
+dthume,2015-05-13 20:01:55,https://api.github.com/repos/tonsky/datascript/git/commits/3df983a5a880fa904d73759a0c21012ff54a07b0,3df983a5a880fa904d73759a0c21012ff54a07b0,Support reverse attribute refs in combination with wildcards. Fixes #80
+benfleis,2015-05-08 10:00:41,https://api.github.com/repos/tonsky/datascript/git/commits/b6cdf23802650dfc8b624b3b7c7e473e40e2f287,b6cdf23802650dfc8b624b3b7c7e473e40e2f287,"fix Datom:equiv/entryAt ordering, datascript.core/Datom ->
+datascript/Datom and needless duplicate code in cmp-val"
+benfleis,2015-05-08 09:34:17,https://api.github.com/repos/tonsky/datascript/git/commits/b84f4dc1590f34e98a173214c3e51a619830e9e3,b84f4dc1590f34e98a173214c3e51a619830e9e3,"fixups:
+- UnsupposedClassVersionError -> UnsupportedOperationException
+- add assoc to Datom
+- fix macro inclusion for CLJ
+- perf improvements: revert ->Datom/Datom., RHS type hint in equiv-datom"
+benfleis,2015-05-06 15:41:40,https://api.github.com/repos/tonsky/datascript/git/commits/2a9c2ec8512ca5ab79c8351c4847ac1e6532d467,2a9c2ec8512ca5ab79c8351c4847ac1e6532d467,fix macro reference that referred to incorrect file
+benfleis,2015-05-06 14:56:02,https://api.github.com/repos/tonsky/datascript/git/commits/4257d1c42117f59d8595e12c913bd2c796807c76,4257d1c42117f59d8595e12c913bd2c796807c76,"Integrate Datom CLJ port, which moves Datom from defrecord to
+deftype. Also move all Datom related funcs into same area, including a
+couple from datascript.cljc. Finally replace all `dc/Datom.` with
+`dc/->Datom.`."
+benfleis,2015-05-06 09:10:03,https://api.github.com/repos/tonsky/datascript/git/commits/1c79645916fffd83611ba8be18d08380f71bff96,1c79645916fffd83611ba8be18d08380f71bff96,"entity[CLJ]: add not-found to IFn
+entity[CLJS]: remove superfluous -lookup -> lookup-entity chains"
+benfleis,2015-05-06 08:55:03,https://api.github.com/repos/tonsky/datascript/git/commits/0cd01cb255e84020040c426c0bd59ac8b0a2e04b,0cd01cb255e84020040c426c0bd59ac8b0a2e04b,"entity[CLJ]: fix (empty) call to throw UnsupposedOperationException, add IFn support"
+benfleis,2015-05-05 07:00:49,https://api.github.com/repos/tonsky/datascript/git/commits/8264eb0efa500084b24654d1d2f9b69ef1d3f25f,8264eb0efa500084b24654d1d2f9b69ef1d3f25f,"update entity code to function in CLJ; primary change is that both CLJ
+and CLJS use `volatile!`s instead of deftype `:mutable`-ish things to
+manage `touched` and `cache` fields. other changes accommodate common
+code tactics, with varying degrees of grace."
+tonsky,2015-05-03 08:21:38,https://api.github.com/repos/tonsky/datascript/git/commits/ae222be840317e243b70c442be9781e2dc96e4ae,ae222be840317e243b70c442be9781e2dc96e4ae,Version 0.11.1
+tonsky,2015-05-03 08:19:35,https://api.github.com/repos/tonsky/datascript/git/commits/80904af65962bf4ad007616b66b5a0d6a21343aa,80904af65962bf4ad007616b66b5a0d6a21343aa,Return nil from entity when passed nil eid (closes #75)
+tonsky,2015-04-30 15:58:44,https://api.github.com/repos/tonsky/datascript/git/commits/9074375302a1e2022ab84dda49f880e6f31574c3,9074375302a1e2022ab84dda49f880e6f31574c3,Version 0.11.0
+tonsky,2015-04-30 15:24:36,https://api.github.com/repos/tonsky/datascript/git/commits/e16341cde2956f7f911bfdb3f011aa4618190206,e16341cde2956f7f911bfdb3f011aa4618190206,init_db fixed in JS version (closes #73)
+tonsky,2015-04-16 14:16:42,https://api.github.com/repos/tonsky/datascript/git/commits/d55b1948527e76a0667458bb667ae09134513ad2,d55b1948527e76a0667458bb667ae09134513ad2,added clj version of squuid
+benfleis,2015-04-20 09:36:29,https://api.github.com/repos/tonsky/datascript/git/commits/349afc9874558947b37458503de363e192d0dee2,349afc9874558947b37458503de363e192d0dee2,"- update semantic-test-slice to work in CLJS as well (renamed to -btset-by)
+- update CLJ btset-{conj,disj} to accept (and ignore) comparator fn
+- remove unused helper funcs from btset test"
+benfleis,2015-04-17 12:19:04,https://api.github.com/repos/tonsky/datascript/git/commits/0e2c21b481d4460bde266d4649435b439a1dd166,0e2c21b481d4460bde266d4649435b439a1dd166,"- conditionalize CLJ specific test in btset
+- update project.clj/travis to add and use test-clj lein target"
+benfleis,2015-04-17 11:25:33,https://api.github.com/repos/tonsky/datascript/git/commits/964098ddeae8e8200ab1c266b92ac81621844e4d,964098ddeae8e8200ab1c266b92ac81621844e4d,"import/adjust btset.clj, update test/.../btset.cljc to run in both"
+benfleis,2015-04-16 13:56:00,https://api.github.com/repos/tonsky/datascript/git/commits/6d81de0cbb9aefacfb26d902174343a47277ed15,6d81de0cbb9aefacfb26d902174343a47277ed15,"move nearly all cljs files to cljc, as basis for work on clojure
+port. updated compilers: clj -> 1.7.0-beta, cljs -> 0.3196"
+tonsky,2015-03-23 08:47:43,https://api.github.com/repos/tonsky/datascript/git/commits/de787403781ab3c0e2a917a56e56903a1afe5102,de787403781ab3c0e2a917a56e56903a1afe5102,returned query engine v3
+tonsky,2015-03-23 08:39:04,https://api.github.com/repos/tonsky/datascript/git/commits/68aa2675a738519678266c948335697627c952f8,68aa2675a738519678266c948335697627c952f8,Version 0.10.0
+tonsky,2015-03-23 05:44:14,https://api.github.com/repos/tonsky/datascript/git/commits/3e9874207080ea98620df8c6b2f93c58beff775d,3e9874207080ea98620df8c6b2f93c58beff775d,query parser cache
+tonsky,2015-03-23 05:37:38,https://api.github.com/repos/tonsky/datascript/git/commits/ab6dcccaac2c4140411905bba5a412a8a1153db7,ab6dcccaac2c4140411905bba5a412a8a1153db7,"Added ICounted, ISequable, IEmptyableCollection to `datascript.core/DB`"
+tonsky,2015-03-22 14:07:26,https://api.github.com/repos/tonsky/datascript/git/commits/37e3cc89e0f7897b704e11a7659073b2d514f695,37e3cc89e0f7897b704e11a7659073b2d514f695,tests for JS filtered API
+tonsky,2015-03-22 13:52:06,https://api.github.com/repos/tonsky/datascript/git/commits/1cab092bc237512d08b7df516b838b240263d5b6,1cab092bc237512d08b7df516b838b240263d5b6,"Merge pull request #65 from ActiveObject/filtered-dbs-js
+
+Expose Filtered DBs API to js"
+ActiveObject,2015-03-20 15:29:24,https://api.github.com/repos/tonsky/datascript/git/commits/02fdcb8fb2e8bc2999266d16e5b7afe63fd48d3a,02fdcb8fb2e8bc2999266d16e5b7afe63fd48d3a,Expose Filtered DBs API to js
+tonsky,2015-03-07 14:24:30,https://api.github.com/repos/tonsky/datascript/git/commits/c56b9fed8e6f7ad31dcc8216d52d7334b5e1d592,c56b9fed8e6f7ad31dcc8216d52d7334b5e1d592,"don't rely on data_readers, bake in reader tags"
+tonsky,2015-03-01 11:57:07,https://api.github.com/repos/tonsky/datascript/git/commits/61947733c9d8c3695ce8ba1d3018d39b0056d1f5,61947733c9d8c3695ce8ba1d3018d39b0056d1f5,ICounted and IReduce impl for BTSetIter
+tonsky,2015-03-01 10:31:41,https://api.github.com/repos/tonsky/datascript/git/commits/6418c1a2c9014a27508f49e9eca0795ead027446,6418c1a2c9014a27508f49e9eca0795ead027446,"reorganized compile targets, moved dev to target/"
+tonsky,2015-02-25 17:50:52,https://api.github.com/repos/tonsky/datascript/git/commits/e17d808c8e63847de0c7e54526aa659b8cdedac6,e17d808c8e63847de0c7e54526aa659b8cdedac6,WIP on query-v3
+tonsky,2015-02-25 17:14:31,https://api.github.com/repos/tonsky/datascript/git/commits/de840cb6c2cf5c4b2ed393d9ec8a9c0881b36bdd,de840cb6c2cf5c4b2ed393d9ec8a9c0881b36bdd,"Added #58, #61 and #62 to changelog"
+dthume,2015-02-25 16:57:15,https://api.github.com/repos/tonsky/datascript/git/commits/1d53de9be620c8e6b4f3d9cb5a3f872ac666b376,1d53de9be620c8e6b4f3d9cb5a3f872ac666b376,Unify checking for seen eids
+dthume,2015-02-25 15:02:33,https://api.github.com/repos/tonsky/datascript/git/commits/5437509bc9155978f028b54b7b09861a02de80d2,5437509bc9155978f028b54b7b09861a02de80d2,Redo recursion support to bring it in line with datomic behaviour. also fixes #62
+tonsky,2015-02-25 13:08:56,https://api.github.com/repos/tonsky/datascript/git/commits/c044558bd1115028136cd1dd47fc4d3294c2f3ec,c044558bd1115028136cd1dd47fc4d3294c2f3ec,"Merge pull request #61 from dthume/pull-component-recursion
+
+First pass at fix for #58"
+dthume,2015-02-25 12:45:21,https://api.github.com/repos/tonsky/datascript/git/commits/1c1d71cca6ce25af288d9bd1ea91283c04dd8256,1c1d71cca6ce25af288d9bd1ea91283c04dd8256,"Remove redundant test, remove commented out test"
+dthume,2015-02-25 07:33:55,https://api.github.com/repos/tonsky/datascript/git/commits/0b33e9e8fa35f38da0c34e579e303403819e3a9a,0b33e9e8fa35f38da0c34e579e303403819e3a9a,First pass at fix for #58 - still has issues (see commented pull-api test)
+tonsky,2015-02-23 10:49:31,https://api.github.com/repos/tonsky/datascript/git/commits/8fe3152e9b2bfce4ef7eb50c2c57b6e1abfe39fb,8fe3152e9b2bfce4ef7eb50c2c57b6e1abfe39fb,Fixed squuids omitting leading zeros (closes #60)
+tonsky,2015-02-16 20:34:42,https://api.github.com/repos/tonsky/datascript/git/commits/d08e8cbc0aae78383a9ade8af3ff3809df168006,d08e8cbc0aae78383a9ade8af3ff3809df168006,Fixed id allocation bug when nested maps are used for referenced entities (closes #59)
+tonsky,2015-02-12 16:01:54,https://api.github.com/repos/tonsky/datascript/git/commits/6d96d15db8e0f74a06276e371547d28a013fd71a,6d96d15db8e0f74a06276e371547d28a013fd71a,Bindings rewritten to work with parser output. Support for _ in bindings
+tonsky,2015-02-12 14:31:58,https://api.github.com/repos/tonsky/datascript/git/commits/438913130cb0060aa4223f4ebc3f53ee0fd91a24,438913130cb0060aa4223f4ebc3f53ee0fd91a24,some protocol names adjustment
+tonsky,2015-02-12 14:31:33,https://api.github.com/repos/tonsky/datascript/git/commits/40f7c270683833ad8262bb520921e801abb97e5c,40f7c270683833ad8262bb520921e801abb97e5c,new cljs version
+tonsky,2015-02-09 23:41:14,https://api.github.com/repos/tonsky/datascript/git/commits/5eb369cc7433f84e40768540a7cbf9b711cc9f83,5eb369cc7433f84e40768540a7cbf9b711cc9f83,using parser for query validation
+tonsky,2015-02-09 21:22:40,https://api.github.com/repos/tonsky/datascript/git/commits/b8fe07ee7ed29c83e41eb007eb0ae5ba10b52cd4,b8fe07ee7ed29c83e41eb007eb0ae5ba10b52cd4,merged all parsers into single namespace
+tonsky,2015-02-08 22:27:03,https://api.github.com/repos/tonsky/datascript/git/commits/59e906526303de979e0e0b7842d7a30e0d92518b,59e906526303de979e0e0b7842d7a30e0d92518b,"or, or-join, not and not-join parsers"
+tonsky,2015-02-08 20:43:38,https://api.github.com/repos/tonsky/datascript/git/commits/7042860851cbcdd365ac035d887282e714c2ffe0,7042860851cbcdd365ac035d887282e714c2ffe0,:in and :with parsers
+tonsky,2015-02-08 19:47:30,https://api.github.com/repos/tonsky/datascript/git/commits/6b09383c1bc221a4716dffd4243e5bdbf81a6ec2,6b09383c1bc221a4716dffd4243e5bdbf81a6ec2,Do not rename vars in rule-branch
+tonsky,2015-02-07 12:40:43,https://api.github.com/repos/tonsky/datascript/git/commits/fbc7d967f2634002c8bceb0407dd5b1390925530,fbc7d967f2634002c8bceb0407dd5b1390925530,rule-expr can be called with constant and placeholder too
+tonsky,2015-02-06 22:08:29,https://api.github.com/repos/tonsky/datascript/git/commits/0a70cc9d84141442c3db07787a7e0f7a49236c74,0a70cc9d84141442c3db07787a7e0f7a49236c74,rules parser
+tonsky,2015-02-06 17:02:53,https://api.github.com/repos/tonsky/datascript/git/commits/759c458ed631869aded1c5a202fea67bd6248726,759c458ed631869aded1c5a202fea67bd6248726,:where parser
+tonsky,2015-02-04 22:56:02,https://api.github.com/repos/tonsky/datascript/git/commits/74fded2e4dea57adaaee6ab055f750a88a6a2bca,74fded2e4dea57adaaee6ab055f750a88a6a2bca,"extracted common parser from find-parser, unified require aliases"
+tonsky,2015-02-04 22:22:10,https://api.github.com/repos/tonsky/datascript/git/commits/ed5a4540d821fe8fd531eaaf7a8bfa2658227e63,ed5a4540d821fe8fd531eaaf7a8bfa2658227e63,renamed query-parser to find-parser
+dthume,2015-02-04 18:21:27,https://api.github.com/repos/tonsky/datascript/git/commits/f626d1004006a90b007604b2d3058b0ce7eb4b83,f626d1004006a90b007604b2d3058b0ce7eb4b83,Reorder pull-attr-datoms cond to support overriding default expansion of component attributes
+tonsky,2015-02-03 22:18:31,https://api.github.com/repos/tonsky/datascript/git/commits/81b4e81accf78e11cb42247ddbb52437d6efb9de,81b4e81accf78e11cb42247ddbb52437d6efb9de,Version 0.9.0
+tonsky,2015-02-03 22:11:57,https://api.github.com/repos/tonsky/datascript/git/commits/3fe960815ce5d77267407ac8a4f370118d571135,3fe960815ce5d77267407ac8a4f370118d571135,pull form in :find clause
+tonsky,2015-02-02 19:24:56,https://api.github.com/repos/tonsky/datascript/git/commits/36615bdb667ea0853ddbdcddb79f9daef5ecb9a0,36615bdb667ea0853ddbdcddb79f9daef5ecb9a0,Final touches on pull API
+tonsky,2015-02-02 19:09:28,https://api.github.com/repos/tonsky/datascript/git/commits/e1faee16dc257a12c5ceaab271dbdec34419ffab,e1faee16dc257a12c5ceaab271dbdec34419ffab,"Merge pull request #51 from dthume/pull-api-pr
+
+Loop/recur based pull API"
+dthume,2015-02-01 16:39:35,https://api.github.com/repos/tonsky/datascript/git/commits/20e65e524a855b66f76cf8d1284b36ea90fc73af,20e65e524a855b66f76cf8d1284b36ea90fc73af,Avoid creating redundant attr frame
+dthume,2015-02-01 16:28:47,https://api.github.com/repos/tonsky/datascript/git/commits/fd0db0c3ae7178ae3dde80be58b091f53f56714f,fd0db0c3ae7178ae3dde80be58b091f53f56714f,"Add canonical parsed pull format based on feedback from @tonsky.
+Strip down main pull loop as much as possible"
+tonsky,2015-01-31 10:13:36,https://api.github.com/repos/tonsky/datascript/git/commits/912960862a525526234630d74f03f79b5a4f8d9e,912960862a525526234630d74f03f79b5a4f8d9e,gitter chat room added
+tonsky,2015-01-28 22:08:19,https://api.github.com/repos/tonsky/datascript/git/commits/88acf6aa45dc199135a2b755bda34627dc941131,88acf6aa45dc199135a2b755bda34627dc941131,Lookup refs can be inlined in query :where patterns (closes #53)
+dthume,2015-01-17 13:17:56,https://api.github.com/repos/tonsky/datascript/git/commits/a43241e8b161a4ea0d902adc61c03b3e61530759,a43241e8b161a4ea0d902adc61c03b3e61530759,"Loop/recur based pull API
+Improve parsing of pull expressions and handling of components (:db/id) based on feedback from @tonsky"
+tonsky,2015-01-27 15:10:40,https://api.github.com/repos/tonsky/datascript/git/commits/127db11ee3881d4a9d02ea1392b10076f96d8ed0,127db11ee3881d4a9d02ea1392b10076f96d8ed0,Version 0.8.1
+tonsky,2015-01-22 19:37:32,https://api.github.com/repos/tonsky/datascript/git/commits/403f07de596017a3a7fe2e0c8482ad222dadaf7c,403f07de596017a3a7fe2e0c8482ad222dadaf7c,Lookup refs for query
+tonsky,2015-01-22 18:24:34,https://api.github.com/repos/tonsky/datascript/git/commits/ea9c1ef6e3c3ade7e87f24a88ba38829fba836d3,ea9c1ef6e3c3ade7e87f24a88ba38829fba836d3,reorganized tests
+tonsky,2015-01-22 15:12:04,https://api.github.com/repos/tonsky/datascript/git/commits/975a48192e93fe28ba1163d9a6e6ec318e262566,975a48192e93fe28ba1163d9a6e6ec318e262566,"Lookup refs for datoms, seek-datoms and index-range, + entid endpoint"
+tonsky,2015-01-21 19:46:19,https://api.github.com/repos/tonsky/datascript/git/commits/0b1fb2e12037bb226fb21642874bf109c4bc169e,0b1fb2e12037bb226fb21642874bf109c4bc169e,Lookup refs for entity and transact calls
+tonsky,2015-01-20 12:20:46,https://api.github.com/repos/tonsky/datascript/git/commits/54eed28e9f6902163e9a24cf9e4fdc420908b788,54eed28e9f6902163e9a24cf9e4fdc420908b788,Support for `:db/unique` `:db.unique/identity` and upserts
+tonsky,2015-01-20 07:38:56,https://api.github.com/repos/tonsky/datascript/git/commits/b02134c2321519eaa173342984fc9888ef63a206,b02134c2321519eaa173342984fc9888ef63a206,Support for :db/unique :db.unique/value
+tonsky,2015-01-19 13:11:02,https://api.github.com/repos/tonsky/datascript/git/commits/917349c373675efccdd12fc4ec197b766319e996,917349c373675efccdd12fc4ec197b766319e996,Removed comment from README about externs
+tonsky,2015-01-19 13:04:07,https://api.github.com/repos/tonsky/datascript/git/commits/ce5c9b6b269e674662dad641bffa9942cc0de2d6,ce5c9b6b269e674662dad641bffa9942cc0de2d6,Version 0.8.0
+tonsky,2015-01-19 11:40:30,https://api.github.com/repos/tonsky/datascript/git/commits/c01a37da544be6b9ed21aea52033806c35e4856a,c01a37da544be6b9ed21aea52033806c35e4856a,fixed nested maps/reverse refs in js build
+tonsky,2015-01-19 09:06:59,https://api.github.com/repos/tonsky/datascript/git/commits/ac4ccdceaac53542637d6e3727137b11e69d7494,ac4ccdceaac53542637d6e3727137b11e69d7494,"Transaction data is now validated, with proper error messages (closes #48)"
+tonsky,2015-01-19 06:57:58,https://api.github.com/repos/tonsky/datascript/git/commits/5ab2f993e3842f902c00fd031556732c5c96a86f,5ab2f993e3842f902c00fd031556732c5c96a86f,Support for nested maps in `transact!` (also fixes #38)
+tonsky,2015-01-19 05:20:38,https://api.github.com/repos/tonsky/datascript/git/commits/2a96c2baa6adb4e75c245f0abdba64c177d8cfbd,2a96c2baa6adb4e75c245f0abdba64c177d8cfbd,support for :db/isComponent (closes #3)
+tonsky,2015-01-18 11:14:43,https://api.github.com/repos/tonsky/datascript/git/commits/1f1ed5879df41acd6625013215ccf917cf768168,1f1ed5879df41acd6625013215ccf917cf768168,Return nil from `entity` when passed nil eid (closes #47)
+tonsky,2015-01-16 05:47:25,https://api.github.com/repos/tonsky/datascript/git/commits/7427b7e16a13968e43ca6e7d5e8dbe47d7149047,7427b7e16a13968e43ca6e7d5e8dbe47d7149047,Find specifications
+tonsky,2015-01-15 14:16:34,https://api.github.com/repos/tonsky/datascript/git/commits/65638d5a32d9f27e07e25876d72a87ff9af90e7c,65638d5a32d9f27e07e25876d72a87ff9af90e7c,moved aggregation to query-parser
+tonsky,2015-01-14 20:07:11,https://api.github.com/repos/tonsky/datascript/git/commits/1d663635f02072e86f4ce45bed72344c0a0b6bcc,1d663635f02072e86f4ce45bed72344c0a0b6bcc,parser of find specs
+tonsky,2015-01-14 18:56:38,https://api.github.com/repos/tonsky/datascript/git/commits/b3fe0ce9fbd3b19b96286a78c6c36c2fe5ed1834,b3fe0ce9fbd3b19b96286a78c6c36c2fe5ed1834,use advanced compilation for tests
+tonsky,2015-01-10 22:12:46,https://api.github.com/repos/tonsky/datascript/git/commits/ca5854b2824fe1923726bb5c03980390b26e6cec,ca5854b2824fe1923726bb5c03980390b26e6cec,Added Precursor to the projects
+tonsky,2014-12-22 14:12:38,https://api.github.com/repos/tonsky/datascript/git/commits/93f4d0064684067a82f6dd14e7886b3da290fed8,93f4d0064684067a82f6dd14e7886b3da290fed8,Version bump 0.7.2
+tonsky,2014-12-22 14:00:45,https://api.github.com/repos/tonsky/datascript/git/commits/1f34f8796c06697fdf0c3a7c14d1f61c426b0b46,1f34f8796c06697fdf0c3a7c14d1f61c426b0b46,Fixed a bug with function call after function relation was filtered out (closes #44)
+tonsky,2014-12-17 22:03:06,https://api.github.com/repos/tonsky/datascript/git/commits/c03c308dbb0b05271b1c9d344bf05d5b63592182,c03c308dbb0b05271b1c9d344bf05d5b63592182,Link to webinar
+tonsky,2014-12-15 21:17:10,https://api.github.com/repos/tonsky/datascript/git/commits/d567749bc84b9bedd8dba0af4aa548e3f000c6a3,d567749bc84b9bedd8dba0af4aa548e3f000c6a3,Fixed a bug when emtpy coll in input was not creating empty relation
+tonsky,2014-12-15 15:59:25,https://api.github.com/repos/tonsky/datascript/git/commits/b3ccb1d018b0e95cb8fa6d582c734463a414c3d7,b3ccb1d018b0e95cb8fa6d582c734463a414c3d7,Added talks section and datascript-todo link to README
+tonsky,2014-12-15 15:49:00,https://api.github.com/repos/tonsky/datascript/git/commits/5f6fa3bef5010b48ca2223522918dbb316f084a8,5f6fa3bef5010b48ca2223522918dbb316f084a8,version 0.7.0
+tonsky,2014-12-15 15:42:18,https://api.github.com/repos/tonsky/datascript/git/commits/9d1042e15f3f9678a48c141334f93e24bacf9014,9d1042e15f3f9678a48c141334f93e24bacf9014,Filtered databases support via filter
+tonsky,2014-12-15 12:30:03,https://api.github.com/repos/tonsky/datascript/git/commits/1fdf9ddfbd2ddda6b154d271b8d65195d1546bcf,1fdf9ddfbd2ddda6b154d271b8d65195d1546bcf,Fixed a bug when fn inside a query on empty relation returned non-empty result
+matthiasn,2014-12-03 09:21:40,https://api.github.com/repos/tonsky/datascript/git/commits/a36dd5d5c1b2b962396cdfce60fbc83a79353d9e,a36dd5d5c1b2b962396cdfce60fbc83a79353d9e,Update README.md
+tonsky,2014-12-14 22:22:43,https://api.github.com/repos/tonsky/datascript/git/commits/f9acb19575d8f1d6404ff61e2c5c28bb27899102,f9acb19575d8f1d6404ff61e2c5c28bb27899102,min and max aggregates use comparator instead of default js < comparison
+tonsky,2014-12-14 21:18:56,https://api.github.com/repos/tonsky/datascript/git/commits/c8062258fa69c843568601eb253764199fae230f,c8062258fa69c843568601eb253764199fae230f,added count-distinct aggregate (closes #42)
+montyxcantsin,2014-11-24 11:31:36,https://api.github.com/repos/tonsky/datascript/git/commits/d0220d6c1a75690e8076a57c53b25f2eb5263417,d0220d6c1a75690e8076a57c53b25f2eb5263417,"adding aggregate built in fns avg, median, variance and stddev"
+tonsky,2014-12-14 21:00:31,https://api.github.com/repos/tonsky/datascript/git/commits/7a1bcb9092257ca24a21736239656d411d363960,7a1bcb9092257ca24a21736239656d411d363960,datascript/datom call to create a datom
+tonsky,2014-11-30 23:01:02,https://api.github.com/repos/tonsky/datascript/git/commits/07e817f3c8363a1c5bbf08e5778183eaaee1290f,07e817f3c8363a1c5bbf08e5778183eaaee1290f,Fast reverse iteration for BTSet and slices
+tonsky,2014-11-29 22:22:41,https://api.github.com/repos/tonsky/datascript/git/commits/3cf03a5c3f78a0c5f43fc971ccf3502422c7b58c,3cf03a5c3f78a0c5f43fc971ccf3502422c7b58c,version bump
+tonsky,2014-11-29 22:15:43,https://api.github.com/repos/tonsky/datascript/git/commits/8da48091467498104ec5de0f54ab72660e925d58,8da48091467498104ec5de0f54ab72660e925d58,ported init_db to javascript
+tonsky,2014-11-29 21:34:19,https://api.github.com/repos/tonsky/datascript/git/commits/3300a9da4598cf129e0f1183254bc8e85a29a9ce,3300a9da4598cf129e0f1183254bc8e85a29a9ce,Speed up initial database creation
+tonsky,2014-11-16 06:57:53,https://api.github.com/repos/tonsky/datascript/git/commits/6d359d1b12514d2ef205b45e74f75d21a3b1b21f,6d359d1b12514d2ef205b45e74f75d21a3b1b21f,Provided externs definition via deps.cljs
+tonsky,2014-11-06 18:16:57,https://api.github.com/repos/tonsky/datascript/git/commits/18b790e609310c3594dcf1249b2b9e729f6c5f91,18b790e609310c3594dcf1249b2b9e729f6c5f91,0.5.1
+tonsky,2014-11-06 16:23:25,https://api.github.com/repos/tonsky/datascript/git/commits/391bbfd61cdb47733c634ef807ba209a225ea126,391bbfd61cdb47733c634ef807ba209a225ea126,Propagating ins (predicates/fns) to rules (closes #28 #29)
+tonsky,2014-11-06 07:46:28,https://api.github.com/repos/tonsky/datascript/git/commits/0e647db474eaa36dba12c74def8df540019f03ef,0e647db474eaa36dba12c74def8df540019f03ef,Added circleci.com build
+tonsky,2014-11-05 13:05:47,https://api.github.com/repos/tonsky/datascript/git/commits/feae6f1891eecdd1efa705133b4bafb83b0663f2,feae6f1891eecdd1efa705133b4bafb83b0663f2,Changelog tuned a little
+tonsky,2014-11-05 12:57:46,https://api.github.com/repos/tonsky/datascript/git/commits/23355f55f159368bea212ebd2b21cad2a5b00695,23355f55f159368bea212ebd2b21cad2a5b00695,Changelog tuned a little
+tonsky,2014-11-05 12:47:52,https://api.github.com/repos/tonsky/datascript/git/commits/06fb7e41f744a153bdc59cc88ce7f4a391fcc33a,06fb7e41f744a153bdc59cc88ce7f4a391fcc33a,Properly pack datascript.js as CommonJS/RequireJS module (closes #39)
+tonsky,2014-10-29 16:47:04,https://api.github.com/repos/tonsky/datascript/git/commits/53b0caa2b42e55d47829f72f04226746615082e9,53b0caa2b42e55d47829f72f04226746615082e9,new todos
+tonsky,2014-10-28 19:34:14,https://api.github.com/repos/tonsky/datascript/git/commits/49ec631a4d77d82a599b950db26dfa9c34d783f9,49ec631a4d77d82a599b950db26dfa9c34d783f9,Couple of projects using DS
+tonsky,2014-10-28 19:17:25,https://api.github.com/repos/tonsky/datascript/git/commits/e268436dd08efb23ba211bf65199c5a66df5657c,e268436dd08efb23ba211bf65199c5a66df5657c,Version bump
+tonsky,2014-10-28 19:13:57,https://api.github.com/repos/tonsky/datascript/git/commits/ceef2af629cb822efbb5afc488ff45ce99aca3e2,ceef2af629cb822efbb5afc488ff45ce99aca3e2,Ability to pass meta along with transaction (closes #32)
+tonsky,2014-10-28 11:48:17,https://api.github.com/repos/tonsky/datascript/git/commits/ce7e60967b1a55aa9ae2223e05fb1053e01615ca,ce7e60967b1a55aa9ae2223e05fb1053e01615ca,Ability to reference current transaction id (via :db/current-tx) #32
+tonsky,2014-10-19 07:17:21,https://api.github.com/repos/tonsky/datascript/git/commits/4576d79a7ed5179f736b9ce26d5a468be37b94f1,4576d79a7ed5179f736b9ce26d5a468be37b94f1,Fixed README catchat links (closes #35)
+izirku,2014-10-15 02:48:30,https://api.github.com/repos/tonsky/datascript/git/commits/c83e1e26ea6f526a685fffc5dbd5a2f34cf5e756,c83e1e26ea6f526a685fffc5dbd5a2f34cf5e756,"Clojurescript commit e7e79f21a12b2fa17499f7914a803a39aa382451 has
+prepended es6- to iterator and entries-iterator symbol names, as well as
+ES6- to Iterator and EntriesIterator symbols. Made corresponding changes
+to DataScript."
+izirku,2014-10-15 02:47:08,https://api.github.com/repos/tonsky/datascript/git/commits/1be79c9d0abb01a1c7dcf979874473573b87fa37,1be79c9d0abb01a1c7dcf979874473573b87fa37,Updated ClojureScript dependency to latest stable 0.0-2371.
+tonsky,2014-09-19 08:11:06,https://api.github.com/repos/tonsky/datascript/git/commits/384a1a972985c66adaca8e5e2d2d0d95b280874c,384a1a972985c66adaca8e5e2d2d0d95b280874c,Added “Resources” section to README
+tonsky,2014-09-19 07:57:48,https://api.github.com/repos/tonsky/datascript/git/commits/ed4afce0d04ed532591b006d0ff56fbc8ad84dc0,ed4afce0d04ed532591b006d0ff56fbc8ad84dc0,Support for reverse relation name when transacting entity as a map
+tonsky,2014-09-19 07:06:03,https://api.github.com/repos/tonsky/datascript/git/commits/a61d2e7210654528c5f77cfab1a050260bc851e4,a61d2e7210654528c5f77cfab1a050260bc851e4,Retract incoming entity references on `:db.fn/retractEntity` (closes #18)
+tonsky,2014-09-19 06:25:33,https://api.github.com/repos/tonsky/datascript/git/commits/1cbe39d0686fa6739ae0a7217898f2516403a7db,1cbe39d0686fa6739ae0a7217898f2516403a7db,"Added `ground` query fn, fixed query predicate/fn calls without free vars (closes #25)"
+tonsky,2014-09-18 16:58:23,https://api.github.com/repos/tonsky/datascript/git/commits/5f5fef69c10e5f41f76c1af534a755dd665baebb,5f5fef69c10e5f41f76c1af534a755dd665baebb,Version bump
+tonsky,2014-09-18 16:54:23,https://api.github.com/repos/tonsky/datascript/git/commits/613aefa83326eaa3f16ef71fdef5fe22fd12de45,613aefa83326eaa3f16ef71fdef5fe22fd12de45,:db.fn/cas phrasing tuned (closes #20)
+montyxcantsin,2014-09-14 18:22:27,https://api.github.com/repos/tonsky/datascript/git/commits/bfe4e59a439fb07e45ff0feb4975419c5df8d723,bfe4e59a439fb07e45ff0feb4975419c5df8d723,modifying exception message on :db.fn/cas and adding support/test for cas against multival attr.
+montyxcantsin,2014-08-31 18:05:58,https://api.github.com/repos/tonsky/datascript/git/commits/79cb20f16c96d80977ae3204ac0fdfe945102000,79cb20f16c96d80977ae3204ac0fdfe945102000,adding support for :db.fn/cas in transactions
+tonsky,2014-09-08 22:09:04,https://api.github.com/repos/tonsky/datascript/git/commits/3a6f2b1939556e11cf3b90f775d09df6f2451428,3a6f2b1939556e11cf3b90f775d09df6f2451428,Deleted unused compare-key fn (closes #24)
+montyxcantsin,2014-09-01 19:25:52,https://api.github.com/repos/tonsky/datascript/git/commits/7fa1893f0dc5da0cb8421457437da20426908f5b,7fa1893f0dc5da0cb8421457437da20426908f5b,adding support for back-ref in missing? pred
+montyxcantsin,2014-08-31 22:14:27,https://api.github.com/repos/tonsky/datascript/git/commits/e8bce0204f19a3a9af5e038b9c5029abf6ebc0b6,e8bce0204f19a3a9af5e038b9c5029abf6ebc0b6,adding support for get-some and missing? as pred fns
+montyxcantsin,2014-08-31 21:41:39,https://api.github.com/repos/tonsky/datascript/git/commits/72e5f1b7e5c6af273ff0aa3fd8d977449c8585d1,72e5f1b7e5c6af273ff0aa3fd8d977449c8585d1,adding support for get-else as built-in pred
+tonsky,2014-08-28 08:40:33,https://api.github.com/repos/tonsky/datascript/git/commits/676f48fcf36f0db3f05c71a739d62cbc749c2546,676f48fcf36f0db3f05c71a739d62cbc749c2546,Fixed case when `touch` breaked entity cache (closed #17)
+bobby,2014-08-28 04:59:57,https://api.github.com/repos/tonsky/datascript/git/commits/543f82913eeb8c8106d951bdee70e1482a94614a,543f82913eeb8c8106d951bdee70e1482a94614a,Add failing test case
+tonsky,2014-08-26 10:52:12,https://api.github.com/repos/tonsky/datascript/git/commits/031e4f7ac4d28d3b906ce8c6b5beefec49a02ce3,031e4f7ac4d28d3b906ce8c6b5beefec49a02ce3,Cosmetic changes to better mimic Datomic API
+tonsky,2014-08-26 09:27:54,https://api.github.com/repos/tonsky/datascript/git/commits/1d842bd17a87400e9659865c4e3a1d23c5b8afe2,1d842bd17a87400e9659865c4e3a1d23c5b8afe2,Do not treat maps as coll values for :db.cardinality/many attributes (closes #16)
+lynaghk,2014-08-26 04:12:03,https://api.github.com/repos/tonsky/datascript/git/commits/c6c59adf467fd54b1449c5898380dd3ea6709065,c6c59adf467fd54b1449c5898380dd3ea6709065,"Attributes with `:db.cardinality/many` should accept all collection values (#16)
+
+Before this commit, they only accepted sequential values.
+Now they accept everything that implements IPersistentCollection."
+tonsky,2014-08-26 09:23:12,https://api.github.com/repos/tonsky/datascript/git/commits/9293e5cf29ce1dfa669f90638c11099eb21ca57d,9293e5cf29ce1dfa669f90638c11099eb21ca57d,Entity's touch call accessible through datascript namespace
+tonsky,2014-08-25 18:30:15,https://api.github.com/repos/tonsky/datascript/git/commits/7da6cab94c41abb5116cf958ba54d6ec1776da96,7da6cab94c41abb5116cf958ba54d6ec1776da96,version bump
+tonsky,2014-08-25 18:28:15,https://api.github.com/repos/tonsky/datascript/git/commits/20fdc02f0576b3ba25b76fa58ca050ffca1f8807,20fdc02f0576b3ba25b76fa58ca050ffca1f8807,"Optimized speed of DB/hash, DB/equiv and Datom/hash"
+tonsky,2014-08-25 09:50:28,https://api.github.com/repos/tonsky/datascript/git/commits/5ad4116fc5bd8254ed2598c0711ff90b745fac82,5ad4116fc5bd8254ed2598c0711ff90b745fac82,0.3.0 release
+tonsky,2014-08-25 09:14:58,https://api.github.com/repos/tonsky/datascript/git/commits/18e3bbfdea5a64e99dec8cdf7dcea692a9ed56fe,18e3bbfdea5a64e99dec8cdf7dcea692a9ed56fe,js interface to entities
+tonsky,2014-08-23 22:29:51,https://api.github.com/repos/tonsky/datascript/git/commits/0ee5655a25da8c9a1a4d0d2a93fbfa89eec63cc2,0ee5655a25da8c9a1a4d0d2a93fbfa89eec63cc2,lazy entities impl
+tonsky,2014-08-23 22:29:02,https://api.github.com/repos/tonsky/datascript/git/commits/c73edc7c61ea91ae7c4508003172d7a50c72284b,c73edc7c61ea91ae7c4508003172d7a50c72284b,"got rid of version number in js min output, preamble added"
+tonsky,2014-08-22 18:20:23,https://api.github.com/repos/tonsky/datascript/git/commits/2318bae43fb1eb7a67980f14e72696ac67588e3b,2318bae43fb1eb7a67980f14e72696ac67588e3b,fixed js tests include path
+tonsky,2014-08-22 18:10:57,https://api.github.com/repos/tonsky/datascript/git/commits/57f8de91b1a6ae626d070fb654ddf832aeeb85a4,57f8de91b1a6ae626d070fb654ddf832aeeb85a4,externs.js moved to more predictable place
+tonsky,2014-08-15 11:58:30,https://api.github.com/repos/tonsky/datascript/git/commits/2adf3c5350b421ace640b8b55e708a1523b78213,2adf3c5350b421ace640b8b55e708a1523b78213,"Removed old query code, version bump, fixed :advanced compilation"
+tonsky,2014-08-14 20:58:11,https://api.github.com/repos/tonsky/datascript/git/commits/8555f1283ab6790c4411ec79d493e575ba8895eb,8555f1283ab6790c4411ec79d493e575ba8895eb,Specifying DB to rule
+tonsky,2014-08-14 20:22:28,https://api.github.com/repos/tonsky/datascript/git/commits/8d2a9b207db59d0aeaa1f1c75c887eb668449048,8d2a9b207db59d0aeaa1f1c75c887eb668449048,Rules perftest
+tonsky,2014-08-13 12:13:51,https://api.github.com/repos/tonsky/datascript/git/commits/82b91f42ce39c750568444b30042b1c7c308269a,82b91f42ce39c750568444b30042b1c7c308269a,caching already calculated prefix context in rules expansion
+tonsky,2014-08-11 20:43:02,https://api.github.com/repos/tonsky/datascript/git/commits/f2feba6fb860ef2938a6f751b150f96438b0b070,f2feba6fb860ef2938a6f751b150f96438b0b070,Rules implemented & all tests pass!
+tonsky,2014-08-06 09:26:18,https://api.github.com/repos/tonsky/datascript/git/commits/fac27e9046f61fd9af633a1b35fb3ac39fb2c73f,fac27e9046f61fd9af633a1b35fb3ac39fb2c73f,slightly optimized -collect
+tonsky,2014-08-05 21:12:59,https://api.github.com/repos/tonsky/datascript/git/commits/bea6b893c0219737c331a0e9d77b09b8d86e5142,bea6b893c0219737c331a0e9d77b09b8d86e5142,"added aggregates, all tests pass except rules"
+tonsky,2014-08-05 17:38:26,https://api.github.com/repos/tonsky/datascript/git/commits/896594d8b0dcdab1000d16cd952037a5262fadac,896594d8b0dcdab1000d16cd952037a5262fadac,preds & funs support
+tonsky,2014-08-04 20:42:29,https://api.github.com/repos/tonsky/datascript/git/commits/38448d59376bfcc931650da97e9c9488d9e1bbfe,38448d59376bfcc931650da97e9c9488d9e1bbfe,inputs & assignments parser
+tonsky,2014-08-04 09:43:57,https://api.github.com/repos/tonsky/datascript/git/commits/d5d208b41a355356c30d3b92d55ff66d5ee9ae72,d5d208b41a355356c30d3b92d55ff66d5ee9ae72,dropped intermediate datoms -> rel conversion
+tonsky,2014-08-03 15:02:37,https://api.github.com/repos/tonsky/datascript/git/commits/9631216c85bcc7e65b0fa0481f0c8f26b965b1c8,9631216c85bcc7e65b0fa0481f0c8f26b965b1c8,changed to simpler relation tuple representation
+tonsky,2014-08-03 12:12:47,https://api.github.com/repos/tonsky/datascript/git/commits/a73923eec48e8a86c13436f1f0b2db4b7af857d8,a73923eec48e8a86c13436f1f0b2db4b7af857d8,Query WIP
+tonsky,2014-07-07 05:43:37,https://api.github.com/repos/tonsky/datascript/git/commits/1947aaa416accf91c1a2ac98c0420d9e43c8bf9c,1947aaa416accf91c1a2ac98c0420d9e43c8bf9c,version bump 0.1.6
+tonsky,2014-06-18 20:38:25,https://api.github.com/repos/tonsky/datascript/git/commits/718dbb1b69b7d204972ff28caff577d05b745cfb,718dbb1b69b7d204972ff28caff577d05b745cfb,Clojure reader pr/read support for DB and Datom
+tonsky,2014-06-08 17:55:54,https://api.github.com/repos/tonsky/datascript/git/commits/091fb9d85a222ae6fb2c8be0910248dadaf5b3d5,091fb9d85a222ae6fb2c8be0910248dadaf5b3d5,Updates for 0.1.5 release
+tonsky,2014-06-08 17:50:24,https://api.github.com/repos/tonsky/datascript/git/commits/9c3cf8be25f5dbd7d7de405981d8191a452228c9,9c3cf8be25f5dbd7d7de405981d8191a452228c9,"Better tempids allocation scheme, :db/id for maps optional"
+tonsky,2014-06-08 16:09:49,https://api.github.com/repos/tonsky/datascript/git/commits/830c789dc7766ec0b93a63f5ec26708809a69270,830c789dc7766ec0b93a63f5ec26708809a69270,datoms and seek_datoms js api
+tonsky,2014-06-08 12:04:36,https://api.github.com/repos/tonsky/datascript/git/commits/3f7bdffd581f9836017ce3c5e79aa1093f81a46e,3f7bdffd581f9836017ce3c5e79aa1093f81a46e,datoms and seek-datoms api calls
+tonsky,2014-06-08 10:20:27,https://api.github.com/repos/tonsky/datascript/git/commits/64e9c576b45e02ac6c9536f9d6f77f07e1e1c7a7,64e9c576b45e02ac6c9536f9d6f77f07e1e1c7a7,Referencing other entities’ tempids in transactions (closes #10)
+tonsky,2014-06-06 13:13:49,https://api.github.com/repos/tonsky/datascript/git/commits/9636bd7809a1ea7eac154837a3c23298d8d31629,9636bd7809a1ea7eac154837a3c23298d8d31629,combine-cmp macro
+tonsky,2014-06-06 12:04:56,https://api.github.com/repos/tonsky/datascript/git/commits/35f6e810a6525ce0c18d824344b8a061008ebd31,35f6e810a6525ce0c18d824344b8a061008ebd31,latest cljs build
+tonsky,2014-06-06 12:04:43,https://api.github.com/repos/tonsky/datascript/git/commits/b8aef1c57c60555a99b5e7108f64ccf1ed395fb1,b8aef1c57c60555a99b5e7108f64ccf1ed395fb1,"ported db to btset, fixed transaction processing"
+tonsky,2014-05-31 10:34:14,https://api.github.com/repos/tonsky/datascript/git/commits/ba95f0ab17dfbaa366a5b656f866d94c90015f77,ba95f0ab17dfbaa366a5b656f866d94c90015f77,btset slice operation added
+tonsky,2014-05-18 20:34:13,https://api.github.com/repos/tonsky/datascript/git/commits/c289d02e697a6607cc83a94a4eea4c23b4644fd1,c289d02e697a6607cc83a94a4eea4c23b4644fd1,slightly less allocations
+tonsky,2014-05-18 19:51:32,https://api.github.com/repos/tonsky/datascript/git/commits/5a873cdf2f4281826cf00f37ebe7c5899d50cea4,5a873cdf2f4281826cf00f37ebe7c5899d50cea4,datascript perf tests
+tonsky,2014-05-15 16:52:07,https://api.github.com/repos/tonsky/datascript/git/commits/bbdfed9e8b85ef5e9c7e501be32fe44654b59623,bbdfed9e8b85ef5e9c7e501be32fe44654b59623,btset moved testing to test/ path
+tonsky,2014-05-12 13:49:36,https://api.github.com/repos/tonsky/datascript/git/commits/f82cbec44c6ac8b12eb69b3ec27d291cf8106467,f82cbec44c6ac8b12eb69b3ec27d291cf8106467,btset removed type hints
+tonsky,2014-05-12 13:36:17,https://api.github.com/repos/tonsky/datascript/git/commits/14dae29bc2d30e77f0afdc66acbe9d49423c379d,14dae29bc2d30e77f0afdc66acbe9d49423c379d,btset extended common clojure set protocols
+tonsky,2014-05-12 12:37:24,https://api.github.com/repos/tonsky/datascript/git/commits/5b68ae05db79062f8d32581b5077e31e067b2585,5b68ae05db79062f8d32581b5077e31e067b2585,btset single-pass lookup and conj
+tonsky,2014-05-12 10:04:37,https://api.github.com/repos/tonsky/datascript/git/commits/de24656f99cd66aee43c1817a092897fb85b702d,de24656f99cd66aee43c1817a092897fb85b702d,btset disj basic impl
+tonsky,2014-05-11 09:23:15,https://api.github.com/repos/tonsky/datascript/git/commits/c69b97c1eb9eb25085751a2872c0bcae7172b333,c69b97c1eb9eb25085751a2872c0bcae7172b333,btset check for contains? on conj
+tonsky,2014-05-10 09:09:46,https://api.github.com/repos/tonsky/datascript/git/commits/35df52bae52ad8ed6d407ee4ce326c95b3d71c95,35df52bae52ad8ed6d407ee4ce326c95b3d71c95,btset fast range scans
+tonsky,2014-05-08 12:27:07,https://api.github.com/repos/tonsky/datascript/git/commits/3eeb1f1cbb7190165528ecf5d06feac12da56dad,3eeb1f1cbb7190165528ecf5d06feac12da56dad,btset seq and lookup
+tonsky,2014-05-08 10:09:35,https://api.github.com/repos/tonsky/datascript/git/commits/2ca55c8059610524800c80d93614db864bbfe321,2ca55c8059610524800c80d93614db864bbfe321,btset conj & seek
+tonsky,2014-05-05 07:01:26,https://api.github.com/repos/tonsky/datascript/git/commits/d494d5f6e3822ec1b702b802feae0e8b23db3d03,d494d5f6e3822ec1b702b802feae0e8b23db3d03,Fixed #9 entity fail on retracted attributes
+tonsky,2014-05-02 21:00:04,https://api.github.com/repos/tonsky/datascript/git/commits/0f0e7cee110fbe0ca7f07eadbf4b159ebf9f7c25,0f0e7cee110fbe0ca7f07eadbf4b159ebf9f7c25,"db.fn/call attribution, readme/changelog edits"
+tonsky,2014-05-02 20:29:00,https://api.github.com/repos/tonsky/datascript/git/commits/93add0ccb6c222e9eabb8c1ba411de8e3b479114,93add0ccb6c222e9eabb8c1ba411de8e3b479114,Schema keywords namespaced on a par with Datomic schema
+tonsky,2014-05-02 16:51:43,https://api.github.com/repos/tonsky/datascript/git/commits/fd8edf2eb53e121bcc01b03ed2ea580a366e6079,fd8edf2eb53e121bcc01b03ed2ea580a366e6079,"full vanilla js support: schema, relations, rules, query fns, transactor fns"
+tonsky,2014-04-30 12:28:02,https://api.github.com/repos/tonsky/datascript/git/commits/e99570cfd8eed32d6ae6098a416c1ff38e9112ff,e99570cfd8eed32d6ae6098a416c1ff38e9112ff,experimental JS binding
+tonsky,2014-04-29 11:33:26,https://api.github.com/repos/tonsky/datascript/git/commits/54053beac3d2aea87114e04e9ce085c660181ae7,54053beac3d2aea87114e04e9ce085c660181ae7,"Merge pull request #7 from thegeez/transact-fns
+
+Add transaction functions"
+thegeez,2014-04-28 15:09:34,https://api.github.com/repos/tonsky/datascript/git/commits/28ea7ad1f02deb217cfdce9ef5cd96546c0ff322,28ea7ad1f02deb217cfdce9ef5cd96546c0ff322,Handle recursive case for db fns
+thegeez,2014-04-28 13:16:15,https://api.github.com/repos/tonsky/datascript/git/commits/4551b23dd601620b8e19650793943233f5f39258,4551b23dd601620b8e19650793943233f5f39258,Add transaction functions
+tonsky,2014-04-26 05:45:27,https://api.github.com/repos/tonsky/datascript/git/commits/8e08c02f22cf18c209baf53313f7def625fccc4e,8e08c02f22cf18c209baf53313f7def625fccc4e,"Merge pull request #2 from boxed/master
+
+Removed Russian accent :P"
+boxed,2014-04-25 14:41:16,https://api.github.com/repos/tonsky/datascript/git/commits/3045f9b5c8e37831c99e6de858ced8480fe735b5,3045f9b5c8e37831c99e6de858ced8480fe735b5,Update README.md
+boxed,2014-04-25 11:07:39,https://api.github.com/repos/tonsky/datascript/git/commits/a0aa89782c762cc90405cb6dd092078d7231d480,a0aa89782c762cc90405cb6dd092078d7231d480,Removed Russian accent :P
+tonsky,2014-04-24 18:43:49,https://api.github.com/repos/tonsky/datascript/git/commits/bd23491288dea82d70176ae90e7d7c9b37fb2874,bd23491288dea82d70176ae90e7d7c9b37fb2874,phrashing
+tonsky,2014-04-24 18:28:13,https://api.github.com/repos/tonsky/datascript/git/commits/5beb53d7db03bd274b109c823b182214151b5058,5beb53d7db03bd274b109c823b182214151b5058,project renamed to DataScript
+tonsky,2014-04-24 11:55:53,https://api.github.com/repos/tonsky/datascript/git/commits/f46dd1aca8f69c1bf27658633cad782a174773d0,f46dd1aca8f69c1bf27658633cad782a174773d0,entity method added
+tonsky,2014-04-24 11:01:12,https://api.github.com/repos/tonsky/datascript/git/commits/0577f151a16fd164c2b5d68d8da8a61144e21dd2,0577f151a16fd164c2b5d68d8da8a61144e21dd2,ns renamed
+tonsky,2014-04-22 13:53:27,https://api.github.com/repos/tonsky/datascript/git/commits/ae9942be47f0fcbae68c569fd51c1cce134509f3,ae9942be47f0fcbae68c569fd51c1cce134509f3,:db.fn/retract* functions
+tonsky,2014-04-22 13:12:52,https://api.github.com/repos/tonsky/datascript/git/commits/dcf85c58b2f0725cbcc0ef6220db24c7827ec3de,dcf85c58b2f0725cbcc0ef6220db24c7827ec3de,vector-based query syntax
+tonsky,2014-04-22 11:23:02,https://api.github.com/repos/tonsky/datascript/git/commits/fbe0b41662202ff110a283497e618e762a0ea57d,fbe0b41662202ff110a283497e618e762a0ea57d,"conn and corresponding methods: transact!, listen!, deref"
+tonsky,2014-04-22 05:19:58,https://api.github.com/repos/tonsky/datascript/git/commits/8488b2acfb6338678aa2ea719540400fa6f568e9,8488b2acfb6338678aa2ea719540400fa6f568e9,.travis.yml added
+tonsky,2014-04-21 17:51:45,https://api.github.com/repos/tonsky/datascript/git/commits/a6104d50b2b84dccf71a3c6f0905db6e2b4cf663,a6104d50b2b84dccf71a3c6f0905db6e2b4cf663,tx and added attributes in datom
+tonsky,2014-04-21 06:06:51,https://api.github.com/repos/tonsky/datascript/git/commits/a86b41245dec8fc642331f883206054ded8eaed7,a86b41245dec8fc642331f883206054ded8eaed7,Aggregates
+tonsky,2014-04-19 16:20:35,https://api.github.com/repos/tonsky/datascript/git/commits/f9fdbcee908d960e1c3dca7b296db34c64d3c615,f9fdbcee908d960e1c3dca7b296db34c64d3c615,Rules
+tonsky,2014-04-19 09:54:28,https://api.github.com/repos/tonsky/datascript/git/commits/e235d51872bdda2bfa8524d4a2fdbbf152732500,e235d51872bdda2bfa8524d4a2fdbbf152732500,Support for nested bindings anywhere
+tonsky,2014-04-17 13:23:38,https://api.github.com/repos/tonsky/datascript/git/commits/711c53a2157349f668ca94ded00ac02e328af0b8,711c53a2157349f668ca94ded00ac02e328af0b8,Predicates and function calls
+tonsky,2014-04-17 11:51:21,https://api.github.com/repos/tonsky/datascript/git/commits/d00211f09d26843eca4f0e95a36d1b532b1a4e07,d00211f09d26843eca4f0e95a36d1b532b1a4e07,Support for all binding types in :in clause
+tonsky,2014-04-16 18:28:41,https://api.github.com/repos/tonsky/datascript/git/commits/9307a53fd284f8191e9e1bb22a2e4f3b043bc7cc,9307a53fd284f8191e9e1bb22a2e4f3b043bc7cc,"Parameterized queries via :in directive, queries over multiple databases"
+tonsky,2014-04-16 16:40:39,https://api.github.com/repos/tonsky/datascript/git/commits/9dd041a47032ab001f168758877c6ae823ef9203,9dd041a47032ab001f168758877c6ae823ef9203,queries over regular collections
+tonsky,2014-04-15 13:39:42,https://api.github.com/repos/tonsky/datascript/git/commits/c4a459af72c2ed7cac51c8a5d82e3b51ad121b17,c4a459af72c2ed7cac51c8a5d82e3b51ad121b17,initial

@@ -1,0 +1,945 @@
+goji,Goji is a minimalistic web framework for Golang that's high in antioxidants.
+username,timestamp,url,sha,message
+moeryomenko,2019-05-03 15:59:02,https://api.github.com/repos/zenazn/goji/git/commits/a16712d37ba72246f71f9c8012974d46f8e61d16,a16712d37ba72246f71f9c8012974d46f8e61d16,"Remove CloseNotifier for go 1.8+
+
+http.CloseNotifier is deprecated as of Go 1.11, with a note that ""the
+CloseNotifier interface predates Go's context package. New code should
+use Request.Context instead.""
+
+Signed-off-by: Maxim Eremenko <moeryomenko@gmail.com>"
+zenazn,2018-12-05 05:44:09,https://api.github.com/repos/zenazn/goji/git/commits/84fcf9f2a841e8e9124cfadbdf0f45132a9b821e,84fcf9f2a841e8e9124cfadbdf0f45132a9b821e,"graceful: add {Pre,Post}HookWithSignal functions"
+HaraldNordgren,2018-10-28 13:09:46,https://api.github.com/repos/zenazn/goji/git/commits/7a64e0f485b25b800510b9696558a69d9311b0bf,7a64e0f485b25b800510b9696558a69d9311b0bf,Bump Go versions and use '.x' to always get latest patch versions
+HaraldNordgren,2018-10-20 22:21:09,https://api.github.com/repos/zenazn/goji/git/commits/849314150e3cf01966d5b3db9f52437c48848b1a,849314150e3cf01966d5b3db9f52437c48848b1a,Simplify .travis.yml and bump Go versions
+tamaoo,2018-09-27 06:38:29,https://api.github.com/repos/zenazn/goji/git/commits/d82cdd8d3dacf5ba2df8b4862b8c262764ccfba4,d82cdd8d3dacf5ba2df8b4862b8c262764ccfba4,fix an error at shutdown on Windows.
+zenazn,2018-08-05 02:00:26,https://api.github.com/repos/zenazn/goji/git/commits/25de4dfca0cdc84eec486d5c0a89b8b2f140ce51,25de4dfca0cdc84eec486d5c0a89b8b2f140ce51,web: gofmt
+zenazn,2018-08-05 01:50:10,https://api.github.com/repos/zenazn/goji/git/commits/5621e2aa02b0dc3a15a882b785394b01585d1c02,5621e2aa02b0dc3a15a882b785394b01585d1c02,travis: only run coverage against modern Go
+smith-30,2018-03-13 03:35:36,https://api.github.com/repos/zenazn/goji/git/commits/4a0a089f56dffba35ba29a37303bbc3e3e496f96,4a0a089f56dffba35ba29a37303bbc3e3e496f96,upgrade: .travis.yml Updated to 1.10 (#192)
+zenazn,2017-08-12 21:53:39,https://api.github.com/repos/zenazn/goji/git/commits/c05078ca81941f8e801bba3ddc0e6b86b7fdc893,c05078ca81941f8e801bba3ddc0e6b86b7fdc893,"web: fix race in middleware stack
+
+Thanks to Varun for reporting this bug.
+
+I believe this race could have resulted in a nil dereference or similar."
+ebroder,2016-08-23 03:05:49,https://api.github.com/repos/zenazn/goji/git/commits/4d7077956293261309684d3cf1af673f773c6819,4d7077956293261309684d3cf1af673f773c6819,"bind: Add DefaultBind for overriding default fallback (#190)
+
+If bind.DefaultBind is set before calling bind.WithFlag(), that value
+will be used as the fallback (assuming that none of the various
+enviornmental hints are set) instead of :8000."
+zenazn,2016-05-07 20:19:45,https://api.github.com/repos/zenazn/goji/git/commits/64eb34159fe53473206c2b3e70fe396a639452f2,64eb34159fe53473206c2b3e70fe396a639452f2,"Document deprecation, stability
+
+This has been a long time coming; apologies for taking so long!
+
+Fixes #187, #181, #14"
+zenazn,2016-03-17 06:39:40,https://api.github.com/repos/zenazn/goji/git/commits/1925ec6302925f4760d7a11cc17036f44ec98d5b,1925ec6302925f4760d7a11cc17036f44ec98d5b,"Merge pull request #183 from meowgorithm/patch-1
+
+Well, actually, it’s 2016 at this point."
+meowgorithm,2016-03-17 04:03:35,https://api.github.com/repos/zenazn/goji/git/commits/a895a84fc1b5af38f6beea5cc2af23e53288bc26,a895a84fc1b5af38f6beea5cc2af23e53288bc26,"Well, actually, it’s 2016 at this point."
+zenazn,2016-03-04 04:43:53,https://api.github.com/repos/zenazn/goji/git/commits/e9a3f0275121c2439e2bd4b5dc6a9eb3fbe88451,e9a3f0275121c2439e2bd4b5dc6a9eb3fbe88451,travis: test under Go 1.6
+zenazn,2016-03-04 04:34:44,https://api.github.com/repos/zenazn/goji/git/commits/a01dd37b8ff078750dfe49db6031b7a23f14e2d5,a01dd37b8ff078750dfe49db6031b7a23f14e2d5,graceful: import cloneTLSConfig from net/http
+zenazn,2016-02-12 06:19:35,https://api.github.com/repos/zenazn/goji/git/commits/859bfa93a8db583de1dd72a1edcbf4bb75c0dbbe,859bfa93a8db583de1dd72a1edcbf4bb75c0dbbe,README: only look at test status for master
+zenazn,2016-02-05 01:37:59,https://api.github.com/repos/zenazn/goji/git/commits/6b97834061496d40e5b1939f91b0fa5b0c225a53,6b97834061496d40e5b1939f91b0fa5b0c225a53,Update code coverage path
+zenazn,2016-02-05 01:03:25,https://api.github.com/repos/zenazn/goji/git/commits/811b2725cd861ee42cb2e415e7c09d00b1c255b1,811b2725cd861ee42cb2e415e7c09d00b1c255b1,"Merge pull request #176 from tesujimath/urlquery-middleware
+
+Added urlquery middleware, resolves #174."
+tesujimath,2016-01-10 04:45:33,https://api.github.com/repos/zenazn/goji/git/commits/0835e6ab6f0a383b027f4453efbebf2c71aa542e,0835e6ab6f0a383b027f4453efbebf2c71aa542e,Name change all Url to URL in URLQuery middleware.
+tesujimath,2016-01-08 02:59:32,https://api.github.com/repos/zenazn/goji/git/commits/47e31837aabfe0f9766fb85c1070fb33e837cfa8,47e31837aabfe0f9766fb85c1070fb33e837cfa8,"Added urlquery middleware, resolves #174."
+zenazn,2015-11-20 20:03:11,https://api.github.com/repos/zenazn/goji/git/commits/bf843a174a08e846246b8945f8a9a853d84a256a,bf843a174a08e846246b8945f8a9a853d84a256a,"Merge pull request #171 from stellar/allow-streaming-tests
+
+Add `flushWriter` to `mutil.WrapWriter()`"
+nullstyle,2015-11-20 16:29:27,https://api.github.com/repos/zenazn/goji/git/commits/23a88f8df0ccd37ea84ca3ff36f0faf9edbfc9a2,23a88f8df0ccd37ea84ca3ff36f0faf9edbfc9a2,"Add `flushWriter` to `mutil.WrapWriter()`
+
+This allows httptest.ResponseRecorder to be wrapped and still maintain
+its Flusher compatibility"
+zenazn,2015-11-15 05:42:53,https://api.github.com/repos/zenazn/goji/git/commits/09c4160eb01c64b5a7d3b8dfd93712828143c4ce,09c4160eb01c64b5a7d3b8dfd93712828143c4ce,travis: test 1.5 specifically
+zenazn,2015-11-15 05:40:42,https://api.github.com/repos/zenazn/goji/git/commits/3bdac6dcc6849f87e5169f2b677fbdb7b31fd09a,3bdac6dcc6849f87e5169f2b677fbdb7b31fd09a,"Fix travis
+
+This only breaks in go tip."
+zenazn,2015-11-11 21:39:25,https://api.github.com/repos/zenazn/goji/git/commits/be915f805dc15907f50100d9b9dc7ad29e197fb8,be915f805dc15907f50100d9b9dc7ad29e197fb8,"pattern: export Raw for retrieving original input
+
+This is in addition to the String method, which is oriented more towards
+human debugging."
+zenazn,2015-08-04 07:23:56,https://api.github.com/repos/zenazn/goji/git/commits/46b46e00f46dda650e04f0bceeb7c40732cd5988,46b46e00f46dda650e04f0bceeb7c40732cd5988,graceful: opportunistic keep-alives for Serve
+zenazn,2015-08-04 06:26:37,https://api.github.com/repos/zenazn/goji/git/commits/6e46287fcc5439fe8691c56394c311aa077bb3e6,6e46287fcc5439fe8691c56394c311aa077bb3e6,"graceful: use TCP keep-alives
+
+This is a copy of commit d6bce32a3607222075734bf4363ca3fea02ea1e5 from
+Go core."
+zenazn,2015-07-25 09:18:56,https://api.github.com/repos/zenazn/goji/git/commits/4faf9dfc1c88f0858e889b2d6903b4c4dbca11af,4faf9dfc1c88f0858e889b2d6903b4c4dbca11af,"Merge pull request #145 from tchssk/fix-typo
+
+Fix a typo"
+zenazn,2015-06-30 23:34:33,https://api.github.com/repos/zenazn/goji/git/commits/f11b3b82931df3c540a0a960b6b1de60094d33d6,f11b3b82931df3c540a0a960b6b1de60094d33d6,"Merge pull request #139 from dtbartle/bind-default-flag-parsing
+
+Ensure flags are parsed before calling bind.Default()."
+bartle-stripe,2015-06-30 06:57:50,https://api.github.com/repos/zenazn/goji/git/commits/68eff826e9d411ae862edacb57dc80249d23c4b0,68eff826e9d411ae862edacb57dc80249d23c4b0,"Ensure flags are parsed before calling bind.Default().
+
+Tested by running `./example -bind localhost:1234`."
+zenazn,2015-06-30 21:03:04,https://api.github.com/repos/zenazn/goji/git/commits/51390a05d196498d546e8a17d55cfbef1b6a0a95,51390a05d196498d546e8a17d55cfbef1b6a0a95,"Delete test of premature optimization
+
+I suspect this is worth some perf, but it's probably not enough for us
+to care. More importantly, it breaks in Go 1.5, where a recent
+optimization made sync.WaitGroup much smaller."
+zenazn,2015-06-23 02:37:40,https://api.github.com/repos/zenazn/goji/git/commits/1421f7cecb33069e8a1d951d57d76544ffaac735,1421f7cecb33069e8a1d951d57d76544ffaac735,"Merge pull request #135 from dtbartle/serve-tls
+
+Add goji.ServeTLS and goji.ServeListener functions."
+bartle-stripe,2015-06-19 05:27:57,https://api.github.com/repos/zenazn/goji/git/commits/5b91951757614f617847137108b617576047d9b1,5b91951757614f617847137108b617576047d9b1,"Add goji.ServeTLS and goji.ServeListener functions.
+
+There's already a ListenAndServeTLS function, but Serve conveniently
+handles calling various graceful and bind methods."
+zenazn,2015-06-09 08:56:24,https://api.github.com/repos/zenazn/goji/git/commits/d198bcf1ddf7d69872b506da7d4c4862121a9d8a,d198bcf1ddf7d69872b506da7d4c4862121a9d8a,"Merge pull request #133 from tchssk/fix-example-greet
+
+Fix example greet"
+zenazn,2015-05-30 22:54:29,https://api.github.com/repos/zenazn/goji/git/commits/eaa649ab77fd613bb3d44dde6b4e6043a01eee66,eaa649ab77fd613bb3d44dde6b4e6043a01eee66,"Improve documentation around explicit routing
+
+Fixes #120."
+zenazn,2015-05-30 22:03:49,https://api.github.com/repos/zenazn/goji/git/commits/ff41f8eaa2cfdd22e7e2f36769f9343aaee16147,ff41f8eaa2cfdd22e7e2f36769f9343aaee16147,"middleware: Make SubRouter Match-aware
+
+This helps avoid a gotcha when using matches with sub-routers.
+
+Fixes #120."
+zenazn,2015-05-30 21:05:40,https://api.github.com/repos/zenazn/goji/git/commits/1bd09ee6902203f4453aed3206c0e471b341303d,1bd09ee6902203f4453aed3206c0e471b341303d,"Allow closing of hijacked connections
+
+I think this is a regression introduced by c1922ab1.
+
+Fixes #130."
+zenazn,2015-04-13 21:44:24,https://api.github.com/repos/zenazn/goji/git/commits/0276f3f3fb609aabf8d9ba7aea10c80ec979989d,0276f3f3fb609aabf8d9ba7aea10c80ec979989d,"Revert ""Remove web.HandlerFunc""
+
+This reverts commit aee21eb0bd4d983cc26959f10ab28d540f91f884.
+
+Fixes #119."
+zenazn,2015-04-12 23:46:04,https://api.github.com/repos/zenazn/goji/git/commits/87830ef5494dd0a954ebfa242e1b1a1e85e22677,87830ef5494dd0a954ebfa242e1b1a1e85e22677,Fix go vet and golint errors
+zenazn,2015-04-12 23:07:48,https://api.github.com/repos/zenazn/goji/git/commits/0645f4e63aa0e938a7816be673356e5c59872d51,0645f4e63aa0e938a7816be673356e5c59872d51,Make comments scan better
+zenazn,2015-04-12 22:58:22,https://api.github.com/repos/zenazn/goji/git/commits/aee21eb0bd4d983cc26959f10ab28d540f91f884,aee21eb0bd4d983cc26959f10ab28d540f91f884,"Remove web.HandlerFunc
+
+Since Goji accepts the underlying version of this type (i.e., the raw
+function), and since it doesn't use web.Handler in the same way as the
+net/http ecosystem uses http.Handler, there's really no reason to ever
+use web.HandlerFunc.
+
+This is a breaking change. Developers who previously used the
+web.HandlerFunc type are encouraged to inline it into their own
+projects."
+zenazn,2015-04-12 22:37:38,https://api.github.com/repos/zenazn/goji/git/commits/707cf7e127e738386a38fa9fda3834315892b434,707cf7e127e738386a38fa9fda3834315892b434,"Configurable routing and router middleware
+
+This change exposes a new type, Match, which represents a matched route.
+When present in the Goji environment (bound to the key MatchKey),
+routing will be skipped and the bound Match will be dispatched to
+instead.
+
+In addition, the Goji router has been exposed as a middleware using the
+Match mechanism above. This allows middleware inserted after the router
+access to the Match object and any bound URLParams.
+
+Fixes #76. See also #32."
+zenazn,2015-02-23 08:33:16,https://api.github.com/repos/zenazn/goji/git/commits/739f05c9497895aee8d398a8ff38fb0517c4d670,739f05c9497895aee8d398a8ff38fb0517c4d670,"Merge pull request #116 from mattn/accept-windows
+
+Handle ""AcceptEx"" as error op on windows"
+mattn,2015-02-23 07:34:00,https://api.github.com/repos/zenazn/goji/git/commits/a2ec7ac6835a6af626f7a08a21bbc690502518ea,a2ec7ac6835a6af626f7a08a21bbc690502518ea,"Handle ""AcceptEx"" as error op on windows"
+zenazn,2015-02-16 05:23:31,https://api.github.com/repos/zenazn/goji/git/commits/7a0c709c84f4f8562c5600d0086de2d4b21bdb8f,7a0c709c84f4f8562c5600d0086de2d4b21bdb8f,No parameter names in documentation
+zenazn,2015-02-16 05:00:24,https://api.github.com/repos/zenazn/goji/git/commits/a06d00e4f3d8c3f15ce51930d385781b6bbf011b,a06d00e4f3d8c3f15ce51930d385781b6bbf011b,"Use native GoDoc examples
+
+This replaces the enormous free-form docstring at the top with something
+that's at least syntax highlighted and collapsible. I'm a little worried
+about discoverability, but ""oh well."""
+zenazn,2015-02-16 02:39:45,https://api.github.com/repos/zenazn/goji/git/commits/d7045fdf646b0489b7bfd77751c8074e9ba03ad0,d7045fdf646b0489b7bfd77751c8074e9ba03ad0,"Only benchmark on Go 1.3+
+
+testing.PB is a 1.3-ism."
+zenazn,2015-02-16 01:58:11,https://api.github.com/repos/zenazn/goji/git/commits/3bfbfe4c5e3b71095a7e9244e6398c6b7578396e,3bfbfe4c5e3b71095a7e9244e6398c6b7578396e,Oops! Forgot one
+zenazn,2015-02-16 01:51:12,https://api.github.com/repos/zenazn/goji/git/commits/a452de8605db976edad45da8ac80985c1fd6fdf5,a452de8605db976edad45da8ac80985c1fd6fdf5,"Benchmark goji/web in parallel
+
+Test with `go test -cpu`.
+
+In other news, Goji is really really fast. Who knew!"
+zenazn,2015-02-16 00:27:49,https://api.github.com/repos/zenazn/goji/git/commits/3273bcd371f9b2b4bb14ecb3ad58e11e90ea1a16,3273bcd371f9b2b4bb14ecb3ad58e11e90ea1a16,Wording
+zenazn,2015-02-16 00:21:16,https://api.github.com/repos/zenazn/goji/git/commits/7558aee4ad25f82597f06807563b00bcd5d33980,7558aee4ad25f82597f06807563b00bcd5d33980,"Link to godoc in type-check error messages
+
+This beats trying to enumerate the accepted types by hand."
+zenazn,2015-02-16 00:07:02,https://api.github.com/repos/zenazn/goji/git/commits/d65ed21ea90ebb3b630eebc16efffb7a932432fe,d65ed21ea90ebb3b630eebc16efffb7a932432fe,"Use ""vanity"" types to clarify use of interface{}
+
+In order to expose a convenient API, it's unfortunately necessary to
+lean on Go's interface{} quite a bit: in reality we only accept a
+handful of types at each call site, but it's impossible to express this
+using the type system.
+
+Prior to this commit (as well as the ParsePattern commit), I exposed all
+of this type information in the form of an enormous comment on web.Mux,
+however this was pretty gross. Instead, let's use ""vanity"" type aliases
+for interface{} to provide documentation about which types are accepted
+where. This will hopefully make the API documentation easier to skim,
+but doesn't affect any existing uses of Goji.
+
+This commit also clarifies a couple other parts of the documentation."
+zenazn,2015-01-18 23:31:22,https://api.github.com/repos/zenazn/goji/git/commits/845982030542a0fd9c8e8cbf76a84c7482cb3755,845982030542a0fd9c8e8cbf76a84c7482cb3755,"Make C.Env a map[interface{}]interface{}
+
+This is a major breaking change to web.C, the Goji context object. The
+Env key has been changed from a map[string]interface{} to a
+map[interface{}]interface{} in order to better support package-private
+environment values and to make the context value more compatible with
+golang.org/x/net/context's Context.
+
+Since strings support equality, most existing uses of web.C should
+continue to function. Users who construct Env by hand (i.e., by calling
+""make"") will need to update their code as instructed by their compiler.
+Users who iterate over the environment will need to update their code to
+take into account the fact that keys may no longer be strings."
+zenazn,2015-01-25 01:29:47,https://api.github.com/repos/zenazn/goji/git/commits/1e119c31799f7a26844db00ed0a73893a2d046be,1e119c31799f7a26844db00ed0a73893a2d046be,I guess it's 2015 now
+zenazn,2015-01-21 05:30:04,https://api.github.com/repos/zenazn/goji/git/commits/33ec673ad9018725008730b291c2f156bf3a6bf5,33ec673ad9018725008730b291c2f156bf3a6bf5,"Merge pull request #109 from zhibinr/patch-1
+
+miss a ""s"" in the URL"
+zhibinr,2015-01-20 11:34:57,https://api.github.com/repos/zenazn/goji/git/commits/9148477cfd68c2ff962a03bcc6059bebaf2fa07a,9148477cfd68c2ff962a03bcc6059bebaf2fa07a,"miss a ""s"" in the URL"
+zenazn,2015-01-06 16:55:52,https://api.github.com/repos/zenazn/goji/git/commits/dcb9598cbbcfcc10d2c1ee1e66958e54a2c84b52,dcb9598cbbcfcc10d2c1ee1e66958e54a2c84b52,"Add graceful.Timeout
+
+This allows users to escalate a graceful shutdown to a forceful one if
+there are active connections that are taking too long to finish their
+requests.
+
+Fixes #94."
+zenazn,2015-01-06 16:44:00,https://api.github.com/repos/zenazn/goji/git/commits/e2c32e0616b174a7e885c678b795edc1203a81c6,e2c32e0616b174a7e885c678b795edc1203a81c6,"Add graceful.DoubleKickWindow
+
+This allows users to signal Goji to exit ungracefully by means of
+sending two signals in quick succession."
+zenazn,2015-01-06 16:22:01,https://api.github.com/repos/zenazn/goji/git/commits/624e61b87915f107493cc7966c91841b3f2c324f,624e61b87915f107493cc7966c91841b3f2c324f,"Expose graceful.ShutdownNow
+
+This backends to the listener.DrainAll functionality I just added,
+allowing impatient users to shut down their services immediately and
+un-gracefully if they want."
+zenazn,2015-01-06 15:03:21,https://api.github.com/repos/zenazn/goji/git/commits/3b2ab247aa6cd50b7c3fe966065901fc928ac980,3b2ab247aa6cd50b7c3fe966065901fc928ac980,"Get rid of many appengine build tags
+
+This is now controlled at the top level goji package: these packages are
+not even compiled in when using App Engine. This is sensible, since
+neither package is of any use there."
+zenazn,2015-01-06 14:55:43,https://api.github.com/repos/zenazn/goji/git/commits/1230cef0603ee8fdbfe44eabef1fc9ff94a7eef4,1230cef0603ee8fdbfe44eabef1fc9ff94a7eef4,"Reorganize code in package graceful
+
+Exactly the same code, just (hopefully) organized a little more
+sensibly."
+zenazn,2015-01-06 14:50:31,https://api.github.com/repos/zenazn/goji/git/commits/c1922ab1807c016f4d596a9a3e65ba2433c55825,c1922ab1807c016f4d596a9a3e65ba2433c55825,"Track all connections, not just idle ones
+
+This change makes package graceful/listener track all connections that
+have been Accepted, not just the ones considered idle. The motivation
+here is to support a DrainAll function on graceful listeners, allowing
+users an alternative to patiently waiting (potentially forever) for
+in-use connections to become idle."
+zenazn,2015-01-06 12:20:37,https://api.github.com/repos/zenazn/goji/git/commits/1af24b8302d8ec9429784bf198e0c82cc6de85c7,1af24b8302d8ec9429784bf198e0c82cc6de85c7,Comment formatting nit
+zenazn,2015-01-05 23:52:44,https://api.github.com/repos/zenazn/goji/git/commits/b85318d656e330037f82ada413c801128cf3def1,b85318d656e330037f82ada413c801128cf3def1,Fix tests on Go 1.2
+zenazn,2015-01-05 23:40:33,https://api.github.com/repos/zenazn/goji/git/commits/de6bd515eaef0a5c05fc04cdb3853df4f98c7c13,de6bd515eaef0a5c05fc04cdb3853df4f98c7c13,"Revert ""Force use of fallback chanpool on App Engine""
+
+This has been fixed in v1.9.17 of App Engine:
+https://code.google.com/p/googleappengine/issues/detail?id=11346
+
+This reverts commit 9556e1736d72993303989f72b3fef2450d121d92.
+
+Fixes #67."
+zenazn,2015-01-05 23:15:38,https://api.github.com/repos/zenazn/goji/git/commits/b9d27b2f3413b0135afd1aaae355bbf1e205ecdb,b9d27b2f3413b0135afd1aaae355bbf1e205ecdb,"Remove graceful.Middleware from the public API
+
+It was exposed mostly for documentation of a Go 1.2 polyfill, and really
+doesn't feel like it should be exposed long-term, since it hasn't done
+anything in frightfully long.
+
+This is a breaking change for advanced users of package graceful, for
+which there is unfortunately no easy workaround (at least for Go 1.2
+users, which are the ~only ones affected)."
+zenazn,2015-01-05 18:06:32,https://api.github.com/repos/zenazn/goji/git/commits/863ba3029d64b5ec1ab68b383249dd4c044b3838,863ba3029d64b5ec1ab68b383249dd4c044b3838,"Allow regexps to take advantage of SubRouter
+
+Go's regular expressions don't allow you to create a capturing group
+named ""*"", which previously made using SubRouter with regular expression
+patterns impossible. This change introduces the alternate key ""_"", which
+happens to be a legal capturing group name.
+
+Fixes #98."
+zenazn,2015-01-05 17:23:49,https://api.github.com/repos/zenazn/goji/git/commits/e3ea1b5780a7f3ca90b91ef05eaf04fa477c5f6f,e3ea1b5780a7f3ca90b91ef05eaf04fa477c5f6f,"Disable SSLv3 by default
+
+This change addresses the POODLE vulnerability [0]. Unfortunately it
+makes package graceful's behavior here slightly different than the stock
+net/http methods of the same name, but I think that's fine in this
+situation.
+
+[0]: https://www.openssl.org/~bodo/ssl-poodle.pdf
+
+Thanks to @ekanna for reporting this. Fixes #101."
+zenazn,2014-12-15 09:08:05,https://api.github.com/repos/zenazn/goji/git/commits/acf12155c0025c27d36f85045c9a5634765a1875,acf12155c0025c27d36f85045c9a5634765a1875,"Refactor package graceful
+
+This change refactors package graceful into two packages: one very well
+tested package that deals with graceful shutdown of arbitrary
+net.Listeners in the abstract, and one less-well-tested package that
+works with the nitty-gritty details of net/http and signal handling.
+
+This is a breaking API change for advanced users of package graceful:
+the WrapConn function no longer exists. This shouldn't affect most users
+or use cases."
+zenazn,2015-01-04 22:42:41,https://api.github.com/repos/zenazn/goji/git/commits/8c222e182a4dfc3dda15ba84186a3869d7ffc7ef,8c222e182a4dfc3dda15ba84186a3869d7ffc7ef,"Make some sketchy tests Go 1.2 only
+
+In particular, these started failing when running tests under the race
+detector in Go 1.4 [0], probably due to some kind of (GC?) hijinks
+clearing out the sync.Pool.
+
+[0]: these tests might have also failed in 1.3, but I didn't check"
+zenazn,2014-11-07 06:37:37,https://api.github.com/repos/zenazn/goji/git/commits/b805cb86673cf242ca7cf3546c712eebe3d9985e,b805cb86673cf242ca7cf3546c712eebe3d9985e,Test case for sync.WaitGroup race
+zenazn,2014-12-11 19:44:06,https://api.github.com/repos/zenazn/goji/git/commits/565aaaa983763df9b5d4ed4587876fb1c676d163,565aaaa983763df9b5d4ed4587876fb1c676d163,More Go versions in Travis; fix -cover
+zenazn,2014-12-08 01:05:16,https://api.github.com/repos/zenazn/goji/git/commits/986effffd7bc06c1c494f10a1b63c59f2383ed64,986effffd7bc06c1c494f10a1b63c59f2383ed64,Delete some unneeded code
+zenazn,2014-12-08 00:35:41,https://api.github.com/repos/zenazn/goji/git/commits/83e1241fde7a0a387782f57cd6a878a8a05a36e2,83e1241fde7a0a387782f57cd6a878a8a05a36e2,"Make ParsePattern public
+
+The goal here is to make it easy for people to write thin wrappers
+around the built-in Patterns."
+zenazn,2014-12-07 23:19:13,https://api.github.com/repos/zenazn/goji/git/commits/2ca8864e18b41cf0cb4ad3beaf317257befed33e,2ca8864e18b41cf0cb4ad3beaf317257befed33e,"s/util/mutil/
+
+""util"" is a really bad name for a package since it isn't very
+descriptive and so often collides with other names.
+
+Unfortunately, this is a breaking change, but it's both very easy to fix
+and perhaps more importantly also better to do now than later."
+zenazn,2014-11-25 23:31:19,https://api.github.com/repos/zenazn/goji/git/commits/285133e626ca70d5bcf7c57d2fb63328dc21b364,285133e626ca70d5bcf7c57d2fb63328dc21b364,"Merge pull request #92 from mredivo/shutdown-race-2
+
+Prevent shutdown race, and refuse new requests."
+zenazn,2014-11-23 22:12:38,https://api.github.com/repos/zenazn/goji/git/commits/8942c8c5667c6c086ac5c7e7144e5c73ab7ff4c4,8942c8c5667c6c086ac5c7e7144e5c73ab7ff4c4,"Fix build
+
+This is pretty frustrating: it doesn't look like it's going to be easy
+to get the ""cover"" tool to work across both 1.3 and 1.4, since they
+aren't able to agree on where to install the tool from. I'm sure there's
+a way to work around this, but in the meantime let's just disable
+coverage testing entirely."
+zenazn,2014-11-23 22:08:19,https://api.github.com/repos/zenazn/goji/git/commits/2b08b90ead97c2f9d59b0d29155f3014b903786c,2b08b90ead97c2f9d59b0d29155f3014b903786c,"Use new ""cover"" path
+
+The official ""cover"" package has moved, and Go 1.4 will start enforcing
+canonical imports."
+zenazn,2014-11-07 19:37:41,https://api.github.com/repos/zenazn/goji/git/commits/dcb7f7169428645921b9914bdd4f61f1b1936564,dcb7f7169428645921b9914bdd4f61f1b1936564,"Merge pull request #81 from satoshun/type_assertion
+
+use direct result of switch type assertion"
+satoshun,2014-11-07 13:03:36,https://api.github.com/repos/zenazn/goji/git/commits/9a8e832951bb06c5b52393c237be7680d8ed7f44,9a8e832951bb06c5b52393c237be7680d8ed7f44,use direct result of switch type assertion
+zenazn,2014-11-06 10:23:18,https://api.github.com/repos/zenazn/goji/git/commits/aeee6ddab22924a4593db06353aa594f0387bf15,aeee6ddab22924a4593db06353aa594f0387bf15,"Merge pull request #78 from satoshun/range_syntax
+
+Use range syntax"
+satoshun,2014-11-05 13:41:20,https://api.github.com/repos/zenazn/goji/git/commits/a29ff223dc9e977f3dcfcf69508e0bd5b7cb068b,a29ff223dc9e977f3dcfcf69508e0bd5b7cb068b,Use range syntax
+zenazn,2014-11-04 21:21:56,https://api.github.com/repos/zenazn/goji/git/commits/709dbfa7bd7cfa5a2174cc96da25c1a2030b972f,709dbfa7bd7cfa5a2174cc96da25c1a2030b972f,"Merge pull request #77 from mredivo/no-log-signal2
+
+Remove signal.go logging; log from hook functions instead."
+zenazn,2014-11-03 19:29:51,https://api.github.com/repos/zenazn/goji/git/commits/23ec88ea5a560383b8b3ed7a5ef18045a36f05f9,23ec88ea5a560383b8b3ed7a5ef18045a36f05f9,"Fix bug with string pattern matching with "".""
+
+Previously, a route like ""/:a.png"" would match ""/foo/bar/baz.png"".
+This was incorrect, as all matches should be restricted to path segments
+(or smaller, as dictated by a break character).
+
+This bug was introduced in 1a390aba1c7c591e2c0c75be43eb830091b7d6f7.
+
+Fixes #75."
+zenazn,2014-11-02 21:22:57,https://api.github.com/repos/zenazn/goji/git/commits/dde29893cc702abb56381731fc92f97d75b2f9ca,dde29893cc702abb56381731fc92f97d75b2f9ca,Simplify a logical XOR
+zenazn,2014-11-02 21:01:32,https://api.github.com/repos/zenazn/goji/git/commits/17227c10c48acd3a82984f3009f0cd436ac2b72b,17227c10c48acd3a82984f3009f0cd436ac2b72b,Improve test coverage slightly
+zenazn,2014-11-02 21:00:14,https://api.github.com/repos/zenazn/goji/git/commits/60d46a21e36a7d7ea7e9bb96184683a6e72c0562,60d46a21e36a7d7ea7e9bb96184683a6e72c0562,Fix typo in a test error message
+zenazn,2014-11-02 00:06:20,https://api.github.com/repos/zenazn/goji/git/commits/9556e1736d72993303989f72b3fef2450d121d92,9556e1736d72993303989f72b3fef2450d121d92,"Force use of fallback chanpool on App Engine
+
+This is to work around a bug where App Engine, which as of this writing
+runs Go 1.2, builds code which uses the ""go1.3"" build tag. See #67.
+
+This bug is being tracked at:
+https://code.google.com/p/googleappengine/issues/detail?id=11346"
+zenazn,2014-11-01 23:17:05,https://api.github.com/repos/zenazn/goji/git/commits/69ab4d722ea1317d12cd1bce53887182c04cccae,69ab4d722ea1317d12cd1bce53887182c04cccae,"SubRouter middleware
+
+This middleware makes it much easier to write sub-routes, allowing you
+to make the sub-router ignorant of its parent router's matched prefix.
+
+The example app has also been modified to use this functionality for its
+admin pages.
+
+Fixes #65."
+zenazn,2014-11-01 22:46:02,https://api.github.com/repos/zenazn/goji/git/commits/2fe5c3ee437887e03c7a068e2feb0a21b89886c6,2fe5c3ee437887e03c7a068e2feb0a21b89886c6,"Change semantics of wildcard patterns
+
+This is a breaking API change that changes how wildcard patterns are
+treated. In particular, wildcards are no longer allowed to appear at
+arbitrary places in the URL, and are only allowed to appear immediately
+after a path separator. This change effectively changes the wildcard
+sigil from ""*"" to ""/*"".
+
+Users who use wildcard routes like ""/hello*"" will have to switch to
+regular expression based routes to preserve the old semantics.
+
+The motivation for this change is that it allows the router to publish a
+special ""tail"" key which represents the unmatched portion of the URL.
+This is placed into URLParams under the key ""*"", and includes a leading
+""/"" to make it easier to write sub-routers."
+zenazn,2014-11-01 21:59:43,https://api.github.com/repos/zenazn/goji/git/commits/1a390aba1c7c591e2c0c75be43eb830091b7d6f7,1a390aba1c7c591e2c0c75be43eb830091b7d6f7,"Allow "".,;"" as string pattern ""break chars""
+
+This allows you to match ""/a/cat.gif"" with patterns like ""/a/:b.:c"".
+
+Thanks to @Minecrell for an early patch implementing this functionality.
+
+Fixes #75.
+Fixes #48."
+zenazn,2014-10-30 05:32:29,https://api.github.com/repos/zenazn/goji/git/commits/ac6efd8f69cec8b916082cf7e45d0d515030e03e,ac6efd8f69cec8b916082cf7e45d0d515030e03e,"Add a note about outgrowing Logger
+
+This is a common enough question that it's worth calling out explicitly."
+zenazn,2014-10-27 00:44:00,https://api.github.com/repos/zenazn/goji/git/commits/f255c52789a1c4f255b5533eead00766369c1611,f255c52789a1c4f255b5533eead00766369c1611,"Change the router interface slightly
+
+Make the bytecode runner return the route that we're going to use. It's
+up to the router itself to dispatch to that route.
+
+Besides feeling a teensy bit cleaner, this refactoring is to prepare for
+a ""Router"" middleware, which will allow application developers to
+control when in the middleware stack routing occurs."
+zenazn,2014-10-27 00:27:44,https://api.github.com/repos/zenazn/goji/git/commits/b12ae7fd2234d61f2ae0c3f9d048e0c57b36336d,b12ae7fd2234d61f2ae0c3f9d048e0c57b36336d,Move bytecode router code around
+zenazn,2014-10-27 00:14:04,https://api.github.com/repos/zenazn/goji/git/commits/1bea1bd20427b51324d447716e46dc1715c343f6,1bea1bd20427b51324d447716e46dc1715c343f6,Minor fixup
+zenazn,2014-10-27 00:02:16,https://api.github.com/repos/zenazn/goji/git/commits/a655411f3862de37b99f1e01df4ae873b1b51b92,a655411f3862de37b99f1e01df4ae873b1b51b92,"Pre-compile routes at Serve() time
+
+I originally exposed Compile() for exactly this use case, but apparently
+I never actually implemented this. Oops.
+
+In any event, this makes the first request a little faster (an extremely
+unscientific test suggests on the order of 10 microseconds). Also, if
+something goes terribly wrong during route compilation, it would fail
+before we start listening on the socket."
+zenazn,2014-10-26 23:52:20,https://api.github.com/repos/zenazn/goji/git/commits/89bc8315f509d641830105d7f7bb596621f8e694,89bc8315f509d641830105d7f7bb596621f8e694,"Move Pattern code around
+
+I think this is a bunch clearer."
+zenazn,2014-10-26 23:30:44,https://api.github.com/repos/zenazn/goji/git/commits/8cb07251b03147cbd281d325eb65e0d4dca82f98,8cb07251b03147cbd281d325eb65e0d4dca82f98,"Fix public API
+
+f2926972236e62bb85a77c9ed50514d23fd5b294 accidentally removed
+web.Mux.Compile from the public API. This restores it."
+zenazn,2014-10-26 23:25:25,https://api.github.com/repos/zenazn/goji/git/commits/f2926972236e62bb85a77c9ed50514d23fd5b294,f2926972236e62bb85a77c9ed50514d23fd5b294,"Put more methods on Mux
+
+This fixes the documentation wart where half of the methods were defined
+on ""rt *Mux"". It doesn't change the public API."
+zenazn,2014-10-26 23:13:27,https://api.github.com/repos/zenazn/goji/git/commits/2c106c958bc0b7ac2488692330c77af8711c9c69,2c106c958bc0b7ac2488692330c77af8711c9c69,"Start moving away from struct embedding
+
+Instead of using struct embedding to build web.Mux, start moving towards
+explicit mappings. This doesn't actually change the public API of
+web.Mux, but feels a little cleaner to me.
+
+The longer-term thing here is to get rid of the functions defined on
+Muxes in the public documentation that are defined on ""rt *Mux"", which
+is just plain ugly."
+zenazn,2014-10-26 22:20:29,https://api.github.com/repos/zenazn/goji/git/commits/04b25f26e54f4b42c26d746eb83ab8b41e7dd272,04b25f26e54f4b42c26d746eb83ab8b41e7dd272,Don't expose the internal routeMachine
+zenazn,2014-10-08 07:58:55,https://api.github.com/repos/zenazn/goji/git/commits/119938d4b94fdf713efb3340ebd4ba5f3286f520,119938d4b94fdf713efb3340ebd4ba5f3286f520,"Add bind.Sniff to expose default selection logic
+
+This allows users who do not wish to use bind.WithFlag() to still take
+advantage of bind's magical listener selection logic.
+
+Fixes #68."
+zenazn,2014-09-02 08:29:28,https://api.github.com/repos/zenazn/goji/git/commits/57e752c3bcac3538485b6a74f854134ded80998a,57e752c3bcac3538485b6a74f854134ded80998a,"Refactor package graceful
+
+This is meant to accomplish a few things:
+1. graceful no longer spawns an additional goroutine per connection.
+   Instead, it maintains a sharded set of idle connections that a single
+   reaper goroutine can go through when necessary.
+2. graceful's connection struct has a more orthogonal set of connection
+   state flags, replacing the harder-to-understand state machine. The
+   underlying mechanics are largely the same, however.
+3. graceful now uses the Go 1.3 ConnState API to avoid the ""200-year
+   SetReadDeadline hack."" It still falls back on SetReadDeadline on Go
+   1.2 or where ConnState does not apply."
+zenazn,2014-10-03 22:31:01,https://api.github.com/repos/zenazn/goji/git/commits/5a5d765e6b5796e2c6f6bb46a4d6b69a406edfbf,5a5d765e6b5796e2c6f6bb46a4d6b69a406edfbf,"Merge pull request #69 from mredivo/master
+
+Add BytesWritten() method to WriterProxy."
+zenazn,2014-10-01 17:45:45,https://api.github.com/repos/zenazn/goji/git/commits/3ed4dab2289fc04f5b4f95af9edc43d14089a64b,3ed4dab2289fc04f5b4f95af9edc43d14089a64b,Better top-level AppEngine support
+zenazn,2014-09-01 23:06:19,https://api.github.com/repos/zenazn/goji/git/commits/90d355d3e1693435a6300da7d4e191126aced78e,90d355d3e1693435a6300da7d4e191126aced78e,"Use net/http.Server.SetKeepAlivesEnabled in Go 1.3
+
+This feature can be used in place of the pile of hacks in middleware.go,
+and doesn't involve awkwardly shimming out a http.ResponseWriter. Sounds
+like a win-win!"
+zenazn,2014-09-01 02:56:16,https://api.github.com/repos/zenazn/goji/git/commits/8b5a2b91620538a67dd8adf5186895fed1a7ae01,8b5a2b91620538a67dd8adf5186895fed1a7ae01,Support Tee() in the ReadFrom case as well
+zenazn,2014-09-01 02:54:01,https://api.github.com/repos/zenazn/goji/git/commits/0e21fc92a43e2b07168deb9e0ecdef2acacd7a38,0e21fc92a43e2b07168deb9e0ecdef2acacd7a38,Document package web/util
+zenazn,2014-08-30 00:05:36,https://api.github.com/repos/zenazn/goji/git/commits/a08bb38f4577ba5a5c672318c11cb1c07114fb86,a08bb38f4577ba5a5c672318c11cb1c07114fb86,"Merge pull request #61 from RuiAAPeres/patch-1
+
+Update web.go"
+RuiAAPeres,2014-08-29 23:55:53,https://api.github.com/repos/zenazn/goji/git/commits/e5a18d6241fb3d7bee5c2ad94035b0e25def2e24,e5a18d6241fb3d7bee5c2ad94035b0e25def2e24,Update web.go
+zenazn,2014-08-26 17:22:35,https://api.github.com/repos/zenazn/goji/git/commits/9e8d33cb030a55965ec27ec020943ba07e359853,9e8d33cb030a55965ec27ec020943ba07e359853,"Merge pull request #58 from wangjohn/master
+
+Fixing typo in example README."
+zenazn,2014-08-26 17:20:26,https://api.github.com/repos/zenazn/goji/git/commits/e101f753417e0b0a0ce8a0af8a9a443df5339aff,e101f753417e0b0a0ce8a0af8a9a443df5339aff,"Boolean logic is hard, guys :(
+
+The result of this was that builds were broken on windows and app
+engine.
+
+Fixes #59."
+wangjohn,2014-08-26 05:20:42,https://api.github.com/repos/zenazn/goji/git/commits/91e2de24198528336af849af5018d25ad99f58f6,91e2de24198528336af849af5018d25ad99f58f6,Fixing typo in example README.
+zenazn,2014-08-24 03:01:04,https://api.github.com/repos/zenazn/goji/git/commits/28b92067918cb6c1cec4a4322bb9aba3c8bb79cf,28b92067918cb6c1cec4a4322bb9aba3c8bb79cf,golint
+zenazn,2014-08-24 00:04:35,https://api.github.com/repos/zenazn/goji/git/commits/4d9fdbbbcff1941c2981c4e750f036ac3e958016,4d9fdbbbcff1941c2981c4e750f036ac3e958016,"Refactor WriterProxy out of web/middleware
+
+It turns out WriterProxy is pretty generally useful, especially when
+defining custom http loggers. Expose it in a util package so that other
+packages can use it."
+zenazn,2014-08-23 23:20:59,https://api.github.com/repos/zenazn/goji/git/commits/94ec1b113b798263913a2f3a46c6fabd307b65d0,94ec1b113b798263913a2f3a46c6fabd307b65d0,Also rename files so they aren't lies
+zenazn,2014-08-23 23:19:12,https://api.github.com/repos/zenazn/goji/git/commits/b75b7c7951d10cac0b7ef940f4813c956cf65cdc,b75b7c7951d10cac0b7ef940f4813c956cf65cdc,"Don't use syscall package on appengine
+
+Fixes #52."
+zenazn,2014-08-23 22:57:24,https://api.github.com/repos/zenazn/goji/git/commits/bf3fc52add18a7c90bf2ad123fc7eaad51c97bdb,bf3fc52add18a7c90bf2ad123fc7eaad51c97bdb,Move README buttons to their own line
+zenazn,2014-08-23 22:55:22,https://api.github.com/repos/zenazn/goji/git/commits/8b50302744e734f5e39721de71752de2441f44aa,8b50302744e734f5e39721de71752de2441f44aa,Minor documentation touch-ups
+zenazn,2014-08-23 22:31:34,https://api.github.com/repos/zenazn/goji/git/commits/f226afd43574d914db2ffba662858346f2866587,f226afd43574d914db2ffba662858346f2866587,Fix-ups from param move
+zenazn,2014-08-23 22:26:14,https://api.github.com/repos/zenazn/goji/git/commits/1142ca60ec2658b7fa9c899f18add5b092a45fe2,1142ca60ec2658b7fa9c899f18add5b092a45fe2,"Move param to https://github.com/goji/param
+
+This package was always sort of a black sheep package, and it's time it
+had a separate home."
+zenazn,2014-08-23 21:41:10,https://api.github.com/repos/zenazn/goji/git/commits/25044d60c259e7590ad677dec268f4b49bcedc67,25044d60c259e7590ad677dec268f4b49bcedc67,"Eliminate a lock in the request hot path
+
+If you're manipulating your middleware stack concurrently with active
+requests you're probably doing something wrong, and it's not worth
+either the complexity or runtime cost to support you hitting yourself.
+
+We can probably take this principle a bit further and disallow mutating
+the middleware stack after any requests have been made (which will
+eliminate even more complexity) but that can be a project for another
+day."
+zenazn,2014-08-23 21:34:30,https://api.github.com/repos/zenazn/goji/git/commits/ab8aa1f6d8fae7c8863780f6b1b8cb37e11e1815,ab8aa1f6d8fae7c8863780f6b1b8cb37e11e1815,"Use sync.Pool for go1.3 and up
+
+This has the additional benefit of removing the need for a go1.3 branch."
+zenazn,2014-07-28 09:12:27,https://api.github.com/repos/zenazn/goji/git/commits/17b9035bcd162f59e1a1247d4a755124c37052c5,17b9035bcd162f59e1a1247d4a755124c37052c5,"Add App Engine support
+
+App Engine disallows package unsafe. As a workaround for the (unsafe)
+RCU atomic pointer shenanigans we pull in order to avoid taking a lock
+in the hot routing path, let's just grab the lock. Honestly, I doubt
+anyone will notice anyways, especially considering the fact that App
+Engine is single-threaded anyways.
+
+Fixes #52."
+zenazn,2014-07-28 09:00:58,https://api.github.com/repos/zenazn/goji/git/commits/8344b8a29ecef44663897b78768fd99f58def512,8344b8a29ecef44663897b78768fd99f58def512,"Fix race in state machine compilation/invalidation
+
+Previously, a state machine invalidation could have raced against an
+in-flight routing attempt: if the invalidation occured after the routing
+attempt had already completed its nil-check (choosing not to compile a
+new state machine) but before the state machine was atomically loaded to
+perform routing, the routing goroutine would begin to panic from
+dereferencing nil.
+
+The meat of this change is that we now return the state machine that we
+compiled (while still holding the lock), and we only ever interact with
+the state machine through atomic pointer loads."
+zenazn,2014-07-25 00:56:49,https://api.github.com/repos/zenazn/goji/git/commits/2ab51bb36071e4db7059f65deb2a981740f87656,2ab51bb36071e4db7059f65deb2a981740f87656,"Only add log.Lmicroseconds if log.Ltime is set
+
+Also, move it out of Serve so it's possible to override."
+zenazn,2014-07-25 00:42:55,https://api.github.com/repos/zenazn/goji/git/commits/187fd0f5fa463a063cc44eebbb4c3a1dfbe40772,187fd0f5fa463a063cc44eebbb4c3a1dfbe40772,"Add compatibility for YAML in Ruby 1.8
+
+For Bad Reasons (tm), Ruby 1.8's YAML parser expects a lot more spaces
+than Ruby 1.9's does. Let's humor it and give it those spaces."
+zenazn,2014-07-21 18:40:54,https://api.github.com/repos/zenazn/goji/git/commits/eab7e2ddb1fa8a42a6b23c827046621d4d9629f9,eab7e2ddb1fa8a42a6b23c827046621d4d9629f9,"Make use of flag optional in bind
+
+Expose an additional function, bind.WithFlag(), which allows callers to
+use the previously-default ""global flag"" mode.
+
+This change allows the bind string parser (etc.) to be used without
+unwanted side effects. The behavior of the top-level ""goji"" package has
+not been changed.
+
+Fixes #47."
+zenazn,2014-07-02 10:52:13,https://api.github.com/repos/zenazn/goji/git/commits/32da78b2dfeb2f5353e3b14a54a1b30d356e979c,32da78b2dfeb2f5353e3b14a54a1b30d356e979c,"Merge pull request #38 from joliv/patch-1
+
+Double dashes to em dashes"
+joliv,2014-07-01 02:57:03,https://api.github.com/repos/zenazn/goji/git/commits/4fca47c2726f872eded42db20f2a2b68382d941e,4fca47c2726f872eded42db20f2a2b68382d941e,Double dashes to em dashes
+zenazn,2014-06-26 01:20:37,https://api.github.com/repos/zenazn/goji/git/commits/e3228e8322d760a7aad832bce70b7e11a3b2536c,e3228e8322d760a7aad832bce70b7e11a3b2536c,"Change graceful to opt-in to signal handling
+
+Previously, a set of standard signals would be handled automatically via
+an init() function, however that made the package difficult to use in
+packages in which an HTTP server would only be spawned some of the times
+(perhaps keyed on an environment variable or flag). Now, signals must be
+registered manually.
+
+By default, the top-level ""goji"" package automatically registers
+signals with graceful, so this will result in no behavior changes for
+most people.
+
+Fixes #35."
+zenazn,2014-06-24 04:07:34,https://api.github.com/repos/zenazn/goji/git/commits/aca17e0eda8b4023686b0780df56c24003e17dd7,aca17e0eda8b4023686b0780df56c24003e17dd7,"Use %+v instead of %#v when recovering panics
+
+Many common panic values, e.g. nil pointer dereferences, don't print
+very well under ""%#v"", emitting something like
+""runtime.errorCString{cstr:0x54b2a4}"" or similar."
+zenazn,2014-06-22 06:44:36,https://api.github.com/repos/zenazn/goji/git/commits/54c3a5dbde15dc0662d1451d8b80c8702c6bb289,54c3a5dbde15dc0662d1451d8b80c8702c6bb289,Add note about third-party libraries
+zenazn,2014-06-22 06:13:45,https://api.github.com/repos/zenazn/goji/git/commits/1c4f21ce5f5485fca9b9ddc74dc1222c792b4c31,1c4f21ce5f5485fca9b9ddc74dc1222c792b4c31,"Record the first written status, not the last
+
+If WriteHeader is called multiple times on a http.ResponseWriter, the
+first status is the one that is used, not the last. Fix the wrapped
+writer to reflect this fact."
+zenazn,2014-06-19 16:50:17,https://api.github.com/repos/zenazn/goji/git/commits/6ab8e0be75df834dea116c2de9a5fb097f4518db,6ab8e0be75df834dea116c2de9a5fb097f4518db,Add Go 1.3 to Travis
+zenazn,2014-06-19 07:40:14,https://api.github.com/repos/zenazn/goji/git/commits/d0d00ae437d7184fc6fc61cbf58747162c76ec6e,d0d00ae437d7184fc6fc61cbf58747162c76ec6e,"Inline strings.IndexRune call
+
+This is worth about 4% on
+github.com/julienschmidt/go-http-routing-benchmark's
+BenchmarkGoji_GithubAll."
+zenazn,2014-06-19 07:29:55,https://api.github.com/repos/zenazn/goji/git/commits/9a6729e2eab232c62592dde59966c4a238eface0,9a6729e2eab232c62592dde59966c4a238eface0,"Don't look up s.literals[i] twice
+
+This is worth about 3% in
+github.com/julienschmidt/go-http-routing-benchmark's
+BenchmarkGoji_GithubAll. Not a huge win, but definitely still worth it."
+zenazn,2014-06-19 06:33:10,https://api.github.com/repos/zenazn/goji/git/commits/67b793fbc0698d8bd16d996a281634f810325f99,67b793fbc0698d8bd16d996a281634f810325f99,"Don't load all of rm.sm[i]
+
+For whatever reason, Go insisted on loading rm.sm[i] in several chunks,
+even though it could be loaded in a single 64-bit block. Instead, let's
+reorder our loads to minimize the amount of memory we're uselessly
+moving around.
+
+This gives us about a 15% perf boost in
+github.com/julienschmidt/go-http-routing-benchmark's
+BenchmarkGoji_StaticAll, and questionable benefits (i.e., not
+distinguishable from noise but certainly no worse) on Goji's own
+benchmarks."
+zenazn,2014-06-19 06:04:06,https://api.github.com/repos/zenazn/goji/git/commits/ea2ee5b24689c7445c452fa82ad245babb7a4607,ea2ee5b24689c7445c452fa82ad245babb7a4607,"Unroll loop in web.routeMachine.route
+
+On my machine, this is worth about 10ns at 5 routes, 20ns at 50 routes,
+70ns at 500 routes (a ~5% win), and 40ns at 5000."
+zenazn,2014-06-17 16:42:54,https://api.github.com/repos/zenazn/goji/git/commits/bed37a46c7706129bb9cbb0a7672868c34337767,bed37a46c7706129bb9cbb0a7672868c34337767,Reformat comment in docs
+zenazn,2014-06-17 16:42:21,https://api.github.com/repos/zenazn/goji/git/commits/7ad06bdbce36c505215552cc8fb419d9db7f2142,7ad06bdbce36c505215552cc8fb419d9db7f2142,"Merge pull request #34 from saj1th/fix-typo
+
+Fixing typo"
+saj1th,2014-06-17 12:15:52,https://api.github.com/repos/zenazn/goji/git/commits/cd7aeeef8202c3b7ef9d89eb2a590fb84b2d2279,cd7aeeef8202c3b7ef9d89eb2a590fb84b2d2279,"Fixing the doc examples
+
+Fixing typos and checks"
+saj1th,2014-06-17 11:32:51,https://api.github.com/repos/zenazn/goji/git/commits/b504b24726cda31bf72b8385552426bac826eda1,b504b24726cda31bf72b8385552426bac826eda1,"Fix typo
+
+Typo in examples"
+zenazn,2014-06-12 08:43:38,https://api.github.com/repos/zenazn/goji/git/commits/f70d2a33c1813a235a0f5f84bb5c2ce80aef57c3,f70d2a33c1813a235a0f5f84bb5c2ce80aef57c3,"Merge pull request #25 from elithrar/nocache
+
+NoCache middleware - prevents proxies/clients from caching content."
+zenazn,2014-06-12 08:37:00,https://api.github.com/repos/zenazn/goji/git/commits/6bc38f39b3caa4867106cd2c556e3244b7267779,6bc38f39b3caa4867106cd2c556e3244b7267779,"Be more strict about file closing in bind
+
+This eliminates the race condition mentioned in a54c913a by forbidding
+duplicate binds to the same socket (well, at least in the sense that
+attempting to do so will *always* result in an error instead of
+nondeterministically resulting in an error)."
+zenazn,2014-06-12 08:03:32,https://api.github.com/repos/zenazn/goji/git/commits/a54c913a6a99e6079aa093b6fee82cf5865e8089,a54c913a6a99e6079aa093b6fee82cf5865e8089,"Fix GC race in bind with Einhorn
+
+This fixes a race condition between package bind and the garbage
+collector, where if the garbage collector ran between einhornInit and
+einhornBind, bind would fatal with the error ""dup: bad file descriptor""
+
+The core of the bug is that Go's os.File uses runtime.SetFinalizer to
+register a callback to close the underlying file descriptor an os.File
+points at when the os.File itself is being garbage collected. However,
+the Einhorn initialization code in bind, in the process of ensuring that
+every Einhorn-passed socket had CloseOnExec set on it, allocated
+os.File's pointing at each of these passed file descriptors, but did not
+keep references to these os.File's, allowing them to be garbage
+collected. Subsequently, if you attempted to bind one of these sockets,
+you'd find that it was no longer open.
+
+This is the simplest fix to the bug, which is to only allocate an
+os.File when we actually attempt to bind the socket. Note that there's
+still a race condition here if you attempt to bind the same file
+descriptor twice, since a GC between the two binds will likely cause the
+file to be collected. Fortunately, that one can be worked around by
+simply not allowing such silly behavior :). Another patch that makes
+this more clear will follow.
+
+Closes #29."
+zenazn,2014-06-11 17:24:05,https://api.github.com/repos/zenazn/goji/git/commits/9fb476cd7dace92ff30f43783008d98ad8809ea1,9fb476cd7dace92ff30f43783008d98ad8809ea1,"Update benchmark URL
+
+@julienschmidt upstreamed my patches (and did a great job of making it
+look amazing!), so let's link to his benchmark instead of mine.
+
+Closes #30"
+zenazn,2014-06-08 00:16:16,https://api.github.com/repos/zenazn/goji/git/commits/ca54618fdf80c1dbcd32dbc45dab976e013c499a,ca54618fdf80c1dbcd32dbc45dab976e013c499a,"Merge pull request #28 from mmcgrana/mmcgrana-fix-typo
+
+Fix typo"
+mmcgrana,2014-06-07 23:53:18,https://api.github.com/repos/zenazn/goji/git/commits/2b7b8cb2a16413ef78f8574af1bac6df8275b6ef,2b7b8cb2a16413ef78f8574af1bac6df8275b6ef,Fix typo
+zenazn,2014-06-03 06:50:16,https://api.github.com/repos/zenazn/goji/git/commits/f45ad521d425e52884933a03962b11d80b66867c,f45ad521d425e52884933a03962b11d80b66867c,Fix typo in error message
+zenazn,2014-06-02 22:27:56,https://api.github.com/repos/zenazn/goji/git/commits/bdefa16a3ec570f695bc6227fbc441998fd4be15,bdefa16a3ec570f695bc6227fbc441998fd4be15,"Increase size of per-process request ID nonce
+
+Change the per-process nonce part of the request ID from 8 characters to
+10, and wrap the entire thing in a retry loop so you can never get an
+""unlucky"" panic. I know this will ""never"" happen in practice, but it
+doesn't hurt to make sure we never, ever have any collisions, and never,
+ever have any runtime panics.
+
+It's also worth documenting the math (""math"") I used to calculate the
+numbers here."
+elithrar,2014-06-02 21:49:32,https://api.github.com/repos/zenazn/goji/git/commits/179dc70da283073aa12eac288dfb2bdc6423181e,179dc70da283073aa12eac288dfb2bdc6423181e,Removed superfluous fmt.Sprintf.
+elithrar,2014-05-23 09:13:28,https://api.github.com/repos/zenazn/goji/git/commits/190bca6bc74d4cf80ad8d49eb5e8662f9494f0e4,190bca6bc74d4cf80ad8d49eb5e8662f9494f0e4,NoCache middleware - prevents proxies/clients from caching content.
+zenazn,2014-05-17 04:01:16,https://api.github.com/repos/zenazn/goji/git/commits/5ac81e93fb6cf44207071a63d6af2e06688954dc,5ac81e93fb6cf44207071a63d6af2e06688954dc,"Reset cStack's C on release
+
+Previously, we would keep the URLParams / Env associated with a cStack
+around until the next request flushed them. However, this might cause
+either of these maps to stick around for much longer than they ought to,
+potentially keeping references to many, many objects.
+
+Instead, clear out the saved context on every release."
+zenazn,2014-05-06 21:25:11,https://api.github.com/repos/zenazn/goji/git/commits/8770437237cd43b77742a0ac65640958346b7b10,8770437237cd43b77742a0ac65640958346b7b10,"Allow bind to be configured through env vars
+
+Goji now honors two environment variables: GOJI_BIND (which accepts the
+full ""bind"" flag syntax) and PORT (which is treated as a TCP port).
+
+Ref #20."
+zenazn,2014-05-05 20:10:35,https://api.github.com/repos/zenazn/goji/git/commits/64a1da35b0b8ed80d63c5420a48c89890a9e2b1c,64a1da35b0b8ed80d63c5420a48c89890a9e2b1c,"Merge pull request #19 from a-palchikov/upstream
+
++windows support"
+a-palchikov,2014-05-05 16:40:41,https://api.github.com/repos/zenazn/goji/git/commits/135bdf6b4d7c03ea4c206465253e113797344b74,135bdf6b4d7c03ea4c206465253e113797344b74,+windows support
+zenazn,2014-05-05 00:25:23,https://api.github.com/repos/zenazn/goji/git/commits/e16aa3c10c36f67ad5f1f1796fcdfe0bfd8da25e,e16aa3c10c36f67ad5f1f1796fcdfe0bfd8da25e,"Split Pattern.Match in two; get rid of dryrun
+
+The ""dryrun"" parameter on Pattern.Match was kind of ugly and made for an
+exceedingly mediocre public interface. Instead, split its functionality
+in two: the previous ""dryrun"" behavior now lives in the Match method,
+and Patterns now actually mutate state when Run is called.
+
+The code on the backend is of course still the same (for now), but at
+least the interface is a little nicer."
+zenazn,2014-05-04 19:09:44,https://api.github.com/repos/zenazn/goji/git/commits/802b48519bdc3b612eb5d14ca2f45cdb2a12650b,802b48519bdc3b612eb5d14ca2f45cdb2a12650b,"Rewrite perf section of README
+
+We're fast now!"
+zenazn,2014-05-04 17:40:22,https://api.github.com/repos/zenazn/goji/git/commits/bf2f0737850f48980428c52ea4ceeb221d656b0f,bf2f0737850f48980428c52ea4ceeb221d656b0f,"Pass a *C between middleware and router
+
+Previously, the middleware stack passed the router a C, but this was
+both odd semantically (a pattern which mutated the environment might see
+a *different* environment) and bad for perf: it cost us an allocation.
+
+Now we only pass around *C's internally.
+
+Importantly (""importantly""), this gets us down to 0 allocations for the
+static routing case, and one allocation (the URLParams map) for the
+normal routing case."
+zenazn,2014-05-04 17:02:04,https://api.github.com/repos/zenazn/goji/git/commits/014650da071326a9ee2edf3c6a1b5decabd1b5cf,014650da071326a9ee2edf3c6a1b5decabd1b5cf,"Only make a best-effort to release mStacks
+
+It doesn't *actually* matter, and getting rid of the defer is worth
+~80ns of perf."
+zenazn,2014-05-04 16:57:01,https://api.github.com/repos/zenazn/goji/git/commits/7f50cf60d3946726f7b91e256528840870aca48a,7f50cf60d3946726f7b91e256528840870aca48a,"Don't worry so much about helping the GC
+
+Let's just hope the GC does its job correctly and don't try to help it
+out. This case is probably triggered very infrequently since most people
+set up their middleware before they accept a single request, and it's
+worth about 100ns of perf on the common case for us if we get rid of the
+defer."
+zenazn,2014-05-04 16:30:04,https://api.github.com/repos/zenazn/goji/git/commits/e1ff3ade4d0ed6971f753cd7d85cf663257bb1db,e1ff3ade4d0ed6971f753cd7d85cf663257bb1db,"Also benchmark a single route, middleware"
+zenazn,2014-05-04 16:15:09,https://api.github.com/repos/zenazn/goji/git/commits/3425950f2104007f4b903d4737ad07313aca0963,3425950f2104007f4b903d4737ad07313aca0963,DRY up the benchmarks a bit
+zenazn,2014-05-04 15:51:20,https://api.github.com/repos/zenazn/goji/git/commits/33a3e80aa83961f1125bf461f42419a8d3bf2f04,33a3e80aa83961f1125bf461f42419a8d3bf2f04,"Fix routing behavior
+
+The fast routing diff introduced a regression with how method sets were
+calculated for routes that did not match. This fixes that behavior, as
+well as making routing considerably more memory-efficient (and therefore
+CPU-efficient too) for the case in which many routes share a prefix."
+zenazn,2014-05-04 15:42:55,https://api.github.com/repos/zenazn/goji/git/commits/0861586b4e3f5f10cfbd2c5226a35a270c6b8824,0861586b4e3f5f10cfbd2c5226a35a270c6b8824,Reduce allocations in string patterns
+zenazn,2014-05-04 01:31:06,https://api.github.com/repos/zenazn/goji/git/commits/3ea0cd7a66bc3fdc354da700fd90654fbbb33949,3ea0cd7a66bc3fdc354da700fd90654fbbb33949,Also report on allocations
+zenazn,2014-05-04 01:21:51,https://api.github.com/repos/zenazn/goji/git/commits/ebc69c317325aeb2c87708ca55553d07d6aeee7d,ebc69c317325aeb2c87708ca55553d07d6aeee7d,"Router benchmarks
+
+These are based on https://github.com/cypriss/golang-mux-benchmark"
+zenazn,2014-05-03 19:08:15,https://api.github.com/repos/zenazn/goji/git/commits/72c60e267e7fecd9a1a3b4da941b78c398e3faaf,72c60e267e7fecd9a1a3b4da941b78c398e3faaf,"Fast bytecode router
+
+Swap out the naive ""try all the routes in order"" router with a ""compile
+a trie down to bytecode"" router. It's a ton faster, while providing all
+the same semantics.
+
+See the documentation at the top of web/fast_router.go for more."
+zenazn,2014-04-28 19:04:42,https://api.github.com/repos/zenazn/goji/git/commits/e88b7661bde062e9c654c4c5037fb6449442835d,e88b7661bde062e9c654c4c5037fb6449442835d,"Sort routes
+
+Partially sort the routes on insertion. We're doing this so we can do
+more efficient things to routes later.
+
+The sorting rules are a bit subtle since we aren't allowed to rearrange
+routes in a way that would cause the semantics to differ from the dumb
+linear scan."
+zenazn,2014-04-28 18:34:14,https://api.github.com/repos/zenazn/goji/git/commits/346d35381a33a4a5badfd9a8e9f461cc89c51673,346d35381a33a4a5badfd9a8e9f461cc89c51673,"Add route selection test
+
+I'm about to make changes to the way routes are selected, so we may as
+well get good test coverage of that."
+zenazn,2014-04-26 23:35:52,https://api.github.com/repos/zenazn/goji/git/commits/b01cc3dadf54fcf24b1bbc887194a087ce31a12d,b01cc3dadf54fcf24b1bbc887194a087ce31a12d,"Add RealIP middleware
+
+This middleware allows you to override a http.Request's RemoteAddr with
+a value derived from either the X-Forwarded-For or X-Real-IP headers.
+
+Fixes #12."
+zenazn,2014-04-26 22:54:29,https://api.github.com/repos/zenazn/goji/git/commits/eb08516a5e001c25761b0df161a3205f545a45cd,eb08516a5e001c25761b0df161a3205f545a45cd,"EnvInit middleware
+
+Provide a standard middleware to set c.Env. Don't include it in the
+default stack, however, since the RequestID middleware will end up
+allocating Env anyways.
+
+Fixes #11"
+zenazn,2014-04-26 22:37:33,https://api.github.com/repos/zenazn/goji/git/commits/60a7a00257396df0cc90b73b075e5e2b5b6244ba,60a7a00257396df0cc90b73b075e5e2b5b6244ba,Better comments around middleware stack caching
+zenazn,2014-04-23 22:44:43,https://api.github.com/repos/zenazn/goji/git/commits/0206512031ad8bbe2feffa367d1900637c1cccfc,0206512031ad8bbe2feffa367d1900637c1cccfc,"Add Go version compatibility note
+
+Fixes #7"
+zenazn,2014-04-22 19:37:12,https://api.github.com/repos/zenazn/goji/git/commits/70e2cd53d22e703e9d0198852558efea07fd9d32,70e2cd53d22e703e9d0198852558efea07fd9d32,"Merge pull request #2 from NickPresta/add-travis-config
+
+Adding TravisCI configuration, badge, GoDoc badge."
+nickpresta,2014-04-22 19:13:56,https://api.github.com/repos/zenazn/goji/git/commits/f525820cc21afcda714ae46327085be240b0b3a5,f525820cc21afcda714ae46327085be240b0b3a5,"Adding TravisCI configuration, badge, GoDoc badge."
+zenazn,2014-04-22 09:29:52,https://api.github.com/repos/zenazn/goji/git/commits/74e5c940d0fb257177db39c7a6a411ad84bcfd85,74e5c940d0fb257177db39c7a6a411ad84bcfd85,"s/brace/bracket
+
+...oops. ""[]"" are brackets. ""{}"" are braces."
+zenazn,2014-04-22 09:12:23,https://api.github.com/repos/zenazn/goji/git/commits/356d56a5f73c0c481117c33a9fb45c2acbeb2617,356d56a5f73c0c481117c33a9fb45c2acbeb2617,"Return typed errors in param
+
+Instead of returning awkward untyped error strings, return real error
+structs. This will allow users of the library to extract interesting
+semantic meaning from our errors, and is just all around less awful than
+what we had before."
+zenazn,2014-04-21 19:15:09,https://api.github.com/repos/zenazn/goji/git/commits/dce7a18ad6bfd62cc16d714ba46843fb00db34ee,dce7a18ad6bfd62cc16d714ba46843fb00db34ee,I spel reel gud
+zenazn,2014-04-21 18:37:52,https://api.github.com/repos/zenazn/goji/git/commits/e3ab09de3579969a4d71cc7ccd0ad3962830ff3b,e3ab09de3579969a4d71cc7ccd0ad3962830ff3b,"Remove key length sanity checking
+
+Previously, we disallowed setting the empty string as a key in a map,
+since at the time it seemed like doing so would allow all sorts of
+unsavory bugs. In practice, I think this probably isn't actually true,
+as I wasn't able to think of a scenario in which this bug would
+materialize during the several moments I thought about it.
+
+Plus, the code here to do sanity checking was wrong anyways."
+zenazn,2014-04-21 17:44:00,https://api.github.com/repos/zenazn/goji/git/commits/f8ba05d99a3b55393e63542cefbb07fa0dbbd1fc,f8ba05d99a3b55393e63542cefbb07fa0dbbd1fc,"Options middleware tests
+
+They're really verbose. I should probably DRY them up later."
+zenazn,2014-04-21 16:18:19,https://api.github.com/repos/zenazn/goji/git/commits/bc3ac1d667a277085af337244fdcc2dccd45b011,bc3ac1d667a277085af337244fdcc2dccd45b011,"Rewrite AutomaticOptions to not use httptest
+
+httptest was adding an extra flag, which was sort of ugly. Instead,
+reimplement the parts of its functionality we were using. Bonus: due to
+specialization, it's now a bit more efficient as well!"
+zenazn,2014-04-21 16:17:48,https://api.github.com/repos/zenazn/goji/git/commits/7b91ca180d5e05fd0b48fbf1645b9fc44e81bd6d,7b91ca180d5e05fd0b48fbf1645b9fc44e81bd6d,"gitignore ""example"" binary"
+zenazn,2014-04-13 18:51:01,https://api.github.com/repos/zenazn/goji/git/commits/eecdf6899d36e57b72c4096ecae98b20e91aa97c,eecdf6899d36e57b72c4096ecae98b20e91aa97c,"Make graceful.Server public again
+
+graceful.Server was made private in 05c2ca7e, but I think the increased
+flexibility you get with being able to provide your own TLS options
+(etc.) outweighs the API complexity of an additional type."
+zenazn,2014-04-12 20:10:30,https://api.github.com/repos/zenazn/goji/git/commits/2425c4144d26125636211a605000300a24b89957,2425c4144d26125636211a605000300a24b89957,"Fix Error => Errorf
+
+This bugfix brought to you by `go vet`"
+zenazn,2014-04-12 20:05:55,https://api.github.com/repos/zenazn/goji/git/commits/ced741fddf0e76be0737222f421c22288e394af8,ced741fddf0e76be0737222f421c22288e394af8,Update documentation for URLParams rename
+zenazn,2014-04-12 20:05:32,https://api.github.com/repos/zenazn/goji/git/commits/0e34b28fd108b46bb9870a56d113f87b2e35cc23,0e34b28fd108b46bb9870a56d113f87b2e35cc23,May as well rename this string too
+zenazn,2014-04-12 20:04:45,https://api.github.com/repos/zenazn/goji/git/commits/5d911931d53442bb09b7e0033bc58600042673ec,5d911931d53442bb09b7e0033bc58600042673ec,Also fix URLParams in tests
+zenazn,2014-04-12 20:01:20,https://api.github.com/repos/zenazn/goji/git/commits/3eb0254943392452ceddbb7b310e5c1c1fd4b319,3eb0254943392452ceddbb7b310e5c1c1fd4b319,"Clarify /admin/ vs /admin in example app
+
+I'm not particularly satisfied with the solution here. Maybe the answer
+is ""more middleware,"" but I'm not sure."
+zenazn,2014-04-12 19:55:25,https://api.github.com/repos/zenazn/goji/git/commits/4cbff375378b10654882363bc38c353efeebeb13,4cbff375378b10654882363bc38c353efeebeb13,"Fix up URLParams rename compilation errors
+
+This fixes up the last few compilation errors caused by the UrlParams =>
+URLParams rename."
+zenazn,2014-04-12 19:41:07,https://api.github.com/repos/zenazn/goji/git/commits/53f6b7b4a874d42cff3fba5a604cbe9076b67193,53f6b7b4a874d42cff3fba5a604cbe9076b67193,Minor cosmetic fixes
+codahale,2014-04-12 18:46:02,https://api.github.com/repos/zenazn/goji/git/commits/6be0a4270afe6b0381cd6f82b777a90a3ee9f6eb,6be0a4270afe6b0381cd6f82b777a90a3ee9f6eb,No need to re-document methods.
+codahale,2014-04-12 18:45:42,https://api.github.com/repos/zenazn/goji/git/commits/915dde7c7847af07f6203b95bd6ad0f127fbc61a,915dde7c7847af07f6203b95bd6ad0f127fbc61a,Use rt instead of m for the router receiver.
+codahale,2014-04-12 18:45:08,https://api.github.com/repos/zenazn/goji/git/commits/19b59fa39dc56222d2baac02543b66c7b687d018,19b59fa39dc56222d2baac02543b66c7b687d018,Change Http to HTTP.
+codahale,2014-04-12 18:44:47,https://api.github.com/repos/zenazn/goji/git/commits/215a04397ba34e3ba90dd66509bb40b868c94a4c,215a04397ba34e3ba90dd66509bb40b868c94a4c,Change Url to URL.
+codahale,2014-04-12 18:42:42,https://api.github.com/repos/zenazn/goji/git/commits/d116ca0e9b3dc4a5f83ccdfd098aed9b266aa4c2,d116ca0e9b3dc4a5f83ccdfd098aed9b266aa4c2,Move type assertions into tests.
+codahale,2014-04-12 18:40:02,https://api.github.com/repos/zenazn/goji/git/commits/a412c1af776878cbc9ea9686c8ad5b6a7a137f54,a412c1af776878cbc9ea9686c8ad5b6a7a137f54,Remove return-only else branches.
+codahale,2014-04-12 18:39:26,https://api.github.com/repos/zenazn/goji/git/commits/0b12f5954e9bae5e2037dea7be44dece09c98bd4,0b12f5954e9bae5e2037dea7be44dece09c98bd4,Change requestId to requestID.
+codahale,2014-04-12 18:38:41,https://api.github.com/repos/zenazn/goji/git/commits/c413a4780fdff6d48daa1204e7b8c2cb1d4576ab,c413a4780fdff6d48daa1204e7b8c2cb1d4576ab,Use a simplified loop.
+codahale,2014-04-12 18:35:51,https://api.github.com/repos/zenazn/goji/git/commits/c912dac2b6ea206027f0eb4f8048fe418affc8c7,c912dac2b6ea206027f0eb4f8048fe418affc8c7,Included documented names in documentation.
+codahale,2014-04-12 18:33:19,https://api.github.com/repos/zenazn/goji/git/commits/62d9a012fae34d9b7bc4fae91c8cffc68af59287,62d9a012fae34d9b7bc4fae91c8cffc68af59287,Ensure all error messages are not capitalized.
+codahale,2014-04-12 18:18:17,https://api.github.com/repos/zenazn/goji/git/commits/05c2ca7e533b3b3a5973d041fd32cdfe85f7b25a,05c2ca7e533b3b3a5973d041fd32cdfe85f7b25a,Make graceful.Server a package-local type.
+zenazn,2014-03-31 02:42:55,https://api.github.com/repos/zenazn/goji/git/commits/4baae23a99184796f198d81fe31c1074566c1fac,4baae23a99184796f198d81fe31c1074566c1fac,"Fix some typos
+
+Wonder how long those have been there."
+zenazn,2014-03-31 02:36:12,https://api.github.com/repos/zenazn/goji/git/commits/8a7d32ac92aa05963280b6f62de8b56cd9ffde14,8a7d32ac92aa05963280b6f62de8b56cd9ffde14,"Get rid of name parameter in middleware
+
+The ""name"" parameter was originally a workaround for the fact that function
+pointers in Go never compare equal to each other (unless they are both nil).
+Unfortunately, this presents a pretty terrible interface to the end programmer,
+since they'll probably end up stuttering something like:
+
+    mux.Use(""MyMiddleware"", MyMiddleware)
+
+Luckily, I found a workaround for doing function pointer equality (it doesn't
+even require ""unsafe""!), so we can get rid of the name parameter for good."
+zenazn,2014-03-31 02:15:12,https://api.github.com/repos/zenazn/goji/git/commits/444fd9873e534ca27dc582b72a261d8aee88ad14,444fd9873e534ca27dc582b72a261d8aee88ad14,"Deep (i.e., ""real"") function equality"
+zenazn,2014-03-30 23:34:09,https://api.github.com/repos/zenazn/goji/git/commits/35af451420a3feb90c49ebabd1bf1f1775d02755,35af451420a3feb90c49ebabd1bf1f1775d02755,"Replace Sub() with trailing * in patterns
+
+This change replaces a bit of API surface area (the Sub() method on Muxes) with
+a slightly more expressive pattern syntax. I'm mostly doing this because it
+seems cleaner: the ""*"" gets to take on a meaning very similar to what it means
+in Sinatra (without growing regexp-like middle-of-a-path globbing, which sounds
+terrifying and not particularly useful), and we get to nuke a useless function
+from the API."
+zenazn,2014-03-30 23:32:33,https://api.github.com/repos/zenazn/goji/git/commits/b29762524d24ccf7e461899b9a6eb370fde5f0ad,b29762524d24ccf7e461899b9a6eb370fde5f0ad,"Fix router tests
+
+These were introduced by breaking changes in the following commits:
+- aca58b22cfe17db7c5fc9a94c1ab647c6783cd08 (ValidMethodsKey)
+- 386323a6edcd74962da674f36df8489f5b1fbe4b (HTTP methods are case sensitive)"
+zenazn,2014-03-30 23:10:35,https://api.github.com/repos/zenazn/goji/git/commits/83f7dab44e4dbf4b6b17adda1e1c3ec830d6cf6a,83f7dab44e4dbf4b6b17adda1e1c3ec830d6cf6a,The example app is a command
+zenazn,2014-03-24 05:53:23,https://api.github.com/repos/zenazn/goji/git/commits/d235950870430cd82ad898ba50fe53ca11ab9b9b,d235950870430cd82ad898ba50fe53ca11ab9b9b,More copy editing
+zenazn,2014-03-24 05:49:49,https://api.github.com/repos/zenazn/goji/git/commits/bc7d07dec0efde02f6287b6af2621085d95b155b,bc7d07dec0efde02f6287b6af2621085d95b155b,"Fix example app
+
+I guess I forgot to test it after changing it to an Insert()"
+zenazn,2014-03-24 03:50:15,https://api.github.com/repos/zenazn/goji/git/commits/b8a86e94617f2e424e07fbae4913a934e51e4361,b8a86e94617f2e424e07fbae4913a934e51e4361,More whimsy
+zenazn,2014-03-24 01:23:50,https://api.github.com/repos/zenazn/goji/git/commits/59fffcee72e81dcf07826ab6e17fb045daafcd23,59fffcee72e81dcf07826ab6e17fb045daafcd23,License and contributing section
+zenazn,2014-03-24 01:16:39,https://api.github.com/repos/zenazn/goji/git/commits/4a8029a1b49c2609873bcfe791f98a6b709992ac,4a8029a1b49c2609873bcfe791f98a6b709992ac,Write more words
+zenazn,2014-03-23 23:36:12,https://api.github.com/repos/zenazn/goji/git/commits/282f11b5b38929f88733ddd8770fdb54690317d7,282f11b5b38929f88733ddd8770fdb54690317d7,Tpyo
+zenazn,2014-03-23 23:26:54,https://api.github.com/repos/zenazn/goji/git/commits/0c3f48afe0b6c61ea516858422a83b3a4152f311,0c3f48afe0b6c61ea516858422a83b3a4152f311,"Add an example app.
+
+I'm totally not making fun of any social networks. Promise."
+zenazn,2014-03-23 21:15:55,https://api.github.com/repos/zenazn/goji/git/commits/92b35046d28c386b910e86ab4601e60f551bc6f0,92b35046d28c386b910e86ab4601e60f551bc6f0,That sounded awkward
+zenazn,2014-03-23 21:11:11,https://api.github.com/repos/zenazn/goji/git/commits/aca58b22cfe17db7c5fc9a94c1ab647c6783cd08,aca58b22cfe17db7c5fc9a94c1ab647c6783cd08,Make ValidMethodsKey public
+zenazn,2014-03-23 20:02:45,https://api.github.com/repos/zenazn/goji/git/commits/386323a6edcd74962da674f36df8489f5b1fbe4b,386323a6edcd74962da674f36df8489f5b1fbe4b,"HTTP method names are case sensitive
+
+Who knew! (RFC 2616, 5.1.1)"
+zenazn,2014-03-23 20:00:21,https://api.github.com/repos/zenazn/goji/git/commits/05e53fc481095b74fd8c53445f3af6e945de3809,05e53fc481095b74fd8c53445f3af6e945de3809,"fancyWriters should also implement io.ReaderFrom
+
+For sendfile(2) support. I should really DRY up the implementations here..."
+zenazn,2014-03-23 19:53:31,https://api.github.com/repos/zenazn/goji/git/commits/fb3ce04ee472da00fffcd61f72e8ad40c884359c,fb3ce04ee472da00fffcd61f72e8ad40c884359c,Add OPTIONS to the list of allowed methods
+zenazn,2014-03-23 19:51:21,https://api.github.com/repos/zenazn/goji/git/commits/9641eb21e384af0e7b851484210697f9748fd1c2,9641eb21e384af0e7b851484210697f9748fd1c2,"Overwrite Connection: close header, don't append"
+zenazn,2014-03-23 19:50:04,https://api.github.com/repos/zenazn/goji/git/commits/836cb84fdcabd74b8f4739ea238bfd85e9af4374,836cb84fdcabd74b8f4739ea238bfd85e9af4374,Automatic HEAD support for GET handlers
+zenazn,2014-03-23 19:01:56,https://api.github.com/repos/zenazn/goji/git/commits/232a1ca725943e7fc6a4832e133b79a99a2ae079,232a1ca725943e7fc6a4832e133b79a99a2ae079,"Replace terminal dependency with hand-waving
+
+In order to avoid a dependency on the go.crypto terminal package, let's try to
+do our own TTY sniffing. I think in practice this will work surprisingly well,
+even if it feels incredibly sketchy."
+zenazn,2014-03-23 10:31:46,https://api.github.com/repos/zenazn/goji/git/commits/9e5ef71c04a299088512e5686fb35608307c4658,9e5ef71c04a299088512e5686fb35608307c4658,Automatic OPTIONS middleware
+zenazn,2014-03-23 10:28:57,https://api.github.com/repos/zenazn/goji/git/commits/66431cbd3b79e52baa8cc87101d165d92d8453d7,66431cbd3b79e52baa8cc87101d165d92d8453d7,Move writer proxy to a separate file
+zenazn,2014-03-23 09:58:24,https://api.github.com/repos/zenazn/goji/git/commits/f9808345b9922f0c90bf7df00a1f6fc28b404663,f9808345b9922f0c90bf7df00a1f6fc28b404663,"Standard middlewares
+
+I've currently written three:
+- Request ID generation
+- Request logging, with color (!)
+- Recovery from panics"
+zenazn,2014-03-23 06:03:13,https://api.github.com/repos/zenazn/goji/git/commits/d78a6852889a6d919ef89973ed848694fc9a5cb5,d78a6852889a6d919ef89973ed848694fc9a5cb5,DRY up methods map
+zenazn,2014-03-23 05:54:36,https://api.github.com/repos/zenazn/goji/git/commits/d9925448062cc8350079bc29e73f5a947b748a56,d9925448062cc8350079bc29e73f5a947b748a56,"Valid HTTP method discovery
+
+Package web will now add a key to the environment when it fails to find a
+valid route for the requested method, but when valid routes exist for other
+methods.
+
+This allows either the 404 handler or a sufficiently clever middleware layer to
+provide support for OPTIONS automatically."
+zenazn,2014-03-23 04:40:24,https://api.github.com/repos/zenazn/goji/git/commits/e21df254bb91ed36a1a7c2fc852da964efbe4663,e21df254bb91ed36a1a7c2fc852da964efbe4663,Mux and router tests
+zenazn,2014-03-23 04:39:22,https://api.github.com/repos/zenazn/goji/git/commits/6d67eba9e62038123a8a926cbd6566a6dcb9e9c7,6d67eba9e62038123a8a926cbd6566a6dcb9e9c7,"Always uppercase the method
+
+I have no idea if net/http does this for you already, but I may as well do it
+myself too..."
+zenazn,2014-03-23 04:39:10,https://api.github.com/repos/zenazn/goji/git/commits/4ed96805c3c69722daf3c8d419dd8406165ff9d2,4ed96805c3c69722daf3c8d419dd8406165ff9d2,Fix old documentation
+zenazn,2014-03-23 02:45:09,https://api.github.com/repos/zenazn/goji/git/commits/70edd84d7cf2eebfe48f88ee01559e458e793f06,70edd84d7cf2eebfe48f88ee01559e458e793f06,Move patternRe closer to its use
+zenazn,2014-03-23 02:30:18,https://api.github.com/repos/zenazn/goji/git/commits/e1ef76d6a80768110cb261b6afaff192fa731272,e1ef76d6a80768110cb261b6afaff192fa731272,"Pattern tests + regexp hilarity
+
+Add tests for both string and regular expression patterns. Also, reimplement
+regexp.Regexp.Prefix() on top of the raw regexp/syntax representation, so we can
+get a little more information out of regexps:
+- Whether or not the regexp is left-anchored (at the beginning of the string)
+- What the prefix of the regular expression is, even for left-anchored
+  expressions.
+
+We do this by running the regular expression instructions ourselves, more or
+less cargo-culting the original implementation from package regexp/syntax.
+
+Unfortunately it's ~impossible to make this abstraction non-leaky, because the
+regexp package doesn't give us information about whether or not it was
+constructed using POSIX or Perl syntax, for example, or if the longest-match
+setting was applied.
+
+The upshot is that regexps are now probably pretty performant-ish. Maybe. (I
+haven't actually benchmarked it)."
+zenazn,2014-03-23 02:26:14,https://api.github.com/repos/zenazn/goji/git/commits/3fffa7df4ac1454eccd0a711599418c0cd3be6b6,3fffa7df4ac1454eccd0a711599418c0cd3be6b6,"Middleware tests + bugfixes
+
+My tests caught some bugs! Amazing!"
+zenazn,2014-03-17 08:41:02,https://api.github.com/repos/zenazn/goji/git/commits/df704cd5faf0d0b396edc8d4d4544d0d68dc27ab,df704cd5faf0d0b396edc8d4d4544d0d68dc27ab,"TODOs
+
+So I don't forget."
+zenazn,2014-03-17 08:07:15,https://api.github.com/repos/zenazn/goji/git/commits/cbf1b4c8f91583fbaa11962bab83caaee632cdcc,cbf1b4c8f91583fbaa11962bab83caaee632cdcc,Features! Everyone loves features!
+zenazn,2014-03-17 07:50:55,https://api.github.com/repos/zenazn/goji/git/commits/b0feb9b8e2444806ab1f2cabfb74e68c49cf0420,b0feb9b8e2444806ab1f2cabfb74e68c49cf0420,"New and improved toplevel package
+
+The idea is to make goji super easy to use out of the box."
+zenazn,2014-03-17 07:00:23,https://api.github.com/repos/zenazn/goji/git/commits/ed438ca532172ee07a9ffccba9328e7baf858b5f,ed438ca532172ee07a9ffccba9328e7baf858b5f,"A wild web framework appears
+
+They say that every programmer builds a web framework at some point. This one is
+mine.
+
+The basic idea behind this one is that I wanted a Sinatra for Go, and I couldn't
+find one anywhere. Furthermore, net/http is in many ways really close to what I
+want out of a Sinatra-in-Go, and many of the frameworks I did find seemed to
+reinvent too much, or were incompatible with net/http in weird ways, or used too
+much questionable reflection magic. So long story short, I wrote my own.
+
+This implementation is only half-baked, and among other things it's missing a
+whole lot of tests."
+zenazn,2014-03-15 20:23:05,https://api.github.com/repos/zenazn/goji/git/commits/f8244ffe6611d5c2a5a3e768ece09ca8fc17dbbf,f8244ffe6611d5c2a5a3e768ece09ca8fc17dbbf,"Reference graceful shutdown golang issue
+
+Apparently stdlib support will be in Go 1.3. Yay!"
+zenazn,2014-03-08 09:58:30,https://api.github.com/repos/zenazn/goji/git/commits/96b81e193075cb30401430b0705b65d178b68f1d,96b81e193075cb30401430b0705b65d178b68f1d,"Graceful shutdown package
+
+Package graceful provides graceful shutdown support for net/http servers,
+net.Listeners and net.Conns. It does this through terrible, terrible hacks, but
+""oh well!"""
+zenazn,2014-03-03 00:49:34,https://api.github.com/repos/zenazn/goji/git/commits/a79303168df73cbb9c76396b539c17a2d677df3c,a79303168df73cbb9c76396b539c17a2d677df3c,"Socket bind helper package
+
+Package bind provides a convenient syntax for binding to sockets, as well as a
+fair bit of magic to automatically Do The Right Thing in both development and
+production."
+zenazn,2014-03-01 23:55:58,https://api.github.com/repos/zenazn/goji/git/commits/f67c7d59eeac7ddd36dc88b24c0b251c268a70d2,f67c7d59eeac7ddd36dc88b24c0b251c268a70d2,"Parameter parsing
+
+Package param implements parameter parsing into a target struct (in much the
+same way as encoding/json parses JSON into a struct). It targets the common
+jQuery.param / Ruby on Rails style parameter serialization format."
+zenazn,2014-03-01 23:53:27,https://api.github.com/repos/zenazn/goji/git/commits/a317cb9d5f69575bd85b9dac85b9baa83e8d7c7f,a317cb9d5f69575bd85b9dac85b9baa83e8d7c7f,"Initial commit
+
+Also some philosophy. Because why not."

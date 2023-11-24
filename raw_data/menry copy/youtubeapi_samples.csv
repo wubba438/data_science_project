@@ -1,0 +1,606 @@
+api-samples,"Code samples for YouTube APIs, including the YouTube Data API, YouTube Analytics API, and YouTube Live Streaming API. The repo contains language-specific directories that contain the samples."
+username,timestamp,url,sha,message
+AndyDiamondstein,2018-04-26 20:10:32,https://api.github.com/repos/youtube/api-samples/git/commits/07263305b59a7c3275bc7e925f9ce6cabf774022,07263305b59a7c3275bc7e925f9ce6cabf774022,Add .py sample for calling YT Analytics API (v2)
+AndyDiamondstein,2018-04-26 19:43:49,https://api.github.com/repos/youtube/api-samples/git/commits/cdf1f87f5ede7dce8a17f14471f986d8821e68de,cdf1f87f5ede7dce8a17f14471f986d8821e68de,Add JS sample for calling YT Analytics API (v2)
+AndyDiamondstein,2018-03-06 21:16:56,https://api.github.com/repos/youtube/api-samples/git/commits/53a12c02961c47a24ca32777e7af8b0e4e07d967,53a12c02961c47a24ca32777e7af8b0e4e07d967,Remove duplicate print statement
+AndyDiamondstein,2018-03-06 20:49:28,https://api.github.com/repos/youtube/api-samples/git/commits/32f087d172e601cd02ecdcf207b5d076f603f1ac,32f087d172e601cd02ecdcf207b5d076f603f1ac,"Update nodejs quickstart example
+
+- update code sample to address breaking changes in google-api-nodejs-client
+- fs asynchronous functions display an error without a callback"
+AndyDiamondstein,2017-10-27 21:10:37,https://api.github.com/repos/youtube/api-samples/git/commits/3732e66c11d5f2691bdac629226c501fc73e2277,3732e66c11d5f2691bdac629226c501fc73e2277,"Handle error case
+
+When listing localizations, handle case where the channel section doesn't have any yet."
+AndyDiamondstein,2017-10-27 21:09:25,https://api.github.com/repos/youtube/api-samples/git/commits/31bee48eb139164eafc35b35e12d67846672ba83,31bee48eb139164eafc35b35e12d67846672ba83,"Handle error case
+
+For list action, the channel might not have localizations."
+AndyDiamondstein,2017-10-27 21:07:40,https://api.github.com/repos/youtube/api-samples/git/commits/9e0a102355ea427655a4beafc3b666c7cc5b5b3d,9e0a102355ea427655a4beafc3b666c7cc5b5b3d,"For list action, video may not have localizations"
+AndyDiamondstein,2017-10-27 21:01:03,https://api.github.com/repos/youtube/api-samples/git/commits/f1b9f38f5a5bdcd0dfe02292fb71f084fe01fdbe,f1b9f38f5a5bdcd0dfe02292fb71f084fe01fdbe,"Update auth libraries and make script improvements
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+In addition, the code now has more flexible support for command-line arguments. For example, it does not set a default language by default ... you need to specify that on the command line. In addition, you can now add a localization without setting a default language or set a default language without adding a localization. (You cannot add localizations if the playlist doesn't have a default language at all, but once it does have a default language, you do not need to set it every subsequent time you run the script.)"
+AndyDiamondstein,2017-10-27 20:12:41,https://api.github.com/repos/youtube/api-samples/git/commits/2fa8d26e895940b05d02f2c26fdcef8fbc0feaa9,2fa8d26e895940b05d02f2c26fdcef8fbc0feaa9,"Support more options, update auth flow
+
+Add command line options for setting content owner (for onBehalfOfContentOwner parameter) and for whether the script should list system-managed reports when listing reports.
+
+Instead of making --name a required command line argument, prompt the user to enter a name if one isn't set. This prompt occurs after the user selects a report type.
+
+Allow user to set report type on command line and thereby bypass the report type selection.
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-27 19:12:36,https://api.github.com/repos/youtube/api-samples/git/commits/e084e3eff22376014aa28f82300d24250f4bd514,e084e3eff22376014aa28f82300d24250f4bd514,Delete obsolete code sample
+AndyDiamondstein,2017-10-27 19:09:38,https://api.github.com/repos/youtube/api-samples/git/commits/d45d4fe55abb3b23b8e94bd07edf0ce317c24b7c,d45d4fe55abb3b23b8e94bd07edf0ce317c24b7c,"Update auth libs, default privacy status
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+This update also updates the default privacy status for videos uploaded via this script to ""private"". The privacy status can be changed using the --privacyStatus command line argument."
+AndyDiamondstein,2017-10-27 18:04:11,https://api.github.com/repos/youtube/api-samples/git/commits/b374c1ecf1279bb79c8d9bf0ae163f56f1236eab,b374c1ecf1279bb79c8d9bf0ae163f56f1236eab,Fix typos in comments
+AndyDiamondstein,2017-10-27 18:00:29,https://api.github.com/repos/youtube/api-samples/git/commits/a0e45b621f6f6d516b13bc8960050a954e7f4624,a0e45b621f6f6d516b13bc8960050a954e7f4624,"Update script options, functionality, docs, auth
+
+Functionality updates:
+  - Add ability to run script for channel ID or content owner
+  - Add option to set filters
+  - Change default metrics, remove default max results
+  - Remove additional call to YouTube Data API to get channel ID and just set ids=channel==MINE
+  - Add function to properly set ""ids"" parameter depending on whether content-owner or channel-id command-line arguments are set
+  - Pass API request parameters as keyword arguments (**args) rather than listing them line by line
+
+The functionality in the script is more thoroughly documented. Also see the Prerequisites section of the README file for more information about running this sample.
+
+Finally, the oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-27 15:47:52,https://api.github.com/repos/youtube/api-samples/git/commits/d598fb3634820fbf91696f13cc8d4282a5f4c857,d598fb3634820fbf91696f13cc8d4282a5f4c857,"Update auth libraries and make script improvements
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+In addition, the code now has more flexible support for command-line arguments. For example, it does not set a default language by default ... you need to specify that on the command line. In addition, you can now add a localization without setting a default language or set a default language without adding a localization.
+
+Finally, the --mine argument lets you list all of your channel's sections and their localized values, making it easier to then use the script to add a localization for a single channel section."
+AndyDiamondstein,2017-10-27 15:14:46,https://api.github.com/repos/youtube/api-samples/git/commits/c8e98d8da316a9d45b1a15082145a1710b4ec444,c8e98d8da316a9d45b1a15082145a1710b4ec444,"Update auth libraries, add options, documentation
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+The updated script has improved options, allowing the user to set a content owner ID, job ID, report URL, and/or local filename using command-line arguments. The logic also now bypasses certain functions depending on the command-line arguments set. For example, if you specify the URL of the report that you want to download, the script doesn't prompt you to select a job and a report (since you've already done that).
+
+The prerequisites section in the README file explains how to run this sample (and others in this directory)."
+AndyDiamondstein,2017-10-27 15:13:18,https://api.github.com/repos/youtube/api-samples/git/commits/dfd5cfdf63716f704a3bf0876dae90f78122f0a5,dfd5cfdf63716f704a3bf0876dae90f78122f0a5,Add prerequisites
+AndyDiamondstein,2017-10-26 21:25:31,https://api.github.com/repos/youtube/api-samples/git/commits/7a7aa3e2d69e4d1b7f71ec91b6ad23864eeb1661,7a7aa3e2d69e4d1b7f71ec91b6ad23864eeb1661,"Update auth libraries, add title/description args
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+The changes also add --title and --description arguments for the playlist title and description.
+
+A final note is that this script seems to be misnamed. This change did not change the functionality of the script, but it's likely a future change will either make this script update a playlist rather than insert one or provide an option for selecting an operation to perform for a playlist."
+AndyDiamondstein,2017-10-24 13:43:38,https://api.github.com/repos/youtube/api-samples/git/commits/2ac0c7e9d8ac2e1b1b923d1a67ffd9422159835b,2ac0c7e9d8ac2e1b1b923d1a67ffd9422159835b,"Update auth libraries, add snippet metadata opts
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+In addition, the code now supports other arguments for updating snippet metadata (title, description, tags). The --tags argument replaces the existing tags, while the --add_tag argument appends a tag to the current list."
+AndyDiamondstein,2017-10-23 15:29:49,https://api.github.com/repos/youtube/api-samples/git/commits/f9ea8bfa59aa2c2068b0dbd648d627996842469d,f9ea8bfa59aa2c2068b0dbd648d627996842469d,"Update auth libraries
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-23 15:22:35,https://api.github.com/repos/youtube/api-samples/git/commits/e09f1feb51a5b4b275501e0414478d6e567cc7bc,e09f1feb51a5b4b275501e0414478d6e567cc7bc,"Update auth libraries, separate ""set"" operations
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+In addition, the code for setting video localizations has been updated so that if the default language is set, the code checks to see whether the video has a title and description in that language. If so, the script sets the video's title and description to the current title and description in the default language. (Without that step, the title and description for the new default language are changed to match the title and description of the old default language.)"
+AndyDiamondstein,2017-10-20 18:50:38,https://api.github.com/repos/youtube/api-samples/git/commits/b38c3d22a2c8ce935e8b65f5ea86087e810cea97,b38c3d22a2c8ce935e8b65f5ea86087e810cea97,"Update auth libraries, fix script
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead.
+
+This update also fixes this script so that it executes properly."
+AndyDiamondstein,2017-10-20 17:42:00,https://api.github.com/repos/youtube/api-samples/git/commits/37022382ee87ac6cb9a1efa747042d33b2b489de,37022382ee87ac6cb9a1efa747042d33b2b489de,"Update auth libraries, fix brandingSettings update
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead. Update code sample to update brandingSettings (defaultLanguage) and localizations separately. Support localized channel title and localized channel description."
+AndyDiamondstein,2017-10-20 16:41:40,https://api.github.com/repos/youtube/api-samples/git/commits/f058c43383fbfc640c162ca5bdb72bbaeaaf26ce,f058c43383fbfc640c162ca5bdb72bbaeaaf26ce,"Update auth libraries used in example
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-20 16:40:39,https://api.github.com/repos/youtube/api-samples/git/commits/b0a876292289d818b9c01e22325d9accf1a3cd46,b0a876292289d818b9c01e22325d9accf1a3cd46,"Update auth libraries used in example
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-20 16:37:12,https://api.github.com/repos/youtube/api-samples/git/commits/4dc5d936d545f53ad71890750df889d0053b294a,4dc5d936d545f53ad71890750df889d0053b294a,Fix instructional comment
+AndyDiamondstein,2017-10-20 16:36:47,https://api.github.com/repos/youtube/api-samples/git/commits/38651dec50dcc425196f7708ca0206dffea51bae,38651dec50dcc425196f7708ca0206dffea51bae,"Remove oauth2client usages
+
+Remove usage of oauth2client library, which is now deprecated."
+AndyDiamondstein,2017-10-20 16:32:24,https://api.github.com/repos/youtube/api-samples/git/commits/175641601483e7e2812062fc6e31650940806961,175641601483e7e2812062fc6e31650940806961,"Update auth libraries, add rating argument
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead. Also add a rating argument that can be passed on the command line."
+AndyDiamondstein,2017-10-20 16:22:34,https://api.github.com/repos/youtube/api-samples/git/commits/27f1205805439aff26ccf6d1c9b98c0f8d228c04,27f1205805439aff26ccf6d1c9b98c0f8d228c04,"Remove oauth2client usages.
+
+Update search.py to remove usage of deprecated oauth2client library."
+AndyDiamondstein,2017-10-20 16:10:25,https://api.github.com/repos/youtube/api-samples/git/commits/8235ff8d3f1757a0b4b6b5e9d8f583e70d9a1f29,8235ff8d3f1757a0b4b6b5e9d8f583e70d9a1f29,"Update auth libraries used in example
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-10-19 22:19:00,https://api.github.com/repos/youtube/api-samples/git/commits/c03017d41a1184dc469486acdb2e8d3b121ccdbf,c03017d41a1184dc469486acdb2e8d3b121ccdbf,"Update auth libraries used in example
+
+The oauth2client library is deprecated. This update changes the sample to use the google-auth and google-auth-oauthlib libraries instead."
+AndyDiamondstein,2017-09-29 16:05:04,https://api.github.com/repos/youtube/api-samples/git/commits/fe3b13a5e9f574d472119f933982f21c4550c547,fe3b13a5e9f574d472119f933982f21c4550c547,Minor formatting fixes
+AndyDiamondstein,2017-09-29 16:03:33,https://api.github.com/repos/youtube/api-samples/git/commits/b32b9f6ef1291c8e129132f9a09bbea37db02de9,b32b9f6ef1291c8e129132f9a09bbea37db02de9,Additional simplifications to quickstart
+AndyDiamondstein,2017-09-29 15:57:32,https://api.github.com/repos/youtube/api-samples/git/commits/62cfdb9d4c3b00340520acb3f756181c5314d166,62cfdb9d4c3b00340520acb3f756181c5314d166,Remove functions not needed in quickstart app
+AndyDiamondstein,2017-09-29 15:54:08,https://api.github.com/repos/youtube/api-samples/git/commits/aa7b057c5757f3109e7235b4a8b99499c2d4e909,aa7b057c5757f3109e7235b4a8b99499c2d4e909,Remove commented out statement
+AndyDiamondstein,2017-09-29 15:52:45,https://api.github.com/repos/youtube/api-samples/git/commits/d788e74a9b1a51046ec6de7eafac980c39d124ad,d788e74a9b1a51046ec6de7eafac980c39d124ad,"Update quickstart.py auth libraries
+
+Update auth library from oauth2client to google-auth."
+AndyDiamondstein,2017-09-29 15:01:36,https://api.github.com/repos/youtube/api-samples/git/commits/5b036f3e798db6b3432773b1d361631c5d0de318,5b036f3e798db6b3432773b1d361631c5d0de318,"Create quickstart_web.py file
+
+Add sample for quickstart guide that shows how to create a simple Python app that uses the Flask web application framework."
+AndyDiamondstein,2017-08-16 16:44:27,https://api.github.com/repos/youtube/api-samples/git/commits/5193a5a4decc848bad8fa09c72e5aa46c7d260d2,5193a5a4decc848bad8fa09c72e5aa46c7d260d2,"Update retrieve_reports.php
+
+Support command-line parameters to set content owner, job ID, download URL. Support option to include system-managed reports. Update auth flow."
+AndyDiamondstein,2017-08-16 16:26:53,https://api.github.com/repos/youtube/api-samples/git/commits/170530f14c5713d52d9f985643de9e06f1df7ad8,170530f14c5713d52d9f985643de9e06f1df7ad8,"Merge pull request #131 from daniel-zahariev/master
+
+Fix report downloading in PHP example #70"
+AndyDiamondstein,2017-08-15 15:07:30,https://api.github.com/repos/youtube/api-samples/git/commits/720dc5c43f014d23168d697edcfc1e1d458e4864,720dc5c43f014d23168d697edcfc1e1d458e4864,Update README.md
+AndyDiamondstein,2017-08-15 15:05:22,https://api.github.com/repos/youtube/api-samples/git/commits/e869e9526600916e5c398b623e009d84e3dd5450,e869e9526600916e5c398b623e009d84e3dd5450,"Add sample for playlists.list method
+
+This sample shows how to use the playlists.list method. Use command-line flags to specify the query you want to run."
+AndyDiamondstein,2017-08-11 18:42:59,https://api.github.com/repos/youtube/api-samples/git/commits/788ebac9979ebdab558ee7d0373a07ec1aeb0f56,788ebac9979ebdab558ee7d0373a07ec1aeb0f56,Add example for upload_video.go to README
+AndyDiamondstein,2017-08-11 18:40:59,https://api.github.com/repos/youtube/api-samples/git/commits/8f1af187d39691de8b22daccfcbb26fc253d4fcc,8f1af187d39691de8b22daccfcbb26fc253d4fcc,Update code to use newer oauth2.go file
+AndyDiamondstein,2017-08-11 18:29:06,https://api.github.com/repos/youtube/api-samples/git/commits/d4c68cb488e6b4aa6d454a618af0c62d1f185e72,d4c68cb488e6b4aa6d454a618af0c62d1f185e72,Use standard error handler for API response
+AndyDiamondstein,2017-08-11 17:12:51,https://api.github.com/repos/youtube/api-samples/git/commits/cdd3985b4e3128f768202ccc288977e7e98dd95c,cdd3985b4e3128f768202ccc288977e7e98dd95c,Remove example using obsolete OAuth code
+AndyDiamondstein,2017-08-11 17:12:01,https://api.github.com/repos/youtube/api-samples/git/commits/df2ae7ca63534669f0e5259bb56812ea7ef40dd6,df2ae7ca63534669f0e5259bb56812ea7ef40dd6,"Delete obsolete version of oauth code
+
+Please refer to oauth2.go instead."
+AndyDiamondstein,2017-08-11 17:10:15,https://api.github.com/repos/youtube/api-samples/git/commits/4968ec0dae5dfcb5fdff4a575e702d7bf047306e,4968ec0dae5dfcb5fdff4a575e702d7bf047306e,Retrieve my uploads also calls channels.list
+AndyDiamondstein,2017-08-11 17:09:11,https://api.github.com/repos/youtube/api-samples/git/commits/d42037722324803930737c609d8a26f81e37e24f,d42037722324803930737c609d8a26f81e37e24f,Recommend latest Go version
+AndyDiamondstein,2017-08-11 17:08:24,https://api.github.com/repos/youtube/api-samples/git/commits/4ed97339dd0b47aed88f8d5a7f99d8e80b517a83,4ed97339dd0b47aed88f8d5a7f99d8e80b517a83,"Explain how to authorize requests and run samples
+
+Fix explanation of how to authorize requests and run samples."
+AndyDiamondstein,2017-08-11 16:57:47,https://api.github.com/repos/youtube/api-samples/git/commits/c8a19d23443882b5d05b629b803f158abc358f9c,c8a19d23443882b5d05b629b803f158abc358f9c,Add simple error handler
+AndyDiamondstein,2017-08-11 16:56:07,https://api.github.com/repos/youtube/api-samples/git/commits/fd21cdebf823878ca83d2e5f0a7df0d940852074,fd21cdebf823878ca83d2e5f0a7df0d940852074,Update code to simplify auth flow
+AndyDiamondstein,2017-08-11 16:14:42,https://api.github.com/repos/youtube/api-samples/git/commits/08bd397ff23d9b136bb67a0bba71eaa0097f8b57,08bd397ff23d9b136bb67a0bba71eaa0097f8b57,"Move more auth logic to oauth2.go
+
+Move read of client_secret.json to oauth2.go and set RedirectURL there as well."
+AndyDiamondstein,2017-08-11 15:45:46,https://api.github.com/repos/youtube/api-samples/git/commits/0edd15a44a82fdfbb64c0c4ab7348c94d8c7f1c8,0edd15a44a82fdfbb64c0c4ab7348c94d8c7f1c8,"Remove old references to code.google.com
+
+Update README to remove obsolete references."
+AndyDiamondstein,2017-08-11 15:34:57,https://api.github.com/repos/youtube/api-samples/git/commits/8045ac23b73edfe9f9bed2924c8d5452801006ac,8045ac23b73edfe9f9bed2924c8d5452801006ac,"Create oauth2.go file
+
+Update authorization example to show how to obtain code via web server or via command-line prompt."
+AndyDiamondstein,2017-07-17 16:06:25,https://api.github.com/repos/youtube/api-samples/git/commits/1b73a4cba6dca5f2e01fa30145166a2b367de06e,1b73a4cba6dca5f2e01fa30145166a2b367de06e,"Merge pull request #135 from njuettner/master
+
+replace old package paths"
+njuettner,2017-07-16 10:23:22,https://api.github.com/repos/youtube/api-samples/git/commits/84b332b42b2002bc51fa58d485a9b89692b5a8c9,84b332b42b2002bc51fa58d485a9b89692b5a8c9,replace old package paths
+AndyDiamondstein,2017-06-20 14:38:29,https://api.github.com/repos/youtube/api-samples/git/commits/6a4c3b283ce9e59e64e803173ddb5c35936b6e19,6a4c3b283ce9e59e64e803173ddb5c35936b6e19,Fix name of client_secret.json file.
+AndyDiamondstein,2017-06-20 14:33:23,https://api.github.com/repos/youtube/api-samples/git/commits/c086040967207efb7efd4b109edfc97f25a7fe89,c086040967207efb7efd4b109edfc97f25a7fe89,Fix require autoload.php statement.
+AndyDiamondstein,2017-04-25 17:58:36,https://api.github.com/repos/youtube/api-samples/git/commits/875d380396ba5771322f7d1bf678bbf42b63ecc6,875d380396ba5771322f7d1bf678bbf42b63ecc6,Add file for coming-soon Apps Script quickstart guide.
+AndyDiamondstein,2017-04-25 16:02:34,https://api.github.com/repos/youtube/api-samples/git/commits/954f7e0cc35b03b03adca7557128e083df76a9c0,954f7e0cc35b03b03adca7557128e083df76a9c0,Add file for coming-soon node.js quickstart guide.
+AndyDiamondstein,2017-04-25 15:33:47,https://api.github.com/repos/youtube/api-samples/git/commits/47c49fed14859957ed74fd2706259935937eb885,47c49fed14859957ed74fd2706259935937eb885,Add file for coming-soon JS quickstart guide.
+AndyDiamondstein,2017-04-25 14:47:29,https://api.github.com/repos/youtube/api-samples/git/commits/b9e6a9aea0a97d8300271a3c8c0668ac88d6a246,b9e6a9aea0a97d8300271a3c8c0668ac88d6a246,Add file for coming-soon Java quickstart guide.
+AndyDiamondstein,2017-04-24 22:11:39,https://api.github.com/repos/youtube/api-samples/git/commits/f66c00abdf854da3dccc7c0ec17f1a34a9cdae47,f66c00abdf854da3dccc7c0ec17f1a34a9cdae47,Fix name of client_secret.json file in example.
+AndyDiamondstein,2017-04-24 22:07:25,https://api.github.com/repos/youtube/api-samples/git/commits/d810b927c243db04ffcf6eff0d58ab1b79f13222,d810b927c243db04ffcf6eff0d58ab1b79f13222,Add file for coming-soon Go quickstart guide.
+AndyDiamondstein,2017-04-24 21:29:34,https://api.github.com/repos/youtube/api-samples/git/commits/53c6d50a1872c71b49c6c6104572aa8db5585f3f,53c6d50a1872c71b49c6c6104572aa8db5585f3f,Add file for coming-soon Ruby quickstart guide.
+AndyDiamondstein,2017-04-24 20:50:49,https://api.github.com/repos/youtube/api-samples/git/commits/55bf40114f1cd9e1c4d1da246fe1d55707695c8d,55bf40114f1cd9e1c4d1da246fe1d55707695c8d,Add file for coming-soon Python quickstart guide.
+AndyDiamondstein,2017-04-24 18:35:19,https://api.github.com/repos/youtube/api-samples/git/commits/f37fb9f4288a780b90860f8c81bb75da672a01f8,f37fb9f4288a780b90860f8c81bb75da672a01f8,Add file for coming-soon PHP quickstart guide.
+mchambers,2017-03-28 21:22:37,https://api.github.com/repos/youtube/api-samples/git/commits/48b423053d57411ac27be9a3d3bfb230bb41aba7,48b423053d57411ac27be9a3d3bfb230bb41aba7,"Merge pull request #110 from jimrogerz/live_chat
+
+Add samples for live chat"
+mchambers,2017-03-27 22:50:59,https://api.github.com/repos/youtube/api-samples/git/commits/0b62f83621a0d6707a218ea05c24b0ad82e59386,0b62f83621a0d6707a218ea05c24b0ad82e59386,"Merge pull request #109 from jimrogerz/fix_broadcast_list
+
+Set broadcast type when listing broadcasts, otherwise nothing is returned"
+AndyDiamondstein,2017-01-13 15:37:46,https://api.github.com/repos/youtube/api-samples/git/commits/47727f97d74d3c72537e6b5a93e662b4c1052e7c,47727f97d74d3c72537e6b5a93e662b4c1052e7c,"Merge pull request #94 from jen-obyrne/master
+
+Fix sample urls on all the language projects Read Me's"
+AndyDiamondstein,2016-12-20 18:24:48,https://api.github.com/repos/youtube/api-samples/git/commits/d2347677abe9ac74f863ff0acafa9d48bff3d9cb,d2347677abe9ac74f863ff0acafa9d48bff3d9cb,"Merge pull request #90 from rasa/patch-1
+
+Workaround github's formatter bug"
+rasa,2016-12-20 18:19:19,https://api.github.com/repos/youtube/api-samples/git/commits/7d75b788da505ec67ee8b2cb56600dbe6eea76df,7d75b788da505ec67ee8b2cb56600dbe6eea76df,Workaround github's formatter bug
+matthewayne,2016-12-09 18:54:33,https://api.github.com/repos/youtube/api-samples/git/commits/fe307fd1d2029fc5dc563cef4f315c7f5ad2e78c,fe307fd1d2029fc5dc563cef4f315c7f5ad2e78c,Fix typo in developer key detection
+AndyDiamondstein,2016-12-05 21:19:02,https://api.github.com/repos/youtube/api-samples/git/commits/6f5d67b56580cb61e79a18dd900c5253e720d428,6f5d67b56580cb61e79a18dd900c5253e720d428,Add README.md for Apps Script snippets
+AndyDiamondstein,2016-12-05 21:01:43,https://api.github.com/repos/youtube/api-samples/git/commits/a394a3a720e1f049882d1bc9e2bd67ed5b1ec82c,a394a3a720e1f049882d1bc9e2bd67ed5b1ec82c,"Create file with snippets for all API read methods
+
+This file contains snippets generated using default parameter values in the API code snippet tool at https://devsite.googleplex.com/youtube/v3/code_samples/code_snippets. The file contains the boilerplate code for Apps Script, which is a basic function that prints some output from each API response to the logging console as well as all of the snippets for the API methods. Currently, the functions cover all of the API's read-only methods."
+AndyDiamondstein,2016-11-29 19:13:48,https://api.github.com/repos/youtube/api-samples/git/commits/4d20a4306a6b24a99148fbec5d40699b4c0e918b,4d20a4306a6b24a99148fbec5d40699b4c0e918b,Formatting
+AndyDiamondstein,2016-11-29 19:11:09,https://api.github.com/repos/youtube/api-samples/git/commits/c288f5548bd59e57091c2dcd3d5d3441767d7e53,c288f5548bd59e57091c2dcd3d5d3441767d7e53,Update description of YT Analytics sample
+AndyDiamondstein,2016-11-29 16:39:02,https://api.github.com/repos/youtube/api-samples/git/commits/85d43c74f83a3eb5793a9d6a2782207407e696f3,85d43c74f83a3eb5793a9d6a2782207407e696f3,Fix typo
+AndyDiamondstein,2016-11-29 16:38:42,https://api.github.com/repos/youtube/api-samples/git/commits/2da27de120809ef23bf61f46219aaf9cfefecf19,2da27de120809ef23bf61f46219aaf9cfefecf19,Fix typo
+AndyDiamondstein,2016-11-29 16:38:28,https://api.github.com/repos/youtube/api-samples/git/commits/142a308c484a2e8000363235cb156ed3b9f40d52,142a308c484a2e8000363235cb156ed3b9f40d52,Fix typo
+AndyDiamondstein,2016-11-29 16:36:34,https://api.github.com/repos/youtube/api-samples/git/commits/b7dc035fa9bf1c069b3ed8d1b659bcc7c70f34fc,b7dc035fa9bf1c069b3ed8d1b659bcc7c70f34fc,Fix Live Streaming API script description
+AndyDiamondstein,2016-11-29 16:36:08,https://api.github.com/repos/youtube/api-samples/git/commits/3afb2fdfdf79399b71f359013570c6bf7be9f810,3afb2fdfdf79399b71f359013570c6bf7be9f810,Fix description of Live Streaming API script
+AndyDiamondstein,2016-11-29 16:35:35,https://api.github.com/repos/youtube/api-samples/git/commits/2814b8c6dd14cf830fc123168026d874185e43da,2814b8c6dd14cf830fc123168026d874185e43da,Fix description of Live Streaming API script
+AndyDiamondstein,2016-11-28 21:34:52,https://api.github.com/repos/youtube/api-samples/git/commits/733fbd230eef730cf99e308c30187cc82e8e1368,733fbd230eef730cf99e308c30187cc82e8e1368,"Alphabetize by title
+
+Sample for authorizing a request is still first, sample for YT Analytics API is still last"
+AndyDiamondstein,2016-11-28 21:33:51,https://api.github.com/repos/youtube/api-samples/git/commits/3606b7f08f739d8fe4dfa305ccb4542674a108d0,3606b7f08f739d8fe4dfa305ccb4542674a108d0,Alphabetize samples by title
+AndyDiamondstein,2016-11-28 21:28:55,https://api.github.com/repos/youtube/api-samples/git/commits/3575c690b90080dcb4567ac1564403e6c59f6548,3575c690b90080dcb4567ac1564403e6c59f6548,Alphabetize method-specific samples by title
+AndyDiamondstein,2016-11-28 21:28:00,https://api.github.com/repos/youtube/api-samples/git/commits/5964ca761dd6098bcf352828bde53bba089480cf,5964ca761dd6098bcf352828bde53bba089480cf,"Alphabetize samples by title
+
+Example for authorizing requests is still first since it applies to almost all other examples in the directory."
+AndyDiamondstein,2016-11-28 21:25:24,https://api.github.com/repos/youtube/api-samples/git/commits/443723cbe390e35b2630be76ac5820ee0e847f2f,443723cbe390e35b2630be76ac5820ee0e847f2f,Alphabetize samples by title
+AndyDiamondstein,2016-11-28 21:24:32,https://api.github.com/repos/youtube/api-samples/git/commits/febf747d1e13f1ea67cbccbbbfd6ce76a9fe6c51,febf747d1e13f1ea67cbccbbbfd6ce76a9fe6c51,Alphabetize samples by title
+AndyDiamondstein,2016-11-28 21:21:26,https://api.github.com/repos/youtube/api-samples/git/commits/41c51b15df705d18b3e5b18b4a28dee41df2a883,41c51b15df705d18b3e5b18b4a28dee41df2a883,Alphabetize samples by title
+AndyDiamondstein,2016-11-28 20:27:34,https://api.github.com/repos/youtube/api-samples/git/commits/47772c01b17b8740b3c2ba9bde02486f51d35a78,47772c01b17b8740b3c2ba9bde02486f51d35a78,"Move title, method names to main function comments"
+AndyDiamondstein,2016-11-28 19:57:17,https://api.github.com/repos/youtube/api-samples/git/commits/7c8ed9aaee07cdcaf5938e681400c7d78beeed46,7c8ed9aaee07cdcaf5938e681400c7d78beeed46,Remove sample showing deprecated feature
+AndyDiamondstein,2016-11-28 19:46:33,https://api.github.com/repos/youtube/api-samples/git/commits/5851a4a0406ec53cfe3858722d8a0530943e1b8c,5851a4a0406ec53cfe3858722d8a0530943e1b8c,Correct formatting
+AndyDiamondstein,2016-11-28 19:42:19,https://api.github.com/repos/youtube/api-samples/git/commits/737303860c83166c95bf1ba4370853de2fe6347c,737303860c83166c95bf1ba4370853de2fe6347c,"Deleting sample, which shows deprecated features"
+AndyDiamondstein,2016-11-28 19:42:10,https://api.github.com/repos/youtube/api-samples/git/commits/8a125cf99c6c4939b22ca2fcc14b8d5fd0ee30f7,8a125cf99c6c4939b22ca2fcc14b8d5fd0ee30f7,"Deleting sample, which shows deprecated features"
+AndyDiamondstein,2016-11-28 19:41:58,https://api.github.com/repos/youtube/api-samples/git/commits/48ad7270d0367687ba21d11e3810fd97b85d08a8,48ad7270d0367687ba21d11e3810fd97b85d08a8,"Deleting sample, which shows deprecated features"
+AndyDiamondstein,2016-11-28 19:40:27,https://api.github.com/repos/youtube/api-samples/git/commits/444d263457f428df4a5f965f5c3f78176331c9a6,444d263457f428df4a5f965f5c3f78176331c9a6,Create README.md listing samples in directory
+AndyDiamondstein,2016-11-23 20:34:48,https://api.github.com/repos/youtube/api-samples/git/commits/269d94124525ac50020fd5e46766c858ff1f3f36,269d94124525ac50020fd5e46766c858ff1f3f36,"Fix formatting, typos"
+AndyDiamondstein,2016-11-23 20:31:23,https://api.github.com/repos/youtube/api-samples/git/commits/2329115a799d290695be42d4860501d253dbe828,2329115a799d290695be42d4860501d253dbe828,Add descriptions of remaining HTML files
+AndyDiamondstein,2016-11-23 20:19:43,https://api.github.com/repos/youtube/api-samples/git/commits/0ac71e3f60ae61c3cfeff3de30414b18dd02a50f,0ac71e3f60ae61c3cfeff3de30414b18dd02a50f,Add description of upload_video.html
+AndyDiamondstein,2016-11-23 17:17:52,https://api.github.com/repos/youtube/api-samples/git/commits/2b3494999967701b6feb65fc4e309cd9143293d6,2b3494999967701b6feb65fc4e309cd9143293d6,Fix typos
+AndyDiamondstein,2016-11-23 17:07:03,https://api.github.com/repos/youtube/api-samples/git/commits/c74bbf5dc8fc4df0970f23d00b687f1d064d078d,c74bbf5dc8fc4df0970f23d00b687f1d064d078d,Fix typos
+AndyDiamondstein,2016-11-23 16:48:01,https://api.github.com/repos/youtube/api-samples/git/commits/7c98eb937043553f145b337e744665a4c5243e0d,7c98eb937043553f145b337e744665a4c5243e0d,Fix method name for YouTube Analytics sample
+AndyDiamondstein,2016-11-22 16:45:39,https://api.github.com/repos/youtube/api-samples/git/commits/a45003072d1f5992259f6d4cd01be6dea563afd9,a45003072d1f5992259f6d4cd01be6dea563afd9,Fix typos
+AndyDiamondstein,2016-11-22 16:05:04,https://api.github.com/repos/youtube/api-samples/git/commits/b957ed3809c6e4131bff62afea7875ab0cd7a3f6,b957ed3809c6e4131bff62afea7875ab0cd7a3f6,Fix comment
+AndyDiamondstein,2016-11-22 16:04:48,https://api.github.com/repos/youtube/api-samples/git/commits/f5dd6b3d496ad400d375e956f23a8b462ac8c072,f5dd6b3d496ad400d375e956f23a8b462ac8c072,Fix comment
+AndyDiamondstein,2016-11-22 16:04:28,https://api.github.com/repos/youtube/api-samples/git/commits/62a0cb98c0d36f8fd6c4fb4d3ed62758e5b34c35,62a0cb98c0d36f8fd6c4fb4d3ed62758e5b34c35,Fix comment
+AndyDiamondstein,2016-11-22 16:04:06,https://api.github.com/repos/youtube/api-samples/git/commits/194642b870414fa8e54e586e35358d0265216e69,194642b870414fa8e54e586e35358d0265216e69,Fix comment
+AndyDiamondstein,2016-11-22 16:00:24,https://api.github.com/repos/youtube/api-samples/git/commits/337066acac4e50478069d4f554f3dd051435948b,337066acac4e50478069d4f554f3dd051435948b,Fix typo
+AndyDiamondstein,2016-11-22 15:58:46,https://api.github.com/repos/youtube/api-samples/git/commits/946485c6995be53ad079eeff4d585d46e3f9dfbb,946485c6995be53ad079eeff4d585d46e3f9dfbb,Remove sample not in directory
+AndyDiamondstein,2016-11-22 15:44:04,https://api.github.com/repos/youtube/api-samples/git/commits/a982b3d84071d2f725afac3096d85da60b66b130,a982b3d84071d2f725afac3096d85da60b66b130,Create README.md listing samples in js directory
+AndyDiamondstein,2016-11-22 15:10:40,https://api.github.com/repos/youtube/api-samples/git/commits/f89b2754040b5d2ce7a23e2d9e06af3aeb799ff2,f89b2754040b5d2ce7a23e2d9e06af3aeb799ff2,"Update and rename README to README.md
+
+Add descriptions of code samples."
+AndyDiamondstein,2016-11-22 14:30:26,https://api.github.com/repos/youtube/api-samples/git/commits/021f439684ea33b0bbdbdf1e220c848b6e6cc5c9,021f439684ea33b0bbdbdf1e220c848b6e6cc5c9,Delete Topics.java because Freebase API is deprecated
+AndyDiamondstein,2016-11-22 14:29:40,https://api.github.com/repos/youtube/api-samples/git/commits/aa25f02c119c2653c75cf5c956cfa2b2f69bcf19,aa25f02c119c2653c75cf5c956cfa2b2f69bcf19,Delete sample since Freebase API is deprecated
+AndyDiamondstein,2016-11-22 14:28:52,https://api.github.com/repos/youtube/api-samples/git/commits/2d57d1cb3254f2e6af3d6928d0f70e92636c5d3d,2d57d1cb3254f2e6af3d6928d0f70e92636c5d3d,Delete topics.py since Freebase API is deprecated
+AndyDiamondstein,2016-11-22 14:28:18,https://api.github.com/repos/youtube/api-samples/git/commits/7af4255d35e63e1aa09fe1b70c5607b51ca5b828,7af4255d35e63e1aa09fe1b70c5607b51ca5b828,Add README.md listing samples in php directory
+AndyDiamondstein,2016-11-22 14:08:34,https://api.github.com/repos/youtube/api-samples/git/commits/42a6da64ec1c516ac87c65e7e5dd2a7744ea8c0a,42a6da64ec1c516ac87c65e7e5dd2a7744ea8c0a,Add README.md listing files in ruby directory
+AndyDiamondstein,2016-11-22 13:57:27,https://api.github.com/repos/youtube/api-samples/git/commits/2a3632c62fcacddb3382d156619bda701654ac0d,2a3632c62fcacddb3382d156619bda701654ac0d,Add README.md listing samples in python directory
+AndyDiamondstein,2016-11-22 13:13:44,https://api.github.com/repos/youtube/api-samples/git/commits/b4fa3873384238832ea45d1bb2bf35a47c9501ce,b4fa3873384238832ea45d1bb2bf35a47c9501ce,Add README.md listing samples in dotnet directory
+AndyDiamondstein,2016-11-18 21:04:56,https://api.github.com/repos/youtube/api-samples/git/commits/d1485d1d8423520620a88620f74b710134b221e5,d1485d1d8423520620a88620f74b710134b221e5,Link to samples from README
+AndyDiamondstein,2016-11-18 20:46:29,https://api.github.com/repos/youtube/api-samples/git/commits/254219110cebec50c0e36c037a7369dc390030de,254219110cebec50c0e36c037a7369dc390030de,"Delete README
+
+This file has been replaced by README.md"
+AndyDiamondstein,2016-11-18 20:46:04,https://api.github.com/repos/youtube/api-samples/git/commits/28ea40f9087a48701cba917772b8c00903f92b3b,28ea40f9087a48701cba917772b8c00903f92b3b,Create README.md prior to deleting README
+AndyDiamondstein,2016-11-18 20:43:33,https://api.github.com/repos/youtube/api-samples/git/commits/14f3a10fb3e860353b761345359ef1859f921b58,14f3a10fb3e860353b761345359ef1859f921b58,Update README to list code samples in directory
+matthewayne,2016-11-04 22:03:17,https://api.github.com/repos/youtube/api-samples/git/commits/4277f826d8cb51bd50896156aff3240a52909bd6,4277f826d8cb51bd50896156aff3240a52909bd6,"Merge pull request #87 from mahiuchun/master
+
+Fix Java build."
+mahiuchun,2016-11-04 20:21:55,https://api.github.com/repos/youtube/api-samples/git/commits/618d8d129c90735ecbc32e3aa4d7bd9bda55ae64,618d8d129c90735ecbc32e3aa4d7bd9bda55ae64,"Fix Java build.
+
+- Use latest API dependency versions.
+- Add missing YouTube Reporting API dependency.
+- Fix outdated API usage.
+- Use latest version of Maven Compiler Plugin."
+ulukaya,2016-07-25 19:08:06,https://api.github.com/repos/youtube/api-samples/git/commits/a254a74c93692175755e853026171c502149f059,a254a74c93692175755e853026171c502149f059,"Merge pull request #78 from bshaffer/update-php-examples-for-v2
+
+PHP - updates samples to use google/apiclient:^2.0"
+bshaffer,2016-07-22 22:08:31,https://api.github.com/repos/youtube/api-samples/git/commits/dcc670a1c9557402dbddfe2eb9d5dccdebf41ce2,dcc670a1c9557402dbddfe2eb9d5dccdebf41ce2,"updates comments to use google/apiclient:^2.0 and adds tests, better warnings, misc cleanup"
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/2ed8fa73c8ba171eed63f99f11b5910fc16b021b,2ed8fa73c8ba171eed63f99f11b5910fc16b021b," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/ChannelLocalizations.java"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/e19c8078e351486250305377f1e77ad3865d834c,e19c8078e351486250305377f1e77ad3865d834c," ""Added sample: php/playlist_localizations.php"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/52f1cf4a0dc91aee95a06e7cf0108c89728051fe,52f1cf4a0dc91aee95a06e7cf0108c89728051fe," ""Added sample: php/channel_localizations.php"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/96b6234ad130b2a8084de2382caf9b09bdda8cc5,96b6234ad130b2a8084de2382caf9b09bdda8cc5," ""Added sample: php/channel_section_localizations.php"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/361a1ef9c4cea07f7f3f09ce89f68f9b4ccc649a,361a1ef9c4cea07f7f3f09ce89f68f9b4ccc649a," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/ChannelSectionLocalizations.java"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/870ac820643d1b64aa9fd9a1921b9968b3d6ce87,870ac820643d1b64aa9fd9a1921b9968b3d6ce87," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/VideoLocalizations.java"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/2217aa63cc9fdc55db5041d9f765c5ef00f882fc,2217aa63cc9fdc55db5041d9f765c5ef00f882fc," ""Added sample: python/channel_localizations.py"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/6781301c0d039cae2c1e7dffaaf50b56e940998c,6781301c0d039cae2c1e7dffaaf50b56e940998c," ""Added sample: python/video_localizations.py"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/e1e99015beca4d45f4f79afaa3dab54f4d970a41,e1e99015beca4d45f4f79afaa3dab54f4d970a41," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/PlaylistLocalizations.java"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/3acd792892b2276aa7a43882040b2f568125cf35,3acd792892b2276aa7a43882040b2f568125cf35," ""Added sample: php/video_localizations.php"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/00d557bc6508b078a731357bbe5c092153a2eb6c,00d557bc6508b078a731357bbe5c092153a2eb6c," ""Added sample: python/playlist_localizations.py"""
+AndyDiamondstein,2015-11-19 16:53:22,https://api.github.com/repos/youtube/api-samples/git/commits/b72cd98a188744146e33f0edee264f2f7add467d,b72cd98a188744146e33f0edee264f2f7add467d," ""Added sample: python/channel_section_localizations.py"""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/d1fa0b04215d3d3e3dc7db74eb8baeb820f2e161,d1fa0b04215d3d3e3dc7db74eb8baeb820f2e161," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/461fa6ff69833b4b3893bc0bb5075946558a3a78,461fa6ff69833b4b3893bc0bb5075946558a3a78," ""Added sample: php/create_reporting_job.php"""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/8d652121cf129524e71d3fb36b76464dcf4693f9,8d652121cf129524e71d3fb36b76464dcf4693f9," ""Added sample: python/retrieve_reports.py"""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/cf5fbdd719ff41c23de68ee450526fddd0f87f8b,cf5fbdd719ff41c23de68ee450526fddd0f87f8b," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/42cc089cfb259825db0e23def48c369670d9af98,42cc089cfb259825db0e23def48c369670d9af98," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/c8722ed867e907c064963a8e3c1bd1f6995ae72c,c8722ed867e907c064963a8e3c1bd1f6995ae72c," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/3b1fea3a8c161db8cb9c2795f40312c861c233ea,3b1fea3a8c161db8cb9c2795f40312c861c233ea," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/reporting/CreateReportingJob.java"""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/1c6f1044e879abc78bdca3aa76759c2e9261206b,1c6f1044e879abc78bdca3aa76759c2e9261206b," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/975f184cc52a33a031ead2daeb5045a093942604,975f184cc52a33a031ead2daeb5045a093942604," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:23,https://api.github.com/repos/youtube/api-samples/git/commits/6f1afeae28239f9b8db31b79170061f6430c7bf5,6f1afeae28239f9b8db31b79170061f6430c7bf5," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/2c2518a6b4816d4f22a69ee1f2f15cf62945dd73,2c2518a6b4816d4f22a69ee1f2f15cf62945dd73," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/bb8c2a8e79cf281ed0a078feef0ff2a875fb7243,bb8c2a8e79cf281ed0a078feef0ff2a875fb7243," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/reporting/RetrieveReports.java"""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/3a825ab87d702dfe9c0b9f6b1f828a04bdeaa94e,3a825ab87d702dfe9c0b9f6b1f828a04bdeaa94e," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/19ba57355a7fb40d9f7d7bd4d8cf888d338f8a53,19ba57355a7fb40d9f7d7bd4d8cf888d338f8a53," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/f428116f28800aa2c1aae035e3f4b8579e54400e,f428116f28800aa2c1aae035e3f4b8579e54400e," ""Added sample: php/retrieve_reports.php"""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/07253dbf57ab0df23cb6f313667107d33ae35166,07253dbf57ab0df23cb6f313667107d33ae35166," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/0c3c4e70a9b050fa285a450b06d56a5b536ed6a7,0c3c4e70a9b050fa285a450b06d56a5b536ed6a7," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/8ae9f03438ba0b6191959ec193e2b3d479d08627,8ae9f03438ba0b6191959ec193e2b3d479d08627," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/60f70a657bc452cf2463731df4e6e8b2cb135bb3,60f70a657bc452cf2463731df4e6e8b2cb135bb3," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/dd207261f6e11e4ff1e952fb22d946a50b198b9f,dd207261f6e11e4ff1e952fb22d946a50b198b9f," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/5afe61eff8dd86c048a278faeaeb0f8e8f8b3e6c,5afe61eff8dd86c048a278faeaeb0f8e8f8b3e6c," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/91c30e995a10c57539f6a20ba546dc9fd767d9f8,91c30e995a10c57539f6a20ba546dc9fd767d9f8," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/83232fe3fdab3b2e2f0fdaa2f1ffb1f572d7c2a1,83232fe3fdab3b2e2f0fdaa2f1ffb1f572d7c2a1," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/08f3bb0df095c7afce86013d378fae7a02e8ef6b,08f3bb0df095c7afce86013d378fae7a02e8ef6b," ""Added sample: python/create_reporting_job.py"""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/bb6a039e96fd02851d96e365ca7cb9c0c785bd2a,bb6a039e96fd02851d96e365ca7cb9c0c785bd2a," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-10-15 17:04:22,https://api.github.com/repos/youtube/api-samples/git/commits/ab1fddd79e74470b0d14a56974d4b0abc27f269f,ab1fddd79e74470b0d14a56974d4b0abc27f269f," ""Updating samples to reflect recent changes."""
+ulukaya,2015-06-10 19:17:57,https://api.github.com/repos/youtube/api-samples/git/commits/a08ca32ea088db89eb3771800cec2453e9591379,a08ca32ea088db89eb3771800cec2453e9591379,"Merge pull request #18 from ttruong21/master
+
+fix chunk upload - TypeError: argument of type 'NoneType' is not iterable"
+AndyDiamondstein,2015-06-10 18:50:40,https://api.github.com/repos/youtube/api-samples/git/commits/75bdfa4406de82fd590a4407af2c22dc07ca8db6,75bdfa4406de82fd590a4407af2c22dc07ca8db6," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:37,https://api.github.com/repos/youtube/api-samples/git/commits/8ed77812fd9b64ae13d8237f074c208764ab9af1,8ed77812fd9b64ae13d8237f074c208764ab9af1," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:36,https://api.github.com/repos/youtube/api-samples/git/commits/e1a054b6117d18d0b9b5c650b7b433347b47283f,e1a054b6117d18d0b9b5c650b7b433347b47283f," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:32,https://api.github.com/repos/youtube/api-samples/git/commits/04cadf4534c7f0a4d21de17c6a354cb5c03dec61,04cadf4534c7f0a4d21de17c6a354cb5c03dec61," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:30,https://api.github.com/repos/youtube/api-samples/git/commits/91a83b6315705d40bfc3f2777c18242fc92c05f1,91a83b6315705d40bfc3f2777c18242fc92c05f1," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/CommentThreads.java"""
+AndyDiamondstein,2015-06-10 18:50:29,https://api.github.com/repos/youtube/api-samples/git/commits/9a0e1d7c1f1a7486c42c64cb6180d7c809cdb203,9a0e1d7c1f1a7486c42c64cb6180d7c809cdb203," ""Added sample: php/captions.php"""
+AndyDiamondstein,2015-06-10 18:50:28,https://api.github.com/repos/youtube/api-samples/git/commits/1753c2d41576e7b36890cef5cd0d969ac427573f,1753c2d41576e7b36890cef5cd0d969ac427573f," ""Added sample: python/comment_handling.py"""
+AndyDiamondstein,2015-06-10 18:50:25,https://api.github.com/repos/youtube/api-samples/git/commits/d4805cfeead324b789f123e276986d3d9147347a,d4805cfeead324b789f123e276986d3d9147347a," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/CommentHandling.java"""
+AndyDiamondstein,2015-06-10 18:50:24,https://api.github.com/repos/youtube/api-samples/git/commits/4840713672de032c2e36269714b60877ff6273a7,4840713672de032c2e36269714b60877ff6273a7," ""Added sample: dotnet/UploadVideo.cs"""
+AndyDiamondstein,2015-06-10 18:50:22,https://api.github.com/repos/youtube/api-samples/git/commits/139cab1b454a65812eef147fcaa4cfe78822a891,139cab1b454a65812eef147fcaa4cfe78822a891," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:19,https://api.github.com/repos/youtube/api-samples/git/commits/a9d8b2954c1729e7b16068338c1c73172e876479,a9d8b2954c1729e7b16068338c1c73172e876479," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:14,https://api.github.com/repos/youtube/api-samples/git/commits/742d8647f489eca9953323616da415a579d5989f,742d8647f489eca9953323616da415a579d5989f," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/Captions.java"""
+AndyDiamondstein,2015-06-10 18:50:13,https://api.github.com/repos/youtube/api-samples/git/commits/4ac21bb94f04115d9b92f16343d40aa695150eea,4ac21bb94f04115d9b92f16343d40aa695150eea," ""Added sample: dotnet/Search.cs"""
+AndyDiamondstein,2015-06-10 18:50:12,https://api.github.com/repos/youtube/api-samples/git/commits/894e482fd18c0b66ddfa54118ac9aa0ed88e4af2,894e482fd18c0b66ddfa54118ac9aa0ed88e4af2," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:10,https://api.github.com/repos/youtube/api-samples/git/commits/43e06a555f077c1c6934d80f5efccd53697fe4dc,43e06a555f077c1c6934d80f5efccd53697fe4dc," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:10,https://api.github.com/repos/youtube/api-samples/git/commits/69d9624087a73ee5ee483b300d2162c60d7bf3d6,69d9624087a73ee5ee483b300d2162c60d7bf3d6," ""Added sample: php/comment_handling.php"""
+AndyDiamondstein,2015-06-10 18:50:07,https://api.github.com/repos/youtube/api-samples/git/commits/25afcfb6312e78ca15a7f770ea090c5fc5255172,25afcfb6312e78ca15a7f770ea090c5fc5255172," ""Added sample: dotnet/MyUploads.cs"""
+AndyDiamondstein,2015-06-10 18:50:05,https://api.github.com/repos/youtube/api-samples/git/commits/760dde8bb45eb2ebefa7bc6b82f43245d61c2840,760dde8bb45eb2ebefa7bc6b82f43245d61c2840," ""Added sample: dotnet/PlaylistUpdates.cs"""
+AndyDiamondstein,2015-06-10 18:50:04,https://api.github.com/repos/youtube/api-samples/git/commits/78d88a28b7324195ec16150503d230deb6b24e7c,78d88a28b7324195ec16150503d230deb6b24e7c," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:50:02,https://api.github.com/repos/youtube/api-samples/git/commits/c68aa2ce1491c91130b29f713331d3c8931c3ee0,c68aa2ce1491c91130b29f713331d3c8931c3ee0," ""Added sample: python/captions.py"""
+AndyDiamondstein,2015-06-10 18:49:56,https://api.github.com/repos/youtube/api-samples/git/commits/670a1650524a41537ae14766ea2a938b4919ad69,670a1650524a41537ae14766ea2a938b4919ad69," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:55,https://api.github.com/repos/youtube/api-samples/git/commits/dc065d364e8961ddd178fdab981a8fcd36e7327f,dc065d364e8961ddd178fdab981a8fcd36e7327f," ""Added sample: dotnet/dotnet.csproj"""
+AndyDiamondstein,2015-06-10 18:49:54,https://api.github.com/repos/youtube/api-samples/git/commits/be765e955b8323129f4cdf6bdb8569870b7364be,be765e955b8323129f4cdf6bdb8569870b7364be," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:51,https://api.github.com/repos/youtube/api-samples/git/commits/5bd9154a38cf9ccfd3d08bb10c22f0bfd0c2acee,5bd9154a38cf9ccfd3d08bb10c22f0bfd0c2acee," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:51,https://api.github.com/repos/youtube/api-samples/git/commits/d8e3cc02623838165e37b07c37aa5845d8fc8ef4,d8e3cc02623838165e37b07c37aa5845d8fc8ef4," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:49,https://api.github.com/repos/youtube/api-samples/git/commits/536f2a12516b1f54ea9bb0d8cb9c15fa0721dd65,536f2a12516b1f54ea9bb0d8cb9c15fa0721dd65," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:47,https://api.github.com/repos/youtube/api-samples/git/commits/bcc922a4e3cf719fe12c9b9b2cf58a7cdc49f610,bcc922a4e3cf719fe12c9b9b2cf58a7cdc49f610," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:46,https://api.github.com/repos/youtube/api-samples/git/commits/b9ff66d6be291644fb59fc2acb1540adcc1a5f47,b9ff66d6be291644fb59fc2acb1540adcc1a5f47," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:44,https://api.github.com/repos/youtube/api-samples/git/commits/e4a25f1bc114a125d60fd1f8e087aeeac6028ca3,e4a25f1bc114a125d60fd1f8e087aeeac6028ca3," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:42,https://api.github.com/repos/youtube/api-samples/git/commits/871a818a735c7c29809cdaa660a9daaf6938ae4d,871a818a735c7c29809cdaa660a9daaf6938ae4d," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:40,https://api.github.com/repos/youtube/api-samples/git/commits/3b44e5dcbb63a0e0b37773a01e67c688107f3007,3b44e5dcbb63a0e0b37773a01e67c688107f3007," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2015-06-10 18:49:39,https://api.github.com/repos/youtube/api-samples/git/commits/92e2cdc31aedd46cb66fe3765a7297221c2b6891,92e2cdc31aedd46cb66fe3765a7297221c2b6891," ""Added sample: php/comment_threads.php"""
+AndyDiamondstein,2015-06-10 18:49:38,https://api.github.com/repos/youtube/api-samples/git/commits/57ed08ea3e60ce34d43f9549f959519d3f1f8c9e,57ed08ea3e60ce34d43f9549f959519d3f1f8c9e," ""Added sample: python/comment_threads.py"""
+AndyDiamondstein,2015-06-10 18:49:35,https://api.github.com/repos/youtube/api-samples/git/commits/523d2ccb1eb3353ea59101ffb4ef173543061547,523d2ccb1eb3353ea59101ffb4ef173543061547," ""Added sample: dotnet/packages.config"""
+ulukaya,2015-06-10 18:30:00,https://api.github.com/repos/youtube/api-samples/git/commits/8a2ababd14d710a6dd55224f9363141b34de8c46,8a2ababd14d710a6dd55224f9363141b34de8c46,"Merge pull request #8 from samuelteixeiras/master
+
+Update analytics_codelab.html"
+ulukaya,2015-06-10 18:27:54,https://api.github.com/repos/youtube/api-samples/git/commits/630c6204a5d929414532c3f39a433457d6bb949f,630c6204a5d929414532c3f39a433457d6bb949f,"Merge pull request #14 from Carlyalexandra/master
+
+fixed the bug in main, added p and e per Trollop requirements. Now works with heroku."
+ulukaya,2015-06-10 18:22:02,https://api.github.com/repos/youtube/api-samples/git/commits/145dcac416aaef8a5b4ac554aa888cfe3c6def1d,145dcac416aaef8a5b4ac554aa888cfe3c6def1d,"Merge pull request #17 from kl3ryk/master
+
+variable name fixed"
+ulukaya,2015-06-10 18:19:38,https://api.github.com/repos/youtube/api-samples/git/commits/b3662071c507ddc9e8fdf93713b9f775beb1931a,b3662071c507ddc9e8fdf93713b9f775beb1931a,"Merge pull request #29 from porjo/porjo
+
+Update Go examples to use current oauth2 package"
+ulukaya,2015-06-10 18:19:07,https://api.github.com/repos/youtube/api-samples/git/commits/5aeb63ada8e942b9f7a405c776450dff584f00c0,5aeb63ada8e942b9f7a405c776450dff584f00c0,"Merge pull request #31 from naoman/dev2
+
+developer key should be added before making the second request"
+naoman,2015-06-04 08:12:33,https://api.github.com/repos/youtube/api-samples/git/commits/13a97eac4b10ee6c64b379fd934afda4c30d8475,13a97eac4b10ee6c64b379fd934afda4c30d8475,"developer key should be added before making the request. I was getting following error without it.
+
+There was a service error: 403 : Daily Limit for Unauthenticated Use Exceeded. Continued use requires signup."
+jeffposnick,2015-01-16 22:10:28,https://api.github.com/repos/youtube/api-samples/git/commits/351782de14e0533107881a8d8f7d9c5d42aa4b2b,351782de14e0533107881a8d8f7d9c5d42aa4b2b,"Merge pull request #22 from gguuss/master
+
+Fix project / sample settings"
+AndyDiamondstein,2015-01-15 18:06:06,https://api.github.com/repos/youtube/api-samples/git/commits/08bcbebc47a47c75cd777850b17f6c7017198767,08bcbebc47a47c75cd777850b17f6c7017198767," ""Added sample: javascript/upload_video.html"""
+AndyDiamondstein,2015-01-15 18:05:53,https://api.github.com/repos/youtube/api-samples/git/commits/1e28d18897a15722d171f031ce5b888a237e49fa,1e28d18897a15722d171f031ce5b888a237e49fa," ""Added sample: javascript/upload_video.css"""
+AndyDiamondstein,2015-01-15 18:05:53,https://api.github.com/repos/youtube/api-samples/git/commits/213c762e3f5d8f2fcd74917c456a30453ec99752,213c762e3f5d8f2fcd74917c456a30453ec99752," ""Added sample: javascript/cors_upload.js"""
+AndyDiamondstein,2015-01-15 18:05:36,https://api.github.com/repos/youtube/api-samples/git/commits/c1d67fdf0e86716c4e494e3e79ab463d8b1b7e81,c1d67fdf0e86716c4e494e3e79ab463d8b1b7e81," ""Added sample: javascript/upload_video.js"""
+gguuss,2015-01-14 18:43:24,https://api.github.com/repos/youtube/api-samples/git/commits/71de5232dc68ce09c6464731996d720db59c36d6,71de5232dc68ce09c6464731996d720db59c36d6,copy json config to output folder
+gguuss,2015-01-14 18:33:23,https://api.github.com/repos/youtube/api-samples/git/commits/39e6784702d6dcab262c015ded6d58773d4cbbbc,39e6784702d6dcab262c015ded6d58773d4cbbbc,updated projects and solutions
+gguuss,2015-01-13 21:53:32,https://api.github.com/repos/youtube/api-samples/git/commits/cd0751cf50424a08fdf58a93838b886628bfb822,cd0751cf50424a08fdf58a93838b886628bfb822,Adding APACHE 2.0 headers
+gguuss,2015-01-13 21:45:55,https://api.github.com/repos/youtube/api-samples/git/commits/fa49334dbb5038fbd10e694e2af0e4382a88be15,fa49334dbb5038fbd10e694e2af0e4382a88be15,Fixing client_secrets
+gguuss,2015-01-13 21:15:14,https://api.github.com/repos/youtube/api-samples/git/commits/82f54e8526ba29bd0ba2ab7b6935093132fc19de,82f54e8526ba29bd0ba2ab7b6935093132fc19de,Adding new project structure
+gguuss,2015-01-13 21:02:38,https://api.github.com/repos/youtube/api-samples/git/commits/582e11f65582fa11fa62bf18c6b974bf4ea6d828,582e11f65582fa11fa62bf18c6b974bf4ea6d828,removing previous project artifacts
+ttruong21,2014-10-29 16:54:44,https://api.github.com/repos/youtube/api-samples/git/commits/60b1bca333abb7aad04618a38c313426d3e0d5c6,60b1bca333abb7aad04618a38c313426d3e0d5c6,fix chunk upload
+kl3ryk,2014-10-26 02:04:18,https://api.github.com/repos/youtube/api-samples/git/commits/3c751bd65c1c92d3339cef10a168971b002a8ce5,3c751bd65c1c92d3339cef10a168971b002a8ce5,variable name fixed
+ulukaya,2014-09-12 19:48:35,https://api.github.com/repos/youtube/api-samples/git/commits/92a5ea583a33a50bf33b4d790172e1fb5d2f2177,92a5ea583a33a50bf33b4d790172e1fb5d2f2177,rollback
+ulukaya,2014-09-12 19:47:27,https://api.github.com/repos/youtube/api-samples/git/commits/eb0b3bdb80347ef999dbb96f289553b1d1198268,eb0b3bdb80347ef999dbb96f289553b1d1198268,rollback
+AndyDiamondstein,2014-09-12 19:39:46,https://api.github.com/repos/youtube/api-samples/git/commits/7b9858950a2f4d46400b659106beed9579b222a1,7b9858950a2f4d46400b659106beed9579b222a1," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2014-09-12 19:39:42,https://api.github.com/repos/youtube/api-samples/git/commits/19f9977795d5f3a86141d940093c597ad0cc3799,19f9977795d5f3a86141d940093c597ad0cc3799," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2014-09-12 19:39:24,https://api.github.com/repos/youtube/api-samples/git/commits/f372572e145fe5bb53874fa0f551ca4396fa7a29,f372572e145fe5bb53874fa0f551ca4396fa7a29," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2014-09-12 19:39:21,https://api.github.com/repos/youtube/api-samples/git/commits/67d1c7ce4c0c1952f6990687ce17ccd0cba1fb2d,67d1c7ce4c0c1952f6990687ce17ccd0cba1fb2d," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2014-09-12 19:39:11,https://api.github.com/repos/youtube/api-samples/git/commits/dadfbf236984737f5eef74a3bd9f2fcc3c6dfe40,dadfbf236984737f5eef74a3bd9f2fcc3c6dfe40," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/CommentHandling.java"""
+AndyDiamondstein,2014-09-12 19:38:54,https://api.github.com/repos/youtube/api-samples/git/commits/7b03687a753faa380cd3a70070fdbb3560cc0fe9,7b03687a753faa380cd3a70070fdbb3560cc0fe9," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/CommentThreads.java"""
+AndyDiamondstein,2014-09-12 19:38:53,https://api.github.com/repos/youtube/api-samples/git/commits/c9f77455334c35b3f5751fc88e71676e5e45fda9,c9f77455334c35b3f5751fc88e71676e5e45fda9," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2014-09-12 19:38:47,https://api.github.com/repos/youtube/api-samples/git/commits/9fc1d1aa82dc6492e15699428fe81514c01e2113,9fc1d1aa82dc6492e15699428fe81514c01e2113,Merge branch 'master' of https://github.com/youtube/api-samples
+Carlyalexandra,2014-08-27 19:35:08,https://api.github.com/repos/youtube/api-samples/git/commits/9886f7624b87eef5830641c6ecdf8a89e024eda5,9886f7624b87eef5830641c6ecdf8a89e024eda5,"fixed the bug in main, added p and e per Trollop. Now workt with heroku."
+ulukaya,2014-06-05 19:26:19,https://api.github.com/repos/youtube/api-samples/git/commits/48a6b68f6d74d932ba8f694f79115b99943b9bf5,48a6b68f6d74d932ba8f694f79115b99943b9bf5," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:18,https://api.github.com/repos/youtube/api-samples/git/commits/89442fb161d57453c6b71ed534a5c0280e99bb70,89442fb161d57453c6b71ed534a5c0280e99bb70," ""Added sample: python/set_watermark.py"""
+ulukaya,2014-06-05 19:26:17,https://api.github.com/repos/youtube/api-samples/git/commits/452ada396e3c6f17a5f6f995deba1c2c236e0974,452ada396e3c6f17a5f6f995deba1c2c236e0974," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/GeolocationSearch.java"""
+ulukaya,2014-06-05 19:26:16,https://api.github.com/repos/youtube/api-samples/git/commits/3d4bbb5403efaa44b1be05610383fba0a793623d,3d4bbb5403efaa44b1be05610383fba0a793623d," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:14,https://api.github.com/repos/youtube/api-samples/git/commits/294e20fdc3ba31ed431502da5864ae1ddab053e4,294e20fdc3ba31ed431502da5864ae1ddab053e4," ""Added sample: python/unset_watermark.py"""
+ulukaya,2014-06-05 19:26:14,https://api.github.com/repos/youtube/api-samples/git/commits/104c2fe6d5f09ccb3a68cbda86aa12d48ff9abd2,104c2fe6d5f09ccb3a68cbda86aa12d48ff9abd2," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:13,https://api.github.com/repos/youtube/api-samples/git/commits/05e8907021bcacd2defd18290e5de90737179121,05e8907021bcacd2defd18290e5de90737179121," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:13,https://api.github.com/repos/youtube/api-samples/git/commits/3300bddd3090f4d3e3d2ce86eb504ceec4233bda,3300bddd3090f4d3e3d2ce86eb504ceec4233bda," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:12,https://api.github.com/repos/youtube/api-samples/git/commits/4def5de33f5e811e40c71ec5e5635e13a637de4c,4def5de33f5e811e40c71ec5e5635e13a637de4c," ""Added sample: php/geolocation_search.php"""
+ulukaya,2014-06-05 19:26:12,https://api.github.com/repos/youtube/api-samples/git/commits/2199c774ccec71058445e92d985ecbf964b1e832,2199c774ccec71058445e92d985ecbf964b1e832," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:10,https://api.github.com/repos/youtube/api-samples/git/commits/95602f2920bf46a5c3ded1851e82e77e6ddc56ff,95602f2920bf46a5c3ded1851e82e77e6ddc56ff," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:10,https://api.github.com/repos/youtube/api-samples/git/commits/0aaede47366dcbbe2812a9d1325d10962735b60d,0aaede47366dcbbe2812a9d1325d10962735b60d," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:09,https://api.github.com/repos/youtube/api-samples/git/commits/ff587d01a722e9b6b3c612e3ee3c20f570f8348e,ff587d01a722e9b6b3c612e3ee3c20f570f8348e," ""Updating samples to reflect recent changes."""
+ulukaya,2014-06-05 19:26:08,https://api.github.com/repos/youtube/api-samples/git/commits/b30a0cb829a2d6ca66fc2a6a3e47ec5db621984a,b30a0cb829a2d6ca66fc2a6a3e47ec5db621984a," ""Added sample: python/geolocation_search.py"""
+ulukaya,2014-06-05 19:26:08,https://api.github.com/repos/youtube/api-samples/git/commits/953ac20133afa7e4e210cd10547ef11494bad8e6,953ac20133afa7e4e210cd10547ef11494bad8e6," ""Updating samples to reflect recent changes."""
+samuelteixeiras,2014-05-27 16:37:26,https://api.github.com/repos/youtube/api-samples/git/commits/dc1e94b0e1f66b040207d853972b1eca333d2bc8,dc1e94b0e1f66b040207d853972b1eca333d2bc8,"Update analytics_codelab.html
+
+Rename reference for css and js file"
+jeffposnick,2014-04-15 17:49:01,https://api.github.com/repos/youtube/api-samples/git/commits/eff3826498e72e85bb875102568bc1025243f274,eff3826498e72e85bb875102568bc1025243f274," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:49:01,https://api.github.com/repos/youtube/api-samples/git/commits/0e96e9340148d28a6273dc1a61b4a7016cdfa0ee,0e96e9340148d28a6273dc1a61b4a7016cdfa0ee," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:49:01,https://api.github.com/repos/youtube/api-samples/git/commits/41b1cad930b5057e38122a42779ec684b2715d72,41b1cad930b5057e38122a42779ec684b2715d72," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:49:01,https://api.github.com/repos/youtube/api-samples/git/commits/5ab684511bed943dfa6f377e3035c12befab6eaf,5ab684511bed943dfa6f377e3035c12befab6eaf," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:49:00,https://api.github.com/repos/youtube/api-samples/git/commits/c6b6f65da3d94d0cd0d20559370e28c48d1a9e30,c6b6f65da3d94d0cd0d20559370e28c48d1a9e30," ""Added sample: php/add_channel_section.php"""
+jeffposnick,2014-04-15 17:48:57,https://api.github.com/repos/youtube/api-samples/git/commits/44de34a81295899611bf83ce6f61eb26ae527e9a,44de34a81295899611bf83ce6f61eb26ae527e9a," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:48:57,https://api.github.com/repos/youtube/api-samples/git/commits/55d98dfcae1323a160a702afbd91632c237cc024,55d98dfcae1323a160a702afbd91632c237cc024," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:48:57,https://api.github.com/repos/youtube/api-samples/git/commits/5d1f189f46b6223ffbb9bef9003e25dfca83f63b,5d1f189f46b6223ffbb9bef9003e25dfca83f63b," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:48:56,https://api.github.com/repos/youtube/api-samples/git/commits/19e89f4688a5c4d401afd14ab98c60d69e389f69,19e89f4688a5c4d401afd14ab98c60d69e389f69," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:48:56,https://api.github.com/repos/youtube/api-samples/git/commits/67e4bdfc000e652171dbd77f8feaa144f57c5c7a,67e4bdfc000e652171dbd77f8feaa144f57c5c7a," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-15 17:48:55,https://api.github.com/repos/youtube/api-samples/git/commits/f8bdfee8f121d769c19a4b9121d14907e7a38652,f8bdfee8f121d769c19a4b9121d14907e7a38652," ""Added sample: php/shuffle_channel_sections.php"""
+jeffposnick,2014-04-15 17:48:55,https://api.github.com/repos/youtube/api-samples/git/commits/a619c5c929b05052cf095765ec3b2835a2302689,a619c5c929b05052cf095765ec3b2835a2302689," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:37,https://api.github.com/repos/youtube/api-samples/git/commits/94f0e014233a0906550ba21992e410f913b5c196,94f0e014233a0906550ba21992e410f913b5c196," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:36,https://api.github.com/repos/youtube/api-samples/git/commits/ca7e38ea432f51437a438c933a43d15997f16a4f,ca7e38ea432f51437a438c933a43d15997f16a4f," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:36,https://api.github.com/repos/youtube/api-samples/git/commits/18339c29fc67d68662ceaaacfd7afc5b8cc5c28b,18339c29fc67d68662ceaaacfd7afc5b8cc5c28b," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:34,https://api.github.com/repos/youtube/api-samples/git/commits/40a801a0884dbcbecb02a574c1e8ec34ed780599,40a801a0884dbcbecb02a574c1e8ec34ed780599," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:34,https://api.github.com/repos/youtube/api-samples/git/commits/e4217d9c1f1a03959c584e8b6b5efbf1467168ce,e4217d9c1f1a03959c584e8b6b5efbf1467168ce," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:34,https://api.github.com/repos/youtube/api-samples/git/commits/460332858be217e29aacfc34473c812529375077,460332858be217e29aacfc34473c812529375077," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:34,https://api.github.com/repos/youtube/api-samples/git/commits/7676c228a9c94a1f226e943f28e7fdccead7a41e,7676c228a9c94a1f226e943f28e7fdccead7a41e," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:32,https://api.github.com/repos/youtube/api-samples/git/commits/93da1ecb20010913f79952042946ff2cf7897cf7,93da1ecb20010913f79952042946ff2cf7897cf7," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:31,https://api.github.com/repos/youtube/api-samples/git/commits/42b533c0cabbea6a471968d0c55d89a110647854,42b533c0cabbea6a471968d0c55d89a110647854," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:31,https://api.github.com/repos/youtube/api-samples/git/commits/59b5bd06880f0bf44dc67a174685146d5337c29d,59b5bd06880f0bf44dc67a174685146d5337c29d," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:30,https://api.github.com/repos/youtube/api-samples/git/commits/2f5c0d38700edfb750f6b155ab79ce35245b91a4,2f5c0d38700edfb750f6b155ab79ce35245b91a4," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:21:27,https://api.github.com/repos/youtube/api-samples/git/commits/0ce77a97f87908554f85d2481558dad9e410103f,0ce77a97f87908554f85d2481558dad9e410103f," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:31,https://api.github.com/repos/youtube/api-samples/git/commits/c64bc1a18ff240ec78695fa2730cf20a71f05bee,c64bc1a18ff240ec78695fa2730cf20a71f05bee," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:30,https://api.github.com/repos/youtube/api-samples/git/commits/2eaaa4a9893b735a81704ab4867d56c442a3ed75,2eaaa4a9893b735a81704ab4867d56c442a3ed75," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:28,https://api.github.com/repos/youtube/api-samples/git/commits/d42d48f21eb6df1bfb40eeddfe72b2049e1cebf3,d42d48f21eb6df1bfb40eeddfe72b2049e1cebf3," ""Added sample: python/shuffle_channel_sections.py"""
+jeffposnick,2014-04-08 15:08:28,https://api.github.com/repos/youtube/api-samples/git/commits/070a3415dc78cd8fbd9fa9084b5aba7ee1d82daa,070a3415dc78cd8fbd9fa9084b5aba7ee1d82daa," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:28,https://api.github.com/repos/youtube/api-samples/git/commits/983084d71fab607e1386aaf181832ea3086e982c,983084d71fab607e1386aaf181832ea3086e982c," ""Added sample: python/add_channel_section.py"""
+jeffposnick,2014-04-08 15:08:26,https://api.github.com/repos/youtube/api-samples/git/commits/4b1f8f6a930289acf26955e24cea620a1a1d49fd,4b1f8f6a930289acf26955e24cea620a1a1d49fd," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:25,https://api.github.com/repos/youtube/api-samples/git/commits/c9db0da2d9e146830d6b7dbcd846162e9f58b443,c9db0da2d9e146830d6b7dbcd846162e9f58b443," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:25,https://api.github.com/repos/youtube/api-samples/git/commits/9ed8b79a882a82216bb230a1a76b10f38be1b062,9ed8b79a882a82216bb230a1a76b10f38be1b062," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:24,https://api.github.com/repos/youtube/api-samples/git/commits/15f01a04284e12b1fc2da7afd993e5fffc6f39c6,15f01a04284e12b1fc2da7afd993e5fffc6f39c6," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:23,https://api.github.com/repos/youtube/api-samples/git/commits/ca3ad83f669ce1f0200eaa86f885b9f752d04b2e,ca3ad83f669ce1f0200eaa86f885b9f752d04b2e," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-04-08 15:08:22,https://api.github.com/repos/youtube/api-samples/git/commits/c6aaa246db2977ff89a1f93841584593917144cf,c6aaa246db2977ff89a1f93841584593917144cf," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:07,https://api.github.com/repos/youtube/api-samples/git/commits/d89f2adb7587570da11bc1811b9e945aa7fd0cee,d89f2adb7587570da11bc1811b9e945aa7fd0cee," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:06,https://api.github.com/repos/youtube/api-samples/git/commits/f89f344c194242c840e3d80c94db378dc2fc4559,f89f344c194242c840e3d80c94db378dc2fc4559," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:04,https://api.github.com/repos/youtube/api-samples/git/commits/ab3388f76ac8d1f2402cd23d81de75be7123babf,ab3388f76ac8d1f2402cd23d81de75be7123babf," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:03,https://api.github.com/repos/youtube/api-samples/git/commits/f3e96d285e192d96e1ddc766f587f29abceb6b21,f3e96d285e192d96e1ddc766f587f29abceb6b21," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:03,https://api.github.com/repos/youtube/api-samples/git/commits/0fd6025239c22748e975b6173a51e902ddc8cba2,0fd6025239c22748e975b6173a51e902ddc8cba2," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:03,https://api.github.com/repos/youtube/api-samples/git/commits/ff866d670d78c903d1888527b590567a187b2640,ff866d670d78c903d1888527b590567a187b2640," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:02,https://api.github.com/repos/youtube/api-samples/git/commits/b2d94477815a01383167952ed43953e35fb31dc2,b2d94477815a01383167952ed43953e35fb31dc2," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:02,https://api.github.com/repos/youtube/api-samples/git/commits/4566c529d6131420f6c6f7c8269dce588f3d724e,4566c529d6131420f6c6f7c8269dce588f3d724e," ""Added sample: python/batch_report_download.py"""
+jeffposnick,2014-03-12 20:02:01,https://api.github.com/repos/youtube/api-samples/git/commits/5aeae9d412db847c817bee5c9d750ea1ea86c9a5,5aeae9d412db847c817bee5c9d750ea1ea86c9a5," ""Added sample: ruby/oauth/oauth_util.rb"""
+jeffposnick,2014-03-12 20:02:01,https://api.github.com/repos/youtube/api-samples/git/commits/28779c26b48d38c4bd65ade1a66b6a7588ae1cfa,28779c26b48d38c4bd65ade1a66b6a7588ae1cfa," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:02:00,https://api.github.com/repos/youtube/api-samples/git/commits/b4c02ebeb888cdaa03618791c92bc60191d0bb7b,b4c02ebeb888cdaa03618791c92bc60191d0bb7b," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:01:57,https://api.github.com/repos/youtube/api-samples/git/commits/ebaa77936d23eba570c253dfefca67cc0ac635d2,ebaa77936d23eba570c253dfefca67cc0ac635d2," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:01:57,https://api.github.com/repos/youtube/api-samples/git/commits/c7f0ef170324f885ae47e311eb8a24bcf9eaf14d,c7f0ef170324f885ae47e311eb8a24bcf9eaf14d," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-03-12 20:01:56,https://api.github.com/repos/youtube/api-samples/git/commits/b4445fc57700fac088385ed0cd081b5d6bf64715,b4445fc57700fac088385ed0cd081b5d6bf64715," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:18,https://api.github.com/repos/youtube/api-samples/git/commits/bd8cca8a0d2d2020445d43e8212ab2632c6217ab,bd8cca8a0d2d2020445d43e8212ab2632c6217ab," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:18,https://api.github.com/repos/youtube/api-samples/git/commits/e095077cce33bde1c1143109ca5d22db228f1e19,e095077cce33bde1c1143109ca5d22db228f1e19," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:15,https://api.github.com/repos/youtube/api-samples/git/commits/22f871031bec8d3db01c69130f474492304fbdbd,22f871031bec8d3db01c69130f474492304fbdbd," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:14,https://api.github.com/repos/youtube/api-samples/git/commits/74c7a818ca911fe8ffe8911728664114aecfe248,74c7a818ca911fe8ffe8911728664114aecfe248," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:13,https://api.github.com/repos/youtube/api-samples/git/commits/4f89d9ca1613e73ad069d8a797ccc5f5dad7896e,4f89d9ca1613e73ad069d8a797ccc5f5dad7896e," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:12,https://api.github.com/repos/youtube/api-samples/git/commits/2b48835912133e905c7e4b922a788b0f940f90c4,2b48835912133e905c7e4b922a788b0f940f90c4," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:11,https://api.github.com/repos/youtube/api-samples/git/commits/a69e7151d07c52a4a60725de425db727a127448c,a69e7151d07c52a4a60725de425db727a127448c," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:09,https://api.github.com/repos/youtube/api-samples/git/commits/9e104dfa781e2c73f21139cd04d9186e4c8be383,9e104dfa781e2c73f21139cd04d9186e4c8be383," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:09,https://api.github.com/repos/youtube/api-samples/git/commits/327b374f84943daee306c6ea22fcf7857dbe1a83,327b374f84943daee306c6ea22fcf7857dbe1a83," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:08,https://api.github.com/repos/youtube/api-samples/git/commits/bdbd1179fbc33145bdd3cddee050087cc52c47f2,bdbd1179fbc33145bdd3cddee050087cc52c47f2," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:07,https://api.github.com/repos/youtube/api-samples/git/commits/7a2d6b37817e5dafd6a57a4851aec276ae471b1f,7a2d6b37817e5dafd6a57a4851aec276ae471b1f," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:04,https://api.github.com/repos/youtube/api-samples/git/commits/84cbf3c6b40e6950795266e4759bccd589c66111,84cbf3c6b40e6950795266e4759bccd589c66111," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:04,https://api.github.com/repos/youtube/api-samples/git/commits/a3cce3e5bead7a033b62bea93b04eec7cf214ed8,a3cce3e5bead7a033b62bea93b04eec7cf214ed8," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:03,https://api.github.com/repos/youtube/api-samples/git/commits/4d610aa9f0d14b6c4f8ea2c68a80a79d72c4879d,4d610aa9f0d14b6c4f8ea2c68a80a79d72c4879d," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-02-12 21:42:03,https://api.github.com/repos/youtube/api-samples/git/commits/8f19573d099cfbb05587f3a2ddd65b36728ec1d3,8f19573d099cfbb05587f3a2ddd65b36728ec1d3," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:15,https://api.github.com/repos/youtube/api-samples/git/commits/be2789e709bfe5ca4f44870f835b5d01b259bbef,be2789e709bfe5ca4f44870f835b5d01b259bbef," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:14,https://api.github.com/repos/youtube/api-samples/git/commits/767d5533bcb47be5f3a285969175b0fb6d07d0a1,767d5533bcb47be5f3a285969175b0fb6d07d0a1," ""Added sample: apps-script/youtube.gs"""
+jeffposnick,2014-01-14 18:54:11,https://api.github.com/repos/youtube/api-samples/git/commits/2b3cc1f558fe120acb25c9bd09ac533693e09e74,2b3cc1f558fe120acb25c9bd09ac533693e09e74," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:11,https://api.github.com/repos/youtube/api-samples/git/commits/06396d15f8c8ed55e2edaef480b7000bea6b4aea,06396d15f8c8ed55e2edaef480b7000bea6b4aea," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:11,https://api.github.com/repos/youtube/api-samples/git/commits/812f77bd2d568a8f6a56b10a8fa4d83edbf2724b,812f77bd2d568a8f6a56b10a8fa4d83edbf2724b," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:10,https://api.github.com/repos/youtube/api-samples/git/commits/634ed391c72be74f0bf88b2c7def9261ddf707c1,634ed391c72be74f0bf88b2c7def9261ddf707c1," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:09,https://api.github.com/repos/youtube/api-samples/git/commits/1190f56f701d327f5347b973b94e0aa06323becb,1190f56f701d327f5347b973b94e0aa06323becb," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:09,https://api.github.com/repos/youtube/api-samples/git/commits/253aca45abbc907667266b7e42e7fccbce4be40c,253aca45abbc907667266b7e42e7fccbce4be40c," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:09,https://api.github.com/repos/youtube/api-samples/git/commits/bedf78927dd59d111dd441aa177c70dfb4b6bb05,bedf78927dd59d111dd441aa177c70dfb4b6bb05," ""Updating samples to reflect recent changes."""
+jeffposnick,2014-01-14 18:54:06,https://api.github.com/repos/youtube/api-samples/git/commits/014674d4f307f6f0ab7947a5dd43064481ab7444,014674d4f307f6f0ab7947a5dd43064481ab7444," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:16:14,https://api.github.com/repos/youtube/api-samples/git/commits/7ad275edbeb31800330f5d8571af32c2e4c0eb26,7ad275edbeb31800330f5d8571af32c2e4c0eb26,Removed files with the old naming format.
+jeffposnick,2013-12-26 22:11:59,https://api.github.com/repos/youtube/api-samples/git/commits/028a2d3b2b15b7d141579209cb6d3b8e59c6abc0,028a2d3b2b15b7d141579209cb6d3b8e59c6abc0," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:59,https://api.github.com/repos/youtube/api-samples/git/commits/88920e478a526d19fab03d4faf5f308aedd1c676,88920e478a526d19fab03d4faf5f308aedd1c676," ""Added sample: dotnet/Search.cs"""
+jeffposnick,2013-12-26 22:11:59,https://api.github.com/repos/youtube/api-samples/git/commits/12faecc596ba4fd3ae314b8875ff7760cb118025,12faecc596ba4fd3ae314b8875ff7760cb118025," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:59,https://api.github.com/repos/youtube/api-samples/git/commits/f49785e69e362bf475372153d3c7560dbba4e914,f49785e69e362bf475372153d3c7560dbba4e914," ""Added sample: dotnet/PlaylistUpdates.cs"""
+jeffposnick,2013-12-26 22:11:59,https://api.github.com/repos/youtube/api-samples/git/commits/97e4339779e8c76cd1f4ba94dc352a69149cd8a1,97e4339779e8c76cd1f4ba94dc352a69149cd8a1," ""Added sample: dotnet/MyUploads.cs"""
+jeffposnick,2013-12-26 22:11:58,https://api.github.com/repos/youtube/api-samples/git/commits/335b2df0a923d384e6b467f00428003368c21fae,335b2df0a923d384e6b467f00428003368c21fae," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:57,https://api.github.com/repos/youtube/api-samples/git/commits/a3cef989447397a644797095b916abf6f54c5ca6,a3cef989447397a644797095b916abf6f54c5ca6," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:56,https://api.github.com/repos/youtube/api-samples/git/commits/277f35b1d8ccfecbff1d7704ffd7627868b2e26c,277f35b1d8ccfecbff1d7704ffd7627868b2e26c," ""Added sample: dotnet/dotnet.csproj"""
+jeffposnick,2013-12-26 22:11:56,https://api.github.com/repos/youtube/api-samples/git/commits/82b0e3a12d26c469d946c53db51718af7d6f764f,82b0e3a12d26c469d946c53db51718af7d6f764f," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:55,https://api.github.com/repos/youtube/api-samples/git/commits/38a88c661d84a69487131c5c162ce94febf50518,38a88c661d84a69487131c5c162ce94febf50518," ""Added sample: dotnet/packages.config"""
+jeffposnick,2013-12-26 22:11:55,https://api.github.com/repos/youtube/api-samples/git/commits/9e5cccd9e687e1d28b623b9a83f57b83eead3766,9e5cccd9e687e1d28b623b9a83f57b83eead3766," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:55,https://api.github.com/repos/youtube/api-samples/git/commits/3775067ee1f28b666c29940f6939fef0fd9f413c,3775067ee1f28b666c29940f6939fef0fd9f413c," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:53,https://api.github.com/repos/youtube/api-samples/git/commits/733838ad5d0f00581c952cdafa78fd28a2987b96,733838ad5d0f00581c952cdafa78fd28a2987b96," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:53,https://api.github.com/repos/youtube/api-samples/git/commits/9cfe42bf670555262284b0a6dfdc0185a7dc9b3d,9cfe42bf670555262284b0a6dfdc0185a7dc9b3d," ""Added sample: dotnet/UploadVideo.cs"""
+jeffposnick,2013-12-26 22:11:52,https://api.github.com/repos/youtube/api-samples/git/commits/72411abb5fe5611737fe155e53987de1d7cd85b6,72411abb5fe5611737fe155e53987de1d7cd85b6," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-26 22:11:52,https://api.github.com/repos/youtube/api-samples/git/commits/fb68776d03586b3cfe4c3b486850f1c2b92c4e73,fb68776d03586b3cfe4c3b486850f1c2b92c4e73," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:38,https://api.github.com/repos/youtube/api-samples/git/commits/b0cc76fa960b2c403c3be32ba0ae31a57793365c,b0cc76fa960b2c403c3be32ba0ae31a57793365c," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:37,https://api.github.com/repos/youtube/api-samples/git/commits/64b38398f09a0410d3b66c021fa15eeda0722602,64b38398f09a0410d3b66c021fa15eeda0722602," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:37,https://api.github.com/repos/youtube/api-samples/git/commits/880c0e25003838464132d0608c0348b914cf14bd,880c0e25003838464132d0608c0348b914cf14bd," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:37,https://api.github.com/repos/youtube/api-samples/git/commits/4f2f826eb2233300b661dff6f3a76a8f7457d4a1,4f2f826eb2233300b661dff6f3a76a8f7457d4a1," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:36,https://api.github.com/repos/youtube/api-samples/git/commits/47b5605dfc0e44f514cb37166eb3f1df80cbd921,47b5605dfc0e44f514cb37166eb3f1df80cbd921," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:35,https://api.github.com/repos/youtube/api-samples/git/commits/c07aff73b22036caebcc535a55fb8c36f6a2e9a4,c07aff73b22036caebcc535a55fb8c36f6a2e9a4," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:33,https://api.github.com/repos/youtube/api-samples/git/commits/eca4b8a9dc25bf8ccbe062d7995afa4ce550b9fb,eca4b8a9dc25bf8ccbe062d7995afa4ce550b9fb," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:32,https://api.github.com/repos/youtube/api-samples/git/commits/78b72a22a58f1495e04aa2fd313bf7aaeef307ea,78b72a22a58f1495e04aa2fd313bf7aaeef307ea," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 22:10:29,https://api.github.com/repos/youtube/api-samples/git/commits/91e812a2ff987cc35c6ec8cf21e9418f2e13572d,91e812a2ff987cc35c6ec8cf21e9418f2e13572d," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:46,https://api.github.com/repos/youtube/api-samples/git/commits/2420a566a6182a1f33a9fc85df28b25e903be1f6,2420a566a6182a1f33a9fc85df28b25e903be1f6," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:45,https://api.github.com/repos/youtube/api-samples/git/commits/3d5d510f5b4fbafbf7d1dbf6387c78302f350b50,3d5d510f5b4fbafbf7d1dbf6387c78302f350b50," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:45,https://api.github.com/repos/youtube/api-samples/git/commits/d9ffc6bf97d8f930bfd2fbafd5eff5315c0ec7d1,d9ffc6bf97d8f930bfd2fbafd5eff5315c0ec7d1," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:44,https://api.github.com/repos/youtube/api-samples/git/commits/642b55ce7842662fba65c005068df2e148aeb46f,642b55ce7842662fba65c005068df2e148aeb46f," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:42,https://api.github.com/repos/youtube/api-samples/git/commits/03d4a19896dec7fc2bfefec587741c561f5cc445,03d4a19896dec7fc2bfefec587741c561f5cc445," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:40,https://api.github.com/repos/youtube/api-samples/git/commits/60b9f02b86b44b31194f9aa48769e95e8d711204,60b9f02b86b44b31194f9aa48769e95e8d711204," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:40,https://api.github.com/repos/youtube/api-samples/git/commits/86b8a6a07c14e839ee395de9efda0b4d1d25a4b5,86b8a6a07c14e839ee395de9efda0b4d1d25a4b5," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:39,https://api.github.com/repos/youtube/api-samples/git/commits/7817863fdf99893ed4a795a3e3455bb62e71b6c7,7817863fdf99893ed4a795a3e3455bb62e71b6c7," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:39,https://api.github.com/repos/youtube/api-samples/git/commits/1a6edb2d92017b3fe503df719df8527a36c4bba1,1a6edb2d92017b3fe503df719df8527a36c4bba1," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-18 20:43:39,https://api.github.com/repos/youtube/api-samples/git/commits/0001ffa949c3e686cb650fea7d1e983f25c4d1a8,0001ffa949c3e686cb650fea7d1e983f25c4d1a8," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:52,https://api.github.com/repos/youtube/api-samples/git/commits/c75690de834bdcded5dc01ec2ae168e600d53478,c75690de834bdcded5dc01ec2ae168e600d53478," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:51,https://api.github.com/repos/youtube/api-samples/git/commits/11e26f08617e72d8af066a60574614e1571bbde5,11e26f08617e72d8af066a60574614e1571bbde5," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:50,https://api.github.com/repos/youtube/api-samples/git/commits/94e681525b0040357464ad86f4eb8df2ecf73f97,94e681525b0040357464ad86f4eb8df2ecf73f97," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:49,https://api.github.com/repos/youtube/api-samples/git/commits/5be49a60678682d111a18754cdc7601620ec5645,5be49a60678682d111a18754cdc7601620ec5645," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:48,https://api.github.com/repos/youtube/api-samples/git/commits/1711a6320c5d3ba097e192faf70b851fe0ec1530,1711a6320c5d3ba097e192faf70b851fe0ec1530," ""Added sample: php/upload_banner.php"""
+jeffposnick,2013-12-16 21:48:48,https://api.github.com/repos/youtube/api-samples/git/commits/c50232bfdec7e8b140e9f68c4d4829d3a764c496,c50232bfdec7e8b140e9f68c4d4829d3a764c496," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:47,https://api.github.com/repos/youtube/api-samples/git/commits/3e52b145b1e2cae2bdbb5a78336bd92ba56e6c67,3e52b145b1e2cae2bdbb5a78336bd92ba56e6c67," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:45,https://api.github.com/repos/youtube/api-samples/git/commits/8f80a085b1eaffa6c5c8bb4786904c77ab81a247,8f80a085b1eaffa6c5c8bb4786904c77ab81a247," ""Updating samples to reflect recent changes."""
+jeffposnick,2013-12-16 21:48:44,https://api.github.com/repos/youtube/api-samples/git/commits/96d04bda411163765f744fd65454fb842878e6aa,96d04bda411163765f744fd65454fb842878e6aa," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2013-12-13 20:33:37,https://api.github.com/repos/youtube/api-samples/git/commits/15f7e0eae39f7ce4144008845a8eed78a6fefce4,15f7e0eae39f7ce4144008845a8eed78a6fefce4," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2013-12-13 20:32:56,https://api.github.com/repos/youtube/api-samples/git/commits/c4fdc5e381df5be6a583c7f58feb5f78a58d384a,c4fdc5e381df5be6a583c7f58feb5f78a58d384a," ""Added sample: php/upload_banner.php"""
+AndyDiamondstein,2013-12-09 19:43:16,https://api.github.com/repos/youtube/api-samples/git/commits/e552ab5145ffd60bcc4a747c898e56aa0b27b880,e552ab5145ffd60bcc4a747c898e56aa0b27b880," ""Updating samples to reflect recent changes."""
+AndyDiamondstein,2013-12-09 18:53:09,https://api.github.com/repos/youtube/api-samples/git/commits/61ad3ae3a734326ff80feac9a534f1a2dcbaf738,61ad3ae3a734326ff80feac9a534f1a2dcbaf738," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/MyUploads.java"""
+AndyDiamondstein,2013-12-09 18:53:08,https://api.github.com/repos/youtube/api-samples/git/commits/ab972ca4cd07fb4ef17ff425bd229de1b6d0bdb2,ab972ca4cd07fb4ef17ff425bd229de1b6d0bdb2," ""Added sample: javascript/search.html"""
+AndyDiamondstein,2013-12-09 18:53:07,https://api.github.com/repos/youtube/api-samples/git/commits/8cc9e48bbee99effa65a3dfb67d7706580e94502,8cc9e48bbee99effa65a3dfb67d7706580e94502," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/PlaylistUpdates.java"""
+AndyDiamondstein,2013-12-09 18:53:06,https://api.github.com/repos/youtube/api-samples/git/commits/095ac316b7a9bd94b0103640bc9e5c13965b7143,095ac316b7a9bd94b0103640bc9e5c13965b7143," ""Added sample: python/like_video.py"""
+AndyDiamondstein,2013-12-09 18:53:06,https://api.github.com/repos/youtube/api-samples/git/commits/39d2fc55773e53bcbd7a62dc05ca2949c587ae1f,39d2fc55773e53bcbd7a62dc05ca2949c587ae1f," ""Added sample: python/yt_analytics_report.py"""
+AndyDiamondstein,2013-12-09 18:53:05,https://api.github.com/repos/youtube/api-samples/git/commits/c9d8e40c5909272e2d5b686324644f615e408838,c9d8e40c5909272e2d5b686324644f615e408838," ""Added sample: javascript/my_uploads.js"""
+AndyDiamondstein,2013-12-09 18:53:05,https://api.github.com/repos/youtube/api-samples/git/commits/50577145596200d4d6af8c5eb5d03a2ceba548f3,50577145596200d4d6af8c5eb5d03a2ceba548f3," ""Added sample: ruby/yt_analytics_report.rb"""
+AndyDiamondstein,2013-12-09 18:53:04,https://api.github.com/repos/youtube/api-samples/git/commits/7d1035f86d349025bf17e19e242a1a0a76f67d79,7d1035f86d349025bf17e19e242a1a0a76f67d79," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/live/ListBroadcasts.java"""
+AndyDiamondstein,2013-12-09 18:53:03,https://api.github.com/repos/youtube/api-samples/git/commits/4c59999ea41cac02f1c15c68efdd118e600f13e3,4c59999ea41cac02f1c15c68efdd118e600f13e3," ""Added sample: javascript/auth.js"""
+AndyDiamondstein,2013-12-09 18:53:02,https://api.github.com/repos/youtube/api-samples/git/commits/bf1d55761a2e3de6f3c4f4dae499602a94e99b7a,bf1d55761a2e3de6f3c4f4dae499602a94e99b7a," ""Added sample: go/post_bulletin.go"""
+AndyDiamondstein,2013-12-09 18:53:02,https://api.github.com/repos/youtube/api-samples/git/commits/a8d398860d473b4a990b31986e2ddf4e87b5611d,a8d398860d473b4a990b31986e2ddf4e87b5611d," ""Added sample: php/search.php"""
+AndyDiamondstein,2013-12-09 18:53:01,https://api.github.com/repos/youtube/api-samples/git/commits/41e69649c6a2980b9ab209cb7b017ba95dfac172,41e69649c6a2980b9ab209cb7b017ba95dfac172," ""Added sample: php/list_broadcasts.php"""
+AndyDiamondstein,2013-12-09 18:53:01,https://api.github.com/repos/youtube/api-samples/git/commits/3e36eaac486803e78774454754262fdc07becb13,3e36eaac486803e78774454754262fdc07becb13," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/AddSubscription.java"""
+AndyDiamondstein,2013-12-09 18:53:00,https://api.github.com/repos/youtube/api-samples/git/commits/a510b034e2b614beda4dbd9d6d6d968e3d23e412,a510b034e2b614beda4dbd9d6d6d968e3d23e412," ""Added sample: dotnet/my_uploads.cs"""
+AndyDiamondstein,2013-12-09 18:52:59,https://api.github.com/repos/youtube/api-samples/git/commits/59d0d13d1b9e7f7b404ba1819dd901335039e911,59d0d13d1b9e7f7b404ba1819dd901335039e911," ""Added sample: python/list_streams.py"""
+AndyDiamondstein,2013-12-09 18:52:59,https://api.github.com/repos/youtube/api-samples/git/commits/7c2b69df48aeeb7e706a9f33aae04e66aa742aed,7c2b69df48aeeb7e706a9f33aae04e66aa742aed," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/UploadThumbnail.java"""
+AndyDiamondstein,2013-12-09 18:52:58,https://api.github.com/repos/youtube/api-samples/git/commits/1657fdc23351e5daedeac5b89888a701c7e77c86,1657fdc23351e5daedeac5b89888a701c7e77c86," ""Added sample: go/search_by_topic.go"""
+AndyDiamondstein,2013-12-09 18:52:57,https://api.github.com/repos/youtube/api-samples/git/commits/a1691bb38a5cb03ee1a76881a79163928dbff686,a1691bb38a5cb03ee1a76881a79163928dbff686," ""Added sample: php/create_broadcast.php"""
+AndyDiamondstein,2013-12-09 18:52:57,https://api.github.com/repos/youtube/api-samples/git/commits/8213bb5320033d9c977e26a879fb462164b244e3,8213bb5320033d9c977e26a879fb462164b244e3," ""Added sample: php/list_streams.php"""
+AndyDiamondstein,2013-12-09 18:52:56,https://api.github.com/repos/youtube/api-samples/git/commits/fc5c6db46f1bc52a04e10397a03092f3017448bd,fc5c6db46f1bc52a04e10397a03092f3017448bd," ""Added sample: python_appengine/search/main.py"""
+AndyDiamondstein,2013-12-09 18:52:56,https://api.github.com/repos/youtube/api-samples/git/commits/c8aacdbd7873f6d3168de0bd4d021a8eca00d00a,c8aacdbd7873f6d3168de0bd4d021a8eca00d00a," ""Added sample: java/README"""
+AndyDiamondstein,2013-12-09 18:52:55,https://api.github.com/repos/youtube/api-samples/git/commits/84d7973da4a7fcc82762d84ee68d8b701212ed4b,84d7973da4a7fcc82762d84ee68d8b701212ed4b," ""Added sample: python/update_video.py"""
+AndyDiamondstein,2013-12-09 18:52:55,https://api.github.com/repos/youtube/api-samples/git/commits/4d8495c1b19e83b4bcacaa62a162fecb2f4809ae,4d8495c1b19e83b4bcacaa62a162fecb2f4809ae," ""Added sample: java/src/main/resources/watermark.jpg"""
+AndyDiamondstein,2013-12-09 18:52:54,https://api.github.com/repos/youtube/api-samples/git/commits/7a98f3059d1adab0ad37d1e8292b28ed0907afd6,7a98f3059d1adab0ad37d1e8292b28ed0907afd6," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/InvideoProgramming.java"""
+AndyDiamondstein,2013-12-09 18:52:53,https://api.github.com/repos/youtube/api-samples/git/commits/a35651642a5c96af0b097662ed297be62e87b6cd,a35651642a5c96af0b097662ed297be62e87b6cd," ""Added sample: go/upload_video.go"""
+AndyDiamondstein,2013-12-09 18:52:52,https://api.github.com/repos/youtube/api-samples/git/commits/1918c718ef99233ff2441c85d27db418ea7d9139,1918c718ef99233ff2441c85d27db418ea7d9139," ""Added sample: python_appengine/user_uploads/app.yaml"""
+AndyDiamondstein,2013-12-09 18:52:52,https://api.github.com/repos/youtube/api-samples/git/commits/df67fceb2ff49479c5983792685bfc2082dec69d,df67fceb2ff49479c5983792685bfc2082dec69d," ""Added sample: javascript/analytics_codelab.html"""
+AndyDiamondstein,2013-12-09 18:52:51,https://api.github.com/repos/youtube/api-samples/git/commits/76fc13ad96560aa9e5df893025967058ddac5739,76fc13ad96560aa9e5df893025967058ddac5739," ""Added sample: python/list_broadcasts.py"""
+AndyDiamondstein,2013-12-09 18:52:51,https://api.github.com/repos/youtube/api-samples/git/commits/b9addf817d61bc359b98efeeb51e69da333cd472,b9addf817d61bc359b98efeeb51e69da333cd472," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/Topics.java"""
+AndyDiamondstein,2013-12-09 18:52:50,https://api.github.com/repos/youtube/api-samples/git/commits/f1e80ee13f2290d00e7d7c4203bb3456508de016,f1e80ee13f2290d00e7d7c4203bb3456508de016," ""Added sample: javascript/analytics_codelab.css"""
+AndyDiamondstein,2013-12-09 18:52:49,https://api.github.com/repos/youtube/api-samples/git/commits/a5d5686c9a64ea15f085fa918221ffa2b7d912c7,a5d5686c9a64ea15f085fa918221ffa2b7d912c7," ""Added sample: javascript/playlist_updates.js"""
+AndyDiamondstein,2013-12-09 18:52:49,https://api.github.com/repos/youtube/api-samples/git/commits/c2a8b386f3eadf448412a9ae2b013ab6595b39d0,c2a8b386f3eadf448412a9ae2b013ab6595b39d0," ""Added sample: dotnet/search.cs"""
+AndyDiamondstein,2013-12-09 18:52:48,https://api.github.com/repos/youtube/api-samples/git/commits/86af1d06bf115cbd855c9ad9fe4ea91c96c8eb0b,86af1d06bf115cbd855c9ad9fe4ea91c96c8eb0b," ""Added sample: javascript/my_uploads.html"""
+AndyDiamondstein,2013-12-09 18:52:48,https://api.github.com/repos/youtube/api-samples/git/commits/02bd8baf3df7945059a55d9a6245340b13db042a,02bd8baf3df7945059a55d9a6245340b13db042a," ""Added sample: php/my_uploads.php"""
+AndyDiamondstein,2013-12-09 18:52:47,https://api.github.com/repos/youtube/api-samples/git/commits/c7d3d3e48f2bb551e70edf2aebe1f518a1e119a8,c7d3d3e48f2bb551e70edf2aebe1f518a1e119a8," ""Added sample: python_appengine/search/app.yaml"""
+AndyDiamondstein,2013-12-09 18:52:47,https://api.github.com/repos/youtube/api-samples/git/commits/125569fe4e1ee44c06bdcdc682b33fa3e3c8b939,125569fe4e1ee44c06bdcdc682b33fa3e3c8b939," ""Added sample: java/src/main/resources/client_secrets.json"""
+AndyDiamondstein,2013-12-09 18:52:46,https://api.github.com/repos/youtube/api-samples/git/commits/0f36811840bead67ad0a86747b6f59d3465ede34,0f36811840bead67ad0a86747b6f59d3465ede34," ""Added sample: ruby/add_subscription.rb"""
+AndyDiamondstein,2013-12-09 18:52:45,https://api.github.com/repos/youtube/api-samples/git/commits/f28bfe568d89343844cf8b499c0c6b217ad89711,f28bfe568d89343844cf8b499c0c6b217ad89711," ""Added sample: ruby/upload_video.rb"""
+AndyDiamondstein,2013-12-09 18:52:45,https://api.github.com/repos/youtube/api-samples/git/commits/11102d3b38c4822cc573a1a44b3f9b25b0bac8f3,11102d3b38c4822cc573a1a44b3f9b25b0bac8f3," ""Added sample: python/create_broadcast.py"""
+AndyDiamondstein,2013-12-09 18:52:44,https://api.github.com/repos/youtube/api-samples/git/commits/ab53f823b72653ed1f1d9a739fa94c4e38298823,ab53f823b72653ed1f1d9a739fa94c4e38298823," ""Added sample: python/upload_banner.py"""
+AndyDiamondstein,2013-12-09 18:52:44,https://api.github.com/repos/youtube/api-samples/git/commits/1d39cd1b106216362a92a80fe798c95b9bd9b035,1d39cd1b106216362a92a80fe798c95b9bd9b035," ""Added sample: ruby/search.rb"""
+AndyDiamondstein,2013-12-09 18:52:43,https://api.github.com/repos/youtube/api-samples/git/commits/00baa9397c5e62d147bf4c6aa363bc1bdff6728a,00baa9397c5e62d147bf4c6aa363bc1bdff6728a," ""Added sample: go/my_uploads.go"""
+AndyDiamondstein,2013-12-09 18:52:43,https://api.github.com/repos/youtube/api-samples/git/commits/629da87507a52ee1c9241179b174c1e1bdcb3c4b,629da87507a52ee1c9241179b174c1e1bdcb3c4b," ""Added sample: javascript/playlist_updates.html"""
+AndyDiamondstein,2013-12-09 18:52:42,https://api.github.com/repos/youtube/api-samples/git/commits/f7c4309f40901920832e30a78c8e3dc74d02dab3,f7c4309f40901920832e30a78c8e3dc74d02dab3," ""Added sample: go/search_by_keyword.go"""
+AndyDiamondstein,2013-12-09 18:52:42,https://api.github.com/repos/youtube/api-samples/git/commits/875a9a1d3b9dd9b7b2c026be814c47c27243c3d6,875a9a1d3b9dd9b7b2c026be814c47c27243c3d6," ""Added sample: python_appengine/user_uploads/index.html"""
+AndyDiamondstein,2013-12-09 18:52:41,https://api.github.com/repos/youtube/api-samples/git/commits/fe97ba6aa253d1e35caea4930edd9c2f37cf6c61,fe97ba6aa253d1e35caea4930edd9c2f37cf6c61," ""Added sample: php/resumable_upload.php"""
+AndyDiamondstein,2013-12-09 18:52:41,https://api.github.com/repos/youtube/api-samples/git/commits/2d4d35745b29fa5114776cb002c379db95131a27,2d4d35745b29fa5114776cb002c379db95131a27," ""Added sample: php/update_video.php"""
+AndyDiamondstein,2013-12-09 18:52:40,https://api.github.com/repos/youtube/api-samples/git/commits/76daecb37a1ce66e410094d051e227ebd2ca2628,76daecb37a1ce66e410094d051e227ebd2ca2628," ""Added sample: python_appengine/search/index.html"""
+AndyDiamondstein,2013-12-09 18:52:40,https://api.github.com/repos/youtube/api-samples/git/commits/19d760d0cf7e1a615206d2942e7564d62a171ecc,19d760d0cf7e1a615206d2942e7564d62a171ecc," ""Added sample: python_appengine/topics/main.py"""
+AndyDiamondstein,2013-12-09 18:52:39,https://api.github.com/repos/youtube/api-samples/git/commits/b3b8fc0b6c9263b62b1b8d11e5480b92ef8a09dc,b3b8fc0b6c9263b62b1b8d11e5480b92ef8a09dc," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/live/ListStreams.java"""
+AndyDiamondstein,2013-12-09 18:52:38,https://api.github.com/repos/youtube/api-samples/git/commits/afdf67379c9870982729b685607760a08c75ae06,afdf67379c9870982729b685607760a08c75ae06," ""Added sample: python/channel_bulletin.py"""
+AndyDiamondstein,2013-12-09 18:52:37,https://api.github.com/repos/youtube/api-samples/git/commits/e1213d2a2d4144a9a3343e1af9ad12c08ca809b5,e1213d2a2d4144a9a3343e1af9ad12c08ca809b5," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/live/CreateBroadcast.java"""
+AndyDiamondstein,2013-12-09 18:52:36,https://api.github.com/repos/youtube/api-samples/git/commits/04091bb1f2f77f8630f497ac9f7a6f25c424f3ba,04091bb1f2f77f8630f497ac9f7a6f25c424f3ba," ""Added sample: python/search.py"""
+AndyDiamondstein,2013-12-09 18:52:36,https://api.github.com/repos/youtube/api-samples/git/commits/d7329574ac2048b49c9fd45ee99e34d3b3ae38cf,d7329574ac2048b49c9fd45ee99e34d3b3ae38cf," ""Added sample: php/playlist_updates.php"""
+AndyDiamondstein,2013-12-09 18:52:35,https://api.github.com/repos/youtube/api-samples/git/commits/830cc513bbb914a51d05eb531b5a306c8a952f0f,830cc513bbb914a51d05eb531b5a306c8a952f0f," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/Search.java"""
+AndyDiamondstein,2013-12-09 18:52:34,https://api.github.com/repos/youtube/api-samples/git/commits/70259416f3f872eeff19936156b3cc7c48e60635,70259416f3f872eeff19936156b3cc7c48e60635," ""Added sample: javascript/my_uploads.css"""
+AndyDiamondstein,2013-12-09 18:52:34,https://api.github.com/repos/youtube/api-samples/git/commits/4e1ff582002d14e159a30346684d7a0f7228ee65,4e1ff582002d14e159a30346684d7a0f7228ee65," ""Added sample: python/upload_thumbnail.py"""
+AndyDiamondstein,2013-12-09 18:52:33,https://api.github.com/repos/youtube/api-samples/git/commits/ccd009ebabb8c6ce8fffebbd05c6d82fc6fd59a7,ccd009ebabb8c6ce8fffebbd05c6d82fc6fd59a7," ""Added sample: java/pom.xml"""
+AndyDiamondstein,2013-12-09 18:52:32,https://api.github.com/repos/youtube/api-samples/git/commits/4b897115d20ebe91a977d5e75d86fd698c734a29,4b897115d20ebe91a977d5e75d86fd698c734a29," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/analytics/YouTubeAnalyticsReports.java"""
+AndyDiamondstein,2013-12-09 18:52:31,https://api.github.com/repos/youtube/api-samples/git/commits/b0661d97ecbeccc4d040e756bb089d5fcb11f706,b0661d97ecbeccc4d040e756bb089d5fcb11f706," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/UpdateVideo.java"""
+AndyDiamondstein,2013-12-09 18:52:30,https://api.github.com/repos/youtube/api-samples/git/commits/8eb962356fb0ba300b2b6aff4f62ac9610bed392,8eb962356fb0ba300b2b6aff4f62ac9610bed392," ""Added sample: java/src/main/resources/youtube.properties"""
+AndyDiamondstein,2013-12-09 18:52:30,https://api.github.com/repos/youtube/api-samples/git/commits/8c6cbe1da3a14ec1ca6d847e224b279098408609,8c6cbe1da3a14ec1ca6d847e224b279098408609," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/ChannelBulletin.java"""
+AndyDiamondstein,2013-12-09 18:52:29,https://api.github.com/repos/youtube/api-samples/git/commits/eb023015f574f0632d828677618a7393b49ec490,eb023015f574f0632d828677618a7393b49ec490," ""Added sample: python/add_subscription.py"""
+AndyDiamondstein,2013-12-09 18:52:28,https://api.github.com/repos/youtube/api-samples/git/commits/a108f19bc6d28bd208e07817dd5d7df24ca17d96,a108f19bc6d28bd208e07817dd5d7df24ca17d96," ""Added sample: ruby/oauth/oauth_util.rb"""
+AndyDiamondstein,2013-12-09 18:52:28,https://api.github.com/repos/youtube/api-samples/git/commits/f395182bf7adbc8d604bb5a95ae43662707d3989,f395182bf7adbc8d604bb5a95ae43662707d3989," ""Added sample: python_appengine/topics/app.yaml"""
+AndyDiamondstein,2013-12-09 18:52:27,https://api.github.com/repos/youtube/api-samples/git/commits/acb6446e4d7eea7c384ea03f4367e545caa860e4,acb6446e4d7eea7c384ea03f4367e545caa860e4," ""Added sample: python/playlist_updates.py"""
+AndyDiamondstein,2013-12-09 18:52:26,https://api.github.com/repos/youtube/api-samples/git/commits/59de295ad22518901a6ad36c1ded996d26ea814e,59de295ad22518901a6ad36c1ded996d26ea814e," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/UploadVideo.java"""
+AndyDiamondstein,2013-12-09 18:52:25,https://api.github.com/repos/youtube/api-samples/git/commits/becd887a3639cf136379edbd9ac36fb3526c4e08,becd887a3639cf136379edbd9ac36fb3526c4e08," ""Added sample: php/add_subscription.php"""
+AndyDiamondstein,2013-12-09 18:52:25,https://api.github.com/repos/youtube/api-samples/git/commits/8a1a9e4df4f93e3f9eeee44419e54461b8425d5d,8a1a9e4df4f93e3f9eeee44419e54461b8425d5d," ""Added sample: php/upload_thumbnail.php"""
+AndyDiamondstein,2013-12-09 18:52:24,https://api.github.com/repos/youtube/api-samples/git/commits/7b74de9c9728cc584b99f8f21109fef8119c40b6,7b74de9c9728cc584b99f8f21109fef8119c40b6," ""Added sample: go/oauth.go"""
+AndyDiamondstein,2013-12-09 18:52:24,https://api.github.com/repos/youtube/api-samples/git/commits/7b1e27325430ac4976ce85d0ee2a356d7173cf96,7b1e27325430ac4976ce85d0ee2a356d7173cf96," ""Added sample: javascript/search.js"""
+AndyDiamondstein,2013-12-09 18:52:23,https://api.github.com/repos/youtube/api-samples/git/commits/e9ae998be24d945c06aa497ea575509a1f190667,e9ae998be24d945c06aa497ea575509a1f190667," ""Added sample: ruby/channel_bulletin.rb"""
+AndyDiamondstein,2013-12-09 18:52:23,https://api.github.com/repos/youtube/api-samples/git/commits/ee2592e83401a5d5d202cd308d9ab4fed057e84e,ee2592e83401a5d5d202cd308d9ab4fed057e84e," ""Added sample: python_appengine/topics/index.html"""
+AndyDiamondstein,2013-12-09 18:52:22,https://api.github.com/repos/youtube/api-samples/git/commits/5684740c7e8262004cd8f94209b9683e0d568e95,5684740c7e8262004cd8f94209b9683e0d568e95," ""Added sample: go/client_secrets.json.sample"""
+AndyDiamondstein,2013-12-09 18:52:22,https://api.github.com/repos/youtube/api-samples/git/commits/bfd7d9dc82c494351ae427a68f33bb9d884899dc,bfd7d9dc82c494351ae427a68f33bb9d884899dc," ""Added sample: python/topics.py"""
+AndyDiamondstein,2013-12-09 18:52:21,https://api.github.com/repos/youtube/api-samples/git/commits/a483ee5c19c72e5e5845340061233fc7a20e426c,a483ee5c19c72e5e5845340061233fc7a20e426c," ""Added sample: java/src/main/resources/sample-video.mp4"""
+AndyDiamondstein,2013-12-09 18:52:20,https://api.github.com/repos/youtube/api-samples/git/commits/ea508edf9598917b46246d14c5425af042850129,ea508edf9598917b46246d14c5425af042850129," ""Added sample: dotnet/upload_video.cs"""
+AndyDiamondstein,2013-12-09 18:52:20,https://api.github.com/repos/youtube/api-samples/git/commits/d18aa5b6aa896a8346b8b760de0c72b22b776574,d18aa5b6aa896a8346b8b760de0c72b22b776574," ""Added sample: ruby/my_uploads.rb"""
+AndyDiamondstein,2013-12-09 18:52:19,https://api.github.com/repos/youtube/api-samples/git/commits/a223edd7128f85e8410a0cd57f28c050b2d6b0a4,a223edd7128f85e8410a0cd57f28c050b2d6b0a4," ""Added sample: python_appengine/user_uploads/main.py"""
+AndyDiamondstein,2013-12-09 18:52:19,https://api.github.com/repos/youtube/api-samples/git/commits/30ee928f9c7944734c813441928b6fcd14099e83,30ee928f9c7944734c813441928b6fcd14099e83," ""Added sample: python/upload_video.py"""
+AndyDiamondstein,2013-12-09 18:52:18,https://api.github.com/repos/youtube/api-samples/git/commits/b333d7cbe9cf6d5f8add4eb596e3db1ad20541dd,b333d7cbe9cf6d5f8add4eb596e3db1ad20541dd," ""Added sample: java/src/main/java/com/google/api/services/samples/youtube/cmdline/Auth.java"""
+AndyDiamondstein,2013-12-09 18:52:17,https://api.github.com/repos/youtube/api-samples/git/commits/1becbcb97cdc5b089b0ff0fe3dd272a77ca3fce5,1becbcb97cdc5b089b0ff0fe3dd272a77ca3fce5," ""Added sample: dotnet/playlist_updates.cs"""
+AndyDiamondstein,2013-12-09 18:52:16,https://api.github.com/repos/youtube/api-samples/git/commits/74c2ef9624a247a5abaea70d64faf6e7d99fb5c7,74c2ef9624a247a5abaea70d64faf6e7d99fb5c7," ""Added sample: python/my_uploads.py"""
+AndyDiamondstein,2013-12-09 18:52:16,https://api.github.com/repos/youtube/api-samples/git/commits/b4a5ff8db55b1aea2cd092e6d422dcc92e741d07,b4a5ff8db55b1aea2cd092e6d422dcc92e741d07," ""Added sample: go/README"""
+AndyDiamondstein,2013-12-09 18:52:15,https://api.github.com/repos/youtube/api-samples/git/commits/eec604e15e7600ba8c237868e1031f52279d741e,eec604e15e7600ba8c237868e1031f52279d741e," ""Added sample: javascript/analytics_codelab.js"""
+AndyDiamondstein,2013-12-09 18:52:14,https://api.github.com/repos/youtube/api-samples/git/commits/3cf79a5815f11f0f3c92949d6ae4771a8a2d592e,3cf79a5815f11f0f3c92949d6ae4771a8a2d592e," ""Added sample: python/add_featured_video.py"""
+AndyDiamondstein,2013-12-09 18:41:41,https://api.github.com/repos/youtube/api-samples/git/commits/52cd7af0baa338205f6edd5af5f93dca0c3267c7,52cd7af0baa338205f6edd5af5f93dca0c3267c7,Initial commit

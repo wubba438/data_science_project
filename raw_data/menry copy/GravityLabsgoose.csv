@@ -1,0 +1,257 @@
+goose,Html Content / Article Extractor in Scala - open sourced from Gravity Labs 
+username,timestamp,url,sha,message
+jiminoc,2012-11-22 01:11:57,https://api.github.com/repos/GravityLabs/goose/git/commits/88567c78a2cd393a8fd1a918cc21312c35c63116,88567c78a2cd393a8fd1a918cc21312c35c63116,"Merge pull request #58 from aurality/upstream
+
+Use line.separator to split Stopwords"
+erraggy,2012-10-18 03:44:11,https://api.github.com/repos/GravityLabs/goose/git/commits/0c2ad1161954b9c0861b2df093bfedbbf14ce34c,0c2ad1161954b9c0861b2df093bfedbbf14ce34c,raising our version to 2.1.22
+erraggy,2012-10-18 03:42:31,https://api.github.com/repos/GravityLabs/goose/git/commits/f973cd4ecc0aa96470f94387ee6ad93a1d491fa3,f973cd4ecc0aa96470f94387ee6ad93a1d491fa3,MAJOR: The changes included in this were made to significantly decrease the number of exceptions thrown as well as increase overall performance with image detection.
+erraggy,2012-10-13 09:30:01,https://api.github.com/repos/GravityLabs/goose/git/commits/d3bd041c4162930a2437a67793d33b6662311b37,d3bd041c4162930a2437a67793d33b6662311b37,Fixed backwards compatibility
+erraggy,2012-10-13 08:25:09,https://api.github.com/repos/GravityLabs/goose/git/commits/3286abbb281b83155ceb7f4a53918b1fbe969525,3286abbb281b83155ceb7f4a53918b1fbe969525,Added the ability to completely override the object responsible for retrieving HTML content for goose to parse.
+aurality,2012-07-10 10:24:32,https://api.github.com/repos/GravityLabs/goose/git/commits/e9f0ebc29cb89b801df1ba801a149442ae5dadfd,e9f0ebc29cb89b801df1ba801a149442ae5dadfd,"Use line.separator from sys.props for newline
+
+Windows converts new lines to \n\r, but the split() is done on ""\n"" so
+all stopwords have a carraige return at the end and all tests fail since
+none of the words are matched."
+erraggy,2012-06-13 03:03:42,https://api.github.com/repos/GravityLabs/goose/git/commits/346cfc89e37ddce6b685ed7fe1edbfa6e29f0260,346cfc89e37ddce6b685ed7fe1edbfa6e29f0260,Somehow having the generic scala.collection._ import cause an java.lang.AbstractMethodError for a call to Set.empty[String]. This removes the wildcard to fix it.
+erraggy,2012-06-12 21:09:47,https://api.github.com/repos/GravityLabs/goose/git/commits/928e898f439b56cd27db72d93d3a98db596a5281,928e898f439b56cd27db72d93d3a98db596a5281,"Issue #56 - Content not extracted from ""article"" tag: Adding 'article' as a possible root element for article content"
+erraggy,2012-04-17 23:13:10,https://api.github.com/repos/GravityLabs/goose/git/commits/739e1b4a30ad3be52361a2357cf8b0917f1222e4,739e1b4a30ad3be52361a2357cf8b0917f1222e4,Now the ImageUtils.fetchEntity will also wrap inner exceptions with the image source (URL) for better logging.
+erraggy,2012-04-17 22:29:36,https://api.github.com/repos/GravityLabs/goose/git/commits/76a9bbdf3e04ebdcd0f8ce49b618a00500d708b2,76a9bbdf3e04ebdcd0f8ce49b618a00500d708b2,"Tightened up our usage of the apache http commons lib by replacing deprecated calls and removed the default request retries from 3 to 0.
+
+Also added a little more improved logging on errors so that the URL should always be written for any exception during a crawl"
+erraggy,2012-04-17 03:13:54,https://api.github.com/repos/GravityLabs/goose/git/commits/620bc4bca1b899820c1a67950bd7471ba6485482,620bc4bca1b899820c1a67950bd7471ba6485482,New version 2.1.15 now includes better error logging and configuable time outs
+erraggy,2012-04-13 00:57:37,https://api.github.com/repos/GravityLabs/goose/git/commits/7d9d4816585d6d86fb192ecb5f378cbaa099534d,7d9d4816585d6d86fb192ecb5f378cbaa099534d,"Merge pull request #53 from amir343/4620db9325f9e6a880cc2d8b64646bdf75b5dd82
+
+Hopefully the last pull request!
+
+Well... for at least this one feature anyway ;-)"
+amir343,2012-04-11 19:07:21,https://api.github.com/repos/GravityLabs/goose/git/commits/4620db9325f9e6a880cc2d8b64646bdf75b5dd82,4620db9325f9e6a880cc2d8b64646bdf75b5dd82,Connection and socket timeouts are configurable now
+erraggy,2012-04-05 00:20:40,https://api.github.com/repos/GravityLabs/goose/git/commits/19c13d5a08a0c79f10e0b00e2002075a323847ad,19c13d5a08a0c79f10e0b00e2002075a323847ad,"MEDIUM: From this point on, goose will only attempt to parse web responses with a 200 (OK) HTTP Status Code
+
+ Also of note: The extraneous akka dependencies and repository have been removed from the pom file. #40 #47"
+erraggy,2012-03-22 23:44:45,https://api.github.com/repos/GravityLabs/goose/git/commits/f0fdff016ad2ce8b6358adc76d0d96a9516f7f9d,f0fdff016ad2ce8b6358adc76d0d96a9516f7f9d,incrementing version
+erraggy,2012-03-22 22:50:39,https://api.github.com/repos/GravityLabs/goose/git/commits/914a2919ab7f752404b3513f7f389b8bf95d7f7e,914a2919ab7f752404b3513f7f389b8bf95d7f7e,"Merge pull request #46 from john-kurkowski/master
+
+Canonicals must be non-empty"
+john-kurkowski,2012-03-22 22:23:55,https://api.github.com/repos/GravityLabs/goose/git/commits/41baa0912c525371c055d4f2092393a8b378d68f,41baa0912c525371c055d4f2092393a8b378d68f,Canonicals must be non-empty
+erraggy,2012-02-24 03:11:19,https://api.github.com/repos/GravityLabs/goose/git/commits/58382756c874edb25f4ff072760b87ce0f52ac05,58382756c874edb25f4ff072760b87ce0f52ac05,MEDIUM: Refactored all Logging be run on singletons and not instances to reduce memory usage and possible memory leaks.
+erraggy,2012-02-13 19:57:14,https://api.github.com/repos/GravityLabs/goose/git/commits/d52f26a1ec6ab72e54612e485491b96aa3913523,d52f26a1ec6ab72e54612e485491b96aa3913523,Extending goose configuration to allow for custom ContentExtractor setting. Also moving to version 2.1.11
+jiminoc,2012-01-09 22:13:10,https://api.github.com/repos/GravityLabs/goose/git/commits/b4ab21fe6a30ccaa6550c38abf9ae5066892da08,b4ab21fe6a30ccaa6550c38abf9ae5066892da08,"Merge pull request #36 from sharat87/patch-1
+
+Fix markdown formatting for bullet points in Readme."
+jiminoc,2012-01-09 21:56:21,https://api.github.com/repos/GravityLabs/goose/git/commits/24cde6e35678eea7ff9d6f54a88ca5209875ff8a,24cde6e35678eea7ff9d6f54a88ca5209875ff8a,"MINOR - adding a couple of domains for known image elements and upgrading how to pull a domain from a url, rolling to 2.1.10"
+erraggy,2012-01-09 16:55:03,https://api.github.com/repos/GravityLabs/goose/git/commits/2a9ea9d72cb3eff58f0dead041b624ec969f4114,2a9ea9d72cb3eff58f0dead041b624ec969f4114,Downgrading jsoup back to 1.5.2 due to memory leak in 1.6.1. Also upping goose to 2.1.9 to reflect this change.
+erraggy,2012-01-07 03:24:04,https://api.github.com/repos/GravityLabs/goose/git/commits/0ed1de8c6d686df38741202a9326370d882d97ff,0ed1de8c6d686df38741202a9326370d882d97ff,Reving up to version 2.1.8 to correct the fact that 2.1.7 was already released outside of github O_o.
+erraggy,2012-01-07 03:11:15,https://api.github.com/repos/GravityLabs/goose/git/commits/a1e12990d89e6e97a89d4766fe55bb00d9e86740,a1e12990d89e6e97a89d4766fe55bb00d9e86740,Reving up to version 2.1.7 to include the latest bug fix
+erraggy,2012-01-07 03:10:13,https://api.github.com/repos/GravityLabs/goose/git/commits/26d53f4112fd031164552ca91d28ca756cc2bd55,26d53f4112fd031164552ca91d28ca756cc2bd55,Fixed html fragments causing 400 bad requests in httpclient by removing them manually
+sharat87,2012-01-02 12:10:37,https://api.github.com/repos/GravityLabs/goose/git/commits/c34be6869c9d8c47c078fd4a838bf58016371c61,c34be6869c9d8c47c078fd4a838bf58016371c61,Fix markdown formatting for bullet points in Readme.
+erraggy,2011-12-12 23:44:53,https://api.github.com/repos/GravityLabs/goose/git/commits/7d8c2c6b1b0a9704c00016ba724a9604450fbbaa,7d8c2c6b1b0a9704c00016ba724a9604450fbbaa,versioning on up to 2.1.6
+erraggy,2011-12-12 23:44:19,https://api.github.com/repos/GravityLabs/goose/git/commits/67cf785c21804a25d32dd3475ae785db336b23af,67cf785c21804a25d32dd3475ae785db336b23af,Removing all null pointer possibilities
+jiminoc,2011-11-19 22:08:29,https://api.github.com/repos/GravityLabs/goose/git/commits/2e01f41425cd5f66755331c20295ca5af86bbfb7,2e01f41425cd5f66755331c20295ca5af86bbfb7,MINOR - adding more Unit Tests for 2 more sites
+jiminoc,2011-11-19 21:46:59,https://api.github.com/repos/GravityLabs/goose/git/commits/f8b6b7ac049d83df393ea5ad3ca69db04b0c0c17,f8b6b7ac049d83df393ea5ad3ca69db04b0c0c17,CLOSES #31 - needed to upgrade badlink test to the latest code for Article
+jiminoc,2011-11-19 21:38:54,https://api.github.com/repos/GravityLabs/goose/git/commits/099923ef69b7578295ecd54d2db371568954d750,099923ef69b7578295ecd54d2db371568954d750,MINOR: Upgrading to JSOUP 1.6.1
+jiminoc,2011-11-19 21:36:33,https://api.github.com/repos/GravityLabs/goose/git/commits/080c413b0dd75492658f4e152bf1fb3da7f2b221,080c413b0dd75492658f4e152bf1fb3da7f2b221,"MINOR - doing some code cleanup/refactoring, extracting out methods and converting vars to vals"
+jiminoc,2011-11-19 21:34:56,https://api.github.com/repos/GravityLabs/goose/git/commits/c2cd55777000bc0ef04f7fa8203b4843ca2f3211,c2cd55777000bc0ef04f7fa8203b4843ca2f3211,MINOR - removing unused code
+jiminoc,2011-11-19 20:52:32,https://api.github.com/repos/GravityLabs/goose/git/commits/c18e0bc60ddb48a66d08ef6817796f67d01d6dec,c18e0bc60ddb48a66d08ef6817796f67d01d6dec,"Closes #32 tulsa site used span's for embedding content, also added error checking around a null pointer exception"
+jiminoc,2011-11-19 19:29:52,https://api.github.com/repos/GravityLabs/goose/git/commits/157a6de759bfd560efc311850f4b366f0e1bc969,157a6de759bfd560efc311850f4b366f0e1bc969,"Merge pull request #30 from dlarochelle/master
+
+Get rid of unnecessary '({' and simplify the code."
+jiminoc,2011-11-09 03:33:04,https://api.github.com/repos/GravityLabs/goose/git/commits/7aaf2af72037c802f64af9d6d04723e6773dcac0,7aaf2af72037c802f64af9d6d04723e6773dcac0,MINOR - rolling 2.1.5
+jiminoc,2011-11-09 03:32:22,https://api.github.com/repos/GravityLabs/goose/git/commits/5b91195dee4204fc2c08f8449993fa8230f0799a,5b91195dee4204fc2c08f8449993fa8230f0799a,MINOR - adding null check
+erraggy,2011-11-02 18:13:40,https://api.github.com/repos/GravityLabs/goose/git/commits/da32e90281cc1e9ea550f7db45a5cf41260de016,da32e90281cc1e9ea550f7db45a5cf41260de016,Modified the HtmlFetcher to not process 404 responses and moved our version to 2.1.4
+jiminoc,2011-10-07 19:40:14,https://api.github.com/repos/GravityLabs/goose/git/commits/875b1e390299651a43af525bf315c28d6b1d70ec,875b1e390299651a43af525bf315c28d6b1d70ec,MINOR - rolling to 2.1.3 - stable
+jiminoc,2011-10-07 04:10:26,https://api.github.com/repos/GravityLabs/goose/git/commits/9fdba377240600ff10a2779222b7ec4c61329010,9fdba377240600ff10a2779222b7ec4c61329010,Adding ability to label common css selectors that should contain the main image we're looking for. This is handy to get near 100% accuracy on image fetching from major sites.
+jiminoc,2011-10-06 20:26:47,https://api.github.com/repos/GravityLabs/goose/git/commits/c93bd6b8233d8d63de65ea2cabb36f5f07178a6d,c93bd6b8233d8d63de65ea2cabb36f5f07178a6d,"Closes #25 - Added a better regex statement around one of the cleanup attributes of the regex, added a unit test that shows passing with the new change."
+jiminoc,2011-10-06 20:05:23,https://api.github.com/repos/GravityLabs/goose/git/commits/e9d83810eec1c50efdfff51e37217bfc2249d7bb,e9d83810eec1c50efdfff51e37217bfc2249d7bb,"Closes #28
+Had to reverse the sibling list before adding it to the topNode -> added a unit test that failed, now passes with the new change."
+erraggy,2011-09-29 18:16:32,https://api.github.com/repos/GravityLabs/goose/git/commits/3164a4af85f413edd1b420b55de36e8e0bcf7fa6,3164a4af85f413edd1b420b55de36e8e0bcf7fa6,Changing the version up to 2.1.2 to include the current fixes.
+erraggy,2011-09-29 18:15:32,https://api.github.com/repos/GravityLabs/goose/git/commits/399ee9e5f01186c3dea1a2a6058003634109dbb0,399ee9e5f01186c3dea1a2a6058003634109dbb0,Fixing unit tests for articles that have changed their primary images.
+erraggy,2011-09-29 18:12:13,https://api.github.com/repos/GravityLabs/goose/git/commits/beff48e1d6c49e7183e17dfde85db9e99028e21d,beff48e1d6c49e7183e17dfde85db9e99028e21d,Moving configs and properties into test resources so as not to conflict consumer libraries.
+jiminoc,2011-09-28 03:39:01,https://api.github.com/repos/GravityLabs/goose/git/commits/5c95a39defb42ec05d36f07a84f3380d190a9842,5c95a39defb42ec05d36f07a84f3380d190a9842,MINOR rolling to 2.1.1
+jiminoc,2011-09-28 03:31:48,https://api.github.com/repos/GravityLabs/goose/git/commits/6e975a11d8d9e27c678e4aba4e45b44e5cd55fb2,6e975a11d8d9e27c678e4aba4e45b44e5cd55fb2,MINOR - updating live unit test
+jiminoc,2011-09-28 03:25:17,https://api.github.com/repos/GravityLabs/goose/git/commits/385835dccab1f6647f3a01f034b71907e0e21ceb,385835dccab1f6647f3a01f034b71907e0e21ceb,"MEDIUM - Updating how we handle Span tags inside paragraphs, added some new unit tests around some of the test cases."
+jiminoc,2011-09-24 21:43:01,https://api.github.com/repos/GravityLabs/goose/git/commits/4611e6ac8d58741d4ad7affc0ffffe12abf1224e,4611e6ac8d58741d4ad7affc0ffffe12abf1224e,Rolling to 2.1.0 updated release
+jiminoc,2011-09-24 21:11:36,https://api.github.com/repos/GravityLabs/goose/git/commits/cf2d369eba75a751cb91dcfc58e524074e94d9bf,cf2d369eba75a751cb91dcfc58e524074e94d9bf,"closes #23 - added ability to set a custom user agent using the following configuration setting
+config.setBrowserUserAgent(""MyCustomMozillaBrowser"")"
+jiminoc,2011-09-24 20:10:57,https://api.github.com/repos/GravityLabs/goose/git/commits/6e6457ebfe364eec7178e6432814f4cc3bf4b747,6e6457ebfe364eec7178e6432814f4cc3bf4b747,MINOR - Adding test for NyTimes and a custom cleaner
+jiminoc,2011-09-24 20:00:17,https://api.github.com/repos/GravityLabs/goose/git/commits/b546c4d7faaee70863cb51ed9278f2475a44db35,b546c4d7faaee70863cb51ed9278f2475a44db35,"MEDIUM - removing Akka Actor as primary crawl item, will come back to refactoring this to a load balanced actor pool for higher throughput"
+jiminoc,2011-09-24 05:03:30,https://api.github.com/repos/GravityLabs/goose/git/commits/e15ae4cd88588ada3a4fcdc4a3ce288f4ac5dadf,e15ae4cd88588ada3a4fcdc4a3ce288f4ac5dadf,MEDIUM - refactoring cleaning up bold/italic/strong tags to not trim significant whitespace when dealing with nested tags
+jiminoc,2011-09-24 03:45:22,https://api.github.com/repos/GravityLabs/goose/git/commits/fd38c9b8b042d5e8486cc8c975221ad6030f947a,fd38c9b8b042d5e8486cc8c975221ad6030f947a,"closes #24
+MAJOR - Refactored the whole way all the Divs are initially scrubbed in the system. This fixes the issue of janksters who do not use Paragraphs to separate text, so we have to rebuild the text while keeping the stucture in place."
+jiminoc,2011-09-23 00:21:55,https://api.github.com/repos/GravityLabs/goose/git/commits/b66bcccf20c310d621a223eedff3205ddb5ec0de,b66bcccf20c310d621a223eedff3205ddb5ec0de,"MAJOR - Upgrading the Image Extractor, refactoring the whole image downloading process including improving performance of re-using already downloaded file information."
+erraggy,2011-08-30 23:13:26,https://api.github.com/repos/GravityLabs/goose/git/commits/0c56de5bdcb1825045b8a12243407418829a8ae1,0c56de5bdcb1825045b8a12243407418829a8ae1,upping to version 2.0.2
+erraggy,2011-08-30 23:11:41,https://api.github.com/repos/GravityLabs/goose/git/commits/9f5e2228404e0a1bde516aa44722ffb87ad32541,9f5e2228404e0a1bde516aa44722ffb87ad32541,upping to version 2.0.2
+erraggy,2011-08-30 23:07:35,https://api.github.com/repos/GravityLabs/goose/git/commits/c363abc40c08dd42a3fba7de8ea000d51bc8e572,c363abc40c08dd42a3fba7de8ea000d51bc8e572,upping to version 2.0.2
+erraggy,2011-08-30 23:05:38,https://api.github.com/repos/GravityLabs/goose/git/commits/caeb387e53f1b82e8a15c5f2be963bef20faf385,caeb387e53f1b82e8a15c5f2be963bef20faf385,REALLY-MINOR: RE-SPelling Additional Data Extraction. Upping to version 2.0.2
+erraggy,2011-08-30 22:33:10,https://api.github.com/repos/GravityLabs/goose/git/commits/eae069a14337ec7b8cd564f19eb8ca666f866555,eae069a14337ec7b8cd564f19eb8ca666f866555,MINOR: RE-enabling Additional Data Extraction. Upping to version 2.0.1
+jiminoc,2011-08-25 03:17:10,https://api.github.com/repos/GravityLabs/goose/git/commits/78d3ea8dbbf1f86dbe5737d8a58b226c116f33e2,78d3ea8dbbf1f86dbe5737d8a58b226c116f33e2,MINOR - refactoring getting the score on a node
+jiminoc,2011-08-25 02:56:24,https://api.github.com/repos/GravityLabs/goose/git/commits/ca813f32aeb53687ec6af0d79ebeb39b90216e33,ca813f32aeb53687ec6af0d79ebeb39b90216e33,MINOR - adding more unit tests static and live
+jiminoc,2011-08-24 23:46:46,https://api.github.com/repos/GravityLabs/goose/git/commits/e0e0f9765c8e2a27037376b7c87bd3df93bfd778,e0e0f9765c8e2a27037376b7c87bd3df93bfd778,MINOR - adding unit test
+jiminoc,2011-08-24 23:31:34,https://api.github.com/repos/GravityLabs/goose/git/commits/d1acfbc6df756fb6fff80b8afc9122eb4a699114,d1acfbc6df756fb6fff80b8afc9122eb4a699114,MEDIUM - Adding new unit tests and refactoring the boost determination
+erraggy,2011-08-24 18:45:25,https://api.github.com/repos/GravityLabs/goose/git/commits/43c838b2e79a1d372be447b2a4c63e55d376b1b7,43c838b2e79a1d372be447b2a4c63e55d376b1b7,merging my changes back into master. funny how not-so-different they were
+jiminoc,2011-08-24 17:39:49,https://api.github.com/repos/GravityLabs/goose/git/commits/f8767de4a33ca1ff3f7d8ee5d47a3a998fdf05b4,f8767de4a33ca1ff3f7d8ee5d47a3a998fdf05b4,"MINOR - Fix for GitHub Issue: #19 - fix for AP hosted article pages, extracting the correct image"
+jiminoc,2011-08-24 02:40:30,https://api.github.com/repos/GravityLabs/goose/git/commits/460be4e1bd52762a600ae74564f4bc980eda642e,460be4e1bd52762a600ae74564f4bc980eda642e,"MEDIUM - refactoring session with mr Bissel, adding some new unit tests, modularizing the addSiblings code"
+jiminoc,2011-08-22 18:47:52,https://api.github.com/repos/GravityLabs/goose/git/commits/37ad0fd285f85bd95e263ec3ef5e282eb848e08d,37ad0fd285f85bd95e263ec3ef5e282eb848e08d,adding null check test for bad urls
+jiminoc,2011-08-21 22:27:59,https://api.github.com/repos/GravityLabs/goose/git/commits/729169386c5fb99fe7473b704d7ae7c74c3007b1,729169386c5fb99fe7473b704d7ae7c74c3007b1,"updating image processing fixes
+and adding in more unit tests"
+jiminoc,2011-08-21 21:39:14,https://api.github.com/repos/GravityLabs/goose/git/commits/a0783deba41f5db649dbdb25287cbe24e9785a23,a0783deba41f5db649dbdb25287cbe24e9785a23,removing while loop -> converting to foreach statement for readability
+jiminoc,2011-08-21 21:34:36,https://api.github.com/repos/GravityLabs/goose/git/commits/302be9e17dd18d47b459b2dba4f791f1d190f39f,302be9e17dd18d47b459b2dba4f791f1d190f39f,updating java example and changing to readme markdown
+jiminoc,2011-08-21 21:03:32,https://api.github.com/repos/GravityLabs/goose/git/commits/e09e4f6f18373ca054bcee33dc0917a57230cb7b,e09e4f6f18373ca054bcee33dc0917a57230cb7b,adding akka conf file placeholder
+jiminoc,2011-08-21 21:02:49,https://api.github.com/repos/GravityLabs/goose/git/commits/4abffdd9f2c85af680ea9319cece84b35bdd3088,4abffdd9f2c85af680ea9319cece84b35bdd3088,Updating readme
+jiminoc,2011-08-21 21:01:36,https://api.github.com/repos/GravityLabs/goose/git/commits/85b3e9bfa3aa8c579537b60903859a0e4b8f1115,85b3e9bfa3aa8c579537b60903859a0e4b8f1115,"Goose 2.0 is going to Scala -> conversion complete
+
+Merge branch 'scalaport'
+
+Conflicts:
+	pom.xml
+	src/test/java/com/jimplush/goose/ConfigurationTestIT.java
+	src/test/java/com/jimplush/goose/GoldSitesTestIT.java
+	src/test/java/com/jimplush/goose/GoldenSuite.java
+	src/test/java/com/jimplush/goose/StaticHTMLTest.java"
+jiminoc,2011-08-21 20:47:57,https://api.github.com/repos/GravityLabs/goose/git/commits/92ca07cbfa215f4051c2be3d2f79518d3afa63cc,92ca07cbfa215f4051c2be3d2f79518d3afa63cc,removing java source files *tears
+jiminoc,2011-08-21 19:42:48,https://api.github.com/repos/GravityLabs/goose/git/commits/06d2546af76060635b608ddfcc32ce744faf676e,06d2546af76060635b608ddfcc32ce744faf676e,updating README file with github friendly markdown
+jiminoc,2011-08-21 19:38:43,https://api.github.com/repos/GravityLabs/goose/git/commits/65eebb6e644d9c4b1ac3d5d04aceb6d90f5e3fe1,65eebb6e644d9c4b1ac3d5d04aceb6d90f5e3fe1,adding license header to all files
+jiminoc,2011-08-21 19:06:30,https://api.github.com/repos/GravityLabs/goose/git/commits/5506ca9c33e740dc591cb932457e821c74ba676e,5506ca9c33e740dc591cb932457e821c74ba676e,"adding more unit tests, and performance tests"
+jiminoc,2011-08-20 03:50:55,https://api.github.com/repos/GravityLabs/goose/git/commits/e7be99ac463950f4a8e13319652655a6a7089923,e7be99ac463950f4a8e13319652655a6a7089923,adding static test for more sites
+jiminoc,2011-08-20 03:37:30,https://api.github.com/repos/GravityLabs/goose/git/commits/5837d934fb04ba682cf41719b7c8f4929a3d5d70,5837d934fb04ba682cf41719b7c8f4929a3d5d70,cleaning up some of the image extraction code
+jiminoc,2011-08-20 00:42:49,https://api.github.com/repos/GravityLabs/goose/git/commits/42252adc75c089349698b2a97f3da582431e44ab,42252adc75c089349698b2a97f3da582431e44ab,adding a Test from Java land that required re-factoring some APIs into goose to extract content
+jiminoc,2011-08-20 00:24:06,https://api.github.com/repos/GravityLabs/goose/git/commits/c45a6fa381404fb0858eea373c736c1ff2bebdb1,c45a6fa381404fb0858eea373c736c1ff2bebdb1,adding static Extraction tests
+jiminoc,2011-08-19 22:44:14,https://api.github.com/repos/GravityLabs/goose/git/commits/b09c304b0c96fa2bb0bbde8677f259440f99cd0c,b09c304b0c96fa2bb0bbde8677f259440f99cd0c,"creating Akka Actor that will do the actual crawling, starting unit test suite"
+jiminoc,2011-08-18 23:01:29,https://api.github.com/repos/GravityLabs/goose/git/commits/821ab17de707b9595c449665168f86e8a51d6e2b,821ab17de707b9595c449665168f86e8a51d6e2b,adding null check for sibling nodes
+jiminoc,2011-08-18 22:39:54,https://api.github.com/repos/GravityLabs/goose/git/commits/02068e2142bcebe06c2bf6e7a44bd3e2907786e4,02068e2142bcebe06c2bf6e7a44bd3e2907786e4,getting image downloading to work
+erraggy,2011-06-14 00:24:48,https://api.github.com/repos/GravityLabs/goose/git/commits/1f222a288062b06bbfdc6e67b8105d835a96ce4c,1f222a288062b06bbfdc6e67b8105d835a96ce4c,Resolving goofy maven issue. it required a new version to fully update.
+erraggy,2011-06-13 21:28:49,https://api.github.com/repos/GravityLabs/goose/git/commits/765927a58f25f052fffc6bae5de2117e2b647b4d,765927a58f25f052fffc6bae5de2117e2b647b4d,"Major: DefaultOutputFormatter#getFormattedText now unescapes HTML including all HTML Entities
+
+Minor: I have begun to convert the usage of DefaultOutputFormatter so that you only use a single method: getFormattedText(Element topNode)
+
+Bug fixes:
+  * clean by class name was too restrictive and removed actual content elements, modified the list of names to only remove classes
+    that end in ""meta"" instead of just containing the word ""meta""
+
+  * Modified DefaultDocumentCleaner#cleanBadTags to only select from within the body element to avoid removing it.
+
+  * Added a helper method for removing nodes to handle cases where the node's parentNode is null (already removed). This was previously
+    throwing an IllegalArgumentException from within jSoup and thus failing the extraction."
+jiminoc,2011-06-11 18:06:35,https://api.github.com/repos/GravityLabs/goose/git/commits/e75e52107f202ebd70845fdd10e1a32dabc2e942,e75e52107f202ebd70845fdd10e1a32dabc2e942,Merge branch 'master' of github.com:jiminoc/goose
+jiminoc,2011-06-11 18:02:25,https://api.github.com/repos/GravityLabs/goose/git/commits/e60e006ed52f413b963b49b63cf394b3ae961fa6,e60e006ed52f413b963b49b63cf394b3ae961fa6,updating readme with new demo location
+erraggy,2011-06-09 21:22:03,https://api.github.com/repos/GravityLabs/goose/git/commits/0085a9c3f21022ad0eea4d8d7a144074ab5fc764,0085a9c3f21022ad0eea4d8d7a144074ab5fc764,upping to version 1.3.14 that adds a new rawHtml field to Article so that the raw/unmodified HTML source string that was retrieved can be accessed later. I have also added sources.jar and javadocs.jar outputs to the pom
+jiminoc,2011-05-27 21:12:29,https://api.github.com/repos/GravityLabs/goose/git/commits/c93e7328baef774d0c70ea86d3eb3a77c69bb1bf,c93e7328baef774d0c70ea86d3eb3a77c69bb1bf,Merge branch 'master' of github.com:jiminoc/goose
+jiminoc,2011-05-27 21:12:24,https://api.github.com/repos/GravityLabs/goose/git/commits/c76cd615e5cbd43dc438a727ea98f8542525bc51,c76cd615e5cbd43dc438a727ea98f8542525bc51,changing dependency to commons-io
+erraggy,2011-05-20 17:36:07,https://api.github.com/repos/GravityLabs/goose/git/commits/b2df43558afdfe2668d8fb855109af4684ce1ab8,b2df43558afdfe2668d8fb855109af4684ce1ab8,upping to version 1.3.13 that contains a minor fix to tag extraction
+erraggy,2011-05-20 05:52:57,https://api.github.com/repos/GravityLabs/goose/git/commits/804d43479da05c41d6b5eed63b9529454dda7d10,804d43479da05c41d6b5eed63b9529454dda7d10,upping to version 1.3.12
+erraggy,2011-05-20 05:40:47,https://api.github.com/repos/GravityLabs/goose/git/commits/654bd1ac23976d1b9e788fa9a0f7d5b862f8d136,654bd1ac23976d1b9e788fa9a0f7d5b862f8d136,"Added a new field/getter/setter to Article to store arbitrary data as defined by the consumer. To populate it, consumers only need to extend AdditionalDataExtractor."
+jiminoc,2011-05-20 00:12:10,https://api.github.com/repos/GravityLabs/goose/git/commits/9ac4e9d36cb538285950f9919f50225ccba996fb,9ac4e9d36cb538285950f9919f50225ccba996fb,updating to 1.3.11
+jiminoc,2011-05-20 00:09:12,https://api.github.com/repos/GravityLabs/goose/git/commits/9a6006488224d7559b454515ba92e658c671a422,9a6006488224d7559b454515ba92e658c671a422,updating msnbc article
+jiminoc,2011-05-20 00:04:13,https://api.github.com/repos/GravityLabs/goose/git/commits/71a4937cc4133090cd65037428d75b8bd6437fce,71a4937cc4133090cd65037428d75b8bd6437fce,adding ignore file
+jiminoc,2011-05-19 23:47:49,https://api.github.com/repos/GravityLabs/goose/git/commits/709af3bd37d3f4679d76de394e8abdf2c2eb9cad,709af3bd37d3f4679d76de394e8abdf2c2eb9cad,"Merge pull request #16 from erraggy/master
+
+Time for Publish Date Extraction Maverick!"
+erraggy,2011-05-19 22:58:09,https://api.github.com/repos/GravityLabs/goose/git/commits/83599a672e668d8ded329b70acebd53eb36f1db4,83599a672e668d8ded329b70acebd53eb36f1db4,extended goose to provide the ability to extract article publish dates and provided a simple example within GoldSitesTest#testWired
+jiminoc,2011-05-19 21:48:25,https://api.github.com/repos/GravityLabs/goose/git/commits/79b637e01132b130be25817884160a78264c2261,79b637e01132b130be25817884160a78264c2261,"Merge pull request #15 from erraggy/master
+
+NEW & Improved! Now with TAGS! -- pull request take two..."
+erraggy,2011-05-19 08:34:09,https://api.github.com/repos/GravityLabs/goose/git/commits/c1c243e679c7999447543e62b12719e4b9053861,c1c243e679c7999447543e62b12719e4b9053861,"exteded goose to also extract an article's tags by matching any element with ""a[rel=tag], a[href*=/tag/]"" and collecting only the unique set of text nodes from those elements. This version is still not ready for primetime as it is collecting tags outside of the actual article's boundaries. The content extraction process still needs more refactoring to allow this to be constrained only to a close perimeter of the topnode and not stray too far."
+jiminoc,2011-05-18 03:16:33,https://api.github.com/repos/GravityLabs/goose/git/commits/fe14ccb657158cc743977f030f7f7105f738779f,fe14ccb657158cc743977f030f7f7105f738779f,"Merge pull request #12 from erraggy/master
+
+Removed the last static Matcher that would cause infreaquent bugs in multithreaded environments"
+erraggy,2011-05-18 03:12:45,https://api.github.com/repos/GravityLabs/goose/git/commits/a9219d0eb438df471ce0869467e00bda731f1343,a9219d0eb438df471ce0869467e00bda731f1343,Removed last remaining static Matcher from source and replaced it with a static Pattern object. Also refactored the GoldSitesTest.java to make it easier to add new tests as well as identify exactly what failed if any failures do occur.
+jiminoc,2011-05-18 00:01:35,https://api.github.com/repos/GravityLabs/goose/git/commits/f0a15a2479ea55c67ea83b33c1e1557df4c2e42e,f0a15a2479ea55c67ea83b33c1e1557df4c2e42e,Merge branch 'master' of github.com:jiminoc/goose
+jiminoc,2011-05-17 23:58:42,https://api.github.com/repos/GravityLabs/goose/git/commits/905e8e7e21df1a824c12ff56849e8174c509dc63,905e8e7e21df1a824c12ff56849e8174c509dc63,rev'ing to 1.3.10
+jiminoc,2011-05-17 23:55:47,https://api.github.com/repos/GravityLabs/goose/git/commits/62253273ec84c3391c9a22d38d628f65cafa83f6,62253273ec84c3391c9a22d38d628f65cafa83f6,"Merge pull request #11 from erraggy/master
+
+Sorry that I introdiced a multithreading bug. Please accept this pull as an appology ;-}"
+erraggy,2011-05-17 23:41:14,https://api.github.com/repos/GravityLabs/goose/git/commits/b1ca9c5cc3dc1bf18880f84b69df123034f8f930,b1ca9c5cc3dc1bf18880f84b69df123034f8f930,Fixed a multithreading bug inside StringReplacement and added a unit test for sanity (although a bit too late now of course)
+jiminoc,2011-05-17 02:52:55,https://api.github.com/repos/GravityLabs/goose/git/commits/6812074305bc9a2cbf4b8dc82a7bd84eaab20ba5,6812074305bc9a2cbf4b8dc82a7bd84eaab20ba5,updating to add back Star Magazine test
+jiminoc,2011-05-17 02:51:52,https://api.github.com/repos/GravityLabs/goose/git/commits/2e5e0d3ce6c965682ceca1d481a44322c21ff508,2e5e0d3ce6c965682ceca1d481a44322c21ff508,Merge branch 'master' of github.com:jiminoc/goose
+jiminoc,2011-05-17 02:39:32,https://api.github.com/repos/GravityLabs/goose/git/commits/ec0fc4f5943ddff2e5eb2d6ad9d614f040dc4b0d,ec0fc4f5943ddff2e5eb2d6ad9d614f040dc4b0d,rev'ing to 1.3.8 with erraggy's performance changes -> 16% performance improvement in parsing
+jiminoc,2011-05-17 02:27:38,https://api.github.com/repos/GravityLabs/goose/git/commits/a0d8d02a51b88b33cf62b862d59a47938b6659e6,a0d8d02a51b88b33cf62b862d59a47938b6659e6,"Merge pull request #10 from erraggy/master
+
+All tests no pass and my first deep pass refactor is complete!"
+erraggy,2011-05-17 02:10:14,https://api.github.com/repos/GravityLabs/goose/git/commits/e33623e288d9939e233da79f680f7213b53e19f8,e33623e288d9939e233da79f680f7213b53e19f8,Final improvements to the existing process. Pull me BRO!!!
+erraggy,2011-05-14 06:16:13,https://api.github.com/repos/GravityLabs/goose/git/commits/1647b6ed108d60e529beff67ebed1d0de09ec0ee,1647b6ed108d60e529beff67ebed1d0de09ec0ee,Not sure... but the pom got jacked-up in IntelliJ IDEA today. Switching to the Github web editor
+erraggy,2011-05-14 01:44:48,https://api.github.com/repos/GravityLabs/goose/git/commits/6342ef62877a6082240539ee214f19a00f989933,6342ef62877a6082240539ee214f19a00f989933,ALL GoldSitesTest PASS!! I guess that I should've read the wiki so as to avoid debugging to find that there was no /opt/goose dir or that ImageMagick was not installed on my dev box. O_o
+erraggy,2011-05-14 00:07:17,https://api.github.com/repos/GravityLabs/goose/git/commits/ca70d5c2a3470664e366e06b50511b2e1458a85b,ca70d5c2a3470664e366e06b50511b2e1458a85b,"Merge remote-tracking branch 'upstream/master'
+Merged and fixed pom.xml dependency block for httpclient
+
+Conflicts:
+	pom.xml"
+erraggy,2011-05-13 23:48:22,https://api.github.com/repos/GravityLabs/goose/git/commits/c72a9444ae3e05ba444b04825013a72a55aae4d1,c72a9444ae3e05ba444b04825013a72a55aae4d1,"deeper pass with multiple optimizations to regex/matcher usages and reduction of string creations
+
+Lots of tests are failing right now (44 succeed out of 64).  All but one fail is due to either no image found or an unexpected image found. One fail (nytimes) is due to a timeout on the HTTP request."
+jiminoc,2011-05-13 17:37:35,https://api.github.com/repos/GravityLabs/goose/git/commits/29b03faaff8f17e4284d630bfbc01f2d262e6a35,29b03faaff8f17e4284d630bfbc01f2d262e6a35,"Merge pull request #9 from softwareresearchwork/master
+
+Minor fix in HTMLFetcher for HTTPS urls"
+jiminoc,2011-05-13 17:33:39,https://api.github.com/repos/GravityLabs/goose/git/commits/197847cf6ae0bb26a7040aa0e59987414f537b7a,197847cf6ae0bb26a7040aa0e59987414f537b7a,updating readme to add how to call goose from the command line
+jiminoc,2011-05-13 17:31:29,https://api.github.com/repos/GravityLabs/goose/git/commits/48828c91fd91fd2edf7d443eaba132c6a644792f,48828c91fd91fd2edf7d443eaba132c6a644792f,"adding a main method to fix https://github.com/jiminoc/goose/issues/4
+
+you can now call goose from the cmd line using the command listed on the wiki
+also added a performance test class so I can make sure things don't get slower as new things are added
+also added a static html test harness to start being able to test algo features faster"
+erraggy,2011-05-13 09:09:46,https://api.github.com/repos/GravityLabs/goose/git/commits/2fa2df1e0ddb4dd99fdee5e987c340f3aca7419a,2fa2df1e0ddb4dd99fdee5e987c340f3aca7419a,first pass for regex optimizations
+jiminoc,2011-05-13 05:44:34,https://api.github.com/repos/GravityLabs/goose/git/commits/fa6706daa01777a407adfd532ca8f14d6051db94,fa6706daa01777a407adfd532ca8f14d6051db94,moving to 1.3.6
+jiminoc,2011-05-13 05:40:32,https://api.github.com/repos/GravityLabs/goose/git/commits/680a0fb08a53f14f7ef35805c7794c0bd4cbe50f,680a0fb08a53f14f7ef35805c7794c0bd4cbe50f,"updating to add a faster stop word routine which in practice was taking up most of the processing time for large documents.
+
+Updated scribd crawling to extract more pure extractions -> they had some malformed html at the beginning of the article. Adding more unit tests"
+jiminoc,2011-05-09 18:41:31,https://api.github.com/repos/GravityLabs/goose/git/commits/215e90e31d64136dc6b8e55eb23a7959f09bbd9c,215e90e31d64136dc6b8e55eb23a7959f09bbd9c,"adding attribution to Steve Kuo, PhD for assistance with the Image Extraction algorithm"
+jiminoc,2011-05-09 18:35:22,https://api.github.com/repos/GravityLabs/goose/git/commits/9226272edc7b5c2f58c8d83d7b08667f87a4a9d1,9226272edc7b5c2f58c8d83d7b08667f87a4a9d1,"got all the unit tests passing again
+
+some sites had changed images, text and templates and switched to new CDN images. All tests should be passing at the time of this commit"
+jiminoc,2011-04-23 21:11:07,https://api.github.com/repos/GravityLabs/goose/git/commits/2deb109cfdd42d651d9faeb3ada774772224a63f,2deb109cfdd42d651d9faeb3ada774772224a63f,rolling 1.3.5
+jiminoc,2011-04-23 21:10:34,https://api.github.com/repos/GravityLabs/goose/git/commits/e1f6b2192a051cee0c10d942dfaee2fd08068557,e1f6b2192a051cee0c10d942dfaee2fd08068557,changing from warning to debug message
+jiminoc,2011-04-23 21:07:21,https://api.github.com/repos/GravityLabs/goose/git/commits/c09c3ecde10525fc7a62dcb3bbe69a37c73f5faf,c09c3ecde10525fc7a62dcb3bbe69a37c73f5faf,rolling 1.3.4
+jiminoc,2011-04-23 21:06:48,https://api.github.com/repos/GravityLabs/goose/git/commits/a4fe6930b1d9b583d7a763bf5d8fb782c79eb3c3,a4fe6930b1d9b583d7a763bf5d8fb782c79eb3c3,adding general exception grabbing
+jiminoc,2011-04-23 18:10:15,https://api.github.com/repos/GravityLabs/goose/git/commits/cc96f149b8b5d9b35e627e44a1885d9abcf67073,cc96f149b8b5d9b35e627e44a1885d9abcf67073,reving 1.3.3
+jiminoc,2011-04-23 18:09:32,https://api.github.com/repos/GravityLabs/goose/git/commits/20e19f82a0cda27540f80f0bc8e148b3b2fd50b5,20e19f82a0cda27540f80f0bc8e148b3b2fd50b5,removing log4j dependency and using slf4j instead
+jiminoc,2011-04-23 16:05:40,https://api.github.com/repos/GravityLabs/goose/git/commits/f1af9711097c2ae0b92a655065f97a412801f733,f1af9711097c2ae0b92a655065f97a412801f733,adding apache2.0 licensing to files and added a LICENSE file
+jiminoc,2011-04-22 21:18:37,https://api.github.com/repos/GravityLabs/goose/git/commits/e6b158b77f6a25413b64032045b9835653605455,e6b158b77f6a25413b64032045b9835653605455,rev'ing to version 1.3.2
+jiminoc,2011-04-22 21:17:19,https://api.github.com/repos/GravityLabs/goose/git/commits/52792962aa37b1dda55d3b6b2d16050b5056d9b0,52792962aa37b1dda55d3b6b2d16050b5056d9b0,removing some throw exception calls when maxbytes or not html links are found those aren't really program errors
+jiminoc,2011-04-22 20:35:44,https://api.github.com/repos/GravityLabs/goose/git/commits/9b7ebd5f276f6e9bce67e3ec5702a64e4a76cf6f,9b7ebd5f276f6e9bce67e3ec5702a64e4a76cf6f,rolling to 1.3.1 and upgrading jsoup to 1.5.2
+jiminoc,2011-04-22 18:18:44,https://api.github.com/repos/GravityLabs/goose/git/commits/2911ea42a92e82334455c9f12cea100f4fdab7a3,2911ea42a92e82334455c9f12cea100f4fdab7a3,removing the stack dump on non-html urls
+jiminoc,2011-04-18 17:21:52,https://api.github.com/repos/GravityLabs/goose/git/commits/510ecd62222a42753c0655a30ab2568d26dd9e4f,510ecd62222a42753c0655a30ab2568d26dd9e4f,rolling to 1.3
+jiminoc,2011-04-18 17:17:35,https://api.github.com/repos/GravityLabs/goose/git/commits/2b50433db57cc53fa44b2a2a0c19e48bcc1f1a8a,2b50433db57cc53fa44b2a2a0c19e48bcc1f1a8a,adding tests
+jiminoc,2011-04-18 17:08:53,https://api.github.com/repos/GravityLabs/goose/git/commits/bcf97a4a5f7b6e0f3bd6becdd4f92d7fb781f338,bcf97a4a5f7b6e0f3bd6becdd4f92d7fb781f338,adding tests for wsj and time
+jiminoc,2011-04-18 16:52:08,https://api.github.com/repos/GravityLabs/goose/git/commits/a22b25b28ee21a4667750900c11675c060e10a83,a22b25b28ee21a4667750900c11675c060e10a83,"changing info calls to debug messages to clean up the log files
+https://github.com/jiminoc/goose/issues/7"
+jiminoc,2011-03-05 18:34:04,https://api.github.com/repos/GravityLabs/goose/git/commits/582392841d3dca208a4aedd8fe26faf0288d042f,582392841d3dca208a4aedd8fe26faf0288d042f,adding support for answerbag.com
+jiminoc,2011-03-05 17:47:48,https://api.github.com/repos/GravityLabs/goose/git/commits/f44538c393c21da75c1a0b05c7f8198476727803,f44538c393c21da75c1a0b05c7f8198476727803,adding support for trails.com
+jiminoc,2011-03-05 17:07:56,https://api.github.com/repos/GravityLabs/goose/git/commits/b17ff302a8f7e02e0ca9c7a8dfd9a811b5d957c7,b17ff302a8f7e02e0ca9c7a8dfd9a811b5d957c7,adding support for gawker sites
+jiminoc,2011-01-25 20:41:40,https://api.github.com/repos/GravityLabs/goose/git/commits/3617b848978c73de04031a32afaddefb7a6980f1,3617b848978c73de04031a32afaddefb7a6980f1,adding unit tests for more sites and also fixing the domain that wasn't being set correctly on the article object
+jiminoc,2011-01-24 21:00:01,https://api.github.com/repos/GravityLabs/goose/git/commits/fde65727227cd76260b1b61949b953d2492a6b07,fde65727227cd76260b1b61949b953d2492a6b07,adding unit tests for more sites
+jiminoc,2011-01-22 23:00:45,https://api.github.com/repos/GravityLabs/goose/git/commits/705095b5e0d77735edf3fc71384763fe2b7b1e60,705095b5e0d77735edf3fc71384763fe2b7b1e60,updating sibling check code to support fix of ny times article with tricky sibling detection based on issue: https://github.com/jiminoc/goose/issues/closed#issue/1
+jiminoc,2011-01-22 22:23:28,https://api.github.com/repos/GravityLabs/goose/git/commits/695aae053bf6cb08439f1940db7ec24bf1b9d1c7,695aae053bf6cb08439f1940db7ec24bf1b9d1c7,updating documentation
+jiminoc,2011-01-22 22:16:45,https://api.github.com/repos/GravityLabs/goose/git/commits/5e9db17d2f771b96090635dcc5f57121eec12e7f,5e9db17d2f771b96090635dcc5f57121eec12e7f,updating readme file
+jiminoc,2011-01-22 22:03:31,https://api.github.com/repos/GravityLabs/goose/git/commits/47716436bff5aaa150fb87427debca2f795e1bec,47716436bff5aaa150fb87427debca2f795e1bec,adding support for configuration object testing
+jiminoc,2011-01-21 18:14:38,https://api.github.com/repos/GravityLabs/goose/git/commits/42a79650d93be3793c815d98a67d4a948512632f,42a79650d93be3793c815d98a67d4a948512632f,updating unit tests
+jiminoc,2011-01-21 17:59:48,https://api.github.com/repos/GravityLabs/goose/git/commits/ba08cad436025999c1ce76fe5ab4398f9d9b9b79,ba08cad436025999c1ce76fe5ab4398f9d9b9b79,"Fix useragent problem
+
+Conflicts:
+
+	src/main/java/eu/ahref/Test.java"
+jiminoc,2011-01-05 05:23:50,https://api.github.com/repos/GravityLabs/goose/git/commits/22815cc68d89c7ad59f4bdcb35472b3e014435c0,22815cc68d89c7ad59f4bdcb35472b3e014435c0,adding new unit tests
+jiminoc,2010-12-30 23:45:19,https://api.github.com/repos/GravityLabs/goose/git/commits/74b05f9ab49c121abce6c0756955523a507fff9e,74b05f9ab49c121abce6c0756955523a507fff9e,adding new unit tests
+jiminoc,2010-12-21 03:50:16,https://api.github.com/repos/GravityLabs/goose/git/commits/6c8d5b5c6d18c6780e5f09dcbf67b8925ec43643,6c8d5b5c6d18c6780e5f09dcbf67b8925ec43643,adding new unit tests
+jiminoc,2010-12-20 21:10:52,https://api.github.com/repos/GravityLabs/goose/git/commits/6e769546e59ed4f79897c3cf68593bf283c47090,6e769546e59ed4f79897c3cf68593bf283c47090,adding more unit tests
+jiminoc,2010-12-20 20:56:24,https://api.github.com/repos/GravityLabs/goose/git/commits/76580ec6af235401c8245b61df198ffd73a6a9a8,76580ec6af235401c8245b61df198ffd73a6a9a8,adding more unit tests
+jiminoc,2010-12-20 19:57:26,https://api.github.com/repos/GravityLabs/goose/git/commits/c7930237a59bebf866e0ea1932f98ff6f17da079,c7930237a59bebf866e0ea1932f98ff6f17da079,adding more unit tests
+jiminoc,2010-12-20 19:15:46,https://api.github.com/repos/GravityLabs/goose/git/commits/b9e00c152856feae568af9a9f1be7ac4d9e7781d,b9e00c152856feae568af9a9f1be7ac4d9e7781d,adding resource releaser
+jiminoc,2010-12-20 17:23:47,https://api.github.com/repos/GravityLabs/goose/git/commits/96afbb215aad62ce63fba76e69167c22ba77c0ae,96afbb215aad62ce63fba76e69167c22ba77c0ae,getting unit tests passing
+jiminoc,2010-12-20 06:19:35,https://api.github.com/repos/GravityLabs/goose/git/commits/faaa60d67157707865dd9c9c8177cf0de5f9c377,faaa60d67157707865dd9c9c8177cf0de5f9c377,adding output formatter
+jiminoc,2010-12-20 05:47:19,https://api.github.com/repos/GravityLabs/goose/git/commits/8dc198ea7a0c5d90aee97576678810b518bc740c,8dc198ea7a0c5d90aee97576678810b518bc740c,adding output formatter
+jiminoc,2010-12-20 05:28:05,https://api.github.com/repos/GravityLabs/goose/git/commits/036fe4732d48b714e51b5b9380d18977eb1aa618,036fe4732d48b714e51b5b9380d18977eb1aa618,adding output formatter
+jiminoc,2010-12-20 05:19:54,https://api.github.com/repos/GravityLabs/goose/git/commits/cd1922b8f26b4a0c4a3341080c15d9ce324fb78c,cd1922b8f26b4a0c4a3341080c15d9ce324fb78c,adding output formatter
+jiminoc,2010-12-20 04:53:16,https://api.github.com/repos/GravityLabs/goose/git/commits/d9a050b11664fc56e14d0f143ed3e2a0ddec6450,d9a050b11664fc56e14d0f143ed3e2a0ddec6450,working on image extractions
+jiminoc,2010-12-20 04:25:20,https://api.github.com/repos/GravityLabs/goose/git/commits/6e1f8a90a3621ffefadb6148d984cc04ccc389f1,6e1f8a90a3621ffefadb6148d984cc04ccc389f1,working on image extractions
+jiminoc,2010-12-20 04:13:32,https://api.github.com/repos/GravityLabs/goose/git/commits/5af808443c305238f9ffc9bd9079a1d7b6e233da,5af808443c305238f9ffc9bd9079a1d7b6e233da,working on image extractions
+jiminoc,2010-12-19 22:02:48,https://api.github.com/repos/GravityLabs/goose/git/commits/5880edc0292fa2a5227382b1cbcdb92a8e573415,5880edc0292fa2a5227382b1cbcdb92a8e573415,working on image extractions
+jiminoc,2010-12-19 20:49:04,https://api.github.com/repos/GravityLabs/goose/git/commits/805ac704210f90ccc70f0a4421dd0905a3672b2d,805ac704210f90ccc70f0a4421dd0905a3672b2d,adding content extraction
+jiminoc,2010-12-19 05:45:01,https://api.github.com/repos/GravityLabs/goose/git/commits/505c63ba00feb2fa9a431b7a0665b7c17216fcab,505c63ba00feb2fa9a431b7a0665b7c17216fcab,adding content extraction
+jiminoc,2010-12-19 05:40:23,https://api.github.com/repos/GravityLabs/goose/git/commits/72b8363946cadf81dd40c5adf4e390a2eb7bd75c,72b8363946cadf81dd40c5adf4e390a2eb7bd75c,adding content extraction
+jiminoc,2010-12-19 05:06:36,https://api.github.com/repos/GravityLabs/goose/git/commits/1e16d21b1094141b5073b634698e5658bf30bb49,1e16d21b1094141b5073b634698e5658bf30bb49,adding more meta content
+jiminoc,2010-12-19 05:04:53,https://api.github.com/repos/GravityLabs/goose/git/commits/77a9a2d275ff88a024bf8bbdf87a2a43419a388e,77a9a2d275ff88a024bf8bbdf87a2a43419a388e,adding more meta content
+jiminoc,2010-12-18 22:21:57,https://api.github.com/repos/GravityLabs/goose/git/commits/5209bbf2260ecd6719c43174d410bf2acb73a80c,5209bbf2260ecd6719c43174d410bf2acb73a80c,adding metakeyword check
+jiminoc,2010-12-18 22:11:25,https://api.github.com/repos/GravityLabs/goose/git/commits/60a5f35f2cf0949f4f6c79cd850780a4902fc69c,60a5f35f2cf0949f4f6c79cd850780a4902fc69c,adding pom
+jiminoc,2010-12-18 22:10:51,https://api.github.com/repos/GravityLabs/goose/git/commits/3324244ea6f68b885c79c1d9fa49fd5984c24d32,3324244ea6f68b885c79c1d9fa49fd5984c24d32,adding title check
+jiminoc,2010-12-18 21:39:41,https://api.github.com/repos/GravityLabs/goose/git/commits/545cbc01918000e6de2eeae6f87a07e4ddfae3e6,545cbc01918000e6de2eeae6f87a07e4ddfae3e6,working on cleaner
+jiminoc,2010-12-17 06:34:06,https://api.github.com/repos/GravityLabs/goose/git/commits/c64fe10b20cac1ce1f3d6c10c21e5bed804f7296,c64fe10b20cac1ce1f3d6c10c21e5bed804f7296,starting work
+jiminoc,2010-12-17 06:22:47,https://api.github.com/repos/GravityLabs/goose/git/commits/4907f8a807803c1aa95c15a86467e8ddd71c7b07,4907f8a807803c1aa95c15a86467e8ddd71c7b07,starting work
+jiminoc,2010-12-16 21:38:01,https://api.github.com/repos/GravityLabs/goose/git/commits/aeda4c62e9dd06b24323b394a96ea5db177cc56a,aeda4c62e9dd06b24323b394a96ea5db177cc56a,starting work
+jiminoc,2010-12-16 18:13:34,https://api.github.com/repos/GravityLabs/goose/git/commits/4c3670b385ef85c9a448528b60655b645baab86f,4c3670b385ef85c9a448528b60655b645baab86f,Initial commit

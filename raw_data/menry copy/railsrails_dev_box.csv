@@ -1,0 +1,424 @@
+rails-dev-box,A virtual machine for Ruby on Rails core development
+username,timestamp,url,sha,message
+fxn,2019-04-21 14:54:54,https://api.github.com/repos/rails/rails-dev-box/git/commits/ac0798a17c7c47c65f5b7716884f3842d611a50b,ac0798a17c7c47c65f5b7716884f3842d611a50b,"Merge pull request #166 from yahonda/ubuntu_1904
+
+Use Ubuntu 19.04"
+yahonda,2019-04-21 06:01:25,https://api.github.com/repos/rails/rails-dev-box/git/commits/d36abf11697c85b4870557321ac1207f2915217a,d36abf11697c85b4870557321ac1207f2915217a,Use Ubuntu 19.04
+fxn,2019-01-23 22:23:08,https://api.github.com/repos/rails/rails-dev-box/git/commits/2c1c2d54906280f21e34dc8edff7e9e67402493b,2c1c2d54906280f21e34dc8edff7e9e67402493b,install Yarn
+fxn,2018-10-26 21:43:42,https://api.github.com/repos/rails/rails-dev-box/git/commits/28d4fce296e12480dc34d65ef2bd3d49be714939,28d4fce296e12480dc34d65ef2bd3d49be714939,"Merge pull request #162 from yahonda/use_utf8mb4
+
+Use the same create database option as Rails Rakefile"
+fxn,2018-10-26 21:19:38,https://api.github.com/repos/rails/rails-dev-box/git/commits/c192cbf824c33368028e8da3a0c4d0f9e3d25f5a,c192cbf824c33368028e8da3a0c4d0f9e3d25f5a,markup
+fxn,2018-10-26 20:59:08,https://api.github.com/repos/rails/rails-dev-box/git/commits/b1612eae89dbe5c31307704b42825522d68b112e,b1612eae89dbe5c31307704b42825522d68b112e,"Merge pull request #161 from yahonda/ubunt1810
+
+Use Ubuntu 18.10"
+yahonda,2018-10-26 17:36:10,https://api.github.com/repos/rails/rails-dev-box/git/commits/eca5927f0431f97bb2bd72e91825709a9c45599e,eca5927f0431f97bb2bd72e91825709a9c45599e,"Use the same create database option as Rails Rakefile
+
+* DEFAULT CHARACTER SET utf8mb4 for MySQL
+
+https://github.com/rails/rails/blob/5431e17733366da1fd10f2cd3039d66a56012683/activerecord/Rakefile#L97-L98
+
+```
+%x( mysql --user=#{config[""arunit""][""username""]} --password=#{config[""arunit""][""password""]} -e ""create DATABASE #{config[""arunit""][""database""]} DEFAULT CHARACTER SET utf8mb4"" )
+%x( mysql --user=#{config[""arunit2""][""username""]} --password=#{config[""arunit2""][""password""]} -e ""create DATABASE #{config[""arunit2""][""database""]} DEFAULT CHARACTER SET utf8mb4"" )
+```
+
+* Do not specify `DEFAULT COLLATE` as Rails Raketask removed
+
+https://github.com/rails/rails/commit/d54d0c95750e2693da495b75ac5fa0280253972d#diff-6c25b8e13c63a297ab5298948548caef
+
+> There should be no ""one size fits all"" collation in MySQL 5.7.
+> Let MySQL server choose the default collation for Active Record
+> unit test databases.
+
+* Use `-E UTF8 -T template0` option for PostgreSQL database
+
+https://github.com/rails/rails/blob/5431e17733366da1fd10f2cd3039d66a56012683/activerecord/Rakefile#L116-L117
+
+```
+%x( createdb -E UTF8 -T template0 #{config[""arunit""][""database""]} )
+%x( createdb -E UTF8 -T template0 #{config[""arunit2""][""database""]} )
+```"
+yahonda,2018-10-26 17:04:26,https://api.github.com/repos/rails/rails-dev-box/git/commits/6a995b15579d57f78fc778755641eb709c9631de,6a995b15579d57f78fc778755641eb709c9631de,Use Ubuntu 18.10
+fxn,2018-09-13 14:45:15,https://api.github.com/repos/rails/rails-dev-box/git/commits/c1d067051962fe6f9d5a8a69fc42982f41d06ef3,c1d067051962fe6f9d5a8a69fc42982f41d06ef3,"Merge pull request #157 from tamarr/master
+
+Adding vagrant version"
+tamarr,2018-09-13 13:28:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/60cfc7b7102136b315390dd599cb774859432015,60cfc7b7102136b315390dd599cb774859432015,Update README.md
+tamarr,2018-07-26 11:04:46,https://api.github.com/repos/rails/rails-dev-box/git/commits/6f14709f284f39205ecb5c66ddfcc55619fe2cc0,6f14709f284f39205ecb5c66ddfcc55619fe2cc0,"Adding vagrant version
+
+installation fails with vagrant 1.x"
+fxn,2018-05-28 10:02:01,https://api.github.com/repos/rails/rails-dev-box/git/commits/0b4421a0c605b49935df134c17c959159c70ea5e,0b4421a0c605b49935df134c17c959159c70ea5e,"Merge pull request #155 from yahonda/use_default_ruby25
+
+Use bundled Ruby 2.5"
+yahonda,2018-05-28 00:20:31,https://api.github.com/repos/rails/rails-dev-box/git/commits/aaa13fde22948f2234b2584894068f08d0c724e3,aaa13fde22948f2234b2584894068f08d0c724e3,"Use bundled Ruby 2.5
+
+Ubuntu 18.04 LTS supports Ruby 2.5 without 3rd party tools.
+https://packages.ubuntu.com/bionic/ruby
+
+`ruby-full` is a Ubuntu package name to install Ruby via apt
+https://launchpad.net/ubuntu/bionic/+package/ruby-full
+https://www.ruby-lang.org/en/documentation/installation/#apt
+
+```ruby
+vagrant@rails-dev-box:~$ ruby -v
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
+vagrant@rails-dev-box:~$ gem -v
+2.7.7
+vagrant@rails-dev-box:~$ bundle -v
+Bundler version 1.16.2
+vagrant@rails-dev-box:~$ which ruby
+/usr/bin/ruby
+vagrant@rails-dev-box:~$ which gem
+/usr/bin/gem
+```"
+fxn,2018-05-05 17:13:09,https://api.github.com/repos/rails/rails-dev-box/git/commits/7cb1f29fcb21bd54460385c890097e38f28d52fb,7cb1f29fcb21bd54460385c890097e38f28d52fb,"install autoconf and libtool
+
+These are necessary packages to be able to compile ffi."
+fxn,2018-04-27 04:13:35,https://api.github.com/repos/rails/rails-dev-box/git/commits/42d042e03f852cf3b85f177f46f8c8a110b752af,42d042e03f852cf3b85f177f46f8c8a110b752af,upgrade the base box to Ubuntu 18.04 [carloszan & fxn]
+fxn,2018-04-04 11:07:42,https://api.github.com/repos/rails/rails-dev-box/git/commits/00c84f2e6490524682b0fbc532d688e1a4c49034,00c84f2e6490524682b0fbc532d688e1a4c49034,"Merge pull request #150 from yahonda/install_popper_utils
+
+Install ""poppler-utils"" to support Active Storage unit test"
+yahonda,2018-04-04 04:57:35,https://api.github.com/repos/rails/rails-dev-box/git/commits/6b0b2f532c85b3aa2b6f1eebac9d2dbd38fa1a1c,6b0b2f532c85b3aa2b6f1eebac9d2dbd38fa1a1c,"Install ""poppler-utils"" to support Active Storage unit test
+
+Refer https://github.com/rails/rails/commit/0b717c20458d12191f479fc693dd1ca1eb11c050"
+fxn,2018-02-13 12:58:38,https://api.github.com/repos/rails/rails-dev-box/git/commits/cdb65c301fb675113a5d15134f738e626989e65d,cdb65c301fb675113a5d15134f738e626989e65d,"Merge pull request #149 from takkanm/fix-ruby-version
+
+fix Ruby version"
+takkanm,2018-02-13 12:43:04,https://api.github.com/repos/rails/rails-dev-box/git/commits/abc6d817273787e68d0b1c425a3d82f88382c7fb,abc6d817273787e68d0b1c425a3d82f88382c7fb,fix Ruby version
+fxn,2018-02-09 00:09:50,https://api.github.com/repos/rails/rails-dev-box/git/commits/d9e7a6d59058ec833c413b638a516d9459d459aa,d9e7a6d59058ec833c413b638a516d9459d459aa,do not upgrade RubyGems
+fxn,2018-02-09 00:00:03,https://api.github.com/repos/rails/rails-dev-box/git/commits/a1e99233933624a257a429d5c4bcb59fc3d46f71,a1e99233933624a257a429d5c4bcb59fc3d46f71,install Ruby 2.5
+fxn,2017-12-13 12:43:21,https://api.github.com/repos/rails/rails-dev-box/git/commits/83efeddf8adfe17ee250e5a03a0d489267bf444e,83efeddf8adfe17ee250e5a03a0d489267bf444e,"Merge pull request #145 from sobrinho/master
+
+Fix syntax highlight for bootstrap.sh"
+sobrinho,2017-12-12 23:48:52,https://api.github.com/repos/rails/rails-dev-box/git/commits/4233a531eea7dcecd38aae75226ef44cef032dab,4233a531eea7dcecd38aae75226ef44cef032dab,"Fix syntax highlight for bootstrap.sh
+
+This will make editors like vim detect bash syntax and not mess with
+fancy stuff like <<<."
+fxn,2017-11-17 22:43:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/46f5600c038efb7183c63e883ad4a29d8640a52a,46f5600c038efb7183c63e883ad4a29d8640a52a,new supported env vars RAILS_DEV_BOX_(RAM|CPUS)
+fxn,2017-11-17 21:26:10,https://api.github.com/repos/rails/rails-dev-box/git/commits/fdd3bfa8987dfa2d413c7748716f57ee692fa826,fdd3bfa8987dfa2d413c7748716f57ee692fa826,adds a couple of FIXMEs to revisit the fs workaround in the future
+fxn,2017-11-17 20:42:38,https://api.github.com/repos/rails/rails-dev-box/git/commits/4dc3b63e8332674f29fdd432200c36f786d3482c,4dc3b63e8332674f29fdd432200c36f786d3482c,"Merge pull request #144 from yahonda/ubuntu_1710
+
+Use Ubuntu 17.10"
+yahonda,2017-11-15 14:02:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/70bd86c68234c1ea041ff90d27388e73740babc2,70bd86c68234c1ea041ff90d27388e73740babc2,"Use Ubuntu 17.10
+
+- Unix username is back to `vagrant`
+- Need to implement workaround for https://bugs.launchpad.net/cloud-images/+bug/1726818
+  ""vagrant artful64 box filesystem too small"""
+fxn,2017-10-23 21:06:41,https://api.github.com/repos/rails/rails-dev-box/git/commits/a5ab5fcaf3bf0e5ea6612dcc6a7dbb4ecdc6d8d6,a5ab5fcaf3bf0e5ea6612dcc6a7dbb4ecdc6d8d6,"Merge pull request #141 from ken1flan/Add_mupdf_ffmpeg
+
+Add MuPDF and FFmpeg"
+ken1flan,2017-10-21 00:55:07,https://api.github.com/repos/rails/rails-dev-box/git/commits/88201c763b1cc6183ad8234edd1bca390671d525,88201c763b1cc6183ad8234edd1bca390671d525,Add FFmpeg
+ken1flan,2017-10-21 00:54:49,https://api.github.com/repos/rails/rails-dev-box/git/commits/84408ced903fafdc6eae6c6d0d07184ca3e7ab10,84408ced903fafdc6eae6c6d0d07184ca3e7ab10,Add MuPDF
+fxn,2017-05-29 06:49:17,https://api.github.com/repos/rails/rails-dev-box/git/commits/98bf011c351a8f71dbb4a015d2a13c509b95be22,98bf011c351a8f71dbb4a015d2a13c509b95be22,"Merge pull request #134 from tjschuck/patch-1
+
+Add log files to gitignore"
+fxn,2017-05-29 06:40:16,https://api.github.com/repos/rails/rails-dev-box/git/commits/b1cfc0cfc406a956fb87644e22129dcb4bb06b2b,b1cfc0cfc406a956fb87644e22129dcb4bb06b2b,"Merge pull request #137 from yahonda/use_1704
+
+Use Ubuntu 17.04"
+yahonda,2017-05-23 21:34:22,https://api.github.com/repos/rails/rails-dev-box/git/commits/9a221ef7e89dc5f01a2fd314b310357d2cee21e0,9a221ef7e89dc5f01a2fd314b310357d2cee21e0,Use Ubuntu 17.04
+tjschuck,2017-03-08 00:39:33,https://api.github.com/repos/rails/rails-dev-box/git/commits/b978d5fee617ce8619cf2e14ced96b529327f13a,b978d5fee617ce8619cf2e14ced96b529327f13a,"Add log files to gitignore
+
+After spinning up the dev box, I ended up with a top-level `ubuntu-yakkety-16.10-cloudimg-console.log` file, dirtying my git stage.  All `.log` files should probably just be ignored."
+fxn,2017-02-17 13:08:46,https://api.github.com/repos/rails/rails-dev-box/git/commits/13ad6e9b323d818f1431d1ec4fa39b549abef54e,13ad6e9b323d818f1431d1ec4fa39b549abef54e,"Merge pull request #133 from yahonda/remove_duplicate_updateing_rubygems
+
+Revert ""Update rubygems to the latest one"""
+yahonda,2017-02-17 13:01:44,https://api.github.com/repos/rails/rails-dev-box/git/commits/4354eb33adfcee3446f6cf16fda5d2d9dee6482e,4354eb33adfcee3446f6cf16fda5d2d9dee6482e,"Revert ""Update rubygems to the latest one""
+
+This reverts commit c17c63082795f5b6e99b3f20a05623ae4f50d976."
+fxn,2017-02-12 12:52:06,https://api.github.com/repos/rails/rails-dev-box/git/commits/4d4eb93cea2ea070a7d056d73395dd015f77f332,4d4eb93cea2ea070a7d056d73395dd015f77f332,provision latest RubyGems
+fxn,2017-02-12 12:22:12,https://api.github.com/repos/rails/rails-dev-box/git/commits/c7f75508c8c869b5f90ae7df06aaeea8847e760d,c7f75508c8c869b5f90ae7df06aaeea8847e760d,"set MySQL password in env variable while provisioning
+
+See the comment in the patch for the rationale.
+
+Closes #132."
+fxn,2017-02-12 12:17:55,https://api.github.com/repos/rails/rails-dev-box/git/commits/a2306e98a8abd7bf5d7b6cdd38b7c83d04eb407d,a2306e98a8abd7bf5d7b6cdd38b7c83d04eb407d,"install dependencies for guides generation in Kindle format
+
+Closes #131."
+fxn,2017-01-31 22:31:13,https://api.github.com/repos/rails/rails-dev-box/git/commits/45dd2adb7ecb29ac3fa8a3f01cdefb55b510c1b2,45dd2adb7ecb29ac3fa8a3f01cdefb55b510c1b2,"Merge pull request #129 from yahonda/ruby24
+
+Use Ruby 2.4"
+yahonda,2017-01-31 01:16:05,https://api.github.com/repos/rails/rails-dev-box/git/commits/c17c63082795f5b6e99b3f20a05623ae4f50d976,c17c63082795f5b6e99b3f20a05623ae4f50d976,"Update rubygems to the latest one
+to address https://github.com/sickill/rainbow/issues/48"
+yahonda,2017-01-31 00:30:22,https://api.github.com/repos/rails/rails-dev-box/git/commits/b41f1b465949165217295a769def5937264d2e0f,b41f1b465949165217295a769def5937264d2e0f,Use Ruby 2.4
+fxn,2017-01-28 23:10:00,https://api.github.com/repos/rails/rails-dev-box/git/commits/f449a512cdb56b2877cb268fe40b7491a06ff9fa,f449a512cdb56b2877cb268fe40b7491a06ff9fa,link to the contributing guide for tips
+fxn,2016-12-21 18:29:10,https://api.github.com/repos/rails/rails-dev-box/git/commits/8b3dea8f0abcf7ce50a45b9d14db3ddf961c614c,8b3dea8f0abcf7ce50a45b9d14db3ddf961c614c,"Merge pull request #127 from kyledecot/patch-1
+
+Removes extra ` from README.md"
+fxn,2016-12-01 09:52:20,https://api.github.com/repos/rails/rails-dev-box/git/commits/3b08b1f415af96076082e5f0549e39d5c56f91e1,3b08b1f415af96076082e5f0549e39d5c56f91e1,Indent some code
+fxn,2016-12-01 09:51:01,https://api.github.com/repos/rails/rails-dev-box/git/commits/03dbf13fe00c3b84c3b0c42d70294d80a59ff750,03dbf13fe00c3b84c3b0c42d70294d80a59ff750,"Merge pull request #125 from oswaldoferreira/master
+
+Add troubleshooting docs with ""vagrant up"" known issue"
+oswaldoferreira,2016-11-30 23:59:25,https://api.github.com/repos/rails/rails-dev-box/git/commits/46bd09cbc32dad55b8e3271cc0ebf1dfab5496da,46bd09cbc32dad55b8e3271cc0ebf1dfab5496da,Add troubleshooting docs with vagrant known issue
+fxn,2016-11-03 08:51:47,https://api.github.com/repos/rails/rails-dev-box/git/commits/711fd9ed68e1c5646cdef08ec106e7323571508d,711fd9ed68e1c5646cdef08ec106e7323571508d,"configure 2GB of RAM [Philipp Fehre & Xavier Noria]
+
+The test suite of Active Record reaches ~850MB in a cold run,
+let's add some safety margin."
+fxn,2016-11-03 07:41:17,https://api.github.com/repos/rails/rails-dev-box/git/commits/17cfc5fb12fc9cdbb68906846a38fef41378e02a,17cfc5fb12fc9cdbb68906846a38fef41378e02a,upgrade base box to Ubuntu 16.10
+fxn,2016-06-19 10:39:01,https://api.github.com/repos/rails/rails-dev-box/git/commits/ca09ddc4f06ef4fe9fb2724e14a3896edb1cd737,ca09ddc4f06ef4fe9fb2724e14a3896edb1cd737,prefer single quotes
+fxn,2016-05-26 06:02:22,https://api.github.com/repos/rails/rails-dev-box/git/commits/71ac7fec4513adc5f8d2d08bce5efd4d868c34ec,71ac7fec4513adc5f8d2d08bce5efd4d868c34ec,"install Blade dependency [closes #118]
+
+Thanks to @meinac for the patch."
+fxn,2016-03-02 22:09:12,https://api.github.com/repos/rails/rails-dev-box/git/commits/bc78dec7b4014b31fdb698c474572aa17ffb13c8,bc78dec7b4014b31fdb698c474572aa17ffb13c8,"let the VM use 1G of RAM and two cores by default
+
+bundle install and some suites were starting to fail with less memory."
+fxn,2016-03-02 21:56:00,https://api.github.com/repos/rails/rails-dev-box/git/commits/39842e196a4d433e5e587d7939a8f41f723dc3cb,39842e196a4d433e5e587d7939a8f41f723dc3cb,upgrade the base box to 15.10
+fxn,2016-03-02 23:02:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/3269b50c3eb831de8c338a2984e00e495fd0a104,3269b50c3eb831de8c338a2984e00e495fd0a104,"Merge pull request #108 from yahonda/add_swap
+
+Add swapfile to avoid `Errno::ENOMEM: Cannot allocate memory - fork(2)`"
+fxn,2016-02-04 07:58:42,https://api.github.com/repos/rails/rails-dev-box/git/commits/033a46c34cc060b119431833fd5dc4e93726a54a,033a46c34cc060b119431833fd5dc4e93726a54a,"Merge pull request #114 from meinac/minor_fix_readme
+
+Minor readme fix"
+meinac,2016-02-04 03:28:42,https://api.github.com/repos/rails/rails-dev-box/git/commits/7eef1b88bf025082aaa72bad9092914b56bef11d,7eef1b88bf025082aaa72bad9092914b56bef11d,Minor readme fix
+fxn,2016-01-10 21:51:54,https://api.github.com/repos/rails/rails-dev-box/git/commits/cdf2bab900a39c16be183f5e6b09681cb6a63250,cdf2bab900a39c16be183f5e6b09681cb6a63250,install Ruby 2.3
+yahonda,2015-08-21 14:37:24,https://api.github.com/repos/rails/rails-dev-box/git/commits/971efc6ebb60c54cff48f29a8b198288ebe73c85,971efc6ebb60c54cff48f29a8b198288ebe73c85,Add swapfile to avoid `Errno::ENOMEM: Cannot allocate memory - fork(2)`
+fxn,2015-06-16 18:25:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/1e0188d23f223e98529cb2b26b90cd8daec5fdc6,1e0188d23f223e98529cb2b26b90cd8daec5fdc6,updates MOTD
+fxn,2015-05-05 21:55:26,https://api.github.com/repos/rails/rails-dev-box/git/commits/f262f96429c06678137e31979003693b153dd7c3,f262f96429c06678137e31979003693b153dd7c3,switch to 64-bit [closes #100]
+fxn,2015-01-24 19:13:27,https://api.github.com/repos/rails/rails-dev-box/git/commits/0262ae7bfba3b3b31cce6a56906c1fcd91912af1,0262ae7bfba3b3b31cce6a56906c1fcd91912af1,"Merge pull request #93 from deivid-rodriguez/patch-1
+
+Match current file structure"
+deivid-rodriguez,2015-01-24 17:14:25,https://api.github.com/repos/rails/rails-dev-box/git/commits/3ca56d1cd365599851f3f4db6933840d5b9bc907,3ca56d1cd365599851f3f4db6933840d5b9bc907,Match current file structure
+fxn,2015-01-14 07:51:14,https://api.github.com/repos/rails/rails-dev-box/git/commits/18784c00195a101f449337b6cca00c63167f1c1e,18784c00195a101f449337b6cca00c63167f1c1e,"edits 4ac4b00
+
+* No need to say ""if you have issues"", this has to be done
+  if working on master.
+
+* Refer to ""the web server"" rather than WEBrick.
+
+* Typography."
+fxn,2015-01-14 07:45:20,https://api.github.com/repos/rails/rails-dev-box/git/commits/77c18cb1fd39a207022bbee29db8e6a8ffb68606,77c18cb1fd39a207022bbee29db8e6a8ffb68606,"Merge pull request #90 from maxArturo/add-port-forwarding-clarification-#89
+
+Update README for port-forwarding clarification"
+maxArturo,2014-12-23 13:04:37,https://api.github.com/repos/rails/rails-dev-box/git/commits/4ac4b00e9a21f021aa5624b26d05d1129f1b08af,4ac4b00e9a21f021aa5624b26d05d1129f1b08af,"Update README for port-forwarding clarification
+
+Often times it's necessary to run WEBrick or any other web server in
+0.0.0.0, instead of 127.0.0.1 which is loopback. Binding to 0.0.0.0
+ensures that the server is accessible in all interfaces and works as
+expected. Many new collaborators can get stuck in this simple hurdle, and
+there is little to no docs on it available."
+rafaelfranca,2015-01-02 19:28:57,https://api.github.com/repos/rails/rails-dev-box/git/commits/8b9e633f90370cf3befb100a96858e6fe67fa707,8b9e633f90370cf3befb100a96858e6fe67fa707,"Merge pull request #92 from Fudoshiki/patch-1
+
+Update README.md"
+Fudoshiki,2015-01-02 19:28:43,https://api.github.com/repos/rails/rails-dev-box/git/commits/0e4e9606f55749dcba05d0584a3ee6d695a63175,0e4e9606f55749dcba05d0584a3ee6d695a63175,Update README.md
+fxn,2015-01-02 18:43:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/a5302949d1fe2d2468209e33f111040662dd6bef,a5302949d1fe2d2468209e33f111040662dd6bef,"Merge pull request #91 from PaBLoX-CL/patch-1
+
+Update to use ruby 2.2.0"
+pablox-cl,2015-01-02 18:40:53,https://api.github.com/repos/rails/rails-dev-box/git/commits/2fcf12eee6ce2469d9988694dcaf07ab5c2c3524,2fcf12eee6ce2469d9988694dcaf07ab5c2c3524,"Update to use ruby 2.2.0
+
+Since rails/rails@3b098b8289ffaa8486f526dc53204123ed581f3, rails requires ruby 2.2.0."
+fxn,2014-11-30 10:39:14,https://api.github.com/repos/rails/rails-dev-box/git/commits/2e69992be4e58083efa3bbb035b8c2ded34796af,2e69992be4e58083efa3bbb035b8c2ded34796af,"Merge pull request #86 from vijaydev/patch-1
+
+fix a very minor typo"
+vijaydev,2014-11-30 10:36:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/3c40c47146d0de3efbad8c31c216da6f256306a0,3c40c47146d0de3efbad8c31c216da6f256306a0,fix a very minor typo
+fxn,2014-10-16 22:17:05,https://api.github.com/repos/rails/rails-dev-box/git/commits/e95e7d73ab575d9b31034ef2e034b238648421f0,e95e7d73ab575d9b31034ef2e034b238648421f0,"complete revamp
+
+This is a complete revamp of the virtual machine. Notable changes:
+
+* Based on Ubuntu 14.04.
+
+* Brightbox packages for Ruby.
+
+* Shell provisioning.
+
+After dealing with Puppet for some time, with modules for apt, concat,
+mysql, postgres, ruby, stdlib, and what not, I had enough. This VM is
+designed for Rails core contributors and we do not need to learn a DSL
+that runs across distros and it is idempotent. It is better for this
+particular virtual machine to have one simple bootstrapping shell
+script that is procedural and anyone can understand and maintain.
+
+Support for VMware and Parallels has been removed because I cannot
+test the new Vagrantfile in these providers. If you really care about
+them for Rails **core** development please send a PR to restore them
+with the updated configuration. (Rails application development is not
+relevant for this VM, please do not send changes motivated by that use
+case.)"
+fxn,2014-09-13 00:39:53,https://api.github.com/repos/rails/rails-dev-box/git/commits/fdf0973e244e4ce542450b3d7b2480eaa17de67b,fdf0973e244e4ce542450b3d7b2480eaa17de67b,"Merge pull request #77 from seuros/master
+
+box update"
+seuros,2014-09-07 12:38:18,https://api.github.com/repos/rails/rails-dev-box/git/commits/b4d9a8ba6e0bc78f8e4776b9046ad522763a0759,b4d9a8ba6e0bc78f8e4776b9046ad522763a0759,Añadido el conejo :rabbit:. (RabbitMQ)
+seuros,2014-09-07 12:11:57,https://api.github.com/repos/rails/rails-dev-box/git/commits/efd312284ad817938bfcb5526d6c59161c029f2c,efd312284ad817938bfcb5526d6c59161c029f2c,Added Redis. Installed with no crash...
+seuros,2014-09-07 12:02:59,https://api.github.com/repos/rails/rails-dev-box/git/commits/3828580880fb81c5bf5ed3a3417a91a6323b4dd2,3828580880fb81c5bf5ed3a3417a91a6323b4dd2,update postgresql version
+seuros,2014-09-07 10:37:04,https://api.github.com/repos/rails/rails-dev-box/git/commits/d64ff839902675589b228d9fac863e24f2030d97,d64ff839902675589b228d9fac863e24f2030d97,bump ruby version
+fxn,2014-07-10 15:19:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/3ac6914dd73eeb2244681ff8ad7abae5721e7aa8,3ac6914dd73eeb2244681ff8ad7abae5721e7aa8,"Merge pull request #75 from eliotsykes/patch-1
+
+Update Ruby version noted in README to 2.1.1"
+eliotsykes,2014-07-10 15:17:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/f64a5ca864997354a7ddc5c4d02487a5371ac2c1,f64a5ca864997354a7ddc5c4d02487a5371ac2c1,"Update Ruby version noted in README to 2.1.1
+
+Ruby version changed to 2.1.1 in this commit, whereas README lists Ruby version as 2.0.0 https://github.com/rails/rails-dev-box/commit/0f2143cd3cc2ab8ec596956ab46e1b34de0724f6"
+fxn,2014-04-29 19:45:33,https://api.github.com/repos/rails/rails-dev-box/git/commits/0f2143cd3cc2ab8ec596956ab46e1b34de0724f6,0f2143cd3cc2ab8ec596956ab46e1b34de0724f6,"Merge pull request #68 from arthurnn/bump-ruby
+
+Bump ruby version on the box"
+arthurnn,2014-04-29 18:19:42,https://api.github.com/repos/rails/rails-dev-box/git/commits/ba72705a2b8d3f575cb8790b58c35f2139fcde58,ba72705a2b8d3f575cb8790b58c35f2139fcde58,Bump ruby version on the box
+fxn,2014-04-25 12:06:48,https://api.github.com/repos/rails/rails-dev-box/git/commits/e877df4d0509dba14ccc392803c30ec2cb54b166,e877df4d0509dba14ccc392803c30ec2cb54b166,"Merge pull request #66 from jasl/parallels-support
+
+Add Parallels Desktop support"
+jasl,2014-04-25 12:04:40,https://api.github.com/repos/rails/rails-dev-box/git/commits/9055254feb3ac5eaec1aaf52888d129b22fbc302,9055254feb3ac5eaec1aaf52888d129b22fbc302,"Update Vagrantfile
+
+correct wrong grammar
+can running => can be running"
+jasl,2014-04-24 19:23:27,https://api.github.com/repos/rails/rails-dev-box/git/commits/fc48e5ae9630867c14f912e2ee1531f6cf21b1df,fc48e5ae9630867c14f912e2ee1531f6cf21b1df,keep running at closed virtual machine window
+jasl,2014-04-24 19:03:17,https://api.github.com/repos/rails/rails-dev-box/git/commits/121003988d7c723f8d23be6dd3297dedf3f5206d,121003988d7c723f8d23be6dd3297dedf3f5206d,add parallels desktop support
+fxn,2014-03-26 21:06:30,https://api.github.com/repos/rails/rails-dev-box/git/commits/83e36f57c798345da5fdd78777625ab926e82fff,83e36f57c798345da5fdd78777625ab926e82fff,set locale-related vars to en_US.UTF-8 [fixes #47]
+fxn,2014-03-26 19:36:16,https://api.github.com/repos/rails/rails-dev-box/git/commits/e757ff774a3114490e3b12cab71dc83a69e9647e,e757ff774a3114490e3b12cab71dc83a69e9647e,document the new rsync mechanism for sharing folders
+fxn,2014-03-22 15:11:19,https://api.github.com/repos/rails/rails-dev-box/git/commits/c79f40cd2c40288ee744f1874a8582fc4705312d,c79f40cd2c40288ee744f1874a8582fc4705312d,rewording
+fxn,2014-03-22 15:09:07,https://api.github.com/repos/rails/rails-dev-box/git/commits/04f745fbee0b62f9f30e162222c7bcb289e08410,04f745fbee0b62f9f30e162222c7bcb289e08410,"document why we provision bundler
+
+References #49."
+fxn,2014-03-22 14:52:37,https://api.github.com/repos/rails/rails-dev-box/git/commits/4ec33d30d09d5d977f90083f2f1130882c54a640,4ec33d30d09d5d977f90083f2f1130882c54a640,"fixes RVM aliasing [closes #62]
+
+Fuzzy aliasing no longer worked here, being more strict."
+fxn,2014-03-22 14:21:29,https://api.github.com/repos/rails/rails-dev-box/git/commits/f29e73ae1f76d2b4436debafeba75e5bb4f77ea2,f29e73ae1f76d2b4436debafeba75e5bb4f77ea2,"Merge pull request #50 from yuvipanda/modeline
+
+Add ruby modeline to Vagrant file"
+fxn,2014-03-09 08:18:41,https://api.github.com/repos/rails/rails-dev-box/git/commits/e36eddceef6e85ea967ad19d4359a9d701deacb8,e36eddceef6e85ea967ad19d4359a9d701deacb8,"Merge pull request #64 from mahipal/add-vmware-fusion-support
+
+Add support for VMWare Fusion."
+paulrex,2014-03-09 04:12:36,https://api.github.com/repos/rails/rails-dev-box/git/commits/df15e904b82ea3eac40188dd6726864822c421f1,df15e904b82ea3eac40188dd6726864822c421f1,Explain VMWare Fusion as alternative to VirtualBox in the README.
+paulrex,2014-03-08 23:59:06,https://api.github.com/repos/rails/rails-dev-box/git/commits/0f1071cbeeafeb3809732add94584d89c52b4f05,0f1071cbeeafeb3809732add94584d89c52b4f05,Add provider-specific config block to support VMWare Fusion.
+fxn,2014-02-28 07:51:47,https://api.github.com/repos/rails/rails-dev-box/git/commits/13f8ff1db9c865cd6956a5db2ec5e722e849188f,13f8ff1db9c865cd6956a5db2ec5e722e849188f,"Merge pull request #63 from garyf/master
+
+for the ruby install, use a ruby patch level known to have a binary"
+garyf,2014-02-28 01:15:23,https://api.github.com/repos/rails/rails-dev-box/git/commits/e5c3e61c238ae22881ec74c010a9752281a3c2af,e5c3e61c238ae22881ec74c010a9752281a3c2af,"for the ruby install, use a ruby patch level known to have a binary"
+fxn,2014-01-27 16:10:51,https://api.github.com/repos/rails/rails-dev-box/git/commits/2417e90ba3cd06af4e8270bbe24db83799b9a381,2417e90ba3cd06af4e8270bbe24db83799b9a381,"Merge pull request #59 from sahilm/readme-on-nfs-synced-folders
+
+Document faster test suites via NFS synced folders"
+sahilm,2014-01-27 16:05:19,https://api.github.com/repos/rails/rails-dev-box/git/commits/81469757bc2b806543797342f585c51039e02eb3,81469757bc2b806543797342f585c51039e02eb3,Document faster test suites via NFS synced folders
+fxn,2014-01-21 13:54:25,https://api.github.com/repos/rails/rails-dev-box/git/commits/be7ae8dcc4aee2d8906b71daba64c69b92f9a7fb,be7ae8dcc4aee2d8906b71daba64c69b92f9a7fb,"fixes RVM provisioning
+
+rvm install 2.0.0 --latest-binary is not working at this moment. This patch
+uses an alternative that does work as of this writing.
+
+References #58."
+rafaelfranca,2014-01-04 04:20:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/cfcdbd60b1b067ea2fb8e7b912adfdfefc7fd8b0,cfcdbd60b1b067ea2fb8e7b912adfdfefc7fd8b0,"Merge pull request #56 from queirozfcom/master
+
+More focus on that little fact"
+rafaelfranca,2014-01-01 15:39:33,https://api.github.com/repos/rails/rails-dev-box/git/commits/7c763eeb6d6fc5ebdb43d1f90807b124706b670c,7c763eeb6d6fc5ebdb43d1f90807b124706b670c,"Upgrade grant databases
+
+Related with https://github.com/rails/rails/pull/13556"
+yuvipanda,2013-10-12 10:53:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/f2a3a45ce26c8cc3e7ed597132dd6c9aebac9d6a,f2a3a45ce26c8cc3e7ed597132dd6c9aebac9d6a,"Add ruby modeline to Vagrant file
+
+Opens up in appropriate mode in Vim and Emacs"
+fxn,2013-09-25 17:44:04,https://api.github.com/repos/rails/rails-dev-box/git/commits/04c6eff82c1288bd3190012f114e99fa92eb972d,04c6eff82c1288bd3190012f114e99fa92eb972d,adds the MIT License [closes #43]
+fxn,2013-09-25 17:32:13,https://api.github.com/repos/rails/rails-dev-box/git/commits/01132d8e55ef69e4275e857a19bcce571d92fafd,01132d8e55ef69e4275e857a19bcce571d92fafd,"Merge pull request #36 from franc/master
+
+update Vagrant docs link href to 1.1 from 1.0"
+fxn,2013-09-25 17:29:10,https://api.github.com/repos/rails/rails-dev-box/git/commits/67fab140cf5f6df4849126acd6619c4602879bb1,67fab140cf5f6df4849126acd6619c4602879bb1,"Merge pull request #40 from rywall/patch-1
+
+Grammar fixes."
+fxn,2013-09-25 10:16:17,https://api.github.com/repos/rails/rails-dev-box/git/commits/09d3ace1774a0a2ba0fb41d0d833fe502a7f17c7,09d3ace1774a0a2ba0fb41d0d833fe502a7f17c7,"Merge pull request #45 from sadfuzzy/patch-1
+
+Update README.md"
+sadfuzzy,2013-09-25 10:14:43,https://api.github.com/repos/rails/rails-dev-box/git/commits/cdfcd34303c60d69a63cc743a8e03df43df2a371,cdfcd34303c60d69a63cc743a8e03df43df2a371,"Update README.md
+
+I think, everybody tries to run
+```
+vagrant up
+```
+with installed 'vagrant' gem, not Application."
+rywall,2013-08-31 02:07:51,https://api.github.com/repos/rails/rails-dev-box/git/commits/f9a9564bf00398344e4a9d677c5a9768937088a2,f9a9564bf00398344e4a9d677c5a9768937088a2,Grammar fixes.
+franc,2013-07-27 17:44:34,https://api.github.com/repos/rails/rails-dev-box/git/commits/c1301f10e368b1642799b82d2eba46e6d1d1c98c,c1301f10e368b1642799b82d2eba46e6d1d1c98c,update link to Vagrant docs for 1.1 from 1.0
+fxn,2013-07-03 20:08:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/97d9eb8d1982077eeae53490d76fc4f842c8bffb,97d9eb8d1982077eeae53490d76fc4f842c8bffb,"documents running bundle install in the recommended workflow [Adam Williams & Xavier Noria], [Closes #30]"
+fxn,2013-07-03 19:56:31,https://api.github.com/repos/rails/rails-dev-box/git/commits/614f5d4c83fbd9a7dafa0759f60305796b7e2836,614f5d4c83fbd9a7dafa0759f60305796b7e2836,Vagrant 1.1+ is now required
+fxn,2013-07-03 19:43:08,https://api.github.com/repos/rails/rails-dev-box/git/commits/407dc73e5743dc522555bad6ff9ce829c4633e1c,407dc73e5743dc522555bad6ff9ce829c4633e1c,revises style from 8e2a841e11a9a92e58175ff7c8a615666217f6e3
+fxn,2013-07-03 19:41:35,https://api.github.com/repos/rails/rails-dev-box/git/commits/ab7d15794611de25a29e0c4d98519f1d97319594,ab7d15794611de25a29e0c4d98519f1d97319594,"Merge pull request #31 from iamjarvo/upgrade_vagrant
+
+Use Vagrant 1.1 configuration api"
+iamjarvo,2013-07-03 03:42:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/8e2a841e11a9a92e58175ff7c8a615666217f6e3,8e2a841e11a9a92e58175ff7c8a615666217f6e3,Use Vagrant 1.1 configuration api
+fxn,2013-05-02 05:49:39,https://api.github.com/repos/rails/rails-dev-box/git/commits/d8b9ab17a293f4de30ff4ee19d73b9ee9f3644b0,d8b9ab17a293f4de30ff4ee19d73b9ee9f3644b0,"Merge pull request #26 from yyyc514/master
+
+rvm should not be considering installed until the bin is in place."
+yyyc514,2013-05-02 05:23:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/0412c41d052c5fd9d2a18946288d98aa1ba378ff,0412c41d052c5fd9d2a18946288d98aa1ba378ff,"rvm should not be considering installed until the bin is in place.  provision failed for me and then would not retry because .rvm existed, yet the install was not complete.  checking for a more completely rvm install should catch this type of thing"
+fxn,2013-04-22 18:29:50,https://api.github.com/repos/rails/rails-dev-box/git/commits/2018e59131c1de0dbae1024dbe21cc778e8a87d3,2018e59131c1de0dbae1024dbe21cc778e8a87d3,"Merge pull request #25 from pnc/master
+
+Add postgres-contrib dependency so that hstore tests can run"
+pnc,2013-04-22 18:07:33,https://api.github.com/repos/rails/rails-dev-box/git/commits/8f3ecfadc65533e38394baf081065b0273dcba88,8f3ecfadc65533e38394baf081065b0273dcba88,Make sure hstore is available for the Postgres tests
+fxn,2013-04-17 23:58:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/54aa7e640891640b7065a0aedf6813b6b61068e5,54aa7e640891640b7065a0aedf6813b6b61068e5,let the README say clearly this VM is not designed for app development
+fxn,2013-03-27 09:19:54,https://api.github.com/repos/rails/rails-dev-box/git/commits/76c2131caaae82cf739a625f2f9ec2851c87b98c,76c2131caaae82cf739a625f2f9ec2851c87b98c,installs Ruby 2.0.0
+fxn,2013-03-27 08:50:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/ade040d52167463ba8bbab645a173fb9e302f4d6,ade040d52167463ba8bbab645a173fb9e302f4d6,enable autolibs in ruby install [fixes #23]
+fxn,2013-03-02 12:26:08,https://api.github.com/repos/rails/rails-dev-box/git/commits/6d07a0e4118a54e4a3789f0dd3a1c490f9e4785c,6d07a0e4118a54e4a3789f0dd3a1c490f9e4785c,"Merge pull request #20 from Treize37/master
+
+Add libyaml-dev dependancy"
+fcarrega,2013-03-02 12:03:07,https://api.github.com/repos/rails/rails-dev-box/git/commits/3ec122b66370199daad482443004e72a34b0d88c,3ec122b66370199daad482443004e72a34b0d88c,Add libyaml-dev dependancy - #19
+fxn,2013-02-24 09:18:10,https://api.github.com/repos/rails/rails-dev-box/git/commits/2f90d534bde9fa73bda3f60d69e6b41aea0f9523,2f90d534bde9fa73bda3f60d69e6b41aea0f9523,"Merge pull request #19 from dominic/patch-1
+
+Use fuzzy matching to set default ruby"
+dominic,2013-02-24 05:21:02,https://api.github.com/repos/rails/rails-dev-box/git/commits/ef2d818f280b54f7df9a7c2ab7b79f0df742fc7e,ef2d818f280b54f7df9a7c2ab7b79f0df742fc7e,Use fuzzy matching when setting default ruby
+fxn,2013-02-22 16:09:56,https://api.github.com/repos/rails/rails-dev-box/git/commits/ee84e77d2d25eb5fc44c2f9609c30b529b9778d6,ee84e77d2d25eb5fc44c2f9609c30b529b9778d6,"Merge pull request #18 from pixeltrix/master
+
+Use less formal language"
+pixeltrix,2013-02-22 13:49:34,https://api.github.com/repos/rails/rails-dev-box/git/commits/edea3fe56b1cf0050ffda52d775f14332224806e,edea3fe56b1cf0050ffda52d775f14332224806e,Update README.md
+fxn,2013-02-22 05:14:20,https://api.github.com/repos/rails/rails-dev-box/git/commits/e5980ef871eec54f059ce46ef93116db0e6bc1ed,e5980ef871eec54f059ce46ef93116db0e6bc1ed,"Merge pull request #17 from benmoss/patch-1
+
+Remove gender specificity"
+benmoss,2013-02-22 03:43:27,https://api.github.com/repos/rails/rails-dev-box/git/commits/dc126dec23d0f2e10746b508eeadb9f9f5224872,dc126dec23d0f2e10746b508eeadb9f9f5224872,Remove gender specificity
+fxn,2013-02-07 21:56:30,https://api.github.com/repos/rails/rails-dev-box/git/commits/e8c06a7a2ae199c91276db514d95c544cb7a861f,e8c06a7a2ae199c91276db514d95c544cb7a861f,"--latest-binary is in rvm stable now, use that one"
+fxn,2013-01-27 21:14:37,https://api.github.com/repos/rails/rails-dev-box/git/commits/a26694cb552d1fd5fd1c9b4481e96df60d023f0d,a26694cb552d1fd5fd1c9b4481e96df60d023f0d,installs Ruby using the rvm executable [Closes #14]
+fxn,2013-01-27 20:29:32,https://api.github.com/repos/rails/rails-dev-box/git/commits/8c36a96b280f187809582c3ed0fb780cc3df244f,8c36a96b280f187809582c3ed0fb780cc3df244f,"set 1.9.3 as default in a more idiomatic way
+
+Thanks to @mpapis for the tip."
+fxn,2013-01-24 08:29:51,https://api.github.com/repos/rails/rails-dev-box/git/commits/4df5df06d053907544104a4e2fa2bceb91c8d22d,4df5df06d053907544104a4e2fa2bceb91c8d22d,simplifies the default Puppet manifest
+fxn,2013-01-23 22:57:05,https://api.github.com/repos/rails/rails-dev-box/git/commits/d5cae277fabb61a3257d9d8480f02d9d3f70a48d,d5cae277fabb61a3257d9d8480f02d9d3f70a48d,"installs 1.9.3 as a RVM binary
+
+With this change we still have the speed of a binary install,
+but getting a much recent patchlevel than the -p0 in Ubuntu."
+fxn,2012-12-08 13:04:51,https://api.github.com/repos/rails/rails-dev-box/git/commits/7dcce35acec1c51b578897c19e81406a0f47adce,7dcce35acec1c51b578897c19e81406a0f47adce,"Merge pull request #11 from TigerWolf/patch-2
+
+Update puppet/modules/postgresql/README.md"
+TigerWolf,2012-12-08 05:23:09,https://api.github.com/repos/rails/rails-dev-box/git/commits/408d5e55c5a7ec7ae8b4b55e989ea0eb1bee5640,408d5e55c5a7ec7ae8b4b55e989ea0eb1bee5640,"Update puppet/modules/postgresql/README.md
+
+Update readme to list correct config setting for acls"
+fxn,2012-09-30 08:24:00,https://api.github.com/repos/rails/rails-dev-box/git/commits/77ce5125b616b4a168ab8f50a254e5b4ef7a331e,77ce5125b616b4a168ab8f50a254e5b4ef7a331e,"installs node.js as ExecJS runtime
+
+The Gemfile generated for new apps has therubyracer commented out
+so you need to edit the Gemfile, and run bundle again, for every
+test application you generate.
+
+ExecJS picks node.js directly if it is installed in the system,
+so new applications just work."
+fxn,2012-09-13 22:54:24,https://api.github.com/repos/rails/rails-dev-box/git/commits/649067626a97ce07bce349b30cef7e55670ac775,649067626a97ce07bce349b30cef7e55670ac775,be robust to existing declarations for common core packages [Fixes #5 and #6]
+fxn,2012-08-24 10:34:23,https://api.github.com/repos/rails/rails-dev-box/git/commits/333dbb7cf5cc88a20f016e540407762d88d562e5,333dbb7cf5cc88a20f016e540407762d88d562e5,"Merge pull request #4 from amaia/postgresql_vagrant_superuser
+
+Add vagrant superuser to postgresql"
+amaia,2012-08-24 09:03:11,https://api.github.com/repos/rails/rails-dev-box/git/commits/725749a4372072f1c3ca0f1774fba32bf0180ef9,725749a4372072f1c3ca0f1774fba32bf0180ef9,add vagrant superuser to postgresql
+fxn,2012-08-19 10:08:23,https://api.github.com/repos/rails/rails-dev-box/git/commits/bbc178b142b147af8a2458a86805d50033f67b76,bbc178b142b147af8a2458a86805d50033f67b76,mentions vagrant status in the VM management tips
+fxn,2012-08-17 20:37:45,https://api.github.com/repos/rails/rails-dev-box/git/commits/9b8d4f27eca1bffdc72d3525a38f9fe622e6f6a7,9b8d4f27eca1bffdc72d3525a38f9fe622e6f6a7,"recommends a workflow, edit in the host, test in the vm
+
+Thanks to @mitchellh for helping in making this choice."
+fxn,2012-08-17 11:59:08,https://api.github.com/repos/rails/rails-dev-box/git/commits/fab86b33f47318ed7dc45250b83972335bce2062,fab86b33f47318ed7dc45250b83972335bce2062,"Merge pull request #3 from simonjefford/patch-1
+
+Ignore ./rails"
+simonjefford,2012-08-17 10:02:50,https://api.github.com/repos/rails/rails-dev-box/git/commits/989c7da0e5380caaad243494ca8ee7dce2a42309,989c7da0e5380caaad243494ca8ee7dce2a42309,"Ignore ./rails
+
+This allows users to have a clone in their rails-dev-box checkout that
+will automatically appear in their /vagrant folder."
+fxn,2012-08-16 07:22:19,https://api.github.com/repos/rails/rails-dev-box/git/commits/c9fad421ce28268516df744028bd413fcc38a1d8,c9fad421ce28268516df744028bd413fcc38a1d8,"rewords the requirements section [Fixes #2]
+
+The preferred way to install Vagrant are system packages, so
+remove the gem install command, and delegate installation
+instructions to the page of Vagrant itself."
+fxn,2012-08-15 14:23:28,https://api.github.com/repos/rails/rails-dev-box/git/commits/0e10c6b9fe41fbe34ce2b2be97ae3a6edc26b2f8,0e10c6b9fe41fbe34ce2b2be97ae3a6edc26b2f8,sets the VM hostname
+fxn,2012-08-15 10:28:40,https://api.github.com/repos/rails/rails-dev-box/git/commits/c47993e47aca5704fe0be0afc77f5a52c1ad1c53,c47993e47aca5704fe0be0afc77f5a52c1ad1c53,documents that the base box is fetched automatically if needed
+fxn,2012-08-15 10:08:52,https://api.github.com/repos/rails/rails-dev-box/git/commits/4b131e6d88814b3be8c66b2d1559ec5a0ab248fc,4b131e6d88814b3be8c66b2d1559ec5a0ab248fc,rewords the README
+fxn,2012-08-15 10:02:09,https://api.github.com/repos/rails/rails-dev-box/git/commits/d075bc94a9778afbcaa2e2681a1cd8e5290e907b,d075bc94a9778afbcaa2e2681a1cd8e5290e907b,documents next steps after building the box
+fxn,2012-08-15 09:56:37,https://api.github.com/repos/rails/rails-dev-box/git/commits/bea56868e420f2caf5f87ec848c5339ed5f5089f,bea56868e420f2caf5f87ec848c5339ed5f5089f,tidies some code
+fxn,2012-08-15 09:50:19,https://api.github.com/repos/rails/rails-dev-box/git/commits/211df985d969abba2f6e4c0668b327346db69682,211df985d969abba2f6e4c0668b327346db69682,"Merge pull request #1 from mlafeldt/config.vm.box_url
+
+Download base box automatically if missing"
+mlafeldt,2012-08-15 09:38:34,https://api.github.com/repos/rails/rails-dev-box/git/commits/3c6244b9af99e14e75766f613ddc6766b9d1b6f9,3c6244b9af99e14e75766f613ddc6766b9d1b6f9,Remove base box info from README
+mlafeldt,2012-08-15 09:31:35,https://api.github.com/repos/rails/rails-dev-box/git/commits/2e921f850881dfc4694683b6ac6d34bbca26a008,2e921f850881dfc4694683b6ac6d34bbca26a008,"Vagrantfile: download precise32 box if missing
+
+The config.vm.box_url setting is described here:
+http://vagrantup.com/v1/docs/config/vm/box_url.html
+
+The result:
+
+	$ vagrant up
+	[default] Box precise32 was not found. Fetching box from specified URL...
+	[vagrant] Downloading with Vagrant::Downloaders::HTTP...
+	[vagrant] Downloading box: http://files.vagrantup.com/precise32.box
+	[vagrant] Extracting box...
+	[vagrant] Verifying box...
+	[vagrant] Cleaning up downloaded box...
+	[default] Importing base box 'precise32'...
+	..."
+fxn,2012-08-14 23:18:00,https://api.github.com/repos/rails/rails-dev-box/git/commits/8cbd03367d660bb2b05967a7eca0231e51b5fe3d,8cbd03367d660bb2b05967a7eca0231e51b5fe3d,initial commit

@@ -1,0 +1,737 @@
+websocket,"A fast, well-tested and widely used WebSocket implementation for Go."
+username,timestamp,url,sha,message
+elithrar,2019-08-25 01:20:11,https://api.github.com/repos/gorilla/websocket/git/commits/c3e18be99d19e6b3e8f1559eea2c161a665c4b6b,c3e18be99d19e6b3e8f1559eea2c161a665c4b6b,Create release-drafter.yml (#538)
+elithrar,2019-08-25 01:17:28,https://api.github.com/repos/gorilla/websocket/git/commits/5b740c29263eb386f33f265561c8262522f19d37,5b740c29263eb386f33f265561c8262522f19d37,"Read Limit Fix (#537)
+
+This fix addresses a potential denial-of-service (DoS) vector that can cause an integer overflow in the presence of malicious WebSocket frames.
+
+The fix adds additional checks against the remaining bytes on a connection, as well as a test to prevent regression.
+
+Credit to Max Justicz (https://justi.cz/) for discovering and reporting this, as well as providing a robust PoC and review.
+
+* build: go.mod to go1.12
+* bugfix: fix DoS vector caused by readLimit bypass
+* test: update TestReadLimit sub-test
+* bugfix: payload length 127 should read bytes as uint64
+* bugfix: defend against readLength overflows"
+xiaobogaga,2019-08-23 13:05:46,https://api.github.com/repos/gorilla/websocket/git/commits/7e9819d926e9f51e09eabe119b6d78f94e058c44,7e9819d926e9f51e09eabe119b6d78f94e058c44,fix typos (#532)
+elithrar,2019-06-29 18:55:28,https://api.github.com/repos/gorilla/websocket/git/commits/ae1634f6a98965ded3b8789c626cb4e0bd78c3de,ae1634f6a98965ded3b8789c626cb4e0bd78c3de,"Create CircleCI config.yml (#519)
+
+* Create config.yml
+* Delete .travis.yml
+* Added CircleCI badge to README
+* Add golint; run on latest only"
+jetzlstorfer,2019-04-27 04:03:06,https://api.github.com/repos/gorilla/websocket/git/commits/80c2d40e9b91f2ef7a9c1a403aeec64d1b89a9a6,80c2d40e9b91f2ef7a9c1a403aeec64d1b89a9a6,fix autobahn test suite link (#503)
+tariq1890,2019-04-27 04:02:11,https://api.github.com/repos/gorilla/websocket/git/commits/6a67f44b69004415802d2e678e483065b8fff6c8,6a67f44b69004415802d2e678e483065b8fff6c8,remove redundant err!=nil check in conn.go Close method (#505)
+garyburd,2019-03-06 00:42:57,https://api.github.com/repos/gorilla/websocket/git/commits/0ec3d1bd7fe50c503d6df98ee649d81f4857c564,0ec3d1bd7fe50c503d6df98ee649d81f4857c564,Fix typo
+thedevsaddam,2018-12-18 07:24:45,https://api.github.com/repos/gorilla/websocket/git/commits/7c8e298727d149d7c329b4dec7e94e1932ac5c11,7c8e298727d149d7c329b4dec7e94e1932ac5c11,Add support for go-module
+ankur0493,2018-12-06 07:02:39,https://api.github.com/repos/gorilla/websocket/git/commits/95ba29eb981bbb27d92e1f70bf8a1949452d926b,95ba29eb981bbb27d92e1f70bf8a1949452d926b,"Updated autobahn test suite URL 
+
+Fixes #436"
+kanozec,2018-10-30 14:45:53,https://api.github.com/repos/gorilla/websocket/git/commits/483fb8d7c32fcb4b5636cd293a92e3935932e2f4,483fb8d7c32fcb4b5636cd293a92e3935932e2f4,"Add ""in bytes"" to sizes in documentation"
+jeffallen,2018-10-12 02:01:31,https://api.github.com/repos/gorilla/websocket/git/commits/76e4896901ef89d253d69b528d3701dd146fe2ae,76e4896901ef89d253d69b528d3701dd146fe2ae,"Fix formatting problem in the docs. (#435)
+
+Sorry for the dumbest PR ever, but this tiny addition of a period changes the formatting of this sentence from a header to a regular paragraph in godoc."
+mafredri,2018-08-25 15:15:06,https://api.github.com/repos/gorilla/websocket/git/commits/66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d,66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d,"Move context to first parameter in DialContext
+
+Follows best practice and pkg/context documentation:
+
+> The Context should be the first parameter, typically named ctx"
+juliens,2018-08-24 20:45:12,https://api.github.com/repos/gorilla/websocket/git/commits/ceae45234aa08314ede799370e6b63491f34b38c,ceae45234aa08314ede799370e6b63491f34b38c,Add context in the Dialer
+adamdecaf,2018-08-22 21:10:37,https://api.github.com/repos/gorilla/websocket/git/commits/5fb94172f40023670f9b65a617cdc3496062080c,5fb94172f40023670f9b65a617cdc3496062080c,"drop Go versions prior to 1.7 in CI
+
+* drop Go versions prior to 1.7 in CI
+
+* consolidate conn*.go files after dropping old Go support"
+elithrar,2018-06-05 20:25:52,https://api.github.com/repos/gorilla/websocket/git/commits/5ed622c449da6d44c3c8329331ff47a9e5844f71,5ed622c449da6d44c3c8329331ff47a9e5844f71,Update LICENSE file to reflect Google employee contributions.
+kisielk,2018-05-29 01:35:52,https://api.github.com/repos/gorilla/websocket/git/commits/c17c80cb48b806045fc338c94c849909a2e41c12,c17c80cb48b806045fc338c94c849909a2e41c12,"Merge pull request #385 from dottyjones/master
+
+Add test for handshake deadline"
+garyburd,2018-04-20 17:16:12,https://api.github.com/repos/gorilla/websocket/git/commits/21ab95fa12b9bdd8fecf5fa3586aad941cc98785,21ab95fa12b9bdd8fecf5fa3586aad941cc98785,"Modify headers to match case used in RFC examples
+
+Change the subprotocol and extension header names to match the case used
+in RFC examples. Other headers names already match the case used in the
+examples.
+
+Although the headers names in the handshake are case insensitive, some
+libraries expect the exact case used in the RFC examples. This change
+allows the package to interoperate with those broken libraries."
+chebyrash,2018-04-16 03:20:28,https://api.github.com/repos/gorilla/websocket/git/commits/cd94665a654c1ec903896f2902573b46dd21baa7,cd94665a654c1ec903896f2902573b46dd21baa7,"Minor fixes in comments
+
+* Fix typo
+
+""netowrk"" is a misspelling of ""network""
+
+* Fix export comment
+
+Comment on exported type Hub should be of the form ""Hub ..."" (golint)"
+garyburd,2018-03-06 18:15:48,https://api.github.com/repos/gorilla/websocket/git/commits/eb925808374e5ca90c83401a40d711dc08c0c0f6,eb925808374e5ca90c83401a40d711dc08c0c0f6,"Use net.Buffers to write multiple slices to connection 
+
+Closes #346."
+garyburd,2018-03-06 17:21:16,https://api.github.com/repos/gorilla/websocket/git/commits/4835f71f2aa5630afb746b4b20d06d6d39630b98,4835f71f2aa5630afb746b4b20d06d6d39630b98,"Improve client default timeout code
+
+- Remove duplicate code.
+- Don't update deprecated functions."
+pcarranza,2018-03-05 23:35:16,https://api.github.com/repos/gorilla/websocket/git/commits/8c40c0b5bde0d67e79aeda4274a303ebcb4cebc3,8c40c0b5bde0d67e79aeda4274a303ebcb4cebc3,Bump default handshake timetout to 45 seconds
+pcarranza,2018-03-04 11:17:01,https://api.github.com/repos/gorilla/websocket/git/commits/196b8d058591ff629081e3094681a2f297b22eef,196b8d058591ff629081e3094681a2f297b22eef,Add a default handshake timeout of 5 seconds
+juliens,2018-03-06 13:56:47,https://api.github.com/repos/gorilla/websocket/git/commits/e426f23f0602da5d40ae22ba7690fa296553027c,e426f23f0602da5d40ae22ba7690fa296553027c,Sec-WebSocket-Protocol is capitalize instead of canonical
+carterjones,2018-03-04 19:58:07,https://api.github.com/repos/gorilla/websocket/git/commits/6656ddce919367f4c4090b0f89a45854d26da020,6656ddce919367f4c4090b0f89a45854d26da020,add newline and remove extra space
+KimMachineGun,2018-02-26 03:30:15,https://api.github.com/repos/gorilla/websocket/git/commits/0647012449a1878977514a346b26637dd022446c,0647012449a1878977514a346b26637dd022446c,Modify http status code to variable
+garyburd,2018-02-19 07:06:29,https://api.github.com/repos/gorilla/websocket/git/commits/f37d1588608ec036fa9b0b7b8afbde47dc06aea9,f37d1588608ec036fa9b0b7b8afbde47dc06aea9,"Travis config: add Go 1.10.x, revert 1.4.x to 1.4
+
+1.4.x is missing go vet"
+AlekSi,2018-02-15 21:24:17,https://api.github.com/repos/gorilla/websocket/git/commits/2967b101a55de34f078c6b673c6087221c3d28e1,2967b101a55de34f078c6b673c6087221c3d28e1,Use latest patch releases of Go
+garyburd,2018-02-01 01:52:56,https://api.github.com/repos/gorilla/websocket/git/commits/4ac909741dfa57448bfadfdbca0cf7eeaa68f0e2,4ac909741dfa57448bfadfdbca0cf7eeaa68f0e2,"Improve control message handler doc
+
+Fixes #338"
+garyburd,2018-01-25 18:51:21,https://api.github.com/repos/gorilla/websocket/git/commits/91f589db023d66e4aba7112d44cc0d2fb091c553,91f589db023d66e4aba7112d44cc0d2fb091c553,"Improve check origin documentation
+
+Remove the example code to disable origin checks from the documentation.
+I am concerned that developers are copying the code without
+understanding the security implications of the code. Most applications
+should not use this code.
+
+Change the bad origin error message to mention Upgrader.CheckOrigin
+
+Mention cross-site request forgery in the Upgrader.CheckOrigin doc."
+garyburd,2018-01-10 14:15:25,https://api.github.com/repos/gorilla/websocket/git/commits/292fd08b2560ad524ee37396253d71570339a821,292fd08b2560ad524ee37396253d71570339a821,"Replace ""frame"" with ""message"" in documentation
+
+The documentation sometimes used the term ""frame"" when referring to
+single frame control messages.  Use the term ""message"" for consistency
+in the documentation and to hide a detail that most application
+programmers do not need to know about."
+garyburd,2018-01-09 20:15:58,https://api.github.com/repos/gorilla/websocket/git/commits/58729a2165ebb9f1d023226076f660139c2e2e0c,58729a2165ebb9f1d023226076f660139c2e2e0c,"Don't log 1006 error in chat example
+
+This error is expected (Safari closes connections without sending a close
+frame).
+
+Fixes #323"
+garyburd,2017-12-28 15:29:59,https://api.github.com/repos/gorilla/websocket/git/commits/d965e9adc66deebadcc7d0c6c7598e2a4baa7838,d965e9adc66deebadcc7d0c6c7598e2a4baa7838,"Handle no status in FormatCloseMessage
+
+Return empty message for CloseNoStatusReceived. This status indicates
+that the message is empty, so make it so. Because it's illegal to send
+CloseNoStatusReceived, this change should not break a correct
+application."
+JordanP,2017-12-10 03:53:53,https://api.github.com/repos/gorilla/websocket/git/commits/cdedf21e585dae942951e34d6defc3215b4280fa,cdedf21e585dae942951e34d6defc3215b4280fa,"examples/chat/client.go: avoid allocating []byte{} for PingMessage (#312)
+
+It's useless and only gives more work to the GC."
+garyburd,2017-12-05 19:45:40,https://api.github.com/repos/gorilla/websocket/git/commits/c55883f97322b4bcbf48f734e23d6ab3af1ea488,c55883f97322b4bcbf48f734e23d6ab3af1ea488,Add parseExtensions test case (#310)
+garyburd,2017-12-01 01:43:01,https://api.github.com/repos/gorilla/websocket/git/commits/b89020ee79b89a7f932c5617d218fc06db382f53,b89020ee79b89a7f932c5617d218fc06db382f53,"Add SOCKS5 support
+
+- Bundle the golang.org/x/net/proxy package to x_net_proxy.go. The
+package contains a SOCKS5 proxy. The package is bundled to avoid adding
+a dependency from the weboscket package to golang.org/x/net.
+- Restructure the existing HTTP proxy code so the code can be used as a
+dialer with the proxy package.
+- Modify Dialer.Dial to use proxy.FromURL.
+- Improve tests (avoid modifying package-level data, use timeouts in
+tests, use correct proxy URLs in tests).
+
+Fixes #297."
+garyburd,2017-12-01 00:45:44,https://api.github.com/repos/gorilla/websocket/git/commits/8c6cfd493d69861f53122e3602388e069907548c,8c6cfd493d69861f53122e3602388e069907548c,"Improve bad handshake error text
+
+Change the error text for bad handshake errors from
+
+    websocket: not a websocket handshake:
+
+to:
+
+    websocket: the client is not using the websocket protocol:
+
+The new text should be more helpful to developers who do not know or
+understand the details of the protocol.
+
+Test for bad handshake before other request errors."
+fising,2017-11-29 15:20:15,https://api.github.com/repos/gorilla/websocket/git/commits/2b5852213197a760e72744fcce7ee529cbf97c78,2b5852213197a760e72744fcce7ee529cbf97c78,update README.md
+ddollar,2017-11-28 00:10:45,https://api.github.com/repos/gorilla/websocket/git/commits/b648f206c26b1333ae0c90e91ab3e227859bd8d6,b648f206c26b1333ae0c90e91ab3e227859bd8d6,Use ASCII case folding in same origin test
+garyburd,2017-11-23 07:25:25,https://api.github.com/repos/gorilla/websocket/git/commits/23059f29570f0e13fca80ef6aea0f04c11daaa4d,23059f29570f0e13fca80ef6aea0f04c11daaa4d,"Update with gofmt on tip
+
+The changes are compatible with older versions of gofmt."
+garyburd,2017-11-23 05:55:10,https://api.github.com/repos/gorilla/websocket/git/commits/447c2df7698fd9080efe94dce3bb6e777b0d64a8,447c2df7698fd9080efe94dce3bb6e777b0d64a8,"Compare request header tokens with ASCII case folding
+
+Compare request header tokens with ASCII case folding per the WebSocket
+RFC."
+garyburd,2017-11-19 21:55:18,https://api.github.com/repos/gorilla/websocket/git/commits/aa5ed01c91270a67ce417d1810afc31ec14779a9,aa5ed01c91270a67ce417d1810afc31ec14779a9,"Improve control message handling documentation
+
+Closes #299"
+seppo0010,2017-11-12 12:01:55,https://api.github.com/repos/gorilla/websocket/git/commits/7ca4275b84a9d500f68971c8c4a97f0ec18eb889,7ca4275b84a9d500f68971c8c4a97f0ec18eb889,"More consistent error handling in doc
+
+I noticed the example is actually wrong as the same block both calls `return` with no parameter and `return err`. I think it would be better to allow the code to be used directly. I added calls to log.Println as it was used on the other example as it might be more useful for newcomers to see error messages."
+garyburd,2017-11-02 14:16:55,https://api.github.com/repos/gorilla/websocket/git/commits/3da6ca0cb65383f2b607a677b6b55e8358cacee6,3da6ca0cb65383f2b607a677b6b55e8358cacee6,"Simplify and fix spelling errors in test files
+
+Simplify using gofmt -s."
+canning-duck,2017-10-11 16:07:11,https://api.github.com/repos/gorilla/websocket/git/commits/71fa72d4842364bc5f74185f4161e0099ea3624a,71fa72d4842364bc5f74185f4161e0099ea3624a,Replace parseURL() with net/url.Parse() (#290)
+garyburd,2017-10-10 16:16:43,https://api.github.com/repos/gorilla/websocket/git/commits/f918560c4c3d6a271185320bb1d4a1e40f77297f,f918560c4c3d6a271185320bb1d4a1e40f77297f,Improve NextWriter documentation
+garyburd,2017-09-26 23:33:35,https://api.github.com/repos/gorilla/websocket/git/commits/4201258b820c74ac8e6922fc9e6b52f71fe46f8d,4201258b820c74ac8e6922fc9e6b52f71fe46f8d,"Merge pull request #286 from alaingilbert/patch-1
+
+Add missing html tag in example/echo"
+alaingilbert,2017-09-26 22:06:10,https://api.github.com/repos/gorilla/websocket/git/commits/5755884efa28760db3f6ec6e060c90c9dea41c3b,5755884efa28760db3f6ec6e060c90c9dea41c3b,Add missing html tag in example/echo
+garyburd,2017-09-14 05:11:54,https://api.github.com/repos/gorilla/websocket/git/commits/6f34763140ed8887aed6a044912009832b4733d7,6f34763140ed8887aed6a044912009832b4733d7,Add Go 1.9 to Travis config
+garyburd,2017-07-18 20:23:41,https://api.github.com/repos/gorilla/websocket/git/commits/a69d9f6de432e2c6b296a947d8a5ee88f68522cf,a69d9f6de432e2c6b296a947d8a5ee88f68522cf,Merge branch 'updoc'
+garyburd,2017-07-18 20:21:30,https://api.github.com/repos/gorilla/websocket/git/commits/92f772e4b3d169aaac1ac3b94395534b1f9b6417,92f772e4b3d169aaac1ac3b94395534b1f9b6417,"Misc cleanup
+
+- Fix lint warnings.
+- Use standard comment format to mark deprecated identifiers.
+- Remove redundant paragraph from doc."
+johnrichardrinehart,2017-07-10 14:21:27,https://api.github.com/repos/gorilla/websocket/git/commits/f4f69d2d8d68c603e6eec0117591f761afd0ff0d,f4f69d2d8d68c603e6eec0117591f761afd0ff0d,implementing (some of) @garyburd's suggestions
+garyburd,2017-07-08 07:26:55,https://api.github.com/repos/gorilla/websocket/git/commits/462d5c5828f6203e4047c47be2920315937be380,462d5c5828f6203e4047c47be2920315937be380,"Merge pull request #261 from kybin/master
+
+doc: use "":="" when check error for conn.WriteMessage"
+johnrichardrinehart,2017-07-07 18:47:14,https://api.github.com/repos/gorilla/websocket/git/commits/1d375d5a0d02732dd99c6d5a323b7b61b27a6aec,1d375d5a0d02732dd99c6d5a323b7b61b27a6aec,distinguish Upgrader.Upgrade from Upgrade
+kybin,2017-07-02 10:47:41,https://api.github.com/repos/gorilla/websocket/git/commits/7a8dacf0a7e78a05b9645da0a130df9da661c1e9,7a8dacf0a7e78a05b9645da0a130df9da661c1e9,"doc: use "":="" when check error for conn.WriteMessage"
+garyburd,2017-06-20 19:01:03,https://api.github.com/repos/gorilla/websocket/git/commits/ea4d1f681babbce9545c9c5f3d5194a789c89f5b,ea4d1f681babbce9545c9c5f3d5194a789c89f5b,Reduce memory used in chat example
+garyburd,2017-03-19 17:27:27,https://api.github.com/repos/gorilla/websocket/git/commits/a91eba7f97777409bc2c443f5534d41dd20c5720,a91eba7f97777409bc2c443f5534d41dd20c5720,"Merge pull request #230 from FZambia/fix_client_compression
+
+Enable client compression based on response header"
+FZambia,2017-03-19 08:36:38,https://api.github.com/repos/gorilla/websocket/git/commits/8dc1cf94c13cad5b1be20ca82a99fb14fc29311a,8dc1cf94c13cad5b1be20ca82a99fb14fc29311a,enable client compression based on response header
+garyburd,2017-03-02 22:46:13,https://api.github.com/repos/gorilla/websocket/git/commits/b258b4fadb573ac412f187b9f31974ea99d32f50,b258b4fadb573ac412f187b9f31974ea99d32f50,"Use bufio.Writer returned from hijack in upgrade
+
+Reuse the buffer backing the bufio.Writer returned from hijack if that
+buffer is large enough to be generally useful and
+Upgrader.WriteBufferSize == 0.
+
+Update the logic for reusing bufio.Reader returned from hijack to match
+the logic for bufio.Reader:  The buffer backing the reader must be
+sufficiently large to be generally useful and Upgrader.ReadBufferSize ==
+0.
+
+Improve the documentation for ReadBufferSize and WriterBufferSize in
+Dialer and Upgrader."
+garyburd,2017-03-01 17:42:05,https://api.github.com/repos/gorilla/websocket/git/commits/4873052237e4eeda85cf50c071ef33836fe8e139,4873052237e4eeda85cf50c071ef33836fe8e139,Fix formatting.
+garyburd,2017-03-01 17:36:54,https://api.github.com/repos/gorilla/websocket/git/commits/286b5c93713fa86d2782b66fd22e54a3d0f630a7,286b5c93713fa86d2782b66fd22e54a3d0f630a7,"Use bufio.Reader returned from hijack in upgrade
+
+Use the bufio.Reader returned from hijack if the reader's buffer size is
+equal to the buffer size specified in Upgrader.ReadBufferSize."
+optmzr,2017-02-18 16:27:10,https://api.github.com/repos/gorilla/websocket/git/commits/3f3e394da2b801fbe732a935ef40724762a67a07,3f3e394da2b801fbe732a935ef40724762a67a07,Update cloneTLSConfig to use Go 1.8 Config.Clone method
+garyburd,2017-02-16 21:52:12,https://api.github.com/repos/gorilla/websocket/git/commits/9acaa683f0aa83bd1b9dbec8d43b7d07a16216fa,9acaa683f0aa83bd1b9dbec8d43b7d07a16216fa,Add Go 1.8 to Travis config
+garyburd,2017-02-16 01:01:07,https://api.github.com/repos/gorilla/websocket/git/commits/5ade364dff1f03abefdae800ed19074bf707b08f,5ade364dff1f03abefdae800ed19074bf707b08f,"Improve examples
+
+- Remove jQuery dependency in command example.
+- Fix auto scroll on new content in chat and command example.
+- Update chat and command example to use a static HTML file."
+garyburd,2017-02-14 17:41:18,https://api.github.com/repos/gorilla/websocket/git/commits/804cb600d06b10672f2fbc0a336a7bee507a428e,804cb600d06b10672f2fbc0a336a7bee507a428e,Prepared Messages (#211)
+shrumit,2017-02-13 18:21:13,https://api.github.com/repos/gorilla/websocket/git/commits/9bc973af0682dc73a22553a08bfe00ee6255f56f,9bc973af0682dc73a22553a08bfe00ee6255f56f,"Change text/template to html/template in the examples
+
+Change text/template to html/template in examples"
+garyburd,2017-01-26 19:14:27,https://api.github.com/repos/gorilla/websocket/git/commits/c36f2fe5c330f0ac404b616b96c438b8616b1aaf,c36f2fe5c330f0ac404b616b96c438b8616b1aaf,"Merge pull request #210 from nobuf/nobuf/update-doc-about-compression
+
+Add code snippet for EnableCompression in doc.go"
+nobuf,2017-01-26 18:48:11,https://api.github.com/repos/gorilla/websocket/git/commits/1025138dad9fc8cff405affa505ce7eb37c6ffe2,1025138dad9fc8cff405affa505ce7eb37c6ffe2,"Add code snippet for EnableCompression in doc.go, change EnableWriteCompression()'s parameter to false since enableWriteCompression is true by default."
+garyburd,2017-01-24 23:37:53,https://api.github.com/repos/gorilla/websocket/git/commits/4e4c8d08b4b90add48392b80324adb3630ff3431,4e4c8d08b4b90add48392b80324adb3630ff3431,"Merge pull request #208 from FZambia/flate_write_pool_fix
+
+fix flate write pool size to work with best compression"
+FZambia,2017-01-24 23:34:04,https://api.github.com/repos/gorilla/websocket/git/commits/ac61189060b7d06ca1e8c9d48ff4e2da8a7f5c4b,ac61189060b7d06ca1e8c9d48ff4e2da8a7f5c4b,remove test as HuffmanOnly compression level not defined in Go < 1.7
+FZambia,2017-01-24 23:15:04,https://api.github.com/repos/gorilla/websocket/git/commits/eb457539f79ede89177f341a17d63c4188f25767,eb457539f79ede89177f341a17d63c4188f25767,fix flate write pool size to work with best compression
+garyburd,2017-01-23 18:52:19,https://api.github.com/repos/gorilla/websocket/git/commits/0674c7c7968d9fac5f0f678325161ec31df406af,0674c7c7968d9fac5f0f678325161ec31df406af,"Improve upgrade error messages
+
+Upgrade typically fails because the request is not a handshake, not
+because the handshake is malformed. To help developers diagnose the
+common case, state explicitly that the request is not a handshake in
+error messages.
+
+To help diagnose malformed requests, capitalize and 'quote' header names
+in error messages."
+garyburd,2017-01-19 19:27:08,https://api.github.com/repos/gorilla/websocket/git/commits/2257eda00b2084c1351cd672aa5476daa9f5e463,2257eda00b2084c1351cd672aa5476daa9f5e463,Fix compile error on Go < 1.6
+garyburd,2017-01-19 19:23:28,https://api.github.com/repos/gorilla/websocket/git/commits/522f286a674276ab6038d1bdc2feb102665ae956,522f286a674276ab6038d1bdc2feb102665ae956,Fix to compile on Go < 1.6
+garyburd,2017-01-19 19:00:23,https://api.github.com/repos/gorilla/websocket/git/commits/b0dc45572b148296ddf01989da00a2923d213a56,b0dc45572b148296ddf01989da00a2923d213a56,"Change default and add API for compression level
+
+Change the default compression level to 1. This level is faster and uses
+less memory.
+
+Add Conn.SetCompressionLevel API to allow applications to tune
+compression on a per message basis."
+garyburd,2017-01-15 21:09:21,https://api.github.com/repos/gorilla/websocket/git/commits/bb547c6c5c59732c29a3266d7125a84f6c3fce32,bb547c6c5c59732c29a3266d7125a84f6c3fce32,Improve SetXHandler documentation
+garyburd,2017-01-14 04:07:17,https://api.github.com/repos/gorilla/websocket/git/commits/561ac01ecf486271be97605f1f71b49039f57a2b,561ac01ecf486271be97605f1f71b49039f57a2b,"Merge pull request #205 from FZambia/compression_benchmarks
+
+benchmarks for write with compression enabled/disabled"
+FZambia,2017-01-13 09:06:51,https://api.github.com/repos/gorilla/websocket/git/commits/34e053563d9c9aa4e05880716fda9ff045924d20,34e053563d9c9aa4e05880716fda9ff045924d20,benchmarks for write with compression enabled/disabled
+garyburd,2017-01-11 19:29:28,https://api.github.com/repos/gorilla/websocket/git/commits/17634340a83afe0cab595e40fbc63f6ffa1d8915,17634340a83afe0cab595e40fbc63f6ffa1d8915,"Update compression documentation
+
+Add ""EXPERIMENTAL"" to the compress section header.  This change is intended to draw more attention to the status of the feature as stated in the first sentence of the section.  This is not a change in the status."
+garyburd,2017-01-01 04:13:41,https://api.github.com/repos/gorilla/websocket/git/commits/adf16b31781325cbd41085c5be901d95b4d1f33d,adf16b31781325cbd41085c5be901d95b4d1f33d,"Add safe maskBytes
+
+Fixes #200."
+garyburd,2016-12-27 22:08:04,https://api.github.com/repos/gorilla/websocket/git/commits/5ddbd28fbd5a0179960f2bcaa989e0925356dc7f,5ddbd28fbd5a0179960f2bcaa989e0925356dc7f,Merge branch 'compress'
+garyburd,2016-12-27 22:05:16,https://api.github.com/repos/gorilla/websocket/git/commits/6c51b25bc8e504cabd0c58004acddfc25b1e6f6c,6c51b25bc8e504cabd0c58004acddfc25b1e6f6c,"Compression improvements
+
+- Remove unnecessary error return from compressNoContextTakeover.
+- Simplify use of sync.Pool.
+- Fix formatting in compression documentation."
+garyburd,2016-12-27 14:27:37,https://api.github.com/repos/gorilla/websocket/git/commits/404e6b135d226cb21e3afea59a82c7b81fce18c8,404e6b135d226cb21e3afea59a82c7b81fce18c8,"Merge pull request #199 from AndrienkoAleksandr/master
+
+Fix up README.md for command example."
+AndrienkoAleksandr,2016-12-27 13:04:14,https://api.github.com/repos/gorilla/websocket/git/commits/0e7877a5a1a20eae01b8428d52e10cdf6b473f56,0e7877a5a1a20eae01b8428d52e10cdf6b473f56,Fix up README.md for command example.
+y3llowcake,2016-12-17 23:33:06,https://api.github.com/repos/gorilla/websocket/git/commits/2db2f66488d0a378f61644175cfb19a41a48fef6,2db2f66488d0a378f61644175cfb19a41a48fef6,pool flate readers
+y3llowcake,2016-12-15 22:53:35,https://api.github.com/repos/gorilla/websocket/git/commits/3ab3a8b8831546bd18fd182c20687ca853b2bb13,3ab3a8b8831546bd18fd182c20687ca853b2bb13,pool flate writers
+garyburd,2016-12-08 00:21:58,https://api.github.com/repos/gorilla/websocket/git/commits/0868951cdb8e69bc42df4598bdc6164ff2f1a072,0868951cdb8e69bc42df4598bdc6164ff2f1a072,"Improve WriteMessage fast path
+
+Restructure to avoid messageWriter allocation."
+garyburd,2016-11-12 14:27:12,https://api.github.com/repos/gorilla/websocket/git/commits/e8f0f8aaa98dfb6586cbdf2978d511e3199a960a,e8f0f8aaa98dfb6586cbdf2978d511e3199a960a,"Merge pull request #185 from shivamMg/doc-fix
+
+Fix documentation"
+shivamMg,2016-11-12 10:32:12,https://api.github.com/repos/gorilla/websocket/git/commits/dc13401989de4632a89e7bb036a2847eb74e773f,dc13401989de4632a89e7bb036a2847eb74e773f,"Fix documentation
+
+Specify correct function name in README"
+garyburd,2016-11-02 20:04:59,https://api.github.com/repos/gorilla/websocket/git/commits/9fbf129ff2a3cf2467f7d0021de2eb4d3aecc109,9fbf129ff2a3cf2467f7d0021de2eb4d3aecc109,Add Conn.[Set]CloseHandler
+garyburd,2016-11-02 16:41:43,https://api.github.com/repos/gorilla/websocket/git/commits/80a0029a6599f5a3c2f1b5b7f1faf215d6e979a4,80a0029a6599f5a3c2f1b5b7f1faf215d6e979a4,"Improve write error handling
+
+- Do not fail NextWriter when close of previous writer fails.
+- Replace closeSent field with mutex protected writeErr. Set writeErr on
+  any error writing to underlying network connection. Check and return
+  writeErr before attempting to write to network connection. Check
+  writeErr in NextWriter so application can detect failed connection
+  before attempting to write.
+- Do not close underlying network connection on error.
+- Move message writing state and method flushFrame from Conn to
+  messageWriter. This makes error code paths (and the code in general)
+  easier to understand.
+- Add messageWriter field err to latch errors in messageWriter.
+
+Bonus: Improve test coverage."
+garyburd,2016-11-02 16:16:35,https://api.github.com/repos/gorilla/websocket/git/commits/343fff4c5ceeb405e29e80dcd5d4d1598d4c7a27,343fff4c5ceeb405e29e80dcd5d4d1598d4c7a27,"Fix mask alignment
+
+Fix incorrect computation of buffer alignment in maskBytes. With this
+change, all word operations on the buffer are aligned on word
+boundaries."
+garyburd,2016-10-28 04:05:23,https://api.github.com/repos/gorilla/websocket/git/commits/2aff870ef83507abb46472eae82449f7a4c464c5,2aff870ef83507abb46472eae82449f7a4c464c5,"Improve command example
+
+- Close connection cleanly on EOF from command."
+garyburd,2016-10-25 23:13:36,https://api.github.com/repos/gorilla/websocket/git/commits/6257d10a8b2ac6825fa94294e088dc9890ab73d3,6257d10a8b2ac6825fa94294e088dc9890ab73d3,"Improve chat example
+
+- Discuss concurrency and message coalescing in the README.
+- Add comments to client.go explaining how concurrency requirements are
+  met.
+- Prevent developers from calling the Client.write method from outside
+  of the writePump goroutine by removing the method. The code is now
+  inlined in Client.writPump."
+garyburd,2016-10-21 19:35:05,https://api.github.com/repos/gorilla/websocket/git/commits/0b847f2facc24ec406130a05bb1bb72d41993b05,0b847f2facc24ec406130a05bb1bb72d41993b05,Update README.md
+garyburd,2016-10-21 19:12:30,https://api.github.com/repos/gorilla/websocket/git/commits/2b825c3f8258939c81678fe9d0942398b809db05,2b825c3f8258939c81678fe9d0942398b809db05,"Merge pull request #169 from garyburd/master
+
+Improve mask performance"
+garyburd,2016-10-20 23:25:46,https://api.github.com/repos/gorilla/websocket/git/commits/77f110791cfaf7893f72043b54f469352b836d57,77f110791cfaf7893f72043b54f469352b836d57,Improve mask performance
+garyburd,2016-10-20 23:33:47,https://api.github.com/repos/gorilla/websocket/git/commits/460e0a996e9004dce40c3697e5ed4d7bc5a69b93,460e0a996e9004dce40c3697e5ed4d7bc5a69b93,Test w/ Go 1.7 on Travis
+garyburd,2016-10-19 02:33:40,https://api.github.com/repos/gorilla/websocket/git/commits/5df680c89f2a84ad9cb16cf143557a0853cfaabc,5df680c89f2a84ad9cb16cf143557a0853cfaabc,"Merge pull request #166 from MaximeHeckel/add-cookiejar
+
+add cookie jar to dialer"
+MaximeHeckel,2016-10-17 18:19:52,https://api.github.com/repos/gorilla/websocket/git/commits/56d95f294029281baca3f01a3bce54cebd6e854c,56d95f294029281baca3f01a3bce54cebd6e854c,add cookie jar to dialer
+garyburd,2016-10-18 00:39:55,https://api.github.com/repos/gorilla/websocket/git/commits/8003df83eef3a5d5301beb970356755128810563,8003df83eef3a5d5301beb970356755128810563,"Merge pull request #167 from garyburd/master
+
+enable compression"
+garyburd,2016-10-18 00:30:22,https://api.github.com/repos/gorilla/websocket/git/commits/a0ef436d00cc73a6380e6d90257f70c06a8e9506,a0ef436d00cc73a6380e6d90257f70c06a8e9506,"compression: add tests, rename option"
+garyburd,2016-10-17 15:03:37,https://api.github.com/repos/gorilla/websocket/git/commits/17c3c6b6b91103f98ce528248afa274a697a1477,17c3c6b6b91103f98ce528248afa274a697a1477,"Merge pull request #164 from artyom/master
+
+Update README to reflect change of Go sub-repo websocket feature"
+artyom,2016-10-13 08:39:05,https://api.github.com/repos/gorilla/websocket/git/commits/99ffb988ce9081d3e4d0f9df9e1221a92cbddab7,99ffb988ce9081d3e4d0f9df9e1221a92cbddab7,"Update README to reflect change of Go sub-repo websocket feature
+
+Closes #164"
+y3llowcake,2016-09-30 04:52:15,https://api.github.com/repos/gorilla/websocket/git/commits/c09b72d2ee271dadc4534937ccd069c68cc048bc,c09b72d2ee271dadc4534937ccd069c68cc048bc,per message compression; only no context modes
+garyburd,2016-09-12 15:30:41,https://api.github.com/repos/gorilla/websocket/git/commits/2d1e4548da234d9cb742cc3628556fef86aafbac,2d1e4548da234d9cb742cc3628556fef86aafbac,"Simplify dial TLS test
+
+There's no need to fake the connection to example.com because 127.0.0.1
+is a host in the net/http/httptest certificate."
+garyburd,2016-08-02 13:32:03,https://api.github.com/repos/gorilla/websocket/git/commits/a69d25be2fe2923a97c2af6849b2f52426f68fc0,a69d25be2fe2923a97c2af6849b2f52426f68fc0,"Merge pull request #152 from sambooo/patch-1
+
+Fix typos in chat example"
+sambooo,2016-08-02 06:24:52,https://api.github.com/repos/gorilla/websocket/git/commits/295028b99769d8454b38513b1595c7b137bfa96e,295028b99769d8454b38513b1595c7b137bfa96e,Fix typos in chat example
+garyburd,2016-07-18 23:08:34,https://api.github.com/repos/gorilla/websocket/git/commits/5e2e56d5dfd46884df1036f828777ee6273f2cff,5e2e56d5dfd46884df1036f828777ee6273f2cff,"Improve chat example
+
+- Remove jQuery.
+- Rename Conn to Client to avoid confusion with underlying ws
+  connection.
+- Remove global variables."
+garyburd,2016-07-11 04:44:50,https://api.github.com/repos/gorilla/websocket/git/commits/a836c37014dbbf0d1e871d04531b851fcbdeb22d,a836c37014dbbf0d1e871d04531b851fcbdeb22d,"Merge pull request #150 from RHavar/patch-1
+
+Update hub.go"
+RHavar,2016-07-11 04:15:05,https://api.github.com/repos/gorilla/websocket/git/commits/b5afd49817774874e5beec4db6b4b847142f9594,b5afd49817774874e5beec4db6b4b847142f9594,Update hub.go
+garyburd,2016-07-01 18:57:38,https://api.github.com/repos/gorilla/websocket/git/commits/54f9decdbfb3fe254c5df3d5aa234480989f4af0,54f9decdbfb3fe254c5df3d5aa234480989f4af0,Add description to the chat example readme
+garyburd,2016-06-30 00:03:55,https://api.github.com/repos/gorilla/websocket/git/commits/a87eae1d6ff562bf944755f4a6f527b6ef6fb888,a87eae1d6ff562bf944755f4a6f527b6ef6fb888,"Add hooks to support RFC 7692 (per-message compression extension)
+
+Add newCompressionWriter and newDecompressionReader fields to Conn. When
+not nil, these functions are used to create a compression/decompression
+wrapper around an underlying message writer/reader.
+
+Add code to set and check for RSV1 frame header bit.
+
+Add functions compressNoContextTakeover and decompressNoContextTakeover
+for creating no context takeover wrappers around an underlying message
+writer/reader.
+
+Work remaining:
+
+- Add fields to Dialer and Upgrader for specifying compression options.
+- Add compression negotiation to Dialer and Upgrader.
+- Add function to enable/disable write compression:
+
+    // EnableWriteCompression enables and disables write compression of
+    // subsequent text and binary messages. This function is a noop if
+    // compression was not negotiated with the peer.
+    func (c *Conn) EnableWriteCompression(enable bool) {
+            c.enableWriteCompression = enable
+    }"
+garyburd,2016-06-29 20:56:55,https://api.github.com/repos/gorilla/websocket/git/commits/b5389d0dc29e2a6201c4b02f23e6b3de5f909375,b5389d0dc29e2a6201c4b02f23e6b3de5f909375,"Implement RFC 6455, section 4.4"
+garyburd,2016-06-06 23:20:22,https://api.github.com/repos/gorilla/websocket/git/commits/a68708917c6a4f06314ab4e52493cc61359c9d42,a68708917c6a4f06314ab4e52493cc61359c9d42,Coalesce outbound messages in chat example
+garyburd,2016-06-01 05:17:19,https://api.github.com/repos/gorilla/websocket/git/commits/3ddc98405808dc90b76f43a2eddca8f12e244e2b,3ddc98405808dc90b76f43a2eddca8f12e244e2b,"Merge pull request #136 from reeze/add-handler-getter
+
+Add Ping/Pong handler Getter functions"
+reeze,2016-05-28 15:59:17,https://api.github.com/repos/gorilla/websocket/git/commits/c9ce64ea0530df67677ed887e958969be86d7747,c9ce64ea0530df67677ed887e958969be86d7747,Add Ping/Pong handler getter methods
+garyburd,2016-05-31 16:32:45,https://api.github.com/repos/gorilla/websocket/git/commits/8b29b78138a589d7053381d5d2db359e39200711,8b29b78138a589d7053381d5d2db359e39200711,"Add Sec-WebSocket-Extensions header parser
+
+Also, improve token list header parser."
+garyburd,2016-05-31 12:14:41,https://api.github.com/repos/gorilla/websocket/git/commits/be01041b667965201246c5a50911bf3ba3545e5f,be01041b667965201246c5a50911bf3ba3545e5f,"Reduce memory allocations in NextReader, NextWriter
+
+Redo 8b209f63177a963547dc3cee89350a327ead0412 with support for old
+versions of Go."
+garyburd,2016-05-30 08:53:33,https://api.github.com/repos/gorilla/websocket/git/commits/50d660d6ac981c9de3540279f63d163b9a690930,50d660d6ac981c9de3540279f63d163b9a690930,"Revert ""Reduce memory allocations in NextReader, NextWriter""
+
+This reverts commit 8b209f63177a963547dc3cee89350a327ead0412."
+garyburd,2016-05-27 04:01:19,https://api.github.com/repos/gorilla/websocket/git/commits/afffb151969cb38ce452b0e1b8d20cd91fe7cd45,afffb151969cb38ce452b0e1b8d20cd91fe7cd45,Merge branch 'varnames'
+garyburd,2016-05-27 04:00:24,https://api.github.com/repos/gorilla/websocket/git/commits/24cddddcc013c647610efaf5764032a832eb5bc4,24cddddcc013c647610efaf5764032a832eb5bc4,Use single character receiver names in chat example
+garyburd,2016-05-26 21:07:24,https://api.github.com/repos/gorilla/websocket/git/commits/8b209f63177a963547dc3cee89350a327ead0412,8b209f63177a963547dc3cee89350a327ead0412,"Reduce memory allocations in NextReader, NextWriter"
+garyburd,2016-05-26 17:19:40,https://api.github.com/repos/gorilla/websocket/git/commits/2301bcbf5c0517606a512863b8bb75c6c384e7b7,2301bcbf5c0517606a512863b8bb75c6c384e7b7,Cleanup js in chat example
+jadekler,2016-05-18 14:57:16,https://api.github.com/repos/gorilla/websocket/git/commits/be95f72b73315542abb81bf8dbde9ca5b414cef9,be95f72b73315542abb81bf8dbde9ca5b414cef9,"Meaningful names for connection, message"
+jadekler,2016-05-18 14:56:16,https://api.github.com/repos/gorilla/websocket/git/commits/a6108176e8b811b74d45ab67163a03d6c527c0c5,a6108176e8b811b74d45ab67163a03d6c527c0c5,Meaningful names for hub
+garyburd,2016-04-28 16:34:18,https://api.github.com/repos/gorilla/websocket/git/commits/1f512fc3f05332ba7117626cdfb4e07474e58e60,1f512fc3f05332ba7117626cdfb4e07474e58e60,"Handle invalid close frames
+
+Send protocol error if close code or payload are invalid.
+
+Fixes Autobahn tests 7.5.1, 7.9.*."
+garyburd,2016-04-25 15:42:53,https://api.github.com/repos/gorilla/websocket/git/commits/a724ba452858d5b6d30c22d2d13ae77e1ed67cad,a724ba452858d5b6d30c22d2d13ae77e1ed67cad,Test truncated frames at all positions
+garyburd,2016-04-23 22:56:33,https://api.github.com/repos/gorilla/websocket/git/commits/703e8da19b5ed33d346e3adc6abf5e452bd2f82f,703e8da19b5ed33d346e3adc6abf5e452bd2f82f,"Drop Go 1.3 from supported configurations
+
+The code does not build on 1.3 because tls.Config does not contain the
+GetCertificate field. This can be worked around using build constraints,
+but it does not seem worth the trouble."
+garyburd,2016-04-23 22:46:58,https://api.github.com/repos/gorilla/websocket/git/commits/5a00fb2e99ee5adc2375f26e6dffc38983b9094b,5a00fb2e99ee5adc2375f26e6dffc38983b9094b,"Do not shallow copy crypto/tls.Config
+
+The Config contains a sync.Once that should not be copied."
+garyburd,2016-04-23 05:25:05,https://api.github.com/repos/gorilla/websocket/git/commits/3d02343cd35473727f9962992854b1829d2ef87b,3d02343cd35473727f9962992854b1829d2ef87b,.travis.yml go vet fix.
+garyburd,2016-04-22 00:30:17,https://api.github.com/repos/gorilla/websocket/git/commits/6b3d49710be714c8355967d41b95295d4928cf54,6b3d49710be714c8355967d41b95295d4928cf54,"Fix filewatch example
+
+Use last modified time when the time is parsed without error. This prevents an
+extra file read at start of watch for a connection.
+
+Fixes #125."
+garyburd,2016-03-13 18:57:37,https://api.github.com/repos/gorilla/websocket/git/commits/e2e3d8414d0fbae04004f151979f4e27c6747fe7,e2e3d8414d0fbae04004f151979f4e27c6747fe7,Document that default ping handler can block
+garyburd,2016-03-09 18:36:44,https://api.github.com/repos/gorilla/websocket/git/commits/a622679ebd7a3b813862379232f645f8e690e43f,a622679ebd7a3b813862379232f645f8e690e43f,Add IsWebSocketUpgrade
+garyburd,2016-03-02 23:27:37,https://api.github.com/repos/gorilla/websocket/git/commits/c45a635370221f34fea2d5163fd156fcb4e38e8a,c45a635370221f34fea2d5163fd156fcb4e38e8a,"Remove Go 1.1 from Travis config
+
+Go 1.1 cannot fetch 'go vet'."
+garyburd,2016-03-02 23:14:48,https://api.github.com/repos/gorilla/websocket/git/commits/0b8990dd8b5b3b07800b9802048fcab58488b8b2,0b8990dd8b5b3b07800b9802048fcab58488b8b2,Run 'go vet' instead of 'go tool vet' in Travis
+garyburd,2016-03-02 22:59:35,https://api.github.com/repos/gorilla/websocket/git/commits/be42fcd8c945dca08e342b52ab39957b261b5fe1,be42fcd8c945dca08e342b52ab39957b261b5fe1,"Merge pull request #113 from elithrar/patch-1
+
+Update .travis.yml to build Go 1.6"
+garyburd,2016-03-02 22:56:29,https://api.github.com/repos/gorilla/websocket/git/commits/d1d4086b14c1693283905585da8c74d2d185d6a4,d1d4086b14c1693283905585da8c74d2d185d6a4,"Fix go vet warning
+
+Move variables from example function arguments to package level
+variables to avoid `go vet` warning."
+elithrar,2016-02-26 21:26:45,https://api.github.com/repos/gorilla/websocket/git/commits/ac929f83830ede1cd3bbf1b24510634c93c27945,ac929f83830ede1cd3bbf1b24510634c93c27945,Update .travis.yml to build Go 1.6
+garyburd,2016-02-21 21:34:30,https://api.github.com/repos/gorilla/websocket/git/commits/5c91b59efa232fa9a87b705d54101832c498a172,5c91b59efa232fa9a87b705d54101832c498a172,Improve Upgrader.Upgrade doc
+garyburd,2016-02-17 17:43:51,https://api.github.com/repos/gorilla/websocket/git/commits/4935ba31a2adbfcd9e08b86d2657659afbf1af9a,4935ba31a2adbfcd9e08b86d2657659afbf1af9a,"Merge pull request #111 from seikichi/support_proxy_auth
+
+Support proxy authorization for websocket client"
+seikichi,2016-02-17 11:18:07,https://api.github.com/repos/gorilla/websocket/git/commits/360dfe00ec95992059f4d319737767ab02a7e9a1,360dfe00ec95992059f4d319737767ab02a7e9a1,Support proxy authorization for websocket client
+garyburd,2016-02-16 23:03:54,https://api.github.com/repos/gorilla/websocket/git/commits/0e2713e645096dd0a2adac7be3c0931827da8eaf,0e2713e645096dd0a2adac7be3c0931827da8eaf,"Address common gotchas with package
+
+Update documentation to explicitly state that applications must break out of a
+read loop on error.
+
+Detect application read loops spinning on a failed connection and panic.
+
+Detect concurrent writes and panic. The detection is best-effort.
+
+Update documentation to state that connections respond to close frames."
+garyburd,2016-02-16 21:07:31,https://api.github.com/repos/gorilla/websocket/git/commits/e85d8976561ddf729844a511e1c9704f55fb545f,e85d8976561ddf729844a511e1c9704f55fb545f,"Merge pull request #110 from tabone/close-frame-response
+
+Close Frame Response"
+tabone,2016-02-15 23:55:57,https://api.github.com/repos/gorilla/websocket/git/commits/bf696496cb9d8218c73eb2f914f1193770942fd6,bf696496cb9d8218c73eb2f914f1193770942fd6,"When sending a Close frame in response, the endpoint typically echos the status code it received."
+garyburd,2016-02-11 00:29:04,https://api.github.com/repos/gorilla/websocket/git/commits/b824a5d8536651ad2d690c17e270d58855dbfd02,b824a5d8536651ad2d690c17e270d58855dbfd02,"Merge pull request #109 from vially/patch-1
+
+Fix documentation typos"
+vially,2016-02-11 00:22:44,https://api.github.com/repos/gorilla/websocket/git/commits/6b3bf61ce84a63e5c9d92079f80e2229d3e8c18b,6b3bf61ce84a63e5c9d92079f80e2229d3e8c18b,Fix documentation typos
+garyburd,2016-01-28 16:48:56,https://api.github.com/repos/gorilla/websocket/git/commits/234959944d9cf05229b02e8b386e5cffe1e4e04a,234959944d9cf05229b02e8b386e5cffe1e4e04a,Add text description to close errors
+garyburd,2016-01-20 02:24:46,https://api.github.com/repos/gorilla/websocket/git/commits/5434f8b69b7f4f4ef0120e04c046cd6ce54ef0dd,5434f8b69b7f4f4ef0120e04c046cd6ce54ef0dd,Improve IsUnexpectedCloseError examples
+garyburd,2016-01-19 21:06:29,https://api.github.com/repos/gorilla/websocket/git/commits/615f23bc98fb90b422c0af59a56f4bb7507a6462,615f23bc98fb90b422c0af59a56f4bb7507a6462,Add IsUnexpectedCloseError
+garyburd,2016-01-19 17:20:21,https://api.github.com/repos/gorilla/websocket/git/commits/a2d85bcbfc8bbfed695b4f3c5b57e8b89911a727,a2d85bcbfc8bbfed695b4f3c5b57e8b89911a727,"Add IsCloseError, improve doc about errors"
+garyburd,2015-12-16 05:10:58,https://api.github.com/repos/gorilla/websocket/git/commits/3986be78bf859e01f01af631ad76da5b269d270c,3986be78bf859e01f01af631ad76da5b269d270c,"Split raw query from opaque in URL parser
+
+Prior to this change, the client passed query strings from the
+application to the network via the net/url#URL.Opaque field. This works,
+but may not be something the authors of the net/url and net/http
+packages expect. To play it safe, this change parses the query string to
+the net/url#URL.RawQuery field."
+garyburd,2015-12-16 04:25:50,https://api.github.com/repos/gorilla/websocket/git/commits/9727ab9cda52886ddbaaf0576dd7cdac7d9a9b8a,9727ab9cda52886ddbaaf0576dd7cdac7d9a9b8a,Test URL path and query
+garyburd,2015-12-10 00:50:38,https://api.github.com/repos/gorilla/websocket/git/commits/844dd6d40e1a9215ef4c8a204bfc839fcf5dd5dd,844dd6d40e1a9215ef4c8a204bfc839fcf5dd5dd,Add closing handshake code to echo example client
+garyburd,2015-11-02 19:10:34,https://api.github.com/repos/gorilla/websocket/git/commits/361d4c0ffd78338ebe0a9e6320cdbe115d7dc026,361d4c0ffd78338ebe0a9e6320cdbe115d7dc026,"Improve echo web UI
+
+Based on feedback from anon."
+garyburd,2015-11-02 18:39:51,https://api.github.com/repos/gorilla/websocket/git/commits/c93e5540b8e60094a976d31e8de35ff6d6769a9f,c93e5540b8e60094a976d31e8de35ff6d6769a9f,Add web client to echo example
+garyburd,2015-11-02 17:08:11,https://api.github.com/repos/gorilla/websocket/git/commits/567453a710c89724d4e971da34f613b0b89961cc,567453a710c89724d4e971da34f613b0b89961cc,"Require GET in Upgrader.Upgrade.
+
+Return error if the request method is not GET.
+
+Remove all request method tests from the examples."
+garyburd,2015-11-02 16:39:02,https://api.github.com/repos/gorilla/websocket/git/commits/a4e0143e1f01fed44746a0175ccdb4926365aedd,a4e0143e1f01fed44746a0175ccdb4926365aedd,Do not allow duplicate headers in handshake
+garyburd,2015-11-02 16:25:46,https://api.github.com/repos/gorilla/websocket/git/commits/044091b51d3b40b9e7fbc1fb34975a7662916e4e,044091b51d3b40b9e7fbc1fb34975a7662916e4e,Fix lint warning
+garyburd,2015-10-23 03:53:04,https://api.github.com/repos/gorilla/websocket/git/commits/527637c0f38a8035d7856bb758e56f7ee2c704a9,527637c0f38a8035d7856bb758e56f7ee2c704a9,"Merge pull request #90 from wolfeidau/add_proxy_support
+
+Proxy support for websocket clients."
+wolfeidau,2015-10-20 09:29:17,https://api.github.com/repos/gorilla/websocket/git/commits/70eca1b8e76b4efbc03dd0711114e6d040668302,70eca1b8e76b4efbc03dd0711114e6d040668302,"Add Proxy support for websocket clients.
+
+- Uses `http.ProxyFromEnvironment` for configuration in line with the
+golang standard library."
+garyburd,2015-10-20 17:44:58,https://api.github.com/repos/gorilla/websocket/git/commits/5ed2f4547d7b9c036541b27a67ecf54e41756997,5ed2f4547d7b9c036541b27a67ecf54e41756997,"Refactor client handshake
+
+- To take advantage of the Host header cleanup in the net/http
+  Request.Write method, use a net/http Request to write the handshake to
+  the wire.
+- Move code from the deprecated NewClientConn function to Dialer.Dial.
+  This change makes it easier to add proxy support to Dialer.Dial. Add
+  comment noting that NewClientConn is deprecated.
+- Update the code so that parseURL can be replaced with net/url Parse.
+  We need to wait until we can require 1.5 before making the swap."
+garyburd,2015-10-19 22:05:01,https://api.github.com/repos/gorilla/websocket/git/commits/423912737d2c26382ab4b2647d796811d4efa00b,423912737d2c26382ab4b2647d796811d4efa00b,Improve documentation
+garyburd,2015-10-19 01:17:26,https://api.github.com/repos/gorilla/websocket/git/commits/d14d8b471525ed249398f84dbe56e8372c477f45,d14d8b471525ed249398f84dbe56e8372c477f45,Add pinging to command example
+garyburd,2015-10-18 22:41:02,https://api.github.com/repos/gorilla/websocket/git/commits/7f59b56ea41303fa48592cb76293a4e469c1f3b1,7f59b56ea41303fa48592cb76293a4e469c1f3b1,"Fix DefaultDialar value
+
+Initialize as pointer to struct with zero values as as implied by the
+doc comment. This initialization matches similar values in the standard
+library."
+garyburd,2015-10-18 22:32:45,https://api.github.com/repos/gorilla/websocket/git/commits/0e33ab35f9dfe69b56eb100e613794ec744b13ef,0e33ab35f9dfe69b56eb100e613794ec744b13ef,"Fix race in command example
+
+Close files in handler goroutine to avoid race.
+Remove use of exec.Cmd. It's not adding anything."
+garyburd,2015-10-18 20:32:14,https://api.github.com/repos/gorilla/websocket/git/commits/f9219095ab18c7fdb545bdffd1e1a862d01f0f80,f9219095ab18c7fdb545bdffd1e1a862d01f0f80,Add command example
+garyburd,2015-10-15 17:14:19,https://api.github.com/repos/gorilla/websocket/git/commits/f71d4a996ff3687f2051ff11aca8b570ef785b2b,f71d4a996ff3687f2051ff11aca8b570ef785b2b,"Return write errors from default pong handler
+
+Fixes issue #86."
+garyburd,2015-10-09 05:47:23,https://api.github.com/repos/gorilla/websocket/git/commits/c66b764651cdca39f42d263b07a507c6e8b58ee9,c66b764651cdca39f42d263b07a507c6e8b58ee9,"Add test for bufio.ReadBytes on connection reader
+
+Test for issue #85."
+garyburd,2015-10-06 20:46:28,https://api.github.com/repos/gorilla/websocket/git/commits/00ae02c5f519724d30cd51a909ec3bf5edd46aa6,00ae02c5f519724d30cd51a909ec3bf5edd46aa6,"Merge pull request #82 from heppu/master
+
+Small typo fix in comment"
+heppu,2015-10-06 18:40:04,https://api.github.com/repos/gorilla/websocket/git/commits/20b4ee30ab3c13194486dcfe02663b29c3686638,20b4ee30ab3c13194486dcfe02663b29c3686638,Small typo fix in comment
+garyburd,2015-09-23 22:29:30,https://api.github.com/repos/gorilla/websocket/git/commits/13e4d0621caa4d77fd9aa470ef6d7ab63d1a5e41,13e4d0621caa4d77fd9aa470ef6d7ab63d1a5e41,Do not build files in echo example
+garyburd,2015-09-23 22:23:26,https://api.github.com/repos/gorilla/websocket/git/commits/d051d2923142f6a52727e0e00a826bfbda03fa6d,d051d2923142f6a52727e0e00a826bfbda03fa6d,Add client and server example
+garyburd,2015-09-15 18:02:48,https://api.github.com/repos/gorilla/websocket/git/commits/39cd638460acf1c01aaac38effc6e54ee7e04bca,39cd638460acf1c01aaac38effc6e54ee7e04bca,"Document ping and pong handler argument
+
+Closes #76"
+garyburd,2015-08-11 17:14:32,https://api.github.com/repos/gorilla/websocket/git/commits/b6ab76f1fe9803ee1d59e7e5b2a797c1fe897ce5,b6ab76f1fe9803ee1d59e7e5b2a797c1fe897ce5,"Provide all close frame data to application
+
+- Export closeError.
+- Do not convert normal closure and going away to io.EOF."
+garyburd,2015-07-14 14:06:27,https://api.github.com/repos/gorilla/websocket/git/commits/6eb6ad425a89d9da7a5549bc6da8f79ba5c17844,6eb6ad425a89d9da7a5549bc6da8f79ba5c17844,Improve chat example documentation
+garyburd,2015-05-30 03:03:52,https://api.github.com/repos/gorilla/websocket/git/commits/a3ec486e6a7a41858210b0fc5d7b5df593b3c4a3,a3ec486e6a7a41858210b0fc5d7b5df593b3c4a3,"Merge pull request #67 from cjellick/fix-typo
+
+Fix typo"
+cjellick,2015-05-29 23:26:01,https://api.github.com/repos/gorilla/websocket/git/commits/8ba5eaa6df7a61d7f49d50d9561df9e6f9122b04,8ba5eaa6df7a61d7f49d50d9561df9e6f9122b04,Fix typo
+garyburd,2015-05-15 16:26:38,https://api.github.com/repos/gorilla/websocket/git/commits/1551221275a7bd42978745a376b2531f791d88f3,1551221275a7bd42978745a376b2531f791d88f3,"Reject URIs containing user information
+
+WebSocket URIs do not contain user information per section 3 of RFC
+6455.
+
+Fixes #65"
+pwaller,2015-05-08 17:33:57,https://api.github.com/repos/gorilla/websocket/git/commits/6fd0f867fef40c540fa05c59f86396de10a632a6,6fd0f867fef40c540fa05c59f86396de10a632a6,"Allow separate specification of http/dial Hosts
+
+Enable the Host: header to be customized in a Dialer.Dial call.
+
+This is needed to implement websocket proxies."
+garyburd,2015-05-08 21:59:31,https://api.github.com/repos/gorilla/websocket/git/commits/b2fa8f6d58382fcff329e087d22188fe71cee080,b2fa8f6d58382fcff329e087d22188fe71cee080,"Return response body on bad handshake.
+
+The Dialer.Dial method returns an *http.Response on a bad handshake.
+This CL updates the Dial method to include up to 1024 bytes of the
+response body in the returned *http.Response. Applications may find the
+response body helpful when debugging bad handshakes.
+
+Fixes issue #62."
+garyburd,2015-04-18 10:52:33,https://api.github.com/repos/gorilla/websocket/git/commits/ecff5aabe41f13b4cdf897e3c0c9bbccbe552a29,ecff5aabe41f13b4cdf897e3c0c9bbccbe552a29,"Merge pull request #59 from gansidui/master
+
+Fix typo in comment"
+gansidui,2015-04-18 05:58:37,https://api.github.com/repos/gorilla/websocket/git/commits/db3e79986d86af2723ee06c04f0284465e32bb29,db3e79986d86af2723ee06c04f0284465e32bb29,Fix typo in comment
+garyburd,2015-03-09 19:10:02,https://api.github.com/repos/gorilla/websocket/git/commits/2dbddebb8266b93c5e6b119efb54e89043186f3f,2dbddebb8266b93c5e6b119efb54e89043186f3f,"Improve the errors returned from ReadJSON.
+
+The JSON decoder returns io.EOF when a message is empty or all
+whitespace. Convert io.EOF return values from the JSON decoder to
+io.ErrUnexpectedEOF so that applications can distinguish between an
+error reading the JSON value and the connection closing."
+garyburd,2015-01-15 06:16:10,https://api.github.com/repos/gorilla/websocket/git/commits/ab5b3a61f5b6aa323d66ece457334396c4ccdd03,ab5b3a61f5b6aa323d66ece457334396c4ccdd03,"Improve server error messages
+
+Update the error messages for missing 'Connection: upgrade' and
+'Upgrade: websocket' tokens to indicate that the header might not be
+present. The previous error message implied that the header is present,
+but has the wrong value. This leads to some confusion for those
+debugging connection problems."
+garyburd,2014-12-24 16:19:31,https://api.github.com/repos/gorilla/websocket/git/commits/1f87405cd9755fc388e111c4003caca4a2f52fa6,1f87405cd9755fc388e111c4003caca4a2f52fa6,"Merge pull request #53 from gaku/master
+
+Fixed broken HTML for autobahn test server."
+gaku,2014-12-24 11:15:18,https://api.github.com/repos/gorilla/websocket/git/commits/9dc53c067304abd1d071f0060126ade242393d1f,9dc53c067304abd1d071f0060126ade242393d1f,Fixed broken HTML for autobahn test server.
+garyburd,2014-11-17 12:16:34,https://api.github.com/repos/gorilla/websocket/git/commits/9007e29a7c93fc3dcebbdbf742ce0efaf19e6510,9007e29a7c93fc3dcebbdbf742ce0efaf19e6510,Add test for function tokenListContainsValue
+garyburd,2014-11-10 17:56:46,https://api.github.com/repos/gorilla/websocket/git/commits/f761cdb666383d5db7a8bea9ff8c9db35332b4a0,f761cdb666383d5db7a8bea9ff8c9db35332b4a0,Update README to use new path for Go sub-repos.
+garyburd,2014-11-07 00:56:58,https://api.github.com/repos/gorilla/websocket/git/commits/ea78a26f8048532764e0a020ee901572dc7f6046,ea78a26f8048532764e0a020ee901572dc7f6046,Don't hide Timeout on errors from underying net conn.
+garyburd,2014-11-05 20:26:52,https://api.github.com/repos/gorilla/websocket/git/commits/7d2ea39ebc0c0e8335bc48963a83146ee1200adb,7d2ea39ebc0c0e8335bc48963a83146ee1200adb,Cleanup buffer size calculations.
+garyburd,2014-11-03 15:50:49,https://api.github.com/repos/gorilla/websocket/git/commits/79b87dd5c78103187e424d027b34b3ffa8ba56bc,79b87dd5c78103187e424d027b34b3ffa8ba56bc,"Merge pull request #45 from attilaolah/patch-1
+
+Fix typo in conn.go"
+attilaolah,2014-11-03 15:48:34,https://api.github.com/repos/gorilla/websocket/git/commits/6af932933af5c52b246e39cb3f02d469cad00cf0,6af932933af5c52b246e39cb3f02d469cad00cf0,fix typo in conn.go
+garyburd,2014-11-03 15:27:07,https://api.github.com/repos/gorilla/websocket/git/commits/a6366fbf9d93ca817f34f2ffa356b3d7f066b706,a6366fbf9d93ca817f34f2ffa356b3d7f066b706,"Merge pull request #44 from attilaolah/patch-1
+
+fix typo in README.md"
+attilaolah,2014-11-03 15:02:20,https://api.github.com/repos/gorilla/websocket/git/commits/d9b6ff71d6dac80d62940406b31f8d18ae421731,d9b6ff71d6dac80d62940406b31f8d18ae421731,fix typo in README.md
+garyburd,2014-10-31 21:52:20,https://api.github.com/repos/gorilla/websocket/git/commits/47f93dfaed0afa5b5fefe94620365a69f55d910a,47f93dfaed0afa5b5fefe94620365a69f55d910a,"Improve errors.
+
+- Use new closeError type for reporting close frames to the application.
+- Use closeError with code 1006 when the peer closes connection without
+  sending a close frame. The error io.ErrUnexpectedEOF was used
+  previously. This change helps developers distinguish abnormal closure
+  and an unexpected EOF in the JSON parser."
+garyburd,2014-10-31 21:51:45,https://api.github.com/repos/gorilla/websocket/git/commits/02eec998dac2a937d8f615f99b43c602d1017e03,02eec998dac2a937d8f615f99b43c602d1017e03,Improve documentation.
+garyburd,2014-10-12 16:34:51,https://api.github.com/repos/gorilla/websocket/git/commits/87f6f6a22ebfbc3f89b9ccdc7fddd1b914c095f9,87f6f6a22ebfbc3f89b9ccdc7fddd1b914c095f9,Add documentation about origin policy.
+garyburd,2014-09-11 06:42:24,https://api.github.com/repos/gorilla/websocket/git/commits/a6f041ac33b84488bb44137d6866cd3c8706d792,a6f041ac33b84488bb44137d6866cd3c8706d792,"Merge pull request #40 from stchris/patch-1
+
+fixed typo in comment"
+garyburd,2014-08-16 03:25:38,https://api.github.com/repos/gorilla/websocket/git/commits/4292df70df546334d4174bcd77271253c9b7835c,4292df70df546334d4174bcd77271253c9b7835c,Check and handle error return from hijack.
+garyburd,2014-08-11 14:57:55,https://api.github.com/repos/gorilla/websocket/git/commits/365b7a442dd6798d7982f6ece83aee286cc53c62,365b7a442dd6798d7982f6ece83aee286cc53c62,"Merge pull request #38 from hydrogen18/master
+
+Correct documentation of ""ReadJSON"""
+hydrogen18,2014-08-11 01:42:52,https://api.github.com/repos/gorilla/websocket/git/commits/ade0fc90f793c97554d26478432e779a7fa873b6,ade0fc90f793c97554d26478432e779a7fa873b6,"Correct documentation, the ""ReadJSON"" function depends on ""Unmarshal"", not ""Marshal"""
+garyburd,2014-08-05 05:03:22,https://api.github.com/repos/gorilla/websocket/git/commits/f940e88c0e4f2f58de44dc1788e05784b91332dd,f940e88c0e4f2f58de44dc1788e05784b91332dd,"Merge pull request #37 from jcbohin/patch-1
+
+Changing a swap in README.md for autobahn"
+jcbohin,2014-08-04 21:58:41,https://api.github.com/repos/gorilla/websocket/git/commits/acc8d8706f4728d63330a41054a64cee261aef10,acc8d8706f4728d63330a41054a64cee261aef10,"Changing a swap in README.md for autobahn
+
+Autobahn test suite configuration fuzzingclient.json refers to 'clients' folder, but README.md refers to server. I changed README.md to clients, although I can't figure a good way to choose between changing README.md for 'clients' or fuzzingclient.json for servers. both seems legit to me, depending on what side you see things. Feel free to dismiss/decline my PR if you think the former makes more sense in this context."
+garyburd,2014-07-24 03:32:33,https://api.github.com/repos/gorilla/websocket/git/commits/bda3d7d128858cbd3902a0f46e1ff31629e84895,bda3d7d128858cbd3902a0f46e1ff31629e84895,Fix mask key.
+garyburd,2014-07-11 02:36:51,https://api.github.com/repos/gorilla/websocket/git/commits/10afcadf69098c003a97f23349c25ca16f0543e3,10afcadf69098c003a97f23349c25ca16f0543e3,"Cleanup EOF handling.
+
+- Modify data message reader to return io.ErrUnexpectedEOF if a close
+  message is received before the final frame of the message.
+- Modify NextReader to return io.ErrUnexpectedEOF if underlying
+  connection returns io.EOF before a close message."
+garyburd,2014-07-07 16:33:43,https://api.github.com/repos/gorilla/websocket/git/commits/aef42a8ae63a680a8c5d4ca25b01ca57a97ffa5c,aef42a8ae63a680a8c5d4ca25b01ca57a97ffa5c,Add note about reading the connection.
+garyburd,2014-07-05 20:56:34,https://api.github.com/repos/gorilla/websocket/git/commits/0e7b5f878f841d76632b20fd79f53ca0efd06fae,0e7b5f878f841d76632b20fd79f53ca0efd06fae,"Do not mask bytes when reading on the client.
+
+- The bytes were masked with zero, a nop.
+- Add test for control messages."
+garyburd,2014-07-05 15:39:32,https://api.github.com/repos/gorilla/websocket/git/commits/411599d366da83d111067cce5f66815af5bd2dd7,411599d366da83d111067cce5f66815af5bd2dd7,Cleanup client/server tests.
+garyburd,2014-06-30 21:57:20,https://api.github.com/repos/gorilla/websocket/git/commits/0f32413e5e853a1244bc7be242b9afb625dc0aee,0f32413e5e853a1244bc7be242b9afb625dc0aee,"Relax default origin test.
+
+Update the default origin test to treat no origin specified as OK. If
+the client can create a request without the origin set, then the client
+can also create a request with an arbitrary origin."
+garyburd,2014-06-30 02:47:15,https://api.github.com/repos/gorilla/websocket/git/commits/3d0e89148ea10e332fa31cf615ecb84fc20076be,3d0e89148ea10e332fa31cf615ecb84fc20076be,Clear deadlines set by HTTP server.
+garyburd,2014-06-27 20:08:22,https://api.github.com/repos/gorilla/websocket/git/commits/bc19d3d33711c40f9c09d9a5de291a62e8feab29,bc19d3d33711c40f9c09d9a5de291a62e8feab29,"Improve chat example.
+
+- Log all handshake errors.
+- Prevent double close on send channel."
+garyburd,2014-06-27 20:06:07,https://api.github.com/repos/gorilla/websocket/git/commits/d2dc86f575bda0aa59451d65ba6ff1ef39dd8cc8,d2dc86f575bda0aa59451d65ba6ff1ef39dd8cc8,Add maskBytes benchmark.
+garyburd,2014-06-06 16:12:15,https://api.github.com/repos/gorilla/websocket/git/commits/efd7f76a14d91b4a8e9597306f554305ac9b0b9b,efd7f76a14d91b4a8e9597306f554305ac9b0b9b,"Cleanup read operations.
+
+- Use io.ReadFull instead of similar function in package.
+- Return from Read with partial data. Don't attempt to fill buffer.
+- Do not return net.Error with Temporary() == true"
+garyburd,2014-06-05 22:19:54,https://api.github.com/repos/gorilla/websocket/git/commits/f4076986b69612ecb8bc7ce06d742eda6286200d,f4076986b69612ecb8bc7ce06d742eda6286200d,"Improve Set{Read,Write}Deadline doc.
+
+The new doc is inspired by the crypto/tls doc."
+garyburd,2014-06-05 20:56:06,https://api.github.com/repos/gorilla/websocket/git/commits/95caf726f743640e52f2c99ce727ad58b3a53ef6,95caf726f743640e52f2c99ce727ad58b3a53ef6,"Update README.md
+
+typos"
+garyburd,2014-06-03 22:01:48,https://api.github.com/repos/gorilla/websocket/git/commits/6afc23d0532104c2f3ef594826915f2bbc16833a,6afc23d0532104c2f3ef594826915f2bbc16833a,Improve readme.
+garyburd,2014-06-03 21:47:02,https://api.github.com/repos/gorilla/websocket/git/commits/d832908d2b110c6a7d51d54b5141ec3dd71d3f2c,d832908d2b110c6a7d51d54b5141ec3dd71d3f2c,Add note about Chrome message fragmentation to readme
+garyburd,2014-05-10 13:54:10,https://api.github.com/repos/gorilla/websocket/git/commits/10a95d14a3a215f5e2045d3dbbcd29f1ab209586,10a95d14a3a215f5e2045d3dbbcd29f1ab209586,"Merge pull request #27 from AeroNotix/patch-1
+
+Typo fix"
+AeroNotix,2014-05-10 12:30:27,https://api.github.com/repos/gorilla/websocket/git/commits/b98fe92f10f3989fb12942a91a98cd5d11d8116b,b98fe92f10f3989fb12942a91a98cd5d11d8116b,Typo fix
+garyburd,2014-05-08 18:21:56,https://api.github.com/repos/gorilla/websocket/git/commits/db7a2a1679028d026a418babdf072d8765f12898,db7a2a1679028d026a418babdf072d8765f12898,"Improve client host header handling.
+
+- Set request host header to substring of the URL. Do not add default
+  port to string.
+- Do not include port when verifying TLS host name."
+garyburd,2014-04-21 13:28:28,https://api.github.com/repos/gorilla/websocket/git/commits/1e6e1281b05fe5eaaf3300bdedb8e75880b9c6fd,1e6e1281b05fe5eaaf3300bdedb8e75880b9c6fd,Clear upgrader handshake deadline.
+garyburd,2014-04-21 04:48:25,https://api.github.com/repos/gorilla/websocket/git/commits/db1c080f909b55a87f9fd5f21802f700aa5e0ae2,db1c080f909b55a87f9fd5f21802f700aa5e0ae2,Improve readme.
+garyburd,2014-04-21 04:14:06,https://api.github.com/repos/gorilla/websocket/git/commits/82a29af075a528d0cbdd0f337787647f2ae2fb4b,82a29af075a528d0cbdd0f337787647f2ae2fb4b,"Update readme files
+
+- Improve comparison with go.net package.
+- Improve autobahn server description."
+garyburd,2014-04-20 19:08:24,https://api.github.com/repos/gorilla/websocket/git/commits/bbe4cde69344f68d7f6a435992c36acc891c87f2,bbe4cde69344f68d7f6a435992c36acc891c87f2,Use Upgrader in client/server test.
+garyburd,2014-04-20 18:38:35,https://api.github.com/repos/gorilla/websocket/git/commits/df94ef6daa7b6271be24badd6b7896a7be4247d8,df94ef6daa7b6271be24badd6b7896a7be4247d8,"Various improvements to Upgrader.
+
+- Revert back to using Subprotocols []string. The protocol negotiation
+  using Subprotocols should meet the needs of most applications.
+  Applications are not locked into using this negotiation. An
+  application can pick a protocol some other way and specify the
+  protocol using the Sec-Websocket-Protocol response header.
+- Parse the origin using url.Parse. This is the correct function to use
+  when parsing a full URL.
+- Improve comments."
+garyburd,2014-04-20 14:20:03,https://api.github.com/repos/gorilla/websocket/git/commits/f867cb5c72244dd495b8755aa7e1cf21c3544a0a,f867cb5c72244dd495b8755aa7e1cf21c3544a0a,Cleanup issues reported by golint.
+garyburd,2014-04-19 14:16:39,https://api.github.com/repos/gorilla/websocket/git/commits/f5c69ea9eda9d3f578b205488b8d40f8f87ddb36,f5c69ea9eda9d3f578b205488b8d40f8f87ddb36,Improve comparison with other packages in readme.
+garyburd,2014-04-18 21:25:11,https://api.github.com/repos/gorilla/websocket/git/commits/15aed3b4a43f20c5d39d7f8e7e8ecd01aecca3c3,15aed3b4a43f20c5d39d7f8e7e8ecd01aecca3c3,Relicense to the Gorilla WebSocket Authors.
+fancycode,2014-04-17 22:40:10,https://api.github.com/repos/gorilla/websocket/git/commits/ecf9b98e31b6faec4175acf04f2c8f97cfaf0615,ecf9b98e31b6faec4175acf04f2c8f97cfaf0615,Updated docs.
+fancycode,2014-04-17 22:25:32,https://api.github.com/repos/gorilla/websocket/git/commits/0a7cd15dd1d6659e3667818474f417252eb89b83,0a7cd15dd1d6659e3667818474f417252eb89b83,Make subprotocol negotiation more flexible.
+fancycode,2014-04-17 22:20:46,https://api.github.com/repos/gorilla/websocket/git/commits/2b15a667411d01f6668f95c60f91ca12b75448e3,2b15a667411d01f6668f95c60f91ca12b75448e3,Simplified returning of errors.
+fancycode,2014-04-17 22:14:23,https://api.github.com/repos/gorilla/websocket/git/commits/018944708b7c77f59554d8f45c65ecbd2b2c0cfd,018944708b7c77f59554d8f45c65ecbd2b2c0cfd,"Removed unnecessary call to ""http.Error""."
+fancycode,2014-04-17 22:13:15,https://api.github.com/repos/gorilla/websocket/git/commits/8827bd1a23b2702e63f29cda4791d84552a5cd97,8827bd1a23b2702e63f29cda4791d84552a5cd97,Moved Upgrader variable to package level.
+fancycode,2014-04-17 22:07:36,https://api.github.com/repos/gorilla/websocket/git/commits/b03dcbad2ae3e2d00ee5589ae43c2a4eff5daa6d,b03dcbad2ae3e2d00ee5589ae43c2a4eff5daa6d,"Updated Origin check.
+The host in the Origin header must match the host of the request by default."
+fancycode,2014-04-17 21:46:48,https://api.github.com/repos/gorilla/websocket/git/commits/f99474eb973ce7d8dd4b9eb2e7cd1585e213db05,f99474eb973ce7d8dd4b9eb2e7cd1585e213db05,Renamed constants to match Go style guidelines.
+fancycode,2014-04-17 21:45:40,https://api.github.com/repos/gorilla/websocket/git/commits/56543ef6d6df52c22b8ea2b5433ce152ddfbeb40,56543ef6d6df52c22b8ea2b5433ce152ddfbeb40,Moved Upgrader code to server implementation.
+fancycode,2014-04-16 16:18:28,https://api.github.com/repos/gorilla/websocket/git/commits/2c95e6b09feb90211e38f0f4071f6212a473751d,2c95e6b09feb90211e38f0f4071f6212a473751d,"Support ""Sec-Websocket-Protocol"" for old-style ""Upgrade"" calls."
+fancycode,2014-04-16 15:42:15,https://api.github.com/repos/gorilla/websocket/git/commits/9474333b60d155e20b046cc560305a47977810a5,9474333b60d155e20b046cc560305a47977810a5,Use new Upgrader API in examples
+fancycode,2014-04-16 15:25:17,https://api.github.com/repos/gorilla/websocket/git/commits/b2f990180a8e1fc85b4e9234160bc962bfcaa15a,b2f990180a8e1fc85b4e9234160bc962bfcaa15a,Implement Upgrader API (#6).
+garyburd,2014-03-20 20:26:28,https://api.github.com/repos/gorilla/websocket/git/commits/03206ef31ebe44a6db9e66f3b466e05a31790631,03206ef31ebe44a6db9e66f3b466e05a31790631,Various improvements to README files.
+garyburd,2014-03-20 19:25:30,https://api.github.com/repos/gorilla/websocket/git/commits/05618edccc12834ef00033a7ce485a42624778dd,05618edccc12834ef00033a7ce485a42624778dd,Add file watcher example.
+garyburd,2014-03-18 16:27:49,https://api.github.com/repos/gorilla/websocket/git/commits/4ec58d24a41ce51bb0a5dc474885a290b5cd2800,4ec58d24a41ce51bb0a5dc474885a290b5cd2800,"Merge pull request #21 from longsleep/underlyingConn
+
+Added helper function UnderlyingConn to retrieve net.Conn from Conn objects."
+longsleep,2014-03-18 14:26:10,https://api.github.com/repos/gorilla/websocket/git/commits/ccad3db0071a48330ba01807bca7a34bbdf3911b,ccad3db0071a48330ba01807bca7a34bbdf3911b,Added helper function UnderlyingConn to retrieve net.Conn from Conn objects.
+garyburd,2014-02-18 05:22:10,https://api.github.com/repos/gorilla/websocket/git/commits/119002ce0495aa7a8f388544d740e1bdc8829513,119002ce0495aa7a8f388544d740e1bdc8829513,"Merge pull request #16 from darabos/patch-1
+
+Fix small inconsistency in example."
+darabos,2014-02-15 12:48:14,https://api.github.com/repos/gorilla/websocket/git/commits/1b37ccbb61576577dbdeafbb250eeedf5105eb39,1b37ccbb61576577dbdeafbb250eeedf5105eb39,Fix small inconsistency in example.
+garyburd,2013-12-31 16:31:07,https://api.github.com/repos/gorilla/websocket/git/commits/92334662baa9cbebc2e6e68b8d56bc1233f85a4c,92334662baa9cbebc2e6e68b8d56bc1233f85a4c,"Merge pull request #14 from ancarda/master
+
+Fixed Examples"
+ancarda,2013-12-31 11:00:58,https://api.github.com/repos/gorilla/websocket/git/commits/30354e97e210084e5ab8207adf28a3637c2f0124,30354e97e210084e5ab8207adf28a3637c2f0124,"Fixed Examples
+
+- Typo (""conn.WriteMessaage"" should be ""conn.WriteMessage"")
+- Fixed Incorrect WriteMessage call:
+
+    func (c *Conn) WriteMessage(messageType int, data []byte) error
+
+But the example uses `_, err` when there is only 1 return type."
+garyburd,2013-12-23 20:08:49,https://api.github.com/repos/gorilla/websocket/git/commits/707d1f6c6b2ddb4e12439fcf806775a688aee343,707d1f6c6b2ddb4e12439fcf806775a688aee343,Cleanup issues reported by golint.
+garyburd,2013-12-23 20:01:25,https://api.github.com/repos/gorilla/websocket/git/commits/67d178946a9b66e2d84823994c88c649a2080262,67d178946a9b66e2d84823994c88c649a2080262,"Implement net.Error on timeout errors.
+
+Fixes #10."
+garyburd,2013-12-23 19:42:01,https://api.github.com/repos/gorilla/websocket/git/commits/7274f97ac5bc42b5c48965651caa958484d7d02a,7274f97ac5bc42b5c48965651caa958484d7d02a,"Merge pull request #12 from 29decibel/master
+
+fix typo in ReadJSON deprecated comments"
+garyburd,2013-12-23 19:41:02,https://api.github.com/repos/gorilla/websocket/git/commits/c50896b0f1077e949bcea9cd57c9d13ce4a843ca,c50896b0f1077e949bcea9cd57c9d13ce4a843ca,"Update Travis config, Go 1.0 not supported."
+29decibel,2013-12-23 18:26:55,https://api.github.com/repos/gorilla/websocket/git/commits/ccedd444b5b5a26448bf5f35e498557981e2ec05,ccedd444b5b5a26448bf5f35e498557981e2ec05,fix typo in ReadJSON deprecated comments
+garyburd,2013-12-21 16:28:48,https://api.github.com/repos/gorilla/websocket/git/commits/f273336ae266a6f590f814fe5361c5757b83b5c1,f273336ae266a6f590f814fe5361c5757b83b5c1,"Modify client to work with Chrome debug server.
+
+The Chrome debug server does not use case insensitive comparison on the
+Connection header tokens as required by the HTTP RFC. Modify the client
+to send ""Connection: Upgrade"" as expected by Chrome. Because this
+matches the examples in the RFC, this change might improve
+interoperability with other servers."
+garyburd,2013-12-20 23:57:02,https://api.github.com/repos/gorilla/websocket/git/commits/5625e8a51f1c78c46ae542ab91100e6a4bf7054e,5625e8a51f1c78c46ae542ab91100e6a4bf7054e,Fix tabs in overview examples.
+garyburd,2013-12-20 22:54:49,https://api.github.com/repos/gorilla/websocket/git/commits/9cdec41bda8b8512edef1eed1e35c692f6c07e3f,9cdec41bda8b8512edef1eed1e35c692f6c07e3f,Improve Upgrade documentation.
+garyburd,2013-12-20 21:49:38,https://api.github.com/repos/gorilla/websocket/git/commits/536d8dd06666fe8baa1eaf383ad7206db3a6b475,536d8dd06666fe8baa1eaf383ad7206db3a6b475,Fix typo in Upgrade example.
+garyburd,2013-12-14 15:48:43,https://api.github.com/repos/gorilla/websocket/git/commits/b118f62ec035033c17a42af60c8912e82cfa4034,b118f62ec035033c17a42af60c8912e82cfa4034,Add subprotocol negotiation to Dialer.
+garyburd,2013-12-14 05:30:22,https://api.github.com/repos/gorilla/websocket/git/commits/87accaef6689856744903179988178a8c8f4461d,87accaef6689856744903179988178a8c8f4461d,Add Dialer.
+kisielk,2013-12-05 07:16:17,https://api.github.com/repos/gorilla/websocket/git/commits/2119675aadfa32c4e7f177685ee8a7416cfc72bd,2119675aadfa32c4e7f177685ee8a7416cfc72bd,Add go 1.2 to travis.yml
+kisielk,2013-12-01 18:51:23,https://api.github.com/repos/gorilla/websocket/git/commits/8e9f6b8cfdb77ff26c39f931f891166f832d409f,8e9f6b8cfdb77ff26c39f931f891166f832d409f,Add travis.yml
+garyburd,2013-10-30 00:43:03,https://api.github.com/repos/gorilla/websocket/git/commits/93b1570a2772445f711fafc33f786531470986e3,93b1570a2772445f711fafc33f786531470986e3,"Improve documentation.
+
+- Introduce ReadMessage and WriteMessage before NextReader and
+  NextWriter in the package comment. It's better to introduce the easy
+  methods first.
+- Move sections on message of types before the concurrency section."
+garyburd,2013-10-29 13:29:20,https://api.github.com/repos/gorilla/websocket/git/commits/2903ebc236f27804cbb22f39da14f5fe7d334644,2903ebc236f27804cbb22f39da14f5fe7d334644,Add more information to README.md.
+tapocol,2013-10-27 18:56:52,https://api.github.com/repos/gorilla/websocket/git/commits/bc7ffd7c1e1525928ac1c853a003eeb646324446,bc7ffd7c1e1525928ac1c853a003eeb646324446,Fix test for deprecated JSON funcs.
+tapocol,2013-10-27 18:50:42,https://api.github.com/repos/gorilla/websocket/git/commits/3d66655aaaf2f0a458ec8cffc578ca331dc056f7,3d66655aaaf2f0a458ec8cffc578ca331dc056f7,Added WriteJSON/ReadJSON deprecated methods for backwards compatibility.
+tapocol,2013-10-26 08:13:32,https://api.github.com/repos/gorilla/websocket/git/commits/8e0dcebbf09789d5e00a6e40621d47cee5eeab56,8e0dcebbf09789d5e00a6e40621d47cee5eeab56,Use WriteJSON and ReadJSON on Conn struct.
+garyburd,2013-10-27 15:34:33,https://api.github.com/repos/gorilla/websocket/git/commits/1627eef2a362a7fa0547daea1fdbe6644750f770,1627eef2a362a7fa0547daea1fdbe6644750f770,Improve documentation.
+garyburd,2013-10-26 13:52:30,https://api.github.com/repos/gorilla/websocket/git/commits/80c1e5a7419a5aa37e40c33562c6e2c5973d00e9,80c1e5a7419a5aa37e40c33562c6e2c5973d00e9,Add Subprotocols helper function.
+garyburd,2013-10-16 16:41:47,https://api.github.com/repos/gorilla/websocket/git/commits/273ecadfcae3306e1943ac6d4160ef02cac48247,273ecadfcae3306e1943ac6d4160ef02cac48247,Initial commit

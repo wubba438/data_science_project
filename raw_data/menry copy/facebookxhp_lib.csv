@@ -1,0 +1,1964 @@
+xhp-lib,Class libraries for XHP. XHP is a Hack feature that augments the syntax of the language such that XML document fragments become valid PHP expressions.
+username,timestamp,url,sha,message
+jjergus,2019-08-27 03:06:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/81786186841f19624b0d9b4a3b4581f9f35ae6a9,81786186841f19624b0d9b4a3b4581f9f35ae6a9,add FIXMEs required by HHVM 4.20+
+fredemmott,2019-08-19 17:09:21,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f629af6724f191a8d5eb677a8245175b9ab74c18,f629af6724f191a8d5eb677a8245175b9ab74c18,Fix and workaround stringish cast deprecation
+fredemmott,2019-07-26 20:25:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7270a24d74ba39f91918c7ef1867fa0588b02812,7270a24d74ba39f91918c7ef1867fa0588b02812,Add generic for array attribute type
+fredemmott,2019-07-15 21:04:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c718fe4976e7d4bbd7563a643f90558dbfb7714b,c718fe4976e7d4bbd7563a643f90558dbfb7714b,"Require HHVM 4.13+
+
+Supporting 4.14 requires replacing instanceof with is; 4.13 contains
+performance improvements to `is` expressions making this change
+practical outside of repo-authoritative mode."
+fredemmott,2019-07-15 21:02:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/64c02b5ecccd5eec995d0b380c1c4667a39ba5da,64c02b5ecccd5eec995d0b380c1c4667a39ba5da,"instanceof -> is
+
+fully handled by hhast now; manually fixed up a new error - we had
+nonnull, but know it's an XHPChild
+
+closes #197"
+fredemmott,2019-07-09 16:22:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/80dd47f31fe319c8be010a10ab195170ee42aae8,80dd47f31fe319c8be010a10ab195170ee42aae8,Suppress another typechecker error in test for intentionally bad code.
+fredemmott,2019-06-24 21:16:25,https://api.github.com/repos/hhvm/xhp-lib/git/commits/fef70b6108bf1b193318739a5b6d33c3a345f0f8,fef70b6108bf1b193318739a5b6d33c3a345f0f8,Support HHVM 4.10
+aloiret,2019-05-01 16:54:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b00e0add1ee6acee232d56f75cf2d6bf0f76e2f5,b00e0add1ee6acee232d56f75cf2d6bf0f76e2f5,"Remove usages of lval as an expression. (#196)
+
+Summary: required for .hhconfig disable_lval_as_an_expression.
+
+Signed-off-by: Arthur Loiret <arthur.loiret@emerton-data.com>"
+fredemmott,2019-04-26 16:50:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5c007c9ab236fb03f537f731e219c8a838b72a8c,5c007c9ab236fb03f537f731e219c8a838b72a8c,"Stop committing composer.lock
+
+Given HHVM's releasing weekly, these need updating much more frequently,
+and are creating more work than they save."
+fredemmott,2019-04-10 16:47:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/195861ec3f8142573c1f7fd2331d57757197a12c,195861ec3f8142573c1f7fd2331d57757197a12c,fix travis-ci link
+fredemmott,2019-04-10 16:10:25,https://api.github.com/repos/hhvm/xhp-lib/git/commits/79b9439c74d47fd994b18dd8f8a5d184a5db9fdc,79b9439c74d47fd994b18dd8f8a5d184a5db9fdc,Add missing // partial
+fredemmott,2019-03-26 20:49:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/371cb242b7a910a45f4a3fed3599d6c4f9c1d25b,371cb242b7a910a45f4a3fed3599d6c4f9c1d25b,Replace static variables with __MemoizeLSB
+fredemmott,2019-03-26 17:15:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/40ef97361a75967fed75c1126ce3306a2ff9a285,40ef97361a75967fed75c1126ce3306a2ff9a285,update dependencies and fix xhpchild truthiness test for 4.1
+fredemmott,2019-03-06 22:28:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ae5a5acc5e8b87b10b0b5b157e92fdec6eefffa9,ae5a5acc5e8b87b10b0b5b157e92fdec6eefffa9,operator precedence
+fredemmott,2019-03-06 22:03:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e82e883875716ac7cd144b197061dfb8db7a87b4,e82e883875716ac7cd144b197061dfb8db7a87b4,"Support nightly builds
+
+This is basically a lot more strict mode"
+fredemmott,2019-02-28 18:24:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/49efef52e1d298f9b89d369687ec4a008bdf1360,49efef52e1d298f9b89d369687ec4a008bdf1360,update dependencies for nightly tests
+fredemmott,2019-02-28 18:24:08,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0976f42236a2b067c96c78acdf46e129955e9465,0976f42236a2b067c96c78acdf46e129955e9465,Travis CI notifications to Slack
+fredemmott,2019-02-20 19:06:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bf61ad35b312400bad8c4a3e9f4bd27d2089867c,bf61ad35b312400bad8c4a3e9f4bd27d2089867c,Update some facebook/xhp-lib references in the readme to hhvm/xhp-lib
+fredemmott,2019-02-20 18:55:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/97babcb221af616f3efa2a8b198e32db249b569d,97babcb221af616f3efa2a8b198e32db249b569d,test on nightlies
+fredemmott,2019-02-20 18:55:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6c6ce4bc9cb5a02a0bda55a2813e841728a725eb,6c6ce4bc9cb5a02a0bda55a2813e841728a725eb,Support nightlies
+fredemmott,2019-02-20 17:35:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4c01ba8d6d6923b67567fed46634d9b82fd98e16,4c01ba8d6d6923b67567fed46634d9b82fd98e16,Standard FB project files/notices.
+fredemmott,2019-02-13 20:37:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b4dfb889b50386995a23033c378b785630637a75,b4dfb889b50386995a23033c378b785630637a75,Dockerify tests
+fredemmott,2019-02-13 20:37:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6c287f55fc9b938f8ba58049586dc4c9b1af400e,6c287f55fc9b938f8ba58049586dc4c9b1af400e,Remove forward_compatibility-level from .hhconfig
+fredemmott,2019-02-13 20:36:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3e5f1186f5822b541d54a8c542e417b0c9a721b7,3e5f1186f5822b541d54a8c542e417b0c9a721b7,update lockfile
+fredemmott,2019-02-11 19:46:01,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0cb3fa00d1b9759be4cd2ad9a821bc54b4ca22fb,0cb3fa00d1b9759be4cd2ad9a821bc54b4ca22fb,fix HHVM version constraint
+fredemmott,2019-02-11 19:40:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/deadc25f567cde7fd431d3b5b52147b34eba4503,deadc25f567cde7fd431d3b5b52147b34eba4503,Update dependencies to HHVM 4.0
+fredemmott,2019-02-11 18:57:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2d3ff9d72569c2e4f71a3b4e708a974d6472246d,2d3ff9d72569c2e4f71a3b4e708a974d6472246d,Fixes for HHVM 4
+ssandler,2018-11-02 17:02:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/89dbd22526133fffdc4274088f353e8e9dbec970,89dbd22526133fffdc4274088f353e8e9dbec970,"Ensure that special attributes should not render when null (#194)
+
+* Ensure that special attributes should not render when null
+
+Previously, regular attributes are removed from the DOM when null, but
+special attributes would be cast to empty string. This makes them behave
+more like regular attributes, so that it's possible to use null as a sentinel
+value to remove them from the DOM.
+
+* remove string cast instead
+
+* add test demonstrating implicit string cast for attributes"
+fredemmott,2018-10-19 20:45:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c1206482e07acdf9956a2d455613a840ed8fa610,c1206482e07acdf9956a2d455613a840ed8fa610,support 3.29
+fredemmott,2018-10-05 19:03:01,https://api.github.com/repos/hhvm/xhp-lib/git/commits/208325ec6493126020441abb4ec4ac0cddb2db2a,208325ec6493126020441abb4ec4ac0cddb2db2a,remove phpunit.xml
+fredemmott,2018-10-05 16:48:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e1958f8d325d51e8c9a07101cc7631814c84636e,e1958f8d325d51e8c9a07101cc7631814c84636e,Update .travis.sh
+fredemmott,2018-10-04 19:02:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/85d6a5f5264721eadabf059f17891cbd4f9671d4,85d6a5f5264721eadabf059f17891cbd4f9671d4,Port to HackTest
+kmeht,2018-08-27 20:13:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0b09244dbf3eba7f0f8ed89c974dc82c3c0be12d,0b09244dbf3eba7f0f8ed89c974dc82c3c0be12d,Update dependencies
+wlin53,2018-08-10 21:14:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6477c01f34b86c66eb5ceb1b6ad8bb83109cc575,6477c01f34b86c66eb5ceb1b6ad8bb83109cc575,"Migrate assert to expect (#193)
+
+* Migrate assert to expect
+
+* Fix formatting"
+karoun,2018-07-09 17:00:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7335c8b9bff98856c39b5b1f3a4b0a79e1085c24,7335c8b9bff98856c39b5b1f3a4b0a79e1085c24,Adding <script integrity> attribute to support the Subresource Integrity spec (#192)
+fredemmott,2018-07-05 20:45:27,https://api.github.com/repos/hhvm/xhp-lib/git/commits/36e5eb880696795c43eb2e8903f5b1183cfb0232,36e5eb880696795c43eb2e8903f5b1183cfb0232,Stop targetting 3.24; will create release branch if the need arises
+fredemmott,2018-07-05 20:41:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/cc55f1168b9c6184fe1ee8f6f0531d293f862f70,cc55f1168b9c6184fe1ee8f6f0531d293f862f70,Update dependencies and hhconfig
+ssandler,2018-06-08 22:30:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/479562e6b5ed72197cb97193c5334a57f732fffa,479562e6b5ed72197cb97193c5334a57f732fffa,"add support for XHPUnsafeRenderable in HTML attributes (#191)
+
+* add support for XHPUnsafeRenderable in HTML attributes
+
+* PR feedback: add XHPUnsafeAttributeValue class
+
+* add XHPUnsafeAttributeValue.php
+
+* PR feedback: clarify comment and use a better test case
+
+* further simplify test cases, clean up whitespace"
+fredemmott,2018-05-10 18:26:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2d346a1e4ecdc1700106aaa6dc89ad65a2c4c7cd,2d346a1e4ecdc1700106aaa6dc89ad65a2c4c7cd,update license metadata
+fredemmott,2018-05-10 16:25:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/47dda17c5c765dccde440d004bdd8c5d5a5b0457,47dda17c5c765dccde440d004bdd8c5d5a5b0457,Relicense to MIT
+ngavalas,2018-04-25 21:27:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/920c92fc596efbc80e1c167029f00dd5175aa41b,920c92fc596efbc80e1c167029f00dd5175aa41b,add spread operator support to xhp-lib (#189)
+fredemmott,2018-03-02 00:56:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5d2f0cdd6b42005ee3718b7ef29aa9f4b9b57b03,5d2f0cdd6b42005ee3718b7ef29aa9f4b9b57b03,"update dependencies, test with additional flags"
+fredemmott,2018-02-09 20:32:16,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5ef653637aa15aed232ff913b3c66b346df0932a,5ef653637aa15aed232ff913b3c66b346df0932a,Turn on more hhconfig options
+fredemmott,2018-02-09 20:31:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f6f552b010cecf5ee28e3f6ae06a0bc8ca3fc9f6,f6f552b010cecf5ee28e3f6ae06a0bc8ca3fc9f6,remove unused bin/generate-autoload-map.php
+fredemmott,2018-02-09 20:28:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b114b0cbaadadb8f19f7cbd51558f915c9bd08f3,b114b0cbaadadb8f19f7cbd51558f915c9bd08f3,update dependencies
+fredemmott,2018-02-09 20:27:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d495c54082a61236954069e67cedea654da1cbe1,d495c54082a61236954069e67cedea654da1cbe1,Don't use docker on travis
+fredemmott,2018-01-08 22:24:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a70c5edb7336557a638f1c5a0dc4621df7ac32d8,a70c5edb7336557a638f1c5a0dc4621df7ac32d8,Add string cast for 3.24 in tests
+fredemmott,2018-01-08 22:22:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/db6bb4a997c8051665d339a2f80ccb247375fa3a,db6bb4a997c8051665d339a2f80ccb247375fa3a,"Support HHVM 3.24, require HHVM 3.23"
+fredemmott,2018-01-08 16:19:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5c1dcbff56bbb11d52394e316986abefdcb0d0f8,5c1dcbff56bbb11d52394e316986abefdcb0d0f8,"Add mention of hhvm-autoload requirement
+
+fixes #187"
+xxtanisxx,2017-12-12 18:03:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a36543691ebd97fa0142533bc349a0cf06dbfc9c,a36543691ebd97fa0142533bc349a0cf06dbfc9c,"Add 'as' attribute to link tag (#183)
+
+`<link rel=""preload"" as=""font"" />` does not work. Need to support `as` attribute"
+fredemmott,2017-11-09 00:42:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6fd1e0d5db830d965120b3e19548a65bcf0beaa2,6fd1e0d5db830d965120b3e19548a65bcf0beaa2,Update composer.lock
+fredemmott,2017-11-08 23:59:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6232722bd725a0fdbe4b89bd21a04c4ef7cff72b,6232722bd725a0fdbe4b89bd21a04c4ef7cff72b,change tested shape behavior depending on HHVM_VERSION_ID
+fredemmott,2017-11-08 23:56:14,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2d1cdd84d2dbac3bb23891b16b3e6d0b91cce4aa,2d1cdd84d2dbac3bb23891b16b3e6d0b91cce4aa,make AttributesTest strict instead of decl
+fredemmott,2017-11-08 22:44:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5c2b605ac7dbc9d4613aec950378cc9e5efdae28,5c2b605ac7dbc9d4613aec950378cc9e5efdae28,test against HHVM nightly builds
+fredemmott,2017-10-23 22:43:49,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a97871163aec228c703e433d67ad9f806f4b0f3d,a97871163aec228c703e433d67ad9f806f4b0f3d,update dependencies
+fredemmott,2017-10-17 18:19:53,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a40c1aee428ca38d2780788f55da8c7240747652,a40c1aee428ca38d2780788f55da8c7240747652,test with experimental shape options
+fredemmott,2017-09-28 18:09:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/aff764effe546739b19fd59082e92e37ecbc43c8,aff764effe546739b19fd59082e92e37ecbc43c8,Disable attribute validation by default
+fredemmott,2017-09-28 17:41:47,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9d6449776cea159ef3c1f16f11dc2997e010b59a,9d6449776cea159ef3c1f16f11dc2997e010b59a,simplify travis.sh a bit
+fredemmott,2017-09-19 17:57:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/375e6155accd2bc0a87487f7bc26f58d78c84d5b,375e6155accd2bc0a87487f7bc26f58d78c84d5b,"Update to TypeAssert v3, and hhvm-autoload.
+
+Avoiding the autoloader is going to be increasingly impractical; a function-capable autoloader is a requirement of TypeAssert v3 and the Hack Standard Library.
+
+This also increases the required HHVM version to 3.21"
+TJ09,2017-09-11 15:54:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4bb6a08f971bfdfaabd93c134312ea82d3dd3288,4bb6a08f971bfdfaabd93c134312ea82d3dd3288,"Switch from fredemmott/type-assert to hhvm/type-assert. (#179)
+
+* Switch from fredemmott/type-assert to hhvm/type-assert.
+
+* Upgrade hhvm/type-assert to 2.0."
+fredemmott,2017-08-05 19:47:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7e231168807dc6c7ade9ecfdf8249863bc9d08c2,7e231168807dc6c7ade9ecfdf8249863bc9d08c2,"Update for HHVM 3.21
+
+ - update supported versions in Travis config
+ - re-run hackfmt"
+fredemmott,2017-07-07 16:26:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e7916a7c86ac422f6fddad64d4e0404c54809f6f,e7916a7c86ac422f6fddad64d4e0404c54809f6f,Reformat with hackfmt
+fredemmott,2017-07-05 16:22:08,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f7530b50972cf1b8a7db50909efe194416629597,f7530b50972cf1b8a7db50909efe194416629597,"Remove requrie() statements for enums
+
+Autoloading enums has been supported by composer for > 2 years now."
+fredemmott,2017-06-26 16:40:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9d92da362b0ffc554cb875332db80563b63930d6,9d92da362b0ffc554cb875332db80563b63930d6,Dont' run typechecker until after composer
+fredemmott,2017-06-26 16:37:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a83f1da84a1562ebf59f2a64f9c2a21ae9777d9b,a83f1da84a1562ebf59f2a64f9c2a21ae9777d9b,Move the typechecker test to be a separate stage
+fredemmott,2017-06-26 16:35:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d9171c84106d7af4c03867afa6ef6ba058d34c84,d9171c84106d7af4c03867afa6ef6ba058d34c84,"Support HHVM's PHP7 mode
+
+Was calling md5(int), which is invalid."
+fredemmott,2017-04-20 20:18:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/25c62c83039674ac4cae569bc7e15bffcc330ee5,25c62c83039674ac4cae569bc7e15bffcc330ee5,Add Travis badge to README
+fredemmott,2017-04-20 20:13:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ce1832488d1de64528608386eff05127a07d9f0b,ce1832488d1de64528608386eff05127a07d9f0b,"Merge pull request #176 from facebook/try-docker-tests
+
+Use docker for tests"
+fredemmott,2017-04-20 19:09:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b53b69c617b56315f173e07a80cb821b0fabdfd8,b53b69c617b56315f173e07a80cb821b0fabdfd8,Add hhvm --version to test run output
+fredemmott,2017-03-08 21:30:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9368a123217670319a58031fec39768d5f333a81,9368a123217670319a58031fec39768d5f333a81,Try running tests in docker again
+steveluscher,2017-03-22 15:36:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/fb5ce7a07fc1483dfcbd0121ecd541defc11fba3,fb5ce7a07fc1483dfcbd0121ecd541defc11fba3,Correct the spelling of ‘parallel’ in the README (#174)
+fredemmott,2017-02-15 03:48:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d6ff04aa118b779f25ee1a4600860ca0e77479b4,d6ff04aa118b779f25ee1a4600860ca0e77479b4,Update dependencies
+fredemmott,2016-12-04 21:31:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4d2e2640534f50debe04f6a398db064fa6b1bb72,4d2e2640534f50debe04f6a398db064fa6b1bb72,Add support for fredemmott/type-assert v1.0
+fredemmott,2016-11-07 22:31:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/71aa75139e89b33e83049e01512c13c7364b9885,71aa75139e89b33e83049e01512c13c7364b9885,"Remove getWaitHandle()->join()
+
+replaced with HH\Asio\join()
+
+fixes #170. Tested with 3.15 and nightly"
+simonwelsh,2016-09-28 10:30:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a37fb8f294897702f37ad4191adae6cf9d65a926,a37fb8f294897702f37ad4191adae6cf9d65a926,"Implement JsonSerializable
+
+Adds a jsonSerialize method to :xhp that returns `toString`.
+
+Fixes #164"
+fredemmott,2016-10-10 20:40:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d22c4d74657a037c5342ba9c188b9888b65e588c,d22c4d74657a037c5342ba9c188b9888b65e588c,"Add support for Shape attribtues
+
+fixes #161
+
+Due to limitations of HHVM and the typechecker, shapes must be top-level type
+aliases, not type constants or inline.
+
+Updated required HHVM version to 3.12 because:
+ - 3.11 and older are unsupported by Facebook and have known security issues
+ - Shape validation requires `TypeStructure<T>`, which does not exist in earlier
+   versions of HHVM"
+fredemmott,2016-10-10 20:36:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bd1419d3b50ec42568f2ac6085ec634b38b2d28b,bd1419d3b50ec42568f2ac6085ec634b38b2d28b,Update all dependencies
+dookpham,2016-10-10 18:07:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b1967088637d288a9188096c389397aabc21c32c,b1967088637d288a9188096c389397aabc21c32c,Add hhvm composer example to readme (#167)
+fredemmott,2016-09-28 18:36:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4c7bb94f7bf4280073c868aac99bcdd8371eb2eb,4c7bb94f7bf4280073c868aac99bcdd8371eb2eb,"Use an empty instance instead of invalid static calls (#163)
+
+fixes #160"
+simonwelsh,2016-09-28 18:23:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/85c064a0251eb5d533c463549dc448eed3190ea2,85c064a0251eb5d533c463549dc448eed3190ea2,"Enable Travis tests (#165)
+
+* Enable Travis tests"
+fredemmott,2016-03-28 21:09:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/571674608bb099c2ce01952816f606e6781dd475,571674608bb099c2ce01952816f606e6781dd475,"Change contenteditable and draggable from bool to enum { ""true"", ""false"" }
+
+fixes #155"
+fredemmott,2016-01-20 18:48:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8b770c8c0a7f59bbd7244a52d5044effa84ddf91,8b770c8c0a7f59bbd7244a52d5044effa84ddf91,"Remove bogus assert
+
+ - unneeded
+ - typechecker and tests happy
+ - needed for 3.12 as assert.active default has changed"
+fredemmott,2015-12-21 17:42:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/75bd37a0aaf9f3e39bac7102aa5ecc8b083d136a,75bd37a0aaf9f3e39bac7102aa5ecc8b083d136a,"Remove Travis-CI support
+
+Version of HHVM too old :("
+fredemmott,2015-12-21 17:38:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7e9599a35777fd73e0d88ca0813cb13f2c869915,7e9599a35777fd73e0d88ca0813cb13f2c869915,"Don't include tests/ in git-archive
+
+If available, packagist uses the git-archive available from github for
+releases; excluding tests/ from the archive allows xhp-lib to be included in
+`assume_php=false` projects without also requiring that phpunit-hhi is
+installed.
+
+refs #153"
+fredemmott,2015-12-21 17:35:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6788a34084115e16308579af7810964405c5c7b8,6788a34084115e16308579af7810964405c5c7b8,"Update PHPUnit and HHI, support assume_php=false
+
+Updates dev requirement to HHVM 3.9
+
+refs #153"
+fredemmott,2015-09-30 16:24:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/aa5cc134fd2ea62b5e6ba3398ff179047edf467f,aa5cc134fd2ea62b5e6ba3398ff179047edf467f,"Merge pull request #150 from simonwelsh/patch-2
+
+Mark callable as a FIXME"
+simonwelsh,2015-09-30 04:43:43,https://api.github.com/repos/hhvm/xhp-lib/git/commits/60a414168ac5e8289e206e29ed6d7f9d603fcc83,60a414168ac5e8289e206e29ed6d7f9d603fcc83,"Mark callable as a FIXME
+
+Since `callable` isn't a valid Hack type, get Hack to ignore it. Allows XHP to be included in `assume_php=false` projects."
+fredemmott,2015-07-14 17:48:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bda55865943077aa3893ee3f6c34a45c7081e274,bda55865943077aa3893ee3f6c34a45c7081e274,"Merge pull request #148 from fredemmott/num-arraykey
+
+Add support for num and arraykey attributes"
+fredemmott,2015-07-14 16:37:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dd058df64e1d776c4251f2b9a10cb6e29c91d98b,dd058df64e1d776c4251f2b9a10cb6e29c91d98b,Add support for num and arraykey attributes
+fredemmott,2015-07-10 16:09:16,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ac2c533dd8bbc5e3a9f18f8f2e8da0dd46cb07cb,ac2c533dd8bbc5e3a9f18f8f2e8da0dd46cb07cb,"Correct composer dependency
+
+fixes facebook/xhp-lib#147"
+fredemmott,2015-07-09 16:56:09,https://api.github.com/repos/hhvm/xhp-lib/git/commits/59ca2696a7447500cc1f87607c79a6128db73fa5,59ca2696a7447500cc1f87607c79a6128db73fa5,Clarify HHVM version dependency
+fredemmott,2015-07-07 20:05:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/559e5e735cf6acf90465ba1a37ab32f0847113ef,559e5e735cf6acf90465ba1a37ab32f0847113ef,"Change input autocomplete attribute from enum to stringish
+
+Fixes #145"
+fredemmott,2015-07-02 18:30:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/673413b43e4cd094823a73297d8e45e4bfbf0043,673413b43e4cd094823a73297d8e45e4bfbf0043,"Regenerate autoload map, add 'do not edit by hand'
+
+Extra newline at end, would have been bogus on an unrelated commit.
+
+Please use composer when working on HHVM itself, then this file will be
+automatically updated. This is safer than manual edits.
+
+I've not modified the script as the newline makes hand-edits show up.
+
+cc @Swahvay"
+Swahvay,2015-07-02 17:47:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3c557ee5351c3f3c2f40f9867fb97ace2caa6b4c,3c557ee5351c3f3c2f40f9867fb97ace2caa6b4c,"Update auto-load map for <picture>
+
+Forgot to do this."
+Swahvay,2015-07-02 17:35:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9304c8938ae0c37c8502d5e2cf2b18b4d6260501,9304c8938ae0c37c8502d5e2cf2b18b4d6260501,"Add the <picture> element
+
+HTML 5.1 added the <picture> element to allow for multiple image sizes
+to be defined based on media queries. Chrome, Firefox, and Opera have
+added support for this for some time now."
+fredemmott,2015-06-29 21:19:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/87cfd8fea00ec19dc0e4fb682cae111601c66adb,87cfd8fea00ec19dc0e4fb682cae111601c66adb,"Update README to prefer stable versions
+
+refs facebook/xhp-lib#144"
+Swahvay,2015-06-17 23:59:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1f3a2c632d0ea2415f71cfee8cdfc63d29b365b3,1f3a2c632d0ea2415f71cfee8cdfc63d29b365b3,"Change :input min/max attributes to Stringish
+
+The min/max attributes can be strings for certain input types, like
+date or time."
+fredemmott,2015-05-29 20:46:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/261f14aaa4270d8e80974755eca217e5d866c952,261f14aaa4270d8e80974755eca217e5d866c952,"Add more-specific exception for `callable` attribute type
+
+fixes facebook/xhp-lib#141"
+fredemmott,2015-05-05 17:02:02,https://api.github.com/repos/hhvm/xhp-lib/git/commits/45e4542d0fcaa3dfe39bf33e81ec4e1ff520b0a6,45e4542d0fcaa3dfe39bf33e81ec4e1ff520b0a6,"Render/process everythign recursively - turn XHP tree into an async tree
+
+- all tests pass, including tests added that failed against previous PR
+- every element renders itself and it's children
+- all child rendering is async
+- so, the XHP tree becomes a corresponding async tree
+
+This means that asyncRender() at different depths in the tree can be executing simultaneously.
+
+There shouldn't be much of a performance cost, as HHVM should convert things things
+to a StaticWaitHandle when XHPAsync isn't being used.
+
+fixes facebook/xhp-lib#136
+fixes facebook/xhp-lib#85
+fixes facebook/xhp-lib#139"
+fredemmott,2015-05-07 21:08:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f08d9193687fbd108b67763661b13df07f40b5b2,f08d9193687fbd108b67763661b13df07f40b5b2,Add test for multiple levels of async
+fredemmott,2015-05-05 16:34:02,https://api.github.com/repos/hhvm/xhp-lib/git/commits/811194dd82245e02f772c4b0ce936dee5a12b148,811194dd82245e02f772c4b0ce936dee5a12b148,"Add failing test for nested validation
+
+refs facebook/xhp-lib#85
+refs facebook/xhp-lib#136"
+fredemmott,2015-05-04 21:55:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c94b688edd5baa02cd3de42513df7231a5b76fd0,c94b688edd5baa02cd3de42513df7231a5b76fd0,Add failing test for nested transferattributes
+fredemmott,2015-05-08 17:20:02,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8048e748df2df8ce2112a25fdf58cf1736fd464b,8048e748df2df8ce2112a25fdf58cf1736fd464b,Test that :x:frag expands correctly
+fredemmott,2015-05-05 21:13:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/62ca772c3f2875bd2573eea0323bc41f129a9331,62ca772c3f2875bd2573eea0323bc41f129a9331,"Merge pull request #138 from fredemmott/hhvm-upgrade
+
+Tell travis to install the latest release of HHVM"
+fredemmott,2015-05-05 20:39:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/16f5e3eed96ddea49e6967b81962f30846d3debb,16f5e3eed96ddea49e6967b81962f30846d3debb,"-y doesn't work, use 'yes' instead"
+fredemmott,2015-05-05 20:23:47,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f1c0ba4e2798126ff3d077c16787d4b7d753b812,f1c0ba4e2798126ff3d077c16787d4b7d753b812,"Assume ""yes"" for apt-get install prompts"
+fredemmott,2015-05-05 19:01:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8d751a25c3c61a40703ff5743591448c751198c0,8d751a25c3c61a40703ff5743591448c751198c0,Suppress input to apt-get
+fredemmott,2015-05-05 18:29:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/34208812b8dfd21c6ac7a0949403bc2d5c907fc8,34208812b8dfd21c6ac7a0949403bc2d5c907fc8,"Tell travis to install the latest release of HHVM
+
+Remove hhvm-nightly as it's also too old :("
+fredemmott,2015-05-05 17:35:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7c3be83127192060a5db8fa3bf776ef268f1628a,7c3be83127192060a5db8fa3bf776ef268f1628a,Add passing test for child flushing
+fredemmott,2015-05-05 16:46:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ffdd82c48ae9c4dd17af1ced2164f05c54d2a6cb,ffdd82c48ae9c4dd17af1ced2164f05c54d2a6cb,add passing tests for contexts
+fredemmott,2015-05-04 22:30:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7671053cfd17588b63319e08b3be531c5a536737,7671053cfd17588b63319e08b3be531c5a536737,Correct assert in :x:element about render() return type
+fredemmott,2015-05-04 19:52:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3039ad7c9ae4b82d6c1954be419a3120c97e815b,3039ad7c9ae4b82d6c1954be419a3120c97e815b,Clarify that the blog isn't just for announcements
+fredemmott,2015-05-01 17:42:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/599bfc3644497cd936342d78cc7de420eb397e1e,599bfc3644497cd936342d78cc7de420eb397e1e,"Allow failures for hhvm-nightly on Travis
+
+Travis are running Ubuntu Precise, which HHVM no longer supports."
+fredemmott,2015-04-27 22:22:02,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3923d045756c17a7c4fcf4bd39fbede7572b7363,3923d045756c17a7c4fcf4bd39fbede7572b7363,"Automatically call transferAttributes as needed.
+
+- split out XHPBaseHTMLHelpers to just implement the ID and class helpers
+  without transferAttributes
+- added tests
+- XHPHelpers should probably be renamed to XHPHTMLHelpers in XHP-Lib 3, and
+  the bulk of the transfer/copyattribtues functiontionality split to
+  XHPTransferAttributes or something like that. Keeping like this for now to
+  reduce BC breakage
+- Allows implementation of non-HTML helpers; until the above modification happens
+  this will involve copypasta, but better than the current situation.
+- I /think/ this gets rid of the render()/compose() pattern.
+
+fixes facebook/xhp-lib#130
+closes facebook/xhp-lib#133"
+fredemmott,2015-04-24 18:12:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d7b472f77d7873eb90891a8acfd141df28372a4a,d7b472f77d7873eb90891a8acfd141df28372a4a,Textile formatting fixes for async code example.
+fredemmott,2015-04-24 18:11:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c3900c7b4857811c83befaca0d9419ea1d840fba,c3900c7b4857811c83befaca0d9419ea1d840fba,Document XHPAsync in README
+fredemmott,2015-04-23 18:03:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/11d7549b43d790522f2ef3cb9f3124b4ca88620a,11d7549b43d790522f2ef3cb9f3124b4ca88620a,"Switch attribute coercion to throw exceptions by default
+
+fixes facebook/xhp-lib#127"
+fredemmott,2015-04-22 17:38:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0f5a32c23a378f2a1ead64fe484de40b52ae8b8f,0f5a32c23a378f2a1ead64fe484de40b52ae8b8f,"Make XHPAsync implement the XHPAwaitable trait
+
+Slightly reduces boilerplate, and it's just a marker interface."
+fredemmott,2015-04-13 20:38:15,https://api.github.com/repos/hhvm/xhp-lib/git/commits/83d3dafef34ac93856b1c4ed81e05fbd907ca9bb,83d3dafef34ac93856b1c4ed81e05fbd907ca9bb,Update Patent Grant
+Swahvay,2015-04-11 02:10:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/be6650e17156cd8d354e845847e7920aa58df61e,be6650e17156cd8d354e845847e7920aa58df61e,"Improve batching of Awaitable XHP
+
+If there were nested awaitable XHP elements, then the batching could be
+split apart by the recursion. This was because
+`__flushElementChildren()` was being called from within the loop, so
+childrens’ awaiting would cause the loop to stop. Just set all children
+and then recursively call `__flushElementChildren()` at the end.
+
+fixes facebook/xhp-lib#132"
+fredemmott,2015-04-13 18:00:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c898d027ed29a2137c3f4607dbea585766c95a95,c898d027ed29a2137c3f4607dbea585766c95a95,"Rename $_ to $decl when assigned
+
+We're making $_ shorthand for 'unused', so the typechecker has started
+to complain about this."
+fredemmott,2015-04-09 22:22:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c1445470d9e69b15e1acd27599033ec0a95bd4a0,c1445470d9e69b15e1acd27599033ec0a95bd4a0,Make second argument to getContext truly optional
+fredemmott,2015-04-07 18:57:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/99c9755def22c980bc71141d91c3e8d272db55ec,99c9755def22c980bc71141d91c3e8d272db55ec,"Add static autoload map, generated by composer, but to be commited
+
+Fixes facebook/xhp-lib#129"
+fredemmott,2015-04-06 16:53:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/34aac8d284fee468378b33988e62a699b514227b,34aac8d284fee468378b33988e62a699b514227b,Update dev-hack alias to point to master
+fredemmott,2015-04-03 18:37:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/634d7db93cb91dc9461e09ab4110a0d764f9b226,634d7db93cb91dc9461e09ab4110a0d764f9b226,add marker interface for XHPHelpers trait
+fredemmott,2015-04-03 18:30:25,https://api.github.com/repos/hhvm/xhp-lib/git/commits/30d55ee92536258803ce35351cfa5b4a34c41155,30d55ee92536258803ce35351cfa5b4a34c41155,Replace :xhp typehint with :x:composable-element
+Swahvay,2015-03-10 23:21:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/968a794778260c5e3ca9dade39dcad72789e21e4,968a794778260c5e3ca9dade39dcad72789e21e4,"Add XHPHelpers
+
+Adds some helper functions to use when dealing with HTML XHP elements.
+Namely, moved the ID/class helpers there, and added a bunch of
+transfer/copy methods.
+
+fixes facebook/xhp-lib#99
+fixes facebook/xhp-lib#122"
+fredemmott,2015-03-20 03:37:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/79e6b857829c3c9f692eebfa9f9a60f79421a074,79e6b857829c3c9f692eebfa9f9a60f79421a074,"Merge pull request #123 from foxish/patch-1
+
+Updated Readme fixing grammar"
+foxish,2015-03-20 03:22:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d95acd681f93773718d4841bace1c7fd9c663ffd,d95acd681f93773718d4841bace1c7fd9c663ffd,"Updated Readme fixing grammar
+
+The first sentence was: XHP is augments the syntax of Hack such that ..."
+fredemmott,2015-03-19 21:43:39,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5f4e194d5ab865f3c46dc44fece77cd3d9064bfd,5f4e194d5ab865f3c46dc44fece77cd3d9064bfd,Correct string to Stringish
+fredemmott,2015-03-19 21:07:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ddbb642168348f1a5b2459b2752465a63ced0803,ddbb642168348f1a5b2459b2752465a63ced0803,"Use decl and // UNSAFE for invalid attribute values in tests
+
+Passes with https://reviews.facebook.net/D35481"
+fredemmott,2015-03-12 22:40:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1f14c6a71b67a7ff084ad652756d44d17733b8c6,1f14c6a71b67a7ff084ad652756d44d17733b8c6,"Fix categories containing commas, add test"
+fredemmott,2015-03-12 21:34:53,https://api.github.com/repos/hhvm/xhp-lib/git/commits/32d48dafa0e45fcafacb057d4963f417e49b9c80,32d48dafa0e45fcafacb057d4963f417e49b9c80,Fix (and test) categories reflection
+fredemmott,2015-03-11 20:48:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1cc064049b01ff6d7f05892b71616a86e2aadbc8,1cc064049b01ff6d7f05892b71616a86e2aadbc8,"Add typechecker to test runs.
+
+Done as a PHPunit test so that if a contributor runs phpunit they'll see it."
+fredemmott,2015-03-11 20:48:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a56e6b56a5e60753dc0ec01d0344217a923389d0,a56e6b56a5e60753dc0ec01d0344217a923389d0,Require nightly builds to pass
+fredemmott,2015-03-11 19:54:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/55434f1414c7544195613cf9d8682bfcfd50c548,55434f1414c7544195613cf9d8682bfcfd50c548,"Merge pull request #121 from fredemmott/full-reflection
+
+Full reflection"
+fredemmott,2015-03-11 19:54:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/62b16b5d3b42d2f15b9c4404cc06470dbb640359,62b16b5d3b42d2f15b9c4404cc06470dbb640359,"Merge pull request #120 from fredemmott/children-rewrite
+
+Add ReflectionXHPChildrenDeclaration, use it for validation and string conversions"
+fredemmott,2015-03-10 19:55:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/58dc0584fb6475ba3da26190db116dfeded240be,58dc0584fb6475ba3da26190db116dfeded240be,"Add ReflectionXHPClass
+
+Not much more was needed. Also made ReflectionXHPAttribute stringable."
+fredemmott,2015-03-10 17:24:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/64e78d839b8f8894431a3e8965f3286e76e0f04c,64e78d839b8f8894431a3e8965f3286e76e0f04c,Move children declaration string conversion to reflection class
+fredemmott,2015-03-10 17:16:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ee5a839a8cb08e4166f89c00248839080542741d,ee5a839a8cb08e4166f89c00248839080542741d,Make the reflection functions static and public
+fredemmott,2015-03-10 17:08:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c4c4902bb1572efb746eacf68a7c238557b2a491,c4c4902bb1572efb746eacf68a7c238557b2a491,Use new reflection API for creating string versions of XHP child declarations
+fredemmott,2015-03-10 16:59:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2bfa7a799a54da1dd1cd7db45f105eaef1c9a009,2bfa7a799a54da1dd1cd7db45f105eaef1c9a009,Add test for the string versions of child rules
+fredemmott,2015-03-10 00:52:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9d25629b41f730835b2e5d38592b04631b02e5ab,9d25629b41f730835b2e5d38592b04631b02e5ab,"Add children declaration class, use for validation
+
+Not yet used for converting it to strings."
+fredemmott,2015-03-10 18:15:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d6d6d38a97aa826d591745ba692289d2d419ca3b,d6d6d38a97aa826d591745ba692289d2d419ca3b,Add accessor to get all attributes of an element
+fredemmott,2015-03-10 17:24:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/10b7f8ebbb5e890ced488eb87660c358f0efcb60,10b7f8ebbb5e890ced488eb87660c358f0efcb60,Move children declaration string conversion to reflection class
+fredemmott,2015-03-10 17:16:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dddaa7cd81f5cf3de115aeb9e5f80d2c306fcfa9,dddaa7cd81f5cf3de115aeb9e5f80d2c306fcfa9,Make the reflection functions static and public
+fredemmott,2015-03-10 17:08:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ec12dd62e270de69ed6d8f21795255cad21058ca,ec12dd62e270de69ed6d8f21795255cad21058ca,Use new reflection API for creating string versions of XHP child declarations
+fredemmott,2015-03-10 16:59:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/421f36fb1ac6194dd2f4af4bbd746e422acc2e5e,421f36fb1ac6194dd2f4af4bbd746e422acc2e5e,Add test for the string versions of child rules
+fredemmott,2015-03-10 00:52:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/560ce6aaeab859810e4ea67beb628c292cfa93b5,560ce6aaeab859810e4ea67beb628c292cfa93b5,"Add children declaration class, use for validation
+
+Not yet used for converting it to strings."
+fredemmott,2015-03-10 00:51:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c94a81610c91ff30d0a8784390ab875f210f0a89,c94a81610c91ff30d0a8784390ab875f210f0a89,Test pcdata and category child rules
+fredemmott,2015-03-09 21:07:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/382578af2e71fcdf4605a510cfef37be4ecc26e6,382578af2e71fcdf4605a510cfef37be4ecc26e6,Test child validation rules
+fredemmott,2015-03-09 19:59:08,https://api.github.com/repos/hhvm/xhp-lib/git/commits/63ea6f1ca9cf2ec8493f1a3d64e4552808c80714,63ea6f1ca9cf2ec8493f1a3d64e4552808c80714,Pull in Simon Welsh's HHI for PHPUnit
+fredemmott,2015-03-09 20:12:42,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8b655ef337a9af2b8e1df5c6efcf82b21165c20b,8b655ef337a9af2b8e1df5c6efcf82b21165c20b,"Merge pull request #118 from fredemmott/reflectionxhpattribute
+
+Split out attribute declaration knowledge to new ReflectionXHPAttribute class"
+fredemmott,2015-03-08 23:47:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0bb1420040443ec9752ec3995b2e4527c9b8788b,0bb1420040443ec9752ec3995b2e4527c9b8788b,"Merge pull request #119 from simonwelsh/patch-1
+
+Correct case of assertSame"
+simonwelsh,2015-03-08 08:40:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/979855e649ade3c9a982f3ad0497cb2f4735b5b8,979855e649ade3c9a982f3ad0497cb2f4735b5b8,Correct case of assertSame
+fredemmott,2015-03-07 01:41:15,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dd57e38d4a701d5c47eae58d7a952f4bb0fab927,dd57e38d4a701d5c47eae58d7a952f4bb0fab927,"Add deprecation warnings for all coercions
+
+Optionally, don't, or throw exceptions. Also, add tests."
+fredemmott,2015-03-07 00:35:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8c9e756298c3ad8ad965c46979efd26f7af535aa,8c9e756298c3ad8ad965c46979efd26f7af535aa,Allow (and test) passing floatish strings to int attrs
+fredemmott,2015-03-06 23:00:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/71a191fad3b5459c08a2a15ed7f2ba41ca4e33bf,71a191fad3b5459c08a2a15ed7f2ba41ca4e33bf,Update README now that its Hack-only
+fredemmott,2015-03-06 22:42:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/80506b829931d7b369e0c71d72bf5edce598c418,80506b829931d7b369e0c71d72bf5edce598c418,Markdown syntax fix in INTERNALS.md
+fredemmott,2015-03-06 22:40:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b91ddd0618d5355e44e0fc7d6529988e4398c674,b91ddd0618d5355e44e0fc7d6529988e4398c674,Document some of the parser's transformations
+fredemmott,2015-03-06 18:35:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/47e19c450a39568a69a0a73235d7fa2cb8398789,47e19c450a39568a69a0a73235d7fa2cb8398789,Update recommended version requirement in README.textile
+fredemmott,2015-03-05 23:52:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d486dc9219da2bf525b1193f3e04e549a531ba5f,d486dc9219da2bf525b1193f3e04e549a531ba5f,Split out attribute declaration knowledge to new ReflectionXHPAttribute class
+fredemmott,2015-03-06 18:31:00,https://api.github.com/repos/hhvm/xhp-lib/git/commits/af5ade0a0b3ec653669f870f49ac3f02d5989600,af5ade0a0b3ec653669f870f49ac3f02d5989600,"Implement support for Hack enums
+
+fixes facebook/xhp-lib#117
+Also added test."
+fredemmott,2015-03-05 23:57:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c7601aed813c98e13a75140bc5582568bbc64a49,c7601aed813c98e13a75140bc5582568bbc64a49,add test for invalid enum values
+fredemmott,2015-03-05 23:55:01,https://api.github.com/repos/hhvm/xhp-lib/git/commits/73262afac2401fcf4cf330f6810094f1a5bb4cbb,73262afac2401fcf4cf330f6810094f1a5bb4cbb,"Add test for invalid, data-, and aria- attributes"
+fredemmott,2015-03-05 23:06:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8ad7d2ca3dfb22501c3f5af264cc0eb3c930c9ab,8ad7d2ca3dfb22501c3f5af264cc0eb3c930c9ab,Add tests for default and required attributes
+fredemmott,2015-03-05 22:55:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5a2110238337ba9c3d78dece2db5849e95c9a4df,5a2110238337ba9c3d78dece2db5849e95c9a4df,Test new containers too
+fredemmott,2015-03-05 22:51:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/03ef74e0b21fc969f00034cb6714fe2968158edf,03ef74e0b21fc969f00034cb6714fe2968158edf,"Remove runtime array validation
+
+- it worked on PHP5, but not HHVM. As we now require HHVM, it's pointless
+  https://github.com/facebook/hhvm/issues/4961
+- iterating over containers for typechecks is likely to be a perf issue"
+fredemmott,2015-03-05 21:53:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e85f46437e8943de4a18a3ae0abf830f039d3f9a,e85f46437e8943de4a18a3ae0abf830f039d3f9a,Add more tests for arrays and objects
+fredemmott,2015-03-05 20:37:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8756345b656d5168a3c88bc5c1e8c4517e9e6d91,8756345b656d5168a3c88bc5c1e8c4517e9e6d91,"Remove Callable attribute type
+
+- HHVM doesn't support it anyway, and this branch requires HHVM
+- ""Callable"" is not support in hack as a type - must have a signature"
+fredemmott,2015-03-05 19:50:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5ba3750e686a13ec0f7dfd5b4c801504adb5a619,5ba3750e686a13ec0f7dfd5b4c801504adb5a619,And floats
+fredemmott,2015-03-05 19:44:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1a28c3a689660044ad1c422973339eacabe97850,1a28c3a689660044ad1c422973339eacabe97850,Make bool coercion tighter
+fredemmott,2015-03-05 19:35:08,https://api.github.com/repos/hhvm/xhp-lib/git/commits/483795cdc58f566b3371e58b8f4fe454f6bc3fae,483795cdc58f566b3371e58b8f4fe454f6bc3fae,Simplify string coercion
+fredemmott,2015-03-05 19:33:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7f66c05ad85420beedce4a5ff61311007226c3f4,7f66c05ad85420beedce4a5ff61311007226c3f4,Split out coercion to a separate class
+fredemmott,2015-03-05 18:45:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0fa577c50e14e1e3ab100b0a1ad934df5c2400ce,0fa577c50e14e1e3ab100b0a1ad934df5c2400ce,Rename TYPE_NUMBER to TYPE_INTEGER
+fredemmott,2015-03-05 17:42:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/48cad09c6301e4dc0cefc1389892913935407f71,48cad09c6301e4dc0cefc1389892913935407f71,Fix exception messages for type validation
+fredemmott,2015-03-05 17:39:49,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d2c84108575d6be56fa5b7e0a93bf826a55dce88,d2c84108575d6be56fa5b7e0a93bf826a55dce88,Test and throw exceptions for array conversions
+fredemmott,2015-03-05 01:14:21,https://api.github.com/repos/hhvm/xhp-lib/git/commits/39f0cefee20efea188860276d529230713b0f74e,39f0cefee20efea188860276d529230713b0f74e,Add tests for int attributes. Fix validator
+fredemmott,2015-03-05 00:47:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/49c2716c0061d1e71915447fb40401b03b25296f,49c2716c0061d1e71915447fb40401b03b25296f,"Start adding tests for attribute validation
+
+I'm about to start refactoring this, so want some tests first.
+
+Found a sort-of bug, and made string attributes throw an
+XHPInvalidAttributeException if given something non-stringable; previously,
+the cast would be tried and failed."
+fredemmott,2015-03-04 22:49:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/140393cf194ee0995091c6db835d848b93289be9,140393cf194ee0995091c6db835d848b93289be9,"Merge pull request #116 from simonwelsh/enable-travis
+
+Enable travis"
+fredemmott,2015-03-04 22:22:15,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c0ed67cd59be4a41b80a867ce53ec7cd23a42f74,c0ed67cd59be4a41b80a867ce53ec7cd23a42f74,"Merge pull request #115 from simonwelsh/split-up-html
+
+Split up html.php"
+simonwelsh,2015-03-04 20:03:14,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e27be5af37597e03d29dbc8df0d59bbd1f562d9e,e27be5af37597e03d29dbc8df0d59bbd1f562d9e,Re-add hhvm-nightly as an allowed failure
+simonwelsh,2015-03-04 19:58:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/da8f2c7a3224d61d8aa296a16211db0c1e8efbba,da8f2c7a3224d61d8aa296a16211db0c1e8efbba,Remove notification
+simonwelsh,2015-03-04 10:07:47,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f8cb94e7054193af089cbf752aebdb22fb90dec5,f8cb94e7054193af089cbf752aebdb22fb90dec5,Only test HHVM stable releases
+simonwelsh,2015-03-04 09:59:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/442fd311b778233ae8e56479c73900bf3fe89f7a,442fd311b778233ae8e56479c73900bf3fe89f7a,Add Travis support
+fredemmott,2015-03-04 17:13:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/46b2bb08d186ad8b23b1c274678ab0e70deb401f,46b2bb08d186ad8b23b1c274678ab0e70deb401f,"Merge pull request #110 from simonwelsh/patch-4
+
+Alias dev-hack to 2.x-dev"
+simonwelsh,2015-03-04 09:54:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/41c513faffcd05fb3fa4298d631c47ac0ed016bb,41c513faffcd05fb3fa4298d631c47ac0ed016bb,Split html.php up
+fredemmott,2015-03-02 21:48:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2c93bab17bb8a7cc45ba76a138fbd9d1ec1f3ce2,2c93bab17bb8a7cc45ba76a138fbd9d1ec1f3ce2,"Split up interfaces.php
+
+Otherwise we have a circular dependency:
+- :x:element can't be defined until interfaces.php has loaded as it implements
+  XHPRoot
+- interfaces.php couldn't be loaded until :x:element was defined because
+  XHPAwaitable require extends :x:element;
+
+Running the PHPUnit tests picked this up."
+fredemmott,2015-03-02 21:40:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a938412481cb9c51bb5b13fcd9ef23aca4a04e11,a938412481cb9c51bb5b13fcd9ef23aca4a04e11,"Merge pull request #112 from simonwelsh/split-up-files
+
+Split up core.php"
+simonwelsh,2015-03-01 04:20:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/805180e8f68464d520e04581a558495f583e9768,805180e8f68464d520e04581a558495f583e9768,Alias dev-hack to 2.x-dev
+simonwelsh,2015-02-21 08:46:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a90f856d59f475a13494305b79bad1af98c508b1,a90f856d59f475a13494305b79bad1af98c508b1,Make html.php strict
+simonwelsh,2015-02-21 08:33:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e0cbbbccec9e258cea1c3d2ba168eebed387d594,e0cbbbccec9e258cea1c3d2ba168eebed387d594,Split up core.php
+fredemmott,2015-02-18 20:13:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a4b9eac109d21be1ae6d5bd78af52f0dd2149b38,a4b9eac109d21be1ae6d5bd78af52f0dd2149b38,Add test for XHPUnsafeRendable and XHPAlwaysValidChild
+fredemmott,2015-02-18 19:57:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a8bfe40bcce1c8b668b159d389949adfb4748d5b,a8bfe40bcce1c8b668b159d389949adfb4748d5b,"Merge pull request #107 from fredemmott/unit-tests
+
+Add some unit tests"
+fredemmott,2015-02-18 00:30:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4cf1c0aecf0982c964425d46a1104dae159d47b4,4cf1c0aecf0982c964425d46a1104dae159d47b4,add escaping test
+fredemmott,2015-02-18 00:28:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/20c20db55e8c837c7e79f5f4f156dd313b7311fa,20c20db55e8c837c7e79f5f4f156dd313b7311fa,Add missing composer.json change
+fredemmott,2015-02-18 00:19:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d98a9bdf28632cf291f4b644ab4d24b495743420,d98a9bdf28632cf291f4b644ab4d24b495743420,"Merge pull request #104 from Swahvay/hack
+
+Add Support for Awaitable XHP"
+Swahvay,2015-02-18 00:16:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/92a83b6ddf09f037fd61958c780807818706ba89,92a83b6ddf09f037fd61958c780807818706ba89,"Merge pull request #1 from fredemmott/async-fixup
+
+Pass HHVM 3.6 typechecker"
+fredemmott,2015-02-18 00:10:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ff67780619e40fb6fb6efae9d8370c4462d850df,ff67780619e40fb6fb6efae9d8370c4462d850df,Add some unit tests
+fredemmott,2015-02-17 23:57:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4f4e28ec1116fa28424f5d9d513a7e3fa7c26d04,4f4e28ec1116fa28424f5d9d513a7e3fa7c26d04,fix some runtime issues
+fredemmott,2015-02-17 23:47:43,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9dc41224bfa7b4161ea2ca09b2c51a2b80680fc5,9dc41224bfa7b4161ea2ca09b2c51a2b80680fc5,"Pass HHVM 3.6 typechecker
+
+- // UNSAFE calls to asyncRender via a helper
+- restructure $Loop so that the typechecker understands it
+- fix some incorrect usage of vectors
+- simplify non-awaitable toString
+- All XHPRoots are valid XHPChilds, so mark them as such
+- require that XHPAwaitables are :x:elements"
+Swahvay,2015-02-13 06:42:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/84c9207ad2c2680db1d7cb78f615234aa988f383,84c9207ad2c2680db1d7cb78f615234aa988f383,Updated docblock
+Swahvay,2015-02-13 06:39:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c4afda07d787837b0d7b3ded312bd15ea0cfe3c7,c4afda07d787837b0d7b3ded312bd15ea0cfe3c7,Minor updates based on feedback
+Swahvay,2015-02-11 07:23:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f55d24003ed64148ef93d3ea063b5e3fb28854f0,f55d24003ed64148ef93d3ea063b5e3fb28854f0,Remove GenUtils stuff
+Swahvay,2015-02-11 07:14:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ba6f96ff2cbe3ed4c9211c763da2fc6dca55187a,ba6f96ff2cbe3ed4c9211c763da2fc6dca55187a,Remove Javelin code
+Swahvay,2015-02-11 07:12:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/57e109d09bdf4feb84daa650b1677460c76401df,57e109d09bdf4feb84daa650b1677460c76401df,"Add Support for Awaitable XHP
+
+Adds support for generators inside XHP rendering. This makes one very
+important change to basic XHP principles, and that is that the
+rendering order can no longer be guaranteed. Previously, XHP would
+follow a breadth-first rendering from `:x:element` to `:x:primitive`
+(concurrently), but with this change, XHP will now render depth-first
+in search of WaitHandles, batching together as many as it can.
+Additionally, All `:x:elements` will be rendered before the
+`:x:primitive` pass will begin. In theory this should have no affect
+because XHP does not store or encourage storing of references to other
+XHP elements (besides the parent, which still will be guaranteed to be
+rendered first). However, it is still possible to manually keep
+references and a variable rendering order has the potential to affect
+code in unpredictable ways.
+
+In terms of implementation, I wanted to just have `render()` without
+the need for `genRender()`, then an interface would be all that was
+needed, but the return type of `render()` would need to be different in
+each case. I could get away without using the `XHPAwaitable` interface
+and instead check for the `XHPGenerator` trait using `class_uses()`,
+but this doesn’t check parent traits, so I would have to loop over each
+element’s inheritance chain and that felt very ugly to me."
+fredemmott,2015-02-11 03:14:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3ba76cab75f67817159f521b021bb5e0502ff75e,3ba76cab75f67817159f521b021bb5e0502ff75e,"Merge pull request #103 from BobertForever/hack
+
+Changed ext-xhp requirement to hhvm, fixes #102"
+BobertForever,2015-02-11 02:44:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b50e89f3663e0ea95d21ef94afbde0873d87d3fb,b50e89f3663e0ea95d21ef94afbde0873d87d3fb,"Changed ext-xhp requirement to hhvm, fixes #102"
+fredemmott,2015-02-09 23:39:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dc4fdbb2525c9f1cb7951c1b7505c55e577485c6,dc4fdbb2525c9f1cb7951c1b7505c55e577485c6,"Merge pull request #101 from steelbrain/hack
+
+Support XHPUnsafeRenderable in renderChild"
+steelbrain,2015-02-05 17:42:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e1e6f9c4a756c6ca130bd1206089a943e443f237,e1e6f9c4a756c6ca130bd1206089a943e443f237,Make UnsafeRenderable an XHPChild
+steelbrain,2015-02-05 13:55:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/04185a694fe114760c279a5a04fd04789dcfb4c5,04185a694fe114760c279a5a04fd04789dcfb4c5,"Support XHPUnsafeRenderable in renderChild
+
+The diff explains it all"
+fredemmott,2015-02-02 17:30:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5177e644605890195778a6ed413c97b9b365d6e9,5177e644605890195778a6ed413c97b9b365d6e9,"Merge remote-tracking branch 'origin/master' into hack
+
+Tested with stricter typechecker.
+
+Conflicts:
+	src/core.php"
+fredemmott,2015-02-02 17:23:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/82faf105579625fb211d6ef788cd0c3d49baf3bd,82faf105579625fb211d6ef788cd0c3d49baf3bd,"Merge pull request #100 from fredemmott/hack-refactor-flush
+
+Refactor :x:element and :x:composable-element"
+fredemmott,2015-02-02 17:02:25,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3626c13c23f82d2f8cc02377892cd594fdd2d51d,3626c13c23f82d2f8cc02377892cd594fdd2d51d,"Merge pull request #95 from fredemmott/unsaferenderable-alwaysvalidchild
+
+Add XHPUnsafeRenderable, XHPAlwaysValidChild, MIGRATING.md"
+fredemmott,2015-01-31 02:00:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1e159501bb809584ed54a7d9b41661947ce85a2f,1e159501bb809584ed54a7d9b41661947ce85a2f,"Refactor :x:element and :x:composable-element
+
+All of :x:composable-element::__flushRenderedElement() was specific
+to :x:element, however it depended on private members of
+:x:composable-element. Made them protected instead and added the usual
+prefix.
+
+This makes hack happy even with this diff:
+https://gist.github.com/fredemmott/c94a7e9f844b7ae60df6"
+fredemmott,2015-01-31 01:53:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/aecf40f2bd5885ba7aa28cfa7cd8b32c1b067473,aecf40f2bd5885ba7aa28cfa7cd8b32c1b067473,"Add XHPRoot interface, type render()"
+fredemmott,2015-01-31 01:45:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8852d6f1af277e13404f8207e753bdfb8df90d24,8852d6f1af277e13404f8207e753bdfb8df90d24,"Fix invalid access to :x:frag->children
+
+Now need to call getChildren()
+
+The typechecker usually relaxes constraints for historical reasons. I
+ran a patched version without this relaxation, which found this.
+
+I'll add an option to Hack if the end result looks good."
+fredemmott,2015-01-30 01:14:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8ef92901cf553bf20fa5b054dafe40bf1b67c91e,8ef92901cf553bf20fa5b054dafe40bf1b67c91e,Merge remote-tracking branch 'origin/master' into hack
+fredemmott,2015-01-30 01:14:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5d30cc7ba8d3067b60e907cfa9c9dcf2ecda9c7a,5d30cc7ba8d3067b60e907cfa9c9dcf2ecda9c7a,Update license information in composer.json
+fredemmott,2015-01-29 23:53:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ae65986bffd9171c8da45b708c3bfd54aaba5c1a,ae65986bffd9171c8da45b708c3bfd54aaba5c1a,Remove obsolete reference to init.php
+fredemmott,2015-01-29 23:41:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/24b53c206c7b09ed9e961a0ae8e8f730e950782a,24b53c206c7b09ed9e961a0ae8e8f730e950782a,Replace internal getAttribute calls with ->: operator
+fredemmott,2015-01-29 18:52:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b134ae76ee5790294ab343b3d6aef3dba2d1e792,b134ae76ee5790294ab343b3d6aef3dba2d1e792,"Add .hhconfig, remove unneeded is_array() checks
+
+- array are instanceof Traversable in Hack files
+- the typechecker doesn't like/understand that (instanceof Traversable ||
+  is_array) means that it's safe to foreach"
+fredemmott,2015-01-29 18:52:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e28003c075112223ebacbdf99651466076839a1b,e28003c075112223ebacbdf99651466076839a1b,Ignore .orig files
+fredemmott,2015-01-29 18:45:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e127806aabd2eb4f54f89e798624ad774195c884,e127806aabd2eb4f54f89e798624ad774195c884,"Merge remote-tracking branch 'origin/master' into hack-merge
+
+Conflicts:
+	src/core.php
+	src/html.php"
+fredemmott,2015-01-28 22:03:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4c786dd12dc691e2ce5d4d541e008df6323d4f7d,4c786dd12dc691e2ce5d4d541e008df6323d4f7d,"Add XHPUnsafeRenderable, XHPAlwaysValidChild, MIGRATING.md
+
+Fixes facebook/xhp-lib#92"
+fredemmott,2015-01-28 21:34:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/21e0d779e1a53dda5361037b3d5865c210daadaa,21e0d779e1a53dda5361037b3d5865c210daadaa,Ignore vendor/ (composer autoload maps)
+fredemmott,2015-01-28 20:35:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/764d4bfeb58a650f3c3b6d70de7ddf336077939d,764d4bfeb58a650f3c3b6d70de7ddf336077939d,"Relicense as BSD, with additional limited patent grant
+
+As this repository no longer includes a PHP5 extension, the PHP and Zend licenses
+are not appropriate, as explained here: https://lintian.debian.org/tags/license-problem-php-license.html
+
+Fixes #90"
+fredemmott,2015-01-20 17:22:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e4f27da013b7c054ffad3131a74c9114568a4972,e4f27da013b7c054ffad3131a74c9114568a4972,"Remove unrelated link from README.textile
+
+This was in the original commit adding the readme. As this was mostly copy-pasted from a blogpost and the author has no author contributions, suspect it was intentional."
+fredemmott,2015-01-14 18:36:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3b6ff365c407567a47d3cada7c1136ed219e5c91,3b6ff365c407567a47d3cada7c1136ed219e5c91,"Merge pull request #94 from TJ09/composer-require
+
+Add a requires section to composer.json."
+TJ09,2015-01-14 01:04:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/008c0418a5feb1422f792c3ab6850532e3305caa,008c0418a5feb1422f792c3ab6850532e3305caa,Add a requires section to composer.json.
+fredemmott,2015-01-13 18:59:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d18a04c90f61ca4cd982e2f0d8a9933e5a8b17c1,d18a04c90f61ca4cd982e2f0d8a9933e5a8b17c1,"README: installation via composer, reference XHP-bootstrap"
+fredemmott,2015-01-13 18:18:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c232a2187c51ffb9d153186e7dfbebf4bd0a7c20,c232a2187c51ffb9d153186e7dfbebf4bd0a7c20,Reference separate xhp-php5-extension repo in README
+fredemmott,2015-01-13 00:01:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b385255076979fb963ada60a79ea61390c8db621,b385255076979fb963ada60a79ea61390c8db621,"Remove init.php, add composer.json with autoload"
+fredemmott,2015-01-12 23:03:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/727cd75f377f9a68645ad7b06149db6accb1fd30,727cd75f377f9a68645ad7b06149db6accb1fd30,"Remove PHP5 extension
+
+This is now available at https://github.com/facebookarchive/xhp-php5-extension/"
+Swahvay,2014-12-20 20:19:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5a66bb75d6ac578fd14647d2f58091ce9fb4cafc,5a66bb75d6ac578fd14647d2f58091ce9fb4cafc,"Merge pull request #89 from TJ09/getattribute
+
+Implement ->: syntax for accessing XHP attributes."
+TJ09,2014-12-20 00:07:16,https://api.github.com/repos/hhvm/xhp-lib/git/commits/156af309699c55618b6f955f01503c7f7767eecb,156af309699c55618b6f955f01503c7f7767eecb,"Implement ->: syntax for accessing XHP attributes.
+
+HHVM added syntactic sugar for accessing XHP attributes in facebook/hhvm@38669653bd5449c6d55afc2bed5364631579265b. This syntax essentially maps down to calling getAttribute() on the object. It's a bit strange that it relies on the ""userspace"" calls, but there's probably no (simple) better way.
+
+Anyways, this adds the same syntax to the Zend PHP extension, plus a test to verify that it works."
+Swahvay,2014-12-07 16:09:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1cab9207c8e7c4f8f6ba3a450c37ad2f00a411e8,1cab9207c8e7c4f8f6ba3a450c37ad2f00a411e8,"Merge pull request #88 from TJ09/fix-inline-new
+
+Fix calling methods on new objects (e.g. (new foo())->doSomething())."
+TJ09,2014-12-07 08:16:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c40a112a27c771515546ad71dba2a8d23ca49c01,c40a112a27c771515546ad71dba2a8d23ca49c01,Fix calling methods on new objects (e.g. (new foo())->doSomething()).
+Swahvay,2014-10-07 19:59:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9649e167b491599432f3e60e39b1c3c672d55bd0,9649e167b491599432f3e60e39b1c3c672d55bd0,"Merge pull request #81 from simonwelsh/patch-2
+
+Mark all checker functions as callables"
+simonwelsh,2014-10-07 04:17:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2083ac99a8f22df2bf57cd893e40b10fb37f1e61,2083ac99a8f22df2bf57cd893e40b10fb37f1e61,"Mark all checker functions as callables
+
+`array_filter` is now typed in HHVM, so we need to be passing in callables, not strings."
+Swahvay,2014-10-06 19:48:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6a3a0c7832ffa7dc28c204c047425fa1f715fecf,6a3a0c7832ffa7dc28c204c047425fa1f715fecf,"Merge pull request #79 from MightyBranch/update_year
+
+Update copyright to year 2014"
+eibt,2014-10-06 17:54:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/450c2eb519125d64709ea24549fdd88797f16fa0,450c2eb519125d64709ea24549fdd88797f16fa0,Update all Copyright instances to year 2014
+Swahvay,2014-09-30 16:32:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c441a375bd408571c2be8ddb33f7d8df8eb9d0c1,c441a375bd408571c2be8ddb33f7d8df8eb9d0c1,"Merge pull request #76 from waldyrious/patch-1
+
+minor: fix grammar, simplify a couple passages"
+Swahvay,2014-09-30 16:29:08,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9aee499e2c3ebae86378a66f5bcd75c4ce3b1957,9aee499e2c3ebae86378a66f5bcd75c4ce3b1957,"Merge pull request #77 from TJ09/parser-fix
+
+Fix parser bug that broke closure preprocessing."
+waldyrious,2014-09-30 02:05:09,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f93a848d84c43a1d2e6e77c229a10d5843d00b1f,f93a848d84c43a1d2e6e77c229a10d5843d00b1f,"minor: fix grammar, simplify a couple passages"
+TJ09,2014-09-30 01:41:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d22b5061cb5a480419e84513afb0ffc3b68a6b89,d22b5061cb5a480419e84513afb0ffc3b68a6b89,Fix parser bug that broke closure preprocessing.
+Swahvay,2014-09-24 03:05:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/11a11b3352f71ce9dd7f8cb205e0f0a0f5ec807b,11a11b3352f71ce9dd7f8cb205e0f0a0f5ec807b,"Minor tweaks
+
+Couple minor fixes and improvements. No need for custom throws inside
+__toString(). Also brought a few lines into 80 cols."
+Swahvay,2014-09-23 23:48:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/679a92a8081178afaf3352082395bab922f05973,679a92a8081178afaf3352082395bab922f05973,"Move __toString() to toString()
+
+Errors thrown inside __toString() produce a basically unusable stack
+trace. Switching it over to using `toString` instead (and just calling
+that from `__toString` for backwards-compatability) gives you a much
+nicer stack trace."
+Swahvay,2014-09-23 23:43:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a327a30239efb6f3a3cebfd48271b398917ef88b,a327a30239efb6f3a3cebfd48271b398917ef88b,"Update :noscript children declaration
+
+`<noscript>` has a little more valid children than just `pcdata`. This
+will allow more elements than is appropriate, but it’s better than
+over-validating."
+Swahvay,2014-07-28 21:49:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/79ddc58ace0d801f2a86d72a77a893c8e68b8e6c,79ddc58ace0d801f2a86d72a77a893c8e68b8e6c,"Merge pull request #73 from simonwelsh/patch-1
+
+Hack updates"
+simonwelsh,2014-07-26 09:03:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bf1cd03445c1ddb2f396af39de00e77a51795ef1,bf1cd03445c1ddb2f396af39de00e77a51795ef1,Cast non-:xhp XHPChild to string
+simonwelsh,2014-07-26 09:02:43,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ce776d466e89b09df097e8cd07910b8ae2e964a7,ce776d466e89b09df097e8cd07910b8ae2e964a7,Use the correct method for adding a map to another
+simonwelsh,2014-07-26 09:01:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/382511f843dd4a7330cf9c1f7065fa2a8565ab63,382511f843dd4a7330cf9c1f7065fa2a8565ab63,"`?mixed` is redundant
+
+Just use `mixed`"
+Swahvay,2014-06-17 01:27:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9c4f19d78d047980a325c79cb5ff3f72ba3ed17a,9c4f19d78d047980a325c79cb5ff3f72ba3ed17a,"Merge pull request #69 from yungsters/hack
+
+Change methods to return immutable collections."
+yungsters,2014-05-27 17:14:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6bcd28b70837f6a717ed564f9512a000653135eb,6bcd28b70837f6a717ed564f9512a000653135eb,"Change `get{Attributes,Children,Context}()` to return new collections."
+Swahvay,2014-05-27 19:42:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/daf3e8beff08150b5ff487127f28bd5e97896955,daf3e8beff08150b5ff487127f28bd5e97896955,"Remove Debug Code
+
+Oops."
+Swahvay,2014-05-26 16:56:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9469280242150ba872f1cbfe221564baf40623c2,9469280242150ba872f1cbfe221564baf40623c2,"Hackify XHP Core
+
+Hackifies XHP, pure and simple. The big omission is the return type on
+getAttribute(). Because it is mixed, if you knew it was a string and
+were appending it to another string, XHP could complain that mixed is
+not a compatible type with string in strict mode. Just leaving it off
+lets the compiler ignore it."
+Swahvay,2014-05-22 04:37:31,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8dc8af7993772741d1030ef99829d5c669842951,8dc8af7993772741d1030ef99829d5c669842951,"Merge pull request #65 from mabeyj/fix-template-tagname
+
+Fix $tagName for <template>"
+mabeyj,2014-05-22 02:12:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4f9a835a4cda6a4c4e426b1d44c2e1008c8098a3,4f9a835a4cda6a4c4e426b1d44c2e1008c8098a3,Fix $tagName for <template>
+Swahvay,2014-05-14 04:44:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/cffa78e18bbfaa77a910bdd09569d36bf1973a0d,cffa78e18bbfaa77a910bdd09569d36bf1973a0d,"Change Array Attribute Syntax to Match Hack
+
+Use a comma instead of the => symbol for key/value type declarations in
+array attributes to match the syntax of Hack."
+Swahvay,2014-05-13 23:12:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dcdde2fef53dc77ab53032991bcd33bc1dde86e2,dcdde2fef53dc77ab53032991bcd33bc1dde86e2,"Merge pull request #63 from fredemmott/xhp-array-child
+
+Fix array children in PHP5 and HHVM without EnableHipHopSyntax"
+fredemmott,2014-05-13 20:47:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/fb330150e666443da46ea1d4fbac7d8173984de3,fb330150e666443da46ea1d4fbac7d8173984de3,"Fix array children in PHP5 and HHVM without EnableHipHopSyntax
+
+Array isn't usually Traversable.
+
+Fixes facebook/hhvm#2631
+
+```
+[fredemmott@devbig076 /tmp/xhp-bs] hhvm -v Eval.EnableXHP=1 -v
+Eval.EnableHipHopSyntax=0 test.php
+string(10) ""<b>foo</b>""
+string(10) ""<b>foo</b>""
+[fredemmott@devbig076 /tmp/xhp-bs] hhvm -v Eval.EnableXHP=1 -v
+Eval.EnableHipHopSyntax=1 test.php
+string(10) ""<b>foo</b>""
+string(10) ""<b>foo</b>""
+[fredemmott@devbig076 /tmp/xhp-bs] cat test.php
+<?php
+
+require('/home/fredemmott/fio/xhp/php-lib/init.php');
+var_dump((string) <b>{['foo']}</b>);
+var_dump((string) <b>{new ArrayIterator(['foo'])}</b>);
+```"
+Swahvay,2014-05-05 19:40:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3e43ade6a86f5a1b8f1b2b6f14d9c12b111af9a9,3e43ade6a86f5a1b8f1b2b6f14d9c12b111af9a9,"Support for PHP 5.6 Variadic Function Parameters
+
+Adds support for the “…” operator in PHP 5.6. E.g.,
+function_call($var1, …$array_of_variables);"
+Swahvay,2014-05-03 00:05:35,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1205aad1045912c4ccb747b297f0093a4196c202,1205aad1045912c4ccb747b297f0093a4196c202,"Allow Single Quotes in HTML Attributes
+
+There is no need to escape these, since we will always surround
+attribute values with double quotes."
+Swahvay,2014-05-02 23:36:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/65d204b5f1b9d2f721d88a078acae4f2fbbe43a6,65d204b5f1b9d2f721d88a078acae4f2fbbe43a6,"Add HTML conditional comments
+
+This adds :x:conditional-comment, which adds the IE-specific <!—[if
+IE]> … <![endif]—> conditional."
+Swahvay,2014-05-02 19:25:27,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2d2b85f77c154dcbf924151f62ea5e16a3a0eaf1,2d2b85f77c154dcbf924151f62ea5e16a3a0eaf1,"Merge pull request #59 from jvaelen/master
+
+Updated INSTALL"
+jvaelen,2014-05-02 11:26:21,https://api.github.com/repos/hhvm/xhp-lib/git/commits/20a0346c0bcc7bfd995091f98dfe0754ee6ec27c,20a0346c0bcc7bfd995091f98dfe0754ee6ec27c,"Updated INSTALL
+
+Homebrew php reference changed from josegonzalez/homebrew-php to Homebrew/homebrew-php."
+Swahvay,2014-04-30 22:35:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/de857bb60680dd4d9a680e035189b9a4333dbd84,de857bb60680dd4d9a680e035189b9a4333dbd84,"Add INI Property to Control Global XHP Namespacing
+
+Add a new ini property, “force_global_namespace”, which defaults to
+true, to control whether XHP elements should always be instantiated on
+the global namespace. Originally this was always done automatically if
+your PHP instance was greater than 5.3, but now you can control whether
+you want it done or not."
+Swahvay,2014-04-16 19:47:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7017099e02318cea0fecf1cad7bbe5ea9bf55856,7017099e02318cea0fecf1cad7bbe5ea9bf55856,"Change is_array() checks to instanceof Traversable
+
+To better align with Hack, change checks inside `appendChild`,
+`prependChild`, `replaceChildren`, and `setContext` from `is_array()`
+to `instanceof Traversable`. This will allow for uses of `Map`,
+`Vector`, `Set`, etc."
+Swahvay,2014-04-08 00:39:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1e1825cfdcd10e42c563b48e8f25818ee831ed9d,1e1825cfdcd10e42c563b48e8f25818ee831ed9d,"Add Contexts to XHP
+
+This introduces the idea of contexts, which is basically key/value
+pairs that get propagated to all children and rendered roots. The
+primary use case for something like this is when you want a
+higher-level component to control the context in which a descendant XHP
+will belong. For instance, say you have a blog post with comments and
+by default you want all comments visible on the permalink, but only the
+two most recent comments visible when viewed from a feed. You can set a
+context at the page-level and your comments XHP object can look for it
+to render accordingly."
+Swahvay,2014-04-07 23:28:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/48255ab889fe3a152b384f7964481ef01875d05b,48255ab889fe3a152b384f7964481ef01875d05b,"Correct order of + operator
+
+Forgot that the order is reversed when using + as opposed to array_merge"
+Swahvay,2014-04-07 22:56:27,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a4351170e2c5769989dcd2bc13534a894d4bdaec,a4351170e2c5769989dcd2bc13534a894d4bdaec,"Use the + operator instead of array_merge()
+
+The + operator is noticeably (on a large scale) faster than
+array_merge() and behaves the same way with string keys."
+Swahvay,2014-04-07 22:43:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/df6b27650bb8c298260455b59a0e751cab2f0db9,df6b27650bb8c298260455b59a0e751cab2f0db9,"Fix missed cases
+
+Forgot to make the abstract versions public too."
+Swahvay,2014-04-07 22:14:53,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7181bd9cd727be6bddfa965c69f6758dce15912d,7181bd9cd727be6bddfa965c69f6758dce15912d,"Make get(First|Last)Children public
+
+It’s a little short-sided to think that these should not be available
+outside of XHP objects themselves."
+Swahvay,2014-04-05 02:11:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/77d0de76882f3eaf80a90248b897ef8eedfc9a91,77d0de76882f3eaf80a90248b897ef8eedfc9a91,"Add ""mixed"" attribute type
+
+This is synonymous with “var” and is just to match the Hack keyword."
+Swahvay,2014-04-05 01:57:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b82afafc71c64f23a95e2b4a32d5af7c3a33e339,b82afafc71c64f23a95e2b4a32d5af7c3a33e339,"Update HTML Spec
+
+Updated to the latest HTML 5.1 spec as of February 4, 2014.
+http://www.w3.org/TR/2014/WD-html51-20140204/"
+Swahvay,2014-04-02 23:06:47,https://api.github.com/repos/hhvm/xhp-lib/git/commits/843e8a1aabbfdcaaf93a931a83faeff16f092fe4,843e8a1aabbfdcaaf93a931a83faeff16f092fe4,"Remove references to FB's HTML() function
+
+When Facebook was just starting to use XHP and transitioning over all
+of its HTML strings, it needed a way to migrate non-upgraded code to
+work with XHP. The HTML() function was a way to basically just bypass
+XHP validation and render strings as HTML. We don’t need to use this
+anymore and it never should have been in the open source version
+anyways."
+Swahvay,2014-04-02 22:44:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/aced031590620ef6c8288b2b394e9cb04775ca7a,aced031590620ef6c8288b2b394e9cb04775ca7a,"Prevent __toString() not handling all exceptions
+
+There were cases where XHP could throw exceptions when type-casting to
+a string, which PHP doesn’t like. Wrapping everything in try/catch
+instead of just the private validation calls."
+Swahvay,2014-03-14 23:45:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d96ac1460bad3e94d9047b6ac950545fa221fdd1,d96ac1460bad3e94d9047b6ac950545fa221fdd1,"Fixing Use Statement Spacing
+
+`use X as Y` was becoming `use XasY`."
+Swahvay,2014-03-14 23:41:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/cd4c1024af99d8141779e4dfbd256c3f35b1d36b,cd4c1024af99d8141779e4dfbd256c3f35b1d36b,"Support Arbitrary Array Attribute Declarations
+
+This adds support for an unbound level of array type descriptors.
+Basically, you can specify your array attributes like this now:
+
+`
+attribute
+  array a,
+  array<int> b,
+  array<float> c,
+  array<string> d,
+  array<bool> e,
+  array<array> f,
+  array<callable> g,
+  array<Foo> h,
+  array<string => int> i,
+  array<int => string> j,
+  array<array<string => int>> k;
+`
+
+Just something to remember, PHP type-casts numeric string keys into
+integers. So array(‘123’ => 123) will fail an attribute looking for an
+array with string keys. Because PHP."
+jwatzman,2014-03-12 22:33:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8b90e48f2b67709086e351107f822f67f821cbd1,8b90e48f2b67709086e351107f822f67f821cbd1,"Rename :x:base to :xhp
+
+Summary:
+We did this internally a while ago, and some tooling assumes
+that `:xhp` is the root of the inheritance heirarchy. Rename externally
+as well, for maximum compatibility between said tools and external code.
+Leave a shim around as `:x:base` as to try to be minimally invasive to
+existing code.
+
+Test Plan:
+`git grep x:base` shows only the shim remaining. Run this code,
+see no errors:
+
+{P7197267}
+
+Reviewers: sparker
+
+Reviewed By: sparker
+
+CC: glevi, ptarjan, joelm
+
+Differential Revision: https://phabricator.fb.com/D1217524
+
+Task ID: 3911343"
+Swahvay,2014-03-07 21:35:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ead0c85eae5a8b3ca1b5f4eb7ae31dd220f2b6eb,ead0c85eae5a8b3ca1b5f4eb7ae31dd220f2b6eb,"Merge pull request #51 from ayurmedia/patch-1
+
+Good catch."
+Swahvay,2014-02-09 02:43:22,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1f5bbe4a4e988518dfcaff1f4221c372771bcd18,1f5bbe4a4e988518dfcaff1f4221c372771bcd18,"Update INSTALL
+
+Added information about forcing Homebrew to use Apple's GCC 4.2 compiler."
+ayurmedia,2014-01-21 15:16:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2be9bc39581149919725e3f7dea686f52ca2b51f,2be9bc39581149919725e3f7dea686f52ca2b51f,"Bugfix ?
+
+Shouldn't it be switch to HTML , when asp-tag + end %> ? it switches to PHP , but it's already PHP. 
+
+compare to 
+<PHP> '?>' {
+      state = HTML;
+      continue;
+    }
+
+where it switches to HTML in a similar condition. 
+
+Maybe nobody tested asp-tags, seams to be broken in master."
+Swahvay,2013-11-21 21:42:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b1e0167884b7acbc4de89f91b2b23f498efb895e,b1e0167884b7acbc4de89f91b2b23f498efb895e,"Merge pull request #47 from Daniel15/patch-2
+
+Update INSTALL Brew instructions - XHP requires GCC to build"
+Daniel15,2013-11-21 07:40:16,https://api.github.com/repos/hhvm/xhp-lib/git/commits/10aa405c5c596e55e0f135a3d05c89dbb8a66ceb,10aa405c5c596e55e0f135a3d05c89dbb8a66ceb,Update INSTALL
+Daniel15,2013-11-21 07:38:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2ce474966be63bbffa87e1be17c37ce58bc63d7f,2ce474966be63bbffa87e1be17c37ce58bc63d7f,"XHP requires GCC to build
+
+Similar change to 8aa2d9fa6bf3a114e113ba5c554181279545fb2f"
+Swahvay,2013-11-21 03:29:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3461a947c9adc77ffccb8f75d10e7c8158339ccf,3461a947c9adc77ffccb8f75d10e7c8158339ccf,"Merge pull request #46 from Daniel15/patch-1
+
+Update Homebrew instructions to include repository details"
+Daniel15,2013-11-20 22:57:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/47d1266d3141a305dfca5556f3bbc8297724d3b5,47d1266d3141a305dfca5556f3bbc8297724d3b5,Update Homebrew instructions to include repository details
+Swahvay,2013-11-14 22:38:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/14bdf9917ac762217de8bbdeefdc41870e33cbff,14bdf9917ac762217de8bbdeefdc41870e33cbff,"Add Array Attribute Type Descriptors
+
+Adds the ability to type keys and values when declaring array
+attributes in XHP. The format follows standard Map type declarations:
+
+```
+attribute array<int> intValuesOnly;
+attribute array<string => Foo> stringKeysAndFooInstanceValuesOnly;
+```
+
+The supported keys are just `int` and `string`, and the supported
+values are `int`, `float`, `bool`, `string`, `array`, and class names.
+There is no nesting of types yet. If people really want that it won't
+be too hard to add."
+Swahvay,2013-11-01 00:38:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/177b52dddc0334413062086b2f2914e657644083,177b52dddc0334413062086b2f2914e657644083,"Added ""callable"" Attribute Keyword
+
+You can now define attributes as ""callable"", meaning they will pass
+is_callable()."
+Swahvay,2013-10-31 02:30:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/584e94d4e2072dad7e2ba269228460adc94a2eae,584e94d4e2072dad7e2ba269228460adc94a2eae,"Update to the latest HTML5 specification
+
+Based on this document: http://www.w3.org/TR/2013/CR-html5-20130806"
+Swahvay,2013-10-29 19:47:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5f45729a30aadff7208543e3478520ea62476afb,5f45729a30aadff7208543e3478520ea62476afb,"Allow colons and dashes in categories
+
+Setting categories like `%x:foo` get parsed as XHP, so we need to
+account for their translated values when checking their presence."
+Swahvay,2013-09-20 00:44:23,https://api.github.com/repos/hhvm/xhp-lib/git/commits/536e013d31c10494ae71dc8d457072ff2f958a65,536e013d31c10494ae71dc8d457072ff2f958a65,"Add HTML comment syntax to XHP
+
+Adds support for <!-- --> syntax within XHP. This will be parsed as a
+normal PHP comment, so it will not be included as children in XHP."
+Swahvay,2013-09-15 15:23:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/46764c135403fbf86847fb35d8d2a02e833c9db6,46764c135403fbf86847fb35d8d2a02e833c9db6,"Update INSTALL
+
+Added info about the new Homebrew packages."
+Swahvay,2013-08-29 00:25:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0bdf54f6a333228094d6811a362836d15145eea4,0bdf54f6a333228094d6811a362836d15145eea4,"Fix HTML spellcheck attribute
+
+This was a boolean when it should have been an enum on the strings
+""true"" or ""false""."
+Swahvay,2013-07-27 23:33:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0d770a06ff7adf9c57626334c2f973f91cb573d4,0d770a06ff7adf9c57626334c2f973f91cb573d4,"Add support for PHP 5.5's finally keyword
+
+As the title says, just adding the token to the parser."
+Swahvay,2013-02-26 21:30:38,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ceb641f9ff6ecb2fec91b70706329b52cd0ab553,ceb641f9ff6ecb2fec91b70706329b52cd0ab553,"Use version_compare()
+
+Check for valid PHP version with version_compare() when running unit
+tests."
+Swahvay,2013-02-16 17:30:49,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5f5f335cc32b2012da1d1a54571e4c10233e905d,5f5f335cc32b2012da1d1a54571e4c10233e905d,Skip Yield Tests For PHP < 5.5
+Swahvay,2013-02-16 17:18:58,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c16bc3de5f87e03f3d7ec45ffdc4de7b997c62c3,c16bc3de5f87e03f3d7ec45ffdc4de7b997c62c3,"Update README
+
+Copied over from the Wiki."
+Swahvay,2013-02-16 17:14:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bef68d5acc3491e22ae61b25b4fb75586ebdcca3,bef68d5acc3491e22ae61b25b4fb75586ebdcca3,"Text Change
+
+Changed the yield test titles to say PHP5.5."
+Swahvay,2013-02-16 17:03:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/342a3cf41ca79dabc63bea6a048e946c5d1357ce,342a3cf41ca79dabc63bea6a048e946c5d1357ce,"Fix Test Failure
+
+Bad test case."
+Swahvay,2013-02-05 19:48:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c5a8590674372286a7a1987635f6ac33fd49e1c5,c5a8590674372286a7a1987635f6ac33fd49e1c5,"Add the HTML5 <main> element
+
+http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-m
+ain-element"
+Swahvay,2013-02-02 19:17:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f55d9b1dadaa9691682679f34bb7dee80bfe3500,f55d9b1dadaa9691682679f34bb7dee80bfe3500,Update Copyright to 2013
+Swahvay,2013-02-02 19:06:52,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a4dbca1a587b4a4833be9d465a7f106bf4a85ecf,a4dbca1a587b4a4833be9d465a7f106bf4a85ecf,"Support HTML5 boolean attribute format
+
+Instead of sending disabled=""1"" (or disabled=""disabled"") just sending
+down disabled. Also, removing the closing slash from
+:xhp:html-singleton. Might as well save a couple bytes per element."
+Swahvay,2013-02-02 19:02:47,https://api.github.com/repos/hhvm/xhp-lib/git/commits/76652f6c19f75ed4ec453853345a2df64696b52a,76652f6c19f75ed4ec453853345a2df64696b52a,Add support for PHP 5.5's yield keyword
+Swahvay,2013-01-31 16:14:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5865b1812c2664807dc850f7ee4e81caaa55bacc,5865b1812c2664807dc850f7ee4e81caaa55bacc,"Fix Fatal
+
+Fix a copy/paste error."
+Swahvay,2013-01-31 06:04:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/99b10ace57cd4c5e3314bb89d9f4617c6d8c728e,99b10ace57cd4c5e3314bb89d9f4617c6d8c728e,"Move to Version 1.4
+
+With all the latest additions, I feel we should consider this a new
+version."
+Swahvay,2013-01-31 05:45:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/02a1b988d5774acc8d844a65a54245c761d545b4,02a1b988d5774acc8d844a65a54245c761d545b4,"Add Trait Support
+
+Update the parse to understand the trait syntax of PHP 5.4."
+Swahvay,2013-01-31 04:57:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f1be89b0783b0ad587c14cfbd0ff7b96a119990a,f1be89b0783b0ad587c14cfbd0ff7b96a119990a,"Added abstract methods to :x:base
+
+Just being a little more explicit."
+Swahvay,2013-01-30 08:52:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/950603e2dd44c3283c0069073e3b4ea5cc147bb2,950603e2dd44c3283c0069073e3b4ea5cc147bb2,"Add HTML5 data-/aria- Attribute Support
+
+Added support for attributes beginning with ""aria-"" or ""data-"" without
+needing to be defined. Put the support all the way onto
+:x:composable-element, which means that pretty much anything will
+accept them, but that it will be up to the programmer to do something
+with them on non-HTML elements."
+Swahvay,2013-01-30 07:34:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/291f30142427d3b5e2835b99b24e18de60faa130,291f30142427d3b5e2835b99b24e18de60faa130,"Add :xhp:raw-pcdata-element
+
+Add an abstract extension of :xhp:html-element that will accept only
+string children and will not escape them on render(). This is intended
+for <style> and <script> tags."
+Swahvay,2013-01-30 07:06:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/be74782a17aadd4b07e122d3db573b718da43c1e,be74782a17aadd4b07e122d3db573b718da43c1e,Fixed a comment
+Swahvay,2013-01-30 07:03:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ad9d74bb12b0b472deb34a6c542d24eda89e6e45,ad9d74bb12b0b472deb34a6c542d24eda89e6e45,"Add Attribute Helpers
+
+Adds setAttributes(), isAttributeSet(), and removeAttribute()"
+Swahvay,2013-01-30 06:42:49,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b06f73b914eaf36fafd0db50f8f55ed22087774f,b06f73b914eaf36fafd0db50f8f55ed22087774f,"Add Children Helper Methods
+
+Adds getFirstChild(), getLastChild(), and replaceChildren() to
+:x:composable-element. Additionally, allows for categories to be used
+in the getters. So, $xhp->getFirstChild('%phrase') will now return the
+first element with a category of ""%phrase."""
+Swahvay,2013-01-26 22:12:15,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6c7e6e14071358495628adc57a3f32e9194acb3d,6c7e6e14071358495628adc57a3f32e9194acb3d,"Add trigger_error to :x:element::__toString()
+
+Using trigger_error() inside :x:element::__toString() because you
+cannot throw errors inside __toString()."
+Swahvay,2013-01-03 21:50:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8aa2d9fa6bf3a114e113ba5c554181279545fb2f,8aa2d9fa6bf3a114e113ba5c554181279545fb2f,"Fix compilation errors on Mac OS X 10.8.2
+
+By default it was using Apple's clang compiler rather than GCC, and
+that compiler didn't like the standard rope implementation
+(/usr/include/c++/4.2.1/ext/rope) for whatever reason. I confirmed the
+clang compiler couldn't even compile a simple hello-world program that
+declared a rope in main(), so there's nothing wrong with the xhp code
+in this regard. Clang just doesn't like rope.
+
+Thanks for Andrew Rogers for the fix."
+Swahvay,2012-11-11 23:06:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d4789514767fcd626d23bb2191571278a2452969,d4789514767fcd626d23bb2191571278a2452969,"Remove :x:composite
+
+:x:composite::__construct() is not compatible with
+:x:base::__construct(), which throws warnings in PHP 5.4. This class
+wasn't really that useful and may have even been buggy anyways."
+Swahvay,2012-11-09 04:16:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/587dc81ad5add7ce34a35e03753c1b28dcafbd78,587dc81ad5add7ce34a35e03753c1b28dcafbd78,"Fix double-escaping in HTML attributes
+
+This should have been fixed long ago..."
+Swahvay,2012-11-09 04:11:21,https://api.github.com/repos/hhvm/xhp-lib/git/commits/fe5b7ba01f135b5aaa70a20006118a39df4705d6,fe5b7ba01f135b5aaa70a20006118a39df4705d6,"Upgrade XHP to the HTML5 spec
+
+Upgrades XHP HTML elements to conform to the current working draft of
+HTML5. This may cause backwards compatability issues, so I've also
+included a new method available onto all XHP elements:
+forceAttribute(). This will allow you to forgo validation of any
+attribute when setting. Also added a convenience getID() method onto
+all HTML attributes that will return the ID if set, otherwise it will
+generate a random one and return that."
+Swahvay,2012-11-09 03:56:53,https://api.github.com/repos/hhvm/xhp-lib/git/commits/cb6a71be9d774ebd69ca02f3d9532fd3a0b825f7,cb6a71be9d774ebd69ca02f3d9532fd3a0b825f7,"__construct() strict standards in PHP 5.4
+
+__construct() of :x:base must be compatible with __construct of
+:x:composable-element in PHP 5.4."
+Swahvay,2012-11-08 01:19:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/471ed9c8c9890098034c6d9b9587cd6374911566,471ed9c8c9890098034c6d9b9587cd6374911566,"Merge pull request #25 from philix/bugfix
+
+Removing warnings and fatals from php-lib/core.php"
+Swahvay,2012-11-08 01:17:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/139f710468b30182c0cbc4c061fdddf8af34326f,139f710468b30182c0cbc4c061fdddf8af34326f,"Merge pull request #32 from fried/master
+
+Had issue building on gcc 4.7.0 on archlinux"
+fried,2012-04-30 20:05:53,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e047fd54f8c8c9a2b2b558818ff5ca370ecff20b,e047fd54f8c8c9a2b2b558818ff5ca370ecff20b,Fixing an issue building on gcc version 4.7.0 on archlinux
+scottmac,2012-02-15 18:53:19,https://api.github.com/repos/hhvm/xhp-lib/git/commits/17f05e1ecc6a92d756c4510f05321506be84797a,17f05e1ecc6a92d756c4510f05321506be84797a,"Merge pull request #31 from vrana/master
+
+Invalid escaping in renderBaseAttrs"
+scottmac,2011-09-12 23:41:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/0ff0c6d348a069ae9954c15fe35ca8d1e03e43a3,0ff0c6d348a069ae9954c15fe35ca8d1e03e43a3,"zend_error_noreturn() causes problems on new gcc
+
+Summary:
+Fix build error
+
+Test Plan:
+
+Reviewers:
+
+CC:"
+scottmac,2011-08-08 20:41:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6bf2a884e6f54f663327a0b07d3ce6d1f59fc2ce,6bf2a884e6f54f663327a0b07d3ce6d1f59fc2ce,"Fix static building of libxhp
+
+Description:
+libxhp didn't have the correct variable set in the include file.
+
+Also didn't include the path wherer to link libxhp from when it was static."
+philix,2011-04-23 16:12:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a55d17470021eb2486eff943f603fd86a32c78b0,a55d17470021eb2486eff943f603fd86a32c78b0,"Removing warnings and fatals from php-lib/core.php
+
+Summary: PHP Strict Standards define that you can't declare static methods
+abstract, so I just commented out __xhpAttributeDeclaration declaration like
+this.
+
+__toString() should not throw ""Exception""s, but trigger_error() is accepted, so I
+just catch any Exception and trigger an E_USER_ERROR using the exception's
+message.
+
+There's almost no trade off as you probably don't handle exceptions when you
+convert XHP objects to string. If you have some kind of global error handling
+you should make sure that the Exception handling and error handling should have
+the same behaviour."
+laverdet,2010-12-02 06:24:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dafff2cc1844d1138c3388509c9560b87167a3bb,dafff2cc1844d1138c3388509c9560b87167a3bb,"Update fastpath to catch opening tags.
+
+Summary:
+If you have something like:
+
+  $foo = <div>Her's</div>;
+
+The fastpath won't pick up the XHP because it thinks it's inside of a string, and it only looks for closing tags, not opening tags. I added an expression to detect opening tags as well, which in practice won't have many false positives.
+
+Test Plan:
+New unit test. Also ran xhpize on FB sources and no new fastpath false positives were introduced.
+
+Reviewed By: epriestley"
+laverdet,2010-06-25 07:23:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7788380dd45067f957e6b98f0bddf9e0284399db,7788380dd45067f957e6b98f0bddf9e0284399db,"Fix parser glitch with <script />
+
+Summary:
+You can open and close PHP blocks with <script> and </script> which my fastpath parser tries to take into account. But the XHP detection looks for closing tags for its primary detection, so when it sees the closing </script> it leaves PHP context and then doesn't detect any XHP. I'm removing the closing </script> context switch which will slow down the fastpath in some stupid cases when people use <script language=""php""> but whatever, no one does that. False positives are acceptable, false negatives are not.
+
+Test Plan:
+Unit test.
+
+Reviewed By: epriestley"
+laverdet,2010-05-28 11:05:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/809537b02741d5d087f565389e6a369b29645b4a,809537b02741d5d087f565389e6a369b29645b4a,"Fix invalid line numbers on syntax error
+
+Summary:
+If you encounter a syntax error via a mismatched tag, the line number it gives you may be messed up. This is because we only mark the parser as terminated but let it continue its work. This keeps eating up tokens and advancing the line number. So now we don't let the scanner continue if the parser has been marked as terminated, thus the line number remains where it was when we found the error.
+
+Test Plan:
+Unit tests.
+
+Reviewed By: kdelong"
+laverdet,2010-05-17 08:57:56,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7785c816c08bb0a9a66c93dd04fbd94e336ef5ff,7785c816c08bb0a9a66c93dd04fbd94e336ef5ff,"Make categories not replace -, : etc
+
+Summary:
+Categories just become array keys so there's no need to replace them like we do identifiers.
+
+Test Plan:
+rebuild & reload
+
+Reviewed By: kdelong"
+laverdet,2010-05-14 08:52:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a525ac6f68d31c1f51d20f4e3fc8a00e8369eeb5,a525ac6f68d31c1f51d20f4e3fc8a00e8369eeb5,"Stricter whitespace rules
+
+Summary:
+Basically this diff makes is so that XHP whitespace behaves as I said it would from the start. Pure whitespace in between nodes is truncated, leading and trailing whitespace between a text node and something else is collapsed into a space.
+
+Test Plan:
+Unit tests
+
+Reviewed By: kdelong"
+laverdet,2010-05-12 02:00:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2060049b254a2a70757ce10435f73e962ac174ce,2060049b254a2a70757ce10435f73e962ac174ce,"Cleaning up the XHP bug list
+
+Summary:
+- Allow XHP constants in arrays, i.e. array('foo' => :foo::bar);
+- Fix handling of ?> and </script> in heredoc
+http://github.com/facebook/xhp/issues/issue/11
+- Fix 2 bugs with line numbers getting corrupted
+- Fix use of ""xor"", ""or"", and ""and"" operators
+http://github.com/facebook/xhp/issues/issue/12
+- Whitespace issues (need more tests)
+
+Test Plan:
+Added unit tests for each bug fixed. All tests passed successfully.
+
+Reviewed By: martin"
+laverdet,2010-03-09 02:16:18,https://api.github.com/repos/hhvm/xhp-lib/git/commits/e1d699f610ed2af3df3ed9229911684b68af173a,e1d699f610ed2af3df3ed9229911684b68af173a,Bump to 1.3.8
+laverdet,2010-03-09 01:57:27,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2390fd1355c3f05ff5e594c45f6bcc993b6765ff,2390fd1355c3f05ff5e594c45f6bcc993b6765ff,"Fix parser glitch
+
+Summary:
+http://github.com/facebook/xhp/issues/issue/10
+
+XHP's flagrant misuse of scanner states is catching up now with this ridiculous parser bug. I'm taking the easy way out by forbidding clients to use reserved words in XHP class constants which is probably less bad than the existing bug.
+
+Reviewed By: dweatherford
+
+Test Plan:
+Ran tests. Added new test for the broken case, and another random case I wanted to add for the hell of it."
+laverdet,2010-03-09 01:56:16,https://api.github.com/repos/hhvm/xhp-lib/git/commits/69cdb22c6735e3713c751e244c17ba8d5ff9ce11,69cdb22c6735e3713c751e244c17ba8d5ff9ce11,"Fix broken test
+
+Summary:
+The behavior of this actually changed in PHP 5.3 so I guess the unit test needs to work with both 5.2 and 5.3.
+
+Reviewed By: dweatherford
+
+Test Plan:
+Ran test on 5.2 and 5.3 (actually just 5.2)."
+laverdet,2010-03-09 01:55:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8698ead68f2196f48fcd19deedf4b94150a18646,8698ead68f2196f48fcd19deedf4b94150a18646,"Fix XHP build on gcc 4.1
+
+Summary:
+There is an undefined function that I don't even know how it gets defined, but it does in gcc > 4.1. Collocating this function in ext.cpp so older versions of gcc can build XHP.
+
+Reviewed By: dweatherford
+
+Test Plan:
+Build using gcc 4.1.2 and php 5.3.2"
+laverdet,2010-03-09 01:54:03,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8595cf7d043f7604141550047ff2931515e572fe,8595cf7d043f7604141550047ff2931515e572fe,"Add support for PHP 5.3 namespaces
+
+Summary:
+http://github.com/facebook/xhp/issues/issue/6
+
+Currently if you use `namespace` anywhere in your client code you can no longer use XHP. This is because of the new semantics introduced to PHP 5.3. Unfortunately XHP has its own namespace structure which conflicts with PHP's. So if we detect PHP 5.3 we will embrace namespaces by sticking all our classes in the global namespace.
+
+Reviewed By: dweatherford
+
+Test Plan:
+Build and run tests. No new tests since we don't run PHP 5.3."
+scottmac,2010-02-21 09:53:29,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d238075c0318e4014b7528af86cb2e215dfe99ea,d238075c0318e4014b7528af86cb2e215dfe99ea,Missing semi-colon in a few rules
+scottmac,2010-02-21 09:50:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/aaea334ebf52c93e93adec6503fa8dce53ee292e,aaea334ebf52c93e93adec6503fa8dce53ee292e,Add cmake files to .gitignore
+metagoto,2010-02-10 01:52:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/09098bff9946af5ce373ac90150d877081d53b09,09098bff9946af5ce373ac90150d877081d53b09,add globals initilization. prevent segfault
+metagoto,2010-02-10 01:49:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c94ff864116426b7f6fec5b7db2d074cb1c65ddb,c94ff864116426b7f6fec5b7db2d074cb1c65ddb,fix for ZTS in dist_compile_string call
+laverdet,2010-02-08 07:35:27,https://api.github.com/repos/hhvm/xhp-lib/git/commits/db1e1738e1c1f3797052e539cb1480b6101763e4,db1e1738e1c1f3797052e539cb1480b6101763e4,"Fix include orders
+
+Summary:
+There was some misuse here between string.h and string. I went ahead and cleared
+that up to make the build work on more correct platforms."
+laverdet,2010-02-08 03:38:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7b034a142d738c70dd7048c84ebf9a24ba8ebb03,7b034a142d738c70dd7048c84ebf9a24ba8ebb03,"Documentation update
+
+Summary:
+In the releases we will include generated code so that bison, flex, and re2c are
+only required for developers. Updating documentation to reflect this."
+laverdet,2010-02-08 03:35:14,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bb3cb6082fdd34fa69d7b93d2290d3e578d13fed,bb3cb6082fdd34fa69d7b93d2290d3e578d13fed,Update license to 2010
+laverdet,2010-01-07 21:32:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bba7d3df601bf6411c177e94540d9998a69b1af8,bba7d3df601bf6411c177e94540d9998a69b1af8,"Adding .gitignore
+
+Summary:
+This is my local exclude file. It hides all the garbage that phpize puts into your directory in addition to bison, flex, and re2c generated files."
+laverdet,2010-01-07 20:51:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/82da35963c7ae6e1f718b7f9dcec13b436d9e4da,82da35963c7ae6e1f718b7f9dcec13b436d9e4da,Add documentation and license information
+laverdet,2010-01-07 07:16:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9da55a1132123cb3de26e775e24ec5ed6fd41b2d,9da55a1132123cb3de26e775e24ec5ed6fd41b2d,"Update PHP libraries
+
+Summary:
+These have been seeing a lot of iteration in tfb, so I want to update them in
+XHP (seeing as how the current versions won't even work)."
+laverdet,2009-12-19 00:21:51,https://api.github.com/repos/hhvm/xhp-lib/git/commits/40ff3599d9fa62eba49c6ad8a6d10047b125e1c4,40ff3599d9fa62eba49c6ad8a6d10047b125e1c4,"Fix multiple attribute stealing
+
+Summary:
+There's a bug right now where if you steal attributes you have to do them all on the same line or there's a parse error. This isn't a parse error in XHP, but a problem with the generated code. Stripping line number information from the identifier fixes this, which is the desired behavior anyway because __xhpAttributeDeclaration should be one 1 line.
+
+Reviewed By: kdelong
+
+Test Plan:
+attributes.phpt
+
+Revert: OK
+
+DiffCamp Revision: 80761"
+laverdet,2009-12-19 00:04:42,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9b9af475772d13dfbbd6a6104c9950db223a4964,9b9af475772d13dfbbd6a6104c9950db223a4964,"Fix bugs with markup attributes
+
+Summary:
+- Blank attributes <div style="""" /> are valid
+- Entities may be used in attributes
+- &#...; attributes always work now
+- Invalid entity errors are sane
+
+Reviewed By: kdelong
+
+Test Plan:
+attr-blank.phpt now passes
+
+Revert: OK
+
+DiffCamp Revision: 80760"
+laverdet,2009-12-18 22:55:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/656d1ff971148fa323379e0d276dad9171ecfaeb,656d1ff971148fa323379e0d276dad9171ecfaeb,"Tons of entities
+
+Summary:
+This adds all XML and HTML entities to XHP. Now you can do <div>&Agrave;</div> if you want, I guess.
+
+I removed all the chess piece entities because those were crazy, but I kept the clouds and snowmans.
+
+Reviewed By: kdelong
+
+Test Plan:
+Confirmed that compile time of scanner.lex.cpp is like 4 times longer than it used to be.
+
+Revert: OK
+
+DiffCamp Revision: 80759"
+laverdet,2009-12-18 22:29:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/deffebfc63ef6b65f3ecac2e9cb96bc4973fe63c,deffebfc63ef6b65f3ecac2e9cb96bc4973fe63c,"Add a bunch of tests
+
+Summary:
+These tests are mostly worthless but it might motivate me to make more in the future.
+
+Reviewed By: kdelong
+
+Test Plan:
+HA!
+
+Revert: OK
+
+DiffCamp Revision: 80705"
+laverdet,2009-11-30 23:06:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ad559d2cdffb1fe3afd4cbe5fd1f31f7800e9ec8,ad559d2cdffb1fe3afd4cbe5fd1f31f7800e9ec8,"Fix build error on newer gcc
+
+Summary:
+Our ancient copy of gcc lets this through but older versions do not.
+
+Reviewed By: epriestley
+
+Test Plan: build"
+laverdet,2009-11-29 13:55:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/acca904892805349921ae3607cc7d884db5f45af,acca904892805349921ae3607cc7d884db5f45af,"Allow ArrayAccess in __xhp_idx
+
+Summary:
+__xhp_idx doesn't work with FBObject right now because it's not aware of ArrayAccess. This diff adds some more functionality to that so hopefully now it'll work just like ##function idx($a, $b) { return $a[$b]; }##.
+
+I'm not aware of any function available to PHP extensions that does this for you, and my research has led me nowhere either. Seems like every extension just has to implement their own terrible versions of zval-mangling utility functions.
+
+Reviewed By: epriestley
+
+Other Commenters: mcslee
+
+Test Plan:
+Ran this guy and verified __xhp_idx and idx behave the same.
+
+  <?php
+  class foo implements ArrayAccess {
+    public function offsetExists($offset) { return true; }
+    public function offsetGet($offset) { return $offset; }
+    public function offsetSet($offset, $data) {}
+    public function offsetUnset($offset) {}
+  }
+
+  $array = array();
+  $array[0] = 'zero';
+  $array['key'] = 'value';
+  $string = 'foobar';
+  $object = new foo;
+
+  function idx($a, $b) {
+    return $a[$b];
+  }
+
+  foreach (array('idx', '__xhp_idx') as $fn) {
+    var_dump($fn($array, 0));
+    var_dump($fn($array, '0'));
+    var_dump($fn($array, NULL));
+    var_dump($fn($array, true));
+    var_dump($fn($array, false));
+    var_dump($fn($array, 'key'));
+    var_dump($fn($array, 'other_key'));
+    echo ""---\n"";
+
+    var_dump($fn($string, 0));
+    var_dump($fn($string, '0'));
+    var_dump($fn($string, NULL));
+    var_dump($fn($string, true));
+    var_dump($fn($string, false));
+    var_dump($fn($string, 'honk'));
+    echo ""---\n"";
+
+    var_dump($fn($object, 0));
+    var_dump($fn($object, NULL));
+    var_dump($fn($object, true));
+    var_dump($fn($object, false));
+    var_dump($fn($object, 'key'));
+    echo ""------------------------\n"";
+}
+
+Revert: OK
+
+DiffCamp Revision: 76249"
+laverdet,2009-11-24 01:01:44,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9b4bd8d82b539514a8989d5b84dcc5c2bb7dd892,9b4bd8d82b539514a8989d5b84dcc5c2bb7dd892,"Fix static variable access from XHP classes
+
+Summary:
+Currently you can't access static variables in an XHP class. ""echo :x::$foo"" is
+a syntax error.
+
+Reviewed By: epriestley
+
+Test Plan:
+  marcel@dev050 ~/xhp $ cat test.php
+  <?php
+  class :fb:thing {
+    public static $TEST = 1;
+  }
+
+  echo :fb:thing::$TEST.""\n"";
+  (:fb:thing::$TEST = 2);
+  echo :fb:thing::$TEST.""\n"";
+
+  marcel@dev050 ~/xhp $ php test.php
+  1
+  2
+
+Revert: OK"
+laverdet,2009-10-28 08:09:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9d49b010581b91b5a074e20fb17ca25ff199f5ed,9d49b010581b91b5a074e20fb17ca25ff199f5ed,"Fix bug with duped __xhpAttributeDeclaration
+
+Summary:
+Currently XHP will define __xhpAttributeDeclaration on any class that uses the
+leading-colon scheme. This is annoying because we can't define a base
+implementation or __xhpAttributeDeclaration. So now it only defines
+__xhpAttributeDeclaration if you define attributes.
+
+Reviewed By: epriestley
+
+Test Plan: xhpize
+
+Revert: OK"
+laverdet,2009-10-27 23:32:17,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f6234cb5064b14e8b7cb5f2b674078ff4ec60dcb,f6234cb5064b14e8b7cb5f2b674078ff4ec60dcb,"Include debug info in element construction
+
+Summary:
+Right now XHP errors are difficult to debug because many errors aren't surfaced until toString() is called which is probably very far away from where the element was actually constructed. We've solved this in trunk by calling debug_backtrace() in every construction but that's pretty ridiculous.
+
+So I'm adding information to each construction which will pass to the element about where it came from.
+
+Reviewed By: epriestley
+
+Test Plan:
+xhpized a few files
+
+Revert: OK
+
+DiffCamp Revision: 71252"
+laverdet,2009-10-26 10:52:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1d0bdef7b1ce5b1779b05550b54b87f904b15e42,1d0bdef7b1ce5b1779b05550b54b87f904b15e42,"Add support for empty closing tags
+
+Summary:
+<foo>bar</> is now valid syntax. ""</>"" will just close whatever tag happens to
+be open at the time. This mimics the behavior of a subset of SGML's SHORTTAG
+directive.
+
+Reviewed By: dcorson
+
+Test Plan: xhpize + various clients of XHP
+
+Revert: OK"
+laverdet,2009-10-26 10:14:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/12255a07cb36dfa7cce256b0ec0669791fd09cf0,12255a07cb36dfa7cce256b0ec0669791fd09cf0,"Remove support for ""element"" keyword
+
+Summary:
+Don't need it anymore, it has been replaced with the leading-colon syntax.
+
+Reviewed By: epriestley
+
+Test Plan: xhpize
+
+Revert: OK"
+laverdet,2009-10-26 09:44:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c272d02383896715acd22ca43c54c098712690b1,c272d02383896715acd22ca43c54c098712690b1,"Fix attribute keyword in class body
+
+Summary:
+The `attribute` keyword would not work if it didn't appear before any functions
+in the class. You would can a syntax error like unexpected T_STRING. You can now
+put your attributes anywhere in the class, just like you can variables, though
+you probably shouldn't.
+
+Reviewed By: epriestley
+
+Test Plan: xhpize
+
+Revert: OK"
+laverdet,2009-10-20 06:09:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/fc476e95af2118145a7a3abf67feb908f391edfe,fc476e95af2118145a7a3abf67feb908f391edfe,"Fix missing rewrites
+
+Summary:
+There's a potential issue where if the only XHP in a file is at the very end it
+won't get rewritten.
+
+The issue was that T_RETURN expects a expr_without_variable which is a subset of
+expr. Changes to fastpath.re fixes a potential issue where if XHP appears at the
+VERY end of a file it won't get picked up.
+
+Reviewed By: dcorson
+
+Test Plan:
+The usual inadequate testing of very sensitive code changes. `make test` would be useful.
+
+Revert: OK
+
+DiffCamp Revision: 69833"
+laverdet,2009-10-18 21:48:10,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bf30253cc5958c92a927b7be327fe3d7ca1b5b8a,bf30253cc5958c92a927b7be327fe3d7ca1b5b8a,"Default idx_expr to true in xhp_preprocess
+
+Summary:
+Clients using the old non-flags version of xhp_preprocess should get the
+idx_expr rule by default. This does not include the PHP extension, there's
+an ini option for that.
+
+Reviewed By: dweatherford
+
+Test Plan: xhpize
+
+Revert: OK"
+laverdet,2009-10-18 00:57:34,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8b60fc0da00cedfb27135522dd44894534417232,8b60fc0da00cedfb27135522dd44894534417232,"Finish hooking up ini options
+
+Summary:
+My first commit where I setup the ini stuff didn't actually work, but now it
+does.
+
+Test Plan:
+Set xhp.idx_expr to 1 and tested it
+
+Reviewed By: epriestley
+
+Revert: OK"
+laverdet,2009-10-18 00:45:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/dbaca373051ebe360fb1e2c3f4f007ac1fd79292,dbaca373051ebe360fb1e2c3f4f007ac1fd79292,"Make startup a lot faster
+
+Summary:
+This greatly decreases startup time for the codebase by making the non-XHP fastpath a lot more sophisticated.
+
+One of the biggest fastpath false positive was markup in strings. The new fastpath correctly scans past strings which means we don't have to double parse nearly as many files.
+
+I implemented the fastpath in re2c which is the lightest weight scanner I could find. Basically the only thing it does is convert lists of regular expressions to huge state machines. Everything else you might expect from a scanner has to be implemented from scratch, which is just what I want.
+
+I implemented just enough of PHP's grammar to know when we're looking at actual code. Then I use the same XHP clues as I had in the old scanner.
+
+Reviewed By: dcorson
+
+Test Plan:
+Browsed around the lite site, etc.
+
+Revert: OK
+
+DiffCamp Revision: 69583"
+laverdet,2009-10-15 00:32:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2100aa389252688c20f82048f561c96d0d015663,2100aa389252688c20f82048f561c96d0d015663,"Fix bad fail fast
+
+Summary:
+Prescanner has a bug, syntax errors ahoy."
+laverdet,2009-10-14 03:10:11,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4667d650157fe6c70340eb44ef9ab076323910c0,4667d650157fe6c70340eb44ef9ab076323910c0,"Configuation for parser options
+
+Summary:
+Hook up short_tags and asp_tags flags to match PHP settings. Also add
+xhp.idx_expr ini setting to enable or disable [] operator on expressions.
+
+Reviewed By: epriestley
+
+Test Plan: trunk
+
+Revert: OK"
+laverdet,2009-10-14 00:46:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/6b2c1c6f4a4109aff4f77656f41394794eb9cff2,6b2c1c6f4a4109aff4f77656f41394794eb9cff2,"Reduce false positives in preparser
+
+Summary:
+Reduce cost of parsing by parsing fewer files
+
+Reviewed By: dweatherford
+
+Test Plan: lib/init/script.php
+
+Revert: OK"
+laverdet,2009-10-13 23:28:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b7da4cba3a6934c90ef9827422d2dd3af79b0dab,b7da4cba3a6934c90ef9827422d2dd3af79b0dab,Bump version to 1.3.1
+laverdet,2009-10-13 23:25:09,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a4d493a4fc1e4e72815dbcc5c5cdb1d0cdf38f32,a4d493a4fc1e4e72815dbcc5c5cdb1d0cdf38f32,"Fix xhp_preprocess_code in centos
+
+zend_parse_parameters gives you an int, not a size_t. f u Zend.
+
+Reviewed By: bill
+
+Test Plan: build"
+laverdet,2009-10-07 18:33:50,https://api.github.com/repos/hhvm/xhp-lib/git/commits/05a0b444244d7964b071d3d0eda05fdc07fce5c7,05a0b444244d7964b071d3d0eda05fdc07fce5c7,"Bump to 1.3.1
+
+Last commit added a function so I need to bump the version number"
+laverdet,2009-10-07 18:31:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/a928fce0c42d74e81d68ba428c85812abd873384,a928fce0c42d74e81d68ba428c85812abd873384,"Surface ability to parse XHP in PHP extension
+
+Summary:
+This creates a function xhp_preprocess_code() which will parse code with or without XHP extensions and return some kind of result.
+
+The function should always return an array unless you pass it invalid arguments. The only parameter this function takes is a string of code. There are three possible cases:
+
+- The code contained XHP and was rewritten to straight PHP; a key ""new_code"" is set with the new code.
+- The code contains no XHP; the array is totally empty.
+- The code contains a syntax error; keys ""error"" and ""error_line"" are with with the error encountered and on what line
+
+Reviewed By: mcslee
+
+Test Plan:
+Tested the 3 cases in a short PHP script.
+
+Revert: OK
+
+DiffCamp Revision: 67802"
+laverdet,2009-10-07 02:34:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8dfc5d356c8a037e55e93582306b2218c997b181,8dfc5d356c8a037e55e93582306b2218c997b181,"Prefer flex35 over flex
+
+Summary:
+On some machines we have old versions of flex as the default for building PHP,
+but XHP requires a newer version. While building XHP now prefer `flex35` over
+`flex`.
+
+Reviewed By: shire
+
+Test Plan: make xhpize
+
+Revert: OK"
+laverdet,2009-10-06 18:42:55,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4a8cc776be0f51e1325cffa2040b2f575807ab8e,4a8cc776be0f51e1325cffa2040b2f575807ab8e,"Various fixes and changes
+
+Summary:
+- Reverse type/name in attribute declaration
+- Change enum syntax to be more C-like
+- Replace ""any"" with ""var"" in attribute decls
+- Bugs in generated __xhpChildrenDeclaration()
+- Allow comments in attribute decls
+- Allow instance of :fb:whatever
+
+Reviewed By: epriestley
+
+Revert: OK"
+laverdet,2009-10-05 21:29:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/98c1a14b07f49d0bc2be64f1d60aa11393b5b85a,98c1a14b07f49d0bc2be64f1d60aa11393b5b85a,"Fix extending elements
+
+Summary:
+class :foo extends :bar {}
+is a syntax error. Have to specify that a T_XHP_COLON is valid after T_EXTENDS.
+
+Test Plan:
+<?php
+abstract class :ui:content-area {
+}
+
+class :ui:image-block extends :ui:content-area {
+}
+
+Reviewed By: ngao
+
+Revert: OK"
+laverdet,2009-10-03 22:28:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/024bc81e2f6ab3c530b4aa5de45f6d8995a7ee92,024bc81e2f6ab3c530b4aa5de45f6d8995a7ee92,"Fix attributes with hyphens
+
+Summary:
+XHP was turning - and : to _ and __ in the attribute dictionary which is
+incorrect.
+
+Test Plan:
+xhpize, browse site
+
+Reviewed By: epriestley
+
+Revert: OK"
+laverdet,2009-10-02 13:11:54,https://api.github.com/repos/hhvm/xhp-lib/git/commits/86fb887ac0157933df33b9e6cb022189e4fc0eae,86fb887ac0157933df33b9e6cb022189e4fc0eae,"Allow index chaining
+
+Summary:
+This fixes the ""bug"" in PHP's grammar where you aren't allowed to use the [...] operator on the return value of a function. It rewrites all instances which would be syntax errors into ##__xhp_idx($arr, $index)##. __xhp_idx is implemented in ext.cpp in C and is probably faster than the idx we made in PHP.
+
+It behaves exactly as the [...] operator would.
+
+If you want to ignore undefined index warnings you can do ##@foo()['etc']## and the @ will only apply to the __xhp_idx call.
+
+One thing to watch out for is that each chained [...] on the end of a function is a function call. So if you're doing something like ##foo()['bar']['etc']['muk']## you get 3 calls to __xhp_idx.
+
+TODO: Add ini entry to disable this feature (only need to set a flag).
+
+Reviewed By: dweatherford
+
+Test Plan:
+marcel@dev050 ~/xhp $ cat honk.php
+  <?php
+  error_reporting(E_ALL);
+  function foo() {
+    return array(
+      'bar' => 'etc',
+    );
+  }
+
+  echo foo()['bar'] . ""\n"";
+  echo foo()['etc'];
+  echo @foo()['etc'];
+  marcel@dev050 ~/xhp $ php honk.php
+  etc
+  PHP Notice:  Undefined index: etc in /home/marcel/xhp/honk.php on line 10
+
+I also ran the whole codebase through xhpize to make sure no lines were getting rewritten that didn't need it.
+
+Revert: OK
+
+DiffCamp Revision: 66576"
+laverdet,2009-09-29 19:17:26,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8e7221668a5d36e4b9bb5af13ce569f19fb572ff,8e7221668a5d36e4b9bb5af13ce569f19fb572ff,"Fix HEREDOC bug
+
+Summary:
+Heredocs weren't scanning properly in XHP 1.2.1. This fixes that
+
+Test Plan:
+$foo = <<<HERE
+HERE;
+
+Reviewed By: epriestley
+
+Revert: OK"
+laverdet,2009-09-29 09:26:32,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c577a2d8b80e6fff4db6d6d66a1c18cd2dbae54a,c577a2d8b80e6fff4db6d6d66a1c18cd2dbae54a,"Bug fixes
+
+- Line numbers got messed if you closed PHP via ""?>""
+- Various parse errors while using ""element"" as an identifier (Mediawiki)
+
+Test Plan:
+find ~/tfb/ | grep -E 'phpt?$' | xargs ./xhpize -d -i
+
+Reviewed By: epriestley
+
+Revert: OK"
+laverdet,2009-09-26 00:54:21,https://api.github.com/repos/hhvm/xhp-lib/git/commits/05c3dec06b325017540fea4437e5f4c79a0ebd84,05c3dec06b325017540fea4437e5f4c79a0ebd84,Making trunk 1.2.0 in ext.hpp
+laverdet,2009-09-26 00:44:02,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2eb0b3924516557d87091333b80020782ee537ea,2eb0b3924516557d87091333b80020782ee537ea,"More useless syntax
+
+Summary:
+- Element categories
+- Attribute stealing
+
+Reviewed By: epriestley
+
+Test Plan:
+Compiled the extension and looked around both the regular and lite site. Nothing terrible seems to happen anymore, which is good. Tomorrow I will work on adding support in the client library for the new features.
+
+Revert Plan: ok"
+laverdet,2009-09-23 20:23:48,https://api.github.com/repos/hhvm/xhp-lib/git/commits/8a28129c9cd9ef5ada177d61e5414b6d0e34ff33,8a28129c9cd9ef5ada177d61e5414b6d0e34ff33,"`attributes` and `element` keywords
+
+Summary:
+- Introduces syntax to specify attributes and children
+- Leading colon to use XHP elements as class names
+- &copy; as an entity
+
+I'll need to implement these run-time checks on the PHP side. My plan is to run the children checks with some kind of greedy algorithm.
+
+Most of the syntax is borrowed from the DTD spec which is pretty reasonable all things considered.
+
+Reviewed By: epriestley
+
+Test Plan:
+marcel@dev050 ~/xhp/xhp $ cat test.php 
+  <?php
+  function foo(:fb:thing $foo) {
+    echo :fb:thing::what;
+    echo :fb:thing::$what;
+  }
+  echo 1 ? (:fb:thing::$what) : (:fb:thing::$what);
+  $foo = :fb:thing::$what;
+  
+  
+  class :fb:thing {
+    children (fb:thing|fb:thing2)*;
+    attribute
+      honk number 1,
+      dazzle boolean true,
+      etc (""foo""|""bar"") ""foo"";
+  }
+
+  marcel@dev050 ~/xhp/xhp $ cat test.php | ./xhpize
+  <?php
+  function foo(xhp_fb__thing $foo){
+  echo xhp_fb__thing::what;
+  echo xhp_fb__thing::$what;
+  }
+  echo 1?(xhp_fb__thing::$what):(xhp_fb__thing::$what);
+  $foo=xhp_fb__thing::$what;
+  
+  
+  class xhp_fb__thing{
+  protected function &__xhpChildrenDescription() {static $_ = array(1, array(5, array(0, 'xhp_fb__thing'),array(0, 'xhp_fb__thing2'))); return $_;}protected function &__xhpAttributeDescription() {static $_ = -1;if ($_ === -1) {$_ = array_merge(parent::__xhpAttributeDescription(), array('honk'=>array(3,1),'dazzle'=>array(2,true),'etc'=>array(array(""foo"", ""bar""),""foo""),));}return $_;}
+  
+  
+  
+  
+  }
+  File `-` xhpized.
+
+  marcel@dev050 ~/xhp/xhp $ cat test.php | ./xhpize | php -l
+  File `-` xhpized.
+  No syntax errors detected in -
+
+Revert: OK
+
+DiffCamp Revision: 65540"
+laverdet,2009-09-23 20:21:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4daa0f8cdf2d95ed75417dae19fc0e94c245a14a,4daa0f8cdf2d95ed75417dae19fc0e94c245a14a,"Reverting r188937 - r188942
+
+I don't know how to use git
+svn merge -r188942:r188936 svn+ssh://tubbs/svnroot/projects/xhp ."
+laverdet,2009-09-23 20:17:43,https://api.github.com/repos/hhvm/xhp-lib/git/commits/77faa16a4dcdcfd16732742ac9189a168e768db7,77faa16a4dcdcfd16732742ac9189a168e768db7,fix errors in generated code
+laverdet,2009-09-23 20:17:42,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b34afeb297dffb7c6ee251814b3fa3538334b185,b34afeb297dffb7c6ee251814b3fa3538334b185,"Fix tag balance checking + use | for enums, not ,
+
+DiffCamp Revision: 65538"
+laverdet,2009-09-23 20:17:41,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3a88dd638432176c66da891015a33a8c80986a4b,3a88dd638432176c66da891015a33a8c80986a4b,&copy; entity
+laverdet,2009-09-23 20:17:40,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d699e6cb4f7e41fe689fad4e52976e18b62c9d17,d699e6cb4f7e41fe689fad4e52976e18b62c9d17,Attribute declarations
+laverdet,2009-09-23 20:17:38,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d91298ae598e67b4547e6d454a4ac7353988a7d9,d91298ae598e67b4547e6d454a4ac7353988a7d9,Leading colon to specify XHP elements
+laverdet,2009-09-23 20:17:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c492476a73396562cc8cd3f5283bdedf3306d3b6,c492476a73396562cc8cd3f5283bdedf3306d3b6,child descriptor support
+haiping,2009-09-23 17:48:06,https://api.github.com/repos/hhvm/xhp-lib/git/commits/7aeea65e18620204f797ed178ca0f533e809a8f1,7aeea65e18620204f797ed178ca0f533e809a8f1,"[hphp] making .so for building ffi libraries
+
+Reviewed By: xqi
+
+Test Plan: make"
+laverdet,2009-09-20 20:57:39,https://api.github.com/repos/hhvm/xhp-lib/git/commits/873896aa2e5fc49a4040cd401e7aca930d9b049f,873896aa2e5fc49a4040cd401e7aca930d9b049f,"Docblock comments and better line numbers
+
+Summary: Use of yymore() was messing up line numbers in XHP. This also
+         introduces preservation of docblock comments by sticking them on as
+         a code_rope to the next token encountered.
+
+Reviewed By: epriestley
+
+Test Plan: Cursory testing of lite. Test cases in xhpize.
+
+Revert: OK
+
+DiffCamp Revision: 65029"
+laverdet,2009-09-19 01:30:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/f0225c772611ade62a54f60f4c273a1e06412a39,f0225c772611ade62a54f60f4c273a1e06412a39,"Complete rewrite; version 1.1.0
+
+Summary: I deleted most of XHP and started over. Points of interest:
+         - Compatibility with at least PHP 5.3, likely up to PHP 6.0.
+         - Uses PHP's parser instead the one I wrote
+         - Rewritten scanner. The scanner now returns code_rope's with the
+         actual code that was scanned, along with line numbers.
+         - Separate the XHP parser and extension code
+         - Further improved build process
+         - No new features
+
+Reviewed By: epriestley
+
+Other Commenters: iproctor
+
+Test Plan: marcel@dev050 ~/alpaca $ php ./lib/init/script.php 
+           marcel@dev050 ~/alpaca
+           
+           More testing will be done before committing this to APE.
+
+Revert: OK
+
+DiffCamp Revision: 64717"
+laverdet,2009-08-20 02:13:57,https://api.github.com/repos/hhvm/xhp-lib/git/commits/ebefa829a02c869c9f1aea292302228985a83b5d,ebefa829a02c869c9f1aea292302228985a83b5d,"Support the reflection API getting docblocks
+
+Summary: XHP strips comments which means the Reflection API can no longer
+         glean whatever information it needs from docblocks. This code
+         memoizes docblocks and spits them back out in the rewritten code in
+         random locations.
+         
+         This doesn't include reflection for class constants and stuff
+         because those are hard and nobody probably cares anyway. Also if
+         you make a habit of embedding docblocks in between every semantic
+         token you will likely get back unexpected results while using XHP.
+         
+         Included is a half-hearted unit-test directory which includes my
+         reflection test that half passes.
+
+Reviewed By: epriestley
+
+Test Plan: See unit-text/reflection.php
+           
+           Class properties fail.
+           
+           Also this:
+           
+             /** comment7a */ class /** comment7b */ BarClass /** comment7c
+           */ extends /** comment7d */ FooClass /** comment7e */ {
+           
+           Returns comment7e instead of comment7d. Deal with it.
+
+Revert: OK
+
+DiffCamp Revision: 60448"
+laverdet,2009-07-29 22:27:59,https://api.github.com/repos/hhvm/xhp-lib/git/commits/92116d54c79a3856b07e6c306c884181c3592fe0,92116d54c79a3856b07e6c306c884181c3592fe0,"Fix continue statements
+
+Summary: continue 1;
+         becomes
+         continue1;
+         
+         which is really bad.
+
+Reviewed By: epriestley
+
+Test Plan: None.
+
+Revert: OK
+
+DiffCamp Revision: 57136"
+laverdet,2009-07-23 03:02:20,https://api.github.com/repos/hhvm/xhp-lib/git/commits/3c46e67f098c42830bcfed8b18ba8ddb27f40d8b,3c46e67f098c42830bcfed8b18ba8ddb27f40d8b,"Improve php extension build
+
+Summary: Makes it so you don't have to run `make -f Makefile.xhp` before
+         `make`. That is, you can just build the extension using the
+         standard `phpize && ./configure && make` invocation.
+         
+         `make clean` doesn't clean some of the XHP generated files and I
+         can't really figure out a good way to do that with phpize's
+         generated Makefile. The best way to do this might be to put all of
+         PHP's crap in its own folder and have XHP's Makefile invoke PHP's
+         Makefile.
+
+Reviewed By: epriestley
+
+Test Plan: phpize --clean && make -f Makefile.xhp clean
+           phpize && ./configure && make
+
+Revert: OK
+
+DiffCamp Revision: 56177"
+laverdet,2009-07-23 03:02:05,https://api.github.com/repos/hhvm/xhp-lib/git/commits/bf1491fdea23785048cc4b9105a0fc02da5cd6e8,bf1491fdea23785048cc4b9105a0fc02da5cd6e8,"`elementof` operator
+
+Summary: The element version of `instanceof`.
+
+Reviewed By: epriestley
+
+Test Plan: marcel@dev050 ~/projects/xhp $ cat test.php 
+           <?php
+           class XHPCore {
+           }
+           
+           element e:foo {
+           }
+           
+           $foo = <e:foo />;
+           echo ($foo elementof e:foo);
+           marcel@dev050 ~/projects/xhp $ php test.php 
+           1
+
+Revert: OK
+
+DiffCamp Revision: 56182"
+laverdet,2009-07-22 21:37:28,https://api.github.com/repos/hhvm/xhp-lib/git/commits/82541ec0c4fa1815ef6c74e3030810eb7bc2afcf,82541ec0c4fa1815ef6c74e3030810eb7bc2afcf,"svn:ignore stuff
+
+Summary:
+phpize makes lots of junk, so ignore it all
+
+Reviewed By: no one
+
+Test Plan: svn st
+
+Revert Plan: ok"
+haiping,2009-07-21 22:22:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/98670d4fc08259d5b8faff97e3bd4aff3d09bd4b,98670d4fc08259d5b8faff97e3bd4aff3d09bd4b,"[xhp] slightly better Makefile
+
+Summary: 1. added dependency so ""make -j"" would work as well.
+         
+         2. rm *.o so ""make clean"" is cleaner
+
+Reviewed By: marcel
+
+Test Plan: make -f Makefile.xhp clean
+           make -f Makefile.xhp -j
+
+Revert: OK
+
+DiffCamp Revision: 55907"
+laverdet,2009-07-18 02:02:13,https://api.github.com/repos/hhvm/xhp-lib/git/commits/514f30cd78530b4eb5afd52c821c703277d89b32,514f30cd78530b4eb5afd52c821c703277d89b32,"Fixes and stuff
+
+Summary: Fixes some bugs in the grammar.
+         
+         Move ext.cpp over to the shared function in xhp_preprocess.cpp.
+         
+         Most of this code is probably pretty bad... So let me know if you
+         hate me or not.
+
+Reviewed By: epriestley
+
+Test Plan: valgrind doesn't show any terrible leaks
+
+Revert: OK
+
+DiffCamp Revision: 55388"
+laverdet,2009-07-06 11:22:36,https://api.github.com/repos/hhvm/xhp-lib/git/commits/74792b168e7ba5842fbd08bc9cf17c6811dc9496,74792b168e7ba5842fbd08bc9cf17c6811dc9496,xhpize: standalone utility to run xhp programs without the xhp extension
+laverdet,2009-07-02 00:08:30,https://api.github.com/repos/hhvm/xhp-lib/git/commits/c02d982bdad658a998a80781785eef6af43d63ac,c02d982bdad658a998a80781785eef6af43d63ac,"Fix whitespace around entities
+
+Summary:
+<div> &quot; </div>
+was returning <div> ""</div>
+
+That is now fixed to <div> "" </div>
+
+Reviewed By: no one
+
+Test Plan: build + test case
+
+Revert Plan: ok"
+laverdet,2009-07-01 21:57:37,https://api.github.com/repos/hhvm/xhp-lib/git/commits/b7cd342f56d743f01f9b340a3a1153cbe615b17f,b7cd342f56d743f01f9b340a3a1153cbe615b17f,"Fix some line handling jonx
+
+Summary:
+In some situations line numbers would get messed up. In other situtations line breaks would get messed up.
+
+Reviewed By: no one
+
+Test Plan: build
+
+Revert Plan: ok"
+laverdet,2009-06-26 08:09:07,https://api.github.com/repos/hhvm/xhp-lib/git/commits/4293fc6dc9bbb6a14b35c6f4d5ad5591586940c9,4293fc6dc9bbb6a14b35c6f4d5ad5591586940c9,"Actually fix extending
+
+Summary:
+Ok, that last commit was dumb because if you extend a class then there's an ambiguity. So the new syntax is like:
+element foo extends some_class {
+}
+element bar extends element foo {
+}
+
+Reviewed By: no one
+
+Test Plan: make && test
+
+Revert Plan: ok"
+laverdet,2009-06-26 08:04:33,https://api.github.com/repos/hhvm/xhp-lib/git/commits/5d0967f6423e5c254aca4d7b0eb4395bd297810a,5d0967f6423e5c254aca4d7b0eb4395bd297810a,"Fix extending elements with element keyword
+
+Summary:
+element foo {
+}
+
+element bar extends foo {
+}
+
+Was failing. Now it works.
+
+Reviewed By: no one
+
+Test Plan: make
+
+Revert Plan: ok"
+laverdet,2009-06-26 06:42:04,https://api.github.com/repos/hhvm/xhp-lib/git/commits/d3b262a85490b51ba04f30ab59848797843d1ab1,d3b262a85490b51ba04f30ab59848797843d1ab1,"More parser gliches
+
+Summary:
+Interesting programs and their outputs:
+
+<?php
+//?????>hello
+---
+hello
+
+<?php
+$foo->if();
+---
+<works>
+
+<?php
+$foo-> if()
+---
+<syntax error>
+
+Anyway, PHP's parser is a huge mess.
+
+Reviewed By: no one
+
+Test Plan: Disabled ""maybe_xhp"" check, then `find . | grep php$ | xargs -n1 php -l`. No errors!
+
+Revert Plan: ok"
+laverdet,2009-06-25 04:39:12,https://api.github.com/repos/hhvm/xhp-lib/git/commits/04879fca5b6f10f603d8750b7bfbcd847730a2dc,04879fca5b6f10f603d8750b7bfbcd847730a2dc,"Fix glitches and stuff
+
+Summary:
+- abstract elements are now allowed
+- fix `element` keyword if no markup appears in the file
+- allow <a\nhref=""..."" />; where \n is an actualy linebreak
+- fix certain heredocs
+
+Reviewed By: no one
+
+Test Plan: master_include.php \ test cases from evan
+
+Revert Plan: ok"
+laverdet,2009-06-24 11:44:45,https://api.github.com/repos/hhvm/xhp-lib/git/commits/1aeacb8deb63485482be950c33ad5f20c62005f0,1aeacb8deb63485482be950c33ad5f20c62005f0,"Balance tags
+
+Summary:
+Syntax error when tags don't match.
+
+Also this fixes array typehints
+
+Reviewed By: no one
+
+Test Plan: master_include.php
+
+Revert Plan: ok"
+laverdet,2009-06-24 09:12:43,https://api.github.com/repos/hhvm/xhp-lib/git/commits/9eee81f3004a9c7501c4a09977dbd02c7285c6ab,9eee81f3004a9c7501c4a09977dbd02c7285c6ab,"Futher iteration on the parser and also checking in php-libs
+
+Summary:
+I'm introducing an `element` keyword that behaves similar to `class`. Using it instead of `class` will properly namespace class names and handle colons and hypens.
+
+Also checked in is the base php libraries for XHP. I can't check these into trunk right now since they contain syntax errors to vanilla PHP.
+
+Reviewed By: no one
+
+Test Plan: make \ home.php
+
+Revert Plan: ok"
+laverdet,2009-06-24 04:40:46,https://api.github.com/repos/hhvm/xhp-lib/git/commits/2bb13592d140b824557274613147e3abbf0706c6,2bb13592d140b824557274613147e3abbf0706c6,"Bug fixes and rewrites
+
+Summary:
+Progress on cleaning up the parser rules to bring XHP more in sync with Zend. This also fixes some bugs in the XHP grammar Evan pointed out.
+
+Reviewed By: no one
+
+Test Plan: ran master_include.php
+
+Revert Plan: ok"
+laverdet,2009-06-22 22:23:24,https://api.github.com/repos/hhvm/xhp-lib/git/commits/154d1d5aed8e015499f0737cf00442068126d5e3,154d1d5aed8e015499f0737cf00442068126d5e3,"Quick checkin
+
+Summary: I just want a checkin of this somewhere that's not my dev server.
+
+Test Plan: None"

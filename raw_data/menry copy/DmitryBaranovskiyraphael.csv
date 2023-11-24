@@ -1,0 +1,655 @@
+raphael,JavaScript Vector Library
+username,timestamp,url,sha,message
+tomasAlabes,2019-03-30 15:08:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bf3dcd35317f76f915bcd04ed9db36a1b3775c4d,bf3dcd35317f76f915bcd04ed9db36a1b3775c4d,"fix: Updated version string in raphael.core
+
+Reported in #1095"
+tomasAlabes,2019-03-24 02:37:12,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d82175fb903bb5d0203f6295ba431b4d1af06fbe,d82175fb903bb5d0203f6295ba431b4d1af06fbe,"Merge pull request #1101 from concord-consortium/fix-touch-drag-offsets
+
+Fix drag offsets passed to ""drag.start"" from touch drags in elproto.drag"
+tomasAlabes,2019-03-24 02:29:55,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d06f87edc29c0b1627f39033cff635169d3ac70e,d06f87edc29c0b1627f39033cff635169d3ac70e,"Merge pull request #1077 from jvilk/master
+
+Fix memory leak in `Element.removeData()`"
+tomasAlabes,2019-03-24 02:19:15,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/75b48f20db77630160f676a2839ce2ce93fd9b0f,75b48f20db77630160f676a2839ce2ce93fd9b0f,"Merge pull request #1097 from techeverri/patch-1
+
+Update README.md"
+tomasAlabes,2019-03-23 17:09:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4a0df17a7e0da132175634144cce82fc9f1ba12d,4a0df17a7e0da132175634144cce82fc9f1ba12d,Update banner.txt
+kswenson,2018-08-04 22:20:17,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ed3a7af43173aca06f28351c9058f8664ac7035e,ed3a7af43173aca06f28351c9058f8664ac7035e,"Fix drag offsets passed to ""drag.start"" from touch drags in elproto.drag
+
+In `elproto.drag`, `x` and `y` are initialized to `e.clientX` and `e.clientY` respectively, but then there is code to update those values for touch events. Ultimately, the updated `x` and `y` values are added to `scrollX/scrollY` and then stored in `this._drag.x/this._drag.y`. The values passed along to `eve(""raphael.drag.start."", ...)` were `e.clientX + scrollX/e.clientY + scrollY` which are the pre-corrected values. With this PR, the corrected values `this._drag.x/this._drag.y` are passed instead."
+techeverri,2018-05-06 18:57:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7510f77ad343ae2e565a06b02ddf26c314addb37,7510f77ad343ae2e565a06b02ddf26c314addb37,"Update README.md
+
+Change website URL to HTTPS"
+tomasAlabes,2018-03-24 23:54:02,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/527c51b7b12f846f9ab0d5ddf14767912b569c7d,527c51b7b12f846f9ab0d5ddf14767912b569c7d,chore: updated webpack to v4 and rest of deps
+poechsel,2017-11-15 15:22:38,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/cb96c26d59e8c3db577701e07b27b3d21962e556,cb96c26d59e8c3db577701e07b27b3d21962e556,"fixed qunit tests not running because the installed version of qunit is 2.0, but the tests are written for quint 1.0"
+poechsel,2017-11-15 15:22:07,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/eb72b4d7e24b64b68c790138e647fe5dcc65ffec,eb72b4d7e24b64b68c790138e647fe5dcc65ffec,fixed an error where 'con' object is null and raphael crashes before sending the proper error
+tomasAlabes,2017-02-06 21:41:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fe8e591e1c86b5aeb4c252b33c08e647434504c5,fe8e591e1c86b5aeb4c252b33c08e647434504c5,"Merge pull request #1075 from Lapkritinis/patch-1
+
+Update bower.json"
+lapkritinis,2017-02-06 14:41:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c6db4318db505453d65a552aa96ad5eab87fec07,c6db4318db505453d65a552aa96ad5eab87fec07,"Update bower.json
+
+According to bower docs main section shouldn't include minified js version."
+tomasAlabes,2016-11-12 00:10:22,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c02b9c125d036e42b9bb95d0e401bbf6a5153da5,c02b9c125d036e42b9bb95d0e401bbf6a5153da5,2.2.7
+tomasAlabes,2016-11-12 00:10:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/006432383ea2bd144b34876670ede7119bed6378,006432383ea2bd144b34876670ede7119bed6378,Updated history
+tomasAlabes,2016-11-12 00:02:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/639b8cb2f5229421e7c094cb5e2b8d946cad5233,639b8cb2f5229421e7c094cb5e2b8d946cad5233,Updating package.json with new eve dep and fixed class as a reserved word in old browsers
+tomasAlabes,2016-10-02 18:52:05,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2f5c1a27e5f1629bea346fc03d32823e51294888,2f5c1a27e5f1629bea346fc03d32823e51294888,2.2.6
+tomasAlabes,2016-10-02 18:48:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e6d07fc923c9a9219211c7fd1987d0183fb18ec6,e6d07fc923c9a9219211c7fd1987d0183fb18ec6,2.2.5
+tomasAlabes,2016-10-02 18:48:08,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/07f3dd1d3c03f88561e9e59fe72308374ac53ad8,07f3dd1d3c03f88561e9e59fe72308374ac53ad8,Using custom repo for eve as all other repos are outdated
+tomasAlabes,2016-09-30 20:31:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6fe6a270afe5927c1265fb44bf851f7a5deb2161,6fe6a270afe5927c1265fb44bf851f7a5deb2161,Update history.md
+tomasAlabes,2016-09-30 20:27:43,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a3fd679ea8cac5578bb23bf84c979907a7022e52,a3fd679ea8cac5578bb23bf84c979907a7022e52,2.2.4
+tomasAlabes,2016-09-30 20:25:34,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1e81e1873ff287758932b8f0cf33eeb9bdad170f,1e81e1873ff287758932b8f0cf33eeb9bdad170f,Fixing no-deps version
+tomasAlabes,2016-09-30 01:47:43,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/056b2ca8359322890de35a315c1e043860c03468,056b2ca8359322890de35a315c1e043860c03468,Update history.md
+tomasAlabes,2016-09-30 01:37:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/55ee142b0f541c9f415c4a43cc2a78c1567bf1dd,55ee142b0f541c9f415c4a43cc2a78c1567bf1dd,2.2.3
+tomasAlabes,2016-09-30 01:36:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c8de40446e7c26b1a2650bbdf12673da1fd1045f,c8de40446e7c26b1a2650bbdf12673da1fd1045f,2.2.2
+tomasAlabes,2016-09-30 01:35:05,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/be2660dceda7845fda7543871c3c58db31828b85,be2660dceda7845fda7543871c3c58db31828b85,Updating dependencies including eve
+tomasAlabes,2016-07-18 00:06:20,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e8e891789826a4fa539423b7780bf050880476fd,e8e891789826a4fa539423b7780bf050880476fd,"New distributables after revert, not a release yet"
+tomasAlabes,2016-07-17 18:39:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b95d7324c530bb5446cca8e228d783b951b12afa,b95d7324c530bb5446cca8e228d783b951b12afa,"Small mods, nothing new"
+tomasAlabes,2016-07-18 00:02:43,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/eb43ba140fa43b170cac73ecc95fa0319b371c6e,eb43ba140fa43b170cac73ecc95fa0319b371c6e,"Merge pull request #1060 from gregbaker/master
+
+Remove transform string reduction to prevent incorrect animations."
+gregbaker,2016-07-13 22:14:20,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/38c4fa61d76761a4ac85f561014523b42944e696,38c4fa61d76761a4ac85f561014523b42944e696,Remove transform string reduction to prevent incorrect animations.
+tomasAlabes,2016-07-03 04:41:22,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b15a86d8f3a3784d81de3e38c9a853f263b9b60e,b15a86d8f3a3784d81de3e38c9a853f263b9b60e,"Improved element ids, suggested by @dpcouch"
+tomasAlabes,2016-07-03 04:19:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5fec7097de6badae2d2f808ae5db71e971adf718,5fec7097de6badae2d2f808ae5db71e971adf718,updated package.json for npm module
+tomasAlabes,2016-07-03 04:15:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d521c6283518eb448ead5a5684a21e3f514ac24b,d521c6283518eb448ead5a5684a21e3f514ac24b,v2.0.1 - small correction on amd build
+tomasAlabes,2016-07-03 03:35:25,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/68cb2e383912cd4ebe563e4ab6d78334000500f6,68cb2e383912cd4ebe563e4ab6d78334000500f6,"Merge pull request #1058 from kilida/patch-1
+
+Repeated subexpression in raphael.vml.js"
+kilida,2016-06-24 18:10:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e5cbea6f2bd0dd9f869822f64ccd3772505a82bc,e5cbea6f2bd0dd9f869822f64ccd3772505a82bc,"Repeated subexpression in raphael.vml.js
+
+`params[""stroke-width""] != null` is repeated"
+tomasAlabes,2016-05-23 02:21:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/427929f9e6003e9dca66671297ce42e8c11f3086,427929f9e6003e9dca66671297ce42e8c11f3086,"Merge pull request #1056 from artcups/master
+
+Add css class to availableAttrs"
+artcups,2016-05-22 08:52:22,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ecd13bcff3d89962e8405b8f4f152f5cba57ab6f,ecd13bcff3d89962e8405b8f4f152f5cba57ab6f,Add css class to availableAttrs
+tomasAlabes,2016-05-12 23:14:22,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bc0812175df84cb0b8c2b326e9e1382b3f244318,bc0812175df84cb0b8c2b326e9e1382b3f244318,"Merge pull request #1053 from mortonfox/patch-1
+
+Update the license link and the other Raphael link"
+mortonfox,2016-05-12 05:06:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/07d04a298ddeb1864099e32f254f5ef8e8297d90,07d04a298ddeb1864099e32f254f5ef8e8297d90,Update the license link and the other Raphael link
+tomasAlabes,2016-04-24 18:41:43,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8f74e736bd043eaacfeb2d4730cce6cfc0160e92,8f74e736bd043eaacfeb2d4730cce6cfc0160e92,Fixed some typos
+tomasAlabes,2016-04-23 18:57:29,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5e868e42e7ad837b85092e1b5328a002254bc4cf,5e868e42e7ad837b85092e1b5328a002254bc4cf,Removed unnecesary banners
+tomasAlabes,2016-04-13 02:46:54,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a5cd61ad7864f3ad155db0fb937385de28bc389c,a5cd61ad7864f3ad155db0fb937385de28bc389c,"Merge pull request #1044 from DmitryBaranovskiy/webpack
+
+Webpack and v2.2.0"
+tomasAlabes,2016-04-13 02:46:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/44644e5ca36153d4f418cac9e058d79666d797ec,44644e5ca36153d4f418cac9e058d79666d797ec,updating package.json with v2.2.0
+tomasAlabes,2016-04-13 02:42:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3b0240d3fbfbddd5d92718b1cde0c81c88814e5a,3b0240d3fbfbddd5d92718b1cde0c81c88814e5a,pre-release v2.2.0
+tomasAlabes,2016-04-07 04:55:29,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d7626c465099568ea9b59564e5bb6104ac9b4d1e,d7626c465099568ea9b59564e5bb6104ac9b4d1e,eslint
+tomasAlabes,2016-04-07 04:36:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/db2b2f2b91d898015f1993f0039dd9280a95d264,db2b2f2b91d898015f1993f0039dd9280a95d264,"webpack ready, just eslint missing"
+tomasAlabes,2016-04-06 23:56:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5bfc8a3197a874c921848245aa5cb193f7531d92,5bfc8a3197a874c921848245aa5cb193f7531d92,webpack umd
+tomasAlabes,2016-02-18 03:43:25,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/cca8f941e4f929c0b27f2b30c1fa8685bb094f1b,cca8f941e4f929c0b27f2b30c1fa8685bb094f1b,Updating *.json definitions
+tomasAlabes,2016-02-18 03:33:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9cf2118d9a36b2f2b427bf8338ef7a91c49d0c98,9cf2118d9a36b2f2b427bf8338ef7a91c49d0c98,Small fixes
+tomasAlabes,2016-02-18 03:21:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9f04a78050cf4e60c7cc6791e53ae74bf2027852,9f04a78050cf4e60c7cc6791e53ae74bf2027852,Merge branch 'add-tests' of https://github.com/TheCloudlessSky/raphael into TheCloudlessSky-add-tests
+tomasAlabes,2016-02-18 03:02:07,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/acfdc78c7f3ab86fa070ab0c8127772345d99d2c,acfdc78c7f3ab86fa070ab0c8127772345d99d2c,Small house cleaning
+tomasAlabes,2016-02-18 02:53:07,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d9da47ddcfb0698fcd093834eac4cf9e2e935caf,d9da47ddcfb0698fcd093834eac4cf9e2e935caf,Updated website and added bower install to instructions
+tomasAlabes,2016-02-16 07:39:28,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9c672c8114e3370f605b60c1434c708399dc8722,9c672c8114e3370f605b60c1434c708399dc8722,"Merge pull request #1030 from ipetropolsky/gradient-location-origin
+
+Fix oldschool browsers (incl. #998)"
+ipetropolsky,2016-02-12 10:56:54,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7e704f682f4267740d04ad0e7146bc2e0a750d5d,7e704f682f4267740d04ad0e7146bc2e0a750d5d,Build
+ipetropolsky,2016-02-12 11:02:00,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ffeb9149456702cbbd87d02eb25c466f403aff4e,ffeb9149456702cbbd87d02eb25c466f403aff4e,Add gradient to global example
+ipetropolsky,2016-02-11 19:26:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/58a5c90f4d8b051b480a915a43e21a0f35bffc57,58a5c90f4d8b051b480a915a43e21a0f35bffc57,Fix version placeholder
+ipetropolsky,2016-02-12 10:36:53,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c89ffbe8570193556640618b01613373642d10bf,c89ffbe8570193556640618b01613373642d10bf,Fix ninja in IE8
+ipetropolsky,2016-02-11 19:24:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/48491c87c51b41b24778d6b51e674966542555a4,48491c87c51b41b24778d6b51e674966542555a4,Fix #998: broken gradient in old Firefox and Opera
+tomasAlabes,2016-02-09 02:57:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f803b084f3774c895c3dfe88596b853158475bda,f803b084f3774c895c3dfe88596b853158475bda,"Merge pull request #1025 from ipetropolsky/gradient-with-search
+
+Fix #999: Gradient not filled when page's url contains ""?"" character"
+ipetropolsky,2016-02-08 18:21:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8abe20eeddf9e0beb8923cd965178bf0496dcb99,8abe20eeddf9e0beb8923cd965178bf0496dcb99,Build after fixing #999
+ipetropolsky,2016-02-08 18:18:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f5d909be1b38c7afe18b9dd399c07759fc11a814,f5d909be1b38c7afe18b9dd399c07759fc11a814,Fix #999: Add search string to gradient url
+ipetropolsky,2016-02-08 18:16:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3fb83189ad65c6cd0ca13bf1e7ecfe41ca0eed8c,3fb83189ad65c6cd0ca13bf1e7ecfe41ca0eed8c,Add gradient to test page
+tomasAlabes,2016-02-06 01:30:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/98bfdf6c801ff34d19cad616111ad5b9f8f71e12,98bfdf6c801ff34d19cad616111ad5b9f8f71e12,Added history of last commit
+tomasAlabes,2016-02-06 01:29:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fdd4de43e7cf00daa251586139d7d565f6eb5ffd,fdd4de43e7cf00daa251586139d7d565f6eb5ffd,Strict error on R.ninja method
+tomasAlabes,2016-01-31 19:18:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1290ef5e440c7971a1a4df9a47ea3630e391765f,1290ef5e440c7971a1a4df9a47ea3630e391765f,"@benmaure - vml canvas check on path, analogous to svg check"
+tomasAlabes,2016-01-31 19:13:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7685bb3e8573aee7e066ad09f82a5d032eb68f64,7685bb3e8573aee7e066ad09f82a5d032eb68f64,"Merge pull request #1017 from Yenthe666/patch-1
+
+Add meta content in HTML page"
+tomasAlabes,2016-01-31 19:08:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6b10adf8d2129613853b8a951f096f2ce9393e9d,6b10adf8d2129613853b8a951f096f2ce9393e9d,"Merge pull request #1006 from byuksel/master
+
+Fixed Issue #1005: Add bower requirement to the dev section of README.md"
+tomasAlabes,2016-01-31 18:50:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/793d51a38c8f3821149d08b1bf96614b04b213e2,793d51a38c8f3821149d08b1bf96614b04b213e2,@didiercrunch - fixed ie 9 10 gradient bug
+Yenthe666,2015-12-29 15:42:50,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3f222e5e614c49609ee4e4ecf2f54c8cdf6fb4e3,3f222e5e614c49609ee4e4ecf2f54c8cdf6fb4e3,"Add meta content in HTML page
+
+Add the meta content in the HTML page to prevent ""The character encoding of the HTML document was not declared"" which might be caused in some browsers."
+tomasAlabes,2015-09-01 02:05:32,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/757b828560efad603dfe8d369b5c6c12da4e2bd1,757b828560efad603dfe8d369b5c6c12da4e2bd1,Updated files after merge
+tomasAlabes,2015-09-01 02:04:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/92a4a0ee53df8acd647b8001745d7197f98a85f0,92a4a0ee53df8acd647b8001745d7197f98a85f0,"Merge pull request #991 from nlaplume/master
+
+Reduce transform string to avoid long parsing times"
+tomasAlabes,2015-08-24 04:57:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9c02c1deac47bd8c8a2e4c3db21699946374981a,9c02c1deac47bd8c8a2e4c3db21699946374981a,Mentioned Snap in the Related Projects in Readme.md
+tomasAlabes,2015-08-24 04:09:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e4431de303f9020a2e21870e2264e532c873b994,e4431de303f9020a2e21870e2264e532c873b994,AMD working with dev folder
+tomasAlabes,2015-08-18 06:13:01,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1b6a47f93a7fcb21d5a009c7fbb41d482a7e0107,1b6a47f93a7fcb21d5a009c7fbb41d482a7e0107,raphael.amd.js as main in package.json
+tomasAlabes,2015-08-18 06:12:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8139c0b5a8c74aa68073e8ea5ecd0847358430a3,8139c0b5a8c74aa68073e8ea5ecd0847358430a3,"Merge pull request #986 from dpogue/dpogue-browserify-patch
+
+Update package.json to point to raphael.amd.js"
+dpogue,2015-08-11 16:29:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/01a5710c8e5c8ea26152f1754283dcf22bc8e6b4,01a5710c8e5c8ea26152f1754283dcf22bc8e6b4,"Update package.json to point to raphael.amd.js
+
+Fix for being able to use raphael with browserify."
+tomasAlabes,2015-08-11 02:12:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3236fa65d7efd9a894dd3134074b8503214c40df,3236fa65d7efd9a894dd3134074b8503214c40df,raphael.amd.js to work with Browserify
+tomasAlabes,2015-08-02 21:41:38,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f7744d0e44e9ef13ddab2a53eb14b16d8c875ddc,f7744d0e44e9ef13ddab2a53eb14b16d8c875ddc,"Can't set glow with opacity 0, fix."
+tomasAlabes,2015-08-02 21:32:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4342b287fd924a072c5575bd3d58758b6387acdb,4342b287fd924a072c5575bd3d58758b6387acdb,updated history.md
+tomasAlabes,2015-08-02 21:29:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/0dfdb6f253932923f8e4089ee7a4b10d60e0594f,0dfdb6f253932923f8e4089ee7a4b10d60e0594f,Using origin and pathname with gradient urls
+tomasAlabes,2015-08-02 19:44:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5398c90cbe0d11e1a4d6838b57184ef84db0de3d,5398c90cbe0d11e1a4d6838b57184ef84db0de3d,nodeps version
+tomasAlabes,2015-08-02 19:21:34,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d9365a7c760bee3e3ac2837139729b703feb7252,d9365a7c760bee3e3ac2837139729b703feb7252,Merge branch 'mdreizin-master'
+tomasAlabes,2015-08-02 19:10:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4d8dc216af9a7adeb1245229f8aeef15b9791609,4d8dc216af9a7adeb1245229f8aeef15b9791609,Modified our Eve so it works with amd and globally
+tomasAlabes,2015-08-01 03:15:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/75a5818a6a081f7d6b487f018f5581b908042616,75a5818a6a081f7d6b487f018f5581b908042616,@bjouhier - set stop-opacity in gradient defs
+tomasAlabes,2015-08-01 03:27:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3c97d14c901c643fc3a578c794f7dcee5fa879fe,3c97d14c901c643fc3a578c794f7dcee5fa879fe,Separating readme from contributing mds
+tomasAlabes,2015-08-01 03:11:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/087fe0fa78f4affa54f1c7cc5fbaf361e9044494,087fe0fa78f4affa54f1c7cc5fbaf361e9044494,@bjouhier - fixed rounding issue in RGB formatter
+tomasAlabes,2015-06-11 02:15:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dba301d0c7e7dabd1169816fbb28d5a17a881407,dba301d0c7e7dabd1169816fbb28d5a17a881407,"Merge pull request #969 from kkirsche/patch-1
+
+Remove moot `version` property from bower.json"
+kkirsche,2015-06-10 22:42:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bda00188f2bb8dfc9e23bc813711f27b4c1ff45a,bda00188f2bb8dfc9e23bc813711f27b4c1ff45a,"Remove moot `version` property from bower.json
+
+Per bower/bower.json-spec@a325da3"
+tomasAlabes,2015-06-02 03:06:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7fd4df74f588db7067b1ace397c30569c311968e,7fd4df74f588db7067b1ace397c30569c311968e,Requirejs and global working
+tomasAlabes,2015-04-29 16:40:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/79d72c772b5aef7cb294a9120f8fec538de82e06,79d72c772b5aef7cb294a9120f8fec538de82e06,"Merge pull request #964 from jaredjennings/use-https-for-eve-bower
+
+Use HTTPS to fetch eve, not the git protocol"
+jaredjennings,2015-04-28 19:28:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dc1170dfc4623c062aab0ea065d1cde612b92b03,dc1170dfc4623c062aab0ea065d1cde612b92b03,"Use HTTPS to fetch eve, not the git protocol
+
+This improves the installability of raphael from inside large
+organizations.
+
+""[The Git protocol] requires firewall access to port 9418, which isn't
+a standard port that corporate firewalls always allow. Behind big
+corporate firewalls, this obscure port is commonly blocked."" -
+https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols"
+tomasAlabes,2015-04-26 01:51:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d6b6f769417adaf09dd640b219437bdbd043bf79,d6b6f769417adaf09dd640b219437bdbd043bf79,Merge branch 'master' of https://github.com/mdreizin/raphael into mdreizin-master
+tomasAlabes,2015-04-24 02:58:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9c7f5821b838bddbb4b40b39e619b8b199e97afc,9c7f5821b838bddbb4b40b39e619b8b199e97afc,Forgot to remove .gitmodules
+tomasAlabes,2015-04-24 02:53:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/81e83b9578be151df063be04ddfa032eb602373f,81e83b9578be151df063be04ddfa032eb602373f,Removing webkit workaround after consulting Dmitry
+tomasAlabes,2015-04-23 14:26:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5d7b3235f347836f214d062bfb7eb3820b19efd3,5d7b3235f347836f214d062bfb7eb3820b19efd3,"Merge pull request #962 from TheCloudlessSky/fix-svg-empty-stroke-dasharray
+
+Use 'none' instead of '0' for 'stroke-dasharray'."
+TheCloudlessSky,2015-04-21 15:15:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fde5875285cadd9f09e3c6457c7055ecc74cfce1,fde5875285cadd9f09e3c6457c7055ecc74cfce1,"Use 'none' instead of '0' for 'stroke-dasharray'.
+
+Certain browsers have begun interpreting SVG 'stroke-dasharray' with a
+value of '0' as *do not render a stroke*. The recommended value is to
+use 'none'.
+
+See https://bugzilla.mozilla.org/show_bug.cgi?id=1149516 for Firefox
+37.
+
+This also causes invalid 'stroke-dasharray' values to be interpreted as
+'none' (which is inline with how the VML is interpreted)."
+tomasAlabes,2015-03-10 04:59:12,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a29d980d1f6b0aed9a0f18d751a76e862f5fbc4f,a29d980d1f6b0aed9a0f18d751a76e862f5fbc4f,v2.1.4 to sync with bower and npm
+tomasAlabes,2015-03-10 03:15:02,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/55151daed59ca2612001e493c37f2fa8407d6be6,55151daed59ca2612001e493c37f2fa8407d6be6,wrong position in ie7 when rotate image #612
+tomasAlabes,2015-03-10 02:44:21,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/0e4077b703740f8eebea327c7ce9c271b8807d98,0e4077b703740f8eebea327c7ce9c271b8807d98,updated history.md
+tomasAlabes,2015-03-10 02:32:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/57b62b1b2f7d403b6046cd00603686b621562018,57b62b1b2f7d403b6046cd00603686b621562018,781 Gradients become black in some cases
+tomasAlabes,2015-02-04 22:27:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1f4b170948f9d69912dfbd6e19491cd96770d9f8,1f4b170948f9d69912dfbd6e19491cd96770d9f8,"Merge pull request #937 from TheCloudlessSky/set-viewbox-variable
+
+Fix #935 - Wrong variable used in VML setViewBox()"
+TheCloudlessSky,2015-02-04 14:18:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/60b3c5aaaf5bebcf1e3bb10dafdc4ee64fbb2169,60b3c5aaaf5bebcf1e3bb10dafdc4ee64fbb2169,Fix wrong variable used in VML setViewBox().
+tomasAlabes,2015-02-04 05:58:53,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a5264e471cd23095077deec36d178b9da624f382,a5264e471cd23095077deec36d178b9da624f382,Missing comma
+tomasAlabes,2015-01-19 19:48:18,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/210ce2127a423d30071a3fb84d03880a2d13f7cd,210ce2127a423d30071a3fb84d03880a2d13f7cd,v2.1.3
+tomasAlabes,2015-01-19 19:33:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c47c077368c1113e1ed653376415961749de5466,c47c077368c1113e1ed653376415961749de5466,"Merge branch 'heads/v2.1.2'
+
+* heads/v2.1.2:
+  setViewBox() does not work properly for papers, having size in percents
+  getBBox() works incorrect for VML after settings View Box on canvas
+  IE 11 parentElement fix
+  fix the error/memleak in Firefox 3.0.x and 25.0.1 concerning the getBBox method
+  Several Fixes
+  Added couple of fixes, and unused jshintrc
+  Fix SVG insertBefore/insertAfter when using <a> wrapper node.
+  Use dev folder for 'npm install' in the Quickstart.
+  By @badunk Setting aspect ratio to xMidYMid meet
+  Merging TheCloudlessSky-prevent-multiple-svg-title
+  IE8 / R2.0.1 - viewbox scaling
+  Removing extra code in html
+  href parameter for Paper.text does NOT behave like hyperlink in 2.1.2
+  Change the version in bower.json to match the tag name.
+  Final fix for #629
+  Fix bug with arrow-end/start markers sharing properties. By @vkaravir
+  AddEvent function incorrectly removes touch event listener. By @ThijsVanDerMeer
+  IE8: getBBox returns orginal coordinates for a path after drag and setting new path. By @wyatte
+  Issue #768 - Str(value).match(R._ISURL) returns null for valid url
+
+Conflicts:
+	dev/raphael.svg.js
+	raphael-min.js"
+tomasAlabes,2015-01-19 19:18:00,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/267c84ca9657f22bc12b59368cefc277b91c69f9,267c84ca9657f22bc12b59368cefc277b91c69f9,Fixes in master
+tomasAlabes,2015-01-19 17:59:21,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b19a240f1d5c9b74905f745dbaf524a9c40cb095,b19a240f1d5c9b74905f745dbaf524a9c40cb095,"Merge pull request #886 from sdumitriu/fix-invalid-r-attribute
+
+Fix invalid r attribute"
+tomasAlabes,2015-01-19 17:52:29,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f707f12027dd1b6353a2e97759b7ce0011b6e0a5,f707f12027dd1b6353a2e97759b7ce0011b6e0a5,"Merge pull request #851 from sadlerw/patch-1
+
+Update bower.json"
+sdumitriu,2014-07-13 19:38:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/355104d4342325b0a383eb32d06829c9af504dfe,355104d4342325b0a383eb32d06829c9af504dfe,"Invalid ""r"" attribute on SVG rect nodes"
+sdumitriu,2014-07-13 18:59:17,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/780ad9d755b617a30d0f1759b6a7125815afc9e6,780ad9d755b617a30d0f1759b6a7125815afc9e6,Re-ran grunt to sync distribution files with the sources
+DmitryBaranovskiy,2014-07-11 06:34:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/07715d151d8803ee283f6690557349b04625a4d1,07715d151d8803ee283f6690557349b04625a4d1,"Merge pull request #879 from supersheep/master
+
+use cortex to manage dependencies"
+supersheep,2014-07-11 05:54:23,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fb1a087cb64356ca0658d68f83ebeee556b1c09e,fb1a087cb64356ca0658d68f83ebeee556b1c09e,move package.json to cortex.json
+supersheep,2014-07-11 02:40:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/02f8355883921c4256cd2c89f9b67453a1312971,02f8355883921c4256cd2c89f9b67453a1312971,update package.json
+supersheep,2014-07-11 01:46:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e8b4b38ac52731788bfc4701fa768c3beab40dbe,e8b4b38ac52731788bfc4701fa768c3beab40dbe,add commonjs support
+tomasAlabes,2014-04-12 03:39:22,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5234aa33d04be07b0fea7627504ab4b53d872e19,5234aa33d04be07b0fea7627504ab4b53d872e19,svg preserveAspectRatio fix
+sadlerw,2014-03-28 13:22:02,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/40c099546accebb41d72a4b29822e914a1a2ddd0,40c099546accebb41d72a4b29822e914a1a2ddd0,"Update bower.json
+
+Giving a mismatch on install now."
+tomasAlabes,2013-10-31 22:47:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d459d0f3fbccef2a69d7e92feb95ca40cc552de7,d459d0f3fbccef2a69d7e92feb95ca40cc552de7,Merging TheCloudlessSky-prevent-multiple-svg-title
+tomasAlabes,2014-03-24 06:29:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5f08cf50e5d6a852f8bc40310b2cdc85bafd5b87,5f08cf50e5d6a852f8bc40310b2cdc85bafd5b87,"setViewBox() does not work properly for papers, having size in percents"
+tomasAlabes,2014-03-24 06:03:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ab5fa489241e8699d2d5e92cbfee8ea2d1d8128c,ab5fa489241e8699d2d5e92cbfee8ea2d1d8128c,getBBox() works incorrect for VML after settings View Box on canvas
+tomasAlabes,2014-03-24 06:04:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d6a846a05246d27d777c82b700c01f2df0222d10,d6a846a05246d27d777c82b700c01f2df0222d10,Fix href link
+tomasAlabes,2014-02-22 05:21:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e1e2daea49c4563f4dc970b977714e00d4c63e31,e1e2daea49c4563f4dc970b977714e00d4c63e31,"Merge pull request #833 from TheCloudlessSky/stroke-dasharray-fix
+
+Allow unsetting the stroke-dasharray in VML. Fixes #617."
+TheCloudlessSky,2014-02-21 14:13:53,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/007ee4f4315d9e9d693be08715d18eccc651925b,007ee4f4315d9e9d693be08715d18eccc651925b,Allow unsetting the stroke-dasharray in VML. Fixes #617.
+tomasAlabes,2014-02-13 06:03:34,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b003c5419a2783818b9e7b10e305ebb1d50f7aa4,b003c5419a2783818b9e7b10e305ebb1d50f7aa4,"Merge pull request #822 from vebersol/master
+
+fix syntax that is causing bug on opera 12.5"
+vebersol,2014-01-07 14:05:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bef7f6b0e259030138193d42f2c74b754c292f3e,bef7f6b0e259030138193d42f2c74b754c292f3e,fix syntax that is causing bug on opera 12.5
+tomasAlabes,2013-12-28 23:27:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7b67a148fd4d5bc9445af1a01e53d4dafd67a39c,7b67a148fd4d5bc9445af1a01e53d4dafd67a39c,IE 11 parentElement fix
+tomasAlabes,2013-12-28 22:42:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a87d79fdcbe6af57d9ad04e86d4995922ce44712,a87d79fdcbe6af57d9ad04e86d4995922ce44712,Eve updated
+tomasAlabes,2013-12-10 01:33:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b5bca4b8553580f4562d268a525ef0cc4de007f5,b5bca4b8553580f4562d268a525ef0cc4de007f5,"Merge pull request #814 from g-div/v2.1.2
+
+fix the error/memleak in Firefox 3.0.x and 25.0.1 concerning getBBox"
+g-div,2013-12-09 17:14:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/88387c342ce5de6c326eb5d6f946b179066c7bec,88387c342ce5de6c326eb5d6f946b179066c7bec,fix the error/memleak in Firefox 3.0.x and 25.0.1 concerning the getBBox method
+tomasAlabes,2013-11-09 21:38:07,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/424719f7e20e3abfdb787240487b07b7931856a4,424719f7e20e3abfdb787240487b07b7931856a4,Several Fixes
+tomasAlabes,2013-11-09 20:56:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bd74dbaa53a25d37912c751b379b833327db5901,bd74dbaa53a25d37912c751b379b833327db5901,"Added couple of fixes, and unused jshintrc"
+DmitryBaranovskiy,2013-11-07 05:53:52,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4e025f74075925d8e78889822b2061a2bd83fc7c,4e025f74075925d8e78889822b2061a2bd83fc7c,"Merge pull request #808 from TheCloudlessSky/svg-parentNode-fixes
+
+Fix SVG insertBefore/insertAfter when wrapped in <a> when setting ""href"""
+TheCloudlessSky,2013-11-06 20:01:24,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/921f6e2d1bec1c6db0fd0110afddaa87f8284ca9,921f6e2d1bec1c6db0fd0110afddaa87f8284ca9,Add SVG DOM manipulation tests.
+TheCloudlessSky,2013-11-06 20:00:49,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/af9bcf72b94640ae6c5c594e55776f27f3b16601,af9bcf72b94640ae6c5c594e55776f27f3b16601,Add unit test suite structure.
+TheCloudlessSky,2013-11-06 19:17:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/69097d567136e752705b2854dda4cf9e9423d5b7,69097d567136e752705b2854dda4cf9e9423d5b7,"Fix SVG insertBefore/insertAfter when using <a> wrapper node.
+
+When an element has an ""href"" the node is wrapped with an <a>.
+insertBefore/insertAfter did not take this into account (#631).
+Additionally, remove, toFront and toBack now use the new function."
+TheCloudlessSky,2013-11-06 16:09:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1fb02daec5504cc236c1b057063044f26b22dad7,1fb02daec5504cc236c1b057063044f26b22dad7,Use dev folder for 'npm install' in the Quickstart.
+tomasAlabes,2013-11-01 02:05:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ea133a038efb86c7a72d5310d2b57d48add36a2a,ea133a038efb86c7a72d5310d2b57d48add36a2a,By @badunk Setting aspect ratio to xMidYMid meet
+tomasAlabes,2013-10-31 22:47:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d936e191e19f738be56881bf0c4730f70c1772ed,d936e191e19f738be56881bf0c4730f70c1772ed,Merging TheCloudlessSky-prevent-multiple-svg-title
+tomasAlabes,2013-10-06 00:36:34,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4d97d4ff5350bb949b88e6d78b877f76ea8b5e24,4d97d4ff5350bb949b88e6d78b877f76ea8b5e24,Added related projects
+tomasAlabes,2013-10-06 00:35:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c7480e8c6569f83536cc3d2e2a8d3f20fb31c9eb,c7480e8c6569f83536cc3d2e2a8d3f20fb31c9eb,Added related projects
+tomasAlabes,2013-10-05 03:27:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e3d40fc610638d304abaf89cde7121091398adfc,e3d40fc610638d304abaf89cde7121091398adfc,IE8 / R2.0.1 - viewbox scaling
+tomasAlabes,2013-10-03 00:13:24,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4ea67311133af8192b339b520a4843e377d80fcb,4ea67311133af8192b339b520a4843e377d80fcb,Removing extra code in html
+tomasAlabes,2013-10-03 00:11:50,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/50a7f8d55d266d144ae0f60c3eaf3fd2ae8fe3ac,50a7f8d55d266d144ae0f60c3eaf3fd2ae8fe3ac,href parameter for Paper.text does NOT behave like hyperlink in 2.1.2
+tomasAlabes,2013-10-02 23:48:12,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d18b7796125db24650677fc3ba877cfadc343e67,d18b7796125db24650677fc3ba877cfadc343e67,"Merge pull request #782 from Peter-Donner/patch-1
+
+Change the version in bower.json to match the tag name."
+tomasAlabes,2013-09-12 01:03:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3bc12c3d8c29932403e495a53223dcb4396243e5,3bc12c3d8c29932403e495a53223dcb4396243e5,Final fix for #629
+tomasAlabes,2013-09-07 21:59:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f82e4ce883adbceb587cbb5b1d6e397aa6e7574e,f82e4ce883adbceb587cbb5b1d6e397aa6e7574e,Fix bug with arrow-end/start markers sharing properties. By @vkaravir
+tomasAlabes,2013-09-04 00:28:56,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c25a1aa8c3bfda4ce73772b1033b6600d3035d52,c25a1aa8c3bfda4ce73772b1033b6600d3035d52,AddEvent function incorrectly removes touch event listener. By @ThijsVanDerMeer
+tomasAlabes,2013-09-04 00:20:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3e8f3192a20d911c6815bed663625d651b5a71ee,3e8f3192a20d911c6815bed663625d651b5a71ee,IE8: getBBox returns orginal coordinates for a path after drag and setting new path. By @wyatte
+tomasAlabes,2013-08-14 22:09:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f9fb90562d32ba9f0d05a6670cf64d6970261e96,f9fb90562d32ba9f0d05a6670cf64d6970261e96,Issue #768 - Str(value).match(R._ISURL) returns null for valid url
+DmitryBaranovskiy,2013-08-26 07:20:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6555e24987d062570fb5680eb1efbd4ca7b6f143,6555e24987d062570fb5680eb1efbd4ca7b6f143,2.1.2 dist files
+DmitryBaranovskiy,2013-08-26 07:10:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/076969f21d02df9ca72dcf7d1bfa31ae17f3b9d3,076969f21d02df9ca72dcf7d1bfa31ae17f3b9d3,2.1.2
+DmitryBaranovskiy,2013-08-21 00:40:55,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2cec9462c50e01f7b928e3ef0ba5f2a8ab71db06,2cec9462c50e01f7b928e3ef0ba5f2a8ab71db06,Allow Raphael to work in pages with a Content Security Policy that disallows 'unsafe-eval'
+tomasAlabes,2013-08-18 00:47:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5909c08ee7eaf89ba4c9397c5854791a20a183e3,5909c08ee7eaf89ba4c9397c5854791a20a183e3,Books in readme
+tomasAlabes,2013-08-16 22:50:55,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a6682a2ede0e874620537250109f2c4903f70c99,a6682a2ede0e874620537250109f2c4903f70c99,Change reference to eve to use eve instead of . when loading with AMD. By @arnemart
+tomasAlabes,2013-08-14 18:49:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f294fcb714717a751d22349c00f999199210b720,f294fcb714717a751d22349c00f999199210b720,Fixing issue #766
+tomasAlabes,2013-08-11 23:30:23,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1bf311748e82f99a0680481a5261dd558c8af43d,1bf311748e82f99a0680481a5261dd558c8af43d,Added 2nd milestone for bug fixes from pull requests
+tomasAlabes,2013-08-11 23:26:43,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d4db26b3657037f20db3a3b00232ce629ab0dff2,d4db26b3657037f20db3a3b00232ce629ab0dff2,Small change in readme
+tomasAlabes,2013-08-11 23:22:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ea2562a6290c0a158c3db09f5c55042d6870c17c,ea2562a6290c0a158c3db09f5c55042d6870c17c,Updated bower.json
+tomasAlabes,2013-08-11 23:21:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6d658f967a9a1c937b378f8df6c74d50ac7d5489,6d658f967a9a1c937b378f8df6c74d50ac7d5489,"Merge branch 'v2.1.1'
+
+* v2.1.1:
+  v2.1.1
+  Dragging Text under iOS By @vitorhsb
+  Dev folder
+  Fix to make IE9 display tooltips when setting the title attribute on an element. By @samcrang
+  Fix Wrong position after scale path in IE. By @sarvaje
+  isPointInside incorrectly caches the path used to calculate its value. By @lvanderbijl
+  Raphael.path2curve does not honor original shape. By @timo22345
+  IsPointInside fix for transformed paths"
+tomasAlabes,2013-08-11 23:21:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e0dd2aeb544106ff1a056ee61929227271ed2526,e0dd2aeb544106ff1a056ee61929227271ed2526,v2.1.1
+tomasAlabes,2013-08-11 23:16:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/22ddc778cdbb6858b7456e927dabbfb960425159,22ddc778cdbb6858b7456e927dabbfb960425159,Dragging Text under iOS By @vitorhsb
+tomasAlabes,2013-08-11 21:50:38,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/968c3cbb9a87660dfa87fba15febbbdb21230d47,968c3cbb9a87660dfa87fba15febbbdb21230d47,Dev folder
+tomasAlabes,2013-08-11 21:33:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/75144eba2c95b9b4582db15402d9b3c3260502bc,75144eba2c95b9b4582db15402d9b3c3260502bc,"Merge pull request #759 from bensmithett/master
+
+Add a bower.json"
+bensmithett,2013-07-25 02:19:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/92fe7289655c2fd6dc8e7073f6340e9f6efbbfb4,92fe7289655c2fd6dc8e7073f6340e9f6efbbfb4,Add a bower.json
+tomasAlabes,2013-06-23 03:42:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b87c69c7d0c590da7c1dd99d8fd8afcc49298599,b87c69c7d0c590da7c1dd99d8fd8afcc49298599,Fix to make IE9 display tooltips when setting the title attribute on an element. By @samcrang
+tomasAlabes,2013-06-23 03:21:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bdbc517a5995c8151a55e1eef68446d8fbfd291c,bdbc517a5995c8151a55e1eef68446d8fbfd291c,Added vml script to raphael test
+tomasAlabes,2013-06-23 02:38:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/426680e32d15dfbeb470dc79d7196eb7e9a44b2e,426680e32d15dfbeb470dc79d7196eb7e9a44b2e,"Merge branch 'Touchit-fix-touch-events' into v2.1.1
+
+* Touchit-fix-touch-events:
+  Updating files from latest merge
+  Tweaks to previous merge
+  getPath (and method that use) now working with simple elements like ""Circle""
+  Fix Touch events selection in dragMove method
+  Fix Gruntfile to build in windows environment
+  Fix Touch events on Firefox and Chrome
+
+Conflicts:
+	raphael-min.js"
+tomasAlabes,2013-06-23 02:36:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3742b46f20ac37c94d574c8605874a8de324bbee,3742b46f20ac37c94d574c8605874a8de324bbee,"Merge branch 'fix-touch-events' of github.com:Touchit/raphael into Touchit-fix-touch-events
+
+* 'fix-touch-events' of github.com:Touchit/raphael:
+  Fix Touch events selection in dragMove method
+  Fix Gruntfile to build in windows environment
+  Fix Touch events on Firefox and Chrome
+
+Conflicts:
+	raphael-min.js
+	raphael.js"
+tomasAlabes,2013-06-22 22:19:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/aad6517fa490915d703e8d40a0a058d4a3b6057c,aad6517fa490915d703e8d40a0a058d4a3b6057c,Updating files from latest merge
+DmitryBaranovskiy,2013-06-21 10:09:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/054a763f4ddefd504f3649f72943114f5e51f8a6,054a763f4ddefd504f3649f72943114f5e51f8a6,Tweaks to previous merge
+DmitryBaranovskiy,2013-06-21 10:00:03,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b1c607971dd5153ed6f87b794a4572fe096fc229,b1c607971dd5153ed6f87b794a4572fe096fc229,"Merge pull request #742 from unel/master
+
+It needs some tweaking, I will fix it."
+unel,2013-06-21 09:41:25,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a2edf84f77e00480d2003fd7b71141cfa294cafd,a2edf84f77e00480d2003fd7b71141cfa294cafd,"getPath (and method that use) now working with simple elements like
+""Circle"""
+tomasAlabes,2013-06-17 22:14:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/df2dffe15251ae87e8623d56f047e7b75f51e63d,df2dffe15251ae87e8623d56f047e7b75f51e63d,Fix Wrong position after scale path in IE. By @sarvaje
+tomasAlabes,2013-06-02 20:07:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a96fd3b222b802df238fc678dfb1bd6741f1371a,a96fd3b222b802df238fc678dfb1bd6741f1371a,isPointInside incorrectly caches the path used to calculate its value. By @lvanderbijl
+tomasAlabes,2013-06-02 19:11:17,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ad15a1c9b05200c9f042807527eabcaabc5fecc4,ad15a1c9b05200c9f042807527eabcaabc5fecc4,Raphael.path2curve does not honor original shape. By @timo22345
+tomasAlabes,2013-06-02 17:50:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5ae208676c759227527745a933f11f211b4c33fa,5ae208676c759227527745a933f11f211b4c33fa,IsPointInside fix for transformed paths
+tomasAlabes,2013-05-20 23:38:33,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e5048b7f81055f15453a2347808d9c20cea70912,e5048b7f81055f15453a2347808d9c20cea70912,Reverting erroneous fix
+tomasAlabes,2013-05-19 22:16:13,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2cd46661e545ca833484198474b04b4446f2175b,2cd46661e545ca833484198474b04b4446f2175b,Blur returning this. By @i-arindam
+tomasAlabes,2013-05-19 22:13:02,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/95ebe5a23b25eeed3f2964ded94e4677c210dce3,95ebe5a23b25eeed3f2964ded94e4677c210dce3,Allows Element.data() to be called with 0 params to get all associated data. By @AdamTReineke
+tomasAlabes,2013-05-19 22:10:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5423c26bf8a2d5491efe92613cbc4ea500271b17,5423c26bf8a2d5491efe92613cbc4ea500271b17,"Fixed transform animation bug, @jroper"
+tomasAlabes,2013-05-19 21:37:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b6cc7248acaa45d57c593888773f1ad238ebd335,b6cc7248acaa45d57c593888773f1ad238ebd335,set.isPoint inside method and vml fix
+tomasAlabes,2013-05-19 21:19:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/affa2df6d459320f343743ec8416b71f8639cb7f,affa2df6d459320f343743ec8416b71f8639cb7f,Dev test html
+tomasAlabes,2013-05-11 18:15:21,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/48b1a9afcf999a2c0790fcd0baa08dcaa3a6995f,48b1a9afcf999a2c0790fcd0baa08dcaa3a6995f,"Merge pull request #728 from tomasAlabes/master
+
+Link to new Raphael-boilerplate repo (load raphael globally, with AMD, or HTML5 boilerplate.)"
+tomasAlabes,2013-05-11 18:13:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b9cf4043c8a718c0c4a08630c81f9c8014f9351b,b9cf4043c8a718c0c4a08630c81f9c8014f9351b,README updated
+tomasAlabes,2013-05-07 13:21:39,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/490ea360b9c246e16a76d2900b619306abc03c2c,490ea360b9c246e16a76d2900b619306abc03c2c,"Merge pull request #724 from timmywil/grunt_modules
+
+Build Raphael as a compatible anonymous module for AMD using Grunt"
+timmywil,2013-05-04 21:25:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a9c46aaf5704a8869a60128ae5271dfaeaaee733,a9c46aaf5704a8869a60128ae5271dfaeaaee733,"Use a custom build task in grunt to build raphael in a way that creates a valid anonymous module for AMD definition.
+
+- Also pulls in the version from package.json to create the banner from copy.js (so the version can be set in one place)
+- Conforms Gruntfile to most common tabs and spacing of other files
+- grunt-cli should not be included in devDependencies (it is only ever installed globally)"
+seriema,2013-05-04 20:10:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5a23713f866eb3914791ead149d681d8dc69779b,5a23713f866eb3914791ead149d681d8dc69779b,Replaced custom make with Grunt build system. Closes gh-717.
+tomasAlabes,2013-05-04 18:13:04,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a79f8ec2fda8f3b95c6c337abd2515c8c4345593,a79f8ec2fda8f3b95c6c337abd2515c8c4345593,"Merge pull request #722 from tomasAlabes/master
+
+Added to the documentation of the un* functions the #optional keyword."
+tomasAlabes,2013-05-04 18:11:18,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5f991e4ecbbca6aa77eba3848d034f0d4d0b3296,5f991e4ecbbca6aa77eba3848d034f0d4d0b3296,Added updated documentation for unbind functions
+tomasAlabes,2013-05-04 18:06:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1c6f3a3679bddf1457e5e5e8f633c1d0e281bb63,1c6f3a3679bddf1457e5e5e8f633c1d0e281bb63,"Merge pull request #721 from tomasAlabes/master
+
+Possibility to unbind all event handlers at once"
+tomasAlabes,2013-05-04 18:03:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/be440bfee65b1812354136582a779522443d17b5,be440bfee65b1812354136582a779522443d17b5,Possibility to unbind all event handlers at once
+tomasAlabes,2013-05-04 03:22:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c78b3ad9882c214e29fe43680e4886c0ecd906d3,c78b3ad9882c214e29fe43680e4886c0ecd906d3,"Merge pull request #709 from gitpullgravity/master
+
+Tiny bug, using 'Raphael' instead of 'R'"
+tomasAlabes,2013-05-04 03:05:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1454505167eddd867363fdec53d20da47f9f3d67,1454505167eddd867363fdec53d20da47f9f3d67,"Merge pull request #719 from tomasAlabes/master
+
+Line spacing added to Paper.print"
+tomasAlabes,2013-05-04 03:03:53,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c08125b1908c638e8cd4e34b686f417a75bf4bb8,c08125b1908c638e8cd4e34b686f417a75bf4bb8,Added line spacing
+tomasAlabes,2013-05-04 02:28:23,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4812c47a514ea14b443b3d417cfac59f13a0babe,4812c47a514ea14b443b3d417cfac59f13a0babe,"Merge pull request #716 from tomasAlabes/master
+
+Updating touch test for mobile devices"
+tomasAlabes,2013-04-29 00:44:49,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f6380efe61b92e8595f691581405651504fcb673,f6380efe61b92e8595f691581405651504fcb673,Correcting window reference
+tomasAlabes,2013-04-29 00:19:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ad5bf88893d4b75065be8a199b17e11a1b3333e7,ad5bf88893d4b75065be8a199b17e11a1b3333e7,Updating touch test for mobile devices
+gravitypersists,2013-04-02 17:35:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1db9be576de781a5064efd784d131a7445660e9f,1db9be576de781a5064efd784d131a7445660e9f,Tiny fix to get arrow-heads working again
+DmitryBaranovskiy,2013-03-25 22:53:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e0b94fdc04e895df5cece33ddfa2d0b646363b2e,e0b94fdc04e895df5cece33ddfa2d0b646363b2e,"Merge pull request #704 from quickcue/modules
+
+ Fix gh-407: added recommended UMD syntax to raphael for AMD support."
+timmywil,2013-03-25 22:10:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ad401490c36e83c3a0aef57e437589b87c4b509d,ad401490c36e83c3a0aef57e437589b87c4b509d,We can assume require's presence if define is present. Minor style adjustments.
+timmywil,2013-03-25 21:27:28,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/035a938d317650dc689d8e7f3cbd4c6f5e6d835e,035a938d317650dc689d8e7f3cbd4c6f5e6d835e,"Added recommended UMD syntax to raphael for AMD support. Fixes gh-407.
+
+Related: https://github.com/umdjs/umd"
+tomasAlabes,2013-03-13 12:21:17,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c3ed3740a7d54a6517b913f36f79955fa6b633f2,c3ed3740a7d54a6517b913f36f79955fa6b633f2,"Merge pull request #697 from tomasAlabes/non-amd
+
+Fixing minified conflict version"
+tomasAlabes,2013-03-13 12:18:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c093aa3b4d0aa3d842d885a0e97358936bc02d22,c093aa3b4d0aa3d842d885a0e97358936bc02d22,Fixing minified conflict version
+tomasAlabes,2013-03-13 00:09:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/306da865917b29065daa2d42dcbef47d4b1ae037,306da865917b29065daa2d42dcbef47d4b1ae037,"Merge pull request #695 from tomasAlabes/bbox
+
+Adding center property to bounding box"
+tomasAlabes,2013-03-12 23:49:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2dd068a94c123ff10deb930aa48d279896b45864,2dd068a94c123ff10deb930aa48d279896b45864,Adding center property to bounding box
+tomasAlabes,2013-03-12 21:18:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4acd8fe47d728685eadcedaf91f0f329663be86f,4acd8fe47d728685eadcedaf91f0f329663be86f,"Merge pull request #692 from tomasAlabes/stringBug
+
+Wrong string comparison in print function"
+tomasAlabes,2013-03-09 14:10:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4f5fe86450a88f4a7cff1f4b3b45d10970d16a22,4f5fe86450a88f4a7cff1f4b3b45d10970d16a22,Wrong string comparison in print function
+DmitryBaranovskiy,2013-02-17 23:31:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fa6ea627a7d23046951a6d3c5c384a2e5aaa86b0,fa6ea627a7d23046951a6d3c5c384a2e5aaa86b0,Fixes to merged pull requests
+tomasAlabes,2013-02-17 22:41:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2929bfdf6c016def3a9c2ba4c5b875219e428d02,2929bfdf6c016def3a9c2ba4c5b875219e428d02,Corrected typos of documentation
+tomasAlabes,2013-02-16 03:53:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1fe18b9e76e1dc72d30c1646f2bc2698f1303c06,1fe18b9e76e1dc72d30c1646f2bc2698f1303c06,undrag fix of drag array
+tomasAlabes,2013-02-16 03:49:37,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/91ea94b8c26a2dcdbb9be55846a436cde80643e8,91ea94b8c26a2dcdbb9be55846a436cde80643e8,getElementsByBBox function added
+tomasAlabes,2013-02-16 03:37:04,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b1e781d6615d4b28e893dd70b7c06c2868b2a157,b1e781d6615d4b28e893dd70b7c06c2868b2a157,Typos un reference
+tomasAlabes,2013-02-16 03:34:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/bdfe043506d00de289d08025d45c5d5b196016ca,bdfe043506d00de289d08025d45c5d5b196016ca,Fixed error when Raphael undefined
+tomasAlabes,2013-02-16 03:12:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3a840befc2ce47db03a6d25cd8445764d49b408b,3a840befc2ce47db03a6d25cd8445764d49b408b,Glow function for set
+tomasAlabes,2013-02-16 03:08:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a8d933c59d1b0584e33d24e92adc11c335914ba9,a8d933c59d1b0584e33d24e92adc11c335914ba9,getData function to elements
+tomasAlabes,2013-02-13 02:15:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/03aedfd9d5b18cce49184c8aa6ab314bcef5a7b8,03aedfd9d5b18cce49184c8aa6ab314bcef5a7b8,Finding issues instructions in README
+DmitryBaranovskiy,2013-02-11 22:45:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c95f5bb7399a3eabcc0b180d066ca0f94757a0d7,c95f5bb7399a3eabcc0b180d066ca0f94757a0d7,"Merge pull request #670 from tomasAlabes/master
+
+Ground for contributions"
+tomasAlabes,2013-02-11 19:40:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/86463d026a55720dc8ad9c36eae496a465b88cd9,86463d026a55720dc8ad9c36eae496a465b88cd9,Setted ground for contributions
+tomasAlabes,2013-02-11 17:59:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e5856252e547066750a10b1c67f9d555183c3644,e5856252e547066750a10b1c67f9d555183c3644,Updated satellital files from previous commit
+tomasAlabes,2013-02-11 00:43:01,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8fa2f3260cdf591a81c5e5c3a7470418241bbae8,8fa2f3260cdf591a81c5e5c3a7470418241bbae8,"Merge pull request #667 from tomasAlabes/master
+
+Clone and set construction fix"
+tomasAlabes,2013-02-11 00:39:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/124b0646524b79721a3defdccd65000b24f48052,124b0646524b79721a3defdccd65000b24f48052,Clone and set construction fix
+tomasAlabes,2013-02-08 21:14:42,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2c36cf677c0499252ad38cc6a0d1e7ae40a19730,2c36cf677c0499252ad38cc6a0d1e7ae40a19730,"Merge pull request #537 from ChoiZ/patch-1
+
+Forget "";"" after (window.Raphael) at the end of line."
+DmitryBaranovskiy,2012-03-14 01:45:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/52bff469f60988f1391e8b3d7cb5349163df8ba1,52bff469f60988f1391e8b3d7cb5349163df8ba1,Cleaning up old files
+DmitryBaranovskiy,2012-03-14 01:20:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7ba1a8258be64fdb517bc78fde44ff0e6188ca05,7ba1a8258be64fdb517bc78fde44ff0e6188ca05,2.1.0. Look history.md for list of changes
+DmitryBaranovskiy,2012-02-09 06:16:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2b0c5a21127dc8a9f25ffb0fe68d883f51435061,2b0c5a21127dc8a9f25ffb0fe68d883f51435061,Update the date
+DmitryBaranovskiy,2012-02-09 05:39:54,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c472a26147a92c78bde9350c5e6fe3b6ca18ab38,c472a26147a92c78bde9350c5e6fe3b6ca18ab38,2.0.2
+DmitryBaranovskiy,2011-11-18 00:43:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/300aa589f5a0ba7fce667cd62c7cdda0bd5ad904,300aa589f5a0ba7fce667cd62c7cdda0bd5ad904,2.0.1
+DmitryBaranovskiy,2011-11-18 00:40:13,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c2180d09d490967447245fcb86f3936f2c6a5b40,c2180d09d490967447245fcb86f3936f2c6a5b40,Merge branch 'master' of github.com:DmitryBaranovskiy/raphael
+DmitryBaranovskiy,2011-11-18 00:39:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/10c3e3b7f40663906c5e34765df881abacc1640b,10c3e3b7f40663906c5e34765df881abacc1640b,"  * Global variables leakage fix
+  *  fix for elements with links
+  * Gradient clean up
+  * Added  attribute
+  * Fixed hsb methods
+  * Fixed image flickering
+  * Improved  method on
+  * Fixed drag'n'drop
+  * New method [Paper.add](http://raphaeljs.com/reference.html#Paper.add)
+  * Fix for"
+DmitryBaranovskiy,2011-11-15 23:09:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e403eed5da4a1da6b78a0b6bbc340772257abcc6,e403eed5da4a1da6b78a0b6bbc340772257abcc6,"Merge pull request #430 from rzurad/nsdocfix
+
+Updating documentation for removal of namespaced plugins in 2.0"
+DmitryBaranovskiy,2011-11-15 23:08:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/0c722d58f5fc66d3289311b99fb76aea537eef2b,0c722d58f5fc66d3289311b99fb76aea537eef2b,"Merge pull request #428 from ac3522/master
+
+Updating documentation on Raphael.format method"
+rzurad,2011-10-23 22:25:28,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/34793948c28b09fb7ce33e286c24f8b7586a259b,34793948c28b09fb7ce33e286c24f8b7586a259b,Updating documentation so that the removal of plugin namespacing in 2.0 is stated.
+nickcanz,2011-10-23 03:12:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6cfe4aaacab0b4e7e8dd09a9d1b4814b2351cdc5,6cfe4aaacab0b4e7e8dd09a9d1b4814b2351cdc5,Updating comments on Raphael.format method to reflect actual behavior.
+DmitryBaranovskiy,2011-10-01 09:27:39,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3c49587c2bebd61d7e95182e26fccd6c8bcc6648,3c49587c2bebd61d7e95182e26fccd6c8bcc6648,Final small fixes…
+DmitryBaranovskiy,2011-09-21 01:03:28,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/6b3fa145ffddd349bfd77f8847c25f697cae2700,6b3fa145ffddd349bfd77f8847c25f697cae2700,Added alias to customAttribute. Fixed transform() method
+DmitryBaranovskiy,2011-09-19 01:37:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a3d3b76d37f7452fbc43e716cc57ca4d795b957c,a3d3b76d37f7452fbc43e716cc57ca4d795b957c,Fixed set removal process and exclude method
+DmitryBaranovskiy,2011-09-18 23:16:14,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2ea2ddd850ea7f4988e7a18c94fca3a96badcc47,2ea2ddd850ea7f4988e7a18c94fca3a96badcc47,Fixed absolute transform for rotation & scale
+DmitryBaranovskiy,2011-09-18 23:03:08,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e0339293f748a8ff2d5246f1cd49478662fdcd66,e0339293f748a8ff2d5246f1cd49478662fdcd66,Added absolute transformation syntax support.
+DmitryBaranovskiy,2011-09-15 05:45:59,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b46e27464e54df22b90a1778a7834c02e12cd84f,b46e27464e54df22b90a1778a7834c02e12cd84f,"Upgrade Eve, Fixed sets in VML and clone() method"
+DmitryBaranovskiy,2011-09-05 05:12:53,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/475454d2689dd6bc79c4ce896bf9b50cc4240f5a,475454d2689dd6bc79c4ce896bf9b50cc4240f5a,Proper merge of clip-rect fix.
+DmitryBaranovskiy,2011-09-05 05:08:04,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/45a97e76488cabae1495c1bbcd39989c45a88956,45a97e76488cabae1495c1bbcd39989c45a88956,"Merge pull request #390 from chuchuva/2.0
+
+clip-rect attribute bugfix"
+DmitryBaranovskiy,2011-09-05 05:06:49,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/0c4db23235e3574acab0bfe2e3421f6b4bbfef1d,0c4db23235e3574acab0bfe2e3421f6b4bbfef1d,"Fix for Firefox rendering, exposed createUUID() and added docs for delay() method"
+chuchuva,2011-09-05 01:04:50,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b69b846b00c615f411826b983c338e78f9e49c8b,b69b846b00c615f411826b983c338e78f9e49c8b,Fixed clip-rect moving canvas to absolute position in VML mode (IE7 and IE8)
+DmitryBaranovskiy,2011-08-26 04:05:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1dacaa3842e43f15092323abe678d2bba7bc6e57,1dacaa3842e43f15092323abe678d2bba7bc6e57,Documentation fixes + custom attributes and getPointAtLength fix
+DmitryBaranovskiy,2011-08-23 23:54:08,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9ae9af883ee2894c58929d6dc5f608829c7648b7,9ae9af883ee2894c58929d6dc5f608829c7648b7,"Fixes
+
+• colour parsing • adding Catmull-Rom spline to the path string
+(http://schepers.cc/getting-to-the-point) • fixed animation if keyframes
+are in format ""XX"" • added documentation for Element.path • fixed bug
+with image in VML"
+DmitryBaranovskiy,2011-08-16 22:28:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/33587eb254c5e92d656f951139e4e82d85999c61,33587eb254c5e92d656f951139e4e82d85999c61,Small code cleanup and docs update
+DmitryBaranovskiy,2011-08-16 07:52:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e1fb048f1336c6cb34e2bf7cb274c1b0e1aeca72,e1fb048f1336c6cb34e2bf7cb274c1b0e1aeca72,Animation status fix
+DmitryBaranovskiy,2011-08-16 03:49:01,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/951f8fb604c78079ed58682f446914db88af8de6,951f8fb604c78079ed58682f446914db88af8de6,"Fixed VML, added Set.splice method"
+DmitryBaranovskiy,2011-08-08 04:32:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e9f2c247465c8612196051ac8c38edb63602fd72,e9f2c247465c8612196051ac8c38edb63602fd72,Fix for issue #373
+DmitryBaranovskiy,2011-08-04 00:58:46,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d8f7740fca4d4074a1006fed994df6e2df54f2ac,d8f7740fca4d4074a1006fed994df6e2df54f2ac,"Fixes for VML missing methods
+
+Split issues"
+DmitryBaranovskiy,2011-08-03 05:42:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/68cabfae05a3f06e25f7bd00b9314e58edb0eb15,68cabfae05a3f06e25f7bd00b9314e58edb0eb15,Documentation fixes
+DmitryBaranovskiy,2011-08-03 01:17:19,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/89e3f477cd1ffddb400d5b7e895314c1e32bc926,89e3f477cd1ffddb400d5b7e895314c1e32bc926,"Bug fixes & docs update
+
+• documentation for Cufon fonts • fixed path2curve error • fixed setSize
+and setViewBox"
+DmitryBaranovskiy,2011-07-28 01:16:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/68d4b8fbda3ad1f21c0fc4163e99a30574ec7728,68d4b8fbda3ad1f21c0fc4163e99a30574ec7728,"Added new data() and removeData() methods, similar to jQuery ones."
+DmitryBaranovskiy,2011-07-27 06:37:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e78d730ed7e214ee48561b3f91f29d722f8f0c53,e78d730ed7e214ee48561b3f91f29d722f8f0c53,Documentation fixes
+DmitryBaranovskiy,2011-07-25 23:23:38,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/7eabbe5d90f9d2c150f323bf06fb9362bc4253b0,7eabbe5d90f9d2c150f323bf06fb9362bc4253b0,Splitting fixes
+DmitryBaranovskiy,2011-07-25 23:17:57,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/59524ab7e4213341319b2064bb67d7acb143d068,59524ab7e4213341319b2064bb67d7acb143d068,Splitting fixes
+DmitryBaranovskiy,2011-07-25 05:28:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f7cbfd3ddb54c2f5fd8962e85168b023d87be025,f7cbfd3ddb54c2f5fd8962e85168b023d87be025,"Split raphael into 3 development files. Added build process. Fixed transformation issues, PNG opacity in IE, etc"
+DmitryBaranovskiy,2011-07-01 05:46:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/737137c3a3cf2677fb95706d5c012c6bf06d052f,737137c3a3cf2677fb95706d5c012c6bf06d052f,"Fixed bug for HSL/HSB
+Added new method Raphael.color()
+Fixed rotation in VML"
+DmitryBaranovskiy,2011-04-13 00:05:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9962a268042cde75d4e9d9ccb0f6641ed99a6f72,9962a268042cde75d4e9d9ccb0f6641ed99a6f72,"Added split method to matrix, fixed caching a bit, first iteration of fix for correct transformation in IE for gradient and images."
+DmitryBaranovskiy,2011-04-04 23:38:20,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f02c9d8920e7cce0bb4a9e7147c2feeecee43048,f02c9d8920e7cce0bb4a9e7147c2feeecee43048,Removed console.log. Sorry.
+DmitryBaranovskiy,2011-04-04 23:02:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/66450da2f0740734333a6e84fe98cbff90d4dbc0,66450da2f0740734333a6e84fe98cbff90d4dbc0,"Fixed wrong viewBox in IE, matrix invert method, pathDimention caching."
+DmitryBaranovskiy,2011-03-31 05:47:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/88a59f8b0a35ccb55f868aec11500f19fa369abe,88a59f8b0a35ccb55f868aec11500f19fa369abe,"Fix for text position
+Fix DOMLoad
+Added callback to Raphael function"
+DmitryBaranovskiy,2011-03-23 01:36:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e345e3b514671b782c571ba90c810535cc910427,e345e3b514671b782c571ba90c810535cc910427,"Small fix to glow and animation.
+Added renderfix() method for subpixel rendering fix in Firefox and IE9. Special thanks to Mariusz Nowak."
+DmitryBaranovskiy,2011-03-21 11:36:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2711bdf6c8586f0dc6ae034d3376fe30bfcf034e,2711bdf6c8586f0dc6ae034d3376fe30bfcf034e,Documentation typo fixes.
+gilmoreorless,2011-03-21 02:14:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ed606565f75b3d2eb3b08cc7de51f9fe9b1f49e4,ed606565f75b3d2eb3b08cc7de51f9fe9b1f49e4,Minor documentation updates
+DmitryBaranovskiy,2011-03-20 22:03:26,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/12bea8afa5fc8084070d300297bc518f5d96b02e,12bea8afa5fc8084070d300297bc518f5d96b02e,Documentation update
+DmitryBaranovskiy,2011-03-20 22:00:47,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1df44c2854fcd2a8f52aeeca6e68643a9f60f217,1df44c2854fcd2a8f52aeeca6e68643a9f60f217,"Fixed getContainer function, show and hide.
+Documentation update."
+DmitryBaranovskiy,2011-03-16 04:51:17,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f5d8f56d750aba57d2ba3e215c738bfeb8ad4e9a,f5d8f56d750aba57d2ba3e215c738bfeb8ad4e9a,dr.css
+DmitryBaranovskiy,2011-03-16 04:50:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/ff41a0e5f1c0e27dfac0974f8a2c3e9347c42ddd,ff41a0e5f1c0e27dfac0974f8a2c3e9347c42ddd,First draft of new documentation
+DmitryBaranovskiy,2011-03-16 04:26:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/164c349e13326ce41eca13cb4318b5be52c8f002,164c349e13326ce41eca13cb4318b5be52c8f002,"2.0.0 New transformations, new VML engine, new Animation API. BETA. Not ready for production."
+DmitryBaranovskiy,2010-08-25 22:52:24,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dbe241f4c5310dd9bf3b451c538d78c6c4a0e288,dbe241f4c5310dd9bf3b451c538d78c6c4a0e288,1.5.2 hot fix for scale method
+DmitryBaranovskiy,2010-08-25 04:21:36,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/4f2accdfc9aca178d0d647cfb4897758a61bb58a,4f2accdfc9aca178d0d647cfb4897758a61bb58a,reminified version with fixed bug in Uglify
+DmitryBaranovskiy,2010-08-24 02:16:10,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b67cf5165e112bbbebf97d253a999a43560e1b9f,b67cf5165e112bbbebf97d253a999a43560e1b9f,"1.5.1
+• fixed precision on getPointAtLength
+• Fixed negative scaling (hat tip to http://github.com/mal)
+• added ID generation according to RFC 4122
+• fixed stroke-opacity when opacity and gradient are defined
+• fixed snapTo for first value as a number
+• Added scopes for events and pass event object to drag handlers"
+DmitryBaranovskiy,2010-08-24 01:23:44,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c7718472ed70c2108c451ac0d290aae40d975af0,c7718472ed70c2108c451ac0d290aae40d975af0,Added scopes for events and pass event object to drag handlers.
+DmitryBaranovskiy,2010-08-23 05:53:25,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fb8c5a4f2fd056456d53259ae1a9f23fe79ef8c2,fb8c5a4f2fd056456d53259ae1a9f23fe79ef8c2,fixed snapTo for first value as a number
+DmitryBaranovskiy,2010-08-19 01:47:31,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/744b8506677795f8082ed9c803ef315bb2995bd6,744b8506677795f8082ed9c803ef315bb2995bd6,fixed stroke-opacity when opacity and gradient are defined.
+DmitryBaranovskiy,2010-08-19 01:41:20,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b271f7a13f2fc9645f4883128669057bd91f84d7,b271f7a13f2fc9645f4883128669057bd91f84d7,added ID generation according to RFC 4122
+DmitryBaranovskiy,2010-08-19 01:12:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/869cb4347a0f57d39a2bea12a840bfc91227b5d8,869cb4347a0f57d39a2bea12a840bfc91227b5d8,"Fixed negative scaling (hat tip to http://github.com/mal)
+added license.txt"
+DmitryBaranovskiy,2010-08-19 01:05:25,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/d34b4b32993bce494971753c048c941e2ec6c430,d34b4b32993bce494971753c048c941e2ec6c430,fixed precision on getPointAtLength
+DmitryBaranovskiy,2010-08-17 06:18:24,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/405dbd66791d13c3a5a750e640f70a6a9e7ea7c1,405dbd66791d13c3a5a750e640f70a6a9e7ea7c1,Merge
+DmitryBaranovskiy,2010-08-17 03:18:08,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/e3fb35b7ea5e0a270a2752beff967bfd93c9d7b1,e3fb35b7ea5e0a270a2752beff967bfd93c9d7b1,"1.5.0
+• fixed IE8 issue with the HTML element named Raphael
+• fixed precision for arcs in IE
+• added caching to getPointAtSegmentLength function
+• added ability to do more than one animation of an element at the same time
+• added ""cubic-bezier()"" as an easing method
+• added new syntax for animation (keyframes)
+• hsl2rgb now accept h as degree (0..360), s and b as % (0..100)
+• show=""new"" instead of target=""blank"" for SVG
+• added angle method
+• added snapTo method
+• cached popup || activeX for IE
+• fixed insertAfter
+• fixed timeouts for animation
+• added customAttributes"
+DmitryBaranovskiy,2010-08-17 03:18:08,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2b2be3434bd8527580cf377f426c92b54661eb4f,2b2be3434bd8527580cf377f426c92b54661eb4f,"1.5.0
+• fixed IE8 issue with the HTML element named Raphael
+• fixed precision for arcs in IE
+• added caching to getPointAtSegmentLength function
+• added ability to do more than one animation of an element at the same time
+• added ""cubic-bezier()"" as an easing method
+• added new syntax for animation (keyframes)
+• hsl2rgb now accept h as degree (0..360), s and b as % (0..100)
+• show=""new"" instead of target=""blank"" for SVG
+• added angle method
+• added snapTo method
+• cached popup || activeX for IE
+• fixed insertAfter
+• fixed timeouts for animation
+• added customAttributes"
+DmitryBaranovskiy,2010-07-12 09:37:23,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f4336cc1c921d14da0420754faac3dcb8f9f5e85,f4336cc1c921d14da0420754faac3dcb8f9f5e85,Hot fix for rgba
+DmitryBaranovskiy,2010-07-12 06:35:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dfc1f88c99e13f98710e54ed6c480bf5030364f5,dfc1f88c99e13f98710e54ed6c480bf5030364f5,Hot fix.
+DmitryBaranovskiy,2010-07-11 23:42:16,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5b9602db8332740c062eedeeac10831f4093ae55,5b9602db8332740c062eedeeac10831f4093ae55,"1.4.7 Addition fix for HSL colour notation. And bug fix for rgb(1%,1%,1%)"
+DmitryBaranovskiy,2010-07-11 22:28:41,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9af591c768dc2a97c3cf6225d663ebc47b306e58,9af591c768dc2a97c3cf6225d663ebc47b306e58,1.4.7 Hot fix for IE insertBefore & insertAfter when you pass set as an argument.
+DmitryBaranovskiy,2010-07-09 07:59:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/fa3418b91c5c78f9fe761c8f55f39e0213fa4388,fa3418b91c5c78f9fe761c8f55f39e0213fa4388,1.4.6 Hot fix for broken getLength method. Also fixed safari method (removed black frame bug)
+DmitryBaranovskiy,2010-07-09 06:39:13,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8aa6a57d9de94873b2c73b0afc31fd4010ec391c,8aa6a57d9de94873b2c73b0afc31fd4010ec391c,1.4.5 • Refeactored drag and drop • undrag method added • getPointAtLength performance improved
+DmitryBaranovskiy,2010-07-02 12:36:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/03538da207cb41e2ebc303fe8fc247dd0b5e655f,03538da207cb41e2ebc303fe8fc247dd0b5e655f,Fixed bug with path parsing and blur in IE
+DmitryBaranovskiy,2010-07-02 12:25:35,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/523c811e91fab6fb465f463d38772c0396edb4da,523c811e91fab6fb465f463d38772c0396edb4da,replacing x + E pattern to Str(x)
+DmitryBaranovskiy,2010-06-02 07:12:24,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1c765c66db1a3d2b75dccdf3da6e81b94242d734,1c765c66db1a3d2b75dccdf3da6e81b94242d734,1.4.4
+DmitryBaranovskiy,2010-05-13 00:07:54,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/131738296621b714fa2cd5a1f0139a165536b7ba,131738296621b714fa2cd5a1f0139a165536b7ba,"1.4.3
+Fixed important bug with touch events"
+DmitryBaranovskiy,2010-05-11 04:24:28,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dcd2739ffaecf6c72bf04214063c28f7f4d26472,dcd2739ffaecf6c72bf04214063c28f7f4d26472,"1.4.2
+• fix animation callback for sets
+• fix format method
+• added touch event handlers circle.touchmove(function…)"
+DmitryBaranovskiy,2010-05-11 04:24:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c007d401460107c4e53dcff22e0e5463f35cc195,c007d401460107c4e53dcff22e0e5463f35cc195,"1.4.2
+• fix animation callback for sets
+• fix format method
+• added touch event handlers circle.touchmove(function…)"
+DmitryBaranovskiy,2010-05-07 21:58:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/425ba72279d9cd13e8bbf01194bf39af9fe03a25,425ba72279d9cd13e8bbf01194bf39af9fe03a25,"1.4.1
+• Small bug fix in multi-touch implementation"
+DmitryBaranovskiy,2010-05-07 21:58:32,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9dc9ccb9b075101a84e670561146687eae5ff3f3,9dc9ccb9b075101a84e670561146687eae5ff3f3,"1.4.1
+• Small bug fix in multi-touch implementation"
+DmitryBaranovskiy,2010-05-06 23:56:18,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/3b9c6db95602b38912a9b7eaa5e8bbac8cffb6df,3b9c6db95602b38912a9b7eaa5e8bbac8cffb6df,"1.4.0
+• Touch events support
+• rgba support
+• new method drag
+• document.onmousemove = f → Raphael.mousemove(f)
+• resetScale method
+• scaling text will change it position, but not size
+• sets now have type “set”
+• rect in VML doesn’t recreate itself on change of the R
+• pathes are not rounded to the nearby pixels anymore
+• Various small bug fixes and improvements
+• added preventDefault and stopPropagation to event object"
+DmitryBaranovskiy,2010-05-06 23:49:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/b9b2413b5dde29f5a6d0fd3b2b54a8f7be2779ac,b9b2413b5dde29f5a6d0fd3b2b54a8f7be2779ac,"1.4.0
+• Touch events support
+• rgba support
+• new method drag
+• document.onmousemove = f → Raphael.mousemove(f)
+• resetScale method
+• scaling text will change it position, but not size
+• sets now have type “set”
+• rect in VML doesn’t recreate itself on change of the R
+• pathes are not rounded to the nearby pixels anymore
+• Various small bug fixes and improvements
+• added preventDefault and stopPropagation to event object"
+DmitryBaranovskiy,2010-05-05 22:59:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8fedd8a0d5f414b2a8eaef602bf5a6c5e3c641c8,8fedd8a0d5f414b2a8eaef602bf5a6c5e3c641c8,"1.4.0
+• Touch events support
+• rgba support
+• new method drag
+• document.onmousemove = f → Raphael.mousemove(f)
+• resetScale method
+• scaling text will change it position, but not size
+• sets now have type “set”
+• rect in VML doesn’t recreate itself on change of the R
+• pathes are not rounded to the nearby pixels anymore
+• Various small bug fixes and improvements"
+DmitryBaranovskiy,2010-05-02 11:57:45,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a331eb5dd4ea6b72f81d2634ed547bd5bf011a5f,a331eb5dd4ea6b72f81d2634ed547bd5bf011a5f,Fix for touch events and drag method
+DmitryBaranovskiy,2010-05-02 08:24:56,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/08cf66bb39709181400c15c459fc102725e6d176,08cf66bb39709181400c15c459fc102725e6d176,"1.4.0-pre
+• Touch events support
+• rgba support
+• new method drag
+• document.onmousemove = f → Raphael.mousemove(f)
+• resetScale method
+• scaling text will change it position, but not size
+• sets now have type “set”"
+DmitryBaranovskiy,2010-05-02 08:21:18,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/41011704727733aaf6f11f10e5f883b7e5f552fb,41011704727733aaf6f11f10e5f883b7e5f552fb,"1.4.0-pre
+• Touch events support
+• rgba support
+• new method drag
+• document.onmousemove = f → Raphael.mousemove(f)
+• resetScale method
+• scaling text will change it position, but not size
+• sets now have type “set”"
+lachlanhardy,2010-01-21 06:05:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/aceaf334ff121ec27a887939757498b1edb58502,aceaf334ff121ec27a887939757498b1edb58502,Rewrite to allow targeting to a specific DOM element
+DmitryBaranovskiy,2009-08-18 03:24:11,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/661af8c44c9b8952c92e229b3f8ea2c323a16214,661af8c44c9b8952c92e229b3f8ea2c323a16214,Fixed rotation bug
+lindsayevans,2009-05-21 05:20:27,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/2dbef68feeb78d4691ce466c45e0a7cccf13872e,2dbef68feeb78d4691ce466c45e0a7cccf13872e,"Fixes SVG capability detection bug in Safari 3.0.4 (http://github.com/DmitryBaranovskiy/raphael/issues/#issue/14)
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+netnichols,2009-01-28 14:48:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/dea6daafbd92dbe8458e7f0388430156223b1801,dea6daafbd92dbe8458e7f0388430156223b1801,"Changed tabs to spaces.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+netnichols,2009-01-28 14:29:29,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/399f9560a7d8e6c30ef38be71e66094e694376a4,399f9560a7d8e6c30ef38be71e66094e694376a4,"Changed insertBefore() and insertAfter() to have different implementations for VML and SVG (was broken in VML). Also changed these functions to return 'this' for chaining.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+meitar,2009-01-28 16:25:15,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/c064e970ea3fc6cc3efb424e53772e693da31b32,c064e970ea3fc6cc3efb424e53772e693da31b32,"Add section documenting which attributes can be animated.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+meitar,2009-01-25 13:48:18,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/1254ae193f4a1e278564264c5076dd98a1bca71c,1254ae193f4a1e278564264c5076dd98a1bca71c,"Add documentation for `.text()` method.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+meitar,2009-01-16 15:28:40,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/03d8fcc5bf6012a17f44fbbf37c5c50d38b09a45,03d8fcc5bf6012a17f44fbbf37c5c50d38b09a45,"Pick up documentation edit stragglers.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+meitar,2009-01-15 06:19:15,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/359f1d436c479c405770cea48c0f96f32ad5f32c,359f1d436c479c405770cea48c0f96f32ad5f32c,"Port markdown documentation improvements to HTML.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+benaskins,2009-01-10 00:33:00,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/f0757f7040c2ff6b2e73fcc6b45572124ae2af31,f0757f7040c2ff6b2e73fcc6b45572124ae2af31,"Add some rudimentary integration tests.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+benaskins,2009-01-08 05:33:30,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5a4e6c39f0d0c6f33b6d7a5a949e5620c5b78107,5a4e6c39f0d0c6f33b6d7a5a949e5620c5b78107,"README - fixed list rendering
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+benaskins,2009-01-08 05:29:09,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/5b35e00022307b262d755dad969723e67f7298ba,5b35e00022307b262d755dad969723e67f7298ba,"Github markdown - testing
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+benaskins,2009-01-08 05:27:49,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/47f68347990d2912f00e532bf26224e5719b9fc6,47f68347990d2912f00e532bf26224e5719b9fc6,"README
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+DmitryBaranovskiy,2008-12-23 06:47:12,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8b34828062c24ed4620bfab04f39bb67bc3ca4e1,8b34828062c24ed4620bfab04f39bb67bc3ca4e1,0.5.11 version number update and packed version
+DmitryBaranovskiy,2008-12-23 06:43:06,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/24763362233f871fbca585bf8046090114e74fcc,24763362233f871fbca585bf8046090114e74fcc,Merge branch 'master' of git@github.com:DmitryBaranovskiy/raphael
+DmitryBaranovskiy,2008-12-23 06:41:58,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/a300e42dd51177cc4f7946ca1a005dae41b12102,a300e42dd51177cc4f7946ca1a005dae41b12102,Remove comments
+DmitryBaranovskiy,2008-12-23 06:40:32,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/89046d5b70a2de05d579def1c149c3c6779fd13b,89046d5b70a2de05d579def1c149c3c6779fd13b,Add pattern support and rewrite dashed lines support. Move closer to VML implementation.
+benaskins,2008-12-22 04:50:03,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/9d3c93c06e83c89127038c4c04ed5ff1b421874c,9d3c93c06e83c89127038c4c04ed5ff1b421874c,"Don't round calculation of rowHeight and columnWidth in the drawGrid function. If you want to plot points on the drawn grid, rounding these figures will lead to inaccuracies.
+
+Signed-off-by: Dmitry Baranovskiy <dmitry.baranovskiy@gmail.com>"
+DmitryBaranovskiy,2008-09-02 06:52:48,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/04f0f61219d3527c50d3c9ecf429b8188ab73083,04f0f61219d3527c50d3c9ecf429b8188ab73083,Packed version
+DmitryBaranovskiy,2008-09-02 05:51:51,https://api.github.com/repos/DmitryBaranovskiy/raphael/git/commits/8ecfd0e348038db2a2e5d76e49fa1a7ec4c84002,8ecfd0e348038db2a2e5d76e49fa1a7ec4c84002,Initial commit to GIT

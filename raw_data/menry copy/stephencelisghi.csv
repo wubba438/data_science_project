@@ -1,0 +1,1050 @@
+ghi,"GitHub Issues on the command line. Use your $EDITOR, not your browser."
+username,timestamp,url,sha,message
+john-nanney,2016-10-12 20:52:49,https://api.github.com/repos/stephencelis/ghi/git/commits/0bf0e97016b36d8746fabd6dd71f79e94134407f,0bf0e97016b36d8746fabd6dd71f79e94134407f,Fix highlighting for those of use with hypens in the username. (#322)
+stephencelis,2016-07-03 22:18:10,https://api.github.com/repos/stephencelis/ghi/git/commits/b321f7f28176e84d5ec2f7d6e5a6b36257240040,b321f7f28176e84d5ec2f7d6e5a6b36257240040,"Merge pull request #313 from davidcelis/locking-and-unlocking
+
+Add `ghi lock` and `ghi unlock` commands"
+davidcelis,2016-06-22 23:29:06,https://api.github.com/repos/stephencelis/ghi/git/commits/8ba70e5eefff73471ddd7da770cbd46c3dbb0f6e,8ba70e5eefff73471ddd7da770cbd46c3dbb0f6e,"Add `ghi lock` and `ghi unlock` commands
+
+A while back, I [added support for locking and unlocking issues via the
+API](https://developer.github.com/changes/2016-02-11-issue-locking-api/).
+This underwent a lengthy preview period that, as of today, [is
+over](https://developer.github.com/changes/2016-06-22-issue-locking-api-is-now-official/).
+
+With the preview media type no longer required in the `Accept` header, I
+thought I'd go ahead and quickly add the commands `ghi lock` and `ghi
+unlock`. These are both fairly straightforward commands, though I did
+keep the `-m` option that's also present on `ghi close` to provide a
+comment before locking (or unlocking) the given issue.
+
+Signed-off-by: David Celis <me@davidcel.is>"
+davidCarlos,2016-05-18 12:37:49,https://api.github.com/repos/stephencelis/ghi/git/commits/134fa1d3b13e3835c19c4227c660977bd04b7813,134fa1d3b13e3835c19c4227c660977bd04b7813,"List issues by milestone (#301)
+
+* Add --by-milestone flag
+
+* Extract milestones correctly
+
+ - Reuse format_issues method"
+stephencelis,2016-05-17 13:03:46,https://api.github.com/repos/stephencelis/ghi/git/commits/8f7a6b8e0a700f65e9cd51c826f56b81d1c04c63,8f7a6b8e0a700f65e9cd51c826f56b81d1c04c63,"Merge pull request #297 from shubhamshuklaer/check_if_proxy_nil
+
+Check if proxy_uri is nil before parsing"
+stephencelis,2016-05-17 13:02:26,https://api.github.com/repos/stephencelis/ghi/git/commits/a804a980db7d74a6cf93ae7904d0e29147d00e6c,a804a980db7d74a6cf93ae7904d0e29147d00e6c,"Merge pull request #300 from shubhamshuklaer/handle_repo_renaming
+
+Handle case when repo is renamed but upstream url not updated"
+stephencelis,2016-05-17 13:00:56,https://api.github.com/repos/stephencelis/ghi/git/commits/abe90f2408aba82989d24cc0670ac155bea67a27,abe90f2408aba82989d24cc0670ac155bea67a27,"Merge pull request #298 from shubhamshuklaer/fix_show_output
+
+Check if its a pull request using i.key?('pull_request')"
+shubhamshuklaer,2016-05-16 15:54:34,https://api.github.com/repos/stephencelis/ghi/git/commits/525f3502dd69b03f84e04f50386a266b434605fd,525f3502dd69b03f84e04f50386a266b434605fd,"Handle case when repo is renamed but upstream url not updated
+
+When repo is renamed and we use the old url for api call, the response
+is Net::HTTPTemporaryRedirect and it contains the currosponding new url."
+shubhamshuklaer,2016-05-13 18:39:18,https://api.github.com/repos/stephencelis/ghi/git/commits/aa9f6eeb29b32135a5a80fee22621262fad49940,aa9f6eeb29b32135a5a80fee22621262fad49940,"Check if proxy_uri is nil before parsing
+
+URI.parse is able to handle empty string("""") as uri but not nil."
+shubhamshuklaer,2016-05-13 19:23:18,https://api.github.com/repos/stephencelis/ghi/git/commits/db5dd39fe4e134c9550221981107b5cd94c03485,db5dd39fe4e134c9550221981107b5cd94c03485,Check if its a pull request using i.key?('pull_request')
+stephencelis,2016-05-06 21:04:46,https://api.github.com/repos/stephencelis/ghi/git/commits/d9b626d3d5a14bcb254eb5e863ee90da493d155d,d9b626d3d5a14bcb254eb5e863ee90da493d155d,"Merge pull request #294 from davidcelis/add-suffix-to-warning
+
+Fix GitHub repo warning"
+davidcelis,2016-05-06 21:02:15,https://api.github.com/repos/stephencelis/ghi/git/commits/31155ac59fbd24fa6c0ffa0b4ea7f05f1a19a5e3,31155ac59fbd24fa6c0ffa0b4ea7f05f1a19a5e3,"Fix GitHub repo warning
+
+Signed-off-by: David Celis <me@davidcel.is>"
+stephencelis,2016-05-06 20:51:13,https://api.github.com/repos/stephencelis/ghi/git/commits/0e521f8351934481d85e87ea651f49cbeff29c82,0e521f8351934481d85e87ea651f49cbeff29c82,"Merge pull request #293 from davidcelis/add-suffix-to-warning
+
+Add [ -- [<user>/]<repo> ] suffix to warning"
+davidcelis,2016-05-06 20:47:49,https://api.github.com/repos/stephencelis/ghi/git/commits/89f2e2edfdd0f08903db0c58b9dbeda95d9e4647,89f2e2edfdd0f08903db0c58b9dbeda95d9e4647,"Add [ -- [<user>/]<repo> ] suffix to warning
+
+In #279, a user expressed confusion that `[ -- [<user>/]<repo> ]` as a
+command suffix is actually global and can be used with any command. This
+patch adds a helpful message to the warning ""Not a GitHub repo"" to
+suggest either re-running the command from a GitHub repo, or using the
+suffix.
+
+Fixes #279.
+
+Signed-off-by: David Celis <me@davidcel.is>"
+stephencelis,2016-05-06 20:38:38,https://api.github.com/repos/stephencelis/ghi/git/commits/f85edce15d9378927c26cd97d58fe7ade07d56fd,f85edce15d9378927c26cd97d58fe7ade07d56fd,"Merge pull request #292 from davidcelis/no-content-type
+
+Use application/vnd.github.v3+json"
+davidcelis,2016-05-06 20:33:44,https://api.github.com/repos/stephencelis/ghi/git/commits/2460bba08178a915b18ddc886ae29def3013daf7,2460bba08178a915b18ddc886ae29def3013daf7,"Use application/vnd.github.v3+json
+
+The `application/vnd.github.beta+json` media type has been
+[deprecated](https://developer.github.com/v3/versions/) for quite some
+time. It's recommended that the actual API version, v3, be used instead.
+
+This had only a minor impact to GHI: in v3, the `""pull_request""` key of
+an issue response is omitted for issues that are not also pull requests.
+Previously, `""pull_request""` would still be present but empty.
+
+Signed-off-by: David Celis <me@davidcel.is>"
+stephencelis,2016-04-21 12:32:25,https://api.github.com/repos/stephencelis/ghi/git/commits/e164094ccf63262a9f2d5c1bdd5e9124f792302b,e164094ccf63262a9f2d5c1bdd5e9124f792302b,"Merge pull request #284 from shubhamshuklaer/master
+
+Add support for proxy authentication"
+stephencelis,2016-04-21 12:27:26,https://api.github.com/repos/stephencelis/ghi/git/commits/d79565756b250278ec8e834e9d128161cb899303,d79565756b250278ec8e834e9d128161cb899303,"Merge pull request #286 from shubhamshuklaer/editor_syntax_highlight
+
+Change file extension of temperory files to md"
+stephencelis,2016-04-21 12:08:49,https://api.github.com/repos/stephencelis/ghi/git/commits/ceec87dccfeff8f872237f3b0f05a0d5b708420d,ceec87dccfeff8f872237f3b0f05a0d5b708420d,"Merge pull request #287 from shubhamshuklaer/markdown_style_comments
+
+Use markdown style comments for trailing message"
+shubhamshuklaer,2016-04-15 05:37:29,https://api.github.com/repos/stephencelis/ghi/git/commits/22a39f6fff0cab8f1a1c4b8b72d7a28063f6edff,22a39f6fff0cab8f1a1c4b8b72d7a28063f6edff,Add support for proxy authentication
+AlexChesters,2016-04-19 07:04:10,https://api.github.com/repos/stephencelis/ghi/git/commits/b3abe43a0d62a50cadc825a12bd1b2e09e8bb059,b3abe43a0d62a50cadc825a12bd1b2e09e8bb059,Bump version to 1.2.0 #285
+shubhamshuklaer,2016-04-18 13:39:13,https://api.github.com/repos/stephencelis/ghi/git/commits/624fb6b0c1064a03d2817f7712a643ce3f40a50c,624fb6b0c1064a03d2817f7712a643ce3f40a50c,Use markdown style comments for trailing message
+shubhamshuklaer,2016-04-18 10:15:02,https://api.github.com/repos/stephencelis/ghi/git/commits/0fef2997a3ab0bece3fb553f4bbafc243d718ce6,0fef2997a3ab0bece3fb553f4bbafc243d718ce6,"Append .md to filename used for comment after comment id
+
+Fix error introduced in commit 8a7a1956, where while amending comment,
+the file name is of the form GHI_COMMENT_[issue_number].md_[comment_identifier]"
+shubhamshuklaer,2016-04-17 06:51:24,https://api.github.com/repos/stephencelis/ghi/git/commits/8a7a1956c066c5f4f24a2f2b70c4e0fc493a2888,8a7a1956c066c5f4f24a2f2b70c4e0fc493a2888,"Change file extension of temperory files to md
+
+Change the file extension of temporary files used for creating/editing
+issues,comments and milestones to md(markdown).  The editor will
+recoganize that its a markdown file and use markdown syntax
+highlighting."
+stephencelis,2016-04-08 20:43:22,https://api.github.com/repos/stephencelis/ghi/git/commits/5abbfb514a65adb7cdaf56e52f95879ef750cb9f,5abbfb514a65adb7cdaf56e52f95879ef750cb9f,"Merge pull request #282 from davidcelis/fix-parsing
+
+Fix uncaught LoadError requiring pygments.rb"
+davidcelis,2016-04-08 20:25:14,https://api.github.com/repos/stephencelis/ghi/git/commits/084185a5ca604817e9fbf09150194a28d5745dbc,084185a5ca604817e9fbf09150194a28d5745dbc,"Fix uncaught LoadError requiring pygments.rb
+
+If `ghi` was installed via Homebrew before pygments.rb was added as a
+dependency, the check for pygments being installed never gets run. It
+looks like there was intention to rescue that `require` statement but
+because `LoadError` doesn't inherit from `StandardError`, the exception
+was uncaught and `ghi` would silently exit. This only seems to happen
+currently on issues that include fenced code blocks, but I provided
+reproducible evidence in #281. Merging this will fix #281, but I have
+two concerns about the fact that pygments.rb was included as a
+dependency in the first place:
+
+1. Homebrew doesn't install Ruby gems for you, so this has to be done
+   manually. Attempting to `brew install ghi` without first having run
+   `gem install pygments.rb` just outputs an error and doesn't finish.
+2. Most Ruby developers install several versions of Ruby using a version
+   manager like rvm, rbenv, or chruby. You can `gem install pygments.rb`
+   on one version of Ruby (or `sudo gem install pygments.rb` on the
+   system version of Ruby, which is a whole other problem) but as soon
+   as you try to use `ghi` after switching Rubies, you have to remember
+   to install `pygments.rb`. This isn't great.
+
+I see two solutions here. We can either no longer offer a Homebrew
+formula, instead urging users to just install via `gem install ghi` or
+we can remove pygments.rb as a dependency. Personally I think `ghi`
+should try to remain free of dependencies for this reason, but I leave
+it in your hands.
+
+Signed-off-by: David Celis <me@davidcel.is>"
+stephencelis,2016-04-08 17:02:18,https://api.github.com/repos/stephencelis/ghi/git/commits/01ac0cedb89f6bcc941519f6ec640237b1f60f37,01ac0cedb89f6bcc941519f6ec640237b1f60f37,"Merge pull request #280 from davidcelis/no-labels
+
+Add --no-labels option to `ghi-list`"
+davidcelis,2016-04-08 16:58:26,https://api.github.com/repos/stephencelis/ghi/git/commits/5088b5d1d61cb6cfc557c1a81af823c5d526bc89,5088b5d1d61cb6cfc557c1a81af823c5d526bc89,"Add --no-labels option to `ghi-list`
+
+There have been a few requests for an option to prevent printing labels
+when listing issues. If the list of issues involves a lot of labels, it
+leads to truncation of issue titles. To make it easier to visually parse
+lists like this, I've added a `--no-labels` option to `ghi-list` to
+skip printing labels in the pager. Closes #259.
+
+Signed-off-by: David Celis <me@davidcel.is>"
+AlexChesters,2016-03-04 18:01:18,https://api.github.com/repos/stephencelis/ghi/git/commits/40327abbabc9d3db7cd8764a1dd368375dd253b8,40327abbabc9d3db7cd8764a1dd368375dd253b8,"Merge pull request #278 from stephencelis/remove_json_pure
+
+Remove json pure #277"
+AlexChesters,2016-03-04 13:26:41,https://api.github.com/repos/stephencelis/ghi/git/commits/05cd334ebd36abb1fa97aefec2cfa3d389fbdb1b,05cd334ebd36abb1fa97aefec2cfa3d389fbdb1b,Fix #277 remove reference to json-pure
+AlexChesters,2016-03-04 13:24:13,https://api.github.com/repos/stephencelis/ghi/git/commits/26e73099946e334ce8dfa09b784a29e1f002afca,26e73099946e334ce8dfa09b784a29e1f002afca, #277 Remove json-pure
+AlexChesters,2016-03-04 13:23:50,https://api.github.com/repos/stephencelis/ghi/git/commits/fa7f23cfadbd3677e975531ab6b892ab2e47b709,fa7f23cfadbd3677e975531ab6b892ab2e47b709,Update .gitignore
+AlexChesters,2016-02-26 11:58:19,https://api.github.com/repos/stephencelis/ghi/git/commits/a0a871f31e9836dca8e5e72d51c71b20210e1f61,a0a871f31e9836dca8e5e72d51c71b20210e1f61,Bump version to 1.1.1
+AlexChesters,2016-02-26 11:56:10,https://api.github.com/repos/stephencelis/ghi/git/commits/82548cd4fdf5faf50eb6702dca7060c3b7986e5c,82548cd4fdf5faf50eb6702dca7060c3b7986e5c,"Fix #272, add pygments as a dependency"
+AlexChesters,2016-02-11 14:55:32,https://api.github.com/repos/stephencelis/ghi/git/commits/081f42f33153dffe3a7b2604442d31cf955caee8,081f42f33153dffe3a7b2604442d31cf955caee8,"Update README
+
+#275"
+AlexChesters,2016-01-29 08:12:04,https://api.github.com/repos/stephencelis/ghi/git/commits/1be6be5c10b42773793ae021457c37a1e546948c,1be6be5c10b42773793ae021457c37a1e546948c,Add license to gemspec
+AlexChesters,2016-01-29 08:07:20,https://api.github.com/repos/stephencelis/ghi/git/commits/15eadfa33dd85bde2a98223aa5c3fee77b33cb98,15eadfa33dd85bde2a98223aa5c3fee77b33cb98,Bump version to 1.1.0
+AlexChesters,2016-01-29 08:05:00,https://api.github.com/repos/stephencelis/ghi/git/commits/58e805419c390e675102ce3f0109d7a6cd4e06ac,58e805419c390e675102ce3f0109d7a6cd4e06ac,"Merge pull request #270 from gitusp/display-assignees
+
+Display assignees on a list of issues."
+gitusp,2016-01-15 03:42:22,https://api.github.com/repos/stephencelis/ghi/git/commits/1ad59321fe4416ab4bbcd17029cc62b17aea00d7,1ad59321fe4416ab4bbcd17029cc62b17aea00d7,Display an assignee even if the person is not me.
+AlexChesters,2016-01-15 08:01:25,https://api.github.com/repos/stephencelis/ghi/git/commits/be24d277aaca37c18c8031e087abcb75fdf2a5d6,be24d277aaca37c18c8031e087abcb75fdf2a5d6,"Merge pull request #268 from gitusp/bugfix-unassign
+
+Fix issues where unassign command fails."
+gitusp,2016-01-15 07:40:21,https://api.github.com/repos/stephencelis/ghi/git/commits/9dbfdf7d947fe02801f2de00d85ed34bbb6b791b,9dbfdf7d947fe02801f2de00d85ed34bbb6b791b,Fix issues where unassign command fails.
+AlexChesters,2016-01-08 10:47:34,https://api.github.com/repos/stephencelis/ghi/git/commits/043ff5d771e7dd9b4405955647f30d62bd8550c0,043ff5d771e7dd9b4405955647f30d62bd8550c0,Fix indentation
+AlexChesters,2015-12-28 01:44:36,https://api.github.com/repos/stephencelis/ghi/git/commits/e7b32efe3b115f079c87ff5795ac425094ede6ec,e7b32efe3b115f079c87ff5795ac425094ede6ec,Bumping version to 1.0.4
+AlexChesters,2015-12-28 01:38:47,https://api.github.com/repos/stephencelis/ghi/git/commits/d18df1d1b58413d8d47be5844114c713c837bc31,d18df1d1b58413d8d47be5844114c713c837bc31,"Merge pull request #266 from shimpeiws/master
+
+Change a message when a ghi token already exists"
+shimpeiws,2015-12-28 01:30:36,https://api.github.com/repos/stephencelis/ghi/git/commits/315014aada25ea0ae8d7f9278a7d038e4539391c,315014aada25ea0ae8d7f9278a7d038e4539391c,Change message
+AlexChesters,2015-11-29 13:05:10,https://api.github.com/repos/stephencelis/ghi/git/commits/ce002f2e0d9f61553fb630ee77f10122c58a8b7c,ce002f2e0d9f61553fb630ee77f10122c58a8b7c,"Merge pull request #261 from okurz/master
+
+Update help of 'open' regarding splitting title/description"
+okurz,2015-11-28 08:44:50,https://api.github.com/repos/stephencelis/ghi/git/commits/4e8e4ba835a326e5ffe6cf1b6aa30da4689b8361,4e8e4ba835a326e5ffe6cf1b6aa30da4689b8361,Update help of 'open' regarding splitting title/description
+AlexChesters,2015-10-23 21:32:58,https://api.github.com/repos/stephencelis/ghi/git/commits/b8dad323f360ee071c93d3443737cfa692400c1c,b8dad323f360ee071c93d3443737cfa692400c1c,#215 Updating edit help
+AlexChesters,2015-10-19 20:03:51,https://api.github.com/repos/stephencelis/ghi/git/commits/bfe6349cf5b3997fe3f509da79aa21ba7b6446a9,bfe6349cf5b3997fe3f509da79aa21ba7b6446a9,Bumping to 1.0.3 for #210 fix
+AlexChesters,2015-10-19 20:02:54,https://api.github.com/repos/stephencelis/ghi/git/commits/855ee411c486602e7603e18a59f3a5ea82effa19,855ee411c486602e7603e18a59f3a5ea82effa19,Fix for #210
+AlexChesters,2015-10-19 20:01:07,https://api.github.com/repos/stephencelis/ghi/git/commits/2c7c6f365d115df8ca0c48b9288f0d66e5d285db,2c7c6f365d115df8ca0c48b9288f0d66e5d285db,Building
+AlexChesters,2015-10-18 09:37:09,https://api.github.com/repos/stephencelis/ghi/git/commits/ab00277ea99e440b827d0557f886207f380ba30e,ab00277ea99e440b827d0557f886207f380ba30e,Adding comment
+AlexChesters,2015-10-17 23:06:32,https://api.github.com/repos/stephencelis/ghi/git/commits/75c97311d8b93597e7441a8fa23fe1a705ca9a3a,75c97311d8b93597e7441a8fa23fe1a705ca9a3a,Adding an extra newline in the editor
+AlexChesters,2015-10-17 22:57:43,https://api.github.com/repos/stephencelis/ghi/git/commits/b66fb9960e40ed84dbda89f08cc9d5de623f9e0c,b66fb9960e40ed84dbda89f08cc9d5de623f9e0c, Fix for #255
+AlexChesters,2015-10-17 17:57:45,https://api.github.com/repos/stephencelis/ghi/git/commits/bad97946d13dc8b9e0b248ff6417cf9123c4a074,bad97946d13dc8b9e0b248ff6417cf9123c4a074,"Revert ""Version is now built dynamically""
+
+This reverts commit 64bb58bb33a3ed11056f8dc306db19482fba1776."
+AlexChesters,2015-10-17 16:33:53,https://api.github.com/repos/stephencelis/ghi/git/commits/64bb58bb33a3ed11056f8dc306db19482fba1776,64bb58bb33a3ed11056f8dc306db19482fba1776,"Version is now built dynamically
+
+From the latest release on github"
+AlexChesters,2015-10-17 16:17:59,https://api.github.com/repos/stephencelis/ghi/git/commits/d825275d6826dd6ef701b4ca0c2702fba265fed1,d825275d6826dd6ef701b4ca0c2702fba265fed1,Moving license to seperate file
+AlexChesters,2015-10-17 16:16:24,https://api.github.com/repos/stephencelis/ghi/git/commits/1580338db721260b52fbb9a4e4ee8029e6f6554e,1580338db721260b52fbb9a4e4ee8029e6f6554e,Updating README
+AlexChesters,2015-10-17 15:41:37,https://api.github.com/repos/stephencelis/ghi/git/commits/ea505ba2ac388f2d537b6291aeada12baa26b98f,ea505ba2ac388f2d537b6291aeada12baa26b98f,Updating README with new wiki links
+AlexChesters,2015-10-17 15:38:18,https://api.github.com/repos/stephencelis/ghi/git/commits/0db321839d3f278f1198ff72ba9911a500cb8093,0db321839d3f278f1198ff72ba9911a500cb8093,Formatting
+AlexChesters,2015-10-17 15:37:43,https://api.github.com/repos/stephencelis/ghi/git/commits/c9bdd13b570187a95c25578344c16b19df3ffea8,c9bdd13b570187a95c25578344c16b19df3ffea8,Updating README
+AlexChesters,2015-10-17 15:36:56,https://api.github.com/repos/stephencelis/ghi/git/commits/8197bf81fba2c4ae5a53ed4877023e3167d7f028,8197bf81fba2c4ae5a53ed4877023e3167d7f028,Updating README extension
+AlexChesters,2015-10-17 12:50:42,https://api.github.com/repos/stephencelis/ghi/git/commits/5a77f350e01e6637ccca1b0874c235a1723118d5,5a77f350e01e6637ccca1b0874c235a1723118d5,Adding info about help wanted labels to readme
+AlexChesters,2015-10-17 11:05:22,https://api.github.com/repos/stephencelis/ghi/git/commits/1211ee433ee8c3f707943c70ef73dc5e02fe3ad3,1211ee433ee8c3f707943c70ef73dc5e02fe3ad3, #254 Renaming command
+AlexChesters,2015-10-17 01:31:50,https://api.github.com/repos/stephencelis/ghi/git/commits/f57335e75fede364e7350635e76cc586668ce728,f57335e75fede364e7350635e76cc586668ce728,"Adding another new line to top of issue creator
+
+This is to prevent the user having to manually add in a new line themselves"
+AlexChesters,2015-10-17 01:31:41,https://api.github.com/repos/stephencelis/ghi/git/commits/3b61b905e2cb3f326aa22d77fa4e1768f2bd8e5b,3b61b905e2cb3f326aa22d77fa4e1768f2bd8e5b,Building ghi
+AlexChesters,2015-10-17 01:17:16,https://api.github.com/repos/stephencelis/ghi/git/commits/1e72beb5d0d55b36feaed1bb79a86bde69ccf104,1e72beb5d0d55b36feaed1bb79a86bde69ccf104,Merge branch 'master' of github.com:stephencelis/ghi
+AlexChesters,2015-10-17 01:16:58,https://api.github.com/repos/stephencelis/ghi/git/commits/e2ba2fac34656022b58ab91852843dd35cb9fa31,e2ba2fac34656022b58ab91852843dd35cb9fa31,Bump version
+AlexChesters,2015-10-17 00:48:16,https://api.github.com/repos/stephencelis/ghi/git/commits/7c8da0a4baaa5e92b977b224c52bf2ae2d635a72,7c8da0a4baaa5e92b977b224c52bf2ae2d635a72,"Merge pull request #224 from glittershark/disable-infer-issue
+
+Add config option to disable inferring issue"
+AlexChesters,2015-10-17 00:40:31,https://api.github.com/repos/stephencelis/ghi/git/commits/64aa83447b5ede3757483b6579f1a9df7c665ff2,64aa83447b5ede3757483b6579f1a9df7c665ff2,Merge branch 'master' of github.com:stephencelis/ghi
+AlexChesters,2015-10-17 00:40:03,https://api.github.com/repos/stephencelis/ghi/git/commits/549269a64bf38692f316031f69aeafb3a76e8f7d,549269a64bf38692f316031f69aeafb3a76e8f7d,Tidying up of enable/disable
+AlexChesters,2015-10-17 00:28:54,https://api.github.com/repos/stephencelis/ghi/git/commits/c8ed97146e7407853cd0b9691da3294d6c0ef750,c8ed97146e7407853cd0b9691da3294d6c0ef750,Fixing tabs in enable and disable
+AlexChesters,2015-10-17 00:27:44,https://api.github.com/repos/stephencelis/ghi/git/commits/7b8cb2b68962ab7828027f5cf56b997b34d6b13c,7b8cb2b68962ab7828027f5cf56b997b34d6b13c,Fixing tab issue in enable.rb
+AlexChesters,2015-10-17 00:27:32,https://api.github.com/repos/stephencelis/ghi/git/commits/7583051248ddfd67a1a65a3cdfe06cecf52332e0,7583051248ddfd67a1a65a3cdfe06cecf52332e0,Fixing tab issue
+AlexChesters,2015-10-17 00:25:35,https://api.github.com/repos/stephencelis/ghi/git/commits/729d62e92ffd97b65b356ec6a3606f3cc0f96460,729d62e92ffd97b65b356ec6a3606f3cc0f96460,"Merge pull request #235 from satrapade/master
+
+Supress error messages"
+AlexChesters,2015-10-17 00:05:55,https://api.github.com/repos/stephencelis/ghi/git/commits/11ca10738562db7270d675c1521e89c5415a035b,11ca10738562db7270d675c1521e89c5415a035b,Merge branch 'master' of github.com:stephencelis/ghi
+AlexChesters,2015-10-17 00:05:38,https://api.github.com/repos/stephencelis/ghi/git/commits/0ad93bbf716ebebcd35ad614f8d044f53ec4403f,0ad93bbf716ebebcd35ad614f8d044f53ec4403f,Bump version
+AlexChesters,2015-10-17 00:00:26,https://api.github.com/repos/stephencelis/ghi/git/commits/5574ab1428eff441a2a9186c7fa4ad4c6c88e1d5,5574ab1428eff441a2a9186c7fa4ad4c6c88e1d5,"Merge pull request #112 from s1n4/show-milestones
+
+Show milestones when listing issues"
+AlexChesters,2015-10-16 23:36:59,https://api.github.com/repos/stephencelis/ghi/git/commits/63987afff3a340be816b39e2bef850d50271506e,63987afff3a340be816b39e2bef850d50271506e,"Fixing redirect issue #210
+
+The `client.rb` didn't cater for situations when the repo's name
+changed. Now the request understands and follows 301 status codes"
+AlexChesters,2015-10-16 23:20:37,https://api.github.com/repos/stephencelis/ghi/git/commits/a46d3dd725791250e144922784bc01c42ef981cb,a46d3dd725791250e144922784bc01c42ef981cb,Updating help instructions
+AlexChesters,2015-10-16 23:13:11,https://api.github.com/repos/stephencelis/ghi/git/commits/fee3b92c1b94ea5737c67069aa7ab722a65de198,fee3b92c1b94ea5737c67069aa7ab722a65de198,Moving FAQs to wiki
+AlexChesters,2015-10-16 23:11:21,https://api.github.com/repos/stephencelis/ghi/git/commits/79383f418fa9db58e79b67ce218a2095ac59e99f,79383f418fa9db58e79b67ce218a2095ac59e99f,Updating `README` with new commands
+AlexChesters,2015-10-16 23:10:26,https://api.github.com/repos/stephencelis/ghi/git/commits/dc38e45f147a8aa91242a10351fc08d2989d080a,dc38e45f147a8aa91242a10351fc08d2989d080a,Updating usage instructions
+AlexChesters,2015-10-16 23:05:34,https://api.github.com/repos/stephencelis/ghi/git/commits/40c6f487047a326ffaf06a942ef783e5a319abf9,40c6f487047a326ffaf06a942ef783e5a319abf9,Updating `README`
+AlexChesters,2015-10-16 23:03:00,https://api.github.com/repos/stephencelis/ghi/git/commits/fc9e464afd43f0dca17291f77a5e956d45be9282,fc9e464afd43f0dca17291f77a5e956d45be9282,Updating `README` with wiki link
+AlexChesters,2015-10-16 22:54:37,https://api.github.com/repos/stephencelis/ghi/git/commits/f0070660edbf563c7259b2ecbf821024ce2622c7,f0070660edbf563c7259b2ecbf821024ce2622c7, #239 Adding ability to enable/disable issues
+AlexChesters,2015-10-16 22:17:42,https://api.github.com/repos/stephencelis/ghi/git/commits/ce7892bdad29efd24b2596e7dd961e44c821a408,ce7892bdad29efd24b2596e7dd961e44c821a408," #239 Adding `ghi status`
+
+This tells you whether or not issues are enabled for the current repo"
+AlexChesters,2015-10-16 16:35:56,https://api.github.com/repos/stephencelis/ghi/git/commits/0b6eddb0232adc22fde5a9849305edb7ebb00c48,0b6eddb0232adc22fde5a9849305edb7ebb00c48, #248 Adding docs for contributing
+AlexChesters,2015-10-16 16:26:06,https://api.github.com/repos/stephencelis/ghi/git/commits/55f847dcfeae7afa5eb50698152e7de47f726444,55f847dcfeae7afa5eb50698152e7de47f726444,Updating
+AlexChesters,2015-10-16 16:25:53,https://api.github.com/repos/stephencelis/ghi/git/commits/f1559fc5312dd92d99dbff276dced4c887a2d0a6,f1559fc5312dd92d99dbff276dced4c887a2d0a6,Adding output when rake build succeeds
+AlexChesters,2015-10-16 14:26:03,https://api.github.com/repos/stephencelis/ghi/git/commits/257375e12af74b9ac5227c05f413827ee2a15f8c,257375e12af74b9ac5227c05f413827ee2a15f8c,"Merge pull request #247 from DamienRobert/formatting-bug
+
+Fix a bug in formatting.rb"
+AlexChesters,2015-10-16 13:38:45,https://api.github.com/repos/stephencelis/ghi/git/commits/44ba7cfb7a79b7a8ba71d3676696023752441b5c,44ba7cfb7a79b7a8ba71d3676696023752441b5c,"Merge pull request #238 from mootoh/fix/access_token_url_message
+
+Navigate to the actual setting URL for Github Enterprise"
+stephencelis,2015-06-05 18:05:35,https://api.github.com/repos/stephencelis/ghi/git/commits/69b35afc918eeaabebb489e994fd8bd5fe5575da,69b35afc918eeaabebb489e994fd8bd5fe5575da,"Merge pull request #237 from andjosh/feature-org-issue-listing
+
+Feature org issue listing"
+andjosh,2015-06-05 14:53:43,https://api.github.com/repos/stephencelis/ghi/git/commits/9065b2f049666c21f3c0e415e87b7b9432fc8767,9065b2f049666c21f3c0e415e87b7b9432fc8767,indentation update
+andjosh,2015-06-05 14:51:21,https://api.github.com/repos/stephencelis/ghi/git/commits/fe04fd9aa06439fcfff82711f8576b719b0fea92,fe04fd9aa06439fcfff82711f8576b719b0fea92,Remove raked changes
+mootoh,2015-06-05 07:48:14,https://api.github.com/repos/stephencelis/ghi/git/commits/4e365624c99ee6b0617c13d93c0ec89eb9756ba2,4e365624c99ee6b0617c13d93c0ec89eb9756ba2,"Navigate to the actual setting URL for Github Enterprise
+
+The original code showed github.com URL even though github.host is configured to another one."
+andjosh,2015-06-04 04:49:54,https://api.github.com/repos/stephencelis/ghi/git/commits/6cea634fa6a319ad2b7e94901934f94856573ba1,6cea634fa6a319ad2b7e94901934f94856573ba1,Now prettily printing org issues
+andjosh,2015-06-04 04:21:12,https://api.github.com/repos/stephencelis/ghi/git/commits/4859c88de1d8323665cb3fd46f2186eadf2fed4d,4859c88de1d8323665cb3fd46f2186eadf2fed4d,"Working for org, but not pretty printing"
+andjosh,2015-06-03 22:34:47,https://api.github.com/repos/stephencelis/ghi/git/commits/730669506220e679cdb5b7e3ed6d34bc54c0fcee,730669506220e679cdb5b7e3ed6d34bc54c0fcee,Update list.rb with org options
+dspinellis,2015-05-28 17:11:38,https://api.github.com/repos/stephencelis/ghi/git/commits/e188ca28cc7be4ca9aec44281ce9659cc463fedf,e188ca28cc7be4ca9aec44281ce9659cc463fedf,"Supress error messages
+
+The output handling code is designed to deal with the results of
+errors.
+
+This fixes the source library file, rather than the stand-alone
+executable.
+
+Issue: stephencelis/ghi#233"
+stephencelis,2015-05-28 11:52:26,https://api.github.com/repos/stephencelis/ghi/git/commits/ebd6a808f0e1351873801e816f1bc10e6a3b9416,ebd6a808f0e1351873801e816f1bc10e6a3b9416,"Merge pull request #223 from GrayHatter/patch-1
+
+update readme to support cygwin too"
+stephencelis,2015-05-28 11:50:52,https://api.github.com/repos/stephencelis/ghi/git/commits/ce9bcd4db90ba160e3f1c9f6a194b5f251c66a3c,ce9bcd4db90ba160e3f1c9f6a194b5f251c66a3c,"Merge pull request #232 from RichardLitt/docs/comment-editor
+
+Remove errant comment in `ghi comment`"
+stephencelis,2015-05-28 11:50:25,https://api.github.com/repos/stephencelis/ghi/git/commits/eda0d23054239d65fbd5672503f7bff70848b90c,eda0d23054239d65fbd5672503f7bff70848b90c,"Merge pull request #228 from andreivolt/master
+
+fix milestones path"
+stephencelis,2015-05-28 11:49:36,https://api.github.com/repos/stephencelis/ghi/git/commits/9bca3804601b1e2609b898ed7b82cabd118be7aa,9bca3804601b1e2609b898ed7b82cabd118be7aa,"Merge pull request #234 from satrapade/master
+
+Supress stty error messages"
+dspinellis,2015-05-28 11:24:44,https://api.github.com/repos/stephencelis/ghi/git/commits/7d952ee21cd1af7bc7bf49370a85239a407b0982,7d952ee21cd1af7bc7bf49370a85239a407b0982,"Supress error messages
+
+The output handling code is designed to deal with the results of errors.
+
+Issue: stephencelis/ghi#233"
+RichardLitt,2015-05-22 04:08:54,https://api.github.com/repos/stephencelis/ghi/git/commits/5d2aa3566fcaf107ab385878898d0493c605a6d7,5d2aa3566fcaf107ab385878898d0493c605a6d7,"Remove errant comment in `ghi comment`
+
+When commenting, the first line does not become the title. This is erroneous
+and misleading, although it does apply to `ghi open`, which is defined elsewhere.
+I suspect this was a copy paste. This PR fixes this issue."
+glittershark,2015-03-19 16:29:56,https://api.github.com/repos/stephencelis/ghi/git/commits/9c9af7425c7a19ad72c3134d864165a83d868403,9c9af7425c7a19ad72c3134d864165a83d868403,"Add config option to disable inferring issue
+
+Add a config option `ghi.infer-issue` that, if set to ""false"", will
+disable inferring the issue from the branch prefix
+
+Fixes #198"
+GrayHatter,2015-03-12 02:32:36,https://api.github.com/repos/stephencelis/ghi/git/commits/0d6acad8a14517a59002962811a08e00dfda190c,0d6acad8a14517a59002962811a08e00dfda190c,that c is kinda important...
+GrayHatter,2015-03-10 21:28:19,https://api.github.com/repos/stephencelis/ghi/git/commits/7b899c811bace1471498a08988a37436b592610e,7b899c811bace1471498a08988a37436b592610e,"update readme to support cygwin too
+
+I also removed the `$ ` from the shell lines so that copy/paste would work as expected with sloppy mouse selection."
+stephencelis,2014-07-05 19:24:20,https://api.github.com/repos/stephencelis/ghi/git/commits/d89b5abbf0ab5428a2459cbfdd3b074ddc23373d,d89b5abbf0ab5428a2459cbfdd3b074ddc23373d,"Merge pull request #181 from jech/fix-plain-code-blocks
+
+Don't highlight if code block doesn't have a defined language"
+stephencelis,2014-07-05 19:23:51,https://api.github.com/repos/stephencelis/ghi/git/commits/68a30b84849574dbae67385573d0dd0f52feb72d,68a30b84849574dbae67385573d0dd0f52feb72d,"Merge pull request #187 from jalanb/master
+
+typo"
+jalanb,2014-06-25 12:13:54,https://api.github.com/repos/stephencelis/ghi/git/commits/6c5baf21a19bacb2b84ec8222f0e0b2fccdb19b9,6c5baf21a19bacb2b84ec8222f0e0b2fccdb19b9,typo
+stephencelis,2014-05-15 21:34:39,https://api.github.com/repos/stephencelis/ghi/git/commits/5c628a1f85d5a65f0641aae42083253a97670946,5c628a1f85d5a65f0641aae42083253a97670946,"Require 'socket', not 'Socket'
+
+This works sometimes when case sensitivity isn't an issue. It can be,
+though.
+
+Fixes #179
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+jech,2014-05-15 21:30:05,https://api.github.com/repos/stephencelis/ghi/git/commits/b823ef8276e94592103a0de9ccf3b13cc17792b5,b823ef8276e94592103a0de9ccf3b13cc17792b5,"Don't highlight plain code blocks.
+
+This avoids strange colours in code blocks without a language."
+stephencelis,2014-04-28 17:37:35,https://api.github.com/repos/stephencelis/ghi/git/commits/05f9b3a34eb873ccbc432b6fb2e5adeee9f6ed3e,05f9b3a34eb873ccbc432b6fb2e5adeee9f6ed3e,"Merge pull request #175 from jrafanie/fix_ghi_location
+
+Update the location of the raw ghi script."
+jrafanie,2014-04-27 18:58:49,https://api.github.com/repos/stephencelis/ghi/git/commits/1564c3797d35fb7f221040eb7345f9f74c6454da,1564c3797d35fb7f221040eb7345f9f74c6454da,"Update the location of the raw ghi script.
+
+Add -L to follow redirects which may help if the URL gets redirected again.
+This option did not follow the redirect properly on RHEL but did on a OSX."
+stephencelis,2014-04-13 16:30:06,https://api.github.com/repos/stephencelis/ghi/git/commits/88ad29b0c0698406b24f71d44a79769978bc836c,88ad29b0c0698406b24f71d44a79769978bc836c,"Merge pull request #167 from dracos/patch-2
+
+Pass user to store_token, not username"
+stephencelis,2014-04-13 16:29:20,https://api.github.com/repos/stephencelis/ghi/git/commits/0a515b7d21cd6c2ac802bd0df0ea8f446dffd323,0a515b7d21cd6c2ac802bd0df0ea8f446dffd323,"Merge pull request #166 from dracos/patch-1
+
+Fix Socket NameError"
+dracos,2014-03-21 15:24:52,https://api.github.com/repos/stephencelis/ghi/git/commits/40ccf3aabb32baf6366066fa3a6afa817b48812f,40ccf3aabb32baf6366066fa3a6afa817b48812f,"Pass user to store_token, not username
+
+This means the argument is always present, which username might not be if it's never been set."
+dracos,2014-03-21 15:20:25,https://api.github.com/repos/stephencelis/ghi/git/commits/a5bc5b8901ad3f01246b1d6a04672be46da6b8ce,a5bc5b8901ad3f01246b1d6a04672be46da6b8ce,Fix Socket NameError.
+stephencelis,2014-03-12 17:51:51,https://api.github.com/repos/stephencelis/ghi/git/commits/e4e2d0581917e19b410fe766c9ac081cc677543d,e4e2d0581917e19b410fe766c9ac081cc677543d,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-12 17:49:45,https://api.github.com/repos/stephencelis/ghi/git/commits/a4c43e0edd6bdeed52fb28cfbbaf391640a82898,a4c43e0edd6bdeed52fb28cfbbaf391640a82898,"Add hostname and local repo name to authorization note
+
+Authorizations now have a unique constraint against note.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-12 17:48:40,https://api.github.com/repos/stephencelis/ghi/git/commits/a9e31178b28158c4c3e5b8df37a96566e4e3879f,a9e31178b28158c4c3e5b8df37a96566e4e3879f,"Lock API version (kind of...it's a beta)
+
+Fixes #163
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-06 04:19:39,https://api.github.com/repos/stephencelis/ghi/git/commits/a28ca8702730c3e5efb849cb0fe41a01dbc50967,a28ca8702730c3e5efb849cb0fe41a01dbc50967,"Document editor customization
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+LFDM,2014-03-05 23:56:04,https://api.github.com/repos/stephencelis/ghi/git/commits/aae6c4c2dc646fcbdc1b8afb06ae2af1553dfee7,aae6c4c2dc646fcbdc1b8afb06ae2af1553dfee7,"Mention repo in `ghi open` success message
+
+Closes #128.
+Not badly needed, but won't hurt either."
+LFDM,2014-02-25 07:53:33,https://api.github.com/repos/stephencelis/ghi/git/commits/472ea85d969c60d3f51a350deca99357243ed036,472ea85d969c60d3f51a350deca99357243ed036,"Reformat faq section colored output
+
+Give more room to the codeblocks."
+LFDM,2014-02-25 01:54:55,https://api.github.com/repos/stephencelis/ghi/git/commits/2443e9576b0892f0191c844a71eb5f778a3b25ce,2443e9576b0892f0191c844a71eb5f778a3b25ce,"Start FAQ section
+
+Replaces the Configuration and Additional help sections with an FAQ.
+Also adds information about the needed step to support GitHub
+enterprises.
+
+Closes #156."
+stephencelis,2014-03-02 21:10:07,https://api.github.com/repos/stephencelis/ghi/git/commits/bb5d366e456dcf8e14faa21fcf044a965804c8bd,bb5d366e456dcf8e14faa21fcf044a965804c8bd,"Handle branches with forward slashes
+
+git rev-parse returns origin/<branchname>, so we need to split on the
+first slash only.
+
+Fixes #72
+
+Fixes it way later, but fixes it!
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-02 20:17:30,https://api.github.com/repos/stephencelis/ghi/git/commits/82a83e1c9920b18fd59a7453530b45a40e677ce7,82a83e1c9920b18fd59a7453530b45a40e677ce7,"Ignore Gemfile.lock
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-02 20:14:54,https://api.github.com/repos/stephencelis/ghi/git/commits/d7669eff96e5368beb69cfc75c49fcbc19205326,d7669eff96e5368beb69cfc75c49fcbc19205326,"Add helpful error for when a code already exists
+
+GitHub recently changed their API to prevent duplicate personal access
+tokens from being generated. We should be nice about directing users
+directly to the page from which they must manually revoke their token to
+continue.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-03-02 20:08:32,https://api.github.com/repos/stephencelis/ghi/git/commits/645b368d103cd43d09e94fcae1db2d206464680f,645b368d103cd43d09e94fcae1db2d206464680f,"Merge pull request #157 from stephencelis/labels_on_multi_issues
+
+Managing labels for multiple issues at once"
+LFDM,2014-02-25 11:15:15,https://api.github.com/repos/stephencelis/ghi/git/commits/da0b79d88a893ed3e0144e81596dfe2dfe77ab8c,da0b79d88a893ed3e0144e81596dfe2dfe77ab8c,"Multi-thread labeling of multiple issues
+
+Obviously much much faster."
+LFDM,2014-02-25 11:22:11,https://api.github.com/repos/stephencelis/ghi/git/commits/e74b30f6a2844d7dcb4dd682beef89e349737f0a,e74b30f6a2844d7dcb4dd682beef89e349737f0a,Minor update in label usage instructions
+LFDM,2014-02-25 11:04:16,https://api.github.com/repos/stephencelis/ghi/git/commits/b8f6e1f1c26c59c557eb799d0f8d656b986f5a8c,b8f6e1f1c26c59c557eb799d0f8d656b986f5a8c,Handle labeling of multiple issues at once
+LFDM,2014-02-25 11:02:14,https://api.github.com/repos/stephencelis/ghi/git/commits/8d30b427d925faf76e0f5b825432913b8dc9c1d7,8d30b427d925faf76e0f5b825432913b8dc9c1d7,"Extract method in Command
+
+Inferring of issues from branch prefixes extracted to call it
+independently in subclasses."
+LFDM,2014-02-25 08:52:45,https://api.github.com/repos/stephencelis/ghi/git/commits/1e45dc4fe95aad9bdf7e8396fc3f50deec459ed2,1e45dc4fe95aad9bdf7e8396fc3f50deec459ed2,"Merge pull request #155 from LFDM/events
+
+Events and issues"
+LFDM,2014-02-25 01:13:34,https://api.github.com/repos/stephencelis/ghi/git/commits/278e87942aeaf92beb39e4d93bed040f13813d91,278e87942aeaf92beb39e4d93bed040f13813d91,"Fix handling of unimportant events in Formatting
+
+We cannot return an empty string, as it leads to unwanted newlines in
+the output. The guarding logic is also moved out of format_event, as
+the responsibility to handle this is better placed inside of
+format_comments_and_events."
+LFDM,2014-02-24 12:03:12,https://api.github.com/repos/stephencelis/ghi/git/commits/8c05c381f69bc1c18bfd558599d862b7c5ca356a,8c05c381f69bc1c18bfd558599d862b7c5ca356a,"Gets comments and events multi-threaded
+
+Comments and events can be fetched in parallel to avoid blocking the
+program during the HTTP GET requests."
+LFDM,2014-02-22 22:53:30,https://api.github.com/repos/stephencelis/ghi/git/commits/6a47567d34ea6c809271ce9f76250dc70d39e7e4,6a47567d34ea6c809271ce9f76250dc70d39e7e4,Handles paging of events
+LFDM,2014-02-22 22:22:18,https://api.github.com/repos/stephencelis/ghi/git/commits/159af4778a50761501e240b315d912a0ff157256,159af4778a50761501e240b315d912a0ff157256,Doesn't listen to unimportant events - for now
+LFDM,2014-02-22 22:14:42,https://api.github.com/repos/stephencelis/ghi/git/commits/349be4f705a2ee9472b4652b8faefe952b3ae023,349be4f705a2ee9472b4652b8faefe952b3ae023,Adds events to issues in Show
+LFDM,2014-02-22 22:01:41,https://api.github.com/repos/stephencelis/ghi/git/commits/cb0e2e773870f29495abded17ae8a6f8b2ea9845,cb0e2e773870f29495abded17ae8a6f8b2ea9845,Adds Command#sort_by_creation
+LFDM,2014-02-25 08:34:35,https://api.github.com/repos/stephencelis/ghi/git/commits/6f67876449e8b2a9beccf0bd90161e60095d1a4b,6f67876449e8b2a9beccf0bd90161e60095d1a4b,"Merge pull request #153 from LFDM/merge_status
+
+Minor: Merge status for PR's in Show"
+LFDM,2014-02-25 08:21:30,https://api.github.com/repos/stephencelis/ghi/git/commits/68ee6cfca8539918c762eac8283378dc9a21feb0,68ee6cfca8539918c762eac8283378dc9a21feb0,"Fix regression in format_issues_header
+
+format_state silently acknowledged all nil state values as open, which
+is not the case anymore. The issues header needs to declare the open
+state now explicitly.
+Led to dropping the green color that signifies open issues."
+LFDM,2014-02-24 10:47:16,https://api.github.com/repos/stephencelis/ghi/git/commits/2d7f33cee919088dbcc76960583803fb0d976fa1,2d7f33cee919088dbcc76960583803fb0d976fa1,"Only ask API for merge status when a PR is closed
+
+A merged PR can never be open, therefore we don't have to call the API for
+the merge status, unless the PR is closed."
+LFDM,2014-02-24 10:39:56,https://api.github.com/repos/stephencelis/ghi/git/commits/f19fd808e546e60ebe4c7042889dd0fc52a4b435,f19fd808e546e60ebe4c7042889dd0fc52a4b435,"Fixes position of merge tag in Show
+
+Looks like initially adding this through git commit -p didn't work out
+as it should."
+LFDM,2014-02-22 20:25:21,https://api.github.com/repos/stephencelis/ghi/git/commits/c415aa6510025ce814b606d14566985a6325cc0d,c415aa6510025ce814b606d14566985a6325cc0d,Prints merge status in Formatter#format_issue
+LFDM,2014-02-22 20:10:59,https://api.github.com/repos/stephencelis/ghi/git/commits/43e02e6eb13251b30c483273261851ba4ab84845,43e02e6eb13251b30c483273261851ba4ab84845,Determines merge status in Show
+stephencelis,2014-02-24 06:50:52,https://api.github.com/repos/stephencelis/ghi/git/commits/e518a069cc82eefefe14d02f9dc454eefb722a7d,e518a069cc82eefefe14d02f9dc454eefb722a7d,"Merge pull request #154 from LFDM/highlighting_improvement
+
+Very minor: Adds whitespace around inlined code blocks"
+LFDM,2014-02-22 20:38:40,https://api.github.com/repos/stephencelis/ghi/git/commits/5a7bde52a13c4c2db9ebf4a9ecedc6993fb03a85,5a7bde52a13c4c2db9ebf4a9ecedc6993fb03a85,"Adds whitespace around inlined code blocks
+
+... which improves readability quite a bit, as the outer characters do
+not flow into the background anymore."
+stephencelis,2014-02-20 20:48:18,https://api.github.com/repos/stephencelis/ghi/git/commits/e192cfc34cea6ae3b3445dfa03dc3ba9bdad459f,e192cfc34cea6ae3b3445dfa03dc3ba9bdad459f,"Merge pull request #151 from LFDM/no_colors
+
+Fixes minor bug in Colors#highlight"
+LFDM,2014-02-20 19:49:57,https://api.github.com/repos/stephencelis/ghi/git/commits/6ea78cd68210c2eaeac547ee52fb06cb4e7e2319,6ea78cd68210c2eaeac547ee52fb06cb4e7e2319,"Fixes minor bug in Colors#highlight
+
+We need to respect the value of #colorize, in case an uncolored output
+is requested."
+stephencelis,2014-02-19 22:22:54,https://api.github.com/repos/stephencelis/ghi/git/commits/570c93f7f7a621d0812c90dcb055ea3369e2459b,570c93f7f7a621d0812c90dcb055ea3369e2459b,"Merge pull request #150 from LFDM/syntax_highlighting
+
+Syntax highlighting"
+LFDM,2014-02-19 21:33:10,https://api.github.com/repos/stephencelis/ghi/git/commits/6089bd389254ff342fce96b819b1be1f684858a5,6089bd389254ff342fce96b819b1be1f684858a5,"Fixes minor issue in code block regex
+
+Fenced code blocks can include spaces between the backticks and the
+language hint."
+LFDM,2014-02-19 21:25:39,https://api.github.com/repos/stephencelis/ghi/git/commits/b2f2cc2196227dd2ad06b08d7afc9b3f1b4698fc,b2f2cc2196227dd2ad06b08d7afc9b3f1b4698fc,Adds info about Syntax Highlighting to the README
+LFDM,2014-02-19 21:31:14,https://api.github.com/repos/stephencelis/ghi/git/commits/888ea2da439983bcf1a3a615281948c07f7f8297,888ea2da439983bcf1a3a615281948c07f7f8297,"Uses GHI.config in Pygmentizer
+
+... instead of a plain environmental variable."
+LFDM,2014-02-19 20:33:17,https://api.github.com/repos/stephencelis/ghi/git/commits/d482e12273ef87555a7b841ebd2d9660fb5cbb7c,d482e12273ef87555a7b841ebd2d9660fb5cbb7c,"Improves backwards compatibility
+
+... by using the old hash style in Pygmentizer."
+LFDM,2014-02-19 20:03:09,https://api.github.com/repos/stephencelis/ghi/git/commits/d76bf78bc6515b0e8b5bd01ab0ed3e1217ed43eb,d76bf78bc6515b0e8b5bd01ab0ed3e1217ed43eb,Uses indentation to delimit code blocks
+LFDM,2014-02-19 12:48:27,https://api.github.com/repos/stephencelis/ghi/git/commits/76f366b8b98ec6c83e1f6722f8cafd1fdf4d0b68,76f366b8b98ec6c83e1f6722f8cafd1fdf4d0b68,Fixes indentation of code block surrounders
+LFDM,2014-02-19 12:16:49,https://api.github.com/repos/stephencelis/ghi/git/commits/cb16ee09a29bc21131b372878d9d171352089ac9,cb16ee09a29bc21131b372878d9d171352089ac9,Adds inline code formatting in Formatter
+LFDM,2014-02-19 12:10:41,https://api.github.com/repos/stephencelis/ghi/git/commits/488d6a813bc1c7022a1f10f6ec1c5a77f540601a,488d6a813bc1c7022a1f10f6ec1c5a77f540601a,Adds code block formatting to Formatter
+LFDM,2014-02-19 12:10:17,https://api.github.com/repos/stephencelis/ghi/git/commits/907b2a9baef419e9b22eef47894898d0549c1d16,907b2a9baef419e9b22eef47894898d0549c1d16,Adds #highlight to Colors
+LFDM,2014-02-19 09:00:56,https://api.github.com/repos/stephencelis/ghi/git/commits/2eeadea087e5f99b6f9890ef01f73d9350988ff8,2eeadea087e5f99b6f9890ef01f73d9350988ff8,Extracts check for 256 colors
+stephencelis,2014-02-17 19:16:01,https://api.github.com/repos/stephencelis/ghi/git/commits/28aff7ca175e1eb8822e57d22c7194710583e1fd,28aff7ca175e1eb8822e57d22c7194710583e1fd,"Fix @mention matching/highlighting
+
+- The first match erroneously missed the star
+- The second match was too liberal in what it accepted as an @mention
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-02-17 00:34:43,https://api.github.com/repos/stephencelis/ghi/git/commits/2bdf8d10001f245eed93ee34159a100a6fb28e66,2bdf8d10001f245eed93ee34159a100a6fb28e66,"Merge pull request #148 from LFDM/pull_request_filtering
+
+Adds -p and -P options for list"
+LFDM,2014-02-17 00:00:27,https://api.github.com/repos/stephencelis/ghi/git/commits/ee3d7e2109f1693613b7515f2815cf7f6f48bbaf,ee3d7e2109f1693613b7515f2815cf7f6f48bbaf,"Adds -p and -P options for list
+
+-p (--pulls) lists only pull requests, -P ( --no-pulls) excludes pull
+requests"
+stephencelis,2014-02-16 23:10:30,https://api.github.com/repos/stephencelis/ghi/git/commits/d8c9d8b97cb0c9dfe2e2f203a379b8256a6d776e,d8c9d8b97cb0c9dfe2e2f203a379b8256a6d776e,"Bump version to 0.9.2
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-02-16 23:08:49,https://api.github.com/repos/stephencelis/ghi/git/commits/3070acbda2f85b806b334a26813112bafb40829a,3070acbda2f85b806b334a26813112bafb40829a,"Store token on OS keychain
+
+Also provide security information to users not on OS X.
+
+Closes #89, #145.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-02-16 21:43:39,https://api.github.com/repos/stephencelis/ghi/git/commits/abcf9eb52eafff49e0de08983f1a26db8937621b,abcf9eb52eafff49e0de08983f1a26db8937621b,"Support arbitrary shell commands to fetch ghi.token
+
+This allows people to, e.g., use the OS X keychain (or platform
+alternative) to store tokens.
+
+E.g., to store a newly-generated token in the keychain:
+
+  $ security add-internet-password -a $(git config github.user) \
+                                   -s github.com                \
+                                   -l ""ghi token""               \
+                                   -w $(git config ghi.token)
+
+Test it out:
+
+  $ security find-internet-password -a $(git config github.user) \
+                                    -s github.com                \
+                                    -w
+
+Use it (assuming the above is still the previous line of your terminal
+session):
+
+  $ git config --global ghi.token ""\!$(echo !!)""
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-02-16 21:40:33,https://api.github.com/repos/stephencelis/ghi/git/commits/c9524c40ebfbbbf8141826cbcd048169bb9e3334,c9524c40ebfbbbf8141826cbcd048169bb9e3334,"Basic Gemfile
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-02-13 18:37:16,https://api.github.com/repos/stephencelis/ghi/git/commits/35834cd760ff5551a538ecfa32a71f095e2bd380,35834cd760ff5551a538ecfa32a71f095e2bd380,"Merge pull request #147 from la5942/patch-1
+
+Update readme to enable 256 colours in Ubuntu."
+la5942,2014-02-12 13:26:54,https://api.github.com/repos/stephencelis/ghi/git/commits/00732d8dfc18eaaa0a7017591e43bfa959ea1f96,00732d8dfc18eaaa0a7017591e43bfa959ea1f96,Update readme to allow 256 colours in Ubuntu.
+stephencelis,2014-01-27 20:57:21,https://api.github.com/repos/stephencelis/ghi/git/commits/a114f4a8958f0d9873b1ef5251d4eaa4395286b1,a114f4a8958f0d9873b1ef5251d4eaa4395286b1,"Don't print git warnings
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-01-27 20:54:51,https://api.github.com/repos/stephencelis/ghi/git/commits/114167ab14f7b53648a3267adc959d43cc70e8a0,114167ab14f7b53648a3267adc959d43cc70e8a0,"Infer issue number from branch prefix
+
+Implements #144
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2014-01-14 01:07:41,https://api.github.com/repos/stephencelis/ghi/git/commits/c787ddc93ca34d66b95f13713f0bbc1cf18663ad,c787ddc93ca34d66b95f13713f0bbc1cf18663ad,"Bump to 0.9.1
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-12-17 00:16:41,https://api.github.com/repos/stephencelis/ghi/git/commits/ab8e75cade578444e4eb614909039981a42574b4,ab8e75cade578444e4eb614909039981a42574b4,"Merge pull request #139 from moriarty/no-truncate
+
+Added --no-truncate option to ghi list"
+moriarty,2013-12-17 00:10:34,https://api.github.com/repos/stephencelis/ghi/git/commits/05a2ff18f10c12a6c558a03ae0966017ca9bfac3,05a2ff18f10c12a6c558a03ae0966017ca9bfac3,"reverted --no-truncate option, uses $stdout.tty
+
+as suggested by @stephencelis in /stephencelis/ghi#139"
+stephencelis,2013-12-16 05:49:49,https://api.github.com/repos/stephencelis/ghi/git/commits/b10ed2f69227a079336c4618902f8fc10f0e1ce1,b10ed2f69227a079336c4618902f8fc10f0e1ce1,"Print links (and don't open them)
+
+This effectively fixes #100.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+moriarty,2013-12-11 09:34:47,https://api.github.com/repos/stephencelis/ghi/git/commits/dcf251ce0cd66ee290b60f7c6c950bf6a5e00548,dcf251ce0cd66ee290b60f7c6c950bf6a5e00548,"Added --no-truncate option to ghi list
+
+This closes #138"
+stephencelis,2013-11-20 18:09:14,https://api.github.com/repos/stephencelis/ghi/git/commits/aa00d552a05af36ad751b1ed1599f9909ad8676d,aa00d552a05af36ad751b1ed1599f9909ad8676d,"Rebuild
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-11-20 18:08:54,https://api.github.com/repos/stephencelis/ghi/git/commits/9a3468200d8d3fd115cc022c970c2211d511b83c,9a3468200d8d3fd115cc022c970c2211d511b83c,"Tabs -> spaces
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-11-20 18:07:20,https://api.github.com/repos/stephencelis/ghi/git/commits/95f7825a00b78fda23c0b7585182eb9c67af6669,95f7825a00b78fda23c0b7585182eb9c67af6669,"Let '--mine' work for '--global'
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-11-20 18:06:30,https://api.github.com/repos/stephencelis/ghi/git/commits/9d4e8b39230fcf69f45cf7cdbba41545e1142fb0,9d4e8b39230fcf69f45cf7cdbba41545e1142fb0,"Merge pull request #125 from TiddoLangerak/master
+
+ghi list -all now really lists all issues"
+stephencelis,2013-11-20 17:45:12,https://api.github.com/repos/stephencelis/ghi/git/commits/b534a01d68e6691c62d3287aa671cffde84ce0ae,b534a01d68e6691c62d3287aa671cffde84ce0ae,"Escape URIs
+
+Fixes #129.
+
+[1]: http://developer.github.com/v3/issues/labels/#delete-a-label
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-11-20 17:31:24,https://api.github.com/repos/stephencelis/ghi/git/commits/57d1d7bb17d9835460dfbf42209b08e3ee856127,57d1d7bb17d9835460dfbf42209b08e3ee856127,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-11-20 17:28:13,https://api.github.com/repos/stephencelis/ghi/git/commits/19033a00a62e6f8499eb0289815548f2d0c1a8f0,19033a00a62e6f8499eb0289815548f2d0c1a8f0,"Fix ghi.repo override
+
+This stopped working with a regression introduced in f6c6315f. The
+previous behavior, however, failed to allow for normal global behavior.
+
+Fixes #137.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-10-15 03:53:30,https://api.github.com/repos/stephencelis/ghi/git/commits/bd38e59f2e757d39f5249af9cc3c957d9eaef725,bd38e59f2e757d39f5249af9cc3c957d9eaef725,"Define JSON conditionally.
+
+Fixes #134.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-09-12 20:16:59,https://api.github.com/repos/stephencelis/ghi/git/commits/de31e8b942d2940dca319776f9bee202bbfc7902,de31e8b942d2940dca319776f9bee202bbfc7902,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-09-12 20:15:15,https://api.github.com/repos/stephencelis/ghi/git/commits/cb77f9570e6e3a30a145094068368969fed2ec5d,cb77f9570e6e3a30a145094068368969fed2ec5d,"2FA (Two-factor auth) support
+
+This fixes #130.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+TiddoLangerak,2013-08-30 11:01:23,https://api.github.com/repos/stephencelis/ghi/git/commits/e650c244efc2f9408ecad9dc29e73b5e8e310b1a,e650c244efc2f9408ecad9dc29e73b5e8e310b1a,"ghi list -all now really lists all issues, not just the ones assigned to the user."
+stephencelis,2013-08-09 18:11:26,https://api.github.com/repos/stephencelis/ghi/git/commits/e3e34140af0dd14589b896b1784c6a5bcd2a153d,e3e34140af0dd14589b896b1784c6a5bcd2a153d,"Add Homebrew instructions
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+sinasamavati,2013-06-07 12:43:52,https://api.github.com/repos/stephencelis/ghi/git/commits/e88e1466bc0c1a877622937b9872d3fe0693f0ee,e88e1466bc0c1a877622937b9872d3fe0693f0ee,Show milestones when listing issues
+stephencelis,2013-06-05 20:43:02,https://api.github.com/repos/stephencelis/ghi/git/commits/d16d71c2aee34c04f65db19cf1a4e0c6cf745ca4,d16d71c2aee34c04f65db19cf1a4e0c6cf745ca4,"Merge pull request #111 from s1n4/issue-88
+
+Fix issue #88"
+sinasamavati,2013-06-05 20:06:26,https://api.github.com/repos/stephencelis/ghi/git/commits/f6c6315ff940b9853b95aef72e27035275966c7e,f6c6315ff940b9853b95aef72e27035275966c7e,Fix issue #88
+stephencelis,2013-05-24 21:21:51,https://api.github.com/repos/stephencelis/ghi/git/commits/129ec6fc354215e72558f2e0ce4482b43ce88a04,129ec6fc354215e72558f2e0ce4482b43ce88a04,"Merge pull request #107 from s1n4/master
+
+Query maximum number of colors from terminfo"
+sinasamavati,2013-05-24 20:40:09,https://api.github.com/repos/stephencelis/ghi/git/commits/875fa2c4c9f3f8b2b5254a030e0d90b4d76dbaa9,875fa2c4c9f3f8b2b5254a030e0d90b4d76dbaa9,Rebuild
+sinasamavati,2013-05-24 20:29:24,https://api.github.com/repos/stephencelis/ghi/git/commits/fa2762b6817ee01fe3c364513ebc51765e5d9f34,fa2762b6817ee01fe3c364513ebc51765e5d9f34,Query maximum number of colors from terminfo
+stephencelis,2013-05-10 20:31:28,https://api.github.com/repos/stephencelis/ghi/git/commits/8e766e3852fbc3f039f107b70b9594c2accad7a8,8e766e3852fbc3f039f107b70b9594c2accad7a8,"Merge pull request #104 from s1n4/#103
+
+Get `ghi -- [<user>/<repo>]` to work"
+stephencelis,2013-05-04 20:47:03,https://api.github.com/repos/stephencelis/ghi/git/commits/1250d2e89e4f575e7161c991a67e31b47bd13904,1250d2e89e4f575e7161c991a67e31b47bd13904,"Rebuild
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-05-04 20:45:55,https://api.github.com/repos/stephencelis/ghi/git/commits/f69ccd4089f296f4c50e44bfced7ffc547bee8a3,f69ccd4089f296f4c50e44bfced7ffc547bee8a3,Merge branch 'master' of github.com:stephencelis/ghi
+stephencelis,2013-05-04 20:44:54,https://api.github.com/repos/stephencelis/ghi/git/commits/1cc1f7d3bf6b2b67d61dc8c9e3a3811c2ede535a,1cc1f7d3bf6b2b67d61dc8c9e3a3811c2ede535a,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-05-04 20:39:20,https://api.github.com/repos/stephencelis/ghi/git/commits/c235adfb145b965978e7723953a66a00c2dc18e9,c235adfb145b965978e7723953a66a00c2dc18e9,"Support list by creator
+
+This fixes #102.
+
+You can filter with the `--creator` flag:
+
+  $ ghi list --creator        # issues you created
+  $ ghi list --creator foobar # issues @foobar created
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-05-04 20:38:49,https://api.github.com/repos/stephencelis/ghi/git/commits/1d980a8816d73a9bc4800500b0bc47d5c5442e1e,1d980a8816d73a9bc4800500b0bc47d5c5442e1e,"Don't exec and stop the task chain
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-05-03 14:42:11,https://api.github.com/repos/stephencelis/ghi/git/commits/8fcda6fc4101f036cb02e10b6aa368840e139251,8fcda6fc4101f036cb02e10b6aa368840e139251,"Merge pull request #101 from s1n4/xdg-open
+
+ghi show -w doesn't work in linux"
+stephencelis,2013-04-26 17:42:54,https://api.github.com/repos/stephencelis/ghi/git/commits/4eb06a37b4bc9ddcfd90924b9d1dec317810f555,4eb06a37b4bc9ddcfd90924b9d1dec317810f555,"Don't 256-escape on non-256 terminals
+
+This should fix #83.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-26 17:32:40,https://api.github.com/repos/stephencelis/ghi/git/commits/ed017a62a9a9e20ea6f8cc66fab954f0cda659f6,ed017a62a9a9e20ea6f8cc66fab954f0cda659f6,Merge branch 'master' of github.com:stephencelis/ghi
+stephencelis,2013-04-26 17:31:22,https://api.github.com/repos/stephencelis/ghi/git/commits/a6e7ba388d57bb20d6fdb59ceb831a12ebadd736,a6e7ba388d57bb20d6fdb59ceb831a12ebadd736,"Don't colorize patches
+
+It would be nice to git-colorize these in the future, though.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-26 17:30:50,https://api.github.com/repos/stephencelis/ghi/git/commits/1e8fbedab06be25d8574d7adda088b5bce00b7bb,1e8fbedab06be25d8574d7adda088b5bce00b7bb,"Abort with error when patch isn't found
+
+This should fix #98.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-26 15:03:40,https://api.github.com/repos/stephencelis/ghi/git/commits/087a84fbbb305cd2a54c2817a032a30e8507b33d,087a84fbbb305cd2a54c2817a032a30e8507b33d,"Merge pull request #95 from r4um/issue-87
+
+Closes #87 Github Enterprise support."
+r4um,2013-04-26 06:58:53,https://api.github.com/repos/stephencelis/ghi/git/commits/3da9ab61ec460ff835c5ecb2308b3472f53a6250,3da9ab61ec460ff835c5ecb2308b3472f53a6250,#87 Set github api endpoint via github.host config
+stephencelis,2013-04-25 07:45:25,https://api.github.com/repos/stephencelis/ghi/git/commits/40d921d32be38988df924b0ed98708a5b3a3503d,40d921d32be38988df924b0ed98708a5b3a3503d,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-24 18:20:01,https://api.github.com/repos/stephencelis/ghi/git/commits/032e4223d7a4fd071ba6fd3fdff8f5b1d668bf65,032e4223d7a4fd071ba6fd3fdff8f5b1d668bf65,"Lint-check after build
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-24 18:14:42,https://api.github.com/repos/stephencelis/ghi/git/commits/38fcc5601e429e59aa375fa1077ebe31f8d1016a,38fcc5601e429e59aa375fa1077ebe31f8d1016a,"Change manifest order
+
+This fixes #93 by ensuring that the version module takes precedence over
+all others.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-24 17:30:27,https://api.github.com/repos/stephencelis/ghi/git/commits/3cf6021d9075eee68678d7635e93d1e2a9faee49,3cf6021d9075eee68678d7635e93d1e2a9faee49,"Build/bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-24 17:29:30,https://api.github.com/repos/stephencelis/ghi/git/commits/cc4e303d366d01a90bc2dcbc4b57b967795d08cc,cc4e303d366d01a90bc2dcbc4b57b967795d08cc,"Add User-Agent
+
+Not sure when GitHub added this requirement. This should fix #92.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-23 17:41:30,https://api.github.com/repos/stephencelis/ghi/git/commits/2326d691ae2349f552016fa240df05212df1b574,2326d691ae2349f552016fa240df05212df1b574,"Be consistent
+
+Use single quotes when not interpolating.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-23 17:40:03,https://api.github.com/repos/stephencelis/ghi/git/commits/11a75b611c96c2cf072bdabc45a83b00bb88cf7a,11a75b611c96c2cf072bdabc45a83b00bb88cf7a,"Make --not-label work internally like --label.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+timruffles,2013-04-23 08:01:02,https://api.github.com/repos/stephencelis/ghi/git/commits/9ce315f6e94b94c27ca551c0737f917a7e34660f,9ce315f6e94b94c27ca551c0737f917a7e34660f,added option to exclude issues from list by label - rebased on master
+stephencelis,2013-04-22 23:37:59,https://api.github.com/repos/stephencelis/ghi/git/commits/7f31a7c2b4fb24fb60399f9cf2a4aee22c84d68c,7f31a7c2b4fb24fb60399f9cf2a4aee22c84d68c,"Remove Gemfile
+
+Causes unnecessary binstub clobbering issues when bundling.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-22 23:36:55,https://api.github.com/repos/stephencelis/ghi/git/commits/d9df8c36fa5a42e9cdf5fd0ffa3a0a9171707b82,d9df8c36fa5a42e9cdf5fd0ffa3a0a9171707b82,"Bump build
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-22 23:30:20,https://api.github.com/repos/stephencelis/ghi/git/commits/12ed768108f3301232a0e350315aca10e0733842,12ed768108f3301232a0e350315aca10e0733842,"Stringify array before sorting
+
+This should fix #78.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-22 23:14:47,https://api.github.com/repos/stephencelis/ghi/git/commits/f012a875a86eedbef8b473b6bcc386db6bf8eb65,f012a875a86eedbef8b473b6bcc386db6bf8eb65,"Add assorted updates to README
+
+Feedback hopefully makes the README better:
+
+- RubyGems alternate install path
+- Override current repo with `git config ghi.repo`
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+naholyr,2013-01-18 14:04:33,https://api.github.com/repos/stephencelis/ghi/git/commits/f365cf7297b5d31a4ab966d635c757cd49d78b70,f365cf7297b5d31a4ab966d635c757cd49d78b70,Repo from git config: doc
+stephencelis,2013-04-22 17:22:55,https://api.github.com/repos/stephencelis/ghi/git/commits/6e4d5236940f8e5f518615dd1953bf5d257fc385,6e4d5236940f8e5f518615dd1953bf5d257fc385,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-04-22 17:19:33,https://api.github.com/repos/stephencelis/ghi/git/commits/01ce6eef6c5d40a0a00b431c0b9f5dcf9c341622,01ce6eef6c5d40a0a00b431c0b9f5dcf9c341622,"Remove ':' from number when !STDOUT.tty?
+
+Makes it easier to pipe the output and extract the issue number.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+wakeless,2013-04-22 12:24:54,https://api.github.com/repos/stephencelis/ghi/git/commits/014c79c9a0cac3eb58f55e0a97ec9003ce857baa,014c79c9a0cac3eb58f55e0a97ec9003ce857baa,"Make the separator separate from the number
+
+Having the separator as part of the number is annoying when you want to use the number in any bash programming. Currently the way to do this is:
+
+    ghi | grep Sponsorship | awk '{gsub(/:/, """", $1); print $1}'
+
+With this fix it's ```ghi | grep Sponsorship | awk '{print $1}'```
+
+just that little bit friendlier"
+stephencelis,2013-03-18 17:42:07,https://api.github.com/repos/stephencelis/ghi/git/commits/74a30363c72db869859561b67d6a9feddf344f53,74a30363c72db869859561b67d6a9feddf344f53,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-03-18 17:37:37,https://api.github.com/repos/stephencelis/ghi/git/commits/1c6a6f7591b485f063f236c6ae777aed3b12818e,1c6a6f7591b485f063f236c6ae777aed3b12818e,"Extract issue from `ghi open' after parsing [fix #81]
+
+Otherwise, e.g., `ghi open -m 1000' will not open an issue with the
+message (title) ""1000"", but instead will attempt to edit issue 1000
+with the `-m' flag (for message editing).
+
+Reported-by: Tomasz Durka <tomasz@durka.pl>
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2013-03-05 01:18:20,https://api.github.com/repos/stephencelis/ghi/git/commits/4e052ec4a76ff6627ffae30a56c1143bf26dfd00,4e052ec4a76ff6627ffae30a56c1143bf26dfd00,"Update README image link
+
+GitHub changed the way they resolve repo image paths.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-12-08 05:58:59,https://api.github.com/repos/stephencelis/ghi/git/commits/2355e4b832ed67a7b33129e2f96cb780767c4971,2355e4b832ed67a7b33129e2f96cb780767c4971,"Merge pull request #74 from parkr/default-to-list
+
+If no command name is specified, default to list."
+parkr,2012-12-08 03:39:55,https://api.github.com/repos/stephencelis/ghi/git/commits/f50a98e12041a6bd70c8dc76bd6201ca3f6d21f2,f50a98e12041a6bd70c8dc76bd6201ca3f6d21f2,"If no command name is specified, default to list."
+stephencelis,2012-11-15 22:56:14,https://api.github.com/repos/stephencelis/ghi/git/commits/481dedd904e20a3662a7e9dfaa2306fe5eb1c0de,481dedd904e20a3662a7e9dfaa2306fe5eb1c0de,"Merge pull request #70 from Zearin/patch-1
+
+Update README.markdown"
+stephencelis,2012-11-14 16:28:37,https://api.github.com/repos/stephencelis/ghi/git/commits/34be1dabb24370374fe21400ee09388116d7d6ce,34be1dabb24370374fe21400ee09388116d7d6ce,"Bump version (0.9.0.20121114)
+
+- Proxy support
+- @-prefixable usernames
+- Bugfixes
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-11-14 16:27:16,https://api.github.com/repos/stephencelis/ghi/git/commits/7e6efa5c890ed5696d2cbbdebcb3b76ebe3585b6,7e6efa5c890ed5696d2cbbdebcb3b76ebe3585b6,"Stray parentheses
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-11-14 16:26:19,https://api.github.com/repos/stephencelis/ghi/git/commits/83591bcf65fca1429a1667ebd149c70bb737861a,83591bcf65fca1429a1667ebd149c70bb737861a,"Don't par-highlight email addresses as usernames
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-11-14 16:24:55,https://api.github.com/repos/stephencelis/ghi/git/commits/72f015b756158dbd31bdd4fe3245aba1558dd995,72f015b756158dbd31bdd4fe3245aba1558dd995,"Allow for @-prefixed usernames in ghi assign
+
+Fixes #69.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-11-08 16:51:33,https://api.github.com/repos/stephencelis/ghi/git/commits/3ac2498197396932286ab47d28d8aab1c64b5d14,3ac2498197396932286ab47d28d8aab1c64b5d14,"Merge pull request #68 from timruffles/exclude-prs-option
+
+Add option to exclude pull requests"
+timruffles,2012-11-08 10:26:44,https://api.github.com/repos/stephencelis/ghi/git/commits/61a3464eacc5e67dcf212185f60ca7c4f1f5fb26,61a3464eacc5e67dcf212185f60ca7c4f1f5fb26,no-pulls to match no-merges
+timruffles,2012-11-07 16:42:03,https://api.github.com/repos/stephencelis/ghi/git/commits/0719911ca25c676ec180959047210d0430f1f720,0719911ca25c676ec180959047210d0430f1f720,add option to exclude pull requests
+stephencelis,2012-08-21 04:17:09,https://api.github.com/repos/stephencelis/ghi/git/commits/bbde9c26b0b4bdf49b04a4eb73fc455ce60f8aba,bbde9c26b0b4bdf49b04a4eb73fc455ce60f8aba,"Add patch option to show command [fix #59]
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-08-07 04:32:46,https://api.github.com/repos/stephencelis/ghi/git/commits/3065f689f443823042d57c9b33d97ff098170747,3065f689f443823042d57c9b33d97ff098170747,"Support git config https.proxy
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-08-07 04:28:52,https://api.github.com/repos/stephencelis/ghi/git/commits/615034c52c473580f5f0236fa850b59232bd18b4,615034c52c473580f5f0236fa850b59232bd18b4,"Implicit self
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-08-07 04:28:19,https://api.github.com/repos/stephencelis/ghi/git/commits/c077c95e39c4b751e935f24a039c28bd77d79ca1,c077c95e39c4b751e935f24a039c28bd77d79ca1,"Clean up proxy support
+
+Also add support for git http.proxy config.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-08-07 04:12:39,https://api.github.com/repos/stephencelis/ghi/git/commits/f899ea410f897401aa8ba14e42f5cc3e7fc61118,f899ea410f897401aa8ba14e42f5cc3e7fc61118,"Merge pull request #58 from Tomohiro/support-http-proxy
+
+Add support http_proxy environment variable"
+tomohiro,2012-08-07 03:57:48,https://api.github.com/repos/stephencelis/ghi/git/commits/496b555336a5c42cef9423c5029cec4b990ec370,496b555336a5c42cef9423c5029cec4b990ec370,Add support http_proxy environment variable
+stephencelis,2012-08-01 17:57:06,https://api.github.com/repos/stephencelis/ghi/git/commits/afe67f164528ecf566eb8dc17160f5e66e701df9,afe67f164528ecf566eb8dc17160f5e66e701df9,"List all open issues, unassigned [fix #57]
+
+Assignee was assumed to be a string and never nil.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-07-31 22:07:05,https://api.github.com/repos/stephencelis/ghi/git/commits/150f98801946ced819239c70c73e1c2f2d7496c8,150f98801946ced819239c70c73e1c2f2d7496c8,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-07-31 22:04:40,https://api.github.com/repos/stephencelis/ghi/git/commits/8d7f60fc22bec07c8e860cc889f153be9276d122,8d7f60fc22bec07c8e860cc889f153be9276d122,"Add create, new, update aliases to open and edit
+
+Per this suggestion:
+
+https://twitter.com/jnunemaker/statuses/230416855574134784
+
+Reported-by: John Nunemaker <john@github.com>
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-07-19 19:02:35,https://api.github.com/repos/stephencelis/ghi/git/commits/9a549e5aaadc55deba32862e27e503782d952c87,9a549e5aaadc55deba32862e27e503782d952c87,"Bump version
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-07-19 18:58:40,https://api.github.com/repos/stephencelis/ghi/git/commits/86d365ed39c9a3cd9e8a6721180c93f0ca24b4b8,86d365ed39c9a3cd9e8a6721180c93f0ca24b4b8,"Don't require title/body for issue edits [fix #55]
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-06-27 22:27:25,https://api.github.com/repos/stephencelis/ghi/git/commits/082c745ac267f22494c7ddd8130b0badfd4c9432,082c745ac267f22494c7ddd8130b0badfd4c9432,"Bump version to 0.9.0.20120627
+
+ - Fix argument handling of `ghi close -l'
+
+ - Allow for verbose listing of issues in milestone view
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2012-05-11 00:26:01,https://api.github.com/repos/stephencelis/ghi/git/commits/6b3c3f6568dd381223a0e597258c9907b8e25844,6b3c3f6568dd381223a0e597258c9907b8e25844,Fix argument passing. Allow for verbose issues in milestone view.
+stephencelis,2012-05-10 23:21:18,https://api.github.com/repos/stephencelis/ghi/git/commits/98cd9bdeade4b5ed18a350158d37268f0e43e581,98cd9bdeade4b5ed18a350158d37268f0e43e581,Bump version.
+stephencelis,2012-05-10 23:20:04,https://api.github.com/repos/stephencelis/ghi/git/commits/da1b335f098aba19b820caf7ccf38310fa3d9cb8,da1b335f098aba19b820caf7ccf38310fa3d9cb8,Lenient version.
+stephencelis,2012-05-10 23:17:19,https://api.github.com/repos/stephencelis/ghi/git/commits/60995363244a65e3969316e8c25faa64ae359f49,60995363244a65e3969316e8c25faa64ae359f49,Assign default options to less.
+stephencelis,2012-05-04 15:44:24,https://api.github.com/repos/stephencelis/ghi/git/commits/13fcc4f0667b1692213b3805eab0dd21f5748a1c,13fcc4f0667b1692213b3805eab0dd21f5748a1c,Better error for pull requests [#52].
+stephencelis,2012-05-04 15:39:21,https://api.github.com/repos/stephencelis/ghi/git/commits/82138111b9ed5e369fdd992a1fe76814110106a8,82138111b9ed5e369fdd992a1fe76814110106a8,Update build.
+stephencelis,2012-05-04 15:35:40,https://api.github.com/repos/stephencelis/ghi/git/commits/37676ba3ab7bc27aff5c2a42e070f66ede772cc5,37676ba3ab7bc27aff5c2a42e070f66ede772cc5,Bubble up errors [fix #53].
+stephencelis,2012-05-01 08:02:34,https://api.github.com/repos/stephencelis/ghi/git/commits/1eef298c50744b54d06925d70c5bc26225f51d3d,1eef298c50744b54d06925d70c5bc26225f51d3d,Update build.
+stephencelis,2012-05-01 07:59:30,https://api.github.com/repos/stephencelis/ghi/git/commits/6637d2c34fad2ef3acdc37ea463bfba6c26d282d,6637d2c34fad2ef3acdc37ea463bfba6c26d282d,Fix -w. Fix unlinking of non-existent file [fix #51].
+stephencelis,2012-04-30 01:09:02,https://api.github.com/repos/stephencelis/ghi/git/commits/a11b868131f43457ea458262d31be7822a5b1440,a11b868131f43457ea458262d31be7822a5b1440,Require repo for milestones.
+stephencelis,2012-04-27 19:51:29,https://api.github.com/repos/stephencelis/ghi/git/commits/6606330f0b6188a97bc2fdc12b39c767ecdca0f9,6606330f0b6188a97bc2fdc12b39c767ecdca0f9,Clean up options.
+stephencelis,2012-04-27 03:09:51,https://api.github.com/repos/stephencelis/ghi/git/commits/93a30ec32943e7813dbc1c935bc34a35cd53adb2,93a30ec32943e7813dbc1c935bc34a35cd53adb2,"Preliminary pull request conversion support.
+
+E.g., converting this ticket:
+
+  $ git br
+    master
+  * pull-requests
+  $ ghi e 47 -H
+  Issue #47 set up to track remote branch pull-requests against master.
+
+More explicitly:
+
+  $ ghi e 47 -Hstephencelis:pull-requests -bmaster"
+stephencelis,2012-04-27 16:06:09,https://api.github.com/repos/stephencelis/ghi/git/commits/17d43aa68eabaf51d2cbc27c57152bd47ccaf75a,17d43aa68eabaf51d2cbc27c57152bd47ccaf75a,Address formatting overflow.
+stephencelis,2012-04-27 15:33:09,https://api.github.com/repos/stephencelis/ghi/git/commits/7ee1fcebbba1bfa4db2beb153885d9e48aa8aab8,7ee1fcebbba1bfa4db2beb153885d9e48aa8aab8,Bump version.
+stephencelis,2012-04-27 07:01:18,https://api.github.com/repos/stephencelis/ghi/git/commits/de8b6bc0486ec7723ee27eec113920750315b9f0,de8b6bc0486ec7723ee27eec113920750315b9f0,Don't avoid '-h'.
+stephencelis,2012-04-27 06:47:08,https://api.github.com/repos/stephencelis/ghi/git/commits/49568434ddb787fb8a3feaab7790ae27aa7e0a74,49568434ddb787fb8a3feaab7790ae27aa7e0a74,Load tmpdir.
+stephencelis,2012-04-27 06:36:32,https://api.github.com/repos/stephencelis/ghi/git/commits/38f44b0cbcbe69bab346a5a2b6c9ffa4888bc314,38f44b0cbcbe69bab346a5a2b6c9ffa4888bc314,Use tmpdir for global issues.
+stephencelis,2012-04-27 06:14:40,https://api.github.com/repos/stephencelis/ghi/git/commits/f1a6d321932df5138ca3497c6dd267ef0647fe4e,f1a6d321932df5138ca3497c6dd267ef0647fe4e,Update build.
+stephencelis,2012-04-27 06:13:18,https://api.github.com/repos/stephencelis/ghi/git/commits/1428e53567ebef1cf25c1f4daf8eaa49c9534d57,1428e53567ebef1cf25c1f4daf8eaa49c9534d57,Store drafts in .git or Dir.tmpdir [fix #48].
+stephencelis,2012-04-27 05:34:55,https://api.github.com/repos/stephencelis/ghi/git/commits/ea673066c51fb2462f36282b371abec4597ce06e,ea673066c51fb2462f36282b371abec4597ce06e,Update build.
+stephencelis,2012-04-27 05:34:41,https://api.github.com/repos/stephencelis/ghi/git/commits/c525e2451179976240b71bbd67bf15df29abfe6c,c525e2451179976240b71bbd67bf15df29abfe6c,Better errors for edit.
+stephencelis,2012-04-27 03:11:14,https://api.github.com/repos/stephencelis/ghi/git/commits/bab5abbc60218162b1b15e58e07347dfdc80a2ca,bab5abbc60218162b1b15e58e07347dfdc80a2ca,Clarity.
+stephencelis,2012-04-25 19:38:30,https://api.github.com/repos/stephencelis/ghi/git/commits/9b877550e4e9ff9c4ad7f5816407adb0829e59a2,9b877550e4e9ff9c4ad7f5816407adb0829e59a2,Fix comment bug.
+stephencelis,2012-04-25 19:26:14,https://api.github.com/repos/stephencelis/ghi/git/commits/e227aa9703057c245eb21dedfe319ade0d2f137a,e227aa9703057c245eb21dedfe319ade0d2f137a,Fix for globals.
+stephencelis,2012-04-25 09:40:26,https://api.github.com/repos/stephencelis/ghi/git/commits/b7615e1da5be166dcf8998ed21e46e37cd7036b6,b7615e1da5be166dcf8998ed21e46e37cd7036b6,Obscure password input.
+stephencelis,2012-04-25 08:45:10,https://api.github.com/repos/stephencelis/ghi/git/commits/16971ba8ea283d03a64eb72e3cab66eca89834d4,16971ba8ea283d03a64eb72e3cab66eca89834d4,Better error messaging.
+stephencelis,2012-04-25 08:35:10,https://api.github.com/repos/stephencelis/ghi/git/commits/e2faba3b41280ad869cd763d6d215c2faf5e1d66,e2faba3b41280ad869cd763d6d215c2faf5e1d66,Update build.
+stephencelis,2012-04-25 08:35:05,https://api.github.com/repos/stephencelis/ghi/git/commits/a063d6525a34b44e7c550bbd0390503a70165f80,a063d6525a34b44e7c550bbd0390503a70165f80,Update manpage.
+stephencelis,2012-04-25 08:34:43,https://api.github.com/repos/stephencelis/ghi/git/commits/ed381d0ee1e1261df3fce2c9e3e865a677395fd5,ed381d0ee1e1261df3fce2c9e3e865a677395fd5,Detect assignees a bit better.
+stephencelis,2012-04-25 08:31:45,https://api.github.com/repos/stephencelis/ghi/git/commits/c6a9ad4cddbbb00d3700e47ceea4284ec5bb3394,c6a9ad4cddbbb00d3700e47ceea4284ec5bb3394,Make -l default to list.
+stephencelis,2012-04-25 08:28:42,https://api.github.com/repos/stephencelis/ghi/git/commits/d09ba9a62b28e7c16ae110913e35fd53b3cd7b97,d09ba9a62b28e7c16ae110913e35fd53b3cd7b97,Verbose comment mode.
+stephencelis,2012-04-25 08:28:19,https://api.github.com/repos/stephencelis/ghi/git/commits/c52ed93d24bdedc11c19c5baaf1d453ea2ffbab3,c52ed93d24bdedc11c19c5baaf1d453ea2ffbab3,Show version or set verbose.
+stephencelis,2012-04-25 07:11:33,https://api.github.com/repos/stephencelis/ghi/git/commits/1a55485ef4f38a7d5e0a7220084eada3717ff594,1a55485ef4f38a7d5e0a7220084eada3717ff594,Update build.
+stephencelis,2012-04-25 07:11:10,https://api.github.com/repos/stephencelis/ghi/git/commits/8bb042f39cd3dd40468f2da4ff0b6b600cedddee,8bb042f39cd3dd40468f2da4ff0b6b600cedddee,"Empty ""-m"" means editor."
+stephencelis,2012-04-25 07:10:38,https://api.github.com/repos/stephencelis/ghi/git/commits/fa018329c5e7add47923bb5d2ecb64a405a0b828,fa018329c5e7add47923bb5d2ecb64a405a0b828,Alias <issueno> to edit with modification options.
+stephencelis,2012-04-25 04:57:09,https://api.github.com/repos/stephencelis/ghi/git/commits/48f56044415a6c52c79022b3a2b1fdf411115c53,48f56044415a6c52c79022b3a2b1fdf411115c53,Basic manpage.
+stephencelis,2012-04-25 04:50:27,https://api.github.com/repos/stephencelis/ghi/git/commits/8b636d7ee80a4cfe0c2da01297dce8b802be5003,8b636d7ee80a4cfe0c2da01297dce8b802be5003,Add ENV vars.
+stephencelis,2012-04-25 01:20:26,https://api.github.com/repos/stephencelis/ghi/git/commits/0e9fd2e2a7cd0e5a4589ffe96a76b8a26b9883b7,0e9fd2e2a7cd0e5a4589ffe96a76b8a26b9883b7,Update build.
+stephencelis,2012-04-25 01:19:04,https://api.github.com/repos/stephencelis/ghi/git/commits/39643815a17189aedec22607478ad463f0cf526c,39643815a17189aedec22607478ad463f0cf526c,Add some --web options.
+stephencelis,2012-04-25 01:18:44,https://api.github.com/repos/stephencelis/ghi/git/commits/d39cb54c52a1b4c0f31214b53cf369036e0589e6,d39cb54c52a1b4c0f31214b53cf369036e0589e6,Clean up debug info.
+stephencelis,2012-04-23 18:20:32,https://api.github.com/repos/stephencelis/ghi/git/commits/eff75b1e3f25a0258dc97a0cfdf4ed81d2794290,eff75b1e3f25a0258dc97a0cfdf4ed81d2794290,Update build.
+stephencelis,2012-04-23 18:20:24,https://api.github.com/repos/stephencelis/ghi/git/commits/927c37decaa65511c43c634f1f1198c5b911aed6,927c37decaa65511c43c634f1f1198c5b911aed6,Fix pagination params.
+stephencelis,2012-04-23 18:11:17,https://api.github.com/repos/stephencelis/ghi/git/commits/50da4e7931c18c67ed37489d6daa37625797fd72,50da4e7931c18c67ed37489d6daa37625797fd72,Bump build.
+stephencelis,2012-04-23 18:11:12,https://api.github.com/repos/stephencelis/ghi/git/commits/95767e5a12d23856e2545ed49f3606bc625fd112,95767e5a12d23856e2545ed49f3606bc625fd112,Bump per_page to 100.
+stephencelis,2012-04-23 17:46:08,https://api.github.com/repos/stephencelis/ghi/git/commits/3ba24e7ad7ae37c2d23d6f587074c2e149ee8679,3ba24e7ad7ae37c2d23d6f587074c2e149ee8679,Minor README updates.
+stephencelis,2012-04-23 17:38:06,https://api.github.com/repos/stephencelis/ghi/git/commits/0bd69bcb528f22b9e98c0f85004ccf9c7c040c7d,0bd69bcb528f22b9e98c0f85004ccf9c7c040c7d,Update build.
+stephencelis,2012-04-23 17:35:24,https://api.github.com/repos/stephencelis/ghi/git/commits/a644471da172540c804bab30c2fa91136408ed0b,a644471da172540c804bab30c2fa91136408ed0b,Label legibility.
+stephencelis,2012-04-23 17:34:16,https://api.github.com/repos/stephencelis/ghi/git/commits/3862ba1136cca72af49a7c541b9c9506274a25d7,3862ba1136cca72af49a7c541b9c9506274a25d7,Formatting: lowercase change.
+stephencelis,2012-04-23 17:33:51,https://api.github.com/repos/stephencelis/ghi/git/commits/e66b23ec83d6fd9cb5a5026d91b61e09ad9cf6a4,e66b23ec83d6fd9cb5a5026d91b61e09ad9cf6a4,Bail out early for destroy with no milesone specified.
+stephencelis,2012-04-23 17:33:21,https://api.github.com/repos/stephencelis/ghi/git/commits/a55071f1850bf7b88bdac6b5b799cce58fc8865c,a55071f1850bf7b88bdac6b5b799cce58fc8865c,Allow multiple labels by -Lfoo -Lbar.
+stephencelis,2012-04-23 17:32:50,https://api.github.com/repos/stephencelis/ghi/git/commits/a9c56f3425a678a52698d0807f0bab46e140979b,a9c56f3425a678a52698d0807f0bab46e140979b,"Add milestone shortcut, 'M'."
+stephencelis,2012-04-17 00:03:07,https://api.github.com/repos/stephencelis/ghi/git/commits/b0ffdc7310b87e8b1dff42f7c94dd8ef12b7ca78,b0ffdc7310b87e8b1dff42f7c94dd8ef12b7ca78,Accommodate larger comment numbers in list view.
+stephencelis,2012-04-16 16:24:16,https://api.github.com/repos/stephencelis/ghi/git/commits/23f83ff9c45a0d3c6628876b607dd368df950294,23f83ff9c45a0d3c6628876b607dd368df950294,Update build.
+stephencelis,2012-04-16 16:23:51,https://api.github.com/repos/stephencelis/ghi/git/commits/fe634033ec79b0606fb41b7ab3574eceaaa26f19,fe634033ec79b0606fb41b7ab3574eceaaa26f19,Include comment count in issue header.
+stephencelis,2012-04-16 16:08:06,https://api.github.com/repos/stephencelis/ghi/git/commits/666fed62d3de921ec83fbaace76773dec413d002,666fed62d3de921ec83fbaace76773dec413d002,Make highlighting less fancy (and more reliable).
+stephencelis,2012-04-16 16:07:46,https://api.github.com/repos/stephencelis/ghi/git/commits/ba750f5bdb4f2cdc4244463bdddf5f7f547a76c9,ba750f5bdb4f2cdc4244463bdddf5f7f547a76c9,Don't use repo as command.
+stephencelis,2012-04-16 15:29:16,https://api.github.com/repos/stephencelis/ghi/git/commits/163337623c5f1a948b01e0149405466663e70373,163337623c5f1a948b01e0149405466663e70373,Fix list/milestone paginate view.
+stephencelis,2012-04-07 21:02:47,https://api.github.com/repos/stephencelis/ghi/git/commits/bec897ae1d13cf9ad891728a81b5b22c7cd5b242,bec897ae1d13cf9ad891728a81b5b22c7cd5b242,Update build.
+stephencelis,2012-04-07 21:02:10,https://api.github.com/repos/stephencelis/ghi/git/commits/73359edbea7eefdd98bfe43247a2ed076cee6953,73359edbea7eefdd98bfe43247a2ed076cee6953,Expose/complete --no-pager.
+stephencelis,2012-04-06 17:41:23,https://api.github.com/repos/stephencelis/ghi/git/commits/421cfec889d9295fde8567fba5949dcbe5a68562,421cfec889d9295fde8567fba5949dcbe5a68562,Set encoding in standalone file.
+stephencelis,2012-04-06 17:10:13,https://api.github.com/repos/stephencelis/ghi/git/commits/b7f44ebf79b5a4ba3017d78c9e0b5f77108b780f,b7f44ebf79b5a4ba3017d78c9e0b5f77108b780f,Update build.
+stephencelis,2012-04-06 17:07:54,https://api.github.com/repos/stephencelis/ghi/git/commits/cabceccc412dc99426518032264f81841a636f46,cabceccc412dc99426518032264f81841a636f46,Alias for show.
+stephencelis,2012-04-06 17:04:01,https://api.github.com/repos/stephencelis/ghi/git/commits/d15bdc3869d9a0bb0ed18c2757b5ebd850fc960c,d15bdc3869d9a0bb0ed18c2757b5ebd850fc960c,Sometimes NaN.
+stephencelis,2012-04-06 17:00:56,https://api.github.com/repos/stephencelis/ghi/git/commits/863a658ce29e56be0917cbac22e97dc7423cf1b7,863a658ce29e56be0917cbac22e97dc7423cf1b7,Milestone visual.
+stephencelis,2012-04-06 16:17:34,https://api.github.com/repos/stephencelis/ghi/git/commits/006daa2483f42719788fdf9d0a1fdd059613db8c,006daa2483f42719788fdf9d0a1fdd059613db8c,Milestone info.
+stephencelis,2012-04-06 15:34:40,https://api.github.com/repos/stephencelis/ghi/git/commits/aeed2c9a20f71cf42ad78d1a363de666b95cfc72,aeed2c9a20f71cf42ad78d1a363de666b95cfc72,Pipe all milestone detail content.
+stephencelis,2012-04-05 17:13:26,https://api.github.com/repos/stephencelis/ghi/git/commits/330c600ba4f8d181d36bebac391a0246e2ada7e5,330c600ba4f8d181d36bebac391a0246e2ada7e5,Update install instructions.
+stephencelis,2012-04-05 17:10:00,https://api.github.com/repos/stephencelis/ghi/git/commits/ec608e352bb0dfce1a56048368eaaa1058fd614e,ec608e352bb0dfce1a56048368eaaa1058fd614e,Add standalone script.
+stephencelis,2012-04-05 17:05:31,https://api.github.com/repos/stephencelis/ghi/git/commits/0f5c4d376455ac606992a1e5a675ede8be62689b,0f5c4d376455ac606992a1e5a675ede8be62689b,Remove old require.
+stephencelis,2012-04-05 16:38:41,https://api.github.com/repos/stephencelis/ghi/git/commits/b28cf348584eeea3f94a60a2cc1f53bbb588dd93,b28cf348584eeea3f94a60a2cc1f53bbb588dd93,Shortcuts.
+stephencelis,2012-04-05 16:35:08,https://api.github.com/repos/stephencelis/ghi/git/commits/dfbb41e34afb9184faa93ecd8553a5645a6aa963,dfbb41e34afb9184faa93ecd8553a5645a6aa963,EDITOR milestone.
+stephencelis,2012-04-05 08:17:23,https://api.github.com/repos/stephencelis/ghi/git/commits/f47e35eecca7ac5fd5bd4bb7c6490ee505e72330,f47e35eecca7ac5fd5bd4bb7c6490ee505e72330,Editor support. General cleanup.
+stephencelis,2012-04-05 04:32:59,https://api.github.com/repos/stephencelis/ghi/git/commits/585a54e83da248db44b1e6f3e1d59d2e848985ec,585a54e83da248db44b1e6f3e1d59d2e848985ec,Don't match ranges.
+stephencelis,2012-04-05 04:32:48,https://api.github.com/repos/stephencelis/ghi/git/commits/d02a3f6591668ca61243ba98208f4dc46840e482,d02a3f6591668ca61243ba98208f4dc46840e482,Pass repo.
+stephencelis,2012-04-05 04:32:32,https://api.github.com/repos/stephencelis/ghi/git/commits/ba91e6e5358ac8278e5ea1940dd05b96bb2bed4c,ba91e6e5358ac8278e5ea1940dd05b96bb2bed4c,Linkify.
+stephencelis,2012-04-05 01:49:53,https://api.github.com/repos/stephencelis/ghi/git/commits/4bcfbf6aa6a278ebe7e213907507817ee53715d0,4bcfbf6aa6a278ebe7e213907507817ee53715d0,Update example image.
+stephencelis,2012-04-05 01:46:53,https://api.github.com/repos/stephencelis/ghi/git/commits/373212d8a16bf4431f84d436c4c4d5ed19234f42,373212d8a16bf4431f84d436c4c4d5ed19234f42,Better Markdown-ish formatting.
+stephencelis,2012-04-05 01:46:13,https://api.github.com/repos/stephencelis/ghi/git/commits/97c6970408668d834d18346275820fadb1ad08a5,97c6970408668d834d18346275820fadb1ad08a5,Better red/green state color.
+stephencelis,2012-04-05 01:45:55,https://api.github.com/repos/stephencelis/ghi/git/commits/a72938e0dfa77673769ac52d2cd3eee18cd5ec0d,a72938e0dfa77673769ac52d2cd3eee18cd5ec0d,Don't colorize issue/milestone headers.
+stephencelis,2012-04-05 01:44:34,https://api.github.com/repos/stephencelis/ghi/git/commits/c9ebc63481fc3755d7fde1232831f18b70765e87,c9ebc63481fc3755d7fde1232831f18b70765e87,Don't close an already-closed stream.
+stephencelis,2012-04-05 01:44:11,https://api.github.com/repos/stephencelis/ghi/git/commits/3da9b2fff05af7736b3ec6e22b855ce11a413946,3da9b2fff05af7736b3ec6e22b855ce11a413946,Update <show> to stop using old pagination.
+stephencelis,2012-04-05 01:43:59,https://api.github.com/repos/stephencelis/ghi/git/commits/ffa599aa1f5c4c1b5b6ed01406fd47a84bc4ec2c,ffa599aa1f5c4c1b5b6ed01406fd47a84bc4ec2c,Avoid empty space.
+stephencelis,2012-04-05 01:39:28,https://api.github.com/repos/stephencelis/ghi/git/commits/742c7e64f0614686be5a7ba8d8293b5aa602b145,742c7e64f0614686be5a7ba8d8293b5aa602b145,Remember.
+stephencelis,2012-04-04 18:27:28,https://api.github.com/repos/stephencelis/ghi/git/commits/92789c95e6a4f45c4fa52cc16926ca1ee00ec1ec,92789c95e6a4f45c4fa52cc16926ca1ee00ec1ec,Retain context.
+stephencelis,2012-04-04 16:45:03,https://api.github.com/repos/stephencelis/ghi/git/commits/e3eecc2f6d0b7ea771369d92d5502a629bac7434,e3eecc2f6d0b7ea771369d92d5502a629bac7434,Throttle pagination.
+stephencelis,2012-04-04 16:15:41,https://api.github.com/repos/stephencelis/ghi/git/commits/25492c735c3b981ff88c545a77b58a1c37fbc712,25492c735c3b981ff88c545a77b58a1c37fbc712,Auto-page.
+stephencelis,2012-04-04 15:28:14,https://api.github.com/repos/stephencelis/ghi/git/commits/9eb6739b6d341576b75bedeb91ac97f61fa2b339,9eb6739b6d341576b75bedeb91ac97f61fa2b339,Update paging behavior.
+stephencelis,2012-04-04 09:47:41,https://api.github.com/repos/stephencelis/ghi/git/commits/88238f07bcdff3eff680ef61b78426d4325d3a28,88238f07bcdff3eff680ef61b78426d4325d3a28,Update image link.
+stephencelis,2012-04-04 09:44:07,https://api.github.com/repos/stephencelis/ghi/git/commits/a901276ac4916759b696fe9748f15677f8db0673,a901276ac4916759b696fe9748f15677f8db0673,Don't always load comments. Update example.
+stephencelis,2012-04-04 09:38:17,https://api.github.com/repos/stephencelis/ghi/git/commits/02788897072ffd6581280c5f8b51ff9765dc40d5,02788897072ffd6581280c5f8b51ff9765dc40d5,Merge branch 'v3'
+stephencelis,2012-04-04 09:38:09,https://api.github.com/repos/stephencelis/ghi/git/commits/2b370f18f5d1a2ddce52c2d8579132ebad95c0f6,2b370f18f5d1a2ddce52c2d8579132ebad95c0f6,Set --pre version and instructions.
+stephencelis,2012-04-04 09:33:26,https://api.github.com/repos/stephencelis/ghi/git/commits/72c3771ae1307173f2cf6660e34a15545cca1430,72c3771ae1307173f2cf6660e34a15545cca1430,Fix authorization message.
+stephencelis,2012-04-04 09:26:47,https://api.github.com/repos/stephencelis/ghi/git/commits/948cf467da9502e4d8fb75203670479d74d8dcee,948cf467da9502e4d8fb75203670479d74d8dcee,More lenient paging. Include comments in show.
+stephencelis,2012-04-04 09:14:02,https://api.github.com/repos/stephencelis/ghi/git/commits/e928ac20d902ef2863e6ff9d37ade06271df92b6,e928ac20d902ef2863e6ff9d37ade06271df92b6,Pagination. Paging. Style. Good stuff.
+stephencelis,2012-04-03 08:25:53,https://api.github.com/repos/stephencelis/ghi/git/commits/6e0c211c9a139d4c12d6492b5f176386ac9bef6f,6e0c211c9a139d4c12d6492b5f176386ac9bef6f,Clean up interface.
+stephencelis,2012-04-02 16:59:35,https://api.github.com/repos/stephencelis/ghi/git/commits/e9c292f3fe8eecaa95ac9c697f6782f94c0af6cb,e9c292f3fe8eecaa95ac9c697f6782f94c0af6cb,Typo.
+stephencelis,2012-04-02 16:44:30,https://api.github.com/repos/stephencelis/ghi/git/commits/46ec1665b9359f241b787d39af96096a5f36e0b4,46ec1665b9359f241b787d39af96096a5f36e0b4,Comments can't be ordered.
+stephencelis,2012-04-02 16:33:34,https://api.github.com/repos/stephencelis/ghi/git/commits/e22d2b95e0304e6713cd04de7ed9bc6775f43552,e22d2b95e0304e6713cd04de7ed9bc6775f43552,Better language.
+stephencelis,2012-04-02 16:28:57,https://api.github.com/repos/stephencelis/ghi/git/commits/71b501799409fa7b784f20cbd19d48cb268094dc,71b501799409fa7b784f20cbd19d48cb268094dc,Reveal bad credentials error.
+stephencelis,2012-04-02 16:20:38,https://api.github.com/repos/stephencelis/ghi/git/commits/6448b54a10a4f047f7718fbf99e8ef4f97c550e6,6448b54a10a4f047f7718fbf99e8ef4f97c550e6,More auth goodness.
+stephencelis,2012-04-02 16:12:48,https://api.github.com/repos/stephencelis/ghi/git/commits/d1534cff0d06a0c6b34468683330ccc789af5716,d1534cff0d06a0c6b34468683330ccc789af5716,Auth fixes.
+stephencelis,2012-04-02 16:02:46,https://api.github.com/repos/stephencelis/ghi/git/commits/2f64180ea55aff5d632ee7438e82c89b7b9961e2,2f64180ea55aff5d632ee7438e82c89b7b9961e2,Better auth check.
+stephencelis,2012-04-02 15:51:55,https://api.github.com/repos/stephencelis/ghi/git/commits/dd8de6a24b9a33418a0aca7b93b213a48e11106f,dd8de6a24b9a33418a0aca7b93b213a48e11106f,Don't blow up on man.
+stephencelis,2012-04-02 15:47:45,https://api.github.com/repos/stephencelis/ghi/git/commits/67c4512963c09ee8b7a0b0a76bb61d0ce864699c,67c4512963c09ee8b7a0b0a76bb61d0ce864699c,Consistency.
+stephencelis,2012-04-02 15:41:36,https://api.github.com/repos/stephencelis/ghi/git/commits/f016af24aec5338ee8aeb175e1758f0488dd860d,f016af24aec5338ee8aeb175e1758f0488dd860d,Don't blow up on empty --help.
+stephencelis,2012-04-02 08:30:53,https://api.github.com/repos/stephencelis/ghi/git/commits/d2088f46d4edb8c478033262e79f42402702e75c,d2088f46d4edb8c478033262e79f42402702e75c,More throbbers.
+stephencelis,2012-04-02 08:13:04,https://api.github.com/repos/stephencelis/ghi/git/commits/d821e9c82c77995660dce20d7d3c1fe12aac591a,d821e9c82c77995660dce20d7d3c1fe12aac591a,Formatting tweaks.
+stephencelis,2012-04-02 06:06:28,https://api.github.com/repos/stephencelis/ghi/git/commits/d184821d33885a4a83cda673ca3ca8d40903e8d6,d184821d33885a4a83cda673ca3ca8d40903e8d6,Example for README.
+stephencelis,2012-04-02 05:44:12,https://api.github.com/repos/stephencelis/ghi/git/commits/fce609c01bea25679cb5455fdf40838e47b5caf1,fce609c01bea25679cb5455fdf40838e47b5caf1,Finish up initial implementation.
+stephencelis,2012-04-02 05:28:57,https://api.github.com/repos/stephencelis/ghi/git/commits/08cb67436bdca8147d0ac87ceba434b5109cf9ca,08cb67436bdca8147d0ac87ceba434b5109cf9ca,More coverage.
+stephencelis,2012-04-02 03:04:01,https://api.github.com/repos/stephencelis/ghi/git/commits/8c39cda8b4f9d6d4d85c511cce3af1098979fd8d,8c39cda8b4f9d6d4d85c511cce3af1098979fd8d,Formatting tweaks. Close support.
+stephencelis,2012-04-02 01:57:19,https://api.github.com/repos/stephencelis/ghi/git/commits/c62587b3d49c54502d69484e716c1420c3eb9d88,c62587b3d49c54502d69484e716c1420c3eb9d88,Auth updates. More throbbing.
+stephencelis,2012-04-02 00:49:41,https://api.github.com/repos/stephencelis/ghi/git/commits/2ea0bfada8850e6daa6a91c5d3168840f089f5f9,2ea0bfada8850e6daa6a91c5d3168840f089f5f9,"Formatting, cleanup, throbber."
+stephencelis,2012-04-01 22:03:59,https://api.github.com/repos/stephencelis/ghi/git/commits/88ed8d401c4a62271077680f9c4403ed7fd5f392,88ed8d401c4a62271077680f9c4403ed7fd5f392,Aliases.
+stephencelis,2012-04-01 21:45:41,https://api.github.com/repos/stephencelis/ghi/git/commits/e2271c07f9c6b582638a18df77502bbf3beb4b6b,e2271c07f9c6b582638a18df77502bbf3beb4b6b,Move templates to formatting module.
+stephencelis,2012-04-01 20:35:41,https://api.github.com/repos/stephencelis/ghi/git/commits/1bd1e3ab46bd0538eb9242a67187bc8aa2c52a2c,1bd1e3ab46bd0538eb9242a67187bc8aa2c52a2c,Basic list/show/label support.
+stephencelis,2012-03-30 17:51:03,https://api.github.com/repos/stephencelis/ghi/git/commits/9856d6bf1fd40e9bc81297d0555ec9e4228880a9,9856d6bf1fd40e9bc81297d0555ec9e4228880a9,Clarify comment API.
+stephencelis,2012-03-30 17:07:43,https://api.github.com/repos/stephencelis/ghi/git/commits/1103a92c649a0322646ef3989f587b111f0c577e,1103a92c649a0322646ef3989f587b111f0c577e,A bit more polish.
+stephencelis,2012-03-30 17:07:07,https://api.github.com/repos/stephencelis/ghi/git/commits/b2893bcefe7aaeab17665fc415e2803501f0e92b,b2893bcefe7aaeab17665fc415e2803501f0e92b,Polish interface.
+stephencelis,2012-03-30 16:58:31,https://api.github.com/repos/stephencelis/ghi/git/commits/b8970d59f9d917ae153d0653b5ba8d772703040d,b8970d59f9d917ae153d0653b5ba8d772703040d,API tweaks.
+stephencelis,2012-03-30 16:53:56,https://api.github.com/repos/stephencelis/ghi/git/commits/b6e6dec09e82ca5b758c7b7102d9d8a6c80f4a61,b6e6dec09e82ca5b758c7b7102d9d8a6c80f4a61,Further flesh out v3 API.
+stephencelis,2012-03-30 08:37:59,https://api.github.com/repos/stephencelis/ghi/git/commits/4dde7831eb412862b3a5ebd75ce7896b8e7d105f,4dde7831eb412862b3a5ebd75ce7896b8e7d105f,Start scaffolding new CLI design.
+stephencelis,2012-03-29 18:16:27,https://api.github.com/repos/stephencelis/ghi/git/commits/38214cbb8c297f83265376612f4deb3a0efede62,38214cbb8c297f83265376612f4deb3a0efede62,"Merge pull request #41 from connormontgomery/master
+
+List issues in reverse chronological order"
+stephencelis,2012-03-22 16:21:23,https://api.github.com/repos/stephencelis/ghi/git/commits/bfcaeeee472c393a464f495cfe0aab1754965f1d,bfcaeeee472c393a464f495cfe0aab1754965f1d,"Merge pull request #38 from noblesamurai/master
+
+Pull default repo and user based on remote url, not just the first github repo in git-config"
+eugeneware,2012-03-22 03:38:28,https://api.github.com/repos/stephencelis/ghi/git/commits/fc456bc3b79fab116d52be595ff86222fa0ca4f9,fc456bc3b79fab116d52be595ff86222fa0ca4f9,Get the default repo based on the remote url
+stephencelis,2012-01-13 17:32:43,https://api.github.com/repos/stephencelis/ghi/git/commits/28a42d587d78413c9fa7ed01a8882a79075d0b69,28a42d587d78413c9fa7ed01a8882a79075d0b69,0.3.1: Support environment variables. Fix typo.
+stephencelis,2012-01-13 17:31:07,https://api.github.com/repos/stephencelis/ghi/git/commits/4981dd21493a7bd3f3f8e6514ab13573041447a2,4981dd21493a7bd3f3f8e6514ab13573041447a2,"Merge pull request #34 from myfreeweb/master
+
+Getting github user and token from env"
+myfreeweb,2012-01-13 13:23:30,https://api.github.com/repos/stephencelis/ghi/git/commits/8828ddea2002a8894081e4db8b13aeadc86a0667,8828ddea2002a8894081e4db8b13aeadc86a0667,using token and name from env
+stephencelis,2012-01-09 02:46:29,https://api.github.com/repos/stephencelis/ghi/git/commits/5aafdce149bd0a403e651fe71d12765ccd0e6e17,5aafdce149bd0a403e651fe71d12765ccd0e6e17,Bump to 0.3.0.
+stephencelis,2012-01-09 02:42:33,https://api.github.com/repos/stephencelis/ghi/git/commits/ced028ddf172ae940fb8e3e9fa65d0f2bdfcf81a,ced028ddf172ae940fb8e3e9fa65d0f2bdfcf81a,Remove interactive setup.
+stephencelis,2012-01-09 02:29:55,https://api.github.com/repos/stephencelis/ghi/git/commits/928c26bb9f00c3788f501c1caa3f18b5bb73d582,928c26bb9f00c3788f501c1caa3f18b5bb73d582,Update issue URL [fixes #28].
+stephencelis,2012-01-09 02:27:47,https://api.github.com/repos/stephencelis/ghi/git/commits/840d2d67be5977b3034b75f08e17acce4231b574,840d2d67be5977b3034b75f08e17acce4231b574,Assorted fixes/tweaks to argument parser.
+stephencelis,2012-01-09 02:02:52,https://api.github.com/repos/stephencelis/ghi/git/commits/78688accfee7d1cbac316d6ff72834da1202fae4,78688accfee7d1cbac316d6ff72834da1202fae4,Fix regex introduced by 068d16c.
+stephencelis,2011-10-29 16:31:27,https://api.github.com/repos/stephencelis/ghi/git/commits/f93377e161203f278fdf83c1733c57256e7aeb88,f93377e161203f278fdf83c1733c57256e7aeb88,"Merge pull request #31 from pc/patch-1
+
+Match remotes that don't end in .git"
+stephencelis,2011-09-01 16:38:00,https://api.github.com/repos/stephencelis/ghi/git/commits/4981ac82d0321e5218c4d9a3b8b20b29c95879a6,4981ac82d0321e5218c4d9a3b8b20b29c95879a6,Fix a few potential hiccups.
+stephencelis,2011-09-01 16:24:28,https://api.github.com/repos/stephencelis/ghi/git/commits/f76b9d68154faf9aef91f0b2fd8c8f67ddf2bce5,f76b9d68154faf9aef91f0b2fd8c8f67ddf2bce5,Require net/https [fixes #26].
+stephencelis,2011-09-01 16:23:56,https://api.github.com/repos/stephencelis/ghi/git/commits/ba683611a0926363b51695da1b87f4a915636426,ba683611a0926363b51695da1b87f4a915636426,Spring cleaning.
+stephencelis,2011-09-01 16:22:03,https://api.github.com/repos/stephencelis/ghi/git/commits/166c165ded030c7c7fb1596d4832b88d766858d1,166c165ded030c7c7fb1596d4832b88d766858d1,YAML::ENGINE is not defined in 1.8.7.
+stephencelis,2011-09-01 16:03:41,https://api.github.com/repos/stephencelis/ghi/git/commits/a87dfb070ffd8f3de213a89eca90c79be1c496e0,a87dfb070ffd8f3de213a89eca90c79be1c496e0,Update README for spec-running.
+stephencelis,2011-09-01 16:03:25,https://api.github.com/repos/stephencelis/ghi/git/commits/9f91fcc36065a2da1597d2233604e4bd9b31f50e,9f91fcc36065a2da1597d2233604e4bd9b31f50e,Use syck.
+stephencelis,2011-09-01 16:03:06,https://api.github.com/repos/stephencelis/ghi/git/commits/bfb4e2304897c0ca66dadf4d5f3b47aff5638d97,bfb4e2304897c0ca66dadf4d5f3b47aff5638d97,Gemfile.
+stephencelis,2011-09-01 16:02:49,https://api.github.com/repos/stephencelis/ghi/git/commits/3a06402254ee7bbfbd952f8c091b08e1be47931c,3a06402254ee7bbfbd952f8c091b08e1be47931c,Update gemspec.
+stephencelis,2011-08-11 21:52:43,https://api.github.com/repos/stephencelis/ghi/git/commits/a184b47c70e57d4a80e9a327e42faf5ffd0c95f8,a184b47c70e57d4a80e9a327e42faf5ffd0c95f8,"Merge pull request #25 from zol/master
+
+Looks like github changed their url format around slightly."
+zol,2011-08-11 21:48:29,https://api.github.com/repos/stephencelis/ghi/git/commits/e492448bad7ee6c5ddb741fcb51bdca3f7107797,e492448bad7ee6c5ddb741fcb51bdca3f7107797,Bug fix: updated issue url as old one is broken.
+stephencelis,2011-08-11 21:29:13,https://api.github.com/repos/stephencelis/ghi/git/commits/6fedc947f914503ce4d26e4c78dca4501011c480,6fedc947f914503ce4d26e4c78dca4501011c480,"Merge pull request #24 from zol/master
+
+Added labels to issue listing and to issue show view"
+zol,2011-08-11 21:15:57,https://api.github.com/repos/stephencelis/ghi/git/commits/7479d4519c82964baa238843f4d1580091d55976,7479d4519c82964baa238843f4d1580091d55976,Added support for displaying labels
+stephencelis,2011-04-27 18:38:20,https://api.github.com/repos/stephencelis/ghi/git/commits/5a93bdba55bf5f3f677a3d70769878dff2c24528,5a93bdba55bf5f3f677a3d70769878dff2c24528,Add comments to show view [fixes #22].
+stephencelis,2010-07-28 21:52:19,https://api.github.com/repos/stephencelis/ghi/git/commits/cf7e82216cb85c831bbc3cda40db97a39d09ce01,cf7e82216cb85c831bbc3cda40db97a39d09ce01,Add contributor. Bump gemspec.
+hjdivad,2010-07-14 06:31:15,https://api.github.com/repos/stephencelis/ghi/git/commits/5396218e808303705a80d3a913cd717c2e9d3049,5396218e808303705a80d3a913cd717c2e9d3049,"Added --ssl flag.
+
+Signed-off-by: Stephen Celis <stephen@stephencelis.com>"
+stephencelis,2009-12-29 04:43:24,https://api.github.com/repos/stephencelis/ghi/git/commits/b5f4f357a84230130e114af889ae42ffb413d79f,b5f4f357a84230130e114af889ae42ffb413d79f,Bump to 0.2.4.
+stephencelis,2009-12-29 04:39:36,https://api.github.com/repos/stephencelis/ghi/git/commits/a5197515bc32e9a15f62a6564d9b7b5529f817aa,a5197515bc32e9a15f62a6564d9b7b5529f817aa,Detect remotes and prefer them.
+stephencelis,2009-12-26 15:08:35,https://api.github.com/repos/stephencelis/ghi/git/commits/56f0ba66fa7fb28ab17481e00b5bdc97639cc485,56f0ba66fa7fb28ab17481e00b5bdc97639cc485,Formatting fixes for Ruby 1.9.1.
+stephencelis,2009-12-17 06:37:36,https://api.github.com/repos/stephencelis/ghi/git/commits/fc2745ce7c9943900df12394cb3739a5c4c4585f,fc2745ce7c9943900df12394cb3739a5c4c4585f,Bump version.
+stephencelis,2009-12-17 06:23:37,https://api.github.com/repos/stephencelis/ghi/git/commits/1aa6870bc6ad65e2fd79d0544d33a727aa20b215,1aa6870bc6ad65e2fd79d0544d33a727aa20b215,"Be more faithful to git editor, pager, and web option."
+stephencelis,2009-11-30 18:29:25,https://api.github.com/repos/stephencelis/ghi/git/commits/7fe13f814de2eafa0184cb9f012c4e138b060583,7fe13f814de2eafa0184cb9f012c4e138b060583,Bump gemspec.
+stephencelis,2009-11-30 18:22:57,https://api.github.com/repos/stephencelis/ghi/git/commits/a72e383137d1fcd6fb3037a21b183512c3395149,a72e383137d1fcd6fb3037a21b183512c3395149,Net::HTTP post params must be stringified keys in Ruby 1.9 [fixes #19].
+stephencelis,2009-11-30 03:54:12,https://api.github.com/repos/stephencelis/ghi/git/commits/d41df25773a2e335585d454cd28997dd4a12e8ec,d41df25773a2e335585d454cd28997dd4a12e8ec,Bump gemspec.
+stephencelis,2009-11-30 03:47:05,https://api.github.com/repos/stephencelis/ghi/git/commits/c77690497fd80bd8e16a179db4621083a68b7ade,c77690497fd80bd8e16a179db4621083a68b7ade,ANSI format by word break [fixes #18].
+stephencelis,2009-11-29 15:44:51,https://api.github.com/repos/stephencelis/ghi/git/commits/ea00690ce6fc7b2005d880f2911eccb1efa3594f,ea00690ce6fc7b2005d880f2911eccb1efa3594f,Remove defunct Gemcutter sourcing instructions.
+stephencelis,2009-11-03 14:31:07,https://api.github.com/repos/stephencelis/ghi/git/commits/a836e3b41a78e1cc82ae729b3cc43c5cbdd3ab61,a836e3b41a78e1cc82ae729b3cc43c5cbdd3ab61,Update README for Gemcutter installation instructions.
+stephencelis,2009-11-03 14:25:45,https://api.github.com/repos/stephencelis/ghi/git/commits/a7984d4adbb537920093af6f625eb638386c4b48,a7984d4adbb537920093af6f625eb638386c4b48,Bump gemspec.
+stephencelis,2009-08-31 20:43:42,https://api.github.com/repos/stephencelis/ghi/git/commits/20d8742f7f50201ee12ccf6f68843e8112c2dbad,20d8742f7f50201ee12ccf6f68843e8112c2dbad,Clean rough edges: only warn for API actions; be more helpful with help.
+stephencelis,2009-08-27 00:36:34,https://api.github.com/repos/stephencelis/ghi/git/commits/e66148474a4eac0dac54d01ab5199608eea779da,e66148474a4eac0dac54d01ab5199608eea779da,Bump gemspec.
+stephencelis,2009-08-27 00:34:36,https://api.github.com/repos/stephencelis/ghi/git/commits/40f1525ef32292f17fff7a6df463460ef55065f5,40f1525ef32292f17fff7a6df463460ef55065f5,Fix bug preventing invocation from non-GitHub repo directories.
+stephencelis,2009-08-25 18:24:12,https://api.github.com/repos/stephencelis/ghi/git/commits/e9498876bbe0c36fed013830e7ecf8842625117b,e9498876bbe0c36fed013830e7ecf8842625117b,Allow dots in repo names [fixes #17].
+stephencelis,2009-08-05 23:28:37,https://api.github.com/repos/stephencelis/ghi/git/commits/b4172a87a13c9332843e6d54d3943346db861900,b4172a87a13c9332843e6d54d3943346db861900,Bump gemspec.
+stephencelis,2009-08-05 23:26:01,https://api.github.com/repos/stephencelis/ghi/git/commits/6e0d56fc1432bad276e76a34e9bff184a28b5eea,6e0d56fc1432bad276e76a34e9bff184a28b5eea,"Support for non-""origin"" remotes [fixes #16]."
+stephencelis,2009-08-05 23:23:55,https://api.github.com/repos/stephencelis/ghi/git/commits/9faa6a2d6957a6c6820a14ebfeea4ccf074198d7,9faa6a2d6957a6c6820a14ebfeea4ccf074198d7,Graceful offline error.
+stephencelis,2009-08-05 23:23:17,https://api.github.com/repos/stephencelis/ghi/git/commits/ff4390570db2b347d96f5904e9289477778b74af,ff4390570db2b347d96f5904e9289477778b74af,Cleanup.
+stephencelis,2009-07-08 12:57:00,https://api.github.com/repos/stephencelis/ghi/git/commits/edacbed807b0e0efb9b2e8d8737dfe8d78518a39,edacbed807b0e0efb9b2e8d8737dfe8d78518a39,"Fix wrapping and parsing issue.
+
+* Long titles should wrap in show/verbose issue view.
+* If a non-OptionParser argument fails early, re-parse when valid."
+stephencelis,2009-05-15 14:44:12,https://api.github.com/repos/stephencelis/ghi/git/commits/e8740d5e90f2b1ee4482848db11ac23c3034d490,e8740d5e90f2b1ee4482848db11ac23c3034d490,Bump gemspec.
+stephencelis,2009-05-15 14:41:49,https://api.github.com/repos/stephencelis/ghi/git/commits/30078adeef8852bc0ab383dd1561fb8248a55faa,30078adeef8852bc0ab383dd1561fb8248a55faa,Simple Windows support [closes #7].
+stephencelis,2009-05-08 13:09:45,https://api.github.com/repos/stephencelis/ghi/git/commits/bd80a92031cd02275010730a8e13b1b621cfb82b,bd80a92031cd02275010730a8e13b1b621cfb82b,Bump gemspec.
+stephencelis,2009-05-08 13:01:19,https://api.github.com/repos/stephencelis/ghi/git/commits/0149e4a84bee53b123c887dd7fae8302325f5bca,0149e4a84bee53b123c887dd7fae8302325f5bca,Fix more when not less (paging issues) [closes #13].
+stephencelis,2009-05-07 12:47:37,https://api.github.com/repos/stephencelis/ghi/git/commits/803c059a338b3a401c6911d82e349afe127da35f,803c059a338b3a401c6911d82e349afe127da35f,Basic command parsing. Bump gemspec.
+stephencelis,2009-05-01 16:58:52,https://api.github.com/repos/stephencelis/ghi/git/commits/2664430b746386f4ecafc373e01b4e7252d7996d,2664430b746386f4ecafc373e01b4e7252d7996d,Update 'usage' in README.
+stephencelis,2009-05-01 16:50:21,https://api.github.com/repos/stephencelis/ghi/git/commits/db3da9849449e7e4005a1f60ac2558d80d7844a3,db3da9849449e7e4005a1f60ac2558d80d7844a3,Bump to 0.1.1; update README.
+stephencelis,2009-05-01 16:43:48,https://api.github.com/repos/stephencelis/ghi/git/commits/8e53aca383d122b78264b82780ee6ed7ee11fe4c,8e53aca383d122b78264b82780ee6ed7ee11fe4c,Add verbose mode. Simplify some flags. Auto-pagerize. Update --url flag for GitHub's changes.
+stephencelis,2009-04-29 03:43:31,https://api.github.com/repos/stephencelis/ghi/git/commits/e46c94bac6928f78a2de475ce6f1359586ef750a,e46c94bac6928f78a2de475ce6f1359586ef750a,Update contributors.
+stephencelis,2009-04-29 03:41:05,https://api.github.com/repos/stephencelis/ghi/git/commits/0d4123e087c9fe83c4ba7e779b37f4aaf2fd14fb,0d4123e087c9fe83c4ba7e779b37f4aaf2fd14fb,Use launchy for URLs if installed. Take advantage of synched stdout and show some headers earlier.
+nahi,2009-04-29 03:38:54,https://api.github.com/repos/stephencelis/ghi/git/commits/f1c604df2bcaf7067a2a90dd8350298ef6765fd2,f1c604df2bcaf7067a2a90dd8350298ef6765fd2,STDOUT.sync = true for command prompt.
+stephencelis,2009-04-28 03:42:34,https://api.github.com/repos/stephencelis/ghi/git/commits/33b3b2fb18bb1d9e109af6882651460df7dfd938,33b3b2fb18bb1d9e109af6882651460df7dfd938,Bump to 0.1.0.
+stephencelis,2009-04-28 03:36:52,https://api.github.com/repos/stephencelis/ghi/git/commits/a8aa8d3e2c66fdcc68f586c28e61c8750670eb41,a8aa8d3e2c66fdcc68f586c28e61c8750670eb41,Use tempfile properly [closes #11].
+stephencelis,2009-04-28 03:04:05,https://api.github.com/repos/stephencelis/ghi/git/commits/69dad64a2c7e2ff0cc1bd0ac9310cf5cc797332c,69dad64a2c7e2ff0cc1bd0ac9310cf5cc797332c,Account for ellipses in truncation [fixes #12]. Simple ANSI markdown.
+stephencelis,2009-04-27 17:22:53,https://api.github.com/repos/stephencelis/ghi/git/commits/f3c005c09b35c5b5ec9ba1d127fad857b69c8856,f3c005c09b35c5b5ec9ba1d127fad857b69c8856,ANSI colors. Bump gemspec.
+stephencelis,2009-04-27 16:46:15,https://api.github.com/repos/stephencelis/ghi/git/commits/a44174728b6aae263c04e85dc3aae02ccb3e6443,a44174728b6aae263c04e85dc3aae02ccb3e6443,More spec coverage.
+stephencelis,2009-04-27 14:45:26,https://api.github.com/repos/stephencelis/ghi/git/commits/06778fef62410dc1e4d2caadeaf6cac95576ddc8,06778fef62410dc1e4d2caadeaf6cac95576ddc8,Basic .autotest file.
+stephencelis,2009-04-27 14:44:51,https://api.github.com/repos/stephencelis/ghi/git/commits/cbc6fb245fdea6ed442220b011246f7b1d9dbf93,cbc6fb245fdea6ed442220b011246f7b1d9dbf93,"Basic CLI spec coverage, with some cases pending [closes #3]."
+jamie,2009-04-27 00:37:04,https://api.github.com/repos/stephencelis/ghi/git/commits/ef2ea43a3ef00834b411b8828c51070e34959a4b,ef2ea43a3ef00834b411b8828c51070e34959a4b,Pass ARGV through. Separate init/run for ease of testing.
+jamie,2009-04-27 00:34:10,https://api.github.com/repos/stephencelis/ghi/git/commits/5e2122da641175834314c2042d76e137aeef4a7f,5e2122da641175834314c2042d76e137aeef4a7f,Add a rakefile. Run specs through Rake.
+stephencelis,2009-04-27 00:14:29,https://api.github.com/repos/stephencelis/ghi/git/commits/3e961565785e26f2335684d4f65a8d18d1ee1f1a,3e961565785e26f2335684d4f65a8d18d1ee1f1a,Bump gemspec.
+stephencelis,2009-04-27 00:12:11,https://api.github.com/repos/stephencelis/ghi/git/commits/680b8e994531a668eaf7b255e91b601e6e10484d,680b8e994531a668eaf7b255e91b601e6e10484d,Merge branches 'master' and 'test'
+stephencelis,2009-04-27 00:11:45,https://api.github.com/repos/stephencelis/ghi/git/commits/d9e2f69c95328d694b0ae4c569036e13313d4bdb,d9e2f69c95328d694b0ae4c569036e13313d4bdb,Preliminary specs for GHI namespace and API class. Expand --url tag.
+stephencelis,2009-04-26 20:30:54,https://api.github.com/repos/stephencelis/ghi/git/commits/36de7495616991e302a3fea715f81e6be4075a93,36de7495616991e302a3fea715f81e6be4075a93,Add --url option to retrieve web URIs for issues.
+stephencelis,2009-04-25 23:16:13,https://api.github.com/repos/stephencelis/ghi/git/commits/1fdcdfaa377b910c201f7c54e1aa9ff46661d762,1fdcdfaa377b910c201f7c54e1aa9ff46661d762,"Labels, and better parsing of arguments unassigned to flags. Bump to 0.0.7."
+stephencelis,2009-04-25 17:21:42,https://api.github.com/repos/stephencelis/ghi/git/commits/4b663bc08aac8c6239e95f6350f3ad2a0dd5c804,4b663bc08aac8c6239e95f6350f3ad2a0dd5c804,Clarify a README sentence. Display help without a defined action.
+stephencelis,2009-04-25 16:01:46,https://api.github.com/repos/stephencelis/ghi/git/commits/b5aba5ad66a28a992f74ed9d918294c5803d9573,b5aba5ad66a28a992f74ed9d918294c5803d9573,Bump gemspec.
+stephencelis,2009-04-25 15:50:16,https://api.github.com/repos/stephencelis/ghi/git/commits/c161dacdb8b5ab483399661bdddc6b642c7fb8f2,c161dacdb8b5ab483399661bdddc6b642c7fb8f2,"Updated README, exception language, and accept comment body as an arg when closing/re-opening."
+stephencelis,2009-04-25 14:55:10,https://api.github.com/repos/stephencelis/ghi/git/commits/c45e8de3910cc6e0dee89a5453cf6b6803d37075,c45e8de3910cc6e0dee89a5453cf6b6803d37075,"Add commenting flags, allow commenting during re-opening and closing.
+Bump gemspec."
+stephencelis,2009-04-25 13:54:04,https://api.github.com/repos/stephencelis/ghi/git/commits/c9f83c222a2008d8e6b07ed07716bab2cbe8c5d4,c9f83c222a2008d8e6b07ed07716bab2cbe8c5d4,Provide wizard for GitHub config.
+stephencelis,2009-04-25 13:24:15,https://api.github.com/repos/stephencelis/ghi/git/commits/77f175065140ea669a8323129bfe16e4c9406303,77f175065140ea669a8323129bfe16e4c9406303,Pass formatted field directly.
+stephencelis,2009-04-25 13:20:04,https://api.github.com/repos/stephencelis/ghi/git/commits/2f3e9d3a1f8c14b9937a21e77a3a3a6c5118daf0,2f3e9d3a1f8c14b9937a21e77a3a3a6c5118daf0,"Chomp the gitdir, update README."
+jamie,2009-04-25 03:24:32,https://api.github.com/repos/stephencelis/ghi/git/commits/bbeb20de7d441e16b81108bf0ce0f6d3f5806656,bbeb20de7d441e16b81108bf0ce0f6d3f5806656,Add --claim flag to label an issue with your login.
+jamie,2009-04-25 02:53:21,https://api.github.com/repos/stephencelis/ghi/git/commits/1569e4a8d12705a37c8ca627074625d457afcf6d,1569e4a8d12705a37c8ca627074625d457afcf6d,Prompt user if they haven't set up github in .gitconfig
+stephencelis,2009-04-25 03:41:49,https://api.github.com/repos/stephencelis/ghi/git/commits/47abd09322d9df17d51b2b94811222765e3cf957,47abd09322d9df17d51b2b94811222765e3cf957,Use git rev-parse to return gitdir.
+stephencelis,2009-04-24 20:03:52,https://api.github.com/repos/stephencelis/ghi/git/commits/088f9a4c0aa6b472807d1f31298f08e53fb6459f,088f9a4c0aa6b472807d1f31298f08e53fb6459f,Bump gemspec.
+stephencelis,2009-04-24 20:00:35,https://api.github.com/repos/stephencelis/ghi/git/commits/a70ad07626ab1a1e171eac3b7206d88d031e9cc3,a70ad07626ab1a1e171eac3b7206d88d031e9cc3,Raise appropriate exceptions for invalid requests.
+stephencelis,2009-04-24 19:51:48,https://api.github.com/repos/stephencelis/ghi/git/commits/561ebc34415b14f3941ca365db43e2fe3a5ad5d1,561ebc34415b14f3941ca365db43e2fe3a5ad5d1,Cache messages (fixes #1).
+stephencelis,2009-04-24 19:23:30,https://api.github.com/repos/stephencelis/ghi/git/commits/b07cd6ab9c46ee1cf17658ccd61b1c0f8c599a7a,b07cd6ab9c46ee1cf17658ccd61b1c0f8c599a7a,Refactor heavily.
+stephencelis,2009-04-24 16:04:08,https://api.github.com/repos/stephencelis/ghi/git/commits/2049a0a0bc8beb0d2d350e4b30fa003aa8ac134f,2049a0a0bc8beb0d2d350e4b30fa003aa8ac134f,Refactor editing message.
+stephencelis,2009-04-23 12:05:00,https://api.github.com/repos/stephencelis/ghi/git/commits/153ad81ee9e5949094017794cc21533f8b9a7d5a,153ad81ee9e5949094017794cc21533f8b9a7d5a,"Update README, fix typo."
+stephencelis,2009-04-23 04:04:13,https://api.github.com/repos/stephencelis/ghi/git/commits/70123f4e45723adfc9965661597e3c87912d1cdf,70123f4e45723adfc9965661597e3c87912d1cdf,Bump gemspec for version 0.0.2.
+stephencelis,2009-04-22 13:27:33,https://api.github.com/repos/stephencelis/ghi/git/commits/90701188bf8783c1768999e68bf9c202895839a9,90701188bf8783c1768999e68bf9c202895839a9,Add --search option.
+stephencelis,2009-04-22 12:59:04,https://api.github.com/repos/stephencelis/ghi/git/commits/0ff861540bd2164d951ca4646de0218a9e6abbe5,0ff861540bd2164d951ca4646de0218a9e6abbe5,Combine --user option with --repo.
+stephencelis,2009-04-22 12:36:56,https://api.github.com/repos/stephencelis/ghi/git/commits/2ec2f891add6992cde84e70c248117b79d24c812,2ec2f891add6992cde84e70c248117b79d24c812,Options for --username and --repository.
+stephencelis,2009-04-22 04:35:01,https://api.github.com/repos/stephencelis/ghi/git/commits/096617f0612d436f9aee958c5c0eb74af411ef1c,096617f0612d436f9aee958c5c0eb74af411ef1c,The basics.

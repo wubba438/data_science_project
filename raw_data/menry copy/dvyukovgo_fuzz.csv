@@ -1,0 +1,1616 @@
+go-fuzz,Randomized testing for Go
+username,timestamp,url,sha,message
+bayandin,2019-08-20 15:50:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1810d380ab9c2786af00db592f86d83063216ed0,1810d380ab9c2786af00db592f86d83063216ed0,go-fuzz: add retrying to connect to coordinator
+bayandin,2019-08-19 14:42:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1123d3b1be967487900f7ecf92fc30889650545c,1123d3b1be967487900f7ecf92fc30889650545c,go-build-fuzz: add -x flag
+bayandin,2019-08-20 14:21:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4d6aa5bf4d29bf896e3fa4eabca3c1dc6a4fd6ec,4d6aa5bf4d29bf896e3fa4eabca3c1dc6a4fd6ec,go-fuzz: fix integer divide by zero
+bayandin,2019-08-19 16:56:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/98cec4f7504559d49c40130911aeb137db966234,98cec4f7504559d49c40130911aeb137db966234,Add 2 more examples of found bugs
+dvyukov,2019-08-08 14:15:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/193030f1cb162cbb89749cb7d14e7e7defac63c0,193030f1cb162cbb89749cb7d14e7e7defac63c0,Update README.md
+dvyukov,2019-07-31 09:32:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f6654ea54e55961a6cf227340e95ffd24d35fa58,f6654ea54e55961a6cf227340e95ffd24d35fa58,"go-fuzz-dep: set input capacity to len
+
+The input capacity was always set MaxInputSize (1MB).
+This means that go-fuzz could miss whole lot of out-of-bounds bugs
+related to slicing, since slicing operations look at capacity.
+E.g. calculating indices of a field in the input and then
+extracting the field with slicing. Somehow we missed this for
+all this time.
+Found thanks to libfuzzer mode that does this properly and
+fuzzit.dev that uses the libfuzzer mode."
+dvyukov,2019-07-30 17:53:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f37f81c5d15aaa6c906e962f3f50bed1ccc48471,f37f81c5d15aaa6c906e962f3f50bed1ccc48471,"Update README.md
+
+Add links to continuous fuzzing services.
+Move ""History rewrite"" closer to the bottom (hopefully this is not interesting for most users today)."
+hermanschaaf,2019-07-16 15:11:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/134cf682d3493813fe98108faf2a31759fa0764e,134cf682d3493813fe98108faf2a31759fa0764e,Update location of examples
+josharian,2019-04-30 19:36:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5cc3605ccbb6e38722b388400463114cc3ef29f5,5cc3605ccbb6e38722b388400463114cc3ef29f5,"go-fuzz-build: use -trimpath flag when available
+
+Go 1.13 has a new -trimpath flag to cmd/go.
+It removes all path prefixes (GOROOT, GOPATH).
+This will yield nicer panic tracebacks,
+without the go-fuzz-build temp directories.
+It will also allow go-fuzz-build to use the cmd/go cache.
+It doesn't have a dramatic impact on build times,
+but every little bit helps.
+
+Note that upstream cache support for -trimpath is mildly broken,
+but it will be fixed by the time Go 1.13 is released,
+and in the meantime, adding -trimpath support to go-fuzz doesn't hurt."
+josharian,2019-05-09 19:09:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e3eb428511720f87ce75d11e2450fe82b44ccc5b,e3eb428511720f87ce75d11e2450fe82b44ccc5b,"go-fuzz-build: load reflect when using libfuzzer
+
+libfuzzer's generated main function uses package reflect.
+When attempting to build a package that doesn't depend
+on reflect, such as github.com/dvyukuv/go-fuzz-corpus/{bzip2,gif,url},
+package reflect wasn't getting copied to GOROOT, and the build failed.
+
+Fix that.
+
+We may need something similar in the future for fuzz.F; see #223.
+
+Updates google/oss-fuzz/#2188"
+kyakdan,2019-05-05 12:36:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/24b3a97993609f73c3c5597635987bbd4483ac13,24b3a97993609f73c3c5597635987bbd4483ac13,"Fix moving files
+
+using os.Rename to move files fails when copying files between different
+partitions. On Debian 10 it failes with an ""invalid cross-device link""
+error. The solution is to copy the source file to the destination and
+then remove the source."
+thepudds,2019-05-06 06:13:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8416b0d9b95934c25978d6d34c504f19c138f7e9,8416b0d9b95934c25978d6d34c504f19c138f7e9,"travis: also test go-fuzz with Go tip
+
+(including because oss-fuzz is using tip)
+
+* travis: include go tip
+
+* travis: set GO111MODULE=on for tip
+
+Travis exports GO111MODULE=auto. Go tip (1.13) defaults to GO111MODULE=on. 
+
+To match the tip default, explicitly set GO111MODULE=on for tip in .travis.yml
+
+* travis: set GO111MODULE=on just before go-fuzz-build
+
+* travis: echo value of GO111MODULE
+
+* go-fuzz: try disabling modules via os.Setenv
+
+* go-fuzz: fix extra call to os.Setenv"
+josharian,2019-02-10 01:59:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7ee2c5d78a21a7ca61b6f1c3c40cb8b1747f65de,7ee2c5d78a21a7ca61b6f1c3c40cb8b1747f65de,"go-fuzz: call roundUpCover less
+
+cover==0 is the most common case by far.
+In that case, we can skip the overhead of calling roundUpCover.
+
+This optimization doesn't have a particularly significant impact on go-fuzz
+as it stands, but if you start to increase the coverage array size
+(e.g. to fuzz large codebases like compilers), calling roundUpCover
+here quickly becomes one of the major bottlenecks."
+josharian,2019-04-02 15:33:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cddf7e9063a9332c5a25c0a1e7121c4ee900e9a0,cddf7e9063a9332c5a25c0a1e7121c4ee900e9a0,"go-fuzz: rename local variable for clarity
+
+When ""slave"" was renamed to ""worker"", this local variable was missed.
+(Probably others as well; we can fix them as we find them.)"
+josharian,2019-04-02 15:29:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1d63ed1717cdfb3d3cc78ce32dcd40795d23d9b5,1d63ed1717cdfb3d3cc78ce32dcd40795d23d9b5,"go-fuzz: improve detection of multi-digit ASCII numbers
+
+Numbers at the end of the input were not recognized,
+nor were negative numbers.
+
+While we're here, combined a nested if statement."
+josharian,2019-02-03 22:08:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a2fcfcf43006452206fa3d46989869d16460ade4,a2fcfcf43006452206fa3d46989869d16460ade4,"go-fuzz: avoid replacing one ascii digit with the same digit
+
+There are only 10 digits, so the probability of having a no-op
+here is non-trivial. Loop locally instead."
+josharian,2019-04-02 15:14:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/99a886c5d30efef76efaecba1ce8aa0a6d63a7b9,99a886c5d30efef76efaecba1ce8aa0a6d63a7b9,go-fuzz: use math/bits and encoding/binary instead of unsafe
+josharian,2019-05-03 21:58:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4bf9504af1268521c5694430c264fd10e81072c9,4bf9504af1268521c5694430c264fd10e81072c9,go-fuzz: set GO111MODULE=off for bin autodetection
+josharian,2019-05-03 21:40:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/13dc676741202f0e2f597c18d3bc45798c0808ad,13dc676741202f0e2f597c18d3bc45798c0808ad,"go-fuzz-build: set GO111MODULE=off for all go/packages calls
+
+This is a follow-up to #237.
+
+Updates #195
+Updates google/oss-fuzz/pull#2188"
+josharian,2019-04-30 17:57:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9a598bb1395b846615b8a94dd631d1d3b311fc64,9a598bb1395b846615b8a94dd631d1d3b311fc64,"go-fuzz-build: set GO111MODULE=off while building
+
+Updates #195
+Updates google/oss-fuzz/pull#2188"
+josharian,2019-04-12 16:27:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b3fd142d19d1254472782e958f8e6e776e1c7a22,b3fd142d19d1254472782e958f8e6e776e1c7a22,"README: module-related fixes
+
+Make the 'go get' command more specific. Fixes #235.
+
+Add a note about disabling modules during go-fuzz-build."
+josharian,2019-04-02 02:04:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9cfa592d57929860bc951b39c3ca41a2a9d4c919,9cfa592d57929860bc951b39c3ca41a2a9d4c919,"go-fuzz-build: add -race
+
+I'm not particularly happy about all the hard-coding of paths
+required to make this work. One of the nice things about migrating
+to go/packages was that we almost entirely stopped hard-coding
+lists of packages. But unfortunately, I don't see an alternative here.
+
+Updates #231"
+josharian,2019-03-31 05:45:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7f2a17801b97aa9d84d34eb8c23c3201b09ded79,7f2a17801b97aa9d84d34eb8c23c3201b09ded79,"go-fuzz-build: compile in all fuzz functions
+
+Prior to this change, go-fuzz-build only accommodated a single fuzz function.
+If it wasn't named Fuzz, you had to identify it with -func.
+This was inconvenient for packages with multiple fuzz functions.
+
+This change teaches go-fuzz-build to handle multiple fuzz functions.
+Instead of requiring a function name to be provided,
+go-fuzz-build examines all package-scoped objects and detects fuzz functions.
+(A fuzz function is any function with an appropriate name and signature.)
+
+For libfuzzer, the only real change is that if you have a package with
+a single fuzz function that's not called Fuzz, you can now call go-fuzz-build
+without specifying its name.
+
+For go-fuzz, the change is more interesting.
+
+If there are multiple fuzz functions, all of them are made available for use
+when you run go-fuzz. You can select which one to use with the newly
+introduced go-fuzz -func flag.
+
+For backwards compatibility, if you provide go-fuzz-build with a -func flag,
+it records that preference in the metadata file, and go-fuzz respects it.
+
+And as with libfuzzer, if there's only a single fuzz function, you no longer
+have to specify it.
+
+Currently, we only expose the ability to select a single fuzz func to use
+for any given invocation of go-fuzz.
+However, the implementation communicates the fuzz function to use on every
+single fuzz function invocation. This is in preparation for possible future
+work in which go-fuzz runs multiple fuzz functions concurrently.
+
+Updates #230"
+josharian,2019-03-31 00:57:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fc0bf0874f0a924f6f46358456d188f1c1a5c8ec,fc0bf0874f0a924f6f46358456d188f1c1a5c8ec,"go-fuzz-build: improve pkg resolution
+
+Prior to this change, go-fuzz-build assumed that the
+first package in the slice returned by packages.Load
+corresponded to the package requested by the user.
+This assumption was faulty, although it worked accidentally.
+
+This change adds another package.Load call to explicitly
+resolve the package to be fuzzed, and does more careful validation of it.
+
+While we're here, do some minor cleanup:
+
+* Request cheaper loading of std. All we need is package paths.
+* Simplify processing of the result of loading std.
+* Store the fuzz package, rather than its package path, in Context.
+  This will be helpful in other planned work (e.g. adding fuzz.F).
+
+Updates golang/go#30826 and golang/go#30828"
+josharian,2019-03-20 17:18:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/40b0e3c9715fd497c4c5fc099b41f96052f91505,40b0e3c9715fd497c4c5fc099b41f96052f91505,"go-fuzz-build: unify and fix CoverTab initialization
+
+Without serious shenanigans (modifying the compiler or slowing down
+coverage writes by checking a global flag each time), it is impossible
+to prevent instrumented code from writing to CoverTab during initialization.
+
+Regular go-fuzz worked around this by setting up communication files
+and shared memory at process initialization time.
+libfuzzer mode couldn't do that, so it set up a temporary CoverTab.
+(I then removed that code, causing panics during process initialization.)
+
+This change adopts the libfuzzer approach throughout.
+Allocating a single 64k buffer once that gets promptly GC'd is not a significant cost.
+(And if https://golang.org/issue/29691 is fixed, there may be no allocation at all.
+This is a decision that is reasonably left up to the toolchain.)
+This has the benefit of further unifying the two go-fuzz modes.
+
+This also had the benefit of breaking go-fuzz!
+In particular, go-fuzz suddenly displayed the behavior that was
+inhibiting libfuzzer mode: No coverage information was being recorded.
+
+This was due to the generated package main code importing
+""github.com/dvyukov/go-fuzz/go-fuzz-dep"", instead of plain
+""go-fuzz-dep"", which is the package where instrumented code wrote.
+
+This change also fixes that bug."
+josharian,2019-03-20 05:23:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea4a322d67f6e874238a8a7ab28e95a6d6675190,ea4a322d67f6e874238a8a7ab28e95a6d6675190,"go-fuzz-build: don't instrument init functions
+
+It doesn't particularly hurt...but it doesn't help, either.
+They are easy to exclude, so do that."
+josharian,2019-03-18 14:05:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2af8871d2ea10024da72049e12307d35fe4bdb79,2af8871d2ea10024da72049e12307d35fe4bdb79,"go-fuzz-build: fix Windows build
+
+Windows does not allow you to overwrite an existing file during 'go build'."
+thepudds,2019-03-18 12:36:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ace49225e62445c207c7013ec5507fe9d4aaef04,ace49225e62445c207c7013ec5507fe9d4aaef04,Have travis_terminate use the overall test result
+thepudds,2019-03-18 12:15:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/be55c2284990337cc1deae74ab247c00c93e9026,be55c2284990337cc1deae74ab247c00c93e9026,Initial commit on master of .travis.yml
+josharian,2019-03-12 19:47:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ee722ec171a1c6df2eb8fc2e36923c4ee5780698,ee722ec171a1c6df2eb8fc2e36923c4ee5780698,"all: follow up on libfuzzer change
+
+Changes of note:
+
+* Add instructions on README
+* Switch from using 'var _ = _go_fuz_dep_.Main' to
+  'var _ = _go_fuz_dep_.CoverTab' to avoid
+  ""imported but not used"" errors in instrumented code.
+  This is because CoverTab is always present,
+  but libFuzzer code doesn't need Main.
+* Switch from a format string to text/template to
+  generate the main package.
+* Rework the 'go build' command at the core of buildInstrumentedBinary.
+  Passing an empty ""extraBuildFlags"" to go build does not work:
+  go build interprets the empty string as a package name.
+  Also, don't bother renaming outf; it gets renamed (for libfuzzer)
+  or read and deleted (for go-fuzz) later.
+* Extract shared code from go-fuzz-dep main.go/main_libFuzzer.go,
+  so that the only code in each is truly specific to that target."
+josharian,2019-03-05 01:55:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dea5d380bf3e5f8921aebd7a7fe3239104bac44c,dea5d380bf3e5f8921aebd7a7fe3239104bac44c,"go-fuzz: don't drop data when Read also returns an error
+
+The io.Reader contract specifies that Read may
+return n > 0 and err != nil, and that in that scenario,
+the caller should process those n bytes.
+
+This is rare enough that it probably wasn't causing an actual problem.
+
+Fix it nevertheless; one fewer latent bug."
+josharian,2019-03-05 01:48:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7cd85199411102a0dfc0aa2146250a78e67d0448,7cd85199411102a0dfc0aa2146250a78e67d0448,"go-fuzz: use a re-usable buffer for testee communication
+
+For a fast-running Fuzz function, we might restart a testee
+multiple times a second. This giant allocation gets expensive
+in that scenario.
+
+It is also a significant slowdown once go-fuzz starts finding crashers.
+
+Makes testee restarts cheaper is also an important step
+towards supporting Fuzz functions that are not idempotent,
+e.g. because they are hacked into an existing large code base,
+such as cmd/compile.
+
+Instead of allocating 1mb on every restart, allocate a single
+re-usable buffer up front. We don't even need to clear it between runs,
+which makes this particularly cheap and effective."
+josharian,2019-02-17 05:09:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/174ae82831a92f7474d5a7e6883afcfa0463eea7,174ae82831a92f7474d5a7e6883afcfa0463eea7,"go-fuzz: add reuseable buffers for testee communication
+
+These are small, but they get used a lot.
+
+Also, binary.Read and binary.Write go through reflect,
+which allocates. Not a lot, but this is very high volume."
+dvyukov,2019-03-12 08:48:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/897eea5ebefe1f86cce89d447bf177cba6e3d451,897eea5ebefe1f86cce89d447bf177cba6e3d451,"libFuzzer support
+
+This change adds a -libfuzzer flag to go-fuzz-build.
+When provided, go-fuzz-build generates an archive file
+that can be used with libFuzzer [1]. Sample usage:
+
+$ cd $GOPATH/src/github.com/dvyukov/go-fuzz-corpus/fmt
+$ go-fuzz-build -libfuzzer  # produces fmt.a
+$ clang -fsanitize=fuzzer fmt.a -o fmt.libfuzzer
+$ ./fmt.libfuzzer
+
+It also adds a new build tag, gofuzz_libfuzzer,
+that will be provided when building code for use with libFuzzer.
+
+[1] https://llvm.org/docs/LibFuzzer.html"
+dvyukov,2019-03-04 10:33:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b73ac4d3ed1c144689a621caa2dc65eaccf0dfab,b73ac4d3ed1c144689a621caa2dc65eaccf0dfab,"change copyright from me to all project authors
+
+go-fuzz now has 50+ contributors, I don't hold all copyright.
+It's especially weird when other people add new files with my copyright.
+Change ""Copyright 20xx Dmitry Vyukov"" to ""Copyright 20xx go-fuzz project authors""."
+josharian,2019-03-02 05:29:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5aee80b1a3cf1bc33b297379479e1c8cd0e2bb06,5aee80b1a3cf1bc33b297379479e1c8cd0e2bb06,"go-fuzz: switch to a PCG PRNG
+
+go-fuzz generates a lot of random numbers.
+math/rand is a mediocre PRNG, is large, and has contention issues.
+This is mostly the fault of the Go 1 compatibility promise.
+
+Add a dedicated PRNG just for go-fuzz; it's just 100 lines of code.
+Because a 64 bit period and 32 bit output is ample for go-fuzz,
+we can use a small PCG generator.
+This is higher quality and much faster:
+This PCG's Uint32 method is 2x faster than math/rand,
+and the Intn method is 3x faster.
+
+It is also easier to use."
+josharian,2019-03-02 05:41:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0731134fbd5ee284a3d849f8ece2bf6be5d39fab,0731134fbd5ee284a3d849f8ece2bf6be5d39fab,"go-fuzz-build: copy tool dir again
+
+The previous commit (3246052064f01d6ca883b347da119b8afa1f4be1)
+inadvertently removed a line of code along with comments.
+Restore it. Oooops."
+josharian,2019-03-01 22:29:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1baf3aecfdd3e83c57229baa4039ee529f7ffe53,1baf3aecfdd3e83c57229baa4039ee529f7ffe53,"go-fuzz: add SSE2 and AVX2 implementations of compareCoverBody
+
+The SSE2 implementation uses only instructions that are assumed
+available by the Go runtime. It can thus be used anywhere.
+
+AVX2 support is checked for at runtime.
+
+Benchmark Go implementation vs previous asm
+
+name                     old time/op  new time/op  delta
+CompareCoverBody/easy-8  6.79ns ± 9%  3.35ns ± 1%  -50.73%  (p=0.000 n=10+10)
+CompareCoverBody/hard-8  18.6µs ± 5%   9.1µs ± 3%  -51.00%  (p=0.000 n=10+10)
+
+Benchmark previous asm vs SSE2 asm
+
+name                     old time/op  new time/op  delta
+CompareCoverBody/easy-8  3.35ns ± 1%  5.56ns ± 5%  +66.01%  (p=0.000 n=10+10)
+CompareCoverBody/hard-8  9.12µs ± 3%  1.79µs ± 2%  -80.38%  (p=0.000 n=10+9)
+
+Benchmark SSE2 asm vs AVX2 asm
+
+name                     old time/op  new time/op  delta
+CompareCoverBody/easy-8  5.56ns ± 5%  5.35ns ± 2%   -3.82%  (p=0.000 n=10+9)
+CompareCoverBody/hard-8  1.79µs ± 2%  1.05µs ± 2%  -41.36%  (p=0.000 n=9+10)
+
+The regression in the easy benchmarks are almost entirely due
+to the runtime check for AVX2 support.
+It is also not particularly relevant to go-fuzz performance;
+the hard case is both more typical and more important."
+josharian,2019-03-01 00:10:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3246052064f01d6ca883b347da119b8afa1f4be1,3246052064f01d6ca883b347da119b8afa1f4be1,"go-fuzz-build: remove hard links TODO
+
+Dmitry pointed out during code review
+that hard links won't work across mounts,
+and that /tmp is often a mount,
+so it probably isn't worth the code to try
+and then fall back."
+josharian,2019-03-01 00:03:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/20c7c73a8f841bab623a387b836a842e3eb37667,20c7c73a8f841bab623a387b836a842e3eb37667,"README: update docs with simpler go-fuzz and go-fuzz-build invocations
+
+$ go-fuzz-build && go-fuzz
+
+Yay!"
+josharian,2019-03-01 00:00:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/147918e2813266c1a9c6276699330884f4627e82,147918e2813266c1a9c6276699330884f4627e82,"go-fuzz: make default workdir "".""
+
+This is what go-fuzz-corpus uses, and I have used elsewhere.
+One fewer required flag to set when using go-fuzz."
+josharian,2019-02-28 23:59:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1d9c3f80208d7698d0c122a421e41fd1f10134c0,1d9c3f80208d7698d0c122a421e41fd1f10134c0,"go-fuzz: try default zip file
+
+This makes go-fuzz a little easier to use;
+one fewer flag to set."
+josharian,2019-02-22 04:38:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8e74f7adf713f0543c4e21dce323af256f3eb92c,8e74f7adf713f0543c4e21dce323af256f3eb92c,"go-fuzz-build: use go/packages
+
+golang.org/x/tools/go/packages is a new package designed to aid in
+locating, parsing, and typechecking Go packages.
+This change updates go-fuzz-build to use it.
+This effectively resulted in a rewrite of go-fuzz-build/main.go.
+
+
+Some benefits are:
+
+* Improved performance. go-fuzz-build appears to be 2x faster on
+  first build, and 4x faster on subsequent builds.
+  This is due to several factors. One big one is the use of cached
+  type information.
+  And there are more performance improvements available;
+  see the TODOs in the code.
+
+* More robust. Previously, the list of ignored packages had to be
+  updated every time the standard library changed.
+  Now the ignored packages are computed on the fly.
+
+* More user-friendly. You can now invoke go-fuzz-build without
+  a package path; it assumes ""."", and relative paths work seamlessly.
+
+* Closer to functionality in a module-enabled world.
+  See the TODOs in the code.
+
+* Simpler and better documented.
+
+
+Outstanding issue:
+
+* cgo code is not instrumented.
+  See the discussion and linked Go toolchain issue in the code.
+
+
+Implementation notes:
+
+* go-fuzz-defs has been split into two.
+  The constants, which are shared across go-fuzz, go-fuzz-build,
+  and instrumented code, have been left in place.
+  The types, which were only needed by go-fuzz and go-fuzz-build,
+  have been moved to a new internal package.
+  This allowed us to break the go-fuzz-dep/go-fuzz-defs dependency
+  and std-depends-on-non-std problems in a simpler way:
+  We simply make another copy of go-fuzz-defs.
+  See the comments in the code for details.
+
+* There is now a shared AST across the coverage and sonar passes.
+  This works out OK, since the sonar pass used to request coverage first.
+  Now we just have to be careful about the order in which we use and
+  mutate the AST. This is well documented in the code."
+josharian,2019-02-23 06:39:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aa6cda9502e6c4f51d54e9aa9f1320e549c0f585,aa6cda9502e6c4f51d54e9aa9f1320e549c0f585,go-fuzz-build: cull dead code
+josharian,2019-02-23 06:38:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c0a0f9122154323d1fa551e24f4ef8373c5abc44,c0a0f9122154323d1fa551e24f4ef8373c5abc44,"go-fuzz-build: simplify cmd.Env construction
+
+Made possible by
+
+https://go-review.googlesource.com/c/go/+/37586/
+
+which was submitted after this code was originally written."
+josharian,2019-02-22 19:43:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/adc0ec57135d9c8a21e92dbba0d63e83d043c1d3,adc0ec57135d9c8a21e92dbba0d63e83d043c1d3,"go-fuzz-build: remove dead code
+
+shortName was not used anywhere."
+josharian,2019-02-21 22:29:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1e7aea50942f7d9c5c9ecfbb2e2826e92bd0a417,1e7aea50942f7d9c5c9ecfbb2e2826e92bd0a417,"go-fuzz: regenerate bindata
+
+Looks like the generated version has simply gotten stale."
+josharian,2019-02-21 22:27:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bab87670ae335ed7df705e83db6a6d30b79ce3c5,bab87670ae335ed7df705e83db6a6d30b79ce3c5,go-fuzz: run goimports during regenerate of bindata
+josharian,2019-02-21 22:24:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/01a8d495cdb0a178439da0e83af8072920ba4ada,01a8d495cdb0a178439da0e83af8072920ba4ada,"go-fuzz: add execType type
+
+...and make it a Stringer.
+
+This change makes debugging easier and adds a bit of type safety."
+tklauser,2019-02-15 08:53:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/76990782bc8312305f8ace729badbaf5c3704099,76990782bc8312305f8ace729badbaf5c3704099,README.md: mark fixed issues and add new debug/pe issues
+tklauser,2019-02-08 16:36:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ab679af8627d279d627bc683f8559fa259b150d5,ab679af8627d279d627bc683f8559fa259b150d5,slides: fix a typo
+tklauser,2019-02-08 16:39:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3035a8e04d21a64cdf951f234d1bcc9f7d583630,3035a8e04d21a64cdf951f234d1bcc9f7d583630,"go-fuzz, go-fuzz-dep: add support for openbsd and netbsd"
+josharian,2019-01-06 22:22:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/241e89decc2134bba19333922bf0473879228a7a,241e89decc2134bba19333922bf0473879228a7a,"go-fuzz: check big-endian increment/decrement
+
+The existing code tried reversing bytes,
+but didn't actually leave the bytes in existing order
+while doing a BigEndian increment/decrement.
+Add that in too."
+josharian,2019-01-07 02:13:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/78468a7a5ac701410309f49d59122464700b297c,78468a7a5ac701410309f49d59122464700b297c,"go-fuzz: exit early when there will be no sonar matches
+
+This avoids the cost of the first search and
+of storing an entry in the map indicating that it had been checked.
+
+A quick test on the gzip corpus indicates that this
+additional condition triggers in >40% of calls.
+
+This also makes it cheaper to add a bunch more variations."
+josharian,2019-01-07 08:32:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/96a4c26815f7116a43258676d711a3e609239043,96a4c26815f7116a43258676d711a3e609239043,go-fuzz: fix minor typo in error message
+josharian,2019-01-15 18:00:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/10fa63c7920d6296ade97d36ee541e62d7907f12,10fa63c7920d6296ade97d36ee541e62d7907f12,"go-fuzz-build: gofmt
+
+The gofmt alignment algorithm changed in a recent release."
+josharian,2019-01-06 22:19:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/79111ac17902d2780142405063473270032b10ed,79111ac17902d2780142405063473270032b10ed,"go-fuzz: fix increment and decrement
+
+They were truncating the input."
+josharian,2019-01-06 23:40:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/62346428090eaea566ce8e21b7385f81a6d3ef82,62346428090eaea566ce8e21b7385f81a6d3ef82,"go-fuzz: fix latent panic
+
+I don't know why this hasn't occurred much in practice."
+josharian,2019-01-06 21:36:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4c69265fd8363623215dec58da80bba17a9796c7,4c69265fd8363623215dec58da80bba17a9796c7,"go-fuzz-dep: add bounds hints to serialization routines
+
+This can be considerably more efficient on LE machines,
+since it allows the entire serialization routine
+to be translated into a single (possible unaligned) read/write.
+
+They also now match more closely the encoding/binary routines.
+
+(Possible future work: Use the known type information during
+instrumentation to dispatch directly to a specialized Sonar
+routine.)
+
+While we're here, add a note explaining why
+these serialization routines have been copy-pasted."
+josharian,2019-01-06 21:35:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/41ba9884709c109455fca91acc747159a0eab057,41ba9884709c109455fca91acc747159a0eab057,go-fuzz-dep: use serialize64 in write
+josharian,2019-01-06 21:33:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/66bdd3a74c8a7a7ffcd68b1291c94b9ef11b8676,66bdd3a74c8a7a7ffcd68b1291c94b9ef11b8676,slides: fix two typos
+josharian,2019-01-06 21:32:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9db3bd8eda9f86f7660fcee67dfdff77a4f18622,9db3bd8eda9f86f7660fcee67dfdff77a4f18622,"go-fuzz-dep: use a type alias for Bool
+
+No practical consequences,
+but this seems more semantically accurate.
+It is intended to be a bool, not a named bool."
+josharian,2018-12-25 01:34:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/31e2128c9be91445df05c3bbfb34e0dc3f1e4809,31e2128c9be91445df05c3bbfb34e0dc3f1e4809,"go-fuzz-build: use _go_fuzz_dep_.Bool instead of bool in generated code
+
+This avoids compilation errors when user code shadows the built-in bool,
+as happens (for example) in cmd/compile."
+josharian,2018-12-25 01:30:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/85215acc83dd169489114fe8b0ecf7ff0e68bbff,85215acc83dd169489114fe8b0ecf7ff0e68bbff,"go-fuzz-build: use ast.NewIdent (cleanup)
+
+Replace &ast.Ident{Name: x} with ast.NewIdent(x).
+It is functionally equivalent, but shorter and cleaner."
+josharian,2018-12-26 21:13:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3f5df5640e184b1fa2e02a58b21f1ad63a4a8e3c,3f5df5640e184b1fa2e02a58b21f1ad63a4a8e3c,"go-fuzz-build: correctly spell (most) imported bool types
+
+This is not a complete fix--see the comments in the code--
+but it is better than what we had, and the comments now
+at least draw a roadmap for any future fixes required.
+
+Fixes #194"
+dvyukov,2018-11-23 18:28:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c9d23f0333fda73dcf0eb5e2ec1af24776e5a650,c9d23f0333fda73dcf0eb5e2ec1af24776e5a650,"fix test import path
+
+The test has moved from go-fuzz-corpus to go-fuzz.
+
+Fixes #197"
+dvyukov,2018-11-23 11:02:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e2983c47faaf24075eb9e0e880483dfcce93507d,e2983c47faaf24075eb9e0e880483dfcce93507d,reformat code
+dvyukov,2018-11-23 10:58:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4676e2f55fd3901540d8d9db65fcf4963f192297,4676e2f55fd3901540d8d9db65fcf4963f192297,"add tests from go-fuzz-corpus repo
+
+It makes sense to have unit tests along with the code.
+It's not really a fuzzer with a large corpus."
+mvdan,2018-11-05 18:30:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/383a81f6d0483dde9dcf3e9b8169ba0c30aafeba,383a81f6d0483dde9dcf3e9b8169ba0c30aafeba,"go-fuzz-build: ignore new runtime internal package
+
+Added recently to Go tip. Without this line, the build program breaks as
+expected:
+
+	$ go-fuzz-build mvdan.cc/sh
+	failed to execute go build: exit status 1
+	import cycle not allowed
+	package mvdan.cc/sh/go.fuzz.main
+		imports go-fuzz-dep
+		imports runtime
+		imports runtime/internal/math
+		imports go-fuzz-dep"
+dvyukov,2018-09-02 05:32:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4aff8368ef1910b258081d1fea6d73090e2e1968,4aff8368ef1910b258081d1fea6d73090e2e1968,"go-fuzz-build: fix var name conflict
+
+Fixes #192"
+stevenjohnstone,2018-07-03 14:14:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c2814e6bc6d77bf44add053ab5d92fdef86d6755,c2814e6bc6d77bf44add053ab5d92fdef86d6755,More trophies
+quasilyte,2018-04-21 06:56:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d6e0377705f98dbae098a3cdcf74e89ce7c06a0c,d6e0377705f98dbae098a3cdcf74e89ce7c06a0c,"readme: mark #12657 as fixed
+
+Addressed in https://golang.org/cl/107835."
+octo,2018-04-04 18:00:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8b4ece49f48147d775f003cb7aa92eb9de4fd702,8b4ece49f48147d775f003cb7aa92eb9de4fd702,README.md: Add various findings in hashicorp/hcl.
+dvyukov,2018-03-31 12:36:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/18485f5ae28315c9b827210a5ee84ebdfd5570bd,18485f5ae28315c9b827210a5ee84ebdfd5570bd,"slides: fix go get
+
+Currently go get -u github.com/dvyukov/go-fuzz/... says:
+
+package github.com/dvyukov/go-fuzz/slides: found packages n (crash.go) and main (gob.go)
+
+Fix this by adding +build directives.
+
+Fixes #188"
+dvyukov,2018-03-19 09:56:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fa7d78c09c171b8e8c554949eb8033a388618dcf,fa7d78c09c171b8e8c554949eb8033a388618dcf,Update README.md
+dvyukov,2018-03-19 09:42:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a865ffbc66599aab8c5a4f220a548df8a38e8037,a865ffbc66599aab8c5a4f220a548df8a38e8037,"slides: add Fuzzing: the new unit testing slides
+
+From GopherCon Russia 2018."
+dvyukov,2018-03-07 09:01:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fc9bdef631a7086b4708dae03a370f7294c1d335,fc9bdef631a7086b4708dae03a370f7294c1d335,"go-fuzz-build: account for new runtime dependencies
+
+Fixes #186"
+andybons,2018-02-23 23:53:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5c55a41c4582bae8582f862f246b233fcd59ff36,5c55a41c4582bae8582f862f246b233fcd59ff36,Update README.md to no longer point to examples directory
+gy741,2018-02-19 01:31:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/951f07c4d837488bafbf0bd1a25166b4ca520cee,951f07c4d837488bafbf0bd1a25166b4ca520cee,Add tag and xlsx trophy
+gy741,2018-02-09 02:04:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/445b00a1141b27425541ee8d7dc2f524faf202a9,445b00a1141b27425541ee8d7dc2f524faf202a9,Add github.com/hajimehoshi/go-mp3 trophy
+AlekSi,2018-02-06 18:32:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/05e59652a462eb219da58260517b6b6840d48318,05e59652a462eb219da58260517b6b6840d48318,Simplify installation instructions
+AlekSi,2018-02-06 13:19:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a5ee6d90844044ca9c89535cd6857144ae23681d,a5ee6d90844044ca9c89535cd6857144ae23681d,Add note about history rewrite.
+kjk,2018-02-01 03:05:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/45547f208f4b64663ef2ffcef4657031207d696b,45547f208f4b64663ef2ffcef4657031207d696b,Add another article and a trophy
+andybons,2018-01-24 03:32:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bde62fd216ec9221b209068efcad08ce38a9917b,bde62fd216ec9221b209068efcad08ce38a9917b,"Default to `go env GOPATH` upon empty GOPATH (~/go)
+
+Fixes dvyukov/go-fuzz#173"
+vcabbage,2018-01-14 22:34:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4b8a95b79e9ceacfb54c29f4bf6a0005185f0eed,4b8a95b79e9ceacfb54c29f4bf6a0005185f0eed,Add github.com/vcabbage/amqp trophy
+mdlayher,2018-01-11 21:10:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7d251b177d01249b6c3f931f893406e0f213a2e0,7d251b177d01249b6c3f931f893406e0f213a2e0,Add github.com/mdlayher/ndp trophy
+dgryski,2017-12-26 18:14:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f1fafe88de7e5809212de098e7a971d122ceaa2e,f1fafe88de7e5809212de098e7a971d122ceaa2e,"README: mention that go-fuzz outputs to stderr
+
+Fixes #124"
+andybons,2017-12-23 19:31:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e3f787d7566008d865acee3a9ca8ff246b6cf35e,e3f787d7566008d865acee3a9ca8ff246b6cf35e,Rename master/slave to coordinator/worker
+dvyukov,2017-10-11 20:01:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6b3fb8859f23109ea8a661b9ac0552c11bc86123,6b3fb8859f23109ea8a661b9ac0552c11bc86123,"Merge pull request #168 from armhold/patch-1
+
+Update README.md"
+armhold,2017-10-11 14:44:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fdf9c9aa89bac27bafc8fc2c6561cecacca79ccb,fdf9c9aa89bac27bafc8fc2c6561cecacca79ccb,Update README.md
+dvyukov,2017-10-06 16:46:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5d7b25e5d12b5bf5eeabe57499124058f30e52ea,5d7b25e5d12b5bf5eeabe57499124058f30e52ea,"Merge pull request #167 from spenczar/patch-2
+
+Add github.com/spenczar/tdigest trophies"
+spenczar,2017-10-06 14:50:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1714f84da6d473dca62f89a15ca66e54fdf65bfa,1714f84da6d473dca62f89a15ca66e54fdf65bfa, Add github.com/spenczar/tdigest trophies
+dvyukov,2017-07-30 10:31:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/caf707433822f045b991f6f2172287ad86f2f1ff,caf707433822f045b991f6f2172287ad86f2f1ff,"Merge pull request #163 from Metalnem/master
+
+Add a new external article"
+Metalnem,2017-07-30 07:39:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6d4ec158589e1224ffd8f3d0d506bb5639117547,6d4ec158589e1224ffd8f3d0d506bb5639117547,Add a new external article
+dvyukov,2017-07-23 10:53:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4a599dce028457fee7f5a20253d00bbb481da9c7,4a599dce028457fee7f5a20253d00bbb481da9c7,"Merge pull request #162 from Metalnem/master
+
+Add two trophies to README file"
+Metalnem,2017-07-23 10:28:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4ee3e8ea529926b24938439c6ef1ef5afc869f2f,4ee3e8ea529926b24938439c6ef1ef5afc869f2f,Add two trophies to README file
+dvyukov,2017-07-22 11:00:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/53e2f201670047dfe241744ad107114b8c523688,53e2f201670047dfe241744ad107114b8c523688,"Merge pull request #161 from Metalnem/master
+
+Update list of trophies in README file"
+Metalnem,2017-07-22 10:57:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c3b129e56eeae5abe9babb47fae7bbf408bac801,c3b129e56eeae5abe9babb47fae7bbf408bac801,Update list of trophies in README file
+dvyukov,2017-06-02 08:07:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/81083f818510bec4a69cc1ca3a767e64b3457824,81083f818510bec4a69cc1ca3a767e64b3457824,Update README.md
+dvyukov,2017-05-23 09:18:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0f84810ca69b0268ed58be09544b5569873f01e4,0f84810ca69b0268ed58be09544b5569873f01e4,"go-fuzz-build: extract go-fuzz-dep dependencies automatically
+
+Currently we have hardcoded list of go-fuzz-dep dependencies.
+This list constantly changes due to changes in std lib
+(due various new internal packages).
+Extract go-fuzz-dep dependencies automatically with 'go list'.
+
+Fixes #157"
+dvyukov,2017-05-05 19:54:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2e97392e017e15488db820b5138be825053fc429,2e97392e017e15488db820b5138be825053fc429,Update README.md
+dvyukov,2017-02-16 12:07:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fd928b4fe59aa53bd6e8afb98f9adda1ba86dcd8,fd928b4fe59aa53bd6e8afb98f9adda1ba86dcd8,"Merge pull request #155 from taotetek/master
+
+trophies: add github.com/digitalocean/captainslog"
+taotetek,2017-02-16 11:59:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/14bdea1187d896c2810bc57bfe557c88336f8216,14bdea1187d896c2810bc57bfe557c88336f8216,trophies: add github.com/digitalocean/captainslog
+dvyukov,2017-02-14 20:51:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6e1308e79f5014c5958425d8981f8e12cd24ba0a,6e1308e79f5014c5958425d8981f8e12cd24ba0a,"Merge pull request #153 from obscuren/expand-home-dir-fix
+
+go-fuzz: expand homedir fix"
+obscuren,2017-02-14 16:01:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cafb70e1f6f39b28af56aa35c219904404f2dcd9,cafb70e1f6f39b28af56aa35c219904404f2dcd9,go-fuzz: expand homedir fix
+dvyukov,2017-02-14 11:02:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9bb03d13c9a09470ac4c72833b01d2bd04e50f3b,9bb03d13c9a09470ac4c72833b01d2bd04e50f3b,"Merge pull request #152 from obscuren/expand-home-dir
+
+go-fuzz: expand home directory for -bin and -workdir flags"
+obscuren,2017-02-14 10:07:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/283e6f9d7f86a5d55e9edc45bfad7a1e34c69dc7,283e6f9d7f86a5d55e9edc45bfad7a1e34c69dc7,go-fuzz: expand home directory for -bin and -workdir flags
+dvyukov,2017-02-14 09:53:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/35488158e0cf4fd9537cfdfb9c543c6c03c9b130,35488158e0cf4fd9537cfdfb9c543c6c03c9b130,"Merge pull request #151 from obscuren/tag-support
+
+go-fuzz-build: added support for '-tags'"
+obscuren,2017-02-13 21:46:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d1bbadaac0e147b3fc45919fd102a8485a738503,d1bbadaac0e147b3fc45919fd102a8485a738503,go-fuzz-build: added support for '-tags'
+dvyukov,2016-12-27 14:52:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/136aecc1d8e69c066f41a12258fa79b0165cdf5f,136aecc1d8e69c066f41a12258fa79b0165cdf5f,"Merge pull request #150 from buger/patch-1
+
+Add trophy for github.com/buger/goreplay"
+buger,2016-12-27 14:37:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fbe51056379878e5217edb37e2c2b0061c1b134b,fbe51056379878e5217edb37e2c2b0061c1b134b,Update README.md
+dvyukov,2016-12-27 12:53:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5c59138b86abee2887323c005884f80bdcd2678f,5c59138b86abee2887323c005884f80bdcd2678f,"Merge pull request #149 from mdlayher/netlink
+
+Add trophy for github.com/mdlayher/netlink"
+mdlayher,2016-12-23 18:41:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/738c2c5ff4a266cf12d740d87df908d788e01586,738c2c5ff4a266cf12d740d87df908d788e01586,Add two trophies for github.com/mdlayher/netlink
+dvyukov,2016-10-31 20:43:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3812dc8bcb9e95277feb09a5f74449bf6b2e6d78,3812dc8bcb9e95277feb09a5f74449bf6b2e6d78,"Merge pull request #148 from judwhite/feature/gofuzzbuild-goroot-vendor
+
+go-fuzz-build: fix stdlib vendor, windows vendor"
+judwhite,2016-10-31 07:23:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1f3adaf08553f855406aa651faa2c8fb9fab04c4,1f3adaf08553f855406aa651faa2c8fb9fab04c4,"go-fuzz-build: fix stdlib vendor, windows vendor
+
+- $GOROOT/src vendors ""golang_org/x/net"", requires no slash prefix
+  when going all the way to the root; affects go1.7 packages which
+  import ""net/http""
+- windows fix: use / instead of os.PathSeparator, use strings.Join
+  instead of filepath.Join"
+dvyukov,2016-10-28 11:02:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/764c2139a68ea0f87c10d2783d95ed224a5b933b,764c2139a68ea0f87c10d2783d95ed224a5b933b,Update README.md
+dvyukov,2016-10-11 15:55:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3a6681ac0d78fec887823ffc9ea202cc1d40ce1f,3a6681ac0d78fec887823ffc9ea202cc1d40ce1f,"Merge pull request #144 from Kubuxu/patch-1
+
+Add bug found in go-ipfs"
+Kubuxu,2016-10-11 15:51:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/93d90013e0c3328c8e76a56707b0d50eaef3b34f,93d90013e0c3328c8e76a56707b0d50eaef3b34f,"Add bug found in go-ipfs
+
+In the issue it isn't clear that it was found with go-fuzz but I was the initial reporter and it was found with go-fuzz."
+dvyukov,2016-09-09 15:31:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/44f49735cb7cf6934bc2d7940580a8cd011283d1,44f49735cb7cf6934bc2d7940580a8cd011283d1,"Merge pull request #143 from dgryski/dgryski/no-fuzzing-main
+
+README: mention fuzzing `main` is not supported"
+dgryski,2016-09-09 14:59:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/67a6251ee2cb7999934556afaa89ac2594a44d99,67a6251ee2cb7999934556afaa89ac2594a44d99,"README: mention fuzzing `main` is not supported
+
+Updates #86"
+dvyukov,2016-09-09 14:27:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3df6f7be60b11f61d6f0712c4be729b207abbe46,3df6f7be60b11f61d6f0712c4be729b207abbe46,go fmt everything
+dvyukov,2016-09-09 14:25:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e19cf6db175106073090a3531ba747a693055abb,e19cf6db175106073090a3531ba747a693055abb,"support fuzzing of internal packages
+
+Fixes #140"
+dvyukov,2016-09-09 13:46:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/17bce87e523cf8ec5bbfa0c7d079ba8905554b36,17bce87e523cf8ec5bbfa0c7d079ba8905554b36,"Support gopath packages without dots in name
+
+Currently if you have a package in GOPATH that does not contain
+dots in name and imports other packages in GOPATH that do contain
+dots in name, you get:
+
+non-standard import ""github.com/aaa/bbb"" in standard package ""ccc""
+
+This change maintains proper distinction between GOPATH and GOROOT
+packages to fix the issue.
+
+Update #120"
+dvyukov,2016-09-09 13:23:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2c98932b0bf58f41adb01678d5a135198c0e7b43,2c98932b0bf58f41adb01678d5a135198c0e7b43,Update README.md
+dvyukov,2016-08-13 15:38:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eba78ebfbb6814ecee93ccb89ae248a640012fe7,eba78ebfbb6814ecee93ccb89ae248a640012fe7,"Merge pull request #139 from cgag/patch-1
+
+Add support for dragonflybsd"
+cgag,2016-08-13 09:05:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e4d907c8bb80e16c8604798a6a2bc4faa3021e6b,e4d907c8bb80e16c8604798a6a2bc4faa3021e6b,Add support for dragonflybsd
+dvyukov,2016-07-18 06:25:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/53bd9cfb6688384e4d28b714741c5e6f7bec7be5,53bd9cfb6688384e4d28b714741c5e6f7bec7be5,"Merge pull request #138 from titanous/patch-1
+
+Add bugs found in Flynn projects"
+titanous,2016-07-17 23:31:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3eb50002046d9539d694514bce45d2a251fd82e2,3eb50002046d9539d694514bce45d2a251fd82e2,Add bugs found in Flynn projects
+dvyukov,2016-07-17 12:46:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3f2d2022778fe86288b405b275ea188be67ecd3f,3f2d2022778fe86288b405b275ea188be67ecd3f,"Merge pull request #137 from stephens2424/master
+
+updating asset generate; vendoring bindata tool; updating vendoring, fixes #135 better"
+dvyukov,2016-07-07 09:30:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cddefb413f89424e9a1531c01a0604cf3b0e7c99,cddefb413f89424e9a1531c01a0604cf3b0e7c99,"Merge pull request #136 from stephens2424/assetfix
+
+updating asset bindata; vendoring critical package"
+stephens2424,2016-07-06 15:02:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0d208ecccb1801ec082350533f270c91014ebe15,0d208ecccb1801ec082350533f270c91014ebe15,updating asset bindata; vendoring critical package
+stephens2424,2016-07-06 03:17:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/17607ac1359a44e69ba01aa2cd0d132e9c8fb009,17607ac1359a44e69ba01aa2cd0d132e9c8fb009,updating asset generate; vendoring bindata tool; updating vendored code; fixes #135
+dvyukov,2016-06-24 20:07:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/55ad6bd2515cc195f0499b7273657c57eb0a8254,55ad6bd2515cc195f0499b7273657c57eb0a8254,Update README.md
+dvyukov,2016-06-24 11:32:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aceed17fed0ec86048b7c2c770e60de4b5f772b0,aceed17fed0ec86048b7c2c770e60de4b5f772b0,"Merge pull request #133 from Thomasdezeeuw/patch-1
+
+Fix type-o"
+Thomasdezeeuw,2016-06-24 11:30:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/be23beb49b882eecf76746f8610ee0c02cff007e,be23beb49b882eecf76746f8610ee0c02cff007e,"Fix type-o
+
+`buisness` -> `business`"
+dvyukov,2016-06-23 20:05:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bd59bc44137c433d2f7506e82acb2891dac448cb,bd59bc44137c433d2f7506e82acb2891dac448cb,"Merge pull request #132 from hydroflame/master
+
+Create doc.go"
+hydroflame,2016-06-23 20:02:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a3c367545d1762ca5cda1d0d9625fce2a39e2926,a3c367545d1762ca5cda1d0d9625fce2a39e2926,Create doc.go
+dvyukov,2016-06-10 08:56:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8e38a049672da3c6631973fb5a94cf01e273f0e5,8e38a049672da3c6631973fb5a94cf01e273f0e5,Update README.md
+dvyukov,2016-05-10 16:02:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c6999e978439e059850021945fe62379d09a2e0f,c6999e978439e059850021945fe62379d09a2e0f,Update README.md
+dvyukov,2016-05-10 16:01:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/07be58cb6a6699dc1bbf176966c935c7f765ea26,07be58cb6a6699dc1bbf176966c935c7f765ea26,Update README.md
+dvyukov,2016-05-10 09:13:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f4025368be04e097512973f763be832eb272f0a0,f4025368be04e097512973f763be832eb272f0a0,time does not depend on io anymore
+dvyukov,2016-05-10 09:10:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/df13c3b61beb568c05f132dd1c5eaed8068de65a,df13c3b61beb568c05f132dd1c5eaed8068de65a,"Support vendoring
+
+Fixes #127"
+dvyukov,2016-05-09 19:03:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b246e8c5b84345ec0de1f4078b4c65f1a4057166,b246e8c5b84345ec0de1f4078b4c65f1a4057166,Update README.md
+dvyukov,2016-05-09 14:35:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3c736bc7632631a2a51882652a74c6433ac7f105,3c736bc7632631a2a51882652a74c6433ac7f105,"fix tip build
+
+time now depends on io"
+dvyukov,2016-05-09 14:06:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2ec42e42488740580c4f51ace31a7a28b9274eb9,2ec42e42488740580c4f51ace31a7a28b9274eb9,"use go/types instead of x/go/types
+
+Fixes #122
+Fixes #128
+Fixes #126"
+dvyukov,2016-04-20 17:12:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cd87e0c348f618535084e4c512ce1cde0ffce1c5,cd87e0c348f618535084e4c512ce1cde0ffce1c5,"fix import cycle
+
+Fixes #130"
+dvyukov,2016-02-04 19:17:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cd853ee08f8078f10e1a29bac15fb80a7ac894f7,cd853ee08f8078f10e1a29bac15fb80a7ac894f7,"go-fuzz-build: fix build
+
+Not sure how it worked for me...
+
+Fixes #121"
+dvyukov,2016-02-04 17:58:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ddbf647f59a96727d05730dd91755811e57516a4,ddbf647f59a96727d05730dd91755811e57516a4,"go-fuzz-build: fixes for Go1.6
+
+In Go1.6 standard packages can't depend on non-standard packages.
+Rename go-fuzz-main to go.fuzz.main so that it looks like non-standard.
+Copy github.com/dvyukov/go-fuzz/go-fuzz-dep to go-fuzz-dep so that
+it looks like a standard package (most standard packages depend on it
+after instrumentation).
+
+Fixes #120"
+dvyukov,2016-01-31 07:13:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e0b05dfc49a82b9dc045925bbd54b841d42e2c29,e0b05dfc49a82b9dc045925bbd54b841d42e2c29,"Merge pull request #119 from pcasaretto/patch-1
+
+Add one more trophy"
+pcasaretto,2016-01-30 18:06:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/85c8a509dea2287b537f67fa6ba3033b3808c82b,85c8a509dea2287b537f67fa6ba3033b3808c82b,Add one more trophy
+dvyukov,2016-01-27 07:35:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eb42b834d087629c166f7b79bb5198c3c6e6dfd8,eb42b834d087629c166f7b79bb5198c3c6e6dfd8,Update README.md
+dvyukov,2016-01-17 12:17:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a2b0d935b2b7664ac776b2da398096893a226440,a2b0d935b2b7664ac776b2da398096893a226440,Update README.md
+dvyukov,2016-01-13 06:22:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ed74aa417ef376f954ef63287357a9bcf70b6ec8,ed74aa417ef376f954ef63287357a9bcf70b6ec8,"Merge pull request #117 from davecheney/fixedbugs/116
+
+Don't instrument internal/race"
+davecheney,2016-01-13 05:46:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b9f8ef54527c53f16085fad3ab17a1707787548f,b9f8ef54527c53f16085fad3ab17a1707787548f,"Don't instrument internal/race
+
+Fixes #116
+
+`internal/race` is a new package in Go 1.6, skip it."
+dvyukov,2016-01-08 06:24:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/92cb3da622ab51b8ca15a9e42423a9b1134d335e,92cb3da622ab51b8ca15a9e42423a9b1134d335e,Update README.md
+dvyukov,2015-12-15 07:12:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cf1d7e137009972aff1e269b270d535eed2f6f4a,cf1d7e137009972aff1e269b270d535eed2f6f4a,Update README.md
+dvyukov,2015-12-12 11:38:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cf4e355a299774fcafd0332fc44e6261259fb522,cf4e355a299774fcafd0332fc44e6261259fb522,"Merge pull request #111 from breml/preetam-sflow-fixed
+
+Update README.md"
+breml,2015-12-12 09:30:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/11abb6618d441206376331054640b6737372761e,11abb6618d441206376331054640b6737372761e,Update README.md
+dvyukov,2015-12-10 10:11:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/526313f0cfcafdfb6b703c42b5ca07e3efa73539,526313f0cfcafdfb6b703c42b5ca07e3efa73539,"Merge pull request #110 from breml/preetam-sflow
+
+Update README.md"
+breml,2015-12-10 10:05:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0c9fc2255c434775da679bce048725626e5beb4e,0c9fc2255c434775da679bce048725626e5beb4e,"Update README.md
+
+Added github.com/Preetam/sflow"
+dvyukov,2015-12-07 21:11:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8901dfe1a220110bb656efb9b1ae3835b511b043,8901dfe1a220110bb656efb9b1ae3835b511b043,Update README.md
+dvyukov,2015-12-07 21:04:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6b6df208fdc83a04d6bdce78a2eb0d2929979d63,6b6df208fdc83a04d6bdce78a2eb0d2929979d63,Update README.md
+dvyukov,2015-12-06 07:56:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/083b187e8b74eb8e68dffec27af566e67e06e44e,083b187e8b74eb8e68dffec27af566e67e06e44e,Update README.md
+dvyukov,2015-12-05 10:11:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6f8b6251732d20cf88855b50570c367bab331a20,6f8b6251732d20cf88855b50570c367bab331a20,Update README.md
+dvyukov,2015-12-04 21:41:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c5bf8f5d33902a63e3b834e8419818de25a3242b,c5bf8f5d33902a63e3b834e8419818de25a3242b,Update README.md
+dvyukov,2015-12-04 16:19:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/330362a1c8c78c874cb8b5030a74ed68c9e85b1d,330362a1c8c78c874cb8b5030a74ed68c9e85b1d,Update README.md
+dvyukov,2015-12-03 19:11:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/74ccaf9e73820386bb8966b5692832dc338b602b,74ccaf9e73820386bb8966b5692832dc338b602b,Update README.md
+dvyukov,2015-12-02 19:06:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6fe9f65b6af1a068d6f45208744c0b863114519d,6fe9f65b6af1a068d6f45208744c0b863114519d,Update README.md
+dvyukov,2015-12-02 17:48:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/208c076046c704dc1ab7902d11c667d77a2a5236,208c076046c704dc1ab7902d11c667d77a2a5236,Update README.md
+dvyukov,2015-12-02 09:33:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4f1c71624fcd9122486435b08359ecbb3a608b6d,4f1c71624fcd9122486435b08359ecbb3a608b6d,Update README.md
+dvyukov,2015-12-01 17:09:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4df816e13a2422632e875a74fe72c60ffb85f2e2,4df816e13a2422632e875a74fe72c60ffb85f2e2,Update README.md
+dvyukov,2015-11-29 07:18:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d6182dc0601e0b31a6a7aa97e79838a5330dfacc,d6182dc0601e0b31a6a7aa97e79838a5330dfacc,Update README.md
+dvyukov,2015-11-17 13:08:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ab2a3f64913f07d5878f2f76537823e4b13ec11b,ab2a3f64913f07d5878f2f76537823e4b13ec11b,Update README.md
+dvyukov,2015-11-17 06:37:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/783cec4e772377123367cab38ad1263de15571ca,783cec4e772377123367cab38ad1263de15571ca,Update README.md
+dvyukov,2015-11-16 20:54:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1acd6e1dee54858838bd6afb246a09865278dfb0,1acd6e1dee54858838bd6afb246a09865278dfb0,Update README.md
+dvyukov,2015-11-16 20:53:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dcc1ec2996b0112d6f492c75cc8a87e2d42ac4d8,dcc1ec2996b0112d6f492c75cc8a87e2d42ac4d8,Update README.md
+dvyukov,2015-11-16 20:52:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1ce1b4e1db5037baded3b76e6a7eff4cf2d8aacd,1ce1b4e1db5037baded3b76e6a7eff4cf2d8aacd,Update README.md
+dvyukov,2015-11-16 18:09:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ce5a0c3a828413083160265bc146cf5d4847bb5d,ce5a0c3a828413083160265bc146cf5d4847bb5d,update go-fuzz-build to account for new internal runtime packages
+dvyukov,2015-11-16 14:20:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c7fa0a748d4ff152e4b086c11ec3ae8c6da5c948,c7fa0a748d4ff152e4b086c11ec3ae8c6da5c948,Update README.md
+dvyukov,2015-11-16 14:15:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2117e1cdfcc2ea65346683aa6dbe30bd492825d1,2117e1cdfcc2ea65346683aa6dbe30bd492825d1,Update README.md
+dvyukov,2015-11-16 14:11:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/135c3197948f5de7aed4a5a68b5865f47efa723e,135c3197948f5de7aed4a5a68b5865f47efa723e,Update README.md
+dvyukov,2015-11-16 13:45:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f9b85c4bd5cad78a3ea4ca7a330390b6b5ac39cb,f9b85c4bd5cad78a3ea4ca7a330390b6b5ac39cb,Update README.md
+dvyukov,2015-11-16 13:14:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/38d5478eddf2ade9eac9d3168ea79024ef9db528,38d5478eddf2ade9eac9d3168ea79024ef9db528,Update README.md
+dvyukov,2015-11-16 12:52:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/72d54f78cd9349b42c13b5e41960f629705ef6a3,72d54f78cd9349b42c13b5e41960f629705ef6a3,Update README.md
+dvyukov,2015-10-27 01:04:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/876d0127856035fc28ecc8f35896ab205f3a45eb,876d0127856035fc28ecc8f35896ab205f3a45eb,Update README.md
+dvyukov,2015-10-23 07:36:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a902f313dd79d6661d4d6896d8d7ffb14b84a1ff,a902f313dd79d6661d4d6896d8d7ffb14b84a1ff,"Merge pull request #108 from pmezard/go-lzo-trophy
+
+Add trophy for github.com/rasky/go-lzo and others"
+pmezard,2015-10-23 07:21:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0cadd4ceca9f1a634a2bff887a06448267e17f54,0cadd4ceca9f1a634a2bff887a06448267e17f54,Add trophy for github.com/rasky/go-lzo and others
+dvyukov,2015-10-23 05:26:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aea431e5ee3ef966fd6eb7362da574647b131941,aea431e5ee3ef966fd6eb7362da574647b131941,Update README.md
+dvyukov,2015-10-23 04:12:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3fbde1d3dacc7b7f9c02f607446b5733cb624c64,3fbde1d3dacc7b7f9c02f607446b5733cb624c64,Update README.md
+dvyukov,2015-10-23 04:10:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4fc40e92c9b31dc5afb05e1b2145b1d669fa2bb4,4fc40e92c9b31dc5afb05e1b2145b1d669fa2bb4,Update README.md
+dvyukov,2015-10-21 05:41:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/425f21e292f4e413df2568241fcaf0d15c943e40,425f21e292f4e413df2568241fcaf0d15c943e40,Update README.md
+dvyukov,2015-10-20 19:21:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7769e9973ea82fea615841cdc8dd950dc57404a0,7769e9973ea82fea615841cdc8dd950dc57404a0,Update README.md
+dvyukov,2015-10-15 06:04:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ec11b3f22500f19ecdfe0a8a3f46728950d59bf7,ec11b3f22500f19ecdfe0a8a3f46728950d59bf7,"Merge pull request #107 from dgryski/quicklz-trophy
+
+add trophy for github.com/dgryski/go-quicklz"
+dgryski,2015-10-14 22:03:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cbee921e2f1fc1e47d7231424e559ebd91028018,cbee921e2f1fc1e47d7231424e559ebd91028018,add trophy for github.com/dgryski/go-quicklz
+dvyukov,2015-10-14 17:47:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f3ed78f7ce7ced9b9d7b73069b202c977055656e,f3ed78f7ce7ced9b9d7b73069b202c977055656e,Update README.md
+dvyukov,2015-10-14 17:44:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c90d4e6dd558a294bf9ce3f5e6a3db47314eeb86,c90d4e6dd558a294bf9ce3f5e6a3db47314eeb86,Update README.md
+dvyukov,2015-10-14 17:39:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0057d82b29178904d4ebadea6b2d9cfeb8638805,0057d82b29178904d4ebadea6b2d9cfeb8638805,Update README.md
+dvyukov,2015-10-13 15:36:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4df32e72d9805b4b0145f7ea2fd25c59a4352fd8,4df32e72d9805b4b0145f7ea2fd25c59a4352fd8,Update README.md
+dvyukov,2015-10-13 14:37:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bf634f30ab244290a6cba6cd689e61a1dccffbd1,bf634f30ab244290a6cba6cd689e61a1dccffbd1,Update README.md
+dvyukov,2015-10-13 06:04:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7b8c2edaa1ab85537f3f4b6c5431b90cbfd6b79f,7b8c2edaa1ab85537f3f4b6c5431b90cbfd6b79f,"Merge pull request #106 from dubek/readme-add-go-coap
+
+README.md: add go-coap crashes"
+dubek,2015-10-12 20:41:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4bde043bb63f78c0788a367a62e75d707632bb69,4bde043bb63f78c0788a367a62e75d707632bb69,README.md: add go-coap crashes
+dvyukov,2015-10-11 17:56:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3d6bb7df6238cb8ac063d6c2bb5979ed68341862,3d6bb7df6238cb8ac063d6c2bb5979ed68341862,Update README.md
+dvyukov,2015-10-07 17:55:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e83d098553ac7fc780dda28ba80c51186c3ea016,e83d098553ac7fc780dda28ba80c51186c3ea016,Update README.md
+dvyukov,2015-10-07 05:45:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/809d51efb3a40446555fce58f7ff2bf5699c13b8,809d51efb3a40446555fce58f7ff2bf5699c13b8,Update README.md
+dvyukov,2015-10-05 18:03:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/976326853a89a154327e5de3924214efd88b89f0,976326853a89a154327e5de3924214efd88b89f0,Update README.md
+dvyukov,2015-10-03 19:33:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a838ce117e69a8c108b5cf8591bf06841ecdffe4,a838ce117e69a8c108b5cf8591bf06841ecdffe4,Update README.md
+dvyukov,2015-09-30 17:04:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0bfa6b5c2da471b4496560163f390604963960b2,0bfa6b5c2da471b4496560163f390604963960b2,Update README.md
+dvyukov,2015-09-30 05:49:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cbb0015df3d68cf8afb488f4f547173392c486ee,cbb0015df3d68cf8afb488f4f547173392c486ee,Update README.md
+dvyukov,2015-09-28 05:56:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ed53ba6f3212f9fcc0c835c84cbd4865e1b87ce4,ed53ba6f3212f9fcc0c835c84cbd4865e1b87ce4,Update README.md
+dvyukov,2015-09-27 07:59:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/852abc66c067b990824e7adf83a64f2f3fd4e4d7,852abc66c067b990824e7adf83a64f2f3fd4e4d7,"Merge pull request #104 from bmbernie/master
+
+Trophy Added"
+bmbernie,2015-09-26 18:36:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6046bc41a581d34b022f410ee1881d3a76245567,6046bc41a581d34b022f410ee1881d3a76245567,"Added: image/png: slice bounds out of range #12545 to the list of
+trophies"
+dvyukov,2015-09-22 08:19:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fd20b55b68c1859f8d7ecec42869fcdb9ed02b5f,fd20b55b68c1859f8d7ecec42869fcdb9ed02b5f,"fix package prefixes in sonar instrumentation
+
+Strip full package path from package names.
+I guess this still can break if package is locally renamed.
+Handling of that would probably require extraction of import statements.
+
+Fixes #103"
+dvyukov,2015-09-22 05:35:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f88faf02ed0979337447372d955b9c6baf59a0c6,f88faf02ed0979337447372d955b9c6baf59a0c6,Update README.md
+dvyukov,2015-09-22 05:23:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4a26ada4b39fb3ecf0fa4720901c139e5edad3f7,4a26ada4b39fb3ecf0fa4720901c139e5edad3f7,Update README.md
+dvyukov,2015-09-19 10:07:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c460e045f0c9fdf4c0d432e10262e73d63fa199c,c460e045f0c9fdf4c0d432e10262e73d63fa199c,Update README.md
+dvyukov,2015-09-17 14:49:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0d5c955352e72d8f9ec4cf76e7030afd9cb4b32b,0d5c955352e72d8f9ec4cf76e7030afd9cb4b32b,Update README.md
+dvyukov,2015-09-17 08:36:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5cced11b77d2d08dcd7ea5d410d7421953f6b0fa,5cced11b77d2d08dcd7ea5d410d7421953f6b0fa,Update README.md
+dvyukov,2015-09-17 08:16:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d2e415cc11e2637f90a3b7e83ad7a9b5439a1c3b,d2e415cc11e2637f90a3b7e83ad7a9b5439a1c3b,Update README.md
+dvyukov,2015-09-17 08:06:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2ad4f18b3c7eb4fcc7b396d75bbff20196928678,2ad4f18b3c7eb4fcc7b396d75bbff20196928678,Update README.md
+dvyukov,2015-09-17 08:01:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0339c45a43202353d16b87b40e5ce14313bf7bc3,0339c45a43202353d16b87b40e5ce14313bf7bc3,Update README.md
+dvyukov,2015-09-17 07:58:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/02e90a1aee64b4803761591333b458bb5cf09e3b,02e90a1aee64b4803761591333b458bb5cf09e3b,Update README.md
+dvyukov,2015-09-17 07:55:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/034c6e26298da2e3841a1890b946dd92aa1c4c30,034c6e26298da2e3841a1890b946dd92aa1c4c30,Update README.md
+dvyukov,2015-09-16 20:19:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/311329fc6fae1a43a644d71501dca33d5f0ce604,311329fc6fae1a43a644d71501dca33d5f0ce604,Update README.md
+dvyukov,2015-09-16 18:12:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9302b0e0c1b558651b3f4823aefd3381791cb3d6,9302b0e0c1b558651b3f4823aefd3381791cb3d6,Update README.md
+dvyukov,2015-09-16 05:48:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a604c658b8fb9e6fa05c2c55a80f4ed89682436d,a604c658b8fb9e6fa05c2c55a80f4ed89682436d,Update README.md
+dvyukov,2015-09-16 05:38:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/06532a31c39011fff32fbd28b51688ffe2264902,06532a31c39011fff32fbd28b51688ffe2264902,Update README.md
+dvyukov,2015-09-15 17:21:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/81b81169829335d79056b2034a21e071922b1319,81b81169829335d79056b2034a21e071922b1319,Update README.md
+dvyukov,2015-09-15 16:31:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c24a64b336fb56608788a6643fa5cdaf9ecfb8aa,c24a64b336fb56608788a6643fa5cdaf9ecfb8aa,Update README.md
+dvyukov,2015-09-14 18:51:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b7e8e9b0a3ad151bd7209f34421bec8bd4b49b1d,b7e8e9b0a3ad151bd7209f34421bec8bd4b49b1d,Update README.md
+dvyukov,2015-09-14 18:47:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/37c75127ad57bd1410d87d0d678d249c09c7ef85,37c75127ad57bd1410d87d0d678d249c09c7ef85,Update README.md
+dvyukov,2015-09-14 18:41:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7f609eae2dac39abedc10f957ee854e392485fd0,7f609eae2dac39abedc10f957ee854e392485fd0,Update README.md
+dvyukov,2015-09-14 18:37:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7f9c9f2880da046c84cb29725a872b045dae5218,7f9c9f2880da046c84cb29725a872b045dae5218,Update README.md
+dvyukov,2015-09-14 18:18:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/860e57b475e9c5eb2911b283bd81353135a9a03c,860e57b475e9c5eb2911b283bd81353135a9a03c,Update README.md
+dvyukov,2015-09-14 18:00:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7c5591b0753a2cdff34aac0936439ddb081cf1a8,7c5591b0753a2cdff34aac0936439ddb081cf1a8,Update README.md
+dvyukov,2015-09-14 17:58:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/baf6d1d9cc33337cc01f594d6a5fec5da8fc6b9d,baf6d1d9cc33337cc01f594d6a5fec5da8fc6b9d,Update README.md
+dvyukov,2015-09-12 12:12:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f7784d4ac83f9a0b5e6f223f4ee3945504af66aa,f7784d4ac83f9a0b5e6f223f4ee3945504af66aa,Update README.md
+dvyukov,2015-09-11 06:42:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/966994e11015b06614b571c1b40e6930e28aec5e,966994e11015b06614b571c1b40e6930e28aec5e,Update README.md
+dvyukov,2015-09-10 18:27:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/67da690012dd62d58588c26564daac4bd532e5ff,67da690012dd62d58588c26564daac4bd532e5ff,Update README.md
+dvyukov,2015-09-10 08:10:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/570d06f5d740dbc58b9ef4f597948c1f9ce14b5a,570d06f5d740dbc58b9ef4f597948c1f9ce14b5a,Update README.md
+dvyukov,2015-09-06 09:28:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/33c2cd0a7dfee6afaa98dfc172580618eb027965,33c2cd0a7dfee6afaa98dfc172580618eb027965,Update README.md
+dvyukov,2015-09-03 11:15:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dc1c56955c31902baccee4073e35c295c24b27c9,dc1c56955c31902baccee4073e35c295c24b27c9,"fix generation of cover/sonar coverage profiles for -dumpcover
+
+Paths got stripped from file names during conversion to use go/types package.
+Restore full file names.
+Fixes #99"
+dvyukov,2015-09-03 10:32:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cd8375b81f4398d13d6752986fd1ba177142d51f,cd8375b81f4398d13d6752986fd1ba177142d51f,Update README.md
+dvyukov,2015-09-03 10:26:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/08bf92916cd983369692c45868204488bcccb317,08bf92916cd983369692c45868204488bcccb317,Update README.md
+dvyukov,2015-09-03 10:22:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9a57e9f3241b20429343bb2a42cbb1bbde819303,9a57e9f3241b20429343bb2a42cbb1bbde819303,Update README.md
+dvyukov,2015-09-03 10:19:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6bd5926c3deecb24a19107c47615d6e53f2b596e,6bd5926c3deecb24a19107c47615d6e53f2b596e,Update README.md
+dvyukov,2015-09-03 08:36:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e5d9cfbd72f8e7c4b3770c360e63a39f2effab59,e5d9cfbd72f8e7c4b3770c360e63a39f2effab59,Update README.md
+dvyukov,2015-09-02 20:54:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/958fedb7c70d2dac97152e9f05e1d59d91e13e15,958fedb7c70d2dac97152e9f05e1d59d91e13e15,"Merge pull request #98 from pierrec/master
+
+added github.com/pierrec/lz4 crashes"
+dvyukov,2015-09-02 20:53:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/245cba7892587ac255f782fc8bba8d0a7ccee236,245cba7892587ac255f782fc8bba8d0a7ccee236,Update README.md
+dvyukov,2015-09-02 20:43:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ce78f90490a7c50e2a6b527f08b3dff59351552a,ce78f90490a7c50e2a6b527f08b3dff59351552a,Update README.md
+dvyukov,2015-09-02 09:11:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/544ed1e8efcdf2812260d6651ff9728d53ffb0d3,544ed1e8efcdf2812260d6651ff9728d53ffb0d3,Update README.md
+dvyukov,2015-09-02 08:56:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cb2a27b93dc0f95976197226b18e31da151a3148,cb2a27b93dc0f95976197226b18e31da151a3148,Update README.md
+dvyukov,2015-09-02 07:21:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/831739141b3b737d1f19222fb0230fd20b8bb3a3,831739141b3b737d1f19222fb0230fd20b8bb3a3,Update README.md
+dvyukov,2015-09-01 15:13:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5ccded459fafe2aaedde5eeef73461e49a7c6a0d,5ccded459fafe2aaedde5eeef73461e49a7c6a0d,Update README.md
+dvyukov,2015-09-01 14:30:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/56bef5df26176e159bb9640896cdb24aec901410,56bef5df26176e159bb9640896cdb24aec901410,Update README.md
+dvyukov,2015-09-01 14:27:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/992cb2c8d00398a96719b2c851850085e5f38a01,992cb2c8d00398a96719b2c851850085e5f38a01,Update README.md
+dvyukov,2015-09-01 14:25:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c74dca09cd9eba6952309ce09b7e29a321494d7c,c74dca09cd9eba6952309ce09b7e29a321494d7c,Update README.md
+dvyukov,2015-09-01 14:16:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/106d585d5309e8042949038839c3150ea8f8424c,106d585d5309e8042949038839c3150ea8f8424c,Update README.md
+dvyukov,2015-09-01 09:23:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/57026c5651b941188c7c1a3c096e9d53c29afe4d,57026c5651b941188c7c1a3c096e9d53c29afe4d,Update README.md
+dvyukov,2015-08-31 17:14:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1b55af7206affc2744557f084a5406d43437f2f2,1b55af7206affc2744557f084a5406d43437f2f2,"Merge pull request #97 from ebfe/patch-1
+
+Update README.md"
+ebfe,2015-08-31 16:09:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5af79696e5e7c4e8e4fc707f49f17abaab630ed3,5af79696e5e7c4e8e4fc707f49f17abaab630ed3,Update README.md
+dvyukov,2015-08-30 08:30:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d9ffe5ff91d3669f2637d37a9474fb82f8053747,d9ffe5ff91d3669f2637d37a9474fb82f8053747,Update README.md
+dvyukov,2015-08-29 07:09:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cbd7e0ac2683ece41d8c8d2744b46f5670a2028c,cbd7e0ac2683ece41d8c8d2744b46f5670a2028c,Update README.md
+dvyukov,2015-08-28 12:13:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/59923ff4aa57e5539717fdc75f07b74a40eff5f9,59923ff4aa57e5539717fdc75f07b74a40eff5f9,"Merge pull request #96 from octo/master
+
+Trophy: Add ""index out of range"" in collectd.org/network."
+octo,2015-08-28 11:59:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7b8d82e5cc0b5b81ccfbd8987db9fd9045e90283,7b8d82e5cc0b5b81ccfbd8987db9fd9045e90283,"Trophy: Add ""index out of range"" in collectd.org/network.
+
+This also changes the previous line to use the correct import path."
+dvyukov,2015-08-28 08:20:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4eb4114fbd92bb0901161a00bc57cddc70603978,4eb4114fbd92bb0901161a00bc57cddc70603978,Update README.md
+dvyukov,2015-08-27 19:09:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea310f61a9e0b4a808c7d0773ed30ece6a742ec0,ea310f61a9e0b4a808c7d0773ed30ece6a742ec0,Update README.md
+dvyukov,2015-08-27 10:34:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/556b53a253bf2883559e967b785418f227dfaf8f,556b53a253bf2883559e967b785418f227dfaf8f,Update README.md
+dvyukov,2015-08-27 05:55:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7cfb50ef1b25a70a9667af567a31d189ccb80779,7cfb50ef1b25a70a9667af567a31d189ccb80779,Update README.md
+dvyukov,2015-08-26 19:19:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/757800bf38633119a6f9fa50cab34279bd8ad72b,757800bf38633119a6f9fa50cab34279bd8ad72b,Update README.md
+dvyukov,2015-08-26 18:10:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ca0d56fcbb613c343027726500d9d1e6cff759e9,ca0d56fcbb613c343027726500d9d1e6cff759e9,note a fixed bug
+dvyukov,2015-08-26 16:10:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e57556283f4827d0221a6e2896df01c6a6c41790,e57556283f4827d0221a6e2896df01c6a6c41790,"Merge pull request #95 from gregory-m/patch-2
+
+Added github.com/yvasiyarov/php_session_decoder to trophies"
+dvyukov,2015-08-26 16:09:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/828eff88d6e50de7cdf9ed73d2245b11d19ae83b,828eff88d6e50de7cdf9ed73d2245b11d19ae83b,"Merge pull request #94 from ChrisHines/windows-fix
+
+Remove target file before renaming on Windows."
+ChrisHines,2015-08-26 16:04:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b570b9efbf7271180149fa7602b9e24b9493f52a,b570b9efbf7271180149fa7602b9e24b9493f52a,Remove target file before renaming on Windows.
+gregory-m,2015-08-26 16:03:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0b55fa27feea4d90886cd628d4324aace93769d8,0b55fa27feea4d90886cd628d4324aace93769d8,Added github.com/yvasiyarov/php_session_decoder to trophies
+dvyukov,2015-08-26 15:28:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7ca406381abf3eeef1b6180935367b2e1a8a442e,7ca406381abf3eeef1b6180935367b2e1a8a442e,"Merge pull request #92 from gregory-m/patch-1
+
+Added github.com/eaburns/flac to trophies"
+gregory-m,2015-08-26 14:49:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c521adc4f1bc40965084933dcfa83821674cf1c3,c521adc4f1bc40965084933dcfa83821674cf1c3,Added github.com/eaburns/flac to trophies
+dvyukov,2015-08-26 09:48:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9855542aa510c3e148373a912194b3484777eeb1,9855542aa510c3e148373a912194b3484777eeb1,note fixed bugs
+dvyukov,2015-08-25 20:37:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4dedd73564108f29bc9acbe5898a9ddb27073091,4dedd73564108f29bc9acbe5898a9ddb27073091,note a fixed bug
+dvyukov,2015-08-25 20:36:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2f57fea9dac5276106c149888eba92aef75a2e86,2f57fea9dac5276106c149888eba92aef75a2e86,"Merge pull request #90 from btracey/patch-2
+
+Update README.md"
+btracey,2015-08-25 20:30:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dac8f31af2df54424b282ad216d0a72df92e8158,dac8f31af2df54424b282ad216d0a72df92e8158,Update README.md
+dvyukov,2015-08-25 20:09:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3a3ab604abd2098c4ee597f5a1b594263136037a,3a3ab604abd2098c4ee597f5a1b594263136037a,note fixed bug
+dvyukov,2015-08-25 13:24:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d79d9d724ab43fd66bf3ac608a9baaf6125fbf5f,d79d9d724ab43fd66bf3ac608a9baaf6125fbf5f,"update gotypes test:
+- remove suppresstions for fixed bugs
+- add suppressions for new bugs
+- switch to stantard package go/types
+- add new inputs"
+dvyukov,2015-08-25 09:09:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2c56b2b063a75a4f27e70fbb3e6ee22f1f453658,2c56b2b063a75a4f27e70fbb3e6ee22f1f453658,Update README.md
+dvyukov,2015-08-24 18:29:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/422771b693064cce11b3ec838db8b9334c7c3349,422771b693064cce11b3ec838db8b9334c7c3349,Update README.md
+dvyukov,2015-08-24 15:48:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c86b63fe6c2074cab76a854ca4561260ea8019ee,c86b63fe6c2074cab76a854ca4561260ea8019ee,"Merge pull request #89 from btracey/patch-1
+
+Update README.md"
+btracey,2015-08-24 04:26:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d811dfbb7e942948d4922b0cafa1572d41a93436,d811dfbb7e942948d4922b0cafa1572d41a93436,Update README.md
+dvyukov,2015-08-22 11:35:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/25c2b3ee3d50dc06bc508498ce1b2ff45cb1f244,25c2b3ee3d50dc06bc508498ce1b2ff45cb1f244,Update README.md
+dvyukov,2015-08-21 17:50:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/698b2d8f249b125d2bc2c9ee563c7372fd82c60e,698b2d8f249b125d2bc2c9ee563c7372fd82c60e,add license and license notice to source files
+dvyukov,2015-08-21 08:52:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/faef57b09a4db354e859b9e59d3f6d772a0a1fc0,faef57b09a4db354e859b9e59d3f6d772a0a1fc0,Update README.md
+dvyukov,2015-08-20 17:45:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ad271e8d73b13e48255569178eebf7167c0e95aa,ad271e8d73b13e48255569178eebf7167c0e95aa,Update README.md
+dvyukov,2015-08-20 07:22:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ced8350ecd9be64454ffef155859e85348bc16ca,ced8350ecd9be64454ffef155859e85348bc16ca,"Merge pull request #85 from drawks/patch-1
+
+Added stalecucumber trophy"
+dvyukov,2015-08-19 07:37:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/118ec96dc00ff9e4aef1180321fa591e7479695c,118ec96dc00ff9e4aef1180321fa591e7479695c,"Merge pull request #84 from pmezard/master
+
+Add bencode trophy"
+pmezard,2015-08-19 07:03:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f5b5fb5aaec9a933ed529a5525ed5419ca5cce79,f5b5fb5aaec9a933ed529a5525ed5419ca5cce79,Add bencode trophy
+dvyukov,2015-08-18 18:12:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/67b1f6f7da7e4d05ae8b299af44e6eca59137c83,67b1f6f7da7e4d05ae8b299af44e6eca59137c83,"Merge pull request #82 from tv42/master
+
+Add confl trophy"
+tv42,2015-08-18 17:52:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6b0b774f6d1a895aa85094776d1a3057cd8f9bf9,6b0b774f6d1a895aa85094776d1a3057cd8f9bf9,Add confl trophy
+dvyukov,2015-08-18 11:06:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0330bd36be32a854652e51a15ae300c4f13dfdde,0330bd36be32a854652e51a15ae300c4f13dfdde,Update README.md
+dvyukov,2015-08-17 22:44:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d37a25e0ff6578d6e0c3ccc2a28c7b7c65d9572a,d37a25e0ff6578d6e0c3ccc2a28c7b7c65d9572a,"Merge pull request #80 from dgryski/ase-crashers
+
+Update README"
+dgryski,2015-08-17 22:42:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3cb0109f47c2c96d670ee41905b244747a61ee58,3cb0109f47c2c96d670ee41905b244747a61ee58,"Update README
+
+Add crashers in github.com/arolek/ase"
+dvyukov,2015-08-14 20:12:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d6d6200e85165255e9467e6c268b6007b4418d3a,d6d6200e85165255e9467e6c268b6007b4418d3a,Update README.md
+dvyukov,2015-08-13 03:58:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3567b1f3cae6f5e1c2f05e3a9ad653f587f832ff,3567b1f3cae6f5e1c2f05e3a9ad653f587f832ff,Update README.md
+dvyukov,2015-08-12 17:24:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/32e0130adb57ed3a64b08e773b6bc547357078a5,32e0130adb57ed3a64b08e773b6bc547357078a5,Update README.md
+dvyukov,2015-08-12 07:56:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d3cca9da30ac5807784b5c14f23743176c497359,d3cca9da30ac5807784b5c14f23743176c497359,Update README.md
+dvyukov,2015-08-11 22:53:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fefb3fb71d74c69b88bb34af1df9b5cb091fb548,fefb3fb71d74c69b88bb34af1df9b5cb091fb548,Update README.md
+dvyukov,2015-08-11 21:55:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/149f978064a10f438171d0d2b90cd7dc5d1cf1f2,149f978064a10f438171d0d2b90cd7dc5d1cf1f2,Update README.md
+dvyukov,2015-08-11 13:49:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0a7d818faff5c3eb8400c21e9d18e7012e405554,0a7d818faff5c3eb8400c21e9d18e7012e405554,"Merge pull request #79 from marete/master
+
+Update README.md"
+marete,2015-08-11 12:35:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d8e53d396996ef34154d4f710ce237fc298f1dbf,d8e53d396996ef34154d4f710ce237fc298f1dbf,"Update README.md
+
+One more fixed bug in x/crypto/openpgp."
+dvyukov,2015-08-10 07:32:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/48ea4e87110f5841ab10ccd00ea87d73a198e013,48ea4e87110f5841ab10ccd00ea87d73a198e013,"Merge pull request #78 from ryancox/patch-1
+
+Added reference to go-collectd in trophies"
+ryancox,2015-08-09 20:05:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/95511e8d1a3fd54da94408eab554cf17441aa664,95511e8d1a3fd54da94408eab554cf17441aa664,Added reference to go-collectd in trophies
+dvyukov,2015-08-07 07:41:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eeed65d3df15c359db1b191239a10855900cac9f,eeed65d3df15c359db1b191239a10855900cac9f,"Merge pull request #76 from awalterschulze/master
+
+gogo protobuf issue 86 fixed"
+awalterschulze,2015-08-07 07:39:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d6503ae84e797e5fafe572fef51bc9d3d67335ec,d6503ae84e797e5fafe572fef51bc9d3d67335ec,"Update README.md
+
+gogo protobuf issue 86 fixed"
+dvyukov,2015-08-06 20:15:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c2dfb40147f363b44d9bd6459c916730faf0c522,c2dfb40147f363b44d9bd6459c916730faf0c522,"Merge pull request #75 from jwilder/jw-influxdb
+
+Add InfluxDB trophy"
+jwilder,2015-08-06 16:23:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/26714c6f965310fab5192625946ed1d27076de09,26714c6f965310fab5192625946ed1d27076de09,Add influxdb trophy
+dvyukov,2015-08-05 08:29:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a437626f48f66b95179a1768b02845734b67d3b2,a437626f48f66b95179a1768b02845734b67d3b2,Update README.md
+dvyukov,2015-08-05 08:18:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/249cde02a2498552f23ab847860634b7cbf8531c,249cde02a2498552f23ab847860634b7cbf8531c,Update README.md
+dvyukov,2015-08-05 08:18:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aa8c14e6a9c9145e316aeb882b8e8d1f2536ec80,aa8c14e6a9c9145e316aeb882b8e8d1f2536ec80,Update README.md
+dvyukov,2015-08-05 08:17:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6a9509dbf83d93e30af06d3bac025c7df2e63a6d,6a9509dbf83d93e30af06d3bac025c7df2e63a6d,"Merge pull request #73 from tschottdorf/cockroach_example
+
+add cockroach sql parsing fuzz test example"
+dvyukov,2015-08-05 08:10:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/047d326b9857b9b2e0390ad1bcb31d0631501a3e,047d326b9857b9b2e0390ad1bcb31d0631501a3e,Update README.md
+dvyukov,2015-08-04 14:49:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1a2ca54524c03e372267c61cf5c633eaae8a21e6,1a2ca54524c03e372267c61cf5c633eaae8a21e6,Update README.md
+dvyukov,2015-08-04 09:33:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/93235c494531401a24ed648e9a9c23aadee1d118,93235c494531401a24ed648e9a9c23aadee1d118,"Merge pull request #72 from dgryski/readme-updates
+
+Update REAMDE.md"
+dgryski,2015-08-04 09:24:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0f9657e898190368832529d609707aa424a4c5e9,0f9657e898190368832529d609707aa424a4c5e9,"Update REAMDE.md
+
+Add panics in Azure/go-pkcs12 and nats-io/gnatsd"
+dvyukov,2015-08-03 20:37:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2d9d6dc262d71ad06ed4e65f6811d470ba2079c0,2d9d6dc262d71ad06ed4e65f6811d470ba2079c0,Update README.md
+dvyukov,2015-08-03 18:58:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/99cd186865d1018b43373514f3d1c47c839521e0,99cd186865d1018b43373514f3d1c47c839521e0,Update README.md
+dvyukov,2015-08-03 14:34:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7665569ce4fece199ac316661dba4c8adc57b48f,7665569ce4fece199ac316661dba4c8adc57b48f,Update README.md
+dvyukov,2015-08-01 07:27:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ca3e4b1bf7466015882dab1afb449ed5e8244aa7,ca3e4b1bf7466015882dab1afb449ed5e8244aa7,Update README.md
+dvyukov,2015-07-31 22:29:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4e0b6be76aee9425b01e559ace6c9182cdd5c676,4e0b6be76aee9425b01e559ace6c9182cdd5c676,Update README.md
+dvyukov,2015-07-31 19:35:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e4871966194b2d338e10ee66b251ba012328c38a,e4871966194b2d338e10ee66b251ba012328c38a,"fix another instrumentation bug
+
+Update #35"
+dvyukov,2015-07-31 19:22:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8d547696eacae01f40e033b955610c82a2ad7a74,8d547696eacae01f40e033b955610c82a2ad7a74,Update README.md
+dvyukov,2015-07-31 18:24:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7d88a330ec773960b799c0c4322f9a8b0775f1a0,7d88a330ec773960b799c0c4322f9a8b0775f1a0,Update README.md
+dvyukov,2015-07-31 17:25:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/13bdab8359c8b340f022e26b3189947128748cfb,13bdab8359c8b340f022e26b3189947128748cfb,Update README.md
+dvyukov,2015-07-31 16:18:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b97085273201337e116c1de9b993b08e8bdcd179,b97085273201337e116c1de9b993b08e8bdcd179,Update README.md
+dvyukov,2015-07-31 13:59:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5f92111d512101f718217c739dea610bebc33839,5f92111d512101f718217c739dea610bebc33839,"use go/types in go-fuzz-build
+
+This allows to use type information during instrumentation.
+This fixes a bunch of issues:
+
+Fixes #34
+Fixes #35
+
+and also allows to omit sonar instrumentation for e.g. pointers, maps and chans.
+And this can enable more optimizations.
+
+Quite a large overhaul. I've tested that all tests in examples still build."
+dvyukov,2015-07-31 11:28:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4656c091906456b88859a7497a256a839b6705ce,4656c091906456b88859a7497a256a839b6705ce,"Disable leftover debug check.
+
+Fixes #69"
+dvyukov,2015-07-30 18:17:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/66bd6922823115f4e0034e455a79d7e38bf275ae,66bd6922823115f4e0034e455a79d7e38bf275ae,"Merge pull request #68 from andybalholm/master
+
+Add github.com/andybalholm/cascadia to trophies."
+andybalholm,2015-07-30 17:55:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0c748d350fe46ff3814b2fbed544418864e9afd1,0c748d350fe46ff3814b2fbed544418864e9afd1,Merge branch 'master' of https://github.com/dvyukov/go-fuzz
+andybalholm,2015-07-30 17:53:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e72eaa8bc95e4d24f60b3f366ffcb74c73d29d7d,e72eaa8bc95e4d24f60b3f366ffcb74c73d29d7d,Add github.com/andybalholm/cascadia panic to trophies.
+dvyukov,2015-07-30 17:32:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7fa3163f38756afebb76f239254ae276009262ef,7fa3163f38756afebb76f239254ae276009262ef,"Merge pull request #67 from mdlayher/master
+
+Add trophy for github.com/mdlayher/arp"
+mdlayher,2015-07-30 17:30:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea07c363770403ea7560548111727733957e63e4,ea07c363770403ea7560548111727733957e63e4,Add trophy for github.com/mdlayher/arp
+dvyukov,2015-07-30 16:36:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eae701c998a99d81eaa8bc62f854e11eedadd4b9,eae701c998a99d81eaa8bc62f854e11eedadd4b9,"Merge pull request #62 from rlmcpherson/master
+
+versifier key-value structure panic fix and parsing order"
+dvyukov,2015-07-30 15:34:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aeab63340200e8e7722e7cf1249d0c986ebb53f7,aeab63340200e8e7722e7cf1249d0c986ebb53f7,"Merge pull request #66 from mdlayher/master
+
+Add trophy for github.com/mdlayher/aoe"
+mdlayher,2015-07-30 15:26:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/92be7f6b98c4379bfb3421cdc08ddf173cb112b6,92be7f6b98c4379bfb3421cdc08ddf173cb112b6,Add trophy for github.com/mdlayher/aoe
+dvyukov,2015-07-30 06:18:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/138823453db95e0c277e2a5ad949c438ca759c99,138823453db95e0c277e2a5ad949c438ca759c99,"Merge pull request #64 from dgryski/flaghttp-message
+
+fix missing dereference when printing flagHTTP"
+dgryski,2015-07-30 06:09:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1efeb1acd65a946df5260d560cbfcba4bf2fbc7c,1efeb1acd65a946df5260d560cbfcba4bf2fbc7c,fix missing dereference when printing flagHTTP
+dvyukov,2015-07-30 05:18:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/155d8fb4268e1449889598f1ba210561faa8c90d,155d8fb4268e1449889598f1ba210561faa8c90d,"Merge pull request #63 from akrennmair/master
+
+update README."
+akrennmair,2015-07-29 22:01:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/10e3ec3e7e6d795ebef8677097d7af282e36b3c1,10e3ec3e7e6d795ebef8677097d7af282e36b3c1,update README.
+rlmcpherson,2015-07-29 21:23:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/23c0af09157c08da13c6bc1cc73dbc63372a04b7,23c0af09157c08da13c6bc1cc73dbc63372a04b7,versifier: additional key-value tests
+rlmcpherson,2015-07-29 21:21:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/45bc1e02633dcf2a3f4db85bc91a054c170e5530,45bc1e02633dcf2a3f4db85bc91a054c170e5530,"versifier: parse key-value before list
+
+This allows lists of key-value structures to be parsed correctly."
+rlmcpherson,2015-07-29 21:18:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fc44bee3e2d6a94e24420ab0782f99b2230fee3c,fc44bee3e2d6a94e24420ab0782f99b2230fee3c,"versifier: find keyvalue structur in brackets
+
+Since BracketNodes are parsed before KeyValue and contain a BlockNode,
+call structureKeyValue within for the BlockNode."
+rlmcpherson,2015-07-29 21:17:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/997a54d61777013cb7d35074e3c4da32925cdb08,997a54d61777013cb7d35074e3c4da32925cdb08,fix bounds checking logic for structureKeyValue
+dvyukov,2015-07-29 15:18:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/13b6e7295b215d95403b73673031bda929b79bb7,13b6e7295b215d95403b73673031bda929b79bb7,"Merge pull request #61 from marete/master
+
+Update README.md"
+marete,2015-07-29 14:50:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6371756d49d306f45c1c32384b8ebfc9750e3834,6371756d49d306f45c1c32384b8ebfc9750e3834,"Update README.md
+
+Two fixed bugs in x/crypto/openpgp."
+dvyukov,2015-07-28 20:05:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/73b1fb5c67c62230d8bc1cfb8f6e7d3210e9aaa8,73b1fb5c67c62230d8bc1cfb8f6e7d3210e9aaa8,"Merge pull request #59 from stephens2424/master
+
+fixed index page for http server"
+stephens2424,2015-07-28 19:34:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/20ceccacb329b3a71a9fe29240af3347e5abefcf,20ceccacb329b3a71a9fe29240af3347e5abefcf,Added note in readme about stats served over http
+stephens2424,2015-07-28 19:29:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2fbdc6acc15672bc19f02cd2c9a66745b485f2a5,2fbdc6acc15672bc19f02cd2c9a66745b485f2a5,fixed index page for http server
+dvyukov,2015-07-28 18:45:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0000fd4044e8cab302e7a2ced86c76dcbd0bbdcf,0000fd4044e8cab302e7a2ced86c76dcbd0bbdcf,"support architectures other than amd64
+
+Fixes #36"
+dvyukov,2015-07-28 18:16:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/99eaba2fc13ab404dcfb5658e95869e1160fb955,99eaba2fc13ab404dcfb5658e95869e1160fb955,"update crasher output after minimization
+
+Currently output is captured before minimization,
+this leads to confusing crashers.
+
+Fixes #52"
+dvyukov,2015-07-28 18:16:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d4a6a82faddc44858fd6b3e9bd653d248d9106cd,d4a6a82faddc44858fd6b3e9bd653d248d9106cd,go fmt a file
+dvyukov,2015-07-28 16:46:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/14a5ddc73a7bc10fa7517d9adf17e3c346c03344,14a5ddc73a7bc10fa7517d9adf17e3c346c03344,"Merge pull request #38 from stephens2424/master
+
+added a basic web frontend"
+dvyukov,2015-07-28 15:45:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ca0f4c3da454d7f9e424c97dd29e41232baecd91,ca0f4c3da454d7f9e424c97dd29e41232baecd91,"Merge pull request #57 from mdlayher/master
+
+Add trophy for github.com/mdlayher/ethernet"
+mdlayher,2015-07-28 15:18:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a54bbf10f26f68917a9ce3e5284b56f946101aac,a54bbf10f26f68917a9ce3e5284b56f946101aac,Add trophy for github.com/mdlayher/ethernet
+dvyukov,2015-07-28 09:11:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/20d7a67a2ed2d83088719cc3f5d4668d7668f80a,20d7a67a2ed2d83088719cc3f5d4668d7668f80a,"Merge pull request #56 from mkevac/patch-1
+
+Fix typo in README.md"
+mkevac,2015-07-28 08:56:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c0468052f366b93a9064fe7a69e72900532107d1,c0468052f366b93a9064fe7a69e72900532107d1,Fix typo in README.md
+dvyukov,2015-07-27 20:06:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2ffdaf4fee0d4805c5c2daf695410304fea41ed4,2ffdaf4fee0d4805c5c2daf695410304fea41ed4,"change meaning of return values from the Fuzz function
+
+Add -1 value that means ""don't add this input to corpus"".
+Remove value 2 because there were no good story as to when to use it.
+All other values are reserved.
+The change is backwards compatible for now, because all positive values are treated as 1."
+dvyukov,2015-07-27 19:58:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1691b3ccedaa3959c4d6e8f52737dced83a4d2d5,1691b3ccedaa3959c4d6e8f52737dced83a4d2d5,"Merge pull request #54 from tgulacsi/olc
+
+Add open-location-code to Trophies."
+tgulacsi,2015-07-27 19:55:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/31001f223303d4c33373019627f2a082d0a00d63,31001f223303d4c33373019627f2a082d0a00d63,Add open-location-code to Trophies.
+dvyukov,2015-07-27 19:41:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/47ef818ab5d251eb57db6be4bcb751d3ed565790,47ef818ab5d251eb57db6be4bcb751d3ed565790,Update README.md
+dvyukov,2015-07-27 19:33:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/661c1a36d0af1b4b9f372615341a83f465ef50de,661c1a36d0af1b4b9f372615341a83f465ef50de,"add -dup flag that turns off crasher deduplication
+
+This is useful if you want to find as many bugs as possible without fixing known bugs.
+But you will need to do deduplication manually.
+I've used it for gotypes test that has many bugs that all manifest with the same panic statement."
+dvyukov,2015-07-27 19:33:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e1fc1587a56cc65557acc77b0157f9905fa67ca9,e1fc1587a56cc65557acc77b0157f9905fa67ca9,remove trailing whitespace
+dvyukov,2015-07-25 17:37:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/70d8a30e1ed541c39e3beef25faa070bc3a40c98,70d8a30e1ed541c39e3beef25faa070bc3a40c98,Update README.md
+dvyukov,2015-07-25 13:43:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/26cdf9dc40b6700d3e88c4a60f1d86cf6d837a96,26cdf9dc40b6700d3e88c4a60f1d86cf6d837a96,Update README.md
+dvyukov,2015-07-25 07:40:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8cede53c0abfa7b9bdbed5482242dad0b16331d4,8cede53c0abfa7b9bdbed5482242dad0b16331d4,"Merge pull request #50 from tschottdorf/unused_tmp
+
+avoid unused variable error"
+dvyukov,2015-07-24 20:13:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e809fcf39230ef00eb1f8e4176fcc5af2607a5a4,e809fcf39230ef00eb1f8e4176fcc5af2607a5a4,Update README.md
+dvyukov,2015-07-24 18:31:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/43a714db79c439444ea2337dfca35a8cf93018c3,43a714db79c439444ea2337dfca35a8cf93018c3,Update README.md
+dvyukov,2015-07-24 16:19:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7b3080492d23b07d8fabc20577b00823f52a7ae7,7b3080492d23b07d8fabc20577b00823f52a7ae7,Update README.md
+tbg,2015-07-24 10:58:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2056a084ab78593e9ba586ee7f06e481436a6a44,2056a084ab78593e9ba586ee7f06e481436a6a44,"avoid unused variable error
+
+motivation:
+[...]/internal.pb.go:16323]: __go_fuzz_tmp declared and not used
+
+the source is in cockroachdb/cockroach/proto/internal.pb.go
+and is a switch statement with only the default case."
+dvyukov,2015-07-23 20:53:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e23b69d6aa74b9073587597914cca892d81a0295,e23b69d6aa74b9073587597914cca892d81a0295,Update README.md
+dvyukov,2015-07-23 19:44:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c79cd18e25c80211af610233da59b0f7ffebc530,c79cd18e25c80211af610233da59b0f7ffebc530,Update README.md
+dvyukov,2015-07-23 16:14:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4dbcd444ddc4780b2aafedab5f4251af65e66ba6,4dbcd444ddc4780b2aafedab5f4251af65e66ba6,"Merge pull request #49 from rlmcpherson/master
+
+Add README with link to viewable slides"
+rlmcpherson,2015-07-23 15:10:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f422e8a2a8ef2c18f892654bd2ea4d460e520b73,f422e8a2a8ef2c18f892654bd2ea4d460e520b73,Add README with link to slides
+dvyukov,2015-07-23 12:57:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3a2a3663880b853a082d2f3a726df9a15aff1e32,3a2a3663880b853a082d2f3a726df9a15aff1e32,"Merge pull request #48 from stargrave/freebsd
+
+Allow building on FreeBSD platform"
+stephens2424,2015-07-23 06:36:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d93c975893497458ece49ee3a4c805932e0c29d9,d93c975893497458ece49ee3a4c805932e0c29d9,"fixing import, cleaning up variable name"
+dvyukov,2015-07-23 05:32:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5dadaf1ff2b67a39f1bc885ba2e22a3b1c6e579b,5dadaf1ff2b67a39f1bc885ba2e22a3b1c6e579b,Update README.md
+dvyukov,2015-07-23 05:28:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/72dc2cfbb31cf504d3cc781f1d09de5d9a365849,72dc2cfbb31cf504d3cc781f1d09de5d9a365849,Update README.md
+dvyukov,2015-07-23 05:21:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2a6ef6afcc770bdf5524b539c6b731a65404d1f6,2a6ef6afcc770bdf5524b539c6b731a65404d1f6,Update README.md
+dvyukov,2015-07-22 18:15:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/511eedb0661a8d1ff08eb7faaf1976e787f82fa5,511eedb0661a8d1ff08eb7faaf1976e787f82fa5,"Merge pull request #47 from Thomasdezeeuw/master
+
+Fix for #44"
+Thomasdezeeuw,2015-07-22 14:58:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/534c0d0293bc88475603253a6bbd0a7f44a92c32,534c0d0293bc88475603253a6bbd0a7f44a92c32,"Let slaves reconnect to master on errors
+
+Before whenever a slave got an errors returned from the master it was
+only logged. With this same it assumes that on error the slave becomes
+useless and reconnects to the master.
+
+Todo: better error handling on the master side, better handling of the
+remaining data on the slaves side."
+dvyukov,2015-07-22 13:10:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/09ff9f942efa8d86ed7d485fe09e428bb06ea0b9,09ff9f942efa8d86ed7d485fe09e428bb06ea0b9,"Merge pull request #45 from Thomasdezeeuw/master
+
+Code cleanup"
+dvyukov,2015-07-22 13:08:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5cdd82a77e0afb9e5a2c327c27aa76e9cecf881d,5cdd82a77e0afb9e5a2c327c27aa76e9cecf881d,"Merge pull request #46 from stargrave/mistakes
+
+Correct several typos"
+Thomasdezeeuw,2015-07-22 12:44:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2d985504056d1a492595fad11b9890b8837baa55,2d985504056d1a492595fad11b9890b8837baa55,Fix formatting
+Thomasdezeeuw,2015-07-22 12:42:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/787f4a9dc47786cd966cfef6fec0cefc5786b04b,787f4a9dc47786cd966cfef6fec0cefc5786b04b,Add back flagCoverCounters check
+Thomasdezeeuw,2015-07-21 15:47:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9c3ae273e3d0228b330f9faa052520cd3a2fbd2f,9c3ae273e3d0228b330f9faa052520cd3a2fbd2f,Code cleanup
+dvyukov,2015-07-20 18:18:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1de640f8dd10cda560b6ea6c929f1eec66f38455,1de640f8dd10cda560b6ea6c929f1eec66f38455,"Merge pull request #43 from rlmcpherson/master
+
+Correct insert of KeyValNode into []Node"
+dvyukov,2015-07-20 17:56:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8f0bc5cdcc1cfbe10bac7001957f79730568c43e,8f0bc5cdcc1cfbe10bac7001957f79730568c43e,Update README.md
+rlmcpherson,2015-07-20 16:18:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2b1035285bb79d9c7f5cc13e7e14a0e3db329d50,2b1035285bb79d9c7f5cc13e7e14a0e3db329d50,"Correct insert of KeyValNode into []Node
+
+The append logic in structureKeyValueNode was incorrect and could result
+in a slice out of range error (#42). Correctly insert KeyValNode into nn
+and update nn length.
+
+fixes #42"
+stephens2424,2015-07-20 12:14:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/94a000e5f43e996a540f65422c5603c97f46caa1,94a000e5f43e996a540f65422c5603c97f46caa1,restoring comment about manually vendored library
+stephens2424,2015-07-20 11:51:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cdb2427c4b7038f75d30afd0977336f25e532de5,cdb2427c4b7038f75d30afd0977336f25e532de5,"inlining assets
+
+Provides a go:generate statement to run go-bindata-assetfs [1]. This
+adds the assets into the binary itself in a fairly efficient manner,
+which allows the binary to be comletely static whilst still keeping
+non-Go resources in their canonical file format.
+
+References:
+[1] https://github.com/elazarl/go-bindata-assetfs#readme"
+stephens2424,2015-07-19 21:07:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4c4c68c88dddd1c99117994d154647f776b35034,4c4c68c88dddd1c99117994d154647f776b35034,"moving http handlers to master, other cleanups"
+stephens2424,2015-07-19 18:59:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e8557450473a5e47a15346b7807835efab79cced,e8557450473a5e47a15346b7807835efab79cced,updating writerset
+dvyukov,2015-07-18 20:32:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/883defe720f4625365f3418680068254c53b58fe,883defe720f4625365f3418680068254c53b58fe,"Merge pull request #39 from rlmcpherson/keyvalue-node
+
+Add Key-Value support to versifier"
+dvyukov,2015-07-18 19:52:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9d0bf2c42df15fa9b42c0d812d629144ceedc996,9d0bf2c42df15fa9b42c0d812d629144ceedc996,"fix circular dependency involving go-fuzz-dep on windows
+
+Fixes #40"
+dvyukov,2015-07-18 00:12:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e81fb9c716594c782bf3691a4f8407940fe11a43,e81fb9c716594c782bf3691a4f8407940fe11a43,Update README.md
+dvyukov,2015-07-17 23:12:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ebe3bdefedcaf2808b7549ae5183f28235af32bd,ebe3bdefedcaf2808b7549ae5183f28235af32bd,Update README.md
+dvyukov,2015-07-17 23:08:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8d1972a27fc783288179845fac8fbb4099f36eec,8d1972a27fc783288179845fac8fbb4099f36eec,Update README.md
+dvyukov,2015-07-17 22:13:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/658fc8915c596df9db153f31639869ccd8c057f3,658fc8915c596df9db153f31639869ccd8c057f3,Update README.md
+dvyukov,2015-07-17 22:11:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dd4c8e87c94e2574569cf2a292ff5bc35497dac8,dd4c8e87c94e2574569cf2a292ff5bc35497dac8,Update README.md
+dvyukov,2015-07-17 22:03:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7fe65a0e4ccdc9f858b0867f8f73a47b4a6079d9,7fe65a0e4ccdc9f858b0867f8f73a47b4a6079d9,Update README.md
+dvyukov,2015-07-17 15:56:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ad5b9d1e35117deb360bc47ccf3a09245290c79a,ad5b9d1e35117deb360bc47ccf3a09245290c79a,Update README.md
+rlmcpherson,2015-07-15 21:22:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3ff9b76eb9d59c533f21c6be67d50309f5fa6862,3ff9b76eb9d59c533f21c6be67d50309f5fa6862,"Add Key-Value support to versifier
+
+Add support for Key-Value node generation and structure extraction to
+the versifier. Currently this only supports AlphaNumNode types as keys
+and values, so numeric keys or values will not work."
+dvyukov,2015-07-16 04:35:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b4648bda4b47f51cee4f2c4e238eef8e3dacedc9,b4648bda4b47f51cee4f2c4e238eef8e3dacedc9,add presentation slides
+stephens2424,2015-07-15 08:13:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f7d46b89d679165f7db57817682ac63a28fdd3a4,f7d46b89d679165f7db57817682ac63a28fdd3a4,"fixing imports, inlining bootstrap bugfix, error handling"
+dvyukov,2015-07-15 02:59:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4ae8962fafa54ad9fff0e18411ab9a8e8830018b,4ae8962fafa54ad9fff0e18411ab9a8e8830018b,Update README.md
+dvyukov,2015-07-13 23:32:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eb98e6d52dfc337c4f13e819997f5addf8077438,eb98e6d52dfc337c4f13e819997f5addf8077438,Update README.md
+dvyukov,2015-07-13 22:53:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9757042a00ae158cbccead76cd059cce33e42f5c,9757042a00ae158cbccead76cd059cce33e42f5c,Update README.md
+dvyukov,2015-07-12 18:16:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c10b45dccb0ec165f18b717d7d28db19bad31b25,c10b45dccb0ec165f18b717d7d28db19bad31b25,Update README.md
+stephens2424,2015-07-11 20:54:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a12300907d74c21754669cd7a762073e71971a47,a12300907d74c21754669cd7a762073e71971a47,added a basic web frontend
+dvyukov,2015-07-11 19:15:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/74abe1b6d08222ce53f5b2401fa310202d9cb9a4,74abe1b6d08222ce53f5b2401fa310202d9cb9a4,Update README.md
+dvyukov,2015-07-11 06:59:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7e7da933acfd13bd3a5f3d10ec65c17a012835d7,7e7da933acfd13bd3a5f3d10ec65c17a012835d7,Update README.md
+dvyukov,2015-07-11 06:49:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e05c02be0b22ad7508ba3c0adbf88e7196e8dbbc,e05c02be0b22ad7508ba3c0adbf88e7196e8dbbc,Update README.md
+dvyukov,2015-07-11 06:17:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b8d1bf165378662b852ce4416d1ec359754b021e,b8d1bf165378662b852ce4416d1ec359754b021e,Update README.md
+dvyukov,2015-07-11 05:26:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9a0bb9b36d42101ab8fc9a0b4ef4b6b1b5cb20c8,9a0bb9b36d42101ab8fc9a0b4ef4b6b1b5cb20c8,Update README.md
+dvyukov,2015-07-11 05:05:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea9b912ba30e0e564d6fd7c9b34f41f7d66266b8,ea9b912ba30e0e564d6fd7c9b34f41f7d66266b8,Update README.md
+dvyukov,2015-07-11 04:36:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f6e5e3c17593f99d45bc68a58a0e2869c55e525c,f6e5e3c17593f99d45bc68a58a0e2869c55e525c,"Merge pull request #37 from joeshaw/patch-1
+
+add reference to goexif bug found by go-fuzz"
+joeshaw,2015-07-09 17:38:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/90ca317aa8a3afdafaa6eea8361b144e07f6cb10,90ca317aa8a3afdafaa6eea8361b144e07f6cb10,add reference to goexif bug found by go-fuzz
+dvyukov,2015-07-06 22:48:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/568299640b40420862779b2f2b63ccd5cf7f4342,568299640b40420862779b2f2b63ccd5cf7f4342,Update README.md
+dvyukov,2015-07-06 22:44:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c5a4db554b54ddf5366b7c952ca55ea94ca45643,c5a4db554b54ddf5366b7c952ca55ea94ca45643,Update README.md
+dvyukov,2015-07-06 22:35:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fc29552d95ad7fc20bf50251252fa73548e3a34d,fc29552d95ad7fc20bf50251252fa73548e3a34d,Update README.md
+dvyukov,2015-07-06 15:36:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/99022d22e50e6fff1eb843c592f749908508f9ca,99022d22e50e6fff1eb843c592f749908508f9ca,Update README.md
+dvyukov,2015-07-06 15:24:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1fc37e77c89140e3b2726e791961f866fc63b37d,1fc37e77c89140e3b2726e791961f866fc63b37d,Update README.md
+dvyukov,2015-07-04 18:27:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6f262c59f3416e8a254d300b5b8f2c32f24c95e0,6f262c59f3416e8a254d300b5b8f2c32f24c95e0,Update README.md
+dvyukov,2015-07-04 17:59:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cbd4f56f7ac7fde4a776ca116a50e054f3536206,cbd4f56f7ac7fde4a776ca116a50e054f3536206,Update README.md
+dvyukov,2015-07-04 17:44:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a3d192e31b89f4b13f7f356a3a63833fd967a163,a3d192e31b89f4b13f7f356a3a63833fd967a163,Update README.md
+dvyukov,2015-07-04 17:33:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3664f1be9b8810de041978e33aead1f15c2d20ee,3664f1be9b8810de041978e33aead1f15c2d20ee,Update README.md
+dvyukov,2015-07-04 12:59:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea0da84307047212223ac7e72b4e96f8c17fe66e,ea0da84307047212223ac7e72b4e96f8c17fe66e,Update README.md
+dvyukov,2015-07-04 12:10:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d55b51944e6680620f8ae213b41022ee7d25b501,d55b51944e6680620f8ae213b41022ee7d25b501,Update README.md
+dvyukov,2015-07-04 11:55:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/42869964f3b5d16115e18e853335d0641fdc5115,42869964f3b5d16115e18e853335d0641fdc5115,Update README.md
+dvyukov,2015-07-04 11:50:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/46164e31dc44c9b37112d09e7a182fc258cb2463,46164e31dc44c9b37112d09e7a182fc258cb2463,Update README.md
+dvyukov,2015-07-04 11:45:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/182252cf733eb54c899326b0df0b5f10a170e8bd,182252cf733eb54c899326b0df0b5f10a170e8bd,Update README.md
+dvyukov,2015-07-04 11:21:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b0cf5110c5bf41d829379228903641fb8bf10577,b0cf5110c5bf41d829379228903641fb8bf10577,Update README.md
+dvyukov,2015-07-04 11:15:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eb6adb2431e90e1182166b41d1f38829d98bf8ba,eb6adb2431e90e1182166b41d1f38829d98bf8ba,Update README.md
+dvyukov,2015-07-04 09:45:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/60080117b0d5dc581416d574464b212dacbf1874,60080117b0d5dc581416d574464b212dacbf1874,Update README.md
+dvyukov,2015-07-03 20:48:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a41adc0f082d61e01d87a95045c188be27b9d454,a41adc0f082d61e01d87a95045c188be27b9d454,Update README.md
+dvyukov,2015-07-03 20:11:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7c806c4e87e10ef6e288190233bb30a590efac8d,7c806c4e87e10ef6e288190233bb30a590efac8d,Update README.md
+dvyukov,2015-06-28 18:23:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d61ba52b5ca7a7f451f10b680cf6f129d9b04ea1,d61ba52b5ca7a7f451f10b680cf6f129d9b04ea1,fix unnecessary corpus inflation during startup
+dvyukov,2015-07-03 19:13:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1b7f9e72ea36a4d9b0a564bffdbd44801d8d5f40,1b7f9e72ea36a4d9b0a564bffdbd44801d8d5f40,Update README.md
+dvyukov,2015-07-03 18:41:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7272e46f7af46ed29d77d6a1790f686524981e1f,7272e46f7af46ed29d77d6a1790f686524981e1f,Update README.md
+dvyukov,2015-07-03 18:03:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a84301dcab4870e93f51fc208c35d0f5a158366b,a84301dcab4870e93f51fc208c35d0f5a158366b,Update README.md
+dvyukov,2015-07-03 16:18:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c6b9ffafe3b6fb63b24a381153dc156be10f59e9,c6b9ffafe3b6fb63b24a381153dc156be10f59e9,Update README.md
+dvyukov,2015-07-03 16:15:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e8afb039701a2272af7309b3594d2bf0d5a42da5,e8afb039701a2272af7309b3594d2bf0d5a42da5,Update README.md
+dvyukov,2015-07-03 16:08:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b9565b455483996c35e30d80994dbb937eb30e84,b9565b455483996c35e30d80994dbb937eb30e84,Update README.md
+dvyukov,2015-07-03 16:04:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5ecc8b6dd870caf7a72a03a4824e14ba899d32b1,5ecc8b6dd870caf7a72a03a4824e14ba899d32b1,Update README.md
+dvyukov,2015-07-03 16:00:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/066b4a86e9988604388b99b5ffb3c29518cb02a5,066b4a86e9988604388b99b5ffb3c29518cb02a5,Update README.md
+dvyukov,2015-07-03 13:59:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/90dd1428a8731f90caffb03379b7fb40c4edfe8a,90dd1428a8731f90caffb03379b7fb40c4edfe8a,Update README.md
+dvyukov,2015-07-03 13:51:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/571f9ed8646c4291268f28ba0208722d248b1c18,571f9ed8646c4291268f28ba0208722d248b1c18,Update README.md
+dvyukov,2015-07-03 13:28:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f08579288b5b131b1ba8018b5e423484db980dc3,f08579288b5b131b1ba8018b5e423484db980dc3,Update README.md
+dvyukov,2015-07-03 12:59:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2e5a2dde99cb932000e9d51e8ac3b5dd019a871f,2e5a2dde99cb932000e9d51e8ac3b5dd019a871f,Update README.md
+dvyukov,2015-07-03 12:45:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3ac5293b61b388d1186810c972b2f3195490c3e2,3ac5293b61b388d1186810c972b2f3195490c3e2,Update README.md
+dvyukov,2015-07-03 12:02:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eba0186aa8b60f15dee39efc821a17bedfe70a28,eba0186aa8b60f15dee39efc821a17bedfe70a28,Update README.md
+dvyukov,2015-07-03 11:50:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4167b8c7a3e46776e08ffef07f29f0f107866bfb,4167b8c7a3e46776e08ffef07f29f0f107866bfb,Update README.md
+dvyukov,2015-07-03 11:24:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d9825139771d274fa5688bebab821cfe2bfec8bc,d9825139771d274fa5688bebab821cfe2bfec8bc,Update README.md
+dvyukov,2015-07-03 11:20:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8d276bb3743281c5aa274269a580de70c77b796e,8d276bb3743281c5aa274269a580de70c77b796e,Update README.md
+dvyukov,2015-07-03 11:18:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/709cd634672b203a76ecffb6c33095344bd73bba,709cd634672b203a76ecffb6c33095344bd73bba,Update README.md
+dvyukov,2015-07-03 11:12:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cdb6012da00277d3f8133687124b37ada65d5c6f,cdb6012da00277d3f8133687124b37ada65d5c6f,Update README.md
+dvyukov,2015-07-03 11:07:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/541172a358521b28e3effeebe6d41817e3c3f1f6,541172a358521b28e3effeebe6d41817e3c3f1f6,Update README.md
+dvyukov,2015-07-02 22:19:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f34749bc52af99b9f28f2d65dec464de10cd941c,f34749bc52af99b9f28f2d65dec464de10cd941c,Update README.md
+dvyukov,2015-07-02 22:15:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8df80eb22efbe76e4514bfd869298558aa302790,8df80eb22efbe76e4514bfd869298558aa302790,Update README.md
+dvyukov,2015-07-02 22:11:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e927e7dd943b4db3c839f1da2436338e9c83550a,e927e7dd943b4db3c839f1da2436338e9c83550a,Update README.md
+dvyukov,2015-07-02 22:06:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/488d118b859cd023bb450127c0035c06f29f06cc,488d118b859cd023bb450127c0035c06f29f06cc,Update README.md
+dvyukov,2015-07-02 22:02:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8b661b9b379f5e632c33530cc6f1fdd71a476d40,8b661b9b379f5e632c33530cc6f1fdd71a476d40,Update README.md
+dvyukov,2015-07-02 22:00:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cc190f5ee359e98567209ff7daef05fd527215d4,cc190f5ee359e98567209ff7daef05fd527215d4,Update README.md
+dvyukov,2015-07-02 21:54:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d525ecd895c9b7e420d996b1e9512bc6a5bc3456,d525ecd895c9b7e420d996b1e9512bc6a5bc3456,Update README.md
+dvyukov,2015-07-02 21:51:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f9f8a49efc56c8ebfc548584757d17c451342de3,f9f8a49efc56c8ebfc548584757d17c451342de3,Update README.md
+dvyukov,2015-07-02 21:49:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f7d6c1cff907930f57e1d4211c6bdcd65353a011,f7d6c1cff907930f57e1d4211c6bdcd65353a011,Update README.md
+dvyukov,2015-07-02 21:38:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/59519b6dba5b4ab9f4a91e05766a9eb80ebe4a5c,59519b6dba5b4ab9f4a91e05766a9eb80ebe4a5c,Update README.md
+dvyukov,2015-07-02 21:29:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a18c6396a37853f7bf3305b07ecaec791fa34710,a18c6396a37853f7bf3305b07ecaec791fa34710,Update README.md
+dvyukov,2015-07-02 21:23:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6e3960ba1eb7552ea2a67a4bc34770408b5b1b58,6e3960ba1eb7552ea2a67a4bc34770408b5b1b58,Update README.md
+dvyukov,2015-07-02 21:08:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1cc9eebb8bdc0336587225575d348e1f07164df4,1cc9eebb8bdc0336587225575d348e1f07164df4,Update README.md
+dvyukov,2015-07-02 21:00:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c23ff5ff2f9a6454ed1e4d1a7c9d4f5d27d23909,c23ff5ff2f9a6454ed1e4d1a7c9d4f5d27d23909,Update README.md
+dvyukov,2015-07-02 20:55:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/56bd6b0d0aa74e16ea6c7153e010c6a505c5258a,56bd6b0d0aa74e16ea6c7153e010c6a505c5258a,Update README.md
+dvyukov,2015-07-02 20:45:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/53ae383f758cc5c8ed9d2add965b57636c273abc,53ae383f758cc5c8ed9d2add965b57636c273abc,Update README.md
+dvyukov,2015-07-02 20:41:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/54ef3728caacdda51d01b180b5d842dde71aaa18,54ef3728caacdda51d01b180b5d842dde71aaa18,Update README.md
+dvyukov,2015-07-02 20:21:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/de44a95d2a95265595e4b9126b7a05abfe707937,de44a95d2a95265595e4b9126b7a05abfe707937,Update README.md
+dvyukov,2015-07-02 20:17:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/16a747d0c9733caa71651f4e378aeed099bfb1d8,16a747d0c9733caa71651f4e378aeed099bfb1d8,Update README.md
+dvyukov,2015-07-02 20:07:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/55a729898520a696f4fb3f772659569fd144bbf4,55a729898520a696f4fb3f772659569fd144bbf4,Update README.md
+dvyukov,2015-07-02 19:52:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/862a43f974444f4e614c34c81254a7c23536e1e0,862a43f974444f4e614c34c81254a7c23536e1e0,Update README.md
+dvyukov,2015-07-02 19:45:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aea6200de3e467ff5baeaf574609e323f5fa4aec,aea6200de3e467ff5baeaf574609e323f5fa4aec,Update README.md
+dvyukov,2015-07-02 19:22:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5cbb1520ddbf5196f24daee91367eaa7d7b7b5af,5cbb1520ddbf5196f24daee91367eaa7d7b7b5af,Update README.md
+dvyukov,2015-07-02 19:18:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7fc83a20350e0fc8e50b13f206e70344bf0a9960,7fc83a20350e0fc8e50b13f206e70344bf0a9960,Update README.md
+dvyukov,2015-07-02 17:54:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c3407b348b50687b84e5aee4be4c39814f094a65,c3407b348b50687b84e5aee4be4c39814f094a65,Update README.md
+dvyukov,2015-07-02 14:00:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9595fc4169709ffeacc375cd089b79d0164bbdba,9595fc4169709ffeacc375cd089b79d0164bbdba,Update README.md
+dvyukov,2015-06-30 12:35:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c4732944095e7a017c1c93144d08ee402f0e8e90,c4732944095e7a017c1c93144d08ee402f0e8e90,Update README.md
+dvyukov,2015-06-30 11:50:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a8c9d5ddb4a929784aaa61842da25b4e0fe386e5,a8c9d5ddb4a929784aaa61842da25b4e0fe386e5,Update README.md
+dvyukov,2015-06-30 11:49:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/96f69e818b0426b2bc6c5cb6c48632f5862789a7,96f69e818b0426b2bc6c5cb6c48632f5862789a7,Update README.md
+dvyukov,2015-06-29 19:38:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cf887a8dc5a201b66986a5d9c8c4f1b9e04cdda2,cf887a8dc5a201b66986a5d9c8c4f1b9e04cdda2,Update README.md
+dvyukov,2015-06-29 15:46:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/80a6e12f8859bf94482748cdd6fe7f806f6afafa,80a6e12f8859bf94482748cdd6fe7f806f6afafa,Update README.md
+dvyukov,2015-06-29 14:56:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f5e4cc0c573191bda7bad3ead74039039a673ece,f5e4cc0c573191bda7bad3ead74039039a673ece,Update README.md
+dvyukov,2015-06-29 14:53:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3b6f31ac87b6449e9f1a09e84fb3df2903cb236f,3b6f31ac87b6449e9f1a09e84fb3df2903cb236f,Update README.md
+dvyukov,2015-06-29 09:10:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/40e5b1f1478babffe1415fcf8fedfa0f0358e9bb,40e5b1f1478babffe1415fcf8fedfa0f0358e9bb,Update README.md
+dvyukov,2015-06-29 09:08:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f473ba8ef9241042177d1837164bc2e6f1f2db77,f473ba8ef9241042177d1837164bc2e6f1f2db77,Update README.md
+dvyukov,2015-06-27 23:02:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e61b6d86ee86d25671252f54ad9c9c1387571fbc,e61b6d86ee86d25671252f54ad9c9c1387571fbc,Update README.md
+dvyukov,2015-06-26 17:46:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eb9213e9fafce849c5b2cf0cf00dcc6bb6d12295,eb9213e9fafce849c5b2cf0cf00dcc6bb6d12295,Update README.md
+dvyukov,2015-06-26 16:35:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c22aea15da276b972c5fd737851776319f4b6862,c22aea15da276b972c5fd737851776319f4b6862,Update README.md
+dvyukov,2015-06-26 16:04:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2bde887974ada1148d04bfbb2358119500662e73,2bde887974ada1148d04bfbb2358119500662e73,Update README.md
+dvyukov,2015-06-26 16:04:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1bdc924a53688e1454dbabb0502927170d68c734,1bdc924a53688e1454dbabb0502927170d68c734,Update README.md
+dvyukov,2015-06-25 11:09:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/218a4788a18189d57f8e4759404be668377cfb4b,218a4788a18189d57f8e4759404be668377cfb4b,Update README.md
+dvyukov,2015-06-25 06:39:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/162aeeb25750d159b542275d61f931b20051bd84,162aeeb25750d159b542275d61f931b20051bd84,Update README.md
+dvyukov,2015-06-24 21:50:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a60dea4b4bb9ce525f027dc0a74e252423512837,a60dea4b4bb9ce525f027dc0a74e252423512837,Update README.md
+dvyukov,2015-06-24 21:46:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/49d2b692b5af0158ba06a96a271eebfb18855898,49d2b692b5af0158ba06a96a271eebfb18855898,Update README.md
+dvyukov,2015-06-24 21:41:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a8caf962e24595bd624d040f1d13cf3f548ad22c,a8caf962e24595bd624d040f1d13cf3f548ad22c,Update README.md
+dvyukov,2015-06-24 21:25:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/53c98b2140a4559d8c13751de9fcb68ab710fa06,53c98b2140a4559d8c13751de9fcb68ab710fa06,Update README.md
+dvyukov,2015-06-24 21:06:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e28a3ed2ab011b66319ef1a12efe5b2e4beb89e5,e28a3ed2ab011b66319ef1a12efe5b2e4beb89e5,Update README.md
+dvyukov,2015-06-24 16:35:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/853a263c5d403f30b15be073578789ea16e9947b,853a263c5d403f30b15be073578789ea16e9947b,Update README.md
+dvyukov,2015-06-24 10:39:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b64dd0c20e6210c0f55bb3b950634ded6958ea87,b64dd0c20e6210c0f55bb3b950634ded6958ea87,Update README.md
+dvyukov,2015-06-24 10:36:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4feeb7ff03ed34a93269674d1671bb056b46cf0e,4feeb7ff03ed34a93269674d1671bb056b46cf0e,Update README.md
+dvyukov,2015-06-24 09:29:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0af4db3497a21c545c3674c13da66bdcfd332140,0af4db3497a21c545c3674c13da66bdcfd332140,Update README.md
+dvyukov,2015-06-23 20:32:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8247229f60e30060bb7a6edca682a273aa317a49,8247229f60e30060bb7a6edca682a273aa317a49,Update README.md
+dvyukov,2015-06-23 20:06:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b63c943436828a10f11dd28cfbf752520900ed07,b63c943436828a10f11dd28cfbf752520900ed07,Update README.md
+dvyukov,2015-06-23 18:28:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/64d84ce5449ddc9b07a407eb943820cdf7ed2392,64d84ce5449ddc9b07a407eb943820cdf7ed2392,"Merge pull request #33 from joeshaw/source-lines
+
+go-fuzz-build: set printer.SourcePos"
+dvyukov,2015-06-23 18:16:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8be1639601f9471002a5659894d616b2a163654f,8be1639601f9471002a5659894d616b2a163654f,Update README.md
+dvyukov,2015-06-23 18:00:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dc266bf6395d497b11e252bb2e4d59720d296f3b,dc266bf6395d497b11e252bb2e4d59720d296f3b,Update README.md
+dvyukov,2015-06-23 17:54:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bb23971e0faa15b59025e954ba552a221341c0bd,bb23971e0faa15b59025e954ba552a221341c0bd,Update README.md
+dvyukov,2015-06-23 17:46:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dc0dd08d0a37cbd94e0ccc8148ae562a4907538e,dc0dd08d0a37cbd94e0ccc8148ae562a4907538e,Update README.md
+dvyukov,2015-06-23 17:30:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a9e12bfd622d92aa5f661993365f36086d58c1aa,a9e12bfd622d92aa5f661993365f36086d58c1aa,Update README.md
+dvyukov,2015-06-23 16:43:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7737fe8a86f316e74527be6923ea8e231cc84bcd,7737fe8a86f316e74527be6923ea8e231cc84bcd,Update README.md
+dvyukov,2015-06-23 15:21:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/531fab7775f117a6874b654e6b9c7170495ff58e,531fab7775f117a6874b654e6b9c7170495ff58e,Update README.md
+joeshaw,2015-06-23 14:38:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/042e4f147e42807179e8101f8f386e40db434ea8,042e4f147e42807179e8101f8f386e40db434ea8,"go-fuzz-build: set printer.SourcePos
+
+go-fuzz-build instruments code with coverage data.  This caused line
+numbers in crash output to be wrong.  By setting printer.SourcePos in
+the printer configuration we get `//line` directives added to the code,
+which results in the line numbers from the original code.
+
+Fixes #32."
+dvyukov,2015-06-23 14:35:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f2c84051ad78edae4728957213c295d40d1bf72b,f2c84051ad78edae4728957213c295d40d1bf72b,Update README.md
+dvyukov,2015-06-23 14:06:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/136e1bfbcd546b51672c19f0edc70c73ec94c285,136e1bfbcd546b51672c19f0edc70c73ec94c285,Update README.md
+dvyukov,2015-06-23 14:00:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/420f056a12d9b24dc162f28e52c48dd4df32647a,420f056a12d9b24dc162f28e52c48dd4df32647a,Update README.md
+dvyukov,2015-06-23 11:51:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fb36a7a57a6fe988164e721bb11b56f8103d584b,fb36a7a57a6fe988164e721bb11b56f8103d584b,Update README.md
+dvyukov,2015-06-23 11:38:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/edd0a12f90eac92fbf69861b141c190b6b24fda2,edd0a12f90eac92fbf69861b141c190b6b24fda2,Update README.md
+dvyukov,2015-06-23 11:35:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0722d8410f8320a623d32745f4041eac07b55964,0722d8410f8320a623d32745f4041eac07b55964,Update README.md
+dvyukov,2015-06-23 09:00:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c41e7b4181a1ce2136bbd3301b14a715f0ec059c,c41e7b4181a1ce2136bbd3301b14a715f0ec059c,Update README.md
+dvyukov,2015-06-23 07:35:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2b5fd50da8c88a33bf5be005060c6730bfd1674c,2b5fd50da8c88a33bf5be005060c6730bfd1674c,Update README.md
+dvyukov,2015-06-23 07:22:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9b16ef3f25028c58ba8ea28e6d3db5e31d387337,9b16ef3f25028c58ba8ea28e6d3db5e31d387337,Update README.md
+dvyukov,2015-06-23 07:19:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9026f4343e66aac5bd508c966aa4bcf3946ad010,9026f4343e66aac5bd508c966aa4bcf3946ad010,"Merge pull request #31 from andybons/patch-1
+
+Update README.md"
+andybons,2015-06-23 06:18:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/98cde16157861993e8aedaaa20f8f5df19d6c394,98cde16157861993e8aedaaa20f8f5df19d6c394,Update README.md
+dvyukov,2015-06-22 12:13:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6681408078e3247847c0de261d19cd6730c784f7,6681408078e3247847c0de261d19cd6730c784f7,"fix coverage instrumentation
+see the comment for explanation"
+dvyukov,2015-06-22 21:59:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ff82005c403e3eca2caea1da5d1d6f649d67c1e7,ff82005c403e3eca2caea1da5d1d6f649d67c1e7,Update README.md
+dvyukov,2015-06-22 12:51:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/51f65a2b2f79a1de7ad84cd598c5f749571d223d,51f65a2b2f79a1de7ad84cd598c5f749571d223d,Update README.md
+dvyukov,2015-06-22 12:17:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b265730b58c9f05dec802e41ff71c7a4d047302b,b265730b58c9f05dec802e41ff71c7a4d047302b,Update README.md
+dvyukov,2015-06-22 11:45:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8cc9c08e747acd0e46eba1121b6ee1e30236a2c3,8cc9c08e747acd0e46eba1121b6ee1e30236a2c3,Update README.md
+dvyukov,2015-06-22 11:39:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/97e0a5ef00f87e0b2989fb8bfddd80f98dd1eed3,97e0a5ef00f87e0b2989fb8bfddd80f98dd1eed3,Update README.md
+dvyukov,2015-06-22 11:35:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9e5cfbbcb00d32f3f1c3bb967bd036f69b50c7f3,9e5cfbbcb00d32f3f1c3bb967bd036f69b50c7f3,Update README.md
+dvyukov,2015-06-22 10:53:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f5961ebca1a98a78203b8d6a5aa2adda06c38c7d,f5961ebca1a98a78203b8d6a5aa2adda06c38c7d,Update README.md
+dvyukov,2015-06-22 10:37:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b0ec555ba83fb9f025dd6cc41e50bff028f889d8,b0ec555ba83fb9f025dd6cc41e50bff028f889d8,Update README.md
+dvyukov,2015-06-22 06:34:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b3eaf23f3110ff0227dfad95d017859787318316,b3eaf23f3110ff0227dfad95d017859787318316,Update README.md
+dvyukov,2015-06-20 14:52:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/373a19e52a7eee923f5670c58e980d912a7e37ad,373a19e52a7eee923f5670c58e980d912a7e37ad,"print coverage in blocks rather than in percents
+one wants to know about every new uncovered block"
+dvyukov,2015-06-20 10:01:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f75993d5d3c4d80f1b9edd0caf248c901186de54,f75993d5d3c4d80f1b9edd0caf248c901186de54,Update README.md
+dvyukov,2015-06-20 09:51:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/86ca36574ba943ec3480d852e271977abc846d3e,86ca36574ba943ec3480d852e271977abc846d3e,cleanup temporary files
+dvyukov,2015-06-19 13:04:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/488eaaf34f154f502cda997e21ee1ed156700704,488eaaf34f154f502cda997e21ee1ed156700704,Update README.md
+dvyukov,2015-06-19 12:59:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e6ca75ba0cdbf1d1baac7861025de770773e853b,e6ca75ba0cdbf1d1baac7861025de770773e853b,Update README.md
+dvyukov,2015-06-19 12:56:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e9b0172a7ea444ea134a4aeb8607e6583c519db7,e9b0172a7ea444ea134a4aeb8607e6583c519db7,Update README.md
+dvyukov,2015-06-19 12:35:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cfedcd063d060a8cbc1398a2d096aabfa948625d,cfedcd063d060a8cbc1398a2d096aabfa948625d,Update README.md
+dvyukov,2015-06-19 12:21:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e66bcf7b422e66009dd34c257bddde84c0ed1f78,e66bcf7b422e66009dd34c257bddde84c0ed1f78,Update README.md
+dvyukov,2015-06-19 12:14:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/61762d53574ffb0fe7545965bc6096723fb1d841,61762d53574ffb0fe7545965bc6096723fb1d841,Update README.md
+dvyukov,2015-06-19 11:38:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/edb89c5a8b174d31af7cc3ef14fc10d5fe9f05d3,edb89c5a8b174d31af7cc3ef14fc10d5fe9f05d3,Update README.md
+dvyukov,2015-06-19 11:28:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5fbaf23c85bf848f08cba6d7d38a34da43720f71,5fbaf23c85bf848f08cba6d7d38a34da43720f71,Update README.md
+dvyukov,2015-06-19 10:31:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bdee0a34dde8d3c189be2127c4af964ba6250b8b,bdee0a34dde8d3c189be2127c4af964ba6250b8b,Update README.md
+dvyukov,2015-06-19 10:27:48,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/950e7f7fd1df0fa2c91548f8ec55c81c7eb00cb2,950e7f7fd1df0fa2c91548f8ec55c81c7eb00cb2,Update README.md
+dvyukov,2015-06-18 20:36:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1e9beeccce1df27f76bb015c267617c6eb944364,1e9beeccce1df27f76bb015c267617c6eb944364,Update README.md
+dvyukov,2015-06-18 20:25:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d4d7e4c6c6404323ae390b99aff5b720f46d9a79,d4d7e4c6c6404323ae390b99aff5b720f46d9a79,Update README.md
+dvyukov,2015-06-18 20:19:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/97c3de6683694d1df20c745a7972ac1173db70c0,97c3de6683694d1df20c745a7972ac1173db70c0,Update README.md
+dvyukov,2015-06-18 20:01:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d49641121a8857d6745299594e46539cf9031d53,d49641121a8857d6745299594e46539cf9031d53,"Merge pull request #27 from nikai3d/patch-1
+
+Fix typos in README.md"
+nikai3d,2015-06-18 19:57:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d2660687710d7e6ec5bacb2c08c0ba6cff4b5868,d2660687710d7e6ec5bacb2c08c0ba6cff4b5868,Fix typos in README.md
+dvyukov,2015-06-18 16:17:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8fddbf4d0925672fb66dece78bb4011995f18bdd,8fddbf4d0925672fb66dece78bb4011995f18bdd,Update README.md
+dvyukov,2015-06-18 05:53:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c6ba78aeffd975b7b46d2f48a503a1d908f098ed,c6ba78aeffd975b7b46d2f48a503a1d908f098ed,Update README.md
+dvyukov,2015-06-17 11:51:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/488ea27a01ec626cff27a51d687e2fdb5f2afff1,488ea27a01ec626cff27a51d687e2fdb5f2afff1,Update README.md
+dvyukov,2015-06-16 15:04:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/25e4c1435b4b7e8c3043ceeb2019861d03fa3aba,25e4c1435b4b7e8c3043ceeb2019861d03fa3aba,Update README.md
+dvyukov,2015-06-16 15:02:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e6e428ba7b5bbf5155d2c186c2b6b72eb353750f,e6e428ba7b5bbf5155d2c186c2b6b72eb353750f,Update README.md
+dvyukov,2015-06-16 13:37:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d230577537ec18ea68d2502bc219195cd150a9f3,d230577537ec18ea68d2502bc219195cd150a9f3,Update README.md
+dvyukov,2015-06-14 22:31:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7faa18017a1c90ecf47cbdba3f237fba0186e8e7,7faa18017a1c90ecf47cbdba3f237fba0186e8e7,Update README.md
+dvyukov,2015-06-14 21:10:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/808991a39ded64a110e4f4ac583d8bf2fff92865,808991a39ded64a110e4f4ac583d8bf2fff92865,Update README.md
+dvyukov,2015-06-14 13:29:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b2a1cda01e677cf6f49f92a58b1031295918f0e8,b2a1cda01e677cf6f49f92a58b1031295918f0e8,Update README.md
+dvyukov,2015-06-13 22:54:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fed08581003a4079a2baaea42a7069cd007ade26,fed08581003a4079a2baaea42a7069cd007ade26,Update README.md
+dvyukov,2015-06-13 21:13:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/09b7c53b3f97d5297dd4fd4f198c933d94470827,09b7c53b3f97d5297dd4fd4f198c933d94470827,Update README.md
+dvyukov,2015-06-13 20:13:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1909d3a16e9f09051b79686c59888b6676e42c01,1909d3a16e9f09051b79686c59888b6676e42c01,Update README.md
+dvyukov,2015-06-13 20:02:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f5ff4f5d7b7fedfc3ca3c11b6575e238535cc5b0,f5ff4f5d7b7fedfc3ca3c11b6575e238535cc5b0,Update README.md
+dvyukov,2015-06-13 17:51:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e866e76ed44cc8159d3ce23649fd4ca466f93528,e866e76ed44cc8159d3ce23649fd4ca466f93528,Update README.md
+dvyukov,2015-06-13 17:33:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/75aed47ab7f518cd1b9428d8a9c672bcf5df2d7c,75aed47ab7f518cd1b9428d8a9c672bcf5df2d7c,Update README.md
+dvyukov,2015-06-13 14:55:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b4e3f443229079df40f8c123643809e714013214,b4e3f443229079df40f8c123643809e714013214,Update README.md
+dvyukov,2015-06-13 11:05:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a170007ebf3751b2d8c519d0cff9a1aaf0feef69,a170007ebf3751b2d8c519d0cff9a1aaf0feef69,Update README.md
+dvyukov,2015-06-12 16:04:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c756a375271288ca389ad148544d2e7bbef108fc,c756a375271288ca389ad148544d2e7bbef108fc,Update README.md
+dvyukov,2015-06-12 12:01:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1ac0fd3f632f48e13da0a0b0a84e460608117487,1ac0fd3f632f48e13da0a0b0a84e460608117487,Update README.md
+dvyukov,2015-06-12 11:15:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fa2e0ff6b609d0bd2f392f110c4494249e87c776,fa2e0ff6b609d0bd2f392f110c4494249e87c776,Update README.md
+dvyukov,2015-06-12 10:05:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fec95bb8cc682dbfcceac7926359c42133e3e292,fec95bb8cc682dbfcceac7926359c42133e3e292,Update README.md
+dvyukov,2015-06-11 17:53:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2cd072ee51e1c2116d3e3ad25c307982609de28c,2cd072ee51e1c2116d3e3ad25c307982609de28c,mention research on automatic protocol reverse engineering
+dvyukov,2015-06-11 21:25:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0bf1efa89a23d8f4e695adbec43b3017d16e8cea,0bf1efa89a23d8f4e695adbec43b3017d16e8cea,Update README.md
+dvyukov,2015-06-11 21:16:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6622b031ffaa20eaf1b3144c4584ac6ab96bb003,6622b031ffaa20eaf1b3144c4584ac6ab96bb003,Update README.md
+dvyukov,2015-06-11 20:57:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b52fadb6a54aedb7b325d4ad7db22d2417d5e278,b52fadb6a54aedb7b325d4ad7db22d2417d5e278,Update README.md
+dvyukov,2015-06-11 20:36:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6cc7d07883678bf8419b990c5968009d5fd80daa,6cc7d07883678bf8419b990c5968009d5fd80daa,Update README.md
+dvyukov,2015-06-11 20:34:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8367c868379dfdb74640dce7bc3f6162b9d3de6f,8367c868379dfdb74640dce7bc3f6162b9d3de6f,Update README.md
+dvyukov,2015-06-11 19:53:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/44868ebd32feff4cb6eb57bdb2a0d3eabe6dbc29,44868ebd32feff4cb6eb57bdb2a0d3eabe6dbc29,Update README.md
+dvyukov,2015-06-11 19:26:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/59f695ce22521cfdbadcbe20f2d50218e5661f2e,59f695ce22521cfdbadcbe20f2d50218e5661f2e,Update README.md
+dvyukov,2015-06-11 19:17:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5939ca818973bc018b78bdbae771ac0b096346ef,5939ca818973bc018b78bdbae771ac0b096346ef,Update README.md
+dvyukov,2015-06-11 19:00:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e714e8a79db433d5eb3b764f7be1cc96879482f6,e714e8a79db433d5eb3b764f7be1cc96879482f6,Update README.md
+dvyukov,2015-06-11 18:58:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/12090d03718510120f8e3ac8bd6fae426a9875ad,12090d03718510120f8e3ac8bd6fae426a9875ad,Update README.md
+dvyukov,2015-06-11 09:14:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/803567c6dc0e0493ef51b7a10b1c2a9990f0149d,803567c6dc0e0493ef51b7a10b1c2a9990f0149d,Update README.md
+dvyukov,2015-06-10 21:31:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4e2c7c4fc028b840247180bea96dfe02e5f4b049,4e2c7c4fc028b840247180bea96dfe02e5f4b049,Update README.md
+dvyukov,2015-06-10 21:04:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4ba2b7ad7e5d5cdf740f6776b8589aed71b8f08d,4ba2b7ad7e5d5cdf740f6776b8589aed71b8f08d,Update README.md
+dvyukov,2015-06-10 21:03:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/67338a249e29e88892564550e7d57dfa67c29242,67338a249e29e88892564550e7d57dfa67c29242,Update README.md
+dvyukov,2015-06-10 20:04:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4230efd7c8941b510f3b41771b395a49bf5b9662,4230efd7c8941b510f3b41771b395a49bf5b9662,Update README.md
+dvyukov,2015-06-10 20:02:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dfa451bedfa2f1c3ee121f1e0838e559fcf5a986,dfa451bedfa2f1c3ee121f1e0838e559fcf5a986,Update README.md
+dvyukov,2015-06-10 19:59:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b64e10abefbb8a6d37747f10ebe1a3aa25d0123e,b64e10abefbb8a6d37747f10ebe1a3aa25d0123e,Update README.md
+dvyukov,2015-06-10 17:59:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5b035e26913f93b12babb08ad927eeb1c3a1e03f,5b035e26913f93b12babb08ad927eeb1c3a1e03f,Update README.md
+dvyukov,2015-06-10 17:41:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/88b07de564606eb202cf57474fb5f84579ea4d56,88b07de564606eb202cf57474fb5f84579ea4d56,Update README.md
+dvyukov,2015-06-10 15:13:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ce96c12486a3bf92f4ed4e693f114909a73511ff,ce96c12486a3bf92f4ed4e693f114909a73511ff,Update README.md
+dvyukov,2015-06-09 21:41:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c7bf73a4b5ff570d6164b943902a143f2e960c09,c7bf73a4b5ff570d6164b943902a143f2e960c09,Update README.md
+dvyukov,2015-06-09 12:36:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9cb1015f0c7768cc131cfbbd30d9edb59a0965b6,9cb1015f0c7768cc131cfbbd30d9edb59a0965b6,"remove -corpus flag
+now you put corpus right into workdir directory
+this simplifies committing the corpus (and maybe suppressions/crashers) to source control system to simplify restart of go-fuzz without losing progress"
+dvyukov,2015-06-09 17:45:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a3a1da74b5359ca43cb8e5c13a09af187485b132,a3a1da74b5359ca43cb8e5c13a09af187485b132,Update README.md
+dvyukov,2015-06-09 16:37:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5c682841c0d553e0fc20c64895317d28d06d60e6,5c682841c0d553e0fc20c64895317d28d06d60e6,Update README.md
+dvyukov,2015-06-09 15:05:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cb1cea50ac99041c62148dd4bc3fe3abf497fbbc,cb1cea50ac99041c62148dd4bc3fe3abf497fbbc,Update README.md
+dvyukov,2015-06-09 13:39:56,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fdf09af3bf42334a58c328c015eef22e6f03988f,fdf09af3bf42334a58c328c015eef22e6f03988f,Update README.md
+dvyukov,2015-06-09 13:31:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2944a66c46c08dddf487e591641c49cfa2d90a4a,2944a66c46c08dddf487e591641c49cfa2d90a4a,Update README.md
+dvyukov,2015-06-09 06:17:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/65282d49cfefa9c1036a0d72d4b0c8eb8f5768f9,65282d49cfefa9c1036a0d72d4b0c8eb8f5768f9,"Merge pull request #26 from tw4452852/fix-blackfriday
+
+fix blackfriday's index out of range issues"
+tw4452852,2015-06-09 01:42:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/af49f5e024ce0182be1f28b8d1a3366213fe665a,af49f5e024ce0182be1f28b8d1a3366213fe665a,"fix blackfriday's index out of range issues
+
+Signed-off-by: Tw <tw19881113@gmail.com>"
+dvyukov,2015-06-08 17:19:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b1e4dd12a4063b5fdb53dc44986135af5322de29,b1e4dd12a4063b5fdb53dc44986135af5322de29,fix a bug in go-fuzz-build when it could pick up a wrong GOPATH
+dvyukov,2015-06-08 13:08:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9b353acd1a24e05a177d1e7a5f123f80b22588af,9b353acd1a24e05a177d1e7a5f123f80b22588af,Update README.md
+dvyukov,2015-06-08 11:49:24,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0b885406b2b5899eb5de4c91b5961dc7f2405af7,0b885406b2b5899eb5de4c91b5961dc7f2405af7,Update README.md
+dvyukov,2015-06-08 11:44:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7cd0c6aca5b1aad6abd94e2e774639f137953ee6,7cd0c6aca5b1aad6abd94e2e774639f137953ee6,Update README.md
+dvyukov,2015-06-07 21:21:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/cf4d68d883f29c3ed77756c878c229b0bb89e36d,cf4d68d883f29c3ed77756c878c229b0bb89e36d,Update README.md
+dvyukov,2015-06-07 18:28:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/191fef07106f5d1d5ea0517d5395f4f377ae31e2,191fef07106f5d1d5ea0517d5395f4f377ae31e2,Update README.md
+dvyukov,2015-06-07 11:23:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1fce9e92b7950af2eb2319a39399f75fd25d291b,1fce9e92b7950af2eb2319a39399f75fd25d291b,Update README.md
+dvyukov,2015-06-07 09:28:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5a5f57c91eb12f6d49b53cdfb2fddd58c52c2d6d,5a5f57c91eb12f6d49b53cdfb2fddd58c52c2d6d,Update README.md
+dvyukov,2015-06-07 08:44:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4645a760f5ceb6daf63dff7431a28f7dfb6bd1c4,4645a760f5ceb6daf63dff7431a28f7dfb6bd1c4,Update README.md
+dvyukov,2015-06-05 13:27:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7648bc3aaa5bf78260a1507e884e678b98303926,7648bc3aaa5bf78260a1507e884e678b98303926,Update README.md
+dvyukov,2015-06-03 12:40:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/821699d4287adff2cd972d537bf8bfff0bd612ee,821699d4287adff2cd972d537bf8bfff0bd612ee,Update README.md
+dvyukov,2015-06-02 14:08:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/32260c115d8860149d351049840ad9fe4532985b,32260c115d8860149d351049840ad9fe4532985b,Update README.md
+dvyukov,2015-06-02 13:14:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7e990ec8c16292c0e19ad71fabe36a5b1d3dd85f,7e990ec8c16292c0e19ad71fabe36a5b1d3dd85f,Update README.md
+dvyukov,2015-06-02 12:14:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d18b03aeb42ed4c2cb613ad47e229f5eeed4b402,d18b03aeb42ed4c2cb613ad47e229f5eeed4b402,Update README.md
+dvyukov,2015-06-02 12:14:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8be9846bca76ee78e1446acfd7d1634e23cd02d3,8be9846bca76ee78e1446acfd7d1634e23cd02d3,Update README.md
+dvyukov,2015-06-02 12:13:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/17d42a183f60d9f8b9b908a400a9b617ec430eed,17d42a183f60d9f8b9b908a400a9b617ec430eed,Update README.md
+dvyukov,2015-06-02 12:12:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d42739d702c4ac88f258ea775ccb293955f4a525,d42739d702c4ac88f258ea775ccb293955f4a525,"Merge pull request #24 from opennota/master
+
+Update README.md"
+dvyukov,2015-05-31 18:21:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d7ca0ce39e6bd22e96a35a1fc4ded1f5a82e0ecf,d7ca0ce39e6bd22e96a35a1fc4ded1f5a82e0ecf,Update README.md
+opennota,2015-05-31 12:07:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7b1d728ff03fb25e8016f19f7e932c0a2464bc06,7b1d728ff03fb25e8016f19f7e932c0a2464bc06,Update README.md
+dvyukov,2015-05-30 12:12:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5e9b7856efe13201d80a7eaa295020d2675a6de6,5e9b7856efe13201d80a7eaa295020d2675a6de6,Update README.md
+dvyukov,2015-05-30 11:16:53,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d3261840e3439f2642f65cd49ffd58ed8c298d94,d3261840e3439f2642f65cd49ffd58ed8c298d94,Update README.md
+dvyukov,2015-05-30 10:16:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3857388f7566f89ccab706ea11a4eec41a5bf59a,3857388f7566f89ccab706ea11a4eec41a5bf59a,Update README.md
+dvyukov,2015-05-30 10:07:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2638b761a722e4c35ce4c293b684ee2fe2b2c481,2638b761a722e4c35ce4c293b684ee2fe2b2c481,Update README.md
+dvyukov,2015-05-29 21:05:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dd6948e68e374ee22a5060ed735c2ab141b1a362,dd6948e68e374ee22a5060ed735c2ab141b1a362,more checks for input size
+dvyukov,2015-05-29 17:29:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/133896eac5ee2f95ff987b73d92c5c074ad9e403,133896eac5ee2f95ff987b73d92c5c074ad9e403,"support upper/lower-case replacements in sonar
+also some improvements to versifier"
+dvyukov,2015-05-29 06:06:06,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/acaa0a9e0efbf7b62998f260c8c4bad532a4cd52,acaa0a9e0efbf7b62998f260c8c4bad532a4cd52,Update README.md
+dvyukov,2015-05-28 18:39:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ab47dc0093627a8d87b64042dfe9ec9e22f9d847,ab47dc0093627a8d87b64042dfe9ec9e22f9d847,Update README.md
+dvyukov,2015-05-28 08:23:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b205f8a4d4dd014a4b437b5ec8ce806099bd0e61,b205f8a4d4dd014a4b437b5ec8ce806099bd0e61,Update README.md
+dvyukov,2015-05-27 14:28:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6cccd434f944b280cb71cee9a6b794e98048c017,6cccd434f944b280cb71cee9a6b794e98048c017,Update README.md
+dvyukov,2015-05-27 09:22:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/895a0fa99845283cc528f2a0aada3370f8b96f29,895a0fa99845283cc528f2a0aada3370f8b96f29,Update README.md
+dvyukov,2015-05-27 08:44:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/feff7bbfbb3f03eced52179b8c9ad4d2ce1fc35d,feff7bbfbb3f03eced52179b8c9ad4d2ce1fc35d,Update README.md
+dvyukov,2015-05-27 08:41:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/feac86e840e0170050e3e84bfe9f1911f698d2c6,feac86e840e0170050e3e84bfe9f1911f698d2c6,Update README.md
+dvyukov,2015-05-27 06:04:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7de393042cdabe309adbe2c05015b0472d5c0940,7de393042cdabe309adbe2c05015b0472d5c0940,Update README.md
+dvyukov,2015-05-26 20:26:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2317aed63b62878552ccc05c883eb700d0aaf618,2317aed63b62878552ccc05c883eb700d0aaf618,Update README.md
+dvyukov,2015-05-26 19:17:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2d2292c66fa4a10c1d7ef5c16fd820da70d380b2,2d2292c66fa4a10c1d7ef5c16fd820da70d380b2,Update README.md
+dvyukov,2015-05-26 18:56:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0979b6ed4d1167678ac3bb0e4c01f78046533925,0979b6ed4d1167678ac3bb0e4c01f78046533925,Update README.md
+dvyukov,2015-05-26 16:16:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c2f1a533acf2bcc866c69e5730c4995cfa4afc5d,c2f1a533acf2bcc866c69e5730c4995cfa4afc5d,"Merge pull request #22 from mikioh/x/net/icmp
+
+Add trophy for golang.org/x/net/icmp"
+dvyukov,2015-05-26 05:56:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a9f75d478884b781ad1c0cf9a2a673af6368074a,a9f75d478884b781ad1c0cf9a2a673af6368074a,Update README.md
+dvyukov,2015-05-25 20:13:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/234697bcb510a3bb872c3ca662ba040d8c3ac71b,234697bcb510a3bb872c3ca662ba040d8c3ac71b,Update README.md
+dvyukov,2015-05-25 20:10:57,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ce6ffe2bcb5d0ba1d57951e53a8e45fb4abbfa60,ce6ffe2bcb5d0ba1d57951e53a8e45fb4abbfa60,Update README.md
+dvyukov,2015-05-25 20:07:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0d5129fc134f3ff400ab15a770224d77164d441b,0d5129fc134f3ff400ab15a770224d77164d441b,fix code after merge
+dvyukov,2015-05-25 20:03:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/92d73d8d2d83464eb206bcf980c224358014f441,92d73d8d2d83464eb206bcf980c224358014f441,Merge branch 'master' of https://github.com/dvyukov/go-fuzz
+dvyukov,2015-05-25 19:55:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fe163de937073ea2a8f67db6959379bc9911d317,fe163de937073ea2a8f67db6959379bc9911d317,"Merge branch 'sonar'
++ fix some bugs"
+dvyukov,2015-05-25 14:15:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/682918eb06f4372ab33ad6f979154eb71bd48338,682918eb06f4372ab33ad6f979154eb71bd48338,"add versifier technology
+address a bunch of TODOs"
+dvyukov,2015-05-25 05:51:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6e3adb09ca14cb6f717bea2c6c0191415953b63f,6e3adb09ca14cb6f717bea2c6c0191415953b63f,"Merge pull request #20 from tdewolff/master
+
+Trophies for minify"
+tdewolff,2015-05-24 20:22:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b5ce6802043e6d257a184042aac465367d400401,b5ce6802043e6d257a184042aac465367d400401,"Update README.md
+
+Whitespace correction"
+tdewolff,2015-05-24 20:20:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/da4e51ce7156ca8702aad126507d349d5ad2e104,da4e51ce7156ca8702aad126507d349d5ad2e104,Added tdewolff's tropies
+dvyukov,2015-05-20 15:47:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/89cd4ae782a82451143d7868cca6ec5f0b1810d7,89cd4ae782a82451143d7868cca6ec5f0b1810d7,Update README.md
+dvyukov,2015-05-18 10:50:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/32e9bc02cc0a0e65c2852fbe89eacb6bb0dfebfc,32e9bc02cc0a0e65c2852fbe89eacb6bb0dfebfc,Update README.md
+dvyukov,2015-05-17 06:22:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a38c7dbe751f2604f95def54f74a0e0b09879cd5,a38c7dbe751f2604f95def54f74a0e0b09879cd5,"add a todo
++ fix some http corpus bugs"
+dvyukov,2015-05-13 18:45:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/58acca2dbee219086d585bc262c994cb8915b258,58acca2dbee219086d585bc262c994cb8915b258,Update README.md
+dvyukov,2015-05-13 18:42:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d24b47a990279ed1135af780e1bf2a481bb7ae26,d24b47a990279ed1135af780e1bf2a481bb7ae26,Update README.md
+dvyukov,2015-05-13 18:38:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2b994a7dd87198b4ea40837a7f888f6942bcf054,2b994a7dd87198b4ea40837a7f888f6942bcf054,Update README.md
+dvyukov,2015-05-12 19:01:04,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a1ea5b4f7d9a8a8a860f97b4350802ef66ff4634,a1ea5b4f7d9a8a8a860f97b4350802ef66ff4634,add missing deps to go-fuzz-build
+dvyukov,2015-05-12 16:00:02,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/aa81a8e663893b57ef0f569631d928d5dbbac07a,aa81a8e663893b57ef0f569631d928d5dbbac07a,add a todo for a potential new intelligence
+dvyukov,2015-05-12 14:30:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7208f8077414908ada96d08cfac0770f042dbc91,7208f8077414908ada96d08cfac0770f042dbc91,Update README.md
+dvyukov,2015-05-12 10:09:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/06ba39315c6b928f196c195278ead4636aedc426,06ba39315c6b928f196c195278ead4636aedc426,Update README.md
+dvyukov,2015-05-12 05:41:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5ea273d51eb0f85a31a1d14cb947f9cca6a6727d,5ea273d51eb0f85a31a1d14cb947f9cca6a6727d,Update README.md
+dvyukov,2015-05-12 05:39:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/06cb69cb6dca6ce92ae445f5fec04d68d31619e3,06cb69cb6dca6ce92ae445f5fec04d68d31619e3,Update README.md
+dvyukov,2015-05-11 08:12:00,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/627ed7e23229b3998a06ab7e5d908d79f7029fa4,627ed7e23229b3998a06ab7e5d908d79f7029fa4,fix windows
+dvyukov,2015-05-11 07:03:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ff44c4ab624389da2149529da6e590016a91d7ea,ff44c4ab624389da2149529da6e590016a91d7ea,"Merge pull request #18 from FiloSottile/master
+
+Use go env instead of euristics to get the GOROOT"
+FiloSottile,2015-05-10 20:50:59,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6bf1e81bd1e2a5d0a3862088250df99ba2d19b83,6bf1e81bd1e2a5d0a3862088250df99ba2d19b83,Use go env instead of euristics to get the GOROOT
+dvyukov,2015-05-10 20:39:35,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c6fca98ece2cdde6f2408bf1e935cba8a11f72a6,c6fca98ece2cdde6f2408bf1e935cba8a11f72a6,Update README.md
+dvyukov,2015-05-10 20:15:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/276cf065c75811d208c0f8bde1351401bbe38355,276cf065c75811d208c0f8bde1351401bbe38355,support hex and base-128 encodings in sonar
+dvyukov,2015-05-10 19:26:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ea5a044b9bec6c2d97e34de756f6825df9d790ad,ea5a044b9bec6c2d97e34de756f6825df9d790ad,recursively instrument expressions in sonar
+dvyukov,2015-05-10 19:11:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/45ae0dfe97e1872f9b94403be9e97fab4f6beb20,45ae0dfe97e1872f9b94403be9e97fab4f6beb20,ignore boring loop conditions in sonar
+dvyukov,2015-05-10 18:06:27,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/dedbe05fa59162585be186dd44460c90ee0040a4,dedbe05fa59162585be186dd44460c90ee0040a4,"make afl-style coverage counters slightly finer-grained
+encoding/xml matches ""CDATA["" string byte-by-byte in a loop
+more coverage for small hit counts should make cracking of such code faster"
+dvyukov,2015-05-10 17:53:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/4b488872c8c1878c22db1bd1dd7ac88adbd1a27b,4b488872c8c1878c22db1bd1dd7ac88adbd1a27b,support (1) custom string types and (2) byte arrays in sonar
+dvyukov,2015-05-10 11:47:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2023e7db63218bb178a88c8bdf3dd3465e273935,2023e7db63218bb178a88c8bdf3dd3465e273935,minor fixes
+dvyukov,2015-05-10 11:37:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6688054c80d28a35bc9ff95b225f36710744f98c,6688054c80d28a35bc9ff95b225f36710744f98c,add missing file
+dvyukov,2015-05-10 11:35:51,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fb29945a66a3b023cda7e92e1320f0d3944df190,fb29945a66a3b023cda7e92e1320f0d3944df190,more work on sonar
+dvyukov,2015-05-08 19:20:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5c32b7c49a46f2585bba6d2d33cd1eb9e6cca7af,5c32b7c49a46f2585bba6d2d33cd1eb9e6cca7af,make handles inheritable on windows
+dvyukov,2015-05-08 18:17:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5a5daa9730469a4e4f11209e775923dd0dd4a0e5,5a5daa9730469a4e4f11209e775923dd0dd4a0e5,Update README.md
+dvyukov,2015-05-08 03:52:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7ee849ddd57fd0400f7e0eeec3a28d59da4f110f,7ee849ddd57fd0400f7e0eeec3a28d59da4f110f,Update README.md
+dvyukov,2015-05-07 18:09:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/39f8368933d4b8bbf0fa3e8431fa568cde45d76b,39f8368933d4b8bbf0fa3e8431fa568cde45d76b,Update README.md
+dvyukov,2015-05-07 17:28:23,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/084035d43a85161881f716a8848e560dcbf51ec3,084035d43a85161881f716a8848e560dcbf51ec3,Update README.md
+dvyukov,2015-05-07 16:24:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/18ecd122e1bdb889637fcd0c57ac4f7a399adcc3,18ecd122e1bdb889637fcd0c57ac4f7a399adcc3,windows support
+dvyukov,2015-05-07 14:56:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/025586584780e70edb37d81bfd75438465bdf983,025586584780e70edb37d81bfd75438465bdf983,"detect sonar sites where both operands are dynamic
+(need to attack them more aggressively)"
+dvyukov,2015-05-06 10:12:20,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ebe74d2ff2d58a9cc5e6cec524a6847abcbcaf35,ebe74d2ff2d58a9cc5e6cec524a6847abcbcaf35,Update README.md
+dvyukov,2015-05-06 09:44:41,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/fbfa11626bc349ee9d9b400ca3af4ee82ea3ec89,fbfa11626bc349ee9d9b400ca3af4ee82ea3ec89,Update README.md
+dvyukov,2015-05-06 09:40:32,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/491b67808f97862c8440acf44cd3c2019dcab76e,491b67808f97862c8440acf44cd3c2019dcab76e,Update README.md
+dvyukov,2015-05-06 04:08:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/773a3fd44871be3425be9a1fd1018f6ddc4058a3,773a3fd44871be3425be9a1fd1018f6ddc4058a3,Update README.md
+dvyukov,2015-05-06 04:08:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/456f4179f7ab8def50b23e2b84e9dbf427034513,456f4179f7ab8def50b23e2b84e9dbf427034513,Update README.md
+dvyukov,2015-05-06 04:03:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9af7603cff42fbfe6327110bdbd3228791a29cb9,9af7603cff42fbfe6327110bdbd3228791a29cb9,Update README.md
+dvyukov,2015-05-05 18:24:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/adc74330c41f526f08ad97a06b24a4fff0f2f2de,adc74330c41f526f08ad97a06b24a4fff0f2f2de,tune sonar constants
+dvyukov,2015-05-05 18:21:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5945b7535e7eacd677f4611f7ee494b826ff5242,5945b7535e7eacd677f4611f7ee494b826ff5242,prepare for windows port
+dvyukov,2015-05-05 14:27:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/585cd04333f4451a780ab2855b417b2c219ae135,585cd04333f4451a780ab2855b417b2c219ae135,more tuning of sonar
+dvyukov,2015-05-05 14:11:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a2f20b9e1afa0cae33ab88316c6305fe1704bf3e,a2f20b9e1afa0cae33ab88316c6305fe1704bf3e,Update README.md
+dvyukov,2015-05-05 14:09:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8b7f10f63617cd0aeccabc2aa65aacd67cf8cd70,8b7f10f63617cd0aeccabc2aa65aacd67cf8cd70,Update README.md
+dvyukov,2015-05-05 08:34:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8108d616a0747bc642ef23b2aa9e1eb0d87ecca8,8108d616a0747bc642ef23b2aa9e1eb0d87ecca8,Update README.md
+dvyukov,2015-05-04 16:27:19,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/df8fdd3b15820596f650dfbebb25dd5ae9a99cfb,df8fdd3b15820596f650dfbebb25dd5ae9a99cfb,"Merge pull request #17 from Zariel/patch-1
+
+add gocql trophy"
+Zariel,2015-05-04 15:24:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5350560e5190ca936aafa0120b50eddcb7fbec20,5350560e5190ca936aafa0120b50eddcb7fbec20,"add gocql trophy
+
+Fixed 2 crashers in gocql"
+dvyukov,2015-05-04 13:06:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/54da76cf125588b52a6e8475362207ac0d91d168,54da76cf125588b52a6e8475362207ac0d91d168,"Merge pull request #16 from dgryski/lz4-crashers
+
+Trophies for github.com/bkaradzic/go-lz4"
+dgryski,2015-05-04 13:03:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e6f9693779884aecfaa6d8d298f31513bc7ddf44,e6f9693779884aecfaa6d8d298f31513bc7ddf44,Trophies for github.com/bkaradzic/go-lz4
+dvyukov,2015-05-04 09:05:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/254cf16736805cdeb7941b93f28dc6a68996a884,254cf16736805cdeb7941b93f28dc6a68996a884,Update README.md
+dvyukov,2015-05-03 19:23:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1bd68134983725ab4194ed5f6c528e28da622211,1bd68134983725ab4194ed5f6c528e28da622211,Update README.md
+dvyukov,2015-05-03 18:51:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/8182be8718d6ed8591fff2eb3218eeb439ee6496,8182be8718d6ed8591fff2eb3218eeb439ee6496,Update README.md
+dvyukov,2015-05-03 18:41:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b01e2c620847bfa763e9a4868c34eee79fa626b6,b01e2c620847bfa763e9a4868c34eee79fa626b6,Update README.md
+dvyukov,2015-05-03 17:46:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3636d96c4cff9c8f6f0233b0482a58fb3dab57a1,3636d96c4cff9c8f6f0233b0482a58fb3dab57a1,Update README.md
+dvyukov,2015-05-03 17:23:01,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/545d3571a112097b97868f3680ef946870def499,545d3571a112097b97868f3680ef946870def499,Update README.md
+dvyukov,2015-05-03 16:42:30,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3b7628da1354ac5bded4c9c0ab6ef7427c8fc559,3b7628da1354ac5bded4c9c0ab6ef7427c8fc559,support several additional cases in instrumentation
+dvyukov,2015-05-03 15:32:43,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7085e855d7f89238c87e3562739dc5b992b66acb,7085e855d7f89238c87e3562739dc5b992b66acb,more work on sonar technology
+dvyukov,2015-05-02 15:24:46,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ef7f19f2e66f0952922c905c9245d01d1eef06a6,ef7f19f2e66f0952922c905c9245d01d1eef06a6,lots of tweaks and improvements for sonar
+dvyukov,2015-05-02 08:03:29,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3027533209d9c2fbe70af612e03f2902352890b2,3027533209d9c2fbe70af612e03f2902352890b2,fix deduplication of sonar inputs
+dvyukov,2015-05-01 20:58:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/1d6f5e793e60348202797f8ed0c5599d051a3e75,1d6f5e793e60348202797f8ed0c5599d051a3e75,add ability to dump coverage profile during fuzzing
+dvyukov,2015-04-30 19:24:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/32686f1c9563b32f3259546691bc80d96b9c6199,32686f1c9563b32f3259546691bc80d96b9c6199,sonar technology experiment (work in progress)
+dvyukov,2015-05-01 21:01:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e4c0acd7b924440241b6f487180248e22e906c4c,e4c0acd7b924440241b6f487180248e22e906c4c,"fix 3 stupid bugs:
+- indices in cover table were limited to 2^8 random values (rather than 2^16)
+- inputs for triaging were not copied, so triaging usually proceed on something different
+- reset cover table just before testing, otherwise it captures init code when process starts"
+dgryski,2015-05-01 10:51:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5d46125ea0f61420ef42ec585be6039823566862,5d46125ea0f61420ef42ec585be6039823566862,Add trophy for Sereal
+bep,2015-04-30 18:56:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/9dada7910df56ea1660183a705a6db68d14e591d,9dada7910df56ea1660183a705a6db68d14e591d,Add trophy report for Hugo
+cryptix,2015-04-30 13:39:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3ea733a0a1bf7a1c7a803c6c887389a56e9c50eb,3ea733a0a1bf7a1c7a803c6c887389a56e9c50eb,"wav: 2 panics in header decoding
+
+Not that exciting maybe but still shows how powerfull this tool is.
+
+I just created wav headers with zero samples as corpuses and directly hit these two panics.
+
+Thanks for this awesome tool!"
+dvyukov,2015-04-30 12:00:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c4550c1dafe0c2414104c3e576565f88d84cf5f1,c4550c1dafe0c2414104c3e576565f88d84cf5f1,Update README.md
+dvyukov,2015-05-01 21:01:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0fc8d0a3af886e60d0afd03d01ae50e900e78780,0fc8d0a3af886e60d0afd03d01ae50e900e78780,"fix 3 stupid bugs:
+- indices in cover table were limited to 2^8 random values (rather than 2^16)
+- inputs for triaging were not copied, so triaging usually proceed on something different
+- reset cover table just before testing, otherwise it captures init code when process starts"
+dvyukov,2015-05-01 11:56:49,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0df09db1092c65132613e722ebc68be9dfc5c46b,0df09db1092c65132613e722ebc68be9dfc5c46b,"Merge pull request #13 from dgryski/sereal-crashes
+
+Add trophy for Sereal"
+dgryski,2015-05-01 10:51:14,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/eb753faf7c985dc69824dbf0e47bfc979a301c2d,eb753faf7c985dc69824dbf0e47bfc979a301c2d,Add trophy for Sereal
+dvyukov,2015-04-30 19:24:44,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3289f661879e894f49bf8313fa65e5e483d92d26,3289f661879e894f49bf8313fa65e5e483d92d26,sonar technology experiment (work in progress)
+dvyukov,2015-04-30 19:10:16,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a387bb1f9e6a7646f07773d900331bc8891efb59,a387bb1f9e6a7646f07773d900331bc8891efb59,"Merge pull request #11 from bep/hugofuzz
+
+Add trophy report for Hugo"
+bep,2015-04-30 18:56:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3a546397a639670f901d70d79015a560257dc17d,3a546397a639670f901d70d79015a560257dc17d,Add trophy report for Hugo
+dvyukov,2015-04-30 13:52:45,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6647117ce3355f37a6a7b13bf914b1f93896f533,6647117ce3355f37a6a7b13bf914b1f93896f533,"Merge pull request #9 from cryptix/patch-1
+
+wav: 2 panics in header decoding"
+cryptix,2015-04-30 13:39:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0a48f88b125f1d1109203b0fdf10e79c867ae052,0a48f88b125f1d1109203b0fdf10e79c867ae052,"wav: 2 panics in header decoding
+
+Not that exciting maybe but still shows how powerfull this tool is.
+
+I just created wav headers with zero samples as corpuses and directly hit these two panics.
+
+Thanks for this awesome tool!"
+dvyukov,2015-04-30 12:00:25,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/a8ffeadfe1357cb3134a8983b82363c8f6850ff9,a8ffeadfe1357cb3134a8983b82363c8f6850ff9,Update README.md
+dvyukov,2015-04-29 18:45:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3d618f27c5204f2c02b81167fbed0ddf3c0b64c6,3d618f27c5204f2c02b81167fbed0ddf3c0b64c6,cleanup temp files
+dvyukov,2015-04-29 11:53:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f905db270f6c088ef152fd8caab717b19e49dba0,f905db270f6c088ef152fd8caab717b19e49dba0,a bunch of minor improvements
+dvyukov,2015-04-29 13:27:09,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/512011673d42288cf729acf17899e6a7ca953f6a,512011673d42288cf729acf17899e6a7ca953f6a,Update README.md
+dvyukov,2015-04-29 13:21:21,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6dc4e4b7be426424999d807faabe47b60d88acc6,6dc4e4b7be426424999d807faabe47b60d88acc6,Update README.md
+dvyukov,2015-04-29 13:10:17,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/45d1f04178a309f9f5599c7be3e08d4bc1394da8,45d1f04178a309f9f5599c7be3e08d4bc1394da8,Update README.md
+dvyukov,2015-04-29 12:50:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2457126a0c8d4ca8a956a6d6bfd6598e8c668e66,2457126a0c8d4ca8a956a6d6bfd6598e8c668e66,Update README.md
+dvyukov,2015-04-29 12:48:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c11f3a30a83e7240115b9e26be49d516672d0887,c11f3a30a83e7240115b9e26be49d516672d0887,Update README.md
+dvyukov,2015-04-29 12:46:33,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/77001409d4964f0b081cf7f388e444982aaffc0c,77001409d4964f0b081cf7f388e444982aaffc0c,Update README.md
+dvyukov,2015-04-29 10:30:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/064e72fef599d28c834b7b2b412899fc8ef03642,064e72fef599d28c834b7b2b412899fc8ef03642,"Update README.md
+
+add 42 freetype-go bugs"
+dvyukov,2015-04-29 07:15:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/0235c702193cfb9fdd22bd07273eea8adc4f372b,0235c702193cfb9fdd22bd07273eea8adc4f372b,add generator of random png images
+dvyukov,2015-04-28 16:45:15,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7c15990a15f79f696ca3a2efc1b0266a826c251a,7c15990a15f79f696ca3a2efc1b0266a826c251a,extract literals from test program and randomly insert them into the inputs
+dvyukov,2015-04-28 16:38:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f9982b65b7f85ee7fa194f99309ba54063a92b09,f9982b65b7f85ee7fa194f99309ba54063a92b09,"Update README.md
+
+add two more bugs in x/image/tiff"
+dvyukov,2015-04-28 09:51:05,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/702f371e0d28f190b8013e6923a6af71cc53cfbd,702f371e0d28f190b8013e6923a6af71cc53cfbd,"Update README.md
+
+add some additional notes"
+dvyukov,2015-04-28 09:47:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/03bc61d1c44e3d445e1ddf1daadbf006bb77a647,03bc61d1c44e3d445e1ddf1daadbf006bb77a647,"Update README.md
+
+Ask users to add their bugs."
+dvyukov,2015-04-28 09:41:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/be352207322030a36e2c244ca90975d80dbab48d,be352207322030a36e2c244ca90975d80dbab48d,Update README.md
+dvyukov,2015-04-28 09:25:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7c8b409dfb9e7eb390f67ce3d7a035487f1fd94f,7c8b409dfb9e7eb390f67ce3d7a035487f1fd94f,literal extraction (work in progress)
+dvyukov,2015-04-27 15:16:28,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5ecd633e39acb83aad7a176542e11f38dcb25994,5ecd633e39acb83aad7a176542e11f38dcb25994,"Merge pull request #6 from a8m/patch-1
+
+docs(README): code highlight"
+a8m,2015-04-27 12:59:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/e132a3ecf4ef230fc1107680ec8aeaa7a211e2d4,e132a3ecf4ef230fc1107680ec8aeaa7a211e2d4,docs(README): code highlight
+dvyukov,2015-04-27 12:28:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/08acd961ab4eece7a92ec7d6c2915f1cbcc13a70,08acd961ab4eece7a92ec7d6c2915f1cbcc13a70,Update README.md
+dvyukov,2015-04-27 09:36:36,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c692a489956ced28bdacba645cdba03bcb15d233,c692a489956ced28bdacba645cdba03bcb15d233,"go-fuzz-build: infer GOROOT location from go command location
+support go1.4 toolchain"
+dvyukov,2015-04-27 08:18:38,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/22ed85d8285a86e98c07dedec7b8d841f7a3232c,22ed85d8285a86e98c07dedec7b8d841f7a3232c,"fix http2 example
+extend http2 corpus"
+dvyukov,2015-04-27 08:10:54,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b1ccded8778c19edc14663b27bf6f5b797a03dcc,b1ccded8778c19edc14663b27bf6f5b797a03dcc,Update README.md
+dvyukov,2015-04-25 12:35:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/28b9f3559bf30abde459198ca996c7c74cd7f22b,28b9f3559bf30abde459198ca996c7c74cd7f22b,add diagnostic for relative import paths in go-fuzz-build
+dvyukov,2015-04-25 12:11:18,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/7be1c3b4380bf3e1e9c87c56e6c7ee7d4edc17a3,7be1c3b4380bf3e1e9c87c56e6c7ee7d4edc17a3,check for set GOROOT in go-fuzz-build
+dvyukov,2015-04-25 10:52:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3f63d8533fe5b84d1da27706cb0eaa322282b9ed,3f63d8533fe5b84d1da27706cb0eaa322282b9ed,"Update README.md
+
+add 2 more trophies
+move the Trophies section to the bottom as it can grow infinitely"
+dvyukov,2015-04-25 10:40:40,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/87f4ad25d4b83a19b6400d9a26ac312e177182a1,87f4ad25d4b83a19b6400d9a26ac312e177182a1,fix links in readme
+dvyukov,2015-04-25 10:38:34,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/da05ba397f2f21833bf9a5d229abb1e237ef6a31,da05ba397f2f21833bf9a5d229abb1e237ef6a31,extend readme file
+dvyukov,2015-04-25 09:38:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/ac2aa2b7feafd1a8ce5a19176495b579a8802d09,ac2aa2b7feafd1a8ce5a19176495b579a8802d09,fix formation of quoted crasher data
+dvyukov,2015-04-25 09:34:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5df79352239995dbfa4becbdeb9def74cc0690b8,5df79352239995dbfa4becbdeb9def74cc0690b8,"fix handling of gofuzz build tag
+make timeout flag to use seconds
+append testee exit status to output"
+dvyukov,2015-04-25 09:20:55,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/3ace2ada1cdf641a6f8bc29d7cdd5daf6c3a9e7e,3ace2ada1cdf641a6f8bc29d7cdd5daf6c3a9e7e,add usage instructions
+dvyukov,2015-04-23 15:09:22,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b23829c1dd5c27051a88154a896bea07344e2591,b23829c1dd5c27051a88154a896bea07344e2591,the actual changes
+dvyukov,2015-04-23 07:52:31,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f63ae7defe43e35601a6404b8b0ce38474ab9e97,f63ae7defe43e35601a6404b8b0ce38474ab9e97,Update README.md
+dvyukov,2015-04-23 07:51:42,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/c8828f662e002ccd556a49784da538a45b710b09,c8828f662e002ccd556a49784da538a45b710b09,Update README.md
+dvyukov,2015-04-22 18:30:13,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b63900eb46f32af99bf98cfcd24a72bd0bcae610,b63900eb46f32af99bf98cfcd24a72bd0bcae610,"fuzzer is functioning now
++ lots of improvements
++ some new tests"
+dvyukov,2015-04-22 08:12:12,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/df1fad525c9fa2545000726d40b9e63455d297ba,df1fad525c9fa2545000726d40b9e63455d297ba,work in progress on making hub work
+dvyukov,2015-04-21 15:38:11,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/b5fb9663889348f4f452d897ec870b1caa4963e0,b5fb9663889348f4f452d897ec870b1caa4963e0,"change parallelization strategy (the current one does not scale)
+work in progress, not working yet"
+dvyukov,2015-04-21 10:32:26,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/f9b23360ec6ff601525091bd71fc9f9bb960c7a2,f9b23360ec6ff601525091bd71fc9f9bb960c7a2,lots of unrelated stuff
+dvyukov,2015-04-20 14:09:08,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/716abb50b17c9fef0824711afcfa4eceb1ad6edd,716abb50b17c9fef0824711afcfa4eceb1ad6edd,hello?
+dvyukov,2015-04-19 10:48:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/898f9ef2bb8bc3536ef947d0694cc69a2029d294,898f9ef2bb8bc3536ef947d0694cc69a2029d294,anybody here?
+dvyukov,2015-04-17 19:42:39,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/d478e4a1231eb328385fad2f0562a676e512bfe6,d478e4a1231eb328385fad2f0562a676e512bfe6,anybody here?
+dvyukov,2015-04-17 08:37:07,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/2cfd50ef2491d43c683020a3a34fc67c5be38354,2cfd50ef2491d43c683020a3a34fc67c5be38354,finally working version
+dvyukov,2015-04-17 06:44:10,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/370fba9c18373a7d21a7e4031d1964a131c513c9,370fba9c18373a7d21a7e4031d1964a131c513c9,work in progress
+dvyukov,2015-04-16 19:37:52,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5d40c166d76188f50c9fed7822efddd4efb03415,5d40c166d76188f50c9fed7822efddd4efb03415,add missing files
+dvyukov,2015-04-16 19:15:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/bc4c07323e80624b9fc3b67343ee4ff3e5fedd8f,bc4c07323e80624b9fc3b67343ee4ff3e5fedd8f,something barely working
+dvyukov,2015-04-16 08:58:03,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/6fbfbb3fdf442bef89f050ced3676bba2d3c30b8,6fbfbb3fdf442bef89f050ced3676bba2d3c30b8,something working
+dvyukov,2015-04-16 06:58:37,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/5170b4c87636ba0e817d79162ef9b7db4813fa14,5170b4c87636ba0e817d79162ef9b7db4813fa14,more work on master/slave
+dvyukov,2015-04-15 17:28:58,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/689124ece43b43befeab66428dd07cc577a6dc15,689124ece43b43befeab66428dd07cc577a6dc15,initial (non-working) code for master and slave
+dvyukov,2015-04-15 16:21:47,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/720fd7caaeb35afbd2c9649ac860f5b3a8a4421a,720fd7caaeb35afbd2c9649ac860f5b3a8a4421a,go-fuzz-build does coverage instrumentation of programs
+dvyukov,2015-04-15 13:07:50,https://api.github.com/repos/dvyukov/go-fuzz/git/commits/09f97aa371801988bba12208b593bb0cecc16ded,09f97aa371801988bba12208b593bb0cecc16ded,Initial commit

@@ -1,0 +1,66 @@
+gordon,"λ Gordon is a tool to create, wire and deploy AWS Lambdas using CloudFormation"
+username,timestamp,url,sha,message
+heri16,2017-12-13 05:52:00,https://api.github.com/repos/jorgebastida/gordon/git/commits/2cee67ee1147125c60302e892a4d62dc4843fece,2cee67ee1147125c60302e892a4d62dc4843fece,"Fix Python build settings for Docker
+
+The current lambci/lambda:build-python2.7 Docker image includes pip and virtualenv
+See issue #20"
+chuckoy,2017-09-27 02:18:37,https://api.github.com/repos/jorgebastida/gordon/git/commits/b447ad035c6eab70a7766c8ed002225d45dcec45,b447ad035c6eab70a7766c8ed002225d45dcec45,Update lambdas documentation with Python3 runtime
+dshivak-twist,2017-07-27 21:02:04,https://api.github.com/repos/jorgebastida/gordon/git/commits/b7d3f19942465f7da657482c0e2198af8d373830,b7d3f19942465f7da657482c0e2198af8d373830,Added symlink resolution when building zip files
+eraclitux,2017-07-25 13:26:55,https://api.github.com/repos/jorgebastida/gordon/git/commits/64c3cfb5466aa76bd51f2d2366f9b6b138033559,64c3cfb5466aa76bd51f2d2366f9b6b138033559,Add missing AWS policies for auto-vpc-policy
+tomsaleeba,2017-05-04 05:43:01,https://api.github.com/repos/jorgebastida/gordon/git/commits/dc82d2c0e54d05741d26372105e46cd2e5321d62,dc82d2c0e54d05741d26372105e46cd2e5321d62,changed an idiom
+tomsaleeba,2017-05-04 04:31:33,https://api.github.com/repos/jorgebastida/gordon/git/commits/d16621a3d074cbbdaaefe581a0600647d36182e6,d16621a3d074cbbdaaefe581a0600647d36182e6,fixed a few typos in the README
+sternik,2017-04-06 09:23:02,https://api.github.com/repos/jorgebastida/gordon/git/commits/fda88131be7583db909ab8d3b0906dabdfb929ff,fda88131be7583db909ab8d3b0906dabdfb929ff,added example of using AWS_PROXY integration type
+peralmq,2017-03-29 08:36:27,https://api.github.com/repos/jorgebastida/gordon/git/commits/8e3e36ac7fa94c9129b2170d86f280a9ee87c6e4,8e3e36ac7fa94c9129b2170d86f280a9ee87c6e4,Add Node v6.10 and make default
+kerryhatcher,2017-03-09 17:00:19,https://api.github.com/repos/jorgebastida/gordon/git/commits/fba74a05e4036afd191bba5097b6dc9b99321e0a,fba74a05e4036afd191bba5097b6dc9b99321e0a,"Allow account id to be in settings.yml
+
+Use case for users who may not have IAM permissions."
+DaveWK,2016-09-26 16:02:31,https://api.github.com/repos/jorgebastida/gordon/git/commits/2f935bb277d208b7dd1040ab1a09f621fa38ff33,2f935bb277d208b7dd1040ab1a09f621fa38ff33,"Adding in sanitization of ints in iterable objects. Objects were concatineated. Fix for issue #86
+
+Issue is outlined in main gordon branch. When nested dict has values of type int, it removes them completely when using join()
+
+Also fixed 2 typos."
+sternik,2016-10-19 13:55:39,https://api.github.com/repos/jorgebastida/gordon/git/commits/3b0815b988a54383d3ce6fa30bab918088a1c3a1,3b0815b988a54383d3ce6fa30bab918088a1c3a1,Add Lambda Proxy integration to API Gateway
+ahl,2016-10-06 06:20:14,https://api.github.com/repos/jorgebastida/gordon/git/commits/c4bbbf80fd088fa5a658728b112d0e0e3a46e01a,c4bbbf80fd088fa5a658728b112d0e0e3a46e01a,apigateway docs contain an error regarding response patterns
+alasdairnicol,2016-09-26 15:24:27,https://api.github.com/repos/jorgebastida/gordon/git/commits/3b87b699b6d550f0eab3a1416d2c4e19069be748,3b87b699b6d550f0eab3a1416d2c4e19069be748,Fix typo in docstring
+kmonkeyjam,2016-09-22 23:27:50,https://api.github.com/repos/jorgebastida/gordon/git/commits/571bbd62194aa4de67e99aca207c8e9df3a35c53,571bbd62194aa4de67e99aca207c8e9df3a35c53,make debugging compatible for python3 (https://www.python.org/dev/peps/pep-0404/#strings-and-bytes)
+ninjabear,2016-09-19 09:56:17,https://api.github.com/repos/jorgebastida/gordon/git/commits/879a1c1e8b47fa88d036a7b72bc767dfb9a2d6d6,879a1c1e8b47fa88d036a7b72bc767dfb9a2d6d6,Switch to ZIP_DEFLATED (closes #61)
+ninjabear,2016-09-19 09:52:27,https://api.github.com/repos/jorgebastida/gordon/git/commits/ad2164bd2f55fd3610c7bdc8414f792a1580f796,ad2164bd2f55fd3610c7bdc8414f792a1580f796,Ensure zip filenames are UTF-8 (closes #94)
+agonzalezro,2016-09-13 21:53:50,https://api.github.com/repos/jorgebastida/gordon/git/commits/090896e6c8246faac6d57adfe51e91d7e004d66a,090896e6c8246faac6d57adfe51e91d7e004d66a,"Lazy generation of usage help
+
+Instead having a string with all the possible actions for gordon, this
+string is going to be generated with a lambda after the parser has all
+the actions added to it.
+
+Removing the usage kwarg to ArgumentParser we could achieve a similar
+output:
+
+  usage: gordon [-h] {startproject,startapp,build,apply,run,delete} ...
+
+But to keep consistency with the previous output the lambda was added."
+ninjabear,2016-09-09 16:22:53,https://api.github.com/repos/jorgebastida/gordon/git/commits/b0f0d8aa3e954e09dce8402ddb4222fda42c9e4e,b0f0d8aa3e954e09dce8402ddb4222fda42c9e4e,"Fix formatting in Snowplow example README.md
+
+'Snowplow Example' wasn't set as a title"
+ninjabear,2016-09-09 14:38:24,https://api.github.com/repos/jorgebastida/gordon/git/commits/f9032ee65a800d7e7b97d5b792d4d8d2715b41f7,f9032ee65a800d7e7b97d5b792d4d8d2715b41f7,Fix slow zip archiving (closes #89)
+revolunet,2016-08-25 22:28:28,https://api.github.com/repos/jorgebastida/gordon/git/commits/9bc74c06afe342e3e340f1a540a93970917f0aca,9bc74c06afe342e3e340f1a540a93970917f0aca,fix typo
+peralmq,2016-07-27 17:36:08,https://api.github.com/repos/jorgebastida/gordon/git/commits/beae1c2c93d465137f29dd9df7ce4be7c37e9197,beae1c2c93d465137f29dd9df7ce4be7c37e9197,s/integrantion/integration
+peralmq,2016-07-26 18:15:29,https://api.github.com/repos/jorgebastida/gordon/git/commits/c9183af0487f6058257caa0600b6ee3c3611e2d4,c9183af0487f6058257caa0600b6ee3c3611e2d4,Add simple example for the Kotlin programming language
+elkelk,2016-07-11 14:49:13,https://api.github.com/repos/jorgebastida/gordon/git/commits/80cb3eff3f4252bb236c9d9c170ce5c0a663fa6d,80cb3eff3f4252bb236c9d9c170ce5c0a663fa6d,Add API Gateway IntegrationResponse header support
+brentax,2016-07-10 17:31:35,https://api.github.com/repos/jorgebastida/gordon/git/commits/9c9417c817eb03cebd3f2d5f5dd58824e0e26d8a,9c9417c817eb03cebd3f2d5f5dd58824e0e26d8a,Grammar and spelling fixes
+chesterm8,2016-07-05 01:37:30,https://api.github.com/repos/jorgebastida/gordon/git/commits/c4e4395bb31ce299cf078f37012e53e58a42cfa3,c4e4395bb31ce299cf078f37012e53e58a42cfa3,Added ap-southeast-2 to list of lambda regions
+bhicks,2016-06-09 02:51:02,https://api.github.com/repos/jorgebastida/gordon/git/commits/6c088aef03785257d80c043e0db9275073c02e56,6c088aef03785257d80c043e0db9275073c02e56,"Fix README dynamodb link
+
+Fix the README dynamodb link to the correct example page. It currently links to a page that doesn't exist."
+jbarratt,2016-06-07 06:57:18,https://api.github.com/repos/jorgebastida/gordon/git/commits/f01f7692d3df945a27aad4648098552d9d672efa,f01f7692d3df945a27aad4648098552d9d672efa,Tiny typo fix s/you/your/
+ryandub,2016-06-06 20:29:47,https://api.github.com/repos/jorgebastida/gordon/git/commits/f693c791595da78db7a9a0a9401ac3ddd3fe576c,f693c791595da78db7a9a0a9401ac3ddd3fe576c,Use list_users to allow temp users
+lukemelia,2016-06-03 19:47:29,https://api.github.com/repos/jorgebastida/gordon/git/commits/0a4efb77400a5c6395099fa97c95227e8e5d89cf,0a4efb77400a5c6395099fa97c95227e8e5d89cf,Fix parameter file extensions in docs
+stoph,2016-06-03 12:48:42,https://api.github.com/repos/jorgebastida/gordon/git/commits/753ef728deec3c958e2058e2a15be22a7db0833f,753ef728deec3c958e2058e2a15be22a7db0833f,Fix grammatical errors
+gingerlime,2016-06-02 17:43:58,https://api.github.com/repos/jorgebastida/gordon/git/commits/cf86c8123dba53275652d3d9502a8471757ffaec,cf86c8123dba53275652d3d9502a8471757ffaec,fixed broken link for kinesis example
+bjacobel,2016-06-02 15:21:17,https://api.github.com/repos/jorgebastida/gordon/git/commits/5fad0d28cfc77408dfc4b0ce9f3f70bcd54bde48,5fad0d28cfc77408dfc4b0ce9f3f70bcd54bde48,"Small typo fix in readme.md
+
+s/pilar/pillar"
+juanriaza,2016-06-02 14:21:50,https://api.github.com/repos/jorgebastida/gordon/git/commits/890b95040bdc09805a2b1757505d6180b709a016,890b95040bdc09805a2b1757505d6180b709a016,fix typo on kinesis batch size
+washt,2016-06-02 12:50:28,https://api.github.com/repos/jorgebastida/gordon/git/commits/8cee44c8ae8f0b630c6304df4fd0ca71efa41010,8cee44c8ae8f0b630c6304df4fd0ca71efa41010,fixed grammatical error
+mazurio,2016-06-02 11:24:58,https://api.github.com/repos/jorgebastida/gordon/git/commits/0ca8aa0a23e56a329b9c297e56fa3cde0f518cad,0ca8aa0a23e56a329b9c297e56fa3cde0f518cad,Task: Add Scala to README
+mazurio,2016-06-02 11:20:25,https://api.github.com/repos/jorgebastida/gordon/git/commits/b6eb25d9959a20e949f821033cecbe97cfda7693,b6eb25d9959a20e949f821033cecbe97cfda7693,Task: Rename package
+mazurio,2016-06-02 11:19:07,https://api.github.com/repos/jorgebastida/gordon/git/commits/ac3d032c82cf7bcc2b55f0e15cf7a2d6c119c363,ac3d032c82cf7bcc2b55f0e15cf7a2d6c119c363,Task: Adding simple scala example
+gipsy86147,2016-06-02 11:00:12,https://api.github.com/repos/jorgebastida/gordon/git/commits/eef17ab67d6c9208c2f134e4178ab0ec06d3820c,eef17ab67d6c9208c2f134e4178ab0ec06d3820c,typo corrected

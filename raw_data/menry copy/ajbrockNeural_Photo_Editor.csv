@@ -1,0 +1,89 @@
+Neural-Photo-Editor,A simple interface for editing natural photos with generative neural networks.
+username,timestamp,url,sha,message
+ajbrock,2017-03-22 11:38:43,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/d234cf1f80cf8c8f621f871dc704dc43e212201f,d234cf1f80cf8c8f621f871dc704dc43e212201f,"Fix typo in BatchReNormLayer
+
+Import oopsies. Should be fixed now."
+ajbrock,2017-03-20 23:32:33,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/d28c5ce58a9ba8d8d56b6ff91095544f336d75d9,d28c5ce58a9ba8d8d56b6ff91095544f336d75d9,"Cleanup comments
+
+Comment cleanup!"
+ajbrock,2017-02-13 12:04:13,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/231c2af627a49319a9f25cf50f2264653244c84f,231c2af627a49319a9f25cf50f2264653244c84f,"Add BatchReNorm and Efficient MDCLW Layers
+
+Include my naive BatchReNorm implementation and the updated MDCLW weight
+parameterization function for improved multiscale dilated conv blocks."
+ajbrock,2016-10-04 20:49:08,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/556a609d3ba7d9906fb64af100a9bb8f7fe5cdda,556a609d3ba7d9906fb64af100a9bb8f7fe5cdda,"Add Subpixel Reshape Layer, Switch Subpixel Layer to Set_Subtensor
+
+Set_subtensor appears to be about twice as fast as inc_subtensor in this
+case. A simple benchmarking script is available in this gist:
+https://gist.github.com/ajbrock/cc083da8c274ff25acdc318b3249b972"
+ajbrock,2016-10-01 23:42:37,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/22d9c6f3e1db26c98f346ddfe44ca2237933c5e6,22d9c6f3e1db26c98f346ddfe44ca2237933c5e6,"Add Subpixel Layer 1
+
+Added my version of the subpixel layer making use of inc_subtensor
+calls. Currently working on a version involving splits and reshapes."
+ajbrock,2016-10-01 16:21:52,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/f5715dea22a6795d1e81808f44b36b24e3ebd1cb,f5715dea22a6795d1e81808f44b36b24e3ebd1cb,"Rename models to API, fix typo in API IAN class"
+ajbrock,2016-09-30 14:15:11,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/4383808b993cc3e1c00ee282632b06a3bf9c81b4,4383808b993cc3e1c00ee282632b06a3bf9c81b4,"Update GIFS
+
+Update README Gifs to display properly"
+ajbrock,2016-09-30 14:14:17,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/bc7ca83b9310310534bf6cfb022e38efe1cf1a5e,bc7ca83b9310310534bf6cfb022e38efe1cf1a5e,"Update Readme
+
+Update command explanation and add more GIFs."
+ajbrock,2016-09-30 09:48:08,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/c963f94515443868d13e929b78db4f9e987f69d0,c963f94515443868d13e929b78db4f9e987f69d0,"Merge pull request #9 from dribnet/pics
+
+Add pics/.gitignore"
+dribnet,2016-09-25 22:52:40,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/eac10cc9fe773480f457c60dc2a93e56d93fcf77,eac10cc9fe773480f457c60dc2a93e56d93fcf77,"Add pics/.gitignore
+
+This prevents crashes when the pics subdirectory is not present
+and also hides outputs from git."
+ajbrock,2016-09-29 20:52:55,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/6c70c98bc80a8ae38742d0b15d28f949c1aaef49,6c70c98bc80a8ae38742d0b15d28f949c1aaef49,"Merge pull request #8 from michaelrgb/saveNewGIM
+
+Button to save new ground-truth image.
+
+Tested and working on Windows; I might modify this a bit in a future release so that ""Reset,"" ""Update,"" and ""Infer"" have more clear functionality (I suspect they might be a bit confusing right now, which is my fault--I'll think on a fix.)"
+ajbrock,2016-09-29 20:50:39,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/d298ffdeb9891f6a2ed37a8cca391dee9c0969d5,d298ffdeb9891f6a2ed37a8cca391dee9c0969d5,"Merge pull request #6 from michaelrgb/master
+
+Dont change color if Cancel pressed, and open with initial color.
+
+Tested and working on my Windows machine."
+ajbrock,2016-09-29 20:46:30,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/972ceb04b9b48c04a6814314f8022d6fd7cfdf5d,972ceb04b9b48c04a6814314f8022d6fd7cfdf5d,"Change Name of Ground Truth Update Button
+
+I'm changing the name of this button to ""Update"" to reflect its functionality while still allowing it to fit compactly into the interface. Starting to feel like I need a UI/UX designer--will be accepting this pull request shortly."
+ajbrock,2016-09-29 20:44:39,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/805a67ff4485dcc702e6b65d521f1640532d645d,805a67ff4485dcc702e6b65d521f1640532d645d,"Integrate plat interface and update Readme
+
+Integrated the plat abstraction interface (in models.py) to make the
+NPE.py file framework-independent. Updated the readme with a new splash
+GIF."
+michaelrgb,2016-09-29 10:46:51,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/ae29db7cb36bdeb0058b0bd68ccf1ee7ff1d59ba,ae29db7cb36bdeb0058b0bd68ccf1ee7ff1d59ba,"Button to save new ground-truth image.
+
+The masking technique means the output image is based off the original
+ground-truth image. After an aesthetically pleasing change is made, such as
+growing the length of the hair, a new ground-truth image must be saved and
+the latent space recalculated before a different change is made such as
+changing the hair color."
+michaelrgb,2016-09-29 10:42:30,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/db6796e76ae3df06d7abf57567dce4922078c52c,db6796e76ae3df06d7abf57567dce4922078c52c,"Dont change color if Cancel pressed, and open with initial color."
+ajbrock,2016-09-28 12:27:20,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/e81daa4fe078fbd3cafbc8c0752b9e06cbece2b0,e81daa4fe078fbd3cafbc8c0752b9e06cbece2b0,"Add non-cuDNN Option
+
+Removed cuDNN as a dependency by replacing the DeconvLayers with
+appropriately sliced TransposedConv2DLayers, and moving around some
+imports and explicit DNN calls. cuDNN use is still the default, but can
+be easily switched off by editing line 64 of NPE.py to ""dnn=False."""
+ajbrock,2016-09-25 14:44:44,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/33fce65b9418ec61afdca7605b97727df07f3637,33fce65b9418ec61afdca7605b97727df07f3637,"Some brief fixes, README update, and a pre-trained model.
+
+Add pretrained model to repo with git-lfs.
+Add another pretrained model with slightly more complexity (note that
+this is different from the IAN architecture already uploaded, and
+doesn't appear to be as suitable for use with the NPE as my slimmed down
+version. I haven't been able to test it very well because my local GPU
+can barely handle this model. Its sample quality appears to be higher,
+but its reconstruction quality appears to be lower).
+Fixed some unnecessary imports and keyerrors
+Added MADE/IAF support to NPE.
+Renamed l_latents to l_Z for consistency across models.
+Found a bug in the MADE layer.
+
+Added some comments, working on making the code more readable."
+ajbrock,2016-09-23 00:19:05,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/c0287e0275d1df1a8af15119837f6f2ad065d038,c0287e0275d1df1a8af15119837f6f2ad065d038,Add arXiv link
+ajbrock,2016-09-22 23:33:04,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/9666ec3bc5572e5c14bb1adf138fb88d82b8225e,9666ec3bc5572e5c14bb1adf138fb88d82b8225e,Another Readme Typo
+ajbrock,2016-09-22 23:32:34,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/4737fe6a2c6c43715adf826c0a476cd2d6bb8890,4737fe6a2c6c43715adf826c0a476cd2d6bb8890,Update Readme
+ajbrock,2016-09-22 23:32:02,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/dbac14e640e08a340a50f5585fb03266e995bc97,dbac14e640e08a340a50f5585fb03266e995bc97,Update Readme
+ajbrock,2016-09-22 23:30:56,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/ef2eb8134cf19e90ce0d6eb5616fad3c760cb605,ef2eb8134cf19e90ce0d6eb5616fad3c760cb605,Adding link to pre-trained model
+ajbrock,2016-09-22 22:45:09,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/cb1ca2eeb29f5b46cd131a6df386deb4e7fde296,cb1ca2eeb29f5b46cd131a6df386deb4e7fde296,First Round Commit--Basic Editor
+ajbrock,2016-09-21 14:53:36,https://api.github.com/repos/ajbrock/Neural-Photo-Editor/git/commits/8f7c834f10442dbedf744412177a7128d28e1db7,8f7c834f10442dbedf744412177a7128d28e1db7,Initial commit

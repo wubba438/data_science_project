@@ -1,0 +1,796 @@
+gist,Potentially the best command line gister.
+username,timestamp,url,sha,message
+ConradIrwin,2019-09-02 17:26:45,https://api.github.com/repos/defunkt/gist/git/commits/02ab846270f81e98e536b0c73effa1990220a6e0,02ab846270f81e98e536b0c73effa1990220a6e0,"Merge pull request #303 from Umofomia/patch-1
+
+README update: Use umask when creating token file"
+Umofomia,2019-08-29 18:54:01,https://api.github.com/repos/defunkt/gist/git/commits/c025ada88ac032f382087d802af849052c349555,c025ada88ac032f382087d802af849052c349555,"README update: Use umask when creating token file
+
+The originally suggested command in the README for manually setting up the `~/.gist` token file does not ensure that the correct file permissions are set on the file, which may expose the token to other user accounts on the system.
+
+I'm changing to the documentation to instead suggest running `umask 0077` before creating the file to ensure that no other user accounts on the system will have access to it. In addition, by putting the entire command in parentheses, the command is executed within a subshell so that the umask is only set temporarily for the purposes of creating the file:
+
+```sh
+(umask 0077 && echo MY_SECRET_TOKEN > ~/.gist)
+```"
+ConradIrwin,2019-06-23 00:52:55,https://api.github.com/repos/defunkt/gist/git/commits/0b7f43552c9497088101b7c10ca45b907a2d13a5,0b7f43552c9497088101b7c10ca45b907a2d13a5,"Merge pull request #299 from 0mp/patch-1
+
+Add FreeBSD installation instructions"
+0mp,2019-06-23 00:08:35,https://api.github.com/repos/defunkt/gist/git/commits/59911bcb10342bb9c4628053c82be5498c8cea2a,59911bcb10342bb9c4628053c82be5498c8cea2a,Add FreeBSD installation instructions
+ConradIrwin,2018-07-22 21:30:20,https://api.github.com/repos/defunkt/gist/git/commits/8d866049350c10a96f63837d6a9ac54af0ced07b,8d866049350c10a96f63837d6a9ac54af0ced07b,"Merge pull request #288 from JBallin/README/rm-anon
+
+README: remove deprecated anonymous features"
+JBallin,2018-07-22 19:02:51,https://api.github.com/repos/defunkt/gist/git/commits/13c6720bf925a9dac7f3fa217cb04d4b714c327e,13c6720bf925a9dac7f3fa217cb04d4b714c327e,Remove :anonymous from Library
+JBallin,2018-07-22 19:01:21,https://api.github.com/repos/defunkt/gist/git/commits/5e6e7f4edfd26b1904e10771232b870d3af4a563,5e6e7f4edfd26b1904e10771232b870d3af4a563,"Remove ""gist-a a.rb"""
+ConradIrwin,2018-07-10 17:56:06,https://api.github.com/repos/defunkt/gist/git/commits/d87a10a0beb341008aeafaa9ebe01cb7a216ae20,d87a10a0beb341008aeafaa9ebe01cb7a216ae20,"Merge pull request #284 from demonbane/fix-case
+
+Fix capitalization of GitHub and OAuth in messages"
+demonbane,2018-07-04 00:07:55,https://api.github.com/repos/defunkt/gist/git/commits/0d59657bd27d7fa64a1079091c8a908d8725b498,0d59657bd27d7fa64a1079091c8a908d8725b498,Fix capitalization of GitHub and OAuth in messages
+ConradIrwin,2018-05-23 05:55:39,https://api.github.com/repos/defunkt/gist/git/commits/9c047578ebefcd04fe8eb1c9ad01346038ca2fd4,9c047578ebefcd04fe8eb1c9ad01346038ca2fd4,v5.0.0
+ConradIrwin,2018-05-23 05:54:12,https://api.github.com/repos/defunkt/gist/git/commits/a0c3de31c65e2a343850b2182e2bdf50f7e92e58,a0c3de31c65e2a343850b2182e2bdf50f7e92e58,Merge remote-tracking branch 'estebanz01/issue-275'
+estebanz01,2018-05-22 15:53:15,https://api.github.com/repos/defunkt/gist/git/commits/9e63eed3c7ac0a434c74929024d966b0e185de78,9e63eed3c7ac0a434c74929024d966b0e185de78,gist: Remove anonymous option.
+estebanz01,2018-05-22 15:52:44,https://api.github.com/repos/defunkt/gist/git/commits/09813a332d320c4c507d41a68f1f28948f4ccbc2,09813a332d320c4c507d41a68f1f28948f4ccbc2,gist: Validate auth token existence before any action.
+estebanz01,2018-05-22 15:04:42,https://api.github.com/repos/defunkt/gist/git/commits/4fce19e1697d8bc4d36f8691bf982db81a5e153b,4fce19e1697d8bc4d36f8691bf982db81a5e153b,gist: Update raise message.
+estebanz01,2018-05-18 15:38:22,https://api.github.com/repos/defunkt/gist/git/commits/c8ab65546a8cfbc7423503e0e361144a7de6dc05,c8ab65546a8cfbc7423503e0e361144a7de6dc05,"Remove anonymous support due to deprecation.
+
+Fixes https://github.com/defunkt/gist/issues/275
+
+This change is needed due to the deprecation warning/removal made
+by Github on the gist tool. See https://blog.github.com/2018-02-18-deprecation-notice-removing-anonymous-gist-creation/
+for more info."
+ConradIrwin,2018-01-09 18:22:06,https://api.github.com/repos/defunkt/gist/git/commits/249fb99541e10b6af26f469b7a97b44282a16387,249fb99541e10b6af26f469b7a97b44282a16387,v4.6.2
+ConradIrwin,2017-11-20 17:37:08,https://api.github.com/repos/defunkt/gist/git/commits/83c91b27aeda6308d9c768004756820bc7c7bde6,83c91b27aeda6308d9c768004756820bc7c7bde6,Add instructions for password-less login
+ConradIrwin,2017-10-11 01:07:15,https://api.github.com/repos/defunkt/gist/git/commits/14f80ee613239924db1355420a89a09ecaa15bb2,14f80ee613239924db1355420a89a09ecaa15bb2,"Merge pull request #269 from phallstrom/gist-default-file-arb
+
+when gisting stdin default to filename 'a.rb' instead of '-'"
+ConradIrwin,2017-10-09 16:45:41,https://api.github.com/repos/defunkt/gist/git/commits/c8173800ceb64965578841d803535830ad1d3946,c8173800ceb64965578841d803535830ad1d3946,"Merge pull request #270 from phallstrom/skip-empty
+
+add --skip-empty to skip gisting empty files"
+ConradIrwin,2017-09-07 19:03:37,https://api.github.com/repos/defunkt/gist/git/commits/fc36c4c6283b737df9c4fa96f390c838baa4d95a,fc36c4c6283b737df9c4fa96f390c838baa4d95a,"Merge pull request #268 from jasonkarns/patch-1
+
+readme typo"
+jasonkarns,2017-09-07 15:30:23,https://api.github.com/repos/defunkt/gist/git/commits/87b076b7106f464473c755e2b0efbb4f0beb23f1,87b076b7106f464473c755e2b0efbb4f0beb23f1,readme typo
+ConradIrwin,2017-06-30 10:44:48,https://api.github.com/repos/defunkt/gist/git/commits/de3e287104c76b5346801f4c1b1019205969cae4,de3e287104c76b5346801f4c1b1019205969cae4,"Merge pull request #266 from jib/auth-requests
+
+unless you supply the access token, you are limited to 60 requests/hour"
+ConradIrwin,2017-05-17 06:55:10,https://api.github.com/repos/defunkt/gist/git/commits/d442d4385305c17a62e496f157f357687db7dc13,d442d4385305c17a62e496f157f357687db7dc13,v4.6.1
+ConradIrwin,2017-05-17 06:54:45,https://api.github.com/repos/defunkt/gist/git/commits/c12fe612ee2e75f5a1156c01c59330324bb002b3,c12fe612ee2e75f5a1156c01c59330324bb002b3,Merge branch 'revert-netrc'
+ConradIrwin,2017-05-17 06:54:26,https://api.github.com/repos/defunkt/gist/git/commits/0f036376d32938d83e6fb5f5a8f6565ba694249f,0f036376d32938d83e6fb5f5a8f6565ba694249f,"Revert ""Update README with netrc auth information""
+
+This reverts commit 2e95cc23d5995068302abb7316b04e5216f0d858."
+ConradIrwin,2017-05-17 06:54:24,https://api.github.com/repos/defunkt/gist/git/commits/31924d9be8618453d6bdc444ec8a213d08d26866,31924d9be8618453d6bdc444ec8a213d08d26866,"Revert ""Load GitHub token from netrc if it's not in AuthTokenFile""
+
+This reverts commit 4d9b012199560ca3e901705e3cdfd72a52890acc."
+ConradIrwin,2017-05-16 21:00:32,https://api.github.com/repos/defunkt/gist/git/commits/39aa1a2d113973b813e2695bff62f017432022d3,39aa1a2d113973b813e2695bff62f017432022d3,"Merge pull request #262 from biochimia/readme-netrc
+
+Update README with netrc auth information"
+biochimia,2017-05-16 20:46:22,https://api.github.com/repos/defunkt/gist/git/commits/2e95cc23d5995068302abb7316b04e5216f0d858,2e95cc23d5995068302abb7316b04e5216f0d858,Update README with netrc auth information
+ConradIrwin,2017-05-16 18:10:07,https://api.github.com/repos/defunkt/gist/git/commits/0e1b19dcf14968e187700e9fa934eaa1b446158a,0e1b19dcf14968e187700e9fa934eaa1b446158a,v4.6.0
+ConradIrwin,2017-05-16 17:55:33,https://api.github.com/repos/defunkt/gist/git/commits/55fb7589751e4c802056496f1c588e6bef83c9d0,55fb7589751e4c802056496f1c588e6bef83c9d0,"Merge pull request #261 from biochimia/netrc-support
+
+Load GitHub token from netrc if it's not in AuthTokenFile"
+ConradIrwin,2017-05-16 17:55:02,https://api.github.com/repos/defunkt/gist/git/commits/1a7b37fad019b8aa7dddcd8db2a6d4be686b4958,1a7b37fad019b8aa7dddcd8db2a6d4be686b4958,"Merge pull request #222 from rikas/master
+
+Add --delete option"
+biochimia,2017-04-26 00:58:08,https://api.github.com/repos/defunkt/gist/git/commits/4d9b012199560ca3e901705e3cdfd72a52890acc,4d9b012199560ca3e901705e3cdfd72a52890acc,"Load GitHub token from netrc if it's not in AuthTokenFile
+
+Git, curl, and other tools already offer support for loading credentials
+from ~/.netrc, namely when interacting with GitHub. This uses the netrc
+gem to play along. It's implemented as a fallback, in case a token is
+not found in the gist-specific file.
+
+To avoid adding gem dependencies, the netrc library is imported from
+https://github.com/heroku/netrc into the vendor folder. It is licensed
+under the MIT license, the same as this project, and it's copyright
+notice and license have been embedded in a comment with the code.
+
+The standalone script build/gist was regenerated and pulls in missing
+changes in addition to the netrc dependency.
+
+Fixes #260."
+ConradIrwin,2017-04-05 22:30:19,https://api.github.com/repos/defunkt/gist/git/commits/21861ce4cae0a27ff89d038c6c2fe81226ea362b,21861ce4cae0a27ff89d038c6c2fe81226ea362b,"Merge pull request #258 from gcbw/patch-1
+
+fix token file name"
+gcbw,2017-04-05 22:16:54,https://api.github.com/repos/defunkt/gist/git/commits/addb2c072ad749536b58652ace0083c60ee33df4,addb2c072ad749536b58652ace0083c60ee33df4,typos
+gcbw,2017-04-04 02:00:16,https://api.github.com/repos/defunkt/gist/git/commits/0a565a30dc7f2c7ddc420f24640a5770629a53b0,0a565a30dc7f2c7ddc420f24640a5770629a53b0,allow numbers in domains and ports
+gcbw,2017-04-04 01:19:21,https://api.github.com/repos/defunkt/gist/git/commits/df3db55092fe8ca98351ede0721e4d21945d0a5d,df3db55092fe8ca98351ede0721e4d21945d0a5d,"fix token file format.
+
+test against a URL with protocol. Also add optional port on test."
+gcbw,2017-04-04 01:04:39,https://api.github.com/repos/defunkt/gist/git/commits/dc15630a1cdeac6a7e501c77f210c127db86cc51,dc15630a1cdeac6a7e501c77f210c127db86cc51,"Improve login/enterprise docs
+
+fix issue 257.
+
+move notes about github enterprise as a subtopic of Login (as half of it was there already anyway)
+
+add all the knowledge shared on issue 257 to the README."
+ConradIrwin,2016-03-19 03:24:33,https://api.github.com/repos/defunkt/gist/git/commits/431ee0e373888cbce3644dba14ea8901a6d5e5d2,431ee0e373888cbce3644dba14ea8901a6d5e5d2,"Merge pull request #241 from mx4492/fix-shorten-tests
+
+Update the tests for the shorten command"
+ConradIrwin,2016-03-19 03:23:58,https://api.github.com/repos/defunkt/gist/git/commits/501776af535c95a882209d33eaa80a300a1103b0,501776af535c95a882209d33eaa80a300a1103b0,"Merge pull request #242 from mx4492/update-oauth-msg-url
+
+Print GitHub tokens URL on OAuth completion"
+mnvr,2016-03-19 02:21:18,https://api.github.com/repos/defunkt/gist/git/commits/03a90dada84d39bf62099265c6b82ef0fad2059c,03a90dada84d39bf62099265c6b82ef0fad2059c,"Print GitHub tokens URL on OAuth completion
+
+Replace https://github.com/settings/applications
+with    https://github.com/settings/tokens
+
+Suggested-By: https://github.com/starius
+Completes: https://github.com/defunkt/gist/issues/225"
+mnvr,2016-03-19 02:15:33,https://api.github.com/repos/defunkt/gist/git/commits/ba692665b19999b761fd523b4ea632bf94635118,ba692665b19999b761fd523b4ea632bf94635118,"Update the tests for the shorten command
+
+1. Retain a test for the older 201 response but use https.
+2. Add a test for the 200 response that git.io currently returns.
+
+Updates: https://github.com/defunkt/gist/pull/240"
+ConradIrwin,2016-03-19 01:59:55,https://api.github.com/repos/defunkt/gist/git/commits/f979cd0f0a6bedb0d6e122e2a1e3e029d2509b93,f979cd0f0a6bedb0d6e122e2a1e3e029d2509b93,"Merge pull request #240 from mx4492/fix-shortening
+
+Fix the ""--shorten"" option"
+mnvr,2016-03-19 01:52:08,https://api.github.com/repos/defunkt/gist/git/commits/b2b94b0f57ead1740c7392599205c7b4994adf8c,b2b94b0f57ead1740c7392599205c7b4994adf8c,"Fix the ""--shorten"" option
+
+The ""--shorten"" command line option had stopped working since the
+git.io API changed.
+
+1. The endpoint is now ""/create"".
+2. HTTP links result in a 301 redirect.
+3. The resulting shortcode is in the response body.
+
+Thanks-To: https://github.com/tjt263 for the hint."
+ConradIrwin,2016-02-23 18:32:51,https://api.github.com/repos/defunkt/gist/git/commits/72d381e944e3229bb50b9407bd5938d0665eba10,72d381e944e3229bb50b9407bd5938d0665eba10,"Merge pull request #234 from federivo/master
+
+Added -r option to README.md"
+federivo,2016-02-23 18:15:14,https://api.github.com/repos/defunkt/gist/git/commits/8206eb5df72cb354c52c5e0c63e82edecc16a684,8206eb5df72cb354c52c5e0c63e82edecc16a684,Added -r option to README.md
+ConradIrwin,2015-12-23 10:49:14,https://api.github.com/repos/defunkt/gist/git/commits/411dac23b8f66f038bd4f8e0591773c83a335e33,411dac23b8f66f038bd4f8e0591773c83a335e33,"Merge pull request #218 from alexreg/master
+
+Reordered clipboard commands so that pbcopy/pbpaste is tried first."
+rikas,2015-11-26 13:16:42,https://api.github.com/repos/defunkt/gist/git/commits/0dda30c618ea74685a5244bb57b432000fcaa806,0dda30c618ea74685a5244bb57b432000fcaa806,Add --delete option
+ConradIrwin,2015-11-19 03:03:59,https://api.github.com/repos/defunkt/gist/git/commits/5b19eed2794b745f57b941e244e946591b36c790,5b19eed2794b745f57b941e244e946591b36c790,v4.5.0
+ConradIrwin,2015-11-19 03:03:32,https://api.github.com/repos/defunkt/gist/git/commits/59c0b8fe08c85f2d4e1c28a0cb3a3e9d1cc59348,59c0b8fe08c85f2d4e1c28a0cb3a3e9d1cc59348,"Merge pull request #219 from ibash/master
+
+Adding the gist -r <id> command to read a gist"
+ibash,2015-10-13 04:58:30,https://api.github.com/repos/defunkt/gist/git/commits/bf263220b5078360886f36394f9a73e8316ea002,bf263220b5078360886f36394f9a73e8316ea002,Adding the gist -r <id> command to read a gist
+alexreg,2015-10-08 18:57:16,https://api.github.com/repos/defunkt/gist/git/commits/fbfc6ab120f7dea86e8a5e427d2f52843c577a1c,fbfc6ab120f7dea86e8a5e427d2f52843c577a1c,Reordered clipboard commands so that pbcopy/pbpaste is tried first.
+ConradIrwin,2015-10-05 03:49:25,https://api.github.com/repos/defunkt/gist/git/commits/30d3228c2f68c707669c734c052eb7a10362c051,30d3228c2f68c707669c734c052eb7a10362c051,"Merge pull request #214 from mralext20/master
+
+Remove reference to 'new' 2fa system"
+mralext20,2015-10-04 21:51:51,https://api.github.com/repos/defunkt/gist/git/commits/c7e82dd0dad183fe266b5e41c46f8cf8df094d14,c7e82dd0dad183fe266b5e41c46f8cf8df094d14,"Remove refrence to 'new' 2fa system
+
+seems a bit old, no?"
+ConradIrwin,2015-09-13 07:44:45,https://api.github.com/repos/defunkt/gist/git/commits/aadd90dc07408c7e57387f829f327a07561c6441,aadd90dc07408c7e57387f829f327a07561c6441,"Merge pull request #210 from jeffbonhag/master
+
+Check for SIGPIPE (closes #209)"
+jbonhag,2015-09-12 17:12:13,https://api.github.com/repos/defunkt/gist/git/commits/8537468081de626e97b0fa1c95ab4bcccd459cd3,8537468081de626e97b0fa1c95ab4bcccd459cd3,"Check for SIGPIPE
+
+Don't try to trap SIGPIPE if you're on a platform that doesn't support it (like
+Windows)."
+ConradIrwin,2015-07-21 22:31:36,https://api.github.com/repos/defunkt/gist/git/commits/b42cce2fef0daf6f2454002cf45c3e52de3240fa,b42cce2fef0daf6f2454002cf45c3e52de3240fa,rebuild standalone version
+ConradIrwin,2015-07-21 22:30:05,https://api.github.com/repos/defunkt/gist/git/commits/d17cd1213dfd1b19e838704cc39fd1d280b8151b,d17cd1213dfd1b19e838704cc39fd1d280b8151b,v4.4.2
+ConradIrwin,2015-07-21 22:27:43,https://api.github.com/repos/defunkt/gist/git/commits/607671029367048df4ec35d44d9bfce587d09279,607671029367048df4ec35d44d9bfce587d09279,"Merge pull request #206 from zmwangx/typo-fix
+
+Fix typo introduced in 687c15a"
+zmwangx,2015-07-21 22:22:13,https://api.github.com/repos/defunkt/gist/git/commits/dcb63aaac1df64631017bcb986b4f5832e3d481d,dcb63aaac1df64631017bcb986b4f5832e3d481d,"Fix typo introduced in 687c15a
+
+""taccess_token"" ==> ""access_token"".
+
+The wrong query string is preventing authenticated listing, so `--list`
+without argument is wrongly listing recent gists on the entire
+gist.github.com (instead of listing gists of the authenticated user) in
+v4.4.1."
+ConradIrwin,2015-07-21 20:50:45,https://api.github.com/repos/defunkt/gist/git/commits/1a2a944ea1ed71fe588c0647f3cd68f8ba023a25,1a2a944ea1ed71fe588c0647f3cd68f8ba023a25,v4.4.1
+ConradIrwin,2015-07-21 20:17:30,https://api.github.com/repos/defunkt/gist/git/commits/687c15a54f69a2e6d9ccc73b8644ab11188f03dc,687c15a54f69a2e6d9ccc73b8644ab11188f03dc,Fix performance of piping through head
+ConradIrwin,2015-07-21 20:02:20,https://api.github.com/repos/defunkt/gist/git/commits/0a11efd583a1a6d643cf32a000335205dbb4f629,0a11efd583a1a6d643cf32a000335205dbb4f629,Don't output newlines in descriptions
+ConradIrwin,2015-07-21 20:01:58,https://api.github.com/repos/defunkt/gist/git/commits/5b09565d877c065261a4dbb5d9520e2ca4a9e204,5b09565d877c065261a4dbb5d9520e2ca4a9e204,Exit successfully on SIGPIPE
+ConradIrwin,2015-06-24 18:51:39,https://api.github.com/repos/defunkt/gist/git/commits/1a5e2cab150fbf2cf9ca09eec161b754cdb3a973,1a5e2cab150fbf2cf9ca09eec161b754cdb3a973,v4.4.0
+ConradIrwin,2015-06-24 18:48:50,https://api.github.com/repos/defunkt/gist/git/commits/f4777a772cfbd650c2728b60c8fe8573848ca847,f4777a772cfbd650c2728b60c8fe8573848ca847,Merge branch 'master' of github.com:kapadia/gist
+kapadia,2015-06-24 04:15:47,https://api.github.com/repos/defunkt/gist/git/commits/72d1b13a447fc6987e15e9b31f9cc328306e152d,72d1b13a447fc6987e15e9b31f9cc328306e152d,use link header for subsequent requests
+kapadia,2015-06-23 21:58:18,https://api.github.com/repos/defunkt/gist/git/commits/550d74464f9722ec76479c9cd901168ade6a21b9,550d74464f9722ec76479c9cd901168ade6a21b9,request all pages when listing gists
+kapadia,2015-06-23 20:36:33,https://api.github.com/repos/defunkt/gist/git/commits/01654cec9a588b59954586b939a309d14dc29cf7,01654cec9a588b59954586b939a309d14dc29cf7,add page option when listing gists
+ConradIrwin,2015-02-27 00:01:00,https://api.github.com/repos/defunkt/gist/git/commits/8776be3f218458a048c7ff4aef8d71cfc0d36a5e,8776be3f218458a048c7ff4aef8d71cfc0d36a5e,"Merge pull request #198 from tnrich/patch-1
+
+Clarified gist -u functionality"
+tnrich,2015-02-26 23:58:16,https://api.github.com/repos/defunkt/gist/git/commits/202c1a7620dc3bfde7b8f0e3da880132260af93c,202c1a7620dc3bfde7b8f0e3da880132260af93c,Clarified gist -u functionality
+ConradIrwin,2014-12-11 01:59:17,https://api.github.com/repos/defunkt/gist/git/commits/8b0b40141a3cd2eaac455c8e77092147903fed34,8b0b40141a3cd2eaac455c8e77092147903fed34,"Merge pull request #190 from ryanmjacobs/align-arrow-thingies
+
+Align arrow thingies."
+ryanmjacobs,2014-12-11 01:56:31,https://api.github.com/repos/defunkt/gist/git/commits/63ab52b2f57f45fdc63a09849fed91f080b79799,63ab52b2f57f45fdc63a09849fed91f080b79799,Align arrow thingies.
+ConradIrwin,2014-11-09 04:51:54,https://api.github.com/repos/defunkt/gist/git/commits/a7ddb3d6ef7ce20c7ef2c8788814388ccb562654,a7ddb3d6ef7ce20c7ef2c8788814388ccb562654,"Merge pull request #174 from szepeviktor/patch-1
+
+a missing verb from --raw"
+ConradIrwin,2014-11-03 21:54:14,https://api.github.com/repos/defunkt/gist/git/commits/3bb1b092afcfcc8fbb7c9fa47151e26137b717f0,3bb1b092afcfcc8fbb7c9fa47151e26137b717f0,"Merge pull request #186 from jasonkarns/auth_token_filename
+
+extract AuthTokenFile domain object"
+jasonkarns,2014-11-03 20:30:39,https://api.github.com/repos/defunkt/gist/git/commits/b5b7ae5e422161837a4455134d1e7d7aa329104a,b5b7ae5e422161837a4455134d1e7d7aa329104a,move AuthTokenFile into gist.rb
+jasonkarns,2014-11-03 17:29:20,https://api.github.com/repos/defunkt/gist/git/commits/bb7577d40212e7b362c1afa2d570740af43ff4cd,bb7577d40212e7b362c1afa2d570740af43ff4cd,"Merge branch 'master' into auth_token_filename
+
+* master:
+  1.8 hash syntax
+  no require_relative"
+ConradIrwin,2014-11-03 17:25:44,https://api.github.com/repos/defunkt/gist/git/commits/06b457650f049b67b522269c723090974782d254,06b457650f049b67b522269c723090974782d254,"Merge pull request #188 from jasonkarns/ruby-18
+
+Ruby 1.8"
+jasonkarns,2014-11-03 02:44:21,https://api.github.com/repos/defunkt/gist/git/commits/b435ae37b2eb5e156f6975bd13da4cb280c6d259,b435ae37b2eb5e156f6975bd13da4cb280c6d259,1.8-compatible IO api
+jasonkarns,2014-11-03 02:29:35,https://api.github.com/repos/defunkt/gist/git/commits/8fc7c7a3bafeff28e1f67523ba256ebf8f3db74d,8fc7c7a3bafeff28e1f67523ba256ebf8f3db74d,no require-relative
+jasonkarns,2014-11-03 01:50:02,https://api.github.com/repos/defunkt/gist/git/commits/57a5812bcc2a029e93c05a06e722c94e899de411,57a5812bcc2a029e93c05a06e722c94e899de411,1.8 hash syntax
+jasonkarns,2014-11-03 01:46:59,https://api.github.com/repos/defunkt/gist/git/commits/fb5dcde3737f3fd4ddcaa4fe029ec6b22db60165,fb5dcde3737f3fd4ddcaa4fe029ec6b22db60165,no require_relative
+jasonkarns,2014-10-31 19:43:04,https://api.github.com/repos/defunkt/gist/git/commits/59bf572784814148235be7dd63bd2c6fc90e5a67,59bf572784814148235be7dd63bd2c6fc90e5a67,AuthTokenFile needn't be a class (no state). just functions
+jasonkarns,2014-10-31 19:30:29,https://api.github.com/repos/defunkt/gist/git/commits/6ffba6a484f55a5f499d753a2f7766dd80d7fe23,6ffba6a484f55a5f499d753a2f7766dd80d7fe23,update gist to use AuthTokenFile#write
+jasonkarns,2014-10-31 19:29:21,https://api.github.com/repos/defunkt/gist/git/commits/08865e30d7b90274f3802cf2bebfdd7f3e3ed9c8,08865e30d7b90274f3802cf2bebfdd7f3e3ed9c8,add AuthTokenFile#write
+jasonkarns,2014-10-31 19:29:06,https://api.github.com/repos/defunkt/gist/git/commits/65e7884cfb5f2ded50aa89c265af5a2bd17a9412,65e7884cfb5f2ded50aa89c265af5a2bd17a9412,update gist to use AuthTokenFile#read
+jasonkarns,2014-10-31 19:13:43,https://api.github.com/repos/defunkt/gist/git/commits/98103a5485be4c3c1ae18a3326ab6a814b3ea71b,98103a5485be4c3c1ae18a3326ab6a814b3ea71b,refactor specs
+jasonkarns,2014-10-31 19:02:06,https://api.github.com/repos/defunkt/gist/git/commits/1cbe509412be42e3effad329cd60e7cd8bc58cc2,1cbe509412be42e3effad329cd60e7cd8bc58cc2,add AuthTokenFile#read
+jasonkarns,2014-10-31 18:50:30,https://api.github.com/repos/defunkt/gist/git/commits/0fe1c057030e785475418135e57b336978efbac3,0fe1c057030e785475418135e57b336978efbac3,refactor specs
+jasonkarns,2014-10-31 14:40:19,https://api.github.com/repos/defunkt/gist/git/commits/155f17f16a8bc378245faecfcee7489fef1d9568,155f17f16a8bc378245faecfcee7489fef1d9568,use AuthTokenFile for filename
+jasonkarns,2014-10-31 18:10:08,https://api.github.com/repos/defunkt/gist/git/commits/8ea0372521733bbd5b3d2260b9a7109dec8bb1a3,8ea0372521733bbd5b3d2260b9a7109dec8bb1a3,use a different ENV var for testing
+jasonkarns,2014-10-31 14:27:59,https://api.github.com/repos/defunkt/gist/git/commits/7f48e6a25879b6e9a654df783250f97779c0386b,7f48e6a25879b6e9a654df783250f97779c0386b,New AuthTokenFile class for managing the auth_token file
+ConradIrwin,2014-10-31 04:58:08,https://api.github.com/repos/defunkt/gist/git/commits/fa75085fb395a76c42f4d7592c0eaa4a9620829d,fa75085fb395a76c42f4d7592c0eaa4a9620829d,Require rspec >3
+jasonkarns,2014-10-31 00:37:52,https://api.github.com/repos/defunkt/gist/git/commits/b5ed740005e98bcf50881c2b205486f10f90ca9e,b5ed740005e98bcf50881c2b205486f10f90ca9e,treat_symbols_as_metadata_keys_with_true_values now true by default
+jasonkarns,2014-10-31 00:36:02,https://api.github.com/repos/defunkt/gist/git/commits/b5999d0a367f90e2789f247b133370ee0d51301d,b5999d0a367f90e2789f247b133370ee0d51301d,enable :should syntax for rspec-mocks
+jasonkarns,2014-10-31 00:31:33,https://api.github.com/repos/defunkt/gist/git/commits/244dbf730f09c35da7e488a185a1a12a41184b4b,244dbf730f09c35da7e488a185a1a12a41184b4b,explicitly enable :should syntax for expectations
+jasonkarns,2014-10-31 00:30:51,https://api.github.com/repos/defunkt/gist/git/commits/f219892d7f24f57badcd960577d15f57e66ee92e,f219892d7f24f57badcd960577d15f57e66ee92e,rspec-expectations 3 renames be_true|false to be_truthy|falsey
+ConradIrwin,2014-09-01 02:14:58,https://api.github.com/repos/defunkt/gist/git/commits/27ac6ae8eba6a3c14c216f1a0425c94205096149,27ac6ae8eba6a3c14c216f1a0425c94205096149,"Merge pull request #182 from theseal/master
+
+Chomp OAuth access token before use."
+theseal,2014-08-31 12:24:19,https://api.github.com/repos/defunkt/gist/git/commits/727d9110f47ea0a534a90b468ad7e4d4b7975ef7,727d9110f47ea0a534a90b468ad7e4d4b7975ef7,"Chomp OAuth access token before use.
+
+If a user is modifying the .gist file by hand there is a big risk that the
+user adds a newline to the file. That newline is causing gist to fail with
+""Error: Got Net::HTTPUnauthorized from gist:"".
+So better remove the eventual newline with chomp before use.
+
+This is extra handy when setting up gist on an computer that you don't trust
+with your real GitHub credentials (pre-generated OAuth token)."
+ConradIrwin,2014-08-15 18:47:55,https://api.github.com/repos/defunkt/gist/git/commits/2cedf585cb67423c9b7570393005bf03b7414dd5,2cedf585cb67423c9b7570393005bf03b7414dd5,"Merge pull request #181 from zeha/spellfix
+
+Fix spelling of ""authentication"" in README.md"
+zeha,2014-08-15 18:43:07,https://api.github.com/repos/defunkt/gist/git/commits/15b9da607b29ee3997fd0f71ace1d09a8fcb663a,15b9da607b29ee3997fd0f71ace1d09a8fcb663a,"Fix spelling of ""authentication"" in README.md"
+ConradIrwin,2014-08-06 18:01:24,https://api.github.com/repos/defunkt/gist/git/commits/4d7d73f95986f45bfff36f7b9b8a2bcb02c03139,4d7d73f95986f45bfff36f7b9b8a2bcb02c03139,v4.3.0
+ConradIrwin,2014-08-06 17:58:08,https://api.github.com/repos/defunkt/gist/git/commits/90fb58f6ac47d748e4f118319b90411e541a341d,90fb58f6ac47d748e4f118319b90411e541a341d,Tidy up output a little
+ConradIrwin,2014-08-06 17:52:23,https://api.github.com/repos/defunkt/gist/git/commits/ed3f01c15ae1de06f3f3cc893f37371ee15f4540,ed3f01c15ae1de06f3f3cc893f37371ee15f4540,More concrete example
+ConradIrwin,2014-08-06 17:51:10,https://api.github.com/repos/defunkt/gist/git/commits/51930f73efeaf3a7baff4d9a3c34e80f1945ccf3,51930f73efeaf3a7baff4d9a3c34e80f1945ccf3,Minor fmt
+ConradIrwin,2014-08-06 17:36:13,https://api.github.com/repos/defunkt/gist/git/commits/974e0d16919c4c9ccbf2e364c416d9e39fa9ded9,974e0d16919c4c9ccbf2e364c416d9e39fa9ded9,Merge commit 'refs/pull/176/head' of github:defunkt/gist
+pravj,2014-08-06 12:33:12,https://api.github.com/repos/defunkt/gist/git/commits/f4c31485dd95d646e04363201e9910fb044056b9,f4c31485dd95d646e04363201e9910fb044056b9,"add method to handle access token internally
+
+> new method 'auth_token' returns access token string, if it exists or
+  returns 'nil' if access token file is not there."
+pravj,2014-08-06 11:55:45,https://api.github.com/repos/defunkt/gist/git/commits/8902e1221bbe56c18d139a8c1decfb29aba27740,8902e1221bbe56c18d139a8c1decfb29aba27740,"handles middle exceptions using Gist::Error
+
+> now exceptions in middle of execution goes to 'rescue' and exit with
+  status 1"
+pravj,2014-08-06 11:20:40,https://api.github.com/repos/defunkt/gist/git/commits/1f087b5dbbcaafc282618f9baadef7712faba90f,1f087b5dbbcaafc282618f9baadef7712faba90f,"changes output format to be used programatically
+
+> removed header lines for public and private gists."
+pravj,2014-08-05 13:38:17,https://api.github.com/repos/defunkt/gist/git/commits/63a2f9779cc0c9b6ede07f66e05420ccc5d38b7c,63a2f9779cc0c9b6ede07f66e05420ccc5d38b7c,"change result format, shows filenames now
+
+> shows file name instead of description
+> change optparse block in bin/gist"
+pravj,2014-06-12 07:22:34,https://api.github.com/repos/defunkt/gist/git/commits/c0b276228a749cc327ead10f71f1e3bb0a4af699,c0b276228a749cc327ead10f71f1e3bb0a4af699,edit README file with use case for listing gists
+pravj,2014-06-11 09:01:28,https://api.github.com/repos/defunkt/gist/git/commits/a60af0995251149135912a12510f2c24d577e872,a60af0995251149135912a12510f2c24d577e872,implements feature to list {all gists : authed user} & {public gists : non-authed user}
+szepeviktor,2014-06-05 19:05:09,https://api.github.com/repos/defunkt/gist/git/commits/3b6cd9ff7755c4de4271b8e250fcd8d4d5f68068,3b6cd9ff7755c4de4271b8e250fcd8d4d5f68068,a missing verb from --raw
+ConradIrwin,2014-02-26 06:51:32,https://api.github.com/repos/defunkt/gist/git/commits/82fe83c9a1c0156ed1efa84fd44bbd6a70be41da,82fe83c9a1c0156ed1efa84fd44bbd6a70be41da,v4.2.1
+ConradIrwin,2014-02-26 06:51:05,https://api.github.com/repos/defunkt/gist/git/commits/a65f64efae6da00fcfa5916f9a5bcac8fee9de7a,a65f64efae6da00fcfa5916f9a5bcac8fee9de7a,"Ensure github tokens have a unique description
+
+Fixes #166"
+ConradIrwin,2013-12-26 00:20:08,https://api.github.com/repos/defunkt/gist/git/commits/7b8f7b64b74b4bc661369840d91fec2802be8308,7b8f7b64b74b4bc661369840d91fec2802be8308,v4.2.0
+ConradIrwin,2013-12-24 12:47:15,https://api.github.com/repos/defunkt/gist/git/commits/7422689b2963453b49a555a797c928d50b30ff2d,7422689b2963453b49a555a797c928d50b30ff2d,Mention -R in introduction
+ConradIrwin,2014-01-20 21:48:12,https://api.github.com/repos/defunkt/gist/git/commits/6ef588f393919b111b01a24bce36f60b3bd9303b,6ef588f393919b111b01a24bce36f60b3bd9303b,"Merge pull request #164 from KB1JWQ/addhomebrew
+
+Updating installation info in manpage"
+QuinnyPig,2014-01-20 21:40:56,https://api.github.com/repos/defunkt/gist/git/commits/46cb98871fca1592725b6a8ca6c380d367b6cace,46cb98871fca1592725b6a8ca6c380d367b6cace,Updating installation info in manpage
+ConradIrwin,2014-01-20 21:34:42,https://api.github.com/repos/defunkt/gist/git/commits/01e2d7aa2b61e9e3f8d99943711377e3c6a09958,01e2d7aa2b61e9e3f8d99943711377e3c6a09958,"Merge pull request #163 from KB1JWQ/addhomebrew
+
+Added Homebrew installation instructions"
+QuinnyPig,2014-01-20 21:31:15,https://api.github.com/repos/defunkt/gist/git/commits/1b04be24f8cd81251567cab872f70952f183ca2b,1b04be24f8cd81251567cab872f70952f183ca2b,Added Homebrew installation instructions
+ConradIrwin,2013-12-24 12:45:00,https://api.github.com/repos/defunkt/gist/git/commits/00198a71215bc237c4e41bbf310fc7201ef56956,00198a71215bc237c4e41bbf310fc7201ef56956,Merge branch 'add-raw-option'
+ConradIrwin,2013-12-24 12:40:26,https://api.github.com/repos/defunkt/gist/git/commits/76886878917d1370778e22c1fb409d6f5877541a,76886878917d1370778e22c1fb409d6f5877541a,Handle login failure nicely [Fixes #154]
+ConradIrwin,2013-12-24 12:40:10,https://api.github.com/repos/defunkt/gist/git/commits/1bd0e2ebeba0b219ec07e600b48d56b40bed318d,1bd0e2ebeba0b219ec07e600b48d56b40bed318d,Fix warnings
+ConradIrwin,2013-12-24 12:40:00,https://api.github.com/repos/defunkt/gist/git/commits/75e51e3c5c17257c5a2b09d358c8f4987d3b9f4b,75e51e3c5c17257c5a2b09d358c8f4987d3b9f4b,Use https rubygems
+ConradIrwin,2013-12-24 12:39:44,https://api.github.com/repos/defunkt/gist/git/commits/5e27c2b435c71e32601ac5ec8e1cb875888cf194,5e27c2b435c71e32601ac5ec8e1cb875888cf194,Silence interrupts more globally
+ConradIrwin,2013-12-24 12:25:57,https://api.github.com/repos/defunkt/gist/git/commits/6e691eef18422d1f5c2bda2112a59b3037b1bc40,6e691eef18422d1f5c2bda2112a59b3037b1bc40,Trust to gem loading [Fixes #156]
+ConradIrwin,2013-12-24 12:24:54,https://api.github.com/repos/defunkt/gist/git/commits/4a0f0408904535cb4fa67691cad27206d0510bed,4a0f0408904535cb4fa67691cad27206d0510bed,Rebuild [Fixes #159]
+ConradIrwin,2013-12-24 11:55:57,https://api.github.com/repos/defunkt/gist/git/commits/5124245102e8cbc16739b8ba9c1fa9f3ff715a7f,5124245102e8cbc16739b8ba9c1fa9f3ff715a7f,"Merge pull request #161 from EvanPurkhiser/feature/support-xdg-open
+
+[Linux] Support the xdg-open command"
+EvanPurkhiser,2013-12-23 11:36:17,https://api.github.com/repos/defunkt/gist/git/commits/360e3e731656331fec13f4017ed449ca6d73ec00,360e3e731656331fec13f4017ed449ca6d73ec00,"[Linux] Support the xdg-open command
+
+This can be used to open the URL if available"
+fleurer,2013-11-10 23:22:36,https://api.github.com/repos/defunkt/gist/git/commits/67ce687ffa304916a5396ac52ac1b983161eddcb,67ce687ffa304916a5396ac52ac1b983161eddcb,add comment for rawify
+fleurer,2013-11-10 23:13:27,https://api.github.com/repos/defunkt/gist/git/commits/6a3b43fd68c97d1b2c2ecb19a79316c183587e70,6a3b43fd68c97d1b2c2ecb19a79316c183587e70,"modify -r to -R
+
+gist may support recursively gist all files in a directory by `-r`"
+fleurer,2013-10-29 15:45:52,https://api.github.com/repos/defunkt/gist/git/commits/b90782a17e8a5b3e2bdd60ba10f6b1a1de635ac3,b90782a17e8a5b3e2bdd60ba10f6b1a1de635ac3,add spec for Gist#rawify
+fleurer,2013-10-29 15:28:34,https://api.github.com/repos/defunkt/gist/git/commits/66a222278e9aad6988843de8a551f230e33ce426,66a222278e9aad6988843de8a551f230e33ce426,"add -r option, and allow use combination with -s"
+fleurer,2013-10-29 15:16:19,https://api.github.com/repos/defunkt/gist/git/commits/90333989b7737cc9e289d6213df8ff2da56f7c25,90333989b7737cc9e289d6213df8ff2da56f7c25,"add Gist#rawify
+
+for anonymous users, the url returns from gist api is something like
+https://gist.github.com/7216441 , and it would redirect to
+https://gist.github.com/anonymous/7216441, it's not easy to get
+the raw file url by scripting.
+
+this commit make the hack to handle the HTTPRedirection, and concate
+the result url with /raw to generate the raw url."
+ConradIrwin,2013-11-10 18:05:04,https://api.github.com/repos/defunkt/gist/git/commits/cf2b2618c718a2ce15e5c4e5d4af3b935267d2af,cf2b2618c718a2ce15e5c4e5d4af3b935267d2af,Remove JSON dependency [Fixes #152]
+ConradIrwin,2013-11-03 21:13:41,https://api.github.com/repos/defunkt/gist/git/commits/7faa4a3d5e4cb9b68148545c07331c4ad6d390a6,7faa4a3d5e4cb9b68148545c07331c4ad6d390a6,bump version
+ConradIrwin,2013-11-03 21:13:28,https://api.github.com/repos/defunkt/gist/git/commits/dd4b54dc56c1dd286f5a72e7fac4b0b771ca284b,dd4b54dc56c1dd286f5a72e7fac4b0b771ca284b,Merge branch 'master' of github.com:weakish/gist
+weakish,2013-10-31 05:57:31,https://api.github.com/repos/defunkt/gist/git/commits/cbf90e1621752bd5129abe0505072457893bfddc,cbf90e1621752bd5129abe0505072457893bfddc,"Fix a bug causeing `gist -c` fails for xsel users.
+
+Unlike `xclip`, calling `xsel` without any argument outputs the
+selection.
+In other words, `xclip` defaults to `xclip -i`,
+but xsel` defaults to `xsel -o`.
+
+Thus we should use `xsel -i` instead of `xsel` for copying the url
+to clipboard."
+ConradIrwin,2013-10-01 20:04:16,https://api.github.com/repos/defunkt/gist/git/commits/d31d189a52e36bda5373069afc4a5d2c03d654dd,d31d189a52e36bda5373069afc4a5d2c03d654dd,"Merge pull request #147 from davedash/patch-1
+
+Adds note about storing multiple tokens."
+davedash,2013-10-01 20:03:28,https://api.github.com/repos/defunkt/gist/git/commits/1ce9863603200ba12811c2453903987b59014e04,1ce9863603200ba12811c2453903987b59014e04,"Adds note about storing multiple tokens.
+
+It's a bit wordy, welcome to word-smithing suggestions."
+ConradIrwin,2013-09-11 15:47:06,https://api.github.com/repos/defunkt/gist/git/commits/c9f48757a4deaf468031e9ef5b5418a62a9d12d8,c9f48757a4deaf468031e9ef5b5418a62a9d12d8,Merge pull request 144 from @kermit666
+ConradIrwin,2013-09-11 15:46:22,https://api.github.com/repos/defunkt/gist/git/commits/692a03c54cb934189e351b67b19400af4820b5b0,692a03c54cb934189e351b67b19400af4820b5b0,Fix accidental breakage
+metakermit,2013-09-11 07:31:33,https://api.github.com/repos/defunkt/gist/git/commits/a7d4c2193ef01731e9386a3b0aa11f7d9a2695e9,a7d4c2193ef01731e9386a3b0aa11f7d9a2695e9,doc: handling 2-factor auth
+ConradIrwin,2013-09-07 21:02:58,https://api.github.com/repos/defunkt/gist/git/commits/e65bec7fbb743f431c143e7b458910b7ae2e4d7b,e65bec7fbb743f431c143e7b458910b7ae2e4d7b,Rebuild v4.1.1
+ConradIrwin,2013-09-07 21:02:22,https://api.github.com/repos/defunkt/gist/git/commits/0b8e9bfeae4ef0b94e8f9a89207ae765c1dcd85c,0b8e9bfeae4ef0b94e8f9a89207ae765c1dcd85c,Merge branch 'permsfix' of github.com:akerl/gist
+ConradIrwin,2013-09-07 20:46:18,https://api.github.com/repos/defunkt/gist/git/commits/552a0541c99b74dd0e24e35f31b159b50808cb7b,552a0541c99b74dd0e24e35f31b159b50808cb7b,Support 2-factor auth
+akerl,2013-08-30 01:42:46,https://api.github.com/repos/defunkt/gist/git/commits/f3fa3d93b67380ea591da03d4eb5ec713a04e0eb,f3fa3d93b67380ea591da03d4eb5ec713a04e0eb,Set config file permissions to prevent group/world read
+ConradIrwin,2013-06-06 17:46:40,https://api.github.com/repos/defunkt/gist/git/commits/8e0430da6e8d214df79efa1e721e73466b6e7558,8e0430da6e8d214df79efa1e721e73466b6e7558,"Merge pull request #141 from kermit666/patch-1
+
+doc: copy embeddable url flag change"
+metakermit,2013-06-06 10:04:48,https://api.github.com/repos/defunkt/gist/git/commits/5cafd22b8bd3f445e15ba2fa78ca64f5d9f1db7a,5cafd22b8bd3f445e15ba2fa78ca64f5d9f1db7a,doc: copy embeddable url flag change
+ConradIrwin,2013-05-23 05:48:43,https://api.github.com/repos/defunkt/gist/git/commits/dd6f0c96c9589301a4a2fe644bf4fcaf73e6158d,dd6f0c96c9589301a4a2fe644bf4fcaf73e6158d,docs in comments
+ConradIrwin,2013-05-23 05:47:11,https://api.github.com/repos/defunkt/gist/git/commits/2835008a651ef35f0d9be687710a91719b6196f0,2835008a651ef35f0d9be687710a91719b6196f0,Merge branch 'credential-params' of https://github.com/weilu/gist
+weilu,2013-05-19 09:22:55,https://api.github.com/repos/defunkt/gist/git/commits/69969e81da4eed2594d50442858b612a2d51f33b,69969e81da4eed2594d50442858b612a2d51f33b,login! accepts credentials as params
+ConradIrwin,2013-05-15 08:01:19,https://api.github.com/repos/defunkt/gist/git/commits/aa42c1233bbeee1875c5e7c7b10602c3d49c9f3d,aa42c1233bbeee1875c5e7c7b10602c3d49c9f3d,Remove utf-8 to keep homebrew happy
+ConradIrwin,2013-05-15 07:56:54,https://api.github.com/repos/defunkt/gist/git/commits/b0aaf02ba267d8e717dcaad148b96d037a263a4a,b0aaf02ba267d8e717dcaad148b96d037a263a4a,Fix typo
+ConradIrwin,2013-05-15 07:43:34,https://api.github.com/repos/defunkt/gist/git/commits/abce8baa5cd8a36298e6291ded53b8a02e33ec71,abce8baa5cd8a36298e6291ded53b8a02e33ec71,Re-add standalone support
+ConradIrwin,2013-05-10 04:59:27,https://api.github.com/repos/defunkt/gist/git/commits/85f7b59b2805ba69c175a4003c46e7e47fe78ebc,85f7b59b2805ba69c175a4003c46e7e47fe78ebc,"Merge pull request #138 from wenbing/master
+
+fix option bracket"
+wenbing,2013-05-09 01:59:37,https://api.github.com/repos/defunkt/gist/git/commits/48e24f3bfc4b7712ed2e69cd3ca0881ed6123dfe,48e24f3bfc4b7712ed2e69cd3ca0881ed6123dfe,fix option bracket
+ConradIrwin,2013-05-03 07:02:59,https://api.github.com/repos/defunkt/gist/git/commits/d6de1c47b2549b00e1d26c08eaefce962c9390b1,d6de1c47b2549b00e1d26c08eaefce962c9390b1,Update gemspec
+ConradIrwin,2013-05-03 06:47:10,https://api.github.com/repos/defunkt/gist/git/commits/2a06eccc2b15452177a5ab3147aafbd944b69d0d,2a06eccc2b15452177a5ab3147aafbd944b69d0d,Add @rking and @ConradIrwin to the README
+ConradIrwin,2013-05-03 06:28:18,https://api.github.com/repos/defunkt/gist/git/commits/383147194173d61696e8a74aa3c9bb1a6f582324,383147194173d61696e8a74aa3c9bb1a6f582324,Support --no-private
+ConradIrwin,2013-05-03 06:30:56,https://api.github.com/repos/defunkt/gist/git/commits/bd69d8739cac3b5b0e3e5a7631660f0328349190,bd69d8739cac3b5b0e3e5a7631660f0328349190,support --no-open
+ConradIrwin,2013-05-03 06:14:36,https://api.github.com/repos/defunkt/gist/git/commits/f6a056af6d9c837766e1e65a2c2b1ca786b21711,f6a056af6d9c837766e1e65a2c2b1ca786b21711,Reflow --help
+ConradIrwin,2013-05-03 06:08:23,https://api.github.com/repos/defunkt/gist/git/commits/3d16073a110bcef3955cb6dccebf0778b755fd21,3d16073a110bcef3955cb6dccebf0778b755fd21,Github -> GitHub
+ConradIrwin,2013-05-03 05:44:29,https://api.github.com/repos/defunkt/gist/git/commits/5a36b3d068294f7bf4fc1d22713172ddb880c0e8,5a36b3d068294f7bf4fc1d22713172ddb880c0e8,Rewrite man page so it looks ok in ronn
+ConradIrwin,2013-05-03 03:15:59,https://api.github.com/repos/defunkt/gist/git/commits/447f735d7cbc25f3d7f5f8715ddf851d27e0dc06,447f735d7cbc25f3d7f5f8715ddf851d27e0dc06,Support '-' to read from STDIN
+ConradIrwin,2013-05-03 03:02:11,https://api.github.com/repos/defunkt/gist/git/commits/7be4a1202eb080c65aab61460008b18e58b73f65,7be4a1202eb080c65aab61460008b18e58b73f65,"Support for `git config --global gist.private yes`
+
+I don't want gisters to accidentally create public gists of stuff that
+they thought would be private."
+ConradIrwin,2013-05-03 02:33:48,https://api.github.com/repos/defunkt/gist/git/commits/63300c151084697a4f7cded16ecb82369044afc7,63300c151084697a4f7cded16ecb82369044afc7,Fix specs when not logged in
+ConradIrwin,2013-05-03 01:47:51,https://api.github.com/repos/defunkt/gist/git/commits/115dfe456ee51c0739eccc712ee26c86e494d976,115dfe456ee51c0739eccc712ee26c86e494d976,gist -p compatibliity
+ConradIrwin,2013-05-03 01:36:19,https://api.github.com/repos/defunkt/gist/git/commits/19205e53465e3b44ae1fd1901f3d976125ba7e7a,19205e53465e3b44ae1fd1901f3d976125ba7e7a,Add -t [FILE EXTENSION] for gist 3 compatbility
+ConradIrwin,2013-05-03 01:31:53,https://api.github.com/repos/defunkt/gist/git/commits/f488bfa69c0b7237e084b0fa349ae7ddc0a33c2a,f488bfa69c0b7237e084b0fa349ae7ddc0a33c2a,Remove -t OAUTH_TOKEN
+ConradIrwin,2013-05-03 01:22:02,https://api.github.com/repos/defunkt/gist/git/commits/bbe7c7620f8081ccc8900398206fbc024b13971a,bbe7c7620f8081ccc8900398206fbc024b13971a,Bump version to 4.0.0
+ConradIrwin,2013-05-03 01:15:43,https://api.github.com/repos/defunkt/gist/git/commits/ca024d228c3d76587c8646cc92a5dc8bde254b40,ca024d228c3d76587c8646cc92a5dc8bde254b40,Mindless rename jist->gist
+ConradIrwin,2013-05-03 07:09:02,https://api.github.com/repos/defunkt/gist/git/commits/a05092fb48ad0cc83964c5c5fc6546a4784b85d8,a05092fb48ad0cc83964c5c5fc6546a4784b85d8,"Merge jist with gist!
+
+After some time as a fork, and a lot of vetting from users, we have
+decided to merge the projects together.
+
+The key change is to use OAuth tokens for authentication instead of
+requiring you to hard-code your password. Please use `gist --login`
+to exchange your username and password for a token.
+
+Close #137  Gist API now requires user-agent be set, and some versions of Net::HTTP don't 3 ↑
+Close #136  SSL error (w/ Homebrew & Ruby 2.0.0-p0 from rbenv)
+Close #135  Moved authentication over to OAuth tokens. 1 ↑
+Close #134  Trying to use gist inside a directory with dashes in the name on a file inside a subdirectory of that results in 422 errors.... 3
+Close #133  SSL cert cached in /tmp
+Close #132  --open doesn't works
+Close #131  Replace slashes with dashes to avoid 422 errors ↑
+Close #130  FEATURE: Multiple API Providers 2 ↑
+Close #125  Preventing gist from throwing errors when xclip is installed but X11 isn't present (forwarding or otherwise) ↑
+Close #120  Add link shortening with --shorten / -s option ↑
+Close #118  Use tokens instead of username / password 4
+Close #117  Integrate with git.io
+Close #116  man page typos & feature request
+Close #115  Creating gist failed: 500 Internal Server Error 1
+Close #112  Refactor reading from stdin so --type option works 3 ↑
+Close #111  Allow gist to work against different githubs 2 ↑
+Close #109  fix error on windows. ↑
+Close #108  set Content-Type. 5 ↑
+Close #107  Add update support. 1 ↑
+Close #106  Add anonymous gisting. 1 ↑
+Close #103  fix some bugs.  make gist rock in vim/editor via ""highlight lines - :!gist"" ↑
+Close #98  SSL... 23
+Close #96  Creating gist failed: 422 Unprocessable Entity 2
+Close #95  Fixes the extension issue for -t syntax highlighting, and the filename for stdin 5 ↑
+Close #94  show JSON response when create fails ↑
+Close #93  use file basename by default 4 ↑
+Close #91  Support using an oauth token rather than a username+password 7 ↑
+Close #90  3.1.0 fails to authenticate 3
+Close #88  Current (3.1.0) no longer respects -t flag 3
+Close #85  Copy to clipboard in Windows ↑
+Close #84  use oauth now that there are no tokens 14
+Close #78  Strip directory from arguments 2
+Close #76  Some README.markdown nitpicks...
+Close #75  Does not open in browser by default — documentation disagrees 3
+Close #74  Set description from CLI (for issue #73) 1 ↑
+Close #73  Should be able to set gist description from commandline 1
+Close #69  Failed gist creation should raise instead of puts and exit.
+Close #67  Use the github api and allow gist url override. 1 ↑
+Close #65  Handle lowercased versions of HTTP_PROXY and HTTPS_PROXY. 1 ↑
+Close #64  When generating the man page (-m/--man), skip the usage instructions ↑
+Close #61  Instructions for setting github.token to a command don't work for me 1
+Close #58  support for anonymous gists
+Close #53  Add support for GitHub:FI 4
+Close #25  Support for updating gists [feature] 1"
+ConradIrwin,2013-04-24 20:22:14,https://api.github.com/repos/defunkt/gist/git/commits/6a0943d88d1c46794f6fbc26e1b0dc57e3b91efc,6a0943d88d1c46794f6fbc26e1b0dc57e3b91efc,Include a User-Agent [Fixes #34]
+ConradIrwin,2013-04-12 19:50:38,https://api.github.com/repos/defunkt/gist/git/commits/d849c1b7a4485b957eb663fe2223afcdc10bca3f,d849c1b7a4485b957eb663fe2223afcdc10bca3f,"v1.5.0!
+
+jist is officially ""enterprise"" software :)"
+ConradIrwin,2013-04-09 16:55:58,https://api.github.com/repos/defunkt/gist/git/commits/a28ce5517eee68be08d731baee14863e46b75f3c,a28ce5517eee68be08d731baee14863e46b75f3c,Merge remote-tracking branch 'kui/support_ghe_by_url'
+kui,2013-04-09 07:57:40,https://api.github.com/repos/defunkt/gist/git/commits/fa383c170e0ae91e07fb997168d727cef2587f18,fa383c170e0ae91e07fb997168d727cef2587f18,Use GITHUB_URL instead of GHE_URL
+ConradIrwin,2013-04-09 06:54:24,https://api.github.com/repos/defunkt/gist/git/commits/fb05748e47e288c2ce4847c4f701d70b2da49de4,fb05748e47e288c2ce4847c4f701d70b2da49de4,Better error for mac+tmux [Fixes #23]
+ConradIrwin,2013-04-09 06:06:14,https://api.github.com/repos/defunkt/gist/git/commits/f8db4b1f895f5f3ae7cb0f905bdffa7cc0c13807,f8db4b1f895f5f3ae7cb0f905bdffa7cc0c13807,"Store enterprise credentials in a separate file
+
+This will let users be logged in to both enterprise github and social
+github at the same time."
+kui,2013-04-09 00:10:51,https://api.github.com/repos/defunkt/gist/git/commits/5fc4b6a3a2dcf999fbf334e7f95ae0536e52b701,5fc4b6a3a2dcf999fbf334e7f95ae0536e52b701,Make `assert_requested` expected paths more exact
+kui,2013-04-08 16:45:44,https://api.github.com/repos/defunkt/gist/git/commits/62e4ce2707012a8fd7853ff17b5b92038d6ab7c0,62e4ce2707012a8fd7853ff17b5b92038d6ab7c0,Add a spec for GitHub Enterprise support
+kui,2013-04-08 16:44:20,https://api.github.com/repos/defunkt/gist/git/commits/5127b8f5f2b1df22aa05a751c69b32f71a677ff8,5127b8f5f2b1df22aa05a751c69b32f71a677ff8,Make code more testable
+kui,2013-04-08 11:20:59,https://api.github.com/repos/defunkt/gist/git/commits/528e8976ff3edf0d6eb6800baad94882023f6bad,528e8976ff3edf0d6eb6800baad94882023f6bad,"Read GitHub Enterprise URL from ENV
+
+you must run `--login` if you use GHE:
+	$ GHE_URL=<your_ghe_url> jist --login"
+ConradIrwin,2013-03-22 07:27:41,https://api.github.com/repos/defunkt/gist/git/commits/471e60061cca29bdf85c93629c0ba100f81428d3,471e60061cca29bdf85c93629c0ba100f81428d3,v1.4.0!
+ConradIrwin,2013-03-22 07:26:27,https://api.github.com/repos/defunkt/gist/git/commits/23d825aaed0c6030bb6981fe3d6bb001ee9d258d,23d825aaed0c6030bb6981fe3d6bb001ee9d258d,"Rename --copy-js to --embed [Issue #31]
+
+For compatibility with defunkt/gist"
+ConradIrwin,2013-02-24 00:53:09,https://api.github.com/repos/defunkt/gist/git/commits/4a98996448610fd26889e0ff179afe73154b15d7,4a98996448610fd26889e0ff179afe73154b15d7,Try to clean up output stuff
+ConradIrwin,2013-02-24 00:49:24,https://api.github.com/repos/defunkt/gist/git/commits/1ab99bc2dd07e556ab1bc639522f7fdfee71fd2e,1ab99bc2dd07e556ab1bc639522f7fdfee71fd2e,All 'raise Jist::Error'
+ConradIrwin,2013-02-24 00:48:01,https://api.github.com/repos/defunkt/gist/git/commits/50713b5204381ad984306148b357b9ef1d2624c8,50713b5204381ad984306148b357b9ef1d2624c8,Use development jist in development
+ConradIrwin,2013-02-23 23:59:45,https://api.github.com/repos/defunkt/gist/git/commits/8feab8f615b462498dec3ff3768637b9bb3fa758,8feab8f615b462498dec3ff3768637b9bb3fa758,Merge branch 'zph/master'
+zph,2013-02-23 22:48:33,https://api.github.com/repos/defunkt/gist/git/commits/1b7afaa15fb43ba7a7463cf84b243a9901d5f40c,1b7afaa15fb43ba7a7463cf84b243a9901d5f40c,Added documentation for --copy-js
+zph,2013-02-22 05:02:54,https://api.github.com/repos/defunkt/gist/git/commits/9a08978f7dc3fc987b2a6f6e103bc7df62c1b43e,9a08978f7dc3fc987b2a6f6e103bc7df62c1b43e,Added option --copy-js to copy the Embedding JS link to clipboard
+indirect,2013-02-17 04:04:37,https://api.github.com/repos/defunkt/gist/git/commits/4f6f01f979a1f7e1b280780fe0286c27a3c24b1a,4f6f01f979a1f7e1b280780fe0286c27a3c24b1a,"Merge pull request #129 from mironal/print_embedcode
+
+Add ""Print embed code"" option."
+mironal,2013-02-16 03:40:57,https://api.github.com/repos/defunkt/gist/git/commits/a8e17d262a76340d896e10528cc35669dd01805c,a8e17d262a76340d896e10528cc35669dd01805c,"Add ""Print embed code"" option.
+-e or --embed option will be copied to the clipboard JavaScript embed code . and print stdout."
+ConradIrwin,2013-02-05 17:45:43,https://api.github.com/repos/defunkt/gist/git/commits/5809735c0e0c9ec140ef1a387da6d08397374bba,5809735c0e0c9ec140ef1a387da6d08397374bba,"Merge pull request #26 from tobeportable/patch-1
+
+note to inform of multiple files upload support"
+tobeportable,2013-02-05 15:12:23,https://api.github.com/repos/defunkt/gist/git/commits/ccf623af9578fa4f69e93ef7838e2145db6aa037,ccf623af9578fa4f69e93ef7838e2145db6aa037,note to inform of multiple files upload support
+indirect,2013-02-01 18:33:58,https://api.github.com/repos/defunkt/gist/git/commits/9c080a350b965ce8f0d0220855819c214415966f,9c080a350b965ce8f0d0220855819c214415966f,"Merge pull request #128 from cliffrowley/patch-1
+
+Update README.markdown"
+cliffrowley,2013-02-01 15:52:19,https://api.github.com/repos/defunkt/gist/git/commits/778e5da5b4bd523baa6766ebcdd4e4dd45d73835,778e5da5b4bd523baa6766ebcdd4e4dd45d73835,"Update README.markdown
+
+A typo on my part: -u should be -a. Apologies."
+indirect,2013-02-01 04:13:42,https://api.github.com/repos/defunkt/gist/git/commits/977591dbab945f4fa11227c0d68071dfe16388da,977591dbab945f4fa11227c0d68071dfe16388da,"Merge pull request #127 from cliffrowley/patch-1
+
+Update README.markdown"
+cliffrowley,2013-02-01 03:56:39,https://api.github.com/repos/defunkt/gist/git/commits/4ecd4aa42a7a43b8ce604911aa9efd3159cc83ba,4ecd4aa42a7a43b8ce604911aa9efd3159cc83ba,"Update README.markdown
+
+Added a more convenient example of retrieving the GitHub password from the Mac OS keychain. Using ""find-internet-password"" instead of ""find-generic-password"" means that a user need not maintain the Keychain entry manually if they change their password, as it will be updated automatically by their browser when they next log into the GitHub website successfully."
+ConradIrwin,2012-12-31 01:52:04,https://api.github.com/repos/defunkt/gist/git/commits/8a292bbc21e1b2d2e3a5e948e7119b97c2552ad4,8a292bbc21e1b2d2e3a5e948e7119b97c2552ad4,v1.3.1
+rking,2012-12-10 15:19:54,https://api.github.com/repos/defunkt/gist/git/commits/e07a2316afbaa3f583e7f12236cbde5d7dd1ce1f,e07a2316afbaa3f583e7f12236cbde5d7dd1ce1f,Try harder to find a browser on Linux
+rking,2012-12-10 07:10:07,https://api.github.com/repos/defunkt/gist/git/commits/776427f6fa5e25ba9a323014a112f0799b6b8728,776427f6fa5e25ba9a323014a112f0799b6b8728,Spiffier Errors (internally + externally)
+rking,2012-12-10 06:20:38,https://api.github.com/repos/defunkt/gist/git/commits/072cf87e9c74cdbf873510bb2021bb76a569a588,072cf87e9c74cdbf873510bb2021bb76a569a588,Update to new signature.
+indirect,2012-11-15 03:46:39,https://api.github.com/repos/defunkt/gist/git/commits/6f30a3d1e35854e1b3baf5f2eeeeac6a16409ad2,6f30a3d1e35854e1b3baf5f2eeeeac6a16409ad2,fix security call to have output
+ConradIrwin,2012-11-13 08:57:17,https://api.github.com/repos/defunkt/gist/git/commits/6ed6d701bbb7c137a486cc60e9cb0856dd26c608,6ed6d701bbb7c137a486cc60e9cb0856dd26c608,"Use URI objects, not hashes"
+mattn,2012-11-13 06:11:55,https://api.github.com/repos/defunkt/gist/git/commits/8e6402215cbdbff87c1d6580c7653152d492fc7f,8e6402215cbdbff87c1d6580c7653152d492fc7f,post URL to git.io via proxy.
+indirect,2012-11-11 02:32:27,https://api.github.com/repos/defunkt/gist/git/commits/48262f5c053a13bc6e84e1a3046a812d96213246,48262f5c053a13bc6e84e1a3046a812d96213246,"Merge pull request #119 from dlo/docs
+
+simplify keychain access example"
+ConradIrwin,2012-11-11 02:18:19,https://api.github.com/repos/defunkt/gist/git/commits/360d77b18596485b9c67ed7856e25e9b5370fffa,360d77b18596485b9c67ed7856e25e9b5370fffa,Typo
+ConradIrwin,2012-11-11 01:28:10,https://api.github.com/repos/defunkt/gist/git/commits/b5224a46bddf1ff3c72cec5714b6202081f76c1f,b5224a46bddf1ff3c72cec5714b6202081f76c1f,Version 1.2.0
+ConradIrwin,2012-11-11 01:25:29,https://api.github.com/repos/defunkt/gist/git/commits/70548def4d9fa8d8591cc58890bfe5a0fe88b76c,70548def4d9fa8d8591cc58890bfe5a0fe88b76c,Shorten URL before copying to clipboard
+ConradIrwin,2012-11-11 01:21:31,https://api.github.com/repos/defunkt/gist/git/commits/ab3ef5641e643bb5bc05c52493534bfcf7896670,ab3ef5641e643bb5bc05c52493534bfcf7896670,Move -s near to other display options
+ConradIrwin,2012-11-11 01:19:07,https://api.github.com/repos/defunkt/gist/git/commits/f25aa47a436539fa78553406544d77b2ff9921f4,f25aa47a436539fa78553406544d77b2ff9921f4,Still return full payload with :shorten => true
+ConradIrwin,2012-11-11 01:09:55,https://api.github.com/repos/defunkt/gist/git/commits/28b25d6a71602f00fb1503129f06ccc72d1c7a2e,28b25d6a71602f00fb1503129f06ccc72d1c7a2e,Fixup dependencies
+dlo,2012-11-10 20:39:56,https://api.github.com/repos/defunkt/gist/git/commits/9bf41b7382feb3f010af2294413511c81cc02d3a,9bf41b7382feb3f010af2294413511c81cc02d3a,add tests for shorten option
+dlo,2012-11-10 20:39:44,https://api.github.com/repos/defunkt/gist/git/commits/af2c0d12e159cf79f695993201cfbc4cd26b528f,af2c0d12e159cf79f695993201cfbc4cd26b528f,remove extraneous else statement
+dlo,2012-11-10 18:53:24,https://api.github.com/repos/defunkt/gist/git/commits/8251a77e8393c56bba85035787968be038aa86f8,8251a77e8393c56bba85035787968be038aa86f8,"add link shortening option
+
+This commit gives jist the new ability to shorten gist URLs using
+GitHub's URL shortener, git.io. It adds two options on the command
+line (`-s` and `--shorten`).
+
+If the shortening step fails, or if git.io is down, jist will just
+return the normal, unshortened version."
+dlo,2012-11-10 17:54:54,https://api.github.com/repos/defunkt/gist/git/commits/95a9c984fb49e8f075c8f9cdff79e9b9f7c30124,95a9c984fb49e8f075c8f9cdff79e9b9f7c30124,simplify keychain access example
+indirect,2012-11-04 03:20:35,https://api.github.com/repos/defunkt/gist/git/commits/3aacc1fbb1ee28a9f5d35a543df3a3bd9fdeca80,3aacc1fbb1ee28a9f5d35a543df3a3bd9fdeca80,Update the cert chain for the new gist cert
+rking,2012-10-26 05:42:37,https://api.github.com/repos/defunkt/gist/git/commits/c8a5851879d540049081e6c0053a396c4443cfc1,c8a5851879d540049081e6c0053a396c4443cfc1,"Merge pull request #19 from mattn/gracefull-error
+
+gracefull error on windows."
+mattn,2012-10-18 06:02:53,https://api.github.com/repos/defunkt/gist/git/commits/c1a3ea0e7142095a31f7d995cfccc0a27561aed3,c1a3ea0e7142095a31f7d995cfccc0a27561aed3,gracefull error on windows.
+ConradIrwin,2012-10-18 05:29:08,https://api.github.com/repos/defunkt/gist/git/commits/4d8f27fc1433547303fecbf65e2371c4ff3013c3,4d8f27fc1433547303fecbf65e2371c4ff3013c3,v1.1.0
+ConradIrwin,2012-10-18 05:27:35,https://api.github.com/repos/defunkt/gist/git/commits/b61e8917e49d04320deb3ab76a1169d49d2d3de2,b61e8917e49d04320deb3ab76a1169d49d2d3de2,Picky style tweaks
+ConradIrwin,2012-10-18 05:12:43,https://api.github.com/repos/defunkt/gist/git/commits/7b7ec0a656ca13cb763f61a5d80a8edd69342e99,7b7ec0a656ca13cb763f61a5d80a8edd69342e99,Fix spec...
+ConradIrwin,2012-10-18 05:09:05,https://api.github.com/repos/defunkt/gist/git/commits/30075699d519bb6c4bf294144aa6983d06e82df5,30075699d519bb6c4bf294144aa6983d06e82df5,Merge branch 'proxy' of github.com:mattn/jist
+mattn,2012-10-18 03:22:19,https://api.github.com/repos/defunkt/gist/git/commits/0e755dee771970857a4b182f947df7c1569791f7,0e755dee771970857a4b182f947df7c1569791f7,add comment.
+mattn,2012-10-18 03:19:39,https://api.github.com/repos/defunkt/gist/git/commits/41cf577ef8ce598e1f40aa54849f25e9d6f95808,41cf577ef8ce598e1f40aa54849f25e9d6f95808,"export http_connection to return connection, and added spec."
+mattn,2012-10-17 02:52:12,https://api.github.com/repos/defunkt/gist/git/commits/739612ad597f3b91d84f418fef13eb6038fb929c,739612ad597f3b91d84f418fef13eb6038fb929c,support http_proxy.
+ConradIrwin,2012-08-19 22:55:57,https://api.github.com/repos/defunkt/gist/git/commits/b784186707342b87a5707508bb27e41d2ffb56bc,b784186707342b87a5707508bb27e41d2ffb56bc,"Include all files, v1.0.1"
+ConradIrwin,2012-08-19 22:54:56,https://api.github.com/repos/defunkt/gist/git/commits/e0600bab2bb4cb7ad0031f80ffe3e7c618387062,e0600bab2bb4cb7ad0031f80ffe3e7c618387062,Merge remote-tracking branch 'hasufell/master'
+ConradIrwin,2012-08-07 16:43:29,https://api.github.com/repos/defunkt/gist/git/commits/93a0c365f2f73c1b61e7c19fb7aedb2b75296fda,93a0c365f2f73c1b61e7c19fb7aedb2b75296fda,Move usage line [Fixes #9]
+ConradIrwin,2012-08-07 09:10:19,https://api.github.com/repos/defunkt/gist/git/commits/7765e571ffd73db353a464003044bc138c7c7bb9,7765e571ffd73db353a464003044bc138c7c7bb9,README++
+ConradIrwin,2012-08-07 09:01:46,https://api.github.com/repos/defunkt/gist/git/commits/018d574f164940eb37df16cc93142036f66cf795,018d574f164940eb37df16cc93142036f66cf795,Add support for pasting (version bump)
+ConradIrwin,2012-08-07 08:43:53,https://api.github.com/repos/defunkt/gist/git/commits/2aa46df48bb00a7202538824f5d0ed23531d62fa,2aa46df48bb00a7202538824f5d0ed23531d62fa,README++
+ConradIrwin,2012-08-07 08:40:40,https://api.github.com/repos/defunkt/gist/git/commits/9161ea3927bd1c1bed085c62d75e6a5e28191db3,9161ea3927bd1c1bed085c62d75e6a5e28191db3,Fix docs!
+ConradIrwin,2012-08-07 08:38:34,https://api.github.com/repos/defunkt/gist/git/commits/472ba40d96f4d78037f0f5c1f404bd0889565ee2,472ba40d96f4d78037f0f5c1f404bd0889565ee2,Add --open/-o as well
+ConradIrwin,2012-08-07 08:16:14,https://api.github.com/repos/defunkt/gist/git/commits/6fbf0cb9d6e03aa3bfa9edeee5f57583b8b5f949,6fbf0cb9d6e03aa3bfa9edeee5f57583b8b5f949,More .gitignore
+rking,2012-08-07 08:09:35,https://api.github.com/repos/defunkt/gist/git/commits/652a0895eb1f2b08767e2305697636206f7892e8,652a0895eb1f2b08767e2305697636206f7892e8,"use  extend(self) instead of module_function
+
+Old versions of YARD struggle with @option tags in module_function,
+https://github.com/lsegal/yard/issues/563"
+rking,2012-08-07 08:07:28,https://api.github.com/repos/defunkt/gist/git/commits/b691c25ab82716907939dd765583742457358128,b691c25ab82716907939dd765583742457358128,Fix typo
+rking,2012-08-07 08:00:34,https://api.github.com/repos/defunkt/gist/git/commits/37f00cbcc2a25a87912a2de1af01089d16129077,37f00cbcc2a25a87912a2de1af01089d16129077,"Add clipboard support and tests
+
+We investigated using the clipboard gem but it was deemed to be
+unnecessarily complicated, and made assumptions that we'd rather not be
+lumbered with."
+ConradIrwin,2012-07-24 18:09:43,https://api.github.com/repos/defunkt/gist/git/commits/75a5731d9c438d4e1fcfb57d727d143156b31255,75a5731d9c438d4e1fcfb57d727d143156b31255,"Set 'Content-Type: application/json' [Fixes #7]
+
+The issue was that Net::HTTP sets the default content-type to
+application/x-www-form-encoded, which caused GitHub's servers to
+percent-decode the incoming content.
+
+This meant that if a file contained a % that was not followed by two hex
+digits, you could not upload a gist. Setting the right content-type
+header fixes this.
+
+Thanks to @rking for the data to replicate this problem."
+ConradIrwin,2012-07-09 10:55:30,https://api.github.com/repos/defunkt/gist/git/commits/1d8c2ef5182d107bf3c10594c71782f8a597b6a3,1d8c2ef5182d107bf3c10594c71782f8a597b6a3,Update --help
+ConradIrwin,2012-07-09 10:14:38,https://api.github.com/repos/defunkt/gist/git/commits/d29b48ab18f8621bb05762e0aa4db8eba31558ba,d29b48ab18f8621bb05762e0aa4db8eba31558ba,Always retry once [closes #6]
+ConradIrwin,2012-07-09 10:22:58,https://api.github.com/repos/defunkt/gist/git/commits/bac03efd93aa0e96bda9bcaba8fc034c9e1a8bc1,bac03efd93aa0e96bda9bcaba8fc034c9e1a8bc1,more friendly Errno errors
+ConradIrwin,2012-07-09 10:15:13,https://api.github.com/repos/defunkt/gist/git/commits/779d444aaf3ef5cbee2e0c3173944145051e9741,779d444aaf3ef5cbee2e0c3173944145051e9741,Fix documentation oddities
+ConradIrwin,2012-07-03 07:52:13,https://api.github.com/repos/defunkt/gist/git/commits/48e6f40eea3741eb1b3dfd09dc3c540a00b21c84,48e6f40eea3741eb1b3dfd09dc3c540a00b21c84,up timeout a little so I can jist while tethered :)
+ConradIrwin,2012-07-03 07:48:36,https://api.github.com/repos/defunkt/gist/git/commits/81a82442f41fb27a677f899d843e681c5b83d729,81a82442f41fb27a677f899d843e681c5b83d729,Improve docs for -a
+ConradIrwin,2012-07-03 07:41:57,https://api.github.com/repos/defunkt/gist/git/commits/300fad332f2a7088dcc8e0a88bfe8779bb29779b,300fad332f2a7088dcc8e0a88bfe8779bb29779b,Merge github.com:ainformatico/jist
+ainformatico,2012-07-03 07:10:49,https://api.github.com/repos/defunkt/gist/git/commits/03afea359eabda010ca461ed5eb430d834f7f929,03afea359eabda010ca461ed5eb430d834f7f929,Add anonymous gist support
+ConradIrwin,2012-07-01 20:23:46,https://api.github.com/repos/defunkt/gist/git/commits/a6d40fad044694a44cd0c70d2a75cc412ce26420,a6d40fad044694a44cd0c70d2a75cc412ce26420,Make error handling a bit more friendly [Issue #4]
+ConradIrwin,2012-06-26 03:52:40,https://api.github.com/repos/defunkt/gist/git/commits/2801a9485efedc2546223055fc1a26c08f28e8f3,2801a9485efedc2546223055fc1a26c08f28e8f3,Catch Interrupt [Fixes #3]
+ConradIrwin,2012-06-26 03:52:33,https://api.github.com/repos/defunkt/gist/git/commits/8464f651ea5e46f2e885de1543588103e3b9f80f,8464f651ea5e46f2e885de1543588103e3b9f80f,Fix some yard problems
+ConradIrwin,2012-06-25 01:38:03,https://api.github.com/repos/defunkt/gist/git/commits/dd174726dca6d466bf6e525d1c650a005a152660,dd174726dca6d466bf6e525d1c650a005a152660,Put installation first
+ConradIrwin,2012-06-25 01:27:57,https://api.github.com/repos/defunkt/gist/git/commits/e41260135a6f51bcc992a1926d75700471b69199,e41260135a6f51bcc992a1926d75700471b69199,Allow gisting multiple files at the same time
+ConradIrwin,2012-06-25 01:01:27,https://api.github.com/repos/defunkt/gist/git/commits/425182d2bc0dd01b8d07c0861f256145ed142ee4,425182d2bc0dd01b8d07c0861f256145ed142ee4,Allow updating an existing gist
+ConradIrwin,2012-06-23 20:04:54,https://api.github.com/repos/defunkt/gist/git/commits/62820cb98b5cc06b785070d9f99725ad0af69fd1,62820cb98b5cc06b785070d9f99725ad0af69fd1,Fix bug when embedding jist in pry
+ConradIrwin,2012-06-23 09:43:02,https://api.github.com/repos/defunkt/gist/git/commits/01aa2dfbb125be1f06f07a845d493938b394418b,01aa2dfbb125be1f06f07a845d493938b394418b,Better README
+ConradIrwin,2012-06-23 09:30:50,https://api.github.com/repos/defunkt/gist/git/commits/52fd26cf7a3beac9def285ea44edf3142245966c,52fd26cf7a3beac9def285ea44edf3142245966c,Small tweaks
+ConradIrwin,2012-06-23 09:14:06,https://api.github.com/repos/defunkt/gist/git/commits/4891d4ad8ed9d59e1fd09fb4c6afdd4e3db85b85,4891d4ad8ed9d59e1fd09fb4c6afdd4e3db85b85,Windows support...
+ConradIrwin,2012-06-23 08:59:25,https://api.github.com/repos/defunkt/gist/git/commits/6155018871191710de6d11517f980d1fd8aae9b0,6155018871191710de6d11517f980d1fd8aae9b0,++README and version 0.3
+ConradIrwin,2012-06-23 08:46:00,https://api.github.com/repos/defunkt/gist/git/commits/5dc419a631c3854a448b2e5582f985128af713a0,5dc419a631c3854a448b2e5582f985128af713a0,Don't echo password on linux/mac
+ConradIrwin,2012-06-23 08:26:34,https://api.github.com/repos/defunkt/gist/git/commits/9b263312333b405a9ce166708f924f3836a204c6,9b263312333b405a9ce166708f924f3836a204c6,Allow STDIN to be used.
+ConradIrwin,2012-06-23 07:34:15,https://api.github.com/repos/defunkt/gist/git/commits/1d34fb1047c95546e958c316e5ca0c975e1479d7,1d34fb1047c95546e958c316e5ca0c975e1479d7,Use Oauth instead of username/password
+ConradIrwin,2012-06-23 07:29:04,https://api.github.com/repos/defunkt/gist/git/commits/0f36cc88112cf15a982e7db3ea1360fbd94b56a6,0f36cc88112cf15a982e7db3ea1360fbd94b56a6,Add support for persistent authentication
+ConradIrwin,2012-06-23 07:07:38,https://api.github.com/repos/defunkt/gist/git/commits/d7fe3d0e4f4c7f4c6a0a03b8459fd6e47c83159d,d7fe3d0e4f4c7f4c6a0a03b8459fd6e47c83159d,yarderize
+ConradIrwin,2012-06-23 06:57:18,https://api.github.com/repos/defunkt/gist/git/commits/e35d802510c75810b842256be2fc0fa4b180015b,e35d802510c75810b842256be2fc0fa4b180015b,be explicit about not using ssl
+ConradIrwin,2012-06-22 23:05:31,https://api.github.com/repos/defunkt/gist/git/commits/ae1903f8b37aea611d65ebb6329797c5e932fe8d,ae1903f8b37aea611d65ebb6329797c5e932fe8d,Update Readme
+ConradIrwin,2012-06-22 23:01:36,https://api.github.com/repos/defunkt/gist/git/commits/672bd051537510b4f1f61d33e524d772badeae77,672bd051537510b4f1f61d33e524d772badeae77,Version 0.2!
+ConradIrwin,2012-06-22 21:30:18,https://api.github.com/repos/defunkt/gist/git/commits/09924556e7b5f49000b2633d12535391e48f3d77,09924556e7b5f49000b2633d12535391e48f3d77,"Merge pull request #1 from locks/cli
+
+Cli"
+locks,2012-06-22 15:49:33,https://api.github.com/repos/defunkt/gist/git/commits/f68ce33e80e3845a62a5db65b61ef18e36d39b8c,f68ce33e80e3845a62a5db65b61ef18e36d39b8c,"fix for 1.8.7
+
+Previously:
+    ➜  jist git:(cli) bundle exec jist -d ""LOL"" lib/jist.rb
+    /Users/locks/github/jist/lib/jist.rb:35:in `gist': undefined method
+`use_ssl=' for #<Net::HTTP api.github.com:443 open=false>
+(NoMethodError)
+	from /Users/locks/github/jist/bin/jist:53
+	from /Users/locks/.rvm/gems/ruby-1.8.7-p358/bin/jist:19:in `load'
+	from /Users/locks/.rvm/gems/ruby-1.8.7-p358/bin/jist:19"
+locks,2012-06-22 15:40:47,https://api.github.com/repos/defunkt/gist/git/commits/98583171720360038a213ebfd5007ddd0746790f,98583171720360038a213ebfd5007ddd0746790f,first stab at command line application
+ConradIrwin,2012-06-22 09:21:49,https://api.github.com/repos/defunkt/gist/git/commits/b7b56aac6362c2c4df1d0c59d1c3c98d1c0255e7,b7b56aac6362c2c4df1d0c59d1c3c98d1c0255e7,+README and LICENSE
+ConradIrwin,2012-06-22 08:58:53,https://api.github.com/repos/defunkt/gist/git/commits/fb82c87eb4bbce828828579888b6ce568699b6d8,fb82c87eb4bbce828828579888b6ce568699b6d8,The simplest gist gem evar!
+defunkt,2012-03-22 20:16:48,https://api.github.com/repos/defunkt/gist/git/commits/bca9b294a11cd09e371026e1a5ac89756e86d416,bca9b294a11cd09e371026e1a5ac89756e86d416,give credit
+defunkt,2012-03-22 20:15:03,https://api.github.com/repos/defunkt/gist/git/commits/82ffb802b93cb17e69705ed56c696f03d8f91260,82ffb802b93cb17e69705ed56c696f03d8f91260,3.1.0
+jbarnette,2012-03-22 19:27:33,https://api.github.com/repos/defunkt/gist/git/commits/10ae6544348ec6ebea764e5052ec5e3503f4fc42,10ae6544348ec6ebea764e5052ec5e3503f4fc42,Embed json_pure.
+defunkt,2012-03-22 18:51:18,https://api.github.com/repos/defunkt/gist/git/commits/eda8e6798ea070e1fb4972632cde86afcdc59e07,eda8e6798ea070e1fb4972632cde86afcdc59e07,Don't require RubyGems
+defunkt,2012-03-21 16:32:17,https://api.github.com/repos/defunkt/gist/git/commits/c47b3c9b1cce407cb2ec6d8bd7e659f5bb61ba7e,c47b3c9b1cce407cb2ec6d8bd7e659f5bb61ba7e,3.0.2
+defunkt,2012-03-20 19:38:06,https://api.github.com/repos/defunkt/gist/git/commits/9ad6b83ba51dd8d1dab64c99d902f12c76f85227,9ad6b83ba51dd8d1dab64c99d902f12c76f85227,3.0.1
+defunkt,2012-03-20 19:37:48,https://api.github.com/repos/defunkt/gist/git/commits/eea700f7ed59d4396f1c99ac665c3631879af9b8,eea700f7ed59d4396f1c99ac665c3631879af9b8,"fix auth, spit warning when using github.token"
+defunkt,2012-03-20 19:24:46,https://api.github.com/repos/defunkt/gist/git/commits/0b8698daf9e275ba6024e56481f151b091a0ad24,0b8698daf9e275ba6024e56481f151b091a0ad24,update manual
+defunkt,2012-03-20 19:22:43,https://api.github.com/repos/defunkt/gist/git/commits/6bdb24490c7a0fa494d4d31e59312906b7c86f4e,6bdb24490c7a0fa494d4d31e59312906b7c86f4e,3.0.0
+defunkt,2012-03-20 19:22:23,https://api.github.com/repos/defunkt/gist/git/commits/3651d3553270eaca66df5d80214d9d50da1da8dc,3651d3553270eaca66df5d80214d9d50da1da8dc,No more github token. Use your password instead.
+boucher,2012-03-20 00:39:54,https://api.github.com/repos/defunkt/gist/git/commits/528ebb27f1d27688f52da74cae57e35ab3e80e53,528ebb27f1d27688f52da74cae57e35ab3e80e53,"typos, also fix reading"
+boucher,2012-03-20 00:18:31,https://api.github.com/repos/defunkt/gist/git/commits/30613ab35616ecafcdfd11cda302c6f163059cf3,30613ab35616ecafcdfd11cda302c6f163059cf3,Update lib/gist.rb
+defunkt,2011-12-05 21:02:27,https://api.github.com/repos/defunkt/gist/git/commits/e96203a7c1738a707d4fdb4ab459ede3d9442779,e96203a7c1738a707d4fdb4ab459ede3d9442779,"Merge pull request #66 from martine/master
+
+fix the URL in the readme"
+evmar,2011-12-04 21:00:51,https://api.github.com/repos/defunkt/gist/git/commits/3b83b07b608cc0c65f54e8cb85949a4329f7e391,3b83b07b608cc0c65f54e8cb85949a4329f7e391,"Fix URL to raw gist script in README
+
+The curl command line the README currently has just results in the
+HTML of a redirect page."
+keithpitt,2011-09-16 03:51:18,https://api.github.com/repos/defunkt/gist/git/commits/bd3bd80c39c99890c6ad57d06517eb8f7e246afb,bd3bd80c39c99890c6ad57d06517eb8f7e246afb,Included an example on how to create a gist from the clipboard on OSX. Added syntax highlighting to Readme
+sickill,2011-08-27 22:29:11,https://api.github.com/repos/defunkt/gist/git/commits/398efec86990d1ffc94a3dc5d70137fd2136016d,398efec86990d1ffc94a3dc5d70137fd2136016d,Use File.basename(file) for filename
+headius,2011-07-12 06:06:01,https://api.github.com/repos/defunkt/gist/git/commits/3951c2fce1722d7bd24c199dea1e854dede1d5f2,3951c2fce1722d7bd24c199dea1e854dede1d5f2,"Default gist.copy to ""on"", since that's historically what it has done."
+headius,2011-07-11 15:51:21,https://api.github.com/repos/defunkt/gist/git/commits/d9668ffacbbb4855e15b63c5232876a011350b2c,d9668ffacbbb4855e15b63c5232876a011350b2c,Only append \n to URL if outputting to tty. Piping indicates URL only is probably wanted.
+headius,2011-07-11 15:46:23,https://api.github.com/repos/defunkt/gist/git/commits/94db7fe5af04258c6850c260e4830431793b47be,94db7fe5af04258c6850c260e4830431793b47be,"Make copying to clipboard optional and off by default.
+
+I don't like that gist automatically wipes out the clipboard, since I frequently pipe from pbpaste to gist and don't want the clipboard wiped out."
+luke-gru,2011-06-19 01:25:18,https://api.github.com/repos/defunkt/gist/git/commits/a017df6b9ad6e9af9e8e913b0ca64b329a626aff,a017df6b9ad6e9af9e8e913b0ca64b329a626aff,"Change defaults (private) method.
+
+Remove line in defaults (private) method and put the same
+functionality in the method that it calls, config (private). Also,
+get rid of comma in the defaults method's return hash. Remove a
+comma after the variable 'extension' in that return hash, as it
+causes confusion as to whether that var. is referencing the first
+element of an array instead of a string."
+alistra,2011-05-07 22:56:12,https://api.github.com/repos/defunkt/gist/git/commits/804ebbb0bcf231b1b4b59430ef8a997cff7f8fa3,804ebbb0bcf231b1b4b59430ef8a997cff7f8fa3,"This adds opening of the gist in the browser window in Linux using the BROWSER variable, defined in some Linux distributions."
+indirect,2011-05-04 04:59:30,https://api.github.com/repos/defunkt/gist/git/commits/0ec104aa0c5340e2dd4163e9bf2d251ed06cb077,0ec104aa0c5340e2dd4163e9bf2d251ed06cb077,Update standalone
+indirect,2011-05-04 04:57:32,https://api.github.com/repos/defunkt/gist/git/commits/c123c4ccfd32cb53076897979875607098e77653,c123c4ccfd32cb53076897979875607098e77653,Fix the no-proxy case
+indirect,2011-05-04 04:56:44,https://api.github.com/repos/defunkt/gist/git/commits/a497fb18e7a2258f7e4b6891b687e25462175eb2,a497fb18e7a2258f7e4b6891b687e25462175eb2,Version 2.0.3
+indirect,2011-05-03 08:27:38,https://api.github.com/repos/defunkt/gist/git/commits/f8e7f43cdeff608cfc5fdf555021b474efbc603f,f8e7f43cdeff608cfc5fdf555021b474efbc603f,"Support HTTPS_PROXY as well
+
+closes #42"
+indirect,2011-04-28 19:42:08,https://api.github.com/repos/defunkt/gist/git/commits/439f1841cf3b93ce78144e8727566e85e4731c52,439f1841cf3b93ce78144e8727566e85e4731c52,"Strip down to only the CA certs we actually need. 230k → 17k, woo"
+indirect,2011-04-28 18:55:13,https://api.github.com/repos/defunkt/gist/git/commits/170c4249d0beed73e825b92eaa9f704288058388,170c4249d0beed73e825b92eaa9f704288058388,Fix the CA certs to actually work with standalone
+indirect,2011-04-28 18:29:32,https://api.github.com/repos/defunkt/gist/git/commits/56e9749e61c3815b911cc50c1ec5305c08fc51f5,56e9749e61c3815b911cc50c1ec5305c08fc51f5,Ignore built gems
+indirect,2010-12-02 06:01:10,https://api.github.com/repos/defunkt/gist/git/commits/e8528f9e95fbf480ac368f41f8f56cbdcc19abb4,e8528f9e95fbf480ac368f41f8f56cbdcc19abb4,"Revert to cert handling from 0404c15c7b9b1df7b806f0593c3d91f49e785ccc.
+
+Turns out ca_file is the only way to make validation work. Creating a new X509 cert object out of the CA file only grabs one of the certificates, not the entire chain. Without the rest of the intermediate certs in the chain, verification fails on any machine that doesn't already have those certs."
+indirect,2011-04-22 17:59:41,https://api.github.com/repos/defunkt/gist/git/commits/adeadc47ef6b44900e5179f7844f0a97d46f9aad,adeadc47ef6b44900e5179f7844f0a97d46f9aad,Prerelease version bump
+indirect,2011-04-22 17:10:56,https://api.github.com/repos/defunkt/gist/git/commits/284dd9bbaa24aa8b8f155a2cbcc525d4b2f210f7,284dd9bbaa24aa8b8f155a2cbcc525d4b2f210f7,"We should handle success too, and not just failure"
+akahn,2011-04-21 14:50:39,https://api.github.com/repos/defunkt/gist/git/commits/37b0388af82a64ab1ed26ba6ef5c1580c551f11e,37b0388af82a64ab1ed26ba6ef5c1580c551f11e,"Handle errors when creating a gist
+
+Prior to this patch, if there was an error posting a gist, the command
+just exited silently."
+indirect,2011-04-10 01:03:33,https://api.github.com/repos/defunkt/gist/git/commits/8a201bd312e69a5190cecbec641af409927645db,8a201bd312e69a5190cecbec641af409927645db,Require user and token. Closes #35
+indirect,2011-04-10 00:54:11,https://api.github.com/repos/defunkt/gist/git/commits/782c3f8f610ee0ed91e59463989d63b4657640aa,782c3f8f610ee0ed91e59463989d63b4657640aa,Version 2.0.2
+indirect,2011-04-10 00:53:30,https://api.github.com/repos/defunkt/gist/git/commits/7bb5349a9eb8d702e59f412b98c14c5dc269d854,7bb5349a9eb8d702e59f412b98c14c5dc269d854,post_connection_check is the default nowadays
+homer6,2011-02-22 22:01:45,https://api.github.com/repos/defunkt/gist/git/commits/c8734f86e07a9a8a5e3b2bd787f12481b5c81703,c8734f86e07a9a8a5e3b2bd787f12481b5c81703,Added the installation instructions for Ubuntu
+jacknagel,2011-04-09 01:34:13,https://api.github.com/repos/defunkt/gist/git/commits/f358b429b3121ac63bd0a6e11d6d1ac0a3a23dbf,f358b429b3121ac63bd0a6e11d6d1ac0a3a23dbf,Fix encoding issue in standalone script
+indirect,2011-04-10 00:27:51,https://api.github.com/repos/defunkt/gist/git/commits/a1361c4d3759a4c467b84af68525a45cfcac7be9,a1361c4d3759a4c467b84af68525a45cfcac7be9,"Merge commits I somehow failed to push upstream
+
+Conflicts:
+	gist
+	lib/gist.rb"
+indirect,2011-04-10 00:18:07,https://api.github.com/repos/defunkt/gist/git/commits/dfdc95dcfafb2c847128efb557c53aaa41e95628,dfdc95dcfafb2c847128efb557c53aaa41e95628,Executable gist binary
+defunkt,2011-02-22 02:59:06,https://api.github.com/repos/defunkt/gist/git/commits/7340b581e0b7219f5fe39cea3ee7e9e8a653f2dc,7340b581e0b7219f5fe39cea3ee7e9e8a653f2dc,2.0.1
+defunkt,2011-02-22 02:49:31,https://api.github.com/repos/defunkt/gist/git/commits/a258bbcb255f067151a39012df3930dd14fff022,a258bbcb255f067151a39012df3930dd14fff022,update standalone
+defunkt,2011-02-22 02:49:19,https://api.github.com/repos/defunkt/gist/git/commits/881270e099b1962f737ba05b49b32af457bd43bc,881270e099b1962f737ba05b49b32af457bd43bc,apply -t fixes to the actual code
+defunkt,2011-02-22 02:41:32,https://api.github.com/repos/defunkt/gist/git/commits/1525c6b61f70fbdfd831a5f4235c1ce390f81d4f,1525c6b61f70fbdfd831a5f4235c1ce390f81d4f,Make the cert work for both standalone and the gem
+defunkt,2011-02-22 02:19:40,https://api.github.com/repos/defunkt/gist/git/commits/50ed19c250400788bc3f71602fff18a8a61eeb93,50ed19c250400788bc3f71602fff18a8a61eeb93,https
+loganj,2010-12-02 17:35:57,https://api.github.com/repos/defunkt/gist/git/commits/ffedc7fd2b4ee9a01dd89dc70d03477db9e2da06,ffedc7fd2b4ee9a01dd89dc70d03477db9e2da06,fix -t when using stdin
+indirect,2010-12-02 06:01:25,https://api.github.com/repos/defunkt/gist/git/commits/cd3b1f372225c51f71826b4c0373cdbd3d31a908,cd3b1f372225c51f71826b4c0373cdbd3d31a908,verify redirected URLs still match the cert
+indirect,2010-12-02 06:01:10,https://api.github.com/repos/defunkt/gist/git/commits/0404c15c7b9b1df7b806f0593c3d91f49e785ccc,0404c15c7b9b1df7b806f0593c3d91f49e785ccc,Use the lib cert or standalone DATA cert as a fallback
+defunkt,2010-11-22 20:45:04,https://api.github.com/repos/defunkt/gist/git/commits/9b25004ac6ae5e8d283ad27327dd71b4fc906110,9b25004ac6ae5e8d283ad27327dd71b4fc906110,"trailing whitespace is important here, unfortunately"
+indirect,2010-11-11 02:13:28,https://api.github.com/repos/defunkt/gist/git/commits/2e83c73f96bcf9055c9b96e01bd214ca74f90e6f,2e83c73f96bcf9055c9b96e01bd214ca74f90e6f,Update gist standalone's version number (doh)
+indirect,2010-11-07 00:21:28,https://api.github.com/repos/defunkt/gist/git/commits/1c27da382c053b96468b169420bafb35fcd35a7a,1c27da382c053b96468b169420bafb35fcd35a7a,Update gemspec
+indirect,2010-11-07 00:17:36,https://api.github.com/repos/defunkt/gist/git/commits/83bf89195ae9207abf1ee82e63a11195674d6c6c,83bf89195ae9207abf1ee82e63a11195674d6c6c,Bump to v2.0.0 because multi-file changed the data() API
+akahn,2010-11-05 21:07:36,https://api.github.com/repos/defunkt/gist/git/commits/43579e070ffe6b66f3753b003f5d3c6a8a4de8cc,43579e070ffe6b66f3753b003f5d3c6a8a4de8cc,Document multi-file upload feature
+indirect,2010-11-06 03:03:37,https://api.github.com/repos/defunkt/gist/git/commits/1fd19453ef73cc3289371f74928f51778d2a81c7,1fd19453ef73cc3289371f74928f51778d2a81c7,"version 1.4.1, make the gem buildable"
+adamv,2010-11-06 02:33:09,https://api.github.com/repos/defunkt/gist/git/commits/8d189e585a84cae777375f14c7dd44df6afe94ed,8d189e585a84cae777375f14c7dd44df6afe94ed,Fix using stdin
+indirect,2010-11-05 20:43:57,https://api.github.com/repos/defunkt/gist/git/commits/9873f04ec5d75f5dbf96460a73d61e2194656207,9873f04ec5d75f5dbf96460a73d61e2194656207,oh right version
+indirect,2010-11-05 20:25:21,https://api.github.com/repos/defunkt/gist/git/commits/1dc0842953166054cb37b596df4369dc9ccd55d1,1dc0842953166054cb37b596df4369dc9ccd55d1,help now mentions multiple files and - for stdin
+indirect,2010-11-05 20:21:03,https://api.github.com/repos/defunkt/gist/git/commits/670ba91afb37bdeb14c6a6e153918ea9f29cc003,670ba91afb37bdeb14c6a6e153918ea9f29cc003,"refactor, because... why so complicated"
+akahn,2010-09-07 20:49:43,https://api.github.com/repos/defunkt/gist/git/commits/72739448c3133a3e5c6798696021bf8bb82103a4,72739448c3133a3e5c6798696021bf8bb82103a4,Don't need index for each block
+akahn,2010-09-07 20:24:36,https://api.github.com/repos/defunkt/gist/git/commits/e88a3673f4c3d78870310ce98056e717f6d1af55,e88a3673f4c3d78870310ce98056e717f6d1af55,Add support for multi-file gists
+indirect,2010-11-05 20:12:41,https://api.github.com/repos/defunkt/gist/git/commits/905ac7c6ced955a421c56a4a0191324ffab6f087,905ac7c6ced955a421c56a4a0191324ffab6f087,gotta build it build it build it
+indirect,2010-11-05 20:12:28,https://api.github.com/repos/defunkt/gist/git/commits/42d99faf646215ff1d6b12eb9eb91acdddb435a9,42d99faf646215ff1d6b12eb9eb91acdddb435a9,Use the code that's already there
+brtsz,2010-09-03 23:22:03,https://api.github.com/repos/defunkt/gist/git/commits/0981fbb87b83ba6c62a4b074b0058115e8557512,0981fbb87b83ba6c62a4b074b0058115e8557512,"Using '-' as file name forces gist to read from stdin.
+
+It's a common idiom to use '-' instead of a file name and expect given
+tool to read input from stdin."
+indirect,2010-11-05 09:13:11,https://api.github.com/repos/defunkt/gist/git/commits/93a888fee975141b4627bab1f5628dd1059cb139,93a888fee975141b4627bab1f5628dd1059cb139,Add curl's cacert.pem so we can validate Github's SSL certificate
+indirect,2010-11-05 09:12:09,https://api.github.com/repos/defunkt/gist/git/commits/13c5fb2d8342ee6f75dba63085b408de71dda18c,13c5fb2d8342ee6f75dba63085b408de71dda18c,"HTTPS support for the newer, safer Github"
+ujihisa,2010-08-19 02:17:10,https://api.github.com/repos/defunkt/gist/git/commits/dfc5325e3c6528f4c8ef2ffbf27a25a8788ecfad,dfc5325e3c6528f4c8ef2ffbf27a25a8788ecfad,gist command didn't work at all without github.user config
+defunkt,2010-06-23 19:41:51,https://api.github.com/repos/defunkt/gist/git/commits/5e0a109ca289b8242e17b79924e20fb3e4bb0d61,5e0a109ca289b8242e17b79924e20fb3e4bb0d61,v1.2.1
+defunkt,2010-06-23 19:40:08,https://api.github.com/repos/defunkt/gist/git/commits/886ed20eeeb8c303dfc60f39f1145d19c3d72ef6,886ed20eeeb8c303dfc60f39f1145d19c3d72ef6,update manuals
+defunkt,2010-06-23 19:39:53,https://api.github.com/repos/defunkt/gist/git/commits/4a86496e0fdab975532e24435c80247ff2d8283f,4a86496e0fdab975532e24435c80247ff2d8283f,update standalone
+defunkt,2010-06-23 19:38:55,https://api.github.com/repos/defunkt/gist/git/commits/6fa1c3ff4aa9fc11533e08b38a9d3392e89dd690,6fa1c3ff4aa9fc11533e08b38a9d3392e89dd690,v1.2.0
+defunkt,2010-06-23 19:38:34,https://api.github.com/repos/defunkt/gist/git/commits/c326294bdc00ccb21832b2cdca2a45b6cb31eb82,c326294bdc00ccb21832b2cdca2a45b6cb31eb82,--no-open and gist.browse
+jmelis,2010-06-23 10:35:43,https://api.github.com/repos/defunkt/gist/git/commits/3ec2d91f97a6214ea5d2282a84938570f7d6cf0f,3ec2d91f97a6214ea5d2282a84938570f7d6cf0f,Added an option to disable automatic browsing
+defunkt,2010-05-18 00:08:22,https://api.github.com/repos/defunkt/gist/git/commits/1c70e5901a245e23cb5589c476a41194924b3676,1c70e5901a245e23cb5589c476a41194924b3676,update
+defunkt,2010-05-18 00:08:18,https://api.github.com/repos/defunkt/gist/git/commits/6cbf6578e5f98e34cf855cc8da5a38d6c9339ab1,6cbf6578e5f98e34cf855cc8da5a38d6c9339ab1,silence!
+defunkt,2010-05-14 14:22:49,https://api.github.com/repos/defunkt/gist/git/commits/c7383dc9ed20f688ae62f286693d11e7ac9e24cf,c7383dc9ed20f688ae62f286693d11e7ac9e24cf,regenerate
+defunkt,2010-05-14 14:19:35,https://api.github.com/repos/defunkt/gist/git/commits/ffca3643bcc2532282a9538d03ca9b44689f5178,ffca3643bcc2532282a9538d03ca9b44689f5178,way => ways
+defunkt,2010-05-09 18:21:53,https://api.github.com/repos/defunkt/gist/git/commits/29f9bf37d99bdc2713607236c88ec2cded393e83,29f9bf37d99bdc2713607236c88ec2cded393e83,built
+defunkt,2010-05-09 18:21:28,https://api.github.com/repos/defunkt/gist/git/commits/2170826807522595e9ee6666aae922cb2d9577b7,2170826807522595e9ee6666aae922cb2d9577b7,is => are
+pix,2010-05-09 11:07:26,https://api.github.com/repos/defunkt/gist/git/commits/cb2c8287223f8849050c0c7085e32b4db6263d51,cb2c8287223f8849050c0c7085e32b4db6263d51,[gist] Ran rake build to update generated files
+pix,2010-05-09 11:06:39,https://api.github.com/repos/defunkt/gist/git/commits/01c9b5db504176c09d4917bd48eb73b0bb45ec00,01c9b5db504176c09d4917bd48eb73b0bb45ec00,[gist] Switched from ron to ronn
+pix,2010-05-09 10:46:31,https://api.github.com/repos/defunkt/gist/git/commits/37498126c1cd1967d86e67a68ef9fa8365c61146,37498126c1cd1967d86e67a68ef9fa8365c61146,[gist] Updated README.markdown
+pix,2010-05-07 14:10:45,https://api.github.com/repos/defunkt/gist/git/commits/a337d5500d11b4c558442ed7793dbc507f248c62,a337d5500d11b4c558442ed7793dbc507f248c62,[gist] Updated the man-page
+pix,2010-05-06 20:36:41,https://api.github.com/repos/defunkt/gist/git/commits/fed2b2cd0321c197d59c9e6b94288fc24becdfbc,fed2b2cd0321c197d59c9e6b94288fc24becdfbc,[gist] Try to read github token and user from env
+jzellman,2010-04-28 18:35:23,https://api.github.com/repos/defunkt/gist/git/commits/5297314b028200516b7da73c30e6b1ab9d93dc81,5297314b028200516b7da73c30e6b1ab9d93dc81,ENV.[] keys must be Strings and not Symbols in ruby 1.8.x. This allows gist support for non darwin environments.
+defunkt,2010-04-18 14:15:05,https://api.github.com/repos/defunkt/gist/git/commits/78790e28748698c86647f0a662aa73529e0e6576,78790e28748698c86647f0a662aa73529e0e6576,Update standalone
+defunkt,2010-04-18 14:14:43,https://api.github.com/repos/defunkt/gist/git/commits/a15c5185509ad78b4fc098d9df35e0d65c39ed8c,a15c5185509ad78b4fc098d9df35e0d65c39ed8c,Merge branch 'master' of github.com:defunkt/gist
+defunkt,2010-04-18 14:14:39,https://api.github.com/repos/defunkt/gist/git/commits/8c9018081a68e56fc88ac7e2b2844f6f5eca0be5,8c9018081a68e56fc88ac7e2b2844f6f5eca0be5,tweak readme
+ermaker,2010-04-08 02:16:58,https://api.github.com/repos/defunkt/gist/git/commits/cdb6afff98ada87fd70bf625cfc0e9cbfc3df148,cdb6afff98ada87fd70bf625cfc0e9cbfc3df148,Browse on Windows
+defunkt,2010-04-07 16:46:43,https://api.github.com/repos/defunkt/gist/git/commits/7d0bcb0dcd4cd22fb274c1cfbd8b8decfe82f471,7d0bcb0dcd4cd22fb274c1cfbd8b8decfe82f471,version and time in gemspec
+defunkt,2010-04-07 16:45:04,https://api.github.com/repos/defunkt/gist/git/commits/dc34dbce9dbb34dfcd966118b43911edbd970458,dc34dbce9dbb34dfcd966118b43911edbd970458,v1.1.1
+defunkt,2010-04-07 16:41:19,https://api.github.com/repos/defunkt/gist/git/commits/034c7cb84c58bf61521b1ff424300e1236dbc085,034c7cb84c58bf61521b1ff424300e1236dbc085,Print version on `gist -v`
+defunkt,2010-04-07 16:36:35,https://api.github.com/repos/defunkt/gist/git/commits/046e0f1b443a8f2d56e42998ea21b72f34ee4bfa,046e0f1b443a8f2d56e42998ea21b72f34ee4bfa,Fix typo
+defunkt,2010-04-07 16:12:27,https://api.github.com/repos/defunkt/gist/git/commits/fb379d9cf3305fc34a48646b150d8a3eade05753,fb379d9cf3305fc34a48646b150d8a3eade05753,Update docs
+defunkt,2010-04-07 16:09:20,https://api.github.com/repos/defunkt/gist/git/commits/1d559534b15a5f4db15b01cf44a78a01e6e3abc3,1d559534b15a5f4db15b01cf44a78a01e6e3abc3,v1.1.0
+ermaker,2010-04-07 14:10:51,https://api.github.com/repos/defunkt/gist/git/commits/f0a203983900b3206ac9e1fb73bb8095838ee1f3,f0a203983900b3206ac9e1fb73bb8095838ee1f3,Fixed error when config value is empty string
+ermaker,2010-04-07 14:22:52,https://api.github.com/repos/defunkt/gist/git/commits/c87871bbb06f613954cc3896c28257d9901e8104,c87871bbb06f613954cc3896c28257d9901e8104,Add the file name when write a gist
+jrk,2009-10-20 19:22:57,https://api.github.com/repos/defunkt/gist/git/commits/713763d2c8fc276a7e083947e589f7683ba8e0e7,713763d2c8fc276a7e083947e589f7683ba8e0e7,Added logic in auth to interpret github.token strings beginning with `!` as commands to be executed which return the token on stdout.
+jrk,2009-10-20 19:34:58,https://api.github.com/repos/defunkt/gist/git/commits/41cac82387b61d8b8bd8711cef2177089d69ef9d,41cac82387b61d8b8bd8711cef2177089d69ef9d,Added new github.token !command description to README.
+defunkt,2010-03-25 18:38:08,https://api.github.com/repos/defunkt/gist/git/commits/121b26ace1cd373ebabac363ec891050a78a75df,121b26ace1cd373ebabac363ec891050a78a75df,document the new git-config options
+defunkt,2010-03-25 18:35:24,https://api.github.com/repos/defunkt/gist/git/commits/7778216961543fed5f2a547bfd4b0d75dc4d275a,7778216961543fed5f2a547bfd4b0d75dc4d275a,Add `config` method for accessing git-config values
+defunkt,2010-03-02 18:43:28,https://api.github.com/repos/defunkt/gist/git/commits/ff3dc6daf792ae4ed7338d749e2341b3b2eb9bd6,ff3dc6daf792ae4ed7338d749e2341b3b2eb9bd6,rtomayko to the rescue
+defunkt,2010-03-02 00:36:57,https://api.github.com/repos/defunkt/gist/git/commits/a2f8eca2d7afe999960ecd7d2e8636632aedeb7d,a2f8eca2d7afe999960ecd7d2e8636632aedeb7d,"Revert ""tighter `which` check""
+
+This reverts commit 8e80c386206a8e997dcf094bc78ae366b83d9845."
+defunkt,2010-03-01 07:31:45,https://api.github.com/repos/defunkt/gist/git/commits/5278ae76af2cd7936ddc0f1b1b61f8a1b46d9ec6,5278ae76af2cd7936ddc0f1b1b61f8a1b46d9ec6,grr
+defunkt,2010-03-01 07:29:22,https://api.github.com/repos/defunkt/gist/git/commits/2c90f466e34dc4c2ca5714f1795eefccd77dd444,2c90f466e34dc4c2ca5714f1795eefccd77dd444,v1.0.3
+sorah,2010-03-01 07:29:00,https://api.github.com/repos/defunkt/gist/git/commits/77f428f2111ee4ff270b94874e30b74cf2a6887f,77f428f2111ee4ff270b94874e30b74cf2a6887f,1.9.x fix for ext-less gists
+defunkt,2010-03-01 07:08:22,https://api.github.com/repos/defunkt/gist/git/commits/bd3a4c86dca10f46171b755f52c670ca9797e592,bd3a4c86dca10f46171b755f52c670ca9797e592,standalone
+defunkt,2010-03-01 07:07:56,https://api.github.com/repos/defunkt/gist/git/commits/8e80c386206a8e997dcf094bc78ae366b83d9845,8e80c386206a8e997dcf094bc78ae366b83d9845,tighter `which` check
+defunkt,2010-03-01 02:10:40,https://api.github.com/repos/defunkt/gist/git/commits/ca20f76322d780b2baeece96259e7159bdcbd40d,ca20f76322d780b2baeece96259e7159bdcbd40d,1.0.2
+defunkt,2010-02-28 23:33:46,https://api.github.com/repos/defunkt/gist/git/commits/23281621ad4b9fa5f7f8433a95cf11be92884029,23281621ad4b9fa5f7f8433a95cf11be92884029,iPhone Commit - I screwed up 'rake install'
+defunkt,2010-02-28 21:04:22,https://api.github.com/repos/defunkt/gist/git/commits/72e6bd57958b9e46f266ab3b853814df6cbe6993,72e6bd57958b9e46f266ab3b853814df6cbe6993,manual in readme
+defunkt,2010-02-28 20:22:59,https://api.github.com/repos/defunkt/gist/git/commits/65d2142cdf8bb0742bd738926322a265fd3e55ab,65d2142cdf8bb0742bd738926322a265fd3e55ab,doh
+defunkt,2010-02-28 20:22:07,https://api.github.com/repos/defunkt/gist/git/commits/d2b9a6c0898966eadeb76ab9fcc37d0535fea988,d2b9a6c0898966eadeb76ab9fcc37d0535fea988,new version file
+defunkt,2010-02-28 20:20:35,https://api.github.com/repos/defunkt/gist/git/commits/827e45ab0896f08875b48c41092d6b63c2bfed85,827e45ab0896f08875b48c41092d6b63c2bfed85,PREFIX=blah rake install
+defunkt,2010-02-28 20:14:52,https://api.github.com/repos/defunkt/gist/git/commits/0110edd409789bbf6224a0e99f59c8ec7bf5e709,0110edd409789bbf6224a0e99f59c8ec7bf5e709,rake built
+defunkt,2010-02-28 20:14:48,https://api.github.com/repos/defunkt/gist/git/commits/13d8e97bfa5fbef3af30dfea0c8f70a0edf2c635,13d8e97bfa5fbef3af30dfea0c8f70a0edf2c635,rake build
+defunkt,2010-02-28 20:13:50,https://api.github.com/repos/defunkt/gist/git/commits/1b7c6ec77711a808e19742715610214d87f89b04,1b7c6ec77711a808e19742715610214d87f89b04,add -h and -m to manpage
+defunkt,2010-02-28 20:13:28,https://api.github.com/repos/defunkt/gist/git/commits/957a3fcb2bc78cf7ecdefbd13c4abbec10e33781,957a3fcb2bc78cf7ecdefbd13c4abbec10e33781,add generic Manpage module
+defunkt,2010-02-28 20:06:16,https://api.github.com/repos/defunkt/gist/git/commits/a61068a655da069eda29f2dba945bda02f1d7b4f,a61068a655da069eda29f2dba945bda02f1d7b4f,manpage
+defunkt,2010-02-28 19:56:16,https://api.github.com/repos/defunkt/gist/git/commits/1b8ceb85d8ba5c73edeff423978d1c35e338dd2b,1b8ceb85d8ba5c73edeff423978d1c35e338dd2b,whoops
+defunkt,2010-02-28 19:55:24,https://api.github.com/repos/defunkt/gist/git/commits/631eead242113623d3470f5dae78be018533c80a,631eead242113623d3470f5dae78be018533c80a,splat
+defunkt,2010-02-28 19:54:42,https://api.github.com/repos/defunkt/gist/git/commits/36f6304cbb0be113a78951035c7ef1d7a7034965,36f6304cbb0be113a78951035c7ef1d7a7034965,files in gemspec
+defunkt,2010-02-28 19:53:16,https://api.github.com/repos/defunkt/gist/git/commits/e86e888f0a309966eb156d805be38cb405dcc316,e86e888f0a309966eb156d805be38cb405dcc316,"standalone version (ala hub, ack)"
+defunkt,2010-02-28 19:42:42,https://api.github.com/repos/defunkt/gist/git/commits/1ac713f0d850e94a15e51ddbe295eb47a75df753,1ac713f0d850e94a15e51ddbe295eb47a75df753,methods of interest
+defunkt,2010-02-28 19:25:54,https://api.github.com/repos/defunkt/gist/git/commits/64f6fecb57f394aa683bf9effc0f99cc5e1f5a48,64f6fecb57f394aa683bf9effc0f99cc5e1f5a48,supress path printage on nix too
+defunkt,2010-02-28 19:16:59,https://api.github.com/repos/defunkt/gist/git/commits/0bcaa8b2d40d03a8173b26d71fdeb2fefe9f1180,0bcaa8b2d40d03a8173b26d71fdeb2fefe9f1180,Gist.browse
+defunkt,2010-02-28 19:15:14,https://api.github.com/repos/defunkt/gist/git/commits/f8d234f704b25689b01a136ea7924c68ca6a6a95,f8d234f704b25689b01a136ea7924c68ca6a6a95,clean up Gist.copy
+defunkt,2010-02-28 19:13:02,https://api.github.com/repos/defunkt/gist/git/commits/429d46b6fd373fe033953b31892f630b42c3e9c4,429d46b6fd373fe033953b31892f630b42c3e9c4,use system()s boolean return value on windows
+defunkt,2010-02-28 19:11:00,https://api.github.com/repos/defunkt/gist/git/commits/b8f3632880086f3800f503f9ff3aee25e5aa32d9,b8f3632880086f3800f503f9ff3aee25e5aa32d9,no pbcopy output
+defunkt,2010-02-28 19:09:46,https://api.github.com/repos/defunkt/gist/git/commits/0319f9551516547ea2b9d570e95fb805ac37b6f1,0319f9551516547ea2b9d570e95fb805ac37b6f1,that is not helpful
+defunkt,2010-02-28 19:05:11,https://api.github.com/repos/defunkt/gist/git/commits/909fa8551eac68809969bc1076f0c33407c42dc8,909fa8551eac68809969bc1076f0c33407c42dc8,move gist script into bin
+defunkt,2010-02-28 18:59:32,https://api.github.com/repos/defunkt/gist/git/commits/26fd44bd0fe916d8ad55e24da4067d085174e76a,26fd44bd0fe916d8ad55e24da4067d085174e76a,Use gist.rb in your code!
+defunkt,2010-02-28 18:55:47,https://api.github.com/repos/defunkt/gist/git/commits/38fc5dcd500a2c09d3a36cc25d9b9e97a00560c4,38fc5dcd500a2c09d3a36cc25d9b9e97a00560c4,defaults
+defunkt,2010-02-28 18:55:31,https://api.github.com/repos/defunkt/gist/git/commits/6aaa5245da5b21e6471e237321a6daab3b74bc48,6aaa5245da5b21e6471e237321a6daab3b74bc48,comments
+defunkt,2010-02-28 18:53:22,https://api.github.com/repos/defunkt/gist/git/commits/06a345cd30d4fcba9c9cac88ac0b0227c95c80ea,06a345cd30d4fcba9c9cac88ac0b0227c95c80ea,update install instructions with gem
+defunkt,2010-02-28 18:51:45,https://api.github.com/repos/defunkt/gist/git/commits/78b481f3151ca0cb6dbf0772f15b203a062bdf8e,78b481f3151ca0cb6dbf0772f15b203a062bdf8e,gemspec
+defunkt,2010-02-28 18:50:59,https://api.github.com/repos/defunkt/gist/git/commits/1baacf164cf38132f9c1d4d575f0b5c1378c878e,1baacf164cf38132f9c1d4d575f0b5c1378c878e,Add back Gist.read (cant use from cmd but can from Ruby code)
+defunkt,2010-02-28 18:46:34,https://api.github.com/repos/defunkt/gist/git/commits/a6df16fe4c74680fcd4d714685b4012fb1479f5e,a6df16fe4c74680fcd4d714685b4012fb1479f5e,docs
+defunkt,2010-02-28 18:45:19,https://api.github.com/repos/defunkt/gist/git/commits/2457f44130e7c0d7901b5688846cdc0b62bd6b5d,2457f44130e7c0d7901b5688846cdc0b62bd6b5d,version 1.0 tweakage
+defunkt,2010-02-28 18:11:51,https://api.github.com/repos/defunkt/gist/git/commits/b3abe5c7b0811006fb6236c8ba4101d690f2429f,b3abe5c7b0811006fb6236c8ba4101d690f2429f,defunkt!
+defunkt,2009-12-12 22:57:12,https://api.github.com/repos/defunkt/gist/git/commits/1fb07709a5e7b5e9ac99c0523d27d2679047e737,1fb07709a5e7b5e9ac99c0523d27d2679047e737,`help` should work on 1.9 now
+defunkt,2009-12-12 22:22:41,https://api.github.com/repos/defunkt/gist/git/commits/47310e31ece31a7e1162e9b9469f59dd58a00d0d,47310e31ece31a7e1162e9b9469f59dd58a00d0d,sudo is so last year
+defunkt,2009-12-12 21:38:56,https://api.github.com/repos/defunkt/gist/git/commits/bb8332421c7b2d5d0d000f99bf2c3ec487f4fc9f,bb8332421c7b2d5d0d000f99bf2c3ec487f4fc9f,style
+defunkt,2009-12-12 21:37:48,https://api.github.com/repos/defunkt/gist/git/commits/2d228595812dadc792a43e9a5cbbf7d1317999ed,2d228595812dadc792a43e9a5cbbf7d1317999ed,80 columns
+defunkt,2009-12-12 21:29:48,https://api.github.com/repos/defunkt/gist/git/commits/83d561a6e8b18ec4ea33b0aa0955061b51900a9d,83d561a6e8b18ec4ea33b0aa0955061b51900a9d,prefer system() over ``
+defunkt,2009-12-12 21:28:29,https://api.github.com/repos/defunkt/gist/git/commits/657a8635eaf5d7cecc618f9523f9b50157f0bf1c,657a8635eaf5d7cecc618f9523f9b50157f0bf1c,double end
+defunkt,2009-12-12 21:27:46,https://api.github.com/repos/defunkt/gist/git/commits/dc7b2351698fe034101acc0cfd9802cad66c1468,dc7b2351698fe034101acc0cfd9802cad66c1468,cleaner install url
+defunkt,2009-12-12 21:27:05,https://api.github.com/repos/defunkt/gist/git/commits/7294cd4a11e3daf9b0c542764bf0aea389204bf8,7294cd4a11e3daf9b0c542764bf0aea389204bf8,"module, not class"
+defunkt,2009-12-12 21:26:40,https://api.github.com/repos/defunkt/gist/git/commits/e3d22cf0f9e7f08359dc1ad7b5268d9bf6880fa8,e3d22cf0f9e7f08359dc1ad7b5268d9bf6880fa8,tabs to spaces
+willb,2009-10-19 19:58:56,https://api.github.com/repos/defunkt/gist/git/commits/595bddc77386b46f30dcae83748d4e2cc9d1b219,595bddc77386b46f30dcae83748d4e2cc9d1b219,Trivial fix to work with current new-gist form.
+taketori,2009-05-02 11:50:41,https://api.github.com/repos/defunkt/gist/git/commits/f7c27223f22ff5ff4ff3699dd99900fa1850063d,f7c27223f22ff5ff4ff3699dd99900fa1850063d,Added cygwin case to copy()
+defunkt,2009-04-28 02:05:24,https://api.github.com/repos/defunkt/gist/git/commits/f36b74b1c0272f6d1a8969aa9611c08fd30be2f7,f36b74b1c0272f6d1a8969aa9611c08fd30be2f7,"`github.user` not `github.username`. (Should be `github.login` though, seriously)."
+rmanalan,2009-03-09 18:20:39,https://api.github.com/repos/defunkt/gist/git/commits/d734ecb836fcac3d9b585fd006e93b457bfdbc93,d734ecb836fcac3d9b585fd006e93b457bfdbc93,Fix for when ENV['http_proxy'] doesn't exist
+rmanalan,2009-03-06 00:03:13,https://api.github.com/repos/defunkt/gist/git/commits/fa6c1c51e0eaaf35dd3df8a7892269c3c9908d23,fa6c1c51e0eaaf35dd3df8a7892269c3c9908d23,woops... wrong var
+rmanalan,2009-03-05 23:55:23,https://api.github.com/repos/defunkt/gist/git/commits/cb366ab53007238d57715ac7754fc1fa40a8d946,cb366ab53007238d57715ac7754fc1fa40a8d946,"Added support for basic http proxy (no auth proxy).  Also, if on OS X, it'll pop open the gist in a browser."
+Aupajo,2009-02-10 22:59:04,https://api.github.com/repos/defunkt/gist/git/commits/6450ab60857543fe0977b30845cb84a64eca2d08,6450ab60857543fe0977b30845cb84a64eca2d08,"I suck at english.
+
+Signed-off-by: Chris Wanstrath <chris@ozmm.org>"
+Aupajo,2009-02-10 22:58:28,https://api.github.com/repos/defunkt/gist/git/commits/f23676db189153cd6ba14712619fa1125528552f,f23676db189153cd6ba14712619fa1125528552f,"Added link to your account.
+
+Signed-off-by: Chris Wanstrath <chris@ozmm.org>"
+Aupajo,2009-02-10 22:55:53,https://api.github.com/repos/defunkt/gist/git/commits/28a6190e9dd6fe8569d7af3da899eb5a9cd28ec0,28a6190e9dd6fe8569d7af3da899eb5a9cd28ec0,"Tweaked README code indentation.
+
+Signed-off-by: Chris Wanstrath <chris@ozmm.org>"
+Aupajo,2009-02-10 22:54:57,https://api.github.com/repos/defunkt/gist/git/commits/6829a95cd08bd07458a0d4a7eebe78239569c7b0,6829a95cd08bd07458a0d4a7eebe78239569c7b0,"Update README for authentication.
+
+Signed-off-by: Chris Wanstrath <chris@ozmm.org>"
+stepheneb,2009-02-07 22:38:00,https://api.github.com/repos/defunkt/gist/git/commits/e3b19c7af8880c013f0087a8244894bfadd6daa8,e3b19c7af8880c013f0087a8244894bfadd6daa8,"removed error messages when xclip not installed
+
+When you run gist on a Linux server without xclip 
+installed error messages are displayed on the 
+screen -- this patch discards the error messages
+printing of xclip is not installed
+
+Signed-off-by: Chris Wanstrath <chris@ozmm.org>"
+defunkt,2009-01-29 20:43:36,https://api.github.com/repos/defunkt/gist/git/commits/e56bb58b2f568b7e14828ebf6aa8809539e4457d,e56bb58b2f568b7e14828ebf6aa8809539e4457d,Update gist.rb raw URL.
+defunkt,2009-01-29 20:42:53,https://api.github.com/repos/defunkt/gist/git/commits/5b189624b9195e7944859bbd4a3652b5067635f7,5b189624b9195e7944859bbd4a3652b5067635f7,Update gist.rb raw URL.
+defunkt,2008-10-30 18:11:58,https://api.github.com/repos/defunkt/gist/git/commits/04e54f8d18101dd8306d121f505882db109b08b1,04e54f8d18101dd8306d121f505882db109b08b1,MIT
+defunkt,2008-10-23 06:23:17,https://api.github.com/repos/defunkt/gist/git/commits/bbf57b44784dde90e3dd7ea626a12fc00d4e3465,bbf57b44784dde90e3dd7ea626a12fc00d4e3465,jdance's support for private gists
+sr,2008-10-11 13:00:06,https://api.github.com/repos/defunkt/gist/git/commits/d48f123c9bbed6b63114a54f28a9fa0ce2ac0d3e,d48f123c9bbed6b63114a54f28a9fa0ce2ac0d3e,"some of us haven't sold our soul to the devil, ya know?"
+wuputah,2008-10-11 03:28:47,https://api.github.com/repos/defunkt/gist/git/commits/15212c49543495c94490c7296857cc8ef510f7c3,15212c49543495c94490c7296857cc8ef510f7c3,support for private gists
+defunkt,2008-10-11 03:11:34,https://api.github.com/repos/defunkt/gist/git/commits/cc60c6ff330fa0c2e08b3ceeddce2a7881dd7da3,cc60c6ff330fa0c2e08b3ceeddce2a7881dd7da3,use username and token if present in global git config
+defunkt,2008-10-11 00:24:53,https://api.github.com/repos/defunkt/gist/git/commits/e24d947242cf3830b341b77dc16f17f67a28c199,e24d947242cf3830b341b77dc16f17f67a28c199,i'm still a n00b at markdown
+defunkt,2008-10-11 00:23:55,https://api.github.com/repos/defunkt/gist/git/commits/f06fba907eff3125fd9fcf49383dd10e4c0663f8,f06fba907eff3125fd9fcf49383dd10e4c0663f8, gah markdown
+defunkt,2008-10-11 00:20:04,https://api.github.com/repos/defunkt/gist/git/commits/cc5cf2fde71ef9c437bac8f5bbee89cf471517d1,cc5cf2fde71ef9c437bac8f5bbee89cf471517d1,instructions for real
+defunkt,2008-10-11 00:15:38,https://api.github.com/repos/defunkt/gist/git/commits/fd716dd8e143376dd515ebf7ed8680c2fda9421b,fd716dd8e143376dd515ebf7ed8680c2fda9421b,installation instructions
+defunkt,2008-10-10 23:54:10,https://api.github.com/repos/defunkt/gist/git/commits/f24cc066a55529c1ee12eba11880ce1662c453ad,f24cc066a55529c1ee12eba11880ce1662c453ad,round2
+defunkt,2008-10-10 23:49:19,https://api.github.com/repos/defunkt/gist/git/commits/39e2ab701cd90a4c765781c9f63acc43292b70dc,39e2ab701cd90a4c765781c9f63acc43292b70dc,idea
+defunkt,2008-10-10 23:35:15,https://api.github.com/repos/defunkt/gist/git/commits/21e21e19448efed21b7f9581b41d24688f69a849,21e21e19448efed21b7f9581b41d24688f69a849,first post!

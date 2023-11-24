@@ -1,0 +1,1179 @@
+phc-winner-argon2,"The password hash Argon2, winner of PHC "
+username,timestamp,url,sha,message
+veorq,2019-05-20 09:18:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/62358ba2123abd17fccf2a108a301d4b52c01a7c,62358ba2123abd17fccf2a108a301d4b52c01a7c,"Merge pull request #270 from bitmark-property-system/master
+
+fix the Makefile to install libargon2.pc"
+hxw,2019-04-24 03:34:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d3639142fa71f8095ee36e64068f71b3c97baf6d,d3639142fa71f8095ee36e64068f71b3c97baf6d,"fix the Makefile to install libargon2.pc
+
+make sure that lib or libdata are selected based on Kernel
+and sed the template file to have correct paths
+
+If kernel is Linux then default path for  Ubuntu
+  For others add LIBRARY_REL=lib64 (or similar to make command)
+
+Signed-off-by: Christopher Hall <hsw@bitmark.com>"
+sneves,2019-03-12 21:52:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e4ca309b044fdc6ec547a3e1a106b4bfd06563b4,e4ca309b044fdc6ec547a3e1a106b4bfd06563b4,"Merge pull request #268 from mbroz/master
+
+Wait for already running threads if a thread creation failed."
+mbroz,2019-03-11 20:21:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cfa4385e728116989ad88b4be7c23b4868422778,cfa4385e728116989ad88b4be7c23b4868422778,"Wait for already running threads if a thread creation failed.
+
+On memory-constrained systems (like cgroups limited processes)
+thread creation often fails.
+
+The code needs to wait for already running threads on error path;
+otherwise these threads can access deallocated memory
+(and cause a segfault or another crash)."
+sneves,2019-03-10 15:55:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/80dca8559b929a9a08f4344d7dcda0d61677ef9a,80dca8559b929a9a08f4344d7dcda0d61677ef9a,"Merge pull request #267 from maciejsszmigiero/use-explicit_bzero-glibc
+
+use explicit_bzero() on recent glibc versions"
+sneves,2019-03-10 15:52:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6b4420ffcfbd5d8189466c19d83a8449ecdc500d,6b4420ffcfbd5d8189466c19d83a8449ecdc500d,"Merge pull request #266 from noloader/master
+
+Visual Studio improvements"
+maciejsszmigiero,2019-03-05 13:30:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fea3943adadf6527d1e839a2953e9591896e628d,fea3943adadf6527d1e839a2953e9591896e628d,"Use explicit_bzero() on recent glibc versions
+
+glibc 2.25+ has explicit_bzero(), so we can use it to securely wipe memory
+instead of hacking our own memset-based replacement, just like we already
+do on OpenBSD."
+noloader,2019-02-10 12:10:12,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2e1021b8790a827ed5a52aab51b0f17ba57c3882,2e1021b8790a827ed5a52aab51b0f17ba57c3882,Add GenerateDebugInformation to Argon2Ref project
+noloader,2019-02-10 12:06:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3b11aba66ff596d3fc95f833cbebd8a6d84b71ff,3b11aba66ff596d3fc95f833cbebd8a6d84b71ff,Add ProgramDatabase to Argon2Ref project
+noloader,2019-02-10 11:26:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/92098d8230bd910da541f7cb69cfba9d90b572e1,92098d8230bd910da541f7cb69cfba9d90b572e1,"Convert Argon2OptTestCI.vcxproj back to Unix line endings
+Unusual for a Visual Studio project file..."
+noloader,2019-02-10 11:24:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0d28ecf93cc26d05b7138c52c1d0715f1ee63c72,0d28ecf93cc26d05b7138c52c1d0715f1ee63c72,"Visual Studio improvements
+There are two improvements here. First, drop the minimum requirement for Visual Studio to 2010. This allows someone to open and run the project with VS2010, 2012, 2013, 2015, 2017, etc. Whatever they have on their machine works, and they won't encounter ""wrong toolset"" errors (or similar). Second, enable debugging information so the code can be stepped under Visual Studio."
+khovratovich,2018-11-09 09:44:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6c8653c3b6859a2d21850fa5979327feee8ca3ee,6c8653c3b6859a2d21850fa5979327feee8ca3ee,"Merge pull request #261 from technion/2id
+
+Add tests for Argon2_id."
+technion,2018-08-31 10:17:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cfca062d1b34aef439e6abcd0b5a6c2ced4b8130,cfca062d1b34aef439e6abcd0b5a6c2ced4b8130,Add tests for Argon2_id.
+sneves,2018-08-19 21:34:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b31aa322566a8559403d419b2e9cd3f57957e394,b31aa322566a8559403d419b2e9cd3f57957e394,"Merge pull request #260 from rffontenelle/fix-typos
+
+Fix typos"
+rffontenelle,2018-08-19 20:03:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a86c913a0639e3681fa7ce4d09aca9b2dc533e07,a86c913a0639e3681fa7ce4d09aca9b2dc533e07,Fix typos
+daniel-dinu,2018-06-26 03:38:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fba7b9a73a1bb913f49fadf6126f6e6b352d2fda,fba7b9a73a1bb913f49fadf6126f6e6b352d2fda,"Merge pull request #250 from Sc00bz/patch-1
+
+Spelling and updated function name changes"
+daniel-dinu,2018-06-26 03:02:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c9acac28edce02164056d7054aaae2755fa29f2a,c9acac28edce02164056d7054aaae2755fa29f2a,"Merge pull request #247 from hvr/patch-1
+
+Update maintainer/url of Haskell's `argon2` package"
+daniel-dinu,2018-06-26 02:40:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e585ff0b6b10834cc0506c6d28ad6f3ed174304a,e585ff0b6b10834cc0506c6d28ad6f3ed174304a,"Merge pull request #251 from ergenius/patch-1
+
+Added Argon2 Erlang binding."
+daniel-dinu,2018-06-26 02:30:53,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f30e1f11f2e2619f07a4950abe1419218c4900be,f30e1f11f2e2619f07a4950abe1419218c4900be,"Merge pull request #244 from kosprov/master
+
+Additional JVM bindings (Jargon2)"
+sneves,2018-06-04 12:25:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eaef13c24ec8c7356d0bf47be711f8fb6a1e68ca,eaef13c24ec8c7356d0bf47be711f8fb6a1e68ca,"Merge pull request #254 from josephlr/travis
+
+Fix Travis failures"
+sneves,2018-06-04 12:24:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e393431cd37d299d6a4ca6778b91fbab9031ee93,e393431cd37d299d6a4ca6778b91fbab9031ee93,"Merge pull request #253 from josephlr/headers
+
+All headers should be self-contained"
+sneves,2018-06-04 12:24:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/88333480c6d91121d45e5459d08afc398e1c3286,88333480c6d91121d45e5459d08afc398e1c3286,"Merge pull request #252 from josephlr/gitignore
+
+Ignore all build files"
+josephlr,2018-06-02 00:04:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/82a6f11b82f4ba50ebbfbcb73576bfac5788418f,82a6f11b82f4ba50ebbfbcb73576bfac5788418f,"Fix Travis failures
+
+Argon2 by default runs Travis CI in a containerized environment
+https://docs.travis-ci.com/user/reference/overview/#Container-based
+
+This is faster and works fine for most things. However, #89 added ASAN
+to the test cases. As ASAN requires the SYS_PTRACE capability, when
+Travis/Docker permissions changed earlier this year, our tests stoped
+working. See https://github.com/travis-ci/travis-ci/issues/9033
+
+The solution is just to run ASAN in a VM (sudo=true). This test takes so
+long normally that the cost to startup a VM is relativly small."
+josephlr,2018-06-01 23:33:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/10f7c47806c234ee1b25d8b40e49901818ff6b14,10f7c47806c234ee1b25d8b40e49901818ff6b14,"All headers should be self-contained
+
+Adding an include of core.h to genkat.h makes it so genkat.h will
+compile on it's own. All other headers in the project have this
+property.
+
+This was causing warnings when importing argon2 into other build systems
+like Bazel/Blaze."
+josephlr,2018-05-31 22:33:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/488ac5d5539238874c34b45b6dee7ba6f8d96d17,488ac5d5539238874c34b45b6dee7ba6f8d96d17,"Ignore all build files
+
+With the ABI changes to libargon2, libargon2.so.1 wasn't ignored."
+ergenius,2018-04-06 13:53:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d055b2090e94f7b9bd99eb2bddc2e06bb864a83c,d055b2090e94f7b9bd99eb2bddc2e06bb864a83c,"Added Argon2 Erlang binding.
+
+A few days ago i started building an Argon2 Erlang binding called eArgon2.
+
+It's in his early beta stages, however it's working and bypassed simple tests. I added my binding to the binding list alphabetically (i noticed all are listed alphabetically). Please accept my listing. Thank's!"
+Sc00bz,2018-04-06 04:04:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3d0394b6709623a500188384b95922992cea116c,3d0394b6709623a500188384b95922992cea116c,Spelling and updated function name changes
+hvr,2018-03-25 12:29:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/36d78027b328e777cf0b3689b23625af8b974ae3,36d78027b328e777cf0b3689b23625af8b974ae3,Update maintainer/url of Haskell's `argon2` package
+daniel-dinu,2017-12-27 19:56:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/670229c849b9fe882583688b74eb7dfdc846f9f6,670229c849b9fe882583688b74eb7dfdc846f9f6,Update CHANGELOG.md
+daniel-dinu,2017-12-27 18:19:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a1cd54c9fed83fa8fbeb22dfd1a60dbedf4865b1,a1cd54c9fed83fa8fbeb22dfd1a60dbedf4865b1,"Merge pull request #238 from ImKcat/master
+
+Add Swift binding"
+daniel-dinu,2017-12-27 18:18:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eb33b1b805a4b6f59bd0a94fb3624297cfb01155,eb33b1b805a4b6f59bd0a94fb3624297cfb01155,"Merge pull request #236 from eworm-de/soname
+
+bump ABI version"
+sneves,2017-12-25 12:59:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/96ddae8937462d84cc95c642090b7910d3707dc7,96ddae8937462d84cc95c642090b7910d3707dc7,make blake2 symbols explicitly local
+ImKcat,2017-12-25 02:38:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b97954453cff63471c7f9705d4d1b7a4b8b464fc,b97954453cff63471c7f9705d4d1b7a4b8b464fc,Add Swift binding
+eworm-de,2017-12-14 10:37:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3db81943eae0fac1001690cb580e7f8d39da63ac,3db81943eae0fac1001690cb580e7f8d39da63ac,"bump ABI version
+
+Before commit 5e78398c (Added ABI Version Number, and properly handle
+it for Linux and Darwin) the library was installed as `libargon2.so`,
+though the soname was `libargon2.so.0`. Actually installing a package
+with that file makes `ldconfig` create a symbolic link matching the
+soname. That file does not  belong to the package and is not managed by
+the package manager.
+
+Building a package from current git master results in the library file
+`libargon2.so.0` being included in the package. That conflicts with the
+file formerly created by `ldconfig`.
+
+So bump the ABI version for a conflict-free transition to current code."
+sneves,2017-09-30 01:31:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/54ff100b0717505493439ec9d4ca85cb9cbdef00,54ff100b0717505493439ec9d4ca85cb9cbdef00,"Merge pull request #224 from ranisalt/inttypes-pf
+
+Remove dependency of inttypes.h"
+ranisalt,2017-09-27 22:46:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ff8046cb78cf759c4c314a8f470f8b1d980c6eb0,ff8046cb78cf759c4c314a8f470f8b1d980c6eb0,Fix warning on genkat
+veorq,2017-09-14 11:09:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/68dd41f75c4c9df95f403154c0e19252fcf0f513,68dd41f75c4c9df95f403154c0e19252fcf0f513,"Merge pull request #228 from WOnder93/avx512f
+
+Add AVX-512F optimizations"
+sneves,2017-09-14 06:51:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c7d9dd6b6db60db53326e236b9918550a1eea284,c7d9dd6b6db60db53326e236b9918550a1eea284,"Merge pull request #227 from Asmod4n/patch-1
+
+add mruby binding"
+WOnder93,2017-09-13 20:46:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7ce4d3bb26c84547ee5c615a801f056c3e1ade08,7ce4d3bb26c84547ee5c615a801f056c3e1ade08,Add AVX-512F optimizations
+ranisalt,2017-09-12 06:17:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6b72a2b593752282163bf465355597a5716be7af,6b72a2b593752282163bf465355597a5716be7af,Drop unnneeded usage of macro
+Asmod4n,2017-09-11 18:47:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7ba8e0c3dbc0f222e9b703c53bead75fe82deb88,7ba8e0c3dbc0f222e9b703c53bead75fe82deb88,"add mruby binding
+
+Not to be confused with the ruby binding :)"
+veorq,2017-09-10 12:38:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a3245cfecd37686de991297696700c6feffef416,a3245cfecd37686de991297696700c6feffef416,"Merge pull request #225 from zorun/fix_parallel_build
+
+Don't include 'clean' target in 'make all' to fix parallel builds"
+ranisalt,2017-09-09 19:10:35,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bc59c4bb3a3f8b692ffe72196ce996dc175ed9df,bc59c4bb3a3f8b692ffe72196ce996dc175ed9df,Remove dependency of inttypes.h
+khovratovich,2017-09-07 10:26:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dbf8df915fa3452164fa6058d9b4985eca054d9d,dbf8df915fa3452164fa6058d9b4985eca054d9d,"Merge pull request #213 from goblin/memkb2
+
+add support for fine-grained memory setting"
+khovratovich,2017-09-07 10:24:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/10bf74c99c510c24c411c86e845d0e61e6f250d1,10bf74c99c510c24c411c86e845d0e61e6f250d1,"Merge pull request #207 from ranisalt/null-in-password
+
+Allow null character in password for cli tool"
+veorq,2017-09-05 22:30:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4656643d25b80fb74a5a553b00ae52479341c6cc,4656643d25b80fb74a5a553b00ae52479341c6cc,"Merge pull request #221 from EdwardBetts/patch-1
+
+correct spelling mistake"
+EdwardBetts,2017-08-30 19:42:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4e5e1d453f6d07c975a81200fcb4bd3c079260c6,4e5e1d453f6d07c975a81200fcb4bd3c079260c6,correct spelling mistake
+sneves,2017-07-14 11:27:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/13ff52c5ab0496014af116e9b23eb7e4845a8cbb,13ff52c5ab0496014af116e9b23eb7e4845a8cbb,"Merge pull request #219 from matlink/patch-1
+
+Fixed comment t_cost value according to t_cost value in code"
+matlink,2017-07-12 13:29:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3fee2ee785f6f6e2e0aee30d4a2c5983a82c983e,3fee2ee785f6f6e2e0aee30d4a2c5983a82c983e,Fixed comment t_cost value according to t_cost value in code
+veorq,2017-06-20 06:29:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7b3d834fd4143636f3cb491c6024d27e608601da,7b3d834fd4143636f3cb491c6024d27e608601da,"Merge pull request #215 from goblin/docfix
+
+Fix up documentation for argon2i_hash_raw"
+veorq,2017-06-20 06:25:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d3d81d3002c65e3a1738dd11fdb19bf8ba23349d,d3d81d3002c65e3a1738dd11fdb19bf8ba23349d,"Merge pull request #218 from mbroz/master
+
+Fix trailing spaces in source headers (to remove git warning)."
+veorq,2017-06-20 06:23:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/66c5add44226931f817024d5964974917b9d874d,66c5add44226931f817024d5964974917b9d874d,"Merge pull request #217 from wrathematics/master
+
+Add R to list of bindings"
+veorq,2017-06-20 06:22:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/363812e34d1966cfb806647acb0f0d69456a78dc,363812e34d1966cfb806647acb0f0d69456a78dc,Merge branch 'master' into master
+veorq,2017-06-20 06:21:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b61f512a27f0785837e85da7db0fd31267d4b436,b61f512a27f0785837e85da7db0fd31267d4b436,"Merge pull request #216 from thusoy/add-link-to-porridge
+
+Add link to another python binding: porridge"
+mbroz,2017-06-19 13:24:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4ac8640c2adc1257677d27d3f833c8d1ee68c7d2,4ac8640c2adc1257677d27d3f833c8d1ee68c7d2,Fix trailing spaces in source headers (to remove git warning).
+wrathematics,2017-06-13 16:57:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9b1d98ee11c10179ffa8a06623dfc72452636fe5,9b1d98ee11c10179ffa8a06623dfc72452636fe5,Add R to list of bindings
+thusoy,2017-06-09 23:15:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/51a5c6219b44992865fb7440bf883bfe62fdccf3,51a5c6219b44992865fb7440bf883bfe62fdccf3,"Add link to another python binding: porridge
+
+So far the only python binding that enables keyed hashing."
+khovratovich,2017-05-19 08:08:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9e3ae0f5e91eced6de3c28a9b61f2d91200119e3,9e3ae0f5e91eced6de3c28a9b61f2d91200119e3,"Merge pull request #208 from luc-lynx/master
+
+BLAMKA with AVX2 optimisations"
+luc-lynx,2017-04-26 13:52:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ff6c1155337d76cd34ab4d6c0a6a2f4212db9107,ff6c1155337d76cd34ab4d6c0a6a2f4212db9107,_mm256_shuffle_epi32 instead of _mm256_permutevar8x32_epi32
+luc-lynx,2017-04-25 09:39:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e2e9c2859cc0eef384264acc62635669badec7b3,e2e9c2859cc0eef384264acc62635669badec7b3,align macros removed
+ranisalt,2017-04-25 00:03:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/021a35838073eb2ebe3f139a2f8a08e70236c863,021a35838073eb2ebe3f139a2f8a08e70236c863,Fix missing usages of strlen(pwd)
+ranisalt,2017-04-24 22:34:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6942b4740857a2fef14d5bf8854e1ca068a700f2,6942b4740857a2fef14d5bf8854e1ca068a700f2,Stop discarding trailing newline
+luc-lynx,2017-04-24 21:49:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2e67e5e98514cbc9c43caeee3ae61b878d7f5c3d,2e67e5e98514cbc9c43caeee3ae61b878d7f5c3d,BLAMKA with AVX2 optimizations
+sneves,2017-04-24 07:42:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/30c78a1e5e59d8b3ac62960b9a848c73c47f88f8,30c78a1e5e59d8b3ac62960b9a848c73c47f88f8,"Merge pull request #206 from WOnder93/remove-align-macro
+
+Remove unused ALIGN macro"
+ranisalt,2017-04-24 03:30:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/949efc5701399b123e9341628347197ee45352a2,949efc5701399b123e9341628347197ee45352a2,Allow null character in password for cli tool
+WOnder93,2017-04-23 13:29:12,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7c57b3f08c8630c521916cad329c022cb38fca63,7c57b3f08c8630c521916cad329c022cb38fca63,"Remove unused ALIGN macro
+
+The 'ALIGN' macro defined in core.h is not used anywhere, so it can be
+removed."
+sneves,2017-03-28 22:44:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1eea0104e7cb2a38c617cf90ffa46ce5db6aceda,1eea0104e7cb2a38c617cf90ffa46ce5db6aceda,"Merge pull request #196 from angelsl/master
+
+Fix use after free if threads > lanes"
+sneves,2017-03-28 22:43:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8a37ce4b27be56c934eb45f8dc4541d65c6e4269,8a37ce4b27be56c934eb45f8dc4541d65c6e4269,"Merge pull request #200 from CodingMarkus/fix/compiler-warnings
+
+Fixed compiler warnings about potential dangerous casts"
+daniel-dinu,2017-03-25 00:01:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c2cfecffe9f201fa930a870ac9a939de8a5f652c,c2cfecffe9f201fa930a870ac9a939de8a5f652c,Fixed missing references in generated PDF
+daniel-dinu,2017-03-24 20:57:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d0c8c08bc2334b719ca3f67945c0e350bfc4d066,d0c8c08bc2334b719ca3f67945c0e350bfc4d066,Updated  to reflect the changes made to the LaTeX file
+CodingMarkus,2017-03-21 18:21:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/25d33df2e2a4874f88801857f4749a89ca2f3c24,25d33df2e2a4874f88801857f4749a89ca2f3c24,"Fixed compiler warnings about potential dangerous casts
+
+Casting unsigned long to uint32_t is not guaranteed to be a safe operation as a long int can also be 64 bit wide and very often it is 64 bit wide. This change silences a couple of compiler warnings I got while building the code."
+angelsl,2017-03-13 11:33:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6d33ea0bdf186a461be73710deefaa7c2eaf9469,6d33ea0bdf186a461be73710deefaa7c2eaf9469,Limit threads to number of lanes
+veorq,2017-02-26 13:57:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6f5427fb676c24e765aad0556414e43f63ad5c97,6f5427fb676c24e765aad0556414e43f63ad5c97,"Merge pull request #195 from P-H-C/bugfix
+
+Check for overflow on input lengths"
+sneves,2017-02-26 13:40:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9f1e53143f588ff8aa8bd50c97f654733cccd47d,9f1e53143f588ff8aa8bd50c97f654733cccd47d,check for overflow on input lengths
+sneves,2017-02-26 13:39:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/69341f7e34fe211201e4ba0430cd360db3e11b91,69341f7e34fe211201e4ba0430cd360db3e11b91,"Merge pull request #194 from sru-systems/delete-opt-ref-headers
+
+Delete opt.h and ref.h."
+mrijkeboer,2017-02-26 10:37:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f622634cbe52ed05c7b1661f57cde599304109a1,f622634cbe52ed05c7b1661f57cde599304109a1,"Delete opt.h and ref.h as suggested by Samuel Neves [0].
+
+[0] https://github.com/P-H-C/phc-winner-argon2/pull/192#issuecomment-282479519"
+sneves,2017-02-24 15:43:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1c0add8f3a2998bc44a4c9c2c60abe3d95ac1c23,1c0add8f3a2998bc44a4c9c2c60abe3d95ac1c23,"Merge pull request #193 from sru-systems/comment-fix
+
+Fix comment in fill_first_blocks."
+khovratovich,2017-02-24 09:50:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c388a25ed0b12c0bf45fce5309688fb8e08b947f,c388a25ed0b12c0bf45fce5309688fb8e08b947f,"Merge pull request #191 from sru-systems/spec-fixes
+
+Two small fixes to the spec"
+mrijkeboer,2017-02-23 11:07:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f15cf8bacd6594fdc51948959675bbf7d74666c3,f15cf8bacd6594fdc51948959675bbf7d74666c3,Fix comment in fill_first_blocks.
+mrijkeboer,2017-02-23 10:36:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3f6541d2a653d782535b71dae18c4841d1e9de12,3f6541d2a653d782535b71dae18c4841d1e9de12,Add type y for Argon2id.
+mrijkeboer,2017-02-23 10:31:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0e5f98f3fd1ff31215dfcdc9b71e8012baab3ea0,0e5f98f3fd1ff31215dfcdc9b71e8012baab3ea0,Fix secret value K's range to match code.
+khovratovich,2017-02-10 11:54:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/25b803154ab53b2b3aac4551a31e519656a808c4,25b803154ab53b2b3aac4551a31e519656a808c4,"Merge pull request #189 from P-H-C/no_threads_patch
+
+add support for no threading"
+sneves,2017-02-07 13:14:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fed7e3853253a3203bd09243302baccb74e8226e,fed7e3853253a3203bd09243302baccb74e8226e,fix testci target
+sneves,2017-02-06 15:02:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b343906e583d23ff25b3fcaa590fa3e01821a0b5,b343906e583d23ff25b3fcaa590fa3e01821a0b5,add support for no threading
+sneves,2017-02-05 17:01:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a403440c14e058b2c9a0bf4bad409b0664440b27,a403440c14e058b2c9a0bf4bad409b0664440b27,"Merge pull request #185 from josephlr/shared-library-fix
+
+Shared library fix"
+sneves,2017-02-05 16:55:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8dd5778806df545fa3c090205005dcb824647194,8dd5778806df545fa3c090205005dcb824647194,"formatting, missing kat"
+sneves,2017-02-05 16:49:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d8f75fd11dd7a806753379254b270d66cfc0a173,d8f75fd11dd7a806753379254b270d66cfc0a173,"Merge pull request #188 from luc-lynx/master
+
+avoid thread creation in p=1 case"
+luc-lynx,2017-02-03 22:11:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/aaaed59d6dfb406cc9adcb9658a47dc95717341e,aaaed59d6dfb406cc9adcb9658a47dc95717341e,error code fix
+luc-lynx,2017-02-03 21:35:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7bdaeceacfb913a0c12ae620e84e28bd1f79a40a,7bdaeceacfb913a0c12ae620e84e28bd1f79a40a,seperate function for p=1 case
+luc-lynx,2017-02-03 21:13:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3a0770b7fe4a77d01155e5a8106045fc3bb76236,3a0770b7fe4a77d01155e5a8106045fc3bb76236,"Revert ""avoid thread creation in p=1 case""
+
+This reverts commit 2d9a23a76ee4faf2bad6df9cefb359b0eb3961e7."
+luc-lynx,2017-02-02 20:49:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2d9a23a76ee4faf2bad6df9cefb359b0eb3961e7,2d9a23a76ee4faf2bad6df9cefb359b0eb3961e7,avoid thread creation in p=1 case
+josephlr,2017-01-23 18:18:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b70772428c991f0d64c4e375dd48c241551bc26e,b70772428c991f0d64c4e375dd48c241551bc26e,ABI Version should start at 0
+josephlr,2017-01-20 00:05:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c5722c1cbca6489853ef8661a9d7887e6e4b02de,c5722c1cbca6489853ef8661a9d7887e6e4b02de,"Cleaned up uninstall commands, now works on macOS"
+josephlr,2017-01-19 22:56:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e471926dbc130f33c3e9630c9a17348cc8fa345c,e471926dbc130f33c3e9630c9a17348cc8fa345c,Added make uninstall command
+josephlr,2017-01-19 22:55:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5e78398c5ae65c47e2c9f1680ae075ead9391870,5e78398c5ae65c47e2c9f1680ae075ead9391870,"Added ABI Version Number, and properly handle it for Linux and Darwin"
+khovratovich,2017-01-06 14:54:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fb8029068ebb92876a2e55a77f7534d64712bd3f,fb8029068ebb92876a2e55a77f7534d64712bd3f,"LaTeX source
+
+Latex sources of the Argon2 spec, pictures and bibiliography."
+veorq,2016-11-05 20:39:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e900bacc26e62738aacf8c248e71601080cec964,e900bacc26e62738aacf8c248e71601080cec964,"Merge pull request #180 from Alexis-D/cli-version-flags
+
+Allow setting Argon2 version number from the command-line"
+veorq,2016-11-05 20:36:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/850a5b2f7ea85017877bc03aaebdb9d10eecdf16,850a5b2f7ea85017877bc03aaebdb9d10eecdf16,"Merge pull request #181 from hynek/master
+
+Add doc for argon2_encodedlen's type parameter"
+hynek,2016-11-05 10:40:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/59c45daa888a996753b97d97463a9d4a88edd852,59c45daa888a996753b97d97463a9d4a88edd852,Add doc for argon2_encodedlen's type parameter
+Alexis-D,2016-11-04 17:17:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0961058ad18403d9791842cfe4fab7ebfff0b25c,0961058ad18403d9791842cfe4fab7ebfff0b25c,Add comment about -v defaulting to the most recent Argon2 version
+Alexis-D,2016-11-03 21:47:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c0ffab13df2b3901988c92d19509a6b1ed613f7a,c0ffab13df2b3901988c92d19509a6b1ed613f7a,Replace -10/-13 by -v 10/13
+Alexis-D,2016-11-03 20:47:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/031c65ec06ec4a84532cfa022e7362d165888ddf,031c65ec06ec4a84532cfa022e7362d165888ddf,Allow setting Argon2 version number from the command-line
+veorq,2016-10-29 22:41:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bc345e3afb8ed1a26f3e41b2e778357bafea4a16,bc345e3afb8ed1a26f3e41b2e778357bafea4a16,critical patch
+veorq,2016-10-29 09:24:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1c4fc41f81f358283755eea88d4ecd05e43b7fd3,1c4fc41f81f358283755eea88d4ecd05e43b7fd3,changelog update
+veorq,2016-10-29 09:13:35,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fc77b0a9b50568f2af014fe056dd063b3e19a860,fc77b0a9b50568f2af014fe056dd063b3e19a860,"Merge pull request #179 from riverrun/elixir_details
+
+Added details of Elixir implementation"
+riverrun,2016-10-29 09:02:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5f83aa29057367dc9f866376d7142e4844029a1e,5f83aa29057367dc9f866376d7142e4844029a1e,Added details of Elixir implementation
+sneves,2016-10-28 00:33:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/948e42c0104b90cb41b615117157cc3165b1049c,948e42c0104b90cb41b615117157cc3165b1049c,last c99 holdover
+veorq,2016-10-27 09:13:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6857dfea11dcffd6d1bd342b2828e2eb4c09e0e7,6857dfea11dcffd6d1bd342b2828e2eb4c09e0e7,"Merge pull request #177 from josephlr/context-clarification
+
+Explain the use for the low-level API parameters"
+veorq,2016-10-27 09:13:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1f8e9fdef0558ae539e0aa92abeac24ecac4264f,1f8e9fdef0558ae539e0aa92abeac24ecac4264f,"Merge pull request #176 from josephlr/memory-flags-fix
+
+Memory flags fix"
+veorq,2016-10-27 09:12:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/df57c6b2bf775c29a2a058ce35a6285463737259,df57c6b2bf775c29a2a058ce35a6285463737259,"Merge pull request #174 from josephlr/decode-cleanup
+
+Cleaned up encoding issues"
+veorq,2016-10-27 09:12:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/619da15720ce0d43517818adede52975f470aa32,619da15720ce0d43517818adede52975f470aa32,"Merge pull request #175 from jedisct1/patch-1
+
+Minor fix in a comment"
+josephlr,2016-10-26 21:27:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2206f7a1f95ca1207d0e58fd5a2cdc6338993462,2206f7a1f95ca1207d0e58fd5a2cdc6338993462,Explain the use for the low-level API parameters
+josephlr,2016-10-26 21:02:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fa95b31268433a92e2b08757f6a4e1f33e23d1cf,fa95b31268433a92e2b08757f6a4e1f33e23d1cf,Updated README to clarify default behavior
+jedisct1,2016-10-26 20:57:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a57a7b3c1e15060e7054d00337824d71d992a9a6,a57a7b3c1e15060e7054d00337824d71d992a9a6,Minor fix in a comment
+josephlr,2016-10-26 20:20:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/92bc7a7ba05e871ee5c990c46d8cd91cf6373aeb,92bc7a7ba05e871ee5c990c46d8cd91cf6373aeb,Cleaned up encoding issues
+josephlr,2016-10-26 18:49:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9688b119cfff1f37ff498ff24fb2bd7d56d3bb75,9688b119cfff1f37ff498ff24fb2bd7d56d3bb75,Merge remote-tracking branch 'upstream/master' into memory-flags-fix
+josephlr,2016-10-26 18:45:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/78d2a579fec204d7f50ecbe79e71ca33b6a60c1c,78d2a579fec204d7f50ecbe79e71ca33b6a60c1c,"Fixes memory flags issues
+
+Memory flags fixed by:
+ - Clarifying defaults
+ - Making the option to wipe internal memory a global flag
+ - Introducing the clear_internal_memory function
+ - Cleaning up memory allocation/freeing, so the custom allocator is
+   used both when allocating the memory instance and when allocating the
+   pseudo_random data."
+khovratovich,2016-10-26 12:25:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fbcdbc76439f5f0b737ff5365b99ca6e2fd7ec27,fbcdbc76439f5f0b737ff5365b99ca6e2fd7ec27,"Merge pull request #159 from WOnder93/master
+
+Refactor fill_segment code"
+veorq,2016-10-26 12:00:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ce6f6d1e0d270bf32a6eccb38f707e5a66569ea6,ce6f6d1e0d270bf32a6eccb38f707e5a66569ea6,"Merge pull request #173 from josephlr/keyid-and-data-fix
+
+Fixed up encoding issues"
+josephlr,2016-10-25 21:05:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5d4f7552f0c2d8389c52ac9e42bce94f36ff4d91,5d4f7552f0c2d8389c52ac9e42bce94f36ff4d91,"Fixed up encoding issues --
+
+by significantly contraining the space of admissable encodings. This
+doesn't break the public API, but makes some previously valid
+encodings invalid.
+
+Also made changes to validate_context. Empty vs. NULL passwords and
+salts now produce the same results and errors.
+
+Added tests for bad salt in encoding string."
+sneves,2016-10-22 16:45:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/07524a3114033e5e11b1e08d9bba17faeac8f7bf,07524a3114033e5e11b1e08d9bba17faeac8f7bf,"Merge pull request #170 from yomgui1/master
+
+fix memory leak in fill_memory_blocks"
+yomgui1,2016-10-21 23:28:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/43e6eed864479685a3646aaf51eb0368975c802a,43e6eed864479685a3646aaf51eb0368975c802a,remove unused local variable in fill_memory_blocks
+yomgui1,2016-10-21 22:54:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6bf88bdcdef510f1a46af989dcc9eafd7904922f,6bf88bdcdef510f1a46af989dcc9eafd7904922f,cosmetic changes in fill_memory_blocks()
+yomgui1,2016-10-21 22:41:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5f7a4d13ee6ad1fbc892794861968467dabb7614,5f7a4d13ee6ad1fbc892794861968467dabb7614,cosmetic change in fill_memory_blocks()
+yomgui1,2016-10-21 20:58:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5bde2035d0a51db3c1808a8bf3d68a0c12e54ed4,5bde2035d0a51db3c1808a8bf3d68a0c12e54ed4,"unify error handling inside fill_memory_blocks
+
+use one place to deallocate temporary ressources when error occures.
+this patch also revert the ""join all threads then exit on error"" concept as it need a better global refactoring
+(the thread creation loop also is not nice)"
+yomgui1,2016-10-19 00:32:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f6d47259b9e35c7fc4a76f9a14f80f71872974f4,f6d47259b9e35c7fc4a76f9a14f80f71872974f4,missing free() calls in commit 47092847
+yomgui1,2016-10-18 20:34:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/47092847cc064d39c7de7de27af255f0b12bf395,47092847cc064d39c7de7de27af255f0b12bf395,"fix memory leak in fill_memory_blocks
+
+This patch fixes memory leak of a localy heap allocated 'threads' variable in fill_memory_blocks().
+The leak happens in case of failure of argon2_thread_join(), needed to wait end of just created threads."
+veorq,2016-10-10 04:52:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fe4bd4070a61c30aaca599899440b78e41dc5716,fe4bd4070a61c30aaca599899440b78e41dc5716,"Merge pull request #169 from jdconley/argon2themax
+
+Add argon2themax binding"
+sneves,2016-10-06 16:06:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bc17be309bb5565d4ab1bbdd4eea1f6634a5d3b7,bc17be309bb5565d4ab1bbdd4eea1f6634a5d3b7,some remaining C99isms
+veorq,2016-10-06 12:52:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5c430d095e884196b475260f4a62281e4af74934,5c430d095e884196b475260f4a62281e4af74934,"formatting, uninited var fix"
+veorq,2016-10-06 12:33:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7013962ecb6f727a99f08f6a1127dbdf4f38880a,7013962ecb6f727a99f08f6a1127dbdf4f38880a,ignore ctags
+veorq,2016-10-06 12:30:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9955fd39e5f2bded202542706f635ba58c547e14,9955fd39e5f2bded202542706f635ba58c547e14,"Merge pull request #168 from josephlr/argon2id-functionality
+
+Adding in Argon2id functionality"
+josephlr,2016-10-05 18:53:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/87a6e60ecca82a2d02ad6a01574498d1002d025c,87a6e60ecca82a2d02ad6a01574498d1002d025c,More spelling changes
+josephlr,2016-10-05 18:50:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/990c2200779417504ddbbfbd1d35d4aa43923cb2,990c2200779417504ddbbfbd1d35d4aa43923cb2,Merge branch 'argon2id-functionality' of github.com:josephlr/phc-winner-argon2 into argon2id-functionality
+josephlr,2016-10-05 17:12:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1387154837d78c91c29a2d6dea6fddf59982b732,1387154837d78c91c29a2d6dea6fddf59982b732,Fixed spelling issue and change delaration order for c89 compatibility
+josephlr,2016-10-05 17:12:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b1b70fdd4a6fef9845b63965d7bf27b0a8d32413,b1b70fdd4a6fef9845b63965d7bf27b0a8d32413,Fixed spelling issue and change delaration order for c89 compatibility
+josephlr,2016-09-30 18:23:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a664086ca95ea5d9168a60baa5da3a5f4ac34801,a664086ca95ea5d9168a60baa5da3a5f4ac34801,"Adding in Argon2id functionality. This involves:
+
+ - Adding in a new argon2_type, and changing the hashing function to
+   recognize this new type.
+ - Changing the interface to add argon2id versions of all the functions.
+ - Changing the commandline tool to allow for the use of the new type.
+ - Changing the README to document the new type.
+ - Adding tests to make sure the new type is working.
+
+Tested change by setting parameters to the same as in
+https://github.com/khovratovich/Argon2/blob/master/TestVectors/Argon2id.txt
+and comparing the output. Output was the same.
+
+Also, added license headers to the blake2 files
+
+Joe Richey <joerichey@google.com>"
+veorq,2016-09-30 06:17:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d3b5b05287651ddbae224b7a421487dde5bf7582,d3b5b05287651ddbae224b7a421487dde5bf7582,"Merge pull request #166 from josephlr/license_change
+
+License change"
+josephlr,2016-09-29 18:47:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0edd9b9e02a3a66a1a1882a7629c7e3f1fe15cb7,0edd9b9e02a3a66a1a1882a7629c7e3f1fe15cb7,Update source file copyrights to include all contributors
+josephlr,2016-09-29 18:38:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b8a04e72e744b90029a3f135f32d3145e66db7e1,b8a04e72e744b90029a3f135f32d3145e66db7e1,Update to LICENSE and Makefile Copyrights
+josephlr,2016-09-28 22:02:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c3ad4732d59660a941a2090c9e22a6f9afa91791,c3ad4732d59660a941a2090c9e22a6f9afa91791,Changed the licenses from CC0 to a dual license of CC0 and Apache 2.0
+veorq,2016-09-22 09:39:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ef26dce8b07a5dfc3a0e0008ac447a6cf8b50c77,ef26dce8b07a5dfc3a0e0008ac447a6cf8b50c77,"Merge pull request #164 from Leont/make-install
+
+Add install target"
+veorq,2016-09-22 09:39:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7e8f465085e1e834821415ddbd863290417029eb,7e8f465085e1e834821415ddbd863290417029eb,"Merge pull request #165 from Leont/perl-binding
+
+Add perl to list of bindings"
+Leont,2016-09-21 22:48:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/73d0ec176b83038c9e6ee5cf236de46f56f12c84,73d0ec176b83038c9e6ee5cf236de46f56f12c84,Add install target
+Leont,2016-09-22 08:11:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3a892e21b0d5f50b143ff57c614e6c8a0d7bcb69,3a892e21b0d5f50b143ff57c614e6c8a0d7bcb69,Add perl to list of bindings
+veorq,2016-09-21 16:24:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eca23b5ff217991110a066aec9230671a9c46c81,eca23b5ff217991110a066aec9230671a9c46c81,"Merge pull request #163 from technion/burn
+
+Eliminate redundant function."
+technion,2016-09-21 10:12:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/87009906f003779bdca20ec3fe0e5631f3e8432e,87009906f003779bdca20ec3fe0e5631f3e8432e,Eliminate redundant function.
+WOnder93,2016-09-12 14:17:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/550b135b80baadb6f5be959463a98545e178ef46,550b135b80baadb6f5be959463a98545e178ef46,"Avoid the need to allocate memory for addresses
+
+In the old code, the fill_segment function always dynamically allocated memory for the pseudo-random addresses used in Argon2i. However, the addresses can be easily computed on-the-fly, thus avoiding the need for dynamic allocation.
+
+Another serious issue with the old code is that if the allocation failed, the fill_segment function would just silently return and do nothing. (WTF?!)
+
+This commit refactors the code to compute the addresses on-the-fly instead of pre-computing them and also slightly simplifies the way they are computed."
+WOnder93,2016-09-12 13:59:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0a5801bf119b0018489114004de0f879f9e7cc2d,0a5801bf119b0018489114004de0f879f9e7cc2d,"Refactor fill_block
+
+This commit performs two simplifications:
+- fill_block and fill_block_with_xor are merged into one function
+- fill_block from opt.c is modified to accept block* instead of uint8_t*"
+veorq,2016-09-09 07:59:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bb0bb0be5b147bf504d00134e0794bf1cf0b435a,bb0bb0be5b147bf504d00134e0794bf1cf0b435a,"Merge pull request #158 from darwinairola/master
+
+updated makefile to build under Cygwin environment"
+darwinairola,2016-09-09 07:37:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5143e76b1a94211e834eb87d4b612631749c3bfa,5143e76b1a94211e834eb87d4b612631749c3bfa,updated makefile to build under Cygwin environment
+veorq,2016-08-30 05:38:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d162dead43c43f330a36bc5089e10af8661c759e,d162dead43c43f330a36bc5089e10af8661c759e,"Merge pull request #156 from antelle/master
+
+add javascript browser port"
+antelle,2016-08-29 20:30:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9f6270867ab1bc5ef7ea82ddfb3fdaab1cc2a668,9f6270867ab1bc5ef7ea82ddfb3fdaab1cc2a668,add javascript browser port
+veorq,2016-08-21 18:33:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4844d2fee15d44cb19296ddf36029326d17c5aa3,4844d2fee15d44cb19296ddf36029326d17c5aa3,"Merge pull request #155 from lucab/to-upstream/make-opttarget
+
+makefile: optional explicit target for optimizations"
+lucab,2016-08-21 09:12:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c57a95faa2d05b9e357f63047e25dce076ffa7e7,c57a95faa2d05b9e357f63047e25dce076ffa7e7,"makefile: optional explicit target for optimizations
+
+This commit allows passing an explicit OPTTARGET as the target
+architecture for checking optimization capabilities.
+This is needed for reataining compatibility to a baseline when
+ditributing binaries.
+
+For reference: https://bugs.debian.org/828779"
+sneves,2016-08-20 15:52:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f87df8aaf85cf9eaabe9ad016ae635934756955a,f87df8aaf85cf9eaabe9ad016ae635934756955a,"Merge pull request #153 from WOnder93/master
+
+Fix bad pointer copy when using custom allocator"
+WOnder93,2016-08-20 14:42:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/91f7a15cd07d2c6090982d42745748f5d2ee3105,91f7a15cd07d2c6090982d42745748f5d2ee3105,Fix bad pointer copy when using custom allocator
+daniel-dinu,2016-08-17 02:01:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9dc74e1b084ebdbf635a49846f78f5e40848c080,9dc74e1b084ebdbf635a49846f78f5e40848c080,Fix for #152
+khovratovich,2016-08-08 20:39:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1daab72b7ad1fbe8a1707978a6cd6366f2a73078,1daab72b7ad1fbe8a1707978a6cd6366f2a73078,Added BlaMka reference
+veorq,2016-08-06 15:07:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a41b7143c99da0371af58850407697f0eb526267,a41b7143c99da0371af58850407697f0eb526267,"Merge pull request #150 from kmaragon/addCoreCLRToLinks
+
+Add C# link to documentation"
+kmaragon,2016-08-06 06:08:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/50b0efdbc7dc298e66cae478154a97b6afffea1e,50b0efdbc7dc298e66cae478154a97b6afffea1e,Add C# link to documentation
+khovratovich,2016-07-26 10:37:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cf6d73bcec48ff9fd74f52b6dc94498919432ddf,cf6d73bcec48ff9fd74f52b6dc94498919432ddf,"Merge pull request #148 from Qowyn/master
+
+Easier Windows DLL building + dependency-less builds"
+veorq,2016-07-26 05:28:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/08639f336e11fbfef33e11dc1be94090dd6ae321,08639f336e11fbfef33e11dc1be94090dd6ae321,"Merge pull request #149 from ranisalt/patch-3
+
+Update languages to reflect binding implementation"
+ranisalt,2016-07-25 08:15:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/527154ec68741ae44be98d0412db641e765b4300,527154ec68741ae44be98d0412db641e765b4300,Update languages to reflect binding implementation
+Qowyn,2016-07-22 09:11:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bc60426065282e448688829423bab623bcde136f,bc60426065282e448688829423bab623bcde136f,VS2015 DLL Projects + ReleaseStatic Configuration for Releases without dependencies
+veorq,2016-07-04 07:56:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8e82f90b94fb94be79f7acc0fc547fbf90899b67,8e82f90b94fb94be79f7acc0fc547fbf90899b67,"Merge pull request #147 from PlasmaPower/patch-1
+
+Add support for building DLLs with Visual Studio"
+PlasmaPower,2016-07-03 21:05:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a002f61ece0acf3309cd8bb8001e56ac7110dbe1,a002f61ece0acf3309cd8bb8001e56ac7110dbe1,Add support for building DLLs with Visual Studio
+veorq,2016-06-20 08:19:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7c1fde1c9c25c29ca0f79f026a64ca6ade5cd24d,7c1fde1c9c25c29ca0f79f026a64ca6ade5cd24d,"Merge pull request #145 from technion/size_t_check
+
+Safer implementation of #135."
+technion,2016-06-19 23:58:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eb831c33cca9b6d76bd41f4608110e0aa2ec3586,eb831c33cca9b6d76bd41f4608110e0aa2ec3586,Safer implementation of #135.
+sneves,2016-06-19 16:41:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7ee1395ecd57593a7b1b1c92d68fb6b0a093dee9,7ee1395ecd57593a7b1b1c92d68fb6b0a093dee9,"Merge pull request #142 from yonas/patch-2
+
+Fix documentation typo in run.c"
+yonas,2016-06-17 17:29:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1816dcb458e475603f7bc8948fdd849002840cf1,1816dcb458e475603f7bc8948fdd849002840cf1,Fix documentation typo in run.c
+veorq,2016-06-02 09:59:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d7266c4cee09c5be24fe41394b4059d87319730e,d7266c4cee09c5be24fe41394b4059d87319730e,"Merge pull request #140 from yonas/patch-1
+
+Consolidate FreeBSD, NetBSD, and OpenBSD in Makefile"
+yonas,2016-06-01 10:46:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a46839d7f78ba3d442ff9ecddfaf77838948789f,a46839d7f78ba3d442ff9ecddfaf77838948789f,"Consolidate FreeBSD, NetBSD, and OpenBSD in Makefile
+
+Consolidate FreeBSD, NetBSD, and OpenBSD in Makefile since they all use the same flags."
+veorq,2016-05-30 05:36:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4625cc50f6830753ec73fcc9c8844b1b92d68070,4625cc50f6830753ec73fcc9c8844b1b92d68070,"Merge pull request #139 from Apsalar/Solaris
+
+Solaris build support"
+veorq,2016-05-17 05:33:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ae5043bdd94ccd0fc789e743eeadeca9d178443a,ae5043bdd94ccd0fc789e743eeadeca9d178443a,"Merge pull request #136 from lucab/to-upstream/argon2-cli-usage
+
+run: use `-h` as command line option for usage help"
+veorq,2016-05-17 05:33:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/beee3069f87ccd163110933ab820d243e6eafcb5,beee3069f87ccd163110933ab820d243e6eafcb5,"Merge pull request #137 from lucab/to-upstream/pkg-config-stub
+
+libargon2: add a pkg-config stub"
+lucab,2016-05-15 10:06:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/02dc1b87806e2af96604574523712d475f2e3d99,02dc1b87806e2af96604574523712d475f2e3d99,"libargon2: add a pkg-config stub
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+lucab,2016-05-15 09:21:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/93a938510ad5e5b757b78ef68b3c02311ef174c5,93a938510ad5e5b757b78ef68b3c02311ef174c5,"run: use `-h` as command line option for usage help
+
+This commit adds `-h` as a command line option to display usage
+info, moving the existing hash length switch to `-l`.
+This is a breaking change for existing scripts using `-h`.
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+veorq,2016-04-29 13:07:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/95cb6b9d43520f27a4d2e08b9f0446c204b547c5,95cb6b9d43520f27a4d2e08b9f0446c204b547c5,"Merge pull request #134 from phxql/feature/msys2
+
+Compile on Windows with MSYS2"
+phxql,2016-04-28 17:59:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/51e50e995d892bd8f663b3aa71f9ec1c19909e31,51e50e995d892bd8f663b3aa71f9ec1c19909e31,Now compiles with MSYS2
+sneves,2016-04-27 18:02:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f7410352fd3ab65eefc5984dd1514460646c54a4,f7410352fd3ab65eefc5984dd1514460646c54a4,"Merge pull request #132 from technion/readme_ctx
+
+Update README example code with newer context struct and function names."
+technion,2016-04-27 09:53:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/901445e20936739880b176b94cdb79704edb74b5,901445e20936739880b176b94cdb79704edb74b5,Update README example code with newer context struct and function names.
+sneves,2016-04-23 14:59:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1633bde6f02c4d695145debb75ef1df9e76f3611,1633bde6f02c4d695145debb75ef1df9e76f3611,"Merge pull request #131 from technion/zero_memset
+
+Ensure memset is not called with n == 0. This is undefined in C."
+technion,2016-04-21 09:26:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/26a7234d9196b745a7f99dd2cdc9a3b0253174b0,26a7234d9196b745a7f99dd2cdc9a3b0253174b0,Ensure memset is not called with n == 0. This is undefined in C.
+sneves,2016-04-17 15:24:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/00aaa6604501fade85853a4b2f5695611ff6e7c5,00aaa6604501fade85853a4b2f5695611ff6e7c5,"Merge pull request #130 from lucab/lucab/manpage
+
+argon2: add manpage with usage info"
+dkg,2016-04-16 08:41:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a9e7efef233c8a2bc9f4b50c451d762126830587,a9e7efef233c8a2bc9f4b50c451d762126830587,argon2: add manpage with usage info
+sneves,2016-04-11 14:20:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/26c2724a9ea844ade377203815fc12375c4fce36,26c2724a9ea844ade377203815fc12375c4fce36,"Merge pull request #129 from technion/uninitialized
+
+Properly zero pwd pointed before using it."
+technion,2016-04-07 05:43:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/69a13b457c35afcee08d556cfaf4b1644bce4cbb,69a13b457c35afcee08d556cfaf4b1644bce4cbb,Properly zero pwd pointed before using it.
+daniel-dinu,2016-04-06 12:20:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a42a5b12fb3aa31048ffbf5be05826edb2800dcc,a42a5b12fb3aa31048ffbf5be05826edb2800dcc,prepare the next release
+daniel-dinu,2016-04-06 08:20:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6bf7eea043c7fc6808aae7ac1e02e1a87a4c145e,6bf7eea043c7fc6808aae7ac1e02e1a87a4c145e,"Merge pull request #128 from technion/inlength
+
+Improve handling of long passwords for command line utility."
+technion,2016-04-06 00:45:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5d2810e521f9bd49db1e46df0c80af0995acc6b7,5d2810e521f9bd49db1e46df0c80af0995acc6b7,Improve handling of long passwords for command line utility.
+daniel-dinu,2016-04-05 16:36:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cd77d12bf945fafc452beb427a3d89a16427e0ba,cd77d12bf945fafc452beb427a3d89a16427e0ba,"Merge pull request #127 from aberaud/patch-1
+
+Include lower-case ""windows.h"""
+aberaud,2016-04-05 16:00:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8a86be605acd6ebe684650b5e860776145200d2b,8a86be605acd6ebe684650b5e860776145200d2b,"use lower-case ""windows.h""
+
+Capitalized Windows.h breaks on MinGW. ""windows.h"" is the proper include."
+daniel-dinu,2016-04-05 14:04:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/137bf99d411917e3db166cd4ec116661bd9a15e3,137bf99d411917e3db166cd4ec116661bd9a15e3,Merge branch 'test-ci'
+daniel-dinu,2016-04-05 13:26:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f3600f7d4f97bec0690813525c19dba397c20017,f3600f7d4f97bec0690813525c19dba397c20017,"Update README.md
+
+Included the arguments added in be3583e33c472893819aeb778fcc6387a2b67897."
+daniel-dinu,2016-04-05 11:58:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d838a7b16dcaa2081fab3d5931ed035a862edf54,d838a7b16dcaa2081fab3d5931ed035a862edf54,Run TestCI just for Release configuration
+daniel-dinu,2016-04-05 10:49:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/be3583e33c472893819aeb778fcc6387a2b67897,be3583e33c472893819aeb778fcc6387a2b67897,"Merge pull request #126 from alipha/master
+
+Add options for bare output to executable"
+alipha,2016-04-04 21:29:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d209fc447230be3fc9f45ad1462158ae05c3d8c0,d209fc447230be3fc9f45ad1462158ae05c3d8c0,Add options for bare output to executable
+daniel-dinu,2016-04-04 18:57:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/964f0eb61039a3174c5626e02ed3a187a861a465,964f0eb61039a3174c5626e02ed3a187a861a465,"Merge pull request #125 from P-H-C/test-ci
+
+Test ci"
+daniel-dinu,2016-03-21 19:59:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c617fa9a7b505e72419c4f512622ab17679cfb12,c617fa9a7b505e72419c4f512622ab17679cfb12,added support for CI using AppVeyor
+veorq,2016-03-31 05:23:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b93524a33f56e36a27eafc8a6febf8c003559c7e,b93524a33f56e36a27eafc8a6febf8c003559c7e,"Merge pull request #124 from cjlarose/master
+
+Add alternative JavaScript implementation to README"
+cjlarose,2016-03-31 04:40:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4d0522fa754e7139e66ab5fc7c331dcfb2473442,4d0522fa754e7139e66ab5fc7c331dcfb2473442,Add alternative JavaScript implementation to README
+sneves,2016-03-29 04:33:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/61428681fead5bbd700030a8afcd0f146536ad88,61428681fead5bbd700030a8afcd0f146536ad88,"Merge pull request #122 from technion/less_test
+
+Remove test with m=20, as it takes too much RAM for many devices."
+technion,2016-03-27 02:43:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8d8b3061fa2d11a91f28fd0304a60f0d4bf6ab12,8d8b3061fa2d11a91f28fd0304a60f0d4bf6ab12,"Remove test with m=20 for general test cases,
+as it takes too much RAM for many devices.
+Reintroduce large test - only for CI environment."
+sneves,2016-03-27 14:17:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3495076034fe1e50ac04771d99ca245bef964f2b,3495076034fe1e50ac04771d99ca245bef964f2b,"Merge pull request #121 from technion/decode_null
+
+Check for NULL encoded strings. Fixes #120."
+technion,2016-03-27 02:44:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/79442a82a85344cf5d52129199a01ac45ac3739d,79442a82a85344cf5d52129199a01ac45ac3739d,Fix C90 compliance in previous commit.
+technion,2016-03-27 02:39:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/843600e2a10d8fcc364887e93542b62b726f6a56,843600e2a10d8fcc364887e93542b62b726f6a56,Check for NULL encoded strings. Fixes #120.
+sneves,2016-03-22 18:01:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ba4b99a4372fff8f2748d0e185932de9154b4756,ba4b99a4372fff8f2748d0e185932de9154b4756,prevent unwanted wrapping
+sneves,2016-03-22 17:53:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/02bdff7729bb8feadb8fdc6a12b6e8a559e954ca,02bdff7729bb8feadb8fdc6a12b6e8a559e954ca,Missing size_t declaration
+veorq,2016-03-22 06:47:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ccd37c87492e27dd1813ed39734f23a8a79e8072,ccd37c87492e27dd1813ed39734f23a8a79e8072,"Merge pull request #119 from P-H-C/decode
+
+Decode"
+daniel-dinu,2016-03-21 17:41:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3aa6b14822a8579626e9f431f63e7b0b502fcb7d,3aa6b14822a8579626e9f431f63e7b0b502fcb7d,Replaced ARGON2_OLD_VERSION_NUMBER with ARGON2_VERSION_10
+daniel-dinu,2016-03-21 09:04:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e8181f9c39a08d72f06bb3dadc8e270f9b6dbd73,e8181f9c39a08d72f06bb3dadc8e270f9b6dbd73,"Renamed the enumerators of Argon2_version
+Changed version position in Argon2_Context"
+daniel-dinu,2016-03-21 08:30:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/50b636066af5c69114cf02831fd051ee49d2451e,50b636066af5c69114cf02831fd051ee49d2451e,Replaced uit32_t with size_t
+sneves,2016-03-16 16:30:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0349d5126ada27f2e4cc7a84c883ca9207e58f03,0349d5126ada27f2e4cc7a84c883ca9207e58f03,fix arguments to memset_s
+daniel-dinu,2016-03-14 16:27:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/649bbb008b72c136d63fdaa0e1bf994e8fc3abed,649bbb008b72c136d63fdaa0e1bf994e8fc3abed,Avoid initial zeroing by calling fill_block on the first pass
+daniel-dinu,2016-03-14 08:11:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/32a5a63fc74901e1920ffead5a202f267a147d5b,32a5a63fc74901e1920ffead5a202f267a147d5b,Changed version number output from hexadecimal to decimal for the generated test vectors
+daniel-dinu,2016-03-13 21:45:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ead743bb4cc42e2101e5ec37b20bd338b5b816ba,ead743bb4cc42e2101e5ec37b20bd338b5b816ba,Uncommented test code
+daniel-dinu,2016-03-13 21:39:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b7b676ec79d2186670d58a533333eb0c455b99ed,b7b676ec79d2186670d58a533333eb0c455b99ed,"- included support for variable length hash, calculate the encoded hash lenght (see P-H-C/phc-winner-argon2#114)
+- updated tests
+- added test vectors for v16
+- updated the checking of test vectors"
+daniel-dinu,2016-03-11 17:34:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ca0fd37818aa131e58a5d5a9482adacac7d12143,ca0fd37818aa131e58a5d5a9482adacac7d12143,"Changes:
+fixed the implementation for backward compatibility
+added tests for backward compatibility
+recomputed the test vectors
+changed test.sh to return an error code if it is the case
+ignore object file generated by OPTTEST"
+khovratovich,2016-03-11 11:23:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/778f294baf12d8f7bb865c48862d223231b6eb7e,778f294baf12d8f7bb865c48862d223231b6eb7e,Double definition bug
+khovratovich,2016-03-11 10:30:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c74eecdff1782b67b042c88c476313dfb63830a3,c74eecdff1782b67b042c88c476313dfb63830a3,Update benchmark and core code
+khovratovich,2016-03-10 14:50:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a06b3e4d52138b95f76f11e25c9cc64ab4b19295,a06b3e4d52138b95f76f11e25c9cc64ab4b19295,Decoding change
+veorq,2016-03-09 06:57:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0505ac7cb0b933aec6434657b9a0558716a18e64,0505ac7cb0b933aec6434657b9a0558716a18e64,"Merge pull request #113 from technion/arch
+
+Utilise OPT on supported platforms."
+veorq,2016-03-09 06:51:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9623a7a2e0e1e6be6a20d736963339cc6c13e446,9623a7a2e0e1e6be6a20d736963339cc6c13e446,Merge branch 'master' of github.com:P-H-C/phc-winner-argon2
+veorq,2016-03-09 06:51:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4153ed979543b6f40e0f259938475fb0db50f5c5,4153ed979543b6f40e0f259938475fb0db50f5c5,salt at least 8 chars
+veorq,2016-03-09 06:50:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/872dc4c87bc0cf310dc4c630428c817ab0bf5878,872dc4c87bc0cf310dc4c630428c817ab0bf5878,"Merge pull request #116 from jedisct1/usage-salt
+
+Salt length is not at most 16 characters, but at least 8 characters"
+jedisct1,2016-03-08 13:20:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/92016bc89068633d8fe61127cb93a8597eb99e12,92016bc89068633d8fe61127cb93a8597eb99e12,"Salt length is not at most 16 characters, but at least 8 characters"
+veorq,2016-03-08 08:58:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b12bee6a79cb043be433bea1bb18ca1a04049e7f,b12bee6a79cb043be433bea1bb18ca1a04049e7f,"Merge pull request #114 from ranisalt/fix-cli
+
+Fix cli tool to handle variable length salts"
+ranisalt,2016-03-08 08:52:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2a941cfccf5802b9ff56f686e720e4f00a7752f7,2a941cfccf5802b9ff56f686e720e4f00a7752f7,Update README
+sneves,2016-03-07 23:51:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ce96dda7b711c218be6ba58980d30c1c7477ed29,ce96dda7b711c218be6ba58980d30c1c7477ed29,Merge branch 'sneves-master'
+sneves,2016-03-07 23:51:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ae947cd2456164f74a8d31a5befff78cc8dbeae1,ae947cd2456164f74a8d31a5befff78cc8dbeae1,merge
+ranisalt,2016-03-04 19:29:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dbdd2f267c25931c2b1b207d20ad8bbcb16ca2bc,dbdd2f267c25931c2b1b207d20ad8bbcb16ca2bc,Replace magic numbers and remove dependency on math
+ranisalt,2016-03-04 19:13:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/74add0e5cc2f9be73aaae0371214d6c19de28b46,74add0e5cc2f9be73aaae0371214d6c19de28b46,Add option to set output hash length
+daniel-dinu,2016-03-03 12:01:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/54617af02de0055b90e39c4204058bb9a84c2b78,54617af02de0055b90e39c4204058bb9a84c2b78,"Merge pull request #115 from P-H-C/1.3
+
+New version 1.3 of Argon2"
+daniel-dinu,2016-03-03 11:51:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/91c978028bcbf4baa2771cf1ea63657e425c25b4,91c978028bcbf4baa2771cf1ea63657e425c25b4,Merged master into branch 1.3
+technion,2016-02-29 03:49:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/aa1b5870a7965ea053bc6a0442aa1b63a6a0bb5d,aa1b5870a7965ea053bc6a0442aa1b63a6a0bb5d,Utilise optimised builds on supported platforms.
+ranisalt,2016-03-01 20:48:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/785634d0aa9f867ecfbf47f6fbb5dd8c695fc260,785634d0aa9f867ecfbf47f6fbb5dd8c695fc260,Fix cli tool to handle variable length salts
+khovratovich,2016-02-29 14:26:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dbe4c5e782a16aad777151c3cee36c37f6a4d27d,dbe4c5e782a16aad777151c3cee36c37f6a4d27d,Improved attack descriptions
+khovratovich,2016-02-29 14:12:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dd5bcbc4c06cae2de4504b02cc92f001637668ad,dd5bcbc4c06cae2de4504b02cc92f001637668ad,New attack descriptions
+veorq,2016-02-23 12:58:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b07d7b68c9615021151db6077e732956f5984b48,b07d7b68c9615021151db6077e732956f5984b48,"Merge pull request #111 from ranisalt/verify-mismatch
+
+Issue different error codes for verify failure and mismatch"
+veorq,2016-02-23 12:57:53,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9fde3151a0c1cd59c5e71be936fd001844ca2845,9fde3151a0c1cd59c5e71be936fd001844ca2845,"Merge pull request #106 from jedisct1/calloc
+
+Use calloc() instead of malloc()+memset()"
+ranisalt,2016-02-22 18:23:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4df441ad0b5e8db257cbaa6a004853265722ad35,4df441ad0b5e8db257cbaa6a004853265722ad35,Test for mismatching verify error code
+ranisalt,2016-02-22 18:12:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/743878251b840778e37fc72a7590f52bc22a88ab,743878251b840778e37fc72a7590f52bc22a88ab,Issue different code when verify mismatches
+sneves,2016-02-21 22:33:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6525f74f8ae62cda9e964fdddc84801d7f502940,6525f74f8ae62cda9e964fdddc84801d7f502940,"Merge pull request #110 from UniQP/unreachable
+
+Fix bug introduced in 6887dae4889b36df87e50623dc8035f9fcfc0663."
+UniQP,2016-02-21 22:27:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d954c942f134ea25af1925717b42e27168d9ddc0,d954c942f134ea25af1925717b42e27168d9ddc0,Fix bug introduced in 6887dae4889b36df87e50623dc8035f9fcfc0663.
+sneves,2016-02-20 13:08:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6fbdb88df631fe30edf6f2d9c385d323b74dc834,6fbdb88df631fe30edf6f2d9c385d323b74dc834,formatting
+sneves,2016-02-20 13:03:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b8f0625c5b453cbe9afb166554f0937c121399ae,b8f0625c5b453cbe9afb166554f0937c121399ae,address issue #74
+khovratovich,2016-02-19 10:16:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e452e2b6768247c5d836b607b41b8fb3584539af,e452e2b6768247c5d836b607b41b8fb3584539af,New spec
+jedisct1,2016-02-19 06:54:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/01b288aacdb7647c279b8f4726879de0d7269421,01b288aacdb7647c279b8f4726879de0d7269421,Use calloc() instead of malloc()+memset()
+daniel-dinu,2016-02-18 00:31:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2224f88e4bbfadcfccf64741d2abb94b23f4855f,2224f88e4bbfadcfccf64741d2abb94b23f4855f,Fix code indentation
+daniel-dinu,2016-02-18 00:29:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/44c85a7c94369c00df240e750a331cbed7edb239,44c85a7c94369c00df240e750a331cbed7edb239,Fix code indentation
+daniel-dinu,2016-02-18 00:24:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3b7374dd0c762b147cc6812b3ff9a6cef30eb013,3b7374dd0c762b147cc6812b3ff9a6cef30eb013,Updates tests
+daniel-dinu,2016-02-17 22:38:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f4e75845b856b0fd1b1d463227616a29c69bec7d,f4e75845b856b0fd1b1d463227616a29c69bec7d,"Merge pull request #105 from technion/more_tests
+
+Introduce a test for multiple threaded hash."
+technion,2016-02-17 22:27:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/67aacec8a1eaec298773f5b27d950d9db2638a99,67aacec8a1eaec298773f5b27d950d9db2638a99,Introduce a test for multiple threaded hash.
+daniel-dinu,2016-02-17 14:21:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1d5d067f70e6f3dc715e63bedcde27dda156eaea,1d5d067f70e6f3dc715e63bedcde27dda156eaea,Fixed code indentation
+daniel-dinu,2016-02-17 14:06:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c12a0fb20469e5b144c0f1b7e16641c24ab48032,c12a0fb20469e5b144c0f1b7e16641c24ab48032,Merge branch '1.3' of https://github.com/P-H-C/phc-winner-argon2 into 1.3
+daniel-dinu,2016-02-17 14:06:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/37e031213e7b05b0361fa489ea416c71d860b2e0,37e031213e7b05b0361fa489ea416c71d860b2e0,Updated test vectors and test cases
+khovratovich,2016-02-15 13:51:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a4ed1af8c6469f416527f1dee01c34d8c902312e,a4ed1af8c6469f416527f1dee01c34d8c902312e,Bugfix in bench
+khovratovich,2016-02-15 13:43:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cffb8f1b438d45860d764d168ab9f0c798bbcddb,cffb8f1b438d45860d764d168ab9f0c798bbcddb,XOR instead of overwrite: fill_block now XORs over the new block. Signatures and generate_addresses() updated accordingly
+khovratovich,2016-02-11 12:13:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5c840802f2636f0d982ff4ef53d4758a824ebdd9,5c840802f2636f0d982ff4ef53d4758a824ebdd9,bugfix
+khovratovich,2016-02-11 12:04:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c91b47c6b8c4cba3bf87b77c0fa1af09fcec6d4e,c91b47c6b8c4cba3bf87b77c0fa1af09fcec6d4e,Introducing overwrite operation and new version number
+daniel-dinu,2016-02-16 20:35:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bd1347f93dff19f95daa0c615fb8bbeb0b96259c,bd1347f93dff19f95daa0c615fb8bbeb0b96259c,"Update .gitignore
+
+Added bench to ignore list"
+daniel-dinu,2016-02-15 21:57:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e44140d12823860d719e972423b5333a2695480f,e44140d12823860d719e972423b5333a2695480f,"Update .travis.yml
+
+Removed commented code"
+daniel-dinu,2016-02-15 21:51:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/909baae9cc799e1b1d0c5d8068ff46753cd79800,909baae9cc799e1b1d0c5d8068ff46753cd79800,"Update .travis.yml
+
+Test bash script for codecov"
+daniel-dinu,2016-02-15 21:43:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2a7c8ed3388f6b42db363c1677ed43ce23c0116e,2a7c8ed3388f6b42db363c1677ed43ce23c0116e,"Update .travis.yml
+
+No user scheme for pip install"
+daniel-dinu,2016-02-15 18:17:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ee8585016e7a7f0f458b59539d3e98a4b4eac2fb,ee8585016e7a7f0f458b59539d3e98a4b4eac2fb,"Update README.md
+
+Added Codecov badge"
+daniel-dinu,2016-02-15 18:11:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/42a8c2319e62b6ad7dc988ea7dfa36a3c60c192a,42a8c2319e62b6ad7dc988ea7dfa36a3c60c192a,Merge branch 'master' of https://github.com/P-H-C/phc-winner-argon2
+daniel-dinu,2016-02-15 18:11:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c9f3ab795d288027bac435d16c565955c763b909,c9f3ab795d288027bac435d16c565955c763b909,Added support for code coverage using Codecov
+daniel-dinu,2016-02-15 15:43:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/55ca874a814209baf6935a0eabb83060e6d69875,55ca874a814209baf6935a0eabb83060e6d69875,"Update README.md
+
+Added Travis CI badge"
+daniel-dinu,2016-02-15 15:38:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/49dce681f5cc4e7d324259579820789ccb11ac92,49dce681f5cc4e7d324259579820789ccb11ac92,Fix Makefile
+daniel-dinu,2016-02-15 15:25:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c485df7db19c3647f382b282a24fe651e1c26003,c485df7db19c3647f382b282a24fe651e1c26003,Changed testci flags
+daniel-dinu,2016-02-15 15:14:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3c5df4e1a7b1b1cacec714cb4488a003595baa5f,3c5df4e1a7b1b1cacec714cb4488a003595baa5f,Changed testci flags
+daniel-dinu,2016-02-15 15:04:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/720dd76c310e8cd89c6aee6653cbd9a466f84479,720dd76c310e8cd89c6aee6653cbd9a466f84479,Try: make testci
+daniel-dinu,2016-02-15 14:33:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0b57e5b04a3529edcdf40073d2b6d25311f1dd83,0b57e5b04a3529edcdf40073d2b6d25311f1dd83,Test on OSX
+daniel-dinu,2016-02-15 14:30:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f2acc073f12a3d1ebeaef59014e179fd845a1cf4,f2acc073f12a3d1ebeaef59014e179fd845a1cf4,Added gcc to compilers list
+khovratovich,2016-02-15 13:51:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/06d99a69c4abadffadaf1dc324ae112c0edee8d0,06d99a69c4abadffadaf1dc324ae112c0edee8d0,Bugfix in bench
+khovratovich,2016-02-15 13:43:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2ae1225ad9ef17f0339549e64e21b9c91983d62d,2ae1225ad9ef17f0339549e64e21b9c91983d62d,XOR instead of overwrite: fill_block now XORs over the new block. Signatures and generate_addresses() updated accordingly
+daniel-dinu,2016-02-15 13:37:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/486136759d4112232c27ab4ed76ffe88efd352e9,486136759d4112232c27ab4ed76ffe88efd352e9,Test Travis CI
+khovratovich,2016-02-11 12:13:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4394c01afe196906ee8577769c2943038f568aae,4394c01afe196906ee8577769c2943038f568aae,bugfix
+khovratovich,2016-02-11 12:04:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6f4e732a65ae6e95e79f0f21f4297374aabe480c,6f4e732a65ae6e95e79f0f21f4297374aabe480c,Introducing overwrite operation and new version number
+veorq,2016-02-11 11:16:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/166c401d33de66edf7ec6d2570f7672e7dc20a5f,166c401d33de66edf7ec6d2570f7672e7dc20a5f,"Merge pull request #104 from technion/mem_leak
+
+Free memory on thread failure."
+technion,2016-02-11 10:19:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/52eaf2309933e387f63b775fa1d198fb0884de2a,52eaf2309933e387f63b775fa1d198fb0884de2a,Free memory on thread failure.
+veorq,2016-02-08 06:31:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c6805ac0e67a21e33b79c592050508c99db9d235,c6805ac0e67a21e33b79c592050508c99db9d235,"Merge pull request #102 from technion/testflags
+
+Make general test compile flags more relaxed than CI test case."
+technion,2016-02-08 04:05:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a024628f7d04235275a927b9ccde51a6095fc4e0,a024628f7d04235275a927b9ccde51a6095fc4e0,"Make general test compile flags more relaxed than CI test case.
+Fixes #101."
+khovratovich,2016-02-02 15:57:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/24b957bd89857b61d374b620f939404d450e81d4,24b957bd89857b61d374b620f939404d450e81d4,"Merge pull request #99 from technion/travis
+
+Adding Travis tests"
+technion,2016-02-02 09:48:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4c6ed70cdedb19c5683c1e62c9cb9f54a9956e62,4c6ed70cdedb19c5683c1e62c9cb9f54a9956e62,Add C99 error flag to test.
+technion,2016-02-02 04:05:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a691d495e80790945cd6f797e20e86345f5ee61a,a691d495e80790945cd6f797e20e86345f5ee61a,Formatter run on test suite.
+technion,2016-02-02 02:45:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/17e65910438ef7fc7e147a8da7e8492911b0e048,17e65910438ef7fc7e147a8da7e8492911b0e048,"""make clean"" to delete testcases. Run tests with FORTIFY_SOURCE."
+technion,2016-02-02 02:20:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/98504c9a3b846022f985c0b6f4352499a93c0d47,98504c9a3b846022f985c0b6f4352499a93c0d47,Introduce Travis CI config.
+khovratovich,2016-02-01 08:23:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/079c5a6780173d44a14c2632df645381cd4b1ab7,079c5a6780173d44a14c2632df645381cd4b1ab7,"Var-length hash fixed
+
+Last block production was incorrect."
+khovratovich,2016-02-01 09:06:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/08db8e45d8ffa27e6d9d29e4ede411d717bf90b7,08db8e45d8ffa27e6d9d29e4ede411d717bf90b7,"Merge pull request #89 from technion/testcases
+
+Introduces an automated test suite."
+veorq,2016-02-01 06:53:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/37b1d28428c093b4fd0996520688ef315242286a,37b1d28428c093b4fd0996520688ef315242286a,"Merge pull request #97 from lucab/lucab/public-cleaning
+
+Minor cleaning for header and doc"
+lucab,2016-01-31 14:09:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/667e48d362d2ac4d0dda7fdfd7a39c3a033e31e5,667e48d362d2ac4d0dda7fdfd7a39c3a033e31e5,"doc: reformat api doc in library header
+
+Comments embedded in argon2.h are the main source of documentation
+for library usage. This commit restores proper formatting over the
+current garbling.
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+lucab,2016-01-31 12:27:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2d0bedf505696e7bf648a55ced38512e99e4fdb3,2d0bedf505696e7bf648a55ced38512e99e4fdb3,"doc: reword the Argon2i vs. Argon2d description
+
+Add some more explanation about expected usage of argon2i/argon2d,
+merging existing suggestions from paper and IETF draft.
+
+Closes #56
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+lucab,2016-01-30 15:53:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3855c8c9157793f449f9e59008d6ede22a5bb387,3855c8c9157793f449f9e59008d6ede22a5bb387,"argon2: remove undefined functions declarations
+
+This commit removes the following functions from the public API, as
+they are never really defined:
+ * argon2di_ctx
+ * argon2ds_ctx
+ * argon2id_ctx
+
+Closes #84
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+veorq,2016-01-27 09:22:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6b66b7e82501b580d6c8acb7bb2af45bf2372fa9,6b66b7e82501b580d6c8acb7bb2af45bf2372fa9,"Merge pull request #93 from lucab/lucab/public-refactor
+
+Explicitely mark symbols to be exported in shared library"
+khovratovich,2016-01-26 14:36:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/352eca30f32f442f2a87b0bfcc0042600c41e3c6,352eca30f32f442f2a87b0bfcc0042600c41e3c6,"Merge pull request #95 from hynek/master
+
+More C99"
+hynek,2016-01-26 11:08:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4acb86e356bee4d41708aa0082dfceaaa333d983,4acb86e356bee4d41708aa0082dfceaaa333d983,"More C99
+
+Also marks test as .PHONY otherwise you'll get:
+
+```
+make: `test' is up to date.
+```
+
+when running ""make test""."
+khovratovich,2016-01-26 10:45:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f961cb97a625a1e061fbcd6097b6c635d94aa889,f961cb97a625a1e061fbcd6097b6c635d94aa889,"Merge pull request #94 from technion/secretzero
+
+Zero secrets. Fixes #90."
+technion,2016-01-26 10:13:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a4ee4fbcc4fc110d2b892b8f8fbdc2c4ceb28e6b,a4ee4fbcc4fc110d2b892b8f8fbdc2c4ceb28e6b,Document test case in README.
+technion,2016-01-26 10:08:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e6268d8668fe9fa194fbd162a8afd35c5fde6b63,e6268d8668fe9fa194fbd162a8afd35c5fde6b63,Zero secrets. Fixes #90.
+lucab,2016-01-25 21:30:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/60caea9c24b33d609803d2df0fa3bfef31fcc3a1,60caea9c24b33d609803d2df0fa3bfef31fcc3a1,"argon2: move public header out of src/
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+lucab,2016-01-25 21:22:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0654d859798326b536c9e4dee72a843ef52a5f32,0654d859798326b536c9e4dee72a843ef52a5f32,"api: implement visibility control for library symbols
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+lucab,2016-01-25 21:20:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d32933e2750ec0c2720cd926b5851290babf1439,d32933e2750ec0c2720cd926b5851290babf1439,"Run a make format to re-align code style
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+khovratovich,2016-01-25 19:18:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/631cd1d79da1de69b802a7eeb25f813d28890f3a,631cd1d79da1de69b802a7eeb25f813d28890f3a,"Merge pull request #91 from hynek/master
+
+Remove C99-style variable declaration"
+hynek,2016-01-25 08:19:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fc35e8c5aad80a39e68e586073f91392962c9d06,fc35e8c5aad80a39e68e586073f91392962c9d06,"Remove C99-style variable declaration
+
+They don't compile on older VS."
+technion,2016-01-25 04:39:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7450df88865a2218f1919ef2d14f5c56d34c9a58,7450df88865a2218f1919ef2d14f5c56d34c9a58,Introduces an automated test suite.
+khovratovich,2016-01-24 08:17:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6411c26acdda38aff9f94785787f64dc7c39cd72,6411c26acdda38aff9f94785787f64dc7c39cd72,"Merge pull request #88 from technion/formatting
+
+Remove a mix of tabs and spaces."
+khovratovich,2016-01-24 08:14:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b0d00e00f7475df55d2f5d188146db7682144d5f,b0d00e00f7475df55d2f5d188146db7682144d5f,"Fix corrected
+
+Dead code removed"
+technion,2016-01-24 04:10:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/370f1d26ae5b4f92d92d68a4e934195b77b940fe,370f1d26ae5b4f92d92d68a4e934195b77b940fe,Remove a mix of tabs and spaces.
+daniel-dinu,2016-01-23 22:31:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2598c9f08119e34f9c4c2031bc304437b1ee8d60,2598c9f08119e34f9c4c2031bc304437b1ee8d60,"Merge pull request #86 from lucab/lucab/fix-bench-genkat-renaming
+
+Fix bench and genkat after low-level API renaming"
+lucab,2016-01-23 22:15:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2297924ffb50488cb7001d5199788ce1073ffe8c,2297924ffb50488cb7001d5199788ce1073ffe8c,"Fix bench and genkat after low-level API renaming
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+daniel-dinu,2016-01-23 20:49:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/01b2c59c7406b8022226bea1973831deeec57581,01b2c59c7406b8022226bea1973831deeec57581,Renamed 'error_message' to 'argon2_error_message'
+daniel-dinu,2016-01-23 20:45:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d9b0bafe37dbb94f22748b7bc73268b073e4934c,d9b0bafe37dbb94f22748b7bc73268b073e4934c,Refactored low-level API functions to include the '_ctx' suffix
+khovratovich,2016-01-23 14:43:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6887dae4889b36df87e50623dc8035f9fcfc0663,6887dae4889b36df87e50623dc8035f9fcfc0663,"decoding and argon2_ codes unifiedd
+
+Fixed a bug that confuses the decoding error codes and argon2 error
+codes. Now decoding and encoding produce argon2 error codes"
+khovratovich,2016-01-22 14:44:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e3b38dfb86661368afb01985316e4d71377786cf,e3b38dfb86661368afb01985316e4d71377786cf,"Merge pull request #83 from P-H-C/pr/79
+
+Relaxing decoding constraints"
+khovratovich,2016-01-22 14:42:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/17fefb904eac7d9ba86834bb9d1470b0815e5d24,17fefb904eac7d9ba86834bb9d1470b0815e5d24,Function description changed
+khovratovich,2016-01-22 14:39:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cd8e4c742880801d7a778a3e7c9f785a585a335f,cd8e4c742880801d7a778a3e7c9f785a585a335f,Conflicts resolved
+khovratovich,2016-01-22 14:27:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2c1b9befc9b43633fd61db2f5f787b02fadcbc2f,2c1b9befc9b43633fd61db2f5f787b02fadcbc2f,"Merge remote-tracking branch 'refs/remotes/origin/master' into pr/79
+
+# Conflicts:
+#	src/argon2.c
+#	src/encoding.c"
+veorq,2016-01-22 09:10:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8793b5c70b380e1cbc48788ea532e11521738086,8793b5c70b380e1cbc48788ea532e11521738086,"Merge pull request #82 from technion/comment_fix
+
+Remove // style comments."
+technion,2016-01-22 01:24:53,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/49364cdd7010083b227cd823cbd8d3fe75db18a6,49364cdd7010083b227cd823cbd8d3fe75db18a6,Remove // style comments.
+veorq,2016-01-21 21:59:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f238da17e9157327550d6c09cfa3fae66e31f801,f238da17e9157327550d6c09cfa3fae66e31f801,"Merge pull request #80 from technion/constants
+
+Utilise existing constants more consistently."
+khovratovich,2016-01-21 21:34:12,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/56c177a00dd98f583ac9dda9c40dc67af93d09c7,56c177a00dd98f583ac9dda9c40dc67af93d09c7,"Decoding length clarified
+
+argon2_verify() puts hard constraints on the lengths of ad, salt, and
+output, as well as t,m,p values, which were not properly reflected in
+the description"
+technion,2016-01-21 03:04:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/660e98ae1434fc7306ed09e06108488b94930692,660e98ae1434fc7306ed09e06108488b94930692,Utilise existing constants more consistently.
+technion,2016-01-21 01:19:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6eedc8ed18297d95142e66d6cac0c1762436b26c,6eedc8ed18297d95142e66d6cac0c1762436b26c,"Implements validate_input() call from libsodium.
+Fixes #77."
+technion,2016-01-20 23:27:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2d014c571f875da0ccef3b87754db0a8c77f3692,2d014c571f875da0ccef3b87754db0a8c77f3692,Remove stray character.
+veorq,2016-01-16 14:00:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7788a0ec61ab13fabd9cf79ff53c59acb728902f,7788a0ec61ab13fabd9cf79ff53c59acb728902f,"Merge pull request #78 from Khady/patch-1
+
+Link to OCaml bindings"
+Khady,2016-01-15 21:36:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4113b4e021dc7ca0e506b49181dde6c981d9b271,4113b4e021dc7ca0e506b49181dde6c981d9b271,Link to OCaml bindings
+veorq,2016-01-15 09:40:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c09c835fe6b0baae4666eb8c23e4f0b2fd65f4ad,c09c835fe6b0baae4666eb8c23e4f0b2fd65f4ad,bindings in a-z order
+khovratovich,2016-01-14 16:28:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4e6ad323c9e46dbcf1ccb94f13f9375235128a72,4e6ad323c9e46dbcf1ccb94f13f9375235128a72,"Merge pull request #73 from seanhussey/patch-1
+
+Fixing a minor typo"
+seanhussey,2016-01-14 16:25:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3ae2acbd29d307a2eaf0b0e8be2cdfa1f29ee619,3ae2acbd29d307a2eaf0b0e8be2cdfa1f29ee619,Fixing a minor typo
+veorq,2016-01-14 04:17:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1db58fef458d7e077bac284de0246b969817aadb,1db58fef458d7e077bac284de0246b969817aadb,"Merge pull request #71 from thibaultCha/docs/readme-lua-binding
+
+docs(readme) add Lua binding"
+thibaultcha,2016-01-13 09:32:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/34ebe99c2ca0e994fc22a5b8ea3f357abff3d0ed,34ebe99c2ca0e994fc22a5b8ea3f357abff3d0ed,docs(readme) add Lua binding
+veorq,2016-01-12 17:34:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ea8545a3ad16b7be2a49288050debdba7b312b9a,ea8545a3ad16b7be2a49288050debdba7b312b9a,"Merge pull request #69 from technion/thread_exit
+
+Introduces an error state for threading failures. Fixes #64."
+veorq,2016-01-12 17:33:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cdbe53a1e0fad49170054b0a77a7ea08cf58fdcf,cdbe53a1e0fad49170054b0a77a7ea08cf58fdcf,"Merge pull request #68 from mbroz/master
+
+Fix/workaround some gcc  extra warnings"
+technion,2016-01-12 07:52:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1456057de8770f13dec60a8a93643250d5c09bc8,1456057de8770f13dec60a8a93643250d5c09bc8,"Introduces an error state for threading failures. Fixes #64.
+fill_memory_blocks() configured to return a status, this introduces checks
+for a number of a different error conditions, inlcuding calloc() and NULL
+pointer failures. These were previously ignored errors.
+Thread failures no longer call printf/exit, ensuring better support for
+higher level bindings. fill_memory_blocks() is only called in one place,
+it's return value is now checked.
+
+Implications for bindings: new error code may need dedicated handling.
+
+This patch can be tested by setting ulimit -u and running ./argon2 with a
+relevant thread count."
+mbroz,2016-01-12 07:25:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fcabf6f6590764610ae29562ff3835f44ff7d3ff,fcabf6f6590764610ae29562ff3835f44ff7d3ff,"Fix double declaration of fill_segment.
+
+Include headers the same way for reference and optimized version.
+
+Fix missing prototype for argon2_compare."
+mbroz,2016-01-12 07:04:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2c6d33ef461df0dc2150d715574156d37c336e12,2c6d33ef461df0dc2150d715574156d37c336e12,"Explicitly cast const pointer assignment.
+
+Seen with gcc -Wcast-qual option."
+sneves,2016-01-11 14:20:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/21464802607494eb3b5f378e209a5cf69fa962ba,21464802607494eb3b5f378e209a5cf69fa962ba,"Merge pull request #67 from lucab/lucab/error-index-range
+
+argon2: add negative index check to error_message"
+lucab,2016-01-11 11:19:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8a21f506df937404c7619cdc47a56e7c29351d51,8a21f506df937404c7619cdc47a56e7c29351d51,"argon2: add negative index check to error_message
+
+This adds a check for negative index values, preventing an index
+out-of-bounds access. Closes #66
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+veorq,2016-01-11 06:41:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c6ff7efa1c0d88f058db10efc25df4b491acb709,c6ff7efa1c0d88f058db10efc25df4b491acb709,"Merge pull request #65 from tvdburgt/go-bindings
+
+Add Go bindings link to README"
+veorq,2016-01-09 21:24:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dc11c31cd62db177ad807f7e92498918f0ed031a,dc11c31cd62db177ad807f7e92498918f0ed031a,"Merge pull request #63 from phxql/jvm-binding
+
+Added binding for the JVM."
+phxql,2016-01-09 20:13:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6b00705c206124c51c57415ee03c35ca73af35af,6b00705c206124c51c57415ee03c35ca73af35af,Added binding for the JVM.
+veorq,2016-01-09 17:16:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9c141611ec3b3294bfcad86ebc928f9cdf19cba5,9c141611ec3b3294bfcad86ebc928f9cdf19cba5,adding soname
+veorq,2016-01-09 17:02:24,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c3c32a8010cc7968b23a2fc37b9fa3e9eb9f9cd3,c3c32a8010cc7968b23a2fc37b9fa3e9eb9f9cd3,"Merge pull request #62 from quininer/patch-1
+
+Link to Rust bindings"
+quininer,2016-01-09 11:15:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5edcdc79573bc1c5a8fdf5f84645efee17cabdf7,5edcdc79573bc1c5a8fdf5f84645efee17cabdf7,"Link to Rust bindings
+
+:)"
+veorq,2016-01-09 07:04:34,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c6a54e986a1c7b376f35924625ab1d5e8a2a54b1,c6a54e986a1c7b376f35924625ab1d5e8a2a54b1,"Merge pull request #57 from ocharles/patch-1
+
+Link to Haskell bindings"
+veorq,2016-01-09 07:04:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e2b9ee5c3c9626d41cd0653be20a8c9f2d103cf6,e2b9ee5c3c9626d41cd0653be20a8c9f2d103cf6,"Merge pull request #58 from dessant/patch-2
+
+Add argon2_cffi to the list of bindings"
+veorq,2016-01-09 07:02:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3105b25a1a63bee7f3d969977f3bca673889551f,3105b25a1a63bee7f3d969977f3bca673889551f,"Merge pull request #60 from lucab/lucab/makefile-flags
+
+makefile: preserve external flags"
+lucab,2016-01-08 23:11:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dfec9f5e3c75b022184c82f6a8c4a8507bbbe95b,dfec9f5e3c75b022184c82f6a8c4a8507bbbe95b,"makefile: preserve external flags
+
+This commit alters Makefile to honour existing CFLAGS and LDFLAGS
+when building libraries and binaries.
+Those flags are typically used for system-wide compilation tweaks.
+
+Signed-off-by: Luca Bruno <lucab@debian.org>"
+dessant,2016-01-08 16:07:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cab1f854981d99565ac85b4526b37cdc20ca0ed6,cab1f854981d99565ac85b4526b37cdc20ca0ed6,Add argon2_cffi to the list of bindings
+ocharles,2016-01-08 15:27:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5e0ebfb27d2df8afaab1adfbb7d074c3895b9783,5e0ebfb27d2df8afaab1adfbb7d074c3895b9783,Link to Haskell bindings
+sneves,2015-12-30 14:34:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/421dafd2a8af5cbb215e16da5953663eb101d139,421dafd2a8af5cbb215e16da5953663eb101d139,"Merge pull request #51 from jedisct1/fix-mcost-comment
+
+Memory usage is m_cost KiB, not 2^m_cost KiB"
+sneves,2015-12-30 14:30:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/384794cd0aa73569e1518bc591cd461301fcfe3c,384794cd0aa73569e1518bc591cd461301fcfe3c,"Merge pull request #52 from jedisct1/fix-nothreads-comment
+
+Fix comment - FillSegment() was renamed fill_segment()"
+sneves,2015-12-30 14:29:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1fe686b2927a1be1402c60e2cdce01209757f52b,1fe686b2927a1be1402c60e2cdce01209757f52b,"Merge pull request #50 from jedisct1/null-dereference
+
+Don't dereference a pointer before checking that it's not NULL"
+jedisct1,2015-12-30 14:03:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6fd2d509bb8494c8e4e91e3e0f048b9c608810a4,6fd2d509bb8494c8e4e91e3e0f048b9c608810a4,Fix comment - FillSegment() was renamed fill_segment()
+jedisct1,2015-12-30 13:58:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8e0ebfba2812c326a08b9e9d551110466a4b61cf,8e0ebfba2812c326a08b9e9d551110466a4b61cf,Don't dereference a pointer before checking that it's not NULL
+jedisct1,2015-12-30 13:56:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/96dee665d70e12c1fa2b7f391b2abc8a11ed445f,96dee665d70e12c1fa2b7f391b2abc8a11ed445f,"Memory usage is m_cost KiB, not 2^m_cost KiB"
+veorq,2015-12-26 09:48:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cee4402b10ddf3abca7e65c8b0c990f8f85fdd3e,cee4402b10ddf3abca7e65c8b0c990f8f85fdd3e,argon2_core exposed in argon2.h
+veorq,2015-12-24 08:54:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/69cb15836e31c65edb515f94da0ee31e88705189,69cb15836e31c65edb515f94da0ee31e88705189,docstring
+veorq,2015-12-24 08:53:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fd5684ee8ef9aa9c2673896dc9362320bb3ef5a9,fd5684ee8ef9aa9c2673896dc9362320bb3ef5a9,verify_i added
+veorq,2015-12-23 08:12:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/335b5eb77aa0de62dccc934578664c8b273a8360,335b5eb77aa0de62dccc934578664c8b273a8360,"Merge pull request #48 from ranisalt/patch-1
+
+Fix bindings links"
+ranisalt,2015-12-22 16:30:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dd068814959e74f6d767e270bf202e989d6620c3,dd068814959e74f6d767e270bf202e989d6620c3,Fix bindings links
+veorq,2015-12-22 07:22:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c7f65b20c4554ea436f207e810a13b56fb30c410,c7f65b20c4554ea436f207e810a13b56fb30c410,"bindings out, cited in readme"
+sneves,2015-12-10 11:35:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4fe0d8cda37691228dd5a96a310be57369403a4b,4fe0d8cda37691228dd5a96a310be57369403a4b,avoid msvc warning
+sneves,2015-12-10 11:23:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7ec194edabcce8c967308cbe1914e9f2c0b26bb0,7ec194edabcce8c967308cbe1914e9f2c0b26bb0,adjust intrinsics header inclusions
+sneves,2015-12-09 20:37:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/567c22d97bf137cf4aeca99decb12d946d1799c7,567c22d97bf137cf4aeca99decb12d946d1799c7,Fix C99 declaration
+veorq,2015-12-09 08:32:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7f0dbc3efa0d07b338c3a40260aef92f3b619a00,7f0dbc3efa0d07b338c3a40260aef92f3b619a00,kat mcost set to 32
+veorq,2015-12-09 06:46:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fc2198590886152bc695c836f370eb4487793938,fc2198590886152bc695c836f370eb4487793938,verifies m_cost >= #lanes
+veorq,2015-12-06 08:11:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bbe7709e262e950fa9175180b0c295841d052702,bbe7709e262e950fa9175180b0c295841d052702,changelog added
+veorq,2015-12-04 23:19:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c9514ce9769d945923feeadabcd712c061e2c5a7,c9514ce9769d945923feeadabcd712c061e2c5a7,minor cosmetic tweaks
+sneves,2015-12-04 18:53:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e04ff67406999abc54c21d0dfe6f3247c28d294f,e04ff67406999abc54c21d0dfe6f3247c28d294f,close #41
+sneves,2015-12-04 13:31:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cf1883ae5ce867cf66674cd2a34309c50fb80ca8,cf1883ae5ce867cf66674cd2a34309c50fb80ca8,close #37
+veorq,2015-12-03 11:31:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ee10969890192e4625bd7a705dcd04d0855e7855,ee10969890192e4625bd7a705dcd04d0855e7855,"Merge pull request #40 from flamewow/dev
+
+Dev"
+flamewow,2015-12-02 08:34:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/db69b93387a73bac5e724f50e28233d950625b4c,db69b93387a73bac5e724f50e28233d950625b4c,removed debug
+flamewow,2015-12-02 08:32:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f7049a9ec33e19b2f1934609a193ef813bd27e16,f7049a9ec33e19b2f1934609a193ef813bd27e16,removed debug outputs
+flamewow,2015-12-02 08:26:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/821ce90339ade2145c83e112786efb5f43d876de,821ce90339ade2145c83e112786efb5f43d876de,fixes for Python 3.5 compatibility
+flamewow,2015-12-02 07:58:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eab28588ac8e614e1bc301bb4fb22c3e53019c5e,eab28588ac8e614e1bc301bb4fb22c3e53019c5e,"added some checks, renamed hash function"
+flamewow,2015-12-02 06:52:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9099d2da6e80881204b72705556937eba4a4a816,9099d2da6e80881204b72705556937eba4a4a816,some refactor around argon_type and raising exception
+flamewow,2015-11-29 11:25:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5b54b1b79ec00bf237fd75a6ddf7d304bbc3bec3,5b54b1b79ec00bf237fd75a6ddf7d304bbc3bec3,small refactor of error codes
+flamewow,2015-11-29 11:18:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/699e981069dd824793a8de5b038ddfa1bc926252,699e981069dd824793a8de5b038ddfa1bc926252,fixed remarks
+flamewow,2015-11-28 14:54:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7a1f5184dd92fca6a8932203904cff64196e343f,7a1f5184dd92fca6a8932203904cff64196e343f,refactoring C code
+flamewow,2015-11-28 14:49:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/02276648b9f595f9f571745aa94e6e9fd4c7172a,02276648b9f595f9f571745aa94e6e9fd4c7172a,added endline
+flamewow,2015-11-28 14:48:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c1130e15c8dc5993f062e34a2410e9127a53499b,c1130e15c8dc5993f062e34a2410e9127a53499b,refactored C code
+flamewow,2015-11-28 14:45:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2f86dff0d19d395a391f37a1b2257d6c4ec20008,2f86dff0d19d395a391f37a1b2257d6c4ec20008,created specific function for launching from python code
+flamewow,2015-11-28 14:33:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8ec787fb320884fdcd8e380cfda4d924ff89bd4e,8ec787fb320884fdcd8e380cfda4d924ff89bd4e,hashed worksgit st!
+flamewow,2015-11-28 14:10:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/54b17a12b18e218c7907d1d2172d445ab950e846,54b17a12b18e218c7907d1d2172d445ab950e846,making python implementation
+daniel-dinu,2015-11-26 11:47:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/662bab93d3f0ed01c7e8ae6f1d764c2a2ddec22b,662bab93d3f0ed01c7e8ae6f1d764c2a2ddec22b,Removed unused variables from the Makefile; Added genkat to ignore list
+sneves,2015-11-26 00:28:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3a8c172149e992339088c4d5543acbd7b66d2a6f,3a8c172149e992339088c4d5543acbd7b66d2a6f,"Merge pull request #39 from tigertoes/master
+
+Removing hijack of $CC"
+sneves,2015-11-16 02:18:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0826cd8ea004c828d6563c88ac61af89300d3ea7,0826cd8ea004c828d6563c88ac61af89300d3ea7,fix more msvc warnings
+sneves,2015-11-16 01:48:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5eebe9a2bccc07782fba041fb5431781862dbeb0,5eebe9a2bccc07782fba041fb5431781862dbeb0,fix typo in declaration
+sneves,2015-11-16 01:26:57,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0a9be9bcf7f156bcb48e9da7b46f1ed25ed55f85,0a9be9bcf7f156bcb48e9da7b46f1ed25ed55f85,address issue #37
+tigertoes,2015-11-15 00:13:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/72a14cf0ed835d145d52e0860d79fde57cb6de1b,72a14cf0ed835d145d52e0860d79fde57cb6de1b,Removing hijack of $CC
+sneves,2015-11-12 01:17:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5e194cbadd72669ed634e2f92ac7d512c0151b93,5e194cbadd72669ed634e2f92ac7d512c0151b93,"Merge pull request #36 from technion/useless_asign
+
+Remove assignment which is also made on line 202."
+technion,2015-11-12 00:56:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a2463d4a2d4f315caebee8aa8ab5c69fc86a0e27,a2463d4a2d4f315caebee8aa8ab5c69fc86a0e27,Remove assignment which is also made on line 202.
+veorq,2015-11-09 11:11:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1299c49839a51d5c65ba40c9d9017b99bbcaf199,1299c49839a51d5c65ba40c9d9017b99bbcaf199,"Merge pull request #34 from UniQP/simplifyCondition
+
+Simplify condition."
+veorq,2015-11-09 11:10:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/aed8bc1b9447ff760b88468655f6ce5771fba961,aed8bc1b9447ff760b88468655f6ce5771fba961,"Merge pull request #33 from UniQP/emptyStatement
+
+Fix warnings about empty statements."
+veorq,2015-11-09 11:09:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/82420db9f048013dec0802adfc0a69ab60bcfa7f,82420db9f048013dec0802adfc0a69ab60bcfa7f,"Merge pull request #35 from UniQP/static
+
+Declare function static."
+UniQP,2015-11-09 09:51:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/36301de37b4a851a3cf826c0ef3dcf86c93111fb,36301de37b4a851a3cf826c0ef3dcf86c93111fb,Declare function static.
+UniQP,2015-11-09 09:47:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3b8547ec1ed434bed0f1d3a78d6d64ecdd7e44ae,3b8547ec1ed434bed0f1d3a78d6d64ecdd7e44ae,"Simplify condition.
+
+If ARGON2_MIN_PWD_LENGTH is 0, the latter condition will always fail."
+UniQP,2015-11-09 09:46:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7162d82952f2c00ac0420c2a3d9497f0cf29377c,7162d82952f2c00ac0420c2a3d9497f0cf29377c,Fix warnings about empty statements.
+veorq,2015-11-08 13:54:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0b96bcef9e4e973641d9f2e85cbf054e04560843,0b96bcef9e4e973641d9f2e85cbf054e04560843,correcting encoded len
+veorq,2015-11-08 12:00:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2f4fddafbeb029505d2a6084d6cb0f92ad16be99,2f4fddafbeb029505d2a6084d6cb0f92ad16be99,"Merge pull request #32 from technion/decode_checks
+
+Mange decoding fails."
+veorq,2015-11-08 11:46:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c03fd55a6a43691e747aab074f5a5339b0196ffa,c03fd55a6a43691e747aab074f5a5339b0196ffa,warning about encoded len
+veorq,2015-11-08 08:22:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b43fec6c9696a0df746229a04638dcaee0dde340,b43fec6c9696a0df746229a04638dcaee0dde340,"Merge pull request #30 from technion/encode_len
+
+Document process to identify required encoding lengths."
+technion,2015-11-08 06:07:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b677a125332f31381f4445017b54fec6444b117e,b677a125332f31381f4445017b54fec6444b117e,Mange decoding fails.
+technion,2015-11-08 00:11:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5ffc9ecaa3dd9550ecb02271023c65713a24f8ee,5ffc9ecaa3dd9550ecb02271023c65713a24f8ee,Document process to identify required encoding lengths.
+sneves,2015-11-07 23:54:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/402beb0e9628436f4427c9ad06597bbd1d2d5a54,402beb0e9628436f4427c9ad06597bbd1d2d5a54,"Merge pull request #27 from technion/malloc_checks
+
+Paranoid return checks on malloc."
+sneves,2015-11-07 23:51:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/53a1420f958ce0cd6fa1913d4cf94c99826320fd,53a1420f958ce0cd6fa1913d4cf94c99826320fd,"Merge pull request #29 from technion/encoding_h
+
+Prevent duplicate encoding includes."
+technion,2015-11-07 23:37:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a2a0001fe244adee6bee97b7616187b79d28266b,a2a0001fe244adee6bee97b7616187b79d28266b,Prevent duplicate encoding includes.
+technion,2015-11-07 21:22:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ff226ca6d111e36bccd7a05c0d235f5cfa76f905,ff226ca6d111e36bccd7a05c0d235f5cfa76f905,Ensure allocated memory is freed on malloc fail.
+sneves,2015-11-07 15:10:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/745046bff4863a8e4cc21c51736e3fa186ddac9a,745046bff4863a8e4cc21c51736e3fa186ddac9a,formatting
+sneves,2015-11-07 15:09:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4922d9bfe856acd936fb481d8630d0f1f80330fb,4922d9bfe856acd936fb481d8630d0f1f80330fb,compiler warnings
+sneves,2015-11-07 15:06:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4d94a3c29a4ac9eebccd474dd42f43e3fb4d837e,4d94a3c29a4ac9eebccd474dd42f43e3fb4d837e,"Merge pull request #26 from technion/buildfix
+
+Fails to build - variable names."
+technion,2015-11-07 12:11:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4bb99001c3a19c9b533ba8fd9da0de08fac80e45,4bb99001c3a19c9b533ba8fd9da0de08fac80e45,Paranoid return checks on malloc.
+technion,2015-11-07 12:13:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3db987fddfa289403dd84d1bc698c3da95b0463b,3db987fddfa289403dd84d1bc698c3da95b0463b,Fails to build - variable names.
+veorq,2015-11-07 07:15:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7a869a9e3d23b16627306d6a04bd914f2e10a85f,7a869a9e3d23b16627306d6a04bd914f2e10a85f,"Merge pull request #25 from paragonie-scott/patch-1
+
+Avoid memcmp() for hash verification"
+paragonie-scott,2015-11-07 00:30:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/98649d8de9b969e629058985f532fa553ab4e3dc,98649d8de9b969e629058985f532fa553ab4e3dc,"Update argon2.c
+
+Borrow from `sodium_memcmp()` instead, which is faster than `sodium_compare()`."
+paragonie-scott,2015-11-07 00:13:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1e685732574f57f8632f20dc9c705d1cba138793,1e685732574f57f8632f20dc9c705d1cba138793,"Avoid memcmp() for hash verification
+
+https://cryptocoding.net/index.php/Coding_rules#Problem"
+sneves,2015-11-06 20:29:35,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5118ab9ce33a43af05c0132ef400fdf11fa36944,5118ab9ce33a43af05c0132ef400fdf11fa36944,"Merge pull request #24 from angt/patch-2
+
+fread() return a size_t"
+angt,2015-11-06 20:14:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/074f3f65663883326e52ffc6f081f1c2637bcedd,074f3f65663883326e52ffc6f081f1c2637bcedd,"fread() return a size_t
+
+This fix a compilation error on my linux box"
+veorq,2015-11-06 16:10:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b10612d6819d16cb181ad8264a7d8246819a23c9,b10612d6819d16cb181ad8264a7d8246819a23c9,debug left
+veorq,2015-11-06 16:04:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0396f76008df705d166cfb13d448eb6807feb446,0396f76008df705d166cfb13d448eb6807feb446,readme updated
+veorq,2015-11-06 15:48:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/45590c26421fc0e9444768d1fc48f1eb26ced979,45590c26421fc0e9444768d1fc48f1eb26ced979,reading from stdin
+veorq,2015-11-06 12:53:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d100a625d518551c2f52e8f9e9939f81eec4f9ec,d100a625d518551c2f52e8f9e9939f81eec4f9ec,verification
+veorq,2015-11-06 11:37:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/46cf09b9cd0bfd57782ee7f103ba70c3cad1e54d,46cf09b9cd0bfd57782ee7f103ba70c3cad1e54d,_encoded and _raw functions
+veorq,2015-11-06 10:42:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/476a351cdf1076af5dc4d459bb7f39585827f9de,476a351cdf1076af5dc4d459bb7f39585827f9de,"hash_argon API includes encoding, used in run()"
+veorq,2015-11-06 09:41:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/97db169ce841e11723b20609ee52ba6da183e47f,97db169ce841e11723b20609ee52ba6da183e47f,modified API
+veorq,2015-11-06 08:08:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1e7ec6c26b29e8314abbffad3cdc10d5b1316a4a,1e7ec6c26b29e8314abbffad3cdc10d5b1316a4a,typoe
+veorq,2015-11-05 09:07:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ce371bd5342b7da0120766781a4f5ebb5846dbae,ce371bd5342b7da0120766781a4f5ebb5846dbae,"Merge pull request #21 from 0-wiz-0/master
+
+Add NetBSD support."
+0-wiz-0,2015-11-05 08:52:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e84368319ff84fd8cddf511ff4d76224a9ea890a,e84368319ff84fd8cddf511ff4d76224a9ea890a,Add NetBSD support.
+0-wiz-0,2015-11-05 08:51:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d0a05010482ec15f99516b7103fe587ce00316ce,d0a05010482ec15f99516b7103fe587ce00316ce,"Fix unportable test(1) operator.
+
+Only bash(1) supports '==' as comparison operator, '=' is the standard."
+khovratovich,2015-11-05 06:58:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9c2f28bb30625b6a9a215bf7a83c4372a01eef2a,9c2f28bb30625b6a9a215bf7a83c4372a01eef2a,"Small typo in spec, page 5"
+veorq,2015-11-05 06:24:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b6e42a19884cff587af0fb90d50f0726a2acaad8,b6e42a19884cff587af0fb90d50f0726a2acaad8,fixed default //ism
+veorq,2015-11-04 12:51:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a5993bc689a7003a17fefd62ca125e0ca075db0d,a5993bc689a7003a17fefd62ca125e0ca075db0d,missing (c) header
+veorq,2015-11-04 08:17:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/91061b23e1cd6b2768ca42277b752cf6a3273e48,91061b23e1cd6b2768ca42277b752cf6a3273e48,fix example output
+khovratovich,2015-11-03 18:48:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/87b1e8ff198cb0e56a96ce29fc674589e5979ef2,87b1e8ff198cb0e56a96ce29fc674589e5979ef2,Maximum lane number adjustment
+sneves,2015-11-03 09:52:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b2de4e9369b98d8a0e430cfb8d7b9cb642b2e668,b2de4e9369b98d8a0e430cfb8d7b9cb642b2e668,signed/unsigned mismatch
+veorq,2015-11-03 09:04:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7b7f509614b5c642e5d96e7bb22b9fed936bfb6a,7b7f509614b5c642e5d96e7bb22b9fed936bfb6a,"Merge pull request #16 from stargrave/master
+
+Make compilation working out of box on FreeBSD"
+veorq,2015-11-03 07:44:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/77f55bde0d4eeadce1a890a82e4cd22b03652455,77f55bde0d4eeadce1a890a82e4cd22b03652455,"Merge pull request #15 from stargrave/master
+
+Add missing -d parameter to the list of possible arguments"
+veorq,2015-11-03 07:39:46,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eddea055e42d87b59ae6c271fd2f2a647ef78426,eddea055e42d87b59ae6c271fd2f2a647ef78426,rm ref to encoding.h
+sneves,2015-11-02 20:03:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ba3639f36adc7b786729a83c83fada53ecfa823f,ba3639f36adc7b786729a83c83fada53ecfa823f,"Merge pull request #13 from jedisct1/openbsd-compat
+
+Now compiles and works out of the box on OpenBSD"
+jedisct1,2015-11-02 18:06:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fc81a7dd8ef9b87c77988d70d66cf86440bd5df2,fc81a7dd8ef9b87c77988d70d66cf86440bd5df2,Now compiles and works out of the box on OpenBSD
+veorq,2015-11-02 18:00:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/32e5a5dcb69698b4c9e25d0c192887d2e00fcb1d,32e5a5dcb69698b4c9e25d0c192887d2e00fcb1d,formatting
+veorq,2015-11-02 17:59:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d96a695f95f86140c77a4ead8b2dbfe5421146da,d96a695f95f86140c77a4ead8b2dbfe5421146da,"Merge pull request #12 from jedisct1/fix-aliasing
+
+Fix violation of pointer aliasing rules"
+jedisct1,2015-11-02 17:52:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6876f443f0559b280c4cd1bd2d1f03b0ca21ebf9,6876f443f0559b280c4cd1bd2d1f03b0ca21ebf9,"Fix violation of pointer aliasing rules
+instance->memory cannot be a uint8_t pointer and and a block
+pointer at the same time."
+veorq,2015-11-02 17:51:53,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5a1636b870813969f402e55f1a4614947c775db0,5a1636b870813969f402e55f1a4614947c775db0,"Merge pull request #11 from jedisct1/c89
+
+Fix compilation in c89 mode"
+veorq,2015-11-02 17:51:04,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/751f7e1e75e0665baf8cbfe6b77bb97d6bee6f2a,751f7e1e75e0665baf8cbfe6b77bb97d6bee6f2a,"Merge pull request #10 from jedisct1/openbsd
+
+Fix secure_wipe_memory() on OpenBSD"
+veorq,2015-11-02 17:39:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3656cb8281760daab6c329d29b371202ea3da34d,3656cb8281760daab6c329d29b371202ea3da34d,rm disclaimer
+jedisct1,2015-11-02 17:32:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/76f0c954622655ff72f73fe6e4a9c430a8473d1f,76f0c954622655ff72f73fe6e4a9c430a8473d1f,"Fix compilation in c89 mode
+The package is explicitly compiled in c89 compatiblity mode,
+but uses a declaration that requires c99 (which breaks at least
+on OpenBSD)"
+jedisct1,2015-11-02 17:27:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1cc1002aaa0685219b04bba0d5dab599a9eb505a,1cc1002aaa0685219b04bba0d5dab599a9eb505a,Fix secure_wipe_memory9) on OpenBSD
+veorq,2015-11-02 16:05:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4085d75c1eae6e5792a9912e88c26e7fb198d04a,4085d75c1eae6e5792a9912e88c26e7fb198d04a,"showing hex hash, not encoding"
+khovratovich,2015-11-02 11:02:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/20daf837b7f35c3b7711a662d6a6c57ce33f83bb,20daf837b7f35c3b7711a662d6a6c57ce33f83bb,Wiping temporary blockhas_bytes variable
+khovratovich,2015-11-02 10:46:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d01ab0d32a99c1af842d3baa9ab5fb93021e4d00,d01ab0d32a99c1af842d3baa9ab5fb93021e4d00,goto removed
+sneves,2015-11-02 08:51:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ca97759af2eca776a444ea9195024927ddba0cec,ca97759af2eca776a444ea9195024927ddba0cec,size reduction in fill_block
+veorq,2015-11-02 08:53:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d0dc49f3dc81534e18bf4ca603a10bfcbcf64f17,d0dc49f3dc81534e18bf4ca603a10bfcbcf64f17,"rm encoding.h, move to argon2.h"
+sneves,2015-11-02 08:10:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6aecad758eaaab03545a31f13a259cc4fc0dcd65,6aecad758eaaab03545a31f13a259cc4fc0dcd65,only require sse2 for opt
+veorq,2015-11-01 22:56:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ed4825f69bc0bba85d7f500f53008eda6cdc8e5d,ed4825f69bc0bba85d7f500f53008eda6cdc8e5d,"-mavx back, clang fail otherwise"
+sneves,2015-11-01 15:02:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3a0009435c91b75f83424928b40e71dd2b79bf9b,3a0009435c91b75f83424928b40e71dd2b79bf9b,more alignment
+sneves,2015-11-01 10:30:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ed8020db9f2233ddd3b9a3c00bcfa2c5e4cfc7b9,ed8020db9f2233ddd3b9a3c00bcfa2c5e4cfc7b9,fix potential alignment segfault
+veorq,2015-10-31 20:09:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cd10d7a9aea024450a13a41dfe82db7ccb7415a7,cd10d7a9aea024450a13a41dfe82db7ccb7415a7,defaulting to 1 lane/thread
+veorq,2015-10-30 08:58:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4f97b93fbff9e8dbaaf640d3dd4dd46aac26bd95,4f97b93fbff9e8dbaaf640d3dd4dd46aac26bd95,missing (...)
+veorq,2015-10-30 08:58:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5efe2f5aa222758e5bb1f64d04ff610f6a162e62,5efe2f5aa222758e5bb1f64d04ff610f6a162e62,make bench
+veorq,2015-10-30 07:55:53,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4851bb39d8e95a1aaaefefdc0d24794ce156f8e3,4851bb39d8e95a1aaaefefdc0d24794ce156f8e3,consistent t/m ordering
+veorq,2015-10-30 07:00:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0c706f066afd8f2f3140ac26ec21dcc5e83939a3,0c706f066afd8f2f3140ac26ec21dcc5e83939a3,"better make dist, formatting"
+sneves,2015-10-29 23:47:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b43ec98ffc66f6b33de41113870efed4b73b87bf,b43ec98ffc66f6b33de41113870efed4b73b87bf,remove brg_endian.h
+sneves,2015-10-29 22:57:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/da8aa271f90cefc88ffbab640bfb8ad0f2db9c58,da8aa271f90cefc88ffbab640bfb8ad0f2db9c58,update example
+veorq,2015-10-29 19:44:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4bd1a653bb2611f0ca85f1a042ddbf13548756df,4bd1a653bb2611f0ca85f1a042ddbf13548756df,"update, add usage and example"
+veorq,2015-10-29 10:25:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6ae073ae0a8d4463805652e9764ebc8bc5bc3cc4,6ae073ae0a8d4463805652e9764ebc8bc5bc3cc4,make constants constants
+sneves,2015-10-28 23:04:00,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/81b0481d763778c4a372c36e6d6970e9cae6c455,81b0481d763778c4a372c36e6d6970e9cae6c455,MinGW support
+sneves,2015-10-28 22:44:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b9adf03195506a7472d3273bb84623b222aa4895,b9adf03195506a7472d3273bb84623b222aa4895,remove stray kat declaration
+veorq,2015-10-28 20:00:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9b0e5f125644635e6e0507d02ad8ccf041502133,9b0e5f125644635e6e0507d02ad8ccf041502133,rm ref to kat file
+veorq,2015-10-28 15:53:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3fe7af3cb21ba0c56ab6a8e3225a57329c9869fa,3fe7af3cb21ba0c56ab6a8e3225a57329c9869fa,succinct test output
+veorq,2015-10-28 15:42:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/46918ced874adfcf5e1aadef65bd1b131ec50737,46918ced874adfcf5e1aadef65bd1b131ec50737,simpler usage and command-line
+veorq,2015-10-28 12:39:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b90a8bf16432b4b5d5b698baac931bc93abd93e0,b90a8bf16432b4b5d5b698baac931bc93abd93e0,showing wall exec time only
+veorq,2015-10-28 10:45:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/53a52a9b0508a7c1a267cba6b8ad214aaed460ce,53a52a9b0508a7c1a267cba6b8ad214aaed460ce,fixed usage()
+veorq,2015-10-28 09:47:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e2ca2634aab8c39bfcfe69b07a20e0560e35ef40,e2ca2634aab8c39bfcfe69b07a20e0560e35ef40,IP clarifications
+veorq,2015-10-28 09:25:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/99fc5c260267d3e1e86a9bb107b80e0a798edee8,99fc5c260267d3e1e86a9bb107b80e0a798edee8,updates and IP
+sneves,2015-10-28 02:53:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/40b12fd21f2ed6a2efcc6f4ee01a914a57bc69c7,40b12fd21f2ed6a2efcc6f4ee01a914a57bc69c7,endian neutral implementation
+sneves,2015-10-28 02:53:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cc386d2e716c9a1fb8a397f2feb0c532f109c461,cc386d2e716c9a1fb8a397f2feb0c532f109c461,appease msvc
+sneves,2015-10-27 21:54:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/32f50d15b163d9794216fb3046dc5a4e1c635e6e,32f50d15b163d9794216fb3046dc5a4e1c635e6e,remove unused headers
+sneves,2015-10-27 21:52:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/89f65434540dccc7aa523ab15c6e7aab84bbe51d,89f65434540dccc7aa523ab15c6e7aab84bbe51d,icc doesn't know x86intrin.h
+sneves,2015-10-27 21:35:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b0117271a793d294c974b6a566cd270d493cfc53,b0117271a793d294c974b6a566cd270d493cfc53,blamka macro hygiene
+veorq,2015-10-27 20:38:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b0a9a44ad44d6d5259eed87d4de3fab176aeba2a,b0a9a44ad44d6d5259eed87d4de3fab176aeba2a,formatting
+veorq,2015-10-27 20:35:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/36053c12bb9a4a51b0033230c03586f9d21e4366,36053c12bb9a4a51b0033230c03586f9d21e4366,"test script in kats, make test to run"
+veorq,2015-10-27 19:37:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d54437354eb6f345789ca9425eaa149c56cf5319,d54437354eb6f345789ca9425eaa149c56cf5319,consistency
+veorq,2015-10-27 19:25:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6d10a2b57e33e068b840ee022ecf9c89d63201e4,6d10a2b57e33e068b840ee022ecf9c89d63201e4,SI units
+sneves,2015-10-27 19:12:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c0d3989b5d4218a144813b2fb74268e1f219eeb7,c0d3989b5d4218a144813b2fb74268e1f219eeb7,move allocation outside of loop
+sneves,2015-10-27 18:50:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5acd87cb5eac53388473e18a5de619a3bab79df3,5acd87cb5eac53388473e18a5de619a3bab79df3,cleanup blake2 code
+sneves,2015-10-27 16:58:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6da7e8a812379a38c5b954daa32d10d4480ee56f,6da7e8a812379a38c5b954daa32d10d4480ee56f,check return values from `make`
+sneves,2015-10-27 16:40:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/68c7ed26203e6404287c412e879d2ebf79fcdfea,68c7ed26203e6404287c412e879d2ebf79fcdfea,some more error checking
+veorq,2015-10-27 07:10:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/29aeeaea00804bed775f877ecb19da5011be5a4c,29aeeaea00804bed775f877ecb19da5011be5a4c,"memory in KiB, added tabs"
+veorq,2015-10-27 06:47:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b949f20abf1b98326d7ea74f81bba68afb4333bb,b949f20abf1b98326d7ea74f81bba68afb4333bb,"simplified testing, make test"
+veorq,2015-10-27 06:25:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/793a29d4283f568f0ff6552e2602da35c01ee1fb,793a29d4283f568f0ff6552e2602da35c01ee1fb,"s/main/run, makefile tweaks"
+veorq,2015-10-27 06:10:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a817df8b537500f7e5222a9c36363ac222698d39,a817df8b537500f7e5222a9c36363ac222698d39,"single genkat.c/h, ditched kat.c/h"
+veorq,2015-10-27 05:36:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/86f9b7e252713e69b40e3f9c6f484dd7b666c093,86f9b7e252713e69b40e3f9c6f484dd7b666c093,Merge branch 'c89'
+sneves,2015-10-27 00:49:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/614733bb9f38a37ed813bf2c9bca7de3f6e0a1ea,614733bb9f38a37ed813bf2c9bca7de3f6e0a1ea,branch different utilities into different files
+sneves,2015-10-27 00:26:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e0fa49a7a256430cd81b4716ec992e3935ddef5f,e0fa49a7a256430cd81b4716ec992e3935ddef5f,"more snake_case, switch to C89, flags as uint32_t"
+veorq,2015-10-26 15:55:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8726a0448ccda77fe9f65755193fcd01182770f9,8726a0448ccda77fe9f65755193fcd01182770f9,error msg consistency
+sneves,2015-10-26 12:12:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d000ced1ac014eaa1fdccdc764273bf2088ef202,d000ced1ac014eaa1fdccdc764273bf2088ef202,unnecessary externs
+khovratovich,2015-10-26 12:08:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7b0c3541180f956ece4709e36cb74e1d4e4e8307,7b0c3541180f956ece4709e36cb74e1d4e4e8307,Some information printed before run()
+sneves,2015-10-26 11:52:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fb3ac98629a2eb2a6dc210f39cdd73cda82686dd,fb3ac98629a2eb2a6dc210f39cdd73cda82686dd,standard nitpickery
+khovratovich,2015-10-26 11:43:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/50a3cbd35d7f7d0ebe13faa09725c913d871a328,50a3cbd35d7f7d0ebe13faa09725c913d871a328,Added error message printing
+khovratovich,2015-10-26 11:17:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f82d82cf5ea7f18c00dde830e8fc1b64bee9235d,f82d82cf5ea7f18c00dde830e8fc1b64bee9235d,ARGON2_32BIT_LIMIT
+khovratovich,2015-10-26 11:15:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fa5e9dbe255ac40c1c1f5d8d3f0ac8360a2447ef,fa5e9dbe255ac40c1c1f5d8d3f0ac8360a2447ef,Constant for 32-bit memory limit
+veorq,2015-10-26 09:39:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f7a19c3dabb2593abe1371e8d921bacf23113c66,f7a19c3dabb2593abe1371e8d921bacf23113c66,typo
+veorq,2015-10-26 09:36:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/461c0d26b6d0fcb64fc8d8f10e271947e534c9f4,461c0d26b6d0fcb64fc8d8f10e271947e534c9f4,typo
+veorq,2015-10-26 09:30:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/dedd734f57196fbf6e927d1128b0638ab0f3da0c,dedd734f57196fbf6e927d1128b0638ab0f3da0c,compile instructions
+veorq,2015-10-26 09:23:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e4b34eff0e64ae7b113719e17c4f1215fe5ea895,e4b34eff0e64ae7b113719e17c4f1215fe5ea895,minor tweaks
+veorq,2015-10-26 09:16:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b69d13c440618572e0fa2247e8a30fd9a5b4278a,b69d13c440618572e0fa2247e8a30fd9a5b4278a,simplifications
+veorq,2015-10-25 09:16:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9bedb26fba1893e9c6d17d3ba8e49ad1282081b4,9bedb26fba1893e9c6d17d3ba8e49ad1282081b4,unused assert.h
+veorq,2015-10-25 09:05:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/5c82e7ebb1f28346a28e4cdd841124f56b9da914,5c82e7ebb1f28346a28e4cdd841124f56b9da914,const uint32_ts -> defines
+veorq,2015-10-23 21:30:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1e00cc0c43428f72f44367b7d65b5fd79b2e9673,1e00cc0c43428f72f44367b7d65b5fd79b2e9673,"fixing clang/inline bug, and const type bug"
+veorq,2015-10-23 16:46:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2f4e23480885588a7d801b2bdf7ef19f33e41edd,2f4e23480885588a7d801b2bdf7ef19f33e41edd,s/hashpwd/hash_*
+khovratovich,2015-10-23 16:08:48,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0c2e88f8c908827420c15cf349c7d34609aa45f0,0c2e88f8c908827420c15cf349c7d34609aa45f0,Clear password input in run()
+khovratovich,2015-10-23 16:00:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/27d7ffb556d998179057b4bf1dccddb47fab2571,27d7ffb556d998179057b4bf1dccddb47fab2571,Name changes + memory limit on 32-bit machines
+khovratovich,2015-10-21 11:00:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/bc688cc54d01873195082258a1719cf26ddd3fc8,bc688cc54d01873195082258a1719cf26ddd3fc8,Deprecated _MEASURE macro
+khovratovich,2015-10-21 10:54:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/567f3873be6ae5f18ab03dfc4ce518cf571f168f,567f3873be6ae5f18ab03dfc4ce518cf571f168f,Documenting run()
+khovratovich,2015-10-21 10:44:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d4180151e0eaa58bd12a2d7d5dd0e7aa0a617a38,d4180151e0eaa58bd12a2d7d5dd0e7aa0a617a38,Not printing user-supplied string
+khovratovich,2015-10-21 10:43:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fb8b4c907530b67d143b5a893aed9d2c5645fe34,fb8b4c907530b67d143b5a893aed9d2c5645fe34,Update main.c
+khovratovich,2015-10-21 10:23:25,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ec80bb17118682c399f59949c8dbd9d331d2a7b0,ec80bb17118682c399f59949c8dbd9d331d2a7b0,Check for malloc error and a small memory leak
+veorq,2015-10-21 10:22:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/70df4dbf1efa6ca2f7fb9bae1cfc0984dfd60811,70df4dbf1efa6ca2f7fb9bae1cfc0984dfd60811,test vectors verifier
+khovratovich,2015-10-21 10:14:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6f3018e5128e039bf09c18430b4c2bda89cdd1e0,6f3018e5128e039bf09c18430b4c2bda89cdd1e0,GenKat argc check
+veorq,2015-10-21 09:59:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/81bf3ac95b9ea129d11f5f0f0cdee2986d38ae5b,81bf3ac95b9ea129d11f5f0f0cdee2986d38ae5b,returning ARGON2_* values
+veorq,2015-10-21 09:52:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/44bca75c81ad66ee44bb6ce84bd40f0a621e6131,44bca75c81ad66ee44bb6ce84bd40f0a621e6131,"simpler, non-redundant output"
+veorq,2015-10-21 08:17:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/30218c828920be9ff414c34ee438a197df42a1fa,30218c828920be9ff414c34ee438a197df42a1fa,ditched defaut pwd
+veorq,2015-10-21 08:08:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/20119ed3606fba8d298ad383e55dcd5c62cccef8,20119ed3606fba8d298ad383e55dcd5c62cccef8,taking pwd and salt from command line
+veorq,2015-10-21 06:55:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/100cfbf68f0a11e4a4e8d1f674994e0844d55841,100cfbf68f0a11e4a4e8d1f674994e0844d55841,"fixing indent, different binaries for run/bench/test (WIP)"
+veorq,2015-10-21 06:08:30,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fcbf31b9c012153582a8c58864f375cb532ed6d1,fcbf31b9c012153582a8c58864f375cb532ed6d1,factoring
+veorq,2015-10-21 06:05:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7942bbeef3224024f6f8ae4a21f20d0310116184,7942bbeef3224024f6f8ae4a21f20d0310116184,formatting
+veorq,2015-10-21 06:05:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7a4b24ecc05d9b0d99be65b0468149b1f7c6aadb,7a4b24ecc05d9b0d99be65b0468149b1f7c6aadb,typo
+sneves,2015-10-21 00:00:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b027a62d93aad84f557023b4144d575184c46952,b027a62d93aad84f557023b4144d575184c46952,merge v2
+sneves,2015-10-20 23:59:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/db21a1b8c586c4bf08dee09ea54c7d148d1ccd0e,db21a1b8c586c4bf08dee09ea54c7d148d1ccd0e,merge threads branch
+sneves,2015-10-20 23:06:29,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/fdd622bd35627577d19fd002c6ee9bbedbdbb5c1,fdd622bd35627577d19fd002c6ee9bbedbdbb5c1,document thread api
+veorq,2015-10-20 20:47:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9256189f6b95a9f95e9133f6abaa591d1668f5ab,9256189f6b95a9f95e9133f6abaa591d1668f5ab,more clean
+veorq,2015-10-20 20:46:17,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/818608837d6b12d0e3d1d470804168f105de12e3,818608837d6b12d0e3d1d470804168f105de12e3,code format and make format
+veorq,2015-10-20 20:37:05,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e4a29780ff2872d03e814d27fe43ea97671e4691,e4a29780ff2872d03e814d27fe43ea97671e4691,minor tweaks
+veorq,2015-10-20 17:16:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cf4deb45e72d66ead459473396a17a203507ed51,cf4deb45e72d66ead459473396a17a203507ed51,indentation
+sneves,2015-10-20 16:24:03,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0ef64ea7af060e074ccd349d83e28f335128b9cf,0ef64ea7af060e074ccd349d83e28f335128b9cf,fix argon2_thread_func_t typedef
+daniel-dinu,2015-10-20 15:04:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6f70354331cbb4b7ad2294b64f7e2a904257b0d5,6f70354331cbb4b7ad2294b64f7e2a904257b0d5,Fix integer overflow check
+daniel-dinu,2015-10-20 14:30:40,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b7e5cc77854dad66b3de5ba2216aeff9256e244f,b7e5cc77854dad66b3de5ba2216aeff9256e244f,Added integer overflow check
+khovratovich,2015-10-20 12:58:28,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1dba1b06680bdd0621fcbf04462d4455dacb6a58,1dba1b06680bdd0621fcbf04462d4455dacb6a58,"Reduce maximum m_cost
+
+Memory no larger than 2GB."
+veorq,2015-10-20 09:33:16,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3f796903dd3175c7ad2478624f9c1f28dc105ec6,3f796903dd3175c7ad2478624f9c1f28dc105ec6,adding b2 .o
+veorq,2015-10-20 09:31:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/336e81d584d3d50f542fe03b8c36bc2ef4705d44,336e81d584d3d50f542fe03b8c36bc2ef4705d44,gitignore
+veorq,2015-10-20 05:26:20,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d776a5a7bffead4b6dcc61541aa971c509fd0476,d776a5a7bffead4b6dcc61541aa971c509fd0476,getting rid of non-c99 strdup
+sneves,2015-10-19 20:54:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/57aa9c3433e840e7f5b9f37d31818075079fe176,57aa9c3433e840e7f5b9f37d31818075079fe176,rdtsc for x86 and amd64
+sneves,2015-10-17 15:14:56,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/51656495f6713546f036aa199fa5549f315a1cdc,51656495f6713546f036aa199fa5549f315a1cdc,blamka tweak
+sneves,2015-10-19 16:51:21,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d27f1803c3843a6e3e45ef42a498158687f2c5d9,d27f1803c3843a6e3e45ef42a498158687f2c5d9,C compliance
+sneves,2015-10-19 16:40:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d34408edc5451f8338f9fee175283824498991d5,d34408edc5451f8338f9fee175283824498991d5,abstract thread APIs away
+khovratovich,2015-10-19 11:37:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/239a3090a97ea8a1ab0ace931004d1caa9e31b55,239a3090a97ea8a1ab0ace931004d1caa9e31b55,"Windows-compatible version
+
+The code compiles now with Visual Studio 2013. To do that:
+- threads are disabled for Windows
+- inline replaced with __inline
+- fixed array length are initialized with literals instead of constant
+expressions"
+khovratovich,2015-10-19 09:23:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/84cc7e5947b129ce983b809903d7f5261549a9bb,84cc7e5947b129ce983b809903d7f5261549a9bb,Commenting on initialization values in hashpwd()
+veorq,2015-10-19 08:17:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8c4df07b5e4bbb939a5ee3858d4d7f731dcf0d17,8c4df07b5e4bbb939a5ee3858d4d7f731dcf0d17,include syntax fix
+veorq,2015-10-19 08:15:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/14c7723741d53cdc0d256aff7987c43e38203f64,14c7723741d53cdc0d256aff7987c43e38203f64,minor memory leak in run()
+veorq,2015-10-19 08:07:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/426d5e28818a32cea2461066e1f9b65ad805d975,426d5e28818a32cea2461066e1f9b65ad805d975,taking latest string format version
+veorq,2015-10-18 20:06:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c06d2804cd7fa5ea2bbf79766acb2af26b2aefcb,c06d2804cd7fa5ea2bbf79766acb2af26b2aefcb,showing string encoding
+veorq,2015-10-18 19:27:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9657abe35855c10490348dbddefc50ffc48db3c4,9657abe35855c10490348dbddefc50ffc48db3c4,headers defines
+veorq,2015-10-18 19:24:33,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/718f863d4f4128717450e0e97cd81e3298d72e3b,718f863d4f4128717450e0e97cd81e3298d72e3b,src files renamed
+veorq,2015-10-18 17:16:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/32495b12d8d9fac9f587183e8a79030a29da4eab,32495b12d8d9fac9f587183e8a79030a29da4eab,static lib mention
+veorq,2015-10-18 06:25:32,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/20c6c16ace9e01de078f1b30457fe357e93791e5,20c6c16ace9e01de078f1b30457fe357e93791e5,formatting
+veorq,2015-10-18 06:20:51,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0a3bffbb26e34531abc5182f8ffdb65158f10c42,0a3bffbb26e34531abc5182f8ffdb65158f10c42,rm ds leftovers (cf solar email)
+veorq,2015-10-17 21:01:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f3df4d4c41584fc44f91d2d8aefccca0546214f8,f3df4d4c41584fc44f91d2d8aefccca0546214f8,removed redundant file
+veorq,2015-10-17 21:00:18,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/3fa2310f1aa71d8f8151382db835d6d00517d542,3fa2310f1aa71d8f8151382db835d6d00517d542,static lib build
+veorq,2015-10-17 20:30:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/eb9114158e9f17eed6c7d55c3658ea22b62450cd,eb9114158e9f17eed6c7d55c3658ea22b62450cd,rewrote makefile
+veorq,2015-10-17 20:11:59,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6af2842c498fa45c7bd0c9f96692273625304d24,6af2842c498fa45c7bd0c9f96692273625304d24,more make clean
+veorq,2015-10-17 20:03:12,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e8b1e82b7dcf0c9f664e76f31901818e11a4c757,e8b1e82b7dcf0c9f664e76f31901818e11a4c757,fixed includes syntax
+veorq,2015-10-17 19:56:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e4ef13f8dd69e627a9992e313a4a1de52168a8a1,e4ef13f8dd69e627a9992e313a4a1de52168a8a1,removed useless const keywords
+veorq,2015-10-17 19:54:55,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2b781700c845f8c5d7d06ef888529f1f225b5411,2b781700c845f8c5d7d06ef888529f1f225b5411,removed useless extern keywords
+veorq,2015-10-17 19:45:41,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f0f49464d3b56a76ab5f1a0b7aea79833e2f03f7,f0f49464d3b56a76ab5f1a0b7aea79833e2f03f7,password as commandline input
+veorq,2015-10-17 19:26:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8b6c5de9af9c5cbe2bfccd55676ff1c7969cb2cc,8b6c5de9af9c5cbe2bfccd55676ff1c7969cb2cc,CLI has null secret and ad
+veorq,2015-10-17 19:21:12,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b10bce00ceea0bad339a926eb91b8eb5389a2415,b10bce00ceea0bad339a926eb91b8eb5389a2415,disclaimer
+veorq,2015-10-17 19:17:08,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/85bd479cdedcd3092c0088b0c680a3c8a84297f1,85bd479cdedcd3092c0088b0c680a3c8a84297f1,emphasis
+veorq,2015-10-17 19:04:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/31505fdff09cc4eee8903909496530755728a09a,31505fdff09cc4eee8903909496530755728a09a,typo
+veorq,2015-10-17 18:43:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/29277fc21373584c6fb49f07f1b3acd7b30de397,29277fc21373584c6fb49f07f1b3acd7b30de397,note on testing
+veorq,2015-10-17 18:40:14,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9bed1c2ab272a394b70e680a4437a7c8dec22d44,9bed1c2ab272a394b70e680a4437a7c8dec22d44,example in readme
+veorq,2015-10-17 16:06:42,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/18f3b425b3db04397ab99e36f4bd733eb23eda2c,18f3b425b3db04397ab99e36f4bd733eb23eda2c,typo
+veorq,2015-10-17 16:05:19,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0ac41da74ec0bf364b6be304d9a08cbae3c6c2fe,0ac41da74ec0bf364b6be304d9a08cbae3c6c2fe,example.c
+veorq,2015-10-17 16:03:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/8fee554488239bf35f7cf2f53777f7bba30df347,8fee554488239bf35f7cf2f53777f7bba30df347,"more cleanup, example wip.."
+veorq,2015-10-17 14:58:37,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f288d9c4484f80d1b36c92e248fc83d2310e802e,f288d9c4484f80d1b36c92e248fc83d2310e802e,removed b2s b2sp b2bp stuff
+veorq,2015-10-17 14:53:07,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/424dcb49810542410519505b2d83c33f439c1ac8,424dcb49810542410519505b2d83c33f439c1ac8,"cleanup in blake2/, better namings"
+veorq,2015-10-17 12:25:43,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/62a4d7426a6864e571a9654d72564ed0cd4333fb,62a4d7426a6864e571a9654d72564ed0cd4333fb,b2..
+veorq,2015-10-17 12:14:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a00c0318faffbffcc73c1deef853c297234088ca,a00c0318faffbffcc73c1deef853c297234088ca,C-style naming
+veorq,2015-10-17 11:51:35,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0e4cb0cfd3000b9d42bb8efda67aaffb7a5123d7,0e4cb0cfd3000b9d42bb8efda67aaffb7a5123d7,C-style naming..
+veorq,2015-10-17 11:38:52,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/53873dad1158912c13e36f6802f8bca144dee114,53873dad1158912c13e36f6802f8bca144dee114,copyrights
+veorq,2015-10-17 11:27:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/0ebfb17d2ec26e37cc902075e5730128b4df5835,0ebfb17d2ec26e37cc902075e5730128b4df5835,removed id and ds support and code
+sneves,2015-10-16 23:27:02,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/52e6cad2d600c894db6dd67c6022c9d9a553883c,52e6cad2d600c894db6dd67c6022c9d9a553883c,off by one
+veorq,2015-10-16 22:28:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7df6eb175988f646500abf5d35e6ed4175f0679d,7df6eb175988f646500abf5d35e6ed4175f0679d,"s/PHS/hash, defaulting to Argon2i"
+veorq,2015-10-16 21:07:13,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ff35b92cd37c1bf3bc0f9dfa5ec22fdcc1a81d06,ff35b92cd37c1bf3bc0f9dfa5ec22fdcc1a81d06,cleanup
+veorq,2015-10-16 21:01:15,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/2a654d974d285109c8f3ec9baf37ff595657cd57,2a654d974d285109c8f3ec9baf37ff595657cd57,examples and more fixes
+veorq,2015-10-16 20:19:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1d476ac1c464d307911eed5040550dd0abdb3046,1d476ac1c464d307911eed5040550dd0abdb3046,more readme..
+veorq,2015-10-16 20:15:45,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/81b4eb282c32aff720b3a7e93a3a80f050565609,81b4eb282c32aff720b3a7e93a3a80f050565609,msvc alignment attribute
+veorq,2015-10-16 20:11:23,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4dd706ecaf2a9f39cb96a203648e9e5d3c85c6e1,4dd706ecaf2a9f39cb96a203648e9e5d3c85c6e1,--g
+veorq,2015-10-16 20:09:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/7930933244ce1aae034e13086f49e7c6533f6fcf,7930933244ce1aae034e13086f49e7c6533f6fcf,alignment issue fixed
+sneves,2015-10-16 19:42:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/4db6f54243a909cd3ced30512067425ca402a0eb,4db6f54243a909cd3ced30512067425ca402a0eb,"Merge pull request #2 from sneves/master
+
+Fix bugs on optimized version"
+veorq,2015-10-16 19:41:38,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/47b6d3bf824541141024275f645ebc07841ab09e,47b6d3bf824541141024275f645ebc07841ab09e,readme..
+sneves,2015-10-16 19:36:39,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/885dfe9a5fcb339f79ef6606b4587240b97e84b6,885dfe9a5fcb339f79ef6606b4587240b97e84b6,fix makefile typo
+sneves,2015-10-16 19:32:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ac50f3b6e743f7c2b7ac22a1ae185e86e2757fb1,ac50f3b6e743f7c2b7ac22a1ae185e86e2757fb1,Merge remote-tracking branch 'upstream/master'
+sneves,2015-10-16 19:32:01,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/40013f443101247715763da880adc03a3fe638e0,40013f443101247715763da880adc03a3fe638e0,fix data race
+veorq,2015-10-16 19:31:35,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/ab2819a797c4819092170b664667a173eb3d49cf,ab2819a797c4819092170b664667a173eb3d49cf,testing opt
+veorq,2015-10-16 19:29:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/c96f1097fe08b3e8438a5632a68d54bad483010c,c96f1097fe08b3e8438a5632a68d54bad483010c,fixed test.sh (partially)
+veorq,2015-10-16 19:09:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a79c9e8720978f2227e587b17f59f6fd451ad3ea,a79c9e8720978f2227e587b17f59f6fd451ad3ea,sha256sums of test vectors
+veorq,2015-10-16 18:50:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e719a84bb6596a755ae6485fca56b033da8eb261,e719a84bb6596a755ae6485fca56b033da8eb261,type name just d|i|ds|id; error handling
+veorq,2015-10-16 18:44:11,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/67d7901346248dae5579e562457beddda680c1e1,67d7901346248dae5579e562457beddda680c1e1,cleans kat files
+veorq,2015-10-16 18:41:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/d879ecef7afb808dab6a5e0e534c07bf9dc2609d,d879ecef7afb808dab6a5e0e534c07bf9dc2609d,adapted test script
+veorq,2015-10-16 18:26:36,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e02c8b61d7d3b7166725d5ff2199be5c0cff34af,e02c8b61d7d3b7166725d5ff2199be5c0cff34af,args = mode + parameters; more tweaks
+veorq,2015-10-16 18:13:31,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/db14b3b2f090b8c918c177d64111953b3f177ce5,db14b3b2f090b8c918c177d64111953b3f177ce5,showing time and parameters
+veorq,2015-10-16 17:05:50,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b6c3e2e9edd1b3658497031b200fd8fc54a47c91,b6c3e2e9edd1b3658497031b200fd8fc54a47c91,astyle run
+veorq,2015-10-16 16:51:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e9afe1c75764586a9fd4cd4e767bbece6ad24a3f,e9afe1c75764586a9fd4cd4e767bbece6ad24a3f,"Merge pull request #1 from sneves/master
+
+Use RDTSC etc."
+sneves,2015-10-16 16:41:54,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/b427f8ff98fded23612ef9e44c0c14922d2c0899,b427f8ff98fded23612ef9e44c0c14922d2c0899,assorted compilation & warning fixes
+sneves,2015-10-16 16:28:26,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/6e62f32c6278a2794819ee435de15931e6d8ab22,6e62f32c6278a2794819ee435de15931e6d8ab22,use rdtsc instead of rdtscp
+veorq,2015-10-16 15:40:22,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/9d66335af1c55b386e15fa8a0250d6ad1e3939ef,9d66335af1c55b386e15fa8a0250d6ad1e3939ef,single binary; argon2 code update from designers
+veorq,2015-10-16 15:05:49,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/36a539fdb7ca99e0d161488b79221c2dffb6f54b,36a539fdb7ca99e0d161488b79221c2dffb6f54b,support for short+long args
+veorq,2015-10-16 14:07:06,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/f28d9d56e7e730a66d46deef4c7afe58934b2a2f,f28d9d56e7e730a66d46deef4c7afe58934b2a2f,usage() function
+veorq,2015-10-16 13:42:10,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/a6d5149e2c3814ce218472506a90c09b43499bcd,a6d5149e2c3814ce218472506a90c09b43499bcd,simplifications
+veorq,2015-10-16 13:26:58,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/cfcb9377f14c00e6dad43c6c37b40100255543a5,cfcb9377f14c00e6dad43c6c37b40100255543a5,renaming
+veorq,2015-10-16 13:19:47,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/1cbcb527e6e0c847cc7b2e263e129af8d7c2483f,1cbcb527e6e0c847cc7b2e263e129af8d7c2483f,minor tweaks
+veorq,2015-10-16 08:52:09,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/31fc57d45a125bb7338c608fc342aa8f5e386348,31fc57d45a125bb7338c608fc342aa8f5e386348,init
+veorq,2015-10-04 08:27:44,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/e7a44c1dabc640daff446f76fb85b199c68bda71,e7a44c1dabc640daff446f76fb85b199c68bda71,readme
+veorq,2015-10-04 08:25:27,https://api.github.com/repos/P-H-C/phc-winner-argon2/git/commits/72d0a2dc2a98e04aa52634b53fbb234ae6cd09d8,72d0a2dc2a98e04aa52634b53fbb234ae6cd09d8,Initial commit
